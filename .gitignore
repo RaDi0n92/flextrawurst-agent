@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtualenv
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Logs / temp
+*.log
+tmp/
+temp/
+
+# Runtime-Spuren
+agent/dak_gord_system/spuren/traces/
+agent/dak_gord_system/spuren/graph_runs/
+agent/dak_gord_system/spuren/evals/
+agent/dak_gord_system/spuren/approvals/
+agent/dak_gord_system/spuren/input_debug.log
+
+# Optional weitere generierte Zustände
+agent/dak_gord_system/spuren/neugier_ticker.log
