@@ -25,3 +25,10 @@ agent/dak_gord_system/spuren/input_debug.log
 
 # Optional weitere generierte Zustände
 agent/dak_gord_system/spuren/neugier_ticker.log
+
+# lokale Laufzeitspuren
+backups/
+logs/
+agent/dak_gord_system/spuren/neugier_zustand.json
+agent/dak_gord_system/spuren/werkraum_neugier.md
+agent/dak_gord_system/spuren/wochenlog/
