@@ -1,0 +1,4878 @@
+[2026-04-04 06:11:21] dak+gord-system
+TASK_ID: task_051444bc
+THREAD_ID: thread_896a5e8b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 06:10:46] dak+gord-system
+TASK_ID: task_7ce745e4
+THREAD_ID: thread_08c227f8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 06:08:17] dak+gord-system
+TASK_ID: task_04f11696
+THREAD_ID: thread_7255e97f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 06:08:17] dak+gord-system
+TASK_ID: task_8857a2b0
+THREAD_ID: thread_3f492b69
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 06:01:39] dak+gord-system
+TASK_ID: task_1c765434
+THREAD_ID: thread_bfdc841c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 06:01:39] dak+gord-system
+TASK_ID: task_df850e10
+THREAD_ID: thread_fcbc9578
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:56:34] dak+gord-system
+TASK_ID: task_2c54f6a0
+THREAD_ID: thread_37980215
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:56:34] dak+gord-system
+TASK_ID: task_65a70b04
+THREAD_ID: thread_d0bcf5e3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:51:20] dak+gord-system
+TASK_ID: task_9b62a4af
+THREAD_ID: thread_81d7e43d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:51:20] dak+gord-system
+TASK_ID: task_b260ed64
+THREAD_ID: thread_13eccc66
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:48:34] dak+gord-system
+TASK_ID: task_828eb170
+THREAD_ID: thread_4dd5713f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:48:33] dak+gord-system
+TASK_ID: task_caefe2e2
+THREAD_ID: thread_e32f46c5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:40:49] dak+gord-system
+TASK_ID: task_241c52f0
+THREAD_ID: thread_edce54b8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:40:48] dak+gord-system
+TASK_ID: task_248540d7
+THREAD_ID: thread_2342d50b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:35:27] dak+gord-system
+TASK_ID: task_9d6ea2e7
+THREAD_ID: thread_c7affe15
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:35:27] dak+gord-system
+TASK_ID: task_37e77176
+THREAD_ID: thread_2144b80c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:30:32] dak+gord-system
+TASK_ID: task_91640773
+THREAD_ID: thread_2f4cd0d7
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:30:31] dak+gord-system
+TASK_ID: task_e43ce728
+THREAD_ID: thread_fd9554c8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:28:24] dak+gord-system
+TASK_ID: task_67c7814f
+THREAD_ID: thread_0893b1a9
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:28:24] dak+gord-system
+TASK_ID: task_1994c3c9
+THREAD_ID: thread_a1ebcb90
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:21:44] dak+gord-system
+TASK_ID: task_edb40ebe
+THREAD_ID: thread_d6c8ec10
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:21:44] dak+gord-system
+TASK_ID: task_694c2c8b
+THREAD_ID: thread_d2873f7f
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:15:07] dak+gord-system
+TASK_ID: task_6a668ca8
+THREAD_ID: thread_f84ac147
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:15:06] dak+gord-system
+TASK_ID: task_d508fd9e
+THREAD_ID: thread_3e82540b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:10:35] dak+gord-system
+TASK_ID: task_3b155fd9
+THREAD_ID: thread_8724d674
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:10:35] dak+gord-system
+TASK_ID: task_036723ff
+THREAD_ID: thread_08686c3b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:05:49] dak+gord-system
+TASK_ID: task_c621a72f
+THREAD_ID: thread_e4cd7007
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 05:05:49] dak+gord-system
+TASK_ID: task_80aa7889
+THREAD_ID: thread_746fdee5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:59:36] dak+gord-system
+TASK_ID: task_3ae31a68
+THREAD_ID: thread_e1292c46
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:59:36] dak+gord-system
+TASK_ID: task_0f6a3956
+THREAD_ID: thread_b1f5e6aa
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:54:51] dak+gord-system
+TASK_ID: task_677e2707
+THREAD_ID: thread_c90b389d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:54:51] dak+gord-system
+TASK_ID: task_3bafadf6
+THREAD_ID: thread_2e6ada87
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:50:19] dak+gord-system
+TASK_ID: task_80077101
+THREAD_ID: thread_e93857fe
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:50:19] dak+gord-system
+TASK_ID: task_6961f97a
+THREAD_ID: thread_2ab34b89
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:45:43] dak+gord-system
+TASK_ID: task_b0669035
+THREAD_ID: thread_9325dcc4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:45:42] dak+gord-system
+TASK_ID: task_1772f521
+THREAD_ID: thread_75ceef29
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:40:15] dak+gord-system
+TASK_ID: task_0b6b8be0
+THREAD_ID: thread_5040ace1
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:40:14] dak+gord-system
+TASK_ID: task_1d3052b1
+THREAD_ID: thread_f891a2be
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:34:29] dak+gord-system
+TASK_ID: task_33b8650b
+THREAD_ID: thread_7953f0c0
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:34:29] dak+gord-system
+TASK_ID: task_eac048ab
+THREAD_ID: thread_612e7553
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:29:16] dak+gord-system
+TASK_ID: task_7b2eb0f8
+THREAD_ID: thread_b2814754
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:29:15] dak+gord-system
+TASK_ID: task_9ad100e8
+THREAD_ID: thread_079e04b1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:24:34] dak+gord-system
+TASK_ID: task_f8d728c0
+THREAD_ID: thread_9a771a88
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:24:34] dak+gord-system
+TASK_ID: task_4aa69089
+THREAD_ID: thread_9b861ac6
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:18:45] dak+gord-system
+TASK_ID: task_64936564
+THREAD_ID: thread_0319639a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:18:45] dak+gord-system
+TASK_ID: task_daba977c
+THREAD_ID: thread_d9167b6e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:14:02] dak+gord-system
+TASK_ID: task_10a3cde1
+THREAD_ID: thread_13563ded
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:14:01] dak+gord-system
+TASK_ID: task_b623849d
+THREAD_ID: thread_8784dd45
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:08:31] dak+gord-system
+TASK_ID: task_7e1739ac
+THREAD_ID: thread_55c77cd3
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:08:30] dak+gord-system
+TASK_ID: task_0efb58f7
+THREAD_ID: thread_504ccd75
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:05:33] dak+gord-system
+TASK_ID: task_5cb36df7
+THREAD_ID: thread_a87c6626
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 04:05:33] dak+gord-system
+TASK_ID: task_d1cd24f7
+THREAD_ID: thread_aae61d3a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:57:48] dak+gord-system
+TASK_ID: task_00703f0d
+THREAD_ID: thread_cc60a196
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:57:47] dak+gord-system
+TASK_ID: task_b48f5114
+THREAD_ID: thread_0c3cb5cd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:53:23] dak+gord-system
+TASK_ID: task_bb3d666e
+THREAD_ID: thread_57c4b25a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:53:23] dak+gord-system
+TASK_ID: task_74368fce
+THREAD_ID: thread_2553fc7f
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:48:20] dak+gord-system
+TASK_ID: task_081582fb
+THREAD_ID: thread_dbf9e441
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:48:20] dak+gord-system
+TASK_ID: task_f3292e98
+THREAD_ID: thread_7b3a046b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:45:21] dak+gord-system
+TASK_ID: task_41b9aa81
+THREAD_ID: thread_030bd6e6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:45:20] dak+gord-system
+TASK_ID: task_2a408456
+THREAD_ID: thread_a9426669
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:37:08] dak+gord-system
+TASK_ID: task_971aa2b7
+THREAD_ID: thread_81192278
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:37:07] dak+gord-system
+TASK_ID: task_a1602e58
+THREAD_ID: thread_6e623217
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:32:11] dak+gord-system
+TASK_ID: task_c18e9609
+THREAD_ID: thread_4c5c65ef
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:32:10] dak+gord-system
+TASK_ID: task_963a3543
+THREAD_ID: thread_b2565a23
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:27:56] dak+gord-system
+TASK_ID: task_81d9397c
+THREAD_ID: thread_7853da77
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:27:56] dak+gord-system
+TASK_ID: task_53b8dff3
+THREAD_ID: thread_f21b64cd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:22:32] dak+gord-system
+TASK_ID: task_1b01c103
+THREAD_ID: thread_a9df2a76
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:22:31] dak+gord-system
+TASK_ID: task_e3d5b597
+THREAD_ID: thread_81be0964
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:16:23] dak+gord-system
+TASK_ID: task_2d73381d
+THREAD_ID: thread_ec30c58f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:16:23] dak+gord-system
+TASK_ID: task_42fc4527
+THREAD_ID: thread_784ad379
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:12:07] dak+gord-system
+TASK_ID: task_05a00a70
+THREAD_ID: thread_d9479ba3
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:12:06] dak+gord-system
+TASK_ID: task_3c18e3d6
+THREAD_ID: thread_39736456
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:05:01] dak+gord-system
+TASK_ID: task_a76d904a
+THREAD_ID: thread_b3e07461
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:05:01] dak+gord-system
+TASK_ID: task_68234bcd
+THREAD_ID: thread_da9af08c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:05:00] dak+gord-system
+TASK_ID: task_f1c529f9
+THREAD_ID: thread_9f5e0a64
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 03:03:47] dak+gord-system
+TASK_ID: task_b1d5a5f2
+THREAD_ID: thread_87df64a7
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:54:45] dak+gord-system
+TASK_ID: task_968eb59d
+THREAD_ID: thread_d8642fba
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:54:45] dak+gord-system
+TASK_ID: task_abc470ca
+THREAD_ID: thread_74289458
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:48:04] dak+gord-system
+TASK_ID: task_27e6f9cd
+THREAD_ID: thread_ccb2ccec
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:48:04] dak+gord-system
+TASK_ID: task_4eefd751
+THREAD_ID: thread_36a6b2d0
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:45:11] dak+gord-system
+TASK_ID: task_35d4d823
+THREAD_ID: thread_8d61a05d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:45:10] dak+gord-system
+TASK_ID: task_51dc235b
+THREAD_ID: thread_0327778a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:38:38] dak+gord-system
+TASK_ID: task_4df2f295
+THREAD_ID: thread_e2521d29
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:38:38] dak+gord-system
+TASK_ID: task_323df783
+THREAD_ID: thread_b383d8aa
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:32:27] dak+gord-system
+TASK_ID: task_dbb05ff0
+THREAD_ID: thread_22b009c2
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:32:27] dak+gord-system
+TASK_ID: task_7df12f74
+THREAD_ID: thread_ef5dbedf
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:27:10] dak+gord-system
+TASK_ID: task_f9fe5317
+THREAD_ID: thread_0e8cd44b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:27:10] dak+gord-system
+TASK_ID: task_e5086001
+THREAD_ID: thread_127ae20c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:22:40] dak+gord-system
+TASK_ID: task_3bc28183
+THREAD_ID: thread_3fb4bfc0
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:22:39] dak+gord-system
+TASK_ID: task_75c01dfe
+THREAD_ID: thread_0cb1cdcf
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:19:58] dak+gord-system
+TASK_ID: task_21f823e4
+THREAD_ID: thread_703a70f4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:19:58] dak+gord-system
+TASK_ID: task_fe2539ef
+THREAD_ID: thread_0b96669d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:12:18] dak+gord-system
+TASK_ID: task_588f1ed6
+THREAD_ID: thread_2721e237
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:12:18] dak+gord-system
+TASK_ID: task_f76d5e3c
+THREAD_ID: thread_29772d9c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:06:45] dak+gord-system
+TASK_ID: task_5b559e15
+THREAD_ID: thread_6d12acee
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:06:45] dak+gord-system
+TASK_ID: task_2cbe954b
+THREAD_ID: thread_ab928444
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:02:30] dak+gord-system
+TASK_ID: task_964c0b4f
+THREAD_ID: thread_8e428051
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 02:02:30] dak+gord-system
+TASK_ID: task_8e74503e
+THREAD_ID: thread_bd711a48
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:59:52] dak+gord-system
+TASK_ID: task_f1b10fcc
+THREAD_ID: thread_e7036169
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:59:52] dak+gord-system
+TASK_ID: task_f3bd2caf
+THREAD_ID: thread_c6cd9bb6
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:51:12] dak+gord-system
+TASK_ID: task_b9a75777
+THREAD_ID: thread_f5a094b4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:51:12] dak+gord-system
+TASK_ID: task_0805030b
+THREAD_ID: thread_8c9a6fde
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:46:23] dak+gord-system
+TASK_ID: task_8000261b
+THREAD_ID: thread_363b97e6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:46:23] dak+gord-system
+TASK_ID: task_dc697f51
+THREAD_ID: thread_3c30ceb5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:40:37] dak+gord-system
+TASK_ID: task_27e257f8
+THREAD_ID: thread_9cd26751
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:40:36] dak+gord-system
+TASK_ID: task_24c63adb
+THREAD_ID: thread_dfc23f62
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:36:13] dak+gord-system
+TASK_ID: task_62194ad9
+THREAD_ID: thread_fa9c62a6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:36:13] dak+gord-system
+TASK_ID: task_f7012492
+THREAD_ID: thread_a69ff992
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:29:54] dak+gord-system
+TASK_ID: task_ce3a8a24
+THREAD_ID: thread_b00f65bb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:29:53] dak+gord-system
+TASK_ID: task_166eb7b7
+THREAD_ID: thread_d56179f7
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:24:32] dak+gord-system
+TASK_ID: task_fc686d56
+THREAD_ID: thread_5131be4e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:24:31] dak+gord-system
+TASK_ID: task_a365d624
+THREAD_ID: thread_0190d3d3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:19:18] dak+gord-system
+TASK_ID: task_caffcbfe
+THREAD_ID: thread_4d252cfb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:19:18] dak+gord-system
+TASK_ID: task_375714f0
+THREAD_ID: thread_d88f83ca
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:14:37] dak+gord-system
+TASK_ID: task_25e10eae
+THREAD_ID: thread_fd36c11c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:14:37] dak+gord-system
+TASK_ID: task_9de3f9b1
+THREAD_ID: thread_0875253a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:09:38] dak+gord-system
+TASK_ID: task_d84f4474
+THREAD_ID: thread_fdbb9e72
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:09:38] dak+gord-system
+TASK_ID: task_4f3dc908
+THREAD_ID: thread_6bbdf0ff
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:03:48] dak+gord-system
+TASK_ID: task_525908ba
+THREAD_ID: thread_bd334710
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 01:03:48] dak+gord-system
+TASK_ID: task_8e5e177e
+THREAD_ID: thread_36222ecf
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:58:50] dak+gord-system
+TASK_ID: task_22375c4b
+THREAD_ID: thread_3d8d12fe
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:58:50] dak+gord-system
+TASK_ID: task_48640042
+THREAD_ID: thread_a36d5c17
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:54:32] dak+gord-system
+TASK_ID: task_21969f72
+THREAD_ID: thread_ec73b04a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:54:31] dak+gord-system
+TASK_ID: task_c6e666d4
+THREAD_ID: thread_3768126c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:48:23] dak+gord-system
+TASK_ID: task_08f12da8
+THREAD_ID: thread_d52a287f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:48:23] dak+gord-system
+TASK_ID: task_6a3ea8b3
+THREAD_ID: thread_01eca465
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:43:36] dak+gord-system
+TASK_ID: task_634ee3a0
+THREAD_ID: thread_f0653fa5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:43:36] dak+gord-system
+TASK_ID: task_16554d74
+THREAD_ID: thread_baedef88
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:37:59] dak+gord-system
+TASK_ID: task_d54a0f68
+THREAD_ID: thread_81c5516d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:37:59] dak+gord-system
+TASK_ID: task_dfe32c59
+THREAD_ID: thread_55937291
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:33:42] dak+gord-system
+TASK_ID: task_ce7b62b3
+THREAD_ID: thread_88249469
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:33:41] dak+gord-system
+TASK_ID: task_ad564020
+THREAD_ID: thread_13854001
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:27:49] dak+gord-system
+TASK_ID: task_d80bcb6f
+THREAD_ID: thread_9d230033
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:27:49] dak+gord-system
+TASK_ID: task_9e4a6939
+THREAD_ID: thread_194a8fbd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:22:29] dak+gord-system
+TASK_ID: task_846dcbf7
+THREAD_ID: thread_6f939169
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:22:29] dak+gord-system
+TASK_ID: task_85314b3f
+THREAD_ID: thread_718cd807
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:17:16] dak+gord-system
+TASK_ID: task_7441f1a2
+THREAD_ID: thread_5b804252
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:17:16] dak+gord-system
+TASK_ID: task_87cb81fa
+THREAD_ID: thread_c9532797
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:14:34] dak+gord-system
+TASK_ID: task_fffc8619
+THREAD_ID: thread_7256ba64
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:14:34] dak+gord-system
+TASK_ID: task_09491968
+THREAD_ID: thread_21469dbf
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:07:56] dak+gord-system
+TASK_ID: task_6c28f17a
+THREAD_ID: thread_323d36aa
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:07:56] dak+gord-system
+TASK_ID: task_4a672e0e
+THREAD_ID: thread_2ee25549
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:02:19] dak+gord-system
+TASK_ID: task_96216be5
+THREAD_ID: thread_ff62fd92
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-04 00:02:18] dak+gord-system
+TASK_ID: task_9a1be493
+THREAD_ID: thread_b0080506
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:57:45] dak+gord-system
+TASK_ID: task_401828b2
+THREAD_ID: thread_650838ab
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:57:45] dak+gord-system
+TASK_ID: task_7170085c
+THREAD_ID: thread_4904d0f5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:52:13] dak+gord-system
+TASK_ID: task_74e7163a
+THREAD_ID: thread_40df6f78
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:52:12] dak+gord-system
+TASK_ID: task_33bc8b42
+THREAD_ID: thread_21fc949d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:46:57] dak+gord-system
+TASK_ID: task_f1fb76e4
+THREAD_ID: thread_0dd8b8ff
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:46:56] dak+gord-system
+TASK_ID: task_9f4377f2
+THREAD_ID: thread_3634e2b9
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:41:04] dak+gord-system
+TASK_ID: task_9635f6a0
+THREAD_ID: thread_16233f75
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:41:04] dak+gord-system
+TASK_ID: task_45041564
+THREAD_ID: thread_b72dec03
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:36:34] dak+gord-system
+TASK_ID: task_167e1d09
+THREAD_ID: thread_402f3f35
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:36:33] dak+gord-system
+TASK_ID: task_a2a1ab42
+THREAD_ID: thread_2855b7a3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:30:30] dak+gord-system
+TASK_ID: task_e7c7fa3e
+THREAD_ID: thread_f100841b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:30:29] dak+gord-system
+TASK_ID: task_d3543708
+THREAD_ID: thread_aaf3caf4
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:25:16] dak+gord-system
+TASK_ID: task_fb02734b
+THREAD_ID: thread_29adb0e5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:25:16] dak+gord-system
+TASK_ID: task_a4b13582
+THREAD_ID: thread_27e8de71
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:20:04] dak+gord-system
+TASK_ID: task_32098c95
+THREAD_ID: thread_e5c122fe
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:20:04] dak+gord-system
+TASK_ID: task_0d550799
+THREAD_ID: thread_2c305e55
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:14:27] dak+gord-system
+TASK_ID: task_605c6086
+THREAD_ID: thread_c2e7bd04
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:14:27] dak+gord-system
+TASK_ID: task_3cce35b1
+THREAD_ID: thread_6e9be354
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:12:22] dak+gord-system
+TASK_ID: task_c170ab1b
+THREAD_ID: thread_78a57bdc
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:12:22] dak+gord-system
+TASK_ID: task_f6023c5f
+THREAD_ID: thread_e3a7173e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:03:54] dak+gord-system
+TASK_ID: task_ba47dcab
+THREAD_ID: thread_0f36a94f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 23:03:54] dak+gord-system
+TASK_ID: task_ea36631d
+THREAD_ID: thread_9a14a044
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:58:39] dak+gord-system
+TASK_ID: task_2b592d89
+THREAD_ID: thread_7c84b789
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:58:39] dak+gord-system
+TASK_ID: task_36c90e4d
+THREAD_ID: thread_2c981761
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:53:39] dak+gord-system
+TASK_ID: task_f0874b00
+THREAD_ID: thread_5b51efa4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:53:39] dak+gord-system
+TASK_ID: task_1365064c
+THREAD_ID: thread_697d2680
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:49:09] dak+gord-system
+TASK_ID: task_a26201e7
+THREAD_ID: thread_b4b90b82
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:49:09] dak+gord-system
+TASK_ID: task_3ee7bf24
+THREAD_ID: thread_95d650b3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:41:01] dak+gord-system
+TASK_ID: task_2dbb0bbd
+THREAD_ID: thread_47c5d9fd
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:41:00] dak+gord-system
+TASK_ID: task_51116e53
+THREAD_ID: thread_691e9f57
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:35:50] dak+gord-system
+TASK_ID: task_3afbaf16
+THREAD_ID: thread_92113454
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:35:50] dak+gord-system
+TASK_ID: task_f4dbd825
+THREAD_ID: thread_c9010d99
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:31:19] dak+gord-system
+TASK_ID: task_eae86ec7
+THREAD_ID: thread_2f844b12
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:31:18] dak+gord-system
+TASK_ID: task_2d36c327
+THREAD_ID: thread_6579f11a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:26:59] dak+gord-system
+TASK_ID: task_783796e0
+THREAD_ID: thread_9a84badc
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:26:59] dak+gord-system
+TASK_ID: task_d5c514c1
+THREAD_ID: thread_406cfecd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:20:07] dak+gord-system
+TASK_ID: task_907133ea
+THREAD_ID: thread_06850562
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:20:06] dak+gord-system
+TASK_ID: task_af6d7cac
+THREAD_ID: thread_f66e0b94
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:16:08] dak+gord-system
+TASK_ID: task_3ba91978
+THREAD_ID: thread_77f5c96e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:16:08] dak+gord-system
+TASK_ID: task_91bf1bfc
+THREAD_ID: thread_0196ec8b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:10:46] dak+gord-system
+TASK_ID: task_ee3e43a4
+THREAD_ID: thread_8d353bf2
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:10:45] dak+gord-system
+TASK_ID: task_367049d3
+THREAD_ID: thread_ddfb36d3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:04:06] dak+gord-system
+TASK_ID: task_9fa3df80
+THREAD_ID: thread_b6b618dc
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:04:06] dak+gord-system
+TASK_ID: task_ad620cb2
+THREAD_ID: thread_ea444585
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:01:43] dak+gord-system
+TASK_ID: task_d8d0a78e
+THREAD_ID: thread_366d9336
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 22:01:43] dak+gord-system
+TASK_ID: task_4982baef
+THREAD_ID: thread_93947536
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:53:42] dak+gord-system
+TASK_ID: task_a76810c0
+THREAD_ID: thread_51e273b0
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:53:41] dak+gord-system
+TASK_ID: task_446a45e0
+THREAD_ID: thread_a3e18f85
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:48:16] dak+gord-system
+TASK_ID: task_40bf4b8c
+THREAD_ID: thread_626b4db5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:48:16] dak+gord-system
+TASK_ID: task_cdeaf361
+THREAD_ID: thread_ba8071e3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:43:24] dak+gord-system
+TASK_ID: task_6643fb24
+THREAD_ID: thread_141eb8d8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:43:24] dak+gord-system
+TASK_ID: task_1f2b6d55
+THREAD_ID: thread_1aa2b7b6
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:38:11] dak+gord-system
+TASK_ID: task_be19c01f
+THREAD_ID: thread_ca76de20
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:38:11] dak+gord-system
+TASK_ID: task_8157cd4d
+THREAD_ID: thread_ea2ba432
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:32:29] dak+gord-system
+TASK_ID: task_7064dcfe
+THREAD_ID: thread_0b1c27f4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:32:28] dak+gord-system
+TASK_ID: task_2efe9152
+THREAD_ID: thread_42b35b0a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:27:17] dak+gord-system
+TASK_ID: task_9291febe
+THREAD_ID: thread_a02ebf37
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:27:17] dak+gord-system
+TASK_ID: task_36948c6e
+THREAD_ID: thread_bf7a3347
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:22:12] dak+gord-system
+TASK_ID: task_d0062a10
+THREAD_ID: thread_09636f51
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:22:12] dak+gord-system
+TASK_ID: task_ae167b8f
+THREAD_ID: thread_e4e9745e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:17:57] dak+gord-system
+TASK_ID: task_4a8f84b9
+THREAD_ID: thread_d6a39120
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:17:56] dak+gord-system
+TASK_ID: task_abb32684
+THREAD_ID: thread_bcdc32ec
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:11:42] dak+gord-system
+TASK_ID: task_56eb41ad
+THREAD_ID: thread_f2e7765d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:11:42] dak+gord-system
+TASK_ID: task_5583ba78
+THREAD_ID: thread_cf607482
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:06:58] dak+gord-system
+TASK_ID: task_60ab6b75
+THREAD_ID: thread_0b3a07a4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:06:58] dak+gord-system
+TASK_ID: task_a0af16c6
+THREAD_ID: thread_9c280206
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:01:38] dak+gord-system
+TASK_ID: task_e60628a4
+THREAD_ID: thread_a4beb4c5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 21:01:38] dak+gord-system
+TASK_ID: task_f6244c21
+THREAD_ID: thread_381c48ae
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:57:20] dak+gord-system
+TASK_ID: task_f369a033
+THREAD_ID: thread_c2edb61f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:57:20] dak+gord-system
+TASK_ID: task_83b565f7
+THREAD_ID: thread_eebc7742
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:51:38] dak+gord-system
+TASK_ID: task_3b05d010
+THREAD_ID: thread_adf03c13
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:51:38] dak+gord-system
+TASK_ID: task_d856776d
+THREAD_ID: thread_892f338d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:46:18] dak+gord-system
+TASK_ID: task_3f5c5dd5
+THREAD_ID: thread_72c64ecb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:46:18] dak+gord-system
+TASK_ID: task_cd1ce61a
+THREAD_ID: thread_11a2d9b1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:41:25] dak+gord-system
+TASK_ID: task_63aacd7d
+THREAD_ID: thread_e12a3b23
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:41:25] dak+gord-system
+TASK_ID: task_ff113ae6
+THREAD_ID: thread_b8307786
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:37:43] dak+gord-system
+TASK_ID: task_435f8706
+THREAD_ID: thread_b854e5fc
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:37:43] dak+gord-system
+TASK_ID: task_60ff39b0
+THREAD_ID: thread_e942dc0a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:30:48] dak+gord-system
+TASK_ID: task_29b8c805
+THREAD_ID: thread_35f119b5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:30:00] dak+gord-system
+TASK_ID: task_06f0672c
+THREAD_ID: thread_36a741e1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:25:34] dak+gord-system
+TASK_ID: task_f824a8c1
+THREAD_ID: thread_9458f0f1
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:25:34] dak+gord-system
+TASK_ID: task_8fe165e3
+THREAD_ID: thread_b7ac4724
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:20:31] dak+gord-system
+TASK_ID: task_e7abf35a
+THREAD_ID: thread_eea128ac
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:20:31] dak+gord-system
+TASK_ID: task_a446a293
+THREAD_ID: thread_698d3b91
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:15:50] dak+gord-system
+TASK_ID: task_becf73fb
+THREAD_ID: thread_f03d952e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:15:50] dak+gord-system
+TASK_ID: task_9fdd5bef
+THREAD_ID: thread_688f45d0
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:11:03] dak+gord-system
+TASK_ID: task_858b83a2
+THREAD_ID: thread_d2eb8839
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:11:03] dak+gord-system
+TASK_ID: task_6136be83
+THREAD_ID: thread_fca9a590
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:04:37] dak+gord-system
+TASK_ID: task_7a84b258
+THREAD_ID: thread_e207c472
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 20:04:36] dak+gord-system
+TASK_ID: task_53e9ac94
+THREAD_ID: thread_12fbba38
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:59:38] dak+gord-system
+TASK_ID: task_390e597b
+THREAD_ID: thread_ffaade7b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:59:38] dak+gord-system
+TASK_ID: task_774d765a
+THREAD_ID: thread_40689dd2
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:54:56] dak+gord-system
+TASK_ID: task_116f6553
+THREAD_ID: thread_d9fb0707
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:54:56] dak+gord-system
+TASK_ID: task_d22ea580
+THREAD_ID: thread_2426f4d5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:49:27] dak+gord-system
+TASK_ID: task_5b8af8f7
+THREAD_ID: thread_a6873125
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:49:26] dak+gord-system
+TASK_ID: task_a7f0cef8
+THREAD_ID: thread_a32e1dfd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:44:17] dak+gord-system
+TASK_ID: task_15aef1d3
+THREAD_ID: thread_ea263c86
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:44:16] dak+gord-system
+TASK_ID: task_9b897d46
+THREAD_ID: thread_568c000e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:39:02] dak+gord-system
+TASK_ID: task_454d1f26
+THREAD_ID: thread_5d91ee50
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:39:02] dak+gord-system
+TASK_ID: task_89bae111
+THREAD_ID: thread_ad64f4c1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:34:33] dak+gord-system
+TASK_ID: task_813debef
+THREAD_ID: thread_eebc9b51
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:34:32] dak+gord-system
+TASK_ID: task_65ebb3b7
+THREAD_ID: thread_2f982e83
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:28:34] dak+gord-system
+TASK_ID: task_819771c3
+THREAD_ID: thread_36bb09fa
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:28:33] dak+gord-system
+TASK_ID: task_9080a379
+THREAD_ID: thread_5d150622
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:23:36] dak+gord-system
+TASK_ID: task_c851bc68
+THREAD_ID: thread_15690296
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:23:36] dak+gord-system
+TASK_ID: task_6fc53fbc
+THREAD_ID: thread_c12922ed
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:18:49] dak+gord-system
+TASK_ID: task_c139ca7b
+THREAD_ID: thread_06129cfb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:18:49] dak+gord-system
+TASK_ID: task_0fde0342
+THREAD_ID: thread_dfb8ee2b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:14:23] dak+gord-system
+TASK_ID: task_5ec1386d
+THREAD_ID: thread_28d113ad
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:14:23] dak+gord-system
+TASK_ID: task_8b1a1e94
+THREAD_ID: thread_427cc0b7
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:07:28] dak+gord-system
+TASK_ID: task_c8f57ffd
+THREAD_ID: thread_469cafe5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:07:28] dak+gord-system
+TASK_ID: task_8f5e7c0d
+THREAD_ID: thread_99bff1e8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:02:23] dak+gord-system
+TASK_ID: task_62c8416e
+THREAD_ID: thread_65e7b36c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 19:02:23] dak+gord-system
+TASK_ID: task_0f112b07
+THREAD_ID: thread_748ef667
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:57:23] dak+gord-system
+TASK_ID: task_ba39e952
+THREAD_ID: thread_3e3399ba
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:57:22] dak+gord-system
+TASK_ID: task_4ddcdc63
+THREAD_ID: thread_1316b300
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:55:27] dak+gord-system
+TASK_ID: task_9d075a41
+THREAD_ID: thread_e292c6c8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:54:14] dak+gord-system
+TASK_ID: task_47bb9232
+THREAD_ID: thread_0d41be5a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:47:20] dak+gord-system
+TASK_ID: task_76b701d2
+THREAD_ID: thread_377c910f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:47:20] dak+gord-system
+TASK_ID: task_fc7b6b21
+THREAD_ID: thread_a60cf722
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:42:20] dak+gord-system
+TASK_ID: task_44fe2e86
+THREAD_ID: thread_695082c9
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:42:19] dak+gord-system
+TASK_ID: task_2039b831
+THREAD_ID: thread_78bd1733
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:37:01] dak+gord-system
+TASK_ID: task_0cbbba6b
+THREAD_ID: thread_86bfc1d7
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:37:00] dak+gord-system
+TASK_ID: task_13ec56a3
+THREAD_ID: thread_af429d7a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:32:07] dak+gord-system
+TASK_ID: task_2586a84f
+THREAD_ID: thread_8f1a8ca3
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:32:07] dak+gord-system
+TASK_ID: task_3f2e30c9
+THREAD_ID: thread_8a84249a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:27:49] dak+gord-system
+TASK_ID: task_0c63df4d
+THREAD_ID: thread_d3253c3d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:27:48] dak+gord-system
+TASK_ID: task_40e5f62d
+THREAD_ID: thread_0d4c03e8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:22:05] dak+gord-system
+TASK_ID: task_0a73d9f5
+THREAD_ID: thread_058971eb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:22:05] dak+gord-system
+TASK_ID: task_268acd0c
+THREAD_ID: thread_d56da39b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:17:11] dak+gord-system
+TASK_ID: task_3dc8b19e
+THREAD_ID: thread_33a06c21
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:17:11] dak+gord-system
+TASK_ID: task_d52b1965
+THREAD_ID: thread_72cee2eb
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:12:02] dak+gord-system
+TASK_ID: task_be109032
+THREAD_ID: thread_7c9eaa26
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:12:02] dak+gord-system
+TASK_ID: task_9f6c39de
+THREAD_ID: thread_d82bdab4
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:06:31] dak+gord-system
+TASK_ID: task_86411810
+THREAD_ID: thread_522121f1
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:06:31] dak+gord-system
+TASK_ID: task_efdfb7d9
+THREAD_ID: thread_d84209ee
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:00:55] dak+gord-system
+TASK_ID: task_14bd48bc
+THREAD_ID: thread_4f5b00fb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 18:00:54] dak+gord-system
+TASK_ID: task_e436fa47
+THREAD_ID: thread_6f630c07
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:55:54] dak+gord-system
+TASK_ID: task_b2b91918
+THREAD_ID: thread_fec51b25
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:55:54] dak+gord-system
+TASK_ID: task_2d1e51e7
+THREAD_ID: thread_dd5fe5a0
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:50:54] dak+gord-system
+TASK_ID: task_414da15c
+THREAD_ID: thread_bcf617c0
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:50:53] dak+gord-system
+TASK_ID: task_4c079758
+THREAD_ID: thread_aefe4d9f
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:45:31] dak+gord-system
+TASK_ID: task_d8323ba3
+THREAD_ID: thread_0549e88a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:45:30] dak+gord-system
+TASK_ID: task_9e0e2a08
+THREAD_ID: thread_a6a54081
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:40:14] dak+gord-system
+TASK_ID: task_47e7b2ab
+THREAD_ID: thread_93756ef0
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:40:13] dak+gord-system
+TASK_ID: task_a698fedc
+THREAD_ID: thread_633db15d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:35:01] dak+gord-system
+TASK_ID: task_02843cad
+THREAD_ID: thread_cc25637c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:35:00] dak+gord-system
+TASK_ID: task_a381667e
+THREAD_ID: thread_b73f6ad5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:32:52] dak+gord-system
+TASK_ID: task_83f24b49
+THREAD_ID: thread_bb7b49cb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:31:27] dak+gord-system
+TASK_ID: task_134e106c
+THREAD_ID: thread_63576810
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:25:45] dak+gord-system
+TASK_ID: task_bcbefc37
+THREAD_ID: thread_0f1d7339
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:25:44] dak+gord-system
+TASK_ID: task_cc5fbb5c
+THREAD_ID: thread_bafcaea3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:22:06] dak+gord-system
+TASK_ID: task_5c025b9a
+THREAD_ID: thread_fde7bb4d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:22:05] dak+gord-system
+TASK_ID: task_7dbb9cd6
+THREAD_ID: thread_3c7ff5bb
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:15:44] dak+gord-system
+TASK_ID: task_e4320282
+THREAD_ID: thread_e0dfada5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:15:43] dak+gord-system
+TASK_ID: task_805b9386
+THREAD_ID: thread_d7a00a9d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:13:07] dak+gord-system
+TASK_ID: task_97117675
+THREAD_ID: thread_49316571
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:13:07] dak+gord-system
+TASK_ID: task_ef087353
+THREAD_ID: thread_ba1a37e1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:04:20] dak+gord-system
+TASK_ID: task_108dbad2
+THREAD_ID: thread_22af9db1
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 17:04:19] dak+gord-system
+TASK_ID: task_72e687d6
+THREAD_ID: thread_ddea3ce5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:59:28] dak+gord-system
+TASK_ID: task_284384df
+THREAD_ID: thread_ccfea582
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:59:27] dak+gord-system
+TASK_ID: task_a4e345ed
+THREAD_ID: thread_24ec65a6
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:54:55] dak+gord-system
+TASK_ID: task_80e613dc
+THREAD_ID: thread_78e78d2e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:54:55] dak+gord-system
+TASK_ID: task_72cb848f
+THREAD_ID: thread_f558bcf5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:51:15] dak+gord-system
+TASK_ID: task_eeb5f9fc
+THREAD_ID: thread_39571769
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:51:15] dak+gord-system
+TASK_ID: task_1ba36132
+THREAD_ID: thread_8cbb4b3a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:45:28] dak+gord-system
+TASK_ID: task_5de84d26
+THREAD_ID: thread_a80542a4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:45:28] dak+gord-system
+TASK_ID: task_9973aa62
+THREAD_ID: thread_473767e7
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:42:00] dak+gord-system
+TASK_ID: task_6170658e
+THREAD_ID: thread_f0473396
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:42:00] dak+gord-system
+TASK_ID: task_e2a1cd50
+THREAD_ID: thread_9ce3f0f5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:35:01] dak+gord-system
+TASK_ID: task_33028784
+THREAD_ID: thread_c8ac6388
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:35:00] dak+gord-system
+TASK_ID: task_bfb499a7
+THREAD_ID: thread_78a95a0c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:30:04] dak+gord-system
+TASK_ID: task_6964249f
+THREAD_ID: thread_8ada1390
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:30:03] dak+gord-system
+TASK_ID: task_b4b1690c
+THREAD_ID: thread_30daa41b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:23:52] dak+gord-system
+TASK_ID: task_d6b66c6d
+THREAD_ID: thread_4d45be53
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:23:51] dak+gord-system
+TASK_ID: task_75b52400
+THREAD_ID: thread_81679534
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:19:23] dak+gord-system
+TASK_ID: task_790e303c
+THREAD_ID: thread_8d0d0b60
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:19:23] dak+gord-system
+TASK_ID: task_abe7db32
+THREAD_ID: thread_7a1fb162
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:13:22] dak+gord-system
+TASK_ID: task_cdcb425c
+THREAD_ID: thread_9962e864
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:13:22] dak+gord-system
+TASK_ID: task_16c9f50a
+THREAD_ID: thread_a430661f
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:08:45] dak+gord-system
+TASK_ID: task_f7c4fcfc
+THREAD_ID: thread_2243c962
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:08:44] dak+gord-system
+TASK_ID: task_b7e15593
+THREAD_ID: thread_bf8fdf73
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:04:48] dak+gord-system
+TASK_ID: task_fc9a170b
+THREAD_ID: thread_4d129206
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 16:04:47] dak+gord-system
+TASK_ID: task_4f167ad3
+THREAD_ID: thread_ac779e81
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:59:17] dak+gord-system
+TASK_ID: task_34cd96a0
+THREAD_ID: thread_cb11de7c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:59:16] dak+gord-system
+TASK_ID: task_95127bcd
+THREAD_ID: thread_ffad0d19
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:52:45] dak+gord-system
+TASK_ID: task_7648e320
+THREAD_ID: thread_4083f270
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:52:45] dak+gord-system
+TASK_ID: task_22a8a60d
+THREAD_ID: thread_6a8bb8b3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:49:45] dak+gord-system
+TASK_ID: task_16ae7fc6
+THREAD_ID: thread_7ae55d1d
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:49:44] dak+gord-system
+TASK_ID: task_89e20de1
+THREAD_ID: thread_86ef7b4d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:42:43] dak+gord-system
+TASK_ID: task_10700408
+THREAD_ID: thread_30c44231
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:42:43] dak+gord-system
+TASK_ID: task_e96a47d4
+THREAD_ID: thread_dc4d5de4
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:37:37] dak+gord-system
+TASK_ID: task_0cf2fa06
+THREAD_ID: thread_c52d03b4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:37:37] dak+gord-system
+TASK_ID: task_ca0fa92c
+THREAD_ID: thread_7d099736
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:32:22] dak+gord-system
+TASK_ID: task_76ca867c
+THREAD_ID: thread_09934e74
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:32:22] dak+gord-system
+TASK_ID: task_ee05b340
+THREAD_ID: thread_41d63c39
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:29:48] dak+gord-system
+TASK_ID: task_39fa2fad
+THREAD_ID: thread_cb80f5b2
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:29:48] dak+gord-system
+TASK_ID: task_7f118d38
+THREAD_ID: thread_f953124d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:22:05] dak+gord-system
+TASK_ID: task_c62102c6
+THREAD_ID: thread_53d755e4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:22:04] dak+gord-system
+TASK_ID: task_c40b1ac5
+THREAD_ID: thread_02c302a5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:16:54] dak+gord-system
+TASK_ID: task_5d4404e0
+THREAD_ID: thread_746cb6bd
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:16:54] dak+gord-system
+TASK_ID: task_24e5c0fe
+THREAD_ID: thread_cb5ccd2d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:12:01] dak+gord-system
+TASK_ID: task_4e779ab6
+THREAD_ID: thread_1cd4e6cb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:12:00] dak+gord-system
+TASK_ID: task_d8986709
+THREAD_ID: thread_5077b311
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:07:37] dak+gord-system
+TASK_ID: task_4eb8ef46
+THREAD_ID: thread_84267478
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:07:37] dak+gord-system
+TASK_ID: task_4b1ef14d
+THREAD_ID: thread_2c950317
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:01:45] dak+gord-system
+TASK_ID: task_57b23db2
+THREAD_ID: thread_7a2fe861
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 15:01:45] dak+gord-system
+TASK_ID: task_e6275f37
+THREAD_ID: thread_fdccd740
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:56:29] dak+gord-system
+TASK_ID: task_a5072016
+THREAD_ID: thread_475ee127
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:56:29] dak+gord-system
+TASK_ID: task_4140d3a0
+THREAD_ID: thread_cb7c3f93
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:51:26] dak+gord-system
+TASK_ID: task_8d9f6e8e
+THREAD_ID: thread_e1818c87
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:51:25] dak+gord-system
+TASK_ID: task_7cb4ce5d
+THREAD_ID: thread_82ee8126
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:46:59] dak+gord-system
+TASK_ID: task_80dfd830
+THREAD_ID: thread_0d643c22
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:46:58] dak+gord-system
+TASK_ID: task_b7315267
+THREAD_ID: thread_0577a268
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:41:18] dak+gord-system
+TASK_ID: task_8f1a9a62
+THREAD_ID: thread_0fc45b3a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:41:18] dak+gord-system
+TASK_ID: task_9b721f2c
+THREAD_ID: thread_8f2d8290
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:36:26] dak+gord-system
+TASK_ID: task_443c83ad
+THREAD_ID: thread_bad79091
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:36:26] dak+gord-system
+TASK_ID: task_c220a662
+THREAD_ID: thread_a10d64cd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:30:55] dak+gord-system
+TASK_ID: task_234a5ca8
+THREAD_ID: thread_08f5532c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:30:54] dak+gord-system
+TASK_ID: task_c10b8bfa
+THREAD_ID: thread_e0a98240
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:26:28] dak+gord-system
+TASK_ID: task_47f63906
+THREAD_ID: thread_cfe50f62
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:26:28] dak+gord-system
+TASK_ID: task_d98c362c
+THREAD_ID: thread_5210c54b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:19:43] dak+gord-system
+TASK_ID: task_8a411a6a
+THREAD_ID: thread_e1cf4b0f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:19:42] dak+gord-system
+TASK_ID: task_f3a8999c
+THREAD_ID: thread_4b067eba
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:15:25] dak+gord-system
+TASK_ID: task_2d5d7dc6
+THREAD_ID: thread_2c1fb4ba
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:15:24] dak+gord-system
+TASK_ID: task_9302794d
+THREAD_ID: thread_426ccd6e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:09:07] dak+gord-system
+TASK_ID: task_636189c0
+THREAD_ID: thread_9f7f27c6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:09:06] dak+gord-system
+TASK_ID: task_fcb5151b
+THREAD_ID: thread_f8a5c4de
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:05:53] dak+gord-system
+TASK_ID: task_788d60f0
+THREAD_ID: thread_ce57eba8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 14:05:53] dak+gord-system
+TASK_ID: task_be88a22e
+THREAD_ID: thread_a5dbdc44
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:58:43] dak+gord-system
+TASK_ID: task_4eb9690b
+THREAD_ID: thread_7795d61a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:58:43] dak+gord-system
+TASK_ID: task_00dbecf3
+THREAD_ID: thread_7ad58ebb
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:53:05] dak+gord-system
+TASK_ID: task_4d28e9dc
+THREAD_ID: thread_b6f343cc
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:53:05] dak+gord-system
+TASK_ID: task_891cbc22
+THREAD_ID: thread_6710c3ae
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:47:05] dak+gord-system
+TASK_ID: task_165e885a
+THREAD_ID: thread_0938fa66
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:47:05] dak+gord-system
+TASK_ID: task_4e4467d6
+THREAD_ID: thread_3006728a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:44:21] dak+gord-system
+TASK_ID: task_219b135e
+THREAD_ID: thread_4d97fbf8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:43:37] dak+gord-system
+TASK_ID: task_56044970
+THREAD_ID: thread_33441e83
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:37:56] dak+gord-system
+TASK_ID: task_77dd74c0
+THREAD_ID: thread_496993af
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:37:56] dak+gord-system
+TASK_ID: task_fdb465f0
+THREAD_ID: thread_ca45ea44
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:32:43] dak+gord-system
+TASK_ID: task_07d2f00f
+THREAD_ID: thread_c733f582
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:32:42] dak+gord-system
+TASK_ID: task_15dba429
+THREAD_ID: thread_dcc9f745
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:27:41] dak+gord-system
+TASK_ID: task_671d8b0f
+THREAD_ID: thread_6caa680f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:27:41] dak+gord-system
+TASK_ID: task_471f170a
+THREAD_ID: thread_568818a9
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:23:53] dak+gord-system
+TASK_ID: task_866b581e
+THREAD_ID: thread_903acf9f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:23:53] dak+gord-system
+TASK_ID: task_9f2a5b8b
+THREAD_ID: thread_2927bba3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:17:07] dak+gord-system
+TASK_ID: task_ecb208da
+THREAD_ID: thread_4fc19f46
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:17:06] dak+gord-system
+TASK_ID: task_78683c80
+THREAD_ID: thread_4fe2df83
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:11:23] dak+gord-system
+TASK_ID: task_fd1ea9a5
+THREAD_ID: thread_590548b6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:11:23] dak+gord-system
+TASK_ID: task_29c04098
+THREAD_ID: thread_f9140a8e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:06:11] dak+gord-system
+TASK_ID: task_ef5eb9b5
+THREAD_ID: thread_c186b7b1
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:06:11] dak+gord-system
+TASK_ID: task_309e0976
+THREAD_ID: thread_286b9968
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:02:00] dak+gord-system
+TASK_ID: task_16ec6acb
+THREAD_ID: thread_22e7067f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 13:01:59] dak+gord-system
+TASK_ID: task_39bb0687
+THREAD_ID: thread_15c134bb
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:56:34] dak+gord-system
+TASK_ID: task_6cac364c
+THREAD_ID: thread_5844d83f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:56:33] dak+gord-system
+TASK_ID: task_de8bbe54
+THREAD_ID: thread_5d3416b1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:50:34] dak+gord-system
+TASK_ID: task_ea08a2cd
+THREAD_ID: thread_bdb67f67
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:50:33] dak+gord-system
+TASK_ID: task_8ba89349
+THREAD_ID: thread_36df01ea
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:45:26] dak+gord-system
+TASK_ID: task_dd852c02
+THREAD_ID: thread_d748c7d8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:45:26] dak+gord-system
+TASK_ID: task_c8e1a352
+THREAD_ID: thread_5d29aa62
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:40:38] dak+gord-system
+TASK_ID: task_5bc2b208
+THREAD_ID: thread_4b24dd57
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:40:37] dak+gord-system
+TASK_ID: task_91b54ca0
+THREAD_ID: thread_f3b2c44e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:36:23] dak+gord-system
+TASK_ID: task_3eac323d
+THREAD_ID: thread_f6d3f057
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:36:23] dak+gord-system
+TASK_ID: task_a0409b9a
+THREAD_ID: thread_55d6f2e0
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:29:58] dak+gord-system
+TASK_ID: task_87e95715
+THREAD_ID: thread_6c9c1af7
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:29:57] dak+gord-system
+TASK_ID: task_13b26aa3
+THREAD_ID: thread_19455396
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:24:55] dak+gord-system
+TASK_ID: task_0bf4deb6
+THREAD_ID: thread_69c92519
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:24:54] dak+gord-system
+TASK_ID: task_d8824965
+THREAD_ID: thread_56c5b3de
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:20:21] dak+gord-system
+TASK_ID: task_a96e4c32
+THREAD_ID: thread_73dc1857
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:20:20] dak+gord-system
+TASK_ID: task_6fc5f530
+THREAD_ID: thread_cbe2acd2
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:14:26] dak+gord-system
+TASK_ID: task_1f3fdc79
+THREAD_ID: thread_4b1698aa
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:14:26] dak+gord-system
+TASK_ID: task_e729ee77
+THREAD_ID: thread_e41f5871
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:09:51] dak+gord-system
+TASK_ID: task_665eac22
+THREAD_ID: thread_43681a38
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:09:51] dak+gord-system
+TASK_ID: task_1143472f
+THREAD_ID: thread_96827b4d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:04:14] dak+gord-system
+TASK_ID: task_862058f4
+THREAD_ID: thread_2a6edc99
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:04:13] dak+gord-system
+TASK_ID: task_ee8b9dba
+THREAD_ID: thread_8419d64c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:01:39] dak+gord-system
+TASK_ID: task_6efdf51e
+THREAD_ID: thread_c554b16f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 12:01:39] dak+gord-system
+TASK_ID: task_6fa30a8e
+THREAD_ID: thread_a2e78f28
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:53:51] dak+gord-system
+TASK_ID: task_f922c390
+THREAD_ID: thread_70294b5e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:53:51] dak+gord-system
+TASK_ID: task_b6592ba6
+THREAD_ID: thread_3aee968e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:48:30] dak+gord-system
+TASK_ID: task_9568f540
+THREAD_ID: thread_5f52d9f6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:48:29] dak+gord-system
+TASK_ID: task_fc8410b6
+THREAD_ID: thread_456be405
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:43:41] dak+gord-system
+TASK_ID: task_bfa65ffa
+THREAD_ID: thread_f66ed727
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:43:41] dak+gord-system
+TASK_ID: task_12b74f11
+THREAD_ID: thread_0e42c0fa
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:39:03] dak+gord-system
+TASK_ID: task_45bfc088
+THREAD_ID: thread_2507a70c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:39:03] dak+gord-system
+TASK_ID: task_893c5b6a
+THREAD_ID: thread_0fa2277e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:33:22] dak+gord-system
+TASK_ID: task_a30cf9c8
+THREAD_ID: thread_9bd609de
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:33:22] dak+gord-system
+TASK_ID: task_85704cf2
+THREAD_ID: thread_6d945082
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:28:16] dak+gord-system
+TASK_ID: task_f29fe422
+THREAD_ID: thread_9fa4f8d3
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:28:16] dak+gord-system
+TASK_ID: task_226db344
+THREAD_ID: thread_a217ce04
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:22:56] dak+gord-system
+TASK_ID: task_41515643
+THREAD_ID: thread_8fe97454
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:22:55] dak+gord-system
+TASK_ID: task_6830c366
+THREAD_ID: thread_e3e0295a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:18:15] dak+gord-system
+TASK_ID: task_262b9c76
+THREAD_ID: thread_026a72c9
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:18:15] dak+gord-system
+TASK_ID: task_937419e3
+THREAD_ID: thread_cefac0fa
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:12:37] dak+gord-system
+TASK_ID: task_b99fb994
+THREAD_ID: thread_2ea2a68e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:12:37] dak+gord-system
+TASK_ID: task_60e9d798
+THREAD_ID: thread_8b59cd34
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:08:24] dak+gord-system
+TASK_ID: task_eb929947
+THREAD_ID: thread_f40eb991
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:08:24] dak+gord-system
+TASK_ID: task_4885dd7c
+THREAD_ID: thread_561ead63
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:01:41] dak+gord-system
+TASK_ID: task_875e6f1c
+THREAD_ID: thread_3c57a4b9
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 11:01:40] dak+gord-system
+TASK_ID: task_f2526ce3
+THREAD_ID: thread_c6519ee8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:57:39] dak+gord-system
+TASK_ID: task_58f82ec1
+THREAD_ID: thread_49593a25
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:57:08] dak+gord-system
+TASK_ID: task_a3755c0d
+THREAD_ID: thread_1f7307de
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:52:46] dak+gord-system
+TASK_ID: task_0474e4dc
+THREAD_ID: thread_b9a4a798
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:52:45] dak+gord-system
+TASK_ID: task_5e079ab1
+THREAD_ID: thread_6f765582
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:47:41] dak+gord-system
+TASK_ID: task_70ef345e
+THREAD_ID: thread_a1b3efd8
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:47:41] dak+gord-system
+TASK_ID: task_ebafdb76
+THREAD_ID: thread_79533586
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:42:27] dak+gord-system
+TASK_ID: task_a90ec45c
+THREAD_ID: thread_4eeeaa40
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:42:27] dak+gord-system
+TASK_ID: task_0622bb8b
+THREAD_ID: thread_18cb8e4b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:37:33] dak+gord-system
+TASK_ID: task_0c5ec898
+THREAD_ID: thread_7343b947
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:37:33] dak+gord-system
+TASK_ID: task_da45dc6d
+THREAD_ID: thread_abb7c112
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:31:39] dak+gord-system
+TASK_ID: task_e63b63eb
+THREAD_ID: thread_f3fc48e6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:31:39] dak+gord-system
+TASK_ID: task_6a02920c
+THREAD_ID: thread_96c795f5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:27:18] dak+gord-system
+TASK_ID: task_76d9f79b
+THREAD_ID: thread_c10176a2
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:27:18] dak+gord-system
+TASK_ID: task_15eeca47
+THREAD_ID: thread_1df28317
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:22:00] dak+gord-system
+TASK_ID: task_c71a184c
+THREAD_ID: thread_b34154e6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:21:59] dak+gord-system
+TASK_ID: task_a1560329
+THREAD_ID: thread_8e4ae70b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:18:58] dak+gord-system
+TASK_ID: task_13a6a0fb
+THREAD_ID: thread_8ec7f24b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:18:57] dak+gord-system
+TASK_ID: task_d2e5dcb8
+THREAD_ID: thread_9caabbcb
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:11:06] dak+gord-system
+TASK_ID: task_b2366f63
+THREAD_ID: thread_e67e68d6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:11:06] dak+gord-system
+TASK_ID: task_90daa5a5
+THREAD_ID: thread_6e5aeb5c
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:06:01] dak+gord-system
+TASK_ID: task_ec1689cc
+THREAD_ID: thread_72460389
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:06:01] dak+gord-system
+TASK_ID: task_9ff94c0b
+THREAD_ID: thread_64d456af
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:01:18] dak+gord-system
+TASK_ID: task_93647ac7
+THREAD_ID: thread_b18c2d77
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 10:01:18] dak+gord-system
+TASK_ID: task_66ff6ab6
+THREAD_ID: thread_3e8c3319
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:56:00] dak+gord-system
+TASK_ID: task_b9d43eaf
+THREAD_ID: thread_6005d75f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:56:00] dak+gord-system
+TASK_ID: task_e23bd64c
+THREAD_ID: thread_1e9e372e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:50:57] dak+gord-system
+TASK_ID: task_80f8efc2
+THREAD_ID: thread_0ea92d7b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:50:56] dak+gord-system
+TASK_ID: task_69a43f6e
+THREAD_ID: thread_158752cd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:45:10] dak+gord-system
+TASK_ID: task_adc89093
+THREAD_ID: thread_df2cb69f
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:45:10] dak+gord-system
+TASK_ID: task_60da0545
+THREAD_ID: thread_89a842e5
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:40:32] dak+gord-system
+TASK_ID: task_4f11f7b8
+THREAD_ID: thread_76fd1bc6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:40:32] dak+gord-system
+TASK_ID: task_0c513c12
+THREAD_ID: thread_97e36b81
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:35:53] dak+gord-system
+TASK_ID: task_7b9bc758
+THREAD_ID: thread_4b8a8717
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:35:52] dak+gord-system
+TASK_ID: task_7ee12e9f
+THREAD_ID: thread_985180f1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:30:13] dak+gord-system
+TASK_ID: task_ad61cb36
+THREAD_ID: thread_f0780d54
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:30:12] dak+gord-system
+TASK_ID: task_e477ebd2
+THREAD_ID: thread_e5739266
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:24:23] dak+gord-system
+TASK_ID: task_e576300b
+THREAD_ID: thread_23431466
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:24:22] dak+gord-system
+TASK_ID: task_84e1d261
+THREAD_ID: thread_e322c215
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:19:20] dak+gord-system
+TASK_ID: task_1bdc5be9
+THREAD_ID: thread_4a30b27e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:19:19] dak+gord-system
+TASK_ID: task_3188a431
+THREAD_ID: thread_eb19aee3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:14:01] dak+gord-system
+TASK_ID: task_8ca6ce65
+THREAD_ID: thread_4bcb034e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:14:00] dak+gord-system
+TASK_ID: task_ea7e6d91
+THREAD_ID: thread_bb2dd8fc
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:08:41] dak+gord-system
+TASK_ID: task_7ff495cc
+THREAD_ID: thread_2fa52c4e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:08:40] dak+gord-system
+TASK_ID: task_9a84661c
+THREAD_ID: thread_b71204c3
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:04:45] dak+gord-system
+TASK_ID: task_dbbe0912
+THREAD_ID: thread_699f35d6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 09:04:44] dak+gord-system
+TASK_ID: task_1139c804
+THREAD_ID: thread_3d54ef7b
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:59:23] dak+gord-system
+TASK_ID: task_5c32dee9
+THREAD_ID: thread_5f8e5977
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:59:22] dak+gord-system
+TASK_ID: task_4f1434ca
+THREAD_ID: thread_a3476c33
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:54:22] dak+gord-system
+TASK_ID: task_c629aefd
+THREAD_ID: thread_3e9a33f7
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:54:22] dak+gord-system
+TASK_ID: task_5c5df58d
+THREAD_ID: thread_cdc0f5d6
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:50:01] dak+gord-system
+TASK_ID: task_f6359764
+THREAD_ID: thread_ce8787b2
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:50:00] dak+gord-system
+TASK_ID: task_7527a1ff
+THREAD_ID: thread_408370d1
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:42:10] dak+gord-system
+TASK_ID: task_6cb4d36d
+THREAD_ID: thread_621d48a4
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:42:09] dak+gord-system
+TASK_ID: task_8a187ba4
+THREAD_ID: thread_4d894ec4
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:39:01] dak+gord-system
+TASK_ID: task_bf1bc05a
+THREAD_ID: thread_3ffd0b76
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:39:01] dak+gord-system
+TASK_ID: task_9cac3c71
+THREAD_ID: thread_b2a4d417
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:34:27] dak+gord-system
+TASK_ID: task_f9e30a0f
+THREAD_ID: thread_32151a77
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:34:26] dak+gord-system
+TASK_ID: task_73ee019c
+THREAD_ID: thread_7e546c22
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:25:56] dak+gord-system
+TASK_ID: task_938baa00
+THREAD_ID: thread_0564dc8c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:25:55] dak+gord-system
+TASK_ID: task_bbb9facd
+THREAD_ID: thread_c5e72245
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:23:51] dak+gord-system
+TASK_ID: task_6c1cdbc6
+THREAD_ID: thread_91efe7d3
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:23:51] dak+gord-system
+TASK_ID: task_0233a6a0
+THREAD_ID: thread_aece9761
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:15:31] dak+gord-system
+TASK_ID: task_11a14580
+THREAD_ID: thread_54d4751e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:15:30] dak+gord-system
+TASK_ID: task_c61ece8c
+THREAD_ID: thread_a049c780
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:10:14] dak+gord-system
+TASK_ID: task_9c3aba5e
+THREAD_ID: thread_a7d27176
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:10:13] dak+gord-system
+TASK_ID: task_b28f4469
+THREAD_ID: thread_95aa5932
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:08:52] dak+gord-system
+TASK_ID: task_f8d54169
+THREAD_ID: thread_e585b58c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:08:51] dak+gord-system
+TASK_ID: task_2cded7a9
+THREAD_ID: thread_1cfb3247
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:03:01] dak+gord-system
+TASK_ID: task_499e818e
+THREAD_ID: thread_73c9ffef
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 08:03:01] dak+gord-system
+TASK_ID: task_76e06d64
+THREAD_ID: thread_1c385296
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:55:01] dak+gord-system
+TASK_ID: task_580c56d3
+THREAD_ID: thread_669bbd9b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:55:00] dak+gord-system
+TASK_ID: task_5b879b8a
+THREAD_ID: thread_11f300e2
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:49:51] dak+gord-system
+TASK_ID: task_e19a528f
+THREAD_ID: thread_933bd9c6
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:49:50] dak+gord-system
+TASK_ID: task_d5fb89df
+THREAD_ID: thread_2b536472
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:47:20] dak+gord-system
+TASK_ID: task_426fd4a9
+THREAD_ID: thread_30b00d0e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:47:19] dak+gord-system
+TASK_ID: task_5f3309a7
+THREAD_ID: thread_074cd074
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:39:48] dak+gord-system
+TASK_ID: task_dd457de6
+THREAD_ID: thread_71c319b7
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:39:48] dak+gord-system
+TASK_ID: task_cf7db43e
+THREAD_ID: thread_d026f36e
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:36:57] dak+gord-system
+TASK_ID: task_e9145611
+THREAD_ID: thread_5e5363cb
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:36:57] dak+gord-system
+TASK_ID: task_f050cb96
+THREAD_ID: thread_7e2037d7
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:29:35] dak+gord-system
+TASK_ID: task_26f1c200
+THREAD_ID: thread_6eeffffd
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:29:34] dak+gord-system
+TASK_ID: task_8c0ccdf7
+THREAD_ID: thread_559ef95d
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:24:22] dak+gord-system
+TASK_ID: task_33c8fed1
+THREAD_ID: thread_f2046753
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:24:21] dak+gord-system
+TASK_ID: task_ae2f686b
+THREAD_ID: thread_ba840f03
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:18:36] dak+gord-system
+TASK_ID: task_62fab23f
+THREAD_ID: thread_db4ccd3b
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:18:35] dak+gord-system
+TASK_ID: task_c2bd66a9
+THREAD_ID: thread_497105c8
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:13:04] dak+gord-system
+TASK_ID: task_2f7dee4d
+THREAD_ID: thread_2d15260c
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:13:04] dak+gord-system
+TASK_ID: task_2d62a50f
+THREAD_ID: thread_c76a6707
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:07:57] dak+gord-system
+TASK_ID: task_a3e36ea2
+THREAD_ID: thread_feb3590a
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:07:56] dak+gord-system
+TASK_ID: task_34279e41
+THREAD_ID: thread_acb7f950
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:02:37] dak+gord-system
+TASK_ID: task_b0efb975
+THREAD_ID: thread_a679a4e5
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 07:02:37] dak+gord-system
+TASK_ID: task_eef7eaf5
+THREAD_ID: thread_4cb4e8c9
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:57:14] dak+gord-system
+TASK_ID: task_8b7250d5
+THREAD_ID: thread_89942570
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:57:14] dak+gord-system
+TASK_ID: task_d687fdb0
+THREAD_ID: thread_0465b0bd
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:51:41] dak+gord-system
+TASK_ID: task_36a873d2
+THREAD_ID: thread_a2fb9f72
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:51:40] dak+gord-system
+TASK_ID: task_02e98b9e
+THREAD_ID: thread_e28c2700
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:22:31] dak+gord-system
+TASK_ID: task_b4a64f76
+THREAD_ID: thread_4eeeca5e
+RUN_TYPE: vision_cycle
+ZIEL: Hintergrundlauf fuer vision_cycle
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---
+[2026-04-03 06:22:30] dak+gord-system
+TASK_ID: task_13ffc837
+THREAD_ID: thread_cfa1d40a
+RUN_TYPE: neugier_scan
+ZIEL: Hintergrundlauf fuer neugier_scan
+STATUS: fertig
+SCHRITT: done
+FEHLER: None
+---

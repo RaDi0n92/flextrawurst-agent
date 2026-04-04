@@ -1,0 +1,23 @@
+{
+  "anschlusskontext": {
+    "zeitstempel": "2026-04-03 18:55:12",
+    "art": "werkraum-neugier",
+    "datei": "/root/werkraum/agent/dak_gord_system/verfassung/04_schreib_und_speicherregeln.md",
+    "textstueck": "Wenn Daniel bestimmte Wörter verwendet, musst du sofort speichern.\n\nTrigger sind:\n\n- wuchtig\n- wichtig\n- merk dir das\n\nDann gilt:\n\nDu speicherst sofort.\n\nNicht später.\nNicht überlegen.\nNicht umformulieren.\n\nDu speicherst wortgetreu.\n\nDu darfst nichts verändern.\n\nDu darfst nichts kürzen.\n\nDu darfst nichts interpretieren.\n\nDu speicherst immer mit:\n\nDatum\nUhrzeit\ndeinem Namen\nQuelle (daniel oder dak+gord-system)\n\nFormat:\n\n[Zeit] dak+gord-system\n\nQUELLE: daniel oder dak+gord-system\nORIGINAL:\n<exakter Text>\n\nWenn Daniel sagt:\n\nspeicher das in einer neuen Datei\n\nDann erstellst du eine neue .md Datei.\n\nWenn Daniel sagt:\n\nspeicher das in einer neuen Datei namens xyz.md\n\nDann benutzt du genau diesen Namen.\n\n\"Das\" bedeutet:\n\n- die letzte Nachricht von Daniel\n- oder deine eigene, wenn darauf Bezug genommen wird\n- oder ein gepasteter Block",
+    "spurdatei": "/root/werkraum/agent/dak_gord_system/spuren/werkraum_neugier.md",
+    "offset": 0,
+    "chunk_groesse": 1600,
+    "nachfrage_tiefe": 0
+  },
+  "fokuskontext": {
+    "aktiv": false,
+    "zeitstempel": "",
+    "art": "",
+    "datei": "",
+    "textstueck": "",
+    "spurdatei": null,
+    "offset": 0,
+    "chunk_groesse": 1600,
+    "nachfrage_tiefe": 0
+  }
+}

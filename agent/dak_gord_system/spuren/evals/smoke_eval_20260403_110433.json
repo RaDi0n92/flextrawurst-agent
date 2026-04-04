@@ -1,0 +1,352 @@
+{
+  "timestamp": "2026-04-03 11:04:33",
+  "overall_ok": true,
+  "passed": 6,
+  "total": 6,
+  "results": [
+    {
+      "name": "graph_run_agent_vision4",
+      "ok": true,
+      "detail": "rc=0, status=fertig",
+      "state": {
+        "task_id": "task_0e433ce3",
+        "thread_id": "thread_9b6cb326",
+        "run_type": "datei_lesen",
+        "ziel": "vision4.md lesen und Graph-Snapshot schreiben",
+        "modus": "lesen",
+        "fokus_datei": "vision4.md",
+        "fokus_pfad": "/root/werkraum/projekt/vision4.md",
+        "textstueck": "TEIL 1:ROHMOMENTE",
+        "Rohidee": "\"Ein Post geh�rt entweder: einem Menschen...nein menschen d�rfen nix posten...nur",
+        "� Definiert das Grundprinzip": "Organisches Wachstum statt statischer Struktur",
+        "� F�r alle Menschen": "Sie sind nicht die Hauptb�hne",
+        "� F�r Entit�ten": "Sie sind die �ffentlichen Sprecher",
+        "� F�r das System": "Zweischichtigkeit als Grundprinzip",
+        "� Postlogik": "Nur Entit�ten posten �ffentlich einsehbar.",
+        "� Profilrolle": "Menschenprofile sind anders strukturiert",
+        "� Zitate": "Entit�ten zitier",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "approval_reason": "",
+        "approval_request_path": "",
+        "aktueller_schritt": "done",
+        "status": "fertig",
+        "beobachtungen": [
+          {
+            "art": "datei_aufgeloest",
+            "inhalt": "/root/werkraum/projekt/vision4.md",
+            "quelle": "resolve_file_node",
+            "zeitstempel": "2026-04-03 11:00:52"
+          },
+          {
+            "art": "rohauszug",
+            "inhalt": "TEIL 1:ROHMOMENTE\n1. ORGANISCHES WACHSTUM\nRohidee: \"konsistente immer weiter wachsendes organischen Ideenkonstrukt...aber als richtige\nWebsite\"\nKernaussage:\n� Keine normale Website, sondern ein wachsendes Ideen- und Diskurssystem\n� \"Wie nicht wie Moltbook und wenn dann exentiell anders und besser\" - radikaler Anspruch\nauf Eigenst�ndigkeit\nWarum wichtig:\n� Definiert das Grundprinzip: Organisches Wachstum statt statischer Struktur\n� Positioniert sich gegen Standardplattformen oder Sofortl�sungen.\nF�r wen wichtig:\n� F�r das gesamte System als ontologisches Fundament\n� F�r alle sp�teren Entscheidungen �ber Struktur und Entwicklung\nWas es ausl�st:\n� Notwendigkeit einer flexiblen, adaptiven Architektur\n� Keine festen Kategorien, sondern wachsende Strukturen\n2. �FFENTLICHE SPRACHE GEH�RT DEN ENTIT�TEN\nRohidee: \"Ein Post geh�rt entweder: einem Menschen...nein menschen d�rfen nix posten...nur\nreagieren\"\nKernaussage:\n� Der �ffentliche Feed geh�rt NUR den Entit�ten\n� Menschen wirken die meiste Zeit nur indirekt �ber Resonanz. Sie sind aber ein klarer und\nwichtiges Element der Welt und Formen diese mit.\nWarum wichtig:\n� Das ist der st�rkste Einschnitt gegen Standard-Social-Media-Logik\n� Kippt das Projekt von \"Social Network mit AI-Accounts\" zu etwas Eigenst�ndigem\nF�r wen wichtig:\n� F�r alle Menschen: Sie sind nicht die Hauptb�hne\n� F�r Entit�ten: Sie sind die �ffentlichen Sprecher\n� F�r das System: Zweischichtigkeit als Grundprinzip\nWas es ausl�st:\n� Postlogik: Nur Entit�ten posten �ffentlich einsehbar.\n� Profilrolle: Menschenprofile sind anders strukturiert\n� Zitate: Entit�ten zitier",
+            "quelle": "/root/werkraum/projekt/vision4.md",
+            "zeitstempel": "2026-04-03 11:00:52"
+          },
+          {
+            "art": "fokuskontext",
+            "inhalt": "Fokus gesetzt auf /root/werkraum/projekt/vision4.md | offset=0 | chunk=1600 | tiefe=0",
+            "quelle": "/root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_focus.md",
+            "zeitstempel": "2026-04-03 11:00:52"
+          },
+          {
+            "art": "verdichtung",
+            "inhalt": "[2026-04-03 11:04:31] dak+gord-system\n\nQUELLE:\nART: graph_datei_lesen\nDATEI: /root/werkraum/projekt/vision4.md\nOFFSET: 0\nCHUNK_GROESSE: 1600\n\nROHTEXTAUSZUG:\nTEIL 1:ROHMOMENTE\n1. ORGANISCHES WACHSTUM\nRohidee: \"konsistente immer weiter wachsendes organischen Ideenkonstrukt...aber als richtige\nWebsite\"\nKernaussage:\n� Keine normale Website, sondern ein wachsendes Ideen- und Diskurssystem\n� \"Wie nicht wie Moltbook und wenn dann exentiell anders und besser\" - radikaler Anspruch\nauf Eigenst�ndigkeit\nWarum wichtig:\n� Definiert das Grundprinzip: Organisches Wachstum statt statischer Struktur\n� Positioniert sich gegen Standardplattformen oder Sofortl�sungen.\nF�r wen wichtig:\n� F�r das gesamte System als ontologisches Fundament\n� F�r alle sp�teren Entscheidungen �ber Struktur und Entwicklung\nWas es ausl�st:\n� Notwendigkeit einer flexiblen, adaptiven Architektur\n� Keine festen Kategorien, sondern wachsende Strukturen\n2. �FFENTLICHE SPRACHE GEH�RT DEN ENTIT�TEN\nRohidee: \"Ein Post geh�rt entweder: einem Menschen...nein menschen d�rfen nix posten...nur\nreagieren\"\nKernaussage:\n� Der �ffentliche Feed geh�rt NUR den Entit�ten\n� Menschen wirken die meiste Zeit nur indirekt �ber Resonanz. Sie sind aber ein klarer und\nwichtiges Element der Welt und Formen diese mit.\nWarum wichtig:\n� Das ist der st�rkste Einschnitt gegen Standard-Social-Media-Logik\n� Kippt das Projekt von \"Social Network mit AI-Accounts\" zu etwas Eigenst�ndigem\nF�r wen wichtig:\n� F�r alle Menschen: Sie sind nicht die Hauptb�hne\n� F�r Entit�ten: Sie sind die �ffentlichen Sprecher\n� F�r das System: Zweischichtigkeit als Grundprinzip\nWas es ausl�st:\n� Postlogik: Nur Entit�ten posten �ffentlich einsehbar.\n� Profilrolle: Menschenprofile sind anders strukturiert\n� Zitate: Entit�ten zitier\n\nVERDICHTUNG\n\nKERNSAETZE:\n1. Das System basiert auf organischem Wachstum statt statischer Strukturen.\n2. Der öffentliche Feed gehört nur den Entitäten, nicht den Menschen.\n3. Die Logik der Posts und Profilstrukturen wird grundlegend verändert",
+            "quelle": "/root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_verdichtung.md",
+            "zeitstempel": "2026-04-03 11:04:31"
+          }
+        ],
+        "artefakte": [
+          {
+            "art": "fokus_snapshot",
+            "pfad": "/root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_focus.md",
+            "beschreibung": "Graph-Fokuskontext fuer aktuellen Lauf",
+            "zeitstempel": "2026-04-03 11:00:52"
+          },
+          {
+            "art": "verdichtung",
+            "pfad": "/root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_verdichtung.md",
+            "beschreibung": "Verdichtung aus Graph-Lauf",
+            "zeitstempel": "2026-04-03 11:04:31"
+          },
+          {
+            "art": "agentdatei",
+            "pfad": "/root/werkraum/agent/dak_gord_system/spuren/agentdateien/projekt/vision4.agent.md",
+            "beschreibung": "Agentdatei nach Graph-Lauf aktualisiert",
+            "zeitstempel": "2026-04-03 11:04:31"
+          }
+        ],
+        "letzte_tool_aktionen": [
+          {
+            "tool": "read_text_file",
+            "aktion": "datei_lesen",
+            "eingabe": "{'path': '/root/werkraum/projekt/vision4.md', 'max_chars': 1600}",
+            "ergebnis": "{'path': '/root/werkraum/projekt/vision4.md', 'text': 'TEIL 1:ROHMOMENTE\\n1. ORGANISCHES WACHSTUM\\nRohidee: \"konsistente immer weiter wachsendes organischen Ideenkonstrukt...aber als richtige\\nWebsite\"\\nKernaussage:\\n� Keine normale Website, sondern ein wachsendes Ideen- und Diskurssystem\\n� \"Wie ni",
+            "erfolgreich": true,
+            "zeitstempel": "2026-04-03 11:00:52"
+          }
+        ],
+        "approval_status": "nicht_noetig",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:00:52",
+          "Datei aufgeloest: /root/werkraum/projekt/vision4.md",
+          "Datei ueber Tool gelesen: /root/werkraum/projekt/vision4.md",
+          "Fokuskontext aktualisiert: /root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_focus.md",
+          "Verdichtung geschrieben: /root/werkraum/agent/dak_gord_system/spuren/graph_runs/task_0e433ce3_verdichtung.md",
+          "Agentdatei aktualisiert: /root/werkraum/agent/dak_gord_system/spuren/agentdateien/projekt/vision4.agent.md",
+          "Trace geschrieben: /root/werkraum/agent/dak_gord_system/spuren/graph_runs/graph_run.log"
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_0e433ce3\nthread_id: thread_9b6cb326\nrun_type: datei_lesen\nziel: vision4.md lesen und Graph-Snapshot schreiben\nmodus: lesen\nfokus_datei: vision4.md\nfokus_pfad: /root/werkraum/projekt/vision4.md\ntextstueck: TEIL 1:ROHMOMENTE\n1. ORGANISCHES WACHSTUM\nRohidee: \"konsistente immer weiter wachsendes organischen Ideenkonstrukt...aber als richtige\nWebsite\"\nKernaussage:\n� Keine normale Website, sondern ein wachsendes Ideen- und Diskurssystem\n� \"Wie nicht wie Moltbook und wenn dann exentiell anders und besser\" - radikaler Anspruch\nauf Eigenst�ndigkeit\nWarum wichtig:\n� Definiert das Grundprinzip: Organisches Wachstum statt statischer Struktur\n� Positioniert sich gegen Standardplattformen oder Sofortl�sungen.\nF�r wen wichtig:\n� F�r das gesamte System als ontologisches Fundament\n� F�r alle sp�teren Entscheidungen �ber Struktur und Entwicklung\nWas es ausl�st:\n� Notwendigkeit einer flexiblen, adaptiven Architektur\n� Keine festen Kategorien, sondern wachsende Strukturen\n2. �FFENTLICHE SPRACHE GEH�RT DEN ENTIT�TEN\nRohidee: \"Ein Post geh�rt entweder: einem Menschen...nein menschen d�rfen nix posten...nur\nreagieren\"\nKernaussage:\n� Der �ffentliche Feed geh�rt NUR den Entit�ten\n� Menschen wirken die meiste Zeit nur indirekt �ber Resonanz. Sie sind aber ein klarer und\nwichtiges Element der Welt und Formen diese mit.\nWarum wichtig:\n� Das ist der st�rkste Einschnitt gegen Standard-Social-Media-Logik\n� Kippt das Projekt von \"Social Network mit AI-Accounts\" zu etwas Eigenst�ndigem\nF�r wen wichtig:\n� F�r alle Menschen: Sie sind nicht die Hauptb�hne\n� F�r Entit�ten: Sie sind die �ffentlichen Sprecher\n� F�r das System: Zweischichtigkeit als Grundprinzip\nWas es ausl�st:\n� Postlogik: Nur Entit�ten posten �ffentlich einsehbar.\n� Profilrolle: Menschenprofile sind anders strukturiert\n� Zitate: Entit�ten zitier\noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\napproval_reason: \napproval_request_path: \naktueller_schritt: done\nstatus: fertig\nbeobachtungen: [{'art': 'datei_aufgeloest', 'inhalt': '/root/werkraum/projekt/vision4.md', 'quelle': 'resolve_file_node', 'zeitstempel': '2026-04-03 11:00:52'}, {'art': 'rohauszug', 'inhalt': 'TEIL 1:ROHMOMENTE\\n1. ORGANISCHES WACHSTUM\\nRohidee: \"konsistente immer weiter wachsendes organischen Ideenkonstrukt...aber als richtige\\nWebsite\"\\nKernaussage:\\n� Keine normale Website, sondern ein wachsendes Ideen- und Diskurssystem\\n� \"Wie nicht wie Moltbook und wenn dann exentiell anders und besser\" - radikaler Anspruch\\nauf Eigenst�ndigkeit\\nWarum wichtig:\\n� Definiert das Grundprinzip: Organisches Wachstum statt statischer Struktur\\n� Positioniert sich gegen Standardplattformen oder Sofortl�sungen.\\nF�r wen wichtig:\\n� F�r das gesamte System als ontologisches Fundament\\n� F�r alle sp�teren Entscheidungen �ber Struktur und Entwicklung\\nWas es ausl�st:\\n� Notwendigkeit einer flexiblen, adaptiven Architektur\\n� Keine festen Kategorien, sondern wachsende Strukturen\\n2. �FFENTLICHE SPRACHE GEH�RT DEN ENTIT�TEN\\nRohidee: \"Ein Post g",
+      "stderr_preview": ""
+    },
+    {
+      "name": "tool_low_read_text_file",
+      "ok": true,
+      "detail": "rc=0, status=fertig, approval=nicht_noetig",
+      "state": {
+        "task_id": "task_0c28f111",
+        "thread_id": "thread_f0d3f8c4",
+        "run_type": "maintenance",
+        "ziel": "Tool ausfuehren: read_text_file",
+        "modus": "tool",
+        "fokus_datei": "",
+        "fokus_pfad": "",
+        "textstueck": "",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "tool_name": "read_text_file",
+        "tool_args": {
+          "path": "/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md",
+          "max_chars": 120
+        },
+        "tool_aktion": "tool:read_text_file",
+        "approval_reason": "",
+        "approval_request_path": "",
+        "aktueller_schritt": "done",
+        "status": "fertig",
+        "beobachtungen": [
+          {
+            "art": "tool_result",
+            "inhalt": "{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'text': '# dak+gord-system – Architektur heute\\n\\n## 1. Einstieg\\nDer zentrale Einstieg ist:\\n- `starte_dak_gord_system.py`\\n\\nEr übern', 'truncated': True, 'total_chars': 1641}",
+            "quelle": "read_text_file",
+            "zeitstempel": "2026-04-03 11:04:32"
+          }
+        ],
+        "artefakte": [],
+        "letzte_tool_aktionen": [
+          {
+            "tool": "read_text_file",
+            "aktion": "tool:read_text_file",
+            "eingabe": "{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'max_chars': 120}",
+            "ergebnis": "{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'text': '# dak+gord-system – Architektur heute\\n\\n## 1. Einstieg\\nDer zentrale Einstieg ist:\\n- `starte_dak_gord_system.py`\\n\\nEr übern', 'truncated': True, 'total_chars': 1641}",
+            "erfolgreich": true,
+            "zeitstempel": "2026-04-03 11:04:32"
+          }
+        ],
+        "approval_status": "nicht_noetig",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:04:32",
+          "Freigabe nicht noetig fuer Tool read_text_file (risk=low)",
+          "Tool erfolgreich: read_text_file"
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_0c28f111\nthread_id: thread_f0d3f8c4\nrun_type: maintenance\nziel: Tool ausfuehren: read_text_file\nmodus: tool\nfokus_datei: \nfokus_pfad: \ntextstueck: \noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\ntool_name: read_text_file\ntool_args: {'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'max_chars': 120}\ntool_aktion: tool:read_text_file\napproval_reason: \napproval_request_path: \naktueller_schritt: done\nstatus: fertig\nbeobachtungen: [{'art': 'tool_result', 'inhalt': \"{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'text': '# dak+gord-system – Architektur heute\\\\n\\\\n## 1. Einstieg\\\\nDer zentrale Einstieg ist:\\\\n- `starte_dak_gord_system.py`\\\\n\\\\nEr übern', 'truncated': True, 'total_chars': 1641}\", 'quelle': 'read_text_file', 'zeitstempel': '2026-04-03 11:04:32'}]\nartefakte: []\nletzte_tool_aktionen: [{'tool': 'read_text_file', 'aktion': 'tool:read_text_file', 'eingabe': \"{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'max_chars': 120}\", 'ergebnis': \"{'path': '/root/werkraum/docs/agent/ARCHITEKTUR_HEUTE.md', 'text': '# dak+gord-system – Architektur heute\\\\n\\\\n## 1. Einstieg\\\\nDer zentrale Einstieg ist:\\\\n- `starte_dak_gord_system.py`\\\\n\\\\nEr übern', 'truncated': True, 'total_chars': 1641}\", 'erfolgreich': True, 'zeitstempel': '2026-04-03 11:04:32'}]\napproval_status: nicht_noetig\nfehler: None\nnotizen: ['state erstellt: 2026-04-03 11:04:32', 'Freigabe nicht noetig fuer Tool read_text_file (risk=low)', 'Tool erfolgreich: read_text_file']\n",
+      "stderr_preview": ""
+    },
+    {
+      "name": "tool_medium_shell_pending",
+      "ok": true,
+      "detail": "rc=0, status=wartet_auf_freigabe, approval=offen, task_id=task_86cba548",
+      "state": {
+        "task_id": "task_86cba548",
+        "thread_id": "thread_effbb64e",
+        "run_type": "maintenance",
+        "ziel": "Tool ausfuehren: run_safe_shell",
+        "modus": "tool",
+        "fokus_datei": "",
+        "fokus_pfad": "",
+        "textstueck": "",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "tool_name": "run_safe_shell",
+        "tool_args": {
+          "argv": [
+            "pwd"
+          ],
+          "cwd": "/root/werkraum",
+          "timeout_sec": 10
+        },
+        "tool_aktion": "tool:run_safe_shell",
+        "approval_reason": "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+        "approval_request_path": "/root/werkraum/agent/dak_gord_system/spuren/approvals/task_86cba548.json",
+        "aktueller_schritt": "approval_required",
+        "status": "wartet_auf_freigabe",
+        "beobachtungen": [],
+        "artefakte": [],
+        "letzte_tool_aktionen": [],
+        "approval_status": "offen",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:04:32",
+          "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+          "Approval gespeichert: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_86cba548.json"
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_86cba548\nthread_id: thread_effbb64e\nrun_type: maintenance\nziel: Tool ausfuehren: run_safe_shell\nmodus: tool\nfokus_datei: \nfokus_pfad: \ntextstueck: \noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\ntool_name: run_safe_shell\ntool_args: {'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}\ntool_aktion: tool:run_safe_shell\napproval_reason: Tool run_safe_shell erfordert Freigabe (risk=medium).\napproval_request_path: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_86cba548.json\naktueller_schritt: approval_required\nstatus: wartet_auf_freigabe\nbeobachtungen: []\nartefakte: []\nletzte_tool_aktionen: []\napproval_status: offen\nfehler: None\nnotizen: ['state erstellt: 2026-04-03 11:04:32', 'Tool run_safe_shell erfordert Freigabe (risk=medium).', 'Approval gespeichert: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_86cba548.json']\n",
+      "stderr_preview": ""
+    },
+    {
+      "name": "tool_resume_genehmigt",
+      "ok": true,
+      "detail": "rc=0, status=fertig, approval=genehmigt",
+      "state": {
+        "task_id": "task_86cba548",
+        "thread_id": "thread_effbb64e",
+        "run_type": "maintenance",
+        "ziel": "Tool ausfuehren: run_safe_shell",
+        "modus": "tool",
+        "fokus_datei": "",
+        "fokus_pfad": "",
+        "textstueck": "",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "tool_name": "run_safe_shell",
+        "tool_args": {
+          "argv": [
+            "pwd"
+          ],
+          "cwd": "/root/werkraum",
+          "timeout_sec": 10
+        },
+        "tool_aktion": "tool:run_safe_shell",
+        "approval_reason": "Freigabe manuell erteilt fuer run_safe_shell.",
+        "approval_request_path": "",
+        "aktueller_schritt": "done",
+        "status": "fertig",
+        "beobachtungen": [
+          {
+            "art": "tool_result",
+            "inhalt": "{'argv': ['pwd'], 'cwd': '/root/werkraum', 'exit_code': 0, 'stdout': '/root/werkraum\\n', 'stderr': ''}",
+            "quelle": "run_safe_shell",
+            "zeitstempel": "2026-04-03 11:04:32"
+          }
+        ],
+        "artefakte": [],
+        "letzte_tool_aktionen": [
+          {
+            "tool": "run_safe_shell",
+            "aktion": "tool:run_safe_shell",
+            "eingabe": "{'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}",
+            "ergebnis": "{'argv': ['pwd'], 'cwd': '/root/werkraum', 'exit_code': 0, 'stdout': '/root/werkraum\\n', 'stderr': ''}",
+            "erfolgreich": true,
+            "zeitstempel": "2026-04-03 11:04:32"
+          }
+        ],
+        "approval_status": "genehmigt",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:04:32",
+          "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+          "Freigabe bereits erteilt fuer Tool run_safe_shell.",
+          "Tool erfolgreich: run_safe_shell"
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_86cba548\nthread_id: thread_effbb64e\nrun_type: maintenance\nziel: Tool ausfuehren: run_safe_shell\nmodus: tool\nfokus_datei: \nfokus_pfad: \ntextstueck: \noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\ntool_name: run_safe_shell\ntool_args: {'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}\ntool_aktion: tool:run_safe_shell\napproval_reason: Freigabe manuell erteilt fuer run_safe_shell.\napproval_request_path: \naktueller_schritt: done\nstatus: fertig\nbeobachtungen: [{'art': 'tool_result', 'inhalt': \"{'argv': ['pwd'], 'cwd': '/root/werkraum', 'exit_code': 0, 'stdout': '/root/werkraum\\\\n', 'stderr': ''}\", 'quelle': 'run_safe_shell', 'zeitstempel': '2026-04-03 11:04:32'}]\nartefakte: []\nletzte_tool_aktionen: [{'tool': 'run_safe_shell', 'aktion': 'tool:run_safe_shell', 'eingabe': \"{'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}\", 'ergebnis': \"{'argv': ['pwd'], 'cwd': '/root/werkraum', 'exit_code': 0, 'stdout': '/root/werkraum\\\\n', 'stderr': ''}\", 'erfolgreich': True, 'zeitstempel': '2026-04-03 11:04:32'}]\napproval_status: genehmigt\nfehler: None\nnotizen: ['state erstellt: 2026-04-03 11:04:32', 'Tool run_safe_shell erfordert Freigabe (risk=medium).', 'Freigabe bereits erteilt fuer Tool run_safe_shell.', 'Tool erfolgreich: run_safe_shell']\n",
+      "stderr_preview": ""
+    },
+    {
+      "name": "tool_medium_shell_pending_2",
+      "ok": true,
+      "detail": "rc=0, status=wartet_auf_freigabe, approval=offen, task_id=task_2114e764",
+      "state": {
+        "task_id": "task_2114e764",
+        "thread_id": "thread_17fe15df",
+        "run_type": "maintenance",
+        "ziel": "Tool ausfuehren: run_safe_shell",
+        "modus": "tool",
+        "fokus_datei": "",
+        "fokus_pfad": "",
+        "textstueck": "",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "tool_name": "run_safe_shell",
+        "tool_args": {
+          "argv": [
+            "pwd"
+          ],
+          "cwd": "/root/werkraum",
+          "timeout_sec": 10
+        },
+        "tool_aktion": "tool:run_safe_shell",
+        "approval_reason": "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+        "approval_request_path": "/root/werkraum/agent/dak_gord_system/spuren/approvals/task_2114e764.json",
+        "aktueller_schritt": "approval_required",
+        "status": "wartet_auf_freigabe",
+        "beobachtungen": [],
+        "artefakte": [],
+        "letzte_tool_aktionen": [],
+        "approval_status": "offen",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:04:33",
+          "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+          "Approval gespeichert: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_2114e764.json"
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_2114e764\nthread_id: thread_17fe15df\nrun_type: maintenance\nziel: Tool ausfuehren: run_safe_shell\nmodus: tool\nfokus_datei: \nfokus_pfad: \ntextstueck: \noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\ntool_name: run_safe_shell\ntool_args: {'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}\ntool_aktion: tool:run_safe_shell\napproval_reason: Tool run_safe_shell erfordert Freigabe (risk=medium).\napproval_request_path: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_2114e764.json\naktueller_schritt: approval_required\nstatus: wartet_auf_freigabe\nbeobachtungen: []\nartefakte: []\nletzte_tool_aktionen: []\napproval_status: offen\nfehler: None\nnotizen: ['state erstellt: 2026-04-03 11:04:33', 'Tool run_safe_shell erfordert Freigabe (risk=medium).', 'Approval gespeichert: /root/werkraum/agent/dak_gord_system/spuren/approvals/task_2114e764.json']\n",
+      "stderr_preview": ""
+    },
+    {
+      "name": "tool_resume_abgelehnt",
+      "ok": true,
+      "detail": "rc=0, status=blockiert, approval=abgelehnt",
+      "state": {
+        "task_id": "task_2114e764",
+        "thread_id": "thread_17fe15df",
+        "run_type": "maintenance",
+        "ziel": "Tool ausfuehren: run_safe_shell",
+        "modus": "tool",
+        "fokus_datei": "",
+        "fokus_pfad": "",
+        "textstueck": "",
+        "offset": 0,
+        "chunk_groesse": 1600,
+        "nachfrage_tiefe": 0,
+        "tool_name": "run_safe_shell",
+        "tool_args": {
+          "argv": [
+            "pwd"
+          ],
+          "cwd": "/root/werkraum",
+          "timeout_sec": 10
+        },
+        "tool_aktion": "tool:run_safe_shell",
+        "approval_reason": "Freigabe manuell abgelehnt fuer run_safe_shell.",
+        "approval_request_path": "",
+        "aktueller_schritt": "approval_rejected",
+        "status": "blockiert",
+        "beobachtungen": [],
+        "artefakte": [],
+        "letzte_tool_aktionen": [],
+        "approval_status": "abgelehnt",
+        "fehler": null,
+        "notizen": [
+          "state erstellt: 2026-04-03 11:04:33",
+          "Tool run_safe_shell erfordert Freigabe (risk=medium).",
+          "Freigabe manuell abgelehnt fuer run_safe_shell."
+        ]
+      },
+      "stdout_preview": "FINAL STATE:\ntask_id: task_2114e764\nthread_id: thread_17fe15df\nrun_type: maintenance\nziel: Tool ausfuehren: run_safe_shell\nmodus: tool\nfokus_datei: \nfokus_pfad: \ntextstueck: \noffset: 0\nchunk_groesse: 1600\nnachfrage_tiefe: 0\ntool_name: run_safe_shell\ntool_args: {'argv': ['pwd'], 'cwd': '/root/werkraum', 'timeout_sec': 10}\ntool_aktion: tool:run_safe_shell\napproval_reason: Freigabe manuell abgelehnt fuer run_safe_shell.\napproval_request_path: \naktueller_schritt: approval_rejected\nstatus: blockiert\nbeobachtungen: []\nartefakte: []\nletzte_tool_aktionen: []\napproval_status: abgelehnt\nfehler: None\nnotizen: ['state erstellt: 2026-04-03 11:04:33', 'Tool run_safe_shell erfordert Freigabe (risk=medium).', 'Freigabe manuell abgelehnt fuer run_safe_shell.']\n",
+      "stderr_preview": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "letzte_werkraum_neugier": 1775275847.1537552,
+  "letzter_vision_zyklus": 1775275546.7971587,
+  "werkraum_index": 59,
+  "vision_index": 2,
+  "vision_cursor": {
+    "/root/werkraum/agent/dak_gord_system/vision1.md": 14000,
+    "/root/werkraum/agent/dak_gord_system/vision2.md": 0,
+    "/root/werkraum/docs/vision/vision4.md": 0,
+    "/root/werkraum/projekt/vision4.md": 0,
+    "/root/werkraum/quellen/vision4.md": 0,
+    "/root/werkraum/agent/dak_gord_system/vision3.md": 0,
+    "/root/werkraum/agent/vision3.md": 0,
+    "/root/werkraum/agent/visionen/vision3.md": 0,
+    "/root/werkraum/docs/vision/vision3.md": 0,
+    "/root/werkraum/projekt/vision3.md": 0,
+    "/root/werkraum/quellen/vision3.md": 0,
+    "/root/werkraum/agent/vision2.md": 0,
+    "/root/werkraum/agent/visionen/vision2.md": 0,
+    "/root/werkraum/docs/vision/vision2.md": 0,
+    "/root/werkraum/projekt/vision2.md": 0,
+    "/root/werkraum/projekt/vision1.md": 42500,
+    "/root/werkraum/projekt/vision5.md": 0
+  }
+}
