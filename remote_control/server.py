@@ -10,6 +10,7 @@ import asyncio
 import fcntl
 import os
 import pty
+import shutil
 import signal
 import struct
 import termios
@@ -40,11 +41,31 @@ def _set_pty_size(fd: int, cols: int, rows: int) -> None:
     fcntl.ioctl(fd, termios.TIOCSWINSZ, struct.pack("HHHH", rows, cols, 0, 0))
 
 
+def _find_claude() -> str:
+    # Honour explicit override first
+    explicit = os.environ.get("CLAUDE_BIN")
+    if explicit:
+        return explicit
+    found = shutil.which("claude")
+    if found:
+        return found
+    # Common install locations as fallback
+    for candidate in [
+        "/root/.local/bin/claude",
+        "/usr/local/bin/claude",
+        "/usr/bin/claude",
+    ]:
+        if os.path.isfile(candidate):
+            return candidate
+    raise RuntimeError("claude binary not found — set CLAUDE_BIN=/path/to/claude")
+
+
 async def _spawn_claude() -> None:
     global master_fd, child_pid
+    claude_bin = _find_claude()
     pid, fd = pty.fork()
     if pid == 0:
-        os.execvp("claude", ["claude"])
+        os.execv(claude_bin, [claude_bin])
         os._exit(1)
     master_fd = fd
     child_pid = pid
