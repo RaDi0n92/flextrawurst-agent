@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code Remote</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Auth screen ── */
+    #auth-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 24px;
+    }
+    #auth-screen h1 { font-size: 22px; color: #a78bfa; letter-spacing: 1px; }
+    #auth-screen p  { font-size: 13px; color: #888; }
+    .auth-box {
+      background: #16213e;
+      border: 1px solid #2d3561;
+      border-radius: 10px;
+      padding: 32px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 340px;
+    }
+    .auth-box label { font-size: 12px; color: #aaa; text-transform: uppercase; letter-spacing: .5px; }
+    .auth-box input {
+      background: #0f3460;
+      border: 1px solid #2d3561;
+      color: #e0e0e0;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .auth-box input:focus { border-color: #7c3aed; }
+    .auth-box button {
+      background: #7c3aed;
+      color: #fff;
+      border: none;
+      padding: 11px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .auth-box button:hover { background: #6d28d9; }
+    #auth-error { color: #f87171; font-size: 13px; display: none; }
+
+    /* ── Terminal screen ── */
+    #terminal-screen {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    header {
+      background: #16213e;
+      border-bottom: 1px solid #2d3561;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 { font-size: 13px; color: #a78bfa; font-weight: 600; flex: 1; }
+
+    .badge {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+    .badge.connected    { background: #14532d; color: #4ade80; }
+    .badge.disconnected { background: #450a0a; color: #f87171; }
+    .badge.connecting   { background: #1e3a5f; color: #60a5fa; }
+
+    .btn-sm {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1px solid #2d3561;
+      background: #0f3460;
+      color: #ccc;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .btn-sm:hover { background: #1d4a8a; }
+    .btn-sm.danger { border-color: #7f1d1d; background: #450a0a; color: #f87171; }
+    .btn-sm.danger:hover { background: #7f1d1d; }
+
+    #terminal-container {
+      flex: 1;
+      padding: 6px 4px 4px 6px;
+      overflow: hidden;
+      background: #0d0d0d;
+    }
+
+    /* Make xterm fill the container */
+    .xterm { height: 100%; }
+    .xterm-viewport { overflow-y: auto !important; }
+  </style>
+</head>
+<body>
+
+<!-- Auth Screen -->
+<div id="auth-screen">
+  <h1>Claude Code Remote</h1>
+  <div class="auth-box">
+    <label for="token-input">Access Token</label>
+    <input type="password" id="token-input" placeholder="Token eingeben…" autocomplete="current-password">
+    <div id="auth-error">Falsches Token — Verbindung abgelehnt.</div>
+    <button onclick="connect()">Verbinden</button>
+  </div>
+  <p>VPS-Terminal für Claude Code</p>
+</div>
+
+<!-- Terminal Screen -->
+<div id="terminal-screen">
+  <header>
+    <h1>Claude Code Remote</h1>
+    <span id="status-badge" class="badge disconnected">Getrennt</span>
+    <button class="btn-sm" onclick="reconnect()">Neu verbinden</button>
+    <button class="btn-sm danger" onclick="restartClaude()">Claude neu starten</button>
+    <button class="btn-sm" onclick="logout()">Abmelden</button>
+  </header>
+  <div id="terminal-container"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xterm-addon-web-links@0.9.0/lib/xterm-addon-web-links.js"></script>
+<script>
+  let ws, term, fitAddon, currentToken;
+
+  function showAuth() {
+    document.getElementById('auth-screen').style.display = 'flex';
+    document.getElementById('terminal-screen').style.display = 'none';
+  }
+
+  function showTerminal() {
+    document.getElementById('auth-screen').style.display = 'none';
+    document.getElementById('terminal-screen').style.display = 'flex';
+  }
+
+  function setStatus(state) {
+    const el = document.getElementById('status-badge');
+    const labels = { connected: 'Verbunden', disconnected: 'Getrennt', connecting: 'Verbinde…' };
+    el.textContent = labels[state] || state;
+    el.className = 'badge ' + state;
+  }
+
+  function connect() {
+    const tokenInput = document.getElementById('token-input');
+    currentToken = tokenInput.value.trim();
+    if (!currentToken) return;
+    document.getElementById('auth-error').style.display = 'none';
+    showTerminal();
+    initTerminal();
+    openWs();
+  }
+
+  function initTerminal() {
+    if (term) { term.dispose(); }
+    const container = document.getElementById('terminal-container');
+    container.innerHTML = '';
+    term = new Terminal({
+      cursorBlink: true,
+      fontSize: 14,
+      fontFamily: '"Cascadia Code", "Fira Code", "JetBrains Mono", monospace',
+      theme: {
+        background: '#0d0d0d',
+        foreground: '#e0e0e0',
+        cursor: '#a78bfa',
+        selectionBackground: '#4c1d95',
+      },
+      allowProposedApi: true,
+    });
+    fitAddon = new FitAddon.FitAddon();
+    term.loadAddon(fitAddon);
+    term.loadAddon(new WebLinksAddon.WebLinksAddon());
+    term.open(container);
+    fitAddon.fit();
+
+    term.onData(data => {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(new TextEncoder().encode(data));
+      }
+    });
+
+    window.addEventListener('resize', handleResize);
+  }
+
+  function handleResize() {
+    if (!fitAddon || !term) return;
+    fitAddon.fit();
+    sendResize();
+  }
+
+  function sendResize() {
+    if (!term || !currentToken) return;
+    fetch(`/resize?cols=${term.cols}&rows=${term.rows}&token=${encodeURIComponent(currentToken)}`, {
+      method: 'POST'
+    }).catch(() => {});
+  }
+
+  function openWs() {
+    if (ws) { try { ws.close(); } catch(e) {} }
+    setStatus('connecting');
+    const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+    ws = new WebSocket(`${proto}://${location.host}/ws?token=${encodeURIComponent(currentToken)}`);
+    ws.binaryType = 'arraybuffer';
+
+    ws.onopen = () => {
+      setStatus('connected');
+      sendResize();
+    };
+
+    ws.onmessage = (e) => {
+      term.write(new Uint8Array(e.data));
+    };
+
+    ws.onclose = (e) => {
+      if (e.code === 4001) {
+        // Auth failed — go back to login
+        showAuth();
+        document.getElementById('auth-error').style.display = 'block';
+        window.removeEventListener('resize', handleResize);
+        return;
+      }
+      setStatus('disconnected');
+      term.write('\r\n\x1b[33m[Verbindung getrennt — klick "Neu verbinden"]\x1b[0m\r\n');
+    };
+
+    ws.onerror = () => {
+      setStatus('disconnected');
+    };
+  }
+
+  function reconnect() {
+    if (!currentToken) { showAuth(); return; }
+    openWs();
+  }
+
+  async function restartClaude() {
+    if (!currentToken) return;
+    if (!confirm('Claude Code neu starten? Laufende Session wird beendet.')) return;
+    try {
+      const r = await fetch(`/restart?token=${encodeURIComponent(currentToken)}`, { method: 'POST' });
+      if (r.ok) {
+        term.write('\r\n\x1b[33m[Claude Code wurde neu gestartet]\x1b[0m\r\n');
+        setTimeout(() => openWs(), 800);
+      }
+    } catch(e) {
+      term.write('\r\n\x1b[31m[Fehler beim Neustart]\x1b[0m\r\n');
+    }
+  }
+
+  function logout() {
+    if (ws) { try { ws.close(); } catch(e) {} }
+    currentToken = null;
+    window.removeEventListener('resize', handleResize);
+    showAuth();
+    document.getElementById('token-input').value = '';
+  }
+
+  // Allow Enter key in token field
+  document.getElementById('token-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') connect();
+  });
+</script>
+</body>
+</html>
