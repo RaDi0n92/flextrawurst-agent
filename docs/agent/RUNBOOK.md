@@ -1,35 +1,32 @@
-# dak+gord-system – Runbook
+# RUNBOOK
 
-## Agent manuell starten
-```bash
-python3 /root/werkraum/starte_dak_gord_system.py
-systemctl list-timers | grep dak-neugier
-journalctl -u dak-neugier.service -n 20 --no-pager
-tail -n 20 /root/werkraum/agent/dak_gord_system/spuren/neugier_ticker.log
-sed -n '1,80p' /root/werkraum/agent/dak_gord_system/spuren/agentdateien/projekt/vision4.agent.md
-Dann **KNOWN_ISSUES.md**:
+## Teststufen
 
-```bash
-cat > /root/werkraum/docs/agent/KNOWN_ISSUES.md <<'EOF'
-# dak+gord-system – Known Issues
+### Schnelltest für MCP-Arbeit
+Nutzen bei Änderungen an:
+- MCP-Servern
+- MCP-Runtime
+- MCP-Tools
+- Approval-Verhalten für MCP-Tools
+- Serverprofilen
 
-## 1. Langer Modelllauf
-Einzelne Antworten können weiterhin langsam sein.
+Befehl:
+/root/werkraum/scripts/eval_mcp_fast.sh
 
-## 2. Chatloop ist nicht die richtige Heimat für Hintergrundarbeit
-Neugier wurde deshalb in `dak-neugier.timer` ausgelagert.
+Prüft aktuell:
+- J4: mcp_uppercase + tools/list
+- J5: mcp_write_note mit pending / genehmigt / abgelehnt
+- K: Serverprofile mock_subprocess vs. mock_subprocess_alt
 
-## 3. Dossierqualität ist gut, aber sprachliche Verengung bleibt möglich
-Der stabile Gesamtstand ist inzwischen kanonisch, kann aber später weiter verfeinert werden.
+### Voller Smoke
+Nutzen bei:
+- Meilensteinen
+- vor Commit / Backup / Release
+- Änderungen an Graph, Agentlauf, Trace, Approval, Tool-Registry oder mehreren Bereichen zugleich
 
-## 4. Kein explizites zentrales Run-State-Modell
-Es gibt Spuren und Dossiers, aber noch keinen klaren LangGraph-AgentState als dokumentierten Standard.
+Befehl:
+python3 -m agent.dak_gord_system.graph.evals.run_smoke_evals
 
-## 5. Keine echte Approval-Schicht
-Riskante Aktionen werden noch nicht systematisch unterbrochen und freigegeben.
-
-## 6. Keine Eval-Suite
-Es fehlt ein definierter Satz von Agententests.
-
-## 7. Kein sauber dokumentierter Resume-Mechanismus für Gesprächs-/Taskläufe
-Gedächtnis ist da, aber echte Run-Wiederaufnahme ist noch nicht formalisiert.
+Hinweis:
+- eval_mcp_fast.py ist der Standard für den Entwicklungsloop.
+- run_smoke_evals.py ist der langsame Gesamttest und muss nicht bei jeder MCP-Änderung laufen.
