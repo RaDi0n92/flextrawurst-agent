@@ -4,8 +4,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any, Callable, Literal
 
-
 ToolRisk = Literal["low", "medium", "high"]
+ToolTransport = Literal["local", "mcp"]
 
 
 def _ts() -> str:
@@ -42,6 +42,9 @@ class ToolDefinition:
     risk: ToolRisk
     input_schema: dict[str, Any]
     handler: ToolHandler
+    transport: ToolTransport = "local"
+    server_name: str = ""
+    remote_tool_name: str = ""
 
     def run(self, ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
         return self.handler(ctx, args)

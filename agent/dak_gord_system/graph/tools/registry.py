@@ -19,9 +19,6 @@ class ToolRegistry:
             raise KeyError(f"Unbekanntes Tool: {name}")
         return self._tools[name]
 
-    def has(self, name: str) -> bool:
-        return name in self._tools
-
     def list_names(self) -> list[str]:
         return sorted(self._tools.keys())
 
@@ -35,6 +32,9 @@ class ToolRegistry:
                     "description": tool.description,
                     "risk": tool.risk,
                     "input_schema": tool.input_schema,
+                    "transport": tool.transport,
+                    "server_name": tool.server_name,
+                    "remote_tool_name": tool.remote_tool_name,
                 }
             )
         return out

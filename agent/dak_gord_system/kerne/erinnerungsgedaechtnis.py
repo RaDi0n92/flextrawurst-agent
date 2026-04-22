@@ -33,3 +33,24 @@ class Erinnerungsgedaechtnis:
             if any(suchwort in s.lower() for s in erinnerung.schlagworte):
                 treffer.append(erinnerung)
         return treffer
+
+    def kurzbild(self) -> str:
+        if not self.erinnerungen:
+            return ""
+        zeilen = [f"- [{e.art}] {e.text}" for e in self.erinnerungen[-5:]]
+        return "ERINNERUNGEN:\n" + "\n".join(zeilen)
+
+    def speichern(self) -> None:
+        from agent.dak_gord_system.kerne.gedaechtnisspeicher import speichere_json
+        speichere_json("erinnerungen.json", [
+            {"art": e.art, "text": e.text, "schlagworte": e.schlagworte, "reifestufe": e.reifestufe}
+            for e in self.erinnerungen
+        ])
+
+    def laden(self) -> None:
+        from agent.dak_gord_system.kerne.gedaechtnisspeicher import lade_json
+        daten = lade_json("erinnerungen.json", [])
+        self.erinnerungen = [
+            Erinnerung(art=d["art"], text=d["text"], schlagworte=d.get("schlagworte", []), reifestufe=d.get("reifestufe", "roh"))
+            for d in daten
+        ]

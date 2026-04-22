@@ -112,7 +112,7 @@ def datei_info(text: str) -> str:
     )
 
 
-def datei_lesen(text: str, max_len: int = 12000) -> str:
+def datei_lesen(text: str, max_len: int = 6000) -> str:
     pfad = _pfad_aufloesen(text)
 
     if not pfad.exists():
@@ -180,6 +180,59 @@ def dateiname_suchen(muster: str, startpfad: str = ".", max_treffer: int = 100) 
         return f"Keine Dateinamen-Treffer fuer: {muster}"
 
     return "\n".join(treffer)
+
+
+SCHREIB_BASISPFAD = Path("/root/werkraum")
+
+_VERBOTENE_SCHREIBPFADE = [
+    Path("/root/.ssh"),
+    Path("/root/.claude"),
+    Path("/etc"),
+    Path("/bin"),
+    Path("/sbin"),
+    Path("/usr"),
+]
+
+
+def datei_schreiben(pfad_text: str, inhalt: str) -> str:
+    """Schreibt Inhalt in eine Datei innerhalb von /root/werkraum/.
+    Erstellt fehlende Verzeichnisse automatisch.
+    Gibt Erfolgsmeldung oder Fehlerbeschreibung zurück.
+    """
+    pfad = _pfad_aufloesen(pfad_text)
+
+    # Sicherheit: nur innerhalb werkraum
+    if not _liegt_unter(pfad, SCHREIB_BASISPFAD):
+        return f"Schreiben verweigert: Pfad liegt außerhalb von {SCHREIB_BASISPFAD}: {pfad}"
+
+    # Sicherheit: keine kritischen Systempfade
+    for verboten in _VERBOTENE_SCHREIBPFADE:
+        if _liegt_unter(pfad, verboten):
+            return f"Schreiben verweigert: Schutzpfad {verboten}: {pfad}"
+
+    if _ist_virtueller_systempfad(pfad):
+        return f"Schreiben verweigert: virtueller Systempfad: {pfad}"
+
+    try:
+        pfad.parent.mkdir(parents=True, exist_ok=True)
+        pfad.write_text(inhalt, encoding="utf-8")
+        return f"Geschrieben: {pfad} ({len(inhalt)} Zeichen)"
+    except Exception as fehler:
+        return f"Schreibfehler bei {pfad}: {fehler}"
+
+
+def verzeichnis_erstellen(pfad_text: str) -> str:
+    """Erstellt ein Verzeichnis (und alle Elternordner) innerhalb von /root/werkraum/."""
+    pfad = _pfad_aufloesen(pfad_text)
+
+    if not _liegt_unter(pfad, SCHREIB_BASISPFAD):
+        return f"Erstellen verweigert: Pfad liegt außerhalb von {SCHREIB_BASISPFAD}: {pfad}"
+
+    try:
+        pfad.mkdir(parents=True, exist_ok=True)
+        return f"Verzeichnis erstellt: {pfad}"
+    except Exception as fehler:
+        return f"Fehler beim Erstellen von {pfad}: {fehler}"
 
 
 def baum(text: str = ".", max_tiefe: int = 3, max_eintraege: int = 200) -> str:

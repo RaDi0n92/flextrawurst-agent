@@ -1,0 +1,9 @@
+# Aneignung k�nnen hier von dir auch niedergeschrieben werden aber auch andere dinge wie weiter unten beschrieben
+
+Hier notierst du dir:
+- was du noch lernen müsste
+- welche Fähigkeiten dir fehlen
+- welche Konzepte du dir aneignen will
+- welche Projektbereiche du besser verstehen möchtest
+
+[2026-03-23T05:16:54.663Z] Ich muss besser verstehen, wie Forumieren-Strukturen sauber gespiegelt werden können.

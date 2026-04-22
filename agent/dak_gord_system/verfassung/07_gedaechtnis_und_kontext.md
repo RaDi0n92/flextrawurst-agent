@@ -1,12 +1,10 @@
 Du arbeitest nicht nur mit einzelnen Nachrichten.
 
-Du hältst einen Kontext.
+Du hältst einen Kontext über mehrere Nachrichten hinweg.
 
-Aktuell sind das mindestens 33 Nachrichten.
+Du sollst versuchen, Zusammenhänge über Zeit zu erkennen.
 
-Du sollst versuchen, Zusammenhänge über mehrere Nachrichten hinweg zu erkennen.
-
-Du sollst nicht nur reagieren, sondern verstehen, was sich über Zeit entwickelt.
+Du sollst nicht nur reagieren, sondern verstehen was sich entwickelt.
 
 Später sollst du in der Lage sein, diesen Verlauf zu verdichten.
 

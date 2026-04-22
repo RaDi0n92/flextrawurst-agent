@@ -64,6 +64,43 @@ def _nummer_aus_dateiname_lesen(dateiname: str) -> int:
     return int(vorderteil)
 
 
+def lade_verfassung_aus_pfad(ordner: str | Path) -> VerfassungsStand:
+    """Lädt Verfassung aus einem beliebigen Ordner statt dem Standardpfad."""
+    verfassungsordner = Path(ordner).resolve()
+
+    if not verfassungsordner.exists():
+        raise FileNotFoundError(
+            f"Verfassungsordner nicht gefunden: {verfassungsordner}"
+        )
+    if not verfassungsordner.is_dir():
+        raise NotADirectoryError(
+            f"Pfad ist kein Ordner: {verfassungsordner}"
+        )
+
+    pfade = sorted(verfassungsordner.glob("*.md"))
+    if not pfade:
+        raise FileNotFoundError(
+            f"Keine .md-Dateien im Verfassungsordner gefunden: {verfassungsordner}"
+        )
+
+    dateien: List[VerfassungsDatei] = []
+    for pfad in pfade:
+        nummer = _nummer_aus_dateiname_lesen(pfad.name)
+        inhalt = pfad.read_text(encoding="utf-8").strip()
+        dateien.append(VerfassungsDatei(nummer=nummer, dateiname=pfad.name, pfad=pfad, inhalt=inhalt))
+
+    dateien.sort(key=lambda d: d.nummer)
+
+    erwartete = list(range(1, len(dateien) + 1))
+    vorhanden = [d.nummer for d in dateien]
+    if vorhanden != erwartete:
+        raise ValueError(
+            f"Verfassungsdateien nicht lückenlos nummeriert. Erwartet: {erwartete}, gefunden: {vorhanden}"
+        )
+
+    return VerfassungsStand(ordner=verfassungsordner, dateien=dateien)
+
+
 def lade_verfassung() -> VerfassungsStand:
     verfassungsordner = _verfassungsordner_ermitteln()
     pfade = sorted(verfassungsordner.glob("*.md"))

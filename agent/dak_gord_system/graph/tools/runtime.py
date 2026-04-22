@@ -6,6 +6,7 @@ from agent.dak_gord_system.graph.state import AgentState, ToolAktion
 from agent.dak_gord_system.graph.tools.base import ToolContext, ToolResult
 from agent.dak_gord_system.graph.tools.file_tools import register_file_tools
 from agent.dak_gord_system.graph.tools.shell_tools import register_shell_tools
+from agent.dak_gord_system.graph.tools.mcp_tools import register_mcp_tools
 from agent.dak_gord_system.graph.tools.registry import registry
 
 
@@ -43,6 +44,8 @@ def result_to_tool_aktion(
 def ensure_default_tools_registered() -> None:
     register_file_tools()
     register_shell_tools()
+    register_mcp_tools()
+    register_mcp_tools()
 
 
 def run_registered_tool(

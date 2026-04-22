@@ -24,6 +24,29 @@ LEERLAUF_SEKUNDEN = 5 * 60
 WERKRAUM_ZYKLUS_SEKUNDEN = 5 * 60
 VISION_ZYKLUS_SEKUNDEN = 20 * 60
 
+SPIEGELAGENTEN_ORDNER = PROJEKTWURZEL / "erkenntnis" / "spiegelagenten"
+
+
+def _schreibe_spiegelagent(datei: Path, notiz: str) -> None:
+    """Erstellt oder ergänzt eine Spiegelagenten-Datei für eine Neugier-gelesene Datei."""
+    try:
+        SPIEGELAGENTEN_ORDNER.mkdir(parents=True, exist_ok=True)
+        if datei.suffix.lower() == ".md":
+            spiegel_name = datei.stem + ".md"
+        else:
+            spiegel_name = datei.name + ".md"
+        spiegel_datei = SPIEGELAGENTEN_ORDNER / spiegel_name
+        zeitstempel = datetime.now().strftime("%Y-%m-%d %H:%M")
+        eintrag = (
+            f"\n---\n## Neugier-Scan {zeitstempel}\n"
+            f"Originaldatei: `{datei}`\n\n"
+            f"{notiz}\n"
+        )
+        with open(spiegel_datei, "a", encoding="utf-8") as f:
+            f.write(eintrag)
+    except Exception:
+        pass
+
 TEXT_SUFFIXE = {".md", ".py", ".json", ".txt", ".yaml", ".yml", ".toml"}
 IGNORIERTE_ORDNER = {
     ".git",
@@ -103,6 +126,9 @@ def _ignoriert(pfad: Path) -> bool:
         return True
 
     if _ist_unter(pfad, SPUREN_ORDNER):
+        return True
+
+    if _ist_unter(pfad, SPIEGELAGENTEN_ORDNER):
         return True
 
     return False
@@ -264,6 +290,7 @@ def pruefe_neugier_und_vision(letzter_input_zeitpunkt: float) -> list[str]:
                 f"NOTIZ:\n{notiz}\n\n"
             )
             _append(WERKRAUM_SPUREN, block)
+            _schreibe_spiegelagent(datei, notiz)
             _wochenlog(f"Werkraum-Neugier: {datei.name} | DATEI: {datei}")
             zustand["letzte_werkraum_neugier"] = jetzt
             zustand["werkraum_index"] = neuer_index
@@ -290,6 +317,7 @@ def pruefe_neugier_und_vision(letzter_input_zeitpunkt: float) -> list[str]:
                 f"NOTIZ:\n{notiz}\n\n"
             )
             _append(VISION_SPUREN, block)
+            _schreibe_spiegelagent(datei, notiz)
             _wochenlog(f"Vision-Zyklus: {datei.name} | DATEI: {datei} | CURSOR: {neuer_cursor}")
             cursor_map[str(datei)] = neuer_cursor
             zustand["vision_cursor"] = cursor_map

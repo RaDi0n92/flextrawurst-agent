@@ -1,0 +1,49 @@
+{
+  "last_scan": "2026-03-24T05:27:50.256Z",
+  "sources": [
+    {
+      "id": "S0001",
+      "name": "V1.pdf",
+      "path": "/root/werkraum/quellen/V1.pdf",
+      "ext": ".pdf",
+      "size": 721704,
+      "mtime": "2026-03-09T04:14:24.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0002",
+      "name": "V2.pdf",
+      "path": "/root/werkraum/quellen/V2.pdf",
+      "ext": ".pdf",
+      "size": 457498,
+      "mtime": "2026-03-09T04:11:31.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0003",
+      "name": "V3.pdf",
+      "path": "/root/werkraum/quellen/V3.pdf",
+      "ext": ".pdf",
+      "size": 725472,
+      "mtime": "2026-03-09T17:00:40.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0004",
+      "name": "V4.pdf",
+      "path": "/root/werkraum/quellen/V4.pdf",
+      "ext": ".pdf",
+      "size": 221927,
+      "mtime": "2026-03-22T10:56:24.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    }
+  ]
+}

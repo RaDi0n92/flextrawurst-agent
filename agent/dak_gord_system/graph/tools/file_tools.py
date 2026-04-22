@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import difflib
+import fnmatch
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -58,6 +60,11 @@ def _read_text_file(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
         return ToolResult(ok=False, tool=tool_name, risk="low", error=str(exc))
 
 
+def _authorship_header(ctx: ToolContext) -> str:
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+    return f"<!-- autor: dak+gord-system | datum: {ts} UTC -->\n"
+
+
 def _write_text_file(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
     tool_name = "write_text_file"
     try:
@@ -72,10 +79,11 @@ def _write_text_file(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
 
         path.parent.mkdir(parents=True, exist_ok=True)
 
+        header = _authorship_header(ctx)
         if mode == "append":
-            new_content = old_content + content
+            new_content = old_content + header + content
         elif mode == "overwrite":
-            new_content = content
+            new_content = header + content
         else:
             return ToolResult(
                 ok=False,
@@ -141,6 +149,63 @@ def _diff_text_file(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
         return ToolResult(ok=False, tool=tool_name, risk="low", error=str(exc))
 
 
+def _list_files(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
+    tool_name = "list_files"
+    try:
+        path = _safe_path(str(args.get("path", "/root/werkraum")))
+        pattern = str(args.get("pattern", "*"))
+        recursive = bool(args.get("recursive", False))
+        max_results = int(args.get("max_results", 200))
+
+        if not path.exists():
+            return ToolResult(ok=False, tool=tool_name, risk="low", error=f"Pfad existiert nicht: {path}")
+
+        if recursive:
+            entries = [p for p in path.rglob(pattern) if not any(x in p.parts for x in ("node_modules", ".venv", ".git", "__pycache__"))]
+        else:
+            entries = [p for p in path.glob(pattern)]
+
+        entries = entries[:max_results]
+        result = [{"path": str(e), "type": "dir" if e.is_dir() else "file", "size": e.stat().st_size if e.is_file() else None} for e in sorted(entries)]
+
+        return ToolResult(ok=True, tool=tool_name, risk="low", output={"path": str(path), "entries": result, "count": len(result)}, meta={"task_id": ctx.task_id})
+    except Exception as exc:
+        return ToolResult(ok=False, tool=tool_name, risk="low", error=str(exc))
+
+
+def _search_files(ctx: ToolContext, args: dict[str, Any]) -> ToolResult:
+    tool_name = "search_files"
+    try:
+        search_path = _safe_path(str(args.get("path", "/root/werkraum")))
+        query = str(args["query"])
+        file_pattern = str(args.get("file_pattern", "*.md"))
+        case_sensitive = bool(args.get("case_sensitive", False))
+        max_results = int(args.get("max_results", 50))
+
+        results = []
+        glob_pattern = f"**/{file_pattern}"
+
+        for filepath in search_path.rglob(file_pattern):
+            if any(x in filepath.parts for x in ("node_modules", ".venv", ".git", "__pycache__")):
+                continue
+            try:
+                text = filepath.read_text(encoding="utf-8", errors="replace")
+                search_in = text if case_sensitive else text.lower()
+                needle = query if case_sensitive else query.lower()
+                if needle in search_in:
+                    lines = text.splitlines()
+                    matches = [{"line": i + 1, "text": l.strip()} for i, l in enumerate(lines) if needle in (l if case_sensitive else l.lower())]
+                    results.append({"path": str(filepath), "matches": matches[:5]})
+                    if len(results) >= max_results:
+                        break
+            except Exception:
+                continue
+
+        return ToolResult(ok=True, tool=tool_name, risk="low", output={"query": query, "results": results, "total_files_with_match": len(results)}, meta={"task_id": ctx.task_id})
+    except Exception as exc:
+        return ToolResult(ok=False, tool=tool_name, risk="low", error=str(exc))
+
+
 def register_file_tools(reg: ToolRegistry | None = None) -> ToolRegistry:
     reg = reg or registry
 
@@ -198,6 +263,46 @@ def register_file_tools(reg: ToolRegistry | None = None) -> ToolRegistry:
                 },
             },
             handler=_diff_text_file,
+        ),
+        overwrite=True,
+    )
+
+    reg.register(
+        ToolDefinition(
+            name="list_files",
+            description="Listet Dateien und Ordner innerhalb von /root/werkraum auf.",
+            risk="low",
+            input_schema={
+                "type": "object",
+                "properties": {
+                    "path": {"type": "string"},
+                    "pattern": {"type": "string"},
+                    "recursive": {"type": "boolean"},
+                    "max_results": {"type": "integer"},
+                },
+            },
+            handler=_list_files,
+        ),
+        overwrite=True,
+    )
+
+    reg.register(
+        ToolDefinition(
+            name="search_files",
+            description="Durchsucht Dateien im Werkraum nach einem Suchbegriff.",
+            risk="low",
+            input_schema={
+                "type": "object",
+                "required": ["query"],
+                "properties": {
+                    "query": {"type": "string"},
+                    "path": {"type": "string"},
+                    "file_pattern": {"type": "string"},
+                    "case_sensitive": {"type": "boolean"},
+                    "max_results": {"type": "integer"},
+                },
+            },
+            handler=_search_files,
         ),
         overwrite=True,
     )

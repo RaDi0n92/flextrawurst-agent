@@ -116,6 +116,21 @@ def _enthaelt_dak_bezug(text: str) -> bool:
     return any(muster in t for muster in DAK_BEZUGS_MUSTER)
 
 
+def _pfad_direkt_angefordert(text: str) -> tuple[bool, str | None]:
+    """Erkennt 'speichere das als datei in /pfad' und Varianten."""
+    t = text.strip()
+
+    m = re.search(
+        r"speicher[e]?\s+das\s+(?:als\s+datei\s+)?in\s+(/[^\s]+)",
+        t,
+        flags=re.IGNORECASE,
+    )
+    if m:
+        return True, m.group(1).strip()
+
+    return False, None
+
+
 def _neue_datei_angefordert(text: str) -> tuple[bool, str | None]:
     t = text.strip()
 
@@ -195,6 +210,25 @@ def verarbeite_speichertrigger(
     nutzer_text = nutzer_text or ""
     letzte_antwort_von_dak = letzte_antwort_von_dak or ""
     letzte_relevante_aussage_von_daniel = letzte_relevante_aussage_von_daniel or ""
+
+    pfad_direkt, zielpfad_roh = _pfad_direkt_angefordert(nutzer_text)
+    if pfad_direkt and zielpfad_roh:
+        inhalt = letzte_antwort_von_dak.strip()
+        if not inhalt:
+            inhalt = letzte_relevante_aussage_von_daniel.strip()
+        if inhalt:
+            ziel = Path(zielpfad_roh)
+            if ziel.is_dir():
+                ziel = _namenskonflikt_auflosen(ziel / _auto_dateiname_aus_inhalt(inhalt))
+            else:
+                ziel.parent.mkdir(parents=True, exist_ok=True)
+                ziel = _namenskonflikt_auflosen(ziel)
+                if not ziel.suffix:
+                    ziel = ziel.with_suffix(".md")
+            ziel.parent.mkdir(parents=True, exist_ok=True)
+            ziel.write_text(inhalt, encoding="utf-8")
+            return [str(ziel)]
+        return []
 
     neue_datei, dateiname = _neue_datei_angefordert(nutzer_text)
 

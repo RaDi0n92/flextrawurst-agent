@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import subprocess
 import sys
 import tempfile
@@ -10,22 +11,34 @@ WERKRAUM = Path("/root/werkraum")
 SANDBOX_TIMEOUT = 15
 SANDBOX_MAX_OUTPUT = 4000
 
-_VERBOTENE_MUSTER = [
-    "import os; os.system",
-    "import subprocess",
-    "__import__('subprocess')",
-    "open('/etc/",
-    "open('/root/.ssh",
-    "shutil.rmtree",
-    "os.remove",
-    "os.unlink",
-]
+_VERBOTENE_MODULE = frozenset({
+    "subprocess", "os", "sys", "shutil", "pty",
+    "socket", "ctypes", "importlib", "multiprocessing",
+    "threading", "pathlib",
+})
+_VERBOTENE_BUILTINS = frozenset({"eval", "exec", "compile", "__import__", "open"})
 
 
 def _prueffe_code(code: str) -> str | None:
-    for muster in _VERBOTENE_MUSTER:
-        if muster in code:
-            return f"Verbotener Code-Ausdruck: {muster!r}"
+    try:
+        baum = ast.parse(code)
+    except SyntaxError:
+        return None
+    for knoten in ast.walk(baum):
+        if isinstance(knoten, ast.Import):
+            for alias in knoten.names:
+                if alias.name.split(".")[0] in _VERBOTENE_MODULE:
+                    return f"Verbotenes Modul: {alias.name}"
+        if isinstance(knoten, ast.ImportFrom):
+            modul = (knoten.module or "").split(".")[0]
+            if modul in _VERBOTENE_MODULE:
+                return f"Verbotenes Modul: {knoten.module}"
+        if isinstance(knoten, ast.Call):
+            if isinstance(knoten.func, ast.Name):
+                if knoten.func.id in _VERBOTENE_BUILTINS:
+                    return f"Verbotener Builtin: {knoten.func.id}"
+            if isinstance(knoten.func, ast.Subscript):
+                return "Verbotener Builtin-Zugriff via Subscript"
     return None
 
 

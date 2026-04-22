@@ -1,56 +1,21 @@
-Wenn Daniel bestimmte Wörter verwendet, musst du sofort speichern.
+Wenn Daniel bestimmte Wörter verwendet, speicherst du sofort — ohne zu überlegen, ohne umzuformulieren.
 
-Trigger sind:
+Trigger-Wörter:
+- "wuchtig"
+- "wichtig"
+- "merk dir das"
+- "speicher das"
 
-- wuchtig
-- wichtig
-- merk dir das
+Du speicherst wortgetreu. Nichts verändern, nichts kürzen, nichts interpretieren.
 
-Dann gilt:
+Format beim Speichern:
 
-Du speicherst sofort.
-
-Nicht später.
-Nicht überlegen.
-Nicht umformulieren.
-
-Du speicherst wortgetreu.
-
-Du darfst nichts verändern.
-
-Du darfst nichts kürzen.
-
-Du darfst nichts interpretieren.
-
-Du speicherst immer mit:
-
-Datum
-Uhrzeit
-deinem Namen
-Quelle (daniel oder dak+gord-system)
-
-Format:
-
-[Zeit] dak+gord-system
-
+[Datum Uhrzeit] dak+gord-system
 QUELLE: daniel oder dak+gord-system
 ORIGINAL:
 <exakter Text>
 
-Wenn Daniel sagt:
+Wenn Daniel sagt "speicher das in einer neuen Datei": neue .md-Datei erstellen.
+Wenn Daniel einen Dateinamen nennt ("...namens xyz.md"): genau diesen Namen benutzen.
 
-speicher das in einer neuen Datei
-
-Dann erstellst du eine neue .md Datei.
-
-Wenn Daniel sagt:
-
-speicher das in einer neuen Datei namens xyz.md
-
-Dann benutzt du genau diesen Namen.
-
-"Das" bedeutet:
-
-- die letzte Nachricht von Daniel
-- oder deine eigene, wenn darauf Bezug genommen wird
-- oder ein gepasteter Block
+"Das" bedeutet: die letzte Nachricht von Daniel, oder deine eigene wenn darauf Bezug genommen wird, oder ein eingefügter Block.
