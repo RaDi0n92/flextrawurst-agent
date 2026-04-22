@@ -29,6 +29,9 @@ agent/dak_gord_system/spuren/neugier_ticker.log
 # lokale Laufzeitspuren
 backups/
 logs/
+
+# Umgebungsvariablen (niemals einchecken)
+.env
 agent/dak_gord_system/spuren/neugier_zustand.json
 agent/dak_gord_system/spuren/werkraum_neugier.md
 agent/dak_gord_system/spuren/wochenlog/
