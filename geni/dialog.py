@@ -1261,6 +1261,33 @@ HTML = """<!DOCTYPE html>
   </div>
 
   <div id="rechte-seite">
+    <div id="knoten-filter">
+      <label>tag</label>
+      <input type="text" id="filter-tag" placeholder="z.b. codewesen">
+      <label>tiefe</label>
+      <select id="filter-tiefe">
+        <option value="">alle</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label>typ</label>
+      <select id="filter-typ">
+        <option value="">alle</option>
+        <option value="dialog">dialog</option>
+        <option value="beobachtung">beobachtung</option>
+        <option value="muster">muster</option>
+        <option value="system">system</option>
+      </select>
+      <label>zeitraum</label>
+      <select id="filter-zeitraum">
+        <option value="">alle</option>
+        <option value="heute">heute</option>
+        <option value="woche">letzte woche</option>
+        <option value="monat">letzter monat</option>
+      </select>
+    </div>
     <div id="knoten-panel">
       <div id="knoten-header">GEDÄCHTNIS</div>
       <div id="knoten-liste"></div>
