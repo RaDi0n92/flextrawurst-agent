@@ -1026,6 +1026,10 @@ HTML = """<!DOCTYPE html>
   #header h1 { font-size: 18px; letter-spacing: 4px; color: #fff; }
   #status { font-size: 11px; color: #444; }
   #knoten-count { font-size: 11px; color: #333; margin-left: auto; }
+  #knoten-filter { display:flex; gap:8px; align-items:center; padding:6px 10px; border-bottom:1px solid #111; background:#050505; flex-wrap:wrap; }
+  #knoten-filter input { background:#0c0c0c; border:1px solid #1a1a1a; color:#555; padding:3px 8px; font-family:inherit; font-size:10px; border-radius:3px; outline:none; width:110px; }
+  #knoten-filter select { background:#0c0c0c; border:1px solid #1a1a1a; color:#555; padding:3px 6px; font-family:inherit; font-size:10px; border-radius:3px; cursor:pointer; outline:none; }
+  #knoten-filter label { font-size:9px; color:#2a2a2a; letter-spacing:1px; }
   #main {
     display: flex;
     flex: 1;
