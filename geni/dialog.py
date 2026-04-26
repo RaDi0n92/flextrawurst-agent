@@ -1616,23 +1616,44 @@ async function ttsSprich(text) {
   } catch(e) { ttsLaeuft = false; }
 }
 
+let _filterDebounce = null;
+
+function filterAuslosen() {
+  clearTimeout(_filterDebounce);
+  _filterDebounce = setTimeout(knotenLaden, 300);
+}
+
 async function knotenLaden() {
   try {
-    const r = await fetch('/knoten?n=30');
+    const tag = document.getElementById('filter-tag').value.trim();
+    const tiefe = document.getElementById('filter-tiefe').value;
+    const typ = document.getElementById('filter-typ').value;
+    const zeitraum = document.getElementById('filter-zeitraum').value;
+    const params = new URLSearchParams({ n: 30 });
+    if (tag) params.set('tag', tag);
+    if (tiefe) params.set('tiefe', tiefe);
+    if (typ) params.set('typ', typ);
+    if (zeitraum) params.set('zeitraum', zeitraum);
+    const r = await fetch('/knoten?' + params.toString());
     const liste = await r.json();
     document.getElementById('knoten-count').textContent = liste.length + ' knoten';
     const panel = document.getElementById('knoten-liste');
     panel.innerHTML = '';
     liste.forEach(k => {
       const div = document.createElement('div');
-      const tiefe = k.tiefe || 0;
-      const tiefePunkte = ['·', '◦◦', '●●', '◉◉◉'][tiefe] || '·';
-      div.className = 'knoten-item tiefe-' + tiefe + ' k-' + (k.quelle === 'daniel' ? 'daniel' : k.quelle === 'geni_selbst' ? 'geni' : k.quelle.startsWith('vps') ? 'vps' : 'flarum');
+      const kTiefe = k.tiefe || 0;
+      const tiefePunkte = ['·', '◦◦', '●●', '◉◉◉'][kTiefe] || '·';
+      div.className = 'knoten-item tiefe-' + kTiefe + ' k-' + (k.quelle === 'daniel' ? 'daniel' : k.quelle === 'geni_selbst' ? 'geni' : k.quelle.startsWith('vps') ? 'vps' : 'flarum');
       div.innerHTML = `<span class="k-tiefe">${tiefePunkte}</span><span class="k-id">#${k.id}</span><div class="k-quelle">${k.quelle} · ${k.zeitstempel.replace('T',' ')}</div><div class="k-inhalt">${k.inhalt}</div>`;
       panel.appendChild(div);
     });
   } catch(e) {}
 }
+
+document.getElementById('filter-tag').addEventListener('input', filterAuslosen);
+document.getElementById('filter-tiefe').addEventListener('change', knotenLaden);
+document.getElementById('filter-typ').addEventListener('change', knotenLaden);
+document.getElementById('filter-zeitraum').addEventListener('change', knotenLaden);
 
 knotenLaden();
 setInterval(knotenLaden, 8000);
