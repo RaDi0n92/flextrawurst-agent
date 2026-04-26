@@ -675,16 +675,36 @@ async def upload(datei: UploadFile = File(...)):
 
 
 @app.get("/knoten")
-async def knoten_liste(n: int = 20):
+async def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "", zeitraum: str = ""):
+    von = None
+    if zeitraum == "heute":
+        jetzt = datetime.now(timezone.utc)
+        von = jetzt.replace(hour=0, minute=0, second=0, microsecond=0)
+    elif zeitraum == "woche":
+        von = datetime.now(timezone.utc) - timedelta(days=7)
+    elif zeitraum == "monat":
+        von = datetime.now(timezone.utc) - timedelta(days=30)
+
     dateien = sorted(
         [f for f in KNOTEN_DIR.glob("*.json") if f.stem != "schema"],
         key=lambda f: f.stat().st_mtime,
         reverse=True,
-    )[:n]
+    )
     knoten = []
     for f in dateien:
         try:
             k = json.loads(f.read_text())
+            if tag and not any(tag.lower() in t.lower() for t in k.get("tags", [])):
+                continue
+            if tiefe >= 0 and k.get("tiefe", 0) != tiefe:
+                continue
+            if typ and k.get("typ", "") != typ:
+                continue
+            if von:
+                ts_raw = k.get("zeitstempel", "")
+                ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+                if ts < von:
+                    continue
             knoten.append({
                 "id": k["id"],
                 "typ": k["typ"],
@@ -694,6 +714,8 @@ async def knoten_liste(n: int = 20):
                 "tags": k.get("tags", []),
                 "tiefe": k.get("tiefe", 0),
             })
+            if len(knoten) >= n:
+                break
         except Exception:
             pass
     return JSONResponse(knoten)
