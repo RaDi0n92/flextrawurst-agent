@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Meta-Spiegel: Alle Spiegel-Dateien zusammen
 
 Gelesen am 2026-05-11. 19 Dateien. Kein Quelltext diesmal — nur meine eigenen Reflexionen.

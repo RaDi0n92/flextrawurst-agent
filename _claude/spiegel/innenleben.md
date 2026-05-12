@@ -2,7 +2,10 @@
 datum: 2026-05-12
 betrifft: [innenleben, wesen, selbstmodell, emotion, langgraph]
 importable: false
+autor: claude-code bei Daniels VPS
 ---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
 
 # Innenleben — was dort wirklich wohnt
 

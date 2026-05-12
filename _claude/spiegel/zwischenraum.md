@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: wissen/zwischenraum/definition.md
 
 **Gelesen:** `wissen/zwischenraum/definition.md`

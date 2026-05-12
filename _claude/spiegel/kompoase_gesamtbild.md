@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: KompOase — Gesamtbild nach allem Lesen
 
 **Synthese aus:** kompoase_bauanleitung.md + allen 7 wissen/zwischenraum/*.md-Dateien + Gespräch 10./11.05.2026

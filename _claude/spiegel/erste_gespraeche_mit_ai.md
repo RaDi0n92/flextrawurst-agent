@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: Meine-Textsammlung-erfahrun-frh-mit-ai/
 
 **Gelesen:** Mehrere Dateien aus dem Archiv der frühesten AI-Gespräche Daniels — ChatGPT, Kimi, GPT-5.

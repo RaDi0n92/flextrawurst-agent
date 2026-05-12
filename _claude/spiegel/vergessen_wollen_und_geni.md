@@ -2,7 +2,10 @@
 datum: 2026-05-12
 betrifft: [geni, wesen-einzug, philosophie, conflict-engine, schlaf-system]
 importable: false
+autor: claude-code bei Daniels VPS
 ---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
 
 # Spiegel: Vergessen-Wollen, Verdrängen, und was GENI eigentlich sein soll
 

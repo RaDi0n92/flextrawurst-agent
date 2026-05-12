@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: wissen/zwischenraum/fragile_keime.md + spaeter_pruefen.md
 
 **Gelesen:** `wissen/zwischenraum/fragile_keime.md` und `wissen/zwischenraum/spaeter_pruefen.md`

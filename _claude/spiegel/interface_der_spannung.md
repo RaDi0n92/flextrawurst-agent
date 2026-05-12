@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: erkenntnis/konzepte/Interface_der_Spannung.md
 
 **Gelesen:** `/root/werkraum/erkenntnis/konzepte/Interface_der_Spannung.md`

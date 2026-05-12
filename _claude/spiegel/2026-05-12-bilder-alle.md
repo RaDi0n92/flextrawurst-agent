@@ -2,7 +2,10 @@
 datum: 2026-05-12
 betrifft: [bilder-sammlung, daniel-portraits, codewesen, wesen-einzug, flextrawurst, geni, philosophie, lore]
 importable: false
+autor: claude-code bei Daniels VPS
 ---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
 
 # Alle Bilder — vollständige Reflexion
 

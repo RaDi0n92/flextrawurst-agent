@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: flextrawurst — Ring-Architektur und Weltbetriebssystem
 
 **Gelesen:** `RING_INDEX.md`, `HANDOFF_CAPSULE.md`, `docs/34_RING_22_PROCESS_OBSERVATORY_PLAN.md`

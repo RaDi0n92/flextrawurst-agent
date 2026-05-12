@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: wissen/WISSEN_INDEX.md
 
 **Gelesen:** `/root/werkraum/wissen/WISSEN_INDEX.md`

@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: flextrawurst/kernel/ — der echte Code
 
 **Gelesen:** `kernel/world_engine/run_world_cycle.ts`, `kernel/events/types.ts`, `kernel/governance/governance_matrix.ts` + Verzeichnisstruktur

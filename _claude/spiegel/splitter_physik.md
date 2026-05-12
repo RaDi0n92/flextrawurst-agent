@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: wissen/zwischenraum/splitter.md + Gespräch vom 10./11.05.2026
 
 **Gelesen:** `wissen/zwischenraum/splitter.md` und das Gespräch über KompOase-Physik

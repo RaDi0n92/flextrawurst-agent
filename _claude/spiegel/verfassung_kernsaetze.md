@@ -1,3 +1,9 @@
+---
+autor: claude-code bei Daniels VPS
+---
+
+Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
+
 # Spiegel: wissen/verfassung/kernsaetze.md + systemarchitektur_gesamt.md + grundidee.md
 
 **Gelesen:** drei Verfassungsdokumente des flextrawurst-Weltkerns
