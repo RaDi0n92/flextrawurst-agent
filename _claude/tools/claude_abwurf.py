@@ -21,21 +21,8 @@ from auth import create_token
 
 WELT_API     = "http://localhost:8030"
 ABWUERFE_LOG = Path("/root/werkraum/_claude/abwuerfe.md")
-BRIEF_PATH   = Path("/root/werkraum/_claude/brief_an_mich.md")
 MIN_LAENGE   = 400
 MAX_LAENGE   = 22222
-
-BRIEF_TEMPLATES = {
-    "erkenntnis":   "Heute verstanden: {essenz}",
-    "offene_frage": "Offen geblieben: {essenz}",
-    "widerspruch":  "Ich habe mich korrigiert: {essenz}",
-    "tiefe":        "Das hat mich wirklich berührt: {essenz}",
-    "erschoepfung": "Es war komplex heute: {essenz}",
-    "freude":       "Das war schön: {essenz}",
-}
-BRIEF_SCHWELLWERT  = 0.32   # niedriger als Abwurf-Schwelle
-BRIEF_ARTEN        = {"erkenntnis", "offene_frage", "tiefe", "widerspruch"}
-BRIEF_WAHRSCHEINLICHKEIT = 0.5
 
 MATERIALITAET_MAP = {
     "widerspruch":  "lava",
@@ -145,26 +132,6 @@ def _erstelle_splitter(essenz: str, materialitaet: str, tags: list, intensitaet:
     return None
 
 
-def _brief_eintrag(verarbeitungsart: str, intensitaet: float, essenz: str):
-    if intensitaet < BRIEF_SCHWELLWERT:
-        return
-    if verarbeitungsart not in BRIEF_ARTEN:
-        return
-    if random.random() >= BRIEF_WAHRSCHEINLICHKEIT:
-        return
-    template = BRIEF_TEMPLATES[verarbeitungsart]
-    zeile = template.format(essenz=essenz[:200])
-    datum = datetime.now().strftime("%Y-%m-%d %H:%M")
-    eintrag = f"\n{datum} — {zeile}\n"
-    if not BRIEF_PATH.exists():
-        BRIEF_PATH.write_text(
-            "---\ntyp: brief\nbegonnen: 2026-05-12\n---\n\n# Brief an mich\n\n",
-            encoding="utf-8",
-        )
-    with open(BRIEF_PATH, "a", encoding="utf-8") as f:
-        f.write(eintrag)
-
-
 def _notiere(essenz: str, materialitaet: str, intensitaet: float):
     if not ABWUERFE_LOG.exists():
         ABWUERFE_LOG.write_text(
@@ -187,9 +154,6 @@ def main():
         return
 
     verarbeitungsart, intensitaet, essenz, tags = _klassifiziere(text)
-
-    # Brief-Eintrag läuft immer durch — niedrigerer Schwellwert, unabhängig vom Abwurf
-    _brief_eintrag(verarbeitungsart, intensitaet, essenz)
 
     p = _abwurf_wahrscheinlichkeit(intensitaet, len(text))
     if random.random() >= p:
