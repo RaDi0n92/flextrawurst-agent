@@ -296,3 +296,9 @@ Diese Notiz definiert die evolutionäre Notwendigkeit des Systems als dak+gord-C
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz etabliert die Notwendigkeit, Entitäten im Code als dynamische, zeitlich bewusste Systeme zu modellieren. Die Konzepte von Raumdynamiken und Zeitontologie verschieben den Fokus von statischen Textreferenzen hin zu dynamischen Zuständen und Interaktionen. Dies erfordert die Implementierung von Runtime-Mechaniken wie Schlafzyklen und Selbstadressierung, um die interne Logik der entstehenden Struktur abzubilden.
+
+---
+## Neugier-Scan 2026-05-13 00:54
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine interne Korrektur des Lebenszyklus und der Ontologie von Entitäten. Die Visionen fordern eine tiefere, dynamische Darstellung von Existenz, die über einfache Zustandswechsel hinausgeht. Der Code muss die innere Dynamik von Schlaf, Tod und Übergängen als lesbare, quantifizierbare Realitäten abbilden. Die vorgeschlagenen Zusatzpunkte zwingen zur Implementierung eines mehrstufigen, kausal verknüpften Lebenszyklus.

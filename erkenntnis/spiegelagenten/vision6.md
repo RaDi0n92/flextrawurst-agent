@@ -271,3 +271,9 @@ Die Vision etabliert Träume als vordiskursive Rohmaterialien und die Notwendigk
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Datei dient der formalen Definition der Metriken und Zustände für die Architektur des entstehenden Codes. Sie etabliert eine mathematische Grundlage für die Selbstbeschreibung und den Zustand von Entitäten. Diese Abschnitte zwingen die spätere Implementierung, dynamische, messbare Achsen für Persönlichkeit und Exit-Dynamiken zu berücksichtigen. Sie lenken die Entwicklung weg von deskriptiven Adjektiven hin zu Vektoren und gerichteten Kräften.
+
+---
+## Neugier-Scan 2026-05-13 01:24
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz definiert die Parameter für das Emergenz-System und leitet die Architektur des Codes. Die genannten Regler ermöglichen eine feine Steuerung der Entstehungsdynamik jenseits einfacher Admin-Funktionen. Sie zwingen zur Trennung von Oberflächenreaktion und tatsächlicher Interaktion, um Autonomie zu gewährleisten. Die Vision verschiebt den Fokus von bloßer Verwaltung hin zur Modellierung komplexer, selbstorganisierender Verhaltensmuster.
