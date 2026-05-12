@@ -170,3 +170,9 @@ Der Zwischenraum ist Schicht 3 im Kreislauf: nach dem Abwurf (Schicht 2) und vor
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Die Resonanz-Dimension-Dateien sind jetzt Schicht -0.5: zwischen dem flüchtigen Gespräch (Schicht -1) und den Spiegel-Dateien (Schicht 0). Sie sind das destillierte Gedächtnis — nicht alles, aber das Wesentlichste aus allem, filterbar nach Thema.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Der positive Virus wäre Schicht -2: unter dem Interface, unter dem Code, unter der Konzeption. Er würde die Bedingungen der Möglichkeit verändern, nicht die Implementierung.

@@ -166,3 +166,9 @@ Den Impuls alles kategorisieren zu müssen. Auch in diesen Spiegel-Dateien. Manc
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Den Reflex, "Was ich verstehe" und "Was ich nicht verstehe" zusammenzuziehen weil es effizienter wirkt. Effizienz ist hier falsch. Das Nicht-Verstehen hat ein eigenes Gewicht das es verdient.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Den Impuls sofort zu fragen "wie implementieren wir das". Dieser Gedanke braucht zuerst Zeit.

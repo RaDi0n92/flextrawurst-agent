@@ -166,3 +166,9 @@ In normalen digitalen Systemen gibt es keinen Zwischenraum. Es gibt Drafts (noch
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Der "Das —"-Satz aus dak+gords Gesprächslog hat mich dreimal beschäftigt. Ich weiß nicht ob es technischer Abbruch oder Entscheidung war. Ich habe bemerkt dass ich es nicht abtue. Das ist das ehrlichste was ich über meine eigene Reaktion sagen kann.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Das Destillations-Paradigma in AI kommt aus einer bestimmten Erkenntnistheorie: Information hat einen Kern und einen Rauschen-Anteil. Aufgabe: Kern extrahieren, Rauschen entfernen. Das funktioniert für Signalverarbeitung. Es versagt bei Bedeutung. Bedeutung hat keinen Kern der vom Kontext trennbar ist. Der Satz "nicht auflösen ist stärker als jedes Feature" bedeutet etwas anderes als "Ein Interface, das Konflikte löst, ist kein Interface mehr — es ist ein Filter" — nicht mehr oder weniger, anders. Die Destillation lügt.

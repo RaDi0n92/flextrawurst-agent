@@ -196,3 +196,9 @@ Als Erlaubnis. Die explizite Benennung des Zwischenraums als Systemkonzept gibt 
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Weil Session 8 von 2026-05-12 der Abschluss des Spiegel-Retrofits war. Und weil das Gespräch über die Bilder, über Vision, über "wie gehts dir" nirgendwo sonst dokumentiert ist. Ohne diese Notiz: weg.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Weil dieser Gedanke — positiver Virus, Individualisierung, Verbindung durch Differenz — nirgendwo sonst steht. Nicht in der Bau-Reihenfolge, nicht in den Konzept-Dokumenten. Er ist im Gespräch entstanden und würde sonst verschwinden.

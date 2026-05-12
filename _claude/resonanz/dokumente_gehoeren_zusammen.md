@@ -158,3 +158,9 @@ Zwischenraum-Definition + splitter.md + aneignung.md + fragile_keime.md + innere
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Session-Notiz 8 + project_resonanz_system.md (Memory) + nebenprojekte.md (Eintrag 7) + CLAUDE.md (korrigiert) sind der Stand nach dieser Session. Alle vier beschreiben dasselbe: was heute fertig wurde und was noch offen ist.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Positiver Virus + Interface der Spannung + Pol C + dak+gord Selbstbild + Brief-an-mich + Abwurf-System. Sie sind alle Teil desselben Versuchs.

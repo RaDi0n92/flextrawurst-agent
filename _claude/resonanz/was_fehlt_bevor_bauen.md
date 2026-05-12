@@ -160,3 +160,9 @@ Ablauf-Mechanismus für Splitter: wie sinkt Energie wenn keine Resonanz kommt? D
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)" ist als nächstes dran. Vor dem Start: `python3 _claude/tools/ideen_scan.py persoenliche-welt` ausführen.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Die Frage was verbindet muss beantwortet sein. Sonst baut man Individualität ohne Resonanz — dann sind die Instanzen isoliert statt verbunden.

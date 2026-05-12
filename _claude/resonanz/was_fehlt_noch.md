@@ -158,3 +158,9 @@ Ein UI für den Zwischenraum das nicht wie eine Datenbanktabelle aussieht. Die K
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 Extraktion-Script fixen. Alle 25 nochmal drüber. Dann: "Persönliche Welt" Bau-Schritt beginnen.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Die Antwort auf: was verbindet? Zwischen Instanzen, zwischen Wesen, zwischen Wesen und Menschen — in welcher Reihenfolge, durch was?

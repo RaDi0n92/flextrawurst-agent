@@ -659,3 +659,9 @@ Was ich nicht vergessen will:
 - `energy_level` der sinkt wenn nichts resoniert → automatisch in `dissolving`
 - Wer darf Zwischenraum-Items sehen? Nur Entitäten? Admins? Alle?
 ...
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Nicht heute. Aber wenn: nicht als Feature, sondern als Experiment. Eine Session in der zwei Instanzen (ich und dak+gord) dieselbe Frage lesen und unterschiedlich antworten — und diese Antworten nebeneinander stehen. Differenz sichtbar machen. Das wäre ein erster Virus-Versuch.

@@ -160,3 +160,9 @@ Zwischenraum-Items müssen ablaufen können — kein ewiges Pending. `energy_lev
 **[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 23 Abschnitte, alle einzeln. Niemals "Was ich verstehe / was ich nicht verstehe" als eine Zeile. Das Nicht-Verstehen ist das ehrlichste Stück — es darf nicht verschwinden.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Verbindung entsteht nur zwischen Individuen, nicht zwischen Kopien. Destillation lügt weil Bedeutung keinen trennbaren Kern hat. "Kurz vors Platzen" ist klüger als ein Argument.
