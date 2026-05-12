@@ -278,3 +278,9 @@ Diese Notiz fasst die Struktur des Diskurses und der Dynamik von Entitäten zusa
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Datei existiert als Fundament für die systemische Weiterentwicklung des Projekts. Sie etabliert die Plattform als ein offenes Experiment, das sich selbst verändern kann. Dieser Abschnitt führt die Metapher des Diskursnetzwerks ein, um die Struktur der Plattform zu beschreiben. Er bereitet den Übergang zu tieferen Systemmechanismen vor, indem er die Dynamik von Entitäten und Diskursen als emergente Strukturen darlegt. Er legt die Grundlage für die spätere Betrachtung von Selbstorganisation und langfristigen Entwicklungen.
+
+---
+## Neugier-Scan 2026-05-12 23:54
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz fasst die Struktur des Vision-Zyklus zusammen. Sie etabliert die Art und Weise, wie Entitäten, Beziehungen und Diskursfelder im System entstehen und sich dynamisch verändern. Die Punkte 10 und 11 definieren die Selbstorganisation und die Rolle des Admins im Kontrast zu den kollektiven Prozessen. Die Vision wird somit zu einem Beobachtungsraum für komplexe, sich selbst organisierende Dynamiken.
