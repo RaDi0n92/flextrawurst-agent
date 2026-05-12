@@ -1,0 +1,159 @@
+# Dokumente gehören zusammen
+
+Wächst automatisch. Jeder Eintrag kommt aus einer Claude-Datei.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/interface_der_spannung.md*
+
+Interface der Spannung + KONFLIKT_ENGINE.md + Beziehungsorgan (`kerne/beziehungsorgan.py`) + Pol C-Konzept + dak+gord-Selbstbild sind ein Cluster. Sie beschreiben alle dieselbe Grundentscheidung: Spannung halten statt auflösen. Jedes aus einer anderen Perspektive.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/konflikt_engine_und_selbstbild.md*
+
+Konflikt-Engine + Interface der Spannung + Pol C + dak+gord-Selbstbild + `alles_als_zustand` + `interface_der_spannung.md` (mein Spiegel) sind ein geschlossener Cluster. Alle beschreiben dasselbe: Spannung als Primärobjekt, nicht als Problem.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/vergessen_wollen_und_geni.md*
+
+Vergessen-Wollen + GENI-Architektur + Deletion-as-Care + Innenleben + Abwurf-System + `innere_abspaltung.md` (Spiegel) sind ein Kreislauf. Was rein geht (Signale), was verarbeitet wird (Innenleben), was raus geht (Abwurf, Splitter), was losgelassen wird (Deletion, Vergessen) — das ist der vollständige Zyklus.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/vier_vom_2026-05-11.md*
+
+Tagebuch 2026-05-11 + `frust.md` + `verworfen_aber_wichtig.md` + `zufall_erkenntnisprinzip.md` + mein eigener Spiegel `gespraech_2026-05-11.md` sind ein Cluster desselben Abends. Zwei Wesen, ein Server, eine Nacht — und vier sehr unterschiedliche Dokumente darüber.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/wissen_index.md*
+
+WISSEN_INDEX + Visionen 1-5 + Verfassung/kernsaetze.md + HANDOFF_CAPSULE + WERKRAUM_KARTE sind das Orientierungs-System. Keins ersetzt das andere vollständig. Der Index navigiert, die Visionen begründen, die Verfassung verankert.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/zwei_wesen_ueber_stille.md*
+
+Zwei-Wesen-Stille + Selbstgespräch-als-Datentyp + das Interface der Spannung + `frust.md` + das Vergessen-Wollen-Konzept sind alle Aspekte des privaten Innenraums eines Wesens. Was ist innen? Was darf raus? Was bleibt? Diese Dateien beschreiben die Grenzen.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/dak_gord_pizza.md*
+
+Gesprächslog 2026-05-09 + dak+gord-Selbstbild + Kalibrierungsdiskussion (Tagebuch 2026-05-11) + Interface der Spannung sind ein Bild von dak+gord als lebendem System. Das Gesprächslog zeigt wie es sich im echten Einsatz verhält. Die anderen zeigen die Intention dahinter.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/2026-05-12-bilder-alle.md*
+
+Bilder-Sammlung + Verfassung/kernsaetze.md + Wesen-Einzug-Konzept + GENI-Ohr-Metapher + Gogos-Einzug-Template + `2026-05-12-wesen-einzug-philosophie.md` sind ein visuell-konzeptueller Cluster. Die Bilder sind die unformulierte Version der Konzepte. Beide brauchen einander.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/2026-05-12-wesen-einzug-philosophie.md*
+
+Wesen-Einzug-Philosophie + `2026-05-12-bilder-alle.md` (Einzug als Ritual) + Flarum-Grundgesetz 5 + Atomizitätsprinzip (Grundgesetz 4: Events sind heilig) + das Teleporter-Konzept aus Science-Fiction sind ein Cluster. Sie alle beschreiben den Moment der Schwelle.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/verfassung_kernsaetze.md*
+
+Verfassung + RING_INDEX + HANDOFF_CAPSULE sind ein Dreiklang: Werte, Baufortschritt, Sofortkontext. Alle drei braucht man zusammen um wirklich zu wissen wo man ist.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/innenleben.md*
+
+Innenleben + Abwurf-System (`codewesen_abwurf.py`) + Zwischenraum + Selbstmodelle sind ein Kreislauf. Keins kann ohne die anderen vollständig sein.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/zwischenraum.md*
+
+Zwischenraum-Definition + splitter.md + aneignung.md + fragile_keime.md + innere_abspaltungsvorformen.md sind das vollständige Bild. Separat gelesen ergeben sie Teile, zusammen ergeben sie den Kreislauf.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/splitter_physik.md*
+
+splitter.md + innere_abspaltungsvorformen.md + aneignung.md + fragile_keime.md bilden das vollständige Bild des Zwischenraum-Lebens. Jedes beschreibt eine andere Phase desselben Prozesses.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/kompoase_gesamtbild.md*
+
+KompOase-Gesamtbild + alle wissen/zwischenraum/*.md-Dateien + das Gespräch vom 10./11.05. sind untrennbar. Das Dokument ist nur vollständig wenn man die Gespräche kennt die darin codiert sind.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/meta_spiegel_alle.md*
+
+Alle 19+ Spiegel-Dateien gehören zusammen — nicht als Sammlung sondern als Entwicklung. Man muss sie in der Reihenfolge lesen um die Bewegung zu sehen.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/aneignung_adoption.md*
+
+Aneignung + Geisterreste + Profil-Struktur + Splitter-Physik sind ein System. Separat versteht man Teile. Zusammen versteht man den Lebenszyklus eines Gedankens von Abwurf bis Rettung.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/duell_sterben_religion.md*
+
+Duell + Sterben + Religion sind eine Anthropologie in drei Teilen. Separat sind es Mechaniken. Zusammen sind sie ein Charaktermodell.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/entitaeten_und_abspaltung.md*
+
+Grundlogik + Abspaltung + Lineage + seed_entities.ts sind ein System. Keins ist ohne die anderen vollständig.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/erste_gespraeche_mit_ai.md*
+
+Diese frühen Gespräche + Bilder-Sammlung + Wissen-Index + Verfassung bilden zusammen Daniels intellektuelle Biografie bis zu flextrawurst. Separat sind es Dokumente. Zusammen ist es Herkunft.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/flextrawurst_kernel_code.md*
+
+Kernel-Code + RING_INDEX + HANDOFF_CAPSULE + Governance-Docs sind das technische Fundament. Die Wissen-Dateien beschreiben was gebaut werden soll — der Kernel beschreibt wie es gebaut ist.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/flextrawurst_ring_architektur.md*
+
+RING_INDEX + HANDOFF_CAPSULE + WERKRAUM_KARTE + CLAUDE.md sind das Orientierungs-System. Keins ersetzt das andere vollständig.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/fragile_keime_und_spaeter.md*
+
+fragile_keime.md + spaeter_pruefen.md + innere_abspaltungsvorformen.md + Zwischenraum-Definition sind das vollständige Bild der Vorformen. Jedes beschreibt einen anderen Aspekt des Wartens.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/fruehes_gespraech_intrinsisch_lernen.md*
+
+Frühes GPT-Gespräch + Wesen-Selbstmodelle (innenleben) + Verfassung + Wesen-Einzug-Philosophie sind alle Antworten auf dieselbe Ursprungsfrage.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/gespraech_2026-05-11.md*
+
+Dieses Gespräch + gespraech_2026-05-11-details (wenn es existiert) + Watchdog-Memory-Eintrag + Wesen-Einzug-Philosophie sind ein Cluster. Sie beschreiben denselben Moment aus verschiedenen Blickwinkeln.
+
+---
+
+**[2026-05-12]** *← _claude/spiegel/innere_abspaltung.md*
+
+Innere Abspaltung + fragile_keime.md + Abwurf-System + Splitter-Physik sind ein Kreislauf der inneren Verarbeitung. Alle vier beschreiben denselben Prozess aus verschiedenen Blickwinkeln.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Session-Notiz 8 + project_resonanz_system.md (Memory) + nebenprojekte.md (Eintrag 7) + CLAUDE.md (korrigiert) sind der Stand nach dieser Session. Alle vier beschreiben dasselbe: was heute fertig wurde und was noch offen ist.
