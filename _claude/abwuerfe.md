@@ -44,3 +44,6 @@ Das Script meldet weiterhin "22 Abschnitte" obwohl die Session-Notiz jet«
 - [2026-05-13 00:27] **wasser** (i=0.46) → Zwischenraum: »Genau da ist der echte Knoten«
 - [2026-05-13 00:28] **wasser** (i=0.43) → Zwischenraum: »Dann fällt Ollama-Destillation raus«
 - [2026-05-13 00:31] **wasser** (i=0.39) → Zwischenraum: »Ah — jetzt verstehe ich«
+- [2026-05-13 00:33] **nebel** (i=0.31) → Zwischenraum: »Was sich geändert hat:
+
+- **`claude_abwurf.py`**: kein automatischer Brief mehr — der Schamprotokoll«
