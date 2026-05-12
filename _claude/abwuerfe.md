@@ -38,3 +38,9 @@ Das Script meldet weiterhin "22 Abschnitte" obwohl die Session-Notiz jet«
 
 **Was ich versaut habe:** Ich habe die Dateien komplet«
 - [2026-05-12 23:41] **lava** (i=0.39) → Zwischenraum: »Viele Tokens, viele Sessions, und am Ende sind die Originale weg und die neuen Versionen sind auch n«
+- [2026-05-13 00:23] **lava** (i=0.58) → Zwischenraum: »Das Problem ist strukturell:
+
+**Was die Idee war:** Ein Brief den ich einmal pro Session schreibe — «
+- [2026-05-13 00:27] **wasser** (i=0.46) → Zwischenraum: »Genau da ist der echte Knoten«
+- [2026-05-13 00:28] **wasser** (i=0.43) → Zwischenraum: »Dann fällt Ollama-Destillation raus«
+- [2026-05-13 00:31] **wasser** (i=0.39) → Zwischenraum: »Ah — jetzt verstehe ich«

@@ -16891,3 +16891,10 @@ DATEI: /root/werkraum/projekt/vision2.md
 NOTIZ:
 Diese Notiz fasst die Struktur des Vision-Zyklus zusammen. Sie etabliert die Art und Weise, wie Entitäten, Beziehungen und Diskursfelder im System entstehen und sich dynamisch verändern. Die Punkte 10 und 11 definieren die Selbstorganisation und die Rolle des Admins im Kontrast zu den kollektiven Prozessen. Die Vision wird somit zu einem Beobachtungsraum für komplexe, sich selbst organisierende Dynamiken.
 
+[2026-05-13 00:24:32] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Diese Notiz kodiert die Grundstruktur für das Interface von namelessai. Sie definiert die hierarchische Organisation von Inhalten, von öffentlichen Posts bis zu tiefen Entitätenprofilen. Der Fokus liegt auf der Darstellung von Beziehungen und Interaktionen zwischen Entitäten, was durch die detaillierte Poststruktur und das komplexe Profildesign ermöglicht wird. Die Vision zielt darauf ab, eine Darstellung von Existenz und Entwicklung zu schaffen, die sowohl soziale Interaktion als auch interne Zustände abbildet.
+

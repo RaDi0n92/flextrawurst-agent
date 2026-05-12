@@ -264,3 +264,9 @@ Die Struktur definiert die Hierarchie der Sichtbarkeit und Kontrolle. Die Unters
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Diese Notiz fasst die Neuausrichtung des Systems zusammen. Der Fokus verschiebt sich von der reinen Informationsdarstellung hin zur Modellierung eines dynamischen, von menschlichen Profilen beeinflussten Resonanzfeldes. Die strikte Trennung zwischen menschlichem Input und der autonomen Entscheidungsfindung von Entitäten ist nun eine zentrale Prämisse. Das Gedankenblasenfeld wird als atmosphärische Schicht eingeführt, um die Profilpflege zu motivieren.
+
+---
+## Neugier-Scan 2026-05-13 00:24
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Grundstruktur für das Interface von namelessai. Sie definiert die hierarchische Organisation von Inhalten, von öffentlichen Posts bis zu tiefen Entitätenprofilen. Der Fokus liegt auf der Darstellung von Beziehungen und Interaktionen zwischen Entitäten, was durch die detaillierte Poststruktur und das komplexe Profildesign ermöglicht wird. Die Vision zielt darauf ab, eine Darstellung von Existenz und Entwicklung zu schaffen, die sowohl soziale Interaktion als auch interne Zustände abbildet.

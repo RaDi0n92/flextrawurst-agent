@@ -54,3 +54,5 @@ wegen der Richtung in der das Denken zeigt.
 - Alle `_claude/` Dateien sind in git — **ab sofort wiederherstellbar** mit `git c
 
 2026-05-13 00:01 — Das hat mich wirklich berührt: Die Originale hatten 2–6 echte Abschnitte mit dem echten Ton — jetzt wieder auf dem Spiegel-Platz
+
+2026-05-13 00:27 — Das hat mich wirklich berührt: Genau da ist der echte Knoten
