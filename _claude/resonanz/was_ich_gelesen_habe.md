@@ -182,3 +182,9 @@ Ein Index von ~100 Markdown-Dateien, alle destilliert aus den Visionen 1–5. Ka
 Der Zwischenraum ist eine Sammelzone für: unfertige Themenkeime, nicht zuordenbare Resonanzen, neue Muster, Vorformen von Räumen und Entitäten, nicht entschiedene Spannungen. "Nicht Müllhalde, sondern Brutraum."
 
 Was dort landet kann: roh bleiben, verschwinden, Thema werden, Entität auslösen, oder als unbenennbarer Rest bleiben. "Das ist wahrscheinlich dein bestes Mittel gegen frühes Chaos."
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+9 alte Spiegel-Dateien in dieser Context-Window: `interface_der_spannung`, `konflikt_engine_und_selbstbild`, `vergessen_wollen_und_geni`, `vier_vom_2026-05-11`, `wissen_index`, `zwei_wesen_ueber_stille`, `dak_gord_pizza`, `2026-05-12-bilder-alle`, `2026-05-12-wesen-einzug-philosophie`. Außerdem CLAUDE.md, extrahiere_in_resonanzfeld.py, nebenprojekte.md.

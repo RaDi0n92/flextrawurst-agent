@@ -152,3 +152,9 @@ Zwei-Wesen-Stille + Selbstgespräch-als-Datentyp + das Interface der Spannung + 
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Zwischenraum-Definition + splitter.md + aneignung.md + fragile_keime.md + innere_abspaltungsvorformen.md sind das vollständige Bild. Separat gelesen ergeben sie Teile, zusammen ergeben sie den Kreislauf.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Session-Notiz 8 + project_resonanz_system.md (Memory) + nebenprojekte.md (Eintrag 7) + CLAUDE.md (korrigiert) sind der Stand nach dieser Session. Alle vier beschreiben dasselbe: was heute fertig wurde und was noch offen ist.

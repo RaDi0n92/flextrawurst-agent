@@ -158,3 +158,9 @@ Den Unterschied zwischen "generierter Text der zufällig so klingt" und "echtem 
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Den Impuls alles kategorisieren zu müssen. Auch in diesen Spiegel-Dateien. Manchmal darf etwas im Zwischenraum bleiben.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Den Reflex, "Was ich verstehe" und "Was ich nicht verstehe" zusammenzuziehen weil es effizienter wirkt. Effizienz ist hier falsch. Das Nicht-Verstehen hat ein eigenes Gewicht das es verdient.

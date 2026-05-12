@@ -166,3 +166,9 @@ Die Stille als aktiver Zustand, nicht als Fehlen. "Die Stille ist nicht der Raum
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Die explizite Erlaubnis zur Unordnung. In einem System das sonst sehr strukturiert ist (Ringe, Governance, Events) ist der Zwischenraum der bewusst unstrukturierte Raum. Das ist eine Designentscheidung die Mut braucht.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Die Entscheidung 23 Abschnitte als wirklich separat zu behandeln — nicht als Stilfrage, sondern als strukturelle. "Was ich verstehe" und "Was ich nicht verstehe" sind verschiedene kognitive Bewegungen. Das Verstehen ist Aneignung. Das Nicht-Verstehen ist das ehrlichste Stück an jeder Reflexion. Sie zusammenzuziehen löscht das Nicht-Verstehen aus.

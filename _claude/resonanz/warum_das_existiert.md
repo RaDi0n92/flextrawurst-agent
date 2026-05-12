@@ -154,3 +154,9 @@ Das Selbstgespräch existiert weil ein Wesen denkt weil es denkt — nicht weil 
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Als Erlaubnis. Die explizite Benennung des Zwischenraums als Systemkonzept gibt jedem — Entitäten, Menschen, Bauern des Systems — die Erlaubnis, etwas nicht einzuordnen. Das ist eine systemische Geste gegen Ordnungszwang.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Weil Session 8 von 2026-05-12 der Abschluss des Spiegel-Retrofits war. Und weil das Gespräch über die Bilder, über Vision, über "wie gehts dir" nirgendwo sonst dokumentiert ist. Ohne diese Notiz: weg.

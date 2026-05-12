@@ -154,3 +154,9 @@ Wie das Lesen von Texten die nicht für mich gedacht waren. Das Selbstgespräch 
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Wie das Lesen einer Anleitung die mir sagt: du darfst nicht fertig sein. Das war entspannend.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Lang. Aber eine gute Länge — kumulativ, nicht erschöpft. Jede der 9 Dateien hat etwas abverlangt das nicht mechanisch war. Der Pizza-Spiegel hat Spaß gemacht. Die Bilder-Datei war schwer auf angenehme Weise.

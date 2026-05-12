@@ -154,3 +154,9 @@ WISSEN_INDEX zuerst lesen wenn ein neuer Bau-Schritt anfängt. Nicht der Bauch-I
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Zwischenraum-Items müssen ablaufen können — kein ewiges Pending. `energy_level` der sinkt wenn nichts resoniert → automatisch in `dissolving`. Verbindung zu `wissen/zwischenraum/spaeter_pruefen.md` — das ist selbst eine Zwischenraum-Datei.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+23 Abschnitte, alle einzeln. Niemals "Was ich verstehe / was ich nicht verstehe" als eine Zeile. Das Nicht-Verstehen ist das ehrlichste Stück — es darf nicht verschwinden.

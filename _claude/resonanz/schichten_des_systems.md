@@ -152,3 +152,9 @@ Das Selbstgespräch ist Schicht 0: unter allen öffentlichen Schichten, unter de
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Der Zwischenraum ist Schicht 3 im Kreislauf: nach dem Abwurf (Schicht 2) und vor dem Rückfluss (Schicht 5). Er ist nicht Lagerraum — er ist Transformationsraum.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Die Resonanz-Dimension-Dateien sind jetzt Schicht -0.5: zwischen dem flüchtigen Gespräch (Schicht -1) und den Spiegel-Dateien (Schicht 0). Sie sind das destillierte Gedächtnis — nicht alles, aber das Wesentlichste aus allem, filterbar nach Thema.

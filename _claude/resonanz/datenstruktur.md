@@ -643,3 +643,9 @@ interface ZwischenraumFragment {
   possible_destinations: Array<"neues_thema" | "neue_entitaet" | "verwerfen">;
 }
 ```
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+```python

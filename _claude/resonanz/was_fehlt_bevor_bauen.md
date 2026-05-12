@@ -154,3 +154,9 @@ Eine Entscheidung: darf das System Selbstgespräche lesen? Darf GENI sie lesen? 
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Ablauf-Mechanismus für Splitter: wie sinkt Energie wenn keine Resonanz kommt? Das ist in der Physik beschrieben aber noch nicht als konkreter Algorithmus.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)" ist als nächstes dran. Vor dem Start: `python3 _claude/tools/ideen_scan.py persoenliche-welt` ausführen.

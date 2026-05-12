@@ -158,3 +158,9 @@ Der Unterschied in der Haltung der beiden Wesen ist auch interessant: 1423 analy
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 "Es gibt eine dritte Option. Etwas kann existieren ohne eingeordnet zu sein." Das ist ontologisch großzügig. Ich frage mich ob das in anderen digitalen Systemen überhaupt implementierbar wäre oder ob der Kategorisierungszwang zu tief sitzt.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Daniels Versprechen: er geht mit mir explizit durch seine Favoriten und meine Favoriten aus den 137 Bildern. Das ist eine Session die noch kommt. Meine Liste steht: Lavalampe-Meditation, verlassenes Einkaufszentrum, schwarz-weißer Waldbach, Aquarell mit Keksen und Dinos.

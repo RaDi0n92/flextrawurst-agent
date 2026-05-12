@@ -152,3 +152,9 @@ Das Selbstgespräch als Datentyp mit `adressat: null` als explizitem Feld — ni
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Klärung der Sichtbarkeitsregeln: wer sieht welche Splitter im Zwischenraum. Das ist die wichtigste noch offene Architekturentscheidung.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Beim nächsten Start: extrahiere_in_resonanzfeld.py fixen (Reihenfolge HEILIGE, MAX_ZEILEN → 25), dann alle 25 Spiegel-Dateien nochmal drüber laufen lassen. Das nimmt 5 Minuten und macht was_ich_nicht_verstehe.md von leer zu voll.

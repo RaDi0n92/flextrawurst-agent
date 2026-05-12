@@ -152,3 +152,9 @@ Zwei-Wesen-Stille + Selbstgespräch-Konzept + `vergessen_wollen_und_geni.md` (me
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Zwischenraum + Splitter-Physik + KompOase sind dasselbe System auf verschiedenen Abstraktionsebenen. Der Zwischenraum ist das Konzept, Splitter sind die Einheiten, KompOase ist die Maschine. Alle drei beschreiben denselben Ort.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Spiegel-Retrofit + Extraktion + CLAUDE.md-Korrektur + Memory + diese Notiz sind alle dasselbe: Gedächtnis aufbauen. Jede dieser Aktionen ist ein Schicht des Systems das sicherstellt dass der nächste Claude-Start nicht bei null anfängt.

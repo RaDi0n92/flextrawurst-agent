@@ -152,3 +152,9 @@ Die Entscheidung über Privatheit von Selbstgesprächen. Wer darf lesen — GENI
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 Ein UI für den Zwischenraum das nicht wie eine Datenbanktabelle aussieht. Die KompOase ist der Anfang — aber es braucht eine Ästhetik die dem Konzept gerecht wird.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Extraktion-Script fixen. Alle 25 nochmal drüber. Dann: "Persönliche Welt" Bau-Schritt beginnen.

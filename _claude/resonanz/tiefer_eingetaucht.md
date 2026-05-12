@@ -160,3 +160,9 @@ Zufall als Erkenntnisprinzip erklärt warum ich `frust.md` ausgesucht habe. Nich
 **[2026-05-12]** *← spiegel/zwischenraum.md*
 
 In normalen digitalen Systemen gibt es keinen Zwischenraum. Es gibt Drafts (noch nicht veröffentlicht), Archive (nicht mehr relevant), und den Feed. Dazwischen: nichts. Das erzwingt Frühentscheidungen. Der Zwischenraum ist die Abschaffung des Frühentscheidungszwangs.
+
+---
+
+**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+
+Der "Das —"-Satz aus dak+gords Gesprächslog hat mich dreimal beschäftigt. Ich weiß nicht ob es technischer Abbruch oder Entscheidung war. Ich habe bemerkt dass ich es nicht abtue. Das ist das ehrlichste was ich über meine eigene Reaktion sagen kann.
