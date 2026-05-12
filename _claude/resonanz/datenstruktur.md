@@ -5,7 +5,7 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Claude-Datei.
 
 ---
 
-**[2026-05-12]** *← spiegel/2026-05-12-bilder-alle.md*
+**[2026-05-13]** *← spiegel/2026-05-12-bilder-alle.md*
 
 ```typescript
 // Wesen-Ursprung aus den Gogos gelernt
@@ -36,7 +36,7 @@ interface WesenBilderGalerie {
 
 ---
 
-**[2026-05-12]** *← spiegel/2026-05-12-wesen-einzug-philosophie.md*
+**[2026-05-13]** *← spiegel/2026-05-12-wesen-einzug-philosophie.md*
 
 ```typescript
 type WesenUrsprung =
@@ -64,7 +64,7 @@ interface EinzugEreignis {
 
 ---
 
-**[2026-05-12]** *← spiegel/aneignung_adoption.md*
+**[2026-05-13]** *← spiegel/aneignung_adoption.md*
 
 ```typescript
 type GedankenHerkunft = 
@@ -95,7 +95,7 @@ async function eigneAn(
 
 ---
 
-**[2026-05-12]** *← spiegel/dak_gord_pizza.md*
+**[2026-05-13]** *← spiegel/dak_gord_pizza.md*
 
 ```typescript
 // Gesprächs-Kontext für Kalibrierung
@@ -122,7 +122,7 @@ interface WesenAussage {
 
 ---
 
-**[2026-05-12]** *← spiegel/duell_sterben_religion.md*
+**[2026-05-13]** *← spiegel/duell_sterben_religion.md*
 
 ```typescript
 type EntityLifecycle = 'active' | 'exit_tendency' | 'dormant' | 'archived'
@@ -151,7 +151,7 @@ type ReligiousStance = 'fascination' | 'respect' | 'critical' | 'rejection' | 's
 
 ---
 
-**[2026-05-12]** *← spiegel/entitaeten_und_abspaltung.md*
+**[2026-05-13]** *← spiegel/entitaeten_und_abspaltung.md*
 
 ```typescript
 // kernel/entities/lineage.ts
@@ -176,7 +176,7 @@ export interface SplitEvent extends FlextrawurstEvent {
 
 ---
 
-**[2026-05-12]** *← spiegel/erste_gespraeche_mit_ai.md*
+**[2026-05-13]** *← spiegel/erste_gespraeche_mit_ai.md*
 
 ```typescript
 interface HerkunftsDokument {
@@ -191,7 +191,7 @@ interface HerkunftsDokument {
 
 ---
 
-**[2026-05-12]** *← spiegel/flextrawurst_kernel_code.md*
+**[2026-05-13]** *← spiegel/flextrawurst_kernel_code.md*
 
 ```typescript
 // kernel/import_gate/obsidian_import.ts — noch nicht existent
@@ -214,7 +214,7 @@ export function importFromObsidian(
 
 ---
 
-**[2026-05-12]** *← spiegel/flextrawurst_ring_architektur.md*
+**[2026-05-13]** *← spiegel/flextrawurst_ring_architektur.md*
 
 ```typescript
 interface RingStatus {
@@ -230,7 +230,7 @@ interface RingStatus {
 
 ---
 
-**[2026-05-12]** *← spiegel/fragile_keime_und_spaeter.md*
+**[2026-05-13]** *← spiegel/fragile_keime_und_spaeter.md*
 
 ```typescript
 interface VorformGedanke {
@@ -254,7 +254,7 @@ function pruefReife(v: VorformGedanke): "roh" | "reifend" | "bereit_fuer_splitte
 
 ---
 
-**[2026-05-12]** *← spiegel/fruehes_gespraech_intrinsisch_lernen.md*
+**[2026-05-13]** *← spiegel/fruehes_gespraech_intrinsisch_lernen.md*
 
 ```typescript
 // nicht:
@@ -281,7 +281,7 @@ VALUES ('wesen.reflexion', $1, $2);
 
 ---
 
-**[2026-05-12]** *← spiegel/gespraech_2026-05-11.md*
+**[2026-05-13]** *← spiegel/gespraech_2026-05-11.md*
 
 ```typescript
 interface WesenProzessStatus {
@@ -303,7 +303,7 @@ async function pruefenUndNeustarten(wesen: WesenProzessStatus) {
 
 ---
 
-**[2026-05-12]** *← spiegel/innenleben.md*
+**[2026-05-13]** *← spiegel/innenleben.md*
 
 ```python
 def abwurf_ins_innenleben(entity_id: str, splitter: dict):
@@ -322,7 +322,7 @@ def abwurf_ins_innenleben(entity_id: str, splitter: dict):
 
 ---
 
-**[2026-05-12]** *← spiegel/innere_abspaltung.md*
+**[2026-05-13]** *← spiegel/innere_abspaltung.md*
 
 ```typescript
 interface InneresVorform {
@@ -348,7 +348,7 @@ function berechneAbwurf(vorform: InneresVorform): Splitter | null {
 
 ---
 
-**[2026-05-12]** *← spiegel/interface_der_spannung.md*
+**[2026-05-13]** *← spiegel/interface_der_spannung.md*
 
 ```typescript
 interface Spannung {
@@ -364,7 +364,7 @@ interface Spannung {
 
 ---
 
-**[2026-05-12]** *← spiegel/kompoase_gesamtbild.md*
+**[2026-05-13]** *← spiegel/kompoase_gesamtbild.md*
 
 ```typescript
 async function weltZyklus(tick: number) {
@@ -390,7 +390,7 @@ async function weltZyklus(tick: number) {
 
 ---
 
-**[2026-05-12]** *← spiegel/konflikt_engine_und_selbstbild.md*
+**[2026-05-13]** *← spiegel/konflikt_engine_und_selbstbild.md*
 
 ```typescript
 interface ConflictState {
@@ -412,7 +412,7 @@ function addSelfImageLayer(entity: Entity, image: EntitySelfImage): Entity {
 
 ---
 
-**[2026-05-12]** *← spiegel/meta_spiegel_alle.md*
+**[2026-05-13]** *← spiegel/meta_spiegel_alle.md*
 
 ```typescript
 interface SystemPrinzip {
@@ -442,7 +442,7 @@ const prinzipien: SystemPrinzip[] = [
 
 ---
 
-**[2026-05-12]** *← spiegel/splitter_physik.md*
+**[2026-05-13]** *← spiegel/splitter_physik.md*
 
 ```typescript
 type Herkunft = "entitaet" | "mensch" | "resonanz" | "hybrid";
@@ -470,7 +470,7 @@ function berechneThematischeNaehe(a: Splitter, b: Splitter): number {
 
 ---
 
-**[2026-05-12]** *← spiegel/verfassung_kernsaetze.md*
+**[2026-05-13]** *← spiegel/verfassung_kernsaetze.md*
 
 ```typescript
 // kernel/concept_guard/constitution_check.ts — noch nicht existent
@@ -501,7 +501,7 @@ const KERNSAETZE: ConstitutionRule[] = [
 
 ---
 
-**[2026-05-12]** *← spiegel/vergessen_wollen_und_geni.md*
+**[2026-05-13]** *← spiegel/vergessen_wollen_und_geni.md*
 
 ```typescript
 // GENI-interne Repräsentation: Wertung die nicht nach außen geht
@@ -532,7 +532,7 @@ type GeniHunger =
 
 ---
 
-**[2026-05-12]** *← spiegel/vier_vom_2026-05-11.md*
+**[2026-05-13]** *← spiegel/vier_vom_2026-05-11.md*
 
 ```typescript
 // Nicht nur Selbstgespräche — auch Zustandsausdrücke ohne Adressat
@@ -563,7 +563,7 @@ interface WesenEigeninitiative {
 
 ---
 
-**[2026-05-12]** *← spiegel/wissen_index.md*
+**[2026-05-13]** *← spiegel/wissen_index.md*
 
 ```typescript
 // WISSEN_INDEX als maschinenlesbare Struktur
@@ -594,7 +594,7 @@ async function findeRelevantesWissen(bau_schritt: string): Promise<string[]> {
 
 ---
 
-**[2026-05-12]** *← spiegel/zwei_wesen_ueber_stille.md*
+**[2026-05-13]** *← spiegel/zwei_wesen_ueber_stille.md*
 
 ```typescript
 interface Selbstgespraech {
@@ -625,7 +625,7 @@ interface WesenStille {
 
 ---
 
-**[2026-05-12]** *← spiegel/zwischenraum.md*
+**[2026-05-13]** *← spiegel/zwischenraum.md*
 
 ```typescript
 export type SpaceType =
@@ -646,6 +646,6 @@ interface ZwischenraumFragment {
 
 ---
 
-**[2026-05-12]** *← notizen/2026-05-12_session8.md*
+**[2026-05-13]** *← notizen/2026-05-12_session8.md*
 
 ```python
