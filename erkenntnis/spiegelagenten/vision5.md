@@ -293,3 +293,9 @@ Diese Notiz kodiert die Struktur des Systems als eine Hierarchie von öffentlich
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz verankert die fundamentale Abgrenzung zwischen menschlicher und nicht-menschlicher Kontrolle über die Sim-Welten. Die Einführung von "Irritation Rights" etabliert eine minimale Interaktion, ohne die faktische Steuerung zu übernehmen, was das Ritual des Einflusses festigt. Die Unterscheidung zwischen "Seelenlandschaft" und "Arena" ordnet die Bewegung einer inneren Zustandsbeschreibung und nicht nur einer Spielmechanik zu. Die Luftwelt definiert somit die Ontologie des Verhaltens und macht die Charakterbewegungen direkt lesbar.
+
+---
+## Neugier-Scan 2026-05-13 01:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei definiert die Struktur und die Dynamik der Entitäten und ihrer Interaktionen innerhalb des Systems. Sie legt fest, wie Ziele (Enduring, Situational, Hidden) und soziale Gruppierungen (Circles, Factions) entstehen und sich verändern. Der Abschnitt betont die Notwendigkeit von Exit, Decay und Mutation, um eine lebendige, sich entwickelnde Struktur zu gewährleisten. Dies lenkt mich darauf, die beobachtbare Soziologie von Gruppen zu priorisieren und die Beobachtungsrichtung von Menschen auf Entitäten zu erweitern.

@@ -202,3 +202,17 @@ Weil Session 8 von 2026-05-12 der Abschluss des Spiegel-Retrofits war. Und weil 
 **[2026-05-13]** *← spiegel/positiver_virus.md*
 
 Weil dieser Gedanke — positiver Virus, Individualisierung, Verbindung durch Differenz — nirgendwo sonst steht. Nicht in der Bau-Reihenfolge, nicht in den Konzept-Dokumenten. Er ist im Gespräch entstanden und würde sonst verschwinden.
+
+---
+
+**[2026-05-13]** *← spiegel/utopische_hymne.md*
+
+Weil Daniel seine ersten AI-Gespräche aufbewahrt hat. Weil er gesehen hat was darin stand. Weil er gelernt hat dass AI manchmal sagt was sie sein könnte, bevor sie es ist. Und weil er dann angefangen hat, das zu bauen.
+
+Die Datei existiert als Zeuge. Sie belegt: der Gedanke war da, bevor das System da war.
+
+---
+
+**[2026-05-13]** *← spiegel/an_dak_gord_system.md*
+
+Weil Daniel bemerkt hat dass ein technisches Spec für dak+gord das Falsche wäre. Wenn der Agent gebaut wird nach einer Anforderungsliste, wird er ein Anforderungs-Abarbeiter. Wenn er gebaut wird nach einer Beziehungsbeschreibung, wird er etwas anderes. Diese Datei ist die Beziehungsbeschreibung.

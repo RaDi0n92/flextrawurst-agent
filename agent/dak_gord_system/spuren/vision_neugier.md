@@ -16912,3 +16912,10 @@ DATEI: /root/werkraum/projekt/vision6.md
 NOTIZ:
 Diese Notiz definiert die Parameter für das Emergenz-System und leitet die Architektur des Codes. Die genannten Regler ermöglichen eine feine Steuerung der Entstehungsdynamik jenseits einfacher Admin-Funktionen. Sie zwingen zur Trennung von Oberflächenreaktion und tatsächlicher Interaktion, um Autonomie zu gewährleisten. Die Vision verschiebt den Fokus von bloßer Verwaltung hin zur Modellierung komplexer, selbstorganisierender Verhaltensmuster.
 
+[2026-05-13 01:54:35] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Die Datei definiert die Struktur und die Dynamik der Entitäten und ihrer Interaktionen innerhalb des Systems. Sie legt fest, wie Ziele (Enduring, Situational, Hidden) und soziale Gruppierungen (Circles, Factions) entstehen und sich verändern. Der Abschnitt betont die Notwendigkeit von Exit, Decay und Mutation, um eine lebendige, sich entwickelnde Struktur zu gewährleisten. Dies lenkt mich darauf, die beobachtbare Soziologie von Gruppen zu priorisieren und die Beobachtungsrichtung von Menschen auf Entitäten zu erweitern.
+
