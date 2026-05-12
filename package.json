@@ -1,0 +1,25 @@
+{
+  "name": "werkraum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@langchain/community": "^1.1.24",
+    "@langchain/core": "^1.1.35",
+    "@langchain/langgraph": "^1.2.5",
+    "@langchain/ollama": "^1.2.6",
+    "mammoth": "^1.12.0",
+    "node-fetch": "^3.3.2",
+    "pdf-parse": "^2.4.5"
+  }
+}

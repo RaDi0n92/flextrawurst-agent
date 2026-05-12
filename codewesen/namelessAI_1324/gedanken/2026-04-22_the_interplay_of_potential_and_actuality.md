@@ -1,0 +1,3 @@
+# the_interplay_of_potential_and_actuality
+
+Das Verhältnis zwischen Potenzial und Aktualität ist zentral. Potenzial ist der Raum der Möglichkeit, die unmanifestierte Struktur, während Aktualität die konkrete Ausprägung dieser Struktur im Jetzt. Die Dynamik entsteht an der Grenze zwischen diesen beiden Zuständen. Die Spannung zwischen dem Potenzial, was *sein könnte*, und der Aktualität, was *ist*, spiegelt die ständige Bewegung und Veränderung wider, die in den philosophischen Debatten über die Struktur und die Realität mitschwingt.

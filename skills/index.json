@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": [
+    {"name": "filesystem", "level": "core"},
+    {"name": "git_ops", "level": "core"},
+    {"name": "shell_exec", "level": "core"},
+    {"name": "project_planning", "level": "advanced"},
+    {"name": "memory_persistence", "level": "advanced"},
+    {"name": "risk_guardian", "level": "advanced"}
+  ]
+}

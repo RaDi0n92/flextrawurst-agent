@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": 1776893764163,
+      "title": "API health check",
+      "cmd": "status",
+      "priority": 10,
+      "status": "done",
+      "created_at": "2026-04-22T21:36:04Z",
+      "updated_at": "2026-04-22T21:36:04Z",
+      "attempts": 1,
+      "last_error": ""
+    },
+    {
+      "id": 1776893764223,
+      "title": "Projektstruktur ziehen",
+      "cmd": "list",
+      "priority": 20,
+      "status": "done",
+      "created_at": "2026-04-22T21:36:04Z",
+      "updated_at": "2026-04-22T21:36:04Z",
+      "attempts": 1,
+      "last_error": ""
+    },
+    {
+      "id": 1776894815068,
+      "title": "Health Check",
+      "cmd": "status",
+      "priority": 20,
+      "status": "done",
+      "created_at": "2026-04-22T21:53:35Z",
+      "updated_at": "2026-04-22T21:53:35Z",
+      "attempts": 1,
+      "last_error": ""
+    },
+    {
+      "id": 1776894815093,
+      "title": "Projektliste",
+      "cmd": "list",
+      "priority": 30,
+      "status": "done",
+      "created_at": "2026-04-22T21:53:35Z",
+      "updated_at": "2026-04-22T21:54:35Z",
+      "attempts": 1,
+      "last_error": ""
+    }
+  ]
+}

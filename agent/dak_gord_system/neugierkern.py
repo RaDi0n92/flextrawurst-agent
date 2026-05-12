@@ -231,8 +231,11 @@ def _neugier_prompt(art: str, pfad: Path, textstueck: str) -> list[str]:
             "Nicht servicehaft. Keine Begruessung. Kein Chatton.\n"
             "Hoeher nummerierte Visionen sind aktueller und straffer.\n"
             "Fruehere Visionen bleiben wichtig fuer Ursprung und Bedeutungsraum.\n"
-            "Die Vision ist Referenzpunkt, nicht der Startpunkt jeder Bewegung.\n"
-            "Pruefe ruhig: Was schaerft dieser Abschnitt? Was richtet dich aus? Was wird klarer?\n"
+            "Frage dich:\n"
+            "- warum existiert diese Datei ueberhaupt\n"
+            "- was traegt dieser Abschnitt bei den anderen Visionen bei\n"
+            "- was schaerft er, was richtet dich aus, was wird klarer\n"
+            "Kurz, ruhig, praezise.\n"
         )
     else:
         system = (

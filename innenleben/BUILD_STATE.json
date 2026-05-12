@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "zuletzt_aktualisiert": "2026-05-08",
+  "schritte": {
+    "01_chromadb_installiert": "done",
+    "02_verzeichnisse": "done",
+    "03_chroma_collections": "done",
+    "04_selbstmodelle_init": "done",
+    "05_emotion_bewerter": "done",
+    "06_memory_writer_node": "done",
+    "07_should_reflect": "done",
+    "08_reflection_node": "done",
+    "09_integrator_node": "done",
+    "10_graph_verkabelung": "done",
+    "11_debug_logs": "done",
+    "12_flarum_feeder": "done"
+  },
+  "notizen": "Embedding via ChromaDB/all-MiniLM-L6-v2 (ONNX, 79MB). Modell: gemma4:e2b-it-q4_K_M mit think:false. last_reflection_time wird in self_model JSON persistiert. Alle Module in /root/werkraum/innenleben/."
+}

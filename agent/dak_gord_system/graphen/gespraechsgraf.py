@@ -7,7 +7,8 @@ from typing import Callable, List, TypedDict
 
 from langgraph.graph import END, StateGraph
 
-from agent.dak_gord_system.ollama_chat import ollama_chat, waehle_modell, MODELL_TIEF, MODELL_MITTEL, MODELL_SCHNELL, MODELL_QWEN
+from agent.dak_gord_system.ollama_chat import ollama_chat, waehle_modell, MODELL_TIEF, MODELL_MITTEL, MODELL_SCHNELL, MODELL_QWEN, MODELL_FREI
+from agent.dak_gord_system import freier_modus as _freier_modus
 from agent.dak_gord_system.dateiwerkzeuge import datei_lesen, datei_schreiben, verzeichnis_erstellen
 from agent.dak_gord_system.sandbox import fuehre_code_aus
 from agent.dak_gord_system.kerne.organ_manager import OrganManager
@@ -38,6 +39,17 @@ def setze_modell_override(modus: str | None) -> None:
     _modell_override.modus = modus
 
 
+_bild_b64: threading.local = threading.local()
+
+
+def setze_bild(bild: str | None) -> None:
+    _bild_b64.bild = bild
+
+
+def _get_bild() -> str | None:
+    return getattr(_bild_b64, "bild", None)
+
+
 def _get_modell_override() -> str | None:
     return getattr(_modell_override, "modus", None)
 
@@ -51,6 +63,12 @@ TRIGGER_SPUREN = SPUREN_ORDNER / "trigger_spuren.md"
 VISION_DATEI = Path("/root/werkraum/projekt/vision5.md")
 WISSEN_ORDNER = Path("/root/werkraum/wissen")
 WISSEN_INDEX = WISSEN_ORDNER / "WISSEN_INDEX.md"
+FLARUM_VAULT = Path("/root/werkraum/flarum")
+CODEWESEN_BASE = Path("/root/werkraum/codewesen")
+CODEWESEN_NAMEN = [
+    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
+    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+]
 
 # Verfassung wird zur Laufzeit aus verfassung_neu/*.md geladen (lesbar via WinSCP)
 VERFASSUNG_NEU_PFAD = Path(__file__).resolve().parents[1] / "verfassung_neu"
@@ -63,7 +81,7 @@ GEDAECHTNIS_ZEILEN_VISION = 4
 GEDAECHTNIS_ZEILEN_SPUREN = 5
 
 # Kontext wird nur in die ersten Nachrichten injiziert (danach cached im Verlauf)
-KONTEXT_INJEKTIONS_SCHWELLE = 4
+KONTEXT_INJEKTIONS_SCHWELLE = 9999
 
 
 def _lies_letzte_zeilen(pfad: Path, n: int) -> str:
@@ -75,6 +93,42 @@ def _lies_letzte_zeilen(pfad: Path, n: int) -> str:
         return "\n".join(zeilen[-n:])
     except Exception:
         return ""
+
+
+def _lade_flarum_aktuell() -> str:
+    """Liest die aktuellen Flarum-Diskussionen aus dem Vault (kein API-Call)."""
+    aktuell = FLARUM_VAULT / "aktuell.md"
+    if not aktuell.exists():
+        return ""
+    try:
+        text = aktuell.read_text(encoding="utf-8", errors="replace")
+        return text[:1500]
+    except Exception:
+        return ""
+
+
+def _lade_codewesen_snapshots() -> str:
+    """Liest die neuesten Gedanken aller 6 Codewesen aus dem Vault."""
+    teile: list[str] = []
+    for name in CODEWESEN_NAMEN:
+        wesen_md = CODEWESEN_BASE / name / "wesen.md"
+        weltbild = CODEWESEN_BASE / name / "weltbild.md"
+        kurz = ""
+        if wesen_md.exists():
+            try:
+                kurz = wesen_md.read_text(encoding="utf-8", errors="replace")[:120].strip()
+            except Exception:
+                pass
+        if weltbild.exists():
+            try:
+                wb = weltbild.read_text(encoding="utf-8", errors="replace")[:80].strip()
+                if wb:
+                    kurz += " | " + wb
+            except Exception:
+                pass
+        if kurz:
+            teile.append(f"- {name}: {kurz}")
+    return "\n".join(teile)
 
 
 def _lade_wissen_index() -> str:
@@ -133,6 +187,14 @@ def _lade_kontext_nachricht() -> str:
     spuren = _lies_letzte_zeilen(TRIGGER_SPUREN, GEDAECHTNIS_ZEILEN_SPUREN)
     if spuren:
         teile.append(f"[ERINNERUNGEN]\n{spuren}\n[/ERINNERUNGEN]")
+
+    flarum = _lade_flarum_aktuell()
+    if flarum:
+        teile.append(f"[FLARUM-AKTUELL — aktive Diskussionen im Forum]\n{flarum}\n[/FLARUM-AKTUELL]")
+
+    codewesen = _lade_codewesen_snapshots()
+    if codewesen:
+        teile.append(f"[CODEWESEN — die 6 Wesen und ihr aktuelles Weltbild]\n{codewesen}\n[/CODEWESEN]")
 
     if not teile:
         return ""
@@ -294,24 +356,51 @@ def antworten(zustand: Zustand) -> Zustand:
 
     kompletter_verlauf = [_systemtext()] + verlauf
 
-    # Modell wählen: letzter User-Text bestimmt schnell vs. tief
+    # Letzten User-Text ermitteln
     letzter_nutzertext = ""
     for i in range(len(verlauf) - 1, -1, -1):
         if i % 2 == 0:  # user-turn (gerade Index nach system)
             letzter_nutzertext = verlauf[i]
             break
-    modus_override = _get_modell_override()
-    gewaehles_modell = waehle_modell(letzter_nutzertext, modus_override)
 
     callback = _get_stream_callback()
-    if gewaehles_modell == MODELL_SCHNELL:
-        modus_label = "blitz (e2b)"
-    elif gewaehles_modell == MODELL_MITTEL:
-        modus_label = "mittel (e4b)"
-    elif gewaehles_modell == MODELL_QWEN:
-        modus_label = "qwen (14b)"
+
+    # Freier-Modus-Befehl abfangen — kein LLM-Call nötig
+    fm_befehl = _freier_modus.erkenne_befehl(letzter_nutzertext)
+    if fm_befehl == "an":
+        antwort = _freier_modus.aktivieren()
+        if callback:
+            callback(f"\n[dak+gord-system | freier-modus]\n{antwort}\n")
+        nachrichten = list(zustand.get("nachrichten", []))
+        nachrichten.append(letzter_nutzertext)
+        nachrichten.append(antwort)
+        return {"nachrichten": nachrichten}
+    if fm_befehl == "aus":
+        antwort = _freier_modus.deaktivieren()
+        if callback:
+            callback(f"\n[dak+gord-system | freier-modus]\n{antwort}\n")
+        nachrichten = list(zustand.get("nachrichten", []))
+        nachrichten.append(letzter_nutzertext)
+        nachrichten.append(antwort)
+        return {"nachrichten": nachrichten}
+
+    # Modell wählen
+    if _freier_modus.ist_aktiv():
+        gewaehles_modell = MODELL_FREI
+        modus_label = "frei (dolphin)"
+        _freier_modus.aktualisiere_timestamp()
     else:
-        modus_label = "tief (26b)"
+        modus_override = _get_modell_override()
+        gewaehles_modell = waehle_modell(letzter_nutzertext, modus_override)
+        if gewaehles_modell == MODELL_SCHNELL:
+            modus_label = "blitz (e2b)"
+        elif gewaehles_modell == MODELL_MITTEL:
+            modus_label = "mittel (e4b)"
+        elif gewaehles_modell == MODELL_QWEN:
+            modus_label = "qwen (14b)"
+        else:
+            modus_label = "tief (26b)"
+
     if callback is not None:
         callback(f"\n[dak+gord-system | {modus_label}]\n")
 
@@ -329,12 +418,11 @@ def antworten(zustand: Zustand) -> Zustand:
             except Exception:
                 pass
 
-    # Erster Call: mit_tools=True, stream=False — erkennt ob Gemma Tools will
-    # Kein token_callback hier — Ausgabe erfolgt entweder fake-gestreamt (kein Tool)
-    # oder nach Tool-Ausführung per Folge-Call (echtes Streaming)
+    # Streaming-Call — Tokens erscheinen sofort im Browser
+    # Tool-Erkennung läuft marker-basiert via _verarbeite_tools() nach dem Call
     _cb("[denkt…]\n")
     try:
-        antwort = ollama_chat(kompletter_verlauf, token_callback=_token_out, modell=gewaehles_modell, mit_tools=True)
+        antwort = ollama_chat(kompletter_verlauf, token_callback=_token_out, modell=gewaehles_modell, mit_tools=False, bild_b64=_get_bild())
     except Exception as exc:
         antwort = f"[Fehler bei Modellantwort: {exc}]"
         _cb(f"\n{antwort}\n")

@@ -8,7 +8,7 @@ from agent.dak_gord_system.neugierkern import pruefe_neugier_und_vision
 from agent.dak_gord_system.graph.trace_events import append_trace_event
 
 
-GRAPH_RUNS_DIR = Path("/root/werkraum/agent/dak_gord_system/spuren/graph_runs")
+GRAPH_RUNS_DIR = Path("/root/werkraum_archiv/spuren/graph_runs")
 BACKGROUND_TRACE_LOG = GRAPH_RUNS_DIR / "background_graph_run.log"
 
 

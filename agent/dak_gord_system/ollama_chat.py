@@ -11,7 +11,8 @@ OLLAMA_URL = "http://localhost:11434/api/chat"
 MODELL_TIEF    = os.getenv("DAK_GORD_OLLAMA_MODELL",         "gemma4:e2b-it-q4_K_M")
 MODELL_MITTEL  = os.getenv("DAK_GORD_OLLAMA_MODELL_MITTEL",  "gemma4:e2b-it-q4_K_M")
 MODELL_SCHNELL = os.getenv("DAK_GORD_OLLAMA_MODELL_SCHNELL", "gemma4:e2b-it-q4_K_M")
-MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "qwen2.5-coder:7b")
+MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "gemma4:e2b-it-q4_K_M")
+MODELL_FREI    = os.getenv("DAK_GORD_OLLAMA_MODELL_FREI",    "dolphin-mistral:7b")
 STANDARD_TIMEOUT = int(os.getenv("DAK_GORD_OLLAMA_TIMEOUT", "720"))
 
 _MAX_VERSUCHE = 3
@@ -213,21 +214,31 @@ def ollama_chat(
     token_callback: Callable[[str], None] | None = None,
     modell: str | None = None,
     mit_tools: bool = False,
+    bild_b64: str | None = None,
 ) -> str:
     verwendetes_modell = modell or MODELL_MITTEL
     nachrichten = _baue_nachrichten(verlauf)
 
+    if bild_b64:
+        for i in range(len(nachrichten) - 1, -1, -1):
+            if nachrichten[i]["role"] == "user":
+                nachrichten[i] = dict(nachrichten[i], images=[bild_b64])
+                break
+
     # temperature=0.0 für Tool-Entscheidung (deterministisch), 0.7 für Sprache
     temperature = 0.0 if mit_tools else 0.7
+
+    num_predict = 400 if mit_tools else 700
 
     payload: dict = {
         "model": verwendetes_modell,
         "stream": True,
         "messages": nachrichten,
         "keep_alive": -1,
+        "think": False,
         "options": {
             "num_ctx": 8192,
-            "num_thread": 8,
+            "num_predict": num_predict,
             "temperature": temperature,
             "top_k": 64,
             "top_p": 0.95,

@@ -6,7 +6,7 @@ from pathlib import Path
 from agent.dak_gord_system.graph.state import AgentState
 
 
-GRAPH_RUNS_DIR = Path("/root/werkraum/agent/dak_gord_system/spuren/graph_runs")
+GRAPH_RUNS_DIR = Path("/root/werkraum_archiv/spuren/graph_runs")
 
 
 def _ts() -> str:

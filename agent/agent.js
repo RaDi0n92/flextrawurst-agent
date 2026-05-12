@@ -36,7 +36,7 @@ const VERBESSERUNG_FILE = path.join(AGENT_DIR, "verbesserung.md");
 const AGENT_FILE = path.join(AGENT_DIR, "AGENT.md");
 const IDENTITAET_FILE = path.join(AGENT_DIR, "identitaet.md");
 
-const MODEL_NAME = "qwen2.5-coder:14b";
+const MODEL_NAME = "gemma4:e2b-it-q4_K_M";
 
 const model = new ChatOllama({
   model: MODEL_NAME,

@@ -1,0 +1,8 @@
+{
+  "session_memory": ["goal", "constraints", "open_questions", "decisions"],
+  "long_term_memory": ["agreements", "architecture", "preferences", "recurring_failures"],
+  "retention_policy": {
+    "journal_days": 30,
+    "decision_days": 3650
+  }
+}

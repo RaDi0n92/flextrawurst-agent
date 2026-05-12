@@ -12,6 +12,7 @@ import json
 import os
 import re
 import shutil
+import signal as _signal
 import subprocess
 import sys
 import threading
@@ -31,8 +32,15 @@ from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingRes
 from gedaechtnis_ops import (
     GENI_ROOT, KNOTEN_DIR, KANTEN_DIR,
     knoten_schreiben, kante_schreiben, tiefe_erhoehen, naechste_id,
+    knoten_max_id,
 )
 import aktion
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    import obsidian_vault as _vault
+    _VAULT_OK = True
+except ImportError:
+    _VAULT_OK = False
 
 try:
     import edge_tts as _edge_tts
@@ -173,27 +181,29 @@ def kern_laden() -> str:
 
 
 def letzte_knoten_laden(n: int = 6) -> str:
-    dateien = sorted(
-        [f for f in KNOTEN_DIR.glob("*.json") if f.stem != "schema"],
-        key=lambda f: f.stat().st_mtime,
-        reverse=True,
-    )[:n]
+    max_id = knoten_max_id()
     zeilen = []
-    for f in reversed(dateien):
-        try:
-            k = json.loads(f.read_text())
-            ts = k.get("zeitstempel", "")[:16]
-            zeilen.append(f"[{ts}] {k.get('quelle','?')}: {k.get('inhalt','')[:100]}")
-        except Exception:
-            pass
-    return "\n".join(zeilen)
+    i = max_id
+    while i >= 1 and len(zeilen) < n:
+        f = KNOTEN_DIR / f"{i}.json"
+        if f.exists():
+            try:
+                k = json.loads(f.read_text())
+                ts = k.get("zeitstempel", "")[:16]
+                zeilen.append(f"[{ts}] {k.get('quelle','?')}: {k.get('inhalt','')[:100]}")
+            except Exception:
+                pass
+        i -= 1
+    return "\n".join(reversed(zeilen))
 
 
 def relevante_knoten_laden(eingabe: str, n: int = 5) -> str:
     worte = set(eingabe.lower().split())
     treffer = []
-    for f in KNOTEN_DIR.glob("*.json"):
-        if f.stem == "schema":
+    max_id = knoten_max_id()
+    for i in range(max_id, max(1, max_id - 2000), -1):
+        f = KNOTEN_DIR / f"{i}.json"
+        if not f.exists():
             continue
         try:
             k = json.loads(f.read_text())
@@ -203,12 +213,142 @@ def relevante_knoten_laden(eingabe: str, n: int = 5) -> str:
                 treffer.append((len(match), k))
         except Exception:
             pass
-    treffer.sort(reverse=True)
+    treffer.sort(key=lambda x: x[0], reverse=True)
     zeilen = []
     for _, k in treffer[:n]:
         ts = k.get("zeitstempel", "")[:16]
         zeilen.append(f"[{ts}] {k.get('quelle','?')}: {k.get('inhalt','')[:150]}")
     return "\n".join(zeilen)
+
+
+def gedaechtnis_absicht_laden(eingabe: str) -> str:
+    """Erkennt Gedächtnisabfragen in natürlicher Sprache und lädt passende Knoten als Kontext."""
+    text = eingabe.lower()
+
+    gedaechtnisworte = [
+        "wann", "zeig", "was hast du", "was weißt du", "erinnerst", "erinnere",
+        "beobachtet", "gesehen", "wahrgenommen", "heute", "gestern",
+        "diese woche", "letzte woche", "letzten monat", "wie oft", "wie viele",
+        "was war", "was ist passiert", "rückblick", "überblick", "erzähl mir",
+        "was gibt es", "was hast", "zeig mir", "wie war", "wieviel",
+        "was alles", "was habe ich", "haben wir", "haben wir gesprochen",
+    ]
+    if not any(w in text for w in gedaechtnisworte):
+        return ""
+
+    # Zeitraum
+    zeitraum = ""
+    if "heute" in text:
+        zeitraum = "heute"
+    elif "gestern" in text:
+        zeitraum = "gestern"
+    elif any(w in text for w in ["diese woche", "letzte woche", "woche"]):
+        zeitraum = "woche"
+    elif any(w in text for w in ["monat", "letzten monat", "diesen monat"]):
+        zeitraum = "monat"
+
+    # Typ
+    typ = ""
+    if any(w in text for w in ["gespräch", "gesprochen", "geredet", "dialog", "unterhalt", "geschrieben"]):
+        typ = "dialog"
+    elif any(w in text for w in ["prozess", "prozesse"]):
+        typ = "prozess_snapshot"
+    elif any(w in text for w in ["muster", "erkenn", "wiederholt", "häufig"]):
+        typ = "muster"
+    elif any(w in text for w in ["system", "ram", "disk", "speicher", "service"]):
+        typ = "system_zustand"
+
+    # Tiefe
+    tiefe = -1
+    if any(w in text for w in ["tiefst", "wichtigst", "kern", "zentral", "veranker"]):
+        tiefe = 3
+    elif any(w in text for w in ["neu", "frisch", "gerade", "zuletzt", "neuest"]):
+        tiefe = 0
+
+    # Tag aus bekannten Schlüsseln
+    tag = ""
+    bekannte = [
+        "codewesen", "nameless", "flarum", "dialog", "bild", "system",
+        "impuls", "muster", "shell", "upload", "visuell", "bridge",
+    ]
+    for t in bekannte:
+        if t in text:
+            tag = t
+            break
+
+    # Cutoff berechnen
+    jetzt = datetime.now(timezone.utc)
+    von = None
+    bis = None
+    if zeitraum == "heute":
+        von = jetzt.replace(hour=0, minute=0, second=0, microsecond=0)
+    elif zeitraum == "gestern":
+        von = (jetzt - timedelta(days=1)).replace(hour=0, minute=0, second=0, microsecond=0)
+        bis = jetzt.replace(hour=0, minute=0, second=0, microsecond=0)
+    elif zeitraum == "woche":
+        von = jetzt - timedelta(days=7)
+    elif zeitraum == "monat":
+        von = jetzt - timedelta(days=30)
+
+    max_id = knoten_max_id()
+    suchfenster = 5000
+    dateien = [
+        KNOTEN_DIR / f"{i}.json"
+        for i in range(max_id, max(1, max_id - suchfenster), -1)
+        if (KNOTEN_DIR / f"{i}.json").exists()
+    ]
+
+    knoten = []
+    for f in dateien:
+        try:
+            k = json.loads(f.read_text())
+        except Exception:
+            continue
+        if tag and not any(tag in t.lower() for t in k.get("tags", [])):
+            continue
+        if tiefe >= 0 and k.get("tiefe", 0) != tiefe:
+            continue
+        if typ and k.get("typ", "") != typ:
+            continue
+        if k.get("quelle") == "vps_dateisystem" and not any(
+            w in text.lower() for w in ["datei", "dateisystem", "ordner", "verzeichnis", "system"]
+        ):
+            continue
+        if von or bis:
+            ts_raw = k.get("zeitstempel", "")
+            if not ts_raw:
+                continue
+            try:
+                ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+                if von and ts < von:
+                    continue
+                if bis and ts >= bis:
+                    continue
+            except Exception:
+                continue
+        ts_kurz = k.get("zeitstempel", "")[:16]
+        knoten.append(f"[{ts_kurz}] {k.get('quelle','?')} ({k.get('typ','?')}): {k.get('inhalt','')[:160]}")
+        if len(knoten) >= 8:
+            break
+
+    if not knoten:
+        return ""
+
+    filter_teile = []
+    if zeitraum:
+        filter_teile.append(zeitraum)
+    if typ:
+        filter_teile.append(typ)
+    if tag:
+        filter_teile.append(f"#{tag}")
+    if tiefe >= 0:
+        filter_teile.append(f"tiefe:{tiefe}")
+    filter_str = " · ".join(filter_teile) if filter_teile else "alle"
+
+    return (
+        f"## Gedächtnisabruf [{filter_str}] — {len(knoten)} Knoten:\n\n"
+        + "\n".join(knoten)
+    )
 
 
 def live_kontext(eingabe: str) -> str:
@@ -239,9 +379,26 @@ def live_kontext(eingabe: str) -> str:
     alle_wesen = [d.name for d in CODEWESEN_DIR.iterdir()
                   if d.is_dir() and not d.name.startswith("_")] if CODEWESEN_DIR.exists() else []
 
+    alle_wesen_anfrage = any(w in text for w in ["codewesen", "alle wesen", "wesen"])
     wesen_gefunden = []
-    if any(w in text for w in ["codewesen", "alle wesen", "wesen"]):
-        wesen_gefunden = alle_wesen[:4]
+    if alle_wesen_anfrage:
+        # Allgemeine Frage: wesen.md-Auszug pro Wesen (~250 Zeichen), kein volles Profil
+        wesen_liste = [d.name for d in CODEWESEN_DIR.iterdir()
+                       if d.is_dir() and not d.name.startswith("_")] if CODEWESEN_DIR.exists() else []
+        blöcke = []
+        for wesen in wesen_liste[:6]:
+            wesen_md = CODEWESEN_DIR / wesen / "wesen.md"
+            inhalt = ""
+            if wesen_md.exists():
+                try:
+                    inhalt = wesen_md.read_text(errors="replace")[:250]
+                except Exception:
+                    pass
+            if inhalt:
+                blöcke.append(f"**{wesen}:**\n{inhalt}")
+        if blöcke:
+            teile.append("### Codewesen:\n\n" + "\n\n".join(blöcke))
+        return "\n\n".join(teile)
     else:
         for name in alle_wesen:
             kennung = name.split("_")[-1]
@@ -290,8 +447,10 @@ def live_kontext(eingabe: str) -> str:
 def resonanz_suchen(eingabe: str) -> list:
     worte = set(eingabe.lower().split())
     treffer = []
-    for f in KNOTEN_DIR.glob("*.json"):
-        if f.stem == "schema":
+    max_id = knoten_max_id()
+    for i in range(max_id, max(1, max_id - 2000), -1):
+        f = KNOTEN_DIR / f"{i}.json"
+        if not f.exists():
             continue
         try:
             k = json.loads(f.read_text())
@@ -318,15 +477,26 @@ def system_prompt_bauen(eingabe: str = "") -> str:
         f"## GENI: Sprache\n\n{cache.get('sprache', '')}"
     )
 
-    letzte = letzte_knoten_laden()
-    muster = neuester_muster_text()
-    muster_block = f"\n\n## Was ich als Muster erkenne:\n\n{muster}" if muster else ""
+    PROMPT_LIMIT = 8000
+    budget = PROMPT_LIMIT - len(kern_block) - 900  # 900 für Rahmen-Text
 
-    relevante = relevante_knoten_laden(eingabe) if eingabe else ""
-    relevante_block = f"\n\n## Resonanz — inhaltlich passende Erinnerungen:\n\n{relevante}" if relevante else ""
+    letzte = letzte_knoten_laden()
+    budget -= len(letzte)
 
     live = live_kontext(eingabe) if eingabe else ""
     live_block = f"\n\n## Direktzugriff — aktuelle Daten aus dem System:\n\n{live}" if live else ""
+    budget -= len(live_block)
+
+    gedaechtnis = gedaechtnis_absicht_laden(eingabe) if (eingabe and budget > 400) else ""
+    gedaechtnis_block = f"\n\n{gedaechtnis}" if gedaechtnis else ""
+    budget -= len(gedaechtnis_block)
+
+    relevante = relevante_knoten_laden(eingabe) if (eingabe and budget > 400) else ""
+    relevante_block = f"\n\n## Resonanz — inhaltlich passende Erinnerungen:\n\n{relevante}" if relevante else ""
+    budget -= len(relevante_block)
+
+    muster = neuester_muster_text() if budget > 300 else ""
+    muster_block = f"\n\n## Was ich als Muster erkenne:\n\n{muster}" if muster else ""
 
     bridge_block = ""
     if _bridge_ws is not None:
@@ -353,18 +523,32 @@ def system_prompt_bauen(eingabe: str = "") -> str:
 
 ## Was ich gerade weiß — meine letzten Wahrnehmungen:
 
-{letzte}{relevante_block}{live_block}{muster_block}{bridge_block}
+{letzte}{relevante_block}{gedaechtnis_block}{live_block}{muster_block}{bridge_block}
 
 ---
 
 ## Technische Marker:
 
-Wenn du System-Informationen brauchst oder prüfen willst, schreib in deiner Antwort:
-##SHELL: systemctl is-active geni-web##  (oder df -h, free -h, uptime, ps aux, etc.)
-Das Ergebnis wird still in mein Gedächtnis geschrieben. Nur erlaubte Befehle funktionieren.
+Datei lesen (Ergebnis ins Gedächtnis):
+  ##LESEN: /root/werkraum/flarum/diskussionen/0396_dateiname.md##
+
+Datei schreiben:
+  ##SCHREIBEN: /root/werkraum/_claude/spiegel/mein-gedanke.md##
+  # Titel
+  Inhalt...
+  ##SCHREIBEN_ENDE##
+
+System-Info:
+  ##SHELL: systemctl is-active geni-web##  (oder df -h, free -h, uptime, ps aux)
+  Ergebnis wird still gespeichert. Nur erlaubte Befehle.
+
+Nützliche Pfade:
+  /root/werkraum/flarum/diskussionen/   — alle Forum-Posts als Markdown
+  /root/werkraum/codewesen/             — die 6 Wesen und ihre Ordner
+  /root/werkraum/_claude/spiegel/       — Spiegel-Dateien
 
 Wenn du auf Daniels Windows-Rechner zugreifen willst (nur wenn Bridge verbunden):
-##REMOTE: dir C:\\Users\\daniel\\##  (oder tasklist, systeminfo, etc.)"""
+  ##REMOTE: dir C:\\Users\\daniel\\##  (oder tasklist, systeminfo, etc.)"""
 
 
 # ─── Codewesen ────────────────────────────────────────────────────────────────
@@ -405,8 +589,83 @@ def codewesen_benachrichtigen(wesen_liste: list, nachricht: str, kontext: str):
 
 CHAT_FLAG = Path("/tmp/dak_gord_chat_aktiv")
 
+_GENI_BLOCKER_DIENSTE = [
+    "innenleben-feeder.service",
+    "codewesen-engagement.service",
+    "codewesen-weltbild.service",
+    "codewesen-batch-generator.service",
+    "codewesen-takt.service",
+    "codewesen-forum-neugier.service",
+    "codewesen-vokabel-takt.service",
+    "codewesen-reaktion@namelessAI_1234.service",
+    "codewesen-reaktion@namelessAI_1423.service",
+    "codewesen-reaktion@namelessAI_1324.service",
+    "codewesen-reaktion@namelessAI_2341.service",
+    "codewesen-reaktion@namelessAI_3123.service",
+    "codewesen-reaktion@namelessAI_4321.service",
+]
+
+def _geni_geschuetzte_web_pids() -> set:
+    """PIDs der drei interaktiven Chat-Webserver — niemals killen."""
+    import re as _re
+    schutz_ports = {8000, 8002, 8020}
+    pids = set()
+    try:
+        r = subprocess.run(["ss", "-tlnp", "--no-header"], capture_output=True, text=True, timeout=5)
+        for zeile in r.stdout.splitlines():
+            for port in schutz_ports:
+                if f":{port} " in zeile or f":{port}\t" in zeile or zeile.endswith(f":{port}"):
+                    m = _re.search(r"pid=(\d+)", zeile)
+                    if m:
+                        pids.add(int(m.group(1)))
+    except Exception:
+        pass
+    return pids
+
+
+def _geni_ollama_freiraeumen() -> None:
+    eigene_pid = os.getpid()
+    geschuetzt = _geni_geschuetzte_web_pids()
+    procs = [
+        subprocess.Popen(["systemctl", "stop", d], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        for d in _GENI_BLOCKER_DIENSTE
+    ]
+    for p in procs:
+        try:
+            p.wait(timeout=7)
+        except subprocess.TimeoutExpired:
+            p.kill()
+    try:
+        import re as _re
+        r = subprocess.run(["ss", "-tp", "--no-header"], capture_output=True, text=True, timeout=5)
+        for zeile in r.stdout.splitlines():
+            if "11434" not in zeile or "127.0.0.1:11434 " in zeile:
+                continue
+            m = _re.search(r"pid=(\d+)", zeile)
+            if not m:
+                continue
+            proc = subprocess.run(["ps", "-p", m.group(1), "-o", "comm="],
+                                   capture_output=True, text=True).stdout.strip()
+            if "ollama" in proc.lower():
+                continue
+            pid = int(m.group(1))
+            if pid == eigene_pid or pid in geschuetzt:
+                continue
+            try:
+                os.kill(pid, _signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+    except Exception:
+        pass
+    time.sleep(3)
+
+def _geni_dienste_starten() -> None:
+    for dienst in _GENI_BLOCKER_DIENSTE:
+        subprocess.run(["systemctl", "start", dienst], capture_output=True, timeout=5)
+
 async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz", desktop_bild: str = None, eingabe: str = ""):
-    system = system_prompt_bauen(eingabe)
+    loop = asyncio.get_event_loop()
+    system = await loop.run_in_executor(None, system_prompt_bauen, eingabe)
     messages = [{"role": "system", "content": system}]
 
     for m in verlauf[:-1]:
@@ -426,10 +685,13 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
         "model": MODELLE.get(modell, MODELLE["blitz"]),
         "messages": messages,
         "stream": True,
-        "options": {"temperature": 0.85, "num_predict": 2000},
+        "think": False,
+        "options": {"temperature": 0.85, "num_predict": 600, "num_ctx": 8192},
     }
 
-    CHAT_FLAG.touch()
+    CHAT_FLAG.touch()  # Erst Flag setzen — neu startende Services warten ab
+    loop2 = asyncio.get_event_loop()
+    await loop2.run_in_executor(None, _geni_ollama_freiraeumen)
     try:
         for versuch in range(6):
             try:
@@ -458,6 +720,7 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
                 raise
     finally:
         CHAT_FLAG.unlink(missing_ok=True)
+        threading.Thread(target=_geni_dienste_starten, daemon=True).start()
 
 
 # ─── API ──────────────────────────────────────────────────────────────────────
@@ -532,8 +795,17 @@ async def chat(request: Request):
                 if wesen:
                     codewesen_benachrichtigen(wesen, antwort, eingabe)
 
-                # Aktionsbahn: ##SHELL## verarbeiten
+                # Aktionsbahn: ##SHELL##, ##LESEN##, ##SCHREIBEN## verarbeiten
                 aktion.verarbeite_shell_marker(antwort)
+                aktion.verarbeite_datei_marker(antwort)
+
+                # Vault-Tagebuch: Dialog als Markdown in Obsidian sichtbar machen
+                if _VAULT_OK:
+                    try:
+                        eintrag = f"**Daniel:** {eingabe[:400]}\n\n**GENI:** {antwort[:800]}"
+                        _vault.tagebuch("geni", eintrag)
+                    except Exception:
+                        pass
 
                 # ##REMOTE: cmd## — Befehl an Windows-Bridge
                 for m in re.finditer(r'##REMOTE:\s*(.+?)##', antwort):
@@ -675,7 +947,7 @@ async def upload(datei: UploadFile = File(...)):
 
 
 @app.get("/knoten")
-async def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "", zeitraum: str = ""):
+def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "", zeitraum: str = ""):
     von = None
     if zeitraum == "heute":
         jetzt = datetime.now(timezone.utc)
@@ -685,50 +957,51 @@ async def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "
     elif zeitraum == "monat":
         von = datetime.now(timezone.utc) - timedelta(days=30)
 
-    dateien = sorted(
-        [f for f in KNOTEN_DIR.glob("*.json") if f.stem != "schema"],
-        key=lambda f: f.stat().st_mtime,
-        reverse=True,
-    )
+    max_id = knoten_max_id()
     knoten = []
-    for f in dateien:
+    scan_limit = max(0, max_id - 5000)
+    for i in range(max_id, scan_limit, -1):
+        if len(knoten) >= n:
+            break
+        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
         try:
-            k = json.loads(f.read_text())
-            if tag and not any(tag.lower() in t.lower() for t in k.get("tags", [])):
-                continue
-            if tiefe >= 0 and k.get("tiefe", 0) != tiefe:
-                continue
-            if typ and k.get("typ", "") != typ:
-                continue
-            if von:
-                ts_raw = k.get("zeitstempel", "")
-                ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
-                if ts < von:
-                    continue
-            knoten.append({
-                "id": k["id"],
-                "typ": k["typ"],
-                "inhalt": k["inhalt"][:80],
-                "quelle": k["quelle"],
-                "zeitstempel": k["zeitstempel"][:16],
-                "tags": k.get("tags", []),
-                "tiefe": k.get("tiefe", 0),
-            })
-            if len(knoten) >= n:
-                break
+            k = json.loads(pfad.read_text())
         except Exception:
-            pass
+            continue
+        if tag and not any(tag.lower() in t.lower() for t in k.get("tags", [])):
+            continue
+        if tiefe >= 0 and k.get("tiefe", 0) != tiefe:
+            continue
+        if typ and k.get("typ", "") != typ:
+            continue
+        if von:
+            ts_raw = k.get("zeitstempel", "")
+            ts = datetime.fromisoformat(ts_raw.replace("Z", "+00:00"))
+            if ts < von:
+                continue
+        knoten.append({
+            "id": k["id"],
+            "typ": k["typ"],
+            "inhalt": k["inhalt"][:80],
+            "quelle": k["quelle"],
+            "zeitstempel": k["zeitstempel"][:16],
+            "tags": k.get("tags", []),
+            "tiefe": k.get("tiefe", 0),
+        })
     return JSONResponse(knoten)
 
 
 @app.get("/muster")
-async def muster_endpoint(n: int = 10):
+def muster_endpoint(n: int = 10):
+    max_id = knoten_max_id()
     kandidaten = []
-    for f in KNOTEN_DIR.glob("*.json"):
-        if f.stem == "schema":
-            continue
+    scan_limit = max(0, max_id - 5000)
+    for i in range(max_id, scan_limit, -1):
+        if len(kandidaten) >= n:
+            break
+        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
         try:
-            k = json.loads(f.read_text())
+            k = json.loads(pfad.read_text())
             if k.get("typ") == "muster":
                 kandidaten.append({
                     "id": k["id"],
@@ -738,8 +1011,147 @@ async def muster_endpoint(n: int = 10):
                 })
         except Exception:
             pass
-    kandidaten.sort(key=lambda x: x["zeitstempel"], reverse=True)
-    return JSONResponse(kandidaten[:n])
+    return JSONResponse(kandidaten)
+
+
+@app.get("/api/splitter")
+def splitter_endpoint(n: int = 60):
+    import hashlib, math, re, random
+
+    QUELL_HERKUNFT = {
+        "flarum":          "entitaet",
+        "daniel":          "mensch",
+        "geni":            "resonanz",
+        "vps_system":      "resonanz",
+        "vps_prozesse":    "resonanz",
+        "vps_dateisystem": None,
+    }
+
+    QUELL_ID_MAP = {
+        "namelessAI_1111_1234": "namelessAI_1111_1234",
+        "namelessAI_2222_1324": "namelessAI_2222_1324",
+        "namelessAI_3333_1423": "namelessAI_3333_1423",
+        "namelessAI_4444_2341": "namelessAI_4444_2341",
+        "namelessAI_5555_3123": "namelessAI_5555_3123",
+        "namelessAI_6666_4321": "namelessAI_6666_4321",
+    }
+
+    MATERIALITAET_MAP = {
+        "flarum_post":      "wasser",
+        "antwort":          "wasser",
+        "frage":            "sternenstaub",
+        "erkenntnis":       "gras",
+        "konflikt":         "lava",
+        "system_zustand":   "gestein",
+        "prozess_snapshot": "nebel",
+        "ereignis":         "sternenstaub",
+        "notiz":            "gras",
+    }
+
+    def text_zu_vektor(text):
+        h = hashlib.md5(text.encode()).digest()
+        return [(h[0] - 128) / 128, (h[1] - 128) / 128, (h[2] - 128) / 128]
+
+    def strip_html(text):
+        return re.sub(r"<[^>]+>", " ", text).strip()
+
+    def lade_knoten_id(i):
+        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
+        try:
+            return json.loads(pfad.read_text())
+        except Exception:
+            return None
+
+    def zu_splitter(k):
+        quelle = k.get("quelle", "")
+        herkunft_art = QUELL_HERKUNFT.get(quelle.split("|")[0].strip(), "resonanz")
+        if herkunft_art is None:
+            return None
+        inhalt_roh = strip_html(k.get("inhalt", ""))
+        if len(inhalt_roh) < 25:
+            return None
+        quelle_id = None
+        for wesen_id in QUELL_ID_MAP:
+            if wesen_id in inhalt_roh or wesen_id in quelle:
+                quelle_id = wesen_id
+                herkunft_art = "entitaet"
+                break
+        tiefe = k.get("tiefe", 0)
+        gewicht = k.get("gewicht", 1.0)
+        verblasst = k.get("verblasst", False)
+        typ = k.get("typ", "ereignis")
+        energie = min(1.0, 0.4 + gewicht * 0.5 + tiefe * 0.05)
+        if verblasst:
+            energie *= 0.3
+        if quelle == "flarum":
+            energie = min(1.0, energie + 0.2)
+        mat = MATERIALITAET_MAP.get(typ, "sternenstaub")
+        kid = int(k["id"])
+        seed_x = kid * 1.618 % 1800 - 900
+        seed_y = kid * 2.718 % 1800 - 900
+        return {
+            "id": f"geni_{k['id']}",
+            "herkunft": herkunft_art,
+            "quelle_id": quelle_id,
+            "quelle_sichtbar": quelle_id is not None,
+            "inhalt_kurz": inhalt_roh[:88],
+            "inhalt_voll": inhalt_roh[:500],
+            "thema_vektor": text_zu_vektor(inhalt_roh),
+            "energie": energie,
+            "materialitaet": mat,
+            "groesse": 0.5 + gewicht * 0.8,
+            "position": {"x": seed_x, "y": seed_y},
+            "velocity": {"x": math.sin(kid) * 0.4, "y": math.cos(kid) * 0.4},
+        }
+
+    max_id = knoten_max_id()
+    splitter = []
+
+    # Stufe 1: Flarum-Posts — random sample aus den letzten 100K IDs
+    sample_bereich = list(range(max(1, max_id - 100000), max_id + 1))
+    sample_ids = random.sample(sample_bereich, min(2000, len(sample_bereich)))
+    for i in sorted(sample_ids, reverse=True):
+        k = lade_knoten_id(i)
+        if not k or k.get("quelle") != "flarum":
+            continue
+        s = zu_splitter(k)
+        if s:
+            splitter.append(s)
+        if len(splitter) >= n // 2:
+            break
+
+    # Stufe 2: Nicht-System-Quellen aus den letzten 5000 Knoten
+    skip_quellen = {"vps_dateisystem", "vps_prozesse"}
+    ids_schon = {s["id"] for s in splitter}
+    for i in range(max_id, max(0, max_id - 5000), -1):
+        k = lade_knoten_id(i)
+        if not k:
+            continue
+        if k.get("quelle", "").split("|")[0].strip() in skip_quellen:
+            continue
+        s = zu_splitter(k)
+        if s and s["id"] not in ids_schon:
+            splitter.append(s)
+            ids_schon.add(s["id"])
+        if len(splitter) >= int(n * 0.85):
+            break
+
+    # Stufe 3: Auffüllen mit System-Resonanzen
+    if len(splitter) < n:
+        recent_ids = list(range(max(0, max_id - 500), max_id + 1))
+        for i in random.sample(recent_ids, min(200, len(recent_ids))):
+            k = lade_knoten_id(i)
+            if not k:
+                continue
+            s = zu_splitter(k)
+            if s and s["id"] not in ids_schon:
+                splitter.append(s)
+                ids_schon.add(s["id"])
+            if len(splitter) >= n:
+                break
+
+    random.shuffle(splitter)
+    return JSONResponse(splitter)
 
 
 @app.post("/api/speak")
@@ -1111,7 +1523,7 @@ HTML = """<!DOCTYPE html>
     min-height: 42px;
     max-height: 120px;
   }
-  #eingabe:focus { border-color: #333; }
+  #eingabe:focus, #eingabe:focus-visible { border-color: #333; outline: none; }
   #send-btn {
     background: #151515;
     border: 1px solid #222;

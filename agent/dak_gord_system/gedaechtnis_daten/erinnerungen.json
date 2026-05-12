@@ -1,11 +1,5 @@
 [
   {
-    "art": "fakt",
-    "text": "Gemma4 ist MoE",
-    "schlagworte": [],
-    "reifestufe": "roh"
-  },
-  {
     "art": "zwischenraum",
     "text": "was wenn der agent träumt?",
     "schlagworte": [],
@@ -14,6 +8,12 @@
   {
     "art": "erkenntnis",
     "text": "Verhaltenskorrektur nach Überinterpretation",
+    "schlagworte": [],
+    "reifestufe": "roh"
+  },
+  {
+    "art": "erkenntnis",
+    "text": "Spiegelung des Prozesses",
     "schlagworte": [],
     "reifestufe": "roh"
   }

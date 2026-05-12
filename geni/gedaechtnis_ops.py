@@ -10,18 +10,80 @@ KANTEN_DIR = GENI_ROOT / "gedaechtnis" / "kanten"
 
 _id_lock = threading.Lock()
 _tiefe_lock = threading.Lock()
+_max_ids: dict[str, int] = {}
+
+_COUNTER_FILE = GENI_ROOT / "gedaechtnis" / "_counter.json"
+
+
+def _counter_lesen() -> dict:
+    try:
+        return json.loads(_COUNTER_FILE.read_text())
+    except Exception:
+        return {}
+
+
+def _counter_schreiben(daten: dict) -> None:
+    tmp = _COUNTER_FILE.with_suffix(".tmp")
+    tmp.write_text(json.dumps(daten))
+    tmp.replace(_COUNTER_FILE)
+
+
+def _lade_max_id(verzeichnis: Path) -> int:
+    zahlen = []
+    for f in verzeichnis.iterdir():
+        if f.suffix == ".json" and f.stem != "schema":
+            try:
+                zahlen.append(int(f.stem))
+            except ValueError:
+                pass
+    return max(zahlen) if zahlen else 0
+
+
+def knoten_max_id() -> int:
+    key = str(KNOTEN_DIR)
+    if key in _max_ids:
+        return _max_ids[key]
+    with _id_lock:
+        if key in _max_ids:
+            return _max_ids[key]
+        # Counter-Datei lesen (O(1)) — nur beim ersten Start
+        cached = _counter_lesen()
+        if "knoten_max_id" in cached:
+            _max_ids[key] = cached["knoten_max_id"]
+        else:
+            # Einmaliger Scan — schreibt danach Counter-Datei
+            val = _lade_max_id(KNOTEN_DIR)
+            _max_ids[key] = val
+            try:
+                cached["knoten_max_id"] = val
+                _counter_schreiben(cached)
+            except Exception:
+                pass
+    return _max_ids[key]
 
 
 def naechste_id(verzeichnis: Path) -> str:
-    zahlen = []
-    for f in verzeichnis.glob("*.json"):
-        if f.stem == "schema":
-            continue
+    key = str(verzeichnis)
+    if key not in _max_ids:
+        if verzeichnis == KNOTEN_DIR:
+            # Counter-Datei lesen statt 800K-Scan
+            cached = _counter_lesen()
+            if "knoten_max_id" in cached:
+                _max_ids[key] = cached["knoten_max_id"]
+            else:
+                _max_ids[key] = _lade_max_id(verzeichnis)
+        else:
+            _max_ids[key] = _lade_max_id(verzeichnis)
+    _max_ids[key] += 1
+    # Counter-Datei aktualisieren wenn es KNOTEN_DIR ist
+    if verzeichnis == KNOTEN_DIR:
         try:
-            zahlen.append(int(f.stem))
-        except ValueError:
+            cached = _counter_lesen()
+            cached["knoten_max_id"] = _max_ids[key]
+            _counter_schreiben(cached)
+        except Exception:
             pass
-    return str((max(zahlen) + 1) if zahlen else 1).zfill(4)
+    return str(_max_ids[key]).zfill(4)
 
 
 def knoten_schreiben(typ: str, inhalt: str, quelle: str, tags: list = None, zugriffsschicht: int = 0) -> str:

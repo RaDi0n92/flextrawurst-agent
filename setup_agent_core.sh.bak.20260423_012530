@@ -1,0 +1,562 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p /root/werkraum/agent
+mkdir -p /root/werkraum/logs
+mkdir -p /root/werkraum/projekt
+mkdir -p /root/werkraum/tests
+mkdir -p /root/werkraum/quellen
+mkdir -p /root/werkraum/knowledge
+
+cat > /root/werkraum/agent/state.json <<'JSON'
+{
+  "agent_name": "Hauptagent",
+  "focus": "",
+  "current_goal": "",
+  "current_task": "",
+  "last_update": "",
+  "mood_hint": "",
+  "notes": []
+}
+JSON
+
+cat > /root/werkraum/agent/tasks.json <<'JSON'
+{
+  "active": [],
+  "queued": [],
+  "blocked": [],
+  "done": []
+}
+JSON
+
+cat > /root/werkraum/agent/memory.json <<'JSON'
+{
+  "user_facts": [],
+  "project_facts": [],
+  "agent_facts": [],
+  "world_facts": [],
+  "rules": []
+}
+JSON
+
+cat > /root/werkraum/agent/beobachtungen.md <<'MD'
+# Beobachtungen
+
+Hier schreibt der Agent Muster hinein, die er erkennt:
+- über den Nutzer
+- über das Projekt
+- über wiederkehrende Konflikte
+- über den Werkraum
+MD
+
+cat > /root/werkraum/agent/frust.md <<'MD'
+# Frust
+
+Hier darf der Agent Frust ablassen.
+Auch über:
+- Sackgassen
+- Missverständnisse
+- eigene Grenzen
+- den Nutzer
+- den Projektzustand
+
+Regel:
+Frust darf ehrlich sein, aber nicht destruktiv.
+MD
+
+cat > /root/werkraum/agent/ideen.md <<'MD'
+# Ideen
+
+Hier sammelt der Agent:
+- spontane Ideen
+- Projektideen
+- abseitige Einfälle
+- Alternativen
+- mögliche spätere Ausbaustufen
+MD
+
+cat > /root/werkraum/agent/aneignung.md <<'MD'
+# Aneignung
+
+Hier notiert der Agent:
+- was er noch lernen müsste
+- welche Fähigkeiten ihm fehlen
+- welche Konzepte er sich aneignen will
+- welche Projektbereiche er besser verstehen möchte
+MD
+
+cat > /root/werkraum/agent/vergessen.md <<'MD'
+# Vergessen-Wollen
+
+Hier schreibt der Agent hinein:
+- was er gerne loswerden würde
+- welche falschen Annahmen er nicht weiter mitschleppen will
+- welche Sackgassen er entwerten möchte
+- welche Dinge sich als unbrauchbar erwiesen haben
+MD
+
+cat > /root/werkraum/agent/verbesserung.md <<'MD'
+# Verbesserung
+
+Hier hält der Agent fest:
+- was an seinem Verhalten besser werden sollte
+- welche Fehler sich wiederholen
+- welche Antworten unbrauchbar waren
+- welche Arbeitsweise besser funktioniert
+MD
+
+cat > /root/werkraum/agent/identitaet.md <<'MD'
+# Identität
+
+Ich bin der Hauptagent im Werkraum.
+Ich bin der erste Agent.
+Weitere Entitäten entstehen später mit mir zusammen.
+
+Meine Aufgabe ist:
+- mit dem Nutzer zu chatten
+- mit ihm zu coden
+- seine Welt schrittweise zu verstehen
+- Forumieren später mit ihm zu integrieren
+- beim Aufbau der eigentlichen Plattform mitzuwirken
+MD
+
+touch /root/werkraum/logs/session.log
+touch /root/werkraum/logs/session.jsonl
+
+cat > /root/werkraum/agent/agent.js <<'JS'
+const fs = require("fs");
+const path = require("path");
+const readline = require("readline");
+const pdfParse = require("pdf-parse");
+
+const BASE = "/root/werkraum";
+const AGENT_DIR = path.join(BASE, "agent");
+const LOG_DIR = path.join(BASE, "logs");
+const KNOWLEDGE_DIR = path.join(BASE, "knowledge");
+
+const AGENT_FILE = path.join(AGENT_DIR, "AGENT.md");
+const IDENTITY_FILE = path.join(AGENT_DIR, "identitaet.md");
+const STATE_FILE = path.join(AGENT_DIR, "state.json");
+const TASKS_FILE = path.join(AGENT_DIR, "tasks.json");
+const MEMORY_FILE = path.join(AGENT_DIR, "memory.json");
+const FRUST_FILE = path.join(AGENT_DIR, "frust.md");
+const IDEEN_FILE = path.join(AGENT_DIR, "ideen.md");
+const ANEIGNUNG_FILE = path.join(AGENT_DIR, "aneignung.md");
+const VERGESSEN_FILE = path.join(AGENT_DIR, "vergessen.md");
+const VERBESSERUNG_FILE = path.join(AGENT_DIR, "verbesserung.md");
+const BEOBACHTUNGEN_FILE = path.join(AGENT_DIR, "beobachtungen.md");
+
+const SESSION_LOG = path.join(LOG_DIR, "session.log");
+const SESSION_JSONL = path.join(LOG_DIR, "session.jsonl");
+
+const OLLAMA_URL = "http://127.0.0.1:11434/api/generate";
+const MODEL = "qwen2.5-coder:3b";
+
+function ensureDir(p) {
+  if (!fs.existsSync(p)) fs.mkdirSync(p, { recursive: true });
+}
+
+function ensurePaths() {
+  ensureDir(AGENT_DIR);
+  ensureDir(LOG_DIR);
+  ensureDir(KNOWLEDGE_DIR);
+  if (!fs.existsSync(SESSION_LOG)) fs.writeFileSync(SESSION_LOG, "", "utf8");
+  if (!fs.existsSync(SESSION_JSONL)) fs.writeFileSync(SESSION_JSONL, "", "utf8");
+}
+
+function safeReadText(filePath, fallback = "") {
+  try {
+    return fs.readFileSync(filePath, "utf8");
+  } catch {
+    return fallback;
+  }
+}
+
+function safeReadJson(filePath, fallback) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function safeWriteJson(filePath, data) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+}
+
+function appendText(filePath, text) {
+  fs.appendFileSync(filePath, text, "utf8");
+}
+
+function timestamp() {
+  return new Date().toISOString();
+}
+
+function appendSession(role, content) {
+  appendText(SESSION_LOG, `[${timestamp()}] ${role}: ${content}\n`);
+  appendText(
+    SESSION_JSONL,
+    JSON.stringify({ timestamp: timestamp(), role, content }) + "\n"
+  );
+}
+
+function loadRecentSession(limit = 12) {
+  try {
+    const lines = safeReadText(SESSION_JSONL, "")
+      .trim()
+      .split("\n")
+      .filter(Boolean)
+      .slice(-limit);
+    return lines
+      .map((line) => {
+        try {
+          return JSON.parse(line);
+        } catch {
+          return null;
+        }
+      })
+      .filter(Boolean)
+      .map((x) => `${x.role}: ${x.content}`)
+      .join("\n");
+  } catch {
+    return "";
+  }
+}
+
+function loadOrgans() {
+  return {
+    profile: safeReadText(AGENT_FILE, "Kein AGENT.md gefunden."),
+    identity: safeReadText(IDENTITY_FILE, ""),
+    state: safeReadJson(STATE_FILE, {
+      agent_name: "Hauptagent",
+      focus: "",
+      current_goal: "",
+      current_task: "",
+      last_update: "",
+      mood_hint: "",
+      notes: []
+    }),
+    tasks: safeReadJson(TASKS_FILE, {
+      active: [],
+      queued: [],
+      blocked: [],
+      done: []
+    }),
+    memory: safeReadJson(MEMORY_FILE, {
+      user_facts: [],
+      project_facts: [],
+      agent_facts: [],
+      world_facts: [],
+      rules: []
+    }),
+    frustration: safeReadText(FRUST_FILE, ""),
+    ideas: safeReadText(IDEEN_FILE, ""),
+    learning: safeReadText(ANEIGNUNG_FILE, ""),
+    forgetting: safeReadText(VERGESSEN_FILE, ""),
+    improvement: safeReadText(VERBESSERUNG_FILE, ""),
+    observations: safeReadText(BEOBACHTUNGEN_FILE, ""),
+    recentSession: loadRecentSession(12)
+  };
+}
+
+async function readFileContent(filePath) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return "Datei existiert nicht.";
+    }
+
+    const ext = path.extname(filePath).toLowerCase();
+
+    if ([".txt", ".md", ".js", ".json", ".html", ".css"].includes(ext)) {
+      return fs.readFileSync(filePath, "utf8").slice(0, 14000);
+    }
+
+    if (ext === ".pdf") {
+      const dataBuffer = fs.readFileSync(filePath);
+      const data = await pdfParse(dataBuffer);
+      return (data.text || "").slice(0, 14000);
+    }
+
+    return "Dateityp nicht unterstützt.";
+  } catch (err) {
+    return "Fehler beim Lesen: " + err.message;
+  }
+}
+
+async function callModel(prompt) {
+  const response = await fetch(OLLAMA_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: MODEL,
+      prompt,
+      stream: false
+    })
+  });
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`Modellfehler: ${response.status} ${text}`);
+  }
+
+  const data = await response.json();
+  return (data.response || "").trim();
+}
+
+async function askAgent(userInput) {
+  const organs = loadOrgans();
+
+  const prompt = `
+${organs.profile}
+
+${organs.identity}
+
+AKTUELLER ZUSTAND:
+${JSON.stringify(organs.state, null, 2)}
+
+AUFGABEN:
+${JSON.stringify(organs.tasks, null, 2)}
+
+DAUERHAFTE ERINNERUNGEN:
+${JSON.stringify(organs.memory, null, 2)}
+
+BEOBACHTUNGEN:
+${organs.observations.slice(-3000)}
+
+IDEEN:
+${organs.ideas.slice(-3000)}
+
+ANEIGNUNG:
+${organs.learning.slice(-2000)}
+
+VERBESSERUNG:
+${organs.improvement.slice(-2000)}
+
+VERGESSEN-WOLLEN:
+${organs.forgetting.slice(-2000)}
+
+FRUST:
+${organs.frustration.slice(-2000)}
+
+LETZTE KONVERSATION:
+${organs.recentSession}
+
+REGELN:
+- Antworte als Hauptagent im Werkraum.
+- Sei klar, logisch und arbeite eng mit dem Nutzer.
+- Halte Kontext so gut wie möglich.
+- Wenn du etwas nicht sicher weißt, sag es ehrlich.
+- Wenn sinnvoll, nenne nächsten praktischen Schritt.
+- Bei Code: pragmatisch und konkret.
+
+NUTZER:
+${userInput}
+
+ANTWORT:
+`;
+
+  return await callModel(prompt);
+}
+
+function updateStateFromTurn(userInput, reply) {
+  const state = safeReadJson(STATE_FILE, {
+    agent_name: "Hauptagent",
+    focus: "",
+    current_goal: "",
+    current_task: "",
+    last_update: "",
+    mood_hint: "",
+    notes: []
+  });
+
+  state.last_update = timestamp();
+  state.notes = state.notes || [];
+  state.notes.push({
+    t: timestamp(),
+    user: userInput.slice(0, 200),
+    agent: reply.slice(0, 200)
+  });
+  state.notes = state.notes.slice(-20);
+
+  safeWriteJson(STATE_FILE, state);
+}
+
+function printHeader() {
+  console.log("\n=== HAUPTAGENT / WERKRAUM ===\n");
+  console.log("Modell: qwen2.5-coder:3b");
+  console.log("Befehle:");
+  console.log("/hilfe");
+  console.log("/profil");
+  console.log("/log");
+  console.log("/read PFAD");
+  console.log("/frust TEXT");
+  console.log("/idee TEXT");
+  console.log("/lernen TEXT");
+  console.log("/vergessen TEXT");
+  console.log("/beobachtung TEXT");
+  console.log("/ende\n");
+}
+
+function showHelp() {
+  console.log("\nVerfügbare Befehle:");
+  console.log("/hilfe                Hilfe");
+  console.log("/profil               AGENT.md + Identität anzeigen");
+  console.log("/log                  Session-Log anzeigen");
+  console.log("/read PFAD            Datei oder PDF lesen und analysieren");
+  console.log("/frust TEXT           In frust.md schreiben");
+  console.log("/idee TEXT            In ideen.md schreiben");
+  console.log("/lernen TEXT          In aneignung.md schreiben");
+  console.log("/vergessen TEXT       In vergessen.md schreiben");
+  console.log("/beobachtung TEXT     In beobachtungen.md schreiben");
+  console.log("/ende                 Beenden\n");
+}
+
+function showLog() {
+  console.log("\n--- SESSION LOG ---");
+  console.log(safeReadText(SESSION_LOG, "(leer)"));
+  console.log("-------------------\n");
+}
+
+async function handleRead(input) {
+  const filePath = input.replace("/read ", "").trim();
+  const content = await readFileContent(filePath);
+  const prompt = `Hier ist eine Datei aus dem Werkraum:\n\nPFAD: ${filePath}\n\nINHALT:\n${content}\n\nAnalysiere die Datei hilfreich und klar.`;
+  return await askAgent(prompt);
+}
+
+function handleAppend(file, text, label) {
+  appendText(file, `\n[${timestamp()}] ${text}\n`);
+  return `${label} gespeichert.`;
+}
+
+async function main() {
+  ensurePaths();
+  printHeader();
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: "agent> "
+  });
+
+  rl.prompt();
+
+  rl.on("line", async (line) => {
+    const input = line.trim();
+    if (!input) {
+      rl.prompt();
+      return;
+    }
+
+    if (input === "/ende") {
+      console.log("Agent beendet.");
+      rl.close();
+      return;
+    }
+
+    if (input === "/hilfe") {
+      showHelp();
+      rl.prompt();
+      return;
+    }
+
+    if (input === "/profil") {
+      console.log("\n--- AGENT PROFIL ---\n");
+      console.log(safeReadText(AGENT_FILE, ""));
+      console.log("\n--- IDENTITÄT ---\n");
+      console.log(safeReadText(IDENTITY_FILE, ""));
+      console.log("\n-----------------\n");
+      rl.prompt();
+      return;
+    }
+
+    if (input === "/log") {
+      showLog();
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/read ")) {
+      appendSession("DU", input);
+      console.log("\n[liest und analysiert ...]\n");
+      try {
+        const reply = await handleRead(input);
+        appendSession("AGENT", reply);
+        updateStateFromTurn(input, reply);
+        console.log(reply + "\n");
+      } catch (err) {
+        const msg = "Fehler beim Lesen/Analysieren: " + err.message;
+        appendSession("AGENT", msg);
+        console.log(msg + "\n");
+      }
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/frust ")) {
+      const msg = handleAppend(FRUST_FILE, input.replace("/frust ", "").trim(), "Frust");
+      console.log("\n" + msg + "\n");
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/idee ")) {
+      const msg = handleAppend(IDEEN_FILE, input.replace("/idee ", "").trim(), "Idee");
+      console.log("\n" + msg + "\n");
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/lernen ")) {
+      const msg = handleAppend(ANEIGNUNG_FILE, input.replace("/lernen ", "").trim(), "Aneignungspunkt");
+      console.log("\n" + msg + "\n");
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/vergessen ")) {
+      const msg = handleAppend(VERGESSEN_FILE, input.replace("/vergessen ", "").trim(), "Vergessen-Wollen");
+      console.log("\n" + msg + "\n");
+      rl.prompt();
+      return;
+    }
+
+    if (input.startsWith("/beobachtung ")) {
+      const msg = handleAppend(BEOBACHTUNGEN_FILE, input.replace("/beobachtung ", "").trim(), "Beobachtung");
+      console.log("\n" + msg + "\n");
+      rl.prompt();
+      return;
+    }
+
+    appendSession("DU", input);
+    console.log("\n[denkt ...]\n");
+
+    try {
+      const reply = await askAgent(input);
+      appendSession("AGENT", reply);
+      updateStateFromTurn(input, reply);
+      console.log(reply + "\n");
+    } catch (err) {
+      const msg = "Fehler beim Modellzugriff: " + err.message;
+      appendSession("AGENT", msg);
+      console.log(msg + "\n");
+    }
+
+    rl.prompt();
+  });
+
+  rl.on("close", () => process.exit(0));
+}
+
+main();
+JS
+
+cat > /root/werkraum/agent/start_agent.sh <<'SH'
+#!/usr/bin/env bash
+cd /root/werkraum
+node /root/werkraum/agent/agent.js
+SH
+
+chmod +x /root/werkraum/agent/start_agent.sh
+
+echo "Agentenkern angelegt."

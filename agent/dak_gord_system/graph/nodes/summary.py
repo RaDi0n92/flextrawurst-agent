@@ -7,7 +7,7 @@ from agent.dak_gord_system.graph.state import AgentState
 from agent.dak_gord_system.verdichtung import verdichte_text, formatiere_verdichtungsblock
 
 
-GRAPH_RUNS_DIR = Path("/root/werkraum/agent/dak_gord_system/spuren/graph_runs")
+GRAPH_RUNS_DIR = Path("/root/werkraum_archiv/spuren/graph_runs")
 
 
 def _ts() -> str:

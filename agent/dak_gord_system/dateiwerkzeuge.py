@@ -193,6 +193,33 @@ _VERBOTENE_SCHREIBPFADE = [
     Path("/usr"),
 ]
 
+# Verzeichnisse wo neue Dateien ohne Erlaubnistext angelegt werden dürfen
+_ERLAUBTE_NEUE_PFADE = [
+    Path("/root/werkraum/erkenntnis"),
+    Path("/root/werkraum/agent/dak_gord_system/spuren"),
+    Path("/root/werkraum/wissen"),
+]
+
+# Phrase die in einer bestehenden Datei stehen muss damit dak+gord schreiben darf
+_ERLAUBNIS_MARKER = "dak+gord darf"
+
+SPUREN_PFAD = Path("/root/werkraum/agent/dak_gord_system/spuren")
+
+
+def _hat_schreiberlaubnis(pfad: Path) -> bool:
+    if not pfad.exists():
+        return any(_liegt_unter(pfad, basis) for basis in _ERLAUBTE_NEUE_PFADE)
+    try:
+        inhalt = pfad.read_text(encoding="utf-8", errors="replace")
+        return _ERLAUBNIS_MARKER.lower() in inhalt.lower()
+    except Exception:
+        return False
+
+
+def _spiegel_pfad(pfad: Path) -> Path:
+    name = pfad.name.replace(".", "_")
+    return SPUREN_PFAD / f"spiegel_{name}.md"
+
 
 def datei_schreiben(pfad_text: str, inhalt: str) -> str:
     """Schreibt Inhalt in eine Datei innerhalb von /root/werkraum/.
@@ -212,6 +239,15 @@ def datei_schreiben(pfad_text: str, inhalt: str) -> str:
 
     if _ist_virtueller_systempfad(pfad):
         return f"Schreiben verweigert: virtueller Systempfad: {pfad}"
+
+    # Erlaubnisprüfung: Datei muss explizit Schreibzugang gewähren
+    if not _hat_schreiberlaubnis(pfad):
+        spiegel = _spiegel_pfad(pfad)
+        return (
+            f"Schreiben verweigert: '{pfad.name}' enthält keine Schreiberlaubnis für dak+gord.\n"
+            f"Für Beobachtungen und Erkenntnisse zu dieser Datei gibt es die Spiegeldatei:\n"
+            f"  {spiegel}"
+        )
 
     try:
         pfad.parent.mkdir(parents=True, exist_ok=True)

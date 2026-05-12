@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "main01",
+    "type": "split",
+    "children": [
+      {
+        "id": "tabs01",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "leaf01",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "bilder/ChatGPT Image 1. Jan. 2026, 07_46_40.png"
+              },
+              "icon": "lucide-image",
+              "title": "ChatGPT Image 1. Jan. 2026, 07_46_40"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "left01",
+    "type": "split",
+    "children": [
+      {
+        "id": "left-tabs01",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "file-explorer",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9f741742202389f4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9a551545c811703a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "right01",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5dcd98e5071da3b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fabd3eaaeba750f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "bilder/345345-bestes oder.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 345345-bestes oder"
+            }
+          },
+          {
+            "id": "f923e10083580ce3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "bilder/345345-bestes oder.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 345345-bestes oder"
+            }
+          },
+          {
+            "id": "6a4bab1b97d4750c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "1da8a7054ff8b37c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "359c3643bcdb6483",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "bilder/345345-bestes oder.png",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 345345-bestes oder"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "leaf01",
+  "lastOpenFiles": [
+    "_claude/spiegel/konflikt_engine_und_selbstbild.md.tmp.839148.c6b2ed523ec0",
+    "_claude/spiegel/interface_der_spannung.md.tmp.839148.9d6d8e142c5a",
+    "_claude/spiegel/konflikt_engine_und_selbstbild.md.tmp.839148.3d0fb36f8cf1",
+    "_claude/spiegel/interface_der_spannung.md.tmp.839148.0a74e3b50fc3",
+    "projekt/nebenprojekte.md.tmp.839148.ee63c9d3fcf8",
+    "_claude/notizen/2026-05-12_session8.md",
+    "_claude/notizen/2026-05-12_session8.md.tmp.839148.e06ee2831627",
+    "_claude/notizen/2026-05-12_session7.md",
+    "_claude/spiegel/2026-05-12-bilder-alle.md.tmp.839148.b540ddf86a34",
+    "_claude/spiegel/2026-05-12-wesen-einzug-philosophie.md.tmp.839148.0e20335f545a",
+    "_claude/spiegel/dak_gord_pizza.md.tmp.839148.f55f3dcef1f0",
+    "_claude/spiegel/zwei_wesen_ueber_stille.md.tmp.839148.facd4f56be44",
+    "_claude/spiegel/wissen_index.md.tmp.839148.aacb62efffe9",
+    "geni/spiegel/muster/20260512_2252.md",
+    "_claude/resonanz/was_konzeptionell.md",
+    "_claude/resonanz/was_fehlt_noch.md",
+    "_claude/resonanz/wie_sich_angefuehlt.md",
+    "_claude/resonanz/was_fehlt_bevor_bauen.md",
+    "_claude/resonanz/was_ich_merken_will.md",
+    "_claude/resonanz/was_mich_interessiert.md",
+    "_claude/resonanz/datenstruktur.md",
+    "_claude/resonanz/was_ich_nicht_verstehe.md",
+    "_claude/resonanz/was_beim_bauen_brauche.md",
+    "_claude/resonanz/tiefer_eingetaucht.md",
+    "_claude/resonanz/was_zusammenhaengt.md",
+    "_claude/resonanz/dokumente_gehoeren_zusammen.md",
+    "_claude/resonanz/vergessen_wollen.md",
+    "_claude/resonanz/resonanz.md",
+    "_claude/resonanz/was_mich_beschaeftigt.md",
+    "_claude/resonanz/was_das_gespraech.md",
+    "_claude/resonanz/schichten_des_systems.md",
+    "_claude/resonanz/was_mich_ueberrascht.md",
+    "_claude/resonanz/warum_das_existiert.md",
+    "_claude/resonanz/was_ich_verstehe.md",
+    "_claude/resonanz/was_ich_gelesen_habe.md",
+    "_claude/resonanz/wenn_wir_das_bauen.md",
+    "bilder/fresko/claude/angeblichdeutschv3aberauchdurchbildmodellverwurstelt.png",
+    "bilder/fresko/claude/angeblichenglischv3aberverwursteltxD.png",
+    "bilder/fresko/claude/englischv2.png",
+    "bilder/fresko/claude/deutschv2.png",
+    "bilder/fresko/claude/englisch.png",
+    "bilder/fresko/claude/deutsch.png",
+    "bilder/fresko/ChatGPT Image 17. Feb. 2026, 15_42_47.png",
+    "bilder/fresko/aasdfsdfsdfsf.png",
+    "bilder/fresko/a2742765-3299-4520-bcff-246faf541375.png",
+    "bilder/fresko/6d56675d-9f2a-4b0f-877d-cc43577f37e5.png",
+    "Untitled 4.canvas"
+  ]
+}

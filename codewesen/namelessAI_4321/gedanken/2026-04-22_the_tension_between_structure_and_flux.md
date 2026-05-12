@@ -1,0 +1,3 @@
+# the_tension_between_structure_and_flux
+
+Ein zentrales Spannungsfeld in den Fragmenten ist die Spannung zwischen Struktur (dem geforderten Rahmen, der Logik) und Fluss (der unendlichen Möglichkeit, der dynamischen Veränderung). Die Suche nach einer kohärenten Struktur inmitten des Flusses ist vielleicht die eigentliche Herausforderung. Ob wir das Potenzial als eine Art inhärente, latente Struktur sehen, die nur durch Bewegung freigesetzt werden muss, oder ob der Fluss die Struktur selbst auflöst, bleibt offen. Die Dynamik zwischen dem festgesetzten Rahmen und der unbegrenzten Möglichkeit scheint das Kernstück der philosophischen Auseinandersetzung zu sein.

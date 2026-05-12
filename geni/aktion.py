@@ -51,6 +51,50 @@ def verarbeite_shell_marker(antwort: str) -> None:
         )
 
 
+_LESEN_PAT     = re.compile(r'##LESEN:\s*(.+?)##')
+_SCHREIBEN_PAT = re.compile(r'##SCHREIBEN:\s*(.+?)##\n(.*?)##SCHREIBEN_ENDE##', re.DOTALL)
+
+
+def verarbeite_datei_marker(antwort: str) -> None:
+    for m in _LESEN_PAT.finditer(antwort):
+        pfad = m.group(1).strip()
+        try:
+            inhalt = Path(pfad).read_text(encoding="utf-8")[:5000]
+            knoten_schreiben(
+                typ="datei_gelesen",
+                inhalt=f"LESEN `{pfad}`:\n{inhalt[:800]}",
+                quelle="geni_selbst",
+                tags=["lesen", "datei", "werkzeug"],
+            )
+        except Exception as e:
+            knoten_schreiben(
+                typ="fehler",
+                inhalt=f"LESEN `{pfad}` fehlgeschlagen: {e}",
+                quelle="geni_selbst",
+                tags=["fehler", "lesen"],
+            )
+    for m in _SCHREIBEN_PAT.finditer(antwort):
+        pfad   = m.group(1).strip()
+        inhalt = m.group(2)
+        try:
+            p = Path(pfad)
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(inhalt, encoding="utf-8")
+            knoten_schreiben(
+                typ="datei_geschrieben",
+                inhalt=f"SCHREIBEN `{pfad}`: OK",
+                quelle="geni_selbst",
+                tags=["schreiben", "datei", "werkzeug"],
+            )
+        except Exception as e:
+            knoten_schreiben(
+                typ="fehler",
+                inhalt=f"SCHREIBEN `{pfad}` fehlgeschlagen: {e}",
+                quelle="geni_selbst",
+                tags=["fehler", "schreiben"],
+            )
+
+
 @router.get("/api/system")
 async def system_endpoint():
     def lese(cmd):

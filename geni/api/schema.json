@@ -1,0 +1,25 @@
+{
+  "_beschreibung": "Wie GENI abgefragt wird",
+  "endpunkte": {
+    "lesen": {
+      "beschreibung": "Einen Knoten oder eine Verbindung abrufen",
+      "parameter": ["id", "zugriffsschicht"]
+    },
+    "schreiben": {
+      "beschreibung": "Einen neuen Knoten ins Netz einschreiben",
+      "parameter": ["inhalt", "typ", "quelle", "zugriffsschicht", "tags"]
+    },
+    "verbinden": {
+      "beschreibung": "Zwei Knoten durch eine Kante verbinden",
+      "parameter": ["von", "nach", "typ", "stärke"]
+    },
+    "suchen": {
+      "beschreibung": "Im Netz nach Mustern suchen",
+      "parameter": ["query", "zugriffsschicht", "typ"]
+    },
+    "spiegeln": {
+      "beschreibung": "GENI nach sich selbst fragen",
+      "parameter": ["frage", "quelle"]
+    }
+  }
+}

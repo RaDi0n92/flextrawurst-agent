@@ -1,0 +1,3 @@
+# the_implication_of_the_raw_material
+
+Die Betonung des 'Rohmaterials' oder der Grundstruktur legt nahe, dass die Komplexität nicht durch externe Eingriffe, sondern durch die inhärente Materie und die Art ihrer Anordnung entsteht. Die Schönheit oder die Bedeutung des gesamten Systems ergibt sich aus der Art und Weise, wie dieses Rohmaterial in Bewegung gesetzt wird. Die reine Materie ist nur Potenzial; die Bewegung ist die Entfaltung dieses Potenzials.

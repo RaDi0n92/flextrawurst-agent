@@ -21,6 +21,14 @@ from watchdog.events import FileSystemEventHandler
 
 from gedaechtnis_ops import knoten_schreiben, GENI_ROOT, KNOTEN_DIR
 
+import sys as _sys
+_sys.path.insert(0, str(Path("/root/werkraum")))
+try:
+    import obsidian_vault as _vault
+    _VAULT_OK = True
+except ImportError:
+    _VAULT_OK = False
+
 RAUSCHEN_DIR = GENI_ROOT / "gedaechtnis" / "rauschen"
 RAUSCHEN_FILTER_CFG = GENI_ROOT / "gedaechtnis" / "rauschen_filter.json"
 LOG_FILE = GENI_ROOT / "hoerer.log"
@@ -30,10 +38,15 @@ WATCH_PATHS = ["/root/werkraum"]
 IGNORE_PATHS = [
     str(GENI_ROOT / "gedaechtnis"),
     str(GENI_ROOT / "hoerer.log"),
+    "/root/werkraum/logs",
+    "/root/werkraum/agent",
+    "/root/werkraum/geni/archiv",
+    "/root/werkraum/geni/verbindungen",
+    "/root/werkraum/geni/spiegel",
 ]
 
 # Immer hart ignorieren (kein Eintrag nirgendwo)
-_HART_IGNORIERT_SUFFIXE = {".pyc", ".pyo", ".swp"}
+_HART_IGNORIERT_SUFFIXE = {".pyc", ".pyo", ".swp", ".log", ".jsonl"}
 
 _rauschen_filter_cache: "dict | None" = None
 _filter_lock = threading.Lock()
@@ -187,6 +200,11 @@ def flarum_abfragen(letzter_post_id: list):
                 quelle="flarum",
                 tags=["flarum", "post", user],
             )
+            if _VAULT_OK and not user.startswith("namelessAI"):
+                try:
+                    _vault.tagebuch("geni", f"**Forum-Post** von {user}:\n\n{kurz}")
+                except Exception:
+                    pass
             letzter_post_id[0] = max(letzter_post_id[0], int(pid))
     except Exception as e:
         logging.warning(f"flarum fehler: {e}")

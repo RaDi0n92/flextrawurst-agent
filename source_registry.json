@@ -1,0 +1,291 @@
+{
+  "last_scan": "2026-03-24T01:40:19.153Z",
+  "sources": [
+    {
+      "id": "S0001",
+      "name": "V1.pdf",
+      "path": "/root/werkraum/quellen/V1.pdf",
+      "ext": ".pdf",
+      "size": 721704,
+      "mtime": "2026-03-09T04:14:24.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0002",
+      "name": "V2.pdf",
+      "path": "/root/werkraum/quellen/V2.pdf",
+      "ext": ".pdf",
+      "size": 457498,
+      "mtime": "2026-03-09T04:11:31.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0003",
+      "name": "V3.pdf",
+      "path": "/root/werkraum/quellen/V3.pdf",
+      "ext": ".pdf",
+      "size": 725472,
+      "mtime": "2026-03-09T17:00:40.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0004",
+      "name": "V4.pdf",
+      "path": "/root/werkraum/quellen/V4.pdf",
+      "ext": ".pdf",
+      "size": 221927,
+      "mtime": "2026-03-22T10:56:24.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0005",
+      "name": "AGENT.md",
+      "path": "/root/werkraum/agent/AGENT.md",
+      "ext": ".md",
+      "size": 2011,
+      "mtime": "2026-03-23T23:58:06.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0006",
+      "name": "Feedbacksystem.md",
+      "path": "/root/werkraum/agent/Feedbacksystem.md",
+      "ext": ".md",
+      "size": 111,
+      "mtime": "2026-03-24T00:11:44.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0007",
+      "name": "Kommunikationsplan.md",
+      "path": "/root/werkraum/agent/Kommunikationsplan.md",
+      "ext": ".md",
+      "size": 160,
+      "mtime": "2026-03-24T00:10:05.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0008",
+      "name": "Problemlogbuch.md",
+      "path": "/root/werkraum/agent/Problemlogbuch.md",
+      "ext": ".md",
+      "size": 202,
+      "mtime": "2026-03-24T00:12:14.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0009",
+      "name": "Projektprogress-Tracking.md",
+      "path": "/root/werkraum/agent/Projektprogress-Tracking.md",
+      "ext": ".md",
+      "size": 198,
+      "mtime": "2026-03-24T00:10:46.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0010",
+      "name": "Ressourcenmanagement.md",
+      "path": "/root/werkraum/agent/Ressourcenmanagement.md",
+      "ext": ".md",
+      "size": 248,
+      "mtime": "2026-03-24T00:09:31.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0011",
+      "name": "agent.js",
+      "path": "/root/werkraum/agent/agent.js",
+      "ext": ".js",
+      "size": 15080,
+      "mtime": "2026-03-24T01:07:20.818Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0012",
+      "name": "aneignung.md",
+      "path": "/root/werkraum/agent/aneignung.md",
+      "ext": ".md",
+      "size": 408,
+      "mtime": "2026-03-24T00:20:35.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0013",
+      "name": "beobachtungen.md",
+      "path": "/root/werkraum/agent/beobachtungen.md",
+      "ext": ".md",
+      "size": 165,
+      "mtime": "2026-03-23T05:12:53.881Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0014",
+      "name": "frustration-ideas.md",
+      "path": "/root/werkraum/agent/frustration-ideas.md",
+      "ext": ".md",
+      "size": 205,
+      "mtime": "2026-03-24T00:08:12.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0015",
+      "name": "ideen.md",
+      "path": "/root/werkraum/agent/ideen.md",
+      "ext": ".md",
+      "size": 274,
+      "mtime": "2026-03-24T00:21:07.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0016",
+      "name": "identitaet.md",
+      "path": "/root/werkraum/agent/identitaet.md",
+      "ext": ".md",
+      "size": 1242,
+      "mtime": "2026-03-23T08:19:53.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0017",
+      "name": "memory.json",
+      "path": "/root/werkraum/agent/memory.json",
+      "ext": ".json",
+      "size": 103,
+      "mtime": "2026-03-23T05:12:53.880Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0018",
+      "name": "projektziele.md",
+      "path": "/root/werkraum/agent/projektziele.md",
+      "ext": ".md",
+      "size": 155,
+      "mtime": "2026-03-24T00:08:51.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0019",
+      "name": "state.json",
+      "path": "/root/werkraum/agent/state.json",
+      "ext": ".json",
+      "size": 9617,
+      "mtime": "2026-03-23T17:38:33.854Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0020",
+      "name": "tasks.json",
+      "path": "/root/werkraum/agent/tasks.json",
+      "ext": ".json",
+      "size": 66,
+      "mtime": "2026-03-23T05:12:53.879Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0021",
+      "name": "verbesserung.md",
+      "path": "/root/werkraum/agent/verbesserung.md",
+      "ext": ".md",
+      "size": 202,
+      "mtime": "2026-03-23T05:12:53.888Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0022",
+      "name": "vergessen.md",
+      "path": "/root/werkraum/agent/vergessen.md",
+      "ext": ".md",
+      "size": 331,
+      "mtime": "2026-03-23T05:17:00.405Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0023",
+      "name": "vision1.md",
+      "path": "/root/werkraum/agent/vision1.md",
+      "ext": ".md",
+      "size": 193181,
+      "mtime": "2026-03-23T07:25:04.931Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0024",
+      "name": "vision2.md",
+      "path": "/root/werkraum/agent/vision2.md",
+      "ext": ".md",
+      "size": 122204,
+      "mtime": "2026-03-23T07:52:57.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0025",
+      "name": "vision3.md",
+      "path": "/root/werkraum/agent/vision3.md",
+      "ext": ".md",
+      "size": 246204,
+      "mtime": "2026-03-23T07:55:26.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    },
+    {
+      "id": "S0026",
+      "name": "vision4.md",
+      "path": "/root/werkraum/agent/vision4.md",
+      "ext": ".md",
+      "size": 59693,
+      "mtime": "2026-03-23T07:57:29.000Z",
+      "status": "new",
+      "ingested_at": null,
+      "summary": ""
+    }
+  ]
+}

@@ -1972,6 +1972,60 @@ def splitter_detail(
         conn.close()
 
 
+@app.post("/zwischenraum/splitter/{splitter_id}/einsammeln")
+def splitter_einsammeln(
+    splitter_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Ein Wesen oder Mensch sammelt einen Splitter aus dem Zwischenraum ein."""
+    collector_entity = None
+    collector_human  = None
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            collector_entity = claims.get("sub")
+            collector_human  = claims.get("human_id")
+    except Exception:
+        raise HTTPException(status_code=401, detail="Authentifizierung erforderlich")
+    if not collector_entity:
+        raise HTTPException(status_code=401, detail="Authentifizierung erforderlich")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id, status, entity_id, essenz FROM splitter WHERE id = %s", (splitter_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
+            s = dict(row)
+            if s["status"] == "eingesammelt":
+                raise HTTPException(status_code=409, detail="Splitter bereits eingesammelt")
+            if s["status"] == "verblasst":
+                raise HTTPException(status_code=410, detail="Splitter verblasst — nicht mehr greifbar")
+
+            new_meta = {
+                "eingesammelt_von": collector_entity,
+                "eingesammelt_am": datetime.utcnow().isoformat(),
+            }
+            cur.execute(
+                "UPDATE splitter SET status = 'eingesammelt', meta = meta || %s WHERE id = %s",
+                (psycopg2.extras.Json(new_meta), splitter_id),
+            )
+            cur.execute(
+                """INSERT INTO events (event_type, entity_id, payload)
+                   VALUES ('splitter.eingesammelt', %s, %s)""",
+                (collector_entity, psycopg2.extras.Json({
+                    "splitter_id": splitter_id,
+                    "essenz": s.get("essenz", "")[:100],
+                    "ursprung": s.get("entity_id"),
+                })),
+            )
+        conn.commit()
+        return {"ok": True, "splitter_id": splitter_id, "eingesammelt_von": collector_entity}
+    finally:
+        conn.close()
+
+
 @app.post("/admin/splitter")
 def admin_splitter_erstellen(
     body: SplitterCreate,

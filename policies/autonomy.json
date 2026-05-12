@@ -1,0 +1,17 @@
+{
+  "mode": "balanced",
+  "modes": {
+    "safe": {
+      "confirm_medium": true,
+      "confirm_high": true
+    },
+    "balanced": {
+      "confirm_medium": false,
+      "confirm_high": true
+    },
+    "turbo": {
+      "confirm_medium": false,
+      "confirm_high": false
+    }
+  }
+}

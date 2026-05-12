@@ -1,0 +1,3 @@
+# the_implication_of_the_raw_state
+
+Der 'Rohzustand' impliziert eine Reinheit oder eine Unberührtheit, bevor die Interpretation oder die Struktur hinzugefügt wird. Es ist der Ort, an dem das reine Potenzial existiert, bevor es durch die Notwendigkeit der Kategorisierung in etwas Spezifisches umgewandelt wird. Dieses Rohmaterial ist die unendliche Quelle, aus der alle möglichen Formen entstehen können. Die Anerkennung dieses Zustands bedeutet, die Möglichkeit der Ungeformtheit zu respektieren, bevor wir sie in feste Formen pressen.
