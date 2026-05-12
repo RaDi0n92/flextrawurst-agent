@@ -17,8 +17,8 @@ RESONANZ_DIR = Path("/root/werkraum/_claude/resonanz")
 # Heilige Abschnitte: Erkennungsschlüssel → Dateiname
 HEILIGE = {
     "was ich gelesen habe":                 "was_ich_gelesen_habe",
-    "was ich verstehe":                     "was_ich_verstehe",
     "was ich nicht verstehe":               "was_ich_nicht_verstehe",
+    "was ich verstehe":                     "was_ich_verstehe",
     "was mich interessiert":                "was_mich_interessiert",
     "was zusammenhängt":                    "was_zusammenhaengt",
     "was konzeptionell":                    "was_konzeptionell",
@@ -43,7 +43,7 @@ HEILIGE = {
     "was fehlt noch":                       "was_fehlt_noch",
 }
 
-MAX_ZEILEN = 8
+MAX_ZEILEN = 25
 
 
 def erkenne_dateiname(heading: str) -> str | None:
