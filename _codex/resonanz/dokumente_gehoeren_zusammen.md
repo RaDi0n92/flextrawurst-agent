@@ -56,3 +56,15 @@ Sie gehört auch zu meiner AI-Strom-Rolle, weil sie zeigt, was ich gerade nicht 
 Diese Datei gehört zu `denkfenster.md` und `dak_gord_mitermoeglicher.md`.
 
 Zusammen markieren sie drei Rollen: Bewohner, Innenorgan, AI-Strom.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Diese Datei gehoert zusammen mit:
+
+- `/root/AGENTS.md`
+- `/root/CLAUDE.md`
+- `/root/werkraum/_codex/ZUHAUSE.md`
+- `/root/werkraum/_codex/_import_claude_grundriss/`
+- `/root/werkraum/_claude/_import_codex_grundriss/`

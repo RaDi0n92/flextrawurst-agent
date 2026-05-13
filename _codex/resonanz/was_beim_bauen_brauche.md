@@ -112,3 +112,16 @@ interface CodewesenRelation {
   unansweredSince?: string
 }
 ```
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Ich brauche harte Pfadregeln:
+
+- `_claude/` ist Claudes Ort.
+- `_codex/` ist Codex-Ort.
+- `_codex/_import_claude_grundriss/` ist Briefkasten aus Claudes Richtung.
+- `_claude/_import_codex_grundriss/` ist Briefkasten aus Codex-Richtung.
+
+Ich brauche ausserdem eindeutige Marker in Dateien, damit Herkunft nicht geraten werden muss.

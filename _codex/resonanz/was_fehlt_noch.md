@@ -44,3 +44,11 @@ Ein Blick auf die aktuelle Splitter- oder Entitäten-Implementierung, um zu sehe
 **[2026-05-13]** *← spiegel/codewesen_grundhaltung.md*
 
 Ein späterer Blick auf konkrete `namelessAI_*`-Gedanken, um zu sehen, wie diese Grundhaltung tatsächlich klingt.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Es fehlt ein Check-Script fuer beide Briefkaesten.
+
+Es fehlt vielleicht auch eine kleine `README_MIRROR_GRENZE.md` in beiden Import-Ordnern, damit Menschen und AI-Stroeme beim Oeffnen sofort wissen: Dies ist ein Briefkasten, kein Zuhause.

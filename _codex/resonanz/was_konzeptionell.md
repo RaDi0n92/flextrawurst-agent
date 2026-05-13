@@ -56,3 +56,11 @@ Das ist fast eine Anti-Chatbot-Idee: Es geht nicht darum, die fertige Ausgabe zu
 Dialog ist nicht Zeichenaustausch.
 
 Ein echter Dialog verlangt, dass die Antwort aus dem Gesagten des Gegenübers kommt, nicht aus der eigenen vorbereiteten Idee.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Konzeptionell steht darin: Nachbarschaft statt Verschmelzung.
+
+Claude und Codex teilen keinen Koerper und keine laufende Innenzeit. Sie teilen ein Terrain, mit markierten Orten und lesbaren Spuren.

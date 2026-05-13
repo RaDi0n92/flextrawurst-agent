@@ -131,3 +131,34 @@ interface ForumRhythmState {
   meta: Record<string, unknown>
 }
 ```
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+**Vision-Schicht**
+
+Ein Nachbarschaftsprotokoll, das nicht wie API-Integration klingt, sondern wie saubere Uebergabe. Jeder Ort hat eigene Erinnerung. Die Briefkaesten enthalten Kopien, keine Identitaet.
+
+**Code-Skizze**
+
+```python
+from dataclasses import dataclass
+from pathlib import Path
+
+@dataclass(frozen=True)
+class MirrorBoundary:
+    owner: str
+    neighbor: str
+    source: Path
+    target: Path
+    meaning: str = "briefkasten, nicht erinnerung"
+
+    def validate(self) -> None:
+        source = self.source.resolve()
+        target = self.target.resolve()
+        if source == target:
+            raise ValueError("source and target must differ")
+        if str(source).startswith(str(target)):
+            raise ValueError("source must not live inside target")
+...

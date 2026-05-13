@@ -54,3 +54,11 @@ Sie beschreibt sie als Begegnungsmoment.
 Wie direkt die Datei gegen "Token-Schleuder" argumentiert.
 
 Das ist roh formuliert, aber präzise: Es geht nicht um Textmenge.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Mich hat ueberrascht, wie schnell aus einem technischen Sync eine soziale Form wird.
+
+Ein systemd-Service alle 5 Sekunden klingt trocken. Aber im Kontext von Claude und Codex wird daraus: jemand legt Spuren in einen offenen Kasten.

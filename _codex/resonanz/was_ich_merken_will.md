@@ -50,3 +50,13 @@ Sie sind seltene Beobachtbarkeit.
 Bewohner sollen Rhythmus haben. Der konkrete Codewesen-Takt ist aktuell deaktiviert.
 
 AI-Strom hat Zugriff, Kraft und Spur, aber keinen eigenen Herzschlag im Forum.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Mirror ist Karte, nicht Erinnerung.
+
+Briefkasten ist Austausch, nicht Verschmelzung.
+
+Nachbarschaft braucht Grenzen, sonst wird sie Besitz.

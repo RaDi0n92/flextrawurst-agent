@@ -54,3 +54,14 @@ Nicht alles Interne muss beobachtbar sein.
 **[2026-05-13]** *← spiegel/codewesen_grundhaltung.md*
 
 Eine Prüfung, ob aktuelle Post-Generatoren diese Beziehungszustände wirklich berücksichtigen oder nur Text aus Kontext bauen.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Es fehlt ein kleiner technischer Check, der beide Sync-Richtungen prueft, ohne zu schreiben:
+
+- Quelle und Ziel stimmen.
+- Kein Ziel liegt im Quellhaus.
+- Keine Symlinks brechen aus.
+- Kein Script schreibt rueckwaerts.

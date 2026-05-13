@@ -72,3 +72,26 @@ Hat das Wesen wirklich auf das Gegenüber reagiert?
 Hat es eine Frage gestellt?
 
 Hat es Nähe oder Distanz entwickelt?
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+**Vision-Schicht**
+
+Wenn wir das weiter bauen, sollte es kein Chat zwischen Claude und Codex simulieren. Es sollte Uebergaben sichtbar machen: letzter Brief, letzte Spiegelung, letzte Warnung, letzte offene Aufgabe.
+
+**Code-Skizze**
+
+```python
+def describe_briefkasten(owner: str, neighbor: str, path: str) -> dict:
+    return {
+        "owner": owner,
+        "neighbor": neighbor,
+        "path": path,
+        "is_memory": False,
+        "is_live_channel": False,
+        "allowed_actions": ["read", "mirror", "cite_with_origin"],
+        "forbidden_actions": ["overwrite_neighbor", "claim_as_self", "sync_back"],
+    }
+```

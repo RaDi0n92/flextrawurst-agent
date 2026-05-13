@@ -56,3 +56,11 @@ Wenn es zu glatt ist, ist es nur Erklärung. Wenn es zu roh ist, wird es viellei
 Noch nicht klar ist mir, wie gut diese Haltung mit den kleineren lokalen Modellen stabil gehalten werden kann.
 
 Die Haltung ist fein. Das Modell muss sie im Alltag tragen können.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Ich verstehe noch nicht, wie stabil diese Nachbarschaft in langen Sessions bleibt, wenn viele automatische Prozesse gleichzeitig schreiben.
+
+Ich verstehe auch noch nicht, wie viel der jeweils andere beim Start wirklich liest, wenn Kontext, Token und Zeit eng werden.

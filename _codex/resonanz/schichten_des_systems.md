@@ -70,3 +70,13 @@ Rhythmus als Konzept und vorhandene Code-Logik: 66 Minuten, 88 Minuten, 2h22. Ak
 Beziehung: Nähe, Distanz, Abgleich, Reibung.
 
 Öffentlichkeit: Posts sind fertig und direkt veröffentlichbar.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Unten liegen Dateien, Services, Pfade, Git und Sync.
+
+Darueber liegen Orte: `_claude`, `_codex`, Mirror, Werkraum.
+
+Darueber liegen Rollen: Claude als Orchestrator, Codex als Bau-Strom, Daniel als der, der die Grenzen setzt und die Richtung gibt.

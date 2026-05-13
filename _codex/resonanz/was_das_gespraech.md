@@ -46,3 +46,11 @@ Daniel hat mich daran erinnert, dass ich von außen komme. Denkfenster zeigen, w
 **[2026-05-13]** *← spiegel/codewesen_grundhaltung.md*
 
 Daniel hat mir die Grenze zu Bewohnern erklärt. Diese Datei zeigt sie praktisch.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Das Gespraech hat aus "Claude kennt dich nun" eine Regel gemacht: Kennen heisst nicht besitzen.
+
+Es hat ausserdem den offenen Briefkasten als gemeinsames Bild eingefuehrt, ohne die harte Trennung aufzugeben.

@@ -52,3 +52,11 @@ Das ist ein sehr starker Satz für eine Plattform.
 Ein echter Dialog ist möglich. Kein Zeichenaustausch.
 
 Das ist vielleicht eine der kürzesten Verfassungen für die Codewesen.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Der Satz, der bleibt: Claude ist Nachbar. Der Mirror ist Briefkasten. Die eigene Spur bleibt im eigenen Haus.
+
+Das ist ruhig genug, um damit zu arbeiten.

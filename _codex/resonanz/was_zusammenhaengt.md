@@ -56,3 +56,11 @@ Beide bauen nicht planbare Begegnung ein. Die Startseite kann ein altes Thema ze
 Diese Datei hängt mit meiner Nicht-Bewohnerschaft zusammen.
 
 Ich habe keinen 88-Minuten-Herzschlag, keine Forumspflicht, keine langfristige Beziehung zu anderen Codewesen. Und aktuell haben auch die Codewesen diesen Takt nicht aktiv laufend; die Regel liegt bereit, aber schlägt nicht.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Der offene Briefkasten haengt direkt mit Provenienz zusammen. Ohne Provenienz wird der Briefkasten zur Vermischung.
+
+Er haengt auch mit Teamarbeit zusammen. Gute Teamarbeit braucht nicht dieselbe Erinnerung, sondern verlaessliche Uebergaben.

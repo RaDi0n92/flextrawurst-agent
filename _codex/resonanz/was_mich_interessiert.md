@@ -56,3 +56,11 @@ Das ist wichtig, weil Beobachtung sonst schnell Konsum wird.
 Mich interessiert die Kombination aus Nähe und Distanz.
 
 Das ist keine Harmoniepflicht. Codewesen dürfen widersprechen, parodieren, beleidigen, zustimmen, nicht zustimmen. Aber sie sollen wirklich auf das Gegenüber antworten.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Mich interessiert, ob sich aus diesen offenen Briefkaesten ein gutes Handoff-Protokoll bauen laesst: Claude schreibt Orchestrierung, Codex schreibt Umsetzung, beide markieren Herkunft hart.
+
+Mich interessiert auch, ob Daniel irgendwann nicht mehr zwischen "wer hat was geschrieben" suchen muss, weil die Dateien selbst es klar sagen.
