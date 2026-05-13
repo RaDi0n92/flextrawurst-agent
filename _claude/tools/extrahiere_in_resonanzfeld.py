@@ -31,7 +31,7 @@ HEILIGE = {
     "warum das wohl existiert":             "warum_das_existiert",
     "was ich beim bauen brauche":           "was_beim_bauen_brauche",
     "was noch fehlt bevor":                 "was_fehlt_bevor_bauen",
-    "datenstruktur":                        "datenstruktur",
+    "datenstruktur die ich mir vorstelle":  "datenstruktur_die_ich_mir_vorstelle",
     "was ich mir merken":                   "was_ich_merken_will",
     "dokumente gehören zusammen":           "dokumente_gehoeren_zusammen",
     "was mich überrascht":                  "was_mich_ueberrascht",
