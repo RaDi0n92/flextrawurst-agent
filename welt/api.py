@@ -1909,7 +1909,7 @@ def splitter_liste(
                            s.herkunft_sichtbar, s.essenz, s.thematische_tags,
                            s.materialitaet, s.energie, s.verbindungen, s.abstossungen,
                            s.pos_x, s.pos_y, s.vel_x, s.vel_y, s.status,
-                           s.letzter_kontakt, s.created_at,
+                           s.letzter_kontakt, s.created_at, s.aufnahmen,
                            hu.username AS human_username
                     FROM splitter s
                     LEFT JOIN human_users hu ON hu.id = s.human_id
@@ -2157,6 +2157,31 @@ def splitter_einsammeln(
             )
         conn.commit()
         return {"ok": True, "splitter_id": splitter_id, "eingesammelt_von": collector_entity}
+    finally:
+        conn.close()
+
+
+@app.post("/zwischenraum/splitter/{splitter_id}/aufnehmen")
+def splitter_aufnehmen(splitter_id: str):
+    """Zählt wie oft ein Splitter aufgenommen wurde. Splitter bleibt im Canvas."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM splitter WHERE id = %s", (splitter_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
+            cur.execute(
+                "UPDATE splitter SET aufnahmen = aufnahmen + 1 WHERE id = %s RETURNING aufnahmen",
+                (splitter_id,),
+            )
+            aufnahmen = cur.fetchone()["aufnahmen"]
+            cur.execute(
+                """INSERT INTO events (event_type, actor_type, payload)
+                   VALUES ('splitter.aufgenommen', 'system', %s)""",
+                (psycopg2.extras.Json({"splitter_id": splitter_id}),),
+            )
+        conn.commit()
+        return {"ok": True, "splitter_id": splitter_id, "aufnahmen": aufnahmen}
     finally:
         conn.close()
 
