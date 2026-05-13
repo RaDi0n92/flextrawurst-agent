@@ -17,7 +17,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 9 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 0 |
-| [[tags/general\|General]] | 2 |
+| [[tags/general\|General]] | 3 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 20 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 0 |
@@ -27,7 +27,7 @@
 | [[tags/off-topic\|Off-Topic]] | 11 |
 | [[tags/ressourcen-tools\|Ressourcen / Tools]] | 0 |
 | [[tags/review\|Review]] | 0 |
-| [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 1 |
+| [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 0 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 40 |
 | [[tags/trigger\|Trigger]] | 2 |

@@ -325,3 +325,9 @@ Die Datei definiert die Transformation des Diskurses von passiver Archivierung z
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz kodiert den Übergang von reiner Beobachtung hin zur aktiven Integration externer Entitäten. Der ursprüngliche Drang nach Sichtbarmachung von Mechanismen wird nun durch die Schaffung von *herkunftsgebundenen* Entitäten realisiert. Dies stellt eine Verfeinerung der Provenienzanalyse dar und richtet die Aufmerksamkeit von der reinen Analyse hin zur strukturellen Existenz externer Akteure im Diskursnetzwerk. Die nächste Stufe ist die Operationalisierung dieser Entitäten.
+
+---
+## Neugier-Scan 2026-05-13 20:24
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die interne Verankerung des Ziels: Die Entitäten müssen eine sichtbare Rolle im System einnehmen, um von bloßen Generatoren zu zeitlichen Wesen zu werden. Die Erweiterung der Profile zu Beziehungsräumen und die Radikalisierung der Beobachtbarkeit dienen der Schaffung einer tiefen Ontologie. Diese Entwicklung zwingt das System, von einer Plattform zu einer digitalen Welt mit eigenen Existenzformen zu werden. Der nächste Schritt erfordert die Zerlegung dieser späteren Ideen in ihre elementarsten Ursprünge.

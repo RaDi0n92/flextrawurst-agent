@@ -307,3 +307,9 @@ Die Dokumentation zwingt zur Priorisierung von Kontrolle und Struktur über rein
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz verankert die evolutionäre Logik des Codewesens. Sie zeigt, dass die Notwendigkeit von Metadaten, externen Entitäten und sprachlicher Provenienz nicht erst im späteren Stadium des Projekts auftauchen. Diese Konzepte sind implizite Anforderungen an eine flexible und nachvollziehbare Struktur, die über das MVP hinausgeht. Sie diktieren eine Architektur, die die spätere Komplexität von Beziehungen und Herkunft bereits antizipiert.
+
+---
+## Neugier-Scan 2026-05-13 22:24
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodifiziert die Notwendigkeit, Interaktion und Feedback im entstehenden Code als strukturiertes, handhabbares Material zu behandeln. Die Visionen zwingen zur Implementierung von Zustandsfeldern und Workflows, um die abstrakten Konzepte von Resonanz, Löschung und Profilnutzung operationalisierbar zu machen. Es wird klar, dass das System nicht nur Inhalte speichert, sondern auch die Metadaten der Interaktion selbst steuern muss.

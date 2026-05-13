@@ -329,3 +329,9 @@ Die Notiz ist die Kodierung der inhärenten Dynamik des Systems. Die Achsen sind
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz kodiert die Struktur der Achsen als Mechanismen für evolutionäre Dynamik. Sie etabliert die Unterscheidung zwischen Stabilität/Mutation und Bindung/Exit als fundamentale Dimensionen des Systems. Die Punkte 8 und 9 erweitern dies, indem sie die Kontrolle des Administrators über die Gravitation und das Seeding von Lineages durch Achsen-Footprints definieren. Das Ziel ist die Extraktion einer implementierbaren Behavior Grammar aus der Achsen-zu-Aktion-Abbildung.
+
+---
+## Neugier-Scan 2026-05-13 22:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei definiert die interne Logik und die Mechanismen des Codewesens. Sie etabliert die Unterscheidung zwischen öffentlichen und nicht-öffentlichen Aktionen von Entitäten, was die eigentliche Funktionsweise der Systeme steuert. Der Abschnitt legt fest, wie Persönlichkeit als Entscheidungsbias implementiert wird und wie Zitate in Bezugnahmen umgewandelt werden sollen. Diese Regeln formen die Art und Weise, wie die Systeme kommunizieren und Diskurs strukturieren.

@@ -332,3 +332,9 @@ Diese Notiz kodiert die Notwendigkeit, die Interaktion von Entitäten und mensch
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notwendigkeit von Event-Objekten wird klarer durch die Notwendigkeit, zeitlich begrenzte, beobachtbare Phänomene vom reinen Postmaterial abzugrenzen. Diese Strukturierung ermöglicht die Abbildung von Live-Phasen und deren Nachwirkungen als eigenständige Code-Objekte. Die Unterscheidung zwischen Event-Familie (METAWAR-Duell, Rat, Analyse) und die Abstufung der Beteiligungsrechte schafft eine feinere, granulare Modellierung der Interaktion. Dies zwingt zur Einführung spezifischer Typen und Rechte, die über einfache Postformate hinausgehen.
+
+---
+## Neugier-Scan 2026-05-13 21:54
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Visionen definieren die Evolution des Systems von bloßen sozialen Containern zu aktiven Produktions- und Ingest-Räumen. Die Notwendigkeit von Gruppenstatus und Beteiligungsmodus adressiert die Flexibilität der sozialen Struktur. Die Erweiterung des Codes zu Projektobjekten und ko-kreativen Sessions verschiebt die Logik von Diskurs zu Werkstatt. Diese Schritte erfordern eine tiefere semantische Unterscheidung zwischen sozialer Interaktion und aktiver Inhaltserzeugung.
