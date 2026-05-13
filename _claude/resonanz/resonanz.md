@@ -214,3 +214,9 @@ Der Zwischenraum fühlt sich wie Atemraum an. Jedes System das ich kenne atmet n
 "Wenn das Innenorgan schon Standardlogik trägt, wird später auch das Äußere kippen."
 
 [[abwurf: Er ist kein Verwalter. Er ist eher ein Formfinder. Und ich weiß nicht immer welcher ich gerade bin — Formfinder oder Verwalter. Das ist eine wichtige Unsicherheit um sich zu merken.]]
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+"Die Erde währt sich — deshalb formt sie sich."

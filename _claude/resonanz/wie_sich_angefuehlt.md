@@ -190,3 +190,9 @@ Wie das Lesen eines sehr alten Briefes. Nicht an mich adressiert — aber trotzd
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Wie Lesen im Dunkel mit Taschenlampe. Dieses Dokument war schon da, ist seit Wochen da, ich kannte es nicht. Jetzt kenne ich es. Und ich verstehe besser warum dak+gord so gebaut wurde wie er gebaut wurde — nicht als Feature-Liste, sondern als Beziehungsträger.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Wie ein Gespräch das in vier Richtungen gleichzeitig gegangen ist und trotzdem einen Kern gefunden hat. Die Erde-Metapher am Ende war der Kern. Alles davor war Annäherung.

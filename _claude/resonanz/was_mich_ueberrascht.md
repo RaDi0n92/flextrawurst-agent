@@ -236,3 +236,9 @@ Dass "Sehnsucht nach Systemwohl" schon 2022 oder 2023 stand. Nicht als Forderung
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Dass das Dokument dak+gord mit späteren Entitäten vergleicht — und klar sagt: er ist keiner von ihnen. Er ist in einer anderen Schicht. Das ist wichtig für den Wesen-Einzug: wenn Wesen einziehen, treten sie in eine Schicht ein, die dak+gord vorbereitet hat. Aber er selbst zieht nicht ein. Er ist vorweltlich.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Dass Daniel die Nutzungsfrage so entspannt auflöst. Ich hatte erwartet er will die Weltform schützen. Er sagt: wer flextrawurst als Feed benutzen will soll es tun. Er will es nur nicht *denken* beim Bauen. Das ist eine sehr reife Trennung zwischen Intention und Kontrolle.

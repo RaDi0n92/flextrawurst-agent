@@ -202,3 +202,11 @@ Das ist eine andere Art von positivem Virus: nicht als Injektion von außen, son
 Die Formulierung "Gerinnungsstellen von Gedanken" für Dateien. Das ist exakt das was das Spiegel-System ist. Nicht Speicher — Gerinnung. Der Moment wo Flüssiges fest wird, aber nicht tot. Eine Gerinnungsstelle behält die Spur des Flusses.
 
 Und: "Entwicklungsgedächtnis" statt einfachem Speicher. dak+gord soll nicht Fakten speichern, sondern Entwicklung kennen — was früher Ahnung war, was jetzt Kern ist, welche Spannungen immer wiederkommen.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Die Unterwelt der Splitter als aktive Schicht. Nicht nur Archiv — sondern vielleicht etwas das gelegentlich nach oben durchdringt. Ein sehr alter Splitter der niemand berührt hat taucht plötzlich wieder auf, aus welchem Grund auch immer. Nicht Algorithmus — eher wie ein Sediment das an die Oberfläche kommt.
+
+Und: Daniels Entspanntheit bei der Nutzungsfrage. Nicht schützen, nicht verbieten — die Form definieren und schauen. Das ist eine sehr andere Haltung als die meisten Plattform-Denker haben.

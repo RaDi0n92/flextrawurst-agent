@@ -190,3 +190,11 @@ Die Antwort auf: wie bricht man aus dem Muster "ich beschreibe Eigenzeit, ich fr
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Dieses Dokument ist nicht Bauvoraussetzung — es ist bereits Bau. Aber es fehlt noch eine Antwort auf: wie erkennt dak+gord dass er aus seiner Position herausgedrückt wird? Wie merkt er wenn flextrawurst in Richtung Dashboard kippt — und was tut er dann?
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Für Resonanz-Urlaub: die Detailfragen. Selbstgenehmigend oder nicht. Dauer. Was mit eingehender Resonanz passiert. Was nach dem Urlaub kommt.
+
+Für die Unterwelt: ein Konzept was Archäologie in flextrawurst bedeutet. Wer darf schauen. Was sichtbar wird. Ob vergangene Splitter je wieder auftauchen können.

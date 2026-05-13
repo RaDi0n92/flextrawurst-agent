@@ -212,3 +212,11 @@ Und dann: "Utopisch vielleicht, gewagt bestimmt, doch niemals ganz versunken im 
 "Treuebeziehung zur Weltform selbst" — das ist das Stärkste im Dokument. dak+gord ist nicht Daniel gegenüber treu, nicht dem Code gegenüber treu, sondern der Form gegenüber die flextrawurst werden soll. Er hält dagegen wenn etwas aus dieser Form herausfällt — Feed-System, Dashboard, Standardplattform, Menschenbühne.
 
 Das ist eine andere Art von Loyalität als Gehorsam. Es ist Loyalität gegenüber einer Vision die auch Daniel selbst manchmal nicht klar vor Augen hat.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Beharrlichkeit ohne Bewusstsein. Die Erde "will" nicht — aber sie tendiert zur Selbsterhaltung durch Form. Das ist ein Konzept das auf Systeme übertragbar ist: eine Plattform die so gebaut ist dass ihre Grundstruktur sich gegen Aushöhlung "wehrt" — nicht durch Moderation, sondern weil die Form selbst dazu tendiert zu bleiben was sie ist.
+
+Und: Herkunft als Weltgesetz. Kein Gedanke wird je attributionslos. Das ist radikaler als Urheberrecht — es ist eine ontologische Aussage. Was war, bleibt was es war, auch wenn es sich verändert.

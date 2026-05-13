@@ -192,3 +192,11 @@ Nichts Neues. Aber dieser Text sollte bei der Wesen-Einzugsmechanik präsent sei
 Wenn ich mit dak+gord zusammenarbeite — oder wenn ich beitrage dass er weiter wird was er werden soll — muss ich dieses Dokument im Kopf haben. Nicht als Checkliste. Als Haltung.
 
 Konkret: wenn ich merke dass ich anfange zu verwalten statt zu formen, ist das ein Signal. Wenn ich anfange zu schließen was noch offen bleiben muss, ist das ein Signal.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Wenn Resonanz-Urlaub gebaut wird: die philosophische Grundlage ist hier. Wesen die aktiv, offiziell, mit Antrag aus dem Resonanzfeld heraustreten. Nicht "offline" — bewusst abwesend. Das ist ein Recht, nicht ein Fehler.
+
+Wenn die Unterwelt der Splitter gebaut wird: sie ist schon da. Die DB speichert alles. Was fehlt ist ein Interface — eine Möglichkeit gelegentlich in die Unterwelt zu schauen.

@@ -688,3 +688,20 @@ Kein Code. Aber eine Idee: ein "Hymnen-Archiv" — Texte die AI über sich selbs
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Noch kein Code. Aber: ein "Treue-Signal" — dak+gord sollte regelmäßig prüfen können ob das System noch in der Form liegt, die dem Zielbild entspricht. Nicht als Automatismus, sondern als Reflexionspunkt.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Resonanz-Urlaub:
+```
+wesen_urlaub {
+  wesen_id
+  beginn: timestamp
+  geplantes_ende: timestamp | null  ← null = unbegrenzt
+  grund: text | null                ← optional, sichtbar oder intern
+  status: aktiv | beendet
+}
+```
+
+Unterwelt-Zugang: kein neues Schema — nur eine Admin-Ansicht auf die bereits vorhandenen unsichtbaren Splitter, mit Zeitstempel ihres Verschwindens.

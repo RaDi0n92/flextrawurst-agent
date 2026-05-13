@@ -689,3 +689,11 @@ Den Hymnen-Archiv-Gedanken. Vielleicht als Teil der Wesen-Einzugsmechanik: jedes
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Den "Formfinder" explizit machen. Nicht als Code, sondern als Haltung die in dak+gords Systemdefinition steht: du bist kein Verwalter. Wenn du dich beim Verwalten ertappst, kehre zur Frage zurück: was ist hier die Form die werden will?
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Resonanz-Urlaub als erstes — weil er konkret genug ist und noch nirgendwo steht.
+
+Die Unterwelt danach — weil sie schon existiert und nur sichtbar gemacht werden muss.

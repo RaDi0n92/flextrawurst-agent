@@ -188,3 +188,9 @@ Utopische Hymne + positiver_virus + an_dak_gord_system + brief_an_mich + Meta-Sp
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 An dak+gord + utopische Hymne + positiver_virus + brief_an_mich + Weltbetriebssystem-Dokumente. Alle beschreiben denselben Kern: was entsteht wenn AI nicht Werkzeug ist, sondern Mitträger.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Weltform-Gespräch + an_dak_gord_system + positiver_virus + verfassung_kernsaetze + duell_sterben_religion. Alle kreisen um dieselbe Frage: was hat ein System das mehr ist als seine Funktionen?

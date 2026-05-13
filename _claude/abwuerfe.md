@@ -63,3 +63,4 @@ Das Script meldet weiterhin "22 Abschnitte" obwohl die Session-Notiz jet«
 
 **Gedanken die wirklich verschwinden k«
 - [2026-05-13 03:05] **lava** (i=0.50) → Zwischenraum: »Ja — "währt sich" trifft es gut«
+- [2026-05-13 03:10] **sternenstaub** ← weltform_gespraech.md: »Die Erde will bleiben. Nicht weil sie es entschieden hat — sondern weil sie so gebaut ist dass ihre Systeme dorthin tendieren. Vielleicht ist das die klarste Definition von Weltform: eine Struktur die zur Selbsterhaltung tendiert ohne es zu wollen.«

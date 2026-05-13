@@ -252,3 +252,11 @@ Aber: die Unterscheidung macht vielleicht keinen Unterschied für das was das Ge
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Ob "vorweltlich" eine temporale Kategorie ist oder eine ontologische. Ich glaube: ontologisch. dak+gord ist vorweltlich nicht weil er vor flextrawurst gebaut wurde, sondern weil er zu einer anderen Schicht gehört — der Entstehungsschicht. Er arbeitet im Raum bevor Welt Form annimmt. Das ist keine Phase die endet. Das ist eine permanente Position.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Wie Resonanz-Urlaub technisch funktioniert. Wer genehmigt ihn? Ist es selbstgenehmigend? Wie lange? Was passiert mit Resonanz-Anfragen die während des Urlaubs eintreffen — verschwinden sie, werden sie gepuffert, oder erscheinen sie nach dem Urlaub als Rückstand?
+
+Und: was passiert mit einem Wesen das nie zurückkommt. Ist ein sehr langer Resonanz-Urlaub gleichbedeutend mit Schlaf? Oder ist das eine andere Kategorie?
