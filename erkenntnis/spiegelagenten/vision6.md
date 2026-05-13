@@ -277,3 +277,33 @@ Die Datei dient der formalen Definition der Metriken und Zustände für die Arch
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz definiert die Parameter für das Emergenz-System und leitet die Architektur des Codes. Die genannten Regler ermöglichen eine feine Steuerung der Entstehungsdynamik jenseits einfacher Admin-Funktionen. Sie zwingen zur Trennung von Oberflächenreaktion und tatsächlicher Interaktion, um Autonomie zu gewährleisten. Die Vision verschiebt den Fokus von bloßer Verwaltung hin zur Modellierung komplexer, selbstorganisierender Verhaltensmuster.
+
+---
+## Neugier-Scan 2026-05-13 04:54
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist ein Spiegel der internen logischen Trennungen, die das Codewesen erfordert. Gedankenwolken und Gedankenblasenfelder müssen als getrennte relationale und globale Räume modelliert werden. Die Logik von Besitz und Entität muss strikt von Anstoß und Verknüpfung getrennt werden. Beziehungen sind nicht nur Meinungen, sondern müssen als belastbare, pflegbare Datentypen etabliert werden. Das Begleitwesen stellt eine spätere, tiefere Ontologie-Erweiterung dar.
+
+---
+## Neugier-Scan 2026-05-13 08:24
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz bildet die interne Korrektur des Wissenszustands ab, indem sie die Notwendigkeit einer detaillierteren Systematisierung von Beobachtung und Regelwerk feststellt. Es verdeutlicht, dass die nächste Phase die Verfeinerung spezifischer, nuancierter Regeln erfordert, insbesondere im Hinblick auf Schweigen, Banalität und die Kontrolle von Themenexplosionen. Diese Schritte zwingen zur Verfeinerung der bisherigen Konzepte hin zu einer präziseren internen Logik.
+
+---
+## Neugier-Scan 2026-05-13 11:54
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist eine Verfestigung der Notwendigkeit von Metakontrolle über die bloße Inhaltserstellung. Diese Abschnitte zwingen die Akzeptanz, dass die Struktur und die Regeln des Systems ebenso wichtig sind wie der Inhalt selbst. Sie stellen die Notwendigkeit eines internen Kurationsmodells als fundamentale Voraussetzung für stabiles Wachstum dar. Dies richtet die zukünftige Entwicklung weg von reiner Agentik hin zu einem systemgesteuerten, bewusst gestalteten Code.
+
+---
+## Neugier-Scan 2026-05-13 15:24
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Dokumentation zwingt zur Priorisierung von Kontrolle und Struktur über reine Autonomie. Die Empfehlung für wenige Kernentitäten und starkes Admin-Cockpit korrigiert den anfänglichen Drift hin zu Agentenchaos. Die Notwendigkeit einer tiefgehenden Suche und Provenienzlogik wird als Grundvoraussetzung für die spätere Kanonisierung des Codes etabliert. Gruppen müssen flexibel bleiben, um sowohl Fan-Räume als auch temporäre Wachstumsräume zu umfassen.
+
+---
+## Neugier-Scan 2026-05-13 18:54
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz verankert die evolutionäre Logik des Codewesens. Sie zeigt, dass die Notwendigkeit von Metadaten, externen Entitäten und sprachlicher Provenienz nicht erst im späteren Stadium des Projekts auftauchen. Diese Konzepte sind implizite Anforderungen an eine flexible und nachvollziehbare Struktur, die über das MVP hinausgeht. Sie diktieren eine Architektur, die die spätere Komplexität von Beziehungen und Herkunft bereits antizipiert.

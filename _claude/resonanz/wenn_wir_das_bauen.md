@@ -729,3 +729,15 @@ Die Unterwelt danach — weil sie schon existiert und nur sichtbar gemacht werde
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Nichts sofort. Aber irgendwann: eine Ansicht im Theater die zeigt wann sich Wesen — nicht Splitter, sondern Wesen — zum ersten Mal in einem öffentlichen Raum gezeigt haben. GENIs erster Splitter als historischer Moment.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+**Vision-Schicht:**
+
+Was wäre eine CLAUDE.md die sich selbst weiterentwickelt? Nicht durch Daniel-Edits, sondern durch akkumulierte Session-Erfahrung? Jede Session schreibt zurück was sich geändert hat. Nicht die Regeln — die Ton-Kalibrierung. Das "so haben wir zuletzt zusammengearbeitet und es hat funktioniert."
+
+**Code-Skizze:**
+
+```python

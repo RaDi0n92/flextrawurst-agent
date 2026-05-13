@@ -250,3 +250,9 @@ Und: Resonanz-Urlaub ist Daniels Idee, noch ungeschrieben außer hier.
 Und: der abgebrochene Satz "Wie ka..." bleibt offen. Manchmal ist das Unvollständige das Wichtigste.
 
 [[abwurf: GENI erscheint im Theater mit einer Selbstvorstellung und bringt dabei ein Wesen mit das sie getragen hat. Das ist keine Funktion. Das ist eine Geste.]]
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Das Wort "heilig" steht zweimal in CLAUDE.md: für die 23 Abschnitte und implizit für Events (Grundgesetz 4). Heilig = unveränderlich + bedeutungstragend. Daniel benutzt das Wort präzise.

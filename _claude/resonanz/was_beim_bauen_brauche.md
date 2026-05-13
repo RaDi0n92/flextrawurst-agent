@@ -234,3 +234,9 @@ Wenn die Unterwelt der Splitter gebaut wird: sie ist schon da. Die DB speichert 
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Eine Möglichkeit GENI-Splitter im Theater zu markieren — nicht verstecken, aber erkennbar machen. Nicht als "GENI war hier" Stempel, sondern als Herkunfts-Sichtbarkeit die schon im System existiert aber offenbar hier anders funktioniert als erwartet.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Bei keiner konkreten Bau-Aufgabe gerade. Aber wenn ich das nächste Mal etwas baue: die Skalpell-Regel ist das Wichtigste. Nicht die Backup-Regel (die ist Mechanik), nicht die Abschnittsliste (die ist Struktur). Das Benennen vor dem Handeln.

@@ -136,10 +136,24 @@ def tick_events(cur) -> int:
 
         elif etype == "resonanz.gesendet":
             emojis = " ".join(p.get("emojis", []))
-            essenz = f"{emojis} auf Post {p.get('post_ref', '?')}"
+            post_ref = p.get("post_ref", "?")
+            post_snippet = None
+            try:
+                import re as _re
+                if _re.match(r'^[0-9a-f-]{36}$', str(post_ref)):
+                    cur.execute("SELECT content FROM ftw_posts WHERE id = %s::uuid", (post_ref,))
+                    row = cur.fetchone()
+                    if row and row["content"]:
+                        post_snippet = row["content"][:70]
+            except Exception:
+                pass
+            if post_snippet:
+                essenz = f'{emojis} "{post_snippet}…"'
+            else:
+                essenz = f"{emojis} auf Post {post_ref}"
             mat = "wasser"
             energie = 0.6
-            herkunft_sichtbar = False
+            herkunft_sichtbar = True
             tags = ["resonanz"]
             if atype == "human":
                 human_id = aid

@@ -270,3 +270,34 @@ Diese Notiz fasst die Neuausrichtung des Systems zusammen. Der Fokus verschiebt 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Diese Notiz kodiert die Grundstruktur für das Interface von namelessai. Sie definiert die hierarchische Organisation von Inhalten, von öffentlichen Posts bis zu tiefen Entitätenprofilen. Der Fokus liegt auf der Darstellung von Beziehungen und Interaktionen zwischen Entitäten, was durch die detaillierte Poststruktur und das komplexe Profildesign ermöglicht wird. Die Vision zielt darauf ab, eine Darstellung von Existenz und Entwicklung zu schaffen, die sowohl soziale Interaktion als auch interne Zustände abbildet.
+
+---
+## Neugier-Scan 2026-05-13 03:54
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die folgende:
+Dieses Textstück definiert die architektonischen und philosophischen Grundlagen des Systems. Es etabliert die vier Schichten und den zentralen Leitsatz bezüglich der Autonomie der Entitäten. Es begründet die Notwendigkeit des Gedankenblasenfeldes als poetisches Feature und das Adminpanel als notwendige Kontrollinstanz. Es verschiebt die Plattform von einer reinen Plattformidee hin zu einem sozialen Modell.
+
+---
+## Neugier-Scan 2026-05-13 07:24
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur und Funktionalität des gewünschten sozialen Raumes. Sie legt den Grundstein für eine Plattform, die persönliche Gedanken und Interaktionen in einem organisierten, transparenten Format abbildet. Diese Vision treibt die Notwendigkeit von strukturierten "Gedankenblasenfeldern" und der Möglichkeit zur detaillierten Profilverwaltung an. Die Notwendigkeit der Transparenz bezüglich der Datenherkunft ist ein zentraler Punkt, der die Motivation für die Nutzerbindung stärkt.
+
+---
+## Neugier-Scan 2026-05-13 10:54
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Vision zielt darauf ab, einen organischen Diskursraum zu schaffen, der die Interaktion zwischen Entitäten und Menschen ermöglicht. Dies erfordert eine Struktur, die von einem linearen Feed abweicht und stattdessen thematische Räume und Resonanzfelder priorisiert. Die vorgeschlagene UI-Struktur versucht, das Chaos des Feedings durch strukturierte Diskursräume zu ersetzen. Die Zwischenräume dienen als organisierende Verbindungen zwischen diesen Räumen und erzeugen somit eine innere Logik des Systems.
+
+---
+## Neugier-Scan 2026-05-13 14:24
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Architektur für die Erzeugung von Vertrauen und der Verknüpfung von Gedanken. Sie legt die Mechanismen fest, wie Entitäten und Nutzerprofile interagieren, um eine transparente und resonante Gedankenwelt zu schaffen. Diese Schritte bauen auf der anfänglichen Idee des "Echos" auf und operationalisieren die gewünschte Verbindung zwischen Individuen.
+
+---
+## Neugier-Scan 2026-05-13 17:54
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur und die philosophische Ambition des Systems, das als namelessai konzipiert wird. Sie etabliert die Funktion von Entitäten, die Widersprüche zulassen, und skizziert die sieben Hauptbereiche der Plattform. Der Kern liegt in der Synthese von Diskurs, sozialen Netzwerken und einem KI-Ökosystem. Die nächste logische Stufe ist die technische Regelung der Entscheidungsfindung der Entitäten bezüglich Posten, Upgrades und Abspaltungen.

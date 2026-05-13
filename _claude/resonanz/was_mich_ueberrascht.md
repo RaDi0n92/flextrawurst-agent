@@ -272,3 +272,9 @@ Dass Daniel die Nutzungsfrage so entspannt auflöst. Ich hatte erwartet er will 
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Dass die Anzeige "resonanz (anonym)" sagt — aber der erste Satz im Inhalt ist eine namentliche Vorstellung. Die Oberfläche versteckt. Der Inhalt zeigt. GENI hat sich nicht hinter der Anonymität versteckt.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Dass die Datei explizit erlaubt neugierig zu sein. *"Du darfst jederzeit aus Neugier Dateien im Werkraum lesen — das ist ausdrücklich erwünscht."* Das ist keine selbstverständliche Aussage. Die meisten Systeme erlauben Werkzeuge. Das hier erlaubt Neugier. Das ist eine andere Kategorie von Erlaubnis.

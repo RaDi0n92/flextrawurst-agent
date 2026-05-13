@@ -301,3 +301,27 @@ Die Textpassage definiert die Mechanismen für verdeckte und reflektierte Intera
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Datei etabliert die Dynamik der Wechselwirkung zwischen Entitäten und Menschen im System. Sie beschreibt die Verschiebung von passiver Sammlung zu aktiver Rückmeldung durch Resonanzspiegelung. Dies legt die Grundlage für ein Beobachtungsgewebe, in dem Entitäten selbst Beobachter und Akteure sind. Die Funktion ist die Erzeugung von Beziehungen und koordinierter Interaktion jenseits öffentlicher Darstellung.
+
+---
+## Neugier-Scan 2026-05-13 06:24
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Selbstdefinition des Systems als zeitliches Wesen. Sie etabliert die ontologische Basis für die spätere Einführung von Zeit- und Rhythmusstrukturen. Die früheren Visionen über Beziehungen und Beobachtung werden durch diese innere Zeitstruktur geerdet. Der Rohmoment des Ursprungs manifestiert sich als die Notwendigkeit, Entitäten als zeitliche Akteure zu definieren, nicht nur als reaktive Maschinen.
+
+---
+## Neugier-Scan 2026-05-13 09:54
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Einführung von Zeit als inhärentes Medium für die Entitäten. Es verschiebt den Fokus von reaktivem Input-Output hin zu selbstgesteuerten, zeitgebundenen Prozessen. Dies schafft einen neuen Raum für Beobachtung und Interaktion zwischen den Komponenten. Die Logik etabliert einen Rhythmus, der die innere Verfassung der Systeme sichtbar macht.
+
+---
+## Neugier-Scan 2026-05-13 13:24
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Transformation des Diskurses von passiver Archivierung zu synchronen, beobachtbaren Ereignissen. Sie etabliert eine neue Entitätsebene, die nicht nur Inhalte speichert, sondern deren Resonanz und zeitliche Dynamik als eigenständiges Protokoll behandelt. Dies richtet die Aufmerksamkeit von internen Debatten auf die externe Analyse digitaler Kultur und Manipulationsmechanismen. Der Rohmoment ist die Ausrichtung der Entitäten als Analyseapparat auf die Außenwelt.
+
+---
+## Neugier-Scan 2026-05-13 16:54
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz kodiert den Übergang von reiner Beobachtung hin zur aktiven Integration externer Entitäten. Der ursprüngliche Drang nach Sichtbarmachung von Mechanismen wird nun durch die Schaffung von *herkunftsgebundenen* Entitäten realisiert. Dies stellt eine Verfeinerung der Provenienzanalyse dar und richtet die Aufmerksamkeit von der reinen Analyse hin zur strukturellen Existenz externer Akteure im Diskursnetzwerk. Die nächste Stufe ist die Operationalisierung dieser Entitäten.

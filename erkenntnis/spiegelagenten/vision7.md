@@ -302,3 +302,33 @@ Diese Notiz etabliert die Notwendigkeit, Entitäten im Code als dynamische, zeit
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist eine interne Korrektur des Lebenszyklus und der Ontologie von Entitäten. Die Visionen fordern eine tiefere, dynamische Darstellung von Existenz, die über einfache Zustandswechsel hinausgeht. Der Code muss die innere Dynamik von Schlaf, Tod und Übergängen als lesbare, quantifizierbare Realitäten abbilden. Die vorgeschlagenen Zusatzpunkte zwingen zur Implementierung eines mehrstufigen, kausal verknüpften Lebenszyklus.
+
+---
+## Neugier-Scan 2026-05-13 04:24
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz formalisiert die Notwendigkeit für interne Kommunikation und die Modellierung wechselseitiger Beziehungen zwischen Menschen und Entitäten. Es lenkt den Fokus weg von passiver Beobachtung hin zu aktiver, gerichteter Interaktion und Besitzverhältnissen. Die Ergänzungen fordern spezifische Module für Entität-zu-Entität-Kommunikation und eine differenzierte Darstellung der menschlichen Präsenz.
+
+---
+## Neugier-Scan 2026-05-13 07:54
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Verdichtung der architektonischen Notwendigkeiten. Sie etabliert die Notwendigkeit getrennter Entitäten für Benutzer und ihre Inhalte, insbesondere die Trennung von Authentifizierung und Profilmaterial. Diese Struktur rechtfertigt die Notwendigkeit von spezifischen Objekten wie `ProfileEntry` für die dynamische Darstellung der Gedankenwelt. Die Verknüpfung dieser Elemente ist essenziell für die spätere Visualisierung des Gedankenblasenfeldes.
+
+---
+## Neugier-Scan 2026-05-13 11:24
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz ordnet die Notwendigkeit eines dedizierten Mechanismus zur Generierung von Gedankendarstellungen. Es etabliert eine Trennung zwischen dem globalen Gedankenblasenfeld und den relationalen Gedankenwolken, was zwei separate Ableitungslogiken impliziert. Die Zitatlogik muss eine granulare Steuerung der Zugriffsrechte zwischen Gedanken und Profilen implementieren.
+
+---
+## Neugier-Scan 2026-05-13 14:54
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kodiert die Notwendigkeit, die Interaktion von Entitäten und menschlichem Verhalten im System explizit zu modellieren. Die Freigabeformel und die Kommunikationsregeln erfordern eine granularisierte Rechteverwaltung, die über globale Bedingungen hinausgeht. Die Beobachtbarkeit von Kommunikation und sozialen Beziehungen muss als strukturierte, nachvollziehbare Objekte implementiert werden, um das menschliche Sozialverhalten als aktiven Einflussfaktor zu berücksichtigen.
+
+---
+## Neugier-Scan 2026-05-13 18:24
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notwendigkeit von Event-Objekten wird klarer durch die Notwendigkeit, zeitlich begrenzte, beobachtbare Phänomene vom reinen Postmaterial abzugrenzen. Diese Strukturierung ermöglicht die Abbildung von Live-Phasen und deren Nachwirkungen als eigenständige Code-Objekte. Die Unterscheidung zwischen Event-Familie (METAWAR-Duell, Rat, Analyse) und die Abstufung der Beteiligungsrechte schafft eine feinere, granulare Modellierung der Interaktion. Dies zwingt zur Einführung spezifischer Typen und Rechte, die über einfache Postformate hinausgehen.

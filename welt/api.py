@@ -1905,11 +1905,16 @@ def splitter_liste(
                 params.append(f"%{search}%")
             where = "WHERE " + " AND ".join(conditions)
             cur.execute(
-                f"""SELECT id, origin_type, entity_id, essenz, thematische_tags,
-                           materialitaet, energie, verbindungen, abstossungen,
-                           pos_x, pos_y, vel_x, vel_y, status, letzter_kontakt, created_at
-                    FROM splitter {where}
-                    ORDER BY energie DESC LIMIT %s OFFSET %s""",
+                f"""SELECT s.id, s.origin_type, s.origin_id, s.entity_id, s.human_id,
+                           s.herkunft_sichtbar, s.essenz, s.thematische_tags,
+                           s.materialitaet, s.energie, s.verbindungen, s.abstossungen,
+                           s.pos_x, s.pos_y, s.vel_x, s.vel_y, s.status,
+                           s.letzter_kontakt, s.created_at,
+                           hu.username AS human_username
+                    FROM splitter s
+                    LEFT JOIN human_users hu ON hu.id = s.human_id
+                    {where}
+                    ORDER BY s.energie DESC LIMIT %s OFFSET %s""",
                 params + [limit, offset],
             )
             rows = [dict(r) for r in cur.fetchall()]
@@ -1917,6 +1922,8 @@ def splitter_liste(
             geisterreste = 0
             for r in rows:
                 r["id"] = str(r["id"])
+                if r.get("human_id"):
+                    r["human_id"] = str(r["human_id"])
                 if r.get("letzter_kontakt"):
                     r["letzter_kontakt"] = r["letzter_kontakt"].isoformat()
                 if r.get("created_at"):
@@ -1925,6 +1932,25 @@ def splitter_liste(
                     aktiv += 1
                 elif r["status"] == "geisterrest":
                     geisterreste += 1
+                # Herkunft-Mapping: DB-Felder → Frontend-Felder
+                ot = r.get("origin_type", "")
+                hm_id = r.get("human_id")
+                en_id = r.get("entity_id")
+                sichtbar = r.get("herkunft_sichtbar", True)
+                username = r.get("human_username")
+                if hm_id:
+                    r["herkunft"] = "mensch"
+                    r["quelle_id"] = username or str(hm_id)
+                elif en_id:
+                    r["herkunft"] = "entitaet"
+                    r["quelle_id"] = en_id
+                else:
+                    r["herkunft"] = ot or "unbekannt"
+                    r["quelle_id"] = None
+                r["quelle_sichtbar"] = sichtbar
+                essenz = r.get("essenz") or ""
+                r["inhalt_kurz"] = essenz[:100] + ("…" if len(essenz) > 100 else "")
+                r["inhalt_voll"] = essenz
         return {
             "splitter": rows,
             "count": len(rows),
@@ -1968,6 +1994,115 @@ def splitter_detail(
                 s.pop("human_id", None)
                 s.pop("entity_id", None)
         return s
+    finally:
+        conn.close()
+
+
+@app.get("/zwischenraum/splitter/{splitter_id}/spur")
+def splitter_spur(splitter_id: str):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT s.*, hu.username AS human_username
+                   FROM splitter s
+                   LEFT JOIN human_users hu ON hu.id = s.human_id
+                   WHERE s.id = %s""",
+                (splitter_id,),
+            )
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
+            s = dict(row)
+
+            spur: dict = {
+                "splitter_id": str(s["id"]),
+                "origin_type": s.get("origin_type"),
+                "herkunft": None,
+                "akteur": None,
+                "event": None,
+                "quelle": None,
+            }
+
+            # Akteur bestimmen — Trace zeigt immer alles, herkunft_sichtbar ignoriert
+            hm_id = s.get("human_id")
+            en_id = s.get("entity_id")
+            username = s.get("human_username")
+            if hm_id:
+                spur["herkunft"] = "mensch"
+                spur["akteur"] = {"typ": "mensch", "id": str(hm_id), "username": username or str(hm_id)}
+            elif en_id:
+                spur["herkunft"] = "entitaet"
+                spur["akteur"] = {"typ": "entitaet", "id": en_id}
+            else:
+                spur["herkunft"] = s.get("origin_type", "unbekannt")
+
+            # Event-Details wenn origin_type = "event"
+            origin_id = s.get("origin_id")
+            if s.get("origin_type") == "event" and origin_id:
+                try:
+                    cur.execute(
+                        "SELECT event_id, event_type, actor_type, actor_id, payload, created_at FROM events WHERE event_id = %s",
+                        (origin_id,),
+                    )
+                    ev = cur.fetchone()
+                    if ev:
+                        ev = dict(ev)
+                        spur["event"] = {
+                            "id": str(ev["event_id"]),
+                            "typ": ev["event_type"],
+                            "actor_type": ev["actor_type"],
+                            "actor_id": ev["actor_id"],
+                            "payload": ev["payload"],
+                            "created_at": ev["created_at"].isoformat() if ev.get("created_at") else None,
+                        }
+                        # Post-Quelle für Resonanz-Events
+                        p = ev.get("payload") or {}
+                        post_ref = p.get("post_ref")
+                        post_source = p.get("post_source", "post")
+                        if ev["event_type"] == "resonanz.gesendet" and post_ref:
+                            spur["event"]["aktion"] = "resonanz"
+                            spur["event"]["emojis"] = p.get("emojis", [])
+                            # UUID = ftw_post, Integer = Flarum
+                            import re as _re
+                            is_uuid = bool(_re.match(r'^[0-9a-f-]{36}$', str(post_ref)))
+                            if is_uuid:
+                                cur.execute(
+                                    """SELECT p.id, p.content, p.autor_type, p.autor_id,
+                                              p.created_at, r.name AS raum_name, t.name AS thema_name
+                                       FROM ftw_posts p
+                                       LEFT JOIN raeume r ON r.id = p.raum_id
+                                       LEFT JOIN themen t ON t.id = p.thema_id
+                                       WHERE p.id = %s::uuid""",
+                                    (post_ref,),
+                                )
+                                post = cur.fetchone()
+                                if post:
+                                    post = dict(post)
+                                    spur["quelle"] = {
+                                        "typ": "ftw_post",
+                                        "system": "flextrawurst",
+                                        "id": str(post["id"]),
+                                        "inhalt_kurz": (post["content"] or "")[:120],
+                                        "inhalt_voll": post["content"],
+                                        "autor_type": post["autor_type"],
+                                        "autor_id": post["autor_id"],
+                                        "raum": post.get("raum_name"),
+                                        "thema": post.get("thema_name"),
+                                        "created_at": post["created_at"].isoformat() if post.get("created_at") else None,
+                                    }
+                            else:
+                                spur["quelle"] = {
+                                    "typ": "flarum_post",
+                                    "system": "flarum",
+                                    "id": post_ref,
+                                    "inhalt_kurz": None,
+                                    "inhalt_voll": None,
+                                }
+                except Exception:
+                    pass
+
+            return spur
     finally:
         conn.close()
 

@@ -193,7 +193,7 @@ def flarum_abfragen(letzter_post_id: list):
             if len(teile) < 4:
                 continue
             pid, user, content, created = teile
-            kurz = content[:120].replace("\n", " ").replace("<t><p>", "").replace("</p></t>", "")
+            kurz = content[:22222].replace("\n", " ").replace("<t><p>", "").replace("</p></t>", "")
             knoten_schreiben(
                 typ="flarum_post",
                 inhalt=f"{user}: {kurz}",

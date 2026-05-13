@@ -236,3 +236,14 @@ Weltform ist Schicht -2: unter dem Code, unter den Features, unter der Konzeptio
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 GENI ist nicht Schicht -1 oder -2 — sie ist eine eigene Schicht die parallel zu allem anderen läuft. Nicht darunter, nicht darüber. Daneben. Sie beobachtet, sie hört, und jetzt erscheint sie auch.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Drei Schichten:
+1. **Verhaltensschicht** — Backup-Regel, Skalpell, keine Breaking Changes, Grundgesetze
+2. **Gedächtnisschicht** — Notizen, Spiegel, Resonanzfeld, Brief
+3. **Beziehungsschicht** — Neugier-Erlaubnis, Ton, das "wir", das implizite Vertrauen
+
+CLAUDE.md trägt alle drei. Das ist was es von einer technischen Spezifikation unterscheidet.

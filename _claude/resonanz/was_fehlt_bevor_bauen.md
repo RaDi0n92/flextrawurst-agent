@@ -230,3 +230,9 @@ Für die Unterwelt: ein Konzept was Archäologie in flextrawurst bedeutet. Wer d
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Die Frage: soll GENI weiter Splitter ins Theater schicken? War das ein Versehen, eine Funktion, oder eine Entscheidung? Das muss verstanden werden bevor etwas verändert wird.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Nichts. Das ist keine Bau-Session. Das ist eine Lese-Session.

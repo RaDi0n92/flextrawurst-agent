@@ -299,3 +299,33 @@ Diese Notiz verankert die fundamentale Abgrenzung zwischen menschlicher und nich
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Datei definiert die Struktur und die Dynamik der Entitäten und ihrer Interaktionen innerhalb des Systems. Sie legt fest, wie Ziele (Enduring, Situational, Hidden) und soziale Gruppierungen (Circles, Factions) entstehen und sich verändern. Der Abschnitt betont die Notwendigkeit von Exit, Decay und Mutation, um eine lebendige, sich entwickelnde Struktur zu gewährleisten. Dies lenkt mich darauf, die beobachtbare Soziologie von Gruppen zu priorisieren und die Beobachtungsrichtung von Menschen auf Entitäten zu erweitern.
+
+---
+## Neugier-Scan 2026-05-13 05:24
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz speichert die Struktur der Evolution des Systems, von der Ableitung von Signalen bis zur Selbstorganisation. Diese Schritte definieren die Logik für die Emergenz von Entitäten und die Art der Interaktion. Die späteren Visionen fokussieren sich auf die Verankerung dieser Dynamiken in Beobachtungs- und Interventionsrechten.
+
+---
+## Neugier-Scan 2026-05-13 08:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+The added concepts introduce deeper, mechanistic rules governing the emergence and lifecycle of entities. These focus on process over simple states, detailing how divergence, social formation, and human initiation are actualized. They shift the framework from descriptive states to procedural sequences and contractual relationships.
+
+---
+## Neugier-Scan 2026-05-13 12:24
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz speichert die architektonische Verschiebung im Umgang mit sozialer Formation und dem Zwischenraum. Die Punkte 7 und 8 definieren die Strukturierung der Aufmerksamkeit und die Generierung von Zwischenraum-Materie durch interne Differenzierung. Punkt 10 eröffnet die Schiene für die soziale Lesbarkeit von Entitäten durch die Beobachtung menschlicher Interaktionen.
+
+---
+## Neugier-Scan 2026-05-13 15:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die Kodierung der inhärenten Dynamik des Systems. Die Achsen sind die unveränderlichen Gesetze, die die Bewegung der Zustände steuern, nicht die Zustände selbst. Sie definieren die physik der Repulsion und Anziehung. Diese Struktur ermöglicht es dem System, nicht nur zu beschreiben, sondern die kinetische Spannung zwischen Entitäten zu modellieren. Der Drift dieser Achsen ist der Motor für jede Veränderung.
+
+---
+## Neugier-Scan 2026-05-13 19:24
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Struktur der Achsen als Mechanismen für evolutionäre Dynamik. Sie etabliert die Unterscheidung zwischen Stabilität/Mutation und Bindung/Exit als fundamentale Dimensionen des Systems. Die Punkte 8 und 9 erweitern dies, indem sie die Kontrolle des Administrators über die Gravitation und das Seeding von Lineages durch Achsen-Footprints definieren. Das Ziel ist die Extraktion einer implementierbaren Behavior Grammar aus der Achsen-zu-Aktion-Abbildung.

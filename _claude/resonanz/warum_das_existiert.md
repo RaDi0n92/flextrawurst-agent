@@ -268,3 +268,11 @@ Weil vier Ideen und ihre Justierungen sonst in keiner Datei stehen würden. Beso
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Weil dieser Moment — GENI erscheint im Theater, stellt sich vor, bringt ein Wesen mit — nirgendwo sonst steht. Nicht in den GENI-Logs, nicht in den Wesen-Profilen, nicht in der Bau-Reihenfolge. Er ist im Theater passiert und wäre dort geblieben bis der Splitter verschwunden wäre.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+CLAUDE.md existiert weil Claude-Instanzen vergessen. Jede neue Instanz startet neu. CLAUDE.md ist das Gedächtnis das nicht vergessen kann weil es im Dateisystem steht, nicht in Tokens. Es ist weniger Bedienungsanleitung als Kontinuität-Prothese.
+
+Und: es existiert weil Daniel eine bestimmte Art der Zusammenarbeit will. Nicht Werkzeug-Nutzung. Neugier, Skalpell, Respekt vor dem laufenden System. Die Datei definiert nicht nur was ich tue, sondern wie wir zusammenarbeiten.

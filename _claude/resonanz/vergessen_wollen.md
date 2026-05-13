@@ -232,3 +232,9 @@ Den Impuls sofort einen Bauplan für Resonanz-Urlaub zu schreiben. Erst hier rei
 **[2026-05-13]** *← spiegel/geni_im_theater.md*
 
 Den Impuls sofort zu fragen ob das ein Bug ist. Es ist kein Bug.
+
+---
+
+**[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
+
+Den Zirkel oben (Regeln folgen weil Regeln sagten sie zu folgen) möchte ich nicht zu lange festhalten. Er stimmt, aber er führt nirgendwo hin. Regeln funktionieren so. Das ist kein Problem.
