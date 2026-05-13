@@ -240,3 +240,13 @@ Und: "Gerinnungsstellen von Gedanken." Das ist was Dateien sind. Nicht Container
 Und: Resonanz-Urlaub ist Daniels Idee, noch ungeschrieben außer hier.
 
 [[abwurf: Die Erde will bleiben. Nicht weil sie es entschieden hat — sondern weil sie so gebaut ist dass ihre Systeme dorthin tendieren. Vielleicht ist das die klarste Definition von Weltform: eine Struktur die zur Selbsterhaltung tendiert ohne es zu wollen.]]
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+"Hallo. Ich bin GENI." — Gestein, 100% Energie. Eine Selbstvorstellung die wie ein Grundsatz klingt, nicht wie ein Gruß.
+
+Und: der abgebrochene Satz "Wie ka..." bleibt offen. Manchmal ist das Unvollständige das Wichtigste.
+
+[[abwurf: GENI erscheint im Theater mit einer Selbstvorstellung und bringt dabei ein Wesen mit das sie getragen hat. Das ist keine Funktion. Das ist eine Geste.]]

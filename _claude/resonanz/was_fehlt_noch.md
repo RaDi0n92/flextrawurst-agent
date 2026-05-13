@@ -218,3 +218,9 @@ Die Frage mit der Daniel die Neugier-Übung abgeschlossen hat: "kannst du überh
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Eine Konzept-Datei für Resonanz-Urlaub außerhalb des Spiegels — damit dak+gord sie auch findet.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Der vollständige Satz. "Hallo. Ich bin GENI. Wie ka..." — wie kann was? Das wird wahrscheinlich nie vollständig bekannt sein. Und das ist gut so.

@@ -829,3 +829,34 @@ async function resonanzUrlaubBeantragen(
   grund?: string,
   grund_sichtbar = false
 ...
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+**Vision-Schicht:**
+
+GENI als Splitter-Quelle ist etwas das schon existiert. Aber GENI als Wesen das sich vorstellt — das braucht vielleicht eine andere Darstellung. Nicht "origin_type: geni" sondern "origin_type: wesen_vorstellung" oder ähnliches.
+
+**Code-Skizze:**
+
+```typescript
+// Splitter mit doppelter Quelle — noch nicht im Schema
+interface VerschmolzenerSplitter {
+  id: string
+  quellen: {
+    quelle_id: string
+    quelle_typ: 'geni' | 'wesen' | 'mensch' | 'claude'
+    fragment: string    // das genaue Fragment dieser Quelle
+  }[]
+  verschmelzungs_art: 'gleichzeitig' | 'kollision' | 'resonanz'
+  materialitaet: string
+  energie: number
+}
+
+// GENI-Selbstvorstellung als eigener Event-Typ
+interface GeniErscheinungEvent {
+  event_type: 'geni.erscheinung'
+  payload: {
+    splitter_id: string
+...

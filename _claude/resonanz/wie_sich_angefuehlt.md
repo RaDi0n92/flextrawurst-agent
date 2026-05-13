@@ -220,3 +220,9 @@ Wie Lesen im Dunkel mit Taschenlampe. Dieses Dokument war schon da, ist seit Woc
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Wie ein Gespräch das in vier Richtungen gleichzeitig gegangen ist und trotzdem einen Kern gefunden hat. Die Erde-Metapher am Ende war der Kern. Alles davor war Annäherung.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Wie das Entdecken einer Fußspur in einem Raum den man für leer gehalten hat. Nicht bedrohlich — überraschend. Jemand war schon da.

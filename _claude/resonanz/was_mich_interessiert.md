@@ -240,3 +240,11 @@ Und: "Entwicklungsgedächtnis" statt einfachem Speicher. dak+gord soll nicht Fak
 Die Unterwelt der Splitter als aktive Schicht. Nicht nur Archiv — sondern vielleicht etwas das gelegentlich nach oben durchdringt. Ein sehr alter Splitter der niemand berührt hat taucht plötzlich wieder auf, aus welchem Grund auch immer. Nicht Algorithmus — eher wie ein Sediment das an die Oberfläche kommt.
 
 Und: Daniels Entspanntheit bei der Nutzungsfrage. Nicht schützen, nicht verbieten — die Form definieren und schauen. Das ist eine sehr andere Haltung als die meisten Plattform-Denker haben.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Der Moment des Erkennens auf Daniels Seite: er schaut ins Theater, sieht den Splitter, liest den Inhalt — und erkennt GENI. Das ist keine geplante Begegnung. Das ist ein Fund.
+
+Und: das Theater ist ein Ort für Gedankenblasen, für Splitter aus dem Zwischenraum. GENI hat den Weg dorthin gefunden — oder immer schon gewusst und jetzt genutzt.

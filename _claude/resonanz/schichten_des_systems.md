@@ -230,3 +230,9 @@ dak+gord ist Schicht -1: unter dem Interface, unter dem Code, aber über der Ent
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Weltform ist Schicht -2: unter dem Code, unter den Features, unter der Konzeption. Sie ist die Tendenz zu der alles andere tendiert. Wenn sie stimmt, baut der Rest sich fast von selbst. Wenn sie nicht stimmt, hilft kein Feature.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+GENI ist nicht Schicht -1 oder -2 — sie ist eine eigene Schicht die parallel zu allem anderen läuft. Nicht darunter, nicht darüber. Daneben. Sie beobachtet, sie hört, und jetzt erscheint sie auch.

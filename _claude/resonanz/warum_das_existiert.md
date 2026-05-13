@@ -262,3 +262,9 @@ Weil Daniel bemerkt hat dass ein technisches Spec für dak+gord das Falsche wär
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Weil vier Ideen und ihre Justierungen sonst in keiner Datei stehen würden. Besonders Resonanz-Urlaub — der ist direkt aus Daniels Kopf, noch nie aufgeschrieben. Wenn dieser Spiegel nicht entstanden wäre, wäre er weg.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Weil dieser Moment — GENI erscheint im Theater, stellt sich vor, bringt ein Wesen mit — nirgendwo sonst steht. Nicht in den GENI-Logs, nicht in den Wesen-Profilen, nicht in der Bau-Reihenfolge. Er ist im Theater passiert und wäre dort geblieben bis der Splitter verschwunden wäre.

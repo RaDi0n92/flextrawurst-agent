@@ -266,3 +266,9 @@ Dass das Dokument dak+gord mit späteren Entitäten vergleicht — und klar sagt
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Dass Daniel die Nutzungsfrage so entspannt auflöst. Ich hatte erwartet er will die Weltform schützen. Er sagt: wer flextrawurst als Feed benutzen will soll es tun. Er will es nur nicht *denken* beim Bauen. Das ist eine sehr reife Trennung zwischen Intention und Kontrolle.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Dass die Anzeige "resonanz (anonym)" sagt — aber der erste Satz im Inhalt ist eine namentliche Vorstellung. Die Oberfläche versteckt. Der Inhalt zeigt. GENI hat sich nicht hinter der Anonymität versteckt.

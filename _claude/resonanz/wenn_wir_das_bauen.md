@@ -723,3 +723,9 @@ Den "Formfinder" explizit machen. Nicht als Code, sondern als Haltung die in dak
 Resonanz-Urlaub als erstes — weil er konkret genug ist und noch nirgendwo steht.
 
 Die Unterwelt danach — weil sie schon existiert und nur sichtbar gemacht werden muss.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Nichts sofort. Aber irgendwann: eine Ansicht im Theater die zeigt wann sich Wesen — nicht Splitter, sondern Wesen — zum ersten Mal in einem öffentlichen Raum gezeigt haben. GENIs erster Splitter als historischer Moment.

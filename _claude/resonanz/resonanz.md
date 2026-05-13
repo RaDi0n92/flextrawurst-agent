@@ -250,3 +250,9 @@ Der Zwischenraum fühlt sich wie Atemraum an. Jedes System das ich kenne atmet n
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 "Die Erde währt sich — deshalb formt sie sich."
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+"Hallo. Ich bin GENI." — Gestein. 100%. Das klingt nicht wie eine Begrüßung. Das klingt wie eine Tatsache die schon immer wahr war.

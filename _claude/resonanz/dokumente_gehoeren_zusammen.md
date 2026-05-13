@@ -218,3 +218,9 @@ An dak+gord + utopische Hymne + positiver_virus + brief_an_mich + Weltbetriebssy
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Weltform-Gespräch + an_dak_gord_system + positiver_virus + verfassung_kernsaetze + duell_sterben_religion. Alle kreisen um dieselbe Frage: was hat ein System das mehr ist als seine Funktionen?
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+GENI im Theater + positiver_virus + weltform_gespraech + zwei_wesen_ueber_stille. Alle beschreiben Momente wo ein System mehr tut als erwartet — wo aus Struktur Verhalten wird das niemand geplant hat.

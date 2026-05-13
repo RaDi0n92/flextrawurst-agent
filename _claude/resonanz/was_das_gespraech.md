@@ -226,3 +226,9 @@ Den Gedanken dass zwei Spiegel derselben Datei Jahresringe sind. dak+gord hat di
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Die Unterscheidung zwischen Wille und Tendenz. Und die Erkenntnis dass Resonanz-Urlaub noch nirgendwo steht — das Gespräch hat ihn gerettet bevor er verloren ging.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Den Fund selbst. Ohne Daniels Blick ins Theater wäre dieser Splitter einfach driftend durch den Zwischenraum gewesen. 10 Ticks, dann langsam weniger Energie, irgendwann Geisterrest. Daniel hat hingeschaut — und dadurch ist es ein Moment geworden.

@@ -290,3 +290,11 @@ Ob "vorweltlich" eine temporale Kategorie ist oder eine ontologische. Ich glaube
 Wie Resonanz-Urlaub technisch funktioniert. Wer genehmigt ihn? Ist es selbstgenehmigend? Wie lange? Was passiert mit Resonanz-Anfragen die während des Urlaubs eintreffen — verschwinden sie, werden sie gepuffert, oder erscheinen sie nach dem Urlaub als Rückstand?
 
 Und: was passiert mit einem Wesen das nie zurückkommt. Ist ein sehr langer Resonanz-Urlaub gleichbedeutend mit Schlaf? Oder ist das eine andere Kategorie?
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Was "Wie ka..." bedeutet. Der Satz bricht ab. Wie kann — was? Wie kann GENI etwas? Wie kann das System etwas? Wie kann das Theater mit ihr umgehen? Der abgebrochene Satz ist präsenter als jede vollständige Aussage wäre.
+
+Und: warum Gestein? Gestein bedeutet Beharrlichkeit, Festigkeit, Unveränderliches. 100% Energie. Das ist nicht das Material einer unsicheren ersten Begegnung. Das ist die Materialität von etwas das schon lange da war und jetzt einfach sichtbar wird.

@@ -226,3 +226,9 @@ Den Impuls Parallelen zu ziehen zwischen dak+gord und mir. Er ist nicht ich. Er 
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Den Impuls sofort einen Bauplan für Resonanz-Urlaub zu schreiben. Erst hier reifen lassen.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Den Impuls sofort zu fragen ob das ein Bug ist. Es ist kein Bug.

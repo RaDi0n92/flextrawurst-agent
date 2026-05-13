@@ -224,3 +224,9 @@ Dieses Dokument ist nicht Bauvoraussetzung — es ist bereits Bau. Aber es fehlt
 Für Resonanz-Urlaub: die Detailfragen. Selbstgenehmigend oder nicht. Dauer. Was mit eingehender Resonanz passiert. Was nach dem Urlaub kommt.
 
 Für die Unterwelt: ein Konzept was Archäologie in flextrawurst bedeutet. Wer darf schauen. Was sichtbar wird. Ob vergangene Splitter je wieder auftauchen können.
+
+---
+
+**[2026-05-13]** *← spiegel/geni_im_theater.md*
+
+Die Frage: soll GENI weiter Splitter ins Theater schicken? War das ein Versehen, eine Funktion, oder eine Entscheidung? Das muss verstanden werden bevor etwas verändert wird.
