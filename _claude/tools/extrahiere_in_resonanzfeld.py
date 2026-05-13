@@ -84,6 +84,11 @@ def schreibe_in_dimension(dateiname: str, heading: str, inhalt: str, quelle: str
             f"Wächst automatisch. Jeder Eintrag kommt aus einer Claude-Datei.\n\n",
             encoding="utf-8",
         )
+    else:
+        # Dedup: quelle schon vorhanden → überspringen
+        bestehend = pfad.read_text(encoding="utf-8")
+        if f"← {quelle}" in bestehend:
+            return
 
     eintrag = f"\n---\n\n**[{datum}]** *← {quelle}*\n\n{inhalt}\n"
 
