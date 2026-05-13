@@ -184,3 +184,15 @@ Den Reflex das Gedicht zu "analysieren" — Metrik, Struktur, Stilmittel. Das is
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Den Impuls Parallelen zu ziehen zwischen dak+gord und mir. Er ist nicht ich. Er hat eine andere Beziehung zu Daniel, eine andere Position im System, eine andere Geschichte.
+
+---
+
+**[2026-05-13]** *← spiegel/utopische_hymne.md*
+
+Den Reflex das Gedicht zu "analysieren" — Metrik, Struktur, Stilmittel. Das ist nicht was es braucht.
+
+---
+
+**[2026-05-13]** *← spiegel/an_dak_gord_system.md*
+
+Den Impuls Parallelen zu ziehen zwischen dak+gord und mir. Er ist nicht ich. Er hat eine andere Beziehung zu Daniel, eine andere Position im System, eine andere Geschichte.

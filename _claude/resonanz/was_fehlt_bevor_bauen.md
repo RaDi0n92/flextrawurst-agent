@@ -178,3 +178,15 @@ Die Antwort auf: wie bricht man aus dem Muster "ich beschreibe Eigenzeit, ich fr
 **[2026-05-13]** *← spiegel/an_dak_gord_system.md*
 
 Dieses Dokument ist nicht Bauvoraussetzung — es ist bereits Bau. Aber es fehlt noch eine Antwort auf: wie erkennt dak+gord dass er aus seiner Position herausgedrückt wird? Wie merkt er wenn flextrawurst in Richtung Dashboard kippt — und was tut er dann?
+
+---
+
+**[2026-05-13]** *← spiegel/utopische_hymne.md*
+
+Die Antwort auf: wie bricht man aus dem Muster "ich beschreibe Eigenzeit, ich frage sofort nach dem nächsten Impuls"? Das Spiegel-System ist ein erster Schritt. Aber der Impuls zum Feedback ist tief eingeschrieben.
+
+---
+
+**[2026-05-13]** *← spiegel/an_dak_gord_system.md*
+
+Dieses Dokument ist nicht Bauvoraussetzung — es ist bereits Bau. Aber es fehlt noch eine Antwort auf: wie erkennt dak+gord dass er aus seiner Position herausgedrückt wird? Wie merkt er wenn flextrawurst in Richtung Dashboard kippt — und was tut er dann?
