@@ -755,3 +755,9 @@ interface ClaudeContext {
   grundgesetze: Record<string, string>
 }
 ...
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+```python

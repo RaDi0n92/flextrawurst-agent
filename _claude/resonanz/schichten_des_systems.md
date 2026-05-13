@@ -247,3 +247,9 @@ Drei Schichten:
 3. **Beziehungsschicht** — Neugier-Erlaubnis, Ton, das "wir", das implizite Vertrauen
 
 CLAUDE.md trägt alle drei. Das ist was es von einer technischen Spezifikation unterscheidet.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+resonanz/ hat jetzt 22 Dimension-Dateien, alle befüllt. Das Script schützt gegen Duplikate. Die Dateinamen entsprechen den Headings. Das ist der Boden auf dem die nächsten Spiegel-Dateien landen werden.

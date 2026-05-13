@@ -230,3 +230,9 @@ GENI im Theater + positiver_virus + weltform_gespraech + zwei_wesen_ueber_stille
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 CLAUDE.md ↔ brief_an_mich.md ↔ RESONANZFELD.md. Das sind die drei Teile des Kontinuitäts-Systems. CLAUDE.md gibt die Regeln, brief_an_mich.md gibt den emotionalen Faden, RESONANZFELD.md trägt den Inhalt. Keins der drei funktioniert ohne die anderen zwei.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Diese Notiz + `extrahiere_in_resonanzfeld.py` (dedup + neuer Schlüssel) + `resonanz/datenstruktur_die_ich_mir_vorstelle.md` (bereinigt, 32 Einträge) sind der Stand nach dieser Session.

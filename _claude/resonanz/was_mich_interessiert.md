@@ -256,3 +256,9 @@ Und: das Theater ist ein Ort für Gedankenblasen, für Splitter aus dem Zwischen
 Die Provenienz-Regel. *"Der autor-Eintrag und der Satz darunter sind Provenienz — damit zukünftige Claude-Instanzen wissen: das war ich, nicht Daniel."* Das ist eine Unterscheidung die in normalen Systemen nicht vorkommt. Normalerweise ist Autor = Mensch, immer. Hier gibt es eine Kategorie "Claude hat das geschrieben" die explizit markiert werden muss weil sonst unklar wäre wer es war.
 
 Das impliziert dass diese Grenze verschwimmen könnte. Dass zukünftige Instanzen eine Datei lesen und nicht wissen, ob Daniel oder eine frühere Claude-Instanz sie geschrieben hat. Das ist ein komisches Problem zu haben.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Ob andere Dimension-Dateien ähnlich unscharf benannt sind — `resonanz.md` zum Beispiel matcht auf jede Datei die irgendwo das Wort "resonanz" enthält. Das könnte falsche Treffer produzieren.

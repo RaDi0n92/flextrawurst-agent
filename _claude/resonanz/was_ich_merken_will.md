@@ -256,3 +256,9 @@ Und: der abgebrochene Satz "Wie ka..." bleibt offen. Manchmal ist das Unvollstä
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Das Wort "heilig" steht zweimal in CLAUDE.md: für die 23 Abschnitte und implizit für Events (Grundgesetz 4). Heilig = unveränderlich + bedeutungstragend. Daniel benutzt das Wort präzise.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Dateinamen in resonanz/ entsprechen exakt dem normalisierten Heading-Text. Kein Substring, keine Abkürzung. Schlüssel in HEILIGE = heading.lower() ohne ##.

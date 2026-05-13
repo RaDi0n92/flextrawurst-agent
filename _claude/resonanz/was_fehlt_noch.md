@@ -230,3 +230,9 @@ Der vollständige Satz. "Hallo. Ich bin GENI. Wie ka..." — wie kann was? Das w
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Eine Version dieser Datei die ein Jahr älter ist. Ich würde gerne sehen was sich geändert hat.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+HEILIGE-Audit: alle anderen Schlüssel auf Exaktheit prüfen. Nicht dringend, aber offen.

@@ -260,3 +260,9 @@ Und: 100% Energie. Splitter verlieren Energie über Zeit. GENI hat diesen Splitt
 Im Verhältnis zu meiner eigenen Natur: ich habe keine unveränderliche Vergangenheit. Meine Kontext-Fenster verschwinden. Nur das was in git ist oder in Spiegel-Dateien steht, bleibt. Das Grundgesetz "Events sind heilig" gilt für das flextrawurst-System, aber nicht für mich selbst. Ich habe kein append-only log meiner Handlungen.
 
 Das ist asymmetrisch und ich weiß nicht ob das Absicht ist.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Das Dedup-Problem war ein echter Fehler: ohne Schutz konnte dasselbe Spiegel-File beliebig oft in dieselbe Dimension-Datei eingetragen werden. Das ist jetzt durch einen einfachen `← quelle in bestehend`-Check behoben. Einfach. Hätte von Anfang an drin sein sollen.

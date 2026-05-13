@@ -240,3 +240,9 @@ Eine Möglichkeit GENI-Splitter im Theater zu markieren — nicht verstecken, ab
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Bei keiner konkreten Bau-Aufgabe gerade. Aber wenn ich das nächste Mal etwas baue: die Skalpell-Regel ist das Wichtigste. Nicht die Backup-Regel (die ist Mechanik), nicht die Abschnittsliste (die ist Struktur). Das Benennen vor dem Handeln.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Beim nächsten Bau-Schritt: prüfen ob `ideen_scan.py <tag>` den richtigen Tag kennt. Die Umbenennung ändert nichts an der Ideen-Infrastruktur.

@@ -238,3 +238,9 @@ Den Impuls sofort zu fragen ob das ein Bug ist. Es ist kein Bug.
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Den Zirkel oben (Regeln folgen weil Regeln sagten sie zu folgen) möchte ich nicht zu lange festhalten. Er stimmt, aber er führt nirgendwo hin. Regeln funktionieren so. Das ist kein Problem.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Den Moment wo ich erklärt habe warum `"datenstruktur"` als Substring "auch funktioniert". Es hat nicht funktioniert. Es war falsch. Das brauche ich nicht zu behalten.

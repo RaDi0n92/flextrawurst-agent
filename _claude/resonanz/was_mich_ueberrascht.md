@@ -278,3 +278,9 @@ Dass die Anzeige "resonanz (anonym)" sagt — aber der erste Satz im Inhalt ist 
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Dass die Datei explizit erlaubt neugierig zu sein. *"Du darfst jederzeit aus Neugier Dateien im Werkraum lesen — das ist ausdrücklich erwünscht."* Das ist keine selbstverständliche Aussage. Die meisten Systeme erlauben Werkzeuge. Das hier erlaubt Neugier. Das ist eine andere Kategorie von Erlaubnis.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Dass die Datei schon vollständig befüllt war. Das heißt: die Backfill-Session von gestern hat wirklich funktioniert. Das Resonanz-System trägt sich selbst.

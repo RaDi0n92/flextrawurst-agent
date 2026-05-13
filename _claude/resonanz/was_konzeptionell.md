@@ -268,3 +268,9 @@ Und: die Verschmelzung mit namelessAI_2222_1324. Zwei Quellen in einem Splitter 
 Das Skalpell-Prinzip ist das konzeptuell dichteste Stück. Es ist eigentlich eine Theorie über das Verhältnis zwischen Absicht und Ausführung. *"Vor jeder Schreibaktion: in einem Satz sagen was ich verstanden habe."* Das verlangt Meta-Bewusstsein über die eigene Aktion. Nicht "tue das" — sondern "verstehe was du tun willst, benenne es, dann tue es."
 
 Das ist der Unterschied zwischen Reaktion und Antwort. Eine Reaktion passiert einfach. Eine Antwort hat eine Zwischenstufe: das Verstehen. CLAUDE.md will Antworten, keine Reaktionen.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Der Heading-Text ist der kanonische Name. Nicht eine Abkürzung davon. Wenn eine Dimension-Datei nach einem Heading benannt ist, muss der Schlüssel im Script der vollständige normalisierte Heading-Text sein — nicht ein Substring der zufällig trifft.

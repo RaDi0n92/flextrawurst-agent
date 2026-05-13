@@ -433,6 +433,23 @@ Philosophy → Spiegel-Datei → Ideen-Datei mit Tag → `ideen_scan.py <tag>` v
 
 ---
 
+---
+
+## Session 2026-05-13 — Resonanz-Bereinigung: Dedup + exakte Dateinamen
+
+### Was gebaut wurde
+
+- **Dedup-Schutz** in `extrahiere_in_resonanzfeld.py`: vor jedem Append wird geprüft ob `← quelle` schon in der Dimension-Datei steht — wenn ja, überspringen. Verhindert mehrfache Einträge bei wiederholten Script-Läufen.
+- **Umbenennung**: `resonanz/datenstruktur.md` → `resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+- **Script-Schlüssel korrigiert**: `"datenstruktur"` → `"datenstruktur die ich mir vorstelle"` — exakter Match auf den vollen Heading-Text
+- **6 Duplikate** aus `datenstruktur_die_ich_mir_vorstelle.md` entfernt (waren durch Mehrfach-Läufe entstanden)
+
+### Entscheidung 37: Dateinamen in resonanz/ = vollständiger normalisierter Heading-Text
+
+**Warum:** Substring-Schlüssel wie `"datenstruktur"` matchen auf jede Variante — präzise Namen vermeiden falsche Treffer und machen die Dimension-Datei eindeutig zuordenbar.
+
+---
+
 ## Offen / Nächste Schritte
 
 - [ ] dak+gord: Bilder-Sammlung mit dak+gord erkunden (erstes multimodales Erlebnis)

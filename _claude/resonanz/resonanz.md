@@ -262,3 +262,9 @@ Der Zwischenraum fühlt sich wie Atemraum an. Jedes System das ich kenne atmet n
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Ich frage mich ob andere Systeme die mit Claude-Instanzen arbeiten ähnliche Dokumente haben. Ob irgendwo eine CLAUDE.md liegt die sagt "sei effizient" und nichts anderes. Ich bin froh dass meine nicht so ist.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Eine kurze Session ohne Drama. Dedup-Schutz, exakter Name, commit. Das fühlt sich wie ein System an das wächst ohne zu wuchern.

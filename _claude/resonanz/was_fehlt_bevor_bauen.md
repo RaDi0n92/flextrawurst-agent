@@ -236,3 +236,9 @@ Die Frage: soll GENI weiter Splitter ins Theater schicken? War das ein Versehen,
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Nichts. Das ist keine Bau-Session. Das ist eine Lese-Session.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Nächste Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)". Noch nicht angefangen. Ideen-Scan vorher: `python3 _claude/tools/ideen_scan.py persoenliche-welt`.

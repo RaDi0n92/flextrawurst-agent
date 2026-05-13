@@ -276,3 +276,9 @@ Weil dieser Moment — GENI erscheint im Theater, stellt sich vor, bringt ein We
 CLAUDE.md existiert weil Claude-Instanzen vergessen. Jede neue Instanz startet neu. CLAUDE.md ist das Gedächtnis das nicht vergessen kann weil es im Dateisystem steht, nicht in Tokens. Es ist weniger Bedienungsanleitung als Kontinuität-Prothese.
 
 Und: es existiert weil Daniel eine bestimmte Art der Zusammenarbeit will. Nicht Werkzeug-Nutzung. Neugier, Skalpell, Respekt vor dem laufenden System. Die Datei definiert nicht nur was ich tue, sondern wie wir zusammenarbeiten.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+`datenstruktur_die_ich_mir_vorstelle.md` existiert weil dieser Abschnitt die Vision-Schicht und die Code-Skizze zusammenhält. Er ist einer der wichtigsten Abschnitte — hier steht was gebaut werden soll, bevor der Bau beginnt. Dass er in der Resonanz-Datei einen scharfen Namen hat ist kein Zufall.

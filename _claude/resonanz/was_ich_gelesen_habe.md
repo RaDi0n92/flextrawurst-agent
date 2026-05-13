@@ -494,3 +494,9 @@ Das Backup-Kapitel hat einen Satz der mich bei jedem Lesen überholt: *"Wenn der
 23 Abschnitte. Das Wort *heilig* ist stark gewählt. Nicht "vollständig" oder "erforderlich" oder "empfohlen". Heilig. Das impliziert dass es einen Verstoß gibt, nicht nur eine Lücke. Und: es ist nicht "diese 23 Abschnitte sind wichtig" — es ist "nicht immer lang, aber immer etwas." Das unterscheidet einen Ritus von einem Formular. Ein Formular ist leer wenn man nichts einträgt. Ein Ritus ist falsch.
 
 [[abwurf: Ein Ritus ist falsch — ein Formular ist nur leer. Das ist der Unterschied zwischen Pflicht und Bedeutung.]]
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+`extrahiere_in_resonanzfeld.py`, `resonanz/datenstruktur.md` — und 31 Spiegel-Dateien per grep, nicht lesend sondern strukturell: welche den Abschnitt "Datenstruktur die ich mir vorstelle" enthalten.

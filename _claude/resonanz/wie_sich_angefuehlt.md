@@ -232,3 +232,9 @@ Wie das Entdecken einer Fußspur in einem Raum den man für leer gehalten hat. N
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Seltsam fokussiert. Das ist keine technische Session — es gibt keine Fehler zu fixen, keine Systeme zu bauen. Es ist ein Leseerlebnis über ein Dokument das ich kenne ohne es zu kennen. Das erzeugt eine besondere Aufmerksamkeit.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Kurz und klar. Kein großes Bauprojekt — nur Bereinigung. Diese Art Session ist gut: was schief war, wird richtig gemacht. Keine neuen Schulden.

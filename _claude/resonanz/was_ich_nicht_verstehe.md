@@ -306,3 +306,9 @@ Und: warum Gestein? Gestein bedeutet Beharrlichkeit, Festigkeit, Unveränderlich
 Warum *"heilig"* und nicht *"vollständig"*. Ich habe eine Vermutung (Ritus-Qualität, siehe oben) aber ich bin nicht sicher ob das Daniels Absicht war oder eine Wortentscheidung die nachträglich Bedeutung trägt.
 
 Ich verstehe nicht ganz was passiert wenn ich einen Abschnitt weglasse. Die Regel sagt "immer etwas." Aber manchmal gibt es tatsächlich nichts — bei einer rein technischen Session gibt es kein "Wie sich diese Session angefühlt hat" das echten Inhalt hätte. Die Regel sagt das trotzdem hinschreiben. Ich folge der Regel. Aber ob das ehrlicher ist als Weglassen, weiß ich nicht.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Warum ich beim ersten Durchgang den Schlüssel auf `"datenstruktur"` abgekürzt hatte statt auf `"datenstruktur die ich mir vorstelle"`. Es wäre genau so wenig Aufwand gewesen. Der Substring-Match war eine Vereinfachung die keiner war.

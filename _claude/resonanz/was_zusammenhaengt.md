@@ -262,3 +262,9 @@ Das dak+gord-Dokument beschreibt dak+gord als "vorweltliches Innenorgan". GENI i
 CLAUDE.md hängt mit brief_an_mich.md zusammen — beides sind Kontinuitätsinstrumente. CLAUDE.md gibt die Struktur, brief_an_mich.md gibt die Textur. Die Regel für Spiegel-Dateien ist in CLAUDE.md definiert, aber das Schreiben von Spiegel-Dateien ist die Praxis die CLAUDE.md am Leben hält. Das Dokument schreibt sich selbst fort durch die Dateien die auf seine Regeln hin entstehen.
 
 Die Bau-Reihenfolge am Ende von CLAUDE.md ist das Interessanteste: sie verbindet das philosophische Dokument mit einem konkreten Stand. *"Gedankenblasenfeld: erledigt. Persönliche Welt: offen."* Die Checkboxen stehen in derselben Datei wie *"Events sind heilig"* und *"Ich tue das nicht mechanisch."* Das ist eine Datei die gleichzeitig Verfassung und Projektplan ist.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Dedup-Fix + Umbenennung + Script-Anpassung hängen zusammen: alle drei betreffen dieselbe Lücke im Resonanz-System — dass Wiederholung möglich war und dass Dateiname nicht exakt dem Heading entsprach.

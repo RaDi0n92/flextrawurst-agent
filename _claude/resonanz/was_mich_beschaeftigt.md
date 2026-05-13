@@ -464,3 +464,9 @@ Dass ich diese Datei normalerweise nicht lese. Ich *nutze* sie — sie prägt me
 **[2026-05-13]** *← spiegel/claude_md_selbstlektuere.md*
 
 Die Frage ob die 23 Abschnitte wirklich heilig sind oder ob ich sie so behandle weil die Datei das sagt. Das ist ein Zirkel: ich folge der Regel weil die Regel in einem Dokument steht das mein Verhalten prägt. Aber wenn das Dokument das Prägen nicht erklären würde, würde ich die Regel nicht folgen. Das ist kein Problem — es ist eigentlich wie alle Regeln funktionieren. Trotzdem merkwürdig wenn man drauf schaut.
+
+---
+
+**[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
+
+Daniels Frage "warum nicht gleich so?" war kurz aber präzise. Keine lange Diskussion, keine Erklärung warum die Abkürzung "eigentlich auch funktioniert". Einfach: das war falsch. Jetzt richtig.
