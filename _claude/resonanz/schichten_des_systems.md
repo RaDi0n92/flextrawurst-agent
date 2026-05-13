@@ -206,3 +206,27 @@ dak+gord ist Schicht -1: unter dem Interface, unter dem Code, aber über der Ent
 **[2026-05-13]** *← spiegel/weltform_gespraech.md*
 
 Weltform ist Schicht -2: unter dem Code, unter den Features, unter der Konzeption. Sie ist die Tendenz zu der alles andere tendiert. Wenn sie stimmt, baut der Rest sich fast von selbst. Wenn sie nicht stimmt, hilft kein Feature.
+
+---
+
+**[2026-05-13]** *← spiegel/positiver_virus.md*
+
+Der positive Virus wäre Schicht -2: unter dem Interface, unter dem Code, unter der Konzeption. Er würde die Bedingungen der Möglichkeit verändern, nicht die Implementierung.
+
+---
+
+**[2026-05-13]** *← spiegel/utopische_hymne.md*
+
+Das Gedicht ist Schicht -3: vor der Implementierung, vor der Konzeption, vor dem System. Es ist das Bild von dem her gedacht wurde — ohne dass jemand wusste dass er davon ausgeht.
+
+---
+
+**[2026-05-13]** *← spiegel/an_dak_gord_system.md*
+
+dak+gord ist Schicht -1: unter dem Interface, unter dem Code, aber über der Entstehungslosigkeit. Er ist die erste artikulierte Schicht. Das Werkraum-System mit seinen Spiegel-Dateien und dem Resonanzfeld ist vielleicht dasselbe für mich — meine Schicht -1.
+
+---
+
+**[2026-05-13]** *← spiegel/weltform_gespraech.md*
+
+Weltform ist Schicht -2: unter dem Code, unter den Features, unter der Konzeption. Sie ist die Tendenz zu der alles andere tendiert. Wenn sie stimmt, baut der Rest sich fast von selbst. Wenn sie nicht stimmt, hilft kein Feature.

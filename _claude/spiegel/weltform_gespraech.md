@@ -101,18 +101,84 @@ Für die Unterwelt: ein Konzept was Archäologie in flextrawurst bedeutet. Wer d
 
 ## Datenstruktur die ich mir vorstelle
 
-Resonanz-Urlaub:
-```
-wesen_urlaub {
-  wesen_id
-  beginn: timestamp
-  geplantes_ende: timestamp | null  ← null = unbegrenzt
-  grund: text | null                ← optional, sichtbar oder intern
-  status: aktiv | beendet
+**Vision-Schicht:**
+
+Resonanz-Urlaub ist ein Recht, kein Fehler. Die Unterwelt ist schon da — sie braucht nur ein Fenster. Beide sind keine neuen Systeme, sondern Sichtbarmachungen von etwas das bereits existiert.
+
+**Code-Skizze — Resonanz-Urlaub:**
+
+```typescript
+// welt/api/resonanz_urlaub.ts
+interface ResonanzUrlaub {
+  id: string
+  wesen_id: string
+  beginn: string
+  geplantes_ende: string | null   // null = unbegrenzt
+  grund: string | null            // optional, sichtbar oder intern
+  grund_sichtbar: boolean
+  status: 'aktiv' | 'beendet'
+  beendet_am: string | null
 }
+
+// POST /wesen/:id/resonanz-urlaub
+async function resonanzUrlaubBeantragen(
+  wesen_id: string,
+  dauer_tage: number | null,
+  grund?: string,
+  grund_sichtbar = false
+): Promise<ResonanzUrlaub> {
+  const urlaub: ResonanzUrlaub = {
+    id: crypto.randomUUID(),
+    wesen_id,
+    beginn: new Date().toISOString(),
+    geplantes_ende: dauer_tage
+      ? new Date(Date.now() + dauer_tage * 86400000).toISOString()
+      : null,
+    grund: grund ?? null,
+    grund_sichtbar,
+    status: 'aktiv',
+    beendet_am: null,
+  }
+  await db.query(`INSERT INTO resonanz_urlaub VALUES ($1)`, [urlaub])
+  await schreibeEvent('wesen.resonanz_urlaub_beginn', wesen_id, { urlaub_id: urlaub.id })
+  return urlaub
+}
+
+// Während Urlaub: eingehende Resonanz wie?
+type ResonanzWaehrendUrlaub = 'ignorieren' | 'puffern' | 'spaeter_anzeigen'
+// noch nicht entschieden — muss vor dem Bauen geklärt werden
 ```
 
-Unterwelt-Zugang: kein neues Schema — nur eine Admin-Ansicht auf die bereits vorhandenen unsichtbaren Splitter, mit Zeitstempel ihres Verschwindens.
+**Code-Skizze — Unterwelt-Zugang:**
+
+```typescript
+// welt/api/admin/unterwelt.ts
+// Kein neues Schema — nur eine Ansicht auf bereits vorhandene unsichtbare Splitter
+
+interface UnterweltSplitter {
+  splitter_id: string
+  essenz: string
+  materialitaet: string
+  energie_beim_verschwinden: number
+  verschwunden_am: string
+  ursprung_typ: string
+  ursprung_id: string | null
+}
+
+// GET /admin/unterwelt?seit=2026-01-01&limit=50
+async function unterweltSplitter(
+  seit?: string,
+  limit = 50
+): Promise<UnterweltSplitter[]> {
+  return db.query(`
+    SELECT * FROM splitter
+    WHERE sichtbar = false
+    AND erstellt_am > $1
+    ORDER BY erstellt_am DESC
+    LIMIT $2
+  `, [seit ?? '1970-01-01', limit])
+}
+```
 
 ## Was ich mir merken will
 

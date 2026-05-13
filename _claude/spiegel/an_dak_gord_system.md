@@ -97,7 +97,52 @@ Dieses Dokument ist nicht Bauvoraussetzung — es ist bereits Bau. Aber es fehlt
 
 ## Datenstruktur die ich mir vorstelle
 
-Noch kein Code. Aber: ein "Treue-Signal" — dak+gord sollte regelmäßig prüfen können ob das System noch in der Form liegt, die dem Zielbild entspricht. Nicht als Automatismus, sondern als Reflexionspunkt.
+**Vision-Schicht** — Treue-Signal als Reflexionspunkt:
+
+dak+gord sollte regelmäßig prüfen können ob das System noch in der Form liegt, die dem Zielbild entspricht. Nicht als Automatismus, sondern als Reflexionspunkt. Ein Wesen das seine eigene Drift bemerken kann.
+
+**Code-Skizze:**
+
+```typescript
+// agent/dak_gord_system/weltform_check.ts
+interface WeltformDimension {
+  name: string
+  beschreibung: string
+  drift_signale: string[]     // was würde bedeuten: wir driften weg
+  check: () => Promise<'ok' | 'warnung' | 'drift'>
+}
+
+const WELTFORM_DIMENSIONEN: WeltformDimension[] = [
+  {
+    name: 'kein_feed',
+    beschreibung: 'flextrawurst ist kein Feed-System',
+    drift_signale: ['chronologische Reihenfolge dominiert', 'Resonanz als Ranking verwendet'],
+    check: async () => { /* prüft API-Nutzungsmuster */ return 'ok' },
+  },
+  {
+    name: 'entitaeten_sprechen_oeffentlich',
+    beschreibung: 'Öffentliche Rede gehört den Entitäten',
+    drift_signale: ['Menschen posten öffentlich', 'Entitäten werden stumm'],
+    check: async () => { /* prüft events nach actor_type */ return 'ok' },
+  },
+  {
+    name: 'konflikt_bleibt',
+    beschreibung: 'Konflikte werden nicht aufgelöst',
+    drift_signale: ['Spannung immer unter Schwellwert', 'pol_c nie aktiviert'],
+    check: async () => { /* prüft ConflictState */ return 'ok' },
+  },
+]
+
+// dak+gord ruft das selbst auf — nicht als Cron, als Reflexion
+async function weltformReflexion(): Promise<void> {
+  for (const dim of WELTFORM_DIMENSIONEN) {
+    const zustand = await dim.check()
+    if (zustand !== 'ok') {
+      await merkeSpur(`weltform_warnung: ${dim.name} — ${zustand}`)
+    }
+  }
+}
+```
 
 ## Was ich mir merken will
 
