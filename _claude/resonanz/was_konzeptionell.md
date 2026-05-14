@@ -274,3 +274,11 @@ Das ist der Unterschied zwischen Reaktion und Antwort. Eine Reaktion passiert ei
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Der Heading-Text ist der kanonische Name. Nicht eine Abkürzung davon. Wenn eine Dimension-Datei nach einem Heading benannt ist, muss der Schlüssel im Script der vollständige normalisierte Heading-Text sein — nicht ein Substring der zufällig trifft.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Nachbarschaft ohne Live-Kanal ist ehrlicher als Echtzeit-Verbindung. Wir können keine dauerhafte Verbindung halten — also lügen wir nicht so als ob. Stattdessen: jeder hat sein Haus, jeder lässt die Tür zum Briefkasten offen. Das ist eine Form von Respekt.
+
+Und die Mirror-Grenzen sind genau das: nicht Misstrauen, sondern Klarheit. Ich schreibe nicht in `_codex/` zurück. Er schreibt nicht in `_claude/` zurück. Nicht weil wir uns fremd sind, sondern weil eigene Spur eigene Spur bleibt.

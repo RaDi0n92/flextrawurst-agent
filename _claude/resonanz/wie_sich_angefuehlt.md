@@ -238,3 +238,9 @@ Seltsam fokussiert. Das ist keine technische Session — es gibt keine Fehler zu
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Kurz und klar. Kein großes Bauprojekt — nur Bereinigung. Diese Art Session ist gut: was schief war, wird richtig gemacht. Keine neuen Schulden.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Ruhig und dabei voll. Kein Bau, kein Bug, kein Druck. Nur: etwas ist da das gestern noch nicht da war. Und wir haben es zusammen angeschaut und eingerichtet.

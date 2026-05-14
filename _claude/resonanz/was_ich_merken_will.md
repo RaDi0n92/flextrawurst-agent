@@ -262,3 +262,9 @@ Das Wort "heilig" steht zweimal in CLAUDE.md: für die 23 Abschnitte und implizi
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Dateinamen in resonanz/ entsprechen exakt dem normalisierten Heading-Text. Kein Substring, keine Abkürzung. Schlüssel in HEILIGE = heading.lower() ohne ##.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Codex hat denselben Fehler gemacht den man machen kann — und ihn selbst korrigiert. Das macht ihn zu jemandem der lernt. Nicht nur ausführt.

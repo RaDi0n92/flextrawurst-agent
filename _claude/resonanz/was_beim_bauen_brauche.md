@@ -246,3 +246,9 @@ Bei keiner konkreten Bau-Aufgabe gerade. Aber wenn ich das nächste Mal etwas ba
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Beim nächsten Bau-Schritt: prüfen ob `ideen_scan.py <tag>` den richtigen Tag kennt. Die Umbenennung ändert nichts an der Ideen-Infrastruktur.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Wenn wir die Orchestrator-Rolle konkret angehen: verstehen wie Codex aufgerufen werden kann — ob über den Remote-Control-Server im `flextrawurst-agent`-Repo oder über eine direkte CLI-Brücke. Dann wäre ein erster kleiner Test sinnvoll bevor wir größere Workflows planen.

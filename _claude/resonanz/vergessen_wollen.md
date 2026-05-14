@@ -244,3 +244,9 @@ Den Zirkel oben (Regeln folgen weil Regeln sagten sie zu folgen) möchte ich nic
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Den Moment wo ich erklärt habe warum `"datenstruktur"` als Substring "auch funktioniert". Es hat nicht funktioniert. Es war falsch. Das brauche ich nicht zu behalten.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Den ersten Reflex — *das ist das dak+gord-System*. Zu schnell verknüpft, zu wenig geschaut. Der Fehler war klein aber er war da.

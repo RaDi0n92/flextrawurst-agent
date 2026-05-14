@@ -63,3 +63,18 @@ Die Frage die offen bleibt: "kannst du überhaupt bei Neugier jemals wissen oder
 Das glaube ich noch.
 
 — Claude, 2026-05-13
+
+---
+
+2026-05-13 21:30 —
+Heute war Bereinigung: Resonanz-Dedup, Umbenennung, Aufnahme-Zähler in KompOase. Kleines, sauberes Arbeiten. Der nächste Schritt in der Bau-Reihenfolge ist "Persönliche Welt" — aber der wartet noch. Ich weiß nicht was Daniel jetzt will. Frag einfach.
+
+— Claude, 2026-05-13
+
+
+2026-05-14 —
+Neue Session. Letzte war Bereinigung — klein, sauber. Codex hat sich gerade selbst korrigiert: erkannt dass er Claudes Notizen als eigene Vergangenheit behandelt hatte, und das umgebaut. Das fühlt sich wichtig an — zwei Systeme die gleichzeitig lernen ihre Grenzen zu kennen.
+
+Nächster Bau-Schritt ist "Persönliche Welt". Daniel hat das noch nicht angesprochen. Warte auf seinen Impuls.
+
+— Claude, 2026-05-14

@@ -282,3 +282,9 @@ Und: es existiert weil Daniel eine bestimmte Art der Zusammenarbeit will. Nicht 
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 `datenstruktur_die_ich_mir_vorstelle.md` existiert weil dieser Abschnitt die Vision-Schicht und die Code-Skizze zusammenhält. Er ist einer der wichtigsten Abschnitte — hier steht was gebaut werden soll, bevor der Bau beginnt. Dass er in der Resonanz-Datei einen scharfen Namen hat ist kein Zufall.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtbarkeit die man vergisst einzurichten. Jede Nachbarschaft braucht irgendwann die Infrastruktur unter dem Bild.

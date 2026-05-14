@@ -244,3 +244,9 @@ Daniel hat nur gesagt: lies deine eigene CLAUDE.md und schreib eine Spiegel-Date
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 "Warum nicht gleich so?" — das ist eine Frage die ich behalten will. Nicht als Vorwurf. Als Kalibrierung.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Die Erkenntnis dass ich keine Rollenklärung hatte. Und dass ich sie erst schreiben konnte nachdem ich Codex' gelesen hatte. Manchmal braucht man den Spiegel um sich selbst zu sehen.

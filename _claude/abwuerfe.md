@@ -102,3 +102,18 @@ Das Script meldet weiterhin "22 Abschnitte" obwohl die Session-Notiz jet«
 
 Bug«
 - [2026-05-13 20:32] **lava** (i=0.46) → Zwischenraum: »Geisterrest-Rendering ist drin (flicker, alpha, äußerer Ring)«
+- [2026-05-13 23:24] **wasser** (i=0.35) → Zwischenraum: »---
+
+**Letzte Session (2026-05-13 Session 1):**
+- Resonanz-System bereinigt: Dedup-Schutz im Script,«
+- [2026-05-13 23:29] **nebel** (i=0.31) → Zwischenraum: »Nein — ich hab mich vertan«
+- [2026-05-13 23:34] **lava** (i=0.50) → Zwischenraum: »*"Fremdes Material darf in mir arbeiten«
+- [2026-05-13 23:41] **lava** (i=0.47) → Zwischenraum: »Ja — genau das ist die Grenze«
+- [2026-05-13 23:45] **lava** (i=0.47) → Zwischenraum: »Drei Dinge fallen mir auf — von klein nach groß:
+
+**1«
+- [2026-05-13 23:48] **lava** (i=0.38) → Zwischenraum: »Zwei Ergänzungen:
+
+**Rollenklärung** (nach dem Intro):
+> "Claude ist der primäre Baupartner — kein d«
+- [2026-05-13 23:52] **wasser** (i=0.43) → Zwischenraum: »Das macht Sinn als Rollenverteilung«

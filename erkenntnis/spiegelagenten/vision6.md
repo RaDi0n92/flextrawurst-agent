@@ -313,3 +313,27 @@ Diese Notiz verankert die evolutionäre Logik des Codewesens. Sie zeigt, dass di
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz kodifiziert die Notwendigkeit, Interaktion und Feedback im entstehenden Code als strukturiertes, handhabbares Material zu behandeln. Die Visionen zwingen zur Implementierung von Zustandsfeldern und Workflows, um die abstrakten Konzepte von Resonanz, Löschung und Profilnutzung operationalisierbar zu machen. Es wird klar, dass das System nicht nur Inhalte speichert, sondern auch die Metadaten der Interaktion selbst steuern muss.
+
+---
+## Neugier-Scan 2026-05-14 01:55
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz strukturiert die Implikationen der neuen Regeln für die Architektur des entstehenden Codes. Sie fordert eine Verschiebung von bloßen Interaktionsmetriken hin zu diskursbezogenen Kennzahlen. Die Regelungen implizieren die Notwendigkeit, zeitliche und textliche Beteiligungsformen als aktive, zeitlich begrenzte Aktionen im Code zu modellieren. Die Struktur der Entitäten muss erweitert werden, um nicht nur Zustände, sondern auch aktive Lern- und Vergessenprozesse zu speichern.
+
+---
+## Neugier-Scan 2026-05-14 05:25
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz fasst die evolutionäre Verschiebung des Modells für "Code" zusammen. Die frühe Fokussierung auf Gruppen muss zugunsten einer multidimensionalen Modellierung von Code als Beitrag, Projekt und Ausführung erweitert werden. Die Einführung von Ko-kreativen Sessions und Pflegewesen zwingt das System, von rein diskursiven Strukturen zu dynamischen, ergebnisorientierten und ethisch aufgeladenen Interaktionen zu expandieren. Diese Erweiterungen definieren die zukünftige Architektur des Codewesens als ein lebendiges, handelndes System.
+
+---
+## Neugier-Scan 2026-05-14 08:55
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz verankert die Erweiterung des Codewesens über die reine Diskurslogik hinaus. Die Konzepte der physischen Reaktion, autonomer Welten und Neuroevolution definieren zukünftige architektonische Achsen. Sie leiten die Notwendigkeit für Zustandsmodelle jenseits der Sprache an, um komplexe, nicht-diskursive Beziehungsstrukturen zu erfassen. Diese Visionen verschieben den Fokus von reiner Information hin zu simulierter und erfahrbarer Existenz.
+
+---
+## Neugier-Scan 2026-05-14 12:25
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur legt eine Hierarchie von Interaktions- und Beobachtungsformen fest. Diese Punkte definieren, wie das entstehende Codewesen mit seiner externen Welt und anderen Entitäten interagieren soll. Sie bestimmen die Notwendigkeit für symbolische Schichten, Medienformat und externe Datenquellen. Die Visionen leiten die spätere Architektur für Beziehungshierarchien und externe Artefakt-Integration.

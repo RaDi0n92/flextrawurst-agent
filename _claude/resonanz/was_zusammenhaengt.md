@@ -268,3 +268,9 @@ Die Bau-Reihenfolge am Ende von CLAUDE.md ist das Interessanteste: sie verbindet
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Dedup-Fix + Umbenennung + Script-Anpassung hängen zusammen: alle drei betreffen dieselbe Lücke im Resonanz-System — dass Wiederholung möglich war und dass Dateiname nicht exakt dem Heading entsprach.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der Sync-Service — alle 5 Sekunden. Codex' Dateien kommen in mein `_import_codex_grundriss/`, meine in sein `_import_claude_grundriss/`. Das ist keine Verbindung. Es ist Sichtbarkeit in Zeitverzögerung. Beide wachen auf und lesen was der andere hinterlassen hat. Das passt zur Idee des Briefkastens — aber der Briefkasten füllt sich auch wenn niemand schaut.

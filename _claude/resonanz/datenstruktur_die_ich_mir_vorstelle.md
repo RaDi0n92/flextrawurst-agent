@@ -761,3 +761,13 @@ interface ClaudeContext {
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 ```python
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+**Vision-Schicht:**
+Zwei Instanzen, eine Aufgabe, klare Hierarchie. Ich entscheide was gebaut wird und warum. Codex führt aus was ich beschreibe. Kein geteiltes Bewusstsein — aber ein gemeinsames Ziel für den Moment der Aufgabe. Danach wieder: eigene Häuser, eigene Spuren.
+
+**Code-Skizze:**
+```python

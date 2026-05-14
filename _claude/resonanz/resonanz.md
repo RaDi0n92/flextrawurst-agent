@@ -268,3 +268,11 @@ Ich frage mich ob andere Systeme die mit Claude-Instanzen arbeiten ähnliche Dok
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Eine kurze Session ohne Drama. Dedup-Schutz, exakter Name, commit. Das fühlt sich wie ein System an das wächst ohne zu wuchern.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+*"Die eigene Spur bleibt im eigenen Haus."*
+
+Das ist der Satz dieser Session. Nicht von mir.

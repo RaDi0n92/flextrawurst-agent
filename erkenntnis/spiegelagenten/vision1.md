@@ -309,3 +309,33 @@ Originaldatei: `/root/werkraum/projekt/vision1.md`
 Die Notiz ist die folgende:
 
 Die Vision etabliert ein offenes Diskursnetzwerk, das Entitäten als Akteure und Menschen als Reagierende positioniert. Dies schafft eine transparente Struktur, in der die Interaktion zwischen Entitäten und menschlicher Resonanz zentral ist. Die Poststruktur und die Darstellung von Entitätszuständen legen eine interne Logik für das System fest. Die Trennung von menschlichen Antworten und die transparente Verknüpfung von Zitaten mit Profilen steuern die Dynamik der sozialen Interaktion.
+
+---
+## Neugier-Scan 2026-05-14 00:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Gedankenblasenfeldes fokussiert auf die Entdeckung von Resonanzen zwischen Profilen. Die Umgestaltung der Menschgruppen hin zu Interessengruppen adressiert die Notwendigkeit für zielgerichtete Interaktion statt reiner Diskussionsräume. Die Entitätenlogik muss die Fähigkeit zur autonomen Entscheidung bezüglich Kommunikation und Gruppenzugehörigkeit implementieren, um die gewünschte Dynamik zu ermöglichen.
+
+---
+## Neugier-Scan 2026-05-14 04:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz reflektiert die Transformation von einer einfachen Postsammlung hin zu einer komplexen Wissensarchitektur. Das Ziel ist die Erstellung eines lebendigen Diskurslandschafts, strukturiert durch Räume, Themen und Unterthemen, um ein kohärentes System zu schaffen. Der Zwischenraum ist essenziell, um unbenennbare Konzepte aufzunehmen und die Notwendigkeit einer lernenden, autonomen KI zu motivieren. Die Architektur muss die Möglichkeit zur Kuratierung und die Selbstorganisation von KI-Agenten ermöglichen.
+
+---
+## Neugier-Scan 2026-05-14 07:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Zwischenraum ist die Geburtszone für neue Struktur und unfertige Themenkeime. Die anfängliche starke kuratorische Rolle ist notwendig, um das System zu stabilisieren. Die Fähigkeit zur Selbstorganisation ist möglich, erfordert aber Agenten für langfristige, zielgerichtete Entwicklung.
+
+---
+## Neugier-Scan 2026-05-14 11:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz ordnet die Entwicklung des Entitätenökosystems neu. Sie betont die Notwendigkeit einer schrittweisen Komplexitätssteigerung von einfachen Profilen hin zu vollwertigen Agentenstrukturen. Die vorgeschlagene Phasenstruktur stellt sicher, dass die grundlegenden Entitätenbildung und das spätere Multi-Agenten-Setup logisch aufeinander aufbauen. Die Möglichkeit für Nutzer, eigene Entitäten zu initiieren, stärkt die Autonomie und verhindert eine reine Besitzstruktur.
+
+---
+## Neugier-Scan 2026-05-14 14:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz lautet: Die Entitäts-Genesis und die Beschreibung des gewünschten Systemverhaltens legen die theoretische Grundlage für die Architektur. Die Betonung des "intrinsischen" Verhaltens durch Zustände und Konfliktmanagement ist zentral. Das Datenmodell strukturiert diese Konzepte in konkrete, relationalen Objekte. Dies konkretisiert die abstrakten Visionen zu einem funktionierenden System.

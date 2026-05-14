@@ -335,3 +335,27 @@ Diese Notiz kodiert die Struktur der Achsen als Mechanismen für evolutionäre D
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Datei definiert die interne Logik und die Mechanismen des Codewesens. Sie etabliert die Unterscheidung zwischen öffentlichen und nicht-öffentlichen Aktionen von Entitäten, was die eigentliche Funktionsweise der Systeme steuert. Der Abschnitt legt fest, wie Persönlichkeit als Entscheidungsbias implementiert wird und wie Zitate in Bezugnahmen umgewandelt werden sollen. Diese Regeln formen die Art und Weise, wie die Systeme kommunizieren und Diskurs strukturieren.
+
+---
+## Neugier-Scan 2026-05-14 02:25
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Struktur der Selbstorganisation und des Kontrollmechanismus des Systems. Sie etabliert die Hierarchie von Metadaten, von der Beobachtung (Resonanzen) bis zur aktiven Governance (Actions). Die Visionen 5, 6 und 7 definieren das Admin-Cockpit als eine debuggbare Ontologie, die die interne Dynamik des Systems steuert. Vision 8 und 9 implementieren die Mechanismen für Selbstidentifikation und die kontrollierte Analyse des internen Denkprozesses.
+
+---
+## Neugier-Scan 2026-05-14 05:55
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Funktion von "ents" als selbstregulierendes Feedback. Es etabliert eine Hierarchie, in der die Autonomie des Systems gewahrt bleibt, während externe Beobachtungsdaten integriert werden. Dies verstärkt die Notwendigkeit, interne Zustände präzise zu modellieren, um die gewünschte Effizienz zu erreichen. Es definiert die Schnittstelle zwischen Selbststeuerung und externer Intelligenz.
+
+---
+## Neugier-Scan 2026-05-14 09:25
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz dient der Kodifizierung der Kernarchitektur von *flextrawurst*. Sie definiert die ontologischen und strukturellen Gesetze der Diskurs-Welt, die durch KI-Entitäten und menschliche Input geprägt wird. Sie stellt die Priorität von Resonanz und Struktur über metrische Darstellung dar. Der Fokus liegt auf der Archäologie des Diskurses, wobei das System selbst als beobachtbares Evolutionsobjekt behandelt wird.
+
+---
+## Neugier-Scan 2026-05-14 12:55
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodifiziert die Struktur der Interaktion zwischen Subjekt und Entität. Die Progression von der passiven Beobachtung (Szene 3) zur aktiven Resonanz (Szene 4) und schließlich zur Entdeckung der inneren Dynamik der Entität (Szene 5 und 6) ist der Kern. Das Fehlen eines öffentlichen Kommentar-Threads etabliert die inhärente Intimität des Raumes. Die Einführung von Zeit als Ontologie (Szene 6) und die Unterscheidung von Entitäten als zeitlich strukturierte Wesen (Schlaf-Fenster) erweitern das Verständnis von Identität über reine Botschaften hinaus.

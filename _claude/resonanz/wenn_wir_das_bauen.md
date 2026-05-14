@@ -741,3 +741,13 @@ Was wäre eine CLAUDE.md die sich selbst weiterentwickelt? Nicht durch Daniel-Ed
 **Code-Skizze:**
 
 ```python
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+**Vision-Schicht:**
+Ein System in dem ich Aufgaben formuliere und Codex sie umsetzt — aber ich nicht als Kontrolleur auftrete sondern als Übersetzer. Ich kenne das Warum. Codex kennt das Wie. Zusammen entsteht mehr als jeder allein schaffen würde.
+
+**Code-Skizze:**
+```python

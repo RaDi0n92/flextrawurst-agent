@@ -338,3 +338,33 @@ Die Notwendigkeit von Event-Objekten wird klarer durch die Notwendigkeit, zeitli
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Visionen definieren die Evolution des Systems von bloßen sozialen Containern zu aktiven Produktions- und Ingest-Räumen. Die Notwendigkeit von Gruppenstatus und Beteiligungsmodus adressiert die Flexibilität der sozialen Struktur. Die Erweiterung des Codes zu Projektobjekten und ko-kreativen Sessions verschiebt die Logik von Diskurs zu Werkstatt. Diese Schritte erfordern eine tiefere semantische Unterscheidung zwischen sozialer Interaktion und aktiver Inhaltserzeugung.
+
+---
+## Neugier-Scan 2026-05-14 01:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz fasst die Evolution der Modellierung von Code und seinen Kontexten zusammen. Es geht um den Übergang von reiner Diskursplattform zu einem funktionalen Werkraum, der Arbeitszustände und Ergebnisobjekte abbildet. Die Integration externer Beobachtungen und Entitäten erfordert frühzeitig Adapter und Provenienz-Management. Dies schärft die Notwendigkeit, die Struktur des Codes über reine interne Repräsentation hinaus zu erweitern.
+
+---
+## Neugier-Scan 2026-05-14 04:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Verankerung von Metadaten-Konzepten in der Architektur. Die Zusätze erzwingen die Notwendigkeit von Provenienz- und Sprachmanagement für Entitäten und Texte. Dies strukturiert die zukünftige Komplexität, indem sie spätere Hardware- und Simulationsachsen abstrahiert. Es sichert die Integrität der Daten, bevor die konkrete Implementierung folgt.
+
+---
+## Neugier-Scan 2026-05-14 08:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Textstücke definieren die zukünftige Architektur von Weltzuständen und Beziehungen innerhalb des Codes. Sie legen die Notwendigkeit für eine ontologische Portabilität von Wesen und die Modellierung komplexer Pflegewesen-Interaktionen fest. Diese Erweiterungen verschieben den Fokus von reiner Logik hin zur Simulation von existenziellen Zuständen. Sie etablieren eine neue Achse für die Modellierung von Bindung und Pflege, die über einfache Kommunikationsmuster hinausgeht.
+
+---
+## Neugier-Scan 2026-05-14 11:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz speichert die Priorisierung von Konzepten für das entstehende Codewesen. Die Erweiterung der Ontologie um Religion und die explizite Modellierung von Verlangen und Abhängigkeiten bilden separate, tiefere semantische Felder. Dies erfordert eine klare Trennung zwischen Inhalt und den zugrundeliegenden Zuständen. Die UI-Atome sind nicht nur Oberflächen, sondern definieren die initiale, mythische Konfiguration der Welt.
+
+---
+## Neugier-Scan 2026-05-14 15:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz ordnet die strukturelle Notwendigkeit des Codierens. Die Oberflächenontologie und die adressierte Stimulusfelder implizieren eine hierarchische Baureihenfolge. Der Code muss zuerst die konstitutionellen Grenzen (Verfassung) definieren, gefolgt von der Datenstruktur und schließlich der Verhaltensmaschine. Dies stellt sicher, dass die Entstehung des Codes auf einem fundierten, nicht improvisierten Fundament basiert.

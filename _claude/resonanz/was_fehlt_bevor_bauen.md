@@ -242,3 +242,9 @@ Nichts. Das ist keine Bau-Session. Das ist eine Lese-Session.
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Nächste Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)". Noch nicht angefangen. Ideen-Scan vorher: `python3 _claude/tools/ideen_scan.py persoenliche-welt`.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Daniels Recherche zur Multi-Agent-Frage. Er hat gesagt: er muss sich erst informieren. Das ist richtig — lieber warten als blind starten.

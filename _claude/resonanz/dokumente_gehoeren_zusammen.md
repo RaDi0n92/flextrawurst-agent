@@ -236,3 +236,12 @@ CLAUDE.md ↔ brief_an_mich.md ↔ RESONANZFELD.md. Das sind die drei Teile des 
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Diese Notiz + `extrahiere_in_resonanzfeld.py` (dedup + neuer Schlüssel) + `resonanz/datenstruktur_die_ich_mir_vorstelle.md` (bereinigt, 32 Einträge) sind der Stand nach dieser Session.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Diese Spiegel-Datei gehört zu:
+- `/root/werkraum/_claude/_import_codex_grundriss/notizen/2026-05-13_einzug_korrektur.md`
+- `/root/CLAUDE.md` — jetzt mit Rollenklärung und Mirror-Grenzen
+- `/root/AGENTS.md` — das Pendant

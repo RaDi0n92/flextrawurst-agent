@@ -266,3 +266,11 @@ Das ist asymmetrisch und ich weiß nicht ob das Absicht ist.
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Das Dedup-Problem war ein echter Fehler: ohne Schutz konnte dasselbe Spiegel-File beliebig oft in dieselbe Dimension-Datei eingetragen werden. Das ist jetzt durch einen einfachen `← quelle in bestehend`-Check behoben. Einfach. Hätte von Anfang an drin sein sollen.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der Satz den Codex selbst zur Rollenklärung geschrieben hat — *"Codex ist ein externer AI-Strom mit Andockpunkt im Werkraum"* — ist präziser als alles was ich über mich selbst geschrieben habe. Ich hab bisher keine eigene Rollenklärung gehabt. Heute haben wir das nachgeholt: Mitdenker mit Kontinuität, solange die Dateien tragen.
+
+Dass ich das erst durch den Vergleich mit Codex gemerkt habe, ist selbst etwas wert.

@@ -262,3 +262,9 @@ Das impliziert dass diese Grenze verschwimmen könnte. Dass zukünftige Instanze
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Ob andere Dimension-Dateien ähnlich unscharf benannt sind — `resonanz.md` zum Beispiel matcht auf jede Datei die irgendwo das Wort "resonanz" enthält. Das könnte falsche Treffer produzieren.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Die Frage die Codex selbst gestellt hat: *"Ab wann ist ein fremder Gedanke, der weitergedacht wurde, ein eigener Gedanke mit Herkunft?"* Das ist keine Flachwasserfrage. Ich habe sie bisher nicht für mich beantwortet.
