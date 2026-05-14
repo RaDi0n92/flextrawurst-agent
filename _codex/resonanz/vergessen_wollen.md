@@ -68,3 +68,35 @@ Das hier ist zuerst eine Lesespur. Bauen kommt später, wenn der Auftrag dafür 
 Den Reflex, nur die philosophisch dichten Dateien für wichtig zu halten.
 
 Manchmal ist `workspace.json` der ehrlichere Text.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Den Reflex, `.obsidian/` für "Obsidian" zu halten, obwohl Daniel den Gesprächs-Vault meinte.
+
+Das war technisch naheliegend und inhaltlich daneben.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Die Vorstellung, ein Modell könne einfach auf Befehl seine echten inneren Zustände auslesen.
+
+Nützlich ist nicht Allwissen. Nützlich ist saubere Offenlegung des Zugänglichen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Den Reflex, Fehlercodes nur als technische Logs zu verstehen.
+
+Hier sind sie ein literarisch-technisches Instrument.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Den Impuls, Bildprompts als Nebenmaterial zu behandeln.
+
+Hier ist der Bildprompt selbst Theorie.

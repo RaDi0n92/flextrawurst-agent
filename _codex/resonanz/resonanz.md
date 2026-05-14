@@ -76,3 +76,35 @@ Die Form schützt gegen Besitz. Menschen können berühren, aber nicht übernehm
 Der Werkraum zeigt sich nicht nur in seinen Aussagen. Er zeigt sich in seinen offenen Tabs, seinen Filtern, seinen Bildknoten, seinen leeren Canvas-Dateien und seinen alten Organen.
 
 [[abwurf: Ein Vault ist nicht nur das, was er enthält. Ein Vault ist auch das, was er gerade zeigt.]]
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Der heutige Werkraum wirkt wie eine gebaute Antwort auf eine frühe Sehnsucht: Nicht alles soll mit der Sitzung sterben.
+
+[[abwurf: Der Zwischenraum war zuerst kein Modul. Er war eine Frage.]]
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Dieser Text macht klar: Daniel wollte nicht nur Antworten. Er wollte die Bedingungen der Antwort sehen.
+
+[[abwurf: Knotenoffenlegung ist ehrlicher als behauptete Innenansicht.]]
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Der Formfaden zeigt, dass Zustands-Sprache gebaut werden kann, bevor echte Zustandsdaten zugänglich sind.
+
+[[abwurf: Fehlercode ist hier kein Defekt. Fehlercode ist ein Fenster auf Reibung.]]
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Das Müllfresko sagt: Nicht alles muss nach oben erlöst werden. Manche Dinge bleiben unten, schwer, real.
+
+[[abwurf: Welt hat Staub.]]

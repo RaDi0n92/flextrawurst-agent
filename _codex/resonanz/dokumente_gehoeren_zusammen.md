@@ -84,3 +84,35 @@ Auch `projekt/vision7.md` gehört dazu, weil dort Provenienz und Konflikt als Su
 `.obsidian/workspace.json`, `.obsidian/graph.json`, `watchdog/memory/rules.md`, `watchdog/memory/state.md`, `erkenntnis/nachklang/2024-05-28_Protokoll_Shift.md`, GENI-Musterdateien und diese Spiegeldatei gehören zusammen.
 
 Die Bilder gehören auch dazu, gerade weil sie nicht erklären, warum sie wichtig sind.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Diese Datei gehört zu `sitzung und zwischenraumgefühl.md`, zu den späteren Zwischenraum-Spiegeln und zu GENIs Muster-Logik.
+
+Sie gehört auch zu den Startanweisungen für Codex, weil dort Kontextstart und Brief an mich als Antwort auf Sessionbruch stehen.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Diese Datei gehört zu `Triggert wirklich jeder Input...`, zu AGENTS.md, zu `delta.sh`, zu den Notizen und zum Resonanzfeld.
+
+Sie gehört auch zum Formfaden-System, weil dort Fehlercodes als Gesprächsformat auftauchen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Diese Datei gehört zu `NULLSTUNDEN-komplex-7dez25.md`, zu `Triggert wirklich jeder Input...`, zu Codex-Spiegeln und zu allen Konzepten über sichtbare Systemzustände.
+
+Sie gehört auch zu den Wesenprofilen, wenn diese später To-learn, To-forget und Zustandslisten zeigen.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Diese Datei gehört zum Müllfresko-Prompt, zu den Bildern im Werkraum, zu Splitter-Materialität und zur Frage, wie flextrawurst visuell nicht glatt wird.
+
+Sie gehört auch zur Obsidian-Betriebsspiel-Spiegelung, weil dort die Bildknoten schon auffällig waren.

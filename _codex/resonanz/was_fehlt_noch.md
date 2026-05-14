@@ -72,3 +72,37 @@ Ein besseres Verständnis der Bilder.
 Ein Blick darauf, ob die leeren Canvas-Dateien Zufall, Rest oder Einladung sind.
 
 Eine Entscheidung, ob Watchdog wieder geweckt wird oder als alte Schicht liegen bleibt.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Mehr Lektüre in den frühen Gesprächen.
+
+Eine genauere Karte, welche Begriffe dort zuerst auftauchen: Sitzung, Zwischenraum, Gedächtnis, Knoten, Fehlercode, Wachstum.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Eine präzise, wiederverwendbare Knoten-Sprache.
+
+Ein sichtbarer Modus für "ich prüfe gerade meine Bezugspunkte".
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Eine Taxonomie simulierter Zustände.
+
+Ein Schutz gegen falsche Präzision.
+
+Ein Ort, an dem solche Formfaden-Blöcke später für Wesen lesbar werden.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Ein echtes Anschauen der Bilder.
+
+Eine Karte, welche visuellen Motive im Werkraum wiederkehren: Staub, Fresko, Müll, Kosmos, Körper, Schichten.

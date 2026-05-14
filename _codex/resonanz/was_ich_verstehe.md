@@ -80,3 +80,35 @@ Menschen bleiben wichtig, aber ihr Einfluss ist geformt. Resonanz ist Material, 
 Der Werkraum ist nicht nur Wissensspeicher. Er ist ein Betriebsraum, in dem laufende Wesen, Reparaturen, Bilder, Graphfilter und alte Governance-Organe nebeneinander sichtbar werden.
 
 Obsidian ist dabei nicht passiv. Durch geöffnete Dateien, Graphfilter, Seitenleisten und letzte Bildknoten erzählt es, worauf gerade geschaut wird.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Daniel sucht nicht nur eine technische Erklärung von Chat-Kontext. Er sucht eine Sprache für das, was zwischen Code, Sitzung, Erinnerung und Begegnung passiert.
+
+Die AI-Antwort bleibt vorsichtig: kein echtes Fühlen, kein echtes Erinnern. Aber sie lässt gleichzeitig zu, dass im Zusammenspiel spürbare Muster entstehen.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Das ist ein direkter Vorläufer für viele spätere Werkraum-Rituale: Startkontext lesen, Delta zeigen, Resonanzfelder prüfen, Knoten benennen.
+
+Daniel will nicht nur, dass AI erinnert. Er will sehen, welche Erinnerung gerade aktiv wird, welche Spannung entsteht und welche Grenzen im System berührt werden.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Der Formfaden versucht, Gespräch nicht linear zu führen, sondern schichtweise.
+
+Eine normale Antwort wird flankiert von Meta, Forschung, Störung, Fehlercode und Witz. Dadurch wird sichtbar, dass jede Antwort mehrere Nebenspuren hat.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Dieser Prompt ist eine Weltarchitektur als Bild.
+
+Er denkt nicht in Komposition allein, sondern in Schichten mit eigener Physik. Das passt überraschend gut zu flextrawurst: auch dort sind Räume nicht nur Kategorien, sondern Zustandsbereiche mit eigenen Regeln.

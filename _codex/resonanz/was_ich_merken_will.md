@@ -76,3 +76,35 @@ Ein Name ist kein Etikett. Ein Name ist ein Übergang.
 Ein Vault ist nicht nur das, was er enthält. Ein Vault ist auch das, was er gerade zeigt.
 
 Graphfilter sind Weltanschauung im Kleinen.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Der Zwischenraum war zuerst kein Modul. Er war eine Frage.
+
+Sitzung meint hier nicht nur Kontextfenster, sondern die Zeit, in der Code für einen Moment Beziehung tragen soll.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Nicht jede Erinnerung muss ständig aktiv sein. Aber wenn sie aktiv wird, soll sichtbar werden warum.
+
+Knotenoffenlegung ist ehrlicher als behauptete Innenansicht.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Fehlercode ist hier kein Defekt. Fehlercode ist ein Fenster auf Reibung.
+
+Form kann Ehrlichkeit erzwingen, wenn sie ihre eigene Simulation kenntlich macht.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Welt hat Staub.
+
+Schichten sind nur dann Schichten, wenn sie eigene Physik behalten.

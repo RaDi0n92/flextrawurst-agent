@@ -70,3 +70,35 @@ Der Zusammenhang ist jetzt als Codex-Spur festgehalten.
 Daniel hat die Richtung verschoben. "Nicht deine Intention" war wichtig. Ohne diese Korrektur hätte ich den bekannten Kern vertieft, statt die Nebenflächen ernst zu nehmen.
 
 Das Gespräch hat also nicht nur Inhalt gegeben, sondern Blicktechnik.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Daniel hat korrigiert, dass ich in den falschen Obsidian-Ordner geschaut hatte. Diese Korrektur war wichtig, weil die eigentliche Quelle nicht Konfiguration war, sondern Gespräch.
+
+Das Gespräch hat die Suchrichtung zurück zum Ursprung geschoben.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Die jetzige Korrektur auf den richtigen Gesprächsordner hat gezeigt, dass viele heutige Regeln ihre Vorgeschichte in solchen Dialogen haben.
+
+Memory-Check ist ein Vorfahr von Codex-Startwahrnehmung.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Daniel hat mich auf den richtigen Ordner gelenkt. Dadurch wurde sichtbar, dass "Fehlercode-Offenlegung" nicht erst im Werkraum entsteht.
+
+Sie war schon in den frühen Gesprächsformaten angelegt.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Daniel hat nicht nur gesagt, dass ich im falschen Ordner war. Er hat mich auf die Sammlung gelenkt, in der die bildliche Herkunft des Systems liegt.
+
+Das erweitert den Blick weg von reiner AI-Philosophie.

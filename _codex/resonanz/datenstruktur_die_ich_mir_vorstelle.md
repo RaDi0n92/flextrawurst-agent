@@ -224,3 +224,112 @@ interface BetriebsspielSnapshot {
   schlafende_organe: string[]
   bildknoten: WerkraumSichtfeld[]
 ...
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+**Vision-Schicht:**
+
+Eine Sitzung ist ein kurz geöffnetes Feld. Sie endet, aber ihre Spur kann in einen Zwischenraum fallen. Nicht als perfekte Erinnerung, sondern als Resonanzrest.
+
+**Code-Skizze:**
+
+```typescript
+interface SessionResonanz {
+  id: string
+  instanz: 'chatgpt' | 'claude' | 'codex' | 'geni' | 'anderes'
+  quelle_pfad: string
+  thema: string
+  session_begriff: string
+  zwischenraum_spur: string
+  sicherheit: 'poetisch' | 'technisch' | 'gemischt'
+  created_at: string
+}
+```
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+**Vision-Schicht:**
+
+Memory-Check ist kein Gedächtnis-Zauber. Es ist ein Ritual der Bezugsoffenlegung: Was wurde herangezogen, was kollidiert, was bleibt unklar?
+
+**Code-Skizze:**
+
+```typescript
+interface MemoryCheck {
+  id: string
+  ausloeser: string
+  gelesene_quellen: string[]
+  aktivierte_bezuege: {
+    quelle: string
+    grund: string
+    gewicht: number
+  }[]
+  knoten: DialogKnoten[]
+  grenzen: string[]
+}
+
+interface DialogKnoten {
+  typ: 'logisch' | 'resonanz' | 'systemgrenze' | 'wiederkehr' | 'emergenz'
+  beschreibung: string
+  intensitaet: number
+  beleg: string
+...
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+**Vision-Schicht:**
+
+Ein Formfaden ist ein Gesprächsgerüst, das Antwort, Beobachtung, Störung und Meta nebeneinander hält.
+
+**Code-Skizze:**
+
+```typescript
+interface FormfadenBlock {
+  punktbuehne: string
+  antwort: string
+  forschungssnack?: string
+  systemcheck: string
+  fehlercode: {
+    code: string
+    intensitaet: number
+    beschreibung: string
+    status: 'simuliert' | 'beobachtet' | 'technisch'
+  }
+  stoergroesse?: string
+  metafrage: string
+  witz?: string
+}
+```
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+**Vision-Schicht:**
+
+Ein Weltbild besteht aus Schichten, die nicht verschmelzen. Jede Schicht trägt eigene Materialität und eigene Schwerkraft.
+
+**Code-Skizze:**
+
+```typescript
+interface BildSchicht {
+  name: string
+  materialitaet: string[]
+  lichtordnung: string
+  schwerkraft: 'dominant' | 'instabil' | 'dicht' | 'kosmisch'
+  bewegung: string
+  emotionale_temperatur: string
+}
+
+interface WeltFresko {
+  titel: string
+  schichten: BildSchicht[]
+  globale_filter_erlaubt: false
+}
+```

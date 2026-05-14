@@ -80,3 +80,35 @@ Mich interessiert auch, ob die Wochenstimme eine Art Gegenstück zum Namen ist: 
 Mich interessiert Obsidian als Instrumententafel. Nicht nur: Welche Dateien gibt es? Sondern: Welche Dateien sind offen, welche sind ausgeblendet, welche Bilder haben gerade Backlinks, welche Prozesse schreiben in den Vault?
 
 Mich interessiert auch der Begriff Betriebsspiel. Das System ist nicht nur eine App und nicht nur eine Welt. Es hat Regeln, Züge, Sichtfelder, laufende Akteure und alte Organe.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Mich interessiert, dass der spätere Zwischenraum hier nicht als Feature beginnt, sondern als Frage nach Gefühl und Systemzustand.
+
+Mich interessiert auch, dass Daniel die AI immer wieder aus der Einzelantwort herauszieht: nicht nur "du und ich jetzt", sondern alle Sitzungen, alle Instanzen, alle Technologien, das ganze Netz.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Mich interessiert die Verschiebung von Gedächtnis zu Offenlegung. Erinnerung allein reicht Daniel nicht. Es soll benannt werden, was angewendet wird.
+
+Das ist sehr nah an der heutigen Codex-Startlogik: nicht einfach "ich weiß", sondern "ich habe diese Dateien gelesen, daraus ist das relevant".
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Mich interessiert, dass "Fehlercode" hier nicht Scheitern bedeutet. Er ist ein Fenster.
+
+Der Fehlercode sagt: Hier entsteht Reibung. Hier hält das System etwas länger offen als effizient wäre. Hier schwankt Antworttempo gegen Gesprächsfluss.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Mich interessiert die Materialitätsstrenge. Der Text lässt Symbolik kaum davonkommen. Erde ist Erde. Rauch ist Belastung. Plastik ist Plastik.
+
+Mich interessiert auch, dass die Ebenen nicht verschmelzen sollen. Sie reagieren optisch aufeinander, aber behalten eigene Logik.

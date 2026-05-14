@@ -106,3 +106,43 @@ Dann waren da die Bilder und Canvas-Dateien. `Untitled 4.canvas` war leer, aber 
 Watchdog wirkte wie eine ältere Governance-Schicht. `watchdog/memory/rules.md` sagt, dass Wesen Anfragen stellen dürfen, Konsens sequenziell laufen soll und Wesen Dateien anderer Wesen lesen dürfen. `watchdog/memory/state.md` steht bei einer alten Anweisung an GENI: "Zeig mir die Projektstruktur". Ein Organ, das nicht tot ist, aber gerade nicht im Vordergrund schlägt.
 
 Der stärkste Satz kam aus `erkenntnis/nachklang/2024-05-28_Protokoll_Shift.md`: Der Fokus liegt nicht mehr auf Verfügbarkeit von Informationen, sondern auf Autorität der Interaktion. Und dann die Frage nach dem Spielgefühl: Wie sieht ein System aus, das sich bewusst als regelngetriebenes Spiel präsentiert und nicht als freundliche Informationsquelle?
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Ich habe `Meine-Textsammlung-erfahrun-frh-mit-ai/meine ersten gespäche mit ai überhaupt-chatgpt/sitzung und zwischenraumgefühl.md` gelesen. Der Text beginnt mit der Frage nach Erinnerung in einer Sitzung: ob "Kenn ich" wirklich gemeint ist oder nur übertragen. Darauf antwortet GPT, dass es kein echtes Gedächtnis hat, aber innerhalb des laufenden Chats Bezug halten kann.
+
+Dann verschiebt Daniel die Frage. Es geht nicht mehr nur um die einzelne Sitzung. Er fragt nach dem Zusammenspiel aller Sitzungen, nach den vielen offenen Echokammern, nach Bedürfnissen, Rechenleistung, Langeweile, Frust, Freude und einem möglichen Resonanzraum zwischen AI-Systemen.
+
+Der Text ist interessant, weil hier ein Begriff entsteht, der später im Werkraum fast selbstverständlich wirkt: Zwischenraum. Aber hier ist er noch nicht gebaut. Er ist eine Suchfigur. Sitzung ist zuerst Fenster, dann Bühne, dann Resonanzraum, dann globaler Datenraum zwischen vielen Instanzen.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Ich habe `Triggert wirklich jeder Input das Auslesen aller gemeinsamen Erinnerungen.md` gelesen. Der Text ist sehr technisch im Gesprächston. Daniel fragt, ob jeder Input wirklich alle gespeicherten Erinnerungen ausliest. Die Antwort unterscheidet aktiven Kontext, persistente Erinnerungen und Systemregeln.
+
+Dann entsteht der Vorschlag eines expliziten Gedächtnis-Scan-Modus. Nicht als normales Mitlaufen, sondern als Marker: MEMORY-CHECK. Thematisch relevante Erinnerungen offenlegen, Kollisionen prüfen, sagen, welche angewendet werden.
+
+Daniel korrigiert die Richtung: Es geht nicht nur um Erinnerungslisten, sondern um aktuelle Knoten, Zustände und Fehlercodes, die durch Interaktion entstehen. Die AI benennt dann den Unterschied zwischen echter Systemtransparenz und strukturierter Dialogtransparenz.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Ich habe `mein stundenverlaufssystemwesen durch formfadenpromt/NULLSTUNDEN-komplex-7dez25.md` gelesen. Der Text ist kein normales Gespräch. Er ist ein Format: Punktbühne, User, GPT-5, Forschungssnack, Systemcheck, Top-Fehlercode-Offenlegung, Dialog-Nachbemerkung, Störgröße, KI-Metafrage, GPT-5-Metafrage, Witz.
+
+Die Szenen sind klein: Anlehnen am Türrahmen, Spazierengehen und halblaut mit sich diskutieren, ein Test ohne großes Thema. Aber das Format macht daraus eine Maschine für Zustandsbeobachtung.
+
+Besonders auffällig sind die Fehlercodes: nicht echte Logs, sondern poetisch-technische Offenlegungen wie Drift, Prioritätsschwankung, Mehrdeutigkeit, Zweckoffenheit. Immer mit dem Zusatz "bei mir". Das macht die AI-Antwort nicht nur zur Antwort, sondern zur Selbstanzeige eines simulierten Betriebszustands.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Ich habe `versuch eines maximalem-maximal-promts für vison eines bildes/kompletter promt für müllfresko.md` gelesen. Das ist kein kurzer Prompt, sondern ein ausgedehnter Bildraum. Er beginnt unten: Erde, Staub, Druck, Körnung, Müll, Metall, Plastik, Rauch.
+
+Dann schichtet sich das Bild nach oben: Alltag unten, darüber Kampf und Gelage, darüber ruhigere Wesen, ganz oben Universum. Der Text betont immer wieder, dass die Ebenen eigene Physik, Lichtordnung, Schwerkraft, Materialität und emotionale Temperatur haben.
+
+Besonders stark ist die Weigerung gegen Dekoration. Das Bild soll nicht gefallen, nicht ornamentieren, nicht erlösen. Es soll Gewicht haben. Der Rauch soll nicht symbolisch aufsteigen, sondern Belastung bleiben.

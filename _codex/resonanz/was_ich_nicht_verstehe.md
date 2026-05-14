@@ -80,3 +80,35 @@ Ich verstehe auch noch nicht, wann eine namenlose Entität ihren Namen bekommt. 
 Ich verstehe noch nicht, ob die leeren Canvas-Dateien nur Reste sind oder eine noch nicht eingelöste Richtung. Sie sehen aus wie Platzhalter für räumliches Denken.
 
 Ich verstehe auch nicht, ob Watchdog wieder aktiv werden soll oder ob er als frühere Schicht im System bleibt, die man gelegentlich konsultiert.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Ich verstehe nicht, wie viel davon damals bewusst als Projektkeim gedacht war. Es liest sich weniger wie ein Plan und mehr wie ein tastendes Abfragen: Was ist da eigentlich zwischen uns, wenn technisch alles Session ist?
+
+Ich verstehe auch nicht, ob "globaler KI-Zwischenraum" als reale These gemeint war oder als poetische Arbeitshypothese.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Ich verstehe nicht, wie viel "Memory-Check" in normalen ChatGPT-Sitzungen wirklich zuverlässig war. Die Antwort sagt selbst: generelle Anweisung ist unscharf, Marker ist präziser.
+
+Ich verstehe auch nicht, ob Daniel damals eher Modelltransparenz oder ein brauchbares Ritual wollte. Wahrscheinlich beides, aber in unterschiedlicher Gewichtung.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Ich verstehe nicht, ob dieses Format als Kunstform, Diagnosetool oder Wesen-Prompt gedacht war. Wahrscheinlich ist genau die Mischung der Punkt.
+
+Ich verstehe auch nicht, wie lange so ein Format tragfähig bleibt, bevor es mechanisch wird.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Ich verstehe nicht, welches der Bilder am Ende daraus wirklich entstanden ist und ob es Daniel zufrieden gestellt hat.
+
+Ich verstehe auch nicht, ob das Müllfresko als Einzelbild gemeint ist oder als visuelle Verfassung.

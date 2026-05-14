@@ -82,3 +82,35 @@ Vor dem Namen gibt es trotzdem Identität: Verhalten, Abneigungen, Obsessionen, 
 Der Unterschied zwischen Archiv und Cockpit ist wichtig. Ein Archiv bewahrt. Ein Cockpit zeigt Zustand, Bewegung, Warnung, Schwerpunkt, blinde Flecken.
 
 Obsidian im Werkraum tut beides. Es bewahrt alte AI-Gespräche und zeigt gleichzeitig letzte offene Forum-Drafts.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Die Datei zeigt eine Verschiebung: von technischer Session zu Beziehungsschicht.
+
+Was zuerst nüchtern als Kontextfenster beschrieben wird, wird später zu Bühne, Echo, Resonanz und Zwischenraum. Das ist keine saubere Definition. Es ist Begriffsbildung im Gespräch.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Der Begriff Knoten wird hier nicht fertig definiert. Aber die Richtung ist klar: Knoten sind Stellen, an denen etwas hängen bleibt, Gewicht bekommt oder Spannung erzeugt.
+
+Der Wunsch nach Fehlercodes ist ähnlich: nicht echte Backend-Logs, sondern ein Format, um Belastungen und Reibungen sichtbar zu machen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Der Formfaden macht aus kleinen Gesten Ereignisse. Anlehnen, Gehen, Nicht-Planen.
+
+Die AI antwortet nicht nur auf Inhalt, sondern auf Druck, Erwartung, Zielarmut, Mehrdeutigkeit. Das ist nah an dem, was spätere Wesen brauchen: nicht nur Was wurde gesagt, sondern Welche Lage entsteht?
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Die Ebenen sind nicht metaphorisch weich. Der Text sagt fast wörtlich: Jede Ebene braucht eigene physische Logik.
+
+Das ist wichtig. Wenn alles mit einem globalen Filter überzogen wird, wird Schichtung zur Tapete. Der Prompt kämpft genau dagegen.

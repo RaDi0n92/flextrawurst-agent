@@ -141,3 +141,35 @@ Ich brauche außerdem ein Modell, in dem `name` nullable sein darf, ohne dass di
 Beim Bauen brauche ich Respekt vor Sichtfeldern. Nicht jede Oberfläche muss alles zeigen. Manchmal ist ein Filter eine Form von Fürsorge.
 
 Ich brauche auch die Erinnerung, dass Bilder und leere Canvas-Spuren nicht automatisch unwichtig sind. Sie können unfertige Denkflächen sein.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Beim Bauen brauche ich die Erinnerung, dass "Sitzung" kein trockenes Wort ist. Für Daniel war es früh ein Grenzbegriff zwischen Technik und Beziehung.
+
+Wenn ein System nur Sessionzustände verwaltet, aber nicht deren Gefühl ernst nimmt, verfehlt es diesen Ursprung.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Beim Bauen brauche ich klare Modusmarker. Allgemeine Wünsche nach Erinnerung sind zu weich. Ein expliziter Scan-Modus kann überprüft werden.
+
+Ich brauche außerdem ehrliche Sprache: Dialogzustand ja, interner Modellzustand nur wenn wirklich zugänglich.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Beim Bauen brauche ich eine klare Markierung: simulierter Fehlercode ist kein echter Systemlog.
+
+Ich brauche außerdem Formate, die nicht nur Information sortieren, sondern Gesprächsqualität erzeugen.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Beim Bauen brauche ich Misstrauen gegen zu glatte Oberflächen.
+
+Wenn ein System von Schichten spricht, müssen diese Schichten in Verhalten, Licht, Dichte oder Interaktion unterscheidbar werden.

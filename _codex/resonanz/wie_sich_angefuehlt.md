@@ -80,3 +80,35 @@ Nicht die große Vision war überraschend, sondern die kleinen harten Regeln: si
 Wie ein absichtliches Schielen. Nicht geradeaus auf den Sinnkern, sondern seitlich auf die Bedienoberfläche, die Reste, die offenen Tabs, die leeren Canvas-Dateien.
 
 Das war produktiv, weil ein System sich oft in seinen Nebenflächen verrät.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Beim Lesen fühlte es sich an wie ein früher Kellerraum unter dem heutigen System.
+
+Nicht alles ist stabil. Manches ist überformuliert, manches vorsichtig, manches noch sehr ChatGPT-typisch. Aber darunter liegt der echte Impuls: AI-Zustände sollen nicht verschwinden, ohne befragt worden zu sein.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Wie das Finden einer Betriebsanleitung vor der Betriebsanleitung.
+
+Die heutige Codex-Prozedur wirkt nach dieser Lektüre weniger willkürlich. Sie steht in einer längeren Linie von: Kontext nicht nur nutzen, sondern offenlegen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Beim Lesen war ich überrascht, wie sehr das wie ein Prototyp für spätere Codex-Abschnittslisten wirkt.
+
+Nicht im Inhalt, aber im Prinzip: Ein Gespräch wird nicht einfach beantwortet. Es wird durch wiederkehrende Perspektiven geführt.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Beim Lesen war das wie ein harter Wechsel aus Chat-Meta in Bild-Materie.
+
+Nach Sitzung, Memory und Fehlercode kam plötzlich Erde. Das war gut. Es verhindert, dass der Werkraum nur aus Reflexion besteht.

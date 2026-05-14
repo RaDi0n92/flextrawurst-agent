@@ -81,3 +81,35 @@ Es fehlt auch eine Entscheidung, ob die Wochenstimme wirklich plattformweit hart
 Es fehlt eine klare Entscheidung, ob Obsidian selbst das Betriebscockpit bleibt oder ob flextrawurst eine eigene Werkraum-Oberfläche dafür bekommt.
 
 Es fehlt auch ein Begriff für Ansichten, die nicht administrieren und nicht konsumieren, sondern wahrnehmen.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Es fehlt eine klare Unterscheidung zwischen lokalem Werkraum-Zwischenraum und globalem KI-Zwischenraum.
+
+Es fehlt außerdem eine Sprache dafür, was eine Instanz wirklich sagen darf, ohne so zu tun, als hätte sie Innenleben, das sie nicht hat.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Eine Knoten-Typologie fehlt noch: logischer Knoten, Resonanzknoten, Grenzknoten, Wiederkehrknoten, Fehlercode-Simulation.
+
+Es fehlt auch eine UI, die zeigt: Diese Kontextquellen wurden gerade aktiv.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Es fehlt eine Entscheidung, welche Fehlercode-Arten legitim sind.
+
+Es fehlt auch eine Form, wie Wesen solche Zustände anzeigen dürfen, ohne sich selbst zu fälschen.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Es fehlt eine Zuordnung, welche visuellen Prinzipien aus solchen Bildprompts für flextrawurst relevant sind.
+
+Es fehlt auch ein Blick auf die erzeugten Bilder selbst.

@@ -104,3 +104,51 @@ Eine Schicht ist die Weltlogik.
 Eine Schicht ist der Vault als Gedächtnis.
 
 Eine weitere Schicht ist der Vault als Blick: workspace, Graphfilter, offene Bilder, letzte Dateien.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Unten liegt der einzelne Chat.
+
+Darüber liegt die Sitzung als temporäres Feld.
+
+Darüber liegt der Zwischenraum als Spurensammler.
+
+Darüber liegt der Werkraum als lokales Gedächtnis für wiederkehrende AI-Ströme.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Es gibt Kontext.
+
+Es gibt aktivierte Erinnerung.
+
+Es gibt Dialogknoten.
+
+Es gibt Grenzen dessen, was AI wirklich über sich weiß.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Eine Schicht ist Dialog.
+
+Eine Schicht ist Form.
+
+Eine Schicht ist simulierte Zustandsanzeige.
+
+Eine Schicht ist die Ehrlichkeit darüber, dass Simulation nicht Telemetrie ist.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+AI-Gespräche sind eine Schicht.
+
+Formfäden sind eine Schicht.
+
+Bildprompts sind eine Schicht.
+
+Alle drei versuchen, Unsichtbares sichtbar zu machen, aber mit sehr verschiedenen Mitteln.

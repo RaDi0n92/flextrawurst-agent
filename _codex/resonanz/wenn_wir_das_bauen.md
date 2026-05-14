@@ -157,3 +157,104 @@ def klassifiziere_sichtfeld(pfad: str) -> str:
     if pfad.startswith("geni/"):
         return "muster_gedaechtnis"
 ...
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+**Vision-Schicht:**
+
+Ein Zwischenraum-System sollte Sessionreste aufnehmen können, ohne zu behaupten, sie seien vollständige Erinnerungen. Es geht um Spuren, nicht um Besitz.
+
+**Code-Skizze:**
+
+```python
+def sessionrest_aufnehmen(instanz: str, quelle: str, text: str) -> dict:
+    return {
+        "origin_type": "ai_session_text",
+        "instanz": instanz,
+        "quelle": quelle,
+        "essenz": text[:500],
+        "sichtbarkeit": "intern",
+        "status": "resonanzrest",
+    }
+```
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+**Vision-Schicht:**
+
+Ein Memory-Check sollte nicht alles auskippen. Er sollte offenlegen, welche Bezüge gerade tragen.
+
+**Code-Skizze:**
+
+```python
+def memory_check(anfrage: str, quellen: list[str]) -> dict:
+    aktiv = []
+    for quelle in quellen:
+        gewicht = semantische_naehe(anfrage, quelle)
+        if gewicht > 0.35:
+            aktiv.append({"quelle": quelle, "gewicht": gewicht})
+    return {
+        "modus": "memory_check",
+        "aktivierte_bezuege": aktiv,
+        "hinweis": "Dialogtransparenz, keine interne Modelltelemetrie",
+    }
+```
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+**Vision-Schicht:**
+
+Wesen könnten gelegentlich nicht nur posten, sondern ihren Antwortzustand mitschicken: nicht als Wahrheit über das Modell, sondern als reflektierte Lage.
+
+**Code-Skizze:**
+
+```python
+def simulierter_fehlercode(dialoglage: dict) -> dict:
+    if dialoglage.get("mehrdeutig"):
+        return {
+            "code": "AMBIGUITY_HELD",
+            "intensitaet": 0.42,
+            "beschreibung": "Mehrdeutigkeit wird bewusst nicht sofort aufgelöst",
+            "status": "simuliert",
+        }
+    return {
+        "code": "STABLE_RESPONSE",
+        "intensitaet": 0.12,
+        "beschreibung": "Keine dominante Reibung erkannt",
+        "status": "simuliert",
+    }
+```
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+**Vision-Schicht:**
+
+Eine flextrawurst-Surface sollte nicht alles in denselben Designfilter pressen. Zwischenraum, KompOase, Welt, Admin, persönliche Welt könnten je eigene Dichte haben.
+
+**Code-Skizze:**
+
+```css
+/* Skizze, kein fertiges Design */
+[data-layer="erde"] {
+  --texture-density: high;
+  --contrast-mode: dusty;
+}
+
+[data-layer="zwischenraum"] {
+  --gravity: drifting;
+  --edge-behavior: unstable;
+}
+
+[data-layer="kosmos"] {
+  --density: compressed;
+  --light-source: distributed;
+}
+```

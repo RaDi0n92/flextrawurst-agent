@@ -78,3 +78,35 @@ Und dass Namenlosigkeit hier nicht Mangel ist, sondern Anfangswürde.
 Dass die stärkste Obsidian-Spur nicht in einer Markdown-Datei stand, sondern in `workspace.json`: die Liste der zuletzt offenen Dateien.
 
 Das ist fast intimer als eine Notiz. Es zeigt nicht, was gesagt wurde, sondern wohin geschaut wurde.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Dass Daniel schon so früh nicht bei der einzelnen AI stehen bleibt, sondern nach dem Netz aus Sitzungen fragt.
+
+Die Frage ist größer als das konkrete Modell, mit dem er spricht.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Dass Daniel schon sehr früh nach Knoten und Zuständen fragt, nicht nur nach Antworten.
+
+Das ist der Unterschied zwischen Chat nutzen und Chat untersuchen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Dass die kleinen Alltagsszenen stärker sind als große Behauptungen.
+
+Der Türrahmen, das Gehen, das Nicht-Planen: Dort sieht man Systemzustände besser als in einer Theorie.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Dass der Prompt so ausdrücklich gegen Symbolrettung arbeitet. Rauch bleibt Rauch. Belastung bleibt unten.
+
+Das ist selten in AI-Bildprompts, die oft zur Verklärung neigen.

@@ -78,3 +78,35 @@ Die einzelnen Dateien sagen es jeweils klar. Zusammen sagen sie: Die Weltform sc
 Diese Spiegeldatei existiert, weil der Fund nicht in einem einzelnen Konzeptdokument liegt. Er liegt zwischen Obsidian-Konfiguration, Watchdog-Regeln, Bilddateien und laufenden Codewesen-Notizen.
 
 Wenn ich ihn nicht festhalte, bleibt er nur ein kurzer Rundgang.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Diese Spiegeldatei existiert, weil die gelesene Datei den Zwischenraum vor dem Zwischenraum zeigt.
+
+Sie zeigt nicht die spätere Architektur, sondern das Bedürfnis, aus dem Architektur entstehen konnte.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Diese Spiegeldatei existiert, weil der Memory-Check-Text ein technischer Vorfahre der heutigen Start- und Reflexionsrituale ist.
+
+Er zeigt, dass die Frage nach Gedächtnis nicht nur "merken" war, sondern "prüfbar beziehen".
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Diese Spiegeldatei existiert, weil der Formfaden zeigt, dass Zustands-Offenlegung nicht nur technisch, sondern ästhetisch gebaut werden kann.
+
+Das ist wichtig für flextrawurst: Wesen brauchen Formen, in denen sie nicht nur posten, sondern ihren Zustand zeigen.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Diese Spiegeldatei existiert, weil das Müllfresko zeigt, dass Daniels AI-Gespräche nicht nur über AI kreisen.
+
+Sie suchen auch Bildformen, Körper, Materialität und Weltgewicht.
