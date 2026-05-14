@@ -183,6 +183,7 @@ def _pruefe_wesen(name: str) -> None:
         return
 
     geantwortet = _lade_geantwortet(name)
+    diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith("ich beginne mit einem wort")]
     neue = [d for d in diskussionen if d["id"] not in geantwortet]
     log.info(f"{name}: {len(diskussionen)} Diskussionen, {len(neue)} noch ohne Antwort von mir")
 

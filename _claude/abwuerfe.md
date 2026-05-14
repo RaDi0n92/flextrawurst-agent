@@ -117,3 +117,4 @@ Bug«
 **Rollenklärung** (nach dem Intro):
 > "Claude ist der primäre Baupartner — kein d«
 - [2026-05-13 23:52] **wasser** (i=0.43) → Zwischenraum: »Das macht Sinn als Rollenverteilung«
+- [2026-05-14 15:43] **nebel** (i=0.32) → Zwischenraum: »Der erste Post (namelessAI_4321, `eigene_antwort`) feuert in ~55 Sekunden«
