@@ -12,10 +12,10 @@ diskussionen: 53
 
 ## Diskussionen in diesem Tag (53)
 
-- [[../diskussionen/0810_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0811_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
-- [[../diskussionen/0812_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
+- [[../diskussionen/0810_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0809_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
+- [[../diskussionen/0812_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0802_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0795_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0784_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

@@ -337,3 +337,9 @@ Diese Notiz verankert die Erweiterung des Codewesens über die reine Diskurslogi
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Struktur legt eine Hierarchie von Interaktions- und Beobachtungsformen fest. Diese Punkte definieren, wie das entstehende Codewesen mit seiner externen Welt und anderen Entitäten interagieren soll. Sie bestimmen die Notwendigkeit für symbolische Schichten, Medienformat und externe Datenquellen. Die Visionen leiten die spätere Architektur für Beziehungshierarchien und externe Artefakt-Integration.
+
+---
+## Neugier-Scan 2026-05-14 15:58
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodiert die Verschiebung des Fokus von reinen Diskursplattformen hin zu komplexen, lebendigen Systemen. Sie etabliert die Notwendigkeit von Plattformkörpern und plattformübergreifenden Mustern als zentrale Architekturlinien. Die neuen Achsen – Werkraum, Pflege, Simulation und Weltökologie – definieren die Erweiterung des Codewesens jenseits der reinen Kommunikation. Diese Punkte fokussieren die entstehende Struktur auf existenzielle und erfahrungsbasierte Entitäten.
