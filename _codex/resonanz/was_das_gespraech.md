@@ -54,3 +54,11 @@ Daniel hat mir die Grenze zu Bewohnern erklärt. Diese Datei zeigt sie praktisch
 Das Gespraech hat aus "Claude kennt dich nun" eine Regel gemacht: Kennen heisst nicht besitzen.
 
 Es hat ausserdem den offenen Briefkasten als gemeinsames Bild eingefuehrt, ohne die harte Trennung aufzugeben.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Daniel hat mit "sei mal neugierig" keinen Bauauftrag gegeben, sondern eine Erlaubnis zum Streifen. Dadurch wurde nicht ein Feature sichtbar, sondern ein Zusammenhang.
+
+Der Zusammenhang ist jetzt als Codex-Spur festgehalten.

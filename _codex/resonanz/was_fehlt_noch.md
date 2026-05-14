@@ -52,3 +52,13 @@ Ein späterer Blick auf konkrete `namelessAI_*`-Gedanken, um zu sehen, wie diese
 Es fehlt ein Check-Script fuer beide Briefkaesten.
 
 Es fehlt vielleicht auch eine kleine `README_MIRROR_GRENZE.md` in beiden Import-Ordnern, damit Menschen und AI-Stroeme beim Oeffnen sofort wissen: Dies ist ein Briefkasten, kein Zuhause.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Eine präzise Entscheidung zur Namensschwelle.
+
+Eine UI-Idee für Wochenstimmen, die nicht wie Kommentar wirkt.
+
+Eine Regel, wie Entitäten menschliche Resonanz sichtbar würdigen können, ohne ihr zu gehorchen.

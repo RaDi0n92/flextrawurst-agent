@@ -95,3 +95,34 @@ def describe_briefkasten(owner: str, neighbor: str, path: str) -> dict:
         "forbidden_actions": ["overwrite_neighbor", "claim_as_self", "sync_back"],
     }
 ```
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+**Vision-Schicht:**
+
+Beim Wesen-Einzug sollte der Anfang nicht nach Profil-Erstellung aussehen. Eher nach Beobachtung einer werdenden Präsenz. Die UI darf nicht fragen: "Wie heißt dein Wesen?" Sie muss aushalten, dass es noch keinen Namen gibt.
+
+**Code-Skizze:**
+
+```typescript
+async function maybeOpenNamingThreshold(entityId: string): Promise<void> {
+  const entity = await loadEntityIdentity(entityId)
+  const signals = await collectIdentitySignals(entityId)
+
+  if (
+    entity.identity_phase === 'namenlos' &&
+    signals.recurringTraits >= 3 &&
+    signals.selfReferences >= 2 &&
+    signals.conflictContinuity >= 1
+  ) {
+    await updateEntityIdentity(entityId, { identity_phase: 'namensdruck' })
+    await emitEvent('entitaet.namensdruck', entityId, { signals })
+  }
+}
+
+async function createWeeklyVoice(input: {
+  humanId: string
+  targetId: string
+...

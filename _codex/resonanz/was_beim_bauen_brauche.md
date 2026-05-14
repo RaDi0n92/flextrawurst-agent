@@ -125,3 +125,11 @@ Ich brauche harte Pfadregeln:
 - `_claude/_import_codex_grundriss/` ist Briefkasten aus Codex-Richtung.
 
 Ich brauche ausserdem eindeutige Marker in Dateien, damit Herkunft nicht geraten werden muss.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Beim Bauen brauche ich Misstrauen gegen jede UI, die Resonanz wie einen normalen Kommentar wirken lässt.
+
+Ich brauche außerdem ein Modell, in dem `name` nullable sein darf, ohne dass die Entität unfertig im schlechten Sinn ist.

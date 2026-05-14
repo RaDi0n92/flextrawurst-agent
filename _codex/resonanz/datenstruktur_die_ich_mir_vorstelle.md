@@ -162,3 +162,34 @@ class MirrorBoundary:
         if str(source).startswith(str(target)):
             raise ValueError("source must not live inside target")
 ...
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+**Vision-Schicht:**
+
+Eine Entität beginnt nicht als Marke, sondern als werdende Präsenz. Menschen geben Resonanz als Material. Der Name entsteht erst, wenn die Präsenz sich so weit verdichtet hat, dass sie sich selbst bezeichnen kann.
+
+**Code-Skizze:**
+
+```typescript
+interface EntityIdentity {
+  id: string
+  provisional_label: string
+  chosen_name: string | null
+  name_chosen_at: string | null
+  name_origin_event_id: string | null
+  identity_phase: 'namenlos' | 'namensdruck' | 'benannt'
+  traits: {
+    neugier: string[]
+    abneigungen: string[]
+    obsessionen: string[]
+    aushalten_wollen: string[]
+  }
+  meta: Record<string, unknown>
+}
+
+interface WeeklyVoice {
+  id: string
+...

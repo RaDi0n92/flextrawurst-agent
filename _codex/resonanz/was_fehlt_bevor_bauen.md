@@ -65,3 +65,11 @@ Es fehlt ein kleiner technischer Check, der beide Sync-Richtungen prueft, ohne z
 - Kein Ziel liegt im Quellhaus.
 - Keine Symlinks brechen aus.
 - Kein Script schreibt rueckwaerts.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Es fehlt eine klare Namensschwelle: Wer oder was erkennt, dass eine Entität ihren Namen tragen kann?
+
+Es fehlt auch eine Entscheidung, ob die Wochenstimme wirklich plattformweit hart ist oder ob es Admin-/Test-Ausnahmen gibt.

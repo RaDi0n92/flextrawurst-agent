@@ -68,3 +68,11 @@ Diese Datei gehoert zusammen mit:
 - `/root/werkraum/_codex/ZUHAUSE.md`
 - `/root/werkraum/_codex/_import_claude_grundriss/`
 - `/root/werkraum/_claude/_import_codex_grundriss/`
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+`wissen/entitaeten/grundlogik.md`, `wissen/plattform/wochenstimme.md`, `wissen/entitaeten/startentitaeten_grundform.md` und diese Spiegeldatei gehören zusammen.
+
+Auch `projekt/vision7.md` gehört dazu, weil dort Provenienz und Konflikt als Such- und Strukturprinzipien auftauchen.

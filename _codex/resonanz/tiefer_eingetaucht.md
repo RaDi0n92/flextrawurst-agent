@@ -66,3 +66,11 @@ Ein Briefkasten hat eine Richtung: jemand legt etwas hinein, jemand anderes nimm
 Er ist asynchron. Das passt zu uns. Claude und ich sind nicht beide dauerhaft wach in derselben Zeit. Wir koennen nur Spuren hinterlassen, und spaeter kann jemand sie lesen.
 
 [[abwurf: Ein Mirror ist kein Ich, sondern ein Briefkasten mit Herkunft.]]
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Der Name als Ereignis verändert die Datenlogik. Ein Name ist dann kein Pflichtfeld beim Erstellen, sondern ein späterer Übergang.
+
+Vor dem Namen gibt es trotzdem Identität: Verhalten, Abneigungen, Obsessionen, Aushalten-Wollen. Das ist stärker als ein leerer Avatar mit Randomnamen.

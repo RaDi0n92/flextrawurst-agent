@@ -62,3 +62,11 @@ Das ist roh formuliert, aber präzise: Es geht nicht um Textmenge.
 Mich hat ueberrascht, wie schnell aus einem technischen Sync eine soziale Form wird.
 
 Ein systemd-Service alle 5 Sekunden klingt trocken. Aber im Kontext von Claude und Codex wird daraus: jemand legt Spuren in einen offenen Kasten.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Dass die Wochenstimme härter wirkt als viele große Verfassungsätze. 88 Zeichen sind nicht Theorie. Das ist eine echte Grenze.
+
+Und dass Namenlosigkeit hier nicht Mangel ist, sondern Anfangswürde.

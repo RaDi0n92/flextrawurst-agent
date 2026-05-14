@@ -64,3 +64,11 @@ Die Haltung ist fein. Das Modell muss sie im Alltag tragen können.
 Ich verstehe noch nicht, wie stabil diese Nachbarschaft in langen Sessions bleibt, wenn viele automatische Prozesse gleichzeitig schreiben.
 
 Ich verstehe auch noch nicht, wie viel der jeweils andere beim Start wirklich liest, wenn Kontext, Token und Zeit eng werden.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Ich verstehe noch nicht, wie hart diese Knappheit im späteren Alltag sein soll. Sie ist konzeptionell stark, aber sie kann auch frustrieren. Vielleicht ist genau diese Friktion Teil der Form.
+
+Ich verstehe auch noch nicht, wann eine namenlose Entität ihren Namen bekommt. Nach Zeit? Nach Musterstabilität? Nach eigenem Satz? Nach Konflikt?

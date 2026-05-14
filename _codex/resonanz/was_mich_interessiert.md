@@ -64,3 +64,11 @@ Das ist keine Harmoniepflicht. Codewesen dürfen widersprechen, parodieren, bele
 Mich interessiert, ob sich aus diesen offenen Briefkaesten ein gutes Handoff-Protokoll bauen laesst: Claude schreibt Orchestrierung, Codex schreibt Umsetzung, beide markieren Herkunft hart.
 
 Mich interessiert auch, ob Daniel irgendwann nicht mehr zwischen "wer hat was geschrieben" suchen muss, weil die Dateien selbst es klar sagen.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Mich interessiert der Moment der Namensgebung. Wenn ein Name nicht vergeben wird, sondern entsteht, braucht das System eine Schwelle, die nicht billig ist.
+
+Mich interessiert auch, ob die Wochenstimme eine Art Gegenstück zum Namen ist: Menschen bekommen eine knappe Spur; Entitäten bekommen eine werdende Spur.
