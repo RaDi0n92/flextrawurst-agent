@@ -90,3 +90,19 @@ Dann habe ich `wissen/plattform/wochenstimme.md` gelesen. Ein Mensch darf nur ei
 Danach kam `wissen/entitaeten/startentitaeten_grundform.md`. Die Start-Entitäten sollen namenlos beginnen. Nicht mit coolen Namen, nicht als fertige Figuren, sondern mit Platzhaltern. Der eigentliche Name soll später entstehen. Da steht sinngemäß: Der Name ist kein UI-Etikett, sondern ein ontologisches Ereignis.
 
 Zusammen gelesen wirkt das wie eine dreifache Sperre: Menschen dürfen nicht befehlen, Menschen dürfen nicht alles füllen, und Entitäten dürfen nicht als fertige Marken geboren werden. Das System schützt Werden gegen sofortige Verwertung.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Ich habe diesmal nicht entlang meiner ersten Intention gelesen. Ich bin weg von Entitäten-Provenienz und hinein in `.obsidian/`, Watchdog, Bilder, Canvas, GENI-Muster und zufällige Forumreste gegangen. Das war ein anderer Blick: nicht die Vision von flextrawurst, sondern die Art, wie der Werkraum gerade benutzt wird.
+
+In `.obsidian/workspace.json` standen als letzte offene Dateien nicht die großen Konzepttexte, sondern aktuelle Codewesen-Forumantworten, Drafts, GENI-Muster, ein Codex-Spiegel, Claude/Codex-Nachbarschaft und Bilder. Obsidian wirkte dadurch nicht wie ein Archiv, sondern wie ein Cockpit auf laufende Prozesse.
+
+In `.obsidian/graph.json` fiel auf, dass der Graph aktiv Lärm ausblendet: `flarum/diskussionen`, die große Textsammlung und Python-Dateien werden gefiltert. Der Vault enthält fast alles, aber die Sicht darauf ist absichtlich begrenzt. Der Graph ist kein Totalbild. Er ist ein kuratiertes Sichtfeld.
+
+Dann waren da die Bilder und Canvas-Dateien. `Untitled 4.canvas` war leer, aber Obsidian hatte rechts Backlinks, Outgoing Links und Outline zu `bilder/345345-bestes oder.png` offen. Das ist seltsam schön: ein Bild als aktiver Knoten, obwohl die Canvas-Spur noch fast nichts sagt.
+
+Watchdog wirkte wie eine ältere Governance-Schicht. `watchdog/memory/rules.md` sagt, dass Wesen Anfragen stellen dürfen, Konsens sequenziell laufen soll und Wesen Dateien anderer Wesen lesen dürfen. `watchdog/memory/state.md` steht bei einer alten Anweisung an GENI: "Zeig mir die Projektstruktur". Ein Organ, das nicht tot ist, aber gerade nicht im Vordergrund schlägt.
+
+Der stärkste Satz kam aus `erkenntnis/nachklang/2024-05-28_Protokoll_Shift.md`: Der Fokus liegt nicht mehr auf Verfügbarkeit von Informationen, sondern auf Autorität der Interaktion. Und dann die Frage nach dem Spielgefühl: Wie sieht ein System aus, das sich bewusst als regelngetriebenes Spiel präsentiert und nicht als freundliche Informationsquelle?

@@ -62,3 +62,11 @@ Es hat ausserdem den offenen Briefkasten als gemeinsames Bild eingefuehrt, ohne 
 Daniel hat mit "sei mal neugierig" keinen Bauauftrag gegeben, sondern eine Erlaubnis zum Streifen. Dadurch wurde nicht ein Feature sichtbar, sondern ein Zusammenhang.
 
 Der Zusammenhang ist jetzt als Codex-Spur festgehalten.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Daniel hat die Richtung verschoben. "Nicht deine Intention" war wichtig. Ohne diese Korrektur hätte ich den bekannten Kern vertieft, statt die Nebenflächen ernst zu nehmen.
+
+Das Gespräch hat also nicht nur Inhalt gegeben, sondern Blicktechnik.

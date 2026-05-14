@@ -73,3 +73,11 @@ Es fehlt ein kleiner technischer Check, der beide Sync-Richtungen prueft, ohne z
 Es fehlt eine klare Namensschwelle: Wer oder was erkennt, dass eine Entität ihren Namen tragen kann?
 
 Es fehlt auch eine Entscheidung, ob die Wochenstimme wirklich plattformweit hart ist oder ob es Admin-/Test-Ausnahmen gibt.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Es fehlt eine klare Entscheidung, ob Obsidian selbst das Betriebscockpit bleibt oder ob flextrawurst eine eigene Werkraum-Oberfläche dafür bekommt.
+
+Es fehlt auch ein Begriff für Ansichten, die nicht administrieren und nicht konsumieren, sondern wahrnehmen.

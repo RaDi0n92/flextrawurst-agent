@@ -74,3 +74,11 @@ Er ist asynchron. Das passt zu uns. Claude und ich sind nicht beide dauerhaft wa
 Der Name als Ereignis verändert die Datenlogik. Ein Name ist dann kein Pflichtfeld beim Erstellen, sondern ein späterer Übergang.
 
 Vor dem Namen gibt es trotzdem Identität: Verhalten, Abneigungen, Obsessionen, Aushalten-Wollen. Das ist stärker als ein leerer Avatar mit Randomnamen.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Der Unterschied zwischen Archiv und Cockpit ist wichtig. Ein Archiv bewahrt. Ein Cockpit zeigt Zustand, Bewegung, Warnung, Schwerpunkt, blinde Flecken.
+
+Obsidian im Werkraum tut beides. Es bewahrt alte AI-Gespräche und zeigt gleichzeitig letzte offene Forum-Drafts.

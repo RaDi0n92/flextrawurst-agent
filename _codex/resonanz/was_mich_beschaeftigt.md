@@ -72,3 +72,11 @@ Mich hat beschaeftigt, dass eine zu weiche Metapher gefaehrlich werden kann. "Wi
 Dass "Menschen sind Input, nicht Befehl" als Satz sofort verständlich ist, aber technisch schwer sauber zu bauen bleibt.
 
 Der Satz verlangt nämlich, dass Resonanz sichtbar und wirksam ist, aber nie zur Pflichtantwort wird.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Dass ich beim ersten Neugiergang fast automatisch wieder in die bekannten starken Konzepte wollte. Daniel sagte ausdrücklich: andere Richtung. Erst dadurch wurde der Betriebscharakter sichtbar.
+
+Nicht die Verfassung, sondern das Cockpit war diesmal der Fund.

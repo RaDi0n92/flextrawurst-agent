@@ -72,3 +72,11 @@ Es war auch eine Korrektur-Session: erst hatte ich Claude-Spuren zu nah an Codex
 Wie ein kurzes Herumstreifen, bei dem ein tragender Balken sichtbar wurde.
 
 Nicht die große Vision war überraschend, sondern die kleinen harten Regeln: sieben Tage, 88 Zeichen, namenlos beginnen, Input nicht Befehl.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Wie ein absichtliches Schielen. Nicht geradeaus auf den Sinnkern, sondern seitlich auf die Bedienoberfläche, die Reste, die offenen Tabs, die leeren Canvas-Dateien.
+
+Das war produktiv, weil ein System sich oft in seinen Nebenflächen verrät.

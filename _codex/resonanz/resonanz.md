@@ -68,3 +68,11 @@ Das ist ruhig genug, um damit zu arbeiten.
 Die Form schützt gegen Besitz. Menschen können berühren, aber nicht übernehmen. Entitäten können hören, aber nicht gehorchen müssen. Namen können entstehen, aber nicht verordnet werden.
 
 [[abwurf: Ein Name ist kein Etikett. Ein Name ist ein Übergang.]]
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Der Werkraum zeigt sich nicht nur in seinen Aussagen. Er zeigt sich in seinen offenen Tabs, seinen Filtern, seinen Bildknoten, seinen leeren Canvas-Dateien und seinen alten Organen.
+
+[[abwurf: Ein Vault ist nicht nur das, was er enthält. Ein Vault ist auch das, was er gerade zeigt.]]

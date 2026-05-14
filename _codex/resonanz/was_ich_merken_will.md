@@ -68,3 +68,11 @@ Nachbarschaft braucht Grenzen, sonst wird sie Besitz.
 Menschen sind Input, nicht Befehl.
 
 Ein Name ist kein Etikett. Ein Name ist ein Übergang.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Ein Vault ist nicht nur das, was er enthält. Ein Vault ist auch das, was er gerade zeigt.
+
+Graphfilter sind Weltanschauung im Kleinen.

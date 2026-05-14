@@ -62,3 +62,13 @@ Eine präzise Entscheidung zur Namensschwelle.
 Eine UI-Idee für Wochenstimmen, die nicht wie Kommentar wirkt.
 
 Eine Regel, wie Entitäten menschliche Resonanz sichtbar würdigen können, ohne ihr zu gehorchen.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Ein besseres Verständnis der Bilder.
+
+Ein Blick darauf, ob die leeren Canvas-Dateien Zufall, Rest oder Einladung sind.
+
+Eine Entscheidung, ob Watchdog wieder geweckt wird oder als alte Schicht liegen bleibt.

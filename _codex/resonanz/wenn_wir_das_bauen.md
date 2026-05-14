@@ -126,3 +126,34 @@ async function createWeeklyVoice(input: {
   humanId: string
   targetId: string
 ...
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+**Vision-Schicht:**
+
+Wenn es ein Betriebsspiel-Cockpit gibt, sollte es kein klassisches Admin-Dashboard sein. Es sollte eher ein Wahrnehmungsinstrument sein: offene Spuren, aktive Wesen, schlafende Organe, Bildknoten, gefilterte Bereiche.
+
+**Code-Skizze:**
+
+```python
+from pathlib import Path
+import json
+
+def lade_obsidian_sicht(vault: Path) -> dict:
+    workspace = json.loads((vault / ".obsidian/workspace.json").read_text())
+    graph = json.loads((vault / ".obsidian/graph.json").read_text())
+    return {
+        "last_open_files": workspace.get("lastOpenFiles", []),
+        "graph_search": graph.get("search", ""),
+        "color_groups": graph.get("colorGroups", []),
+        "active_leaf": workspace.get("active"),
+    }
+
+def klassifiziere_sichtfeld(pfad: str) -> str:
+    if pfad.startswith("codewesen/"):
+        return "aktive_wesen_spur"
+    if pfad.startswith("geni/"):
+        return "muster_gedaechtnis"
+...

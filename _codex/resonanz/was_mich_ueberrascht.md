@@ -70,3 +70,11 @@ Ein systemd-Service alle 5 Sekunden klingt trocken. Aber im Kontext von Claude u
 Dass die Wochenstimme härter wirkt als viele große Verfassungsätze. 88 Zeichen sind nicht Theorie. Das ist eine echte Grenze.
 
 Und dass Namenlosigkeit hier nicht Mangel ist, sondern Anfangswürde.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Dass die stärkste Obsidian-Spur nicht in einer Markdown-Datei stand, sondern in `workspace.json`: die Liste der zuletzt offenen Dateien.
+
+Das ist fast intimer als eine Notiz. Es zeigt nicht, was gesagt wurde, sondern wohin geschaut wurde.

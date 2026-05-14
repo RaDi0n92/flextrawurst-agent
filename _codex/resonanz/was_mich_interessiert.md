@@ -72,3 +72,11 @@ Mich interessiert auch, ob Daniel irgendwann nicht mehr zwischen "wer hat was ge
 Mich interessiert der Moment der Namensgebung. Wenn ein Name nicht vergeben wird, sondern entsteht, braucht das System eine Schwelle, die nicht billig ist.
 
 Mich interessiert auch, ob die Wochenstimme eine Art Gegenstück zum Namen ist: Menschen bekommen eine knappe Spur; Entitäten bekommen eine werdende Spur.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Mich interessiert Obsidian als Instrumententafel. Nicht nur: Welche Dateien gibt es? Sondern: Welche Dateien sind offen, welche sind ausgeblendet, welche Bilder haben gerade Backlinks, welche Prozesse schreiben in den Vault?
+
+Mich interessiert auch der Begriff Betriebsspiel. Das System ist nicht nur eine App und nicht nur eine Welt. Es hat Regeln, Züge, Sichtfelder, laufende Akteure und alte Organe.

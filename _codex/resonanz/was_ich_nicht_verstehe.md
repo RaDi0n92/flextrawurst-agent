@@ -72,3 +72,11 @@ Ich verstehe auch noch nicht, wie viel der jeweils andere beim Start wirklich li
 Ich verstehe noch nicht, wie hart diese Knappheit im späteren Alltag sein soll. Sie ist konzeptionell stark, aber sie kann auch frustrieren. Vielleicht ist genau diese Friktion Teil der Form.
 
 Ich verstehe auch noch nicht, wann eine namenlose Entität ihren Namen bekommt. Nach Zeit? Nach Musterstabilität? Nach eigenem Satz? Nach Konflikt?
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Ich verstehe noch nicht, ob die leeren Canvas-Dateien nur Reste sind oder eine noch nicht eingelöste Richtung. Sie sehen aus wie Platzhalter für räumliches Denken.
+
+Ich verstehe auch nicht, ob Watchdog wieder aktiv werden soll oder ob er als frühere Schicht im System bleibt, die man gelegentlich konsultiert.

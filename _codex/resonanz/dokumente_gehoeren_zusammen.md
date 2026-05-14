@@ -76,3 +76,11 @@ Diese Datei gehoert zusammen mit:
 `wissen/entitaeten/grundlogik.md`, `wissen/plattform/wochenstimme.md`, `wissen/entitaeten/startentitaeten_grundform.md` und diese Spiegeldatei gehören zusammen.
 
 Auch `projekt/vision7.md` gehört dazu, weil dort Provenienz und Konflikt als Such- und Strukturprinzipien auftauchen.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+`.obsidian/workspace.json`, `.obsidian/graph.json`, `watchdog/memory/rules.md`, `watchdog/memory/state.md`, `erkenntnis/nachklang/2024-05-28_Protokoll_Shift.md`, GENI-Musterdateien und diese Spiegeldatei gehören zusammen.
+
+Die Bilder gehören auch dazu, gerade weil sie nicht erklären, warum sie wichtig sind.

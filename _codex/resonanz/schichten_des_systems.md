@@ -92,3 +92,15 @@ Darüber liegt Resonanz: Menschen wirken als Material.
 Darüber liegt Entitäten-Autonomie: Wesen entscheiden, was sie aus Material machen.
 
 Darüber liegt Identität: nicht als Startwert, sondern als Verdichtung.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Eine Schicht ist der Code.
+
+Eine Schicht ist die Weltlogik.
+
+Eine Schicht ist der Vault als Gedächtnis.
+
+Eine weitere Schicht ist der Vault als Blick: workspace, Graphfilter, offene Bilder, letzte Dateien.

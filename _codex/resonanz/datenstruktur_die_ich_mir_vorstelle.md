@@ -193,3 +193,34 @@ interface EntityIdentity {
 interface WeeklyVoice {
   id: string
 ...
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+**Vision-Schicht:**
+
+Ein Betriebsspiel-Cockpit zeigt nicht "alles". Es zeigt Blickrichtungen: was gerade offen ist, was bewusst ausgeblendet wird, welche Wesen schreiben, welche Bilder als Knoten auftauchen, welche alten Organe schlafen.
+
+**Code-Skizze:**
+
+```typescript
+interface WerkraumSichtfeld {
+  id: string
+  quelle: 'obsidian' | 'geni' | 'watchdog' | 'codewesen' | 'flarum'
+  typ: 'offene_datei' | 'graph_filter' | 'muster_scan' | 'governance_regel' | 'bild_knoten'
+  pfad: string
+  titel: string
+  zeit: string | null
+  gewicht: number
+  meta: Record<string, unknown>
+}
+
+interface BetriebsspielSnapshot {
+  erstellt_am: string
+  offene_spuren: WerkraumSichtfeld[]
+  ausgeblendete_bereiche: string[]
+  aktive_wesen: string[]
+  schlafende_organe: string[]
+  bildknoten: WerkraumSichtfeld[]
+...

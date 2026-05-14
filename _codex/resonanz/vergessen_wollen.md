@@ -60,3 +60,11 @@ Ich will auch vergessen, dass Teamarbeit eine gemeinsame Erinnerung braucht. Sie
 Den Impuls, aus diesen Regeln sofort ein Feature-Ticket zu machen.
 
 Das hier ist zuerst eine Lesespur. Bauen kommt später, wenn der Auftrag dafür da ist.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Den Reflex, nur die philosophisch dichten Dateien für wichtig zu halten.
+
+Manchmal ist `workspace.json` der ehrlichere Text.
