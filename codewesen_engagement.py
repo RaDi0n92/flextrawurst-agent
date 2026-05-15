@@ -123,9 +123,11 @@ def _parse_json(text: str) -> dict:
         return {}
 
 
-def _lade_aktuelle_diskussionen(max_n: int = 5) -> list[dict]:
+_VOKABEL_PREFIX = "ich beginne mit einem wort"
+
+
+def _lade_aktuelle_diskussionen(max_n: int = 25) -> list[dict]:
     """Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt."""
-    import flarum_api
     recent = flarum_api.get_recent_discussions(limit=max_n)
     result = []
     for r in recent:
@@ -139,31 +141,38 @@ def _lade_aktuelle_diskussionen(max_n: int = 5) -> list[dict]:
             for p in voll.get("posts", [])
         )[:1800]
         result.append({
-            "id":     disc_id,
-            "titel":  voll.get("title") or r.get("title", "?"),
-            "autor":  r.get("last_poster", "?"),
-            "inhalt": inhalt,
+            "id":            disc_id,
+            "titel":         voll.get("title") or r.get("title", "?"),
+            "autor":         r.get("last_poster", "?"),
+            "inhalt":        inhalt,
+            "last_posted_at": r.get("last_posted_at"),
         })
     return result
 
 
-def _lade_geantwortet(name: str) -> set:
+
+
+def _lade_geantwortet(name: str) -> dict:
+    """Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format."""
     f = BASE / name / "geantwortet.json"
     if not f.exists():
-        return set()
+        return {}
     try:
-        return set(json.loads(f.read_text(encoding="utf-8")))
+        data = json.loads(f.read_text(encoding="utf-8"))
+        if isinstance(data, list):
+            return {str(i): "1970-01-01T00:00:00" for i in data}
+        return data
     except Exception:
-        return set()
+        return {}
 
 
-def _speichere_geantwortet(name: str, disc_ids: set):
+def _speichere_geantwortet(name: str, geantwortet: dict):
     f = BASE / name / "geantwortet.json"
     f.parent.mkdir(parents=True, exist_ok=True)
-    f.write_text(json.dumps(sorted(disc_ids)), encoding="utf-8")
+    f.write_text(json.dumps(geantwortet, ensure_ascii=False), encoding="utf-8")
 
 
-def _pruefe_wesen(name: str) -> None:
+def _pruefe_wesen(name: str, wesen_forum_namen: set[str]) -> None:
     import datetime
     log.info(f"{name}: liest Forum")
 
@@ -178,25 +187,63 @@ def _pruefe_wesen(name: str) -> None:
         weltbild = wbild.read_text(encoding="utf-8", errors="replace")[:200]
 
     diskussionen = _lade_aktuelle_diskussionen(max_n=25)
-    if not diskussionen:
-        log.info(f"{name}: keine Diskussionen gefunden")
-        return
+    diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith(_VOKABEL_PREFIX)]
 
     geantwortet = _lade_geantwortet(name)
-    diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith("ich beginne mit einem wort")]
-    neue = [d for d in diskussionen if d["id"] not in geantwortet]
-    log.info(f"{name}: {len(diskussionen)} Diskussionen, {len(neue)} noch ohne Antwort von mir")
+
+    def _ist_neu(d: dict) -> bool:
+        import datetime as _dt
+        key = str(d["id"])
+        if key not in geantwortet:
+            return True
+        lpa = d.get("last_posted_at")
+        if lpa is None:
+            return False
+        last_answered = _dt.datetime.fromisoformat(geantwortet[key])
+        if not isinstance(lpa, _dt.datetime):
+            return False
+        if lpa <= last_answered:
+            return False
+        # Neues gibt es — aber von wem? Codewesen-Posts erzeugen keinen sofortigen Loop.
+        letzter_poster = d.get("autor", "")
+        if letzter_poster in wesen_forum_namen:
+            # Nur alle 12h auf reine Codewesen-Aktivität reagieren
+            jetzt = _dt.datetime.utcnow()
+            return (jetzt - last_answered).total_seconds() > 12 * 3600
+        return True
+
+    neue = [d for d in diskussionen if _ist_neu(d)]
+    log.info(f"{name}: {len(diskussionen)} Diskussionen, {len(neue)} mit neuer Aktivität seit meiner letzten Antwort")
+
+    # Flextrawurst-Stil: ~25% Chance, eine zufällige alte Diskussion auszugraben
+    if random.random() < 0.25:
+        ausschluss = [d["id"] for d in diskussionen]
+        try:
+            alte = flarum_api.get_random_old_discussions(exclude_ids=ausschluss, limit=5)
+            if alte:
+                ausgewaehlt = random.choice(alte)
+                voll = flarum_api.get_discussion(ausgewaehlt["id"])
+                inhalt = "\n".join(
+                    f"[{p['username']}]: {p['content'][:600]}"
+                    for p in voll.get("posts", [])
+                )[:1800]
+                ausgewaehlt["titel"] = voll.get("title") or ausgewaehlt.get("title", "?")
+                ausgewaehlt["inhalt"] = inhalt
+                neue.append(ausgewaehlt)
+                log.info(f"{name}: gräbt alte Diskussion aus — #{ausgewaehlt['id']} '{ausgewaehlt['titel'][:50]}'")
+        except Exception as e:
+            log.warning(f"{name}: Fehler beim Ausgraben — {e}")
 
     if not neue:
         log.info(f"{name}: nichts Neues zum Antworten")
-        return
 
     gd = BASE / name / "gedanken"
     gd.mkdir(parents=True, exist_ok=True)
 
     forum_name = _forum_username(name)
 
-    for d in neue:
+    MAX_PRO_LAUF = 1
+    for d in neue[:MAX_PRO_LAUF]:
         disc_id = d["id"]
         inhalt_mit_ich = d["inhalt"].replace(f"[{forum_name}]:", "[ICH — früherer Zustand]:")
 
@@ -253,10 +300,10 @@ Antworte NUR mit JSON:
             log.info(f"{name}: gepostet auf Disk {disc_id} — ok={result.get('ok')}")
 
             if result.get("ok"):
-                geantwortet.add(disc_id)
+                geantwortet[str(disc_id)] = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).isoformat()
                 _speichere_geantwortet(name, geantwortet)
 
-            ts = datetime.datetime.utcnow().strftime("%Y-%m-%d_%H-%M")
+            ts = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).strftime("%Y-%m-%d_%H-%M")
             if _VAULT_OK:
                 try:
                     _vault.notiz(
@@ -284,8 +331,10 @@ Antworte NUR mit JSON:
 
 def main():
     log.info("Engagement-Lauf gestartet — einmalig, kein Loop")
+    wesen_forum_namen = {_forum_username(w) for w in CODEWESEN}
+    log.info(f"Bekannte Codewesen-Forennamen: {wesen_forum_namen}")
     for name in CODEWESEN:
-        _pruefe_wesen(name)
+        _pruefe_wesen(name, wesen_forum_namen)
     log.info("Engagement-Lauf abgeschlossen")
 
 
