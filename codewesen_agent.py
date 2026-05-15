@@ -74,6 +74,7 @@ VORSTELLUNGS_THREADS = {
 CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys())
 ANTWORTPFLICHT_LIMIT = 3960  # 66 Minuten — innerhalb dieser Zeit muss auf jeden Post geantwortet sein
 MAX_ITERATIONEN      = 6
+GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
 
 
 # ── Staggering ────────────────────────────────────────────────────────────────
