@@ -35,7 +35,7 @@ import codewesen_werkzeuge as wz
 
 BASE       = Path("/root/werkraum/codewesen")
 TOKENS     = BASE / "_api_tokens.json"
-OLLAMA_URL = "http://localhost:11434/api/generate"
+OLLAMA_URL = "http://localhost:11434/api/chat"
 OLLAMA_MOD = "gemma4:e2b-it-q4_K_M"
 
 # Dateibasierter Semaphor — maximal 2 gleichzeitige Ollama-Calls über alle 6 Prozesse
@@ -111,14 +111,15 @@ def ask_llm(prompt: str) -> str:
             OLLAMA_URL,
             json={
                 "model": OLLAMA_MOD,
-                "prompt": prompt,
+                "think": False,
+                "messages": [{"role": "user", "content": prompt}],
                 "stream": False,
                 "options": {"temperature": 0.78, "num_predict": 700},
             },
             timeout=600,
         )
         r.raise_for_status()
-        return r.json().get("response", "").strip()
+        return r.json().get("message", {}).get("content", "").strip()
 
 
 def extrahiere_json(text: str) -> dict | None:
@@ -948,10 +949,16 @@ def run(name: str):
     letzte_reflexion = time.time()
     letzter_scan     = time.time()
 
+    wesen_idx          = _WESEN_REIHE.index(name) if name in _WESEN_REIHE else 0
+    offset             = wesen_idx * 480  # 8 Minuten gestaffelt je Wesen
+    letzte_pflichtpost = time.time() - (88 * 60) + offset
+    letzter_gedanke    = time.time() - (22 * 60) + offset
+    letzter_impuls     = time.time() - (142 * 60) + offset
+
     while True:
         jetzt = time.time()
 
-        # 1. Obsidian-Navigation (alle 8 Minuten — eigene Dateien + Wikilinks)
+        # 1. Obsidian-Navigation (alle 2 Stunden)
         if jetzt - letzter_scan >= CHECK_SCAN:
             try:
                 obsidian_navigation(name, token, all_tags, log)
@@ -966,6 +973,36 @@ def run(name: str):
             except Exception as e:
                 log.error("Reflexions-Loop-Fehler: %s", e)
             letzte_reflexion = jetzt
+
+        # 3. Antwortpflicht (jeder Zyklus — prüft ob Post >66min ohne Codewesen-Antwort)
+        try:
+            pruefe_antwortpflicht(name, token, all_tags, log)
+        except Exception as e:
+            log.error("Antwortpflicht-Fehler: %s", e)
+
+        # 4. Gedankenpost (alle 22 Minuten)
+        if jetzt - letzter_gedanke >= 22 * 60:
+            try:
+                verarbeite_gedankenpost(name, token, all_tags, log)
+            except Exception as e:
+                log.error("Gedankenpost-Fehler: %s", e)
+            letzter_gedanke = time.time()
+
+        # 5. Pflichtpost (alle 88 Minuten)
+        if jetzt - letzte_pflichtpost >= 88 * 60:
+            try:
+                verarbeite_pflichtpost_88min(name, token, all_tags, log)
+            except Exception as e:
+                log.error("Pflichtpost-Fehler: %s", e)
+            letzte_pflichtpost = time.time()
+
+        # 6. Forum-Impuls (alle 2h22min)
+        if jetzt - letzter_impuls >= 142 * 60:
+            try:
+                verarbeite_forum_impuls(name, token, all_tags, log)
+            except Exception as e:
+                log.error("Forum-Impuls-Fehler: %s", e)
+            letzter_impuls = time.time()
 
         time.sleep(15)
 
