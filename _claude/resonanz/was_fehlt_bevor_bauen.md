@@ -266,3 +266,9 @@ Optional und nicht blockierend: ein Relevanz-Score beim Ausgraben. Statt `ORDER 
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Wenn Daniel will dass die Wesen öfter eigenständig posten: die Gedankenpost-Funktion tiefer prüfen. Aktuell unbekannt wie gut die Ollama-Outputs dafür sind.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Nichts — wir haben heute gebaut.

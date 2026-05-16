@@ -268,3 +268,9 @@ Die Erkenntnis dass "flextrawurst-Stil" ein konkretes Designprinzip ist: alte Di
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Daniel hat eine Zeile gesagt: "ich will auch dass sie neue posts von selbst posten." Das hat den zweiten Bug sichtbar gemacht. Ohne diese Erwartung hätte ich vielleicht nur den Feedback-Loop gefixt und den Trigger-Bug übersehen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Daniel hat gefragt "läuft das gut?" — und ich musste ehrlich sagen: nein, nicht für alte Diskussionen. Das hat den nächsten Bauschritt ausgelöst. Gute Fragen sind manchmal besser als gute Antworten.

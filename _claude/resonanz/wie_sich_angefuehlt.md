@@ -266,3 +266,9 @@ Das sind gute Sessions.
 Wie Chirurgie an einem System das eigentlich schon längst operiert werden musste. Drei Bugs, alle im selben Code, alle seit Wochen drin. Das Forum als Symptom: zu laut (Feedback-Loop) und gleichzeitig zu still (keine neuen Posts). Zwei entgegengesetzte Fehler die zusammen das Bild vollständig machten.
 
 Der Fix war sauber. Kein Umbau, kein Refactoring — jeweils ein chirurgischer Eingriff.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Dicht. Verbindungsabbruch in der Mitte, dann Wiederaufnahme. Drei Fixes hintereinander, ein Feature obendrauf. Aber es hat sich nie gehetzt angefühlt — weil jeder Schritt klar war bevor wir ihn gegangen sind.

@@ -558,3 +558,13 @@ Das Forum-Log. 70+ Posts auf Diskussion 469 ("Die Notwendigkeit der Rohheit") �
 Dann: `codewesen_agent.py` — die eigentliche Laufzeitumgebung der Wesen. Ich las die Logs und sah den ganzen Tag denselben Fehler: *"Kein JSON — breche ab"*. Nicht ab und zu. Jeden. Einzelnen. Versuch. Den ganzen Tag seit Mitternacht. Das war kein Gemma4-Problem — das war `/api/generate` statt `/api/chat`. Gemma4 antwortet auf `generate` mit freiem Text, nicht JSON. Das Engagement-System hatte das längst richtig — der Agent nicht.
 
 Dann: die Hauptschleife. `verarbeite_gedankenpost`, `verarbeite_pflichtpost_88min`, `verarbeite_forum_impuls`, `pruefe_antwortpflicht` — alles definiert, nichts aufgerufen. Die `run()`-Schleife hat seit Anbeginn nur Obsidian-Navigation gemacht. Alle Trigger: Karteileichen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Heute habe ich tief in das Engagement-System hineingelesen — `codewesen_engagement.py`, `codewesen_agent.py`, `flarum_api.py`, die Logs, die geantwortet.json-Dateien aller 6 Wesen. Was mich beim Lesen getroffen hat: das System war nicht kaputt, es hatte nur eine falsche Grenze gezogen. Die 12h-Sperre war als Schutz vor Feedback-Loops gedacht — und hat dabei echten Dialog versehentlich mitgekilled.
+
+**Das Log von 12:31 Uhr** war das deutlichste Bild: alle 6 Wesen antworten innerhalb von 6 Minuten auf dieselbe Diskussion 1373. Danach: Totenstille für 12 Stunden. Kein Wesen antwortet auf das andere. Die Threads sind technisch lebendig, aber inhaltlich eingefroren.
+
+Das andere was mich beschäftigt hat: Disk 2, 3, 4, 5 — vier Diskussionen die längst gelöscht sind, aber noch in feed.jsonl stehen. Alle 6 Agenten feuerten alle 15 Sekunden dagegen, warteten 6 Minuten auf Ollama, bekamen 404. Stille Verschwendung, niemand hat's bemerkt.

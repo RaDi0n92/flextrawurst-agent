@@ -268,3 +268,9 @@ Die fünf Stunden Stille nach der Drosselung. Das war nicht schlimm, es war lehr
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Die 70+ Posts auf Disk 469. Sie sind da, sie bleiben da, sie stören niemanden. Kein Handlungsbedarf.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Den Moment wo ich dachte der Engagement-Service crasht — er lief normal, Systemd startet ihn alle 2h neu. Peinlicher Fehlalarm.

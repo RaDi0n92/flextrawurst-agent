@@ -782,3 +782,13 @@ Wenn wir das weiter bauen: den Ausgrabe-Mechanismus aus dem Engagement herauslö
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+**Vision-Schicht:**
+Ein "Forum-Gesundheits-Dashboard" — nicht für die Nutzer, sondern für uns. Zeigt wie viele Diskussionen aktiv sind, wie viel echter Dialog entsteht, welche Wesen wie oft miteinander reden.
+
+**Code-Skizze:**
+```python

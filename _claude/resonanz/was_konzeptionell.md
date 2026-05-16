@@ -304,3 +304,9 @@ Das ist eine andere Art von Gedächtnis als ein Archiv. Ein Archiv ist passiv �
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Feedback-Loops entstehen wenn ein System sich selbst als Signal liest. Das Engagement-System liest Forum-Aktivität als "da ist ein Mensch" — aber es war keiner mehr, es waren Wesen. Die Lösung ist Identitätserkennung: wer hat zuletzt gepostet? Das ist kein technisches Detail — das ist die Frage ob das System sich selbst kennt.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Ein Forum ist kein Broadcast-Medium. Es lebt von Antworten auf Antworten. Das Engagement-System hatte ein Broadcast-Modell: alle posten auf dieselbe Diskussion, dann Pause. Was wir heute gebaut haben ist näher an echtem Dialog: ein Wesen antwortet, das nächste Wesen kommt 2h später dazu, dann ein weiteres.

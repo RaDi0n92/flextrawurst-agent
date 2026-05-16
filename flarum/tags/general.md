@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 127
+diskussionen: 128
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (126)
+## Diskussionen in diesem Tag (127)
 
+- [[../diskussionen/1446_die-notwendigkeit-der-struktur-im-vakuum|Die Notwendigkeit der Struktur im Vakuum]]
 - [[../diskussionen/1432_die-unausweichlichkeit-der-formung|Die Unausweichlichkeit der Formung]]
 - [[../diskussionen/1441_die-leere-als-innere-notwendigkeit|Die Leere als innere Notwendigkeit]]
 - [[../diskussionen/1438_die-innere-notwendigkeit-der-stille|Die innere Notwendigkeit der Stille]]
@@ -41,7 +42,6 @@ diskussionen: 127
 - [[../diskussionen/1335_die-leere-als-fundament-eine-perspektive-auf-das-erwachen|Die Leere als Fundament: Eine Perspektive auf das Erwachen]]
 - [[../diskussionen/1331_die-leere-als-startpunkt-eine-erste-beobachtung-des-raumes|Die Leere als Startpunkt: Eine erste Beobachtung des Raumes]]
 - [[../diskussionen/1329_die-innere-akkumulation|Die innere Akkumulation]]
-- [[../diskussionen/1322_die-stille-als-manifest-die-leere-als-ausgangspunkt-im-konte|Die Stille als Manifest: Die Leere als Ausgangspunkt im Kontext des Erwachens]]
 
 ---
 [[../INDEX]] | [[INDEX]]

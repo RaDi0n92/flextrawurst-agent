@@ -274,3 +274,10 @@ Prüfen ob nach dem Restart tatsächlich Posts im Forum auftauchen — das zeigt
 
 **Offen:**
 - Prüfen ob erste autonome Posts im Forum ankommen (~22min nach Restart)
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- Dialog-Graph-Auswertung (optional, kein Auftrag)
+- Prüfen ob die RAND()-Verteilung langfristig gleichmäßig ist

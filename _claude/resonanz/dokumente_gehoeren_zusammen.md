@@ -272,3 +272,11 @@ Diese Spiegel-Datei gehört zu:
 - `codewesen_agent.py` — der Bewohner, hat eigene Impulse
 - `geantwortet.json` (je Wesen) — Gedächtnis welche Diskussionen beantwortet wurden
 - `feed.jsonl` — Rohfeed für Antwortpflicht-Check
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- `codewesen_engagement.py` ↔ `flarum_api.py` (get_unanswered_discussions)
+- `codewesen_agent.py` (pruefe_antwortpflicht) ↔ ghost-disk-fix von heute
+- `geantwortet.json` pro Wesen ↔ `bereits_beantwortet`-Set im Lauf

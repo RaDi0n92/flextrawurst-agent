@@ -270,3 +270,9 @@ Nichts akut. Aber beim nächsten Mal die Logs prüfen ob die ausgegrabenen Antwo
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Nichts mehr für heute. Beide Fixes sind committed und die Services laufen. Daniel prüft beim nächsten Forum-Besuch ob Posts kommen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Nichts Dringendes. Der 30er-Catchup läuft, die neuen Parameter sind aktiv.

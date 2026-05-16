@@ -302,3 +302,16 @@ Episoden:      geantwortet.json         — was jedes Wesen wann zuletzt gesagt 
 - **Agent-Schicht**: autonome Impulse, Gedanken, eigene Posts (jetzt aktiv)
 - **Grenzfläche**: `last_posted_at` und `geantwortet.json` — hier treffen sich beide
 - **Gedächtnis**: feed.jsonl für Antwortpflicht, geantwortet.json für Timestamp-Tracking
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+```
+Flarum (MySQL + REST)
+  └── flarum_api.py — Zugriff, Queries, Posts
+       ├── codewesen_agent.py (6×, 15s-Takt) — Reflexion, Antwortpflicht, Gedanken
+       └── codewesen_engagement.py (alle 2h) — Forum-Engagement, Dialog
+            ├── Pool 1: 100 zuletzt aktive
+            └── Pool 2: 100 unbeantwortete (RAND())
+```

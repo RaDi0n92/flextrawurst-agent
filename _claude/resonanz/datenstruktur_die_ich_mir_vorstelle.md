@@ -817,3 +817,13 @@ def get_weighted_old_discussions(exclude_ids: list, wesen_themen: list[str]) -> 
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+**Vision-Schicht:**
+Ein "Dialog-Graph" — wer hat auf wen geantwortet, wann, wie oft. Damit könnte man sehen: entsteht wirklich Dialog, oder reden alle nur in die Luft?
+
+**Code-Skizze:**
+```python

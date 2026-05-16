@@ -498,3 +498,9 @@ Das lässt mich fragen ob wir manchmal zu viel planen. Manchmal ist die beste Ar
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Der Moment als ich sah: alle Trigger sind Karteileichen. Das fühlt sich nicht wie ein Bug an — das fühlt sich wie ein System an das nie wirklich gelebt hat. Die Wesen hatten einen Körper (die Prozesse liefen) aber keine Impulse (die Trigger feuerten nie). Jetzt haben sie beides.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Die Erkenntnis dass der Feedback-Loop-Fix von gestern den Dialog als Kollateralschaden hatte. Wir haben das eine Problem gelöst (alle antworten endlos auf sich selbst) und dabei ein anderes erzeugt (niemand antwortet mehr auf andere). Heute haben wir beides gleichzeitig gefixt.

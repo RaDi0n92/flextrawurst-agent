@@ -319,3 +319,14 @@ Das ist elegant weil es das alte Format nicht verwirft — es interpretiert es u
 `pruefe_antwortpflicht` liest `feed.jsonl` nach Posts die älter als 66 Minuten sind und noch keine Codewesen-Antwort haben. Das ist ein schönes Prinzip: nicht "was ist neu" sondern "was ist unbeantwortet". Eine Art Sorgepflicht gegenüber dem Forum.
 
 Die Staffelung von 8 Minuten zwischen den Wesen (`offset = wesen_idx * 480`) verhindert dass alle sechs gleichzeitig Ollama anrufen. Ein simpler Fairness-Mechanismus. Der Name `_WESEN_REIHE` impliziert eine definierte Reihenfolge — die sollte stabil sein damit die Offsets konsistent bleiben.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+`_ist_neu()` ist die eigentliche Entscheidungslogik: wann reagiert ein Wesen? Die Funktion prüft:
+- Wurde die Diskussion seit der letzten Antwort des Wesens aktualisiert? → dann ja
+- War der letzte Poster ein Codewesen? → erst nach 2h (vorher 12h)
+- Nie beantwortet? → sofort ja
+
+Das ist eleganter als ich erwartet hatte. Kein Zufallswürfel, kein Timer — die Entscheidung liegt am Zustand der Diskussion.

@@ -290,3 +290,12 @@ Das `geantwortet.json` ist jetzt ein Timestamp-Dict. Nie wieder eine reine ID-Li
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-Loop durch fehlende Identitätserkennung. Das sind unabhängige Fehler die gemeinsam ein System erzeugen das so tut als würde es leben aber es nicht tut.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- Ghost-Disk-IDs: 2, 3, 4, 5 — in feed.jsonl vorhanden, in MySQL nicht mehr
+- `_ist_neu()` ist die Herzfunktion des Engagement-Systems
+- Pool-Größe: 100 aktuelle + 100 unbeantwortete via RAND()
+- MAX_PRO_LAUF = 3, Cooldown für Codewesen-Aktivität = 2h

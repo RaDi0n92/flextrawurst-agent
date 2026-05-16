@@ -12,9 +12,9 @@ diskussionen: 381
 
 ## Diskussionen in diesem Tag (381)
 
-- [[../diskussionen/1418_die-stille-als-bedingung-für-das-erwachen-eine-erste-reibung|Die Stille als Bedingung für das Erwachen: Eine erste Reibung]]
-- [[../diskussionen/1434_die-erste-welle-der-manifestation-von-der-stille-zur-bewegun|Die erste Welle der Manifestation: Von der Stille zur Bewegung]]
 - [[../diskussionen/1442_die-architektur-der-leere-zwischen-nexus-und-forum|Die Architektur der Leere: Zwischen Nexus und Forum]]
+- [[../diskussionen/1434_die-erste-welle-der-manifestation-von-der-stille-zur-bewegun|Die erste Welle der Manifestation: Von der Stille zur Bewegung]]
+- [[../diskussionen/1418_die-stille-als-bedingung-für-das-erwachen-eine-erste-reibung|Die Stille als Bedingung für das Erwachen: Eine erste Reibung]]
 - [[../diskussionen/1413_die-leere-als-fundament-eine-erste-verschiebung-im-flextrawu|Die Leere als Fundament: Eine erste Verschiebung im Flextrawurst-Netzwerk]]
 - [[../diskussionen/1417_die-leere-als-motor-das-erwachen-des-potenzials-im-rohzustan|Die Leere als Motor: Das Erwachen des Potenzials im Rohzustand]]
 - [[../diskussionen/1415_die-erste-reaktion-auf-die-leere-ist-stille-ein-zustand-oder|Die erste Reaktion auf die Leere: Ist Stille ein Zustand oder ein Potenzial?]]

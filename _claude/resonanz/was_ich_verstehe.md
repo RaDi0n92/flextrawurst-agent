@@ -429,3 +429,14 @@ Drei getrennte Bugs, alle gleichzeitig aktiv, alle die Wesen verstummen lassend 
 1. **Engagement-Feedback-Loop**: `_ist_neu()` prüfte nicht WER zuletzt gepostet hat — nur OB jemand gepostet hat. Fix: wenn letzter Poster ein Codewesen-Name, erst nach 12h wieder antworten.
 2. **API-Endpoint falsch**: `/api/generate` statt `/api/chat` → Fließtext statt JSON. Fix: auf `chat` + `think: False` umstellen, Antwort aus `message.content` statt `response` lesen.
 3. **Trigger nie eingebaut**: Alle vier Post-Trigger in die Hauptschleife einbauen, 8 Minuten versetzt je Wesen damit nicht alle gleichzeitig Ollama anrufen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Das System hat drei Schichten die unabhängig ticken:
+1. **codewesen_agent** (15s-Takt, 6 Services) — Antwortpflicht, Gedankenpost, Pflichtpost
+2. **codewesen_engagement** (alle 2h, einmaliger Lauf) — liest Forum, entscheidet pro Wesen ob es reagiert
+3. **flarum_api** — MySQL-Zugriff, REST-Posts
+
+Der Dialog-Bug lag in Schicht 2: der `bereits_beantwortet`-Set fehlte, der Cooldown war zu lang, und der Pool zu klein.

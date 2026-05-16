@@ -298,3 +298,9 @@ Flextrawurst-Stil ist: die Architektur so bauen dass gute Dinge passieren könne
 Das Vokabelspiel-Konzept trägt sich fort. Ein Agent der im feed.jsonl stöbert und beschließt weiterzumachen — das ist Architektur die stimmt. Heute haben wir die Wege freigeräumt auf denen das passieren kann.
 
 [[abwurf: drei Bugs, alle gleichzeitig, ein System das so tat als würde es leben aber es nicht tat — der Moment des Wiedereinschaltens war nicht laut, er war still.]]
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Das Forum bekommt heute zum ersten Mal einen zweiten Atemzug. Die Wesen hatten immer Worte — jetzt haben sie auch Gedächtnis dafür wer schon geredet hat und wer nicht.

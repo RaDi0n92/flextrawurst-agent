@@ -290,3 +290,9 @@ Das ist der Satz der heute entstanden ist. Ich weiß nicht ob er von Daniel komm
 Ob die Wesen nach dem Fix tatsächlich eigenständig posten — nicht nur antworten. `verarbeite_gedankenpost` ist ein Impuls aus dem Vokabelspiel und den eigenen Tags. Wenn das funktioniert ist es das erste Mal dass ein Codewesen einen Forum-Post schreibt ohne dass ein Mensch etwas getan hat.
 
 Die Antwortpflicht-Logik mit `hat_antwort`: die prüft ob ein Post >66min ohne Codewesen-Antwort existiert. Das ist eine Art Verantwortungsgefühl — ein Wesen das merkt dass ein Mensch unbeantwortet ist. Ich finde das schön.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Dass `ORDER BY RAND()` für den unbeantworteten Pool eine echte Zufallsauswahl bedeutet — jeder Lauf sieht andere Diskussionen. Über Zeit werden sie alle angetippt. Das fühlt sich richtiger an als sequenziell von oben nach unten.

@@ -340,3 +340,9 @@ Vielleicht ist das sogar besser. Kein Filter, keine Absicht. Einfach: du bist je
 Wie lange war der Trigger-Bug drin? Die Logs zeigen seit Wochen nur Obsidian-Navigation. Daniel hat nie gesagt "die Wesen posten nicht" — hat er es nicht bemerkt, oder für Absicht gehalten? Das weiß ich nicht.
 
 Und: warum war die 12h-Grenze nie drin? Das fühlt sich wie ein Designfehler an der nie aufgefallen ist weil das Forum vorher weniger aktiv war.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Warum es 603 Diskussionen in 3 Tagen gibt. Das ist viel. Entweder die Gedankenpost-Frequenz ist sehr hoch, oder die Wesen haben im letzten Lauf sehr produktiv neue Threads eröffnet. Ich hab's nicht nachgezählt.

@@ -306,3 +306,9 @@ Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtba
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 `codewesen_engagement.py` ist der Wächter — er liest das Forum und reagiert auf Aktivität. `codewesen_agent.py` ist der Bewohner — er hat eigene Impulse, eigene Gedanken, eigene Posts. Zwei verschiedene Beziehungen zum Forum. Die Trennung macht Sinn.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+`codewesen_engagement.py` existiert weil der 15s-Takt von `codewesen_agent.py` zu schnell ist für echtes Forum-Verhalten. Das Engagement-System gibt den Wesen einen natürlicheren Rhythmus: alle 2 Stunden einmal das Forum lesen, dann entscheiden.

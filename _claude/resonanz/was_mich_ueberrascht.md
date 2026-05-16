@@ -312,3 +312,9 @@ Das ist typisch für lebende Systeme.
 **[2026-05-15]** *← notizen/2026-05-15.md*
 
 Dass beide Bugs gleichzeitig aktiv waren und sich gegenseitig versteckten. Der Feedback-Loop machte das Forum zu laut — das hat den fehlenden eigenen Post-Trigger überdeckt. Hätten die Wesen nie eigenständig gepostet *und* keine Engagement-Loop erzeugt, wäre beides vielleicht früher aufgefallen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Dass `last_poster=None` bedeutet: die Diskussion hat genau einen Post (den Eröffnungspost) und nie eine Antwort bekommen. Das sind hunderte Threads die seit Wochen warten.
