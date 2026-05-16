@@ -186,7 +186,39 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
     if wbild.exists():
         weltbild = wbild.read_text(encoding="utf-8", errors="replace")[:200]
 
-    diskussionen = _lade_aktuelle_diskussionen(max_n=200)
+    # Pool 1: die 100 zuletzt aktiven
+    aktuelle = _lade_aktuelle_diskussionen(max_n=100)
+
+    # Pool 2: 100 zufällige wo noch kein Codewesen geantwortet hat
+    alle_forum_namen = list({_forum_username(w) for w in CODEWESEN})
+    unbeantwortete_roh = flarum_api.get_unanswered_discussions(alle_forum_namen, limit=100)
+    unbeantwortete = []
+    for r in unbeantwortete_roh:
+        disc_id = int(r["id"])
+        try:
+            voll = flarum_api.get_discussion(disc_id)
+        except Exception:
+            continue
+        inhalt = "\n".join(
+            f"[{p['username']}]: {p['content'][:600]}"
+            for p in voll.get("posts", [])
+        )[:1800]
+        unbeantwortete.append({
+            "id":             disc_id,
+            "titel":          voll.get("title") or r.get("title", "?"),
+            "autor":          r.get("last_poster", "?"),
+            "inhalt":         inhalt,
+            "last_posted_at": r.get("last_posted_at"),
+        })
+
+    # Mischen: bekannte IDs deduplizieren
+    gesehen_ids: set[int] = {d["id"] for d in aktuelle}
+    for d in unbeantwortete:
+        if d["id"] not in gesehen_ids:
+            aktuelle.append(d)
+            gesehen_ids.add(d["id"])
+
+    diskussionen = aktuelle
     diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith(_VOKABEL_PREFIX)]
 
     geantwortet = _lade_geantwortet(name)

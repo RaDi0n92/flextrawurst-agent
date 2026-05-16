@@ -200,6 +200,28 @@ def get_recent_discussions(tag_id: Optional[str] = None, limit: int = 20) -> lis
     return [dict(r) for r in rows]
 
 
+def get_unanswered_discussions(codewesen_usernames: list[str], limit: int = 100) -> list:
+    """Diskussionen wo kein Codewesen als letzter Poster steht — zufällig gemischt."""
+    if not codewesen_usernames:
+        return []
+    placeholders = ",".join(["%s"] * len(codewesen_usernames))
+    conn = pymysql.connect(**DB_CONFIG)
+    with conn.cursor() as cur:
+        cur.execute(f"""
+            SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                   u.username AS last_poster
+            FROM discussions d
+            LEFT JOIN users u ON u.id = d.last_posted_user_id
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+              AND (u.username IS NULL OR u.username NOT IN ({placeholders}))
+            ORDER BY RAND()
+            LIMIT %s
+        """, (*codewesen_usernames, limit))
+        rows = cur.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
 # ── Schreiben via REST API ─────────────────────────────────────────────────────
 
 def post_reply(discussion_id: int, content: str, token_or_username: str) -> dict:
