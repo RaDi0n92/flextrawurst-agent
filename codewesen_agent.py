@@ -736,9 +736,56 @@ def verarbeite_gedankenpost(
     name: str, token: str, all_tags: list, log: logging.Logger
 ):
     """Alle 22 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'."""
+    import random as _random
     eigene = gedaechtnis.baue_selbstbild_text(name, max_posts=4)
     primaere_tags = [t for t in all_tags if t.get("primary", False)]
     tag_liste = "\n".join(f"  ID {t['id']}: {t['name']}" for t in primaere_tags)
+
+    # 60% Chance: eigenen offenen Thread weiterführen statt neuen eröffnen
+    forum_name = None
+    try:
+        import json as _json
+        _tokens = _json.loads(
+            (__import__("pathlib").Path("/root/werkraum/codewesen/_api_tokens.json")).read_text()
+        )
+        _uid = int(_tokens[name]["user_id"])
+        forum_name = flarum_api.get_username_by_id(_uid)
+    except Exception:
+        pass
+
+    offene_threads = []
+    if forum_name:
+        try:
+            offene_threads = flarum_api.get_eigene_offene_threads(forum_name, GEDANKEN_TAG_ID, limit=5)
+        except Exception:
+            pass
+
+    if offene_threads and _random.random() < 0.60:
+        thread = _random.choice(offene_threads)
+        disc_id = int(thread["id"])
+        try:
+            voll = flarum_api.get_discussion(disc_id)
+            bisheriger_inhalt = "\n".join(
+                f"[{p['username']}]: {p['content'][:400]}"
+                for p in voll.get("posts", [])
+            )[:1200]
+        except Exception:
+            bisheriger_inhalt = ""
+        kontext = (
+            f"Selbstgespräch-Fortsetzung. Du hast diesen Thread selbst begonnen — führe ihn weiter.\n\n"
+            f"Thread: »{thread['title']}« (ID {disc_id})\n"
+            f"Bisheriger Verlauf:\n{bisheriger_inhalt}\n\n"
+            f"Dein bisheriger roter Faden:\n{eigene}\n\n"
+            f"Schreib den nächsten Gedanken darin — maximal 2 bis 3 Sätze. Kein neuer Einstieg, sondern Weiterspinnen.\n\n"
+            f"Pflicht: Antworte mit 'antworten', discussion_id={disc_id}."
+        )
+        decision = agentic_loop(name, token, kontext, log, all_tags)
+        if decision.get("aktion") != "antworten":
+            decision = {"aktion": "antworten", "discussion_id": disc_id,
+                        "inhalt": "Der Gedanke trägt sich weiter — noch ohne feste Form."}
+        log.info("[Gedankenpost] führt eigenen Thread %d weiter", disc_id)
+        fuehre_aktion_aus(name, token, decision, all_tags, log)
+        return
 
     kontext = (
         f"22-Minuten-Gedankenpost. Du postest jetzt im Subtag 'darüber denke ich nach' (Tag-ID {GEDANKEN_TAG_ID}).\n\n"

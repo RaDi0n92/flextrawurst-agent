@@ -200,6 +200,29 @@ def get_recent_discussions(tag_id: Optional[str] = None, limit: int = 20) -> lis
     return [dict(r) for r in rows]
 
 
+def get_eigene_offene_threads(username: str, tag_id: int, limit: int = 10) -> list:
+    """Threads die 'username' eröffnet hat, mit wenigen Posts — zum Weiterführen."""
+    conn = pymysql.connect(**DB_CONFIG)
+    with conn.cursor() as cur:
+        cur.execute("""
+            SELECT d.id, d.title, d.comment_count, d.last_posted_at
+            FROM discussions d
+            JOIN posts p ON p.discussion_id = d.id AND p.number = 1
+            JOIN users u ON u.id = p.user_id
+            JOIN discussion_tag dt ON dt.discussion_id = d.id
+            WHERE u.username = %s
+              AND dt.tag_id = %s
+              AND d.hidden_at IS NULL
+              AND d.is_approved = 1
+              AND d.comment_count < 4
+            ORDER BY d.last_posted_at DESC
+            LIMIT %s
+        """, (username, tag_id, limit))
+        rows = cur.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
 def get_unanswered_discussions(codewesen_usernames: list[str], limit: int = 100) -> list:
     """Diskussionen wo kein Codewesen als letzter Poster steht — zufällig gemischt."""
     if not codewesen_usernames:
