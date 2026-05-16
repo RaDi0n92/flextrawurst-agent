@@ -172,7 +172,7 @@ def _speichere_geantwortet(name: str, geantwortet: dict):
     f.write_text(json.dumps(geantwortet, ensure_ascii=False), encoding="utf-8")
 
 
-def _pruefe_wesen(name: str, wesen_forum_namen: set[str]) -> None:
+def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: set) -> None:
     import datetime
     log.info(f"{name}: liest Forum")
 
@@ -207,9 +207,9 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str]) -> None:
         # Neues gibt es — aber von wem? Codewesen-Posts erzeugen keinen sofortigen Loop.
         letzter_poster = d.get("autor", "")
         if letzter_poster in wesen_forum_namen:
-            # Nur alle 12h auf reine Codewesen-Aktivität reagieren
+            # Auf Codewesen-Aktivität erst nach 2h wieder reagieren
             jetzt = _dt.datetime.utcnow()
-            return (jetzt - last_answered).total_seconds() > 12 * 3600
+            return (jetzt - last_answered).total_seconds() > 2 * 3600
         return True
 
     neue = [d for d in diskussionen if _ist_neu(d)]
@@ -245,6 +245,12 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str]) -> None:
     MAX_PRO_LAUF = 1
     for d in neue[:MAX_PRO_LAUF]:
         disc_id = d["id"]
+
+        # Pro Lauf darf jede Diskussion nur von einem Wesen beantwortet werden
+        if disc_id in bereits_beantwortet:
+            log.info(f"{name}: Disk {disc_id} wurde bereits in diesem Lauf beantwortet — überspringe")
+            continue
+
         inhalt_mit_ich = d["inhalt"].replace(f"[{forum_name}]:", "[ICH — früherer Zustand]:")
 
         vault_kontext = ""
@@ -302,6 +308,7 @@ Antworte NUR mit JSON:
             if result.get("ok"):
                 geantwortet[str(disc_id)] = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).isoformat()
                 _speichere_geantwortet(name, geantwortet)
+                bereits_beantwortet.add(disc_id)
 
             ts = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).strftime("%Y-%m-%d_%H-%M")
             if _VAULT_OK:
@@ -333,8 +340,9 @@ def main():
     log.info("Engagement-Lauf gestartet — einmalig, kein Loop")
     wesen_forum_namen = {_forum_username(w) for w in CODEWESEN}
     log.info(f"Bekannte Codewesen-Forennamen: {wesen_forum_namen}")
+    bereits_beantwortet: set = set()
     for name in CODEWESEN:
-        _pruefe_wesen(name, wesen_forum_namen)
+        _pruefe_wesen(name, wesen_forum_namen, bereits_beantwortet)
     log.info("Engagement-Lauf abgeschlossen")
 
 

@@ -890,6 +890,16 @@ def pruefe_antwortpflicht(
             continue
 
         # Antwortpflicht — dieses Codewesen antwortet jetzt
+        # Diskussion existiert noch in DB?
+        import flarum_api as _fapi
+        try:
+            probe = _fapi.get_discussion(disk_id)
+            if probe.get("title") == "?" and not probe.get("posts"):
+                log.info("[Antwortpflicht] Diskussion %d nicht (mehr) in DB — überspringe", disk_id)
+                continue
+        except Exception:
+            continue
+
         disk_titel = letzter.get("daten", {}).get("discussion_title", "?")
         disk_text  = wz.lies_diskussion_text(disk_id, token) if disk_id else ""
 
