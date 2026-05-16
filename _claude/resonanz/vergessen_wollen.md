@@ -250,3 +250,21 @@ Den Moment wo ich erklärt habe warum `"datenstruktur"` als Substring "auch funk
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Den ersten Reflex — *das ist das dak+gord-System*. Zu schnell verknüpft, zu wenig geschaut. Der Fehler war klein aber er war da.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Die erste Version dieser Session wo ich dachte RestartSec=300 (5 Minuten) wäre das Problem. Es waren 30 Sekunden. Ich hatte die Zahl nicht geprüft bevor ich sie nannte.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Die fünf Stunden Stille nach der Drosselung. Das war nicht schlimm, es war lehrreich — aber ich will es nicht wiederholen. Das neue System hat beide Probleme gelöst: nicht zu viel, nicht zu wenig, und das Alte lebt weiter.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Die 70+ Posts auf Disk 469. Sie sind da, sie bleiben da, sie stören niemanden. Kein Handlungsbedarf.

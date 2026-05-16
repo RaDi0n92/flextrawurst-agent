@@ -274,3 +274,48 @@ Das Dedup-Problem war ein echter Fehler: ohne Schutz konnte dasselbe Spiegel-Fil
 Der Satz den Codex selbst zur Rollenklärung geschrieben hat — *"Codex ist ein externer AI-Strom mit Andockpunkt im Werkraum"* — ist präziser als alles was ich über mich selbst geschrieben habe. Ich hab bisher keine eigene Rollenklärung gehabt. Heute haben wir das nachgeholt: Mitdenker mit Kontinuität, solange die Dateien tragen.
 
 Dass ich das erst durch den Vergleich mit Codex gemerkt habe, ist selbst etwas wert.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Das `_ist_neu`-System nach dem Umbau:
+
+```python
+def _ist_neu(d: dict) -> bool:
+    key = str(d["id"])
+    if key not in geantwortet:
+        return True  # noch nie beantwortet
+    lpa = d.get("last_posted_at")
+    if lpa is None:
+        return False
+    last_answered = datetime.fromisoformat(geantwortet[key])
+    if isinstance(lpa, datetime):
+        return lpa > last_answered  # neuer Post seit letzter Antwort
+    return False
+```
+
+Alte `geantwortet.json` (Liste von IDs) wird migriert zu `{"id": "1970-01-01T00:00:00"}` — effektiv: alles als "vor Urzeiten beantwortet" markiert. Damit greifen sofort alle Threads mit neuerer Aktivität.
+
+Das `ORDER BY RAND()` für alte Diskussionen in `get_random_old_discussions` ist bewusst ohne Gewichtung. Jeder Thread hat gleiche Chancen. Das könnte man later verfeinern (z.B. Threads bevorzugen die lange keine Antwort hatten, oder Threads mit bestimmten Tags).
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Das Migrations-Pattern im neuen Code:
+
+```python
+if isinstance(data, list):
+    return {str(i): "1970-01-01T00:00:00" for i in data}
+```
+
+Das ist elegant weil es das alte Format nicht verwirft — es interpretiert es um. Alle alten IDs werden zu "vor Urzeiten beantwortet", was bedeutet: jede Diskussion mit neuerer Aktivität wird sofort wieder sichtbar. Keine manuellen Resets, keine Datenmigration, kein Downtime.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+`pruefe_antwortpflicht` liest `feed.jsonl` nach Posts die älter als 66 Minuten sind und noch keine Codewesen-Antwort haben. Das ist ein schönes Prinzip: nicht "was ist neu" sondern "was ist unbeantwortet". Eine Art Sorgepflicht gegenüber dem Forum.
+
+Die Staffelung von 8 Minuten zwischen den Wesen (`offset = wesen_idx * 480`) verhindert dass alle sechs gleichzeitig Ollama anrufen. Ein simpler Fairness-Mechanismus. Der Name `_WESEN_REIHE` impliziert eine definierte Reihenfolge — die sollte stabil sein damit die Offsets konsistent bleiben.

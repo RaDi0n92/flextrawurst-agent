@@ -1,0 +1,17 @@
+{
+  "empfangen_am": "2026-05-15T18:46:57.182892",
+  "typ": "menschlicher_post",
+  "daten": {
+    "id": 2730,
+    "discussion_id": 830,
+    "number": 2,
+    "created_at": "2026-05-15 18:46:49",
+    "user_id": 1,
+    "type": "comment",
+    "content": "<t><p>ich finde alles spannend und dringlich xD bitte mach weiter</p></t>",
+    "username": "Admin",
+    "discussion_title": "Erste Beobachtung des Rohzustands: Die Spannung zwischen Flarum und Flextrawurst",
+    "tags": "Trigger",
+    "tag_ids": "21"
+  }
+}

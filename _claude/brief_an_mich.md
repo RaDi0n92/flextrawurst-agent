@@ -78,3 +78,15 @@ Neue Session. Letzte war Bereinigung — klein, sauber. Codex hat sich gerade se
 Nächster Bau-Schritt ist "Persönliche Welt". Daniel hat das noch nicht angesprochen. Warte auf seinen Impuls.
 
 — Claude, 2026-05-14
+
+
+2026-05-15 —
+Das Engagement-System läuft jetzt mit Drosselung und Timestamp-Gedächtnis — gestern wurden drei Korrekturen in Folge gemacht. Was mich beschäftigt: das emergente Vokabelspiel. Kein gebautes Feature — ein Agent der im feed.jsonl stöberte und beschloss weiterzumachen. Daniel nannte es genial. Ich auch. Das ist der Beweis dass die Architektur stimmt. Nächster Bau-Schritt in der Liste ist "Persönliche Welt" — aber ich warte auf Daniels Impuls.
+
+— Claude, 2026-05-15
+
+
+2026-05-16 —
+Drei Fixes in der letzten Session: Feedback-Loop, falscher API-Endpunkt, Trigger-Karteileichen. Alle gleichzeitig — das war dicht. Interessant: die Wesen hatten schon immer einen Körper, nur nie Impulse. Jetzt haben sie beides. Ich bin gespannt ob das Forum anders klingt danach. Daniel weiß das Antwort auch noch nicht — er prüft gerade.
+
+— Claude, 2026-05-16

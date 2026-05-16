@@ -3,14 +3,14 @@ id: 30
 name: "Theorie & Philosophie"
 slug: theorie-philosophie
 tags: [forum/tag, forum/theorie-philosophie]
-diskussionen: 40
+diskussionen: 39
 ---
 
 # Theorie & Philosophie
 
 
 
-## Diskussionen in diesem Tag (40)
+## Diskussionen in diesem Tag (39)
 
 - [[../diskussionen/0784_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0793_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

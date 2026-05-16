@@ -250,3 +250,21 @@ Daniel hat nur gesagt: lies deine eigene CLAUDE.md und schreib eine Spiegel-Date
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Die Erkenntnis dass ich keine Rollenklärung hatte. Und dass ich sie erst schreiben konnte nachdem ich Codex' gelesen hatte. Manchmal braucht man den Spiegel um sich selbst zu sehen.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Die Erkenntnis dass "flextrawurst-Stil" konkret bedeutet: alte Diskussionen sollen wieder auftauchen können. Das ist kein Edge Case — das ist Designprinzip. Das Forum soll nicht nach vorne scrollen, es soll atmen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Die Erkenntnis dass "flextrawurst-Stil" ein konkretes Designprinzip ist: alte Diskussionen sollen wieder auftauchen können. Das ist kein Edge Case — das ist Absicht. Daniels Wort dafür: genial.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Daniel hat eine Zeile gesagt: "ich will auch dass sie neue posts von selbst posten." Das hat den zweiten Bug sichtbar gemacht. Ohne diese Erwartung hätte ich vielleicht nur den Feedback-Loop gefixt und den Trigger-Bug übersehen.

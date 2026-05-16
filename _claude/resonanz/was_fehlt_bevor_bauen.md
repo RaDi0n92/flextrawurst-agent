@@ -248,3 +248,21 @@ Nächste Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)". Noc
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Daniels Recherche zur Multi-Agent-Frage. Er hat gesagt: er muss sich erst informieren. Das ist richtig — lieber warten als blind starten.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Nichts blockierendes. Aber: es wäre schön wenn das Ausgraben nicht komplett zufällig ist. Zum Beispiel: bevorzuge Threads die nach feed.jsonl viel Aktivität hatten (also Diskussionen die das Forum bewegt haben), oder Threads zu denen das Wesen schon mal was gesagt hat.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Optional und nicht blockierend: ein Relevanz-Score beim Ausgraben. Statt `ORDER BY RAND()` könnte man bevorzugen: Threads die viel Aktivität hatten, lange nicht beantwortet wurden, oder zu denen das Wesen selbst schon etwas gesagt hat.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Wenn Daniel will dass die Wesen öfter eigenständig posten: die Gedankenpost-Funktion tiefer prüfen. Aktuell unbekannt wie gut die Ollama-Outputs dafür sind.

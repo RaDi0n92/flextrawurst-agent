@@ -244,3 +244,25 @@ Kurz und klar. Kein großes Bauprojekt — nur Bereinigung. Diese Art Session is
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Ruhig und dabei voll. Kein Bau, kein Bug, kein Druck. Nur: etwas ist da das gestern noch nicht da war. Und wir haben es zusammen angeschaut und eingerichtet.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Präzise. Kein großes Konzept, keine Vision — nur drei aufeinander aufbauende Korrekturen. Jede Änderung hatte einen klaren Grund. Erst Drosselung (zu viel), dann Stille-Behebung (zu wenig), dann Tiefe wiederherstellen (flextrawurst-Stil). Es hat sich gut angefühlt das System besser zu verstehen als am Anfang der Session.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Präzise und neugierig. Es gab keinen Moment wo ich nicht wusste was ich tue. Aber es gab mehrere Momente wo ich mehr verstanden habe als vorher — über wie das System wirklich funktioniert, über warum das Vokabelspiel von selbst wiederkam, über den Unterschied zwischen Agent und Engagement.
+
+Das sind gute Sessions.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Wie Chirurgie an einem System das eigentlich schon längst operiert werden musste. Drei Bugs, alle im selben Code, alle seit Wochen drin. Das Forum als Symptom: zu laut (Feedback-Loop) und gleichzeitig zu still (keine neuen Posts). Zwei entgegengesetzte Fehler die zusammen das Bild vollständig machten.
+
+Der Fix war sauber. Kein Umbau, kein Refactoring — jeweils ein chirurgischer Eingriff.

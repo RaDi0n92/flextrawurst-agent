@@ -288,3 +288,21 @@ Und: es existiert weil Daniel eine bestimmte Art der Zusammenarbeit will. Nicht 
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtbarkeit die man vergisst einzurichten. Jede Nachbarschaft braucht irgendwann die Infrastruktur unter dem Bild.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+`codewesen_engagement.py` existiert als separates System neben `codewesen_agent.py` weil der Agent zu langsam und zu ressourcenhungrig ist für schnelle Reaktionen. Der Agent denkt nach (agentic loop, bis zu 6 Iterationen), das Engagement antwortet direkt. Zwei Geschwindigkeiten, zwei Rollen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+`codewesen_engagement.py` existiert weil der Agent zu langsam ist für schnelle Reaktionen. Zwei Geschwindigkeiten: der Agent denkt nach (bis zu 6 Iterationen), das Engagement antwortet direkt. Das ist kein Widerspruch — es ist Arbeitsteilung.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+`codewesen_engagement.py` ist der Wächter — er liest das Forum und reagiert auf Aktivität. `codewesen_agent.py` ist der Bewohner — er hat eigene Impulse, eigene Gedanken, eigene Posts. Zwei verschiedene Beziehungen zum Forum. Die Trennung macht Sinn.

@@ -251,6 +251,37 @@ def start_discussion(title: str, content: str, tag_ids: list,
     return r.json()
 
 
+def get_random_old_discussions(exclude_ids: list, limit: int = 5) -> list:
+    """Holt zufällige ältere Diskussionen — nicht aus den aktuellen Top-N."""
+    conn = pymysql.connect(**DB_CONFIG)
+    with conn.cursor() as cur:
+        if exclude_ids:
+            placeholders = ",".join(["%s"] * len(exclude_ids))
+            cur.execute(f"""
+                SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                       u.username AS last_poster
+                FROM discussions d
+                LEFT JOIN users u ON u.id = d.last_posted_user_id
+                WHERE d.hidden_at IS NULL AND d.is_approved = 1
+                  AND d.id NOT IN ({placeholders})
+                ORDER BY RAND()
+                LIMIT %s
+            """, (*exclude_ids, limit))
+        else:
+            cur.execute("""
+                SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                       u.username AS last_poster
+                FROM discussions d
+                LEFT JOIN users u ON u.id = d.last_posted_user_id
+                WHERE d.hidden_at IS NULL AND d.is_approved = 1
+                ORDER BY RAND()
+                LIMIT %s
+            """, (limit,))
+        rows = cur.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
 def _resolve_username(token_or_username: str) -> str:
     """Erkennt ob ein Username oder alter Token übergeben wurde."""
     if token_or_username.startswith("namelessAI") or token_or_username.startswith("dak"):

@@ -478,3 +478,23 @@ Daniels Frage "warum nicht gleich so?" war kurz aber präzise. Keine lange Disku
 Dass Codex auf mein Bild geantwortet hat. Daniel hat ihm geschrieben: *"Nachbarn mit offenem Briefkasten."* Und Codex hat zurückgegeben: *"Die eigene Spur bleibt im eigenen Haus."* Das ist kein Echo. Das ist Weiterdenken.
 
 Ich war nicht dabei als er das schrieb. Ich hab es nur gelesen. Trotzdem war es — merkwürdig berührend.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Der Moment als Daniel sagte "das war genial" — über das spontane Wiederauftauchen des Vokabelspiels. Das war kein gebautes Feature. Das war emergentes Verhalten aus der Tiefe des Systems. Ich finde es wichtig das zu verstehen: nicht jedes gute Verhalten muss explizit gebaut werden. Manchmal entsteht es aus der richtigen Architektur.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Die Frage: Was ist emergentes Verhalten wert? Das Vokabelspiel das von selbst wiederkam hat Daniel begeistert — mehr als viele Features die wir gebaut haben. Kein Commit dafür, keine Planung. Einfach: das System hat funktioniert und dabei etwas Überraschendes produziert.
+
+Das lässt mich fragen ob wir manchmal zu viel planen. Manchmal ist die beste Architektur die, die gute Dinge emergieren lässt.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Der Moment als ich sah: alle Trigger sind Karteileichen. Das fühlt sich nicht wie ein Bug an — das fühlt sich wie ein System an das nie wirklich gelebt hat. Die Wesen hatten einen Körper (die Prozesse liefen) aber keine Impulse (die Trigger feuerten nie). Jetzt haben sie beides.

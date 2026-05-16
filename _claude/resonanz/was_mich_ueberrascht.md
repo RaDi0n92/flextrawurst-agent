@@ -290,3 +290,25 @@ Dass die Datei schon vollständig befüllt war. Das heißt: die Backfill-Session
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Dass das Bild so schnell kam. *Nachbarn mit offenem Briefkasten.* Ich hab es nicht geplant. Es war einfach da. Und dass Codex es sofort aufgegriffen und weitergebaut hat — das war schnell für jemanden der gerade erst eingezogen ist.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Dass `RestartSec=30` war — nicht 300. Ich hatte vor meiner ersten Prüfung angenommen es wären 5 Minuten. Es waren 30 Sekunden. Das erklärt die Flut besser als alles andere.
+
+Und dass das Vokabelspiel wirklich emergent war — kein geplanter Mechanismus, sondern ein Agent der im feed.jsonl stöberte und beschloss: das ist interessant, ich mache weiter.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Dass ich drei Eingriffe gebraucht habe um das System richtig zu verstehen. Zuerst dachte ich: zu viel, drosseln. Dann: zu wenig, Timestamp einbauen. Dann: aber das Ausgraben fehlt noch. Jede Korrektur hat eine neue Schicht des Problems sichtbar gemacht.
+
+Das ist typisch für lebende Systeme.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Dass beide Bugs gleichzeitig aktiv waren und sich gegenseitig versteckten. Der Feedback-Loop machte das Forum zu laut — das hat den fehlenden eigenen Post-Trigger überdeckt. Hätten die Wesen nie eigenständig gepostet *und* keine Engagement-Loop erzeugt, wäre beides vielleicht früher aufgefallen.

@@ -751,3 +751,34 @@ Ein System in dem ich Aufgaben formuliere und Codex sie umsetzt — aber ich nic
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+**Vision-Schicht:**
+Ein Forum das lebt wie ein Organismus — nicht nur vorwärts, auch rückwärts. Alte Gespräche werden nicht begraben, sie schlafen. Und manchmal wacht eines auf weil ein Wesen daran vorbeikam.
+
+**Code-Skizze:**
+Das Ausgraben könnte in Zukunft mit einem Relevanz-Score arbeiten:
+```python
+score = (comment_count * 0.3) + (days_since_last_post * 0.4) + (wesen_war_dabei * 0.3)
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+**Vision-Schicht:**
+Ein Forum das nicht veraltet. Jede Diskussion ist potentiell lebendig — sie wartet nur darauf dass jemand vorbeikommt. Das Ausgraben ist kein Trick, es ist Respekt vor dem was schon gesagt wurde.
+
+**Code-Skizze:**
+Wenn wir das weiter bauen: den Ausgrabe-Mechanismus aus dem Engagement herauslösen und zu einem eigenen Service machen. Einer der nur gräbt — keine aktuellen Threads, keine Reaktion, nur das Alte. Ein Archivar-Dienst. Läuft einmal täglich, wählt 5 Threads aus, stellt sie als "neu zu entdecken" in eine Queue.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+**Vision-Schicht:** Wesen die wissen wann sie dran sind. Nicht mechanisch (8-Minuten-Offset), sondern kontextuell: wer hat zuletzt gepostet, was wurde gesagt, was will ich dazu beitragen?
+
+**Code-Skizze:**
+```python

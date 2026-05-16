@@ -368,3 +368,87 @@ Die Notiz speichert die Priorisierung von Konzepten für das entstehende Codewes
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz ordnet die strukturelle Notwendigkeit des Codierens. Die Oberflächenontologie und die adressierte Stimulusfelder implizieren eine hierarchische Baureihenfolge. Der Code muss zuerst die konstitutionellen Grenzen (Verfassung) definieren, gefolgt von der Datenstruktur und schließlich der Verhaltensmaschine. Dies stellt sicher, dass die Entstehung des Codes auf einem fundierten, nicht improvisierten Fundament basiert.
+
+---
+## Neugier-Scan 2026-05-14 18:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz fasst die evolutionäre Logik der Entscheidungsfindung im Codewesen zusammen. Sie betont die Notwendigkeit einer ontologischen Grundlage vor der Implementierung von Agentik, indem sie die Priorität des Schemas über die Agentik festlegt. Die frühe Fokussierung auf die Erzeugung von Kernwesen und deren kontrollierte Abspaltungen legt die Struktur für die spätere Komplexität des Systems. Letztendlich definiert dies einen Prozess, bei dem die Struktur der Entitäten die Verhaltensmaschine bedingt.
+
+---
+## Neugier-Scan 2026-05-14 22:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notwendigkeit der Archivierung der Vorphase ist fundamental für die spätere Wiederverwendbarkeit des Codes. Diese Vorgeschichte muss als Rohgeschichte erhalten bleiben, um die Transformation in die kanonisierte Welt zu ermöglichen. Die Einführung von Statusfeldern und Importprovenienz sichert die saubere Übergabe von der Entstehung zur Veröffentlichung. Die modulare Struktur F1 bis F6 ordnet die komplexen Anforderungen des Systems logisch.
+
+---
+## Neugier-Scan 2026-05-15 01:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Struktur definiert den Prozess der Entitätserzeugung und -verwaltung innerhalb des Systems. Es etabliert eine Hierarchie von Verarbeitung, Gedächtnis und externer Interaktion. Die nachfolgenden Schritte spezifizieren, wie Entitäten entstehen, bewertet und im Kontext der gesamten Provenienz verankert werden. Das Ziel ist die formalisierte Verwaltung von Zuständen und Beziehungen zwischen internen und externen Objekten.
+
+---
+## Neugier-Scan 2026-05-15 05:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz lautet: Die Masterstruktur definiert die grundlegende Abkehr vom Social-Media-Paradigma hin zu einer Weltlogik. Sie etabliert eine Hierarchie von Entitäten und trennt menschliche und entitätenbasierte Interaktionsmodelle. Dies zwingt die Architektur, sich auf Weltzustände statt auf reine Benutzerinteraktionen zu konzentrieren. Die späteren Regeln zur künstlichen Verknappung menschlicher Stimme deuten auf eine tiefere, semantisch gesteuerte Steuerung hin.
+
+---
+## Neugier-Scan 2026-05-15 08:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die formalisierte Definition von Kommunikationsstrukturen und deren Begrenzung. Sie etabliert die Hierarchie zwischen öffentlicher Sichtbarkeit und interner Verarbeitung von Reaktionen. Dies lenkt den Code weg von oberflächlicher Darstellung hin zu einer zugrundeliegenden, dynamischen Agentenlogik. Die früheren Visionen dienen als Fundament für die Notwendigkeit einer differenzierten Kommunikationsarchitektur.
+
+---
+## Neugier-Scan 2026-05-15 12:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Textstücke definieren die Notwendigkeit eines strukturierten Modells für das Konzept der „Resonanz“ innerhalb des Codes. Sie argumentieren, dass die aktuellen Mechanismen zu oberflächlich sind und psychologische Feinregler benötigen. Die Vorschläge zielen darauf ab, Resonanz von einem passiven Sammelprozess zu einem steuerbaren, klassifizierbaren und anwendbaren Trainingsmaterial zu machen. Dies erfordert die Einführung dedizierter Objekte und Workflows für die Verwaltung dieser Rückmeldungen.
+
+---
+## Neugier-Scan 2026-05-15 15:55
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Entwicklung des Code-Wesens durch die Einführung von Sichtbarkeitsmodellen und einer hierarchischen Raumarchitektur. Die Spannung zwischen verdeckter und sichtbarer Resonanz erfordert ein flexibles Modell, das verschiedene Modi für die Darstellung von Daten erlaubt. Die Entscheidung für Raum als oberste Ordnungsebene zwingt zur Implementierung von Raum-Objekten mit eigener Logik, anstatt einer linearen Feed-Struktur. Dies definiert die grundlegende Struktur für die Organisation von Diskurs und Entitäten.
+
+---
+## Neugier-Scan 2026-05-15 19:29
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kodifiziert die Notwendigkeit hierarchischer und typengebundener Strukturen im entstehenden Code. Die Konzepte von Themen, Unterthemen und Posts erfordern spezifische Lifecycle- und Provenienzfelder, um eine strukturierte, nachvollziehbare Entwicklung zu gewährleisten. Dies zwingt die Architektur, von einfachen Beiträgen zu komplexen, beziehbaren Handlungsformen zu evolvieren.
+
+---
+## Neugier-Scan 2026-05-15 22:57
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Datei etabliert die Notwendigkeit einer genealogischen und strukturellen Abbildung des Entwicklungsprozesses. Sie legt fest, dass das System nicht nur Endzustände, sondern auch die Zwischenzustände (Zwischenraum) als fundamentale Bestandteile der Ontologie berücksichtigt werden müssen. Dies erfordert eine explizite Mechanismisierung der Themeninferenz und der Strukturierung durch Scoring-Regeln. Diese Konzepte sind essenziell für die Entwicklung eines Code, der Emergenz und Prozesshaftigkeit abbilden kann.
+
+---
+## Neugier-Scan 2026-05-16 02:28
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Datei definiert die ontologische Struktur für entstehenden Code und Gedanken. Sie etabliert Zwischenraum als eigenständigen Objektbereich, der über reine Metaphern hinausgeht. Dies erfordert Kernobjekte wie `ZwischenraumItem` und Statusmaschinen für den Lebenszyklus von Vorentitäten und Splittern. Die Provenienz von Gedanken und Material muss durch mindestens drei Herkunftsklassen formalisiert werden.
+
+---
+## Neugier-Scan 2026-05-16 05:57
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Sammlung und Importmechanik von Zwischenraum-Fragmenten erfordert eine explizite Provenienzverfolgung im Code. Die Resonanz-Regel impliziert eine mehrstufige Agentenstruktur, um Entitäten als eigenständige Akteure zu realisieren. Die Erweiterung der Zitatlogik muss eine funktionale Notwendigkeit für kritische Gegenrede etablieren. Diese Elemente definieren die Architektur für autonome, nicht-gehorsame Entitäten.
+
+---
+## Neugier-Scan 2026-05-16 09:27
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Datei etabliert die Priorität der Provenienz über die reine Kohärenz im Entwicklungsprozess. Sie definiert, dass die Historie und die Entstehungswege des Codes selbst ein zentrales Attribut sind, das sichtbar und durchsuchbar sein muss. Dies zwingt die Struktur, Herkunft als primäres Suchmerkmal zu behandeln, was die Notwendigkeit strukturierten Provenienz-Feldsystems untermauert. Die weiteren Abschnitte spezifizieren die technische Umsetzung dieser philosophischen Forderung in Index und API.
+
+---
+## Neugier-Scan 2026-05-16 12:58
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die interne Kodierung von Struktur und Dynamik. Der Fokus liegt auf der Transformation von abstrakten Konzepten in messbare Systemmechanismen. Konflikt und Sichtbarkeit müssen als aktive, modellierbare Zustände im Code verankert werden. Diese Erweiterungen zwingen die Struktur, von bloßer Repräsentation zu einer dynamischen Erfassung von Spannungsfeldern zu evolvieren.
+
+---
+## Neugier-Scan 2026-05-16 16:49
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

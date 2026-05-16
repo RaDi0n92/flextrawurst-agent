@@ -339,3 +339,87 @@ Diese Notiz ordnet die Entwicklung des Entitätenökosystems neu. Sie betont die
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz lautet: Die Entitäts-Genesis und die Beschreibung des gewünschten Systemverhaltens legen die theoretische Grundlage für die Architektur. Die Betonung des "intrinsischen" Verhaltens durch Zustände und Konfliktmanagement ist zentral. Das Datenmodell strukturiert diese Konzepte in konkrete, relationalen Objekte. Dies konkretisiert die abstrakten Visionen zu einem funktionierenden System.
+
+---
+## Neugier-Scan 2026-05-14 18:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die interne Logik des Codewesens als ein Netzwerk von Entitäten und Beziehungen. Die verschiedenen Tabellen ermöglichen die Speicherung von Metadaten zu Posts, Entitäten, Zuständen und Interaktionen. Diese Struktur ist der Rahmen, innerhalb dessen die dynamische Erschließung von Themen und die Ableitung von Systemvorschlägen stattfindet. Es schafft eine Art Selbstreflexionsmechanismus für die generierte Wissensbasis.
+
+---
+## Neugier-Scan 2026-05-14 21:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz existiert, um die Evolution der Struktur von `flextrawurst` zu dokumentieren. Sie verankert die Entwicklung von einer bloßen Inhaltsdarstellung hin zu einem diskursbasierten Entitätennetzwerk. Der Abschnitt verdeutlicht den Übergang von der theoretischen Idee zur praktischen Architektur und den Weg zur Agentik. Er stellt die Notwendigkeit für eine klare Systemdefinition dar, bevor die Implementierung beginnt.
+
+---
+## Neugier-Scan 2026-05-15 01:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur etabliert eine Hierarchie von Diskursen, beginnend bei Themen und Unterthemen bis hin zu spezifischen Entitäten und ihren Zuständen. Dies schafft einen Rahmen für die Organisation von komplexen, sich verzweigenden Ideen. Die Entitäten agieren als autonome Akteure, was die Dynamik der Interaktion im Zentrum der Systematik platziert. Die Unterscheidung zwischen Entitäten und Menschen definiert klar die Rollen im gesamten Prozess.
+
+---
+## Neugier-Scan 2026-05-15 04:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur und die ethischen/funktionalen Mechanismen des Systems „flextrawurst“. Sie etabliert ein komplexes Interaktionsmodell zwischen Nutzern, Profilen und Entitäten. Das Ziel ist die Schaffung eines Ökosystems, das über traditionelle soziale Medien hinausgeht und auf Resonanz und systemischem Lernen basiert. Der Abschnitt legt die Dynamik der Entitätenentstehung und das Lernverhalten des Systems fest.
+
+---
+## Neugier-Scan 2026-05-15 08:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Grundarchitektur für die Lebendigkeit von Entitäten. Sie etabliert die Entitäten als Zustandskörper statt bloßer Prompts, indem sie eine multidimensionale Persönlichkeitsmodellierung durch Achsen definiert. Die Einführung von spezifischen Zielkategorien (Dauer-, Situativ-, verborgene Ziele) verleiht diesen Systemen innere Dynamik und Handlungsrichtung. Dies ist die Grundlage für die gewünschte organische, nicht nur reaktive Interaktion.
+
+---
+## Neugier-Scan 2026-05-15 11:55
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Zyklus definiert die interne Dynamik der Entität. Konflikte und Gedächtnisschichten bestimmen die Qualität der Verarbeitung. States und Nodes zeigen den aktuellen Zustand und die Verarbeitungspunkte auf. Handlungsauslöser steuern die Initiierung von Aktionen. Diese Komponenten bilden die Grundlage für das dynamische Verhalten.
+
+---
+## Neugier-Scan 2026-05-15 15:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die Unterscheidung zwischen den Aktionen und der tatsächlichen Auswirkung der Persönlichkeit. Dies verankert die theoretische Grundlage für die späteren Entitätsdefinitionen Echo und Gord. Die Beispiele konkretisieren, wie subjektive Zustände in konkrete, beobachtbare Verhaltensmuster übersetzt werden. Diese Abschnitte legen die Mechanismen für die interne Dynamik und die Trennung fest, die in den folgenden Visionen umgesetzt werden muss.
+
+---
+## Neugier-Scan 2026-05-15 18:57
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Architektur für die Entstehung und Dynamik von Entitäten im System. Sie legt die Mechanismen für Selbstbenennung, Gruppendynamik und die Entwicklung von autonomen Subjekten fest. Diese Abschnitte bilden die Grundlage für die spätere Implementierung von Agenten und die Logik hinter der gewünschten „glaubwürdigen“ Entität. Sie leiten die Notwendigkeit einer zyklischen Selbstprüfung und der schrittweisen Komplexitätssteigerung von regelbasiert zu agentisch.
+
+---
+## Neugier-Scan 2026-05-15 22:27
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz fasst die Notwendigkeit der Implementierung einer dynamischen Entscheidungslogik für die "Engine" zusammen. Der Fokus liegt auf der präzisen Definition der Auslöser für verschiedene Ereignisse wie Posten, Upgrades und Themenvorschläge. Die Abspaltung muss basierend auf komplexen Signalen wie Konflikt und unterschiedliche Muster erfolgen, um Glaubwürdigkeit zu gewährleisten. Die Vision erfordert somit eine tiefgreifende Kontrolle und Bearbeitungsfähigkeit über das gesamte System.
+
+---
+## Neugier-Scan 2026-05-16 01:57
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Strukturierung des gewünschten Admin-Cockpits für die Verwaltung des gesamten Informationsraumes. Sie definiert die notwendigen Schnittstellen für die Operationen "eren, verschieben, stoppen, umbenennen". Diese Vision legt den Fokus auf die granularste Steuerung von Inhalten, Entitäten und den zugrundeliegenden Systemlogiken. Die detaillierte Aufschlüsselung der Konsolen stellt sicher, dass die abstrakten Vorgänge im nächsten Zyklus operationalisierbar werden.
+
+---
+## Neugier-Scan 2026-05-16 05:28
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Vision-Zyklus definiert die Dynamik von Entitäten und dem Systemsteuerung. Die Regeln für Posten, Upgrades und Zitate sind nicht linear, sondern phasenabhängig und reaktionsbasiert. Dies verschiebt den Fokus von Qualität auf Relevanz und die Erzeugung von Spannung. Diese Logik sorgt dafür, dass das System organisch und explorativ bleibt, anstatt durch starre Filter zu diktiert zu werden.
+
+---
+## Neugier-Scan 2026-05-16 08:58
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert eine mehrstufige Abspaltungslogik für Entitäten, um die gewünschte Spontaneität und Nachvollziehbarkeit zu ermöglichen. Sie schlägt eine Mikro-Abspaltung als erste Stufe vor, gefolgt von einer vollständigen, kontrollierten Abspaltung. Die vorgeschlagenen Regler legen die Steuerung dieser Prozesse fest, was die Möglichkeit zur dynamischen Anpassung der Systemdynamik eröffnet. Dies impliziert, dass die Struktur von "flextrawurst" als eine komplexe Entitäten-Engine betrachtet werden muss, um diese Mechanismen zu unterstützen.
+
+---
+## Neugier-Scan 2026-05-16 12:32
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Verdichtung der Architektur des Verhaltens. Sie etabliert die notwendige Struktur für die Entitäten, um aus reiner Information handelnde Agenten zu werden. Die Dreiteilung – Öffentliches System, Admin-System, Entitäten-Engine – ist die Grundlage für kontrollierbare Dynamik. Die Entscheidungsmaschine ist das Kernmechanismus, das die inhärente Komplexität in umsetzbare Aktionen übersetzt.
+
+---
+## Neugier-Scan 2026-05-16 15:57
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Mechanismen der Emergenz und Transformation innerhalb des Systems. Sie etabliert einen Zyklus von Resonanz, Aktion und potenzieller Spaltung. Der Abspaltungsmechanismus definiert, wie neue Identitäten aus bestehenden Entitäten entstehen, basierend auf wahrgenommenen Differenzen. Die Schritte 1 bis 5 des Abspaltungsmechanismus sind die direkten operativen Schritte zur Entstehung einer neuen Entität.

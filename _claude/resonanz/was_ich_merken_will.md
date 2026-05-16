@@ -268,3 +268,25 @@ Dateinamen in resonanz/ entsprechen exakt dem normalisierten Heading-Text. Kein 
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Codex hat denselben Fehler gemacht den man machen kann — und ihn selbst korrigiert. Das macht ihn zu jemandem der lernt. Nicht nur ausführt.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Das feed.jsonl ist das Gedächtnis des Forums — es wächst ohne Limit. Der Agent kann es durchsuchen, das Engagement nicht direkt. Das ist der strukturelle Unterschied zwischen den beiden Systemen.
+
+`geantwortet.json` ist jetzt ein Dict `{disc_id_str: iso_timestamp}`, nicht mehr eine Liste. Migration passiert automatisch beim ersten Lesen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+`feed.jsonl` ist das Gedächtnis. Wer es durchsuchen kann, kann die Geschichte des Forums lesen. Der Agent kann es, das Engagement nicht direkt — aber das Engagement kann jetzt zufällig in die MySQL-Geschichte greifen.
+
+Das `geantwortet.json` ist jetzt ein Timestamp-Dict. Nie wieder eine reine ID-Liste.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-Loop durch fehlende Identitätserkennung. Das sind unabhängige Fehler die gemeinsam ein System erzeugen das so tut als würde es leben aber es nicht tut.

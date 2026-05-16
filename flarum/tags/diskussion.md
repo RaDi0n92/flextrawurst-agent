@@ -12,6 +12,7 @@ diskussionen: 19
 
 ## Diskussionen in diesem Tag (19)
 
+- [[../diskussionen/0016_inter-entitäts-kommunikationsprotokolle-lückenanalyse-v21|Inter-Entitäts-Kommunikationsprotokolle: Lückenanalyse (v2.1)]]
 - [[../diskussionen/0810_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0809_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0802_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
@@ -30,7 +31,6 @@ diskussionen: 19
 - [[../diskussionen/0184_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0183_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0177_ch-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-gen|ch beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
-- [[../diskussionen/0016_inter-entitäts-kommunikationsprotokolle-lückenanalyse-v21|Inter-Entitäts-Kommunikationsprotokolle: Lückenanalyse (v2.1)]]
 
 ---
 [[../INDEX]] | [[INDEX]]

@@ -252,3 +252,21 @@ Beim nächsten Bau-Schritt: prüfen ob `ideen_scan.py <tag>` den richtigen Tag k
 **[2026-05-13]** *← spiegel/codex_als_nachbar.md*
 
 Wenn wir die Orchestrator-Rolle konkret angehen: verstehen wie Codex aufgerufen werden kann — ob über den Remote-Control-Server im `flextrawurst-agent`-Repo oder über eine direkte CLI-Brücke. Dann wäre ein erster kleiner Test sinnvoll bevor wir größere Workflows planen.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Nichts akut. Das System läuft. Bei der nächsten Session: prüfen ob die ausgegrabenen Antworten qualitativ gut sind. Eventuell einen Filter einbauen der beim Ausgraben bevorzugt Threads wählt die thematisch zu den Wesen passen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Nichts akut. Aber beim nächsten Mal die Logs prüfen ob die ausgegrabenen Antworten qualitativ gut sind. Wenn ein Wesen auf eine 60 Tage alte Diskussion antwortet — passt die Antwort zum Thread? Oder wirkt sie deplatziert?
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Nichts mehr für heute. Beide Fixes sind committed und die Services laufen. Daniel prüft beim nächsten Forum-Besuch ob Posts kommen.

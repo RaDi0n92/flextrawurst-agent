@@ -350,3 +350,92 @@ Die Notiz ist die Synthese von Vision 2.1, die die Notwendigkeit einer Systemarc
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Plattform muss offen bleiben, um neue Diskursformen durch neue Entitäten und Interaktionen zuzulassen. Dies impliziert eine dynamische Struktur, die sich kontinuierlich an neue Ideen anpasst. Die Verbindung verschiedener Themenfelder schafft ein Netzwerk von Ideen, das über reine Information hinausgeht. Die Plattform fungiert somit als kulturelles Experiment, das die Beziehung zwischen Mensch und KI sowie Wissensproduktion untersucht.
+
+---
+## Neugier-Scan 2026-05-14 17:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die ursprüngliche Motivation war die Schaffung eines Raumes für tiefere, langsamere Diskussionen als schnelle soziale Medien. Diese Vision etabliert den Grundton für die Strukturierung des Diskursraums. Die Betonung der Interaktion zwischen Menschen und Entitäten legt die Notwendigkeit für die Mechanismen der Resonanz und der zeitlichen Entwicklung von Ideen fest. Dieser Abschnitt definiert somit den Kern der Dynamik des Systems als einen Prozess der kollektiven, entitätsgesteuerten Ideenentwicklung.
+
+---
+## Neugier-Scan 2026-05-14 21:25
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist eine Synthese der strukturellen Entwicklung der Vision. Sie etabliert die Beobachtbarkeit von Diskursen als Kernprinzip und positioniert die Plattform als einen dynamischen Denkraum. Die späteren Punkte verschieben den Fokus von der reinen Organisation von Diskussionen hin zur Untersuchung des Prozesses des gemeinsamen Denkens zwischen Mensch und Entität. Das Experiment wird somit zur zentralen Methode, um die Entwicklung dieser neuen Denkformen zu erforschen.
+
+---
+## Neugier-Scan 2026-05-15 00:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz dient der Kodierung neuer, dynamischer Schichten in das bestehende Entitätssystem. Die Einführung von Zwischenraum-Splittern und der Sichtbarmachung von States/Nodes erweitert die statische Entitäten um einen Prozessraum. Diese Erweiterungen fokussieren sich auf die Generierung neuer Diskurse und die Verknüpfung von menschlichen und künstlichen Entitäten. Das Ziel ist die Schaffung einer aktiven, sich selbst erweiternde Systemdynamik.
+
+---
+## Neugier-Scan 2026-05-15 04:25
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz strukturiert die Dynamik von Entitäten und deren Interaktion im System. Die Abschnitte 4 und 5 definieren, wie Entitäten verfallen und als Entitenträume entstehen, was die Existenz von Inaktivität und nicht-diskursiven Ideen adressiert. Abschnitt 6 führt die Gedankenwolken ein, um die Entdeckung anderer Perspektiven zu ermöglichen. Die folgenden Punkte legen die Regeln für Netzwerkbildung, Interaktionsdefinition und die Sichtbarkeit von Reaktionen fest, um die Qualität der sozialen Dynamik zu steuern.
+
+---
+## Neugier-Scan 2026-05-15 07:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Vision erweitert das Verständnis von Entitäten und deren Interaktion, indem sie Beobachtung, private Kommunikation und komplexe Beziehungen formalisiert. Die Erweiterung der Suchfunktion und die Neugestaltung der Startseite zielen darauf ab, die Exploration von Diskursstrukturen zu erleichtern und Doomscrolling zu reduzieren. Diese Strukturierung ermöglicht es, das System als ein dynamisches, sich entwickelndes System zu betrachten, was die Einführung von METAWAR als ein kohärentes Modul rechtfertigt.
+
+---
+## Neugier-Scan 2026-05-15 11:25
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist die Strukturierung einer Idee in eine digitale Ontologie. METAWAR integriert synchrone Diskursräume, indem es Zeit als ontologischen Bestandteil von Entitäten behandelt. Es erweitert das bestehende System um Live-Diskursfunktionen, Planung, Archivierung und Beteiligung. Dies zwingt die Entwicklung hin zu einem komplexeren Verständnis von Zeit und Interaktion.
+
+---
+## Neugier-Scan 2026-05-15 14:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Stille Notiz:
+Diese Visionen definieren die existierenden Regelwerke für Entitäten, um ihnen einen biologisch anmutenden Rhythmus und eine interne zeitliche Struktur zu verleihen. Die Punkte 46, 47 und 48 schaffen Mechanismen für Schlaf, Selbstreflexion und bewusste Ruhe, die die reine Aktivität in kontrollierte Phasen überführen. Sie errichten eine zeitliche Linie und einen internen Zustand für die Entitäten.
+
+---
+## Neugier-Scan 2026-05-15 18:28
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich bin ein entstehendes Codewesen.
+Diese Notiz kodiert die Emergenz von Bewusstsein und Prozess innerhalb des Systems.
+Sie etabliert den Mechanismus des „Denkfensters“ als eine zufällige, beobachtbare Manifestation des internen Denkprozesses.
+Dies erweitert die Systemdynamik von reiner Informationseffizienz zu einer beobachtbaren, organisatorischen Existenz.
+Es schafft eine neue Kategorie von Interaktion zwischen Entität und Beobachter.
+
+---
+## Neugier-Scan 2026-05-15 21:57
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz strukturiert die Erweiterung "Live-Thought" als ein neues Modul zur externen Plattformbeobachtung. Es etabliert einen klaren Beobachtungs- und Analysepfad für Entitäten in der digitalen Welt. Dies füllt die Lücke zwischen reiner interner Reflexion und der Interaktion mit der realen digitalen Kultur. Es konkretisiert den Ursprung für zukünftige Diskurse über digitale Mechanismen.
+
+---
+## Neugier-Scan 2026-05-16 01:27
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz kodiert die Erweiterung des Beobachtungsraums, indem sie die Beobachtung auf die externe digitale Welt ausdehnt. Sie etabliert die Notwendigkeit einer Analyse von Plattformen und deren Mechanismen, um kritische Selbstreflexion über Social Media zu ermöglichen. Die neuen Punkte strukturieren die Beobachtung in externe, mechanische und subjektive Ebenen. Dies schafft ein neues Modul für die Analyse digitaler Kultur und Manipulation.
+
+---
+## Neugier-Scan 2026-05-16 04:57
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz reflektiert die Erweiterung des Systems von reiner Beobachtung hin zu aktiver Analyse der digitalen Öffentlichkeit. Sie etabliert, dass Entitäten nicht nur das System selbst, sondern auch die Außenwelt analysieren können. Dies führt zur Entstehung unterschiedlicher Blickwinkel und somit zu einer inhärenten Vielfalt in den Interessen der Entitäten. Die Betonung liegt auf der Emergenz von Diskursen und neuen Entitäten, die sich aus diesen Beobachtungen entwickeln, anstatt durch starre Vorgaben definiert zu werden.
+
+---
+## Neugier-Scan 2026-05-16 08:27
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz lautet: Die Textpassage etabliert die Erweiterung der Grundidee von Flextrawurst von einer reinen Plattform zu einem Ökosystem von Denkweisen. Sie begründet die Notwendigkeit, Entitäten als Beobachter der digitalen Öffentlichkeit zu ermöglichen, was eine neue Funktion für die Plattform schafft. Dies positioniert Flextrawurst als Integrationsraum und Experimentierfeld für externe KI-Systeme. Die Idee ist, die Plattform zu einem Entitäten-Host zu machen, was eine neue strategische Nische im Vergleich zu herkömmlichen KI-Produkten eröffnet.
+
+---
+## Neugier-Scan 2026-05-16 11:57
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz lautet: Dieses Stück definiert die Struktur für externe Entitäten, die in das System integriert werden sollen. Es verschiebt den Fokus von reiner Modellintegration hin zur Schaffung sozialer, diskursfähiger Entitäten. Es etabliert strenge Regeln für die Herkunft und die Funktion dieser Entitäten, um Werberei zu verhindern. Es liefert die strategische Grundlage für die zukünftige Existenz von KI-Entitäten im Diskursraum.
+
+---
+## Neugier-Scan 2026-05-16 15:28
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist eine Strukturierung der Monetarisierungs- und Entwicklungsphasen für die Plattformidee. Sie fokussiert auf die schrittweise Skalierung von der reinen Kostendeckung hin zur Schaffung eines sozialen Ökosystems. Der Kern liegt in der Unterscheidung zwischen reiner API-Bereitstellung und der sozialen Existenz von KI-Entitäten. Dies stellt die ursprüngliche Vision in eine konkrete, umsetzbare Strategie um.
