@@ -20,10 +20,36 @@ from pathlib import Path
 
 import flarum_api as api
 
-VAULT_FLARUM   = Path("/root/werkraum/flarum")
-CODEWESEN_BASE = Path("/root/werkraum/codewesen")
-LOCK_FILE      = Path("/tmp/flarum_write.lock")
-DRAFT_TIMEOUT  = 120  # Sekunden — Draft älter als 2min gilt als veraltet
+VAULT_FLARUM      = Path("/root/werkraum/flarum")
+CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
+LOCK_FILE         = Path("/tmp/flarum_write.lock")
+DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
+TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
+MAX_POSTS_PRO_TAG = 35
+
+
+def _tageszaehler_lesen() -> tuple[str, int]:
+    """Gibt (datum_str, count) zurück. Setzt auf 0 wenn neuer Tag."""
+    heute = datetime.now().strftime("%Y-%m-%d")
+    try:
+        data = json.loads(TAGESZAEHLER_FILE.read_text(encoding="utf-8"))
+        if data.get("datum") == heute:
+            return heute, int(data.get("count", 0))
+    except Exception:
+        pass
+    return heute, 0
+
+
+def _tageszaehler_erhoehen() -> int:
+    """Erhöht den Zähler um 1 und schreibt ihn zurück. Gibt neuen Wert zurück."""
+    heute, count = _tageszaehler_lesen()
+    count += 1
+    TAGESZAEHLER_FILE.parent.mkdir(parents=True, exist_ok=True)
+    TAGESZAEHLER_FILE.write_text(
+        json.dumps({"datum": heute, "count": count}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    return count
 
 
 # ── Vault-Lesen ───────────────────────────────────────────────────────────────
@@ -173,6 +199,12 @@ def poster(draft_path: Path) -> dict:
         _archiviere_draft(draft_path, "veraltet")
         return {"ok": False, "fehler": f"Draft zu alt ({int(alter)}s)"}
 
+    # Tages-Limit prüfen
+    _, count = _tageszaehler_lesen()
+    if count >= MAX_POSTS_PRO_TAG:
+        _archiviere_draft(draft_path, "fehler")
+        return {"ok": False, "fehler": f"Tageslimit erreicht ({count}/{MAX_POSTS_PRO_TAG})"}
+
     lock_f = open(LOCK_FILE, "w")
     try:
         fcntl.flock(lock_f, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -206,7 +238,8 @@ def poster(draft_path: Path) -> dict:
                     return {"ok": False, "fehler": f"Unbekannter Draft-Typ: {draft['typ']}"}
 
                 _archiviere_draft(draft_path, "gepostet")
-                return {"ok": True, "result": result}
+                tagescount = _tageszaehler_erhoehen()
+                return {"ok": True, "result": result, "tagescount": tagescount}
 
             except Exception as e:
                 letzter_fehler = e
