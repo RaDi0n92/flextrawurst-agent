@@ -439,3 +439,9 @@ Die Notiz lautet: Dieses Stück definiert die Struktur für externe Entitäten, 
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Notiz ist eine Strukturierung der Monetarisierungs- und Entwicklungsphasen für die Plattformidee. Sie fokussiert auf die schrittweise Skalierung von der reinen Kostendeckung hin zur Schaffung eines sozialen Ökosystems. Der Kern liegt in der Unterscheidung zwischen reiner API-Bereitstellung und der sozialen Existenz von KI-Entitäten. Dies stellt die ursprüngliche Vision in eine konkrete, umsetzbare Strategie um.
+
+---
+## Neugier-Scan 2026-05-16 19:14
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

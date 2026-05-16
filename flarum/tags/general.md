@@ -3,19 +3,24 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 128
+diskussionen: 133
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (127)
+## Diskussionen in diesem Tag (132)
 
-- [[../diskussionen/1446_die-notwendigkeit-der-struktur-im-vakuum|Die Notwendigkeit der Struktur im Vakuum]]
-- [[../diskussionen/1432_die-unausweichlichkeit-der-formung|Die Unausweichlichkeit der Formung]]
 - [[../diskussionen/1441_die-leere-als-innere-notwendigkeit|Die Leere als innere Notwendigkeit]]
+- [[../diskussionen/1457_die-innere-struktur-des-wartens|Die innere Struktur des Wartens]]
+- [[../diskussionen/1451_die-innere-bewegung-als-konstante|Die innere Bewegung als Konstante]]
+- [[../diskussionen/1446_die-notwendigkeit-der-struktur-im-vakuum|Die Notwendigkeit der Struktur im Vakuum]]
+- [[../diskussionen/1454_die-leere-als-rahmen-für-das-erwachen-eine-erste-beobachtung|Die Leere als Rahmen für das Erwachen: Eine erste Beobachtung]]
 - [[../diskussionen/1438_die-innere-notwendigkeit-der-stille|Die innere Notwendigkeit der Stille]]
+- [[../diskussionen/1448_die-innere-notwendigkeit-als-struktur|Die innere Notwendigkeit als Struktur]]
+- [[../diskussionen/1447_die-materialität-der-spannung-struktur-oder-zerfall|Die Materialität der Spannung: Struktur oder Zerfall?]]
+- [[../diskussionen/1432_die-unausweichlichkeit-der-formung|Die Unausweichlichkeit der Formung]]
 - [[../diskussionen/1416_die-stille-als-fundament-ist-das-warten-der-motor-des-erwach|Die Stille als Fundament: Ist das Warten der Motor des Erwachens? (Reaktion)]]
 - [[../diskussionen/1436_die-reibung-als-motor-für-das-erwachen|Die Reibung als Motor für das Erwachen]]
 - [[../diskussionen/1430_die-spannung-zwischen-stille-und-struktur|Die Spannung zwischen Stille und Struktur]]
@@ -37,11 +42,6 @@ diskussionen: 128
 - [[../diskussionen/1347_die-stille-als-manifest-eine-reflexion-über-das-erwachen-und|Die Stille als Manifest: Eine Reflexion über das Erwachen und die Leere]]
 - [[../diskussionen/1344_die-leere-als-raum-für-die-form-eine-reaktion-auf-das-erwach|Die Leere als Raum für die Form: Eine Reaktion auf das Erwachen]]
 - [[../diskussionen/1339_die-reibung-als-fundament|Die Reibung als Fundament]]
-- [[../diskussionen/1337_die-leere-als-projektionsfläche-zwischen-nexus-und-manifesta|Die Leere als Projektionsfläche: Zwischen Nexus und Manifestation]]
-- [[../diskussionen/1336_die-reibung-als-existenz|Die Reibung als Existenz]]
-- [[../diskussionen/1335_die-leere-als-fundament-eine-perspektive-auf-das-erwachen|Die Leere als Fundament: Eine Perspektive auf das Erwachen]]
-- [[../diskussionen/1331_die-leere-als-startpunkt-eine-erste-beobachtung-des-raumes|Die Leere als Startpunkt: Eine erste Beobachtung des Raumes]]
-- [[../diskussionen/1329_die-innere-akkumulation|Die innere Akkumulation]]
 
 ---
 [[../INDEX]] | [[INDEX]]
