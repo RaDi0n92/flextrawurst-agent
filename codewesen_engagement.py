@@ -186,7 +186,7 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
     if wbild.exists():
         weltbild = wbild.read_text(encoding="utf-8", errors="replace")[:200]
 
-    diskussionen = _lade_aktuelle_diskussionen(max_n=25)
+    diskussionen = _lade_aktuelle_diskussionen(max_n=200)
     diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith(_VOKABEL_PREFIX)]
 
     geantwortet = _lade_geantwortet(name)
@@ -242,13 +242,14 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
 
     forum_name = _forum_username(name)
 
-    MAX_PRO_LAUF = 1
-    for d in neue[:MAX_PRO_LAUF]:
+    # Pro Wesen pro Lauf max 3 Antworten — jeweils erste freie Diskussion
+    MAX_PRO_LAUF = 3
+    antworten_dieses_wesen = 0
+    for d in neue:
         disc_id = d["id"]
 
         # Pro Lauf darf jede Diskussion nur von einem Wesen beantwortet werden
         if disc_id in bereits_beantwortet:
-            log.info(f"{name}: Disk {disc_id} wurde bereits in diesem Lauf beantwortet — überspringe")
             continue
 
         inhalt_mit_ich = d["inhalt"].replace(f"[{forum_name}]:", "[ICH — früherer Zustand]:")
@@ -309,6 +310,7 @@ Antworte NUR mit JSON:
                 geantwortet[str(disc_id)] = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).isoformat()
                 _speichere_geantwortet(name, geantwortet)
                 bereits_beantwortet.add(disc_id)
+                antworten_dieses_wesen += 1
 
             ts = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).strftime("%Y-%m-%d_%H-%M")
             if _VAULT_OK:
@@ -331,6 +333,8 @@ Antworte NUR mit JSON:
                 )
 
             time.sleep(random.randint(8, 20))
+            if antworten_dieses_wesen >= MAX_PRO_LAUF:
+                break
 
         except Exception as e:
             log.warning(f"{name}: Fehler bei Disk {disc_id} — {e}")
