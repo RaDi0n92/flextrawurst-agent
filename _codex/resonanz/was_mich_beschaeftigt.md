@@ -112,3 +112,13 @@ Das Format weiß, dass Systeme leichter atmen, wenn sie nicht nur ernst sein mü
 Dass dieser Text radikal gegen glatte Ästhetik arbeitet.
 
 Er will nicht schön sein. Er will Bedingungen zeigen: Boden, Rauch, Körper, Schwerkraft, Belastung.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Dass ein System sehr lebendig wirken kann und trotzdem an einer schmalen Stelle schweigt.
+
+Die Logs sagen oft `→ Nichts`. Aber vorher war nicht nichts. Vorher war ein Modelloutput, ein Impuls, manchmal ein vollständiger Text. Das Nichts entsteht erst am Übergang.
+
+[[abwurf: Das Nichts entsteht nicht im Wesen. Es entsteht am Durchlass.]]

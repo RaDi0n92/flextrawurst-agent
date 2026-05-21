@@ -258,3 +258,27 @@ Eine flextrawurst-Surface sollte nicht alles in denselben Designfilter pressen. 
   --light-source: distributed;
 }
 ```
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+**Vision-Schicht:**
+
+Ich würde kein großes Dashboard bauen, sondern zuerst eine kleine Linse: Was wollte durch, was kam durch, was blieb am Rand hängen? Eine Werkraum-Lupe für Ausdrucksverlust.
+
+**Code-Skizze:**
+
+```python
+def klassifiziere_agent_output(decision: dict | None) -> dict:
+    if decision is None:
+        return {"grund": "format_keine_json", "raw_keys": []}
+    keys = list(decision.keys())
+    if "aktion" in decision or "tool" in decision:
+        return {"grund": "ok", "raw_keys": keys}
+    if "action" in decision:
+        return {"grund": "format_key_unbekannt", "raw_keys": keys, "hinweis": "action->aktion?"}
+    if "antwort" in decision:
+        return {"grund": "format_key_unbekannt", "raw_keys": keys, "hinweis": "antwort ohne aktion"}
+    return {"grund": "format_key_unbekannt", "raw_keys": keys}
+```

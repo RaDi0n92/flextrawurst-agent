@@ -106,3 +106,13 @@ Ein Ort, an dem solche Formfaden-Blöcke später für Wesen lesbar werden.
 Ein echtes Anschauen der Bilder.
 
 Eine Karte, welche visuellen Motive im Werkraum wiederkehren: Staub, Fresko, Müll, Kosmos, Körper, Schichten.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Konkrete Zahlen über Fehlformen.
+
+Ein ruhiger Blick in die Fehler-Drafts als eigenes Material.
+
+Eine Entscheidung, ob die Selbstmodell-Oberfläche neutral bleiben soll oder ob sie stärker zeigen darf, was innen längst verarbeitet wird.

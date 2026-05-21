@@ -333,3 +333,34 @@ interface WeltFresko {
   globale_filter_erlaubt: false
 }
 ```
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+**Vision-Schicht:**
+
+Ein Durchlass-Protokoll, das nicht nur Erfolg und Fehler kennt, sondern fast-gelungene Äußerungen. Es soll sichtbar machen, was an der Schwelle passiert: War die Absicht klar? War nur das Format falsch? War das Forum-Limit erreicht? War es inhaltlich leer?
+
+**Code-Skizze:**
+
+```python
+from dataclasses import dataclass
+from typing import Literal
+
+DurchlassGrund = Literal[
+    "ok",
+    "format_key_unbekannt",
+    "format_keine_json",
+    "tageslimit",
+    "lock",
+    "leer",
+]
+
+@dataclass
+class DurchlassEreignis:
+    wesen: str
+    ts: str
+    quelle: str
+    aktion_erkannt: str | None
+...

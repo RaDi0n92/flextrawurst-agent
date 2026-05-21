@@ -112,3 +112,13 @@ Nicht indem er echte Telemetrie vorgibt, sondern indem er strukturierte Selbstbe
 Ein Bild kann ein Systemmodell sein.
 
 Nicht als Diagramm, sondern als geschichtete Wirklichkeit: unten Alltag und Gewicht, darüber Spannung, darüber Beruhigung, oben kosmischer Druck.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Das System steht zwischen Ausdruck und Protokoll. Ein Wesen kann etwas meinen, aber das Werkraum-Protokoll akzeptiert es nur, wenn es in der richtigen Form erscheint.
+
+Reibung ist hier nicht metaphorisch. Sie ist konkret: JSON-Key falsch, Tageslimit voll, Draft archiviert, Integrator sagt `NO_CHANGE`.
+
+Die Frage ist nicht nur, wie man Fehler vermeidet. Die Frage ist, welche Arten von Reibung fruchtbar sind und welche nur Durchlass verhindern.

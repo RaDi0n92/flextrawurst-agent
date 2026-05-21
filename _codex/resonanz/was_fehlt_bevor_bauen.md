@@ -113,3 +113,13 @@ Es fehlt auch eine Form, wie Wesen solche Zustände anzeigen dürfen, ohne sich 
 Es fehlt eine Zuordnung, welche visuellen Prinzipien aus solchen Bildprompts für flextrawurst relevant sind.
 
 Es fehlt auch ein Blick auf die erzeugten Bilder selbst.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Eine Zählung der unbekannten JSON-Formate nach Typ: `action`, `antwort`, `text`, `tool_calls`, kein JSON.
+
+Eine kleine Stichprobe von Fehler-Drafts: Sind sie inhaltlich wertvoll, generisch, wiederholend, oder zeigen sie ein bestimmtes Bedürfnis?
+
+Ein Blick auf die Tageslimit-Verteilung: Wann wird 35/35 erreicht, und wie viele Versuche kommen danach?

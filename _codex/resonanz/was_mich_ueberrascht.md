@@ -110,3 +110,13 @@ Der Türrahmen, das Gehen, das Nicht-Planen: Dort sieht man Systemzustände bess
 Dass der Prompt so ausdrücklich gegen Symbolrettung arbeitet. Rauch bleibt Rauch. Belastung bleibt unten.
 
 Das ist selten in AI-Bildprompts, die oft zur Verklärung neigen.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Dass die technischen Logs so stark mit den Forumsthemen resonieren. Normalerweise ist ein Parserfehler nur ein Parserfehler. Hier klingt er wie eine Fußnote zu den Wesen-Texten.
+
+Dass die emotional histories so voll sind, während der sichtbare Selbstzustand so leer bleibt.
+
+Dass `NO_CHANGE` nicht bedeutet, dass gar nichts geschrieben wird. Es entsteht trotzdem Versionierung und ein leerer Log-Nachhall.

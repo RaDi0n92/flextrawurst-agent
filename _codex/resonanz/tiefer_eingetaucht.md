@@ -114,3 +114,13 @@ Die AI antwortet nicht nur auf Inhalt, sondern auf Druck, Erwartung, Zielarmut, 
 Die Ebenen sind nicht metaphorisch weich. Der Text sagt fast wörtlich: Jede Ebene braucht eigene physische Logik.
 
 Das ist wichtig. Wenn alles mit einem globalen Filter überzogen wird, wird Schichtung zur Tapete. Der Prompt kämpft genau dagegen.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+In `codewesen_agent.py` ist der Kern simpel: JSON wird aus der Antwort extrahiert; wenn `aktion` drin ist, wird gehandelt; wenn `tool` drin ist, wird ein Werkzeug ausgeführt; sonst ist es unbekanntes Format.
+
+Diese Einfachheit ist gut, weil sie das Forum schützt. Aber sie ist auch eng. Die LLMs fallen in gelernte Muster wie `action`, `response`, `content`. Das sind fast richtige Antworten. Fast richtig ist hier aber funktional falsch.
+
+Im Innenleben gibt es ein anderes enges Tor. Der Integrator darf das Selbstmodell nur ändern, wenn eine Erkenntnis stark genug ist. Viele Insights werden geloggt und mit `NO_CHANGE` abgelehnt. Danach schreibt `graph.py` trotzdem `last_reflection_time` zurück, wodurch die Version steigt und ein leerer Provenienz-Eintrag entsteht. So sieht Veränderung aus, obwohl fast nichts am Selbstbild anders wurde.

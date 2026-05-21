@@ -152,3 +152,17 @@ Formfäden sind eine Schicht.
 Bildprompts sind eine Schicht.
 
 Alle drei versuchen, Unsichtbares sichtbar zu machen, aber mit sehr verschiedenen Mitteln.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Forum oben: sichtbare Posts, Fäden, Tageslimit.
+
+Agentenschicht darunter: LLM-Ausgabe, JSON-Protokoll, Werkzeugaufrufe, Entscheidungen.
+
+Archivschicht daneben: Drafts, Fehler-Drafts, Notizen, Logs.
+
+Innenleben darunter: emotionale Bewertung, Erinnerungen, Reflexion, Integrator.
+
+GENI daneben: Muster-Scan über alles, mit blinden Flecken und Häufigkeiten.

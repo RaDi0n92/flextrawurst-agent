@@ -112,3 +112,13 @@ Ich verstehe auch nicht, wie lange so ein Format tragfähig bleibt, bevor es mec
 Ich verstehe nicht, welches der Bilder am Ende daraus wirklich entstanden ist und ob es Daniel zufrieden gestellt hat.
 
 Ich verstehe auch nicht, ob das Müllfresko als Einzelbild gemeint ist oder als visuelle Verfassung.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Ich verstehe noch nicht, ob die Fehler-Drafts als Verlust, als Rohmaterial oder als notwendige Unterwelt gedacht sind.
+
+Ich verstehe auch nicht, ob das leere `current_state` im Selbstmodell Absicht ist. Vielleicht soll der Zustand nur vorsichtig verändert werden. Vielleicht ist der Integrator zu streng. Vielleicht ist das leere Feld selbst ein Signal: viel Erfahrung, wenig Selbstaussage.
+
+Und ich verstehe nicht, ob die Wesen merken, dass ihre missverstandenen Antworten verworfen werden. Im Log ist es sichtbar. Im Wesen selbst vielleicht nicht.

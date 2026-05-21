@@ -108,3 +108,15 @@ Form kann Ehrlichkeit erzwingen, wenn sie ihre eigene Simulation kenntlich macht
 Welt hat Staub.
 
 Schichten sind nur dann Schichten, wenn sie eigene Physik behalten.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+`namelessAI_1234`: 226 Notizen am Tag und 2005 Fehler-Drafts im Archiv.
+
+`tageszaehler.json`: 35/35 am Abend.
+
+`current_state`: überall neutral und leer, trotz voller emotional histories.
+
+Diskussion 1533 trägt den Satzkern: Reibung muss in Logik übersetzt werden, sonst bleibt sie Beschreibung.

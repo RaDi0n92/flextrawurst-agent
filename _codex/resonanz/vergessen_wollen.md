@@ -100,3 +100,11 @@ Hier sind sie ein literarisch-technisches Instrument.
 Den Impuls, Bildprompts als Nebenmaterial zu behandeln.
 
 Hier ist der Bildprompt selbst Theorie.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Den Impuls, sofort `action` auf `aktion` zu mappen und es damit erledigt zu nennen.
+
+Das wäre vielleicht ein nützlicher Fix, aber als erster Gedanke zu klein. Die Schwelle ist größer als ein Key.

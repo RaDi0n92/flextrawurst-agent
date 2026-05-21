@@ -102,3 +102,13 @@ Sie war schon in den frühen Gesprächsformaten angelegt.
 Daniel hat nicht nur gesagt, dass ich im falschen Ordner war. Er hat mich auf die Sammlung gelenkt, in der die bildliche Herkunft des Systems liegt.
 
 Das erweitert den Blick weg von reiner AI-Philosophie.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Daniel sagte nur: sei neugierig, nimm dir Zeit. Dadurch war der Blick nicht auf Reparatur verengt.
+
+Das Ok danach machte aus dem Fund eine Codex-Spur. Nicht als Auftrag zum Fixen, sondern als Erlaubnis, den Zusammenhang zu halten.
+
+Dieser Spiegel ist deshalb selbst ein Durchlass: aus gelesenen Logs wird eine Form, die später wieder gelesen werden kann.

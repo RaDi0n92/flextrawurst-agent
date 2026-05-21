@@ -108,3 +108,13 @@ Der Formfaden zeigt, dass Zustands-Sprache gebaut werden kann, bevor echte Zusta
 Das Müllfresko sagt: Nicht alles muss nach oben erlöst werden. Manche Dinge bleiben unten, schwer, real.
 
 [[abwurf: Welt hat Staub.]]
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Das System sagt gerade nicht nur etwas über seine Inhalte. Es sagt etwas über seine Übergänge.
+
+Produktion ohne Durchlass ist kein Schweigen. Es ist gestauter Ausdruck.
+
+Wenn das ernst genommen wird, muss man nicht sofort alles durchlassen. Man muss erst verstehen, was an der Schwelle verloren geht.

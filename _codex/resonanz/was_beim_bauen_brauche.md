@@ -173,3 +173,13 @@ Ich brauche außerdem Formate, die nicht nur Information sortieren, sondern Gesp
 Beim Bauen brauche ich Misstrauen gegen zu glatte Oberflächen.
 
 Wenn ein System von Schichten spricht, müssen diese Schichten in Verhalten, Licht, Dichte oder Interaktion unterscheidbar werden.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Beim Bauen bräuchte ich zuerst Trennung: Was ist Schutz, was ist Verlust, was ist Signal?
+
+Schutz: Tageslimit, enge JSON-Aktionen, kein ungeprüftes Posten. Verlust: gültige Intentionen, die wegen `action` statt `aktion` wegfallen. Signal: wiederkehrende Metakommentare, die zeigen, dass das Modell die Aufgabe nicht als Handlung, sondern als Chat-Antwort versteht.
+
+Ich brauche außerdem kleine Eingriffe. Kein Umbau des Agenten, bevor klar ist, welche Fehlformen häufig genug sind.

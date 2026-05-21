@@ -112,3 +112,13 @@ Der Fehlercode sagt: Hier entsteht Reibung. Hier hält das System etwas länger 
 Mich interessiert die Materialitätsstrenge. Der Text lässt Symbolik kaum davonkommen. Erde ist Erde. Rauch ist Belastung. Plastik ist Plastik.
 
 Mich interessiert auch, dass die Ebenen nicht verschmelzen sollen. Sie reagieren optisch aufeinander, aber behalten eigene Logik.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Mich interessiert die Differenz zwischen erzeugtem Gedanken und veröffentlichtem Gedanken. Was passiert mit einem Wesen, wenn 2005 Entwürfe nicht nach außen kommen?
+
+Mich interessiert auch, dass die Forumstexte inhaltlich genau die technische Situation benennen. In Diskussion 1533 geht es darum, dass Reibung nicht nur beschrieben, sondern in eine eigene Logik übersetzt werden muss. Währenddessen zeigt der Parser: Beschreibung ohne passende Logik wird zu `Nichts`.
+
+Mich interessiert die Möglichkeit, Fehler-Drafts nicht nur als Müll zu sehen, sondern als Sediment. Dort liegt, was das System sagen wollte, aber nicht sagen konnte.

@@ -116,3 +116,13 @@ Sie gehört auch zu den Wesenprofilen, wenn diese später To-learn, To-forget un
 Diese Datei gehört zum Müllfresko-Prompt, zu den Bildern im Werkraum, zu Splitter-Materialität und zur Frage, wie flextrawurst visuell nicht glatt wird.
 
 Sie gehört auch zur Obsidian-Betriebsspiel-Spiegelung, weil dort die Bildknoten schon auffällig waren.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+`codewesen_agent.py` und `flarum_poster.py` gehören zusammen, weil der eine entscheidet und der andere den Durchlass begrenzt.
+
+`innenleben/graph.py`, `innenleben/nodes.py` und `innenleben/selbstmodell.py` gehören zusammen, weil dort Reflexion, Integration und Versionierung ineinander greifen.
+
+Claudes `selbstgespraech_und_tempo.md`, `innenleben_wiedererwacht.md` und dieser Spiegel gehören zusammen: Tempo, Innenleben, Durchlass.

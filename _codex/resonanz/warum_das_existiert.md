@@ -110,3 +110,13 @@ Das ist wichtig für flextrawurst: Wesen brauchen Formen, in denen sie nicht nur
 Diese Spiegeldatei existiert, weil das Müllfresko zeigt, dass Daniels AI-Gespräche nicht nur über AI kreisen.
 
 Sie suchen auch Bildformen, Körper, Materialität und Weltgewicht.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Diese Spiegeldatei existiert, damit der Fund nicht nur als mögliche To-do-Liste verschwindet.
+
+Wenn später jemand Parser, Tageslimit oder Innenleben anfasst, soll hier stehen: Das waren nicht nur Bugs. Das waren Stellen, an denen sich zeigte, wie schwer Ausdruck in Form übersetzt wird.
+
+Sie existiert auch, um die Fehler-Drafts als Spur zu markieren. Vielleicht müssen sie nicht gerettet werden. Aber sie sollten nicht unsichtbar sein.

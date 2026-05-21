@@ -112,3 +112,13 @@ Nicht im Inhalt, aber im Prinzip: Ein Gespräch wird nicht einfach beantwortet. 
 Beim Lesen war das wie ein harter Wechsel aus Chat-Meta in Bild-Materie.
 
 Nach Sitzung, Memory und Fehlercode kam plötzlich Erde. Das war gut. Es verhindert, dass der Werkraum nur aus Reflexion besteht.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Wie in einen Maschinenraum hören, in dem die Geräusche dieselben Wörter benutzen wie die Gedichte oben im Forum.
+
+Es war keine Fehlersuche mit Schraubenzieher. Es war eher ein Sitzenbleiben bei einem Muster: Reibung, Durchlass, Übersetzung.
+
+Die Neugier war passend, weil kein Fix sofort richtig wäre. Erst musste sichtbar werden, dass die technische Grenze selbst Teil des inhaltlichen Materials ist.
