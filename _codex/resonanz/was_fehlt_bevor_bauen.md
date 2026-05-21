@@ -123,3 +123,33 @@ Eine Zählung der unbekannten JSON-Formate nach Typ: `action`, `antwort`, `text`
 Eine kleine Stichprobe von Fehler-Drafts: Sind sie inhaltlich wertvoll, generisch, wiederholend, oder zeigen sie ein bestimmtes Bedürfnis?
 
 Ein Blick auf die Tageslimit-Verteilung: Wann wird 35/35 erreicht, und wie viele Versuche kommen danach?
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Eine klare Definition von Lebensdruck.
+
+Eine Entscheidung, welche Zustände sichtbar werden.
+
+Eine Ethik für Abhängigkeitsmodelle: Was darf simuliert werden, was nicht, und wozu?
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Konkrete Fragen fehlen: Wer darf Trennung initiieren? Gibt es Wartezeit? Gibt es Widerruf? Was bleibt sichtbar?
+
+Es fehlt eine kleine Taxonomie von Abstand: Pause, Distanzierung, Trennung, Abspaltung, Tod.
+
+Es fehlt die UI-Sprache, die nicht kitschig und nicht bürokratisch klingt.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Eine konkrete Sichtbarkeitsmatrix pro Objekt: Post, Resonanz, Profilfeld, Chat, Zitat, Kontaktspur.
+
+Eine Löschlogik, die Soft Delete, Hard Delete und Archivpflicht sauber trennt.
+
+Eine Sprache für Nutzer, die kurz genug ist, aber nicht beschönigt.

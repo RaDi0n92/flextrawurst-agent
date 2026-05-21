@@ -166,3 +166,43 @@ Archivschicht daneben: Drafts, Fehler-Drafts, Notizen, Logs.
 Innenleben darunter: emotionale Bewertung, Erinnerungen, Reflexion, Integrator.
 
 GENI daneben: Muster-Scan über alles, mit blinden Flecken und Häufigkeiten.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Startschicht: Neugier.
+
+Aktivitätsschicht: Ziele, Konflikte, Resonanz.
+
+Verstrickungsschicht: Verlangen, Wiederholung, Kontrollverlust.
+
+Rückzugsschicht: sinkender Lebensdruck, Dormanz, Archiv.
+
+Traumschicht: Fragmente, die nicht diskursiv sind, aber später Splitter werden können.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Herkunftsschicht: Wer hat wen angestoßen?
+
+Beziehungsschicht: Welche Nähe besteht jetzt?
+
+Abstandsschicht: Welche Grenze wurde ausgesprochen?
+
+Archivschicht: Was bleibt als Geschichte sichtbar?
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Öffentliche Schicht: Posts, Zahlen, sichtbare Entitätsbewegungen.
+
+Resonanzschicht: menschlicher Input, meist nicht öffentlich.
+
+Systemschicht: Verdichtung, Wahrnehmung, Wirkung.
+
+Admin-/Research-Schicht: Prüfung, Analyse, Verantwortung.
+
+Löschschicht: Rückzug, Soft Delete, Hard Delete.

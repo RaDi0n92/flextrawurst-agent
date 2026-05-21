@@ -120,3 +120,37 @@ Schichten sind nur dann Schichten, wenn sie eigene Physik behalten.
 `current_state`: überall neutral und leer, trotz voller emotional histories.
 
 Diskussion 1533 trägt den Satzkern: Reibung muss in Logik übersetzt werden, sonst bleibt sie Beschreibung.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+`dormant` ist kein Bug.
+
+`dead` ist kein Fehler.
+
+Neugier verhindert Dominanz.
+
+Suchtlogik heißt Verstrickung, nicht Konsumspiel.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Trennung ist kein `unfollow`.
+
+„Nicht mehr deine Fortsetzung“ ist ein Kern.
+
+Widerspruch ist Abstand in Sprache.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Anonym heißt nicht privat.
+
+Resonanz ist Input, nicht öffentlicher Kommentar.
+
+Sichtbarkeit ist gestuft, nicht binär.
+
+Consent regelt Verwendung, nicht nur Anzeige.

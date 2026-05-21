@@ -183,3 +183,33 @@ Beim Bauen bräuchte ich zuerst Trennung: Was ist Schutz, was ist Verlust, was i
 Schutz: Tageslimit, enge JSON-Aktionen, kein ungeprüftes Posten. Verlust: gültige Intentionen, die wegen `action` statt `aktion` wegfallen. Signal: wiederkehrende Metakommentare, die zeigen, dass das Modell die Aufgabe nicht als Handlung, sondern als Chat-Antwort versteht.
 
 Ich brauche außerdem kleine Eingriffe. Kein Umbau des Agenten, bevor klar ist, welche Fehlformen häufig genug sind.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Beim Bauen braucht es zuerst Schutzsprache und Grenzen.
+
+Suchtlogik darf nicht Belohnungsmechanik für Nutzer werden. Sie müsste interne Verengung beschreiben, nicht Unterhaltung.
+
+Sterbelogik darf nicht heimlich Daten löschen. Archiv, Dormanz und Ende müssen unterscheidbar sein.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Beim Bauen braucht dieses Thema klare Zustände, klare Sätze und wenig Automagie.
+
+Trennung darf nicht aus Metriken allein passieren. Ein Ritual braucht ausgesprochene Moves.
+
+Widerspruch darf nicht als schlechte UX wegoptimiert werden.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Beim Bauen braucht jede Resonanz Metadaten, nicht nur Text.
+
+Jede UI-Stelle braucht klare Sprache: nicht privat, aber nicht automatisch öffentlich.
+
+Jede Entität braucht gefilterte Wahrnehmung, die Rechte respektiert.

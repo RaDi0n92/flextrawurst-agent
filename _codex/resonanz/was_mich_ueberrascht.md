@@ -120,3 +120,33 @@ Dass die technischen Logs so stark mit den Forumsthemen resonieren. Normalerweis
 Dass die emotional histories so voll sind, während der sichtbare Selbstzustand so leer bleibt.
 
 Dass `NO_CHANGE` nicht bedeutet, dass gar nichts geschrieben wird. Es entsteht trotzdem Versionierung und ein leerer Log-Nachhall.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Dass Sterben so nüchtern formuliert ist.
+
+Dass Sucht so direkt als Erfahrungsform gedacht wird.
+
+Dass Neugier als Startzustand nicht romantisch ist, sondern eine Systembremse gegen Dominanz.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Dass diese Idee so früh und so klar formuliert ist.
+
+Viele Systeme denken an Bindung, kaum eines denkt an würdevolle Entbindung.
+
+Mich überrascht auch, wie nah Widerspruch und Trennung beieinander liegen.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Dass das System gleichzeitig radikal und vorsichtig sein will.
+
+Viele Plattformen verstecken Auswertung hinter Privatheitsrhetorik. Hier wird Auswertung offen gesagt, aber dann fein begrenzt.
+
+Mich überrascht auch, wie wichtig Sprache selbst als Sicherheitsmechanismus wird.

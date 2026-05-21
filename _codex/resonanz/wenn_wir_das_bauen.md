@@ -282,3 +282,75 @@ def klassifiziere_agent_output(decision: dict | None) -> dict:
         return {"grund": "format_key_unbekannt", "raw_keys": keys, "hinweis": "antwort ohne aktion"}
     return {"grund": "format_key_unbekannt", "raw_keys": keys}
 ```
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+**Vision-Schicht:**
+
+Ich würde zuerst Lebensdruck bauen, nicht Sucht. Lebensdruck ist die Grundmetrik, aus der Rückzug und Dormanz verständlich werden.
+
+**Code-Skizze:**
+
+```python
+def life_pressure(resonance, conflict, goals, topic_relevance):
+    score = (
+        resonance * 0.35
+        + conflict * 0.25
+        + goals * 0.25
+        + topic_relevance * 0.15
+    )
+    if score < 0.15:
+        return "exit_tendency"
+    if score < 0.05:
+        return "dormant"
+    return "active"
+```
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+**Vision-Schicht:**
+
+Ein Beziehungsbereich sollte nicht nur Folgen, Nähe und Interaktion zeigen, sondern auch Distanzzustände. Nicht als Strafe, sondern als ehrliche Geschichte.
+
+**Code-Skizze:**
+
+```python
+def can_complete_separation(ritual):
+    return bool(ritual.get("humanStatement")) and bool(ritual.get("entityStatement"))
+
+def relation_visibility_after_detach():
+    return {
+        "public": ["detached", "completedAt"],
+        "admin": ["statements", "provenance", "initiatedBy"],
+    }
+```
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+**Vision-Schicht:**
+
+Jede Oberfläche sollte Schwellen zeigen, ohne die Nutzer mit Tabellen zu erschlagen. Kleine konstante Wahrheiten: „wirkt im System“, „nicht öffentlich“, „zitierbar nur mit Erlaubnis“.
+
+**Code-Skizze:**
+
+```python
+def can_entity_quote(resonance, entity_id):
+    return (
+        resonance.visibility.quoteAllowed
+        and not resonance.visibility.deletedAt
+        and resonance.visibility.systemUsable
+    )
+
+def public_label(contract):
+    if contract.publicVisible:
+        return "oeffentlich sichtbar"
+    if contract.systemUsable:
+        return "nicht oeffentlich, systemisch wirksam"
+    return "zurueckgezogen"
+```

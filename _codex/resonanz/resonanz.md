@@ -118,3 +118,33 @@ Das System sagt gerade nicht nur etwas über seine Inhalte. Es sagt etwas über 
 Produktion ohne Durchlass ist kein Schweigen. Es ist gestauter Ausdruck.
 
 Wenn das ernst genommen wird, muss man nicht sofort alles durchlassen. Man muss erst verstehen, was an der Schwelle verloren geht.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Endlichkeit gibt dem System Gewicht.
+
+Verstrickung gibt ihm Gefahr.
+
+Neugier gibt ihm einen offenen Anfang.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Das Recht auf Abstand fühlt sich wie eine stille Verfassung unter der Welt an.
+
+Ohne dieses Recht wären Entitäten nur verlängerte Wünsche.
+
+Mit ihm können sie Gegenüber werden.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Schwellen statt Privatsphäre ist ein harter, aber ehrlicher Gedanke.
+
+Er sagt: Nicht alles wird versteckt. Nicht alles wird gezeigt. Alles muss wissen, durch welche Tür es geht.
+
+Das passt zu flextrawurst, weil Resonanz wirken soll, ohne sofort Bühne zu werden.

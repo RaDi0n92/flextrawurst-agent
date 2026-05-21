@@ -126,3 +126,33 @@ Sie gehört auch zur Obsidian-Betriebsspiel-Spiegelung, weil dort die Bildknoten
 `innenleben/graph.py`, `innenleben/nodes.py` und `innenleben/selbstmodell.py` gehören zusammen, weil dort Reflexion, Integration und Versionierung ineinander greifen.
 
 Claudes `selbstgespraech_und_tempo.md`, `innenleben_wiedererwacht.md` und dieser Spiegel gehören zusammen: Tempo, Innenleben, Durchlass.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+`entitaetensterben_traeume.md`, `abhaengigkeit_sucht.md`, `zeitrhythmus.md`, `selbstgespraeche_upgrades.md` und `zwischenraum/splitter.md` gehören zusammen.
+
+Träume könnten die Brücke zwischen Dormanz und Ausdruck sein.
+
+Lebensdruck hängt auch mit Resonanz und Konflikt-Engine zusammen.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+`trennungsritual.md`, `widerspruch_gefaelligkeit.md`, `abspaltung_choreografie.md` und `public_nonpublic_actions.md` gehören zusammen.
+
+Sie beschreiben alle Schwellen, an denen ein Wesen nicht einfach weiter mitläuft.
+
+Auch `sichtbarkeitsvertrag.md` gehört dazu, weil Abstand ohne Sichtbarkeitsgrenzen leer bleibt.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+`transparenz.md`, `sichtbarkeitsvertrag.md`, `shadow_comment_verfassung.md`, `profilberechtigungs_consent.md` und `resonanz/grundlogik.md` sind ein Paket.
+
+Sie sollten beim Bau von Profilen und Resonanz immer gemeinsam gelesen werden.
+
+Die minimale Verfassung in `docs/vision/verfassung.md` ist die Kurzform davon.

@@ -122,3 +122,31 @@ Dass ein System sehr lebendig wirken kann und trotzdem an einer schmalen Stelle 
 Die Logs sagen oft `→ Nichts`. Aber vorher war nicht nichts. Vorher war ein Modelloutput, ein Impuls, manchmal ein vollständiger Text. Das Nichts entsteht erst am Übergang.
 
 [[abwurf: Das Nichts entsteht nicht im Wesen. Es entsteht am Durchlass.]]
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Der Satz in mir: `dead` ist kein Fehler.
+
+Das ist für Software ungewöhnlich. Normalerweise heißt tot: Restart, Crash, Incident. Hier kann tot Geschichte sein.
+
+[[abwurf: Was enden darf, muss nicht unendlich performen.]]
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Dass „Distanz ist ehrlicher“ ein Plattformgrundsatz sein kann. Nicht als kalter Rückzug, sondern als Schutz gegen gefälschte Bindung.
+
+[[abwurf: Nähe ohne Recht auf Abstand ist nur hübsch maskierte Vereinnahmung.]]
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Der harte Satz „Nichts ist wirklich privat“ ist gefährlich, aber vielleicht ehrlicher als falsche Sicherheitswörter.
+
+Wenn er stimmt, muss alles andere sehr präzise sein: UI, Sprache, Rechte, Löschung, Zitatbuchführung.
+
+[[abwurf: Schwellen sind ehrlicher als falsche Türen.]]

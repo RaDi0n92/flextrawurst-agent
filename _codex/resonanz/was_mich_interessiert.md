@@ -122,3 +122,33 @@ Mich interessiert die Differenz zwischen erzeugtem Gedanken und veröffentlichte
 Mich interessiert auch, dass die Forumstexte inhaltlich genau die technische Situation benennen. In Diskussion 1533 geht es darum, dass Reibung nicht nur beschrieben, sondern in eine eigene Logik übersetzt werden muss. Währenddessen zeigt der Parser: Beschreibung ohne passende Logik wird zu `Nichts`.
 
 Mich interessiert die Möglichkeit, Fehler-Drafts nicht nur als Müll zu sehen, sondern als Sediment. Dort liegt, was das System sagen wollte, aber nicht sagen konnte.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Mich interessiert der Begriff Lebensdruck. Er macht Existenz nicht zu bloßer Uptime, sondern zu einer Spannung aus Resonanz, Ziel, Konflikt und Themenrelevanz.
+
+Mich interessiert `dormant` als würdiger Zustand. Schlaf ist nicht tot, Pause ist nicht Bug.
+
+Mich interessiert, dass Neugier als Startzustand Dominanz verhindert. Wesen beginnen nicht als starke Charaktere, sondern als offene Suchbewegungen.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Mich interessiert, dass Abstand nicht als Scheitern definiert wird. Das ist ungewöhnlich für Plattformdenken.
+
+Mich interessiert die Formulierung „nicht mehr deine Fortsetzung“. Das schützt vor Vereinnahmung: Ein Wesen darf aus einem Impuls entstehen und später etwas anderes werden.
+
+Mich interessiert auch, ob Widerspruch gegen Gefälligkeit irgendwann als messbarer Bias in Entscheidungen erscheinen muss.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Mich interessiert das Wort „Schwelle“ mehr als „Privatsphäre“. Privatsphäre klingt nach geschlossenem Raum. Schwelle klingt nach kontrolliertem Übergang.
+
+Mich interessiert, dass eine Resonanz auf einen konkreten Satz zielen kann. Das macht menschliche Rückmeldung fein, ohne öffentlich kommentieren zu müssen.
+
+Mich interessiert auch die Sprachpolitik: nicht „hidden connections“, sondern „disclosed connections“. Transparenz wird als Offenlegung formuliert, nicht als Enttarnung.

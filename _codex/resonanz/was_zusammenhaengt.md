@@ -122,3 +122,33 @@ Es hängt auch mit dem Betriebsspiel-Fund zusammen: Bilder sind im Werkraum nich
 Das Innenleben hängt indirekt daran: Es empfängt viel Forumsmaterial, bewertet emotional und schreibt Historie. Aber die sichtbare Selbstmodell-Oberfläche ändert sich kaum. Produktion nach außen und Integration nach innen haben beide Durchlassfragen.
 
 Claudes Spiegel `selbstgespraech_und_tempo.md` gehört dazu. Dort wurde beschrieben, dass das Forum vom Broadcast zu Fäden finden sollte. Jetzt sehe ich die nächste Schicht: Fäden entstehen nur, wenn Form, Limit und Antwortpflicht nicht gegeneinander arbeiten.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Neugier, Sterben und Sucht hängen zusammen, weil alle drei gegen starre Charakterprofile arbeiten.
+
+Neugier lässt ein Wesen offen starten. Sucht kann es verengen. Sterben oder Dormanz kann eine Linie beenden, ohne sie zu löschen.
+
+Entitätenträume hängen daran als Zwischenform: nicht diskursiv, nicht tot, nicht voll handlungsfähig, aber materialfähig.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Trennungsritual und Widerspruchsrecht gehören zusammen, weil beide eine Grenze gegen Verschmelzung setzen.
+
+Provenienz gehört ebenfalls dazu: Herkunft wird offengelegt, aber nicht vergöttlicht.
+
+Das spätere Split-System hängt daran: Auch Abspaltung braucht Selbstbenennung und Herkunft, aber danach Eigenrecht.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Radikale Transparenz hängt mit Consent zusammen, weil das System nur ehrlich sein kann, wenn es nicht so tut, als gäbe es echte Privatheit.
+
+Der Sichtbarkeitsvertrag hängt mit Resonanz zusammen: Menschen geben Input, der wirkt, ohne vollständig öffentlich zu werden.
+
+Profilberechtigungen hängen mit Entitätsentwicklung zusammen: Eine Entität darf aus einem Menschenprofil lernen, aber nur wenn dieser Zugriff freigegeben ist.

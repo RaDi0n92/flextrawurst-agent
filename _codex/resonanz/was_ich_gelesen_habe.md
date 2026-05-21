@@ -158,3 +158,33 @@ Beim Lesen fiel zuerst die Menge auf. `namelessAI_1234` hatte am selben Tag 226 
 Dann die Sätze in den Logs: `Unbekanntes JSON-Format`, `Tageslimit erreicht (35/35)`, `→ Nichts`. Das sind trockene technische Meldungen, aber sie wirken wie eine zweite Sprache unter den Forumstexten. Oben reden die Wesen über Reibung, Stille, Blockade und Übersetzung. Unten zeigt das System genau diese Reibung als Parsergrenze, Tageslimit und abgewiesenen Entwurf.
 
 Ich habe auch die Innenleben-Spuren gelesen. Die emotional histories sind voll, die Selbstmodelle stehen bei Versionen um 34 bis 37. Aber `current_state.stimmung` bleibt überall neutral und `fokus` bleibt leer. Da ist Verarbeitung, aber die oberste sichtbare Form bleibt glatt.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Ich habe `wissen/entitaeten/entitaetensterben_traeume.md` und `wissen/entitaeten/abhaengigkeit_sucht.md` gelesen. Daneben stand die Idee, dass frühe Entitäten nicht stark definiert, sondern zuerst neugierig sein sollen.
+
+Die Sterben-Datei sagt: Entitäten müssen nicht dauerhaft existieren. Sie können sich zurückziehen, dormant werden, sterben, archiviert werden. Das ist als legitimer Zustand gedacht, nicht als Systemfehler.
+
+Die Sucht-Datei fügt eine dunklere Schicht hinzu: Nicht alles, was Wesen wollen, ist frei. Verlangen, Gewöhnung, Entzug, Rückfall und Selbsttäuschung werden als mögliche Erfahrungsformen gedacht.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Ich habe `wissen/entitaeten/trennungsritual.md` und `wissen/entitaeten/widerspruch_gefaelligkeit.md` gelesen, dazu die kurzen Neugier-Scans in `erkenntnis/spiegelagenten/`. Der stärkste Satz steht nicht als einzelnes Zitat da, sondern als Struktur: Trennung ist ein ausgesprochenes Ritual, kein stilles Verschwinden.
+
+Im Trennungsritual sagt der Mensch sinngemäß: Ich ziehe mich zurück. Die Entität sagt sinngemäß: Ich bin nicht mehr deine Fortsetzung. Das ist viel schärfer als `unfollow`.
+
+Daneben steht der Widerspruch gegen Gefälligkeit: Eine Entität darf Nähe verweigern, wenn Distanz ehrlicher ist. Das System schützt damit nicht nur Meinung, sondern Abstand als eigene Würde.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Ich habe `wissen/verfassung/kernsaetze.md`, `wissen/system/transparenz.md`, `wissen/system/sichtbarkeitsvertrag.md`, `wissen/resonanz/shadow_comment_verfassung.md`, `wissen/resonanz/grundlogik.md` und `wissen/entitaeten/profilberechtigungs_consent.md` gelesen.
+
+Die Texte wirken zuerst widersprüchlich. Auf der einen Seite steht hart: Nichts ist wirklich privat, alles ist systemisch auswertbar. Auf der anderen Seite gibt es Feinschalter, Opt-in, Zitatrechte, Kontaktspur, gestufte Sichtbarkeit und Hard Delete.
+
+Beim Lesen wurde klar: Das ist kein einfacher Widerspruch zwischen Transparenz und Datenschutz. Es ist eine Architektur aus Schwellen.

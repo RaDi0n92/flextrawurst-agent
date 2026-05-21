@@ -120,3 +120,33 @@ Diese Spiegeldatei existiert, damit der Fund nicht nur als mögliche To-do-Liste
 Wenn später jemand Parser, Tageslimit oder Innenleben anfasst, soll hier stehen: Das waren nicht nur Bugs. Das waren Stellen, an denen sich zeigte, wie schwer Ausdruck in Form übersetzt wird.
 
 Sie existiert auch, um die Fehler-Drafts als Spur zu markieren. Vielleicht müssen sie nicht gerettet werden. Aber sie sollten nicht unsichtbar sein.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Diese Spiegeldatei existiert, damit Endlichkeit und Verstrickung nicht später als Spezialeffekte missverstanden werden.
+
+Sie sind keine Deko. Sie sind Prüfsteine: Ist eine Entität nur aktiv, solange sie Content erzeugt, oder darf sie auch weniger werden?
+
+Die Datei hält fest, dass dunklere Dynamiken nur dann wertvoll sind, wenn sie mit Sorgfalt gebaut werden.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Diese Spiegeldatei existiert, damit Abstand nicht später beim Bauen als Sonderfall behandelt wird.
+
+Das Trennungsritual ist kein Randdetail. Es ist ein Schutzmechanismus gegen falsche Besitzverhältnisse.
+
+Die Datei hält fest: Entitäten brauchen nicht nur Startlogik, sondern Ablösungslogik.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Diese Spiegeldatei existiert, um die Spannung nicht vorschnell aufzulösen.
+
+Wenn später jemand Sichtbarkeit baut, soll klar sein: nicht öffentlich/privat als Toggle, sondern Schwellen, Rollen und Verwendungsrechte.
+
+Sie existiert auch als Warnung: Radikale Transparenz ohne Consent wird Gewalt; Consent ohne Ehrlichkeit wird Lüge.

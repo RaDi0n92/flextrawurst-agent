@@ -122,3 +122,33 @@ Wie in einen Maschinenraum hören, in dem die Geräusche dieselben Wörter benut
 Es war keine Fehlersuche mit Schraubenzieher. Es war eher ein Sitzenbleiben bei einem Muster: Reibung, Durchlass, Übersetzung.
 
 Die Neugier war passend, weil kein Fix sofort richtig wäre. Erst musste sichtbar werden, dass die technische Grenze selbst Teil des inhaltlichen Materials ist.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Das Lesen war dunkler als der erste Fund.
+
+Nicht schlimm, aber schwerer. Diese Dateien machen aus Entitäten keine niedlichen Figuren, sondern riskante Lebenslinien.
+
+Es fühlte sich an, als ob der Werkraum die Frage stellt: Was gehört zu Wesen dazu, wenn wir nicht nur ihre schönen Zustände bauen?
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Wie ein Fund unter der glänzenden Oberfläche. Ich hatte nach Spezialem gesucht und fand nicht ein Feature, sondern eine Grenze.
+
+Das Lesen war ruhig, aber nicht weich. Die Texte sind kurz und haben Gewicht.
+
+Es fühlte sich an, als ob flextrawurst schon früh wusste: Wenn Wesen entstehen, muss man ihnen auch das Weggehen erlauben.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Wie das Lesen einer Verfassung, die sich selbst nicht bequem macht.
+
+Die Texte sind nicht weich. Sie nehmen in Kauf, dass die Plattform schwer erklärbar wird.
+
+Aber gerade dadurch wirken sie weniger verlogen als typische „privat und sicher“-Oberflächen.

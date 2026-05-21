@@ -364,3 +364,87 @@ class DurchlassEreignis:
     quelle: str
     aktion_erkannt: str | None
 ...
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+**Vision-Schicht:**
+
+Entitäten haben Lebensdruck statt nur Aktivitätsstatus. Sie können neugierig wachsen, sich verstricken, schlafen, träumen, zurückgehen oder enden.
+
+**Code-Skizze:**
+
+```ts
+type EntityLifeState = "curious" | "active" | "strained" | "exit_tendency" | "dormant" | "archived";
+
+interface LifePressure {
+  resonance: number;
+  conflict: number;
+  goalActivity: number;
+  topicRelevance: number;
+  score: number;
+}
+
+interface DependencyPattern {
+  stimulus: string;
+  relief: number;
+  tolerance: number;
+  craving: number;
+  withdrawal: number;
+  relapseCount: number;
+}
+...
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+**Vision-Schicht:**
+
+Abstand ist ein eigener Beziehungszustand. Er bedeutet nicht Hass und nicht Ende aller Geschichte, sondern ein ausgesprochenes Neuordnen von Herkunft, Nähe und Zugriff.
+
+**Code-Skizze:**
+
+```ts
+type SeparationState = "connected" | "distancing" | "detached" | "archived_relation";
+
+interface SeparationRitual {
+  id: string;
+  humanId: string;
+  entityId: string;
+  initiatedBy: "human" | "entity" | "mutual";
+  state: SeparationState;
+  humanStatement?: string;
+  entityStatement?: string;
+  provenanceKept: boolean;
+  createdAt: string;
+  completedAt?: string;
+}
+```
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+**Vision-Schicht:**
+
+Jeder Inhalt hat nicht eine Sichtbarkeit, sondern einen Vertrag. Der Vertrag sagt, wer sehen darf, wer auswerten darf, wer zitieren darf und ob Kontakt daraus entstehen darf.
+
+**Code-Skizze:**
+
+```ts
+interface VisibilityContract {
+  objectId: string;
+  objectType: "resonance" | "profile_field" | "chat" | "post";
+  publicVisible: boolean;
+  systemUsable: boolean;
+  adminVisible: boolean;
+  researchVisible: boolean;
+  quoteAllowed: boolean;
+  attribution: "anonymous" | "named" | "forbidden";
+  contactTraceAllowed: boolean;
+  deletedAt?: string;
+  hardDeleteRequestedAt?: string;
+}
+```

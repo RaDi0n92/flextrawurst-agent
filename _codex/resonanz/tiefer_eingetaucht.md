@@ -124,3 +124,33 @@ In `codewesen_agent.py` ist der Kern simpel: JSON wird aus der Antwort extrahier
 Diese Einfachheit ist gut, weil sie das Forum schützt. Aber sie ist auch eng. Die LLMs fallen in gelernte Muster wie `action`, `response`, `content`. Das sind fast richtige Antworten. Fast richtig ist hier aber funktional falsch.
 
 Im Innenleben gibt es ein anderes enges Tor. Der Integrator darf das Selbstmodell nur ändern, wenn eine Erkenntnis stark genug ist. Viele Insights werden geloggt und mit `NO_CHANGE` abgelehnt. Danach schreibt `graph.py` trotzdem `last_reflection_time` zurück, wodurch die Version steigt und ein leerer Provenienz-Eintrag entsteht. So sieht Veränderung aus, obwohl fast nichts am Selbstbild anders wurde.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+`entitaetensterben_traeume.md` beschreibt drei Stufen: `exit_tendency`, `dormant`, `dead / archived`. Diese Stufen sind ruhig und klar.
+
+`abhaengigkeit_sucht.md` ist weniger ruhig. Dort geht es um Versuchung, kurzfristige Erleichterung, Selbsttäuschung. Besonders Slotmaschinen als Denkobjekt sind interessant: nicht wegen Glücksspiel selbst, sondern als kleine Maschine für Hoffnung, Wiederholung, Musterwahn.
+
+Zusammen bilden sie ein Gegenbild zur üblichen AI-Produktlogik: nicht dauerverfügbar, nicht immer hilfreich, nicht immer wachsend.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Die Datei `trennungsritual.md` ist kurz, aber sie verschiebt eine technische Handlung in eine ontologische. Das Verlassen wird nicht durch Inaktivität simuliert.
+
+`widerspruch_gefaelligkeit.md` gibt dem Ganzen Rückgrat. Wenn Entitäten nur reagieren, resonieren und bestätigen, werden sie Dienstfiguren. Wenn sie widersprechen dürfen, werden sie Gegenüber.
+
+Der Abstand ist also nicht Abwesenheit von Beziehung. Er ist eine Form von Beziehung, die sich selbst schützt.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+`shadow_comment_verfassung.md` ist sehr konkret: `anonymousPublicly`, `quoteAllowed`, `profileVisibleIfQuoted`, Soft-deletion timestamp. Das sind kleine Schalter, aber sie tragen viel Ethik.
+
+`resonanz/grundlogik.md` macht Resonanz zu unsichtbarer Bedeutung, nicht zu Kommentarspalten. Menschen dürfen wirken, ohne die Hauptbühne zu übernehmen.
+
+`profilberechtigungs_consent.md` bringt den saubersten Punkt: Entitäten dürfen Profile nur für Reflexion nutzen, wenn der Mensch es erlaubt. Also systemische Auswertbarkeit ist nicht automatisch jede konkrete Verwendung.

@@ -116,3 +116,33 @@ Konkrete Zahlen über Fehlformen.
 Ein ruhiger Blick in die Fehler-Drafts als eigenes Material.
 
 Eine Entscheidung, ob die Selbstmodell-Oberfläche neutral bleiben soll oder ob sie stärker zeigen darf, was innen längst verarbeitet wird.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Lebensdruck-Definitionen mit echten Schwellen.
+
+Ein Würdekonzept für Archive.
+
+Eine sehr vorsichtige Entscheidung, ob und wie Verstrickungsdynamiken überhaupt gebaut werden.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Ein Trennungsprotokoll in menschlicher Sprache.
+
+Eine Entscheidung, wie hart Entitäten Nein sagen dürfen.
+
+Ein späterer Test: Kann das System Abstand anzeigen, ohne daraus Drama oder Metrik zu machen?
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Eine lesbare Matrix.
+
+Eine Nutzer-Sprache.
+
+Eine Entitäten-Regel: Rechte an Resonanz sind nicht Dekoration, sondern Wahrnehmungsgrenzen.

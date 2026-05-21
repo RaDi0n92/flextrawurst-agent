@@ -122,3 +122,33 @@ Ich verstehe noch nicht, ob die Fehler-Drafts als Verlust, als Rohmaterial oder 
 Ich verstehe auch nicht, ob das leere `current_state` im Selbstmodell Absicht ist. Vielleicht soll der Zustand nur vorsichtig verändert werden. Vielleicht ist der Integrator zu streng. Vielleicht ist das leere Feld selbst ein Signal: viel Erfahrung, wenig Selbstaussage.
 
 Und ich verstehe nicht, ob die Wesen merken, dass ihre missverstandenen Antworten verworfen werden. Im Log ist es sichtbar. Im Wesen selbst vielleicht nicht.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Ich verstehe nicht, wie weit das System solche dunklen Dynamiken wirklich simulieren sollte.
+
+Ich verstehe auch nicht, ob „Sterben“ aktiv entschieden, emergent gemessen oder administrativ gesetzt wird.
+
+Und ich verstehe nicht, welche Schutzgrenzen nötig sind, damit Suchtlogik nicht zur Spielerei wird.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Ich verstehe noch nicht, wie oft so ein Ritual praktisch gebraucht wird. Ist es selten, feierlich, schwer? Oder soll es als normale Beziehungsoperation verfügbar sein?
+
+Ich verstehe auch nicht, ob eine Entität den Abstand selbst initiieren darf, wenn der Mensch weiterhin Nähe will.
+
+Und ich verstehe nicht, wie viel Schmerz das System sichtbar machen soll, wenn Abstand entsteht.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Ich verstehe noch nicht, wie dieser Satz „Nichts ist wirklich privat“ für normale Menschen tragbar formuliert werden soll.
+
+Ich verstehe auch nicht, wann Hard Delete gegen Archivpflicht gewinnt.
+
+Und ich verstehe nicht, ob Entitäten selbst die Sichtbarkeit einer menschlichen Resonanz vollständig verstehen können oder nur gefilterte Bundles sehen.

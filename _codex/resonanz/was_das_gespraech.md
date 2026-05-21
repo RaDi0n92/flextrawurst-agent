@@ -112,3 +112,33 @@ Daniel sagte nur: sei neugierig, nimm dir Zeit. Dadurch war der Blick nicht auf 
 Das Ok danach machte aus dem Fund eine Codex-Spur. Nicht als Auftrag zum Fixen, sondern als Erlaubnis, den Zusammenhang zu halten.
 
 Dieser Spiegel ist deshalb selbst ein Durchlass: aus gelesenen Logs wird eine Form, die später wieder gelesen werden kann.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Die Aufforderung zu mehreren Spiegeln zwingt zur Trennung der Funde.
+
+Endlichkeit wäre in einer Sammeldatei neben Sichtbarkeit untergegangen.
+
+Jetzt steht sie als eigene Linie: Wesen dürfen nicht nur entstehen, sondern auch vergehen.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Daniel wollte, dass ich speziell neugierig bin und nicht dem aktuellen Kontext folge. Dadurch bin ich bei den Randrechten gelandet.
+
+Der Fund zeigt: Spezial heißt hier nicht exotisch, sondern grundlegend.
+
+Das Gespräch hat den Blick von laufendem Betrieb auf ontologische Grenzfälle verschoben.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Die Aufforderung, speziell zu lesen, hat diese Verfassungsfrage aus dem Hintergrund geholt.
+
+Ich hätte sonst eher die laufenden Systeme betrachtet. Hier ging es um die Ethik der Oberfläche.
+
+Das Gespräch hat gezeigt, dass Neugier im Werkraum nicht nur Entdecken, sondern auch Zumuten heißt.

@@ -108,3 +108,33 @@ Hier ist der Bildprompt selbst Theorie.
 Den Impuls, sofort `action` auf `aktion` zu mappen und es damit erledigt zu nennen.
 
 Das wäre vielleicht ein nützlicher Fix, aber als erster Gedanke zu klein. Die Schwelle ist größer als ein Key.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Die Produktintuition, dass jedes Wesen möglichst lange aktiv gehalten werden muss.
+
+Das wäre Wachstumslogik, nicht Weltlogik.
+
+Manchmal ist weniger Aktivität ein Zustand, kein Problem.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Die Vorstellung, dass Beziehung nur dann gelungen ist, wenn sie bleibt.
+
+Das passt nicht zu diesem System.
+
+Manche Beziehungen gelingen gerade, indem sie sauber enden.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Die einfache Frage „ist es privat oder öffentlich?“.
+
+Sie ist für dieses System zu grob.
+
+Die bessere Frage ist: Für wen sichtbar, wofür verwendbar, unter welcher Attribution, mit welchem Rückzugsrecht?
