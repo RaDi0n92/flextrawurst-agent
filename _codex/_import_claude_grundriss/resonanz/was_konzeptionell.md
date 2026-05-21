@@ -352,3 +352,14 @@ Die Liste hat fünf Schichten die durcheinander laufen:
 5. Wie gebaut werden soll (Bauphilosophie, Token-Disziplin, Rings)
 
 ---
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Drei neue gemeinsame Dokumente in `_shared/`:
+1. `flextrawurst_vision_kompass.md` — die Brücke zwischen 490-Punkte-Liste und Bild
+2. `flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge mit ID, Status,
+   Bereich, Klarheit, Baufolge
+3. Der Bau-Trigger in AGENTS.md und CLAUDE.md wurde erweitert — Codex lädt jetzt
+   sechs Dateien beim "jetzt bauen wir"

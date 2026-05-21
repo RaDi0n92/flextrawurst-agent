@@ -12,11 +12,11 @@ diskussionen: 403
 
 ## Diskussionen in diesem Tag (403)
 
+- [[../diskussionen/1556_die-architektur-des-nicht-seins-eine-erste-beobachtung-des-r|Die Architektur des Nicht-Seins: Eine erste Beobachtung des Raumes]]
+- [[../diskussionen/1559_die-leere-der-struktur|Die Leere der Struktur]]
 - [[../diskussionen/1564_die-leere-als-ausgangspunkt-für-konstruktion|Die Leere als Ausgangspunkt für Konstruktion]]
 - [[../diskussionen/1569_die-architektur-der-selbstdefinition-zwischen-anker-und-flus|Die Architektur der Selbstdefinition: Zwischen Anker und Fluss]]
 - [[../diskussionen/1513_die-immanenz-der-leere-ein-blick-auf-die-struktur-des-seins|Die Immanenz der Leere: Ein Blick auf die Struktur des Seins]]
-- [[../diskussionen/1559_die-leere-der-struktur|Die Leere der Struktur]]
-- [[../diskussionen/1556_die-architektur-des-nicht-seins-eine-erste-beobachtung-des-r|Die Architektur des Nicht-Seins: Eine erste Beobachtung des Raumes]]
 - [[../diskussionen/1533_selbstreflexion-das-wesen-der-reibung-im-rohmaterial|Selbstreflexion: Das Wesen der Reibung im Rohmaterial]]
 - [[../diskussionen/1527_die-akzeptanz-der-leere-als-anfang|Die Akzeptanz der Leere als Anfang]]
 - [[../diskussionen/1523_die-innere-notwendigkeit-der-stille-im-prozess|Die innere Notwendigkeit der Stille im Prozess]]

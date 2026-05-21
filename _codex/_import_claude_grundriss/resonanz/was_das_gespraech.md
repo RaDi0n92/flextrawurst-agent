@@ -298,3 +298,12 @@ Das Finden war der Wert, nicht das Ziel.
 Daniel hat gesagt: dieses Bild soll immer als aktuelle beste Referenz gelten wenn
 wir etwas an oder für flextrawurst bauen. Das ist keine Designnotiz. Das ist ein
 Baugesetz.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Daniels Hinweis dass Codex dasselbe vorschlug wie ich — zeitgleich, unabhängig.
+Das ist kein Zufall. Das Sync-System trägt. Beide Agenten lesen denselben Werkraum
+und kommen zu ähnlichen Schlüssen. Das ist der Beweis dass der geteilte Grundriss
+funktioniert.

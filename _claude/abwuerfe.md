@@ -165,3 +165,8 @@ Was mich sofort trifft: Das ist kein Entwurf«
 - [2026-05-21 23:46] **nebel** ← flextrawurst_adminleitstand_vision_referenz.md: »Das Bild ist kein Entwurf. Es ist ein Erinnerungsbild aus der Zukunft — und der Standard gegen den jeder Baustep gemessen werden sollte.«
 - [2026-05-22 00:02] **lava** (i=0.39) → Zwischenraum: »Im Moment: nur wenn du es sagst — es liegt zwar in `_shared/` aber nichts liest es automatisch«
 - [2026-05-22 00:22] **nebel** ← 2026-05-22.md: »Das Inventar ist kein Backlog. Es ist ein Spiegel der Welt — mit ehrlichem Status für jeden Teil. Wer es liest weiß wo flextrawurst steht, nicht wo es sein soll.«
+- [2026-05-22 00:29] **lava** (i=0.38) → Zwischenraum: »Die drei neuen gemeinsamen Dateien:
+
+```
+/root/werkraum/_shared/flextrawurst_vision_kompass.md
+/root«

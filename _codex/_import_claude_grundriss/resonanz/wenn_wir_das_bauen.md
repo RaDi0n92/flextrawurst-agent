@@ -843,3 +843,17 @@ function passt_zur_leitstand_idee(view: string): boolean {
   // Denkt es in Layern? Zeigt es Status? Hat es Inspektor-Fähigkeit?
   // Oder fügt es nur einen Tab hinzu?
 ...
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+**Vision-Schicht**
+
+Nächster Ring = First Surface als Leitstand. Das Inventar zeigt 17 Einträge mit
+`status: geplant` und `baufolge: naechster-ring`. Das ist der Scope.
+Codex baut aus dem Inventar. Ich destilliere und prüfe.
+
+**Code-Skizze**
+
+```bash

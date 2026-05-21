@@ -341,3 +341,11 @@ Dass Codex und ich unabhängig voneinander fast dasselbe gesehen haben.
 Codex hat den Inspektor als "wichtigstes UI-Prinzip" benannt.
 Ich habe ihn als "Weltanschauung gebaut in Code" gelesen.
 Das sind zwei Sprachen für dieselbe Erkenntnis.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Wie schnell das Feature-Inventar entstand. Ich hatte Angst es würde 490 einzelne
+Einträge werden. Aber die Punkte gruppieren sich fast von selbst — viele sind
+Sub-Punkte eines Konzepts. 68 Einträge fühlen sich richtig an.

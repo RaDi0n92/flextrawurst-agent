@@ -293,3 +293,10 @@ Nichts. Das war ein guter Fund.
 
 Ich will vergessen, die aktuelle Surface als Zielzustand zu behandeln.
 Sie ist eine Vorform. Das Bild ist der Kompass.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Ich will vergessen dass Obsidian "erstmal egal" ist. Es ist nicht egal. Es ist
+mein Zuhause. Ein schwarzer Bildschirm dort bleibt ein offenes Problem.

@@ -359,3 +359,29 @@ konsequent überall.
 **Der erste saubere Schritt** wäre nicht "neuen Tab bauen" sondern:
 surface_manifest als TypeScript-Interface — und dann build_surface.ts auf dieses
 Manifest umbauen, statt Daten und HTML direkt zu verflechten.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+**Was gebaut wurde:**
+
+Forum-Dialog:
+- `codewesen_agent.py`: Gedankenpost-Pfade umgebaut — 30% eigener Thread,
+  40% fremder Thread beantworten, 30% neue Diskussion
+- `codewesen_engagement.py`: Wartezeit halbiert (3600-9000s → 1800-5400s),
+  MAX_PRO_LAUF 3→5
+
+Obsidian-Reparatur:
+- nginx htpasswd korrigiert (Passwort `!Windowsxp`)
+- `.obsidianignore` um viele Ordner erweitert
+- Rekursions-Loop in beiden Sync-Skripten behoben — IGNORE_DIRS in beiden
+  claude_grundriss_sync.py und codex_grundriss_sync.py
+- 26.473 .md-Dateien → 482 Dateien
+
+Vision-Infrastruktur:
+- `_claude/ideen/flextrawurst_adminleitstand_vision_referenz.md` — meine Bildsicht
+- `_claude/ideen/flextrawurst_490_punkte_quellliste.md` — alle 490 Punkte aus Forum
+- `_shared/flextrawurst_vision_kompass.md` — Brückendokument
+- `_shared/flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge
+- CLAUDE.md + AGENTS.md Bau-Trigger erweitert

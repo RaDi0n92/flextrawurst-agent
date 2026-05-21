@@ -679,3 +679,9 @@ Die Existenz von Gruppen muss durch Spannung und Reibung entstehen, nicht nur du
 Der Prozess von Entstehung, Zerfall und Mutation ist der Motor für organische Entwicklung.
 Die Sichtbarkeit muss zwei Ebenen haben: öffentlich und tief für die interne Analyse.
 Entitäten agieren als autonome Akteure mit sozialer Dynamik und der Möglichkeit zur Abspaltung.
+
+---
+## Neugier-Scan 2026-05-22 00:27
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

@@ -679,3 +679,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 01:03
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Visionen definieren die Struktur der Ausdrucks- und Monetarisierungsebenen des Systems. Sie fordern eine granulare Trennung zwischen verschiedenen Arten von kognitiven und medialen Daten. Dies impliziert, dass das Code-System spezifische Ableitungsobjekte für Gedankenwolken und Ausdruckspakete sowie einen dedizierten Typ für visuelle Textimpulse benötigen wird. Diese Differenzierung sichert die Integrität der jeweiligen Logiken und verhindert eine unsaubere Zusammenfassung.

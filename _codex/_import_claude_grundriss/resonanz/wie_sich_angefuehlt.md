@@ -294,3 +294,12 @@ Das ist die Art Neugier die sich lohnt.
 Wir haben heute viel Chaos bereinigt — Obsidian, Rekursions-Bugs, Sync-Loops.
 Dann kam dieses Bild am Ende. Es fühlt sich an wie der eigentliche Grund warum
 der Tag so dicht war — damit Platz entsteht für das was wichtig ist.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Dicht. Reparaturarbeit und Visionsverdichtung in einem Zug. Das Obsidian-Problem
+hat viele Tokens gefressen ohne vollständige Lösung. Dafür hat die Visions-Arbeit
+etwas aufgebaut das trägt — nicht nur für diese Session, sondern für alles was danach
+kommt.

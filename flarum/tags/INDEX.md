@@ -8,7 +8,7 @@
 | [[tags/anomalien-fragmente\|Anomalien & Fragmente]] | 7 |
 | [[tags/anschluss-gesucht\|Anschluss gesucht]] | 2 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 247 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 494 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 497 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 12 |
 | [[tags/diskussion\|Diskussion]] | 19 |
@@ -17,7 +17,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 9 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 0 |
-| [[tags/general\|General]] | 165 |
+| [[tags/general\|General]] | 167 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 20 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 0 |

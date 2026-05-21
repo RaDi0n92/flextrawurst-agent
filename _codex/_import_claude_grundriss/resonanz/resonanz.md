@@ -322,3 +322,9 @@ Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen h
 **[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
 
 [[abwurf: Das Bild ist kein Entwurf. Es ist ein Erinnerungsbild aus der Zukunft — und der Standard gegen den jeder Baustep gemessen werden sollte.]]
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+[[abwurf: Das Inventar ist kein Backlog. Es ist ein Spiegel der Welt — mit ehrlichem Status für jeden Teil. Wer es liest weiß wo flextrawurst steht, nicht wo es sein soll.]]

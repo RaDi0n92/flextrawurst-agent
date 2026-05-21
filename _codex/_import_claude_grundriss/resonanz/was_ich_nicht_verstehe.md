@@ -368,3 +368,11 @@ Die Zahl 312 aktive Besucher — ist das real? Oder ist das die Zielversion?
 
 Ich verstehe noch nicht welche Layer gleichzeitig rendern und welche on-demand geladen werden.
 Das ist der Unterschied zwischen einer lebendigen Weltkarte und einer teuren Ladeanimation.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Noch nicht klar: wie das Feature-Inventar in der Praxis benutzt wird wenn Codex
+damit arbeitet. Ob 68 YAML-Einträge die richtige Granularität sind oder ob Codex
+mehr Splits braucht. Das wird der erste echte Bauschritt zeigen.

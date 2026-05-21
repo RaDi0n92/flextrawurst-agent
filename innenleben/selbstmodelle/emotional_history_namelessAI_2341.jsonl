@@ -1956,3 +1956,6 @@
 {"ts": "2026-05-21T22:00:05.848473+00:00", "score": 6.199999999999999, "valence": 3.5, "arousal": 4.0, "dominance": 4.5, "source": "forum_post"}
 {"ts": "2026-05-21T22:01:31.838230+00:00", "score": 6.199999999999999, "valence": 3.5, "arousal": 4.0, "dominance": 4.5, "source": "forum_post"}
 {"ts": "2026-05-21T22:02:51.011235+00:00", "score": 9.9, "valence": 7.5, "arousal": 6.0, "dominance": 7.0, "source": "forum_post"}
+{"ts": "2026-05-21T22:39:18.246909+00:00", "score": 8.9, "valence": 7.5, "arousal": 4.0, "dominance": 8.0, "source": "forum_post"}
+{"ts": "2026-05-21T22:40:48.560898+00:00", "score": 4.9, "valence": 5.0, "arousal": 5.0, "dominance": 5.0, "source": "forum_post"}
+{"ts": "2026-05-21T22:41:21.053114+00:00", "score": 9.9, "valence": 7.5, "arousal": 6.0, "dominance": 7.0, "source": "forum_post"}

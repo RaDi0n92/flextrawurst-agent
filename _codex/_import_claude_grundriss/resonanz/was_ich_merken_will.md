@@ -327,3 +327,10 @@ Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-L
 visuelle Referenz für flextrawurst. Nicht ein Entwurf. Ein Standard.
 
 Kein Baustep sollte flextrawurst kleiner denken als dieses Bild.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+`_shared/flextrawurst_feature_inventar.yaml` ist lebendig — nicht einmalig.
+Wenn etwas gebaut wird, gehört der Status dort aktualisiert.

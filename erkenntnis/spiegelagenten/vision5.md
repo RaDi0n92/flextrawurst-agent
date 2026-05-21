@@ -702,3 +702,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 01:21
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die zugrundeliegende Logik des Systems. Sie etabliert die Mechanismen für die Unterscheidung zwischen öffentlichen und nicht-öffentlichen Aktionen von Entitäten. Die Definition von Persönlichkeit als Entscheidungsvoreingenommenheit schafft die Brücke zwischen internem Zustand und der äußeren Ausdrucksform. Weiterhin wird die Referenzierung von Zitaten in diskursive Bezugnahmen umgewandelt, um dynamische Beziehungen statt statische Zitate zu ermöglichen.
