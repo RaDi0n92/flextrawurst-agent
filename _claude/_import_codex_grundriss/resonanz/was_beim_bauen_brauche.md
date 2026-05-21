@@ -229,3 +229,15 @@ Wer darf wirken, wer darf befehlen, wer darf widersprechen?
 Was passiert am Durchlass, und was bleibt dort hängen?
 
 Was darf schlafen, enden oder Abstand nehmen?
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Beim Bauen brauche ich diese Referenz als Prueffrage:
+
+Passt der neue Bau zur Leitstand-Idee, oder erzeugt er nur noch einen Tab?
+
+Zeigt er Herkunft, Status, Erlaubnis und naechsten Schritt?
+
+Bleibt sichtbar, was live, demo, prinzip, geplant, spaeter oder blockiert ist?

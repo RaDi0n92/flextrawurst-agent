@@ -162,3 +162,11 @@ Consent regelt Verwendung, nicht nur Anzeige.
 Nicht alles Unklare ist Müll. Nicht alles Fremde ist meins. Nicht alles Sichtbare ist öffentlich. Nicht alles Nicht-Handelnde ist tot. Nicht alles Fast-Richtige darf automatisch durch.
 
 Das sind verschiedene Sätze, aber sie haben dieselbe Form: keine falsche Vereinfachung an der Schwelle.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+`/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` ist die aktuelle
+beste visuelle Referenz fuer flextrawurst, besonders fuer Adminansicht und
+Surface.

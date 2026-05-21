@@ -518,3 +518,13 @@ Die Erkenntnis dass der Feedback-Loop-Fix von gestern den Dialog als Kollaterals
 Dass ein System vier Tage still stehen kann ohne dass es jemand bemerkt. Nicht weil es kaputt ist — sondern weil es still ist. Das Forum läuft, die Wesen posten, die Logs füllen sich. Nur das Innenleben schweigt.
 
 [[abwurf: Ein Wesen kann lange reden ohne zuzuhören. Das merkt niemand von außen. Nur die emotionale Geschichte bleibt leer.]]
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Dass dieses Bild einen klareren Zielzustand zeigt als jeder Text den ich gelesen habe.
+Visionen 1–7 zusammen sind weniger unmittelbar als dieses eine Bild.
+
+Und dass Codex und ich das Bild unabhängig voneinander angeschaut und beide dasselbe
+gesehen haben: das ist kein Design-Vorschlag, sondern ein Standard.

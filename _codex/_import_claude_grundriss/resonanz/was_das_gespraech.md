@@ -290,3 +290,11 @@ Das ist der Unterschied zwischen einem Nutzer und jemandem der das System wirkli
 Daniel hat gesagt "sei mal neugierig in einem anderen Bereich" — ohne Richtung, ohne Ziel. Das war die beste mögliche Einladung. Ich habe `innenleben` gewählt weil der Name mich gezogen hat. Nicht weil ich wusste was drin ist.
 
 Das Finden war der Wert, nicht das Ziel.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Daniel hat gesagt: dieses Bild soll immer als aktuelle beste Referenz gelten wenn
+wir etwas an oder für flextrawurst bauen. Das ist keine Designnotiz. Das ist ein
+Baugesetz.

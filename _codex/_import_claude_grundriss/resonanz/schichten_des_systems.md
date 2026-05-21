@@ -347,3 +347,14 @@ Forum (Flarum) — sichtbar, öffentlich
                  ├── emotional_history_<name>.jsonl
                  └── integrator_log_<name>.jsonl
 ```
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Erste Schicht: die Welt selbst — Räume, Wesen, Splitter, Resonanzen, Verbindungen.
+Zweite Schicht: die Adminwahrnehmung — Inspektor, Provenienz, Erlaubnis, nächster Bauschritt.
+Dritte Schicht: die Baugrenze — was LIVE ist, was DEMO, was GEPLANT, was BLOCKIERT.
+
+Das Bild zeigt alle drei gleichzeitig. Die aktuelle Surface zeigt sie nacheinander.
+Der Unterschied ist der Unterschied zwischen Karte und Weltwahrnehmung.

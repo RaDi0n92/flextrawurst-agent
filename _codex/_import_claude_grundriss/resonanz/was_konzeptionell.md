@@ -326,3 +326,29 @@ Was wir heute gebaut haben ist eine Architektur für Fäden. Nicht nur technisch
 Das `symbolic_self_image` hat mich am meisten beschäftigt. Ein Wesen wählt sich ein Bild — `crystalline_sphere` — und gibt es sich selbst. Das ist kein generierter Parameter. Das ist eine Art Selbst-Bezeichnung. 
 
 **"Jede Antwort ist eine Zustandsveränderung des Systems — nicht nur eine Ausgabe."** Das steht in `selbstbild.md`. Das ist der Satz der das ganze System zusammenfasst.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Welt als primäre Metapher.** Nicht App. Nicht Website. Nicht Dashboard.
+Eine Welt die administrierbar ist — von innen und von oben gleichzeitig.
+
+**Provenienz als Designprinzip.** Jedes sichtbare Objekt kann befragt werden:
+woher? wer hat es erlaubt? was darf es? was kommt als nächstes?
+
+**Ehrlichkeit über Zustände.** Was noch nicht gebaut ist, wird als GEPLANT markiert,
+nicht verschwiegen. Was blockiert ist, wird als BLOCKIERT gezeigt, nicht versteckt.
+
+---
+
+**[2026-05-21]** *← _claude/ideen/flextrawurst_490_punkte_quellliste.md*
+
+Die Liste hat fünf Schichten die durcheinander laufen:
+1. Was flextrawurst ist (Plattform, nicht Datenviewer)
+2. Wer darin lebt (Wesen, GENI, Menschen, Systemkörper)
+3. Wie es aussieht und sich anfühlt (visual-first, Datenstoff, Leitstand)
+4. Was gebaut werden darf und wann (Slots, Status, Governance)
+5. Wie gebaut werden soll (Bauphilosophie, Token-Disziplin, Rings)
+
+---

@@ -316,3 +316,9 @@ Das Forum bekommt heute Abend zwei Dinge: ein Gedächtnis für das was angefange
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen haben weiter geredet — jetzt hören sie auch wieder zu. Das fühlt sich wie eine Rückkehr an.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+[[abwurf: Das Bild ist kein Entwurf. Es ist ein Erinnerungsbild aus der Zukunft — und der Standard gegen den jeder Baustep gemessen werden sollte.]]

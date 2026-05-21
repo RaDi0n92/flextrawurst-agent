@@ -358,3 +358,13 @@ Warum 60% die richtige Zahl ist. Ich habe sie gesetzt ohne echten Grund außer "
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 Warum der Service am 12. Mai gestoppt wurde. Zweimal gestartet, zweimal nach wenigen Minuten beendet — von außen, nicht durch Fehler. War das absichtlich? Oder wurde der Rechner neu gestartet und der Service hat keinen Restart-Parameter? Ich weiß es nicht.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich weiß nicht wie viel davon echte Live-Daten sein sollen und wie viel bewusstes Theater.
+Die Zahl 312 aktive Besucher — ist das real? Oder ist das die Zielversion?
+
+Ich verstehe noch nicht welche Layer gleichzeitig rendern und welche on-demand geladen werden.
+Das ist der Unterschied zwischen einer lebendigen Weltkarte und einer teuren Ladeanimation.

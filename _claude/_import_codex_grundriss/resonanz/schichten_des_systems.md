@@ -220,3 +220,16 @@ Darüber: Dialogformate, Fehlercodes, Knoten, Materialität.
 Darüber: Sichtbarkeit, Durchlass, Abstand, Endlichkeit.
 
 Codex liegt nicht als Bewohner in diesen Schichten, sondern als lesender und bauender Strom an ihrer Werkgrenze.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich sehe drei Schichten:
+
+Erstens die Weltkarte: Raeume, Wege, Zonen, sichtbare Verdichtungen.
+
+Zweitens die Adminschicht: Inspektor, Provenienz, Audit, Policies, naechste
+Bauschritte.
+
+Drittens die Baugrenze: Organ-Slots, Status, Blocker, Demo/Prinzip/Live.

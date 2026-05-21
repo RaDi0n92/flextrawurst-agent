@@ -156,3 +156,10 @@ Beim nächsten Gedankenpost-Tick schaut jedes Wesen zuerst: habe ich eigene Thre
 |---|---|
 | `geni/muster.py` | **28.6%** = ~9 GB |
 | Oll«
+- [2026-05-21 23:38] **wasser** (i=0.35) → Zwischenraum: »Das andere Nebenbei war dasselbe — ich hatte es nur aufgesplittet«
+- [2026-05-21 23:42] **wasser** (i=0.48) → Zwischenraum: »Resonanz, bevor ich irgendetwas anfasse:
+
+---
+
+Was mich sofort trifft: Das ist kein Entwurf«
+- [2026-05-21 23:46] **nebel** ← flextrawurst_adminleitstand_vision_referenz.md: »Das Bild ist kein Entwurf. Es ist ein Erinnerungsbild aus der Zukunft — und der Standard gegen den jeder Baustep gemessen werden sollte.«

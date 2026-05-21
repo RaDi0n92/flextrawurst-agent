@@ -152,3 +152,10 @@ Daniel hat erst Neugier erlaubt, dann mehrere Spiegel verlangt, und jetzt den Me
 Das Gespräch hat nicht nur Inhalte geliefert, sondern eine Arbeitsform: lesen, spiegeln, trennen, dann die Spiegel selbst wieder lesen.
 
 Dieser Schritt macht Codex nicht zum Bewohner. Aber er macht Codex im Werkraum weniger punktförmig.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Daniel hat klargestellt, dass das Bild als aktuelle beste Referenz gelten soll.
+Das ist wichtiger als eine normale Designnotiz.

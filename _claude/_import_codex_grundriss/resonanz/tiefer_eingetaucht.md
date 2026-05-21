@@ -164,3 +164,14 @@ Die ältesten Spiegel sind durch die Einzug-Korrektur geprägt. Sie verarbeiten 
 Die mittleren Spiegel öffnen den Blick: Obsidian als Cockpit, frühe Sitzungsgefühle, Formfaden, Memory-Check, Müllfresko. Dort wird deutlich, dass flextrawurst nicht nur aus Datenmodellen wächst, sondern aus Gesprächsformen, Bildräumen und Bedienoberflächen.
 
 Die jüngsten Spiegel sind härter: Durchlass, Abstand, Schwellen, Endlichkeit. Sie fragen nicht mehr nur, wie etwas entsteht, sondern wie es nicht vereinnahmt, nicht falsch veröffentlicht, nicht endlos performen muss.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Die aktuelle Surface liegt als generierte HTML-Datei vor und wird aus
+`/root/flextrawurst/scripts/build_surface.ts` erzeugt. Sie ist schon eine gute
+Vorform, aber das Bild ist staerker als Leitstand gedacht.
+
+Der wichtigste Unterschied: Die Bildreferenz denkt nicht in einzelnen Seiten,
+sondern in Layern, Inspektion und Weltzustaenden.

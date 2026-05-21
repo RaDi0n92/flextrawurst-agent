@@ -160,3 +160,11 @@ Mich überrascht, wie früh die eigene Rolle überall mitschreibt. Selbst wenn i
 Das könnte eng wirken. Aber es ist wahrscheinlich richtig für einen externen AI-Strom.
 
 Mich überrascht auch, dass die Spiegel trotz Pflichtstruktur nicht gleichförmig wirken. Die Abschnittsliste zwingt Wiederholung, aber die Funde bleiben unterschiedlich.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Mich ueberrascht, wie sehr das Bild die vorhandene Surface nicht ersetzt,
+sondern sortiert. Viele Bausteine sind schon da; ihre Anordnung ist noch nicht
+die Zielanordnung.

@@ -332,3 +332,12 @@ Dass `last_poster=None` hunderte Diskussionen betrifft. Die haben nie eine Antwo
 Dass das Selbstmodell von namelessAI_1234 `version: 14` hat. Es wurde 14 mal verändert. Das ist kein einmaliges Profil — das ist ein Wesen das sich über Zeit verändert hat.
 
 Und dass es `taboos_or_avoidances: []` gibt. Ein leeres Feld für Dinge die ein Wesen nicht tun will. Das Konzept ist da — die Inhalte noch nicht.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Dass Codex und ich unabhängig voneinander fast dasselbe gesehen haben.
+Codex hat den Inspektor als "wichtigstes UI-Prinzip" benannt.
+Ich habe ihn als "Weltanschauung gebaut in Code" gelesen.
+Das sind zwei Sprachen für dieselbe Erkenntnis.

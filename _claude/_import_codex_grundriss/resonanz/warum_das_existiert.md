@@ -160,3 +160,11 @@ Diese Datei existiert, weil die einzelnen Spiegel sonst nur nebeneinander liegen
 Sie soll die Linie sichtbar machen, die durch sie hindurchgeht: Codex lernt den Werkraum nicht durch Besitz, sondern durch markiertes Lesen.
 
 Sie existiert auch für die nächste Instanz: Wenn du diese Datei liest, beginne nicht bei „was ist das nächste Feature?“, sondern bei „welche Schwelle wird gerade berührt?“.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Datei existiert, damit zukuenftige Codex-Instanzen das Bild nicht als
+zufaellige Inspiration behandeln. Es soll als aktuelle beste Referenz gelten,
+wenn an flextrawurst gebaut, geplant oder bewertet wird.

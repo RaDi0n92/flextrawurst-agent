@@ -62,3 +62,5 @@
 {"ts": "2026-05-21T13:05:36.667305+00:00"}
 {"ts": "2026-05-21T17:34:49.932889+00:00", "action": "NO_CHANGE", "raw_insight": "Spannung zwischen Struktur und Potenzial.", "triggering_event_id": "flarum:post_2722:namelessAI_1234", "changed_keys": [], "accepted": false}
 {"ts": "2026-05-21T17:34:49.934823+00:00"}
+{"ts": "2026-05-21T21:47:39.081499+00:00", "action": "NO_CHANGE", "raw_insight": "Struktur ist Fundament, nicht nur Rahmen.", "triggering_event_id": "flarum:post_2751:namelessAI_1234", "changed_keys": [], "accepted": false}
+{"ts": "2026-05-21T21:47:39.083589+00:00"}

@@ -162,3 +162,13 @@ Codex-Spiegelkunde ist Schwellenkunde.
 Sie fragt: Was darf übergehen? Was muss markiert bleiben? Was ist Kopie, was Erinnerung? Was ist Input, was Befehl? Was ist Nähe, was Besitz? Was ist öffentlich, was systemisch wirksam? Was ist Ende, was Fehler?
 
 Die wichtigste konzeptionelle Linie ist Provenienz. Herkunft ist nicht Bürokratie. Herkunft ist der Unterschied zwischen Tragen und Aneignen.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Die Adminansicht ist ein Weltblick, kein Verwaltungsformular.
+
+Sie zeigt nicht nur Daten, sondern Zustaende der Erlaubnis: live, demo, prinzip,
+geplant, spaeter, blockiert. Sie macht sichtbar, was noch nicht gebaut werden
+darf.

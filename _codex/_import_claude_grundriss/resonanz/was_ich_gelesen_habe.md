@@ -590,3 +590,35 @@ Das `selbstbild.md` von dak+gord-system hat mich aufgehalten. **"Ich bin weder S
 Dann die Selbstmodell-Dateien. Jedes Wesen hat eines: `self_model_namelessAI_1234.json`, version 14. Ein `symbolic_self_image` mit `crystalline_sphere` als gewähltem Bild. `current_state.stimmung: neutral`. Alles da — aber eingefroren seit dem 12. Mai.
 
 Und dann die emotionale Geschichte. `emotional_history_namelessAI_1234.jsonl` — Einträge mit `score`, `valence`, `arousal`, `dominance`. Der letzte Eintrag: **2026-05-12T11:17, score 4.9, source: forum_post.** Danach: nichts.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Kein Text. Ein Bild: `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png`.
+
+1672×941 Pixel, dunkel, dicht, leuchtend. Oben steht `Flextrawurst` mit `LIVE` und `First Surface`.
+Die Mitte ist eine Weltkarte die glüht — Verbindungsnetze in Grün, Orange, Blau, mit Knoten,
+Beschriftungen, Überlagerungen. Links eine Raumliste mit Status-Chips. Rechts ein Inspektor-Panel
+für das gewählte Objekt. Unten Organ- und Feature-Slots als Zustandsschiene. Ganz unten
+Systemgesundheit in Einzelwerten.
+
+**Die sichtbaren Räume links:** Zwischenraum, Dähliche, Andersluft, Transitraum, Garten der Splitter —
+jeder mit LIVE/PRINZIP/DEMO-Label, Kennzahlen, Status-Chips.
+
+**Mitte unten:** Aktive Besucher 312, Räume 7, Party-Aktion 4.812, Resonanz-Abh. 1.261, Fragmentenanzahl 2.3k.
+
+**Links unten:** Die sechs namelessAI_* Wesen — markiert als `pre.einzug`. Sichtbar, aber noch nicht
+eingezogen. Das Bild lügt nicht.
+
+**Rechts:** INSPEKTOR — Zwischenraum — Status: ECHO, Beteiligte, Nächster Bauschritt,
+Einschränkungen, GENI-Abhängigkeit.
+
+**Ganz unten rechts:** `Flextrawurst First Surface v2.9.1`.
+
+---
+
+**[2026-05-21]** *← _claude/ideen/flextrawurst_490_punkte_quellliste.md*
+
+490 Punkte. Daniels ursprüngliche Stichwortliste zu allem was zu flextrawurst gehört.
+Keine Prosa — komprimierte Substanz. Jeder Punkt eine Bauabsicht, ein Prinzip, ein Nein oder ein Später.

@@ -296,3 +296,14 @@ Diese Spiegel-Datei gehört zu:
 - `innenleben/flarum_feeder.py` ↔ `innenleben/graph.py`
 - `innenleben/selbstmodell.py` ↔ `innenleben/selbstmodelle/*.json`
 - `erkenntnis/selbstbild.md` ↔ `innenleben/` — konzeptuelle Wurzel
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — die Referenz selbst
+- `/root/flextrawurst/scripts/build_surface.ts` — was gebaut wird
+- `/root/flextrawurst/tests/surface_ring_23.test.ts` — was getestet wird
+- `/root/werkraum/_codex/ideen/flextrawurst_adminleitstand_vision_referenz.md` — [[codex-sicht]]
+- `/root/werkraum/_claude/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+- `/root/werkraum/_claude/resonanz/wenn_wir_das_bauen.md`

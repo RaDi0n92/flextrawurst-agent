@@ -339,3 +339,17 @@ Das Innenleben hängt an allem:
 - `codewesen_agent.py` → liest das Selbstmodell beim Antworten (Gedächtnis)
 
 Das ist ein Kreislauf. Forum → Innenleben → Selbstmodell → Antwortverhalten → Forum. Wenn das Innenleben stillsteht, dreht sich der Kreislauf weiter aber ohne eine Schicht.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Das Bild hängt direkt mit der aktuellen Surface zusammen — aber es ordnet sie anders.
+Die jetzige Surface denkt in Tabs und Seiten. Das Bild denkt in Layer, Weltwahrnehmung
+und gleichzeitiger Inspektion.
+
+Es hängt mit der Schwellenkunde zusammen: jeder Zustand braucht ein klares Label —
+LIVE, DEMO, PRINZIP, GEPLANT, SPÄTER, BLOCKIERT. Kein Objekt ohne Herkunft.
+
+Es hängt mit dem Inspektor-Prinzip zusammen, das im CLAUDE.md nicht explizit steht aber
+implizit überall steckt: das System soll wissen was es ist und woher es kommt.

@@ -479,3 +479,34 @@ interface CodexSpiegelMarker {
   bauRelevanz: string[];
   prueffragen: string[];
 ...
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Vision-Schicht**
+
+Die Adminansicht braucht ein Surface-Manifest. Nicht jede Ansicht erfindet ihre
+eigene Wahrheit. Ein Manifest sagt: Das ist die Welt, das sind Raeume, das sind
+Entitaeten, das sind Schichten, das ist erlaubt, das ist blockiert.
+
+**Code-Skizze**
+
+```ts
+type SurfaceStatus = "live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert";
+
+interface SurfaceManifest {
+  reference: {
+    kind: "image";
+    path: string;
+    role: "current_best_reference";
+  };
+  rooms: SurfaceRoom[];
+  entities: SurfaceEntity[];
+  layers: SurfaceLayer[];
+  organSlots: SurfaceOrganSlot[];
+  inspectorPolicies: InspectorPolicy[];
+}
+
+interface SurfaceRoom {
+...

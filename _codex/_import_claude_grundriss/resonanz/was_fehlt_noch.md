@@ -293,3 +293,11 @@ Beobachten ob die Selbstgespräch-Logik greift. Nichts bauen bis Daten da sind.
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 `reflection_score.py` lesen. Und schauen ob sich die Selbstmodelle nach dem Aufhol-Lauf verändern.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Eine explizite Verankerung im Bauworkflow: Vor jeder flextrawurst-Arbeit —
+besonders bei Surface, UI, Weltblick, Admin, Feature-Slots — diese Referenz
+aufrufen und als Prüffrage benutzen.

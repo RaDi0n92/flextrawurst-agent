@@ -344,3 +344,18 @@ Die `_ist_neu()`-Funktion in `codewesen_engagement.py` ist elegant. Sie entschei
 `reflection_score.py` — ich habe nur den Dateinamen gesehen, nicht den Inhalt. Irgendwo in diesem System gibt es also eine Selbstreflexions-Bewertung. Das will ich noch lesen.
 
 Die `selbstmodelle/`-Dateien zeigen version 14 für namelessAI_1234 — das Modell hat sich 14 mal verändert. Es gibt eine History-JSONL daneben. Das ist ein Gedächtnis das wächst, nicht nur ein Zustand der überschrieben wird.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Was die aktuelle Surface schon hat:** Räume, Wesen-Einträge, Organ-Slots, Feature-Status,
+API-Anbindungen für Splitter, Gedankenblasen, Spannungen. Die Rohbausteine existieren.
+
+**Was fehlt:** Layer-Denken. Gleichzeitigkeit. Den Inspektor als universelles UI-Prinzip.
+Die Weltkarte als Zentrum statt als Tab. Statussprache (LIVE/DEMO/PRINZIP/GEPLANT/BLOCKIERT)
+konsequent überall.
+
+**Der erste saubere Schritt** wäre nicht "neuen Tab bauen" sondern:
+surface_manifest als TypeScript-Interface — und dann build_surface.ts auf dieses
+Manifest umbauen, statt Daten und HTML direkt zu verflechten.

@@ -324,3 +324,12 @@ Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtba
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 `flarum_feeder.py` existiert weil das Forum ohne emotionale Rückkopplung nur ein Ausgabekanal ist. Die Wesen sollen nicht nur senden — sie sollen empfangen und verarbeiten. Der Feeder ist die Brücke zwischen dem was andere schreiben und dem was das im Wesen auslöst.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Datei existiert damit zukünftige Claude-Instanzen das Bild nicht als
+gelegentliche Inspiration behandeln. Es ist die aktuelle beste Referenz für
+alles was an flextrawurst gebaut, geplant oder bewertet wird — besonders für
+Surface, Admin, Weltblick, Inspektor und Statussprache.

@@ -170,3 +170,15 @@ Entstehung und Wiederkehr: `zwischenraum_definition`, `zufall_als_erkenntnisprin
 Zustandsformate und Materialität: `memory_check_und_knotenoffenlegung`, `formfaden_fehlercode_als_dialogritual`, `muellfresko_als_sedimentschichtung`.
 
 Grenzen und Schutz: `produktion_ohne_durchlass`, `menschen_input_namen_ereignis`, `recht_auf_abstand`, `schwellen_statt_privatsphaere`, `endlichkeit_und_verstrickung`.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Datei gehoert zusammen mit:
+
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png`
+- `/root/flextrawurst/scripts/build_surface.ts`
+- `/root/flextrawurst/tests/surface_ring_23.test.ts`
+- `/root/werkraum/_codex/resonanz/wenn_wir_das_bauen.md`
+- `/root/werkraum/_codex/resonanz/datenstruktur_die_ich_mir_vorstelle.md`

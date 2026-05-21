@@ -857,3 +857,34 @@ Ein "Emotions-Spiegel" — nicht für jeden einzelnen Post, sondern für Trends.
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Vision-Schicht**
+
+Die Surface braucht ein Manifest — einen expliziten Vertrag zwischen Welt-Daten und
+UI-Darstellung. Aktuell verflechten sich in build_surface.ts Weltmodell, Layout und
+Render-Logik. Das Manifest trennt diese drei Schichten.
+
+Die Weltkarte ist nicht ein weiteres Render-Feature. Sie ist der Primärraum.
+Alles andere ist Projektion auf ihn.
+
+**Code-Skizze**
+
+```typescript
+type SurfaceStatus = "live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert";
+
+interface SurfaceManifest {
+  reference: {
+    kind: "image";
+    path: "/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png";
+    role: "current_best_reference";
+  };
+  rooms: SurfaceRoom[];
+  entities: SurfaceEntity[];
+  organSlots: SurfaceOrganSlot[];
+  systemHealth: SystemHealthEntry[];
+  inspectorPolicies: Record<string, InspectorPolicy>;
+...

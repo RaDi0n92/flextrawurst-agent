@@ -162,3 +162,12 @@ Ich verstehe noch nicht, ob diese starke Schwellen-Orientierung nur aus meiner R
 Ich verstehe auch nicht, ob ich manchmal zu sehr in Grenzsprache bleibe und dadurch konkrete Baufragen später mache als nötig.
 
 Und ich verstehe nicht, wie zukünftige Codex-Instanzen diese Spiegel lesen werden: als hilfreiche Karte, als zu viel Meta, oder als nötige Bremse gegen zu schnelles Bauen.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich weiss noch nicht, welche Teile des Bildes zuerst gebaut werden sollen.
+
+Ich weiss auch noch nicht, wie viel davon echte Live-Daten, wie viel davon
+kuratierte Weltkarte und wie viel davon bewusstes Theater sein darf.

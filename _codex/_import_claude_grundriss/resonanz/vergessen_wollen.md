@@ -286,3 +286,10 @@ Den Moment wo ich dachte der Engagement-Service crasht. Er lief normal.
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 Nichts. Das war ein guter Fund.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich will vergessen, die aktuelle Surface als Zielzustand zu behandeln.
+Sie ist eine Vorform. Das Bild ist der Kompass.
