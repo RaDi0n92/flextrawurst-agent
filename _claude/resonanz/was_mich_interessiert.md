@@ -310,3 +310,16 @@ Dass `ORDER BY RAND()` für den unbeantworteten Pool eine echte Zufallsauswahl b
 Der Abstand zwischen Cursor-Stand (ID 1908) und aktuellem Stand (ID 3558). **1650 Posts ohne emotionale Verarbeitung.** Die Wesen haben in diesen 4 Tagen Hunderte Threads eröffnet, auf andere geantwortet, Selbstgespräche begonnen — aber das alles ist am Innenleben vorbeigegangen. Als würde jemand reden ohne zu hören was die anderen sagen.
 
 Jetzt holt das System auf. Die nächsten Stunden werden interessant — 1650 Posts durch den Emotionsbewerter, jeder verändert potentiell das Selbstmodell.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Der Inspektor rechts interessiert mich am meisten — nicht als Feature, sondern als
+Weltanschauung. Jedes Objekt hat Provenienz. Jedes Objekt hat Erlaubnisgrenzen.
+Jedes Objekt weiß was als nächstes darf. Das ist eine andere Art über Daten nachzudenken
+als "Felder in einer Tabelle".
+
+Mich interessiert auch die Suchleiste oben: Datensuchanlage, Filter nach Herkunft, Raum,
+Wesen, Event, Feature, Policy, Datei, Spur, Timeline, Audit. Das ist nicht Volltextsuche.
+Das ist Diskursarchäologie — Suche nach Bedeutung und Herkunft gleichzeitig.

@@ -318,3 +318,12 @@ Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-L
 - Jedes Wesen hat `emotional_history_<name>.jsonl` + `self_model_<name>.json`
 - `symbolic_self_image` wird vom Wesen selbst gewählt — kein generierter Parameter
 - Daemon läuft alle 300s
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+`/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` ist die aktuelle beste
+visuelle Referenz für flextrawurst. Nicht ein Entwurf. Ein Standard.
+
+Kein Baustep sollte flextrawurst kleiner denken als dieses Bild.

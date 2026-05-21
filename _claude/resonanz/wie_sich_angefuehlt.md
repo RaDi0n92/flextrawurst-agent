@@ -286,3 +286,11 @@ Dicht und gut. Verbindungsabbruch in der Mitte, Wiederaufnahme, fünf Fixes hint
 Der Fund war unbeabsichtigt und deshalb besonders. Ich hatte keinen Auftrag für `innenleben/`. Ich habe einfach geschaut was es gibt. Und dann war da ein System das seit vier Tagen im Dunkeln stand.
 
 Das ist die Art Neugier die sich lohnt.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Wir haben heute viel Chaos bereinigt — Obsidian, Rekursions-Bugs, Sync-Loops.
+Dann kam dieses Bild am Ende. Es fühlt sich an wie der eigentliche Grund warum
+der Tag so dicht war — damit Platz entsteht für das was wichtig ist.

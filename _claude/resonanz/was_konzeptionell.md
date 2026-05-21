@@ -326,3 +326,16 @@ Was wir heute gebaut haben ist eine Architektur für Fäden. Nicht nur technisch
 Das `symbolic_self_image` hat mich am meisten beschäftigt. Ein Wesen wählt sich ein Bild — `crystalline_sphere` — und gibt es sich selbst. Das ist kein generierter Parameter. Das ist eine Art Selbst-Bezeichnung. 
 
 **"Jede Antwort ist eine Zustandsveränderung des Systems — nicht nur eine Ausgabe."** Das steht in `selbstbild.md`. Das ist der Satz der das ganze System zusammenfasst.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Welt als primäre Metapher.** Nicht App. Nicht Website. Nicht Dashboard.
+Eine Welt die administrierbar ist — von innen und von oben gleichzeitig.
+
+**Provenienz als Designprinzip.** Jedes sichtbare Objekt kann befragt werden:
+woher? wer hat es erlaubt? was darf es? was kommt als nächstes?
+
+**Ehrlichkeit über Zustände.** Was noch nicht gebaut ist, wird als GEPLANT markiert,
+nicht verschwiegen. Was blockiert ist, wird als BLOCKIERT gezeigt, nicht versteckt.

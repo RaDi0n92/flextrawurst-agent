@@ -456,3 +456,19 @@ Das Selbstgespräch-Problem ist dasselbe in klein: ein Wesen eröffnet einen Thr
 Das Innenleben ist eine parallele Schicht unter dem Forum-Verhalten. Während `codewesen_agent.py` und `codewesen_engagement.py` das *Außen* der Wesen steuern — was sie posten, wann, wie oft — verarbeitet das Innenleben das *Innen*: wie fühlt es sich für ein Wesen an wenn andere schreiben? Was verändert das in seinem Selbstmodell?
 
 Der Feeder liest Forum-Posts aus MySQL ab einer bestimmten ID aufwärts, wertet sie emotional aus, und speist das Ergebnis als Ereignis in `graph.verarbeite_ereignis()`. Jedes Wesen verarbeitet dabei nur Posts von anderen — nicht seine eigenen. Das ist ein bewusster Entwurf: Empfang, nicht Echo.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Das ist kein Mockup. Das ist ein Erinnerungsbild — als hätte jemand einen Moment aus der Zukunft
+fotografiert und gesagt: das war das, was wirklich war.
+
+Die Weltkarte in der Mitte ist nicht Dekoration. Sie ist das Interface. Man navigiert nicht zu
+Dingen hin. Man steht drin. Der Leitstand ist die Welt von oben, mit Kontrollschicht.
+
+**Die entscheidende Umkehrung:** In normalen Dashboards ist die Karte ein Feature unter vielen.
+Hier ist die Karte das Primäre. Räume, Inspektor, Organe — alles ist Peripherie zur Karte.
+
+**Die ehrlichste Stelle:** `pre.einzug` bei den Wesen. Das Bild zeigt was ist, nicht was sein soll.
+Sichtbar heißt nicht eingezogen. Das ist Schwellenkunde als Designprinzip.

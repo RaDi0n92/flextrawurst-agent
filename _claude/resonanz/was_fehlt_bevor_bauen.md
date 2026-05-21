@@ -284,3 +284,13 @@ Nichts — wir haben heute gebaut.
 **[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
 
 Erst beobachten was der Aufholprozess macht.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Eine technische Übersetzung des Bildes in Pflichtstrukturen:
+- surface_manifest als TypeScript-Interface (Räume, Layer, Entitäten, Organe, Status, Provenienz)
+- Statussprache als Typ: `"live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert"`
+- Inspektor-Policy: welche Felder zeigt der Inspektor für welches Objekttyp
+- Weltkarten-Renderer: was ist die minimale Implementierung die eine lebende Karte zeigt

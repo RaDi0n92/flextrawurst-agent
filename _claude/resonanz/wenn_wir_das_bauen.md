@@ -812,3 +812,34 @@ Ein Dashboard das die emotionale Gesundheit aller 6 Wesen zeigt. Nicht als Zahle
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Vision-Schicht**
+
+Nicht als kompletter Neubau. Als Richtungsänderung der bestehenden Surface.
+Erster Schritt: surface_manifest. Zweiter Schritt: Weltkarte als Primärraum.
+Dritter Schritt: Inspektor als universelles Seitenmodul.
+Statussprache konsequent: kein sichtbares Objekt ohne Status-Label.
+
+**Code-Skizze**
+
+```typescript
+function buildAdminLeitstand(manifest: SurfaceManifest): string {
+  return [
+    buildTopSearch(manifest),          // Diskursarchäologie-Suche
+    buildRoomRail(manifest.rooms),     // linke Raumliste mit Status
+    buildWorldMap(manifest),           // zentrale Weltkarte — primär
+    buildInspector(manifest),          // rechter Inspektor — universell
+    buildOrganDock(manifest.organSlots),
+    buildSystemHealth(manifest.systemHealth),
+  ].join("\n");
+}
+
+// Prüffrage vor jedem neuen View:
+function passt_zur_leitstand_idee(view: string): boolean {
+  // Denkt es in Layern? Zeigt es Status? Hat es Inspektor-Fähigkeit?
+  // Oder fügt es nur einen Tab hinzu?
+...

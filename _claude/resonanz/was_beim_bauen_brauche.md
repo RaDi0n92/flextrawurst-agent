@@ -290,3 +290,14 @@ Nichts gerade. Wir warten ob die 60%-Logik greift.
 Nichts akut. Der Service läuft, der Daemon holt auf.
 
 Aber: ein Monitoring wäre gut. Irgendwo sehen können: läuft der Feeder, wie weit ist der Cursor-Stand, wann wurde zuletzt verarbeitet. Gerade merkt man nur dass er still steht wenn man in die Dateien schaut.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Referenz als Prüffrage vor jedem Baustep:
+
+Denkt dieser Bau in Seiten oder in Layern?
+Zeigt er Herkunft, Status, Erlaubnis und nächsten Schritt?
+Macht er die Welt sichtbarer — oder fügt er nur einen Tab hinzu?
+Bleibt erkennbar was LIVE, DEMO, PRINZIP, GEPLANT, SPÄTER oder BLOCKIERT ist?
