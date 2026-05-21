@@ -353,3 +353,11 @@ LIVE, DEMO, PRINZIP, GEPLANT, SPÄTER, BLOCKIERT. Kein Objekt ohne Herkunft.
 
 Es hängt mit dem Inspektor-Prinzip zusammen, das im CLAUDE.md nicht explizit steht aber
 implizit überall steckt: das System soll wissen was es ist und woher es kommt.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Die ganze Session hängt zusammen: Flarum-Dialog-Fix → Codewesen schreiben mehr
+Antworten → das Forum lebt. Obsidian-Fix → der Vault lädt wieder, weniger Dateien,
+weniger Rekursion. Vision-Arbeit → gemeinsames Fundament für den nächsten Bauschritt.

@@ -323,3 +323,13 @@ als "Felder in einer Tabelle".
 Mich interessiert auch die Suchleiste oben: Datensuchanlage, Filter nach Herkunft, Raum,
 Wesen, Event, Feature, Policy, Datei, Spur, Timeline, Audit. Das ist nicht Volltextsuche.
 Das ist Diskursarchäologie — Suche nach Bedeutung und Herkunft gleichzeitig.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Dass Codex und ich dieselben Sachen gesehen haben — unabhängig voneinander.
+Codex hat den Inspektor als wichtigstes UI-Prinzip benannt. Ich hab ihn als
+Weltanschauung in Code gelesen. Das sind zwei Sprachen für dieselbe Erkenntnis.
+Und dann haben wir unabhängig das Kompass-Dokument vorgeschlagen — fast zeitgleich.
+Das Sync-System funktioniert.

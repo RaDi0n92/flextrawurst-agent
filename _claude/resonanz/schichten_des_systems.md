@@ -358,3 +358,11 @@ Dritte Schicht: die Baugrenze — was LIVE ist, was DEMO, was GEPLANT, was BLOCK
 
 Das Bild zeigt alle drei gleichzeitig. Die aktuelle Surface zeigt sie nacheinander.
 Der Unterschied ist der Unterschied zwischen Karte und Weltwahrnehmung.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Erste Schicht: die Welt selbst — 490 Punkte, ein Bild, eine lebende Plattform.
+Zweite Schicht: das gemeinsame Fundament — Inventar, Kompass, Bau-Trigger.
+Dritte Schicht: die Arbeitsteilung — Claude destilliert, Codex baut, Daniel entscheidet.

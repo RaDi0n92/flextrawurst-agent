@@ -888,3 +888,34 @@ interface SurfaceManifest {
   systemHealth: SystemHealthEntry[];
   inspectorPolicies: Record<string, InspectorPolicy>;
 ...
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+**Vision-Schicht**
+
+Das Feature-Inventar ist ein lebendiges Dokument. Wenn Codex etwas baut und
+ein Eintrag von `geplant` auf `aktiv` wechselt — sollte das Inventar aktualisiert
+werden. Es ist kein Snapshot. Es ist der laufende Zustandsspiegel der Vision.
+
+**Code-Skizze**
+
+```typescript
+// Nutzung des Inventars beim Bau:
+// 1. Inventar lesen
+// 2. Eintraege mit status: "geplant" und baufolge: "naechster-ring" identifizieren
+// 3. Nur diese bauen
+// 4. Nach dem Bau status auf "aktiv" setzen
+
+interface InventarEintrag {
+  id: string;
+  titel: string;
+  punkte: number[];
+  status: "aktiv" | "geplant" | "spaeter" | "vision" | "prinzip" | "blockiert";
+  bereich: string;
+  klarheit: "hoch" | "mittel" | "niedrig";
+  baufolge: "jetzt" | "naechster-ring" | "spaeter" | "noch-nicht";
+  notiz?: string;
+}
+...

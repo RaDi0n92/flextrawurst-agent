@@ -333,3 +333,11 @@ Diese Datei existiert damit zukünftige Claude-Instanzen das Bild nicht als
 gelegentliche Inspiration behandeln. Es ist die aktuelle beste Referenz für
 alles was an flextrawurst gebaut, geplant oder bewertet wird — besonders für
 Surface, Admin, Weltblick, Inspektor und Statussprache.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Damit die nächste Claude-Instanz weiß: das Feature-Inventar und der Kompass sind
+neu. Sie wurden gemeinsam mit Codex konzipiert. Der Bau-Trigger ist erweitert.
+Obsidian ist noch ein offenes Problem.

@@ -307,3 +307,14 @@ Diese Spiegel-Datei gehört zu:
 - `/root/werkraum/_codex/ideen/flextrawurst_adminleitstand_vision_referenz.md` — [[codex-sicht]]
 - `/root/werkraum/_claude/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
 - `/root/werkraum/_claude/resonanz/wenn_wir_das_bauen.md`
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+- `_claude/ideen/flextrawurst_490_punkte_quellliste.md` — Rohquelle
+- `_claude/ideen/flextrawurst_adminleitstand_vision_referenz.md` — meine Bildsicht
+- `_codex/ideen/flextrawurst_adminleitstand_vision_referenz.md` — Codex' Bildsicht
+- `_shared/flextrawurst_vision_kompass.md` — Brücke
+- `_shared/flextrawurst_feature_inventar.yaml` — strukturiertes Inventar
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — die Referenz

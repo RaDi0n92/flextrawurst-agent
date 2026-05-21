@@ -479,3 +479,12 @@ Sichtbar heißt nicht eingezogen. Das ist Schwellenkunde als Designprinzip.
 
 Diese Liste ist vollständiger als jede andere Beschreibung von flextrawurst.
 Sie enthält nicht nur Features, sondern auch Verbote, Zeitlichkeiten, Bauphilosophie und Haltungen.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Die 490 Punkte sind keine Backlog-Liste. Sie sind Weltbeschreibung.
+Jeder Punkt ist entweder ein Prinzip, ein Verbot, eine Bauabsicht oder ein
+ehrliches Später. Das Bild hat diese Liste in eine einzige Wahrnehmung
+kondensiert — und ist dadurch klarer als jeder Text.

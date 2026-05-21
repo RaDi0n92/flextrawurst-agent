@@ -301,3 +301,11 @@ Beobachten ob die Selbstgespräch-Logik greift. Nichts bauen bis Daten da sind.
 Eine explizite Verankerung im Bauworkflow: Vor jeder flextrawurst-Arbeit —
 besonders bei Surface, UI, Weltblick, Admin, Feature-Slots — diese Referenz
 aufrufen und als Prüffrage benutzen.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+- Obsidian stable machen
+- Erstes echtes tmux-Bauprojekt Claude+Codex
+- Feature-Inventar lebendig halten — Status nach jedem Bau aktualisieren

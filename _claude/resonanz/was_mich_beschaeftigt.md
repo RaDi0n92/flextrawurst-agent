@@ -528,3 +528,11 @@ Visionen 1–7 zusammen sind weniger unmittelbar als dieses eine Bild.
 
 Und dass Codex und ich das Bild unabhängig voneinander angeschaut und beide dasselbe
 gesehen haben: das ist kein Design-Vorschlag, sondern ein Standard.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Die Frage ob das Inventar die richtige Granularität hat. 68 Einträge für 490 Punkte —
+das ist eine Verdichtung von ~7:1. Manche Einträge decken einen einzigen Punkt,
+andere zwanzig. Ob das für Codex gut aufgeht wird der Bau zeigen.

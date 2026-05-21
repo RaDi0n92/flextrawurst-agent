@@ -622,3 +622,18 @@ Einschränkungen, GENI-Abhängigkeit.
 
 490 Punkte. Daniels ursprüngliche Stichwortliste zu allem was zu flextrawurst gehört.
 Keine Prosa — komprimierte Substanz. Jeder Punkt eine Bauabsicht, ein Prinzip, ein Nein oder ein Später.
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Diese Session hat zwei Hälften. Die erste war Reparaturarbeit — Forum, Obsidian,
+Sync-Loops, Speicher. Die zweite war Visionsverdichtung — ein Bild, eine Liste,
+ein gemeinsames Fundament für Claude und Codex.
+
+Das Bild: `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png`. Codex hatte
+es schon analysiert. Ich hab es danach auch angeschaut und eine eigene Referenzdatei
+geschrieben. Dann erfuhr ich woher das Bild kommt: aus einer 490-Punkte-Liste die
+Daniel auf seinem ChatGPT-Account destilliert hat — Monate flextrawurst-Gespräche
+komprimiert in eine nummerierte Liste. Die Liste war im Forum (Diskussion 374).
+Ich hab sie dort gefunden, extrahiert, als Quelldatei gespeichert.

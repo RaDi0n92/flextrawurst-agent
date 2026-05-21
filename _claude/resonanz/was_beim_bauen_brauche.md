@@ -301,3 +301,11 @@ Denkt dieser Bau in Seiten oder in Layern?
 Zeigt er Herkunft, Status, Erlaubnis und nächsten Schritt?
 Macht er die Welt sichtbarer — oder fügt er nur einen Tab hinzu?
 Bleibt erkennbar was LIVE, DEMO, PRINZIP, GEPLANT, SPÄTER oder BLOCKIERT ist?
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Prüffrage vor jedem Bau-Schritt: Ist dieser Schritt im Feature-Inventar?
+Welchen Status hat er dort? Wenn er `spaeter` oder `noch-nicht` ist — warum
+bauen wir ihn jetzt?

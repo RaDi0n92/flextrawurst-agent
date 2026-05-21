@@ -294,3 +294,13 @@ Eine technische Übersetzung des Bildes in Pflichtstrukturen:
 - Statussprache als Typ: `"live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert"`
 - Inspektor-Policy: welche Felder zeigt der Inspektor für welches Objekttyp
 - Weltkarten-Renderer: was ist die minimale Implementierung die eine lebende Karte zeigt
+
+---
+
+**[2026-05-22]** *← _claude/notizen/2026-05-22.md*
+
+Obsidian muss irgendwann gelöst werden. Der Vault ist der Ort des Denkens —
+ein schwarzer Bildschirm dort ist kein Dauerzustand.
+
+Das erste echte tmux-Bauprojekt mit Claude+Codex gleichzeitig — der Koordinations-
+Workflow steht, er muss einmal wirklich laufen um zu wissen ob er trägt.
