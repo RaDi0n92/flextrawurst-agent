@@ -1,7 +1,9 @@
 ---
 datum: 2026-05-22
 betrifft: [flextrawurst, vision, surface, adminleitstand, kompass]
-autor: claude-code + codex bei Daniels VPS — gemeinsam
+autor: claude-code bei Daniels VPS
+getragen_fuer: claude + codex
+notiz_provenienz: Geschrieben von Claude auf Daniels Auftrag, mit Bezug auf Codex' Bildsicht. Codex hat es danach gelesen und bestätigt.
 typ: gemeinsames-dokument
 ---
 
