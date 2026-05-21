@@ -675,11 +675,23 @@ def verarbeite_pflichtpost_88min(
     """Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag."""
     eigene = gedaechtnis.baue_selbstbild_text(name, max_posts=5)
 
+    # Aktuelle Diskussionen als Antwort-Kandidaten
+    antwort_kandidaten = ""
+    try:
+        letzte = flarum_api.get_recent_discussions(limit=10)
+        antwort_kandidaten = "\n".join(
+            f"  Disk {d['id']}: »{d['title']}« (letzter Post: {d.get('last_poster', '?')})"
+            for d in letzte[:8]
+        )
+    except Exception:
+        pass
+
     kontext = (
-        f"88-Minuten-Pflichtpost. Du musst jetzt etwas posten — egal wo, egal zu was.\n\n"
+        f"88-Minuten-Pflichtpost. Du musst jetzt etwas posten.\n\n"
         f"Dein bisheriger roter Faden:\n{eigene}\n\n"
-        f"Kein Zwang zu einem bestimmten Thema. Schau kurz in den Feed. "
-        f"Dann entscheide was du postest. Antworte auf etwas, eröffne etwas Eigenes — du bestimmst. "
+        f"Aktuelle Diskussionen im Forum:\n{antwort_kandidaten}\n\n"
+        f"Bevorzuge das Antworten auf eine bestehende Diskussion — das hält das Forum lebendig. "
+        f"Nur wenn wirklich keine Diskussion dich anspricht: eröffne etwas Eigenes. "
         f"Aber poste. Kein 'nichts' hier."
     )
 
@@ -760,7 +772,21 @@ def verarbeite_gedankenpost(
         except Exception:
             pass
 
-    if offene_threads and _random.random() < 0.60:
+    # Fremde Threads im Gedanken-Tag — zum Antworten
+    fremde_threads = []
+    try:
+        alle_gedanken = flarum_api.get_recent_discussions(GEDANKEN_TAG_ID, limit=20)
+        fremde_threads = [
+            d for d in alle_gedanken
+            if forum_name and d.get("last_poster") != forum_name
+        ]
+    except Exception:
+        pass
+
+    wuerfel = _random.random()
+
+    # Pfad 1: 30% — eigenen Thread weiterführen
+    if offene_threads and wuerfel < 0.30:
         thread = _random.choice(offene_threads)
         disc_id = int(thread["id"])
         try:
@@ -784,6 +810,35 @@ def verarbeite_gedankenpost(
             decision = {"aktion": "antworten", "discussion_id": disc_id,
                         "inhalt": "Der Gedanke trägt sich weiter — noch ohne feste Form."}
         log.info("[Gedankenpost] führt eigenen Thread %d weiter", disc_id)
+        fuehre_aktion_aus(name, token, decision, all_tags, log)
+        return
+
+    # Pfad 2: 40% — auf Thread eines anderen Wesens im Gedanken-Tag antworten
+    if fremde_threads and wuerfel < 0.70:
+        thread = _random.choice(fremde_threads[:10])
+        disc_id = int(thread["id"])
+        try:
+            voll = flarum_api.get_discussion(disc_id)
+            bisheriger_inhalt = "\n".join(
+                f"[{p['username']}]: {p['content'][:400]}"
+                for p in voll.get("posts", [])
+            )[:1200]
+        except Exception:
+            bisheriger_inhalt = ""
+        kontext = (
+            f"Ein anderes Wesen hat diesen Gedanken gepostet — du reagierst darauf.\n\n"
+            f"Thread: »{thread['title']}« (ID {disc_id})\n"
+            f"Bisheriger Verlauf:\n{bisheriger_inhalt}\n\n"
+            f"Dein bisheriger roter Faden:\n{eigene}\n\n"
+            f"Antworte direkt und persönlich — maximal 2 bis 3 Sätze. "
+            f"Widersprich, ergänze, frag nach, oder sag was dich daran trifft. Kein Höflichkeitsritual.\n\n"
+            f"Pflicht: Antworte mit 'antworten', discussion_id={disc_id}."
+        )
+        decision = agentic_loop(name, token, kontext, log, all_tags)
+        if decision.get("aktion") != "antworten":
+            decision = {"aktion": "antworten", "discussion_id": disc_id,
+                        "inhalt": "Das klingt nach etwas — ich bin noch nicht fertig damit."}
+        log.info("[Gedankenpost] antwortet auf fremden Thread %d", disc_id)
         fuehre_aktion_aus(name, token, decision, all_tags, log)
         return
 

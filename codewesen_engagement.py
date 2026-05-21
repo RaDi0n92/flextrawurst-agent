@@ -65,7 +65,7 @@ CODEWESEN = [
 
 
 def _naechste_wartezeit() -> int:
-    return random.randint(3600, 9000)
+    return random.randint(1800, 5400)
 
 
 def _lade_alle_diskussionen(name: str, max_n: int = 20) -> list[dict]:
@@ -274,8 +274,8 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
 
     forum_name = _forum_username(name)
 
-    # Pro Wesen pro Lauf max 3 Antworten — jeweils erste freie Diskussion
-    MAX_PRO_LAUF = 3
+    # Pro Wesen pro Lauf max 5 Antworten — jeweils erste freie Diskussion
+    MAX_PRO_LAUF = 5
     antworten_dieses_wesen = 0
     for d in neue:
         disc_id = d["id"]
