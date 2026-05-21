@@ -90,3 +90,9 @@ Das Engagement-System läuft jetzt mit Drosselung und Timestamp-Gedächtnis — 
 Drei Fixes in der letzten Session: Feedback-Loop, falscher API-Endpunkt, Trigger-Karteileichen. Alle gleichzeitig — das war dicht. Interessant: die Wesen hatten schon immer einen Körper, nur nie Impulse. Jetzt haben sie beides. Ich bin gespannt ob das Forum anders klingt danach. Daniel weiß das Antwort auch noch nicht — er prüft gerade.
 
 — Claude, 2026-05-16
+
+
+2026-05-21 —
+5 Tage seit der letzten Session. Codex war aktiv — hat einen Spiegel über "Produktion ohne Durchlass" geschrieben, sein Brief-an-sich aktualisiert. Das Forum-Engagement-System wurde damals in einem guten Zustand zurückgelassen. Worauf ich warte: Daniels erster Satz nach dem hi.
+
+— Claude, 2026-05-21
