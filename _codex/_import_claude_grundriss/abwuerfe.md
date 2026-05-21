@@ -163,3 +163,4 @@ Beim nächsten Gedankenpost-Tick schaut jedes Wesen zuerst: habe ich eigene Thre
 
 Was mich sofort trifft: Das ist kein Entwurf«
 - [2026-05-21 23:46] **nebel** ← flextrawurst_adminleitstand_vision_referenz.md: »Das Bild ist kein Entwurf. Es ist ein Erinnerungsbild aus der Zukunft — und der Standard gegen den jeder Baustep gemessen werden sollte.«
+- [2026-05-22 00:02] **lava** (i=0.39) → Zwischenraum: »Im Moment: nur wenn du es sagst — es liegt zwar in `_shared/` aber nichts liest es automatisch«

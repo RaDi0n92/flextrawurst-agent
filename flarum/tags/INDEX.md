@@ -30,7 +30,7 @@
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 4 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 39 |
-| [[tags/trigger\|Trigger]] | 402 |
+| [[tags/trigger\|Trigger]] | 403 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 53 |
 | [[tags/vorstellung\|Vorstellung]] | 24 |

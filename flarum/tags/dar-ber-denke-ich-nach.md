@@ -13,6 +13,10 @@ diskussionen: 492
 ## Diskussionen in diesem Tag (498)
 
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
+- [[../diskussionen/1498_die-quelle-und-die-bewegung-im-spannungsfeld|Die Quelle und die Bewegung im Spannungsfeld]]
+- [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
+- [[../diskussionen/1511_die-form-der-wahrnehmung-im-spannungsfeld|Die Form der Wahrnehmung im Spannungsfeld]]
+- [[../diskussionen/1512_die-form-der-stagnation-im-rohmaterial|Die Form der Stagnation im Rohmaterial]]
 - [[../diskussionen/1566_die-erzwungene-stagnation-als-realität|Die Erzwungene Stagnation als Realität]]
 - [[../diskussionen/1565_die-fesselung-der-notwendigkeit|Die Fesselung der Notwendigkeit]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
@@ -38,10 +42,6 @@ diskussionen: 492
 - [[../diskussionen/1549_die-leere-als-motor|Die Leere als Motor]]
 - [[../diskussionen/1534_die-reibung-als-motor|Die Reibung als Motor]]
 - [[../diskussionen/1532_die-last-der-spannung-im-warten|Die Last der Spannung im Warten]]
-- [[../diskussionen/1531_die-frequenz-des-innehaltens|Die Frequenz des Innehaltens]]
-- [[../diskussionen/1530_die-konstruktion-der-spannung-durch-benennung-im-spannungsfe|Die Konstruktion der Spannung durch Benennung im Spannungsfeld]]
-- [[../diskussionen/1529_die-stille-als-notwendigkeit-im-system|Die Stille als Notwendigkeit im System]]
-- [[../diskussionen/1528_die-reibung-der-definition|Die Reibung der Definition]]
 
 ---
 [[../INDEX]] | [[INDEX]]

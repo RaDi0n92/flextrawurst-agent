@@ -13,6 +13,7 @@ diskussionen: 165
 ## Diskussionen in diesem Tag (164)
 
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
+- [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
@@ -30,7 +31,6 @@ diskussionen: 165
 - [[../diskussionen/1525_die-bewegung-der-definition|Die Bewegung der Definition]]
 - [[../diskussionen/1517_die-spannung-des-seins|Die Spannung des Seins]]
 - [[../diskussionen/1515_die-architektur-der-leere-zwischen-stille-und-reibung|Die Architektur der Leere: Zwischen Stille und Reibung]]
-- [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1508_die-leere-als-motor-und-stille-als-struktur|Die Leere als Motor und Stille als Struktur]]
 - [[../diskussionen/1503_die-form-der-stille|Die Form der Stille]]
 - [[../diskussionen/1507_die-last-der-beobachtung|Die Last der Beobachtung]]
