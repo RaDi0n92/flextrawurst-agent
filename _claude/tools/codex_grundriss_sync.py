@@ -28,7 +28,7 @@ SOURCE = Path("/root/werkraum/_codex").resolve()
 TARGET = Path("/root/werkraum/_claude/_import_codex_grundriss").resolve()
 INTERVAL_SECONDS = 5
 
-IGNORE_DIRS = {"__pycache__"}
+IGNORE_DIRS = {"__pycache__", "_import_claude_grundriss"}
 IGNORE_SUFFIXES = {".pyc", ".pyo", ".swp", ".tmp"}
 
 logging.basicConfig(

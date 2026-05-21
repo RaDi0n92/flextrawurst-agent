@@ -1,6 +1,4 @@
-geni/gedaechtnis/
-geni/archiv/
-geni/spiegel/
+geni/
 bilder/
 venv/
 .venv*/
@@ -8,8 +6,15 @@ watchdog_venv/
 node_modules/
 __pycache__/
 .git/
-agent/dak_gord_system/spuren/graph_runs/
-agent/dak_gord_system/spuren/evals/
+innenleben/
+logs/
+backups/
+codewesen/
+flarum/diskussionen/
+flarum/aktiv/
+flarum/offen/
+erkenntnis/spiegelagenten/
+agent/dak_gord_system/spuren/
 *.bin
 *.xwd
 *.pdf
@@ -20,3 +25,10 @@ agent/dak_gord_system/spuren/evals/
 *.pid
 *.bak
 *.save
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+_codex/_import_claude_grundriss/
+Meine-Textsammlung-erfahrun-frh-mit-ai/
