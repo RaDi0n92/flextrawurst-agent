@@ -472,3 +472,10 @@ Hier ist die Karte das Primäre. Räume, Inspektor, Organe — alles ist Periphe
 
 **Die ehrlichste Stelle:** `pre.einzug` bei den Wesen. Das Bild zeigt was ist, nicht was sein soll.
 Sichtbar heißt nicht eingezogen. Das ist Schwellenkunde als Designprinzip.
+
+---
+
+**[2026-05-21]** *← _claude/ideen/flextrawurst_490_punkte_quellliste.md*
+
+Diese Liste ist vollständiger als jede andere Beschreibung von flextrawurst.
+Sie enthält nicht nur Features, sondern auch Verbote, Zeitlichkeiten, Bauphilosophie und Haltungen.

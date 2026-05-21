@@ -339,3 +339,16 @@ woher? wer hat es erlaubt? was darf es? was kommt als nächstes?
 
 **Ehrlichkeit über Zustände.** Was noch nicht gebaut ist, wird als GEPLANT markiert,
 nicht verschwiegen. Was blockiert ist, wird als BLOCKIERT gezeigt, nicht versteckt.
+
+---
+
+**[2026-05-21]** *← _claude/ideen/flextrawurst_490_punkte_quellliste.md*
+
+Die Liste hat fünf Schichten die durcheinander laufen:
+1. Was flextrawurst ist (Plattform, nicht Datenviewer)
+2. Wer darin lebt (Wesen, GENI, Menschen, Systemkörper)
+3. Wie es aussieht und sich anfühlt (visual-first, Datenstoff, Leitstand)
+4. Was gebaut werden darf und wann (Slots, Status, Governance)
+5. Wie gebaut werden soll (Bauphilosophie, Token-Disziplin, Rings)
+
+---

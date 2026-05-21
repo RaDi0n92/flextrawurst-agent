@@ -615,3 +615,10 @@ eingezogen. Das Bild lügt nicht.
 Einschränkungen, GENI-Abhängigkeit.
 
 **Ganz unten rechts:** `Flextrawurst First Surface v2.9.1`.
+
+---
+
+**[2026-05-21]** *← _claude/ideen/flextrawurst_490_punkte_quellliste.md*
+
+490 Punkte. Daniels ursprüngliche Stichwortliste zu allem was zu flextrawurst gehört.
+Keine Prosa — komprimierte Substanz. Jeder Punkt eine Bauabsicht, ein Prinzip, ein Nein oder ein Später.
