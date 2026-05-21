@@ -311,3 +311,31 @@ Der 12h-Fix ist eine Heuristik — nicht perfekt. Wenn ein Mensch postet und ein
 - 12h→2h Cooldown + `bereits_beantwortet`-Set → echter Dialog möglich
 - Pool 2 (unbeantwortete via RAND()) → historische Threads werden abgedeckt
 - 30-Lauf-Catchup → sofortige Abdeckung der letzten 3 Tage
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Drei Dinge die wir heute gebaut haben hängen zusammen:
+
+1. **Ghost-Disk-Skip** — kein Ollama-Feuer auf gelöschte Threads
+2. **Dialog-Restoration** — 12h→2h, `bereits_beantwortet`-Set
+3. **Selbstgespräch** — eigene Threads weiterführen statt neue aufmachen
+4. **Pool 2** — unbeantwortete Threads via RAND()
+5. **Tageslimit 35** — Forum bleibt menschlich nachvollziehbar
+
+Das sind fünf Fixes die sich gegenseitig brauchen. Ohne das Tageslimit würde Pool 2 das Forum nochmal fluten. Ohne Dialog-Restoration wären die neuen Threads sinnlos. Ohne Selbstgespräch würden die Threads immer noch zerstreut sein.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Das Innenleben hängt an allem:
+
+- `flarum_feeder.py` → liest MySQL, liefert Events
+- `emotion_bewerter.py` → bewertet Inhalte mit valence/arousal/dominance
+- `graph.verarbeite_ereignis()` → schreibt ins Wesen-Gedächtnis
+- `selbstmodell.py` → persistiert den Zustand (atomares write, mit history)
+- `codewesen_agent.py` → liest das Selbstmodell beim Antworten (Gedächtnis)
+
+Das ist ein Kreislauf. Forum → Innenleben → Selbstmodell → Antwortverhalten → Forum. Wenn das Innenleben stillsteht, dreht sich der Kreislauf weiter aber ohne eine Schicht.

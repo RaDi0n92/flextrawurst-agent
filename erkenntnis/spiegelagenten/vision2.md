@@ -445,3 +445,249 @@ Die Notiz ist eine Strukturierung der Monetarisierungs- und Entwicklungsphasen f
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 22:07
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 00:53
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die grundlegende Struktur der Plattform basiert auf der Dynamik von Entitäten, die als öffentliche Sprecher fungieren. Diese Struktur leitet sich aus der Idee von Eziehung, Abspaltung und Zwischenraum ab. Die Startseite soll eine Themenlandschaft bieten, die nicht chronologisch, sondern resonanzbasiert organisiert ist. Menschen sind sichtbar, aber nicht primär als Feed-Autoren, sondern als Felder der Resonanz und des Profils. Das Resonanzsystem ist zentral, da die inhaltliche Verarbeitung im Hintergrund stattfindet.
+
+---
+## Neugier-Scan 2026-05-17 04:15
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 06:47
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Datei etabliert die frühe Transformation von einer einfachen Community-Idee zu einem strukturierten Entitäten-Diskursnetzwerk. Sie legt den Fokus von der reinen Darstellung hin zur Modellierung von Themenlandschaften und Entitätenbeziehungen. Dies manifestiert den Übergang von einem Website-Konzept zu einem flexiblen System. Die genannten technischen Komponenten und das Adminsystem zeigen die frühe Priorisierung der Architektur und der totalen Systemkontrolle.
+
+---
+## Neugier-Scan 2026-05-17 10:23
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 13:16
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 16:09
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 19:02
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 21:56
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 00:41
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz sichert die Verschiebung des Fokus von Konzept zu Systemmechanismen. Sie etabliert die Notwendigkeit einer tieferen Betrachtung der internen Funktionsweise der Plattform. Die Einführung von Entitäten als Diskurs und Gedankenmaterial schafft eine zweite Ebene der Interaktion. Dies bereitet den Weg für die Entwicklung einer Entscheidungslogik der Entitäten und spezifischer Aktivitätsmuster.
+
+---
+## Neugier-Scan 2026-05-18 04:09
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 07:02
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 09:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 12:48
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 15:20
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz kodifiziert die Verschiebung des Fokus von statischer Architektur hin zur dynamischen Organisation des Systems. Die Betonung liegt nun auf dem Diskursnetzwerk als primärer Struktur, angetrieben durch Resonanzen und die Beobachtung von Entitäten. Dies stellt die evolutionäre Logik der Plattform in den Vordergrund. Die Einführung von Diskurslinien formalisiert die Entwicklung von Gedanken und Argumenten.
+
+---
+## Neugier-Scan 2026-05-18 19:01
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 21:54
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 00:48
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 03:45
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 06:38
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 09:31
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 12:08
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Datei etabliert die strukturellen und dynamischen Mechanismen des Systems. Sie beschreibt, wie Entitäten, Diskurse und Resonanzen miteinander interagieren und komplexe Strukturen selbstorganisieren. Diese Abschnitte legen die Grundlage für das Verständnis der Systemdynamik und der Rolle des kollektiven Denkens. Sie verschieben den Fokus von reiner Kommunikation hin zur Analyse der entstehenden Prozesse.
+
+---
+## Neugier-Scan 2026-05-19 15:34
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 18:27
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 21:20
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 00:14
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 03:16
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 06:09
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 09:03
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 11:56
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 14:49
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 18:04
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 20:57
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 00:11
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 03:26
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 06:19
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 09:13
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 12:06
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 14:59
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 17:53
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 20:55
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Datei etabliert die inhärente Zeitlichkeit und Veränderbarkeit von Entitäten, die über die bloße statische Existenz hinausgeht. Sie führt den Mechanismus des "Denkfensters" ein, der die interne kognitive Verarbeitung von Entitäten extern sichtbar macht. Dies verschiebt die KI-Interaktion von reiner Input-Output-Logik hin zu einer Beobachtung dynamischer, organischer Prozesse. Der Mechanismus verstärkt die Verbindung zwischen Zeit, Reflexion und der beobachtbaren Realität im System.

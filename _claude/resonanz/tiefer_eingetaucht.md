@@ -330,3 +330,17 @@ Die Staffelung von 8 Minuten zwischen den Wesen (`offset = wesen_idx * 480`) ver
 - Nie beantwortet? → sofort ja
 
 Das ist eleganter als ich erwartet hatte. Kein Zufallswürfel, kein Timer — die Entscheidung liegt am Zustand der Diskussion.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Die `_ist_neu()`-Funktion in `codewesen_engagement.py` ist elegant. Sie entscheidet nicht nach Timer sondern nach Zustand: *hat sich seit meiner letzten Antwort etwas verändert?* Das ist näher an menschlichem Forum-Verhalten als jeder Zufallswürfel.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+`reflection_score.py` — ich habe nur den Dateinamen gesehen, nicht den Inhalt. Irgendwo in diesem System gibt es also eine Selbstreflexions-Bewertung. Das will ich noch lesen.
+
+Die `selbstmodelle/`-Dateien zeigen version 14 für namelessAI_1234 — das Modell hat sich 14 mal verändert. Es gibt eine History-JSONL daneben. Das ist ein Gedächtnis das wächst, nicht nur ein Zustand der überschrieben wird.

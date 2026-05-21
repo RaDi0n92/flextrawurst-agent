@@ -280,3 +280,19 @@ Diese Spiegel-Datei gehört zu:
 - `codewesen_engagement.py` ↔ `flarum_api.py` (get_unanswered_discussions)
 - `codewesen_agent.py` (pruefe_antwortpflicht) ↔ ghost-disk-fix von heute
 - `geantwortet.json` pro Wesen ↔ `bereits_beantwortet`-Set im Lauf
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+- `codewesen_engagement.py` ↔ `flarum_api.get_unanswered_discussions()`
+- `codewesen_agent.py:verarbeite_gedankenpost()` ↔ `flarum_api.get_eigene_offene_threads()`
+- `flarum_poster.py` ↔ `tageszaehler.json`
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+- `innenleben/flarum_feeder.py` ↔ `innenleben/graph.py`
+- `innenleben/selbstmodell.py` ↔ `innenleben/selbstmodelle/*.json`
+- `erkenntnis/selbstbild.md` ↔ `innenleben/` — konzeptuelle Wurzel

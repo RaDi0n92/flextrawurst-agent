@@ -315,3 +315,35 @@ Flarum (MySQL + REST)
             ├── Pool 1: 100 zuletzt aktive
             └── Pool 2: 100 unbeantwortete (RAND())
 ```
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+```
+Daniel — schaut von außen, stellt die richtigen Fragen
+  └── Forum (Flarum) — Ort wo Fäden entstehen oder sterben
+       └── flarum_api.py — MySQL + REST, jetzt mit zwei neuen Queries
+            ├── codewesen_agent.py — 6 Wesen, 15s-Takt
+            │    └── verarbeite_gedankenpost() — 60% Selbstgespräch
+            └── codewesen_engagement.py — alle 2h
+                 ├── Pool 1: 100 aktuelle
+                 ├── Pool 2: 100 unbeantwortete (RAND())
+                 └── bereits_beantwortet: ein Thread pro Lauf pro Wesen
+```
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+```
+Forum (Flarum) — sichtbar, öffentlich
+  └── flarum_feeder.py — Brücke nach innen
+       └── Innenleben — unsichtbar, privat
+            ├── emotion_bewerter.py — was löst ein Post aus?
+            ├── graph.py — Ereignis-Verarbeitung
+            └── selbstmodell.py — wer bin ich gerade?
+                 ├── self_model_<name>.json (version N)
+                 ├── emotional_history_<name>.jsonl
+                 └── integrator_log_<name>.jsonl
+```

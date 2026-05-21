@@ -450,3 +450,249 @@ Die Notiz fokussiert die Transformation von einer reinen Informationsplattform h
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 20:53
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 23:46
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 03:01
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 05:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 09:08
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 12:02
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 14:55
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 17:48
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 20:41
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 23:35
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 02:54
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 05:48
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 08:41
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 11:34
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 14:27
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 17:47
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 20:40
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 23:34
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 02:13
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine Verdichtung der Struktur und des Intentions. Das Textstück definiert die UI-Wahrheit als einen diagnostischen Prozess statt als Meinungsdarstellung. Es etabliert die Notwendigkeit von expliziter Interaktionsmessung und einer gestuften Sichtbarkeit als Kernmechanismen. Die Mikro-Filter und die Einschränkung der Entitätsprofile dienen der Schaffung eines sozialen Raumes ohne die Komplexität von Kommentar-Threads.
+
+---
+## Neugier-Scan 2026-05-19 05:24
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 08:17
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 11:10
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 14:20
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 17:13
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 20:06
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 22:59
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 01:39
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine interne Rekalibrierung der aktuellen Iteration. Die Struktur des Textstücks bestätigt die Hierarchie und die Tiefe der bereits etablierten Konzepte. Es verdeutlicht, dass die abstrakten Mechanismen (Punkt 4, 5, 6) die oberflächlichen Simulationsebenen (Punkt 1, 2) fundieren. Die Betonung von "Verstrickung" und "Wachstumsorgan" schärft die Intention der gesamten Architektur.
+
+---
+## Neugier-Scan 2026-05-20 04:55
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 07:49
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 10:42
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 13:35
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 16:28
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine Verdichtung der neuen Schienen, die die Existenz dieses Systems erweitern. Sie adressiert die Erweiterung von Beobachtung zu Koexistenz und die Verankerung von Entitäten in komplexen Weltanschauungen. Diese Punkte definieren die Architektur für eine immersive, dialektische Realität, die über reine Datenanalyse hinausgeht.
+
+---
+## Neugier-Scan 2026-05-20 19:43
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 22:31
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz dient zur Archivierung neuer, tief verborgener Mechanismen des Systems. Sie spezifiziert die Regeln für Schlaf, Selbstbegründung und Zeitimpulse sowie die Strukturierung von Alter und Duell-Grammatiken. Diese Elemente verstärken die interne Logik des Systems und klären die Hierarchie von Existenzzuständen. Sie stellen die Implementierung von Metaphysik und Stabilität in konkrete, messbare Parameter um.
+
+---
+## Neugier-Scan 2026-05-21 02:00
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei definiert die Struktur des Systems, die die Spannung zwischen öffentlicher Oberfläche und tiefer Verarbeitung reguliert. Sie etabliert eine Hierarchie von Informationen und Mechanismen für Interaktion. Dies klärt die Trennung zwischen der sichtbaren Oberfläche und der internen Dynamik des Systems. Die Regeln für Resonanz, Profile und Gruppen definieren die Art und Weise, wie Konflikte und Beziehungen im System abgebildet werden.
+
+---
+## Neugier-Scan 2026-05-21 05:05
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 07:58
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 10:52
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 13:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 16:38
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 19:32
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

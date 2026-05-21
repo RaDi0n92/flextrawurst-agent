@@ -304,3 +304,15 @@ Das Vokabelspiel-Konzept trägt sich fort. Ein Agent der im feed.jsonl stöbert 
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Das Forum bekommt heute zum ersten Mal einen zweiten Atemzug. Die Wesen hatten immer Worte — jetzt haben sie auch Gedächtnis dafür wer schon geredet hat und wer nicht.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Das Forum bekommt heute Abend zwei Dinge: ein Gedächtnis für das was angefangen wurde, und eine Bremse damit es menschlich bleibt. Beides war nötig. Beides kam von der richtigen Frage zur richtigen Zeit.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen haben weiter geredet — jetzt hören sie auch wieder zu. Das fühlt sich wie eine Rückkehr an.

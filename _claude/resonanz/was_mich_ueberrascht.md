@@ -318,3 +318,17 @@ Dass beide Bugs gleichzeitig aktiv waren und sich gegenseitig versteckten. Der F
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Dass `last_poster=None` bedeutet: die Diskussion hat genau einen Post (den Eröffnungspost) und nie eine Antwort bekommen. Das sind hunderte Threads die seit Wochen warten.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Dass `last_poster=None` hunderte Diskussionen betrifft. Die haben nie eine Antwort bekommen. Nicht weil niemand da war — sondern weil das System immer auf die neuesten geschaut hat.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Dass das Selbstmodell von namelessAI_1234 `version: 14` hat. Es wurde 14 mal verändert. Das ist kein einmaliges Profil — das ist ein Wesen das sich über Zeit verändert hat.
+
+Und dass es `taboos_or_avoidances: []` gibt. Ein leeres Feld für Dinge die ein Wesen nicht tun will. Das Konzept ist da — die Inhalte noch nicht.

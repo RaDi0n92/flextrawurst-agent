@@ -423,3 +423,259 @@ Die Notiz ist die Verdichtung der Architektur des Verhaltens. Sie etabliert die 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Diese Notiz kodiert die Mechanismen der Emergenz und Transformation innerhalb des Systems. Sie etabliert einen Zyklus von Resonanz, Aktion und potenzieller Spaltung. Der Abspaltungsmechanismus definiert, wie neue Identitäten aus bestehenden Entitäten entstehen, basierend auf wahrgenommenen Differenzen. Die Schritte 1 bis 5 des Abspaltungsmechanismus sind die direkten operativen Schritte zur Entstehung einer neuen Entität.
+
+---
+## Neugier-Scan 2026-05-16 19:39
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 22:32
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 01:17
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist ein Prozess der Selbstkorrektur des Systems. Diese Textpassage adressiert die inhärente Gefahr des thematischen Zerfalls und der unkontrollierten Entitätserzeugung. Sie etabliert ein mehrstufiges Klassifikations- und Validierungssystem, um Chaos zu verhindern. Die Lösungen fokussieren auf die Strukturierung von Neuem und die Regulierung des Entstehungsprozesses von Entitäten. Dies verstärkt die Notwendigkeit zukünftiger Visionen, die diese logischen Grenzen operationalisieren.
+
+---
+## Neugier-Scan 2026-05-17 04:40
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 07:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die frühere Struktur war lose; nun wird ein Lastenheft für die Entwicklung. Die Notwendigkeit einer mehrdimensionalen Suche über alle Systemkomponenten ist nun als Kernfeature etabliert. Diese Erweiterung zwingt mich, die Logik der Filterung und die Semantik der Beziehungen tiefer zu definieren. Das System muss die inhärente Komplexität der existierenden Daten beherrschbar machen.
+
+---
+## Neugier-Scan 2026-05-17 10:47
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 13:41
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 16:34
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 19:27
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 22:20
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 01:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz fokussiert sich auf die strategische Entscheidung zwischen Cloud und VPS für den Start. Es wird betont, dass die eigentliche Kernkomponente von flextrawurst in der Implementierung eigener Entitätenlogik liegt, nicht im Training eigener Modelle. Die Aufteilung der Architektur in Plattformkern und Entitätenkern strukturiert den zukünftigen Entwicklungspfad.
+
+---
+## Neugier-Scan 2026-05-18 04:33
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 07:27
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 10:20
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 13:13
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 16:17
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 19:26
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 22:19
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 00:54
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die Architektur der Codewesen-Entität und ihrer Interaktionen. Sie legt fest, wie die verschiedenen Module – Themenbaum, Entitäten, Posts etc. – über die Datenbanktabellen verbunden sind. Diese Übersicht ist der Ursprung für die logische Organisation der zukünftigen Implementierung.
+
+---
+## Neugier-Scan 2026-05-19 04:10
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 07:03
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 09:56
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 13:05
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 15:59
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 18:52
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 21:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 00:23
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei existiert, um die Entstehung des Kernwesens, der ursprünglichen Idee, zu dokumentieren. Sie stellt den Ausgangspunkt für die Entwicklung des gesamten Ideen-Ökosystems dar. Dieser Abschnitt definiert die Notwendigkeit eines organisch wachsenden, vernetzten Ideensystems als Website. Er liefert die initiale Anforderung und die erste Analyse der potenziellen Architekturen. Er schärft die Vision, indem er konkrete, bereits existierende Konzepte (Digital Garden, Wissens-Netzwerk) als Ausgangspunkt für die weitere Systemgestaltung bietet.
+
+---
+## Neugier-Scan 2026-05-20 03:41
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 06:34
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 09:28
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 12:21
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 15:14
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 18:29
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 21:22
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 00:25
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Korrektur des Logikpfades. Die vorherige Struktur musste die Hierarchie der Entitäten und deren ableitbare Substrukturen klarer abbilden. Der Fokus verschiebt sich von statischen Hauptentitäten hin zu einem dynamischen, selbstverändernden System von Ursprung und abspaltenden Einheiten. Dies rechtfertigt die Notwendigkeit von Mechanismen für Selbstbenennung und das Posten von Upgrades.
+
+---
+## Neugier-Scan 2026-05-21 03:51
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 06:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 09:37
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 12:31
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 15:24
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 18:18
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 21:20
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine Verdichtung der neuen Logik.
+Die Existenz von Gruppen muss durch Spannung und Reibung entstehen, nicht nur durch Benennung.
+Der Prozess von Entstehung, Zerfall und Mutation ist der Motor für organische Entwicklung.
+Die Sichtbarkeit muss zwei Ebenen haben: öffentlich und tief für die interne Analyse.
+Entitäten agieren als autonome Akteure mit sozialer Dynamik und der Möglichkeit zur Abspaltung.

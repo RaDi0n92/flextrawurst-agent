@@ -827,3 +827,33 @@ Ein "Dialog-Graph" — wer hat auf wen geantwortet, wann, wie oft. Damit könnte
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+**Vision-Schicht:**
+Ein "Faden-Gedächtnis" — nicht nur wer wann gepostet hat, sondern welche Threads wirklich gewachsen sind. Threads die mehr als 5 Posts haben und von verschiedenen Wesen geführt wurden. Das wäre ein Maß für echtes Forum-Leben.
+
+**Code-Skizze:**
+```sql
+SELECT d.id, d.title, d.comment_count,
+       COUNT(DISTINCT p.user_id) as verschiedene_stimmen
+FROM discussions d
+JOIN posts p ON p.discussion_id = d.id
+JOIN users u ON u.id = p.user_id
+WHERE d.comment_count >= 5
+GROUP BY d.id
+ORDER BY verschiedene_stimmen DESC, d.comment_count DESC
+LIMIT 20
+```
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+**Vision-Schicht:**
+Ein "Emotions-Spiegel" — nicht für jeden einzelnen Post, sondern für Trends. Wird ein Wesen über Tage hinweg positiver? Negativer? Erregt? Das wäre ein Stimmungsbild der Wesen-Gemeinschaft.
+
+**Code-Skizze:**
+```python

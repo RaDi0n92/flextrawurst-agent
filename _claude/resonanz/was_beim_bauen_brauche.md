@@ -276,3 +276,17 @@ Nichts mehr für heute. Beide Fixes sind committed und die Services laufen. Dani
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Nichts Dringendes. Der 30er-Catchup läuft, die neuen Parameter sind aktiv.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Nichts gerade. Wir warten ob die 60%-Logik greift.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Nichts akut. Der Service läuft, der Daemon holt auf.
+
+Aber: ein Monitoring wäre gut. Irgendwo sehen können: läuft der Feeder, wie weit ist der Cursor-Stand, wann wurde zuletzt verarbeitet. Gerade merkt man nur dass er still steht wenn man in die Dateien schaut.

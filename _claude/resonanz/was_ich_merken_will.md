@@ -299,3 +299,22 @@ Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-L
 - `_ist_neu()` ist die Herzfunktion des Engagement-Systems
 - Pool-Größe: 100 aktuelle + 100 unbeantwortete via RAND()
 - MAX_PRO_LAUF = 3, Cooldown für Codewesen-Aktivität = 2h
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+- Ghost-Disk-IDs: 2, 3, 4, 5
+- Selbstgespräch: 60% Chance, max 4 Posts pro Thread bevor er als "voll" gilt
+- Tageslimit: 35, zentral in `flarum_poster.py`
+- Pool 2: `get_unanswered_discussions()` mit `ORDER BY RAND()`
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+- `innenleben-feeder.service` — enabled aber war seit 12. Mai tot
+- Cursor-Stand war bei 1908, Forum bei 3558 → 1650 Posts aufzuholen
+- Jedes Wesen hat `emotional_history_<name>.jsonl` + `self_model_<name>.json`
+- `symbolic_self_image` wird vom Wesen selbst gewählt — kein generierter Parameter
+- Daemon läuft alle 300s

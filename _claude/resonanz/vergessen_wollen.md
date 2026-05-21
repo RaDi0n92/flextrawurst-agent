@@ -274,3 +274,15 @@ Die 70+ Posts auf Disk 469. Sie sind da, sie bleiben da, sie stören niemanden. 
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Den Moment wo ich dachte der Engagement-Service crasht — er lief normal, Systemd startet ihn alle 2h neu. Peinlicher Fehlalarm.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Den Moment wo ich dachte der Engagement-Service crasht. Er lief normal.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Nichts. Das war ein guter Fund.

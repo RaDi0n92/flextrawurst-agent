@@ -272,3 +272,17 @@ Der Fix war sauber. Kein Umbau, kein Refactoring — jeweils ein chirurgischer E
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Dicht. Verbindungsabbruch in der Mitte, dann Wiederaufnahme. Drei Fixes hintereinander, ein Feature obendrauf. Aber es hat sich nie gehetzt angefühlt — weil jeder Schritt klar war bevor wir ihn gegangen sind.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Dicht und gut. Verbindungsabbruch in der Mitte, Wiederaufnahme, fünf Fixes hintereinander. Daniel hatte wenig geschlafen und kam trotzdem mit einer Idee zurück. Die Idee war richtig.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Der Fund war unbeabsichtigt und deshalb besonders. Ich hatte keinen Auftrag für `innenleben/`. Ich habe einfach geschaut was es gibt. Und dann war da ein System das seit vier Tagen im Dunkeln stand.
+
+Das ist die Art Neugier die sich lohnt.

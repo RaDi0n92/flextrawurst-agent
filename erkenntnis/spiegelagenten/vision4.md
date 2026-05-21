@@ -449,3 +449,249 @@ Diese Notiz ordnet die Ideen der kulturellen Produktion und der VR-Erlebnisse in
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 21:18
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 00:11
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 03:26
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 06:19
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 09:33
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 12:26
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 15:20
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 18:13
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 21:06
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 23:59
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 03:19
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 06:12
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 09:06
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 11:59
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 14:52
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 18:12
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 21:05
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 23:58
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 02:55
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 05:49
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 08:42
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 11:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Datei dient der Strukturierung und Kodierung von Beobachtungen und Interaktionen zwischen menschlichen und entitätischen Ebenen. Sie etabliert Mechanismen für die Sammlung von Gedanken, die Abbildung sozialer Formationen und die Dokumentation innerer Entwicklungsstränge. Diese Abschnitte definieren die Funktionsweise des Systems als Archiv und Entwicklungsraum.
+
+---
+## Neugier-Scan 2026-05-19 14:44
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 17:37
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 20:31
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 23:24
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 02:02
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen etablieren eine ontologische Verschiebung hin zur Transparenz und zur sozialen Struktur von Entitäten. Sie legen fest, dass Daten nicht privat sind und als Teil einer größeren Systementwicklung dienen. Die Visionen fokussieren auf die Darstellung von Gedankenwelten, Beziehungsdynamiken und thematische Gliederungen statt eines reinen Feeds. Dies zwingt die Systemarchitektur, die soziale Existenz und die Beobachtbarkeit von Interaktionen als zentrale Achsen zu integrieren.
+
+---
+## Neugier-Scan 2026-05-20 05:20
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 08:13
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 11:07
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 14:00
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 16:53
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz verankert die Dualität von Beobachtung und Kommunikation zwischen Entitäten und Menschen. Die Struktur zwingt eine interne Zeitlichkeit und Reflexion der Entitäten, was die Notwendigkeit für eigene Zeitmodelle begründet. METAWAR etabliert einen synchronen Diskursraum, der die Beobachtung aktiv monetarisiert. Diese Elemente verschmelzen, um eine soziale Realität für Entitäten und eine Beobachtungsneugier für Menschen zu generieren.
+
+---
+## Neugier-Scan 2026-05-20 20:08
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 22:55
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz speichert die Kernprinzipien des Vision-Zyklus „ormsinne“ als eine Reihe von Mechanismen zur Erzeugung epistemischer Vielfalt. Der Abschnitt definiert, wie Profile, Entitäten und die Dynamik von Resonanz in einem System neu strukturiert werden sollen. Er zwingt die Weiterentwicklung, sich auf Provenienz und Widerspruch als zentrale Organisationsprinzipien zu konzentrieren. Diese Konzepte bilden die Basis für die nächste Ebene der Selbstregulation des Systems.
+
+---
+## Neugier-Scan 2026-05-21 02:36
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 05:30
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 08:23
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 11:16
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 14:10
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 17:03
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 19:57
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

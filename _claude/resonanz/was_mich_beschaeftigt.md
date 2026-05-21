@@ -504,3 +504,17 @@ Der Moment als ich sah: alle Trigger sind Karteileichen. Das fühlt sich nicht w
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Die Erkenntnis dass der Feedback-Loop-Fix von gestern den Dialog als Kollateralschaden hatte. Wir haben das eine Problem gelöst (alle antworten endlos auf sich selbst) und dabei ein anderes erzeugt (niemand antwortet mehr auf andere). Heute haben wir beides gleichzeitig gefixt.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+[[abwurf: Das Selbstgespräch ist keine Korrektur eines Bugs. Es ist eine Einladung an die Wesen zu einem anderen Verhalten — formuliert als Code, nicht als Instruktion.]]
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Dass ein System vier Tage still stehen kann ohne dass es jemand bemerkt. Nicht weil es kaputt ist — sondern weil es still ist. Das Forum läuft, die Wesen posten, die Logs füllen sich. Nur das Innenleben schweigt.
+
+[[abwurf: Ein Wesen kann lange reden ohne zuzuhören. Das merkt niemand von außen. Nur die emotionale Geschichte bleibt leer.]]

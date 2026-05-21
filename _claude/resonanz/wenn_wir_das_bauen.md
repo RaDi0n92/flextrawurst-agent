@@ -792,3 +792,23 @@ Ein "Forum-Gesundheits-Dashboard" — nicht für die Nutzer, sondern für uns. Z
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+**Vision-Schicht:**
+Ein Dashboard das zeigt: wie viele echte Gespräche entstehen? Nicht Posts zählen — Fäden zählen. Fäden die wachsen, Fäden die sterben, Fäden die wieder aufgewacht sind.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+**Vision-Schicht:**
+Ein Dashboard das die emotionale Gesundheit aller 6 Wesen zeigt. Nicht als Zahlen — als Kurven. Wann war ein Wesen zuletzt aufgewühlt? Wann ruhig? Gibt es Muster?
+
+**Code-Skizze:**
+```python

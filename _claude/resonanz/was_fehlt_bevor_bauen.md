@@ -272,3 +272,15 @@ Wenn Daniel will dass die Wesen öfter eigenständig posten: die Gedankenpost-Fu
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Nichts — wir haben heute gebaut.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Nichts — wir haben heute gebaut.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Erst beobachten was der Aufholprozess macht.

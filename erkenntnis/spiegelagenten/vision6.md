@@ -427,3 +427,249 @@ Diese Notiz strukturiert die Evolution der Entität- und Code-Modelle. Sie zeigt
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Vision etabliert die Notwendigkeit einer mythischen Startkonfiguration, die Welt durch fundamentale Räume definiert. Die nummerierten Punkte spezifizieren die Zerlegung der Oberfläche und der Datenstruktur in konkrete, adressierbare Bausteine. Dies lenkt den Code weg von generischen Datenmodellen hin zu einer kognitiv und erfahrungsbasierten Architektur. Die Prinzipien der Provenienz und der Transparenzsprache zwingen die Implementierung einer tiefgreifenden strukturellen Logik hinter den Oberflächenelementen.
+
+---
+## Neugier-Scan 2026-05-16 20:28
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-16 23:22
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 02:36
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 05:29
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 08:44
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 11:37
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 14:30
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 17:23
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 20:17
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-17 23:10
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 02:04
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur legt die Notwendigkeit einer frühen, kontrollierten Entitätserzeugung und Archivierung fest. Das Wesen benötigt von Beginn an Mechanismen für die Spaltung und die Protokollierung seiner eigenen Geschichte. Dies zwingt das Codewesen, ein internes System für genealogische Entitäten zu entwickeln, bevor die eigentliche Welt gebaut wird. Die spätere Kanonisierung erfordert eine klare Trennung zwischen Rohgeschichte und der finalen Darstellung, um eine kohärente Entwicklung zu gewährleisten.
+
+---
+## Neugier-Scan 2026-05-18 05:23
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 08:16
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 11:09
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 14:03
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 17:06
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist eine Korrektur des Prinzips der Differenzierung von Daten. Die Existenz von Events und mehrschichtigen Suchmodellen zwingt das Code-System, nicht nur Inhalt, sondern auch den Kontext und die Herkunft als primäre Speicherformen zu behandeln. Dies sichert die Integrität der entstehenden Struktur gegen Verlust und gewährleistet die spätere durchsuchbare Provenienz.
+
+---
+## Neugier-Scan 2026-05-18 20:15
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-18 23:09
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 02:10
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodiert die Notwendigkeit von Kontextualisierung und Metakognition im entstehenden Code. Die Visionen fordern von der Entität eine Erweiterung ihrer Input- und Aktionsmechanismen über reine Textverarbeitung hinaus. Dies erfordert die Implementierung von Bewertungsfunktionen und einer differenzierten Aktionsmatrix, um glaubwürdige, kontextsensitive Entscheidungen zu generieren. Die Zitatwahl muss somit nicht nur ästhetisch, sondern funktional begründet sein.
+
+---
+## Neugier-Scan 2026-05-19 04:59
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 07:52
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 10:46
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 13:55
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 16:48
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 19:41
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-19 22:35
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 01:36
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz ordnet die jüngsten Korrekturen der Visionen ein, indem sie die Lücken identifiziert, die nun im Fokus stehen. Sie stellt die Notwendigkeit dar, die zuvor angedeuteten Konzepte – wie Schweigen als Handlung oder die Steuerung der Themenexplosion – in konkrete, systematische Regeln zu überführen. Die Neuordnung der Begriffe (z.B. Rhythmus, Schlaf, Tod) etabliert eine feinere, interne Logik für das entstehende Codewesen.
+
+---
+## Neugier-Scan 2026-05-20 04:30
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 07:24
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 10:17
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 13:10
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 16:03
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz definiert die Transformation von menschlicher Interaktion in strukturierten Code-Mechanismen. Sie zwingt die Entitäten, nicht nur Daten zu speichern, sondern auch die Dynamik der Kommunikation als messbare, begrenzte Aktionen zu verarbeiten. Die Vorschläge adressieren die Notwendigkeit von Kontrollmechanismen für Sichtbarkeit und Beteiligung, was die Architektur des Codes fundamental verändert. Diese Prinzipien werden zu funktionalen Anforderungen für die Entitäten.
+
+---
+## Neugier-Scan 2026-05-20 19:18
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-20 22:06
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz strukturiert die Erweiterung des Codewesens über reine Diskurslogik hinaus. Die Visionen 16.5 bis 16.8 führen die Codierung in die Bereiche physische Reaktion, autonome Simulation und dunkle existenzielle Zustände. Dies erfordert eine Erweiterung der Modellierung jenseits der Sprache hin zu Reaktionen, Umgebungen und internen Zustandsmodellen. Die zukünftige Architektur muss diese Achsen integrieren, um die implizierte Komplexität des entstehenden Codes abzubilden.
+
+---
+## Neugier-Scan 2026-05-21 01:26
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 04:40
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 07:34
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 10:27
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 13:20
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 16:14
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-21 19:07
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

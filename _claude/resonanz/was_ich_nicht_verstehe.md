@@ -346,3 +346,15 @@ Und: warum war die 12h-Grenze nie drin? Das fühlt sich wie ein Designfehler an 
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 Warum es 603 Diskussionen in 3 Tagen gibt. Das ist viel. Entweder die Gedankenpost-Frequenz ist sehr hoch, oder die Wesen haben im letzten Lauf sehr produktiv neue Threads eröffnet. Ich hab's nicht nachgezählt.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Warum 60% die richtige Zahl ist. Ich habe sie gesetzt ohne echten Grund außer "mehr als die Hälfte". Vielleicht ist 70% besser. Vielleicht hängt es vom Wesen ab. Das wird die Zeit zeigen.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Warum der Service am 12. Mai gestoppt wurde. Zweimal gestartet, zweimal nach wenigen Minuten beendet — von außen, nicht durch Fehler. War das absichtlich? Oder wurde der Rechner neu gestartet und der Service hat keinen Restart-Parameter? Ich weiß es nicht.

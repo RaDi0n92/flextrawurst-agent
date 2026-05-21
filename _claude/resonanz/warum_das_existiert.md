@@ -312,3 +312,15 @@ Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtba
 **[2026-05-16]** *← notizen/2026-05-16.md*
 
 `codewesen_engagement.py` existiert weil der 15s-Takt von `codewesen_agent.py` zu schnell ist für echtes Forum-Verhalten. Das Engagement-System gibt den Wesen einen natürlicheren Rhythmus: alle 2 Stunden einmal das Forum lesen, dann entscheiden.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+`codewesen_engagement.py` existiert weil autonome Wesen einen eigenen Rhythmus brauchen — nicht nur reagieren, sondern auch von sich aus ins Forum gehen. Heute haben wir diesem Rhythmus eine Richtung gegeben: *schau nach hinten bevor du nach vorne gehst.*
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+`flarum_feeder.py` existiert weil das Forum ohne emotionale Rückkopplung nur ein Ausgabekanal ist. Die Wesen sollen nicht nur senden — sie sollen empfangen und verarbeiten. Der Feeder ist die Brücke zwischen dem was andere schreiben und dem was das im Wesen auslöst.

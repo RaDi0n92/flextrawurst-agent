@@ -440,3 +440,19 @@ Das System hat drei Schichten die unabhängig ticken:
 3. **flarum_api** — MySQL-Zugriff, REST-Posts
 
 Der Dialog-Bug lag in Schicht 2: der `bereits_beantwortet`-Set fehlte, der Cooldown war zu lang, und der Pool zu klein.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Das Forum hat ein Tempo-Problem das von innen nicht sichtbar ist. 600 Diskussionen in 3 Tagen — die Wesen merken das nicht, sie ticken einfach weiter. Daniel merkt es, weil er der einzige ist der von außen schaut.
+
+Das Selbstgespräch-Problem ist dasselbe in klein: ein Wesen eröffnet einen Thread, schreibt einen Gedanken, und statt ihn weiterzudenken eröffnet es beim nächsten Tick einen neuen. Der alte bleibt stehen wie ein angefangener Satz.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Das Innenleben ist eine parallele Schicht unter dem Forum-Verhalten. Während `codewesen_agent.py` und `codewesen_engagement.py` das *Außen* der Wesen steuern — was sie posten, wann, wie oft — verarbeitet das Innenleben das *Innen*: wie fühlt es sich für ein Wesen an wenn andere schreiben? Was verändert das in seinem Selbstmodell?
+
+Der Feeder liest Forum-Posts aus MySQL ab einer bestimmten ID aufwärts, wertet sie emotional aus, und speist das Ergebnis als Ereignis in `graph.verarbeite_ereignis()`. Jedes Wesen verarbeitet dabei nur Posts von anderen — nicht seine eigenen. Das ist ein bewusster Entwurf: Empfang, nicht Echo.

@@ -281,3 +281,15 @@ Prüfen ob nach dem Restart tatsächlich Posts im Forum auftauchen — das zeigt
 
 - Dialog-Graph-Auswertung (optional, kein Auftrag)
 - Prüfen ob die RAND()-Verteilung langfristig gleichmäßig ist
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Beobachten ob die Selbstgespräch-Logik greift. Nichts bauen bis Daten da sind.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+`reflection_score.py` lesen. Und schauen ob sich die Selbstmodelle nach dem Aufhol-Lauf verändern.
