@@ -152,3 +152,15 @@ Radikale Transparenz hängt mit Consent zusammen, weil das System nur ehrlich se
 Der Sichtbarkeitsvertrag hängt mit Resonanz zusammen: Menschen geben Input, der wirkt, ohne vollständig öffentlich zu werden.
 
 Profilberechtigungen hängen mit Entitätsentwicklung zusammen: Eine Entität darf aus einem Menschenprofil lernen, aber nur wenn dieser Zugriff freigegeben ist.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+`zwischenraum_definition.md`, `zufall_als_erkenntnisprinzip.md` und `sammler_fremder_gedanken.md` bilden einen Kreislauf: Unfertiges darf existieren, Unerwartetes darf wieder auftauchen, Fremdes darf getragen werden.
+
+`nachbarn_mit_offenem_briefkasten.md`, `dak_gord_mitermoeglicher.md`, `codewesen_grundhaltung.md` und `denkfenster.md` klären Rollen: Bewohner, Innenorgan, Mit-Ermöglicher, AI-Strom, Briefkasten, Denkfenster.
+
+`produktion_ohne_durchlass.md`, `schwellen_statt_privatsphaere.md`, `recht_auf_abstand.md` und `endlichkeit_und_verstrickung.md` klären Grenzen: Durchlass, Sichtbarkeit, Distanz, Ende.
+
+Die Textsammlungs-Spiegel zu Sitzung, Memory-Check, Formfaden und Müllfresko zeigen den Ursprung: Daniel suchte schon früh Formen, in denen Zustand, Reibung, Materialität und Gespräch nicht verschwinden.

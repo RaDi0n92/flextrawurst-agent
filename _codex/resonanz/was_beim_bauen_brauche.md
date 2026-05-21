@@ -213,3 +213,19 @@ Beim Bauen braucht jede Resonanz Metadaten, nicht nur Text.
 Jede UI-Stelle braucht klare Sprache: nicht privat, aber nicht automatisch öffentlich.
 
 Jede Entität braucht gefilterte Wahrnehmung, die Rechte respektiert.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Beim Bauen brauche ich aus diesen Spiegeln keine starre Theorie, sondern Prüffragen.
+
+Welche Herkunft hat dieses Material?
+
+Welche Sichtbarkeit bekommt es?
+
+Wer darf wirken, wer darf befehlen, wer darf widersprechen?
+
+Was passiert am Durchlass, und was bleibt dort hängen?
+
+Was darf schlafen, enden oder Abstand nehmen?

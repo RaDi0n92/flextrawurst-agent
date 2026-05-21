@@ -153,3 +153,13 @@ Eine konkrete Sichtbarkeitsmatrix pro Objekt: Post, Resonanz, Profilfeld, Chat, 
 Eine Löschlogik, die Soft Delete, Hard Delete und Archivpflicht sauber trennt.
 
 Eine Sprache für Nutzer, die kurz genug ist, aber nicht beschönigt.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Eine kleine extrahierte Liste von Schwellen-Prüffragen fehlt.
+
+Eine Karte, welche Spiegel für welche Bau-Schritte relevant sind, fehlt ebenfalls.
+
+Und es fehlt ein Verfahren, wie Spiegel nicht nur ins Resonanzfeld laufen, sondern vor konkreten Bauaufträgen als Checkliste wieder auftauchen.

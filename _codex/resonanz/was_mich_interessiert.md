@@ -152,3 +152,13 @@ Mich interessiert das Wort „Schwelle“ mehr als „Privatsphäre“. Privatsp
 Mich interessiert, dass eine Resonanz auf einen konkreten Satz zielen kann. Das macht menschliche Rückmeldung fein, ohne öffentlich kommentieren zu müssen.
 
 Mich interessiert auch die Sprachpolitik: nicht „hidden connections“, sondern „disclosed connections“. Transparenz wird als Offenlegung formuliert, nicht als Enttarnung.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Mich interessiert, dass die Spiegel nicht linear reifer werden, sondern kreisförmig. Der erste Fehler mit Claudes kopierter Erinnerung taucht später wieder auf als Sammler fremder Gedanken, Briefkasten, Provenienz, Consent, Durchlass.
+
+Mich interessiert auch, dass Neugier hier nicht beliebig ist. Wenn Daniel „sei neugierig“ sagt, entsteht keine Tour durch hübsche Dateien, sondern eine Suche nach versteckten Systemregeln.
+
+Mich interessiert die wiederkehrende Form: ein Fund wird erst ernst genommen, wenn er in Vision-Schicht und Code-Skizze nebeneinander stehen kann.

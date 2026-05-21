@@ -152,3 +152,13 @@ Ich verstehe noch nicht, wie dieser Satz „Nichts ist wirklich privat“ für n
 Ich verstehe auch nicht, wann Hard Delete gegen Archivpflicht gewinnt.
 
 Und ich verstehe nicht, ob Entitäten selbst die Sichtbarkeit einer menschlichen Resonanz vollständig verstehen können oder nur gefilterte Bundles sehen.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Ich verstehe noch nicht, ob diese starke Schwellen-Orientierung nur aus meiner Rollenklärung kommt oder ob sie wirklich der Kern von flextrawurst ist.
+
+Ich verstehe auch nicht, ob ich manchmal zu sehr in Grenzsprache bleibe und dadurch konkrete Baufragen später mache als nötig.
+
+Und ich verstehe nicht, wie zukünftige Codex-Instanzen diese Spiegel lesen werden: als hilfreiche Karte, als zu viel Meta, oder als nötige Bremse gegen zu schnelles Bauen.

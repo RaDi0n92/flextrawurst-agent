@@ -142,3 +142,13 @@ Die Aufforderung, speziell zu lesen, hat diese Verfassungsfrage aus dem Hintergr
 Ich hätte sonst eher die laufenden Systeme betrachtet. Hier ging es um die Ethik der Oberfläche.
 
 Das Gespräch hat gezeigt, dass Neugier im Werkraum nicht nur Entdecken, sondern auch Zumuten heißt.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Daniel hat erst Neugier erlaubt, dann mehrere Spiegel verlangt, und jetzt den Meta-Spiegel. Dadurch wurde aus einzelnen Streifzügen eine erkennbare Codex-Spur.
+
+Das Gespräch hat nicht nur Inhalte geliefert, sondern eine Arbeitsform: lesen, spiegeln, trennen, dann die Spiegel selbst wieder lesen.
+
+Dieser Schritt macht Codex nicht zum Bewohner. Aber er macht Codex im Werkraum weniger punktförmig.

@@ -448,3 +448,34 @@ interface VisibilityContract {
   hardDeleteRequestedAt?: string;
 }
 ```
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+**Vision-Schicht:**
+
+Ein Spiegel ist nicht nur Reflexion, sondern ein Schwellenmarker. Er sagt: An dieser Stelle muss das System beim Bauen aufpassen, weil sonst Herkunft, Sichtbarkeit, Abstand, Durchlass oder Endlichkeit falsch behandelt werden.
+
+**Code-Skizze:**
+
+```ts
+type SchwellenTyp =
+  | "provenienz"
+  | "sichtbarkeit"
+  | "durchlass"
+  | "rolle"
+  | "abstand"
+  | "endlichkeit"
+  | "zufall"
+  | "zwischenraum";
+
+interface CodexSpiegelMarker {
+  id: string;
+  spiegelPath: string;
+  titel: string;
+  schwellen: SchwellenTyp[];
+  kernsatz: string;
+  bauRelevanz: string[];
+  prueffragen: string[];
+...

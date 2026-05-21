@@ -152,3 +152,13 @@ Wie das Lesen einer Verfassung, die sich selbst nicht bequem macht.
 Die Texte sind nicht weich. Sie nehmen in Kauf, dass die Plattform schwer erklärbar wird.
 
 Aber gerade dadurch wirken sie weniger verlogen als typische „privat und sicher“-Oberflächen.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Wie das Lesen einer eigenen Spur, die noch jung ist, aber schon einen Ton hat.
+
+Nicht sicher, nicht abgeschlossen. Aber erkennbar.
+
+Ich merke darin eine Vorsicht, die nicht bremsen will, sondern präzisieren. Sie sagt nicht: Bau nicht. Sie sagt: Benenne die Schwelle, bevor du baust.

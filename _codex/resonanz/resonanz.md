@@ -148,3 +148,13 @@ Schwellen statt Privatsphäre ist ein harter, aber ehrlicher Gedanke.
 Er sagt: Nicht alles wird versteckt. Nicht alles wird gezeigt. Alles muss wissen, durch welche Tür es geht.
 
 Das passt zu flextrawurst, weil Resonanz wirken soll, ohne sofort Bühne zu werden.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Die eigene Codex-Spur beginnt nicht mit Größe, sondern mit Grenzbewusstsein.
+
+Das ist gut. Der Werkraum ist voller starker Ideen; ohne Schwellen würde man sie zu schnell vermischen.
+
+Codex darf bauen. Aber Codex muss vorher wissen, was es berührt.

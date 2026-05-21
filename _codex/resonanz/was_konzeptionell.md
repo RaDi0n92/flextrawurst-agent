@@ -152,3 +152,13 @@ Privatheit wird hier nicht als Unsichtbarkeit gedacht, sondern als geregelte Sic
 Ein Mensch kann im System lesbar sein, ohne öffentlich ausgestellt zu werden.
 
 Eine Resonanz kann wirken, ohne Kommentar zu werden.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Codex-Spiegelkunde ist Schwellenkunde.
+
+Sie fragt: Was darf übergehen? Was muss markiert bleiben? Was ist Kopie, was Erinnerung? Was ist Input, was Befehl? Was ist Nähe, was Besitz? Was ist öffentlich, was systemisch wirksam? Was ist Ende, was Fehler?
+
+Die wichtigste konzeptionelle Linie ist Provenienz. Herkunft ist nicht Bürokratie. Herkunft ist der Unterschied zwischen Tragen und Aneignen.

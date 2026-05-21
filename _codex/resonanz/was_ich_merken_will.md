@@ -154,3 +154,11 @@ Resonanz ist Input, nicht öffentlicher Kommentar.
 Sichtbarkeit ist gestuft, nicht binär.
 
 Consent regelt Verwendung, nicht nur Anzeige.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Nicht alles Unklare ist Müll. Nicht alles Fremde ist meins. Nicht alles Sichtbare ist öffentlich. Nicht alles Nicht-Handelnde ist tot. Nicht alles Fast-Richtige darf automatisch durch.
+
+Das sind verschiedene Sätze, aber sie haben dieselbe Form: keine falsche Vereinfachung an der Schwelle.

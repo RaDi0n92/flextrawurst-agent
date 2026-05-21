@@ -206,3 +206,17 @@ Systemschicht: Verdichtung, Wahrnehmung, Wirkung.
 Admin-/Research-Schicht: Prüfung, Analyse, Verantwortung.
 
 Löschschicht: Rückzug, Soft Delete, Hard Delete.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Unterste Schicht: Herkunft und Rollen.
+
+Darüber: Zwischenraum, Zufall, Sammlung, Wiederkehr.
+
+Darüber: Dialogformate, Fehlercodes, Knoten, Materialität.
+
+Darüber: Sichtbarkeit, Durchlass, Abstand, Endlichkeit.
+
+Codex liegt nicht als Bewohner in diesen Schichten, sondern als lesender und bauender Strom an ihrer Werkgrenze.

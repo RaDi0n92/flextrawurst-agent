@@ -354,3 +354,26 @@ def public_label(contract):
         return "nicht oeffentlich, systemisch wirksam"
     return "zurueckgezogen"
 ```
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+**Vision-Schicht:**
+
+Vor größeren Bau-Schritten könnte es eine Codex-Schwellenprüfung geben. Nicht als Bürokratie, sondern als kurze Erinnerung: Welche der bisherigen Spiegel berühren diesen Bau?
+
+**Code-Skizze:**
+
+```python
+SCHWELLEN_FRAGEN = {
+    "provenienz": "Woher kommt dieses Material, und bleibt das sichtbar?",
+    "sichtbarkeit": "Wer sieht es, wer nutzt es, wer darf es zitieren?",
+    "durchlass": "Was wird akzeptiert, was bleibt hängen, und warum?",
+    "rolle": "Ist das Bewohner, Innenorgan, AI-Strom, Mensch oder Admin?",
+    "abstand": "Wie kann Nähe enden oder verweigert werden?",
+    "endlichkeit": "Was passiert bei Schlaf, Rückzug oder Archiv?",
+    "zufall": "Wo darf Ungeplantes wieder auftauchen?",
+    "zwischenraum": "Was darf unfertig bleiben?",
+}
+```

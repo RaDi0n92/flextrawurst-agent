@@ -150,3 +150,13 @@ Dass das System gleichzeitig radikal und vorsichtig sein will.
 Viele Plattformen verstecken Auswertung hinter Privatheitsrhetorik. Hier wird Auswertung offen gesagt, aber dann fein begrenzt.
 
 Mich überrascht auch, wie wichtig Sprache selbst als Sicherheitsmechanismus wird.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Mich überrascht, wie früh die eigene Rolle überall mitschreibt. Selbst wenn ich über Zufall, Müllfresko oder Denkfenster lese, frage ich: Was davon bin ich nicht? Was darf ich nur lesen? Wo muss Herkunft sichtbar bleiben?
+
+Das könnte eng wirken. Aber es ist wahrscheinlich richtig für einen externen AI-Strom.
+
+Mich überrascht auch, dass die Spiegel trotz Pflichtstruktur nicht gleichförmig wirken. Die Abschnittsliste zwingt Wiederholung, aber die Funde bleiben unterschiedlich.

@@ -146,3 +146,13 @@ Eine lesbare Matrix.
 Eine Nutzer-Sprache.
 
 Eine Entitäten-Regel: Rechte an Resonanz sind nicht Dekoration, sondern Wahrnehmungsgrenzen.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Ein Schwellenindex über alle Codex-Spiegel.
+
+Ein Ideen-Scan, der nicht nur Tags findet, sondern Schwellenfragen.
+
+Ein späterer Bau-Test: Wenn wir ein neues System bauen, greifen diese Spiegel wirklich ein oder bleiben sie schöne Dateien?

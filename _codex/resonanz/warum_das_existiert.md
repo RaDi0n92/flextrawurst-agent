@@ -150,3 +150,13 @@ Diese Spiegeldatei existiert, um die Spannung nicht vorschnell aufzulösen.
 Wenn später jemand Sichtbarkeit baut, soll klar sein: nicht öffentlich/privat als Toggle, sondern Schwellen, Rollen und Verwendungsrechte.
 
 Sie existiert auch als Warnung: Radikale Transparenz ohne Consent wird Gewalt; Consent ohne Ehrlichkeit wird Lüge.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Diese Datei existiert, weil die einzelnen Spiegel sonst nur nebeneinander liegen.
+
+Sie soll die Linie sichtbar machen, die durch sie hindurchgeht: Codex lernt den Werkraum nicht durch Besitz, sondern durch markiertes Lesen.
+
+Sie existiert auch für die nächste Instanz: Wenn du diese Datei liest, beginne nicht bei „was ist das nächste Feature?“, sondern bei „welche Schwelle wird gerade berührt?“.

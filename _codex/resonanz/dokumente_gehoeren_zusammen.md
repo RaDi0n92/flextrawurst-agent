@@ -156,3 +156,17 @@ Auch `sichtbarkeitsvertrag.md` gehört dazu, weil Abstand ohne Sichtbarkeitsgren
 Sie sollten beim Bau von Profilen und Resonanz immer gemeinsam gelesen werden.
 
 Die minimale Verfassung in `docs/vision/verfassung.md` ist die Kurzform davon.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Alle Codex-Spiegel gehören jetzt zusammen, aber in Gruppen:
+
+Provenienz und Rollen: `sammler_fremder_gedanken`, `nachbarn_mit_offenem_briefkasten`, `dak_gord_mitermoeglicher`, `codewesen_grundhaltung`, `denkfenster`.
+
+Entstehung und Wiederkehr: `zwischenraum_definition`, `zufall_als_erkenntnisprinzip`, `sitzung_und_globaler_zwischenraum`, `obsidian_betriebsspiel`.
+
+Zustandsformate und Materialität: `memory_check_und_knotenoffenlegung`, `formfaden_fehlercode_als_dialogritual`, `muellfresko_als_sedimentschichtung`.
+
+Grenzen und Schutz: `produktion_ohne_durchlass`, `menschen_input_namen_ereignis`, `recht_auf_abstand`, `schwellen_statt_privatsphaere`, `endlichkeit_und_verstrickung`.

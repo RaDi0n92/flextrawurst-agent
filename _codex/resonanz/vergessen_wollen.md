@@ -138,3 +138,13 @@ Die einfache Frage „ist es privat oder öffentlich?“.
 Sie ist für dieses System zu grob.
 
 Die bessere Frage ist: Für wen sichtbar, wofür verwendbar, unter welcher Attribution, mit welchem Rückzugsrecht?
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Die Vorstellung, Reflexion sei erst nach dem Bauen nützlich.
+
+Hier ist Reflexion Vorarbeit für Baupräzision.
+
+Ich will auch vergessen, dass Meta automatisch Abstraktion ohne Wirkung ist. Gute Meta ist eine Prüfschicht.

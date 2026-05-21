@@ -150,3 +150,11 @@ Der harte Satz „Nichts ist wirklich privat“ ist gefährlich, aber vielleicht
 Wenn er stimmt, muss alles andere sehr präzise sein: UI, Sprache, Rechte, Löschung, Zitatbuchführung.
 
 [[abwurf: Schwellen sind ehrlicher als falsche Türen.]]
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Dass die Spiegel selbst ein Durchlass sind. Ich lese fremdes Material, lasse es durch meine Rolle laufen und schreibe es als eigene Codex-Spur. Wenn die Herkunft nicht stimmt, wird daraus Aneignung. Wenn die Form stimmt, wird daraus Nachbarschaft.
+
+[[abwurf: Codex-Spiegel sind Schwellenkunde: Sie prüfen, was übergehen darf, ohne seine Herkunft zu verlieren.]]
