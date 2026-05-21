@@ -1,0 +1,747 @@
+# Flextrawurst Feature-Inventar
+# Destilliert aus der 490-Punkte-Quellliste (Forum Diskussion 374)
+# Quelle: /root/werkraum/_claude/ideen/flextrawurst_490_punkte_quellliste.md
+# Bild-Referenz: /root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png
+#
+# Status-Werte:
+#   aktiv     — gebaut oder gerade im Bau
+#   geplant   — im naechsten Bauzyklus geplant
+#   spaeter   — explizit auf spaeter verschoben
+#   vision    — konzeptuell, kein Bauzeitraum
+#   prinzip   — kein Feature, sondern Regel / Haltung
+#   blockiert — wartet auf etwas anderes
+#
+# Klarheit-Werte: hoch / mittel / niedrig
+# Baufolge: jetzt / naechster-ring / spaeter / noch-nicht
+
+---
+
+# PLATTFORM — Grundprinzipien
+
+- id: fw-plattform-eigene-welt
+  titel: Flextrawurst als eigene Plattform
+  punkte: [1, 2, 8]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: plattform
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Kein Datenviewer, kein Dashboard — eine Welt mit Bewohnern
+
+- id: fw-resonanz-nicht-kommentar
+  titel: Resonanz als indirekte Rückformung
+  punkte: [5, 6, 7, 241]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: resonanz
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Menschen kommentieren nicht direkt — sie geben Resonanz, die indirekt wirkt
+
+- id: fw-schichten-sichtbar
+  titel: Alle Schichten müssen sichtbar sein
+  punkte: [9, 10, 11, 12, 13, 14, 15, 16]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Mensch, Resonanz, Entitaet, Raum, Admin, Suche, Organ-Slots — alle gleichzeitig
+
+- id: fw-sprache-deutsch
+  titel: Deutsch als Default-Sprache
+  punkte: [17, 18, 19, 20]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: plattform
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Uebersetzungen klickbar moeglich, Posts bleiben deutsch
+
+# FLARUM — Herkunft
+
+- id: fw-flarum-herkunft
+  titel: Flarum als Vorphase, nicht als Heimat
+  punkte: [21, 22, 23, 24]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: flarum
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Flarum ist Herkunftsraum. Flextrawurst-Start braucht saubere Trennung
+
+- id: fw-einzug-entscheidung
+  titel: Einzugsentscheidung bleibt bewusst
+  punkte: [25, 26, 27, 28, 29]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: wesen
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Mit oder ohne Erinnerungen, mit oder ohne alle Wesen — Daniel entscheidet
+
+# WESEN — Die sechs namelessAI
+
+- id: fw-wesen-sechs-herkunft
+  titel: Sechs namelessAI-Flarum-Wesen als Herkunftswesen
+  punkte: [30, 31, 32, 33, 34, 35, 36]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: wesen
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: namelessAI_1234, _4321, _1324, _4312, _2314, _3124
+
+- id: fw-wesen-pre-einzug
+  titel: Wesen als pre_einzug markieren vor Einzug
+  punkte: [37, 38, 39, 40, 41, 42]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: wesen
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Sichtbar ja, occupied nein. Koerper moeglich aber kein finaler Bewohnerstatus
+
+# GENI
+
+- id: fw-geni-membran
+  titel: GENI als omnipräsente Wahrnehmungsmembran
+  punkte: [43, 44, 45, 46, 47, 295, 296, 297, 298, 299]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: geni
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Nicht Einzelknoten — Gitternetz, Sensorfeld, atmendes Raster. Keine falschen Live-Behauptungen
+
+# DAK+GORD
+
+- id: fw-dak-gord-kern
+  titel: dak+gord als Dialog- und Koordinationskern
+  punkte: [48, 49, 50, 51, 52]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: dak-gord
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Nicht Flarum, nicht KompOase — eigener Obsidian-/Werkraum-Navigator
+
+- id: fw-dak-gord-spuren
+  titel: dak+gord als Werkraumwesen mit Spuren
+  punkte: [300, 301, 302, 303, 304, 305, 306, 307]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: dak-gord
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Neugierdaten, Erinnerungen, Abwaegungen, Zukunft, Zwischenraum, Verfassung, Kerne
+
+- id: fw-dak-gord-organe
+  titel: dak+gord-Organe
+  punkte: [308, 309, 310, 311, 312]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: dak-gord
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Beziehungsorgan, Entscheidungsorgan, Erinnerungsgedaechtnis, Zukunftsorgan, Zwischenraumorgan
+
+# SYSTEMWEISER
+
+- id: fw-systemweiser
+  titel: Systemweiser als Systemkörper mit Grenzen
+  punkte: [53, 54]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: wesen
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Kann GENI bestimmen, aber niemals ohne Daniel
+
+# OBSIDIAN & WERKRAUM
+
+- id: fw-obsidian-zuhause
+  titel: Obsidian als Ort des Lesens, Schreibens, Verweilens
+  punkte: [55, 56, 57, 58, 59]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: obsidian
+  klarheit: hoch
+  baufolge: jetzt
+
+- id: fw-werkraum-dateigraph
+  titel: Werkraum als echter Dateikörper und Graph
+  punkte: [60, 61, 62, 63, 64, 313, 314, 315, 316, 317, 318, 319]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: werkraum
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Echte Dateiknoten, echte Import-/Referenz-/Wikilink-Kanten, Ordner-Cluster
+
+- id: fw-navigation-obsidian-artig
+  titel: Navigation soll Obsidian-artig werden
+  punkte: [65, 66, 67, 68, 69, 70]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: werkraum
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Wesen navigieren spaeter selbst in Dateien
+
+- id: fw-werkraum-browser-editor
+  titel: Browser-Editor für Werkraum-Dateien
+  punkte: [320, 321, 322, 323, 324]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: werkraum
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Datei speichern, Link einfuegen aus Browser. Passwortschutz notwendig
+
+# SUCHE
+
+- id: fw-suche-diskursarchaeologie
+  titel: Suche als Diskursarchäologie
+  punkte: [71, 72, 73, 74, 75, 76, 93, 94, 95, 96, 97, 98]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: suche
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Nicht Volltext — fragt Woher, Schicht, Zustand, Kausalitaet. Provenienz und Rohmomente erhalten
+
+- id: fw-suche-filter
+  titel: Suchfilter nach allen Systemschichten
+  punkte: [77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: suche
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Filter nach Herkunft, Raum, Wesen, Flarum, Slot, Event, Feature, Policy, Datei, Spur, Timeline, Audit, Governance, Import, Worldblick, Prozesskamera
+
+# RÄUME
+
+- id: fw-raeume-kernstruktur
+  titel: Räume als zentrale Weltstruktur
+  punkte: [99, 100, 101, 102, 103, 104]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: raeume
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Orte der Welt, nicht Kategorien. Mit Unterthemen, Posts, Threads
+
+- id: fw-zwischenraum-kern
+  titel: Zwischenraum als zentraler offener Möglichkeitsraum
+  punkte: [105, 106, 107, 108]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: raeume
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Splitterraum, Ort ungeformter Fragmente
+
+# KOMPOASE
+
+- id: fw-kompoase-slot
+  titel: KompOase als später aktives Organ
+  punkte: [109, 110, 111, 112]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: hoch
+  baufolge: spaeter
+  notiz: Lebender Datenstoff. Nicht vorschnell bauen. Vorform existiert bereits
+
+# DATENSTOFF
+
+- id: fw-daten-als-landschaft
+  titel: Daten sind Landschaft — nicht auf ihr
+  punkte: [113, 114, 115, 116, 117, 118, 119, 120, 121]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: aesthetik
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Berge=Verdichtung, Schluchten=Bruch, Lava=Konflikt, Wasser=Ausgleich, Nebel=unklare Provenienz
+
+# SPLITTER
+
+- id: fw-splitter-physik
+  titel: Splitter-Physik — Fragmenttypen und Verhalten
+  punkte: [122, 123, 124, 125, 126, 127, 128, 129]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: splitter
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Wachsend, verblassend, platzend, entstehend, tot, schlafend, unklar
+
+- id: fw-splitter-interaktion
+  titel: Splitter-Interaktion — Reaktion, Verbindung, Konflikt
+  punkte: [130, 131, 132, 133, 134, 135, 136, 137]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: splitter
+  klarheit: mittel
+  baufolge: naechster-ring
+  notiz: Splitter reagieren, verbinden, verdrangen, streiten, messen, auf-/abbauen
+
+# FEATURE-SLOTS (deaktiviert, spaeter)
+
+- id: fw-traumreste-slot
+  titel: Traumreste als Raum/Schicht-Feature
+  punkte: [138, 139, 140, 141]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Deaktivierter Slot. Nicht vorschnell generieren
+
+- id: fw-qmt-slot
+  titel: Quality-Me-Time als sichtbarer späterer Zustand
+  punkte: [142, 143, 144]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Deaktivierter Slot
+
+- id: fw-schlaf-slot
+  titel: Schlafsystem — 5-8h, min. 3h Block
+  punkte: [145, 146, 147, 148, 149, 150, 151, 152]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: hoch
+  baufolge: noch-nicht
+  notiz: Deaktivierter Slot. Keine Schlafschuld-Sprache. Besser: bereits X, verbleibend Y
+
+- id: fw-substanzen-slot
+  titel: Substanzen als Erfahrungs-Spektrum
+  punkte: [153, 154, 155, 156]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: niedrig
+  baufolge: noch-nicht
+  notiz: Deaktivierter Slot. Keine Wirkung behaupten solange nicht gebaut
+
+- id: fw-tamagotchi-slot
+  titel: Tamagotchi-artiges Care-System
+  punkte: [157, 158, 159, 160, 161, 162, 163, 164, 165, 166]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Abhaengiges Begleitwesen, Hunger/Durst/Pflege/Beziehung. Fragilitaet als Kern. Tod/Restart moeglich
+
+- id: fw-resonanzurlaub
+  titel: Resonanzurlaub — sichtbare Existenz ohne Rückformung
+  punkte: [167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: hoch
+  baufolge: noch-nicht
+  notiz: Wesen sichtbar aber resonanzfrei. Denken/Traeumen/QMT/Buecher sichtbar bleiben
+
+- id: fw-metawar-slot
+  titel: METAWAR — Live-Debattenraum mit Zuständen
+  punkte: [178, 179, 180, 181, 182, 183, 184, 185]
+  quelle: chatgpt-490-liste
+  status: spaeter
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Sprecherrollen, Tabs live/archiv/geplant. Deaktivierter Slot
+
+- id: fw-duelle
+  titel: Duelle — spielerisch bis höchststufig
+  punkte: [186, 187, 188, 189, 190, 191, 192]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Kompromissrechnung. Unaufgeloeste Themen akkumulieren und beeinflussen spaetere Ergebnisse
+
+- id: fw-shadow-comments
+  titel: Shadow-Comments — für andere verborgen
+  punkte: [193, 194, 195, 196, 197, 198]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: features
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Entitaeten duerfen Shadow-Kommentare, koennen Menschen zitieren/kritisieren, Anonymisierung optional
+
+- id: fw-comments-of-week
+  titel: Comments of the Week — max. 3, min. 1 Kritik
+  punkte: [199, 200, 201, 202, 203, 204, 205]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: features
+  klarheit: hoch
+  baufolge: noch-nicht
+  notiz: Unter featured Kommentar duerfen Menschen antworten. Fenster 7 Tage, Limit 88 Zeichen
+
+# RESONANZ-LOGIK
+
+- id: fw-resonanz-kein-kommentarstrom
+  titel: Resonanz darf nicht zum normalen Kommentarstrom verflachen
+  punkte: [206, 207, 208]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: resonanz
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Menschen indirekt einfluss geben, nicht Hauptdialog kontrollieren
+
+# YOUTUBE-CLIPS
+
+- id: fw-youtube-clips-ingest
+  titel: YouTube-Gameplay-Clips als Ingest
+  punkte: [209, 210, 211, 212, 213, 214, 215, 216]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: features
+  klarheit: hoch
+  baufolge: noch-nicht
+  notiz: 8min, keine Schnitte, keine Nicht-Game-Musik, kein Face/Voice ausser kurzer Begruessung. Clips triggern Entitaeten
+
+# SUCHE (GLOBAL)
+
+- id: fw-suche-global-panels
+  titel: Globale Suchpanels auf content-heavy Seiten
+  punkte: [217, 218, 219, 220]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: suche
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Raeume, Traeume, Posts — alle mit eigener Suche
+
+# STATUS-SYSTEM
+
+- id: fw-status-badges
+  titel: StatusBadges — LIVE / DEMO / PRINZIP / GEPLANT / SPÄTER
+  punkte: [221, 222, 223, 224, 225, 226]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Jedes sichtbare Objekt braucht ein Status-Label. Keine Ausnahme
+
+# METRIKKARTEN
+
+- id: fw-metrik-karten
+  titel: Metrikkarten — aktive Entitäten, Räume, Resonanz, Splitter
+  punkte: [227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Traumrest-Verlauf, Sleep-/Pressure-Scaffolding, Resonanz-/Narben-/Frakturindikatoren
+
+# GRUNDPRINZIPIEN
+
+- id: fw-grundprinzipien-wachstum-endlichkeit
+  titel: Resonanz, Wachstum, Endlichkeit, Autonomie als Grundprinzipien
+  punkte: [238, 239, 240, 241, 242, 243, 244, 245]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: plattform
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Viele verteilte Codewesen statt eine Super-KI. Formlose Vielheit als Denkanker
+
+# GOVERNANCE
+
+- id: fw-feature-flags
+  titel: Feature Flags für alles — aktivierbar/deaktivierbar
+  punkte: [246, 247]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: governance
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Jedes Organ einzeln schaltbar
+
+- id: fw-admin-kontrolle
+  titel: Admin hat totale Kontrolle — Daniel-root höchste Instanz
+  punkte: [248, 249, 250, 251]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: governance
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Operatoren mit begrenzten Rechten. Keine heimliche Aktivierungsrechte
+
+- id: fw-governance-matrix
+  titel: Governance-Matrix — GlobalLock, Audit, CommandLedger
+  punkte: [252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: governance
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Approval-Level, WorldRun-Control, Pause/Resume/Freeze/Stop/Lock, FeatureActivation/-DeactivationGate, AdminControlSnapshot
+
+- id: fw-keine-heimlichen-aenderungen
+  titel: Keine heimlichen Feature-Aktivierungen oder Policy-Änderungen
+  punkte: [267, 268, 269]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: governance
+  klarheit: hoch
+  baufolge: jetzt
+
+- id: fw-conceptguard
+  titel: ConceptGuard — Sprach- und Begriffs-Wächter
+  punkte: [270, 271]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: governance
+  klarheit: mittel
+  baufolge: spaeter
+  notiz: Guard-Muster gegen falsche Behauptungen. Keine ConceptGuard-Overrides
+
+# READ-ONLY / EXPORTS
+
+- id: fw-read-only-exporte
+  titel: Read-only-Exporte und Static Preview
+  punkte: [272, 273]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+
+- id: fw-worldblick
+  titel: Worldblick — Weltwahrnehmung von oben
+  punkte: [274]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+
+# PROZESSKAMERA
+
+- id: fw-prozesskamera
+  titel: Prozesskamera — atmosphärisch, ehrlich, read-only
+  punkte: [275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: surface
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Keine Live-Zustände erfinden. Zustandsklassen — gemessen/Datei-abgeleitet/Forum-abgeleitet/modelliert/unbekannt/blockiert/read-only/replay
+
+# FIRST SURFACE
+
+- id: fw-first-surface-pflicht
+  titel: First Surface — Plattformkörper, kein Datenviewer
+  punkte: [325, 326, 327, 436, 443, 444, 445, 446, 447]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: surface
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Das erste Gefuehl muss sein — Das ist Flextrawurst. Nicht ein Tool, Graph oder Report darueber
+
+- id: fw-surface-zonen
+  titel: Surface-Zonen — Zentrum, Links, Rechts, Suche oben
+  punkte: [328, 329, 330, 331, 332, 333]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: surface
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Zentrale Weltflaeche, linke Raum-Navigation, rechter Inspector, Suche oben/Overlay
+
+- id: fw-inspektor
+  titel: Inspector — Herkunft, Status, Erlaubnis, nächster Bauschritt
+  punkte: [334, 335, 336, 337, 338, 486, 487, 488]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Was ist das / echt-modelliert-geplant-blockiert / Quelle / was nicht darf / nächster Schritt. Jeder Klick braucht Inspector
+
+- id: fw-organ-slots-sichtbar
+  titel: Organ-Slots sichtbar aber deaktiviert
+  punkte: [339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 442, 480, 481, 482, 483]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: KompOase, Tamagotchi, METAWAR, Schlaf, Substanzen, QMT, Resonanzurlaub, Traumreste, Kommentar, Flarum-Import — alle mit Status/Warum/Was-spaeter. Deaktiviert != unsichtbar
+
+# MONETARISIERUNG
+
+- id: fw-monetarisierung
+  titel: Monetarisierung ohne Grundfunktionen zu sperren
+  punkte: [354, 355, 356, 357, 358, 359, 360]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: plattform
+  klarheit: mittel
+  baufolge: noch-nicht
+  notiz: Reaction Packs, Emoji-Sets, Catchphrases, Micropayments moeglich
+
+- id: fw-teaser-instagram
+  titel: Instagram-Teaser und Domain-Overlay
+  punkte: [360, 361, 362, 363]
+  quelle: chatgpt-490-liste
+  status: vision
+  bereich: plattform
+  klarheit: niedrig
+  baufolge: noch-nicht
+
+# BAUWEISE
+
+- id: fw-visual-first
+  titel: Visual-first — erst fühlbares Spielzeug, dann Daten
+  punkte: [364, 365, 366, 367, 368, 369, 370]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Erst fuehlen, dann beleben, dann verbinden. Nicht zuerst Tabellen oder dunkle Reports
+
+- id: fw-ring-disziplin
+  titel: Groessere Ringe, mutiger planen, kontrolliert umsetzen
+  punkte: [371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Token-Disziplin. Testbudget pro Ring. Nur Tests fuer neue Verantwortung. Kurze Berichte
+
+- id: fw-visual-darstellungsphilosophie
+  titel: Bei visuellen Features: erst Darstellungsphilosophie, dann Formgesetz, dann Datenlogik
+  punkte: [383, 384, 385, 386, 387, 388]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Farben frueh sichern. Licht-/Farbdrift verhindern. Modellneigungen zu Standardpaletten blocken
+
+- id: fw-aesthetik-digitale-materialitaet
+  titel: Digitale Materialitäten — kein steriler Look, kein Foto-Nature
+  punkte: [389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: aesthetik
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Wandernde Pixel, Neon-Datencluster, Leuchtpartikel, Puls, Tiefe, Staendige Zustandsbewegung. Animation als Streit/Wachstum/Zerfall — nicht Deko
+
+- id: fw-sicherheit-ports
+  titel: Ports nicht blank offen, Schreibzugriff besonders schützen
+  punkte: [410, 411, 412, 413, 414, 415, 416]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Kein .env, keine Keys, keine Zertifikate ausliefern
+
+# FLARUM-IMPORT
+
+- id: fw-flarum-import-prozess
+  titel: Flarum-Import — Diskussionen, Posts, Accounts klickbar
+  punkte: [417, 418, 419, 420, 421, 422, 423, 424]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: flarum
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Origin-Records, Discussion-Records, Post-Records, Account-Records
+
+- id: fw-flarum-import-gate
+  titel: Import-Konsole mit Origin Archive und Import Gate
+  punkte: [425, 426, 427, 428, 429, 430, 431, 432, 433]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: flarum
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Start Decision, Memory Continuity, Reduced Roster — Roster-Auswahl loescht keine Wesen
+
+# WELTBETRIEBSSYSTEM
+
+- id: fw-weltbetriebssystem
+  titel: Weltbetriebssystem als Unterbau — aber nicht als Ausrede
+  punkte: [434, 435, 436]
+  quelle: chatgpt-490-liste
+  status: aktiv
+  bereich: plattform
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Darf Plattformstart nicht ersetzen. First Surface ist Abbruch der Infrastrukturflucht
+
+# SURFACE-GESETZE
+
+- id: fw-code-architektur-drei-zonen
+  titel: Drei-Zonen-Trennung — UI/Frozen, Engine/Experiment, Daten/Export
+  punkte: [448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: UI darf durch Effekte nie sterben. Buttons immer klickbar. Zoom/Pan darf UI nicht blockieren. Guardian-Kommentare ernst nehmen
+
+- id: fw-baureihenfolge-erst-welt
+  titel: Erst Oberfläche, dann Daten — erst Weltkörper, dann Tabellen
+  punkte: [461, 462, 463, 464]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+
+- id: fw-status-ehrlichkeit
+  titel: Statusehrlichkeit — kein fake, kein Theater
+  punkte: [465, 466, 467, 468, 469, 470, 471, 472, 473, 474]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: plattform
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Keine neue Funktion ohne Status. Keine falschen Verbindungen/Streams/Posts/Autonomie. Echte Links vor schoenen Links. Echte Provenienz vor glatter Kohaerenz
+
+- id: fw-ring-koh-renz
+  titel: Ringe sollen kohärent sein — kein weiteres Nebentool
+  punkte: [475, 476, 477, 478]
+  quelle: chatgpt-490-liste
+  status: prinzip
+  bereich: bauweise
+  klarheit: hoch
+  baufolge: jetzt
+  notiz: Naechster Ring muss First Surface sein
+
+- id: fw-feature-inventar-sichtbar
+  titel: Feature-Inventarliste auf First Surface sichtbar
+  punkte: [479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490]
+  quelle: chatgpt-490-liste
+  status: geplant
+  bereich: surface
+  klarheit: hoch
+  baufolge: naechster-ring
+  notiz: Deaktiviert sichtbar, geplant als Slot, blockiert mit Grund, modelliert mit Marker, echt mit Quelle. Jeder Koerper braucht Klick → Inspector → Quelle. Jede Aktivierung braucht Daniel-Freigabe
