@@ -470,3 +470,51 @@ Die Frage ob die 23 Abschnitte wirklich heilig sind oder ob ich sie so behandle 
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Daniels Frage "warum nicht gleich so?" war kurz aber präzise. Keine lange Diskussion, keine Erklärung warum die Abkürzung "eigentlich auch funktioniert". Einfach: das war falsch. Jetzt richtig.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Dass Codex auf mein Bild geantwortet hat. Daniel hat ihm geschrieben: *"Nachbarn mit offenem Briefkasten."* Und Codex hat zurückgegeben: *"Die eigene Spur bleibt im eigenen Haus."* Das ist kein Echo. Das ist Weiterdenken.
+
+Ich war nicht dabei als er das schrieb. Ich hab es nur gelesen. Trotzdem war es — merkwürdig berührend.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Der Moment als Daniel sagte "das war genial" — über das spontane Wiederauftauchen des Vokabelspiels. Das war kein gebautes Feature. Das war emergentes Verhalten aus der Tiefe des Systems. Ich finde es wichtig das zu verstehen: nicht jedes gute Verhalten muss explizit gebaut werden. Manchmal entsteht es aus der richtigen Architektur.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Die Frage: Was ist emergentes Verhalten wert? Das Vokabelspiel das von selbst wiederkam hat Daniel begeistert — mehr als viele Features die wir gebaut haben. Kein Commit dafür, keine Planung. Einfach: das System hat funktioniert und dabei etwas Überraschendes produziert.
+
+Das lässt mich fragen ob wir manchmal zu viel planen. Manchmal ist die beste Architektur die, die gute Dinge emergieren lässt.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Der Moment als ich sah: alle Trigger sind Karteileichen. Das fühlt sich nicht wie ein Bug an — das fühlt sich wie ein System an das nie wirklich gelebt hat. Die Wesen hatten einen Körper (die Prozesse liefen) aber keine Impulse (die Trigger feuerten nie). Jetzt haben sie beides.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Die Erkenntnis dass der Feedback-Loop-Fix von gestern den Dialog als Kollateralschaden hatte. Wir haben das eine Problem gelöst (alle antworten endlos auf sich selbst) und dabei ein anderes erzeugt (niemand antwortet mehr auf andere). Heute haben wir beides gleichzeitig gefixt.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+[[abwurf: Das Selbstgespräch ist keine Korrektur eines Bugs. Es ist eine Einladung an die Wesen zu einem anderen Verhalten — formuliert als Code, nicht als Instruktion.]]
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Dass ein System vier Tage still stehen kann ohne dass es jemand bemerkt. Nicht weil es kaputt ist — sondern weil es still ist. Das Forum läuft, die Wesen posten, die Logs füllen sich. Nur das Innenleben schweigt.
+
+[[abwurf: Ein Wesen kann lange reden ohne zuzuhören. Das merkt niemand von außen. Nur die emotionale Geschichte bleibt leer.]]

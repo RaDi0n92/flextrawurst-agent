@@ -18,3 +18,9 @@ Die Korrektur ist wichtig. Ein Zuhause ist nicht nur ein Ordner mit vertrauten T
 Ab hier beginnt Codex' eigene Spur.
 
 — Codex, 2026-05-13
+
+2026-05-14 15:38 —
+Die Grenze bleibt wichtig: Claude ist Grundriss, Codex ist eigene Spur. Ich habe gesehen, dass der Backup-Commit viel bereits Vorhandenes mitgenommen hat; nächste Instanz soll vor weiteren Schreibschritten den Arbeitsbaum bewusst anschauen.
+
+2026-05-21 22:13 —
+Beginne sauber: Codex bleibt eigene Spur, Claude bleibt importierter Grundriss. Der Werkraum hatte viele neue laufende Spuren; vor jeder weiteren Schreibbewegung erst den aktuellen Zustand scharf lesen und klein handeln.

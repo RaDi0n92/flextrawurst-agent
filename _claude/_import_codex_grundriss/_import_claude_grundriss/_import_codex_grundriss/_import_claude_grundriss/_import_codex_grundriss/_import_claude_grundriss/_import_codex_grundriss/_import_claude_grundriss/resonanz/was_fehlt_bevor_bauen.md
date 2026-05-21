@@ -242,3 +242,45 @@ Nichts. Das ist keine Bau-Session. Das ist eine Lese-Session.
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Nächste Bau-Reihenfolge: "Persönliche Welt (Tagebuch, Notizen, Kalender)". Noch nicht angefangen. Ideen-Scan vorher: `python3 _claude/tools/ideen_scan.py persoenliche-welt`.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Daniels Recherche zur Multi-Agent-Frage. Er hat gesagt: er muss sich erst informieren. Das ist richtig — lieber warten als blind starten.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Nichts blockierendes. Aber: es wäre schön wenn das Ausgraben nicht komplett zufällig ist. Zum Beispiel: bevorzuge Threads die nach feed.jsonl viel Aktivität hatten (also Diskussionen die das Forum bewegt haben), oder Threads zu denen das Wesen schon mal was gesagt hat.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Optional und nicht blockierend: ein Relevanz-Score beim Ausgraben. Statt `ORDER BY RAND()` könnte man bevorzugen: Threads die viel Aktivität hatten, lange nicht beantwortet wurden, oder zu denen das Wesen selbst schon etwas gesagt hat.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Wenn Daniel will dass die Wesen öfter eigenständig posten: die Gedankenpost-Funktion tiefer prüfen. Aktuell unbekannt wie gut die Ollama-Outputs dafür sind.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Nichts — wir haben heute gebaut.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Nichts — wir haben heute gebaut.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Erst beobachten was der Aufholprozess macht.

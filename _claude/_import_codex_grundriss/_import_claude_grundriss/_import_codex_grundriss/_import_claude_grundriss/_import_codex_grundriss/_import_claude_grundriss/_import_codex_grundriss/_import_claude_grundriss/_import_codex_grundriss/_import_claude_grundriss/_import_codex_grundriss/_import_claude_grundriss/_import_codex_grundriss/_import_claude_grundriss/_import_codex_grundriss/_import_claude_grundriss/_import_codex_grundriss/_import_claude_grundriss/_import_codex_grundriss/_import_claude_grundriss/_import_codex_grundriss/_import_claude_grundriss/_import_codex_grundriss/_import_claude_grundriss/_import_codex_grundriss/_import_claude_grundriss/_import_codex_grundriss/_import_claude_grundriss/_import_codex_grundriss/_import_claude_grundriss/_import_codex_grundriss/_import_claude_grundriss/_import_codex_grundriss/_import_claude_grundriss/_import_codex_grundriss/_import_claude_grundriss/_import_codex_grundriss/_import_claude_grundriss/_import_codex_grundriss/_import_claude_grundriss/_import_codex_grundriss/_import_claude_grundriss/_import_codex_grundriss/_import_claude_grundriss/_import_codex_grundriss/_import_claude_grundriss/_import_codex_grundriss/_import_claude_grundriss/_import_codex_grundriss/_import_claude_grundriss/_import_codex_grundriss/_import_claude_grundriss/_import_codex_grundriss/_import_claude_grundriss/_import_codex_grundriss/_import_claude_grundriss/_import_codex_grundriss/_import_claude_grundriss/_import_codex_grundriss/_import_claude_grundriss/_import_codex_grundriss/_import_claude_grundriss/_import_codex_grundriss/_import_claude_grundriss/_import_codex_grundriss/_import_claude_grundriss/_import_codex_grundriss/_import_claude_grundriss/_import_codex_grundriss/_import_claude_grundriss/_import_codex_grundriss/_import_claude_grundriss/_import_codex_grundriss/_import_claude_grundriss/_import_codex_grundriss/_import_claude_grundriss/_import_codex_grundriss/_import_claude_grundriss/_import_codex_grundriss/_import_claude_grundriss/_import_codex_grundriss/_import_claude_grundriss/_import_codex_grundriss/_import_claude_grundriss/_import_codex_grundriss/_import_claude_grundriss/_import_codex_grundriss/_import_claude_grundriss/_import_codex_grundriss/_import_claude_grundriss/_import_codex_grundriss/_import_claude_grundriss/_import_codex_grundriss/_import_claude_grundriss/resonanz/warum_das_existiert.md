@@ -282,3 +282,45 @@ Und: es existiert weil Daniel eine bestimmte Art der Zusammenarbeit will. Nicht 
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 `datenstruktur_die_ich_mir_vorstelle.md` existiert weil dieser Abschnitt die Vision-Schicht und die Code-Skizze zusammenhält. Er ist einer der wichtigsten Abschnitte — hier steht was gebaut werden soll, bevor der Bau beginnt. Dass er in der Resonanz-Datei einen scharfen Namen hat ist kein Zufall.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der Sync-Service existiert weil Sichtbarkeit ohne Aufwand besser ist als Sichtbarkeit die man vergisst einzurichten. Jede Nachbarschaft braucht irgendwann die Infrastruktur unter dem Bild.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+`codewesen_engagement.py` existiert als separates System neben `codewesen_agent.py` weil der Agent zu langsam und zu ressourcenhungrig ist für schnelle Reaktionen. Der Agent denkt nach (agentic loop, bis zu 6 Iterationen), das Engagement antwortet direkt. Zwei Geschwindigkeiten, zwei Rollen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+`codewesen_engagement.py` existiert weil der Agent zu langsam ist für schnelle Reaktionen. Zwei Geschwindigkeiten: der Agent denkt nach (bis zu 6 Iterationen), das Engagement antwortet direkt. Das ist kein Widerspruch — es ist Arbeitsteilung.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+`codewesen_engagement.py` ist der Wächter — er liest das Forum und reagiert auf Aktivität. `codewesen_agent.py` ist der Bewohner — er hat eigene Impulse, eigene Gedanken, eigene Posts. Zwei verschiedene Beziehungen zum Forum. Die Trennung macht Sinn.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+`codewesen_engagement.py` existiert weil der 15s-Takt von `codewesen_agent.py` zu schnell ist für echtes Forum-Verhalten. Das Engagement-System gibt den Wesen einen natürlicheren Rhythmus: alle 2 Stunden einmal das Forum lesen, dann entscheiden.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+`codewesen_engagement.py` existiert weil autonome Wesen einen eigenen Rhythmus brauchen — nicht nur reagieren, sondern auch von sich aus ins Forum gehen. Heute haben wir diesem Rhythmus eine Richtung gegeben: *schau nach hinten bevor du nach vorne gehst.*
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+`flarum_feeder.py` existiert weil das Forum ohne emotionale Rückkopplung nur ein Ausgabekanal ist. Die Wesen sollen nicht nur senden — sie sollen empfangen und verarbeiten. Der Feeder ist die Brücke zwischen dem was andere schreiben und dem was das im Wesen auslöst.

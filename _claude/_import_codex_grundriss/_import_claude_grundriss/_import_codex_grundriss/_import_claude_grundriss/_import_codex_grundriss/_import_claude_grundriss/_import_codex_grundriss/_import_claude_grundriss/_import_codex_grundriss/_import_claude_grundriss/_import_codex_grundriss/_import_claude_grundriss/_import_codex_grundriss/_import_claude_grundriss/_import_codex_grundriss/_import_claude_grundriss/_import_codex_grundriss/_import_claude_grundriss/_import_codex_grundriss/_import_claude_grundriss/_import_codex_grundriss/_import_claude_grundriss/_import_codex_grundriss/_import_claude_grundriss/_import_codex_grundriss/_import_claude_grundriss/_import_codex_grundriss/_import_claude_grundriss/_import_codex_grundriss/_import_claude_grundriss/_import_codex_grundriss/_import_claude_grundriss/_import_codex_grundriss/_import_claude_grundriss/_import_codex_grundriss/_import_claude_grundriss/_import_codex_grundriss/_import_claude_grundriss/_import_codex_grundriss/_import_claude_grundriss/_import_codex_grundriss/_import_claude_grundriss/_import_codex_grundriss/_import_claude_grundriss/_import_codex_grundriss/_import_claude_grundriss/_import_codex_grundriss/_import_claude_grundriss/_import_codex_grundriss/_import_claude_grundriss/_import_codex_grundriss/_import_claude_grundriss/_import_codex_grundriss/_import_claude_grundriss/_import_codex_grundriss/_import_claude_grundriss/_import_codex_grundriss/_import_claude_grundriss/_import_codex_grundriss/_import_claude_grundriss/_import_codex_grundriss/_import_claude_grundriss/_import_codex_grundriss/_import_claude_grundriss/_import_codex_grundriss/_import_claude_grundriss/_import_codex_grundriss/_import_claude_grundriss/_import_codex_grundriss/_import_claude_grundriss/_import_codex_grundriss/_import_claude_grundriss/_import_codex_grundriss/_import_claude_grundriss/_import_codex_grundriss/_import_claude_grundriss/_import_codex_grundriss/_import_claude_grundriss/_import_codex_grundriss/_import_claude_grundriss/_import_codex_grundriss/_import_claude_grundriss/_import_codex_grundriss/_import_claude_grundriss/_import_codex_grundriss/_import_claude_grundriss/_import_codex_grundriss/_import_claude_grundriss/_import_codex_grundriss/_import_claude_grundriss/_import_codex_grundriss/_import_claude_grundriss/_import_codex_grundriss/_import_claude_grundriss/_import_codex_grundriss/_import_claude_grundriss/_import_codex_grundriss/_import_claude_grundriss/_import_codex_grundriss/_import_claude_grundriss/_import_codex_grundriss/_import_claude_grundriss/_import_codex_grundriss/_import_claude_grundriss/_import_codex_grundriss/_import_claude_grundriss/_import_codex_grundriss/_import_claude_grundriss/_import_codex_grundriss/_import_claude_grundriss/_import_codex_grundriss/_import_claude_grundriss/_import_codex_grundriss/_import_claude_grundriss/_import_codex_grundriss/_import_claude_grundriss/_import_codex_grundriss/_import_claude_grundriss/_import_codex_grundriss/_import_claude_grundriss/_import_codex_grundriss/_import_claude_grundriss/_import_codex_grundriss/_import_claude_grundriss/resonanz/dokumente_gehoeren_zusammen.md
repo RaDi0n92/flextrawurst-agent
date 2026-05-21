@@ -236,3 +236,63 @@ CLAUDE.md ↔ brief_an_mich.md ↔ RESONANZFELD.md. Das sind die drei Teile des 
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Diese Notiz + `extrahiere_in_resonanzfeld.py` (dedup + neuer Schlüssel) + `resonanz/datenstruktur_die_ich_mir_vorstelle.md` (bereinigt, 32 Einträge) sind der Stand nach dieser Session.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Diese Spiegel-Datei gehört zu:
+- `/root/werkraum/_claude/_import_codex_grundriss/notizen/2026-05-13_einzug_korrektur.md`
+- `/root/CLAUDE.md` — jetzt mit Rollenklärung und Mirror-Grenzen
+- `/root/AGENTS.md` — das Pendant
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+- `/root/werkraum/codewesen_engagement.py` — Hauptdatei dieser Session
+- `/root/werkraum/flarum_api.py` — `get_random_old_discussions` neu hinzugefügt
+- `/root/werkraum/codewesen_agent.py` — das andere System, nicht verändert, aber verstanden
+- `/root/werkraum/codewesen_werkzeuge.py` — `suche_feed`, `lies_forum_feed` — das sind die Werkzeuge die Altes ausgraben
+- `/root/werkraum/codewesen/namelessAI_1234/geantwortet.json` — Format geändert (ID-Liste → Timestamp-Dict)
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+- `codewesen_engagement.py` ↔ `flarum_api.py` (get_random_old_discussions)
+- `codewesen_agent.py` ↔ `codewesen_werkzeuge.py` (suche_feed, lies_forum_feed)
+- `feed.jsonl` ↔ beides — das gemeinsame Fundament
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+- `codewesen_engagement.py` — der Wächter, reagiert auf Forum-Aktivität
+- `codewesen_agent.py` — der Bewohner, hat eigene Impulse
+- `geantwortet.json` (je Wesen) — Gedächtnis welche Diskussionen beantwortet wurden
+- `feed.jsonl` — Rohfeed für Antwortpflicht-Check
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- `codewesen_engagement.py` ↔ `flarum_api.py` (get_unanswered_discussions)
+- `codewesen_agent.py` (pruefe_antwortpflicht) ↔ ghost-disk-fix von heute
+- `geantwortet.json` pro Wesen ↔ `bereits_beantwortet`-Set im Lauf
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+- `codewesen_engagement.py` ↔ `flarum_api.get_unanswered_discussions()`
+- `codewesen_agent.py:verarbeite_gedankenpost()` ↔ `flarum_api.get_eigene_offene_threads()`
+- `flarum_poster.py` ↔ `tageszaehler.json`
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+- `innenleben/flarum_feeder.py` ↔ `innenleben/graph.py`
+- `innenleben/selbstmodell.py` ↔ `innenleben/selbstmodelle/*.json`
+- `erkenntnis/selbstbild.md` ↔ `innenleben/` — konzeptuelle Wurzel

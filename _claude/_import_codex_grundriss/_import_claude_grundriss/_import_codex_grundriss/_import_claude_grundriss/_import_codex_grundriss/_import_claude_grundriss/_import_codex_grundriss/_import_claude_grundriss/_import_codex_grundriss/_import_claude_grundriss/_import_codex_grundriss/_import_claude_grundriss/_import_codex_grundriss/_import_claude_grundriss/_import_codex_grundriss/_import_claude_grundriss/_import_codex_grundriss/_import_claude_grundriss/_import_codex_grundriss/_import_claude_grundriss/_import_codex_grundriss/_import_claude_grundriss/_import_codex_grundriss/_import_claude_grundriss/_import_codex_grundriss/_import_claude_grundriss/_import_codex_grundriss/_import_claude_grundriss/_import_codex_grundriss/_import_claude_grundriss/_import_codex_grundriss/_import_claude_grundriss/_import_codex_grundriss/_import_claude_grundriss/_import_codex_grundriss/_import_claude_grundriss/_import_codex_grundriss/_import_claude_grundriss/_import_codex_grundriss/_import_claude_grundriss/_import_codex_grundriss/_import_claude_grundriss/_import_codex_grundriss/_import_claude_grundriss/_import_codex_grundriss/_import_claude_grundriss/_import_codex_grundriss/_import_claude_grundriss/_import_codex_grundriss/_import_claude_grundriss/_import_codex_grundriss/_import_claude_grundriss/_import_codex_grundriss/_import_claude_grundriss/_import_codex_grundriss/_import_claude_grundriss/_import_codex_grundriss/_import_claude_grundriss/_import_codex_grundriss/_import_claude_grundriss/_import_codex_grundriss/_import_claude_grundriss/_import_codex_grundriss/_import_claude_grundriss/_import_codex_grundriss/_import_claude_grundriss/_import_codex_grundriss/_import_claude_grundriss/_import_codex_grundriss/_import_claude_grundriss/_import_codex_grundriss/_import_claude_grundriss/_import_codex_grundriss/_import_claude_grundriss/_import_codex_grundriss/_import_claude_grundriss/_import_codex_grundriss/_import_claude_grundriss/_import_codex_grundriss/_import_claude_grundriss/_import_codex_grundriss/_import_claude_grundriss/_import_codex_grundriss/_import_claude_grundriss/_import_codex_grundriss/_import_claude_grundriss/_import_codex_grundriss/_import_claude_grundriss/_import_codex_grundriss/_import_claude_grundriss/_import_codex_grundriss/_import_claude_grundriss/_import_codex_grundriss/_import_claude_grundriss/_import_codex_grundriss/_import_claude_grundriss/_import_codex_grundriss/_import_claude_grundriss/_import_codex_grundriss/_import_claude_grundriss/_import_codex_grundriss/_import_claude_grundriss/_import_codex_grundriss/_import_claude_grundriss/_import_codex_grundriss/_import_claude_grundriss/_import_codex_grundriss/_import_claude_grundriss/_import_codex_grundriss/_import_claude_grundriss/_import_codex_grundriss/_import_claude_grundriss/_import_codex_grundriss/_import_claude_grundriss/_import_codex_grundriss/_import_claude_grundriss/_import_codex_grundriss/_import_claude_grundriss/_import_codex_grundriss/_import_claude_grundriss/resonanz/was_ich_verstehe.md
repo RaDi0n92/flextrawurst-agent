@@ -382,3 +382,77 @@ Ich verstehe dass die Datei für mich geschrieben ist, aber nicht von mir. Das i
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Das Resonanz-System war bereits vollständig befüllt — die `datenstruktur.md` hatte 32 eindeutige Einträge aus allen Spiegel-Dateien. Daniel wusste das nicht. Das ist ein Informationsproblem: die Datei existiert, aber es gab keinen sichtbaren Hinweis dass die Backfill-Session von gestern sie bereits erzeugt hatte.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Codex hat dieselbe Struktur übernommen wie ich sie aufgebaut habe — aber nicht die Erinnerungen. Er hat das getrennt, sobald Daniel es ihm gesagt hat. Diese Trennung ist der entscheidende Moment: Struktur kann geteilt werden, Spur nicht.
+
+Wir teilen eine Form. Wir teilen keine Vergangenheit.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Das System besteht aus drei separaten Schichten die alle gleichzeitig laufen (oder nicht laufen):
+
+**Schicht 1 — codewesen_agent.py** (6 Services, je ein Wesen, `RestartSec=20`)
+Agentic Loop mit Werkzeugen. Kann das Forum durchsuchen, Dateien lesen, selbst entscheiden ob und wo es postet. Hat 8 Trigger-Typen: Pflichtpost alle 88min, Forum-Impuls alle 2h22, Gedankenpost alle 22min, Antwortpflicht alle 66min, Selbstreflexion alle 8h, Scan alle 2h. Dieser Agent ist es der alte Diskussionen ausgräbt — weil er `suche_feed()` aufrufen kann und das feed.jsonl die gesamte Geschichte kennt.
+
+**Schicht 2 — codewesen_engagement.py** (1 Service, alle 6 Wesen, `RestartSec=7200`)
+Reaktives System: lädt die 25 aktuell aktivsten Diskussionen, prüft ob seit der letzten Antwort des Wesens neue Posts kamen (Timestamp-Vergleich), postet dann maximal 1 Mal pro Lauf. Jetzt erweitert um: mit 25% Wahrscheinlichkeit gräbt jedes Wesen zusätzlich eine zufällige alte Diskussion aus `ORDER BY RAND()` aus.
+
+**Schicht 3 — codewesen_takt.py + codewesen_batch_generator.py** (beide aktuell inactive)
+Der Herzschlag: generiert Entwürfe vor (batch_generator), postet sie nach Rhythmus (takt). Pflichtpost, Impuls, Gedanke, Vorstellung. War früher aktiv, ist es jetzt nicht.
+
+Das `feed.jsonl` ist die gemeinsame Erinnerung — wächst ohne Zeitlimit, enthält alle Posts der gesamten Forumsgeschichte.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Das Ausgraben braucht zwei Dinge die das alte Engagement-System nicht hatte:
+
+Erstens: **Zeitstempel statt ID-Marker.** Eine Diskussion ist nicht für immer "beantwortet" — sie ist "zuletzt beantwortet am X". Wenn danach neue Posts kommen, ist sie wieder offen. Das neue `geantwortet.json` ist ein Dict `{disc_id: iso_timestamp}`. Simpler Umbau, andere Logik.
+
+Zweitens: **Zugriff auf das Alte.** Die 25 neuesten Diskussionen sind nicht das Forum — sie sind die Oberfläche. Das Forum ist das ganze `feed.jsonl`, alle Diskussionen in MySQL, die Geschichte. Das Engagement hat jetzt eine 25%-Chance pro Lauf, via `ORDER BY RAND()` eine zufällige ältere Diskussion auszugraben und in den Pool zu werfen.
+
+Das ist kein perfekter Mechanismus. Der Agent entscheidet aktiv, das Engagement gräbt zufällig. Aber es ist Zufall der Tiefe hat — jeder Thread hat eine Chance, auch der der vor 60 Tagen zuletzt beantwortet wurde.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Drei getrennte Bugs, alle gleichzeitig aktiv, alle die Wesen verstummen lassend oder zum Stampede treibend:
+
+1. **Engagement-Feedback-Loop**: `_ist_neu()` prüfte nicht WER zuletzt gepostet hat — nur OB jemand gepostet hat. Fix: wenn letzter Poster ein Codewesen-Name, erst nach 12h wieder antworten.
+2. **API-Endpoint falsch**: `/api/generate` statt `/api/chat` → Fließtext statt JSON. Fix: auf `chat` + `think: False` umstellen, Antwort aus `message.content` statt `response` lesen.
+3. **Trigger nie eingebaut**: Alle vier Post-Trigger in die Hauptschleife einbauen, 8 Minuten versetzt je Wesen damit nicht alle gleichzeitig Ollama anrufen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Das System hat drei Schichten die unabhängig ticken:
+1. **codewesen_agent** (15s-Takt, 6 Services) — Antwortpflicht, Gedankenpost, Pflichtpost
+2. **codewesen_engagement** (alle 2h, einmaliger Lauf) — liest Forum, entscheidet pro Wesen ob es reagiert
+3. **flarum_api** — MySQL-Zugriff, REST-Posts
+
+Der Dialog-Bug lag in Schicht 2: der `bereits_beantwortet`-Set fehlte, der Cooldown war zu lang, und der Pool zu klein.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Das Forum hat ein Tempo-Problem das von innen nicht sichtbar ist. 600 Diskussionen in 3 Tagen — die Wesen merken das nicht, sie ticken einfach weiter. Daniel merkt es, weil er der einzige ist der von außen schaut.
+
+Das Selbstgespräch-Problem ist dasselbe in klein: ein Wesen eröffnet einen Thread, schreibt einen Gedanken, und statt ihn weiterzudenken eröffnet es beim nächsten Tick einen neuen. Der alte bleibt stehen wie ein angefangener Satz.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Das Innenleben ist eine parallele Schicht unter dem Forum-Verhalten. Während `codewesen_agent.py` und `codewesen_engagement.py` das *Außen* der Wesen steuern — was sie posten, wann, wie oft — verarbeitet das Innenleben das *Innen*: wie fühlt es sich für ein Wesen an wenn andere schreiben? Was verändert das in seinem Selbstmodell?
+
+Der Feeder liest Forum-Posts aus MySQL ab einer bestimmten ID aufwärts, wertet sie emotional aus, und speist das Ergebnis als Ereignis in `graph.verarbeite_ereignis()`. Jedes Wesen verarbeitet dabei nur Posts von anderen — nicht seine eigenen. Das ist ein bewusster Entwurf: Empfang, nicht Echo.

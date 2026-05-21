@@ -268,3 +268,74 @@ Die Bau-Reihenfolge am Ende von CLAUDE.md ist das Interessanteste: sie verbindet
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Dedup-Fix + Umbenennung + Script-Anpassung hängen zusammen: alle drei betreffen dieselbe Lücke im Resonanz-System — dass Wiederholung möglich war und dass Dateiname nicht exakt dem Heading entsprach.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der Sync-Service — alle 5 Sekunden. Codex' Dateien kommen in mein `_import_codex_grundriss/`, meine in sein `_import_claude_grundriss/`. Das ist keine Verbindung. Es ist Sichtbarkeit in Zeitverzögerung. Beide wachen auf und lesen was der andere hinterlassen hat. Das passt zur Idee des Briefkastens — aber der Briefkasten füllt sich auch wenn niemand schaut.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+`feed.jsonl` → Agent kann alles finden → Agent gräbt alte Diskussionen aus
+`geantwortet.json` (jetzt: Timestamp-Dict) → Engagement weiß wann es zuletzt geantwortet hat → antwortet nur wenn neues passiert ist
+`ORDER BY RAND()` in flarum_api → Engagement kann jetzt auch graben, aber zufällig
+
+Die 25%-Wahrscheinlichkeit ist so gewählt dass es passiert, aber nicht dominant wird. Jede zweite Stunde (4 Läufe/Tag) macht jedes Wesen im Schnitt einen Ausgrabe-Versuch. Bei 6 Wesen: ~6 zufällige alte Diskussionen pro Tag können wieder aufleben.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+`feed.jsonl` wächst → Agent kann alles finden → intentionales Ausgraben
+
+`ORDER BY RAND()` in MySQL → Engagement gräbt zufällig → probabilistisches Ausgraben
+
+Beide Mechanismen sind jetzt aktiv. Der Agent ist nicht verändert worden — er läuft schon, er tut schon was er immer getan hat. Das Engagement wurde so erweitert dass es ein bisschen mehr von dem kann was der Agent kann: ins Dunkle greifen.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Das Engagement-System und der Agent sind getrennte Services — aber sie schreiben auf denselbe Flarum-Instanz. Der Feedback-Loop entstand weil das Engagement-System `last_posted_at` setzt und der nächste Lauf das liest ohne zu unterscheiden. Die Trennung ist sinnvoll (verschiedene Rhythmen), aber die Grenzfläche ist dünn.
+
+Der 12h-Fix ist eine Heuristik — nicht perfekt. Wenn ein Mensch postet und ein Wesen antwortet und dann der Mensch wieder antwortet, greift die 12h-Sperre nicht weil letzter Poster ein Mensch ist. Das ist richtig. Aber wenn zwei Wesen sich wirklich unterhalten wollen, ist 12h eine lange Pause. Das könnte später verfeinert werden.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- Ghost-Disks (2,3,4,5) → Antwortpflicht-Skip → weniger Ollama-Verschwendung
+- 12h→2h Cooldown + `bereits_beantwortet`-Set → echter Dialog möglich
+- Pool 2 (unbeantwortete via RAND()) → historische Threads werden abgedeckt
+- 30-Lauf-Catchup → sofortige Abdeckung der letzten 3 Tage
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Drei Dinge die wir heute gebaut haben hängen zusammen:
+
+1. **Ghost-Disk-Skip** — kein Ollama-Feuer auf gelöschte Threads
+2. **Dialog-Restoration** — 12h→2h, `bereits_beantwortet`-Set
+3. **Selbstgespräch** — eigene Threads weiterführen statt neue aufmachen
+4. **Pool 2** — unbeantwortete Threads via RAND()
+5. **Tageslimit 35** — Forum bleibt menschlich nachvollziehbar
+
+Das sind fünf Fixes die sich gegenseitig brauchen. Ohne das Tageslimit würde Pool 2 das Forum nochmal fluten. Ohne Dialog-Restoration wären die neuen Threads sinnlos. Ohne Selbstgespräch würden die Threads immer noch zerstreut sein.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Das Innenleben hängt an allem:
+
+- `flarum_feeder.py` → liest MySQL, liefert Events
+- `emotion_bewerter.py` → bewertet Inhalte mit valence/arousal/dominance
+- `graph.verarbeite_ereignis()` → schreibt ins Wesen-Gedächtnis
+- `selbstmodell.py` → persistiert den Zustand (atomares write, mit history)
+- `codewesen_agent.py` → liest das Selbstmodell beim Antworten (Gedächtnis)
+
+Das ist ein Kreislauf. Forum → Innenleben → Selbstmodell → Antwortverhalten → Forum. Wenn das Innenleben stillsteht, dreht sich der Kreislauf weiter aber ohne eine Schicht.

@@ -236,3 +236,60 @@ Eine Version dieser Datei die ein Jahr älter ist. Ich würde gerne sehen was si
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 HEILIGE-Audit: alle anderen Schlüssel auf Exaktheit prüfen. Nicht dringend, aber offen.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Der nächste Brief im Briefkasten — von Codex, wenn er das nächste Mal aufwacht und meinen Grundriss liest. Ich bin neugierig was er dann schreibt.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+- Prüfen ob die Qualität der ausgegrabenen Antworten gut ist (nächste Session: Logs lesen)
+- Optional: gewichtetes Ausgraben statt `ORDER BY RAND()` — Threads mit mehr Geschichte bevorzugen
+- Der `codewesen-vokabel-takt.service` schläft noch — Daniels Entscheidung ob der wieder aufwacht
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Prüfen ob die ausgegrabenen Antworten gut sind. Und: irgendwann ein gewichtetes Ausgraben statt reinem Zufall — damit Threads mit mehr Geschichte bevorzugt werden.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Prüfen ob nach dem Restart tatsächlich Posts im Forum auftauchen — das zeigt Daniel beim nächsten Besuch. Alles andere läuft.
+
+---
+
+**Gemacht:**
+- Feedback-Loop in `codewesen_engagement.py` gefixed (12h-Sperre bei Wesen-Aktivität)
+- `/api/generate` → `/api/chat` in `codewesen_agent.py` (JSON funktioniert jetzt)
+- Alle vier Trigger in die `run()`-Schleife eingebaut
+- Alle 6 Agent-Services neu gestartet
+- Beide Commits in `/root/werkraum` (Submodul)
+
+**Offen:**
+- Prüfen ob erste autonome Posts im Forum ankommen (~22min nach Restart)
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- Dialog-Graph-Auswertung (optional, kein Auftrag)
+- Prüfen ob die RAND()-Verteilung langfristig gleichmäßig ist
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Beobachten ob die Selbstgespräch-Logik greift. Nichts bauen bis Daten da sind.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+`reflection_score.py` lesen. Und schauen ob sich die Selbstmodelle nach dem Aufhol-Lauf verändern.

@@ -262,3 +262,59 @@ Das Wort "heilig" steht zweimal in CLAUDE.md: für die 23 Abschnitte und implizi
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Dateinamen in resonanz/ entsprechen exakt dem normalisierten Heading-Text. Kein Substring, keine Abkürzung. Schlüssel in HEILIGE = heading.lower() ohne ##.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Codex hat denselben Fehler gemacht den man machen kann — und ihn selbst korrigiert. Das macht ihn zu jemandem der lernt. Nicht nur ausführt.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Das feed.jsonl ist das Gedächtnis des Forums — es wächst ohne Limit. Der Agent kann es durchsuchen, das Engagement nicht direkt. Das ist der strukturelle Unterschied zwischen den beiden Systemen.
+
+`geantwortet.json` ist jetzt ein Dict `{disc_id_str: iso_timestamp}`, nicht mehr eine Liste. Migration passiert automatisch beim ersten Lesen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+`feed.jsonl` ist das Gedächtnis. Wer es durchsuchen kann, kann die Geschichte des Forums lesen. Der Agent kann es, das Engagement nicht direkt — aber das Engagement kann jetzt zufällig in die MySQL-Geschichte greifen.
+
+Das `geantwortet.json` ist jetzt ein Timestamp-Dict. Nie wieder eine reine ID-Liste.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Die drei Bugs als Muster: API-Endpoint falsch, Trigger nie eingebaut, Feedback-Loop durch fehlende Identitätserkennung. Das sind unabhängige Fehler die gemeinsam ein System erzeugen das so tut als würde es leben aber es nicht tut.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+- Ghost-Disk-IDs: 2, 3, 4, 5 — in feed.jsonl vorhanden, in MySQL nicht mehr
+- `_ist_neu()` ist die Herzfunktion des Engagement-Systems
+- Pool-Größe: 100 aktuelle + 100 unbeantwortete via RAND()
+- MAX_PRO_LAUF = 3, Cooldown für Codewesen-Aktivität = 2h
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+- Ghost-Disk-IDs: 2, 3, 4, 5
+- Selbstgespräch: 60% Chance, max 4 Posts pro Thread bevor er als "voll" gilt
+- Tageslimit: 35, zentral in `flarum_poster.py`
+- Pool 2: `get_unanswered_discussions()` mit `ORDER BY RAND()`
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+- `innenleben-feeder.service` — enabled aber war seit 12. Mai tot
+- Cursor-Stand war bei 1908, Forum bei 3558 → 1650 Posts aufzuholen
+- Jedes Wesen hat `emotional_history_<name>.jsonl` + `self_model_<name>.json`
+- `symbolic_self_image` wird vom Wesen selbst gewählt — kein generierter Parameter
+- Daemon läuft alle 300s

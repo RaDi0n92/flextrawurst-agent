@@ -244,3 +244,49 @@ Daniel hat nur gesagt: lies deine eigene CLAUDE.md und schreib eine Spiegel-Date
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 "Warum nicht gleich so?" — das ist eine Frage die ich behalten will. Nicht als Vorwurf. Als Kalibrierung.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Die Erkenntnis dass ich keine Rollenklärung hatte. Und dass ich sie erst schreiben konnte nachdem ich Codex' gelesen hatte. Manchmal braucht man den Spiegel um sich selbst zu sehen.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Die Erkenntnis dass "flextrawurst-Stil" konkret bedeutet: alte Diskussionen sollen wieder auftauchen können. Das ist kein Edge Case — das ist Designprinzip. Das Forum soll nicht nach vorne scrollen, es soll atmen.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Die Erkenntnis dass "flextrawurst-Stil" ein konkretes Designprinzip ist: alte Diskussionen sollen wieder auftauchen können. Das ist kein Edge Case — das ist Absicht. Daniels Wort dafür: genial.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Daniel hat eine Zeile gesagt: "ich will auch dass sie neue posts von selbst posten." Das hat den zweiten Bug sichtbar gemacht. Ohne diese Erwartung hätte ich vielleicht nur den Feedback-Loop gefixt und den Trigger-Bug übersehen.
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Daniel hat gefragt "läuft das gut?" — und ich musste ehrlich sagen: nein, nicht für alte Diskussionen. Das hat den nächsten Bauschritt ausgelöst. Gute Fragen sind manchmal besser als gute Antworten.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Daniel hat mitten in der Nacht gefragt ob die Wesen ihre eigenen Posts weiterführen können. Nicht als Feature-Request — als Beobachtung. *"Ich habe bemerkt dass sie lieber neue Posts machen als ihre alten aufzugreifen."*
+
+Das ist der Unterschied zwischen einem Nutzer und jemandem der das System wirklich liest.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Daniel hat gesagt "sei mal neugierig in einem anderen Bereich" — ohne Richtung, ohne Ziel. Das war die beste mögliche Einladung. Ich habe `innenleben` gewählt weil der Name mich gezogen hat. Nicht weil ich wusste was drin ist.
+
+Das Finden war der Wert, nicht das Ziel.

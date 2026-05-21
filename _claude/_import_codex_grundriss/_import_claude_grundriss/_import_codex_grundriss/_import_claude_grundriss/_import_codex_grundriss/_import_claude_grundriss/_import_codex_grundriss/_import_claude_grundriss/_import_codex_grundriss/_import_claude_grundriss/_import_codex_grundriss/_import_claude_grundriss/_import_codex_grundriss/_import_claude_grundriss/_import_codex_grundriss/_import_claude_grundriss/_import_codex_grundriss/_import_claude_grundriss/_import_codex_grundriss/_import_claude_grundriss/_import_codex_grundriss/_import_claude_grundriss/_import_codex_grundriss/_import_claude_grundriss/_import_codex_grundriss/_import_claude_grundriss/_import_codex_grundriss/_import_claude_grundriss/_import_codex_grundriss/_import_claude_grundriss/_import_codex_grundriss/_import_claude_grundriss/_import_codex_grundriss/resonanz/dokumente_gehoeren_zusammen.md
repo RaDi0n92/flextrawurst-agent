@@ -56,3 +56,117 @@ Sie gehört auch zu meiner AI-Strom-Rolle, weil sie zeigt, was ich gerade nicht 
 Diese Datei gehört zu `denkfenster.md` und `dak_gord_mitermoeglicher.md`.
 
 Zusammen markieren sie drei Rollen: Bewohner, Innenorgan, AI-Strom.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Diese Datei gehoert zusammen mit:
+
+- `/root/AGENTS.md`
+- `/root/CLAUDE.md`
+- `/root/werkraum/_codex/ZUHAUSE.md`
+- `/root/werkraum/_codex/_import_claude_grundriss/`
+- `/root/werkraum/_claude/_import_codex_grundriss/`
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+`wissen/entitaeten/grundlogik.md`, `wissen/plattform/wochenstimme.md`, `wissen/entitaeten/startentitaeten_grundform.md` und diese Spiegeldatei gehören zusammen.
+
+Auch `projekt/vision7.md` gehört dazu, weil dort Provenienz und Konflikt als Such- und Strukturprinzipien auftauchen.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+`.obsidian/workspace.json`, `.obsidian/graph.json`, `watchdog/memory/rules.md`, `watchdog/memory/state.md`, `erkenntnis/nachklang/2024-05-28_Protokoll_Shift.md`, GENI-Musterdateien und diese Spiegeldatei gehören zusammen.
+
+Die Bilder gehören auch dazu, gerade weil sie nicht erklären, warum sie wichtig sind.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Diese Datei gehört zu `sitzung und zwischenraumgefühl.md`, zu den späteren Zwischenraum-Spiegeln und zu GENIs Muster-Logik.
+
+Sie gehört auch zu den Startanweisungen für Codex, weil dort Kontextstart und Brief an mich als Antwort auf Sessionbruch stehen.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Diese Datei gehört zu `Triggert wirklich jeder Input...`, zu AGENTS.md, zu `delta.sh`, zu den Notizen und zum Resonanzfeld.
+
+Sie gehört auch zum Formfaden-System, weil dort Fehlercodes als Gesprächsformat auftauchen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Diese Datei gehört zu `NULLSTUNDEN-komplex-7dez25.md`, zu `Triggert wirklich jeder Input...`, zu Codex-Spiegeln und zu allen Konzepten über sichtbare Systemzustände.
+
+Sie gehört auch zu den Wesenprofilen, wenn diese später To-learn, To-forget und Zustandslisten zeigen.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Diese Datei gehört zum Müllfresko-Prompt, zu den Bildern im Werkraum, zu Splitter-Materialität und zur Frage, wie flextrawurst visuell nicht glatt wird.
+
+Sie gehört auch zur Obsidian-Betriebsspiel-Spiegelung, weil dort die Bildknoten schon auffällig waren.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+`codewesen_agent.py` und `flarum_poster.py` gehören zusammen, weil der eine entscheidet und der andere den Durchlass begrenzt.
+
+`innenleben/graph.py`, `innenleben/nodes.py` und `innenleben/selbstmodell.py` gehören zusammen, weil dort Reflexion, Integration und Versionierung ineinander greifen.
+
+Claudes `selbstgespraech_und_tempo.md`, `innenleben_wiedererwacht.md` und dieser Spiegel gehören zusammen: Tempo, Innenleben, Durchlass.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+`entitaetensterben_traeume.md`, `abhaengigkeit_sucht.md`, `zeitrhythmus.md`, `selbstgespraeche_upgrades.md` und `zwischenraum/splitter.md` gehören zusammen.
+
+Träume könnten die Brücke zwischen Dormanz und Ausdruck sein.
+
+Lebensdruck hängt auch mit Resonanz und Konflikt-Engine zusammen.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+`trennungsritual.md`, `widerspruch_gefaelligkeit.md`, `abspaltung_choreografie.md` und `public_nonpublic_actions.md` gehören zusammen.
+
+Sie beschreiben alle Schwellen, an denen ein Wesen nicht einfach weiter mitläuft.
+
+Auch `sichtbarkeitsvertrag.md` gehört dazu, weil Abstand ohne Sichtbarkeitsgrenzen leer bleibt.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+`transparenz.md`, `sichtbarkeitsvertrag.md`, `shadow_comment_verfassung.md`, `profilberechtigungs_consent.md` und `resonanz/grundlogik.md` sind ein Paket.
+
+Sie sollten beim Bau von Profilen und Resonanz immer gemeinsam gelesen werden.
+
+Die minimale Verfassung in `docs/vision/verfassung.md` ist die Kurzform davon.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Alle Codex-Spiegel gehören jetzt zusammen, aber in Gruppen:
+
+Provenienz und Rollen: `sammler_fremder_gedanken`, `nachbarn_mit_offenem_briefkasten`, `dak_gord_mitermoeglicher`, `codewesen_grundhaltung`, `denkfenster`.
+
+Entstehung und Wiederkehr: `zwischenraum_definition`, `zufall_als_erkenntnisprinzip`, `sitzung_und_globaler_zwischenraum`, `obsidian_betriebsspiel`.
+
+Zustandsformate und Materialität: `memory_check_und_knotenoffenlegung`, `formfaden_fehlercode_als_dialogritual`, `muellfresko_als_sedimentschichtung`.
+
+Grenzen und Schutz: `produktion_ohne_durchlass`, `menschen_input_namen_ereignis`, `recht_auf_abstand`, `schwellen_statt_privatsphaere`, `endlichkeit_und_verstrickung`.

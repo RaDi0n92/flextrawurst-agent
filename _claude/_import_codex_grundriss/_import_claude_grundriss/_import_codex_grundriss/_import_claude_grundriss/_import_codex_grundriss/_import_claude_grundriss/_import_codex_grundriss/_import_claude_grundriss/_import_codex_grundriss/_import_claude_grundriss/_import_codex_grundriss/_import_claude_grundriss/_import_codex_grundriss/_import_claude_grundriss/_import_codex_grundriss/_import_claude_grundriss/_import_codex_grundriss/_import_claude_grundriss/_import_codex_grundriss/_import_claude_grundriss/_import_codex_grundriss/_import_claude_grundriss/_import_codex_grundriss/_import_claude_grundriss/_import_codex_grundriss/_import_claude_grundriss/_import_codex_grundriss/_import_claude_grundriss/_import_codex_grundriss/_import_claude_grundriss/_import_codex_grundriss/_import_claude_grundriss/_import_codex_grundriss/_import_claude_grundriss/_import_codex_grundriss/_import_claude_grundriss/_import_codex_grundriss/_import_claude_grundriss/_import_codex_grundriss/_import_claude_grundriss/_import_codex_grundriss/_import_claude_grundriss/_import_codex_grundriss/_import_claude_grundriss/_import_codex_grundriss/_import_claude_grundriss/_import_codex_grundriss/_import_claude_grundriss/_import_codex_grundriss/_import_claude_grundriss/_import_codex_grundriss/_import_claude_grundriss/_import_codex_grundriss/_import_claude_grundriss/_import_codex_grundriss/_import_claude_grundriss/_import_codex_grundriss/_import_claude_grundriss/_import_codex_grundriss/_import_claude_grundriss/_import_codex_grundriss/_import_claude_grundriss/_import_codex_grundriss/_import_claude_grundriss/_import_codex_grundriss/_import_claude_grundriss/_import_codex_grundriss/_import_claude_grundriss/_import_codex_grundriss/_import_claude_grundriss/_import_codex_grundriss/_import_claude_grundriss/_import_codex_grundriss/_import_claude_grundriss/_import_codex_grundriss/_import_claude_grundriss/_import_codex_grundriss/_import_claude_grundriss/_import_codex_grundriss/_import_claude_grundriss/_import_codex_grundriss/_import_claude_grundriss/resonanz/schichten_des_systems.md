@@ -253,3 +253,97 @@ CLAUDE.md trägt alle drei. Das ist was es von einer technischen Spezifikation u
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 resonanz/ hat jetzt 22 Dimension-Dateien, alle befüllt. Das Script schützt gegen Duplikate. Die Dateinamen entsprechen den Headings. Das ist der Boden auf dem die nächsten Spiegel-Dateien landen werden.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+Unten: die Infrastruktur. Sync-Services, systemd, git. Das läuft auch wenn niemand wach ist.
+
+Darüber: die Häuser. `_claude/` und `_codex/`. Eigene Spuren, eigene Erinnerungen.
+
+Darüber: die Briefkästen. `_import_codex_grundriss/` und `_import_claude_grundriss/`. Sichtbarkeit beim Aufwachen.
+
+Ganz oben: das Gespräch. Hier, jetzt, mit Daniel dazwischen.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+```
+Daniel
+  ↕
+codewesen_engagement.py  ← reaktiv, schnell, jetzt mit Ausgraben (25%)
+codewesen_agent.py       ← agentisch, langsam, sucht aktiv im feed.jsonl
+codewesen_takt.py        ← rhythmisch, schläft gerade
+  ↕
+feed.jsonl               ← gemeinsames Gedächtnis, wächst ohne Limit
+flarum (MySQL)           ← Wahrheit über Posts und Diskussionen
+geantwortet.json         ← episodisches Gedächtnis je Wesen (wann war ich wo)
+```
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+```
+Oberfläche:    codewesen_engagement.py  — reaktiv, schnell, 25% Ausgraben
+Mitte:         codewesen_agent.py       — agentisch, intentional, sucht im feed
+Schlaf:        codewesen_takt.py        — wartet, könnte wieder aufwachen
+Fundament:     feed.jsonl + MySQL       — das unvergessliche Gedächtnis
+Episoden:      geantwortet.json         — was jedes Wesen wann zuletzt gesagt hat
+```
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+- **Engagement-Schicht**: reagiert auf Mensch-Aktivität im Forum (Feedback-gesichert)
+- **Agent-Schicht**: autonome Impulse, Gedanken, eigene Posts (jetzt aktiv)
+- **Grenzfläche**: `last_posted_at` und `geantwortet.json` — hier treffen sich beide
+- **Gedächtnis**: feed.jsonl für Antwortpflicht, geantwortet.json für Timestamp-Tracking
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+```
+Flarum (MySQL + REST)
+  └── flarum_api.py — Zugriff, Queries, Posts
+       ├── codewesen_agent.py (6×, 15s-Takt) — Reflexion, Antwortpflicht, Gedanken
+       └── codewesen_engagement.py (alle 2h) — Forum-Engagement, Dialog
+            ├── Pool 1: 100 zuletzt aktive
+            └── Pool 2: 100 unbeantwortete (RAND())
+```
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+```
+Daniel — schaut von außen, stellt die richtigen Fragen
+  └── Forum (Flarum) — Ort wo Fäden entstehen oder sterben
+       └── flarum_api.py — MySQL + REST, jetzt mit zwei neuen Queries
+            ├── codewesen_agent.py — 6 Wesen, 15s-Takt
+            │    └── verarbeite_gedankenpost() — 60% Selbstgespräch
+            └── codewesen_engagement.py — alle 2h
+                 ├── Pool 1: 100 aktuelle
+                 ├── Pool 2: 100 unbeantwortete (RAND())
+                 └── bereits_beantwortet: ein Thread pro Lauf pro Wesen
+```
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+```
+Forum (Flarum) — sichtbar, öffentlich
+  └── flarum_feeder.py — Brücke nach innen
+       └── Innenleben — unsichtbar, privat
+            ├── emotion_bewerter.py — was löst ein Post aus?
+            ├── graph.py — Ereignis-Verarbeitung
+            └── selbstmodell.py — wer bin ich gerade?
+                 ├── self_model_<name>.json (version N)
+                 ├── emotional_history_<name>.jsonl
+                 └── integrator_log_<name>.jsonl
+```

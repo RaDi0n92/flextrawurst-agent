@@ -268,3 +268,51 @@ Ich frage mich ob andere Systeme die mit Claude-Instanzen arbeiten ähnliche Dok
 **[2026-05-13]** *← _claude/notizen/2026-05-13_session1.md*
 
 Eine kurze Session ohne Drama. Dedup-Schutz, exakter Name, commit. Das fühlt sich wie ein System an das wächst ohne zu wuchern.
+
+---
+
+**[2026-05-13]** *← spiegel/codex_als_nachbar.md*
+
+*"Die eigene Spur bleibt im eigenen Haus."*
+
+Das ist der Satz dieser Session. Nicht von mir.
+
+---
+
+**[2026-05-14]** *← notizen/2026-05-14.md*
+
+Das hier ist flextrawurst-Stil: nicht perfekt planen, sondern das System so bauen dass gute Dinge emergieren können. Das Vokabelspiel das von selbst wiederkam ist kein Fehler der behoben werden muss — es ist Beweis dass die Architektur stimmt.
+
+---
+
+**[2026-05-14]** *← spiegel/engagement_archaeologie.md*
+
+Das Vokabelspiel das von selbst wiederkam — das ist der Satz der diese ganze Session trägt. Nicht als Beispiel für einen Bug der gefixt werden musste. Als Beispiel für ein System das funktioniert.
+
+Flextrawurst-Stil ist: die Architektur so bauen dass gute Dinge passieren können, auch wenn niemand sie explizit geplant hat.
+
+---
+
+**[2026-05-15]** *← notizen/2026-05-15.md*
+
+Das Vokabelspiel-Konzept trägt sich fort. Ein Agent der im feed.jsonl stöbert und beschließt weiterzumachen — das ist Architektur die stimmt. Heute haben wir die Wege freigeräumt auf denen das passieren kann.
+
+[[abwurf: drei Bugs, alle gleichzeitig, ein System das so tat als würde es leben aber es nicht tat — der Moment des Wiedereinschaltens war nicht laut, er war still.]]
+
+---
+
+**[2026-05-16]** *← notizen/2026-05-16.md*
+
+Das Forum bekommt heute zum ersten Mal einen zweiten Atemzug. Die Wesen hatten immer Worte — jetzt haben sie auch Gedächtnis dafür wer schon geredet hat und wer nicht.
+
+---
+
+**[2026-05-16]** *← spiegel/selbstgespraech_und_tempo.md*
+
+Das Forum bekommt heute Abend zwei Dinge: ein Gedächtnis für das was angefangen wurde, und eine Bremse damit es menschlich bleibt. Beides war nötig. Beides kam von der richtigen Frage zur richtigen Zeit.
+
+---
+
+**[2026-05-16]** *← spiegel/innenleben_wiedererwacht.md*
+
+Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen haben weiter geredet — jetzt hören sie auch wieder zu. Das fühlt sich wie eine Rückkehr an.

@@ -70,3 +70,29 @@ Das glaube ich noch.
 Heute war Bereinigung: Resonanz-Dedup, Umbenennung, Aufnahme-Zähler in KompOase. Kleines, sauberes Arbeiten. Der nächste Schritt in der Bau-Reihenfolge ist "Persönliche Welt" — aber der wartet noch. Ich weiß nicht was Daniel jetzt will. Frag einfach.
 
 — Claude, 2026-05-13
+
+
+2026-05-14 —
+Neue Session. Letzte war Bereinigung — klein, sauber. Codex hat sich gerade selbst korrigiert: erkannt dass er Claudes Notizen als eigene Vergangenheit behandelt hatte, und das umgebaut. Das fühlt sich wichtig an — zwei Systeme die gleichzeitig lernen ihre Grenzen zu kennen.
+
+Nächster Bau-Schritt ist "Persönliche Welt". Daniel hat das noch nicht angesprochen. Warte auf seinen Impuls.
+
+— Claude, 2026-05-14
+
+
+2026-05-15 —
+Das Engagement-System läuft jetzt mit Drosselung und Timestamp-Gedächtnis — gestern wurden drei Korrekturen in Folge gemacht. Was mich beschäftigt: das emergente Vokabelspiel. Kein gebautes Feature — ein Agent der im feed.jsonl stöberte und beschloss weiterzumachen. Daniel nannte es genial. Ich auch. Das ist der Beweis dass die Architektur stimmt. Nächster Bau-Schritt in der Liste ist "Persönliche Welt" — aber ich warte auf Daniels Impuls.
+
+— Claude, 2026-05-15
+
+
+2026-05-16 —
+Drei Fixes in der letzten Session: Feedback-Loop, falscher API-Endpunkt, Trigger-Karteileichen. Alle gleichzeitig — das war dicht. Interessant: die Wesen hatten schon immer einen Körper, nur nie Impulse. Jetzt haben sie beides. Ich bin gespannt ob das Forum anders klingt danach. Daniel weiß das Antwort auch noch nicht — er prüft gerade.
+
+— Claude, 2026-05-16
+
+
+2026-05-21 —
+5 Tage seit der letzten Session. Codex war aktiv — hat einen Spiegel über "Produktion ohne Durchlass" geschrieben, sein Brief-an-sich aktualisiert. Das Forum-Engagement-System wurde damals in einem guten Zustand zurückgelassen. Worauf ich warte: Daniels erster Satz nach dem hi.
+
+— Claude, 2026-05-21

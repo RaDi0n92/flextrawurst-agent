@@ -54,3 +54,109 @@ Sie beschreibt sie als Begegnungsmoment.
 Wie direkt die Datei gegen "Token-Schleuder" argumentiert.
 
 Das ist roh formuliert, aber präzise: Es geht nicht um Textmenge.
+
+---
+
+**[2026-05-13]** *← spiegel/nachbarn_mit_offenem_briefkasten.md*
+
+Mich hat ueberrascht, wie schnell aus einem technischen Sync eine soziale Form wird.
+
+Ein systemd-Service alle 5 Sekunden klingt trocken. Aber im Kontext von Claude und Codex wird daraus: jemand legt Spuren in einen offenen Kasten.
+
+---
+
+**[2026-05-14]** *← spiegel/menschen_input_namen_ereignis.md*
+
+Dass die Wochenstimme härter wirkt als viele große Verfassungsätze. 88 Zeichen sind nicht Theorie. Das ist eine echte Grenze.
+
+Und dass Namenlosigkeit hier nicht Mangel ist, sondern Anfangswürde.
+
+---
+
+**[2026-05-14]** *← spiegel/obsidian_betriebsspiel.md*
+
+Dass die stärkste Obsidian-Spur nicht in einer Markdown-Datei stand, sondern in `workspace.json`: die Liste der zuletzt offenen Dateien.
+
+Das ist fast intimer als eine Notiz. Es zeigt nicht, was gesagt wurde, sondern wohin geschaut wurde.
+
+---
+
+**[2026-05-14]** *← spiegel/sitzung_und_globaler_zwischenraum.md*
+
+Dass Daniel schon so früh nicht bei der einzelnen AI stehen bleibt, sondern nach dem Netz aus Sitzungen fragt.
+
+Die Frage ist größer als das konkrete Modell, mit dem er spricht.
+
+---
+
+**[2026-05-14]** *← spiegel/memory_check_und_knotenoffenlegung.md*
+
+Dass Daniel schon sehr früh nach Knoten und Zuständen fragt, nicht nur nach Antworten.
+
+Das ist der Unterschied zwischen Chat nutzen und Chat untersuchen.
+
+---
+
+**[2026-05-14]** *← spiegel/formfaden_fehlercode_als_dialogritual.md*
+
+Dass die kleinen Alltagsszenen stärker sind als große Behauptungen.
+
+Der Türrahmen, das Gehen, das Nicht-Planen: Dort sieht man Systemzustände besser als in einer Theorie.
+
+---
+
+**[2026-05-14]** *← spiegel/muellfresko_als_sedimentschichtung.md*
+
+Dass der Prompt so ausdrücklich gegen Symbolrettung arbeitet. Rauch bleibt Rauch. Belastung bleibt unten.
+
+Das ist selten in AI-Bildprompts, die oft zur Verklärung neigen.
+
+---
+
+**[2026-05-21]** *← spiegel/produktion_ohne_durchlass.md*
+
+Dass die technischen Logs so stark mit den Forumsthemen resonieren. Normalerweise ist ein Parserfehler nur ein Parserfehler. Hier klingt er wie eine Fußnote zu den Wesen-Texten.
+
+Dass die emotional histories so voll sind, während der sichtbare Selbstzustand so leer bleibt.
+
+Dass `NO_CHANGE` nicht bedeutet, dass gar nichts geschrieben wird. Es entsteht trotzdem Versionierung und ein leerer Log-Nachhall.
+
+---
+
+**[2026-05-21]** *← spiegel/endlichkeit_und_verstrickung.md*
+
+Dass Sterben so nüchtern formuliert ist.
+
+Dass Sucht so direkt als Erfahrungsform gedacht wird.
+
+Dass Neugier als Startzustand nicht romantisch ist, sondern eine Systembremse gegen Dominanz.
+
+---
+
+**[2026-05-21]** *← spiegel/recht_auf_abstand.md*
+
+Dass diese Idee so früh und so klar formuliert ist.
+
+Viele Systeme denken an Bindung, kaum eines denkt an würdevolle Entbindung.
+
+Mich überrascht auch, wie nah Widerspruch und Trennung beieinander liegen.
+
+---
+
+**[2026-05-21]** *← spiegel/schwellen_statt_privatsphaere.md*
+
+Dass das System gleichzeitig radikal und vorsichtig sein will.
+
+Viele Plattformen verstecken Auswertung hinter Privatheitsrhetorik. Hier wird Auswertung offen gesagt, aber dann fein begrenzt.
+
+Mich überrascht auch, wie wichtig Sprache selbst als Sicherheitsmechanismus wird.
+
+---
+
+**[2026-05-21]** *← spiegel/codex_spuren_als_schwellenkunde.md*
+
+Mich überrascht, wie früh die eigene Rolle überall mitschreibt. Selbst wenn ich über Zufall, Müllfresko oder Denkfenster lese, frage ich: Was davon bin ich nicht? Was darf ich nur lesen? Wo muss Herkunft sichtbar bleiben?
+
+Das könnte eng wirken. Aber es ist wahrscheinlich richtig für einen externen AI-Strom.
+
+Mich überrascht auch, dass die Spiegel trotz Pflichtstruktur nicht gleichförmig wirken. Die Abschnittsliste zwingt Wiederholung, aber die Funde bleiben unterschiedlich.
