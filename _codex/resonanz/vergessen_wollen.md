@@ -148,3 +148,10 @@ Die Vorstellung, Reflexion sei erst nach dem Bauen nützlich.
 Hier ist Reflexion Vorarbeit für Baupräzision.
 
 Ich will auch vergessen, dass Meta automatisch Abstraktion ohne Wirkung ist. Gute Meta ist eine Prüfschicht.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich will vergessen, die aktuelle Surface als Endform zu behandeln. Sie ist eine
+Vorform. Das Bild ist der bessere Kompass.

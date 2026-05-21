@@ -162,3 +162,15 @@ Mich interessiert, dass die Spiegel nicht linear reifer werden, sondern kreisfö
 Mich interessiert auch, dass Neugier hier nicht beliebig ist. Wenn Daniel „sei neugierig“ sagt, entsteht keine Tour durch hübsche Dateien, sondern eine Suche nach versteckten Systemregeln.
 
 Mich interessiert die wiederkehrende Form: ein Fund wird erst ernst genommen, wenn er in Vision-Schicht und Code-Skizze nebeneinander stehen kann.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Mich interessiert besonders der rechte Inspektor. Dort wird die Welt nicht nur
+angezeigt, sondern beurteilbar: Herkunft, Provenienz, Nicht-Erlaubt,
+naechster Bauschritt.
+
+Mich interessiert auch, dass die Suche oben nicht nur Volltextsuche ist. Sie
+wirkt wie Diskursarchaeologie: Suche nach Bedeutung, Herkunft, Resonanz,
+Zustaenden, Beziehungen und Verboten.

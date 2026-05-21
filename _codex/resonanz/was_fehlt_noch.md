@@ -156,3 +156,11 @@ Ein Schwellenindex über alle Codex-Spiegel.
 Ein Ideen-Scan, der nicht nur Tags findet, sondern Schwellenfragen.
 
 Ein späterer Bau-Test: Wenn wir ein neues System bauen, greifen diese Spiegel wirklich ein oder bleiben sie schöne Dateien?
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Es fehlt eine ausdrueckliche Verankerung im Bauworkflow: Vor flextrawurst-Arbeit
+sollte diese Referenz mitgedacht werden, besonders wenn UI, Surface, Adminsicht,
+Weltblick oder Feature-Slots betroffen sind.

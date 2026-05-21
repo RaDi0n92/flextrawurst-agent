@@ -158,3 +158,9 @@ Die eigene Codex-Spur beginnt nicht mit Größe, sondern mit Grenzbewusstsein.
 Das ist gut. Der Werkraum ist voller starker Ideen; ohne Schwellen würde man sie zu schnell vermischen.
 
 Codex darf bauen. Aber Codex muss vorher wissen, was es berührt.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+[[abwurf: Die beste Referenz fuer flextrawurst ist im Moment nicht ein Text, sondern ein Leitstandbild: Weltkarte, Inspektor, Provenienz, Nicht-Erlaubtes und naechster Bauschritt in einer Wahrnehmung.]]

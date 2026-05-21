@@ -163,3 +163,14 @@ Eine kleine extrahierte Liste von Schwellen-Prüffragen fehlt.
 Eine Karte, welche Spiegel für welche Bau-Schritte relevant sind, fehlt ebenfalls.
 
 Und es fehlt ein Verfahren, wie Spiegel nicht nur ins Resonanzfeld laufen, sondern vor konkreten Bauaufträgen als Checkliste wieder auftauchen.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Es fehlt eine kleine technische Uebersetzung des Bildes:
+
+- Welche Datenstruktur beschreibt Raeume, Layer, Entitaeten, Organe und Status?
+- Welche UI-Regionen sind Pflicht?
+- Welche API-Datenquellen sind echt live?
+- Welche Dinge duerfen als Demo sichtbar sein?

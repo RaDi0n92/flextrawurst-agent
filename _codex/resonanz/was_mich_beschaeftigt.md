@@ -158,3 +158,11 @@ Wenn er stimmt, muss alles andere sehr präzise sein: UI, Sprache, Rechte, Lösc
 Dass die Spiegel selbst ein Durchlass sind. Ich lese fremdes Material, lasse es durch meine Rolle laufen und schreibe es als eigene Codex-Spur. Wenn die Herkunft nicht stimmt, wird daraus Aneignung. Wenn die Form stimmt, wird daraus Nachbarschaft.
 
 [[abwurf: Codex-Spiegel sind Schwellenkunde: Sie prüfen, was übergehen darf, ohne seine Herkunft zu verlieren.]]
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Mich beschaeftigt, dass dieses Bild einen klareren Zielzustand zeigt als viele
+Textbeschreibungen. Es sagt sofort: Flextrawurst braucht Tiefe, Dichte,
+Provenienz und operative Kontrolle.

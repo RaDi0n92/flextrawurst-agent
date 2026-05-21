@@ -377,3 +377,28 @@ SCHWELLEN_FRAGEN = {
     "zwischenraum": "Was darf unfertig bleiben?",
 }
 ```
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, sollte der erste Schritt nicht ein kompletter Neubau sein.
+Er sollte die vorhandene Surface in Richtung Leitstand verschieben: Manifest,
+Layer, rechter Inspektor, klare Statussprache, echte Datenquellen-Anzeige.
+
+**Code-Skizze**
+
+```ts
+function buildAdminLeitstand(manifest: SurfaceManifest): string {
+  return [
+    buildTopSearch(manifest.layers),
+    buildRoomRail(manifest.rooms),
+    buildWorldMap(manifest),
+    buildInspector(manifest.inspectorPolicies),
+    buildOrganDock(manifest.organSlots),
+    buildSystemStatus(manifest),
+  ].join("\n");
+}
+```

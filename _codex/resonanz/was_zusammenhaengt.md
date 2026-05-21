@@ -164,3 +164,15 @@ Profilberechtigungen hängen mit Entitätsentwicklung zusammen: Eine Entität da
 `produktion_ohne_durchlass.md`, `schwellen_statt_privatsphaere.md`, `recht_auf_abstand.md` und `endlichkeit_und_verstrickung.md` klären Grenzen: Durchlass, Sichtbarkeit, Distanz, Ende.
 
 Die Textsammlungs-Spiegel zu Sitzung, Memory-Check, Formfaden und Müllfresko zeigen den Ursprung: Daniel suchte schon früh Formen, in denen Zustand, Reibung, Materialität und Gespräch nicht verschwinden.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Das Bild haengt direkt mit der aktuellen Surface zusammen, aber es ordnet sie
+anders. Die jetzige Surface hat schon Raeume, Entitaeten, Organ-Slots,
+Feature-Status und Adminbereiche. Die Bildreferenz sagt: Diese Dinge gehoeren
+in eine gleichzeitige Wahrnehmung, nicht nur in getrennte Tabs.
+
+Es haengt auch mit der Schwellenkunde zusammen. Jede sichtbare Sache braucht
+Status, Herkunft, Erlaubnis und Grenze.

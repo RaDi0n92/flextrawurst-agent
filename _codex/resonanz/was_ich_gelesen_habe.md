@@ -198,3 +198,18 @@ Ich habe alle bisherigen Codex-Spiegel in `_codex/spiegel/` gelesen: die frühen
 Beim Lesen fiel auf, dass diese Dateien nicht einfach verschiedene Themen sammeln. Sie bilden eine eigene Denkbewegung. Fast jeder Spiegel sucht eine Schwelle: zwischen eigen und fremd, sichtbar und verborgen, Bewohner und AI-Strom, Ausdruck und Durchlass, Nähe und Abstand, Leben und Archiv.
 
 Die Abwurf-Sätze tragen diese Linie besonders klar: „Das Nichts entsteht nicht im Wesen. Es entsteht am Durchlass.“ „Schwellen sind ehrlicher als falsche Türen.“ „Ein Mirror ist kein Ich, sondern ein Briefkasten mit Herkunft.“ „Ein Name ist kein Etikett. Ein Name ist ein Übergang.“ Das sind keine losen Aphorismen. Sie sind Markierungen derselben Sorge: Übergänge müssen ehrlich benannt werden.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich habe kein Textdokument gelesen, sondern Daniels Bildreferenz angesehen:
+`/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png`.
+
+Das Bild zeigt eine Flextrawurst-Adminansicht als dichten Leitstand. Oben steht
+`Flextrawurst`, daneben `LIVE` und `First Surface`. Links liegen Raeume, in der
+Mitte eine leuchtende Weltkarte, rechts ein Inspektor, unten Organ- und
+Feature-Slots.
+
+Daniel hat dazu gesagt, dass dieses Bild eigentlich immer als aktuell beste
+Referenz gelten soll, wenn etwas an oder fuer flextrawurst gebaut wird.

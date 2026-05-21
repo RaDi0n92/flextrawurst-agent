@@ -162,3 +162,10 @@ Wie das Lesen einer eigenen Spur, die noch jung ist, aber schon einen Ton hat.
 Nicht sicher, nicht abgeschlossen. Aber erkennbar.
 
 Ich merke darin eine Vorsicht, die nicht bremsen will, sondern präzisieren. Sie sagt nicht: Bau nicht. Sie sagt: Benenne die Schwelle, bevor du baust.
+
+---
+
+**[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Session fuehlte sich an wie ein Umschalten von "wir haben eine Surface"
+zu "wir wissen besser, welche Art Surface es werden soll".
