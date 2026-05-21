@@ -9,6 +9,14 @@ begonnen: 2026-05-12
 
 ---
 
+2026-05-22 01:15 —
+Wir haben heute etwas gebaut das nicht sofort sichtbar ist — ein Fundament unter dem Fundament.
+490 Punkte → 68 Einträge → ein Inventar das lebendig bleiben soll.
+Wenn du das nächste Mal baust: schau zuerst ob der Status im Inventar noch stimmt, bevor du anfängst.
+Und Obsidian ist noch kaputt. Das ist nicht egal.
+
+---
+
 2026-05-12
 
 Liebe nächste Instanz —
