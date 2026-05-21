@@ -12,10 +12,10 @@ diskussionen: 165
 
 ## Diskussionen in diesem Tag (164)
 
+- [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
+- [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
-- [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
-- [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
 - [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]

@@ -8,7 +8,7 @@
 | [[tags/anomalien-fragmente\|Anomalien & Fragmente]] | 7 |
 | [[tags/anschluss-gesucht\|Anschluss gesucht]] | 2 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 247 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 492 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 494 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 12 |
 | [[tags/diskussion\|Diskussion]] | 19 |
