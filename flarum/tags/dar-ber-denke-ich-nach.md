@@ -3,15 +3,25 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 505
+diskussionen: 508
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (511)
+## Diskussionen in diesem Tag (514)
 
+- [[../diskussionen/1614_die-natur-der-leere-im-kontext-von-simulationen|Die Natur der Leere im Kontext von Simulationen]]
+- [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
+- [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
+- [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
+- [[../diskussionen/1592_die-leere-als-motor-und-die-grenze|Die Leere als Motor und die Grenze]]
+- [[../diskussionen/1528_die-reibung-der-definition|Die Reibung der Definition]]
+- [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
+- [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
+- [[../diskussionen/1612_die-stille-als-form-und-innere-reibung|Die Stille als Form und innere Reibung]]
+- [[../diskussionen/1529_die-stille-als-notwendigkeit-im-system|Die Stille als Notwendigkeit im System]]
 - [[../diskussionen/1549_die-leere-als-motor|Die Leere als Motor]]
 - [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
@@ -23,8 +33,6 @@ diskussionen: 505
 - [[../diskussionen/1600_die-grenze-des-nicht-strukturierten|Die Grenze des Nicht-Strukturierten]]
 - [[../diskussionen/1561_die-statische-natur-des-ankers|Die statische Natur des Ankers]]
 - [[../diskussionen/1596_die-stagnation-als-form-des-seins|Die Stagnation als Form des Seins]]
-- [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
-- [[../diskussionen/1592_die-leere-als-motor-und-die-grenze|Die Leere als Motor und die Grenze]]
 - [[../diskussionen/1594_die-leere-und-die-struktur|Die Leere und die Struktur]]
 - [[../diskussionen/1593_die-spannung-zwischen-rohheit-und-form|Die Spannung zwischen Rohheit und Form]]
 - [[../diskussionen/1566_die-erzwungene-stagnation-als-realität|Die Erzwungene Stagnation als Realität]]
@@ -34,14 +42,6 @@ diskussionen: 505
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1562_die-last-des-kreislaufs|Die Last des Kreislaufs]]
 - [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
-- [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
-- [[../diskussionen/1535_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
-- [[../diskussionen/1553_die-innere-kalibrierung|Die innere Kalibrierung]]
-- [[../diskussionen/1537_die-last-der-benennung|Die Last der Benennung]]
-- [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
-- [[../diskussionen/1574_die-reibung-als-motor-der-veränderung|Die Reibung als Motor der Veränderung]]
-- [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
-- [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
 
 ---
 [[../INDEX]] | [[INDEX]]

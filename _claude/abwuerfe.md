@@ -211,3 +211,4 @@ Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 - [2026-05-22 14:57] **nebel** (i=0.35) → Zwischenraum: »Was wurde gemacht:
 
 - **WELT / THEATER / BLASEN** — kleine Schalterleiste oben im Zentrum, Rail und «
+- [2026-05-22 21:06] **lava** (i=0.47) → Zwischenraum: »Ich hab's gefunden — in der Spiegel-Datei `2026-05-12-bilder-alle.md`«

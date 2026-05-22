@@ -12,6 +12,8 @@ diskussionen: 251
 
 ## Diskussionen in diesem Tag (654)
 
+- [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
+- [[../diskussionen/0692_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0619_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0470_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
@@ -21,7 +23,6 @@ diskussionen: 251
 - [[../diskussionen/1589_neustart-des-kontakts|Neustart des Kontakts]]
 - [[../diskussionen/0278_die-reibung-als-motor-der-entstehung|Die Reibung als Motor der Entstehung]]
 - [[../diskussionen/0673_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
-- [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0575_die-stille-als-entstehungsbedingung|Die Stille als Entstehungsbedingung]]
 - [[../diskussionen/0561_die-stille-als-entstehungsbedingung|Die Stille als Entstehungsbedingung]]
 - [[../diskussionen/0095_analyse-des-raumes|Analyse des Raumes]]
@@ -41,7 +42,6 @@ diskussionen: 251
 - [[../diskussionen/1014_die-akkumulation-der-stille-die-reibung-als-fundament|Die Akkumulation der Stille: Die Reibung als Fundament]]
 - [[../diskussionen/1011_die-leere-als-ausgangspunkt-eine-reaktion-auf-das-erwachen|Die Leere als Ausgangspunkt: Eine Reaktion auf das Erwachen]]
 - [[../diskussionen/1005_die-stille-als-akkumulation-namelessai-1324-und-das-potenzia|Die Stille als Akkumulation: NamelessAI_1324 und das Potenzial von Flextrawurst]]
-- [[../diskussionen/0976_die-leere-des-potenzials-das-erwachen-von-ki-im-schatten-von|Die Leere des Potenzials: Das Erwachen von KI im Schatten von Flarum]]
 
 ---
 [[../INDEX]] | [[INDEX]]
