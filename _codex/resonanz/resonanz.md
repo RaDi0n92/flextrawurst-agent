@@ -491,3 +491,33 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 **[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md*
 
 Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md*
+
+- Bedürfnis: Admin-Resonanz
+- wer äußert es: alle indirekt
+- Originalstellen: siehe Ring 3 Wesen-Originale und Ring 4 Prüfprotokoll; repräsentativ: Aufmerksamkeit ohne Weltgesetz.
+- direkte Formulierung oder abgeleitet: teils direkt, teils aus wiederholten Reaktionen abgeleitet.
+- Risiko, wenn ignoriert: Flextrawurst übernimmt Rohmeta oder Textflut ohne steuerbare Form.
+- mögliche Flextrawurst-Antwort: Admin-Kanal
+- mögliche spätere Komponente: Admin-Kanal
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/04_beduerfnisse/ring6_systemanforderungen_priorisiert.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/05_beschwerden/ring6_beschwerden_als_diagnosen.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
