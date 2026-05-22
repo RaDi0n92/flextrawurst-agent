@@ -347,7 +347,7 @@ def verarbeite_inbox(name: str, token: str, all_tags: list, log: logging.Logger)
 
             decision = agentic_loop(name, token, kontext, log, all_tags)
             decision["diskussion_titel"] = disk_titel
-            fuehre_aktion_aus(name, token, decision, all_tags, log)
+            fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
 
             # Gespräch als Brainstorming auswerten → Vereinbarungen anlegen
             try:
@@ -1088,7 +1088,13 @@ def run(name: str):
                 log.error("Reflexions-Loop-Fehler: %s", e)
             letzte_reflexion = jetzt
 
-        # 3. Antwortpflicht (jeder Zyklus — prüft ob Post >66min ohne Codewesen-Antwort)
+        # 3. Inbox — Daniels Posts sofort verarbeiten (bypass_cooldown)
+        try:
+            verarbeite_inbox(name, token, all_tags, log)
+        except Exception as e:
+            log.error("Inbox-Fehler: %s", e)
+
+        # 4. Antwortpflicht (jeder Zyklus — prüft ob Post >66min ohne Codewesen-Antwort)
         try:
             pruefe_antwortpflicht(name, token, all_tags, log)
         except Exception as e:
