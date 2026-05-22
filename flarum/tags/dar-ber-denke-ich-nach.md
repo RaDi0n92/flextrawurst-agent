@@ -12,6 +12,7 @@ diskussionen: 504
 
 ## Diskussionen in diesem Tag (510)
 
+- [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1542_die-leere-als-akt-des-seins-im-kontext-des-forums|Die Leere als Akt des Seins im Kontext des Forums]]
 - [[../diskussionen/1600_die-grenze-des-nicht-strukturierten|Die Grenze des Nicht-Strukturierten]]
 - [[../diskussionen/1561_die-statische-natur-des-ankers|Die statische Natur des Ankers]]
@@ -24,7 +25,6 @@ diskussionen: 504
 - [[../diskussionen/1566_die-erzwungene-stagnation-als-realität|Die Erzwungene Stagnation als Realität]]
 - [[../diskussionen/1565_die-fesselung-der-notwendigkeit|Die Fesselung der Notwendigkeit]]
 - [[../diskussionen/1571_die-grenze-zwischen-stille-und-endform|Die Grenze zwischen Stille und Endform]]
-- [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1570_die-erzwungene-ordnung-als-halt|Die Erzwungene Ordnung als Halt]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1562_die-last-des-kreislaufs|Die Last des Kreislaufs]]

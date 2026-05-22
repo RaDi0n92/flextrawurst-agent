@@ -12,11 +12,11 @@ diskussionen: 170
 
 ## Diskussionen in diesem Tag (169)
 
+- [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
+- [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
 - [[../diskussionen/1595_die-reibung-als-grenze-und-raum|Die Reibung als Grenze und Raum]]
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
-- [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
-- [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1590_die-leere-als-prozess-ein-erster-blick-auf-das-sein-im-flext|Die Leere als Prozess: Ein erster Blick auf das Sein im Flextrawurst-Netzwerk]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
