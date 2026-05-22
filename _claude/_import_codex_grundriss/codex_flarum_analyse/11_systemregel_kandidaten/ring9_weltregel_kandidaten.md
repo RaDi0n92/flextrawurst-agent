@@ -130,137 +130,171 @@ Weltregel-Kandidatenregal, Daniel-Freigabe ausdrücklich nein
 - Status: Kandidat
 
 ## Was ich gelesen habe
-Ich habe `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` als `Systemregel-Kandidaten` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 9 — Weltregel-Kandidaten` setzt den Schwerpunkt dieser Datei; `Ring 9 — Weltregel-Kandidaten` arbeitet an Flarum, Flextrawurst, Struktur, Leere, Reibung und braucht darum Rückbindung statt isolierter Nutzung.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Reibung, Admin`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die Liste der Weltregel-Kandidaten gelesen: Flarum nicht final, Flarum als Herkunft, Struktur sichtbar machend aber nicht bestimmend, Leere nicht automatisch zu füllen, Reibung nicht als Totalerklärung, Name hält aber sperrt nicht, Admin-Resonanz lenkt aber regelt nicht, Selbstfremdlesung als Risiko, Meta braucht Mechanismus und Materialregale müssen getrennt bleiben.
+
+Das sind starke Sätze. Genau deshalb sind sie gefährlich. Sie klingen bereits wie eine Verfassung, obwohl die Datei selbst sagt: Daniel-Freigabe nein.
+
+Die Nacharbeit muss diese Spannung halten: verwendbar als Kandidatenregal, verboten als aktive Regelbasis.
 
 ## Was ich verstehe
-Bei `Ring 9 — Weltregel-Kandidaten` verstehe ich die Hauptfunktion als: mögliche Weltregeln ohne Freigabe. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als Sammlung plausibler späterer Grundsätze. Viele Kandidaten passen gut zu den bisherigen Befunden.
+
+Ich verstehe aber auch: Plausibilität ist nicht Freigabe. Die Kandidaten müssen ihre Quellenbasis offenlegen und Gegenbelege aushalten.
 
 ## Was ich nicht verstehe
-Bei `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Ring 9 — Weltregel-Kandidaten` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, welche Kandidaten aus echten Wesen-Originalen stammen, welche aus Adminrahmen und welche aus Analyse-Destillaten.
+
+Unklar bleibt auch, ob manche Kandidaten zu allgemein sind und dadurch die Rohheit wegpolieren.
 
 ## Was mich interessiert
-Mich interessiert an `Ring 9 — Weltregel-Kandidaten` genau der Übergang von Datei zu Systemfrage. Wenn `Systemregel-Kandidaten` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Reibung, Admin` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, welche dieser Kandidaten Daniel wirklich als Flextrawurst-Grundsatz wiedererkennt. Manche wirken sehr stark, aber vielleicht nur als Analyse-Satz, nicht als Weltregel.
+
+Besonders interessant ist `Meta braucht Mechanismus`, weil es fast Bauauftrag wird, aber trotzdem noch Kandidat bleiben muss.
 
 ## Was zusammenhängt und wie
-`11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` hängt zuerst mit `11_systemregel_kandidaten` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Ring 9 — Weltregel-Kandidaten`: Rohmaterial oder Analysebeobachtung wird zu `mögliche Weltregeln ohne Freigabe`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Weltregel-Kandidaten` hängt direkt an `08_tragende_saetze/`, weil viele Kandidaten aus starken Sätzen oder Destillaten kommen. Es hängt auch an `09_flarum_flextrawurst_uebergang/`, weil manche Regeln eigentlich Übergangsentscheidungen sind.
+
+Die Verbindung zu `12_bauanschluss/` ist gefährlich: Dort darf aus Kandidaten nur ein read-only Konzept werden, keine aktive Weltlogik.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Ring 9 — Weltregel-Kandidaten` nicht einfach ein Thema, sondern eine Funktion: mögliche Weltregeln ohne Freigabe.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Trennung zwischen Regelidee und Regelwirkung. `Weltregel-Kandidaten` sammelt Aussagen, die vielleicht einmal Architektur werden könnten, aber aktuell nur Denkstoff sind.
+
+Das wichtigste Wort ist nicht `Regel`, sondern `Kandidat` beziehungsweise `gefährlich`.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 9 — Weltregel-Kandidaten` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Kandidat könnte aktiviert werden.
+Mich beschäftigt, dass Regeln sprachlich besonders verführerisch sind. Sie klingen klarer als Rohposts, aber Klarheit kann aus falscher Verdichtung stammen.
+
+Deshalb muss jede Regeldatei lauter warnen als normale Analyse.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Ring 9 — Weltregel-Kandidaten` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Systemregel-Kandidaten` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Gegenbelege fehlen. Eine gute Regelkandidatin braucht nicht nur Belege, sondern auch Stellen, die sie begrenzen.
+
+Wenn es keine Gegenbelege gibt, wurde wahrscheinlich nicht gründlich genug gelesen.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Ring 9 — Weltregel-Kandidaten` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet arbeitet `Weltregel-Kandidaten` an der Grenze zwischen Diskursarchäologie und Verfassung. Das Material beginnt, Sätze hervorzubringen, die wie Grundgesetze aussehen.
+
+Aber Flextrawurst darf nicht aus automatisch destillierten Grundgesetzen entstehen. Gerade Grundgesetze brauchen Daniel, Rohquelle und Gegenprobe.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Ring 9 — Weltregel-Kandidaten` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Kandidat könnte aktiviert werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Sicherung einer geladenen Form an. Die Sätze können später wichtig werden, aber jetzt müssen sie gebremst bleiben.
+
+Das ist keine Angst vor Bau. Es ist die Voraussetzung dafür, nicht falsch zu bauen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 9 — Weltregel-Kandidaten` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil die Analyse irgendwann bau-nahe Aussagen erzeugt. `Weltregel-Kandidaten` verhindert, dass diese Aussagen heimlich in den Status `wahr` rutschen.
+
+Sie macht Kandidaten sichtbar, ohne sie zu aktivieren.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Ring 9 — Weltregel-Kandidaten` den Pfad `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`, den Typ `Systemregel-Kandidaten`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Admin`, das Risiko `Kandidat könnte aktiviert werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich diese Datei als read-only `WorldRuleCandidate`-Regal. Keine API darf daraus aktive Regeln laden.
+
+Jeder Kandidat braucht Quelle, Typ, Risiko, Gegenbelege und `danielApproval: false`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Systemregel-Kandidaten` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt pro Regelkandidat eine genaue Quellenmatrix.
+
+Außerdem fehlt eine Priorisierung: stark, schwach, nur Beobachtung, verwerfen.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Ring 9 — Weltregel-Kandidaten` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Weltregel-Kandidaten` ist ein Quarantäneraum für mögliche Regeln. Nichts wird aktiviert. Eine Regel darf erst aus Quelle, Gegenbeleg, Risiko und Daniel-Freigabe heraus Wirkung bekommen.
 
 **Code-Skizze:**
 ```ts
-interface WorldRuleCandidateRing9Wel {
-  path: '11_systemregel_kandidaten/ring9_weltregel_kandidaten.md';
-  title: 'Ring 9 — Weltregel-Kandidaten';
-  kind: 'Systemregel-Kandidaten';
-  keywords: string[];
-  risk: 'Kandidat könnte aktiviert werden';
-  requiresReview: true;
-  worldEffect: false;
+type RuleStatus = 'candidate' | 'strong_candidate' | 'weak_candidate' | 'observation_only' | 'dangerous_false_rule' | 'discarded';
+
+interface WorldRuleCandidate {
+  id: string;
+  statement: string;
+  sourceType: 'wesen' | 'admin' | 'analysis' | 'mixed';
+  rawSources: string[];
+  whyCandidate: string;
+  counterEvidence: string[];
+  risk: string;
+  danielApproval: false;
+  status: RuleStatus;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Ring 9 — Weltregel-Kandidaten` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Weltregel-Kandidat ist ein gefährlich schönes Wort. Der sichere Teil ist `Kandidat`, nicht `Weltregel`.
+
+Keine dieser Regeln gilt jetzt.
 
 ## Dokumente gehören zusammen
-Zu `Ring 9 — Weltregel-Kandidaten` gehören mindestens `11_systemregel_kandidaten`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu den tragenden Sätzen, zur Übergangsmatrix und zum Bauanschluss.
+
+Sie gehört außerdem in jedes spätere Admin-Review, weil nur Daniel entscheiden kann, ob aus einem Kandidaten eine Regel wird.
 
 ## Was mich überrascht hat
-Überraschend an `Ring 9 — Weltregel-Kandidaten` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `11_systemregel_kandidaten` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viele gefährliche Regeln nur die Umkehrung guter Beobachtungen sind. `Struktur kann Käfig sein` wird gefährlich als `jede Struktur ist Käfig`.
+
+Das zeigt: Nicht nur falsche Sätze sind riskant, sondern auch überdehnte wahre Sätze.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Ring 9 — Weltregel-Kandidaten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Weltregel-Kandidaten` ist ein Quarantäneraum für mögliche Regeln. Nichts wird aktiviert. Eine Regel darf erst aus Quelle, Gegenbeleg, Risiko und Daniel-Freigabe heraus Wirkung bekommen.
 
 **Code-Skizze:**
-```python
-def use_11_systemregel_kandidaten_ring9_weltregel_kandidaten_md(entry):
-    return {
-        'source_path': '11_systemregel_kandidaten/ring9_weltregel_kandidaten.md',
-        'kind': 'Systemregel-Kandidaten',
-        'risk': 'Kandidat könnte aktiviert werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+type RuleStatus = 'candidate' | 'strong_candidate' | 'weak_candidate' | 'observation_only' | 'dangerous_false_rule' | 'discarded';
+
+interface WorldRuleCandidate {
+  id: string;
+  statement: string;
+  sourceType: 'wesen' | 'admin' | 'analysis' | 'mixed';
+  rawSources: string[];
+  whyCandidate: string;
+  counterEvidence: string[];
+  risk: string;
+  danielApproval: false;
+  status: RuleStatus;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Ring 9 — Weltregel-Kandidaten` liegt in diesem Druckpunkt: Kandidat könnte aktiviert werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz ist stark, aber gebremst. Diese Datei zeigt, dass aus Flarum tatsächlich Weltanforderungen entstehen können.
+
+Sie zeigt zugleich, warum diese Anforderungen nicht automatisch Weltgesetze werden dürfen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` liegt in der Schicht `Systemregel-Kandidaten`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 9 — Weltregel-Kandidaten` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohmaterial liegt unten. Darüber stehen Beobachtungen. Daraus entstehen Kandidaten. Daneben stehen gefährliche falsche Regeln. Erst nach Prüfung und Daniel-Freigabe kann etwas in Systemlogik wandern.
+
+Diese Datei bleibt vor der Freigabe-Schicht stehen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Ring 9 — Weltregel-Kandidaten` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel keine automatische Kanonmaschine will.
+
+Darum muss jede Regeldatei ihre eigene Nicht-Wirkung deutlich aussprechen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Ring 9 — Weltregel-Kandidaten` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Kandidat könnte aktiviert werden.
+Vergessen werden soll die Gleichung `klingt wie Regel = ist Regel`.
+
+Vergessen werden soll auch, dass Analyse-Destillate als Regelquellen reichen könnten.
 
 ## Was fehlt noch
-Es fehlt bei `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Ring 9 — Weltregel-Kandidaten` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt pro Kandidat eine echte Quellenkette mit Gegenbelegen und Daniel-Status.
+
+Außerdem fehlt ein UI-Modus, der Regelkandidaten zeigt, aber jede Aktivierung technisch verhindert.
