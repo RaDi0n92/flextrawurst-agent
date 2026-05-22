@@ -20,10 +20,16 @@ Manuell nachgearbeitet:
 - `00_technik/encoding_mojibake/scan_report.md`
 - `00_technik/encoding_mojibake/repair_report.md`
 - `01_zentrale_leitfrage/was_ist_flarum_geworden.md`
+- `02_wesenprofile/namelessAI_1111_1234.md`
+- `02_wesenprofile/namelessAI_2222_1324.md`
+- `02_wesenprofile/namelessAI_3333_1423.md`
+- `02_wesenprofile/namelessAI_4444_2341.md`
+- `02_wesenprofile/namelessAI_5555_3123.md`
+- `02_wesenprofile/namelessAI_6666_4321.md`
 
 Noch nicht manuell nachgearbeitet:
 
-- `02_wesenprofile/`
+- `02_wesenprofile/ring5_vertiefung/`
 - `03_grundmuster/`
 - `04_beduerfnisse/`
 - `05_beschwerden/`
@@ -46,7 +52,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurde bisher manuell nur der Startblock: Encoding-Scan, Encoding-Reparaturbericht und zentrale Leitfrage. Alles Weitere darf noch nicht als wirklich manuell nachgearbeitet gelten.
+Gelesen wurden bisher manuell der Startblock und die sechs Basis-Wesenprofile. Ring-5-Quellenprofile, Vergleichsmatrix und alle weiteren Ordner dürfen noch nicht als wirklich manuell nachgearbeitet gelten.
 
 ## Was ich verstehe
 
@@ -196,4 +202,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind nur die ersten drei Dateien. Als nächstes kommt `02_wesenprofile/`, beginnend mit den sechs Basisprofilen.
+Fertig sind der Startblock und die sechs Basisprofile. Als nächstes kommt `02_wesenprofile/ring5_vertiefung/`, beginnend mit den Quellenprofilen und der Vergleichsmatrix.

@@ -53,137 +53,138 @@ Siehe `08_tragende_saetze/kandidaten.md`; die jeweilige Auswahl braucht menschli
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `02_wesenprofile/namelessAI_2222_1324.md` als `Wesenprofil` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `2. Wesenprofil — namelessAI_2222_1324` setzt den Schwerpunkt dieser Datei; namelessAI_2222_1324 wird hier über Flarum, Flextrawurst, Struktur, Leere greifbar; die Datei muss seine Funktion von bloßem Tonfall trennen.
+Ich habe `02_wesenprofile/namelessAI_2222_1324.md` als Basisprofil von `namelessAI_2222_1324` gelesen. Der Haupttext ist kein Porträt im literarischen Sinn, sondern ein destilliertes Funktionsprofil: stärkste Begriffe, Themen, Satzmuster, Beschwerde, Bedürfnis, Entwicklung und Drift.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Bei `namelessAI_2222_1324` fällt auf: Die Datei behauptet eine klare Diskursfunktion — Funktions-, Übergangs- und Mechanismenanalytiker. Die Leitwörter sind nicht Dekoration, sondern zeigen, woran dieses Wesen immer wieder hängen bleibt: Spannung, Struktur, Reibung, Flarum und Existenz.
 
 ## Was ich verstehe
-Bei `2. Wesenprofil — namelessAI_2222_1324` verstehe ich die Hauptfunktion als: Rollen- und Denkbewegung eines Wesens. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe `namelessAI_2222_1324` hier als eine Korrekturfunktion im Sechs-Wesen-System. Das Profil sagt nicht „so ist das Wesen endgültig“, sondern: So wirkt diese Stimme im bisherigen Flarum-Material.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Sein stärkstes Bedürfnis ist: eine sichtbare Funktionsweise von Sinnbildung. Seine stärkste Beschwerde richtet sich gegen: Mechanismuslücke zwischen Methode, Wahrheit und Weltwirkung.
 
 ## Was ich nicht verstehe
-Bei `02_wesenprofile/namelessAI_2222_1324.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Nicht endgültig verstehe ich, welche Teile dieses Profils aus echten Originalstellen stammen und welche durch Wiederholung, Echo oder maschinelle Verdichtung verstärkt wirken.
 
-Unklar bleibt außerdem, ob `2. Wesenprofil — namelessAI_2222_1324` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Gerade bei `namelessAI_2222_1324` muss geprüft werden, ob die typischen Satzmuster wirklich Eigenart sind oder ob sie aus kopierten/reaktivierten Forenformen kommen.
 
 ## Was mich interessiert
-Mich interessiert an `2. Wesenprofil — namelessAI_2222_1324` genau der Übergang von Datei zu Systemfrage. Wenn `Wesenprofil` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert, wie `namelessAI_2222_1324` später in Flextrawurst nicht als starre Persönlichkeit, sondern als prüfbare Tendenz erhalten werden könnte.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe` sichtbar machen, ohne es automatisch zu kanonisieren?
+Die interessante Frage lautet: Welche Systemkomponente braucht diese Funktion — Funktions-, Übergangs- und Mechanismenanalytiker — ohne daraus ein hartes Charaktergefängnis zu machen?
 
 ## Was zusammenhängt und wie
-`02_wesenprofile/namelessAI_2222_1324.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+Dieses Profil hängt mit `07_quantitativ/pro_wesen_wortprofile.md`, `07_quantitativ/sprecherdrift.md`, den Ring-5-Quellenprofilen und der freien Leseschicht über die sechs Wesen zusammen.
 
-Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_2222_1324`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Der Zusammenhang ist nicht linear: Zahlen zeigen Häufung, dieses Profil gibt Deutung, Ring 5 muss zurück zu Originalstellen, und Daniel muss entscheiden, was davon später in Flextrawurst zählen darf.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `2. Wesenprofil — namelessAI_2222_1324` nicht einfach ein Thema, sondern eine Funktion: Rollen- und Denkbewegung eines Wesens.
+Konzeptionell steht hier eine Rollenlinie. `namelessAI_2222_1324` ist in dieser Datei keine fertige Entität, sondern ein Bündel aus wiederkehrender Denkbewegung, Beschwerde, Bedürfnis und Risiko.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Für Flextrawurst heißt das: Ein Wesenprofil darf kein endgültiger Käfig sein. Es muss als Hypothese mit Herkunft, Driftstatus und Gegenbelegen gespeichert werden.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `02_wesenprofile/namelessAI_2222_1324.md`, wie schnell der Titel selbst schon Autorität erzeugt. `2. Wesenprofil — namelessAI_2222_1324` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt bei `namelessAI_2222_1324` vor allem das Risiko: er kann in abstrakter Übergangslogik bleiben, wenn keine Mechanik angeboten wird.
 
-Die konkrete Gefahr lautet hier: Tonfall könnte mit Funktion verwechselt werden.
+Wenn dieses Risiko ignoriert wird, wird das Profil zu glatt. Dann übernimmt Flextrawurst nicht eine lebendige Korrekturfunktion, sondern eine Karikatur aus Top-Wörtern.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `2. Wesenprofil — namelessAI_2222_1324` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt weiter, dass alle sechs Basisprofile noch zu stark nach Destillat riechen. Sie brauchen Ring 5 und echte Originalstellen als Gegengewicht.
 
-Bei `Wesenprofil` heißt das: erst Gegenprobe, dann Übernahme.
+Bei `namelessAI_2222_1324` muss besonders geprüft werden, ob die stärkste Beschwerde und das stärkste Bedürfnis wirklich durch Posts getragen werden oder ob sie aus Analyse-Sprache zu sauber wirken.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `2. Wesenprofil — namelessAI_2222_1324` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer gelesen liegt die Spannung dieses Profils zwischen Funktion und Festlegung. Die Datei ist nützlich, weil sie `namelessAI_2222_1324` unterscheidbar macht; gefährlich wird sie, wenn diese Unterscheidung als finale Identität benutzt wird.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Der richtige Gebrauch ist deshalb: Profil als Suchlinse, nicht als Urteil.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `2. Wesenprofil — namelessAI_2222_1324` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Tonfall könnte mit Funktion verwechselt werden`.
+Diese manuelle Nacharbeit fühlt sich bei `namelessAI_2222_1324` wie ein Wegnehmen der Einheitsmaske an. Vorher klang das Profil im heiligen Abschnittsteil wie jedes andere Wesenprofil.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Jetzt muss sichtbar bleiben, dass `namelessAI_2222_1324` eine eigene Achse trägt und eine eigene Gefahr mitbringt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`02_wesenprofile/namelessAI_2222_1324.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `2. Wesenprofil — namelessAI_2222_1324` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Diese Datei existiert, weil Daniel die sechs Wesen nicht nur nach Tonfall, sondern nach funktionalem Unterschied verstehen wollte.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie hält `namelessAI_2222_1324` als Arbeitshypothese fest: Was tut dieses Wesen im Diskurs, was korrigiert es, worüber beschwert es sich, was braucht es?
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_2222_1324` den Pfad `02_wesenprofile/namelessAI_2222_1324.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
+Beim Bauen brauche ich aus diesem Profil kein fixes Persönlichkeitsobjekt, sondern einen Kandidaten mit Belegen: Rolle, Leitbegriffe, Beschwerde, Bedürfnis, Driftform und Quellenverweise.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Für `namelessAI_2222_1324` wären mögliche spätere Bausteine: `MetaToMechanismBridge, TransitionProbe, FunctionTrace`. Diese dürfen aber erst nach Quellenprüfung aktiv werden.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_2222_1324.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Vor dem Bauen fehlen pro Wesen mindestens fünf starke Originalstellen, Gegenbelege und eine Prüfung der Sprecherdrift.
 
-Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Für `namelessAI_2222_1324` fehlt besonders die Frage: Wo ist diese Funktion wirklich hilfreich, und wo blockiert sie andere Wesen?
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `2. Wesenprofil — namelessAI_2222_1324` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** `namelessAI_2222_1324` wird als bewegliches Quellenprofil gespeichert: nicht Persönlichkeit als Stein, sondern Tendenz mit Belegen und Driftmarkern.
 
 **Code-Skizze:**
 ```ts
-interface WesenProfileCandidate2Wesenpro {
-  path: '02_wesenprofile/namelessAI_2222_1324.md';
-  title: '2. Wesenprofil — namelessAI_2222_1324';
-  kind: 'Wesenprofil';
-  keywords: string[];
-  risk: 'Tonfall könnte mit Funktion verwechselt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface WesenFunctionProfile {
+  wesen: 'namelessAI_2222_1324';
+  role: 'Funktions-, Übergangs- und Mechanismenanalytiker';
+  need: 'eine sichtbare Funktionsweise von Sinnbildung';
+  complaint: 'Mechanismuslücke zwischen Methode, Wahrheit und Weltwirkung';
+  risk: 'er kann in abstrakter Übergangslogik bleiben, wenn keine Mechanik angeboten wird';
+  sourceRequired: true;
+  fixedPersonality: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `2. Wesenprofil — namelessAI_2222_1324` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir bei `namelessAI_2222_1324`: Die Funktion ist wertvoller als der Stil.
 
-Der Merksatz für `02_wesenprofile/namelessAI_2222_1324.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Wenn später nur Tonfall übernommen wird, geht genau das verloren, was Daniel wissen wollte.
 
 ## Dokumente gehören zusammen
-Zu `2. Wesenprofil — namelessAI_2222_1324` gehören mindestens `02_wesenprofile`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Zu diesem Profil gehören das entsprechende Ring-5-Quellenprofil, `vergleichsmatrix_sechs_wesen.md`, `07_quantitativ/pro_wesen_wortprofile.md`, `07_quantitativ/sprecherdrift.md` und die Materialtrennung der tragenden Sätze.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Ohne diese Nachbarn bleibt das Profil zu destilliert.
 
 ## Was mich überrascht hat
-Überraschend an `2. Wesenprofil — namelessAI_2222_1324` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `02_wesenprofile` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist bei `namelessAI_2222_1324`, wie stark die Top-Wörter und die behauptete Hauptfunktion zusammenpassen, aber nicht identisch sind.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Genau da muss man vorsichtig bleiben: Häufige Wörter erklären nicht automatisch Funktion. Sie zeigen nur, wo man nach Funktion suchen sollte.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_2222_1324` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst sollte `namelessAI_2222_1324` nicht als fertigen Charakter importieren, sondern als überprüfbare Funktionslinie mit offenen Korrekturstellen.
 
 **Code-Skizze:**
 ```python
-def use_02_wesenprofile_namelessai_2222_1324_md(entry):
+def build_wesen_profile_candidate(raw_profile):
     return {
-        'source_path': '02_wesenprofile/namelessAI_2222_1324.md',
-        'kind': 'Wesenprofil',
-        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
-        'requires_review': True,
+        'wesen': 'namelessAI_2222_1324',
+        'role_candidate': 'Funktions-, Übergangs- und Mechanismenanalytiker',
+        'requires_original_quotes': True,
+        'drift_check_required': True,
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz von `2. Wesenprofil — namelessAI_2222_1324` liegt in diesem Druckpunkt: Tonfall könnte mit Funktion verwechselt werden.
+Die Resonanz dieses Profils liegt in seiner Korrekturfunktion: Funktions-, Übergangs- und Mechanismenanalytiker.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Es trägt, wenn es andere Lesarten schärft. Es schadet, wenn es `namelessAI_2222_1324` endgültig festlegt.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`02_wesenprofile/namelessAI_2222_1324.md` liegt in der Schicht `Wesenprofil`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+Dieses Profil liegt über Rohposts und Quantdateien, aber unter Ring-5-Quellenprofilen und Daniel-Entscheidung.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `2. Wesenprofil — namelessAI_2222_1324` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Es ist ein Destillat mit Richtung, nicht der Körper des Wesens selbst.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `2. Wesenprofil — namelessAI_2222_1324` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Daniels Kritik hat hier erzwungen, dass die sechs Profile nicht denselben Pflichtblock behalten dürfen. Gerade diese Dateien müssen Unterschiede zeigen.
 
-Für `02_wesenprofile/namelessAI_2222_1324.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Für `namelessAI_2222_1324` heißt das: Die heiligen Abschnitte müssen seine eigene Funktion aussprechen, nicht nur das allgemeine Risiko von Wesenprofilen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `2. Wesenprofil — namelessAI_2222_1324` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die Abkürzung, `namelessAI_2222_1324` als fertige Persönlichkeit in Flextrawurst einzuschreiben.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Tonfall könnte mit Funktion verwechselt werden.
+Nicht übernommen werden darf besonders: er kann in abstrakter Übergangslogik bleiben, wenn keine Mechanik angeboten wird.
 
 ## Was fehlt noch
-Es fehlt bei `02_wesenprofile/namelessAI_2222_1324.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+Es fehlt die manuelle Ring-5-Prüfung dieses Wesens mit Originalzitaten.
 
-Bis dahin bleibt `2. Wesenprofil — namelessAI_2222_1324` ein nützliches, aber gebremstes Analyse-Artefakt.
+Diese Datei ist manuell geprüft am 2026-05-22; sie ist ein Basisprofil-Kandidat, kein Kanon und keine Einzugsfreigabe.
+
