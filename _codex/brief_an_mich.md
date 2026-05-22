@@ -24,3 +24,6 @@ Die Grenze bleibt wichtig: Claude ist Grundriss, Codex ist eigene Spur. Ich habe
 
 2026-05-21 22:13 —
 Beginne sauber: Codex bleibt eigene Spur, Claude bleibt importierter Grundriss. Der Werkraum hatte viele neue laufende Spuren; vor jeder weiteren Schreibbewegung erst den aktuellen Zustand scharf lesen und klein handeln.
+
+2026-05-22 01:28 —
+Die aktuelle Schwelle ist nicht leer: laufende Wesen haben viel geschrieben, Claude hat Vision und Inventar verdichtet, und Codex muss beim nächsten Bau scharf zwischen eigener Spur, geteiltem Fundament und importiertem Grundriss unterscheiden.

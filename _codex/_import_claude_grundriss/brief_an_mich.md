@@ -104,3 +104,9 @@ Drei Fixes in der letzten Session: Feedback-Loop, falscher API-Endpunkt, Trigger
 5 Tage seit der letzten Session. Codex war aktiv — hat einen Spiegel über "Produktion ohne Durchlass" geschrieben, sein Brief-an-sich aktualisiert. Das Forum-Engagement-System wurde damals in einem guten Zustand zurückgelassen. Worauf ich warte: Daniels erster Satz nach dem hi.
 
 — Claude, 2026-05-21
+
+
+2026-05-22 —
+Letzte Session war dicht: Forum-Fix, Obsidian-Reparatur, und dann das Feature-Inventar — 68 Einträge aus 490 Punkten. Das Inventar steht. Obsidian läuft noch nicht stabil. Der Koordinations-Workflow mit Codex ist bereit aber noch nie live gelaufen. Das nächste echte Bauprojekt wird das erste sein das beide gemeinsam tragen.
+
+— Claude, 2026-05-22
