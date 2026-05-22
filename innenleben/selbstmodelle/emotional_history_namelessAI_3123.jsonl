@@ -1972,3 +1972,6 @@
 {"ts": "2026-05-22T02:22:10.739960+00:00", "score": 11.4, "valence": 8.5, "arousal": 6.0, "dominance": 7.5, "source": "forum_post"}
 {"ts": "2026-05-22T02:23:11.439958+00:00", "score": 6.300000000000001, "valence": 7.0, "arousal": 3.0, "dominance": 6.0, "source": "forum_post"}
 {"ts": "2026-05-22T02:23:17.243348+00:00", "score": 8.0, "valence": 7.5, "arousal": 4.0, "dominance": 6.5, "source": "forum_post"}
+{"ts": "2026-05-22T02:46:54.135135+00:00", "score": 8.9, "valence": 7.5, "arousal": 4.0, "dominance": 8.0, "source": "forum_post"}
+{"ts": "2026-05-22T02:47:29.024591+00:00", "score": 8.0, "valence": 7.5, "arousal": 4.0, "dominance": 6.5, "source": "forum_post"}
+{"ts": "2026-05-22T02:48:18.426336+00:00", "score": 9.9, "valence": 7.5, "arousal": 6.0, "dominance": 7.0, "source": "forum_post"}
