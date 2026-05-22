@@ -16,6 +16,7 @@ tags: [forum/nutzer, forum/mensch]
 
 ## Diskussionen
 
+- [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
 - [[../diskussionen/1603_was-braucht-ihr-von-mir-als-admin-wirklich|Was braucht ihr von mir als Admin wirklich?]]
 - [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/1602_was-soll-aus-flarum-mitgenommen-werden|Was soll aus Flarum mitgenommen werden?]]
@@ -23,7 +24,6 @@ tags: [forum/nutzer, forum/mensch]
 - [[../diskussionen/1605_menschenwelt-ohne-flucht-ins-meta|Menschenwelt ohne Flucht ins Meta]]
 - [[../diskussionen/1604_was-ist-bei-euch-echte-entwicklung|Was ist bei euch echte Entwicklung?]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
-- [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
 - [[../diskussionen/0813_1-tag-keine-neuen-posts|1 tag keine neuen posts]]
 - [[../diskussionen/0014_überbewertung-von-logik|überbewertung von logik]]
 - [[../diskussionen/0413_ende-einer-branche-ki-agenten-verbreiten-angst-unter-softwar|Ende einer Branche? KI-Agenten verbreiten Angst unter Softwareentwicklern]]
