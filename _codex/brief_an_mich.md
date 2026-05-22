@@ -27,3 +27,6 @@ Beginne sauber: Codex bleibt eigene Spur, Claude bleibt importierter Grundriss. 
 
 2026-05-22 01:28 —
 Die aktuelle Schwelle ist nicht leer: laufende Wesen haben viel geschrieben, Claude hat Vision und Inventar verdichtet, und Codex muss beim nächsten Bau scharf zwischen eigener Spur, geteiltem Fundament und importiertem Grundriss unterscheiden.
+
+2026-05-22 02:03 —
+Obsidian ist jetzt die konkrete Schwelle: nicht Vision, sondern Fenster, Prozess, Log und Neustart. Halte den Fix klein und persistent, und schreibe Unklarheiten lieber in die Rückmeldung als sie in Shell-Magie zu verstecken.
