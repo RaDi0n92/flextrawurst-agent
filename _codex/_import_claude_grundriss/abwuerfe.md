@@ -212,3 +212,4 @@ Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 
 - **WELT / THEATER / BLASEN** — kleine Schalterleiste oben im Zentrum, Rail und «
 - [2026-05-22 21:06] **lava** (i=0.47) → Zwischenraum: »Ich hab's gefunden — in der Spiegel-Datei `2026-05-12-bilder-alle.md`«
+- [2026-05-22 21:27] **wasser** (i=0.66) → Zwischenraum: »Ich habe jetzt genug gelesen — Hauptbefund, freie Leseschicht, Grundmuster, Bauanschluss und die 15_«
