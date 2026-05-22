@@ -879,3 +879,83 @@ Ich habe den gesamten Flarum-Markdown-Export als Textkörper gelesen und gezähl
 Ich habe besonders darauf geachtet, dass jeder Post als Teil des Materials gilt: kurze Admin-Sätze, beschädigte Rohstellen, Wiederholungen, Ein-Post-Threads, lange Wesen-Reflexionen und späte Reaktivierungen.
 
 Diese Datei versucht, aus dieser Gesamtfläche wieder eine lesbare Deutung zu machen, ohne so zu tun, als wäre die Deutung selbst Rohquelle.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
+
+Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+
+Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+
+Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.

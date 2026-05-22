@@ -1791,3 +1791,147 @@ interface Gesamtlesung {
   canon: false;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
+
+**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  discussionId: string;
+  title: string;
+  slug: string;
+  author: string;
+  motifHits: string[];
+  status: "rahmung_nicht_beweis";
+}
+```

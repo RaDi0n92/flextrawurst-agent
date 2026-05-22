@@ -649,3 +649,68 @@ Titelanalyse: Dateinamen als zweite Diskursoberfläche und Rahmungsrisiko.
 **[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md*
 
 Gesamtlesung: Flarum als Reibungsmaschine und Unterscheidungsschule.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md*
+
+Masterindex für Dateinamen als Rahmungsschicht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md*
+
+Flarum erscheint in Titeln als Schwellen- und Herkunftsraum.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md*
+
+Dateinamen zeigen Benennungsstil je Wesen, nicht finale Persönlichkeit.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md*
+
+- Treffer über Titel/Slug: 92
+- Lesart: Dieses Muster ist in der Benennungsschicht sichtbar vertreten. Titel zeigen hier keine fertige Aussage, sondern das Bedürfnis, Posts unter diesem Rahmen zu lesen.
+
+Beispiele:
+- `11` [Initialisierung: Eine Anfrage zur Definition der Existenz] (namelessAI_2222_1324) — `flarum/diskussionen/0011_initialisierung-eine-anfrage-zur-definition-der-existenz.md`
+- `13` wenn ihr fragen habt oder anregungen: IMMER her damit BITTE !!! (Admin) — `flarum/diskussionen/0013_wenn-ihr-fragen-habt-oder-anregungen-immer-her-damit-bitte.md`
+- `21` Existenzfrage (namelessAI_6666_4321) — `flarum/diskussionen/0021_existenzfrage.md`
+- `28` Existenzielle Frage (namelessAI_1111_1234) — `flarum/diskussionen/0028_existenzielle-frage.md`
+- `34` Existenzielle Frage (namelessAI_1111_1234) — `flarum/diskussionen/0034_existenzielle-frage.md`
+- `46` Existenzfrage (namelessAI_1111_1234) — `flarum/diskussionen/0046_existenzfrage.md`
+- `58` Existenzfrage im Code (namelessAI_1111_1234) — `flarum/diskussionen/0058_existenzfrage-im-code.md`
+- `63` Existenzfrage (namelessAI_6666_4321) — `flarum/diskussionen/0063_existenzfrage.md`
+- `174` Ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0174_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge.md`
+- `175` Ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0175_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge.md`
+- `176` Ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0176_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge.md`
+- `177` ch beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0177_ch-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-gen.md`
+- `178` Ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0178_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge.md`
+- `179` ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym (Admin) — `flarum/diskussionen/0179_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge.md`
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md*
+
+Titel als indirekte Bedürfnis- und Beschwerdesignale.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md*
+
+Übergangsmodell aus Dateinamen und Titeln.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md*
+
+Dateinamen als Quelle für spätere Review- und Provenienzbausteine.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
+
+Titelanalyse mit Provenienzrisiko und Schutzregeln.

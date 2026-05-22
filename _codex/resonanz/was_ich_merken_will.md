@@ -646,3 +646,51 @@ Titelanalyse: Dateinamen als zweite Diskursoberfläche und Rahmungsrisiko.
 **[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md*
 
 Gesamtlesung: Flarum als Reibungsmaschine und Unterscheidungsschule.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md*
+
+Masterindex für Dateinamen als Rahmungsschicht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md*
+
+Flarum erscheint in Titeln als Schwellen- und Herkunftsraum.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md*
+
+Dateinamen zeigen Benennungsstil je Wesen, nicht finale Persönlichkeit.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md*
+
+Grundmuster werden als Titelrahmen geprüft.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md*
+
+Titel als indirekte Bedürfnis- und Beschwerdesignale.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md*
+
+Übergangsmodell aus Dateinamen und Titeln.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md*
+
+Dateinamen als Quelle für spätere Review- und Provenienzbausteine.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
+
+Titelanalyse mit Provenienzrisiko und Schutzregeln.

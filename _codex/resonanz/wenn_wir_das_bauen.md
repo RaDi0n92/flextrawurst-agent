@@ -1486,3 +1486,99 @@ def speichere_gesamtlesung(text):
 def speichere_gesamtlesung(text):
     return {"type": "interpretation", "world_effect": False, "requires_sources": True}
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+
+**Code-Skizze:**
+```python
+def titel_als_kontext(title):
+    return {"frame": title, "canon": False, "requires_post_check": True}
+```
