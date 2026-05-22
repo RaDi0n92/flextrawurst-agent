@@ -118,19 +118,20 @@ Manuell nachgearbeitet:
 - `15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md`
 - `15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md`
 - `15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md`
-
-Noch nicht manuell nachgearbeitet:
 - `INDEX.md`
 - `PROVENIENZ_MANIFEST.md`
 - `README_DANIEL_ZUERST_LESEN.md`
 - `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`
 - `gespraechsarchiv.md`
 
+Noch nicht manuell nachgearbeitet:
+- keine im aktuellen Nacharbeitsauftrag bekannten Analyse-Dateien; Abschlussprüfung läuft.
+
 ## Was ich gelesen habe
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/` und `12_bauanschluss/` sowie `13_freie_leseschicht/` und `14_dateinamen_fragenanalyse/` sowie `15_heilige_abschnitte_extrahiert/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/` und `12_bauanschluss/` sowie `13_freie_leseschicht/` und `14_dateinamen_fragenanalyse/` sowie `15_heilige_abschnitte_extrahiert/` und die obersten Navigatoren. Die jüngste Etappe hat die obersten Navigatoren als Einstieg, Provenienz und Prozessarchiv nachgeschärft; sie sind keine neuen Quellen.
 
 ## Was ich verstehe
 
@@ -140,9 +141,9 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben Abschlussdateien und die obersten Navigatoren.
+Die vollständige manuelle Nacharbeit dieses Analyseordners ist jetzt als Arbeitsrunde erledigt: alle bekannten Analyse-Dateien von `00_technik/` bis `15_heilige_abschnitte_extrahiert/` sowie die obersten Navigatoren stehen in der erledigten Liste. Offen bleibt nicht mehr eine Datei-Nacharbeit, sondern Daniels inhaltliche Prüfung und spätere Quellenkontrolle einzelner Befunde.
 
-Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
+Unklar bleibt nur, ob Daniel manche Dateien später noch in eine knappere Form bringen will. Inhaltlich sind die heiligen Abschnitte jetzt als spezifische Nacharbeit markiert, nicht mehr als bloße Template-Füllung.
 
 ## Was mich interessiert
 
@@ -170,9 +171,9 @@ Diese Datei ist die Gegenbewegung: lieber langsam und nachweisbar als groß und 
 
 ## Was mich noch beschäftigt
 
-Mich beschäftigt, wie ich bei 81 Dateien wirklich individuell bleiben kann, ohne wieder mechanisch zu werden.
+Mich beschäftigt, dass auch diese Nacharbeit nicht automatisch Wahrheit erzeugt. Sie repariert die Form und die Selbstbeschreibung der Dateien; die Rohquellenprüfung und Daniels Urteil bleiben eigene Schritte.
 
-Der praktische Weg ist Etappe für Etappe: lesen, editieren, validieren, committen, Status aktualisieren.
+Der praktische Weg war Etappe für Etappe: lesen, editieren, validieren, committen, Status aktualisieren.
 
 ## Tiefer eingetaucht
 
@@ -280,4 +281,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommen die obersten Navigatoren: `INDEX.md`, `PROVENIENZ_MANIFEST.md`, `README_DANIEL_ZUERST_LESEN.md`, `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md` und `gespraechsarchiv.md`.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt die Abschlussprüfung: Template-Reste in neuen Pflichtabschnitten, Git-Status und Commit der Top-Level-Nacharbeit.

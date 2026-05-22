@@ -42,137 +42,149 @@ Vermischung: schöne Sätze ohne Herkunft, Admin als Wesen, Analyse als Kanon, F
 Ein Read-only Analyse-Browser mit Provenienzfiltern. Keine Weltwirkung.
 
 ## Was ich gelesen habe
-Ich habe `README_DANIEL_ZUERST_LESEN.md` als `Daniel-README` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `README Daniel zuerst lesen` setzt den Schwerpunkt dieser Datei; `README Daniel zuerst lesen` arbeitet an Flarum, Flextrawurst, Admin, Wesen, Provenienz und braucht darum Rückbindung statt isolierter Nutzung.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe das Daniel-README gelesen. Es sagt knapp, wo Daniel anfangen soll: freie Leseschicht für Denkfluss, Regale für Provenienz, read-only Browser als nächster guter Schritt.
+
+Diese Datei muss kurz bleiben, aber nicht flach werden.
 
 ## Was ich verstehe
-Bei `README Daniel zuerst lesen` verstehe ich die Hauptfunktion als: erste Leseführung und Gefahrenhinweis. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe das README als menschlichen Einstieg. Es soll Daniel nicht alles erklären, sondern ihm die ersten richtigen Türen zeigen.
+
+Die wichtigste Warnung bleibt: keine schöne Formulierung ohne Herkunft glauben.
 
 ## Was ich nicht verstehe
-Bei `README_DANIEL_ZUERST_LESEN.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `README Daniel zuerst lesen` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, ob die empfohlenen drei Dateien nach der kompletten Nacharbeit noch optimal sind.
+
+Vielleicht sollte die freie Leseschicht stärker nach vorne, weil sie Daniels Kritik am besten beantwortet.
 
 ## Was mich interessiert
-Mich interessiert an `README Daniel zuerst lesen` genau der Übergang von Datei zu Systemfrage. Wenn `Daniel-README` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, ob Daniel damit wirklich schneller in die Analyse kommt, ohne den Provenienzschutz zu verlieren.
 
 ## Was zusammenhängt und wie
-`README_DANIEL_ZUERST_LESEN.md` hängt zuerst mit `README_DANIEL_ZUERST_LESEN.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `README Daniel zuerst lesen`: Rohmaterial oder Analysebeobachtung wird zu `erste Leseführung und Gefahrenhinweis`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Daniel-README` hängt mit allen Analyseordnern zusammen, aber als Eingangsschicht. Es darf Lesereihenfolge, Status und Warnung geben, aber keine Detailbefunde ersetzen.
+
+Die Datei muss besonders klar auf `PROVENIENZ_MANIFEST.md`, `README_DANIEL_ZUERST_LESEN.md`, `13_freie_leseschicht/` und `08_tragende_saetze/` verweisen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `README Daniel zuerst lesen` nicht einfach ein Thema, sondern eine Funktion: erste Leseführung und Gefahrenhinweis.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier Navigation statt Analyse. `Daniel-README` ordnet Wege durch das Material.
+
+Der alte Fehler wäre, Ordnung als Verständnis auszugeben. Die neue Aufgabe ist: Ordnung zeigt, wo Verständnis geprüft werden muss.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `README_DANIEL_ZUERST_LESEN.md`, wie schnell der Titel selbst schon Autorität erzeugt. `README Daniel zuerst lesen` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Kurzfassung könnte Tiefenprüfung ersetzen.
+Mich beschäftigt, dass gerade die obersten Dateien Autorität ausstrahlen. Index, Manifest, README und Abschluss klingen fertig.
+
+Darum müssen sie stärker als alle anderen sagen: Einstieg, nicht Wahrheit.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `README Daniel zuerst lesen` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Daniel-README` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob Daniel später eher über die freie Leseschicht oder über die Provenienzregale einsteigen will. Beide Wege sind legitim, aber sie beantworten unterschiedliche Bedürfnisse.
+
+Der Navigator muss diese Wahl ermöglichen, nicht erzwingen.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `README Daniel zuerst lesen` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Daniel-README` die Schwelle zwischen Mensch und Analysekörper. Wer hier falsch abbiegt, liest entweder nur schöne Deutung oder nur Tabellen.
+
+Eine gute obere Datei muss beides anbieten: Atem und Prüfung.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `README Daniel zuerst lesen` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Kurzfassung könnte Tiefenprüfung ersetzen`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich am Ende wie Aufräumen der Eingangstüren an. Nicht neue Räume bauen, sondern Schilder richtig setzen.
+
+Das ist weniger spektakulär als Analyse, aber für Nutzung entscheidend.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`README_DANIEL_ZUERST_LESEN.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `README Daniel zuerst lesen` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+`Daniel-README` existiert, weil die Analyse groß geworden ist. Ohne obere Navigatoren würde Daniel wieder in Ordnern statt in Gedanken landen.
+
+Die Datei existiert also als Orientierung, nicht als Ersatz für die Arbeit darunter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `README Daniel zuerst lesen` den Pfad `README_DANIEL_ZUERST_LESEN.md`, den Typ `Daniel-README`, die Leitwörter `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Kurzfassung könnte Tiefenprüfung ersetzen` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich genau dieses README als Startansicht im Browser: drei Lesepfade, Warnungen, nächster sicherer Schritt.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `README_DANIEL_ZUERST_LESEN.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Daniel-README` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine aktualisierte Drei-Dateien-Empfehlung nach Abschluss der Nacharbeit.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `README Daniel zuerst lesen` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Daniel-README` ist eine obere Navigationsschicht. Sie hilft Daniel und Codex, den Analyse-Körper zu betreten, aber sie ersetzt keine Detaildatei und keine Rohquelle.
 
 **Code-Skizze:**
 ```ts
-interface ReadingGuideReadmeDan {
-  path: 'README_DANIEL_ZUERST_LESEN.md';
-  title: 'README Daniel zuerst lesen';
+interface AnalysisNavigator {
   kind: 'Daniel-README';
-  keywords: string[];
-  risk: 'Kurzfassung könnte Tiefenprüfung ersetzen';
-  requiresReview: true;
-  worldEffect: false;
+  primaryUse: 'entry' | 'provenance' | 'archive' | 'stop_point';
+  pointsTo: string[];
+  canBeSource: false;
+  requiresDrilldown: true;
+  liveEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `README Daniel zuerst lesen` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `README_DANIEL_ZUERST_LESEN.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Ein gutes README ist kein Mini-Kanon. Es ist eine Weggabelung mit Warnschild.
 
 ## Dokumente gehören zusammen
-Zu `README Daniel zuerst lesen` gehören mindestens `README_DANIEL_ZUERST_LESEN.md`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu den Top-Level-Navigatoren und zum Status der manuellen Nacharbeit.
+
+Sie gehört nur indirekt zu Flarum-Rohquellen, weil sie auf Analysepfade zeigt.
 
 ## Was mich überrascht hat
-Überraschend an `README Daniel zuerst lesen` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `README_DANIEL_ZUERST_LESEN.md` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viel Schaden ein schlechter Einstieg machen kann. Wenn oben nicht klar ist, was Quelle, Deutung, Kandidat und Sperre ist, nützt die ganze Detailarbeit wenig.
+
+Der Index ist also selbst ein Provenienzwerkzeug.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `README Daniel zuerst lesen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Daniel-README` ist eine obere Navigationsschicht. Sie hilft Daniel und Codex, den Analyse-Körper zu betreten, aber sie ersetzt keine Detaildatei und keine Rohquelle.
 
 **Code-Skizze:**
-```python
-def use_readme_daniel_zuerst_lesen_md(entry):
-    return {
-        'source_path': 'README_DANIEL_ZUERST_LESEN.md',
-        'kind': 'Daniel-README',
-        'risk': 'Kurzfassung könnte Tiefenprüfung ersetzen',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface AnalysisNavigator {
+  kind: 'Daniel-README';
+  primaryUse: 'entry' | 'provenance' | 'archive' | 'stop_point';
+  pointsTo: string[];
+  canBeSource: false;
+  requiresDrilldown: true;
+  liveEffect: false;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `README Daniel zuerst lesen` liegt in diesem Druckpunkt: Kurzfassung könnte Tiefenprüfung ersetzen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz ist praktisch: Daniel soll nicht 80 Dateien erraten müssen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`README_DANIEL_ZUERST_LESEN.md` liegt in der Schicht `Daniel-README`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `README Daniel zuerst lesen` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Ganz unten Flarum-Rohmaterial, darüber Analyse und Kuration, darüber freie Leseschicht und Übergänge, darüber diese Navigatoren.
+
+Navigatoren dürfen nach unten führen, aber nicht selbst Fundament spielen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `README Daniel zuerst lesen` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `README_DANIEL_ZUERST_LESEN.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel nicht noch mehr Ringlogik will, sondern nutzbare Orientierung mit ehrlicher Provenienz.
+
+Diese Dateien müssen deshalb knapp führen und klar warnen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `README Daniel zuerst lesen` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Kurzfassung könnte Tiefenprüfung ersetzen.
+Vergessen werden soll der Reflex, eine Abschlussdatei als Abschluss der Wahrheit zu lesen.
+
+Behalten werden soll: Abschluss heißt Stop-Punkt für Automatik, nicht Ende des Denkens.
 
 ## Was fehlt noch
-Es fehlt bei `README_DANIEL_ZUERST_LESEN.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `README Daniel zuerst lesen` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt ein finaler Statuscheck über alle Dateien und ein Commit der Top-Level-Nacharbeit.
+
+Danach bleibt inhaltlich immer noch Prüfung durch Daniel offen, aber die manuelle Nachschärfung der heiligen Abschnitte ist als Arbeitsrunde abgeschlossen.

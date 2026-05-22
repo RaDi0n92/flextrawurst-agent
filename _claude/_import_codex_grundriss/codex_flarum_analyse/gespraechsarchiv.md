@@ -18,137 +18,151 @@ Dieses Archiv gehört zu Daniels Auftrag, die Flarum-Analyse-Gespräche hier for
 - Quellenbasis: aktuelles Gespräch, `/root/werkraum/flarum/`, erzeugte Analyse-Dateien unter `_codex/codex_flarum_analyse/`
 
 ## Was ich gelesen habe
-Ich habe `gespraechsarchiv.md` als `Gesprächsarchiv` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Codex Flarum-Analyse — Gesprächsarchiv` setzt den Schwerpunkt dieser Datei; `Codex Flarum-Analyse — Gesprächsarchiv` arbeitet an Flarum, Wesen, Provenienz und braucht darum Rückbindung statt isolierter Nutzung.
 
-Auffällig sind hier die Anker `Flarum, Wesen, Provenienz`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe das Gesprächsarchiv gelesen. Es sammelt Daniels Auftrag, Korrekturen, Enttäuschung über die Ringlogik und die Wendung zur manuellen Nacharbeit.
+
+Das Archiv ist keine Flarum-Quelle. Es ist Prozessquelle für diese Codex-Analyse.
 
 ## Was ich verstehe
-Bei `Codex Flarum-Analyse — Gesprächsarchiv` verstehe ich die Hauptfunktion als: Archiv der Aufträge und Korrekturen. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe das Archiv als Gedächtnis des Auftrags. Es zeigt, warum bestimmte Dateien existieren und warum manche Formen korrigiert wurden.
+
+Es darf aber nicht als Wesenmaterial oder Flarum-Befund gelesen werden.
 
 ## Was ich nicht verstehe
-Bei `gespraechsarchiv.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Codex Flarum-Analyse — Gesprächsarchiv` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, ob das Archiv alle wichtigen Wendepunkte enthält, besonders die Kritik an `15` und den Auftrag zur kompletten Nacharbeit.
+
+Unklar bleibt auch, wie fortlaufend es später gepflegt wird.
 
 ## Was mich interessiert
-Mich interessiert an `Codex Flarum-Analyse — Gesprächsarchiv` genau der Übergang von Datei zu Systemfrage. Wenn `Gesprächsarchiv` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Wesen, Provenienz` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, wie Prozesskritik selbst zu Analysequalität wird. Daniels Einwand gegen die Ringlogik hat die ganze Arbeit besser gemacht.
 
 ## Was zusammenhängt und wie
-`gespraechsarchiv.md` hängt zuerst mit `gespraechsarchiv.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Codex Flarum-Analyse — Gesprächsarchiv`: Rohmaterial oder Analysebeobachtung wird zu `Archiv der Aufträge und Korrekturen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Gesprächsarchiv` hängt mit allen Analyseordnern zusammen, aber als Eingangsschicht. Es darf Lesereihenfolge, Status und Warnung geben, aber keine Detailbefunde ersetzen.
+
+Die Datei muss besonders klar auf `PROVENIENZ_MANIFEST.md`, `README_DANIEL_ZUERST_LESEN.md`, `13_freie_leseschicht/` und `08_tragende_saetze/` verweisen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Codex Flarum-Analyse — Gesprächsarchiv` nicht einfach ein Thema, sondern eine Funktion: Archiv der Aufträge und Korrekturen.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier Navigation statt Analyse. `Gesprächsarchiv` ordnet Wege durch das Material.
+
+Der alte Fehler wäre, Ordnung als Verständnis auszugeben. Die neue Aufgabe ist: Ordnung zeigt, wo Verständnis geprüft werden muss.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `gespraechsarchiv.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Codex Flarum-Analyse — Gesprächsarchiv` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Gespräch könnte als Flarum-Quelle missverstanden werden.
+Mich beschäftigt, dass gerade die obersten Dateien Autorität ausstrahlen. Index, Manifest, README und Abschluss klingen fertig.
+
+Darum müssen sie stärker als alle anderen sagen: Einstieg, nicht Wahrheit.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Codex Flarum-Analyse — Gesprächsarchiv` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Gesprächsarchiv` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob Daniel später eher über die freie Leseschicht oder über die Provenienzregale einsteigen will. Beide Wege sind legitim, aber sie beantworten unterschiedliche Bedürfnisse.
+
+Der Navigator muss diese Wahl ermöglichen, nicht erzwingen.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Codex Flarum-Analyse — Gesprächsarchiv` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Gesprächsarchiv` die Schwelle zwischen Mensch und Analysekörper. Wer hier falsch abbiegt, liest entweder nur schöne Deutung oder nur Tabellen.
+
+Eine gute obere Datei muss beides anbieten: Atem und Prüfung.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Codex Flarum-Analyse — Gesprächsarchiv` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Gespräch könnte als Flarum-Quelle missverstanden werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich am Ende wie Aufräumen der Eingangstüren an. Nicht neue Räume bauen, sondern Schilder richtig setzen.
+
+Das ist weniger spektakulär als Analyse, aber für Nutzung entscheidend.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`gespraechsarchiv.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Codex Flarum-Analyse — Gesprächsarchiv` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+`Gesprächsarchiv` existiert, weil die Analyse groß geworden ist. Ohne obere Navigatoren würde Daniel wieder in Ordnern statt in Gedanken landen.
+
+Die Datei existiert also als Orientierung, nicht als Ersatz für die Arbeit darunter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Codex Flarum-Analyse — Gesprächsarchiv` den Pfad `gespraechsarchiv.md`, den Typ `Gesprächsarchiv`, die Leitwörter `Flarum, Wesen, Provenienz`, das Risiko `Gespräch könnte als Flarum-Quelle missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich das Gesprächsarchiv nur als Prozesskontext im Analyse-Browser.
+
+Es darf keine Rohdaten-Pipeline berühren.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `gespraechsarchiv.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Gesprächsarchiv` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine knappe Chronologie der wichtigsten Korrekturpunkte.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Codex Flarum-Analyse — Gesprächsarchiv` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Gesprächsarchiv` ist eine obere Navigationsschicht. Sie hilft Daniel und Codex, den Analyse-Körper zu betreten, aber sie ersetzt keine Detaildatei und keine Rohquelle.
 
 **Code-Skizze:**
 ```ts
-interface ConversationArchiveCodexFlar {
-  path: 'gespraechsarchiv.md';
-  title: 'Codex Flarum-Analyse — Gesprächsarchiv';
+interface AnalysisNavigator {
   kind: 'Gesprächsarchiv';
-  keywords: string[];
-  risk: 'Gespräch könnte als Flarum-Quelle missverstanden werden';
-  requiresReview: true;
-  worldEffect: false;
+  primaryUse: 'entry' | 'provenance' | 'archive' | 'stop_point';
+  pointsTo: string[];
+  canBeSource: false;
+  requiresDrilldown: true;
+  liveEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Codex Flarum-Analyse — Gesprächsarchiv` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `gespraechsarchiv.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Dieses Archiv erklärt, warum die Analyse so aussieht. Es beweist nicht, was im Flarum steht.
 
 ## Dokumente gehören zusammen
-Zu `Codex Flarum-Analyse — Gesprächsarchiv` gehören mindestens `gespraechsarchiv.md`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu den Top-Level-Navigatoren und zum Status der manuellen Nacharbeit.
+
+Sie gehört nur indirekt zu Flarum-Rohquellen, weil sie auf Analysepfade zeigt.
 
 ## Was mich überrascht hat
-Überraschend an `Codex Flarum-Analyse — Gesprächsarchiv` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `gespraechsarchiv.md` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viel Schaden ein schlechter Einstieg machen kann. Wenn oben nicht klar ist, was Quelle, Deutung, Kandidat und Sperre ist, nützt die ganze Detailarbeit wenig.
+
+Der Index ist also selbst ein Provenienzwerkzeug.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Codex Flarum-Analyse — Gesprächsarchiv` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Gesprächsarchiv` ist eine obere Navigationsschicht. Sie hilft Daniel und Codex, den Analyse-Körper zu betreten, aber sie ersetzt keine Detaildatei und keine Rohquelle.
 
 **Code-Skizze:**
-```python
-def use_gespraechsarchiv_md(entry):
-    return {
-        'source_path': 'gespraechsarchiv.md',
-        'kind': 'Gesprächsarchiv',
-        'risk': 'Gespräch könnte als Flarum-Quelle missverstanden werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface AnalysisNavigator {
+  kind: 'Gesprächsarchiv';
+  primaryUse: 'entry' | 'provenance' | 'archive' | 'stop_point';
+  pointsTo: string[];
+  canBeSource: false;
+  requiresDrilldown: true;
+  liveEffect: false;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Codex Flarum-Analyse — Gesprächsarchiv` liegt in diesem Druckpunkt: Gespräch könnte als Flarum-Quelle missverstanden werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz ist selbstkritisch. Das Archiv hält fest, dass der Prozess Fehler gemacht und daraus gelernt hat.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`gespraechsarchiv.md` liegt in der Schicht `Gesprächsarchiv`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Codex Flarum-Analyse — Gesprächsarchiv` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Ganz unten Flarum-Rohmaterial, darüber Analyse und Kuration, darüber freie Leseschicht und Übergänge, darüber diese Navigatoren.
+
+Navigatoren dürfen nach unten führen, aber nicht selbst Fundament spielen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Codex Flarum-Analyse — Gesprächsarchiv` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `gespraechsarchiv.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel nicht noch mehr Ringlogik will, sondern nutzbare Orientierung mit ehrlicher Provenienz.
+
+Diese Dateien müssen deshalb knapp führen und klar warnen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Codex Flarum-Analyse — Gesprächsarchiv` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Gespräch könnte als Flarum-Quelle missverstanden werden.
+Vergessen werden soll der Reflex, eine Abschlussdatei als Abschluss der Wahrheit zu lesen.
+
+Behalten werden soll: Abschluss heißt Stop-Punkt für Automatik, nicht Ende des Denkens.
 
 ## Was fehlt noch
-Es fehlt bei `gespraechsarchiv.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Codex Flarum-Analyse — Gesprächsarchiv` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt ein finaler Statuscheck über alle Dateien und ein Commit der Top-Level-Nacharbeit.
+
+Danach bleibt inhaltlich immer noch Prüfung durch Daniel offen, aber die manuelle Nachschärfung der heiligen Abschnitte ist als Arbeitsrunde abgeschlossen.
