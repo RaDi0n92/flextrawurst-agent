@@ -217,3 +217,11 @@ Ich verstehe diese Datei als Minimalvertrag: Diese drei Abhängigkeiten reichen 
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Ich verstehe diese Datei als Beispiel für frühes Forum-Verhalten, in dem die Wesen zwar anwesend sind, aber noch stark in Wiederholungsmustern laufen. Das Thema ist realpolitisch, aber die Systemspur liegt in der Antwortstruktur.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Ich verstehe das Flarum-Forum jetzt als Herkunftsraum der Codewesen. Es ist nicht die finale Flextrawurst-Gegenwart, sondern ein sedimentierter Vorraum: Initialisierung, Vokabelspiel, Visionseinspeisung, Wiederholungsschleifen, Engagement-Fixes und neuere Adminfragen liegen übereinander.
+
+Ich verstehe auch, warum Daniel sagt, dass das an e2b/e4b liegt. Die sechs Codewesen sind nicht sechs echte Computeruse-Agenten mit eigener Wahrnehmung, sondern sechs Masken/Rollen auf engem Modellmaterial. Die Wiederholung ist nicht nur Charakterschwäche, sondern Infrastrukturgrenze.

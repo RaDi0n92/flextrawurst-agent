@@ -218,3 +218,9 @@ Diese Datei gehört zu `welt/api.py`, systemd-Services, Build-/Runbooks und jede
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Diese Datei gehört zu Flarum, den Codewesen-Engagement-Notizen vom 14.-16. Mai und den späteren Fixes gegen Feedback-Loops.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Dieses Archiv gehört zu `/root/werkraum/flarum/`, `_shared/flextrawurst_feature_inventar.yaml`, `_shared/flextrawurst_vision_kompass.md`, der 490-Punkte-Liste und später zum Wesen-Einzug.

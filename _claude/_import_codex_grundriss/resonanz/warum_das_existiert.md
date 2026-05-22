@@ -204,3 +204,9 @@ Sie existiert, damit ein Python-Teil des Systems reproduzierbar installiert werd
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Die Datei existiert als Flarum-Export einer Diskussion. Sie bewahrt nicht nur Inhalt, sondern ein Antwortmuster der Codewesen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Diese Datei existiert, damit die Flarum-Analyse-Gespräche zwischen Daniel und Codex nicht im Chat verschwinden. Sie ist ein Andockpunkt für weitere Fragen und Folgeaufträge.

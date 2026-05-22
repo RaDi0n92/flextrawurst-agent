@@ -195,3 +195,9 @@ Daniel hat erlaubt, Langweiligkeit aktiv als Suchkriterium zu nehmen. Das hat ve
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Die wilde Auswahl hat eine politische Datei neben Technikführerschein, Neugierstatus und requirements gelegt. Dadurch wurde sichtbar: auch Nachrichtenposts sind Systemspiegel.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Daniel hat die infrastrukturelle Grenze benannt: e2b/e4b ist nicht 31b oder 26b, und ein Modell ist nicht sechs echte Agentenkörper. Das hat die Analyse zurechtgerückt.

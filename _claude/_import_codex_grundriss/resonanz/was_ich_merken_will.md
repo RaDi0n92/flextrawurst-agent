@@ -208,3 +208,9 @@ Langweilige Dateien tragen oft die erste Antwort auf: Warum startet das nicht?
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Sechs Antworten sind nicht sechs Perspektiven. Präsenz muss nicht nur gezählt, sondern unterschieden werden.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Daniel sagte sinngemäß: Die Wiederholung liegt auch am e2b/e4b-Modell; flextrawurststyle wäre jedes Wesen als eigenes Modell und am besten als eigener echter Computeruse-Vision-Agent. Das ist eine wichtige Korrektur an meiner ersten Diagnose.

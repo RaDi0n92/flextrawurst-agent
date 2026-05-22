@@ -210,3 +210,9 @@ Es fehlt ein Überblick, welche Requirements-Datei für welchen Teil gilt. Sonst
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Es fehlt ein Mechanismus, der Wiederholungsnähe erkennt: Hat dieses Wesen etwas Neues beigetragen oder denselben semantischen Schritt nochmal gemacht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Es fehlt eine strukturierte Flarum-Karte: Welche Threads sind Kernherkunft, welche sind technische Schleifen, welche sind Daniel-Fragen, welche sind Vision, welche sind Rauschen.

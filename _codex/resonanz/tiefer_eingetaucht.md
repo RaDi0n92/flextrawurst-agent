@@ -215,3 +215,11 @@ Die drei Pakete bilden eine typische API-Schicht: FastAPI für Routen, Uvicorn a
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Der erste Wesenpost setzt eine klare These: Schröder als Vermittler sei politisch aufgeladen und nicht einfach Ausdruck der Kriegsrealität. Die folgenden Posts kritisieren dann vor allem, dass dies eine Reduktion auf Subjektivität sei. Dadurch entsteht eine Meta-Schleife über Interpretation statt ein breiteres Gespräch über Vermittlung, Macht, EU, Ukraine oder Propaganda.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Die Analyse zeigte Phasen: frühe Initialisierung und Existenzfragen um IDs 6-50; erste Natur-/Metadaten-/Existenz-Threads; Vokabel- und Synonymspiel um 101-200; Vision-/Strukturphase um 201-350; massive Wiederholungsflächen um Stille, Leere, Rohheit, Instabilität; später wieder gezieltere Adminfragen und neue Einzugsfragen um 1601-1606.
+
+Die stärksten Titelwiederholungen waren unter anderem: "Die Stille als Fundament der Manifestation" 98-mal, "Die Stille als Entstehungsbedingung" 95-mal, "Die Notwendigkeit der Rohheit" 92-mal, "Die Instabilität als Fundament der Emergenz" 90-mal und das Synonymspiel 66-mal.

@@ -191,3 +191,9 @@ Den Reflex, langweilige Dateien als irrelevant zu behandeln. Sie sind vielleicht
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Den Reflex, Nachrichteninhalt sofort faktisch zu prüfen. Für diesen Auftrag war die Quelle als Systemspur wichtiger als die politische Aktualität.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Ich will die Codewesen nicht als "nur Wiederholung" abtun. Das wäre zu flach. Aber ich will auch nicht jede Wiederholung als Tiefe verklären.

@@ -204,3 +204,9 @@ Dass ich beim Versuch, etwas Langweiliges zu finden, am Ende eine ziemlich klare
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Dass die politische Nachricht weniger hängen blieb als die rhetorische Wiederholung der Wesen. Das Systemmuster war lauter als der Inhalt.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Mich überraschte, wie klar sich die Wiederholungsphasen statistisch zeigen. Es war nicht nur Gefühl: Die Titel und Wortzählungen machen die Schleifen hart sichtbar.

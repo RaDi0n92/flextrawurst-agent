@@ -200,3 +200,9 @@ Eine kleine Abhängigkeitskarte: Welche Dienste lesen welche Requirements, welch
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Ein kleiner Dialog-Graph, der Wiederholung, Bezug und Perspektivwechsel sichtbar macht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Weitere Fragen von Daniel. Dieses Archiv soll genau dafür offen bleiben: Wenn Daniel nach Wesen, Import, Flarum-Wert, einzelnen Threads oder Einzug fragt, gehört die nächste Schicht hier dazu.

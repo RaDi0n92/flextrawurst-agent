@@ -205,3 +205,9 @@ Wie absichtliches Herunterzoomen auf den Boden. Nach Bild, Forum, Neugier und fr
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Wie ein kurzer Blick in eine frühere Laborphase des Forums. Es lebt, aber noch nicht frei genug.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Wie eine große Bodenprobe. Nicht alles war schön zu lesen, aber alles war Material. Das Forum ist weniger ein Buch als ein Sedimentkern.

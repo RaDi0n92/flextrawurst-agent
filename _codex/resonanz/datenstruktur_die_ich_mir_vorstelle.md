@@ -644,3 +644,25 @@ interface DialogBeitragAnalyse {
   wiederholungsnaehe: number;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+**Vision-Schicht**
+
+Das Archiv soll mitwachsen wie ein Gesprächsprotokoll, aber nicht nur als Log. Es soll festhalten, welche Fragen Daniel nach der Analyse stellt und welche Unterscheidungen daraus entstehen.
+
+**Code-Skizze**
+
+```ts
+interface FlarumAnalyseArchivEintrag {
+  datum: string;
+  ausloeser: string;
+  frage_von_daniel: string;
+  antwort_codex: string;
+  wichtige_dateien: string[];
+  begriffe: string[];
+  offene_folgefragen: string[];
+}
+```

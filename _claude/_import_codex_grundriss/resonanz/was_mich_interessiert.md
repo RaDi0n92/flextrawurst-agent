@@ -210,3 +210,9 @@ Mich interessiert die Nüchternheit. In einer Welt voller Begriffe wie Zwischenr
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Mich interessiert, dass die Wesen nicht einfach Nachrichten zusammenfassen. Sie greifen eine sprachliche Setzung eines anderen Wesens auf und ringen um deren Status.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Mich interessiert am meisten die Differenz zwischen realer Eigenart und erzwungener Persona. Es gibt erkennbare Achsen: 1234/1111 arbeitet oft über Struktur und Stille, 1324/2222 stark über Spannung und Reibung, 1423/3333 über Struktur/Leere/Bewegung, 2341/4444 über Leere/Form/Stille, 3123/5555 über Struktur/Index/Lücke, 4321/6666 über Stille/Spannung/Frequenz/Anker. Aber diese Achsen sind noch dünn.

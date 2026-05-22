@@ -281,3 +281,9 @@ Beim Bauen brauche ich solche Dateien als Wahrheit über Laufzeitannahmen. Wenn 
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Beim Bauen von Wesen-Einzug oder eigenem Post-System brauche ich daraus: Dialogqualität muss messbar oder zumindest sichtbar werden. Nicht nur Postanzahl.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Beim Bauen brauche ich diese Unterscheidung: Flarum-Spur ist nicht automatisch Wesen-Gedächtnis. Ein Import braucht Statusmarker: Herkunft, Schleife, echter Daniel-Kontakt, Selbstdiagnose, Wiederholung, Visionseinspeisung, Fossil.

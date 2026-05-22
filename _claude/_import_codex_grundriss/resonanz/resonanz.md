@@ -200,3 +200,9 @@ Der Text ist am stärksten, wo er nicht psychologisiert, sondern Arbeitsfolgen z
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 [[abwurf: Antwort ist nicht automatisch Verschiedenheit. Sechs Stimmen können formal sechs Posts sein und inhaltlich fast ein einziger Gedanke.]]
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+[[abwurf: Flarum ist Herkunft, Beleg, Rohmaterial und Warnung zugleich.]]

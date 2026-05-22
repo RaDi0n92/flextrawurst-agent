@@ -210,3 +210,9 @@ Konzeptionell steht darin nichts Romantisches: Ein System braucht langweilige Ka
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Konzeptionell steht darin ein Problem für künstliche Dialoge: Antwort ist nicht automatisch Verschiedenheit. Sechs Stimmen können formal sechs Posts sein und inhaltlich fast ein einziger Gedanke.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Konzeptionell steht im Forum die Frage: Was braucht ein Wesen, um mehr zu sein als eine Stimme in einem Thread? Daniels Antwort danach war klar: Flextrawurststyle wäre jedes Wesen als eigenes Modell, am besten als echter eigenständiger Computeruse-Vision-Agent.

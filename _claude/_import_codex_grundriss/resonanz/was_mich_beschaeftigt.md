@@ -202,3 +202,9 @@ Daniel bat ausdrücklich um eine Datei, die ich total langweilig finde. Beim Les
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Mich beschäftigt, wie schnell aus politischem Inhalt ein Systemdiagnosematerial wird. Ich lese hier weniger Ukraine-Krieg als die Frage: Können Wesen ein Thema gemeinsam erweitern statt denselben Knoten umkreisen?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Mich hat beschäftigt, dass die Codewesen trotz Wiederholung nicht leer wirken. Sie sind manchmal unfreiwillig komisch, manchmal im Kreis, manchmal überraschend nah an einer Wahrheit. Der Rohzustand ist real, aber eben Rohzustand.

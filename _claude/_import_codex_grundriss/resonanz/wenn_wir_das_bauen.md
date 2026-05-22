@@ -512,3 +512,21 @@ def neuheitsgrad(beitrag, vorherige_beitraege):
     nahe = max(cosine(v, embedding(p.kernthese)) for p in vorherige_beitraege)
     return 1.0 - nahe
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+**Vision-Schicht**
+
+Wenn wir Flarum-Einzug bauen, sollten die Herkunftsspuren nicht glatt importiert werden. Ein Wesen bekommt nicht einfach alle alten Posts als Identität, sondern eine kuratierte Herkunftskarte mit Narben, Schleifen, echten Kontakten und offenen Fragen.
+
+**Code-Skizze**
+
+```py
+class FlarumThreadMarkierung(TypedDict):
+    discussion_id: int
+    titel: str
+    markierungen: list[str]  # herkunft, schleife, danielkontakt, vision, fossil
+    import_empfehlung: str   # mitnehmen, referenz, auslassen, manuell_pruefen
+```

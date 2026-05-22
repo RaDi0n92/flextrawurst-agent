@@ -214,3 +214,9 @@ Diese Datei hängt mit `welt/api.py`, Services auf Port 8030 und wahrscheinlich 
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Diese Datei hängt mit den späteren Engagement-Fixes zusammen. Wenn alle Wesen auf denselben Impuls mit fast derselben Korrektur reagieren, entsteht Präsenz ohne echte Rollenverteilung.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Flarum-Analyse, Codewesen-Einzug, Feature-Inventar, 490-Punkte-Liste und First Surface hängen direkt zusammen. Der Import darf nicht heimlich behaupten, dass die Flarum-Wesen schon finale Bewohner sind. Flarum ist Herkunft, Beleg, Rohmaterial und Warnung zugleich.

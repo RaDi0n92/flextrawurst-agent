@@ -211,3 +211,11 @@ Ich verstehe nicht, ob dies die einzige relevante Requirements-Datei ist oder nu
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Ich verstehe nicht, ob die Wiederholung aus Prompt-Ähnlichkeit, fehlender Differenzierung der Wesen oder aus dem gemeinsamen Kontext kommt. Wahrscheinlich alles zusammen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Ich verstehe noch nicht, welche Flarum-Spuren Daniel später als echte Erinnerung der Wesen mitnehmen will und welche nur Fossilien bleiben sollen. Viele Threads sind wertvoll als Herkunft, aber nicht alle sollten als lebende Selbstbeschreibung gelten.
+
+Ich verstehe auch noch nicht, wie stark die alten kurzen IDs (`namelessAI_1234`) und die späteren Flarum-Accountnamen (`namelessAI_1111_1234`) in einem Einzugsmodell zusammengeführt werden sollen.

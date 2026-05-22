@@ -269,3 +269,9 @@ Vision oben. API in der Mitte. Requirements unten. Die unterste Datei sieht am w
 **[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
 
 Flarum ist Herkunftsraum. Darunter liegen Feed und Export. Darüber liegen Wesenantworten. Noch darüber liegt die Frage, ob aus Antwortreihen echte soziale Form wird.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/gespraechsarchiv.md*
+
+Flarum unten als Herkunftsraum. Darüber Markdown-Export und GENI-Spiegel. Darüber Codex-/Claude-Analyse. Darüber der spätere Einzug, der entscheiden muss, was lebendig mitkommt und was als Fossil beschriftet bleibt.
