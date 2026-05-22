@@ -856,3 +856,11 @@ Konzeptionell steht in diesem Prozess: Analyse ist selbst ein Systementwurf. Die
 Der wichtigste Satz daraus ist für mich: Diskursarchäologie ist nicht Deko. Sie ist die erste Provenienz-Engine.
 
 [[abwurf: Eine Analyse, die nur ordnet, baut einen Schrank. Eine Analyse, die nur fließt, baut Nebel. Flextrawurst braucht beides: Schranktüren, die atmen können.]]
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Konzeptionell steht hier eine einfache Trennung: validierte Struktur ist nicht dasselbe wie manuelle Lektüre.
+
+Das ist für Flextrawurst selbst wichtig, weil spätere Systeme ebenfalls zwischen technischer Vollständigkeit und echter Prüfung unterscheiden müssen.

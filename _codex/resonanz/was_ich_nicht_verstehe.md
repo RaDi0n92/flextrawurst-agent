@@ -857,3 +857,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Ich verstehe noch nicht vollständig, wie man bei so großem Material verhindert, dass Struktur wieder Denken ersetzt. Es ist verführerisch, bei 81 Dateien und tausenden Posts auf Generatoren, Matrizen und Pflichtfelder auszuweichen. Das ist effizient, aber gefährlich.
 
 Ich verstehe auch noch nicht, wie viel freie Interpretation Daniel später wirklich will, wenn sie nicht sofort mit Rohzitaten unterfüttert ist. Die beste Form liegt wahrscheinlich dazwischen: erst frei denken, dann die stärksten Sätze zurück an Quellen binden.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Die 81 Analyse-Dateien plus `15` sind groß genug, dass sie in Etappen bearbeitet werden müssen.
+
+Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.

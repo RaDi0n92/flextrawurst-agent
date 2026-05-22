@@ -919,3 +919,11 @@ Ich sehe jetzt fünf Schichten:
 5. Extraktionen als Querschnittsnavigator.
 
 Keine davon ersetzt die andere.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Unter dieser Datei liegen die Analyseartefakte. Über ihr liegt der Arbeitsprozess.
+
+Sie ist kein Inhalt über Flarum, sondern ein Marker über Codex' Umgang mit dem Flarum-Material.

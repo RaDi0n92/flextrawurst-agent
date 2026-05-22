@@ -861,3 +861,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Tiefer gesehen war der Fehler nicht „ChatGPT-Ringlogik“. Der Fehler war, dass ich sie zu brav erfüllt habe. Daniels ursprünglicher Auftrag hatte zwar viele Punkte, aber er wollte nicht mechanische Erfüllung. Er wollte, dass ich mit diesen Punkten lese.
 
 Der Unterschied ist fein: Eine Liste kann Raster sein oder Käfig. Ich habe sie zuerst als Käfig implementiert. Später haben wir sie wieder als Raster nutzbar gemacht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Tiefer betrachtet ist diese Statusdatei selbst ein Provenienzwerkzeug. Sie sagt nicht, was wahr ist, sondern wie weit die Bearbeitung wirklich gekommen ist.
+
+Das schützt die Analyse vor falscher Abschlussrhetorik.

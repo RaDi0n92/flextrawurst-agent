@@ -852,3 +852,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Ich will mir merken: Wenn Daniel „alles“ sagt, meint er nicht automatisch „erzeuge alles in Form von Tabellen“. Er meint oft: Lies so, dass nichts Kleines aus dem Blick fällt.
 
 Das ist eine andere Form von Alles.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Merken will ich mir: keine manuelle Nacharbeit behaupten, bevor die Datei wirklich gelesen wurde.
+
+Diese Statusdatei ist Teil der Reparatur, nicht Verwaltungskram.

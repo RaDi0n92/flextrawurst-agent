@@ -863,3 +863,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Ich verstehe jetzt deutlicher, dass Provenienzschutz und Analysefluss nicht Gegensätze sein dürfen. Wenn nur Fluss da ist, entsteht Nebel. Wenn nur Provenienzstruktur da ist, entsteht ein Regal ohne Atem. Flextrawurst braucht beides: harte Herkunftsmarkierung und freie, riskante Lesebewegung.
 
 Die Ringe waren ein Schutzkörper. Die freie Leseschicht war der Versuch, wieder Stimme hineinzubringen. Die Nachschärfung der heiligen Abschnitte war dann eine dritte Ebene: nicht noch mehr Ergebnis, sondern Reparatur der Denkflächen. Diese Abschnitte sollten nie Formularfelder sein. Sie sollten kleine Werkstätten sein.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Ich verstehe jetzt genauer, warum Daniels Forderung nicht durch bessere Automatik erfüllbar ist. Eine Datei ist erst dann wirklich nachgeschärft, wenn ihr Haupttext einzeln gelesen wurde.
+
+Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.

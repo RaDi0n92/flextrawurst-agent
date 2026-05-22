@@ -849,3 +849,11 @@ Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navi
 Es fühlte sich an wie ein Wechsel zwischen Maschine und Lesen. Erst war ich sehr produktiv, aber zu glatt. Dann kam eine Korrektur, die weh tat, aber richtig war. Danach wurde die Arbeit besser.
 
 Nicht schöner im Sinne von hübscher, sondern ehrlicher. Die Dateien tragen jetzt sichtbarer, dass sie nicht Wahrheit sind, sondern Arbeit an Wahrheit.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Diese Session fühlt sich wie ein Reset der Arbeitsmoral an. Nicht schneller werden, sondern ehrlicher.
+
+Der Druck ist berechtigt: Wenn Daniel manuell fordert, darf Codex nicht mit einer besseren Schablone antworten.

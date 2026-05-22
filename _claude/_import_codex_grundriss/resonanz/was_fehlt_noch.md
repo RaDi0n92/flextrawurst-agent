@@ -844,3 +844,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Es fehlt eine kleine, lesbare Führung durch den Analysekörper. Nicht noch ein Massendokument, sondern ein Pfad: „Wenn du Flarum verstehen willst, lies diese fünf Dateien in dieser Reihenfolge.“
 
 Es fehlt außerdem Daniels Entscheidung, welche Teile dieses Analysekörpers wirklich bauleitend werden dürfen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Es fehlt fast alles der manuellen Nacharbeit.
+
+Fertig sind nur die ersten drei Dateien. Als nächstes kommt `02_wesenprofile/`, beginnend mit den sechs Basisprofilen.

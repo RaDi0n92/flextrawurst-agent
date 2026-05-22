@@ -835,3 +835,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Vergessen will ich die Ausrede, dass formale Vollständigkeit genügt. Sie genügt nicht.
 
 Ich will auch vergessen, dass ein Commit mit vielen Dateien automatisch Fortschritt bedeutet. Fortschritt ist, wenn die Dateien später besser denken helfen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Vergessen werden soll die Abkürzung: „systemisch korrigiert“ gleich „manuell fertig“.
+
+Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.

@@ -854,3 +854,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Es fehlt eine echte Review-Schicht für Daniel: Welche Analysepfade sind hilfreich, welche sind zu viel, welche Dateien sollen beim nächsten Bau wirklich geöffnet werden?
 
 Es fehlt außerdem eine kleine UI-Form für diesen Analysekörper. Nicht als Weltwirkung, sondern als Read-only Browser mit Regalen, Querschnitten und Rücksprüngen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Es fehlt die manuelle Nacharbeit der restlichen Analyse-Dateien.
+
+Außerdem fehlt eine finale Prüfung, ob die nachgearbeiteten heiligen Abschnitte wirklich mehr leisten als Warnung und Provenienzschutz.

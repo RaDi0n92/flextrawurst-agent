@@ -33,137 +33,137 @@ Warnung: Analyse/Kandidat/Destillat, kein Kanon. Dieser Bericht ist technische Q
 - keine
 
 ## Was ich gelesen habe
-Ich habe `00_technik/encoding_mojibake/scan_report.md` als `Encoding-Schutz` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Encoding-/Mojibake Scan Report` setzt den Schwerpunkt dieser Datei; `Encoding-/Mojibake Scan Report` arbeitet an Flarum, Provenienz, Mojibake, Encoding, Rohquelle und braucht darum Rückbindung statt isolierter Nutzung.
+Ich habe hier keinen Diskursbefund gelesen, sondern eine technische Negativauskunft: 1678 Dateien wurden nach harten Mojibake-Mustern durchsucht, und der Scan fand 0 betroffene Dateien.
 
-Auffällig sind hier die Anker `Flarum, Provenienz, Mojibake, Encoding, Rohquelle, Kanon`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Das ist gerade deshalb wichtig, weil vorher echte Angst im Material lag: kaputte Umlaute könnten Sätze, Zitate, Tags und spätere Weltregeln beschädigen. Diese Datei sagt nicht „alles ist sprachlich sauber“. Sie sagt enger: Die definierten harten Encoding-Muster wurden in den geprüften Dateien nicht gefunden.
 
 ## Was ich verstehe
-Bei `Encoding-/Mojibake Scan Report` verstehe ich die Hauptfunktion als: technische Quellenrettung. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe diese Datei als Schutzschwelle vor Ring 4. Sie erlaubt Rohquellenprüfung weiterzuführen, ohne vorher eine globale Encoding-Reparatur erzwingen zu müssen.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Sie beweist aber nicht, dass alle Texte korrekt sind. Tippfehler, Exportreste, Markdown-Schäden, abgeschnittene Stellen und semantische Rohheit bleiben ausdrücklich außerhalb dieses Scans.
 
 ## Was ich nicht verstehe
-Bei `00_technik/encoding_mojibake/scan_report.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Nicht geklärt ist, ob weichere Encoding-Schäden existieren, die nicht von den Suchmustern `Ã`, `Â`, `â€`, `â€“`, `â€”`, `â€¦` oder `�` erfasst werden.
 
-Unklar bleibt außerdem, ob `Encoding-/Mojibake Scan Report` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Auch nicht geklärt ist, ob einzelne problematische Stellen aus späteren Kandidaten eher Tippfehler, Exportartefakt oder echte Wesen-Schreibweise sind. Diese Datei entscheidet das nicht.
 
 ## Was mich interessiert
-Mich interessiert an `Encoding-/Mojibake Scan Report` genau der Übergang von Datei zu Systemfrage. Wenn `Encoding-Schutz` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert an dieser Datei die Strenge ihrer Begrenzung. Sie ist nützlich, weil sie nicht mehr behauptet, als sie geprüft hat.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Provenienz, Mojibake, Encoding, Rohquelle, Kanon` sichtbar machen, ohne es automatisch zu kanonisieren?
+Für Flextrawurst ist das ein gutes Muster: technische Prüfungen dürfen keine semantischen Urteile werden. Ein Scan kann eine Klasse von Schäden ausschließen, aber nicht Herkunft, Bedeutung oder Kanon sichern.
 
 ## Was zusammenhängt und wie
-`00_technik/encoding_mojibake/scan_report.md` hängt zuerst mit `00_technik` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+Diese Datei hängt direkt mit `repair_report.md` zusammen: Scan ohne Treffer führt zu Reparatur ohne Änderung.
 
-Die Verbindung läuft konkret über `Encoding-/Mojibake Scan Report`: Rohmaterial oder Analysebeobachtung wird zu `technische Quellenrettung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Sie hängt außerdem mit `08_tragende_saetze/04_rohquellenpruefung/` zusammen, weil Zitierfähigkeit erst nach Quellenprüfung entschieden werden darf. Der Encoding-Scan nimmt nur eine technische Gefahr aus dem Weg.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Encoding-/Mojibake Scan Report` nicht einfach ein Thema, sondern eine Funktion: technische Quellenrettung.
+Konzeptionell steht hier: Quellenrettung beginnt vor Interpretation. Bevor ein Satz als stark, schön oder tragend gilt, muss klar sein, ob seine Zeichen überhaupt technisch intakt sind.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Die Datei ist damit kein Inhalt über die Wesen, sondern ein Schutz um die Wesen herum.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `00_technik/encoding_mojibake/scan_report.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Encoding-/Mojibake Scan Report` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt, dass „0 Treffer“ gefährlich beruhigend klingen kann. Null Treffer heißt nicht null Problem, sondern null Treffer für genau diese Muster in genau diesem Suchraum.
 
-Die konkrete Gefahr lautet hier: Mojibake darf nicht als Bedeutung gelesen werden.
+Diese Präzision muss stehen bleiben, sonst wird aus einem technischen Bericht wieder ein falscher Freibrief.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Encoding-/Mojibake Scan Report` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt, ob spätere Analysewerkzeuge eigene Scans brauchen: nicht nur Mojibake, sondern abgeschnittene Posts, kaputte Markdown-Links, doppelte Exportmarker, falsche Sprecheranker.
 
-Bei `Encoding-Schutz` heißt das: erst Gegenprobe, dann Übernahme.
+Der Scan hier ist ein Anfang, nicht das Ende technischer Quellenhygiene.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Encoding-/Mojibake Scan Report` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer betrachtet ist die Datei eine Lektion in negativer Evidenz. Sie liefert keinen Fund, sondern räumt einen Verdacht kontrolliert beiseite.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Das ist für die Diskursarchäologie wichtig: Auch Nicht-Funde müssen sauber beschrieben werden, damit sie nicht später als unbewiesene Sicherheit auftauchen.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Encoding-/Mojibake Scan Report` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Mojibake darf nicht als Bedeutung gelesen werden`.
+Diese Datei fühlt sich trocken an, aber genau diese Trockenheit ist ihre Stärke. Sie darf nicht poetisch werden.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Der richtige Ton ist prüfend: gesucht, nichts gefunden, keine Reparatur ausgelöst, Rohquellenprüfung trotzdem nötig.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`00_technik/encoding_mojibake/scan_report.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Encoding-/Mojibake Scan Report` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Diese Datei existiert, weil Daniel vor Ring 4 ausdrücklich einen Encoding-Schutzring gefordert hat. Der Zweck war, beschädigte Umlaute und Anführungszeichen nicht still in Zitate oder Regeln zu übernehmen.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert also als technische Sperre vor Bedeutung.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Encoding-/Mojibake Scan Report` den Pfad `00_technik/encoding_mojibake/scan_report.md`, den Typ `Encoding-Schutz`, die Leitwörter `Flarum, Provenienz, Mojibake, Encoding, Rohquelle, Kanon`, das Risiko `Mojibake darf nicht als Bedeutung gelesen werden` und den Status als nicht automatisch wirksame Analyse.
+Beim Bauen brauche ich daraus eine kleine Prüfakte: Suchmuster, geprüfte Dateizahl, Trefferzahl, betroffene Pfade, Zeitpunkt, Ergebnis, und den Hinweis, dass nicht geprüfte Fehlerklassen offen bleiben.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Kein späteres System sollte daraus `text_is_clean: true` machen. Korrekt wäre höchstens `hard_mojibake_scan_hits: 0`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `00_technik/encoding_mojibake/scan_report.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Es fehlt eine breitere Quellenhygiene-Prüfung für Nicht-Encoding-Schäden: abgeschnittene Posts, Exportreste, falsche Links, Sprecheranker und manuelle Schreibfehler.
 
-Außerdem fehlt eine UI-Markierung, die `Encoding-Schutz` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Außerdem fehlt im Analyse-Browser eine Anzeige, welche technische Prüfung eine Quelle bereits bestanden hat und welche nicht.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Encoding-/Mojibake Scan Report` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Der Scan ist ein technischer Schutzzaun. Er hält bestimmte Encoding-Schäden fern, ohne zu behaupten, der Garten sei vollständig geordnet.
 
 **Code-Skizze:**
 ```ts
-interface EncodingStatusEncodingM {
-  path: '00_technik/encoding_mojibake/scan_report.md';
-  title: 'Encoding-/Mojibake Scan Report';
-  kind: 'Encoding-Schutz';
-  keywords: string[];
-  risk: 'Mojibake darf nicht als Bedeutung gelesen werden';
-  requiresReview: true;
-  worldEffect: false;
+interface EncodingScanReport {
+  checkedFiles: number;
+  hitFiles: number;
+  patterns: string[];
+  scope: string[];
+  result: 'no_hard_mojibake_hits';
+  semanticCleanlinessConfirmed: false;
+  nextChecks: string[];
 }
 ```
 
 ## Was ich mir merken will
-Bei `Encoding-/Mojibake Scan Report` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir: Null Mojibake-Treffer ist ein technischer Befund, keine semantische Reinwaschung.
 
-Der Merksatz für `00_technik/encoding_mojibake/scan_report.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Diese Datei schützt Zitate nur an einer Stelle: Zeichenkodierung.
 
 ## Dokumente gehören zusammen
-Zu `Encoding-/Mojibake Scan Report` gehören mindestens `00_technik`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Zusammen gehören `scan_report.md`, `repair_report.md`, `PROVENIENZ_MANIFEST.md`, `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md` und alle Dateien, aus denen später wörtlich zitiert werden soll.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Wer Zitate prüft, muss diese Datei kennen, aber darf bei ihr nicht stehen bleiben.
 
 ## Was mich überrascht hat
-Überraschend an `Encoding-/Mojibake Scan Report` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `00_technik` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist, dass der Scan keine harten Treffer fand, obwohl in Daniels Beispiel Mojibake sichtbar war. Das kann bedeuten, dass die betroffenen Stellen außerhalb des geprüften Bereichs lagen, bereits korrigiert waren, oder nicht in den gescannten Dateien standen.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Diese Überraschung ist ein Grund, den Befund vorsichtig zu formulieren.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Encoding-/Mojibake Scan Report` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Ein späterer Browser zeigt pro Quelle einen technischen Prüfstatus: Encoding-Scan durchgeführt, Trefferzahl, Reparaturstatus, offene Prüfarten.
 
 **Code-Skizze:**
 ```python
-def use_00_technik_encoding_mojibake_scan_report_md(entry):
+def encoding_badge(report):
     return {
-        'source_path': '00_technik/encoding_mojibake/scan_report.md',
-        'kind': 'Encoding-Schutz',
-        'risk': 'Mojibake darf nicht als Bedeutung gelesen werden',
-        'requires_review': True,
-        'world_effect': False,
+        'label': 'Hard Mojibake Scan',
+        'checked_files': report.checkedFiles,
+        'hits': report.hitFiles,
+        'allows_quote_decision': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz von `Encoding-/Mojibake Scan Report` liegt in diesem Druckpunkt: Mojibake darf nicht als Bedeutung gelesen werden.
+Die Resonanz dieser Datei ist Nüchternheit. Sie bremst den Wunsch, beschädigte Zeichen als Inhalt oder Stil zu lesen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Sie sagt: Erst prüfen, dann deuten.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`00_technik/encoding_mojibake/scan_report.md` liegt in der Schicht `Encoding-Schutz`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+Diese Datei liegt unterhalb der Diskursdeutung, aber oberhalb der Rohdateien als technische Prüfschicht.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Encoding-/Mojibake Scan Report` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Sie gehört nicht in Wesenprofile, nicht in Weltregeln, sondern in Provenienz- und Zitierfähigkeitssysteme.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Encoding-/Mojibake Scan Report` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Das Gespräch hat diese Datei notwendig gemacht, weil Daniel zu Recht verhindern wollte, dass kaputte Zeichen in Kanon, Profile oder tragende Sätze wandern.
 
-Für `00_technik/encoding_mojibake/scan_report.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Nach der späteren Kritik an mechanischen Abschnitten zeigt diese Datei zusätzlich: Auch Schutzberichte brauchen präzise Selbstbegrenzung.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Encoding-/Mojibake Scan Report` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die falsche Lesart: „Der Scan fand nichts, also sind alle Quellen sauber.“
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Mojibake darf nicht als Bedeutung gelesen werden.
+Behalten werden soll: „Der Scan fand keine Treffer für definierte harte Mojibake-Muster; alles andere bleibt prüfpflichtig.“
 
 ## Was fehlt noch
-Es fehlt bei `00_technik/encoding_mojibake/scan_report.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+Es fehlt ein zweiter technischer Prüfblock für Nicht-Encoding-Artefakte und ein Link zur Rohquellenprüfung jedes tragenden Satzes.
 
-Bis dahin bleibt `Encoding-/Mojibake Scan Report` ein nützliches, aber gebremstes Analyse-Artefakt.
+Diese Datei ist manuell geprüft am 2026-05-22; sie ist abgeschlossen als Scanbericht, aber nicht als vollständige Quellenhygiene.
+

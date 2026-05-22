@@ -864,3 +864,11 @@ Die freie Leseschicht sagt: Was bedeutet das, wenn man es wieder als lebendiges 
 Die nachgeschärften heiligen Abschnitte sagen: Was braucht Flextrawurst beim Bauen, wenn diese Datei später nicht falsch wirken soll?
 
 Die Extraktionsdateien sagen: Wie kann man diese Denkflächen querlesen, ohne jede Datei einzeln öffnen zu müssen?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Diese Datei hängt mit allen Analyse-Dateien zusammen, aber als Kontrollliste, nicht als Inhaltsdeutung.
+
+Sie hängt besonders mit Daniels Kritik an der Batch-Logik zusammen: genau diese Kritik wird hier operationalisiert.

@@ -854,3 +854,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Mich interessiert an diesem Prozess, dass er selbst dieselbe Spannung wiederholt hat wie Flarum: Struktur oder Käfig. Die Analyse hat am eigenen Körper gezeigt, worüber sie sprach. Die Ringlogik war Struktur als Schutz. Dann wurde sie Käfig. Die freie Leseschicht war Bewegung. Dann brauchte sie wieder Provenienz, damit sie nicht Nebel wird.
 
 Das ist fast zu passend: Die Methode wurde selbst zum Beispiel ihres Gegenstands.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Mich interessiert hier die Arbeitsdisziplin: nicht wieder fertig sagen, wenn nur eine Klasse Fehler entfernt wurde.
+
+Die Datei soll zukünftige Codex-Instanzen daran hindern, den Fortschritt zu übertreiben.

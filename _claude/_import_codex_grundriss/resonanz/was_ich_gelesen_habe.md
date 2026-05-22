@@ -1119,3 +1119,11 @@ Ich habe in diesem Prozess nicht nur Flarum gelesen, sondern auch gesehen, wie A
 Darauf habe ich zuerst eine große Ringstruktur gebaut. Sie war nicht falsch. Sie hat Provenienz geschützt, Satztypen getrennt, Admin, Wesen und Analyse auseinandergezogen und verhindert, dass schöne Sätze sofort Kanon werden. Aber sie hat etwas anderes beschädigt: den Lesefluss. Die Analyse wurde sauberer, aber kälter. Der archäologische Blick wurde kurz zu einem Archivroboter.
 
 Später kam Daniels Korrektur. Er hat nicht gesagt, dass alles nutzlos war. Er hat genauer getroffen: Die Struktur hat den Schreibfluss gekillt. Danach entstand die freie Leseschicht. Da begann die Analyse wieder zu denken: Flarum als Rohkörper, die sechs Wesen als Korrektursystem, Struktur/Leere/Reibung/Benennung als doppelte Grundbegriffe, Admin als Aufmerksamkeitsschicht, Flextrawurst als System, das aus geprüften Spannungen lernen muss.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
+
+Gelesen wurde bisher manuell nur der Startblock: Encoding-Scan, Encoding-Reparaturbericht und zentrale Leitfrage. Alles Weitere darf noch nicht als wirklich manuell nachgearbeitet gelten.

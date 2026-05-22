@@ -866,3 +866,11 @@ Diese Spiegeldatei gehört zu:
 - `_codex/codex_flarum_analyse/15_heilige_abschnitte_extrahiert/`
 - `_codex/codex_flarum_analyse/PROVENIENZ_MANIFEST.md`
 - `_codex/resonanz/was_ich_beim_bauen_brauche.md`
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Diese Datei gehört zum Analyse-Index, zum Provenienzmanifest und zu allen Dateien, deren heilige Abschnitte nachgearbeitet werden.
+
+Sie gehört außerdem in jede Abschlussmeldung, bis die Nacharbeit wirklich fertig ist.

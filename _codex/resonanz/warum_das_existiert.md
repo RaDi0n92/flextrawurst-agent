@@ -848,3 +848,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Diese Spiegeldatei existiert, weil der Analyseprozess selbst eine Spur braucht. Spätere Codex-Instanzen sollen nicht nur sehen, dass Dateien erzeugt wurden, sondern warum sie so geworden sind: zuerst zu ringhaft, dann freier, dann nachgeschärft.
 
 Sie soll auch daran erinnern, dass Daniel nicht nur Output will. Er will, dass Codex merkt, wann Struktur Denken ersetzt.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Diese Datei existiert, weil sonst unklar bleibt, welche Dateien tatsächlich einzeln gelesen wurden.
+
+Sie ist ein kleiner Buchhaltungsmechanismus gegen Selbsttäuschung.

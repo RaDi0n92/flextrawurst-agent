@@ -1897,3 +1897,19 @@ def next_safe_tool():
         'requires_daniel_for': ['canon', 'memory_import', 'world_rule']
     }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+**Vision-Schicht:** Der Analyse-Browser zeigt Bearbeitungszustände klar sichtbar: automatisch, systemisch korrigiert, manuell gelesen, Daniel geprüft.
+
+**Code-Skizze:**
+```python
+def review_badge(status):
+    if status.manualReadDone:
+        return 'manuell gelesen'
+    if status.systematicCorrectionDone:
+        return 'systemisch korrigiert, manuell offen'
+    return 'ungeprüft'
+```

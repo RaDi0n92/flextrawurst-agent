@@ -846,3 +846,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 **[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
 
 Mich überrascht, dass die beste Analysephase erst nach der Kritik kam. Die Kritik war nicht Stopp, sondern Kalibrierung. Genau so müsste Flextrawurst später mit Admin-Resonanz umgehen: nicht als Befehl, nicht als Angriff, sondern als Möglichkeit, die Form zu korrigieren.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Überraschend ist, wie leicht ein technischer Erfolg wie `0 repeated_bodies` sich wie inhaltlicher Erfolg anfühlt.
+
+Genau diese Verwechslung soll diese Datei verhindern.

@@ -929,3 +929,11 @@ Beim Bauen brauche ich aus diesem Prozess drei Regeln:
 3. Jede starke Verdichtung braucht Rückweg zum Rohmaterial.
 
 Technisch heißt das: `source_ref`, `interpretation_type`, `canon_status`, `daniel_freigabe`, `risk`, `backlink`, `derived_from` dürfen keine optionalen Luxusfelder sein.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Beim Bauen brauche ich später genau so einen Status: geprüft, nicht geprüft, automatisch erzeugt, manuell kuratiert, Daniel-bestätigt.
+
+Ohne solche Zustände sieht alles gleich fertig aus.

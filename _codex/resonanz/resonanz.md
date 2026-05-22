@@ -987,3 +987,11 @@ Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte so
 Die Resonanz dieses Prozesses ist einfach: Wir haben nicht nur Flarum analysiert. Wir haben gelernt, wie schnell Analyse selbst Flarum wiederholt.
 
 Struktur hilft. Struktur fesselt. Freier Text hilft. Freier Text vernebelt. Der Punkt ist nicht die richtige Seite. Der Punkt ist die Beweglichkeit zwischen beiden.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Die Resonanz dieser Datei ist nüchtern: Sie stoppt falsche Fertigkeit.
+
+Das ist gerade jetzt wichtiger als eine weitere schöne Analyseformel.

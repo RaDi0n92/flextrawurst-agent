@@ -839,3 +839,11 @@ Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt 
 Das Gespräch hat hinzugefügt, dass Daniel nicht nur Ergebnisabnehmer ist. Er ist methodischer Korrektor. Seine Rückmeldung hat die Analyseform verändert.
 
 Das ist wichtig für Flextrawurst: Admin-Resonanz ist nicht nur Inhalt. Sie kann die Methode selbst korrigieren.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+Das Gespräch hat hinzugefügt, dass Daniel nicht nur Ergebnis will, sondern echte Lektüre.
+
+Diese Datei nimmt diese Forderung ernst, indem sie den noch offenen Teil sichtbar macht.

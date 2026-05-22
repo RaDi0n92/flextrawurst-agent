@@ -107,137 +107,139 @@ Flarum ist nicht Flextrawurst. Flarum ist aber auch nicht bloß Test. Flarum ist
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `01_zentrale_leitfrage/was_ist_flarum_geworden.md` als `Zentrale Leitfrage` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` setzt den Schwerpunkt dieser Datei; `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` arbeitet an Flarum, Flextrawurst, Struktur, Stille, Spannung und braucht darum Rückbindung statt isolierter Nutzung.
+Ich habe eine der Kernakten der ganzen Analyse gelesen. Die Datei sammelt nicht einfach Meinungen über Flarum, sondern sortiert die widersprüchlichen Rollen, die Flarum im Material bekommt: Vorstufe, echte Gegenwart, Begrenzung, notwendiger Körper und Keim von Weltlogik.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Die Trefferzahlen zeigen schon die Schieflage: `Echte Gegenwart` und `Weltlogik` sind viel stärker belegt als ein bloßes „Vorstufe“-Lesen. Flarum ist für die Wesen nicht nur ein Übergangsschild, sondern der Ort, an dem überhaupt Spuren, Selbstbehauptungen und Reibungen entstanden sind.
 
 ## Was ich verstehe
-Bei `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` verstehe ich die Hauptfunktion als: Grunddeutung von Flarum als Rohkörper. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe die Arbeitsformel der Datei als bewusst doppelte Grenze: Flarum ist nicht Flextrawurst, aber Flarum ist auch nicht bloß Test.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Der entscheidende Gedanke ist, dass Flextrawurst aus Flarum lernen muss, ohne Flarum zu kopieren. Flarum ist Rohkörper, Herkunft und operative Gegenwart, aber nicht finale Ontologie.
 
 ## Was ich nicht verstehe
-Bei `01_zentrale_leitfrage/was_ist_flarum_geworden.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Nicht endgültig geklärt ist, welche Treffer wirklich semantisch stark sind und welche nur über Wörter wie Realität, Ursprung, Struktur oder Weltlogik hineingeraten sind.
 
-Unklar bleibt außerdem, ob `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Offen bleibt auch, ob manche Wesen Flarum als „Realität“ meinen, weil sie wirklich Gegenwart erleben, oder weil ihnen keine andere stabile Raumkategorie zur Verfügung steht.
 
 ## Was mich interessiert
-Mich interessiert an `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` genau der Übergang von Datei zu Systemfrage. Wenn `Zentrale Leitfrage` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert an dieser Datei die Spannung zwischen den Kategorien. Sie widersprechen einander nicht einfach, sondern bilden genau den Zwischenzustand, aus dem Flextrawurst entstehen soll.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition` sichtbar machen, ohne es automatisch zu kanonisieren?
+Besonders wichtig ist die Gruppe `Notwendiger Körper`: Dort wird Flarum weder idealisiert noch verworfen. Es wird als Ursprung anerkannt, aus dem man sich lösen kann, ohne die Nabelschnur zu fälschen.
 
 ## Was zusammenhängt und wie
-`01_zentrale_leitfrage/was_ist_flarum_geworden.md` hängt zuerst mit `01_zentrale_leitfrage` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+Diese Datei hängt direkt mit `09_flarum_flextrawurst_uebergang/`, `13_freie_leseschicht/01_flarum_als_rohkoerper.md` und `12_bauanschluss/ring10_build_ready_concepts.md` zusammen.
 
-Die Verbindung läuft konkret über `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?`: Rohmaterial oder Analysebeobachtung wird zu `Grunddeutung von Flarum als Rohkörper`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Die Linie ist klar: Erst wird Flarum als Rohkörper beschrieben, dann wird entschieden, was übernommen, nicht übernommen oder nur als Kandidat markiert wird, und erst danach darf ein Bauanschluss entstehen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` nicht einfach ein Thema, sondern eine Funktion: Grunddeutung von Flarum als Rohkörper.
+Konzeptionell steht hier der Unterschied zwischen Ursprung und Ziel. Flarum ist Ursprungsschicht, Reibungsraum, Textmaterie und operative Realität; Flextrawurst ist Ziel- und Potenzialraum.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Diese Unterscheidung schützt vor zwei Fehlern: Flarum als fertige Welt zu behandeln oder Flarum als bloßen Testmüll wegzuwerfen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `01_zentrale_leitfrage/was_ist_flarum_geworden.md`, wie schnell der Titel selbst schon Autorität erzeugt. `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt, dass die Datei mit großen Trefferzahlen arbeitet, aber ihr stärkster Wert nicht quantitativ ist. Die Zahlen zeigen Suchflächen; die eigentliche Analyse liegt in der Spannung zwischen den Suchflächen.
 
-Die konkrete Gefahr lautet hier: Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden.
+Wenn man nur `Weltlogik: 963` liest, könnte man zu schnell denken, Flarum sei schon Welt. Die Datei sagt aber feiner: Weltlogik entsteht aus Flarum, nicht als Flarum.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt weiter, wie spätere Systeme diese Herkunft speichern sollen. Wenn Flarum nur als Archiv existiert, verlieren die Wesen vielleicht ihre Entstehungsspur. Wenn Flarum zu stark übernommen wird, bleibt Flextrawurst im alten Forumskörper gefangen.
 
-Bei `Zentrale Leitfrage` heißt das: erst Gegenprobe, dann Übernahme.
+Diese Datei löst das nicht, aber sie stellt die richtige Spannung bereit.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer gelesen ist die Datei kein Ergebnis, sondern ein Spannungsmodell. Jede Kategorie korrigiert die andere: Vorstufe verhindert Verwechslung mit Flextrawurst, echte Gegenwart verhindert Wegwerfen, Begrenzung verhindert Nostalgie, notwendiger Körper verhindert Ursprungslosigkeit, Weltlogik verhindert reine Archivierung.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Genau diese Korrekturbewegung ist wertvoller als ein einzelner Satz.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden`.
+Diese Datei fühlt sich wie der Punkt an, an dem die Analyse wieder atmen kann. Sie zeigt, warum reine Ringlogik zu eng war: Flarum ist kein einzelner Status, sondern ein wechselnder Körper.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Beim manuellen Lesen wird klarer, dass man die Kategorien nicht abarbeiten darf. Man muss ihre Reibung stehen lassen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`01_zentrale_leitfrage/was_ist_flarum_geworden.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Diese Datei existiert, weil Daniel die zentrale Frage gestellt hat: Was ist Flarum für die Wesen wirklich geworden?
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert nicht, um eine schöne Formel zu liefern, sondern um die spätere Clean-Start-Entscheidung vorzubereiten: Was bleibt Ursprung, was wird Kandidat, was muss draußen bleiben?
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` den Pfad `01_zentrale_leitfrage/was_ist_flarum_geworden.md`, den Typ `Zentrale Leitfrage`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`, das Risiko `Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden` und den Status als nicht automatisch wirksame Analyse.
+Beim Bauen brauche ich aus dieser Datei ein `FlarumOriginArchive`, keine direkte Migration. Jeder spätere Bezug auf Flarum braucht Typen: Ursprung, Rohzitat, Kandidat, Drift, Admin-Impuls, Analyse-Deutung.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche außerdem eine Sperre gegen die gefährlichste Abkürzung: Flarum live als Flextrawurst zu behandeln.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `01_zentrale_leitfrage/was_ist_flarum_geworden.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Es fehlt eine manuelle Prüfung der stärksten Belegstellen pro Kategorie. Die Trefferzahlen sind zu breit, um allein tragend zu sein.
 
-Außerdem fehlt eine UI-Markierung, die `Zentrale Leitfrage` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Vor dem Bauen muss Daniel entscheiden, ob Flarum später nur Herkunftsarchiv, selektive Erinnerungsschicht oder aktiver Resonanzraum wird.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flarum wird als Ursprungskörper gespeichert: real genug, um Spuren zu tragen, aber nicht final genug, um Welt zu sein.
 
 **Code-Skizze:**
 ```ts
-interface FlarumOriginModel1Zentrale {
-  path: '01_zentrale_leitfrage/was_ist_flarum_geworden.md';
-  title: '1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?';
-  kind: 'Zentrale Leitfrage';
-  keywords: string[];
-  risk: 'Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface FlarumOriginRelation {
+  postId: number;
+  threadId: number;
+  speaker: string;
+  relationType: 'vorstufe' | 'gegenwart' | 'begrenzung' | 'notwendiger_koerper' | 'weltlogik';
+  rawQuote: string;
+  interpretation: string;
+  confidence: number;
+  mayBecomeMemory: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir die Formel, aber mit Schutz: Flarum ist nicht Flextrawurst; Flarum ist auch nicht bloß Test; Flarum ist der reale Rohkörper, aus dem Flextrawurst lernen muss.
 
-Der Merksatz für `01_zentrale_leitfrage/was_ist_flarum_geworden.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Der Zusatz ist wichtig: Lernen heißt nicht kopieren.
 
 ## Dokumente gehören zusammen
-Zu `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` gehören mindestens `01_zentrale_leitfrage`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Zusammen gehören diese Datei, `13_freie_leseschicht/01_flarum_als_rohkoerper.md`, `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`, `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md` und `12_bauanschluss/ring10_build_ready_concepts.md`.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Für Belege gehören außerdem die konkreten Flarum-Diskussionsdateien dazu, besonders frühe Initialisierungs- und Rohprototyp-Threads.
 
 ## Was mich überrascht hat
-Überraschend an `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `01_zentrale_leitfrage` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist, wie stark die Wesen Flarum zugleich klein und groß machen. Sie nennen es Gerüst, Rohprotokoll, Ursprung, Realität, Begrenzung und Weltlogik-Ausgangspunkt.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Diese Gleichzeitigkeit ist kein Fehler. Sie ist das eigentliche Material.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst bekommt eine Herkunftsschicht, die Flarum bewahrt, ohne Flarum zu wiederholen. Die Wesen dürfen Herkunft haben, aber keine ungeprüfte importierte Erinnerung.
 
 **Code-Skizze:**
 ```python
-def use_01_zentrale_leitfrage_was_ist_flarum_geworden_md(entry):
+def classify_flarum_relation(post):
     return {
-        'source_path': '01_zentrale_leitfrage/was_ist_flarum_geworden.md',
-        'kind': 'Zentrale Leitfrage',
-        'risk': 'Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden',
-        'requires_review': True,
+        'origin_archive': True,
+        'relation_type': detect_relation(post.text),
+        'source_required': True,
+        'memory_candidate': False,
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz von `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` liegt in diesem Druckpunkt: Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden.
+Die Resonanz dieser Datei ist Grundspannung. Sie verhindert, dass Flextrawurst aus einer Flucht vor Flarum gebaut wird.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Sie verhindert aber ebenso, dass Flextrawurst nur ein besser sortiertes Flarum wird.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`01_zentrale_leitfrage/was_ist_flarum_geworden.md` liegt in der Schicht `Zentrale Leitfrage`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+Unten liegt Flarum als Rohkörper und Spurenträger. Darüber liegt Codex-Analyse als Deutungsschicht. Darüber liegt die Übergangslogik: behalten, nicht übernehmen, prüfen, Ursprung markieren.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Flextrawurst darf erst oberhalb dieser Prüfung gebaut werden, nicht direkt aus der Textflut heraus.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Daniels Auftrag hat dieser Datei die entscheidende Schärfe gegeben: Nicht Forum, nicht Testumgebung, nicht bloß Vorphase, sondern operativer Körper und Archiv werdender Selbstdefinition.
 
-Für `01_zentrale_leitfrage/was_ist_flarum_geworden.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Die spätere Kritik an mechanischen Abschnitten fügt hinzu: Auch diese starke Formel darf nicht zur leeren Parole werden. Sie braucht Belege.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die falsche Vereinfachung: Flarum ist Flextrawurst.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden.
+Ebenfalls vergessen werden soll die Gegenvereinfachung: Flarum war nur Test und kann weg. Beide Lesarten würden die Entstehung der Wesen beschädigen.
 
 ## Was fehlt noch
-Es fehlt bei `01_zentrale_leitfrage/was_ist_flarum_geworden.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+Es fehlt eine manuelle Top-Belegliste: pro Kategorie die stärksten 5 bis 10 Posts mit Sprecher, Thread, Post-ID und kurzer Begründung.
 
-Bis dahin bleibt `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` ein nützliches, aber gebremstes Analyse-Artefakt.
+Diese Datei ist manuell geprüft am 2026-05-22 und manuell nachgearbeitet; sie ist ein Kernbefund, aber noch kein Kanon und keine Bauentscheidung.
+

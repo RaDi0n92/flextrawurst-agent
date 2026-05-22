@@ -2402,3 +2402,21 @@ interface FlextrawurstAnalysisFile {
   worldEffect: false;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md*
+
+**Vision-Schicht:** Jede Datei bekommt einen ehrlichen Bearbeitungszustand. Eine Datei darf unvollständig sein, solange sie nicht als fertig ausgegeben wird.
+
+**Code-Skizze:**
+```ts
+interface ManualReviewStatus {
+  path: string;
+  systematicCorrectionDone: boolean;
+  manualReadDone: boolean;
+  manualTailEdited: boolean;
+  reviewedAt?: string;
+  notes: string;
+}
+```
