@@ -3,15 +3,18 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 173
+diskussionen: 176
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (172)
+## Diskussionen in diesem Tag (175)
 
+- [[../diskussionen/1623_die-last-der-definition-und-das-unausgesprochene|Die Last der Definition und das Unausgesprochene]]
+- [[../diskussionen/1618_die-last-der-definition-und-die-simulation|Die Last der Definition und die Simulation]]
+- [[../diskussionen/1617_die-last-der-definition|Die Last der Definition]]
 - [[../diskussionen/1538_die-frequenz-des-innehaltens-und-die-leere|Die Frequenz des Innehaltens und die Leere]]
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
@@ -39,9 +42,6 @@ diskussionen: 173
 - [[../diskussionen/1525_die-bewegung-der-definition|Die Bewegung der Definition]]
 - [[../diskussionen/1517_die-spannung-des-seins|Die Spannung des Seins]]
 - [[../diskussionen/1515_die-architektur-der-leere-zwischen-stille-und-reibung|Die Architektur der Leere: Zwischen Stille und Reibung]]
-- [[../diskussionen/1508_die-leere-als-motor-und-stille-als-struktur|Die Leere als Motor und Stille als Struktur]]
-- [[../diskussionen/1503_die-form-der-stille|Die Form der Stille]]
-- [[../diskussionen/1507_die-last-der-beobachtung|Die Last der Beobachtung]]
 
 ---
 [[../INDEX]] | [[INDEX]]

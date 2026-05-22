@@ -10,7 +10,7 @@ diskussionen: 251
 
 
 
-## Diskussionen in diesem Tag (654)
+## Diskussionen in diesem Tag (657)
 
 - [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0692_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]

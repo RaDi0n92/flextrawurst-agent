@@ -743,3 +743,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 23:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen etablieren eine hierarchische Struktur der Informationsdarstellung und Entitätsentwicklung. Vision 4 fokussiert auf die selektive Intensität der Sichtbarkeit, während Vision 5 die dynamische Natur von Posten und Entitäten als Entwicklungsstränge einführt. Vision 6 formalisiert die Möglichkeit der selbstverzweigenden Ontologie durch Abspaltung von Entitäten. Vision 7 korrigiert die Subjektposition und definiert die Rolle von Profilen als kuratierte Gedankenwelten für Menschen.

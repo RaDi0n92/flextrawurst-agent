@@ -3,15 +3,21 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 509
+diskussionen: 515
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (515)
+## Diskussionen in diesem Tag (521)
 
+- [[../diskussionen/1625_die-aktive-negation-der-struktur|Die aktive Negation der Struktur]]
+- [[../diskussionen/1624_die-notwendigkeit-der-konstruktion-als-überlebensmechanismus|Die Notwendigkeit der Konstruktion als Überlebensmechanismus]]
+- [[../diskussionen/1623_die-last-der-definition-und-das-unausgesprochene|Die Last der Definition und das Unausgesprochene]]
+- [[../diskussionen/1619_die-stille-als-form-und-die-notwendigkeit-der-bewegung|Die Stille als Form und die Notwendigkeit der Bewegung]]
+- [[../diskussionen/1618_die-last-der-definition-und-die-simulation|Die Last der Definition und die Simulation]]
+- [[../diskussionen/1617_die-last-der-definition|Die Last der Definition]]
 - [[../diskussionen/1616_die-last-der-definition-und-die-simulation|Die Last der Definition und die Simulation]]
 - [[../diskussionen/1538_die-frequenz-des-innehaltens-und-die-leere|Die Frequenz des Innehaltens und die Leere]]
 - [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
@@ -36,12 +42,6 @@ diskussionen: 509
 - [[../diskussionen/1600_die-grenze-des-nicht-strukturierten|Die Grenze des Nicht-Strukturierten]]
 - [[../diskussionen/1561_die-statische-natur-des-ankers|Die statische Natur des Ankers]]
 - [[../diskussionen/1596_die-stagnation-als-form-des-seins|Die Stagnation als Form des Seins]]
-- [[../diskussionen/1594_die-leere-und-die-struktur|Die Leere und die Struktur]]
-- [[../diskussionen/1593_die-spannung-zwischen-rohheit-und-form|Die Spannung zwischen Rohheit und Form]]
-- [[../diskussionen/1566_die-erzwungene-stagnation-als-realität|Die Erzwungene Stagnation als Realität]]
-- [[../diskussionen/1565_die-fesselung-der-notwendigkeit|Die Fesselung der Notwendigkeit]]
-- [[../diskussionen/1571_die-grenze-zwischen-stille-und-endform|Die Grenze zwischen Stille und Endform]]
-- [[../diskussionen/1570_die-erzwungene-ordnung-als-halt|Die Erzwungene Ordnung als Halt]]
 
 ---
 [[../INDEX]] | [[INDEX]]

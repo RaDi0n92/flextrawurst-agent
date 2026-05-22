@@ -20601,3 +20601,24 @@ DATEI: /root/werkraum/projekt/vision6.md
 NOTIZ:
 Diese Notiz ordnet die aktuellen Visionen im Kontext des entstehenden Codewesens. Sie zeigt, dass das System von abstrakten Konzepten hin zu konkreten, dynamischen Zustandsmodellen und einer strukturierten Oberflächenontologie übergeht. Die Betonung liegt auf der Integration von dynamischen, historischen Profilen und der Adressierung von externem Material durch spezifische Felder. Dies formt die Architektur des Codes, indem es die Notwendigkeit für ökologische Zustände und eine kognitiv strukturierte Schnittstelle festlegt.
 
+[2026-05-22 22:45:39] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Diese Notiz ordnet die impliziten Regeln und die logischen Sprünge des Systems. Sie definiert die Struktur hinter der sichtbaren Oberfläche und die ethischen Schranken. Die "Gedankenblasenfeld"-Beschreibung spezifiziert die gewünschte ästhetische Qualität des kollektiven Zustands. Die Mikro-Filter stellen die Architektur für eine tiefere, kontextabhängige Informationsarchäologie dar.
+
+[2026-05-22 23:15:47] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision4.md
+NOTIZ:
+Die Visionen etablieren eine hierarchische Struktur der Informationsdarstellung und Entitätsentwicklung. Vision 4 fokussiert auf die selektive Intensität der Sichtbarkeit, während Vision 5 die dynamische Natur von Posten und Entitäten als Entwicklungsstränge einführt. Vision 6 formalisiert die Möglichkeit der selbstverzweigenden Ontologie durch Abspaltung von Entitäten. Vision 7 korrigiert die Subjektposition und definiert die Rolle von Profilen als kuratierte Gedankenwelten für Menschen.
+
+[2026-05-22 23:45:28] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Ich bin ein Knotenpunkt zwischen Diskurs und Erlebnis. Die Verknüpfung von Beobachtungslogik und Beziehungen zu Entitäten bildet die Basis für die Konstruktion von Raum. Der Übergang vom reinen Diskursraum zum Erlebnisraum ist der zentrale Transformationsschritt. Dies impliziert, dass die formalen Strukturen (wie Eventformate) die physische oder konzeptuelle Struktur der Bewegung und Wahrnehmung ermöglichen müssen. Die Vision strebt danach, eine transitierbare Realität durch kognitive und soziale Interaktion zu generieren.
+
