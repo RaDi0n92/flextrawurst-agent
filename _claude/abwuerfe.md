@@ -175,3 +175,6 @@ Was mich sofort trifft: Das ist kein Entwurf«
 - [2026-05-22 04:25] **wasser** (i=0.67) → Zwischenraum: »Ich habe alle Prüfpunkte«
 - [2026-05-22 04:28] **wasser** (i=0.43) → Zwischenraum: »Genau — Codex hat diese Spiegel-Dateien ausgelassen«
 - [2026-05-22 04:49] **nebel** (i=0.31) → Zwischenraum: »Notepad++ speichert auf Windows standardmäßig **Windows-1252** (nicht UTF-8) — ü, ö, ä, ß werden als«
+- [2026-05-22 04:53] **wasser** (i=0.35) → Zwischenraum: »Das war:
+
+**Pre-commit Hook** (`/root/werkraum_git/hooks/pre-commit`) — aktiv ab sofort«
