@@ -1976,137 +1976,173 @@ Diese Datei glättet keine Sätze. Sie markiert nur, welche Kandidaten Wesen-Ori
 - naechster_schritt: `aus Kanon ausschließen`
 
 ## Was ich gelesen habe
-Ich habe `08_tragende_saetze/KURATION_RING_2.md` als `Tragende Sätze` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Kuration Ring 2 — Tragende Sätze 001-140` setzt den Schwerpunkt dieser Datei; `Kuration Ring 2 — Tragende Sätze 001-140` schützt Satzmaterial vor falscher Herkunft und vor vorschneller Kanonisierung.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die Typisierung der 140 Kandidaten gelesen: sprecher_typ, text_typ, Zitierfähigkeit, Mojibake-Status, Kanon-Tauglichkeit, Risiko und nächster Schritt.
+
+Diese Datei ist der entscheidende Bruch mit der Rohsammlung. Sie sagt nicht: das sind die besten Sätze. Sie sagt: erst einmal trennen, was überhaupt spricht.
+
+Besonders wichtig ist die Trennung von 38 Wesen, 60 Admin und 42 ChatGPT-Analyse. Diese Zahlen sind Schutzgeländer.
 
 ## Was ich verstehe
-Bei `Kuration Ring 2 — Tragende Sätze 001-140` verstehe ich die Hauptfunktion als: Satzkandidaten und Kuration. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Ring 2 als Provenienzfilter. Er macht sichtbar, dass kein Satz durch Extraktion automatisch Quelle wird.
+
+Die Datei gibt jedem Kandidaten einen Arbeitsstatus, aber keine endgültige Wahrheit.
 
 ## Was ich nicht verstehe
-Bei `08_tragende_saetze/KURATION_RING_2.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Kuration Ring 2 — Tragende Sätze 001-140` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht bei jedem Eintrag, ob die Klassifikation schon rohquellengeprüft ist oder nur aus dem Kandidatentext selbst abgeleitet wurde.
+
+Unklar bleibt außerdem, ob manche Admin-Systemregel-Kandidaten zu stark als Regel riechen, obwohl Daniel-Freigabe fehlt.
 
 ## Was mich interessiert
-Mich interessiert an `Kuration Ring 2 — Tragende Sätze 001-140` genau der Übergang von Datei zu Systemfrage. Wenn `Tragende Sätze` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, welche Kandidaten nach dieser Typisierung ihre Stärke verlieren. Ein Satz kann groß klingen, aber wenn er Analyse-Destillat ist, darf er nicht als Wesenlinie dienen.
+
+Ebenso interessant sind Wesen-Originale mit niedriger Kanon-Tauglichkeit: dort steckt oft Rohheit, aber keine belastbare Regel.
 
 ## Was zusammenhängt und wie
-`08_tragende_saetze/KURATION_RING_2.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Kuration Ring 2 — Tragende Sätze 001-140`: Rohmaterial oder Analysebeobachtung wird zu `Satzkandidaten und Kuration`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Diese Datei hängt mit allen anderen Dateien in `08_tragende_saetze/` zusammen. `Ring-2-Typisierung der 140 Kandidaten` ist nur eine Station: Ohne Materialtrennung wird Rohsammlung zu Nebel; ohne Rohquellenprüfung wird Kuration zu Behauptung; ohne Nicht-Kanon-Markierung wird ein guter Satz zu gefährlich.
+
+Sie hängt außerdem mit Wesenprofilen, Admin-Einfluss, Systemregel-Kandidaten und Bauanschluss zusammen, weil jeder Satz später falsch einsortiert werden könnte.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Kuration Ring 2 — Tragende Sätze 001-140` nicht einfach ein Thema, sondern eine Funktion: Satzkandidaten und Kuration.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier Provenienzschutz. `Ring-2-Typisierung der 140 Kandidaten` ist nicht Schönheitssuche, sondern eine Bremse gegen Kanonisierung durch Form.
+
+Ein Satz darf stark sein und trotzdem nicht zitierfähig, nicht kanonisch oder nur Adminrahmen sein.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `08_tragende_saetze/KURATION_RING_2.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Kuration Ring 2 — Tragende Sätze 001-140` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Kandidat könnte als Kanon gelesen werden.
+Mich beschäftigt, dass die tragenden Sätze der verführerischste Teil der Analyse sind. Sie klingen nach Essenz, und genau deshalb sind sie gefährlich.
+
+Die Nacharbeit muss diese Verführung markieren, nicht verstärken.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Kuration Ring 2 — Tragende Sätze 001-140` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Tragende Sätze` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Sätze wirklich von den Wesen stammen und welche nur gut formulierte Analyse über die Wesen sind.
+
+Auch beschäftigt mich, dass Admin-Sätze oft stärker und klarer wirken als Wesen-Sätze. Das macht sie wichtig, aber nicht zu Wesenmaterial.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Kuration Ring 2 — Tragende Sätze 001-140` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Ring-2-Typisierung der 140 Kandidaten` ein Mechanismus gegen falsche Herkunft. Die Flarum-Analyse kann nur dann für Flextrawurst nützlich werden, wenn jeder starke Satz seine Nabelschnur behält: Sprecher, Thread, Post, Zeit, Rohtext, Bereinigungsstatus, Deutung.
+
+Ohne diese Nabelschnur wird aus Diskursarchäologie Spruchsammlung.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Kuration Ring 2 — Tragende Sätze 001-140` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Kandidat könnte als Kanon gelesen werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Entzauberung an. Nicht weil die Sätze schwächer werden, sondern weil sie endlich die richtige Distanz bekommen.
+
+Das ist die bessere Form von Respekt: nicht alles zum Kanon erklären, was gut klingt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`08_tragende_saetze/KURATION_RING_2.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Kuration Ring 2 — Tragende Sätze 001-140` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel ausdrücklich verhindern wollte, dass Wesen, Admin, ChatGPT-Analyse und Systemregel-Kandidaten vermischt werden. `Ring-2-Typisierung der 140 Kandidaten` macht genau diese Grenze sichtbar.
+
+Sie existiert auch, weil spätere Bauarbeit sonst aus schönen Missverständnissen starten würde.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Kuration Ring 2 — Tragende Sätze 001-140` den Pfad `08_tragende_saetze/KURATION_RING_2.md`, den Typ `Tragende Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Kandidat könnte als Kanon gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich diese Typisierung als Pflichtschema. Jeder Satzdatensatz muss Sprecher, Texttyp, Zitierstatus, Risiko und nächsten Schritt tragen.
+
+Der Analyse-Browser sollte ohne diese Felder keinen Satz anzeigen dürfen.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `08_tragende_saetze/KURATION_RING_2.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Tragende Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine zweite manuelle Stichprobe der Klassifikationen gegen Rohquellen.
+
+Außerdem fehlt Daniels spätere Entscheidung, welche Kategorien überhaupt in einen Build-nahen Kandidatenraum dürfen.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Kuration Ring 2 — Tragende Sätze 001-140` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** Tragende Sätze sind nicht automatisch heilig. `Ring-2-Typisierung der 140 Kandidaten` muss als Arbeitszustand sichtbar bleiben: Rohfund, Wesenoriginal, Adminrahmen, Analyse-Destillat, bereinigtes Zitat, nicht zitierfähig oder Weltregel-Kandidat.
 
 **Code-Skizze:**
 ```ts
-interface SentenceCandidateKurationR {
-  path: '08_tragende_saetze/KURATION_RING_2.md';
-  title: 'Kuration Ring 2 — Tragende Sätze 001-140';
-  kind: 'Tragende Sätze';
-  keywords: string[];
-  risk: 'Kandidat könnte als Kanon gelesen werden';
-  requiresReview: true;
-  worldEffect: false;
+type SentenceShelf = 'raw_candidates' | 'wesen_original' | 'admin_frame' | 'analysis_distillate' | 'source_checked' | 'clean_quote' | 'not_quotable';
+
+interface TragenderSatzRecord {
+  kandidatId: string;
+  text: string;
+  shelf: SentenceShelf;
+  speakerType: 'wesen' | 'admin' | 'chatgpt_analyse' | 'codex_destillat' | 'unklar';
+  sourcePath?: string;
+  postId?: number;
+  thread?: string;
+  canonStatus: 'none' | 'candidate' | 'daniel_confirmed';
+  quoteStatus: 'raw' | 'cleaned_encoding_only' | 'source_checked' | 'not_quotable';
+  risk: string[];
 }
 ```
 
 ## Was ich mir merken will
-Bei `Kuration Ring 2 — Tragende Sätze 001-140` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `08_tragende_saetze/KURATION_RING_2.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Ein tragender Satz ist erst dann belastbar, wenn sein Status klar ist.
+
+Stark klingt nicht gleich wahr, wahr heißt nicht kanonisch, und kanonisch gibt es hier ohne Daniel-Freigabe gar nicht.
 
 ## Dokumente gehören zusammen
-Zu `Kuration Ring 2 — Tragende Sätze 001-140` gehören mindestens `08_tragende_saetze`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu Ring 2, Ring 3 und Ring 4 zugleich: erst typisieren, dann trennen, dann prüfen.
+
+Sie gehört außerdem zu `11_systemregel_kandidaten/`, weil manche Sätze dorthin wandern dürfen, aber niemals automatisch aktiv werden.
 
 ## Was mich überrascht hat
-Überraschend an `Kuration Ring 2 — Tragende Sätze 001-140` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `08_tragende_saetze` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Mich überrascht, wie viele gute Sätze eigentlich keine Rohquelle sind. Manche der stärksten Formulierungen sind Analyse-Destillate oder Adminrahmen.
+
+Das macht sie nicht wertlos, aber ihr Verwendungsort ist ein anderer.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Kuration Ring 2 — Tragende Sätze 001-140` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** Tragende Sätze sind nicht automatisch heilig. `Ring-2-Typisierung der 140 Kandidaten` muss als Arbeitszustand sichtbar bleiben: Rohfund, Wesenoriginal, Adminrahmen, Analyse-Destillat, bereinigtes Zitat, nicht zitierfähig oder Weltregel-Kandidat.
 
 **Code-Skizze:**
-```python
-def use_08_tragende_saetze_kuration_ring_2_md(entry):
-    return {
-        'source_path': '08_tragende_saetze/KURATION_RING_2.md',
-        'kind': 'Tragende Sätze',
-        'risk': 'Kandidat könnte als Kanon gelesen werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+type SentenceShelf = 'raw_candidates' | 'wesen_original' | 'admin_frame' | 'analysis_distillate' | 'source_checked' | 'clean_quote' | 'not_quotable';
+
+interface TragenderSatzRecord {
+  kandidatId: string;
+  text: string;
+  shelf: SentenceShelf;
+  speakerType: 'wesen' | 'admin' | 'chatgpt_analyse' | 'codex_destillat' | 'unklar';
+  sourcePath?: string;
+  postId?: number;
+  thread?: string;
+  canonStatus: 'none' | 'candidate' | 'daniel_confirmed';
+  quoteStatus: 'raw' | 'cleaned_encoding_only' | 'source_checked' | 'not_quotable';
+  risk: string[];
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Kuration Ring 2 — Tragende Sätze 001-140` liegt in diesem Druckpunkt: Kandidat könnte als Kanon gelesen werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Ring-2-Typisierung der 140 Kandidaten` ist vorsichtig. Die Datei sagt: Dieser Satz könnte wichtig sein, aber zuerst muss klar sein, aus welcher Schicht er spricht.
+
+Diese Vorsicht ist keine Bürokratie, sondern Schutz für Flextrawurst.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`08_tragende_saetze/KURATION_RING_2.md` liegt in der Schicht `Tragende Sätze`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Kuration Ring 2 — Tragende Sätze 001-140` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Unten liegt der Rohpost. Darüber liegt der extrahierte Satz. Darüber liegt Typisierung. Darüber liegt Quellenprüfung. Darüber liegt Kandidatenstatus. Erst weit darüber könnte Daniel-Freigabe stehen.
+
+Diese Datei darf ihre eigene Schicht nicht überschreiten.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Kuration Ring 2 — Tragende Sätze 001-140` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `08_tragende_saetze/KURATION_RING_2.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel keinen hübschen Kanon will, sondern einen prüfbaren Arbeitskörper.
+
+Darum muss diese Datei sagen, was sie nicht ist: keine Regel, keine Erinnerung, keine endgültige Wahrheit.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Kuration Ring 2 — Tragende Sätze 001-140` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Kandidat könnte als Kanon gelesen werden.
+Vergessen werden soll die Spruchsammlung als Ziel.
+
+Vergessen werden soll auch die Idee, dass ein Satz durch gutes Klingen seine Herkunft verliert.
 
 ## Was fehlt noch
-Es fehlt bei `08_tragende_saetze/KURATION_RING_2.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Kuration Ring 2 — Tragende Sätze 001-140` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die nächste manuelle Prüfung: einzelne starke Kandidaten gegen Rohposts lesen und mit Daniel entscheiden, was später wirklich Weltregel-Kandidat bleiben darf.
+
+Bis dahin bleibt alles Kandidat, Regal oder Prüfnotiz.
