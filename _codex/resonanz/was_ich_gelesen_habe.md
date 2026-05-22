@@ -739,3 +739,33 @@ Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als 
 Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
 
 Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_build_ready_concepts.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_minimal_naechste_implementation.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_nicht_bauen_noch_nicht.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
