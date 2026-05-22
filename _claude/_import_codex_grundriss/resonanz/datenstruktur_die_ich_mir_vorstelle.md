@@ -1329,3 +1329,39 @@ interface EncodingFinding { file: string; patterns: string[]; examples: string[]
 ```ts
 interface EncodingRepairReport { scanned: number; affected: number; repaired: number; meaningChanged: false; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```

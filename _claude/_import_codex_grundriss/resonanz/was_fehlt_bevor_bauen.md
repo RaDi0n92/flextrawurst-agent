@@ -438,3 +438,21 @@ Dieser Abschnitt bleibt knapp: Der Bericht dient technischer Provenienzsicherung
 **[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/repair_report.md*
 
 Keine Reparatur durchgeführt; dieser Abschnitt hält den technischen Nullfund fest.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
