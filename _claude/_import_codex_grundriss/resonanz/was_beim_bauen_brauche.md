@@ -257,3 +257,27 @@ Beim Bauen brauche ich aus diesem Text vor allem drei Prüfungen:
 1. Habe ich den Ursprung der Idee verstanden?
 2. Habe ich zu früh reduziert?
 3. Ist das Ergebnis integriert und testbar, nicht nur ein Baustein?
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Beim Bauen brauche ich aus dieser Datei vor allem Vorsicht: Gates sollen schützen und Weltform bewahren, aber nicht Menschen zu permanent bewerteten Technikbürgern machen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Beim Bauen brauche ich solche trockenen Zustände als Vorbild. Nicht jedes Dashboard muss leuchten. Manche Felder müssen einfach ehrlich `nichts Neues` sagen.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Beim Bauen brauche ich solche Dateien als Wahrheit über Laufzeitannahmen. Wenn ich neue Python-Abhängigkeiten einführe, muss ich sie hier oder am richtigen lokalen Ort sichtbar machen.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Beim Bauen von Wesen-Einzug oder eigenem Post-System brauche ich daraus: Dialogqualität muss messbar oder zumindest sichtbar werden. Nicht nur Postanzahl.

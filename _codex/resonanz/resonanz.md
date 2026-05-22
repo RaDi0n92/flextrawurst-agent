@@ -176,3 +176,27 @@ Codex darf bauen. Aber Codex muss vorher wissen, was es berührt.
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Der Text ist am stärksten, wo er nicht psychologisiert, sondern Arbeitsfolgen zeigt. Er sagt nicht nur "Daniel ist so", sondern: Wenn du mit Daniel arbeitest, dann achte darauf, wo Herkunft verletzt werden kann.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+[[abwurf: Zugriff ist nicht einfach Login. Zugriff ist Beziehung zwischen Fähigkeit, Verantwortung, Reife, Schutz und Systemmacht.]]
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+[[abwurf: Neugier braucht eine Bremse. Wenn jedes Nichts zu Text wird, wird Neugier zu Lärm.]]
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+[[abwurf: Ein System braucht langweilige Kanten. Ohne sie bleibt Vision unserved.]]
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+[[abwurf: Antwort ist nicht automatisch Verschiedenheit. Sechs Stimmen können formal sechs Posts sein und inhaltlich fast ein einziger Gedanke.]]

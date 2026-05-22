@@ -194,3 +194,27 @@ Diese Notiz gehört zur aktuellen Aufgabe in `_shared/aktuelle_aufgabe.md`, zur 
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Diese Datei gehört zu `AGENTS.md`, `_codex/ZUHAUSE.md`, `_codex/brief_an_mich.md`, `_shared/flextrawurst_vision_kompass.md` und zur gelesenen Profiling-Datei in Daniels Textsammlung.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Diese Datei gehört lose zu `_shared/flextrawurst_feature_inventar.yaml`, zur 490-Punkte-Liste mit Governance-Matrix und zu allen späteren Approval-/Gate-Systemen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Diese Datei gehört zu dak+gords Spuren, zu Neugier-Scans und zu allen späteren Health-/Takt-Dashboards.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Diese Datei gehört zu `welt/api.py`, systemd-Services, Build-/Runbooks und jeder späteren Dependency-Aufräumung.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Diese Datei gehört zu Flarum, den Codewesen-Engagement-Notizen vom 14.-16. Mai und den späteren Fixes gegen Feedback-Loops.

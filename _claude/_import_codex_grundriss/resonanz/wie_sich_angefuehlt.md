@@ -181,3 +181,27 @@ Wie Betrieb statt Vision: kleine Pfade, tatsächliche Logs, ein falscher Ordnern
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Wie ein Wechsel von Maschinenraum zu Selbstbeschreibung. Erst Docker, Init-Hooks, Fenstergrößen und Heap-Druck; dann ein Text, der sagt, warum solche technischen Kleinteile in diesem Werkraum überhaupt Gewicht haben.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Wie eine kleine Ausgrabung in einem älteren Sprachsediment. Nicht spektakulär, aber deutlich: manche Motive waren lange vor der aktuellen First-Surface-Vision schon da.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Wie ein kleiner Stopp mitten im wilden Suchen. Diese Datei hat die Suche entdramatisiert.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Wie absichtliches Herunterzoomen auf den Boden. Nach Bild, Forum, Neugier und frühen Ideen ist diese Datei fast komisch trocken.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Wie ein kurzer Blick in eine frühere Laborphase des Forums. Es lebt, aber noch nicht frei genug.

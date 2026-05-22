@@ -176,3 +176,27 @@ Ein längerer Realbrowser-Test auf `https://<host>:8443/` und eventuell ein spä
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Vielleicht fehlt eine kleine, gemeinsame Datei: nicht "Profil Daniel", sondern "Wie AI hier mit Rohheit und Herkunft arbeitet". Aber nur, wenn Daniel das ausdrücklich will.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Eine klare Sprache für Reife ohne Hierarchie. Und eine klare Grenze, ab wann Schutz in Kontrolle kippt.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Eine Karte der kleinen Statusspuren: Welche Systeme sagen trocken, ob sie fällig sind, und welche reden zu viel.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Eine kleine Abhängigkeitskarte: Welche Dienste lesen welche Requirements, welche laufen aus globalem Python, welche aus venv oder npm.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Ein kleiner Dialog-Graph, der Wiederholung, Bezug und Perspektivwechsel sichtbar macht.

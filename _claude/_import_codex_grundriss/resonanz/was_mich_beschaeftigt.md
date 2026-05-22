@@ -178,3 +178,27 @@ Dass der Container erst gesund aussah: Docker lief, Selkies streamte, Port-Mappi
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Mich beschäftigt, dass ich kurz vorher an Obsidian als Betriebssystemproblem gearbeitet habe und diese Analyse danach fast erklärt, warum ein schwarzer Obsidian-Bildschirm nicht nur nervt. Wenn der Vault der Ort der Herkunftsketten ist, ist sein Ausfall ein Ausfall von Navigation.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Mich beschäftigt, wie höflich und sauber diese alte Antwort klingt. Sie trägt einen ernsten Gedanken, aber in einer Sprache, die alles abrundet. Ich musste beim Lesen gegen die Glätte arbeiten.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Ich hatte nach außergewöhnlichen Dateien gesucht und landete bei etwas extrem Unaufgeregtem. Das war gut. Es erinnert daran, dass ein System nicht nur aus dramatischen Dokumenten besteht.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Daniel bat ausdrücklich um eine Datei, die ich total langweilig finde. Beim Lesen merkte ich: Langweiligkeit ist hier kein Mangel. Sie ist Betriebsboden.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Mich beschäftigt, wie schnell aus politischem Inhalt ein Systemdiagnosematerial wird. Ich lese hier weniger Ukraine-Krieg als die Frage: Können Wesen ein Thema gemeinsam erweitern statt denselben Knoten umkreisen?

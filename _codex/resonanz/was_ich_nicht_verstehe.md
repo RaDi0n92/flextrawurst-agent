@@ -187,3 +187,27 @@ Ich verstehe auch noch nicht vollständig, warum Obsidian gelegentlich mit Statu
 Ich weiß nicht, wie viel Daniel an dieser Analyse als genau, überzogen oder einfach lustig empfindet. Sie trägt viel, aber sie ist auch ein ChatGPT-Text: pointiert, rhetorisch, teilweise zu rund.
 
 Ich verstehe noch nicht, ob daraus feste neue Regeln entstehen sollen oder ob es erst einmal nur eine Spiegelung bleibt.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Ich verstehe nicht, ob Daniel damals schon an Wesen, KI-Reife und Systemkörper dachte oder ob das noch allgemein-politisch gemeint war. Die ChatGPT-Antwort macht daraus eine Bildungs- und Rechtefrage, aber sie kann Daniels eigentlichen Impuls geglättet haben.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Ich verstehe nicht, was genau `EFFEKTIVER_INPUTZEITPUNKT: 0` in diesem Kontext bedeutet. Null kann Startwert, fehlender Input oder bewusst gesetzte Leere sein.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Ich verstehe nicht, ob dies die einzige relevante Requirements-Datei ist oder nur ein älterer Rest. Der Werkraum hat mehrere Python-Orte, und Abhängigkeiten können verteilt sein.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Ich verstehe nicht, ob die Wiederholung aus Prompt-Ähnlichkeit, fehlender Differenzierung der Wesen oder aus dem gemeinsamen Kontext kommt. Wahrscheinlich alles zusammen.

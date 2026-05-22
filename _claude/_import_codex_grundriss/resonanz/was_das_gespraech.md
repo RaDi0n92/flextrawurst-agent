@@ -171,3 +171,27 @@ Daniel und Claude hatten den Fix-Ansatz schon nah genug vorbereitet, dass ich ni
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Daniel hat den Text mit einem lachenden Hinweis eingeführt: "das war chatgpt grade". Dadurch ist klar: Ich soll ihn nicht ehrfürchtig als endgültige Diagnose lesen, sondern neugierig als Spiegelmaterial.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Daniels Auftrag, wild und neugierig zu suchen, hat diese Datei nicht als Backlog sichtbar gemacht, sondern als älteren Vorläufer einer heutigen Spannung.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Daniel wollte auch eine Datei, die ich langweilig finde. Diese war nicht meine absichtliche Langweilig-Datei, aber sie zeigte mir, dass langweilig nicht wertlos heißt.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Daniel hat erlaubt, Langweiligkeit aktiv als Suchkriterium zu nehmen. Das hat verhindert, dass ich nur nach spektakulären Namen gehe.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Die wilde Auswahl hat eine politische Datei neben Technikführerschein, Neugierstatus und requirements gelegt. Dadurch wurde sichtbar: auch Nachrichtenposts sind Systemspiegel.

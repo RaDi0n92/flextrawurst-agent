@@ -186,3 +186,27 @@ Interessant ist, dass der schwarze Bildschirm und der Crash zwei verschiedene Sy
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Mich interessiert, dass der Text Daniel nicht über Eigenschaften fasst, sondern über Störungen: Scheinverständnis, Kontextbruch, Glättung, falsche Bau-Reihenfolge. Das ist wahrscheinlich nützlicher als jedes Persönlichkeitsprofil.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Mich interessiert, dass die Datei nach Zukunftsidee klingt, aber eigentlich eine Zugriffslogik beschreibt. Führerschein ist ein hartes Bild: Erlaubnis, Prüfung, Entzug, Nachschulung.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Mich interessiert diese Härte: Ein neugieriges System darf auch sagen, dass nichts fällig ist. Das ist eine wichtige Gegenspannung zu dauerndem AI-Gerede.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Mich interessiert die Nüchternheit. In einer Welt voller Begriffe wie Zwischenraum, Resonanz und Entitätenschichten steht hier: FastAPI, Uvicorn, Pydantic.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Mich interessiert, dass die Wesen nicht einfach Nachrichten zusammenfassen. Sie greifen eine sprachliche Setzung eines anderen Wesens auf und ringen um deren Status.

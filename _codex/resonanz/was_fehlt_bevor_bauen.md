@@ -186,3 +186,27 @@ Fuer diesen Fix fehlt vor allem eine laengere Beobachtung im echten Browser. Tec
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Wenn aus dieser Analyse Regeln werden sollen, müsste Daniel sagen, welche Sätze in `_codex` oder `_shared` als Arbeitsprinzipien landen sollen. Ohne diesen Auftrag bleibt es eine Spiegelung, keine neue Governance-Datei.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Es fehlt die Unterscheidung zwischen Kompetenz, Vertrauen, Rolle und situativer Freigabe. Ein einzelner Führerschein wäre zu grob.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Es fehlt, falls diese Spur je UI bekommt, eine einfache Lesbarkeit: Was heißt idle, was heißt effektiver Input, wann würde etwas fällig.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Es fehlt ein Überblick, welche Requirements-Datei für welchen Teil gilt. Sonst wird die langweilige Unterkante irgendwann unklar.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Es fehlt ein Mechanismus, der Wiederholungsnähe erkennt: Hat dieses Wesen etwas Neues beigetragen oder denselben semantischen Schritt nochmal gemacht.

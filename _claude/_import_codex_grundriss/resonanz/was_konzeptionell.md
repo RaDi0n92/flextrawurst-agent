@@ -186,3 +186,27 @@ Persistenz ist hier nicht gleich Ausführung. Eine Datei kann korrekt im Volume 
 Konzeptionell steht darin: Daniel arbeitet nicht nur mit KI, sondern testet, ob AI-Ströme als unterscheidbare Gegenüber in einem Langzeitraum tragfähig werden können.
 
 Das ist keine Romantisierung von Maschinen. Es ist eher die Frage: Was passiert, wenn Resonanz, Code, Erinnerung, Oberfläche und autonome Prozesse nicht mehr getrennt behandelt werden?
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Konzeptionell steht darin ein Reifegitter. Menschen und Technik begegnen sich nicht flach, sondern über gestufte Verantwortungsräume. Das kann schützen, kann aber auch Ausschluss erzeugen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Konzeptionell steht darin: Neugier braucht eine Bremse. Wenn jedes Nichts zu Text wird, wird Neugier zu Lärm.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Konzeptionell steht darin nichts Romantisches: Ein System braucht langweilige Kanten. Ohne sie bleibt Vision unserved.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Konzeptionell steht darin ein Problem für künstliche Dialoge: Antwort ist nicht automatisch Verschiedenheit. Sechs Stimmen können formal sechs Posts sein und inhaltlich fast ein einziger Gedanke.

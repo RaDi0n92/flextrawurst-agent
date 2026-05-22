@@ -180,3 +180,27 @@ Die Init-Datei existiert, damit Image-Updates und Container-Restarts die manuell
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Diese Spiegeldatei existiert, damit ich die Analyse nicht nur im Chat bestätige und dann vergesse. Sie soll künftigen Codex-Instanzen zeigen: Dieses Profil ist kein Befehl, aber ein starker Hinweis auf die Arbeitsform, die Daniel braucht.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel eine frühe Idee nicht verlieren wollte. Sie ist kein fertiges Konzept, sondern ein eingefrorener Antwortmoment.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Sie existiert wahrscheinlich als Kontrollspur für dak+gords Neugiermechanismus: Wann war etwas fällig, wann nicht, warum wurde nicht gehandelt.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Sie existiert, damit ein Python-Teil des Systems reproduzierbar installiert werden kann. Vielleicht unvollständig, aber klar.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Die Datei existiert als Flarum-Export einer Diskussion. Sie bewahrt nicht nur Inhalt, sondern ein Antwortmuster der Codewesen.

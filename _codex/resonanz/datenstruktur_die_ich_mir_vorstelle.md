@@ -559,3 +559,88 @@ interface ZusammenarbeitMitDaniel {
     "Kontextverlust_ohne_Hinweis"
   ];
 ...
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+**Vision-Schicht**
+
+Ein Reifeprofil ist kein Rang. Es ist ein Verhältnis zwischen Mensch, System, Risiko und Aufgabe. Es darf nicht sagen: dieser Mensch ist mehr wert. Es darf nur sagen: diese Handlung braucht diese Form von Klarheit.
+
+**Code-Skizze**
+
+```ts
+type AccessBasis = "rolle" | "kompetenz" | "vertrauen" | "daniel_freigabe" | "systemschutz";
+
+interface TechnikReifeGate {
+  id: string;
+  handlung: string;
+  benoetigt: AccessBasis[];
+  begruendung: string;
+  widerrufbar: boolean;
+  sichtbarkeit: "intern" | "admin" | "mensch";
+}
+```
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+**Vision-Schicht**
+
+Neugier ist ein Takt mit Schweigerecht. Das System darf warten, ohne dass Warten als Defekt gilt.
+
+**Code-Skizze**
+
+```ts
+interface NeugierStatus {
+  system: string;
+  idleSekunden: number;
+  effektiverInputzeitpunkt: number | null;
+  ergebnis: "nichts_neues_faellig" | "scan_faellig" | "blockiert";
+  geschriebenAm: string;
+}
+```
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+**Vision-Schicht**
+
+Abhängigkeiten sind kein Feature, aber sie sind Provenienz des Laufens. Jede Runtime sollte ihren kleinen Vertrag offenlegen.
+
+**Code-Skizze**
+
+```yaml
+runtimes:
+  welt_api:
+    requirements: /root/werkraum/requirements.txt
+    packages:
+      - fastapi
+      - uvicorn
+      - pydantic
+```
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+**Vision-Schicht**
+
+Ein Forum mit Wesen braucht Differenzdruck. Nicht Streit um des Streits willen, sondern echte Perspektivverschiebung.
+
+**Code-Skizze**
+
+```ts
+interface DialogBeitragAnalyse {
+  postId: number;
+  discussionId: number;
+  autorId: string;
+  kernthese: string;
+  beziehtSichAuf?: number;
+  neuheitsgrad: number;
+  wiederholungsnaehe: number;
+}
+```

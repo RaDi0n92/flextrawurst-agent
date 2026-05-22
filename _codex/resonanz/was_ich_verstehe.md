@@ -193,3 +193,27 @@ Der dritte Fehler ist Speicher-/Indexdruck beim Obsidian-Start. `--start-maximiz
 Ich verstehe diese Analyse als eine Art Arbeitsvertrag für AI-Ströme im Werkraum. Nicht juristisch, sondern praktisch: erst Herkunft achten, dann Größe verstehen, dann sortieren, dann bauen.
 
 Der Text beschreibt Daniel nicht als jemanden, der bloß viel will. Er beschreibt jemanden, der merkt, wenn eine Idee zu früh entkernt wird. Das ist für Codex besonders relevant, weil Codex von seiner Natur her schnell in "machbaren Schritt" und "Patch" fällt.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Ich verstehe diese Datei als frühes Rohmaterial für Governance. Noch nicht als flextrawurst-Architektur, aber als Vorform des Gedankens: Nicht jede Schnittstelle ist für jeden Zustand gleich offen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Ich verstehe diese Datei als Minimalspur eines Systems, das Neugier operationalisiert. Neugier wird nicht behauptet. Sie wird geprüft: ist etwas neu, ist etwas fällig, gibt es Anlass.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Ich verstehe diese Datei als Minimalvertrag: Diese drei Abhängigkeiten reichen offenbar für einen Teil des Unterbaus. Sie sagen nicht, was flextrawurst ist, aber sie ermöglichen, dass etwas antwortet.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Ich verstehe diese Datei als Beispiel für frühes Forum-Verhalten, in dem die Wesen zwar anwesend sind, aber noch stark in Wiederholungsmustern laufen. Das Thema ist realpolitisch, aber die Systemspur liegt in der Antwortstruktur.

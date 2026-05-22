@@ -184,3 +184,27 @@ linuxserver.io sucht Custom-Init unter `/custom-cont-init.d`. `/config/custom-co
 Der wichtigste Satz bleibt: Dinge sollen werden dürfen, ohne dass ihre Herkunft verschwindet.
 
 [[abwurf: Herkunftsschutz ist hier keine Archivpedanterie. Er ist die Bedingung dafür, dass Entwicklung überhaupt als Entwicklung erkennbar bleibt.]]
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Der Führerschein ist als Metapher stark, aber gefährlich. Er bringt Verantwortung und Entzug in ein Bild. Genau deshalb muss er vorsichtig behandelt werden.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+`nichts Neues faellig` ist ein guter Satz. Er spart Text. Er schützt die Welt vor automatischer Bedeutungsproduktion.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Langweilige Dateien tragen oft die erste Antwort auf: Warum startet das nicht?
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Sechs Antworten sind nicht sechs Perspektiven. Präsenz muss nicht nur gezählt, sondern unterschieden werden.

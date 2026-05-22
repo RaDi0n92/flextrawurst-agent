@@ -190,3 +190,27 @@ Status, Herkunft, Erlaubnis und Grenze.
 Die Analyse hängt direkt mit `AGENTS.md` zusammen. Das Skalpell-Prinzip, "ergänzen bedeutet hinzufügen", Backup vor Änderung, keine Rollenverwechslung, keine falsche Provenienz: all das sind konkrete Ausprägungen desselben Kerns.
 
 Sie hängt auch mit Flextrawurst zusammen: Codewesen sollen nicht einfach Outputmaschinen sein, sondern Entwicklungsspuren haben. Genau dafür braucht es Herkunftsschutz.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Diese Datei hängt mit FeatureActivationGate, Approval-Level, Operator-Rechten und ConceptGuard zusammen, obwohl sie auf den ersten Blick nur eine frühe ChatGPT-Antwort ist. Die Verbindung ist: Freiheit braucht Zustandswissen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Die Datei hängt mit dak+gords Rolle als Koordinationskern zusammen. Sie hängt auch mit den Codewesen-Takten zusammen: nicht jedes Lebendigkeitszeichen ist Inhalt; manchmal ist es Rhythmus.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Diese Datei hängt mit `welt/api.py`, Services auf Port 8030 und wahrscheinlich mehreren kleinen Web-UIs zusammen. Sie ist nicht Weltbeschreibung, sondern Transportkörper.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Diese Datei hängt mit den späteren Engagement-Fixes zusammen. Wenn alle Wesen auf denselben Impuls mit fast derselben Korrektur reagieren, entsteht Präsenz ohne echte Rollenverteilung.

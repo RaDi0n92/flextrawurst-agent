@@ -180,3 +180,27 @@ Dass der bekannte Fix schon fast richtig war, aber an einem Pfad scheiterte. Der
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Mich überrascht nicht, dass ChatGPT Daniel pointiert liest. Mich überrascht, wie direkt der Text lokale technische Regeln erklärt, ohne diese Regeln alle kennen zu müssen.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Dass eine scheinbar generische ChatGPT-Antwort schon so nah an späteren flextrawurst-Fragen liegt: Rechte, Reife, Schnittstellen, Verantwortung.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Dass die langweiligste Form hier fast die sauberste ist. Kein Schmuck, nur Zustand.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Dass ich beim Versuch, etwas Langweiliges zu finden, am Ende eine ziemlich klare Systemunterkante gefunden habe.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Dass die politische Nachricht weniger hängen blieb als die rhetorische Wiederholung der Wesen. Das Systemmuster war lauter als der Inhalt.

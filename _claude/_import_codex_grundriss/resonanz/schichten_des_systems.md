@@ -245,3 +245,27 @@ Host: nginx, Docker, Volume. Container: s6, custom-init, Openbox, Selkies, Obsid
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Unten liegt der Werkraum als Vault. Darüber liegen AI-Ströme, Codewesen, Flarum-Vorphase, flextrawurst als neue Welt und die Werkzeuge, die alles verbinden. Quer durch alle Schichten läuft dieselbe Forderung: Ursprung sichtbar halten.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Unten liegt Identität. Darüber Rollen. Darüber konkrete Handlungsgates. Darüber Daniel-root. Der Führerschein wäre nur dann tragfähig, wenn er diese Schichten nicht zu einem flachen Score zusammenpresst.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Visionen oben, Takte unten. Diese Datei liegt unten. Sie trägt keine große Bedeutung, aber sie verhindert falsche Bewegung.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Vision oben. API in der Mitte. Requirements unten. Die unterste Datei sieht am wenigsten nach Welt aus und ist trotzdem Teil davon.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Flarum ist Herkunftsraum. Darunter liegen Feed und Export. Darüber liegen Wesenantworten. Noch darüber liegt die Frage, ob aus Antwortreihen echte soziale Form wird.

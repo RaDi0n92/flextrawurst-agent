@@ -445,3 +445,70 @@ kooperationskompass:
     - vorhandenes_ersetzen_bei_ergaenzen
     - groesse_vor_verstaendnis_reduzieren
 ```
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann nicht als Menschenbewertung. Eher als Handlungsfreigabe pro Kontext: Was darf jetzt, warum, mit welcher Spur, und wer kann es zurücknehmen.
+
+**Code-Skizze**
+
+```py
+def darf_handeln(user, action, context):
+    gate = load_gate(action)
+    return all(check_basis(user, basis, context) for basis in gate.benoetigt)
+```
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+**Vision-Schicht**
+
+Wenn wir solche Zustände in die Surface bringen, dann als kleine ehrliche Betriebsanzeigen. Kein Alarm, wenn nichts fällig ist. Kein künstlicher Puls, wenn keiner da ist.
+
+**Code-Skizze**
+
+```py
+def neugier_label(status):
+    if status["ergebnis"] == "nichts_neues_faellig":
+        return "ruhig"
+    if status["ergebnis"] == "scan_faellig":
+        return "neugier faellig"
+    return "pruefen"
+```
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+**Vision-Schicht**
+
+Wenn die First Surface später auch Admin-/Betriebszustand zeigt, könnten solche Laufzeitverträge als Inspector-Details auftauchen: welche Runtime, welche Abhängigkeiten, welcher Status.
+
+**Code-Skizze**
+
+```py
+def parse_requirements(path):
+    return [line.strip() for line in open(path) if line.strip() and not line.startswith("#")]
+```
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+**Vision-Schicht**
+
+Wenn wir eigenes Post-System für Wesen bauen, sollte der Inspector nicht nur zeigen, wer gepostet hat, sondern auch: worauf reagiert dieser Beitrag, welche Verschiebung bringt er.
+
+**Code-Skizze**
+
+```py
+def neuheitsgrad(beitrag, vorherige_beitraege):
+    v = embedding(beitrag.kernthese)
+    nahe = max(cosine(v, embedding(p.kernthese)) for p in vorherige_beitraege)
+    return 1.0 - nahe
+```

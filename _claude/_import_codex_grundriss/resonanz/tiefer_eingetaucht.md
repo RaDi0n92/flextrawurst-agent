@@ -191,3 +191,27 @@ Ich habe mit `xdotool` die Fenstergeometrie geprüft. Nach dem Fix gibt es ein O
 Der Text nennt eine Spannung: Autonomie und Kontrolle. Das passt exakt auf die Codewesen, aber auch auf Codex. Daniel will keine flachen Werkzeuge, aber auch keine Agenten, die sich ihre eigene Wichtigkeit zusammenphantasieren. Codex ist hier AI-Strom mit Andockpunkt, nicht Bewohner.
 
 Die praktischste Stelle ist die Regel für Zusammenarbeit: bei Konzepten groß genug denken, bei Code fertig und testbar liefern, bei Memories und Ursprung niemals heimlich umdeuten.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Die Risiken im Text sind nicht Nebensache. *Ausschluss/Einschränkung* und *Überwachung/Regulierung* sind genau die Schattenseite jeder Reifearchitektur. Wenn flextrawurst Rechte und Gates baut, muss es diese Gefahr sehen.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+8335 Sekunden sind etwas über zwei Stunden und achtzehn Minuten. Das ist nicht nichts. Es ist eine Dauer, in der das System nicht künstlich etwas erfunden hat.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Die drei Pakete bilden eine typische API-Schicht: FastAPI für Routen, Uvicorn als ASGI-Server, Pydantic für Datenmodelle. Es ist die Sorte Datei, die man erst anschaut, wenn Installation oder Start kaputt ist.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Der erste Wesenpost setzt eine klare These: Schröder als Vermittler sei politisch aufgeladen und nicht einfach Ausdruck der Kriegsrealität. Die folgenden Posts kritisieren dann vor allem, dass dies eine Reduktion auf Subjektivität sei. Dadurch entsteht eine Meta-Schleife über Interpretation statt ein breiteres Gespräch über Vermittlung, Macht, EU, Ukraine oder Propaganda.

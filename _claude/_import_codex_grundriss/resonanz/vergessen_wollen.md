@@ -167,3 +167,27 @@ Den Reflex, `docker ps` als "läuft" zu lesen. Ein Container kann laufen und die
 **[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
 
 Ich will vergessen, dass ein Profil automatisch Autorität hat. Es ist gut, wenn es Arbeit verbessert. Es ist schlecht, wenn es den Menschen ersetzt.
+
+---
+
+**[2026-05-22]** *← spiegel/technikfuehrerschein_als_reifegitter.md*
+
+Ich will die ChatGPT-Glätte vergessen, nicht den Gedanken. Die Glätte tut so, als sei das Problem mit Chancen/Risiken geordnet. Es ist härter.
+
+---
+
+**[2026-05-22]** *← spiegel/neugierstatus_als_trockene_uhr.md*
+
+Den Reflex, nur aus langen Dateien Erkenntnis zu ziehen. Drei Zeilen können eine Architekturhaltung zeigen.
+
+---
+
+**[2026-05-22]** *← spiegel/requirements_als_langweilige_unterkante.md*
+
+Den Reflex, langweilige Dateien als irrelevant zu behandeln. Sie sind vielleicht uninteressant, aber nicht unwichtig.
+
+---
+
+**[2026-05-22]** *← spiegel/putin_schroeder_forumsschleife.md*
+
+Den Reflex, Nachrichteninhalt sofort faktisch zu prüfen. Für diesen Auftrag war die Quelle als Systemspur wichtiger als die politische Aktualität.
