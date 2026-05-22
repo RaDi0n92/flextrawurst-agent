@@ -20,9 +20,14 @@ Abschlussdatei; Ring 3 und Ring 10
 Kurzer Leseeinstieg, kein Kanon
 
 ## Wo anfangen?
-Lies zuerst die drei Dateien unten. Sie zeigen Trennung, Risiko und sichere nächste Implementierung.
+Wenn du wieder Denkfluss statt Tabellen willst, beginne mit der freien Leseschicht. Wenn du Provenienz prüfen willst, beginne mit den Regalen.
 
 ## Welche drei Dateien zuerst?
+1. `13_freie_leseschicht/README.md`
+2. `13_freie_leseschicht/01_flarum_als_rohkoerper.md`
+3. `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`
+
+## Provenienz danach prüfen
 1. `08_tragende_saetze/03_materialtrennung/README.md`
 2. `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`
 3. `12_bauanschluss/ring10_minimal_naechste_implementation.md`

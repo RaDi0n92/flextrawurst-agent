@@ -603,3 +603,39 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 **[2026-05-22]** *← codex_flarum_analyse/README_DANIEL_ZUERST_LESEN.md*
 
 Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/01_flarum_als_rohkoerper.md*
+
+Flarum wird als Herkunftskörper lesbar: wirksam, aber nicht final.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md*
+
+Die Wesen werden als gegenseitige Korrekturfunktionen lesbar, nicht als feste Charakterkarten.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/03_struktur_leere_reibung_benennung.md*
+
+Die Grundbegriffe sind keine Schlagworte, sondern doppelte Systemspannungen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md*
+
+Admin wird als Aufmerksamkeits- und Resonanzschicht lesbar, nicht als automatische Weltregelquelle.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md*
+
+Flextrawurst soll Anforderungen aus Flarum lernen, nicht Flarum als Oberfläche übernehmen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/README.md*
+
+Freie Leseschicht: Verbindung nach der Sortierung, aber kein Kanon.

@@ -1378,3 +1378,75 @@ def darf_wirken(eintrag):
 def darf_wirken(eintrag):
     return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/01_flarum_als_rohkoerper.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/03_struktur_leere_reibung_benennung.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/README.md*
+
+**Vision-Schicht:** Beim Bauen wird diese Schicht nicht importiert wie Wahrheit, sondern als Orientierung für Review, UI-Fragen und Daniel-Entscheidungen gelesen.
+
+**Code-Skizze:**
+```python
+def nutze_leseschicht(text):
+    return {"display_as": "interpretation", "world_effect": False}
+```

@@ -1641,3 +1641,99 @@ interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; s
 type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
 interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/01_flarum_als_rohkoerper.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/03_struktur_leere_reibung_benennung.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/README.md*
+
+**Vision-Schicht:** Eine freie Leseschicht steht neben den Regalen. Sie darf verbinden, aber sie muss ihre Fäden zeigen.
+
+**Code-Skizze:**
+```ts
+interface FreieLeseschicht {
+  text: string;
+  basiertAuf: string[];
+  status: "interpretation";
+  darfAlsQuelleGelten: false;
+}
+```

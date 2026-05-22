@@ -789,3 +789,63 @@ Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als 
 Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
 
 Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/01_flarum_als_rohkoerper.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/03_struktur_leere_reibung_benennung.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/README.md*
+
+Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate, Rohquellenprüfung, Quellenprofile, Übergangsmodell und Bauanschluss. Diese Datei versucht, aus dieser Trennung wieder einen lesenden Zusammenhang zu machen.
+
+Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
+
+Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.

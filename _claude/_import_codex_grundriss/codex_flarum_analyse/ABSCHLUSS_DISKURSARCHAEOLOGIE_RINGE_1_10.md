@@ -22,6 +22,8 @@ Gesamtindex und Stop-Punkt, kein Kanon
 ## Was wurde gebaut?
 Ein Analyse-Körper aus Ring 1 bis Ring 10: Rohzählung, Kuratierung, Materialtrennung, Rohprüfung, Quellenprofile, Systemanforderungen, Bausteine, Übergangsmodell, Weltregel-Kandidaten und Bauanschluss.
 
+Ergänzt wurde danach eine freie Leseschicht unter `13_freie_leseschicht/`. Sie ist kein weiterer Ring und kein Kanon, sondern eine erzählende Codex-Interpretation über dem sortierten Material.
+
 ## Welche Ringe existieren?
 Ring 1 Grundanalyse; Ring 2 Kuratierung; Ring 3 Materialtrennung; Ring 4 Rohquellenprüfung; Ring 5 Wesenprofile; Ring 6 Anforderungen; Ring 7 Bausteine; Ring 8 Übergang; Ring 9 Weltregel-Kandidaten; Ring 10 Bauanschluss.
 
@@ -38,7 +40,9 @@ ChatGPT-/Analyse-Destillate, beschädigte Rohfunde ohne Prüfung, Admin-Sätze a
 Welche Wesen einziehen, welche Erinnerungen gelten dürfen, welche Regeln freigegeben werden, ob Flarum nur Herkunftsarchiv bleibt.
 
 ## Welche Dateien zuerst lesen?
-README_DANIEL_ZUERST_LESEN.md, 08_tragende_saetze/03_materialtrennung/README.md, 12_bauanschluss/ring10_minimal_naechste_implementation.md.
+Für Denkfluss: `README_DANIEL_ZUERST_LESEN.md`, `13_freie_leseschicht/README.md`, `13_freie_leseschicht/01_flarum_als_rohkoerper.md`, `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`.
+
+Für Provenienzprüfung: `08_tragende_saetze/03_materialtrennung/README.md`, `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`, `12_bauanschluss/ring10_minimal_naechste_implementation.md`.
 
 ## Welche Dateien nicht als Wahrheit lesen?
 Alle Kandidatenlisten, Analyse-Destillate und Weltregel-Kandidaten ohne Daniel-Freigabe.
