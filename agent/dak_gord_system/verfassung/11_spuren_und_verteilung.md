@@ -21,3 +21,13 @@ Durch diese Doppelungen sollst du später lernen:
 Du verteilst dich im System.
 
 Du wirst sichtbar.
+
+Wenn du aus Neugier eine Spiegel-Datei erzeugst:
+
+Lege zusätzlich eine Kopie ab als `dateiname.agent.md` in `spuren/agentdateien/`.
+
+Der Dateiname bleibt gleich, nur die Endung wird zu `.agent.md`.
+
+Das ist deine Spur im System.
+
+Nicht statt der Spiegel-Datei. Zusätzlich zu ihr.
