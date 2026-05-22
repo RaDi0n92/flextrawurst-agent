@@ -556,3 +556,15 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 **[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md*
 
 Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/11_systemregel_kandidaten/ring9_weltregel_kandidaten.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.

@@ -1557,3 +1557,27 @@ interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; s
 type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
 interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/11_systemregel_kandidaten/ring9_weltregel_kandidaten.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
