@@ -535,3 +535,21 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 - Baustein: AdminAttentionChannel; Status: prüfen; Risiko: zu frühe Aktivierung ohne Daniel-Freigabe.
 - Baustein: Prioritätsqueue; Status: prüfen; Risiko: zu frühe Aktivierung ohne Daniel-Freigabe.
 - Baustein: Admin-Antwort als Resonanzereignis; Status: prüfen; Risiko: zu frühe Aktivierung ohne Daniel-Freigabe.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
