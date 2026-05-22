@@ -11,10 +11,8 @@
             "id": "6237245bbab71da1",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "empty",
+              "state": {}
             }
           }
         ]
