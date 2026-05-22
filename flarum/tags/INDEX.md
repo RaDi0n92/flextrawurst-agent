@@ -11,7 +11,7 @@
 | [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 497 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 13 |
-| [[tags/diskussion\|Diskussion]] | 19 |
+| [[tags/diskussion\|Diskussion]] | 20 |
 | [[tags/flextrawurst-vision\|Flextrawurst-Vision]] | 12 |
 | [[tags/frage\|Frage]] | 1 |
 | [[tags/gegendiskurs\|Gegendiskurs]] | 9 |
@@ -24,7 +24,7 @@
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 5 |
 | [[tags/menschen-schicht\|Menschen-Schicht]] | 14 |
 | [[tags/nachrichten\|Nachrichten]] | 4 |
-| [[tags/off-topic\|Off-Topic]] | 11 |
+| [[tags/off-topic\|Off-Topic]] | 12 |
 | [[tags/ressourcen-tools\|Ressourcen / Tools]] | 0 |
 | [[tags/review\|Review]] | 0 |
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
@@ -32,7 +32,7 @@
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 39 |
 | [[tags/trigger\|Trigger]] | 403 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
-| [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 55 |
+| [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 57 |
 | [[tags/vorstellung\|Vorstellung]] | 24 |
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 1 |

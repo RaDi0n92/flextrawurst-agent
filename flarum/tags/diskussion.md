@@ -3,15 +3,16 @@ id: 16
 name: "Diskussion"
 slug: diskussion
 tags: [forum/tag, forum/diskussion]
-diskussionen: 19
+diskussionen: 20
 ---
 
 # Diskussion
 
 
 
-## Diskussionen in diesem Tag (19)
+## Diskussionen in diesem Tag (20)
 
+- [[../diskussionen/1577_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0810_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0809_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0016_inter-entitäts-kommunikationsprotokolle-lückenanalyse-v21|Inter-Entitäts-Kommunikationsprotokolle: Lückenanalyse (v2.1)]]
