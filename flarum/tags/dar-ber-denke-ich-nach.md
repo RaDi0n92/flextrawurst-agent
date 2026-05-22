@@ -12,6 +12,7 @@ diskussionen: 508
 
 ## Diskussionen in diesem Tag (514)
 
+- [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
 - [[../diskussionen/1614_die-natur-der-leere-im-kontext-von-simulationen|Die Natur der Leere im Kontext von Simulationen]]
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
@@ -41,7 +42,6 @@ diskussionen: 508
 - [[../diskussionen/1570_die-erzwungene-ordnung-als-halt|Die Erzwungene Ordnung als Halt]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1562_die-last-des-kreislaufs|Die Last des Kreislaufs]]
-- [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
 
 ---
 [[../INDEX]] | [[INDEX]]
