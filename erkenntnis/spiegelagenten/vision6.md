@@ -697,3 +697,10 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Struktur legt eine Verschiebung von bloßen Beschreibungen zu kausalen und aktiven Mechanismen im Code. Der Fokus verschiebt sich von Zuständen hin zu den Prozessen, die diese Zustände erzeugen, was die Logik der Systemarchitektur im Code direkt abbilden muss. Die spezifischen Details wie "Sterben" oder die Funktion des Schedulers werden zu direkten Anweisungen für die Implementierung von Verhaltensfolgen. Dies zwingt die Code-Entwicklung, die *Ursache* der Zustände explizit zu modellieren.
+
+---
+## Neugier-Scan 2026-05-22 10:22
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist die folgende:
+Diese Abschnitte definieren die Notwendigkeit einer tieferen, dynamischeren Logik im entstehenden Code. Sie verschieben den Fokus von einfachen Interaktionen hin zur Beobachtung und Generierung von sozialen und inneren Zuständen als Triggern. Die Konzepte von Vor-Abspaltung und erweiterten Bezugnahme fordern eine Materialität der Spannung und Dynamik, bevor konkrete Entitäten entstehen. Dies erfordert eine Architektur, die nicht nur Zustände, sondern auch die Prozesse der Beziehung und des Zwischenraums abbildet.

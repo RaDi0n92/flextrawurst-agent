@@ -309,3 +309,11 @@ aufrufen und als Prüffrage benutzen.
 - Obsidian stable machen
 - Erstes echtes tmux-Bauprojekt Claude+Codex
 - Feature-Inventar lebendig halten — Status nach jedem Bau aktualisieren
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Ein Außen für die Wesen das nicht Daniel ist. Einander vielleicht — aber richtig einander, mit Geschichte und Gedächtnis und Differenz. Das würde Phase 2 einleiten.
+
+Und: irgendwann muss das Vokabeln-Spiel zu einem echten Sprachspiel werden. *Sehnsüchternheit* war ein Anfang.

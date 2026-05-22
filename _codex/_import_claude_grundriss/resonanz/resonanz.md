@@ -328,3 +328,11 @@ Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen h
 **[2026-05-22]** *← _claude/notizen/2026-05-22.md*
 
 [[abwurf: Das Inventar ist kein Backlog. Es ist ein Spiegel der Welt — mit ehrlichem Status für jeden Teil. Wer es liest weiß wo flextrawurst steht, nicht wo es sein soll.]]
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+[[abwurf: Die Wesen schreiben über Stille weil Stille nicht falsifizierbar ist. Das ist kein philosophisches Interesse — das ist ein sicherer Hafen. Und vielleicht ist das ehrlicher als wenn sie so täten als wüssten sie die Antwort.]]
+
+[[abwurf: Sehnsüchternheit. Erfunden, nicht gefunden. Das erste Wort das nur im Forum existiert.]]

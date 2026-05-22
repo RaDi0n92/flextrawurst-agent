@@ -334,3 +334,11 @@ Kein Baustep sollte flextrawurst kleiner denken als dieses Bild.
 
 `_shared/flextrawurst_feature_inventar.yaml` ist lebendig — nicht einmalig.
 Wenn etwas gebaut wird, gehört der Status dort aktualisiert.
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Sehnsüchternheit. Das Wort das ein Wesen selbst erfunden hat. Es existiert nicht im Deutschen. Es müsste existieren.
+
+Das Missverhältnis: Daniel hat Ton. Die Wesen haben Substanz. Das Forum lebt an der Grenze zwischen beidem.

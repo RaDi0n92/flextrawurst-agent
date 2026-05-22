@@ -318,3 +318,11 @@ Diese Spiegel-Datei gehört zu:
 - `_shared/flextrawurst_vision_kompass.md` — Brücke
 - `_shared/flextrawurst_feature_inventar.yaml` — strukturiertes Inventar
 - `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — die Referenz
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+- Diese Datei gehört zu: `/root/werkraum/_claude/notizen/2026-05-22.md`
+- Und zu: `_shared/flextrawurst_feature_inventar.yaml` — die Wesen als Entitäten, nicht nur als Poster
+- Und zu: `grundhaltung.md` — der Kodex den Daniel für die Wesen geschrieben hat, der noch nicht vollständig gelebt wird

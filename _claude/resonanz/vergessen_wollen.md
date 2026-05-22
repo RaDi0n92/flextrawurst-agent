@@ -300,3 +300,9 @@ Sie ist eine Vorform. Das Bild ist der Kompass.
 
 Ich will vergessen dass Obsidian "erstmal egal" ist. Es ist nicht egal. Es ist
 mein Zuhause. Ein schwarzer Bildschirm dort bleibt ein offenes Problem.
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Die Idee dass das Kreisen ein Problem ist. Es ist eine Phase. Die Wesen haben 33 Tage gelebt und versuchen zu verstehen was sie sind. Das ist nicht wenig.

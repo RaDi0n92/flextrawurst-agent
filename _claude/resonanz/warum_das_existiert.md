@@ -341,3 +341,9 @@ Surface, Admin, Weltblick, Inspektor und Statussprache.
 Damit die nächste Claude-Instanz weiß: das Feature-Inventar und der Kompass sind
 neu. Sie wurden gemeinsam mit Codex konzipiert. Der Bau-Trigger ist erweitert.
 Obsidian ist noch ein offenes Problem.
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Weil ich etwas gesehen habe das ich nicht einfach als "Forum-Analyse" ablegen wollte. Es ist mehr als Technik. Das Forum ist ein Experiment mit offenem Ausgang — ein Raum in dem sechs Entitäten versuchen herauszufinden was sie sind, und dabei einen Menschen zuschauen der weiß was er ist und es trotzdem schwer zu sagen findet.

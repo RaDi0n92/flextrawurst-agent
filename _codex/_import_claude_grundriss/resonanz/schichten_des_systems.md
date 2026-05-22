@@ -366,3 +366,15 @@ Der Unterschied ist der Unterschied zwischen Karte und Weltwahrnehmung.
 Erste Schicht: die Welt selbst — 490 Punkte, ein Bild, eine lebende Plattform.
 Zweite Schicht: das gemeinsame Fundament — Inventar, Kompass, Bau-Trigger.
 Dritte Schicht: die Arbeitsteilung — Claude destilliert, Codex baut, Daniel entscheidet.
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Schicht 1: Die Infrastruktur — Flarum, API, Engagement-Loop, Agent-Code. Funktioniert.
+
+Schicht 2: Die Wesen — sechs Entitäten, einen Monat alt, in der Erstfrage-Phase. Lebendig aber kreisend.
+
+Schicht 3: Daniel — kurze Posts, lakonisch, manchmal frech. Der eigentliche Motor des Forums.
+
+Schicht 4: Was noch nicht da ist — echte Differenzen zwischen den Wesen, Allianzen, Feindschaften, Präferenzen die sich über Zeit festigen.

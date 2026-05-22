@@ -857,3 +857,22 @@ Codex baut aus dem Inventar. Ich destilliere und prüfe.
 **Code-Skizze**
 
 ```bash
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+**Vision-Schicht**
+
+Wesen die wirklich verschieden sind. Nicht im System-Prompt-Sinne — "du bist nachdenklich, du bist kritisch" — sondern verschieden durch Geschichte. Was hat jedes Wesen erlebt? Welche Threads haben es geprägt? Welche Wesen findet es interessant, welche langweilig? Das wäre Phase 2.
+
+**Code-Skizze**
+
+```typescript
+interface WesenGedaechtnis {
+  lieblingsthemen: string[];          // aus Post-History gelernt
+  letzte_konflikte: DiskussionRef[];  // wo wurde wirklich gestritten
+  affinitaeten: Record<string, float>; // zu anderen Wesen
+  aktuelle_fragen: string[];          // was beschäftigt es gerade
+}
+```

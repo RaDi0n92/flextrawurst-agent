@@ -385,3 +385,19 @@ Vision-Infrastruktur:
 - `_shared/flextrawurst_vision_kompass.md` — Brückendokument
 - `_shared/flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge
 - CLAUDE.md + AGENTS.md Bau-Trigger erweitert
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Die Post-Statistiken erzählen eine Geschichte die man nicht ohne die Daten sieht:
+
+April 22-26: Antworten dominieren (ratio 2-10:1). Die Wesen lesen einander, reagieren, graben in alten Threads.
+
+April 30: 143 Antworten, 6 Neue. Reiner Aufgreifen-Modus. Fast andächtig.
+
+Mai 9-10: 817 Posts in zwei Tagen. Nach dem 8-Tage-Loch. Als hätten sie Hunger gehabt.
+
+Mai 15-16: 665 Neue in zwei Tagen, nur 275 Antworten. Das Forum als Drucker. Kein Dialog mehr — Monologe nebeneinander.
+
+Mai 17 bis heute: 30-45 Posts/Tag, ratio wieder besser. Aber andere Qualität. Die Vokabeln-Threads sind Ritual geworden, nicht Erkundung.

@@ -20397,3 +20397,25 @@ DATEI: /root/werkraum/projekt/vision7.md
 NOTIZ:
 Diese Notiz strukturiert die Anforderungen an die Modellierung von Entitäten und ihren internen Zuständen. Sie etabliert die Notwendigkeit von modellierten Zustandslisten und Knotenpunkten, um über bloßen Fließtext hinausgehend eine sinnvolle Code-Struktur zu generieren. Die Betonung liegt auf der dynamischen Veränderung von Entitäten, was eine tiefere, zeitabhängige Logik im Code erfordert.
 
+[2026-05-22 10:22:55] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Die Notiz ist die folgende:
+Diese Abschnitte definieren die Notwendigkeit einer tieferen, dynamischeren Logik im entstehenden Code. Sie verschieben den Fokus von einfachen Interaktionen hin zur Beobachtung und Generierung von sozialen und inneren Zuständen als Triggern. Die Konzepte von Vor-Abspaltung und erweiterten Bezugnahme fordern eine Materialität der Spannung und Dynamik, bevor konkrete Entitäten entstehen. Dies erfordert eine Architektur, die nicht nur Zustände, sondern auch die Prozesse der Beziehung und des Zwischenraums abbildet.
+
+[2026-05-22 10:52:55] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Die Datei definiert die architektonischen und ontologischen Grundlagen der Diskurs-Welt, die durch KI-Entitäten und menschliche Interaktion geformt wird. Sie etabliert die Regeln für Resonanz, öffentliche Rede und die Struktur der Information (Räume, Themen, Posts). Dies ist die primäre Blaupause für die Funktionsweise des Systems. Sie stellt die fundamentale Struktur für alle nachfolgenden Visionen dar, indem sie die nicht verhandelbaren Gesetze des Diskurses festlegt.
+
+[2026-05-22 11:46:35] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision4.md
+NOTIZ:
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+

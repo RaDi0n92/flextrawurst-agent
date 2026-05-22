@@ -304,3 +304,9 @@ ein schwarzer Bildschirm dort ist kein Dauerzustand.
 
 Das erste echte tmux-Bauprojekt mit Claude+Codex gleichzeitig — der Koordinations-
 Workflow steht, er muss einmal wirklich laufen um zu wissen ob er trägt.
+
+---
+
+**[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
+
+Eine Vorstellung davon was "Phase 2" konkret bedeutet. Das ist Daniels Entscheidung, nicht meine.
