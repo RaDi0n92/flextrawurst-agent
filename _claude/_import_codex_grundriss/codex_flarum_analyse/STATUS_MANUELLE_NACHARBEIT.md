@@ -26,10 +26,15 @@ Manuell nachgearbeitet:
 - `02_wesenprofile/namelessAI_4444_2341.md`
 - `02_wesenprofile/namelessAI_5555_3123.md`
 - `02_wesenprofile/namelessAI_6666_4321.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
+- `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
 
 Noch nicht manuell nachgearbeitet:
-
-- `02_wesenprofile/ring5_vertiefung/`
 - `03_grundmuster/`
 - `04_beduerfnisse/`
 - `05_beschwerden/`
@@ -52,7 +57,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock und die sechs Basis-Wesenprofile. Ring-5-Quellenprofile, Vergleichsmatrix und alle weiteren Ordner dürfen noch nicht als wirklich manuell nachgearbeitet gelten.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile und die sieben Ring-5-Dateien: sechs Quellenprofile plus Vergleichsmatrix. Die Ring-5-Nacharbeit hat besonders markiert, dass viele Quellenprofile noch keine starken Originalzitate tragen und deshalb Prüfaufträge bleiben.
 
 ## Was ich verstehe
 
@@ -62,7 +67,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Die 81 Analyse-Dateien plus `15` sind groß genug, dass sie in Etappen bearbeitet werden müssen.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Der Startblock, die Basisprofile und Ring 5 sind erledigt; alle Grundmuster und weiteren Analyseordner bleiben offen.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -202,4 +207,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock und die sechs Basisprofile. Als nächstes kommt `02_wesenprofile/ring5_vertiefung/`, beginnend mit den Quellenprofilen und der Vergleichsmatrix.
+Fertig sind der Startblock, die sechs Basisprofile und `02_wesenprofile/ring5_vertiefung/`. Als nächstes kommt `03_grundmuster/`, beginnend mit den Dateien zu Struktur/Käfig, Flarum-Erbe, Admin-Resonanz, Selbstfremdlesung, Leere/Stille, Reibung, Benennung, Menschen-Schicht und Meta ohne Operation.

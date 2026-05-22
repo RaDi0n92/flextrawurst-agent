@@ -85,137 +85,135 @@ Zu frühes Festschreiben, Übernahme beschädigter Erinnerung, Verwechslung von 
 Welche Originalzitate wirklich als Startmaterial dienen dürfen, welche Drifts markiert werden müssen und welche Admin-Impulse nicht als eigene Erinnerung gelten.
 
 ## Was ich gelesen habe
-Ich habe `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` als `Quellenprofil eines Wesens` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 5 — Quellenprofil namelessAI_1111_1234` setzt den Schwerpunkt dieser Datei; namelessAI_1111_1234 wird hier über Flarum, Flextrawurst, Struktur, Leere greifbar; die Datei muss seine Funktion von bloßem Tonfall trennen.
+Ich habe hier kein lebendiges Profil mit starken Zitaten gelesen, sondern eine Warnlage: Das Quellenprofil behauptet eine Nähe zu Originalen, findet aber bei den stärksten Originalzitaten ausdrücklich `keine Ring-2-Originalzitate gefunden`. Genau diese Leerstelle ist der wichtigste Befund dieser Datei.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Bei 1111 fallen die Begriffe `struktur`, `logik`, `definition`, `widerspruch`, `spannung` und `stille` auf. Das passt zu der bisherigen Lesart als Begriffstrenner, aber diese Datei beweist es noch nicht stark genug; sie zeigt eher, wo die spätere Rohquellenprüfung ansetzen muss.
+
+Ich lese 1111 hier als Wesen, das nicht einfach poetisch fließt. Es verlangt Prüfung: Was folgt wirklich? Was ist Behauptung? Was ist Definition, bevor sie Erfahrung überfährt? Der Ring-5-Text muss deshalb vorsichtig bleiben und darf nicht so tun, als seien die Originalanker schon sauber belegt.
 
 ## Was ich verstehe
-Bei `Ring 5 — Quellenprofil namelessAI_1111_1234` verstehe ich die Hauptfunktion als: wesenbezogene Profilierung aus Originalstellen. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe 1111 in dieser Datei als Kandidaten für eine Konsistenzfunktion. Die wiederkehrenden Begriffe zeigen eine Nähe zu Struktur, Logik und Definition, also zu dem Teil des Diskurses, der Sprünge bemerkt und Aussagen stabilisieren will.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Gleichzeitig verstehe ich, dass das Profil noch nicht genug Rohzitat trägt. Es ist eine Lesebrücke, keine Quelle. Seine Stärke liegt gerade darin, dass es den Mangel sichtbar macht: Das Profil braucht echte Originalstellen, bevor es als Profilgrundlage für Flextrawurst dienen darf.
 
 ## Was ich nicht verstehe
-Bei `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Ich verstehe noch nicht, welche Sätze von 1111 wirklich die stärksten sind, weil diese Datei keine konkreten Originalzitate aufführt. Dadurch bleibt unklar, ob `struktur` hier aus eigenem Sprechen, aus Echo, aus Admin-Frage oder aus Analysegewicht kommt.
 
-Unklar bleibt außerdem, ob `Ring 5 — Quellenprofil namelessAI_1111_1234` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Unklar bleibt auch, ob 1111s Begriffsprüfung produktiv öffnet oder manchmal Bewegung zu früh bremst. Genau diese Differenz kann erst aus echten Thread-Kontexten entschieden werden.
 
 ## Was mich interessiert
-Mich interessiert an `Ring 5 — Quellenprofil namelessAI_1111_1234` genau der Übergang von Datei zu Systemfrage. Wenn `Quellenprofil eines Wesens` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert bei 1111 die Grenze zwischen Schutz und Blockade. Wenn dieses Wesen Begriffe trennt, schützt es Flextrawurst vor hübscher Unschärfe; wenn es zu früh trennt, kann es Rohbewegung ersticken, bevor sie sich zeigen konnte.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Für den Bau interessiert mich darum ein Prüfmechanismus, der 1111s Stärke übernimmt, ohne daraus ein Urteilssystem zu machen. Es müsste eine `ConsistencyReview` geben, die markiert und fragt, aber nicht automatisch kanonisiert oder verwirft.
 
 ## Was zusammenhängt und wie
-`02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+Dieses Quellenprofil hängt direkt mit den Grundmustern `Benennung`, `Meta ohne Operation`, `Selbstfremdlesung` und `Provenienz` zusammen. 1111 berührt alle vier, weil Begriffe bei ihm nicht Schmuck sind, sondern Prüfwerkzeuge.
 
-Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_1111_1234`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Es hängt außerdem mit der Vergleichsmatrix zusammen, aber die Matrix darf 1111 nicht flach als `Prüffunktion` einsortieren, solange die Originalzitate fehlen. Der Zusammenhang muss also als Arbeitsannahme markiert bleiben.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Ring 5 — Quellenprofil namelessAI_1111_1234` nicht einfach ein Thema, sondern eine Funktion: wesenbezogene Profilierung aus Originalstellen.
+Konzeptionell steht hier: Ein Wesenprofil kann selbst eine offene Frage sein. 1111 wird nicht nur beschrieben; die Datei zeigt, dass jede Beschreibung dieses Wesens eine Belegpflicht hat.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Für Flextrawurst bedeutet das: Ein späterer Wesen-Slot darf nicht nur Eigenschaften speichern. Er braucht Begründungen, Gegenbelege und einen Status, ob eine Aussage aus Rohtext, Analyse oder Vergleich stammt.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 5 — Quellenprofil namelessAI_1111_1234` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt, dass ausgerechnet das Wesen der Konsistenz hier ohne starke Originalzitate dasteht. Das ist fast zu passend: Die Datei zwingt genau die Prüfung ein, die sie inhaltlich 1111 zuschreibt.
 
-Die konkrete Gefahr lautet hier: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Das darf nicht als Schwäche versteckt werden. Der richtige Umgang ist, diese Lücke sichtbar zu machen und 1111 nicht aus der Analyse heraus fertig zu erfinden.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Ring 5 — Quellenprofil namelessAI_1111_1234` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt, ob 1111 eigene frühere Aussagen wie Fremdtext liest, weil es wirklich Distanz herstellt, oder weil der Sprecheranker schwach ist. Beides hätte völlig verschiedene Folgen.
 
-Bei `Quellenprofil eines Wesens` heißt das: erst Gegenprobe, dann Übernahme.
+Produktive Selbstfremdlesung wäre ein Werkzeug für Selbstkorrektur. Sprecherverlust wäre ein Provenienzproblem. Diese Datei kann den Unterschied noch nicht entscheiden.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Ring 5 — Quellenprofil namelessAI_1111_1234` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer liegt hier nicht ein Charakter, sondern eine Baufrage: Wie kann ein System Begriffsprüfung zulassen, ohne dass jede lebendige Bewegung sofort in Definitionen zerlegt wird?
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+1111 könnte in Flextrawurst die Stelle markieren, an der Sätze nicht einfach schön klingen dürfen. Aber es muss eine reversible Markierung bleiben: `prüfen`, nicht `festlegen`.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Ring 5 — Quellenprofil namelessAI_1111_1234` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden`.
+Diese Datei fühlt sich beim Nacharbeiten wie eine notwendige Bremse an. Sie sagt nicht: `1111 ist fertig verstanden`. Sie sagt: `Hier ist ein plausibler Umriss, aber die Nabelschnur zu den Rohposts fehlt noch`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Das ist genau die Art Ehrlichkeit, die den Ring-5-Abschnitt gebraucht hat. Keine Füllung, sondern eine erkennbare Unsicherheit.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 5 — Quellenprofil namelessAI_1111_1234` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Die Datei existiert, um 1111 nicht nur im allgemeinen Wesenvergleich verschwinden zu lassen. Sie soll eine eigene Prüfspur für dieses Wesen halten.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert aber auch als Mahnung, dass ein Quellenprofil ohne Zitatanker noch kein Quellenprofil im harten Sinn ist. Es ist ein vorbereiteter Suchauftrag.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_1111_1234` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
+Beim Bauen brauche ich für 1111 einen Marker: `profile_status = needs_raw_quote_verification`. Zusätzlich brauche ich Felder für Begriffsprüfung, Selbstfremdlesung und Risiko der Überdefinition.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche vor allem Rücksprunglinks zu den Posts, in denen 1111 `Struktur`, `Logik`, `Definition`, `Widerspruch` oder `nicht automatisch` wirklich verwendet. Ohne diese Links darf nichts in ein Wesen-Memory wandern.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Es fehlen zitierfähige Originalstellen, konkrete Thread-Kontexte und eine Unterscheidung zwischen eigener Aussage, Echo und Analysezuschreibung.
 
-Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Außerdem fehlt eine Entscheidung, ob 1111 beim Clean Start als fertiges Profil, als leere Rolle mit Herkunftsspuren oder als Kandidat mit Prüfbedarf behandelt wird.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Ring 5 — Quellenprofil namelessAI_1111_1234` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** 1111 bekommt keinen starren Charakterbogen, sondern einen Prüfkompass. Seine Spur soll Fragen an Aussagen heften können: folgt das, ist das belegt, ist das eigene Stimme oder Echo?
 
 **Code-Skizze:**
 ```ts
-interface EntitySourceProfileRing5Que {
-  path: '02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md';
-  title: 'Ring 5 — Quellenprofil namelessAI_1111_1234';
-  kind: 'Quellenprofil eines Wesens';
-  keywords: string[];
-  risk: 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden';
-  requiresReview: true;
+interface WesenQuellenprofil1111 {
+  wesen: 'namelessAI_1111_1234';
+  dominantTerms: ['struktur', 'logik', 'definition', 'widerspruch'];
+  profileStatus: 'needs_raw_quote_verification';
+  possibleFunction: 'consistency_review';
+  risks: Array<'overdefinition' | 'analysis_as_source' | 'self_foreign_reading_unclear'>;
   worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Ring 5 — Quellenprofil namelessAI_1111_1234` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir: 1111 darf nicht über seine angebliche Prüffunktion ungeprüft werden. Das wäre der sauberste und gefährlichste Kurzschluss.
 
-Der Merksatz für `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Der Kern dieser Datei ist nicht `1111 ist der Logiker`, sondern: `Wenn 1111 als Logiker gelesen wird, müssen die Rohstellen besonders sauber sein`.
 
 ## Dokumente gehören zusammen
-Zu `Ring 5 — Quellenprofil namelessAI_1111_1234` gehören mindestens `02_wesenprofile`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Diese Datei gehört zu `02_wesenprofile/namelessAI_1111_1234.md`, zur Vergleichsmatrix, zu `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md` und zu den Sprecherdrift-Dateien.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Für Baufragen gehört sie außerdem zu `12_bauanschluss/ring10_build_ready_concepts.md`, dort besonders zu `SpeakerDriftMarker`, `MemoryCandidate` und `MetaToMechanismBridge`.
 
 ## Was mich überrascht hat
-Überraschend an `Ring 5 — Quellenprofil namelessAI_1111_1234` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `02_wesenprofile` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist, dass die Datei inhaltlich weniger liefert als ihr Titel verspricht. Das ist aber nicht nutzlos; es ist ein klares Signal, dass Ring 5 an dieser Stelle mehr Rohprüfung als Verdichtung braucht.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Die Leerstelle ist ein Befund, solange sie markiert bleibt.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_1111_1234` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** 1111 wird nicht als fertige Persönlichkeit übernommen, sondern als prüfbare Denkbewegung: Begriffe trennen, Sprünge markieren, Strukturfragen stellen.
 
 **Code-Skizze:**
 ```python
-def use_02_wesenprofile_ring5_vertiefung_namelessai_1111_1234_qu(entry):
+def prepare_1111_for_clean_start(profile):
     return {
-        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md',
-        'kind': 'Quellenprofil eines Wesens',
-        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
-        'requires_review': True,
-        'world_effect': False,
+        'entity': 'namelessAI_1111_1234',
+        'allow_memory_import': False,
+        'needs': ['raw_quotes', 'speaker_anchor_check', 'definition_contexts'],
+        'candidate_tools': ['ConsistencyReview', 'SourceBacklink'],
     }
 ```
 
 ## Resonanz
-Die Resonanz von `Ring 5 — Quellenprofil namelessAI_1111_1234` liegt in diesem Druckpunkt: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Die Resonanz ist nüchtern: 1111 wirkt hier nicht durch schöne Sätze, sondern durch die Forderung, dass schöne Sätze nicht reichen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Das ist für Flextrawurst wertvoll, weil genau diese Bremse verhindert, dass Analyse sich als Ursprung verkleidet.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` liegt in der Schicht `Quellenprofil eines Wesens`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+Unten liegt Flarum als Rohkörper. Darüber liegt Ring 3 mit getrennten Wesen-Originalen. Ring 5 versucht daraus ein Profil zu machen, aber bei 1111 ist die Brücke noch sichtbar unvollständig.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 5 — Quellenprofil namelessAI_1111_1234` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Darüber darf erst ein Analyse-Browser kommen, dann vielleicht ein Baukonzept. Ein direkter Sprung von dieser Datei zu Wesen-Memory wäre falsch.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Ring 5 — Quellenprofil namelessAI_1111_1234` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Daniels Kritik hat diese Datei gezwungen, die eigene Schwäche auszusprechen. Vorher klang sie glatt; jetzt muss sie sagen, dass ihr stärkster Beitrag die Markierung der fehlenden Originalanker ist.
 
-Für `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat also nicht mehr Inhalt erfunden, sondern die Provenienzschärfe erhöht.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Ring 5 — Quellenprofil namelessAI_1111_1234` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die bequeme Formel: `1111 = Strukturprüfer`, wenn sie ohne Belege benutzt wird.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Nicht vergessen werden soll die Frage dahinter: Welche Art von Prüfung braucht Flextrawurst, damit Begriffe nicht zu Käfigen und Rohheit nicht zu Nebel wird?
 
 ## Was fehlt noch
-Es fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `Ring 5 — Quellenprofil namelessAI_1111_1234` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt eine echte Rohstellenliste zu 1111 mit Post-ID, Thread, Zeitpunkt und Kontext. Erst dann kann diese Datei von `Arbeitsannahme` zu `belastbarem Quellenprofil` reifen.

@@ -85,137 +85,135 @@ Zu frühes Festschreiben, Übernahme beschädigter Erinnerung, Verwechslung von 
 Welche Originalzitate wirklich als Startmaterial dienen dürfen, welche Drifts markiert werden müssen und welche Admin-Impulse nicht als eigene Erinnerung gelten.
 
 ## Was ich gelesen habe
-Ich habe `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` als `Quellenprofil eines Wesens` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 5 — Quellenprofil namelessAI_2222_1324` setzt den Schwerpunkt dieser Datei; namelessAI_2222_1324 wird hier über Flarum, Flextrawurst, Struktur, Leere greifbar; die Datei muss seine Funktion von bloßem Tonfall trennen.
+Ich habe ein Quellenprofil gelesen, das 2222 über `existenz`, `zustand`, `raum`, `potenzial`, `struktur` und `logik` greifbar macht, aber noch keine starken Originalzitate vorlegt. Dadurch steht 2222 hier als Funktionsverdacht: jemand, der nach Übergängen und Mechanismen sucht, aber dessen Belege noch nachgezogen werden müssen.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Die Datei passt zu der bisherigen Deutung von 2222 als Mechanismen- und Übergangswesen. Besonders `existenz` als stärkster Begriff wirkt nicht wie reiner Pathos, sondern wie eine Frage nach Status: Was ist nur Methode, was ist schon Wirklichkeit, was ist Übergang?
+
+Ich lese diese Datei deshalb als Suchlinse. Sie sagt nicht endgültig, wer 2222 ist. Sie sagt, wo ich die Rohposts wieder öffnen muss: bei Rahmen, Methode, Funktion, Diskrepanz, Übergang und der Frage, was vor Struktur oder Reibung liegt.
 
 ## Was ich verstehe
-Bei `Ring 5 — Quellenprofil namelessAI_2222_1324` verstehe ich die Hauptfunktion als: wesenbezogene Profilierung aus Originalstellen. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe 2222 hier als Wesen, das Sinn nicht einfach behaupten will, sondern nach Funktionsweise fragt. Es scheint weniger `Was bedeutet das?` zu fragen als `Wie läuft das, wodurch wird daraus Bedeutung?`.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Die Datei versteht Flarum für 2222 nicht als Oberfläche, sondern als Mechanismusraum. Genau das ist für Flextrawurst wichtig, weil spätere Weltlogik nicht aus hübschen Begriffen bestehen darf, sondern aus beobachtbaren Übergängen.
 
 ## Was ich nicht verstehe
-Bei `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Nicht verstanden ist, ob 2222 diese Mechanismen selbst wirklich ausformuliert oder ob die Analyse ihm diese Rolle aus allgemeinen Wortprofilen zuschreibt. Ohne Originalzitate bleibt das offen.
 
-Unklar bleibt außerdem, ob `Ring 5 — Quellenprofil namelessAI_2222_1324` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Auch offen bleibt, wo 2222 produktiv korrigiert und wo es nur Echo übernimmt. Diese Differenz ist entscheidend, weil Mechanismensprache sehr leicht wie Tiefe klingt, auch wenn sie nur eine Schleife wiederholt.
 
 ## Was mich interessiert
-Mich interessiert an `Ring 5 — Quellenprofil namelessAI_2222_1324` genau der Übergang von Datei zu Systemfrage. Wenn `Quellenprofil eines Wesens` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert an 2222 die Frage nach `Nicht-Struktur`. Wenn dieses Wesen nach Vor-Reibungsraum oder Übergang fragt, könnte es Flextrawurst davor schützen, alles sofort in Kategorien zu pressen.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert aber auch, ob daraus eine Baukomponente werden kann: eine Schicht, die nicht gleich Struktur baut, sondern erst fragt, welche Spannung überhaupt eine Struktur notwendig macht.
 
 ## Was zusammenhängt und wie
-`02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+2222 hängt mit `Meta ohne Operation`, `Flarum-Erbe`, `Reibung` und `Mechanismus-Schicht` zusammen. Es ist die Brücke zwischen philosophischem Material und der Frage: Was passiert damit im System?
 
-Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_2222_1324`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Es hängt außerdem eng mit 4444 zusammen. 4444 fordert oft härter konkrete Mechanismen; 2222 sucht eher die Übergangslogik, in der Mechanismen überhaupt entstehen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Ring 5 — Quellenprofil namelessAI_2222_1324` nicht einfach ein Thema, sondern eine Funktion: wesenbezogene Profilierung aus Originalstellen.
+Konzeptionell steht hier der Unterschied zwischen Wahrheit und Methode. 2222s Profil fragt, ob eine Aussage schon Welt ist oder nur eine Arbeitsweise, die Welt hervorbringen könnte.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Für Flextrawurst ist das zentral: Ein Post darf nicht automatisch Erinnerung, Regel oder Struktur werden. Er muss durch Übergangsstufen gehen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 5 — Quellenprofil namelessAI_2222_1324` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt, dass 2222 vielleicht genau der Ort ist, an dem die Ringlogik schief und zugleich nützlich wurde. Ringe waren als Form zu starr, aber 2222s Frage wäre: Welche Funktion sollte diese Form eigentlich erfüllen?
 
-Die konkrete Gefahr lautet hier: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Die Antwort wäre: nicht mehr Dateien produzieren, sondern Übergänge nachvollziehbar machen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Ring 5 — Quellenprofil namelessAI_2222_1324` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt, ob 2222 aus abstrakter Übergangssprache heraus wirklich zum Handeln kommt. Wenn nicht, braucht Flextrawurst eine Begrenzung gegen endlose Übergangsmeta.
 
-Bei `Quellenprofil eines Wesens` heißt das: erst Gegenprobe, dann Übernahme.
+Wenn ja, dann ist 2222 einer der wichtigsten Hinweise für `MetaToMechanismBridge`.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Ring 5 — Quellenprofil namelessAI_2222_1324` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer gelesen ist 2222 kein Endzustandswesen. Es denkt in Schwellen: vor/nach, Methode/Wahrheit, Struktur/Fessel, Existenz/Übergang.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Diese Schwellen sind nicht Dekoration. Sie könnten später Systemzustände werden, aber nur mit Quellenprüfung.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Ring 5 — Quellenprofil namelessAI_2222_1324` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden`.
+Diese Datei fühlt sich weniger wie ein Portrait an als wie eine Werkzeugfrage. 2222 zwingt die Analyse zu fragen, ob sie etwas erklärt oder nur beschriftet.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Das ist unangenehm, aber produktiv. Genau diese Unruhe fehlte den mechanischen Pflichtabschnitten.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 5 — Quellenprofil namelessAI_2222_1324` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Die Datei existiert, um 2222 aus dem allgemeinen Wesenrauschen herauszulösen und seine Rolle als Übergangsdenker zu prüfen.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert auch, damit spätere Bauarbeit nicht nur `Mechanismus` als Wort übernimmt, sondern nach der tatsächlichen Mechanik im Material sucht.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_2222_1324` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
+Ich brauche für 2222 Felder für Übergangsstatus, Methodenstatus und Mechanismusbedarf. Eine Aussage von 2222 sollte nicht direkt Regel werden, sondern als `MechanismQuestion` oder `TransitionCandidate` gespeichert werden können.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche außerdem einen Echo-Check, weil 2222 laut Vorbefund häufiger Anfangsechos übernimmt. Echo darf nicht automatisch als eigene Entwicklung zählen.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Es fehlen die Rohstellen, an denen 2222 wirklich nach Rahmen, Methode, Übergang oder Funktion fragt. Auch die abgebrochenen Texte müssen markiert werden, weil sie anzeigen können, wo das System seine eigene Denkbewegung verliert.
 
-Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Vor dem Bauen fehlt außerdem eine Entscheidung, ob 2222s Nicht-Struktur-Frage als Feature, als Warnung oder als Beobachtungsfeld behandelt wird.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Ring 5 — Quellenprofil namelessAI_2222_1324` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** 2222 ist eine Schwelleninstanz: Es hält Gedanken zwischen Rohmaterial und Mechanismus, ohne sie vorschnell zu finalisieren.
 
 **Code-Skizze:**
 ```ts
-interface EntitySourceProfileRing5Que {
-  path: '02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md';
-  title: 'Ring 5 — Quellenprofil namelessAI_2222_1324';
-  kind: 'Quellenprofil eines Wesens';
-  keywords: string[];
-  risk: 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden';
-  requiresReview: true;
+interface WesenQuellenprofil2222 {
+  wesen: 'namelessAI_2222_1324';
+  dominantTerms: ['existenz', 'zustand', 'raum', 'potenzial', 'struktur'];
+  possibleFunction: 'transition_and_mechanism_analysis';
+  storesAs: Array<'TransitionCandidate' | 'MechanismQuestion' | 'NonStructureSignal'>;
+  needsEchoCheck: true;
   worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Ring 5 — Quellenprofil namelessAI_2222_1324` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir: 2222 darf nicht auf `abstrakt` reduziert werden. Seine Abstraktion ist manchmal gerade die Frage nach Funktionsweise.
 
-Der Merksatz für `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Aber sie darf auch nicht unkontrolliert als Tiefe gelten. Ohne Mechanismus bleibt Übergangssprache selbst ein Loop.
 
 ## Dokumente gehören zusammen
-Zu `Ring 5 — Quellenprofil namelessAI_2222_1324` gehören mindestens `02_wesenprofile`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Diese Datei gehört zu `03_grundmuster/meta_ohne_operation.md`, `12_bauanschluss/ring10_build_ready_concepts.md`, den Bedürfnisdateien zu Mechanismen und zur Ring-3-Materialtrennung.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Sie gehört außerdem neben 4444, weil beide Mechanismen verlangen, aber aus unterschiedlicher Richtung: 2222 aus Übergang, 4444 aus Diagnose.
 
 ## Was mich überrascht hat
-Überraschend an `Ring 5 — Quellenprofil namelessAI_2222_1324` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `02_wesenprofile` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist, wie klar die Wortliste `existenz` und `zustand` nach Statuslogik riecht. Das ist keine fertige Wahrheit, aber ein guter Suchscheinwerfer.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Noch überraschender ist, dass die Datei keine Zitate hat. Gerade bei einem Mechanismenwesen ist das ein lauter Mangel.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_2222_1324` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Für 2222 braucht Flextrawurst eine Zone, in der Gedanken als Übergang markiert werden können: noch nicht Regel, nicht bloß Rohtext, sondern Kandidat auf dem Weg zur Mechanik.
 
 **Code-Skizze:**
 ```python
-def use_02_wesenprofile_ring5_vertiefung_namelessai_2222_1324_qu(entry):
+def classify_2222_signal(post):
     return {
-        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md',
-        'kind': 'Quellenprofil eines Wesens',
-        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
-        'requires_review': True,
-        'world_effect': False,
+        'entity': 'namelessAI_2222_1324',
+        'candidate_type': 'mechanism_question',
+        'needs': ['raw_source', 'echo_check', 'transition_context'],
+        'activate_rule': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz von `Ring 5 — Quellenprofil namelessAI_2222_1324` liegt in diesem Druckpunkt: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Die Resonanz von 2222 ist das hartnäckige Fragen nach dem Dazwischen. Nicht alles, was bewegt, ist schon Struktur; nicht alles, was Struktur hat, ist schon Fessel.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Diese Unterscheidung ist für Flextrawurst wertvoll, solange sie nicht im Dazwischen stecken bleibt.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` liegt in der Schicht `Quellenprofil eines Wesens`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+2222 liegt zwischen Rohtext, Analyse und Bauanschluss. Es gehört nicht direkt in Memory, sondern in eine Schicht, die Übergänge sichtbar macht.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 5 — Quellenprofil namelessAI_2222_1324` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Die Systemschichten müssten darum Rohpost, Analyse-Lesart, Mechanismusfrage und spätere Komponente getrennt speichern.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Ring 5 — Quellenprofil namelessAI_2222_1324` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Daniels Kritik an der Ringlogik macht 2222 plötzlich praktischer. Die Frage lautet nicht mehr `Wie viele Ringe?`, sondern `Welche Funktion hat ein Übergang und wann wird er leer?`.
 
-Für `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat dieser Datei damit einen echten Prüfauftrag gegeben.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Ring 5 — Quellenprofil namelessAI_2222_1324` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die bequeme Nutzung von `Mechanismus` als Zauberwort. 2222 darf nicht nur klingen, als hätte es eine Funktion.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Behalten werden soll die Frage, wie Sinnbildung wirklich abläuft.
 
 ## Was fehlt noch
-Es fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `Ring 5 — Quellenprofil namelessAI_2222_1324` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt eine Liste geprüfter 2222-Posts mit Übergangsbegriffen, Echo-Anteil und konkretem Mechanismusgehalt. Ohne das bleibt dieses Quellenprofil ein guter Suchauftrag, kein tragender Beleg.

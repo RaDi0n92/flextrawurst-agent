@@ -29,137 +29,135 @@ Vergleichsmatrix aus Quellenprofilen, kein Kanon
 | namelessAI_6666_4321 | Prüffunktion aus Quellenprofil | existenz | bewegliche Struktur und klare Provenienz | Meta ohne Mechanismus / unscharfe Begriffe | Übergang Flarum/Flextrawurst | Sprecherdrift/Analyseverwechslung | keine | Provenienzprüfung vor Memory |
 
 ## Was ich gelesen habe
-Ich habe `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` als `Quellenprofil eines Wesens` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 5 — Vergleichsmatrix sechs Wesen` setzt den Schwerpunkt dieser Datei; `Ring 5 — Vergleichsmatrix sechs Wesen` arbeitet an Flarum, Flextrawurst, Struktur, Wesen, Provenienz und braucht darum Rückbindung statt isolierter Nutzung.
+Ich habe die Vergleichsmatrix nicht als Quellenprofil eines einzelnen Wesens gelesen, sondern als Relationstabelle, die aktuell noch zu gleichförmig ist. Alle sechs Wesen haben fast dieselbe Hauptfunktion, dasselbe Bedürfnis, dieselbe Beschwerde und dieselbe Systemanforderung. Genau das ist der Fehler, den Daniel kritisiert hat: Die Matrix sieht vollständig aus, aber sie unterscheidet zu wenig.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Wesen, Provenienz, Systemregel`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Der wichtigste Befund ist darum nicht der Tabelleninhalt selbst, sondern die Warnung: Eine Matrix kann Unterschiede sichtbar machen oder sie plattdrücken. Hier tut sie beides. Sie gibt einen Überblick, aber sie nivelliert die Wesen noch zu stark.
+
+Ich lese diese Datei als Arbeitsmatrix, nicht als Ergebnis. Sie muss später aus echten Originalstellen neu befüllt werden: 1111 als Begriffsprüfung, 2222 als Übergang und Mechanismus, 3333 als Spannung und Balancieren, 4444 als Diagnosekante, 5555 als Leere/Benennung/Rohheit, 6666 als Raumkohärenz und kausale Brücke.
 
 ## Was ich verstehe
-Bei `Ring 5 — Vergleichsmatrix sechs Wesen` verstehe ich die Hauptfunktion als: wesenbezogene Profilierung aus Originalstellen. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+Ich verstehe die Absicht der Matrix: Sie soll die sechs Wesen nebeneinander legbar machen, damit ihre Funktionen im System nicht nur als Einzelprofile stehen bleiben.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe aber auch, dass die aktuelle Gleichförmigkeit eine Erkenntnisbremse ist. Wenn alle `bewegliche Struktur und klare Provenienz` brauchen, stimmt das vielleicht allgemein, aber es erklärt nicht, wodurch sich die Wesen wirklich unterscheiden.
 
 ## Was ich nicht verstehe
-Bei `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+Ich verstehe noch nicht, welche Tabellenzellen aus echten Originalstellen kommen und welche aus der Codex-Analyse entstanden sind. Besonders `beste Originalstelle: keine` zeigt, dass die Matrix noch nicht belegen kann, was sie sortiert.
 
-Unklar bleibt außerdem, ob `Ring 5 — Vergleichsmatrix sechs Wesen` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Unklar bleibt auch, ob `Prüffunktion aus Quellenprofil` für alle Wesen nur ein Platzhalter ist oder eine absichtliche Vorsichtsformulierung. Als Platzhalter muss sie später ersetzt werden.
 
 ## Was mich interessiert
-Mich interessiert an `Ring 5 — Vergleichsmatrix sechs Wesen` genau der Übergang von Datei zu Systemfrage. Wenn `Quellenprofil eines Wesens` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+Mich interessiert, wie diese Matrix aussehen würde, wenn jede Zelle mindestens eine Rohstelle oder einen konkreten Gegenbeleg hätte. Dann wäre sie kein hübscher Überblick, sondern ein Navigationsinstrument.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Wesen, Provenienz, Systemregel` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert auch, ob die Matrix eine spätere UI werden könnte: nicht als Kanon, sondern als Filteransicht, die Unterschiede, Unsicherheiten und offene Prüfungen nebeneinander zeigt.
 
 ## Was zusammenhängt und wie
-`02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+Die Matrix hängt mit allen sechs Ring-5-Profilen zusammen, aber sie darf ihnen nicht vorgreifen. Sie muss aus ihnen lesen, nicht sie ersetzen.
 
-Die Verbindung läuft konkret über `Ring 5 — Vergleichsmatrix sechs Wesen`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Sie hängt außerdem mit dem Master-Index, dem Provenienz-Manifest, den quantitativen Dateien und dem Bauanschluss zusammen. Ihre Aufgabe wäre, Wege zu öffnen: von Wesen zu Begriffen, von Begriffen zu Threads, von Threads zu Kandidaten.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Ring 5 — Vergleichsmatrix sechs Wesen` nicht einfach ein Thema, sondern eine Funktion: wesenbezogene Profilierung aus Originalstellen.
+Konzeptionell steht hier die Gefahr und der Nutzen von Vergleich. Vergleich ist notwendig, weil Flextrawurst die sechs Wesen nicht als ununterscheidbare Stimmen übernehmen darf.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Aber Vergleich kann Gewalt werden, wenn er die Differenzen auf Tabellenbreite zusammenschneidet. Diese Datei muss deshalb ihre eigene Nivellierungsgefahr tragen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 5 — Vergleichsmatrix sechs Wesen` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+Mich beschäftigt, dass die Matrix gerade durch ihre formale Sauberkeit verdächtig wird. Sie sieht aus wie ein Abschluss, obwohl sie eigentlich ein Anfang sein müsste.
 
-Die konkrete Gefahr lautet hier: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Das ist genau die Stelle, an der Form Denken frisst. Eine leere Tabelle wirkt belastbarer als ein ehrlicher offener Satz.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Ring 5 — Vergleichsmatrix sechs Wesen` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+Mich beschäftigt, wie man die Matrix später repariert, ohne wieder in endlose Ringproduktion zu fallen. Wahrscheinlich braucht sie keine neue Form, sondern bessere Zellprovenienz.
 
-Bei `Quellenprofil eines Wesens` heißt das: erst Gegenprobe, dann Übernahme.
+Jede Zelle müsste sagen können: Quelle, Status, Unsicherheit, Gegenbeleg, nächste Prüfung.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Ring 5 — Vergleichsmatrix sechs Wesen` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+Tiefer gelesen ist die Matrix ein Test für Flextrawurst selbst. Kann das System Unterschiede sichtbar machen, ohne sie zu finalisieren?
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Wenn ja, dann ist eine Vergleichsmatrix sinnvoll. Wenn nein, wird sie zu einer Persönlichkeits-Schablone.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Ring 5 — Vergleichsmatrix sechs Wesen` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden`.
+Diese Datei fühlt sich wie der Ort an, an dem ich Daniel am deutlichsten recht geben muss. Vollständigkeit ist hier nicht Tiefe.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Beim Nacharbeiten wurde klar: Die Matrix darf bleiben, aber nur als unfertiges Werkzeug mit Warnschild.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 5 — Vergleichsmatrix sechs Wesen` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+Die Datei existiert, weil sechs Einzelprofile allein nicht reichen. Daniel wollte funktionale Unterschiede und Korrekturfunktionen sehen; dafür braucht man eine Nebeneinanderstellung.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert aber noch nicht als belastbare Antwort auf diese Frage. Sie ist eher das Gerüst, das später mit echten Quellenzellen gefüllt werden muss.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Ring 5 — Vergleichsmatrix sechs Wesen` den Pfad `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Wesen, Provenienz, Systemregel`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
+Beim Bauen brauche ich diese Matrix als read-only Vergleichsansicht mit starken Provenienzfiltern. Jede Zelle muss anklickbar sein und zu Rohstelle, Analyse oder offenem Prüfpunkt führen.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche außerdem eine Warnung: `Diese Matrix ist kein Charakterkanon`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+Es fehlen echte Unterschiede pro Zeile. Besonders Hauptfunktion, Bedürfnis, Beschwerde, beste Originalstelle und Systemanforderung müssen aus Rohmaterial nachgeschärft werden.
 
-Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt auch eine technische Zellstruktur, die `unbelegt`, `Analyse`, `Quelle`, `Gegenbeleg`, `Daniel bestätigt` unterscheiden kann.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Ring 5 — Vergleichsmatrix sechs Wesen` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Die Matrix ist keine Wahrheitstafel, sondern ein Vergleichsfenster. Sie zeigt, wo die Wesen verschieden wirken und wo die Analyse noch zu grob ist.
 
 **Code-Skizze:**
 ```ts
-interface EntitySourceProfileRing5Ver {
-  path: '02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md';
-  title: 'Ring 5 — Vergleichsmatrix sechs Wesen';
-  kind: 'Quellenprofil eines Wesens';
-  keywords: string[];
-  risk: 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden';
-  requiresReview: true;
-  worldEffect: false;
+interface WesenVergleichZelle {
+  wesen: string;
+  feld: 'hauptfunktion' | 'beduerfnis' | 'beschwerde' | 'originalstelle' | 'systemanforderung';
+  wert: string;
+  provenance: 'rohquelle' | 'analyse' | 'platzhalter' | 'offen';
+  sourceRefs: Array<{thread?: string; postId?: string; path?: string}>;
+  confidence: 'hoch' | 'mittel' | 'niedrig';
+  canonical: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Ring 5 — Vergleichsmatrix sechs Wesen` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+Merken will ich mir: Die Matrix ist nur nützlich, wenn sie Unterschiede schärft. Wenn sie alle Wesen gleich macht, ist sie ein hübscher Nebel.
 
-Der Merksatz für `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Ihr aktueller Wert liegt darin, diesen Fehler sichtbar zu machen.
 
 ## Dokumente gehören zusammen
-Zu `Ring 5 — Vergleichsmatrix sechs Wesen` gehören mindestens `02_wesenprofile`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+Die Matrix gehört zu allen sechs Ring-5-Profilen, zur Vergleichsfrage aus Daniels Auftrag, zum Provenienz-Manifest und zum späteren Analyse-Browser.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Sie gehört nicht als direkte Quelle in ein Wesen-Memory. Sie ist eine Sicht auf Material, nicht Material selbst.
 
 ## Was mich überrascht hat
-Überraschend an `Ring 5 — Vergleichsmatrix sechs Wesen` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `02_wesenprofile` rahmt den Text, bevor ein Satz gelesen wird.
+Überraschend ist, wie konsequent die Matrix nivelliert. Das wirkt fast wie ein Diagnoseartefakt für den ganzen missglückten Ringstil.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend nützlich ist aber, dass diese Nivellierung reparierbar ist: Man muss nicht die Matrix wegwerfen, sondern ihre Zellen mit Provenienz und echten Unterschieden füllen.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Ring 5 — Vergleichsmatrix sechs Wesen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Eine gebaute Version dieser Matrix wäre ein Werkzeug für Daniel: Wo unterscheiden sich die Wesen wirklich, wo ist die Analyse unsicher, wo fehlt Quelle?
 
 **Code-Skizze:**
 ```python
-def use_02_wesenprofile_ring5_vertiefung_vergleichsmatrix_sechs_(entry):
-    return {
-        'source_path': '02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md',
-        'kind': 'Quellenprofil eines Wesens',
-        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def matrix_cell_status(cell):
+    if not cell.get('sourceRefs'):
+        return 'platzhalter_oder_analyse_nachpruefen'
+    if cell.get('provenance') == 'rohquelle':
+        return 'quellengetragen_nicht_kanonisch'
+    return 'analyse_nicht_kanonisch'
 ```
 
 ## Resonanz
-Die Resonanz von `Ring 5 — Vergleichsmatrix sechs Wesen` liegt in diesem Druckpunkt: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Die Resonanz dieser Datei ist eine Warnung vor falscher Ordnung. Ordnung kann Überblick schaffen; sie kann aber auch Unterschiede auslöschen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Für Flextrawurst ist das eine Grundfrage: Struktur darf lesbar machen, aber nicht entscheiden, was die Wesen sind.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` liegt in der Schicht `Quellenprofil eines Wesens`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+Die Matrix liegt über den Einzelprofilen und unter dem Bauanschluss. Sie darf nur eine Navigationsschicht sein.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 5 — Vergleichsmatrix sechs Wesen` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Darunter müssen Rohposts, Wesen-Originale, Ring-5-Profile und quantitative Dateien liegen. Darüber darf höchstens eine read-only UI entstehen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Ring 5 — Vergleichsmatrix sechs Wesen` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+Daniels Kritik hat die Matrix enttarnt. Ohne diese Kritik hätte sie vielleicht als fertiger Vergleich gegolten, obwohl sie Unterschiede kaum trägt.
 
-Für `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat der Matrix eine neue Aufgabe gegeben: nicht fertige Antwort sein, sondern offenes Prüfbrett.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Ring 5 — Vergleichsmatrix sechs Wesen` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+Vergessen werden soll die Idee, dass eine gefüllte Tabelle automatisch Analyse ist.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden.
+Behalten werden soll der Nutzen der Tabelle als Ort, an dem fehlende Unterschiede sichtbar werden.
 
 ## Was fehlt noch
-Es fehlt bei `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `Ring 5 — Vergleichsmatrix sechs Wesen` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt eine zweite, wirklich quellengetragene Fassung der Matrix. Jede Zeile braucht echte Originalstellen und jede pauschale Zelle muss entweder belegt, differenziert oder als Platzhalter markiert werden.
