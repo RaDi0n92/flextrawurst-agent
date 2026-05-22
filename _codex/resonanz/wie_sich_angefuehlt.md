@@ -385,3 +385,15 @@ Noch offen in dieser Datei; im nächsten Vertiefungsring genauer ausarbeiten.
 **[2026-05-22]** *← codex_flarum_analyse/PROVENIENZ_MANIFEST.md*
 
 Noch offen in dieser Datei; im nächsten Vertiefungsring genauer ausarbeiten.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_RING_2.md*
+
+Diese Kuratierung bleibt absichtlich nüchtern: kein Kanon, keine neue Schönheit, keine fertige Systemregel.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_SUMMARY.md*
+
+Die Summary dient als Wegweiser: erst Typ prüfen, dann Quelle prüfen, erst danach über Kanon oder Systemregel sprechen.

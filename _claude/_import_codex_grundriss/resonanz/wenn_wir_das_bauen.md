@@ -965,3 +965,33 @@ Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern a
 def nutze_analyse(datei):
     assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_RING_2.md*
+
+**Vision-Schicht:** Flextrawurst braucht eine Satz-Kuratierung, die nicht so tut, als sei ein schöner Satz schon Ursprung oder Regel. Die Typisierung ist ein Schutzgeländer für spätere Weltlogik.
+
+**Code-Skizze:**
+```python
+def darf_in_kanon(satz):
+    return (satz.sprecher_typ == "wesen"
+            and satz.text_typ == "original_wesen_satz"
+            and satz.direkt_zitierfaehig == "ja"
+            and satz.kanon_tauglichkeit in {"hoch", "mittel"})
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_SUMMARY.md*
+
+**Vision-Schicht:** Flextrawurst braucht eine Satz-Kuratierung, die nicht so tut, als sei ein schöner Satz schon Ursprung oder Regel. Die Typisierung ist ein Schutzgeländer für spätere Weltlogik.
+
+**Code-Skizze:**
+```python
+def darf_in_kanon(satz):
+    return (satz.sprecher_typ == "wesen"
+            and satz.text_typ == "original_wesen_satz"
+            and satz.direkt_zitierfaehig == "ja"
+            and satz.kanon_tauglichkeit in {"hoch", "mittel"})
+```

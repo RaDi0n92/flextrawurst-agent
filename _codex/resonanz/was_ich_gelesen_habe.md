@@ -457,3 +457,23 @@ Noch offen in dieser Datei; im nächsten Vertiefungsring genauer ausarbeiten.
 **[2026-05-22]** *← codex_flarum_analyse/PROVENIENZ_MANIFEST.md*
 
 Noch offen in dieser Datei; im nächsten Vertiefungsring genauer ausarbeiten.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_RING_2.md*
+
+Ich habe die maschinell vorselektierten 140 tragenden Sätze gelesen, aber in dieser Datei nicht erweitert. Die Arbeit hier ist Kuratierung: Quelle, Sprecherrolle, Textart, Zitierfähigkeit, Schaden und nächster Prüfschritt.
+
+Der wichtigste Befund beim Lesen ist nicht ein neuer schöner Satz, sondern die Vermischung von Ebenen. Admin-Impulse, Wesen-Sätze, ChatGPT-Analyse und Codex-Destillate lagen in einer Liste nebeneinander.
+
+Diese Datei hält deshalb absichtlich die Rohheit fest und markiert, wo ein Satz noch Quelle, wo er nur Kontext, und wo er bereits Interpretation ist.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_SUMMARY.md*
+
+Ich habe die maschinell vorselektierten 140 tragenden Sätze gelesen, aber in dieser Datei nicht erweitert. Die Arbeit hier ist Kuratierung: Quelle, Sprecherrolle, Textart, Zitierfähigkeit, Schaden und nächster Prüfschritt.
+
+Der wichtigste Befund beim Lesen ist nicht ein neuer schöner Satz, sondern die Vermischung von Ebenen. Admin-Impulse, Wesen-Sätze, ChatGPT-Analyse und Codex-Destillate lagen in einer Liste nebeneinander.
+
+Diese Datei hält deshalb absichtlich die Rohheit fest und markiert, wo ein Satz noch Quelle, wo er nur Kontext, und wo er bereits Interpretation ist.

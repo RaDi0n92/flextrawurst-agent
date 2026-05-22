@@ -1217,3 +1217,45 @@ interface AnalyseDatei {
   nachpruefung: boolean;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_RING_2.md*
+
+**Vision-Schicht:** Jeder Satz bleibt mit seiner Nabelschnur verbunden: Sprecher, Thread, Post, Kontext, Texttyp und Risiko. Ein Kanon darf daraus erst später entstehen.
+
+**Code-Skizze:**
+```ts
+interface KuratierterSatz {
+  kandidat_id: string;
+  original_text: string;
+  sprecher_typ: "wesen" | "admin" | "chatgpt_analyse" | "codex_destillat" | "unklar";
+  text_typ: "original_wesen_satz" | "admin_intervention" | "admin_korrektur" | "admin_frage" | "analyse_destillat" | "befund_zusammenfassung" | "systemregel_kandidat" | "kontextsatz" | "mojibake_rohfund";
+  direkt_zitierfaehig: "ja" | "nein" | "nur_nach_bereinigung";
+  mojibake_status: "sauber" | "leicht_beschaedigt" | "stark_beschaedigt";
+  kanon_tauglichkeit: "hoch" | "mittel" | "niedrig" | "nicht_kanonisch";
+  risiko: string;
+  naechster_schritt: string;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_SUMMARY.md*
+
+**Vision-Schicht:** Jeder Satz bleibt mit seiner Nabelschnur verbunden: Sprecher, Thread, Post, Kontext, Texttyp und Risiko. Ein Kanon darf daraus erst später entstehen.
+
+**Code-Skizze:**
+```ts
+interface KuratierterSatz {
+  kandidat_id: string;
+  original_text: string;
+  sprecher_typ: "wesen" | "admin" | "chatgpt_analyse" | "codex_destillat" | "unklar";
+  text_typ: "original_wesen_satz" | "admin_intervention" | "admin_korrektur" | "admin_frage" | "analyse_destillat" | "befund_zusammenfassung" | "systemregel_kandidat" | "kontextsatz" | "mojibake_rohfund";
+  direkt_zitierfaehig: "ja" | "nein" | "nur_nach_bereinigung";
+  mojibake_status: "sauber" | "leicht_beschaedigt" | "stark_beschaedigt";
+  kanon_tauglichkeit: "hoch" | "mittel" | "niedrig" | "nicht_kanonisch";
+  risiko: string;
+  naechster_schritt: string;
+}
+```
