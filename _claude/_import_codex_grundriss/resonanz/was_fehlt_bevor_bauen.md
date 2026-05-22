@@ -846,3 +846,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Es fehlt eine echte Review-Schicht für Daniel: Welche Analysepfade sind hilfreich, welche sind zu viel, welche Dateien sollen beim nächsten Bau wirklich geöffnet werden?
+
+Es fehlt außerdem eine kleine UI-Form für diesen Analysekörper. Nicht als Weltwirkung, sondern als Read-only Browser mit Regalen, Querschnitten und Rücksprüngen.

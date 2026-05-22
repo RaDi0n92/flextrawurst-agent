@@ -979,3 +979,11 @@ def aus_datei_bauen(eintrag):
 - Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
 
 Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Die Resonanz dieses Prozesses ist einfach: Wir haben nicht nur Flarum analysiert. Wir haben gelernt, wie schnell Analyse selbst Flarum wiederholt.
+
+Struktur hilft. Struktur fesselt. Freier Text hilft. Freier Text vernebelt. Der Punkt ist nicht die richtige Seite. Der Punkt ist die Beweglichkeit zwischen beiden.

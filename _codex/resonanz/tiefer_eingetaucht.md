@@ -853,3 +853,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Tiefer gesehen war der Fehler nicht „ChatGPT-Ringlogik“. Der Fehler war, dass ich sie zu brav erfüllt habe. Daniels ursprünglicher Auftrag hatte zwar viele Punkte, aber er wollte nicht mechanische Erfüllung. Er wollte, dass ich mit diesen Punkten lese.
+
+Der Unterschied ist fein: Eine Liste kann Raster sein oder Käfig. Ich habe sie zuerst als Käfig implementiert. Später haben wir sie wieder als Raster nutzbar gemacht.

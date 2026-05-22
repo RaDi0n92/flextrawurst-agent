@@ -917,3 +917,15 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Beim Bauen brauche ich aus diesem Prozess drei Regeln:
+
+1. Jede Quelle braucht Provenienz.
+2. Jede Analyse braucht Atem.
+3. Jede starke Verdichtung braucht Rückweg zum Rohmaterial.
+
+Technisch heißt das: `source_ref`, `interpretation_type`, `canon_status`, `daniel_freigabe`, `risk`, `backlink`, `derived_from` dürfen keine optionalen Luxusfelder sein.

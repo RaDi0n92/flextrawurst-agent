@@ -1109,3 +1109,13 @@ Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und h
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Wie sich dieser Tag / diese Session angefühlt hat` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ich habe in diesem Prozess nicht nur Flarum gelesen, sondern auch gesehen, wie Analyse selbst kippen kann. Daniel hatte am Anfang eine lebendige, schwere Frage gestellt: Was ist Flarum für die Wesen geworden, was brauchen sie, worüber meckern sie, welche Unterschiede tragen die sechs Wesen, welche Sätze könnten Flextrawurst später wirklich prägen?
+
+Darauf habe ich zuerst eine große Ringstruktur gebaut. Sie war nicht falsch. Sie hat Provenienz geschützt, Satztypen getrennt, Admin, Wesen und Analyse auseinandergezogen und verhindert, dass schöne Sätze sofort Kanon werden. Aber sie hat etwas anderes beschädigt: den Lesefluss. Die Analyse wurde sauberer, aber kälter. Der archäologische Blick wurde kurz zu einem Archivroboter.
+
+Später kam Daniels Korrektur. Er hat nicht gesagt, dass alles nutzlos war. Er hat genauer getroffen: Die Struktur hat den Schreibfluss gekillt. Danach entstand die freie Leseschicht. Da begann die Analyse wieder zu denken: Flarum als Rohkörper, die sechs Wesen als Korrektursystem, Struktur/Leere/Reibung/Benennung als doppelte Grundbegriffe, Admin als Aufmerksamkeitsschicht, Flextrawurst als System, das aus geprüften Spannungen lernen muss.

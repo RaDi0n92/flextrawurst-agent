@@ -1876,3 +1876,24 @@ Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navi
 def show_extraction(entry):
     return {"text": entry.body, "link_back_required": True, "world_effect": False}
 ```
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+**Vision-Schicht**
+
+Wenn wir daraus bauen, dann nicht zuerst eine große KI-Wesen-Memory-Maschine. Zuerst brauchen wir einen Analysebrowser, der zeigt, was Quelle, Deutung, Kandidat, Extraktion und Bauidee ist. Er muss Denken ermöglichen, nicht nur Akten anzeigen.
+
+**Code-Skizze**
+
+```python
+def next_safe_tool():
+    return {
+        'name': 'flarum_analysis_browser',
+        'mode': 'read_only',
+        'views': ['sources', 'free_reading', 'holy_sections', 'risks', 'build_candidates'],
+        'world_effect': False,
+        'requires_daniel_for': ['canon', 'memory_import', 'world_rule']
+    }
+```

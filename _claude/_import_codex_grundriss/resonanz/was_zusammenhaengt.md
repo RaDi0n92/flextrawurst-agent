@@ -850,3 +850,17 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ring 1 bis 10, Mojibake-Schutz, freie Leseschicht, Dateinamenanalyse, Nachschärfung der heiligen Abschnitte und Extraktion in `15_heilige_abschnitte_extrahiert/` hängen wie Schichten zusammen.
+
+Die frühen Ringe sagen: Was ist da, wie ist es getrennt, was darf nicht verwechselt werden?
+
+Die freie Leseschicht sagt: Was bedeutet das, wenn man es wieder als lebendiges Material liest?
+
+Die nachgeschärften heiligen Abschnitte sagen: Was braucht Flextrawurst beim Bauen, wenn diese Datei später nicht falsch wirken soll?
+
+Die Extraktionsdateien sagen: Wie kann man diese Denkflächen querlesen, ohne jede Datei einzeln öffnen zu müssen?

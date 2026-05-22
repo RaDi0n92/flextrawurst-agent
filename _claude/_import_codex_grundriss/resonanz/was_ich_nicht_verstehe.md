@@ -849,3 +849,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ich verstehe noch nicht vollständig, wie man bei so großem Material verhindert, dass Struktur wieder Denken ersetzt. Es ist verführerisch, bei 81 Dateien und tausenden Posts auf Generatoren, Matrizen und Pflichtfelder auszuweichen. Das ist effizient, aber gefährlich.
+
+Ich verstehe auch noch nicht, wie viel freie Interpretation Daniel später wirklich will, wenn sie nicht sofort mit Rohzitaten unterfüttert ist. Die beste Form liegt wahrscheinlich dazwischen: erst frei denken, dann die stärksten Sätze zurück an Quellen binden.

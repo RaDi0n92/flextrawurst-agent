@@ -827,3 +827,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Vergessen will ich die Ausrede, dass formale Vollständigkeit genügt. Sie genügt nicht.
+
+Ich will auch vergessen, dass ein Commit mit vielen Dateien automatisch Fortschritt bedeutet. Fortschritt ist, wenn die Dateien später besser denken helfen.

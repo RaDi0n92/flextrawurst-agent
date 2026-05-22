@@ -840,3 +840,9 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Mich überrascht, dass die beste Analysephase erst nach der Kritik kam. Die Kritik war nicht Stopp, sondern Kalibrierung. Genau so müsste Flextrawurst später mit Admin-Resonanz umgehen: nicht als Befehl, nicht als Angriff, sondern als Möglichkeit, die Form zu korrigieren.

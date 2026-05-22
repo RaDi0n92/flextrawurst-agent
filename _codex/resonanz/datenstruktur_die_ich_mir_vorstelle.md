@@ -2373,3 +2373,32 @@ interface ExtractedHolySection {
   canon: false;
 }
 ```
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+**Vision-Schicht**
+
+Ich stelle mir den Analysekörper als lebendes Archiv vor, aber nicht als lebende Wahrheit. Jede Datei ist ein Knochen, eine Narbe oder eine Notiz am Rand. Flextrawurst darf diese Spuren lesen, aber nicht unbesehen als Gedächtnis schlucken.
+
+**Code-Skizze**
+
+```ts
+interface AnalysisProcessTrace {
+  phase: 'ring_structure' | 'curation' | 'free_reading' | 'holy_section_sharpening' | 'extraction';
+  purpose: string;
+  risk: string;
+  producedFiles: string[];
+  status: 'useful' | 'too_mechanical' | 'corrected' | 'needs_review';
+  danielFeedback?: string;
+}
+
+interface FlextrawurstAnalysisFile {
+  path: string;
+  provenance: 'raw' | 'count' | 'interpretation' | 'candidate' | 'extraction';
+  sourceRefs: string[];
+  canon: false;
+  worldEffect: false;
+}
+```

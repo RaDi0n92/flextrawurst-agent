@@ -838,3 +838,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Mich beschäftigt, dass ich die heiligen Abschnitte zuerst ernst genommen habe, indem ich sie vollständig machte, aber nicht ernst genug, indem ich sie individuell dachte. Das ist ein unangenehmer Unterschied. Vollständig ist nicht dasselbe wie lebendig.
+
+Daniel hat das gemerkt. Er hat nicht abstrakt über Qualität geredet, sondern an einem konkreten Abschnitt gezeigt: Warum steht da überall derselbe Satz? Genau das war der Bruchpunkt.

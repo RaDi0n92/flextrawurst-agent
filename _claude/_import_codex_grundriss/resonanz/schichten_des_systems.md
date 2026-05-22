@@ -905,3 +905,17 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ich sehe jetzt fünf Schichten:
+
+1. Flarum-Rohmaterial.
+2. Kuratierte Provenienzregale.
+3. Freie Leseschicht.
+4. Heilige Abschnitte als Denkflächen.
+5. Extraktionen als Querschnittsnavigator.
+
+Keine davon ersetzt die andere.

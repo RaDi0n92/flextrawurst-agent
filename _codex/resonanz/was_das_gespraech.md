@@ -831,3 +831,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Das Gespräch hat hinzugefügt, dass Daniel nicht nur Ergebnisabnehmer ist. Er ist methodischer Korrektor. Seine Rückmeldung hat die Analyseform verändert.
+
+Das ist wichtig für Flextrawurst: Admin-Resonanz ist nicht nur Inhalt. Sie kann die Methode selbst korrigieren.

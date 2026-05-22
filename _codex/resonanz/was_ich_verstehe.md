@@ -855,3 +855,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ich verstehe jetzt deutlicher, dass Provenienzschutz und Analysefluss nicht Gegensätze sein dürfen. Wenn nur Fluss da ist, entsteht Nebel. Wenn nur Provenienzstruktur da ist, entsteht ein Regal ohne Atem. Flextrawurst braucht beides: harte Herkunftsmarkierung und freie, riskante Lesebewegung.
+
+Die Ringe waren ein Schutzkörper. Die freie Leseschicht war der Versuch, wieder Stimme hineinzubringen. Die Nachschärfung der heiligen Abschnitte war dann eine dritte Ebene: nicht noch mehr Ergebnis, sondern Reparatur der Denkflächen. Diese Abschnitte sollten nie Formularfelder sein. Sie sollten kleine Werkstätten sein.

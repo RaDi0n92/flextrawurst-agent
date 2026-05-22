@@ -854,3 +854,15 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Diese Spiegeldatei gehört zu:
+
+- `_codex/codex_flarum_analyse/13_freie_leseschicht/`
+- `_codex/codex_flarum_analyse/14_dateinamen_fragenanalyse/`
+- `_codex/codex_flarum_analyse/15_heilige_abschnitte_extrahiert/`
+- `_codex/codex_flarum_analyse/PROVENIENZ_MANIFEST.md`
+- `_codex/resonanz/was_ich_beim_bauen_brauche.md`

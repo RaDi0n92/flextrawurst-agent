@@ -840,3 +840,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Diese Spiegeldatei existiert, weil der Analyseprozess selbst eine Spur braucht. Spätere Codex-Instanzen sollen nicht nur sehen, dass Dateien erzeugt wurden, sondern warum sie so geworden sind: zuerst zu ringhaft, dann freier, dann nachgeschärft.
+
+Sie soll auch daran erinnern, dass Daniel nicht nur Output will. Er will, dass Codex merkt, wann Struktur Denken ersetzt.

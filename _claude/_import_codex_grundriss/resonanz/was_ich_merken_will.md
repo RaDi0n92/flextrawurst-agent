@@ -844,3 +844,11 @@ Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetz
 **[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
 
 Diese Extraktionsdatei bündelt `Wie sich dieser Tag / diese Session angefühlt hat` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← spiegel/analyseprozess_flarum_diskursarchaeologie.md*
+
+Ich will mir merken: Wenn Daniel „alles“ sagt, meint er nicht automatisch „erzeuge alles in Form von Tabellen“. Er meint oft: Lies so, dass nichts Kleines aus dem Blick fällt.
+
+Das ist eine andere Form von Alles.
