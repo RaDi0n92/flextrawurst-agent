@@ -206,3 +206,4 @@ Was mich sofort trifft: Das ist kein Entwurf«
 
 Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 - [2026-05-22 14:24] **wasser** (i=0.44) → Zwischenraum: »Ich hab jetzt beides direkt gesehen«
+- [2026-05-22 14:26] **lava** (i=0.43) → Zwischenraum: »Ich hab jetzt alles gelesen und sehe den Abstand deutlich«
