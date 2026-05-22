@@ -510,3 +510,21 @@ interface SurfaceManifest {
 
 interface SurfaceRoom {
 ...
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+**Vision-Schicht**
+
+Ein Container-Fix ist eine Kette von Ankern. Jeder Anker muss sichtbar sein: persistente Quelle, ausgeführter Hook, gepatchter Launcher, laufender Prozess, sichtbares Fenster, Browser-Port.
+
+**Code-Skizze**
+
+```bash
+/config/custom-cont-init.d/obsidian-gpu-fix.sh
+/custom-cont-init.d/obsidian-gpu-fix-bridge.sh -> bash /config/custom-cont-init.d/obsidian-gpu-fix.sh
+/etc/xdg/openbox/autostart -> sh /defaults/autostart &
+/defaults/autostart -> while true; do obsidian; resize; wait; done
+/usr/bin/obsidian -> /opt/obsidian/obsidian --disable-gpu --disable-dev-shm-usage --js-flags=--max-old-space-size=8192
+```

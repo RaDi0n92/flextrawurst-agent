@@ -233,3 +233,9 @@ Zweitens die Adminschicht: Inspektor, Provenienz, Audit, Policies, naechste
 Bauschritte.
 
 Drittens die Baugrenze: Organ-Slots, Status, Blocker, Demo/Prinzip/Live.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Host: nginx, Docker, Volume. Container: s6, custom-init, Openbox, Selkies, Obsidian. Vault: `/werkraum`. Browser: Port 8443 mit Basic Auth.

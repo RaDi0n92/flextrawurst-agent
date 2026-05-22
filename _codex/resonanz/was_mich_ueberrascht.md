@@ -168,3 +168,9 @@ Mich überrascht auch, dass die Spiegel trotz Pflichtstruktur nicht gleichförmi
 Mich ueberrascht, wie sehr das Bild die vorhandene Surface nicht ersetzt,
 sondern sortiert. Viele Bausteine sind schon da; ihre Anordnung ist noch nicht
 die Zielanordnung.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Dass der bekannte Fix schon fast richtig war, aber an einem Pfad scheiterte. Der Unterschied zwischen `/custom-cont-init.d` und `/config/custom-cont-init.d` war entscheidend.

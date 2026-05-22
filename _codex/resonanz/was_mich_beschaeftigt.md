@@ -166,3 +166,9 @@ Dass die Spiegel selbst ein Durchlass sind. Ich lese fremdes Material, lasse es 
 Mich beschaeftigt, dass dieses Bild einen klareren Zielzustand zeigt als viele
 Textbeschreibungen. Es sagt sofort: Flextrawurst braucht Tiefe, Dichte,
 Provenienz und operative Kontrolle.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Dass der Container erst gesund aussah: Docker lief, Selkies streamte, Port-Mappings waren da. Aber die Anwendung im Desktop war entweder nicht gestartet, zu klein oder gerade neu gestartet.

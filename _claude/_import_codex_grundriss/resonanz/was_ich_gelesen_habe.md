@@ -213,3 +213,13 @@ Feature-Slots.
 
 Daniel hat dazu gesagt, dass dieses Bild eigentlich immer als aktuell beste
 Referenz gelten soll, wenn etwas an oder fuer flextrawurst gebaut wird.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Ich habe Daniels aktuelle Aufgabe gelesen: Obsidian im Docker-Container startet im Browser schwarz, weil das Fenster als 10x10 landet; Claude hatte schon einen xdotool-Resize-Fix in `/config/custom-cont-init.d/obsidian-gpu-fix.sh` vorbereitet, aber Obsidian crashte weiter.
+
+Ich habe im Container `/usr/bin/obsidian`, `/defaults/autostart`, `/config/.config/openbox/autostart`, den s6-Watchdog und die Obsidian-Logs gelesen. Wichtig war der Satz aus den Docker-Logs: `[custom-init] No custom files found, skipping...` obwohl die Datei unter `/config/custom-cont-init.d/` lag.
+
+Danach wurden die neuen Launcher-Logs lesbar: V8/Chromium lief beim Start in GC-Druck um 3.6-3.7 GB und beendete sich teils mit Status 133. Der Supervisor-Loop hat diese Exits sichtbar gemacht und Obsidian neu gestartet.

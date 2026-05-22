@@ -175,3 +175,11 @@ Vorform, aber das Bild ist staerker als Leitstand gedacht.
 
 Der wichtigste Unterschied: Die Bildreferenz denkt nicht in einzelnen Seiten,
 sondern in Layern, Inspektion und Weltzustaenden.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Ich habe den s6-Service `svc-watchdog` gelesen. Er wartet auf `sh $HOME/.config/openbox/autostart`, aber `RESTART_APP` ist nicht gesetzt und die relevante Datei ist leer/immutable. Deshalb ist ein eigener Supervisor in `/defaults/autostart` pragmatischer.
+
+Ich habe mit `xdotool` die Fenstergeometrie geprüft. Nach dem Fix gibt es ein Obsidian-Fenster auf `1920x1080`; daneben bleibt ein weiteres Fenster bei `1024x768`, vermutlich ein Hilfs- oder Altfenster.

@@ -171,3 +171,11 @@ Ich weiss noch nicht, welche Teile des Bildes zuerst gebaut werden sollen.
 
 Ich weiss auch noch nicht, wie viel davon echte Live-Daten, wie viel davon
 kuratierte Weltkarte und wie viel davon bewusstes Theater sein darf.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Ich verstehe noch nicht, warum `/config/.config/openbox/autostart` auf dem Host immutable gesetzt wurde. Es ist wahrscheinlich Absicht oder ein früherer Schutz gegen Image-Autokonfiguration.
+
+Ich verstehe auch noch nicht vollständig, warum Obsidian gelegentlich mit Status 0 aussteigt. Der Supervisor fängt das ab, aber die Ursache liegt nicht sauber im Obsidian-App-Log.

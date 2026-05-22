@@ -164,3 +164,9 @@ Ein späterer Bau-Test: Wenn wir ein neues System bauen, greifen diese Spiegel w
 Es fehlt eine ausdrueckliche Verankerung im Bauworkflow: Vor flextrawurst-Arbeit
 sollte diese Referenz mitgedacht werden, besonders wenn UI, Surface, Adminsicht,
 Weltblick oder Feature-Slots betroffen sind.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Ein längerer Realbrowser-Test auf `https://<host>:8443/` und eventuell ein späteres Vault-Diät-Thema, falls Obsidian weiterhin unter Indexdruck aussteigt.

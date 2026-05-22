@@ -175,3 +175,13 @@ Die Surface soll perspektivisch nicht wie eine normale Website wirken. Sie soll
 wie eine Kontrollwarte fuer eine lebende Welt wirken: Raeume, Entitaeten,
 Provenienz, Nicht-Erlaubtes, Resonanzen, Systemkoerper, Organe, Audit und
 naechste Bauschritte gleichzeitig sichtbar.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Der erste Fehler war nicht nur Fenstergeometrie. Der persistente Hook lag an einem Ort, den linuxserver.io nicht automatisch liest: das Image sucht `/custom-cont-init.d`, nicht `/config/custom-cont-init.d`.
+
+Der zweite Fehler war Autostart: die Datei `/config/.config/openbox/autostart` ist immutable und leer. Deshalb darf der Fix sie nicht als Schreibziel behandeln. Der robuste Pfad ist: Custom-Init patcht `/etc/xdg/openbox/autostart`, und dieser startet `/defaults/autostart`.
+
+Der dritte Fehler ist Speicher-/Indexdruck beim Obsidian-Start. `--start-maximized` hilft dagegen nicht; Fenstergröße muss nach dem Fensterstart aktiv per `xdotool` gesetzt werden.

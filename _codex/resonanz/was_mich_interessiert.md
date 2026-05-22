@@ -174,3 +174,9 @@ naechster Bauschritt.
 Mich interessiert auch, dass die Suche oben nicht nur Volltextsuche ist. Sie
 wirkt wie Diskursarchaeologie: Suche nach Bedeutung, Herkunft, Resonanz,
 Zustaenden, Beziehungen und Verboten.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Interessant ist, dass der schwarze Bildschirm und der Crash zwei verschiedene Symptome waren. Das eine ist Fenstermanagement in Headless-Openbox, das andere ist Vault-Indexdruck.

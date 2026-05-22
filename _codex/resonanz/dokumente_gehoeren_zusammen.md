@@ -182,3 +182,9 @@ Diese Datei gehoert zusammen mit:
 - `/root/flextrawurst/tests/surface_ring_23.test.ts`
 - `/root/werkraum/_codex/resonanz/wenn_wir_das_bauen.md`
 - `/root/werkraum/_codex/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Diese Notiz gehört zur aktuellen Aufgabe in `_shared/aktuelle_aufgabe.md`, zur persistenten Init-Datei im Docker-Volume und zu den Logs `/config/.config/obsidian/autostart-supervisor.log` und `/config/.config/obsidian/obsidian-launcher.log`.

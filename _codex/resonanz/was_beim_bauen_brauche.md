@@ -241,3 +241,9 @@ Passt der neue Bau zur Leitstand-Idee, oder erzeugt er nur noch einen Tab?
 Zeigt er Herkunft, Status, Erlaubnis und naechsten Schritt?
 
 Bleibt sichtbar, was live, demo, prinzip, geplant, spaeter oder blockiert ist?
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Ich brauche bei solchen Container-Fixes immer die echte Startkette: s6 init, custom-init, Desktop-Start, Openbox-Autostart, App-Prozess, Browser-Proxy.

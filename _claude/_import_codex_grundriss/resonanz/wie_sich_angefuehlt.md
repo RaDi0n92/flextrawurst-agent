@@ -169,3 +169,9 @@ Ich merke darin eine Vorsicht, die nicht bremsen will, sondern präzisieren. Sie
 
 Diese Session fuehlte sich an wie ein Umschalten von "wir haben eine Surface"
 zu "wir wissen besser, welche Art Surface es werden soll".
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Wie Betrieb statt Vision: kleine Pfade, tatsächliche Logs, ein falscher Ordnername, ein immutable Bit, ein Prozess der stirbt und wiederkommt.

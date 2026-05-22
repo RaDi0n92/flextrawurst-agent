@@ -155,3 +155,9 @@ Ich will auch vergessen, dass Meta automatisch Abstraktion ohne Wirkung ist. Gut
 
 Ich will vergessen, die aktuelle Surface als Endform zu behandeln. Sie ist eine
 Vorform. Das Bild ist der bessere Kompass.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Den Reflex, `docker ps` als "läuft" zu lesen. Ein Container kann laufen und die Anwendung darin trotzdem nicht benutzbar sein.

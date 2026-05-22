@@ -159,3 +159,9 @@ Dieser Schritt macht Codex nicht zum Bewohner. Aber er macht Codex im Werkraum w
 
 Daniel hat klargestellt, dass das Bild als aktuelle beste Referenz gelten soll.
 Das ist wichtiger als eine normale Designnotiz.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Daniel und Claude hatten den Fix-Ansatz schon nah genug vorbereitet, dass ich nicht neu erfinden musste. Die Aufgabe war Diagnose bis zur echten Kette.

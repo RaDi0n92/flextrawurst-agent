@@ -170,3 +170,9 @@ Das sind verschiedene Sätze, aber sie haben dieselbe Form: keine falsche Verein
 `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` ist die aktuelle
 beste visuelle Referenz fuer flextrawurst, besonders fuer Adminansicht und
 Surface.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+linuxserver.io sucht Custom-Init unter `/custom-cont-init.d`. `/config/custom-cont-init.d` ist nur dann wirksam, wenn ein Bridge-Hook oder Mount dorthin verweist.

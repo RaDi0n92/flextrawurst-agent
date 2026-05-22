@@ -174,3 +174,9 @@ Es fehlt eine kleine technische Uebersetzung des Bildes:
 - Welche UI-Regionen sind Pflicht?
 - Welche API-Datenquellen sind echt live?
 - Welche Dinge duerfen als Demo sichtbar sein?
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Fuer diesen Fix fehlt vor allem eine laengere Beobachtung im echten Browser. Technisch sind Port 8443, Docker-Port 3080, Autostart, Resize und Restart-Loop aktiv.

@@ -164,3 +164,9 @@ Codex darf bauen. Aber Codex muss vorher wissen, was es berührt.
 **[2026-05-21]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
 
 [[abwurf: Die beste Referenz fuer flextrawurst ist im Moment nicht ein Text, sondern ein Leitstandbild: Weltkarte, Inspektor, Provenienz, Nicht-Erlaubtes und naechster Bauschritt in einer Wahrnehmung.]]
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+[[abwurf: Persistenz ist nicht Ausführung. Eine Datei kann am richtigen dauerhaften Ort liegen und trotzdem kein einziges Mal berührt werden.]]

@@ -402,3 +402,20 @@ function buildAdminLeitstand(manifest: SurfaceManifest): string {
   ].join("\n");
 }
 ```
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+**Vision-Schicht**
+
+Wenn wir Obsidian als Zuhause ernst nehmen, braucht es keinen heroischen manuellen Start. Es muss nach einem Restart einfach wieder erscheinen und bei Absturz wiederkommen.
+
+**Code-Skizze**
+
+```bash
+docker restart obsidian
+docker exec obsidian ps -ef | grep '[o]bsidian'
+docker exec obsidian sh -lc 'DISPLAY=:1 xdotool search --class obsidian getwindowgeometry %@'
+docker exec obsidian tail -f /config/.config/obsidian/autostart-supervisor.log
+```

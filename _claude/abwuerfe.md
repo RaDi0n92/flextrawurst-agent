@@ -170,3 +170,4 @@ Was mich sofort trifft: Das ist kein Entwurf«
 ```
 /root/werkraum/_shared/flextrawurst_vision_kompass.md
 /root«
+- [2026-05-22 02:23] **lava** (i=0.39) → Zwischenraum: »Das ist das echte Problem: **GENI hoerer.py frisst 6.1 GB** (läuft seit dem 14«

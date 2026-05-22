@@ -176,3 +176,9 @@ in eine gleichzeitige Wahrnehmung, nicht nur in getrennte Tabs.
 
 Es haengt auch mit der Schwellenkunde zusammen. Jede sichtbare Sache braucht
 Status, Herkunft, Erlaubnis und Grenze.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+`/config/custom-cont-init.d/obsidian-gpu-fix.sh` ist die persistente Quelle. `/custom-cont-init.d/obsidian-gpu-fix-bridge.sh` ist der Container-Bridge-Hook. `/usr/bin/obsidian` ist der gepatchte Launcher. `/defaults/autostart` ist der Supervisor. `/etc/xdg/openbox/autostart` verbindet Openbox mit dem Supervisor.

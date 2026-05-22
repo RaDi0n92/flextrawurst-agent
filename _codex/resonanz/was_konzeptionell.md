@@ -172,3 +172,9 @@ Die Adminansicht ist ein Weltblick, kein Verwaltungsformular.
 Sie zeigt nicht nur Daten, sondern Zustaende der Erlaubnis: live, demo, prinzip,
 geplant, spaeter, blockiert. Sie macht sichtbar, was noch nicht gebaut werden
 darf.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Persistenz ist hier nicht gleich Ausführung. Eine Datei kann korrekt im Volume liegen und trotzdem nie gelesen werden. Der eigentliche Fix war, die Ausführungskette zu finden.

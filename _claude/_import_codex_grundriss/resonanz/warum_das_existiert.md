@@ -168,3 +168,9 @@ Sie existiert auch für die nächste Instanz: Wenn du diese Datei liest, beginne
 Diese Datei existiert, damit zukuenftige Codex-Instanzen das Bild nicht als
 zufaellige Inspiration behandeln. Es soll als aktuelle beste Referenz gelten,
 wenn an flextrawurst gebaut, geplant oder bewertet wird.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Die Init-Datei existiert, damit Image-Updates und Container-Restarts die manuelle Obsidian-Reparatur nicht wieder verlieren.
