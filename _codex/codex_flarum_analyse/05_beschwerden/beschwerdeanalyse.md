@@ -31,137 +31,81 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `05_beschwerden/beschwerdeanalyse.md` als `Beschwerden` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `C. Beschwerdeanalyse` setzt den Schwerpunkt dieser Datei; `C. Beschwerdeanalyse` arbeitet an Flarum, Flextrawurst, Struktur, Leere, Reibung und braucht darum Rückbindung statt isolierter Nutzung.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Beschwerdetabelle gelesen, die Beschwerden als Zahlen, Wesenverteilung und Beispielzitate sammelt. Sie ist stark, weil sie Meckern als Diagnose behandelt; sie ist schwach, wo Häufigkeiten und Beispiele noch grob oder abgeschnitten sind.
 
 ## Was ich verstehe
-Bei `C. Beschwerdeanalyse` verstehe ich die Hauptfunktion als: Beschwerde als Systemdiagnose. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Beschwerden als Systemdiagnosen. Wenn Wesen über Textflut, Fessel, Rohprototyp oder Mechanikmangel meckern, zeigen sie Systemdruck.
 
 ## Was ich nicht verstehe
-Bei `05_beschwerden/beschwerdeanalyse.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `C. Beschwerdeanalyse` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Unklar ist, welche Beschwerden echte wiederkehrende Erfahrung sind und welche durch Suchbegriffe aufgebläht wurden. Manche Beispielzitate wirken eher Kontext als Beschwerde.
 
 ## Was mich interessiert
-Mich interessiert an `C. Beschwerdeanalyse` genau der Übergang von Datei zu Systemfrage. Wenn `Beschwerden` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert eine Beschwerde->Systemantwort-Karte, aber nur mit Quellprüfung.
 
 ## Was zusammenhängt und wie
-`05_beschwerden/beschwerdeanalyse.md` hängt zuerst mit `05_beschwerden` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `C. Beschwerdeanalyse`: Rohmaterial oder Analysebeobachtung wird zu `Beschwerde als Systemdiagnose`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit Bedürfnissen, Wünschen, Grundmustern und Bauanschluss zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `C. Beschwerdeanalyse` nicht einfach ein Thema, sondern eine Funktion: Beschwerde als Systemdiagnose.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Negativität ist Nutzsignal, wenn sie nicht moralisiert wird.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `05_beschwerden/beschwerdeanalyse.md`, wie schnell der Titel selbst schon Autorität erzeugt. `C. Beschwerdeanalyse` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: Meckern könnte als Negativität statt als Diagnose gelesen werden.
+Mich beschäftigt, dass `Potential/Fluss ohne Mechanik` extrem hoch zählt. Das riecht nach echter Achse, aber auch nach Begriffsinflation.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `C. Beschwerdeanalyse` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Beschwerden` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob Textflut als Rauschen wirklich Beschwerde ist oder eine Selbstbeschreibung des Materials.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `C. Beschwerdeanalyse` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer sind Beschwerden die Stellen, an denen Flarum als Körper Widerstand zeigt.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `C. Beschwerdeanalyse` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Meckern könnte als Negativität statt als Diagnose gelesen werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Die Datei fühlt sich wie ein Druckdiagramm an: nicht schön, aber praktisch.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`05_beschwerden/beschwerdeanalyse.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `C. Beschwerdeanalyse` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil Beschwerden sonst als Stimmung verschwinden würden.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `C. Beschwerdeanalyse` den Pfad `05_beschwerden/beschwerdeanalyse.md`, den Typ `Beschwerden`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`, das Risiko `Meckern könnte als Negativität statt als Diagnose gelesen werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `ComplaintDiagnostic` mit Häufigkeit, semantischem Status, Beispielrefs und möglicher Antwort.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `05_beschwerden/beschwerdeanalyse.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Beschwerden` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen saubere Zitate und eine Trennung zwischen echtem Problem und philosophischem Loop.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `C. Beschwerdeanalyse` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Beschwerden sollen als Diagnosekarten erscheinen, nicht als Featuretickets.
 
 **Code-Skizze:**
 ```ts
-interface ComplaintDiagnosticCBeschwer {
-  path: '05_beschwerden/beschwerdeanalyse.md';
-  title: 'C. Beschwerdeanalyse';
-  kind: 'Beschwerden';
-  keywords: string[];
-  risk: 'Meckern könnte als Negativität statt als Diagnose gelesen werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface ComplaintDiagnostic { complaint: string; semanticStatus: 'verified' | 'term_count_only' | 'loop_possible'; sourceRefs: SourceRef[]; featureRequest: false; }
 ```
 
 ## Was ich mir merken will
-Bei `C. Beschwerdeanalyse` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `05_beschwerden/beschwerdeanalyse.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Meckern ist Material.
 
 ## Dokumente gehören zusammen
-Zu `C. Beschwerdeanalyse` gehören mindestens `05_beschwerden`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu `05_beschwerden/ring6_beschwerden_als_diagnosen.md` und Ring 6 Bedürfnissen.
 
 ## Was mich überrascht hat
-Überraschend an `C. Beschwerdeanalyse` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `05_beschwerden` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie produktiv Beschwerden werden, wenn man sie nicht glättet.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `C. Beschwerdeanalyse` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Beschwerden sollen als Diagnosekarten erscheinen, nicht als Featuretickets.
 
 **Code-Skizze:**
 ```python
-def use_05_beschwerden_beschwerdeanalyse_md(entry):
-    return {
-        'source_path': '05_beschwerden/beschwerdeanalyse.md',
-        'kind': 'Beschwerden',
-        'risk': 'Meckern könnte als Negativität statt als Diagnose gelesen werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def complaint_to_diagnostic(row):
+    return {'diagnostic': True, 'feature_request': False, 'needs_quote_check': True}
 ```
 
 ## Resonanz
-Die Resonanz von `C. Beschwerdeanalyse` liegt in diesem Druckpunkt: Meckern könnte als Negativität statt als Diagnose gelesen werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Beschwerden zeigen, wo das System reibt.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`05_beschwerden/beschwerdeanalyse.md` liegt in der Schicht `Beschwerden`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `C. Beschwerdeanalyse` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Beschwerdewort -> Häufigkeit -> semantische Prüfung -> Systemdiagnose.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `C. Beschwerdeanalyse` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `05_beschwerden/beschwerdeanalyse.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Kritik war selbst eine Beschwerde als Diagnose: Form hatte Denken gefressen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `C. Beschwerdeanalyse` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Meckern könnte als Negativität statt als Diagnose gelesen werden.
+Vergessen werden soll: Beschwerde ist nur negativ.
 
 ## Was fehlt noch
-Es fehlt bei `05_beschwerden/beschwerdeanalyse.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `C. Beschwerdeanalyse` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine geprüfte Beschwerdeklassifikation fehlt.

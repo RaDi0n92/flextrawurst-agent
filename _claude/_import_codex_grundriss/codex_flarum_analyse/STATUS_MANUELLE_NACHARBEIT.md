@@ -57,7 +57,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien und der komplette Ordner `03_grundmuster/`. Die Ring-5-Nacharbeit hat die fehlenden Originalanker markiert; die Grundmuster-Nacharbeit hat die Muster als Achsen, nicht als Totalerklärungen neu gefasst.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/` sowie die Ordner `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
 
 ## Was ich verstehe
 
@@ -67,7 +67,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Der Startblock, die Basisprofile, Ring 5 und `03_grundmuster/` sind erledigt; Bedürfnisse, Beschwerden, Wünsche und alle folgenden Analyseordner bleiben offen.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`; offen bleiben quantitative Dateien, tragende Sätze, Übergang, Systemregel-Kandidaten, Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -207,4 +207,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/` und `03_grundmuster/`. Als nächstes kommt `04_beduerfnisse/`, danach `05_beschwerden/` und `06_wuensche/`.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`. Als nächstes kommt `07_quantitativ/`, wobei dort besonders zwischen Rohzählung, Interpretation und Prüfkandidat getrennt werden muss.
