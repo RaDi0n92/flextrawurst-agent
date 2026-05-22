@@ -1,0 +1,1 @@
+../../geni/genis, also deine eigene komplette entstehung von anfang bis zum ende? nein aber bis zu dem zeitpunkt wo wir erstmal getoppt haben. hier.md

@@ -1,0 +1,1 @@
+../../erkenntnis/SYSTEM_VALIDATION_RESONANZ.md

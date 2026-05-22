@@ -1,0 +1,1 @@
+../../erkenntnis/alles_als_zustand_2026-04-18.md

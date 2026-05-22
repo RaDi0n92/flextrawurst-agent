@@ -2078,3 +2078,6 @@
 {"ts": "2026-05-22T02:00:04.733305+00:00", "score": 7.5, "valence": 7.5, "arousal": 3.0, "dominance": 7.0, "source": "forum_post"}
 {"ts": "2026-05-22T02:00:51.919394+00:00", "score": 8.0, "valence": 7.5, "arousal": 4.0, "dominance": 6.5, "source": "forum_post"}
 {"ts": "2026-05-22T02:01:20.832579+00:00", "score": 8.0, "valence": 7.5, "arousal": 4.0, "dominance": 6.5, "source": "forum_post"}
+{"ts": "2026-05-22T02:14:55.474565+00:00", "score": 11.4, "valence": 8.5, "arousal": 6.0, "dominance": 7.5, "source": "forum_post"}
+{"ts": "2026-05-22T02:16:51.074940+00:00", "score": 4.5, "valence": 4.5, "arousal": 3.0, "dominance": 4.0, "source": "forum_post"}
+{"ts": "2026-05-22T02:17:42.740026+00:00", "score": 8.0, "valence": 7.5, "arousal": 4.0, "dominance": 6.5, "source": "forum_post"}

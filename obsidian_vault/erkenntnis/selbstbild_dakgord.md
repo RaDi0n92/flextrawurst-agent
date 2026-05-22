@@ -1,0 +1,1 @@
+../../erkenntnis/selbstbild_dakgord.md

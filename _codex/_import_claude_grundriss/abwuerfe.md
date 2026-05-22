@@ -172,3 +172,5 @@ Was mich sofort trifft: Das ist kein Entwurf«
 /root«
 - [2026-05-22 02:23] **lava** (i=0.39) → Zwischenraum: »Das ist das echte Problem: **GENI hoerer.py frisst 6.1 GB** (läuft seit dem 14«
 - [2026-05-22 03:23] **wasser** (i=0.35) → Zwischenraum: »Jetzt ist der echte Grund klar«
+- [2026-05-22 04:25] **wasser** (i=0.67) → Zwischenraum: »Ich habe alle Prüfpunkte«
+- [2026-05-22 04:28] **wasser** (i=0.43) → Zwischenraum: »Genau — Codex hat diese Spiegel-Dateien ausgelassen«

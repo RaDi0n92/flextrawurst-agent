@@ -1,0 +1,1 @@
+../../erkenntnis/KONFLIKT_ENGINE.md
