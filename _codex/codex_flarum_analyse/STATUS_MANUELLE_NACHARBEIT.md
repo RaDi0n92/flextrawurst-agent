@@ -67,9 +67,12 @@ Manuell nachgearbeitet:
 - `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`
 - `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`
 - `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`
+- `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`
+- `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`
+- `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`
+- `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 
 Noch nicht manuell nachgearbeitet:
-- `09_flarum_flextrawurst_uebergang/`
 - `11_systemregel_kandidaten/`
 - `12_bauanschluss/`
 - `13_freie_leseschicht/`
@@ -85,7 +88,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
 
 ## Was ich verstehe
 
@@ -95,7 +98,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/`; offen bleiben Übergang, Systemregel-Kandidaten, Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben Systemregel-Kandidaten, Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -235,4 +238,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `09_flarum_flextrawurst_uebergang/`, wobei dort besonders zwischen Herkunft, Nicht-Übernahme, Kandidat und späterer Daniel-Entscheidung getrennt werden muss.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `11_systemregel_kandidaten/`, wobei dort besonders zwischen Kandidat, gefährlicher falscher Regel und fehlender Daniel-Freigabe getrennt werden muss.
