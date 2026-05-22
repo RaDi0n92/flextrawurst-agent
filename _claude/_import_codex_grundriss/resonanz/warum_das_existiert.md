@@ -396,3 +396,27 @@ Diese Kuratierung bleibt absichtlich nüchtern: kein Kanon, keine neue Schönhei
 **[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/KURATION_SUMMARY.md*
 
 Die Summary dient als Wegweiser: erst Typ prüfen, dann Quelle prüfen, erst danach über Kanon oder Systemregel sprechen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/wesen_originale_38.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/README.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.

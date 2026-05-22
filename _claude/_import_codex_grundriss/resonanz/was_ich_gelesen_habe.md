@@ -477,3 +477,43 @@ Ich habe die maschinell vorselektierten 140 tragenden Sätze gelesen, aber in di
 Der wichtigste Befund beim Lesen ist nicht ein neuer schöner Satz, sondern die Vermischung von Ebenen. Admin-Impulse, Wesen-Sätze, ChatGPT-Analyse und Codex-Destillate lagen in einer Liste nebeneinander.
 
 Diese Datei hält deshalb absichtlich die Rohheit fest und markiert, wo ein Satz noch Quelle, wo er nur Kontext, und wo er bereits Interpretation ist.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/wesen_originale_38.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/README.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.

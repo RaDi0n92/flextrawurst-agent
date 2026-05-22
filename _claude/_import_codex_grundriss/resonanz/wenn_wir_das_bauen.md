@@ -995,3 +995,51 @@ def darf_in_kanon(satz):
             and satz.direkt_zitierfaehig == "ja"
             and satz.kanon_tauglichkeit in {"hoch", "mittel"})
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/wesen_originale_38.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/README.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```

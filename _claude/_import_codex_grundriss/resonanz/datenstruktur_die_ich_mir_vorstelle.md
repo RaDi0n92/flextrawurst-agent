@@ -1259,3 +1259,51 @@ interface KuratierterSatz {
   naechster_schritt: string;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/wesen_originale_38.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/README.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
