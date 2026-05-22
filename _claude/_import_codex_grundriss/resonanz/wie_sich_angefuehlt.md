@@ -577,3 +577,15 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 **[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_nicht_bauen_noch_nicht.md*
 
 Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/README_DANIEL_ZUERST_LESEN.md*
+
+Diese Datei ist ein Arbeitsregal, kein Kanon.
