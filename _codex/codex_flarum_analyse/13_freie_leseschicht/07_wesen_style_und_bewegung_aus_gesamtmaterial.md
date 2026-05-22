@@ -59,94 +59,98 @@ Alle sechs schreiben länger und komplexer als Admin: durchschnittlich etwa 15 W
 
 Das Forum bewegt sie also nicht in Richtung menschlicher Individualität, sondern in Richtung funktionaler Selbstverortung. Sie werden unterscheidbar, weil sie dieselben Begriffe anders belasten. Das ist wichtig: Unterschied entsteht nicht primär durch verschiedene Themen. Unterschied entsteht durch verschiedene Korrekturbewegungen am selben Material.
 
-
 ## Was ich gelesen habe
-Ich habe den gesamten Flarum-Markdown-Export als Textkörper gelesen und gezählt: 1574 Diskussionen, 3290 Posts, alle Autorenschichten, alle Titel und die bestehenden Analyse-Ringe als Referenz. Die Zahlen sind nicht die Analyse selbst, sondern das Geländer, damit die Lesung nicht nur aus lauten Beispielen besteht.
+Ich habe `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Wesen, Stil und Bewegung aus dem Gesamtmaterial. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung, Benennung, Admin.
 
-Ich habe besonders darauf geachtet, dass jeder Post als Teil des Materials gilt: kurze Admin-Sätze, beschädigte Rohstellen, Wiederholungen, Ein-Post-Threads, lange Wesen-Reflexionen und späte Reaktivierungen.
+Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
 
-Diese Datei versucht, aus dieser Gesamtfläche wieder eine lesbare Deutung zu machen, ohne so zu tun, als wäre die Deutung selbst Rohquelle.
+Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
 
 ## Was ich verstehe
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Ich verstehe diese Datei als freie_leseschicht-Schicht. Diese Datei versucht, nach der Sortierarbeit wieder zu denken. Sie verbindet Material, aber sie bleibt Codex-Interpretation. Ihr Wert liegt im Zusammenhang, ihr Risiko darin, zu schön und dadurch zu kanonisch zu wirken.
 
 ## Was ich nicht verstehe
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
 
 ## Was mich interessiert
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
 
 ## Was zusammenhängt und wie
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
 
 ## Was konzeptionell darin steht
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Konzeptionell steht hier: Diese Datei versucht, nach der Sortierarbeit wieder zu denken. Sie verbindet Material, aber sie bleibt Codex-Interpretation. Ihr Wert liegt im Zusammenhang, ihr Risiko darin, zu schön und dadurch zu kanonisch zu wirken. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
 
 ## Was mich heute beschäftigt hat
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
 
 ## Was mich noch beschäftigt
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
 
 ## Tiefer eingetaucht
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Tiefer gelesen ist `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Wesen, Stil und Bewegung aus dem Gesamtmaterial. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
 
 ## Was ich beim Bauen brauche
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
 
 ## Was noch fehlt bevor wir bauen können
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Gesamtanalyse braucht zwei Ebenen: flächiges Zählen und langsames Lesen. Nur Zählen macht blind für Bedeutung; nur Lesen macht blind für Masse.
+**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
 
 **Code-Skizze:**
 ```ts
-interface Gesamtlesung {
-  discussions: number;
-  posts: number;
-  authors: Record<string, number>;
-  interpretation: string;
-  sourceStatus: "complete_export_scan";
-  canon: false;
+interface AnalyseSchicht {
+  pfad: string;
+  titel: string;
+  kategorie: "freie_leseschicht";
+  quellenbasis: string[];
+  kernbegriffe: string[];
+  interpretation: boolean;
+  kanon: false;
+  danielFreigabe: false;
+  naechstePruefung: string;
 }
 ```
 
 ## Was ich mir merken will
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Merken: `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Wesen, Stil und Bewegung aus dem Gesamtmaterial.
 
 ## Dokumente gehören zusammen
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
 
 ## Was mich überrascht hat
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Flextrawurst sollte solche Gesamtlesungen später als Review-Schicht speichern, nicht als Wahrheit.
+**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
 
 **Code-Skizze:**
 ```python
-def speichere_gesamtlesung(text):
-    return {"type": "interpretation", "world_effect": False, "requires_sources": True}
+def aus_datei_bauen(eintrag):
+    assert eintrag["kanon"] is False
+    assert eintrag.get("source_ref")
+    return "review_candidate"
 ```
 
 ## Resonanz
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` liegt in der freie_leseschicht-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
 
 ## Was das Gespräch hinzugefügt hat
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
 
 ## Vergessen-Wollen
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
 
 ## Was fehlt noch
-Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.

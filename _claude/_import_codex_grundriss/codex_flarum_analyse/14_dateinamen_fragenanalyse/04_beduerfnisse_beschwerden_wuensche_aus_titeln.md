@@ -61,94 +61,98 @@ Wünsche erscheinen als Sehnsucht nach Bewegung: Motor, Erwachen, Manifestation,
 
 Aus den Dateinamen entsteht eine klare Anforderung: Flextrawurst muss Zustände zwischen Stillstand und Handlung unterscheiden. Die Titel kennen bereits Last, Fessel, Stagnation, Motor, Manifestation und Fundament. Das sind spätere Status- und Ereigniskandidaten, aber noch keine Regeln.
 
-
 ## Was ich gelesen habe
-Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelesen. Diese Ebene ist nicht der ganze Post, aber sie zeigt, wie das Material sich selbst benennt, bevor der eigentliche Inhalt beginnt.
+Ich habe `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Bedürfnisse, Beschwerden und Wünsche aus Titeln. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung, Provenienz, Wesen.
 
-Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
+Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
 
-Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
 
 ## Was ich verstehe
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Ich verstehe diese Datei als dateinamen-Schicht. Diese Datei liest Titel und Slugs als Rahmungsschicht. Dateinamen verraten, wie das Forum sich selbst vor dem eigentlichen Post deutet: oft als Ursprung, Stille, Leere, Fundament, Reibung oder Notwendigkeit.
 
 ## Was ich nicht verstehe
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
 
 ## Was mich interessiert
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
 
 ## Was zusammenhängt und wie
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
 
 ## Was konzeptionell darin steht
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Konzeptionell steht hier: Diese Datei liest Titel und Slugs als Rahmungsschicht. Dateinamen verraten, wie das Forum sich selbst vor dem eigentlichen Post deutet: oft als Ursprung, Stille, Leere, Fundament, Reibung oder Notwendigkeit. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
 
 ## Was mich heute beschäftigt hat
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
 
 ## Was mich noch beschäftigt
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
 
 ## Tiefer eingetaucht
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Tiefer gelesen ist `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Bedürfnisse, Beschwerden und Wünsche aus Titeln. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
 
 ## Was ich beim Bauen brauche
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
 
 ## Was noch fehlt bevor wir bauen können
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Titel und Slugs sollten später als eigene Provenienzschicht behandelt werden: Rahmung, nicht Inhalt.
+**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
 
 **Code-Skizze:**
 ```ts
-interface TitleFrame {
-  discussionId: string;
-  title: string;
-  slug: string;
-  author: string;
-  motifHits: string[];
-  status: "rahmung_nicht_beweis";
+interface AnalyseSchicht {
+  pfad: string;
+  titel: string;
+  kategorie: "dateinamen";
+  quellenbasis: string[];
+  kernbegriffe: string[];
+  interpretation: boolean;
+  kanon: false;
+  danielFreigabe: false;
+  naechstePruefung: string;
 }
 ```
 
 ## Was ich mir merken will
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Merken: `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Bedürfnisse, Beschwerden und Wünsche aus Titeln.
 
 ## Dokumente gehören zusammen
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
 
 ## Was mich überrascht hat
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser sollte Titelmotive filtern können, aber immer zum Rohpost zurückführen.
+**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
 
 **Code-Skizze:**
 ```python
-def titel_als_kontext(title):
-    return {"frame": title, "canon": False, "requires_post_check": True}
+def aus_datei_bauen(eintrag):
+    assert eintrag["kanon"] is False
+    assert eintrag.get("source_ref")
+    return "review_candidate"
 ```
 
 ## Resonanz
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` liegt in der dateinamen-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
 
 ## Was das Gespräch hinzugefügt hat
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
 
 ## Vergessen-Wollen
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
 
 ## Was fehlt noch
-Titel als indirekte Bedürfnis- und Beschwerdesignale.
+Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
