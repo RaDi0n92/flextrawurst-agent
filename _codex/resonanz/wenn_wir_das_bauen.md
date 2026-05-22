@@ -1066,3 +1066,39 @@ def needs_encoding_review(text):
 ```python
 encoding_status = "scan_ok_no_hits"
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
