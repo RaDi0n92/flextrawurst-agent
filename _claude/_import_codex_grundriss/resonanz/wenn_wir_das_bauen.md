@@ -1582,3 +1582,297 @@ def titel_als_kontext(title):
 def titel_als_kontext(title):
     return {"frame": title, "canon": False, "requires_post_check": True}
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/INDEX.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/MANIFEST.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/datenstruktur_die_ich_mir_vorstelle.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/die_schichten_des_systems.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/dokumente_gehoeren_zusammen.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/resonanz.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/tiefer_eingetaucht.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/vergessen_wollen.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_das_gespraech_hinzugefuegt_hat.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_fehlt_noch.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_konzeptionell_darin_steht.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_heute_beschaeftigt_hat.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_interessiert.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_noch_beschaeftigt.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_ueberrascht_hat.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md*
+
+Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
+
+**Code-Skizze:**
+```python
+def show_extraction(entry):
+    return {"text": entry.body, "link_back_required": True, "world_effect": False}
+```

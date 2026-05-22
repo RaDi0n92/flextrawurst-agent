@@ -1935,3 +1935,441 @@ interface TitleFrame {
   status: "rahmung_nicht_beweis";
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/INDEX.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/MANIFEST.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/datenstruktur_die_ich_mir_vorstelle.md*
+
+Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/die_schichten_des_systems.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/dokumente_gehoeren_zusammen.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/resonanz.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/tiefer_eingetaucht.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/vergessen_wollen.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_das_gespraech_hinzugefuegt_hat.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_fehlt_noch.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_konzeptionell_darin_steht.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_heute_beschaeftigt_hat.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_interessiert.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_noch_beschaeftigt.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_ueberrascht_hat.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
+
+**Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
+
+**Code-Skizze:**
+```ts
+interface ExtractedHolySection {
+  section: string;
+  sourcePath: string;
+  sourceTitle: string;
+  category: string;
+  body: string;
+  canon: false;
+}
+```

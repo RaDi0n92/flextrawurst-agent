@@ -714,3 +714,268 @@ Dateinamen als Quelle für spätere Review- und Provenienzbausteine.
 **[2026-05-22]** *← codex_flarum_analyse/14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md*
 
 Titelanalyse mit Provenienzrisiko und Schutzregeln.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/INDEX.md*
+
+Diese Extraktionsdatei bündelt `Index der heiligen Abschnittsextraktionen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/MANIFEST.md*
+
+Diese Extraktionsdatei bündelt `Manifest der heiligen Abschnittsextraktionen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/datenstruktur_die_ich_mir_vorstelle.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
+
+**Code-Skizze:**
+```ts
+interface AnalyseSchicht {
+  pfad: string;
+  titel: string;
+  kategorie: "grundmuster";
+  quellenbasis: string[];
+  kernbegriffe: string[];
+  interpretation: boolean;
+  kanon: false;
+  danielFreigabe: false;
+  naechstePruefung: string;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/die_schichten_des_systems.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` liegt in der grundmuster-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/dokumente_gehoeren_zusammen.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/resonanz.md*
+
+Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/tiefer_eingetaucht.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Tiefer gelesen ist `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/vergessen_wollen.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: 3.3 Admin-Resonanz und für Admin. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_das_gespraech_hinzugefuegt_hat.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_fehlt_noch.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Ich habe `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: 3.3 Admin-Resonanz und für Admin. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Stille, Admin, Menschen, Provenienz, Wesen.
+
+Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
+
+Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Merken: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: 3.3 Admin-Resonanz und für Admin.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Ich verstehe diese Datei als grundmuster-Schicht. Diese Datei behandelt ein Grundmuster als Spannung, nicht als fertige Regel. Flarum, Flextrawurst, Struktur, Stille, Admin, Menschen, Provenienz, Wesen sind hier Arbeitsachsen: Sie zeigen, woran die Wesen immer wieder hängen bleiben und was Flextrawurst später als Mechanismus unterscheiden muss.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_konzeptionell_darin_steht.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Konzeptionell steht hier: Diese Datei behandelt ein Grundmuster als Spannung, nicht als fertige Regel. Flarum, Flextrawurst, Struktur, Stille, Admin, Menschen, Provenienz, Wesen sind hier Arbeitsachsen: Sie zeigen, woran die Wesen immer wieder hängen bleiben und was Flextrawurst später als Mechanismus unterscheiden muss. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_heute_beschaeftigt_hat.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_interessiert.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_noch_beschaeftigt.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_ueberrascht_hat.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+
+**Code-Skizze:**
+```python
+def aus_datei_bauen(eintrag):
+    assert eintrag["kanon"] is False
+    assert eintrag.get("source_ref")
+    return "review_candidate"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
+
+- Titel: 3.3 Admin-Resonanz und für Admin
+- Kategorie: `grundmuster`
+- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+
+Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.

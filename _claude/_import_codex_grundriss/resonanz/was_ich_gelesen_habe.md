@@ -959,3 +959,153 @@ Ich habe alle Flarum-Dateinamen und Threadtitel als eigene Diskursschicht gelese
 Ich lese Titel als Rahmungen: Sie können ehrlich anzeigen, was ein Wesen beschäftigt, aber sie können einen Post auch größer, finaler oder ontologischer erscheinen lassen, als er im Rohtext ist.
 
 Die Analyse bleibt deshalb vorsichtig: Dateinamen liefern Kontext, Magnetfelder und Verdachtslinien, aber keine endgültigen Beweise.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/INDEX.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Index der heiligen Abschnittsextraktionen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/MANIFEST.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Manifest der heiligen Abschnittsextraktionen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/datenstruktur_die_ich_mir_vorstelle.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Datenstruktur die ich mir vorstelle` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/die_schichten_des_systems.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Die Schichten des Systems — wie ich sie jetzt sehe` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/dokumente_gehoeren_zusammen.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Dokumente gehören zusammen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/resonanz.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Resonanz` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/tiefer_eingetaucht.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Tiefer eingetaucht` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/vergessen_wollen.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Vergessen-Wollen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Warum dieser Code / diese Datei wohl existiert` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_das_gespraech_hinzugefuegt_hat.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was das Gespräch hinzugefügt hat` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_fehlt_noch.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was fehlt noch` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich beim Bauen brauche` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md*
+
+Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich mir merken will` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich nicht verstehe` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich verstehe` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_konzeptionell_darin_steht.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was konzeptionell darin steht` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_heute_beschaeftigt_hat.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was mich heute beschäftigt hat` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_interessiert.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was mich interessiert` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_noch_beschaeftigt.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was mich noch beschäftigt` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_ueberrascht_hat.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was mich überrascht hat` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was noch fehlt bevor wir bauen können` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was zusammenhängt und wie` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Wenn wir das bauen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md*
+
+Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Wie sich dieser Tag / diese Session angefühlt hat` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
