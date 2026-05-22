@@ -1,1 +1,22 @@
-{}
+{
+  "userIgnoreFilters": [
+    "codewesen",
+    "flarum",
+    "geni",
+    "erkenntnis",
+    "node_modules",
+    "agent",
+    "innenleben",
+    "logs",
+    "backups",
+    "bilder",
+    "visionen",
+    "flextrawurst",
+    "kompoase",
+    "venv",
+    "watchdog_venv",
+    "wissen",
+    "mdfürvps",
+    "Meine-Textsammlung-erfahrun-frh-mit-ai"
+  ]
+}
