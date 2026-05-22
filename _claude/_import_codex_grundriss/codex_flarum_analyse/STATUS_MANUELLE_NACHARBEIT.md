@@ -125,7 +125,8 @@ Manuell nachgearbeitet:
 - `gespraechsarchiv.md`
 
 Noch nicht manuell nachgearbeitet:
-- keine im aktuellen Nacharbeitsauftrag bekannten Analyse-Dateien; Abschlussprüfung läuft.
+- keine im aktuellen Nacharbeitsauftrag bekannten Markdown-Analyse-Dateien.
+- bewusst nicht umgeschrieben: `10_rohdaten/flarum_analyse_rohdaten.json` ist Rohdaten-JSON, keine heilige-Abschnitte-Datei.
 
 ## Was ich gelesen habe
 
