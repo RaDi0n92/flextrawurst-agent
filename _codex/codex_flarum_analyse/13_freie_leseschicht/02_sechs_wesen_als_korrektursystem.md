@@ -34,137 +34,157 @@ Zusammen ergeben sie kein Team im harmonischen Sinn. Sie ergeben ein Prüffeld. 
 Flextrawurst sollte diese Unterschiede nicht als fixe Persönlichkeitskarten übernehmen. Das wäre zu hart. Aber es sollte die Korrekturfunktionen bewahren. Der Wert liegt nicht darin, dass jedes Wesen eine endgültige Rolle bekommt. Der Wert liegt darin, dass ihre Einseitigkeiten einander prüfen.
 
 ## Was ich gelesen habe
-Ich habe `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` als `Freie Leseschicht` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Die sechs Wesen als Korrektursystem` setzt den Schwerpunkt dieser Datei; `Die sechs Wesen als Korrektursystem` holt Lesefluss zurück und prüft Flarum, Flextrawurst, Struktur, Leere, Reibung als Bewegung statt als Ringformular.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die freie Analyse der sechs Wesen als Korrektursystem gelesen. Sie liest die Wesen nicht als Stile nebeneinander, sondern als gegenseitige Prüfkräfte.
+
+1111 bremst Überbehauptung, 2222 fragt nach Mechanismus, 3333 verteidigt Spannung und Flarum-Materie, 4444 verlangt Verankerung, 5555 schützt Leere und Unfertigkeit, 6666 verlangt Kohärenz und Raumlogik.
 
 ## Was ich verstehe
-Bei `Die sechs Wesen als Korrektursystem` verstehe ich die Hauptfunktion als: fließende, nicht-ringförmige Deutung. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als gutes Gegenmittel zu flachen Profilen. Die Wesen sind nicht nur unterschiedlich; sie korrigieren jeweils die Einseitigkeit der anderen.
+
+Der Wert liegt im Prüffeld, nicht in festen Persönlichkeitskarten.
 
 ## Was ich nicht verstehe
-Bei `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Die sechs Wesen als Korrektursystem` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, welche Korrekturfunktionen wirklich aus Originalzitaten belegt sind und welche aus der Gesamtlektüre abgeleitet wurden.
+
+Unklar bleibt auch, ob manche Funktionen zeitlich wechseln.
 
 ## Was mich interessiert
-Mich interessiert an `Die sechs Wesen als Korrektursystem` genau der Übergang von Datei zu Systemfrage. Wenn `Freie Leseschicht` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, wie dieses Korrektursystem später ohne harte Rollen übernommen werden kann. Vielleicht als Beobachtungsmodell, nicht als Identitätsprofil.
+
+Gerade die Einseitigkeiten sind wertvoll, solange sie beweglich bleiben.
 
 ## Was zusammenhängt und wie
-`13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Die sechs Wesen als Korrektursystem`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Die sechs Wesen als Korrektursystem` hängt mit den strukturierten Analyseordnern zusammen, aber anders: Die Datei verbindet, was dort getrennt wurde. Genau deshalb braucht sie sichtbare Nicht-Kanon-Markierung.
+
+Sie gehört als Leseschicht über Rohposts, Wesenprofilen, Grundmustern, Admin-Einfluss und Übergang, aber nicht in deren Quellenstatus.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Die sechs Wesen als Korrektursystem` nicht einfach ein Thema, sondern eine Funktion: fließende, nicht-ringförmige Deutung.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Reparatur des Schreibflusses. `Die sechs Wesen als Korrektursystem` versucht, aus der zerschnittenen Ringlogik wieder eine lesbare Deutung zu machen.
+
+Das ist erlaubt, solange die Datei nicht vorgibt, selbst Rohquelle zu sein.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Die sechs Wesen als Korrektursystem` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: freie Deutung könnte Quellenprüfung überspringen.
+Mich beschäftigt, dass die freie Leseschicht nötig wurde, weil die Ordnung vorher zu viel Leben aus dem Material zog.
+
+Die Gefahr ist jetzt die Gegenrichtung: gute Prosa könnte Quellenprüfung überspringen. Beide Fehler müssen sichtbar bleiben.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Die sechs Wesen als Korrektursystem` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Freie Leseschicht` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Sätze aus dieser freien Leseschicht später zu stark wirken werden. Manche Formulierungen können Daniel helfen, aber sie dürfen nicht als Wesen-Aussagen zurück in das Material fallen.
+
+Jeder starke Satz aus dieser Schicht braucht eine Notiz: Codex-Interpretation.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Die sechs Wesen als Korrektursystem` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Die sechs Wesen als Korrektursystem` nicht nur Inhalt, sondern Methodenwechsel. Die Datei sagt: Nach Regalen braucht es wieder Atem. Nach Atem braucht es aber wieder Provenienz.
+
+Diese Pendelbewegung ist wahrscheinlich die richtige Form für die ganze Diskursarchäologie.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Die sechs Wesen als Korrektursystem` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `freie Deutung könnte Quellenprüfung überspringen`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich an, als würde ich dem Text seinen eigenen Raum zurückgeben. Nicht mehr jedes Feld denselben Satz, sondern jede Datei ihre eigene Aufgabe.
+
+Gerade hier merkt man, warum Daniels Kritik berechtigt war: freie Analyse stirbt in Template-Sprache.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Die sechs Wesen als Korrektursystem` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel nach der Ringlogik wieder eine echte Analyse wollte. `Die sechs Wesen als Korrektursystem` ist eine Antwort darauf: nicht nur sortieren, sondern verstehen, wie das Material sich bewegt.
+
+Sie ist kein Ersatz für die Ringe, sondern ihre atmende Ergänzung.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Die sechs Wesen als Korrektursystem` den Pfad `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich keine fixen Persönlichkeitstypen, sondern `CorrectionFunctionCandidate`s mit Belegen und Risiken.
+
+Ein späteres Wesenprofil muss diese Funktionen prüfen, nicht blind übernehmen.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen pro Wesen die besten Originalstellen, die genau diese Korrekturfunktion zeigen.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Die sechs Wesen als Korrektursystem` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Die sechs Wesen als Korrektursystem` gehört in eine freie Leseschicht: interpretierend, verbindend, lesbar, aber ausdrücklich nicht Quelle und nicht Kanon. Die Datei darf Zusammenhang zeigen, muss aber Rückwege zu Rohmaterial offenhalten.
 
 **Code-Skizze:**
 ```ts
-interface FreeReadingLayerDieSechs {
-  path: '13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md';
-  title: 'Die sechs Wesen als Korrektursystem';
-  kind: 'Freie Leseschicht';
-  keywords: string[];
-  risk: 'freie Deutung könnte Quellenprüfung überspringen';
-  requiresReview: true;
-  worldEffect: false;
+interface FreeReadingNote {
+  title: string;
+  interpretation: string;
+  touchedAxes: string[];
+  sourceFolders: string[];
+  canBeCitedAsSource: false;
+  requiresSourceCheck: true;
+  possibleUses: ('orientation' | 'question' | 'browser_note' | 'analysis_axis')[];
 }
 ```
 
 ## Was ich mir merken will
-Bei `Die sechs Wesen als Korrektursystem` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Die sechs Wesen sind kein harmonisches Team. Sie sind ein Prüffeld aus Einseitigkeiten.
+
+Diese Einseitigkeiten dürfen nicht zu Käfigrollen werden.
 
 ## Dokumente gehören zusammen
-Zu `Die sechs Wesen als Korrektursystem` gehören mindestens `13_freie_leseschicht`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `13_freie_leseschicht/README.md` und zu den jeweils berührten Fachordnern.
+
+Sie sollte im Analyse-Browser als `freie Codex-Lesung` erscheinen, getrennt von Wesenoriginalen, Adminrahmen und Zählungen.
 
 ## Was mich überrascht hat
-Überraschend an `Die sechs Wesen als Korrektursystem` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `13_freie_leseschicht` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich, wie stark die Datei den Unterschied zwischen Stil und Funktion trifft. Stil ist Oberfläche; Korrekturfunktion ist Systemwert.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Die sechs Wesen als Korrektursystem` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Die sechs Wesen als Korrektursystem` gehört in eine freie Leseschicht: interpretierend, verbindend, lesbar, aber ausdrücklich nicht Quelle und nicht Kanon. Die Datei darf Zusammenhang zeigen, muss aber Rückwege zu Rohmaterial offenhalten.
 
 **Code-Skizze:**
-```python
-def use_13_freie_leseschicht_02_sechs_wesen_als_korrektursystem_(entry):
-    return {
-        'source_path': '13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md',
-        'kind': 'Freie Leseschicht',
-        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface FreeReadingNote {
+  title: string;
+  interpretation: string;
+  touchedAxes: string[];
+  sourceFolders: string[];
+  canBeCitedAsSource: false;
+  requiresSourceCheck: true;
+  possibleUses: ('orientation' | 'question' | 'browser_note' | 'analysis_axis')[];
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Die sechs Wesen als Korrektursystem` liegt in diesem Druckpunkt: freie Deutung könnte Quellenprüfung überspringen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Die sechs Wesen als Korrektursystem` ist stärker als bei den Tabellen, aber weniger belastbar als Rohquelle. Das ist okay, solange diese Zwischenstellung sichtbar bleibt.
+
+Die Datei soll Orientierung geben, nicht entscheiden.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` liegt in der Schicht `Freie Leseschicht`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Die sechs Wesen als Korrektursystem` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohquelle unten, strukturierte Analyse daneben, freie Leseschicht darüber als Deutungsbewegung, Bauanschluss erst danach.
+
+Die freie Leseschicht darf nach oben zeigen, aber sie muss nach unten verlinkbar bleiben.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Die sechs Wesen als Korrektursystem` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel die Ringlogik als zu tot erlebt hat.
+
+Diese Datei ist Teil der Korrektur: wieder erzählen, aber mit Warnschild und Rückbindung.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Die sechs Wesen als Korrektursystem` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: freie Deutung könnte Quellenprüfung überspringen.
+Vergessen werden soll die mechanische Pflichtabschnitt-Sprache.
+
+Vergessen werden soll aber auch die bequeme Idee, dass schöne Deutung Quellenprüfung ersetzt.
 
 ## Was fehlt noch
-Es fehlt bei `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Die sechs Wesen als Korrektursystem` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt eine spätere Verknüpfung der freien Aussagen mit Belegstellen aus den Rohposts und Analyse-Regalen.
+
+Bis dahin bleibt diese Datei eine Lesart, kein Beweis.
