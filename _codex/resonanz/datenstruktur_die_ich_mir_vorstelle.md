@@ -528,3 +528,34 @@ Ein Container-Fix ist eine Kette von Ankern. Jeder Anker muss sichtbar sein: per
 /defaults/autostart -> while true; do obsidian; resize; wait; done
 /usr/bin/obsidian -> /opt/obsidian/obsidian --disable-gpu --disable-dev-shm-usage --js-flags=--max-old-space-size=8192
 ```
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+**Vision-Schicht**
+
+Ein Profil ist kein Käfig. Es ist eher ein Koordinatensystem für Zusammenarbeit: Wo kippt Vertrauen? Wo entsteht Reibung? Was muss geschützt werden, damit Arbeit nicht falsch glatt wird?
+
+**Code-Skizze**
+
+```typescript
+interface ZusammenarbeitMitDaniel {
+  vorDemBauen: [
+    "Ursprung benennen",
+    "Verstandenes in einem Satz spiegeln",
+    "Scope und Verlust sichtbar machen"
+  ];
+  beimBauen: {
+    code: "fertig_testbar_integriert";
+    konzept: "erst_gross_dann_sortieren";
+    memory: "nicht_heimlich_umdeuten";
+    provenance: "immer_markieren";
+  };
+  warnsignale: [
+    "Scheinverstaendnis",
+    "zu_fruehes_MVP",
+    "heimliche_Glaettung",
+    "Kontextverlust_ohne_Hinweis"
+  ];
+...

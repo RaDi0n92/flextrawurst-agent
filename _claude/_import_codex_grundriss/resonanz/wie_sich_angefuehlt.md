@@ -175,3 +175,9 @@ zu "wir wissen besser, welche Art Surface es werden soll".
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Wie Betrieb statt Vision: kleine Pfade, tatsächliche Logs, ein falscher Ordnername, ein immutable Bit, ein Prozess der stirbt und wiederkommt.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Wie ein Wechsel von Maschinenraum zu Selbstbeschreibung. Erst Docker, Init-Hooks, Fenstergrößen und Heap-Druck; dann ein Text, der sagt, warum solche technischen Kleinteile in diesem Werkraum überhaupt Gewicht haben.

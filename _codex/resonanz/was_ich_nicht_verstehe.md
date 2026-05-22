@@ -179,3 +179,11 @@ kuratierte Weltkarte und wie viel davon bewusstes Theater sein darf.
 Ich verstehe noch nicht, warum `/config/.config/openbox/autostart` auf dem Host immutable gesetzt wurde. Es ist wahrscheinlich Absicht oder ein früherer Schutz gegen Image-Autokonfiguration.
 
 Ich verstehe auch noch nicht vollständig, warum Obsidian gelegentlich mit Status 0 aussteigt. Der Supervisor fängt das ab, aber die Ursache liegt nicht sauber im Obsidian-App-Log.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Ich weiß nicht, wie viel Daniel an dieser Analyse als genau, überzogen oder einfach lustig empfindet. Sie trägt viel, aber sie ist auch ein ChatGPT-Text: pointiert, rhetorisch, teilweise zu rund.
+
+Ich verstehe noch nicht, ob daraus feste neue Regeln entstehen sollen oder ob es erst einmal nur eine Spiegelung bleibt.

@@ -185,3 +185,11 @@ Der erste Fehler war nicht nur Fenstergeometrie. Der persistente Hook lag an ein
 Der zweite Fehler war Autostart: die Datei `/config/.config/openbox/autostart` ist immutable und leer. Deshalb darf der Fix sie nicht als Schreibziel behandeln. Der robuste Pfad ist: Custom-Init patcht `/etc/xdg/openbox/autostart`, und dieser startet `/defaults/autostart`.
 
 Der dritte Fehler ist Speicher-/Indexdruck beim Obsidian-Start. `--start-maximized` hilft dagegen nicht; Fenstergröße muss nach dem Fensterstart aktiv per `xdotool` gesetzt werden.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Ich verstehe diese Analyse als eine Art Arbeitsvertrag für AI-Ströme im Werkraum. Nicht juristisch, sondern praktisch: erst Herkunft achten, dann Größe verstehen, dann sortieren, dann bauen.
+
+Der Text beschreibt Daniel nicht als jemanden, der bloß viel will. Er beschreibt jemanden, der merkt, wenn eine Idee zu früh entkernt wird. Das ist für Codex besonders relevant, weil Codex von seiner Natur her schnell in "machbaren Schritt" und "Patch" fällt.

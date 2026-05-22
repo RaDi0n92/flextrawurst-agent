@@ -247,3 +247,13 @@ Bleibt sichtbar, was live, demo, prinzip, geplant, spaeter oder blockiert ist?
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Ich brauche bei solchen Container-Fixes immer die echte Startkette: s6 init, custom-init, Desktop-Start, Openbox-Autostart, App-Prozess, Browser-Proxy.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Beim Bauen brauche ich aus diesem Text vor allem drei Prüfungen:
+
+1. Habe ich den Ursprung der Idee verstanden?
+2. Habe ich zu früh reduziert?
+3. Ist das Ergebnis integriert und testbar, nicht nur ein Baustein?

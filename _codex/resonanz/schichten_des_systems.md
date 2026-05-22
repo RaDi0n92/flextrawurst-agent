@@ -239,3 +239,9 @@ Drittens die Baugrenze: Organ-Slots, Status, Blocker, Demo/Prinzip/Live.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Host: nginx, Docker, Volume. Container: s6, custom-init, Openbox, Selkies, Obsidian. Vault: `/werkraum`. Browser: Port 8443 mit Basic Auth.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Unten liegt der Werkraum als Vault. Darüber liegen AI-Ströme, Codewesen, Flarum-Vorphase, flextrawurst als neue Welt und die Werkzeuge, die alles verbinden. Quer durch alle Schichten läuft dieselbe Forderung: Ursprung sichtbar halten.

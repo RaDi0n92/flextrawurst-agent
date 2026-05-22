@@ -161,3 +161,9 @@ Vorform. Das Bild ist der bessere Kompass.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Den Reflex, `docker ps` als "läuft" zu lesen. Ein Container kann laufen und die Anwendung darin trotzdem nicht benutzbar sein.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Ich will vergessen, dass ein Profil automatisch Autorität hat. Es ist gut, wenn es Arbeit verbessert. Es ist schlecht, wenn es den Menschen ersetzt.

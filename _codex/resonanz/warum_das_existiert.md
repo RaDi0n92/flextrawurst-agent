@@ -174,3 +174,9 @@ wenn an flextrawurst gebaut, geplant oder bewertet wird.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Die Init-Datei existiert, damit Image-Updates und Container-Restarts die manuelle Obsidian-Reparatur nicht wieder verlieren.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Diese Spiegeldatei existiert, damit ich die Analyse nicht nur im Chat bestätige und dann vergesse. Sie soll künftigen Codex-Instanzen zeigen: Dieses Profil ist kein Befehl, aber ein starker Hinweis auf die Arbeitsform, die Daniel braucht.

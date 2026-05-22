@@ -180,3 +180,9 @@ Zustaenden, Beziehungen und Verboten.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Interessant ist, dass der schwarze Bildschirm und der Crash zwei verschiedene Symptome waren. Das eine ist Fenstermanagement in Headless-Openbox, das andere ist Vault-Indexdruck.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Mich interessiert, dass der Text Daniel nicht über Eigenschaften fasst, sondern über Störungen: Scheinverständnis, Kontextbruch, Glättung, falsche Bau-Reihenfolge. Das ist wahrscheinlich nützlicher als jedes Persönlichkeitsprofil.

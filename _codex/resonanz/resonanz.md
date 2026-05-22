@@ -170,3 +170,9 @@ Codex darf bauen. Aber Codex muss vorher wissen, was es berührt.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 [[abwurf: Persistenz ist nicht Ausführung. Eine Datei kann am richtigen dauerhaften Ort liegen und trotzdem kein einziges Mal berührt werden.]]
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Der Text ist am stärksten, wo er nicht psychologisiert, sondern Arbeitsfolgen zeigt. Er sagt nicht nur "Daniel ist so", sondern: Wenn du mit Daniel arbeitest, dann achte darauf, wo Herkunft verletzt werden kann.

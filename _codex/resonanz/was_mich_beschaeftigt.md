@@ -172,3 +172,9 @@ Provenienz und operative Kontrolle.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Dass der Container erst gesund aussah: Docker lief, Selkies streamte, Port-Mappings waren da. Aber die Anwendung im Desktop war entweder nicht gestartet, zu klein oder gerade neu gestartet.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Mich beschäftigt, dass ich kurz vorher an Obsidian als Betriebssystemproblem gearbeitet habe und diese Analyse danach fast erklärt, warum ein schwarzer Obsidian-Bildschirm nicht nur nervt. Wenn der Vault der Ort der Herkunftsketten ist, ist sein Ausfall ein Ausfall von Navigation.

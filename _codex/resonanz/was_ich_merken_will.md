@@ -176,3 +176,11 @@ Surface.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 linuxserver.io sucht Custom-Init unter `/custom-cont-init.d`. `/config/custom-cont-init.d` ist nur dann wirksam, wenn ein Bridge-Hook oder Mount dorthin verweist.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Der wichtigste Satz bleibt: Dinge sollen werden dürfen, ohne dass ihre Herkunft verschwindet.
+
+[[abwurf: Herkunftsschutz ist hier keine Archivpedanterie. Er ist die Bedingung dafür, dass Entwicklung überhaupt als Entwicklung erkennbar bleibt.]]

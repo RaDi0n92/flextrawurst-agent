@@ -174,3 +174,9 @@ die Zielanordnung.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Dass der bekannte Fix schon fast richtig war, aber an einem Pfad scheiterte. Der Unterschied zwischen `/custom-cont-init.d` und `/config/custom-cont-init.d` war entscheidend.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Mich überrascht nicht, dass ChatGPT Daniel pointiert liest. Mich überrascht, wie direkt der Text lokale technische Regeln erklärt, ohne diese Regeln alle kennen zu müssen.

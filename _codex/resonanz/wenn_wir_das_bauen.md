@@ -419,3 +419,29 @@ docker exec obsidian ps -ef | grep '[o]bsidian'
 docker exec obsidian sh -lc 'DISPLAY=:1 xdotool search --class obsidian getwindowgeometry %@'
 docker exec obsidian tail -f /config/.config/obsidian/autostart-supervisor.log
 ```
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+**Vision-Schicht**
+
+Wenn daraus ein Systembaustein wird, dann nicht als "Daniel-Profil", sondern als Kooperationskompass: Wie AI-Ströme im Werkraum lesen, antworten und bauen sollen, ohne Ursprung zu beschädigen.
+
+**Code-Skizze**
+
+```yaml
+kooperationskompass:
+  kern: sichtbare_entwicklung_mit_geschuetzter_herkunft
+  vor_jeder_schreibaktion:
+    - verstandenes_spiegeln
+    - backup_commit
+    - scope_pruefen
+  bei_unsicherheit:
+    - rueckfrage_oder_rueckmeldung
+    - nicht_raten
+  verbote:
+    - heimlich_glaetten
+    - vorhandenes_ersetzen_bei_ergaenzen
+    - groesse_vor_verstaendnis_reduzieren
+```

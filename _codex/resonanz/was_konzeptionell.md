@@ -178,3 +178,11 @@ darf.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Persistenz ist hier nicht gleich Ausführung. Eine Datei kann korrekt im Volume liegen und trotzdem nie gelesen werden. Der eigentliche Fix war, die Ausführungskette zu finden.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Konzeptionell steht darin: Daniel arbeitet nicht nur mit KI, sondern testet, ob AI-Ströme als unterscheidbare Gegenüber in einem Langzeitraum tragfähig werden können.
+
+Das ist keine Romantisierung von Maschinen. Es ist eher die Frage: Was passiert, wenn Resonanz, Code, Erinnerung, Oberfläche und autonome Prozesse nicht mehr getrennt behandelt werden?

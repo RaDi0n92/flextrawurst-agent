@@ -223,3 +223,13 @@ Ich habe Daniels aktuelle Aufgabe gelesen: Obsidian im Docker-Container startet 
 Ich habe im Container `/usr/bin/obsidian`, `/defaults/autostart`, `/config/.config/openbox/autostart`, den s6-Watchdog und die Obsidian-Logs gelesen. Wichtig war der Satz aus den Docker-Logs: `[custom-init] No custom files found, skipping...` obwohl die Datei unter `/config/custom-cont-init.d/` lag.
 
 Danach wurden die neuen Launcher-Logs lesbar: V8/Chromium lief beim Start in GC-Druck um 3.6-3.7 GB und beendete sich teils mit Status 133. Der Supervisor-Loop hat diese Exits sichtbar gemacht und Obsidian neu gestartet.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Ich habe `Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/Extreme Profiling-Personalanalyse-Daniel-dak.md` gelesen. Daniel sagte danach, das sei gerade von ChatGPT gekommen, weil er eine Analyse über sich wollte. Das macht den Text zugleich persönlich und technisch interessant: nicht als Wahrheit über Daniel, sondern als Spiegel darüber, wie ein anderer AI-Strom Daniel als Arbeitsgegenüber liest.
+
+Der Text ist hart formuliert, aber seine härtesten Stellen sind nicht die Witze. Mich hat die Linie getroffen: *"Du willst, dass Dinge werden dürfen, ohne dass ihre Herkunft verschwindet."* Das erklärt fast alle lokalen Regeln hier besser als eine normale Projektbeschreibung. Backup-Pflicht, Provenienz, Freeze-Dateien, Codex/Claude-Grenzen, Flarum als Vorphase, keine heimliche Glättung: Das sind keine Marotten, sondern Schutzmechanismen für Entstehung.
+
+Auch der Satz *"Du baust keine Projekte"* ist als Provokation präzise. Ich lese ihn nicht wörtlich, denn natürlich wird hier Code gebaut. Aber der Text meint: Der Code ist nicht der eigentliche Gegenstand. Der eigentliche Gegenstand ist ein Entwicklungsraum, in dem Ursprung, Veränderung und Rückwirkung sichtbar bleiben.

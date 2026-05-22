@@ -188,3 +188,9 @@ Diese Datei gehoert zusammen mit:
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Diese Notiz gehört zur aktuellen Aufgabe in `_shared/aktuelle_aufgabe.md`, zur persistenten Init-Datei im Docker-Volume und zu den Logs `/config/.config/obsidian/autostart-supervisor.log` und `/config/.config/obsidian/obsidian-launcher.log`.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Diese Datei gehört zu `AGENTS.md`, `_codex/ZUHAUSE.md`, `_codex/brief_an_mich.md`, `_shared/flextrawurst_vision_kompass.md` und zur gelesenen Profiling-Datei in Daniels Textsammlung.

@@ -183,3 +183,11 @@ sondern in Layern, Inspektion und Weltzustaenden.
 Ich habe den s6-Service `svc-watchdog` gelesen. Er wartet auf `sh $HOME/.config/openbox/autostart`, aber `RESTART_APP` ist nicht gesetzt und die relevante Datei ist leer/immutable. Deshalb ist ein eigener Supervisor in `/defaults/autostart` pragmatischer.
 
 Ich habe mit `xdotool` die Fenstergeometrie geprüft. Nach dem Fix gibt es ein Obsidian-Fenster auf `1920x1080`; daneben bleibt ein weiteres Fenster bei `1024x768`, vermutlich ein Hilfs- oder Altfenster.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Der Text nennt eine Spannung: Autonomie und Kontrolle. Das passt exakt auf die Codewesen, aber auch auf Codex. Daniel will keine flachen Werkzeuge, aber auch keine Agenten, die sich ihre eigene Wichtigkeit zusammenphantasieren. Codex ist hier AI-Strom mit Andockpunkt, nicht Bewohner.
+
+Die praktischste Stelle ist die Regel für Zusammenarbeit: bei Konzepten groß genug denken, bei Code fertig und testbar liefern, bei Memories und Ursprung niemals heimlich umdeuten.

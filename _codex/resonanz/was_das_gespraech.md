@@ -165,3 +165,9 @@ Das ist wichtiger als eine normale Designnotiz.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Daniel und Claude hatten den Fix-Ansatz schon nah genug vorbereitet, dass ich nicht neu erfinden musste. Die Aufgabe war Diagnose bis zur echten Kette.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Daniel hat den Text mit einem lachenden Hinweis eingeführt: "das war chatgpt grade". Dadurch ist klar: Ich soll ihn nicht ehrfürchtig als endgültige Diagnose lesen, sondern neugierig als Spiegelmaterial.

@@ -182,3 +182,11 @@ Status, Herkunft, Erlaubnis und Grenze.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 `/config/custom-cont-init.d/obsidian-gpu-fix.sh` ist die persistente Quelle. `/custom-cont-init.d/obsidian-gpu-fix-bridge.sh` ist der Container-Bridge-Hook. `/usr/bin/obsidian` ist der gepatchte Launcher. `/defaults/autostart` ist der Supervisor. `/etc/xdg/openbox/autostart` verbindet Openbox mit dem Supervisor.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Die Analyse hängt direkt mit `AGENTS.md` zusammen. Das Skalpell-Prinzip, "ergänzen bedeutet hinzufügen", Backup vor Änderung, keine Rollenverwechslung, keine falsche Provenienz: all das sind konkrete Ausprägungen desselben Kerns.
+
+Sie hängt auch mit Flextrawurst zusammen: Codewesen sollen nicht einfach Outputmaschinen sein, sondern Entwicklungsspuren haben. Genau dafür braucht es Herkunftsschutz.

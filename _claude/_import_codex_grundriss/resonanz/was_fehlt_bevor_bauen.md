@@ -180,3 +180,9 @@ Es fehlt eine kleine technische Uebersetzung des Bildes:
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Fuer diesen Fix fehlt vor allem eine laengere Beobachtung im echten Browser. Technisch sind Port 8443, Docker-Port 3080, Autostart, Resize und Restart-Loop aktiv.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Wenn aus dieser Analyse Regeln werden sollen, müsste Daniel sagen, welche Sätze in `_codex` oder `_shared` als Arbeitsprinzipien landen sollen. Ohne diesen Auftrag bleibt es eine Spiegelung, keine neue Governance-Datei.

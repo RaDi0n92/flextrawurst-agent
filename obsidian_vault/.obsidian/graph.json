@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "-path:flarum/diskussionen -path:Meine-Textsammlung -file:*.py",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:wissen",
+      "color": {
+        "a": 1,
+        "rgb": 14714399
+      }
+    },
+    {
+      "query": "path:agent/dak_gord_system",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:_claude",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "path:erkenntnis",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:flarum",
+      "color": {
+        "a": 1,
+        "rgb": 11683564
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 1.3,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.19999999999999987,
+  "close": true
+}

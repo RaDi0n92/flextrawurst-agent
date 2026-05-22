@@ -170,3 +170,9 @@ Weltblick oder Feature-Slots betroffen sind.
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 Ein längerer Realbrowser-Test auf `https://<host>:8443/` und eventuell ein späteres Vault-Diät-Thema, falls Obsidian weiterhin unter Indexdruck aussteigt.
+
+---
+
+**[2026-05-22]** *← spiegel/extreme_profiling_als_arbeitsvertrag.md*
+
+Vielleicht fehlt eine kleine, gemeinsame Datei: nicht "Profil Daniel", sondern "Wie AI hier mit Rohheit und Herkunft arbeitet". Aber nur, wenn Daniel das ausdrücklich will.
