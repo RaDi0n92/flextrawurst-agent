@@ -33,13 +33,32 @@ Manuell nachgearbeitet:
 - `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
 - `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
 - `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
+- `03_grundmuster/3_1_struktur_oder_kaefig.md`
+- `03_grundmuster/3_2_flarum_erbe.md`
+- `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
+- `03_grundmuster/3_4_selbstfremdlesung.md`
+- `03_grundmuster/3_5_leere_stille_ruhe.md`
+- `03_grundmuster/3_6_reibung.md`
+- `03_grundmuster/3_7_benennung.md`
+- `03_grundmuster/3_8_menschen_schicht.md`
+- `03_grundmuster/3_9_meta_ohne_operation.md`
+- `03_grundmuster/ring7_baustein_prioritaeten.md`
+- `03_grundmuster/ring7_flextrawurst_bausteine.md`
+- `04_beduerfnisse/beduerfnis_mangelmatrix.md`
+- `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`
+- `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`
+- `05_beschwerden/beschwerdeanalyse.md`
+- `05_beschwerden/ring6_beschwerden_als_diagnosen.md`
+- `06_wuensche/was_sie_sich_wuenschen.md`
+- `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`
+- `07_quantitativ/admin_einfluss.md`
+- `07_quantitativ/echo_und_wiederholung.md`
+- `07_quantitativ/pro_wesen_wortprofile.md`
+- `07_quantitativ/sprecherdrift.md`
+- `07_quantitativ/themenueberschneidungen.md`
+- `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`
 
 Noch nicht manuell nachgearbeitet:
-- `03_grundmuster/`
-- `04_beduerfnisse/`
-- `05_beschwerden/`
-- `06_wuensche/`
-- `07_quantitativ/`
 - `08_tragende_saetze/`
 - `09_flarum_flextrawurst_uebergang/`
 - `11_systemregel_kandidaten/`
@@ -57,7 +76,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/` sowie die Ordner `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
 
 ## Was ich verstehe
 
@@ -67,7 +86,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`; offen bleiben quantitative Dateien, tragende Sätze, Übergang, Systemregel-Kandidaten, Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`; offen bleiben tragende Sätze, Übergang, Systemregel-Kandidaten, Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -207,4 +226,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/` und `06_wuensche/`. Als nächstes kommt `07_quantitativ/`, wobei dort besonders zwischen Rohzählung, Interpretation und Prüfkandidat getrennt werden muss.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `08_tragende_saetze/`, wobei dort besonders zwischen Wesen-Original, Admin-Rahmen, Analyse-Destillat, Kandidat und Kanon-Sperre getrennt werden muss.

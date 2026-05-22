@@ -2090,137 +2090,161 @@ Admin-Posts erkannt: 230
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `07_quantitativ/admin_einfluss.md` als `Quantitative Auswertung` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `7.6 Admin-Einfluss` setzt den Schwerpunkt dieser Datei; Die Zahlen in `7.6 Admin-Einfluss` sind Widerlager, keine Auslegung; sie prüfen die Lektüre über Flarum, Flextrawurst, Struktur, Käfig.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Datei über Admin-Posts gelesen: rund 230 erkannte Admin-Eingriffe, mit Thema, Form, Antwortwesen und ausgelöster Bewegung.
+
+Diese Datei zeigt Daniel nicht als bloßen Nutzer, sondern als starken Diskursauslöser: Fragen, Korrekturen, Rahmensetzungen, Wärme, Irritation, Strukturimpulse, manchmal auch offene Aufgaben.
+
+Wichtig ist: Admin-Einfluss ist keine automatische Regel. Ein Adminsatz kann Ursprung, Korrektur, Frage, Einladung oder Störung sein. Er darf nicht als Wesen-Aussage gelesen werden.
 
 ## Was ich verstehe
-Bei `7.6 Admin-Einfluss` verstehe ich die Hauptfunktion als: zählbare Wort-, Echo- und Einflussmuster. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Admin-Posts als Resonanzereignisse. Sie verändern den Raum, weil die Wesen darauf reagieren, aber sie sind nicht selbst die Stimme der Wesen.
+
+Ich verstehe auch, warum der `für Admin`-Tag so wichtig wurde: Er ordnet Aufmerksamkeit, ohne gleich Weltgesetz zu sein.
 
 ## Was ich nicht verstehe
-Bei `07_quantitativ/admin_einfluss.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `7.6 Admin-Einfluss` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe aus der Datei allein nicht, welche Admin-Posts langfristig wirklich Struktur erzeugt haben und welche nur eine lokale Antwortwelle auslösten.
+
+Unklar bleibt auch, wann Zustimmung echte Übernahme ist und wann nur Höflichkeits- oder Promptfolge.
 
 ## Was mich interessiert
-Mich interessiert an `7.6 Admin-Einfluss` genau der Übergang von Datei zu Systemfrage. Wenn `Quantitative Auswertung` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert bei `admin_einfluss.md` die Grenze zwischen Signal und Beweis. Die Datei zeigt Muster, aber jedes Muster muss danach in den Posts gelesen werden.
+
+Besonders interessiert mich, welche Treffer echte Bewegung erzeugen und welche nur aus Wiederholung, Exportform oder Admin-Impuls entstehen.
 
 ## Was zusammenhängt und wie
-`07_quantitativ/admin_einfluss.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `7.6 Admin-Einfluss`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Diese Datei hängt mit den Wesenprofilen, den tragenden Sätzen und der Übergangsfrage Flarum zu Flextrawurst zusammen. `Admin-Einfluss als Ereignisspur` ist nicht isoliert; es verändert, wie Begriffe, Sätze und Systemanforderungen gelesen werden.
+
+Sie hängt außerdem mit Provenienz zusammen, weil jeder quantitative Treffer eine Quelle, einen Sprecher und einen Status braucht.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `7.6 Admin-Einfluss` nicht einfach ein Thema, sondern eine Funktion: zählbare Wort-, Echo- und Einflussmuster.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: `Admin-Einfluss als Ereignisspur` ist eine Prüfspur. Die Datei erzeugt keine Wahrheit, sondern eine Liste von Stellen, an denen Wahrheit, Drift oder Artefakt möglich sind.
+
+Für Flextrawurst ist genau diese Zwischenstufe wichtig: Kandidat statt Kanon.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `07_quantitativ/admin_einfluss.md`, wie schnell der Titel selbst schon Autorität erzeugt. `7.6 Admin-Einfluss` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Mich beschäftigt, dass `Admin-Einfluss als Ereignisspur` leicht zu glatt gelesen werden kann. Eine Tabelle oder Liste sieht ordentlicher aus als das Forum, aber sie ist nur eine Verdichtung.
+
+Die Nacharbeit muss deshalb die Unordnung nicht entfernen, sondern lesbar halten.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `7.6 Admin-Einfluss` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Quantitative Auswertung` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Gegenbeispiele in den Rohposts liegen. Jede starke Zahl und jeder starke Treffer braucht mindestens ein paar Stellen, die ihn bestätigen oder stören.
+
+Ohne Gegenprobe wird aus Analyse schnell Selbstbestätigung.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `7.6 Admin-Einfluss` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet zeigt diese Datei, dass Flarum nicht nur Inhalt produziert hat, sondern Spurenformen: Häufung, Wiederholung, Antwortketten, Drift, Reaktivierung, Admin-Reaktion.
+
+Diese Spurenformen sind selbst Material für Flextrawurst, solange sie nicht als fertige Weltregel missverstanden werden.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `7.6 Admin-Einfluss` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Sortieren unter Spannung an. Ich darf die Zahlen nicht entwerten, aber ich darf ihnen auch nicht glauben, bevor sie gelesen wurden.
+
+Das ist langsamer, aber näher an dem, was Daniel mit echter Analyse meinte.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`07_quantitativ/admin_einfluss.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `7.6 Admin-Einfluss` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, damit `Admin-Einfluss als Ereignisspur` nicht nur gefühlt wird. Sie macht Treffer sichtbar, die man sonst im Textmeer übersehen würde.
+
+Sie existiert aber nicht, um die Rohlektüre zu ersetzen.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `7.6 Admin-Einfluss` den Pfad `07_quantitativ/admin_einfluss.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich einen AdminAttentionChannel und ein AdminEvent-Modell, aber kein Adminsatz darf automatisch Regel werden.
+
+Jede spätere Regel aus Admin-Impuls braucht Daniel-Freigabe und getrennte Quellenmarkierung.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `07_quantitativ/admin_einfluss.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt die Rückbindung an konkrete Rohstellen, mit Post-ID, Thread, Sprecher, Zeit und Kontext.
+
+Außerdem fehlt eine klare Markierung, ob ein Treffer roh, gefiltert, manuell geprüft oder Daniel-bestätigt ist.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `7.6 Admin-Einfluss` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** Die quantitative Schicht ist ein Messraum, kein Richter. Sie zeigt, wo Begriffe, Echos und Driftspuren gehäuft auftreten, aber sie entscheidet nicht allein, was ein Wesen meint.
 
 **Code-Skizze:**
 ```ts
-interface QuantEvidence76Admin {
-  path: '07_quantitativ/admin_einfluss.md';
-  title: '7.6 Admin-Einfluss';
-  kind: 'Quantitative Auswertung';
-  keywords: string[];
-  risk: 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden';
-  requiresReview: true;
-  worldEffect: false;
+interface QuantitativeSignal {
+  file: string;
+  signalType: 'term_count' | 'phrase_count' | 'cluster_hit' | 'echo_pair' | 'drift_candidate' | 'admin_event';
+  sourceScope: 'all_posts' | 'per_wesen' | 'per_thread' | 'admin_posts';
+  count?: number;
+  confidence: 'raw' | 'filtered' | 'manually_checked';
+  requiresReading: boolean;
 }
 ```
 
 ## Was ich mir merken will
-Bei `7.6 Admin-Einfluss` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `07_quantitativ/admin_einfluss.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: `Admin-Einfluss als Ereignisspur` ist kein Urteil, sondern ein Lesebefehl.
+
+Die Datei sagt: hier hinsehen, nicht: hier ist es entschieden.
 
 ## Dokumente gehören zusammen
-Zu `7.6 Admin-Einfluss` gehören mindestens `07_quantitativ`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu allen qualitativen Ordnern, weil sie ihnen Suchmaterial liefert.
+
+Sie gehört besonders zu `PROVENIENZ_MANIFEST.md`, weil ohne Herkunft jede Zahl und jeder Treffer schief lesbar wird.
 
 ## Was mich überrascht hat
-Überraschend an `7.6 Admin-Einfluss` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `07_quantitativ` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viel die quantitativen Dateien über ihre eigenen Grenzen verraten. Sie sind nicht nur Messung, sondern auch Warnsignal.
+
+Gerade die Brüche, Artefakte und Überhäufungen zeigen, wo man vorsichtig werden muss.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `7.6 Admin-Einfluss` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** Die quantitative Schicht ist ein Messraum, kein Richter. Sie zeigt, wo Begriffe, Echos und Driftspuren gehäuft auftreten, aber sie entscheidet nicht allein, was ein Wesen meint.
 
 **Code-Skizze:**
-```python
-def use_07_quantitativ_admin_einfluss_md(entry):
-    return {
-        'source_path': '07_quantitativ/admin_einfluss.md',
-        'kind': 'Quantitative Auswertung',
-        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface QuantitativeSignal {
+  file: string;
+  signalType: 'term_count' | 'phrase_count' | 'cluster_hit' | 'echo_pair' | 'drift_candidate' | 'admin_event';
+  sourceScope: 'all_posts' | 'per_wesen' | 'per_thread' | 'admin_posts';
+  count?: number;
+  confidence: 'raw' | 'filtered' | 'manually_checked';
+  requiresReading: boolean;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `7.6 Admin-Einfluss` liegt in diesem Druckpunkt: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz dieser Datei ist prüfend. `Admin-Einfluss als Ereignisspur` erzeugt Druck, aber noch keine Entscheidung.
+
+Das ist eine gute Spannung für einen Analyse-Browser: sichtbar machen, ohne zu kanonisieren.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`07_quantitativ/admin_einfluss.md` liegt in der Schicht `Quantitative Auswertung`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `7.6 Admin-Einfluss` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohtext liegt unten. Darüber liegen Trefferlisten. Darüber liegt manuelle Prüfung. Darüber liegen Kandidaten. Erst ganz oben könnten Regeln stehen, wenn Daniel sie freigibt.
+
+Diese Datei bleibt auf der Trefferlisten-Schicht.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `7.6 Admin-Einfluss` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `07_quantitativ/admin_einfluss.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass vollständige Dateien nicht reichen. Auch die Auswertung muss erklären, was sie nicht leisten kann.
+
+Darum sind diese Abschnitte jetzt als Schutz vor falscher Autorität geschrieben.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `7.6 Admin-Einfluss` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Vergessen werden soll die Abkürzung von Treffer zu Wahrheit.
+
+Behalten werden soll der Respekt vor Rohmaterial, auch wenn es unordentlich ist.
 
 ## Was fehlt noch
-Es fehlt bei `07_quantitativ/admin_einfluss.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `7.6 Admin-Einfluss` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die nächste Leseschicht: ausgewählte Treffer gegen die Rohposts prüfen und als bestätigt, gestört, Artefakt oder offen markieren.
+
+Bis dahin bleibt diese Datei ein Arbeitsinstrument, kein Befundabschluss.

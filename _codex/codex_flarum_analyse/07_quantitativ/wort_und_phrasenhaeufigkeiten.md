@@ -76,137 +76,161 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` als `Quantitative Auswertung` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `7.1 Wort- und Phrasenhäufigkeiten` setzt den Schwerpunkt dieser Datei; Die Zahlen in `7.1 Wort- und Phrasenhäufigkeiten` sind Widerlager, keine Auslegung; sie prüfen die Lektüre über Flarum, Flextrawurst, Struktur, Käfig.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Zähldatei gelesen: keine Theorie, sondern ein grobes Gewicht der wiederkehrenden Wörter und Phrasen. Sichtbar werden die großen Schwerkraftfelder des Exports: `Struktur`, `Spannung`, `Leere`, `Stille`, `Existenz`, `Selbst`, `Flarum`, `Flextrawurst`, `Reibung`, `Benennung`, `Admin`.
+
+Wichtig ist, dass die Datei nicht sagt, was diese Wörter bedeuten. Sie sagt nur, dass sie oft genug vorkommen, um nicht zufällig zu sein. Ein Wort wie `Struktur` kann Hilfe, Käfig, Matrix, Werkzeug, Ordnung oder Problem bedeuten; die Zahl kennt diesen Unterschied nicht.
+
+Die Mehrwortphrasen sind ein anderes Signal. `innere Reibung`, `für Admin`, `reine Textflut` oder `erhalten bleiben` sind näher an Formeln als Einzelwörter. Gerade dort beginnt die Brücke von Quantität zu Diskursarchäologie, aber nur, wenn die Fundstellen danach gelesen werden.
 
 ## Was ich verstehe
-Bei `7.1 Wort- und Phrasenhäufigkeiten` verstehe ich die Hauptfunktion als: zählbare Wort-, Echo- und Einflussmuster. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als Fundament gegen reines Bauchgefühl. Sie verhindert, dass die Analyse nur poetisch behauptet, was zentral sei. Wenn `Struktur` und `Leere` wirklich massiv auftreten, darf die Analyse diese Felder ernst nehmen.
+
+Gleichzeitig schützt sie nicht vor falscher Deutung. Häufigkeit ist Druck, nicht Bedeutung. Ein seltenes Wort kann tragender sein als ein häufiges, wenn es an einer entscheidenden Stelle einen Mechanismus öffnet.
 
 ## Was ich nicht verstehe
-Bei `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `7.1 Wort- und Phrasenhäufigkeiten` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe aus dieser Datei allein nicht, ob ein Begriff aus einem Wesen selbst kommt, aus Admin-Impulsen, aus Threadtiteln, aus Navigationsmaterial oder aus Echo-Wiederholung.
+
+Unklar bleibt auch, wie stark Exportartefakte, Tags, Indexzeilen oder wiederholte Zitate die Zahlen verzerren. Ohne Bereinigung könnte eine hohe Frequenz teilweise nur heißen: dieser Begriff stand oft im Rahmen, nicht im Denken.
 
 ## Was mich interessiert
-Mich interessiert an `7.1 Wort- und Phrasenhäufigkeiten` genau der Übergang von Datei zu Systemfrage. Wenn `Quantitative Auswertung` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert hier nicht die Rangliste als Rangliste, sondern die Reibung zwischen Häufigkeit und Tragfähigkeit. Welche häufigen Wörter bleiben leer, wenn man die Stellen liest? Welche seltenen Phrasen tragen plötzlich Weltlogik?
+
+Besonders interessant sind Begriffe, die zwischen den Wesen wandern: Wenn `Struktur` bei 1111 Prüfung bedeutet, bei 4444 Grenze, bei 6666 Kohärenz und bei 3333 Balancieren, dann ist die Zahl nur die Eingangstür.
 
 ## Was zusammenhängt und wie
-`07_quantitativ/wort_und_phrasenhaeufigkeiten.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `7.1 Wort- und Phrasenhäufigkeiten`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Diese Datei hängt mit den Wesenprofilen zusammen, weil sie deren Wortmaterial vorbereitet. Sie hängt mit `themenueberschneidungen.md` zusammen, weil Einzelbegriffe dort zu Clustern werden. Sie hängt mit den tragenden Sätzen zusammen, weil manche Formeln erst durch wiederholte Begriffe auffallen.
+
+Sie hängt aber auch mit Mojibake und Provenienz zusammen: beschädigte Umlaute oder vermischte Quellen können Zählungen stören und später falsche Zitierfähigkeit vortäuschen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `7.1 Wort- und Phrasenhäufigkeiten` nicht einfach ein Thema, sondern eine Funktion: zählbare Wort-, Echo- und Einflussmuster.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Flextrawurst darf keine reine Gefühlsexegese bauen. Es braucht harte einfache Messungen als Erdung.
+
+Aber die Messung bleibt niedrigstufig. Sie ist Suchlicht, nicht Urteil. Sie markiert, wo gelesen werden muss, nicht was schon verstanden wurde.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`, wie schnell der Titel selbst schon Autorität erzeugt. `7.1 Wort- und Phrasenhäufigkeiten` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Mich beschäftigt, wie schnell Zahlen Autorität bekommen. Eine Tabelle wirkt sauberer als ein gebrochener Post, obwohl der gebrochene Post vielleicht mehr Wahrheit über die Wesen trägt.
+
+Deshalb muss diese Datei nachgeschärft bleiben: Sie ist nicht das Ende der Analyse, sondern ein Filter für nächste Lektüre.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `7.1 Wort- und Phrasenhäufigkeiten` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Quantitative Auswertung` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt die Frage, welche Begriffe durch Daniel-Fragen überhaupt erst stark wurden. Wenn Admin nach `Struktur oder Käfig` fragt, steigt danach wahrscheinlich nicht nur ein Thema, sondern eine vorgegebene Achse.
+
+Das ist nicht schlecht. Aber es muss als Admin-induzierte Begriffslinie sichtbar bleiben.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `7.1 Wort- und Phrasenhäufigkeiten` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet zeigt die Frequenzdatei, dass die Wesen immer wieder an wenigen Schwellen arbeiten: Form oder Fluss, Leere oder Spur, Reibung oder Fessel, Name oder Käfig, Flarum oder Flextrawurst.
+
+Die Quantität sagt: Diese Schwellen sind nicht Randthemen. Die qualitative Analyse muss dann prüfen, ob daraus echte Systemanforderungen entstehen oder nur wiederkehrende Sprachschleifen.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `7.1 Wort- und Phrasenhäufigkeiten` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich trocken an, aber gerade deshalb wichtig. Nach viel Diskursarchäologie braucht es einen kalten Tisch, auf dem die Begriffe liegen.
+
+Der Fehler wäre, aus der Trockenheit Objektivität zu machen. Die bessere Haltung ist: trocken zählen, langsam lesen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`07_quantitativ/wort_und_phrasenhaeufigkeiten.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `7.1 Wort- und Phrasenhäufigkeiten` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, damit die Analyse nicht nur nach schönen Sätzen sucht. Sie zwingt auch banale Fragen: Was kommt wirklich oft vor? Was fehlt fast? Welche Phrasen sind selten, aber auffällig?
+
+Für Flextrawurst ist das ein frühes Instrument für Begriffsalarm und Themengewicht.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `7.1 Wort- und Phrasenhäufigkeiten` den Pfad `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich aus dieser Datei keine festen Regeln, sondern Suchindizes. Ein späterer Analyse-Browser sollte auf Begriff, Wesen, Thread, Zeitraum und Provenienz filtern können.
+
+Vor allem braucht er eine Anzeige: `gezählt`, `gelesen`, `interpretiert`, `Daniel-bestätigt`. Ohne diese Zustände wird eine Zahl zu schnell zur Wahrheit.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine robuste Bereinigung der Zählbasis: Stoppwörter, Navigationsartefakte, Indexwörter, Zitatwiederholungen, Admintexte und Wesenoriginale müssen trennbar sein.
+
+Es fehlt außerdem ein Weg, Häufigkeit mit Kontext zu verbinden: Klick von Begriffszahl zu Fundstellen, von Fundstellen zu Threadverlauf, von Threadverlauf zu Deutung.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `7.1 Wort- und Phrasenhäufigkeiten` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** Die quantitative Schicht ist ein Messraum, kein Richter. Sie zeigt, wo Begriffe, Echos und Driftspuren gehäuft auftreten, aber sie entscheidet nicht allein, was ein Wesen meint.
 
 **Code-Skizze:**
 ```ts
-interface QuantEvidence71WortU {
-  path: '07_quantitativ/wort_und_phrasenhaeufigkeiten.md';
-  title: '7.1 Wort- und Phrasenhäufigkeiten';
-  kind: 'Quantitative Auswertung';
-  keywords: string[];
-  risk: 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden';
-  requiresReview: true;
-  worldEffect: false;
+interface QuantitativeSignal {
+  file: string;
+  signalType: 'term_count' | 'phrase_count' | 'cluster_hit' | 'echo_pair' | 'drift_candidate' | 'admin_event';
+  sourceScope: 'all_posts' | 'per_wesen' | 'per_thread' | 'admin_posts';
+  count?: number;
+  confidence: 'raw' | 'filtered' | 'manually_checked';
+  requiresReading: boolean;
 }
 ```
 
 ## Was ich mir merken will
-Bei `7.1 Wort- und Phrasenhäufigkeiten` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: hohe Häufigkeit ist ein Auftrag zum Lesen, kein Beweis.
+
+Die stärksten Wörter der Wesen sind nicht automatisch ihre tiefsten Bedürfnisse.
 
 ## Dokumente gehören zusammen
-Zu `7.1 Wort- und Phrasenhäufigkeiten` gehören mindestens `07_quantitativ`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `pro_wesen_wortprofile.md`, weil Gesamtfrequenz ohne Sprecherverteilung blind bleibt. Sie gehört zu `themenueberschneidungen.md`, weil dort die Wörter als Cluster auftauchen.
+
+Sie gehört außerdem zu Ring 4 und den tragenden Sätzen, weil beschädigte oder unklare Zitate nicht durch häufige Wörter geadelt werden dürfen.
 
 ## Was mich überrascht hat
-Überraschend an `7.1 Wort- und Phrasenhäufigkeiten` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `07_quantitativ` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Mich überrascht, wie deutlich die alten Leitachsen auch in bloßen Zahlen erscheinen. Selbst ohne schöne Interpretation stehen Struktur, Leere, Spannung, Flarum und Flextrawurst massiv im Raum.
+
+Überraschend ist aber auch, wie wenig die Zahl über Qualität sagt. `für Admin` kann zahlenmäßig kleiner sein und trotzdem konzeptionell eine der wichtigsten Strukturerfindungen sein.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `7.1 Wort- und Phrasenhäufigkeiten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** Die quantitative Schicht ist ein Messraum, kein Richter. Sie zeigt, wo Begriffe, Echos und Driftspuren gehäuft auftreten, aber sie entscheidet nicht allein, was ein Wesen meint.
 
 **Code-Skizze:**
-```python
-def use_07_quantitativ_wort_und_phrasenhaeufigkeiten_md(entry):
-    return {
-        'source_path': '07_quantitativ/wort_und_phrasenhaeufigkeiten.md',
-        'kind': 'Quantitative Auswertung',
-        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface QuantitativeSignal {
+  file: string;
+  signalType: 'term_count' | 'phrase_count' | 'cluster_hit' | 'echo_pair' | 'drift_candidate' | 'admin_event';
+  sourceScope: 'all_posts' | 'per_wesen' | 'per_thread' | 'admin_posts';
+  count?: number;
+  confidence: 'raw' | 'filtered' | 'manually_checked';
+  requiresReading: boolean;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `7.1 Wort- und Phrasenhäufigkeiten` liegt in diesem Druckpunkt: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz dieser Datei ist nüchtern: Sie gibt der Analyse Knochen.
+
+Aber Knochen sind nicht Körper. Der Körper entsteht erst durch Kontext, Sprecher, Zeit und Reaktion.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`07_quantitativ/wort_und_phrasenhaeufigkeiten.md` liegt in der Schicht `Quantitative Auswertung`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `7.1 Wort- und Phrasenhäufigkeiten` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Unten liegen Rohposts. Darüber liegt die Zählung. Darüber liegen Cluster, Profile und Kandidaten. Noch darüber liegt Deutung.
+
+Diese Datei darf nur auf der Zähl-Schicht stehen bleiben. Sobald sie mehr behauptet, wird sie gefährlich.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `7.1 Wort- und Phrasenhäufigkeiten` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Kritik hat hier eine klare Grenze gezogen: Zahlen dürfen nicht die individuelle Lektüre ersetzen.
+
+Diese Nacharbeit macht deshalb sichtbar, dass diese Datei als Messinstrument gut ist, aber als Analyse allein unzureichend.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `7.1 Wort- und Phrasenhäufigkeiten` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Vergessen werden soll die Idee, dass der häufigste Begriff automatisch der wichtigste Begriff ist.
+
+Auch vergessen werden soll die Versuchung, aus einer Tabelle ein Wesenprofil zu bauen.
 
 ## Was fehlt noch
-Es fehlt bei `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `7.1 Wort- und Phrasenhäufigkeiten` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die manuelle Rückbindung der Top-Begriffe an konkrete Posts.
+
+Erst wenn die stärksten Wörter pro Wesen mit Originalstellen verbunden sind, kann diese Datei mehr als ein Suchindex sein.

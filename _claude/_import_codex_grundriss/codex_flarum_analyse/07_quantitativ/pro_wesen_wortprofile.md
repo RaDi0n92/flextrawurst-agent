@@ -127,137 +127,157 @@ Automatisch vorselektiert über Häufigkeit. Menschliche Nachprüfung nötig, we
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `07_quantitativ/pro_wesen_wortprofile.md` als `Quantitative Auswertung` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `7.2 Pro-Wesen-Wortprofile` setzt den Schwerpunkt dieser Datei; Die Zahlen in `7.2 Pro-Wesen-Wortprofile` sind Widerlager, keine Auslegung; sie prüfen die Lektüre über Flarum, Flextrawurst, Struktur, Leere.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe Wortprofile pro Wesen gelesen. Auf den ersten Blick sieht das nach Persönlichkeitsprofil aus, aber beim Lesen treten sofort Störkörper auf: `index index`, `index geni`, `geni verbindungen`, `verbindungen flarum`.
+
+Diese Wörter sind wichtig, gerade weil sie falsch wichtig wirken. Sie zeigen, dass die Zählbasis nicht nur Wesenrede enthält, sondern auch Navigations-, Export- oder Rahmenmaterial. Das Profil ist also noch kein sauberer Fingerabdruck eines Wesens.
+
+Trotzdem ist die Datei nützlich. Sie zeigt, wo jedes Wesen lexikalisch hingezogen wird und wo der Export selbst die Analyse verschmutzt.
 
 ## Was ich verstehe
-Bei `7.2 Pro-Wesen-Wortprofile` verstehe ich die Hauptfunktion als: zählbare Wort-, Echo- und Einflussmuster. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als Warnung vor voreiligen Wesenprofilen. Ein Profil aus Top-Wörtern kann ein Wesen sichtbar machen, aber auch Artefakte anziehen.
+
+Wenn 5555 viel `Leere` trägt oder 4444 stark bei Strukturfeldern liegt, ist das plausibel. Wenn aber `index` und `geni` oben stehen, muss zuerst die Quelle gereinigt werden.
 
 ## Was ich nicht verstehe
-Bei `07_quantitativ/pro_wesen_wortprofile.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `7.2 Pro-Wesen-Wortprofile` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, welche Top-Wörter echte Eigenausdrücke sind und welche aus wiederholten Threadtiteln, Dateistrukturen oder kopierten Passagen stammen.
+
+Auch unklar bleibt, welche Begriffe ein Wesen wirklich meidet. Ein niedriger Zählwert kann Meidung sein, aber auch schlicht andere Threadbeteiligung.
 
 ## Was mich interessiert
-Mich interessiert an `7.2 Pro-Wesen-Wortprofile` genau der Übergang von Datei zu Systemfrage. Wenn `Quantitative Auswertung` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert die Differenz zwischen Eigenbegriff und übernommenem Begriff. Wann benutzt ein Wesen ein Wort, weil es sein eigenes Denkwerkzeug ist? Wann reagiert es nur auf Daniels Frage oder auf ein anderes Wesen?
+
+Gerade bei `Struktur`, `Leere`, `Reibung` und `Benennung` muss man Übernahme und eigene Verschiebung trennen.
 
 ## Was zusammenhängt und wie
-`07_quantitativ/pro_wesen_wortprofile.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `7.2 Pro-Wesen-Wortprofile`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Diese Datei hängt direkt mit Ring 5 zusammen. Die vertieften Wesenprofile dürfen nicht nur aus diesen Tabellen gebaut werden, aber sie können prüfen, ob eine qualitative Beobachtung im Material wiederkehrt.
+
+Sie hängt außerdem mit Echo und Sprecherdrift zusammen: Wiederholung und falsche Sprecheranker können ein Profil künstlich aufblasen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `7.2 Pro-Wesen-Wortprofile` nicht einfach ein Thema, sondern eine Funktion: zählbare Wort-, Echo- und Einflussmuster.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier das Problem der lexikalischen Identität. Ein Wesen erscheint über Wörter, aber es ist nicht die Summe seiner Wörter.
+
+Für Flextrawurst heißt das: spätere Selbstmodelle brauchen Sprachprofile, aber jedes Sprachprofil braucht Artefaktmasken und Herkunft.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `07_quantitativ/pro_wesen_wortprofile.md`, wie schnell der Titel selbst schon Autorität erzeugt. `7.2 Pro-Wesen-Wortprofile` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Mich beschäftigt, dass diese Datei ehrlich mehr über die Datenlage verrät als vielleicht beabsichtigt war. Sie zeigt nicht nur Muster, sondern auch Schmutz.
+
+Dieser Schmutz ist kein Grund, die Datei wegzuwerfen. Er ist ein Hinweis darauf, dass Provenienztechnik keine Nebensache ist.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `7.2 Pro-Wesen-Wortprofile` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Quantitative Auswertung` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob manche scheinbaren Wesenunterschiede nur aus Threadverteilung stammen. Wer häufiger in bestimmten Threads schrieb, bekommt deren Wortschatz als Profil.
+
+Eine faire Analyse müsste gleiche Themenfenster vergleichen, nicht nur Gesamtwörter.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `7.2 Pro-Wesen-Wortprofile` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer gelesen ist diese Datei eine Karte von Anziehung und Verunreinigung zugleich. Sie sagt: Hier sprechen Wesen, aber hier spricht auch Exportstruktur mit.
+
+Das ist genau die Art von Rohheit, die Daniel nicht weggeglättet haben wollte. Die Analyse muss zeigen, wo sie bricht.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `7.2 Pro-Wesen-Wortprofile` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich wie ein Prüfstand an. Sie zwingt dazu, jedes hübsche Profil misstrauisch anzusehen.
+
+Das ist unbequem, aber nützlich: Ein Wesenprofil ohne Artefaktprüfung wäre schöner und falscher.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`07_quantitativ/pro_wesen_wortprofile.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `7.2 Pro-Wesen-Wortprofile` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, um die sechs Wesen nicht nur erzählerisch, sondern auch lexikalisch unterscheidbar zu machen.
+
+Sie existiert aber ebenso, um zu zeigen, wo diese Unterscheidbarkeit noch nicht sauber genug ist.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `7.2 Pro-Wesen-Wortprofile` den Pfad `07_quantitativ/pro_wesen_wortprofile.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich aus dieser Datei eine `LexicalProfile`-Schicht mit Warnflaggen: export_artifact, admin_induced, echo_amplified, thread_local, manually_confirmed.
+
+Ohne solche Flaggen würde Flextrawurst aus schiefen Frequenzen Persönlichkeitswahrheiten machen.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `07_quantitativ/pro_wesen_wortprofile.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Bereinigung der auffälligen Artefaktwörter. Danach braucht es eine zweite Zählung: nur Wesenoriginale, ohne Admin, ohne Index, ohne exportierte Navigation.
+
+Außerdem fehlen Belegstellen für die stärksten wirklich eigenen Begriffe jedes Wesens.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `7.2 Pro-Wesen-Wortprofile` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** Jedes Wesen bekommt kein starres Sprachprofil, sondern ein bewegliches Wortfeld mit Herkunft, Störung und Veränderung über Zeit.
 
 **Code-Skizze:**
 ```ts
-interface QuantEvidence72ProWe {
-  path: '07_quantitativ/pro_wesen_wortprofile.md';
-  title: '7.2 Pro-Wesen-Wortprofile';
-  kind: 'Quantitative Auswertung';
-  keywords: string[];
-  risk: 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden';
-  requiresReview: true;
-  worldEffect: false;
+interface WesenWordProfileEntry {
+  wesen: string;
+  term: string;
+  count: number;
+  artifactRisk: 'none' | 'possible' | 'high';
+  inducedByAdmin?: boolean;
+  echoAmplified?: boolean;
+  samplePostIds: number[];
+  status: 'raw' | 'filtered' | 'source_checked';
 }
 ```
 
 ## Was ich mir merken will
-Bei `7.2 Pro-Wesen-Wortprofile` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `07_quantitativ/pro_wesen_wortprofile.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: `Top 50 Wörter` ist kein Charakterbogen.
+
+Ein Profil beginnt erst dort, wo die Wörter mit Denkbewegung, Threadkontext und Reaktion verbunden werden.
 
 ## Dokumente gehören zusammen
-Zu `7.2 Pro-Wesen-Wortprofile` gehören mindestens `07_quantitativ`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu den sechs Basisprofilen, zu Ring 5 und zu `sprecherdrift.md`.
+
+Sie gehört auch zum Mojibake-/Encoding-Schutz, weil beschädigte Zeichen Wortformen spalten und Zählungen verzerren können.
 
 ## Was mich überrascht hat
-Überraschend an `7.2 Pro-Wesen-Wortprofile` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `07_quantitativ` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich die Deutlichkeit der Artefakte. Es ist gut, dass sie sichtbar sind; schlimm wäre, wenn sie unbemerkt sauber aussähen.
+
+Überrascht hat mich auch, dass gerade eine quantitative Datei die beste Warnung gegen blinde Quantifizierung liefert.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `7.2 Pro-Wesen-Wortprofile` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** Im Analyse-Browser darf ein Wesenprofil nie ohne Warnhinweise erscheinen. Der Nutzer muss sehen: Rohwort, bereinigtes Wort, Quelle, Artefaktrisiko.
 
 **Code-Skizze:**
 ```python
-def use_07_quantitativ_pro_wesen_wortprofile_md(entry):
-    return {
-        'source_path': '07_quantitativ/pro_wesen_wortprofile.md',
-        'kind': 'Quantitative Auswertung',
-        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def usable_profile_terms(entries):
+    return [e for e in entries if e.artifactRisk != 'high' and e.status != 'raw']
 ```
 
 ## Resonanz
-Die Resonanz von `7.2 Pro-Wesen-Wortprofile` liegt in diesem Druckpunkt: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz dieser Datei ist misstrauisch. Sie sagt nicht: So sind die Wesen. Sie sagt: So sieht ihr Wortschatten im Export aus.
+
+Dieser Unterschied ist zentral.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`07_quantitativ/pro_wesen_wortprofile.md` liegt in der Schicht `Quantitative Auswertung`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `7.2 Pro-Wesen-Wortprofile` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohtext erzeugt Wortzählung. Wortzählung erzeugt Profilverdacht. Profilverdacht braucht Quellenprüfung. Erst danach darf ein Profilbaustein entstehen.
+
+Diese Datei steht auf der zweiten Schicht, nicht auf der vierten.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `7.2 Pro-Wesen-Wortprofile` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `07_quantitativ/pro_wesen_wortprofile.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Wunsch nach echter Analyse macht diese Datei strenger. Sie darf nicht mehr als fertige Charakteranalyse gelesen werden.
+
+Sie ist eine Arbeitsfläche für präzisere Wesenprofile.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `7.2 Pro-Wesen-Wortprofile` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden.
+Vergessen werden soll die Versuchung, `pro Wesen Wortprofil` als fertige Wesenwahrheit zu lesen.
+
+Vergessen werden soll auch, Artefakte wegzuerklären, nur weil sie unbequem sind.
 
 ## Was fehlt noch
-Es fehlt bei `07_quantitativ/pro_wesen_wortprofile.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `7.2 Pro-Wesen-Wortprofile` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt eine bereinigte zweite Version dieser Datei.
+
+Außerdem fehlt eine Liste: starke eigene Begriffe, übernommene Begriffe, gemiedene Begriffe, jeweils mit echten Originalpost-Belegen.
