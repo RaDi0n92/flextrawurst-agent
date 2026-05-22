@@ -41,137 +41,165 @@ Read-only Analyse-Browser im Werkraum.
 - keine automatische Memory-Übernahme
 
 ## Was ich gelesen habe
-Ich habe `12_bauanschluss/ring10_minimal_naechste_implementation.md` als `Bauanschluss` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 10 — Minimal nächste Implementation` setzt den Schwerpunkt dieser Datei; `Ring 10 — Minimal nächste Implementation` liegt nah an Umsetzung; deshalb ist seine wichtigste Bewegung Bremsen vor Aktivieren.
 
-Auffällig sind hier die Anker `Admin, Wesen, Provenienz, Systemregel, Bau, Mojibake`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe den Vorschlag für die minimal sichere nächste Implementierung gelesen: ein read-only Analyse-Browser im Werkraum mit drei Regalen: Wesen-Originale, Admin-Rahmen, Analyse-Destillate. Filter nach Sprecher, Provenienztyp, Kanon-Tauglichkeit, Mojibake-Status und nächstem Schritt. Keine Weltwirkung, keine Live-Events, keine Aktivierung.
+
+Das ist der klarste Bauvorschlag der gesamten Analyse. Klein genug, um sicher zu sein; nützlich genug, um Daniel beim Lesen zu helfen.
+
+Er passt zu Daniels Kritik, weil er nicht noch mehr Theorie erzeugt, sondern die vorhandene Arbeit prüfbar macht.
 
 ## Was ich verstehe
-Bei `Ring 10 — Minimal nächste Implementation` verstehe ich die Hauptfunktion als: read-only anschlussfähige Baukonzepte. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als den einzigen aktuell wirklich sicheren Bauanschluss. Sie baut nicht Flextrawurst-Innenleben, sondern eine Leseoberfläche über Analyse-Material.
+
+Damit bleibt Flarum draußen und die Wesen werden nicht importiert.
 
 ## Was ich nicht verstehe
-Bei `12_bauanschluss/ring10_minimal_naechste_implementation.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Ring 10 — Minimal nächste Implementation` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, ob Daniel diesen Browser wirklich jetzt will oder erst nach vollständiger Nacharbeit aller Dateien.
+
+Unklar bleibt außerdem, ob die Daten direkt aus Markdown gelesen werden sollen oder zuerst in eine kleine JSON-Indexstruktur überführt werden.
 
 ## Was mich interessiert
-Mich interessiert an `Ring 10 — Minimal nächste Implementation` genau der Übergang von Datei zu Systemfrage. Wenn `Bauanschluss` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Admin, Wesen, Provenienz, Systemregel, Bau, Mojibake` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, wie die Oberfläche Daniel vor falscher Nutzung schützen kann. Vielleicht müssen Regale farblich getrennt sein und jeder Satz braucht sichtbare Badges: Quelle, Status, nicht kanonisch.
+
+Auch interessant: ein Filter `nur nicht zitierfähige zeigen`, damit Risiken sichtbar bleiben.
 
 ## Was zusammenhängt und wie
-`12_bauanschluss/ring10_minimal_naechste_implementation.md` hängt zuerst mit `12_bauanschluss` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Ring 10 — Minimal nächste Implementation`: Rohmaterial oder Analysebeobachtung wird zu `read-only anschlussfähige Baukonzepte`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Minimal nächste Implementation` hängt mit allen vorherigen Schutzschichten zusammen: Materialtrennung, Rohquellenprüfung, Übergang und Regelkandidaten. Der Bauanschluss darf nur das sichtbar machen, was diese Schichten getrennt haben.
+
+Die stärkste Verbindung läuft zum vorgeschlagenen read-only Analyse-Browser: drei Regale, Provenienzfilter, keine Weltwirkung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Ring 10 — Minimal nächste Implementation` nicht einfach ein Thema, sondern eine Funktion: read-only anschlussfähige Baukonzepte.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Bau beginnt nicht mit Import, sondern mit Anschauung. `Minimal nächste Implementation` übersetzt Analyse in mögliche Komponenten, aber hält sie unter Quarantäne.
+
+Das ist genau der Unterschied zwischen vorbereitet und aktiviert.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `12_bauanschluss/ring10_minimal_naechste_implementation.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 10 — Minimal nächste Implementation` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Analyse könnte zu früh Weltwirkung bekommen.
+Mich beschäftigt, dass `build-ready` schnell falsch verstanden werden kann. Es heißt nicht: sofort bauen und anschließen. Es heißt: klar genug, um als Konzept im sicheren Browser aufzutauchen.
+
+Die wichtigste Sicherheitslinie bleibt: keine Live-Events, keine Memory-Übernahme, keine Wesen-Einzüge.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Ring 10 — Minimal nächste Implementation` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Bauanschluss` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Konzepte wirklich früh gebraucht werden und welche nur attraktiv klingen. Provenienzbrowser und Regale sind früh sicher. Erinnerung, Einzug und Regeln sind zu früh.
+
+Bauanschluss muss also priorisieren, nicht begeistern.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Ring 10 — Minimal nächste Implementation` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Minimal nächste Implementation` die Stelle, an der Analyse erstmals technische Gestalt annimmt. Genau hier kann der größte Fehler passieren: aus gut sortierter Analyse wird plötzlich ein System, das wirkt.
+
+Darum ist `read-only` nicht nebensächlich, sondern das ethische Kernwort dieser Schicht.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Ring 10 — Minimal nächste Implementation` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Analyse könnte zu früh Weltwirkung bekommen`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wieder handwerklicher an. Hier endet das reine Lesen und beginnt das Denken in Komponenten.
+
+Aber die Hand bleibt gebremst: erst Browser, dann vielleicht Review, dann vielleicht Bau. Nicht anders herum.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`12_bauanschluss/ring10_minimal_naechste_implementation.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 10 — Minimal nächste Implementation` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel irgendwann nicht nur Analyse lesen will, sondern wissen muss, was daraus praktisch folgen könnte. `Minimal nächste Implementation` sammelt diese Folgen, ohne sie schon auszuführen.
+
+Sie ist ein Stecker ohne Strom.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Ring 10 — Minimal nächste Implementation` den Pfad `12_bauanschluss/ring10_minimal_naechste_implementation.md`, den Typ `Bauanschluss`, die Leitwörter `Admin, Wesen, Provenienz, Systemregel, Bau, Mojibake`, das Risiko `Analyse könnte zu früh Weltwirkung bekommen` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich: Parser für `08_tragende_saetze`, statischen Index, Surface-Tab oder Werkraum-HTML, Filterzustand, Detailansicht mit Rohtext und Warnung.
+
+Wichtig: keine POST-Routen, keine Events, keine DB-Imports.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `12_bauanschluss/ring10_minimal_naechste_implementation.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Bauanschluss` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt Daniels Go für genau diesen kleinen Browser.
+
+Technisch fehlt danach ein minimales Datenformat, wahrscheinlich JSON aus den Markdown-Regalen, und ein Surface-Eintrag nach Surface-Gesetz.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Ring 10 — Minimal nächste Implementation` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Minimal nächste Implementation` ist Bauvorbereitung ohne Weltwirkung. Die Analyse darf Formen vorschlagen, aber der erste sichere Schritt bleibt read-only: anschauen, filtern, prüfen, nicht importieren.
 
 **Code-Skizze:**
 ```ts
-interface BuildReadyConceptRing10Mi {
-  path: '12_bauanschluss/ring10_minimal_naechste_implementation.md';
-  title: 'Ring 10 — Minimal nächste Implementation';
-  kind: 'Bauanschluss';
-  keywords: string[];
-  risk: 'Analyse könnte zu früh Weltwirkung bekommen';
-  requiresReview: true;
-  worldEffect: false;
+interface BuildReadyConcept {
+  name: string;
+  purpose: string;
+  sourceBasis: string[];
+  mustNotDo: string[];
+  dataSketch: Record<string, string>;
+  uiRelevance: 'none' | 'read_only_browser' | 'admin_review';
+  liveEffect: false;
+  status: 'concept' | 'blocked' | 'minimal_safe_next_step';
 }
 ```
 
 ## Was ich mir merken will
-Bei `Ring 10 — Minimal nächste Implementation` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `12_bauanschluss/ring10_minimal_naechste_implementation.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Der sichere nächste Schritt ist nicht Wesen-Einzug, sondern Analyse lesbar machen.
+
+Das ist Bau, aber ohne Weltwirkung.
 
 ## Dokumente gehören zusammen
-Zu `Ring 10 — Minimal nächste Implementation` gehören mindestens `12_bauanschluss`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `08_tragende_saetze`, `09_flarum_flextrawurst_uebergang`, `11_systemregel_kandidaten` und später zur Surface, falls ein Analyse-Browser gebaut wird.
+
+Sie gehört nicht zu live laufenden Wesen- oder Flarum-Prozessen.
 
 ## Was mich überrascht hat
-Überraschend an `Ring 10 — Minimal nächste Implementation` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `12_bauanschluss` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie klar der sichere nächste Schritt ist: nicht mehr Analyse-Ringe, sondern ein read-only Browser.
+
+Das ist klein, aber strukturell richtig: Er macht Provenienz sichtbar, ohne Welt zu verändern.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Ring 10 — Minimal nächste Implementation` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Minimal nächste Implementation` ist Bauvorbereitung ohne Weltwirkung. Die Analyse darf Formen vorschlagen, aber der erste sichere Schritt bleibt read-only: anschauen, filtern, prüfen, nicht importieren.
 
 **Code-Skizze:**
-```python
-def use_12_bauanschluss_ring10_minimal_naechste_implementation_m(entry):
-    return {
-        'source_path': '12_bauanschluss/ring10_minimal_naechste_implementation.md',
-        'kind': 'Bauanschluss',
-        'risk': 'Analyse könnte zu früh Weltwirkung bekommen',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface BuildReadyConcept {
+  name: string;
+  purpose: string;
+  sourceBasis: string[];
+  mustNotDo: string[];
+  dataSketch: Record<string, string>;
+  uiRelevance: 'none' | 'read_only_browser' | 'admin_review';
+  liveEffect: false;
+  status: 'concept' | 'blocked' | 'minimal_safe_next_step';
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Ring 10 — Minimal nächste Implementation` liegt in diesem Druckpunkt: Analyse könnte zu früh Weltwirkung bekommen.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz ist klar: Hier wird aus der misslungenen Ringlogik etwas Praktisches.
+
+Nicht mehr neue Ringe, sondern ein Werkzeug, um die vorhandenen Schichten sauber zu sehen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`12_bauanschluss/ring10_minimal_naechste_implementation.md` liegt in der Schicht `Bauanschluss`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 10 — Minimal nächste Implementation` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Analyse unten, Bauanschluss darüber, read-only Browser als erste technische Oberfläche, Live-Systeme erst viel später und nur mit Daniel-Freigabe.
+
+Diese Datei steht vor der Surface, nicht in der Wesenwelt.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Ring 10 — Minimal nächste Implementation` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `12_bauanschluss/ring10_minimal_naechste_implementation.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Daniel von der Ringlogik enttäuscht war, aber den Bauanschluss als richtigen nächsten Schritt erkannt hat.
+
+Darum muss diese Datei nüchtern bleiben: nicht noch ein Ring, sondern eine sichere Anschlussstelle.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Ring 10 — Minimal nächste Implementation` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Analyse könnte zu früh Weltwirkung bekommen.
+Vergessen werden soll `build-ready` als Startschuss.
+
+Behalten werden soll `build-ready` als geprüfte, aber gesperrte Anschlussfähigkeit.
 
 ## Was fehlt noch
-Es fehlt bei `12_bauanschluss/ring10_minimal_naechste_implementation.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Ring 10 — Minimal nächste Implementation` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die Entscheidung, ob der read-only Analyse-Browser wirklich als nächstes gebaut werden soll.
+
+Wenn ja, fehlen Datenpfade, Parser für die Analyse-Dateien, Filtermodell und ein Surface-Tab ohne Live-Wirkung.

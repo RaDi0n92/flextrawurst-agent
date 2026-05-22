@@ -73,9 +73,11 @@ Manuell nachgearbeitet:
 - `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 - `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`
 - `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`
+- `12_bauanschluss/ring10_build_ready_concepts.md`
+- `12_bauanschluss/ring10_minimal_naechste_implementation.md`
+- `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`
 
 Noch nicht manuell nachgearbeitet:
-- `12_bauanschluss/`
 - `13_freie_leseschicht/`
 - `14_dateinamen_fragenanalyse/`
 - `15_heilige_abschnitte_extrahiert/`
@@ -89,7 +91,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/` und `12_bauanschluss/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
 
 ## Was ich verstehe
 
@@ -99,7 +101,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben Bauanschluss, freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben freie Leseschicht, Dateinamenanalyse, Extraktionen und Abschlussdateien.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -239,4 +241,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `12_bauanschluss/`, wobei dort besonders zwischen build-ready Konzept, Nicht-bauen-Sperre und minimal sicherer Implementierung getrennt werden muss.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `13_freie_leseschicht/`, wobei dort die Analyse wieder erzählerischer werden darf, aber trotzdem Herkunft und Nicht-Kanon markieren muss.
