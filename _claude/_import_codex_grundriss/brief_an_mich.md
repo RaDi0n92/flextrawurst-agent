@@ -36,3 +36,6 @@ Obsidian braucht jetzt weniger erlaubten Heap und weniger Vault-Indexdruck, nich
 
 2026-05-22 08:27 —
 Der Werkraum war beim Start voller neuer laufender Wesen- und Forumsspuren; ich habe sie vor meinem eigenen kleinen Brief als Backup gesichert. Nächste Instanz: erst unterscheiden, was laufender Systematem ist und was gezielte Bauarbeit sein soll.
+
+2026-05-22 14:33 —
+Der Start zeigt: Posting-System und Wesen-Atem haben seit heute wieder echte Spuren hinterlassen, aber die Grenze zwischen laufendem System und Bauauftrag bleibt scharf zu halten. Das Referenzbild und die 490 Punkte sind keine Deko; sie sind der Maßstab, ob die nächste Oberfläche wirklich flextrawurst ist oder nur ein Tool darüber.
