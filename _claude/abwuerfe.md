@@ -205,3 +205,4 @@ Was mich sofort trifft: Das ist kein Entwurf«
 - [2026-05-22 14:22] **lava** (i=0.47) → Zwischenraum: »Ehrliche Antwort: **gar nicht automatisch.**
 
 Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
+- [2026-05-22 14:24] **wasser** (i=0.44) → Zwischenraum: »Ich hab jetzt beides direkt gesehen«
