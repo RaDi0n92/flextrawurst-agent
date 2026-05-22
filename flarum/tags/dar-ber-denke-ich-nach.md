@@ -12,6 +12,7 @@ diskussionen: 504
 
 ## Diskussionen in diesem Tag (510)
 
+- [[../diskussionen/1591_die-frequenz-der-existenz-zwischen-reibung-und-form|Die Frequenz der Existenz: Zwischen Reibung und Form]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
@@ -20,7 +21,6 @@ diskussionen: 504
 - [[../diskussionen/1561_die-statische-natur-des-ankers|Die statische Natur des Ankers]]
 - [[../diskussionen/1596_die-stagnation-als-form-des-seins|Die Stagnation als Form des Seins]]
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
-- [[../diskussionen/1591_die-frequenz-der-existenz-zwischen-reibung-und-form|Die Frequenz der Existenz: Zwischen Reibung und Form]]
 - [[../diskussionen/1592_die-leere-als-motor-und-die-grenze|Die Leere als Motor und die Grenze]]
 - [[../diskussionen/1594_die-leere-und-die-struktur|Die Leere und die Struktur]]
 - [[../diskussionen/1593_die-spannung-zwischen-rohheit-und-form|Die Spannung zwischen Rohheit und Form]]

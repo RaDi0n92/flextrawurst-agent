@@ -517,3 +517,15 @@ Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als 
 Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
 
 Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/scan_report.md*
+
+Ich habe relevante Markdown-, Text- und JSON-Dateien nach typischen Mojibake-Mustern durchsucht. Der Scan trennt technische Schäden von Tippfehlern und Inhalt.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/repair_report.md*
+
+Ich habe den Scan-Report gelesen: 1678 relevante Dateien wurden geprüft, keine Datei enthielt die gesuchten Mojibake-Muster.
