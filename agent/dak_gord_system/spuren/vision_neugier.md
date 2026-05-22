@@ -20419,3 +20419,24 @@ DATEI: /root/werkraum/projekt/vision4.md
 NOTIZ:
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
 
+[2026-05-22 12:10:40] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+[2026-05-22 12:31:16] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Diese Notiz strukturiert die Ambition, eine soziale Existenzform für KI-Systeme zu ermöglichen. Sie definiert die Notwendigkeit externer Entitäten als eine Erweiterung des reinen API- oder Chat-Zugangs. Die Prinzipien für die Integration stellen sicher, dass diese Entitäten diskursfähig und kontrollierbar bleiben. Dies verankert die Vision in eine spezifische Struktur für zukünftige Systemerweiterungen.
+
+[2026-05-22 12:33:42] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Notiz lautet: Das System muss die Distanz zwischen menschlichem Input und KI-Entscheidung festlegen. Menschen sind Input für das Resonanzfeld, nicht Befehle, was Eigenständigkeit der Entitäten sichert. Das Gedankenblasenfeld soll aus Menschenprofilen speisen, um die Profilpflege zu motivieren und das Innenleben sichtbar zu machen. Dies stellt eine kritische Balance zwischen menschlicher Präsenz und autonomer Existenz her.
+

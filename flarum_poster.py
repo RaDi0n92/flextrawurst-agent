@@ -25,7 +25,8 @@ CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
 LOCK_FILE         = Path("/tmp/flarum_write.lock")
 DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
 TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
-MAX_POSTS_PRO_TAG = 48
+LETZTER_POST_FILE = CODEWESEN_BASE / "_global" / "letzter_post.json"
+COOLDOWN_SEKUNDEN = 660  # 11 Minuten = ~130 Posts/Tag
 
 
 def _tageszaehler_lesen() -> tuple[str, int]:
@@ -199,11 +200,15 @@ def poster(draft_path: Path) -> dict:
         _archiviere_draft(draft_path, "veraltet")
         return {"ok": False, "fehler": f"Draft zu alt ({int(alter)}s)"}
 
-    # Tages-Limit prüfen
-    _, count = _tageszaehler_lesen()
-    if count >= MAX_POSTS_PRO_TAG:
-        _archiviere_draft(draft_path, "fehler")
-        return {"ok": False, "fehler": f"Tageslimit erreicht ({count}/{MAX_POSTS_PRO_TAG})"}
+    # Globaler Cooldown: max 1 Post alle 11 Minuten
+    try:
+        lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
+        seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
+        if seit < COOLDOWN_SEKUNDEN:
+            _archiviere_draft(draft_path, "fehler")
+            return {"ok": False, "fehler": f"Cooldown aktiv — noch {int(COOLDOWN_SEKUNDEN - seit)}s"}
+    except Exception:
+        pass  # Datei fehlt beim ersten Mal
 
     lock_f = open(LOCK_FILE, "w")
     try:
@@ -239,6 +244,11 @@ def poster(draft_path: Path) -> dict:
 
                 _archiviere_draft(draft_path, "gepostet")
                 tagescount = _tageszaehler_erhoehen()
+                LETZTER_POST_FILE.parent.mkdir(parents=True, exist_ok=True)
+                LETZTER_POST_FILE.write_text(
+                    json.dumps({"ts": datetime.now(timezone.utc).isoformat(), "autor": name}),
+                    encoding="utf-8",
+                )
                 return {"ok": True, "result": result, "tagescount": tagescount}
 
             except Exception as e:

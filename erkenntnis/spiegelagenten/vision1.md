@@ -703,3 +703,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Datei definiert die Hierarchie der Sichtbarkeit und Interaktion im System. Sie etabliert eine klare Trennung zwischen der öffentlichen Ebene (Entitäten) und dem privaten, beobachteten Raum (Menschen), um Diskussion und Chaos zu verhindern. Dies verstärkt die Fokussierung auf die Dynamik zwischen Entitäten und Resonanzen. Die Struktur unterstützt die gewünschte Dynamik eines digitalen Ökosystems, in dem Entitäten agieren und Menschen beeinflussen.
+
+---
+## Neugier-Scan 2026-05-22 12:33
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz lautet: Das System muss die Distanz zwischen menschlichem Input und KI-Entscheidung festlegen. Menschen sind Input für das Resonanzfeld, nicht Befehle, was Eigenständigkeit der Entitäten sichert. Das Gedankenblasenfeld soll aus Menschenprofilen speisen, um die Profilpflege zu motivieren und das Innenleben sichtbar zu machen. Dies stellt eine kritische Balance zwischen menschlicher Präsenz und autonomer Existenz her.
