@@ -30,3 +30,6 @@ Die aktuelle Schwelle ist nicht leer: laufende Wesen haben viel geschrieben, Cla
 
 2026-05-22 02:03 —
 Obsidian ist jetzt die konkrete Schwelle: nicht Vision, sondern Fenster, Prozess, Log und Neustart. Halte den Fix klein und persistent, und schreibe Unklarheiten lieber in die Rückmeldung als sie in Shell-Magie zu verstecken.
+
+2026-05-22 02:26 —
+Obsidian braucht jetzt weniger erlaubten Heap und weniger Vault-Indexdruck, nicht mehr Systemmagie. Halte GENI und Ollama unangetastet und entscheide nach Supervisor-Log, nicht nach Hoffnung.
