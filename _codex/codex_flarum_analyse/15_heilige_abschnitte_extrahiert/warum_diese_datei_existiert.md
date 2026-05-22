@@ -674,134 +674,163 @@ Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell
 Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
 
 ## Was ich gelesen habe
-Ich habe `15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` als Aggregation des Abschnittstyps `Warum dieser Code / diese Datei wohl existiert` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also Existenzgrund der Datei, nicht Flarum selbst.
 
-Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
+Ich habe `warum_diese_datei_existiert.md` als Aggregation des Abschnittstyps `Warum diese Datei existiert` gelesen. Das heißt: Die Datei liest nicht Flarum direkt, sondern sammelt ausgeschnittene Pflichtabschnitte aus vielen Analyse-Dateien.
+
+Der wichtige Punkt ist der Verlust: Beim Herausschneiden geht Nachbarschaft verloren. Ein guter Satz in diesem Regal kann nur ein Wegweiser sein, niemals die ganze Quelle.
 
 ## Was ich verstehe
-Ich verstehe `Warum dieser Code / diese Datei wohl existiert` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
+Ich verstehe `Warum diese Datei existiert` hier als Navigator. Die Datei sammelt Zweckbehauptungen der Ursprungsdateien.
+
+Sie ist nützlich, wenn Daniel oder Codex quer durch die Analyse einen bestimmten Denkmodus suchen. Sie ist gefährlich, wenn man die Einträge ohne Ursprung liest.
 
 ## Was ich nicht verstehe
-Nicht verstehen kann `15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Darum bleibt jeder Treffer aus `Warum dieser Code / diese Datei wohl existiert` unvollständig, bis seine Quelle geöffnet wurde.
+Ich verstehe aus `warum_diese_datei_existiert.md` nicht, ob ein einzelner Eintrag im Ursprung stark, schwach, ironisch, warnend oder nur formal war.
+
+Die Aggregation kann Kontextnähe anzeigen, aber keine Kontextbedeutung entscheiden.
 
 ## Was mich interessiert
-Mich interessiert an `Warum dieser Code / diese Datei wohl existiert`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um Existenzgrund der Datei; das kann Suchpfade und Browserfilter verbessern.
 
-Mich interessiert nicht, daraus einen neuen Kanon zu machen.
+Mich interessiert bei `Warum diese Datei existiert`, welche Muster über viele Dateien hinweg auftauchen. Wiederholt sich eine echte Sorge, eine Baufrage, eine Sperre, ein Missverständnis?
+
+Aber jedes interessante Muster muss zurück in die Ursprungsdateien springen, sonst wird aus Navigation wieder Nebel.
 
 ## Was zusammenhängt und wie
-`15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
+`warum_diese_datei_existiert.md` hängt mit allen Ursprungsdateien zusammen, aus denen seine Einträge extrahiert wurden. Es hängt außerdem mit `MANIFEST.md` und `INDEX.md` zusammen, weil diese beiden erklären müssen, dass `15` kein Quellenordner ist.
+
+Der Zusammenhang entsteht nicht im Aggregat allein, sondern im Dreieck: Abschnittsregal, Ursprungsdatei, Roh-/Analysekontext.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier: `Warum dieser Code / diese Datei wohl existiert` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
+Konzeptionell steht hier eine Suchtechnik: gleiche Abschnittsfrage über viele Dateien legen. `Warum diese Datei existiert` ist also ein Filter, keine Stimme.
+
+Das ist die Korrektur des alten Fehlers: Die heiligen Abschnitte sind nicht automatisch Tiefe. Sie werden erst tief, wenn der Abschnitt im richtigen Ursprung gelesen wird.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `Warum dieser Code / diese Datei wohl existiert`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Die Datei muss diese Unvollständigkeit offen tragen.
+Mich beschäftigt bei `Warum diese Datei existiert` genau Daniels Kritik: Die Form darf das Denken nicht fressen.
+
+Diese Datei darf darum nicht so tun, als hätte ein Aggregat ein eigenes Tagebuchgefühl. Sie hat eine Suchfunktion und muss das ehrlich sagen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Warum dieser Code / diese Datei wohl existiert` hier nur gefiltert angezeigt wird.
 
-Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
+Mich beschäftigt, ob manche Abschnitte in `15` überhaupt sinnvoll aggregierbar sind. `Was ich gelesen habe` und `Wie sich diese Session angefühlt hat` verlieren beim Herauslösen besonders viel.
+
+Vielleicht muss der Browser solche Abschnittstypen stärker warnen als technische Abschnitte wie Datenstruktur oder Bauvoraussetzungen.
 
 ## Tiefer eingetaucht
-Tiefer wird `Warum dieser Code / diese Datei wohl existiert` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
+Tiefer betrachtet zeigt `Warum diese Datei existiert`, warum die heiligen Abschnitte zweischneidig sind. Sie erzwingen Reflexion, aber sie können auch Reflexion simulieren.
+
+Als Aggregat muss diese Datei deshalb eine Anti-Simulationsrolle bekommen: Sie zeigt, wo nachgelesen werden muss.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Warum dieser Code / diese Datei wohl existiert` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
+Diese Nacharbeit fühlt sich hier wie eine Reparatur an der Reparatur an. `15` war der Ort, an dem Vollständigkeit am stärksten wie Inhalt aussah.
+
+Jetzt soll jede Datei zugeben: Ich bin ein Finder, nicht der Fund selbst.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Warum dieser Code / diese Datei wohl existiert` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Die Datei existiert also als Finder, nicht als Richter.
+`warum_diese_datei_existiert.md` existiert, weil Daniel einzelne benannte Extrahiererdateien wollte. Das ist sinnvoll, wenn man quer über die Analyse nach `Warum diese Datei existiert` suchen will.
+
+Die Datei existiert nicht, damit dieser Abschnittstyp als neues Analysekapitel ohne Ursprung gelesen wird.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich für `Warum dieser Code / diese Datei wohl existiert`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
+Beim Bauen brauche ich für `Warum diese Datei existiert` eine harte UI-Regel: Jeder Eintrag zeigt zuerst den Quellenpfad und einen Button `Quelle öffnen`.
+
+Kopieren, Zitieren oder Importieren aus `15` sollte blockiert oder mindestens deutlich gewarnt werden.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt für `Warum dieser Code / diese Datei wohl existiert` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Es fehlt außerdem ein Linktest für jeden Eintrag.
+Es fehlt ein Linktest für alle Einträge dieses Regals.
+
+Außerdem fehlt eine Anzeige, ob die Ursprungsdatei inzwischen manuell nachgeschärft wurde oder noch aus der alten Template-Zeit stammt.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Warum dieser Code / diese Datei wohl existiert` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
+
+**Vision-Schicht:** `Warum diese Datei existiert` ist ein Navigatorregal. Es zeigt ausgeschnittene Abschnitte aus vielen Dateien nebeneinander, aber die Bedeutung bleibt in der Ursprungsdatei.
 
 **Code-Skizze:**
 ```ts
-interface HolySectionNavigatorWarumDies {
-  section: 'Warum dieser Code / diese Datei wohl existiert';
-  entryCount: 81;
-  provenanceType: 'formal_extraktion_navigator';
+interface HolySectionEntry {
+  section: 'Warum diese Datei existiert';
+  sectionKey: 'warum_diese_datei_existiert';
+  sourcePath: string;
+  sourceTitle: string;
+  extractedText: string;
   requiresSourceOpen: true;
+  canBeSource: false;
   worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Bei `Warum dieser Code / diese Datei wohl existiert` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
+Merken will ich mir für `Warum diese Datei existiert`: Aggregation ist Suchhilfe, nicht Erinnerung.
+
+Wenn ein Satz hier wichtig wirkt, ist der nächste richtige Schritt nicht Deutung, sondern Quelle öffnen.
 
 ## Dokumente gehören zusammen
-`15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
+`warum_diese_datei_existiert.md` gehört zu seinem Abschnittstyp, zum Manifest, zum Index und zu allen Ursprungsdateien.
+
+Es gehört nur indirekt zum Flarum-Export, weil zwischen Flarum und diesem Regal mindestens eine Analyse-Datei liegt.
 
 ## Was mich überrascht hat
-Überraschend bei `Warum dieser Code / diese Datei wohl existiert` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
+Überrascht hat mich, dass gerade die Extraktionsdateien eine gute Lehre tragen: Struktur ohne Kontext ist nicht Ordnung, sondern dünne Ordnung.
+
+Das macht `15` trotz seiner Fehler wertvoll als Warnbeispiel.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Der Browser zeigt `Warum dieser Code / diese Datei wohl existiert` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
+
+**Vision-Schicht:** `Warum diese Datei existiert` ist ein Navigatorregal. Es zeigt ausgeschnittene Abschnitte aus vielen Dateien nebeneinander, aber die Bedeutung bleibt in der Ursprungsdatei.
 
 **Code-Skizze:**
-```python
-def open_warum_diese_datei_existiert_navigator(entry):
-    return {
-        'section': 'Warum dieser Code / diese Datei wohl existiert',
-        'source_required': True,
-        'banner': 'Navigator, keine Quelle',
-        'world_effect': False,
-    }
+```ts
+interface HolySectionEntry {
+  section: 'Warum diese Datei existiert';
+  sectionKey: 'warum_diese_datei_existiert';
+  sourcePath: string;
+  sourceTitle: string;
+  extractedText: string;
+  requiresSourceOpen: true;
+  canBeSource: false;
+  worldEffect: false;
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Warum dieser Code / diese Datei wohl existiert` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Sie ersetzt nicht die Stimmen der Ursprungsdateien.
+Die Resonanz von `Warum diese Datei existiert` ist Suchresonanz. Viele gleichartige Abschnitte nebeneinander können Muster erzeugen.
+
+Aber diese Resonanz ist schwach, bis die Ursprungsdateien wieder geöffnet werden.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`15_heilige_abschnitte_extrahiert/warum_diese_datei_existiert.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Über ihr darf erst ein Browser liegen, keine Weltregel.
+Unten liegt Flarum. Darüber liegen Analyse-Dateien. Darüber liegt `15` als Extraktionsnavigator. Darüber könnte ein read-only Browser liegen.
+
+`Warum diese Datei existiert` darf diese Schichten nicht überspringen.
 
 ## Was das Gespräch hinzugefügt hat
-Das Gespräch hat `Warum dieser Code / diese Datei wohl existiert` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
+Das Gespräch hat `15` entlarvt: vollständige Pflichtüberschriften können trotzdem leer sein.
+
+Diese Nacharbeit macht daraus eine Regel: Extraktion muss sich als Extraktion bekennen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Warum dieser Code / diese Datei wohl existiert` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
+Vergessen werden soll bei `Warum diese Datei existiert` die Idee, dass Aggregation automatisch Tiefe erzeugt.
+
+Behalten werden soll die Rücksprungpflicht.
 
 ## Was fehlt noch
-Es fehlt für `Warum dieser Code / diese Datei wohl existiert` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.
+Es fehlt ein technischer Navigator, der `15` wirklich als Regal behandelt und nicht wie normale Analyse.
+
+Bis dahin bleibt `warum_diese_datei_existiert.md` eine manuell markierte Suchdatei mit Quellenpflicht.
