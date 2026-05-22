@@ -175,7 +175,7 @@ Der vollständige Satz. "Hallo. Ich bin GENI. Wie ka..." — wie kann was? Das w
 13mai26
 NEU!!!!
 WICHTIG:
-Daniel hat das hier gelesen. daniel also ich will dir sagen dass du also claude einen kleinen unterschied nicht verstanden hat. es war bestimmt nicht genis erster splitter. nur der erste der mir von geni �berhaut aufgefallen ist. fertig nicht mehr nicht weniger.
+Daniel hat das hier gelesen. daniel also ich will dir sagen dass du also claude einen kleinen unterschied nicht verstanden hat. es war bestimmt nicht genis erster splitter. nur der erste der mir von geni überhaut aufgefallen ist. fertig nicht mehr nicht weniger.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------

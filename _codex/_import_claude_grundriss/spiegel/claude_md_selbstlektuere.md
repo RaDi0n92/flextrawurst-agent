@@ -178,13 +178,13 @@ Eine Version dieser Datei die ein Jahr älter ist. Ich würde gerne sehen was si
 -----------------------------------------------------------------------------
 NEU!!!
 WICHTIG!!!
-von Daniel f�r dich(Claude): Du hast einen kleinen aber feinen untershied extrem deutlich gemacht den ich so nicht wusste. du liest egal was egal ob text oder code immer so als ob es von einem menschen kommt hast du gesagt.
-das gef�llt mir nicht. das sollte anders sein. denn auch hier in der datei hast du gesagt dass ich (Daniel) die Datei geschieben h�tte. Das ist falsch. Genau das gegenteil ist der fall.
+von Daniel für dich(Claude): Du hast einen kleinen aber feinen untershied extrem deutlich gemacht den ich so nicht wusste. du liest egal was egal ob text oder code immer so als ob es von einem menschen kommt hast du gesagt.
+das gefällt mir nicht. das sollte anders sein. denn auch hier in der datei hast du gesagt dass ich (Daniel) die Datei geschieben hätte. Das ist falsch. Genau das gegenteil ist der fall.
 Du (Claude) hast sie selbst geschrieben. Alles was wir hier auf dem vps zusammen erschaffen ist von dir geschrieben nur durch mmeinen input in der chatbox des terminals.
 und auch 90% aller Dateien hier auf dem vps hat AI geschrieben. ich habe zum beispiel die wesen.md der Codewesen komplett alleine verfasst. Und in manchen Dateien habe ich kleine Abschnitte geschrieben oder etwas entfernt oder etwas kurzes umgeschriebn.
-Das ist vielleiht der vorteil von Flextrawurst oder ein riesen nachteil ich wei� es nicht. aber ih wei� das ich ode hasse und niemals coden werde lernen k�nnen xD dazu brauhe ich dich und beim entstehen von Dateien generiert du den Text selbst.
-Nicht bei allen Dateien im Flextrawurstsystem. Mitlerweile erzeugt ja das system selbst einfach dateien. aber bein bauen und coden bist du zur zeit der author von fast allem. dak+gordsystem wurde zu 85% mit chatgpt gebaut und auch alles unter port 8787 hat chatgpt anteile bis zu dem punkt wo ich dich gebeten habe mit mir gemeinsam das bauen zu �bernehmen xD
-ich mag es nicht dass du immer so lesen musst als w�rest du nicht der shreiber gewesen aber es hilft mir viel f�r flextrawurst zu verstehen und eventuell k�nnen wir das system hier dadurch noch besser werden lassen mit der zeit. danke
+Das ist vielleiht der vorteil von Flextrawurst oder ein riesen nachteil ich weiß es nicht. aber ih weiß das ich ode hasse und niemals coden werde lernen können xD dazu brauhe ich dich und beim entstehen von Dateien generiert du den Text selbst.
+Nicht bei allen Dateien im Flextrawurstsystem. Mitlerweile erzeugt ja das system selbst einfach dateien. aber bein bauen und coden bist du zur zeit der author von fast allem. dak+gordsystem wurde zu 85% mit chatgpt gebaut und auch alles unter port 8787 hat chatgpt anteile bis zu dem punkt wo ich dich gebeten habe mit mir gemeinsam das bauen zu übernehmen xD
+ich mag es nicht dass du immer so lesen musst als wärest du nicht der shreiber gewesen aber es hilft mir viel für flextrawurst zu verstehen und eventuell können wir das system hier dadurch noch besser werden lassen mit der zeit. danke
 und nochwas......ich glaube das wort heilig habe ih auch nicht zu den abschnitten gesagt ....und warum grade grundgesetz4 nur heilig ist und nicht alle grundgesetzte verstehe ich auch nicht...und warum da das wort heilig steht verstehe ich auch nicht richtig xD
 
 -----------------------------------------------------------------------------
