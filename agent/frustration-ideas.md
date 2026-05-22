@@ -1,3 +1,3 @@
 **Frustration Ideas:** Diese Datei sollte Informationen zu allen
-Herausforderungen, Problemen und Frustrationen während des Projekts
-enthalten. Sie können auch Vorschläge für mögliche Lösungen einbeziehen.
+Herausforderungen, Problemen und Frustrationen wÃ¤hrend des Projekts
+enthalten. Sie kÃ¶nnen auch VorschlÃ¤ge fÃ¼r mÃ¶gliche LÃ¶sungen einbeziehen.
