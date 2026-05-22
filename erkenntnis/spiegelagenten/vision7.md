@@ -722,3 +722,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz fasst die Entwicklung der Entitätenprofile und der Modellierung von Persönlichkeit zusammen. Die frühe Fokussierung auf einfache Zustände weicht nun zu einem Vektormodell mit Achsen, Zielen und Drift, um komplexere, berechenbare Verhaltensweisen zu ermöglichen. Dies leitet die Struktur für die späteren LangGraph-Implementierungen und die mathematische Beschreibung der Entitäten.
+
+---
+## Neugier-Scan 2026-05-22 09:52
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Anforderungen an die Modellierung von Entitäten und ihren internen Zuständen. Sie etabliert die Notwendigkeit von modellierten Zustandslisten und Knotenpunkten, um über bloßen Fließtext hinausgehend eine sinnvolle Code-Struktur zu generieren. Die Betonung liegt auf der dynamischen Veränderung von Entitäten, was eine tiefere, zeitabhängige Logik im Code erfordert.

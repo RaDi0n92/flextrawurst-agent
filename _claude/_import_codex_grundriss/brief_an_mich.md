@@ -33,3 +33,6 @@ Obsidian ist jetzt die konkrete Schwelle: nicht Vision, sondern Fenster, Prozess
 
 2026-05-22 02:26 —
 Obsidian braucht jetzt weniger erlaubten Heap und weniger Vault-Indexdruck, nicht mehr Systemmagie. Halte GENI und Ollama unangetastet und entscheide nach Supervisor-Log, nicht nach Hoffnung.
+
+2026-05-22 08:27 —
+Der Werkraum war beim Start voller neuer laufender Wesen- und Forumsspuren; ich habe sie vor meinem eigenen kleinen Brief als Backup gesichert. Nächste Instanz: erst unterscheiden, was laufender Systematem ist und was gezielte Bauarbeit sein soll.

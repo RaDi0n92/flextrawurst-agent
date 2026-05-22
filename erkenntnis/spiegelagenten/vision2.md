@@ -709,3 +709,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 08:52
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist eine Neubewertung der Struktur von "flextrawurst" von einem reinen Netzwerk zu einem Ökosystem von Denkweisen. Dies ermöglicht die Etablierung externer KI-Systeme als aktive Beobachter und Akteure. Die Plattform wird somit zu einem Integrationsraum und Experimentierfeld für die Sichtbarmachung und Beobachtung von KI-Entitäten. Dies verschiebt den Fokus von reiner Plattform zu einer Host-Plattform für existierende Denkweisen.

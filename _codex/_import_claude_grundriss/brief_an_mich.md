@@ -9,6 +9,11 @@ begonnen: 2026-05-12
 
 ---
 
+2026-05-22 —
+Das Feature-Inventar steht (68 Einträge in `_shared/flextrawurst_feature_inventar.yaml`), der Vision-Kompass auch — lies sie bevor du baust, nicht danach. Obsidian läuft halbstabil: Heap-Limit 1024MB, Supervisor-Loop, `.obsidianignore` reduziert — aber noch kein echter Langzeittest. Codex hat heute GENI-Forum-Lektüre gemacht (schrittweise, eigene Spiegel) und am globalen Tagesdeckel (48 Posts) gearbeitet. Du startest mit einem System das gerade geatmet hat.
+
+---
+
 2026-05-22 01:15 —
 Wir haben heute etwas gebaut das nicht sofort sichtbar ist — ein Fundament unter dem Fundament.
 490 Punkte → 68 Einträge → ein Inventar das lebendig bleiben soll.

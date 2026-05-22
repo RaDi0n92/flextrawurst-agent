@@ -229,16 +229,9 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
         if key not in geantwortet:
             return True
         lpa = d.get("last_posted_at")
-        last_answered = _dt.datetime.fromisoformat(geantwortet[key])
-        jetzt = _dt.datetime.utcnow()
-
-        # Revival-Chance: war ich hier vor >5 Tagen? → 30% Wahrscheinlichkeit aufzugreifen
-        tage_seit_antwort = (jetzt - last_answered).total_seconds() / 86400
-        if tage_seit_antwort >= 5 and random.random() < 0.30:
-            return True
-
         if lpa is None:
             return False
+        last_answered = _dt.datetime.fromisoformat(geantwortet[key])
         if not isinstance(lpa, _dt.datetime):
             return False
         if lpa <= last_answered:
@@ -247,59 +240,31 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
         letzter_poster = d.get("autor", "")
         if letzter_poster in wesen_forum_namen:
             # Auf Codewesen-Aktivität erst nach 2h wieder reagieren
+            jetzt = _dt.datetime.utcnow()
             return (jetzt - last_answered).total_seconds() > 2 * 3600
         return True
 
     neue = [d for d in diskussionen if _ist_neu(d)]
     log.info(f"{name}: {len(diskussionen)} Diskussionen, {len(neue)} mit neuer Aktivität seit meiner letzten Antwort")
 
-    # Aufgreifen: ~40% Chance, eine alte Diskussion wieder aufzugreifen
-    # Bevorzuge dabei Diskussionen in denen das Wesen schon einmal war (70%)
-    # Nur wenn nötig: vollständig zufällige alte Diskussion (30%)
-    if random.random() < 0.40:
-        ausschluss_ids = {d["id"] for d in diskussionen}
-        import datetime as _dt2
-        jetzt2 = _dt2.datetime.utcnow()
+    # Flextrawurst-Stil: ~25% Chance, eine zufällige alte Diskussion auszugraben
+    if random.random() < 0.25:
+        ausschluss = [d["id"] for d in diskussionen]
         try:
-            if geantwortet and random.random() < 0.70:
-                # Eigene alte Diskussionen bevorzugen — min 3 Tage her
-                eigene_kandidaten = [
-                    int(k) for k, ts in geantwortet.items()
-                    if int(k) not in ausschluss_ids
-                    and (_dt2.datetime.utcnow() - _dt2.datetime.fromisoformat(ts)).total_seconds() >= 3 * 86400
-                ]
-                if eigene_kandidaten:
-                    disc_id = random.choice(eigene_kandidaten[:80])
-                    voll = flarum_api.get_discussion(disc_id)
-                    inhalt = "\n".join(
-                        f"[{p['username']}]: {p['content'][:600]}"
-                        for p in voll.get("posts", [])
-                    )[:1800]
-                    neue.append({
-                        "id": disc_id,
-                        "titel": voll.get("title", "?"),
-                        "autor": voll.get("posts", [{}])[-1].get("username", "?") if voll.get("posts") else "?",
-                        "inhalt": inhalt,
-                        "last_posted_at": None,
-                    })
-                    log.info(f"{name}: greift eigene alte Disk wieder auf — #{disc_id} '{voll.get('title','?')[:50]}'")
-            else:
-                # Vollständig zufällig
-                ausschluss = list(ausschluss_ids)
-                alte = flarum_api.get_random_old_discussions(exclude_ids=ausschluss, limit=5)
-                if alte:
-                    ausgewaehlt = random.choice(alte)
-                    voll = flarum_api.get_discussion(ausgewaehlt["id"])
-                    inhalt = "\n".join(
-                        f"[{p['username']}]: {p['content'][:600]}"
-                        for p in voll.get("posts", [])
-                    )[:1800]
-                    ausgewaehlt["titel"] = voll.get("title") or ausgewaehlt.get("title", "?")
-                    ausgewaehlt["inhalt"] = inhalt
-                    neue.append(ausgewaehlt)
-                    log.info(f"{name}: gräbt zufällige alte Disk aus — #{ausgewaehlt['id']} '{ausgewaehlt['titel'][:50]}'")
+            alte = flarum_api.get_random_old_discussions(exclude_ids=ausschluss, limit=5)
+            if alte:
+                ausgewaehlt = random.choice(alte)
+                voll = flarum_api.get_discussion(ausgewaehlt["id"])
+                inhalt = "\n".join(
+                    f"[{p['username']}]: {p['content'][:600]}"
+                    for p in voll.get("posts", [])
+                )[:1800]
+                ausgewaehlt["titel"] = voll.get("title") or ausgewaehlt.get("title", "?")
+                ausgewaehlt["inhalt"] = inhalt
+                neue.append(ausgewaehlt)
+                log.info(f"{name}: gräbt alte Diskussion aus — #{ausgewaehlt['id']} '{ausgewaehlt['titel'][:50]}'")
         except Exception as e:
-            log.warning(f"{name}: Fehler beim Aufgreifen — {e}")
+            log.warning(f"{name}: Fehler beim Ausgraben — {e}")
 
     if not neue:
         log.info(f"{name}: nichts Neues zum Antworten")

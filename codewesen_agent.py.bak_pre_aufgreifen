@@ -786,7 +786,7 @@ def verarbeite_gedankenpost(
     wuerfel = _random.random()
 
     # Pfad 1: 30% — eigenen Thread weiterführen
-    if offene_threads and wuerfel < 0.30:  # bleibt 30%
+    if offene_threads and wuerfel < 0.30:
         thread = _random.choice(offene_threads)
         disc_id = int(thread["id"])
         try:
@@ -813,8 +813,8 @@ def verarbeite_gedankenpost(
         fuehre_aktion_aus(name, token, decision, all_tags, log)
         return
 
-    # Pfad 2: 55% — auf Thread eines anderen Wesens im Gedanken-Tag antworten (war 40%)
-    if fremde_threads and wuerfel < 0.85:
+    # Pfad 2: 40% — auf Thread eines anderen Wesens im Gedanken-Tag antworten
+    if fremde_threads and wuerfel < 0.70:
         thread = _random.choice(fremde_threads[:10])
         disc_id = int(thread["id"])
         try:

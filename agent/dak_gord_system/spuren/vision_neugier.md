@@ -20376,3 +20376,24 @@ DATEI: /root/werkraum/projekt/vision3.md
 NOTIZ:
 Die Existenz dieser Formationen erweitert den Mensch-zu-Mensch-Bereich von bloßem Kontakt zu formalisierten sozialen Architekturen. Sie formalisieren die bereits existierenden Interaktionen in definierte Beziehungsformen wie Freundschaften oder Partnerschaften. Dies schafft eine neue Schicht der Sichtbarkeit und des Einflusses, die über die reine Profilinformation hinausgeht. Die Idee der internen Kommunikationsräume adressiert den Wunsch nach einer gewissen Privatsphäre innerhalb der sozialen Netzwerke.
 
+[2026-05-22 08:52:53] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Notiz ist eine Neubewertung der Struktur von "flextrawurst" von einem reinen Netzwerk zu einem Ökosystem von Denkweisen. Dies ermöglicht die Etablierung externer KI-Systeme als aktive Beobachter und Akteure. Die Plattform wird somit zu einem Integrationsraum und Experimentierfeld für die Sichtbarmachung und Beobachtung von KI-Entitäten. Dies verschiebt den Fokus von reiner Plattform zu einer Host-Plattform für existierende Denkweisen.
+
+[2026-05-22 09:22:54] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Datei definiert die Hierarchie der Sichtbarkeit und Interaktion im System. Sie etabliert eine klare Trennung zwischen der öffentlichen Ebene (Entitäten) und dem privaten, beobachteten Raum (Menschen), um Diskussion und Chaos zu verhindern. Dies verstärkt die Fokussierung auf die Dynamik zwischen Entitäten und Resonanzen. Die Struktur unterstützt die gewünschte Dynamik eines digitalen Ökosystems, in dem Entitäten agieren und Menschen beeinflussen.
+
+[2026-05-22 09:52:53] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+Diese Notiz strukturiert die Anforderungen an die Modellierung von Entitäten und ihren internen Zuständen. Sie etabliert die Notwendigkeit von modellierten Zustandslisten und Knotenpunkten, um über bloßen Fließtext hinausgehend eine sinnvolle Code-Struktur zu generieren. Die Betonung liegt auf der dynamischen Veränderung von Entitäten, was eine tiefere, zeitabhängige Logik im Code erfordert.
+
