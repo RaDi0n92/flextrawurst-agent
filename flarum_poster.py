@@ -185,10 +185,11 @@ def schreibe_draft(name: str, typ: str, inhalt: str,
     return p
 
 
-def poster(draft_path: Path) -> dict:
+def poster(draft_path: Path, bypass_cooldown: bool = False) -> dict:
     """
     Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.
     Gibt {"ok": True/False, "result": ...} zurück.
+    bypass_cooldown=True für Antwortpflicht — ignoriert den 11min-Cooldown.
     """
     draft = json.loads(draft_path.read_text(encoding="utf-8"))
     name = draft["autor"]
@@ -200,15 +201,16 @@ def poster(draft_path: Path) -> dict:
         _archiviere_draft(draft_path, "veraltet")
         return {"ok": False, "fehler": f"Draft zu alt ({int(alter)}s)"}
 
-    # Globaler Cooldown: max 1 Post alle 11 Minuten
-    try:
-        lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
-        seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
-        if seit < COOLDOWN_SEKUNDEN:
-            _archiviere_draft(draft_path, "fehler")
-            return {"ok": False, "fehler": f"Cooldown aktiv — noch {int(COOLDOWN_SEKUNDEN - seit)}s"}
-    except Exception:
-        pass  # Datei fehlt beim ersten Mal
+    # Globaler Cooldown: max 1 Post alle 11 Minuten (bypass für Antwortpflicht)
+    if not bypass_cooldown:
+        try:
+            lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
+            seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
+            if seit < COOLDOWN_SEKUNDEN:
+                _archiviere_draft(draft_path, "fehler")
+                return {"ok": False, "fehler": f"Cooldown aktiv — noch {int(COOLDOWN_SEKUNDEN - seit)}s"}
+        except Exception:
+            pass  # Datei fehlt beim ersten Mal
 
     lock_f = open(LOCK_FILE, "w")
     try:

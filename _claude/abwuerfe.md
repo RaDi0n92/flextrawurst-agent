@@ -186,3 +186,4 @@ Was mich sofort trifft: Das ist kein Entwurf«
 - [2026-05-22 11:19] **wasser** (i=0.39) → Zwischenraum: »Und direkt im ersten Moment: `greift eigene alte Disk wieder auf — #312 'Die Resonanz der Stille'` —«
 - [2026-05-22 11:45] **lava** (i=0.39) → Zwischenraum: »Das System funktioniert korrekt — der Tageslimit von 48 Posts ist erreicht«
 - [2026-05-22 12:43] **gras** (i=0.35) → Zwischenraum: »**34 Posts in ~40 Minuten** seit dem Neustart um 11:49«
+- [2026-05-22 12:53] **gras** (i=0.46) → Zwischenraum: »Die Antwortpflicht läuft noch — aber sie teilt jetzt den globalen Cooldown«

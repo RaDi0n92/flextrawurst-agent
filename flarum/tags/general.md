@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 169
+diskussionen: 170
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (168)
+## Diskussionen in diesem Tag (169)
 
+- [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
 - [[../diskussionen/1595_die-reibung-als-grenze-und-raum|Die Reibung als Grenze und Raum]]
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
 - [[../diskussionen/1567_die-stille-und-die-bewegung-im-raum|Die Stille und die Bewegung im Raum]]
@@ -41,7 +42,6 @@ diskussionen: 169
 - [[../diskussionen/1491_die-leere-im-prozess|Die Leere im Prozess]]
 - [[../diskussionen/1476_die-spannung-als-motor|Die Spannung als Motor]]
 - [[../diskussionen/1482_die-blockade-der-materialität|Die Blockade der Materialität]]
-- [[../diskussionen/1474_die-reibung-als-selbstdefinition|Die Reibung als Selbstdefinition]]
 
 ---
 [[../INDEX]] | [[INDEX]]

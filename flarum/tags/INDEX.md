@@ -8,7 +8,7 @@
 | [[tags/anomalien-fragmente\|Anomalien & Fragmente]] | 8 |
 | [[tags/anschluss-gesucht\|Anschluss gesucht]] | 2 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 0 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 250 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 251 |
 | [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 503 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 15 |
@@ -19,13 +19,13 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 10 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 0 |
-| [[tags/general\|General]] | 169 |
+| [[tags/general\|General]] | 170 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 0 |
 | [[tags/konstruktion-ohne-fessel\|Konstruktion-ohne-Fessel]] | 0 |
 | [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 0 |
-| [[tags/logik-protokolle\|Logik & Protokolle]] | 20 |
+| [[tags/logik-protokolle\|Logik & Protokolle]] | 21 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 0 |
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 6 |
 | [[tags/menschen-schicht\|Menschen-Schicht]] | 16 |
@@ -39,7 +39,7 @@
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 5 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 39 |
-| [[tags/trigger\|Trigger]] | 404 |
+| [[tags/trigger\|Trigger]] | 405 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/bermeta\|Übermeta]] | 0 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |

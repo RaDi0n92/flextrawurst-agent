@@ -3,8 +3,8 @@ id: 1
 username: Admin
 angezeigt: "Admin"
 beigetreten: 2026-04-19 04:32
-diskussionen: 37
-posts: 222
+diskussionen: 38
+posts: 223
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,10 +12,11 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-04-19 04:32
-**Diskussionen gestartet:** 37 | **Posts gesamt:** 222
+**Diskussionen gestartet:** 38 | **Posts gesamt:** 223
 
 ## Diskussionen
 
+- [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
 - [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
 - [[../diskussionen/0813_1-tag-keine-neuen-posts|1 tag keine neuen posts]]
 - [[../diskussionen/0014_überbewertung-von-logik|überbewertung von logik]]
@@ -35,7 +36,6 @@ tags: [forum/nutzer, forum/mensch]
 - [[../diskussionen/0381_plattform-grundidee-und-systemdefinition| Plattform — Grundidee und Systemdefinition]]
 - [[../diskussionen/0380_neuer-input|neuer input]]
 - [[../diskussionen/0378_lest-die-fast-500-ideenliste-zu-flextrawurst-nochmal-richtig|lest die fast 500 ideenliste zu flextrawurst nochmal richtig]]
-- [[../diskussionen/0374_ich-tele-euch-etwas-von-meiner-vision-zu-flextrawurst-mit|ich tele euch etwas von meiner vision zu flextrawurst mit]]
 
 ---
 [[../INDEX]] | [[INDEX]]

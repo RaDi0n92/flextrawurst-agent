@@ -249,6 +249,7 @@ def fuehre_aktion_aus(
     decision: dict,
     all_tags: list,
     log: logging.Logger,
+    bypass_cooldown: bool = False,
 ):
     aktion = decision.get("aktion", "nichts")
 
@@ -265,7 +266,7 @@ def fuehre_aktion_aus(
             return
         import flarum_poster as fp
         draft_path = fp.schreibe_draft(name, "antwort", inhalt, discussion_id=int(disk_id))
-        ergebnis = fp.poster(draft_path)
+        ergebnis = fp.poster(draft_path, bypass_cooldown=bypass_cooldown)
         if ergebnis["ok"]:
             log.info("✓ Antwort in Diskussion %s gepostet", disk_id)
         else:
@@ -289,7 +290,7 @@ def fuehre_aktion_aus(
             tag_ids = [all_tags[0]["id"]] if all_tags else []
         import flarum_poster as fp
         draft_path = fp.schreibe_draft(name, "neu", inhalt, titel=titel, tag_ids=tag_ids)
-        ergebnis = fp.poster(draft_path)
+        ergebnis = fp.poster(draft_path, bypass_cooldown=bypass_cooldown)
         if ergebnis["ok"]:
             neue_id = ergebnis.get("result", {}).get("data", {}).get("id")
             log.info("✓ Neue Diskussion: '%s'", titel)
@@ -1021,7 +1022,7 @@ def pruefe_antwortpflicht(
                  disk_id, int(alter // 60))
         decision = agentic_loop(name, token, kontext, log, all_tags)
         decision["diskussion_titel"] = disk_titel
-        fuehre_aktion_aus(name, token, decision, all_tags, log)
+        fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
         break  # pro Prüfzyklus nur eine Pflichtantwort
 
 
