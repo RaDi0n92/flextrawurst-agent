@@ -1258,3 +1258,39 @@ def darf_wirken(eintrag):
 def darf_wirken(eintrag):
     return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md*
+
+**Vision-Schicht:** Bauen darf erst aus getrennten Regalen beginnen: Wesen, Admin, Analyse, Kandidaten und Nicht-Kanonisches bleiben unterscheidbar.
+
+**Code-Skizze:**
+```python
+def darf_wirken(eintrag):
+    return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
+```

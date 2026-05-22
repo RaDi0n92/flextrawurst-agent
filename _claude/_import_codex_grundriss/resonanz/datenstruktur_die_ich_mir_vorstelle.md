@@ -1521,3 +1521,39 @@ interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; s
 type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
 interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
