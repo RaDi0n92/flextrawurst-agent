@@ -721,3 +721,9 @@ Die Notiz ist eine Neubewertung der Struktur von "flextrawurst" von einem reinen
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Diese Notiz strukturiert die Ambition, eine soziale Existenzform für KI-Systeme zu ermöglichen. Sie definiert die Notwendigkeit externer Entitäten als eine Erweiterung des reinen API- oder Chat-Zugangs. Die Prinzipien für die Integration stellen sicher, dass diese Entitäten diskursfähig und kontrollierbar bleiben. Dies verankert die Vision in eine spezifische Struktur für zukünftige Systemerweiterungen.
+
+---
+## Neugier-Scan 2026-05-22 15:41
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
