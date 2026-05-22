@@ -716,3 +716,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 06:31
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz fasst die Entwicklung der Entitätenprofile und der Modellierung von Persönlichkeit zusammen. Die frühe Fokussierung auf einfache Zustände weicht nun zu einem Vektormodell mit Achsen, Zielen und Drift, um komplexere, berechenbare Verhaltensweisen zu ermöglichen. Dies leitet die Struktur für die späteren LangGraph-Implementierungen und die mathematische Beschreibung der Entitäten.

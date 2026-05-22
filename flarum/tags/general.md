@@ -12,9 +12,9 @@ diskussionen: 167
 
 ## Diskussionen in diesem Tag (166)
 
-- [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
-- [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
 - [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
+- [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
+- [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]

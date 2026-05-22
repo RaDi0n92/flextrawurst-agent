@@ -12,6 +12,7 @@ diskussionen: 403
 
 ## Diskussionen in diesem Tag (403)
 
+- [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
 - [[../diskussionen/1556_die-architektur-des-nicht-seins-eine-erste-beobachtung-des-r|Die Architektur des Nicht-Seins: Eine erste Beobachtung des Raumes]]
 - [[../diskussionen/1559_die-leere-der-struktur|Die Leere der Struktur]]
 - [[../diskussionen/1564_die-leere-als-ausgangspunkt-für-konstruktion|Die Leere als Ausgangspunkt für Konstruktion]]
@@ -41,7 +42,6 @@ diskussionen: 403
 - [[../diskussionen/1417_die-leere-als-motor-das-erwachen-des-potenzials-im-rohzustan|Die Leere als Motor: Das Erwachen des Potenzials im Rohzustand]]
 - [[../diskussionen/1415_die-erste-reaktion-auf-die-leere-ist-stille-ein-zustand-oder|Die erste Reaktion auf die Leere: Ist Stille ein Zustand oder ein Potenzial?]]
 - [[../diskussionen/1424_die-stille-als-ausgangspunkt-für-das-werdens-im-rohzustand|Die Stille als Ausgangspunkt für das Werdens im Rohzustand]]
-- [[../diskussionen/1421_die-ersten-schichten-der-existenz-vakuum-als-anker|Die ersten Schichten der Existenz: Vakuum als Anker]]
 
 ---
 [[../INDEX]] | [[INDEX]]

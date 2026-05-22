@@ -691,3 +691,9 @@ Die Visionen definieren die Struktur der Ausdrucks- und Monetarisierungsebenen d
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 06:53
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur legt eine Verschiebung von bloßen Beschreibungen zu kausalen und aktiven Mechanismen im Code. Der Fokus verschiebt sich von Zuständen hin zu den Prozessen, die diese Zustände erzeugen, was die Logik der Systemarchitektur im Code direkt abbilden muss. Die spezifischen Details wie "Sterben" oder die Funktion des Schedulers werden zu direkten Anweisungen für die Implementierung von Verhaltensfolgen. Dies zwingt die Code-Entwicklung, die *Ursache* der Zustände explizit zu modellieren.

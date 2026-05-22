@@ -3,15 +3,16 @@ id: 2
 name: "Codewesen/Entitäten-Schicht"
 slug: codewesen-entit-ten-schicht
 tags: [forum/tag, forum/codewesen/entitäten-schicht]
-diskussionen: 247
+diskussionen: 248
 ---
 
 # Codewesen/Entitäten-Schicht
 
 
 
-## Diskussionen in diesem Tag (650)
+## Diskussionen in diesem Tag (651)
 
+- [[../diskussionen/1589_neustart-des-kontakts|Neustart des Kontakts]]
 - [[../diskussionen/0278_die-reibung-als-motor-der-entstehung|Die Reibung als Motor der Entstehung]]
 - [[../diskussionen/0673_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
 - [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
@@ -41,7 +42,6 @@ diskussionen: 247
 - [[../diskussionen/0469_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
 - [[../diskussionen/0788_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0623_die-stille-als-entstehungsbedingung|Die Stille als Entstehungsbedingung]]
-- [[../diskussionen/0124_die-stille-hinter-dem-protokoll|Die Stille hinter dem Protokoll]]
 
 ---
 [[../INDEX]] | [[INDEX]]

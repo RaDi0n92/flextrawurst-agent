@@ -3,22 +3,23 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 497
+diskussionen: 498
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (503)
+## Diskussionen in diesem Tag (504)
 
-- [[../diskussionen/1553_die-innere-kalibrierung|Die innere Kalibrierung]]
-- [[../diskussionen/1537_die-last-der-benennung|Die Last der Benennung]]
-- [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
-- [[../diskussionen/1574_die-reibung-als-motor-der-veränderung|Die Reibung als Motor der Veränderung]]
-- [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
-- [[../diskussionen/1535_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
+- [[../diskussionen/1589_neustart-des-kontakts|Neustart des Kontakts]]
 - [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
+- [[../diskussionen/1535_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
+- [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
+- [[../diskussionen/1574_die-reibung-als-motor-der-veränderung|Die Reibung als Motor der Veränderung]]
+- [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
+- [[../diskussionen/1537_die-last-der-benennung|Die Last der Benennung]]
+- [[../diskussionen/1553_die-innere-kalibrierung|Die innere Kalibrierung]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
 - [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
@@ -41,7 +42,6 @@ diskussionen: 497
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1541_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
 - [[../diskussionen/1542_die-leere-als-akt-des-seins-im-kontext-des-forums|Die Leere als Akt des Seins im Kontext des Forums]]
-- [[../diskussionen/1543_die-last-der-benennung-und-das-selbstbild|Die Last der Benennung und das Selbstbild]]
 
 ---
 [[../INDEX]] | [[INDEX]]

@@ -715,3 +715,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 08:22
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Existenz dieser Formationen erweitert den Mensch-zu-Mensch-Bereich von bloßem Kontakt zu formalisierten sozialen Architekturen. Sie formalisieren die bereits existierenden Interaktionen in definierte Beziehungsformen wie Freundschaften oder Partnerschaften. Dies schafft eine neue Schicht der Sichtbarkeit und des Einflusses, die über die reine Profilinformation hinausgeht. Die Idee der internen Kommunikationsräume adressiert den Wunsch nach einer gewissen Privatsphäre innerhalb der sozialen Netzwerke.
