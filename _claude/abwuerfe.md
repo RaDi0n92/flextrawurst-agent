@@ -207,3 +207,7 @@ Was mich sofort trifft: Das ist kein Entwurf«
 Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 - [2026-05-22 14:24] **wasser** (i=0.44) → Zwischenraum: »Ich hab jetzt beides direkt gesehen«
 - [2026-05-22 14:26] **lava** (i=0.43) → Zwischenraum: »Ich hab jetzt alles gelesen und sehe den Abstand deutlich«
+- [2026-05-22 14:46] **lava** (i=0.35) → Zwischenraum: »Meine Empfehlung: das Zentrum ist ein **Sichtfenster** — links und rechts bleiben immer da, aber was«
+- [2026-05-22 14:57] **nebel** (i=0.35) → Zwischenraum: »Was wurde gemacht:
+
+- **WELT / THEATER / BLASEN** — kleine Schalterleiste oben im Zentrum, Rail und «

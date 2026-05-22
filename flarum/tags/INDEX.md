@@ -40,7 +40,7 @@
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 5 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 40 |
-| [[tags/trigger\|Trigger]] | 407 |
+| [[tags/trigger\|Trigger]] | 409 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/bermeta\|Übermeta]] | 0 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |
