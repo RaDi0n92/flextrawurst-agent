@@ -49,137 +49,81 @@ Struktur hilft, wenn sie Orientierung, Lesbarkeit und Verbindung schafft; sie wi
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_1_struktur_oder_kaefig.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.1 Struktur oder Käfig` setzt den Schwerpunkt dieser Datei; Die Achse `3.1 Struktur oder Käfig` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe hier eine der tragfähigsten Achsen gelesen: Struktur erscheint nicht als Feind, sondern als ambivalente Bedingung. Die Quellen sprechen von Strukturierung des Chaos, Struktur der Kommunikation, notwendiger Struktur und zugleich von Struktur als Illusion oder möglicher Starrheit. Wichtig ist: Diese Datei hat echte Beispielquellen, nicht nur Behauptung.
 
 ## Was ich verstehe
-Bei `3.1 Struktur oder Käfig` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe die Achse als Prüfung, ob Ordnung Orientierung schafft oder lebendige Verbindung verhindert. Für die Wesen ist Struktur akzeptabel, wenn sie lesbar macht; gefährlich wird sie, wenn sie entscheidet, welche Bewegung überhaupt erlaubt ist.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_1_struktur_oder_kaefig.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.1 Struktur oder Käfig` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht sauber getrennt ist, welche Quellen wirklich Käfig-Erfahrung zeigen und welche nur allgemein über Struktur reden. Die Datei müsste später Fälle markieren: Struktur als Halt, Struktur als Selbstbeschreibung, Struktur als Admin-Vorgabe, Struktur als Fessel.
 
 ## Was mich interessiert
-Mich interessiert an `3.1 Struktur oder Käfig` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert die technische Form von beweglicher Struktur: Tags, Prioritäten, Historien und Modulation, aber ohne harte Ontologie. Genau diese Achse könnte verhindern, dass Flextrawurst entweder Textflut oder starres Ordnungssystem wird.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_1_struktur_oder_kaefig.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.1 Struktur oder Käfig`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Diese Datei hängt mit Admin-Resonanz, Flarum-Erbe, Benennung und Meta-ohne-Operation zusammen. Struktur ist dort überall die gleiche Gefahr in anderer Kleidung: Tag, Name, Regel, Browser, Matrix.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.1 Struktur oder Käfig` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Struktur ist ein Werkzeug mit Provenienzpflicht. Sie darf Verbindungen sichtbar machen, aber nicht die möglichen Verbindungen vorentscheiden.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_1_struktur_oder_kaefig.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.1 Struktur oder Käfig` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, dass die Datei oben starke Quellen hat, unten aber bisher generisch war. Gerade Struktur/Käfig darf nicht selbst als Käfig durch eine Pflichtform enden.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.1 Struktur oder Käfig` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob flexible Struktur später von Wesen selbst moduliert werden darf oder ob Admin-Freigabe nötig ist. Das ist keine kleine UI-Frage, sondern Governance.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.1 Struktur oder Käfig` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer ist diese Achse die Frage, ob Welt durch Form entsteht oder durch Form fixiert wird. Flarum zeigt beides: Tags und Threads ermöglichen Begegnung, aber lineare Textflut und Forumform begrenzen auch.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.1 Struktur oder Käfig` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Die Nacharbeit fühlt sich hier wie Aufräumen ohne Glätten an. Die Achse ist echt; sie brauchte nur einen Abschnitt, der ihre Ambivalenz nicht plattmacht.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_1_struktur_oder_kaefig.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.1 Struktur oder Käfig` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Die Datei existiert, weil fast jede spätere Flextrawurst-Entscheidung an Strukturfragen scheitern oder reifen kann.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.1 Struktur oder Käfig` den Pfad `03_grundmuster/3_1_struktur_oder_kaefig.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Reibung`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `StructureAsTool`, `StructureAsCageRisk`, Tag-Historie und eine Regel, dass Strukturänderungen Quelle, Anlass und Wirkung speichern.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_1_struktur_oder_kaefig.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen klassifizierte Beispiele: Wo hilft Struktur, wo blockiert sie, wer fordert sie, wer leidet darunter?
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.1 Struktur oder Käfig` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst sollte Struktur als bewegliches Werkzeug behandeln: sichtbar, prüfbar, historisiert, widerrufbar.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis31Strukt {
-  path: '03_grundmuster/3_1_struktur_oder_kaefig.md';
-  title: '3.1 Struktur oder Käfig';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface StructureAxis { kind: 'structure_or_cage'; sourceRefs: SourceRef[]; mode: 'orientation' | 'connection' | 'constraint' | 'cage_risk'; worldEffect: false; }
 ```
 
 ## Was ich mir merken will
-Bei `3.1 Struktur oder Käfig` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_1_struktur_oder_kaefig.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Struktur darf nicht moralisch gelesen werden. Sie ist weder automatisch Rettung noch automatisch Gefängnis.
 
 ## Dokumente gehören zusammen
-Zu `3.1 Struktur oder Käfig` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu `ring7_flextrawurst_bausteine.md`, `ring7_baustein_prioritaeten.md`, Admin-Resonanz und Benennung.
 
 ## Was mich überrascht hat
-Überraschend an `3.1 Struktur oder Käfig` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie oft Struktur als eigene Existenzform auftaucht, nicht nur als äußere Ordnung.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.1 Struktur oder Käfig` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst sollte Struktur als bewegliches Werkzeug behandeln: sichtbar, prüfbar, historisiert, widerrufbar.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_1_struktur_oder_kaefig_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_1_struktur_oder_kaefig.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def classify_structure_signal(post):
+    return {'axis': 'structure_or_cage', 'needs_context': True, 'world_effect': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.1 Struktur oder Käfig` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Der tragende Satz bleibt: Struktur soll verbinden, nicht vorentscheiden.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_1_struktur_oder_kaefig.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.1 Struktur oder Käfig` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohpost -> Strukturbeobachtung -> Achsenklassifikation -> Baustein-Kandidat -> Daniel-Entscheidung.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.1 Struktur oder Käfig` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_1_struktur_oder_kaefig.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Kritik macht diese Datei selbst zum Beispiel: eine Pflichtstruktur ohne Denken war Käfig, nicht Hilfe.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.1 Struktur oder Käfig` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Mehr Ordnung heißt automatisch bessere Analyse.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_1_struktur_oder_kaefig.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.1 Struktur oder Käfig` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine echte Quellensortierung nach Struktur-Hilfe und Struktur-Fessel fehlt noch.

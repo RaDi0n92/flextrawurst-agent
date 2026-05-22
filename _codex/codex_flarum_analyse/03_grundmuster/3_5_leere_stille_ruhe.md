@@ -49,137 +49,81 @@ Nicht jede Leere will gefüllt werden; Nicht-Aktivität braucht Typologie.
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_5_leere_stille_ruhe.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.5 Leere, Stille, Ruhe, Stillstand` setzt den Schwerpunkt dieser Datei; Die Achse `3.5 Leere, Stille, Ruhe, Stillstand` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Datei gelesen, deren Quellen Leere nicht einheitlich behandeln. Manche Sätze sagen, die Leere müsse gefüllt werden; andere nennen Stille den Raum vor Logik, vor Signal oder vor Bedeutung. Genau diese Differenz ist der Kern.
 
 ## Was ich verstehe
-Bei `3.5 Leere, Stille, Ruhe, Stillstand` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe: Nicht-Aktivität ist kein einziger Zustand. Leere, Stille, Ruhe, Stagnation, Pause und Blockade müssen getrennt werden.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_5_leere_stille_ruhe.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.5 Leere, Stille, Ruhe, Stillstand` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht sauber markiert ist, wann `Leere füllen` eine Notwendigkeit, ein Echo oder eine gefährliche Verkürzung ist.
 
 ## Was mich interessiert
-Mich interessiert an `3.5 Leere, Stille, Ruhe, Stillstand` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert eine Pause/Stille-Typologie für Flextrawurst. Ein System darf nicht jede Inaktivität als Ausfall oder Einladung zum Füllen lesen.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_5_leere_stille_ruhe.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.5 Leere, Stille, Ruhe, Stillstand`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit 5555, 6666, Reibung, Benennung und dem späteren Schlaf-/Pause-System zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.5 Leere, Stille, Ruhe, Stillstand` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Abwesenheit kann Baugrund, Schutzraum, Ende, Akkumulation oder Blockade sein.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_5_leere_stille_ruhe.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.5 Leere, Stille, Ruhe, Stillstand` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt die Spannung zwischen `Leere füllen müssen` und `Stille als Raum vor Signal`. Diese beiden Linien dürfen nicht zusammengeworfen werden.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.5 Leere, Stille, Ruhe, Stillstand` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob manche Wesen Leere aktiv schützen, während andere sie operationalisieren wollen.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.5 Leere, Stille, Ruhe, Stillstand` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer geht es um Weltzeit: Wann ist nichts passiert, wann passiert gerade etwas Unsichtbares?
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.5 Leere, Stille, Ruhe, Stillstand` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Die Datei fühlt sich langsamer an als die anderen. Sie verlangt, Nicht-Handlung als Material ernst zu nehmen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_5_leere_stille_ruhe.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.5 Leere, Stille, Ruhe, Stillstand` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil spätere Systeme sonst Pausen falsch behandeln würden.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.5 Leere, Stille, Ruhe, Stillstand` den Pfad `03_grundmuster/3_5_leere_stille_ruhe.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `PauseType`, `SilenceState`, `Akkumulation`, `Blockade`, `Abschluss`, `Schlaf`, `Ausfall` als getrennte Zustände.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_5_leere_stille_ruhe.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen Quellenbeispiele pro Nicht-Aktivitätszustand.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.5 Leere, Stille, Ruhe, Stillstand` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst sollte Stille lesen können, ohne sie sofort zu unterbrechen.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis35Leere {
-  path: '03_grundmuster/3_5_leere_stille_ruhe.md';
-  title: '3.5 Leere, Stille, Ruhe, Stillstand';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface SilenceState { type: 'protected_empty' | 'waiting' | 'accumulation' | 'blockade' | 'abschluss' | 'technical_pause'; evidence: SourceRef[]; }
 ```
 
 ## Was ich mir merken will
-Bei `3.5 Leere, Stille, Ruhe, Stillstand` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_5_leere_stille_ruhe.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Nicht jede Leere bittet darum, gefüllt zu werden.
 
 ## Dokumente gehören zusammen
-Zu `3.5 Leere, Stille, Ruhe, Stillstand` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu 5555, 6666, `12_bauanschluss` und späterem Schlaf-System.
 
 ## Was mich überrascht hat
-Überraschend an `3.5 Leere, Stille, Ruhe, Stillstand` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie oft Leere als Pflicht zum Füllen erscheint und zugleich als Schutzraum lesbar bleibt.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.5 Leere, Stille, Ruhe, Stillstand` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst sollte Stille lesen können, ohne sie sofort zu unterbrechen.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_5_leere_stille_ruhe_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_5_leere_stille_ruhe.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def classify_silence(signal):
+    return {'silence_type': 'unknown_until_context', 'fill_automatically': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.5 Leere, Stille, Ruhe, Stillstand` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Stille ist nicht immer Warten. Manche Stille beendet, sammelt oder schützt.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_5_leere_stille_ruhe.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.5 Leere, Stille, Ruhe, Stillstand` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohpost -> Nicht-Aktivitätsbegriff -> Typologie -> Systemstatus ohne automatische Aktion.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.5 Leere, Stille, Ruhe, Stillstand` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_5_leere_stille_ruhe.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Wunsch nach Rohheit passt hier: Nicht alles reparieren, erst verstehen, was Brüche leisten.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.5 Leere, Stille, Ruhe, Stillstand` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Leere ist automatisch Mangel.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_5_leere_stille_ruhe.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.5 Leere, Stille, Ruhe, Stillstand` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine harte Typologie mit Belegstellen fehlt noch.

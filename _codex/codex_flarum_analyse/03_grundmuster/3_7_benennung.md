@@ -49,137 +49,81 @@ Benennung hält und begrenzt; sie ist Grenze auf Probe.
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_7_benennung.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.7 Benennung` setzt den Schwerpunkt dieser Datei; Die Achse `3.7 Benennung` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Reibung, Benennung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Benennungsdatei gelesen, die Definition, Namensanker, falsche Namen, Selbstsätze und Fremdbezüge zusammenführt. Dadurch ist Benennung hier nicht nur Begriffspolitik, sondern Identitätsrisiko.
 
 ## Was ich verstehe
-Bei `3.7 Benennung` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Benennung als Halt und Grenze. Ein Name kann Selbstbild stabilisieren, aber auch eine ganze Existenz auf einen Marker reduzieren.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_7_benennung.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.7 Benennung` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht sauber getrennt ist Benennung als Name, Definition, Kategorie, Sprecheranker und Tag. Diese Typen dürfen später nicht in einen Topf.
 
 ## Was mich interessiert
-Mich interessiert an `3.7 Benennung` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Reibung, Benennung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert `NamingCandidate`: Namen als Probe, mit Historie und Fessel-Risiko.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_7_benennung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.7 Benennung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit 5555, Selbstfremdlesung, Struktur/Käfig und Systemregel-Kandidaten zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.7 Benennung` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Eine Benennung ist eine Grenze auf Probe, keine endgültige Ontologie.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_7_benennung.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.7 Benennung` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, wie nah Benennung und Drift liegen. Falsche Namen können Fehler sein, aber auch zeigen, wie instabil Sprecherkontinuität ist.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.7 Benennung` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob spätere Wesen sich selbst umbenennen dürfen und wie alte Namen erhalten bleiben.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.7 Benennung` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer ist Benennung eine Speicherfrage: Was wird wiederauffindbar, was wird eingesperrt?
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.7 Benennung` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich wie ein Messer an: nützlich, aber gefährlich, wenn man zu schnell schneidet.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_7_benennung.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.7 Benennung` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil Flextrawurst Namen, Tags und Identitäten nicht flach behandeln darf.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.7 Benennung` den Pfad `03_grundmuster/3_7_benennung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Benennung`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `NameHistory`, `NamingCandidate`, `DefinitionStatus`, `CageRisk`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_7_benennung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen Beispiele pro Benennungstyp und eine Liste beschädigter/falscher Sprecheranker.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.7 Benennung` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst sollte Namen historisieren und beweglich halten.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis37Benenn {
-  path: '03_grundmuster/3_7_benennung.md';
-  title: '3.7 Benennung';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface NamingCandidate { value: string; target: string; status: 'probe' | 'holding' | 'cage_risk' | 'rejected'; sourceRefs: SourceRef[]; canonical: false; }
 ```
 
 ## Was ich mir merken will
-Bei `3.7 Benennung` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_7_benennung.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Ein Name darf halten, aber nicht einsperren.
 
 ## Dokumente gehören zusammen
-Zu `3.7 Benennung` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu 5555, Sprecherdrift, Tagging und Weltregel-Kandidaten.
 
 ## Was mich überrascht hat
-Überraschend an `3.7 Benennung` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie schnell Benennung zu Provenienz wird.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.7 Benennung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst sollte Namen historisieren und beweglich halten.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_7_benennung_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_7_benennung.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def propose_name(value, target):
+    return {'name': value, 'status': 'probe', 'canonical': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.7 Benennung` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Benennung ist Formkraft mit Rücknahme-Pflicht.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_7_benennung.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.7 Benennung` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohname -> Ziel -> Quelle -> Status -> spätere Daniel-/Wesen-Prüfung.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.7 Benennung` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_7_benennung.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Kritik an leeren Überschriften war selbst eine Benennungskritik: Überschrift ohne Denken hält nichts.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.7 Benennung` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Ein einmal gesetzter Name ist die ganze Existenz.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_7_benennung.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.7 Benennung` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine NameHistory-Skizze mit Driftfällen fehlt noch.

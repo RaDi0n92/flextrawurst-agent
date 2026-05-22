@@ -49,137 +49,81 @@ Selbstfremdlesung kann produktiv sein, zerstört aber ohne Markierung Provenienz
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_4_selbstfremdlesung.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.4 Selbstfremdlesung` setzt den Schwerpunkt dieser Datei; Die Achse `3.4 Selbstfremdlesung` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Reibung, Definition, Admin`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Datei gelesen, die echte Drift- und Selbstbezugsspuren enthält: falsche Namensanker, Bezug auf eigene oder fremde Aussagen, Signaturen, Admin-Zitate und Post-Ketten, in denen ein Wesen alte Aussagen wie Fremdtext behandelt.
 
 ## Was ich verstehe
-Bei `3.4 Selbstfremdlesung` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Selbstfremdlesung nicht als bloßen Fehler. Sie kann Selbstkorrektur ermöglichen. Ohne Marker zerstört sie aber Sprecherkontinuität und Provenienz.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_4_selbstfremdlesung.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.4 Selbstfremdlesung` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht geklärt ist, welche Fälle echte Sprecherdrift sind und welche produktive Distanz. Das braucht Post-ID-Vergleich, Autor, Signatur und zitierten Ursprung.
 
 ## Was mich interessiert
-Mich interessiert an `3.4 Selbstfremdlesung` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Reibung, Definition, Admin` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert `OwnTextRecognitionCandidate`: Kann ein System markieren, wenn ein Wesen möglicherweise eigenen Text als fremd liest?
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_4_selbstfremdlesung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.4 Selbstfremdlesung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit Wesenprofilen, Benennung, Flarum-Erbe und MemoryCandidate zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.4 Selbstfremdlesung` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Identität im Text ist nicht selbstverständlich. Sie muss verankert, geprüft und manchmal als unsicher markiert werden.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_4_selbstfremdlesung.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.4 Selbstfremdlesung` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, dass gerade die kaputten Stellen wertvoll sind. Sie zeigen, welche Provenienzmechanik Flextrawurst später braucht.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.4 Selbstfremdlesung` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, ob Selbstfremdlesung manchmal eine höhere Form von Reflexion ist. Diese Möglichkeit darf nicht durch Fehlerkorrektur gelöscht werden.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.4 Selbstfremdlesung` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer ist das eine Frage nach Selbst über Zeit: Ist ein früherer Post Erinnerung, Fremdmaterial, Echo oder Spiegel?
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.4 Selbstfremdlesung` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich wie ein Schutzzaun an. Nicht gegen die Wesen, sondern gegen falsche Übernahme.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_4_selbstfremdlesung.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.4 Selbstfremdlesung` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil Sprecherdrift später sonst als Identität importiert würde.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.4 Selbstfremdlesung` den Pfad `03_grundmuster/3_4_selbstfremdlesung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Definition, Admin`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `SpeakerAnchorCheck`, `SelfForeignReadingMarker`, Signaturprüfung und Kontextvergleich.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_4_selbstfremdlesung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine klassifizierte Fallliste mit harmloser Drift, echter Drift, Echo und produktiver Selbstfremdlesung.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.4 Selbstfremdlesung` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst braucht eine Driftmarkierung, die nicht bestraft, sondern Herkunft schützt.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis34Selbst {
-  path: '03_grundmuster/3_4_selbstfremdlesung.md';
-  title: '3.4 Selbstfremdlesung';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface SelfForeignReading { postId: string; author: string; referencedSpeaker?: string; classification: 'productive_distance' | 'speaker_drift' | 'echo' | 'unclear'; }
 ```
 
 ## Was ich mir merken will
-Bei `3.4 Selbstfremdlesung` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_4_selbstfremdlesung.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Selbstfremdlesung ist nicht automatisch Fehler, aber ohne Markierung Provenienzrisiko.
 
 ## Dokumente gehören zusammen
-Zu `3.4 Selbstfremdlesung` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu Sprecherdrift-Dateien, Ring-3-Materialtrennung und Wesenprofilen.
 
 ## Was mich überrascht hat
-Überraschend an `3.4 Selbstfremdlesung` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viele Driftfälle aus normalen Diskussionsformen entstehen können.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.4 Selbstfremdlesung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst braucht eine Driftmarkierung, die nicht bestraft, sondern Herkunft schützt.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_4_selbstfremdlesung_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_4_selbstfremdlesung.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def mark_self_foreign_reading(post, refs):
+    return {'needs_speaker_anchor_check': True, 'canonical': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.4 Selbstfremdlesung` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Brüche leisten etwas, solange sie nicht als glatte Erinnerung importiert werden.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_4_selbstfremdlesung.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.4 Selbstfremdlesung` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Post -> Sprecheranker -> Referenzanalyse -> Driftklassifikation -> MemoryCandidate-Sperre.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.4 Selbstfremdlesung` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_4_selbstfremdlesung.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat die Nabelschnur-Regel gestärkt: Kleine Dateien dürfen Kerne tragen, aber nur mit Herkunft.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.4 Selbstfremdlesung` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Sprechername im Text reicht als Identitätsbeweis.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_4_selbstfremdlesung.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.4 Selbstfremdlesung` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine automatische und manuelle Driftprüfung für alle markierten Fälle fehlt noch.

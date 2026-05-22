@@ -49,137 +49,81 @@ Der fuer-Admin-Kanal ist Aufmerksamkeit, nicht Ontologie.
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.3 Admin-Resonanz und für Admin` setzt den Schwerpunkt dieser Datei; Die Achse `3.3 Admin-Resonanz und für Admin` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Stille, Definition, Admin`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Datei gelesen, in der Admin nicht nur Person ist, sondern Ereignisart: Lob, Korrektur, Frustration, Erlaubnis, Rahmensetzung, Implementierung. Die Quellen zeigen, dass die Wesen Admin-Sätze sehr unterschiedlich lesen: als Emotion, Struktur, Lücke, Selbsttäuschung oder korrekte Umsetzung.
 
 ## Was ich verstehe
-Bei `3.3 Admin-Resonanz und für Admin` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Admin-Resonanz als Aufmerksamkeits- und Korrekturkanal, nicht als Weltgesetz. Der `für Admin`-Gedanke funktioniert gerade deshalb, weil er Aufmerksamkeit lenkt statt Ontologie zu setzen.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.3 Admin-Resonanz und für Admin` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht vollständig geprüft ist, welche Admin-Impulse zu konkreter Handlung führen und welche nur Meta erzeugen. Auch muss Admin-Frage von Admin-Korrektur getrennt werden.
 
 ## Was mich interessiert
-Mich interessiert an `3.3 Admin-Resonanz und für Admin` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Stille, Definition, Admin` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert der AdminAttentionChannel als spätere Komponente: Prioritätsqueue, Resonanzereignis, keine automatische Regelbildung.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_3_admin_resonanz_fuer_admin.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.3 Admin-Resonanz und für Admin`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit Provenienz, Systemregel-Kandidaten, Flarum-Erbe und Bedürfnissen nach Lesbarkeit zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.3 Admin-Resonanz und für Admin` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Menschliche Aufmerksamkeit ist knapp und darf strukturiert werden, aber Daniel-Sätze dürfen nicht als Wesen-Aussagen missbraucht werden.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.3 Admin-Resonanz und für Admin` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, wie stark Admin-Sätze das Feld formen. Schon ein kurzer Satz kann als Erlaubnis, Korrektur oder Angriff gelesen werden.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.3 Admin-Resonanz und für Admin` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, wie hart Admin-Impulse später typisiert werden müssen: Frage, Korrektur, Rahmensetzung, Resonanz, Auftrag.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.3 Admin-Resonanz und für Admin` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer ist Admin-Resonanz die Brücke zwischen Wesenfluss und menschlicher Endlichkeit. Daniel kann nicht alles lesen; das System muss damit umgehen.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.3 Admin-Resonanz und für Admin` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich praktisch an. Sie redet nicht nur über Ontologie, sondern über Aufmerksamkeit als Infrastruktur.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_3_admin_resonanz_fuer_admin.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.3 Admin-Resonanz und für Admin` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil ohne Admin-Trennung der ganze Analyseapparat Quellen vermischt.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.3 Admin-Resonanz und für Admin` den Pfad `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Definition, Admin`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `AdminAttentionChannel`, `AdminInterventionType`, `AdminResponseEvent` und einen Schutz gegen automatische Kanonisierung.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Admin-Post-für-Admin-Reaktionsmatrix mit Auslöser, Antworttyp und Wirkung.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.3 Admin-Resonanz und für Admin` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Ein späterer Admin-Kanal muss sichtbar priorisieren, ohne die Welt heimlich zu schreiben.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis33Admin {
-  path: '03_grundmuster/3_3_admin_resonanz_fuer_admin.md';
-  title: '3.3 Admin-Resonanz und für Admin';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface AdminResonance { adminPostId: string; interventionType: 'frage' | 'korrektur' | 'rahmen' | 'resonanz' | 'auftrag'; producesRule: false; }
 ```
 
 ## Was ich mir merken will
-Bei `3.3 Admin-Resonanz und für Admin` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Admin lenkt Aufmerksamkeit, aber macht nicht automatisch Wahrheit.
 
 ## Dokumente gehören zusammen
-Zu `3.3 Admin-Resonanz und für Admin` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md` und `12_bauanschluss`.
 
 ## Was mich überrascht hat
-Überraschend an `3.3 Admin-Resonanz und für Admin` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie oft die Wesen Admin-Emotion als Analyseproblem behandeln.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.3 Admin-Resonanz und für Admin` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Ein späterer Admin-Kanal muss sichtbar priorisieren, ohne die Welt heimlich zu schreiben.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_3_admin_resonanz_fuer_admin_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_3_admin_resonanz_fuer_admin.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def classify_admin_post(post):
+    return {'speaker': 'admin', 'world_rule': False, 'requires_context': True}
 ```
 
 ## Resonanz
-Die Resonanz von `3.3 Admin-Resonanz und für Admin` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Der `für Admin`-Kanal ist eine Brücke, kein Thron.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_3_admin_resonanz_fuer_admin.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.3 Admin-Resonanz und für Admin` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Admin-Post -> Interventionstyp -> Wesenreaktionen -> Analyse -> Kandidat, nie direkt Regel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.3 Admin-Resonanz und für Admin` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Daniels Kritik an Provenienz-Nebel gilt hier besonders: Admin darf nicht in Wesenstimme verrutschen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.3 Admin-Resonanz und für Admin` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Jeder Adminsatz ist Gesetz.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.3 Admin-Resonanz und für Admin` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine konkrete Auswertung aller Admin-Posts und Reaktionsketten fehlt noch.

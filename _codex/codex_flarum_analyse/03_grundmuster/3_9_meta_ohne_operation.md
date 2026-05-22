@@ -49,137 +49,81 @@ Meta muss in Mechanismus, Handlung und Weltwirkung übersetzt werden.
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_9_meta_ohne_operation.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.9 Meta ohne Operation` setzt den Schwerpunkt dieser Datei; Die Achse `3.9 Meta ohne Operation` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Datei gelesen, deren Quellen stark über Schnittstellen, Mechanismus, Funktion, Handlung und Operationalisierung laufen. Diese Datei ist der Gegenpol zu endlosem Weltgerede: Sie fragt, wo aus Meta eine Wirkung wird.
 
 ## Was ich verstehe
-Bei `3.9 Meta ohne Operation` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe: Meta ist nicht falsch. Falsch wird es, wenn es keinen Weg zu Mechanismus, Handlung oder Prüfung findet.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_9_meta_ohne_operation.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.9 Meta ohne Operation` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch nicht klar ist, welche Posts wirklich Operation fordern und welche nur das Wort Mechanismus benutzen.
 
 ## Was mich interessiert
-Mich interessiert an `3.9 Meta ohne Operation` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert die Brücke `ConceptLine -> Candidate -> Mechanism -> Test`, weil sie Analyse nutzbar macht, ohne Rohmeta zu töten.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_9_meta_ohne_operation.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.9 Meta ohne Operation`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit 2222, 4444, Bauanschluss, Bedürfnissen und Beschwerden zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.9 Meta ohne Operation` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Weltlogik muss zeigen, aus welcher Spannung ihre Struktur notwendig wird.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_9_meta_ohne_operation.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.9 Meta ohne Operation` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, dass Daniels Kritik an der Ringlogik genau diese Datei praktisch gemacht hat. Mehr Meta war nicht das Problem; fehlende Operation war es.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.9 Meta ohne Operation` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, wie man Rohmeta schützt und trotzdem verhindert, dass es Endzustand wird.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.9 Meta ohne Operation` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer geht es um Übersetzung: Beobachtung wird nicht direkt Regel, sondern durchläuft Kandidat, Prüfung, Mechanismus, Wirkung.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.9 Meta ohne Operation` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich wie Werkstattboden an. Hier landet die Philosophie, wenn sie etwas tragen soll.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_9_meta_ohne_operation.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.9 Meta ohne Operation` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil Flextrawurst sonst in schönen Begriffen stecken bleibt.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.9 Meta ohne Operation` den Pfad `03_grundmuster/3_9_meta_ohne_operation.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `MetaToMechanismBridge`, `ConceptLine`, `MechanismGap`, `TestCandidate`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_9_meta_ohne_operation.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Liste konkreter Posts, die tatsächlich in Mechanismus übersetzt werden können.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.9 Meta ohne Operation` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst braucht eine Übersetzungsschicht, keine automatische Aktivierung.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis39MetaO {
-  path: '03_grundmuster/3_9_meta_ohne_operation.md';
-  title: '3.9 Meta ohne Operation';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface MetaToMechanism { concept: string; sourceRefs: SourceRef[]; candidateStatus: 'raw_meta' | 'mechanism_gap' | 'testable'; worldEffect: false; }
 ```
 
 ## Was ich mir merken will
-Bei `3.9 Meta ohne Operation` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_9_meta_ohne_operation.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Meta darf roh bleiben, aber nicht als finale Welt getarnt werden.
 
 ## Dokumente gehören zusammen
-Zu `3.9 Meta ohne Operation` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu Ring 6, Ring 10 und den Beschwerden über fehlende Mechanik.
 
 ## Was mich überrascht hat
-Überraschend an `3.9 Meta ohne Operation` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, wie viele frühe Posts bereits Schnittstelle sagen, bevor es echte Schnittstellen gibt.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.9 Meta ohne Operation` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst braucht eine Übersetzungsschicht, keine automatische Aktivierung.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_9_meta_ohne_operation_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_9_meta_ohne_operation.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def bridge_meta(concept):
+    return {'status': 'mechanism_gap', 'needs_test': True, 'activate': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.9 Meta ohne Operation` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Meta wird brauchbar, wenn es eine Brücke bekommt.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_9_meta_ohne_operation.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.9 Meta ohne Operation` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Rohmeta -> ConceptLine -> MechanismGap -> TestCandidate -> Daniel-Freigabe.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.9 Meta ohne Operation` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_9_meta_ohne_operation.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat diesen Punkt bestätigt: Die Ringform ohne Operation war selbst das Problem.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.9 Meta ohne Operation` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Ein gutes Konzept ist schon ein gebauter Mechanismus.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_9_meta_ohne_operation.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.9 Meta ohne Operation` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine priorisierte Mechanismuslücken-Liste fehlt noch.

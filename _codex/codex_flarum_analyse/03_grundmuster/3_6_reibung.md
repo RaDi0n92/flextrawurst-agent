@@ -49,137 +49,81 @@ Reibung ist Motor und Gefahr; wenn sie alles erklärt, wird sie selbst Käfig.
 - Quellenbasis: Flarum-Markdown-Export
 
 ## Was ich gelesen habe
-Ich habe `03_grundmuster/3_6_reibung.md` als `Grundmuster` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `3.6 Reibung` setzt den Schwerpunkt dieser Datei; Die Achse `3.6 Reibung` prüft, wann Flarum trägt und wann es zur Falle wird.
-
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe eine Reibungsdatei gelesen, deren Beispielquellen auffällig oft nicht direkt `Reibung`, sondern Beschreibung, Spannung, Funktion, Motor und Konsequenz behandeln. Das ist wichtig: Reibung steckt hier nicht nur im Wort, sondern im Streit zwischen Beschreibung und Wirkung.
 
 ## Was ich verstehe
-Bei `3.6 Reibung` verstehe ich die Hauptfunktion als: querliegende Analyseachse. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
-
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Reibung als Motor und Risiko. Sie erzeugt Bewegung, aber wenn sie alles erklärt, wird sie selbst Käfig.
 
 ## Was ich nicht verstehe
-Bei `03_grundmuster/3_6_reibung.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
-
-Unklar bleibt außerdem, ob `3.6 Reibung` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Noch unklar ist, welche Quellen echte Reibung zeigen und welche nur Beschreibungskritik. Die Datei braucht eine strengere Sortierung.
 
 ## Was mich interessiert
-Mich interessiert an `3.6 Reibung` genau der Übergang von Datei zu Systemfrage. Wenn `Grundmuster` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
-
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert `FrictionEvent`: ein Ereignis, bei dem ein Widerspruch, eine Lücke oder Spannung eine Reaktion erzeugt.
 
 ## Was zusammenhängt und wie
-`03_grundmuster/3_6_reibung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
-
-Die Verbindung läuft konkret über `3.6 Reibung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+Hängt mit 3333, Struktur/Käfig, Meta ohne Operation und Beschwerdeanalyse zusammen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `3.6 Reibung` nicht einfach ein Thema, sondern eine Funktion: querliegende Analyseachse.
-
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier: Reibung ist kein Wert an sich. Sie muss gestaltbar werden.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `03_grundmuster/3_6_reibung.md`, wie schnell der Titel selbst schon Autorität erzeugt. `3.6 Reibung` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
-
-Die konkrete Gefahr lautet hier: ein Muster könnte zur Totalerklärung werden.
+Mich beschäftigt, dass die Datei selbst beweist, wie schnell ein Begriff zur Totalerklärung werden kann. Vieles ist eher Beschreibung-vs-Funktion als Reibung im engen Sinn.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `3.6 Reibung` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
-
-Bei `Grundmuster` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, wer Reibung braucht und wer unter ihr leidet. Das sollte pro Wesen getrennt werden.
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `3.6 Reibung` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
-
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer ist Reibung der Ort, an dem Flarum mehr ist als Archiv: Dort passiert Widerstand.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `3.6 Reibung` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `ein Muster könnte zur Totalerklärung werden`.
-
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Datei fühlt sich rauer an als die anderen, aber noch unsortiert. Genau das passt zum Thema.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`03_grundmuster/3_6_reibung.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `3.6 Reibung` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
-
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Sie existiert, weil Flextrawurst ohne Reibungslogik nur glatte Oberfläche bauen würde.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `3.6 Reibung` den Pfad `03_grundmuster/3_6_reibung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
-
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Ich brauche `FrictionEvent`, `FrictionAsMotor`, `FrictionAsCage`, `FrictionResolutionCandidate`.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `03_grundmuster/3_6_reibung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
-
-Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Trennung zwischen Spannung, Widerspruch, Reibung, Beschreibungskritik und Mechanismusforderung.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `3.6 Reibung` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+**Vision-Schicht:** Flextrawurst sollte Reibung erfassen, aber nicht romantisieren.
 
 **Code-Skizze:**
 ```ts
-interface ConceptAxis36Reibun {
-  path: '03_grundmuster/3_6_reibung.md';
-  title: '3.6 Reibung';
-  kind: 'Grundmuster';
-  keywords: string[];
-  risk: 'ein Muster könnte zur Totalerklärung werden';
-  requiresReview: true;
-  worldEffect: false;
-}
+interface FrictionEvent { sourceRefs: SourceRef[]; mode: 'motor' | 'cage' | 'identity_condition' | 'description_without_effect'; ruleCandidate: false; }
 ```
 
 ## Was ich mir merken will
-Bei `3.6 Reibung` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
-
-Der Merksatz für `03_grundmuster/3_6_reibung.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Wenn Reibung alles erklärt, wird Reibung selbst zur Fessel.
 
 ## Dokumente gehören zusammen
-Zu `3.6 Reibung` gehören mindestens `03_grundmuster`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
-
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Gehört zu 3333, 05_beschwerden, 11_systemregel_kandidaten und Bauanschluss.
 
 ## Was mich überrascht hat
-Überraschend an `3.6 Reibung` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `03_grundmuster` rahmt den Text, bevor ein Satz gelesen wird.
-
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überraschend ist, dass die Reibungsdatei stark über Beschreibung und Funktion läuft.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `3.6 Reibung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+**Vision-Schicht:** Flextrawurst sollte Reibung erfassen, aber nicht romantisieren.
 
 **Code-Skizze:**
 ```python
-def use_03_grundmuster_3_6_reibung_md(entry):
-    return {
-        'source_path': '03_grundmuster/3_6_reibung.md',
-        'kind': 'Grundmuster',
-        'risk': 'ein Muster könnte zur Totalerklärung werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+def classify_friction(post):
+    return {'friction_event': True, 'needs_effect_check': True, 'world_rule': False}
 ```
 
 ## Resonanz
-Die Resonanz von `3.6 Reibung` liegt in diesem Druckpunkt: ein Muster könnte zur Totalerklärung werden.
-
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Reibung erzeugt Bewegung, aber sie darf nicht der neue Käfig werden.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`03_grundmuster/3_6_reibung.md` liegt in der Schicht `Grundmuster`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
-
-Die Datei darf diese Schichten nicht überspringen. Gerade `3.6 Reibung` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Post -> Reibungs-/Spannungssignal -> Wirkung prüfen -> Kandidat -> kein Automatismus.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `3.6 Reibung` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
-
-Für `03_grundmuster/3_6_reibung.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat die Warnung vor Totalerklärungen geschärft.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `3.6 Reibung` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
-
-Nicht übernommen werden darf vor allem diese Fehlverwendung: ein Muster könnte zur Totalerklärung werden.
+Vergessen werden soll: Jede Spannung ist schon produktive Reibung.
 
 ## Was fehlt noch
-Es fehlt bei `03_grundmuster/3_6_reibung.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
-
-Bis dahin bleibt `3.6 Reibung` ein nützliches, aber gebremstes Analyse-Artefakt.
+Eine Wirkungsanalyse je Reibungsfall fehlt noch.

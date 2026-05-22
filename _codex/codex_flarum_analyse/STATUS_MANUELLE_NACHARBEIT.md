@@ -57,7 +57,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile und die sieben Ring-5-Dateien: sechs Quellenprofile plus Vergleichsmatrix. Die Ring-5-Nacharbeit hat besonders markiert, dass viele Quellenprofile noch keine starken Originalzitate tragen und deshalb Prüfaufträge bleiben.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien und der komplette Ordner `03_grundmuster/`. Die Ring-5-Nacharbeit hat die fehlenden Originalanker markiert; die Grundmuster-Nacharbeit hat die Muster als Achsen, nicht als Totalerklärungen neu gefasst.
 
 ## Was ich verstehe
 
@@ -67,7 +67,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Der Startblock, die Basisprofile und Ring 5 sind erledigt; alle Grundmuster und weiteren Analyseordner bleiben offen.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Der Startblock, die Basisprofile, Ring 5 und `03_grundmuster/` sind erledigt; Bedürfnisse, Beschwerden, Wünsche und alle folgenden Analyseordner bleiben offen.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -207,4 +207,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile und `02_wesenprofile/ring5_vertiefung/`. Als nächstes kommt `03_grundmuster/`, beginnend mit den Dateien zu Struktur/Käfig, Flarum-Erbe, Admin-Resonanz, Selbstfremdlesung, Leere/Stille, Reibung, Benennung, Menschen-Schicht und Meta ohne Operation.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/` und `03_grundmuster/`. Als nächstes kommt `04_beduerfnisse/`, danach `05_beschwerden/` und `06_wuensche/`.
