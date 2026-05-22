@@ -1307,3 +1307,25 @@ interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; s
 type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
 interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/scan_report.md*
+
+**Vision-Schicht:** Encoding-Schäden müssen vor Kanonisierung sichtbar sein.
+
+**Code-Skizze:**
+```ts
+interface EncodingFinding { file: string; patterns: string[]; examples: string[]; repaired: boolean; uncertain: string[] }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/repair_report.md*
+
+**Vision-Schicht:** Auch ein Nullfund braucht Provenienz, damit spätere Rohquellenprüfung nicht so tut, als sei nie gescannt worden.
+
+**Code-Skizze:**
+```ts
+interface EncodingRepairReport { scanned: number; affected: number; repaired: number; meaningChanged: false; }
+```

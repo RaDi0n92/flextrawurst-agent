@@ -72,6 +72,17 @@ Dieses Manifest verhindert Provenienz-Nebel. Jede Datei im Analyseordner wird al
 
 Wenn eine spätere Datei aus Kandidaten eine Regel macht, muss sie eine eigene Provenienzzeile tragen: Rohzitat, Autor, Thread, Post-ID, Zeitpunkt, Ableitungsstatus, Interpretation getrennt von Quelle, Confidence und Daniel-Freigabe.
 
+## Encoding-/Mojibake-Status
+
+- Scan durchgeführt: ja
+- Reparatur durchgeführt: nein
+- geprüfte Dateien: 1678 relevante Markdown-/Text-/JSON-Dateien aus Flarum-Export und Analyseordner
+- betroffene Dateien: keine Treffer für `Ã`, `Â`, `â€`, `â€“`, `â€”`, `â€¦`, `�`
+- Berichtspfad: `00_technik/encoding_mojibake/scan_report.md`
+- Reparaturbericht: `00_technik/encoding_mojibake/repair_report.md`
+- Reparatur war rein technisch: ja, aber es wurde nichts repariert, weil kein harter Encoding-Treffer gefunden wurde
+- offene Unsicherheiten: Tippfehler, Markdown-Reste und Exportartefakte ohne harte Mojibake-Muster bleiben weiter Rohquellenprüfungsfälle und dürfen nicht als Encoding-Fix behandelt werden
+
 ## Provenienztyp
 
 - Typ: `destillat`

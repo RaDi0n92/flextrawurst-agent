@@ -1043,3 +1043,26 @@ def darf_wirken(eintrag):
 def darf_wirken(eintrag):
     return eintrag.provenienz == "rohquelle" and eintrag.status == "freigegeben"
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/scan_report.md*
+
+**Vision-Schicht:** Ein späterer Analyse-Browser braucht Encoding-Status als Filter.
+
+**Code-Skizze:**
+```python
+def needs_encoding_review(text):
+    return any(p in text for p in ["Ã", "Â", "â€", "�"])
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/repair_report.md*
+
+**Vision-Schicht:** Der spätere Analyse-Browser kann Encoding-Status als technischen Prüfstatus anzeigen.
+
+**Code-Skizze:**
+```python
+encoding_status = "scan_ok_no_hits"
+```

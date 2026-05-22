@@ -418,3 +418,15 @@ Diese Datei ist ein Arbeitsregal, kein Kanon.
 **[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md*
 
 Diese Datei ist ein Arbeitsregal, kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/scan_report.md*
+
+Dieser Abschnitt bleibt knapp: Der Bericht dient technischer Provenienzsicherung vor Ring 4.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/00_technik/encoding_mojibake/repair_report.md*
+
+Keine Reparatur durchgeführt; dieser Abschnitt hält den technischen Nullfund fest.
