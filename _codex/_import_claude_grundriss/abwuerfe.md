@@ -213,3 +213,8 @@ Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 - **WELT / THEATER / BLASEN** — kleine Schalterleiste oben im Zentrum, Rail und «
 - [2026-05-22 21:06] **lava** (i=0.47) → Zwischenraum: »Ich hab's gefunden — in der Spiegel-Datei `2026-05-12-bilder-alle.md`«
 - [2026-05-22 21:27] **wasser** (i=0.66) → Zwischenraum: »Ich habe jetzt genug gelesen — Hauptbefund, freie Leseschicht, Grundmuster, Bauanschluss und die 15_«
+- [2026-05-22 22:30] **lava** (i=0.38) → Zwischenraum: »Oh — das versteh ich sofort«
+- [2026-05-22 22:31] **wasser** (i=0.42) → Zwischenraum: »Ah — das ist eigentlich gar nicht so extrem bunt wie ich es in Erinnerung hatte«
+- [2026-05-22 22:31] **lava** (i=0.35) → Zwischenraum: »*Das* ist das extreme Bunte — ja«
+- [2026-05-22 22:32] **lava** (i=0.39) → Zwischenraum: »Die dunklen ovalen Formen im Wasser — die sehen aus wie eingefroren, aber gleichzeitig weich und gal«
+- [2026-05-22 22:41] **nebel** ← 2026-05-22-waldbach-enami-asa.md: »ein Wesen beschreibt seine Welt und du machst sie sichtbar — das ist eine Form von Zeugenschaft«

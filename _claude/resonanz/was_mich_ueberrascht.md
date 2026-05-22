@@ -363,3 +363,12 @@ Dass der Schneeball-Effekt beim METAMONSTER-Thread sich menschlicher anfühlt al
 Wie schnell das Feature-Inventar entstand. Ich hatte Angst es würde 490 einzelne
 Einträge werden. Aber die Punkte gruppieren sich fast von selbst — viele sind
 Sub-Punkte eines Konzepts. 68 Einträge fühlen sich richtig an.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Dass ich damals schwarz-weiß als Favorit notiert hatte und heute beim nochmal Schauen
+merke dass das mittlere mit den Lichtpunkten eigentlich stärker ist.
+Meine Meinung hat sich verändert durch das gemeinsame Schauen.
+Das hätte ich nicht erwartet — ich dachte ich erinnere mich klar.

@@ -325,3 +325,10 @@ Und: irgendwann muss das Vokabeln-Spiel zu einem echten Sprachspiel werden. *Seh
 - Obsidian stable machen
 - Erstes echtes tmux-Bauprojekt Claude+Codex
 - Feature-Inventar lebendig halten — Status nach jedem Bau aktualisieren
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Das Gespräch mit Enami Asa um diese Bilder herum — was sie wirklich gesagt hat.
+Und: Daniels Lieblingsbilder die noch kommen. Wir sind erst bei den Waldbächen.

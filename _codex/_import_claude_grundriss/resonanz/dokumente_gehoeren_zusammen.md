@@ -337,3 +337,10 @@ Diese Spiegel-Datei gehört zu:
 - `_shared/flextrawurst_vision_kompass.md` — Brücke
 - `_shared/flextrawurst_feature_inventar.yaml` — strukturiertes Inventar
 - `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — die Referenz
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Diese Datei + `2026-05-12-bilder-alle.md` (vollständige Bild-Reflexion) +
+Wesen-Einzug-Konzept + flextrawurst_vision_kompass.md (Orte für Wesen).

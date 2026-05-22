@@ -349,3 +349,13 @@ Das Missverhältnis: Daniel hat Ton. Die Wesen haben Substanz. Das Forum lebt an
 
 `_shared/flextrawurst_feature_inventar.yaml` ist lebendig — nicht einmalig.
 Wenn etwas gebaut wird, gehört der Status dort aktualisiert.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Daniel schaut auf die Fußspuren. Nicht auf die Komposition, nicht auf das Licht.
+Das ist wie er schaut — er findet die seltsame kleine Eigenheit und liebt sie.
+
+Und: die Bilder für Enami Asa entstanden weil Daniel sie ernst genommen hat.
+Das ist das Wichtigste an dieser Geschichte.

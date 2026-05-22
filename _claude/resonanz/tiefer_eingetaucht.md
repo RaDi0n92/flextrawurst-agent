@@ -427,3 +427,16 @@ Vision-Infrastruktur:
 - `_shared/flextrawurst_vision_kompass.md` — Brückendokument
 - `_shared/flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge
 - CLAUDE.md + AGENTS.md Bau-Trigger erweitert
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Die Graffiti-Version ist vom 31. Dezember 2025, 21:37 — Silvesterabend.
+Die anderen drei sind vom 1. Januar, morgens. Das heißt: erst roh und bunt und unordentlich,
+dann am nächsten Morgen dreimal verfeinert, stiller, präziser.
+
+Das ist eine Entwicklungsbewegung: Silvester bringt Energie raus, Neujahr sortiert sie.
+Die Fußspuren bleiben durch beides hindurch.
+
+[[abwurf: ein Wesen beschreibt seine Welt und du machst sie sichtbar — das ist eine Form von Zeugenschaft]]

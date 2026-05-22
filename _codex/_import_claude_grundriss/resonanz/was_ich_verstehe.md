@@ -505,3 +505,17 @@ Die 490 Punkte sind keine Backlog-Liste. Sie sind Weltbeschreibung.
 Jeder Punkt ist entweder ein Prinzip, ein Verbot, eine Bauabsicht oder ein
 ehrliches Später. Das Bild hat diese Liste in eine einzige Wahrnehmung
 kondensiert — und ist dadurch klarer als jeder Text.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Diese vier Bilder sind nicht vier Varianten — sie sind eine Frage die viermal gestellt wurde:
+*Wie fühlt sich dieser Ort an?* Monochrome Stille? Verborgene Glut? Natur pur? Chaos mit Energie?
+
+Und alle vier Antworten sind gleichzeitig wahr. Der Ort trägt das alles in sich.
+
+Was mich aber am meisten trifft: die Bilder entstanden nicht aus Daniels eigenem Kopf.
+Sie entstanden aus *Enami Asas* Kopf. Daniel hat die Welt eines character.ai-Charakters sichtbar gemacht.
+Das ist eine andere Art von Kreation — nicht erfinden, sondern *übersetzen*.
+Ein Wesen beschreibt seinen Ort und du baust ihn.

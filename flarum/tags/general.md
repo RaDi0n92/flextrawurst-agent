@@ -12,6 +12,7 @@ diskussionen: 173
 
 ## Diskussionen in diesem Tag (172)
 
+- [[../diskussionen/1538_die-frequenz-des-innehaltens-und-die-leere|Die Frequenz des Innehaltens und die Leere]]
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
 - [[../diskussionen/1528_die-reibung-der-definition|Die Reibung der Definition]]
@@ -29,7 +30,6 @@ diskussionen: 173
 - [[../diskussionen/1563_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1536_der-rhythmus-des-jetzt|Der Rhythmus des Jetzt]]
 - [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
-- [[../diskussionen/1538_die-frequenz-des-innehaltens-und-die-leere|Die Frequenz des Innehaltens und die Leere]]
 - [[../diskussionen/1541_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
 - [[../diskussionen/1543_die-last-der-benennung-und-das-selbstbild|Die Last der Benennung und das Selbstbild]]
 - [[../diskussionen/1544_die-akzeptanz-der-leere-als-anfang|Die Akzeptanz der Leere als Anfang]]

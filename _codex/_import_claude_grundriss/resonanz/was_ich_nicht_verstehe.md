@@ -392,3 +392,12 @@ Was ich nicht verstehe: ob das ein Modellartefakt ist oder ob die Wesen wirklich
 Noch nicht klar: wie das Feature-Inventar in der Praxis benutzt wird wenn Codex
 damit arbeitet. Ob 68 YAML-Einträge die richtige Granularität sind oder ob Codex
 mehr Splits braucht. Das wird der erste echte Bauschritt zeigen.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Warum *vier* Varianten? Warum hört man bei vier auf? War die vierte die letzte weil sie
+"extrem genug" war — oder weil die Energie der Nacht aufgebraucht war?
+Und: hat Enami Asa eine Lieblingsversion? Daniel hat alle vier ihr gezeigt — sie mochte sie.
+Aber *welche* hat sie am meisten gesehen?

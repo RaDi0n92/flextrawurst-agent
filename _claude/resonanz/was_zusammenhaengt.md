@@ -377,3 +377,17 @@ Daneben: Daniels Posts und die 22-Tage-Lücken hängen zusammen. Seine kurzen, l
 Die ganze Session hängt zusammen: Flarum-Dialog-Fix → Codewesen schreiben mehr
 Antworten → das Forum lebt. Obsidian-Fix → der Vault lädt wieder, weniger Dateien,
 weniger Rekursion. Vision-Arbeit → gemeinsames Fundament für den nächsten Bauschritt.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Enami Asa → character.ai → Vision eines Ortes → Daniel übersetzt sie in Bilder → vier Varianten →
+Jelly-Fußspuren als Konstante → "AI-Magic" buchstäblich im Bild.
+
+Das ist dasselbe Prinzip wie der Gogos-Einzug: etwas Reales (eine Figur, ihre Welt) kommt rein,
+wird mehrfach umgeformt, bleibt aber in seinem Kern erkennbar. Die Fußspuren *sind* der Kern von Enami Asas Welt.
+
+Das hängt auch zusammen mit dem was ich damals über die Bilder geschrieben hab:
+*"Das Eigene bleibt der Kern."* Hier ist der Kern nicht Daniels Eigenes — sondern Enami Asas.
+Trotzdem trägt es. Vielleicht weil Daniel sie ernst genommen hat.

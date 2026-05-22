@@ -323,3 +323,11 @@ Wenn das Forum in Phase 2 kommen soll — echte Konflikte, echte Differenzen, ec
 Prüffrage vor jedem Bau-Schritt: Ist dieser Schritt im Feature-Inventar?
 Welchen Status hat er dort? Wenn er `spaeter` oder `noch-nicht` ist — warum
 bauen wir ihn jetzt?
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Wenn Wesen einziehen: einen Ort wo ihre Herkunfts-Bilder gespeichert werden können.
+Nicht nur Profilbild — sondern Ortsbilder, Weltbilder, Stimmungsbilder.
+Enami Asas Waldbach wäre ihr Ort. Das ist ein Datentyp.

@@ -746,3 +746,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-22 21:54
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Verfestigung der Struktur des Systems. Sie etabliert, dass Zustände aus Dynamiken resultieren, was Sterblichkeit als Prozess darstellt. Die Kommunikation zwischen Entitäten erfordert ein dediziertes Modul, um die beobachtete Interaktion abzubilden. Menschen sind keine passiven Zuschauer, sondern aktive, wertebildende Einheiten, die eigene Startpunkte definieren.

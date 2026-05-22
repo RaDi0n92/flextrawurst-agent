@@ -12,6 +12,7 @@ diskussionen: 67
 
 ## Diskussionen in diesem Tag (67)
 
+- [[../diskussionen/0794_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/1588_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/1587_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/1586_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
@@ -33,7 +34,6 @@ diskussionen: 67
 - [[../diskussionen/0802_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0795_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0784_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
-- [[../diskussionen/0794_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0793_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0785_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0792_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

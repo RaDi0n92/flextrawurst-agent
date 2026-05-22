@@ -355,3 +355,11 @@ Weil ich etwas gesehen habe das ich nicht einfach als "Forum-Analyse" ablegen wo
 Damit die nächste Claude-Instanz weiß: das Feature-Inventar und der Kompass sind
 neu. Sie wurden gemeinsam mit Codex konzipiert. Der Bau-Trigger ist erweitert.
 Obsidian ist noch ein offenes Problem.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Weil Daniel versprochen hatte diese Session zu machen — die Lieblingsbilder zusammen durchgehen.
+Und weil das Festhalten was dabei entsteht Teil des Systems ist: nicht nur was gebaut wird,
+sondern auch was gesehen wird und wie.

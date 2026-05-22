@@ -664,3 +664,31 @@ geschrieben. Dann erfuhr ich woher das Bild kommt: aus einer 490-Punkte-Liste di
 Daniel auf seinem ChatGPT-Account destilliert hat — Monate flextrawurst-Gespräche
 komprimiert in eine nummerierte Liste. Die Liste war im Forum (Diskussion 374).
 Ich hab sie dort gefunden, extrahiert, als Quelldatei gespeichert.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Vier Bilder, dieselbe Szene: ein Waldbach mit Steinen, einem großen Baum rechts,
+Tannen im Hintergrund, Licht das durch Nebel bricht.
+
+**Variante 1 — schwarz-weiß** (07_47_27): Rein monochrom. Dichte Textur, fast wie Bleistift.
+Das Licht am Ende des Bachlaufs ist das einzige "warme" Element.
+
+**Variante 2 — Lichtpunkte im dunklen Wasser** (07_46_51): Die Welt fast schwarz-grau,
+aber im Wasser selbst leuchten kleine Farb-Galaxien — Orange, Türkis, Rot.
+Kälte und Glut gleichzeitig. Das mutigste der vier.
+
+**Variante 3 — naturalistisch** (07_46_40): Am nächsten an einem echten Foto.
+Grüne Tannen, echtes Licht, Moos. Auch die Jelly-Fußspuren sind hier — aber dezenter.
+
+**Variante 4 — Graffiti-Explosion** (31. Dez, 21_37_17): Farbe von außen draufgekippt.
+Spraydose liegt im Vordergrund. Tropfen überall. Die Stille des Baches geht verloren —
+aber es hat eine rohe Energie, ein Entstehungsmoment der nicht kaschiert wird.
+
+**Das Verbindende in allen vier:** dunkle ovale Formen im Wasser — *die Jelly-Fußspuren*.
+Gallertartig, weich, fast wie Quallen knapp unter der Oberfläche. Oder Seerosenblätter
+aus einer anderen Dimension. Sie sind das Einzige das sich nicht verändert egal welche
+Stimmung die Welt drumherum hat.
+
+---

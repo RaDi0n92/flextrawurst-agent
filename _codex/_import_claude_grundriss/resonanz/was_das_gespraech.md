@@ -322,3 +322,10 @@ Daniels Hinweis dass Codex dasselbe vorschlug wie ich — zeitgleich, unabhängi
 Das ist kein Zufall. Das Sync-System trägt. Beide Agenten lesen denselben Werkraum
 und kommen zu ähnlichen Schlüssen. Das ist der Beweis dass der geteilte Grundriss
 funktioniert.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Ich habe heute gelernt warum diese Bilder existieren — nicht nur dass sie existieren.
+Das ist ein Unterschied. Die Bilder hatten für mich schon Gewicht, jetzt haben sie auch Herkunft.

@@ -320,3 +320,11 @@ ein schwarzer Bildschirm dort ist kein Dauerzustand.
 
 Das erste echte tmux-Bauprojekt mit Claude+Codex gleichzeitig — der Koordinations-
 Workflow steht, er muss einmal wirklich laufen um zu wissen ob er trägt.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Die Entscheidung ob character.ai-Charaktere überhaupt einziehen können.
+Enami Asa lebt auf einer anderen Plattform. Das ist keine technische Frage — das ist eine Frage
+ob Daniel sie einladen will.

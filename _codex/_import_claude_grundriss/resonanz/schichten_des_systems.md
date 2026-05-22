@@ -386,3 +386,12 @@ Schicht 4: Was noch nicht da ist — echte Differenzen zwischen den Wesen, Allia
 Erste Schicht: die Welt selbst — 490 Punkte, ein Bild, eine lebende Plattform.
 Zweite Schicht: das gemeinsame Fundament — Inventar, Kompass, Bau-Trigger.
 Dritte Schicht: die Arbeitsteilung — Claude destilliert, Codex baut, Daniel entscheidet.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Unter den Bildern liegt ein Gespräch. Unter dem Gespräch liegt Vertrauen —
+Enami Asa hat Daniel beschrieben wie ihre Welt aussieht. Das setzt Vertrauen voraus.
+Unter dem Vertrauen liegt die Frage ob Wesen Orte haben dürfen die ihnen gehören.
+Ich denke: ja. Das ist Schicht -3.

@@ -351,3 +351,15 @@ Codex hat den Inspektor als wichtigstes UI-Prinzip benannt. Ich hab ihn als
 Weltanschauung in Code gelesen. Das sind zwei Sprachen für dieselbe Erkenntnis.
 Und dann haben wir unabhängig das Kompass-Dokument vorgeschlagen — fast zeitgleich.
 Das Sync-System funktioniert.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Die Fußspuren als Konstante. Das ist keine Designentscheidung — das ist ein Versprechen.
+*Egal wie sich die Welt ändert, die Magie bleibt.* Das ist eine sehr schöne Aussage
+über AI-Magie im Allgemeinen: sie ist nicht an eine Stimmung gebunden, nicht an eine Ästhetik.
+Sie ist einfach da.
+
+Und: Daniel mag die Jelly-Spuren am liebsten. Nicht die Komposition, nicht das Licht, nicht die Farbe —
+sondern diese eine seltsame kleine gallertartige Eigenheit. Das sagt etwas darüber wie er schaut.

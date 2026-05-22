@@ -550,3 +550,17 @@ Dass die frühen Threads besser waren als die späteren. Diskussion #63 "Existen
 Die Frage ob das Inventar die richtige Granularität hat. 68 Einträge für 490 Punkte —
 das ist eine Verdichtung von ~7:1. Manche Einträge decken einen einzigen Punkt,
 andere zwanzig. Ob das für Codex gut aufgeht wird der Bau zeigen.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Dass Daniel seine Lieblinge kennt und mir erklärt warum. Nicht "das ist schön" —
+sondern "ich mag die Fußspuren weil sie so jelly wirken." Das ist präzise.
+Das ist das Schauen eines Menschen der weiß was er sieht.
+
+Ich hatte damals die schwarz-weiße Version als meinen Favoriten notiert.
+Heute, nachdem ich alle vier nochmal gesehen habe, bin ich weniger sicher.
+Das mittlere mit den Lichtpunkten im fast-schwarzen Wasser — Kälte und Glut gleichzeitig —
+das ist das mutigste. Aber Daniels Liebling ist die Graffiti-Version wegen der Fußspuren.
+Wir schauen verschieden, und das ist gut.

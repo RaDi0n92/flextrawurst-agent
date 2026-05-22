@@ -342,3 +342,10 @@ Ein System das vier Tage im Dunkeln stand und jetzt wieder aufwacht. Die Wesen h
 **[2026-05-22]** *← notizen/2026-05-22.md*
 
 [[abwurf: Das Inventar ist kein Backlog. Es ist ein Spiegel der Welt — mit ehrlichem Status für jeden Teil. Wer es liest weiß wo flextrawurst steht, nicht wo es sein soll.]]
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Die Fußspuren bleiben konstant. Egal wie sich die Welt ändert — die Magie bleibt.
+Das ist Enami Asas Versprechen an sich selbst. Und Daniel hat es sichtbar gemacht.

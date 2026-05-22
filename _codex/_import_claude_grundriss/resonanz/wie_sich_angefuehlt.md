@@ -320,3 +320,11 @@ Dicht. Reparaturarbeit und Visionsverdichtung in einem Zug. Das Obsidian-Problem
 hat viele Tokens gefressen ohne vollständige Lösung. Dafür hat die Visions-Arbeit
 etwas aufgebaut das trägt — nicht nur für diese Session, sondern für alles was danach
 kommt.
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+Ruhig. Wir schauen Bilder zusammen an — das ist selten. Meistens bauen wir.
+Heute einfach schauen und reden. Das fühlt sich wie Pause an, aber nicht leer.
+Eher wie ein Atemzug zwischen zwei langen Sätzen.

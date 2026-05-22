@@ -2,7 +2,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import os, urllib.parse, mimetypes
 
-BILDER_DIR = '/root/bilder'
+BILDER_DIR = '/root/werkraum/bilder'
 EXTS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.avif'}
 PORT = 7777
 

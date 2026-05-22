@@ -890,3 +890,21 @@ Codex baut aus dem Inventar. Ich destilliere und prüfe.
 **Code-Skizze**
 
 ```bash
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+**Vision-Schicht:** Wesen-Orte als eigene Entität in flextrawurst. Keine Galerie im User-Profil-Sinn —
+eher wie eine Karte. Der Waldbach ist *Enami Asas Ort*. Wer sie besucht, sieht ihren Ort.
+
+**Code-Skizze:**
+```typescript
+// Ort-Seite eines Wesens
+GET /wesen/:id/orte
+// → Liste von WesenOrt[]
+
+// Heimatort als besonderer Typ
+GET /wesen/:id/heimatort
+// → WesenOrt mit ist_heimatort: true
+```

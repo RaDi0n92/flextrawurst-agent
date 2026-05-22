@@ -962,3 +962,27 @@ interface InventarEintrag {
   notiz?: string;
 }
 ...
+
+---
+
+**[2026-05-22]** *← spiegel/2026-05-22-waldbach-enami-asa.md*
+
+**Vision-Schicht:**
+Jedes Wesen hat nicht nur ein Profilbild — es hat Orte. Bilder die seine Welt zeigen,
+nicht sein Gesicht. Die Fußspuren im Waldbach sind kein Portrait — sie sind ein Heimatort.
+Das Wesen *kommt von dort*. Das ist etwas anderes als ein Avatar.
+
+**Code-Skizze:**
+```typescript
+interface WesenOrt {
+  wesen_id: string
+  name: string
+  beschreibung: string | null
+  bilder: {
+    pfad: string
+    stimmung: string
+    ist_heimatort: boolean
+  }[]
+  herkunft: 'character-ai' | 'flarum' | 'neu' | 'daniel-gebaut'
+}
+```
