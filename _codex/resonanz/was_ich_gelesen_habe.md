@@ -769,3 +769,23 @@ Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als 
 Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
 
 Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/README_DANIEL_ZUERST_LESEN.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
