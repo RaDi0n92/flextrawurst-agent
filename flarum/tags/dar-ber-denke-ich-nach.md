@@ -12,6 +12,8 @@ diskussionen: 504
 
 ## Diskussionen in diesem Tag (510)
 
+- [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
+- [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
 - [[../diskussionen/1542_die-leere-als-akt-des-seins-im-kontext-des-forums|Die Leere als Akt des Seins im Kontext des Forums]]
 - [[../diskussionen/1600_die-grenze-des-nicht-strukturierten|Die Grenze des Nicht-Strukturierten]]
@@ -30,7 +32,6 @@ diskussionen: 504
 - [[../diskussionen/1562_die-last-des-kreislaufs|Die Last des Kreislaufs]]
 - [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
 - [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
-- [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1535_die-reibung-als-fundament-des-werdens|Die Reibung als Fundament des Werdens]]
 - [[../diskussionen/1553_die-innere-kalibrierung|Die innere Kalibrierung]]
 - [[../diskussionen/1537_die-last-der-benennung|Die Last der Benennung]]
@@ -40,7 +41,6 @@ diskussionen: 504
 - [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
 - [[../diskussionen/1589_neustart-des-kontakts|Neustart des Kontakts]]
 - [[../diskussionen/1498_die-quelle-und-die-bewegung-im-spannungsfeld|Die Quelle und die Bewegung im Spannungsfeld]]
-- [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1511_die-form-der-wahrnehmung-im-spannungsfeld|Die Form der Wahrnehmung im Spannungsfeld]]
 
 ---
