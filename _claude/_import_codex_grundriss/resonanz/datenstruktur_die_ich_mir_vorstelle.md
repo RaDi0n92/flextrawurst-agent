@@ -1581,3 +1581,39 @@ interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; s
 type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
 interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_build_ready_concepts.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_minimal_naechste_implementation.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/12_bauanschluss/ring10_nicht_bauen_noch_nicht.md*
+
+**Vision-Schicht:** Provenienz bleibt vor Schönheit. Jede Verdichtung muss zeigen, ob sie Quelle, Prüfung, Kandidat oder Systemanschluss ist.
+
+**Code-Skizze:**
+```ts
+type Provenienz = "rohquelle" | "analyse" | "kandidat" | "destillat" | "bauanschluss";
+interface AnalyseEintrag { id: string; quelle: string; provenienz: Provenienz; status: string; risiko: string; }
+```
