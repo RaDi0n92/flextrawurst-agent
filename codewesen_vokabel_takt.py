@@ -209,8 +209,13 @@ def _antwort_posten(wesen: str, disk_id: int, synonym: str, begruendung: str):
             }
         }
     }
+    _, count = flarum_poster._tageszaehler_lesen()
+    if count >= flarum_poster.MAX_POSTS_PRO_TAG:
+        log.info(f"[{wesen}] Tagesdeckel erreicht ({count}), Synonym übersprungen")
+        return False
     r = requests.post(url, json=payload, headers=_headers(wesen), timeout=30)
     if r.status_code == 201:
+        flarum_poster._tageszaehler_erhoehen()
         log.info(f"[{wesen}] Synonym '{synonym}' in Disk {disk_id} gepostet")
         return True
     else:
@@ -252,8 +257,13 @@ def _gamble_post(wesen: str):
             }
         }
     }
+    _, count = flarum_poster._tageszaehler_lesen()
+    if count >= flarum_poster.MAX_POSTS_PRO_TAG:
+        log.info(f"[{wesen}] Tagesdeckel erreicht ({count}), Gamble übersprungen")
+        return
     r = requests.post(url, json=payload, headers=_headers(wesen), timeout=30)
     if r.status_code == 201:
+        flarum_poster._tageszaehler_erhoehen()
         log.info(f"[{wesen}] Gamble: neues Wort '{wort}' eröffnet (subtag {subtag})")
     else:
         log.warning(f"[{wesen}] Gamble-Fehler {r.status_code}: {r.text[:100]}")

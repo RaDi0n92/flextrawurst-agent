@@ -25,7 +25,7 @@ CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
 LOCK_FILE         = Path("/tmp/flarum_write.lock")
 DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
 TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
-MAX_POSTS_PRO_TAG = 35
+MAX_POSTS_PRO_TAG = 48
 
 
 def _tageszaehler_lesen() -> tuple[str, int]:
