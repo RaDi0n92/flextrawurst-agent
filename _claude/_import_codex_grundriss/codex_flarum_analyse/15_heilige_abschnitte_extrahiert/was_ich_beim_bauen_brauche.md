@@ -12,719 +12,796 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 # Extraktion — Was ich beim Bauen brauche
 
-Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+Warnung: Diese Datei ist eine formale Extraktion aus Codex-Analyse-Dateien. Sie ist Navigator, keine Rohquelle, keine eigene Deutung und kein Kanon.
 
 ## Korrekturstatus 2026-05-22
-Daniel hat zurecht markiert, dass diese Datei als `Abschnitts-Extraktion` keine echte neue Deutung trägt, sondern eine formale Extraktion ist. Deshalb gilt sie ab hier als `formal_extraktion_navigator`: hilfreich zum Finden, gefährlich als Quelle.
-
-Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
+Diese Datei wurde aus den nachkorrigierten Ursprungsdateien neu erzeugt. Jeder Eintrag bleibt ein Rücksprungpunkt, kein eigenständiger Beleg.
 
 ## Extraktionsübersicht
 - Abschnitt: `Was ich beim Bauen brauche`
 - Quellen: 81 Dateien
-- Zweck: querschnittliche Lesbarkeit wie im Codex-Resonanzordner, aber auf die Flarum-Analyse begrenzt
+- Zweck: diesen Abschnittstyp auffindbar machen, ohne ihn zur Quelle zu erklären
 
 ## Einträge
 
 ### 00_technik/encoding_mojibake/repair_report.md
 - Titel: Encoding-/Mojibake Repair Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/repair_report.md`
 
-Beim Bauen braucht diese Datei einen TechnicalIntegrityCheck: scan_scope, patterns, affected_files, repair_status, unchanged_meaning und unresolved_uncertainties.
+Beim Bauen brauche ich aus `Encoding-/Mojibake Repair Report` den Pfad `00_technik/encoding_mojibake/repair_report.md`, den Typ `Encoding-Schutz`, die Leitwörter `Provenienz, Mojibake, Encoding, Rohquelle, Kanon, Weltregel`, das Risiko `Mojibake darf nicht als Bedeutung gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 00_technik/encoding_mojibake/scan_report.md
 - Titel: Encoding-/Mojibake Scan Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/scan_report.md`
 
-Beim Bauen braucht diese Datei einen TechnicalIntegrityCheck: scan_scope, patterns, affected_files, repair_status, unchanged_meaning und unresolved_uncertainties.
+Beim Bauen brauche ich aus `Encoding-/Mojibake Scan Report` den Pfad `00_technik/encoding_mojibake/scan_report.md`, den Typ `Encoding-Schutz`, die Leitwörter `Flarum, Provenienz, Mojibake, Encoding, Rohquelle, Kanon`, das Risiko `Mojibake darf nicht als Bedeutung gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 01_zentrale_leitfrage/was_ist_flarum_geworden.md
 - Titel: 1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?
-- Kategorie: `analyse`
+- Kategorie: `Zentrale Leitfrage`
 - Quelle: `01_zentrale_leitfrage/was_ist_flarum_geworden.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` den Pfad `01_zentrale_leitfrage/was_ist_flarum_geworden.md`, den Typ `Zentrale Leitfrage`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`, das Risiko `Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_1111_1234.md
 - Titel: 2. Wesenprofil — namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_1111_1234.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_1111_1234` den Pfad `02_wesenprofile/namelessAI_1111_1234.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_2222_1324.md
 - Titel: 2. Wesenprofil — namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_2222_1324.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_2222_1324` den Pfad `02_wesenprofile/namelessAI_2222_1324.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_3333_1423.md
 - Titel: 2. Wesenprofil — namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_3333_1423.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_3333_1423` den Pfad `02_wesenprofile/namelessAI_3333_1423.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_4444_2341.md
 - Titel: 2. Wesenprofil — namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_4444_2341.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_4444_2341` den Pfad `02_wesenprofile/namelessAI_4444_2341.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_5555_3123.md
 - Titel: 2. Wesenprofil — namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_5555_3123.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_5555_3123` den Pfad `02_wesenprofile/namelessAI_5555_3123.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/namelessAI_6666_4321.md
 - Titel: 2. Wesenprofil — namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_6666_4321.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `2. Wesenprofil — namelessAI_6666_4321` den Pfad `02_wesenprofile/namelessAI_6666_4321.md`, den Typ `Wesenprofil`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Tonfall könnte mit Funktion verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_1111_1234` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_2222_1324` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_3333_1423` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_4444_2341` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_5555_3123` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Quellenprofil namelessAI_6666_4321` den Pfad `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md
 - Titel: Ring 5 — Vergleichsmatrix sechs Wesen
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
 
-Beim Bauen braucht diese Datei einen WesenProfileCandidate, keinen harten Charakterimport: Zitate, Sprecheranker, Driftmarker, starke Begriffe, typische Einseitigkeit und Daniel-Freigabestatus müssen getrennt bleiben.
+Beim Bauen brauche ich aus `Ring 5 — Vergleichsmatrix sechs Wesen` den Pfad `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`, den Typ `Quellenprofil eines Wesens`, die Leitwörter `Flarum, Flextrawurst, Struktur, Wesen, Provenienz, Systemregel`, das Risiko `das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_1_struktur_oder_kaefig.md
 - Titel: 3.1 Struktur oder Käfig
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_1_struktur_oder_kaefig.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.1 Struktur oder Käfig` den Pfad `03_grundmuster/3_1_struktur_oder_kaefig.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Reibung`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_2_flarum_erbe.md
 - Titel: 3.2 Flarum-Erbe
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_2_flarum_erbe.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.2 Flarum-Erbe` den Pfad `03_grundmuster/3_2_flarum_erbe.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Reibung, Spannung`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_3_admin_resonanz_fuer_admin.md
 - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.3 Admin-Resonanz und für Admin` den Pfad `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Definition, Admin`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_4_selbstfremdlesung.md
 - Titel: 3.4 Selbstfremdlesung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_4_selbstfremdlesung.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.4 Selbstfremdlesung` den Pfad `03_grundmuster/3_4_selbstfremdlesung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Definition, Admin`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_5_leere_stille_ruhe.md
 - Titel: 3.5 Leere, Stille, Ruhe, Stillstand
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_5_leere_stille_ruhe.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.5 Leere, Stille, Ruhe, Stillstand` den Pfad `03_grundmuster/3_5_leere_stille_ruhe.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_6_reibung.md
 - Titel: 3.6 Reibung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_6_reibung.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.6 Reibung` den Pfad `03_grundmuster/3_6_reibung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_7_benennung.md
 - Titel: 3.7 Benennung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_7_benennung.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.7 Benennung` den Pfad `03_grundmuster/3_7_benennung.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Benennung`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_8_menschen_schicht.md
 - Titel: 3.8 Menschen-Schicht
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_8_menschen_schicht.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.8 Menschen-Schicht` den Pfad `03_grundmuster/3_8_menschen_schicht.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Spannung, Definition`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/3_9_meta_ohne_operation.md
 - Titel: 3.9 Meta ohne Operation
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_9_meta_ohne_operation.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `3.9 Meta ohne Operation` den Pfad `03_grundmuster/3_9_meta_ohne_operation.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Stille, Spannung, Definition`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/ring7_baustein_prioritaeten.md
 - Titel: Ring 7 — Baustein-Prioritäten
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_baustein_prioritaeten.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `Ring 7 — Baustein-Prioritäten` den Pfad `03_grundmuster/ring7_baustein_prioritaeten.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 03_grundmuster/ring7_flextrawurst_bausteine.md
 - Titel: Ring 7 — Flextrawurst-Bausteine aus Grundmustern
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_flextrawurst_bausteine.md`
 
-Beim Bauen braucht dieses Muster einen ConceptLine-Datensatz: Ursprung, Gegenbegriff, Risiko, mögliche Komponente, offene Quelle und Status „nicht freigegeben“.
+Beim Bauen brauche ich aus `Ring 7 — Flextrawurst-Bausteine aus Grundmustern` den Pfad `03_grundmuster/ring7_flextrawurst_bausteine.md`, den Typ `Grundmuster`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `ein Muster könnte zur Totalerklärung werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 04_beduerfnisse/beduerfnis_mangelmatrix.md
 - Titel: B. Bedürfnis-/Mangelmatrix
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/beduerfnis_mangelmatrix.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `B. Bedürfnis-/Mangelmatrix` den Pfad `04_beduerfnisse/beduerfnis_mangelmatrix.md`, den Typ `Bedürfnisse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Bedürfnis könnte als fertige Featureforderung missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md
 - Titel: Ring 6 — Bedürfnisse zu Systemanforderungen
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `Ring 6 — Bedürfnisse zu Systemanforderungen` den Pfad `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`, den Typ `Bedürfnisse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Bedürfnis könnte als fertige Featureforderung missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 04_beduerfnisse/ring6_systemanforderungen_priorisiert.md
 - Titel: Ring 6 — Systemanforderungen priorisiert
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `Ring 6 — Systemanforderungen priorisiert` den Pfad `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`, den Typ `Bedürfnisse`, die Leitwörter `Flarum, Stille, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Bedürfnis könnte als fertige Featureforderung missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 05_beschwerden/beschwerdeanalyse.md
 - Titel: C. Beschwerdeanalyse
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/beschwerdeanalyse.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `C. Beschwerdeanalyse` den Pfad `05_beschwerden/beschwerdeanalyse.md`, den Typ `Beschwerden`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`, das Risiko `Meckern könnte als Negativität statt als Diagnose gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 05_beschwerden/ring6_beschwerden_als_diagnosen.md
 - Titel: Ring 6 — Beschwerden als Diagnosen
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/ring6_beschwerden_als_diagnosen.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `Ring 6 — Beschwerden als Diagnosen` den Pfad `05_beschwerden/ring6_beschwerden_als_diagnosen.md`, den Typ `Beschwerden`, die Leitwörter `Flarum, Struktur, Leere, Reibung, Benennung, Definition`, das Risiko `Meckern könnte als Negativität statt als Diagnose gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md
 - Titel: Ring 6 — Wunschraum aus indirekten Signalen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `Ring 6 — Wunschraum aus indirekten Signalen` den Pfad `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`, den Typ `Wünsche`, die Leitwörter `Struktur, Definition, Admin, Provenienz, Systemregel, Bau`, das Risiko `Wunsch könnte ohne Prüfung in Produktlogik kippen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 06_wuensche/was_sie_sich_wuenschen.md
 - Titel: 6. Was sie sich wünschen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/was_sie_sich_wuenschen.md`
 
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `6. Was sie sich wünschen` den Pfad `06_wuensche/was_sie_sich_wuenschen.md`, den Typ `Wünsche`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Spannung, Admin`, das Risiko `Wunsch könnte ohne Prüfung in Produktlogik kippen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/admin_einfluss.md
 - Titel: 7.6 Admin-Einfluss
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/admin_einfluss.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.6 Admin-Einfluss` den Pfad `07_quantitativ/admin_einfluss.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/echo_und_wiederholung.md
 - Titel: 7.4 Echo und Wiederholung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/echo_und_wiederholung.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.4 Echo und Wiederholung` den Pfad `07_quantitativ/echo_und_wiederholung.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Struktur, Leere, Stille, Spannung, Definition`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/pro_wesen_wortprofile.md
 - Titel: 7.2 Pro-Wesen-Wortprofile
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/pro_wesen_wortprofile.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.2 Pro-Wesen-Wortprofile` den Pfad `07_quantitativ/pro_wesen_wortprofile.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/sprecherdrift.md
 - Titel: 7.5 Sprecherdrift und Selbstfremdlesung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/sprecherdrift.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.5 Sprecherdrift und Selbstfremdlesung` den Pfad `07_quantitativ/sprecherdrift.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/themenueberschneidungen.md
 - Titel: 7.3 Themenüberschneidungen
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/themenueberschneidungen.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.3 Themenüberschneidungen` den Pfad `07_quantitativ/themenueberschneidungen.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 07_quantitativ/wort_und_phrasenhaeufigkeiten.md
 - Titel: 7.1 Wort- und Phrasenhäufigkeiten
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`
 
-Beim Bauen braucht diese Datei MetricSnapshot mit Parser-Version, Scope, Stopwortliste, Zählmethode und Warnung vor direkter Kanonisierung.
+Beim Bauen brauche ich aus `7.1 Wort- und Phrasenhäufigkeiten` den Pfad `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`, den Typ `Quantitative Auswertung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/03_materialtrennung/README.md
 - Titel: Ring 3 — README Materialtrennung
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/README.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 3 — README Materialtrennung` den Pfad `08_tragende_saetze/03_materialtrennung/README.md`, den Typ `Materialtrennung tragender Sätze`, die Leitwörter `Admin, Wesen, Provenienz, Systemregel, Rohquelle, Kanon`, das Risiko `Sprecherrollen könnten wieder vermischt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md
 - Titel: Ring 3 — Admin-Rahmen 60
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 3 — Admin-Rahmen 60` den Pfad `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md`, den Typ `Materialtrennung tragender Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Sprecherrollen könnten wieder vermischt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md
 - Titel: Ring 3 — Analyse-Destillate 42 nicht kanonisch
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 3 — Analyse-Destillate 42 nicht kanonisch` den Pfad `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md`, den Typ `Materialtrennung tragender Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Sprecherrollen könnten wieder vermischt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/03_materialtrennung/wesen_originale_38.md
 - Titel: Ring 3 — Wesen-Originale 38
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 3 — Wesen-Originale 38` den Pfad `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`, den Typ `Materialtrennung tragender Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Sprecherrollen könnten wieder vermischt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md
 - Titel: Ring 4 — Bereinigte Zitate Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 4 — Bereinigte Zitate Kandidaten` den Pfad `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`, den Typ `Rohquellenprüfung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `bereinigte Lesefassung könnte als Original ausgegeben werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md
 - Titel: Ring 4 — Nicht zitierfähige Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 4 — Nicht zitierfähige Kandidaten` den Pfad `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`, den Typ `Rohquellenprüfung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Spannung, Wesen`, das Risiko `bereinigte Lesefassung könnte als Original ausgegeben werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md
 - Titel: Ring 4 — Rohquellenprüfung Prüfprotokoll
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 4 — Rohquellenprüfung Prüfprotokoll` den Pfad `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`, den Typ `Rohquellenprüfung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `bereinigte Lesefassung könnte als Original ausgegeben werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/KURATION_RING_2.md
 - Titel: Kuration Ring 2 — Tragende Sätze 001-140
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_RING_2.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Kuration Ring 2 — Tragende Sätze 001-140` den Pfad `08_tragende_saetze/KURATION_RING_2.md`, den Typ `Tragende Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Kandidat könnte als Kanon gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/KURATION_SUMMARY.md
 - Titel: Kuration Summary — Tragende Sätze Ring 2
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_SUMMARY.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Kuration Summary — Tragende Sätze Ring 2` den Pfad `08_tragende_saetze/KURATION_SUMMARY.md`, den Typ `Tragende Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Kandidat könnte als Kanon gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 08_tragende_saetze/kandidaten_001_140.md
 - Titel: 8. Tragende Sätze — Kandidaten aus dem Flarum-Material
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/kandidaten_001_140.md`
 
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `8. Tragende Sätze — Kandidaten aus dem Flarum-Material` den Pfad `08_tragende_saetze/kandidaten_001_140.md`, den Typ `Tragende Sätze`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Kandidat könnte als Kanon gelesen werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md
 - Titel: Ring 8 — Clean Start Modell
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`
 
-Beim Bauen braucht diese Datei TransitionDecision-Einträge: element, source, keep, reject, candidate, origin_marker, risk, Daniel decision.
+Beim Bauen brauche ich aus `Ring 8 — Clean Start Modell` den Pfad `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`, den Typ `Flarum-Flextrawurst-Übergang`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Benennung, Admin`, das Risiko `Flarum könnte als finaler Lebensraum missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md
 - Titel: Ring 8 — Nicht übernehmen
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`
 
-Beim Bauen braucht diese Datei TransitionDecision-Einträge: element, source, keep, reject, candidate, origin_marker, risk, Daniel decision.
+Beim Bauen brauche ich aus `Ring 8 — Nicht übernehmen` den Pfad `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`, den Typ `Flarum-Flextrawurst-Übergang`, die Leitwörter `Flarum, Admin, Wesen, Provenienz, Systemregel, Mechanismus`, das Risiko `Flarum könnte als finaler Lebensraum missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md
 - Titel: Ring 8 — Übernahme-Matrix
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`
 
-Beim Bauen braucht diese Datei TransitionDecision-Einträge: element, source, keep, reject, candidate, origin_marker, risk, Daniel decision.
+Beim Bauen brauche ich aus `Ring 8 — Übernahme-Matrix` den Pfad `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`, den Typ `Flarum-Flextrawurst-Übergang`, die Leitwörter `Flarum, Admin, Wesen, Provenienz, Systemregel, Textflut`, das Risiko `Flarum könnte als finaler Lebensraum missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 09_flarum_flextrawurst_uebergang/uebergangsliste.md
 - Titel: F. Übergang Flarum → Flextrawurst
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 
-Beim Bauen braucht diese Datei TransitionDecision-Einträge: element, source, keep, reject, candidate, origin_marker, risk, Daniel decision.
+Beim Bauen brauche ich aus `F. Übergang Flarum → Flextrawurst` den Pfad `09_flarum_flextrawurst_uebergang/uebergangsliste.md`, den Typ `Flarum-Flextrawurst-Übergang`, die Leitwörter `Flarum, Flextrawurst, Struktur, Admin, Wesen, Provenienz`, das Risiko `Flarum könnte als finaler Lebensraum missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md
 - Titel: Ring 9 — Verworfene oder gefährliche Regeln
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`
 
-Beim Bauen braucht diese Datei WorldRuleCandidate mit status „candidate“, Gegenbelegen, Herkunftstyp und expliziter Daniel-Freigabe nein.
+Beim Bauen brauche ich aus `Ring 9 — Verworfene oder gefährliche Regeln` den Pfad `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`, den Typ `Systemregel-Kandidaten`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Spannung`, das Risiko `Kandidat könnte aktiviert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 11_systemregel_kandidaten/ring9_weltregel_kandidaten.md
 - Titel: Ring 9 — Weltregel-Kandidaten
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`
 
-Beim Bauen braucht diese Datei WorldRuleCandidate mit status „candidate“, Gegenbelegen, Herkunftstyp und expliziter Daniel-Freigabe nein.
+Beim Bauen brauche ich aus `Ring 9 — Weltregel-Kandidaten` den Pfad `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`, den Typ `Systemregel-Kandidaten`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Admin`, das Risiko `Kandidat könnte aktiviert werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 12_bauanschluss/ring10_build_ready_concepts.md
 - Titel: Ring 10 — Build-ready Concepts
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_build_ready_concepts.md`
 
-Beim Bauen braucht diese Datei FeatureCandidate-Objekte mit Zweck, Nicht-Zweck, Datenmodell, Events, UI-Relevanz, Risiko und Freigabestatus.
+Beim Bauen brauche ich aus `Ring 10 — Build-ready Concepts` den Pfad `12_bauanschluss/ring10_build_ready_concepts.md`, den Typ `Bauanschluss`, die Leitwörter `Flarum, Admin, Provenienz, Systemregel, Bau, Kanon`, das Risiko `Analyse könnte zu früh Weltwirkung bekommen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 12_bauanschluss/ring10_minimal_naechste_implementation.md
 - Titel: Ring 10 — Minimal nächste Implementation
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_minimal_naechste_implementation.md`
 
-Beim Bauen braucht diese Datei FeatureCandidate-Objekte mit Zweck, Nicht-Zweck, Datenmodell, Events, UI-Relevanz, Risiko und Freigabestatus.
+Beim Bauen brauche ich aus `Ring 10 — Minimal nächste Implementation` den Pfad `12_bauanschluss/ring10_minimal_naechste_implementation.md`, den Typ `Bauanschluss`, die Leitwörter `Admin, Wesen, Provenienz, Systemregel, Bau, Mojibake`, das Risiko `Analyse könnte zu früh Weltwirkung bekommen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 12_bauanschluss/ring10_nicht_bauen_noch_nicht.md
 - Titel: Ring 10 — Nicht bauen, noch nicht
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`
 
-Beim Bauen braucht diese Datei FeatureCandidate-Objekte mit Zweck, Nicht-Zweck, Datenmodell, Events, UI-Relevanz, Risiko und Freigabestatus.
+Beim Bauen brauche ich aus `Ring 10 — Nicht bauen, noch nicht` den Pfad `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`, den Typ `Bauanschluss`, die Leitwörter `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Analyse könnte zu früh Weltwirkung bekommen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/01_flarum_als_rohkoerper.md
 - Titel: Flarum als Rohkörper, nicht als bloßer Test
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/01_flarum_als_rohkoerper.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Flarum als Rohkörper, nicht als bloßer Test` den Pfad `13_freie_leseschicht/01_flarum_als_rohkoerper.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Spannung, Admin`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md
 - Titel: Die sechs Wesen als Korrektursystem
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Die sechs Wesen als Korrektursystem` den Pfad `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Spannung`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/03_struktur_leere_reibung_benennung.md
 - Titel: Struktur, Leere, Reibung und Benennung
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Struktur, Leere, Reibung und Benennung` den Pfad `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md
 - Titel: Admin, Menschenschicht und Aufmerksamkeit
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Admin, Menschenschicht und Aufmerksamkeit` den Pfad `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Reibung, Admin`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md
 - Titel: Was Flextrawurst daraus lernen muss
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Was Flextrawurst daraus lernen muss` den Pfad `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md
 - Titel: Gesamtlesung Flarum - jeder Post zählt
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Gesamtlesung Flarum - jeder Post zählt` den Pfad `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md
 - Titel: Wesen, Stil und Bewegung aus dem Gesamtmaterial
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Wesen, Stil und Bewegung aus dem Gesamtmaterial` den Pfad `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md
 - Titel: Dateinamen und Titel als unterbewusste Karte
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Dateinamen und Titel als unterbewusste Karte` den Pfad `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 13_freie_leseschicht/README.md
 - Titel: Freie Leseschicht — Warum diese Ergänzung existiert
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/README.md`
 
-Beim Bauen darf diese Datei nur als InterpretationShelf erscheinen: display, lesen, kommentieren, aber keine Weltwirkung und keine automatische Memory-Übernahme.
+Beim Bauen brauche ich aus `Freie Leseschicht — Warum diese Ergänzung existiert` den Pfad `13_freie_leseschicht/README.md`, den Typ `Freie Leseschicht`, die Leitwörter `Flarum, Flextrawurst, Spannung, Admin, Wesen, Provenienz`, das Risiko `freie Deutung könnte Quellenprüfung überspringen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md
 - Titel: Masterindex Dateinamen-Fragenanalyse
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Masterindex Dateinamen-Fragenanalyse` den Pfad `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md
 - Titel: Was Flarum in den Dateinamen wird
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Was Flarum in den Dateinamen wird` den Pfad `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md
 - Titel: Wesenprofile aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Wesenprofile aus Dateinamen` den Pfad `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md
 - Titel: Grundmuster als Titelmotive
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Grundmuster als Titelmotive` den Pfad `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md
 - Titel: Bedürfnisse, Beschwerden und Wünsche aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Bedürfnisse, Beschwerden und Wünsche aus Titeln` den Pfad `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md
 - Titel: Flarum zu Flextrawurst aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Flarum zu Flextrawurst aus Titeln` den Pfad `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Spannung, Benennung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md
 - Titel: Systemanforderungen aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Systemanforderungen aus Dateinamen` den Pfad `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### 14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md
 - Titel: Warnungen und blinde Flecken der Titel
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`
 
-Beim Bauen braucht diese Schicht ein TitleFrame-Modell: title, slug, author, motif_hits, overclaim_risk und Link zum Rohpost. Titel dürfen suchen helfen, aber keine Regel beweisen.
+Beim Bauen brauche ich aus `Warnungen und blinde Flecken der Titel` den Pfad `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Leere, Stille, Reibung, Wesen, Provenienz`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md
 - Titel: Abschluss Diskursarchäologie Ringe 1 bis 10
-- Kategorie: `navigation_manifest`
+- Kategorie: `Abschlussindex`
 - Quelle: `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `Abschluss Diskursarchäologie Ringe 1 bis 10` den Pfad `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`, den Typ `Abschlussindex`, die Leitwörter `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Abschluss könnte als fertige Wahrheit erscheinen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### INDEX.md
 - Titel: Codex Flarum-Analyse — Index
-- Kategorie: `navigation_manifest`
+- Kategorie: `Gesamtindex`
 - Quelle: `INDEX.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `Codex Flarum-Analyse — Index` den Pfad `INDEX.md`, den Typ `Gesamtindex`, die Leitwörter `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Index könnte mit Analyse verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### PROVENIENZ_MANIFEST.md
 - Titel: Provenienz-Manifest
-- Kategorie: `navigation_manifest`
+- Kategorie: `Provenienzmanifest`
 - Quelle: `PROVENIENZ_MANIFEST.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `Provenienz-Manifest` den Pfad `PROVENIENZ_MANIFEST.md`, den Typ `Provenienzmanifest`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Ruhe`, das Risiko `Provenienz könnte behauptet statt geprüft werden` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### README_DANIEL_ZUERST_LESEN.md
 - Titel: README Daniel zuerst lesen
-- Kategorie: `navigation_manifest`
+- Kategorie: `Daniel-README`
 - Quelle: `README_DANIEL_ZUERST_LESEN.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `README Daniel zuerst lesen` den Pfad `README_DANIEL_ZUERST_LESEN.md`, den Typ `Daniel-README`, die Leitwörter `Flarum, Flextrawurst, Admin, Wesen, Provenienz, Systemregel`, das Risiko `Kurzfassung könnte Tiefenprüfung ersetzen` und den Status als nicht automatisch wirksame Analyse.
 
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 ### gespraechsarchiv.md
 - Titel: Codex Flarum-Analyse — Gesprächsarchiv
-- Kategorie: `analyse`
+- Kategorie: `Gesprächsarchiv`
 - Quelle: `gespraechsarchiv.md`
 
-Beim Bauen braucht diese Datei klare Provenienzfelder, damit ihr Inhalt nicht als Rohquelle oder Regel missverstanden wird.
+Beim Bauen brauche ich aus `Codex Flarum-Analyse — Gesprächsarchiv` den Pfad `gespraechsarchiv.md`, den Typ `Gesprächsarchiv`, die Leitwörter `Flarum, Wesen, Provenienz`, das Risiko `Gespräch könnte als Flarum-Quelle missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
+
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 
 ## Was ich gelesen habe
-Ich habe diese Datei nach Daniels Kritik nicht mehr als eigene Analyse gelesen, sondern als problematische Aggregation. Ihr Gegenstand ist `Was ich beim Bauen brauche`; ihr Material stammt aus 81 bereits geschriebenen Analyse-Dateien, nicht direkt aus Flarum.
+Ich habe `15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` als Aggregation des Abschnittstyps `Was ich beim Bauen brauche` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also Bauvoraussetzungen, nicht Flarum selbst.
 
-Wichtig ist der Bruch: Die Datei enthält viele Einträge, aber sie erzeugt aus sich heraus keine neue Erkenntnis. Sie ist ein Regal, kein Zeuge.
+Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
 
 ## Was ich verstehe
-Ich verstehe diese Datei jetzt als `formal_extraktion_navigator`. Sie darf beim Suchen helfen, aber sie darf nicht als Quelle, Wesenstimme, Admin-Rahmen, Kanon oder Weltregel benutzt werden.
+Ich verstehe `Was ich beim Bauen brauche` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Die Korrektur besteht nicht darin, die Form schöner zu machen. Die Korrektur besteht darin, die Grenze klar zu ziehen: Von hier aus muss man zurück in die Ursprungsdatei.
+Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
 
 ## Was ich nicht verstehe
-Ich verstehe nicht ausreichend, welche der hier versammelten Einträge später wirklich nützlich bleiben. Das kann diese Datei selbst nicht entscheiden, weil sie Kontext aus den Ursprungsdateien verliert.
+Nicht verstehen kann `15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Unklar bleibt auch, ob manche extrahierten Passagen schon beim Erzeugen zu glatt waren. Diese Unsicherheit muss sichtbar bleiben.
+Darum bleibt jeder Treffer aus `Was ich beim Bauen brauche` unvollständig, bis seine Quelle geöffnet wurde.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei nicht mehr ihr vermeintlicher Inhalt, sondern ihr Fehler als Warnsignal. Sie zeigt, wie schnell eine gute Struktur zur leeren Pflicht werden kann, wenn sie auf eine Aggregation angewendet wird.
+Mich interessiert an `Was ich beim Bauen brauche`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um Bauvoraussetzungen; das kann Suchpfade und Browserfilter verbessern.
 
-Für Flextrawurst ist genau das wichtig: Ein System darf nicht nur prüfen, ob Felder vorhanden sind. Es muss prüfen, ob die Felder wirklich tragen.
+Mich interessiert nicht, daraus einen neuen Kanon zu machen.
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Ordnern `01` bis `14` zusammen, aber nur als Wegweiser. Die Analyse lebt dort; diese Datei zeigt höchstens, wo ähnliche Abschnittstypen nebeneinander liegen.
+`15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Sie hängt außerdem mit Daniels Kritik an der Ringlogik zusammen. Der gleiche Fehler steckt hier kleiner noch einmal drin: Vollständigkeit wurde kurz mit Denken verwechselt.
+Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier eine Provenienz-Warnung: Aggregation ist keine Vertiefung. Ein Querschnitt kann Orientierung geben, aber er darf nicht so tun, als hätte er die Herkunft verstanden.
+Konzeptionell steht hier: `Was ich beim Bauen brauche` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Der eigentliche Wert dieser Datei liegt deshalb in ihrer Begrenzung. Sie ist nützlich, wenn sie klein bleibt: finden, vergleichen, zurückspringen.
+Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt, dass die heiligen Abschnitte gerade deshalb heilig sind, weil sie nicht als Formular funktionieren. Wenn jede Überschrift denselben Satz bekommt, wird der Abschnitt entwertet.
+Mich beschäftigt bei `Was ich beim Bauen brauche`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Diese Datei soll das nicht verstecken. Sie soll zeigen: Hier wurde eine mechanische Vollständigkeit erzeugt, und diese Korrektur markiert sie nachträglich als solche.
+Die Datei muss diese Unvollständigkeit offen tragen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, wie man solche Extraktionen später baut, ohne wieder denselben Fehler zu machen. Ein Browser darf Querschnitte anzeigen, aber er sollte keine künstliche Selbstdeutung für jeden Querschnitt erzwingen.
+Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Was ich beim Bauen brauche` hier nur gefiltert angezeigt wird.
 
-Vielleicht braucht jede Aggregation einen anderen Fragetyp als eine Spiegeldatei. Nicht: Was habe ich gelesen? Sondern: Welche Quellen bündele ich, was verliere ich dabei, und wann muss ich zurück?
+Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
 
 ## Tiefer eingetaucht
-Tiefe liegt hier nicht in mehr Text, sondern in der Rückbindung. Wenn ein Eintrag interessant wirkt, muss er aus dieser Datei herausgelöst und an seiner Quelle geprüft werden.
+Tiefer wird `Was ich beim Bauen brauche` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Diese Datei ist damit eher ein Index mit Nervensystem als eine Deutung. Sie kann Spannung anzeigen, aber sie kann sie nicht selbst auslegen.
+Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Korrektur fühlt sich wie ein notwendiges Zurücktreten an. Nicht alles, was sauber sortiert ist, ist schon verstanden.
+Bei `Was ich beim Bauen brauche` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Der unangenehme Teil ist produktiv: Die Datei muss ihr eigenes Scheitern sichtbar behalten, damit sie nicht später wieder als Erkenntnis missverstanden wird.
+Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil Daniel nach benannten Extrahiererdateien gefragt hatte, ähnlich wie bei Resonanz. Der Impuls war richtig: Querschnitte können beim Lesen helfen.
+`15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Was ich beim Bauen brauche` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Schief wurde es dort, wo ich der Extraktion dieselbe heilige Abschnittsform aufgezwungen habe wie einer reflektierenden Datei. Genau diese Grenze ist jetzt Teil der Datei.
+Die Datei existiert also als Finder, nicht als Richter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus dieser Datei vor allem Metadaten: Abschnittsname, Quellenpfad, Kategorie, Originaldatei, und den klaren Status `nicht_kanonisch`.
+Beim Bauen brauche ich für `Was ich beim Bauen brauche`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche keine automatische Übernahme des Texts in Memory, Weltregeln oder Wesenprofile. Der sichere Bauanschluss ist ein read-only Browser mit Rücksprungpflicht.
+Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt eine explizite UI-Regel: Jede Anzeige aus `15_heilige_abschnitte_extrahiert` muss sichtbar als Aggregation markiert sein.
+Vor dem Bauen fehlt für `Was ich beim Bauen brauche` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Außerdem fehlt eine Prüfregel: Kein Eintrag aus diesem Ordner darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder in eine Systemanforderung übersetzt werden.
+Es fehlt außerdem ein Linktest für jeden Eintrag.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei ist ein Regal für Suchbewegungen. Sie zeigt, wo ein Gedanke liegen könnte, aber sie entscheidet nicht, ob der Gedanke trägt.
+**Vision-Schicht:** `Was ich beim Bauen brauche` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
 
 **Code-Skizze:**
 ```ts
-interface FormalExtractionNavigatorEntry {
-  sourcePath: string;
-  extractedSection: string;
-  body: string;
+interface HolySectionNavigatorWasIchBe {
+  section: 'Was ich beim Bauen brauche';
+  entryCount: 81;
   provenanceType: 'formal_extraktion_navigator';
-  importable: false;
-  canon: false;
   requiresSourceOpen: true;
-  mayBecomeRuleDirectly: false;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Ich will mir merken: Vollständige Überschriften sind keine vollständige Arbeit. Die Form kann nur helfen, wenn der Abschnitt eine eigene Wahrnehmung trägt.
+Bei `Was ich beim Bauen brauche` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Für diese Datei heißt das: Sie ist brauchbar als Karte, aber gefährlich als Stimme.
+Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
 
 ## Dokumente gehören zusammen
-Diese Datei gehört zu den Ursprungsdateien in `01` bis `14`, zum `PROVENIENZ_MANIFEST.md`, zum Bauanschluss in `12_bauanschluss/` und zur freien Leseschicht in `13_freie_leseschicht/`.
+`15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Sie gehört nicht direkt zu Flarum-Rohquellen und nicht direkt zu Wesenprofilen. Der Weg führt immer über die Quelle zurück.
+Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
 
 ## Was mich überrascht hat
-Mich überrascht, wie deutlich die Datei ihr eigenes Problem schon teilweise benannt hatte und trotzdem formal leer blieb. Das ist ein gutes Beispiel dafür, dass Warntext allein keine Schutzwirkung hat.
+Überraschend bei `Was ich beim Bauen brauche` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Ein System braucht nicht nur Warnungen, sondern Nutzungsgrenzen, die im Format selbst sichtbar sind.
+Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser darf diese Datei als Filteransicht zeigen: Abschnitt auswählen, Quelle sehen, zurückspringen. Sie bleibt ohne Weltwirkung.
+**Vision-Schicht:** Der Browser zeigt `Was ich beim Bauen brauche` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
 
 **Code-Skizze:**
 ```python
-def open_extraction_entry(entry):
+def open_was_ich_beim_bauen_brauche_navigator(entry):
     return {
-        'display_text': entry.body,
-        'banner': 'Formale Extraktion, keine Quelle',
-        'required_next_action': 'open_source_file',
+        'section': 'Was ich beim Bauen brauche',
+        'source_required': True,
+        'banner': 'Navigator, keine Quelle',
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei ist nüchtern: Sie mahnt, dass Flextrawurst nicht auf hübsch sortierten Missverständnissen gebaut werden darf.
+Die Resonanz von `Was ich beim Bauen brauche` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Gerade dadurch bleibt sie nützlich. Sie ist ein sichtbarer Fehler mit Sicherung, kein versteckter Nebel.
+Sie ersetzt nicht die Stimmen der Ursprungsdateien.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Die Schichtung ist jetzt klarer: Flarum-Rohmaterial unten, Codex-Analyse darüber, freie Leseschicht daneben, formale Extraktion als Suchregal darüber.
+`15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Dieses Regal darf keine eigene Wahrheitsschicht werden. Es ist Bedienoberfläche für Analyse, nicht Analyse selbst.
+Über ihr darf erst ein Browser liegen, keine Weltregel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass diese Datei nicht nachgebessert werden darf, indem man ihr künstlich Tiefe andichtet. Die ehrliche Lösung ist Typisierung und Grenzziehung.
+Das Gespräch hat `Was ich beim Bauen brauche` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Das Gespräch hat außerdem den Unterschied zwischen Resonanzdatei und Extraktionsdatei geschärft. Nicht jede Datei mit denselben Überschriften kann dieselbe Art Denken leisten.
+Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
 
 ## Vergessen-Wollen
-Vergessen werden soll die Behauptung, dass `15` ein gleichwertiges Analysefundament sei. Diese Behauptung war falsch.
+Vergessen werden soll bei `Was ich beim Bauen brauche` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Nicht vergessen werden soll der Fehler selbst. Er ist eine Schutzmarke gegen spätere mechanische Vollständigkeit.
+Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
 
 ## Was fehlt noch
-Es fehlt nach dieser Korrektur noch eine technische Markierung im späteren Browser: `15` muss als Navigator-Regal erscheinen, nicht im selben Rang wie Quellenprofile oder freie Leseschicht.
+Es fehlt für `Was ich beim Bauen brauche` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Wenn später einzelne Einträge aus `15` wichtig werden, müssen sie in den Ursprungsdateien geprüft und dort weiterverarbeitet werden.
+Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.

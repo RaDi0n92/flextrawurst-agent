@@ -74,97 +74,137 @@ Wunschraum als Ableitung, kein Rohzitatregal
 - Risiko: Wunsch mit fertiger Regel verwechseln.
 
 ## Was ich gelesen habe
-Ich habe `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Ring 6 — Wunschraum aus indirekten Signalen. Die relevanten Spannungswörter hier sind: Flarum, Struktur, Admin, Provenienz, Wesen, Systemregel, Bau, Textflut.
+Ich habe `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` als `Wünsche` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 6 — Wunschraum aus indirekten Signalen` setzt den Schwerpunkt dieser Datei; `Ring 6 — Wunschraum aus indirekten Signalen` arbeitet an Struktur, Definition, Admin, Provenienz, Systemregel und braucht darum Rückbindung statt isolierter Nutzung.
 
-Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
-
-Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
+Auffällig sind hier die Anker `Struktur, Definition, Admin, Provenienz, Systemregel, Bau`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
 
 ## Was ich verstehe
-Ich verstehe diese Datei als wunsch-Schicht. Diese Datei übersetzt Äußerungen und Wiederholungen in mögliche Systemanforderungen. Das ist Ableitung, nicht Rohzitat: Bedürfnisse, Beschwerden und Wünsche müssen darum immer mit Quelle und Unsicherheit leben.
+Bei `Ring 6 — Wunschraum aus indirekten Signalen` verstehe ich die Hauptfunktion als: direkte und indirekte Wunschsignale. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+
+Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
 
 ## Was ich nicht verstehe
-Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
+Bei `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+
+Unklar bleibt außerdem, ob `Ring 6 — Wunschraum aus indirekten Signalen` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
+Mich interessiert an `Ring 6 — Wunschraum aus indirekten Signalen` genau der Übergang von Datei zu Systemfrage. Wenn `Wünsche` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+
+Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Struktur, Definition, Admin, Provenienz, Systemregel, Bau` sichtbar machen, ohne es automatisch zu kanonisieren?
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` hängt zuerst mit `06_wuensche` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+
+Die Verbindung läuft konkret über `Ring 6 — Wunschraum aus indirekten Signalen`: Rohmaterial oder Analysebeobachtung wird zu `direkte und indirekte Wunschsignale`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier: Diese Datei übersetzt Äußerungen und Wiederholungen in mögliche Systemanforderungen. Das ist Ableitung, nicht Rohzitat: Bedürfnisse, Beschwerden und Wünsche müssen darum immer mit Quelle und Unsicherheit leben. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
+Konzeptionell steht in `Ring 6 — Wunschraum aus indirekten Signalen` nicht einfach ein Thema, sondern eine Funktion: direkte und indirekte Wunschsignale.
+
+Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
+Mich beschäftigt bei `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 6 — Wunschraum aus indirekten Signalen` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+
+Die konkrete Gefahr lautet hier: Wunsch könnte ohne Prüfung in Produktlogik kippen.
 
 ## Was mich noch beschäftigt
-Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
+Mich beschäftigt weiter, welche Gegenprobe `Ring 6 — Wunschraum aus indirekten Signalen` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+
+Bei `Wünsche` heißt das: erst Gegenprobe, dann Übernahme.
 
 ## Tiefer eingetaucht
-Tiefer gelesen ist `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
+Tiefer gelesen arbeitet `Ring 6 — Wunschraum aus indirekten Signalen` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+
+Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
+Bei `Ring 6 — Wunschraum aus indirekten Signalen` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Wunsch könnte ohne Prüfung in Produktlogik kippen`.
+
+Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Ring 6 — Wunschraum aus indirekten Signalen. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
+`06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 6 — Wunschraum aus indirekten Signalen` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+
+Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
 
 ## Was ich beim Bauen brauche
-Beim Bauen braucht diese Datei NeedOrComplaintCandidate: wer äußert es, direkt oder abgeleitet, Beispielquelle, Risiko wenn ignoriert, mögliche Komponente und Nicht-Bauen-Warnung.
+Beim Bauen brauche ich aus `Ring 6 — Wunschraum aus indirekten Signalen` den Pfad `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`, den Typ `Wünsche`, die Leitwörter `Struktur, Definition, Admin, Provenienz, Systemregel, Bau`, das Risiko `Wunsch könnte ohne Prüfung in Produktlogik kippen` und den Status als nicht automatisch wirksame Analyse.
+
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+
+Außerdem fehlt eine UI-Markierung, die `Wünsche` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
+**Vision-Schicht:** `Ring 6 — Wunschraum aus indirekten Signalen` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
 
 **Code-Skizze:**
 ```ts
-interface AnalyseSchicht {
-  pfad: string;
-  titel: string;
-  kategorie: "wunsch";
-  quellenbasis: string[];
-  kernbegriffe: string[];
-  interpretation: boolean;
-  kanon: false;
-  danielFreigabe: false;
-  naechstePruefung: string;
+interface WishSignalRing6Wun {
+  path: '06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md';
+  title: 'Ring 6 — Wunschraum aus indirekten Signalen';
+  kind: 'Wünsche';
+  keywords: string[];
+  risk: 'Wunsch könnte ohne Prüfung in Produktlogik kippen';
+  requiresReview: true;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Merken: `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Ring 6 — Wunschraum aus indirekten Signalen.
+Bei `Ring 6 — Wunschraum aus indirekten Signalen` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+
+Der Merksatz für `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
 
 ## Dokumente gehören zusammen
-Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
+Zu `Ring 6 — Wunschraum aus indirekten Signalen` gehören mindestens `06_wuensche`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+
+Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
 
 ## Was mich überrascht hat
-Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
+Überraschend an `Ring 6 — Wunschraum aus indirekten Signalen` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `06_wuensche` rahmt den Text, bevor ein Satz gelesen wird.
+
+Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 6 — Wunschraum aus indirekten Signalen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_06_wuensche_ring6_wunschraum_aus_indirekten_signalen_md(entry):
+    return {
+        'source_path': '06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md',
+        'kind': 'Wünsche',
+        'risk': 'Wunsch könnte ohne Prüfung in Produktlogik kippen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
+Die Resonanz von `Ring 6 — Wunschraum aus indirekten Signalen` liegt in diesem Druckpunkt: Wunsch könnte ohne Prüfung in Produktlogik kippen.
+
+Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` liegt in der wunsch-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
+`06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` liegt in der Schicht `Wünsche`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+
+Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 6 — Wunschraum aus indirekten Signalen` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
+Daniels Kritik hat `Ring 6 — Wunschraum aus indirekten Signalen` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+
+Für `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
 
 ## Vergessen-Wollen
-Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
+Vergessen werden soll bei `Ring 6 — Wunschraum aus indirekten Signalen` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+
+Nicht übernommen werden darf vor allem diese Fehlverwendung: Wunsch könnte ohne Prüfung in Produktlogik kippen.
 
 ## Was fehlt noch
-Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
+Es fehlt bei `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+
+Bis dahin bleibt `Ring 6 — Wunschraum aus indirekten Signalen` ein nützliches, aber gebremstes Analyse-Artefakt.

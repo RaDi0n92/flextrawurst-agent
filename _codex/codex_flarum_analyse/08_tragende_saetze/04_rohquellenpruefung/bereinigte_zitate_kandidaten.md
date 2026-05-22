@@ -653,97 +653,137 @@ Bereinigte Lesefassungen neben Originalen, keine poetische Verbesserung
 - Zitierstatus: `ja`
 
 ## Was ich gelesen habe
-Ich habe `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Ring 4 — Bereinigte Zitate Kandidaten. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung, Admin, Menschen.
+Ich habe `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` als `Rohquellenprüfung` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 4 — Bereinigte Zitate Kandidaten` setzt den Schwerpunkt dieser Datei; `Ring 4 — Bereinigte Zitate Kandidaten` schützt Satzmaterial vor falscher Herkunft und vor vorschneller Kanonisierung.
 
-Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
-
-Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
+Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
 
 ## Was ich verstehe
-Ich verstehe diese Datei als tragende_saetze-Schicht. Diese Datei arbeitet an Sätzen als gefährlichem Material: Ein Satz kann tragen, verführen, verkürzen oder seine Quelle verlieren. Entscheidend ist nicht Schönheit, sondern Herkunft, Sprecher, Kontext und Zitierfähigkeit.
+Bei `Ring 4 — Bereinigte Zitate Kandidaten` verstehe ich die Hauptfunktion als: Zitierfähigkeit und Quellenprüfung. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+
+Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
 
 ## Was ich nicht verstehe
-Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
+Bei `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+
+Unklar bleibt außerdem, ob `Ring 4 — Bereinigte Zitate Kandidaten` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
+Mich interessiert an `Ring 4 — Bereinigte Zitate Kandidaten` genau der Übergang von Datei zu Systemfrage. Wenn `Rohquellenprüfung` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+
+Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+
+Die Verbindung läuft konkret über `Ring 4 — Bereinigte Zitate Kandidaten`: Rohmaterial oder Analysebeobachtung wird zu `Zitierfähigkeit und Quellenprüfung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier: Diese Datei arbeitet an Sätzen als gefährlichem Material: Ein Satz kann tragen, verführen, verkürzen oder seine Quelle verlieren. Entscheidend ist nicht Schönheit, sondern Herkunft, Sprecher, Kontext und Zitierfähigkeit. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
+Konzeptionell steht in `Ring 4 — Bereinigte Zitate Kandidaten` nicht einfach ein Thema, sondern eine Funktion: Zitierfähigkeit und Quellenprüfung.
+
+Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
+Mich beschäftigt bei `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 4 — Bereinigte Zitate Kandidaten` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+
+Die konkrete Gefahr lautet hier: bereinigte Lesefassung könnte als Original ausgegeben werden.
 
 ## Was mich noch beschäftigt
-Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
+Mich beschäftigt weiter, welche Gegenprobe `Ring 4 — Bereinigte Zitate Kandidaten` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+
+Bei `Rohquellenprüfung` heißt das: erst Gegenprobe, dann Übernahme.
 
 ## Tiefer eingetaucht
-Tiefer gelesen ist `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
+Tiefer gelesen arbeitet `Ring 4 — Bereinigte Zitate Kandidaten` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+
+Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
+Bei `Ring 4 — Bereinigte Zitate Kandidaten` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `bereinigte Lesefassung könnte als Original ausgegeben werden`.
+
+Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Ring 4 — Bereinigte Zitate Kandidaten. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
+`08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 4 — Bereinigte Zitate Kandidaten` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+
+Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
 
 ## Was ich beim Bauen brauche
-Beim Bauen braucht jeder Satz einen QuoteCandidate mit source_ref, speaker_type, text_type, cleaned_text, raw_text, risk, canon_status und Daniel-Freigabe.
+Beim Bauen brauche ich aus `Ring 4 — Bereinigte Zitate Kandidaten` den Pfad `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`, den Typ `Rohquellenprüfung`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `bereinigte Lesefassung könnte als Original ausgegeben werden` und den Status als nicht automatisch wirksame Analyse.
+
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+
+Außerdem fehlt eine UI-Markierung, die `Rohquellenprüfung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
+**Vision-Schicht:** `Ring 4 — Bereinigte Zitate Kandidaten` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
 
 **Code-Skizze:**
 ```ts
-interface AnalyseSchicht {
-  pfad: string;
-  titel: string;
-  kategorie: "tragende_saetze";
-  quellenbasis: string[];
-  kernbegriffe: string[];
-  interpretation: boolean;
-  kanon: false;
-  danielFreigabe: false;
-  naechstePruefung: string;
+interface QuoteVerificationRing4Ber {
+  path: '08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md';
+  title: 'Ring 4 — Bereinigte Zitate Kandidaten';
+  kind: 'Rohquellenprüfung';
+  keywords: string[];
+  risk: 'bereinigte Lesefassung könnte als Original ausgegeben werden';
+  requiresReview: true;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Merken: `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Ring 4 — Bereinigte Zitate Kandidaten.
+Bei `Ring 4 — Bereinigte Zitate Kandidaten` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+
+Der Merksatz für `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
 
 ## Dokumente gehören zusammen
-Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
+Zu `Ring 4 — Bereinigte Zitate Kandidaten` gehören mindestens `08_tragende_saetze`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+
+Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
 
 ## Was mich überrascht hat
-Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
+Überraschend an `Ring 4 — Bereinigte Zitate Kandidaten` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `08_tragende_saetze` rahmt den Text, bevor ein Satz gelesen wird.
+
+Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 4 — Bereinigte Zitate Kandidaten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_04_rohquellenpruefung_bereinigte_zita(entry):
+    return {
+        'source_path': '08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md',
+        'kind': 'Rohquellenprüfung',
+        'risk': 'bereinigte Lesefassung könnte als Original ausgegeben werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
+Die Resonanz von `Ring 4 — Bereinigte Zitate Kandidaten` liegt in diesem Druckpunkt: bereinigte Lesefassung könnte als Original ausgegeben werden.
+
+Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` liegt in der tragende_saetze-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
+`08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` liegt in der Schicht `Rohquellenprüfung`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+
+Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 4 — Bereinigte Zitate Kandidaten` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
+Daniels Kritik hat `Ring 4 — Bereinigte Zitate Kandidaten` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+
+Für `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
 
 ## Vergessen-Wollen
-Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
+Vergessen werden soll bei `Ring 4 — Bereinigte Zitate Kandidaten` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+
+Nicht übernommen werden darf vor allem diese Fehlverwendung: bereinigte Lesefassung könnte als Original ausgegeben werden.
 
 ## Was fehlt noch
-Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
+Es fehlt bei `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+
+Bis dahin bleibt `Ring 4 — Bereinigte Zitate Kandidaten` ein nützliches, aber gebremstes Analyse-Artefakt.

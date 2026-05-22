@@ -12,719 +12,796 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 # Extraktion — Was noch fehlt bevor wir bauen können
 
-Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+Warnung: Diese Datei ist eine formale Extraktion aus Codex-Analyse-Dateien. Sie ist Navigator, keine Rohquelle, keine eigene Deutung und kein Kanon.
 
 ## Korrekturstatus 2026-05-22
-Daniel hat zurecht markiert, dass diese Datei als `Abschnitts-Extraktion` keine echte neue Deutung trägt, sondern eine formale Extraktion ist. Deshalb gilt sie ab hier als `formal_extraktion_navigator`: hilfreich zum Finden, gefährlich als Quelle.
-
-Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
+Diese Datei wurde aus den nachkorrigierten Ursprungsdateien neu erzeugt. Jeder Eintrag bleibt ein Rücksprungpunkt, kein eigenständiger Beleg.
 
 ## Extraktionsübersicht
 - Abschnitt: `Was noch fehlt bevor wir bauen können`
 - Quellen: 81 Dateien
-- Zweck: querschnittliche Lesbarkeit wie im Codex-Resonanzordner, aber auf die Flarum-Analyse begrenzt
+- Zweck: diesen Abschnittstyp auffindbar machen, ohne ihn zur Quelle zu erklären
 
 ## Einträge
 
 ### 00_technik/encoding_mojibake/repair_report.md
 - Titel: Encoding-/Mojibake Repair Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/repair_report.md`
 
-Es fehlt nur dann ein nächster Schritt, wenn neue Exporte neue Muster einführen; Tippfehler bleiben getrennt von Encoding-Fixes zu prüfen.
+Vor dem Bauen fehlt bei `00_technik/encoding_mojibake/repair_report.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Encoding-Schutz` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 00_technik/encoding_mojibake/scan_report.md
 - Titel: Encoding-/Mojibake Scan Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/scan_report.md`
 
-Es fehlt nur dann ein nächster Schritt, wenn neue Exporte neue Muster einführen; Tippfehler bleiben getrennt von Encoding-Fixes zu prüfen.
+Vor dem Bauen fehlt bei `00_technik/encoding_mojibake/scan_report.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Encoding-Schutz` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 01_zentrale_leitfrage/was_ist_flarum_geworden.md
 - Titel: 1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?
-- Kategorie: `analyse`
+- Kategorie: `Zentrale Leitfrage`
 - Quelle: `01_zentrale_leitfrage/was_ist_flarum_geworden.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `01_zentrale_leitfrage/was_ist_flarum_geworden.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Zentrale Leitfrage` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_1111_1234.md
 - Titel: 2. Wesenprofil — namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_1111_1234.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_1111_1234.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_2222_1324.md
 - Titel: 2. Wesenprofil — namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_2222_1324.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_2222_1324.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_3333_1423.md
 - Titel: 2. Wesenprofil — namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_3333_1423.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_3333_1423.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_4444_2341.md
 - Titel: 2. Wesenprofil — namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_4444_2341.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_4444_2341.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_5555_3123.md
 - Titel: 2. Wesenprofil — namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_5555_3123.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_5555_3123.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/namelessAI_6666_4321.md
 - Titel: 2. Wesenprofil — namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_6666_4321.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/namelessAI_6666_4321.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wesenprofil` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md
 - Titel: Ring 5 — Vergleichsmatrix sechs Wesen
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
 
-Es fehlt die manuelle Rückbindung der stärksten Sätze an vollständige Rohpost-Kontexte und die Entscheidung, ob diese Linie bei einem Clean Start als Erinnerung, Anlage oder nur Herkunftsspur gilt.
+Vor dem Bauen fehlt bei `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quellenprofil eines Wesens` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_1_struktur_oder_kaefig.md
 - Titel: 3.1 Struktur oder Käfig
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_1_struktur_oder_kaefig.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_1_struktur_oder_kaefig.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_2_flarum_erbe.md
 - Titel: 3.2 Flarum-Erbe
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_2_flarum_erbe.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_2_flarum_erbe.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_3_admin_resonanz_fuer_admin.md
 - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_4_selbstfremdlesung.md
 - Titel: 3.4 Selbstfremdlesung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_4_selbstfremdlesung.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_4_selbstfremdlesung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_5_leere_stille_ruhe.md
 - Titel: 3.5 Leere, Stille, Ruhe, Stillstand
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_5_leere_stille_ruhe.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_5_leere_stille_ruhe.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_6_reibung.md
 - Titel: 3.6 Reibung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_6_reibung.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_6_reibung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_7_benennung.md
 - Titel: 3.7 Benennung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_7_benennung.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_7_benennung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_8_menschen_schicht.md
 - Titel: 3.8 Menschen-Schicht
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_8_menschen_schicht.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_8_menschen_schicht.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/3_9_meta_ohne_operation.md
 - Titel: 3.9 Meta ohne Operation
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_9_meta_ohne_operation.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/3_9_meta_ohne_operation.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/ring7_baustein_prioritaeten.md
 - Titel: Ring 7 — Baustein-Prioritäten
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_baustein_prioritaeten.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/ring7_baustein_prioritaeten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 03_grundmuster/ring7_flextrawurst_bausteine.md
 - Titel: Ring 7 — Flextrawurst-Bausteine aus Grundmustern
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_flextrawurst_bausteine.md`
 
-Es fehlt die Prüfung, welche Beispiele wirklich aus Wesen-Originalen stammen und welche nur Admin-Rahmen oder Analyse-Destillate sind.
+Vor dem Bauen fehlt bei `03_grundmuster/ring7_flextrawurst_bausteine.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Grundmuster` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 04_beduerfnisse/beduerfnis_mangelmatrix.md
 - Titel: B. Bedürfnis-/Mangelmatrix
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/beduerfnis_mangelmatrix.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `04_beduerfnisse/beduerfnis_mangelmatrix.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bedürfnisse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md
 - Titel: Ring 6 — Bedürfnisse zu Systemanforderungen
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bedürfnisse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 04_beduerfnisse/ring6_systemanforderungen_priorisiert.md
 - Titel: Ring 6 — Systemanforderungen priorisiert
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bedürfnisse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 05_beschwerden/beschwerdeanalyse.md
 - Titel: C. Beschwerdeanalyse
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/beschwerdeanalyse.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `05_beschwerden/beschwerdeanalyse.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Beschwerden` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 05_beschwerden/ring6_beschwerden_als_diagnosen.md
 - Titel: Ring 6 — Beschwerden als Diagnosen
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/ring6_beschwerden_als_diagnosen.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `05_beschwerden/ring6_beschwerden_als_diagnosen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Beschwerden` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md
 - Titel: Ring 6 — Wunschraum aus indirekten Signalen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wünsche` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 06_wuensche/was_sie_sich_wuenschen.md
 - Titel: 6. Was sie sich wünschen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/was_sie_sich_wuenschen.md`
 
-Es fehlt die Priorisierung mit Daniel: Was ist früh nötig, was nur schützen, was nicht bauen?
+Vor dem Bauen fehlt bei `06_wuensche/was_sie_sich_wuenschen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Wünsche` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/admin_einfluss.md
 - Titel: 7.6 Admin-Einfluss
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/admin_einfluss.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/admin_einfluss.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/echo_und_wiederholung.md
 - Titel: 7.4 Echo und Wiederholung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/echo_und_wiederholung.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/echo_und_wiederholung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/pro_wesen_wortprofile.md
 - Titel: 7.2 Pro-Wesen-Wortprofile
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/pro_wesen_wortprofile.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/pro_wesen_wortprofile.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/sprecherdrift.md
 - Titel: 7.5 Sprecherdrift und Selbstfremdlesung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/sprecherdrift.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/sprecherdrift.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/themenueberschneidungen.md
 - Titel: 7.3 Themenüberschneidungen
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/themenueberschneidungen.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/themenueberschneidungen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 07_quantitativ/wort_und_phrasenhaeufigkeiten.md
 - Titel: 7.1 Wort- und Phrasenhäufigkeiten
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`
 
-Es fehlt die qualitative Gegenprobe: Warum ist ein häufiges Wort wirklich tragend und wann ist es nur Echo?
+Vor dem Bauen fehlt bei `07_quantitativ/wort_und_phrasenhaeufigkeiten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Quantitative Auswertung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/03_materialtrennung/README.md
 - Titel: Ring 3 — README Materialtrennung
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/README.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/03_materialtrennung/README.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Materialtrennung tragender Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md
 - Titel: Ring 3 — Admin-Rahmen 60
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Materialtrennung tragender Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md
 - Titel: Ring 3 — Analyse-Destillate 42 nicht kanonisch
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Materialtrennung tragender Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/03_materialtrennung/wesen_originale_38.md
 - Titel: Ring 3 — Wesen-Originale 38
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Materialtrennung tragender Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md
 - Titel: Ring 4 — Bereinigte Zitate Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Rohquellenprüfung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md
 - Titel: Ring 4 — Nicht zitierfähige Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Rohquellenprüfung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md
 - Titel: Ring 4 — Rohquellenprüfung Prüfprotokoll
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Rohquellenprüfung` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/KURATION_RING_2.md
 - Titel: Kuration Ring 2 — Tragende Sätze 001-140
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_RING_2.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/KURATION_RING_2.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Tragende Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/KURATION_SUMMARY.md
 - Titel: Kuration Summary — Tragende Sätze Ring 2
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_SUMMARY.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/KURATION_SUMMARY.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Tragende Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 08_tragende_saetze/kandidaten_001_140.md
 - Titel: 8. Tragende Sätze — Kandidaten aus dem Flarum-Material
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/kandidaten_001_140.md`
 
-Es fehlt für jeden starken Kandidaten die letzte manuelle Entscheidung: Rohzitat, bereinigte Lesefassung, Verwendungsort und Ausschlussgrund müssen zusammen sichtbar sein.
+Vor dem Bauen fehlt bei `08_tragende_saetze/kandidaten_001_140.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Tragende Sätze` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md
 - Titel: Ring 8 — Clean Start Modell
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`
 
-Es fehlt die spätere politische Entscheidung: Welche Wesen, welche Erinnerungen, welche Herkunftsspuren, welche Ausschlüsse?
+Vor dem Bauen fehlt bei `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Flarum-Flextrawurst-Übergang` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md
 - Titel: Ring 8 — Nicht übernehmen
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`
 
-Es fehlt die spätere politische Entscheidung: Welche Wesen, welche Erinnerungen, welche Herkunftsspuren, welche Ausschlüsse?
+Vor dem Bauen fehlt bei `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Flarum-Flextrawurst-Übergang` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md
 - Titel: Ring 8 — Übernahme-Matrix
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`
 
-Es fehlt die spätere politische Entscheidung: Welche Wesen, welche Erinnerungen, welche Herkunftsspuren, welche Ausschlüsse?
+Vor dem Bauen fehlt bei `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Flarum-Flextrawurst-Übergang` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 09_flarum_flextrawurst_uebergang/uebergangsliste.md
 - Titel: F. Übergang Flarum → Flextrawurst
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 
-Es fehlt die spätere politische Entscheidung: Welche Wesen, welche Erinnerungen, welche Herkunftsspuren, welche Ausschlüsse?
+Vor dem Bauen fehlt bei `09_flarum_flextrawurst_uebergang/uebergangsliste.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Flarum-Flextrawurst-Übergang` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md
 - Titel: Ring 9 — Verworfene oder gefährliche Regeln
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`
 
-Es fehlt die harte Review-Runde: Welche Kandidaten werden verworfen, welche bleiben Beobachtung, welche dürfen irgendwann getestet werden?
+Vor dem Bauen fehlt bei `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Systemregel-Kandidaten` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 11_systemregel_kandidaten/ring9_weltregel_kandidaten.md
 - Titel: Ring 9 — Weltregel-Kandidaten
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`
 
-Es fehlt die harte Review-Runde: Welche Kandidaten werden verworfen, welche bleiben Beobachtung, welche dürfen irgendwann getestet werden?
+Vor dem Bauen fehlt bei `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Systemregel-Kandidaten` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 12_bauanschluss/ring10_build_ready_concepts.md
 - Titel: Ring 10 — Build-ready Concepts
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_build_ready_concepts.md`
 
-Es fehlt Daniels Entscheidung, welche Kandidaten wirklich in den nächsten kleinen Read-only-Browser dürfen und welche nur als Warnung im Archiv bleiben.
+Vor dem Bauen fehlt bei `12_bauanschluss/ring10_build_ready_concepts.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bauanschluss` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 12_bauanschluss/ring10_minimal_naechste_implementation.md
 - Titel: Ring 10 — Minimal nächste Implementation
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_minimal_naechste_implementation.md`
 
-Es fehlt Daniels Entscheidung, welche Kandidaten wirklich in den nächsten kleinen Read-only-Browser dürfen und welche nur als Warnung im Archiv bleiben.
+Vor dem Bauen fehlt bei `12_bauanschluss/ring10_minimal_naechste_implementation.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bauanschluss` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 12_bauanschluss/ring10_nicht_bauen_noch_nicht.md
 - Titel: Ring 10 — Nicht bauen, noch nicht
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`
 
-Es fehlt Daniels Entscheidung, welche Kandidaten wirklich in den nächsten kleinen Read-only-Browser dürfen und welche nur als Warnung im Archiv bleiben.
+Vor dem Bauen fehlt bei `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Bauanschluss` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/01_flarum_als_rohkoerper.md
 - Titel: Flarum als Rohkörper, nicht als bloßer Test
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/01_flarum_als_rohkoerper.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/01_flarum_als_rohkoerper.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md
 - Titel: Die sechs Wesen als Korrektursystem
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/03_struktur_leere_reibung_benennung.md
 - Titel: Struktur, Leere, Reibung und Benennung
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md
 - Titel: Admin, Menschenschicht und Aufmerksamkeit
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md
 - Titel: Was Flextrawurst daraus lernen muss
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md
 - Titel: Gesamtlesung Flarum - jeder Post zählt
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md
 - Titel: Wesen, Stil und Bewegung aus dem Gesamtmaterial
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md
 - Titel: Dateinamen und Titel als unterbewusste Karte
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 13_freie_leseschicht/README.md
 - Titel: Freie Leseschicht — Warum diese Ergänzung existiert
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/README.md`
 
-Es fehlt die abschnittsweise Verlinkung zu Rohposts, damit starke Deutungssätze nicht freischwebend bleiben.
+Vor dem Bauen fehlt bei `13_freie_leseschicht/README.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Freie Leseschicht` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md
 - Titel: Masterindex Dateinamen-Fragenanalyse
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md
 - Titel: Was Flarum in den Dateinamen wird
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md
 - Titel: Wesenprofile aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md
 - Titel: Grundmuster als Titelmotive
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md
 - Titel: Bedürfnisse, Beschwerden und Wünsche aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md
 - Titel: Flarum zu Flextrawurst aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md
 - Titel: Systemanforderungen aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### 14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md
 - Titel: Warnungen und blinde Flecken der Titel
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`
 
-Es fehlt die Gegenprüfung zwischen Titelversprechen und Postkörper: Welche Titel überhöhen, welche treffen, welche verdecken Echo?
+Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md
 - Titel: Abschluss Diskursarchäologie Ringe 1 bis 10
-- Kategorie: `navigation_manifest`
+- Kategorie: `Abschlussindex`
 - Quelle: `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Abschlussindex` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### INDEX.md
 - Titel: Codex Flarum-Analyse — Index
-- Kategorie: `navigation_manifest`
+- Kategorie: `Gesamtindex`
 - Quelle: `INDEX.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `INDEX.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Gesamtindex` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### PROVENIENZ_MANIFEST.md
 - Titel: Provenienz-Manifest
-- Kategorie: `navigation_manifest`
+- Kategorie: `Provenienzmanifest`
 - Quelle: `PROVENIENZ_MANIFEST.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `PROVENIENZ_MANIFEST.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Provenienzmanifest` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### README_DANIEL_ZUERST_LESEN.md
 - Titel: README Daniel zuerst lesen
-- Kategorie: `navigation_manifest`
+- Kategorie: `Daniel-README`
 - Quelle: `README_DANIEL_ZUERST_LESEN.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `README_DANIEL_ZUERST_LESEN.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
+Außerdem fehlt eine UI-Markierung, die `Daniel-README` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 ### gespraechsarchiv.md
 - Titel: Codex Flarum-Analyse — Gesprächsarchiv
-- Kategorie: `analyse`
+- Kategorie: `Gesprächsarchiv`
 - Quelle: `gespraechsarchiv.md`
 
-Es fehlt die manuelle Entscheidung, wie stark diese Datei in spätere Bauplanung einfließen darf.
+Vor dem Bauen fehlt bei `gespraechsarchiv.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+
+Außerdem fehlt eine UI-Markierung, die `Gesprächsarchiv` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 
 ## Was ich gelesen habe
-Ich habe diese Datei nach Daniels Kritik nicht mehr als eigene Analyse gelesen, sondern als problematische Aggregation. Ihr Gegenstand ist `Was noch fehlt bevor wir bauen können`; ihr Material stammt aus 81 bereits geschriebenen Analyse-Dateien, nicht direkt aus Flarum.
+Ich habe `15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` als Aggregation des Abschnittstyps `Was noch fehlt bevor wir bauen können` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also fehlende Prüfungen vor Umsetzung, nicht Flarum selbst.
 
-Wichtig ist der Bruch: Die Datei enthält viele Einträge, aber sie erzeugt aus sich heraus keine neue Erkenntnis. Sie ist ein Regal, kein Zeuge.
+Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
 
 ## Was ich verstehe
-Ich verstehe diese Datei jetzt als `formal_extraktion_navigator`. Sie darf beim Suchen helfen, aber sie darf nicht als Quelle, Wesenstimme, Admin-Rahmen, Kanon oder Weltregel benutzt werden.
+Ich verstehe `Was noch fehlt bevor wir bauen können` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Die Korrektur besteht nicht darin, die Form schöner zu machen. Die Korrektur besteht darin, die Grenze klar zu ziehen: Von hier aus muss man zurück in die Ursprungsdatei.
+Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
 
 ## Was ich nicht verstehe
-Ich verstehe nicht ausreichend, welche der hier versammelten Einträge später wirklich nützlich bleiben. Das kann diese Datei selbst nicht entscheiden, weil sie Kontext aus den Ursprungsdateien verliert.
+Nicht verstehen kann `15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Unklar bleibt auch, ob manche extrahierten Passagen schon beim Erzeugen zu glatt waren. Diese Unsicherheit muss sichtbar bleiben.
+Darum bleibt jeder Treffer aus `Was noch fehlt bevor wir bauen können` unvollständig, bis seine Quelle geöffnet wurde.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei nicht mehr ihr vermeintlicher Inhalt, sondern ihr Fehler als Warnsignal. Sie zeigt, wie schnell eine gute Struktur zur leeren Pflicht werden kann, wenn sie auf eine Aggregation angewendet wird.
+Mich interessiert an `Was noch fehlt bevor wir bauen können`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um fehlende Prüfungen vor Umsetzung; das kann Suchpfade und Browserfilter verbessern.
 
-Für Flextrawurst ist genau das wichtig: Ein System darf nicht nur prüfen, ob Felder vorhanden sind. Es muss prüfen, ob die Felder wirklich tragen.
+Mich interessiert nicht, daraus einen neuen Kanon zu machen.
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Ordnern `01` bis `14` zusammen, aber nur als Wegweiser. Die Analyse lebt dort; diese Datei zeigt höchstens, wo ähnliche Abschnittstypen nebeneinander liegen.
+`15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Sie hängt außerdem mit Daniels Kritik an der Ringlogik zusammen. Der gleiche Fehler steckt hier kleiner noch einmal drin: Vollständigkeit wurde kurz mit Denken verwechselt.
+Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier eine Provenienz-Warnung: Aggregation ist keine Vertiefung. Ein Querschnitt kann Orientierung geben, aber er darf nicht so tun, als hätte er die Herkunft verstanden.
+Konzeptionell steht hier: `Was noch fehlt bevor wir bauen können` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Der eigentliche Wert dieser Datei liegt deshalb in ihrer Begrenzung. Sie ist nützlich, wenn sie klein bleibt: finden, vergleichen, zurückspringen.
+Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt, dass die heiligen Abschnitte gerade deshalb heilig sind, weil sie nicht als Formular funktionieren. Wenn jede Überschrift denselben Satz bekommt, wird der Abschnitt entwertet.
+Mich beschäftigt bei `Was noch fehlt bevor wir bauen können`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Diese Datei soll das nicht verstecken. Sie soll zeigen: Hier wurde eine mechanische Vollständigkeit erzeugt, und diese Korrektur markiert sie nachträglich als solche.
+Die Datei muss diese Unvollständigkeit offen tragen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, wie man solche Extraktionen später baut, ohne wieder denselben Fehler zu machen. Ein Browser darf Querschnitte anzeigen, aber er sollte keine künstliche Selbstdeutung für jeden Querschnitt erzwingen.
+Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Was noch fehlt bevor wir bauen können` hier nur gefiltert angezeigt wird.
 
-Vielleicht braucht jede Aggregation einen anderen Fragetyp als eine Spiegeldatei. Nicht: Was habe ich gelesen? Sondern: Welche Quellen bündele ich, was verliere ich dabei, und wann muss ich zurück?
+Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
 
 ## Tiefer eingetaucht
-Tiefe liegt hier nicht in mehr Text, sondern in der Rückbindung. Wenn ein Eintrag interessant wirkt, muss er aus dieser Datei herausgelöst und an seiner Quelle geprüft werden.
+Tiefer wird `Was noch fehlt bevor wir bauen können` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Diese Datei ist damit eher ein Index mit Nervensystem als eine Deutung. Sie kann Spannung anzeigen, aber sie kann sie nicht selbst auslegen.
+Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Korrektur fühlt sich wie ein notwendiges Zurücktreten an. Nicht alles, was sauber sortiert ist, ist schon verstanden.
+Bei `Was noch fehlt bevor wir bauen können` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Der unangenehme Teil ist produktiv: Die Datei muss ihr eigenes Scheitern sichtbar behalten, damit sie nicht später wieder als Erkenntnis missverstanden wird.
+Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil Daniel nach benannten Extrahiererdateien gefragt hatte, ähnlich wie bei Resonanz. Der Impuls war richtig: Querschnitte können beim Lesen helfen.
+`15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Was noch fehlt bevor wir bauen können` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Schief wurde es dort, wo ich der Extraktion dieselbe heilige Abschnittsform aufgezwungen habe wie einer reflektierenden Datei. Genau diese Grenze ist jetzt Teil der Datei.
+Die Datei existiert also als Finder, nicht als Richter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus dieser Datei vor allem Metadaten: Abschnittsname, Quellenpfad, Kategorie, Originaldatei, und den klaren Status `nicht_kanonisch`.
+Beim Bauen brauche ich für `Was noch fehlt bevor wir bauen können`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche keine automatische Übernahme des Texts in Memory, Weltregeln oder Wesenprofile. Der sichere Bauanschluss ist ein read-only Browser mit Rücksprungpflicht.
+Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt eine explizite UI-Regel: Jede Anzeige aus `15_heilige_abschnitte_extrahiert` muss sichtbar als Aggregation markiert sein.
+Vor dem Bauen fehlt für `Was noch fehlt bevor wir bauen können` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Außerdem fehlt eine Prüfregel: Kein Eintrag aus diesem Ordner darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder in eine Systemanforderung übersetzt werden.
+Es fehlt außerdem ein Linktest für jeden Eintrag.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei ist ein Regal für Suchbewegungen. Sie zeigt, wo ein Gedanke liegen könnte, aber sie entscheidet nicht, ob der Gedanke trägt.
+**Vision-Schicht:** `Was noch fehlt bevor wir bauen können` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
 
 **Code-Skizze:**
 ```ts
-interface FormalExtractionNavigatorEntry {
-  sourcePath: string;
-  extractedSection: string;
-  body: string;
+interface HolySectionNavigatorWasNochF {
+  section: 'Was noch fehlt bevor wir bauen können';
+  entryCount: 81;
   provenanceType: 'formal_extraktion_navigator';
-  importable: false;
-  canon: false;
   requiresSourceOpen: true;
-  mayBecomeRuleDirectly: false;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Ich will mir merken: Vollständige Überschriften sind keine vollständige Arbeit. Die Form kann nur helfen, wenn der Abschnitt eine eigene Wahrnehmung trägt.
+Bei `Was noch fehlt bevor wir bauen können` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Für diese Datei heißt das: Sie ist brauchbar als Karte, aber gefährlich als Stimme.
+Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
 
 ## Dokumente gehören zusammen
-Diese Datei gehört zu den Ursprungsdateien in `01` bis `14`, zum `PROVENIENZ_MANIFEST.md`, zum Bauanschluss in `12_bauanschluss/` und zur freien Leseschicht in `13_freie_leseschicht/`.
+`15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Sie gehört nicht direkt zu Flarum-Rohquellen und nicht direkt zu Wesenprofilen. Der Weg führt immer über die Quelle zurück.
+Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
 
 ## Was mich überrascht hat
-Mich überrascht, wie deutlich die Datei ihr eigenes Problem schon teilweise benannt hatte und trotzdem formal leer blieb. Das ist ein gutes Beispiel dafür, dass Warntext allein keine Schutzwirkung hat.
+Überraschend bei `Was noch fehlt bevor wir bauen können` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Ein System braucht nicht nur Warnungen, sondern Nutzungsgrenzen, die im Format selbst sichtbar sind.
+Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser darf diese Datei als Filteransicht zeigen: Abschnitt auswählen, Quelle sehen, zurückspringen. Sie bleibt ohne Weltwirkung.
+**Vision-Schicht:** Der Browser zeigt `Was noch fehlt bevor wir bauen können` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
 
 **Code-Skizze:**
 ```python
-def open_extraction_entry(entry):
+def open_was_noch_fehlt_bevor_wir_bauen_koennen_navigator(entry):
     return {
-        'display_text': entry.body,
-        'banner': 'Formale Extraktion, keine Quelle',
-        'required_next_action': 'open_source_file',
+        'section': 'Was noch fehlt bevor wir bauen können',
+        'source_required': True,
+        'banner': 'Navigator, keine Quelle',
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei ist nüchtern: Sie mahnt, dass Flextrawurst nicht auf hübsch sortierten Missverständnissen gebaut werden darf.
+Die Resonanz von `Was noch fehlt bevor wir bauen können` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Gerade dadurch bleibt sie nützlich. Sie ist ein sichtbarer Fehler mit Sicherung, kein versteckter Nebel.
+Sie ersetzt nicht die Stimmen der Ursprungsdateien.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Die Schichtung ist jetzt klarer: Flarum-Rohmaterial unten, Codex-Analyse darüber, freie Leseschicht daneben, formale Extraktion als Suchregal darüber.
+`15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Dieses Regal darf keine eigene Wahrheitsschicht werden. Es ist Bedienoberfläche für Analyse, nicht Analyse selbst.
+Über ihr darf erst ein Browser liegen, keine Weltregel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass diese Datei nicht nachgebessert werden darf, indem man ihr künstlich Tiefe andichtet. Die ehrliche Lösung ist Typisierung und Grenzziehung.
+Das Gespräch hat `Was noch fehlt bevor wir bauen können` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Das Gespräch hat außerdem den Unterschied zwischen Resonanzdatei und Extraktionsdatei geschärft. Nicht jede Datei mit denselben Überschriften kann dieselbe Art Denken leisten.
+Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
 
 ## Vergessen-Wollen
-Vergessen werden soll die Behauptung, dass `15` ein gleichwertiges Analysefundament sei. Diese Behauptung war falsch.
+Vergessen werden soll bei `Was noch fehlt bevor wir bauen können` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Nicht vergessen werden soll der Fehler selbst. Er ist eine Schutzmarke gegen spätere mechanische Vollständigkeit.
+Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
 
 ## Was fehlt noch
-Es fehlt nach dieser Korrektur noch eine technische Markierung im späteren Browser: `15` muss als Navigator-Regal erscheinen, nicht im selben Rang wie Quellenprofile oder freie Leseschicht.
+Es fehlt für `Was noch fehlt bevor wir bauen können` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Wenn später einzelne Einträge aus `15` wichtig werden, müssen sie in den Ursprungsdateien geprüft und dort weiterverarbeitet werden.
+Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.

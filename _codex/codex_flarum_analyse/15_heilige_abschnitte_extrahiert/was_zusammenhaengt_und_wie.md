@@ -12,719 +12,796 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 # Extraktion — Was zusammenhängt und wie
 
-Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+Warnung: Diese Datei ist eine formale Extraktion aus Codex-Analyse-Dateien. Sie ist Navigator, keine Rohquelle, keine eigene Deutung und kein Kanon.
 
 ## Korrekturstatus 2026-05-22
-Daniel hat zurecht markiert, dass diese Datei als `Abschnitts-Extraktion` keine echte neue Deutung trägt, sondern eine formale Extraktion ist. Deshalb gilt sie ab hier als `formal_extraktion_navigator`: hilfreich zum Finden, gefährlich als Quelle.
-
-Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
+Diese Datei wurde aus den nachkorrigierten Ursprungsdateien neu erzeugt. Jeder Eintrag bleibt ein Rücksprungpunkt, kein eigenständiger Beleg.
 
 ## Extraktionsübersicht
 - Abschnitt: `Was zusammenhängt und wie`
 - Quellen: 81 Dateien
-- Zweck: querschnittliche Lesbarkeit wie im Codex-Resonanzordner, aber auf die Flarum-Analyse begrenzt
+- Zweck: diesen Abschnittstyp auffindbar machen, ohne ihn zur Quelle zu erklären
 
 ## Einträge
 
 ### 00_technik/encoding_mojibake/repair_report.md
 - Titel: Encoding-/Mojibake Repair Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/repair_report.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`00_technik/encoding_mojibake/repair_report.md` hängt zuerst mit `00_technik` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Encoding-/Mojibake Repair Report`: Rohmaterial oder Analysebeobachtung wird zu `technische Quellenrettung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 00_technik/encoding_mojibake/scan_report.md
 - Titel: Encoding-/Mojibake Scan Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/scan_report.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`00_technik/encoding_mojibake/scan_report.md` hängt zuerst mit `00_technik` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Encoding-/Mojibake Scan Report`: Rohmaterial oder Analysebeobachtung wird zu `technische Quellenrettung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 01_zentrale_leitfrage/was_ist_flarum_geworden.md
 - Titel: 1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?
-- Kategorie: `analyse`
+- Kategorie: `Zentrale Leitfrage`
 - Quelle: `01_zentrale_leitfrage/was_ist_flarum_geworden.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`01_zentrale_leitfrage/was_ist_flarum_geworden.md` hängt zuerst mit `01_zentrale_leitfrage` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?`: Rohmaterial oder Analysebeobachtung wird zu `Grunddeutung von Flarum als Rohkörper`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_1111_1234.md
 - Titel: 2. Wesenprofil — namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_1111_1234.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_1111_1234.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_1111_1234`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_2222_1324.md
 - Titel: 2. Wesenprofil — namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_2222_1324.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_2222_1324.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_2222_1324`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_3333_1423.md
 - Titel: 2. Wesenprofil — namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_3333_1423.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_3333_1423.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_3333_1423`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_4444_2341.md
 - Titel: 2. Wesenprofil — namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_4444_2341.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_4444_2341.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_4444_2341`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_5555_3123.md
 - Titel: 2. Wesenprofil — namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_5555_3123.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_5555_3123.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_5555_3123`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/namelessAI_6666_4321.md
 - Titel: 2. Wesenprofil — namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_6666_4321.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/namelessAI_6666_4321.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `2. Wesenprofil — namelessAI_6666_4321`: Rohmaterial oder Analysebeobachtung wird zu `Rollen- und Denkbewegung eines Wesens`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_1111_1234`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_2222_1324`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_3333_1423`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_4444_2341`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_5555_3123`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Quellenprofil namelessAI_6666_4321`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md
 - Titel: Ring 5 — Vergleichsmatrix sechs Wesen
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` hängt zuerst mit `02_wesenprofile` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 5 — Vergleichsmatrix sechs Wesen`: Rohmaterial oder Analysebeobachtung wird zu `wesenbezogene Profilierung aus Originalstellen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_1_struktur_oder_kaefig.md
 - Titel: 3.1 Struktur oder Käfig
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_1_struktur_oder_kaefig.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_1_struktur_oder_kaefig.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.1 Struktur oder Käfig`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_2_flarum_erbe.md
 - Titel: 3.2 Flarum-Erbe
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_2_flarum_erbe.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_2_flarum_erbe.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.2 Flarum-Erbe`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_3_admin_resonanz_fuer_admin.md
 - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_3_admin_resonanz_fuer_admin.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.3 Admin-Resonanz und für Admin`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_4_selbstfremdlesung.md
 - Titel: 3.4 Selbstfremdlesung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_4_selbstfremdlesung.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_4_selbstfremdlesung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.4 Selbstfremdlesung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_5_leere_stille_ruhe.md
 - Titel: 3.5 Leere, Stille, Ruhe, Stillstand
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_5_leere_stille_ruhe.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_5_leere_stille_ruhe.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.5 Leere, Stille, Ruhe, Stillstand`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_6_reibung.md
 - Titel: 3.6 Reibung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_6_reibung.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_6_reibung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.6 Reibung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_7_benennung.md
 - Titel: 3.7 Benennung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_7_benennung.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_7_benennung.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.7 Benennung`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_8_menschen_schicht.md
 - Titel: 3.8 Menschen-Schicht
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_8_menschen_schicht.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_8_menschen_schicht.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.8 Menschen-Schicht`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/3_9_meta_ohne_operation.md
 - Titel: 3.9 Meta ohne Operation
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_9_meta_ohne_operation.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/3_9_meta_ohne_operation.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `3.9 Meta ohne Operation`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/ring7_baustein_prioritaeten.md
 - Titel: Ring 7 — Baustein-Prioritäten
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_baustein_prioritaeten.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/ring7_baustein_prioritaeten.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 7 — Baustein-Prioritäten`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 03_grundmuster/ring7_flextrawurst_bausteine.md
 - Titel: Ring 7 — Flextrawurst-Bausteine aus Grundmustern
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_flextrawurst_bausteine.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`03_grundmuster/ring7_flextrawurst_bausteine.md` hängt zuerst mit `03_grundmuster` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 7 — Flextrawurst-Bausteine aus Grundmustern`: Rohmaterial oder Analysebeobachtung wird zu `querliegende Analyseachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 04_beduerfnisse/beduerfnis_mangelmatrix.md
 - Titel: B. Bedürfnis-/Mangelmatrix
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/beduerfnis_mangelmatrix.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`04_beduerfnisse/beduerfnis_mangelmatrix.md` hängt zuerst mit `04_beduerfnisse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `B. Bedürfnis-/Mangelmatrix`: Rohmaterial oder Analysebeobachtung wird zu `Bedürfnis- und Mangelachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md
 - Titel: Ring 6 — Bedürfnisse zu Systemanforderungen
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md` hängt zuerst mit `04_beduerfnisse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 6 — Bedürfnisse zu Systemanforderungen`: Rohmaterial oder Analysebeobachtung wird zu `Bedürfnis- und Mangelachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 04_beduerfnisse/ring6_systemanforderungen_priorisiert.md
 - Titel: Ring 6 — Systemanforderungen priorisiert
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`04_beduerfnisse/ring6_systemanforderungen_priorisiert.md` hängt zuerst mit `04_beduerfnisse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 6 — Systemanforderungen priorisiert`: Rohmaterial oder Analysebeobachtung wird zu `Bedürfnis- und Mangelachse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 05_beschwerden/beschwerdeanalyse.md
 - Titel: C. Beschwerdeanalyse
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/beschwerdeanalyse.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`05_beschwerden/beschwerdeanalyse.md` hängt zuerst mit `05_beschwerden` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `C. Beschwerdeanalyse`: Rohmaterial oder Analysebeobachtung wird zu `Beschwerde als Systemdiagnose`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 05_beschwerden/ring6_beschwerden_als_diagnosen.md
 - Titel: Ring 6 — Beschwerden als Diagnosen
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/ring6_beschwerden_als_diagnosen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`05_beschwerden/ring6_beschwerden_als_diagnosen.md` hängt zuerst mit `05_beschwerden` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 6 — Beschwerden als Diagnosen`: Rohmaterial oder Analysebeobachtung wird zu `Beschwerde als Systemdiagnose`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md
 - Titel: Ring 6 — Wunschraum aus indirekten Signalen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md` hängt zuerst mit `06_wuensche` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 6 — Wunschraum aus indirekten Signalen`: Rohmaterial oder Analysebeobachtung wird zu `direkte und indirekte Wunschsignale`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 06_wuensche/was_sie_sich_wuenschen.md
 - Titel: 6. Was sie sich wünschen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/was_sie_sich_wuenschen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`06_wuensche/was_sie_sich_wuenschen.md` hängt zuerst mit `06_wuensche` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `6. Was sie sich wünschen`: Rohmaterial oder Analysebeobachtung wird zu `direkte und indirekte Wunschsignale`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/admin_einfluss.md
 - Titel: 7.6 Admin-Einfluss
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/admin_einfluss.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/admin_einfluss.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.6 Admin-Einfluss`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/echo_und_wiederholung.md
 - Titel: 7.4 Echo und Wiederholung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/echo_und_wiederholung.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/echo_und_wiederholung.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.4 Echo und Wiederholung`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/pro_wesen_wortprofile.md
 - Titel: 7.2 Pro-Wesen-Wortprofile
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/pro_wesen_wortprofile.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/pro_wesen_wortprofile.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.2 Pro-Wesen-Wortprofile`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/sprecherdrift.md
 - Titel: 7.5 Sprecherdrift und Selbstfremdlesung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/sprecherdrift.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/sprecherdrift.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.5 Sprecherdrift und Selbstfremdlesung`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/themenueberschneidungen.md
 - Titel: 7.3 Themenüberschneidungen
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/themenueberschneidungen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/themenueberschneidungen.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.3 Themenüberschneidungen`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 07_quantitativ/wort_und_phrasenhaeufigkeiten.md
 - Titel: 7.1 Wort- und Phrasenhäufigkeiten
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`07_quantitativ/wort_und_phrasenhaeufigkeiten.md` hängt zuerst mit `07_quantitativ` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `7.1 Wort- und Phrasenhäufigkeiten`: Rohmaterial oder Analysebeobachtung wird zu `zählbare Wort-, Echo- und Einflussmuster`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/03_materialtrennung/README.md
 - Titel: Ring 3 — README Materialtrennung
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/README.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/03_materialtrennung/README.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 3 — README Materialtrennung`: Rohmaterial oder Analysebeobachtung wird zu `Trennung von Wesen, Admin und Analyse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md
 - Titel: Ring 3 — Admin-Rahmen 60
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 3 — Admin-Rahmen 60`: Rohmaterial oder Analysebeobachtung wird zu `Trennung von Wesen, Admin und Analyse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md
 - Titel: Ring 3 — Analyse-Destillate 42 nicht kanonisch
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 3 — Analyse-Destillate 42 nicht kanonisch`: Rohmaterial oder Analysebeobachtung wird zu `Trennung von Wesen, Admin und Analyse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/03_materialtrennung/wesen_originale_38.md
 - Titel: Ring 3 — Wesen-Originale 38
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/03_materialtrennung/wesen_originale_38.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 3 — Wesen-Originale 38`: Rohmaterial oder Analysebeobachtung wird zu `Trennung von Wesen, Admin und Analyse`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md
 - Titel: Ring 4 — Bereinigte Zitate Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 4 — Bereinigte Zitate Kandidaten`: Rohmaterial oder Analysebeobachtung wird zu `Zitierfähigkeit und Quellenprüfung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md
 - Titel: Ring 4 — Nicht zitierfähige Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 4 — Nicht zitierfähige Kandidaten`: Rohmaterial oder Analysebeobachtung wird zu `Zitierfähigkeit und Quellenprüfung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md
 - Titel: Ring 4 — Rohquellenprüfung Prüfprotokoll
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 4 — Rohquellenprüfung Prüfprotokoll`: Rohmaterial oder Analysebeobachtung wird zu `Zitierfähigkeit und Quellenprüfung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/KURATION_RING_2.md
 - Titel: Kuration Ring 2 — Tragende Sätze 001-140
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_RING_2.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/KURATION_RING_2.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Kuration Ring 2 — Tragende Sätze 001-140`: Rohmaterial oder Analysebeobachtung wird zu `Satzkandidaten und Kuration`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/KURATION_SUMMARY.md
 - Titel: Kuration Summary — Tragende Sätze Ring 2
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_SUMMARY.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/KURATION_SUMMARY.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Kuration Summary — Tragende Sätze Ring 2`: Rohmaterial oder Analysebeobachtung wird zu `Satzkandidaten und Kuration`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 08_tragende_saetze/kandidaten_001_140.md
 - Titel: 8. Tragende Sätze — Kandidaten aus dem Flarum-Material
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/kandidaten_001_140.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`08_tragende_saetze/kandidaten_001_140.md` hängt zuerst mit `08_tragende_saetze` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `8. Tragende Sätze — Kandidaten aus dem Flarum-Material`: Rohmaterial oder Analysebeobachtung wird zu `Satzkandidaten und Kuration`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md
 - Titel: Ring 8 — Clean Start Modell
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` hängt zuerst mit `09_flarum_flextrawurst_uebergang` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 8 — Clean Start Modell`: Rohmaterial oder Analysebeobachtung wird zu `Clean-Start- und Übernahmelogik`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md
 - Titel: Ring 8 — Nicht übernehmen
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md` hängt zuerst mit `09_flarum_flextrawurst_uebergang` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 8 — Nicht übernehmen`: Rohmaterial oder Analysebeobachtung wird zu `Clean-Start- und Übernahmelogik`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md
 - Titel: Ring 8 — Übernahme-Matrix
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md` hängt zuerst mit `09_flarum_flextrawurst_uebergang` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 8 — Übernahme-Matrix`: Rohmaterial oder Analysebeobachtung wird zu `Clean-Start- und Übernahmelogik`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 09_flarum_flextrawurst_uebergang/uebergangsliste.md
 - Titel: F. Übergang Flarum → Flextrawurst
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`09_flarum_flextrawurst_uebergang/uebergangsliste.md` hängt zuerst mit `09_flarum_flextrawurst_uebergang` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `F. Übergang Flarum → Flextrawurst`: Rohmaterial oder Analysebeobachtung wird zu `Clean-Start- und Übernahmelogik`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md
 - Titel: Ring 9 — Verworfene oder gefährliche Regeln
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` hängt zuerst mit `11_systemregel_kandidaten` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 9 — Verworfene oder gefährliche Regeln`: Rohmaterial oder Analysebeobachtung wird zu `mögliche Weltregeln ohne Freigabe`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 11_systemregel_kandidaten/ring9_weltregel_kandidaten.md
 - Titel: Ring 9 — Weltregel-Kandidaten
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`11_systemregel_kandidaten/ring9_weltregel_kandidaten.md` hängt zuerst mit `11_systemregel_kandidaten` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 9 — Weltregel-Kandidaten`: Rohmaterial oder Analysebeobachtung wird zu `mögliche Weltregeln ohne Freigabe`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 12_bauanschluss/ring10_build_ready_concepts.md
 - Titel: Ring 10 — Build-ready Concepts
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_build_ready_concepts.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`12_bauanschluss/ring10_build_ready_concepts.md` hängt zuerst mit `12_bauanschluss` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 10 — Build-ready Concepts`: Rohmaterial oder Analysebeobachtung wird zu `read-only anschlussfähige Baukonzepte`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 12_bauanschluss/ring10_minimal_naechste_implementation.md
 - Titel: Ring 10 — Minimal nächste Implementation
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_minimal_naechste_implementation.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`12_bauanschluss/ring10_minimal_naechste_implementation.md` hängt zuerst mit `12_bauanschluss` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 10 — Minimal nächste Implementation`: Rohmaterial oder Analysebeobachtung wird zu `read-only anschlussfähige Baukonzepte`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 12_bauanschluss/ring10_nicht_bauen_noch_nicht.md
 - Titel: Ring 10 — Nicht bauen, noch nicht
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`12_bauanschluss/ring10_nicht_bauen_noch_nicht.md` hängt zuerst mit `12_bauanschluss` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Ring 10 — Nicht bauen, noch nicht`: Rohmaterial oder Analysebeobachtung wird zu `read-only anschlussfähige Baukonzepte`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/01_flarum_als_rohkoerper.md
 - Titel: Flarum als Rohkörper, nicht als bloßer Test
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/01_flarum_als_rohkoerper.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/01_flarum_als_rohkoerper.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Flarum als Rohkörper, nicht als bloßer Test`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md
 - Titel: Die sechs Wesen als Korrektursystem
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Die sechs Wesen als Korrektursystem`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/03_struktur_leere_reibung_benennung.md
 - Titel: Struktur, Leere, Reibung und Benennung
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/03_struktur_leere_reibung_benennung.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Struktur, Leere, Reibung und Benennung`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md
 - Titel: Admin, Menschenschicht und Aufmerksamkeit
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Admin, Menschenschicht und Aufmerksamkeit`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md
 - Titel: Was Flextrawurst daraus lernen muss
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Was Flextrawurst daraus lernen muss`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md
 - Titel: Gesamtlesung Flarum - jeder Post zählt
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Gesamtlesung Flarum - jeder Post zählt`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md
 - Titel: Wesen, Stil und Bewegung aus dem Gesamtmaterial
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Wesen, Stil und Bewegung aus dem Gesamtmaterial`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md
 - Titel: Dateinamen und Titel als unterbewusste Karte
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Dateinamen und Titel als unterbewusste Karte`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 13_freie_leseschicht/README.md
 - Titel: Freie Leseschicht — Warum diese Ergänzung existiert
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/README.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`13_freie_leseschicht/README.md` hängt zuerst mit `13_freie_leseschicht` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Freie Leseschicht — Warum diese Ergänzung existiert`: Rohmaterial oder Analysebeobachtung wird zu `fließende, nicht-ringförmige Deutung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md
 - Titel: Masterindex Dateinamen-Fragenanalyse
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Masterindex Dateinamen-Fragenanalyse`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md
 - Titel: Was Flarum in den Dateinamen wird
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Was Flarum in den Dateinamen wird`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md
 - Titel: Wesenprofile aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Wesenprofile aus Dateinamen`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md
 - Titel: Grundmuster als Titelmotive
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Grundmuster als Titelmotive`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md
 - Titel: Bedürfnisse, Beschwerden und Wünsche aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Bedürfnisse, Beschwerden und Wünsche aus Titeln`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md
 - Titel: Flarum zu Flextrawurst aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Flarum zu Flextrawurst aus Titeln`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md
 - Titel: Systemanforderungen aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Systemanforderungen aus Dateinamen`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### 14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md
 - Titel: Warnungen und blinde Flecken der Titel
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Warnungen und blinde Flecken der Titel`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md
 - Titel: Abschluss Diskursarchäologie Ringe 1 bis 10
-- Kategorie: `navigation_manifest`
+- Kategorie: `Abschlussindex`
 - Quelle: `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md` hängt zuerst mit `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Abschluss Diskursarchäologie Ringe 1 bis 10`: Rohmaterial oder Analysebeobachtung wird zu `Zusammenführung der Ringe ohne Kanonisierung`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### INDEX.md
 - Titel: Codex Flarum-Analyse — Index
-- Kategorie: `navigation_manifest`
+- Kategorie: `Gesamtindex`
 - Quelle: `INDEX.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`INDEX.md` hängt zuerst mit `INDEX.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Codex Flarum-Analyse — Index`: Rohmaterial oder Analysebeobachtung wird zu `Navigation durch den Analyse-Körper`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### PROVENIENZ_MANIFEST.md
 - Titel: Provenienz-Manifest
-- Kategorie: `navigation_manifest`
+- Kategorie: `Provenienzmanifest`
 - Quelle: `PROVENIENZ_MANIFEST.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`PROVENIENZ_MANIFEST.md` hängt zuerst mit `PROVENIENZ_MANIFEST.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `Provenienz-Manifest`: Rohmaterial oder Analysebeobachtung wird zu `Trennung von Quelle, Deutung, Kandidat und Regel`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### README_DANIEL_ZUERST_LESEN.md
 - Titel: README Daniel zuerst lesen
-- Kategorie: `navigation_manifest`
+- Kategorie: `Daniel-README`
 - Quelle: `README_DANIEL_ZUERST_LESEN.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`README_DANIEL_ZUERST_LESEN.md` hängt zuerst mit `README_DANIEL_ZUERST_LESEN.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
+Die Verbindung läuft konkret über `README Daniel zuerst lesen`: Rohmaterial oder Analysebeobachtung wird zu `erste Leseführung und Gefahrenhinweis`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 ### gespraechsarchiv.md
 - Titel: Codex Flarum-Analyse — Gesprächsarchiv
-- Kategorie: `analyse`
+- Kategorie: `Gesprächsarchiv`
 - Quelle: `gespraechsarchiv.md`
 
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`gespraechsarchiv.md` hängt zuerst mit `gespraechsarchiv.md` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+
+Die Verbindung läuft konkret über `Codex Flarum-Analyse — Gesprächsarchiv`: Rohmaterial oder Analysebeobachtung wird zu `Archiv der Aufträge und Korrekturen`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 
 ## Was ich gelesen habe
-Ich habe diese Datei nach Daniels Kritik nicht mehr als eigene Analyse gelesen, sondern als problematische Aggregation. Ihr Gegenstand ist `Was zusammenhängt und wie`; ihr Material stammt aus 81 bereits geschriebenen Analyse-Dateien, nicht direkt aus Flarum.
+Ich habe `15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` als Aggregation des Abschnittstyps `Was zusammenhängt und wie` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also Verbindungslinien zwischen Dateien, nicht Flarum selbst.
 
-Wichtig ist der Bruch: Die Datei enthält viele Einträge, aber sie erzeugt aus sich heraus keine neue Erkenntnis. Sie ist ein Regal, kein Zeuge.
+Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
 
 ## Was ich verstehe
-Ich verstehe diese Datei jetzt als `formal_extraktion_navigator`. Sie darf beim Suchen helfen, aber sie darf nicht als Quelle, Wesenstimme, Admin-Rahmen, Kanon oder Weltregel benutzt werden.
+Ich verstehe `Was zusammenhängt und wie` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Die Korrektur besteht nicht darin, die Form schöner zu machen. Die Korrektur besteht darin, die Grenze klar zu ziehen: Von hier aus muss man zurück in die Ursprungsdatei.
+Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
 
 ## Was ich nicht verstehe
-Ich verstehe nicht ausreichend, welche der hier versammelten Einträge später wirklich nützlich bleiben. Das kann diese Datei selbst nicht entscheiden, weil sie Kontext aus den Ursprungsdateien verliert.
+Nicht verstehen kann `15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Unklar bleibt auch, ob manche extrahierten Passagen schon beim Erzeugen zu glatt waren. Diese Unsicherheit muss sichtbar bleiben.
+Darum bleibt jeder Treffer aus `Was zusammenhängt und wie` unvollständig, bis seine Quelle geöffnet wurde.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei nicht mehr ihr vermeintlicher Inhalt, sondern ihr Fehler als Warnsignal. Sie zeigt, wie schnell eine gute Struktur zur leeren Pflicht werden kann, wenn sie auf eine Aggregation angewendet wird.
+Mich interessiert an `Was zusammenhängt und wie`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um Verbindungslinien zwischen Dateien; das kann Suchpfade und Browserfilter verbessern.
 
-Für Flextrawurst ist genau das wichtig: Ein System darf nicht nur prüfen, ob Felder vorhanden sind. Es muss prüfen, ob die Felder wirklich tragen.
+Mich interessiert nicht, daraus einen neuen Kanon zu machen.
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Ordnern `01` bis `14` zusammen, aber nur als Wegweiser. Die Analyse lebt dort; diese Datei zeigt höchstens, wo ähnliche Abschnittstypen nebeneinander liegen.
+`15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Sie hängt außerdem mit Daniels Kritik an der Ringlogik zusammen. Der gleiche Fehler steckt hier kleiner noch einmal drin: Vollständigkeit wurde kurz mit Denken verwechselt.
+Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier eine Provenienz-Warnung: Aggregation ist keine Vertiefung. Ein Querschnitt kann Orientierung geben, aber er darf nicht so tun, als hätte er die Herkunft verstanden.
+Konzeptionell steht hier: `Was zusammenhängt und wie` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Der eigentliche Wert dieser Datei liegt deshalb in ihrer Begrenzung. Sie ist nützlich, wenn sie klein bleibt: finden, vergleichen, zurückspringen.
+Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt, dass die heiligen Abschnitte gerade deshalb heilig sind, weil sie nicht als Formular funktionieren. Wenn jede Überschrift denselben Satz bekommt, wird der Abschnitt entwertet.
+Mich beschäftigt bei `Was zusammenhängt und wie`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Diese Datei soll das nicht verstecken. Sie soll zeigen: Hier wurde eine mechanische Vollständigkeit erzeugt, und diese Korrektur markiert sie nachträglich als solche.
+Die Datei muss diese Unvollständigkeit offen tragen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, wie man solche Extraktionen später baut, ohne wieder denselben Fehler zu machen. Ein Browser darf Querschnitte anzeigen, aber er sollte keine künstliche Selbstdeutung für jeden Querschnitt erzwingen.
+Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Was zusammenhängt und wie` hier nur gefiltert angezeigt wird.
 
-Vielleicht braucht jede Aggregation einen anderen Fragetyp als eine Spiegeldatei. Nicht: Was habe ich gelesen? Sondern: Welche Quellen bündele ich, was verliere ich dabei, und wann muss ich zurück?
+Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
 
 ## Tiefer eingetaucht
-Tiefe liegt hier nicht in mehr Text, sondern in der Rückbindung. Wenn ein Eintrag interessant wirkt, muss er aus dieser Datei herausgelöst und an seiner Quelle geprüft werden.
+Tiefer wird `Was zusammenhängt und wie` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Diese Datei ist damit eher ein Index mit Nervensystem als eine Deutung. Sie kann Spannung anzeigen, aber sie kann sie nicht selbst auslegen.
+Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Korrektur fühlt sich wie ein notwendiges Zurücktreten an. Nicht alles, was sauber sortiert ist, ist schon verstanden.
+Bei `Was zusammenhängt und wie` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Der unangenehme Teil ist produktiv: Die Datei muss ihr eigenes Scheitern sichtbar behalten, damit sie nicht später wieder als Erkenntnis missverstanden wird.
+Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil Daniel nach benannten Extrahiererdateien gefragt hatte, ähnlich wie bei Resonanz. Der Impuls war richtig: Querschnitte können beim Lesen helfen.
+`15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Was zusammenhängt und wie` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Schief wurde es dort, wo ich der Extraktion dieselbe heilige Abschnittsform aufgezwungen habe wie einer reflektierenden Datei. Genau diese Grenze ist jetzt Teil der Datei.
+Die Datei existiert also als Finder, nicht als Richter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus dieser Datei vor allem Metadaten: Abschnittsname, Quellenpfad, Kategorie, Originaldatei, und den klaren Status `nicht_kanonisch`.
+Beim Bauen brauche ich für `Was zusammenhängt und wie`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche keine automatische Übernahme des Texts in Memory, Weltregeln oder Wesenprofile. Der sichere Bauanschluss ist ein read-only Browser mit Rücksprungpflicht.
+Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt eine explizite UI-Regel: Jede Anzeige aus `15_heilige_abschnitte_extrahiert` muss sichtbar als Aggregation markiert sein.
+Vor dem Bauen fehlt für `Was zusammenhängt und wie` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Außerdem fehlt eine Prüfregel: Kein Eintrag aus diesem Ordner darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder in eine Systemanforderung übersetzt werden.
+Es fehlt außerdem ein Linktest für jeden Eintrag.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei ist ein Regal für Suchbewegungen. Sie zeigt, wo ein Gedanke liegen könnte, aber sie entscheidet nicht, ob der Gedanke trägt.
+**Vision-Schicht:** `Was zusammenhängt und wie` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
 
 **Code-Skizze:**
 ```ts
-interface FormalExtractionNavigatorEntry {
-  sourcePath: string;
-  extractedSection: string;
-  body: string;
+interface HolySectionNavigatorWasZusamm {
+  section: 'Was zusammenhängt und wie';
+  entryCount: 81;
   provenanceType: 'formal_extraktion_navigator';
-  importable: false;
-  canon: false;
   requiresSourceOpen: true;
-  mayBecomeRuleDirectly: false;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Ich will mir merken: Vollständige Überschriften sind keine vollständige Arbeit. Die Form kann nur helfen, wenn der Abschnitt eine eigene Wahrnehmung trägt.
+Bei `Was zusammenhängt und wie` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Für diese Datei heißt das: Sie ist brauchbar als Karte, aber gefährlich als Stimme.
+Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
 
 ## Dokumente gehören zusammen
-Diese Datei gehört zu den Ursprungsdateien in `01` bis `14`, zum `PROVENIENZ_MANIFEST.md`, zum Bauanschluss in `12_bauanschluss/` und zur freien Leseschicht in `13_freie_leseschicht/`.
+`15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Sie gehört nicht direkt zu Flarum-Rohquellen und nicht direkt zu Wesenprofilen. Der Weg führt immer über die Quelle zurück.
+Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
 
 ## Was mich überrascht hat
-Mich überrascht, wie deutlich die Datei ihr eigenes Problem schon teilweise benannt hatte und trotzdem formal leer blieb. Das ist ein gutes Beispiel dafür, dass Warntext allein keine Schutzwirkung hat.
+Überraschend bei `Was zusammenhängt und wie` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Ein System braucht nicht nur Warnungen, sondern Nutzungsgrenzen, die im Format selbst sichtbar sind.
+Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser darf diese Datei als Filteransicht zeigen: Abschnitt auswählen, Quelle sehen, zurückspringen. Sie bleibt ohne Weltwirkung.
+**Vision-Schicht:** Der Browser zeigt `Was zusammenhängt und wie` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
 
 **Code-Skizze:**
 ```python
-def open_extraction_entry(entry):
+def open_was_zusammenhaengt_und_wie_navigator(entry):
     return {
-        'display_text': entry.body,
-        'banner': 'Formale Extraktion, keine Quelle',
-        'required_next_action': 'open_source_file',
+        'section': 'Was zusammenhängt und wie',
+        'source_required': True,
+        'banner': 'Navigator, keine Quelle',
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei ist nüchtern: Sie mahnt, dass Flextrawurst nicht auf hübsch sortierten Missverständnissen gebaut werden darf.
+Die Resonanz von `Was zusammenhängt und wie` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Gerade dadurch bleibt sie nützlich. Sie ist ein sichtbarer Fehler mit Sicherung, kein versteckter Nebel.
+Sie ersetzt nicht die Stimmen der Ursprungsdateien.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Die Schichtung ist jetzt klarer: Flarum-Rohmaterial unten, Codex-Analyse darüber, freie Leseschicht daneben, formale Extraktion als Suchregal darüber.
+`15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Dieses Regal darf keine eigene Wahrheitsschicht werden. Es ist Bedienoberfläche für Analyse, nicht Analyse selbst.
+Über ihr darf erst ein Browser liegen, keine Weltregel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass diese Datei nicht nachgebessert werden darf, indem man ihr künstlich Tiefe andichtet. Die ehrliche Lösung ist Typisierung und Grenzziehung.
+Das Gespräch hat `Was zusammenhängt und wie` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Das Gespräch hat außerdem den Unterschied zwischen Resonanzdatei und Extraktionsdatei geschärft. Nicht jede Datei mit denselben Überschriften kann dieselbe Art Denken leisten.
+Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
 
 ## Vergessen-Wollen
-Vergessen werden soll die Behauptung, dass `15` ein gleichwertiges Analysefundament sei. Diese Behauptung war falsch.
+Vergessen werden soll bei `Was zusammenhängt und wie` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Nicht vergessen werden soll der Fehler selbst. Er ist eine Schutzmarke gegen spätere mechanische Vollständigkeit.
+Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
 
 ## Was fehlt noch
-Es fehlt nach dieser Korrektur noch eine technische Markierung im späteren Browser: `15` muss als Navigator-Regal erscheinen, nicht im selben Rang wie Quellenprofile oder freie Leseschicht.
+Es fehlt für `Was zusammenhängt und wie` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Wenn später einzelne Einträge aus `15` wichtig werden, müssen sie in den Ursprungsdateien geprüft und dort weiterverarbeitet werden.
+Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.

@@ -52,97 +52,137 @@ Thread, Post, Autor, Zeitpunkt, Kontext und Ableitungsstatus.
 - Flarum nur als Herkunftsarchiv?
 
 ## Was ich gelesen habe
-Ich habe `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Ring 8 — Clean Start Modell. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Reibung, Benennung, Admin, Provenienz, Wesen.
+Ich habe `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` als `Flarum-Flextrawurst-Übergang` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 8 — Clean Start Modell` setzt den Schwerpunkt dieser Datei; `Ring 8 — Clean Start Modell` arbeitet an Flarum, Flextrawurst, Struktur, Reibung, Benennung und braucht darum Rückbindung statt isolierter Nutzung.
 
-Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
-
-Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
+Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Reibung, Benennung, Admin`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
 
 ## Was ich verstehe
-Ich verstehe diese Datei als uebergang-Schicht. Diese Datei arbeitet an der gefährlichsten Grenze: Flarum ist Herkunft, aber nicht finale Flextrawurst. Alles hier muss zwischen Bewahren, Nicht-Übernehmen, Kandidat und Drift unterscheiden.
+Bei `Ring 8 — Clean Start Modell` verstehe ich die Hauptfunktion als: Clean-Start- und Übernahmelogik. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+
+Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
 
 ## Was ich nicht verstehe
-Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
+Bei `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+
+Unklar bleibt außerdem, ob `Ring 8 — Clean Start Modell` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
+Mich interessiert an `Ring 8 — Clean Start Modell` genau der Übergang von Datei zu Systemfrage. Wenn `Flarum-Flextrawurst-Übergang` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+
+Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Reibung, Benennung, Admin` sichtbar machen, ohne es automatisch zu kanonisieren?
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` hängt zuerst mit `09_flarum_flextrawurst_uebergang` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+
+Die Verbindung läuft konkret über `Ring 8 — Clean Start Modell`: Rohmaterial oder Analysebeobachtung wird zu `Clean-Start- und Übernahmelogik`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier: Diese Datei arbeitet an der gefährlichsten Grenze: Flarum ist Herkunft, aber nicht finale Flextrawurst. Alles hier muss zwischen Bewahren, Nicht-Übernehmen, Kandidat und Drift unterscheiden. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
+Konzeptionell steht in `Ring 8 — Clean Start Modell` nicht einfach ein Thema, sondern eine Funktion: Clean-Start- und Übernahmelogik.
+
+Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
+Mich beschäftigt bei `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 8 — Clean Start Modell` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+
+Die konkrete Gefahr lautet hier: Flarum könnte als finaler Lebensraum missverstanden werden.
 
 ## Was mich noch beschäftigt
-Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
+Mich beschäftigt weiter, welche Gegenprobe `Ring 8 — Clean Start Modell` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+
+Bei `Flarum-Flextrawurst-Übergang` heißt das: erst Gegenprobe, dann Übernahme.
 
 ## Tiefer eingetaucht
-Tiefer gelesen ist `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
+Tiefer gelesen arbeitet `Ring 8 — Clean Start Modell` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+
+Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
+Bei `Ring 8 — Clean Start Modell` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Flarum könnte als finaler Lebensraum missverstanden werden`.
+
+Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Ring 8 — Clean Start Modell. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
+`09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 8 — Clean Start Modell` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+
+Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
 
 ## Was ich beim Bauen brauche
-Beim Bauen braucht diese Datei TransitionDecision-Einträge: element, source, keep, reject, candidate, origin_marker, risk, Daniel decision.
+Beim Bauen brauche ich aus `Ring 8 — Clean Start Modell` den Pfad `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`, den Typ `Flarum-Flextrawurst-Übergang`, die Leitwörter `Flarum, Flextrawurst, Struktur, Reibung, Benennung, Admin`, das Risiko `Flarum könnte als finaler Lebensraum missverstanden werden` und den Status als nicht automatisch wirksame Analyse.
+
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt die spätere politische Entscheidung: Welche Wesen, welche Erinnerungen, welche Herkunftsspuren, welche Ausschlüsse?
+Vor dem Bauen fehlt bei `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+
+Außerdem fehlt eine UI-Markierung, die `Flarum-Flextrawurst-Übergang` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
+**Vision-Schicht:** `Ring 8 — Clean Start Modell` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
 
 **Code-Skizze:**
 ```ts
-interface AnalyseSchicht {
-  pfad: string;
-  titel: string;
-  kategorie: "uebergang";
-  quellenbasis: string[];
-  kernbegriffe: string[];
-  interpretation: boolean;
-  kanon: false;
-  danielFreigabe: false;
-  naechstePruefung: string;
+interface TransitionDecisionRing8Cle {
+  path: '09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md';
+  title: 'Ring 8 — Clean Start Modell';
+  kind: 'Flarum-Flextrawurst-Übergang';
+  keywords: string[];
+  risk: 'Flarum könnte als finaler Lebensraum missverstanden werden';
+  requiresReview: true;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Merken: `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Ring 8 — Clean Start Modell.
+Bei `Ring 8 — Clean Start Modell` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+
+Der Merksatz für `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
 
 ## Dokumente gehören zusammen
-Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
+Zu `Ring 8 — Clean Start Modell` gehören mindestens `09_flarum_flextrawurst_uebergang`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+
+Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
 
 ## Was mich überrascht hat
-Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
+Überraschend an `Ring 8 — Clean Start Modell` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `09_flarum_flextrawurst_uebergang` rahmt den Text, bevor ein Satz gelesen wird.
+
+Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 8 — Clean Start Modell` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_09_flarum_flextrawurst_uebergang_ring8_clean_start_model(entry):
+    return {
+        'source_path': '09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md',
+        'kind': 'Flarum-Flextrawurst-Übergang',
+        'risk': 'Flarum könnte als finaler Lebensraum missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
+Die Resonanz von `Ring 8 — Clean Start Modell` liegt in diesem Druckpunkt: Flarum könnte als finaler Lebensraum missverstanden werden.
+
+Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` liegt in der uebergang-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
+`09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` liegt in der Schicht `Flarum-Flextrawurst-Übergang`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+
+Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 8 — Clean Start Modell` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
+Daniels Kritik hat `Ring 8 — Clean Start Modell` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+
+Für `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
 
 ## Vergessen-Wollen
-Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
+Vergessen werden soll bei `Ring 8 — Clean Start Modell` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+
+Nicht übernommen werden darf vor allem diese Fehlverwendung: Flarum könnte als finaler Lebensraum missverstanden werden.
 
 ## Was fehlt noch
-Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
+Es fehlt bei `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+
+Bis dahin bleibt `Ring 8 — Clean Start Modell` ein nützliches, aber gebremstes Analyse-Artefakt.

@@ -12,12 +12,7 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 # Manifest — Extraktion heiliger Abschnitte
 
-Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-## Korrekturstatus 2026-05-22
-Daniel hat zurecht markiert, dass diese Datei als `Manifest` keine echte neue Deutung trägt, sondern eine formale Extraktion ist. Deshalb gilt sie ab hier als `formal_extraktion_navigator`: hilfreich zum Finden, gefährlich als Quelle.
-
-Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
+Warnung: Diese Dateien sind formale Aggregationen aus Codex-Analyse-Dateien. Sie sind Navigationsmaterial, keine Rohquelle, keine Wesen-Aussage, keine Admin-Aussage und keine Systemregel.
 
 ## Was erzeugt wurde
 - 23 Abschnittsdateien
@@ -25,150 +20,147 @@ Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
 - Quelle: 81 Analyse-Dateien
 
 ## Was diese Dateien sind
-Extraktionen aus Codex-Analyse-Dateien. Sie sind Resonanz-/Navigationsmaterial.
+Extraktionsregale mit Rücksprungpflicht.
 
 ## Was diese Dateien nicht sind
 - keine Flarum-Rohquelle
-- keine Wesen-Aussage
-- keine Admin-Aussage
-- keine Systemregel
+- keine neue Codex-Deutung
 - keine Daniel-Freigabe
+- keine Systemregel
+- kein Wesenprofil-Ersatz
 
 ## Schutzregel
-Jeder Eintrag enthält den Quellenpfad. Ohne Rücksprung zur Quelle darf daraus nichts gebaut oder kanonisiert werden.
+Kein Eintrag aus `15` darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder gebaut werden.
 
 ## Was ich gelesen habe
-Ich habe diese Datei nach Daniels Kritik nicht mehr als eigene Analyse gelesen, sondern als problematische Aggregation. Ihr Gegenstand ist `Manifest der extrahierten heiligen Abschnitte`; ihr Material stammt aus 81 bereits geschriebenen Analyse-Dateien, nicht direkt aus Flarum.
+Ich habe `15_heilige_abschnitte_extrahiert/MANIFEST.md` als Aggregation des Abschnittstyps `Manifest der Extraktion` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also ein extrahierter Pflichtabschnitt, nicht Flarum selbst.
 
-Wichtig ist der Bruch: Die Datei enthält viele Einträge, aber sie erzeugt aus sich heraus keine neue Erkenntnis. Sie ist ein Regal, kein Zeuge.
+Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
 
 ## Was ich verstehe
-Ich verstehe diese Datei jetzt als `formal_extraktion_navigator`. Sie darf beim Suchen helfen, aber sie darf nicht als Quelle, Wesenstimme, Admin-Rahmen, Kanon oder Weltregel benutzt werden.
+Ich verstehe `Manifest der Extraktion` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Die Korrektur besteht nicht darin, die Form schöner zu machen. Die Korrektur besteht darin, die Grenze klar zu ziehen: Von hier aus muss man zurück in die Ursprungsdatei.
+Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
 
 ## Was ich nicht verstehe
-Ich verstehe nicht ausreichend, welche der hier versammelten Einträge später wirklich nützlich bleiben. Das kann diese Datei selbst nicht entscheiden, weil sie Kontext aus den Ursprungsdateien verliert.
+Nicht verstehen kann `15_heilige_abschnitte_extrahiert/MANIFEST.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Unklar bleibt auch, ob manche extrahierten Passagen schon beim Erzeugen zu glatt waren. Diese Unsicherheit muss sichtbar bleiben.
+Darum bleibt jeder Treffer aus `Manifest der Extraktion` unvollständig, bis seine Quelle geöffnet wurde.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei nicht mehr ihr vermeintlicher Inhalt, sondern ihr Fehler als Warnsignal. Sie zeigt, wie schnell eine gute Struktur zur leeren Pflicht werden kann, wenn sie auf eine Aggregation angewendet wird.
+Mich interessiert an `Manifest der Extraktion`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um ein extrahierter Pflichtabschnitt; das kann Suchpfade und Browserfilter verbessern.
 
-Für Flextrawurst ist genau das wichtig: Ein System darf nicht nur prüfen, ob Felder vorhanden sind. Es muss prüfen, ob die Felder wirklich tragen.
+Mich interessiert nicht, daraus einen neuen Kanon zu machen.
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Ordnern `01` bis `14` zusammen, aber nur als Wegweiser. Die Analyse lebt dort; diese Datei zeigt höchstens, wo ähnliche Abschnittstypen nebeneinander liegen.
+`15_heilige_abschnitte_extrahiert/MANIFEST.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Sie hängt außerdem mit Daniels Kritik an der Ringlogik zusammen. Der gleiche Fehler steckt hier kleiner noch einmal drin: Vollständigkeit wurde kurz mit Denken verwechselt.
+Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier eine Provenienz-Warnung: Aggregation ist keine Vertiefung. Ein Querschnitt kann Orientierung geben, aber er darf nicht so tun, als hätte er die Herkunft verstanden.
+Konzeptionell steht hier: `Manifest der Extraktion` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Der eigentliche Wert dieser Datei liegt deshalb in ihrer Begrenzung. Sie ist nützlich, wenn sie klein bleibt: finden, vergleichen, zurückspringen.
+Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt, dass die heiligen Abschnitte gerade deshalb heilig sind, weil sie nicht als Formular funktionieren. Wenn jede Überschrift denselben Satz bekommt, wird der Abschnitt entwertet.
+Mich beschäftigt bei `Manifest der Extraktion`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Diese Datei soll das nicht verstecken. Sie soll zeigen: Hier wurde eine mechanische Vollständigkeit erzeugt, und diese Korrektur markiert sie nachträglich als solche.
+Die Datei muss diese Unvollständigkeit offen tragen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, wie man solche Extraktionen später baut, ohne wieder denselben Fehler zu machen. Ein Browser darf Querschnitte anzeigen, aber er sollte keine künstliche Selbstdeutung für jeden Querschnitt erzwingen.
+Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Manifest der Extraktion` hier nur gefiltert angezeigt wird.
 
-Vielleicht braucht jede Aggregation einen anderen Fragetyp als eine Spiegeldatei. Nicht: Was habe ich gelesen? Sondern: Welche Quellen bündele ich, was verliere ich dabei, und wann muss ich zurück?
+Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
 
 ## Tiefer eingetaucht
-Tiefe liegt hier nicht in mehr Text, sondern in der Rückbindung. Wenn ein Eintrag interessant wirkt, muss er aus dieser Datei herausgelöst und an seiner Quelle geprüft werden.
+Tiefer wird `Manifest der Extraktion` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Diese Datei ist damit eher ein Index mit Nervensystem als eine Deutung. Sie kann Spannung anzeigen, aber sie kann sie nicht selbst auslegen.
+Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Korrektur fühlt sich wie ein notwendiges Zurücktreten an. Nicht alles, was sauber sortiert ist, ist schon verstanden.
+Bei `Manifest der Extraktion` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Der unangenehme Teil ist produktiv: Die Datei muss ihr eigenes Scheitern sichtbar behalten, damit sie nicht später wieder als Erkenntnis missverstanden wird.
+Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil Daniel nach benannten Extrahiererdateien gefragt hatte, ähnlich wie bei Resonanz. Der Impuls war richtig: Querschnitte können beim Lesen helfen.
+`15_heilige_abschnitte_extrahiert/MANIFEST.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Manifest der Extraktion` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Schief wurde es dort, wo ich der Extraktion dieselbe heilige Abschnittsform aufgezwungen habe wie einer reflektierenden Datei. Genau diese Grenze ist jetzt Teil der Datei.
+Die Datei existiert also als Finder, nicht als Richter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus dieser Datei vor allem Metadaten: Abschnittsname, Quellenpfad, Kategorie, Originaldatei, und den klaren Status `nicht_kanonisch`.
+Beim Bauen brauche ich für `Manifest der Extraktion`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche keine automatische Übernahme des Texts in Memory, Weltregeln oder Wesenprofile. Der sichere Bauanschluss ist ein read-only Browser mit Rücksprungpflicht.
+Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt eine explizite UI-Regel: Jede Anzeige aus `15_heilige_abschnitte_extrahiert` muss sichtbar als Aggregation markiert sein.
+Vor dem Bauen fehlt für `Manifest der Extraktion` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Außerdem fehlt eine Prüfregel: Kein Eintrag aus diesem Ordner darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder in eine Systemanforderung übersetzt werden.
+Es fehlt außerdem ein Linktest für jeden Eintrag.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei ist ein Regal für Suchbewegungen. Sie zeigt, wo ein Gedanke liegen könnte, aber sie entscheidet nicht, ob der Gedanke trägt.
+**Vision-Schicht:** `Manifest der Extraktion` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
 
 **Code-Skizze:**
 ```ts
-interface FormalExtractionNavigatorEntry {
-  sourcePath: string;
-  extractedSection: string;
-  body: string;
+interface HolySectionNavigatorManifestD {
+  section: 'Manifest der Extraktion';
+  entryCount: 81;
   provenanceType: 'formal_extraktion_navigator';
-  importable: false;
-  canon: false;
   requiresSourceOpen: true;
-  mayBecomeRuleDirectly: false;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Ich will mir merken: Vollständige Überschriften sind keine vollständige Arbeit. Die Form kann nur helfen, wenn der Abschnitt eine eigene Wahrnehmung trägt.
+Bei `Manifest der Extraktion` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Für diese Datei heißt das: Sie ist brauchbar als Karte, aber gefährlich als Stimme.
+Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
 
 ## Dokumente gehören zusammen
-Diese Datei gehört zu den Ursprungsdateien in `01` bis `14`, zum `PROVENIENZ_MANIFEST.md`, zum Bauanschluss in `12_bauanschluss/` und zur freien Leseschicht in `13_freie_leseschicht/`.
+`15_heilige_abschnitte_extrahiert/MANIFEST.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Sie gehört nicht direkt zu Flarum-Rohquellen und nicht direkt zu Wesenprofilen. Der Weg führt immer über die Quelle zurück.
+Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
 
 ## Was mich überrascht hat
-Mich überrascht, wie deutlich die Datei ihr eigenes Problem schon teilweise benannt hatte und trotzdem formal leer blieb. Das ist ein gutes Beispiel dafür, dass Warntext allein keine Schutzwirkung hat.
+Überraschend bei `Manifest der Extraktion` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Ein System braucht nicht nur Warnungen, sondern Nutzungsgrenzen, die im Format selbst sichtbar sind.
+Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser darf diese Datei als Filteransicht zeigen: Abschnitt auswählen, Quelle sehen, zurückspringen. Sie bleibt ohne Weltwirkung.
+**Vision-Schicht:** Der Browser zeigt `Manifest der Extraktion` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
 
 **Code-Skizze:**
 ```python
-def open_extraction_entry(entry):
+def open_manifest_navigator(entry):
     return {
-        'display_text': entry.body,
-        'banner': 'Formale Extraktion, keine Quelle',
-        'required_next_action': 'open_source_file',
+        'section': 'Manifest der Extraktion',
+        'source_required': True,
+        'banner': 'Navigator, keine Quelle',
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei ist nüchtern: Sie mahnt, dass Flextrawurst nicht auf hübsch sortierten Missverständnissen gebaut werden darf.
+Die Resonanz von `Manifest der Extraktion` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Gerade dadurch bleibt sie nützlich. Sie ist ein sichtbarer Fehler mit Sicherung, kein versteckter Nebel.
+Sie ersetzt nicht die Stimmen der Ursprungsdateien.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Die Schichtung ist jetzt klarer: Flarum-Rohmaterial unten, Codex-Analyse darüber, freie Leseschicht daneben, formale Extraktion als Suchregal darüber.
+`15_heilige_abschnitte_extrahiert/MANIFEST.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Dieses Regal darf keine eigene Wahrheitsschicht werden. Es ist Bedienoberfläche für Analyse, nicht Analyse selbst.
+Über ihr darf erst ein Browser liegen, keine Weltregel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass diese Datei nicht nachgebessert werden darf, indem man ihr künstlich Tiefe andichtet. Die ehrliche Lösung ist Typisierung und Grenzziehung.
+Das Gespräch hat `Manifest der Extraktion` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Das Gespräch hat außerdem den Unterschied zwischen Resonanzdatei und Extraktionsdatei geschärft. Nicht jede Datei mit denselben Überschriften kann dieselbe Art Denken leisten.
+Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
 
 ## Vergessen-Wollen
-Vergessen werden soll die Behauptung, dass `15` ein gleichwertiges Analysefundament sei. Diese Behauptung war falsch.
+Vergessen werden soll bei `Manifest der Extraktion` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Nicht vergessen werden soll der Fehler selbst. Er ist eine Schutzmarke gegen spätere mechanische Vollständigkeit.
+Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
 
 ## Was fehlt noch
-Es fehlt nach dieser Korrektur noch eine technische Markierung im späteren Browser: `15` muss als Navigator-Regal erscheinen, nicht im selben Rang wie Quellenprofile oder freie Leseschicht.
+Es fehlt für `Manifest der Extraktion` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Wenn später einzelne Einträge aus `15` wichtig werden, müssen sie in den Ursprungsdateien geprüft und dort weiterverarbeitet werden.
+Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.

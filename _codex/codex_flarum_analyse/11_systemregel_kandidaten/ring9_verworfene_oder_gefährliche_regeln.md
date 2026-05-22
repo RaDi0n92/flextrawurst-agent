@@ -30,97 +30,137 @@ Gefahrenliste, keine Weltregel
 - Jede Sprecherdrift ist Identität.
 
 ## Was ich gelesen habe
-Ich habe `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` als Datei innerhalb des Flarum-Analyse-Körpers gelesen, nicht isoliert. Der Haupttext arbeitet an: Ring 9 — Verworfene oder gefährliche Regeln. Die relevanten Spannungswörter hier sind: Flarum, Flextrawurst, Struktur, Käfig, Leere, Admin, Provenienz, Wesen.
+Ich habe `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` als `Systemregel-Kandidaten` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Ring 9 — Verworfene oder gefährliche Regeln` setzt den Schwerpunkt dieser Datei; `Ring 9 — Verworfene oder gefährliche Regeln` arbeitet an Flarum, Flextrawurst, Struktur, Käfig, Leere und braucht darum Rückbindung statt isolierter Nutzung.
 
-Dabei lese ich den Befund nicht als endgültige Wahrheit, sondern als Schicht über dem Rohmaterial. Wichtig ist, ob die Datei Quelle, Zählung, Interpretation, Kandidat oder Bauanschluss ist.
-
-Die Datei muss deshalb immer mit ihrer Provenienz gelesen werden: Was stammt aus Flarum, was aus Codex-Deutung, was aus Daniel-Rahmung, was aus maschineller Sortierung?
+Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Spannung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
 
 ## Was ich verstehe
-Ich verstehe diese Datei als systemregel-Schicht. Diese Datei sammelt Regeln gerade dadurch, dass sie sie nicht aktiviert. Weltregel-Kandidaten sind gefährlich, weil sie oft gut klingen, bevor sie ausreichend belegt sind.
+Bei `Ring 9 — Verworfene oder gefährliche Regeln` verstehe ich die Hauptfunktion als: mögliche Weltregeln ohne Freigabe. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
+
+Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
 
 ## Was ich nicht verstehe
-Noch nicht vollständig geklärt ist, wie stark dieser Befund später wirken darf. Die offene Frage ist nicht nur „stimmt das?“, sondern: Welche Rohstellen tragen es, welche Gegenbeispiele gibt es, und wo beginnt Codex-Deutung?
+Bei `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
+
+Unklar bleibt außerdem, ob `Ring 9 — Verworfene oder gefährliche Regeln` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei die Stelle, an der aus Text Material für Flextrawurst wird. Nicht als Import, sondern als Frage: Welche Mechanik, welches Datenfeld, welcher Filter oder welche Warnung müsste existieren, damit dieser Befund nicht verloren oder überhöht wird?
+Mich interessiert an `Ring 9 — Verworfene oder gefährliche Regeln` genau der Übergang von Datei zu Systemfrage. Wenn `Systemregel-Kandidaten` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
+
+Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Spannung` sichtbar machen, ohne es automatisch zu kanonisieren?
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Rohposts, Ring-2-Kuration, Materialtrennung, freier Leseschicht und Bauanschluss zusammen. Sie steht zwischen Beobachtung und möglicher Systemform: Erst Quelle, dann Kandidat, dann Prüfung, dann vielleicht Mechanismus.
+`11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` hängt zuerst mit `11_systemregel_kandidaten` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
+
+Die Verbindung läuft konkret über `Ring 9 — Verworfene oder gefährliche Regeln`: Rohmaterial oder Analysebeobachtung wird zu `mögliche Weltregeln ohne Freigabe`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier: Diese Datei sammelt Regeln gerade dadurch, dass sie sie nicht aktiviert. Weltregel-Kandidaten sind gefährlich, weil sie oft gut klingen, bevor sie ausreichend belegt sind. Für Flextrawurst ist der Kern nicht der einzelne Satz, sondern die Unterscheidung, die er erzwingt.
+Konzeptionell steht in `Ring 9 — Verworfene oder gefährliche Regeln` nicht einfach ein Thema, sondern eine Funktion: mögliche Weltregeln ohne Freigabe.
+
+Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt hier, wie leicht gute Struktur das Denken ersetzen kann. Diese Datei soll nicht nur vollständig sein; sie muss zeigen, wo sie Flextrawurst vorsichtiger, genauer oder lebendiger machen würde.
+Mich beschäftigt bei `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Ring 9 — Verworfene oder gefährliche Regeln` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
+
+Die konkrete Gefahr lautet hier: Kandidat könnte aktiviert werden.
 
 ## Was mich noch beschäftigt
-Offen bleibt, welche Teile dieser Datei wirklich gegen Rohquellen hart sind und welche nur plausibel klingen. Gerade plausible Sätze sind riskant, weil sie schnell in spätere Systemlogik rutschen.
+Mich beschäftigt weiter, welche Gegenprobe `Ring 9 — Verworfene oder gefährliche Regeln` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
+
+Bei `Systemregel-Kandidaten` heißt das: erst Gegenprobe, dann Übernahme.
 
 ## Tiefer eingetaucht
-Tiefer gelesen ist `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` kein isolierter Bericht, sondern ein Testfall für Provenienz. Die entscheidende Frage lautet: Welche spätere Fehlkonstruktion würde entstehen, wenn man diese Datei ohne ihre Warnungen übernimmt?
+Tiefer gelesen arbeitet `Ring 9 — Verworfene oder gefährliche Regeln` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
+
+Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Nachschärfung fühlt sich wie eine Korrektur an: Die Pflichtabschnitte sollen nicht mehr Tapete sein, sondern kleine Denkfenster. Bei dieser Datei heißt das, ihre konkrete Gefahr und ihren konkreten Nutzen auszusprechen.
+Bei `Ring 9 — Verworfene oder gefährliche Regeln` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Kandidat könnte aktiviert werden`.
+
+Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil im Flarum-Material etwas sonst zu schnell verschwimmen würde: Ring 9 — Verworfene oder gefährliche Regeln. Sie hält eine Analyseachse fest, die später geprüft, widersprochen oder in ein Werkzeug übersetzt werden kann.
+`11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Ring 9 — Verworfene oder gefährliche Regeln` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
+
+Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
 
 ## Was ich beim Bauen brauche
-Beim Bauen braucht diese Datei WorldRuleCandidate mit status „candidate“, Gegenbelegen, Herkunftstyp und expliziter Daniel-Freigabe nein.
+Beim Bauen brauche ich aus `Ring 9 — Verworfene oder gefährliche Regeln` den Pfad `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`, den Typ `Systemregel-Kandidaten`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Spannung`, das Risiko `Kandidat könnte aktiviert werden` und den Status als nicht automatisch wirksame Analyse.
+
+Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt die harte Review-Runde: Welche Kandidaten werden verworfen, welche bleiben Beobachtung, welche dürfen irgendwann getestet werden?
+Vor dem Bauen fehlt bei `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
+
+Außerdem fehlt eine UI-Markierung, die `Systemregel-Kandidaten` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei braucht eine eigene Herkunftsmarkierung: Sie darf gelesen, verglichen und befragt werden, aber nicht ohne Prüfung wirken.
+**Vision-Schicht:** `Ring 9 — Verworfene oder gefährliche Regeln` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
 
 **Code-Skizze:**
 ```ts
-interface AnalyseSchicht {
-  pfad: string;
-  titel: string;
-  kategorie: "systemregel";
-  quellenbasis: string[];
-  kernbegriffe: string[];
-  interpretation: boolean;
-  kanon: false;
-  danielFreigabe: false;
-  naechstePruefung: string;
+interface WorldRuleCandidateRing9Ver {
+  path: '11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md';
+  title: 'Ring 9 — Verworfene oder gefährliche Regeln';
+  kind: 'Systemregel-Kandidaten';
+  keywords: string[];
+  risk: 'Kandidat könnte aktiviert werden';
+  requiresReview: true;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Merken: `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` darf nicht als fertiger Baustein gelesen werden. Sein Wert liegt darin, eine Frage schärfer zu machen: Ring 9 — Verworfene oder gefährliche Regeln.
+Bei `Ring 9 — Verworfene oder gefährliche Regeln` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
+
+Der Merksatz für `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
 
 ## Dokumente gehören zusammen
-Zusammengehörig sind diese Datei, die Rohposts im Flarum-Export, `PROVENIENZ_MANIFEST.md`, die Materialtrennung der tragenden Sätze und die freie Leseschicht. Erst zusammen zeigen sie Quelle, Deutung und Bauvorsicht.
+Zu `Ring 9 — Verworfene oder gefährliche Regeln` gehören mindestens `11_systemregel_kandidaten`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
+
+Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
 
 ## Was mich überrascht hat
-Überraschend ist, wie schnell selbst eine gut gemeinte Analyse-Schicht wieder zur scheinbaren Autorität wird. Darum muss diese Datei ihre eigene Begrenzung mitführen.
+Überraschend an `Ring 9 — Verworfene oder gefährliche Regeln` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `11_systemregel_kandidaten` rahmt den Text, bevor ein Satz gelesen wird.
+
+Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 9 — Verworfene oder gefährliche Regeln` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_11_systemregel_kandidaten_ring9_verworfene_oder_gefaehrl(entry):
+    return {
+        'source_path': '11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md',
+        'kind': 'Systemregel-Kandidaten',
+        'risk': 'Kandidat könnte aktiviert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei liegt in ihrer Reibung: Sie sagt nicht nur „das ist so“, sondern zwingt zu fragen, was Flextrawurst daraus nicht falsch machen darf.
+Die Resonanz von `Ring 9 — Verworfene oder gefährliche Regeln` liegt in diesem Druckpunkt: Kandidat könnte aktiviert werden.
+
+Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Ich sehe hier Rohmaterial, Analyse, Kandidat und Bauanschluss als getrennte Schichten. `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` liegt in der systemregel-Schicht und darf nur über Provenienzbrücken in spätere Systeme wandern.
+`11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` liegt in der Schicht `Systemregel-Kandidaten`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
+
+Die Datei darf diese Schichten nicht überspringen. Gerade `Ring 9 — Verworfene oder gefährliche Regeln` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass vollständige Abschnitte nicht reichen. Jede Pflichtüberschrift muss eigenes Denken tragen, sonst wird Struktur wieder zur leeren Form.
+Daniels Kritik hat `Ring 9 — Verworfene oder gefährliche Regeln` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
+
+Für `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
 
 ## Vergessen-Wollen
-Vergessen will ich die bequeme Abkürzung, einen Abschnitt mit einem Dateislogan zu füllen. Diese Datei verlangt eine eigene kleine Entscheidung darüber, was sie für Flextrawurst bedeutet.
+Vergessen werden soll bei `Ring 9 — Verworfene oder gefährliche Regeln` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
+
+Nicht übernommen werden darf vor allem diese Fehlverwendung: Kandidat könnte aktiviert werden.
 
 ## Was fehlt noch
-Es fehlt die nächste menschliche Review: Daniel muss später entscheiden, ob diese Lesart trägt, ob sie zu stark ist, oder ob sie nur als Archivspur bleiben soll.
+Es fehlt bei `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
+
+Bis dahin bleibt `Ring 9 — Verworfene oder gefährliche Regeln` ein nützliches, aber gebremstes Analyse-Artefakt.

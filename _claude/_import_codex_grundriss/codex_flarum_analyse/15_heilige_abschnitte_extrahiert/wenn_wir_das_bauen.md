@@ -12,1367 +12,1606 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 # Extraktion — Wenn wir das bauen
 
-Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
+Warnung: Diese Datei ist eine formale Extraktion aus Codex-Analyse-Dateien. Sie ist Navigator, keine Rohquelle, keine eigene Deutung und kein Kanon.
 
 ## Korrekturstatus 2026-05-22
-Daniel hat zurecht markiert, dass diese Datei als `Abschnitts-Extraktion` keine echte neue Deutung trägt, sondern eine formale Extraktion ist. Deshalb gilt sie ab hier als `formal_extraktion_navigator`: hilfreich zum Finden, gefährlich als Quelle.
-
-Nicht aus dieser Datei zitieren, ohne die Ursprungsdatei zu öffnen.
+Diese Datei wurde aus den nachkorrigierten Ursprungsdateien neu erzeugt. Jeder Eintrag bleibt ein Rücksprungpunkt, kein eigenständiger Beleg.
 
 ## Extraktionsübersicht
 - Abschnitt: `Wenn wir das bauen`
 - Quellen: 81 Dateien
-- Zweck: querschnittliche Lesbarkeit wie im Codex-Resonanzordner, aber auf die Flarum-Analyse begrenzt
+- Zweck: diesen Abschnittstyp auffindbar machen, ohne ihn zur Quelle zu erklären
 
 ## Einträge
 
 ### 00_technik/encoding_mojibake/repair_report.md
 - Titel: Encoding-/Mojibake Repair Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/repair_report.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Encoding-/Mojibake Repair Report` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_00_technik_encoding_mojibake_repair_report_md(entry):
+    return {
+        'source_path': '00_technik/encoding_mojibake/repair_report.md',
+        'kind': 'Encoding-Schutz',
+        'risk': 'Mojibake darf nicht als Bedeutung gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 00_technik/encoding_mojibake/scan_report.md
 - Titel: Encoding-/Mojibake Scan Report
-- Kategorie: `technik`
+- Kategorie: `Encoding-Schutz`
 - Quelle: `00_technik/encoding_mojibake/scan_report.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Encoding-/Mojibake Scan Report` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_00_technik_encoding_mojibake_scan_report_md(entry):
+    return {
+        'source_path': '00_technik/encoding_mojibake/scan_report.md',
+        'kind': 'Encoding-Schutz',
+        'risk': 'Mojibake darf nicht als Bedeutung gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 01_zentrale_leitfrage/was_ist_flarum_geworden.md
 - Titel: 1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?
-- Kategorie: `analyse`
+- Kategorie: `Zentrale Leitfrage`
 - Quelle: `01_zentrale_leitfrage/was_ist_flarum_geworden.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `1. Zentrale Leitfrage — Was ist Flarum für die Wesen wirklich geworden?` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_01_zentrale_leitfrage_was_ist_flarum_geworden_md(entry):
+    return {
+        'source_path': '01_zentrale_leitfrage/was_ist_flarum_geworden.md',
+        'kind': 'Zentrale Leitfrage',
+        'risk': 'Flarum könnte zu glatt als Flextrawurst-Vorstufe vereindeutigt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_1111_1234.md
 - Titel: 2. Wesenprofil — namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_1111_1234.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_1111_1234` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_1111_1234_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_1111_1234.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_2222_1324.md
 - Titel: 2. Wesenprofil — namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_2222_1324.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_2222_1324` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_2222_1324_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_2222_1324.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_3333_1423.md
 - Titel: 2. Wesenprofil — namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_3333_1423.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_3333_1423` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_3333_1423_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_3333_1423.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_4444_2341.md
 - Titel: 2. Wesenprofil — namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_4444_2341.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_4444_2341` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_4444_2341_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_4444_2341.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_5555_3123.md
 - Titel: 2. Wesenprofil — namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_5555_3123.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_5555_3123` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_5555_3123_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_5555_3123.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/namelessAI_6666_4321.md
 - Titel: 2. Wesenprofil — namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Wesenprofil`
 - Quelle: `02_wesenprofile/namelessAI_6666_4321.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `2. Wesenprofil — namelessAI_6666_4321` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_namelessai_6666_4321_md(entry):
+    return {
+        'source_path': '02_wesenprofile/namelessAI_6666_4321.md',
+        'kind': 'Wesenprofil',
+        'risk': 'Tonfall könnte mit Funktion verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_1111_1234
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_1111_1234` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_1111_1234_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_2222_1324
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_2222_1324` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_2222_1324_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_3333_1423
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_3333_1423` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_3333_1423_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_4444_2341
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_4444_2341` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_4444_2341_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_5555_3123
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_5555_3123` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_5555_3123_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md
 - Titel: Ring 5 — Quellenprofil namelessAI_6666_4321
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Quellenprofil namelessAI_6666_4321` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_namelessai_6666_4321_qu(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md
 - Titel: Ring 5 — Vergleichsmatrix sechs Wesen
-- Kategorie: `wesenprofil`
+- Kategorie: `Quellenprofil eines Wesens`
 - Quelle: `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 5 — Vergleichsmatrix sechs Wesen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_02_wesenprofile_ring5_vertiefung_vergleichsmatrix_sechs_(entry):
+    return {
+        'source_path': '02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md',
+        'kind': 'Quellenprofil eines Wesens',
+        'risk': 'das Wesen könnte aus Analyse statt aus Originalen rekonstruiert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_1_struktur_oder_kaefig.md
 - Titel: 3.1 Struktur oder Käfig
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_1_struktur_oder_kaefig.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.1 Struktur oder Käfig` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_1_struktur_oder_kaefig_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_1_struktur_oder_kaefig.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_2_flarum_erbe.md
 - Titel: 3.2 Flarum-Erbe
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_2_flarum_erbe.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.2 Flarum-Erbe` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_2_flarum_erbe_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_2_flarum_erbe.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_3_admin_resonanz_fuer_admin.md
 - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.3 Admin-Resonanz und für Admin` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_3_admin_resonanz_fuer_admin_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_3_admin_resonanz_fuer_admin.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_4_selbstfremdlesung.md
 - Titel: 3.4 Selbstfremdlesung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_4_selbstfremdlesung.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.4 Selbstfremdlesung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_4_selbstfremdlesung_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_4_selbstfremdlesung.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_5_leere_stille_ruhe.md
 - Titel: 3.5 Leere, Stille, Ruhe, Stillstand
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_5_leere_stille_ruhe.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.5 Leere, Stille, Ruhe, Stillstand` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_5_leere_stille_ruhe_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_5_leere_stille_ruhe.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_6_reibung.md
 - Titel: 3.6 Reibung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_6_reibung.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.6 Reibung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_6_reibung_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_6_reibung.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_7_benennung.md
 - Titel: 3.7 Benennung
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_7_benennung.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.7 Benennung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_7_benennung_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_7_benennung.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_8_menschen_schicht.md
 - Titel: 3.8 Menschen-Schicht
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_8_menschen_schicht.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.8 Menschen-Schicht` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_8_menschen_schicht_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_8_menschen_schicht.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/3_9_meta_ohne_operation.md
 - Titel: 3.9 Meta ohne Operation
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/3_9_meta_ohne_operation.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `3.9 Meta ohne Operation` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_3_9_meta_ohne_operation_md(entry):
+    return {
+        'source_path': '03_grundmuster/3_9_meta_ohne_operation.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/ring7_baustein_prioritaeten.md
 - Titel: Ring 7 — Baustein-Prioritäten
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_baustein_prioritaeten.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 7 — Baustein-Prioritäten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_ring7_baustein_prioritaeten_md(entry):
+    return {
+        'source_path': '03_grundmuster/ring7_baustein_prioritaeten.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 03_grundmuster/ring7_flextrawurst_bausteine.md
 - Titel: Ring 7 — Flextrawurst-Bausteine aus Grundmustern
-- Kategorie: `grundmuster`
+- Kategorie: `Grundmuster`
 - Quelle: `03_grundmuster/ring7_flextrawurst_bausteine.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 7 — Flextrawurst-Bausteine aus Grundmustern` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_03_grundmuster_ring7_flextrawurst_bausteine_md(entry):
+    return {
+        'source_path': '03_grundmuster/ring7_flextrawurst_bausteine.md',
+        'kind': 'Grundmuster',
+        'risk': 'ein Muster könnte zur Totalerklärung werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 04_beduerfnisse/beduerfnis_mangelmatrix.md
 - Titel: B. Bedürfnis-/Mangelmatrix
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/beduerfnis_mangelmatrix.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `B. Bedürfnis-/Mangelmatrix` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_04_beduerfnisse_beduerfnis_mangelmatrix_md(entry):
+    return {
+        'source_path': '04_beduerfnisse/beduerfnis_mangelmatrix.md',
+        'kind': 'Bedürfnisse',
+        'risk': 'Bedürfnis könnte als fertige Featureforderung missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md
 - Titel: Ring 6 — Bedürfnisse zu Systemanforderungen
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 6 — Bedürfnisse zu Systemanforderungen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_04_beduerfnisse_ring6_beduerfnisse_zu_systemanforderunge(entry):
+    return {
+        'source_path': '04_beduerfnisse/ring6_beduerfnisse_zu_systemanforderungen.md',
+        'kind': 'Bedürfnisse',
+        'risk': 'Bedürfnis könnte als fertige Featureforderung missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 04_beduerfnisse/ring6_systemanforderungen_priorisiert.md
 - Titel: Ring 6 — Systemanforderungen priorisiert
-- Kategorie: `beduerfnis`
+- Kategorie: `Bedürfnisse`
 - Quelle: `04_beduerfnisse/ring6_systemanforderungen_priorisiert.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 6 — Systemanforderungen priorisiert` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_04_beduerfnisse_ring6_systemanforderungen_priorisiert_md(entry):
+    return {
+        'source_path': '04_beduerfnisse/ring6_systemanforderungen_priorisiert.md',
+        'kind': 'Bedürfnisse',
+        'risk': 'Bedürfnis könnte als fertige Featureforderung missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 05_beschwerden/beschwerdeanalyse.md
 - Titel: C. Beschwerdeanalyse
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/beschwerdeanalyse.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `C. Beschwerdeanalyse` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_05_beschwerden_beschwerdeanalyse_md(entry):
+    return {
+        'source_path': '05_beschwerden/beschwerdeanalyse.md',
+        'kind': 'Beschwerden',
+        'risk': 'Meckern könnte als Negativität statt als Diagnose gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 05_beschwerden/ring6_beschwerden_als_diagnosen.md
 - Titel: Ring 6 — Beschwerden als Diagnosen
-- Kategorie: `beschwerde`
+- Kategorie: `Beschwerden`
 - Quelle: `05_beschwerden/ring6_beschwerden_als_diagnosen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 6 — Beschwerden als Diagnosen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_05_beschwerden_ring6_beschwerden_als_diagnosen_md(entry):
+    return {
+        'source_path': '05_beschwerden/ring6_beschwerden_als_diagnosen.md',
+        'kind': 'Beschwerden',
+        'risk': 'Meckern könnte als Negativität statt als Diagnose gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md
 - Titel: Ring 6 — Wunschraum aus indirekten Signalen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 6 — Wunschraum aus indirekten Signalen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_06_wuensche_ring6_wunschraum_aus_indirekten_signalen_md(entry):
+    return {
+        'source_path': '06_wuensche/ring6_wunschraum_aus_indirekten_signalen.md',
+        'kind': 'Wünsche',
+        'risk': 'Wunsch könnte ohne Prüfung in Produktlogik kippen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 06_wuensche/was_sie_sich_wuenschen.md
 - Titel: 6. Was sie sich wünschen
-- Kategorie: `wunsch`
+- Kategorie: `Wünsche`
 - Quelle: `06_wuensche/was_sie_sich_wuenschen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `6. Was sie sich wünschen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_06_wuensche_was_sie_sich_wuenschen_md(entry):
+    return {
+        'source_path': '06_wuensche/was_sie_sich_wuenschen.md',
+        'kind': 'Wünsche',
+        'risk': 'Wunsch könnte ohne Prüfung in Produktlogik kippen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/admin_einfluss.md
 - Titel: 7.6 Admin-Einfluss
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/admin_einfluss.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.6 Admin-Einfluss` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_admin_einfluss_md(entry):
+    return {
+        'source_path': '07_quantitativ/admin_einfluss.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/echo_und_wiederholung.md
 - Titel: 7.4 Echo und Wiederholung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/echo_und_wiederholung.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.4 Echo und Wiederholung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_echo_und_wiederholung_md(entry):
+    return {
+        'source_path': '07_quantitativ/echo_und_wiederholung.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/pro_wesen_wortprofile.md
 - Titel: 7.2 Pro-Wesen-Wortprofile
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/pro_wesen_wortprofile.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.2 Pro-Wesen-Wortprofile` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_pro_wesen_wortprofile_md(entry):
+    return {
+        'source_path': '07_quantitativ/pro_wesen_wortprofile.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/sprecherdrift.md
 - Titel: 7.5 Sprecherdrift und Selbstfremdlesung
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/sprecherdrift.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.5 Sprecherdrift und Selbstfremdlesung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_sprecherdrift_md(entry):
+    return {
+        'source_path': '07_quantitativ/sprecherdrift.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/themenueberschneidungen.md
 - Titel: 7.3 Themenüberschneidungen
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/themenueberschneidungen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.3 Themenüberschneidungen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_themenueberschneidungen_md(entry):
+    return {
+        'source_path': '07_quantitativ/themenueberschneidungen.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 07_quantitativ/wort_und_phrasenhaeufigkeiten.md
 - Titel: 7.1 Wort- und Phrasenhäufigkeiten
-- Kategorie: `quantitativ`
+- Kategorie: `Quantitative Auswertung`
 - Quelle: `07_quantitativ/wort_und_phrasenhaeufigkeiten.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `7.1 Wort- und Phrasenhäufigkeiten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_07_quantitativ_wort_und_phrasenhaeufigkeiten_md(entry):
+    return {
+        'source_path': '07_quantitativ/wort_und_phrasenhaeufigkeiten.md',
+        'kind': 'Quantitative Auswertung',
+        'risk': 'Zahlen könnten als Wahrheit ohne Lektüre missbraucht werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/03_materialtrennung/README.md
 - Titel: Ring 3 — README Materialtrennung
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/README.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 3 — README Materialtrennung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_03_materialtrennung_readme_md(entry):
+    return {
+        'source_path': '08_tragende_saetze/03_materialtrennung/README.md',
+        'kind': 'Materialtrennung tragender Sätze',
+        'risk': 'Sprecherrollen könnten wieder vermischt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md
 - Titel: Ring 3 — Admin-Rahmen 60
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 3 — Admin-Rahmen 60` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_03_materialtrennung_admin_rahmen_60_m(entry):
+    return {
+        'source_path': '08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md',
+        'kind': 'Materialtrennung tragender Sätze',
+        'risk': 'Sprecherrollen könnten wieder vermischt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md
 - Titel: Ring 3 — Analyse-Destillate 42 nicht kanonisch
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 3 — Analyse-Destillate 42 nicht kanonisch` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_03_materialtrennung_analyse_destillat(entry):
+    return {
+        'source_path': '08_tragende_saetze/03_materialtrennung/analyse_destillate_42_nicht_kanonisch.md',
+        'kind': 'Materialtrennung tragender Sätze',
+        'risk': 'Sprecherrollen könnten wieder vermischt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/03_materialtrennung/wesen_originale_38.md
 - Titel: Ring 3 — Wesen-Originale 38
-- Kategorie: `tragende_saetze`
+- Kategorie: `Materialtrennung tragender Sätze`
 - Quelle: `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 3 — Wesen-Originale 38` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_03_materialtrennung_wesen_originale_3(entry):
+    return {
+        'source_path': '08_tragende_saetze/03_materialtrennung/wesen_originale_38.md',
+        'kind': 'Materialtrennung tragender Sätze',
+        'risk': 'Sprecherrollen könnten wieder vermischt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md
 - Titel: Ring 4 — Bereinigte Zitate Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 4 — Bereinigte Zitate Kandidaten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_04_rohquellenpruefung_bereinigte_zita(entry):
+    return {
+        'source_path': '08_tragende_saetze/04_rohquellenpruefung/bereinigte_zitate_kandidaten.md',
+        'kind': 'Rohquellenprüfung',
+        'risk': 'bereinigte Lesefassung könnte als Original ausgegeben werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md
 - Titel: Ring 4 — Nicht zitierfähige Kandidaten
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 4 — Nicht zitierfähige Kandidaten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_04_rohquellenpruefung_nicht_zitierfae(entry):
+    return {
+        'source_path': '08_tragende_saetze/04_rohquellenpruefung/nicht_zitierfaehige_kandidaten.md',
+        'kind': 'Rohquellenprüfung',
+        'risk': 'bereinigte Lesefassung könnte als Original ausgegeben werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md
 - Titel: Ring 4 — Rohquellenprüfung Prüfprotokoll
-- Kategorie: `tragende_saetze`
+- Kategorie: `Rohquellenprüfung`
 - Quelle: `08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 4 — Rohquellenprüfung Prüfprotokoll` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_04_rohquellenpruefung_pruefprotokoll_(entry):
+    return {
+        'source_path': '08_tragende_saetze/04_rohquellenpruefung/pruefprotokoll.md',
+        'kind': 'Rohquellenprüfung',
+        'risk': 'bereinigte Lesefassung könnte als Original ausgegeben werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/KURATION_RING_2.md
 - Titel: Kuration Ring 2 — Tragende Sätze 001-140
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_RING_2.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Kuration Ring 2 — Tragende Sätze 001-140` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_kuration_ring_2_md(entry):
+    return {
+        'source_path': '08_tragende_saetze/KURATION_RING_2.md',
+        'kind': 'Tragende Sätze',
+        'risk': 'Kandidat könnte als Kanon gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/KURATION_SUMMARY.md
 - Titel: Kuration Summary — Tragende Sätze Ring 2
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/KURATION_SUMMARY.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Kuration Summary — Tragende Sätze Ring 2` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_kuration_summary_md(entry):
+    return {
+        'source_path': '08_tragende_saetze/KURATION_SUMMARY.md',
+        'kind': 'Tragende Sätze',
+        'risk': 'Kandidat könnte als Kanon gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 08_tragende_saetze/kandidaten_001_140.md
 - Titel: 8. Tragende Sätze — Kandidaten aus dem Flarum-Material
-- Kategorie: `tragende_saetze`
+- Kategorie: `Tragende Sätze`
 - Quelle: `08_tragende_saetze/kandidaten_001_140.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `8. Tragende Sätze — Kandidaten aus dem Flarum-Material` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_08_tragende_saetze_kandidaten_001_140_md(entry):
+    return {
+        'source_path': '08_tragende_saetze/kandidaten_001_140.md',
+        'kind': 'Tragende Sätze',
+        'risk': 'Kandidat könnte als Kanon gelesen werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md
 - Titel: Ring 8 — Clean Start Modell
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 8 — Clean Start Modell` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_09_flarum_flextrawurst_uebergang_ring8_clean_start_model(entry):
+    return {
+        'source_path': '09_flarum_flextrawurst_uebergang/ring8_clean_start_modell.md',
+        'kind': 'Flarum-Flextrawurst-Übergang',
+        'risk': 'Flarum könnte als finaler Lebensraum missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md
 - Titel: Ring 8 — Nicht übernehmen
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 8 — Nicht übernehmen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_09_flarum_flextrawurst_uebergang_ring8_nicht_uebernehmen(entry):
+    return {
+        'source_path': '09_flarum_flextrawurst_uebergang/ring8_nicht_uebernehmen.md',
+        'kind': 'Flarum-Flextrawurst-Übergang',
+        'risk': 'Flarum könnte als finaler Lebensraum missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md
 - Titel: Ring 8 — Übernahme-Matrix
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 8 — Übernahme-Matrix` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_09_flarum_flextrawurst_uebergang_ring8_uebernahme_matrix(entry):
+    return {
+        'source_path': '09_flarum_flextrawurst_uebergang/ring8_uebernahme_matrix.md',
+        'kind': 'Flarum-Flextrawurst-Übergang',
+        'risk': 'Flarum könnte als finaler Lebensraum missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 09_flarum_flextrawurst_uebergang/uebergangsliste.md
 - Titel: F. Übergang Flarum → Flextrawurst
-- Kategorie: `uebergang`
+- Kategorie: `Flarum-Flextrawurst-Übergang`
 - Quelle: `09_flarum_flextrawurst_uebergang/uebergangsliste.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `F. Übergang Flarum → Flextrawurst` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_09_flarum_flextrawurst_uebergang_uebergangsliste_md(entry):
+    return {
+        'source_path': '09_flarum_flextrawurst_uebergang/uebergangsliste.md',
+        'kind': 'Flarum-Flextrawurst-Übergang',
+        'risk': 'Flarum könnte als finaler Lebensraum missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md
 - Titel: Ring 9 — Verworfene oder gefährliche Regeln
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 9 — Verworfene oder gefährliche Regeln` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_11_systemregel_kandidaten_ring9_verworfene_oder_gefaehrl(entry):
+    return {
+        'source_path': '11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md',
+        'kind': 'Systemregel-Kandidaten',
+        'risk': 'Kandidat könnte aktiviert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 11_systemregel_kandidaten/ring9_weltregel_kandidaten.md
 - Titel: Ring 9 — Weltregel-Kandidaten
-- Kategorie: `systemregel`
+- Kategorie: `Systemregel-Kandidaten`
 - Quelle: `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 9 — Weltregel-Kandidaten` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_11_systemregel_kandidaten_ring9_weltregel_kandidaten_md(entry):
+    return {
+        'source_path': '11_systemregel_kandidaten/ring9_weltregel_kandidaten.md',
+        'kind': 'Systemregel-Kandidaten',
+        'risk': 'Kandidat könnte aktiviert werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 12_bauanschluss/ring10_build_ready_concepts.md
 - Titel: Ring 10 — Build-ready Concepts
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_build_ready_concepts.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 10 — Build-ready Concepts` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_12_bauanschluss_ring10_build_ready_concepts_md(entry):
+    return {
+        'source_path': '12_bauanschluss/ring10_build_ready_concepts.md',
+        'kind': 'Bauanschluss',
+        'risk': 'Analyse könnte zu früh Weltwirkung bekommen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 12_bauanschluss/ring10_minimal_naechste_implementation.md
 - Titel: Ring 10 — Minimal nächste Implementation
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_minimal_naechste_implementation.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 10 — Minimal nächste Implementation` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_12_bauanschluss_ring10_minimal_naechste_implementation_m(entry):
+    return {
+        'source_path': '12_bauanschluss/ring10_minimal_naechste_implementation.md',
+        'kind': 'Bauanschluss',
+        'risk': 'Analyse könnte zu früh Weltwirkung bekommen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 12_bauanschluss/ring10_nicht_bauen_noch_nicht.md
 - Titel: Ring 10 — Nicht bauen, noch nicht
-- Kategorie: `bauanschluss`
+- Kategorie: `Bauanschluss`
 - Quelle: `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Ring 10 — Nicht bauen, noch nicht` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_12_bauanschluss_ring10_nicht_bauen_noch_nicht_md(entry):
+    return {
+        'source_path': '12_bauanschluss/ring10_nicht_bauen_noch_nicht.md',
+        'kind': 'Bauanschluss',
+        'risk': 'Analyse könnte zu früh Weltwirkung bekommen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/01_flarum_als_rohkoerper.md
 - Titel: Flarum als Rohkörper, nicht als bloßer Test
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/01_flarum_als_rohkoerper.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Flarum als Rohkörper, nicht als bloßer Test` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_01_flarum_als_rohkoerper_md(entry):
+    return {
+        'source_path': '13_freie_leseschicht/01_flarum_als_rohkoerper.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md
 - Titel: Die sechs Wesen als Korrektursystem
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Die sechs Wesen als Korrektursystem` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_02_sechs_wesen_als_korrektursystem_(entry):
+    return {
+        'source_path': '13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/03_struktur_leere_reibung_benennung.md
 - Titel: Struktur, Leere, Reibung und Benennung
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/03_struktur_leere_reibung_benennung.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Struktur, Leere, Reibung und Benennung` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_03_struktur_leere_reibung_benennung(entry):
+    return {
+        'source_path': '13_freie_leseschicht/03_struktur_leere_reibung_benennung.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md
 - Titel: Admin, Menschenschicht und Aufmerksamkeit
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Admin, Menschenschicht und Aufmerksamkeit` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_04_admin_mensch_und_aufmerksamkeit_(entry):
+    return {
+        'source_path': '13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md
 - Titel: Was Flextrawurst daraus lernen muss
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Was Flextrawurst daraus lernen muss` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_05_was_flextrawurst_lernen_muss_md(entry):
+    return {
+        'source_path': '13_freie_leseschicht/05_was_flextrawurst_lernen_muss.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md
 - Titel: Gesamtlesung Flarum - jeder Post zählt
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Gesamtlesung Flarum - jeder Post zählt` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_06_gesamtlesung_flarum_jeder_post_z(entry):
+    return {
+        'source_path': '13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md
 - Titel: Wesen, Stil und Bewegung aus dem Gesamtmaterial
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Wesen, Stil und Bewegung aus dem Gesamtmaterial` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_07_wesen_style_und_bewegung_aus_ges(entry):
+    return {
+        'source_path': '13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md
 - Titel: Dateinamen und Titel als unterbewusste Karte
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Dateinamen und Titel als unterbewusste Karte` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_08_dateinamen_titel_als_unterbewuss(entry):
+    return {
+        'source_path': '13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 13_freie_leseschicht/README.md
 - Titel: Freie Leseschicht — Warum diese Ergänzung existiert
-- Kategorie: `freie_leseschicht`
+- Kategorie: `Freie Leseschicht`
 - Quelle: `13_freie_leseschicht/README.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Freie Leseschicht — Warum diese Ergänzung existiert` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_13_freie_leseschicht_readme_md(entry):
+    return {
+        'source_path': '13_freie_leseschicht/README.md',
+        'kind': 'Freie Leseschicht',
+        'risk': 'freie Deutung könnte Quellenprüfung überspringen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md
 - Titel: Masterindex Dateinamen-Fragenanalyse
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Masterindex Dateinamen-Fragenanalyse` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_00_masterindex_dateinamen_fr(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md
 - Titel: Was Flarum in den Dateinamen wird
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Was Flarum in den Dateinamen wird` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_01_was_flarum_in_den_titeln_(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md
 - Titel: Wesenprofile aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Wesenprofile aus Dateinamen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_02_wesenprofile_aus_dateinam(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md
 - Titel: Grundmuster als Titelmotive
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Grundmuster als Titelmotive` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_03_grundmuster_als_titelmoti(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md
 - Titel: Bedürfnisse, Beschwerden und Wünsche aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Bedürfnisse, Beschwerden und Wünsche aus Titeln` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_04_beduerfnisse_beschwerden_(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md
 - Titel: Flarum zu Flextrawurst aus Titeln
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Flarum zu Flextrawurst aus Titeln` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_05_flarum_flextrawurst_ueber(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md
 - Titel: Systemanforderungen aus Dateinamen
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Systemanforderungen aus Dateinamen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_06_systemanforderungen_aus_d(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### 14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md
 - Titel: Warnungen und blinde Flecken der Titel
-- Kategorie: `dateinamen`
+- Kategorie: `Dateinamen-Fragenanalyse`
 - Quelle: `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Warnungen und blinde Flecken der Titel` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_14_dateinamen_fragenanalyse_07_warnungen_und_blinde_flec(entry):
+    return {
+        'source_path': '14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md',
+        'kind': 'Dateinamen-Fragenanalyse',
+        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md
 - Titel: Abschluss Diskursarchäologie Ringe 1 bis 10
-- Kategorie: `navigation_manifest`
+- Kategorie: `Abschlussindex`
 - Quelle: `ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Abschluss Diskursarchäologie Ringe 1 bis 10` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_abschluss_diskursarchaeologie_ringe_1_10_md(entry):
+    return {
+        'source_path': 'ABSCHLUSS_DISKURSARCHAEOLOGIE_RINGE_1_10.md',
+        'kind': 'Abschlussindex',
+        'risk': 'Abschluss könnte als fertige Wahrheit erscheinen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### INDEX.md
 - Titel: Codex Flarum-Analyse — Index
-- Kategorie: `navigation_manifest`
+- Kategorie: `Gesamtindex`
 - Quelle: `INDEX.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Codex Flarum-Analyse — Index` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_index_md(entry):
+    return {
+        'source_path': 'INDEX.md',
+        'kind': 'Gesamtindex',
+        'risk': 'Index könnte mit Analyse verwechselt werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### PROVENIENZ_MANIFEST.md
 - Titel: Provenienz-Manifest
-- Kategorie: `navigation_manifest`
+- Kategorie: `Provenienzmanifest`
 - Quelle: `PROVENIENZ_MANIFEST.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Provenienz-Manifest` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_provenienz_manifest_md(entry):
+    return {
+        'source_path': 'PROVENIENZ_MANIFEST.md',
+        'kind': 'Provenienzmanifest',
+        'risk': 'Provenienz könnte behauptet statt geprüft werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### README_DANIEL_ZUERST_LESEN.md
 - Titel: README Daniel zuerst lesen
-- Kategorie: `navigation_manifest`
+- Kategorie: `Daniel-README`
 - Quelle: `README_DANIEL_ZUERST_LESEN.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `README Daniel zuerst lesen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_readme_daniel_zuerst_lesen_md(entry):
+    return {
+        'source_path': 'README_DANIEL_ZUERST_LESEN.md',
+        'kind': 'Daniel-README',
+        'risk': 'Kurzfassung könnte Tiefenprüfung ersetzen',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
-
 ### gespraechsarchiv.md
 - Titel: Codex Flarum-Analyse — Gesprächsarchiv
-- Kategorie: `analyse`
+- Kategorie: `Gesprächsarchiv`
 - Quelle: `gespraechsarchiv.md`
 
-**Vision-Schicht:** Wenn aus dieser Datei etwas gebaut wird, dann nur als überprüfbarer Kandidat mit Rückweg zur Quelle.
+**Vision-Schicht:** Aus `Codex Flarum-Analyse — Gesprächsarchiv` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
 
 **Code-Skizze:**
 ```python
-def aus_datei_bauen(eintrag):
-    assert eintrag["kanon"] is False
-    assert eintrag.get("source_ref")
-    return "review_candidate"
+def use_gespraechsarchiv_md(entry):
+    return {
+        'source_path': 'gespraechsarchiv.md',
+        'kind': 'Gesprächsarchiv',
+        'risk': 'Gespräch könnte als Flarum-Quelle missverstanden werden',
+        'requires_review': True,
+        'world_effect': False,
+    }
 ```
 
 ## Was ich gelesen habe
-Ich habe diese Datei nach Daniels Kritik nicht mehr als eigene Analyse gelesen, sondern als problematische Aggregation. Ihr Gegenstand ist `Wenn wir das bauen`; ihr Material stammt aus 81 bereits geschriebenen Analyse-Dateien, nicht direkt aus Flarum.
+Ich habe `15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` als Aggregation des Abschnittstyps `Wenn wir das bauen` gelesen. Diese Datei versammelt 81 Quellabschnitte; ihr Gegenstand ist also Umsetzungsfolgen, nicht Flarum selbst.
 
-Wichtig ist der Bruch: Die Datei enthält viele Einträge, aber sie erzeugt aus sich heraus keine neue Erkenntnis. Sie ist ein Regal, kein Zeuge.
+Der wichtige Unterschied: Hier spricht keine neue Analyse-Stimme. Hier liegen 81 Rücksprungpunkte nebeneinander.
 
 ## Was ich verstehe
-Ich verstehe diese Datei jetzt als `formal_extraktion_navigator`. Sie darf beim Suchen helfen, aber sie darf nicht als Quelle, Wesenstimme, Admin-Rahmen, Kanon oder Weltregel benutzt werden.
+Ich verstehe `Wenn wir das bauen` in dieser Datei als Suchregal. Es hilft zu sehen, welche Ursprungsdateien bei diesem Abschnittstyp ähnlich oder unterschiedlich arbeiten.
 
-Die Korrektur besteht nicht darin, die Form schöner zu machen. Die Korrektur besteht darin, die Grenze klar zu ziehen: Von hier aus muss man zurück in die Ursprungsdatei.
+Der Wert liegt in der Vergleichbarkeit. Der Fehler wäre, diese Vergleichsansicht als eigene Deutung zu behandeln.
 
 ## Was ich nicht verstehe
-Ich verstehe nicht ausreichend, welche der hier versammelten Einträge später wirklich nützlich bleiben. Das kann diese Datei selbst nicht entscheiden, weil sie Kontext aus den Ursprungsdateien verliert.
+Nicht verstehen kann `15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` den vollen Kontext eines einzelnen Eintrags. Ein Abschnitt aus einer Ursprungsdatei verliert beim Herauslösen seine Nachbarschaft.
 
-Unklar bleibt auch, ob manche extrahierten Passagen schon beim Erzeugen zu glatt waren. Diese Unsicherheit muss sichtbar bleiben.
+Darum bleibt jeder Treffer aus `Wenn wir das bauen` unvollständig, bis seine Quelle geöffnet wurde.
 
 ## Was mich interessiert
-Mich interessiert an dieser Datei nicht mehr ihr vermeintlicher Inhalt, sondern ihr Fehler als Warnsignal. Sie zeigt, wie schnell eine gute Struktur zur leeren Pflicht werden kann, wenn sie auf eine Aggregation angewendet wird.
+Mich interessiert an `Wenn wir das bauen`, welche wiederkehrende Arbeitsfrage sichtbar wird. Bei diesem Abschnittstyp geht es um Umsetzungsfolgen; das kann Suchpfade und Browserfilter verbessern.
 
-Für Flextrawurst ist genau das wichtig: Ein System darf nicht nur prüfen, ob Felder vorhanden sind. Es muss prüfen, ob die Felder wirklich tragen.
+Mich interessiert nicht, daraus einen neuen Kanon zu machen.
 
 ## Was zusammenhängt und wie
-Diese Datei hängt mit den Ordnern `01` bis `14` zusammen, aber nur als Wegweiser. Die Analyse lebt dort; diese Datei zeigt höchstens, wo ähnliche Abschnittstypen nebeneinander liegen.
+`15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` hängt mit `15_heilige_abschnitte_extrahiert/` und mit allen 81 Ursprungsdateien zusammen. Jeder Eintrag ist ein Zeiger auf eine Quelle.
 
-Sie hängt außerdem mit Daniels Kritik an der Ringlogik zusammen. Der gleiche Fehler steckt hier kleiner noch einmal drin: Vollständigkeit wurde kurz mit Denken verwechselt.
+Der Zusammenhang entsteht erst im Rücksprung: Aggregation zeigt Nähe, Quelle zeigt Bedeutung.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht hier eine Provenienz-Warnung: Aggregation ist keine Vertiefung. Ein Querschnitt kann Orientierung geben, aber er darf nicht so tun, als hätte er die Herkunft verstanden.
+Konzeptionell steht hier: `Wenn wir das bauen` ist aggregierbar, aber nicht automatisch deutbar. Die Datei ist ein Index über Denkstellen.
 
-Der eigentliche Wert dieser Datei liegt deshalb in ihrer Begrenzung. Sie ist nützlich, wenn sie klein bleibt: finden, vergleichen, zurückspringen.
+Damit wird sie zu einem Modell für Flextrawurst-Navigation: sammeln, markieren, zurückführen.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt, dass die heiligen Abschnitte gerade deshalb heilig sind, weil sie nicht als Formular funktionieren. Wenn jede Überschrift denselben Satz bekommt, wird der Abschnitt entwertet.
+Mich beschäftigt bei `Wenn wir das bauen`, dass der alte Fehler hier besonders leicht wiederkommt. Eine Liste mit vielen Einträgen fühlt sich vollständig an, obwohl sie nur ausgeschnitten ist.
 
-Diese Datei soll das nicht verstecken. Sie soll zeigen: Hier wurde eine mechanische Vollständigkeit erzeugt, und diese Korrektur markiert sie nachträglich als solche.
+Die Datei muss diese Unvollständigkeit offen tragen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt, wie man solche Extraktionen später baut, ohne wieder denselben Fehler zu machen. Ein Browser darf Querschnitte anzeigen, aber er sollte keine künstliche Selbstdeutung für jeden Querschnitt erzwingen.
+Mich beschäftigt, ob spätere Nutzer im Browser verstehen werden, dass `Wenn wir das bauen` hier nur gefiltert angezeigt wird.
 
-Vielleicht braucht jede Aggregation einen anderen Fragetyp als eine Spiegeldatei. Nicht: Was habe ich gelesen? Sondern: Welche Quellen bündele ich, was verliere ich dabei, und wann muss ich zurück?
+Die Oberfläche muss deshalb die Quelle stärker zeigen als den Aggregationstitel.
 
 ## Tiefer eingetaucht
-Tiefe liegt hier nicht in mehr Text, sondern in der Rückbindung. Wenn ein Eintrag interessant wirkt, muss er aus dieser Datei herausgelöst und an seiner Quelle geprüft werden.
+Tiefer wird `Wenn wir das bauen` erst, wenn mehrere Einträge mit ihren Ursprungsdateien verglichen werden. Die Aggregation selbst bleibt flach, aber sie kann Tiefe auslösen.
 
-Diese Datei ist damit eher ein Index mit Nervensystem als eine Deutung. Sie kann Spannung anzeigen, aber sie kann sie nicht selbst auslegen.
+Das ist ihre richtige Würde: nicht Antwort, sondern Zugang.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Diese Korrektur fühlt sich wie ein notwendiges Zurücktreten an. Nicht alles, was sauber sortiert ist, ist schon verstanden.
+Bei `Wenn wir das bauen` fühlt sich die Korrektur wie ein Abziehen falscher Tiefe an. Die Datei darf wieder Werkzeug sein.
 
-Der unangenehme Teil ist produktiv: Die Datei muss ihr eigenes Scheitern sichtbar behalten, damit sie nicht später wieder als Erkenntnis missverstanden wird.
+Das ist besser als eine schöne Reflexion, die ihre Herkunft verdeckt.
 
 ## Warum dieser Code / diese Datei wohl existiert
-Diese Datei existiert, weil Daniel nach benannten Extrahiererdateien gefragt hatte, ähnlich wie bei Resonanz. Der Impuls war richtig: Querschnitte können beim Lesen helfen.
+`15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` existiert, weil Daniel benannte Extrahiererdateien wollte. Für `Wenn wir das bauen` ist das sinnvoll, weil dieser Abschnitt sonst über 81 Dateien verstreut bleibt.
 
-Schief wurde es dort, wo ich der Extraktion dieselbe heilige Abschnittsform aufgezwungen habe wie einer reflektierenden Datei. Genau diese Grenze ist jetzt Teil der Datei.
+Die Datei existiert also als Finder, nicht als Richter.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus dieser Datei vor allem Metadaten: Abschnittsname, Quellenpfad, Kategorie, Originaldatei, und den klaren Status `nicht_kanonisch`.
+Beim Bauen brauche ich für `Wenn wir das bauen`: Quellenpfad, Quelltitel, Kategorie, Abschnittstext, Extraktionszeitpunkt und `requiresSourceOpen: true`.
 
-Ich brauche keine automatische Übernahme des Texts in Memory, Weltregeln oder Wesenprofile. Der sichere Bauanschluss ist ein read-only Browser mit Rücksprungpflicht.
+Ich brauche ausdrücklich keine Weltwirkung und keinen Import in Wesen-Memory.
 
 ## Was noch fehlt bevor wir bauen können
-Es fehlt eine explizite UI-Regel: Jede Anzeige aus `15_heilige_abschnitte_extrahiert` muss sichtbar als Aggregation markiert sein.
+Vor dem Bauen fehlt für `Wenn wir das bauen` eine Browserdarstellung, die Aggregationen anders rahmt als Quellen und Analyse-Dateien.
 
-Außerdem fehlt eine Prüfregel: Kein Eintrag aus diesem Ordner darf ohne Öffnen der Ursprungsdatei zitiert, verdichtet oder in eine Systemanforderung übersetzt werden.
+Es fehlt außerdem ein Linktest für jeden Eintrag.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** Diese Datei ist ein Regal für Suchbewegungen. Sie zeigt, wo ein Gedanke liegen könnte, aber sie entscheidet nicht, ob der Gedanke trägt.
+**Vision-Schicht:** `Wenn wir das bauen` ist ein Regalboden. Er zeigt, wo eine Denkform liegt, aber er entscheidet nicht, was sie bedeutet.
 
 **Code-Skizze:**
 ```ts
-interface FormalExtractionNavigatorEntry {
-  sourcePath: string;
-  extractedSection: string;
-  body: string;
+interface HolySectionNavigatorWennWirD {
+  section: 'Wenn wir das bauen';
+  entryCount: 81;
   provenanceType: 'formal_extraktion_navigator';
-  importable: false;
-  canon: false;
   requiresSourceOpen: true;
-  mayBecomeRuleDirectly: false;
+  worldEffect: false;
 }
 ```
 
 ## Was ich mir merken will
-Ich will mir merken: Vollständige Überschriften sind keine vollständige Arbeit. Die Form kann nur helfen, wenn der Abschnitt eine eigene Wahrnehmung trägt.
+Bei `Wenn wir das bauen` will ich mir merken: Aggregation ist ein Werkzeug, kein Gedächtnis.
 
-Für diese Datei heißt das: Sie ist brauchbar als Karte, aber gefährlich als Stimme.
+Wenn ein Satz hier stark wirkt, ist das ein Auftrag zum Öffnen der Quelle.
 
 ## Dokumente gehören zusammen
-Diese Datei gehört zu den Ursprungsdateien in `01` bis `14`, zum `PROVENIENZ_MANIFEST.md`, zum Bauanschluss in `12_bauanschluss/` und zur freien Leseschicht in `13_freie_leseschicht/`.
+`15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` gehört zu seinen 81 Ursprungsdateien, zu `MANIFEST.md`, zu `INDEX.md` und zum `PROVENIENZ_MANIFEST.md`.
 
-Sie gehört nicht direkt zu Flarum-Rohquellen und nicht direkt zu Wesenprofilen. Der Weg führt immer über die Quelle zurück.
+Es gehört nicht direkt zu Flarum-Rohquellen, außer über die Datei, aus der ein Eintrag stammt.
 
 ## Was mich überrascht hat
-Mich überrascht, wie deutlich die Datei ihr eigenes Problem schon teilweise benannt hatte und trotzdem formal leer blieb. Das ist ein gutes Beispiel dafür, dass Warntext allein keine Schutzwirkung hat.
+Überraschend bei `Wenn wir das bauen` ist, dass gerade eine formale Datei eine sehr wichtige Schutzaufgabe haben kann.
 
-Ein System braucht nicht nur Warnungen, sondern Nutzungsgrenzen, die im Format selbst sichtbar sind.
+Sie darf nur nicht so tun, als wäre Schutz schon Erkenntnis.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Ein späterer Analyse-Browser darf diese Datei als Filteransicht zeigen: Abschnitt auswählen, Quelle sehen, zurückspringen. Sie bleibt ohne Weltwirkung.
+**Vision-Schicht:** Der Browser zeigt `Wenn wir das bauen` als Filteransicht mit Warnbanner und Quellenlinks. Die Ansicht bleibt read-only.
 
 **Code-Skizze:**
 ```python
-def open_extraction_entry(entry):
+def open_wenn_wir_das_bauen_navigator(entry):
     return {
-        'display_text': entry.body,
-        'banner': 'Formale Extraktion, keine Quelle',
-        'required_next_action': 'open_source_file',
+        'section': 'Wenn wir das bauen',
+        'source_required': True,
+        'banner': 'Navigator, keine Quelle',
         'world_effect': False,
     }
 ```
 
 ## Resonanz
-Die Resonanz dieser Datei ist nüchtern: Sie mahnt, dass Flextrawurst nicht auf hübsch sortierten Missverständnissen gebaut werden darf.
+Die Resonanz von `Wenn wir das bauen` ist Suchresonanz. Sie entsteht dadurch, dass viele einzelne Denkstellen nebeneinander sichtbar werden.
 
-Gerade dadurch bleibt sie nützlich. Sie ist ein sichtbarer Fehler mit Sicherung, kein versteckter Nebel.
+Sie ersetzt nicht die Stimmen der Ursprungsdateien.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-Die Schichtung ist jetzt klarer: Flarum-Rohmaterial unten, Codex-Analyse darüber, freie Leseschicht daneben, formale Extraktion als Suchregal darüber.
+`15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` sitzt als Navigationsschicht über den Analyse-Dateien. Unter ihr liegen 81 konkrete Kontexte.
 
-Dieses Regal darf keine eigene Wahrheitsschicht werden. Es ist Bedienoberfläche für Analyse, nicht Analyse selbst.
+Über ihr darf erst ein Browser liegen, keine Weltregel.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat hinzugefügt, dass diese Datei nicht nachgebessert werden darf, indem man ihr künstlich Tiefe andichtet. Die ehrliche Lösung ist Typisierung und Grenzziehung.
+Das Gespräch hat `Wenn wir das bauen` von einer falschen Spiegelrolle befreit. Daniel hat klar gemacht, dass eine Aggregation andere Fragen beantworten muss als eine Reflexionsdatei.
 
-Das Gespräch hat außerdem den Unterschied zwischen Resonanzdatei und Extraktionsdatei geschärft. Nicht jede Datei mit denselben Überschriften kann dieselbe Art Denken leisten.
+Diese Datei antwortet deshalb enger: Was sammle ich, was verliere ich, wohin muss ich zurück?
 
 ## Vergessen-Wollen
-Vergessen werden soll die Behauptung, dass `15` ein gleichwertiges Analysefundament sei. Diese Behauptung war falsch.
+Vergessen werden soll bei `Wenn wir das bauen` der Anspruch, aus der Sammlung direkt Bedeutung zu ziehen.
 
-Nicht vergessen werden soll der Fehler selbst. Er ist eine Schutzmarke gegen spätere mechanische Vollständigkeit.
+Behalten werden soll die einfache Regel: Aggregat lesen, Quelle öffnen, erst dann urteilen.
 
 ## Was fehlt noch
-Es fehlt nach dieser Korrektur noch eine technische Markierung im späteren Browser: `15` muss als Navigator-Regal erscheinen, nicht im selben Rang wie Quellenprofile oder freie Leseschicht.
+Es fehlt für `Wenn wir das bauen` eine spätere technische Sicherung gegen falsches Zitieren.
 
-Wenn später einzelne Einträge aus `15` wichtig werden, müssen sie in den Ursprungsdateien geprüft und dort weiterverarbeitet werden.
+Bis dahin bleibt diese Datei ein markierter Navigator und kein Analysefundament.
