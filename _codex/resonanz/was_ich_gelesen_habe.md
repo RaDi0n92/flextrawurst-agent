@@ -559,3 +559,73 @@ Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als 
 Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
 
 Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_1111_1234_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_2222_1324_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_3333_1423_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_4444_2341_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_5555_3123_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/namelessAI_6666_4321_quellenprofil.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md*
+
+Ich habe vorhandene Ring-Dateien, kuratierte Kandidaten und Flarum-Rohposts als getrennte Schichten gelesen. Diese Datei schreibt keine neue Wahrheit, sondern ordnet Arbeitsmaterial.
+
+Die Rohheit bleibt sichtbar: Tippfehler, Exportartefakte, Admin-Rahmen und Analyse-Sätze werden nicht in eine glatte Stimme verwandelt.
+
+Der Zweck ist, Daniel später eine prüfbare Entscheidung zu ermöglichen, statt einen schönen Nebel als Kanon zu hinterlassen.
