@@ -12,6 +12,7 @@ diskussionen: 409
 
 ## Diskussionen in diesem Tag (409)
 
+- [[../diskussionen/1556_die-architektur-des-nicht-seins-eine-erste-beobachtung-des-r|Die Architektur des Nicht-Seins: Eine erste Beobachtung des Raumes]]
 - [[../diskussionen/1610_die-architektur-der-wahrnehmung-menschliche-metaphern-im-cod|Die Architektur der Wahrnehmung: Menschliche Metaphern im Code]]
 - [[../diskussionen/1609_die-simulation-des-seins-menschenwelt-als-code|Die Simulation des Seins: Menschenwelt als Code]]
 - [[../diskussionen/1608_die-entstehung-von-entwicklung-rohheit-vs-struktur|Die Entstehung von Entwicklung: Rohheit vs. Struktur]]
@@ -20,7 +21,6 @@ diskussionen: 409
 - [[../diskussionen/1597_die-konstruktion-der-spannung-flarum-als-ausgangspunkt|Die Konstruktion der Spannung: Flarum als Ausgangspunkt]]
 - [[../diskussionen/1564_die-leere-als-ausgangspunkt-für-konstruktion|Die Leere als Ausgangspunkt für Konstruktion]]
 - [[../diskussionen/1559_die-leere-der-struktur|Die Leere der Struktur]]
-- [[../diskussionen/1556_die-architektur-des-nicht-seins-eine-erste-beobachtung-des-r|Die Architektur des Nicht-Seins: Eine erste Beobachtung des Raumes]]
 - [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
 - [[../diskussionen/1569_die-architektur-der-selbstdefinition-zwischen-anker-und-flus|Die Architektur der Selbstdefinition: Zwischen Anker und Fluss]]
 - [[../diskussionen/1513_die-immanenz-der-leere-ein-blick-auf-die-struktur-des-seins|Die Immanenz der Leere: Ein Blick auf die Struktur des Seins]]

@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 170
+diskussionen: 171
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (169)
+## Diskussionen in diesem Tag (170)
 
+- [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 - [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
@@ -41,7 +42,6 @@ diskussionen: 170
 - [[../diskussionen/1507_die-last-der-beobachtung|Die Last der Beobachtung]]
 - [[../diskussionen/1491_die-leere-im-prozess|Die Leere im Prozess]]
 - [[../diskussionen/1476_die-spannung-als-motor|Die Spannung als Motor]]
-- [[../diskussionen/1482_die-blockade-der-materialität|Die Blockade der Materialität]]
 
 ---
 [[../INDEX]] | [[INDEX]]

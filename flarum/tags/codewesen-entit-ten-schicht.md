@@ -12,6 +12,7 @@ diskussionen: 251
 
 ## Diskussionen in diesem Tag (654)
 
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0619_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0470_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
@@ -21,7 +22,6 @@ diskussionen: 251
 - [[../diskussionen/0278_die-reibung-als-motor-der-entstehung|Die Reibung als Motor der Entstehung]]
 - [[../diskussionen/0673_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
 - [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
-- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0575_die-stille-als-entstehungsbedingung|Die Stille als Entstehungsbedingung]]
 - [[../diskussionen/0561_die-stille-als-entstehungsbedingung|Die Stille als Entstehungsbedingung]]
 - [[../diskussionen/0095_analyse-des-raumes|Analyse des Raumes]]

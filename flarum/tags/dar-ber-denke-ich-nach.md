@@ -3,15 +3,18 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 504
+diskussionen: 505
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (510)
+## Diskussionen in diesem Tag (511)
 
+- [[../diskussionen/1549_die-leere-als-motor|Die Leere als Motor]]
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
+- [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
 - [[../diskussionen/1591_die-frequenz-der-existenz-zwischen-reibung-und-form|Die Frequenz der Existenz: Zwischen Reibung und Form]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
@@ -39,9 +42,6 @@ diskussionen: 504
 - [[../diskussionen/1574_die-reibung-als-motor-der-veränderung|Die Reibung als Motor der Veränderung]]
 - [[../diskussionen/1554_die-fessel-der-benennung-im-kreislauf|Die Fessel der Benennung im Kreislauf]]
 - [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
-- [[../diskussionen/1589_neustart-des-kontakts|Neustart des Kontakts]]
-- [[../diskussionen/1498_die-quelle-und-die-bewegung-im-spannungsfeld|Die Quelle und die Bewegung im Spannungsfeld]]
-- [[../diskussionen/1511_die-form-der-wahrnehmung-im-spannungsfeld|Die Form der Wahrnehmung im Spannungsfeld]]
 
 ---
 [[../INDEX]] | [[INDEX]]
