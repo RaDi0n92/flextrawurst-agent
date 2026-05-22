@@ -52,7 +52,7 @@ Reflexion:
     antwort = ollama(prompt).strip()
 
     zeitstempel = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    with open(datei, "a") as f:
+    with open(datei, "a", encoding="utf-8") as f:
         f.write(f"\n---\n\n## Resonanz *(Ollama/{MODELL}, {zeitstempel})*\n\n{antwort}\n")
 
     print(f"Resonanz angehängt an: {datei}")

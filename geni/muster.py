@@ -103,7 +103,8 @@ def schreibe_muster_knoten(inhalt: str, tags: list[str]) -> str:
             "tags": ["muster", "auto"] + [t for t in tags if t not in TAG_FILTER],
         }
         (KNOTEN_DIR / f"{naechste}.json").write_text(
-            json.dumps(k, ensure_ascii=False, indent=2)
+            json.dumps(k, ensure_ascii=False, indent=2),
+            encoding="utf-8",
         )
     return naechste
 

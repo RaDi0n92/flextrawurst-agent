@@ -74,7 +74,7 @@ def load_state() -> dict:
     return DEFAULT_STATE.copy()
 
 def save_state(state: dict):
-    STATE_FILE.write_text(json.dumps(state, indent=2))
+    STATE_FILE.write_text(json.dumps(state, indent=2), encoding="utf-8")
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -90,7 +90,7 @@ def write_inbox(codewesen_name: str, event_type: str, data: dict):
         "typ": event_type,
         "daten": data,
     }
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, default=str))
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
     log.info("  → %s/inbox/%s", codewesen_name, filename)
 
 def append_global(event_type: str, data: dict):

@@ -56,7 +56,7 @@ def setup():
             modell["entity_id"] = wesen
             modell["erstellt"] = datetime.utcnow().isoformat()
             modell["version"] = 1
-            modell_datei.write_text(json.dumps(modell, ensure_ascii=False, indent=2))
+            modell_datei.write_text(json.dumps(modell, ensure_ascii=False, indent=2), encoding="utf-8")
             print(f"[INIT] Selbstmodell erstellt: {modell_datei.name}")
         else:
             print(f"[INIT] Selbstmodell existiert bereits: {modell_datei.name}")

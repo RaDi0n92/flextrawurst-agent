@@ -57,7 +57,8 @@ def knoten_schreiben(typ: str, inhalt: str, quelle: str, tags: list = None) -> s
             "tags": tags or [],
         }
         (KNOTEN_DIR / f"{kid}.json").write_text(
-            json.dumps(knoten, ensure_ascii=False, indent=2)
+            json.dumps(knoten, ensure_ascii=False, indent=2),
+            encoding="utf-8",
         )
         return kid
 
@@ -74,7 +75,8 @@ def kante_schreiben(von: str, nach: str, typ: str, staerke: float = 1.0):
         "richtung": "gerichtet",
     }
     (KANTEN_DIR / f"{kid}.json").write_text(
-        json.dumps(kante, ensure_ascii=False, indent=2)
+        json.dumps(kante, ensure_ascii=False, indent=2),
+        encoding="utf-8",
     )
 
 

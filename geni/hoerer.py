@@ -116,7 +116,9 @@ def rauschen_schreiben(aktion: str, rel_pfad: str):
         "zeitstempel": datetime.now(timezone.utc).isoformat(),
     }
     (RAUSCHEN_DIR / f"{rid}.json").write_text(
-        json.dumps(eintrag, ensure_ascii=False))
+        json.dumps(eintrag, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
 
 class DateiHoerer(FileSystemEventHandler):

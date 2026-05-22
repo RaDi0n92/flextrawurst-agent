@@ -24,7 +24,7 @@ def _counter_lesen() -> dict:
 
 def _counter_schreiben(daten: dict) -> None:
     tmp = _COUNTER_FILE.with_suffix(".tmp")
-    tmp.write_text(json.dumps(daten))
+    tmp.write_text(json.dumps(daten), encoding="utf-8")
     tmp.replace(_COUNTER_FILE)
 
 
@@ -102,7 +102,7 @@ def knoten_schreiben(typ: str, inhalt: str, quelle: str, tags: list = None, zugr
             "verblasst": False,
             "tags": tags or [],
         }
-        (KNOTEN_DIR / f"{kid}.json").write_text(json.dumps(k, ensure_ascii=False, indent=2))
+        (KNOTEN_DIR / f"{kid}.json").write_text(json.dumps(k, ensure_ascii=False, indent=2), encoding="utf-8")
         return kid
 
 
@@ -118,7 +118,7 @@ def kante_schreiben(von: str, nach: str, typ: str, staerke: float = 1.0):
             "zeitstempel": datetime.now(timezone.utc).isoformat(),
             "richtung": "gerichtet",
         }
-        (KANTEN_DIR / f"{kid}.json").write_text(json.dumps(k, ensure_ascii=False, indent=2))
+        (KANTEN_DIR / f"{kid}.json").write_text(json.dumps(k, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def tiefe_erhoehen(knoten_id: str):
@@ -131,6 +131,6 @@ def tiefe_erhoehen(knoten_id: str):
             neu = min(3, k.get("tiefe", 0) + 1)
             if neu != k.get("tiefe", 0):
                 k["tiefe"] = neu
-                pfad.write_text(json.dumps(k, ensure_ascii=False, indent=2))
+                pfad.write_text(json.dumps(k, ensure_ascii=False, indent=2), encoding="utf-8")
         except Exception:
             pass

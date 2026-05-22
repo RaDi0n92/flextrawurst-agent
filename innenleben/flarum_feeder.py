@@ -72,7 +72,7 @@ def _lade_cursor_state() -> dict:
 
 def _speichere_cursor_state(state: dict) -> None:
     tmp = _STATE_FILE.with_suffix(".tmp")
-    tmp.write_text(json.dumps(state, indent=2))
+    tmp.write_text(json.dumps(state, indent=2), encoding="utf-8")
     tmp.replace(_STATE_FILE)
 
 

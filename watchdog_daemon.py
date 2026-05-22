@@ -18,14 +18,14 @@ class WerkraumHandler(FileSystemEventHandler):
         entry = {"time": datetime.now().isoformat(), "type": event_type,
                  "path": path.replace("/root/werkraum/", "")}
         try:
-            with open(LOG_PATH, "a") as f:
+            with open(LOG_PATH, "a", encoding="utf-8") as f:
                 f.write(json.dumps(entry) + "\n")
             # Trim nur alle 50 Events, nicht bei jedem
             if os.path.getsize(LOG_PATH) > 500000:
-                with open(LOG_PATH, "r") as f:
+                with open(LOG_PATH, "r", encoding="utf-8") as f:
                     lines = f.readlines()
                 if len(lines) > MAX_LINES:
-                    with open(LOG_PATH, "w") as f:
+                    with open(LOG_PATH, "w", encoding="utf-8", newline="\n") as f:
                         f.writelines(lines[-MAX_LINES:])
         except:
             pass

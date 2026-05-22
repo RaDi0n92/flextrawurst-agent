@@ -582,7 +582,7 @@ def codewesen_benachrichtigen(wesen_liste: list, nachricht: str, kontext: str):
             "kontext": kontext[:200],
             "typ": "geni_impuls",
         }
-        datei.write_text(json.dumps(inhalt, ensure_ascii=False, indent=2))
+        datei.write_text(json.dumps(inhalt, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 # ─── LLM ──────────────────────────────────────────────────────────────────────

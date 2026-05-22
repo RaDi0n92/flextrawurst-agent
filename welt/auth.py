@@ -18,9 +18,9 @@ def _load_secret() -> str:
     if env:
         return env
     if _SECRET_FILE.exists():
-        return _SECRET_FILE.read_text().strip()
+        return _SECRET_FILE.read_text(encoding="utf-8").strip()
     secret = secrets.token_hex(32)
-    _SECRET_FILE.write_text(secret)
+    _SECRET_FILE.write_text(secret, encoding="utf-8")
     _SECRET_FILE.chmod(0o600)
     return secret
 

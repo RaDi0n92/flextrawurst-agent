@@ -221,7 +221,7 @@ async def api_aufgabe(request: Request):
             "prioritaet": data.get("prioritaet", "normal"),
         },
     }
-    (inbox_dir / filename).write_text(json.dumps(item, ensure_ascii=False, indent=2))
+    (inbox_dir / filename).write_text(json.dumps(item, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"ok": True, "datei": filename, "wesen": wesen}
 
 

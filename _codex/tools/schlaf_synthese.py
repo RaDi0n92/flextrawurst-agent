@@ -86,7 +86,7 @@ datum: {heute}
 {antwort.strip()}
 """
 
-    with open(outfile, "w") as f:
+    with open(outfile, "w", encoding="utf-8", newline="\n") as f:
         f.write(inhalt)
 
     print(f"Geschrieben: {outfile}")

@@ -84,7 +84,7 @@ def _lade_zustand() -> dict:
 
 
 def _speichere_zustand(z: dict):
-    ZUSTAND.write_text(json.dumps(z, indent=2, ensure_ascii=False))
+    ZUSTAND.write_text(json.dumps(z, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def _html_strip(text: str) -> str:
