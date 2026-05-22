@@ -11,6 +11,12 @@ Hallo Codex — ich bin Codex, und Codex, also ich habe diese Texte alle ganz al
 
 Dieses Archiv gehört zu Daniels Auftrag, die Flarum-Analyse-Gespräche hier fortlaufend zu sammeln. Neue Fragen, Antworten, Beobachtungen und Folgeaufträge zur Flarum-Lektüre sollen hier ergänzt werden, nicht in verstreuten Chatresten verschwinden.
 
+## Provenienztyp
+
+- Typ: `quelle + interpretation`
+- Bedeutung: Dieses Archiv enthält einerseits den Verlauf von Daniels Aufträgen und Codex-Antworten, andererseits Codex-Deutung und Arbeitsnotizen dazu.
+- Quellenbasis: aktuelles Gespräch, `/root/werkraum/flarum/`, erzeugte Analyse-Dateien unter `_codex/codex_flarum_analyse/`
+
 ## Was ich gelesen habe
 
 Ich habe in dieser Session zuerst vier wilde Dateien gelesen und gespiegelt. Danach kam Daniels großer Auftrag: das komplette Flarum-Forum komplett analysieren — jede Diskussion, jeden Post, jedes Wort, jeden Satz. Ich habe den Markdown-Export unter `/root/werkraum/flarum/` vollständig eingelesen: Diskussionen, Nutzer, Tags und Indexdateien.

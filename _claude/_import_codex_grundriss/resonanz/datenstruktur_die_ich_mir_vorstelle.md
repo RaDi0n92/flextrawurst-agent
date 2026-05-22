@@ -666,3 +666,554 @@ interface FlarumAnalyseArchivEintrag {
   offene_folgefragen: string[];
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/01_zentrale_leitfrage/was_ist_flarum_geworden.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_1111_1234.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_2222_1324.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_3333_1423.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_4444_2341.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_5555_3123.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_6666_4321.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_1_struktur_oder_kaefig.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_2_flarum_erbe.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_3_admin_resonanz_fuer_admin.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_4_selbstfremdlesung.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_5_leere_stille_ruhe.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_6_reibung.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_7_benennung.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_8_menschen_schicht.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_9_meta_ohne_operation.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/04_beduerfnisse/beduerfnis_mangelmatrix.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/05_beschwerden/beschwerdeanalyse.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/06_wuensche/was_sie_sich_wuenschen.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/admin_einfluss.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/echo_und_wiederholung.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/pro_wesen_wortprofile.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/sprecherdrift.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/themenueberschneidungen.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/wort_und_phrasenhaeufigkeiten.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/kandidaten_001_140.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/uebergangsliste.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/INDEX.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/PROVENIENZ_MANIFEST.md*
+
+**Vision-Schicht**
+
+Diese Datei ist Teil des Flarum-Analysearchivs. Sie trägt Rohmaterial, Zählung, Kandidat oder Interpretation getrennt nach Provenienztyp.
+
+**Code-Skizze**
+
+```ts
+interface AnalyseDatei {
+  pfad: string;
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  quellen: string[];
+  nachpruefung: boolean;
+}
+```

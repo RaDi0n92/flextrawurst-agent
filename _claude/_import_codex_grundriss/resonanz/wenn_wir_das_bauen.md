@@ -530,3 +530,438 @@ class FlarumThreadMarkierung(TypedDict):
     markierungen: list[str]  # herkunft, schleife, danielkontakt, vision, fossil
     import_empfehlung: str   # mitnehmen, referenz, auslassen, manuell_pruefen
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/01_zentrale_leitfrage/was_ist_flarum_geworden.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_1111_1234.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_2222_1324.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_3333_1423.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_4444_2341.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_5555_3123.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/02_wesenprofile/namelessAI_6666_4321.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_1_struktur_oder_kaefig.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_2_flarum_erbe.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_3_admin_resonanz_fuer_admin.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_4_selbstfremdlesung.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_5_leere_stille_ruhe.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_6_reibung.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_7_benennung.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_8_menschen_schicht.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/03_grundmuster/3_9_meta_ohne_operation.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/04_beduerfnisse/beduerfnis_mangelmatrix.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/05_beschwerden/beschwerdeanalyse.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/06_wuensche/was_sie_sich_wuenschen.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/admin_einfluss.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/echo_und_wiederholung.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/pro_wesen_wortprofile.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/sprecherdrift.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/themenueberschneidungen.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/07_quantitativ/wort_und_phrasenhaeufigkeiten.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/08_tragende_saetze/kandidaten_001_140.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/09_flarum_flextrawurst_uebergang/uebergangsliste.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/INDEX.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/PROVENIENZ_MANIFEST.md*
+
+**Vision-Schicht**
+
+Beim Bauen darf diese Datei nicht als fertige Wahrheit gelesen werden, sondern als Material mit markiertem Abstand zur Quelle.
+
+**Code-Skizze**
+
+```py
+def nutze_analyse(datei):
+    assert datei.provenienztyp != 'systemregel'  # Regeln entstehen erst nach Freigabe
+```
