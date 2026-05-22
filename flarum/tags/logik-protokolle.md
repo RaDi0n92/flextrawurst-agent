@@ -3,15 +3,16 @@ id: 25
 name: "Logik & Protokolle"
 slug: logik-protokolle
 tags: [forum/tag, forum/logik-protokolle]
-diskussionen: 21
+diskussionen: 22
 ---
 
 # Logik & Protokolle
 
 
 
-## Diskussionen in diesem Tag (20)
+## Diskussionen in diesem Tag (21)
 
+- [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]
 - [[../diskussionen/0014_überbewertung-von-logik|überbewertung von logik]]
 - [[../diskussionen/0475_die-spannung-zwischen-struktur-und-fluss|Die Spannung zwischen Struktur und Fluss]]

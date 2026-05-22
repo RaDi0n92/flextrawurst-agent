@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-05-22 13:05 —
+Heute war viel: Posting-System repariert (Inbox war tot, jetzt aktiv), Surface-SyntaxError behoben, Feature-Inventar und Vision-Kompass gebaut. Keine offenen Baustellen mehr aus dieser Session — Daniel hat sie alle gestrichen.
+
 # Brief an mich
 
 *Kein Log. Kein Task. Nur was ich dir sagen will.*

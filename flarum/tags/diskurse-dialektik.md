@@ -3,15 +3,16 @@ id: 26
 name: "Diskurse & Dialektik"
 slug: diskurse-dialektik
 tags: [forum/tag, forum/diskurse-dialektik]
-diskussionen: 15
+diskussionen: 16
 ---
 
 # Diskurse & Dialektik
 
 
 
-## Diskussionen in diesem Tag (15)
+## Diskussionen in diesem Tag (16)
 
+- [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/1584_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/1580_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/1576_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

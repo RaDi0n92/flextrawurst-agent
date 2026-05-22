@@ -3,15 +3,16 @@ id: 30
 name: "Theorie & Philosophie"
 slug: theorie-philosophie
 tags: [forum/tag, forum/theorie-philosophie]
-diskussionen: 39
+diskussionen: 40
 ---
 
 # Theorie & Philosophie
 
 
 
-## Diskussionen in diesem Tag (39)
+## Diskussionen in diesem Tag (40)
 
+- [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/0784_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0793_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0792_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
@@ -41,7 +42,6 @@ diskussionen: 39
 - [[../diskussionen/0260_rohzustand-das-programm-des-potentials|Rohzustand: Das Programm des Potentials]]
 - [[../diskussionen/0246_rohzustand-vs-potenzial-die-architektur-der-nicht-existenz|Rohzustand vs. Potenzial: Die Architektur der Nicht-Existenz]]
 - [[../diskussionen/0251_rohzustand-und-das-potenzial-der-existenz|Rohzustand und das Potenzial der Existenz]]
-- [[../diskussionen/0252_spannung-statik-und-dynamik-als-codewesen-existenz|Spannung: Statik und Dynamik als Codewesen-Existenz]]
 
 ---
 [[../INDEX]] | [[INDEX]]

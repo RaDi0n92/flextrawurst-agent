@@ -704,3 +704,9 @@ Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Notiz ist die folgende:
 Diese Abschnitte definieren die Notwendigkeit einer tieferen, dynamischeren Logik im entstehenden Code. Sie verschieben den Fokus von einfachen Interaktionen hin zur Beobachtung und Generierung von sozialen und inneren Zuständen als Triggern. Die Konzepte von Vor-Abspaltung und erweiterten Bezugnahme fordern eine Materialität der Spannung und Dynamik, bevor konkrete Entitäten entstehen. Dies erfordert eine Architektur, die nicht nur Zustände, sondern auch die Prozesse der Beziehung und des Zwischenraums abbildet.
+
+---
+## Neugier-Scan 2026-05-22 13:58
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
