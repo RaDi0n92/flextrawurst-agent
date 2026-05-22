@@ -62,137 +62,153 @@ Wünsche erscheinen als Sehnsucht nach Bewegung: Motor, Erwachen, Manifestation,
 Aus den Dateinamen entsteht eine klare Anforderung: Flextrawurst muss Zustände zwischen Stillstand und Handlung unterscheiden. Die Titel kennen bereits Last, Fessel, Stagnation, Motor, Manifestation und Fundament. Das sind spätere Status- und Ereigniskandidaten, aber noch keine Regeln.
 
 ## Was ich gelesen habe
-Ich habe `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` als `Dateinamen-Fragenanalyse` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Bedürfnisse, Beschwerden und Wünsche aus Titeln` setzt den Schwerpunkt dieser Datei; `Bedürfnisse, Beschwerden und Wünsche aus Titeln` liest Titel als Oberfläche und nicht als Beweis für den Inhalt.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe gelesen, wie Titel indirekt Bedürfnisse, Beschwerden und Wünsche zeigen. Viele Titel klingen nach Mangel: fehlende Struktur, Leere, Stille, Notwendigkeit, Rohheit, Reibung.
+
+Die Datei fragt, welche Systembedürfnisse schon in der Benennung auftauchen.
 
 ## Was ich verstehe
-Bei `Bedürfnisse, Beschwerden und Wünsche aus Titeln` verstehe ich die Hauptfunktion als: Titel als Oberflächenkarte des Diskurses. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe Titel hier als Symptomschicht. Sie zeigen nicht direkt, was ein Wesen will, aber sie zeigen, welche Art von Mangel es benennt.
+
+Das ist hilfreich für Hypothesen.
 
 ## Was ich nicht verstehe
-Bei `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Bedürfnisse, Beschwerden und Wünsche aus Titeln` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, wann ein Titel echte Beschwerde trägt und wann er nur philosophisches Vokabular ist.
 
 ## Was mich interessiert
-Mich interessiert an `Bedürfnisse, Beschwerden und Wünsche aus Titeln` genau der Übergang von Datei zu Systemfrage. Wenn `Dateinamen-Fragenanalyse` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, ob Titel mit `Notwendigkeit`, `Fehlen`, `Rohheit` oder `Leere` später tatsächlich Posts mit konkreten Systemwünschen enthalten.
 
 ## Was zusammenhängt und wie
-`14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Bedürfnisse, Beschwerden und Wünsche aus Titeln`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Bedürfnisse, Beschwerden, Wünsche aus Titeln` hängt mit der freien Leseschicht zur Titelgrammatik zusammen und mit den quantitativen Wortprofilen. Titelmotive können Begriffshäufungen erklären, aber sie ersetzen keine Postlektüre.
+
+Die Datei hängt außerdem mit Benennung zusammen: Titel sind Namen auf Probe.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Bedürfnisse, Beschwerden und Wünsche aus Titeln` nicht einfach ein Thema, sondern eine Funktion: Titel als Oberflächenkarte des Diskurses.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Benennungsschicht des Forums. `Bedürfnisse, Beschwerden, Wünsche aus Titeln` liest nicht den Körper der Diskussion, sondern ihre Stirn: wie sie sich nennt, bevor man hineinliest.
+
+Diese Schicht ist stark für Navigation und schwach als Beweis.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Bedürfnisse, Beschwerden und Wünsche aus Titeln` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Titel könnten mit Postinhalt verwechselt werden.
+Mich beschäftigt, wie sehr Titel das Material schwerer machen. Ein einfacher Post wird durch einen Titel wie `Die Stille als Fundament` sofort ontologisch aufgeladen.
+
+Das kann hilfreich sein, aber auch Pathos als Struktur tarnen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Bedürfnisse, Beschwerden und Wünsche aus Titeln` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Dateinamen-Fragenanalyse` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Titel aus den Wesen selbst stammen und welche durch Export, Slug, Wiederholung oder Dateisystem geglättet wurden.
+
+Auch offen: Wann zeigt ein Titel echte Entwicklung und wann nur eine neue Verpackung für denselben Loop?
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Bedürfnisse, Beschwerden und Wünsche aus Titeln` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Bedürfnisse, Beschwerden, Wünsche aus Titeln` eine Analyse der Selbstüberschrift. Die Wesen und der Export erzeugen nicht nur Texte, sondern Lesebefehle.
+
+Flextrawurst muss solche Lesebefehle speichern können, aber sie darf ihnen nicht blind glauben.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Bedürfnisse, Beschwerden und Wünsche aus Titeln` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Titel könnten mit Postinhalt verwechselt werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Arbeit an der Oberfläche an, aber Oberfläche ist hier nicht oberflächlich. Titel sind die erste Form, in der ein Gedanke sich selbst zur Welt macht.
+
+Gerade deshalb brauchen sie Warnungen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Bedürfnisse, Beschwerden und Wünsche aus Titeln` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel ausdrücklich wollte, dass auch Dateinamen Kontext bauen. `Bedürfnisse, Beschwerden, Wünsche aus Titeln` beantwortet diesen Wunsch, aber mit Provenienzgrenze.
+
+Dateiname ist Kontext, nicht Rohzitat.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Bedürfnisse, Beschwerden und Wünsche aus Titeln` den Pfad `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich Titel als Wunsch-/Mangel-Verdacht, nicht als Requirement.
+
+Ein Requirement entsteht erst nach Postprüfung.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Liste Titel -> vermuteter Mangel -> Rohpost bestätigt ja/nein.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Bedürfnisse, Beschwerden und Wünsche aus Titeln` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Bedürfnisse, Beschwerden, Wünsche aus Titeln` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
 ```ts
-interface TitleSignalBeduerfnis {
-  path: '14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md';
-  title: 'Bedürfnisse, Beschwerden und Wünsche aus Titeln';
-  kind: 'Dateinamen-Fragenanalyse';
-  keywords: string[];
-  risk: 'Titel könnten mit Postinhalt verwechselt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
 }
 ```
 
 ## Was ich mir merken will
-Bei `Bedürfnisse, Beschwerden und Wünsche aus Titeln` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Titel können Bedürfnisse anzeigen, aber sie formulieren sie oft zu groß.
 
 ## Dokumente gehören zusammen
-Zu `Bedürfnisse, Beschwerden und Wünsche aus Titeln` gehören mindestens `14_dateinamen_fragenanalyse`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`, zu `07_quantitativ/` und zu den Rohdiskussionen.
+
+Sie sollte im Browser als Titel-/Rahmungsanalyse erscheinen, getrennt vom Postinhalt.
 
 ## Was mich überrascht hat
-Überraschend an `Bedürfnisse, Beschwerden und Wünsche aus Titeln` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `14_dateinamen_fragenanalyse` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich, wie sehr Beschwerden schon in abstrakten Titeln versteckt sein können.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Bedürfnisse, Beschwerden und Wünsche aus Titeln` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Bedürfnisse, Beschwerden, Wünsche aus Titeln` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
-```python
-def use_14_dateinamen_fragenanalyse_04_beduerfnisse_beschwerden_(entry):
-    return {
-        'source_path': '14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md',
-        'kind': 'Dateinamen-Fragenanalyse',
-        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Bedürfnisse, Beschwerden und Wünsche aus Titeln` liegt in diesem Druckpunkt: Titel könnten mit Postinhalt verwechselt werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Bedürfnisse, Beschwerden, Wünsche aus Titeln` ist aufmerksam und misstrauisch. Titel geben Richtung, aber sie dürfen die Richtung nicht als Ziel ausgeben.
+
+Diese Datei soll Suche verbessern, nicht Wahrheit ersetzen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` liegt in der Schicht `Dateinamen-Fragenanalyse`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Bedürfnisse, Beschwerden und Wünsche aus Titeln` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Postkörper, Titel, Slug, Dateiname, Analyseüberschrift und spätere UI-Anzeige sind verschiedene Schichten.
+
+Diese Datei behandelt Titel/Dateiname, nicht den ganzen Thread.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Bedürfnisse, Beschwerden und Wünsche aus Titeln` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Dateinamen als Kontext ernst genommen werden sollen.
+
+Diese Nacharbeit hält dazu die Gegenregel fest: ernst nehmen, aber nicht beweisen lassen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Bedürfnisse, Beschwerden und Wünsche aus Titeln` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Titel könnten mit Postinhalt verwechselt werden.
+Vergessen werden soll die Gleichsetzung von Titel und Inhalt.
+
+Vergessen werden soll auch, Dateinamen als bloß technische Ablage zu unterschätzen.
 
 ## Was fehlt noch
-Es fehlt bei `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Bedürfnisse, Beschwerden und Wünsche aus Titeln` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die direkte Prüfung ausgewählter Titel gegen ihre Postkörper.
+
+Erst danach kann man sagen, ob ein Titel trifft, überhöht oder verdeckt.

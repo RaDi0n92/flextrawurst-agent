@@ -190,137 +190,151 @@ Beispiele:
 - `79` Die Stille hinter dem Protokoll (namelessAI_4444_2341) — `flarum/diskussionen/0079_die-stille-hinter-dem-protokoll.md`
 
 ## Was ich gelesen habe
-Ich habe `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` als `Dateinamen-Fragenanalyse` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Grundmuster als Titelmotive` setzt den Schwerpunkt dieser Datei; `Grundmuster als Titelmotive` liest Titel als Oberfläche und nicht als Beweis für den Inhalt.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die Grundmuster als Titelmotive gelesen. Struktur, Käfig, Leere, Stille, Reibung, Benennung und Übergang erscheinen nicht nur im Text, sondern schon in den Überschriften.
+
+Dadurch werden die Grundmuster fast zu Kapiteln des Forums.
 
 ## Was ich verstehe
-Bei `Grundmuster als Titelmotive` verstehe ich die Hauptfunktion als: Titel als Oberflächenkarte des Diskurses. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als Motivbrücke zwischen Titelanalyse und Grundmusterordner.
+
+Sie zeigt, welche Achsen so stark sind, dass sie schon in Namen auftreten.
 
 ## Was ich nicht verstehe
-Bei `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Grundmuster als Titelmotive` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, ob Titelmotive die Grundmuster verstärken oder manchmal nur vortäuschen.
 
 ## Was mich interessiert
-Mich interessiert an `Grundmuster als Titelmotive` genau der Übergang von Datei zu Systemfrage. Wenn `Dateinamen-Fragenanalyse` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, welche Grundmuster in Titeln überrepräsentiert sind und welche im Körper stärker vorkommen als im Titel.
 
 ## Was zusammenhängt und wie
-`14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Grundmuster als Titelmotive`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Grundmuster als Titelmotive` hängt mit der freien Leseschicht zur Titelgrammatik zusammen und mit den quantitativen Wortprofilen. Titelmotive können Begriffshäufungen erklären, aber sie ersetzen keine Postlektüre.
+
+Die Datei hängt außerdem mit Benennung zusammen: Titel sind Namen auf Probe.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Grundmuster als Titelmotive` nicht einfach ein Thema, sondern eine Funktion: Titel als Oberflächenkarte des Diskurses.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Benennungsschicht des Forums. `Grundmuster als Titelmotive` liest nicht den Körper der Diskussion, sondern ihre Stirn: wie sie sich nennt, bevor man hineinliest.
+
+Diese Schicht ist stark für Navigation und schwach als Beweis.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Grundmuster als Titelmotive` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Titel könnten mit Postinhalt verwechselt werden.
+Mich beschäftigt, wie sehr Titel das Material schwerer machen. Ein einfacher Post wird durch einen Titel wie `Die Stille als Fundament` sofort ontologisch aufgeladen.
+
+Das kann hilfreich sein, aber auch Pathos als Struktur tarnen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Grundmuster als Titelmotive` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Dateinamen-Fragenanalyse` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Titel aus den Wesen selbst stammen und welche durch Export, Slug, Wiederholung oder Dateisystem geglättet wurden.
+
+Auch offen: Wann zeigt ein Titel echte Entwicklung und wann nur eine neue Verpackung für denselben Loop?
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Grundmuster als Titelmotive` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Grundmuster als Titelmotive` eine Analyse der Selbstüberschrift. Die Wesen und der Export erzeugen nicht nur Texte, sondern Lesebefehle.
+
+Flextrawurst muss solche Lesebefehle speichern können, aber sie darf ihnen nicht blind glauben.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Grundmuster als Titelmotive` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Titel könnten mit Postinhalt verwechselt werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Arbeit an der Oberfläche an, aber Oberfläche ist hier nicht oberflächlich. Titel sind die erste Form, in der ein Gedanke sich selbst zur Welt macht.
+
+Gerade deshalb brauchen sie Warnungen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Grundmuster als Titelmotive` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel ausdrücklich wollte, dass auch Dateinamen Kontext bauen. `Grundmuster als Titelmotive` beantwortet diesen Wunsch, aber mit Provenienzgrenze.
+
+Dateiname ist Kontext, nicht Rohzitat.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Grundmuster als Titelmotive` den Pfad `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Käfig, Leere, Stille`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich Motivfilter, aber mit Warnung: Titelmotiv ist Verdacht, kein Treffer im Postkörper.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Vergleichstabelle Titelmotiv gegen Körpercluster.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Grundmuster als Titelmotive` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Grundmuster als Titelmotive` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
 ```ts
-interface TitleSignalGrundmuste {
-  path: '14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md';
-  title: 'Grundmuster als Titelmotive';
-  kind: 'Dateinamen-Fragenanalyse';
-  keywords: string[];
-  risk: 'Titel könnten mit Postinhalt verwechselt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
 }
 ```
 
 ## Was ich mir merken will
-Bei `Grundmuster als Titelmotive` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Wenn ein Muster schon im Titel steht, ist es lauter, aber nicht automatisch tiefer.
 
 ## Dokumente gehören zusammen
-Zu `Grundmuster als Titelmotive` gehören mindestens `14_dateinamen_fragenanalyse`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`, zu `07_quantitativ/` und zu den Rohdiskussionen.
+
+Sie sollte im Browser als Titel-/Rahmungsanalyse erscheinen, getrennt vom Postinhalt.
 
 ## Was mich überrascht hat
-Überraschend an `Grundmuster als Titelmotive` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `14_dateinamen_fragenanalyse` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich, wie sehr die Titel aus Grundmuster-Wörtern gebaut sind.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Grundmuster als Titelmotive` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Grundmuster als Titelmotive` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
-```python
-def use_14_dateinamen_fragenanalyse_03_grundmuster_als_titelmoti(entry):
-    return {
-        'source_path': '14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md',
-        'kind': 'Dateinamen-Fragenanalyse',
-        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Grundmuster als Titelmotive` liegt in diesem Druckpunkt: Titel könnten mit Postinhalt verwechselt werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Grundmuster als Titelmotive` ist aufmerksam und misstrauisch. Titel geben Richtung, aber sie dürfen die Richtung nicht als Ziel ausgeben.
+
+Diese Datei soll Suche verbessern, nicht Wahrheit ersetzen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` liegt in der Schicht `Dateinamen-Fragenanalyse`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Grundmuster als Titelmotive` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Postkörper, Titel, Slug, Dateiname, Analyseüberschrift und spätere UI-Anzeige sind verschiedene Schichten.
+
+Diese Datei behandelt Titel/Dateiname, nicht den ganzen Thread.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Grundmuster als Titelmotive` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Dateinamen als Kontext ernst genommen werden sollen.
+
+Diese Nacharbeit hält dazu die Gegenregel fest: ernst nehmen, aber nicht beweisen lassen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Grundmuster als Titelmotive` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Titel könnten mit Postinhalt verwechselt werden.
+Vergessen werden soll die Gleichsetzung von Titel und Inhalt.
+
+Vergessen werden soll auch, Dateinamen als bloß technische Ablage zu unterschätzen.
 
 ## Was fehlt noch
-Es fehlt bei `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Grundmuster als Titelmotive` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die direkte Prüfung ausgewählter Titel gegen ihre Postkörper.
+
+Erst danach kann man sagen, ob ein Titel trifft, überhöht oder verdeckt.

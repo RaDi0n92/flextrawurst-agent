@@ -85,9 +85,16 @@ Manuell nachgearbeitet:
 - `13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md`
 - `13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md`
 - `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`
+- `14_dateinamen_fragenanalyse/00_masterindex_dateinamen_fragenanalyse.md`
+- `14_dateinamen_fragenanalyse/01_was_flarum_in_den_titeln_wird.md`
+- `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`
+- `14_dateinamen_fragenanalyse/03_grundmuster_als_titelmotive.md`
+- `14_dateinamen_fragenanalyse/04_beduerfnisse_beschwerden_wuensche_aus_titeln.md`
+- `14_dateinamen_fragenanalyse/05_flarum_flextrawurst_uebergang_aus_titeln.md`
+- `14_dateinamen_fragenanalyse/06_systemanforderungen_aus_dateinamen.md`
+- `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`
 
 Noch nicht manuell nachgearbeitet:
-- `14_dateinamen_fragenanalyse/`
 - `15_heilige_abschnitte_extrahiert/`
 - `INDEX.md`
 - `PROVENIENZ_MANIFEST.md`
@@ -99,7 +106,7 @@ Noch nicht manuell nachgearbeitet:
 
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
-Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/` und `12_bauanschluss/` sowie `13_freie_leseschicht/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
+Gelesen wurden bisher manuell der Startblock, die sechs Basis-Wesenprofile, die sieben Ring-5-Dateien, `03_grundmuster/`, die Ordner `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und jetzt auch `07_quantitativ/` sowie `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/` sowie `11_systemregel_kandidaten/` und `12_bauanschluss/` sowie `13_freie_leseschicht/` und `14_dateinamen_fragenanalyse/`. Die jüngste Etappe hat Bedürfnisse, Beschwerden und Wünsche als Signale gefasst, nicht als Features oder Aufträge.
 
 ## Was ich verstehe
 
@@ -109,7 +116,7 @@ Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
 
 ## Was ich nicht verstehe
 
-Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben Dateinamenanalyse, Extraktionen und Abschlussdateien.
+Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Erledigt sind Startblock, Basisprofile, Ring 5, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/` und `08_tragende_saetze/` und `09_flarum_flextrawurst_uebergang/`; offen bleiben Extraktionen und Abschlussdateien.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
 
@@ -249,4 +256,4 @@ Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
 
 Es fehlt fast alles der manuellen Nacharbeit.
 
-Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `14_dateinamen_fragenanalyse/`, wobei dort Dateinamen und Fragen als Kontextkarte gelten, nicht als Rohbeweis.
+Fertig sind der Startblock, die sechs Basisprofile, `02_wesenprofile/ring5_vertiefung/`, `03_grundmuster/`, `04_beduerfnisse/`, `05_beschwerden/`, `06_wuensche/` und `07_quantitativ/`. Als nächstes kommt `15_heilige_abschnitte_extrahiert/`, wobei dort besonders streng geprüft werden muss, ob Extraktion überhaupt sinnvolle heilige Abschnitte erzeugen kann.

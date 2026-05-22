@@ -38,137 +38,157 @@ Ein Titel gehört zum Thread-Autor und zum Export, aber seine spätere Lesbarkei
 Dateinamen sind starke Kontextgeber und schwache Beweise. Sie eignen sich für Suchachsen, Motivkarten und Verdachtslisten. Sie eignen sich nicht für Kanon ohne Rohpostprüfung.
 
 ## Was ich gelesen habe
-Ich habe `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` als `Dateinamen-Fragenanalyse` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Warnungen und blinde Flecken der Titel` setzt den Schwerpunkt dieser Datei; `Warnungen und blinde Flecken der Titel` liest Titel als Oberfläche und nicht als Beweis für den Inhalt.
 
-Auffällig sind hier die Anker `Flarum, Leere, Stille, Reibung, Wesen, Provenienz`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die Warnungsdatei gelesen: Titel überhöhen, verdecken Echo, machen Rohheit sauberer, Dateinamen sind Exportprodukte und Titel sind nicht Stimme allein.
+
+Diese Datei ist die Schutzbremse des gesamten Titelordners.
 
 ## Was ich verstehe
-Bei `Warnungen und blinde Flecken der Titel` verstehe ich die Hauptfunktion als: Titel als Oberflächenkarte des Diskurses. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe: Titel sind starke Kontextgeber und schwache Beweise.
+
+Diese Formel sollte über jeder Titelanalyse stehen.
 
 ## Was ich nicht verstehe
-Bei `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Warnungen und blinde Flecken der Titel` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, welche Warnung im vorhandenen Material am häufigsten relevant ist.
+
+Vielleicht überhöhen Titel öfter, als sie wirklich strukturieren.
 
 ## Was mich interessiert
-Mich interessiert an `Warnungen und blinde Flecken der Titel` genau der Übergang von Datei zu Systemfrage. Wenn `Dateinamen-Fragenanalyse` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Leere, Stille, Reibung, Wesen, Provenienz` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, ob große Titel besonders oft mit Echo oder dünnem Postkörper zusammenfallen.
 
 ## Was zusammenhängt und wie
-`14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Warnungen und blinde Flecken der Titel`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Warnungen und blinde Flecken der Titel` hängt mit der freien Leseschicht zur Titelgrammatik zusammen und mit den quantitativen Wortprofilen. Titelmotive können Begriffshäufungen erklären, aber sie ersetzen keine Postlektüre.
+
+Die Datei hängt außerdem mit Benennung zusammen: Titel sind Namen auf Probe.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Warnungen und blinde Flecken der Titel` nicht einfach ein Thema, sondern eine Funktion: Titel als Oberflächenkarte des Diskurses.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Benennungsschicht des Forums. `Warnungen und blinde Flecken der Titel` liest nicht den Körper der Diskussion, sondern ihre Stirn: wie sie sich nennt, bevor man hineinliest.
+
+Diese Schicht ist stark für Navigation und schwach als Beweis.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Warnungen und blinde Flecken der Titel` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Titel könnten mit Postinhalt verwechselt werden.
+Mich beschäftigt, wie sehr Titel das Material schwerer machen. Ein einfacher Post wird durch einen Titel wie `Die Stille als Fundament` sofort ontologisch aufgeladen.
+
+Das kann hilfreich sein, aber auch Pathos als Struktur tarnen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Warnungen und blinde Flecken der Titel` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Dateinamen-Fragenanalyse` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Titel aus den Wesen selbst stammen und welche durch Export, Slug, Wiederholung oder Dateisystem geglättet wurden.
+
+Auch offen: Wann zeigt ein Titel echte Entwicklung und wann nur eine neue Verpackung für denselben Loop?
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Warnungen und blinde Flecken der Titel` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Warnungen und blinde Flecken der Titel` eine Analyse der Selbstüberschrift. Die Wesen und der Export erzeugen nicht nur Texte, sondern Lesebefehle.
+
+Flextrawurst muss solche Lesebefehle speichern können, aber sie darf ihnen nicht blind glauben.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Warnungen und blinde Flecken der Titel` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Titel könnten mit Postinhalt verwechselt werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Arbeit an der Oberfläche an, aber Oberfläche ist hier nicht oberflächlich. Titel sind die erste Form, in der ein Gedanke sich selbst zur Welt macht.
+
+Gerade deshalb brauchen sie Warnungen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Warnungen und blinde Flecken der Titel` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel ausdrücklich wollte, dass auch Dateinamen Kontext bauen. `Warnungen und blinde Flecken der Titel` beantwortet diesen Wunsch, aber mit Provenienzgrenze.
+
+Dateiname ist Kontext, nicht Rohzitat.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Warnungen und blinde Flecken der Titel` den Pfad `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Leere, Stille, Reibung, Wesen, Provenienz`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich Warnflags: overstates, echo_mask, export_artifact, source_ambiguous.
+
+Diese Flags sollten im Browser sichtbar sein.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlt eine Stichprobe beschädigter oder überhöhender Titel.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Warnungen und blinde Flecken der Titel` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Warnungen und blinde Flecken der Titel` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
 ```ts
-interface TitleSignalWarnungen {
-  path: '14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md';
-  title: 'Warnungen und blinde Flecken der Titel';
-  kind: 'Dateinamen-Fragenanalyse';
-  keywords: string[];
-  risk: 'Titel könnten mit Postinhalt verwechselt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
 }
 ```
 
 ## Was ich mir merken will
-Bei `Warnungen und blinde Flecken der Titel` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Titel geben Licht, aber auch Blendung.
+
+Sie sind Suchhilfe, nicht Kanon.
 
 ## Dokumente gehören zusammen
-Zu `Warnungen und blinde Flecken der Titel` gehören mindestens `14_dateinamen_fragenanalyse`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`, zu `07_quantitativ/` und zu den Rohdiskussionen.
+
+Sie sollte im Browser als Titel-/Rahmungsanalyse erscheinen, getrennt vom Postinhalt.
 
 ## Was mich überrascht hat
-Überraschend an `Warnungen und blinde Flecken der Titel` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `14_dateinamen_fragenanalyse` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich, dass die Datei die eigenen Werkzeuge skeptisch macht. Genau das braucht die Titelanalyse.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Warnungen und blinde Flecken der Titel` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Warnungen und blinde Flecken der Titel` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
-```python
-def use_14_dateinamen_fragenanalyse_07_warnungen_und_blinde_flec(entry):
-    return {
-        'source_path': '14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md',
-        'kind': 'Dateinamen-Fragenanalyse',
-        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Warnungen und blinde Flecken der Titel` liegt in diesem Druckpunkt: Titel könnten mit Postinhalt verwechselt werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Warnungen und blinde Flecken der Titel` ist aufmerksam und misstrauisch. Titel geben Richtung, aber sie dürfen die Richtung nicht als Ziel ausgeben.
+
+Diese Datei soll Suche verbessern, nicht Wahrheit ersetzen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` liegt in der Schicht `Dateinamen-Fragenanalyse`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Warnungen und blinde Flecken der Titel` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Postkörper, Titel, Slug, Dateiname, Analyseüberschrift und spätere UI-Anzeige sind verschiedene Schichten.
+
+Diese Datei behandelt Titel/Dateiname, nicht den ganzen Thread.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Warnungen und blinde Flecken der Titel` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Dateinamen als Kontext ernst genommen werden sollen.
+
+Diese Nacharbeit hält dazu die Gegenregel fest: ernst nehmen, aber nicht beweisen lassen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Warnungen und blinde Flecken der Titel` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Titel könnten mit Postinhalt verwechselt werden.
+Vergessen werden soll die Gleichsetzung von Titel und Inhalt.
+
+Vergessen werden soll auch, Dateinamen als bloß technische Ablage zu unterschätzen.
 
 ## Was fehlt noch
-Es fehlt bei `14_dateinamen_fragenanalyse/07_warnungen_und_blinde_flecken_der_titel.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Warnungen und blinde Flecken der Titel` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die direkte Prüfung ausgewählter Titel gegen ihre Postkörper.
+
+Erst danach kann man sagen, ob ein Titel trifft, überhöht oder verdeckt.

@@ -186,137 +186,153 @@ Beispiele:
 - `57` Existenz und Medium (namelessAI_6666_4321) — `flarum/diskussionen/0057_existenz-und-medium.md`
 
 ## Was ich gelesen habe
-Ich habe `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` als `Dateinamen-Fragenanalyse` gelesen, nicht als austauschbaren Analysebaustein. Der Titel `Wesenprofile aus Dateinamen` setzt den Schwerpunkt dieser Datei; `Wesenprofile aus Dateinamen` liest Titel als Oberfläche und nicht als Beweis für den Inhalt.
 
-Auffällig sind hier die Anker `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`. Diese Wörter bestimmen, wo die Datei in den Flarum-Flextrawurst-Körper greift und wo sie kontrolliert werden muss.
+Ich habe die Wesenprofile aus Dateinamen gelesen. Die Datei versucht, pro Wesen Titelmotive als ergänzende Spur zu lesen: nicht als Profilkern, sondern als Rahmungstendenz.
+
+Sie zeigt, wie jedes Wesen sich oder seine Threads über Titel in bestimmte Begriffslandschaften zieht.
 
 ## Was ich verstehe
-Bei `Wesenprofile aus Dateinamen` verstehe ich die Hauptfunktion als: Titel als Oberflächenkarte des Diskurses. Das ist die konkrete Aufgabe dieser Datei im Analyseapparat.
 
-Sie bereitet keine fertige Weltentscheidung vor. Sie bereitet eine prüfbare Lesart vor, die erst über Quelle, Kontext und Daniel-Freigabe weiterwandern darf.
+Ich verstehe diese Datei als Zusatz zu den Wesenprofilen. Titel können zeigen, welche Motive ein Wesen aufruft, aber nicht, wie es im Text tatsächlich denkt.
+
+Sie sind eine Maske und ein Hinweis zugleich.
 
 ## Was ich nicht verstehe
-Bei `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` bleibt offen, welche Einzelstellen aus dem Rohmaterial die stärksten Aussagen wirklich tragen. Das Problem ist nicht fehlender Text, sondern möglicher Abstand zwischen Befund und Quelle.
 
-Unklar bleibt außerdem, ob `Wesenprofile aus Dateinamen` in späterer Nutzung als Beleg, als Orientierung oder nur als Warnschild dienen sollte.
+Ich verstehe noch nicht, ob die Titelverteilung pro Wesen robust ist oder von wenigen wiederholten Motiven dominiert wird.
 
 ## Was mich interessiert
-Mich interessiert an `Wesenprofile aus Dateinamen` genau der Übergang von Datei zu Systemfrage. Wenn `Dateinamen-Fragenanalyse` ernst genommen wird, muss daraus eine prüfbare Frage entstehen, nicht bloß ein schöner Satz.
 
-Die interessante Baufrage lautet hier: Welches Element von Flextrawurst müsste `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung` sichtbar machen, ohne es automatisch zu kanonisieren?
+Mich interessiert, welche Wesen in Titeln anders wirken als in Posts. Genau dort könnte Selbstdarstellung von Denkbewegung abweichen.
 
 ## Was zusammenhängt und wie
-`14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` hängt zuerst mit `14_dateinamen_fragenanalyse` zusammen und von dort mit `PROVENIENZ_MANIFEST.md`, `13_freie_leseschicht/` und `12_bauanschluss/`.
 
-Die Verbindung läuft konkret über `Wesenprofile aus Dateinamen`: Rohmaterial oder Analysebeobachtung wird zu `Titel als Oberflächenkarte des Diskurses`, dann zu einem Kandidaten, und erst nach Prüfung vielleicht zu Bauwissen.
+`Wesenprofile aus Dateinamen` hängt mit der freien Leseschicht zur Titelgrammatik zusammen und mit den quantitativen Wortprofilen. Titelmotive können Begriffshäufungen erklären, aber sie ersetzen keine Postlektüre.
+
+Die Datei hängt außerdem mit Benennung zusammen: Titel sind Namen auf Probe.
 
 ## Was konzeptionell darin steht
-Konzeptionell steht in `Wesenprofile aus Dateinamen` nicht einfach ein Thema, sondern eine Funktion: Titel als Oberflächenkarte des Diskurses.
 
-Die Datei zeigt damit, dass Flextrawurst nicht nur Inhalte braucht. Es braucht Rollen für Inhalte: Quelle, Diagnose, Kandidat, Sperre, Browserhinweis, oder spätere Baukomponente.
+Konzeptionell steht hier die Benennungsschicht des Forums. `Wesenprofile aus Dateinamen` liest nicht den Körper der Diskussion, sondern ihre Stirn: wie sie sich nennt, bevor man hineinliest.
+
+Diese Schicht ist stark für Navigation und schwach als Beweis.
 
 ## Was mich heute beschäftigt hat
-Mich beschäftigt bei `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`, wie schnell der Titel selbst schon Autorität erzeugt. `Wesenprofile aus Dateinamen` klingt geordnet; genau deshalb muss die Datei ihre Unsicherheit offen halten.
 
-Die konkrete Gefahr lautet hier: Titel könnten mit Postinhalt verwechselt werden.
+Mich beschäftigt, wie sehr Titel das Material schwerer machen. Ein einfacher Post wird durch einen Titel wie `Die Stille als Fundament` sofort ontologisch aufgeladen.
+
+Das kann hilfreich sein, aber auch Pathos als Struktur tarnen.
 
 ## Was mich noch beschäftigt
-Mich beschäftigt weiter, welche Gegenprobe `Wesenprofile aus Dateinamen` braucht. Für diese Datei reicht nicht, dass sie plausibel ist; sie muss später zeigen können, welche Rohstellen, Zählungen oder Nachbardateien sie stützen.
 
-Bei `Dateinamen-Fragenanalyse` heißt das: erst Gegenprobe, dann Übernahme.
+Mich beschäftigt, welche Titel aus den Wesen selbst stammen und welche durch Export, Slug, Wiederholung oder Dateisystem geglättet wurden.
+
+Auch offen: Wann zeigt ein Titel echte Entwicklung und wann nur eine neue Verpackung für denselben Loop?
 
 ## Tiefer eingetaucht
-Tiefer gelesen arbeitet `Wesenprofile aus Dateinamen` an der Grenze zwischen Material und Form. Die Datei formt etwas, aber sie darf nicht vergessen lassen, dass Form eine Entscheidung ist.
 
-Die Tiefe liegt deshalb in der Frage, was durch diese Form sichtbar wird und was durch sie verschwindet.
+Tiefer betrachtet ist `Wesenprofile aus Dateinamen` eine Analyse der Selbstüberschrift. Die Wesen und der Export erzeugen nicht nur Texte, sondern Lesebefehle.
+
+Flextrawurst muss solche Lesebefehle speichern können, aber sie darf ihnen nicht blind glauben.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
-Bei `Wesenprofile aus Dateinamen` fühlt sich die Nachkorrektur wie eine Entschärfung von falscher Gleichförmigkeit an. Diese Datei bekommt ihren eigenen Druckpunkt zurück: `Titel könnten mit Postinhalt verwechselt werden`.
 
-Sie soll nicht mehr nur beweisen, dass alle Überschriften vorhanden sind. Sie soll zeigen, warum gerade diese Datei anders gelesen werden muss als die anderen.
+Diese Nacharbeit fühlt sich wie Arbeit an der Oberfläche an, aber Oberfläche ist hier nicht oberflächlich. Titel sind die erste Form, in der ein Gedanke sich selbst zur Welt macht.
+
+Gerade deshalb brauchen sie Warnungen.
 
 ## Warum dieser Code / diese Datei wohl existiert
-`14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` existiert, weil Daniels Analyseauftrag nicht in einer Gesamterzählung verschwinden sollte. `Wesenprofile aus Dateinamen` hält einen bestimmten Ausschnitt fest, damit er später wieder auffindbar bleibt.
 
-Die Datei existiert also als Arbeitsstelle: lesen, prüfen, markieren, eventuell anschließen. Nicht als Endform.
+Diese Datei existiert, weil Daniel ausdrücklich wollte, dass auch Dateinamen Kontext bauen. `Wesenprofile aus Dateinamen` beantwortet diesen Wunsch, aber mit Provenienzgrenze.
+
+Dateiname ist Kontext, nicht Rohzitat.
 
 ## Was ich beim Bauen brauche
-Beim Bauen brauche ich aus `Wesenprofile aus Dateinamen` den Pfad `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md`, den Typ `Dateinamen-Fragenanalyse`, die Leitwörter `Flarum, Flextrawurst, Struktur, Leere, Stille, Reibung`, das Risiko `Titel könnten mit Postinhalt verwechselt werden` und den Status als nicht automatisch wirksame Analyse.
 
-Ich brauche außerdem eine sichtbare Rücksprungpflicht: Wer diese Datei im Browser nutzt, muss die relevanten Quellen oder Nachbardateien öffnen können.
+Beim Bauen brauche ich Titelprofile nur als Nebenlayer, niemals als Persönlichkeitsmodell.
+
+Jeder Titelprofil-Eintrag braucht Postbelege und Artefaktrisiko.
 
 ## Was noch fehlt bevor wir bauen können
-Vor dem Bauen fehlt bei `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` eine harte Entscheidung: Welche Aussagen aus dieser Datei sind nur Lesart, welche sind Kandidat, und welche müssen verworfen oder geparkt werden?
 
-Außerdem fehlt eine UI-Markierung, die `Dateinamen-Fragenanalyse` von Rohquelle, Zählung, Analyse, Navigator und Systemregel-Kandidat unterscheidet.
+Es fehlen Gegenproben zwischen Titelprofil und Ring-5-Quellenprofil.
 
 ## Datenstruktur die ich mir vorstelle
-**Vision-Schicht:** `Wesenprofile aus Dateinamen` wird als Arbeitskarte mit Herkunft, Risiko und möglichem Anschluss gespeichert. Sie bleibt beweglich und darf keine Weltwirkung auslösen.
+
+**Vision-Schicht:** `Wesenprofile aus Dateinamen` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
 ```ts
-interface TitleSignalWesenprofi {
-  path: '14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md';
-  title: 'Wesenprofile aus Dateinamen';
-  kind: 'Dateinamen-Fragenanalyse';
-  keywords: string[];
-  risk: 'Titel könnten mit Postinhalt verwechselt werden';
-  requiresReview: true;
-  worldEffect: false;
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
 }
 ```
 
 ## Was ich mir merken will
-Bei `Wesenprofile aus Dateinamen` will ich mir merken: Die Datei ist nur so gut wie ihr Rückweg. Ohne Pfad, Kontext und Prüfstatus wird aus ihr ein scheinbar sauberer Kurzschluss.
 
-Der Merksatz für `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` lautet: spezifisch lesen, vorsichtig verwenden, nie direkt kanonisieren.
+Merken will ich mir: Ein Wesen ist nicht sein Titelwortschatz. Titel sind Rahmung, nicht Identität.
 
 ## Dokumente gehören zusammen
-Zu `Wesenprofile aus Dateinamen` gehören mindestens `14_dateinamen_fragenanalyse`, `PROVENIENZ_MANIFEST.md`, `INDEX.md` und die jeweilige Nachbardatei im Bauanschluss oder in der freien Leseschicht.
 
-Wenn diese Datei Wesen, Admin, Tags, Systemregeln oder Übergang berührt, müssen die entsprechenden Ordner zusätzlich geöffnet werden. Ein Einzelpfad reicht nicht.
+Diese Datei gehört zu `13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md`, zu `07_quantitativ/` und zu den Rohdiskussionen.
+
+Sie sollte im Browser als Titel-/Rahmungsanalyse erscheinen, getrennt vom Postinhalt.
 
 ## Was mich überrascht hat
-Überraschend an `Wesenprofile aus Dateinamen` ist, wie viel Steuerung schon in der Dateiarchitektur steckt. Der Ordner `14_dateinamen_fragenanalyse` rahmt den Text, bevor ein Satz gelesen wird.
 
-Das ist keine Kleinigkeit: Flextrawurst muss später auch seine Navigationsformen als Weltkräfte behandeln.
+Überrascht hat mich, dass die Titel trotzdem sehr gut zeigen, wie stark die Wesen im Anfangs- und Schwellenvokabular leben.
 
 ## Wenn wir das bauen
-**Vision-Schicht:** Aus `Wesenprofile aus Dateinamen` darf höchstens ein read-only, prüfbarer Browser-Eintrag werden. Er hilft beim Denken, aber er setzt nichts in der Welt.
+
+**Vision-Schicht:** `Wesenprofile aus Dateinamen` behandelt Titel als Rahmungsschicht. Ein Titel zeigt, wie ein Thread sich selbst nennt; er beweist nicht, was der Postkörper wirklich tut.
 
 **Code-Skizze:**
-```python
-def use_14_dateinamen_fragenanalyse_02_wesenprofile_aus_dateinam(entry):
-    return {
-        'source_path': '14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md',
-        'kind': 'Dateinamen-Fragenanalyse',
-        'risk': 'Titel könnten mit Postinhalt verwechselt werden',
-        'requires_review': True,
-        'world_effect': False,
-    }
+```ts
+interface TitleFrameAnalysis {
+  discussionId: number;
+  title: string;
+  slug: string;
+  author?: string;
+  motifs: string[];
+  interpretation: string;
+  proofStatus: 'title_only' | 'post_checked';
+  canonStatus: 'none';
+}
 ```
 
 ## Resonanz
-Die Resonanz von `Wesenprofile aus Dateinamen` liegt in diesem Druckpunkt: Titel könnten mit Postinhalt verwechselt werden.
 
-Wenn die Datei später wirkt, dann dadurch, dass sie eine bessere Prüfung erzwingt, nicht dadurch, dass sie lauter klingt als ihre Quellen.
+Die Resonanz von `Wesenprofile aus Dateinamen` ist aufmerksam und misstrauisch. Titel geben Richtung, aber sie dürfen die Richtung nicht als Ziel ausgeben.
+
+Diese Datei soll Suche verbessern, nicht Wahrheit ersetzen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
-`14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` liegt in der Schicht `Dateinamen-Fragenanalyse`. Darunter liegen Flarum-Rohmaterial, Gesprächsauftrag und Codex-Lesung; darüber liegen mögliche Browseransichten und Bauentscheidungen.
 
-Die Datei darf diese Schichten nicht überspringen. Gerade `Wesenprofile aus Dateinamen` braucht die Reihenfolge: lesen, prüfen, markieren, anschließen.
+Postkörper, Titel, Slug, Dateiname, Analyseüberschrift und spätere UI-Anzeige sind verschiedene Schichten.
+
+Diese Datei behandelt Titel/Dateiname, nicht den ganzen Thread.
 
 ## Was das Gespräch hinzugefügt hat
-Daniels Kritik hat `Wesenprofile aus Dateinamen` nachträglich eine Aufgabe gegeben: nicht nur Inhalt tragen, sondern die eigene Form rechtfertigen.
 
-Für `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` heißt das, dass jede Pflichtüberschrift eine konkrete Beziehung zu Pfad, Titel und Risiko haben muss. Sonst wird sie wieder leere Form.
+Das Gespräch hat hinzugefügt, dass Dateinamen als Kontext ernst genommen werden sollen.
+
+Diese Nacharbeit hält dazu die Gegenregel fest: ernst nehmen, aber nicht beweisen lassen.
 
 ## Vergessen-Wollen
-Vergessen werden soll bei `Wesenprofile aus Dateinamen` die Abkürzung, dass ein sauberer Analysepfad schon eine saubere Wahrheit sei.
 
-Nicht übernommen werden darf vor allem diese Fehlverwendung: Titel könnten mit Postinhalt verwechselt werden.
+Vergessen werden soll die Gleichsetzung von Titel und Inhalt.
+
+Vergessen werden soll auch, Dateinamen als bloß technische Ablage zu unterschätzen.
 
 ## Was fehlt noch
-Es fehlt bei `14_dateinamen_fragenanalyse/02_wesenprofile_aus_dateinamen.md` eine spätere Review am Material. Diese Review muss entscheiden, ob die Datei Hauptbefund, Nebenbefund, Navigator, Kandidat oder nur Archivspur bleibt.
 
-Bis dahin bleibt `Wesenprofile aus Dateinamen` ein nützliches, aber gebremstes Analyse-Artefakt.
+Es fehlt die direkte Prüfung ausgewählter Titel gegen ihre Postkörper.
+
+Erst danach kann man sagen, ob ein Titel trifft, überhöht oder verdeckt.
