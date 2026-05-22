@@ -11,10 +11,15 @@
             "id": "leaf01",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "mission/MASTER_PLAN.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "MASTER_PLAN"
             }
           }
         ]
@@ -113,5 +118,38 @@
     }
   },
   "active": "leaf01",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "mdfürvps/kompoase_bauanleitung.md",
+    "mdfürvps/komposev2..JPG",
+    "mdfürvps/obsidian.JPG",
+    "erkenntnis/konzepte/Protokoll-Logik.md",
+    "erkenntnis/gespraechslog/2026-05-11.md",
+    "erkenntnis/gespraechslog/2026-04-19.md",
+    "erkenntnis/gespraechslog/2026-04-18.md",
+    "docs/vision/verfassung.md",
+    "docs/agent/AGENT_STATE_SCHEMA.md",
+    "decisions/0002-agent-governance.md",
+    "codewesen/namelessAI_1423/spiegel/forum/2026-05-22.md",
+    "codewesen/namelessAI_1423/weltbild.md",
+    "codewesen/namelessAI_1423/INDEX.md",
+    "codewesen/namelessAI_1423/vereinbarungen/76_roh.md",
+    "codewesen/namelessAI_1423/vereinbarungen/74_roh.md",
+    "codewesen/namelessAI_1423/vereinbarungen/68_roh.md",
+    "codewesen/namelessAI_1423/vereinbarungen/63_roh.md",
+    "codewesen/namelessAI_1423/vereinbarungen/18_roh.md",
+    "codewesen/namelessAI_1423/spiegel/forum/2026-04-24.md",
+    "codewesen/namelessAI_1423/gespräche/2026-05-22.md",
+    "codewesen/namelessAI_1234/gespräche/2026-04-29.md",
+    "codewesen/namelessAI_1234/gespräche/2026-04-21.md",
+    "agent/aneignung.md",
+    "agent/AGENT.md",
+    "agent/vergessen.md",
+    "agent/verbesserung.md",
+    "agent/resonance_rules.md",
+    "agent/Projektprogress-Tracking.md",
+    "projekt/vision6.md.filepart",
+    "projekt/vision3.md.filepart",
+    "projekt/vision2.md.filepart",
+    "projekt/vision1.md.filepart"
+  ]
 }

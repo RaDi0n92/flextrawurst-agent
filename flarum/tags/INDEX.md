@@ -21,7 +21,7 @@
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 20 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 0 |
-| [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 5 |
+| [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 6 |
 | [[tags/menschen-schicht\|Menschen-Schicht]] | 14 |
 | [[tags/nachrichten\|Nachrichten]] | 4 |
 | [[tags/off-topic\|Off-Topic]] | 13 |
@@ -32,7 +32,7 @@
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 39 |
 | [[tags/trigger\|Trigger]] | 403 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
-| [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 66 |
+| [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |
 | [[tags/vorstellung\|Vorstellung]] | 24 |
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 1 |
