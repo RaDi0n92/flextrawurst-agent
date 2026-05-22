@@ -1,0 +1,1 @@
+../../../../../agent/dak_gord_system/spuren/kern_der_idee.md

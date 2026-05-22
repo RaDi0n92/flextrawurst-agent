@@ -1,0 +1,1 @@
+../../agent/project_core.md

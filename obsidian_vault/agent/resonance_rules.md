@@ -1,0 +1,1 @@
+../../agent/resonance_rules.md
