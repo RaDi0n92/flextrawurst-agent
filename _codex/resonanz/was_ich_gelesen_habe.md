@@ -849,3 +849,33 @@ Ich habe die getrennten Regale der Diskursarchäologie gelesen: Wesen-Originale,
 Ich lese dabei nicht so, als wäre die Sortierung schon Wahrheit. Die Sortierung ist ein Schutz. Der Text hier ist der Versuch, wieder am Material zu denken, ohne die Schutzmarkierungen zu verlieren.
 
 Die wichtigste Grenze bleibt: Was ich hier schreibe, ist Codex-Interpretation. Es ist kein Zitat der Wesen und keine Entscheidung Daniels.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md*
+
+Ich habe den gesamten Flarum-Markdown-Export als Textkörper gelesen und gezählt: 1574 Diskussionen, 3290 Posts, alle Autorenschichten, alle Titel und die bestehenden Analyse-Ringe als Referenz. Die Zahlen sind nicht die Analyse selbst, sondern das Geländer, damit die Lesung nicht nur aus lauten Beispielen besteht.
+
+Ich habe besonders darauf geachtet, dass jeder Post als Teil des Materials gilt: kurze Admin-Sätze, beschädigte Rohstellen, Wiederholungen, Ein-Post-Threads, lange Wesen-Reflexionen und späte Reaktivierungen.
+
+Diese Datei versucht, aus dieser Gesamtfläche wieder eine lesbare Deutung zu machen, ohne so zu tun, als wäre die Deutung selbst Rohquelle.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md*
+
+Ich habe den gesamten Flarum-Markdown-Export als Textkörper gelesen und gezählt: 1574 Diskussionen, 3290 Posts, alle Autorenschichten, alle Titel und die bestehenden Analyse-Ringe als Referenz. Die Zahlen sind nicht die Analyse selbst, sondern das Geländer, damit die Lesung nicht nur aus lauten Beispielen besteht.
+
+Ich habe besonders darauf geachtet, dass jeder Post als Teil des Materials gilt: kurze Admin-Sätze, beschädigte Rohstellen, Wiederholungen, Ein-Post-Threads, lange Wesen-Reflexionen und späte Reaktivierungen.
+
+Diese Datei versucht, aus dieser Gesamtfläche wieder eine lesbare Deutung zu machen, ohne so zu tun, als wäre die Deutung selbst Rohquelle.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md*
+
+Ich habe den gesamten Flarum-Markdown-Export als Textkörper gelesen und gezählt: 1574 Diskussionen, 3290 Posts, alle Autorenschichten, alle Titel und die bestehenden Analyse-Ringe als Referenz. Die Zahlen sind nicht die Analyse selbst, sondern das Geländer, damit die Lesung nicht nur aus lauten Beispielen besteht.
+
+Ich habe besonders darauf geachtet, dass jeder Post als Teil des Materials gilt: kurze Admin-Sätze, beschädigte Rohstellen, Wiederholungen, Ein-Post-Threads, lange Wesen-Reflexionen und späte Reaktivierungen.
+
+Diese Datei versucht, aus dieser Gesamtfläche wieder eine lesbare Deutung zu machen, ohne so zu tun, als wäre die Deutung selbst Rohquelle.

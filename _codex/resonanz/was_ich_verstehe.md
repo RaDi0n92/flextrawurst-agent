@@ -639,3 +639,21 @@ Flextrawurst soll Anforderungen aus Flarum lernen, nicht Flarum als Oberfläche 
 **[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/README.md*
 
 Freie Leseschicht: Verbindung nach der Sortierung, aber kein Kanon.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md*
+
+Wesenanalyse: Stil als Denkbewegung und Korrekturfunktion.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md*
+
+Titelanalyse: Dateinamen als zweite Diskursoberfläche und Rahmungsrisiko.
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md*
+
+Gesamtlesung: Flarum als Reibungsmaschine und Unterscheidungsschule.

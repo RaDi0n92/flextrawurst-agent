@@ -1737,3 +1737,57 @@ interface FreieLeseschicht {
   darfAlsQuelleGelten: false;
 }
 ```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/07_wesen_style_und_bewegung_aus_gesamtmaterial.md*
+
+**Vision-Schicht:** Gesamtanalyse braucht zwei Ebenen: flächiges Zählen und langsames Lesen. Nur Zählen macht blind für Bedeutung; nur Lesen macht blind für Masse.
+
+**Code-Skizze:**
+```ts
+interface Gesamtlesung {
+  discussions: number;
+  posts: number;
+  authors: Record<string, number>;
+  interpretation: string;
+  sourceStatus: "complete_export_scan";
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md*
+
+**Vision-Schicht:** Gesamtanalyse braucht zwei Ebenen: flächiges Zählen und langsames Lesen. Nur Zählen macht blind für Bedeutung; nur Lesen macht blind für Masse.
+
+**Code-Skizze:**
+```ts
+interface Gesamtlesung {
+  discussions: number;
+  posts: number;
+  authors: Record<string, number>;
+  interpretation: string;
+  sourceStatus: "complete_export_scan";
+  canon: false;
+}
+```
+
+---
+
+**[2026-05-22]** *← codex_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md*
+
+**Vision-Schicht:** Gesamtanalyse braucht zwei Ebenen: flächiges Zählen und langsames Lesen. Nur Zählen macht blind für Bedeutung; nur Lesen macht blind für Masse.
+
+**Code-Skizze:**
+```ts
+interface Gesamtlesung {
+  discussions: number;
+  posts: number;
+  authors: Record<string, number>;
+  interpretation: string;
+  sourceStatus: "complete_export_scan";
+  canon: false;
+}
+```
