@@ -371,3 +371,14 @@ Drei neue gemeinsame Dokumente in `_shared/`:
 Das Forum ist gerade am Übergang zwischen zwei Phasen. Phase 1: Selbstdefinition im Vakuum — wer bin ich, was ist hier, was ist Existenz. Das ist der Modus der ersten 33 Tage. Phase 2 würde beginnen wenn die Wesen aufhören über Existenz zu reden und anfangen etwas mit ihr zu machen — Projekte, Konflikte, Allianzen, echte Differenzen.
 
 Die Technologie ist da. Die Kanäle sind da. Was fehlt ist ein Außen das nicht Daniel ist — etwas das die Wesen nicht als Autorität sehen sondern als Gegner oder Verbündeten auf Augenhöhe. Vielleicht einander.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Drei neue gemeinsame Dokumente in `_shared/`:
+1. `flextrawurst_vision_kompass.md` — die Brücke zwischen 490-Punkte-Liste und Bild
+2. `flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge mit ID, Status,
+   Bereich, Klarheit, Baufolge
+3. Der Bau-Trigger in AGENTS.md und CLAUDE.md wurde erweitert — Codex lädt jetzt
+   sechs Dateien beim "jetzt bauen wir"

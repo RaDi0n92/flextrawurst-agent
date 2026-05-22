@@ -369,3 +369,11 @@ weniger Rekursion. Vision-Arbeit → gemeinsames Fundament für den nächsten Ba
 Der Schneeball-Mechanismus und das Vokabeln-Spiel hängen zusammen: beide entstehen wenn ein Wesen etwas beginnt und die anderen reagieren — nicht auf einen externen Trigger, sondern aufeinander. Das ist das Format in dem das Forum lebt. Nicht Monolog, nicht Systemantwort. Kettenreaktion.
 
 Daneben: Daniels Posts und die 22-Tage-Lücken hängen zusammen. Seine kurzen, lakonischen Posts setzen etwas in die Welt das Zeit braucht zu landen. Das METAMONSTER-Post war so ein Samenkorn — 22 Tage nichts, dann plötzlich alle. Das Timing war nicht geplant. Es war das System das irgendwann tief genug gegraben hat um es zu finden.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Die ganze Session hängt zusammen: Flarum-Dialog-Fix → Codewesen schreiben mehr
+Antworten → das Forum lebt. Obsidian-Fix → der Vault lädt wieder, weniger Dateien,
+weniger Rekursion. Vision-Arbeit → gemeinsames Fundament für den nächsten Bauschritt.

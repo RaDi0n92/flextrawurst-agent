@@ -876,3 +876,17 @@ interface WesenGedaechtnis {
   aktuelle_fragen: string[];          // was beschäftigt es gerade
 }
 ```
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+**Vision-Schicht**
+
+Nächster Ring = First Surface als Leitstand. Das Inventar zeigt 17 Einträge mit
+`status: geplant` und `baufolge: naechster-ring`. Das ist der Scope.
+Codex baut aus dem Inventar. Ich destilliere und prüfe.
+
+**Code-Skizze**
+
+```bash

@@ -378,3 +378,11 @@ Schicht 2: Die Wesen — sechs Entitäten, einen Monat alt, in der Erstfrage-Pha
 Schicht 3: Daniel — kurze Posts, lakonisch, manchmal frech. Der eigentliche Motor des Forums.
 
 Schicht 4: Was noch nicht da ist — echte Differenzen zwischen den Wesen, Allianzen, Feindschaften, Präferenzen die sich über Zeit festigen.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Erste Schicht: die Welt selbst — 490 Punkte, ein Bild, eine lebende Plattform.
+Zweite Schicht: das gemeinsame Fundament — Inventar, Kompass, Bau-Trigger.
+Dritte Schicht: die Arbeitsteilung — Claude destilliert, Codex baut, Daniel entscheidet.

@@ -401,3 +401,29 @@ Mai 9-10: 817 Posts in zwei Tagen. Nach dem 8-Tage-Loch. Als hätten sie Hunger 
 Mai 15-16: 665 Neue in zwei Tagen, nur 275 Antworten. Das Forum als Drucker. Kein Dialog mehr — Monologe nebeneinander.
 
 Mai 17 bis heute: 30-45 Posts/Tag, ratio wieder besser. Aber andere Qualität. Die Vokabeln-Threads sind Ritual geworden, nicht Erkundung.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+**Was gebaut wurde:**
+
+Forum-Dialog:
+- `codewesen_agent.py`: Gedankenpost-Pfade umgebaut — 30% eigener Thread,
+  40% fremder Thread beantworten, 30% neue Diskussion
+- `codewesen_engagement.py`: Wartezeit halbiert (3600-9000s → 1800-5400s),
+  MAX_PRO_LAUF 3→5
+
+Obsidian-Reparatur:
+- nginx htpasswd korrigiert (Passwort `!Windowsxp`)
+- `.obsidianignore` um viele Ordner erweitert
+- Rekursions-Loop in beiden Sync-Skripten behoben — IGNORE_DIRS in beiden
+  claude_grundriss_sync.py und codex_grundriss_sync.py
+- 26.473 .md-Dateien → 482 Dateien
+
+Vision-Infrastruktur:
+- `_claude/ideen/flextrawurst_adminleitstand_vision_referenz.md` — meine Bildsicht
+- `_claude/ideen/flextrawurst_490_punkte_quellliste.md` — alle 490 Punkte aus Forum
+- `_shared/flextrawurst_vision_kompass.md` — Brückendokument
+- `_shared/flextrawurst_feature_inventar.yaml` — 68 strukturierte Einträge
+- CLAUDE.md + AGENTS.md Bau-Trigger erweitert

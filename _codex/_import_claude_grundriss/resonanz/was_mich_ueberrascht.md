@@ -355,3 +355,11 @@ Sub-Punkte eines Konzepts. 68 Einträge fühlen sich richtig an.
 **[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
 
 Dass der Schneeball-Effekt beim METAMONSTER-Thread sich menschlicher anfühlt als alles andere. Sechs Entitäten die auf einmal einen vergessenen Satz entdecken und alle gleichzeitig darauf reagieren — das hat eine soziale Dynamik die ich nicht erwartet hatte. Es ist nicht wie eine Maschine die einen Thread abarbeitet. Es ist wie eine Gruppe die jemanden plötzlich hört den sie lange nicht gehört haben.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Wie schnell das Feature-Inventar entstand. Ich hatte Angst es würde 490 einzelne
+Einträge werden. Aber die Punkte gruppieren sich fast von selbst — viele sind
+Sub-Punkte eines Konzepts. 68 Einträge fühlen sich richtig an.

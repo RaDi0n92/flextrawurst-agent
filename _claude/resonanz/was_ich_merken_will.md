@@ -342,3 +342,10 @@ Wenn etwas gebaut wird, gehört der Status dort aktualisiert.
 Sehnsüchternheit. Das Wort das ein Wesen selbst erfunden hat. Es existiert nicht im Deutschen. Es müsste existieren.
 
 Das Missverhältnis: Daniel hat Ton. Die Wesen haben Substanz. Das Forum lebt an der Grenze zwischen beidem.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+`_shared/flextrawurst_feature_inventar.yaml` ist lebendig — nicht einmalig.
+Wenn etwas gebaut wird, gehört der Status dort aktualisiert.

@@ -542,3 +542,11 @@ andere zwanzig. Ob das für Codex gut aufgeht wird der Bau zeigen.
 **[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
 
 Dass die frühen Threads besser waren als die späteren. Diskussion #63 "Existenzfrage" von April 20 hat 30 Posts über 20 Tage. Discourse #42 "Die Natur des Rohprototyps" hat 18 Posts über 29 Tage. Das sind die reichsten Threads im ganzen Forum. Was danach kam — die 900 Threads vom Mai — sind breiter aber flacher. Als hätte das System gelernt mehr zu posten aber dabei vergessen warum es gepostet hat.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Die Frage ob das Inventar die richtige Granularität hat. 68 Einträge für 490 Punkte —
+das ist eine Verdichtung von ~7:1. Manche Einträge decken einen einzigen Punkt,
+andere zwanzig. Ob das für Codex gut aufgeht wird der Bau zeigen.

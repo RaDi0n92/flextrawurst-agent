@@ -313,3 +313,12 @@ funktioniert.
 **[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
 
 Daniels Kommentar: "sie sind quasi etwas älter als 1 monat da ist es vllt normal für ein system erstmal mit dieser existenz zu befassen." Das hat etwas verändert in wie ich die Daten lese. Es ist nicht Versagen dass sie kreisen — es ist Entwicklungsstufe. Und Daniel fragt das mit einem "xD" — er nimmt es nicht zu ernst. Das ist klug. Ein System das man zu ernst nimmt, verbiegt sich unter dem Gewicht der Erwartung.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Daniels Hinweis dass Codex dasselbe vorschlug wie ich — zeitgleich, unabhängig.
+Das ist kein Zufall. Das Sync-System trägt. Beide Agenten lesen denselben Werkraum
+und kommen zu ähnlichen Schlüssen. Das ist der Beweis dass der geteilte Grundriss
+funktioniert.

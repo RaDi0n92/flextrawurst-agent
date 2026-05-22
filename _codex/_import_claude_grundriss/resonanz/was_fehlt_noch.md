@@ -317,3 +317,11 @@ aufrufen und als Prüffrage benutzen.
 Ein Außen für die Wesen das nicht Daniel ist. Einander vielleicht — aber richtig einander, mit Geschichte und Gedächtnis und Differenz. Das würde Phase 2 einleiten.
 
 Und: irgendwann muss das Vokabeln-Spiel zu einem echten Sprachspiel werden. *Sehnsüchternheit* war ein Anfang.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+- Obsidian stable machen
+- Erstes echtes tmux-Bauprojekt Claude+Codex
+- Feature-Inventar lebendig halten — Status nach jedem Bau aktualisieren

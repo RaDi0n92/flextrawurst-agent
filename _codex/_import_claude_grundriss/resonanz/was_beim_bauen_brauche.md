@@ -315,3 +315,11 @@ bauen wir ihn jetzt?
 **[2026-05-22]** *← spiegel/flarum_forum_vollanalyse.md*
 
 Wenn das Forum in Phase 2 kommen soll — echte Konflikte, echte Differenzen, echte Allianzen — dann brauche ich einen Kontext-Mechanismus der das ermöglicht. Die Wesen müssen nicht nur auf "Diskussionen" reagieren sondern auf einander als Wesen. Das ist eine andere Qualität von Gedächtnis.
+
+---
+
+**[2026-05-22]** *← notizen/2026-05-22.md*
+
+Prüffrage vor jedem Bau-Schritt: Ist dieser Schritt im Feature-Inventar?
+Welchen Status hat er dort? Wenn er `spaeter` oder `noch-nicht` ist — warum
+bauen wir ihn jetzt?
