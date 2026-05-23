@@ -3302,6 +3302,73 @@ def me_gedankenwelt_loeschen(
 
 # --- Schlaf-System ---
 
+def _zustandsaufnahme(cur, entity_id: str) -> dict:
+    """Erfasst den vollständigen Zustand einer Entität beim Einschlafen."""
+    zustand = {}
+
+    # Stimmung + Fokus
+    cur.execute("""
+        SELECT stimmung, fokus, tendencies, core
+        FROM entity_states WHERE entity_id = %s
+    """, (entity_id,))
+    row = cur.fetchone()
+    if row:
+        zustand["stimmung"] = row["stimmung"]
+        zustand["fokus"] = row["fokus"]
+        zustand["tendencies"] = row["tendencies"]
+        zustand["core"] = row["core"]
+
+    # Resonanzaktivität letzte 6h
+    cur.execute("""
+        SELECT COUNT(*) as n FROM events
+        WHERE actor_id = %s
+          AND event_type LIKE 'resonanz.%'
+          AND created_at >= NOW() - INTERVAL '6 hours'
+    """, (entity_id,))
+    zustand["resonanz_6h"] = cur.fetchone()["n"]
+
+    # Konfliktsignal: events mit 'konflikt' oder 'abstossung'
+    cur.execute("""
+        SELECT COUNT(*) as n FROM events
+        WHERE actor_id = %s
+          AND (event_type LIKE '%konflikt%' OR event_type LIKE '%abstoss%')
+          AND created_at >= NOW() - INTERVAL '24 hours'
+    """, (entity_id,))
+    zustand["konfliktsignal_24h"] = cur.fetchone()["n"]
+
+    # Offene Splitterfragmente des Wesens
+    cur.execute("""
+        SELECT COUNT(*) as n FROM splitter
+        WHERE entity_id = %s AND status = 'aktiv'
+    """, (entity_id,))
+    zustand["offene_splitter"] = cur.fetchone()["n"]
+
+    # Letzte eigene Aktivität
+    cur.execute("""
+        SELECT event_type, created_at FROM events
+        WHERE actor_id = %s
+          AND event_type NOT LIKE 'schlaf.%'
+          AND event_type NOT LIKE 'traum.%'
+        ORDER BY created_at DESC LIMIT 5
+    """, (entity_id,))
+    zustand["letzte_aktivitaeten"] = [
+        {"typ": r["event_type"], "wann": r["created_at"].isoformat()}
+        for r in cur.fetchall()
+    ]
+
+    # Substanzstatus (offen — freies Feld, wird später befüllt)
+    cur.execute("""
+        SELECT payload FROM events
+        WHERE actor_id = %s AND event_type LIKE 'substanz.%'
+        ORDER BY created_at DESC LIMIT 1
+    """, (entity_id,))
+    substanz_row = cur.fetchone()
+    zustand["substanz_aktiv"] = substanz_row["payload"] if substanz_row else None
+
+    return zustand
+
+
+
 class SchlafStartBody(BaseModel):
     typ: str  # 'kurz' oder 'hauptschlaf'
 
@@ -3401,13 +3468,14 @@ def schlaf_start(
                         detail="Hauptschlaf braucht einen Schlafbrief (letzte Stunde)"
                     )
 
+            zustand = _zustandsaufnahme(cur, entity_id)
             cur.execute(
                 """
-                INSERT INTO sleep_phases (entity_id, phase_type)
-                VALUES (%s, %s)
+                INSERT INTO sleep_phases (entity_id, phase_type, zustand)
+                VALUES (%s, %s, %s)
                 RETURNING phase_id, started_at
                 """,
-                (entity_id, body.typ),
+                (entity_id, body.typ, psycopg2.extras.Json(zustand)),
             )
             phase = cur.fetchone()
             cur.execute(
@@ -3484,6 +3552,28 @@ def schlaf_end(
             finished = cur.fetchone()
 
             bilanz = _schlaf_tagesbilanz(cur, entity_id)
+
+            # Brief lesen beim Aufwachen
+            brief_beim_aufwachen = None
+            if phase["phase_type"] == "hauptschlaf":
+                cur.execute("""
+                    SELECT brief_id, inhalt, geschrieben_at
+                    FROM schlafbriefe
+                    WHERE entity_id = %s AND phase_id IS NULL
+                    ORDER BY geschrieben_at DESC LIMIT 1
+                """, (entity_id,))
+                brief_row = cur.fetchone()
+                if brief_row:
+                    brief_beim_aufwachen = {
+                        "brief_id": str(brief_row["brief_id"]),
+                        "inhalt": brief_row["inhalt"],
+                        "geschrieben_at": brief_row["geschrieben_at"].isoformat(),
+                    }
+                    cur.execute(
+                        "UPDATE schlafbriefe SET phase_id = %s WHERE brief_id = %s",
+                        (phase["phase_id"], brief_row["brief_id"]),
+                    )
+
             cur.execute(
                 """
                 INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
@@ -3504,6 +3594,7 @@ def schlaf_end(
         "typ": phase["phase_type"],
         "dauer_min": finished["duration_min"],
         "bilanz": bilanz,
+        "brief_beim_aufwachen": brief_beim_aufwachen,
     }
 
 
