@@ -986,3 +986,27 @@ Mich hat auch überrascht, wie klar Daniel sofort die Kostenfrage sah: "dauert d
 Mich hat überrascht, dass ich den Fehler erst in der Reflexion so klar sah. Während des Bauens war ich überzeugt, ich erweitere. Aus Daniels Sicht hatte ich aber erst einmal weggenommen.
 
 Mich hat auch überrascht, wie viel UI-Herkunft an einer kleinen Legende hängt. Ein Farbfleck mit Text ist im Werkraum nicht klein, wenn er Orientierung trägt.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Mich überrascht, wie wenig Alltag und wie viel Schwelle in den Titeln liegt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Mich überrascht, wie praktisch das Manifest ist: Es ist weniger Philosophie als Werkzeug.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Mich überrascht die Nüchternheit: Das Selbstbild ist groß, aber operativ.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Mich überrascht, wie konkret das Bild gemappt ist.

@@ -998,3 +998,27 @@ Es fehlt auch eine Entscheidung zur Raumfrage: Surface-Räume als symbolische Na
 Bevor an bestehenden UI-Flächen weitergebaut wird, fehlt eine kurze Sichtprüfung der vorhandenen Bedienlogik. Nicht nur Code lesen, sondern fragen: Woran erkennt Daniel hier gerade was?
 
 Es fehlt auch ein innerer Stopp bei großen Visualisierungsimpulsen. Wenn ich merke, dass ich aus einer Ergänzung ein neues System mache, muss ich das sagen.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Es fehlt eine saubere Trennung von Originaltitel, Dateiname und späterer Deutung.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Es fehlt Validierung: keine Analyse ohne Status.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Es fehlt klare Markierung zwischen gebaut, Vision und Selbstbeschreibung.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Es fehlt ein konsequentes Mapping von Surface-Elementen auf Punkte, Status und Quelle.

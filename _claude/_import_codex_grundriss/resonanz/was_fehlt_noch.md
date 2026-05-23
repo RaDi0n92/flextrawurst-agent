@@ -984,3 +984,27 @@ Es fehlt auch eine kleine, gemeinsame Entscheidung, ob diese Surface-Wahrheit k�
 Es fehlt noch eine ruhigere Arbeitsweise bei bestehenden Oberflächen: erst bewahren, dann hinzufügen, dann prüfen.
 
 Es fehlt vielleicht auch eine kleine Regel für mich: Bei UI-Legenden, Karten, Navigationsleisten und vertrauten Namen immer annehmen, dass sie Herkunft tragen, bis Daniel ausdrücklich "neu" sagt.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Es fehlt ein Browser, der Titel als Rahmung und nicht als Beweis zeigt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Es fehlt eine maschinelle Provenienzprüfung.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Es fehlt eine klare Realitätsmarke zu jedem Selbstbildsatz.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Es fehlt ein sichtbarer Herkunftsinspektor für jede Surface-Zone.

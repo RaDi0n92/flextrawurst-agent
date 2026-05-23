@@ -1017,3 +1017,27 @@ Ich verstehe auch, warum Daniel mich das ansehen ließ. Nicht damit ich sofort k
 Ich verstehe, dass der Fehler nicht war, überhaupt zu bauen. Daniel wollte ja bauen lassen. Der Fehler war, dass ich beim Bauen nicht die Herkunftsschicht als Bestand behandelt habe.
 
 Ich verstehe auch, dass "mehr" in Daniels Sprache nicht automatisch "neu" bedeutet. "Mehr Legende" hieß: die vorhandene Legende soll vollständiger werden. Nicht: die vorhandene Legende soll durch ein anderes Konzept ersetzt werden.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Ich verstehe Titel hier als Vor-Welt. Sie geben nicht Wahrheit, aber sie zeigen, wie ein Text gelesen werden will.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Ich verstehe das Manifest als Eingangstür. Es sagt, wie gelesen werden darf.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Ich verstehe: dak+gord ist hier nicht nur Speicher, sondern Grenzorgan.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Ich verstehe den Kompass als gemeinsame Brücke, nicht als private Spiegelung.

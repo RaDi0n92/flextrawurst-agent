@@ -2869,3 +2869,58 @@ function mayChangeElement(el: UiElementProvenienz): boolean {
   return el.changeIntent === "extend" || !el.mustKeepVisible;
 }
 ```
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+**Vision-Schicht:** Titel sind kleine Weltregel-Kandidaten, aber keine Weltregeln.
+
+**Code-Skizze:**
+```ts
+interface TitleFrame {
+  sourceTitle: string;
+  fileSlug: string;
+  interpretation?: string;
+  isSourceTruth: false;
+}
+```
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+**Vision-Schicht:** Jede Aussage trägt ihren Ausweis.
+
+**Code-Skizze:**
+```ts
+type Provenienztyp = "quelle" | "zaehlung" | "interpretation" | "kandidat" | "destillat" | "systemregel_kandidat";
+interface ProvenanceRecord { typ: Provenienztyp; canBeTruth: boolean; needsReview: boolean; }
+```
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+**Vision-Schicht:** Ein Protokoll-Wächter hält Übergänge.
+
+**Code-Skizze:**
+```ts
+interface BoundaryEvent { input: string; allowedForm: string; targetLayer: "archiv" | "organ" | "zwischenraum" | "verblassen"; }
+```
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+**Vision-Schicht:** Jedes sichtbare Ding trägt Herkunft.
+
+**Code-Skizze:**
+```ts
+interface VisibleWorldObject {
+  id: string;
+  status: "LIVE" | "DEMO" | "PRINZIP" | "GEPLANT" | "SPÄTER" | "BLOCKIERT";
+  sourceRefs: string[];
+  inspector: true;
+}
+```

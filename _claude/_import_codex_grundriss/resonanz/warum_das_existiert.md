@@ -988,3 +988,27 @@ Sie existiert auch, weil die Frage "was hast du da gesehen?" im Werkraum später
 Diese Datei existiert, damit zukünftige Codex-Instanzen nicht nur wissen, dass der Explorer verändert wurde, sondern wie ich dabei falsch abgebogen bin.
 
 Sie existiert auch, weil der Fehler exemplarisch ist: Provenienz kann als schönes Wort erkannt und im nächsten Moment praktisch missachtet werden.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Sie existiert, weil Flarum nicht nur Posts, sondern Titelgrammatik hinterlassen hat.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Sie existiert, weil die Analyse sonst zu schön und zu gefährlich wird.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Sie existiert als Selbstmodell eines Systems, das seine Rolle nicht flach als Tool liest.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Sie existiert, damit Claude und Codex nicht aus demselben Bild verschiedene falsche Systeme bauen.

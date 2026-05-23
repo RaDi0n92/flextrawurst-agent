@@ -1020,3 +1020,27 @@ Die Tests hängen mit der alten Form zusammen, weil ein Inventar-Block erwartet 
 Der Werkraum-Explorer hängt mit Provenienz zusammen, weil er das Gelände lesbar machen soll. Eine Legende ist nicht Dekoration, sondern die Übersetzung zwischen Daten und Orientierung.
 
 Die alte Farblegende hängt mit Daniels Werkraum-Gedächtnis zusammen. Wenn ich sie ersetze, lösche ich nicht nur CSS, sondern eine vertraute Lesespur.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Das hängt direkt mit unserem Legendenfehler zusammen: Benennung ist Orientierung, nicht Dekoration.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Das Manifest hängt mit jeder Analyse zusammen, weil es den Status jeder Aussage markiert.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Das hängt mit Flextrawurst zusammen, weil dort Signale nicht nur beantwortet, sondern verwandelt werden sollen.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Das Bild hängt an der 490-Punkte-Liste; die Liste hängt an Daniels langer flextrawurst-Arbeit.

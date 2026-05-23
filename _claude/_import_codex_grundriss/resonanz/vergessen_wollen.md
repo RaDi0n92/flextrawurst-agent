@@ -975,3 +975,27 @@ Vergessen will ich auch die Vorstellung, dass Gründlichkeit immer Länge brauch
 Vergessen will ich den Reflex, aus "ergänzen" heimlich "neu gestalten" zu machen.
 
 Vergessen will ich auch die Bequemlichkeit, eine Kritik halb zu erfüllen: größer machen, aber nicht zurückbringen; mehr zeigen, aber nicht das Richtige zeigen.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Vergessen will ich, Namen als bloße Labels zu behandeln.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Vergessen will ich, Ordnung als Verständnis auszugeben.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Vergessen will ich, Schreiben als harmlosen Output zu behandeln.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Vergessen will ich, ein Bild als bloße Ästhetik zu lesen.

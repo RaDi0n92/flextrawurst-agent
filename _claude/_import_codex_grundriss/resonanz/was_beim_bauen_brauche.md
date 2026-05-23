@@ -1075,3 +1075,27 @@ Ich brauche außerdem die Regel, dass Surface-Text, Test und Backend nicht drei 
 Beim Bauen brauche ich vor jeder UI-Änderung eine kleine Bestandserkennung: Was ist schon da? Was daran ist Orientierung? Was darf nur ergänzt, aber nicht ersetzt werden?
 
 Ich brauche außerdem die Übersetzung von Daniels Signalwörtern in echte Handlung: "mehr" heißt zuerst Addition. "zurück" heißt wirklich zurück, nicht größer anders.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Beim Bauen brauche ich Titel als eigene Schicht: Roh-Titel, Slug, Analyse-Titel getrennt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Ich brauche Pflichtfelder für Provenienztyp, Quelle, Nachprüfung und Importierbarkeit.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Ich brauche bei Aktionen ein Bewusstsein: Antwort, Schreibakt und Commit sind Systembewegungen.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Ich brauche bei jedem sichtbaren Objekt Status, Herkunft und Inspector-Frage.

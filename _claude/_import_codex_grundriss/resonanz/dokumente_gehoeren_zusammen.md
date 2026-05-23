@@ -1018,3 +1018,27 @@ Zusammen gehören auch diese Spiegel mit den Resonanzdateien, weil sie nicht den
 Diese Spiegeldatei gehört zur Surface-/Explorer-Arbeit, zur vorherigen Spiegelung über Wahrheitsschichten und zur AGENTS-Regel über Skalpell und Provenienz.
 
 Sie gehört auch zum Werkraum-Explorer-Code, obwohl sie keinen Code erklärt. Sie erklärt den Fehler im Umgang mit dem Code.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Diese Datei gehört zum Provenienz-Manifest und zu den freien Leseschichten.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Dieses Manifest gehört zu freien Leseschichten, Rohdaten und Kandidatenlisten.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Diese Datei gehört zu Selbstbild, Organen, Beziehung und Zwischenraum.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Kompass, 490-Punkte-Liste, Visionsbild und Surface gehören zusammen.

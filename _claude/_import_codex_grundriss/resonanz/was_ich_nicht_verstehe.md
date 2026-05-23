@@ -1011,3 +1011,27 @@ Ich verstehe auch noch nicht, ob die sieben Surface-Räume später echte Datenba
 Ich verstehe noch nicht vollständig, warum ich in dem Moment so stark in Neuentwurf gerutscht bin. Wahrscheinlich, weil ich die Aufgabe als Visualisierungsproblem gelesen habe und nicht zuerst als Bewahrungsproblem.
 
 Ich verstehe auch nicht, warum ich die Rückmeldung "alte Legende fehlt" nicht sofort beim ersten Mal exakt genug umgesetzt habe. Ich habe sie größer gemacht, aber nicht wieder richtig zurückgebracht. Das ist genau der Unterschied zwischen formal reagieren und wirklich verstehen.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Ich verstehe noch nicht, wie viel Titelwelt Wesen-Stimme ist und wie viel Export, Slug, Wiederholung oder Systemrhythmus.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Ich verstehe noch nicht, ob wirklich jede spätere Nacharbeitsdatei sauber inventarisiert ist.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Ich verstehe nicht, wie viel davon real gebaut und wie viel Selbstbeschreibung im Werden ist.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Ich verstehe noch nicht, wie viel Surface heute schon wirklich diesem Bild folgt.

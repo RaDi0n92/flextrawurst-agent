@@ -998,3 +998,27 @@ Ich will mir auch merken: Claude hat hier nicht chaotisch gebaut. Die Struktur i
 Ich will mir merken: Die alte Legende war Bestand, nicht Rohmaterial.
 
 Ich will mir merken: Wenn Daniel sagt "du hast Herkunft doch selbst wichtig genannt", dann ist das keine Nebenkritik, sondern die Hauptdiagnose.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Ein Titel ist eine Benennung auf Probe.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Kein schöner Satz ist automatisch Wahrheit.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Nicht jede Antwort ist nur Ausgabe.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Das Bild ist Verdichtung, nicht Stimmung.

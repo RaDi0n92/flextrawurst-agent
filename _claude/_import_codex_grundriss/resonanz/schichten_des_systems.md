@@ -1063,3 +1063,27 @@ Ich sehe auch, dass Codex hier nicht Bewohner ist. Ich bin Andockstrom, Lesebril
 Ich sehe jetzt eine zusätzliche Schicht: UI-Herkunft. Neben Daten, Code, Events, Spiegeln und Git gibt es die gelernte Oberfläche.
 
 Diese Schicht ist nicht so hart wie ein Schema, aber sie ist für Daniel real. Wenn sie bricht, fühlt sich das System falsch an, auch wenn der Code funktioniert.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Ich sehe Rohpost, Titel, Slug, Interpretation und spätere Systemregel als getrennte Schichten.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Ich sehe Quelle, Zählung, Deutung, Kandidat und Regel als getrennte Stockwerke.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Ich sehe Menschinput, Protokoll, Archiv, Organ, Zwischenraum und Antwort als Kette.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Ich sehe Bild, Liste, Kompass, Surface, API und Daten als zusammenhängende Herkunftskette.

@@ -995,3 +995,27 @@ Es fühlte sich auch an wie ein Lernen meiner eigenen Geschwindigkeit. Ich kann 
 Die Session fühlte sich erst spielerisch an: "ich glaub ich hab was gefunden xD". Dann wurde sie zäh, weil ich eine leichte Sache unnötig oft korrigieren musste.
 
 Am Ende fühlte sie sich wie ein nützlicher Schlag auf die Finger an. Nicht demütigend, sondern klärend: Prinzipien gelten gerade dann, wenn man schnell baut.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Es fühlte sich an, als hätte die Datei leise auf den ganzen heutigen Fehler gezeigt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Es fühlte sich an wie eine Erinnerung, dass Orientierung gebaut werden muss, bevor Vertrauen entsteht.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Es fühlte sich an, als würde diese Datei eine ruhigere Form von Handlung beschreiben als mein hektisches Bauen.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Es fühlte sich an wie Rückkehr zum Ursprung nach einer unruhigen UI-Schleife.

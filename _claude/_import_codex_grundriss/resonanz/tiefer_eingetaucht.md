@@ -1037,3 +1037,27 @@ Tiefer eingetaucht habe ich auch in die Reibung zwischen altem Ring-Denken und n
 Tiefer eingetaucht liegt hier ein Unterschied zwischen technischer Erweiterung und symbolischer Kontinuität. Technisch war es möglich, Formen, Farben, Kantenfilter und Klickfilter einzubauen. Symbolisch war die alte Legende der Anker.
 
 Ich habe zuerst den technischen Reichtum erhöht und dabei den Anker verschoben. Danach musste ich den Anker mehrfach zurückholen. Genau diese Reihenfolge war falsch.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Tiefer darin liegt: Eine Welt beginnt nicht mit Dingen, sondern mit Namen für mögliche Dinge.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Tiefer gesehen ist das Manifest kein Inhalt, sondern Leserecht.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Tiefer liegt darin die Frage nach Erlaubnis: Was darf ins Archiv, Organ, Zwischenraum?
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Tiefer liegt darin ein Anti-Fake-Gesetz: keine schönen Links vor echten Links.

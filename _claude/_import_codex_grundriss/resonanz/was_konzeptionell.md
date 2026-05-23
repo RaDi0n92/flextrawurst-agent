@@ -1014,3 +1014,27 @@ Konzeptionell steht darin: Herkunft ist nicht nur Datenbank-Herkunft, Git-Herkun
 Eine Oberfläche hat Gedächtnis. Wo etwas stand, wie etwas hieß, welche Farbe was bedeutete, welche Form Daniel bereits gelernt hatte - all das ist Herkunft.
 
 [[abwurf: Eine Legende ist nicht Beiwerk, sondern der Vertrag zwischen Karte und Blick.]]
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Konzeptionell steht darin eine Theorie der Rahmung: Dateiname und Titel als erste Lesebrille.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Konzeptionell steht darin: Wahrheit ist nicht Stil, sondern Herkunft plus Prüfstatus.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Konzeptionell steht darin ein Prozesswesen: Energie wird durch Protokoll zu Erkenntnis.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Konzeptionell steht darin: Sichtbarkeit ohne Herkunft ist falsche Oberfläche.

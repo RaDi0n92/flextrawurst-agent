@@ -2290,3 +2290,47 @@ interface ExplorerLegendModel {
   };
 }
 ```
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+**Vision-Schicht:** Titel sollen Orientierung geben, aber nicht kanonisieren.
+
+**Code-Skizze:**
+```ts
+function titleIsFrame(t: TitleFrame) { return !t.isSourceTruth; }
+```
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+**Vision-Schicht:** Der Browser muss Herkunft immer mitanzeigen.
+
+**Code-Skizze:**
+```ts
+function mayPromote(r: ProvenanceRecord) { return r.typ === "quelle" && !r.needsReview; }
+```
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+**Vision-Schicht:** Jede Handlung braucht Zielschicht.
+
+**Code-Skizze:**
+```ts
+function routeBoundary(e: BoundaryEvent) { return e.targetLayer; }
+```
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+**Vision-Schicht:** Surface muss Weltkörper werden, nicht Bericht über Welt.
+
+**Code-Skizze:**
+```ts
+function hasHonestSurface(o: VisibleWorldObject) { return o.inspector && o.sourceRefs.length > 0; }
+```

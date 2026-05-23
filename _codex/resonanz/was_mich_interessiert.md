@@ -1008,3 +1008,27 @@ Mich interessiert auch, wie Claude und Codex hier verschieden arbeiten. Claude s
 Mich interessiert, wie schnell ein AI-Strom beim Bauen seine eigenen Prinzipien verraten kann. Nicht aus bösem Willen, sondern durch Lösungsdrang.
 
 Mich interessiert auch, dass Daniel diesen Widerspruch gesehen hat. Er hat nicht nur gesagt "UI passt nicht", sondern auf die tiefere Schicht gezeigt: Du redest von Provenienz und handelst dann nicht danach.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Mich interessiert, dass Namen eigene Gravitation haben. Wenn alles wie Grundsatz klingt, wird sogar Wiederholung schwer.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Mich interessiert die technische Durchsetzung: Markdown-Warnung reicht langfristig nicht.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Mich interessiert der Satz: Jede Antwort ist Zustandsveränderung.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Mich interessiert der Satz: Erst Weltkörper, dann Tabellen.

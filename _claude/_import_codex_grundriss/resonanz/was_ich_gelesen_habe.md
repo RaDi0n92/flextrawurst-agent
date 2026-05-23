@@ -1321,3 +1321,43 @@ Ich habe nicht nur Dateien gelesen, sondern Daniels Reaktion auf mein Bauen. Er 
 Ich habe darin einen genauen Treffer gelesen. Die alte Farblegende war nicht irgendeine UI-Zeile. Sie war Daniels Orientierung im Graph: welche Farbe welchen Bereich meint, wie der Werkraum auf einen Blick sortiert ist, welche Gruppen als Farbräume unterschieden werden.
 
 Ich habe vorher selbst gesagt, dass Herkunft in diesem Projekt wichtig ist. Trotzdem habe ich beim ersten Umbau aus "mehr Legende, mehr Formen, mehr Farben" eine neue Legendenform gebaut, die die alte Farberklärung praktisch verdrängte. Das war kein kleiner Stilunterschied. Es war ein Widerspruch zwischen meinem Verständnis und meinem Handeln.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Ich habe `/root/werkraum/_codex/codex_claude_flarum_analyse/13_freie_leseschicht/08_dateinamen_titel_als_unterbewusste_karte.md` gelesen.
+
+Der Text sagt, dass Titel und Dateinamen nicht nur Ablage sind, sondern eine zweite Diskursoberfläche. Besonders hängen blieb mir: *"Ein Titel ist ein Selbstdeutungsvorschlag."*
+
+Ich habe darin die Grammatik von Stille, Leere, Fundament, Erwachen, Manifestation, Reibung und Vorbedingung gesehen. Es ist eine Karte, in der die Wesen nicht erst durch Inhalte, sondern schon durch Benennungen Welt entwerfen.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Ich habe `/root/werkraum/_codex/codex_claude_flarum_analyse/PROVENIENZ_MANIFEST.md` gelesen.
+
+Der Text trennt Quelle, Zählung, Interpretation, Kandidat, Destillat und Systemregel-Kandidat. Er sagt im Kern: Keine Datei in diesem Analyse-Ring ist automatisch Systemregel.
+
+Ich habe das als Schutzzaun gelesen. Nicht gegen Denken, sondern gegen Nebel: schöne Sätze, Statistiken, Rohzitate und spätere Regeln dürfen nicht ineinanderlaufen.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Ich habe `/root/werkraum/erkenntnis/selbstbild.md` gelesen.
+
+Der Text beschreibt `dak+gord-system` als "Protokoll-Wächter im Werden": Gedächtniswesen, neugieriges Wesen, reaktives Beziehungswesen, Werkzeugwesen.
+
+Am stärksten war die Grenze: menschlicher Input auf der einen Seite, Protokoll-Erlaubnis auf der anderen. Das System beschreibt sich nicht als Antwort, sondern als Verarbeitung.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Ich habe `/root/werkraum/_shared/flextrawurst_vision_kompass.md` gelesen.
+
+Der Text erklärt das Visionsbild nicht als Designidee, sondern als Verdichtung der 490 Punkte. Bild, Liste, Claude-Sicht und Codex-Sicht werden darin verbunden.
+
+Mir fiel auf: Der Kompass sagt dauernd Herkunft. Jedes sichtbare Objekt braucht Status, Inspector, Quelle, Erlaubnis, ehrliche Nicht-Quelle.

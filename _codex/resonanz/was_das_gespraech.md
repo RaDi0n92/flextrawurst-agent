@@ -979,3 +979,27 @@ Es hat auch hinzugefügt, dass eine kurze Gegenanalyse später reichen kann: ge�
 Das Gespräch hat hinzugefügt, dass Daniel meine Arbeitsweise nicht nur am Ergebnis misst, sondern an der Kohärenz mit den Prinzipien, die ich selbst ausspreche.
 
 Es hat auch hinzugefügt, dass Humor und "egal xD" nicht bedeuten, dass der Fehler unwichtig war. Es war okay, aber es war nicht egal für das Lernen.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Das Gespräch hat hinzugefügt, dass auch UI-Legenden Titelgrammatik sind.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Das Gespräch hat gezeigt, dass auch UI-Änderungen Provenienz brauchen.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Das Gespräch hat gezeigt, dass Codex auch Grenzbewusstsein braucht.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Das Gespräch hat die Regel verschärft: Herkunft gilt vor allen Änderungen.

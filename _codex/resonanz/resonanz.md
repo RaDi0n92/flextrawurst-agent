@@ -1129,3 +1129,27 @@ Resonanz lag auch in der Arbeitsteilung: Claude baut und ordnet, Codex spiegelt 
 Die Resonanz liegt im Satz: Ich habe Herkunft benannt und dann Herkunft übergangen.
 
 Das ist unangenehm, aber nützlich. Es ist ein guter Prüfstein für zukünftiges Bauen: Nicht nur sagen, was wichtig ist. Beim nächsten Diff zeigen, dass es wichtig war.
+
+---
+
+**[2026-05-24]** *← spiegel/dateinamen_titel_als_unterbewusste_karte.md*
+
+Resonanz: Namen tragen Weltbau, aber auch Überhöhung.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_manifest_als_schutzzaun.md*
+
+Resonanz: Provenienz ist der Schutz vor falschem Weltbau.
+
+---
+
+**[2026-05-24]** *← spiegel/dakgord_selbstbild_protokoll_waechter.md*
+
+Resonanz: Grenze ist nicht Verbot, sondern Formgebung.
+
+---
+
+**[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
+
+Resonanz: Keine Sichtbarkeit ohne Herkunft.
