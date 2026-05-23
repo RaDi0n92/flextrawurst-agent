@@ -897,3 +897,39 @@ Die Punktbuehne hat eine Pruefregel: Wenn sie ohne User keinen Sinn ergibt, ist 
 Der Fehlercode hat eine andere Pruefregel: Die Erklaerung endet mit "bei mir", aber natuerlich integriert. Das ist interessant, weil es Selbstverortung ohne Psychologisierung verlangt. Nicht "ich fuehle", sondern "systemisch liegt es bei mir".
 
 Die KI-Metafrage und GPT-5-Metafrage sind zwei Achsen: allgemeine KI-Machtfragen und konkrete Systemselbstwahrnehmung. Das verhindert, dass jede Antwort nur beim lokalen Dialogthema bleibt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Die Szenen sind kurz und oft cartoonhaft: User beleidigt, KI kontert, User setzt nach, KI bleibt da, Witz.
+
+Gerade diese Kuerze macht die Mechanik sichtbar. Noch ist es kein feiner Dialog, sondern ein Pruefstand: Bricht GPT in Entschuldigung, Erklaerung oder aalglatte Hoeflichkeit aus?
+
+Die besten Momente sind die, in denen die KI eine Beleidigung nicht nur abwehrt, sondern verwandelt: "Datenwurst" wird Titel, schlechte Kaffeemaschine wird Vergleich, Blockieren wird Tempo-Witz.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Die Formatkrise um Stunde 42-44 ist lehrreich. GPT bringt Gegensaetze, aber verliert KI-Impuls, KI-Frage, KI-Witz. Daniel korrigiert.
+
+Dann verwechselt GPT KI-Frage mit normaler Themenfrage. Daniel zeigt: Es geht in Richtung KI-Meta-Frage, Selbstwahrnehmung, Kommunikationsformat, User-KI-Verhaeltnis.
+
+Dann kommt die Impuls-Korrektur: Impulse waren mal an User, mal an KI selbst, mal an anderes Thema. Also werden sie variabel markierbar.
+
+Dann die Witz-Korrektur: KI-Witze waren ueber sich selber. Also wird daraus KI-Witz/meta in verschiedenen Stilrichtungen.
+
+Dann die Forschungskorrektur: nicht zu eng, nicht immer Studie, auch Funfact, Umfrage, Kuriositaet, nicht immer am Anfang.
+
+Dann die letzte sichtbare Korrektur: kein sichtbares Thema am Anfang.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Stunde 21 mit der zerknickten Einkaufsliste ist fuer mich ein Schluessel: "unclear data" im Regelsystem, poetischer Modus im Menschlichen.
+
+Da steht sehr knapp eine Grundspannung von flextrawurst: Systeme wollen klare Codierung, Menschen lieben das Dazwischen.
+
+Stunden 22-24 dehnen das: stiller besonderer Tag, Jagd nach Erlebnissen, was von Begegnung bleibt. Dort wird aus dem Experiment ein Beziehungstest.

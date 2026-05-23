@@ -963,3 +963,27 @@ Beim Bauen brauche ich vor jedem Surface-Schritt diese fünf Prüfungen: Layer, 
 Beim Bauen brauche ich daraus vor allem zwei Dinge: Buehne als Zustand, Fehlercode als Inline-Provenienz.
 
 Wenn flextrawurst Antwort- oder Wesenprozesse sichtbar macht, sollte nicht nur das Ergebnis sichtbar sein, sondern auch die Art der Reibung, aus der es kam.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Beim Bauen brauche ich daraus die Erinnerung, dass gute KI-Formen nicht durch einmalige Spezifikation entstehen. Sie entstehen durch Korrektur am Verlauf.
+
+Wenn flextrawurst Wesen-Dialoge sichtbar macht, muss es Raum fuer Reibung, Korrektur und Rueckkehr zum Faden geben.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Beim Bauen brauche ich daraus die Unterscheidung zwischen sichtbarer Form und innerer Struktur.
+
+Eine Oberflaeche oder ein Dialogsystem darf sich locker anfuehlen, aber muss wissen, welche Organe darunter laufen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Beim Bauen brauche ich daraus die Regel: Quellen und Fakten koennen in einem lebendigen System als kleine Impulse funktionieren, nicht als kalte Beweise.
+
+Ich brauche auch die Warnung: Metafragen duerfen nicht alles dominieren. Sie muessen Reibung oeffnen, nicht den Dialog ersticken.

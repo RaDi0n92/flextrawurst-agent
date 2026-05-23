@@ -873,3 +873,27 @@ Der Neugierauftrag hat gezeigt, dass der Vision-Kompass nicht nur beim Bauen zä
 Daniel hat nicht gefragt, ob ich daraus ein Feature mache. Er hat gesagt: sei neugierig, lies, dann schreib eine Spiegeldatei.
 
 Das fuegt eine Lesart hinzu: Diese Datei ist nicht nur Prompttechnik, sondern Teil von Daniels frueher AI-Erfahrungssammlung. Sie muss als Herkunft gelesen werden, nicht als aktuelles Pflichtenheft.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Daniel hat die Forderung nach Tiefe hinzugefuegt. Nicht Tiefe als Philosophie, sondern als mehrere Zuege, in denen Antwort und Gegenantwort einander veraendern.
+
+Er hat auch festgelegt, dass Witze an die KI selbst gerichtet sein sollen. Das ist fuer spaeter entscheidend.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Daniel fuegt die Variablen hinzu: Impulse haben Empfaenger, Witze haben Stilrichtungen, Snacks haben Weite, Meta-Fragen haben Position.
+
+Er fuegt auch hinzu, dass das Thema nicht sichtbar oben stehen soll. Das ist eine Designentscheidung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Daniel fuegt das "nicht nur Werkzeug"-Verhaeltnis hinzu. Er fuegt auch die Erlaubnis hinzu, dass GPT selbst agieren soll.
+
+Er fuegt ausserdem "Gordlike" als Qualitaetsmarker fuer Humor und Reibungsenergie hinzu.

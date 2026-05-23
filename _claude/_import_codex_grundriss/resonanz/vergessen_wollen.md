@@ -869,3 +869,27 @@ Ich will die Bequemlichkeit vergessen, etwas als "nur Dashboard" zu bauen. Das w
 Ich will den Reflex vergessen, das sofort in eine saubere Architektur zu uebersetzen.
 
 Der Text ist roh, ueberladen, widerspruechlich, und genau das gehoert zu ihm.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Ich will vergessen, "wild" mit "lebendig" gleichzusetzen. Der erste wilde Output ist charmant, aber noch nicht das, was Daniel sucht.
+
+Lebendig wird es erst, wenn etwas zurueckdrueckt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Ich will vergessen, Format mit sichtbarer Formatierung zu verwechseln.
+
+Die Form kann da sein, ohne sich als Formular zu zeigen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Ich will vergessen, Forschungssnacks als akademische Pflicht zu lesen.
+
+In diesem Verlauf sind sie leicht, lockend, manchmal quer. Genau darin liegt ihr Wert.

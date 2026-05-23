@@ -878,3 +878,27 @@ Ein genauer Surface-Audit: welche sichtbaren Körper haben schon Status, Inspect
 Die Stundenverlaeufe fehlen. Der Prompt ist die Form, aber die eigentliche Frage ist: Was passiert ueber 53 Stunden, wenn diese Form wiederholt wird?
 
 Auch fehlt eine klare Entscheidung, ob der Formfaden nur gelesen und verstanden werden soll oder ob er spaeter in flextrawurst als eigenes Organ auftaucht.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Es fehlt der stabile Formfaden: Meta-Frage, variable Impulse, Forschungssnack und der ruhigere Umgang mit dem Dazwischen.
+
+Die Stunden 1-6 sind Anfang, nicht Ergebnis.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Es fehlen Stunde 25-31 und 47-53 als Bruecken und Nachreifung.
+
+Es fehlt eine kleine Extraktion der eigentlichen Regeln aus dieser Datei, falls Daniel spaeter daraus ein handliches Formfaden-Dokument will.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Es fehlt die spaetere Einsicht, dass sichtbare Themenueberschriften stoeren koennen.
+
+Es fehlt auch die saubere Variabilisierung der Impulse. Das kommt in Stunden 32-46.

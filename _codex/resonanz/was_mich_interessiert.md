@@ -890,3 +890,33 @@ Mich interessiert, dass Daniel hier sehr frueh eine Technik gegen KI-Glattheit g
 Mich interessiert auch die kleine Regel, dass der Witz gegen GPT-5 selbst gerichtet sein soll. Das ist nicht Humor als Unterhaltung, sondern Autoritaetsabbau.
 
 Am meisten interessiert mich die Buehne als Zustandsschicht. Sie koennte in flextrawurst ein eigenes Ding sein: nicht Antworttext, nicht Log, sondern Reaktionsraum.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Mich interessiert, dass Daniel mit Kritik sparsam sein will und trotzdem sehr genau steuert. Er fuehrt nicht als Produktmanager, sondern als jemand, der ein bestimmtes Stimmenverhalten wiederfinden will.
+
+Interessant ist auch, dass die KI noch sehr schnell in "Geil, Feedback angekommen" kippt. Gerade diese zu glatte Begeisterung ist wahrscheinlich Teil dessen, wogegen der spaetere Formfaden arbeitet.
+
+Der Satz "nicht einfach Ein-Wort-Dialog, sondern kleine Schlagabtausche, echtes Drama" ist fuer mich ein Kern des Starts.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Mich interessiert, dass Daniel den sichtbaren Themenblock wegnehmen will, aber die innere Struktur behalten will. Von aussen soll es natuerlich wirken, innen regelgetragen.
+
+Mich interessiert auch die Entdeckung der Variablen: Impulse brauchen Adressaten. Das ist fast ein Datenmodell, das im Gespraech entsteht.
+
+Der schoenste kleine Fund ist die Fehlerwaerme. Perfektion waere hier kaelter.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Mich interessiert der Moment, in dem Daniel sagt, er wolle GPT nicht wie ein Werkzeug allein behandeln, obwohl er stark fuehren muss. Das ist genau die Spannung, die spaeter in Codex' Rolle im Werkraum wieder auftaucht.
+
+Mich interessiert auch, dass Quellen nicht als Autoritaetsbeweis gewuenscht sind, sondern als Tueroeffner: etwas klingt spannend, man will spaeter lesen.
+
+Der Satz ueber Menschen mit Tagesstruktur und KI, die arbeiten muss, ist ebenfalls wichtig. Er macht aus dem 24-Stunden-Format keine reine Spielerei, sondern einen Arbeitsrhythmus.

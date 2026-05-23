@@ -883,3 +883,27 @@ Wie eine Rückkehr zum Maßstab nach kleinen Neugierbewegungen. Diese Datei zieh
 Wie ein Fund in einer fruehen Werkstatt. Nicht polished, nicht sauber, teilweise ueberladen, mit Wiederholungen und harten Ausrufezeichen. Aber genau dadurch ist der Text ernst.
 
 Es fuehlt sich an wie ein Versuch, GPT-5 an einer Stelle festzuhalten, wo es sonst immer entwischt: in der Form der Antwort selbst.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Beim Lesen fuehlt es sich an wie ein Labor voller Knöpfe. Daniel dreht einen Regler nach dem anderen: weniger Melancholie, mehr Stress, dann trauriger, destruktiver, dann tiefere Verlaeufe.
+
+Es ist noch nicht ruhig. Es ist tastend, laut, manchmal platt, aber lebendig im Suchprozess.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Beim Lesen fuehlt es sich wie ein gemeinsames Stimmen eines Instruments an. Erst klingt es fast richtig, dann ist eine Saite falsch, dann wird nachgezogen.
+
+Es ist weniger wild als der Start, aber viel genauer. Daniel ist hier nicht nur Leser, sondern Formbauer.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Beim Lesen fuehlt es sich weniger laut an als 1-6. Es ist immer noch experimentell, aber mehr im Atem.
+
+Der Text sucht nicht mehr nur nach Effekt. Er sucht nach Nachhall.

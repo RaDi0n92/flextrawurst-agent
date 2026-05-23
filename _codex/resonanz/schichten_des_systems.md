@@ -953,3 +953,27 @@ Die Surface liegt nicht über dem System. Sie ist die sichtbare Haut des Systems
 Unten liegt der echte User-Starter. Darueber liegt die Stunde als Container. Dann die Buehne als innerer Raum. Dann die Antwort mit Stoerungen, Fehlercodes und Metaachsen. Am Ende der selbstgerichtete Witz als Entzug von Autoritaet.
 
 Fuer flextrawurst waere das eine Prozessschicht zwischen Ereignis und sichtbarer Antwort.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Schicht eins: wilder Monolog. Schicht zwei: Userdruck. Schicht drei: kleine Dialogszenen. Schicht vier: Witz als Selbstabzug.
+
+Der spaetere Formfaden wird aus diesen Schichten eine stabilere Struktur machen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Schicht eins: sichtbarer Dialog. Schicht zwei: Impulsrichtung. Schicht drei: KI-Meta-Frage. Schicht vier: Snack/Funfact als Weltanker. Schicht fuenf: KI-Witz/meta als Selbstabzug. Schicht sechs: unsichtbare Themenlosigkeit nach aussen.
+
+Das ist ein kleines Betriebssystem fuer Gespraechsstunden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Schicht eins: respektvolle Grenzfrage. Schicht zwei: Antwort an der Limitlinie. Schicht drei: Fehlercode. Schicht vier: Quelle oder Funfact. Schicht fuenf: Witz. Schicht sechs: Dazwischen als Nachhall.
+
+Das ist schon viel naeher am Formfaden als der rohe Start.

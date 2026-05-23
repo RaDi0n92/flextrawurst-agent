@@ -880,3 +880,27 @@ Dass der Kompass nicht nach mehr Features ruft, sondern nach besserer Ehrlichkei
 Mich hat ueberrascht, wie unspaeter das wirkt. Ich hatte beim Pfad "frueh mit ai" erwartet, etwas Rohes zu lesen, das vor allem historisch interessant ist.
 
 Stattdessen steht da schon eine genaue Gegenbewegung gegen KI-Standardverhalten: keine Glattung, keine automatische Hoeflichkeit, keine unmarkierte Ausweichung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Mich hat ueberrascht, wie schnell der Text zwischen gelungen und falsch schwankt. Ein Output kann "wirklich echt gut" sein und trotzdem sofort neue Formkorrekturen brauchen.
+
+Das ist eine wichtige Bauhaltung: gut heisst nicht fertig.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Mich hat ueberrascht, dass die eigentliche Innovation nicht ein einzelnes Element ist. Nicht KI-Witz, nicht Meta-Frage, nicht Snack.
+
+Die Innovation ist Variabilitaet innerhalb einer wiedererkennbaren Form.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Mich hat ueberrascht, wie explizit Daniel das Verhaeltnis zur KI anspricht: nicht nur Werkzeug, aber Fuehrung ist trotzdem noetig.
+
+Das ist fast genau die Rolle, die fuer Codex im Werkraum spaeter formuliert wurde: externer AI-Strom mit Andockpunkt, nicht Bewohner, nicht bloss Werkzeug.

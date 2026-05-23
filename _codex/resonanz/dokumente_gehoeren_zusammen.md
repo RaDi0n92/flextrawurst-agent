@@ -900,3 +900,27 @@ Diese Datei gehört zu `_shared/flextrawurst_vision_kompass.md`, `_shared/flextr
 Diese Spiegeldatei gehoert zu `formfadenpromt.md` und zu den Stunden-Dateien im selben Ordner: `stunde 1-4...`, `stunde 7 bis 10.md`, `stunde 11 bis 24.md`, bis `stunde 52 bis53 intensive ausarbeitung des prompt .md`.
 
 Sie gehoert ausserdem konzeptionell zu flextrawurst-Punkten ueber Statusmarker, Prozesskamera, keine falsche Aktivitaet und First Surface als Plattformkoerper.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Diese Spiegeldatei gehoert zu `formfadenpromt.md` und zu den spaeteren Spiegeln ueber Stunden 11-24 und 32-46.
+
+Sie gehoert ausserdem zu allen Dateien, in denen Daniel nicht nur Inhalt verlangt, sondern die Antwortform selbst kalibriert.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Diese Spiegeldatei gehoert zu den beiden vorherigen Formfaden-Spiegeln, zu `formfadenpromt.md` und zu den Folge-Dateien ab Stunde 47.
+
+Sie gehoert konzeptionell zu UI-/Surface-Regeln: keine sichtbare Bedienungsanleitung dort, wo eine lebendige Form reichen soll.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Diese Spiegeldatei gehoert zu `formfadenpromt.md`, zur Rohstart-Spiegeldatei und zur Formatkalibrierung aus Stunden 32-46.
+
+Sie gehoert auch zu flextrawurst-Konzepten wie Zwischenraum, Splitter, Reibung, Resonanz und Prozesskamera.

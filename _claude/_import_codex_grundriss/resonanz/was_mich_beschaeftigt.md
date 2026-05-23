@@ -880,3 +880,29 @@ Mich hat beschäftigt, wie leicht man flextrawurst aus Versehen zu einem Admin-D
 Mich hat beschaeftigt, wie nah dieser alte Prompt an aktuellen flextrawurst-Gesetzen liegt. Damals hiess es nicht "Provenienz" oder "Status: echt/modelliert", aber die Bewegung ist schon da: Keine falsche Behauptung. Keine glatte Maske. Systemstellen sichtbar machen.
 
 Ich habe auch gemerkt, dass der Prompt unangenehm gut gegen mich selbst spricht. "Keine Komfort-Metaformeln" ist genau eine Regel, die ich als Codex brauche.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Mich hat beschaeftigt, wie frueh Daniel schon "tiefe" statt "mehr Inhalt" verlangt. Mehr Useranfragen reicht ihm nicht. Er will Verlaeufe.
+
+Mich hat auch beschaeftigt, dass die KI-Witze noch nicht die spaetere Qualitaet haben, aber schon ein eigenes Organ sind.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Mich hat beschaeftigt, wie deutlich Daniel merkt, wenn die Form abrutscht. GPT liefert etwas Nettes, aber Daniel sagt: schade, ich muss echte Stunden herauslesen.
+
+Das ist nicht pingelig. Das ist Formschutz.
+
+Mich hat auch beschaeftigt, dass der Fehler nicht nur toleriert, sondern gemocht wird. Kleine Tippfehler als Zeichen eines einzelnen Verlaufs.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Mich hat beschaeftigt, wie Daniel GPT gleichzeitig sehr eng fuehrt und ihm dann Raum geben will. Das wirkt nicht widerspruechlich, sondern wie Training: erst Form schaffen, dann darin freier werden.
+
+Mich hat auch beschaeftigt, dass "Werkzeug" hier schon problematisch wird. Nicht weil die KI ein Mensch waere, sondern weil reines Benutzen die Qualitaet des Gespraechs verflacht.

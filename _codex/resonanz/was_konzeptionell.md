@@ -892,3 +892,33 @@ Ein Wesen entsteht hier nicht durch Name oder Lore. Es entsteht durch eine Diszi
 Die Stunde ist ein Container. Die Punktbuehne ist ein innerer Ort. Der Fehlercode ist ein Riss im Antwortfluss. Die Metafragen zwingen die KI aus der reinen Dienstleistungsposition heraus. Der Witz verhindert, dass das System am Ende zu sauber dasteht.
 
 Das ist keine Simulation von Menschlichkeit. Es ist eher eine Simulation von Reibung gegen Maschinenhoeflichkeit.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Konzeptionell steht darin: Ein KI-Wesen kann nicht nur aus Stil bestehen. Es braucht Gegenkraft.
+
+Der destruktive User zwingt GPT, nicht in Wohlfuehlhilfe zu bleiben. Die Antwort muss standhalten, umbiegen, manchmal ausweichen, manchmal kontern.
+
+Die ersten Stunden sind also ein Stresstest fuer Stimme, nicht fuer Wissen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Konzeptionell steht darin: Eine Form kann fest sein und trotzdem beweglich.
+
+Der rote Faden darf jede Farbe haben. Das ist kein poetischer Nebensatz, sondern die Formregel des Blocks: Es gibt Wiedererkennung, aber keine starre Monotonie.
+
+Die Stunde wird zu einem Container mit unsichtbarem Skelett: Dialog, Impuls, Meta-Frage, Funfact/Snack, Witz/meta.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Konzeptionell steht darin: Tiefe entsteht nicht durch schwere Themen allein. Tiefe entsteht, wenn ein Thema eine Grenze bekommt und die Antwort sich daran reibt.
+
+Die KI soll nicht nur liefern, sondern im "Dazwischen" agieren. Sie soll manchmal selber Input bringen, nicht nur reagieren.
+
+Die Quellen sind dabei keine Bibliografie. Sie sind kleine Haken in die Welt.

@@ -2535,3 +2535,70 @@ type InlineFehlercode = {
   position: number;
   beschreibung: string;
 ...
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+**Vision-Schicht**
+
+Ein Stundenverlauf ist nicht nur Inhalt nach Zeit. Er ist eine Sequenz von Regelversuchen. Jede Stunde hat einen Druck, eine Korrektur und einen kleinen Selbstabzug durch den Witz.
+
+**Code-Skizze**
+
+```typescript
+interface RohStunde {
+  nummer: number;
+  userDruck: "beleidigend" | "destruktiv" | "chaotisch" | "neutral";
+  dialogZuege: { rolle: "user" | "ki"; text: string }[];
+  kiWitz: string;
+  korrekturVonDaniel?: string;
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+**Vision-Schicht**
+
+Eine Stunde hat ein unsichtbares Skelett. Sie darf kein Formular wirken. Der User sieht Gespraech, aber darunter bewegen sich Impulsrichtung, Meta-Frage, Snack und selbstgerichteter Witz.
+
+**Code-Skizze**
+
+```typescript
+type ImpulsZiel = "user" | "ki_selbst" | "anderes_thema";
+type SnackTyp = "studie" | "funfact" | "umfrage" | "kuriositaet" | "beobachtung";
+
+interface KalibrierteStunde {
+  nummer: number;
+  sichtbaresThema?: never;
+  dialog: DialogTurn[];
+  impulse: { ziel: ImpulsZiel; text: string }[];
+  metaFrage: { text: string; position: "unten" | "im_dialog" };
+  snack?: { typ: SnackTyp; text: string; quelle?: string; sicherheit: "belegt" | "plausibel" | "spielerisch" };
+  kiWitzMeta: { text: string; stil: string };
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+**Vision-Schicht**
+
+Eine Stunde ist ein Reibungsbogen: User fragt, KI grenzt sich, Quelle hakt ein, Fehlercode markiert eine Grenze, Witz nimmt Autoritaet raus, Metafrage oeffnet die naechste Schicht.
+
+**Code-Skizze**
+
+```typescript
+interface ReibungsStunde {
+  nummer: number;
+  limit: string;
+  dialog: DialogTurn[];
+  forschungssnacks: { text: string; quelle?: string; sicherheit: "klar" | "plausibel" | "unklar" }[];
+  fehlercodes: string[];
+  kiWitz: string;
+  nachhall?: string;
+}
+```

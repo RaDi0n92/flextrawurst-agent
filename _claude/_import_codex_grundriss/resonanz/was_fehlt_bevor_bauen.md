@@ -888,3 +888,27 @@ Für viele Slots fehlt noch die genaue Quelle/Blockade-Formulierung. Sichtbar de
 Bevor man daraus ein Feature baut, muessten die Stundenverlaeufe gelesen werden. Der Prompt allein ist Bauplan; die Stunden zeigen, ob er getragen hat.
 
 Außerdem muesste klar sein, ob das ein internes Analysewerkzeug bleibt oder eine sichtbare Oberflaechenform wird. Sichtbar fuer Menschen waere es reizvoll, aber auch schnell zu laut.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Aus diesem Block allein fehlt noch die Reife. Er zeigt Startenergie, aber noch nicht den stabilen Formfaden.
+
+Man muesste mindestens die spaeteren Stunden danebenlegen, damit klar wird, welche Elemente geblieben sind und welche Daniel wieder verworfen hat.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Es fehlt eine konsolidierte Spezifikation aus Stunde 46: Welche Elemente sind Pflicht, welche variabel, welche sollen sichtbar markiert sein?
+
+Es fehlt auch ein Fakten-/Quellen-Ehrlichkeitsmodell fuer Forschungssnacks, damit Funfacts nicht zu falscher Autoritaet werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Es fehlt noch die spaetere Formatklarheit: variable Impulse, KI-Meta-Frage als eigener Block, KI-Witz/meta als selbstgerichtete Form.
+
+Aus 11-24 allein wuerde ich kein Feature bauen. Ich wuerde es als Bewegungsstudie lesen.

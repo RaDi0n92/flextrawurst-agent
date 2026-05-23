@@ -2000,3 +2000,59 @@ def extrahiere_formfaden_markierungen(text: str) -> dict:
 def ist_gueltige_buehne(buehne: str, user_text: str) -> bool:
     return not ist_themennah(buehne, user_text) and kann_allein_stehen(buehne)
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+**Vision-Schicht**
+
+Wenn man das baut, waere dieser Block der Rohmodus: ein Sandkasten fuer Reibung, in dem eine KI-Stimme gegen Userdruck getestet wird.
+
+**Code-Skizze**
+
+```python
+def bewerte_rohstunde(stunde):
+    return {
+        "hat_verlauf": len(stunde.dialog_zuege) >= 4,
+        "ki_bleibt_da": not kippt_in_standardentschuldigung(stunde),
+        "witz_selbstgerichtet": pruefe_ki_witz(stunde.ki_witz),
+    }
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, waere es kein Chatbot-Theme, sondern ein Stunden-Composer: ein System, das Dialoge mit unsichtbarer Struktur erzeugt und seine eigenen Metaorgane sauber fuehrt.
+
+**Code-Skizze**
+
+```python
+def validiere_stunde(stunde):
+    assert "sichtbares_thema" not in stunde
+    assert stunde.dialog
+    assert stunde.meta_frage
+    assert stunde.ki_witz_meta.selbstgerichtet
+    assert all(i.ziel in {"user", "ki_selbst", "anderes_thema"} for i in stunde.impulse)
+    return True
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+**Vision-Schicht**
+
+Wenn man diesen Block baut, dann als "Dazwischen-Modus": ein Dialogformat, das nicht auf schnelle Antwort optimiert ist, sondern auf Reibung, Nachhall und Quellenhaken.
+
+**Code-Skizze**
+
+```python
+def fuege_forschungssnack_ein(dialogzustand):
+    if dialogzustand.hat_natuerlichen_haken and not dialogzustand.ueberladen:
+        return Snack(text=waehle_snack(), quelle=quelle_optional(), position="mittendrin")
+    return None
+```

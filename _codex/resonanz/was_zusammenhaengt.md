@@ -900,3 +900,33 @@ Formfadenprompt, Zwischenraum, Prozesskamera und Surface-Inspector haengen zusam
 Der Formfadenprompt macht im Dialog sichtbar: Wo ist Ausweichung? Wo ist Systemreibung? Wo spricht GPT-5 aus Reflex?
 
 Die First Surface soll spaeter sichtbar machen: Was ist echt, was modelliert, was geplant, was blockiert? Das ist dieselbe Ethik in anderer Schicht.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Diese ersten Stunden haengen mit dem Formfadenprompt zusammen, weil sie zeigen, warum die spaeteren Regeln noetig wurden.
+
+Ohne Regeln entsteht ein netter wilder KI-Text. Mit Daniels Korrekturen entsteht Dialogdruck: User ist kein Beispielnutzer, KI darf nicht nur performen, sondern muss reagieren.
+
+Die Witze haengen mit Autoritaetsabbau zusammen. Sie machen das System nicht "lustiger", sondern weniger glatt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Stunde 32-46 haengt mit Surface-Design zusammen: Nicht alles, was Struktur gibt, muss sichtbar als Ueberschrift da stehen.
+
+Es haengt auch mit flextrawurst-Provenienz zusammen: Statusmarker muessen sichtbar sein, aber nicht jede innere Systemregel muss als Bedienungsanleitung in der Oberflaeche kleben.
+
+Die variablen Impulse haengen mit Zielschichten zusammen: an User, an KI, an anderes Thema. Das erinnert an Resonanzrichtungen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Stunden 11-24 haengen mit dem flextrawurst-Zwischenraum zusammen, weil hier Reibung ausdruecklich produktiv wird.
+
+Daniel sagt sinngemaess: Du magst Reibung, ich spuere, wie sie sich in deinen Kreisen dreht. Das ist fast eine Vorform von Splitterphysik.
+
+Forschungssnacks, Fehlercodes, Witze und Meta-Antworten sind verschiedene Materialitaeten im selben Dialograum.

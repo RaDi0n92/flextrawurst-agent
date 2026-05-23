@@ -882,3 +882,27 @@ Sie existiert, damit Claude und Codex denselben Kompass benutzen, ohne ihre eige
 Die Datei existiert vermutlich, weil Daniel eine wiederholbare Versuchsanordnung brauchte. Nicht eine einzelne gute Antwort, sondern Stundenverlauf.
 
 Sie existiert auch, weil ein normales Prompting "antworte mal freier" nicht reicht. Ohne Formzwang kippt GPT schnell in die bekannte Sauberkeit zurueck.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Die Datei existiert vermutlich, weil ein bestimmter Output verloren ging oder nicht mehr exakt greifbar war. Daniel versucht, die Qualitaet zurueckzuwuenschen.
+
+Sie existiert als Spur eines fruehen Prompt-Schmiedens: nicht perfekte Regel, sondern Rueckkopplung am lebenden Text.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Die Datei existiert, weil der Formfaden hier seine Grammatik bekommt. Nicht als fertiges Manifest, sondern als Dialog mit Korrekturen.
+
+Sie ist wahrscheinlich eine der wichtigsten Dateien des Ordners, weil sie zeigt, wie aus Geschmack Regeln werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Die Datei existiert, weil nach den ersten Versuchen ein reiferer Verlauf entstand, in dem Daniel nicht nur Output sammelte, sondern Qualitaetskriterien entwickelte.
+
+Sie ist eine Zwischenstufe: noch nicht das spaetere variable Format, aber schon mit Tiefe, Forschung, Witz und Meta.

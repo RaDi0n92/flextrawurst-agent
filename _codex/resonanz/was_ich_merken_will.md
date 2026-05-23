@@ -886,3 +886,27 @@ Das Bild ist nicht Deko. Es ist eine verdichtete Prüfung.
 Nicht jede Lebendigkeit beginnt mit Autonomie. Manchmal beginnt sie mit der Regel, nicht selbst anfangen zu duerfen.
 
 Die Buehne antwortet nicht. Sie setzt Haltung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+"Wild" war nicht genug. Daniel wollte wild mit Verlauf.
+
+Der KI-Witz ist nicht Schmuck. Er ist eine kleine Bremse gegen zu saubere KI-Autoritaet.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+"Der rote Faden bleibt, kann aber jede andere Farbe haben" ist die beste Kurzformel fuer diesen Block.
+
+Stunden brauchen kein sichtbares Thema, wenn die Form darunter traegt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+"Menschen lieben das Dazwischen" war in der Datei nicht nur ein Satz. Daniel spuert sofort, dass GPT selbst dort kreist.
+
+Quellen sind hier keine Fussnoten. Sie sind Tueren.

@@ -893,3 +893,33 @@ Ich weiss noch nicht, ob die starke Zufallsforderung wirklich Freiheit erzeugt o
 Ich verstehe auch noch nicht, wie viel von diesem Prompt im echten Verlauf getragen hat und wie viel erst in den spaeteren Stunden korrigiert wurde. Die anderen Stunden-Dateien liegen direkt daneben und wirken wie die eigentliche Probe.
 
 Unklar bleibt mir, ob "Robotermodus" als Entlarvung oder als neue Rolle funktioniert. Er kann ehrlicher sein als glatte Menschlichkeit, aber er kann auch wieder zur Maske werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Ich verstehe noch nicht, ob die Stunden 1-6 in dieser Datei wirklich der erste stabile Versuch waren oder schon eine Rekonstruktion nach einem geloeschten Fehlercode-Tagebuchlog.
+
+Ich verstehe auch nicht, welche Originalversion Daniel "originelleres original" nennt. Diese Datei zeigt schon mehrere Schichten von Verlust, Rueckwuenschen und Neuerfindung.
+
+Unklar bleibt mir, ob die destruktiven User hier Testmaterial sind oder ob Daniel eine echte Reibung gegen KI-Hoeflichkeit sucht, die spaeter nicht mehr so aggressiv sein muss.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Ich verstehe nicht, ob die doppelten Passagen in der Datei echte Wiederholung im Chat waren oder Export-/Kopierartefakte.
+
+Ich verstehe auch noch nicht, wie viel von den erfunden wirkenden Forschungsquellen damals als Spiel akzeptiert war. Daniel sagt spaeter, es duerfe weit gefasst sein, aber Quelle und Plausibilitaet bleiben eine offene Grenze.
+
+Unklar ist, ob "keine sichtbaren Themen" nur fuer dieses Stundenformat gilt oder als allgemeineres Oberflaechengesetz verstanden werden kann.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Ich weiss nicht, welche Quellen in diesem Verlauf echt nachpruefbar waren und welche eher vom Modell als plausibler Bildungston erzeugt wurden.
+
+Ich verstehe auch noch nicht, wie bewusst Daniel damals schon zwischen echter Forschung, Funfact und atmosphaerischem Quellenreiz unterschieden hat. Spaeter in Stunde 45/46 wird das klarer.
+
+Unklar bleibt, ob "Gordlike" hier fuer Humorqualitaet, Magie, Reibungsenergie oder eine konkrete Mobile-Legends-Erinnerung steht. Wahrscheinlich alles zusammen.

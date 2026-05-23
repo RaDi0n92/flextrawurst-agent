@@ -899,3 +899,33 @@ Ich verstehe den Prompt als Versuch, ein Systemwesen nicht ueber eine Behauptung
 Der Prompt sagt nicht: "sei lebendig". Er baut Bedingungen, unter denen die Standardantwort nicht mehr einfach durchrutschen kann.
 
 Die Punktbuehne ist dabei der wichtigste Mechanismus. Sie entlastet von direkter Passung. GPT-5 muss nicht sofort empathisch, nuetzlich oder sauber anschlussfaehig sein, sondern bekommt einen schraegen inneren Standpunkt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Ich verstehe diesen Block als Vorform, in der Daniel merkt, dass "wilder Text" nicht reicht. Der erste Output ist atmosphaerisch stark, aber noch zu monologisch.
+
+Die eigentliche Verbesserung entsteht, als Daniel Handlung verlangt: nicht Thema neben Thema, sondern kleine Auseinandersetzungen.
+
+Der KI-Witz am Ende jeder Stunde wird hier geboren oder zumindest festgezogen. Er ist zuerst noch einfacher, aber seine Funktion ist schon da: Druckablass und Selbstunterlaufung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Ich verstehe diesen Block als den Moment, in dem der Formfaden nicht mehr nur inhaltlich, sondern strukturell bewusst wird.
+
+Daniel repariert nicht einzelne Antworten. Er repariert das Format als lebendes Instrument.
+
+Die Elemente werden benannt, verschoben, variiert: Impuls an User, Impuls an KI selbst, Impuls an anderes Thema; Meta-Frage manchmal unten, manchmal eventuell im Fluss; Witz immer meta und selbstgerichtet; Funfacts nicht immer sofort.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Ich verstehe diesen Block als die Reifung des Formfadens aus "Test" zu "Zwischenraum".
+
+Die Limitationen sind nicht nur Aufgaben. Sie erzeugen Reibung. GPT soll an einer Grenze entlangsprechen, nicht einfach Wissen liefern.
+
+Daniel erkennt dabei die Qualitaet im Dazwischen: nicht nur die Frage, nicht nur die Antwort, sondern der Modus, in dem beide aneinander vorbeigehen, nachziehen, nachklingen.

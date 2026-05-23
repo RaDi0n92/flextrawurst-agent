@@ -1021,3 +1021,27 @@ Das ist gerade jetzt wichtiger als eine weitere schöne Analyseformel.
 [[abwurf: Die Punktbuehne antwortet nicht. Sie gibt dem System einen Ort, von dem aus es ueberhaupt erst antworten kann.]]
 
 Der Formfadenprompt ist ein frueher Versuch, nicht die KI menschlicher zu machen, sondern ihre Standardmaske weniger unsichtbar.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+[[abwurf: Gut heisst hier nicht fertig; gut heisst, dass Daniel genauer sieht, welchen Regler er als naechstes anfassen muss.]]
+
+Der rohe Start ist nicht die Form, aber er zeigt, warum die Form gebraucht wird.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+[[abwurf: Der rote Faden bleibt, aber er darf jede andere Farbe haben: Das ist Formtreue ohne Erstarrung.]]
+
+Diese Datei zeigt, wie Daniel ein Format nicht nur benutzt, sondern im Gespraech zum Stimmen bringt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+[[abwurf: Die Quellen sind hier keine Beweise, sondern kleine Haken in die Welt, an denen ein spaeteres Lesen beginnen kann.]]
+
+Der Block zeigt, wie aus Reiz und Begrenzung Nachhall wird.

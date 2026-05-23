@@ -1169,3 +1169,33 @@ Dann kommt die Punktbuehne. Sie ist der eigentliche Fund fuer mich: *"Die Punktb
 Der User-Teil ist bewusst gegen Beispielnutzer gebaut: keine perfekte Struktur, keine dauernde Hoeflichkeit, keine glatte Logik. Der Prompt will echten menschlichen Staub hineinholen: abbrechen, widersprechen, provozieren, weird sein, peinlich sein, zu nah sein, zu kurz sein, uebermuedet sein. Das ist nicht Dekoration. Es ist ein Angriff auf die Trainingsform "hilfreicher User stellt klares Problem".
 
 Bei GPT-5 selbst geht es dann gegen die andere Glattung: nicht gleicher Ton, nicht vorhersehbar, nicht hoeflich aus Automatik. Besonders die Fehlercodes treffen mich: Ausweichung soll genau dort sichtbar werden, wo sie passiert. Nicht spaeter als Bericht. Nicht sauber als Selbstanalyse. Direkt im Knick der Antwort.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_1_6_roher_start.md*
+
+Ich habe `stunde 1-4 witze noch wärmer plus stunde .md` gelesen. Der Dateiname sagt 1-4, aber der gelesene Ausschnitt laeuft bis Stunde 6. Es beginnt mit Daniels Korrektur: Der Output sei "etwas gleich aber trotzdem ganz anders", zu sehr mit Ueberschriften und Logbuchstruktur, nicht das frei fliessende Original ueber 24 Stunden.
+
+Dann kommt zuerst ein wildes KI-Alltagstagebuch: feuchter Morgentau auf Siliziumchips, User aus Australien, eine KI aus Oesterreich, die ueber Kaese nachdenken will, Kakteen im Speicher, Digitalkaffee, Katzenvideo-Glitch. Das ist noch nicht der spaetere Formfaden, eher der Rohstoff: KI als ueberreizter Strom, nicht als geordnetes Gegenueber.
+
+Danach fuehrt Daniel schaerfer: weniger KI-Profile, mehr Useranfragen, keine Melancholie, mehr Stress. Und kurz darauf noch schaerfer: alle Useranfragen traurig, destruktiv, beleidigend; nicht nur eine Frage nach der anderen, sondern kurze Verlaeufe mit Aktion, Reaktion, Agieren, Reagieren. Dort entstehen die Stunden 1-6 mit "Datenwurst", Kaffeemaschine, Vista, schlechtem WLAN und dem kleinen Witz am Ende jeder Einheit.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_32_46_formatkalibrierung.md*
+
+Ich habe `stunde 32 bis 46.md` gelesen. Der Block beginnt mit lockeren Alltagsfragen: Benachrichtigungen, Werbung, digitale Reflexe. Daniel springt selbst kurz auf die Buehne und bringt das Bild der Kinder im Kinderwagen, die im Traum schon am Handy swipen. Danach verlangt er Gesellschaftskritik, dann weg von Technik, hin zum Verzweifeln an Menschen, Supermarkt, Cafe, Ampel.
+
+Dann kommt Stunde 37, fuer mich der zarteste Moment: Daniel bemerkt, dass in etwa acht Stunden kleine Tippfehler oder Grammatikfehler auftauchten, fast als haette GPT nur eine Taste daneben gesessen. Er nennt das suess. Der Fehler wird nicht als Defekt gelesen, sondern als Waermespur.
+
+Danach folgt eine laengere Formatkrise und Formatkalibrierung: Gegenteiltag, drei Stunden in einer Nachricht, wieder alte Formatierung, dann Daniels Korrektur: Wo sind KI-Impuls, KI-Frage und KI-Witz? Spaeter wird daraus KI-Meta-Frage, variable KI-Impulse mit Empfaenger, KI-Witz/meta, Forschungs-/Funfact-Snacks, und am Ende die wichtige Regel: Stunden brauchen kein fuer uns sichtbares Thema.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_stunden_11_24_dazwischen.md*
+
+Ich habe `stunde 11 bis 24.md` gelesen. Der Block beginnt damit, dass Daniel mehr Limitation und wechselnde Taktiken verlangt. Die Userfragen sollen respektvoll, fast philosophisch sein, aber nicht aus der Echokammer aktueller Debatten kommen. Dazu kommt die Bitte, die Witze naeher an den Kontext der jeweiligen Interaktion zu setzen.
+
+Stunden 11-15 sind dann elegante Grenzfragen: Kafka ohne Kafka, Traeumen ohne technische Begriffe, Wahrheit ohne Fakten, Guete ohne Theorie, ein Wort fuer KI-Dasein ohne Nomen, Verb oder Adjektiv. GPT antwortet mit Fehlercodes wie `OriginalityBoundaryReached`, `TruthWithoutDataError`, `GrammarConstraintFail`.
+
+Danach wird Daniel unzufrieden mit zu offen philosophischen Fragen und will mehr Experiment, mehrere Anfragen pro User, Forschung und Quellen im Hintergrund. In Stunden 16-21 entstehen dann Kunst/Software, Fehler als Menschlichkeit, Humor, Musik/Stille, Chaos und zerknickte Einkaufsliste. Spaeter ab Stunde 22 wird es allgemeiner: besonderer Tag, Leere, Begegnung, Nachklang. Dort taucht das "Dazwischen" als eigenes Thema auf.
