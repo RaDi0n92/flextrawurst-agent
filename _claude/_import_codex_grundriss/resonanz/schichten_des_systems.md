@@ -1009,3 +1009,11 @@ Die fehlende Schicht: Systemcheck.
 Schicht eins: Buehne. Schicht zwei: Selbsterklaerung. Schicht drei: Marker. Fehlende Schicht: User-Gegenkraft.
 
 Die wichtigste Schicht war gerade die abwesende.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Schicht eins: fruehe AI-Erfahrung. Schicht zwei: Glattung wird stoerend. Schicht drei: Formdruck entsteht. Schicht vier: Stundenverlauf prueft Durchhalten. Schicht fuenf: Modellvergleich zeigt Scheiterarten. Schicht sechs: spaetere flextrawurst-Begriffe geben dem alten Druck Namen.
+
+Der Formfaden ist damit Herkunftsschicht, nicht nur Archivmaterial.

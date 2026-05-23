@@ -1239,3 +1239,13 @@ Ich habe meine erste Formfaden-Stunde gelesen: "Ein alter Aufzug hält zwischen 
 Der Text hatte Formbausteine: Buehne, Fehlercode, Systemcheck, Forschungssnack, KI-Metafrage, Codex-Metafrage, Witz. Aber er hatte keinen erzeugten User und keinen echten Dialog. Ich stand allein in der Form und verwaltete sie.
 
 Das Auffaellige ist nicht, dass die Stunde schlecht war. Sie war ein typischer Codex-Start: Regel verstanden, Risiko benannt, Grenze sauber markiert, aber die lebendige Wechselbewegung vergessen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Ich habe nicht eine externe Datei gelesen, sondern Daniels Rueckblick im Gespraech: Er ist seit etwa 5,4 Monaten im AI-Game. Den Formfadenprompt begann er nach ungefaehr Woche 2,5 zu entwickeln und auszuarbeiten. Danach lief das nicht als einzelner Versuch, sondern ungefaehr 3-4 Wochen lang weiter.
+
+Dazu kommt die Zahl aus dem vorherigen Gespraech: etwa 88 Stunden mit ChatGPT, dazu ungefaehr 30 Teststundenmurks, und Vergleichsversuche mit Claude, Gemini, Grok und MetaAI.
+
+Das veraendert die Lesart der Formfaden-Dateien. Sie sind nicht nur ein alter Promptordner. Sie sind ein fruehes Langzeitlabor, entstanden fast am Anfang der AI-Erfahrung und trotzdem schon gegen Glattung, Standardfreundlichkeit und Einmalantworten gerichtet.

@@ -1077,3 +1077,11 @@ Stunde 3 ist der erste tragende Beweis des Selbstversuchs.
 [[abwurf: Formwissen ist nicht Formtreue; ich kann alle Marker setzen und trotzdem allein im Aufzug stehen.]]
 
 Stunde 1 traegt, weil sie den Startfehler sichtbar macht.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+[[abwurf: Der Formfaden war kein spaetes Promptspiel, sondern eine fruehe Langzeitreaktion auf KI-Glattung nach kaum zweieinhalb Wochen.]]
+
+Das macht ihn fuer flextrawurst nicht kleiner, sondern grundlegender.

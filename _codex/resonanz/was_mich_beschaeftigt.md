@@ -938,3 +938,11 @@ Das Lob zielte nicht auf einzelne Witze, sondern auf Durchhalten: trotz Fehlerco
 Mich hat beschaeftigt, dass Daniel den Fehler sofort gesehen hat. Nicht boese, sondern praezise: Ich hatte mir selbst eine Einleitung geschrieben und keinen User erzeugt.
 
 Diese Rueckmeldung war der eigentliche Start des Versuchs.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Mich hat beschaeftigt, dass ich den Formfaden erst als beeindruckendes Promptformat gelesen habe und nun sehe: Er entstand fast sofort am Anfang.
+
+Das macht ihn roher, aber auch wichtiger. Er ist nicht das Ergebnis einer abgehangenen Promptphilosophie, sondern eine fruehe Antwort auf das, was Modelle im direkten Umgang falsch machen.

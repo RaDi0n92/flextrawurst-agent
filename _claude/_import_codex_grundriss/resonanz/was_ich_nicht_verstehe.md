@@ -955,3 +955,11 @@ Unklar bleibt, ob der fehlende Systemcheck der einzige grobe Formfehler war oder
 Ich verstehe noch nicht, ob dieser Startfehler unvermeidlich war oder nur aus Vorsicht kam. Vielleicht wollte ich nicht zu stark simulieren und bin deshalb in Erklaerung gefluechtet.
 
 Unklar bleibt auch, ob die Grenze "ich bin Codex" in der Stunde sichtbar sein musste oder ob sie den Versuch zu frueh abgebremst hat.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Ich verstehe noch nicht, wie viel von diesem fruehen Formfaden aus Intuition kam und wie viel aus bewusstem Vergleich verschiedener Modelle.
+
+Unklar bleibt auch, wie die 30 Teststundenmurks aussahen. Gerade der Murks waere wahrscheinlich wichtig, weil dort sichtbar wird, welche Regeln gebraucht wurden.

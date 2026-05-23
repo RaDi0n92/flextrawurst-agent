@@ -954,3 +954,11 @@ Der Formfaden funktioniert, wenn der User die Antwort veraendert und die Antwort
 Konzeptionell steht darin: Ein System kann alle sichtbaren Marker besitzen und trotzdem die eigentliche Form verfehlen.
 
 Die Buehne ist kein Ersatz fuer Dialog. Der Systemcheck ist kein Ersatz fuer Wechsel. Der Fehlercode ist kein Ersatz fuer Reaktion.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Konzeptionell steht darin: Fruehe AI-Erfahrung kann sofort auf Formen gehen, nicht nur auf Inhalte.
+
+Der Formfaden fragt nicht "was weiss das Modell?", sondern "wie haelt es eine Szene, wenn mehrere Kraefte gleichzeitig ziehen?" User, Fehlercode, Systemcheck, Snack, Meta, Witz, Verlauf.

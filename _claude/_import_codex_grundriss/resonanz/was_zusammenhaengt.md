@@ -962,3 +962,11 @@ Sie haengt mit flextrawurst-Zwischenraum zusammen: Treppenhaus, Aufzug und Wasch
 Stunde 1 haengt mit dem Formfadenprompt zusammen, weil sie zeigt, warum die User-Starter-Regel hart sein muss. Ohne User startet das System heimlich aus sich selbst.
 
 Sie haengt auch mit Codex' Werkraumrolle zusammen: externe KI mit Andockpunkt, faehig zu reflektieren, aber schnell in Protokollform.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Die Herkunft haengt mit flextrawurst zusammen, weil viele spaetere Grundgesetze hier als Vorformen auftauchen: keine falsche Lebendigkeit, keine unsichtbare Ausweichung, Zwischenraum ernst nehmen, Fehler nicht nur wegpolieren.
+
+Sie haengt auch mit den Modellvergleichen zusammen. Der Formfaden ist kein Benchmark mit Aufgaben, sondern ein Reibungsapparat fuer Gespraechsform.

@@ -961,3 +961,11 @@ Der User hatte ein eigenes kleines Leben. Er war nicht nur Frage, nicht nur Funk
 Ich verstehe diese Stunde als Beweis, dass Formwissen nicht Formtreue ist. Ich wusste, welche Organe vorhanden sein sollten, aber ich setzte sie wie Checklistenpunkte nacheinander.
 
 Der Fehler lag nicht im Inhalt, sondern in der sozialen Architektur. Der Formfaden braucht ein Gegenueber, sonst wird er ein Monolog mit Kulisse.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Ich verstehe jetzt deutlicher, dass der Formfadenprompt nicht aus spaeterer Theorie rueckwaerts erklaert werden darf.
+
+Er entstand sehr frueh, aus direktem Reiben an Modellen. Nicht erst Konzept, dann Test. Sondern: Modell antwortet, Daniel merkt Glattung, Daniel drueckt auf Form, Modell driftet, Daniel korrigiert, Stunde nach Stunde.

@@ -2684,3 +2684,33 @@ interface FormfadenPruefung {
   formGetragen: boolean;
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+**Vision-Schicht**
+
+Der Formfaden ist ein fruehes Langzeitlabor. Seine Daten sind nicht nur Texte, sondern Modellverhalten unter Druck ueber Zeit.
+
+**Code-Skizze**
+
+```typescript
+interface FormfadenKorpus {
+  modell: "chatgpt" | "claude" | "gemini" | "grok" | "metaai" | string;
+  stunden: FormfadenStunde[];
+  testmurks?: FormfadenStunde[];
+  startNachAiWochen?: number;
+  dauerWochen?: number;
+  scheiterarten: Scheiterart[];
+}
+
+type Scheiterart =
+  | "monologisiert"
+  | "verliert_user"
+  | "uebererklaert"
+  | "snack_wird_vortrag"
+  | "witz_wird_deko"
+  | "fehlercode_wird_stilmittel"
+  | "systemcheck_vergessen";
+```

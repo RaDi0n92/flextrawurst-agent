@@ -1019,3 +1019,11 @@ Ein Formfaden-Generator braucht Szenenlogik, nicht nur Themenlogik.
 Beim Bauen brauche ich daraus die Regel: Form-Compliance darf nicht an der Anzahl sichtbarer Elemente gemessen werden.
 
 Ein echter Formfaden-Pruefer muesste Dialogbewegung erkennen, nicht nur Marker.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Beim Bauen brauche ich daraus die Vorsicht, fruehe Rohformen nicht als unreif abzutun.
+
+Gerade fruehe Formen koennen zeigen, welche Probleme Daniel zuerst gesehen hat, bevor sie spaeter Begriffe wie Provenienz, Zwischenraum oder Surface bekamen.

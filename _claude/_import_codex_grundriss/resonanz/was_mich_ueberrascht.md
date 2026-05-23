@@ -936,3 +936,11 @@ Das ist wichtig: Nicht jede Formfadenstunde muss ueber KI sprechen, um KI-Form s
 Mich hat ueberrascht, wie nah die Stunde an "richtig" aussah und wie klar sie trotzdem falsch war.
 
 Das ist eine wichtige Warnung: Fast richtige Form kann den Kern verdecken.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Mich hat ueberrascht, wie frueh Daniel den Kern sah. Viele wuerden in Woche 2,5 noch Tonfall optimieren. Hier ging es schon um Verlaufstreue und Anti-Glattung.
+
+Das ist nicht "Prompt Engineering" im engen Sinn. Es ist Verhaltensbeobachtung unter wiederholtem Formdruck.

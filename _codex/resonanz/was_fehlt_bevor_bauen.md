@@ -944,3 +944,11 @@ Es fehlt eine Pruefung, ob Snack und Meta-Fragen nach dem Dialog kommen oder wae
 Es fehlt eine klare Metrik fuer "lebendige Wechselbewegung". Laenge allein reicht nicht, Marker allein reichen nicht.
 
 Es fehlt auch ein Umgang damit, wann Codex seine Rollenbegrenzung benennen soll und wann diese Begrenzung die Form stoert.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Es fehlt eine Karte der Modellversuche: ChatGPT-Hauptstunden, Teststundenmurks, Claude, Gemini, Grok, MetaAI.
+
+Es fehlt auch eine Extraktion der Scheiterarten: welches Modell wurde zu glatt, welches zu schoen, welches zu laut, welches verlor Dialog, welches hielt den Snack nicht.

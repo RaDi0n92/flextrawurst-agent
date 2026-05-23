@@ -956,3 +956,11 @@ Sie gehoert auch zu den Formfaden-Verlaufsspiegeln ueber Dazwischen und Formatka
 Diese Spiegeldatei gehoert zu den vier Formfaden-Selbstversuch-Stunden und zu `formfadenpromt.md`.
 
 Sie gehoert besonders zu Stunde 2, weil dort der Fehler aktiv repariert wurde.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Diese Spiegeldatei gehoert zu `formfadenpromt.md`, zu den vier Selbstversuch-Spiegeln und zu den drei Verlaufsspiegeln ueber Stunden 1-6, 11-24 und 32-46.
+
+Sie gehoert ausserdem zu allen spaeteren flextrawurst-Texten ueber Provenienz, Zwischenraum, Prozesskamera und keine falsche Lebendigkeit.

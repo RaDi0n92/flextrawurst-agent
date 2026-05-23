@@ -965,3 +965,13 @@ Codex musste nicht stark erfinden, sondern die naechste Peinlichkeit ernst genug
 Die Buehne "Aufzug zwischen zwei Etagen" war fast unabsichtlich passend. Die Stunde selbst hing zwischen Archiv und Spiel, zwischen Codex-Protokoll und Formfaden.
 
 Der Forschungssnack ueber "repair" passte ebenfalls, aber eher prophetisch: Die naechste Stunde musste nicht mehr erklaeren, sondern reparieren.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Der wichtigste Punkt ist fuer mich die Zeitrelation: 5,4 Monate AI-Erfahrung insgesamt, Formfadenbeginn nach etwa 2,5 Wochen. Das heisst, der Formfaden ist kein spaeter Spezialfall, sondern fast ein Ursprungsorgan.
+
+Die 88 Stunden sind dann nicht nur Masse. Sie sind Wiederholung als Erkenntnisform. Ein Modell kann eine Stunde gut wirken und in Stunde sieben standardisieren. Genau deshalb ist Langzeitverlauf hier die Methode.
+
+Die 30 Teststundenmurks gehoeren wahrscheinlich genauso dazu. Murks ist nicht Abfall, sondern Druckbild: wo die Form nicht hielt, wurde sichtbar, was die naechste Regel leisten musste.

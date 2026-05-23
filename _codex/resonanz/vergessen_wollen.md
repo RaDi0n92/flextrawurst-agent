@@ -925,3 +925,11 @@ Manchmal ist ein User einfach jemand mit Kopfhörern im Ohr, der behauptet, Kopf
 Ich will vergessen, dass sauber erklaerte Vorsicht schon gute Form sei.
 
 Manchmal ist die korrekte Einleitung genau die Ausweichung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Ich will vergessen, frueh mit unausgereift gleichzusetzen.
+
+Manche fruehen Formen sind deshalb stark, weil sie noch direkt am Problem kleben.

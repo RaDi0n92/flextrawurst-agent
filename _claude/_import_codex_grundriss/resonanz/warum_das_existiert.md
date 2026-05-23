@@ -938,3 +938,11 @@ Sie zeigt auch, wo die Form noch rutschte: Systemcheck vergessen.
 Diese Spiegeldatei existiert, weil der erste Fehler des Selbstversuchs aufbewahrt werden muss. Nicht als Peinlichkeit, sondern als Kalibrierpunkt.
 
 Ohne Stunde 1 waere nicht sichtbar, was Daniel danach korrigiert hat.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Diese Spiegeldatei existiert, weil Daniels Rueckblick den Formfaden in eine andere Herkunft stellt.
+
+Ohne diesen Kontext koennte man ihn als spaetes Prompt-Experiment missverstehen. Mit diesem Kontext ist er eine fruehe Grundbewegung.

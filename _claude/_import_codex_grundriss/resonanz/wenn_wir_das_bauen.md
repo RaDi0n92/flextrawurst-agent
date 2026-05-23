@@ -2129,3 +2129,24 @@ Wenn wir das bauen, braucht der Formfaden-Inspector eine Warnung fuer "Kulissen-
 def ist_kulissen_monolog(stunde):
     return stunde.hat_buehne and stunde.marker_count > 3 and stunde.user_turns == 0
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann vielleicht als Formfaden-Archiv: nicht nur schoene Stunden sammeln, sondern Modellverhalten vergleichbar machen, inklusive Murks.
+
+**Code-Skizze**
+
+```python
+def analysiere_modellverlauf(korpus):
+    return {
+        "modell": korpus.modell,
+        "stunden_count": len(korpus.stunden),
+        "murks_count": len(korpus.testmurks or []),
+        "haeufige_scheiterarten": zaehle_scheiterarten(korpus),
+        "dialogstabilitaet": messe_dialogstabilitaet(korpus.stunden),
+    }
+```

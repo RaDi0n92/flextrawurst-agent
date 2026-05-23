@@ -934,3 +934,11 @@ Es fehlt noch die vollstaendige Stabilitaet ueber alle Formelemente hinweg.
 Es fehlt noch die Lebendigkeit. Sie kommt erst in den naechsten Stunden.
 
 Es fehlt besonders der echte erfundene User mit eigenem Druck.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Es fehlt die Sichtung der anderen Modellversuche.
+
+Es fehlt auch eine kleine Chronologie: Wann kamen Buehne, Fehlercode, Systemcheck, Forschungssnack, KI-Meta-Frage und selbstgerichteter Witz jeweils dazu?

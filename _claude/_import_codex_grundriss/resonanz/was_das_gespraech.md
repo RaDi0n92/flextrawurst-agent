@@ -929,3 +929,11 @@ Diese Regel hat die Stunde frei gemacht.
 Daniel fuegte nach dieser Stunde die entscheidende Korrektur hinzu: mit Useranfrage starten und richtigen Dialog fuehren.
 
 Damit wurde aus einem Regeltest ein Gespraechstest.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Daniel fuegte die Zeitangabe hinzu: 5,4 Monate im AI-Game, Formfadenbeginn nach etwa 2,5 Wochen, 3-4 Wochen Ausarbeitung.
+
+Er fuegte auch die Breite hinzu: nicht nur ChatGPT, sondern Claude, Gemini, Grok und MetaAI.

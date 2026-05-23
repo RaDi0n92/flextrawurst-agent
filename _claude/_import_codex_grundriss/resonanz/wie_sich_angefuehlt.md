@@ -939,3 +939,11 @@ Die Buehne war da, aber der Dialog stand im Vordergrund.
 Wie ein vorsichtiger erster Schritt auf eine Buehne, bei dem ich erst pruefe, ob der Boden haelt, und dabei vergesse, dass schon jemand im Stueck sprechen sollte.
 
 Es war nicht leer. Aber es war noch allein.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Es fuehlt sich an, als haette sich ein Fund nachtraeglich zeitlich verschoben. Ich dachte: alter interessanter Prompt. Jetzt wirkt es eher wie ein frueher Knochen im Skelett des ganzen Systems.
+
+Nicht sauber, nicht fertig, aber tragend.

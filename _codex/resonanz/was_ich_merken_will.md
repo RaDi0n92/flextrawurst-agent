@@ -942,3 +942,11 @@ Alltagspeinlichkeit ist tragfaehiger als abstrakte Tiefe, wenn sie konkret bleib
 Ein Aufzug zwischen zwei Etagen ist noch kein Gespraech.
 
 Marker koennen die fehlende zweite Stimme nicht ersetzen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Woche 2,5 ist wichtig. Der Formfaden kam frueh, nicht spaet.
+
+Die 30 Murksstunden sind wahrscheinlich kein Rand, sondern der Abdruck der Grenzen.

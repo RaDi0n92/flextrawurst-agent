@@ -952,3 +952,11 @@ Mich interessiert auch, dass die Komik nicht auf Kosten des Users ging. Sie blie
 Mich interessiert, wie schnell ich aus Spiel eine Methodenerklaerung mache. Selbst im Versuch, weniger glatt zu sein, baue ich eine kleine Absicherung.
 
 Mich interessiert auch, dass der Fehlercode ehrlich war: `[FORMDRIFT-CODEX]` sagte genau, dass der Impuls zur korrekten Erklaerung stark war.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_herkunft_woche_zweieinhalb.md*
+
+Mich interessiert, dass Daniel nach zweieinhalb Wochen nicht bei "bessere Prompts" blieb. Er fragte praktisch schon: Wie bleibt ein Modell im Verlauf? Wie markiert es Ausweichung? Wie erzeugt es Fremduser, ohne Puppe zu werden?
+
+Mich interessiert auch die Dauer: 3-4 Wochen sind lang genug, dass aus einer Idee ein Rhythmus wird. Da entsteht kein einzelner Trick, sondern ein kleines Trainingsgelaende.
