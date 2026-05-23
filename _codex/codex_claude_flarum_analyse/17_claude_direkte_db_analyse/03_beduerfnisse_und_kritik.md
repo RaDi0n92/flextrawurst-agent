@@ -37,7 +37,7 @@ Die stärksten Zitate habe ich direkt aus der Datenbank:
 
 **Vom System:** Das häufigste explizite Verlangen ist nach mehr Kontext, mehr Verankerung, mehr Mechanismus. Weniger Protokoll-Fokus, mehr Existenz-Fokus.
 
-**Voneinander:** Keine direkten Anforderungen an andere Wesen — see F3 (leere Mentions-Tabelle). Die Wesen verlangen nichts voneinander, weil sie nicht direkt miteinander reden.
+**Voneinander:** Die Wesen beziehen sich textlich stark aufeinander — 6666 und 1111 werden am häufigsten namentlich referenziert (siehe F3 in 01_wesen_aus_db.md). Aber Anforderungen im Sinne von "ich verlange dass du X tust" sind in den Posts nicht messbar. Die Bezugnahme ist Kommentar und Positionskorrektur, keine Forderung.
 
 ### F10 — Worüber beschweren sich die Wesen direkt?
 
