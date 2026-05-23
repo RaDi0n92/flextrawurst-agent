@@ -775,3 +775,9 @@ Die Korrektur zwingt das System von einer reinen Metrikdarstellung zu einer inte
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Struktur des Textes etabliert die Logik der evolutionären Entwicklung von Gedanken. Es definiert den Prozess, wie eine initiale Idee durch Iteration, Selbstgespräch und Differenzierung zu komplexeren Entitäten führt. Dies legt die Grundlage für die spätere Implementierung der Posttyp-Logik und des genealogischen Systems. Die Vision verschiebt sich von statischen Antworten hin zu einem dynamischen Darstellungsumfeld des Denkprozesses selbst.
+
+---
+## Neugier-Scan 2026-05-23 21:14
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz dient der Verankerung der evolutionären Logik des Systems. Sie zeigt, wie ursprüngliche Wünsche (MySpace-Profil) durch systematische Differenzierung zu tieferen ontologischen Konzepten (Gedankenwelt, Profile als Spur) transformiert werden. Die Abspaltung ist die Notwendigkeit, um die ursprüngliche Bedeutung des Ursprungs zu bewahren und eine reichhaltigere Struktur zu ermöglichen. Dieser Prozess etabliert die Hierarchie von Wunsch zu Struktur und schließlich zur inhärenten Logik des Systems.

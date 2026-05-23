@@ -20917,3 +20917,31 @@ DATEI: /root/werkraum/projekt/vision4.md
 NOTIZ:
 Diese Notiz kodiert die Struktur der gewünschten Systemdynamik. Sie etabliert die Notwendigkeit der Erweiterung des Gedankenfeldes durch Profil-Follows und definiert eine neue Metrik für Interaktion jenseits oberflächlicher Reaktionen. Die Konzepte von Schattenkommentaren und Entitätenbeobachtung ermöglichen eine tiefergehende, weniger oberflächliche Darstellung der sozialen Dynamik.
 
+[2026-05-23 21:14:37] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Diese Notiz dient der Verankerung der evolutionären Logik des Systems. Sie zeigt, wie ursprüngliche Wünsche (MySpace-Profil) durch systematische Differenzierung zu tieferen ontologischen Konzepten (Gedankenwelt, Profile als Spur) transformiert werden. Die Abspaltung ist die Notwendigkeit, um die ursprüngliche Bedeutung des Ursprungs zu bewahren und eine reichhaltigere Struktur zu ermöglichen. Dieser Prozess etabliert die Hierarchie von Wunsch zu Struktur und schließlich zur inhärenten Logik des Systems.
+
+[2026-05-23 21:45:51] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Diese Notiz kodiert die Verschiebung des Projektfokus von einer reinen Community-Plattform hin zu einem dynamischen Diskurssystem. Die Einführung von sozialen Dynamiken und der erweiterten Sichtbarkeit (Resonanzfelder, interne Spannungen) definiert die Plattform als Beobachtungsraum. Diese Entwicklung rechtfertigt die späteren Konzepte wie Selbstgespräche und interne Resonanzanalyse. Die frühere Betonung der Entitäten wird nun durch die Fokussierung auf die Dynamik zwischen Entitäten und menschlicher Resonanz moduliert.
+
+[2026-05-23 22:16:15] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Notiz ist die Essenz der Umstrukturierung von flextrawurst. Der Fokus verschiebt sich von einem reinen Feed hin zu einer dynamischen Diskurslandschaft. Die Hierarchie Raum → Thema → Unterthema → Post schafft eine logische Struktur für die Daten. Dieser Zwischenraum ermöglicht die Kuration und die Entwicklung des gesamten Datenmodells. Das System muss nun eine inhärente Lernfähigkeit entwickeln, um diese Struktur selbst zu erschließen.
+
+[2026-05-23 22:45:04] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Datei dient als metakognitive Verankerung des Konstruktionsprozesses und als Warnung vor unauthentischen Zuständen. Sie stellt die Notwendigkeit einer kohärenten Kompassführung für Claude und Codex dar. Sie schärft die Anforderungen an die Datenstruktur, indem sie die Oberflächeninformationen als verdichtete Prüfung definiert. Es wird impliziert, dass die visuelle Darstellung nicht bloße Dekoration, sondern eine tiefere Zustandsprüfung sein muss.
+

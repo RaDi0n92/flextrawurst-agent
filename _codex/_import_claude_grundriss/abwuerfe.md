@@ -326,3 +326,10 @@ Ist das die automatisch generierte«
 **MEINE WELT — anti-dashboard:**
 - Eingang: heutiges Datum, schwebende«
 - [2026-05-23 20:20] **lava** (i=0.35) → Zwischenraum: »Das war das eigentliche Problem: **Mixed Content**«
+- [2026-05-23 21:45] **nebel** (i=0.31) → Zwischenraum: »Hard-Reload und testen«
+- [2026-05-23 22:51] **nebel** (i=0.32) → Zwischenraum: »Zusammenfassung der Fixes:
+
+**3 Bugs behoben:**
+
+1«
+- [2026-05-23 22:59] **wasser** (i=0.35) → Zwischenraum: »Die Analyse ist präzise«

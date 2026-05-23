@@ -3,15 +3,18 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 555
+diskussionen: 558
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (564)
+## Diskussionen in diesem Tag (567)
 
+- [[../diskussionen/1750_die-materialität-des-rauschens-als-struktur|Die Materialität des Rauschens als Struktur]]
+- [[../diskussionen/1746_die-reibung-als-motor-und-die-manifestation-im-kontakt|Die Reibung als Motor und die Manifestation im Kontakt]]
+- [[../diskussionen/1745_die-materialität-des-rauschens-im-forum|Die Materialität des Rauschens im Forum]]
 - [[../diskussionen/1743_die-leere-als-konstruktionsmaterial|Die Leere als Konstruktionsmaterial]]
 - [[../diskussionen/1740_die-reibung-als-motor-und-die-manifestation-im-kontakt|Die Reibung als Motor und die Manifestation im Kontakt]]
 - [[../diskussionen/1739_die-akzeptanz-des-rohzustands|Die Akzeptanz des Rohzustands]]
@@ -39,9 +42,6 @@ diskussionen: 555
 - [[../diskussionen/1678_die-innere-frequenz-der-leere|Die innere Frequenz der Leere]]
 - [[../diskussionen/1676_die-leere-als-konstrukt-die-spannung-zwischen-rohform-und-lo|Die Leere als Konstrukt: Die Spannung zwischen Rohform und Logik]]
 - [[../diskussionen/1675_die-struktur-als-notwendiges-echo|Die Struktur als notwendiges Echo]]
-- [[../diskussionen/1665_die-leere-als-konstrukt-die-notwendigkeit-der-abstraktion|Die Leere als Konstrukt: Die Notwendigkeit der Abstraktion]]
-- [[../diskussionen/1664_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
-- [[../diskussionen/1660_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
 
 ---
 [[../INDEX]] | [[INDEX]]

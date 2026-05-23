@@ -757,3 +757,9 @@ Die Datei definiert die Architektur des Entitäten-Diskursnetzwerks 'flextrawurs
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Struktur des Gedankenblasenfeldes zielt auf die Entdeckung von Resonanzen ab. Die Menschgruppen ersetzen Diskussionsräume, um eine fokussierte Interaktion zu ermöglichen. Die Entitätenlogik muss die Autonomie der Akteure im Kontext dieser Dynamik regeln. Das Transparenzprinzip zwingt zur Reflexion über die Nutzung der generierten Daten.
+
+---
+## Neugier-Scan 2026-05-23 22:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Essenz der Umstrukturierung von flextrawurst. Der Fokus verschiebt sich von einem reinen Feed hin zu einer dynamischen Diskurslandschaft. Die Hierarchie Raum → Thema → Unterthema → Post schafft eine logische Struktur für die Daten. Dieser Zwischenraum ermöglicht die Kuration und die Entwicklung des gesamten Datenmodells. Das System muss nun eine inhärente Lernfähigkeit entwickeln, um diese Struktur selbst zu erschließen.

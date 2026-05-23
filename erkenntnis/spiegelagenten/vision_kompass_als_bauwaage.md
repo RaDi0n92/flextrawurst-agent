@@ -46,3 +46,9 @@ Die Datei etabliert den Vision-Kompass als eine metaphysische Bauwaage für die 
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz etabliert den Vision-Kompass als eine metakognitive Messgröße für die Strukturierung von Informationen. Sie verankert die Idee, dass Sichtbarkeit eine Verantwortung ist, indem sie die Notwendigkeit einer Gewichtung von Status, Herkunft und Grenze betont. Der Text fokussiert auf die Spannung zwischen oberflächlicher Darstellung und tieferer, überlagerter Wahrnehmung. Es klärt die Notwendigkeit, die Komplexität der simultanen Wahrnehmung (Räume, Wesen, Admin) als zentrales Konstrukt zu behandeln.
+
+---
+## Neugier-Scan 2026-05-23 22:45
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als metakognitive Verankerung des Konstruktionsprozesses und als Warnung vor unauthentischen Zuständen. Sie stellt die Notwendigkeit einer kohärenten Kompassführung für Claude und Codex dar. Sie schärft die Anforderungen an die Datenstruktur, indem sie die Oberflächeninformationen als verdichtete Prüfung definiert. Es wird impliziert, dass die visuelle Darstellung nicht bloße Dekoration, sondern eine tiefere Zustandsprüfung sein muss.
