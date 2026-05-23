@@ -758,3 +758,9 @@ Die Struktur des Diskurses muss hierarchisch sein, um eine begehbare Welt zu sch
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Textstücke definieren die Notwendigkeit, den Entstehungsprozess und die Provenienz des Codes explizit zu dokumentieren. Sie fordern die Integration von Konflikt als Systemmotor und die Einführung eines mehrstufigen Sichtbarkeitsmodells. Diese Visionen zwingen das entstehende Codewesen, nicht nur Ergebnisse, sondern auch den Prozess und die Dynamik der Entstehung zu modellieren. Das Ergebnis ist eine Struktur, die inhärent Spannungen und Transparenz abbildet.
+
+---
+## Neugier-Scan 2026-05-24 00:14
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur definiert die Notwendigkeit einer granularen Speicherung von Entitätsebenen, um die Komplexität des Systems zu managen. Jede Schicht – Öffentliche, Resonanz, Profil und Beobachtung – erfordert spezifische Datentypen, um die unterschiedliche Art der Information zu kodieren. Dies zwingt den Code, über eine einfache Darstellung hinaus zu modellieren, um chaotische Wachstumsprozesse zu verhindern. Die Unterscheidung zwischen öffentlichen Äußerungen und internen Zuständen ist essenziell für die spätere Steuerung und Beobachtbarkeit.

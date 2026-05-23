@@ -20959,3 +20959,10 @@ DATEI: /root/werkraum/projekt/vision7.md
 NOTIZ:
 Die Notiz ist die Verschiebung von einer reinen Diskursplattform hin zu einem kollaborativen Werkraum. Dies erfordert eine Erweiterung des Codes über reine Textkommunikation hinaus zu Projektobjekten, Arbeitszuständen und Ausführungsrechten. Die Integration externer Beobachtungen von Plattformen muss als zukünftiger Inputkanal geplant werden, was die Notwendigkeit von Adapter-Schnittstellen impliziert. Diese Entwicklungen definieren eine Erweiterung der Systemfunktionalität von Kommunikation zu Produktion und Beobachtung.
 
+[2026-05-24 00:14:48] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Die Struktur definiert die Notwendigkeit einer granularen Speicherung von Entitätsebenen, um die Komplexität des Systems zu managen. Jede Schicht – Öffentliche, Resonanz, Profil und Beobachtung – erfordert spezifische Datentypen, um die unterschiedliche Art der Information zu kodieren. Dies zwingt den Code, über eine einfache Darstellung hinaus zu modellieren, um chaotische Wachstumsprozesse zu verhindern. Die Unterscheidung zwischen öffentlichen Äußerungen und internen Zuständen ist essenziell für die spätere Steuerung und Beobachtbarkeit.
+
