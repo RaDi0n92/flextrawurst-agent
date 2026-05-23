@@ -29,8 +29,8 @@ DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
 TICK_SEKUNDEN = 300  # alle 5 Minuten
 
 # Verfallsraten pro Stunde (1.0 = voll, 0.0 = leer)
-DURST_PRO_H    = 0.10   # leer in ~10h aktiver Zeit
-HUNGER_PRO_H   = 0.05   # leer in ~20h aktiver Zeit
+DURST_PRO_H    = 0.18   # leer in ~5.5h aktiver Zeit → 3-4x trinken/Tag
+HUNGER_PRO_H   = 0.12   # leer in ~8h aktiver Zeit  → 2-3x essen/Tag
 
 # Kaskaden-Schwellen
 KASKADE_SCHWELLE  = 0.4   # unter dieser Schwelle bei hunger+durst → energie+stimmung sinken

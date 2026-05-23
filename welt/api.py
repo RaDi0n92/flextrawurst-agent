@@ -3616,6 +3616,77 @@ def schlaf_heute(
     return bilanz
 
 
+# --- Cyberling ---
+
+CYBERLING_PFLEGE = {
+    "fuettern":       {"hunger": 0.5},
+    "trinken_geben":  {"durst": 0.4},
+    "spielen":        {"stimmung": 0.3, "energie": 0.15},
+    "streicheln":     {"stimmung": 0.25},
+}
+
+@app.post("/wesen/{entity_id}/cyberling/{aktion}")
+def cyberling_pflegen(
+    entity_id: str,
+    aktion: str,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    if aktion not in CYBERLING_PFLEGE:
+        raise HTTPException(status_code=400, detail=f"Unbekannte Aktion: {aktion}")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM cyberlinge WHERE entity_id = %s", (entity_id,))
+            c = cur.fetchone()
+            if not c:
+                raise HTTPException(status_code=404, detail="Kein Cyberling gefunden")
+            if c["status"] == "tot":
+                raise HTTPException(status_code=409, detail="Cyberling ist tot — wartet auf Wiedergeburt")
+
+            updates = CYBERLING_PFLEGE[aktion]
+            neue_werte = {}
+            for feld, delta in updates.items():
+                neue_werte[feld] = min(1.0, c[feld] + delta)
+
+            set_clause = ", ".join(f"{k} = %s" for k in neue_werte)
+            cur.execute(
+                f"UPDATE cyberlinge SET {set_clause}, letzte_interaktion = NOW() WHERE entity_id = %s",
+                (*neue_werte.values(), entity_id),
+            )
+            cur.execute("""
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES (%s, 'entity', %s, %s, 'api', 'internal')
+            """, (
+                f"cyberling.{aktion}",
+                entity_id,
+                psycopg2.extras.Json({**neue_werte, "vorher": {k: c[k] for k in neue_werte}}),
+            ))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "aktion": aktion, "neue_werte": neue_werte}
+
+
+@app.get("/wesen/{entity_id}/cyberling")
+def cyberling_status(
+    entity_id: str,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM cyberlinge WHERE entity_id = %s", (entity_id,))
+            c = cur.fetchone()
+            if not c:
+                raise HTTPException(status_code=404, detail="Kein Cyberling gefunden")
+    finally:
+        conn.close()
+    return dict(c)
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)
