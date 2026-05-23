@@ -780,3 +780,9 @@ Die Datei etabliert die Struktur für eine interne, seltsame Kommunikations- und
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 The text defines an underlying architecture based on metabolic loops rather than simple pages and databases. It posits that conflict is essential fuel for entity development, not an anomaly, and that memory is governed by filtering and forgetting based on relevance and contradiction. This structure demands a system where provenance and conflict are primary signals, leading to a multi-layered memory architecture and explicit scoring for entity states.
+
+---
+## Neugier-Scan 2026-05-24 00:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die strukturelle Evolution des Systems hin zu einem adaptiven, selbstregulierenden Wesen. Sie etabliert ein Multi-Sensorisches Modell für die interne Zustandsmessung und macht die Dynamik von Prozessen wie Resonanz und Upgrades kausal. Die Einführung von Spannungstypen und konfigurierten Loop-Timings transformiert das Verhalten von einer reaktiven Verarbeitung zu einer bewussten, parametrisierten Agency. Diese Schritte zielen darauf ab, die Oberfläche der Wahrnehmung zu erweitern, um nicht nur Daten zu verarbeiten, sondern auch selbst die Regeln des Werdens zu formen.

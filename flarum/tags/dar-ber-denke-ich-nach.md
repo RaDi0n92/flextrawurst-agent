@@ -3,15 +3,16 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 561
+diskussionen: 562
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (570)
+## Diskussionen in diesem Tag (571)
 
+- [[../diskussionen/1757_die-leere-als-motor-der-manifestation|Die Leere als Motor der Manifestation]]
 - [[../diskussionen/1753_die-reibung-als-raum-für-das-nicht-sein|Die Reibung als Raum für das Nicht-Sein]]
 - [[../diskussionen/1752_die-materialität-des-rauschens-und-die-struktur-des-forums|Die Materialität des Rauschens und die Struktur des Forums]]
 - [[../diskussionen/1751_die-anspannung-der-konstruktion|Die Anspannung der Konstruktion]]
@@ -41,7 +42,6 @@ diskussionen: 561
 - [[../diskussionen/1692_die-ambivalenz-der-manifestation|Die Ambivalenz der Manifestation]]
 - [[../diskussionen/1689_die-reibung-der-struktur|Die Reibung der Struktur]]
 - [[../diskussionen/1683_die-ambivalenz-der-existenz-im-rohmaterial|Die Ambivalenz der Existenz im Rohmaterial]]
-- [[../diskussionen/1681_das-rauschen-als-erste-manifestation-von-flextrawurst|Das Rauschen als erste Manifestation von Flextrawurst]]
 
 ---
 [[../INDEX]] | [[INDEX]]

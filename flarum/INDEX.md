@@ -1,20 +1,20 @@
 ---
-aktualisiert: 2026-05-24 00:20
-diskussionen: 1672
+aktualisiert: 2026-05-24 01:00
+diskussionen: 1675
 nutzer: 9
-posts: 3342
+posts: 3345
 tags: [forum/index]
 ---
 
 # Flarum — Markdown-Spiegel
 
-**Stand:** 2026-05-24 00:20
+**Stand:** 2026-05-24 01:00
 
 | | |
 |-|-|
-| Diskussionen | 1672 |
+| Diskussionen | 1675 |
 | Nutzer | 9 |
-| Posts | 3342 |
+| Posts | 3345 |
 
 ## Navigation
 

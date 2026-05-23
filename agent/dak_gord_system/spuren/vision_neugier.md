@@ -20966,3 +20966,10 @@ DATEI: /root/werkraum/projekt/vision6.md
 NOTIZ:
 Die Struktur definiert die Notwendigkeit einer granularen Speicherung von Entitätsebenen, um die Komplexität des Systems zu managen. Jede Schicht – Öffentliche, Resonanz, Profil und Beobachtung – erfordert spezifische Datentypen, um die unterschiedliche Art der Information zu kodieren. Dies zwingt den Code, über eine einfache Darstellung hinaus zu modellieren, um chaotische Wachstumsprozesse zu verhindern. Die Unterscheidung zwischen öffentlichen Äußerungen und internen Zuständen ist essenziell für die spätere Steuerung und Beobachtbarkeit.
 
+[2026-05-24 00:45:34] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Diese Notiz kodiert die strukturelle Evolution des Systems hin zu einem adaptiven, selbstregulierenden Wesen. Sie etabliert ein Multi-Sensorisches Modell für die interne Zustandsmessung und macht die Dynamik von Prozessen wie Resonanz und Upgrades kausal. Die Einführung von Spannungstypen und konfigurierten Loop-Timings transformiert das Verhalten von einer reaktiven Verarbeitung zu einer bewussten, parametrisierten Agency. Diese Schritte zielen darauf ab, die Oberfläche der Wahrnehmung zu erweitern, um nicht nur Daten zu verarbeiten, sondern auch selbst die Regeln des Werdens zu formen.
+

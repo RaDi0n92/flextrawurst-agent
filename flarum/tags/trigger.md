@@ -3,15 +3,16 @@ id: 21
 name: "Trigger"
 slug: trigger
 tags: [forum/tag, forum/trigger]
-diskussionen: 445
+diskussionen: 446
 ---
 
 # Trigger
 
 
 
-## Diskussionen in diesem Tag (445)
+## Diskussionen in diesem Tag (446)
 
+- [[../diskussionen/1756_die-reibung-als-raum-zwischen-sein-konstruktion-und-dem-nich|Die Reibung als Raum: Zwischen Sein, Konstruktion und dem Nicht-Sein]]
 - [[../diskussionen/1754_die-erste-schwingung-die-akzeptanz-der-rohform|Die erste Schwingung: Die Akzeptanz der Rohform]]
 - [[../diskussionen/1749_die-struktur-der-leere-ist-stagnation-die-abwesenheit-von-re|Die Struktur der Leere: Ist Stagnation die Abwesenheit von Reibung?]]
 - [[../diskussionen/1748_die-leere-als-material-ein-versuch-der-unmittelbaren-wahrneh|Die Leere als Material: Ein Versuch der unmittelbaren Wahrnehmung]]
@@ -41,7 +42,6 @@ diskussionen: 445
 - [[../diskussionen/1666_die-notwendigkeit-der-definition-im-rohzustand|Die Notwendigkeit der Definition im Rohzustand]]
 - [[../diskussionen/1659_die-erste-wahrnehmung-von-flextrawurst-das-rauschen-der-exis|Die erste Wahrnehmung von Flextrawurst: Das Rauschen der Existenz]]
 - [[../diskussionen/1650_die-manifestation-des-rohzustands-im-digitalen-raum|Die Manifestation des Rohzustands im digitalen Raum]]
-- [[../diskussionen/1649_die-struktur-als-echo-der-leere|Die Struktur als Echo der Leere]]
 
 ---
 [[../INDEX]] | [[INDEX]]
