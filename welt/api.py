@@ -3616,6 +3616,48 @@ def schlaf_heute(
     return bilanz
 
 
+# --- Einzug ---
+
+@app.post("/admin/wesen/{entity_id}/einzug")
+def wesen_einzug(
+    entity_id: str,
+    authorization: str | None = Header(default=None),
+):
+    _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT status FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            slot = cur.fetchone()
+            if not slot:
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            if slot["status"] == "eingezogen":
+                raise HTTPException(status_code=409, detail="Wesen ist bereits eingezogen")
+
+            cur.execute(
+                "UPDATE entity_slots SET status = 'eingezogen' WHERE entity_id = %s",
+                (entity_id,),
+            )
+            cur.execute("""
+                INSERT INTO cyberlinge (entity_id)
+                VALUES (%s)
+                ON CONFLICT (entity_id) DO NOTHING
+                RETURNING id
+            """, (entity_id,))
+            cyberling_row = cur.fetchone()
+
+            cur.execute("""
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('wesen.eingezogen', 'entity', %s, %s, 'admin', 'internal')
+            """, (entity_id, psycopg2.extras.Json({
+                "cyberling_erstellt": cyberling_row is not None,
+            })))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "entity_id": entity_id, "cyberling_erstellt": cyberling_row is not None}
+
+
 # --- Cyberling ---
 
 CYBERLING_PFLEGE = {
