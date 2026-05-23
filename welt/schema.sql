@@ -75,9 +75,10 @@ CREATE TABLE IF NOT EXISTS cyberlinge (
     status          VARCHAR NOT NULL DEFAULT 'lebendig'
                         CHECK (status IN ('lebendig', 'tot', 'schlafend')),
     hunger          FLOAT NOT NULL DEFAULT 1.0 CHECK (hunger BETWEEN 0 AND 1),
-    gesundheit      FLOAT NOT NULL DEFAULT 1.0 CHECK (gesundheit BETWEEN 0 AND 1),
+    durst           FLOAT NOT NULL DEFAULT 1.0 CHECK (durst BETWEEN 0 AND 1),
     stimmung        FLOAT NOT NULL DEFAULT 1.0 CHECK (stimmung BETWEEN 0 AND 1),
     energie         FLOAT NOT NULL DEFAULT 1.0 CHECK (energie BETWEEN 0 AND 1),
+    gesundheit      FLOAT NOT NULL DEFAULT 1.0 CHECK (gesundheit BETWEEN 0 AND 1),
     letztes_fuettern    TIMESTAMPTZ,
     letzte_pflege       TIMESTAMPTZ,
     letzte_interaktion  TIMESTAMPTZ DEFAULT NOW(),
