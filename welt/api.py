@@ -3601,9 +3601,8 @@ def schlaf_end(
 @app.get("/wesen/{entity_id}/schlaf/heute")
 def schlaf_heute(
     entity_id: str,
-    authorization: str | None = Header(default=None),
 ):
-    _require_auth(authorization)
+    pass  # öffentlicher Lesezugriff
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -3714,9 +3713,7 @@ def cyberling_pflegen(
 @app.get("/wesen/{entity_id}/cyberling")
 def cyberling_status(
     entity_id: str,
-    authorization: str | None = Header(default=None),
 ):
-    _require_auth(authorization)
     conn = get_conn()
     try:
         with conn.cursor() as cur:
