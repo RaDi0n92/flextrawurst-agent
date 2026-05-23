@@ -906,3 +906,35 @@ Sie ist wahrscheinlich eine der wichtigsten Dateien des Ordners, weil sie zeigt,
 Die Datei existiert, weil nach den ersten Versuchen ein reiferer Verlauf entstand, in dem Daniel nicht nur Output sammelte, sondern Qualitaetskriterien entwickelte.
 
 Sie ist eine Zwischenstufe: noch nicht das spaetere variable Format, aber schon mit Tiefe, Forschung, Witz und Meta.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Diese Spiegeldatei existiert, weil Stunde 2 den Uebergang zeigt: von Marker-Form zu Dialog-Form.
+
+Sie haelt fest, dass Reparatur sichtbar sein darf, aber nicht dauerhaft die Hauptform bleiben soll.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Diese Spiegeldatei existiert, weil Stunde 4 zeigt, was Daniel gelobt hat: nicht nur Bausteine abarbeiten, sondern den Dialog durch die Bausteine hindurch lebendig halten.
+
+Sie ist die beste Kontrollprobe der vier Stunden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Diese Spiegeldatei existiert, weil Stunde 3 die erste tragende Probe ist. Sie zeigt, dass Codex den Formfaden nicht nur beschreiben, sondern kurz ausfuehren konnte.
+
+Sie zeigt auch, wo die Form noch rutschte: Systemcheck vergessen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Diese Spiegeldatei existiert, weil der erste Fehler des Selbstversuchs aufbewahrt werden muss. Nicht als Peinlichkeit, sondern als Kalibrierpunkt.
+
+Ohne Stunde 1 waere nicht sichtbar, was Daniel danach korrigiert hat.

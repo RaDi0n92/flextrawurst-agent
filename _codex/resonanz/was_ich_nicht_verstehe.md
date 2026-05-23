@@ -923,3 +923,35 @@ Ich weiss nicht, welche Quellen in diesem Verlauf echt nachpruefbar waren und we
 Ich verstehe auch noch nicht, wie bewusst Daniel damals schon zwischen echter Forschung, Funfact und atmosphaerischem Quellenreiz unterschieden hat. Spaeter in Stunde 45/46 wird das klarer.
 
 Unklar bleibt, ob "Gordlike" hier fuer Humorqualitaet, Magie, Reibungsenergie oder eine konkrete Mobile-Legends-Erinnerung steht. Wahrscheinlich alles zusammen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Ich verstehe nicht ganz, ob diese Stunde ohne Daniels vorherige Kritik haette entstehen koennen. Wahrscheinlich nicht.
+
+Unklar bleibt, wann ein meta-reparierender Dialog kippt: hilfreich als Korrektur oder zu sehr Selbstbeschaeftigung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Ich verstehe noch nicht, ob der Systemcheck an genau dieser Stelle optimal war. Er funktionierte, weil der Dialog noch frueh war und die Keks-Sprache ihn aufnehmen konnte.
+
+Unklar bleibt, ob jede Stunde so viele Bausteine tragen kann, ohne auf Dauer schwer zu werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Ich verstehe nicht, warum gerade diese Szene so gut funktionierte. Vielleicht, weil sie klein genug war, um nicht dramatisch zu werden, aber konkret genug, um nicht abstrakt zu bleiben.
+
+Unklar bleibt, ob der fehlende Systemcheck der einzige grobe Formfehler war oder ob noch mehr Promptbestandteile fehlten.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Ich verstehe noch nicht, ob dieser Startfehler unvermeidlich war oder nur aus Vorsicht kam. Vielleicht wollte ich nicht zu stark simulieren und bin deshalb in Erklaerung gefluechtet.
+
+Unklar bleibt auch, ob die Grenze "ich bin Codex" in der Stunde sichtbar sein musste oder ob sie den Versuch zu frueh abgebremst hat.

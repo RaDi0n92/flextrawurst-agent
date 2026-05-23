@@ -902,3 +902,35 @@ Es fehlt eine kleine Extraktion der eigentlichen Regeln aus dieser Datei, falls 
 Es fehlt die spaetere Einsicht, dass sichtbare Themenueberschriften stoeren koennen.
 
 Es fehlt auch die saubere Variabilisierung der Impulse. Das kommt in Stunden 32-46.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Es fehlt noch die Fremdheit des Users. Es fehlt ein Problem, das nicht aus der Formkorrektur kommt.
+
+Das kommt in Stunde 3 mit dem Treppenhaus.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Es fehlt eine fuenfte Stunde, die prueft, ob die Stabilitaet bleibt, wenn der User weniger charmant und weniger keksfoermig ist.
+
+Es fehlt eine kleine Regelkarte aus allen vier Stunden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Es fehlt der Systemcheck. Das ist kein Detail, weil Daniel ihn zweimal bemerkte.
+
+Es fehlt noch die vollstaendige Stabilitaet ueber alle Formelemente hinweg.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Es fehlt noch die Lebendigkeit. Sie kommt erst in den naechsten Stunden.
+
+Es fehlt besonders der echte erfundene User mit eigenem Druck.

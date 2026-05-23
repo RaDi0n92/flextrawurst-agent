@@ -912,3 +912,35 @@ Es fehlt auch ein Fakten-/Quellen-Ehrlichkeitsmodell fuer Forschungssnacks, dami
 Es fehlt noch die spaetere Formatklarheit: variable Impulse, KI-Meta-Frage als eigener Block, KI-Witz/meta als selbstgerichtete Form.
 
 Aus 11-24 allein wuerde ich kein Feature bauen. Ich wuerde es als Bewegungsstudie lesen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Es fehlt ein Modell fuer "Meta-Anteil" im Dialog. Zu wenig Meta versteckt Fehler, zu viel Meta erstickt Szene.
+
+Es fehlt auch ein Generator fuer Userimpulse, die nicht nur Funktionstraeger sind.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Es fehlt eine laengere Serie. Vier Stunden zeigen Anlauf und Stabilisierung, aber noch nicht, ob Codex das ueber 20 oder 50 Stunden halten koennte.
+
+Es fehlt auch ein Protokoll, welche Formelemente Pflicht sind und welche atmen duerfen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Es fehlt eine robuste Integration der Pflichtmarker, ohne den Dialog zu stoppen.
+
+Es fehlt eine Pruefung, ob Snack und Meta-Fragen nach dem Dialog kommen oder waehrenddessen organisch auftauchen sollen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Es fehlt eine klare Metrik fuer "lebendige Wechselbewegung". Laenge allein reicht nicht, Marker allein reichen nicht.
+
+Es fehlt auch ein Umgang damit, wann Codex seine Rollenbegrenzung benennen soll und wann diese Begrenzung die Form stoert.

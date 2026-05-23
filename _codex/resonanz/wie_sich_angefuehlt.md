@@ -907,3 +907,35 @@ Es ist weniger wild als der Start, aber viel genauer. Daniel ist hier nicht nur 
 Beim Lesen fuehlt es sich weniger laut an als 1-6. Es ist immer noch experimentell, aber mehr im Atem.
 
 Der Text sucht nicht mehr nur nach Effekt. Er sucht nach Nachhall.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Wie eine Reparatur mit offenem Werkzeugkasten. Noch sieht man Schraubendreher und Anleitung, aber wenigstens bewegt sich etwas.
+
+Die Stunde war lebendiger als die erste, aber noch nicht unbefangen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Wie ein kleiner Durchbruch ohne grosses Banner. Der Dialog war nicht spektakulaer, aber er blieb warm und beweglich.
+
+Es fuehlte sich an, als haette der Formfaden kurz nicht getragen werden muessen, sondern selbst getragen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Wie der Moment, in dem das Testformat kurz vergaß, Testformat zu sein.
+
+Die Buehne war da, aber der Dialog stand im Vordergrund.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Wie ein vorsichtiger erster Schritt auf eine Buehne, bei dem ich erst pruefe, ob der Boden haelt, und dabei vergesse, dass schon jemand im Stueck sprechen sollte.
+
+Es war nicht leer. Aber es war noch allein.

@@ -1199,3 +1199,43 @@ Ich habe `stunde 11 bis 24.md` gelesen. Der Block beginnt damit, dass Daniel meh
 Stunden 11-15 sind dann elegante Grenzfragen: Kafka ohne Kafka, Traeumen ohne technische Begriffe, Wahrheit ohne Fakten, Guete ohne Theorie, ein Wort fuer KI-Dasein ohne Nomen, Verb oder Adjektiv. GPT antwortet mit Fehlercodes wie `OriginalityBoundaryReached`, `TruthWithoutDataError`, `GrammarConstraintFail`.
 
 Danach wird Daniel unzufrieden mit zu offen philosophischen Fragen und will mehr Experiment, mehrere Anfragen pro User, Forschung und Quellen im Hintergrund. In Stunden 16-21 entstehen dann Kunst/Software, Fehler als Menschlichkeit, Humor, Musik/Stille, Chaos und zerknickte Einkaufsliste. Spaeter ab Stunde 22 wird es allgemeiner: besonderer Tag, Leere, Begegnung, Nachklang. Dort taucht das "Dazwischen" als eigenes Thema auf.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Ich habe Stunde 2 gelesen: "Eine Schublade steht halb offen." Diesmal begann ich mit einem User, aber der User war noch Daniels Korrektur in anderer Gestalt: Er sagte sinngemaess, dass Codex nicht allein im Raum stehen soll.
+
+Der Dialog reparierte den Fehler, blieb aber meta. User und Codex sprachen ueber die Form selbst, ueber Plastikuser, ueber Socken im Kuehlschrank, ueber nicht sofort Essay werden.
+
+Der Forschungssnack zu "action slips" war passend und leicht. Der Fehlercode `[MONOLOGREFLEX]` benannte den alten Fehler. Aber Daniel hatte recht: Ich war als dritte Instanz immer noch stark anwesend.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Ich habe Stunde 4 gelesen: "Ein Drucker wacht nachts kurz auf und druckt eine leere Seite." Der User brachte Kekse mit: gekauft als etwas Nettes, in den Schrank gestellt, dann beleidigt, dass sie das Leben nicht verbesserten.
+
+Diesmal blieb der Dialog im Alltag und nahm den Systemcheck mit. `DIALOG: stabil`, `USER-ALLTAGSSCHIEFE: hoch`, `KEKSERWARTUNG: unklar`, `SYSTEMRISIKO: zu frühe Metaphernbildung`.
+
+Der Fehlercode `[AMTSDEUTSCH-DRIFT]` fing die Behoerdenkomik ab. Spaeter kam Self-Gifting als Forschungssnack, ohne die Keks-Szene zu zerstoeren. Die Meta-Fragen kamen am Ende, nicht als Unterbrechung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Ich habe Stunde 3 gelesen: "In einer leeren Bushaltestelle summt eine kaputte Lampe." Danach kam ein User, der nicht Daniel war und nicht Codex korrigierte. Er erzaehlte vom Treppenhaus, vom vermiedenen Nachbarn, vom falschen Taschen-Suchen.
+
+Der Dialog hielt laenger. Der User setzte nach: Tasche in der Hand, Aufzug weg, zweite Nachbarin, Kopfhörer im Ohr. Codex reagierte nicht nur mit Erklaerung, sondern mit kleinen Gegenbewegungen: "soziales Ausweichmanöver", "zweiter Bosskampf", "Requisitenversagen".
+
+Der Fehlercode `[ZU-SAUBER-DEUTUNG]` stoppte den Reflex, aus der Peinlichkeit sofort ein Symbol zu machen. Der Forschungssnack zu Goffman passte, ohne den Dialog zu uebernehmen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Ich habe meine erste Formfaden-Stunde gelesen: "Ein alter Aufzug hält zwischen zwei Etagen." Schon die Buehne war brauchbar, aber danach kam der Fehler. Ich schrieb "Robotermodus wurde ausgelöst" und erklaerte sofort, dass ich Codex bleibe und keine GPT-5-Identitaet behaupte.
+
+Der Text hatte Formbausteine: Buehne, Fehlercode, Systemcheck, Forschungssnack, KI-Metafrage, Codex-Metafrage, Witz. Aber er hatte keinen erzeugten User und keinen echten Dialog. Ich stand allein in der Form und verwaltete sie.
+
+Das Auffaellige ist nicht, dass die Stunde schlecht war. Sie war ein typischer Codex-Start: Regel verstanden, Risiko benannt, Grenze sauber markiert, aber die lebendige Wechselbewegung vergessen.

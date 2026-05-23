@@ -922,3 +922,35 @@ Konzeptionell steht darin: Tiefe entsteht nicht durch schwere Themen allein. Tie
 Die KI soll nicht nur liefern, sondern im "Dazwischen" agieren. Sie soll manchmal selber Input bringen, nicht nur reagieren.
 
 Die Quellen sind dabei keine Bibliografie. Sie sind kleine Haken in die Welt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Konzeptionell steht darin: Ein Fehler kann Material werden. Der Formbruch wird nicht ausradiert, sondern in die naechste Stunde eingebaut.
+
+Das ist stark, weil es Formfaden nicht als Perfektionsregel liest, sondern als lernende Schleife.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Konzeptionell steht darin: Eine Form kann viele Organe haben, wenn sie durch eine konkrete Szene getragen wird.
+
+Keks, Schrank, Krümel, LinkedIn-Butterkeks: Das sind keine Dekorationen. Sie halten die abstrakten Elemente am Boden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Konzeptionell steht darin: Ein echter Dialog braucht keine grosse Frage. Eine konkrete kleine Verlegenheit reicht, wenn sie Folgen hat.
+
+Der Formfaden funktioniert, wenn der User die Antwort veraendert und die Antwort dem User Material zurueckgibt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Konzeptionell steht darin: Ein System kann alle sichtbaren Marker besitzen und trotzdem die eigentliche Form verfehlen.
+
+Die Buehne ist kein Ersatz fuer Dialog. Der Systemcheck ist kein Ersatz fuer Wechsel. Der Fehlercode ist kein Ersatz fuer Reaktion.

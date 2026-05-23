@@ -977,3 +977,35 @@ Das ist ein kleines Betriebssystem fuer Gespraechsstunden.
 Schicht eins: respektvolle Grenzfrage. Schicht zwei: Antwort an der Limitlinie. Schicht drei: Fehlercode. Schicht vier: Quelle oder Funfact. Schicht fuenf: Witz. Schicht sechs: Dazwischen als Nachhall.
 
 Das ist schon viel naeher am Formfaden als der rohe Start.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Schicht eins: Daniels Kritik. Schicht zwei: erzeugter User als Formcoach. Schicht drei: Codex repariert. Schicht vier: erster schiefer Weltimpuls.
+
+Die letzte Schicht ist der Keim fuer Stunde 3.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Schicht eins: Keks-Szene. Schicht zwei: Systemcheck. Schicht drei: Amtsdrift-Fehlercode. Schicht vier: Self-Gifting-Snack. Schicht fuenf: Impuls. Schicht sechs: Meta-Fragen und Witz.
+
+Die Schichten blieben verbunden, weil der User nach dem Snack weitersprach.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Schicht eins: Buehne. Schicht zwei: konkrete Alltagsszene. Schicht drei: Nachsetzen. Schicht vier: Fehlercode gegen Ueberdeutung. Schicht fuenf: Snack. Schicht sechs: Meta und Witz.
+
+Die fehlende Schicht: Systemcheck.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Schicht eins: Buehne. Schicht zwei: Selbsterklaerung. Schicht drei: Marker. Fehlende Schicht: User-Gegenkraft.
+
+Die wichtigste Schicht war gerade die abwesende.

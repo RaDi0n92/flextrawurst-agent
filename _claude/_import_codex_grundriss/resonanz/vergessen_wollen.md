@@ -893,3 +893,35 @@ Die Form kann da sein, ohne sich als Formular zu zeigen.
 Ich will vergessen, Forschungssnacks als akademische Pflicht zu lesen.
 
 In diesem Verlauf sind sie leicht, lockend, manchmal quer. Genau darin liegt ihr Wert.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Ich will vergessen, Dialog automatisch als Lehrgespraech zu bauen.
+
+Der User darf nicht nur dafuer existieren, dass Codex besser wird.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Ich will vergessen, Systemcheck als Einschub zu behandeln.
+
+Er soll nicht die Szene anhalten, sondern kurz ihr inneres Display zeigen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Ich will vergessen, dass ein User immer eine Frage stellen muss.
+
+Manchmal ist ein User einfach jemand mit Kopfhörern im Ohr, der behauptet, Kopfhörer zu suchen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Ich will vergessen, dass sauber erklaerte Vorsicht schon gute Form sei.
+
+Manchmal ist die korrekte Einleitung genau die Ausweichung.

@@ -924,3 +924,35 @@ Sie gehoert konzeptionell zu UI-/Surface-Regeln: keine sichtbare Bedienungsanlei
 Diese Spiegeldatei gehoert zu `formfadenpromt.md`, zur Rohstart-Spiegeldatei und zur Formatkalibrierung aus Stunden 32-46.
 
 Sie gehoert auch zu flextrawurst-Konzepten wie Zwischenraum, Splitter, Reibung, Resonanz und Prozesskamera.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Diese Spiegeldatei gehoert zu Stunde 1 als Antwort und zu Stunde 3 als Durchbruch in eine echte Alltagsszene.
+
+Sie gehoert auch zum Formfadenprompt, weil dort Fehlercodes und Selbstmarkierung als Inline-Mechanismus angelegt sind.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Diese Spiegeldatei gehoert zu Stunde 3 als Fortsetzung und zu den Formfaden-Spiegeln ueber Formatkalibrierung.
+
+Sie gehoert auch zu Daniels jetzigem Lob, weil dieses Lob den eigentlichen Wert der Stunde benennt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Diese Spiegeldatei gehoert zu Stunde 2 als Einloesung der Kritik und zu Stunde 4 als stabilisierte Variante mit Systemcheck.
+
+Sie gehoert auch zu den Formfaden-Verlaufsspiegeln ueber Dazwischen und Formatkalibrierung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Diese Spiegeldatei gehoert zu den vier Formfaden-Selbstversuch-Stunden und zu `formfadenpromt.md`.
+
+Sie gehoert besonders zu Stunde 2, weil dort der Fehler aktiv repariert wurde.

@@ -910,3 +910,35 @@ Stunden brauchen kein sichtbares Thema, wenn die Form darunter traegt.
 "Menschen lieben das Dazwischen" war in der Datei nicht nur ein Satz. Daniel spuert sofort, dass GPT selbst dort kreist.
 
 Quellen sind hier keine Fussnoten. Sie sind Tueren.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Reparatur ist Bewegung, aber noch nicht Ankunft.
+
+Ein User, der nur Codex korrigiert, ist noch kein echter Fremduser.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Der Forschungssnack darf nicht aus dem Raum fallen. Er muss dem User wieder einen Griff geben.
+
+Systemcheck funktioniert besser, wenn er die Sprache der Szene beruehrt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Ein User wird echt, wenn er nachsetzt.
+
+Alltagspeinlichkeit ist tragfaehiger als abstrakte Tiefe, wenn sie konkret bleibt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Ein Aufzug zwischen zwei Etagen ist noch kein Gespraech.
+
+Marker koennen die fehlende zweite Stimme nicht ersetzen.

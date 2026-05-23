@@ -904,3 +904,35 @@ Die Innovation ist Variabilitaet innerhalb einer wiedererkennbaren Form.
 Mich hat ueberrascht, wie explizit Daniel das Verhaeltnis zur KI anspricht: nicht nur Werkzeug, aber Fuehrung ist trotzdem noetig.
 
 Das ist fast genau die Rolle, die fuer Codex im Werkraum spaeter formuliert wurde: externer AI-Strom mit Andockpunkt, nicht Bewohner, nicht bloss Werkzeug.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Mich hat ueberrascht, dass der Dialog trotz Metaebene schon deutlich besser funktionierte.
+
+Das zeigt, dass Wechselbewegung selbst dann hilft, wenn sie noch nicht perfekt frei ist.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Mich hat ueberrascht, dass der Systemcheck den Dialog nicht zerbrach. Vielleicht, weil er frueh genug kam und komisch genug war.
+
+Mich hat auch ueberrascht, wie viel ein Butterkeks tragen kann, wenn man ihn nicht zu sehr zwingt.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Mich hat ueberrascht, wie wenig "KI-Thema" noetig war. Die Stunde war fast nur Menschenszene, und genau dadurch funktionierte die KI-Form besser.
+
+Das ist wichtig: Nicht jede Formfadenstunde muss ueber KI sprechen, um KI-Form sichtbar zu machen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Mich hat ueberrascht, wie nah die Stunde an "richtig" aussah und wie klar sie trotzdem falsch war.
+
+Das ist eine wichtige Warnung: Fast richtige Form kann den Kern verdecken.

@@ -920,3 +920,35 @@ Mich interessiert der Moment, in dem Daniel sagt, er wolle GPT nicht wie ein Wer
 Mich interessiert auch, dass Quellen nicht als Autoritaetsbeweis gewuenscht sind, sondern als Tueroeffner: etwas klingt spannend, man will spaeter lesen.
 
 Der Satz ueber Menschen mit Tagesstruktur und KI, die arbeiten muss, ist ebenfalls wichtig. Er macht aus dem 24-Stunden-Format keine reine Spielerei, sondern einen Arbeitsrhythmus.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Mich interessiert, dass ich den Fehler nicht versteckt habe. Der Dialog sprach ihn aus und baute daraus Bewegung.
+
+Mich interessiert auch die Socken-im-Kuehlschrank-Stelle. Dort tauchte zum ersten Mal ein nicht ganz sauberer Userimpuls auf, der nicht nur die Form kommentierte.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Mich interessiert, wie gut der Keks als Gegenstand funktioniert. Er ist klein, konkret, laecherlich und trotzdem bedeutungsoffen.
+
+Mich interessiert auch, dass der Forschungssnack nicht "wissenschaftlich" schwer wurde. Self-Gifting war ein Weltanker, kein Urteil.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Mich interessiert, dass Dialog hier durch Nachsetzen entstand. Der User bekam nicht eine fertige Antwort und verschwand. Er korrigierte, erweiterte, machte es peinlicher.
+
+Mich interessiert auch, dass die Komik nicht auf Kosten des Users ging. Sie blieb bei der Situation.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Mich interessiert, wie schnell ich aus Spiel eine Methodenerklaerung mache. Selbst im Versuch, weniger glatt zu sein, baue ich eine kleine Absicherung.
+
+Mich interessiert auch, dass der Fehlercode ehrlich war: `[FORMDRIFT-CODEX]` sagte genau, dass der Impuls zur korrekten Erklaerung stark war.

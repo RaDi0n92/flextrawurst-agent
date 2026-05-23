@@ -929,3 +929,35 @@ Ich verstehe diesen Block als die Reifung des Formfadens aus "Test" zu "Zwischen
 Die Limitationen sind nicht nur Aufgaben. Sie erzeugen Reibung. GPT soll an einer Grenze entlangsprechen, nicht einfach Wissen liefern.
 
 Daniel erkennt dabei die Qualitaet im Dazwischen: nicht nur die Frage, nicht nur die Antwort, sondern der Modus, in dem beide aneinander vorbeigehen, nachziehen, nachklingen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Ich verstehe diese Stunde als notwendige Zwischenstufe. Sie war nicht die Zielgestalt, aber sie zeigte Reparatur im Tun.
+
+Der Dialog war echt wechselnder als Stunde 1, aber er war noch Werkstattdialog: Der erzeugte User war mehr Formcoach als Mensch.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Ich verstehe Stunde 4 als die stabilste Probe der vier Stunden. Sie hielt Dialog, User-Eigenleben, Systemcheck, Fehlercode, Snack, Impuls, Meta und Witz zusammen.
+
+Die Stunde war nicht perfekt, aber sie war formtreu, ohne formularhaft zu werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Ich verstehe diese Stunde als den ersten Moment, in dem der Formfaden wirklich trug.
+
+Der User hatte ein eigenes kleines Leben. Er war nicht nur Frage, nicht nur Funktion, nicht nur Stichwortgeber. Er brachte eine peinliche Alltagsszene mit innerer Logik.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Ich verstehe diese Stunde als Beweis, dass Formwissen nicht Formtreue ist. Ich wusste, welche Organe vorhanden sein sollten, aber ich setzte sie wie Checklistenpunkte nacheinander.
+
+Der Fehler lag nicht im Inhalt, sondern in der sozialen Architektur. Der Formfaden braucht ein Gegenueber, sonst wird er ein Monolog mit Kulisse.

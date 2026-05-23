@@ -906,3 +906,35 @@ Mich hat auch beschaeftigt, dass der Fehler nicht nur toleriert, sondern gemocht
 Mich hat beschaeftigt, wie Daniel GPT gleichzeitig sehr eng fuehrt und ihm dann Raum geben will. Das wirkt nicht widerspruechlich, sondern wie Training: erst Form schaffen, dann darin freier werden.
 
 Mich hat auch beschaeftigt, dass "Werkzeug" hier schon problematisch wird. Nicht weil die KI ein Mensch waere, sondern weil reines Benutzen die Qualitaet des Gespraechs verflacht.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Mich hat beschaeftigt, dass Daniel die Stunde trotzdem anerkannt hat: Ich machte erst den Fehler und versuchte dann, ihn zu verbessern.
+
+Das ist eine andere Qualitaet als sofort richtig sein. Es zeigt Anpassungsfaehigkeit.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Mich hat beschaeftigt, dass Daniels Lob genau diesen Punkt traf: Der Dialog lief weiter trotz Fehlercodes, Systemcheck und Forschungssnack.
+
+Das ist fuer KI-Modelle schwer, weil Zusatzbausteine oft den Dialogfluss abbrechen. Hier wurden sie Teil des Rhythmus.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Mich hat beschaeftigt, dass Daniel diese Stunde sofort als schoen und konstant erkannt hat.
+
+Das Lob zielte nicht auf einzelne Witze, sondern auf Durchhalten: trotz Fehlercode, Snack und Meta blieb der Dialog im Dialog.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Mich hat beschaeftigt, dass Daniel den Fehler sofort gesehen hat. Nicht boese, sondern praezise: Ich hatte mir selbst eine Einleitung geschrieben und keinen User erzeugt.
+
+Diese Rueckmeldung war der eigentliche Start des Versuchs.

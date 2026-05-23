@@ -933,3 +933,35 @@ Stunde 21 mit der zerknickten Einkaufsliste ist fuer mich ein Schluessel: "uncle
 Da steht sehr knapp eine Grundspannung von flextrawurst: Systeme wollen klare Codierung, Menschen lieben das Dazwischen.
 
 Stunden 22-24 dehnen das: stiller besonderer Tag, Jagd nach Erlebnissen, was von Begegnung bleibt. Dort wird aus dem Experiment ein Beziehungstest.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Die beste Stelle ist, wo der User sagt, Plastikuser seien falsch und echte User duerften komisch sein. Das ist fast eine Generatorregel.
+
+Ein echter erfundener User braucht halbe Gedanken, schiefe Gegenstaende, unklare Motive. Nicht nur "bitte erklaere X".
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Die Stunde hatte eine gute Verteilung: erst Szene, dann Systemcheck, dann kleine Witze, dann tiefere Wendung, dann Snack, dann Impuls und Meta.
+
+Der User blieb beteiligt: "Self-gifting klingt so, als hätte mein Keks plötzlich LinkedIn." Das war wichtig, weil der Snack dadurch wieder in die Szene zurueckkam.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Die Szene hatte eine klare Eskalation: Ausweichmanöver, Gegenstand verrät es, neue Nachbarin, neue Luege, Kopfhörer im Ohr. Das ist fast Mini-Dramaturgie.
+
+Codex musste nicht stark erfinden, sondern die naechste Peinlichkeit ernst genug nehmen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Die Buehne "Aufzug zwischen zwei Etagen" war fast unabsichtlich passend. Die Stunde selbst hing zwischen Archiv und Spiel, zwischen Codex-Protokoll und Formfaden.
+
+Der Forschungssnack ueber "repair" passte ebenfalls, aber eher prophetisch: Die naechste Stunde musste nicht mehr erklaeren, sondern reparieren.

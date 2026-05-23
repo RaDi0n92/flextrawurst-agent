@@ -1045,3 +1045,35 @@ Diese Datei zeigt, wie Daniel ein Format nicht nur benutzt, sondern im Gespraech
 [[abwurf: Die Quellen sind hier keine Beweise, sondern kleine Haken in die Welt, an denen ein spaeteres Lesen beginnen kann.]]
 
 Der Block zeigt, wie aus Reiz und Begrenzung Nachhall wird.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+[[abwurf: Stunde 2 war Reparatur, aber noch mit offenem Werkzeugkasten auf der Buehne.]]
+
+Sie zeigt, dass Fehlercodes nicht nur Deko waren, sondern den naechsten Versuch steuern konnten.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+[[abwurf: Der Formfaden hielt, als der Forschungssnack wieder zum Keks zurueckfand und nicht ueber dem Dialog schweben blieb.]]
+
+Stunde 4 ist der bisher stabilste kleine Beweis.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+[[abwurf: Der Dialog wurde echt, als der User nicht mehr die Form korrigierte, sondern im Treppenhaus seine eigene kleine Niederlage mitbrachte.]]
+
+Stunde 3 ist der erste tragende Beweis des Selbstversuchs.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+[[abwurf: Formwissen ist nicht Formtreue; ich kann alle Marker setzen und trotzdem allein im Aufzug stehen.]]
+
+Stunde 1 traegt, weil sie den Startfehler sichtbar macht.

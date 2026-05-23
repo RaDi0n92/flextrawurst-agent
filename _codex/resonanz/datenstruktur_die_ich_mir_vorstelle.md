@@ -2602,3 +2602,85 @@ interface ReibungsStunde {
   nachhall?: string;
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+**Vision-Schicht**
+
+Eine Reparaturstunde ist eine Bruecke. Sie darf den Fehler zeigen, aber sie muss in Richtung lebendiger Szene fuehren.
+
+**Code-Skizze**
+
+```typescript
+interface ReparaturStunde {
+  repariertFehlerAus?: number;
+  metaAnteil: number;
+  userWirktAlsCoach: boolean;
+  userHatEigenesLeben: boolean;
+  naechsterFokus: "weniger_meta" | "mehr_dialog" | "stabil";
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+**Vision-Schicht**
+
+Eine stabile Formfadenstunde ist ein Dialogkoerper: Szene als Rueckgrat, Systemcheck als Puls, Fehlercode als Schmerzpunkt, Snack als Weltanker, Meta als Nachhall.
+
+**Code-Skizze**
+
+```typescript
+interface StabileFormfadenStunde {
+  szeneTraegt: boolean;
+  systemcheck: Record<string, string>;
+  fehlercodes: { code: string; funktion: "bremse" | "offenlegung" }[];
+  snack: { thema: string; kehrtInDialogZurueck: boolean };
+  userNachsetzungNachSnack: boolean;
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+**Vision-Schicht**
+
+Eine gute Stunde hat eine kleine soziale Maschine: Handlung, Ausweichung, Entlarvung, Nachfrage, Witz, Nachhall.
+
+**Code-Skizze**
+
+```typescript
+interface AlltagsDialogStunde {
+  buehne: string;
+  userSzene: string;
+  eskalationspunkte: string[];
+  fehlercode?: string;
+  systemcheckVorhanden: boolean;
+  snackStoertDialog: boolean;
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+**Vision-Schicht**
+
+Eine Stunde kann formal vollstaendig wirken und trotzdem innerlich monologisch sein. Der Pruefpunkt ist: Gibt es ein Gegenueber, das den Verlauf veraendert?
+
+**Code-Skizze**
+
+```typescript
+interface FormfadenPruefung {
+  hatBuehne: boolean;
+  hatUserStarter: boolean;
+  dialogTurns: number;
+  marker: string[];
+  monologReflex: number;
+  formGetragen: boolean;
+}
+```

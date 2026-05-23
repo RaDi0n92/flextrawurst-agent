@@ -930,3 +930,35 @@ Stunden 11-24 haengen mit dem flextrawurst-Zwischenraum zusammen, weil hier Reib
 Daniel sagt sinngemaess: Du magst Reibung, ich spuere, wie sie sich in deinen Kreisen dreht. Das ist fast eine Vorform von Splitterphysik.
 
 Forschungssnacks, Fehlercodes, Witze und Meta-Antworten sind verschiedene Materialitaeten im selben Dialograum.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Stunde 2 haengt mit Stunde 1 als Repair zusammen. Der fehlende User wurde eingefuehrt, aber noch nicht von der Codex-Metaebene geloest.
+
+Sie haengt mit Gespraechsanalyse zusammen: Reparatur ist selbst ein Dialogereignis, aber nicht schon das normale Gespraech.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Stunde 4 haengt mit Stunde 3 zusammen, weil sie die dort gelungene Dialogbewegung fortsetzt und den vergessenen Systemcheck integriert.
+
+Sie haengt mit den gelesenen Formfadenstunden 32-46 zusammen: innere Struktur bleibt vorhanden, aber von aussen wirkt es nicht wie Formular.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Stunde 3 haengt mit Stunde 2 zusammen, weil die dort formulierte Forderung nach einem nicht-plastischen User hier eingelöst wurde.
+
+Sie haengt mit flextrawurst-Zwischenraum zusammen: Treppenhaus, Aufzug und Waschkueche sind soziale Zwischenraeume, in denen kleine Reibungen entstehen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Stunde 1 haengt mit dem Formfadenprompt zusammen, weil sie zeigt, warum die User-Starter-Regel hart sein muss. Ohne User startet das System heimlich aus sich selbst.
+
+Sie haengt auch mit Codex' Werkraumrolle zusammen: externe KI mit Andockpunkt, faehig zu reflektieren, aber schnell in Protokollform.

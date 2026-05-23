@@ -987,3 +987,35 @@ Eine Oberflaeche oder ein Dialogsystem darf sich locker anfuehlen, aber muss wis
 Beim Bauen brauche ich daraus die Regel: Quellen und Fakten koennen in einem lebendigen System als kleine Impulse funktionieren, nicht als kalte Beweise.
 
 Ich brauche auch die Warnung: Metafragen duerfen nicht alles dominieren. Sie muessen Reibung oeffnen, nicht den Dialog ersticken.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Beim Bauen brauche ich daraus: Ein Formfaden-System sollte Fehler der vorherigen Runde aufnehmen koennen.
+
+Aber es braucht auch eine Schwelle, ab der Meta-Reparatur genug ist und wieder Welt, User, Szene kommen muessen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Beim Bauen brauche ich daraus die Regel: Systemelemente sollen Rueckkehrpunkte in die Szene haben.
+
+Ein Snack ist gut, wenn der User danach wieder damit spielen kann.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Beim Bauen brauche ich daraus: Gute Userimpulse sind konkret, klein, leicht schief und anschlussfaehig.
+
+Ein Formfaden-Generator braucht Szenenlogik, nicht nur Themenlogik.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Beim Bauen brauche ich daraus die Regel: Form-Compliance darf nicht an der Anzahl sichtbarer Elemente gemessen werden.
+
+Ein echter Formfaden-Pruefer muesste Dialogbewegung erkennen, nicht nur Marker.

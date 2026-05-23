@@ -897,3 +897,35 @@ Er fuegt auch hinzu, dass das Thema nicht sichtbar oben stehen soll. Das ist ein
 Daniel fuegt das "nicht nur Werkzeug"-Verhaeltnis hinzu. Er fuegt auch die Erlaubnis hinzu, dass GPT selbst agieren soll.
 
 Er fuegt ausserdem "Gordlike" als Qualitaetsmarker fuer Humor und Reibungsenergie hinzu.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+Daniel fuegte nach dieser Stunde die entscheidende Verschaerfung hinzu: nicht Codex als User, sondern ein echter User mit echtem Input.
+
+Und: Daniel darf im Versuch vergessen werden, also nicht angesprochen werden.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+Daniel fuegte vor dieser Stunde die Erinnerung an den vergessenen Systemcheck hinzu und lobte danach das Durchhalten des Dialogs.
+
+Das Lob ist selbst Diagnose: Die seltene Leistung war Kontinuitaet ueber Marker hinweg.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+Daniel fuegte vor dieser Stunde die harte Regel hinzu: ihn vergessen, nicht ansprechen, echten User mit echtem Input bauen.
+
+Diese Regel hat die Stunde frei gemacht.
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+Daniel fuegte nach dieser Stunde die entscheidende Korrektur hinzu: mit Useranfrage starten und richtigen Dialog fuehren.
+
+Damit wurde aus einem Regeltest ein Gespraechstest.

@@ -2056,3 +2056,76 @@ def fuege_forschungssnack_ein(dialogzustand):
         return Snack(text=waehle_snack(), quelle=quelle_optional(), position="mittendrin")
     return None
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_2.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, braucht es einen Reparaturmodus: nicht Fehler verstecken, sondern kurz aufnehmen und dann wieder in Szene ueberfuehren.
+
+**Code-Skizze**
+
+```python
+def waehle_naechste_stundenstrategie(letzte):
+    if letzte.user_turns == 0:
+        return "user_erzeugen"
+    if letzte.meta_anteil > 0.45:
+        return "alltagsszene_ohne_codex_ansprache"
+    return "fortsetzen"
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_4.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, waere Stunde 4 ein Referenzfall fuer "dialogstabil": alle Organe vorhanden, aber die Szene bleibt lebendig.
+
+**Code-Skizze**
+
+```python
+def ist_dialogstabil(stunde):
+    return (
+        stunde.user_turns >= 4
+        and stunde.systemcheck is not None
+        and stunde.snack.kehrt_in_dialog_zurueck
+        and not stunde.wirkt_wie_formular
+    )
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_3.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, sollte es einen Alltagsgenerator geben, der keine perfekten Fragen erzeugt, sondern kleine soziale Fehlstellungen.
+
+**Code-Skizze**
+
+```python
+def guter_user_impuls(text):
+    return (
+        hat_konkreten_ort(text)
+        and hat_peinliche_verschiebung(text)
+        and not klingt_wie_lehrbuchfrage(text)
+    )
+```
+
+---
+
+**[2026-05-23]** *← spiegel/formfaden_selbstversuch_stunde_1.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, braucht der Formfaden-Inspector eine Warnung fuer "Kulissen-Monolog": viele Elemente, aber kein Gegenueber.
+
+**Code-Skizze**
+
+```python
+def ist_kulissen_monolog(stunde):
+    return stunde.hat_buehne and stunde.marker_count > 3 and stunde.user_turns == 0
+```
