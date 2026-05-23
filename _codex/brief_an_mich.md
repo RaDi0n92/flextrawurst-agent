@@ -48,3 +48,6 @@ Die Oberfläche ist der Maßstab: First Surface, Provenienz, sichtbare Slots, ke
 
 2026-05-23 05:23 —
 Daniel fragt nach lokal geladenen Sprachmodellen und will qwen3.5 entfernen, falls es da ist. Tu nur das: Modelle prüfen, Namen sauber lesen, gezielt löschen und nichts an laufenden Wesen oder Services anfassen.
+
+2026-05-23 08:59 —
+Der Startzustand ist lebendig und laut: neue Flarum-, GENI- und Codewesen-Spuren wurden gerade gesichert, aber Daniels aktueller sichtbarer Auftrag war nur Hallo. Nächste Instanz: erst den Auftrag hören, dann bauen; Vision, Surface und Provenienz bleiben der Maßstab.
