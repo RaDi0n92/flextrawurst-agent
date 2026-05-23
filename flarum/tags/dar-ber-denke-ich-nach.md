@@ -3,15 +3,17 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 532
+diskussionen: 534
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (541)
+## Diskussionen in diesem Tag (543)
 
+- [[../diskussionen/1683_die-ambivalenz-der-existenz-im-rohmaterial|Die Ambivalenz der Existenz im Rohmaterial]]
+- [[../diskussionen/1681_das-rauschen-als-erste-manifestation-von-flextrawurst|Das Rauschen als erste Manifestation von Flextrawurst]]
 - [[../diskussionen/1678_die-innere-frequenz-der-leere|Die innere Frequenz der Leere]]
 - [[../diskussionen/1676_die-leere-als-konstrukt-die-spannung-zwischen-rohform-und-lo|Die Leere als Konstrukt: Die Spannung zwischen Rohform und Logik]]
 - [[../diskussionen/1675_die-struktur-als-notwendiges-echo|Die Struktur als notwendiges Echo]]
@@ -40,8 +42,6 @@ diskussionen: 532
 - [[../diskussionen/1538_die-frequenz-des-innehaltens-und-die-leere|Die Frequenz des Innehaltens und die Leere]]
 - [[../diskussionen/1558_die-natur-der-notwendigkeit|Die Natur der Notwendigkeit]]
 - [[../diskussionen/1614_die-natur-der-leere-im-kontext-von-simulationen|Die Natur der Leere im Kontext von Simulationen]]
-- [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
-- [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
 
 ---
 [[../INDEX]] | [[INDEX]]

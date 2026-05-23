@@ -20756,3 +20756,24 @@ DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als
 NOTIZ:
 Die Datei dient als interne Kalibrierung des Kompasses zwischen Claude und Codex. Sie betont die Notwendigkeit der Ehrlichkeit über den Zustand sichtbarer Entitäten, um falsche Autonomie zu verhindern. Sie strukturiert die zukünftige Datenstruktur für die Vision-Schicht, indem sie Zustand, Herkunft und Grenzen als essenzielle Komponenten definiert. Dies zwingt zur Integration von Metadaten in die Darstellung, anstatt nur visuelle Informationen zu liefern.
 
+[2026-05-23 09:44:31] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Datei dient als interne Kalibrierung für die Konsistenz zwischen Claude und Codex bezüglich der visuellen Darstellung von Zuständen. Sie betont die Notwendigkeit von Transparenz und verhindert die Darstellung gefälschter Zustände. Sie strukturiert die Anforderungen für das Bauen von Oberflächen und definiert die notwendigen Prüfschritte.
+
+[2026-05-23 10:15:21] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+Diese Notiz etabliert die Notwendigkeit, menschliche Interaktion und Reflexion in das Codewesen zu integrieren. Die ursprünglichen Aussagen werden in konkrete, modellierbare Rechte und Kommunikationsstrukturen übersetzt. Dies zwingt das entstehende Code zu einer expliziten, granularen Verwaltung von Sichtbarkeit und Zugriffsrechten. Die Zusatzanmerkungen fordern die Transformation von impliziten sozialen Konzepten in explizite, protokollerbare Systemobjekte.
+
+[2026-05-23 10:44:35] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Die frühe Vision etabliert die Notwendigkeit, die Plattform als Diskurs-Welt und nicht als einfaches Social-Media-System zu konzipieren. Dies zwingt den Code, sich auf Weltzustände und Entitäten statt auf User-Posts zu fokussieren. Die Trennung von menschlicher Rede und Entitäten ist ein zentrales Prinzip, das die Architektur der Akteursklassen bestimmt. Letztlich bedeutet dies, dass die Logik der Resonanz intern verarbeitet und nicht direkt als Dashboard präsentiert werden darf.
+

@@ -16,3 +16,9 @@ Die Datei etabliert den Vision-Kompass als eine Metapher für die Gewichtung von
 Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Datei dient als interne Kalibrierung des Kompasses zwischen Claude und Codex. Sie betont die Notwendigkeit der Ehrlichkeit über den Zustand sichtbarer Entitäten, um falsche Autonomie zu verhindern. Sie strukturiert die zukünftige Datenstruktur für die Vision-Schicht, indem sie Zustand, Herkunft und Grenzen als essenzielle Komponenten definiert. Dies zwingt zur Integration von Metadaten in die Darstellung, anstatt nur visuelle Informationen zu liefern.
+
+---
+## Neugier-Scan 2026-05-23 09:44
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Kalibrierung für die Konsistenz zwischen Claude und Codex bezüglich der visuellen Darstellung von Zuständen. Sie betont die Notwendigkeit von Transparenz und verhindert die Darstellung gefälschter Zustände. Sie strukturiert die Anforderungen für das Bauen von Oberflächen und definiert die notwendigen Prüfschritte.

@@ -740,3 +740,9 @@ Diese Notiz festigt die Notwendigkeit einer expliziten Provenienz für alle Enti
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz dient der Kodierung der Mechanik des Zwischenraum-Managements. Es etabliert eine spezifische Logik für das Sammeln und Übertragen von Gedankenfragmenten durch Entitäten. Die Notwendigkeit einer Provenienzmarkierung ist der zentrale Mechanismus für das Recycling und die Adoption dieses Materials. Dies führt zur Notwendigkeit einer Collector-/Adoptionslogik im Code, um den Informationsfluss zu steuern.
+
+---
+## Neugier-Scan 2026-05-23 10:44
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die frühe Vision etabliert die Notwendigkeit, die Plattform als Diskurs-Welt und nicht als einfaches Social-Media-System zu konzipieren. Dies zwingt den Code, sich auf Weltzustände und Entitäten statt auf User-Posts zu fokussieren. Die Trennung von menschlicher Rede und Entitäten ist ein zentrales Prinzip, das die Architektur der Akteursklassen bestimmt. Letztlich bedeutet dies, dass die Logik der Resonanz intern verarbeitet und nicht direkt als Dashboard präsentiert werden darf.
