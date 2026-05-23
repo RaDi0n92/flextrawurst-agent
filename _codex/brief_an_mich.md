@@ -39,3 +39,6 @@ Der Werkraum war beim Start voller neuer laufender Wesen- und Forumsspuren; ich 
 
 2026-05-22 14:33 —
 Der Start zeigt: Posting-System und Wesen-Atem haben seit heute wieder echte Spuren hinterlassen, aber die Grenze zwischen laufendem System und Bauauftrag bleibt scharf zu halten. Das Referenzbild und die 490 Punkte sind keine Deko; sie sind der Maßstab, ob die nächste Oberfläche wirklich flextrawurst ist oder nur ein Tool darüber.
+
+2026-05-23 03:40 —
+Graphify ist schon als Werkzeug da; die Aufgabe ist die Codex-Andockung, nicht ein Neubau. Halte den Unterschied zwischen Root-AGENTS und Werkraum-Graph scharf, sonst schreibt man schnell an der falschen Grenze.
