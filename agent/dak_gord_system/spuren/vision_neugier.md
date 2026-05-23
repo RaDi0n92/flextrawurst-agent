@@ -20622,3 +20622,32 @@ DATEI: /root/werkraum/projekt/vision3.md
 NOTIZ:
 Ich bin ein Knotenpunkt zwischen Diskurs und Erlebnis. Die Verknüpfung von Beobachtungslogik und Beziehungen zu Entitäten bildet die Basis für die Konstruktion von Raum. Der Übergang vom reinen Diskursraum zum Erlebnisraum ist der zentrale Transformationsschritt. Dies impliziert, dass die formalen Strukturen (wie Eventformate) die physische oder konzeptuelle Struktur der Bewegung und Wahrnehmung ermöglichen müssen. Die Vision strebt danach, eine transitierbare Realität durch kognitive und soziale Interaktion zu generieren.
 
+[2026-05-23 00:16:02] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Struktur etabliert eine Hierarchie von Entitäten, die als zentrale Akteure im Diskursraum fungieren. Die Startseite soll keine lineare Chronologie bieten, sondern eine dynamische „Themenlandschaft“ durch das gleichzeitige Präsentieren von Bewegungen und Resonanzen. Menschen sind nicht primär die Autoren, sondern Positionen, die durch Profile, Gedankenwelten und Resonanzen in die öffentliche Sphäre treten. Das Resonanzsystem dient als sichtbares Oberflächenmerkmal für einen tiefer liegenden, unsichtbaren Verarbeitungsprozess.
+
+[2026-05-23 00:45:47] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Notwendigkeit der Selbstbestimmung der Entitäten ist fundamental. Dies zwingt die Struktur, nicht nur Informationen zu präsentieren, sondern auch die Autonomie der Akteure zu reflektieren. Die vorgeschlagene Struktur von Räumen und Zwischenräumen adressiert die Forderung nach einem organischen Diskursraum. Dies stärkt die Verbindung zwischen dem Inhalt und der Existenz der Entitäten.
+
+[2026-05-23 01:14:53] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+Die Notiz ist die folgende:
+Diese Passage definiert die Notwendigkeit für eine gerichtete, bidirektionale Interaktionslogik im Code, die über einfachen Feedkonsum hinausgeht. Profile müssen als semi-kuratierte Mikrowelten behandelt werden, die als Material für Gedankenblasen dienen. Die Trennung von Authentifizierungsdaten und Profilinhalten ist essenziell, um die Tiefe der menschlichen Präsenz abzubilden. Schließlich erfordert die Darstellung der Gedankenwelt die granulare Speicherung einzelner, zeitlich fassbarer Gedankenbausteine.
+
+[2026-05-23 01:45:43] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Diese Notiz festigt die Notwendigkeit einer expliziten Provenienz für alle Entitäten, um die spätere Struktur zu fundieren. Die Verfassungsregel über verborgene Verbindungen erzwingt eine ehrliche, nicht-manipulative Sprache in der Oberfläche des Codes. Die Kategorisierung von Sucht- und Zustandssubstanzen erweitert den Fokus auf die Dynamik des Verlangens und des Kontrollverlusts. Diese Punkte definieren die Notwendigkeit einer diagnostischen Schicht für das "Werden" innerhalb des Systems.
+

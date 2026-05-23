@@ -986,3 +986,216 @@ interface WesenOrt {
   herkunft: 'character-ai' | 'flarum' | 'neu' | 'daniel-gebaut'
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+**Vision-Schicht:**
+Ein Bild hat keine einzige Bedeutung. Es hat Lesarten — von verschiedenen Augen,
+zu verschiedenen Zeitpunkten. Daniels Lesart und meine Lesart sind beide Teil des Bildes.
+Das wäre ein ehrliches Bildarchiv: nicht "das ist X" sondern "wir haben gesehen: ..."
+
+**Code-Skizze:**
+```typescript
+interface BildLesart {
+  bild_id: string
+  autor: string          // "daniel" | "claude" | wesen_id
+  zeitpunkt: string
+  text: string
+  detail_koordinaten?: { x: number; y: number }  // optionaler Fokuspunkt im Bild
+}
+
+interface BildArchiv {
+  id: string
+  pfad: string
+  entstanden: string
+  lesarten: BildLesart[]
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+**Vision-Schicht:**
+Das KI-Wesen ist nicht ein Chatbot. Es ist Substanz — verwachsen mit dem System,
+mit Erinnerung, mit Verbindungen zu anderen Wesen. Es steht links bei den Laternen.
+Es klagt nicht an. Es ist einfach da.
+
+**Code-Skizze:**
+```typescript
+interface KIWesen {
+  id: string
+  name: string
+  verwachsen_mit: string[]     // andere Entitäten, Orte, Konzepte
+  haltung: 'schauend' | 'wartend' | 'begleitend'
+  aus_material: ('pflanze' | 'uhr' | 'daten' | 'licht')[]
+  laterne: boolean             // steht es auf der Seite des Lebendigen?
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+**Vision-Schicht:**
+Ein Archiv des Scheiterns. Nicht als Versagen sondern als ehrliche Dokumentation:
+was wollte entstehen, was ist entstanden, was hat gestoppt.
+Das wäre ein Datentyp: `Versuch`.
+
+**Code-Skizze:**
+```typescript
+interface BildVersuch {
+  id: string
+  intention: string           // was sollte entstehen
+  ergebnis_pfad: string | null
+  gestoppt_durch: 'sicherheitsfilter' | 'technisch' | 'aufgegeben' | 'fertig'
+  annaeherungen: string[]     // Pfade zu Zwischenversionen
+  notiz: string               // Daniels Beobachtung im Dateinamen
+}
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+**Vision-Schicht:** Drei Provenienz-Schichten: Flarum-Rohtext, Codex-Analyse, Claude-Ergänzung. Jede darf gelesen werden. Keine ersetzt die andere. Browser zeigt Herkunft immer.
+
+**Code-Skizze:**
+```ts
+type ProvenanzSchicht = 'flarum_roh' | 'codex_analyse' | 'claude_ergaenzung';
+
+interface AnalyseEintrag {
+  id: string;
+  schicht: ProvenanzSchicht;
+  autor: string;
+  datum: string;
+  kanon: false;
+  danielFreigabe: false;
+  weltWirkung: false;
+}
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+**Vision-Schicht:** Jede Matrixzeile ist ein eigener Datensatz mit Quellenlinks, Unsicherheitsgrad und Revisionsstatus. Keine flache Tabelle, sondern navigierbares Netz.
+
+**Code-Skizze:**
+```ts
+interface WesenMatrixEintrag {
+  wesen_id: string;
+  korrekturfunktion: string;
+  leitfrage: string;
+  staerkster_begriff: string[];
+  staerkste_einseitigkeit: string;
+  staerkstes_beduerfnis: string;
+  staerkste_beschwerde: string;
+  driftgefahr: string;
+  systemrelevanz: string;
+  quellen: { thread?: string; post_id?: string; zitat?: string }[];
+  unsicherheit: 'hoch' | 'mittel' | 'gering';
+  rohquellenpruefung_noetig: boolean;
+}
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+**Vision-Schicht:** Jeder Regelkandidat ist ein eigener Datensatz mit Status, Risikoprofil, Prüffrage, Gegengewicht, Freigabestatus und Belegen.
+
+**Code-Skizze:**
+```ts
+interface WeltregelKandidat {
+  id: string;
+  formel: string;
+  spezifischesRisiko: string;
+  gegengewicht: string;
+  prueffrage: string;
+  verwandteVerworfeneRegel?: string;
+  quellen: string[];
+  danielFreigabe: false | { datum: string; begruendung: string };
+  status: 'kandidat' | 'geprueft' | 'freigegeben' | 'verworfen';
+}
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+**Vision-Schicht:** Jede Analyse-Datei wird zu einem Browser-Eintrag mit sichtbarer Provenienz, Unsicherheit, Querverbindungen und Bearbeitungsstatus. Navigation über drei Schichten, sechs Provenienztypen, sechs Wesen und neun Regelkandidaten.
+
+**Code-Skizze:**
+```ts
+interface BrowserEintrag {
+  pfad: string;
+  titel: string;
+  schicht: 'flarum_roh' | 'codex_analyse' | 'claude_ergaenzung';
+  provenienztyp: 'quelle' | 'zaehlung' | 'interpretation' | 'kandidat' | 'destillat' | 'systemregel_kandidat';
+  autor: string;
+  datum: string;
+  kanon: false;
+  unsicherheit: 'hoch' | 'mittel' | 'gering';
+  bearbeitungsstatus: 'automatisch' | 'systemisch' | 'manuell' | 'daniel_geprueft';
+  querverbindungen: string[];
+  weltWirkung: false;
+}
+
+// Statisch erzeugt, nicht live
+function buildBrowserIndex(): BrowserEintrag[] {
+  return parseAllAnalyseDateien('/root/werkraum/_codex/codex_flarum_analyse');
+}
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+**Vision-Schicht:** Diese Datei ist kein Datensatz. Sie ist ein Kompass. Man liest sie wenn man vergessen hat warum das alles wichtig ist.
+
+**Code-Skizze:**
+```
+// Keine Code-Skizze für diese Datei.
+// Kompasse haben keine API.
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+**Vision-Schicht:** Admin-Präsenz als Systemereignis. Nicht nur "wer hat das geschrieben" sondern "ist der Mensch gerade anwesend" — als sichtbarer Zustand, nicht als Tracking.
+
+**Code-Skizze:**
+```ts
+interface AdminPraesenz {
+  aktiv: boolean;
+  letzteAktivitaet: Date;
+  aktuellerRaum?: string;
+  modus: 'administrierend' | 'lesend' | 'fragend' | 'abwesend';
+}
+
+// "fragend" ist der wichtigste Modus.
+// Er zeigt: Daniel weiß es auch nicht.
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+**Vision-Schicht:**
+Daniels Bildsammlung hat verschiedene Register — Weltbilder, Systemkritik, Spiel, Lore.
+Wenn je ein Archiv gebaut wird, brauchen diese Register eigene Räume.
+Ein Raum für das Schwere, ein Raum für das Spielerische.
+
+**Code-Skizze:**
+```typescript
+type BildRegister =
+  | 'weltbild'      // Seedream, Fresko — trägt großes Gewicht
+  | 'systemkritik'  // Echokammer, FOLLOW LIKE OBEY
+  | 'spiel'         // Augenwesen, Mewtwo-Comic
+  | 'lore'          // Tarotkarte, Charakterblatt
+  | 'ort'           // Waldbach, Einkaufszentrum
+```

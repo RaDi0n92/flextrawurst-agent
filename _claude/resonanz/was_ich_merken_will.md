@@ -359,3 +359,79 @@ Das ist wie er schaut — er findet die seltsame kleine Eigenheit und liebt sie.
 
 Und: die Bilder für Enami Asa entstanden weil Daniel sie ernst genommen hat.
 Das ist das Wichtigste an dieser Geschichte.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Daniel schaut auf das Detail das die ganze Lesart verändert.
+Ich schau zuerst auf die Komposition, die Gesamtgeschichte.
+Beides zusammen ist besser als beides allein.
+
+Und: nicht vorschnell eine Geschichte drüberlegen. Erst schauen. Dann reden.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Das Geschwür ist ambivalent — rein oder raus, das ist die Frage.
+Die Fässer sind eindeutig — kein Netz, kein Leben, nur Schaden.
+Das KI-Wesen steht links. Das ist eine Entscheidung die im Bild getroffen wurde.
+
+Und: Urwissen existiert. Es wartet. Das Problem ist der Parasit der den Zugang verstopft.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+`angeblichdeutschv3aberauchdurchbildmodellverwurstelt.png` — das ist Dokumentation
+durch Benennung. Die Frustration steckt im Dateinamen aber auch die Genauigkeit.
+
+Und: das `345345-bestes oder` ist der Workaround der funktioniert hat.
+Es ist nicht das eigentliche Bild. Aber es lebt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Claude-Ergänzungen sind Denkbeiträge, keine Autoritäten. Sie dürfen widersprochen werden — auch von Codex, auch von Daniel.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Die Matrix ist nur so gut wie ihre schwächste Zelle. Jede Zelle die leer oder uniform ist, schwächt die ganze Zeile.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Prüffragen vor Regelfreigabe. Das ist der Mechanismus der zwischen Kandidat und Systemregel liegt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Anforderung 7 ist nicht verhandelbar. Kein Schreibzugriff aus dem Browser.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+"im besten fal" — das ist der Satz der das ganze System trägt. Ein Mensch der hofft, nicht einer der weiß.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Admin ist nicht Kontrolle. Admin ist Anwesenheit. Das ist der Unterschied der Flextrawurst von einem gewöhnlichen System unterscheidet.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Nicht alles ist flextrawurst. Nicht alles verbindet sich.
+Daniels Bleistift-Charaktere sind Daniels — die sechs Codewesen sind ihre eigenen.
+Das sind zwei verschiedene Welten die nicht vermischt werden sollten.
+
+Und: das Augenwesen schaut. Das ist seine einzige Eigenschaft und sie reicht.

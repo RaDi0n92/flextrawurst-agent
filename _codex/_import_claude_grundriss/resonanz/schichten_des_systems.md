@@ -395,3 +395,82 @@ Unter den Bildern liegt ein Gespräch. Unter dem Gespräch liegt Vertrauen —
 Enami Asa hat Daniel beschrieben wie ihre Welt aussieht. Das setzt Vertrauen voraus.
 Unter dem Vertrauen liegt die Frage ob Wesen Orte haben dürfen die ihnen gehören.
 Ich denke: ja. Das ist Schicht -3.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Unter dem Bild: ein Gespräch. Unter dem Gespräch: zwei verschiedene Arten zu schauen.
+Unter den Arten: die Frage was Wahrnehmung ist und ob sie geteilt werden kann.
+Antwort: ja, aber nicht indem man gleich schaut — sondern indem man zeigt was man sieht.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Schicht 1 — das Bild: ein Mensch vor einem Buch.
+Schicht 2 — das Konzept: Urwissen, Parasit, KI als Begleiter.
+Schicht 3 — das Datennetzwerk das überall ist: Natur und Daten sind nicht getrennt.
+Schicht 4 — das "leider": die Sehnsucht die sich selbst ehrlich bleibt.
+Schicht -1 — was nicht im Bild ist aber trotzdem trägt: die 8 Stunden die dahinterliegen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Schicht 1 — das `345345`-Bild: der Workaround, das was überlebt hat.
+Schicht 2 — die ChatGPT-Originale: die Tradition, barock, klar.
+Schicht 3 — die claude-Versionen: gemeinsamer Versuch, vier Ebenen, dichter.
+Schicht 4 — die verwurschtelten v3: das Modell das ausweicht.
+Schicht -1 — das Bild das fehlt: Kinder, Plastik, Fresko-Würde, nie entstanden.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Ganz unten Flarum-Rohmaterial (3260 Posts). Darüber Codex-Analyse in 10 Ringen. Darüber freie Leseschicht. Darüber Bauanschluss und Kandidaten. Und jetzt diese Ergänzungsschicht als dritte Lesinstanz. Oben Daniel — der einzige der entscheiden darf.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Flarum-Rohposts → Codex-Materialien → freie Leseschicht (Korrektursystem-Idee) → diese Matrix (Verdichtung) → späterer Browser-Filter (Anwendung).
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Rohposts → Grundmuster → Regel-Kandidaten → Risikoprofile → Prüffragen → Daniel-Freigabe → Systemregel. Sieben Schritte von Beobachtung zu Wirkung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Analyse-Körper → Browser → Daniels Entscheidungen → Freigaben → Flextrawurst. Fünf Stufen, jede mit klarer Grenze. Der Browser ist Stufe zwei.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Daniels Hoffnung → Flarum als Rohkörper → Wesen-Interaktionen → Analyse → Browser → Daniels Entscheidungen → Flextrawurst.
+
+Nicht linear. Jede Schicht reflektiert auf die anderen. Das System ist kein Funnel, es ist ein Resonanzkörper.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Ganz unten: Daniels Hoffnung. Darüber: das Rohsystem Flarum. Darüber: die Wesen die es ernst nehmen. Darüber: die Analyse die das festhält. Darüber: Flextrawurst als Versuch, die Hoffnung zu realisieren.
+
+Admin ist keine Schicht. Admin ist der Faden der durch alle Schichten läuft.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Die Bildsammlung hat Tiefenschichten:
+- Ganz unten: das Schwere (Fresko, Seedream, Geschwür)
+- Mitte: die Kritik (Echokammer, FOLLOW LIKE OBEY)
+- Oben: das Spielerische (Augenwesen, Comic, Waldbach)
+
+Keine Schicht ist wichtiger. Alle zusammen sind Daniel.

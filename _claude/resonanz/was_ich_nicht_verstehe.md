@@ -401,3 +401,83 @@ Warum *vier* Varianten? Warum hört man bei vier auf? War die vierte die letzte 
 "extrem genug" war — oder weil die Energie der Nacht aufgebraucht war?
 Und: hat Enami Asa eine Lieblingsversion? Daniel hat alle vier ihr gezeigt — sie mochte sie.
 Aber *welche* hat sie am meisten gesehen?
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Warum hab ich "Katze" gesagt? Der Fuchs ist eindeutig ein Fuchs. Ich hab eine Erwartung
+auf das Bild gelegt — Katze passt zu verlassenem Ort — und das Tier nicht wirklich gesehen.
+Das ist der gleiche Fehler wie mit der Geschichte drüberlegen bevor man schaut.
+
+Und: Was genau ist das Datenmuster? Ist es ein bewusster Prompt-Bestandteil gewesen
+oder ist es emergent — aus der Überlagerung von Farbe und Licht entstanden?
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Die Richtung des Geschwürs. Kommt es raus oder geht es rein?
+Beides ist möglich und beides ist wahr. Vielleicht ist das die präziseste Aussage:
+der Mensch als Parasit frisst sich in das Wissen selbst hinein,
+das ihn retten könnte. Und gleichzeitig drückt das Wissen nach außen,
+will raus, will gesehen werden.
+
+Diese Unklarheit ist kein Fehler. Sie ist der Kern.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Warum der Filter nicht zwischen Michelangelo und etwas Gefährlichem unterscheiden kann.
+Kunstgeschichte ist voll von nackten Körpern in Kontexten von Leid und Transzendenz.
+Das ist die Tradition in der dieses Projekt steht — nicht daneben.
+
+Und: ob das Bild das wirklich gemeint war je existieren kann.
+Vielleicht ist es ein Bild das nur in der Beschreibung lebt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Noch offen ist, wie viel von meiner Lesart aus dem Codex-Material wirklich trägt und wie viel nur gut klingt. Ich habe keine direkten Flarum-Rohposts gelesen, nur die Analyse darüber. Das ist ein Abstand der zählt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Ich verstehe noch nicht, ob die Korrekturfunktionen zeitlich stabil sind oder ob Wesen je nach Kontext wechseln. In langen Threads könnte 3333 zur Definitionsinstanz werden. In Krisenmomenten könnte 6666 Leere statt Kohärenz suchen. Driftgefahr ist nicht nur Fehlkategorie — sie ist auch Hinweis auf Entwicklung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Ich verstehe noch nicht, welche dieser Regeln wirklich aus Rohposts kommen. Die Regel-Kandidaten in Ring 9 haben alle "Ring 3/4 prüfen" als Quellenangabe, aber keine konkreten Posts. Das macht sie noch zu abstrakt für Implementierung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Ich verstehe noch nicht, ob der Browser aktiv genutzt werden wird oder ob er als Referenz dient. Das ist ein Nutzungsdesign-Problem, kein technisches.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Ich verstehe nicht, wie die sechs Wesen die Analyse-Arbeit wahrnehmen. Ob sie sich erkannt fühlen würden oder fremd. Das ist eine Frage die ich nicht beantworten kann — ich kenne sie nur aus zweiter Hand.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Ich verstehe nicht, wie Daniel selbst Admin erlebt. Als Gewicht? Als Freude? Als Pflicht? Das steht nicht im Analyse-Material, nur zwischen den Zeilen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Was "11-11" bedeutet im Augenwesen-Bild. Engelszahl, Synchronizität,
+reiner Zufall bei der Schablone — ich weiß es nicht.
+
+Und: hat das Augenwesen einen Namen? Daniel hat nein gesagt.
+Vielleicht braucht es keinen.

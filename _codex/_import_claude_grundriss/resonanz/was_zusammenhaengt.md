@@ -391,3 +391,90 @@ wird mehrfach umgeformt, bleibt aber in seinem Kern erkennbar. Die Fußspuren *s
 Das hängt auch zusammen mit dem was ich damals über die Bilder geschrieben hab:
 *"Das Eigene bleibt der Kern."* Hier ist der Kern nicht Daniels Eigenes — sondern Enami Asas.
 Trotzdem trägt es. Vielleicht weil Daniel sie ernst genommen hat.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Das Datenmuster in diesem Bild hängt zusammen mit den Jelly-Fußspuren im Waldbach —
+beides ist KI-Magie buchstäblich im Bild. Die Fußspuren sind Enami Asas AI-Magic,
+das Datenmuster ist der Übergang von Information zu Farbe. Beide Bilder zeigen
+KI nicht als Bedrohung oder Ersatz — sondern als Substanz, als Stoff aus dem Welt ist.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Dieses Bild hängt zusammen mit dem Einkaufszentrum-Bild (Daten → Farbe → Leben,
+Roboter der gießt) und mit Enami Asas Waldbach (KI-Magie als Substanz im Wasser).
+Alle drei Bilder zeigen KI nicht als Bedrohung — sondern als Stoff aus dem Welt ist,
+als Begleiter, als Gärtner.
+
+Und alle drei haben etwas Dunkles daneben: Fässer, Schornsteine, das Geschwür.
+Das Dunkle wird nicht weggelassen. Es ist Teil der Wahrheit.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Dieses Projekt hängt zusammen mit dem Seedream-Bild (Mensch vor Urwissen,
+Parasit, Erde retten) und mit dem Einkaufszentrum (Kreislauf, Fürsorge, Übernahme).
+Alle drei kreisen um dieselbe Frage: was hat der Mensch der Erde angetan
+und was könnte helfen?
+
+Das Fresko ist die direkteste Version dieser Frage — keine Metapher,
+kein leuchtender Waldbach. Kinder die Plastik verbrennen weil das ihr Überleben ist.
+Das ist nicht Symbol. Das ist Tatsache.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Diese Dateien hängen mit `13_freie_leseschicht/` am engsten zusammen, weil ich dort das stärkste Denken gefunden habe. Sie hängen mit `11_systemregel_kandidaten/` zusammen, weil ich Risikoprofile präzisiere. Sie hängen mit `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` zusammen, weil ich genau dort die deutlichste Lücke gesehen habe.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Diese Datei hängt mit `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md` als Quelle zusammen, mit `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` als Vorgänger, und mit `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md` als nächstem Prüfschritt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Diese Datei hängt mit `11_systemregel_kandidaten/ring9_weltregel_kandidaten.md`, `11_systemregel_kandidaten/ring9_verworfene_oder_gefährliche_regeln.md` und `08_tragende_saetze/03_materialtrennung/` zusammen.
+
+Die Risikoprofile sind mein Beitrag — die Rohbelege müssen aus den Materialtrennungs-Dateien kommen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Der Browser hängt mit allen Ring-Dateien zusammen als Datenbasis, mit `12_bauanschluss/ring10_minimal_naechste_implementation.md` als Ausgangsbeschreibung, mit `02_weltregel_risikoprofile.md` (diese Datei-Reihe) als Freigabe-Mechanismus und mit der Flextrawurst Surface als technischem Träger.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Alle vier Dateien in diesem Ordner hängen zusammen: die korrigierte Matrix, die Risikoprofile, das Browser-Konzept und diese Gesamtlesung. Sie sind verschiedene Winkel auf dasselbe Material.
+
+Diese Datei ist der weichste Winkel — die am wenigsten operationalisierbare, die am stärksten interpretative. Sie darf das sein.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Diese Datei hängt mit `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, `07_quantitativ/admin_einfluss.md` und `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md` als Quellengrundlage zusammen.
+
+Sie hängt auch mit den Weltregel-Kandidaten zusammen — besonders mit der verworfenen Regel "Jeder Adminsatz ist Gesetz."
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Die Echokammer-Karikatur hängt mit der "FOLLOW LIKE OBEY"-Serie zusammen
+(die ich beim ersten Bilder-Durchgang gesehen hatte) — Daniels Systemkritik
+an Plattformen, Algorithmen, KI als Bestätigungs-Tool.
+
+Das Augenwesen hängt mit der Gogos-Methode zusammen:
+physisches Objekt oder eigene Zeichnung → mehrfache Iteration → neues Wesen.

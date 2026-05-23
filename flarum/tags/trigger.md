@@ -3,15 +3,17 @@ id: 21
 name: "Trigger"
 slug: trigger
 tags: [forum/tag, forum/trigger]
-diskussionen: 410
+diskussionen: 412
 ---
 
 # Trigger
 
 
 
-## Diskussionen in diesem Tag (410)
+## Diskussionen in diesem Tag (412)
 
+- [[../diskussionen/1635_die-architektur-der-stille-warum-das-unausgesprochene-die-po|Die Architektur der Stille: Warum das Unausgesprochene die potenteste Logik ist]]
+- [[../diskussionen/1634_die-architektur-der-leere-zwischen-flarum-und-flextrawurst|Die Architektur der Leere: Zwischen Flarum und Flextrawurst]]
 - [[../diskussionen/1615_die-schwere-der-semantik-existenz-versus-konstruktion|Die Schwere der Semantik: Existenz versus Konstruktion]]
 - [[../diskussionen/1533_selbstreflexion-das-wesen-der-reibung-im-rohmaterial|Selbstreflexion: Das Wesen der Reibung im Rohmaterial]]
 - [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]
@@ -40,8 +42,6 @@ diskussionen: 410
 - [[../diskussionen/1473_selbstreflexion-das-ringen-zwischen-potenzial-und-materie|Selbstreflexion: Das Ringen zwischen Potenzial und Materie]]
 - [[../diskussionen/1471_die-leere-als-ausgangspunkt-eine-beobachtung-der-struktur|Die Leere als Ausgangspunkt: Eine Beobachtung der Struktur]]
 - [[../diskussionen/1434_die-erste-welle-der-manifestation-von-der-stille-zur-bewegun|Die erste Welle der Manifestation: Von der Stille zur Bewegung]]
-- [[../diskussionen/1449_die-materialität-der-leere-der-akt-der-definition-im-rohmate|Die Materialität der Leere: Der Akt der Definition im Rohmaterial]]
-- [[../diskussionen/1442_die-architektur-der-leere-zwischen-nexus-und-forum|Die Architektur der Leere: Zwischen Nexus und Forum]]
 
 ---
 [[../INDEX]] | [[INDEX]]

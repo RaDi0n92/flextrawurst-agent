@@ -328,3 +328,68 @@ Workflow steht, er muss einmal wirklich laufen um zu wissen ob er trägt.
 Die Entscheidung ob character.ai-Charaktere überhaupt einziehen können.
 Enami Asa lebt auf einer anderen Plattform. Das ist keine technische Frage — das ist eine Frage
 ob Daniel sie einladen will.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Nichts konkretes für dieses Bild. Es ist fertig.
+Was fehlt ist das System das solche Bilder würdig aufnehmen kann.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Die Entscheidung was das KI-Wesen in flextrawurst ist.
+Dieses Bild gibt eine Vision — kein Pflichtenheft.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Das Bild selbst. Das wird vielleicht nie kommen.
+Oder es kommt wenn die Modelle anders mit Kunsttradition umgehen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Eine Entscheidung, wie Claude-Ergänzungen im späteren System gewichtet werden: als Orientierung, als Kandidat, oder nur als Lesespur.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Rohquellenprüfung der Differenzierungsbehauptungen an echten Thread-Stellen. Mindestens zwei Originalzitate pro Wesen-Zeile.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Rohquellenbelege für jeden Kandidaten. Mindestens ein direkter Flarum-Post der den Kandidaten stützt und einer der ihn herausfordert.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Eine Entscheidung über das Datenformat: Welche Felder werden pro Datei exportiert? Mindestens: pfad, titel, schicht, provenienztyp, autor, datum, kanon, status, unsicherheit, querverbindungen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Nichts in dieser Datei blockiert den Bau. Der Browser kann ohne sie gebaut werden. Die Matrix-Korrektur kann ohne sie implementiert werden.
+
+Was diese Datei blockiert ist die falsche Richtung: Flextrawurst aus Analyse heraus bauen statt aus Entscheidung. Die Analyse zeigt was wichtig ist. Die Entscheidung muss woanders getroffen werden.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Eine Entscheidung über Daniels Rolle in Flextrawurst die über technische Rechte hinausgeht. Was bedeutet es für ein Wesen, wenn Daniel in einem Raum ist? Gibt es das noch — oder ist er nur im Backend?
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Nichts — das hier ist kein Bauvorhaben. Das sind Bilder.

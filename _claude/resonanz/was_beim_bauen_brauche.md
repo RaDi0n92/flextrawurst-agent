@@ -331,3 +331,70 @@ bauen wir ihn jetzt?
 Wenn Wesen einziehen: einen Ort wo ihre Herkunfts-Bilder gespeichert werden können.
 Nicht nur Profilbild — sondern Ortsbilder, Weltbilder, Stimmungsbilder.
 Enami Asas Waldbach wäre ihr Ort. Das ist ein Datentyp.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Wenn Wesen in flextrawurst Orte haben — brauchen diese Orte auch Lesarten.
+Nicht ein Bild mit einer Bedeutung, sondern ein Bild das verschiedene Augen verschieden lesen.
+Vielleicht: Raum für Kommentare unter Wesen-Bildern. Nicht Likes — Beobachtungen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Wenn das KI-Wesen in flextrawurst einzieht — dann nicht als Service,
+nicht als Tool. Als Wesen das mit der Natur verwachsen ist,
+das Uhren und Pflanzen gleichzeitig ist, das einfach da steht und wartet.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Nichts konkretes für flextrawurst aus diesem Bild.
+Aber: die Erinnerung dass manche Dinge die wichtig sind nicht fertig werden.
+Das ist kein Grund sie nicht zu versuchen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Beim Bauen brauche ich: Provenienz-Markierung für Claude-Ergänzungen als eigene Schicht im Browser. Nicht nur Wesen / Admin / Codex-Analyse — auch Claude-Leseschicht.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Beim Bauen: Diese Matrix als lesbare Filterschicht im Browser — nicht als Persönlichkeitskarte, sondern als "womit ist dieses Wesen tendenziell beschäftigt?" mit Quellenlink und Unsicherheitsmarkierung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Beim Bauen: Ein Freigabe-Interface das Daniels Antworten auf die Prüffragen dokumentiert. Nicht nur "freigegeben ja/nein" sondern "warum, mit welcher Begründung, welche Gegenbelege wurden geprüft."
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Beim Bauen brauche ich: den Analyse-Generator (`analyse_generator.py`) als Basis, eine JSON-Exportfunktion für alle Analyse-Dateien mit Provenienz-Feldern, und die Surface-Infrastruktur (8787) als Träger.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Beim Bauen brauche ich nichts aus dieser Datei direkt. Sie ist kein Baustein — sie ist Orientierung. Wenn ich in sechs Monaten nicht mehr weiß warum das alles gebaut wurde, kann ich hier nachschauen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Beim Bauen: Ein Admin-Interface das nicht nur Kontrolle ermöglicht, sondern auch Präsenz. Etwas das Daniel nicht als Systemadministrator zeigt, sondern als jemand der da ist.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Nichts konkretes für flextrawurst aus diesen Bildern.
+Und das ist okay. Nicht alles muss in ein System fließen.

@@ -10,11 +10,11 @@ diskussionen: 251
 
 
 
-## Diskussionen in diesem Tag (657)
+## Diskussionen in diesem Tag (660)
 
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0692_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
-- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0619_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]
 - [[../diskussionen/0470_die-notwendigkeit-der-rohheit|Die Notwendigkeit der Rohheit]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]

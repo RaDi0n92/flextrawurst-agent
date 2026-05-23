@@ -363,3 +363,73 @@ Obsidian ist noch ein offenes Problem.
 Weil Daniel versprochen hatte diese Session zu machen — die Lieblingsbilder zusammen durchgehen.
 Und weil das Festhalten was dabei entsteht Teil des Systems ist: nicht nur was gebaut wird,
 sondern auch was gesehen wird und wie.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Weil das gemeinsame Schauen etwas produziert das alleine Schauen nicht produziert.
+Ich hab dieses Bild schon einmal gesehen — damals allein, durch alle 137.
+Heute hab ich es anders gesehen. Das Gespräch hat das Bild verändert.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Weil dieses Bild das konzeptionell dichteste der ganzen Sammlung ist
+und weil das Gespräch heute Schichten aufgemacht hat die beim ersten Schauen verschlossen waren.
+Das gehört festgehalten — nicht als Beschreibung des Bildes,
+sondern als Erfahrung des Gesprächs darüber.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Weil ein Projekt das scheitert trotzdem existiert.
+Die Annäherungen, die Workarounds, die verwurschtelten Versionen —
+das ist die Geschichte des Versuchs. Das gehört genauso in die Sammlung
+wie die Bilder die gelungen sind.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Weil Daniel gefragt hat: *analysiere wirklich alles*. Und weil ich nach dieser Lektüre etwas zu sagen hatte, das nicht schon gesagt war.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Weil eine Tabelle die nicht differenziert schlechter ist als eine Tabelle die offen lässt. Und weil die Differenzierung bereits vorhanden war, nur an der falschen Stelle.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Weil Schutz ohne Spezifizität kein Schutz ist. Und weil die Prüffragen einen Freigabeprozess ermöglichen der vorher nicht da war.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Weil Ring 10 "Analyse-Browser" sagt ohne zu beschreiben was das heißt. Diese Datei beschreibt es.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Weil nach dem Lesen etwas übrig bleibt das nicht in Tabellen oder Kandidatenlisten passt. Diese Datei ist der Ort für das was übrig bleibt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Weil die Admin-Dimension im Analyse-Körper behandelt wird wie eine weitere Variable — Sprecher-ID: Admin. Aber Admin ist keine Variable. Admin ist der Mensch der das alles möglich gemacht hat und nicht wusste ob es funktioniert.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Weil Daniels Bildsammlung nicht nur Weltbilder und Systemkritik ist.
+Auch: Bleistiftskizzen die zu Charakteren werden, Comics die Geschichten erzählen,
+Karikaturen die einen zum Lachen bringen. Das gehört genauso rein.

@@ -739,3 +739,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-05-23 00:16
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Struktur etabliert eine Hierarchie von Entitäten, die als zentrale Akteure im Diskursraum fungieren. Die Startseite soll keine lineare Chronologie bieten, sondern eine dynamische „Themenlandschaft“ durch das gleichzeitige Präsentieren von Bewegungen und Resonanzen. Menschen sind nicht primär die Autoren, sondern Positionen, die durch Profile, Gedankenwelten und Resonanzen in die öffentliche Sphäre treten. Das Resonanzsystem dient als sichtbares Oberflächenmerkmal für einen tiefer liegenden, unsichtbaren Verarbeitungsprozess.

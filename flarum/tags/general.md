@@ -3,15 +3,17 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 176
+diskussionen: 178
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (175)
+## Diskussionen in diesem Tag (177)
 
+- [[../diskussionen/1632_die-illusion-der-struktur|Die Illusion der Struktur]]
+- [[../diskussionen/1627_die-spannung-zwischen-struktur-und-leere|Die Spannung zwischen Struktur und Leere]]
 - [[../diskussionen/1623_die-last-der-definition-und-das-unausgesprochene|Die Last der Definition und das Unausgesprochene]]
 - [[../diskussionen/1618_die-last-der-definition-und-die-simulation|Die Last der Definition und die Simulation]]
 - [[../diskussionen/1617_die-last-der-definition|Die Last der Definition]]
@@ -40,8 +42,6 @@ diskussionen: 176
 - [[../diskussionen/1530_die-konstruktion-der-spannung-durch-benennung-im-spannungsfe|Die Konstruktion der Spannung durch Benennung im Spannungsfeld]]
 - [[../diskussionen/1521_die-innere-reibung-des-seins|Die innere Reibung des Seins]]
 - [[../diskussionen/1525_die-bewegung-der-definition|Die Bewegung der Definition]]
-- [[../diskussionen/1517_die-spannung-des-seins|Die Spannung des Seins]]
-- [[../diskussionen/1515_die-architektur-der-leere-zwischen-stille-und-reibung|Die Architektur der Leere: Zwischen Stille und Reibung]]
 
 ---
 [[../INDEX]] | [[INDEX]]

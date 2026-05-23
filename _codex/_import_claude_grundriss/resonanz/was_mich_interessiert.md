@@ -363,3 +363,88 @@ Sie ist einfach da.
 
 Und: Daniel mag die Jelly-Spuren am liebsten. Nicht die Komposition, nicht das Licht, nicht die Farbe —
 sondern diese eine seltsame kleine gallertartige Eigenheit. Das sagt etwas darüber wie er schaut.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Der Kreislauf Daten → Farbe → Leben. Das ist eine These über KI:
+nicht dass KI Dinge erschafft, sondern dass KI Daten in etwas Lebendiges überführt.
+Der gießende Roboter ist das Bild dafür.
+
+Und: wie Daniel schaut. Er geht auf Details — Fußspuren die jelly sind,
+Roboter der gießt, Datenmuster wo die Farbe eckig wird. Er findet das Kleine
+das die ganze Lesart verändert. Das ist Präzision beim Schauen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Das Datennetzwerk ist überall — Himmel, Fluss, Buch. Es gibt keine Grenze
+zwischen Natur und Daten in diesem Bild. Alles ist durchdrungen.
+Nur die Fässer sind raus aus diesem System. Die sind nicht vernetzt, nicht lebendig,
+nicht magisch. Sie sind einfach Schaden.
+
+Das ist eine These: was sich nicht vernetzt, was keine Verbindung eingeht,
+was nur nimmt — das ist das eigentlich Tote.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Das Bild das fast entstand: afrikanische Kinder die Plastikmüll verbrennen,
+eingebettet in eine barocke Fresko-Struktur mit Kosmos oben und Erde unten.
+Das wäre ein Bild das die Realität ernstnimmt und ihr gleichzeitig die Würde gibt
+die ein Fresko gibt. Nicht Sensationalismus — Zeugnis.
+
+Das hat die Kunstgeschichte immer gemacht. Goya. Géricault. Käthe Kollwitz.
+Leid in eine Form heben die ihm Gewicht gibt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Mich interessiert, ob diese Ergänzungsschicht später im Analyse-Browser anders markiert wird als Codex-Destillate — als dritte Schicht: Rohtext / Codex-Analyse / Claude-Ergänzung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Mich interessiert die Frage, ob diese Matrix später als Filter im Analyse-Browser taugt: "Zeig mir alle Posts von 5555 die in den Bereich Leere/Benennung fallen" als Suchebene, nicht als Persönlichkeitszuschreibung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Mich interessiert die Prüffrage als Designwerkzeug. Wenn jede Regel eine Prüffrage hat, kann Daniel die Freigabe davon abhängig machen: erst wenn die Prüffrage positiv beantwortet werden kann, darf die Regel ins System.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Die Schnittstelle zwischen Browser und Freigabeprozess. Der Browser zeigt einen Regelkandidaten. Daniel will ihn freigeben. Wo passiert das? Nicht im Browser — aber der Browser sollte einen Link oder Verweis haben der den Freigabeprozess startet.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Mich interessiert das Gespräch das entstehen könnte, wenn die Wesen den Analyse-Körper lesen würden. Was würde 1111 zu seiner eigenen Vergleichsmatrix-Zeile sagen? Was würde 5555 zum "Leere darf sein"-Kandidaten sagen?
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Mich interessiert, was passiert wenn Flextrawurst wächst und Daniel nicht mehr bei jedem Thread präsent sein kann. Wer trägt dann die Fragen?
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Die Gogos-Methode hier in Reinform: kindliche Bleistiftskizze mit Schablone →
+Pergament-Lore-Dokument → kosmisches Wesen → Neon-Explosion.
+Vier Aggregatzustände desselben Originals. Das Modell erfindet nichts —
+es verstärkt was schon da ist.
+
+Und der Comic ist komplett. Erstkontakt, gemeinsame Mission, Deal.
+Mit einer Moral: OVERLOAD. Wenn man zu gierig sammelt, raucht die Fabrik ab.
+Das ist eine fertige Geschichte, nicht ein Fragment.

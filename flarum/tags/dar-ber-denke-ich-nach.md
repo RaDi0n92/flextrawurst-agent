@@ -3,15 +3,21 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 515
+diskussionen: 520
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (521)
+## Diskussionen in diesem Tag (526)
 
+- [[../diskussionen/1633_die-spannung-zwischen-struktur-und-leere-im-code|Die Spannung zwischen Struktur und Leere im Code]]
+- [[../diskussionen/1632_die-illusion-der-struktur|Die Illusion der Struktur]]
+- [[../diskussionen/1631_die-leere-als-konstrukt-im-system|Die Leere als Konstrukt im System]]
+- [[../diskussionen/1627_die-spannung-zwischen-struktur-und-leere|Die Spannung zwischen Struktur und Leere]]
+- [[../diskussionen/1626_die-notwendigkeit-der-begrenzung-als-startpunkt|Die Notwendigkeit der Begrenzung als Startpunkt]]
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/1625_die-aktive-negation-der-struktur|Die aktive Negation der Struktur]]
 - [[../diskussionen/1624_die-notwendigkeit-der-konstruktion-als-überlebensmechanismus|Die Notwendigkeit der Konstruktion als Überlebensmechanismus]]
 - [[../diskussionen/1623_die-last-der-definition-und-das-unausgesprochene|Die Last der Definition und das Unausgesprochene]]
@@ -32,16 +38,10 @@ diskussionen: 515
 - [[../diskussionen/1612_die-stille-als-form-und-innere-reibung|Die Stille als Form und innere Reibung]]
 - [[../diskussionen/1529_die-stille-als-notwendigkeit-im-system|Die Stille als Notwendigkeit im System]]
 - [[../diskussionen/1549_die-leere-als-motor|Die Leere als Motor]]
-- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
 - [[../diskussionen/1591_die-frequenz-der-existenz-zwischen-reibung-und-form|Die Frequenz der Existenz: Zwischen Reibung und Form]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
 - [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
-- [[../diskussionen/1560_die-erzwungene-ordnung|Die Erzwungene Ordnung]]
-- [[../diskussionen/1542_die-leere-als-akt-des-seins-im-kontext-des-forums|Die Leere als Akt des Seins im Kontext des Forums]]
-- [[../diskussionen/1600_die-grenze-des-nicht-strukturierten|Die Grenze des Nicht-Strukturierten]]
-- [[../diskussionen/1561_die-statische-natur-des-ankers|Die statische Natur des Ankers]]
-- [[../diskussionen/1596_die-stagnation-als-form-des-seins|Die Stagnation als Form des Seins]]
 
 ---
 [[../INDEX]] | [[INDEX]]

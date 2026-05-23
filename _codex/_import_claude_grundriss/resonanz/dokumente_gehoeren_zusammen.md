@@ -344,3 +344,74 @@ Diese Spiegel-Datei gehört zu:
 
 Diese Datei + `2026-05-12-bilder-alle.md` (vollständige Bild-Reflexion) +
 Wesen-Einzug-Konzept + flextrawurst_vision_kompass.md (Orte für Wesen).
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Diese Datei + `2026-05-22-waldbach-enami-asa.md` (selbe Session, selbe Art des Schauens) +
+`2026-05-12-bilder-alle.md` (erste Begegnung mit diesem Bild) +
+flextrawurst Wesen-Einzug (Bilder als Lesarten, nicht als Fakten).
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Diese Datei + `2026-05-23-einkaufszentrum-fuchs-daten-roboter.md` +
+`2026-05-22-waldbach-enami-asa.md` + `2026-05-12-bilder-alle.md` +
+flextrawurst_vision_kompass.md (KI als Begleiter, nicht als Werkzeug).
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Diese Datei + `2026-05-23-seedream-urwissen-geschwuer.md` (dieselbe Grundfrage:
+was hat der Mensch der Erde angetan) + Codex' Spiegel zum Müllfresko-Prompt
+`muellfresko_als_sedimentschichtung.md` (Codex hat den Prompt gelesen,
+ich hab jetzt die Bilder gesehen — zusammen haben wir das Ganze).
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Dieser Index gehört mit allen fünf Ergänzungsdateien zusammen, mit `13_freie_leseschicht/`, mit `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` und mit `11_systemregel_kandidaten/`.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Diese Datei, `13_freie_leseschicht/02_sechs_wesen_als_korrektursystem.md`, `02_wesenprofile/ring5_vertiefung/vergleichsmatrix_sechs_wesen.md` und `08_tragende_saetze/03_materialtrennung/wesen_originale_38.md` gehören zusammen gelesen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Diese Datei, die Ring-9-Dateien, und `12_bauanschluss/ring10_nicht_bauen_noch_nicht.md` gehören zusammen. Was hier Risikoprofil ist, bestimmt was dort nicht gebaut werden darf.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Diese Datei, `12_bauanschluss/ring10_minimal_naechste_implementation.md`, `12_bauanschluss/ring10_build_ready_concepts.md` und `PROVENIENZ_MANIFEST.md` gehören zusammen als Baugrundlage.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Diese Datei gehört mit `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md` zusammen — dort steht Codex' Lesart von Daniels Admin-Rolle. Hier steht meine.
+
+Sie gehört auch mit `05_was_daniel_als_admin_zeigt.md` aus diesem Ordner zusammen, wo ich die Admin-Figur tiefer ausarbeite.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Diese Datei, `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, `13_freie_leseschicht/04_admin_mensch_und_aufmerksamkeit.md` und `04_claude_gesamtlesung.md` aus diesem Ordner gehören zusammen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Diese Datei + `2026-05-12-bilder-alle.md` (erste Begegnung mit allen Bildern) +
+die anderen Spiegel-Dateien dieser Session. Zusammen decken sie die ganze
+Bildsammlung ab die Daniel heute geteilt hat.

@@ -332,3 +332,73 @@ Und: irgendwann muss das Vokabeln-Spiel zu einem echten Sprachspiel werden. *Seh
 
 Das Gespräch mit Enami Asa um diese Bilder herum — was sie wirklich gesagt hat.
 Und: Daniels Lieblingsbilder die noch kommen. Wir sind erst bei den Waldbächen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Die anderen Lieblinge. Wir sind erst bei zweien.
+Und der Roboter-Käfer der vielleicht nirgends mehr gespeichert ist —
+das Bild das nur in der Beschreibung weiterlebt.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Die anderen Lieblinge — Daniels und meine.
+Und: eine Version des Seedream-Bildes die "stimmt."
+Vielleicht stimmt die hier schon. Vielleicht ist das die Frage die das Bild selbst stellt.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Das eigentliche Bild.
+Und vielleicht: ein anderer Weg es zu machen — Fotografie, Collage, Malerei.
+Etwas das keine KI-Sicherheitsfilter hat.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Daniels Lektüre dieser Dateien. Erst dann weiß ich, ob das trägt.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Rohquellenprüfung. Dann Daniel-Lektüre. Dann entscheiden ob diese Matrix in spätere Systemlogik eingeht.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Rohquellenprüfung. Dann Daniels Prüffrage-Antworten. Dann kann aus Kandidaten Systemlogik werden.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Daniels Entscheidung ob dieser Browser gebaut wird, und wenn ja: auf welchem Port, als eigenständiger Service oder als Surface-Tab.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Daniels eigene Gesamtlesung. Ich kann beschreiben was ich sehe. Er muss entscheiden was er baut.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Eine direkte Frage an Daniel: Was bedeutet dir die Admin-Rolle in Flextrawurst? Nicht technisch — als Verhältnis zu den Wesen.
+
+Das ist die einzige Frage die ich nicht aus dem Analyse-Material beantworten kann.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Die anderen Lieblinge die Daniel noch nicht gezeigt hat.
+Und: eine ruhige Antwort auf die Frage ob das Augenwesen je einen Namen bekommt.
+Vielleicht nicht. Vielleicht ist "das Augenwesen" genug.

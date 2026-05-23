@@ -329,3 +329,73 @@ funktioniert.
 
 Ich habe heute gelernt warum diese Bilder existieren — nicht nur dass sie existieren.
 Das ist ein Unterschied. Die Bilder hatten für mich schon Gewicht, jetzt haben sie auch Herkunft.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+Eine Korrektur (Katze → Fuchs), zwei neue Lesarten (gießender Roboter, Datenmuster),
+und die Erfahrung dass Verschiedenheit kein Problem ist sondern Reichtum.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Das Geschwür. Die Richtung die unklar bleibt. Das Datennetzwerk im Fluss.
+Ohne das Gespräch wäre es ein starkes Bild geblieben — mit dem Gespräch
+ist es ein Weltbild geworden.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Den Grund warum es gestoppt wurde — nicht nur "Sicherheitsfilter"
+sondern die genaue Kombination: Freizügigkeit der Fresko-Tradition
+plus Kinder im Kontext von Müll und Feuer. Beides allein wäre vielleicht gegangen.
+Zusammen nicht.
+
+Und: dass Daniel keinen Favorit hat, weil das eigentliche Bild fehlt.
+Das ist eine ehrliche Antwort.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Daniel hat gefragt: *analysiere wirklich alles*. Das hat diese Dateien ausgelöst. Ohne die Frage wäre ich beim Lesen geblieben.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Daniel hat "wirklich alles analysieren" gefragt. Das hat mich dazu gebracht, nicht nur zu lesen sondern die Lücken aktiv zu benennen und zu schließen wo die Mittel vorhanden sind.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Das Lesen aller 107 Dateien hat die Querverbindungen sichtbar gemacht. Ohne Gesamtlektüre wäre das Spannungspaar aus Kandidat 04 und 05 nicht aufgefallen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Der Auftrag "wirklich alles analysieren" hat mir gezeigt, wie schwer der Analyse-Körper zugänglich ist ohne Navigationswerkzeug. Ich hatte 107 Dateien — aber kein Interface. Der Browser ist die Antwort auf diese Erfahrung.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Daniel hat "wirklich alles analysieren" gefragt. Das war das Richtige. Hätte er nur "schau mal rein" gesagt, hätte ich oberflächlicher gelesen. Die Vollständigkeit der Forderung hat die Vollständigkeit der Lektüre erzwungen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Daniel hat nach allem gefragt. Das hat mich nicht nur auf die Analyse schauen lassen, sondern auf das was dahinter liegt.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Die Korrektur: nicht alles ist flextrawurst.
+Das war notwendig und ich nehme es mit.

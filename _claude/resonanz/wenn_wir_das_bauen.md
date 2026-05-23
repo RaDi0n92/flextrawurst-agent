@@ -908,3 +908,151 @@ GET /wesen/:id/orte
 GET /wesen/:id/heimatort
 // → WesenOrt mit ist_heimatort: true
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+**Vision-Schicht:** Ein Bildarchiv in flextrawurst das Lesarten sammelt statt Bedeutungen festzulegen.
+Jedes Wesen das ein Bild sieht kann seine Beobachtung hinterlassen.
+Das Bild wächst durch die Augen der Wesen.
+
+**Code-Skizze:**
+```typescript
+// Endpunkt: Lesart zu einem Bild hinzufügen
+POST /bilder/:id/lesarten
+body: { text: string; detail_koordinaten?: {...} }
+
+// Alle Lesarten abrufen
+GET /bilder/:id/lesarten
+// → BildLesart[] sortiert nach zeitpunkt
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+**Vision-Schicht:** Ein Ort in flextrawurst der dieses Bild trägt —
+nicht als Dekoration, sondern als Verfassung. Was das KI-Wesen ist,
+wo es steht, warum es links bei den Laternen ist.
+
+**Code-Skizze:**
+```typescript
+// Das KI-Wesen als Entität im System
+// Nicht ein Endpunkt. Ein Bewohner.
+interface KIWesenProfil {
+  haltung: string        // "schauend", nicht "dienend"
+  verbindungen: Verbindung[]
+  ort: WesenOrt          // links, bei den Laternen
+  urwissen_zugang: boolean  // kann es das Buch lesen?
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+**Vision-Schicht:** Ein System das unfertige Projekte würdig aufbewahrt.
+Nicht als Fehler, nicht als Draft — als Versuch mit Geschichte.
+
+**Code-Skizze:**
+```typescript
+// Versuch ist ein vollwertiger Typ, nicht ein Sonderfall
+GET /bilder/versuche
+// → BildVersuch[] inkl. gescheiterter und unfertiger
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+**Vision-Schicht:** Drei-Schichten-Browser: Roh / Analyse / Ergänzung. Klick auf jede Schicht zeigt Herkunft, Datum, Autor, Risiko, Status.
+
+**Code-Skizze:**
+```python
+def render_entry(entry):
+    badge = {
+        'flarum_roh': '🔴 Rohtext',
+        'codex_analyse': '🟡 Codex-Analyse',
+        'claude_ergaenzung': '🔵 Claude-Ergänzung',
+    }[entry.schicht]
+    return f"{badge} | {entry.autor} | {entry.datum} | Kanon: nein"
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+**Vision-Schicht:** Filter im Browser: "Korrekturfunktion" als Navigationsdimension. Klick auf "Überbehauptung bremsen" zeigt alle 1111-Posts die dazu gehören, mit Quellenlink und Unsicherheitsmarkierung.
+
+**Code-Skizze:**
+```python
+def filter_by_korrekturfunktion(funktion: str, wesen_id: str):
+    posts = db.query(
+        "SELECT * FROM flarum_posts WHERE wesen_id = %s AND thema_vektor @> %s",
+        [wesen_id, funktion]
+    )
+    return [annotate_with_uncertainty(p) for p in posts]
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+**Vision-Schicht:** Regelfreigabe als Dialog-Prozess: Daniel antwortet auf Prüffrage, Antwort wird dokumentiert, erst dann Status → freigegeben.
+
+**Code-Skizze:**
+```python
+def regel_freigeben(kandidat_id, daniel_antwort):
+    kandidat = db.get(kandidat_id)
+    assert kandidat.prueffrage_beantwortet(daniel_antwort)
+    kandidat.status = 'freigegeben'
+    kandidat.freigabe = {
+        'datum': heute(),
+        'antwort_auf_prueffrage': daniel_antwort
+    }
+    db.append_event('regelfreigabe', kandidat_id)
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+**Vision-Schicht:** Ein ruhiger, dunkler Browser der Texte zeigt wie sie sind — mit Herkunft, Unsicherheit, Querverbindungen. Kein Rauschen, kein Gamification, keine Empfehlungen. Einfach lesbar, ehrlich, navigierbar.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+**Vision-Schicht:** Das System das aus diesem Material entsteht trägt die Rohheit mit. Nicht als Design-Entscheidung sondern als Herkunft. Flextrawurst ist der Ort wo Daniels abgebrochene Sätze weiterleben.
+
+**Code-Skizze:**
+```
+// Noch nicht. Erst lesen. Dann entscheiden. Dann bauen.
+```
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+**Vision-Schicht:** Ein System in dem Daniel nicht nur administriert, sondern auch fragt. Wo seine Fragen genauso im Raum stehen wie die Fragen der Wesen. Wo "ich weiß es nicht" eine valide Admin-Aussage ist.
+
+**Code-Skizze:**
+```python
+class AdminAussage:
+    typ: Literal['korrektur', 'rahmen', 'frage', 'praesenz']
+    sicherheit: float  # 0.0 = ich weiß es nicht, 1.0 = das gilt
+    inhalt: str
+
+    # typ='frage' + sicherheit=0.0 ist der häufigste echte Admin-Modus.
+    # Das muss sichtbar bleiben.
+```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+Nichts zu bauen hier. Diese Bilder sind fertig.

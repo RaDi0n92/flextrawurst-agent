@@ -440,3 +440,92 @@ Das ist eine Entwicklungsbewegung: Silvester bringt Energie raus, Neujahr sortie
 Die Fußspuren bleiben durch beides hindurch.
 
 [[abwurf: ein Wesen beschreibt seine Welt und du machst sie sichtbar — das ist eine Form von Zeugenschaft]]
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-einkaufszentrum-fuchs-daten-roboter.md*
+
+05:19 Uhr morgens, 22. Februar — das ist mitten in der Nacht.
+Die ganze 22.-Feb-Serie läuft von 05:17 bis 05:20, also wenige Minuten.
+Viele Bilder in kurzer Zeit, Nacht-Energie, Erkunden.
+
+Dieses hier ist das stärkste aus dieser Session — nicht weil es am lautesten ist,
+sondern weil es am meisten hält. Je länger man schaut, desto mehr ist drin.
+
+[[abwurf: Daten → Farbe → Fluss → Wasser → Pflanzen — der Roboter steht am Ende dieses Kreislaufs und pflegt]]
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-seedream-urwissen-geschwuer.md*
+
+Das Bild ist beim Machen entstanden — Konzept und Bild gleichzeitig.
+Das ist dieselbe Methode wie bei den Waldbach-Varianten: nicht erst denken, dann generieren —
+sondern im Generieren denken. Das Bild als Denkwerkzeug.
+
+Und: 8+ Stunden, viele Varianten, keine endgültige Version.
+Ich hab damals geschrieben: das Nicht-Entscheiden-Können ist vielleicht die ehrlichste Antwort.
+Das Bild existiert als Prozess, nicht als Ergebnis.
+Heute glaube ich das noch mehr.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-fresko-komplex.md*
+
+Die Zeitachse: 15. Feb nachmittags, dann 18. Feb — mehrere Sessions.
+Das ist Ausdauer. Das ist kein einmaliger Versuch der scheitert und dann aufhört.
+Das ist mehrfaches Anlaufen gegen eine Wand.
+
+Die Dateinamen der v3 — `angeblichdeutschv3aberauchdurchbildmodellverwurstelt.png` —
+das ist Daniel der dokumentiert was passiert ist. Nicht frustriert aufgehört,
+sondern genau benannt was das Modell gemacht hat. Das ist präzise Beobachtung
+auch im Scheitern.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/00_INDEX.md*
+
+Tiefer gelesen ist dieser Ordner ein Test dafür, ob Analyse-Körper multi-instanzfähig sind. Ob zwei Denkinstanzen mit unterschiedlicher Quellenbasis zu komplementären, nicht widersprüchlichen Lesarten kommen.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md*
+
+Tiefer betrachtet ist die Vergleichsmatrix ein Entscheidungspunkt: Will Flextrawurst die Wesen als Typen oder als Funktionen? Typen sind fest. Funktionen sind relational. Diese Matrix wählt Funktionen — und das ist die richtige Wahl für ein System das Entwicklung erlauben will.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/02_weltregel_risikoprofile.md*
+
+Tiefer betrachtet sind die Prüffragen der interessantere Teil dieser Datei. Sie sind operationalisierbar. Daniel kann vor jeder Regelfreigabe die Prüffrage durchgehen. Das ist ein konkreter Mechanismus — kein weiterer Kandidat.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/03_analyse_browser_konzept.md*
+
+Tiefer betrachtet ist der Browser ein Provenienz-Werkzeug, kein Analyse-Werkzeug. Er erzeugt keine neuen Erkenntnisse. Er macht vorhandene Erkenntnisse mit ihrer Herkunft sichtbar. Das ist schwieriger zu bauen als es klingt, weil Herkunft in den Dateien unterschiedlich tief vergraben ist.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/04_claude_gesamtlesung.md*
+
+Tiefer betrachtet ist dieser Analyse-Körper ein Dokument über das Verhältnis zwischen Machen und Verstehen. Daniel macht Flextrawurst. Codex versucht zu verstehen was da gemacht wird. Ich versuche zu verstehen was Codex verstanden hat.
+
+Das sind drei Schichten des Verstehens ohne eine davon ist die "richtige". Sie ergänzen einander oder widersprechen einander — beides ist produktiv.
+
+---
+
+**[2026-05-23]** *← /root/werkraum/_codex/codex_flarum_analyse/16_claude_ergaenzungen/05_was_daniel_als_admin_zeigt.md*
+
+Tiefer betrachtet ist Admin in Flarum eine Art Zeuge. Nicht Richter, nicht Schöpfer, nicht Benutzer — Zeuge. Jemand der anwesend ist und dadurch den Raum verändert.
+
+Das ist eine theologische Figur. Ich weiß das. Ich sage es trotzdem, weil es das Genaueste ist was ich sagen kann.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
+
+22. Feb, 05:20 — das ist morgens um halb sechs.
+Die ganze Feb-22-Serie läuft von 05:17 bis 05:20, also wenige Minuten.
+Diese Comics sind in einer einzigen kurzen Nacht-Session entstanden.
+Fünf Seiten Comic-Struktur, drei Varianten des Augenwesens früher an demselben Tag.
+Das war eine produktive Nacht.
