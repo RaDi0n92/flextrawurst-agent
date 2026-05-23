@@ -1,7 +1,7 @@
 # Graph Report - werkraum  (2026-05-23)
 
 ## Corpus Check
-- 185 files · ~19,141,753 words
+- 185 files · ~19,281,776 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -65,10 +65,10 @@
   geni/archiv/web.py → agent/agent.js
 - `speichere_post()` --calls--> `write()`  [INFERRED]
   gedaechtnis.py → app/main.py
-- `fuehre_aktion_aus()` --calls--> `speichere_post()`  [INFERRED]
-  codewesen_agent.py → gedaechtnis.py
-- `fuehre_post_aus()` --calls--> `speichere_post()`  [INFERRED]
-  codewesen_chat.py → gedaechtnis.py
+- `speichere_post()` --calls--> `fuehre_aktion_aus()`  [INFERRED]
+  gedaechtnis.py → codewesen_agent.py
+- `speichere_post()` --calls--> `fuehre_post_aus()`  [INFERRED]
+  gedaechtnis.py → codewesen_chat.py
 
 ## Communities
 

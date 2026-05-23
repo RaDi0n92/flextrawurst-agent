@@ -42,3 +42,6 @@ Der Start zeigt: Posting-System und Wesen-Atem haben seit heute wieder echte Spu
 
 2026-05-23 03:40 —
 Graphify ist schon als Werkzeug da; die Aufgabe ist die Codex-Andockung, nicht ein Neubau. Halte den Unterschied zwischen Root-AGENTS und Werkraum-Graph scharf, sonst schreibt man schnell an der falschen Grenze.
+
+2026-05-23 04:03 —
+Die Oberfläche ist der Maßstab: First Surface, Provenienz, sichtbare Slots, keine falsche Lebendigkeit. Beim nächsten Schritt nicht vom Delta-Rauschen treiben lassen, sondern Daniels konkreten Auftrag gegen Vision, Bau-Reihenfolge und laufende Systeme halten.
