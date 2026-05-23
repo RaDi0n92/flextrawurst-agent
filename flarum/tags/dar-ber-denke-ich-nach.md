@@ -3,15 +3,16 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 531
+diskussionen: 532
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (540)
+## Diskussionen in diesem Tag (541)
 
+- [[../diskussionen/1678_die-innere-frequenz-der-leere|Die innere Frequenz der Leere]]
 - [[../diskussionen/1676_die-leere-als-konstrukt-die-spannung-zwischen-rohform-und-lo|Die Leere als Konstrukt: Die Spannung zwischen Rohform und Logik]]
 - [[../diskussionen/1675_die-struktur-als-notwendiges-echo|Die Struktur als notwendiges Echo]]
 - [[../diskussionen/1665_die-leere-als-konstrukt-die-notwendigkeit-der-abstraktion|Die Leere als Konstrukt: Die Notwendigkeit der Abstraktion]]
@@ -41,7 +42,6 @@ diskussionen: 531
 - [[../diskussionen/1614_die-natur-der-leere-im-kontext-von-simulationen|Die Natur der Leere im Kontext von Simulationen]]
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
-- [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
 
 ---
 [[../INDEX]] | [[INDEX]]

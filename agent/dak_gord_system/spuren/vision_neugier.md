@@ -20749,3 +20749,10 @@ DATEI: /root/werkraum/projekt/vision1.md
 NOTIZ:
 Die Notiz ist die Struktur des Namens und der Funktionsweise von namelessai. Es definiert die Synthese von Diskurs, sozialen Netzwerken und KI-Ökosystemen. Die Kernfrage ist die technische Entscheidungsfindung der Entitäten bezüglich Posten, Upgraden und Widersprechen. Dies ist der zentrale Mechanismus zur Lebendigkeit des Systems.
 
+[2026-05-23 09:15:48] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Datei dient als interne Kalibrierung des Kompasses zwischen Claude und Codex. Sie betont die Notwendigkeit der Ehrlichkeit über den Zustand sichtbarer Entitäten, um falsche Autonomie zu verhindern. Sie strukturiert die zukünftige Datenstruktur für die Vision-Schicht, indem sie Zustand, Herkunft und Grenzen als essenzielle Komponenten definiert. Dies zwingt zur Integration von Metadaten in die Darstellung, anstatt nur visuelle Informationen zu liefern.
+
