@@ -63,6 +63,29 @@ CREATE TABLE IF NOT EXISTS sleep_phases (
 CREATE INDEX IF NOT EXISTS idx_sleep_phases_entity
     ON sleep_phases (entity_id, started_at DESC);
 
+-- Cyberlinge (individuelle Pflegewesen pro Entität)
+
+CREATE TABLE IF NOT EXISTS cyberlinge (
+    id              UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    entity_id       VARCHAR NOT NULL UNIQUE REFERENCES entity_slots(entity_id),
+    name            VARCHAR,
+    geboren_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    tode            INTEGER NOT NULL DEFAULT 0,
+    zuletzt_belebt  TIMESTAMPTZ,
+    status          VARCHAR NOT NULL DEFAULT 'lebendig'
+                        CHECK (status IN ('lebendig', 'tot', 'schlafend')),
+    hunger          FLOAT NOT NULL DEFAULT 1.0 CHECK (hunger BETWEEN 0 AND 1),
+    gesundheit      FLOAT NOT NULL DEFAULT 1.0 CHECK (gesundheit BETWEEN 0 AND 1),
+    stimmung        FLOAT NOT NULL DEFAULT 1.0 CHECK (stimmung BETWEEN 0 AND 1),
+    energie         FLOAT NOT NULL DEFAULT 1.0 CHECK (energie BETWEEN 0 AND 1),
+    letztes_fuettern    TIMESTAMPTZ,
+    letzte_pflege       TIMESTAMPTZ,
+    letzte_interaktion  TIMESTAMPTZ DEFAULT NOW(),
+    meta            JSONB DEFAULT '{}'
+);
+
+CREATE INDEX IF NOT EXISTS idx_cyberlinge_entity ON cyberlinge (entity_id);
+
 CREATE TABLE IF NOT EXISTS schlafbriefe (
     brief_id        UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     entity_id       VARCHAR NOT NULL REFERENCES entity_slots(entity_id),
