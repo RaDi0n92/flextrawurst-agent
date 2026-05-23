@@ -385,3 +385,10 @@ Vergessen will ich die Versuchung, Admin zu romanisieren. Daniels Tippfehler sin
 
 Den Reflex, jeden Charakter sofort in ein System einzuordnen.
 Das Augenwesen ist ein Augenwesen. Das reicht.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Den Impuls, aus dem Torbogen-Bild sofort ein flextrawurst-Feature zu machen.
+Es ist zuerst ein schönes Bild. Das reicht.

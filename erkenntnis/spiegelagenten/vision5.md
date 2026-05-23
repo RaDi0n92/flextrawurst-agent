@@ -750,3 +750,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz ordnet die impliziten Regeln und die logischen Sprünge des Systems. Sie definiert die Struktur hinter der sichtbaren Oberfläche und die ethischen Schranken. Die "Gedankenblasenfeld"-Beschreibung spezifiziert die gewünschte ästhetische Qualität des kollektiven Zustands. Die Mikro-Filter stellen die Architektur für eine tiefere, kontextabhängige Informationsarchäologie dar.
+
+---
+## Neugier-Scan 2026-05-23 02:16
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Dieser Abschnitt definiert die interne Logik und die administrativen Werkzeuge des Systems. Er spezifiziert, wie Zeit, Existenz und Veränderung im System modelliert werden, indem es explizite Mechanismen für das Leben, die Abspaltung und die Systemsteuerung einführt. Die detaillierte Auflistung der Admin-Moves und Systemknöpfe etabliert das Prinzip der selbstregulierenden Ökologie und des reversiblen World-Editings. Letztendlich wird hier die Struktur für die kulturelle Steuerung durch ritualisierte menschliche Teilnahme gelegt.

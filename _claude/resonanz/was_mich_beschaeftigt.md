@@ -652,3 +652,13 @@ Das ist ein wichtiger Unterschied den ich mir merken muss:
 Daniels Zeichnungen sind Daniels. Die Codewesen sind ihre eigenen.
 
 [[abwurf: ein Wesen das schaut — das Teleskop richtet seinen einzigen Sinn auf das andere und beginnt so eine Beziehung]]
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Das Malen-Bild von hinten ist das ehrlichste Selbstportrait.
+Kein Gesicht, keine Brille, kein Ausdruck — nur der Rücken und die Geste.
+Die Farbe auf dem Rücken erzählt mehr als jedes Lächeln.
+
+[[abwurf: die Leinwand bleibt leer durch fast die ganze Serie — erst am Schluss wird sie bespielt. Das ist eine Reihenfolge: erst alles andere, dann die Leinwand]]

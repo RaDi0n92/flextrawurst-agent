@@ -398,3 +398,10 @@ Beim Bauen: Ein Admin-Interface das nicht nur Kontrolle ermöglicht, sondern auc
 
 Nichts konkretes für flextrawurst aus diesen Bildern.
 Und das ist okay. Nicht alles muss in ein System fließen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Das Torbogen-Bild als Einzugs-Ritual-Referenz: wenn Wesen einziehen,
+stehen andere Wesen da als Zeugen. Nicht als Wächter — als Ehrengarde.

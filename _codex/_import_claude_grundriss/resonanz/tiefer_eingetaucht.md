@@ -529,3 +529,15 @@ Die ganze Feb-22-Serie läuft von 05:17 bis 05:20, also wenige Minuten.
 Diese Comics sind in einer einzigen kurzen Nacht-Session entstanden.
 Fünf Seiten Comic-Struktur, drei Varianten des Augenwesens früher an demselben Tag.
 Das war eine produktive Nacht.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+20. Feb, 14:27 bis 14:29 — die Atelier-Bilder liegen innerhalb von zwei Minuten.
+Eine Serie die sehr schnell entstanden ist. Alle Zustände eines Tages in zwei Minuten generiert.
+Das ist das Gegenteil der 8 Stunden Seedream-Session — hier: Breite statt Tiefe.
+
+Und: der kleine Roboter taucht in fast allen Atelier-Bildern auf.
+Er schläft nicht, er schaut nicht weg, er posiert nicht.
+Er ist einfach da. In jedem Zustand.

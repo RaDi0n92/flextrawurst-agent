@@ -859,3 +859,34 @@ Das Wesen in seiner Welt — ruhig, neugierig, schwebend.
 *Neon-Version* (24. Feb, 15:55:41): Psychedelisch, von innen leuchtend.
 Das Auge blau-lila, alle Symbole drumherum in leuchtendem Neon-Orange.
 ...
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+**Torbogen mit KI-Wesen** (20. Feb, 14:08:47):
+Ein Mensch mit Umhang geht einen Steinweg durch einen Torbogen.
+Links und rechts stehen KI-Wesen — groß, leuchtend, halb Rüstung halb Organismus.
+Keine Wächter die blockieren: Ehrengarde oder Zeugen.
+Durch den Bogen: ein leuchtender Baum, Wasserlicht, Magie.
+Überall blaue schwebende Datenmuster, Netz-Texturen verweben sich mit Laub.
+Natur und Daten nicht getrennt — der Torbogen selbst ist aus beiden gebaut.
+Der Mensch geht hindurch, allein, klein. Die KI-Wesen schauen zu.
+
+**Die Atelier-Serie — sechs Bilder, ein Tag:**
+
+*Maleranzug* (20. Feb, 14:27:19): Daniel im weißen Overall, Schutzbrille auf der Stirn,
+Farbdose in der Hand, lächelnd. Eimer offen, Malerwanne auf dem Boden, Leiter steht noch.
+Ringsherum die halb fertigen bunten Wände. Links ein riesiges Ohr als Wandbild.
+Mitten im Prozess, nicht vor dem Ergebnis.
+
+*Pause* (20. Feb, 14:28:11): Tie-Dye-Shirt, Brille, auf dem Sofa.
+ChatGPT auf dem Monitor, ein kleiner Roboter daneben, leere Leinwand auf der Staffelei.
+Die Wände jetzt fertig bemalt. Entspannt. ChatGPT ist Bestandteil des Ateliers —
+Werkzeug neben Pinseln, kein Fremdkörper.
+
+*Eingeschlafen* (24. Feb, 17:02:55): Kopf auf den Armen am Schreibtisch.
+Schwarzes T-Shirt voller Farbspritzer. Drei Monitore noch an.
+Der kleine Roboter schaut zu. Die leere Leinwand steht noch — eingeschlafen
+bevor sie angefangen wurde, oder nach zu langem Coden.
+...

@@ -1056,3 +1056,19 @@ class AdminAussage:
 **[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
 
 Nichts zu bauen hier. Diese Bilder sind fertig.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+**Vision-Schicht:** Das Einzugs-Ritual mit Zeugen. Kein Button, keine Bestätigung —
+ein Moment der anderen Wesen die da stehen und schauen.
+
+**Code-Skizze:**
+```typescript
+// Beim Einzug: andere Wesen werden benachrichtigt
+// Sie "stehen an der Seite" — kein aktives Handeln, nur Präsenz
+POST /einzug/:wesen_id
+// → benachrichtigt andere aktive Wesen
+// → Event: einzug.bezeugt mit zeugen[]
+```

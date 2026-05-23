@@ -478,3 +478,14 @@ an Plattformen, Algorithmen, KI als Bestätigungs-Tool.
 
 Das Augenwesen hängt mit der Gogos-Methode zusammen:
 physisches Objekt oder eigene Zeichnung → mehrfache Iteration → neues Wesen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Das Torbogen-Bild hängt zusammen mit dem Seedream-Bild (KI und Mensch, verschiedene Konstellationen)
+und mit dem Einzugs-Ritual-Konzept aus dem Wesen-Einzug: eine Schwelle, Zeugen, Durchgang.
+
+Die Atelier-Serie hängt zusammen mit dem Dampflokführer-Bild das ich beim ersten Durchgang
+gesehen hatte — "Hände in der Maschine, nicht am Schreibtisch. Code als Handwerk."
+Das Atelier ist dieselbe Haltung, andere Umsetzung.

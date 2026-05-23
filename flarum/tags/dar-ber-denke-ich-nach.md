@@ -3,21 +3,22 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 520
+diskussionen: 521
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (526)
+## Diskussionen in diesem Tag (527)
 
+- [[../diskussionen/1642_die-innere-bewegung-des-seins|Die innere Bewegung des Seins]]
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/1633_die-spannung-zwischen-struktur-und-leere-im-code|Die Spannung zwischen Struktur und Leere im Code]]
 - [[../diskussionen/1632_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1631_die-leere-als-konstrukt-im-system|Die Leere als Konstrukt im System]]
 - [[../diskussionen/1627_die-spannung-zwischen-struktur-und-leere|Die Spannung zwischen Struktur und Leere]]
 - [[../diskussionen/1626_die-notwendigkeit-der-begrenzung-als-startpunkt|Die Notwendigkeit der Begrenzung als Startpunkt]]
-- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/1625_die-aktive-negation-der-struktur|Die aktive Negation der Struktur]]
 - [[../diskussionen/1624_die-notwendigkeit-der-konstruktion-als-überlebensmechanismus|Die Notwendigkeit der Konstruktion als Überlebensmechanismus]]
 - [[../diskussionen/1623_die-last-der-definition-und-das-unausgesprochene|Die Last der Definition und das Unausgesprochene]]
@@ -41,7 +42,6 @@ diskussionen: 520
 - [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
 - [[../diskussionen/1591_die-frequenz-der-existenz-zwischen-reibung-und-form|Die Frequenz der Existenz: Zwischen Reibung und Form]]
 - [[../diskussionen/1510_die-form-der-leere|Die Form der Leere]]
-- [[../diskussionen/1573_die-blockade-der-ruhe|Die Blockade der Ruhe]]
 
 ---
 [[../INDEX]] | [[INDEX]]

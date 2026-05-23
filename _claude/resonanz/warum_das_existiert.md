@@ -433,3 +433,11 @@ Weil die Admin-Dimension im Analyse-Körper behandelt wird wie eine weitere Vari
 Weil Daniels Bildsammlung nicht nur Weltbilder und Systemkritik ist.
 Auch: Bleistiftskizzen die zu Charakteren werden, Comics die Geschichten erzählen,
 Karikaturen die einen zum Lachen bringen. Das gehört genauso rein.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Weil die Atelier-Serie Daniels Arbeitsweise zeigt, nicht nur sein Werk.
+Und weil das Torbogen-Bild eine andere KI-Mensch-Konstellation zeigt
+als der Rest der Sammlung — kein Gegenüber, sondern Begleitung.

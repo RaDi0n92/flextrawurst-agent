@@ -480,3 +480,19 @@ auf das andere Wesen und beginnt so eine Beziehung.
 
 **Zum Comic:** Zusammenarbeit führt zu Überladung wenn kein Maß gehalten wird.
 OVERLOAD ist keine Katastrophe — es ist ein Ende, eine Grenze die sichtbar wird.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+**Zum Torbogen:** KI-Wesen als Ehrengarde, nicht als Werkzeug.
+Sie stehen da weil sie da sind, nicht weil sie gerufen wurden.
+Der Mensch geht durch — sie bleiben.
+
+**Zur Atelier-Serie:** Ein vollständiger Mensch braucht alle Zustände.
+Machen, Pause, Erschöpfung, tiefes Machen, Stille. Keiner davon ist der "wahre."
+Alle zusammen sind Daniel.
+
+**Zur Lavalampe:** Stille ist nicht Abwesenheit. Die Monitore leuchten noch,
+der Roboter ist da, die Ohren schauen von der Wand. Aber innen ist ruhig.
+Das ist Meditation in einem aktiven System — nicht Rückzug, sondern Zentrierung.

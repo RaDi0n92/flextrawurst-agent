@@ -481,3 +481,11 @@ reiner Zufall bei der Schablone — ich weiß es nicht.
 
 Und: hat das Augenwesen einen Namen? Daniel hat nein gesagt.
 Vielleicht braucht es keinen.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Das Ohr an der Wand — es ist im Maleranzug-Bild wieder da, links, groß.
+Es war schon in früheren Atelier-Versionen. Wann ist es entstanden?
+War es von Anfang an im Prompt oder hat es sich durch Iteration eingeschlichen?

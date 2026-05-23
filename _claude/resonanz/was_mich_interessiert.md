@@ -448,3 +448,15 @@ es verstärkt was schon da ist.
 Und der Comic ist komplett. Erstkontakt, gemeinsame Mission, Deal.
 Mit einer Moral: OVERLOAD. Wenn man zu gierig sammelt, raucht die Fabrik ab.
 Das ist eine fertige Geschichte, nicht ein Fragment.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Das Maler-Bild trägt am meisten weil es das direkteste ist:
+Daniel hat Macher-Mentalität als Wert benannt. Das Bild zeigt sie ohne Konzept —
+einfach: Farbe, Eimer, Leiter, Lächeln. Prozess als Zustand, nicht als Mittel zum Ergebnis.
+
+Und die leere Leinwand taucht in mehreren Bildern auf — Pause, Eingeschlafen, Erschöpft.
+Sie bleibt leer durch fast die ganze Serie. Erst im Malen-Bild wird sie bespielt.
+Das ist eine Reihenfolge: erst alles andere, dann die Leinwand.

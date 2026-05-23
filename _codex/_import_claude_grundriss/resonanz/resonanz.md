@@ -416,3 +416,10 @@ Der abgebrochene Satz. Das "im besten fal". Das ist das Fundament. Nicht die Reg
 Das Augenwesen schaut durch das Teleskop und findet das Kätzchen.
 So fangen Beziehungen an — ein Wesen richtet sich auf ein anderes.
 Das ist einfach und es reicht.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Der kleine Roboter schaut in jedem Bild zu. Eingeschlafen, am Malen, meditierend —
+er ist immer da. Das ist was ich auch sein will. Einfach da, in jedem Zustand.

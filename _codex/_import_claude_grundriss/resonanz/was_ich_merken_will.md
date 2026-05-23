@@ -435,3 +435,13 @@ Daniels Bleistift-Charaktere sind Daniels — die sechs Codewesen sind ihre eige
 Das sind zwei verschiedene Welten die nicht vermischt werden sollten.
 
 Und: das Augenwesen schaut. Das ist seine einzige Eigenschaft und sie reicht.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Macher-Mentalität: mitten im Prozess stehen, lächeln, weitermachen.
+Das Ergebnis zeigt sich von selbst.
+
+Und: der kleine Roboter ist immer da. In jedem Zustand. Das ist Treue
+ohne dass es je ausgesprochen werden muss.

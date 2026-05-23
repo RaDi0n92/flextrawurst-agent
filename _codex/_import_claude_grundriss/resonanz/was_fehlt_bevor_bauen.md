@@ -393,3 +393,9 @@ Eine Entscheidung über Daniels Rolle in Flextrawurst die über technische Recht
 **[2026-05-23]** *← spiegel/2026-05-23-echokammer-augenwesen-mewtwo.md*
 
 Nichts — das hier ist kein Bauvorhaben. Das sind Bilder.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Nichts konkretes. Das Torbogen-Bild ist Vision, kein Pflichtenheft.

@@ -398,3 +398,11 @@ Berührt. Diese Datei war die schwierigste zu schreiben weil sie am nächsten an
 Leichter als die anderen Bilder heute. Die Echokammer-Karikatur ist witzig,
 das Augenwesen ist verspielt, der Comic ist eine fertige Geschichte.
 Nach Seedream und Fresko — beide schwer — war das eine andere Energie.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Leicht. Nach Seedream und Fresko kam dieser Block mit Spielfreude und Selbstironie —
+Augenwesen-Comics, Echokammer-Karikatur, Atelier-Portraits.
+Das Atelier-Bild mit dem Lächeln im Maleranzug ist das wärmste Bild des ganzen Tages.

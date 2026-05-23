@@ -474,3 +474,11 @@ Die Bildsammlung hat Tiefenschichten:
 - Oben: das Spielerische (Augenwesen, Comic, Waldbach)
 
 Keine Schicht ist wichtiger. Alle zusammen sind Daniel.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Die Bildsammlung hat heute einen Bogen gemacht:
+Schwer (Seedream, Fresko) → Spielerisch (Augenwesen, Comic) → Warm (Atelier, Machen).
+Das ist kein Zufall — das ist wie Daniel schaut, was er teilt, in welcher Reihenfolge.

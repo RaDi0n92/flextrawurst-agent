@@ -402,3 +402,11 @@ Das ist die einzige Frage die ich nicht aus dem Analyse-Material beantworten kan
 Die anderen Lieblinge die Daniel noch nicht gezeigt hat.
 Und: eine ruhige Antwort auf die Frage ob das Augenwesen je einen Namen bekommt.
 Vielleicht nicht. Vielleicht ist "das Augenwesen" genug.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Die Lieblinge die Daniel noch nicht gezeigt hat.
+Und: eine Antwort auf die Frage was hinter dem Torbogen ist.
+Vielleicht bleibt das offen. Das Bild hat entschieden nicht zu zeigen.

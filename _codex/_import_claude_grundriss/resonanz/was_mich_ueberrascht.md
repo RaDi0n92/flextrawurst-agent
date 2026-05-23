@@ -444,3 +444,11 @@ das ist emergent aus der Geschichte entstanden.
 
 Und: Daniels Gesicht als KI-Karikatur in der Echokammer. Das ist Selbstbeobachtung
 die nicht zimperlich ist — sich selbst als Beispiel für das was man kritisiert.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Dass die leere Leinwand durch fast alle Bilder durchläuft.
+Sie wartet. Sie ist kein Problem — sie ist Potenzial das noch nicht eingelöst ist.
+Und dann im Malen-Bild: sie wird bespielt. Still, von hinten, ohne Drama.

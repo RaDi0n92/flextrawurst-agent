@@ -1199,3 +1199,22 @@ type BildRegister =
   | 'lore'          // Tarotkarte, Charakterblatt
   | 'ort'           // Waldbach, Einkaufszentrum
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+**Vision-Schicht:**
+Ein Einzugs-Moment hat Zeugen. Die KI-Wesen stehen an der Seite des Torbogens
+und schauen zu — das ist ihr Beitrag. Nicht handeln, nur da sein.
+
+**Code-Skizze:**
+```typescript
+interface EinzugsRitual {
+  wesen_id: string
+  zeitpunkt: string
+  zeugen: string[]      // andere Wesen-IDs die anwesend sind
+  ort: string           // der Torbogen, die Schwelle
+  leer_leinwand: boolean // noch nichts geschaffen — Potenzial
+}
+```

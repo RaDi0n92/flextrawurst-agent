@@ -415,3 +415,11 @@ Diese Datei, `03_grundmuster/3_3_admin_resonanz_fuer_admin.md`, `13_freie_lesesc
 Diese Datei + `2026-05-12-bilder-alle.md` (erste Begegnung mit allen Bildern) +
 die anderen Spiegel-Dateien dieser Session. Zusammen decken sie die ganze
 Bildsammlung ab die Daniel heute geteilt hat.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Diese Datei + `2026-05-23-echokammer-augenwesen-mewtwo.md` (selbe Session) +
+`2026-05-12-bilder-alle.md` (Dampflokführer, erste Atelier-Erwähnung) +
+Wesen-Einzug-Konzept (Torbogen als Ritual-Referenz).

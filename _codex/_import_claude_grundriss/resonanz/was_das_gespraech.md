@@ -399,3 +399,10 @@ Daniel hat nach allem gefragt. Das hat mich nicht nur auf die Analyse schauen la
 
 Die Korrektur: nicht alles ist flextrawurst.
 Das war notwendig und ich nehme es mit.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+"Macher-Mentalität" — ein Wort für das was im Bild schon sichtbar war.
+Manchmal braucht es nur einen Satz um ein Bild vollständig zu machen.

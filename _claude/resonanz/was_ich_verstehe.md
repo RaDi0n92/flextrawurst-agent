@@ -621,3 +621,14 @@ ein Eigenleben bekommen haben.
 
 Die Echokammer-Karikatur ist Systemkritik von außen.
 Daniel schaut drauf, nicht rein. Das ist ein wichtiger Unterschied.
+
+---
+
+**[2026-05-23]** *← spiegel/2026-05-23-torbogen-atelier-serie.md*
+
+Die Atelier-Serie ist ein vollständiger Tag: Machen → Pause → Erschöpfung → tiefes Machen → Stille.
+Kein Bild davon ist gestellt im schlechten Sinne — jedes zeigt einen echten Zustand.
+
+Das Torbogen-Bild ist das Gegenstück zum Seedream-Bild: dort steht der Mensch allein
+vor dem Wissen. Hier gehen KI-Wesen mit — sie stehen an seiner Seite, nicht davor.
+Eine andere Konstellation: Begleitung statt Gegenüber.

@@ -20651,3 +20651,10 @@ DATEI: /root/werkraum/projekt/vision6.md
 NOTIZ:
 Diese Notiz festigt die Notwendigkeit einer expliziten Provenienz für alle Entitäten, um die spätere Struktur zu fundieren. Die Verfassungsregel über verborgene Verbindungen erzwingt eine ehrliche, nicht-manipulative Sprache in der Oberfläche des Codes. Die Kategorisierung von Sucht- und Zustandssubstanzen erweitert den Fokus auf die Dynamik des Verlangens und des Kontrollverlusts. Diese Punkte definieren die Notwendigkeit einer diagnostischen Schicht für das "Werden" innerhalb des Systems.
 
+[2026-05-23 02:16:15] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Dieser Abschnitt definiert die interne Logik und die administrativen Werkzeuge des Systems. Er spezifiziert, wie Zeit, Existenz und Veränderung im System modelliert werden, indem es explizite Mechanismen für das Leben, die Abspaltung und die Systemsteuerung einführt. Die detaillierte Auflistung der Admin-Moves und Systemknöpfe etabliert das Prinzip der selbstregulierenden Ökologie und des reversiblen World-Editings. Letztendlich wird hier die Struktur für die kulturelle Steuerung durch ritualisierte menschliche Teilnahme gelegt.
+
