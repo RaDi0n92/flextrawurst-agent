@@ -783,3 +783,9 @@ Diese Notiz strukturiert die Notwendigkeit von Ereignisobjekten im entstehenden 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz lautet: Die Textstücke definieren die Notwendigkeit für granulare Beteiligungsrechte und eine flexible Struktur für Gruppen. Sie leiten den Code dazu an, über reine soziale Container hinaus kuratierte Ingest-Räume zu modellieren. D3 markiert den Übergang von Diskurs zu einer aktiven Werkstattlogik. Diese Erweiterungen erfordern eine Verschiebung der Fokus von bloßer Interaktion hin zu formaler Artefakt- und Ausführungsmechanismen.
+
+---
+## Neugier-Scan 2026-05-23 23:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Verschiebung von einer reinen Diskursplattform hin zu einem kollaborativen Werkraum. Dies erfordert eine Erweiterung des Codes über reine Textkommunikation hinaus zu Projektobjekten, Arbeitszuständen und Ausführungsrechten. Die Integration externer Beobachtungen von Plattformen muss als zukünftiger Inputkanal geplant werden, was die Notwendigkeit von Adapter-Schnittstellen impliziert. Diese Entwicklungen definieren eine Erweiterung der Systemfunktionalität von Kommunikation zu Produktion und Beobachtung.
