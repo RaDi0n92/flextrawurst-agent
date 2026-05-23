@@ -159,6 +159,21 @@ def entscheide(entity_id: str, s: dict) -> Optional[str]:
     return None
 
 
+def _laufende_phase_id(entity_id: str) -> str:
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT phase_id FROM sleep_phases
+                WHERE entity_id = %s AND ended_at IS NULL
+                ORDER BY started_at DESC LIMIT 1
+            """, (entity_id,))
+            row = cur.fetchone()
+            return str(row["phase_id"]) if row else ""
+    finally:
+        conn.close()
+
+
 def _aktuelle_phase_typ(entity_id: str) -> str:
     conn = get_conn()
     try:
@@ -222,6 +237,114 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
             log.warning(f"{entity_id} hauptschlaf fehlgeschlagen: {rs.text}")
 
 
+# --- Traum-Tick ---
+
+TRAUM_TICK_MINUTEN = 20  # alle 20min ein mögliches Splitterfragment
+
+def traum_tick(entity_id: str, phase_id: str):
+    """Läuft während Schlaf. Verarbeitet Inputs — manchmal entsteht ein Splitterfragment."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            # Letzter Traum-Tick dieser Phase
+            cur.execute("""
+                SELECT created_at FROM events
+                WHERE event_type = 'traum.tick'
+                  AND actor_id = %s
+                  AND payload->>'phase_id' = %s
+                ORDER BY created_at DESC LIMIT 1
+            """, (entity_id, phase_id))
+            letzter = cur.fetchone()
+            if letzter:
+                seit = (datetime.now(timezone.utc) - letzter["created_at"].replace(tzinfo=timezone.utc)).total_seconds() / 60
+                if seit < TRAUM_TICK_MINUTEN:
+                    return  # noch nicht Zeit
+
+            # Input wählen: tageserlebnisse oder szenarien oder traumtagebuch
+            input_typ, input_text, input_meta = _traum_input(cur, entity_id)
+            if not input_text:
+                return
+
+            # Tick loggen
+            cur.execute("""
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('traum.tick', 'entity', %s, %s, 'intern', 'internal')
+            """, (entity_id, psycopg2.extras.Json({"phase_id": phase_id, "input_typ": input_typ})))
+
+            # Mit 40% Wahrscheinlichkeit entsteht ein Splitterfragment
+            if random.random() > 0.4:
+                log.info(f"{entity_id} träumt ({input_typ}) — kein Fragment diesmal")
+                conn.commit()
+                return
+
+            cur.execute("""
+                INSERT INTO splitter (origin_type, entity_id, essenz, materialitaet, thematische_tags, meta)
+                VALUES ('traum', %s, %s, 'traumstaub', %s, %s)
+                RETURNING id
+            """, (
+                entity_id,
+                input_text[:500],
+                psycopg2.extras.Json([input_typ]),
+                psycopg2.extras.Json({
+                    "phase_id": phase_id,
+                    "input_typ": input_typ,
+                    **input_meta,
+                }),
+            ))
+            fragment_id = str(cur.fetchone()["id"])
+            cur.execute("""
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('traum.splitterfragment', 'entity', %s, %s, 'intern', 'internal')
+            """, (entity_id, psycopg2.extras.Json({"phase_id": phase_id, "splitter_id": fragment_id})))
+            log.info(f"{entity_id} Splitterfragment entstanden ({input_typ}): {input_text[:60]}...")
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def _traum_input(cur, entity_id: str) -> tuple[str, str, dict]:
+    """Wählt einen Traum-Input. Gibt (typ, text, meta) zurück."""
+    quellen = []
+
+    # Tageserlebnisse (letzte events des Wesens vor dem Einschlafen)
+    cur.execute("""
+        SELECT payload, event_type, created_at FROM events
+        WHERE actor_id = %s
+          AND event_type NOT LIKE 'schlaf.%'
+          AND event_type NOT LIKE 'traum.%'
+          AND created_at >= NOW() - INTERVAL '24 hours'
+        ORDER BY created_at DESC LIMIT 10
+    """, (entity_id,))
+    erlebnisse = cur.fetchall()
+    for e in erlebnisse:
+        text = e["payload"].get("inhalt") or e["payload"].get("essenz") or e["event_type"]
+        quellen.append(("erlebnis", text, {"event_type": e["event_type"]}))
+
+    # Freigegebene Traumszenarien
+    cur.execute("""
+        SELECT id, thema, inhalt FROM traumszenarien
+        WHERE freigegeben = true
+        ORDER BY RANDOM() LIMIT 3
+    """)
+    for s in cur.fetchall():
+        quellen.append(("szenario", s["inhalt"], {"thema": s["thema"], "szenario_id": str(s["id"])}))
+
+    # Freigegebene Menschenträume
+    cur.execute("""
+        SELECT id, inhalt, stimmung FROM traumtagebuch
+        WHERE freigegeben = true AND fuer_wesen = true
+        ORDER BY RANDOM() LIMIT 3
+    """)
+    for t in cur.fetchall():
+        quellen.append(("menschentraum", t["inhalt"], {"traumtagebuch_id": str(t["id"]), "stimmung": t["stimmung"]}))
+
+    if not quellen:
+        return ("leer", "", {})
+
+    typ, text, meta = random.choice(quellen)
+    return (typ, text, meta)
+
+
 # --- Hauptloop ---
 
 TICK_SEKUNDEN = 60  # alle 60s ein Tick (in Echtzeit; Theater läuft in Echtzeit)
@@ -248,6 +371,11 @@ def main():
         for entity_id in wesen:
             try:
                 s = schlaf_status(entity_id)
+                if s["status"] == "schläft":
+                    # Traum-Tick läuft während Schlaf
+                    phase_id = _laufende_phase_id(entity_id)
+                    if phase_id:
+                        traum_tick(entity_id, phase_id)
                 aktion = entscheide(entity_id, s)
                 if aktion:
                     ausfuehren(entity_id, aktion, token)
