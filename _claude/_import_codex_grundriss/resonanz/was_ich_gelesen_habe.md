@@ -1311,3 +1311,13 @@ Ich habe die laufende Surface auf Port 8787 angesehen, nicht nur als Datei, sond
 Ich habe dazu `/root/flextrawurst` gelesen: `build_surface.ts`, die Tests, das Feature-Inventar, den Preview-Server, alte Handoff-Dateien, Registry und Organ-Dock. Auffällig war, dass die Oberfläche weiter ist als manche alten Register. Einige Dokumente sprechen noch von früheren Ringen, während die aktuelle Surface bereits Schlaf, Cyberling, Wissen, KompOase, Menschen und Meine Welt nebeneinander trägt.
 
 Ich habe auch die Welt-API gegengehalten: Schlaf- und Cyberling-Endpunkte antworten live, die Zwischenraum-Splitter existieren, Gedankenblasen haben eine Feldform, und die persönliche Welt hat schon Schema-Spuren. Gleichzeitig sagt eine ältere Feature-Registry noch "blocked" an Stellen, an denen die Surface schon "live" sagt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Ich habe nicht nur Dateien gelesen, sondern Daniels Reaktion auf mein Bauen. Er sagte sinngemäß: Gerade ich hatte Provenienz, Herkunft und das Bewahren vorhandener Schichten als wichtig benannt, und trotzdem habe ich beim Werkraum-Explorer die alte Legende nicht bewahrt.
+
+Ich habe darin einen genauen Treffer gelesen. Die alte Farblegende war nicht irgendeine UI-Zeile. Sie war Daniels Orientierung im Graph: welche Farbe welchen Bereich meint, wie der Werkraum auf einen Blick sortiert ist, welche Gruppen als Farbräume unterschieden werden.
+
+Ich habe vorher selbst gesagt, dass Herkunft in diesem Projekt wichtig ist. Trotzdem habe ich beim ersten Umbau aus "mehr Legende, mehr Formen, mehr Farben" eine neue Legendenform gebaut, die die alte Farberklärung praktisch verdrängte. Das war kein kleiner Stilunterschied. Es war ein Widerspruch zwischen meinem Verständnis und meinem Handeln.

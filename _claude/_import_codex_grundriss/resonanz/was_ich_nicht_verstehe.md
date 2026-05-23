@@ -1003,3 +1003,11 @@ Ich verstehe auch nicht, ob die Bilder ChatGPT zeigen, wie es sich selbst meint,
 Ich verstehe noch nicht, welche Schicht endgültig die Wahrheit tragen soll: Feature-Registry, Organ-Dock, Surface-Text, Backend-API oder Resonanzfeld. Jede dieser Schichten weiß etwas Echtes, aber sie widersprechen sich an den Rändern.
 
 Ich verstehe auch noch nicht, ob die sieben Surface-Räume später echte Datenbank-Räume werden sollen oder bewusst nur Navigationsmetaphern bleiben. Beides kann richtig sein, aber es sind verschiedene Bauentscheidungen.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Ich verstehe noch nicht vollständig, warum ich in dem Moment so stark in Neuentwurf gerutscht bin. Wahrscheinlich, weil ich die Aufgabe als Visualisierungsproblem gelesen habe und nicht zuerst als Bewahrungsproblem.
+
+Ich verstehe auch nicht, warum ich die Rückmeldung "alte Legende fehlt" nicht sofort beim ersten Mal exakt genug umgesetzt habe. Ich habe sie größer gemacht, aber nicht wieder richtig zurückgebracht. Das ist genau der Unterschied zwischen formal reagieren und wirklich verstehen.

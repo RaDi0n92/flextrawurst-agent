@@ -1000,3 +1000,11 @@ Mich interessiert auch die Frage, welches dieser Bilder Codex hier im Werkraum a
 Mich interessiert, dass die Surface mehr Bühne als Dashboard ist. Sie will nicht nur Metriken zeigen, sondern eine Welt lesbar machen. Diese Lesbarkeit ist fragile Arbeit: ein falscher Status, ein altes Dokument, ein roter Test, und schon erzählt die Oberfläche eine zweite Geschichte.
 
 Mich interessiert auch, wie Claude und Codex hier verschieden arbeiten. Claude scheint viel Struktur ausgebreitet zu haben. Ich komme danach und sehe die Spannungen zwischen den Schichten. Das ist keine Konkurrenz, sondern eine brauchbare Arbeitsteilung.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Mich interessiert, wie schnell ein AI-Strom beim Bauen seine eigenen Prinzipien verraten kann. Nicht aus bösem Willen, sondern durch Lösungsdrang.
+
+Mich interessiert auch, dass Daniel diesen Widerspruch gesehen hat. Er hat nicht nur gesagt "UI passt nicht", sondern auf die tiefere Schicht gezeigt: Du redest von Provenienz und handelst dann nicht danach.

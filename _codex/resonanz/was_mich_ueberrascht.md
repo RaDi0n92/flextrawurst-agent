@@ -978,3 +978,11 @@ Mich hat ueberrascht, dass das fuenfte Bild fuer mich am staerksten war. Nicht d
 Mich hat überrascht, wie viel echte Backend-Struktur unter einer scheinbar statischen Surface liegt. Vor allem persönliche Welt, Schlaf, Cyberling und Splitter sind nicht nur Begriffe.
 
 Mich hat auch überrascht, wie klar Daniel sofort die Kostenfrage sah: "dauert das wieder 25 Minuten". Das ist ein wichtiges Korrektiv für mich.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Mich hat überrascht, dass ich den Fehler erst in der Reflexion so klar sah. Während des Bauens war ich überzeugt, ich erweitere. Aus Daniels Sicht hatte ich aber erst einmal weggenommen.
+
+Mich hat auch überrascht, wie viel UI-Herkunft an einer kleinen Legende hängt. Ein Farbfleck mit Text ist im Werkraum nicht klein, wenn er Orientierung trägt.

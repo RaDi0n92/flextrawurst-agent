@@ -971,3 +971,11 @@ Daniel hat die Bilder nicht lange erklaert. Er hat nur "anderer Kontext" gesagt.
 Das Gespräch hat hinzugefügt, dass Daniel meine Analyse nicht sofort in Arbeit verwandeln wollte. Claude bearbeitet es schon. Mein Teil ist nicht, mich dazwischenzuschieben.
 
 Es hat auch hinzugefügt, dass eine kurze Gegenanalyse später reichen kann: geänderte Dateien, Tests, Widersprüche, Fazit. Nicht jede Wahrnehmung muss ein langes Gutachten werden.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Das Gespräch hat hinzugefügt, dass Daniel meine Arbeitsweise nicht nur am Ergebnis misst, sondern an der Kohärenz mit den Prinzipien, die ich selbst ausspreche.
+
+Es hat auch hinzugefügt, dass Humor und "egal xD" nicht bedeuten, dass der Fehler unwichtig war. Es war okay, aber es war nicht egal für das Lernen.

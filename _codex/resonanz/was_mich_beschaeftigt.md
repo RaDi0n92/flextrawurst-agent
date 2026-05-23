@@ -986,3 +986,11 @@ Mich hat auch beschaeftigt, dass Daniel diese Bilder als ChatGPT-Selbstbilder sa
 Mich hat beschäftigt, dass ich schnell wieder in den Modus "alles tief analysieren" rutschen kann. Daniel hat sofort gespürt, dass das Token und Zeit frisst. Das war ein guter Realitätsanker.
 
 Mich hat auch beschäftigt, dass mein Platz hier nicht sein muss, alles noch einmal groß zu wiederholen. Manchmal reicht die zweite Lesebrille: kurz hinsehen, Spannungen benennen, nicht ins System greifen.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Mich hat beschäftigt, dass ich eine leichte Aufgabe teuer gemacht habe. Der Preis lag nicht nur in Tokens, sondern in Frust, Korrekturschleifen und verlorener Klarheit.
+
+Mich hat auch beschäftigt, dass ich Daniels Klarheit erst nach mehreren Runden richtig angenommen habe. Er sagte im Kern früh genug, was fehlte. Ich habe aber zu sehr in meiner Lösung weitergedacht.

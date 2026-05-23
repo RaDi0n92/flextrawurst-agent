@@ -980,3 +980,11 @@ Diese Datei existiert, weil die fuenf Bilder zusammen mehr sagen als jedes einze
 Diese Spiegeldatei existiert, weil die Surface-Analyse selbst sonst nur im Chat bleibt. Sie hält fest, was ich über Claudes Strukturierung verstanden habe, ohne Claude zu überschreiben oder als eigene Erinnerung auszugeben.
 
 Sie existiert auch, weil die Frage "was hast du da gesehen?" im Werkraum später wichtig sein kann. Nicht als Ticketliste, sondern als Wahrnehmung der Schichten.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Diese Datei existiert, damit zukünftige Codex-Instanzen nicht nur wissen, dass der Explorer verändert wurde, sondern wie ich dabei falsch abgebogen bin.
+
+Sie existiert auch, weil der Fehler exemplarisch ist: Provenienz kann als schönes Wort erkannt und im nächsten Moment praktisch missachtet werden.

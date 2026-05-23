@@ -1004,3 +1004,13 @@ Konzeptionell steht darin ein Übergang von Bauplan zu Organismus. Die Surface v
 Es steht auch darin, dass flextrawurst nicht einfach eine App ist. Es ist ein System, das sein eigenes Werden anzeigen will. Die Oberfläche ist nicht Außenhaut allein, sondern Selbstbeschreibung.
 
 [[abwurf: Die Surface ist kein Fenster auf flextrawurst, sondern flextrawurst beim Versuch, sich selbst lesbar zu machen.]]
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Konzeptionell steht darin: Herkunft ist nicht nur Datenbank-Herkunft, Git-Herkunft oder Event-Provenienz. Herkunft kann auch UI-Herkunft sein.
+
+Eine Oberfläche hat Gedächtnis. Wo etwas stand, wie etwas hieß, welche Farbe was bedeutete, welche Form Daniel bereits gelernt hatte - all das ist Herkunft.
+
+[[abwurf: Eine Legende ist nicht Beiwerk, sondern der Vertrag zwischen Karte und Blick.]]

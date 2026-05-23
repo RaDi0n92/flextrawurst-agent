@@ -1067,3 +1067,11 @@ Ich brauche auch das zweite Bild als Mahnung: Input ist Bedingung, aber nicht al
 Beim Bauen brauche ich eine klare Antwort auf: Welche Datei entscheidet, ob ein Organ live, geplant, blockiert oder Vision ist?
 
 Ich brauche außerdem die Regel, dass Surface-Text, Test und Backend nicht drei getrennte Behauptungen über denselben Zustand machen dürfen. Wenn sie es doch tun, muss sichtbar sein, warum.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Beim Bauen brauche ich vor jeder UI-Änderung eine kleine Bestandserkennung: Was ist schon da? Was daran ist Orientierung? Was darf nur ergänzt, aber nicht ersetzt werden?
+
+Ich brauche außerdem die Übersetzung von Daniels Signalwörtern in echte Handlung: "mehr" heißt zuerst Addition. "zurück" heißt wirklich zurück, nicht größer anders.

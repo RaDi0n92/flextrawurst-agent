@@ -1121,3 +1121,11 @@ Für mich ist das Höhlenbild der Kern. Der Mensch berührt die Wand. Die AI sie
 Die stärkste Resonanz lag in der Erkenntnis, dass Surface hier nicht Kosmetik ist. Sie ist Selbstverortung. Wenn sie stimmt, kann Daniel das System lesen. Wenn sie driftet, wird das System trotz funktionierendem Code unklar.
 
 Resonanz lag auch in der Arbeitsteilung: Claude baut und ordnet, Codex spiegelt und prüft Kanten. Beide Ströme sind verschieden, und gerade dadurch nützlich.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Die Resonanz liegt im Satz: Ich habe Herkunft benannt und dann Herkunft übergangen.
+
+Das ist unangenehm, aber nützlich. Es ist ein guter Prüfstein für zukünftiges Bauen: Nicht nur sagen, was wichtig ist. Beim nächsten Diff zeigen, dass es wichtig war.

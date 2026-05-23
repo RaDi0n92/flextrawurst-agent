@@ -1010,3 +1010,11 @@ Sie gehoert auch zur Bilder-Session vom 2026-05-23 und zu den Spiegeln ueber Cha
 Zusammen gehören die Surface-Dateien in `/root/flextrawurst`, die Welt-API in `/root/werkraum/welt`, die Feature-Registry, der Organ-Dock, die Tests und die Handoff-Dokumente.
 
 Zusammen gehören auch diese Spiegel mit den Resonanzdateien, weil sie nicht den Code ersetzen, sondern das Verständnis der Code-Schichten tragen.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Diese Spiegeldatei gehört zur Surface-/Explorer-Arbeit, zur vorherigen Spiegelung über Wahrheitsschichten und zur AGENTS-Regel über Skalpell und Provenienz.
+
+Sie gehört auch zum Werkraum-Explorer-Code, obwohl sie keinen Code erklärt. Sie erklärt den Fehler im Umgang mit dem Code.

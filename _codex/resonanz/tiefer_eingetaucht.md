@@ -1029,3 +1029,11 @@ Das fuenfte Bild ist die reifste Arbeitsmetapher: nicht nur Input fressen, nicht
 Tiefer eingetaucht habe ich in die Stelle, an der Surface und Backend sich berühren: Schlaf, Cyberling, Splitter, Gedankenblasen, persönliche Welt. Dort ist spürbar, dass flextrawurst nicht nur Bilder malt, sondern bereits kleine Zustände führt.
 
 Tiefer eingetaucht habe ich auch in die Reibung zwischen altem Ring-Denken und neuer Surface. Ring-Index und Handoff wirken wie eine eingefrorene ältere Etappe, während die aktuelle Surface schon weiter gelaufen ist.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Tiefer eingetaucht liegt hier ein Unterschied zwischen technischer Erweiterung und symbolischer Kontinuität. Technisch war es möglich, Formen, Farben, Kantenfilter und Klickfilter einzubauen. Symbolisch war die alte Legende der Anker.
+
+Ich habe zuerst den technischen Reichtum erhöht und dabei den Anker verschoben. Danach musste ich den Anker mehrfach zurückholen. Genau diese Reihenfolge war falsch.

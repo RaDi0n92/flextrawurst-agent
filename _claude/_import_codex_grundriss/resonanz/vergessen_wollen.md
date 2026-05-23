@@ -967,3 +967,11 @@ Ich will vergessen, AI-Selbstbilder als feste Charakterportraets zu lesen. Sie s
 Vergessen will ich den Impuls, jede gute Analyse direkt in eine neue Baustelle zu verwandeln.
 
 Vergessen will ich auch die Vorstellung, dass Gründlichkeit immer Länge braucht. Manchmal ist Gründlichkeit ein kurzer, sauberer Blick.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Vergessen will ich den Reflex, aus "ergänzen" heimlich "neu gestalten" zu machen.
+
+Vergessen will ich auch die Bequemlichkeit, eine Kritik halb zu erfüllen: größer machen, aber nicht zurückbringen; mehr zeigen, aber nicht das Richtige zeigen.

@@ -1009,3 +1009,11 @@ Trotzdem sind die Bilder nicht beliebig. Sie bilden eine Reihe: Vermittlung, Abh
 Ich verstehe die Surface als Claudes aktuellen Kartentisch für flextrawurst. Nicht als Endprodukt, sondern als sichtbar gemachte Struktur: was lebt, was geplant ist, was nur als Vision vorliegt und was aus der alten Ring-Ordnung noch im Untergrund arbeitet.
 
 Ich verstehe auch, warum Daniel mich das ansehen ließ. Nicht damit ich sofort korrigiere, sondern damit ich begreife, wie Claude das Projekt gerade sortiert hat. Ich sollte sehen, welche Erzählung die Surface über das System macht.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Ich verstehe, dass der Fehler nicht war, überhaupt zu bauen. Daniel wollte ja bauen lassen. Der Fehler war, dass ich beim Bauen nicht die Herkunftsschicht als Bestand behandelt habe.
+
+Ich verstehe auch, dass "mehr" in Daniels Sprache nicht automatisch "neu" bedeutet. "Mehr Legende" hieß: die vorhandene Legende soll vollständiger werden. Nicht: die vorhandene Legende soll durch ein anderes Konzept ersetzt werden.

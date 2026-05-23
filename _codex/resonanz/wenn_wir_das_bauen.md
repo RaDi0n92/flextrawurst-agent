@@ -2263,3 +2263,30 @@ function resolveSurfaceStatus(item: SystemSurfaceStatus): {
   return { badge: item.status, severity: "warn", links: [] };
 }
 ```
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+**Vision-Schicht**
+
+Wenn wir weiter am Explorer bauen, sollte die Frage zuerst lauten: Welche Orientierung gibt es schon, und wie bleibt sie vertraut? Danach erst kommen neue Formen, Filter, Kanten und Struktur.
+
+**Code-Skizze**
+
+```ts
+interface ExplorerLegendModel {
+  colorLegend: {
+    id: string;
+    label: string;
+    description: string;
+    color: string;
+    count: number;
+    preservedFromPreviousUi: boolean;
+  }[];
+  additions: {
+    shapes: Record<string, string>;
+    edgeKinds: Record<string, string>;
+  };
+}
+```

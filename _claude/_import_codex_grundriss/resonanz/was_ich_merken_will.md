@@ -990,3 +990,11 @@ Die Wesen brauchen nicht erst Identitaet. Sie brauchen Bedingungen, unter denen 
 Ich will mir merken: Die rote Stelle war nicht "alles falsch", sondern ein Test, der eine alte HTML-Erwartung festhält.
 
 Ich will mir auch merken: Claude hat hier nicht chaotisch gebaut. Die Struktur ist lesbar. Die offenen Widersprüche sind eher Wachstumsränder als Fehlerkern.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Ich will mir merken: Die alte Legende war Bestand, nicht Rohmaterial.
+
+Ich will mir merken: Wenn Daniel sagt "du hast Herkunft doch selbst wichtig genannt", dann ist das keine Nebenkritik, sondern die Hauptdiagnose.

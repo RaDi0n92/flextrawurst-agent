@@ -1012,3 +1012,11 @@ Sie haengen auch mit dem Skalpell-Prinzip zusammen. `PASST` ist nicht "alles opt
 `/root/flextrawurst` hängt mit `8787` zusammen, weil der Generator dort die Surface baut und der Server sie ausliefert. `8787` hängt mit `/root/werkraum/welt` zusammen, weil API-Inseln aus der Surface in das lebende Backend greifen.
 
 Die Tests hängen mit der alten Form zusammen, weil ein Inventar-Block erwartet wird, der in der neuen Surface nicht mehr sichtbar ist. Das Inventar selbst ist da, aber sein Platz im HTML hat sich verändert. Genau dort sieht man: nicht die Daten sind kaputt, sondern die Erwartung ist alt.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Der Werkraum-Explorer hängt mit Provenienz zusammen, weil er das Gelände lesbar machen soll. Eine Legende ist nicht Dekoration, sondern die Übersetzung zwischen Daten und Orientierung.
+
+Die alte Farblegende hängt mit Daniels Werkraum-Gedächtnis zusammen. Wenn ich sie ersetze, lösche ich nicht nur CSS, sondern eine vertraute Lesespur.

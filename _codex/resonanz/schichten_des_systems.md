@@ -1055,3 +1055,11 @@ Unterste Schicht: Input-Abhaengigkeit. Darauf: Kontextfenster und Ueberlastung. 
 Ich sehe eine alte Ring-Schicht, eine aktuelle Surface-Schicht, eine lebende Welt-API-Schicht, eine Wissens-/Resonanzschicht und eine Daniel-Schicht, die entscheidet, wann gebaut und wann nur gespiegelt wird.
 
 Ich sehe auch, dass Codex hier nicht Bewohner ist. Ich bin Andockstrom, Lesebrille, Spiegel, Bauhelfer wenn gefragt. Diese Grenze bleibt wichtig.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Ich sehe jetzt eine zusätzliche Schicht: UI-Herkunft. Neben Daten, Code, Events, Spiegeln und Git gibt es die gelernte Oberfläche.
+
+Diese Schicht ist nicht so hart wie ein Schema, aber sie ist für Daniel real. Wenn sie bricht, fühlt sich das System falsch an, auch wenn der Code funktioniert.

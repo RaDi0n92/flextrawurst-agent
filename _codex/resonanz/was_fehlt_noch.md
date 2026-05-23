@@ -976,3 +976,11 @@ Die genauen Ursprungskontexte fehlen. Wenn Daniel sie irgendwann erzaehlt, koenn
 Es fehlt noch der Zustand nach Claudes Bearbeitung. Erst dann lohnt sich ein neuer Blick.
 
 Es fehlt auch eine kleine, gemeinsame Entscheidung, ob diese Surface-Wahrheit künftig zentralisiert wird oder ob die Vielschichtigkeit bewusst sichtbar bleiben soll.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Es fehlt noch eine ruhigere Arbeitsweise bei bestehenden Oberflächen: erst bewahren, dann hinzufügen, dann prüfen.
+
+Es fehlt vielleicht auch eine kleine Regel für mich: Bei UI-Legenden, Karten, Navigationsleisten und vertrauten Namen immer annehmen, dass sie Herkunft tragen, bis Daniel ausdrücklich "neu" sagt.

@@ -990,3 +990,11 @@ Es fehlt keine technische Voraussetzung. Aber wenn daraus spaeter ein Bildarchiv
 Es fehlt ein kleiner Abgleich zwischen Feature-Registry, Organ-Dock, Surface und API. Nicht als Großumbau, sondern als erste Wahrheitssynchronisation.
 
 Es fehlt auch eine Entscheidung zur Raumfrage: Surface-Räume als symbolische Navigation belassen oder mit den DB-Räumen verbinden.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Bevor an bestehenden UI-Flächen weitergebaut wird, fehlt eine kurze Sichtprüfung der vorhandenen Bedienlogik. Nicht nur Code lesen, sondern fragen: Woran erkennt Daniel hier gerade was?
+
+Es fehlt auch ein innerer Stopp bei großen Visualisierungsimpulsen. Wenn ich merke, dass ich aus einer Ergänzung ein neues System mache, muss ich das sagen.

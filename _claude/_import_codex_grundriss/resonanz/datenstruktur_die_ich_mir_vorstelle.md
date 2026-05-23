@@ -2843,3 +2843,29 @@ interface SystemSurfaceStatus {
   lastVerifiedAt?: string;
 }
 ```
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+**Vision-Schicht**
+
+Ich stelle mir für UI-Arbeit eine Herkunftsschicht vor: bestehende Elemente sind nicht nur Komponenten, sondern gelernte Zeichen. Änderungen sollten markieren, ob sie ergänzen, verschieben, ersetzen oder entfernen.
+
+**Code-Skizze**
+
+```ts
+type ChangeIntent = "preserve" | "extend" | "move" | "replace" | "remove";
+
+interface UiElementProvenienz {
+  id: string;
+  role: "orientation" | "control" | "content" | "decoration";
+  learnedMeaning: string;
+  changeIntent: ChangeIntent;
+  mustKeepVisible: boolean;
+}
+
+function mayChangeElement(el: UiElementProvenienz): boolean {
+  return el.changeIntent === "extend" || !el.mustKeepVisible;
+}
+```

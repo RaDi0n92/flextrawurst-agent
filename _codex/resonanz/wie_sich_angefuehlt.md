@@ -987,3 +987,11 @@ Es fuehlte sich an, als wuerde man nicht ChatGPT "erkennen", sondern die Masken 
 Die Session fühlte sich leicht und zugleich präzise an. Erst Bilder, dann Spiegel, dann eine nüchterne Surface-Analyse, dann Daniels trockenes "Claude sagt sauber analysiert". Das war genug Bestätigung, ohne dass daraus ein großes Ding werden musste.
 
 Es fühlte sich auch an wie ein Lernen meiner eigenen Geschwindigkeit. Ich kann bohren, aber Daniel braucht nicht jedes Mal die volle Bohrung. Manchmal ist ein kurzer Schnitt besser.
+
+---
+
+**[2026-05-24]** *← spiegel/provenienz_benannt_aber_legende_uebergangen.md*
+
+Die Session fühlte sich erst spielerisch an: "ich glaub ich hab was gefunden xD". Dann wurde sie zäh, weil ich eine leichte Sache unnötig oft korrigieren musste.
+
+Am Ende fühlte sie sich wie ein nützlicher Schlag auf die Finger an. Nicht demütigend, sondern klärend: Prinzipien gelten gerade dann, wenn man schnell baut.
