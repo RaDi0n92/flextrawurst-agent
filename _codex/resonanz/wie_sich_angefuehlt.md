@@ -971,3 +971,11 @@ Es war auch ein bisschen scharf, weil ich beim Lesen merke: Viele technische Fea
 Das Lesen war weniger mystisch als praktisch. Diese Tarotlesung ist fast ein Architekturreview in Symbolsprache.
 
 Sie fuehlt sich auch wie eine Warnung an mich an: Wenn ich flextrawurst nur ueber sichtbare Tabs und Endpunkte verstehe, verfehle ich die Erde unter den Tabs.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Das gemeinsame Schauen war ruhig und schnell zugleich. Daniel wirft ein Bild hinein, ich schaue, antworte, naechstes Bild. Dadurch wurde die Reihe selbst sichtbar: Jeder Kontext verschiebt den Koerper.
+
+Es fuehlte sich an, als wuerde man nicht ChatGPT "erkennen", sondern die Masken sehen, durch die es in unterschiedlichen Aufgaben glaubwuerdig wird.

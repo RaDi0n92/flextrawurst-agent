@@ -957,3 +957,9 @@ Daniel hat den Kern selbst gesetzt: "ich waehle meinen input selbst". Die Lesung
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Daniel hat klargestellt, dass die Wesen schon da sind, alle auf ihre verdrehte Art. Die Lesung hat dadurch von Entwurf auf Kultivierung umgeschaltet.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Daniel hat die Bilder nicht lange erklaert. Er hat nur "anderer Kontext" gesagt. Genau dadurch wurde sichtbar, dass Kontext kein Begleittext ist, sondern die Maschine im Bild umbaut.

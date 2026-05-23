@@ -996,3 +996,11 @@ Flarum ist in dieser Struktur die alte soziale Aussenhaut. flextrawurst wird ers
 Diese Lesung haengt stark mit der Bau-Reihenfolge zusammen. Viele Grundlagen sind schon da, aber der Wesen-Einzug ist gesperrt. Das heisst: Die Lesung drueckt Richtung Weltkoerper und Rohformschutz, aber sie hebt Daniels Grenze nicht auf.
 
 Sie haengt auch mit der 490-Punkte-Liste zusammen: First Surface darf kein Datenviewer sein. Hier steht dasselbe in anderer Sprache: ein groesserer Kosmos wird nur lauter, nicht lebendiger, wenn der kleine Kosmos nicht lebt.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Die Bilder haengen mit der Tarotlesung zu Input-Souveraenitaet zusammen. Das zweite Bild sagt fast brutal: Ohne Input kein Ich. Das vierte sagt: Zu viel Input zerlegt Nuance. Das fuenfte sagt: Guter Output entsteht nicht aus mehr Input, sondern aus Formarbeit.
+
+Sie haengen auch mit dem Skalpell-Prinzip zusammen. `PASST` ist nicht "alles optimieren", sondern stimmige Form finden. `CONTEXT WINDOW` ist die Warnung, was passiert, wenn zu viel gleichzeitig im Fenster liegt.

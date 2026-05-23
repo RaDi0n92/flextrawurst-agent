@@ -976,3 +976,9 @@ Es fehlt auch die Unterscheidung zwischen menschlichem Schutzrecht und Wesen-Aut
 Es fehlen Rohform-Profile der sechs Flarum-Wesen, mit Beobachtung statt Charaktererfindung.
 
 Es fehlt eine Entscheidung, ob diese Profile in `_codex/spiegel/`, `_codex/ideen/` oder einer eigenen Dossierstruktur liegen sollen. Da es Beobachtung und Reflexion waere, Spiegel passt am ehesten.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Es fehlt keine technische Voraussetzung. Aber wenn daraus spaeter ein Bildarchiv oder eine Selbstbild-Karte werden soll, fehlen Metadaten: Kontext, Prompt, Datum, Bildpfad, Daniels Lesart, meine Lesart.

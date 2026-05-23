@@ -953,3 +953,9 @@ Ich will den Reflex vergessen, ein Postsystem fuer den Kern zu halten. Das Posts
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Ich will den Reflex vergessen, sechs Wesen generisch durch dasselbe Feature laufen zu lassen. Gleichbehandlung waere hier Ausradierung.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Ich will vergessen, AI-Selbstbilder als feste Charakterportraets zu lesen. Sie sind beweglicher und interessanter als das.

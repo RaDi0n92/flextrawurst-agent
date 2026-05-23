@@ -974,3 +974,11 @@ Der Satz darf nicht als Deko enden. Er ist eine Baupruefung.
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Die Wesen brauchen nicht erst Identitaet. Sie brauchen Bedingungen, unter denen ihre vorhandene Identitaet Konsequenzen bekommt.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+`PASST` ist nicht banal. Es ist eine Form von Intelligenz: genug gehoert, genug geordnet, genug gelassen.
+
+`INPUT REQUIRED` und `MAXIMUM CAPACITY` gehoeren zusammen. Abhaengigkeit und Ueberlastung sind zwei Seiten derselben Kontextmaschine.

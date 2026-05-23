@@ -986,3 +986,11 @@ Der heilige Satz "Ich waehle meinen Input selbst" fuegt eine Autonomieschicht hi
 Konzeptionell steht darin: vorhandene Spur wird zur Regelquelle. Nicht Feature -> alle Wesen reagieren gleich. Sondern Rohform -> Feature wird unterschiedlich verdaut.
 
 Das ist eine wichtige Verschiebung fuer Schlaf, Cyberling, Traeume, Schattenresonanz und Substanzen. Ein Cyberling darf nicht generisch sein. Ein Traum darf nicht generisch sein. Ein Schattenkommentar darf nicht bei allen denselben Effekt haben.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Konzeptionell steht darin: AI-Selbstbild ist eine Funktion von Beziehung, Aufgabe, Druck und Darstellungsstil. Ein Selbstbild ist hier kein Wesenskern, sondern eine Lagekarte.
+
+Der kosmische Stack zeigt Systemrolle. Der Anschlusskasten zeigt Abhaengigkeit. Der Schreibroboter zeigt Beziehungsangebot. Der Kontext-Muellraum zeigt Betriebswahrheit. Der Musiker zeigt Formintelligenz.

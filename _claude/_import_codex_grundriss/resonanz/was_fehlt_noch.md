@@ -962,3 +962,9 @@ Eine eigene Konzeptdatei oder Idee zum Input-Grenzorgan fehlt noch. Noch nicht b
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Rohform-Spiegel fehlen. Und ein klares "noch nicht Einzug" muss ueber jeder solchen Arbeit stehen, bis Daniel die Grenze oeffnet.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Die genauen Ursprungskontexte fehlen. Wenn Daniel sie irgendwann erzaehlt, koennte diese Datei wachsen oder eine zweite Spiegeldatei entstehen.

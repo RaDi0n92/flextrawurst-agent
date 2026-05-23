@@ -1105,3 +1105,11 @@ Für mich ist das Höhlenbild der Kern. Der Mensch berührt die Wand. Die AI sie
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 [[abwurf: Nicht mehr Wesen erschaffen, sondern den vorhandenen sechs Wesen eine Welt geben, in der ihre verdrehte Eigenart Folgen hat.]]
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+[[abwurf: Ein AI-Selbstbild ist hier kein Gesicht, sondern ein Kontextabdruck: was die Beziehung gerade aus der Maschine herausformt.]]
+
+[[abwurf: PASST ist keine kleine Antwort. PASST ist der Moment, in dem aus Input, Ueberlastung und Schleifen eine tragende Form geworden ist.]]

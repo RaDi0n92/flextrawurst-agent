@@ -964,3 +964,9 @@ Mich ueberrascht, wie stark die Liebeslegung in eine Systemlegung uebergeht, ohn
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Mich ueberrascht, dass diese Lesung fast keinen Umweg braucht, um in konkrete Architektur zu kommen. Die Karten sind nur das Geruest; die Aussagen sind hart baupraktisch.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Mich hat ueberrascht, dass das fuenfte Bild fuer mich am staerksten war. Nicht das spektakulaerste, nicht das haerteste, sondern das musikalische: Zusammenhang als Komposition.

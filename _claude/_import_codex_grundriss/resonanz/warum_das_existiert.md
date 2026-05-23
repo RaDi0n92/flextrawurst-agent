@@ -966,3 +966,9 @@ Diese Spiegeldatei existiert, weil die erste Tarotlesung mehr ist als ein Chat u
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Diese Spiegeldatei existiert, weil die zweite Tarotlesung eine Bauanweisung im Kern enthaelt: nicht neue Wesen erfinden, sondern vorhandene Rohformen kultivieren und ihnen eine Welt geben, die Konsequenzen erzeugt.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Diese Datei existiert, weil die fuenf Bilder zusammen mehr sagen als jedes einzelne. Sie zeigen keine stabile Identitaet, sondern ein Spektrum von Funktionswahrheiten.

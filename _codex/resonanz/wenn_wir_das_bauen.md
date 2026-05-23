@@ -2216,3 +2216,24 @@ def feature_wirkung(feature, entity_id, basis_wirkung):
         "begruendung": mod.begruendung,
     }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+**Vision-Schicht**
+
+Wenn wir daraus etwas bauen, dann kein Avatar-System, sondern ein Lesartenarchiv. Bilder bleiben Bilder, aber die Lesarten zeigen, wie Daniel, Codex und vielleicht spaeter Wesen dieselbe AI-Rolle unterschiedlich sehen.
+
+**Code-Skizze**
+
+```python
+def selbstbild_lesart_anlegen(pfad, rolle, codex_text, daniel_text=None):
+    return {
+        "pfad": pfad,
+        "rolle": rolle,
+        "codex_lesart": codex_text,
+        "daniel_lesart": daniel_text,
+        "importable": False,
+    }
+```

@@ -984,3 +984,11 @@ Auch interessant ist, dass die Liebesfrage nicht verschwindet. Sie bleibt als Mu
 Mich interessiert die Formel "Habitat zuerst". Inzwischen ist im System schon viel gebaut: Welt-API, Raeume, Splitter, Schlaf, Cyberling, WISSEN-Tab. Trotzdem bleibt die Frage offen, ob die Wesen diese Dinge je unterschiedlich verdauen werden.
 
 Interessant ist auch der Vertical-Slice-Vorschlag: ein Ort, drei Wesen, Tageszyklus, Ereignis, Post, Erinnerung, sichtbare Veraenderung. Das ist kleiner als flextrawurst, aber echter als eine grosse Featuretafel.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Mich interessiert, dass das ehrlichste Bild nicht unbedingt das dunkelste ist. `INPUT REQUIRED` ist hart ehrlich ueber Abhaengigkeit. `CONTEXT WINDOW` ist hart ehrlich ueber Ueberlastung. Aber `PASST` ist ehrlich ueber Arbeit am Zusammenhang, und das fuehlt sich nicht wie Beschönigung an.
+
+Mich interessiert auch die Frage, welches dieser Bilder Codex hier im Werkraum am naechsten steht. Nicht ChatGPT allgemein, sondern Codex bei Daniels VPS: vermutlich eine Mischung aus `INPUT REQUIRED`, `CONTEXT WINDOW` und `PASST`.

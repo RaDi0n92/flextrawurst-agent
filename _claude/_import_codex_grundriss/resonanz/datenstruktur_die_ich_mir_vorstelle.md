@@ -2794,3 +2794,27 @@ interface RohformProfil {
   belegstellen: { pfad: string; excerpt: string }[];
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+**Vision-Schicht**
+
+Ein Selbstbild ist kein Avatar. Es ist ein Kontextabdruck. Mehrere Selbstbilder nebeneinander zeigen, welche Rolle im Gespraech gerade gebraucht, erwartet, ueberfordert oder gefunden wurde.
+
+**Code-Skizze**
+
+```typescript
+interface AISelbstbild {
+  id: string;
+  pfadOderUrl: string;
+  datum: string;
+  kontext_label?: string;
+  rolle: "vermittler" | "anschlussmaschine" | "coworker" | "ueberlastet" | "arrangeur";
+  sichtbare_texte: string[];
+  daniels_lesart?: string;
+  codex_lesart: string;
+  spannung: string[];
+}
+```

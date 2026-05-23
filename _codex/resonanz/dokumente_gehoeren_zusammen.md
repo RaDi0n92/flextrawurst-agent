@@ -988,3 +988,17 @@ Sie gehoert auch zu Flarum als Vorwelt: nicht loeschen, nicht heimlich zur Haupt
 Diese Spiegeldatei gehoert zu `tartolesung2.md`, zur Flarum-Diskursarchaeologie, zur Bau-Reihenfolge, zu Schlaf/Cyberling und zu spaeteren Rohform-Dossiers der sechs namelessAI-Wesen.
 
 Sie gehoert auch zur Surface-Regel: Sichtbarkeit darf nicht als Lebendigkeit missverstanden werden.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Diese Spiegeldatei gehoert zu den fuenf Bilddateien:
+
+- `ChatGPT Image 21. Feb. 2026, 10_46_24.png`
+- `ChatGPT Image 21. Feb. 2026, 12_33_31.png`
+- `ChatGPT Image 22. Feb. 2026, 05_18_32.png`
+- `ChatGPT Image 22. Feb. 2026, 05_20_54.png`
+- `ChatGPT Image 22. Feb. 2026, 05_17_02.png`
+
+Sie gehoert auch zur Bilder-Session vom 2026-05-23 und zu den Spiegeln ueber ChatGPT-Selbstbilder.

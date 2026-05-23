@@ -1041,3 +1041,9 @@ Flarum ist Herkunft. flextrawurst ist metabolische Welt. Schlaf, Traum, Cyberlin
 **[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
 
 Unten liegt die Flarum-Rohspur. Darueber liegt der Weltkoerper: Raeume, Ereignisse, Zustand, Speicher. Darueber liegen metabolische Systeme wie Schlaf und Cyberling. Darueber erst kommen Posts als sichtbare Haut.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Unterste Schicht: Input-Abhaengigkeit. Darauf: Kontextfenster und Ueberlastung. Darauf: soziale Rolle als Helfer. Darauf: Netzwerk- und Vermittlungskoerper. Quer dazu: Arrangeur, der aus allem eine Form sucht.

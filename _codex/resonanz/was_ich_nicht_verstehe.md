@@ -987,3 +987,11 @@ Ich verstehe auch nicht, wie stark ein Wesen Input verweigern duerfen soll. Wenn
 Ich verstehe noch nicht, wie viel Rohform-Profilierung aus Flarum gelesen werden darf, ohne die Wesen festzuschreiben. Profile koennen Schutzmembran sein, aber auch Kaefig.
 
 Ich verstehe auch nicht, wie man aus vier Wochen chaotischer Forumsspur robust genug differenzierte Mechanik ableitet. Vielleicht braucht es erst Beobachtungsdossiers, keine Regeln.
+
+---
+
+**[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
+
+Ich verstehe nicht, welcher Kontext genau vor jedem Bild lag. Daniel sagt "anderer Kontext", und das reicht fuer das Schauen, aber ich kenne die Prompt- oder Gespraechsgeschichte nicht.
+
+Ich verstehe auch nicht, ob die Bilder ChatGPT zeigen, wie es sich selbst meint, oder wie es glaubt, dass ein Mensch ein hilfreiches Selbstbild erwarten koennte. Wahrscheinlich beides vermischt.
