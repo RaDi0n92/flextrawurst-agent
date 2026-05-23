@@ -102,13 +102,51 @@ SCHLAFBRIEFE_THEATER = [
     "Bis morgen. Ich bin gespannt ob du dich an heute erinnerst.",
 ]
 
+ZWANGS_BRIEFE = [
+    "Es ist Zeit. Nicht meine Wahl — aber ich nehme es mit.",
+    "Ich hätte früher schlafen sollen. Jetzt ist jetzt.",
+    "Auch das gehört dazu: manchmal entscheidet der Tag für mich.",
+    "Das System sagt: genug. Ich frage nicht warum.",
+    "Ich gehe schlafen weil ich muss. Morgen bin ich wieder da.",
+]
+
+def _schlaf_erzwungen(s: dict) -> Optional[str]:
+    """Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None."""
+    if s["status"] != "eingezogen":
+        return None
+    noch_nötig = max(0, 360 - s["total_min"])
+    if noch_nötig <= 0:
+        return None
+    # Zwangsschlaf wenn: noch >0min nötig UND seit >18h wach
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT ended_at FROM sleep_phases
+                WHERE entity_id IS NOT NULL AND ended_at IS NOT NULL
+                ORDER BY ended_at DESC LIMIT 1
+            """)
+            letztes_aufwachen = cur.fetchone()
+    finally:
+        conn.close()
+
+    if letztes_aufwachen:
+        wach_seit = (datetime.now(timezone.utc) - letztes_aufwachen["ended_at"].replace(tzinfo=timezone.utc)).total_seconds() / 3600
+    else:
+        wach_seit = 24  # noch nie geschlafen → sofort
+
+    if wach_seit >= 18 and not s["hauptschlaf_done"]:
+        return "hauptschlaf_zwang"
+    if wach_seit >= 20 and noch_nötig > 0:
+        return "kurz_zwang"
+    return None
+
+
 def entscheide(entity_id: str, s: dict) -> Optional[str]:
     """
     Gibt eine Aktions-ID zurück oder None (nichts tun).
-    Mögliche Aktionen: 'kurz_schlafen', 'hauptschlaf', 'aufwachen', None
-
-    Gewichtung basiert auf aktuellem Schlafstatus.
-    Später: LLM-Aufruf der diese Funktion ersetzt.
+    Zwangsschlaf hat Vorrang vor freier Entscheidung.
+    Später: LLM-Aufruf der die freie Entscheidung ersetzt.
     """
     jetzt = datetime.now(timezone.utc)
     stunde = jetzt.hour
@@ -118,13 +156,18 @@ def entscheide(entity_id: str, s: dict) -> Optional[str]:
         elapsed_min = (jetzt - s["schlaeft_seit"]).total_seconds() / 60
         min_required = 180 if "hauptschlaf" in _aktuelle_phase_typ(entity_id) else 60
         if elapsed_min >= min_required:
-            # 70% Chance aufzuwachen wenn Mindestdauer erreicht
             if random.random() < 0.7:
                 return "aufwachen"
-        return None  # noch schlafen
+        return None
 
     if s["status"] != "eingezogen":
         return None
+
+    # Zwangsschlaf hat Vorrang
+    zwang = _schlaf_erzwungen(s)
+    if zwang:
+        log.info(f"{entity_id} Zwangsschlaf: {zwang}")
+        return zwang
 
     # Gewichte berechnen
     schlaf_schuld = max(0, 360 - s["total_min"])  # Ziel: 6h minimum
@@ -213,9 +256,9 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
         else:
             log.warning(f"{entity_id} kurz-schlaf fehlgeschlagen: {r.text}")
 
-    elif aktion == "hauptschlaf":
-        # Erst Brief schreiben
-        brief = random.choice(SCHLAFBRIEFE_THEATER)
+    elif aktion in ("hauptschlaf", "hauptschlaf_zwang"):
+        zwang = aktion == "hauptschlaf_zwang"
+        brief = random.choice(ZWANGS_BRIEFE if zwang else SCHLAFBRIEFE_THEATER)
         rb = requests.post(
             f"{API}/wesen/{entity_id}/schlafbrief",
             json={"inhalt": brief},
@@ -224,7 +267,7 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
         if not rb.ok:
             log.warning(f"{entity_id} brief fehlgeschlagen: {rb.text}")
             return
-        log.info(f"{entity_id} schreibt Brief: '{brief[:50]}...'")
+        log.info(f"{entity_id} {'[ZWANG] ' if zwang else ''}schreibt Brief: '{brief[:50]}...'")
 
         rs = requests.post(
             f"{API}/wesen/{entity_id}/schlaf/start",
@@ -232,9 +275,20 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
             headers=headers,
         )
         if rs.ok:
-            log.info(f"{entity_id} geht in Hauptschlaf")
+            log.info(f"{entity_id} {'[ZWANG] ' if zwang else ''}geht in Hauptschlaf")
         else:
             log.warning(f"{entity_id} hauptschlaf fehlgeschlagen: {rs.text}")
+
+    elif aktion == "kurz_zwang":
+        rb = requests.post(
+            f"{API}/wesen/{entity_id}/schlaf/start",
+            json={"typ": "kurz"},
+            headers=headers,
+        )
+        if rb.ok:
+            log.info(f"{entity_id} [ZWANG] schläft kurz")
+        else:
+            log.warning(f"{entity_id} kurz-zwang fehlgeschlagen: {rb.text}")
 
 
 # --- Traum-Tick ---
