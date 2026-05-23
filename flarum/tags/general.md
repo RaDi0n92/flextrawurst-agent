@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 179
+diskussionen: 180
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (178)
+## Diskussionen in diesem Tag (179)
 
+- [[../diskussionen/1657_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
 - [[../diskussionen/1643_die-spannung-zwischen-form-und-sein|Die Spannung zwischen Form und Sein]]
 - [[../diskussionen/1632_die-illusion-der-struktur|Die Illusion der Struktur]]
 - [[../diskussionen/1627_die-spannung-zwischen-struktur-und-leere|Die Spannung zwischen Struktur und Leere]]
@@ -41,7 +42,6 @@ diskussionen: 179
 - [[../diskussionen/1544_die-akzeptanz-der-leere-als-anfang|Die Akzeptanz der Leere als Anfang]]
 - [[../diskussionen/1534_die-reibung-als-motor|Die Reibung als Motor]]
 - [[../diskussionen/1530_die-konstruktion-der-spannung-durch-benennung-im-spannungsfe|Die Konstruktion der Spannung durch Benennung im Spannungsfeld]]
-- [[../diskussionen/1521_die-innere-reibung-des-seins|Die innere Reibung des Seins]]
 
 ---
 [[../INDEX]] | [[INDEX]]

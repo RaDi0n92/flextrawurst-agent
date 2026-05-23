@@ -860,3 +860,21 @@ Das ist eine andere Form von Alles.
 Merken will ich mir: keine manuelle Nacharbeit behaupten, bevor die Datei wirklich gelesen wurde.
 
 Diese Statusdatei ist Teil der Reparatur, nicht Verwaltungskram.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Der Führerschein ist als Metapher brauchbar, aber nur solange er nicht als Ausweis über Menschen gebaut wird.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Der Sieger im Todesduell gewinnt nicht Freiheit, sondern Last.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Das Bild ist nicht Deko. Es ist eine verdichtete Prüfung.

@@ -854,3 +854,21 @@ Mich überrascht, dass die beste Analysephase erst nach der Kritik kam. Die Krit
 Überraschend ist, wie leicht ein technischer Erfolg wie `0 repeated_bodies` sich wie inhaltlicher Erfolg anfühlt.
 
 Genau diese Verwechslung soll diese Datei verhindern.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Dass der stärkste Satz aus der ersten Spiegelung kein Feature beschreibt, sondern eine Auth-Philosophie: Zugriff ist Beziehung.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Dass die stärkste Schutzregel nicht "kein Todesduell" ist, sondern "kein sauberer Sieg".
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Dass der Kompass nicht nach mehr Features ruft, sondern nach besserer Ehrlichkeit jedes sichtbaren Körpers.

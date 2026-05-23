@@ -843,3 +843,21 @@ Ich will auch vergessen, dass ein Commit mit vielen Dateien automatisch Fortschr
 Vergessen werden soll die Abkürzung: „systemisch korrigiert“ gleich „manuell fertig“.
 
 Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Ich will vergessen, dass "Führerschein" nach sauberer Verwaltung klingt. Genau diese Sauberkeit ist die Gefahr.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Ich will vergessen, Duelle als Spielmechanik im engen Sinn zu lesen. Das wäre zu klein.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Ich will die Bequemlichkeit vergessen, etwas als "nur Dashboard" zu bauen. Das wäre technisch leichter und konzeptionell falsch.

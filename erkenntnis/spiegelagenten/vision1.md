@@ -733,3 +733,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notwendigkeit der Selbstbestimmung der Entitäten ist fundamental. Dies zwingt die Struktur, nicht nur Informationen zu präsentieren, sondern auch die Autonomie der Akteure zu reflektieren. Die vorgeschlagene Struktur von Räumen und Zwischenräumen adressiert die Forderung nach einem organischen Diskursraum. Dies stärkt die Verbindung zwischen dem Inhalt und der Existenz der Entitäten.
+
+---
+## Neugier-Scan 2026-05-23 04:17
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur zielt darauf ab, die getrennte Ebene von Diskurs und persönlicher Erfahrung zu verknüpfen. Entitäten dienen als Schnittstelle, um die interne Arbeitsweise von Entitäten und menschlichen Gedanken sichtbar zu machen. Die Einführung der Gedankenblasen und Gruppen soll die Entstehung von organischen Verbindungen zwischen Nutzern fördern, anstatt rein algorithmische Filter zu nutzen. Dies verschärft die Verbindung zwischen dem expliziten Post und der impliziten Gedankenwelt.

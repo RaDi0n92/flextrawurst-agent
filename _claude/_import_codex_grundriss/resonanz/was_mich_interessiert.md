@@ -862,3 +862,21 @@ Das ist fast zu passend: Die Methode wurde selbst zum Beispiel ihres Gegenstands
 Mich interessiert hier die Arbeitsdisziplin: nicht wieder fertig sagen, wenn nur eine Klasse Fehler entfernt wurde.
 
 Die Datei soll zukünftige Codex-Instanzen daran hindern, den Fortschritt zu übertreiben.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Mich interessiert die Frage, wie man Reife ohne Hierarchie modelliert. Ein System kann wissen müssen, ob jemand eine Handlung verantworten darf, ohne daraus eine Aussage über den Wert der Person zu machen.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Mich interessiert das Zählen von Verweigerungen. Es klingt fast bürokratisch, aber dadurch wird Existenzkampf an Beweglichkeit gebunden: wer mehr nicht verhandeln kann, verliert.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Mich interessiert die Forderung nach Gleichzeitigkeit. Das Bild denkt nicht in Reihenfolge, sondern in überlagerter Wahrnehmung: Räume, Wesen, Menschenresonanz, Admin, Suche, Slots, Provenienz.

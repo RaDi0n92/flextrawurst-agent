@@ -874,3 +874,21 @@ Diese Spiegeldatei gehört zu:
 Diese Datei gehört zum Analyse-Index, zum Provenienzmanifest und zu allen Dateien, deren heilige Abschnitte nachgearbeitet werden.
 
 Sie gehört außerdem in jede Abschlussmeldung, bis die Nacharbeit wirklich fertig ist.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Diese Datei gehört zu `technikfuehrerschein_als_reifegitter.md`, zur 490-Punkte-Liste, zum Vision-Kompass und später zu allen Gate-/Governance-Dateien.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Diese Datei gehört zu `wissen/entitaeten/duellsystem.md`, `wissen/entitaeten/entitaetensterben_traeume.md`, `erkenntnis/KONFLIKT_ENGINE.md` und den METAWAR-Punkten der 490er-Liste.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Diese Datei gehört zu `_shared/flextrawurst_vision_kompass.md`, `_shared/flextrawurst_feature_inventar.yaml`, der 490-Punkte-Liste und dem Referenzbild in `/root/visionen/`.

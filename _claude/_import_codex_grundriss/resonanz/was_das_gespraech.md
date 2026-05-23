@@ -847,3 +847,21 @@ Das ist wichtig für Flextrawurst: Admin-Resonanz ist nicht nur Inhalt. Sie kann
 Das Gespräch hat hinzugefügt, dass Daniel nicht nur Ergebnis will, sondern echte Lektüre.
 
 Diese Datei nimmt diese Forderung ernst, indem sie den noch offenen Teil sichtbar macht.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Daniels kurzer Auftrag hat aus einer schon vorhandenen Spiegeldatei eine zweite Leseschicht gemacht: nicht mehr nur was der Technikführerschein sagt, sondern ob der erste Codex-Spiegel als Baukompass taugt.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Der Neugierauftrag hat diese Datei nicht als späteres Feature gezeigt, sondern als Formgesetz für Streit.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Der Neugierauftrag hat gezeigt, dass der Vision-Kompass nicht nur beim Bauen zählt. Er färbt sogar die Auswahl und Lesart anderer Dateien.

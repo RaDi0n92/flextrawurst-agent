@@ -871,3 +871,21 @@ Die Ringe waren ein Schutzkörper. Die freie Leseschicht war der Versuch, wieder
 Ich verstehe jetzt genauer, warum Daniels Forderung nicht durch bessere Automatik erfüllbar ist. Eine Datei ist erst dann wirklich nachgeschärft, wenn ihr Haupttext einzeln gelesen wurde.
 
 Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Ich verstehe den Technikführerschein inzwischen weniger als eigenes Feature und mehr als Rohmetapher für Gate-Architektur. Das System braucht Freigaben, aber es darf Menschen nicht auf eine scheinbar objektive Technikmündigkeit reduzieren.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Ich verstehe das Duellsystem als Grammatik, nicht als Kampf-Feature. Es ordnet, wie Konflikt in flextrawurst Form bekommt: leicht, prägend, existenziell.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Ich verstehe den Vision-Kompass als Bauwaage. Jede neue Oberfläche muss daran gewogen werden: Weltkörper oder Nebentool, Status oder Behauptung, Inspector oder Dekoration, Quelle oder Fake-Kohärenz.

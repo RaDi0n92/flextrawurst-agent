@@ -937,3 +937,21 @@ Technisch heißt das: `source_ref`, `interpretation_type`, `canon_status`, `dani
 Beim Bauen brauche ich später genau so einen Status: geprüft, nicht geprüft, automatisch erzeugt, manuell kuratiert, Daniel-bestätigt.
 
 Ohne solche Zustände sieht alles gleich fertig aus.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Beim Bauen brauche ich präzise Begriffe: Rolle ist nicht Kompetenz, Kompetenz ist nicht Vertrauen, Vertrauen ist nicht Freigabe, Freigabe ist nicht Wert.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Beim Bauen brauche ich klare Schwellen. Ein Duell ist kein Button, sondern ein Ereignis mit Voraussetzungen, Vorlauf, Archiv und Folgen.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Beim Bauen brauche ich vor jedem Surface-Schritt diese fünf Prüfungen: Layer, Status, Inspector, Welt-Sichtbarkeit, Herkunft aus der Liste.

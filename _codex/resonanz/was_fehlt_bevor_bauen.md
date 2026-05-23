@@ -862,3 +862,21 @@ Es fehlt außerdem eine kleine UI-Form für diesen Analysekörper. Nicht als Wel
 Es fehlt die manuelle Nacharbeit der restlichen Analyse-Dateien.
 
 Außerdem fehlt eine finale Prüfung, ob die nachgearbeiteten heiligen Abschnitte wirklich mehr leisten als Warnung und Provenienzschutz.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Es fehlt eine klare Matrix, welche Handlungen überhaupt Gate-Logik brauchen und welche bewusst offen bleiben müssen.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Es fehlen Statusmaschinen, Einverständnis-/Freigabelogik, Archivobjekte und die Frage, wie ein Wesen den aufgenommenen Verlierer in sich trägt.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Für viele Slots fehlt noch die genaue Quelle/Blockade-Formulierung. Sichtbar deaktiviert reicht nicht; der Grund muss verständlich sein.

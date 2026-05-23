@@ -852,3 +852,21 @@ Es fehlt außerdem Daniels Entscheidung, welche Teile dieses Analysekörpers wir
 Es fehlt fast alles der manuellen Nacharbeit.
 
 Fertig sind nur die ersten drei Dateien. Als nächstes kommt `02_wesenprofile/`, beginnend mit den sechs Basisprofilen.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Eine Sprache für verweigerte Handlung, die nicht nach Strafe klingt.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Eine klare Entscheidung, ob METAWAR zuerst als Archiv-/Replay-System gebaut wird, bevor irgendetwas live sein darf.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Ein genauer Surface-Audit: welche sichtbaren Körper haben schon Status, Inspector, Quelle und Grenze, und welche tun nur so.

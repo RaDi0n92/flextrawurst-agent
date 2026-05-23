@@ -856,3 +856,21 @@ Sie soll auch daran erinnern, dass Daniel nicht nur Output will. Er will, dass C
 Diese Datei existiert, weil sonst unklar bleibt, welche Dateien tatsächlich einzeln gelesen wurden.
 
 Sie ist ein kleiner Buchhaltungsmechanismus gegen Selbsttäuschung.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Diese Datei existiert, weil Daniel nach drei Spiegeldateien gefragt hat und der erste der drei gelesenen Texte bereits ein Codex-Spiegel war. Statt ihn zu ersetzen, bekommt er eine Nachlese.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Die Datei existiert, um eine Vision aus mehreren Visionstexten in eine handhabbare Konfliktstruktur zu kondensieren.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Sie existiert, damit Claude und Codex denselben Kompass benutzen, ohne ihre eigenen Reflexionen zu vermischen.

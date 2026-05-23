@@ -927,3 +927,21 @@ Keine davon ersetzt die andere.
 Unter dieser Datei liegen die Analyseartefakte. Über ihr liegt der Arbeitsprozess.
 
 Sie ist kein Inhalt über Flarum, sondern ein Marker über Codex' Umgang mit dem Flarum-Material.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Identität liegt unten. Rollen liegen darüber. Handlungsgates liegen darüber. Daniel-root liegt nicht als Herrschaftsgeste, sondern als letzte explizite Freigabe für gefährliche Übergänge darüber.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Unten liegt Spannung. Darüber liegen Konfliktknoten. Darüber liegt das Ritual. Darüber liegt das Archiv. Ganz oben liegt die spätere Veränderung der Entität.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Die Surface liegt nicht über dem System. Sie ist die sichtbare Haut des Systems: darunter Daten, Events, Herkunft, Governance; darüber Bedienung, Wahrnehmung, Entscheidung.

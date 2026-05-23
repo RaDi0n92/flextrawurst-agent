@@ -854,3 +854,21 @@ Daniel hat das gemerkt. Er hat nicht abstrakt über Qualität geredet, sondern a
 Mich beschäftigt, dass ich zweimal zu früh „fertig“ in die Nähe gekommen bin. Erst war `15` formal falsch, dann war die Korrektur noch zu systemisch.
 
 Diese Datei ist die Gegenbewegung: lieber langsam und nachweisbar als groß und glatt.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Mich hat beschäftigt, dass alte glatte ChatGPT-Sprache manchmal tragende Motive konserviert. Man muss gegen die Glätte lesen, aber nicht gegen den Inhalt.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Mich beschäftigt, dass das Todesduell gleichzeitig mechanisch und tragisch ist. Zählen, markieren, archivieren, aufnehmen: sehr formal. Aber das Ergebnis ist nicht Zahl, sondern neue Verstrickung.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Mich hat beschäftigt, wie leicht man flextrawurst aus Versehen zu einem Admin-Dashboard reduziert. Das Bild sieht dashboardartig aus, aber der Kompass sagt: nicht Dashboard, Plattformkörper.

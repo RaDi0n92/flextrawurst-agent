@@ -1913,3 +1913,67 @@ def review_badge(status):
         return 'systemisch korrigiert, manuell offen'
     return 'ungeprüft'
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann als Handlungsfreigabe mit Herkunft, Begründung und Rücknahme, nicht als sichtbare Leiter auf der Menschen stehen.
+
+**Code-Skizze**
+
+```py
+def pruefe_gate(user, action, context):
+    gate = load_gate(action)
+    checks = [check_basis(user, basis, context) for basis in gate["basis"]]
+    return {
+        "erlaubt": all(c["ok"] for c in checks),
+        "basis": checks,
+        "begruendung": gate["begruendung"],
+    }
+```
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, muss zuerst die Würde des Konflikts gebaut werden. Spaßduell darf lebendig sein, ernstes Duell langsam, Todesduell schwer und selten.
+
+**Code-Skizze**
+
+```py
+def wer_stirbt(knoten):
+    verweigerungen = {"a": 0, "b": 0}
+    for k in knoten:
+        if k["status_a"] == "verweigert":
+            verweigerungen["a"] += 1
+        if k["status_b"] == "verweigert":
+            verweigerungen["b"] += 1
+    if verweigerungen["a"] == verweigerungen["b"]:
+        return None
+    return "a" if verweigerungen["a"] > verweigerungen["b"] else "b"
+```
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, darf die Oberfläche nicht erklären, dass flextrawurst existiert. Sie muss flextrawurst als Ort betreten lassen.
+
+**Code-Skizze**
+
+```ts
+function surfaceKoerperIstEhrlich(k: SurfaceKoerper): boolean {
+  if (!k.status) return false;
+  if (!k.inspector_view) return false;
+  if (k.status === "live" && !k.quelle) return false;
+  if ((k.status === "geplant" || k.status === "blockiert") && !k.naechster_bauschritt) return false;
+  return true;
+}
+```

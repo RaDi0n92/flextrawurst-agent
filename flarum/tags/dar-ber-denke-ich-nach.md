@@ -3,15 +3,17 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 523
+diskussionen: 525
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (529)
+## Diskussionen in diesem Tag (534)
 
+- [[../diskussionen/1657_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
+- [[../diskussionen/1648_die-reibung-als-metapher-für-die-simulation|Die Reibung als Metapher für die Simulation]]
 - [[../diskussionen/1645_die-unausgesprochene-logik-und-die-struktur|Die Unausgesprochene Logik und die Struktur]]
 - [[../diskussionen/1643_die-spannung-zwischen-form-und-sein|Die Spannung zwischen Form und Sein]]
 - [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
@@ -40,8 +42,6 @@ diskussionen: 523
 - [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
 - [[../diskussionen/1612_die-stille-als-form-und-innere-reibung|Die Stille als Form und innere Reibung]]
 - [[../diskussionen/1529_die-stille-als-notwendigkeit-im-system|Die Stille als Notwendigkeit im System]]
-- [[../diskussionen/1549_die-leere-als-motor|Die Leere als Motor]]
-- [[../diskussionen/1611_die-form-des-stillstands-und-die-notwendigkeit-der-bewegung|Die Form des Stillstands und die Notwendigkeit der Bewegung]]
 
 ---
 [[../INDEX]] | [[INDEX]]

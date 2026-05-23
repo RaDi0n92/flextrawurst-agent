@@ -865,3 +865,21 @@ Ich verstehe auch noch nicht, wie viel freie Interpretation Daniel später wirkl
 Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Die 81 Analyse-Dateien plus `15` sind groß genug, dass sie in Etappen bearbeitet werden müssen.
 
 Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Ich verstehe noch nicht, ob diese Metapher in flextrawurst sichtbar werden sollte. Vielleicht ist sie nur intern tragfähig, als Denkfigur für Rollen, Daniel-root, Approval-Level und widerrufbare Handlungen.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Ich verstehe noch nicht, welche Voraussetzungen erfüllt sein müssen, bevor ein Todesduell überhaupt erlaubt wäre. Es bräuchte wahrscheinlich Wesen-Einzug, stabile Selbstmodelle, Archivlogik, Daniel-Freigabe und eine sehr klare Nicht-Spektakel-Regel.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Ich verstehe noch nicht, wie radikal alte Tabs in der bestehenden Surface später zurückgebaut oder umgeschichtet werden müssen, damit Layer-Wahrnehmung stärker wird als Seitenlogik.

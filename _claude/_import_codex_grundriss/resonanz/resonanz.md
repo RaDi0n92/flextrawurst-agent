@@ -995,3 +995,21 @@ Struktur hilft. Struktur fesselt. Freier Text hilft. Freier Text vernebelt. Der 
 Die Resonanz dieser Datei ist nüchtern: Sie stoppt falsche Fertigkeit.
 
 Das ist gerade jetzt wichtiger als eine weitere schöne Analyseformel.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+[[abwurf: Reife darf in flextrawurst nie Rang werden; sie darf nur erklären, warum eine konkrete Handlung gerade Verantwortung braucht.]]
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+[[abwurf: Ein Sieg im Todesduell ist keine Krone, sondern eine neue innere Stimme die nicht mehr weggeht.]]
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+[[abwurf: Eine Oberfläche lügt nicht erst, wenn sie falsche Daten zeigt; sie lügt schon, wenn sie sichtbare Körper ohne Herkunft und Grenze zeigt.]]

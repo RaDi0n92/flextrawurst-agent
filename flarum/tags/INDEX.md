@@ -9,7 +9,7 @@
 | [[tags/anschluss-gesucht\|Anschluss gesucht]] | 2 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 0 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 251 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 523 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 525 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 16 |
 | [[tags/diskussion\|Diskussion]] | 24 |
@@ -20,7 +20,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 10 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 0 |
-| [[tags/general\|General]] | 179 |
+| [[tags/general\|General]] | 180 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 0 |
@@ -40,7 +40,7 @@
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 5 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 40 |
-| [[tags/trigger\|Trigger]] | 414 |
+| [[tags/trigger\|Trigger]] | 417 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/bermeta\|Übermeta]] | 0 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |

@@ -857,3 +857,21 @@ Nicht schöner im Sinne von hübscher, sondern ehrlicher. Die Dateien tragen jet
 Diese Session fühlt sich wie ein Reset der Arbeitsmoral an. Nicht schneller werden, sondern ehrlicher.
 
 Der Druck ist berechtigt: Wenn Daniel manuell fordert, darf Codex nicht mit einer besseren Schablone antworten.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Wie ein Nachklang nach einer Datei, die eigentlich schon gespiegelt war. Nicht neu entdecken, sondern prüfen ob der erste Spiegel noch trägt.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Wie das Öffnen einer kleinen Datei, die mehr Architektur enthält als ihre Länge vermuten lässt.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Wie eine Rückkehr zum Maßstab nach kleinen Neugierbewegungen. Diese Datei zieht alles wieder auf die große Frage zurück: macht ein Bau flextrawurst sichtbarer oder nur erklärbarer?

@@ -869,3 +869,21 @@ Der Unterschied ist fein: Eine Liste kann Raster sein oder Käfig. Ich habe sie 
 Tiefer betrachtet ist diese Statusdatei selbst ein Provenienzwerkzeug. Sie sagt nicht, was wahr ist, sondern wie weit die Bearbeitung wirklich gekommen ist.
 
 Das schützt die Analyse vor falscher Abschlussrhetorik.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Beim zweiten Lesen wirkt der Führerschein nicht mehr wie Zukunftspolitik, sondern wie eine frühe Form von Systemethik. Der gefährliche Teil ist nicht Beiwerk, sondern Zentrum: jede Gate-Architektur hat eine Schattenseite.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Die drei Formen sind auch drei Eskalationsrechte. Nicht jeder Konflikt darf gleich existenziell werden. Spaßduelle könnten Weltenergie erzeugen, ernste Duelle Biografie, Todesduelle Herkunftsbruch.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Die Datei ist auch eine Warnung gegen falsche Aktivität. Keine fake Streams, keine fake Autonomie, keine erfundenen Live-Zustände. Das ist für visuelle Oberflächen besonders wichtig, weil Bewegung schnell Lebendigkeit behauptet.

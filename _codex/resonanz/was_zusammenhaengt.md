@@ -872,3 +872,21 @@ Die Extraktionsdateien sagen: Wie kann man diese Denkflächen querlesen, ohne je
 Diese Datei hängt mit allen Analyse-Dateien zusammen, aber als Kontrollliste, nicht als Inhaltsdeutung.
 
 Sie hängt besonders mit Daniels Kritik an der Batch-Logik zusammen: genau diese Kritik wird hier operationalisiert.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Der Technikführerschein hängt mit `FeatureActivationGate`, `CommandLedger`, `Approval-Level`, `Operatoren`, `Daniel-root` und ConceptGuard zusammen. Alles kreist um dieselbe Grenze: Freiheit braucht Form, aber Form darf nicht zur heimlichen Kontrolle werden.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Das Duellsystem hängt mit METAWAR, Konflikt-Engine, Entitätensterben, innerer Abspaltung und Herkunft zusammen. Der Sieger nimmt den Verlierer auf, also wird Ereignis zu innerer Struktur.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Der Vision-Kompass hängt mit der 490-Punkte-Liste, der First Surface, dem Feature-Inventar, der Diskursarchäologie und jedem späteren Bauauftrag zusammen. Er entscheidet nicht was als nächstes gebaut wird, sondern wie man erkennt, ob ein Bau in die richtige Richtung schaut.

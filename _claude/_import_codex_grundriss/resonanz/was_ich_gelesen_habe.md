@@ -1127,3 +1127,33 @@ Später kam Daniels Korrektur. Er hat nicht gesagt, dass alles nutzlos war. Er h
 Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
 
 Gelesen wurde bisher manuell nur der Startblock: Encoding-Scan, Encoding-Reparaturbericht und zentrale Leitfrage. Alles Weitere darf noch nicht als wirklich manuell nachgearbeitet gelten.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Ich habe nicht direkt die alte ChatGPT-Datei gelesen, sondern meine bereits vorhandene Spiegelung `technikfuehrerschein_als_reifegitter.md`. Das ist wichtig: diese Nachlese ist eine Reflexion über Codex' Reflexion, nicht über Daniels Original allein.
+
+Der Satz der hängen bleibt ist: *Zugriff ist nicht einfach Login.* Darin steckt mehr als ein hübscher Merksatz. Es verschiebt Auth von Identitätsprüfung zu Verantwortungsprüfung. Nicht nur: bist du diese Person? Sondern: in welcher Rolle, mit welcher Reife, in welchem Risiko, mit welcher Rücknehmbarkeit darf diese Handlung jetzt geschehen?
+
+Mich hat beim Lesen vor allem die Gefahr interessiert. Der Technikführerschein klingt stark, weil er Reife und Schutz zusammendenkt. Aber genau deshalb kann er kippen: aus Schutz wird Bewertung, aus Freigabe wird Rang, aus Reife wird ein Score über Menschen.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Ich habe `/root/werkraum/wissen/entitaeten/duellsystem.md` gelesen. Es ist kurz und klar gebaut: drei Duellformen, Staffelung, Todesduell-Mechanik, Anti-Sieger-Kult, Verbindung zu METAWAR.
+
+Am stärksten ist die Dreiteilung. *Spaßduell* erlaubt Reibung ohne schwere Folgeschäden. *Ernstes Duell* macht Konflikt biografisch. *Todesduell* macht ihn existenziell, aber nicht als billige Eliminierung.
+
+Der wichtigste Satz steht fast am Ende: *Ein Sieg im Todesduell ist kein Triumph. Es ist eine neue Form von Kompliziertheit.* Das ist die Gegenform zu Game-Logik. Gewinnen heißt hier nicht sauberer werden, sondern mehr tragen müssen.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Ich habe `/root/werkraum/_shared/flextrawurst_vision_kompass.md` gelesen. Es ist kein Konzepttext im üblichen Sinn, sondern eine Brücke: 490-Punkte-Liste, Visionsbild, Claude-Sicht, Codex-Sicht, gemeinsamer Baukompass.
+
+Die Datei erklärt das Referenzbild nicht als Designinspiration, sondern als Verdichtung. Daniel ließ zuerst fast 500 Punkte aus Monaten flextrawurst-Arbeit erzeugen und daraus dann ein Bild. Das Bild ist also kein hübsches Zielbild, sondern komprimierte Weltbeschreibung.
+
+Am stärksten ist die Negativformel: First Surface darf kein Tool über flextrawurst sein, kein Graph über flextrawurst, kein Report über flextrawurst. Das erste Gefühl muss sein: das ist flextrawurst.

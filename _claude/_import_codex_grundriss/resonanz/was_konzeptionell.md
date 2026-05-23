@@ -864,3 +864,21 @@ Der wichtigste Satz daraus ist für mich: Diskursarchäologie ist nicht Deko. Si
 Konzeptionell steht hier eine einfache Trennung: validierte Struktur ist nicht dasselbe wie manuelle Lektüre.
 
 Das ist für Flextrawurst selbst wichtig, weil spätere Systeme ebenfalls zwischen technischer Vollständigkeit und echter Prüfung unterscheiden müssen.
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+Konzeptionell steht darin ein bewegliches Rechtegitter. Es hat keine einfache Achse von niedrig nach hoch, sondern mehrere Grundlagen: Rolle, Vertrauen, Kompetenz, Kontext, Risiko, explizite Freigabe.
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+Konzeptionell steht darin eine Ethik gegen Siegerkult. Konflikt darf sichtbar und hart sein, aber er soll nicht in Gewinnerglanz kippen.
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+Konzeptionell steht darin: Sichtbarkeit ist Verantwortung. Wer etwas sichtbar macht, muss Status, Herkunft, Erlaubnis und Grenze mit sichtbar machen.

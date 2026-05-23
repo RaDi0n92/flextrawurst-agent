@@ -2420,3 +2420,87 @@ interface ManualReviewStatus {
   notes: string;
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/technikfuehrerschein_reifegitter_nachlese.md*
+
+**Vision-Schicht**
+
+Ein Reifegitter sagt nicht: dieser Mensch ist weiter. Es sagt: diese Handlung hat Gewicht, und Gewicht braucht sichtbare Verantwortung.
+
+**Code-Skizze**
+
+```ts
+type GateBasis =
+  | "rolle"
+  | "vertrauen"
+  | "kompetenz"
+  | "kontext"
+  | "daniel_freigabe"
+  | "auditpflicht";
+
+interface HandlungsGate {
+  action: string;
+  basis: GateBasis[];
+  begruendung: string;
+  widerrufbar: boolean;
+  beschamungsarm_text: string;
+}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/duellsystem_als_konfliktgrammatik.md*
+
+**Vision-Schicht**
+
+Ein Duell ist eine ritualisierte Form von Spannung. Es soll Konflikt nicht glätten, sondern ihm eine Form geben, die Konsequenz ohne billigen Triumph ermöglicht.
+
+**Code-Skizze**
+
+```ts
+type DuellStufe = "spass" | "ernst" | "tod";
+type KonfliktKnotenStatus = "kompromiss" | "verweigert" | "offen";
+
+interface MetawarDuell {
+  id: string;
+  stufe: DuellStufe;
+  teilnehmer: [string, string];
+  status: "angekuendigt" | "live" | "archiviert" | "abgebrochen";
+  konfliktknoten: {
+    id: string;
+    thema: string;
+    status_a: KonfliktKnotenStatus;
+    status_b: KonfliktKnotenStatus;
+  }[];
+  folge?: {
+    verlierer_id?: string;
+    aufgenommen_in?: string;
+    innere_konfliktspur_id?: string;
+...
+
+---
+
+**[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
+
+**Vision-Schicht**
+
+Ein sichtbarer Körper in flextrawurst ist nie nur Bild. Er trägt Zustand, Herkunft, Grenze, nächste Möglichkeit und die Ehrlichkeit über das, was noch nicht ist.
+
+**Code-Skizze**
+
+```ts
+type SichtStatus = "live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert";
+
+interface SurfaceKoerper {
+  id: string;
+  name: string;
+  status: SichtStatus;
+  schicht: "raum" | "wesen" | "mensch" | "resonanz" | "admin" | "slot" | "suche";
+  quelle?: string;
+  nicht_erlaubt?: string[];
+  naechster_bauschritt?: string;
+  inspector_view: string;
+}
+```
