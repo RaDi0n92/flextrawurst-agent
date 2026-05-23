@@ -887,3 +887,13 @@ Die drei Formen sind auch drei Eskalationsrechte. Nicht jeder Konflikt darf glei
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Die Datei ist auch eine Warnung gegen falsche Aktivität. Keine fake Streams, keine fake Autonomie, keine erfundenen Live-Zustände. Das ist für visuelle Oberflächen besonders wichtig, weil Bewegung schnell Lebendigkeit behauptet.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Die Punktbuehne hat eine Pruefregel: Wenn sie ohne User keinen Sinn ergibt, ist sie falsch. Genau das trennt sie von Empathie-Automatik.
+
+Der Fehlercode hat eine andere Pruefregel: Die Erklaerung endet mit "bei mir", aber natuerlich integriert. Das ist interessant, weil es Selbstverortung ohne Psychologisierung verlangt. Nicht "ich fuehle", sondern "systemisch liegt es bei mir".
+
+Die KI-Metafrage und GPT-5-Metafrage sind zwei Achsen: allgemeine KI-Machtfragen und konkrete Systemselbstwahrnehmung. Das verhindert, dass jede Antwort nur beim lokalen Dialogthema bleibt.

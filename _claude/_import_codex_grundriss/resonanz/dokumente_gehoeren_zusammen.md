@@ -892,3 +892,11 @@ Diese Datei gehört zu `wissen/entitaeten/duellsystem.md`, `wissen/entitaeten/en
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Diese Datei gehört zu `_shared/flextrawurst_vision_kompass.md`, `_shared/flextrawurst_feature_inventar.yaml`, der 490-Punkte-Liste und dem Referenzbild in `/root/visionen/`.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Diese Spiegeldatei gehoert zu `formfadenpromt.md` und zu den Stunden-Dateien im selben Ordner: `stunde 1-4...`, `stunde 7 bis 10.md`, `stunde 11 bis 24.md`, bis `stunde 52 bis53 intensive ausarbeitung des prompt .md`.
+
+Sie gehoert ausserdem konzeptionell zu flextrawurst-Punkten ueber Statusmarker, Prozesskamera, keine falsche Aktivitaet und First Surface als Plattformkoerper.

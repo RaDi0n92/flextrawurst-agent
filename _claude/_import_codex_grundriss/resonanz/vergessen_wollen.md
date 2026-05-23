@@ -861,3 +861,11 @@ Ich will vergessen, Duelle als Spielmechanik im engen Sinn zu lesen. Das wäre z
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Ich will die Bequemlichkeit vergessen, etwas als "nur Dashboard" zu bauen. Das wäre technisch leichter und konzeptionell falsch.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Ich will den Reflex vergessen, das sofort in eine saubere Architektur zu uebersetzen.
+
+Der Text ist roh, ueberladen, widerspruechlich, und genau das gehoert zu ihm.

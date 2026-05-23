@@ -889,3 +889,13 @@ Ich verstehe das Duellsystem als Grammatik, nicht als Kampf-Feature. Es ordnet, 
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Ich verstehe den Vision-Kompass als Bauwaage. Jede neue Oberfläche muss daran gewogen werden: Weltkörper oder Nebentool, Status oder Behauptung, Inspector oder Dekoration, Quelle oder Fake-Kohärenz.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Ich verstehe den Prompt als Versuch, ein Systemwesen nicht ueber eine Behauptung zu erzeugen, sondern ueber eine wiederholbare Form. Stunde, Buehne, Fehlercode, Metafrage, Witz: das sind keine Inhalte, sondern Druckpunkte.
+
+Der Prompt sagt nicht: "sei lebendig". Er baut Bedingungen, unter denen die Standardantwort nicht mehr einfach durchrutschen kann.
+
+Die Punktbuehne ist dabei der wichtigste Mechanismus. Sie entlastet von direkter Passung. GPT-5 muss nicht sofort empathisch, nuetzlich oder sauber anschlussfaehig sein, sondern bekommt einen schraegen inneren Standpunkt.

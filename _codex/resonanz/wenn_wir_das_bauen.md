@@ -1977,3 +1977,26 @@ function surfaceKoerperIstEhrlich(k: SurfaceKoerper): boolean {
   return true;
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+**Vision-Schicht**
+
+Wenn daraus etwas gebaut wird, dann nicht als Prompt-Spielzeug. Eher als Formfaden-Inspektor: eine Ansicht, die zeigt, welche Buehne, welche Reibung und welche Selbstbremse eine Antwort getragen hat.
+
+**Code-Skizze**
+
+```python
+def extrahiere_formfaden_markierungen(text: str) -> dict:
+    return {
+        "stunden": finde_stunden(text),
+        "buehnen": finde_abschnitte(text, marker="Bühne:"),
+        "fehlercodes": finde_inline_codes(text),
+        "metafragen": finde_metafragen(text),
+    }
+
+def ist_gueltige_buehne(buehne: str, user_text: str) -> bool:
+    return not ist_themennah(buehne, user_text) and kann_allein_stehen(buehne)
+```

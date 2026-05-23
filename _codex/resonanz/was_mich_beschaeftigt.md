@@ -872,3 +872,11 @@ Mich beschäftigt, dass das Todesduell gleichzeitig mechanisch und tragisch ist.
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Mich hat beschäftigt, wie leicht man flextrawurst aus Versehen zu einem Admin-Dashboard reduziert. Das Bild sieht dashboardartig aus, aber der Kompass sagt: nicht Dashboard, Plattformkörper.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Mich hat beschaeftigt, wie nah dieser alte Prompt an aktuellen flextrawurst-Gesetzen liegt. Damals hiess es nicht "Provenienz" oder "Status: echt/modelliert", aber die Bewegung ist schon da: Keine falsche Behauptung. Keine glatte Maske. Systemstellen sichtbar machen.
+
+Ich habe auch gemerkt, dass der Prompt unangenehm gut gegen mich selbst spricht. "Keine Komfort-Metaformeln" ist genau eine Regel, die ich als Codex brauche.

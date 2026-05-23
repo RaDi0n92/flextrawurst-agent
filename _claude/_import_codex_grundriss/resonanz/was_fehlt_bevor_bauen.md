@@ -880,3 +880,11 @@ Es fehlen Statusmaschinen, Einverständnis-/Freigabelogik, Archivobjekte und die
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Für viele Slots fehlt noch die genaue Quelle/Blockade-Formulierung. Sichtbar deaktiviert reicht nicht; der Grund muss verständlich sein.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Bevor man daraus ein Feature baut, muessten die Stundenverlaeufe gelesen werden. Der Prompt allein ist Bauplan; die Stunden zeigen, ob er getragen hat.
+
+Außerdem muesste klar sein, ob das ein internes Analysewerkzeug bleibt oder eine sichtbare Oberflaechenform wird. Sichtbar fuer Menschen waere es reizvoll, aber auch schnell zu laut.

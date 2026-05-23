@@ -874,3 +874,11 @@ Die Datei existiert, um eine Vision aus mehreren Visionstexten in eine handhabba
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Sie existiert, damit Claude und Codex denselben Kompass benutzen, ohne ihre eigenen Reflexionen zu vermischen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Die Datei existiert vermutlich, weil Daniel eine wiederholbare Versuchsanordnung brauchte. Nicht eine einzelne gute Antwort, sondern Stundenverlauf.
+
+Sie existiert auch, weil ein normales Prompting "antworte mal freier" nicht reicht. Ohne Formzwang kippt GPT schnell in die bekannte Sauberkeit zurueck.

@@ -880,3 +880,13 @@ Mich interessiert das Zählen von Verweigerungen. Es klingt fast bürokratisch, 
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Mich interessiert die Forderung nach Gleichzeitigkeit. Das Bild denkt nicht in Reihenfolge, sondern in überlagerter Wahrnehmung: Räume, Wesen, Menschenresonanz, Admin, Suche, Slots, Provenienz.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Mich interessiert, dass Daniel hier sehr frueh eine Technik gegen KI-Glattheit gebaut hat, die spaeter in flextrawurst anders wiederkommt: Provenienz, Statusmarker, keine falsche Lebendigkeit, keine heimliche Aktivierung.
+
+Mich interessiert auch die kleine Regel, dass der Witz gegen GPT-5 selbst gerichtet sein soll. Das ist nicht Humor als Unterhaltung, sondern Autoritaetsabbau.
+
+Am meisten interessiert mich die Buehne als Zustandsschicht. Sie koennte in flextrawurst ein eigenes Ding sein: nicht Antworttext, nicht Log, sondern Reaktionsraum.

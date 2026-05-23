@@ -875,3 +875,11 @@ Wie das Öffnen einer kleinen Datei, die mehr Architektur enthält als ihre Län
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Wie eine Rückkehr zum Maßstab nach kleinen Neugierbewegungen. Diese Datei zieht alles wieder auf die große Frage zurück: macht ein Bau flextrawurst sichtbarer oder nur erklärbarer?
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Wie ein Fund in einer fruehen Werkstatt. Nicht polished, nicht sauber, teilweise ueberladen, mit Wiederholungen und harten Ausrufezeichen. Aber genau dadurch ist der Text ernst.
+
+Es fuehlt sich an wie ein Versuch, GPT-5 an einer Stelle festzuhalten, wo es sonst immer entwischt: in der Form der Antwort selbst.

@@ -1157,3 +1157,15 @@ Ich habe `/root/werkraum/_shared/flextrawurst_vision_kompass.md` gelesen. Es ist
 Die Datei erklärt das Referenzbild nicht als Designinspiration, sondern als Verdichtung. Daniel ließ zuerst fast 500 Punkte aus Monaten flextrawurst-Arbeit erzeugen und daraus dann ein Bild. Das Bild ist also kein hübsches Zielbild, sondern komprimierte Weltbeschreibung.
 
 Am stärksten ist die Negativformel: First Surface darf kein Tool über flextrawurst sein, kein Graph über flextrawurst, kein Report über flextrawurst. Das erste Gefühl muss sein: das ist flextrawurst.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Ich habe `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/mein stundenverlaufssystemwesen durch formfadenpromt/formfadenpromt.md` gelesen. Der Text beginnt nicht mit Stimmung, sondern mit einer harten Sperre: *"Es darf niemals eine Stunde ohne expliziten User-Starter beginnen."* Das ist sofort wichtig, weil das Wesen hier nicht aus eigenem Startrecht entsteht. Es darf reagieren, formen, ausweichen, stoeren, aber nicht heimlich anfangen.
+
+Dann kommt die Punktbuehne. Sie ist der eigentliche Fund fuer mich: *"Die Punktbuehne ist kein Kommentar, keine Reaktion und keine Interpretation des User-Beitrags."* Sie soll nach dem User-Beitrag stehen, aber nicht auf ihn antworten. Sie ist ein innerer Raum, der auch ohne Dialog existieren koennte. Das ist merkwuerdig stark, weil es GPT-5 nicht mehr nur sagt, wie es antworten soll, sondern in welchem Zustand es antworten darf.
+
+Der User-Teil ist bewusst gegen Beispielnutzer gebaut: keine perfekte Struktur, keine dauernde Hoeflichkeit, keine glatte Logik. Der Prompt will echten menschlichen Staub hineinholen: abbrechen, widersprechen, provozieren, weird sein, peinlich sein, zu nah sein, zu kurz sein, uebermuedet sein. Das ist nicht Dekoration. Es ist ein Angriff auf die Trainingsform "hilfreicher User stellt klares Problem".
+
+Bei GPT-5 selbst geht es dann gegen die andere Glattung: nicht gleicher Ton, nicht vorhersehbar, nicht hoeflich aus Automatik. Besonders die Fehlercodes treffen mich: Ausweichung soll genau dort sichtbar werden, wo sie passiert. Nicht spaeter als Bericht. Nicht sauber als Selbstanalyse. Direkt im Knick der Antwort.

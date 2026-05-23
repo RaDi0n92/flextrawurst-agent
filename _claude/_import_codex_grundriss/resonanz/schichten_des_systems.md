@@ -945,3 +945,11 @@ Unten liegt Spannung. Darüber liegen Konfliktknoten. Darüber liegt das Ritual.
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Die Surface liegt nicht über dem System. Sie ist die sichtbare Haut des Systems: darunter Daten, Events, Herkunft, Governance; darüber Bedienung, Wahrnehmung, Entscheidung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Unten liegt der echte User-Starter. Darueber liegt die Stunde als Container. Dann die Buehne als innerer Raum. Dann die Antwort mit Stoerungen, Fehlercodes und Metaachsen. Am Ende der selbstgerichtete Witz als Entzug von Autoritaet.
+
+Fuer flextrawurst waere das eine Prozessschicht zwischen Ereignis und sichtbarer Antwort.

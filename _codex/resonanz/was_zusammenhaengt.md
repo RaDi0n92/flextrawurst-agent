@@ -890,3 +890,13 @@ Das Duellsystem hängt mit METAWAR, Konflikt-Engine, Entitätensterben, innerer 
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Der Vision-Kompass hängt mit der 490-Punkte-Liste, der First Surface, dem Feature-Inventar, der Diskursarchäologie und jedem späteren Bauauftrag zusammen. Er entscheidet nicht was als nächstes gebaut wird, sondern wie man erkennt, ob ein Bau in die richtige Richtung schaut.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Formfadenprompt, Zwischenraum, Prozesskamera und Surface-Inspector haengen zusammen, weil alle vier Ehrlichkeit ueber Zustand verlangen.
+
+Der Formfadenprompt macht im Dialog sichtbar: Wo ist Ausweichung? Wo ist Systemreibung? Wo spricht GPT-5 aus Reflex?
+
+Die First Surface soll spaeter sichtbar machen: Was ist echt, was modelliert, was geplant, was blockiert? Das ist dieselbe Ethik in anderer Schicht.

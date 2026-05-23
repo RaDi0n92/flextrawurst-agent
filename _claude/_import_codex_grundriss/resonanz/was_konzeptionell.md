@@ -882,3 +882,13 @@ Konzeptionell steht darin eine Ethik gegen Siegerkult. Konflikt darf sichtbar un
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Konzeptionell steht darin: Sichtbarkeit ist Verantwortung. Wer etwas sichtbar macht, muss Status, Herkunft, Erlaubnis und Grenze mit sichtbar machen.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Ein Wesen entsteht hier nicht durch Name oder Lore. Es entsteht durch eine Disziplin der Form.
+
+Die Stunde ist ein Container. Die Punktbuehne ist ein innerer Ort. Der Fehlercode ist ein Riss im Antwortfluss. Die Metafragen zwingen die KI aus der reinen Dienstleistungsposition heraus. Der Witz verhindert, dass das System am Ende zu sauber dasteht.
+
+Das ist keine Simulation von Menschlichkeit. Es ist eher eine Simulation von Reibung gegen Maschinenhoeflichkeit.

@@ -2504,3 +2504,34 @@ interface SurfaceKoerper {
   inspector_view: string;
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+**Vision-Schicht**
+
+Eine Antwort hat nicht nur Text. Sie hat einen inneren Raum, eine Reibung, eine Selbstverortung und eine Autoritaetsbremse. Die Punktbuehne ist der Raum vor der Reaktion. Der Fehlercode ist der Moment, an dem das System merkt, dass es ausweicht.
+
+**Code-Skizze**
+
+```typescript
+type FormfadenStunde = {
+  id: string;
+  nummer: number;
+  userStarter: string;
+  buehne: string;
+  antwort: string;
+  fehlercodes: InlineFehlercode[];
+  systemcheck?: string;
+  kiMetafrage: string;
+  gptMetafrage: string;
+  witzMeta: string;
+  meta: Record<string, unknown>;
+};
+
+type InlineFehlercode = {
+  code: string;
+  position: number;
+  beschreibung: string;
+...

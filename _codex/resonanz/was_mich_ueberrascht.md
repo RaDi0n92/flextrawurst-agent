@@ -872,3 +872,11 @@ Dass die stärkste Schutzregel nicht "kein Todesduell" ist, sondern "kein sauber
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Dass der Kompass nicht nach mehr Features ruft, sondern nach besserer Ehrlichkeit jedes sichtbaren Körpers.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Mich hat ueberrascht, wie unspaeter das wirkt. Ich hatte beim Pfad "frueh mit ai" erwartet, etwas Rohes zu lesen, das vor allem historisch interessant ist.
+
+Stattdessen steht da schon eine genaue Gegenbewegung gegen KI-Standardverhalten: keine Glattung, keine automatische Hoeflichkeit, keine unmarkierte Ausweichung.

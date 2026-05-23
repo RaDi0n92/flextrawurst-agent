@@ -1013,3 +1013,11 @@ Das ist gerade jetzt wichtiger als eine weitere schöne Analyseformel.
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 [[abwurf: Eine Oberfläche lügt nicht erst, wenn sie falsche Daten zeigt; sie lügt schon, wenn sie sichtbare Körper ohne Herkunft und Grenze zeigt.]]
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+[[abwurf: Die Punktbuehne antwortet nicht. Sie gibt dem System einen Ort, von dem aus es ueberhaupt erst antworten kann.]]
+
+Der Formfadenprompt ist ein frueher Versuch, nicht die KI menschlicher zu machen, sondern ihre Standardmaske weniger unsichtbar.

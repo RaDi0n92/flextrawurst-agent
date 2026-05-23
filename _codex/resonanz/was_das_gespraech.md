@@ -865,3 +865,11 @@ Der Neugierauftrag hat diese Datei nicht als späteres Feature gezeigt, sondern 
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Der Neugierauftrag hat gezeigt, dass der Vision-Kompass nicht nur beim Bauen zählt. Er färbt sogar die Auswahl und Lesart anderer Dateien.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Daniel hat nicht gefragt, ob ich daraus ein Feature mache. Er hat gesagt: sei neugierig, lies, dann schreib eine Spiegeldatei.
+
+Das fuegt eine Lesart hinzu: Diese Datei ist nicht nur Prompttechnik, sondern Teil von Daniels frueher AI-Erfahrungssammlung. Sie muss als Herkunft gelesen werden, nicht als aktuelles Pflichtenheft.

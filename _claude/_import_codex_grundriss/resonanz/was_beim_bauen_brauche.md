@@ -955,3 +955,11 @@ Beim Bauen brauche ich klare Schwellen. Ein Duell ist kein Button, sondern ein E
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Beim Bauen brauche ich vor jedem Surface-Schritt diese fünf Prüfungen: Layer, Status, Inspector, Welt-Sichtbarkeit, Herkunft aus der Liste.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Beim Bauen brauche ich daraus vor allem zwei Dinge: Buehne als Zustand, Fehlercode als Inline-Provenienz.
+
+Wenn flextrawurst Antwort- oder Wesenprozesse sichtbar macht, sollte nicht nur das Ergebnis sichtbar sein, sondern auch die Art der Reibung, aus der es kam.

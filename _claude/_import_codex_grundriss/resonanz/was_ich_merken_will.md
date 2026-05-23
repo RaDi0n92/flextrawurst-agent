@@ -878,3 +878,11 @@ Der Sieger im Todesduell gewinnt nicht Freiheit, sondern Last.
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Das Bild ist nicht Deko. Es ist eine verdichtete Prüfung.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Nicht jede Lebendigkeit beginnt mit Autonomie. Manchmal beginnt sie mit der Regel, nicht selbst anfangen zu duerfen.
+
+Die Buehne antwortet nicht. Sie setzt Haltung.

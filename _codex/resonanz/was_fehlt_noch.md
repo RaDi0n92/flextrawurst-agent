@@ -870,3 +870,11 @@ Eine klare Entscheidung, ob METAWAR zuerst als Archiv-/Replay-System gebaut wird
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Ein genauer Surface-Audit: welche sichtbaren Körper haben schon Status, Inspector, Quelle und Grenze, und welche tun nur so.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Die Stundenverlaeufe fehlen. Der Prompt ist die Form, aber die eigentliche Frage ist: Was passiert ueber 53 Stunden, wenn diese Form wiederholt wird?
+
+Auch fehlt eine klare Entscheidung, ob der Formfaden nur gelesen und verstanden werden soll oder ob er spaeter in flextrawurst als eigenes Organ auftaucht.

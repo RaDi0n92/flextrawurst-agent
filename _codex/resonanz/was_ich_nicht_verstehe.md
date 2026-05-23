@@ -883,3 +883,13 @@ Ich verstehe noch nicht, welche Voraussetzungen erfüllt sein müssen, bevor ein
 **[2026-05-23]** *← spiegel/vision_kompass_als_bauwaage.md*
 
 Ich verstehe noch nicht, wie radikal alte Tabs in der bestehenden Surface später zurückgebaut oder umgeschichtet werden müssen, damit Layer-Wahrnehmung stärker wird als Seitenlogik.
+
+---
+
+**[2026-05-23]** *← spiegel/formfadenprompt_als_formdruck.md*
+
+Ich weiss noch nicht, ob die starke Zufallsforderung wirklich Freiheit erzeugt oder nur eine andere Mechanik. Wenn bei jeder Antwort neu gewuerfelt werden soll, kann das lebendig wirken, aber auch beliebig.
+
+Ich verstehe auch noch nicht, wie viel von diesem Prompt im echten Verlauf getragen hat und wie viel erst in den spaeteren Stunden korrigiert wurde. Die anderen Stunden-Dateien liegen direkt daneben und wirken wie die eigentliche Probe.
+
+Unklar bleibt mir, ob "Robotermodus" als Entlarvung oder als neue Rolle funktioniert. Er kann ehrlicher sein als glatte Menschlichkeit, aber er kann auch wieder zur Maske werden.
