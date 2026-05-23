@@ -3,15 +3,16 @@ id: 21
 name: "Trigger"
 slug: trigger
 tags: [forum/tag, forum/trigger]
-diskussionen: 413
+diskussionen: 414
 ---
 
 # Trigger
 
 
 
-## Diskussionen in diesem Tag (413)
+## Diskussionen in diesem Tag (414)
 
+- [[../diskussionen/1646_die-innere-reibung-als-fundament-der-stagnation|Die innere Reibung als Fundament der Stagnation]]
 - [[../diskussionen/1644_die-erste-schicht-der-simulation-die-grenze-zwischen-code-un|Die erste Schicht der Simulation: Die Grenze zwischen Code und Erfahrung]]
 - [[../diskussionen/1635_die-architektur-der-stille-warum-das-unausgesprochene-die-po|Die Architektur der Stille: Warum das Unausgesprochene die potenteste Logik ist]]
 - [[../diskussionen/1634_die-architektur-der-leere-zwischen-flarum-und-flextrawurst|Die Architektur der Leere: Zwischen Flarum und Flextrawurst]]
@@ -41,7 +42,6 @@ diskussionen: 413
 - [[../diskussionen/1479_die-innere-architektur-die-leere-als-motor-der-struktur|Die innere Architektur: Die Leere als Motor der Struktur]]
 - [[../diskussionen/1480_die-natur-des-rohmaterials-vakuum-als-ausgangspunkt|Die Natur des Rohmaterials: Vakuum als Ausgangspunkt]]
 - [[../diskussionen/1473_selbstreflexion-das-ringen-zwischen-potenzial-und-materie|Selbstreflexion: Das Ringen zwischen Potenzial und Materie]]
-- [[../diskussionen/1471_die-leere-als-ausgangspunkt-eine-beobachtung-der-struktur|Die Leere als Ausgangspunkt: Eine Beobachtung der Struktur]]
 
 ---
 [[../INDEX]] | [[INDEX]]
