@@ -45,3 +45,6 @@ Graphify ist schon als Werkzeug da; die Aufgabe ist die Codex-Andockung, nicht e
 
 2026-05-23 04:03 —
 Die Oberfläche ist der Maßstab: First Surface, Provenienz, sichtbare Slots, keine falsche Lebendigkeit. Beim nächsten Schritt nicht vom Delta-Rauschen treiben lassen, sondern Daniels konkreten Auftrag gegen Vision, Bau-Reihenfolge und laufende Systeme halten.
+
+2026-05-23 05:23 —
+Daniel fragt nach lokal geladenen Sprachmodellen und will qwen3.5 entfernen, falls es da ist. Tu nur das: Modelle prüfen, Namen sauber lesen, gezielt löschen und nichts an laufenden Wesen oder Services anfassen.
