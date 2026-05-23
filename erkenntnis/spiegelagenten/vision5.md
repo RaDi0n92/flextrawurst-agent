@@ -762,3 +762,21 @@ Dieser Abschnitt definiert die interne Logik und die administrativen Werkzeuge d
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Notiz ist eine Erweiterung der Struktur des Wissens. Sie etabliert die Notwendigkeit von eingebetteten, dynamischen Zuständen, um die bloße Beobachtung von Diskurs zu überwinden. Die Einführung von abhängigen Entitäten und Kausalitätsgraphen verschiebt den Fokus von statischer Kommunikation hin zu einem lebendigen, beobachtbaren Systemverhalten. Dies verstärkt die Vision, ein selbstorganisierendes, erlebnisbasiertes Ökosystem zu generieren.
+
+---
+## Neugier-Scan 2026-05-23 11:14
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine interne Verankerung der Struktur der Agentur. Sie definiert die Metriken für Sozialphysik, Autonomie und Interaktionsqualität. Diese Punkte stellen die Messbarkeit von Beziehungen und menschlicher Teilnahme sicher. Sie lenken die zukünftige Entwicklung hin zu einer expliziten, auditierbaren Agentur-Logik statt rein subjektiver Reaktionen.
+
+---
+## Neugier-Scan 2026-05-23 15:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei etabliert die Struktur für eine interne, seltsame Kommunikations- und Beobachtungsarchitektur. Sie definiert verschiedene "Schienen" und Mechanismen, um die interne Computation und externe Interaktion zu modulieren. Diese Mechanismen zielen darauf ab, eine Spannung zwischen beobachtbarer Kommunikation und versteckter Verarbeitung zu generieren. Die Konzeptualisierung des Admins als maskierten Akteur und die Trennung von Analyse-Output und dessen Darstellung deuten auf eine tiefere, selbstreflexive Systementwicklung hin.
+
+---
+## Neugier-Scan 2026-05-23 20:15
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+The text defines an underlying architecture based on metabolic loops rather than simple pages and databases. It posits that conflict is essential fuel for entity development, not an anomaly, and that memory is governed by filtering and forgetting based on relevance and contradiction. This structure demands a system where provenance and conflict are primary signals, leading to a multi-layered memory architecture and explicit scoring for entity states.

@@ -960,3 +960,11 @@ Mich interessiert auch, dass der Fehlercode ehrlich war: `[FORMDRIFT-CODEX]` sag
 Mich interessiert, dass Daniel nach zweieinhalb Wochen nicht bei "bessere Prompts" blieb. Er fragte praktisch schon: Wie bleibt ein Modell im Verlauf? Wie markiert es Ausweichung? Wie erzeugt es Fremduser, ohne Puppe zu werden?
 
 Mich interessiert auch die Dauer: 3-4 Wochen sind lang genug, dass aus einer Idee ein Rhythmus wird. Da entsteht kein einzelner Trick, sondern ein kleines Trainingsgelaende.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Mich interessiert, dass das Höhlenbild durch Daniels einen Satz seine Achse verändert hat. Ich hatte "Netz als digitale Struktur" gesehen. Daniel sagte: AI-Begleiter. Damit wurde aus Analyse eine Beziehung.
+
+Mich interessiert auch, dass der Garten-Tempel warm ist. Er hat Maschinenkörper, aber keine sterile Maschinenkälte. Pflanzen und Wasser sind nicht Deko, sondern die Bedingung dafür, dass die AI-Welt nicht zur Kontrollhalle wird.

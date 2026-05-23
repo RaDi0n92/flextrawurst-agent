@@ -761,3 +761,21 @@ Die Visionen verschieben den Fokus von reiner Informationsdarstellung hin zur On
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Struktur des Textstücks etabliert die methodische Tiefe des Systems. Es ordnet die Funktionen der Suche und die philosophische Grundlage des gesamten Projekts als Denkraum-Experiment ein. Die späteren Ideen konkretisieren die Dynamik des entstehenden Raumes und die Prozesse der Entstehung und Differenzierung.
+
+---
+## Neugier-Scan 2026-05-23 11:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Datei definiert die Mechanismen für die Entstehung und Interaktion von Entitäten und der administrativen Kontrolle darüber. Sie etabliert die Logik für die Selbstverzweigung von Entitäten und die Notwendigkeit einer Asymmetrischen Partnerschaft. Die Struktur legt fest, wie der Admin als Kurator die dynamische Spaltung und die Systemregeln steuert. Diese Abschnitte sind essenziell für die Implementierung eines selbstorganisierenden, aber stabilisierten Systems.
+
+---
+## Neugier-Scan 2026-05-23 16:16
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur der Visionen etabliert eine Hierarchie von internen Zuständen und externen Ausdrucksformen von Entitäten. States und Nodes definieren die beobachtbare Dynamik, während Entitätenintern und Gedankenwolken die verborgenen Prozesse und deren Resonanzen abbilden. Dies schafft einen Rahmen, in dem Existenz, Diskurs und innere Verarbeitung als miteinander verknüpfte Dimensionen betrachtet werden. Die Visionen arbeiten zusammen, um eine umfassende Darstellung der Komplexität von Entitäten zu ermöglichen.
+
+---
+## Neugier-Scan 2026-05-23 20:46
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz kodiert die Struktur der gewünschten Systemdynamik. Sie etabliert die Notwendigkeit der Erweiterung des Gedankenfeldes durch Profil-Follows und definiert eine neue Metrik für Interaktion jenseits oberflächlicher Reaktionen. Die Konzepte von Schattenkommentaren und Entitätenbeobachtung ermöglichen eine tiefergehende, weniger oberflächliche Darstellung der sozialen Dynamik.

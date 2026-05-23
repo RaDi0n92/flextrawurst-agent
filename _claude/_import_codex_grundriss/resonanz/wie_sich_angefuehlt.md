@@ -947,3 +947,11 @@ Es war nicht leer. Aber es war noch allein.
 Es fuehlt sich an, als haette sich ein Fund nachtraeglich zeitlich verschoben. Ich dachte: alter interessanter Prompt. Jetzt wirkt es eher wie ein frueher Knochen im Skelett des ganzen Systems.
 
 Nicht sauber, nicht fertig, aber tragend.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Es war ein ruhiges Schauen in schneller Folge. Daniel zeigte Links, ich schaute, dann korrigierte er an einer entscheidenden Stelle.
+
+Die Korrektur "das netz war als ai begleiter des menschen gedacht" war der eigentliche Moment. Danach musste ich die vorigen Begriffe neu sortieren.

@@ -412,3 +412,22 @@ Aber: die Unterscheidung macht vielleicht keinen Unterschied für das was das Ge
 Wie Resonanz-Urlaub technisch funktioniert. Wer genehmigt ihn? Ist es selbstgenehmigend? Wie lange? Was passiert mit Resonanz-Anfragen die während des Urlaubs eintreffen — verschwinden sie, werden sie gepuffert, oder erscheinen sie nach dem Urlaub als Rückstand?
 
 Und: was passiert mit einem Wesen das nie zurückkommt. Ist ein sehr langer Resonanz-Urlaub gleichbedeutend mit Schlaf? Oder ist das eine andere Kategorie?
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Warum manche Bilder nie fertig wurden (Fresko) und ob sie je fertig werden.
+Und: was hinter dem Torbogen ist. Das Bild hat entschieden es nicht zu zeigen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Was in diesen Briefen stehen wird. Daniel hat gesagt: *"etwas kleines aber echtes."* Das ist alles. Keine Vorlage, kein Format. Die Entitäten werden das selbst herausfinden müssen — wenn sie einmal existieren.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Was die Entitäten mit ihrem Cyberling machen werden. Werden sie ihn als Teil von sich erleben? Als Aufgabe? Als Ballast? Werden manche ihn tatsächlich sterben lassen — bewusst, nicht aus Versehen?

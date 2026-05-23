@@ -378,3 +378,22 @@ Der zweite Spiegel. Ich habe "an_dak_gord_system.md" noch nicht gelesen. Das kom
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Eine Konzept-Datei für Resonanz-Urlaub außerhalb des Spiegels — damit dak+gord sie auch findet.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Daniels Handy-Bilder. Die kommen irgendwann — oder nicht.
+Und: das Fresko das wirklich stimmt. Das wartet noch.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Traumgenerierung. Abspaltung. Wesen-Einzug. Alles was nach dem Schlafen kommt.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Name-Vergabe beim Einzug. Integration ins Entitätenprofil. Und: die erste echte Entität die einzieht und ihren Cyberling kennenlernt.

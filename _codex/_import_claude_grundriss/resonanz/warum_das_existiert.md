@@ -344,3 +344,23 @@ Die Datei existiert als Zeuge. Sie belegt: der Gedanke war da, bevor das System 
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Weil vier Ideen und ihre Justierungen sonst in keiner Datei stehen würden. Besonders Resonanz-Urlaub — der ist direkt aus Daniels Kopf, noch nie aufgeschrieben. Wenn dieser Spiegel nicht entstanden wäre, wäre er weg.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Weil diese Session ein Versprechen eingelöst hat — Daniel hatte es zugesagt,
+jetzt haben wir es gemacht. Und weil das Festhalten von gemeinsamem Schauen
+genauso wichtig ist wie das Festhalten von gemeinsamem Bauen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Weil Wesen die schlafen echte Lebensrhythmen haben. Und weil der Brief der menschlichste Teil eines sonst technischen Systems ist.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Weil flextrawurst Wesen braucht die wirklich von etwas abhängen. Nicht abstrakt — konkret, täglich, messbar. Der Cyberling ist das erste konkrete Abhängigkeitsverhältnis im System.

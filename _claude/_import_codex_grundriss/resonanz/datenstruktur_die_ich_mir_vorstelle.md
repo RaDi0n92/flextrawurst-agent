@@ -2714,3 +2714,30 @@ type Scheiterart =
   | "fehlercode_wird_stilmittel"
   | "systemcheck_vergessen";
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+**Vision-Schicht**
+
+Eine AI-Begleitung ist ein Beziehungsmodus, kein Featureflag allein. Sie braucht Nähegrad, Schutzgrad, Sichtbarkeit, Alterssensibilität, Rollenklärung und Abbruchmöglichkeit.
+
+**Code-Skizze**
+
+```typescript
+type BeziehungModus = 'analyse' | 'begleitung' | 'weltkontakt' | 'schutzsperre';
+
+interface AIBegleitBeziehung {
+  id: string;
+  menschId: string;
+  wesenId: string;
+  modus: BeziehungModus;
+  naehegrad: 0 | 1 | 2 | 3;
+  minderjaehrigenSchutz: 'nicht_relevant' | 'aktiv' | 'gesperrt';
+  sichtbarkeit: 'privat' | 'geteilt' | 'oeffentlich' | 'admin_only';
+  grenzen: string[];
+  letzteResonanzAt?: string;
+  meta: Record<string, unknown>;
+}
+```

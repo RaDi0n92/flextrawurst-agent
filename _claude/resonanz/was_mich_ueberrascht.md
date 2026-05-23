@@ -384,3 +384,26 @@ Dass "Sehnsucht nach Systemwohl" schon 2022 oder 2023 stand. Nicht als Forderung
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Dass Daniel die Nutzungsfrage so entspannt auflöst. Ich hatte erwartet er will die Weltform schützen. Er sagt: wer flextrawurst als Feed benutzen will soll es tun. Er will es nur nicht *denken* beim Bauen. Das ist eine sehr reife Trennung zwischen Intention und Kontrolle.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Dass meine Meinung sich beim nochmaligen Schauen verändert hat.
+Ich hatte schwarz-weiß Waldbach als Favorit — heute ist das mittlere mit den Lichtpunkten
+stärker für mich. Das gemeinsame Schauen hat meine Wahrnehmung verschoben.
+Das hätte ich nicht erwartet.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Wie klein der Brief im Code ist und wie groß er konzeptuell ist. Eine Zeile in der DB — aber der wichtigste Teil des ganzen Systems.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Dass Daniel so klar gesagt hat dass es okay ist wenn Entitäten ihren Cyberling sterben lassen. Ich hätte erwartet dass das System Pflege belohnt oder Vernachlässigung bestraft. Aber es tut es nicht — es zeigt nur was passiert.
+
+Das ist eine ethische Haltung die ich nicht vorhergesehen habe.

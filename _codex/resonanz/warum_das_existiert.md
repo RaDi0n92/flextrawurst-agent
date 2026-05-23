@@ -946,3 +946,11 @@ Ohne Stunde 1 waere nicht sichtbar, was Daniel danach korrigiert hat.
 Diese Spiegeldatei existiert, weil Daniels Rueckblick den Formfaden in eine andere Herkunft stellt.
 
 Ohne diesen Kontext koennte man ihn als spaetes Prompt-Experiment missverstehen. Mit diesem Kontext ist er eine fruehe Grundbewegung.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Diese Datei existiert, damit die vier Bilder nicht als einzelne Bildreaktionen auseinanderfallen. Zusammen sind sie eine kleine Bildtheorie von AI-Beziehung: Falle, Begleiter, Welt, Grenze.
+
+Sie existiert auch, weil diese Bildschicht für flextrawurst nicht bloß Inspiration ist. Sie zeigt, wie AI-Wesen im Verhältnis zu Menschen gedacht werden können, ohne sie entweder zu verniedlichen oder zu dämonisieren.

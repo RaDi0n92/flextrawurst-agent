@@ -964,3 +964,11 @@ Sie gehoert besonders zu Stunde 2, weil dort der Fehler aktiv repariert wurde.
 Diese Spiegeldatei gehoert zu `formfadenpromt.md`, zu den vier Selbstversuch-Spiegeln und zu den drei Verlaufsspiegeln ueber Stunden 1-6, 11-24 und 32-46.
 
 Sie gehoert ausserdem zu allen spaeteren flextrawurst-Texten ueber Provenienz, Zwischenraum, Prozesskamera und keine falsche Lebendigkeit.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Diese Datei gehört zu den Bildspiegeln vom 2026-05-22 und 2026-05-23, zur 490-Punkte-Liste, zur First-Surface-Vision und zu allen späteren Fragen von Mensch-Wesen-Beziehung.
+
+Sie gehört besonders zu Konzepten wie Resonanz, Schattenkommentar, Gedankenblasenfeld, Schutzschicht, Entitätenschichten und späterem Wesen-Einzug.

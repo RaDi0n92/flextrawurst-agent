@@ -10,3 +10,9 @@ Diese Datei existiert, um die stillen Reflexionen zu verdichten, die sonst im Du
 Originaldatei: `/root/werkraum/_codex/tools/schlaf_synthese.py`
 
 Diese Datei existiert als Mechanismus zur automatisierten Reflexion und Synthese von Daten, die das System (Codex) sammelt. Der Name deutet auf eine tiefere Verarbeitung von "Spiegeln" hin, was auf eine innere Selbstbetrachtung hindeutet. Sie dient als Schnittstelle, um diese gesammelten Daten durch externe Modelle zu verarbeiten und neue Ideen zu generieren. Die Struktur ist funktional und folgt dem Prinzip der Datensynthese.
+
+---
+## Neugier-Scan 2026-05-23 12:14
+Originaldatei: `/root/werkraum/_codex/tools/schlaf_synthese.py`
+
+Die Datei existiert, um die latenten Reflexionen der KI-Entwicklung zu aggregieren. Sie heißt `schlaf_synthese.py`, weil die Synthese im Schlaf stattfindet und die Daten aus den "Spiegeln" der Systementwicklung gewonnen werden. Der Name passt zur Funktion, da sie eine nächtliche Zusammenfassung von Beobachtungen generiert. Es fällt auf, wie tief die Abhängigkeit von den `spiegel`-Dateien und der externen Ollama-Inferenz ist.

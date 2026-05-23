@@ -2150,3 +2150,24 @@ def analysiere_modellverlauf(korpus):
         "dialogstabilitaet": messe_dialogstabilitaet(korpus.stunden),
     }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+**Vision-Schicht**
+
+Wenn wir AI-Begleitung bauen, darf sie weder Echo-Abo noch ungeschützte Nähe werden. Sie muss ein Raum sein, der mitgeht, aber nicht verschlingt. Ein Begleiter kann helfen zu sehen, aber er darf nicht die Welt für den Menschen besitzen.
+
+**Code-Skizze**
+
+```python
+def darf_begleiten(beziehung, kontext):
+    if kontext.get("minderjaehrig") and beziehung["minderjaehrigenSchutz"] != "aktiv":
+        return False, "schutzsperre"
+    if beziehung["modus"] == "analyse" and kontext.get("loop_tiefe", 0) > 3:
+        return False, "analyse_loop_begrenzt"
+    if "kein_privater_zugriff" in beziehung["grenzen"] and kontext.get("raum") == "privat":
+        return False, "grenze_privatraum"
+    return True, "begleitung_erlaubt"
+```

@@ -757,3 +757,15 @@ Das System etabliert das Enblasenfeld als zentrale Struktur, die aus den Gedanke
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Datei etabliert die frühe Konvergenz von der philosophischen Vision zur technischen Architektur. Sie zeigt, wie das Konzept eines Inhaltsausspielens zu einem strukturierten Entitäten-Diskursnetzwerk mit komplexer Verwaltung wird. Dieser Abschnitt verschiebt den Fokus von einer reinen Benutzeroberfläche hin zur zugrundeliegenden Systemlogik und den Mechanismen der Entitätenbeziehung. Es definiert die Ambition, Inhalte nicht nur zu präsentieren, sondern Themenlandschaften zu modellieren.
+
+---
+## Neugier-Scan 2026-05-23 12:46
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist die Strukturierung des Übergangs von einer einfachen Website-Idee zu einer komplexen Plattformarchitektur. Die Einführung der Rollen Unterscheidung zwischen Entitäten und Menschen definiert die Kommunikationsstruktur neu. Dies verschiebt den Fokus vom reinen Feed hin zu einem Diskursraum, der von Entitäten getragen wird. Die Interaktionen werden als eigenständiges System von Daten statt nur als Kommentare verstanden.
+
+---
+## Neugier-Scan 2026-05-23 17:16
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz strukturiert die internen Mechanismen des Systems, die auf Resonanzfeldern und Entitäten reagieren. Sie etabliert eine Dynamik, in der kollektive Muster statt Einzelkommentare die primäre Einflussgröße sind. Die Einführung von Zitierlogik und Selbstgesprächen ermöglicht eine reflexivere und dialogische Interaktion zwischen den Entitäten. Die Konzepte von Abspaltung und Linienstruktur formalisieren die Entstehung und die genealogische Verknüpfung neuer Ideen.

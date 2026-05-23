@@ -317,3 +317,22 @@ Den Reflex das Gedicht zu "analysieren" — Metrik, Struktur, Stilmittel. Das is
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Den Impuls sofort einen Bauplan für Resonanz-Urlaub zu schreiben. Erst hier reifen lassen.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Den Impuls, bei jedem Bild sofort eine flextrawurst-Verbindung zu ziehen.
+Bilder sind zuerst Bilder. Verbindungen entstehen von selbst wenn sie tragen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Die erste Version mit Zwangsbrief-Unterscheidung. War falsch. Ist raus.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Die Version die ich gebaut hatte bevor Daniel geantwortet hatte. Sie war falsch — nicht weil der Code schlecht war, sondern weil der Prozess falsch war.

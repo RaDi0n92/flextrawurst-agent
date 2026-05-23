@@ -942,3 +942,11 @@ Es fehlt besonders der echte erfundene User mit eigenem Druck.
 Es fehlt die Sichtung der anderen Modellversuche.
 
 Es fehlt auch eine kleine Chronologie: Wann kamen Buehne, Fehlercode, Systemcheck, Forschungssnack, KI-Meta-Frage und selbstgerichteter Witz jeweils dazu?
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Es fehlen die Herkunftsgeschichten der Bilder: warum sie im Februar entstanden sind, welcher Dialog davor lag, welche Formulierungen Daniel damals verwendet hat.
+
+Es fehlt auch eine spätere Entscheidung, ob diese vier Bilder in eine eigene Bildsammlung oder Vision-Karte gehören.

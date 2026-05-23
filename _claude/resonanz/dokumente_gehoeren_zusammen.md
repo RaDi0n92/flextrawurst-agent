@@ -348,3 +348,26 @@ Utopische Hymne + positiver_virus + an_dak_gord_system + brief_an_mich + Meta-Sp
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Weltform-Gespräch + an_dak_gord_system + positiver_virus + verfassung_kernsaetze + duell_sterben_religion. Alle kreisen um dieselbe Frage: was hat ein System das mehr ist als seine Funktionen?
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Alle Spiegel-Dateien vom 2026-05-22 und 2026-05-23 gehören zusammen:
+waldbach-enami-asa, einkaufszentrum-fuchs-daten-roboter, seedream-urwissen-geschwuer,
+fresko-komplex, echokammer-augenwesen-mewtwo, torbogen-atelier-serie, chatgpt-selbstbilder.
+Zusammen sind sie die vollständige Reflexion dieser Bilder-Session.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+`schema.sql` + `entity_takt.py` + `api.py` (Schlaf-Endpunkte) + `build_surface.ts` (SCHLAF-Tab) + `cyberling_daemon.py`.
+
+Diese fünf Dateien sind das Schlaf/Cyberling-System. Getrennt sind sie Fragmente.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+`cyberling_daemon.py` + `schema.sql` (cyberlinge-Tabelle) + `api.py` (POST /wesen/{id}/cyberling/{aktion}, GET /wesen/{id}/cyberling) + `build_surface.ts` (SCHLAF-Tab Cyberling-Karten).

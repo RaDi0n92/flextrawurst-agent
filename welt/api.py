@@ -3728,6 +3728,468 @@ def cyberling_status(
     return dict(c)
 
 
+# ---------------------------------------------------------------------------
+# PERSÖNLICHE WELT — Tagebuch, Traumtagebuch, Notizen, Kalender, Bild-Moderation
+# ---------------------------------------------------------------------------
+
+class TagebuchCreate(BaseModel):
+    inhalt: str
+    zitierbar: bool | None = None  # None = globale Präferenz
+
+class TraumtagebuchCreate(BaseModel):
+    inhalt: str
+    traum_datum: str | None = None  # ISO date, default heute
+    zitierbar: bool | None = None
+
+class NotizCreate(BaseModel):
+    titel: str | None = None
+    inhalt: str
+    typ: str = "notiz"  # 'notiz' | 'aufgabe'
+    zitierbar: bool | None = None
+
+class NotizPatch(BaseModel):
+    titel: str | None = None
+    inhalt: str | None = None
+    erledigt: bool | None = None
+    gepinnt: bool | None = None
+    zitierbar: bool | None = None
+
+class KalenderCreate(BaseModel):
+    titel: str
+    beschreibung: str | None = None
+    start_zeit: str  # ISO datetime
+    end_zeit: str | None = None
+    ganztaegig: bool = False
+    erinnerung: list = []
+
+def _zitierbar_effektiv(cur, user_id: str, override: bool | None) -> bool:
+    if override is not None:
+        return override
+    cur.execute("SELECT meta FROM human_profiles WHERE user_id = %s::uuid", (user_id,))
+    row = cur.fetchone()
+    if row and row["meta"]:
+        return row["meta"].get("zitierbar_standard", False)
+    return False
+
+def _splitter_aus_text(cur, user_id: str, inhalt: str, origin_type: str, origin_id: str, herkunft_sichtbar: bool):
+    cur.execute(
+        """
+        INSERT INTO splitter
+          (origin_type, origin_id, human_id, herkunft_sichtbar, essenz, materialitaet, energie,
+           pos_x, pos_y, vel_x, vel_y)
+        VALUES (%s, %s, %s::uuid, %s, %s, 'tinte', 0.5, %s, %s, %s, %s)
+        """,
+        (origin_type, origin_id, user_id, herkunft_sichtbar,
+         inhalt[:120],
+         _random.uniform(-400, 400), _random.uniform(-300, 300),
+         _random.uniform(-0.15, 0.15), _random.uniform(-0.15, 0.15)),
+    )
+
+# --- Tagebuch ---
+
+@app.get("/mw/tagebuch")
+def mw_tagebuch_liste(
+    limit: int = Query(default=20, le=100),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, inhalt, zitierbar, splitter_erzeugt, created_at FROM mw_tagebuch "
+                "WHERE user_id = %s::uuid ORDER BY created_at DESC LIMIT %s OFFSET %s",
+                (user_id, limit, offset)
+            )
+            rows = cur.fetchall()
+            cur.execute("SELECT COUNT(*) as n FROM mw_tagebuch WHERE user_id = %s::uuid", (user_id,))
+            total = cur.fetchone()["n"]
+    finally:
+        conn.close()
+    return {"eintraege": [dict(r) for r in rows], "total": total}
+
+@app.post("/mw/tagebuch", status_code=201)
+def mw_tagebuch_erstellen(
+    body: TagebuchCreate,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            zit = _zitierbar_effektiv(cur, user_id, body.zitierbar)
+            cur.execute(
+                "INSERT INTO mw_tagebuch (user_id, inhalt, zitierbar, splitter_erzeugt) "
+                "VALUES (%s::uuid, %s, %s, true) RETURNING id, created_at",
+                (user_id, body.inhalt, zit)
+            )
+            row = cur.fetchone()
+            eid = str(row["id"])
+            _splitter_aus_text(cur, user_id, body.inhalt, "mw_tagebuch", eid, zit)
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type) "
+                "VALUES ('mw.tagebuch.erstellt', 'human', %s, %s, 'api')",
+                (user_id, psycopg2.extras.Json({"eintrag_id": eid}))
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": eid, "created_at": row["created_at"].isoformat()}
+
+# --- Traumtagebuch ---
+
+@app.get("/mw/traumtagebuch")
+def mw_traumtagebuch_liste(
+    limit: int = Query(default=20, le=100),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, inhalt, traum_datum, zitierbar, splitter_erzeugt, created_at "
+                "FROM mw_traumtagebuch WHERE user_id = %s::uuid ORDER BY traum_datum DESC, created_at DESC "
+                "LIMIT %s OFFSET %s",
+                (user_id, limit, offset)
+            )
+            rows = cur.fetchall()
+            cur.execute("SELECT COUNT(*) as n FROM mw_traumtagebuch WHERE user_id = %s::uuid", (user_id,))
+            total = cur.fetchone()["n"]
+    finally:
+        conn.close()
+    return {"eintraege": [dict(r) for r in rows], "total": total}
+
+@app.post("/mw/traumtagebuch", status_code=201)
+def mw_traumtagebuch_erstellen(
+    body: TraumtagebuchCreate,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            zit = _zitierbar_effektiv(cur, user_id, body.zitierbar)
+            td = body.traum_datum or "today"
+            cur.execute(
+                "INSERT INTO mw_traumtagebuch (user_id, inhalt, traum_datum, zitierbar, splitter_erzeugt) "
+                "VALUES (%s::uuid, %s, %s::date, %s, true) RETURNING id, traum_datum, created_at",
+                (user_id, body.inhalt, td, zit)
+            )
+            row = cur.fetchone()
+            eid = str(row["id"])
+            _splitter_aus_text(cur, user_id, body.inhalt, "mw_traumtagebuch", eid, zit)
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type) "
+                "VALUES ('mw.traumtagebuch.erstellt', 'human', %s, %s, 'api')",
+                (user_id, psycopg2.extras.Json({"eintrag_id": eid}))
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": eid, "traum_datum": str(row["traum_datum"]), "created_at": row["created_at"].isoformat()}
+
+# --- Notizen ---
+
+@app.get("/mw/notizen")
+def mw_notizen_liste(
+    typ: str | None = Query(default=None),
+    gepinnt: bool | None = Query(default=None),
+    limit: int = Query(default=50, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            filters = ["user_id = %s::uuid"]
+            params: list = [user_id]
+            if typ:
+                filters.append("typ = %s"); params.append(typ)
+            if gepinnt is not None:
+                filters.append("gepinnt = %s"); params.append(gepinnt)
+            where = " AND ".join(filters)
+            cur.execute(
+                f"SELECT id, titel, inhalt, typ, erledigt, gepinnt, zuletzt_offen, created_at, updated_at "
+                f"FROM mw_notizen WHERE {where} ORDER BY gepinnt DESC, updated_at DESC LIMIT %s OFFSET %s",
+                params + [limit, offset]
+            )
+            rows = cur.fetchall()
+        return {"notizen": [dict(r) for r in rows]}
+    finally:
+        conn.close()
+
+@app.post("/mw/notizen", status_code=201)
+def mw_notiz_erstellen(
+    body: NotizCreate,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            zit = _zitierbar_effektiv(cur, user_id, body.zitierbar)
+            cur.execute(
+                "INSERT INTO mw_notizen (user_id, titel, inhalt, typ, zitierbar, splitter_erzeugt) "
+                "VALUES (%s::uuid, %s, %s, %s, %s, true) RETURNING id, created_at",
+                (user_id, body.titel, body.inhalt, body.typ, zit)
+            )
+            row = cur.fetchone()
+            eid = str(row["id"])
+            _splitter_aus_text(cur, user_id, body.inhalt, "mw_notiz", eid, zit)
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": eid, "created_at": row["created_at"].isoformat()}
+
+@app.patch("/mw/notizen/{notiz_id}")
+def mw_notiz_patch(
+    notiz_id: str,
+    body: NotizPatch,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_notizen WHERE id = %s::uuid", (notiz_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Notiz nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            fields = body.model_dump(exclude_none=True)
+            if not fields:
+                return {"ok": True}
+            sets = ", ".join(f"{k} = %s" for k in fields)
+            vals = list(fields.values()) + ["NOW()", notiz_id]
+            cur.execute(f"UPDATE mw_notizen SET {sets}, updated_at = %s WHERE id = %s::uuid", vals)
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+@app.delete("/mw/notizen/{notiz_id}", status_code=200)
+def mw_notiz_loeschen(
+    notiz_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_notizen WHERE id = %s::uuid", (notiz_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Notiz nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            cur.execute("DELETE FROM mw_notizen WHERE id = %s::uuid", (notiz_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+# --- Kalender ---
+
+@app.get("/mw/kalender")
+def mw_kalender_liste(
+    von: str | None = Query(default=None),  # ISO date
+    bis: str | None = Query(default=None),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            filters = ["user_id = %s::uuid"]
+            params: list = [user_id]
+            if von:
+                filters.append("start_zeit >= %s::timestamptz"); params.append(von)
+            if bis:
+                filters.append("start_zeit <= %s::timestamptz"); params.append(bis)
+            where = " AND ".join(filters)
+            cur.execute(
+                f"SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, erinnerung, created_at "
+                f"FROM mw_kalender WHERE {where} ORDER BY start_zeit ASC LIMIT 100",
+                params
+            )
+            rows = cur.fetchall()
+        return {"termine": [dict(r) for r in rows]}
+    finally:
+        conn.close()
+
+@app.post("/mw/kalender", status_code=201)
+def mw_kalender_erstellen(
+    body: KalenderCreate,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO mw_kalender (user_id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, erinnerung) "
+                "VALUES (%s::uuid, %s, %s, %s::timestamptz, %s::timestamptz, %s, %s) RETURNING id, start_zeit",
+                (user_id, body.titel, body.beschreibung, body.start_zeit,
+                 body.end_zeit, body.ganztaegig, psycopg2.extras.Json(body.erinnerung))
+            )
+            row = cur.fetchone()
+            eid = str(row["id"])
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": eid, "start_zeit": row["start_zeit"].isoformat()}
+
+@app.delete("/mw/kalender/{termin_id}", status_code=200)
+def mw_kalender_loeschen(
+    termin_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_kalender WHERE id = %s::uuid", (termin_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Termin nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            cur.execute("DELETE FROM mw_kalender WHERE id = %s::uuid", (termin_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+# --- Bild-Moderation (Admin) ---
+
+@app.get("/admin/bild-moderation")
+def admin_bild_moderation_liste(
+    status: str = Query(default="wartend"),
+    limit: int = Query(default=50, le=200),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur Admins")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT b.id, b.user_id, u.username, b.pfad, b.zweck, b.status, "
+                "b.ablehnungsgrund, b.created_at, b.geprueft_at "
+                "FROM bild_moderation b JOIN human_users u ON b.user_id = u.id "
+                "WHERE b.status = %s ORDER BY b.created_at ASC LIMIT %s",
+                (status, limit)
+            )
+            rows = cur.fetchall()
+            cur.execute("SELECT COUNT(*) as n FROM bild_moderation WHERE status = 'wartend'")
+            wartend = cur.fetchone()["n"]
+    finally:
+        conn.close()
+    return {"bilder": [dict(r) for r in rows], "wartend_gesamt": wartend}
+
+@app.post("/admin/bild-moderation/{bild_id}/genehmigen")
+def admin_bild_genehmigen(
+    bild_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur Admins")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE bild_moderation SET status='genehmigt', geprueft_von=%s::uuid, geprueft_at=NOW() "
+                "WHERE id = %s::uuid RETURNING user_id, zweck, pfad",
+                (claims["user_id"], bild_id)
+            )
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Bild nicht gefunden")
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "user_id": str(row["user_id"]), "zweck": row["zweck"]}
+
+@app.post("/admin/bild-moderation/{bild_id}/ablehnen")
+def admin_bild_ablehnen(
+    bild_id: str,
+    grund: str = Query(default="Regelverstoß"),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur Admins")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE bild_moderation SET status='abgelehnt', geprueft_von=%s::uuid, "
+                "geprueft_at=NOW(), ablehnungsgrund=%s WHERE id = %s::uuid RETURNING id",
+                (claims["user_id"], grund, bild_id)
+            )
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Bild nicht gefunden")
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+# --- Zitierpräferenz (globale Einstellung) ---
+
+@app.patch("/me/zitierbarkeit")
+def me_zitierbarkeit_setzen(
+    zitierbar: bool = Query(...),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE human_profiles SET meta = jsonb_set(meta, '{zitierbar_standard}', %s::jsonb) "
+                "WHERE user_id = %s::uuid",
+                (json.dumps(zitierbar), user_id)
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {"zitierbar_standard": zitierbar}
+
+@app.get("/me/zitierbarkeit")
+def me_zitierbarkeit_lesen(
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT meta FROM human_profiles WHERE user_id = %s::uuid", (claims["user_id"],))
+            row = cur.fetchone()
+    finally:
+        conn.close()
+    val = (row["meta"] or {}).get("zitierbar_standard", False) if row else False
+    return {"zitierbar_standard": val}
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)

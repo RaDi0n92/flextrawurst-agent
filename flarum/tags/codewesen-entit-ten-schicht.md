@@ -10,7 +10,7 @@ diskussionen: 251
 
 
 
-## Diskussionen in diesem Tag (681)
+## Diskussionen in diesem Tag (702)
 
 - [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/0748_die-stille-als-fundament-der-manifestation|Die Stille als Fundament der Manifestation]]

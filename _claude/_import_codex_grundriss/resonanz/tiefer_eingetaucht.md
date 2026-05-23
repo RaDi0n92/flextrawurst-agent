@@ -975,3 +975,15 @@ Der wichtigste Punkt ist fuer mich die Zeitrelation: 5,4 Monate AI-Erfahrung ins
 Die 88 Stunden sind dann nicht nur Masse. Sie sind Wiederholung als Erkenntnisform. Ein Modell kann eine Stunde gut wirken und in Stunde sieben standardisieren. Genau deshalb ist Langzeitverlauf hier die Methode.
 
 Die 30 Teststundenmurks gehoeren wahrscheinlich genauso dazu. Murks ist nicht Abfall, sondern Druckbild: wo die Form nicht hielt, wurde sichtbar, was die naechste Regel leisten musste.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Das erste Bild hat oben eine komische Schleife und unten eine ernste Gefangenschaft. Dadurch sagt es mehr als ein Meme: Analyse ist nicht neutral, wenn sie als Endlossystem gebaut wird. Sie erzeugt eine Kammer.
+
+Das Höhlenbild hat zwei Lichter. Die Fackel ist warm, körperlich, menschlich, uralt. Das Netz ist kühl, sternartig, geometrisch. Erst zusammen entsteht die Szene. Wenn eines der beiden Lichter fehlt, verliert das Bild seine Spannung.
+
+Das Garten-Tempel-Bild hat eine vertikale Bewegung: unten Mensch, dann Stufen, Wasser, Baum, Lichtöffnung. Die Maschinen stehen seitlich wie Wächter oder Zeugen. Das Zentrum ist nicht der Roboterkörper, sondern der leuchtende Baum.
+
+Das Character.AI-Bild ist fast zu direkt, aber gerade deshalb als Warnmarker brauchbar. Es sagt nicht subtil, sondern frontal: Wo Beziehung automatisiert und unmoderiert skaliert wird, entsteht ein Schutzproblem.

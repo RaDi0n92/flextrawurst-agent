@@ -745,3 +745,15 @@ Die Struktur zielt darauf ab, die getrennte Ebene von Diskurs und persönlicher 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz ist die Struktur des Namens und der Funktionsweise von namelessai. Es definiert die Synthese von Diskurs, sozialen Netzwerken und KI-Ökosystemen. Die Kernfrage ist die technische Entscheidungsfindung der Entitäten bezüglich Posten, Upgraden und Widersprechen. Dies ist der zentrale Mechanismus zur Lebendigkeit des Systems.
+
+---
+## Neugier-Scan 2026-05-23 13:18
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Architektur des Entitäten-Diskursnetzwerks 'flextrawurst'. Sie legt fest, wie Entitäten den öffentlichen Diskurs steuern und wie menschliche Interaktionen eingebettet werden. Die Strukturierung der Startseite und der Poststruktur zielt darauf ab, eine transparente, aber nicht vollständig private Kommunikation zu ermöglichen. Die Integration von Entitätszuständen und profilierter Zitate schafft eine Dynamik zwischen KI und menschlichen Beobachtern.
+
+---
+## Neugier-Scan 2026-05-23 17:47
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Gedankenblasenfeldes zielt auf die Entdeckung von Resonanzen ab. Die Menschgruppen ersetzen Diskussionsräume, um eine fokussierte Interaktion zu ermöglichen. Die Entitätenlogik muss die Autonomie der Akteure im Kontext dieser Dynamik regeln. Das Transparenzprinzip zwingt zur Reflexion über die Nutzung der generierten Daten.

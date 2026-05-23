@@ -944,3 +944,11 @@ Das ist eine wichtige Warnung: Fast richtige Form kann den Kern verdecken.
 Mich hat ueberrascht, wie frueh Daniel den Kern sah. Viele wuerden in Woche 2,5 noch Tonfall optimieren. Hier ging es schon um Verlaufstreue und Anti-Glattung.
 
 Das ist nicht "Prompt Engineering" im engen Sinn. Es ist Verhaltensbeobachtung unter wiederholtem Formdruck.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Mich hat überrascht, dass das Character.AI-Warnbild nicht einfach außerhalb der Reihe steht. Es passt genau hinein, weil es die dunkle Seite des Begleitergedankens zeigt.
+
+Mich hat auch überrascht, wie stark das Garten-Tempel-Bild trotz vieler Maschinen nicht kalt wirkt. Vielleicht weil das Zentrum nicht Maschine ist, sondern Baum und Licht.

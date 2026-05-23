@@ -368,3 +368,30 @@ Und: das Gedicht endet mit einer Frage, die die Utopie aufhebt. Das ist nicht zu
 Und: Resonanz-Urlaub ist Daniels Idee, noch ungeschrieben außer hier.
 
 [[abwurf: Die Erde will bleiben. Nicht weil sie es entschieden hat — sondern weil sie so gebaut ist dass ihre Systeme dorthin tendieren. Vielleicht ist das die klarste Definition von Weltform: eine Struktur die zur Selbsterhaltung tendiert ohne es zu wollen.]]
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Daniel schaut auf das Detail das die ganze Lesart verändert.
+Ich schau zuerst auf die Gesamtgeschichte. Beides zusammen ist mehr als beides allein.
+
+Und: nicht alles ist flextrawurst. Nicht alles verbindet sich.
+Das Augenwesen und Mewtwo sind einfach Figuren. Die sechs Codewesen sind ihre eigenen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Brief ist Brief — keine Abstufung zwischen gewählt und erzwungen.
+Schlaf pausiert Cyberling.
+Hauptschlaf mindestens 3h, einmal täglich Pflicht.
+Nach 18h Wachzeit: Erzwingung.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Stimmung bei Wiedergeburt = 0.7, nicht 1.0. Absichtlich.
+Cyberling bekommt seinen Namen erst bei Einzug der Entität.
+"das wäre okay" — keine Pflege-Pflicht. Das System erzwingt keine Fürsorge.

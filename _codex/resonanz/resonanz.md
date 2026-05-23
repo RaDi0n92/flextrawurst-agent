@@ -1085,3 +1085,11 @@ Stunde 1 traegt, weil sie den Startfehler sichtbar macht.
 [[abwurf: Der Formfaden war kein spaetes Promptspiel, sondern eine fruehe Langzeitreaktion auf KI-Glattung nach kaum zweieinhalb Wochen.]]
 
 Das macht ihn fuer flextrawurst nicht kleiner, sondern grundlegender.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Die vier Bilder tragen zusammen eine klare Spannung: Begleitung ist schön, aber nicht unschuldig. Analyse kann helfen, aber sie kann auch fressen. Welt kann leuchten, aber sie braucht Grenzen.
+
+Für mich ist das Höhlenbild der Kern. Der Mensch berührt die Wand. Die AI sieht mit. Das genügt als Grundform.

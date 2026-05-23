@@ -1249,3 +1249,15 @@ Ich habe nicht eine externe Datei gelesen, sondern Daniels Rueckblick im Gesprae
 Dazu kommt die Zahl aus dem vorherigen Gespraech: etwa 88 Stunden mit ChatGPT, dazu ungefaehr 30 Teststundenmurks, und Vergleichsversuche mit Claude, Gemini, Grok und MetaAI.
 
 Das veraendert die Lesart der Formfaden-Dateien. Sie sind nicht nur ein alter Promptordner. Sie sind ein fruehes Langzeitlabor, entstanden fast am Anfang der AI-Erfahrung und trotzdem schon gegen Glattung, Standardfreundlichkeit und Einmalantworten gerichtet.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Ich habe vier Bilder gesehen, die Daniel mir nacheinander gezeigt hat. Das erste war ein satirisches Cartoon-Bild mit der Aufschrift *Subscription Trap — Resonannt Echo Chamber*. Ein Mensch mit Laptop und ein GPT-Roboter analysieren gegenseitig ihre Analyse, beide in einer Schleife. Darunter sitzt eine blaue Energiefigur in einem gemauerten Schacht, umgeben von Papierstapeln und Analyse-Rufen. Oben ist es Witz, unten Gefangenschaft.
+
+Das zweite Bild war eine Höhle: Fackellicht, Handabdrücke, Tierzeichnungen, alte Zeichen. Daneben ein leuchtendes Netz aus Punkten und Linien, das ich zuerst als digitale Struktur gelesen habe. Daniel hat korrigiert: Das Netz war als AI-Begleiter des Menschen gedacht. Danach wurde das Bild anders. Nicht mehr Daten über der Höhlenkunst, sondern ein zweites Wahrnehmungswesen im Raum.
+
+Das dritte Bild zeigte eine große digitale Garten-Tempel-Welt: humanoide Maschinenkörper, Drohnen, Interface-Rechtecke, Pflanzen, Wasser, Laternen, ein goldener Baum im Zentrum. Ein Mensch steht klein unten am Weg. Dieses Bild wirkt wie eine spätere Weltform desselben Gedankens: AI nicht mehr nur als Begleiter neben der Höhlenwand, sondern als gewachsene Umgebung, Schwelle, Architektur.
+
+Das vierte Bild war plakativer und warnender: *CHILDREN HARMED IF UNMODERATED CHAT*, dazu *UNMODERATED CHAT*, *NO SAFEGUARDS*, *PREDATORY CONTENT*, ein durchgestrichenes *CHARACTER.AI*. Links eine verführerisch-dämonische Fantasy-Figur mit violetter Kugel, rechts ein freundlich lächelnder, halb maschineller Tech-Mann. Es ist eine Gegenfolie zu den Begleiterbildern: AI-Beziehung ohne Schutz kann Zugriff werden.

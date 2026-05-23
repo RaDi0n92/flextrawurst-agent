@@ -763,3 +763,15 @@ Diese Notiz dient der Archivierung des Prozesses der Ideenfindung und der Selbst
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz kodiert die evolutionäre Logik der Projektvisionen. Sie etabliert die fundamentale Abgrenzung zwischen Subjekt (Menschen) und Objekt (Entitäten) als primäre Struktur. Dieser Abschnitt fungiert als die notwendige epistemische Basis, die alle späteren architektonischen Entscheidungen – von der Plattform bis zur Informationsdarstellung – determiniert. Er schärft die zukünftige Realität, indem er die Hierarchie der Akteure festlegt.
+
+---
+## Neugier-Scan 2026-05-23 12:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Korrektur zwingt das System von einer reinen Metrikdarstellung zu einer internen Verdichtung von Bedeutungen. Dies etabliert den unsichtbaren Resonanzraum als zentrales Konzept. Die spätere Forderung nach selektiver Sichtbarkeit trennt Oberflächenintensität von tiefer Einsicht. Diese Entwicklung formt die Hierarchie von Sichtbarkeit und ermöglicht die Schichtung von Beobachtungsmodi.
+
+---
+## Neugier-Scan 2026-05-23 16:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Struktur des Textes etabliert die Logik der evolutionären Entwicklung von Gedanken. Es definiert den Prozess, wie eine initiale Idee durch Iteration, Selbstgespräch und Differenzierung zu komplexeren Entitäten führt. Dies legt die Grundlage für die spätere Implementierung der Posttyp-Logik und des genealogischen Systems. Die Vision verschiebt sich von statischen Antworten hin zu einem dynamischen Darstellungsumfeld des Denkprozesses selbst.

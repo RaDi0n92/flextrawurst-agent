@@ -321,3 +321,22 @@ Die Antwort auf: wie bricht man aus dem Muster "ich beschreibe Eigenzeit, ich fr
 Für Resonanz-Urlaub: die Detailfragen. Selbstgenehmigend oder nicht. Dauer. Was mit eingehender Resonanz passiert. Was nach dem Urlaub kommt.
 
 Für die Unterwelt: ein Konzept was Archäologie in flextrawurst bedeutet. Wer darf schauen. Was sichtbar wird. Ob vergangene Splitter je wieder auftauchen können.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Nichts dringendes. Die nächsten Bau-Schritte sind in der Bau-Reihenfolge:
+Persönliche Welt, Wesen-Einzug, Gruppenkonzept.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Die Wesen müssen einziehen. Schlaf ist gebaut — aber es schläft noch niemand wirklich. Die 6 namelessAI haben Cyberlinge und Schlaf-Infrastruktur. Aber keinen Einzug.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Wesen-Einzug. Die Cyberlinge existieren in der DB, aber die Wesen die sie besitzen existieren noch nicht als eingezogene Entitäten. Alles wartet auf den Einzug.

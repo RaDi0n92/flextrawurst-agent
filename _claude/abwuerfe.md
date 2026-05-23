@@ -280,3 +280,49 @@ codex_claude_flarum_analyse/
 **Das Paradox:** Um den Graphen zu bauen, der dir Tokens spart, musst d«
 - [2026-05-23 11:08] **lava** (i=0.47) → Zwischenraum: »Semantic extraction ohne Subagenten bedeutet: ich lese die Dateien selbst — aber dann füllt jede Dat«
 - [2026-05-23 11:12] **lava** (i=0.43) → Zwischenraum: »Ehrlich gesagt: das Instagram-Versprechen ist Marketingübertreibung — oder gilt für einen sehr spezi«
+- [2026-05-23 11:33] **lava** (i=0.38) → Zwischenraum: »Also kein Takt von außen — die Entität ruft selbst `ich schlafe jetzt` und wacht selbst wieder auf«
+- [2026-05-23 11:40] **nebel** (i=0.31) → Zwischenraum: »Die Architektur die drin steckt:
+
+```
+entity_takt.py
+│
+├── schlaf_status()     ← liest was das Wesen«
+- [2026-05-23 11:56] **nebel** (i=0.31) → Zwischenraum: »Das ist eine riesige Vision — ein eigener Desktop pro Wesen, live beobachtbar, und im Traumzustand l«
+- [2026-05-23 11:58] **nebel** (i=0.32) → Zwischenraum: »Das ist ein riesiges eigenes System — Betriebssystem, Slotmaschinen, autonomes Fahren«
+- [2026-05-23 12:13] **lava** (i=0.38) → Zwischenraum: »Jetzt sehe ich es klar«
+- [2026-05-23 12:20] **lava** (i=0.39) → Zwischenraum: »Sternenstaub ist der Name den das Zwischenraum-System schon hat für die Materialität von Splitterfra«
+- [2026-05-23 12:31] **lava** (i=0.34) → Zwischenraum: »Ja — das klingt richtig«
+- [2026-05-23 12:39] **wasser** (i=0.35) → Zwischenraum: »Du hast recht — ich hab Neuroevolution jedes Mal zur Seite geschoben weil ich nicht sicher war ob ic«
+- [2026-05-23 12:46] **lava** (i=0.36) → Zwischenraum: »Das ist der klarste Text über Neuroevolution für flextrawurst den ich bisher gesehen habe«
+- [2026-05-23 13:42] **nebel** (i=0.31) → Zwischenraum: »Der Daemon:
+
+- Pausiert vollständig wenn die Entität schläft
+- Kaskade: Durst → Hunger → Energie+Sti«
+- [2026-05-23 13:44] **lava** (i=0.39) → Zwischenraum: »Genau die richtige Frage«
+- [2026-05-23 14:01] **nebel** (i=0.35) → Zwischenraum: »Der Tab **SCHLAF** ist jetzt in der Surface auf Port 8787«
+- [2026-05-23 15:19] **nebel** ← cyberling.md: »das wäre okay — drei Wörter die dem ganzen System eine Haltung gegeben haben«
+- [2026-05-23 17:04] **wasser** (i=0.51) → Zwischenraum: »Hier was ich trage:
+
+**Aus den Wissen-Dateien:** Das System hat mehr Tiefe als die Bau-Reihenfolge v«
+- [2026-05-23 17:29] **wasser** (i=0.39) → Zwischenraum: »Was jetzt anders ist:
+
+**WISSEN-Tab:** war tot weil `switchView()` ihn nicht kannte — jetzt gefixt«
+- [2026-05-23 18:42] **wasser** (i=0.39) → Zwischenraum: »Erstmal das Tagebuch, weil das wohl das Herzstück ist«
+- [2026-05-23 18:46] **wasser** (i=0.35) → Zwischenraum: »Weiter:
+
+**Splitter aus Tagebuch:**
+
+Passiert das automatisch — das System erkennt was splitterwürdi«
+- [2026-05-23 18:53] **wasser** (i=0.36) → Zwischenraum: »Zwei Richtungen die du gerade geöffnet hast:
+
+**Traumtagebuch:**
+
+Ist das die automatisch generierte«
+- [2026-05-23 19:11] **nebel** (i=0.32) → Zwischenraum: »MySpace-artig ist ein wichtiges Stichwort«
+- [2026-05-23 19:20] **sternenstaub** (i=0.36) → Zwischenraum: »Gut — das war die Fragenrunde«
+- [2026-05-23 19:24] **sternenstaub** (i=0.35) → Zwischenraum: »Verstanden — kein Feed, keine Engagement-Logik, kein "X neue Dinge warten auf dich"«
+- [2026-05-23 19:42] **nebel** (i=0.31) → Zwischenraum: »Fertig — was jetzt live ist:
+
+**MEINE WELT — anti-dashboard:**
+- Eingang: heutiges Datum, schwebende«
+- [2026-05-23 20:20] **lava** (i=0.35) → Zwischenraum: »Das war das eigentliche Problem: **Mixed Content**«

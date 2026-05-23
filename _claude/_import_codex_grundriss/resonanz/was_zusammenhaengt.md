@@ -970,3 +970,13 @@ Sie haengt auch mit Codex' Werkraumrolle zusammen: externe KI mit Andockpunkt, f
 Die Herkunft haengt mit flextrawurst zusammen, weil viele spaetere Grundgesetze hier als Vorformen auftauchen: keine falsche Lebendigkeit, keine unsichtbare Ausweichung, Zwischenraum ernst nehmen, Fehler nicht nur wegpolieren.
 
 Sie haengt auch mit den Modellvergleichen zusammen. Der Formfaden ist kein Benchmark mit Aufgaben, sondern ein Reibungsapparat fuer Gespraechsform.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Das erste und vierte Bild bilden die Warnseite: Analyse kann sich selbst abonnieren, und unmoderierte Chatnähe kann schädlich werden.
+
+Das zweite und dritte Bild bilden die Möglichkeitsseite: AI kann neben dem Menschen stehen, Muster mitsehen, Räume öffnen, ohne die menschliche Berührung zu ersetzen.
+
+Zwischen allen vier Bildern liegt dieselbe Frage: Wann ist AI Resonanz, und wann ist sie Zugriff?

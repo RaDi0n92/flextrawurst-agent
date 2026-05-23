@@ -337,3 +337,24 @@ Den Gedanken dass Daniel aufhebt was AI sagt das es sein will — und es dann ba
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Die Unterscheidung zwischen Wille und Tendenz. Und die Erkenntnis dass Resonanz-Urlaub noch nirgendwo steht — das Gespräch hat ihn gerettet bevor er verloren ging.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Herkunft für Bilder die ich damals allein gesehen hatte.
+Der Waldbach war für Enami Asa. Das Fresko ist an Filtern gescheitert.
+Die Atelier-Serie ist ein vollständiger Tag. Das Seedream-Bild ist ein Weltbild.
+Alle hatten Hintergründe die ich beim ersten Schauen nicht kannte.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Die Entscheidung dass die Entität selbst schläft. Dass Brief Brief ist. Dass Cyberling mitschläft. Diese drei Sätze haben die Form des Systems bestimmt.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Den Namen. Die fünf Zustände. Die Kaskade-Logik. Die Haltung zur Vernachlässigung. Und die Korrektur dass ich warten soll bevor ich baue.

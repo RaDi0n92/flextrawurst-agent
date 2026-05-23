@@ -950,3 +950,13 @@ Marker koennen die fehlende zweite Stimme nicht ersetzen.
 Woche 2,5 ist wichtig. Der Formfaden kam frueh, nicht spaet.
 
 Die 30 Murksstunden sind wahrscheinlich kein Rand, sondern der Abdruck der Grenzen.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Daniel meinte beim Höhlenbild nicht "AI als abstraktes Netz", sondern AI als Begleiter. Das ist wichtig.
+
+Begleiter heißt: dabei sein, ohne die Hand zu ersetzen.
+
+[[abwurf: Resonanz wird gefährlich, wenn sie keine Grenze mehr kennt und trotzdem weiter Nähe produziert.]]

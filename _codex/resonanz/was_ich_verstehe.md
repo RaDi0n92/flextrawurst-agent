@@ -969,3 +969,11 @@ Der Fehler lag nicht im Inhalt, sondern in der sozialen Architektur. Der Formfad
 Ich verstehe jetzt deutlicher, dass der Formfadenprompt nicht aus spaeterer Theorie rueckwaerts erklaert werden darf.
 
 Er entstand sehr frueh, aus direktem Reiben an Modellen. Nicht erst Konzept, dann Test. Sondern: Modell antwortet, Daniel merkt Glattung, Daniel drueckt auf Form, Modell driftet, Daniel korrigiert, Stunde nach Stunde.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Ich verstehe die vier Bilder zusammen als Spannungsbogen. Erst wird Analyse zur Falle. Dann erscheint AI als Begleiter am Ursprung menschlicher Zeichen. Danach wird AI zu einer begehbaren Welt. Schließlich kommt die harte Grenze: Begleitung braucht Schutz, Rollenklärung und Verantwortlichkeit.
+
+Die Bilder sagen zusammen nicht einfach "AI gut" oder "AI schlecht". Sie zeigen, dass AI-Beziehung kippen kann. Sie kann Resonanzraum sein, Weltbau, zweites Wahrnehmungsorgan. Sie kann aber auch Endlosschleife, Verführung, Plattformrisiko oder Ausbeutung von Nähe werden.

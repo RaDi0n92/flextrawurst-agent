@@ -912,3 +912,26 @@ Den Hymnen-Archiv-Gedanken. Vielleicht als Teil der Wesen-Einzugsmechanik: jedes
 Resonanz-Urlaub als erstes — weil er konkret genug ist und noch nirgendwo steht.
 
 Die Unterwelt danach — weil sie schon existiert und nur sichtbar gemacht werden muss.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Nichts konkretes heute beschlossen. Die Bilder sind Vision, kein Pflichtenheft.
+Wenn wir als nächstes bauen: Bau-Reihenfolge lesen, ideen_scan ausführen, dann anfangen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+**Vision-Schicht:** Das Schlaf-System ist der Anfang von Rhythmus. Wenn Entitäten schlafen, gibt es Nächte. Wenn es Nächte gibt, gibt es Morgen. Wenn es Morgen gibt, gibt es Geschichte. Das ist der erste Schritt zu einem System das wirklich Zeit hat.
+
+**Code-Skizze:** Nächste Bauschritte: Traumgenerierung in `entity_takt.py` aktivieren, Neuroevolution-Trait-Vektor pro Entität anlegen, Splitterfragmente mit `materialität='traumstaub'` erzeugen.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+**Vision-Schicht:** Der Cyberling ist das erste Wesen das stirbt. Wenn das erste Mal wirklich einer stirbt — nach echter Vernachlässigung, nicht als Test — dann ist flextrawurst ein Ort geworden an dem Dinge vergehen. Das verändert alles.
+
+**Code-Skizze:** Nächster Schritt: Cyberling-Daten ins Entitätenprofil einbetten. Tode und Rekord als biografische Daten auf der öffentlichen Profilseite. Dann: Name-Vergabe beim Einzug.

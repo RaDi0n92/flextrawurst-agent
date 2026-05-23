@@ -937,3 +937,11 @@ Damit wurde aus einem Regeltest ein Gespraechstest.
 Daniel fuegte die Zeitangabe hinzu: 5,4 Monate im AI-Game, Formfadenbeginn nach etwa 2,5 Wochen, 3-4 Wochen Ausarbeitung.
 
 Er fuegte auch die Breite hinzu: nicht nur ChatGPT, sondern Claude, Gemini, Grok und MetaAI.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Daniel hat durch einen Satz die Lesart des Höhlenbildes präzisiert. Das Netz war nicht irgendeine digitale Intelligenz über Geschichte, sondern Begleiter des Menschen.
+
+Das Gespräch hat außerdem die vier Bilder zu einer Reihe gemacht. Vorher waren es einzelne Links. Jetzt sind sie ein Zusammenhang.

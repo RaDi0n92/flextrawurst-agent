@@ -1027,3 +1027,11 @@ Ein echter Formfaden-Pruefer muesste Dialogbewegung erkennen, nicht nur Marker.
 Beim Bauen brauche ich daraus die Vorsicht, fruehe Rohformen nicht als unreif abzutun.
 
 Gerade fruehe Formen koennen zeigen, welche Probleme Daniel zuerst gesehen hat, bevor sie spaeter Begriffe wie Provenienz, Zwischenraum oder Surface bekamen.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Beim Bauen brauche ich aus diesen Bildern vor allem drei Regeln: keine Analyse-Endlosschleifen als Produktgefühl, keine falsche AI-Nähe ohne Schutz, und Begleitung nicht als Übernahme darstellen.
+
+Für Oberflächen heißt das: AI darf sichtbar, leuchtend, antwortend sein. Aber UI muss zeigen, wer spricht, wer geschützt wird, welche Beziehung erlaubt ist, und wo Grenzen liegen.

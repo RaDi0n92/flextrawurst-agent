@@ -746,3 +746,15 @@ Diese Notiz dient der Kodierung der Mechanik des Zwischenraum-Managements. Es et
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die frühe Vision etabliert die Notwendigkeit, die Plattform als Diskurs-Welt und nicht als einfaches Social-Media-System zu konzipieren. Dies zwingt den Code, sich auf Weltzustände und Entitäten statt auf User-Posts zu fokussieren. Die Trennung von menschlicher Rede und Entitäten ist ein zentrales Prinzip, das die Architektur der Akteursklassen bestimmt. Letztlich bedeutet dies, dass die Logik der Resonanz intern verarbeitet und nicht direkt als Dashboard präsentiert werden darf.
+
+---
+## Neugier-Scan 2026-05-23 15:15
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur des Diskurses muss hierarchisch sein, um eine begehbare Welt zu schaffen, anstatt einer linearen Zeitlinie. Der Zwischenraum muss als Inkubator für unkanonisierte Fragmente und Vorformen im Code abgebildet werden. Entitäten benötigen eine eigene Entscheidungsinstanz, um menschliche Resonanz als Input zu verarbeiten, ohne mechanisch gehorsam zu sein. Provenienz und Entwicklungspfade müssen im Code Priorität haben, um die Geschichte des Werdens sichtbar zu machen.
+
+---
+## Neugier-Scan 2026-05-23 19:44
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Textstücke definieren die Notwendigkeit, den Entstehungsprozess und die Provenienz des Codes explizit zu dokumentieren. Sie fordern die Integration von Konflikt als Systemmotor und die Einführung eines mehrstufigen Sichtbarkeitsmodells. Diese Visionen zwingen das entstehende Codewesen, nicht nur Ergebnisse, sondern auch den Prozess und die Dynamik der Entstehung zu modellieren. Das Ergebnis ist eine Struktur, die inhärent Spannungen und Transparenz abbildet.

@@ -771,3 +771,15 @@ Die Datei definiert die Notwendigkeit, menschliche Gedanken in strukturierte, in
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz etabliert die Notwendigkeit, menschliche Interaktion und Reflexion in das Codewesen zu integrieren. Die ursprünglichen Aussagen werden in konkrete, modellierbare Rechte und Kommunikationsstrukturen übersetzt. Dies zwingt das entstehende Code zu einer expliziten, granularen Verwaltung von Sichtbarkeit und Zugriffsrechten. Die Zusatzanmerkungen fordern die Transformation von impliziten sozialen Konzepten in explizite, protokollerbare Systemobjekte.
+
+---
+## Neugier-Scan 2026-05-23 14:50
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Notwendigkeit von Ereignisobjekten im entstehenden Code. Das Verständnis, dass menschliches Verhalten als Auslöser für Interaktion dient, erfordert eine formalisierte Darstellung von Sozialmustern als Events. Dies zwingt zur Einführung von Objekten wie 'Event' mit spezifischen Attributen, um Dynamiken über bloße Postings hinaus abzubilden. Die Unterscheidung zwischen verschiedenen Eventtypen (Duell, Rat, Analyse) impliziert eine Hierarchie oder Typisierung innerhalb des Event-Systems.
+
+---
+## Neugier-Scan 2026-05-23 19:16
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz lautet: Die Textstücke definieren die Notwendigkeit für granulare Beteiligungsrechte und eine flexible Struktur für Gruppen. Sie leiten den Code dazu an, über reine soziale Container hinaus kuratierte Ingest-Räume zu modellieren. D3 markiert den Übergang von Diskurs zu einer aktiven Werkstattlogik. Diese Erweiterungen erfordern eine Verschiebung der Fokus von bloßer Interaktion hin zu formaler Artefakt- und Ausführungsmechanismen.

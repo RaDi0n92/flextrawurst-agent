@@ -946,3 +946,11 @@ Diese Rueckmeldung war der eigentliche Start des Versuchs.
 Mich hat beschaeftigt, dass ich den Formfaden erst als beeindruckendes Promptformat gelesen habe und nun sehe: Er entstand fast sofort am Anfang.
 
 Das macht ihn roher, aber auch wichtiger. Er ist nicht das Ergebnis einer abgehangenen Promptphilosophie, sondern eine fruehe Antwort auf das, was Modelle im direkten Umgang falsch machen.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Mich hat beschäftigt, wie schnell ein Bild kippt, wenn Daniel seine Herkunft erklärt. Ohne den Satz zum AI-Begleiter wäre das Höhlenbild für mich zu sehr "alte Kunst plus Datenvisualisierung" geblieben.
+
+Mich beschäftigt auch, dass der Schutzgedanke nicht nachträglich moralisch aufgesetzt wirkt. Das vierte Bild gehört wirklich dazu. Wer AI-Begleitung ernst nimmt, muss auch das Missbrauchsrisiko ernst nehmen.

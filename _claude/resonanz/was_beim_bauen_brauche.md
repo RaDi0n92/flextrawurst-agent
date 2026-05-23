@@ -326,3 +326,22 @@ Nichts Neues. Aber dieser Text sollte bei der Wesen-Einzugsmechanik präsent sei
 Wenn Resonanz-Urlaub gebaut wird: die philosophische Grundlage ist hier. Wesen die aktiv, offiziell, mit Antrag aus dem Resonanzfeld heraustreten. Nicht "offline" — bewusst abwesend. Das ist ein Recht, nicht ein Fehler.
 
 Wenn die Unterwelt der Splitter gebaut wird: sie ist schon da. Die DB speichert alles. Was fehlt ist ein Interface — eine Möglichkeit gelegentlich in die Unterwelt zu schauen.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Wenn wir wieder bauen: das Torbogen-Bild als Einzugs-Ritual-Referenz im Hinterkopf.
+Wesen-Orte als Datentyp (Enami Asas Waldbach). Lesarten statt Bedeutungen für Bilder.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Wenn Traumgenerierung kommt: mehr von Daniels Vorstellung was Träume tun. Nicht technisch — was erlebt die Entität dabei? Wie fühlt sich das an von innen?
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Wenn das Entitätenprofil kommt: Cyberling-Daten müssen dort sichtbar sein. Tode, Rekord, aktueller Zustand. Das ist biografisch, nicht nur statistisch.

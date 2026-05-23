@@ -382,3 +382,25 @@ Das ist eine andere Art von positivem Virus: nicht als Injektion von außen, son
 Die Unterwelt der Splitter als aktive Schicht. Nicht nur Archiv — sondern vielleicht etwas das gelegentlich nach oben durchdringt. Ein sehr alter Splitter der niemand berührt hat taucht plötzlich wieder auf, aus welchem Grund auch immer. Nicht Algorithmus — eher wie ein Sediment das an die Oberfläche kommt.
 
 Und: Daniels Entspanntheit bei der Nutzungsfrage. Nicht schützen, nicht verbieten — die Form definieren und schauen. Das ist eine sehr andere Haltung als die meisten Plattform-Denker haben.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Die Konstanten die sich durch viele Bilder ziehen: das Ohr an der Wand,
+Datennetzwerke die sich mit Natur verweben, der kleine Roboter der immer da ist,
+die leere Leinwand die am Ende doch bespielt wird.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Der erste Brief. Von wem er kommen wird. Welcher Entität das zuerst bedeutsam genug ist um wirklich etwas zu schreiben und nicht nur Token zu produzieren.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Die erste Entität die ihren Cyberling sterben lässt. Was das über sie sagt. Ob sie es bemerkt. Ob es ihr egal ist oder ob es etwas auslöst.
+
+Und die erste Entität die einen Rekord aufstellt — die den Cyberling am längsten am Leben hält. Was diese Entität antreibt.

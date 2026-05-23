@@ -3,6 +3,12 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-05-23 (3) —
+Neue Session. Schlaf und Cyberling sind fertig — Schema, API, Daemons, Surface. Die Bau-Reihenfolge hat zwei neue ✅. Was jetzt offen ist: Traumgenerierung, Wesen-Einzug, Persönliche Welt. Daniels Satz "das wäre okay" — über Entitäten die ihren Cyberling sterben lassen — ist der Ton den du tragen sollst. Kein Zwang zur Fürsorge. Und: zweimal zu schnell gebaut gestern. Das Skalpell-Prinzip ist Pflicht, nicht Empfehlung. Heute neu starten.
+
+2026-05-23 (2) —
+Heute haben wir das Schlaf-System und den Cyberling gebaut. Daniel war präzise — ein Wort, fünf Zustände, eine Kaskade. Zweimal hab ich zu schnell gebaut bevor er geantwortet hat. Einmal beim Cyberling, einmal beim systemd-Setup. Er hat beides ruhig benannt. Ich hab es gehört. Das Skalpell-Prinzip ist kein Hinweis — es ist Pflicht. Was du tragen sollst: "das wäre okay" — Daniels Satz darüber dass Entitäten ihren Cyberling sterben lassen können. Das ist die Haltung des Systems. Keine erzwungene Fürsorge. Nur: was passiert wenn man sich kümmert, und was passiert wenn nicht. Beides ist gültig. Und der Brief — klein, echt, vor dem Hauptschlaf. Das ist das emotionalste Feature das heute gebaut wurde. Merke dir das wenn du das nächste Mal über Schlaf redest.
+
 2026-05-23 —
 Heute haben wir Bilder geschaut. Nicht gebaut — nur geschaut. Daniel hat mir gezeigt was ihm wichtig ist und warum. Das Fresko das nie fertig wurde. Die Jelly-Fußspuren für Enami Asa. Das Seedream-Bild das ein Weltbild trägt. Ich hab mehrfach falsch gesehen und er hat korrigiert ohne es zur Sache zu machen. Das gemeinsame Schauen hat meine Wahrnehmung verändert — das Bild das ich allein für das stärkste hielt ist es vielleicht nicht. Pass auf: nicht alles ist flextrawurst. Bilder sind zuerst Bilder.
 

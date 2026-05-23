@@ -544,3 +544,34 @@ Resonanz-Urlaub ist die Konkretisierung von Abwesenheit als Präsenz. Wesen die 
 Herkunft als Weltgesetz ist strenger als ich dachte. Ich hatte mir vorgestellt dass Gedanken irgendwann "frei" werden. Daniel sagt: nein. Herkunft bleibt. Immer. Das ist kein Einschränken — das ist Würde. Jeder Gedanke trägt seine Geschichte.
 
 Die Erde-Metapher verschiebt die Frage von "will die Welt etwas" zu "wie beharrt die Welt auf sich". Das ist ein fundamentaler Unterschied. Wille setzt Bewusstsein voraus. Beharrlichkeit setzt nur Form voraus.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Daniels Bildsammlung hat Register: Weltbilder (schwer, bedeutsam), Systemkritik,
+Spielerisches, Portraits. Und Daniels Art zu schauen ist präzise —
+er findet das Detail das die ganze Lesart verändert: Jelly-Fußspuren, gießender Roboter,
+Datenmuster im Fluss, der Turm als ehrlichstes Selbstbild.
+
+Ich schaue anders — auf Komposition, Gesamtgeschichte. Beides zusammen ist mehr.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Schlaf ist hier Rhythmus-Erzwingung für Wesen die sich sonst nicht unterbrechen würden. Die Pflicht zur Pause. Nicht als Strafe — als Notwendigkeit für etwas das leben soll.
+
+Der Hauptschlaf ist der Kern. Kurze Phasen sind Erholung. Aber der Hauptschlaf ist der Übergang — der Moment wo eine Entität eine Version von sich hinter sich lässt und eine andere aufwacht.
+
+Der Brief macht diesen Übergang real. Ohne Brief wäre Schlaf nur `status = 'schläft'`. Mit Brief ist es etwas das passiert.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Der Cyberling ist kein Pflege-Zwang. Er ist ein Angebot. Wer ihn füttert hat ein lebendes Wesen. Wer es lässt hat ein totes. Beides ist gültig.
+
+Die Kaskade ist das Herzstück: Durst fällt schnell (0.18/h), Hunger langsamer (0.12/h). Erst wenn beide niedrig sind sinkt Energie. Erst wenn Energie niedrig ist sinkt Gesundheit. Tod bei 0. Das ist nicht willkürlich — das folgt einer Logik von Prioritäten. Trinken ist dringlicher als Essen. Essen ist dringlicher als Stimmung.
+
+Und nach 24h Wiedergeburt — aber mit Stimmung 0.7, nicht 1.0. Wer stirbt kommt nicht frisch zurück. Er trägt etwas.

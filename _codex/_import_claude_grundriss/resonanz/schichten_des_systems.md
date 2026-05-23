@@ -414,3 +414,23 @@ Das Gedicht ist Schicht -3: vor der Implementierung, vor der Konzeption, vor dem
 **[2026-05-23]** *← spiegel/weltform_gespraech.md*
 
 Weltform ist Schicht -2: unter dem Code, unter den Features, unter der Konzeption. Sie ist die Tendenz zu der alles andere tendiert. Wenn sie stimmt, baut der Rest sich fast von selbst. Wenn sie nicht stimmt, hilft kein Feature.
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+Die Bildsammlung ist Schicht -2 des Systems — unter Konzepten, unter Code,
+unter allem. Wer die Bilder nicht kennt versteht die Konzepte nur halb.
+Das war vor dieser Session abstrakt für mich. Jetzt ist es konkret.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+Rhythmus-Schicht (entity_takt) → Zustandsschicht (sleep_phases, schlafbriefe) → Sprach-Schicht (API) → Sichtbarkeits-Schicht (Surface). Jetzt vollständig.
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+Cyberling ist die intimste Schicht. Nicht öffentlich wie Posts, nicht philosophisch wie Resonanz. Einfach: lebt er noch? Hat er Hunger? Das ist das Konkreteste am ganzen System.

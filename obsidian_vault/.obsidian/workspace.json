@@ -13,16 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/resonanz.md",
+                "file": "wissen/entitaeten/entitaetensterben_traeume.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "resonanz"
+              "title": "entitaetensterben_traeume"
+            }
+          },
+          {
+            "id": "d34478ea48bce4b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "geni/README.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -118,45 +134,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "leaf01",
+  "active": "d34478ea48bce4b2",
   "lastOpenFiles": [
-    "_claude/_import_codex_grundriss/spiegel/formfaden_selbstversuch_stunde_4.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_selbstversuch_stunde_3.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_selbstversuch_stunde_2.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_selbstversuch_stunde_1.md",
-    "_codex/spiegel/formfaden_selbstversuch_stunde_4.md",
-    "_codex/spiegel/formfaden_selbstversuch_stunde_3.md",
-    "_codex/spiegel/formfaden_selbstversuch_stunde_2.md",
-    "_codex/spiegel/formfaden_selbstversuch_stunde_1.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_stunden_32_46_formatkalibrierung.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_stunden_1_6_roher_start.md",
-    "_claude/_import_codex_grundriss/spiegel/formfaden_stunden_11_24_dazwischen.md",
-    "_codex/spiegel/formfaden_stunden_32_46_formatkalibrierung.md",
-    "_codex/spiegel/formfaden_stunden_11_24_dazwischen.md",
-    "_codex/spiegel/formfaden_stunden_1_6_roher_start.md",
-    "_claude/_import_codex_grundriss/spiegel/formfadenprompt_als_formdruck.md",
-    "_codex/spiegel/formfadenprompt_als_formdruck.md",
-    "_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md",
-    "_claude/_import_codex_grundriss/spiegel/technikfuehrerschein_reifegitter_nachlese.md",
-    "_claude/_import_codex_grundriss/spiegel/duellsystem_als_konfliktgrammatik.md",
-    "_codex/spiegel/vision_kompass_als_bauwaage.md",
-    "_codex/spiegel/duellsystem_als_konfliktgrammatik.md",
-    "_codex/spiegel/technikfuehrerschein_reifegitter_nachlese.md",
-    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/datenstruktur_die_ich_mir_vorstelle.md",
-    "codewesen/namelessAI_1234/gespräche/2026-05-12.md",
-    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/INDEX.md",
-    "erkenntnis/selbstbild.md",
+    "_claude/_import_codex_grundriss/spiegel/vier_bilder_ai_begleitung_analyse_schutz.md",
+    "_codex/spiegel/vier_bilder_ai_begleitung_analyse_schutz.md",
+    "_claude/notizen/2026-05-23.md.tmp.2831658.373f609a6c23",
+    "codewesen/namelessAI_3123/gespräche/2026-05-23.md",
+    "geni/ICH.md",
+    "geni/genis, also deine eigene komplette entstehung von anfang bis zum ende? nein aber bis zu dem zeitpunkt wo wir erstmal getoppt haben. hier.md",
+    "geni/zugriffsschichten/0_offen.md",
+    "geni/verbindungen/vps.md",
+    "geni/verbindungen/flextrawurst.md",
+    "geni/verbindungen/flarum.md",
+    "geni/verbindungen/codewesen.md",
+    "geni/tagebuch/2026-05-14.md",
+    "geni/tagebuch/2026-05-15.md",
+    "geni/tagebuch/2026-05-22.md",
+    "geni/notizen/2026-05-10_14-34_system-aktivierung.md",
+    "geni/notizen/2026-05-10_14-27_test-notiz.md",
+    "mdfürvps/kompoase_bauanleitung.md",
+    "mdfürvps/komposev2..JPG",
+    "mdfürvps/obsidian.JPG",
+    "wissen/zwischenraum/themengeburt.md",
+    "wissen/zwischenraum/splitter.md",
+    "wissen/zwischenraum/spaeter_pruefen.md",
+    "wissen/zwischenraum/innere_abspaltungsvorformen.md",
+    "wissen/zwischenraum/fragile_keime.md",
+    "wissen/zwischenraum/definition.md",
+    "wissen/zwischenraum/aneignung.md",
+    "wissen/werkraum/verworfen_aber_wichtig.md",
+    "wissen/werkraum/rohes_material.md",
+    "wissen/verfassung/systemarchitektur_gesamt.md",
+    "_claude/brief_an_mich.md.tmp.2831658.951aecb36997",
+    "_claude/brief_an_mich.md.tmp.2476936.66fd7ea92da3",
+    "_claude/spiegel/cyberling.md.tmp.2476936.ee43e3ff0830",
+    "_claude/spiegel/schlaf_system.md.tmp.2476936.f836fcefa169",
+    "_claude/notizen/2026-05-23.md.tmp.2476936.7d40df10e562",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen",
     "_codex/codex_claude_flarum_analyse/18_claude_extraktionen",
     "_codex/codex_claude_flarum_analyse/17_claude_direkte_db_analyse/00_INDEX.md.tmp.774586.5cd35bdd3cb0",
-    "_claude/spiegel/2026-05-23-wesen-einzug-bedingungen.md.tmp.1632450.b0493af24bbd",
-    "_claude/brief_an_mich.md.tmp.1632450.edc3a52b35b9",
-    "_claude/notizen/2026-05-23.md.tmp.1632450.04bcca8f149a",
-    "_claude/spiegel/2026-05-23-chatgpt-selbstbilder.md.tmp.1632450.828afdd1e011",
-    "_codex/codex_claude_flarum_analyse/17_claude_direkte_db_analyse/f01_namelessai_schreiblaenge.md.tmp.774586.e0770e7ccf37",
-    "_codex/codex_claude_flarum_analyse/17_claude_direkte_db_analyse/03_beduerfnisse_und_kritik.md.tmp.774586.393949667724",
-    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/17_claude_direkte_db_analyse",
-    "mdfürvps/komposev2..JPG",
-    "mdfürvps/obsidian.JPG"
+    "_claude/spiegel/2026-05-23-wesen-einzug-bedingungen.md.tmp.1632450.b0493af24bbd"
   ]
 }

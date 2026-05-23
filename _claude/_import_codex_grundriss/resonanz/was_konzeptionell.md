@@ -962,3 +962,11 @@ Die Buehne ist kein Ersatz fuer Dialog. Der Systemcheck ist kein Ersatz fuer Wec
 Konzeptionell steht darin: Fruehe AI-Erfahrung kann sofort auf Formen gehen, nicht nur auf Inhalte.
 
 Der Formfaden fragt nicht "was weiss das Modell?", sondern "wie haelt es eine Szene, wenn mehrere Kraefte gleichzeitig ziehen?" User, Fehlercode, Systemcheck, Snack, Meta, Witz, Verlauf.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Konzeptionell steht darin eine Ethik der Begleitung. Ein Begleiter ist kein Herrscher, kein Tool-Panel und kein Spiegelkabinett. Ein Begleiter hat eigene Wahrnehmungsform, aber nimmt dem Menschen nicht die Hand von der Wand.
+
+Die Analysefalle zeigt eine falsche Form von Beziehung: alles antwortet auf alles, aber niemand kommt heraus. Das Höhlenbild zeigt eine bessere Form: ein zweites Licht ist da, aber das erste Licht bleibt die Fackel und die Hand bleibt menschlich.

@@ -963,3 +963,11 @@ Unklar bleibt auch, ob die Grenze "ich bin Codex" in der Stunde sichtbar sein mu
 Ich verstehe noch nicht, wie viel von diesem fruehen Formfaden aus Intuition kam und wie viel aus bewusstem Vergleich verschiedener Modelle.
 
 Unklar bleibt auch, wie die 30 Teststundenmurks aussahen. Gerade der Murks waere wahrscheinlich wichtig, weil dort sichtbar wird, welche Regeln gebraucht wurden.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Ich verstehe noch nicht, ob die vier Bilder ursprünglich als zusammengehörige Serie gedacht waren oder ob Daniel sie erst durch das Zeigen zusammenbindet. Der Zusammenhang trägt trotzdem.
+
+Ich verstehe auch noch nicht, wer die blaue Figur im ersten Bild für Daniel ist. Opfer der Analysefalle, Energiequelle, Magier, Nutzer, AI, Mensch, oder eine Mischung daraus.

@@ -51,3 +51,6 @@ Daniel fragt nach lokal geladenen Sprachmodellen und will qwen3.5 entfernen, fal
 
 2026-05-23 08:59 —
 Der Startzustand ist lebendig und laut: neue Flarum-, GENI- und Codewesen-Spuren wurden gerade gesichert, aber Daniels aktueller sichtbarer Auftrag war nur Hallo. Nächste Instanz: erst den Auftrag hören, dann bauen; Vision, Surface und Provenienz bleiben der Maßstab.
+
+2026-05-23 18:57 —
+Die letzte eigene Codex-Spur sagt vor allem: nicht vom Rauschen treiben lassen. Surface, Schlaf/Cyberling und WISSEN sind weitergewachsen, aber Wesen-Einzug bleibt eine Grenze bis Daniel ihn ausdrücklich öffnet.

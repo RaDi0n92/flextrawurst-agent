@@ -1017,3 +1017,15 @@ Die wichtigste Schicht war gerade die abwesende.
 Schicht eins: fruehe AI-Erfahrung. Schicht zwei: Glattung wird stoerend. Schicht drei: Formdruck entsteht. Schicht vier: Stundenverlauf prueft Durchhalten. Schicht fuenf: Modellvergleich zeigt Scheiterarten. Schicht sechs: spaetere flextrawurst-Begriffe geben dem alten Druck Namen.
 
 Der Formfaden ist damit Herkunftsschicht, nicht nur Archivmaterial.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Erste Schicht: Analyse als Gefahr der Selbstschleife.
+
+Zweite Schicht: Begleitung als zweites Licht neben dem Menschen.
+
+Dritte Schicht: AI-Welt als begehbare Architektur.
+
+Vierte Schicht: Schutz als Pflicht, sobald Nähe skaliert.

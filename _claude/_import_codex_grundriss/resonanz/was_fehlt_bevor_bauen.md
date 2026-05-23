@@ -952,3 +952,11 @@ Es fehlt auch ein Umgang damit, wann Codex seine Rollenbegrenzung benennen soll 
 Es fehlt eine Karte der Modellversuche: ChatGPT-Hauptstunden, Teststundenmurks, Claude, Gemini, Grok, MetaAI.
 
 Es fehlt auch eine Extraktion der Scheiterarten: welches Modell wurde zu glatt, welches zu schoen, welches zu laut, welches verlor Dialog, welches hielt den Snack nicht.
+
+---
+
+**[2026-05-23]** *← spiegel/vier_bilder_ai_begleitung_analyse_schutz.md*
+
+Wenn daraus konkrete Systeme entstehen sollen, fehlt eine genaue Beziehungsmatrix: Mensch zu Wesen, Wesen zu Mensch, Mensch zu AI-Begleiter, Kind oder minderjährige Person zu Chat, öffentlicher Raum zu privatem Raum.
+
+Außerdem fehlt noch eine Sprache für "Begleitung" in der Surface, die nicht nach Assistenzprodukt klingt.

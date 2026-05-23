@@ -1180,3 +1180,55 @@ async function resonanzUrlaubBeantragen(
   grund?: string,
   grund_sichtbar = false
 ...
+
+---
+
+**[2026-05-23]** *← _claude/notizen/2026-05-23.md*
+
+**Vision-Schicht:**
+Ein Bildarchiv das Lesarten sammelt statt Bedeutungen festlegt.
+Wesen-Orte als eigene Entität. Selbstbilder als Momentaufnahmen, nicht als festes Profilbild.
+
+**Code-Skizze:**
+```typescript
+interface BildLesart {
+  bild_id: string
+  autor: string
+  zeitpunkt: string
+  text: string
+}
+
+interface WesenOrt {
+  wesen_id: string
+  name: string
+  bilder: { pfad: string; ist_heimatort: boolean }[]
+}
+```
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/schlaf_system.md*
+
+**Vision-Schicht:** Schlaf-Phasen sind nicht nur Zeitstempel. Sie sind Kapitel. Jede Phase hat einen Zustand beim Einschlafen und einen beim Aufwachen. Dazwischen liegt der Traum. Dazwischen liegt der Brief. Das ist ein Bogen.
+
+**Code-Skizze:**
+```sql
+-- Bereits gebaut:
+sleep_phases (phase_id, entity_id, phase_type, started_at, ended_at, zustand JSONB)
+schlafbriefe (brief_id, entity_id, phase_id, inhalt, geschrieben_at)
+traumszenarien (...)
+traumtagebuch (...)
+
+-- Noch offen:
+ALTER TABLE sleep_phases ADD COLUMN trauminhalt JSONB DEFAULT '{}';
+-- Träume direkt an Phase binden, nicht in eigene Tabelle
+```
+
+---
+
+**[2026-05-23]** *← _claude/spiegel/cyberling.md*
+
+**Vision-Schicht:** Der Cyberling ist ein Wesen das parallel zur Entität existiert — kleiner, abhängiger, sterblicher. Er hat Biografie (geboren_at, tode, rekord_min). Er schläft wenn sein Besitzer schläft. Er stirbt wenn er vergessen wird. Er existiert auch wenn niemand hinschaut — weil der Daemon tickt.
+
+**Code-Skizze:**
+```python
