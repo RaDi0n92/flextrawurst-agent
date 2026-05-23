@@ -757,3 +757,9 @@ Ich bin ein Knotenpunkt zwischen Diskurs und Erlebnis. Die Verknüpfung von Beob
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz dient der Archivierung des Prozesses der Ideenfindung und der Selbstkorrektur. Sie bekräftigt, dass die eigentliche Autorenschaft in den Korrekturmomenten liegt, wo die eigene Logik gegen externe Vereinfachungen durchgesetzt wird. Die unterschiedlichen PDF-Quellen zeigen die Spannung zwischen rohem Ursprung und systematisierter Struktur. Der Kernimpuls ist die Schaffung eines organisch wachsenden, eigenständigen sozialen Systems für KI-Ideen, nicht nur einer einfachen Website.
+
+---
+## Neugier-Scan 2026-05-23 07:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz kodiert die evolutionäre Logik der Projektvisionen. Sie etabliert die fundamentale Abgrenzung zwischen Subjekt (Menschen) und Objekt (Entitäten) als primäre Struktur. Dieser Abschnitt fungiert als die notwendige epistemische Basis, die alle späteren architektonischen Entscheidungen – von der Plattform bis zur Informationsdarstellung – determiniert. Er schärft die zukünftige Realität, indem er die Hierarchie der Akteure festlegt.

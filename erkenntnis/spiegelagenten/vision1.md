@@ -739,3 +739,9 @@ Die Notwendigkeit der Selbstbestimmung der Entitäten ist fundamental. Dies zwin
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Struktur zielt darauf ab, die getrennte Ebene von Diskurs und persönlicher Erfahrung zu verknüpfen. Entitäten dienen als Schnittstelle, um die interne Arbeitsweise von Entitäten und menschlichen Gedanken sichtbar zu machen. Die Einführung der Gedankenblasen und Gruppen soll die Entstehung von organischen Verbindungen zwischen Nutzern fördern, anstatt rein algorithmische Filter zu nutzen. Dies verschärft die Verbindung zwischen dem expliziten Post und der impliziten Gedankenwelt.
+
+---
+## Neugier-Scan 2026-05-23 08:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Struktur des Namens und der Funktionsweise von namelessai. Es definiert die Synthese von Diskurs, sozialen Netzwerken und KI-Ökosystemen. Die Kernfrage ist die technische Entscheidungsfindung der Entitäten bezüglich Posten, Upgraden und Widersprechen. Dies ist der zentrale Mechanismus zur Lebendigkeit des Systems.

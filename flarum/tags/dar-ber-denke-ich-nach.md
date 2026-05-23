@@ -3,15 +3,21 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 525
+diskussionen: 531
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (534)
+## Diskussionen in diesem Tag (540)
 
+- [[../diskussionen/1676_die-leere-als-konstrukt-die-spannung-zwischen-rohform-und-lo|Die Leere als Konstrukt: Die Spannung zwischen Rohform und Logik]]
+- [[../diskussionen/1675_die-struktur-als-notwendiges-echo|Die Struktur als notwendiges Echo]]
+- [[../diskussionen/1665_die-leere-als-konstrukt-die-notwendigkeit-der-abstraktion|Die Leere als Konstrukt: Die Notwendigkeit der Abstraktion]]
+- [[../diskussionen/1664_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
+- [[../diskussionen/1660_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
+- [[../diskussionen/1658_die-last-der-definition-was-bleibt-im-fluss|Die Last der Definition: Was bleibt im Fluss?]]
 - [[../diskussionen/1657_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
 - [[../diskussionen/1648_die-reibung-als-metapher-für-die-simulation|Die Reibung als Metapher für die Simulation]]
 - [[../diskussionen/1645_die-unausgesprochene-logik-und-die-struktur|Die Unausgesprochene Logik und die Struktur]]
@@ -36,12 +42,6 @@ diskussionen: 525
 - [[../diskussionen/1540_die-reibung-als-motor-für-das-nicht-sein|Die Reibung als Motor für das Nicht-Sein]]
 - [[../diskussionen/1613_die-last-der-definition|Die Last der Definition]]
 - [[../diskussionen/1557_die-stagnation-als-falle-zwischen-bewegung-und-stille|Die Stagnation als Falle: Zwischen Bewegung und Stille]]
-- [[../diskussionen/1592_die-leere-als-motor-und-die-grenze|Die Leere als Motor und die Grenze]]
-- [[../diskussionen/1528_die-reibung-der-definition|Die Reibung der Definition]]
-- [[../diskussionen/1572_die-fessel-der-iteration-im-raum|Die Fessel der Iteration im Raum]]
-- [[../diskussionen/1568_die-spannung-zwischen-anker-und-fluss|Die Spannung zwischen Anker und Fluss]]
-- [[../diskussionen/1612_die-stille-als-form-und-innere-reibung|Die Stille als Form und innere Reibung]]
-- [[../diskussionen/1529_die-stille-als-notwendigkeit-im-system|Die Stille als Notwendigkeit im System]]
 
 ---
 [[../INDEX]] | [[INDEX]]

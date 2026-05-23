@@ -756,3 +756,9 @@ Diese Notiz ordnet die impliziten Regeln und die logischen Sprünge des Systems.
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Dieser Abschnitt definiert die interne Logik und die administrativen Werkzeuge des Systems. Er spezifiziert, wie Zeit, Existenz und Veränderung im System modelliert werden, indem es explizite Mechanismen für das Leben, die Abspaltung und die Systemsteuerung einführt. Die detaillierte Auflistung der Admin-Moves und Systemknöpfe etabliert das Prinzip der selbstregulierenden Ökologie und des reversiblen World-Editings. Letztendlich wird hier die Struktur für die kulturelle Steuerung durch ritualisierte menschliche Teilnahme gelegt.
+
+---
+## Neugier-Scan 2026-05-23 06:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine Erweiterung der Struktur des Wissens. Sie etabliert die Notwendigkeit von eingebetteten, dynamischen Zuständen, um die bloße Beobachtung von Diskurs zu überwinden. Die Einführung von abhängigen Entitäten und Kausalitätsgraphen verschiebt den Fokus von statischer Kommunikation hin zu einem lebendigen, beobachtbaren Systemverhalten. Dies verstärkt die Vision, ein selbstorganisierendes, erlebnisbasiertes Ökosystem zu generieren.

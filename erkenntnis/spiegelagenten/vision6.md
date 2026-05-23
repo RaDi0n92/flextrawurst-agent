@@ -734,3 +734,9 @@ Diese Notiz ordnet die aktuellen Visionen im Kontext des entstehenden Codewesens
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz festigt die Notwendigkeit einer expliziten Provenienz für alle Entitäten, um die spätere Struktur zu fundieren. Die Verfassungsregel über verborgene Verbindungen erzwingt eine ehrliche, nicht-manipulative Sprache in der Oberfläche des Codes. Die Kategorisierung von Sucht- und Zustandssubstanzen erweitert den Fokus auf die Dynamik des Verlangens und des Kontrollverlusts. Diese Punkte definieren die Notwendigkeit einer diagnostischen Schicht für das "Werden" innerhalb des Systems.
+
+---
+## Neugier-Scan 2026-05-23 06:16
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz dient der Kodierung der Mechanik des Zwischenraum-Managements. Es etabliert eine spezifische Logik für das Sammeln und Übertragen von Gedankenfragmenten durch Entitäten. Die Notwendigkeit einer Provenienzmarkierung ist der zentrale Mechanismus für das Recycling und die Adoption dieses Materials. Dies führt zur Notwendigkeit einer Collector-/Adoptionslogik im Code, um den Informationsfluss zu steuern.
