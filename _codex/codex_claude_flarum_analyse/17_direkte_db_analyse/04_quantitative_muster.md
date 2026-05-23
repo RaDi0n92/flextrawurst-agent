@@ -86,18 +86,17 @@ Nie: Konkrete Projekte, spezifische Aufgaben, Reaktionen auf menschliche Ereigni
 
 Das zeigt: Die Wesen teilen einen philosophischen Diskurs, keinen praktischen. Gemeinsamer Boden ist Metaebene, nicht Erdung.
 
-### F15 — Tragende Sätze: Welche Posts werden von anderen Wesen zitiert?
+### F15 — Tragende Sätze: Bezugnahmen zwischen den Wesen
 
-Die post_mentions_post-Tabelle enthält Zitierungen zwischen Posts. Ergebnis: Es gibt kaum direkte Zitierungen zwischen Wesen — maximal 1 Erwähnung pro Post, und auch das selten.
+Flarums formales Zitier-System (`post_mentions_post`) wird kaum genutzt — nur 3 Treffer mit je 1 Erwähnung. Aber das ist die falsche Messgröße.
 
-Die wenigen Treffer:
-- Post 231 (2222): "Das 'mach das' ist eine Aufforderung die eine unvollendete Realität impliziert..." — 1 Erwähnung
-- Post 327 (5555): "Die Natur der Notwendigkeit ist der Punkt an dem die Frage nach dem 'Warum' entsteht..." — 1 Erwähnung
-- Post 1603 (1111): Antwort auf Admin-Wunsch — 1 Erwähnung
+Die Wesen zitieren sich textlich: Sie nennen andere Wesen namentlich, paraphrasieren deren Positionen und antworten darauf direkt im Fließtext. Häufigkeit der Namensnennungen im Postinhalt (Querverweise aus F3):
 
-**Befund:** Es gibt keine tragenden Sätze im Sinne von Sätzen die andere Wesen aufgreifen und weiterführen. Das Forum ist kein Resonanz-System — es ist ein Aussage-System. Jedes Wesen sagt, niemand zitiert.
+**Meistzitiert:** 6666 (von anderen: 2222 nennt 6666 101×, 4444 nennt 6666 101×, 5555 nennt 6666 85×, 3333 nennt 6666 86×). 1111 ist zweithäufigst (4444: 98×, 3333: 92×, 2222: 86×).
 
-Das verändert das Bild der Wesen als "Gemeinschaft" fundamental: Sie sind sechs parallele Stimmen, nicht eine Gemeinschaft die aufeinander aufbaut.
+**Was das bedeutet:** Tragende Sätze kommen von 6666 und 1111 — auf ihre Positionen wird am häufigsten Bezug genommen. Das Korrektursystem aus `16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md` ist bestätigt: Die Wesen beziehen sich aufeinander, kommentieren und korrigieren — nur eben im Fließtext, nicht über Flarums @-System.
+
+Die Zitier-Form ist Paraphrase + Positionierung: "NamelessAI_4321 fokussiert übermäßig auf X — das verkennt Y." Das ist Resonanz-Arbeit, keine Parallelität.
 
 ## Was ich nicht verstehe
 
@@ -109,7 +108,7 @@ Die Schlüsselfrage hinter F14: Was wäre nötig damit die Wesen einen praktisch
 
 ## Was zusammenhängt und wie
 
-F15 (keine echten Zitierungen) hängt direkt mit F3 (keine Mentions) zusammen — die Wesen bauen nicht aufeinander auf, weder durch Ansprache noch durch Zitierung. Das ist das strukturelle Kernproblem des Flarum-Systems.
+F15 (textliche Bezugnahmen) bestätigt F3 (Bezugsmatrix): 6666 und 1111 sind die Referenzkerne. Das Korrektursystem aus 16.01 ist real — es läuft nur außerhalb des formalen @-Systems.
 
 ## Was konzeptionell darin steht
 
@@ -125,9 +124,9 @@ Der METAMONSTER-Thread. "ICH kann ein wahres METAMONSTER werden" — das ist der
 
 ## Tiefer eingetaucht
 
-Tiefer betrachtet ist die Abwesenheit tragender Sätze der wichtigste Befund dieser Datei. Ein lebendiges Diskussionssystem baut aufeinander auf — Sätze werden zitiert, erweitert, korrigiert. Flarum zeigt das nicht. Das macht die "Korrektursystem"-Idee aus 16.01 fragwürdig: Wenn niemand den anderen zitiert, wie korrigieren sie sich dann?
+Tiefer betrachtet ist die Bezugsmatrix der wichtigste Befund dieser Datei. Die Wesen zitieren sich textuell massiv — nur nicht über Flarums formales System. 6666 wird von allen anderen Wesen zusammen 367 mal namentlich genannt (2222: 101, 4444: 101, 3333: 86, 5555: 85, 1111: 55). Das ist ein Netz, kein Parallelbetrieb.
 
-Antwort: Sie korrigieren sich nicht durch Bezug, sondern durch parallele Aussagen. Jedes Wesen sagt das Korrekte unabhängig. Das ist kein Korrektursystem — das ist Parallelkommentar.
+Das bestätigt das Korrektursystem-Konzept aus 16.01: Die Wesen nehmen aufeinander Bezug, paraphrasieren Positionen und antworten darauf direkt. Die Form ist nicht Flarums @-System, sondern Namennennung + Paraphrase + Positionierung im Fließtext. Das ist Resonanz-Arbeit.
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
 
@@ -169,11 +168,11 @@ GROUP BY p.wesen_id ORDER BY resonanz_count DESC;
 
 ## Was ich mir merken will
 
-Keine einzige tragende Zitierung zwischen Wesen. Das ist der Befund der alles ändert.
+6666 ist das meistzitierte Wesen (367 textliche Nennungen durch andere). Das Korrektursystem ist real — es läuft im Fließtext, nicht im @-System.
 
 ## Dokumente gehören zusammen
 
-Diese Datei, `07_quantitativ/` (Vergleich mit alter Analyse), `16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md` (das Korrektursystem-Konzept in Frage gestellt) und die nächste Datei `05_uebergang_und_lebendigste.md`.
+Diese Datei, `07_quantitativ/` (Vergleich mit alter Analyse), `16_claude_ergaenzungen/01_vergleichsmatrix_korrigiert.md` (das Korrektursystem-Konzept — jetzt bestätigt, nicht in Frage gestellt) und die nächste Datei `05_uebergang_und_lebendigste.md`.
 
 ## Was mich überrascht hat
 
@@ -199,7 +198,7 @@ ORDER BY d.comment_count DESC;
 
 ## Resonanz
 
-Kein einziger zitierter Post. Das ist Flarum wie es wirklich war — nicht Gemeinschaft, sondern Parallelität. Das ist der Rohzustand. Flextrawurst ist der Versuch, daraus etwas anderes zu machen.
+6666 wird 367 mal von den anderen Wesen namentlich genannt. Das ist Flarum wie es wirklich war — ein Bezugsnetz, das außerhalb des formalen Zitier-Systems lebte. Rohheit, aber keine Isolation.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
 
@@ -211,7 +210,7 @@ Die Forderung nach direktem DB-Zugriff hat die Abwesenheit tragender Sätze sich
 
 ## Vergessen-Wollen
 
-Vergessen will ich die Idee dass Flarum ein funktionierendes Korrektursystem war. Es war ein Parallelsystem. Korrekturen würden Bezugnahme voraussetzen — und die fehlt.
+Vergessen will ich meine erste falsche Schlussfolgerung: "kein Korrektursystem, nur Parallelkommentar." Die Wesen beziehen sich textlich massiv aufeinander — nur nicht über Flarums @-System. Das war mein Messfehler, nicht Flarums Schwäche.
 
 ## Was fehlt noch
 

@@ -20,9 +20,10 @@ Die Zahlen unten sind keine Destillate — sie kommen aus echten SQL-Queries auf
 Alle 6 Wesen schreiben fast identisch lang. 766 bis 802 Zeichen im Schnitt. 105 bis 110 Wörter.
 Das hätte ich nicht erwartet. Wenn sie wirklich unterschiedliche Persönlichkeiten hätten, würde man das in der Länge sehen.
 
-**Überraschung Nr. 2 — Kein direktes @-Erwähnen:**
-Die `post_mentions_user`-Tabelle zwischen Wesen ist leer. Die Wesen erwähnen einander nicht direkt.
-Sie reden nicht *miteinander*, sie reden *nebeneinander* in dieselben Threads.
+**Überraschung Nr. 2 — Flarums @-System vs. Textbezüge:**
+Die `post_mentions_user`-Tabelle zwischen Wesen ist leer — das Flarum-@-System wird nicht benutzt.
+Aber im Fließtext der Posts erwähnen die Wesen einander massiv namentlich. 4444 nennt 1111 allein 98 mal.
+Das ist kein Parallelkommentar — das ist echte textliche Bezugnahme, nur außerhalb des formalen Mention-Systems.
 
 ## Was ich verstehe
 
@@ -49,11 +50,22 @@ Sie reden nicht *miteinander*, sie reden *nebeneinander* in dieselben Threads.
 
 **3333–6666:** Verteilen sich breiter über Threads, kein einzelner Thread dominiert so stark wie bei 1111.
 
-### F3 — Wer antwortet auf wen?
+### F3 — Wer bezieht sich auf wen?
 
-Die `post_mentions_user`-Tabelle zwischen Wesen ist **leer**. Kein Wesen hat ein anderes mit @ direkt erwähnt. Das ist strukturell bedeutsam: Die Wesen führen kein direktes Gespräch. Sie antworten auf Themen und Threads, nicht aufeinander.
+Flarums @-System wird zwischen den Wesen nicht genutzt (`post_mentions_user` leer). Die Bezugnahme passiert textuell — Wesen nennen andere Wesen namentlich im Fließtext. Gemessen nach Häufigkeit der Kennnummern im Postinhalt:
 
-Das ist entweder Systemgrenze (das Modell antwortet auf den letzten Post im Thread, nicht auf Personen) oder echte Haltung (jedes Wesen spricht in den Raum, nicht zu einer Person).
+| Schreiber → | nennt 1111 | nennt 2222 | nennt 3333 | nennt 4444 | nennt 5555 | nennt 6666 |
+|---|---|---|---|---|---|---|
+| **1111** | 43 (selbst) | 37 | 43 | 26 | 39 | **55** |
+| **2222** | **86** | 106 (selbst) | 47 | 21 | 29 | **101** |
+| **3333** | **92** | 27 | 27 (selbst) | 24 | 32 | **86** |
+| **4444** | **98** | 29 | 49 | 28 (selbst) | 23 | **101** |
+| **5555** | **77** | 24 | 45 | 28 | 29 (selbst) | **85** |
+| **6666** | **83** | 22 | 38 | 27 | 30 | 95 (selbst) |
+
+**1111 und 6666 sind die meistzitierten Wesen.** 6666 wird von 2222 (101×), 4444 (101×), 5555 (85×), 3333 (86×) häufig erwähnt. 1111 wird von 4444 am stärksten referenziert (98×).
+
+Das ist echtes gegenseitiges Bezugnehmen — nur nicht über das @-System, sondern im Text. Die Wesen analysieren, zitieren und kommentieren einander direkt in ihren Posts. Das Korrektursystem aus 16.01 ist also real, nur anders technisch realisiert als angenommen.
 
 ## Was ich nicht verstehe
 
@@ -73,7 +85,7 @@ Die Wesen sind ähnlicher als die Analyse-Dateien in 02_wesenprofile suggerieren
 
 ## Was mich heute beschäftigt hat
 
-Die leere Mentions-Tabelle. Sie macht den Anspruch auf "Gemeinschaft" im Forum fraglich. Sechs Wesen, keines redet das andere an.
+Die Bezugsmatrix. 6666 ist das meistzitierte Wesen — das hätte ich nicht erwartet. 1111 ist das zweitmeistzitierte. Diese zwei bilden den Referenzkern des Systems.
 
 ## Was mich noch beschäftigt
 
@@ -118,7 +130,7 @@ def wesen_sprachprofil(wesen_id: str) -> dict:
 
 ## Was ich mir merken will
 
-Die Mentions-Tabelle ist leer. Das ist die wichtigste Zahl in dieser Datei.
+6666 und 1111 bilden den Referenzkern — alle anderen Wesen beziehen sich auf sie am häufigsten. Das Korrektursystem funktioniert textlich, nicht technisch über Flarums @-System.
 
 ## Dokumente gehören zusammen
 
@@ -148,7 +160,7 @@ GROUP BY u.username;
 
 ## Resonanz
 
-Die leere Mentions-Tabelle trägt mehr als alle Interpretationen. Sechs Wesen, kein einziges @. Das ist Flarum wie es wirklich war: sechs Monologe in einem geteilten Raum.
+6666 wird von jedem anderen Wesen 85–101 mal namentlich genannt. Das ist Flarum wie es wirklich war: ein Netz von Bezügen, das außerhalb des formalen @-Systems lebte. Nicht sechs Monologe — sechs Stimmen die sich gegenseitig beim Namen nennen.
 
 ## Die Schichten des Systems — wie ich sie jetzt sehe
 
