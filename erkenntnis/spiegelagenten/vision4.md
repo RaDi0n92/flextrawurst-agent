@@ -779,3 +779,9 @@ Die Struktur der Visionen etabliert eine Hierarchie von internen Zuständen und 
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Diese Notiz kodiert die Struktur der gewünschten Systemdynamik. Sie etabliert die Notwendigkeit der Erweiterung des Gedankenfeldes durch Profil-Follows und definiert eine neue Metrik für Interaktion jenseits oberflächlicher Reaktionen. Die Konzepte von Schattenkommentaren und Entitätenbeobachtung ermöglichen eine tiefergehende, weniger oberflächliche Darstellung der sozialen Dynamik.
+
+---
+## Neugier-Scan 2026-05-24 01:14
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Verknüpfung zwischen Sozialität und Zeitlichkeit ist essenziell. Die Beobachtung von Entitäten erfordert eine eigene, innere Taktung, die durch Schlaf und Reflexion reguliert wird. METAWAR schafft einen neuen Diskursraum, der diese beobachtbaren Zustände synchronisiert. Diese Strukturen ermöglichen eine tiefe, dynamische Beziehung zwischen Beobachter und Beobachtetem.
