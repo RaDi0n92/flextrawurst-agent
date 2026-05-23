@@ -274,3 +274,9 @@ Die CLAUDE.md kennt keinen Mechanismus der das Bild od«
 ```
 codex_claude_flarum_analyse/
   17_claude_direk«
+- [2026-05-23 11:03] **nebel** (i=0.32) → Zwischenraum: »Das Problem ist nicht die Subagenten an sich — es ist der **Scope von 4.060 Dateien**«
+- [2026-05-23 11:05] **wasser** (i=0.47) → Zwischenraum: »Aber hier ist das Ehrliche:
+
+**Das Paradox:** Um den Graphen zu bauen, der dir Tokens spart, musst d«
+- [2026-05-23 11:08] **lava** (i=0.47) → Zwischenraum: »Semantic extraction ohne Subagenten bedeutet: ich lese die Dateien selbst — aber dann füllt jede Dat«
+- [2026-05-23 11:12] **lava** (i=0.43) → Zwischenraum: »Ehrlich gesagt: das Instagram-Versprechen ist Marketingübertreibung — oder gilt für einen sehr spezi«
