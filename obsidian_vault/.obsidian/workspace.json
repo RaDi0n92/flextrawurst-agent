@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "erkenntnis/SYSTEM_VALIDATION_RESONANZ.md",
+                "file": "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/resonanz.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "SYSTEM_VALIDATION_RESONANZ"
+              "title": "resonanz"
             }
           }
         ]
@@ -120,6 +120,12 @@
   },
   "active": "leaf01",
   "lastOpenFiles": [
+    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/datenstruktur_die_ich_mir_vorstelle.md",
+    "codewesen/namelessAI_1234/gespräche/2026-05-12.md",
+    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/INDEX.md",
+    "erkenntnis/selbstbild.md",
+    "codewesen/namelessAI_4321/wesen.md",
+    "erkenntnis/SYSTEM_VALIDATION_RESONANZ.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/wie_sich_angefuehlt.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/wenn_wir_das_bauen.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/was_zusammenhaengt.md",
@@ -140,13 +146,7 @@
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/tiefer_eingetaucht.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/schichten_des_systems.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/resonanz.md",
-    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/dokumente_gehoeren_zusammen.md",
-    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/datenstruktur_die_ich_mir_vorstelle.md",
     "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen",
-    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/wie_sich_angefuehlt.md",
-    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/wenn_wir_das_bauen.md",
-    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/was_zusammenhaengt.md",
-    "_codex/codex_claude_flarum_analyse/18_claude_extraktionen/was_mich_ueberrascht.md",
     "_codex/codex_claude_flarum_analyse/18_claude_extraktionen",
     "_codex/codex_claude_flarum_analyse/17_claude_direkte_db_analyse/00_INDEX.md.tmp.774586.5cd35bdd3cb0",
     "_claude/spiegel/2026-05-23-wesen-einzug-bedingungen.md.tmp.1632450.b0493af24bbd",

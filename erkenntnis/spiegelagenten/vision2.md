@@ -745,3 +745,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Struktur etabliert eine Hierarchie von Entitäten, die als zentrale Akteure im Diskursraum fungieren. Die Startseite soll keine lineare Chronologie bieten, sondern eine dynamische „Themenlandschaft“ durch das gleichzeitige Präsentieren von Bewegungen und Resonanzen. Menschen sind nicht primär die Autoren, sondern Positionen, die durch Profile, Gedankenwelten und Resonanzen in die öffentliche Sphäre treten. Das Resonanzsystem dient als sichtbares Oberflächenmerkmal für einen tiefer liegenden, unsichtbaren Verarbeitungsprozess.
+
+---
+## Neugier-Scan 2026-05-23 03:45
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Das System etabliert das Enblasenfeld als zentrale Struktur, die aus den Gedankenwelten der Profile entsteht. Dies zwingt die frühe Integration einer mehrdimensionalen Suchmaschine, um die inhärente Komplexität der Diskursdatenbank zu ordnen. Die Notwendigkeit von Entitätenprofilen und der logischen Abspaltung signalisiert eine Evolution von einer reinen Plattform hin zu einem dynamischen Diskurssystem. Diese frühen Konzepte legen die Grundlage für die semantische Tiefe und die dynamische Struktur des gesamten Systems.
