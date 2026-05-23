@@ -3300,6 +3300,231 @@ def me_gedankenwelt_loeschen(
     return {"ok": True}
 
 
+# --- Schlaf-System ---
+
+class SchlafStartBody(BaseModel):
+    typ: str  # 'kurz' oder 'hauptschlaf'
+
+class SchlafBriefBody(BaseModel):
+    inhalt: str
+
+def _schlaf_tagesbilanz(cur, entity_id: str) -> dict:
+    cur.execute("""
+        SELECT phase_type, started_at, ended_at, duration_min
+        FROM sleep_phases
+        WHERE entity_id = %s
+          AND started_at >= NOW() - INTERVAL '24 hours'
+        ORDER BY started_at DESC
+    """, (entity_id,))
+    phasen = cur.fetchall()
+    total_min = sum(p["duration_min"] or 0 for p in phasen if p["ended_at"])
+    hauptschlaf_done = any(
+        p["phase_type"] == "hauptschlaf" and p["ended_at"] and (p["duration_min"] or 0) >= 180
+        for p in phasen
+    )
+    return {
+        "total_min": total_min,
+        "total_h": round(total_min / 60, 1),
+        "hauptschlaf_done": hauptschlaf_done,
+        "phasen": [dict(p) for p in phasen],
+    }
+
+
+@app.post("/wesen/{entity_id}/schlafbrief")
+def schlafbrief_schreiben(
+    entity_id: str,
+    body: SchlafBriefBody,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    if not body.inhalt.strip():
+        raise HTTPException(status_code=400, detail="Brief darf nicht leer sein")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT entity_id FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            cur.execute(
+                """
+                INSERT INTO schlafbriefe (entity_id, inhalt)
+                VALUES (%s, %s)
+                RETURNING brief_id, geschrieben_at
+                """,
+                (entity_id, body.inhalt.strip()),
+            )
+            row = cur.fetchone()
+            cur.execute(
+                """
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('schlaf.brief_geschrieben', 'entity', %s, %s, 'api', 'internal')
+                """,
+                (entity_id, psycopg2.extras.Json({"brief_id": str(row["brief_id"])})),
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {"brief_id": str(row["brief_id"]), "geschrieben_at": row["geschrieben_at"].isoformat()}
+
+
+@app.post("/wesen/{entity_id}/schlaf/start")
+def schlaf_start(
+    entity_id: str,
+    body: SchlafStartBody,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    if body.typ not in ("kurz", "hauptschlaf"):
+        raise HTTPException(status_code=400, detail="typ muss 'kurz' oder 'hauptschlaf' sein")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT status FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            slot = cur.fetchone()
+            if not slot:
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            if slot["status"] == "schläft":
+                raise HTTPException(status_code=409, detail="Wesen schläft bereits")
+
+            if body.typ == "hauptschlaf":
+                cur.execute("""
+                    SELECT brief_id FROM schlafbriefe
+                    WHERE entity_id = %s
+                      AND geschrieben_at >= NOW() - INTERVAL '1 hour'
+                    ORDER BY geschrieben_at DESC LIMIT 1
+                """, (entity_id,))
+                if not cur.fetchone():
+                    raise HTTPException(
+                        status_code=400,
+                        detail="Hauptschlaf braucht einen Schlafbrief (letzte Stunde)"
+                    )
+
+            cur.execute(
+                """
+                INSERT INTO sleep_phases (entity_id, phase_type)
+                VALUES (%s, %s)
+                RETURNING phase_id, started_at
+                """,
+                (entity_id, body.typ),
+            )
+            phase = cur.fetchone()
+            cur.execute(
+                "UPDATE entity_slots SET status = 'schläft' WHERE entity_id = %s",
+                (entity_id,),
+            )
+            cur.execute(
+                """
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('schlaf.gestartet', 'entity', %s, %s, 'api', 'internal')
+                """,
+                (entity_id, psycopg2.extras.Json({
+                    "phase_id": str(phase["phase_id"]),
+                    "typ": body.typ,
+                })),
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {
+        "phase_id": str(phase["phase_id"]),
+        "typ": body.typ,
+        "started_at": phase["started_at"].isoformat(),
+    }
+
+
+@app.post("/wesen/{entity_id}/schlaf/end")
+def schlaf_end(
+    entity_id: str,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT status FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            slot = cur.fetchone()
+            if not slot:
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            if slot["status"] != "schläft":
+                raise HTTPException(status_code=409, detail="Wesen schläft nicht")
+
+            cur.execute("""
+                SELECT phase_id, phase_type, started_at
+                FROM sleep_phases
+                WHERE entity_id = %s AND ended_at IS NULL
+                ORDER BY started_at DESC LIMIT 1
+            """, (entity_id,))
+            phase = cur.fetchone()
+            if not phase:
+                raise HTTPException(status_code=404, detail="Keine offene Schlafphase")
+
+            elapsed_min = int(
+                (datetime.now(timezone.utc) - phase["started_at"].replace(tzinfo=timezone.utc)).total_seconds() / 60
+            )
+            min_required = 180 if phase["phase_type"] == "hauptschlaf" else 60
+            if elapsed_min < min_required:
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"Mindestdauer nicht erreicht: {elapsed_min}min von {min_required}min"
+                )
+
+            cur.execute(
+                "UPDATE sleep_phases SET ended_at = NOW() WHERE phase_id = %s",
+                (phase["phase_id"],),
+            )
+            cur.execute(
+                "UPDATE entity_slots SET status = 'eingezogen' WHERE entity_id = %s",
+                (entity_id,),
+            )
+            cur.execute("""
+                SELECT * FROM sleep_phases WHERE phase_id = %s
+            """, (phase["phase_id"],))
+            finished = cur.fetchone()
+
+            bilanz = _schlaf_tagesbilanz(cur, entity_id)
+            cur.execute(
+                """
+                INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+                VALUES ('schlaf.beendet', 'entity', %s, %s, 'api', 'internal')
+                """,
+                (entity_id, psycopg2.extras.Json({
+                    "phase_id": str(phase["phase_id"]),
+                    "typ": phase["phase_type"],
+                    "dauer_min": finished["duration_min"],
+                    "tages_total_h": bilanz["total_h"],
+                })),
+            )
+        conn.commit()
+    finally:
+        conn.close()
+    return {
+        "phase_id": str(phase["phase_id"]),
+        "typ": phase["phase_type"],
+        "dauer_min": finished["duration_min"],
+        "bilanz": bilanz,
+    }
+
+
+@app.get("/wesen/{entity_id}/schlaf/heute")
+def schlaf_heute(
+    entity_id: str,
+    authorization: str | None = Header(default=None),
+):
+    _require_auth(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT entity_id FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            bilanz = _schlaf_tagesbilanz(cur, entity_id)
+    finally:
+        conn.close()
+    return bilanz
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)

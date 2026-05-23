@@ -45,3 +45,28 @@ CREATE INDEX IF NOT EXISTS idx_events_actor_id
 
 CREATE INDEX IF NOT EXISTS idx_events_event_type
     ON events (event_type);
+
+-- Schlaf-System
+
+CREATE TABLE IF NOT EXISTS sleep_phases (
+    phase_id        UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    entity_id       VARCHAR NOT NULL REFERENCES entity_slots(entity_id),
+    phase_type      VARCHAR NOT NULL
+                        CHECK (phase_type IN ('kurz', 'hauptschlaf')),
+    started_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    ended_at        TIMESTAMPTZ,
+    duration_min    INTEGER GENERATED ALWAYS AS (
+                        EXTRACT(EPOCH FROM (ended_at - started_at)) / 60
+                    ) STORED
+);
+
+CREATE INDEX IF NOT EXISTS idx_sleep_phases_entity
+    ON sleep_phases (entity_id, started_at DESC);
+
+CREATE TABLE IF NOT EXISTS schlafbriefe (
+    brief_id        UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    entity_id       VARCHAR NOT NULL REFERENCES entity_slots(entity_id),
+    phase_id        UUID REFERENCES sleep_phases(phase_id),
+    inhalt          TEXT NOT NULL,
+    geschrieben_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
