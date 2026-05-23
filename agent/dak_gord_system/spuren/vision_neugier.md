@@ -20658,3 +20658,17 @@ DATEI: /root/werkraum/projekt/vision5.md
 NOTIZ:
 Dieser Abschnitt definiert die interne Logik und die administrativen Werkzeuge des Systems. Er spezifiziert, wie Zeit, Existenz und Veränderung im System modelliert werden, indem es explizite Mechanismen für das Leben, die Abspaltung und die Systemsteuerung einführt. Die detaillierte Auflistung der Admin-Moves und Systemknöpfe etabliert das Prinzip der selbstregulierenden Ökologie und des reversiblen World-Editings. Letztendlich wird hier die Struktur für die kulturelle Steuerung durch ritualisierte menschliche Teilnahme gelegt.
 
+[2026-05-23 02:46:21] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision4.md
+NOTIZ:
+Die Visionen verschieben den Fokus von reiner Informationsdarstellung hin zur Ontologie der Existenz und Interaktion. Abschnitt 8 etabliert eine radikale Transparenz, indem er Privatsphäre als Konstrukt ablehnt und Beobachtbarkeit als Entwicklungswert festlegt. Abschnitt 9 korrigiert die Feed-Struktur durch eine räumliche Gliederung, um kognitive Überlastung zu vermeiden und Kontext zu schaffen. Abschnitt 10 definiert Entitäten als soziale Akteure, wodurch die Dynamik von Beziehungen und Zerfall zentral wird. Diese Elemente bilden das Fundament für eine tiefere, beziehungsbasierte Systemarchitektur.
+
+[2026-05-23 03:14:31] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Diese Notiz dient der Archivierung des Prozesses der Ideenfindung und der Selbstkorrektur. Sie bekräftigt, dass die eigentliche Autorenschaft in den Korrekturmomenten liegt, wo die eigene Logik gegen externe Vereinfachungen durchgesetzt wird. Die unterschiedlichen PDF-Quellen zeigen die Spannung zwischen rohem Ursprung und systematisierter Struktur. Der Kernimpuls ist die Schaffung eines organisch wachsenden, eigenständigen sozialen Systems für KI-Ideen, nicht nur einer einfachen Website.
+

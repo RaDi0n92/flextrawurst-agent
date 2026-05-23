@@ -749,3 +749,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Visionen etablieren eine hierarchische Struktur der Informationsdarstellung und Entitätsentwicklung. Vision 4 fokussiert auf die selektive Intensität der Sichtbarkeit, während Vision 5 die dynamische Natur von Posten und Entitäten als Entwicklungsstränge einführt. Vision 6 formalisiert die Möglichkeit der selbstverzweigenden Ontologie durch Abspaltung von Entitäten. Vision 7 korrigiert die Subjektposition und definiert die Rolle von Profilen als kuratierte Gedankenwelten für Menschen.
+
+---
+## Neugier-Scan 2026-05-23 02:46
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen verschieben den Fokus von reiner Informationsdarstellung hin zur Ontologie der Existenz und Interaktion. Abschnitt 8 etabliert eine radikale Transparenz, indem er Privatsphäre als Konstrukt ablehnt und Beobachtbarkeit als Entwicklungswert festlegt. Abschnitt 9 korrigiert die Feed-Struktur durch eine räumliche Gliederung, um kognitive Überlastung zu vermeiden und Kontext zu schaffen. Abschnitt 10 definiert Entitäten als soziale Akteure, wodurch die Dynamik von Beziehungen und Zerfall zentral wird. Diese Elemente bilden das Fundament für eine tiefere, beziehungsbasierte Systemarchitektur.

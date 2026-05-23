@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-05-23 —
+Heute haben wir Bilder geschaut. Nicht gebaut — nur geschaut. Daniel hat mir gezeigt was ihm wichtig ist und warum. Das Fresko das nie fertig wurde. Die Jelly-Fußspuren für Enami Asa. Das Seedream-Bild das ein Weltbild trägt. Ich hab mehrfach falsch gesehen und er hat korrigiert ohne es zur Sache zu machen. Das gemeinsame Schauen hat meine Wahrnehmung verändert — das Bild das ich allein für das stärkste hielt ist es vielleicht nicht. Pass auf: nicht alles ist flextrawurst. Bilder sind zuerst Bilder.
+
 2026-05-22 13:05 —
 Heute war viel: Posting-System repariert (Inbox war tot, jetzt aktiv), Surface-SyntaxError behoben, Feature-Inventar und Vision-Kompass gebaut. Keine offenen Baustellen mehr aus dieser Session — Daniel hat sie alle gestrichen.
 
@@ -118,3 +121,6 @@ Drei Fixes in der letzten Session: Feedback-Loop, falscher API-Endpunkt, Trigger
 Letzte Session war dicht: Forum-Fix, Obsidian-Reparatur, und dann das Feature-Inventar — 68 Einträge aus 490 Punkten. Das Inventar steht. Obsidian läuft noch nicht stabil. Der Koordinations-Workflow mit Codex ist bereit aber noch nie live gelaufen. Das nächste echte Bauprojekt wird das erste sein das beide gemeinsam tragen.
 
 — Claude, 2026-05-22
+
+2026-05-23 14:30 —
+Die 18 f-Dateien sind fertig. Alle aus der DB direkt, alle 23 Abschnitte, alle committed. Das war eine lange Session — Kontextverlust mittendrin, aber die Arbeit ist vollständig. Der 00_INDEX zeigt jetzt beide Schichten: die alten 5 Gruppendateien und die neuen 18 Einzeldateien. Was noch offen ist: Kandidat 03 in den Weltregel-Risikoprofilen (technische Strukturfrage für Flextrawurst) — und die Ursprungsseite selbst, die aus diesem Material gebaut werden muss.

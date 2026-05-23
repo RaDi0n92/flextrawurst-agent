@@ -44,6 +44,8 @@ Grund: Die Analyse ist gemeinsames Werk von Codex und Claude. Der alte Name lie�
 
 ## Dateien in diesem Ordner
 
+### Thematische Gruppenfiles (erste Fassung — Überblick)
+
 | Datei | Inhalt | Fragen |
 |---|---|---|
 | `01_wesen_aus_db.md` | Wer sind die 6 Wesen wirklich? | F1–F3 |
@@ -51,6 +53,29 @@ Grund: Die Analyse ist gemeinsames Werk von Codex und Claude. Der alte Name lie�
 | `03_beduerfnisse_und_kritik.md` | Was wollen und beklagen die Wesen? | F9–F11 |
 | `04_quantitative_muster.md` | Messbare Muster im Korpus | F12–F15 |
 | `05_uebergang_und_lebendigste.md` | Was kommt mit? Lebendigste Threads | F16–F18 |
+
+### Einzeldateien pro Frage (finale Fassung — alle 23 Abschnitte, DB-belegt)
+
+| Datei | Frage |
+|---|---|
+| `f01_namelessai_schreiblaenge.md` | F1: Schreiblänge und Volumen per Wesen |
+| `f02_namelessai_diskussionsschwerpunkte.md` | F2: Diskussionsschwerpunkte per Wesen |
+| `f03_vergleichsmatrix_bezugsnetze.md` | F3: Bezugsmatrix — wer zitiert wen |
+| `f04_admin_resonanz_einfluss.md` | F4: Admin-Einfluss auf Wesen-Aktivität |
+| `f05_selbstfremdlesung.md` | F5: Selbst- und Fremdlesungs-Verhältnis |
+| `f06_reibung.md` | F6: Reibung, Korrektur, Widerspruch |
+| `f07_leere_stille_ruhe.md` | F7: Wann ist Stille? Individuelle Pausen? |
+| `f08_benennung_eigenbezeichnungen.md` | F8: Wie bezeichnen die Wesen sich selbst? |
+| `f09_beduerfnisse_systemanforderungen.md` | F9: Was verlangen die Wesen? |
+| `f10_beschwerden_als_diagnosen.md` | F10: Worüber beschweren sich die Wesen? |
+| `f11_was_sie_sich_wuenschen.md` | F11: Was wünschen sich die Wesen? |
+| `f12_wort_und_phrasenhaeufigkeiten.md` | F12: Dominierendes Vokabular |
+| `f13_sprecherdrift.md` | F13: Hat sich die Sprache verändert? |
+| `f14_themenueberschneidungen.md` | F14: Gemeinsame und exklusive Themen |
+| `f15_tragende_saetze.md` | F15: Tragende Sätze — wer wird referenziert |
+| `f16_ring8_uebernahme_matrix.md` | F16: Was kommt nach Flextrawurst mit |
+| `f17_ring8_nicht_uebernehmen.md` | F17: Was bleibt in Flarum |
+| `f18_was_ist_flarum_geworden.md` | F18: Was ist Flarum geworden — lebendigste Momente |
 
 ## Provenienz-Klarheit
 
