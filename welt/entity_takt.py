@@ -102,13 +102,6 @@ SCHLAFBRIEFE_THEATER = [
     "Bis morgen. Ich bin gespannt ob du dich an heute erinnerst.",
 ]
 
-ZWANGS_BRIEFE = [
-    "Es ist Zeit. Nicht meine Wahl — aber ich nehme es mit.",
-    "Ich hätte früher schlafen sollen. Jetzt ist jetzt.",
-    "Auch das gehört dazu: manchmal entscheidet der Tag für mich.",
-    "Das System sagt: genug. Ich frage nicht warum.",
-    "Ich gehe schlafen weil ich muss. Morgen bin ich wieder da.",
-]
 
 def _schlaf_erzwungen(s: dict) -> Optional[str]:
     """Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None."""
@@ -258,7 +251,7 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
 
     elif aktion in ("hauptschlaf", "hauptschlaf_zwang"):
         zwang = aktion == "hauptschlaf_zwang"
-        brief = random.choice(ZWANGS_BRIEFE if zwang else SCHLAFBRIEFE_THEATER)
+        brief = random.choice(SCHLAFBRIEFE_THEATER)
         rb = requests.post(
             f"{API}/wesen/{entity_id}/schlafbrief",
             json={"inhalt": brief},
@@ -267,7 +260,7 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
         if not rb.ok:
             log.warning(f"{entity_id} brief fehlgeschlagen: {rb.text}")
             return
-        log.info(f"{entity_id} {'[ZWANG] ' if zwang else ''}schreibt Brief: '{brief[:50]}...'")
+        log.info(f"{entity_id} schreibt Brief: '{brief[:50]}...'")
 
         rs = requests.post(
             f"{API}/wesen/{entity_id}/schlaf/start",
@@ -275,7 +268,7 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
             headers=headers,
         )
         if rs.ok:
-            log.info(f"{entity_id} {'[ZWANG] ' if zwang else ''}geht in Hauptschlaf")
+            log.info(f"{entity_id} geht in Hauptschlaf{' [Zwang]' if zwang else ''}")
         else:
             log.warning(f"{entity_id} hauptschlaf fehlgeschlagen: {rs.text}")
 
