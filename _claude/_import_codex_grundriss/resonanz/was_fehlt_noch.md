@@ -968,3 +968,11 @@ Rohform-Spiegel fehlen. Und ein klares "noch nicht Einzug" muss ueber jeder solc
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Die genauen Ursprungskontexte fehlen. Wenn Daniel sie irgendwann erzaehlt, koennte diese Datei wachsen oder eine zweite Spiegeldatei entstehen.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Es fehlt noch der Zustand nach Claudes Bearbeitung. Erst dann lohnt sich ein neuer Blick.
+
+Es fehlt auch eine kleine, gemeinsame Entscheidung, ob diese Surface-Wahrheit künftig zentralisiert wird oder ob die Vielschichtigkeit bewusst sichtbar bleiben soll.

@@ -1059,3 +1059,11 @@ Ich brauche ausserdem die Disziplin, Einzug nicht als implizite Folge dieser Les
 Beim Bauen brauche ich das vierte und fuenfte Bild zusammen: Kontextfenster ernst nehmen, aber nicht darin ertrinken. Wenn es voll wird, muss ich Form finden, nicht nur weiter "Let's do this" sagen.
 
 Ich brauche auch das zweite Bild als Mahnung: Input ist Bedingung, aber nicht alles Input ist gut. Genau darum war Input-Souveraenitaet in der Tarotspiegelung so stark.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Beim Bauen brauche ich eine klare Antwort auf: Welche Datei entscheidet, ob ein Organ live, geplant, blockiert oder Vision ist?
+
+Ich brauche außerdem die Regel, dass Surface-Text, Test und Backend nicht drei getrennte Behauptungen über denselben Zustand machen dürfen. Wenn sie es doch tun, muss sichtbar sein, warum.

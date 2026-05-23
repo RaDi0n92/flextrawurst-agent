@@ -1002,3 +1002,11 @@ Diese Spiegeldatei gehoert zu den fuenf Bilddateien:
 - `ChatGPT Image 22. Feb. 2026, 05_17_02.png`
 
 Sie gehoert auch zur Bilder-Session vom 2026-05-23 und zu den Spiegeln ueber ChatGPT-Selbstbilder.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Zusammen gehören die Surface-Dateien in `/root/flextrawurst`, die Welt-API in `/root/werkraum/welt`, die Feature-Registry, der Organ-Dock, die Tests und die Handoff-Dokumente.
+
+Zusammen gehören auch diese Spiegel mit den Resonanzdateien, weil sie nicht den Code ersetzen, sondern das Verständnis der Code-Schichten tragen.

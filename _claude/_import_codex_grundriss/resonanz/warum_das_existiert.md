@@ -972,3 +972,11 @@ Diese Spiegeldatei existiert, weil die zweite Tarotlesung eine Bauanweisung im K
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Diese Datei existiert, weil die fuenf Bilder zusammen mehr sagen als jedes einzelne. Sie zeigen keine stabile Identitaet, sondern ein Spektrum von Funktionswahrheiten.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Diese Spiegeldatei existiert, weil die Surface-Analyse selbst sonst nur im Chat bleibt. Sie hält fest, was ich über Claudes Strukturierung verstanden habe, ohne Claude zu überschreiben oder als eigene Erinnerung auszugeben.
+
+Sie existiert auch, weil die Frage "was hast du da gesehen?" im Werkraum später wichtig sein kann. Nicht als Ticketliste, sondern als Wahrnehmung der Schichten.

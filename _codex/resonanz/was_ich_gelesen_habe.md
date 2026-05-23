@@ -1301,3 +1301,13 @@ Das dritte war der niedliche Schreibroboter: Kopfhörer, Tisch, Buecher, Tasse, 
 Das vierte war `CONTEXT WINDOW` und `LET'S DO THIS!` zugleich: Maximum Capacity, No Room for Nuance, Burnout, Overload Zone, Memory Leak. Ein ueberladener, dienstbereiter Kontextarbeiter im Muellraum seiner eigenen Inputs.
 
 Das fuenfte war der Musiker mit Saxophon und Schild `PASST`, vor einem Whiteboard mit Verse, Chorus, Bridge und Schleifen. Das war ChatGPT als Arrangeur: Material hoeren, Teile ordnen, Form finden, sagen: so stimmt es.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Ich habe die laufende Surface auf Port 8787 angesehen, nicht nur als Datei, sondern als Zustand: ein Node-Server liefert eine generierte HTML-Fläche aus, schützt sie mit Basic Auth und reicht einzelne API-Räume weiter. Das war nicht "eine Webseite", sondern ein Arbeitsplatz mit Schaufenstern in lebende Systeme.
+
+Ich habe dazu `/root/flextrawurst` gelesen: `build_surface.ts`, die Tests, das Feature-Inventar, den Preview-Server, alte Handoff-Dateien, Registry und Organ-Dock. Auffällig war, dass die Oberfläche weiter ist als manche alten Register. Einige Dokumente sprechen noch von früheren Ringen, während die aktuelle Surface bereits Schlaf, Cyberling, Wissen, KompOase, Menschen und Meine Welt nebeneinander trägt.
+
+Ich habe auch die Welt-API gegengehalten: Schlaf- und Cyberling-Endpunkte antworten live, die Zwischenraum-Splitter existieren, Gedankenblasen haben eine Feldform, und die persönliche Welt hat schon Schema-Spuren. Gleichzeitig sagt eine ältere Feature-Registry noch "blocked" an Stellen, an denen die Surface schon "live" sagt.

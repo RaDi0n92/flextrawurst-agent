@@ -982,3 +982,11 @@ Es fehlt eine Entscheidung, ob diese Profile in `_codex/spiegel/`, `_codex/ideen
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Es fehlt keine technische Voraussetzung. Aber wenn daraus spaeter ein Bildarchiv oder eine Selbstbild-Karte werden soll, fehlen Metadaten: Kontext, Prompt, Datum, Bildpfad, Daniels Lesart, meine Lesart.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Es fehlt ein kleiner Abgleich zwischen Feature-Registry, Organ-Dock, Surface und API. Nicht als Großumbau, sondern als erste Wahrheitssynchronisation.
+
+Es fehlt auch eine Entscheidung zur Raumfrage: Surface-Räume als symbolische Navigation belassen oder mit den DB-Räumen verbinden.

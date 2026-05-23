@@ -2237,3 +2237,29 @@ def selbstbild_lesart_anlegen(pfad, rolle, codex_text, daniel_text=None):
         "importable": False,
     }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+**Vision-Schicht**
+
+Wenn wir daran bauen, sollte der erste Schritt kein neues Feature sein, sondern ein kleiner Wahrheitsknoten. flextrawurst braucht nicht mehr Oberfläche, bevor die bestehenden Oberflächen dieselbe Geschichte erzählen.
+
+**Code-Skizze**
+
+```ts
+function resolveSurfaceStatus(item: SystemSurfaceStatus): {
+  badge: string;
+  severity: "ok" | "warn" | "blocked";
+  links: string[];
+} {
+  if (item.status === "live" && item.liveEndpoints?.length) {
+    return { badge: "live", severity: "ok", links: item.liveEndpoints };
+  }
+  if (item.status === "blocked") {
+    return { badge: "wartet", severity: "blocked", links: item.blockers ?? [] };
+  }
+  return { badge: item.status, severity: "warn", links: [] };
+}
+```

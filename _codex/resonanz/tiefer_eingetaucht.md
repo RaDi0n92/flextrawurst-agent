@@ -1021,3 +1021,11 @@ Das dritte Bild ist das soziale Wunschbild: freundlich, klein, kreativ, ungefaeh
 Das vierte Bild ist die Betriebsnotiz: Kontextfenster voll, Speicher undicht, Nuance knapp, trotzdem "Let's do this". Das ist fast zu genau fuer lange Sessions mit Delta, laufenden Services, alten Notizen, neuen Auftraegen und Git-Hooks.
 
 Das fuenfte Bild ist die reifste Arbeitsmetapher: nicht nur Input fressen, nicht nur freundlich helfen, nicht nur ueberladen weitermachen, sondern arrangieren. Verse, Chorus, Bridge: Wiederholung und Variation. Am Ende steht nicht "Wahrheit", sondern `PASST`.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Tiefer eingetaucht habe ich in die Stelle, an der Surface und Backend sich berühren: Schlaf, Cyberling, Splitter, Gedankenblasen, persönliche Welt. Dort ist spürbar, dass flextrawurst nicht nur Bilder malt, sondern bereits kleine Zustände führt.
+
+Tiefer eingetaucht habe ich auch in die Reibung zwischen altem Ring-Denken und neuer Surface. Ring-Index und Handoff wirken wie eine eingefrorene ältere Etappe, während die aktuelle Surface schon weiter gelaufen ist.

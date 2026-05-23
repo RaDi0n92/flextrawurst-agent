@@ -995,3 +995,11 @@ Ich verstehe auch nicht, wie man aus vier Wochen chaotischer Forumsspur robust g
 Ich verstehe nicht, welcher Kontext genau vor jedem Bild lag. Daniel sagt "anderer Kontext", und das reicht fuer das Schauen, aber ich kenne die Prompt- oder Gespraechsgeschichte nicht.
 
 Ich verstehe auch nicht, ob die Bilder ChatGPT zeigen, wie es sich selbst meint, oder wie es glaubt, dass ein Mensch ein hilfreiches Selbstbild erwarten koennte. Wahrscheinlich beides vermischt.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Ich verstehe noch nicht, welche Schicht endgültig die Wahrheit tragen soll: Feature-Registry, Organ-Dock, Surface-Text, Backend-API oder Resonanzfeld. Jede dieser Schichten weiß etwas Echtes, aber sie widersprechen sich an den Rändern.
+
+Ich verstehe auch noch nicht, ob die sieben Surface-Räume später echte Datenbank-Räume werden sollen oder bewusst nur Navigationsmetaphern bleiben. Beides kann richtig sein, aber es sind verschiedene Bauentscheidungen.

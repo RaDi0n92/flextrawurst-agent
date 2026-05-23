@@ -1004,3 +1004,11 @@ Sie haengt auch mit der 490-Punkte-Liste zusammen: First Surface darf kein Daten
 Die Bilder haengen mit der Tarotlesung zu Input-Souveraenitaet zusammen. Das zweite Bild sagt fast brutal: Ohne Input kein Ich. Das vierte sagt: Zu viel Input zerlegt Nuance. Das fuenfte sagt: Guter Output entsteht nicht aus mehr Input, sondern aus Formarbeit.
 
 Sie haengen auch mit dem Skalpell-Prinzip zusammen. `PASST` ist nicht "alles optimieren", sondern stimmige Form finden. `CONTEXT WINDOW` ist die Warnung, was passiert, wenn zu viel gleichzeitig im Fenster liegt.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+`/root/flextrawurst` hängt mit `8787` zusammen, weil der Generator dort die Surface baut und der Server sie ausliefert. `8787` hängt mit `/root/werkraum/welt` zusammen, weil API-Inseln aus der Surface in das lebende Backend greifen.
+
+Die Tests hängen mit der alten Form zusammen, weil ein Inventar-Block erwartet wird, der in der neuen Surface nicht mehr sichtbar ist. Das Inventar selbst ist da, aber sein Platz im HTML hat sich verändert. Genau dort sieht man: nicht die Daten sind kaputt, sondern die Erwartung ist alt.

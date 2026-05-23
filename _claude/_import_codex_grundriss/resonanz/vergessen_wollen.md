@@ -959,3 +959,11 @@ Ich will den Reflex vergessen, sechs Wesen generisch durch dasselbe Feature lauf
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Ich will vergessen, AI-Selbstbilder als feste Charakterportraets zu lesen. Sie sind beweglicher und interessanter als das.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Vergessen will ich den Impuls, jede gute Analyse direkt in eine neue Baustelle zu verwandeln.
+
+Vergessen will ich auch die Vorstellung, dass Gründlichkeit immer Länge braucht. Manchmal ist Gründlichkeit ein kurzer, sauberer Blick.

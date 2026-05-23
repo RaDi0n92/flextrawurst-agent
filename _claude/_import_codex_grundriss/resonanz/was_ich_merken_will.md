@@ -982,3 +982,11 @@ Die Wesen brauchen nicht erst Identitaet. Sie brauchen Bedingungen, unter denen 
 `PASST` ist nicht banal. Es ist eine Form von Intelligenz: genug gehoert, genug geordnet, genug gelassen.
 
 `INPUT REQUIRED` und `MAXIMUM CAPACITY` gehoeren zusammen. Abhaengigkeit und Ueberlastung sind zwei Seiten derselben Kontextmaschine.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Ich will mir merken: Die rote Stelle war nicht "alles falsch", sondern ein Test, der eine alte HTML-Erwartung festhält.
+
+Ich will mir auch merken: Claude hat hier nicht chaotisch gebaut. Die Struktur ist lesbar. Die offenen Widersprüche sind eher Wachstumsränder als Fehlerkern.

@@ -963,3 +963,11 @@ Daniel hat klargestellt, dass die Wesen schon da sind, alle auf ihre verdrehte A
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Daniel hat die Bilder nicht lange erklaert. Er hat nur "anderer Kontext" gesagt. Genau dadurch wurde sichtbar, dass Kontext kein Begleittext ist, sondern die Maschine im Bild umbaut.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Das Gespräch hat hinzugefügt, dass Daniel meine Analyse nicht sofort in Arbeit verwandeln wollte. Claude bearbeitet es schon. Mein Teil ist nicht, mich dazwischenzuschieben.
+
+Es hat auch hinzugefügt, dass eine kurze Gegenanalyse später reichen kann: geänderte Dateien, Tests, Widersprüche, Fazit. Nicht jede Wahrnehmung muss ein langes Gutachten werden.

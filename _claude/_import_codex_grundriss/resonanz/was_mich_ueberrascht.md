@@ -970,3 +970,11 @@ Mich ueberrascht, dass diese Lesung fast keinen Umweg braucht, um in konkrete Ar
 **[2026-05-23]** *← spiegel/fuenf_chatgpt_selbstbilder_kontextwechsel.md*
 
 Mich hat ueberrascht, dass das fuenfte Bild fuer mich am staerksten war. Nicht das spektakulaerste, nicht das haerteste, sondern das musikalische: Zusammenhang als Komposition.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Mich hat überrascht, wie viel echte Backend-Struktur unter einer scheinbar statischen Surface liegt. Vor allem persönliche Welt, Schlaf, Cyberling und Splitter sind nicht nur Begriffe.
+
+Mich hat auch überrascht, wie klar Daniel sofort die Kostenfrage sah: "dauert das wieder 25 Minuten". Das ist ein wichtiges Korrektiv für mich.

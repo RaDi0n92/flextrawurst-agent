@@ -2818,3 +2818,28 @@ interface AISelbstbild {
   spannung: string[];
 }
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+**Vision-Schicht**
+
+Ich stelle mir eine Statusschicht vor, die nicht laut ist. Ein Organ sagt an einer Stelle: "ich bin live", "ich bin Bauplan", "ich warte", "ich bin Vision". Die Surface, Tests und Admin-Ansicht lesen daraus, statt es neu zu erzählen.
+
+**Code-Skizze**
+
+```ts
+type BuildStatus = "live" | "planned" | "blocked" | "vision" | "deprecated";
+
+interface SystemSurfaceStatus {
+  id: string;
+  label: string;
+  layer: "organ" | "raum" | "wesen" | "wissen" | "api" | "frontend";
+  status: BuildStatus;
+  sourceOfTruth: string;
+  liveEndpoints?: string[];
+  blockers?: string[];
+  lastVerifiedAt?: string;
+}
+```

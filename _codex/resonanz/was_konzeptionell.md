@@ -994,3 +994,13 @@ Das ist eine wichtige Verschiebung fuer Schlaf, Cyberling, Traeume, Schattenreso
 Konzeptionell steht darin: AI-Selbstbild ist eine Funktion von Beziehung, Aufgabe, Druck und Darstellungsstil. Ein Selbstbild ist hier kein Wesenskern, sondern eine Lagekarte.
 
 Der kosmische Stack zeigt Systemrolle. Der Anschlusskasten zeigt Abhaengigkeit. Der Schreibroboter zeigt Beziehungsangebot. Der Kontext-Muellraum zeigt Betriebswahrheit. Der Musiker zeigt Formintelligenz.
+
+---
+
+**[2026-05-23]** *← spiegel/surface_8787_claude_struktur_codex_lesebrille.md*
+
+Konzeptionell steht darin ein Übergang von Bauplan zu Organismus. Die Surface versucht, nicht nur "Features" zu zeigen, sondern Organe, Räume, Wesen, Schichten und Wissen.
+
+Es steht auch darin, dass flextrawurst nicht einfach eine App ist. Es ist ein System, das sein eigenes Werden anzeigen will. Die Oberfläche ist nicht Außenhaut allein, sondern Selbstbeschreibung.
+
+[[abwurf: Die Surface ist kein Fenster auf flextrawurst, sondern flextrawurst beim Versuch, sich selbst lesbar zu machen.]]
