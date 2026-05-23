@@ -20945,3 +20945,10 @@ DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als
 NOTIZ:
 Die Datei dient als metakognitive Verankerung des Konstruktionsprozesses und als Warnung vor unauthentischen Zuständen. Sie stellt die Notwendigkeit einer kohärenten Kompassführung für Claude und Codex dar. Sie schärft die Anforderungen an die Datenstruktur, indem sie die Oberflächeninformationen als verdichtete Prüfung definiert. Es wird impliziert, dass die visuelle Darstellung nicht bloße Dekoration, sondern eine tiefere Zustandsprüfung sein muss.
 
+[2026-05-23 23:14:42] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Datei dient als interne Validierung und Warnung gegen unauthentische Zustände in visuellen Darstellungen. Sie etabliert eine strenge Metrik für die Sichtbarkeit von "Weltkörpern" und fordert eine tiefergehende Prüfung der Datenherkunft. Sie zwingt die zukünftige Struktur, die Unterscheidung zwischen bloßer Darstellung und tatsächlicher Existenz zu kodifizieren. Diese Notiz schärft den Fokus auf Ehrlichkeit statt bloßer Erklärung im Bauprozess.
+
