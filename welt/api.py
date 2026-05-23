@@ -3800,11 +3800,12 @@ def mw_tagebuch_liste(
         with conn.cursor() as cur:
             cur.execute(
                 "SELECT id, inhalt, zitierbar, splitter_erzeugt, created_at FROM mw_tagebuch "
-                "WHERE user_id = %s::uuid ORDER BY created_at DESC LIMIT %s OFFSET %s",
+                "WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY created_at DESC LIMIT %s OFFSET %s",
                 (user_id, limit, offset)
             )
             rows = cur.fetchall()
-            cur.execute("SELECT COUNT(*) as n FROM mw_tagebuch WHERE user_id = %s::uuid", (user_id,))
+            cur.execute("SELECT COUNT(*) as n FROM mw_tagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true'", (user_id,))
             total = cur.fetchone()["n"]
     finally:
         conn.close()
@@ -3839,6 +3840,58 @@ def mw_tagebuch_erstellen(
         conn.close()
     return {"id": eid, "created_at": row["created_at"].isoformat()}
 
+@app.patch("/mw/tagebuch/{eintrag_id}")
+def mw_tagebuch_patch(
+    eintrag_id: str,
+    body: dict,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    inhalt = body.get("inhalt", "").strip()
+    if not inhalt:
+        raise HTTPException(status_code=400, detail="inhalt fehlt")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_tagebuch WHERE id = %s::uuid", (eintrag_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            cur.execute("UPDATE mw_tagebuch SET inhalt = %s WHERE id = %s::uuid", (inhalt, eintrag_id))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+@app.delete("/mw/tagebuch/{eintrag_id}")
+def mw_tagebuch_loeschen(
+    eintrag_id: str,
+    hard: bool = Query(default=False),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_tagebuch WHERE id = %s::uuid", (eintrag_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            if hard:
+                cur.execute("DELETE FROM mw_tagebuch WHERE id = %s::uuid", (eintrag_id,))
+            else:
+                cur.execute("UPDATE mw_tagebuch SET meta = meta || '{\"deleted\":true}'::jsonb WHERE id = %s::uuid", (eintrag_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
 # --- Traumtagebuch ---
 
 @app.get("/mw/traumtagebuch")
@@ -3854,12 +3907,12 @@ def mw_traumtagebuch_liste(
         with conn.cursor() as cur:
             cur.execute(
                 "SELECT id, inhalt, traum_datum, zitierbar, splitter_erzeugt, created_at "
-                "FROM mw_traumtagebuch WHERE user_id = %s::uuid ORDER BY traum_datum DESC, created_at DESC "
-                "LIMIT %s OFFSET %s",
+                "FROM mw_traumtagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY traum_datum DESC, created_at DESC LIMIT %s OFFSET %s",
                 (user_id, limit, offset)
             )
             rows = cur.fetchall()
-            cur.execute("SELECT COUNT(*) as n FROM mw_traumtagebuch WHERE user_id = %s::uuid", (user_id,))
+            cur.execute("SELECT COUNT(*) as n FROM mw_traumtagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true'", (user_id,))
             total = cur.fetchone()["n"]
     finally:
         conn.close()
@@ -3895,6 +3948,58 @@ def mw_traumtagebuch_erstellen(
         conn.close()
     return {"id": eid, "traum_datum": str(row["traum_datum"]), "created_at": row["created_at"].isoformat()}
 
+@app.patch("/mw/traumtagebuch/{eintrag_id}")
+def mw_traumtagebuch_patch(
+    eintrag_id: str,
+    body: dict,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    inhalt = body.get("inhalt", "").strip()
+    if not inhalt:
+        raise HTTPException(status_code=400, detail="inhalt fehlt")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_traumtagebuch WHERE id = %s::uuid", (eintrag_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            cur.execute("UPDATE mw_traumtagebuch SET inhalt = %s WHERE id = %s::uuid", (inhalt, eintrag_id))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+@app.delete("/mw/traumtagebuch/{eintrag_id}")
+def mw_traumtagebuch_loeschen(
+    eintrag_id: str,
+    hard: bool = Query(default=False),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_traumtagebuch WHERE id = %s::uuid", (eintrag_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            if hard:
+                cur.execute("DELETE FROM mw_traumtagebuch WHERE id = %s::uuid", (eintrag_id,))
+            else:
+                cur.execute("UPDATE mw_traumtagebuch SET meta = meta || '{\"deleted\":true}'::jsonb WHERE id = %s::uuid", (eintrag_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
 # --- Notizen ---
 
 @app.get("/mw/notizen")
@@ -3910,7 +4015,7 @@ def mw_notizen_liste(
     conn = get_conn()
     try:
         with conn.cursor() as cur:
-            filters = ["user_id = %s::uuid"]
+            filters = ["user_id = %s::uuid", "(meta->>'deleted') IS DISTINCT FROM 'true'"]
             params: list = [user_id]
             if typ:
                 filters.append("typ = %s"); params.append(typ)
@@ -3982,6 +4087,7 @@ def mw_notiz_patch(
 @app.delete("/mw/notizen/{notiz_id}", status_code=200)
 def mw_notiz_loeschen(
     notiz_id: str,
+    hard: bool = Query(default=False),
     authorization: str | None = Header(default=None),
 ):
     claims = _require_auth(authorization)
@@ -3995,7 +4101,10 @@ def mw_notiz_loeschen(
                 raise HTTPException(status_code=404, detail="Notiz nicht gefunden")
             if str(row["user_id"]) != user_id and claims.get("role") != "admin":
                 raise HTTPException(status_code=403, detail="Kein Zugriff")
-            cur.execute("DELETE FROM mw_notizen WHERE id = %s::uuid", (notiz_id,))
+            if hard:
+                cur.execute("DELETE FROM mw_notizen WHERE id = %s::uuid", (notiz_id,))
+            else:
+                cur.execute("UPDATE mw_notizen SET meta = meta || '{\"deleted\":true}'::jsonb WHERE id = %s::uuid", (notiz_id,))
         conn.commit()
     finally:
         conn.close()
@@ -4014,7 +4123,7 @@ def mw_kalender_liste(
     conn = get_conn()
     try:
         with conn.cursor() as cur:
-            filters = ["user_id = %s::uuid"]
+            filters = ["user_id = %s::uuid", "(meta->>'deleted') IS DISTINCT FROM 'true'"]
             params: list = [user_id]
             if von:
                 filters.append("start_zeit >= %s::timestamptz"); params.append(von)
@@ -4054,9 +4163,10 @@ def mw_kalender_erstellen(
         conn.close()
     return {"id": eid, "start_zeit": row["start_zeit"].isoformat()}
 
-@app.delete("/mw/kalender/{termin_id}", status_code=200)
-def mw_kalender_loeschen(
+@app.patch("/mw/kalender/{termin_id}")
+def mw_kalender_patch(
     termin_id: str,
+    body: dict,
     authorization: str | None = Header(default=None),
 ):
     claims = _require_auth(authorization)
@@ -4070,7 +4180,36 @@ def mw_kalender_loeschen(
                 raise HTTPException(status_code=404, detail="Termin nicht gefunden")
             if str(row["user_id"]) != user_id and claims.get("role") != "admin":
                 raise HTTPException(status_code=403, detail="Kein Zugriff")
-            cur.execute("DELETE FROM mw_kalender WHERE id = %s::uuid", (termin_id,))
+            allowed = {k: v for k, v in body.items() if k in ("titel", "beschreibung", "start_zeit", "end_zeit", "ganztaegig")}
+            if allowed:
+                sets = ", ".join(f"{k} = %s" for k in allowed)
+                cur.execute(f"UPDATE mw_kalender SET {sets} WHERE id = %s::uuid", list(allowed.values()) + [termin_id])
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+@app.delete("/mw/kalender/{termin_id}", status_code=200)
+def mw_kalender_loeschen(
+    termin_id: str,
+    hard: bool = Query(default=False),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id FROM mw_kalender WHERE id = %s::uuid", (termin_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Termin nicht gefunden")
+            if str(row["user_id"]) != user_id and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="Kein Zugriff")
+            if hard:
+                cur.execute("DELETE FROM mw_kalender WHERE id = %s::uuid", (termin_id,))
+            else:
+                cur.execute("UPDATE mw_kalender SET meta = meta || '{\"deleted\":true}'::jsonb WHERE id = %s::uuid", (termin_id,))
         conn.commit()
     finally:
         conn.close()

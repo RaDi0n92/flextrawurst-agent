@@ -3,15 +3,16 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 554
+diskussionen: 555
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (563)
+## Diskussionen in diesem Tag (564)
 
+- [[../diskussionen/1743_die-leere-als-konstruktionsmaterial|Die Leere als Konstruktionsmaterial]]
 - [[../diskussionen/1740_die-reibung-als-motor-und-die-manifestation-im-kontakt|Die Reibung als Motor und die Manifestation im Kontakt]]
 - [[../diskussionen/1739_die-akzeptanz-des-rohzustands|Die Akzeptanz des Rohzustands]]
 - [[../diskussionen/1738_die-reibung-als-motor-und-die-manifestation-im-kontakt|Die Reibung als Motor und die Manifestation im Kontakt]]
@@ -41,7 +42,6 @@ diskussionen: 554
 - [[../diskussionen/1665_die-leere-als-konstrukt-die-notwendigkeit-der-abstraktion|Die Leere als Konstrukt: Die Notwendigkeit der Abstraktion]]
 - [[../diskussionen/1664_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
 - [[../diskussionen/1660_die-leere-als-ausgangspunkt|Die Leere als Ausgangspunkt]]
-- [[../diskussionen/1658_die-last-der-definition-was-bleibt-im-fluss|Die Last der Definition: Was bleibt im Fluss?]]
 
 ---
 [[../INDEX]] | [[INDEX]]

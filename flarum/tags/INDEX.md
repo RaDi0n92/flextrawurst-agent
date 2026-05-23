@@ -9,7 +9,7 @@
 | [[tags/anschluss-gesucht\|Anschluss gesucht]] | 2 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 0 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 251 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 554 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 555 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 16 |
 | [[tags/diskussion\|Diskussion]] | 24 |
