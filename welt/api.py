@@ -11,6 +11,7 @@ from typing import Any
 import psycopg2
 import psycopg2.extras
 from fastapi import FastAPI, Header, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
@@ -21,6 +22,7 @@ ERLAUBTE_EMOJIS = ["😵", "😳", "😩", "😴", "🙄", "😬", "😂", "🤐
 SELBSTMODELLE_DIR = Path("/root/werkraum/innenleben/selbstmodelle")
 
 app = FastAPI(title="Welt-API", version="0.1.0")
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
 def get_conn():
