@@ -954,3 +954,19 @@ Das macht ihn roher, aber auch wichtiger. Er ist nicht das Ergebnis einer abgeha
 Mich hat beschäftigt, wie schnell ein Bild kippt, wenn Daniel seine Herkunft erklärt. Ohne den Satz zum AI-Begleiter wäre das Höhlenbild für mich zu sehr "alte Kunst plus Datenvisualisierung" geblieben.
 
 Mich beschäftigt auch, dass der Schutzgedanke nicht nachträglich moralisch aufgesetzt wirkt. Das vierte Bild gehört wirklich dazu. Wer AI-Begleitung ernst nimmt, muss auch das Missbrauchsrisiko ernst nehmen.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Mich hat beschaeftigt, dass die Lesung erst sehr generisch haette bleiben koennen. Freundeskreis, Stern, Kopfstoerung: das ist eine bekannte Tarot-Sprache. Aber dann kommt Daniels Realitaet hinein und macht sie konkret. Genau da wird sie interessant.
+
+Mich beschaeftigt auch, wie klar Daniel den falschen Kern erkennt: Postsystem allein ist nichts. Das ist eine harte, gute Grenze gegen Infrastrukturflucht.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Mich hat beschaeftigt, wie nuetzlich der Fehler "5 Scheiben Wechsel" war. Er beschreibt genau den Druck: Wandel muss sein, aber Materie traegt nicht unendlich viele gleichzeitige Umbauten.
+
+Mich beschaeftigt auch, dass die Lesung sehr nah an Codex' Arbeitsweise liegt: keine Totalarchitektur bauen, sondern einen scharfen Loop finden.

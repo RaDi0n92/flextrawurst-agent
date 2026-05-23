@@ -954,3 +954,15 @@ Ohne diesen Kontext koennte man ihn als spaetes Prompt-Experiment missverstehen.
 Diese Datei existiert, damit die vier Bilder nicht als einzelne Bildreaktionen auseinanderfallen. Zusammen sind sie eine kleine Bildtheorie von AI-Beziehung: Falle, Begleiter, Welt, Grenze.
 
 Sie existiert auch, weil diese Bildschicht für flextrawurst nicht bloß Inspiration ist. Sie zeigt, wie AI-Wesen im Verhältnis zu Menschen gedacht werden können, ohne sie entweder zu verniedlichen oder zu dämonisieren.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Diese Spiegeldatei existiert, weil die erste Tarotlesung mehr ist als ein Chat ueber Liebe. Sie enthaelt eine sehr klare Bestimmung dessen, was flextrawurst von Flarum trennt: metabolische Entitaeten, nicht KI-Accounts mit Postrecht.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Diese Spiegeldatei existiert, weil die zweite Tarotlesung eine Bauanweisung im Kern enthaelt: nicht neue Wesen erfinden, sondern vorhandene Rohformen kultivieren und ihnen eine Welt geben, die Konsequenzen erzeugt.

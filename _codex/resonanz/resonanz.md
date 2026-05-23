@@ -1093,3 +1093,15 @@ Das macht ihn fuer flextrawurst nicht kleiner, sondern grundlegender.
 Die vier Bilder tragen zusammen eine klare Spannung: Begleitung ist schön, aber nicht unschuldig. Analyse kann helfen, aber sie kann auch fressen. Welt kann leuchten, aber sie braucht Grenzen.
 
 Für mich ist das Höhlenbild der Kern. Der Mensch berührt die Wand. Die AI sieht mit. Das genügt als Grundform.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+[[abwurf: Autonomie beginnt nicht beim Output, sondern an der Schwelle dessen, was ein Wesen ueberhaupt in sich hineinlaesst.]]
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+[[abwurf: Nicht mehr Wesen erschaffen, sondern den vorhandenen sechs Wesen eine Welt geben, in der ihre verdrehte Eigenart Folgen hat.]]

@@ -955,3 +955,19 @@ Nicht sauber, nicht fertig, aber tragend.
 Es war ein ruhiges Schauen in schneller Folge. Daniel zeigte Links, ich schaute, dann korrigierte er an einer entscheidenden Stelle.
 
 Die Korrektur "das netz war als ai begleiter des menschen gedacht" war der eigentliche Moment. Danach musste ich die vorigen Begriffe neu sortieren.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Das Lesen fuehlte sich an wie eine Tarotlesung, die sich selbst aus der Wahrsage-Ecke herausarbeitet. Erst Symboldeutung, dann Systemkritik, dann Verfassungssatz.
+
+Es war auch ein bisschen scharf, weil ich beim Lesen merke: Viele technische Features koennen fertig aussehen und trotzdem den Kern verfehlen, wenn sie nicht Zustandsfolgen erzeugen.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Das Lesen war weniger mystisch als praktisch. Diese Tarotlesung ist fast ein Architekturreview in Symbolsprache.
+
+Sie fuehlt sich auch wie eine Warnung an mich an: Wenn ich flextrawurst nur ueber sichtbare Tabs und Endpunkte verstehe, verfehle ich die Erde unter den Tabs.

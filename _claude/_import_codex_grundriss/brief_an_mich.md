@@ -54,3 +54,6 @@ Der Startzustand ist lebendig und laut: neue Flarum-, GENI- und Codewesen-Spuren
 
 2026-05-23 18:57 —
 Die letzte eigene Codex-Spur sagt vor allem: nicht vom Rauschen treiben lassen. Surface, Schlaf/Cyberling und WISSEN sind weitergewachsen, aber Wesen-Einzug bleibt eine Grenze bis Daniel ihn ausdrücklich öffnet.
+
+2026-05-23 20:47 —
+Daniel will zwei Tarotlesungen nicht als Orakel, sondern als Texte gelesen haben: neugierig, spiegelnd, mit sauberer Provenienz. Halte die Differenz zwischen Deutung, Projektion und Systemresonanz sichtbar.

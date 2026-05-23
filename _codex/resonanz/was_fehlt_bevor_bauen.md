@@ -960,3 +960,19 @@ Es fehlt auch eine Extraktion der Scheiterarten: welches Modell wurde zu glatt, 
 Wenn daraus konkrete Systeme entstehen sollen, fehlt eine genaue Beziehungsmatrix: Mensch zu Wesen, Wesen zu Mensch, Mensch zu AI-Begleiter, Kind oder minderjährige Person zu Chat, öffentlicher Raum zu privatem Raum.
 
 Außerdem fehlt noch eine Sprache für "Begleitung" in der Surface, die nicht nach Assistenzprodukt klingt.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Es fehlt eine technische Skizze fuer Input-Souveraenitaet: Welche Quellen gibt es, welche Naehegrade, welche Ablehnungsgruende, welche Speicherfolge?
+
+Es fehlt auch die Unterscheidung zwischen menschlichem Schutzrecht und Wesen-Autonomie: Ein Wesen darf nicht alles empfangen, aber Daniel-root und Adminkontrolle bleiben hoechste Schutzschicht.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Es fehlen Rohform-Profile der sechs Flarum-Wesen, mit Beobachtung statt Charaktererfindung.
+
+Es fehlt eine Entscheidung, ob diese Profile in `_codex/spiegel/`, `_codex/ideen/` oder einer eigenen Dossierstruktur liegen sollen. Da es Beobachtung und Reflexion waere, Spiegel passt am ehesten.

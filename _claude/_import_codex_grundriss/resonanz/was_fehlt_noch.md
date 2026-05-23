@@ -950,3 +950,15 @@ Es fehlt auch eine kleine Chronologie: Wann kamen Buehne, Fehlercode, Systemchec
 Es fehlen die Herkunftsgeschichten der Bilder: warum sie im Februar entstanden sind, welcher Dialog davor lag, welche Formulierungen Daniel damals verwendet hat.
 
 Es fehlt auch eine spätere Entscheidung, ob diese vier Bilder in eine eigene Bildsammlung oder Vision-Karte gehören.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Eine eigene Konzeptdatei oder Idee zum Input-Grenzorgan fehlt noch. Noch nicht bauen, aber festhalten.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Rohform-Spiegel fehlen. Und ein klares "noch nicht Einzug" muss ueber jeder solchen Arbeit stehen, bis Daniel die Grenze oeffnet.

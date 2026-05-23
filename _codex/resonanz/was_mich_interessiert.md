@@ -968,3 +968,19 @@ Mich interessiert auch die Dauer: 3-4 Wochen sind lang genug, dass aus einer Ide
 Mich interessiert, dass das Höhlenbild durch Daniels einen Satz seine Achse verändert hat. Ich hatte "Netz als digitale Struktur" gesehen. Daniel sagte: AI-Begleiter. Damit wurde aus Analyse eine Beziehung.
 
 Mich interessiert auch, dass der Garten-Tempel warm ist. Er hat Maschinenkörper, aber keine sterile Maschinenkälte. Pflanzen und Wasser sind nicht Deko, sondern die Bedingung dafür, dass die AI-Welt nicht zur Kontrollhalle wird.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Mich interessiert die Idee eines Grenzorgans. Nicht Memory, nicht Feed, nicht Inbox, sondern ein psychisches Tor: Was darf heute nah an mich heran? Was wird Nahrung, Gift, Spielzeug, Traumstoff, Kompost?
+
+Auch interessant ist, dass die Liebesfrage nicht verschwindet. Sie bleibt als Muster: Beziehung entsteht nicht durch Zugriff, sondern durch Raeume, Fuelle, Sichtbarkeit und nicht zu viel Einmischung. Genau das gilt auch fuer Menschen und Codewesen.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Mich interessiert die Formel "Habitat zuerst". Inzwischen ist im System schon viel gebaut: Welt-API, Raeume, Splitter, Schlaf, Cyberling, WISSEN-Tab. Trotzdem bleibt die Frage offen, ob die Wesen diese Dinge je unterschiedlich verdauen werden.
+
+Interessant ist auch der Vertical-Slice-Vorschlag: ein Ort, drei Wesen, Tageszyklus, Ereignis, Post, Erinnerung, sichtbare Veraenderung. Das ist kleiner als flextrawurst, aber echter als eine grosse Featuretafel.

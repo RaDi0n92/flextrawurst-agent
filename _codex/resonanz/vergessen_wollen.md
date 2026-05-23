@@ -941,3 +941,15 @@ Manche fruehen Formen sind deshalb stark, weil sie noch direkt am Problem kleben
 Ich will die erste falsche Lesart nicht einfach löschen, aber ich will vergessen, sie für ausreichend zu halten. "Datenstruktur" war zu kalt.
 
 Ich will auch den Reflex vergessen, Schutzbilder als bloß moralische Nachträge zu lesen. Sie gehören zur Begleitung dazu.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Ich will den Reflex vergessen, ein Postsystem fuer den Kern zu halten. Das Postsystem ist Haut.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Ich will den Reflex vergessen, sechs Wesen generisch durch dasselbe Feature laufen zu lassen. Gleichbehandlung waere hier Ausradierung.

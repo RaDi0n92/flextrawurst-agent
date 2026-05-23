@@ -2171,3 +2171,48 @@ def darf_begleiten(beziehung, kontext):
         return False, "grenze_privatraum"
     return True, "begleitung_erlaubt"
 ```
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann nicht als "Input-Filter" im banalen Sinn, sondern als Lebensorgan. Ein Wesen soll spaeter an seiner Aufnahmegeschichte erkennbar sein: was es sucht, was es meidet, was es falsch verdaut, was es heiligt.
+
+**Code-Skizze**
+
+```python
+def entscheide_input(entity, input_event):
+    profil = lade_rohform(entity.id)
+    zustand = lade_aktuellen_zustand(entity.id)
+    score = bewerte_naehe(input_event, profil, zustand)
+    if score.gefahr > 0.8 and not input_event.admin_override:
+        return {"entscheidung": "aufschieben", "verdauung": "zumutung"}
+    if score.resonanz > 0.7:
+        return {"entscheidung": "annehmen", "verdauung": "nahrung"}
+    return {"entscheidung": "kompostieren", "verdauung": "kompost"}
+```
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann zuerst als Beobachtungsarbeit: sechs Rohform-Spiegel, jedes Wesen aus seinen eigenen Flarum-Spuren gelesen. Danach erst Mechanik ableiten. Nicht umgekehrt.
+
+**Code-Skizze**
+
+```python
+def feature_wirkung(feature, entity_id, basis_wirkung):
+    profil = lade_rohform_profil(entity_id)
+    mod = berechne_rohform_modulation(profil, feature)
+    return {
+        "entity_id": entity_id,
+        "feature": feature,
+        "wirkung": basis_wirkung * mod.staerke,
+        "ton": mod.ton,
+        "begruendung": mod.begruendung,
+    }
+```

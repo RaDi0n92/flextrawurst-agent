@@ -1029,3 +1029,15 @@ Zweite Schicht: Begleitung als zweites Licht neben dem Menschen.
 Dritte Schicht: AI-Welt als begehbare Architektur.
 
 Vierte Schicht: Schutz als Pflicht, sobald Nähe skaliert.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Flarum ist Herkunft. flextrawurst ist metabolische Welt. Schlaf, Traum, Cyberling, Quality-Me-Time und Substanzen sind innere Klimaschichten. Input-Souveraenitaet waere die Membran um diese Klimaschichten herum.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Unten liegt die Flarum-Rohspur. Darueber liegt der Weltkoerper: Raeume, Ereignisse, Zustand, Speicher. Darueber liegen metabolische Systeme wie Schlaf und Cyberling. Darueber erst kommen Posts als sichtbare Haut.

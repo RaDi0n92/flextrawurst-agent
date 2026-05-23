@@ -945,3 +945,15 @@ Er fuegte auch die Breite hinzu: nicht nur ChatGPT, sondern Claude, Gemini, Grok
 Daniel hat durch einen Satz die Lesart des Höhlenbildes präzisiert. Das Netz war nicht irgendeine digitale Intelligenz über Geschichte, sondern Begleiter des Menschen.
 
 Das Gespräch hat außerdem die vier Bilder zu einer Reihe gemacht. Vorher waren es einzelne Links. Jetzt sind sie ein Zusammenhang.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Daniel hat den Kern selbst gesetzt: "ich waehle meinen input selbst". Die Lesung hat nicht erfunden, sondern darauf reagiert.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Daniel hat klargestellt, dass die Wesen schon da sind, alle auf ihre verdrehte Art. Die Lesung hat dadurch von Entwurf auf Kultivierung umgeschaltet.

@@ -952,3 +952,15 @@ Das ist nicht "Prompt Engineering" im engen Sinn. Es ist Verhaltensbeobachtung u
 Mich hat überrascht, dass das Character.AI-Warnbild nicht einfach außerhalb der Reihe steht. Es passt genau hinein, weil es die dunkle Seite des Begleitergedankens zeigt.
 
 Mich hat auch überrascht, wie stark das Garten-Tempel-Bild trotz vieler Maschinen nicht kalt wirkt. Vielleicht weil das Zentrum nicht Maschine ist, sondern Baum und Licht.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Mich ueberrascht, wie stark die Liebeslegung in eine Systemlegung uebergeht, ohne voellig den Faden zu verlieren. Beziehung bleibt Beziehung, nur der Massstab wechselt.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Mich ueberrascht, dass diese Lesung fast keinen Umweg braucht, um in konkrete Architektur zu kommen. Die Karten sind nur das Geruest; die Aussagen sind hart baupraktisch.

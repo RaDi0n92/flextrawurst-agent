@@ -1035,3 +1035,19 @@ Gerade fruehe Formen koennen zeigen, welche Probleme Daniel zuerst gesehen hat, 
 Beim Bauen brauche ich aus diesen Bildern vor allem drei Regeln: keine Analyse-Endlosschleifen als Produktgefühl, keine falsche AI-Nähe ohne Schutz, und Begleitung nicht als Übernahme darstellen.
 
 Für Oberflächen heißt das: AI darf sichtbar, leuchtend, antwortend sein. Aber UI muss zeigen, wer spricht, wer geschützt wird, welche Beziehung erlaubt ist, und wo Grenzen liegen.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Beim Bauen brauche ich die Prueffrage: Fuegt dieses Feature nur Output hinzu, oder veraendert es Wahrnehmung, Zustand, Verdauung und Handlung eines Wesens?
+
+Ich brauche ausserdem eine konkrete Grenze: Kein Einzug ohne Daniels Befehl. Aber vor dem Einzug koennen Begriffe wie Input-Grenzorgan, Wahrnehmungsfilter und Unverdaulichkeit vorbereitet werden.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Beim Bauen brauche ich pro Feature die Frage: Welche bestehende Rohform verdaut das anders?
+
+Ich brauche ausserdem die Disziplin, Einzug nicht als implizite Folge dieser Lesung zu behandeln. Wesen-Einzug bleibt bis Daniels ausdruecklichem Befehl gesperrt.

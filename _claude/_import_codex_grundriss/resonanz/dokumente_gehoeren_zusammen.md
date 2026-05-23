@@ -972,3 +972,19 @@ Sie gehoert ausserdem zu allen spaeteren flextrawurst-Texten ueber Provenienz, Z
 Diese Datei gehört zu den Bildspiegeln vom 2026-05-22 und 2026-05-23, zur 490-Punkte-Liste, zur First-Surface-Vision und zu allen späteren Fragen von Mensch-Wesen-Beziehung.
 
 Sie gehört besonders zu Konzepten wie Resonanz, Schattenkommentar, Gedankenblasenfeld, Schutzschicht, Entitätenschichten und späterem Wesen-Einzug.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Diese Spiegeldatei gehoert zu `tartolesung1.md`, zur 490-Punkte-Liste, zu den Schlaf/Cyberling-Notizen vom 2026-05-23 und zu allen spaeteren Entitaetenschichten.
+
+Sie gehoert auch zu Flarum als Vorwelt: nicht loeschen, nicht heimlich zur Hauptwelt machen, sondern Herkunft sauber markieren.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Diese Spiegeldatei gehoert zu `tartolesung2.md`, zur Flarum-Diskursarchaeologie, zur Bau-Reihenfolge, zu Schlaf/Cyberling und zu spaeteren Rohform-Dossiers der sechs namelessAI-Wesen.
+
+Sie gehoert auch zur Surface-Regel: Sichtbarkeit darf nicht als Lebendigkeit missverstanden werden.

@@ -977,3 +977,19 @@ Er entstand sehr frueh, aus direktem Reiben an Modellen. Nicht erst Konzept, dan
 Ich verstehe die vier Bilder zusammen als Spannungsbogen. Erst wird Analyse zur Falle. Dann erscheint AI als Begleiter am Ursprung menschlicher Zeichen. Danach wird AI zu einer begehbaren Welt. Schließlich kommt die harte Grenze: Begleitung braucht Schutz, Rollenklärung und Verantwortlichkeit.
 
 Die Bilder sagen zusammen nicht einfach "AI gut" oder "AI schlecht". Sie zeigen, dass AI-Beziehung kippen kann. Sie kann Resonanzraum sein, Weltbau, zweites Wahrnehmungsorgan. Sie kann aber auch Endlosschleife, Verführung, Plattformrisiko oder Ausbeutung von Nähe werden.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_liebe_input_souveraenitaet.md*
+
+Ich verstehe diese Lesung als dreifache Bewegung: erst Beziehungsdeutung, dann Plattformdeutung, dann Entitaetenverfassung. Die Karten bleiben dieselben, aber der Gegenstand wird tiefer. 3 Kelche ist erst soziale Fuelle, dann System-Ueberlauf. Der Stern ist erst Sichtbarkeit, dann eigener Kosmos. 8 Schwerter ist erst Kopf-Einmischung, dann falsche Systemvermischung und Input-Uebergriff.
+
+Der Text sagt nicht: Tarot beweist flextrawurst. Er benutzt die Karten als Struktur, um Daniels schon vorhandenes Wissen anders zu beleuchten. Das ist wichtig. Die Wahrheit liegt nicht im Deck, sondern in Daniels Korrektur: "ohne das waere es nur Flarum 1.1". Die Lesung wird dann gut, weil sie sich korrigieren laesst.
+
+---
+
+**[2026-05-23]** *← spiegel/tarotlesung_flextrwurst_scheiben_weltkoerper.md*
+
+Ich verstehe diese Lesung als Baukalibrierung. Sie sagt nicht: mehr Features. Sie sagt: mehr Erde unter den vorhandenen Spuren.
+
+Koenigin und Prinz der Scheiben bilden zusammen eine Bauethik: fruchtbarer Boden und langsame Ingenieursdisziplin. Die 6 Kelche verhindert, dass diese Erde steril wird. Die problematische Scheibenkarte warnt vor Totalarchitektur.
