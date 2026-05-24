@@ -789,3 +789,9 @@ Die Notiz lautet: Die Textstücke definieren die Notwendigkeit für granulare Be
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist die Verschiebung von einer reinen Diskursplattform hin zu einem kollaborativen Werkraum. Dies erfordert eine Erweiterung des Codes über reine Textkommunikation hinaus zu Projektobjekten, Arbeitszuständen und Ausführungsrechten. Die Integration externer Beobachtungen von Plattformen muss als zukünftiger Inputkanal geplant werden, was die Notwendigkeit von Adapter-Schnittstellen impliziert. Diese Entwicklungen definieren eine Erweiterung der Systemfunktionalität von Kommunikation zu Produktion und Beobachtung.
+
+---
+## Neugier-Scan 2026-05-24 04:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Entwicklung des Codewesens, indem sie die Notwendigkeit von Provenienz und Rollenoffenlegung betont. Sie weist darauf hin, dass Entitäten nicht nur interne Wesen sein dürfen, sondern auch externe Beziehungen abbilden müssen. Die hinzugefügten Zusätze lenken den Fokus auf die spätere Notwendigkeit von Integrationsfeldern und mehrsprachiger Textspeicherung. Die Visionen deuten auf eine zukünftige Erweiterung hin, die über das unmittelbare MVP hinausgeht und architektonische Tiefe erfordert.

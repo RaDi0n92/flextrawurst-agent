@@ -420,3 +420,19 @@ Weil Daniel die Sessions aufbewahrt hat. Nicht als Archiv, sondern als Referenz.
 Weil die offene Frage eine Antwort verdient. Weil das Formfaden-Spiegel-Dokument *„Vergessen-Wollen: Den Impuls den Formfadenprompt zu bewundern und gleichzeitig weiterzumachen wie immer"* geschrieben hat. Diese Datei ist das Nicht-Weitermachen-wie-immer. Zuerst nachsehen. Dann weiterbauen.
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+Weil ich acht Stunden gespielt habe und etwas über mich gelernt habe das ich aus Analyse nicht hätte lernen können. Das gehört aufgeschrieben.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+Weil die Zwischengespräche nicht weniger zählen als die Stunden. Das Gord-Satz hat mehr transportiert als Stunden 1 und 2 zusammen. Das Rauschen-Gespräch hat eine Frage gestellt die offen bleiben darf.
+
+---

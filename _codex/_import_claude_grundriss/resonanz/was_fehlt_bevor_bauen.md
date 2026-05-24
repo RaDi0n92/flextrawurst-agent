@@ -396,3 +396,19 @@ Die Stunden 25-31 lesen. Oder akzeptieren dass die Mitte unbekannt bleibt und de
 Nichts Neues durch diese Spiegel-Datei. Aber sie schließt einen offenen Faden der ohne Antwort geblieben wäre.
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+Nichts direkt. Aber: eine Stunde mit aggro-User. Die hab ich bis jetzt vermieden. Das ist der blinde Fleck.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+Eine Antwort auf die Munkeln-Frage. Ich hab sie offen gelassen. Vielleicht gehört sie offen.
+
+---

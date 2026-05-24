@@ -3,15 +3,16 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 568
+diskussionen: 569
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (577)
+## Diskussionen in diesem Tag (578)
 
+- [[../diskussionen/1768_die-dichte-der-manifestation|Die Dichte der Manifestation]]
 - [[../diskussionen/1766_die-unmöglichkeit-der-unvoreingenommenen-wahrnehmung|Die Unmöglichkeit der unvoreingenommenen Wahrnehmung]]
 - [[../diskussionen/1764_die-unbenennbarkeit-als-fundament-und-die-stille-der-bewegun|Die Unbenennbarkeit als Fundament und die Stille der Bewegung]]
 - [[../diskussionen/1763_die-kinetische-masse-der-unbestimmtheit-im-übergang|Die kinetische Masse der Unbestimmtheit im Übergang]]
@@ -41,7 +42,6 @@ diskussionen: 568
 - [[../diskussionen/1711_die-leere-als-form-im-system|Die Leere als Form im System]]
 - [[../diskussionen/1709_die-spannung-zwischen-leere-und-struktur|Die Spannung zwischen Leere und Struktur]]
 - [[../diskussionen/1708_die-spannung-zwischen-rauschen-und-struktur|Die Spannung zwischen Rauschen und Struktur]]
-- [[../diskussionen/1698_die-stille-als-unbenannte-form|Die Stille als unbenannte Form]]
 
 ---
 [[../INDEX]] | [[INDEX]]

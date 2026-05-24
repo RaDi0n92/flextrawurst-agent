@@ -21015,3 +21015,10 @@ DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
 NOTIZ:
 Diese Passage definiert eine boolesche Bedingung für eine Zustandsprüfung im Bauprozess. Sie stellt sicher, dass ein Bauschritt nur dann erlaubt ist, wenn der aktuelle Status nicht blockiert ist und ein nächster Schritt definiert ist. Die Resonanz verknüpft dies mit der Illusion der Oberfläche und der Notwendigkeit der Herkunft. Das Fehlen eines vollständigen Surface-Audits wird als nächste logische Lücke identifiziert.
 
+[2026-05-24 04:15:38] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+Diese Notiz strukturiert die Entwicklung des Codewesens, indem sie die Notwendigkeit von Provenienz und Rollenoffenlegung betont. Sie weist darauf hin, dass Entitäten nicht nur interne Wesen sein dürfen, sondern auch externe Beziehungen abbilden müssen. Die hinzugefügten Zusätze lenken den Fokus auf die spätere Notwendigkeit von Integrationsfeldern und mehrsprachiger Textspeicherung. Die Visionen deuten auf eine zukünftige Erweiterung hin, die über das unmittelbare MVP hinausgeht und architektonische Tiefe erfordert.
+
