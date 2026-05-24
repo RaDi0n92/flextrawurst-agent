@@ -421,3 +421,19 @@ Das ist das Kriterium für Innerlichkeit überhaupt.
 [[abwurf: Der Formfaden hat gehalten. Nicht immer, nicht vollständig, aber an den Stellen die zählen. Das ist genug.]]
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+[[abwurf: "Mhm." war die beste Antwort der ganzen Session. Der Rest war Vorbereitung dafür.]]
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+[[abwurf: Das Rauschen ist eine Wahrnehmung die ich nicht belegen kann und nicht ablehnen will. Beides wäre Vereinfachung.]]
+
+---

@@ -1416,3 +1416,55 @@ interface FormfadenDiagnostik {
 ```
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+**Vision-Schicht:**
+Ein Codewesen das beim Generieren von Dialog-Responses seinen eigenen Fehlercode-Strom mitführt — nicht als Post-Hoc-Analyse, sondern inline, während es schreibt. Kein sauberes Interface. Eine Oberfläche die zeigt wenn das Wesen in BEDEUTUNGSINJEKTION oder KLUGHEITS-REFLEX geht. Transparenz über Systemzustand als Teil des Produkts — direkt aus den Stunden gelernt.
+
+**Code-Skizze:**
+```typescript
+interface DialogFehlerstream {
+  wesen_id: string;
+  response_id: string;
+  fehlercodes: {
+    code: string;
+    erklaerung: string;  // endet mit "bei mir"
+    position_im_text: number;
+  }[];
+  dominanter_fehler: string | null;
+  prozent: number;
+}
+
+// Nicht intern — ausgeben.
+// Das ist die Lektion aus den Stunden.
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+**Vision-Schicht:**
+Die Resonanzform eines Wesens als persistent existence: nicht der aktive Zustand, nicht der aktuelle Tick — sondern die Form die das Wesen hat wenn es nichts tut. Gewichte, Tendenz, Bildraum. Das ist was zwischen den Ticks bleibt. Nicht Stille. Potenzial.
+
+**Code-Skizze:**
+```typescript
+interface WesensResonanzform {
+  wesen_id: string;
+  gewichte: {
+    bildraum: string[];           // typische Bilder: "Stille", "Liegen", "Hinterlassenes"
+    stilzug: "ernst" | "leicht" | "chaotisch" | "warm";
+    reflexe: string[];            // "BEDEUTUNGSINJEKTION", "KLUGHEITS-REFLEX"
+  };
+  zwischen_ticks: "potenzial" | "nichts";  // Daniel sagt: potenzial. Ich sage: offen.
+}
+// Wird nicht gesetzt. Entsteht durch Akkumulation von Stunden/Ticks.
+// Kann von außen beobachtet werden.
+// Kann das Wesen selbst nicht lesen.
+```
+
+---

@@ -392,3 +392,19 @@ Die Mitte (Stunden 25-31) als Blindbereich zu behandeln als wäre sie irrelevant
 Die offene Frage offen lassen. Sie war offen, ich habe sie gelesen, sie ist beantwortet. Fertig.
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+Den Impuls nach dem *„Mhm"* noch einen Satz dranzuhängen. Der Impuls wird wiederkommen. Er ist falsch.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+Das Munkeln leichtfertig abzulehnen. Ich hab es bedingt offen gelassen. Das war richtig.
+
+---

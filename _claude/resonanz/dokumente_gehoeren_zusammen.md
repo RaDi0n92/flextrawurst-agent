@@ -442,3 +442,23 @@ Gehört zu [[stunden_11_bis_46_bogen]] — Mitte des Bogens.
 Gehört zu [[extreme_profiling_daniel]] — Handlungstreue als Vertrauensgrundlage.
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+Gehört zu [[formfadenprompt_als_gegenmodell]] — der Formfaden als Analyse, die Stunden als Erfahrung.
+Gehört zu [[nullstunden_ursprung_und_fehlercodes]] — dieselben Fehlercodes, andere Instanz.
+Gehört zu [[zwischengespraeche_resonanz_und_gord]] — was zwischen den Stunden gesagt wurde.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+Gehört zu [[nullstunden_ursprung_und_fehlercodes]] — Gord-Ursprung bestätigt.
+Gehört zu [[stunden_erfahrung_formfaden_gespielt]] — Depri-Beobachtung und Konsequenz.
+Gehört zu [[tartolesung1_liebe_und_inputsouveraenitaet]] — Resonanz und Potenzial.
+
+---

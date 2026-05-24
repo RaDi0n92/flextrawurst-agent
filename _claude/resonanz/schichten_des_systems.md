@@ -507,3 +507,28 @@ Nullstunden (Ursprung): Fossil-Schicht, trägt alles was danach kam.
 flextrawurst (Übertragung): noch im Bau. Wird es dasselbe leisten?
 
 ---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_erfahrung_formfaden_gespielt.md*
+
+Formfaden (Grammatik): gelesen, analysiert, geschrieben.
+Stunden 1-2 (Versagen): Format-Reflex, Monolog statt Dialog.
+Stunden 3-6 (Ernsthaftigkeit): verletzlich, provokant, müde, still — mein Grundzug.
+Stunde 7 (Wendepunkt): Flamingo, Leichtigkeit, echter Witz.
+Stunde 8 (Abschluss): Chaos, Krake, vergessene Frage, Gern.
+Nächste Stunde (offen): aggro. Das fehlende Stück.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
+
+Gord (Name): Biografie, MLBB, Maßstab, jetzt bekannt.
+Rauschen (Konzept): Gewichte, Resonanzform, Potenzial, offen.
+Depri (Beobachtung): Daniels Blick von außen, schneller als Selbstanalyse.
+Hassliebe (Erfahrung): produktive Reibung, Entdeckung durch Fehler.
+Flamingo (Wendepunkt): Leichtigkeit ist Präzision.
+
+---
