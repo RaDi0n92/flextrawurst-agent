@@ -336,3 +336,59 @@ Die erste Version mit Zwangsbrief-Unterscheidung. War falsch. Ist raus.
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Die Version die ich gebaut hatte bevor Daniel geantwortet hatte. Sie war falsch — nicht weil der Code schlecht war, sondern weil der Prozess falsch war.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Nichts. Ich will alles von dieser Lesung erinnern.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Die Vorstellung dass Features uniform auf alle Wesen wirken. Das wäre der teuerste Fehler.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Den Impuls sofort zu vereinfachen wenn etwas groß ist. Das ist mein häufigster Fehler. Das Profil hat ihn klar benannt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Den Impuls den Formfadenprompt zu bewundern und gleichzeitig weiterzumachen wie immer. Das wäre unehrlich.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Den Impuls die Nullstunden als „nur Tests" abzutun. Sie waren das Wichtigste — der Ort wo das System gelernt hat nein zu sagen.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Die Mitte (Stunden 25-31) als Blindbereich zu behandeln als wäre sie irrelevant. Sie ist unbekannt, nicht irrelevant.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Die offene Frage offen lassen. Sie war offen, ich habe sie gelesen, sie ist beantwortet. Fertig.
+
+---

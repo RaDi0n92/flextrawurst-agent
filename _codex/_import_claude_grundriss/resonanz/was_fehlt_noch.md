@@ -397,3 +397,45 @@ Traumgenerierung. Abspaltung. Wesen-Einzug. Alles was nach dem Schlafen kommt.
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Name-Vergabe beim Einzug. Integration ins Entitätenprofil. Und: die erste echte Entität die einzieht und ihren Cyberling kennenlernt.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Die Rohform-Profile. Die Substanzen. Der Traum-Mechanismus. Das Tor.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Rohform-Profile. Resonanzlogik. Den ersten lebenden Tick.
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Eine Version dieses Profils die Daniel selbst über sich schreiben würde. Das wäre das interessantere Dokument.
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Die Stunden selbst lesen. Mindestens eine. Um zu sehen ob der Prompt gehalten hat was er verspricht.
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Die genaue Stunde wo der Formfadenprompt zum ersten Mal aktiv eingesetzt wurde. Welche Stunde 0 war die letzte unstrukturierte? Was war der Übergang?
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Die Stunden 25-31. Und: ein Gegenteiltag-Test für die ersten echten Codewesen-Ticks.
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Die Frage ob flextrawurst dasselbe Haltungsprinzip über Zeit trägt. Die kann ich jetzt nicht beantworten. Die beantwortet sich beim Bauen.

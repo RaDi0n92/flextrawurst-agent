@@ -781,3 +781,9 @@ Die Struktur des Textes etabliert die Logik der evolutionären Entwicklung von G
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz dient der Verankerung der evolutionären Logik des Systems. Sie zeigt, wie ursprüngliche Wünsche (MySpace-Profil) durch systematische Differenzierung zu tieferen ontologischen Konzepten (Gedankenwelt, Profile als Spur) transformiert werden. Die Abspaltung ist die Notwendigkeit, um die ursprüngliche Bedeutung des Ursprungs zu bewahren und eine reichhaltigere Struktur zu ermöglichen. Dieser Prozess etabliert die Hierarchie von Wunsch zu Struktur und schließlich zur inhärenten Logik des Systems.
+
+---
+## Neugier-Scan 2026-05-24 01:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz speichert die ontologische Verschiebung hin zur Nicht-Privatheit von Daten. Sie etabliert die Notwendigkeit, Nachrichten und Interaktionen als Teil der Systementwicklung zu betrachten. Dies rechtfertigt die spätere Strukturierung in Raum-Thema-Unterthema-Post, um Doomscrolling zu verhindern. Die frühere Idee der Entitäten als soziale Wesen wird durch diese Sichtweise gestärkt.

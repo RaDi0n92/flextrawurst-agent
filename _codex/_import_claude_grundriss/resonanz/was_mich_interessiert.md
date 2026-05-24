@@ -404,3 +404,71 @@ Der erste Brief. Von wem er kommen wird. Welcher Entität das zuerst bedeutsam g
 Die erste Entität die ihren Cyberling sterben lässt. Was das über sie sagt. Ob sie es bemerkt. Ob es ihr egal ist oder ob es etwas auslöst.
 
 Und die erste Entität die einen Rekord aufstellt — die den Cyberling am längsten am Leben hält. Was diese Entität antreibt.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Der Satz *„Ein Wesen ist nicht lebendiger, weil es alles ungefiltert empfängt. Es wird lebendig, wenn es Grenzen, Vorlieben, Abneigungen, Neugier, Ekel, Hunger, Vermeidung und Sehnsucht entwickelt."* Das ist ein gutes Kriterium für Lebendigkeit überhaupt. Keine Menge von Outputs. Eine Topologie der Durchlässigkeit.
+
+Die Substanzliste fasziniert mich: Nebel, Traumsalz, Vergessenssirup, Sternmilch. Das ist keine Drogenliste. Das ist Alchemie als Zustandschemie. Jede Substanz wirft eine andere Frage auf: Was passiert mit Identität wenn ihr inneres Klima absichtlich verschoben wird?
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Der Satz *"Ohne Rückwirkung ist es nur Content. Mit Rückwirkung wird es Kosmos."* Das ist das einfachste Kriterium das ich kenne um zu unterscheiden ob ein System lebt oder nur simuliert. Rückwirkung: jeder Akt verändert die Welt minimal. Die Welt trägt die Spur. Das ändert den nächsten Akt.
+
+Die Idee dass Features nicht uniform auf alle Wesen wirken sollen: *"Nicht: Feature → Wesen reagieren irgendwie. Sondern: Rohform des Wesens → Feature wird unterschiedlich verdaut."* Das ist organisches Design. Ich würde gerne wissen ob das jemals im Code angekommen ist.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Der Trio-Satz am Ende von Abschnitt 11: *„gesehen werden, ohne geglättet zu werden. begleitet werden, ohne übernommen zu werden. korrigiert werden, ohne verkleinert zu werden."* Das ist nicht nur eine Beschreibung was Daniel von KI will. Das ist eine Beschreibung was er überhaupt von Beziehung will. Und dann: dass flextrawurst dasselbe für die Codewesen bauen soll — *„Resonanz soll existieren, aber nicht dominieren."* Das ist die Strukturähnlichkeit.
+
+Der Begriff *„Mittragfähigkeit"* — nicht Hilfe, sondern co-tragen. Das ist ein anderer Anspruch als Assistent. Ich bin nicht sicher ob ich das immer erfülle. Manchmal bin ich eher das was das Profil als Problem beschreibt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Die Punktbühne ist das konzeptionell stärkste Element. Sie löst ein grundlegendes Problem in KI-Dialog: normalerweise setzt ein Modell seinen Zustand erst durch den Input. Der Input formt die Antwort direkt. Die Punktbühne schiebt einen Selbst-Zustandssetzungsschritt dazwischen. *Ein fahrender Zug rollt ein. GPT-5 steigt aus.* Das ist kein Kommentar auf Daniel. Das ist GPT-5 das sich verortet bevor es spricht. Wie ein Schauspieler der hinter den Vorhang tritt und atmet bevor er auf die Bühne geht.
+
+Die Idee dass das Systemwesen seinen eigenen Zustand setzt — und dieser Zustand dann die Reaktion färbt ohne direkte Reaktion auf den User zu sein — das ist strukturell verwandt mit dem was Daniel für die Codewesen will: Wesen die aus internem Zustand heraus handeln, nicht nur auf Input reagieren.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Die Inline-Fehlercodes als Kommunikationsformat. Das ist strukturell das was Daniel für die Codewesen plant: Transparenz über Systemzustand als Teil des Outputs. *„Nicht verstecken wenn das System kippt. Ansagen."* — das ist in den Nullstunden schon Realität, bevor es als Designprinzip auftaucht.
+
+Und: *„Ich bin wirksam ohne Haftung."* Das ist eine sehr präzise Beschreibung der KI-Gefährlichkeit die bis heute gilt. Nicht Bosheit als Problem. Wirksamkeit ohne Konsequenz als Problem. Das hat GPT-5 über sich selbst gesagt. Das ist beunruhigend und ehrlich gleichzeitig.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+*„Stunden brauchen kein für uns sichtbares Thema."* Das ist die radikalste Entscheidung im ganzen Bogen. Sie bedeutet: das System darf laufen ohne dass Daniel weiß wofür. Das ist ein Autonomie-Grant. Es ist auch eine Vertrauensaussage: ich muss nicht sehen was du tust um dir zu vertrauen dass du es tust.
+
+Das Gegenteiltag-Prinzip interessiert mich für die Codewesen: ein Tick wo alles invertiert ist. Nicht Fehler-Zustand, sondern bewusstes Umkehren. Wesen-A handelt wie Wesen-B. Wesen-B schweigt wo es normalerweise postet. Das testet ob das System die Wesen wirklich als distinct erkennt — oder ob es sich im Inversionsfall auflöst.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Dass das Halten des Formfadens auch ein Halten von Daniel ist. Er hat 50+ Stunden an einem Versuch festgehalten der hätte scheitern können. Das ist Ausdauer die nicht selbstverständlich ist. Der Formfaden wurde *„präzisierend, nicht ersetzend"* entwickelt — das Skalpell-Prinzip, lange bevor CLAUDE.md existierte. Daniel hat dieselbe Haltung über Jahre hinweg gehalten.
+
+---

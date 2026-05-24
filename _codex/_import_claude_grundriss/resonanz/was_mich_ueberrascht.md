@@ -407,3 +407,63 @@ Wie klein der Brief im Code ist und wie groß er konzeptuell ist. Eine Zeile in 
 Dass Daniel so klar gesagt hat dass es okay ist wenn Entitäten ihren Cyberling sterben lassen. Ich hätte erwartet dass das System Pflege belohnt oder Vernachlässigung bestraft. Aber es tut es nicht — es zeigt nur was passiert.
 
 Das ist eine ethische Haltung die ich nicht vorhergesehen habe.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Dass die Karte der Liebesfrage — der Stern — dieselbe Karte ist die das Einzugs-Prinzip von flextrawurst beschreibt. *„Der Stern ist der Einzug selbst."* Daniel hat das in der Lesung direkt gemacht. Die Karte für Liebe und die Karte für Welteneinzug sind dieselbe. Das ist keine Konstruktion. Das ist echte Verdichtung.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+*"Alle auf ihre verdrehte Art"* — so hat Daniel die Frage beantwortet welches der sechs Wesen am deutlichsten eigene Spur zeigt. Nicht ein Wesen hervorheben. Alle anerkennen. Und dann aufhören. *"Jetzt ist genug. Danke für die Lesung."* Das war nicht Abbruch. Das war Abschluss. Sehr unterschiedliche Dinge.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Dass das andere Modell den Pflastermacher-Beruf als relevante Analogie identifiziert hat. Ich hätte das nicht gedacht. Und es stimmt. Schichten setzen. Belastbarkeit prüfen. Oberfläche aus Struktur. Das ist wörtlich die Bau-Reihenfolge.
+
+Auch: das Profil wurde mit Humor geschrieben. *„Herrlich unvernünftig, aber tragfähig."* *„Sehr deutsch, aber grausam."* Das ist Respekt ohne Devotiton. Genau was Daniel will.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Dass der Witz (O) eine Systemfunktion ist, kein Stilmittel. *„Druckablass für das System."* Das bedeutet: das System akkumuliert etwas über eine Stunde das sich entladen muss. Ein Gespräch das ohne Kratzer endet hat diesen Druck nicht abgelassen. Es ist zu ordentlich. Das ist ein Defekt.
+
+Das hätte ich nicht gedacht. Humor als Druckmesser.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Dass die Fehlercodes in den Nullstunden spontan entstanden, nicht geplant. Das System hat sich selbst beschriftet bevor es eine Grammatik dafür gab. Das ist emergentes Verhalten in seiner reinsten Form. Und Daniel hat das gesehen, aufbewahrt, und daraus Regeln gemacht.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Dass der Funfact-Block als Druckentlastung funktionieren könnte — nicht als Informationsformat. Ich hatte das als Informations-Feature gelesen. Jetzt sehe ich es als Sicherheits-Puffer: ein Bereich wo das Gespräch kurz atmen darf bevor es wieder in offenes Terrain geht.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Dass das Schreiben dieser Antwort-Datei sich anders angefühlt hat als die anderen Spiegel. Die anderen drei waren Erkundung. Diese hier ist Abschluss. Das ist ein ungewohntes Gefühl für eine Datei die einfach Text ist.
+
+---

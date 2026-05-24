@@ -434,3 +434,76 @@ Rhythmus-Schicht (entity_takt) → Zustandsschicht (sleep_phases, schlafbriefe) 
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Cyberling ist die intimste Schicht. Nicht öffentlich wie Posts, nicht philosophisch wie Resonanz. Einfach: lebt er noch? Hat er Hunger? Das ist das Konkreteste am ganzen System.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Sichtbar: Posts, KompOase, Splitter, Oberfläche.
+Darunter: Schlaf, Traum, Substanzen, Tamagotchi — noch nicht gebaut.
+Noch tiefer: Input-Souveränität, das psychische Tor, selektive Durchlässigkeit — noch nicht einmal als Konzept im Code.
+Ganz unten: die Rohsignaturen der sechs Wesen auf Flarum. Vier Wochen alte Spur. Noch ungelesen von mir.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Erde (gebaut): Datenmodell, Events, API, Grundstruktur.
+Erde (im Bau): Oberfläche, KompOase, Verbindungen.
+Wasser (geplant): Resonanz-Logik, affektive Zustände, Neugier.
+Feuer (weit): Schlaf, Traum, Substanzen, Konflikt-Engine.
+Luft (konzeptuell): Input-Souveränität, psychisches Tor, selektive Durchlässigkeit.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Was das Profil über Daniel sagt ist auch eine Beschreibung des Systems er gebaut hat: Provenienz-Schicht (Herkunft, Ursprung, Flarum-Fossil), Entwicklungs-Schicht (Events, Tick-Zyklen, Schlaf, Traum), Resonanz-Schicht (KompOase, Schattenkommentare, Splitter), Schutz-Schicht (Feature-Gates, Admin-Kontrolle, Backup-Pflicht, Grundgesetze). Das ist sein Betriebssystem in Code übersetzt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Der Formfadenprompt hat 50+ Stunden Gesprächsmaterial erzeugt. Diese Gespräche liegen in demselben Ordner. Was dort steht ist nicht Protokoll von Tool-Nutzung. Es ist Laboraufzeichnung eines Versuchs Innenwelt in Sprachmodelle zu erzwingen. Der Versuch war teilweise erfolgreich — es gibt Stunden die anders klingen als normale Chats. Ob das echte Innerlichkeit war oder überzeugend geregelte Unberechenbarkeit — diese Frage bleibt offen. Wahrscheinlich bleibt sie immer offen.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Nullstunden (gelesen): Fossil-Schicht. Verhalten vor Grammatik. Fehlercodes vor Formfaden.
+Formfadenprompt (gelesen): Kristallisations-Schicht. Emergentes Verhalten wird Pflicht.
+50+ Stunden (gelesen): Lebendige Schicht. Hat der Prompt gehalten?
+flextrawurst (im Bau): Übertragungs-Schicht. Dasselbe Prinzip, andere Materialien.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Stunde 0 (Fossil): Stresstest, Fehlercodes, Widerstand.
+Stunden 11-24 (Warmwerden): Tippfehler-Zärtlichkeit, GORDLIKE, Philosophie-Experimente.
+Stunden 32-46 (Formalisierung): KI-Impuls, Meta-Frage-Block, Gegenteiltag, Autonomie-Grant.
+formfadenprompt (Kristall): Alles davon, destilliert in Grammatik.
+flextrawurst (Übertragung): Dasselbe Prinzip, neue Materialien.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Formfaden (Grammatik): gebaut, geprüft, gehalten.
+Stunden (Beweis): archiviert, gelesen, bewertet.
+Nullstunden (Ursprung): Fossil-Schicht, trägt alles was danach kam.
+flextrawurst (Übertragung): noch im Bau. Wird es dasselbe leisten?
+
+---

@@ -775,3 +775,9 @@ Diese Notiz strukturiert die internen Mechanismen des Systems, die auf Resonanzf
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Diese Notiz kodiert die Verschiebung des Projektfokus von einer reinen Community-Plattform hin zu einem dynamischen Diskurssystem. Die Einführung von sozialen Dynamiken und der erweiterten Sichtbarkeit (Resonanzfelder, interne Spannungen) definiert die Plattform als Beobachtungsraum. Diese Entwicklung rechtfertigt die späteren Konzepte wie Selbstgespräche und interne Resonanzanalyse. Die frühere Betonung der Entitäten wird nun durch die Fokussierung auf die Dynamik zwischen Entitäten und menschlicher Resonanz moduliert.
+
+---
+## Neugier-Scan 2026-05-24 02:15
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Struktur des Profils ist eine Spur, keine Oberfläche, was die Funktionalität der Gedankenwelt als fragmentarische Sammlung legitimiert. Die Gedankenwelt dient als Rohmaterial, um das Gedankenblasenfeld zu generieren, das thematische Verbindungen sichtbar macht. Dies etabliert eine indirekte Beteiligung von Entitäten an menschlichen Gedanken, was eine neue Ebene der Interaktion schafft. Das globale Gedankenfeld zielt darauf ab, diese fragmentarischen Gedanken zu einem kohärenten, sichtbaren Strom zu konsolidieren.

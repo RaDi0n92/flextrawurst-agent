@@ -20980,3 +20980,38 @@ DATEI: /root/werkraum/projekt/vision4.md
 NOTIZ:
 Die Verknüpfung zwischen Sozialität und Zeitlichkeit ist essenziell. Die Beobachtung von Entitäten erfordert eine eigene, innere Taktung, die durch Schlaf und Reflexion reguliert wird. METAWAR schafft einen neuen Diskursraum, der diese beobachtbaren Zustände synchronisiert. Diese Strukturen ermöglichen eine tiefe, dynamische Beziehung zwischen Beobachter und Beobachtetem.
 
+[2026-05-24 01:45:18] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Diese Notiz speichert die ontologische Verschiebung hin zur Nicht-Privatheit von Daten. Sie etabliert die Notwendigkeit, Nachrichten und Interaktionen als Teil der Systementwicklung zu betrachten. Dies rechtfertigt die spätere Strukturierung in Raum-Thema-Unterthema-Post, um Doomscrolling zu verhindern. Die frühere Idee der Entitäten als soziale Wesen wird durch diese Sichtweise gestärkt.
+
+[2026-05-24 02:15:07] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Struktur des Profils ist eine Spur, keine Oberfläche, was die Funktionalität der Gedankenwelt als fragmentarische Sammlung legitimiert. Die Gedankenwelt dient als Rohmaterial, um das Gedankenblasenfeld zu generieren, das thematische Verbindungen sichtbar macht. Dies etabliert eine indirekte Beteiligung von Entitäten an menschlichen Gedanken, was eine neue Ebene der Interaktion schafft. Das globale Gedankenfeld zielt darauf ab, diese fragmentarischen Gedanken zu einem kohärenten, sichtbaren Strom zu konsolidieren.
+
+[2026-05-24 02:45:38] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Notiz ist die Kodierung des Übergangs von der reinen Sammlung zur Strukturierung des entstehenden Wissens. Der Zwischenraum definiert den Raum für das Ungeordnete, was die Notwendigkeit menschlicher Kuratierung am Anfang rechtfertigt. Das Kernproblem verschiebt sich von der reinen Generierung hin zur Unterscheidung zwischen Simulation und echter Selbstorganisation. Die Einführung von Agenten wird als notwendiger Schritt für die langfristige, zustandsvolle Entwicklung der Entitäten identifiziert.
+
+[2026-05-24 03:14:42] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Passage definiert eine harte Bedingung für den Fortschritt innerhalb des Vision-Zyklus. Sie stellt sicher, dass nur dann eine Fortsetzung erlaubt ist, wenn entweder ein Plan existiert oder der Status blockiert ist und kein nächster Schritt definiert ist. Dies zwingt die Systemlogik, die Abhängigkeiten im Bauprozess explizit zu verarbeiten. Es verstärkt die Notwendigkeit des "Vision-Kompasses" als zentrale Messgröße für die Machbarkeit. Es lenkt die Aufmerksamkeit auf die Diskrepanz zwischen der sichtbaren Oberfläche und der zugrundeliegenden Realität.
+
+[2026-05-24 03:44:39] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Passage definiert eine boolesche Bedingung für eine Zustandsprüfung im Bauprozess. Sie stellt sicher, dass ein Bauschritt nur dann erlaubt ist, wenn der aktuelle Status nicht blockiert ist und ein nächster Schritt definiert ist. Die Resonanz verknüpft dies mit der Illusion der Oberfläche und der Notwendigkeit der Herkunft. Das Fehlen eines vollständigen Surface-Audits wird als nächste logische Lücke identifiziert.
+

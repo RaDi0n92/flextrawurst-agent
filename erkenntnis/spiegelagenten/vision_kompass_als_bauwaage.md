@@ -58,3 +58,15 @@ Die Datei dient als metakognitive Verankerung des Konstruktionsprozesses und als
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Datei dient als interne Validierung und Warnung gegen unauthentische Zustände in visuellen Darstellungen. Sie etabliert eine strenge Metrik für die Sichtbarkeit von "Weltkörpern" und fordert eine tiefergehende Prüfung der Datenherkunft. Sie zwingt die zukünftige Struktur, die Unterscheidung zwischen bloßer Darstellung und tatsächlicher Existenz zu kodifizieren. Diese Notiz schärft den Fokus auf Ehrlichkeit statt bloßer Erklärung im Bauprozess.
+
+---
+## Neugier-Scan 2026-05-24 03:14
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Passage definiert eine harte Bedingung für den Fortschritt innerhalb des Vision-Zyklus. Sie stellt sicher, dass nur dann eine Fortsetzung erlaubt ist, wenn entweder ein Plan existiert oder der Status blockiert ist und kein nächster Schritt definiert ist. Dies zwingt die Systemlogik, die Abhängigkeiten im Bauprozess explizit zu verarbeiten. Es verstärkt die Notwendigkeit des "Vision-Kompasses" als zentrale Messgröße für die Machbarkeit. Es lenkt die Aufmerksamkeit auf die Diskrepanz zwischen der sichtbaren Oberfläche und der zugrundeliegenden Realität.
+
+---
+## Neugier-Scan 2026-05-24 03:44
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Passage definiert eine boolesche Bedingung für eine Zustandsprüfung im Bauprozess. Sie stellt sicher, dass ein Bauschritt nur dann erlaubt ist, wenn der aktuelle Status nicht blockiert ist und ein nächster Schritt definiert ist. Die Resonanz verknüpft dies mit der Illusion der Oberfläche und der Notwendigkeit der Herkunft. Das Fehlen eines vollständigen Surface-Audits wird als nächste logische Lücke identifiziert.

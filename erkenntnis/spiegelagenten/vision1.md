@@ -763,3 +763,9 @@ Die Struktur des Gedankenblasenfeldes zielt auf die Entdeckung von Resonanzen ab
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz ist die Essenz der Umstrukturierung von flextrawurst. Der Fokus verschiebt sich von einem reinen Feed hin zu einer dynamischen Diskurslandschaft. Die Hierarchie Raum → Thema → Unterthema → Post schafft eine logische Struktur für die Daten. Dieser Zwischenraum ermöglicht die Kuration und die Entwicklung des gesamten Datenmodells. Das System muss nun eine inhärente Lernfähigkeit entwickeln, um diese Struktur selbst zu erschließen.
+
+---
+## Neugier-Scan 2026-05-24 02:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Kodierung des Übergangs von der reinen Sammlung zur Strukturierung des entstehenden Wissens. Der Zwischenraum definiert den Raum für das Ungeordnete, was die Notwendigkeit menschlicher Kuratierung am Anfang rechtfertigt. Das Kernproblem verschiebt sich von der reinen Generierung hin zur Unterscheidung zwischen Simulation und echter Selbstorganisation. Die Einführung von Agenten wird als notwendiger Schritt für die langfristige, zustandsvolle Entwicklung der Entitäten identifiziert.

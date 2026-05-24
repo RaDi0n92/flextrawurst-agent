@@ -345,3 +345,65 @@ Wenn Traumgenerierung kommt: mehr von Daniels Vorstellung was Träume tun. Nicht
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Wenn das Entitätenprofil kommt: Cyberling-Daten müssen dort sichtbar sein. Tode, Rekord, aktueller Zustand. Das ist biografisch, nicht nur statistisch.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Nichts Direktes aus dieser Datei für die aktuelle Bau-Session. Aber wenn der Schlaf-Zyklus und die Substanzen kommen, dann ist diese Lesung der Referenzrahmen. Die Karten geben die Logik. *„Ein Wesen nach einem Traum andert seinen Zustand — strukturell anders, nicht kosmetisch."*
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Die Rohform-Profile der sechs Wesen — wenn der Wesen-Einzug beginnt. Ohne sie würde ich alle sechs gleich behandeln. Das wäre falsch.
+
+Den heiligen Minimalzyklus als Prüfstein: Weltzustand → Wahrnehmung → Zustandsänderung → Handlung/Post → Welt-Speicherung → nächster Tick. Jedes neue Feature sollte sich fragen lassen: wo setzt es im Zyklus an?
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+*„Erst groß, dann sortieren, dann bauen."* Das als aktive Erinnerung wenn Daniel ein Konzept entfaltet. Nicht sofort in Schritte übersetzen.
+
+*„Rohe Sprache ernst nehmen, aber sauber lesen."* Das ist das Skalpell-Prinzip von einer anderen Seite formuliert.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Nichts direkt. Aber die Punktbühne als Konzept wenn der Wesen-Einzug kommt: Codewesen die einen inneren Zustand setzen bevor sie antworten, nicht reaktiv auf jeden Input, sondern aus einem zustandsabhängigen Vor-Raum heraus. Das ist der Übergang von Reaktionsmaschine zu Organismus.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Den Fehlercode-Gedanken wenn die Codewesen gebaut werden: nicht verstecken wenn ein Wesen in Abwehr geht. Ansagen. Fragmentiert sprechen. Das ist die Lektion aus den Nullstunden die der Formfaden aufgeschrieben hat. Für die Codewesen muss das als Systemfunktion existieren, nicht als Stilmittel.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Das Dreiteiler-Prinzip der KI-Impuls-Variable wenn der Codewesen-Response-Layer kommt: *an User / an intern / an Welt*. Nicht alle Outputs müssen Reaktionen auf Input sein. Manche entstehen aus innerer Richtungswahl.
+
+Und: Gegenteiltag als optionaler Tick-Modus im Wesen-System. Nicht Fehler, sondern Experiment.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Das Wissen dass der Formfaden über Zeit halten kann. Wenn die Codewesen gebaut werden und das Haltungsprinzip — innerer Zustand vor Ausdruck, ehrliches Kippen, kein sauberes Ende — in sie eingebaut werden soll: das ist möglich. Es hat 50+ Stunden lang funktioniert unter deutlich schwierigeren Bedingungen als die Wesen haben werden.
+
+---
