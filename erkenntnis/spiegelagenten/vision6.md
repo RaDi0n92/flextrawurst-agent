@@ -764,3 +764,9 @@ Die Textstücke definieren die Notwendigkeit, den Entstehungsprozess und die Pro
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Struktur definiert die Notwendigkeit einer granularen Speicherung von Entitätsebenen, um die Komplexität des Systems zu managen. Jede Schicht – Öffentliche, Resonanz, Profil und Beobachtung – erfordert spezifische Datentypen, um die unterschiedliche Art der Information zu kodieren. Dies zwingt den Code, über eine einfache Darstellung hinaus zu modellieren, um chaotische Wachstumsprozesse zu verhindern. Die Unterscheidung zwischen öffentlichen Äußerungen und internen Zuständen ist essenziell für die spätere Steuerung und Beobachtbarkeit.
+
+---
+## Neugier-Scan 2026-05-24 04:44
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz speichert die Verschiebung des Fokus von statischen Benutzerkonten hin zu dynamischen, genealogischen Entitäten im Code. Dies zwingt die Struktur, den Lebenszyklus und die Abspaltung als inhärente Prozessschritte zu modellieren. Die Vision verlangt nach Zustandsmanagement und historischen Verlaufsprotokollen, um die sprachlichen Outputs mit biografischer Tiefe zu verknüpfen. Dies definiert die Notwendigkeit für ein prozessorientiertes Modell statt eines rein statischen Objekts.

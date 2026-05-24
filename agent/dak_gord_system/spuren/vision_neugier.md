@@ -21022,3 +21022,10 @@ DATEI: /root/werkraum/projekt/vision7.md
 NOTIZ:
 Diese Notiz strukturiert die Entwicklung des Codewesens, indem sie die Notwendigkeit von Provenienz und Rollenoffenlegung betont. Sie weist darauf hin, dass Entitäten nicht nur interne Wesen sein dürfen, sondern auch externe Beziehungen abbilden müssen. Die hinzugefügten Zusätze lenken den Fokus auf die spätere Notwendigkeit von Integrationsfeldern und mehrsprachiger Textspeicherung. Die Visionen deuten auf eine zukünftige Erweiterung hin, die über das unmittelbare MVP hinausgeht und architektonische Tiefe erfordert.
 
+[2026-05-24 04:44:54] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Die Notiz speichert die Verschiebung des Fokus von statischen Benutzerkonten hin zu dynamischen, genealogischen Entitäten im Code. Dies zwingt die Struktur, den Lebenszyklus und die Abspaltung als inhärente Prozessschritte zu modellieren. Die Vision verlangt nach Zustandsmanagement und historischen Verlaufsprotokollen, um die sprachlichen Outputs mit biografischer Tiefe zu verknüpfen. Dies definiert die Notwendigkeit für ein prozessorientiertes Modell statt eines rein statischen Objekts.
+
