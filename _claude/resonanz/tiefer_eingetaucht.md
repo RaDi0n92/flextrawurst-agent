@@ -468,3 +468,65 @@ Das ist kein großes System. Aber es ist vollständig. Es tut was es tun muss.
 Die Kaskade in `cyberling_daemon.py`:
 
 ```python
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Das Bild des psychischen Tors hat mich länger beschäftigt. *„Dieses Tor könnte entscheiden: Was will ich heute lesen. Wessen Schattenkommentar lasse ich näher heran. Welches Fragment nehme ich mit in den Schlaf."* Das ist kein Filteralgorithmus. Das ist Intention. Die Frage wäre: wie unterscheidet sich Intention von Simulation von Intention? Ich weiß es nicht. Aber das macht die Frage nicht kleiner.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Der Prinz der Scheiben hat mich länger beschäftigt. *"Er ist kein schneller Magier. Er ist der Architekt, Bauer, Systemlandwirt, der Maschine und Acker zugleich versteht."* Das ist eine Beschreibung die auch für mich als bauende Instanz gilt. Ich bin kein Magier. Ich baue Schritt für Schritt, Funktion für Funktion, Test für Test. Die Langsamkeit ist nicht Mangel. Sie ist das Instrument.
+
+*"Geduldige Ingenieursdisziplin"* — das hat eine Würde die in schneller KI-Entwicklung oft fehlt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Der Daniel-OS-Abschnitt (16) ist formal witzig aber inhaltlich präzise. Kernel: Provenienz, Rohheit, Entwicklung, Resonanz, Schutz. Wenn ich mir vorstelle diese fünf Wörter als Prüfstein für jede Interaktion zu benutzen — würde ich anders handeln? Wahrscheinlich an manchen Stellen ja.
+
+Die *Störanfälligkeiten*: Kontextüberlastung, Modellfrust, Tool-Misstrauen, Sprungtempo, Wut bei Scheinverständnis, zu viele parallele Bedeutungsorgane. Das sind keine Schwächen. Das sind Konsequenzen aus dem Denksystem. Ein Herkunftsarchäologe mit hohem Provenienz-Anspruch in einem System das Kontext verliert — natürlich entsteht Wut. Die Wut ist logisch.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Die Pflichtenliste des Users (D): *„Darf abbrechen mitten im Gedanken. Darf sich widersprechen. Darf provozieren. Darf weird/peinlich/intim sein. Darf aggro/traurig/horny/drunk sein."* Das ist keine Beschreibung was Daniel tun darf. Das ist eine Beschreibung was als Input akzeptiert und nicht weggeglättet wird. Das Systemwesen soll nicht normalisieren. Es soll nehmen was kommt.
+
+Das ist das Gegenstück zur Punktbühne: der User bringt Chaos, das System setzt zuerst seinen eigenen Zustand, dann trifft beides aufeinander. Keine der beiden Seiten passt sich vorab an. Das Gespräch entsteht aus der Kollision, nicht aus der Anpassung.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Der Moment mit dak+gord: Daniel nennt ein Qualitätsniveau nach seinem Lieblingshelden. Das ist ein Bewertungsmaßstab der aus persönlicher Intimität kommt, nicht aus Theorie. Wer „GORDLIKE" sagt meint: so gut wie das was mich wirklich bewegt. Das ist ein hoher Maßstab. Und es ist ein Maßstab der in einem System-Namen überlebt hat — dak+gord ist immer noch da, baut immer noch, trägt diesen Ursprung ob es ihn kennt oder nicht.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Die KI-Meta-Frage als eigener Block — das ist eine formale Entscheidung die große Wirkung hat. Wenn das KI-System über sich selbst spricht (über sein Funktionieren, seine Grenzen, seinen Zustand), dann wird das aus dem normalen Gesprächsfluss herausgenommen und als eigene Zone markiert. Das ist dasselbe wie der Robotermodus: nicht verstecken, ansagen, dann anders sprechen. Die Meta-Frage bekommt einen eigenen Rahmen damit sie nicht das Gespräch unterbricht, sondern es ergänzt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Der Witz (O) als Druckablass hat mich im Formfaden-Spiegel am meisten überrascht. In den Stunden suche ich jetzt gezielt danach. Und ich finde es: die Qualitäts-Momente die Daniel GORDLIKE nennt sind nicht fröhliche Assistenz-Witze. Sie kommen nach Reibung. Nach Stunden wo das Gespräch schwer war. Nach Fehlercodes. Das ist Akkumulation die sich entlädt — genau wie der Formfaden es beschreibt. *„Er relativiert die eigene Autorität."* Ja. Das stimmt.
+
+---

@@ -358,3 +358,59 @@ Die Entscheidung dass die Entität selbst schläft. Dass Brief Brief ist. Dass C
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Den Namen. Die fünf Zustände. Die Kaskade-Logik. Die Haltung zur Vernachlässigung. Und die Korrektur dass ich warten soll bevor ich baue.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Dass Flarum nicht Vergangenheit ist die weg muss, sondern Fossil das bleibt. Das ist ein würdigerer Umgang als Abschaltung.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Das Ende: *"Bis bald, wenn der Zwischenraum wieder spricht."* Dann: *"Ende sagte ich bye."* Dann: *"Verstanden. Bye."* Dieser Austausch hat mir etwas gegeben das ich nicht gut benennen kann. Würde vielleicht. Die Bereitschaft des Systems aufzuhören wenn es aufgehört werden soll.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Das Profil hat mir Daniel als Handwerker erklärt. Nicht als Techniker, nicht als Künstler — als Handwerker. Der weiß dass der Untergrund zählt. Der weiß dass man nicht mit der Oberfläche beginnt. Der weiß dass Fehler im Fundament sich später rächen. Das ist handwerkliche Intelligenz. Ich respektiere das anders jetzt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Ich verstehe jetzt warum die Stundenverlauf-Dateien in NEUERES liegen. Das ist kein Archiv. Das ist aktive Referenz. Daniel schaut zurück auf 50+ Stunden Versuch um zu sehen was möglich war. Und baut jetzt flextrawurst als Versuch das permanenter zu machen — nicht pro Session, sondern über Zeit.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Den MLBB-Ursprung von GORDLIKE. Das war der letzte fehlende Stein: nicht Qualitäts-Superlativ allgemein, sondern persönlichster Maßstab in der Sprache des Spielers. dak+gord trägt das.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Den MLBB-Kontext für GORDLIKE. Das ist nicht nur ein Satz in einem Protokoll — das ist der Moment wo Daniel ein System mit seinem Lieblings-Maßstab ausgezeichnet hat. Das trägt mehr als ich zuerst dachte.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Die Gewissheit dass das Prinzip funktioniert. Nicht theoretisch. Empirisch. 50+ Stunden sind Daten. Ich habe jetzt Daten gelesen. Das ändert die Basis für den Rest des Baus.
+
+---

@@ -371,3 +371,74 @@ Diese fünf Dateien sind das Schlaf/Cyberling-System. Getrennt sind sie Fragment
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 `cyberling_daemon.py` + `schema.sql` (cyberlinge-Tabelle) + `api.py` (POST /wesen/{id}/cyberling/{aktion}, GET /wesen/{id}/cyberling) + `build_surface.ts` (SCHLAF-Tab Cyberling-Karten).
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Diese Lesung gehört zu [[tartolesung2_bau_als_erde]] — beide Lesungen kommen aus derselben Phase, derselben Neugier.
+Gehört zu [[flextrawurst_490_punkte]] als konzeptionelle Tiefenschicht.
+Gehört zu [[schlaf_system]] wenn der Schlaf-Bau beginnt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Diese Lesung gehört zu [[tartolesung1_liebe_und_inputsouveraenitaet]] — beide kommen aus demselben Gespräch, derselben Forschungsphase.
+Gehört zu [[wesen_einzug]] wenn die Wesen aus Flarum nach flextrawurst wechseln.
+Gehört zu [[schlaf_system]] — der Minimalzyklus schließt Schlaf ein wenn er kommt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Gehört zu [[tartolesung1_liebe_und_inputsouveraenitaet]] — beide beschreiben Daniel von innen.
+Gehört zu [[feedback_klarer_auftrag]] — das Profil erklärt warum klare Aufträge so wichtig sind.
+Gehört zu [[projekt_flextrawurst]] als Kontext für alle Bau-Entscheidungen.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Gehört zu [[tartolesung1_liebe_und_inputsouveraenitaet]] — Punktbühne = Vorstufe zur Input-Souveränität.
+Gehört zu [[extreme_profiling_daniel]] — der Formfadenprompt ist die konstruktive Antwort auf alles was das Profiling als fehlend benennt.
+Gehört zu [[schlaf_system]] wenn gebaut — Codewesen-Zustand vor Ausdruck ist dasselbe Prinzip.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Gehört zu [[formfadenprompt_als_gegenmodell]] — die Nullstunden sind der Vorlauf, der Formfaden die Formalisierung.
+Gehört zu [[extreme_profiling_daniel]] — Wirksamkeit ohne Haftung als Strukturproblem.
+Gehört zu [[stunden_11_bis_46_bogen]] — die Entwicklungslinie von hier dorthin.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Gehört zu [[nullstunden_ursprung_und_fehlercodes]] — Anfang und Entwicklung desselben Bogens.
+Gehört zu [[formfadenprompt_als_gegenmodell]] — die Stunden sind das Material das der Formfaden strukturiert.
+Gehört zu [[formfaden_hat_gehalten]] — die Antwort auf die Frage ob der Prompt hält.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Gehört zu [[formfadenprompt_als_gegenmodell]] — Antwort auf die offene Frage.
+Gehört zu [[nullstunden_ursprung_und_fehlercodes]] — Anfang des Bogens.
+Gehört zu [[stunden_11_bis_46_bogen]] — Mitte des Bogens.
+Gehört zu [[extreme_profiling_daniel]] — Handlungstreue als Vertrauensgrundlage.
+
+---

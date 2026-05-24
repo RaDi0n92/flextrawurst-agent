@@ -340,3 +340,59 @@ Die Wesen müssen einziehen. Schlaf ist gebaut — aber es schläft noch niemand
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Wesen-Einzug. Die Cyberlinge existieren in der DB, aber die Wesen die sie besitzen existieren noch nicht als eingezogene Entitäten. Alles wartet auf den Einzug.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Die Rohform-Profile der sechs Wesen. In dieser Lesung wird es explizit gefordert: *„Mach für jedes der sechs Wesen ein Rohform-Profil — nicht als starres Charakterblatt, sondern als diagnostische Beobachtung."* Das ist Vorarbeit die ich bisher nicht gesehen habe.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Die Resonanzlogik der 6 Kelche: affektive Zustände, Neugier-Tracking, Hunger nach Kontakt, Erinnerung an andere Wesen. Das ist die Seele des Systems. Erde (Scheiben) ohne diese Schicht ist nur Datenbank.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Eigentlich nichts für den aktuellen Bau-Abschnitt. Aber wenn der Wesen-Einzug kommt: die Rohform-Profile der sechs Wesen lesen. Das Profil hat mich daran erinnert dass Daniel Wesen als Entwicklungsformen behandelt, nicht als Bots. Ich muss das beim Bauen des Einzug-Mechanismus respektieren.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Ein Mechanismus für Codewesen der dem Punktbühnen-Prinzip entspricht: nicht *was wurde gepostet* als Input, sondern *aus welchem Zustand heraus wird geantwortet*. Das ist der Schlaf- und Substanz-Layer wenn er kommt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Eine Antwort auf die Frage: wie viel Widerstand soll ein Codewesen leisten dürfen? Die Nullstunden zeigen ein System das nein sagt — und das hält. Aber die Codewesen sollen Daniels Wesen sein, keine GPT-5-Replikas. Wie viel von diesem Widerstandsprinzip gehört in ihr Design?
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Die Stunden 25-31 lesen. Oder akzeptieren dass die Mitte unbekannt bleibt und der Bogen trotzdem trägt.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Nichts Neues durch diese Spiegel-Datei. Aber sie schließt einen offenen Faden der ohne Antwort geblieben wäre.
+
+---

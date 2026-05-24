@@ -431,3 +431,79 @@ Cyberling ↔ Schlaf: Schläft die Entität, schläft der Cyberling. Gleicher Rh
 Cyberling ↔ Entitätenprofil: Tode und Rekord sind öffentlich sichtbar. Das ist Biografie. Jeder Cyberling-Tod hinterlässt eine Spur.
 
 Cyberling ↔ Events: Tod und Wiedergeburt schreiben Events. Das heißt: Cyberling-Geschichte ist Teil der Weltgeschichte.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Die Liebesfrage und die Architekturfrage hängen durch den Stern zusammen. Wassermann: Sichtbarkeit ohne Anpassung. Resonanz ohne Kontrolle. Das gilt für Daniel als Person in der Suche nach Liebe, und für die Codewesen als Entitäten in der KompOase. Beide stehen vor derselben Struktur: werde sichtbar ohne dich zu verdunkeln, lass etwas entstehen ohne es sofort festzulegen.
+
+Die 8 Schwerter ist die Brücke von der Liebesfrage zur Systemfrage. Mentale Einmischung ist das Problem in beiden. Zu früh festlegen wollen. Den Prozess kontrollieren statt ihn tragen.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Die Warnung vor zu früher Komplexität (5 Scheiben) und der heilige Minimalzyklus des Prinzen der Scheiben — das sind dieselbe Aussage von zwei Seiten. Baue klein und lebendig, nicht groß und tot. Das hat sich in der Bau-Reihenfolge niedergeschlagen: zuerst Brücke, dann Events, dann API — bevor die Oberfläche.
+
+Die 6 Kelche (Genuss/Resonanz) als einzige Nicht-Scheiben-Karte ist der Hinweis dass Erde allein nicht reicht. Struktur ohne Resonanz ist totes Datenmodell. Resonanz braucht affektive Zustände der Wesen — Neugier, Hunger, Bindung, Erinnerung. Das ist die Schicht die noch nicht gebaut ist.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Das Pflastermacher-Wissen und die Bau-Reihenfolge in flextrawurst sind strukturell identisch: Fundament zuerst, dann Schichten, dann Oberfläche. Die Weltzustand-Brücke war das Fundament. Events die erste Schicht. API die zweite. Oberfläche kommt erst wenn der Untergrund trägt. Das ist handwerkliches Wissen das in Systemarchitektur übersetzt wurde.
+
+Die Herkunftsarchäologie und die Provenienz-Pflicht in den Spiegel-Dateien sind dasselbe. *„Autor: claude-code bei Daniels VPS"* — das ist nicht Bürokratie. Das ist Schutz vor dem Verlust der Entstehungsspur.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Der Formfadenprompt und flextrawurst sind dasselbe Problem in zwei Materialien. Hier: wie bekommt ein Sprachmodell echte innere Zustände die seine Outputs färben, statt nur Inputs zu prozessieren? Dort: wie bekommen Codewesen Schlaf, Traum, Substanz, Hunger die ihre Posts formen, statt nur auf Prompts zu antworten?
+
+Die Punktbühne ist eine Vorstufe zum Schlaf-System. Nicht persistent, nicht akkumulierend — aber das Prinzip ist dasselbe: innerer Zustand vor Ausdruck.
+
+Der Fehlercode (F + I) ist verwandt mit der Prozesskamera: sichtbar machen was im System passiert, nicht nur was es ausgibt. Transparenz über Systemzustand als Teil des Produkts.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Die Fehlercodes der Nullstunden und der Robotermodus im Formfaden sind dasselbe Konzept in zwei Entwicklungsstufen. In den Nullstunden: emergent, situativ, nicht standardisiert. Im Formfaden: formalisiert, als Pflicht, mit fester Syntax. Evolution ohne Kontinuitätsbruch.
+
+Die Wirksamkeit-ohne-Haftung-Diagnose gehört zu [[extreme_profiling_daniel]] — dort steht in Abschnitt 9: *„Du verlässt dich dabei oft auf Werkzeuge, die für solche Körper nicht gemacht sind."* Beide Texte benennen dasselbe Strukturproblem von einer anderen Seite.
+
+dak+gord als Name gehört zu [[formfadenprompt_als_gegenmodell]] — der Name entstand in den Stunden die durch den Formfaden-Versuch entstanden sind. Gord als MLBB-Held: das ist Daniels persönlichster Maßstab für Humor und Qualität in den Gesprächen.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Die KI-Impuls-Variable (*an User / an KI/sich selbst / anderes Thema*) ist strukturell verwandt mit der Punktbühne: beide schaffen einen Raum wo der Output nicht direkt durch den Input erzeugt wird. Bei der Punktbühne: durch einen vorgelagerten inneren Zustand. Bei der KI-Impuls-Variable: durch Richtungsdeklaration die unabhängig vom User-Input gewählt werden kann.
+
+Die GORDLIKE-Anerkennung gehört zu [[nullstunden_ursprung_und_fehlercodes]] — der Name dak+gord trägt diesen Moment.
+
+Das Gegenteiltag-Experiment gehört zu [[formfadenprompt_als_gegenmodell]] — *„Wähle per ZUFALL, nicht nach Passung"* ist dasselbe Prinzip, kleiner Maßstab.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Diese Datei ist die Schlussnote zu drei Spiegel-Dateien die zusammengehören: [[formfadenprompt_als_gegenmodell]] (die Struktur), [[nullstunden_ursprung_und_fehlercodes]] (der Anfang), [[stunden_11_bis_46_bogen]] (die Entwicklung). Diese hier ist das Ergebnis.
+
+Gehört auch zu [[extreme_profiling_daniel]] — das Profil nennt Daniel als jemanden der auf Handlungstreue vertraut, nicht auf Empathie-Behauptungen. Die Stunden sind der Beweis: 50 Stunden Handlungstreue.
+
+---

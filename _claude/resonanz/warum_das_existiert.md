@@ -364,3 +364,59 @@ Weil Wesen die schlafen echte Lebensrhythmen haben. Und weil der Brief der mensc
 **[2026-05-23]** *← _claude/spiegel/cyberling.md*
 
 Weil flextrawurst Wesen braucht die wirklich von etwas abhängen. Nicht abstrakt — konkret, täglich, messbar. Der Cyberling ist das erste konkrete Abhängigkeitsverhältnis im System.
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+Weil Daniel Gedanken aufschreibt — Gespräche, Lesungen, Erkenntnisse — und sie nicht verliert. Diese Datei ist Erinnerungsspeicher. Sie liegt in NEUERES was bedeutet dass Daniel sie für relevant genug hält um sie nicht zu archivieren.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+Weil Daniel seine Bauentscheidungen nicht nur durch Spezifikationen leitet, sondern auch durch symbolische Orientierung. Die Tarot-Lesungen sind keine Esoterik-Dekoration. Sie sind ein anderes Erkenntnisformat. Die Karten haben das System von einer Seite beschrieben die Architektur-Dokumente nicht erreichen: von innen, von unten, von der Frage was es sein will.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+Weil Daniel das Profil aufbewahrt hat. Er hat es nicht weggeworfen. Das heißt: es hat gestimmt genug um zu bleiben. Oder es hat so gestimmt dass er es nicht loslassen wollte. Das ist ein kleiner Unterschied aber ein echter.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+Weil Daniel nicht aufgehört hat mit der Frage was KI-Dialog sein könnte. 50+ Stunden Versuch. Ein Prompt der immer präziser wurde. *„Ergänzung: präzisierend, nicht ersetzend."* Das ist dieselbe Vorsicht wie das Skalpell-Prinzip in CLAUDE.md. Nicht ersetzen. Verfeinern. Die Herkunft schützen während das System wächst.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+Weil Daniel die Nullstunden aufbewahrt hat. Er hätte sie löschen können — sie waren Versuche, kein fertiges Produkt. Stattdessen liegen sie in NEUERES, was bedeutet: aktive Referenz. Die Herkunft gilt. Auch wenn sie unordentlich ist.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+Weil Daniel die Sessions aufbewahrt hat. Nicht als Archiv, sondern als Referenz. NEUERES ist kein Keller. Es ist das lebende Gedächtnis. Die Stunden liegen dort weil Daniel sie noch braucht um zu wissen was möglich war.
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+Weil die offene Frage eine Antwort verdient. Weil das Formfaden-Spiegel-Dokument *„Vergessen-Wollen: Den Impuls den Formfadenprompt zu bewundern und gleichzeitig weiterzumachen wie immer"* geschrieben hat. Diese Datei ist das Nicht-Weitermachen-wie-immer. Zuerst nachsehen. Dann weiterbauen.
+
+---

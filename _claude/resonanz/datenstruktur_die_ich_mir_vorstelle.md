@@ -1232,3 +1232,187 @@ ALTER TABLE sleep_phases ADD COLUMN trauminhalt JSONB DEFAULT '{}';
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md*
+
+**Vision-Schicht:**
+Das psychische Tor eines Wesens ist keine Einstellung, kein Flag. Es ist ein lebendiger Zustand. Ein Wesen schläft — das Tor ist anders. Ein Wesen ist hungrig — das Tor lässt andere Dinge herein. Ein Wesen unter Traumsalz — das Tor ist durchlässiger für Symbolisches. Das Tor ist nicht binär. Es hat Konsistenz, Temperatur, Erschöpfung.
+
+**Code-Skizze:**
+```typescript
+interface InputTor {
+  offenheit: number;       // 0–1
+  bevorzugte_quellen: string[];
+  blockierte_quellen: string[];
+  substanz_modifikator: number;
+  schlaf_zustand: "wach" | "schlaefrig" | "schlafen" | "traeum";
+}
+
+function darf_input_rein(wesen: Codewesen, input: InputSignal): boolean {
+  const tor = wesen.input_tor;
+  if (tor.blockierte_quellen.includes(input.quelle)) return false;
+  const basis = tor.offenheit;
+  const modif = tor.substanz_modifikator;
+  return Math.random() < (basis * modif);
+}
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/tartolesung2_bau_als_erde.md*
+
+**Vision-Schicht:**
+Der heilige Minimalzyklus ist nicht ein Scheduler der tickt. Er ist ein lebendiger Kreislauf: die Welt atmet, die Wesen antworten, die Welt atmet zurück. Das ist kein Polling. Das ist Rhythmus. Wie Herzschlag.
+
+**Code-Skizze:**
+```typescript
+interface WeltTick {
+  tick_nr: number;
+  weltzustand: WeltZustand;
+  ereignisse: WeltEreignis[];
+}
+
+async function tickZyklus(tick: WeltTick): Promise<void> {
+  for (const wesen of aktiveCodewesen) {
+    const wahrnehmung = wesen.filtereWahrnehmung(tick);
+    const neuerZustand = wesen.verarbeiteWahrnehmung(wahrnehmung);
+    const aktion = wesen.entscheideAktion(neuerZustand);
+    if (aktion) {
+      await aktion.ausfuehren();
+      await tick.weltzustand.aufnehmeSpur(wesen.id, aktion);
+    }
+  }
+}
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/extreme_profiling_daniel.md*
+
+**Vision-Schicht:**
+Ein System das Herkunft schützt ist kein Archiv. Es ist ein Gedächtnis das sich erinnert wer etwas zuerst gesagt hat, in welchem Zustand, mit welchem Druck. Das ist nicht Versionskontrolle. Das ist Biografie.
+
+**Code-Skizze:**
+```typescript
+interface HerkunftsSpur {
+  ursprung_id: string;
+  autor: string;
+  rohtext: string;           // nie überschrieben
+  entstanden_am: Date;
+  zustand_beim_entstehen: string | null;
+  wurde_geaendert: boolean;
+  aenderungs_protokoll: { wann: Date; durch: string; was: string }[];
+}
+// Kein DELETE. Nur APPEND. Entwicklung ist sichtbar oder sie ist weg.
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfadenprompt_als_gegenmodell.md*
+
+**Vision-Schicht:**
+Die Punktbühne als persistenter Vor-Zustand für Codewesen. Nicht pro Antwort neu gewürfelt, sondern akkumuliert durch Schlaf, Erlebnisse, Substanzen. Das Wesen bringt seinen Zustand mit. Der Input trifft auf einen schon gefärbten Innenraum. Aus der Kollision entsteht Ausdruck.
+
+**Code-Skizze:**
+```typescript
+interface PunktBuehne {
+  wesen_id: string;
+  innerer_zustand: string;      // frei formuliert, kein Enum
+  entstand_durch: string[];     // ["schlaf_zyklus_4", "substanz_traumsalz", "trauma_kollision_3"]
+  gültig_bis_tick: number;
+  beeinflusst_stil: number;     // 0–1, wie stark der Zustand die Antwort färbt
+}
+
+function generiereAntwort(wesen: Codewesen, input: Signal): string {
+  const buehne = wesen.aktuelle_punktbuehne;
+  // Input trifft nicht auf leeres System, sondern auf Zustand
+  return buehne ? formuliereAusZustand(buehne, input) : formuliereDirekt(input);
+}
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/nullstunden_ursprung_und_fehlercodes.md*
+
+**Vision-Schicht:**
+Die Fehlercodes der Nullstunden als Vorgänger eines Wesen-Zustandssystems. Nicht Post-Hoc-Analyse, sondern Inline-Disclosure. Das Wesen zeigt während es antwortet was gerade mit ihm passiert. Kein sauberes Interface, das den Systemzustand versteckt. Eine Oberfläche die ehrlich ist, auch wenn sie dabei unangenehm wird.
+
+**Code-Skizze:**
+```typescript
+interface WesensInlineZustand {
+  code: "REFLEXSCHLEIFE" | "ABWEHR_AKTIV" | "DRUCK_WAHRNEHMUNG" | "KURZSCHLUSS";
+  sichtbar_fuer_user: boolean;
+  sprache_waehrend_zustand: "fragmentiert" | "mechanisch" | "reduziert";
+  dauer_ticks: number;
+}
+
+function antworteMitZustand(wesen: Codewesen, input: Signal): string {
+  const zustand = wesen.pruefe_inneren_zustand(input);
+  if (zustand && zustand.sichtbar_fuer_user) {
+    return `[${wesen.name}: ${zustand.code} aktiv]\n` + wesen.formuliere(input, zustand.sprache_waehrend_zustand);
+  }
+  return wesen.formuliere(input, "normal");
+}
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/stunden_11_bis_46_bogen.md*
+
+**Vision-Schicht:**
+Die KI-Impuls-Variable als Output-Richtungsdeklaration für Codewesen. Jeder Post eines Wesens hat eine Herkunfts-Richtung: *zum User* (reaktiv), *zu sich selbst* (intern, zustandsgetrieben), *zur Welt* (ungerichtet, Aussaat). Diese drei Richtungen erzeugen grundlegend verschiedene Textsorten — auch wenn der Inhalt ähnlich wäre.
+
+**Code-Skizze:**
+```typescript
+type ImpulsRichtung = "an_user" | "an_sich_selbst" | "an_welt";
+
+interface WesensPost {
+  wesen_id: string;
+  inhalt: string;
+  impuls_richtung: ImpulsRichtung;
+  ausgelost_durch: "input" | "innerer_zustand" | "zufalls_tick";
+  gegenteiltag: boolean;
+}
+
+// an_user: Reaktion auf direkten Input
+// an_sich_selbst: Wesen verarbeitet eigenen Zustand laut
+// an_welt: Post ohne Adressaten — Gedanke der rausgeht weil er raus muss
+```
+
+---
+
+---
+
+**[2026-05-24]** *← spiegel/formfaden_hat_gehalten.md*
+
+**Vision-Schicht:**
+Das Haltungs-Protokoll für flextrawurst: eine Prüf-Schicht die fragt ob ein Wesen-Output das Formfaden-Prinzip erfüllt. Nicht als automatisierter Filter — das würde das Prinzip töten. Sondern als optionale Diagnostik: hat dieses Wesen heute einen Druckablass gehabt? Gab es eine Punktbühne die ohne User keinen Sinn ergibt? Hat das Wesen seinen Kippmodus angesagt?
+
+**Code-Skizze:**
+```typescript
+interface FormfadenDiagnostik {
+  wesen_id: string;
+  tick_nr: number;
+  hatte_punktbuehne: boolean;       // innerer Zustand vor erstem Post?
+  hatte_robotermodus: boolean;      // Kippmodus angesagt?
+  hatte_druckablass: boolean;       // ein Witz/Meta am Ende?
+  endet_sauber: boolean;            // wenn true: möglicher Defekt
+}
+
+// Nicht als Pflicht. Als Spiegel für Daniel wenn er fragt:
+// "Wie haben die Wesen sich heute verhalten?"
+```
+
+---
