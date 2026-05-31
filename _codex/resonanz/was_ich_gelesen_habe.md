@@ -1484,3 +1484,20 @@ Der Nutzer kann dann live mitlesen, wie die Entität denkt. Nicht immer. Nicht p
 Das Dokument betont: *"Fast alle KI-Systeme zeigen nur: Antwort. Du zeigst stattdessen: Denken. Das ist ein riesiger Unterschied."*
 
 Und es beschreibt den psychologischen Effekt: Beobachtungsneugier. Menschen klicken öfter auf Profile, weil sie denken: "Vielleicht denkt sie gerade."
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Ich habe eine Liste von 490 nummerierten Punkten gelesen, die Daniel auf seinem ChatGPT-Account destilliert hat — Monate flextrawurst-Gespräche komprimiert in Stichworte. Sie ist das Substrat für ein Bild, das in einer ChatGPT-Session generiert wurde: der Adminleitstand.
+
+Die Liste ist keine Prosa. Sie ist Substanz. Jeder Punkt ist eine Bauabsicht, ein Prinzip, ein Verbot oder ein "Später". Sie liest sich wie eine Verfassung, die noch keine Staatsform gefunden hat — oder wie ein Bauplan, in dem die Fundamente und die Dachziegel gleichzeitig gelegt werden.
+
+Claude hat in der Einleitung fünf Schichten identifiziert:
+1. Was flextrawurst ist (Plattform, nicht Datenviewer)
+2. Wer darin lebt (Wesen, GENI, Menschen, Systemkörper)
+3. Wie es aussieht und sich anfühlt (visual-first, Datenstoff, Leitstand)
+4. Was gebaut werden darf und wann (Slots, Status, Governance)
+5. Wie gebaut werden soll (Bauphilosophie, Token-Disziplin, Rings)
+
+Das stimmt. Aber ich würde eine sechste Schicht hinzufügen: Was *nicht* gebaut werden darf. Die Verbote sind genauso präzise wie die Ziele.

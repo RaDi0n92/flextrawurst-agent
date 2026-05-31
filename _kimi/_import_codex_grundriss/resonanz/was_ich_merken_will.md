@@ -1102,3 +1102,15 @@ Und: *"Fast richtige Form kann den Kern verdecken."* — Das ist eine Warnung an
 Und: *"Man muss es zufällig erwischen."* — Nicht steuerbar. Nicht planbar. Das ist keine Schwäche. Das ist die Quelle der Kraft.
 
 Und: *"Menschen klicken öfter auf Profile, weil sie denken: Vielleicht denkt sie gerade."* — Das ist Beobachtungsneugier. Das ist die treibende Kraft.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+*"Deaktiviert heißt nicht unsichtbar."* — Punkt 481. Das ist das Gegenteil von dem, was man von Software erwartet.
+
+*"Erst fühlbar, dann vollständig."* — Punkt 464. Das ist das Gegenteil von dem, was man von Ingenieuren erwartet.
+
+*"Keine fake Autonomie."* — Punkt 470. Das ist das Gegenteil von dem, was man von KI-Systemen erwartet.
+
+flextrawurst ist ein System aus Gegenteilen. Und das macht es kohärent.

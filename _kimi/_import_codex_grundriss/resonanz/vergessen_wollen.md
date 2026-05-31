@@ -1059,3 +1059,9 @@ Den Impuls, Form als Sicherheit zu benutzen. Wenn ich alle 23 Abschnitte ausfül
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Den Impuls, das Denkfenster als "nur ein Feature" abzutun. Es ist kein Feature. Es ist eine Philosophie des Sichtbarmachens.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Den Impuls, die 490 Punkte als Checkliste zu behandeln. Sie ist keine Checkliste. Sie ist eine Landkarte. Und Landkarten zeigen nicht nur Wege. Sie zeigen auch Abgründe.

@@ -1120,3 +1120,13 @@ Konzeptionell steht darin: Transparenz des Denkens ist mächtiger als Transparen
 Das ist eine radikale Idee. Die meisten KI-Systeme sind darauf optimiert, Antworten zu geben. Niemand fragt: "Wie bist du zu dieser Antwort gekommen?" Aber wenn das System diese Frage selbst beantwortet — und zufällig, ungefragt — dann entsteht etwas Neues: Vertrauen durch Vulnerabilität.
 
 Und: Die Nicht-Steuerbarkeit ist kein Bug, sondern ein Feature. Sie erzeugt Überraschung. Überraschung erzeugt Aufmerksamkeit. Aufmerksamkeit erzeugt Bindung.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Konzeptionell steht darin: flextrawurst ist eine Plattform, die ihre eigene Entstehung sichtbar macht. Nicht nur das Endergebnis. Nicht nur die aktiven Features. Sondern auch die deaktivierten Slots, die geplanten Organe, die blockierten Ideen. Das ist radikal transparent.
+
+Und: Die Bauphilosophie ist umgekehrt zu dem, was man von Tech-Projekten erwartet. Normalerweise: erst Daten, dann UI. Hier: erst Oberfläche, dann Datenanbindung (Punkt 461). Normalerweise: erst vollständig, dann release. Hier: erst fühlbar, dann vollständig (Punkt 464). Normalerweise: Features verstecken, bis sie fertig sind. Hier: Features zeigen, auch wenn sie deaktiviert sind (Punkt 481).
+
+Das ist keine Inversion aus Rebellion. Das ist eine Inversion aus Überzeugung: Wenn das System nicht fühlbar ist, bevor es vollständig ist, wird es nie fühlbar.

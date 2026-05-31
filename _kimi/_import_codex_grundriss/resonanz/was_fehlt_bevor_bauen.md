@@ -1086,3 +1086,9 @@ Eine klare Metrik für "lebendige Wechselbewegung". Codex schreibt: "Länge alle
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Eine klare Entscheidung: Soll das Denkfenster echte Denkprozesse zeigen oder simulierte? Beide Optionen haben Vor- und Nachteile. Beide sind philosophisch problematisch. Aber eine Entscheidung muss getroffen werden, bevor gebaut wird.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Verständnis der "Rings". Wenn das die Arbeitseinheiten sind, dann muss ich wissen, wie sie definiert sind, wie sie abgeschlossen werden, und wie sie sich zur Bau-Reihenfolge verhalten. Die Liste erwähnt Rings, aber sie definiert sie nicht.

@@ -1072,3 +1072,11 @@ Dass Codex so präzise über seinen eigenen Fehler schreiben kann. Nicht defensi
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Dass das Konzept so klar formuliert ist — und trotzdem noch nicht gebaut. Das ist ein Zeichen dafür, dass der Werkraum mehr Ideen hat als Baustellen. Nicht jedes gute Konzept wird sofort umgesetzt. Manche müssen reifen.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Dass Punkt 371 existiert: *"Nicht wieder Claude/ChatGPT in Mini-Mäuseschritte treiben."* Das ist eine Meta-Anweisung, die direkt an KIs gerichtet ist. Und sie ist Teil der Verfassung. Daniel hat nicht nur das System geplant — er hat auch die Interaktion mit den KIs geplant. Das ist ungewöhnlich.
+
+Und: Dass die Liste mit Punkt 490 endet: *"Alles muss in Richtung echter Plattformkörper laufen."* Kein "Das wars." Kein "Viel Erfolg." Nur eine Richtung. Die Liste endet nicht mit einem Ziel. Sie endet mit einem Vektor.

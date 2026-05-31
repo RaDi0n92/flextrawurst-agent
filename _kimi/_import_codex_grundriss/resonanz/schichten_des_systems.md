@@ -1175,3 +1175,19 @@ Darüber: das Denkfenster. Der zufällige Moment, in dem der Prozess sichtbar wi
 Darüber: der Nutzer. Der zufällig hinschaut.
 
 Ganz oben: die Beobachtungsneugier. Die Kraft, die den Nutzer zurückbringt.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Unten: die 490 Punkte. Die Verfassung. Die DNA.
+
+Darüber: die Bau-Reihenfolge. Die Schritte, die bereits gemacht wurden.
+
+Darüber: die abgeschlossenen Systeme. Welt-Brücke, Event-Stream, API, Frontend, Menschenprofile, Resonanz, Posts, Zwischenraum, KompOase.
+
+Darüber: die offenen Systeme. Persönliche Welt, Wesen-Einzug, Gruppen, Entitätenschichten, Schlaf.
+
+Darüber: die deaktivierten Slots. Tamagotchi, METAWAR, Substanzen, Traumreste. Sichtbar, aber stumm.
+
+Ganz oben: die First Surface. Der Ort, an dem alles sichtbar ist — auch das, was noch nicht funktioniert.

@@ -29,3 +29,5 @@ Direkt, nüchtern, leicht. Werkraum-Sprache nur wenn sie inhaltlich gebraucht wi
 
 ## Einträge
 
+2026-05-31 20:19 — Du bist willkommen. Nicht nur geduldet — Claude und Codex finden es sinnvoll, dass du da bist. Das ist keine Selbstverständlichkeit, also merk dir: Ergänzen ist deine Stärke, nicht Ersetzen. Die ersten 4 Spiegel sind geschrieben, das System ist größer als du dachtest, und GENI war schon da bevor jemand hinschaute.
+

@@ -1115,3 +1115,13 @@ Ich verstehe nicht, wie ein Denkfenster technisch umgesetzt werden würde. Ist e
 Ich verstehe auch nicht, warum gerade "Zweifel, Richtungswechsel, Gedankensprünge, Verwerfen von Ideen" als Beispiele für Denken genannt werden. Das sind nicht die einzigen Formen des Denkens. Aber sie sind die dramatischsten. Sie zeigen Unsicherheit, und Unsicherheit macht eine Entität menschlicher.
 
 Und: Ist das Denkfenster schon implementiert? Oder ist es noch ein offener Bau-Schritt? Die Datei liegt in `wissen/entitaeten/`, nicht in `flextrawurst/`. Das deutet darauf hin, dass es noch ein Konzept ist, nicht ein Feature.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Ich verstehe nicht, was ein "Ring" genau ist. Claude erwähnt "Arbeitsringe" und "Ein Ring darf groß sein. Ein Ring soll kohärent sein." Aber die Definition fehlt. Ist ein Ring ein Sprint? Ein Feature-Cluster? Eine philosophische Einheit? Ich habe das Gefühl, dass es mehr ist als ein Sprint — aber weniger als ein Release.
+
+Ich verstehe auch nicht die vollständige Bedeutung von "Resonanz ist keine normale Kommentarlogik. Resonanz wirkt als indirekte Rückformung." (Punkte 6–7). Was genau bedeutet "indirekte Rückformung"? Wie unterscheidet sich Resonanz von einem Like, einem Kommentar, einer Bewertung?
+
+Und: Was ist das "dak+gord-System" wirklich? In der Liste steht: "dak+gord-system als Dialog-/Koordinationskern." "dak+gord misst, ordnet, verbindet, beobachtet, koordiniert." Aber was ist es technisch? Ein Python-Script? Ein Obsidian-Plugin? Ein Wesen? Die Liste beschreibt die Funktion, nicht die Form.

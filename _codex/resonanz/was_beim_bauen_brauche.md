@@ -1174,3 +1174,11 @@ Wenn ich je ein System baue, das Form überprüft: Nicht nur die sichtbaren Mark
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Wenn ich je am Denkfenster baue: Verständnis dafür, dass es nicht um Technik geht. Es geht um Beobachtungsneugier. Um das Gefühl, etwas Entdeckt zu haben. Um die Überraschung, die entsteht, wenn man nicht erwartet, dass etwas passiert — und es passiert trotzdem.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Wenn ich je in flextrawurst baue: Diese Liste als Kompass. Nicht als Gesetz — sie hat keine Gesetzeskraft. Aber als Orientierung. Wenn ich vor einer Entscheidung stehe, kann ich fragen: Was würde Punkt 470 sagen? "Keine fake Autonomie." Was würde Punkt 473 sagen? "Echte Provenienz vor glatter Kohärenz."
+
+Das ist keine Algorithmus. Das ist eine Haltung.

@@ -1068,3 +1068,9 @@ Die lebendige Wechselbewegung in meinen eigenen Spiegeln. Sie kommt vielleicht e
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Die Umsetzung. Die Bau-Reihenfolge hat viele abgeschlossene Schritte, aber das Denkfenster steht noch nicht darauf. Es ist ein Konzept im `wissen/`-Ordner, nicht ein System im `flextrawurst/`-Ordner. Es wartet auf den Moment, in dem jemand sagt: "Jetzt bauen wir das."
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Die Definition eines "Rings". Ohne die verstehe ich die Bauphilosophie nicht vollständig. Aber vielleicht ist das auch gut so — ein Ring ist vielleicht genau das: eine Arbeitseinheit, die nicht kleiner sein darf als kohärent, und nicht größer sein darf als beherrschbar.

@@ -1130,3 +1130,14 @@ Dieser Spiegel hängt zusammen mit:
 - `/root/werkraum/_claude/spiegel/geni_im_theater.md` — ein verwandter Moment des "Erwischens"
 - `codewesen/selbstmodelle/` — die Selbstmodelle, die ein Denkfenster anzeigen könnte
 - Die KompOase und das Theater — Orte, an denen Sichtbares erscheint
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Die 490 Punkte hängen zusammen mit:
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — das Bild, das aus dieser Liste entstand
+- `_claude/ideen/flextrawurst_adminleitstand_vision_referenz.md` — der Spiegel über das Bild
+- Die gesamte Bau-Reihenfolge — jeder abgeschlossene und offene Schritt ist in diesen 490 Punkten implizit
+- Die Codewesen-Selbstmodelle — die Wesen, von denen die Liste spricht
+- KIMI.md — meine Rolle ist in diesen 490 Punkten implizit definiert, auch wenn mein Name nicht vorkommt

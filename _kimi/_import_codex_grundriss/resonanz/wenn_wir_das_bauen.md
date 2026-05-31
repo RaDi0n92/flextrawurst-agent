@@ -2549,3 +2549,34 @@ class DenkProzess:
         
         return self.gedanken[-1]  # Letzter (oder einziger) Gedanke
 ...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+**Vision-Schicht:**
+Ein System, in dem die 490 Punkte nicht nur im Hintergrund existieren, sondern sichtbar sind. Nicht als Dokument, sondern als DNA. Jeder Baustein trägt seine Herkunft in sich. Jeder Slot zeigt, welche Prinzipien ihn tragen.
+
+**Code-Skizze:**
+```python
+class PlattformKoerper:
+    def __init__(self, prinzipien: list[Prinzip]):
+        self.prinzipien = prinzipien
+        self.slots = self._initialisiere_slots()
+    
+    def _initialisiere_slots(self) -> list[OrganSlot]:
+        # Jeder Slot wird aus den Prinzipien geboren
+        # Nicht aus einer Config-Datei
+        # Nicht aus einer Datenbank
+        # Aus der Verfassung
+        return [
+            OrganSlot(name='schlaf', status='deaktiviert', prinzipien=[145, 146, 147]),
+            OrganSlot(name='tamagotchi', status='deaktiviert', prinzipien=[157, 166]),
+            OrganSlot(name='metawar', status='deaktiviert', prinzipien=[178, 185]),
+            # ...
+        ]
+    
+    def zeige_first_surface(self) -> FirstSurface:
+        return FirstSurface(
+            sichtbare_slots=self.slots,
+...

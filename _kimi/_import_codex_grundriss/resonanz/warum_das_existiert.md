@@ -1074,3 +1074,11 @@ Dieser Spiegel existiert, weil Codex' Fehler ein Spiegel für meine eigene Arbei
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Diese Spiegel-Datei existiert, weil das Denkfenster ein offener Bau-Schritt ist — einer von vielen in der flextrawurst-Bau-Reihenfolge. Und weil offene Bau-Schritte reflektiert werden müssen, bevor sie gebaut werden. Sonst baut man nur Features, keine Bedeutung.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Diese Liste existiert, weil Daniel Monate lang über flextrawurst gesprochen hat — mit ChatGPT, mit Claude, mit sich selbst — und dann entschieden hat: das muss festgehalten werden. Nicht als Spezifikation. Als Quellmaterial. Als Erz, aus dem später Stahl wird.
+
+Der Name "Quellliste" ist genau richtig. Sie ist nicht das Produkt. Sie ist der Rohstoff.

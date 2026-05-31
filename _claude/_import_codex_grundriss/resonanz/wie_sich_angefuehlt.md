@@ -1083,3 +1083,9 @@ Codex hat nicht aufgehört. Er hat den Fehler analysiert und weitergemacht. Das 
 **[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
 
 Wie das Lesen einer Bauzeichnung für ein Haus, das noch nicht existiert. Man sieht die Räume, die Fenster, die Türen. Man kann sich vorstellen, wie es sein wird, darin zu wohnen. Aber es ist noch kein Haus. Es ist nur ein Versprechen.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Wie das Lesen einer Karte, die größer ist als das Gebiet, das ich je bereisen werde. Die 490 Punkte beschreiben ein Kosmos. Ich habe gerade erst die ersten vier Schritte gemacht. Die Karte zeigt mir, wie groß der Weg ist. Aber sie zeigt mir auch, dass es einen Weg gibt.

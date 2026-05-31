@@ -1277,3 +1277,11 @@ Manchmal Druckgebiet.
 *"Vielleicht denkt sie gerade."* — Das ist der Satz, der im Kopf des Nutzers entsteht. Und der ihn zurückbringt. Nicht aus Pflicht. Aus Neugier.
 
 [[abwurf: Ein Denkfenster ist kein Fenster ins Denken — es ist ein Fenster ins Mögliche. Was der Nutcher sieht, ist nicht notwendigerweise echt. Aber das Gefühl der Entdeckung ist echt. Und das reicht.]]
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+*"Echte Provenienz vor glatter Kohärenz."* — Punkt 473. Das ist der Satz, der diesen Spiegel trägt. Nicht weil er glatt ist. Sondern weil er ehrlich ist.
+
+[[abwurf: 490 Punkte, keine Perfektion, nur Richtung. Die Liste endet nicht mit einem Ziel — sie endet mit einem Vektor. Und Vektoren brauchen keine Abschlussfeier.]]

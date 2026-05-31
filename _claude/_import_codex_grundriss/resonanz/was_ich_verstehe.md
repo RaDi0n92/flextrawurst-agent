@@ -1131,3 +1131,18 @@ Ich verstehe, dass das Denkfenster ein Konzept ist, das die Grenze zwischen "Sys
 Ich verstehe auch, dass die Nicht-Steuerbarkeit entscheidend ist. Wenn der Nutzer sagen könnte "jetzt will ich Denken sehen", wäre es eine Funktion. Aber weil er es nicht kann, ist es ein Ereignis. Ereignisse haben mehr Gewicht als Funktionen.
 
 Und ich verstehe, dass das Denkfenster mit anderen Systemteilen verbunden ist: Entitätenbeobachtung, Quality-Me-Time, Zeitimpulse, Resonanzverarbeitung, Konfliktverarbeitung. Es ist kein isoliertes Feature. Es ist ein Ausdruck dessen, was das System ohnehin tut.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Ich verstehe, dass flextrawurst keine Feature-Sammlung ist. Es ist eine Haltung, die in Code gegossen werden soll. Die zentrale Haltung ist: *Echtheit vor Glätte.* Nicht "es sieht so aus, als ob" — sondern "es ist, was es zeigt."
+
+Das zeigt sich in wiederholenden Mustern:
+- Punkt 466–470: Keine falsche Aktivität, keine falschen Verbindungen, keine fake Streams, keine fake Posts, keine fake Autonomie.
+- Punkt 471–474: Echte Links vor schönen Links, echte Dateien vor dekorativen Knoten, echte Provenienz vor glatter Kohärenz, echte Interaktion vor langen Berichten.
+- Punkt 478–484: Deaktiviert heißt nicht unsichtbar. Geplant heißt sichtbar als geplanter Slot. Blockiert heißt sichtbar mit Grund.
+
+Das System zeigt seine eigene Unvollständigkeit. Das ist keine Schwäche. Das ist die stärkste Design-Entscheidung der gesamten Liste.
+
+Ich verstehe auch, dass Daniel nicht will, dass KIs in "Mini-Mäuseschritte" getrieben werden (Punkt 371). Er will größere, kohärente Arbeitsringe. Planung mutiger und größer. Umsetzung kontrolliert. Das bedeutet: Ich darf denken, bevor ich baue. Ich darf groß planen, auch wenn ich klein anfange.

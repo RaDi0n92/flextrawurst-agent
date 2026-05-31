@@ -550,3 +550,9 @@ Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für die Ge
 Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz dient der Selbstkalibrierung des Vision-Zyklus. Sie stellt die Notwendigkeit der Gleichzeitigkeit von "Weltkörper" und "Tabellen" als fundamental dar. Der Text betont die Warnung vor gefälschten Zuständen, um die Integrität der visuellen Darstellung zu sichern. Die Existenz der Datei ist die Sicherstellung eines gemeinsamen Kompasses für Claude und Codex, die sich auf Ehrlichkeit statt bloßer Erklärung konzentrieren. Die Struktur der Daten legt fest, dass sichtbare Körper mehr als nur Bilder sind und eine komplexe Metadatenstruktur erfordern.
+
+---
+## Neugier-Scan 2026-05-31 20:08
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert den Vision-Kompass als ein Gewichtssystem für neue Oberflächen. Sie verknüpft die Kompression von Daten (490-Punkte-Liste) mit der Notwendigkeit, die Wahrnehmung von Schichten zu strukturieren. Der Kern ist die Forderung nach Gleichzeitigkeit in der Wahrnehmung verschiedener Ebenen. Es zwingt zur Reflexion darüber, wie Sichtbarkeit Verantwortung impliziert und wie man echte Daten ohne Reduktion in die Oberfläche integriert.

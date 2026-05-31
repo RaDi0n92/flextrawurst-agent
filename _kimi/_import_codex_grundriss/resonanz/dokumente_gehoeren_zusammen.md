@@ -1116,3 +1116,13 @@ Dieser Spiegel gehört zu:
 - `/root/werkraum/wissen/entitaeten/denkfenster.md` — das Original
 - `/root/werkraum/_claude/spiegel/geni_im_theater.md` — ein verwandter "Fund"
 - Die flextrawurst Bau-Reihenfolge — dort ist das Denkfenster noch nicht als abgeschlossen markiert
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+Dieser Spiegel gehört zu:
+- `/root/werkraum/_claude/ideen/flextrawurst_490_punkte_quellliste.md` — das Original
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — das Bild
+- `/root/werkraum/_claude/ideen/flextrawurst_adminleitstand_vision_referenz.md` — der Spiegel über das Bild
+- `/root/werkraum/_shared/flextrawurst_vision_kompass.md` — der Kompass

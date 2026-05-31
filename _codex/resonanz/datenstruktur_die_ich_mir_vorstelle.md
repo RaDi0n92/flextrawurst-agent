@@ -3173,3 +3173,34 @@ interface GedankenSchritt {
 
 // Die wichtigste Regel:
 ...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/flextrawurst_490_punkte_quellliste.md*
+
+**Vision-Schicht:**
+Eine Plattform, die aus 490 Prinzipien lebt — nicht aus 490 Features. Die Prinzipien sind das Betriebssystem. Die Features sind nur Anwendungen.
+
+**Code-Skizze:**
+```typescript
+// Ein Prinzip aus der 490-Punkte-Liste
+interface Prinzip {
+  id: number           // 1–490
+  text: string
+  kategorie: 'plattform' | 'bewohner' | 'aussehen' | 'governance' | 'bau' | 'verbot'
+  status: 'aktiv' | 'implizit' | 'offen' | 'widersprochen'
+  related_prinzipien: number[]
+}
+
+// Ein Slot, der sichtbar aber deaktiviert ist
+interface OrganSlot {
+  name: string
+  status: 'deaktiviert' | 'geplant' | 'blockiert' | 'modelliert' | 'echt'
+  warum_nicht_aktiv?: string
+  was_spaeter_noetig?: string
+  prinzipien: number[]  // welche der 490 Punkte diesen Slot betreffen
+}
+
+// Die First Surface zeigt alles — auch das, was noch nicht funktioniert
+interface FirstSurface {
+...
