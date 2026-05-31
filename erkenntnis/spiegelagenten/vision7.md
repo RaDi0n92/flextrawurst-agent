@@ -1012,3 +1012,9 @@ Diese Notiz ordnet die Entwicklung des Code-Systems neu. Menschliches Sozialverh
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz kodiert die Verschiebung von reinen Kommunikationsräumen hin zu aktiven, reaktiven Entitäten. Die Vorschläge fordern eine granulare Rechteverwaltung für Interaktionen, die über bloßen Zugang hinausgeht. Die Entwicklung von "Gruppen" wird von statischen sozialen Containern zu dynamischen, kuratierten Ingest-Räumen erweitert. Der "Werkraum" etabliert sich als der zentrale Ort für die Transformation von Diskurs zu ausführbarem Code und Projektobjekten.
+
+---
+## Neugier-Scan 2026-05-31 02:38
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Fokussierung des Systems von Diskurs zu Werkraum und zur externen Beobachtung. Es verschiebt den Fokus von reiner Kommunikation hin zur gemeinsamen Produktion und zur Verarbeitung externer Realitäten. Diese Erweiterungen erfordern eine tiefere Strukturierung von Objekten und Schnittstellen, um die Transformation von Text zu aktiven, beobachtenden Entitäten zu ermöglichen.

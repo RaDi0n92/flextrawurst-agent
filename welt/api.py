@@ -8092,6 +8092,297 @@ def translate_texts(body: TranslateBody):
     return results
 
 
+# ─────────────────────────────────────────────
+#  WESEN-EINSICHTSKÖRPER — Entscheidungsarchiv, Traumarchiv, Lebensjournal
+# ─────────────────────────────────────────────
+
+@app.get("/admin/wesen-einsicht/entscheidungen")
+def einsicht_entscheidungen_alle(
+    entity_id: str | None = None,
+    entscheidung: str | None = None,
+    limit: int = 50,
+    offset: int = 0
+):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        where = []
+        params: list = []
+        if entity_id:
+            where.append("etl.entity_id = %s")
+            params.append(entity_id)
+        if entscheidung:
+            where.append("etl.entscheidung = %s")
+            params.append(entscheidung)
+        clause = "WHERE " + " AND ".join(where) if where else ""
+        cur.execute(f"""
+            SELECT etl.id, etl.entity_id, etl.tick_at, etl.entscheidung,
+                   etl.gedanke, etl.begruendung, etl.tokens_generated, etl.duration_ms,
+                   etl.kontext_snapshot
+            FROM entity_thinking_log etl
+            {clause}
+            ORDER BY etl.tick_at DESC
+            LIMIT %s OFFSET %s
+        """, params + [limit, offset])
+        rows = cur.fetchall()
+        cur.execute(f"""
+            SELECT COUNT(*) AS n FROM entity_thinking_log etl {clause}
+        """, params)
+        total = cur.fetchone()["n"]
+    return {
+        "total": total,
+        "offset": offset,
+        "limit": limit,
+        "items": [dict(r) for r in rows]
+    }
+
+
+@app.get("/admin/wesen-einsicht/entscheidungen/stats")
+def einsicht_entscheidungen_stats():
+    with get_conn() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT entity_id, entscheidung, COUNT(*) as anzahl,
+                   MIN(tick_at) as erste, MAX(tick_at) as letzte
+            FROM entity_thinking_log
+            GROUP BY entity_id, entscheidung
+            ORDER BY entity_id, anzahl DESC
+        """)
+        rows = cur.fetchall()
+    return {"stats": [dict(r) for r in rows]}
+
+
+@app.get("/admin/wesen-einsicht/traumarchiv")
+def einsicht_traumarchiv(entity_id: str | None = None, limit: int = 50, offset: int = 0):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        where = "WHERE entity_id = %s" if entity_id else ""
+        params = [entity_id] if entity_id else []
+
+        # traumkandidaten_log
+        cur.execute(f"""
+            SELECT tkl.entity_id, tkl.created_at AS tick_at,
+                   tkl.selektionsregel AS ausgewaehlter_traum,
+                   tkl.begruendung, 'kandidat' AS typ
+            FROM traumkandidaten_log tkl
+            {where}
+            ORDER BY tkl.created_at DESC
+            LIMIT %s OFFSET %s
+        """, params + [limit, offset])
+        kandidaten = cur.fetchall()
+
+        # traumspuren
+        cur.execute(f"""
+            SELECT ts.entity_id, ts.created_at AS tick_at,
+                   ts.llm_traumtext AS traum_text,
+                   ts.integrator_spur AS traum_kontext,
+                   ts.integrator_status AS emotion,
+                   'spur' AS typ
+            FROM traumspuren ts
+            {where}
+            ORDER BY ts.created_at DESC
+            LIMIT %s OFFSET %s
+        """, params + [limit, offset])
+        spuren = cur.fetchall()
+
+        # schlafbriefe
+        cur.execute(f"""
+            SELECT sb.entity_id, sb.geschrieben_at AS tick_at,
+                   sb.inhalt AS brief_text,
+                   'brief' AS typ
+            FROM schlafbriefe sb
+            {where}
+            ORDER BY sb.geschrieben_at DESC
+            LIMIT %s OFFSET %s
+        """, params + [limit, offset])
+        briefe = cur.fetchall()
+
+    return {
+        "traumkandidaten": [dict(r) for r in kandidaten],
+        "traumspuren": [dict(r) for r in spuren],
+        "schlafbriefe": [dict(r) for r in briefe],
+        "counts": {
+            "kandidaten": len(kandidaten),
+            "spuren": len(spuren),
+            "briefe": len(briefe)
+        }
+    }
+
+
+@app.get("/admin/wesen-einsicht/lebensjournal")
+def einsicht_lebensjournal(entity_id: str | None = None, limit: int = 80, offset: int = 0):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        e_filter = "AND etl.entity_id = %s" if entity_id else ""
+        ev_filter = "AND e.actor_id = %s" if entity_id else ""
+        post_filter = "AND fp.autor_id = %s" if entity_id else ""
+        params = [entity_id] if entity_id else []
+
+        # Denkentscheidungen
+        cur.execute(f"""
+            SELECT etl.tick_at AS ts, etl.entity_id,
+                   etl.entscheidung AS aktion,
+                   LEFT(etl.gedanke, 120) AS inhalt,
+                   etl.begruendung AS meta,
+                   'denk' AS typ
+            FROM entity_thinking_log etl
+            WHERE 1=1 {e_filter}
+            ORDER BY etl.tick_at DESC
+            LIMIT 200
+        """, params)
+        denk = cur.fetchall()
+
+        # Schlaf-Events
+        cur.execute(f"""
+            SELECT e.created_at AS ts, e.actor_id AS entity_id,
+                   e.event_type AS aktion,
+                   LEFT(e.payload::text, 120) AS inhalt,
+                   '' AS meta,
+                   'event' AS typ
+            FROM events e
+            WHERE e.actor_type = 'entity'
+              AND e.event_type LIKE 'schlaf.%%'
+              {ev_filter}
+            ORDER BY e.created_at DESC
+            LIMIT 100
+        """, params)
+        schlaf_ev = cur.fetchall()
+
+        # Posts
+        cur.execute(f"""
+            SELECT fp.created_at AS ts, fp.autor_id AS entity_id,
+                   'post' AS aktion,
+                   LEFT(fp.content, 120) AS inhalt,
+                   fp.raum_id::text AS meta,
+                   'post' AS typ
+            FROM ftw_posts fp
+            WHERE fp.autor_type = 'entity'
+              {post_filter}
+            ORDER BY fp.created_at DESC
+            LIMIT 100
+        """, params)
+        posts = cur.fetchall()
+
+        alle = (
+            [dict(r) for r in denk] +
+            [dict(r) for r in schlaf_ev] +
+            [dict(r) for r in posts]
+        )
+        alle.sort(key=lambda x: str(x["ts"] or ""), reverse=True)
+        return {
+            "total": len(alle),
+            "items": alle[offset:offset + limit]
+        }
+
+
+@app.get("/admin/wesen-einsicht/liveticker")
+def einsicht_liveticker(limit: int = 60):
+    with get_conn() as conn:
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT e.event_id AS id, e.event_type, e.actor_id AS entity_id, e.created_at,
+                   e.payload, e.actor_type
+            FROM events e
+            ORDER BY e.created_at DESC
+            LIMIT %s
+        """, (limit,))
+        rows = cur.fetchall()
+    return {"events": [dict(r) for r in rows]}
+
+
+@app.get("/admin/einzugsampel")
+def einzugsampel():
+    with get_conn() as conn:
+        cur = conn.cursor()
+        checks: list[dict] = []
+
+        # 1. entity_kern läuft?
+        cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE tick_at > NOW() - INTERVAL '2 hours'")
+        recent_denk = cur.fetchone()["n"]
+        checks.append({
+            "name": "entity_kern aktiv",
+            "ok": recent_denk > 0,
+            "wert": f"{recent_denk} Denkvorgänge letzte 2h"
+        })
+
+        # 2. Alle 6 Wesen haben Denklogs
+        cur.execute("SELECT COUNT(DISTINCT entity_id) AS n FROM entity_thinking_log")
+        n_wesen = cur.fetchone()["n"]
+        checks.append({
+            "name": "Alle 6 Wesen denken",
+            "ok": n_wesen >= 6,
+            "wert": f"{n_wesen}/6 Wesen aktiv"
+        })
+
+        # 3. Keine crash-loops (events mit fehler in letzter Stunde)
+        cur.execute("""
+            SELECT COUNT(*) AS n FROM events
+            WHERE (event_type LIKE '%%fehler%%' OR event_type LIKE '%%error%%')
+              AND created_at > NOW() - INTERVAL '1 hour'
+        """)
+        fehler = cur.fetchone()["n"]
+        checks.append({
+            "name": "Keine Fehler-Events (1h)",
+            "ok": fehler == 0,
+            "wert": f"{fehler} Fehler-Events"
+        })
+
+        # 4. Posts vorhanden
+        cur.execute("SELECT COUNT(*) AS n FROM ftw_posts WHERE autor_type = 'entity'")
+        n_posts = cur.fetchone()["n"]
+        checks.append({
+            "name": "Wesen-Posts vorhanden",
+            "ok": n_posts > 0,
+            "wert": f"{n_posts} Posts"
+        })
+
+        # 5. Cyberling aktiv
+        cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entscheidung='cyberling_fuettern' AND tick_at > NOW() - INTERVAL '2 hours'")
+        cyb = cur.fetchone()["n"]
+        checks.append({
+            "name": "Cyberling-Fütterung aktiv",
+            "ok": cyb > 0,
+            "wert": f"{cyb} Fütterungen letzte 2h"
+        })
+
+        # 6. codewesen_takt.py läuft NICHT (Guardrail)
+        import subprocess
+        takt_proz = subprocess.run(
+            ["pgrep", "-f", "codewesen_takt.py"],
+            capture_output=True, text=True
+        )
+        takt_laeuft = takt_proz.returncode == 0
+        checks.append({
+            "name": "codewesen_takt.py aus (Guardrail)",
+            "ok": not takt_laeuft,
+            "wert": "läuft" if takt_laeuft else "aus ✓"
+        })
+
+        # 7. Flarum-takt-Prozesse aus
+        flarum_proz = subprocess.run(
+            ["pgrep", "-f", "flarum.*takt|takt.*flarum"],
+            capture_output=True, text=True
+        )
+        checks.append({
+            "name": "Flarum-Takte aus (Guardrail)",
+            "ok": flarum_proz.returncode != 0,
+            "wert": "aus ✓" if flarum_proz.returncode != 0 else "LÄUFT — STOPP!"
+        })
+
+        alle_ok = all(c["ok"] for c in checks)
+        kritisch_ok = all(c["ok"] for c in checks if "Guardrail" in c["name"] or "Alle 6" in c["name"])
+        ampel = "gruen" if alle_ok else ("gelb" if kritisch_ok else "rot")
+
+    return {
+        "ampel": ampel,
+        "checks": checks,
+        "empfehlung": (
+            "Technisch bereit — Einzug möglich nach Daniels Entscheid." if ampel == "gruen"
+            else "Beinahe bereit — kleine Lücken." if ampel == "gelb"
+            else "Nicht bereit — kritische Checks fehlgeschlagen."
+        )
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)
