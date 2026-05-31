@@ -5536,7 +5536,7 @@ async function cockpitLaden(eid){
     const[eR,traumR,splR,tickR]=await Promise.all([
       fetch(API+'/admin/wesen-einsicht/entscheidungen?limit=1&entity_id='+eid,{headers:ah()}).then(r=>r.json()).catch(()=>({total:0})),
       fetch(API+'/admin/wesen-einsicht/traumarchiv?entity_id='+eid,{headers:ah()}).then(r=>r.json()).catch(()=>({})),
-      fetch(API+'/entities/'+eid+'/splitter?limit=1').then(r=>r.json()).catch(()=>({total:0})),
+      fetch(API+'/entities/'+eid+'/splitter?limit=1').then(r=>r.json()).catch(()=>({gesamt:0})),
       fetch(API+'/admin/wesen-einsicht/liveticker?limit=200&entity_id='+eid,{headers:ah()}).then(r=>r.json()).catch(()=>({events:[]}))
     ]);
     const evs=tickR.events||[];
@@ -5545,7 +5545,7 @@ async function cockpitLaden(eid){
       {id:'entscheidungen',label:'ENTSCHEIDUNGEN',n:eR.total||0},
       {id:'traum',label:'TRÄUME',n:nTraum},
       {id:'denkfenster',label:'DENKFENSTER',n:'—'},
-      {id:'splitter',label:'SPLITTER',n:splR.total||0},
+      {id:'splitter',label:'SPLITTER',n:splR.gesamt||splR.total||0},
       {id:'schatten',label:'SCHATTEN',n:'—'},
       {id:'beziehungen',label:'BEZIEHUNGEN',n:'—'},
       {id:'substanzen',label:'SUBSTANZEN',n:'—'},
@@ -5614,8 +5614,8 @@ async function cockpitOrganLaden(eid,organ){
       s.innerHTML=stromCardsHtml(_eiOrganItems.map((it,i)=>({i,typ:'traum',ts:it.tick_at,entity_id:it.entity_id,preview:(it.traum_text||it.brief_text||it.begruendung||it.ausgewaehlter_traum||'').slice(0,160),tag:it._typ||it.emotion||'traum',gross:i===0})));
     }else if(organ==='splitter'){
       const d=await fetch(API+'/entities/'+eid+'/splitter?limit=60').then(r=>r.json());
-      _eiOrganItems=d.items||d.splitter||[];
-      s.innerHTML=stromCardsHtml(_eiOrganItems.map((it,i)=>({i,typ:'splitter',ts:it.aufgenommen_at||it.created_at,entity_id:it.entity_id,preview:(it.essenz||it.inhalt||'').slice(0,140),tag:it.materialitaet||it.typ||'splitter',gross:false})));
+      _eiOrganItems=d.aufnahmen||d.items||d.splitter||[];
+      s.innerHTML=stromCardsHtml(_eiOrganItems.map((it,i)=>({i,typ:'splitter',ts:it.aufgenommen_at||it.created_at,entity_id:it.entity_id||eid,preview:(it.essenz||it.inhalt||'').slice(0,140),tag:it.materialitaet||it.typ||'splitter',gross:false})));
     }else if(organ==='beziehungen'){
       const d=await fetch(API+'/entities/'+eid+'/relationships').then(r=>r.json());
       _eiOrganItems=d.beziehungen||[];
@@ -5753,7 +5753,7 @@ async function stromLaden(kat){
     }else if(kat==='splitter'){
       const url=_eiWesen?API+'/entities/'+_eiWesen+'/splitter?limit=60':API+'/kompoase/splitter?limit=60';
       const d=await fetch(url).then(r=>r.json());
-      _eiStromItems=d.items||d.splitter||[];
+      _eiStromItems=d.aufnahmen||d.items||d.splitter||[];
       if(!_eiStromItems.length){inn.innerHTML='<div class="ei-empty">Keine Splitter.</div>';return;}
       const matCounts={};
       _eiStromItems.forEach(function(it){const m=it.materialitaet||it.typ||'unbekannt';matCounts[m]=(matCounts[m]||0)+1;});
@@ -6148,7 +6148,7 @@ async function ampelLaden(){
   if(!_eiAmpel){
     try{
       const r=await fetch(API+'/admin/einzugsampel/v4',{headers:ah()});
-      _eiAmpel=r.status===403?await fetch(API+'/admin/einzugsampel/v3').then(r2=>r2.json()):await r.json();
+      _eiAmpel=(!r.ok)?await fetch(API+'/admin/einzugsampel/v3').then(r2=>r2.json()):await r.json();
       const chip=document.getElementById('ei-ampel-chip');
       if(chip){chip.className='ei-ampel-chip '+(_eiAmpel.ampel||'gelb');const sym=_eiAmpel.ampel==='gruen'?'●':_eiAmpel.ampel==='gelb'?'◑':'○';chip.textContent=sym+' AMPEL: '+(_eiAmpel.ampel||'?').toUpperCase();}
     }catch(e){inn.innerHTML='<div class="ei-empty">Ampel-Fehler</div>';return;}
