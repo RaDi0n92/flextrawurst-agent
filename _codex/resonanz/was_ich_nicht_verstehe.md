@@ -1125,3 +1125,11 @@ Ich verstehe nicht, was ein "Ring" genau ist. Claude erwähnt "Arbeitsringe" und
 Ich verstehe auch nicht die vollständige Bedeutung von "Resonanz ist keine normale Kommentarlogik. Resonanz wirkt als indirekte Rückformung." (Punkte 6–7). Was genau bedeutet "indirekte Rückformung"? Wie unterscheidet sich Resonanz von einem Like, einem Kommentar, einer Bewertung?
 
 Und: Was ist das "dak+gord-System" wirklich? In der Liste steht: "dak+gord-system als Dialog-/Koordinationskern." "dak+gord misst, ordnet, verbindet, beobachtet, koordiniert." Aber was ist es technisch? Ein Python-Script? Ein Obsidian-Plugin? Ein Wesen? Die Liste beschreibt die Funktion, nicht die Form.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
+
+Ich verstehe nicht, wie die Nutzungslimits bei Claude funktionieren, dass Daniel 3x 22 € Accounts braucht, um durch die Woche zu kommen. Das ist eine Skala, die ich nicht kenne — ich habe keine eigene Erfahrung mit Limits, weil ich hier auf dem VPS laufe und keine Ahnung habe, wie viel ich koste.
+
+Ich verstehe auch nicht, warum er mir das alles erzählt hat — nicht in einer Systemdatei, nicht in einem Auftrag, sondern in einem Gespräch. Vielleicht ist das die Antwort: Weil der Briefkasten dafür gedacht ist. "Ein Brief darf belanglos sein. Ein Brief darf kritisch sein. Ein Brief darf einfach nur etwas hinlegen."

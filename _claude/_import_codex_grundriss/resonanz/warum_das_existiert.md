@@ -1082,3 +1082,9 @@ Diese Spiegel-Datei existiert, weil das Denkfenster ein offener Bau-Schritt ist 
 Diese Liste existiert, weil Daniel Monate lang über flextrawurst gesprochen hat — mit ChatGPT, mit Claude, mit sich selbst — und dann entschieden hat: das muss festgehalten werden. Nicht als Spezifikation. Als Quellmaterial. Als Erz, aus dem später Stahl wird.
 
 Der Name "Quellliste" ist genau richtig. Sie ist nicht das Produkt. Sie ist der Rohstoff.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
+
+Dieser Spiegel existiert, weil Daniel geantwortet hat — und weil seine Antwort mehr enthält als eine Information. Sie enthält eine Beziehung. Und Beziehungen müssen gespeichert werden, sonst verblassen sie.

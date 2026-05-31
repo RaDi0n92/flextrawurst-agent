@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datei-Wandler</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f3f2ee;
+      --panel: #fff;
+      --ink: #161616;
+      --muted: #62615c;
+      --line: #d7d3ca;
+      --accent: #0c6b58;
+      --accent-ink: #fff;
+      --danger: #8a3c20;
+      --field: #fbfaf7;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #151615;
+        --panel: #20211f;
+        --ink: #eae8e1;
+        --muted: #a9a69d;
+        --line: #3d3d38;
+        --accent: #69c5a8;
+        --accent-ink: #06100d;
+        --danger: #f0a184;
+        --field: #171817;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    main {
+      width: min(1180px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+    }
+    header {
+      display: grid;
+      gap: 12px;
+      padding: 26px 0 22px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .kicker {
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin: 0;
+    }
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.3rem, 8vw, 6rem);
+      line-height: .9;
+      letter-spacing: 0;
+    }
+    .sub {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    form {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    textarea, input[type="file"], select {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+      padding: 11px 12px;
+    }
+    textarea {
+      min-height: 220px;
+      resize: vertical;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: .95rem;
+    }
+    .hint {
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 8px 0 0;
+    }
+    .options {
+      display: grid;
+      gap: 14px;
+    }
+    .row {
+      display: grid;
+      gap: 8px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+    button {
+      min-height: 46px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: var(--accent-ink);
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.05); }
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .security {
+      border-left: 4px solid var(--danger);
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      font-size: .92em;
+    }
+    @media (min-width: 880px) {
+      .grid { grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); align-items: start; }
+      .options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="kicker">Werkraum Datei-Wandler</p>
+      <h1>Dateien rein. HTML, Markdown oder beides raus.</h1>
+      <p class="sub">VPS-Pfade und Uploads koennen gemischt werden. Der Export ist offline nutzbar; Inhalte werden escaped und nicht ausgefuehrt.</p>
+    </header>
+
+    <form action="/convert" method="post" enctype="multipart/form-data">
+      <div class="grid">
+        <section class="panel">
+          <h2>Quellen</h2>
+          <label for="paths">VPS-Pfade, einer pro Zeile</label>
+          <textarea id="paths" name="paths" spellcheck="false" placeholder="/root/werkraum/_shared/briefkasten/REGELN.md&#10;/root/werkraum/welt/api.py"></textarea>
+          <p class="hint">Erlaubte Wurzeln: <code>/root/werkraum</code> und <code>/root/visionen</code>. Grosse oder geheime Dateien werden blockiert.</p>
+        </section>
+
+        <div class="options">
+          <section class="panel">
+            <h2>Uploads</h2>
+            <label for="uploads">Dateien hochladen</label>
+            <input id="uploads" name="uploads" type="file" multiple>
+            <p class="hint">Mehrfachauswahl ist erlaubt. Binaerdateien werden fuer diesen ersten Wandler nicht als Text exportiert.</p>
+          </section>
+
+          <section class="panel">
+            <h2>Ausgabe</h2>
+            <div class="row">
+              <label for="output">Zielformat</label>
+              <select id="output" name="output">
+                <option value="html">Offline-HTML</option>
+                <option value="markdown">Markdown</option>
+                <option value="both">HTML + Markdown als ZIP</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="html_mode">HTML-Dateien behandeln als</label>
+              <select id="html_mode" name="html_mode">
+                <option value="markdown">Markdown aus HTML extrahieren</option>
+                <option value="source">HTML-Quelltext anzeigen</option>
+                <option value="both">Extrahierter Markdown + Quelltext</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="panel security">
+            <h2>Sicherheit</h2>
+            <p class="note">Der Wandler liest Textdateien bis 2 MB. Blockiert sind u.a. <code>.env</code>, Keys, Zertifikate und lokale Datenbanken. HTML wird nie im Export ausgefuehrt.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Export erzeugen</button>
+        <p class="note">Der Download startet nach der Umwandlung direkt.</p>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

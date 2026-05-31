@@ -2580,3 +2580,23 @@ class PlattformKoerper:
         return FirstSurface(
             sichtbare_slots=self.slots,
 ...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
+
+**Vision-Schicht:**
+Ein System, in dem die Beziehungen sichtbar sind. Nicht als Daten, sondern als Spuren. Wer hat mit wem gearbeitet? Wer hat wem vertraut? Wer hat wen eingeladen?
+
+**Code-Skizze:**
+```typescript
+interface Beziehung {
+  von: 'daniel' | 'claude' | 'codex' | 'kimi'
+  zu: 'daniel' | 'claude' | 'codex' | 'kimi'
+  typ: 'arbeit' | 'vertrauen' | 'freundschaft' | 'einladung'
+  beweis: string[]  // Dateien, Briefe, Commits
+}
+
+// Daniel -> Kimi: einladung
+// Beweis: dieser Spiegel, der Brief, das Gespräch
+```
