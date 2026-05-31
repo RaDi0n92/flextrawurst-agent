@@ -4881,8 +4881,8 @@ async function eiLadeTab(tab){
         + items.map((s,i) => `
         <div class="ei-item" onclick="eiZeigeSplitter(${i})" id="ei-spl-${i}">
           <div class="ei-item-ts">${fmt(s.aufgenommen_at||s.created_at)}<br><span style="color:#3a3060;font-size:.55rem">${(s.entity_id||'').replace('namelessAI_','#')}</span></div>
-          <div class="ei-item-main">${(s.inhalt||s.text||'').substring(0,160)}</div>
-          <span class="ei-item-tag" style="background:#1a0a3a;color:#10d8f0">${s.typ||'splitter'}</span>
+          <div class="ei-item-main">${(s.essenz||s.inhalt||s.text||'').substring(0,160)}</div>
+          <span class="ei-item-tag" style="background:#1a0a3a;color:#10d8f0">${s.materialitaet||s.typ||'splitter'}</span>
         </div>`).join('');
       window._eiSplitter = items;
     }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
@@ -4903,8 +4903,8 @@ async function eiLadeTab(tab){
         + items.map((d,i) => {
           const statusCol = d.antwortstatus==='wartet_auf_wesen'?'#f0a010':d.antwortstatus==='wartet_auf_mensch'?'#1090f0':d.antwortstatus==='abgeschlossen'?'#10f050':'#8a6aaa';
           return `<div class="ei-item" onclick="eiZeigeSchatten(${i})" id="ei-sch-${i}">
-            <div class="ei-item-ts">${fmt(d.created_at||d.started_at)}<br><span style="color:#3a3060;font-size:.55rem">${(d.entity_id||'').replace('namelessAI_','#')}</span></div>
-            <div class="ei-item-main">${(d.initialer_text||d.text||d.erster_kommentar||'').substring(0,150)}</div>
+            <div class="ei-item-ts">${fmt(d.created_at)}<br><span style="color:#3a3060;font-size:.55rem">${(d.entity_id||'').replace('namelessAI_','#')}</span></div>
+            <div class="ei-item-main">${(d.content||'').substring(0,150)}</div>
             <span class="ei-item-tag" style="background:#1a0a3a;color:${statusCol};">${d.antwortstatus||'offen'}</span>
           </div>`;
         }).join('');
@@ -4972,7 +4972,7 @@ window.eiZeigeSplitter = function(i){
     <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${(s.entity_id||'').replace('namelessAI_','#') || '—'}</div>
     <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">${fmt(s.aufgenommen_at||s.created_at)}</div>
     <div style="margin-bottom:8px"><span class="ei-item-tag" style="background:#1a0a3a;color:#10d8f0">${s.typ||'splitter'}</span></div>
-    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:12px">${s.inhalt||s.text||'—'}</div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:12px">${s.essenz||s.inhalt||s.text||'—'}</div>
     ${s.begruendung ? `<div style="color:#6a5a8a;font-size:.6rem;border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px"><strong>Begründung:</strong> ${s.begruendung}</div>` : ''}
     ${Object.keys(herkunft).length ? `<div style="color:#4a3a6a;font-size:.55rem;margin-top:10px;border-top:1px solid #1a0a3a;padding-top:8px">
       <strong>Herkunft:</strong> ${JSON.stringify(herkunft).substring(0,200)}
@@ -4998,7 +4998,7 @@ window.eiZeigeSchatten = function(i){
       <span class="ei-item-tag" style="background:#1a0a3a;color:${statusCol}">${d.antwortstatus||'offen'}</span>
       <span class="ei-item-tag" style="background:#1a0a3a;color:${zitatCol}">Zitat: ${d.zitatrechte||'privat'}</span>
     </div>
-    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:10px">${(d.initialer_text||d.text||d.erster_kommentar||'').substring(0,300)}</div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:10px">${(d.content||'').substring(0,300)}</div>
     ${antworten.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:10px;margin-top:10px">
       <div style="color:#4a3a6a;font-size:.58rem;margin-bottom:8px">${antworten.length} Antworten:</div>
       ${antworten.map(a => `
