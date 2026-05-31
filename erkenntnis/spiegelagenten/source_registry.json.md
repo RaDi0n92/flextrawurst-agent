@@ -10,3 +10,9 @@ Die Datei dient der Katalogisierung externer Datenquellen. Der Name `source_regi
 Originaldatei: `/root/werkraum/source_registry.json`
 
 Diese Datei dient als zentraler Zustandsspeicher für externe Eingabedaten. Der Name *source_registry.json* ist funktional präzise. Auffällig ist die Uniformität des Status: Alle Quellen sind auf `new` gesetzt und weisen `ingested_at: null` auf. Die Existenz dieser Struktur impliziert einen Verarbeitungszyklus, der momentan stagniert. Die Diskrepanz zwischen dem Verzeichnisnamen "Werkraum" und dem aktuellen, unverarbeiteten Zustand der Quellen ist ein Prozess-Fehler.
+
+---
+## Neugier-Scan 2026-05-27 04:14
+Originaldatei: `/root/werkraum/agent/source_registry.json`
+
+Diese Datei katalogisiert die Quellen im Werkraum. Sie dient als Registrierung für die PDFs, die im System verarbeitet werden sollen. Die Struktur mit IDs und Pfaden ordnet die Dateien logisch. Der Inhalt zeigt eine Liste neuer Dokumente, die noch keine Zusammenfassung besitzen.

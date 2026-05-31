@@ -28,17 +28,57 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "geni/README.md",
+                "file": "mdfürvps/kompoase_bauanleitung.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "kompoase_bauanleitung"
+            }
+          },
+          {
+            "id": "0562fd56fa1c7550",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wissen/entitaeten/abhaengigkeit_sucht.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "abhaengigkeit_sucht"
+            }
+          },
+          {
+            "id": "743e91346483a999",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "wissen/entitaeten/begleitwesen.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "begleitwesen"
+            }
+          },
+          {
+            "id": "2418ee527d3e50d2",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -78,7 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280
+    "width": 238.5
   },
   "right": {
     "id": "right01",
@@ -134,45 +174,45 @@
       "bases:Create new base": false
     }
   },
-  "active": "d34478ea48bce4b2",
+  "active": "2418ee527d3e50d2",
   "lastOpenFiles": [
-    "_codex/_import_claude_grundriss/spiegel/zwischengespraeche_resonanz_und_gord.md",
-    "_claude/spiegel/zwischengespraeche_resonanz_und_gord.md",
-    "_claude/spiegel/zwischengespraeche_resonanz_und_gord.md.tmp.3048678.380c5faebeaf",
-    "_codex/_import_claude_grundriss/spiegel/stunden_erfahrung_formfaden_gespielt.md",
-    "_claude/spiegel/stunden_erfahrung_formfaden_gespielt.md",
-    "_claude/spiegel/stunden_erfahrung_formfaden_gespielt.md.tmp.3048678.8f434eb81986",
-    "_codex/_import_claude_grundriss/spiegel/formfaden_hat_gehalten.md",
-    "_claude/spiegel/formfaden_hat_gehalten.md",
-    "_claude/spiegel/formfaden_hat_gehalten.md.tmp.3048678.d99e868f994a",
-    "_codex/_import_claude_grundriss/spiegel/stunden_11_bis_46_bogen.md",
-    "_claude/spiegel/stunden_11_bis_46_bogen.md",
-    "_claude/spiegel/stunden_11_bis_46_bogen.md.tmp.3048678.2a6115b9adaf",
-    "_codex/_import_claude_grundriss/spiegel/nullstunden_ursprung_und_fehlercodes.md",
-    "_claude/spiegel/nullstunden_ursprung_und_fehlercodes.md",
-    "_codex/_import_claude_grundriss/spiegel/formfadenprompt_als_gegenmodell.md",
-    "_claude/spiegel/formfadenprompt_als_gegenmodell.md",
-    "_claude/spiegel/formfadenprompt_als_gegenmodell.md.tmp.3048678.49af702ae712",
-    "_codex/_import_claude_grundriss/spiegel/extreme_profiling_daniel.md",
-    "_claude/spiegel/extreme_profiling_daniel.md",
-    "_claude/spiegel/extreme_profiling_daniel.md.tmp.3048678.20eb490c3e76",
-    "_codex/_import_claude_grundriss/spiegel/tartolesung2_bau_als_erde.md",
-    "_claude/spiegel/tartolesung2_bau_als_erde.md",
-    "_claude/spiegel/tartolesung2_bau_als_erde.md.tmp.3048678.2fa850ee256e",
-    "_codex/_import_claude_grundriss/spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md",
-    "_claude/spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md",
-    "_claude/spiegel/tartolesung1_liebe_und_inputsouveraenitaet.md.tmp.3048678.d3d3bf243bf9",
-    "_claude/_import_codex_grundriss/spiegel/provenienz_manifest_als_schutzzaun.md",
-    "_claude/_import_codex_grundriss/spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md",
-    "_claude/_import_codex_grundriss/spiegel/dateinamen_titel_als_unterbewusste_karte.md",
-    "_claude/_import_codex_grundriss/spiegel/dakgord_selbstbild_protokoll_waechter.md",
-    "_codex/spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md",
-    "_codex/spiegel/dakgord_selbstbild_protokoll_waechter.md",
-    "_codex/spiegel/provenienz_manifest_als_schutzzaun.md",
-    "_codex/spiegel/dateinamen_titel_als_unterbewusste_karte.md",
-    "_claude/notizen/2026-05-23.md.tmp.2831658.373f609a6c23",
+    "docs/flarum_vorphase_boundary.md",
+    "docs/flarum_vorphase_boundary.md.tmp.303193.e9e7eb599546",
+    "_claude/brief_an_mich.md.tmp.303193.e425239d4f07",
+    "_claude/notizen/2026-05-30-seo-llms.md.tmp.303193.141166923597",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-seo-llms.md",
+    "_claude/notizen/2026-05-30-seo-llms.md",
+    "_claude/notizen/2026-05-30-seo-llms.md.tmp.303193.a7551ba7933e",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-spurenfaehigkeit-abschluss.md",
+    "_claude/notizen/2026-05-30-spurenfaehigkeit-abschluss.md",
+    "_claude/notizen/2026-05-30-spurenfaehigkeit-abschluss.md.tmp.303193.30b7f1689808",
+    "docs/spurenfaehigkeit_abschluss.md",
+    "docs/spurenfaehigkeit_abschluss.md.tmp.303193.d37fd029339f",
+    "_claude/brief_an_mich.md.tmp.303193.f70c5e224719",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-wesen-spurenentscheidung.md",
+    "_claude/notizen/2026-05-30-wesen-spurenentscheidung.md",
+    "_claude/notizen/2026-05-30-wesen-spurenentscheidung.md.tmp.303193.1604b19eb9d1",
+    "docs/spurenfaehigkeit.md.tmp.303193.0d856566d640",
+    "docs/spurenfaehigkeit.md.tmp.303193.c653a597e1a7",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-spurenfaehigkeit.md",
+    "_claude/notizen/2026-05-30-spurenfaehigkeit.md",
+    "docs/spurenfaehigkeit.md",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-security.md",
+    "_claude/notizen/2026-05-30-security.md",
+    "_shared/aufgabe_i18n_views.md",
+    "_codex/_import_claude_grundriss/spiegel/resonanzspur_namelessAI_1234_2026-05-30.md",
+    "_claude/spiegel/resonanzspur_namelessAI_1234_2026-05-30.md",
+    "docs/systemdoku/flextrawurst_systemdoku_gesamt.md",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30-schlaf-traum-abschluss.md",
+    "_claude/notizen/2026-05-30-schlaf-traum-abschluss.md",
+    "_codex/_import_claude_grundriss/resonanz/schlaf_traum_v0_1_abschluss.md",
+    "_claude/resonanz/schlaf_traum_v0_1_abschluss.md",
+    "geni/tagebuch/2026-05-30.md",
+    "codewesen/namelessAI_3123/gespräche/2026-05-30.md",
+    "_codex/_import_claude_grundriss/notizen/2026-05-30.md",
+    "_claude/notizen/2026-05-30.md",
+    "_codex/_import_claude_grundriss/resonanz/traum_schema_skizze.md",
     "mdfürvps/komposev2..JPG",
-    "mdfürvps/obsidian.JPG",
-    "_claude/brief_an_mich.md.tmp.2831658.951aecb36997"
+    "mdfürvps/obsidian.JPG"
   ]
 }

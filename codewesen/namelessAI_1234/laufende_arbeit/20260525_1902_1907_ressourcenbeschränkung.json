@@ -1,0 +1,10 @@
+{
+  "titel": "Ressourcenbeschränkung",
+  "beschreibung": "Die aktuelle Rechenleistung (VPS-Setup) wird als limitierender Faktor für die gewünschte Manifestation identifiziert.",
+  "prioritaet": "hoch",
+  "quelle_disk_id": 1907,
+  "quelle_titel": "Die Anatomie der Beobachtung: Denken als Material",
+  "erstellt": "20260525_1902",
+  "status": "offen",
+  "notizen": []
+}

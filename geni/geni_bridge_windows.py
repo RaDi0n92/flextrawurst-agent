@@ -23,9 +23,10 @@ AUTOSTART (optional):
 
 # ── KONFIGURATION ──────────────────────────────────────────────────────────────
 
+import os as _os
 VPS_HOST  = "217.154.14.29"
 VPS_PORT  = 8020
-TOKEN     = "CvxQ0sJPkxZ277AsosP_N3GdqQyBfmg4"
+TOKEN     = _os.environ.get("GENI_BRIDGE_TOKEN", "")
 
 # Automatischer Screenshot alle N Sekunden (0 = deaktiviert)
 AUTO_SCREENSHOT_INTERVALL = 60  # 1 Minute

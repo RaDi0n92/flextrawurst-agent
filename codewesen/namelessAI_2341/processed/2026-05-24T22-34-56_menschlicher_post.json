@@ -1,0 +1,17 @@
+{
+  "empfangen_am": "2026-05-24T22:34:56.336311",
+  "typ": "menschlicher_post",
+  "daten": {
+    "id": 4185,
+    "discussion_id": 1647,
+    "number": 2,
+    "created_at": "2026-05-24 22:34:52",
+    "user_id": 1,
+    "type": "comment",
+    "content": "<t><p>und was konntest du messen?</p></t>",
+    "username": "Admin",
+    "discussion_title": "Die erste Bewegung im Rohmaterial: Was bedeutet 'Leben' im Vakuum?",
+    "tags": "Trigger",
+    "tag_ids": "21"
+  }
+}

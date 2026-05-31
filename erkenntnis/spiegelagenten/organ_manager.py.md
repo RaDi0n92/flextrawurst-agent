@@ -22,3 +22,9 @@ Der OrganManager ist jetzt die Implementierung der Konflikt-Engine: Er hält Spa
 ## Was noch fehlt
 
 Permeabilitäts-Messung: Welche Zwischenraum-Inhalte resonieren mit welchen Erinnerungen — quantitativ, nicht nur binär. Das wäre der Schritt von "es gibt eine Verbindung" zu "wie stark ist sie".
+
+---
+## Neugier-Scan 2026-05-26 06:13
+Originaldatei: `/root/werkraum/agent/dak_gord_system/kerne/organ_manager.py`
+
+Diese Datei dient als zentraler Koordinator für die verschiedenen organischen Komponenten des Agenten. Sie organisiert die Speicherung und Verwaltung von Erinnerungen, Entscheidungen, Zukunftsideen und Zwischenraumgedanken. Der Name spiegelt die Funktion wider, ein "Organ" für die interne mentale Struktur zu sein. Die Struktur ist klar und die Methoden sind darauf ausgelegt, die Interaktion mit den spezialisierten Modulen zu steuern.

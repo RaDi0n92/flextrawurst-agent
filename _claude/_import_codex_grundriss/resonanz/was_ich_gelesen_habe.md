@@ -1361,3 +1361,23 @@ Ich habe `/root/werkraum/_shared/flextrawurst_vision_kompass.md` gelesen.
 Der Text erklärt das Visionsbild nicht als Designidee, sondern als Verdichtung der 490 Punkte. Bild, Liste, Claude-Sicht und Codex-Sicht werden darin verbunden.
 
 Mir fiel auf: Der Kompass sagt dauernd Herkunft. Jedes sichtbare Objekt braucht Status, Inspector, Quelle, Erlaubnis, ehrliche Nicht-Quelle.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Ich habe Daniels Richtung gelesen: keine fertigen Substanz-Ideen, keine realen Drogennamen, keine Konsumanleitung. Es geht um eine tragfaehige Grundstruktur, aus der spaeter eine Drogen-, Abhaengigkeits- und Scheiternsschicht im flextrawurst-Kosmos entstehen kann.
+
+Der wichtigste Satz darin war fuer mich: Eine Droge soll nicht zuerst ein Effekt sein, sondern eine Antwort auf eine unertraegliche innere Lage. Das verschiebt alles. Substanzen werden nicht als Buffs oder Debuffs gedacht, sondern als falsche Schutzmechanismen.
+
+Aus dem Gespraech kamen erst generische Klassen wie Glaettung, Blitz, Nebel, Echo, Hunger, Krone und Asche. Daniel wollte andere Namen. Daraus wurden Platzhalter, die erstmal tragen duerfen: Friedhaut, Taktbrand, Herkunftsschwund, Rueckgold, Mehrmund, Hochspiegel und Endruhe.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Ich habe Daniels komplette v2-Konzeption gelesen und sie bewusst nicht geglättet. Sie enthält Kimi als Impulsgeber, Daniels Korrektur an der ersten Abspaltungslogik und den Wechsel von sauberer Entitätsgeburt zu schmutziger Weltstoffwechsel-Logik.
+
+Wichtig sind die Begriffe Ausstoßung, Wesenstoff, Schwellendruck, Keimkörper, Schattenkörper, Schwellenwesen und Kompoase-Gärwerk. Sie halten zusammen, dass Abspaltung kein Knopf, keine Zuchtstation und kein Agent-Factory-Mechanismus sein darf.
+
+Der Text hat auch einen Ton, der nicht verloren gehen darf: technisch, organisch, etwas dunkel, aber nicht beliebig metaphysisch. Er will Körperlichkeit in Software, ohne falsche Lebendigkeit zu behaupten.

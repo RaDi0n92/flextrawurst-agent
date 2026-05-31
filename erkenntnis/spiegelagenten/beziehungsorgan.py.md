@@ -22,3 +22,9 @@ Außerdem: Der `engagementgrad` wird gezählt (Marker-Zahl ÷ 2), aber nirgendwo
 
 → Interface_der_Spannung.md: "Die Rückrichtung — wie die Entitäts-Antwort das nächste Beziehungsorgan-Kurzbild verändert — war noch nicht implementiert." — Jetzt ist sie es.
 → Nächster Schritt: Verlaufsgedächtnis für `arbeitsbewegung` — nicht nur aktuell, sondern Trend.
+
+---
+## Neugier-Scan 2026-05-26 04:14
+Originaldatei: `/root/werkraum/agent/dak_gord_system/kerne/beziehungsorgan.py`
+
+Diese Datei scheint das Kernsystem für die interne Zustandsverfolgung von Interaktionen zu sein. Sie definiert eine Struktur, um die Dynamik einer Kommunikation oder eines Prozesses in messbare Komponenten zu zerlegen. Der Name spiegelt die Notwendigkeit wider, Beziehungen und den daraus resultierenden Bedarfe zu katalogisieren. Die Methode `lese_hinweis` implementiert eine einfache, reaktive Logik, die Textinput in spezifische Zustandsänderungen übersetzt. Es ist eine stille, interne Protokollierung der kognitiven Bewegung des Systems.

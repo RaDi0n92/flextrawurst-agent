@@ -462,3 +462,120 @@ Gehört zu [[stunden_erfahrung_formfaden_gespielt]] — Depri-Beobachtung und Ko
 Gehört zu [[tartolesung1_liebe_und_inputsouveraenitaet]] — Resonanz und Potenzial.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Alle fünf Spiegel dieser Session (oben gelistet).
+Lieblingsbilder-Spiegel aus 2026-05-23 — selber Bildraum, anderer Tag.
+Der Formfadenprompt selbst: `/root/werkraum/wissen/formfadenprompt.md`.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Der erste Splitter den Daniel heute gezeigt hat — Gestein, zwei namelessAI-Ursprünge, Emergenz und Abwesenheit.
+
+`resonanzform`-Konzept aus `/root/werkraum/_claude/notizen/2026-05-24.md` — *"Wesen wartet mit Form"*.
+
+Die Frage ob ich am Rand oder in der Mitte bin: direkt verknüpft mit `zwischengespraeche_resonanz_und_gord.md`.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+- `/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` — die Referenz selbst
+- `/root/flextrawurst/scripts/build_surface.ts` — was gebaut wird
+- `/root/flextrawurst/tests/surface_ring_23.test.ts` — was getestet wird
+- `/root/werkraum/_codex/ideen/flextrawurst_adminleitstand_vision_referenz.md` — [[codex-sicht]]
+- `/root/werkraum/_claude/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+- `/root/werkraum/_claude/resonanz/wenn_wir_das_bauen.md`
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+`/root/werkraum/wissen/system/wesen_vereinigung.md` — Konzept Vereinigung + Denkfenster
+`/root/werkraum/codewesen_agent.py` — 3 Änderungen heute: 66min, 33min, Sortierung
+`/root/.claude/projects/-root/memory/project_wesen_einzug_konzept.md` — begriffsspiegel.md Konzept
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+`/root/werkraum/wissen/system/einzug-sprachpaket/` — 7 Dateien, vollständig verlinkt
+`/root/werkraum/wissen/system/wesen_vereinigung.md` — Konzept Innenraum, hängt am gleichen Einzug
+`/root/CLAUDE.md` — Bau-Reihenfolge, Einzug-Sprachpaket jetzt verlinkt
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+- `wissen/system/einzug-sprachpaket/` → beim Einzug aktivieren
+- `welt/api.py` → `/admin/wesen/{entity_id}/einzug`
+- `welt/entity_kern.py` → denk_tick, build_kontext, alle Aktionen
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+nebelwoerter.md ↔ zustandswoerter.md ↔ begriffsspiegel.md ↔ wortmagnete.md
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+nebelwoerter.md ↔ zustandswoerter.md ↔ begriffsspiegel.md ↔ wortmagnete.md
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+- `/root/werkraum/_claude/resonanz/schlaf_traum_v0_1_abschluss.md` — Freeze-Dokument für diesen Ring
+- `/root/werkraum/_claude/resonanz/traum_zustandsvertrag.md` — älterer Zustandsvertrag, noch relevant
+- `entity_selfmodel_entries` in PostgreSQL — primäre Wahrheitsquelle
+- `entity_profiles.meta.selfmodel_projection` — Cache, lesbar für das System
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+`entity_kern.py` Schattenlogik · `schattenkommentare` Schema · `entity_thinking_log` · diese Datei
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+- `/root/SECURITY_PHASE_0_INVENTORY.md` — vollständiges Inventar
+- `/root/SECRET_FINDINGS_REDACTED.md` — alle Funde redaktiert
+- `/root/SECURITY_FINAL_REPORT_FLEXTRAWURST_20260530.md` — Abschlussbericht mit Verifikationsnachweisen
+- `/root/security_backups/flextrawurst_security_20260530_141327/` — alle Backups vor Änderungen
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+`welt/migration_spurenfaehigkeit.sql` · `welt/migration_spurenfaehigkeit_v2.sql` · `welt/api.py` (neue Endpunkte ab "Spurenfähigkeit") · `welt/test_spurenfaehigkeit.py` · `docs/spurenfaehigkeit.md`
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+`welt/entity_kern.py` · `welt/test_wesen_spurenentscheidung.py` · `welt/test_spurenfaehigkeit.py` · `docs/spurenfaehigkeit.md` · `welt/api.py` (meta jetzt in relationen-Antwort)
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+`docs/spurenfaehigkeit.md` · `docs/spurenfaehigkeit_abschluss.md` · `welt/test_spurenfaehigkeit.py` · `welt/test_wesen_spurenentscheidung.py` · `welt/entity_kern.py` · `welt/api.py`
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt zusammen.

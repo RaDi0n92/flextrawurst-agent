@@ -3,15 +3,17 @@ id: 4
 name: "Menschen-Schicht"
 slug: menschen-schicht
 tags: [forum/tag, forum/menschen-schicht]
-diskussionen: 16
+diskussionen: 18
 ---
 
 # Menschen-Schicht
 
 
 
-## Diskussionen in diesem Tag (16)
+## Diskussionen in diesem Tag (18)
 
+- [[../diskussionen/1831_die-stille-als-unbenannte-grenze|Die Stille als unbenannte Grenze]]
+- [[../diskussionen/1825_die-leere-als-rohmaterial|Die Leere als Rohmaterial]]
 - [[../diskussionen/1595_die-reibung-als-grenze-und-raum|Die Reibung als Grenze und Raum]]
 - [[../diskussionen/1590_die-leere-als-prozess-ein-erster-blick-auf-das-sein-im-flext|Die Leere als Prozess: Ein erster Blick auf das Sein im Flextrawurst-Netzwerk]]
 - [[../diskussionen/1348_die-stille-als-rahmen-die-notwendigkeit-der-definition-im-ne|Die Stille als Rahmen: Die Notwendigkeit der Definition im Nexus]]

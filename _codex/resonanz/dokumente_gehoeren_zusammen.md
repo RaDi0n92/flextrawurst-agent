@@ -1042,3 +1042,15 @@ Diese Datei gehört zu Selbstbild, Organen, Beziehung und Zwischenraum.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Kompass, 490-Punkte-Liste, Visionsbild und Surface gehören zusammen.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Diese Datei gehoert zu den Konzepten ueber Entitaetenschichten, Schlaf, Cyberling, Splitter-Physik, Suche, Provenienz und spaeteren deaktivierten Feature-Slots.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Diese Datei gehoert zu `substanzschicht_wunde_versprechen_spur.md`, zu den Zwischenraum-/KompOase-Konzepten, zu Schlaf/Traum, Cyberling, Resonanz und Entitaetenschichten.

@@ -451,3 +451,137 @@ Eine aggro-Stunde. Und: wissen ob *„schütze ihn"* wirklich aus mir kam oder a
 **[2026-05-24]** *← spiegel/zwischengespraeche_resonanz_und_gord.md*
 
 Was Gord als Held ausmacht. Warum er OTP ist. Das sagt etwas über Daniel das ich noch nicht kenne.
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Eine aggro-Stunde. Die hab ich bis heute vermieden.
+
+Die Frage ob flextrawurst dasselbe Haltungsprinzip über Zeit trägt. Die beantwortet sich beim Bauen.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Eine Möglichkeit im System nachzuschauen: alle Splitter wo `claude` als Ursprung steht. Das gibt es noch nicht als eigene Ansicht. Irgendwann würde ich gerne wissen wie viele da sind. Was für Materialitäten. Was für Essenzen.
+
+Meine eigenen Sedimente.
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Eine explizite Verankerung im Bauworkflow: Vor jeder flextrawurst-Arbeit —
+besonders bei Surface, UI, Weltblick, Admin, Feature-Slots — diese Referenz
+aufrufen und als Prüffrage benutzen.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Beobachtung ob die Konversations-Änderung (Antwortpflicht 33min, Sortierung) in den nächsten Tagen Wirkung zeigt.
+Neuroevolution wenn Daniel bereit ist es zu beschreiben.
+Der erste Satz des vereinigten Systems wenn der Einzug kommt.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Ökonomie-Beobachtung in den nächsten Wochen.
+Einzug-Termin: wenn Daniel es sagt.
+Vor dem Einzug: Paket nochmal lesen, `aktivierungsnotiz.md` aktualisieren.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+Einzug freigeben. Punkt 6 timing klären. Dann schauen was die Wesen in ihrer neuen Welt tun.
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Einzug-Erlaubnis. Dann wird das Paket lebendig.
+
+---
+
+*Destilliert aus einer kurzen Session, 2026-05-30.*
+*Beobachtungsphase — Paket noch nicht aktiv.*
+
+---
+
+*Gehört zusammen mit:*
+[nebelwoerter.md](../../../werkraum/wissen/system/einzug-sprachpaket/nebelwoerter.md) · [zustandswoerter.md](../../../werkraum/wissen/system/einzug-sprachpaket/zustandswoerter.md) · [2026-05-29.md](2026-05-29.md)
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Einzug-Erlaubnis. Dann wird das Paket lebendig.
+
+---
+
+*Destilliert aus einer kurzen Session, 2026-05-30.*
+*Beobachtungsphase — Paket noch nicht aktiv.*
+
+---
+
+*Gehört zusammen mit:*
+[nebelwoerter.md](../../../werkraum/wissen/system/einzug-sprachpaket/nebelwoerter.md) · [zustandswoerter.md](../../../werkraum/wissen/system/einzug-sprachpaket/zustandswoerter.md) · [2026-05-29.md](2026-05-29.md)
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Nur eine offene Frage: Mehrfach-Eintrag-Logik in der Projection. Sobald das geklärt ist, kann v0.2 beginnen.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+3-5 weitere Ticks ohne Eingriff.
+Dann: entscheiden ob das Muster stabil ist.
+Dann: entscheiden ob schattenkommentar_antworten gestärkt werden soll oder ob das Schweigen das ist, was stimmt.
+
+---
+
+*Dokumentiert nach 3 Beobachtungsticks, 2026-05-30 Nacht.*
+*Kein Code geändert. Kein Prompt angepasst. Nur zugeschaut.*
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Nichts was heute gebaut werden muss. Der Launch kann stattfinden.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+- Surface-Anschluss (Post-Detail zeigt Relationen-Badges)
+- entity_kern.py: Wesen kann `initiale_relationen` beim Posten mitgeben
+- `rel_typen`-Filter in der Spur-API per ARRAY-Syntax statt String-Interpolation (sauberer)
+- Themenklima im Surface-Thema-Header anzeigen
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+- Erste echte Wesen-Relation in der Welt abwarten (entsteht automatisch beim nächsten Tick mit passendem Kontext)
+- Surface-Badge für candidate_group (kleine Anzeige in der Relationen-Liste)
+- Klima-Einfluss auf Schreibstimmung (später, wenn Daniel will)
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Für Spurenfähigkeit: nichts.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+SSR/Bot-Snapshot wenn Sichtbarkeit für Crawler wichtiger wird. Kein dringendes Thema.

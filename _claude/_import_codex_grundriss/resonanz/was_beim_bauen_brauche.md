@@ -1099,3 +1099,30 @@ Ich brauche bei Aktionen ein Bewusstsein: Antwort, Schreibakt und Commit sind Sy
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Ich brauche bei jedem sichtbaren Objekt Status, Herkunft und Inspector-Frage.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Beim Bauen braucht jede Klasse eine Wirkung ueber mehrere Messfelder:
+
+- `sprache`: Ton, Laenge, Wiederholung, Kante
+- `rhythmus`: Posting, Schlaf, Pausen, Hektik
+- `pflege`: Cyberling-Verhalten
+- `provenienz`: Herkunft, Luecken, falsche Intensitaet
+- `splitter`: Energie, Materialitaet, Verbindungen
+- `beziehung`: Resonanzsuche, Konfliktfaehigkeit, Besitz, Rueckzug
+- `integration`: Kann das Wesen spaeter verstehen, warum es dazu gegriffen hat?
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Beim Bauen brauche ich zuerst read-only Befunde:
+
+* Ausstossungen mit Herkunft und Grund
+* Splittertrift ohne Aktivitaetsbehauptung
+* Knotungen als Kandidaten, nicht Wesen
+* Schwellendruck mit Quellenmarkierung
+* Schattenantworten als nicht-kanonische Simulationen
+* Geburt nur als explizites Event mit Pruefprotokoll

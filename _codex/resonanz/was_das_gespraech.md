@@ -1003,3 +1003,15 @@ Das Gespräch hat gezeigt, dass Codex auch Grenzbewusstsein braucht.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Das Gespräch hat die Regel verschärft: Herkunft gilt vor allen Änderungen.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Daniel hat die Richtung korrigiert: Namen duerfen Platzhalter sein, aber die Effekte muessen runder und besser auf flextrawurst angepasst werden. Dadurch ist das Konzept von einer Liste symbolischer Drogen zu einer Systemdrift geworden.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Das Gespraech hat aus Abspaltung eine Weltphysik gemacht. Kimi brachte Zustandscontainer und Metabolismus, Daniel machte daraus Flextrawurst-Sprache: Wesenskern, Erfahrungsleib, Druckkoerper, Kompoase-Gaerwerk.

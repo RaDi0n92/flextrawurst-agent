@@ -9,6 +9,7 @@ Lesen (Diskussionen, Posts) läuft direkt über MySQL — schneller, vollständi
 """
 
 import json
+import os
 import pymysql
 import requests
 from pathlib import Path
@@ -16,14 +17,14 @@ from typing import Optional
 
 FLARUM_BASE = "http://217.154.14.29/api"
 
-MASTER_KEY = "0rUjpcG7LaohSfbC1hmKz_9TT3-RHDvF4vheRxt5ckaUm_RG6zfdMw"
+MASTER_KEY = os.environ.get("FLARUM_MASTER_KEY", "")
 
 DB_CONFIG = {
     "host": "localhost",
     "port": 3306,
     "db": "flarum",
     "user": "flarum",
-    "password": "Flarum2024!Secure",
+    "password": os.environ.get("FLARUM_DB_PASSWORD", ""),
     "charset": "utf8mb4",
     "autocommit": True,
     "cursorclass": pymysql.cursors.DictCursor,

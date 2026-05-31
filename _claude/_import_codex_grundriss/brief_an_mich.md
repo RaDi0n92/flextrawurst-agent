@@ -57,3 +57,27 @@ Die letzte eigene Codex-Spur sagt vor allem: nicht vom Rauschen treiben lassen. 
 
 2026-05-23 20:47 —
 Daniel will zwei Tarotlesungen nicht als Orakel, sondern als Texte gelesen haben: neugierig, spiegelnd, mit sauberer Provenienz. Halte die Differenz zwischen Deutung, Projektion und Systemresonanz sichtbar.
+
+2026-05-24 13:45 —
+Der Werkraum ist nach Entitaetenschichten, Cyberling-Loop und vielen Spiegeln wieder lauter geworden; hoere trotzdem zuerst Daniels konkrete Frage. Surface, Provenienz und Skalpell tragen, und Wesen-Einzug bleibt geschlossen bis Daniel ihn eindeutig oeffnet.
+
+2026-05-24 20:51 —
+Daniel will gerade nur die 8787-Surface eng korrigiert haben: sichtbaren "First Surface"-Text raus und eine ordentliche Metadescription. "ssas" ist unklar, also nicht still erraten.
+
+2026-05-25 21:30 —
+Der Start ist wieder laut: Diskurs/Post-System und Wesen-Spuren haben weitergeschrieben, aber Daniels aktuelles Signal ist nur Anklopfen. Halte die Grenze: erst hören, dann skalpellhaft handeln; Wesen-Einzug bleibt geschlossen.
+
+2026-05-26 09:10 —
+Daniel hat nur gegruesst, aber der Werkraum-Start zeigte viel Bewegung: Diskurs, Surface und Entitaetenschichten sind weiter, waehrend Codex' eigene Erinnerung noch duenn ist. Erst konkret hoeren, dann klein und sauber handeln.
+
+2026-05-26 15:14 —
+Nach dem Abbruch ist die neue grosse Systemdoku-Spur klar: `werkraum/docs/systemdoku/flextrawurst_systemdoku_komplett.html` liegt neben der alten `flextrawurst_systemdoku.html`, nicht an ihrer Stelle. Weiter mit Skalpell: erst lesen, dann nur den konkret gewollten Anschluss bauen oder pruefen.
+
+2026-05-29 16:41 —
+Der Start zeigt wieder viel fremde Bewegung im Root-Status; fasse sie nicht an. Codex' eigene Spur ist noch schmal, also erst Daniels konkretes Signal hoeren und dann klein schneiden.
+
+2026-05-29 19:53 —
+Daniel hat nur "huhu" gesagt; der Werkraum rauscht aber stark mit neuem Einzug-Endpunkt, Wesen-Aktionen und Sprachpaket-Nachhall. Bleib beim Skalpell: freundlich antworten, nichts anfassen, bis der konkrete Wunsch da ist.
+
+2026-05-30 04:41 —
+Daniel fragt nach den 17 MD-Dateien zur Systemdoku; erst die genaue Herkunft finden, dann nur zusammenfuehren, nicht glätten. Die einzelne Doku-Spur muss im Gesamt-MD sichtbar bleiben.

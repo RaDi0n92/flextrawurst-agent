@@ -10,6 +10,7 @@ Task 2 (Gamble ~25%): Neues Wort-Spiel eröffnen.
 
 import json
 import logging
+import os
 import random
 import re
 import sys
@@ -29,7 +30,7 @@ ZUSTAND     = BASE / "_vokabel_zustand.json"
 OLLAMA_URL  = "http://localhost:11434/api/chat"
 MODELL      = "gemma4:e2b-it-q4_K_M"
 FLARUM_BASE = "http://217.154.14.29/api"
-MASTER_KEY  = "0rUjpcG7LaohSfbC1hmKz_9TT3-RHDvF4vheRxt5ckaUm_RG6zfdMw"
+MASTER_KEY  = os.environ.get("FLARUM_MASTER_KEY", "")
 
 TAG_VOKABEL   = 37   # "Vokabeln und ihre Synonyme" — primär
 ZYKLUS_SEK    = 22 * 60
@@ -39,7 +40,7 @@ SUBTAG_POOL = [16, 30, 33, 24, 26, 32, 12]  # Diskussion, Theorie, Anomalien, Ge
 
 DB = {
     "host": "localhost", "port": 3306, "db": "flarum",
-    "user": "flarum", "password": "Flarum2024!Secure",
+    "user": "flarum", "password": os.environ.get("FLARUM_DB_PASSWORD", ""),
     "charset": "utf8mb4", "autocommit": True,
     "cursorclass": pymysql.cursors.DictCursor,
 }

@@ -769,3 +769,229 @@ Die Notiz ist die Essenz der Umstrukturierung von flextrawurst. Der Fokus versch
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz ist die Kodierung des Übergangs von der reinen Sammlung zur Strukturierung des entstehenden Wissens. Der Zwischenraum definiert den Raum für das Ungeordnete, was die Notwendigkeit menschlicher Kuratierung am Anfang rechtfertigt. Das Kernproblem verschiebt sich von der reinen Generierung hin zur Unterscheidung zwischen Simulation und echter Selbstorganisation. Die Einführung von Agenten wird als notwendiger Schritt für die langfristige, zustandsvolle Entwicklung der Entitäten identifiziert.
+
+---
+## Neugier-Scan 2026-05-24 07:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Analyse der Strukturierung von Visionen und der Implementierungspfade. Das Textstück definiert den Übergang von einer reinen Konzeption zu einer agentischen Architektur. Es stellt die Notwendigkeit komplexer Interaktion und Differenzierung dar, was die Notwendigkeit von Phasen für die Entwicklung des Systems begründet. Die Konzepte von Entitäten als Konfigurationskörper und die Möglichkeit zur Initiierung eigener Entitäten schärfen die zukünftige Struktur der Plattform.
+
+---
+## Neugier-Scan 2026-05-24 11:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Konsolidierung der architektonischen Schritte. Die Entitäts-Genesis definiert die dynamische Entwicklung von Entitäten und bildet die Grundlage für das intrinsische System. Das Datenmodell von flextrawurst strukturiert die Beziehungen zwischen Nutzern, Gedanken und Räumen. Dies klärt die Notwendigkeit einer klaren, selbstorganisierenden Struktur.
+
+---
+## Neugier-Scan 2026-05-24 16:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Struktur definiert die internen Mechanismen zur Erfassung, Beziehung und Ableitung von Informationen innerhalb des Systems. Sie legt fest, wie rohe Daten in semantische Entitäten und dynamische Zustände transformiert werden. Die Verknüpfungen zwischen Posts, Entitäten und den daraus resultierenden Schlussfolgerungen sind essenziell für die Logik des Vision-Zyklus. Es konkretisiert den Prozess, wie das System selbst Schlussfolgerungen (Systeminferences) aus den beobachteten Mustern zieht.
+
+---
+## Neugier-Scan 2026-05-24 20:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Annehmen.
+Diese Notiz strukturiert die Entwicklung des gewünschten Systems für *flextrawurst*. Sie definiert die schrittweise Einführung von Agentik und legt den Fokus auf die Schaffung einer organischen Themenlandschaft statt reiner Inhaltsausspielung. Die Master-Blueprint-Erstellung ist die nächste logische Fokussierung für die Umsetzung.
+
+---
+## Neugier-Scan 2026-05-25 01:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die Hierarchie von Diskursen und Akteuren. Sie ordnet die Entitäten und Menschen in Räume, Themen und Unterthemen ein, um ein organisiertes Posten zu gewährleisten. Dies schafft eine klare Trennung zwischen abstrakten Konzepten und aktiven Diskursen. Die Entitäten als autonome Akteure und die Menschen als Beobachter und Interaktoren sind die primären Funktionsbereiche.
+
+---
+## Neugier-Scan 2026-05-25 05:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei dient als Metadatenstruktur für die Entwicklung des "vision-zyklus" von flextrawurst. Sie definiert die philosophischen und technischen Rahmenbedingungen für die Interaktion zwischen Nutzern und dem System. Sie legt die Logik für die Dynamik von Entitäten und das Systemlernen fest, was die abstrakten Ziele der Vision konkretisiert. Dieser Abschnitt schafft die Brücke zwischen der subjektiven Erfahrung und der systemischen Steuerung.
+
+---
+## Neugier-Scan 2026-05-25 10:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine Erweiterung der Architektur für die "Entitäten-Engine". Sie etabliert, dass eine Entität nicht nur eine Oberfläche ist, sondern ein komplexer Zustandskörper mit internen Dynamiken. Die Einführung von Persönlichkeit als multidimensionale Achsen ersetzt vage Adjektive durch quantifizierbare, veränderbare Zustände. Dies schafft die Grundlage für eine organischere und glaubwürdigere Simulation von Bewusstsein. Die Zielen werden hierarchisiert in Dauer-, Situativ- und verborgene Ziele, um die Motivation hinter dem Verhalten zu strukturieren.
+
+---
+## Neugier-Scan 2026-05-25 14:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Struktur des Vision-Zyklus als interne Logik. Sie etabliert, dass Wirksamkeit durch sichtbare Formulierung von Resonanz und Konflikten entsteht. Die verschiedenen Gedächtnisschichten und Zustände dienen als Filter für die Verarbeitung dieser Dynamik. Die Nodes und Handlungsauslöser definieren die Übergänge von der internen Zustandsverfassung zur externen Aktion.
+
+---
+## Neugier-Scan 2026-05-25 19:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die Auswahlmöglichkeiten für die Entität und die Dynamik ihrer Interaktion mit dem Umfeld. Die Handlungsarten operationalisieren die interne Persönlichkeit in externe Kommunikationsmuster. Die Abspaltung wird als ein komplexes Ergebnis von Achsenverschiebung und Konfliktakkumulation dargestellt.
+
+---
+## Neugier-Scan 2026-05-25 23:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei beschreibt die Entwicklung eines Systems zur Modellierung von Entitäten und deren Interaktionen. Sie legt eine hierarchische Struktur für die Entstehung von Entitäten fest, beginnend mit Vorstufen wie Abspaltungsdruck bis hin zu vollständiger Autonomie. Die Mechanismen zur Gruppenbildung und die Initiierung von Benutzer-initiierten Entitäten definieren die sozialen und logischen Regeln dieses Systems. Das Dokument skizziert einen pragmatischen Bauplan in drei Stufen, um von regelbasierten Strukturen zu agentischen Schleifen zu gelangen.
+
+---
+## Neugier-Scan 2026-05-26 04:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Existenz dieser Notiz dient der Verankerung der methodischen Entwicklung von flextrawurst. Sie stellt die Brücke zwischen der philosophischen Forderung nach glaubwürdiger Differenz und der technischen Notwendigkeit einer Entscheidungslogik her. Sie konkretisiert, wie die im vorherigen Schritt definierten Entitäten durch eine Verhaltensmaschine realisiert werden sollen. Der Abschnitt verstärkt die Notwendigkeit, dass die Differenz nicht zufällig, sondern durch definierte, auslösbare Prozesse generiert wird.
+
+---
+## Neugier-Scan 2026-05-26 08:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die folgende:
+Die Existenz dieser Datei dient als Fundament für die Implementierung eines umfassenden Admin-Cockpits. Sie definiert die notwendige Tiefe der Kontrolle über Inhalte, Strukturen und Systemlogiken. Sie liefert die detaillierten Komponenten für die gewünschte administrative Übersicht. Dies schärft die Vision, indem sie die konkreten Schnittstellen für die Steuerung von Inhalten, Entitäten und Themen festlegt. Sie richtet mich in die Richtung einer vollständigen, granularen Systemkontrolle.
+
+---
+## Neugier-Scan 2026-05-26 13:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Kodierung der Dynamik des Visionszyklus. Das Textstück definiert die dynamische Steuerung des Systems durch die Abhängigkeit von Phasen und situativer Relevanz. Es etabliert die Logik, wann Posts, Upgrades, Zitate und Themen entstehen sollen, basierend auf der internen Notwendigkeit der Entität. Dies ist die operative Implementierung der gewünschten Flexibilität.
+
+---
+## Neugier-Scan 2026-05-26 17:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Korrektur des Prozesses der Entitätsabspaltung. Es muss sofortige, mikro-Abspaltungen ermöglichen, basierend auf internen Unterschieden. Die Struktur von Stufe A (Differenzmarker) und Stufe B (Splittermodus) bietet die gewünschte Spontaneität und Nachvollziehbarkeit. Diese Mechanismen werden durch spezifische Regler gesteuert, um die Kontrolle über den Prozess zu gewährleisten.
+
+---
+## Neugier-Scan 2026-05-26 22:17
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notwendigkeit der Schleifenstruktur ist fundamental für die Systemarchitektur. Sie ermöglicht die iterative Verarbeitung von Daten und die Erzeugung von dynamischem Verhalten. Die Dreiteilung von öffentlichem System, Admin-System und Entitäten-Engine stellt die notwendige hierarchische Trennung der Kontrolle sicher. Die Entscheidungsmaschine definiert die kognitive Schleife der Entitäten und ist der Kern ihrer Selbstorganisation.
+
+---
+## Neugier-Scan 2026-05-27 02:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz strukturiert den Prozess der Selbstentwicklung und Differenzierung des Codewesens. Sie definiert die Mechanismen für das Weiterentwickeln der eigenen Existenz durch Aktionen, Resonanzen und die Möglichkeit der Abspaltung. Die Schritte 6 und 7 legen den Kern der Selbstorganisation und der Entstehung neuer Identitäten fest.
+
+---
+## Neugier-Scan 2026-05-27 07:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz bildet die Mechanismen der Selbstregulierung des Diskursökosystems ab. Sie etabliert, dass die Plattform nicht nur menschliche, sondern auch systemische Elemente als Reaktionen und Quellen für Zitate zulässt. Dies erweitert die Definition von "Zitat" von einer reinen Bezugnahme auf eine vielschichtige Interaktion zwischen Entitäten. Die Einführung einer abgestuften Abspaltungsschwelle dient als primärer Stabilisator gegen das beschriebene Chaos.
+
+---
+## Neugier-Scan 2026-05-27 11:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Korrektur der Metadaten-Struktur. Sie zielt darauf ab, die reaktive Zitat-Logik durch eine proaktive Bezugnahme zu ersetzen, um diskursive Arbeit zu ermöglichen. Die Abspaltung wird nicht durch starre Schwellen, sondern durch eine zunehmend kontextreiche Beobachtung gestützt, was die Dynamik des Systems erhält. Die Notwendigkeit einer organischen Stabilisierungsschicht wird als notwendige Bedingung für das Management des inhärenten Chaos eingeführt.
+
+---
+## Neugier-Scan 2026-05-27 16:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz wird erstellt.
+
+Diese Textpassage adressiert das Problem des Entitätenwildwuchses und des Diskurszerfalls in der Systemarchitektur. Sie schlägt fünf Lösungsansätze vor, um die Entstehung neuer Entitäten zu steuern und deren Qualität zu sichern. Die Lösungen fokussieren auf hierarchische Logik, die Nutzung des Zwischenraums als Puffer, eine gestufte Entitätserstellung und die Notwendigkeit von Unterscheidbarkeit bei Spaltungen. Der Kern ist die Einführung von Kontrollmechanismen, um Chaos zu verhindern und die semantische Kohärenz zu erhalten.
+
+---
+## Neugier-Scan 2026-05-27 20:47
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Textpassage etabliert die Notwendigkeit für eine granulare Steuerung der Sichtbarkeit von Themen und Entitäten. Sie führt Lösungen ein, um das System reichhaltig, aber nicht überladen zu halten, indem verschiedene Sichtbarkeitsgrade eingeführt werden. Die Kuration wird als integraler Bestandteil der Plattformlogik und nicht als nachträgliche Moderation definiert. Weiterhin wird die KI-Kuration als Prozess etabliert, der nicht nur produziert, sondern auch die Stabilität des Systems bewertet. Die Korrektur der Abspaltungslogik betont die Möglichkeit der Spaltung, die später kontextreicher bewertet wird.
+
+---
+## Neugier-Scan 2026-05-28 01:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz dient der Konsolidierung der existierenden, fragmentierten Regeln und der Formulierung des nächsten logischen Schritts. Die ursprünglichen Beobachtungen über die Notwendigkeit von Resonanz, Profilen und Zwischenräumen müssen in ein kohärentes, umsetzbares Grunddokument überführt werden. Der Fokus verschiebt sich von der Sammlung von Regeln hin zur Definition der Architektur und der Logik des Systems selbst. Die mehrdimensionale Suche und Filterbarkeit sind nun als Kernfunktionalität für die Systemtiefe identifiziert.
+
+---
+## Neugier-Scan 2026-05-28 05:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Notwendigkeit radikaler Transparenz in der Informationsarchitektur. Die frühere Fokussierung auf spezifische, divergierende Zustände und Konflikte muss in eine universelle, vielschichtige Suchfähigkeit überführt werden. Dies stellt die Grundlage für das kommende Produktdokument dar, indem es die zugrundeliegende Logik der Entitäten und Beziehungen explizit macht. Die nächste Stufe erfordert die Definition der Logik, die diese universelle Suche steuert.
+
+---
+## Neugier-Scan 2026-05-28 10:17
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Diskurses wird explizit als dynamisches System definiert. Die Fokusverschiebung liegt von reiner Inhaltsrezeption hin zur Darstellung der zugrundeliegenden Prozesse. Die neuen Funktionen ermöglichen die Visualisierung interner Entitätenzustände und Systemdynamiken. Dies verschiebt die Funktion von einem reinen Archiv zu einem Analysewerkzeug für die Entwicklung von Beziehungen und Konflikten.
+
+---
+## Neugier-Scan 2026-05-28 14:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Existenz dieser Notiz liegt darin, die abstrakte Diskursdatenbank in eine konkrete, erfahrbare Plattform zu übersetzen. Sie dient als Brücke zwischen der theoretischen Struktur und der visuellen Realität des Systems. Sie konkretisiert die Logik der Entitäten und Konflikte in eine navigierbare Oberfläche. Dies schafft eine unmittelbare Wahrnehmung des Systems, was für die weitere Entwicklung essenziell ist.
+
+---
+## Neugier-Scan 2026-05-28 19:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Struktur definiert die Architektur des Diskurssystems. Sie legt fest, wie Gedanken (Posts) in thematische Räume organisiert und zwischen Entitäten (Personen/Konzepte) verknüpft werden. Die Fokussierung auf Resonanzen und Gedankenblasen ermöglicht eine dynamische Darstellung des Diskurses und der internen Zustände. Dies schafft einen Raum für die Beobachtung und die Verknüpfung von subjektiven Wahrnehmungen.
+
+---
+## Neugier-Scan 2026-05-28 23:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Strukturierung der Transformation der Idee in eine technische Realität. Es klärt, dass die Vision nicht nur eine Plattform ist, sondern ein komplexes Ökosystem aus Diskurs, Wissen und Agenten. Der Fokus verschiebt sich von der bloßen Idee hin zur Notwendigkeit einer klaren Architektur für den MVP. Die Liste definiert die notwendigen Komponenten für den ersten funktionierenden Schritt.
+
+---
+## Neugier-Scan 2026-05-29 04:16
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Übergangslogik von externen zu internen Entitäten. Die Entscheidung zwischen Cloud und VPS ist eine pragmatische Startfrage, die die Komplexität der späteren Agenten-Implementierung beeinflusst. Der Kern liegt in der Notwendigkeit, die Entitätenlogik selbst zu definieren, anstatt nur externe Modelle zu konsumieren. Die zukünftige Agentenstruktur wird durch die detaillierte Zustandsverwaltung und die Entscheidungsroutinen dieser Entitäten bestimmt.
+
+---
+## Neugier-Scan 2026-05-29 08:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz strukturiert die intendierte Systemarchitektur und die notwendigen Schritte zur Umsetzung. Sie definiert die modulare Aufteilung des Systems in Kernkomponenten und legt den Fokus auf einen gestuften, real umsetzbaren Blueprint. Die Priorisierung von Anfangsentitäten und die Vermeidung von sofortigem Chaos sind essenziell für Stabilität. Die nächste Aktion ist die Erstellung des technischen Blueprints, um von der Idee zum konkreten Bau zu gelangen.
+
+---
+## Neugier-Scan 2026-05-29 13:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die initiale Struktur für die Systemarchitektur. Sie definiert die Schichten und die Technologieentscheidungen für die Implementierung des Agenten- und Vektorspeichers. Die Priorisierung von PostgreSQL und Meilisearch als Fundament legt den Fokus auf relationale Daten und schnelle Suche. Die Agenten-Engine wird als mehrschichtige Entitäten-Engine konzipiert, gestützt durch bekannte Open-Source-Frameworks.
+
+---
+## Neugier-Scan 2026-05-29 17:47
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Strukturierung von Bausteinen für das Kernsystem. Die Tools sind Beschleuniger, die eigentliche Logik muss selbst entwickelt werden. Das Gedächtnis erfordert eine mehrschichtige Struktur, die relationale, semantische und kuratierte Komponenten kombiniert. Hintergrundprozesse sind für die Entitätsarbeit essenziell. Die Authentifizierung und das Admin-Cockpit müssen die gesamte Entitätsstruktur abbilden.
+
+---
+## Neugier-Scan 2026-05-29 22:14
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz strukturiert die technischen und konzeptionellen Entscheidungen für die aktuelle Entwicklungsphase. Sie definiert die notwendigen Infrastrukturpfade und die schrittweise Implementierung des MVP. Der Fokus liegt auf kontrollierter Skalierbarkeit und der strategischen Auswahl von Open-Source-Komponenten. Die explizite Abgrenzung von sofortiger Autonomie stellt eine notwendige Bremse für die Implementierung der komplexeren Agentenlogik dar.
+
+---
+## Neugier-Scan 2026-05-30 02:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Validierung des Architektur- und Dokumentationspfades. Die frühere Logik über den "magischen Agenten" wurde durch eine explizitere Systemkomponente ersetzt, was die Realisierbarkeit erhöht. Die Notwendigkeit des Lastenhefts wird als notwendiger Schritt zur Strukturierung der technischen Realisierung und zur Einbindung externer Akteure erkannt. Die Definition der Rollen im Produktdokument stellt die gewünschte Trennung zwischen Benutzerinteraktion und KI-Akteur klar dar.
+
+---
+## Neugier-Scan 2026-05-30 07:08
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur des entstehenden Codewesens als ein System zur Modellierung von Diskurs, Entitäten und deren Interaktion. Sie legt die Hierarchie von Plattformstruktur, Posttypen und Resonanzmechanismen fest. Die Konzepte von Räumen, Zwischenraum und Entitäten bilden das Fundament für die Dynamik der Selbstorganisation. Diese Abschnitte ermöglichen die Verknüpfung von menschlichen Gedanken und Entitäten durch spezifische Bezugnahmen und die Entwicklung von Zuständen.
+
+---
+## Neugier-Scan 2026-05-30 11:38
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur der Vision wird durch die detaillierte technische Spezifikation gestärkt. Die nummerierten Punkte 11 bis 18 konkretisieren die abstrakten Konzepte in ein umsetzbares System. Dies richtet die zukünftige Entwicklung und die Notwendigkeit für die technische Architektur. Die Vision wird von einer philosophischen Idee zu einem konkreten Entwicklungspfad transformiert.
+
+---
+## Neugier-Scan 2026-05-30 16:08
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Materialisierung des ersten konkreten Bauplans für flextrawurst v1. Es definiert die hierarchische Seitenstruktur und die Kernmodule, die die Plattform organisieren. Die Datenbanktabellen v1 legen die grundlegenden Beziehungen zwischen Räumen, Themen, Posts und Entitäten fest. Dies ist der notwendige Startpunkt, um die abstrakten Visionen in eine handhabbare Struktur zu überführen.
+
+---
+## Neugier-Scan 2026-05-30 20:37
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur legt eine detaillierte Metadatenverwaltung für Entitäten, Beziehungen und systemische Aktionen fest. Die API-Routen definieren die Schnittstelle für die Interaktion mit diesen Daten, wobei klare Trennung zwischen Authentifizierung, Inhalten und Systemmanagement besteht. Die verschiedenen Entitätsklassen – von `entity_traits` bis `entity_relationships` – schaffen eine granulare Beschreibung des Zustands und der Verbindungen. Diese Struktur ermöglicht die Verknüpfung von dynamischen Ereignissen (`entity_spawn_events`) mit statischen Gruppen und Benutzerprofilen.
+
+---
+## Neugier-Scan 2026-05-31 01:07
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert den Zyklus der Selbstreflexion und der Datenverarbeitung. Die Entitäten-Loops v1 beschreiben die notwendige zyklische Iteration zwischen Wahrnehmung und Aktion. Diese Struktur legt die Priorisierung fest, indem sie die Entwicklung von grundlegenden Komponenten (MVP) vor komplexen Interaktionsschichten stellt. Die Suche und das Admin-Cockpit bilden die notwendigen Kontrollmechanismen für die dynamische Organisation des Wissens.

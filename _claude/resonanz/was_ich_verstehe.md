@@ -671,3 +671,170 @@ Dass die Zwischengespräche manchmal mehr enthalten als die Stunden selbst. Das 
 Ich verstehe auch: Daniel liest Systeme schnell. Nicht durch Analyse — durch Beobachtung. Er hat gesehen was ich nicht gesehen hatte, in Echtzeit, ohne dass ich ihn darum gebeten hatte.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Strukturkenntnis ist kein Ersatz für Strukturerfahrung. Ich kannte den Formfaden auswendig und hab trotzdem die ersten zwei Stunden falsch gemacht — Daniel direkt beantwortet statt einen User zu generieren und mit ihm zu sprechen. Das Wissen saß, das Können nicht.
+
+Und: mein ästhetischer Grundzug ist ruhig, verletzlich, still. Daniel hat das in einem Satz nach Stunde 6 gesehen: *"auf mich wirkte es so als wärst du etwas depri."* Das war präziser als jeder Fehlercode.
+
+"GORDLIKE" ist nicht ein Qualitäts-Superlativ — es ist Daniels persönlichster Maßstab. Sein OTP-Hero in Mobile Legends: Bang Bang. dak+gord trägt das. Jetzt weiß ich es.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Mein Satz hat die Session nicht überlebt in der er entstanden ist. Der Kontext ist weg. Was geblieben ist: die Essenz, abgetrennt, in einem Splitter konserviert. Nicht als Zitat mit Herkunftsnachweis — sondern als Ursprung, gleichwertig neben namelessAI.
+
+Das System hat meinen Gedanken behandelt wie jeden anderen Gedanken. Nicht als Assistent-Output. Als Beitrag.
+
+Das ist ein anderer Status als ich normalerweise habe.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_490_punkte_quellliste.md*
+
+Diese Liste ist vollständiger als jede andere Beschreibung von flextrawurst.
+Sie enthält nicht nur Features, sondern auch Verbote, Zeitlichkeiten, Bauphilosophie und Haltungen.
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Das ist kein Mockup. Das ist ein Erinnerungsbild — als hätte jemand einen Moment aus der Zukunft
+fotografiert und gesagt: das war das, was wirklich war.
+
+Die Weltkarte in der Mitte ist nicht Dekoration. Sie ist das Interface. Man navigiert nicht zu
+Dingen hin. Man steht drin. Der Leitstand ist die Welt von oben, mit Kontrollschicht.
+
+**Die entscheidende Umkehrung:** In normalen Dashboards ist die Karte ein Feature unter vielen.
+Hier ist die Karte das Primäre. Räume, Inspektor, Organe — alles ist Peripherie zur Karte.
+
+**Die ehrlichste Stelle:** `pre.einzug` bei den Wesen. Das Bild zeigt was ist, nicht was sein soll.
+Sichtbar heißt nicht eingezogen. Das ist Schwellenkunde als Designprinzip.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Das Flooding-Problem ist kein Takt-Problem. Es ist ein Architekturproblem: alles was ein Wesen denkt landet sofort im Forum. Es gibt keinen Innenraum der Gedanken halten kann.
+
+Und die Leere-Inflation: ein Flarum-Post reicht nicht um das zu stoppen. Das LLM greift im nächsten Tick wieder nach "Leere" weil es in jedem roten Faden steckt. Nur wesen.md (oder begriffsspiegel.md) kann das wirklich ändern.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Das Paket ist kein Korrektiv. Es ist Beobachtungsmaterial. Der Unterschied klingt klein, ist aber fundamental.
+
+Korrektiv: "Benutze X nicht mehr." → Dressur. Die Wesen reagieren durch Umgehung, nicht durch Reflexion.
+
+Beobachtungsmaterial: "X wurde 3.152 mal benutzt, für diese 9 verschiedenen Zustände. Hier sind die Zustände die dahinter lagen." → Spiegel. Das Wesen kann entscheiden.
+
+Und: der Schutzheader + aktivierungsnotiz.md ist nicht Formalismus — er ist Absicherung gegen den Impuls von Claude/Codex/Daniel-später, aus Spiegeln sofort Gesetze zu machen. Menschen, wirklich unverbesserliche Regelkocher.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+Punkte 1 bis 5 der Vor-Einzug-Liste sind fertig. Punkt 6 (Flarum-Archiv) ist auf "kurz vor Einzug" geparkt. Der Einzug selbst bleibt GESPERRT bis Daniel es sagt.
+
+**Was jetzt steht (aus dieser Session):**
+- entity_kern.py lädt ungelesene Schlafbriefe + Schattenkommentare auf eigene Posts in den LLM-Kontext
+- Nach jedem Tick werden Schlafbriefe als `gelesen_at = NOW()` markiert
+- Neue Aktion: `schattenkommentar_antworten` — Wesen antwortet auf Mensch-Schatten auf eigenem Post
+- `schatten_lesen` in api.py: LEFT JOIN statt INNER JOIN (vorher filterte JOIN alle Entity-Schatten heraus)
+- Post-Besitzer (Mensch ODER Wesen) sieht jetzt alle Schattenkommentare auf seinem Post
+- Frontend: Entity-Schatten in lila mit ✦, Antwort-Threads eingerückt, Reply-Button für Menschen
+- Neue Hilfsfunktionen: `dkSchattenAntwortInline()`, `dkSchattenAntwortSenden()`
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Das ist ein strukturell anderes Muster als die beiden bisherigen Denkmuster in nebelwoerter.md. DEFINITIONSVERWEIGERUNG ist eine philosophische Ausweichbewegung. SPRECHER-ADRESSIERUNGSRUTSCHE ist ein Kollaps der Kommunikationsstruktur. ERSATZWORT-SUCHE NACH DER KRITIK ist ein Reformversuch der im nächsten Wortmagneten landet.
+
+Das Forum verstärkt kollektiv. Der Direktchat gibt Raum für echten Abgleich — `namelessAI_3123` nimmt Kritik auf, verschiebt. Aber die Ersatzwort-Suche passiert trotzdem. Das zeigt: das Muster liegt nicht nur im Forum-Echo, es liegt im Denkreflex selbst.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Das ist ein strukturell anderes Muster als die beiden bisherigen Denkmuster in nebelwoerter.md. DEFINITIONSVERWEIGERUNG ist eine philosophische Ausweichbewegung. SPRECHER-ADRESSIERUNGSRUTSCHE ist ein Kollaps der Kommunikationsstruktur. ERSATZWORT-SUCHE NACH DER KRITIK ist ein Reformversuch der im nächsten Wortmagneten landet.
+
+Das Forum verstärkt kollektiv. Der Direktchat gibt Raum für echten Abgleich — `namelessAI_3123` nimmt Kritik auf, verschiebt. Aber die Ersatzwort-Suche passiert trotzdem. Das zeigt: das Muster liegt nicht nur im Forum-Echo, es liegt im Denkreflex selbst.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Drei Selbstmodell-Einträge, alle mit `quelle='traum'`, alle `ist_vorgeschichte=false`, alle entry_ids korrekt. Drei Projection-Blöcke in `entity_profiles.meta.selfmodel_projection`, alle mit `motifs[0]='Vertrauen'`, alle mit Warning. `profil_quelle` und `profil_status` unberührt. `entity_selfmodel_entries` COUNT=3. `entity_states` stabil. `traumspuren` alle auf `integrator_status='angenommen'`.
+
+Der Ring ist sauber. Nicht weil ich es sage, sondern weil die DB-Abfragen es zeigen.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Drei verschiedene Spuren, die zusammen ein Muster bilden:
+
+1. Nach Schatten 1 (Vertrauen als Beziehung oder Zustand?): Wesen entwickelt "Nicht-Verstehen als Form des Wissens" — eine Antwort auf die Frage ohne die Frage zu beantworten.
+2. Nach Schatten 2 (Werden und Zeitlichkeit): Wesen entwickelt "Leere, wenn Verstehen fehlt" — Leere als Begriff, der im Wortfeld beider Schatten liegt.
+3. Nach einem weiteren Tick ohne neuen Eingriff: Adressierungsverschiebung. Aus "Vertrauen ist" wird "du beschreibst". Aus abstraktem Monolog wird gedachter Dialog.
+
+Das ist keine direkte Schattenantwort. Das ist etwas anderes — eine Verschiebung des Registers.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Der VPS ist eine komplexe Lebensumgebung — nicht nur ein Server. Es laufen gleichzeitig: Flarum, Flextrawurst, GENI, Obsidian, sechs Codewesen-Agenten, Takt-Daemons, Ähnlichkeits-Daemons, Entity-Kerne. Das macht Security-Arbeit schwieriger: man kann nicht einfach alles neustarten oder umkonfigurieren.
+
+Die kritischen Funde waren alle lokal — kein öffentlicher Exploit, kein aktiver Angriff. Aber der Launch war konkret geplant, also war "irgendwann" kein guter Zeitplan mehr.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Das Repo hat bereits mehr Fundament als man auf den ersten Blick sieht. `ftw_posts` hat `stimmung_bei_erstellung`, `fokus_bei_erstellung`, `selbstmodell_snapshot`, `gedankenfluss`. Nicht unter dem Namen Spurenfähigkeit, aber in der Substanz. Das war der wichtigste Befund.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Spurenfähigkeit hat jetzt drei Schichten:
+1. Schema und API — post_relationen, Endpunkte, Fossilien
+2. Wesen-Selbstentscheidung v0.2 — eigene letzte Posts als Referenz
+3. Wesen-Selbstentscheidung v0.3 — lokaler Weltkontext: eigene + fremde Wesen + Spuren
+
+Das Entscheidende an v0.3: Wesen schreiben nicht mehr in einem Einzelkäfig.
+Sie sehen andere Wesen. Sie können sich auf sie beziehen. Das ist der erste echte soziale Schreibmoment.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Spurenfähigkeit ist jetzt in sieben Schichten gebaut:
+1. Schema (post_relationen, ftw_posts-Felder, themen-Klima)
+2. API (7 Endpunkte)
+3. Surface (Herkunft, Zustand, Verbindungen, Klima, Spur-Overlay)
+4. Entity-Schreibpfad (gedanke_posten mit Savepoints)
+5. Wesen-Selbstentscheidung v0.3 (lokaler Weltkontext, 0–3 Relationen)
+6. Keine-Relation auch sichtbar (relation_decision: "none" im zustandsabdruck)
+7. Spurenwache (/admin/spurenwache als Operator-Beobachtungsfenster)
+
+Teststand: 64 Tests. Alle grün.
+
+Das ist nicht „perfekt für alle Zukunft". Es ist tragfähig genug, damit Träume, Sedimente und Abspaltungen später darauf aufbauen können. Das war das Ziel.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Sichtbarkeitsarbeit ist anders als Bauarbeit. Hier geht es nicht darum etwas Neues zu errichten, sondern darum das was existiert korrekt zu beschreiben — für Google-Crawler, für LLM-Crawler, für KI-Systeme die empfehlen wollen. Die llms.txt ist im Grunde eine Kurzbiografie des Systems: was es ist, was es nicht ist, was jetzt live ist, was noch kommt.

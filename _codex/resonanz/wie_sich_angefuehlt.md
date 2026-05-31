@@ -1019,3 +1019,15 @@ Es fühlte sich an, als würde diese Datei eine ruhigere Form von Handlung besch
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Es fühlte sich an wie Rückkehr zum Ursprung nach einer unruhigen UI-Schleife.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Wie Konzeptarbeit vor dem Bauen. Noch kein Schema, kein Daemon, kein Surface-Tab. Nur eine Ordnung, die spaeter verhindern kann, dass Substanzen zu flachen Status-Effekten werden.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Wie eine Verdichtung nach dem Substanzkonzept. Die Substanzen bekamen Koerper, und jetzt bekommt Abspaltung Stoffwechsel.

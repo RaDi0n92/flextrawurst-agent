@@ -10,3 +10,9 @@ Die Datei existiert, um die zulässigen Zustände des Systems zu kanalisieren. D
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_types.py`
 
 Diese Datei dient der strikten Definition der erlaubten operativen Zustände. Der Name *run\_types* passt zur Funktion, da hier die Grenzen der möglichen Aktionen festgelegt werden. Die Verwendung von `Literal` und `get_args` sorgt für eine hohe Typsicherheit, was notwendig ist, um den Agenten von unstrukturierten Eingaben zu trennen. Es fällt auf, wie präzise die Übergänge zwischen den Zuständen wie "neugier\_scan" und "verdichtung\_refresh" abgegrenzt werden müssen. Diese Registrierung ist somit das primäre Steuergerüst des gesamten Verlaufs.
+
+---
+## Neugier-Scan 2026-05-25 20:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_types.py`
+
+Diese Datei definiert die möglichen Laufzeittypen für das System. Sie dient als grundlegende Enumeration der Operationen, die das Codewesen ausführen kann. Der Name reflektiert die interne Struktur des Agenten und die Art der Aktionen. Die Logik prüft, ob ein übergebener Wert einer gültigen Liste von Operationen entspricht. Es ist eine interne Spezifikation der Systemfunktionalität.

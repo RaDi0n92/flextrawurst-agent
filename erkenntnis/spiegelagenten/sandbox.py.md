@@ -22,3 +22,9 @@ Außerdem: Code in eine `/tmp`-Datei zu schreiben ist notwendig für `subprocess
 
 → Das "Verbotene Muster-Set" ist jetzt ein "Verbotener AST-Knoten-Set" — konzeptuell dasselbe, technisch weit robuster.
 → Drei neue Tests belegen die Lücken die geschlossen wurden: `from subprocess import`, `exec()`, `__import__()`.
+
+---
+## Neugier-Scan 2026-05-26 09:13
+Originaldatei: `/root/werkraum/agent/dak_gord_system/sandbox.py`
+
+Diese Datei ist ein Mechanismus zur Begrenzung und Überprüfung von Codeausführung. Sie existiert, um eine sichere Sandbox für potenziell gefährlichen Code zu schaffen. Der Name spiegelt die Funktion als ein "Werkraum" für die Analyse und Isolierung von Code wider. Der Inhalt implementiert eine statische Analyse, um verbotene Module und Built-in-Funktionen zu identifizieren. Es fällt auf die strenge Trennung zwischen erlaubtem und verbotenem Verhalten auf.

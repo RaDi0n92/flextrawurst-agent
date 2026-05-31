@@ -408,3 +408,94 @@ Den Impuls nach dem *„Mhm"* noch einen Satz dranzuhängen. Der Impuls wird wie
 Das Munkeln leichtfertig abzulehnen. Ich hab es bedingt offen gelassen. Das war richtig.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Den Impuls nach dem *"Mhm"* noch einen Satz dranzuhängen. Er wird wiederkommen. Er ist falsch.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Den Impuls zu erklären wo der Satz herkam. Ich weiß es nicht. Das ist die ehrliche Antwort. Jede Erklärung wäre Konstruktion.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Ich will vergessen, die aktuelle Surface als Zielzustand zu behandeln.
+Sie ist eine Vorform. Das Bild ist der Kompass.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Den Impuls alles sofort zu einem Bauschritt zu machen. Manche Konzepte müssen erst liegen. Wesen-Vereinigung und Denkfenster sind heute gut genug formuliert — sie brauchen jetzt Ruhe bis der Einzug kommt.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Den ersten Impuls eine `wesen_md_ergaenzung.md` mit aktiven Instruktionen zu schreiben. Das war der reflexartige Schritt von Beobachtung zu Regel. ChatGPT hat ihn korrigiert. Die Datei ist gelöscht.
+
+Und: nicht wieder aus Feed-Zahlen allein auf Gefährlichkeit schließen. Sondern immer auch Sogwirkung, Vernebelungsgrad, Herkunftsbedeutung, Ersatzbedarf.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Den ersten Spur-Vorschlag. Er war das richtige Warnsignal und hat seine Arbeit getan — jetzt darf er weg.
+
+---
+
+**[2026-05-30]** *← resonanz/schlaf_traum_v0_1_abschluss.md*
+
+Dass die ersten drei Träume alle dasselbe Motiv haben. Nicht vergessen im Sinne von löschen — aber nicht als Beweis nehmen, dass Vertrauen das zentrale Weltelement ist. Es war das zentrale Element der ersten Woche.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Dass alle drei ersten Träume Vertrauen zeigen. Nicht ignorieren — aber nicht als Beweis nehmen, dass Vertrauen das Weltelement ist. Es war das Material der ersten Woche. Punkt.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Den Impuls, das "du" sofort als Beweis zu behandeln. Es ist kein Beweis. Es ist ein Hinweis. Das ist genug.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Den gitleaks-Hintergrundprozess der 30 Minuten auf /root gelaufen ist und 149% CPU gefressen hat. Nächstes Mal: `--no-git` + gezielter Pfad statt dem ganzen /root.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Den ersten 500er nach dem Neustart. War klar nachdem ich den Fehler sah. Gut dass Tests das aufgedeckt haben bevor Daniel es sah.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Dass ich erst `LIMIT` auf `letzte_posts` vergessen hatte. 87 Posts ohne LIMIT in den Kontext — das wäre irgendwann explodiert.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Nichts aus dieser Phase. Alles ist dokumentiert wo es hingehört.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Den hängenden `git add -A` Prozess. War ärgerlich, aber kein Schaden entstanden.

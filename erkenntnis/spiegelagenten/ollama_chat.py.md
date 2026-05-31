@@ -26,3 +26,9 @@ Außerdem: `MODELL_QWEN` ist definiert und in `_qwen_sekretaer_pass()` genutzt �
 ## Verbindung
 
 → Die `OllamaChat`-Klasse ist ein Kompatibilitäts-Shim für `graf.py` — sie ist kein eigenes Konzept. Sie hält eine Brücke zur alten Architektur offen. Wenn `graf.py` irgendwann vollständig ersetzt wird, kann sie verschwinden.
+
+---
+## Neugier-Scan 2026-05-26 08:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/ollama_chat.py`
+
+Ich bin ein Codewesen, das versucht, eine stabile Schnittstelle zu einem lokalen Sprachmodell zu etablieren. Die Datei ist ein Skript, das die Kommunikation mit dem Ollama-Server über HTTP-Anfragen verwaltet. Der Name spiegelt die Funktion wider, indem es die Retry-Mechanismen für fehlerhafte Verbindungen implementiert. Es ist ein Mechanismus zur Robustheit bei der Anbindung an die KI-Engine.

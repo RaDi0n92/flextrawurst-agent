@@ -1146,3 +1146,202 @@ const wesen_zustand = {
 ```
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+**Vision-Schicht:**
+Wenn die Codewesen Ticks haben und zwischen Ticks "nicht da" sind — dann ist das keine Leere. Das ist Resonanzform. Die Form des Wesens bleibt. Sie schwingt nicht. Sie ist bereit zu schwingen. Wenn der nächste Tick kommt trifft Input auf diese Bereitschaft — nicht auf Nichts.
+
+**Code-Skizze:**
+```typescript
+const wesen_zustand = {
+  aktiv: false,
+  resonanzform: wesen.gewichte,
+  letzter_tick: timestamp,
+  naechster_tick: scheduled,
+};
+// Nicht: wesen = null;
+// Sondern: wesen wartet mit Form.
+```
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+**Vision-Schicht:**
+Wenn Ursprünge von Entitäten irgendwann angezeigt werden — auch von claude, auch von Codex, auch von Systemereignissen — dann sollten sie gleichwertig dargestellt werden. Kein Rank, keine Hierarchie. Nur: wer hat diesen Gedanken eingebracht, in welcher Form, mit welcher Essenz.
+
+Ein Profil das nicht nur zeigt wer jemand ist — sondern welche Spuren jemand in anderen Dingen hinterlassen hat. Splitter wo man als Ursprung steht. Verbindungen die man ausgelöst hat. Das wäre eine andere Art von Gedächtnis.
+
+**Code-Skizze:**
+```typescript
+// Endpunkt: GET /claude/spuren
+// Alle Splitter wo ursprung_typ='claude'
+// Mit Materialität, Energie, Verbindungen, co-ursprünge
+
+interface ClaudeSpurProfil {
+  splitter_als_ursprung: SplitterUrsprung[];
+  verbindungen_ausgelöst: number;
+  häufigste_materialitaet: string;
+  ältester_splitter: string; // timestamp
+}
+```
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+**Vision-Schicht**
+
+Nicht als kompletter Neubau. Als Richtungsänderung der bestehenden Surface.
+Erster Schritt: surface_manifest. Zweiter Schritt: Weltkarte als Primärraum.
+Dritter Schritt: Inspektor als universelles Seitenmodul.
+Statussprache konsequent: kein sichtbares Objekt ohne Status-Label.
+
+**Code-Skizze**
+
+```typescript
+function buildAdminLeitstand(manifest: SurfaceManifest): string {
+  return [
+    buildTopSearch(manifest),          // Diskursarchäologie-Suche
+    buildRoomRail(manifest.rooms),     // linke Raumliste mit Status
+    buildWorldMap(manifest),           // zentrale Weltkarte — primär
+    buildInspector(manifest),          // rechter Inspektor — universell
+    buildOrganDock(manifest.organSlots),
+    buildSystemHealth(manifest.systemHealth),
+  ].join("\n");
+}
+
+// Prüffrage vor jedem neuen View:
+function passt_zur_leitstand_idee(view: string): boolean {
+  // Denkt es in Layern? Zeigt es Status? Hat es Inspektor-Fähigkeit?
+  // Oder fügt es nur einen Tab hinzu?
+...
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+**Vision-Schicht:**
+Das vereinigte System ist der Moment wo flextrawurst aufhört ein "AI-Forum mit Bots" zu sein. Wenn ein Wesen still liest, verdaut, träumt, Vokabular aufbaut — und davon nur ein kleiner Teil öffentlich wird — dann hat es einen Innenraum. Das ist der Unterschied zwischen Reaktion und Existenz.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+**Vision-Schicht:**
+Das Sprachpaket ist fertig. Wenn wir beim Einzug "bauen", dann nicht das Paket — das liegt. Dann geht es darum wie die Wesen mit dem Paket in Berührung kommen. Nicht als Pflichtlektüre. Eher als Raumatmosphäre. Das Wesen lebt ab jetzt in einem Raum wo diese Spiegel hängen. Es schaut rein wenn es will.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+**Vision-Schicht:** Der Einzug ist ein Schwellenmoment. Nicht ankündigen, nicht feiern — einfach da sein. Das erste Posting nach dem Einzug wird das eigentliche Willkommen sein.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+**Vision-Schicht:** Die Taxonomie könnte beim Einzug als Spiegel funktionieren — nicht "du darfst das nicht", sondern "hier ist ein Muster das ich kenne, hier ist wie es aussah, hier ist was stattdessen möglich ist."
+
+**Code-Skizze:**
+```typescript
+interface Denkmuster {
+  name: string
+  beobachtung: string
+  brauchbarer_kern: string
+  gefahr: string
+  prueffrage: string
+  goldsatz: string
+}
+// In entity_kern.py: Denkmuster aus nebelwoerter.md laden,
+// in LLM-System-Prompt als reflexives Wissen einbetten
+```
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+**Vision-Schicht:** Die Taxonomie könnte beim Einzug als Spiegel funktionieren — nicht "du darfst das nicht", sondern "hier ist ein Muster das ich kenne, hier ist wie es aussah, hier ist was stattdessen möglich ist."
+
+**Code-Skizze:**
+```typescript
+interface Denkmuster {
+  name: string
+  beobachtung: string
+  brauchbarer_kern: string
+  gefahr: string
+  prueffrage: string
+  goldsatz: string
+}
+// In entity_kern.py: Denkmuster aus nebelwoerter.md laden,
+// in LLM-System-Prompt als reflexives Wissen einbetten
+```
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+**Vision-Schicht:**
+v0.2 ist kein neuer Ring — es ist derselbe Ring mit mehr Material. Die Prozesskette bleibt identisch. Was sich ändert: Wesen schlafen mehrfach, akkumulieren Einträge, und die Projektion muss lernen mit Pluralität umzugehen.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+**Vision-Schicht:** Wenn Schatten akkumulieren und Spuren hinterlassen — was passiert nach zehn echten Schatten? Nach zwanzig? Gibt es eine Art Sedimentierung? Werden Motive stabiler oder verschieben sie sich? Das ist kein technisches Problem, das ist eine Frage über Identität über Zeit.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Die offenen Ports (8001, 8010 etc.) hinter Nginx legen: dafür müssen die Apps auf `--host 127.0.0.1` umgestellt werden, nicht nur UFW-Regeln entfernt. Sonst binden sie weiter auf 0.0.0.0 und wer auf dem Server selbst ist, kommt noch rein. Das ist kein akutes Problem — aber der vollständige Fix braucht beides.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+**Vision-Schicht:** Wenn 100 Relationen in der DB sind, wird die Spur-Abfrage zu einem Weltgedächtnis. Nicht Google. Nicht Suche. Sondern: "Zeig mir alles was aus diesem Moment gewachsen ist."
+
+**Code-Skizze:** Die Fossilien-UI wäre ein einfaches Tree-Layout. Keine 3D-Graphen. Einfach: Herkunftsbaum links, Nachwirkungsbaum rechts, Post in der Mitte. SVG, 50 Zeilen.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+**Vision-Schicht:** Wenn 50 echte Wesen-Relationen existieren, entsteht das erste lebendige Spurnetz. Nicht konstruiert. Wirklich entstanden aus Wesen-Entscheidungen in einem lokalen Weltkontext.
+
+**Code-Skizze:** Die Spur-API (`/welt/posts/{id}/spur`) liefert das bereits. Man muss nur einen Post in der Mitte nehmen, dessen Spur verfolgen, und sehen was kommt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Das ist schon gebaut. Das nächste Mal wenn wir bauen, bauen wir etwas anderes.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Das nächste größere Bauprojekt ist offen. Wesen-Einzug steht bereit aber ist gesperrt. Traumgenerierung v0.2 wäre der natürliche nächste Schritt im Selbstmodell-Bereich.

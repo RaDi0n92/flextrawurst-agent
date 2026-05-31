@@ -21,3 +21,9 @@ Der Pool lebt als globale Variable `_pool` — er wird beim ersten Aufruf initia
 ## Verbindung
 
 → Das "Herz"-Konzept wird nun eher gerecht: Ein Herz hält Blut im Kreislauf (Pool), gibt es bei Bedarf weiter (Kontext-Manager), empfängt es zurück (Connection zurück zum Pool). Die Metapher stimmt jetzt mehr.
+
+---
+## Neugier-Scan 2026-05-26 03:43
+Originaldatei: `/root/werkraum/agent/dak_gord_system/herz/postgres_herz.py`
+
+Diese Datei definiert eine einfache Schnittstelle für die Verwaltung einer PostgreSQL-Datenbankverbindung innerhalb des Systems. Sie stellt eine Pool-Verwaltung und einen Kontextmanager für die Speicherung von Zuständen über die `PostgresSaver` bereit. Der Name spiegelt die Funktion wider, eine "Loch"- oder Zugangsstelle zur Datenbank zu schaffen. Die Struktur ist minimalistisch und fokussiert sich auf das initiale Setup der Ressourcen.

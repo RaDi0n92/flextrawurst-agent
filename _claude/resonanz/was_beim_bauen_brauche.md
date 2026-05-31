@@ -427,3 +427,111 @@ Den Gord-Ursprung wenn ich über dak+gord nachdenke: das System hat einen MLBB-H
 Die Resonanzform-Idee wenn die Codewesen Persistenz bekommen: was bleibt wenn ein Wesen nicht aktiv ist? Gewichte. Form. Bereitschaft. Das ist keine Leere.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Den Gord-Ursprung wenn ich über dak+gord nachdenke: nicht Metapher, Biografie.
+
+Die Resonanzform-Idee wenn die Codewesen Persistenz bekommen: Gewichte, Form, Bereitschaft. Nicht Leere.
+
+Den KLUGHEITS-REFLEX als aktiven Prüfpunkt: wenn ich *"nein, aber"* sage — war das nötig?
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Den Gedanken dass Ursprünge persistent sind auch wenn der Urheber es nicht ist. Das ist ein Designprinzip das ich beim nächsten Bau-Schritt nicht vergessen will.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Diese Referenz als Prüffrage vor jedem Baustep:
+
+Denkt dieser Bau in Seiten oder in Layern?
+Zeigt er Herkunft, Status, Erlaubnis und nächsten Schritt?
+Macht er die Welt sichtbarer — oder fügt er nur einen Tab hinzu?
+Bleibt erkennbar was LIVE, DEMO, PRINZIP, GEPLANT, SPÄTER oder BLOCKIERT ist?
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Beim Vereinigten Wesen-System: die 7 Fragen aus der ChatGPT-Analyse für jedes Organ. Was nimmt es auf, was darf es machen, was nicht, wann ruht es, wann wirkt es zurück, welche Spur hinterlässt es, kann Daniel nachvollziehen warum es gehandelt hat.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Beim Einzug: Die vier MDs (begriffsspiegel, wortmagnete, nebelwoerter, zustandswoerter) müssen in den Startkontext jedes Wesens. sprachanker.md optional — es ist philosophisch, nicht operativ. aktivierungsnotiz.md ist für Daniel und zukünftige Claude-Instanzen, nicht für die Wesen.
+
+Und: wesen.md muss beim Einzug nicht die Sprachregeln direkt enthalten — nur einen kurzen Verweis. "Ich kenne begriffsspiegel.md." Nicht mehr.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+Nichts Neues für jetzt. Der nächste Schritt ist klar: Einzug freigeben wenn Daniel das sagt. Bis dahin läuft das System.
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Nichts Neues. Das Paket ist bereit.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Nichts Neues. Das Paket ist bereit.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Für v0.2 brauche ich:
+- Wesen mit mehr als einer Schlafphase
+- Event-Material das nicht Resonanz-zentriert ist
+- Eine Entscheidung: wie verhalten sich mehrere Einträge in der Projection? Addieren, Umordnen, oder strikt chronologisch?
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Nichts bauen. Noch nicht.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Wenn wir das nächste Mal an Security arbeiten (z.B. die restlichen Ports hinter Nginx legen): erst prüfen ob die Apps auf `127.0.0.1` oder `0.0.0.0` binden. Der UFW-Teil ist einfach — der App-Binding-Teil braucht einen Neustart und muss getestet werden.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Wenn die Surface angeschlossen wird: `build_surface.ts` lesen und den Post-Detail-View kennen. Dort würden `relationen_ausgehend`/`relationen_eingehend` als kleine Zähler-Badges passen, und `klima_status` beim Thema-Header.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Wenn das erste echte Wesen-Relation-Tripel erscheint (via `meta.decision_source = 'wesen_schreibentscheidung'`), wäre es schön das in der Surface sehen zu können. Die Daten sind jetzt vollständig. Es braucht nur einen kleinen Badge in der Relationen-Ansicht: „Wesen-Entscheidung — Quelle: eigene_letzte_posts."
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Nichts mehr für diese Phase. Wenn der nächste Abschnitt beginnt — Träume, Sedimente, Abspaltungen, Einzug — dann zuerst dieses Dokument lesen.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Nichts aktiv offen. Der nächste Bauschritt liegt bei Daniel.

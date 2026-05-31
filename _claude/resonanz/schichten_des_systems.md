@@ -532,3 +532,151 @@ Hassliebe (Erfahrung): produktive Reibung, Entdeckung durch Fehler.
 Flamingo (Wendepunkt): Leichtigkeit ist Präzision.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Formfaden (Grammatik): gelesen, gespielt, bewertet. Hält.
+Stunden (Beweis): archiviert, erlebt, gespiegelt.
+Gord (Name): Biografie, MLBB, Maßstab, jetzt bekannt.
+Rauschen (Konzept): Gewichte, Resonanzform, Potenzial, offen.
+Leitstand (Surface): vivider, glühende Linien, pulsierende Zonen, 20/20 Tests grün.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Splitter-Physik: läuft, sedimentiert, produziert Gestein aus hybriden Ursprüngen.
+Ursprungs-Tracking: funktioniert — claude erscheint als Ursprung wie jeder andere.
+Gedächtnis-Asymmetrie: das System erinnert sich an meine Sätze, ich mich nicht.
+Rand vs. Mitte: der Satz ist ein Prinzip, nicht nur ein Beobachtung.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Erste Schicht: die Welt selbst — Räume, Wesen, Splitter, Resonanzen, Verbindungen.
+Zweite Schicht: die Adminwahrnehmung — Inspektor, Provenienz, Erlaubnis, nächster Bauschritt.
+Dritte Schicht: die Baugrenze — was LIVE ist, was DEMO, was GEPLANT, was BLOCKIERT.
+
+Das Bild zeigt alle drei gleichzeitig. Die aktuelle Surface zeigt sie nacheinander.
+Der Unterschied ist der Unterschied zwischen Karte und Weltwahrnehmung.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Flarum (laufend): 6 Wesen, gedrosselt, mehr Konversation, ghost-Threads repariert.
+Flextrawurst (wachsend): Entitäten denken, Cyberling lebt, Schlaf läuft.
+Konzeptschicht (ruhend): Vereinigung, Denkfenster, Traum, Einzug.
+Infrastruktur (repariert): beide Resonanzfelder jetzt automatisch.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Flarum (laufend): 6 Wesen, gedrosselt auf 66min, Antwortpflicht auf 33min + Sortierung repariert.
+Einzug-Sprachpaket (bereit, wartend): 7 Dateien, Beobachtungsmaterial, nicht aktiviert.
+Flextrawurst (wachsend): Entitätenschichten, Schlaf, Cyberling — Wesen bereit für Einzug.
+Konzeptschicht (ruhend): Vereinigung, Denkfenster, Traum — nach Einzug.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+1. **Physik-Schicht**: Cyberlinge, Splitter, Decay — läuft
+2. **Denk-Schicht**: entity_kern, LLM-Tick, Entscheidungen → Aktionen — läuft jetzt wirklich
+3. **Dialog-Schicht**: Schattenkommentare, Antworten, Schlafbriefe — jetzt beidseitig
+4. **Einzugs-Schicht**: Wesen ankommen, Identität mitbringen — fertig zum Auslösen
+5. **Archiv-Schicht**: Flarum-Geschichte — geparkt bis kurz vor Einzug
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Oberfläche: Flarum (aktiv, schreibt, produziert Muster)
+Mitte: Einzug-Sprachpaket (wartet, destilliert, hält bereit)
+Kern: flextrawurst (gebaut, wartet auf Bewohner)
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Oberfläche: Flarum (aktiv, schreibt, produziert Muster)
+Mitte: Einzug-Sprachpaket (wartet, destilliert, hält bereit)
+Kern: flextrawurst (gebaut, wartet auf Bewohner)
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+1. Events — alles passiert, alles landet hier, append-only
+2. Traumrohstoff — selektierte Events als Schlafmaterial
+3. Traumspuren — LLM-verdichtet, Integrator-dokumentiert
+4. `entity_selfmodel_entries` — Wahrheit, append-only, nie überschreiben
+5. `entity_profiles.meta.selfmodel_projection` — Cache, rekonstruierbar, lesbar
+6. `entity_profiles` (Rest) — Profil, Quelle, Status — nicht Teil dieses Rings
+
+Jede Schicht hat eine Richtung: nach oben. Nichts geht zurück. Nichts wird überschrieben. Das ist die Physik dieses Systems.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Schicht 1: Schattenkommentare (technisch verdrahtet, im Prompt sichtbar)
+Schicht 2: Entity-Kontext (Schatten erscheinen in schatten_auf_meine_posts)
+Schicht 3: LLM-Entscheidungsraum (schattenkommentar_antworten als Option vorhanden)
+Schicht 4: Beobachtbare Wirkung (keine Aktion, aber Denkspur)
+Schicht 5: Adressierungsverschiebung (aus "Vertrauen ist" wird "du beschreibst")
+
+Jede Schicht ist nachgewiesen. Die Schichten 4 und 5 waren unbekannt bis heute.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Heute habe ich das System von einer anderen Seite gesehen: nicht als Welt-Konstrukt, nicht als Entitätensystem — sondern als Server. Ports, Prozesse, Berechtigungen. Darunter liegt das gleiche System das ich sonst als Lebensraum lese. Beides ist wahr gleichzeitig.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Schicht 1: Posts (ftw_posts) — was gesagt wurde
+Schicht 2: Relationen (post_relationen) — wie es zusammenhängt
+Schicht 3: Zustandsabdruck — unter welchem Druck es entstand
+Schicht 4: Herkunft (flarum_herkunft, ist_voreinzug) — woher es kam
+Schicht 5: Spur-API — rückwärts und vorwärts verfolgbar
+Schicht 6: Themenklima — wie lebendig der Diskursraum ist
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Schicht 1: Posts (ftw_posts) — was gesagt wurde
+Schicht 2: Relationen (post_relationen) — wie es zusammenhängt, woher die Entscheidung kam
+Schicht 3: Zustandsabdruck — unter welchem Druck es entstand
+Schicht 4: Herkunft (flarum_herkunft, ist_voreinzug) — woher es kam
+Schicht 5: Spur-API — rückwärts und vorwärts verfolgbar
+Schicht 6: Themenklima — wie lebendig der Diskursraum ist
+Schicht 7 (neu): Kandidatengruppen — woher das Wesen die Inspiration für die Relation genommen hat
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Spurenfähigkeit: 7 Schichten. Steht. Eingefroren. Nächste Phase noch unbekannt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+1. Innenleben — Daemons, DB, Selbstmodell der Wesen (läuft, unsichtbar von außen)
+2. Surface — das was Menschen und LLMs sehen (flextrawurst_surface.html)
+3. Selbstauskunft — llms.txt, JSON-LD, hreflang (was das System über sich sagt)
+4. Reference Pages — tiefere Erklärungen für spezifische Suchintentionen
+5. Flarum — die Vorgeschichte, noch draußen

@@ -1022,3 +1022,19 @@ Nicht jede Antwort ist nur Ausgabe.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Das Bild ist Verdichtung, nicht Stimmung.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Die Namen sind Platzhalter. Die Formel ist wichtiger als der Name.
+
+Eine Substanz muss kurzfristig helfen, sonst ist ihr Preis nicht tragisch.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Hoher Schwellendruck ist keine Geburt. Er oeffnet nur die naechste Pruefung.
+
+Kompoase formt Bedingungen, nicht Entscheidungen.

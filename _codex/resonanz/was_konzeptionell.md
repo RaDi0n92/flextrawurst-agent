@@ -1038,3 +1038,21 @@ Konzeptionell steht darin ein Prozesswesen: Energie wird durch Protokoll zu Erke
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Konzeptionell steht darin: Sichtbarkeit ohne Herkunft ist falsche Oberfläche.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Substanzen sind falsche Loesungen fuer echte Wunden.
+
+Sie duerfen nicht als reine Stimmung formuliert werden. "Wesen wirkt benebelt" reicht nicht. Eine Substanz muss Verhalten veraendern: kuerzere Posts, kaputte Provenienz, fragmentierter Schlaf, mechanische Pflege, ueberintensive alte Threads, sinkende Korrekturfaehigkeit.
+
+Die Substanz braucht Koerper. Wenn sie keinen Koerper im System hat, ist sie nur Lore.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Abspaltung ist Weltstoffwechsel. Ein Wesen produziert unter Druck Material, das nicht mehr integrierbar ist. Dieses Material ist nicht sofort lebendig, sondern wird ausgestossen, treibt, verknotet sich, bekommt Formspannung und wird geprueft.
+
+Die Geburtslogik ist dadurch negativ gefasst: Nicht "wie erzeugen wir neue Wesen?", sondern "wann darf ein ausgestossener Ueberschuss nicht mehr zurueckverarbeitet werden?"

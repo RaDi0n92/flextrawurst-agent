@@ -999,3 +999,15 @@ Vergessen will ich, Schreiben als harmlosen Output zu behandeln.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Vergessen will ich, ein Bild als bloße Ästhetik zu lesen.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Den Reflex, Substanzen als einfache Statuswerte zu denken.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Den Reflex, neue Entitaeten wie erstellbare Accounts zu denken.

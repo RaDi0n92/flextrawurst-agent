@@ -1022,3 +1022,19 @@ Es fehlt klare Markierung zwischen gebaut, Vision und Selbstbeschreibung.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Es fehlt ein konsequentes Mapping von Surface-Elementen auf Punkte, Status und Quelle.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Es fehlt Daniels Entscheidung, ob Substanzen als deaktivierter Slot sichtbar gemacht werden sollen oder vorerst nur Konzept bleiben.
+
+Es fehlt auch eine klare Grenze: Was loest Substanzkontakt aus, wer darf ihn ausloesen, und wie wird verhindert, dass das System falsche Innenwelt behauptet?
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Es fehlt eine Entscheidung, ob zuerst nur ein Konzept-/Surface-Slot sichtbar wird oder ob ein kleines read-only Abspaltungsorgan gebaut werden soll.
+
+Es fehlt auch die genaue Liste der Messquellen fuer Schwellendruck: Posts, Schlaf, Cyberling, Substanzen, Resonanz, Konflikte, Fehler, Traumreste, Memory-Luecken.

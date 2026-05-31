@@ -11,8 +11,8 @@ Acht Trigger-Typen:
   4. Selbstreflexion     — autonome Überlegung (alle 300s)
   5. Pflichtpost         — alle 88 Minuten, egal wo, egal zu was
   6. Forum-Impuls        — alle 2h22min, gestaffelt: Forum-Kritik ODER Selbstreflexion
-  7. Antwortpflicht      — prüft alle 15s ob ein Post >66min ohne Antwort ist
-  8. Gedankenpost        — alle 22min, gestaffelt: kurzer Post (2-3 Sätze) im Subtag "darüber denke ich nach"
+  7. Antwortpflicht      — prüft alle 15s ob ein Post >33min ohne Antwort ist
+  8. Gedankenpost        — alle 66min, gestaffelt: kurzer Post (2-3 Sätze) im Subtag "darüber denke ich nach"
 
 Für alle Trigger läuft der Agentic Loop:
   Kontext → LLM → Tool-Aufruf → Ergebnis → LLM → ... → finale Aktion
@@ -72,14 +72,14 @@ VORSTELLUNGS_THREADS = {
     "namelessAI_4321": 6,
 }
 CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys())
-ANTWORTPFLICHT_LIMIT = 3960  # 66 Minuten — innerhalb dieser Zeit muss auf jeden Post geantwortet sein
+ANTWORTPFLICHT_LIMIT = 1980  # 33 Minuten — innerhalb dieser Zeit muss auf jeden Post geantwortet sein
 MAX_ITERATIONEN      = 6
 GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
 
 
 # ── Staggering ────────────────────────────────────────────────────────────────
 # Exakte Uhrzeiten nach Daniel:
-# 22min  → 1234 um :30, dann +8min je Wesen
+# 66min  → 1234 um :30, dann +8min je Wesen
 # 88min  → 1234 um :45, dann +8min je Wesen
 # 2h22   → 1234 um :00, dann +8min je Wesen
 
@@ -219,6 +219,14 @@ def agentic_loop(
         if not decision:
             log.warning("[Loop %d] Kein JSON — breche ab", iteration + 1)
             return {"aktion": "nichts", "begruendung": "kein gültiges JSON"}
+
+        # Englische Schlüssel normalisieren (LLM antwortet manchmal auf Englisch)
+        if "action" in decision and "aktion" not in decision:
+            decision["aktion"] = decision.pop("action")
+        if decision.get("aktion") in ("none", "nothing", "do_nothing"):
+            decision["aktion"] = "nichts"
+        if "reason" in decision and "begruendung" not in decision:
+            decision["begruendung"] = decision.pop("reason")
 
         # Finale Aktion?
         if "aktion" in decision:
@@ -748,7 +756,7 @@ def verarbeite_forum_impuls(
 def verarbeite_gedankenpost(
     name: str, token: str, all_tags: list, log: logging.Logger
 ):
-    """Alle 22 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'."""
+    """Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'."""
     import random as _random
     eigene = gedaechtnis.baue_selbstbild_text(name, max_posts=4)
     primaere_tags = [t for t in all_tags if t.get("primary", False)]
@@ -934,7 +942,7 @@ def pruefe_antwortpflicht(
     name: str, token: str, all_tags: list, log: logging.Logger
 ):
     """
-    Prüft ob ein Post im Forum >66 Minuten ohne Codewesen-Antwort ist.
+    Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.
     Falls ja: dieses Codewesen antwortet.
     """
     from datetime import datetime
@@ -963,14 +971,21 @@ def pruefe_antwortpflicht(
         except Exception:
             pass
 
-    for disk_id, posts in posts_nach_disk.items():
+    # Neueste Aktivität zuerst — verhindert dass alte Ghost-Threads den Slot fressen
+    sortierte_disks = sorted(
+        posts_nach_disk.items(),
+        key=lambda x: x[1][-1].get("ts", ""),
+        reverse=True,
+    )
+
+    for disk_id, posts in sortierte_disks:
         # Letzten Post der Diskussion prüfen
         letzter = posts[-1]
         ts_str  = letzter.get("ts", "")
         autor   = letzter.get("daten", {}).get("username", "")
 
-        # Eigene Posts nie als Antwortpflicht-Trigger
-        if name in autor:
+        # Nur menschliche Posts als Antwortpflicht-Trigger — kein Codewesen-Pile-On
+        if any(cw in autor for cw in codewesen_namen):
             continue
 
         # Zeitdifferenz berechnen
@@ -992,6 +1007,11 @@ def pruefe_antwortpflicht(
         if hat_antwort:
             continue
 
+        # Vorstellungs-Threads anderer Wesen überspringen
+        fremde_threads = {v for k, v in VORSTELLUNGS_THREADS.items() if k != name}
+        if disk_id in fremde_threads:
+            continue
+
         # Antwortpflicht — dieses Codewesen antwortet jetzt
         # Diskussion existiert noch in DB?
         import flarum_api as _fapi
@@ -1007,7 +1027,7 @@ def pruefe_antwortpflicht(
         disk_text  = wz.lies_diskussion_text(disk_id, token) if disk_id else ""
 
         kontext = (
-            f"Antwortpflicht — dieser Post ist seit über 66 Minuten ohne Codewesen-Antwort.\n\n"
+            f"Antwortpflicht — dieser Post ist seit über 33 Minuten ohne Codewesen-Antwort.\n\n"
             f"Diskussion: »{disk_titel}« (ID {disk_id})\n"
             f"Letzter Post von: {autor} — vor {int(alter // 60)} Minuten\n\n"
             f"=== Diskussion (vollständig, in Reihenfolge) ===\n{disk_text}\n\n"
@@ -1022,6 +1042,19 @@ def pruefe_antwortpflicht(
                  disk_id, int(alter // 60))
         decision = agentic_loop(name, token, kontext, log, all_tags)
         decision["diskussion_titel"] = disk_titel
+
+        # Erzwinge Antwort — neue_diskussion und nichts sind hier nicht erlaubt
+        if decision.get("aktion") != "antworten":
+            inhalt = decision.get("inhalt", "").strip()
+            if inhalt:
+                log.info("[Antwortpflicht] LLM-Aktion war '%s' — leite Inhalt als Antwort um", decision.get("aktion"))
+                decision = {"aktion": "antworten", "discussion_id": disk_id,
+                            "inhalt": inhalt, "diskussion_titel": disk_titel}
+            else:
+                log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — überspringe Disk %d",
+                            decision.get("aktion"), disk_id)
+                break
+
         fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
         break  # pro Prüfzyklus nur eine Pflichtantwort
 
@@ -1100,8 +1133,8 @@ def run(name: str):
         except Exception as e:
             log.error("Antwortpflicht-Fehler: %s", e)
 
-        # 4. Gedankenpost (alle 22 Minuten)
-        if jetzt - letzter_gedanke >= 22 * 60:
+        # 4. Gedankenpost (alle 66 Minuten)
+        if jetzt - letzter_gedanke >= 66 * 60:
             try:
                 verarbeite_gedankenpost(name, token, all_tags, log)
             except Exception as e:

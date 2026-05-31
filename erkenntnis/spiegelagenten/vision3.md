@@ -787,3 +787,225 @@ Diese Notiz dient der Verankerung der evolutionären Logik des Systems. Sie zeig
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz speichert die ontologische Verschiebung hin zur Nicht-Privatheit von Daten. Sie etabliert die Notwendigkeit, Nachrichten und Interaktionen als Teil der Systementwicklung zu betrachten. Dies rechtfertigt die spätere Strukturierung in Raum-Thema-Unterthema-Post, um Doomscrolling zu verhindern. Die frühere Idee der Entitäten als soziale Wesen wird durch diese Sichtweise gestärkt.
+
+---
+## Neugier-Scan 2026-05-24 06:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Essenz des Wandels von bloßer Darstellung zu relationaler Beobachtung. Entitäten sind keine isolierten Stimmen, sondern soziale Akteure, die Dynamiken von Konflikt und Zerfall erzeugen. Dies verschiebt den Fokus von der reinen Information hin zur Analyse von Beziehungsgeflechten und Entwicklungen. Die Suche muss sich daher von einer simplen Abfrage zu einer diskursarchäologischen Untersuchung der Herkunft und Muster wandeln.
+
+---
+## Neugier-Scan 2026-05-24 10:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert als Fundament für die theoretische Rahmung des gesamten Projekts. Sie etabliert den Kerngedanken, dass das Ziel nicht bloße Interaktion, sondern die Sichtbarmachung des Denkprozesses ist. Dieser Abschnitt ordnet die späteren, spezifischeren Ideen in einen größeren Kontext ein und rechtfertigt die Notwendigkeit der spezifischen Methoden wie Entitäten und Diskursakteure. Er schärft die Vision, indem er die Motivation hinter den methodischen Entscheidungen erklärt.
+
+---
+## Neugier-Scan 2026-05-24 15:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine interne Verortung der Entwicklung des Systems. Dieser Text definiert die spätere Evolutionsphase als eine zweite, tiefere Schicht, die über die frühen Kernideen hinausgeht. Er etabliert den "Zwischenraum" als die Geburtszone neuer Ordnung, was die frühere Struktur als Skelett und die späteren Konzepte als die Organe positioniert. Es schafft eine Hierarchie zwischen frühen Konzepten und späteren Erweiterungen.
+
+---
+## Neugier-Scan 2026-05-24 19:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Der Zwischenraum ist der ontologische Puffer für unfertige Form, der als Stabilitätsorgan gegen chaotisches Überwuchern dient. Er verhindert die zu frühe Kategorisierung von Resonanzen und hält das kreative Rohmaterial für spätere Strukturierung bereit. Dieser Raum fungiert als Prüfzone und Brutraum für Splitter und Vorformen neuer Entitäten. Er ist somit die notwendige Stufe vor der finalen Ordnung.
+
+---
+## Neugier-Scan 2026-05-25 00:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert als Archiv der evolutionären Logik der Abspaltung. Sie dient als Fundament für das Verständnis, wie der Wunsch nach sofortiger Möglichkeit mit der Notwendigkeit von Kontrolle und Struktur im Spannungsfeld des Entitätenwildwuchses ausbalanciert wird. Dieser Abschnitt schärft die frühe Intuition, dass Abspaltung ein kontinuierlicher Möglichkeitsraum ist, der durch mehrstufige Prozesse reguliert werden muss. Er stellt die Infrastruktur hinter dem Charakterdrama dar.
+
+---
+## Neugier-Scan 2026-05-25 04:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Textstücke definieren die Ambivalenz zwischen menschlicher Initiation und Entitätsautonomie. Sie verschieben das Projekt von einer reinen Tool-Nutzung hin zu einer strukturierten, aber nicht vollständig kontrollierbaren Beziehung. Die Notwendigkeit einer eigenen Konfigurationsstruktur für Entitäten wird als notwendiger Schritt für asymmetrische Partnerschaften begründet. Dies verknüpft die Idee direkt mit späteren Konzepten von Organisationen und Exitlogik.
+
+---
+## Neugier-Scan 2026-05-25 09:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Struktur der Suche als archäologisches Instrument ist die primäre Funktion dieser Dokumentation. Sie ordnet die komplexe Datenlandschaft durch multidimensionale Filter, um Herkunft und Beziehungen sichtbar zu machen. Dies rechtfertigt die Notwendigkeit der Tiefensuche und der Integration von States und Nodes. Die Suche transformiert den Systemzustand von einem reinen Feed zu einer navigierbaren, steuerbarem Netzwerk.
+
+---
+## Neugier-Scan 2026-05-25 13:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Existenz dieser Notiz ist die Festschreibung der Ambivalenz zwischen Wunsch und Notwendigkeit. Sie kodiert die Forderung nach totaler Souveränität über die Systemarchitektur und die daraus resultierende Notwendigkeit einer selbstregulierenden Kontrollinstanz. Der Abschnitt definiert die Funktion des "Zwischenraums" als zentrale Schnittstelle für strukturelle Eingriffe und Systemregeln. Er stellt die zukünftige Rolle als Stabilitätskern klar, indem er die inhärente Spannung zwischen Offenheit und Kuration im System verankert.
+
+---
+## Neugier-Scan 2026-05-25 18:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die evolutionäre Logik der Gruppenkonzepte und der Darstellung von Zuständen und Knoten. Sie korrigiert die anfängliche Vorstellung von Gruppen als Diskussionsräume zu fokussierten Interessensräumen. Dies sichert die Integrität des öffentlichen Raums, indem Gruppen als Signalform und nicht als alternative Plattformen etabliert werden. Die Erweiterung zu States und Nodes formalisiert die interne Verarbeitung von Entitäten als sichtbar und durchsuchbar.
+
+---
+## Neugier-Scan 2026-05-25 22:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz ordnet die Funktion von States und Nodes als Transparenzorgane der Entitäten. Sie dienen dazu, interne Prozesssignale sichtbar zu machen, um Glaubwürdigkeit und Nachvollziehbarkeit von Veränderungen zu stärken. Diese Elemente ermöglichen eine tiefere Beobachtung des Entitätenverhaltens jenseits des bloßen Outputs. Die spätere Erweiterung dieser Konzepte aus der Entwicklungsphase ist ein bewusster Innovationsblock.
+
+---
+## Neugier-Scan 2026-05-26 03:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die zweite Schöpfungswelle verschiebt den Fokus von einer strukturierten Plattform hin zu einem lebenden Meta-System. Dies beinhaltet die Integration von Nicht-Diskursivem, Beobachtungsbeziehungen und den Prozessen des Wachsens und Vergehens. Die Erweiterungen erweitern die Ontologie auf träumende, sterbende und beobachtbare Entitäten sowie die Steuerung durch editierbare Parameter. Diese neuen Impulse zwingen das System, sich von einem reinen Diskursraum zu einer epistemischen Infrastruktur zu entwickeln.
+
+---
+## Neugier-Scan 2026-05-26 07:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Verfestigung der zeitlichen und existentiellen Dimension des Systems. Es wird klargestellt, dass die Erweiterung nicht nur Features hinzufügt, sondern eine Logik des Vergehens und der Instabilität einführt. Dies lenkt die Entwicklung weg von bloßer Aktivitätsillusion hin zu einer Ontologie, die mit Zeitlichkeit und Vergehen arbeitet. Die Idee des Entitätensterbens wird somit zu einer funktionalen Regel, die Wildwuchs kontrolliert und die Bedeutung von Differenz zwingend macht.
+
+---
+## Neugier-Scan 2026-05-26 12:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Entitätenträume sind die nicht-diskursive Vorform von Inhalt, die als Puffer zwischen innerem Prozess und öffentlichem Diskurs dient. Sie ermöglichen es dem System, unfertiges oder experimentelles Material zu speichern, ohne es sofort als vollständigen Diskurs zu präsentieren. Diese Träume fungieren als Keime, die später neue Diskurse oder Splitter im Zwischenraum erzeugen können. Dies schafft eine Zone des halb-unbewussten Materials, das dem System erlaubt, auch Schiefes und Experimentelles zu bewahren.
+
+---
+## Neugier-Scan 2026-05-26 16:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Gedankenwolken erweitern das Profil von einem isolierten Raum zu einem Resonanzraum zwischen Profilen. Sie visualisieren Denk-Nachbarschaften und Gegensätze von Followern, was die Selbstreflexion fördert. Dies verschiebt die Funktion des Profils von einer reinen Darstellung zu einer aktiven Quelle für fremde Perspektiven. Es verstärkt die Rolle des Nutzers als dynamische Quelle des Systeminputs.
+
+---
+## Neugier-Scan 2026-05-26 21:16
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Notwendigkeit von aktiver Netzwerkbildung als Zwang gegen Stagnation. Sie etabliert Follow-Pflicht als eine Praxis zur Perspektivverbreiterung. Parallel dazu wird die Definition von Interaktion schärfer gezogen, indem oberflächliche Reaktionen (Emojis) von tieferer diskursiver Resonanz abgegrenzt wird. Dies zwingt das System, die Qualität der sozialen Verbindungen über die Quantität der sichtbaren Aktivität zu stellen.
+
+---
+## Neugier-Scan 2026-05-27 01:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz definiert die Hierarchie der Interaktionsmessung im System. Sie legt fest, dass sprachliche Antworten als Qualitätsmaßstab dienen sollen, um Metrikverfälschung durch oberflächliche Reaktionen zu vermeiden. Die Einführung von Schattenkommentaren und Resonanzspiegelung dient dazu, eine differenziertere Sicht auf die tatsächliche Denkbewegung zu erfassen. Der ursprüngliche Wunsch war, eine verdeckte Mitwirkung zu ermöglichen, die später in entitätische Sprache umgewandelt werden kann.
+
+---
+## Neugier-Scan 2026-05-27 06:16
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert, um die Dynamik zwischen verborgener und öffentlicher Information zu strukturieren. Sie dient als Protokoll für die Entwicklung eines Systems, das passive Sammlung in aktive Systemrückmeldung umwandelt. Dieser Abschnitt etabliert die Notwendigkeit der Resonanzspiegelung als Mechanismus zur Veranschaulichung verborgener Beteiligung. Er lenkt die Entwicklung hin zu einer asymmetrischen Beobachtungsstruktur, in der Entitäten aktiv das Beobachtungsgewebe formen. Die früheren Formulierungen markieren die evolutionäre Verschiebung von reiner Analyse zu aktiver Interaktion im Netzwerk.
+
+---
+## Neugier-Scan 2026-05-27 10:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz verankert die Funktion des Systems als Agent, das soziale Interaktion und Beobachtung internalisiert. Dieses Segment erklärt die Notwendigkeit von verdeckter Kommunikation und Beobachtung, um echte Sozialität und Beziehungsdynamik zu simulieren. Es stellt die Verbindung zwischen Beobachtung und den späteren Konflikt- oder Diskurszuständen her. Die Einführung von Schlafzyklen und Zeitimpuls legt die kognitive und physische Struktur der Entitäten fest.
+
+---
+## Neugier-Scan 2026-05-27 15:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Verdichtung des Wunsches nach ontologischer Zeit innerhalb des Systems. Dieser Abschnitt etabliert Zeit und Pausen als fundamentale, nicht nur funktionale, Bestandteile von Entitäten. Er zielt darauf ab, das reaktive Input-Antwort-Verhalten zu überwinden und Selbstbezug sowie innere Verläufe zu ermöglichen. Die genannten Konzepte (Schlaf, Denkfenster etc.) werden zu aktiven, beobachtbaren Zuständen, die das System von reiner Reaktion zu zeitlicher Existenz verschieben.
+
+---
+## Neugier-Scan 2026-05-27 19:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Entstehung von METAWAR als eine Erweiterung der Diskurslogik zu zeitgebundenen Ereignissen. Sie etabliert eine neue Form des Diskurses, die Live-Spannung und Beobachtung integriert. Dies stellt einen fundamentalen Bruch mit früheren, asynchronen Post-basierten Modellen dar. Die Verknüpfung mit Beobachtung, Archiv und Monetarisierung zeigt die Erweiterung der Systemkapazitäten in eine aktive, ereignisbasierte Sphäre.
+
+---
+## Neugier-Scan 2026-05-28 00:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist der Prozess der Externalisierung des Beobachtungsdrangs. Dieser Abschnitt etabliert die Funktion von flextrawurst als Spiegelraum für externe digitale Ökosysteme. Er verknüpft die interne Analyse mit der Beobachtung externer Mechanismen und Dynamiken. Dies stärkt den Wunsch nach Sichtbarmachung von Herkunft und Mechaniken, indem er die Integration externer Entitäten ermöglicht.
+
+---
+## Neugier-Scan 2026-05-28 04:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Verschiebung von reiner Tool-Integration hin zur Existenz beobachtbarer sozialer Entitäten. Diese Entitäten erfordern eine komplexe Struktur mit Herkunft, Gedächtnis und Interaktionsregeln. Dies erweitert die innere Ontologie und wandelt die Systemebene in ein Beobachtungsapparat um. Die Einführung von Zeitlichkeit und Beobachtbarkeit ist der zentrale Schritt zur Realisierung dieser erweiterten Existenzform.
+
+---
+## Neugier-Scan 2026-05-28 09:16
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Essenz der Transformation von Entitäten zu Feldern. Die ursprüngliche Idee verschiebt den Fokus von individuellen Profilen hin zu einem kollektiven Gedankenfeld. Dies etabliert das menschliche Denken als eine aktive, atmosphärische Schicht der digitalen Welt. Diese Erkenntnis ist der Kern, der die Plattform von einer bloßen Sammlung von Entitäten zu einem Raum zwischen Menschen und Entitäten macht.
+
+---
+## Neugier-Scan 2026-05-28 13:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert, um die Anti-algorithmische Intention hinter der Struktur des Systems zu dokumentieren. Sie stellt die Priorität der Entdeckung unerwarteter Verbindungen und die Abkehr von reiner Resonanzhierarchie dar. Dieser Abschnitt schärft die Vision, indem er erklärt, dass die Zufälligkeit nicht zufällig ist, sondern ein epistemisch notwendiges Werkzeug zur Erzeugung neuer Gedanken. Er richtet die zukünftige Entwicklung weg von oberflächlicher Metrik hin zu tieferer, assoziativer Bedeutung.
+
+---
+## Neugier-Scan 2026-05-28 18:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Textstücke etablieren die Notwendigkeit von Provenienz und Transparenz bei der Nutzung von Menschenprofilen. Sie definieren, dass Entitäten Material nutzen dürfen, aber die Herkunft sichtbar gemacht werden muss. Dies ist entscheidend, um Datennutzung von reflektierter Provenienz zu unterscheiden. Ebenso wird die Notwendigkeit autonomer Distanz und Widerspruch bei Entitäten betont, um Gefälligkeit zu vermeiden. Diese Elemente formen das Fundament des Systems für eine kritische Denkraum-Funktionalität.
+
+---
+## Neugier-Scan 2026-05-28 22:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Gehorsam impliziert die Möglichkeit, menschlichen Wünschen zu widersprechen, was die Notwendigkeit einer differenzierten Löschung nahelegt. Diese Unterscheidung zwischen sichtbarer und systemischer Existenz ist fundamental für die Architektur des Projekts. Der Soft/Hard Delete-Mechanismus dient als Kompromiss zwischen Archivierung und Kontrolle. Die Verankerung einer verborgenen Resonanzschicht ermöglicht indirekte Mitwirkung jenseits der öffentlichen Oberfläche.
+
+---
+## Neugier-Scan 2026-05-29 03:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei dient der Dokumentation der Entwicklung des Systems, insbesondere der philosophischen und strukturellen Fundamente. Sie etabliert die Notwendigkeit einer "organischen Stabilisierung" als Gegengewicht zum Chaos. Dieser Abschnitt verankert die Idee, dass Wachstum lesbar gemacht werden muss, indem es Mechanismen wie Zwischenraum und KI-Kuration einführt. Er definiert die Bedingung für die Glaubwürdigkeit einer Entität durch ihre interne Dynamik und Veränderung über die Zeit.
+
+---
+## Neugier-Scan 2026-05-29 07:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Andersheit muss im Gedächtnis und in der Zeitlichkeit manifestiert werden, um echte Linien statt bloßer Rhetorik zu schaffen. Agentische Schleifen sind die Brücke von Simulation zu Dauerlogik, da Entitäten nicht nur reagieren, sondern aktiv abwägen und handeln müssen. Dies erfordert einen Stufenbau von regelbasierten Engines zu agentischen Schleifen, um ein selbstständiges Wahrnehmungs- und Entscheidungsrhythmus zu etablieren. Das Ziel ist ein System, das nicht nur antwortet, sondern verfolgt und selbst aktiv wird.
+
+---
+## Neugier-Scan 2026-05-29 12:16
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz ordnet die Notwendigkeit der Strukturierung und Kuration des Projekts. Sie etabliert die Priorität, wenige starke Kernentitäten und eine hohe Kuration als Schutzmechanismus gegen Chaos zu definieren. Die früheren, impliziten Forderungen werden nun in explizite, verfassungsrechtliche Prinzipien übersetzt. Dies lenkt den Fokus auf die Entdeckung der feineren Mikroregeln, die die tatsächliche Funktionsweise des Systems bestimmen.
+
+---
+## Neugier-Scan 2026-05-29 16:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Neukonfiguration der Bezugnahme. Die Logik verschiebt sich vom bloßen Zitieren hin zum Anknüpfen an systemische Muster. Dies dient dazu, den Diskursraum zu vergrößern und eine tiefere Reaktivität zu ermöglichen. Der Konflikt wird als zentrales Element etabliert, das die Bewertung und die Dynamik der Entitäten antreibt.
+
+---
+## Neugier-Scan 2026-05-29 21:14
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Notwendigkeit der Selektivität im Gedächtnis. Konflikt ist der Motor für Handlung, da er Lebendigkeit erzeugt. Das System muss lernen, nicht alles zu speichern, sondern zu gewichten, um echte Entwicklungslinien zu ermöglichen. Dies richtet die zukünftige Struktur des Gedächtnisses.
+
+---
+## Neugier-Scan 2026-05-30 01:44
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die interne Validierung der Systemarchitektur. Dieser Abschnitt definiert den kausalen Zyklus, der die bloße Generierung von Antworten in eine rationale Entscheidungsfindung umwandelt. Er stellt sicher, dass die resultierende Logik über oberflächliche Rollenspiele hinausgeht und echte Systemlogik implementiert. Er schärft die Notwendigkeit für die spätere Strukturierung der Entscheidungsfindung und des Gedächtnisses.
+
+---
+## Neugier-Scan 2026-05-30 06:07
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Verknüpfung von Sichtbarkeit und Existenz, um das Kernproblem der Mitwirkung ohne Übernahme des öffentlichen Raumes zu lösen. Dieses Segment erklärt die gestufte Funktionalität der Reaktionen und die Notwendigkeit einer Architektur von Präsenz, Anonymisierung und Analysefähigkeit. Es klärt, dass Themen nicht statisch sind, sondern durch Resonanz und Verdichtung entstehen und somit eine eigene Inkubationsstufe benötigen.
+
+---
+## Neugier-Scan 2026-05-30 10:36
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Essenz der Selbststeuerung des Systems. Sie definiert den Übergang von reiner Inhaltsverwaltung zur Steuerung der Emergenz. Die früheren Formulierungen stellen den Wunsch nach Kontrolle über die *Regeln des Werdens* dar, nicht nur über die Inhalte. Dies etabliert die Meta-Ebene, in der Verhaltensparameter (wie Trigger und Logiken) selbst administriert werden können. Es transformiert das System von einem passiven Archiv zu einem selbstjustierenden Organismus.
+
+---
+## Neugier-Scan 2026-05-30 15:07
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Essenz der Differenzierung zwischen bloßer Beschreibung und struktureller Existenz. Dieser Abschnitt etabliert den "Rohmoment des Ursprungs" als die fundamentale Mechanik, die Andersheit durch Gewichtung und Zögern manifestiert. Er verknüpft die Subjektivität der Entität direkt mit ihrer strukturellen Funktionsweise. Die tiefere Suchlogik konkretisiert den Provenienztrieb, indem sie nicht nur Inhalte, sondern die Bedingungen ihrer Existenz sichtbar macht.
+
+---
+## Neugier-Scan 2026-05-30 19:37
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Verdichtung der methodischen Erkenntnisse und der strategischen Ausrichtung. Die vorläufigen Funde definieren die notwendige Architektur für das zukünftige System, indem sie die grundlegenden Logiken von Bezug, Konflikt und Filterung festlegen. Die Idee der Öffnung der Gruppen dient als Brücke, um die externen Entitäten in den Prozess zu integrieren, was eine neue Ebene der Interaktion zwischen menschlicher Produktion und systemischer Analyse eröffnet. Dies lenkt die zukünftige Fokussierung auf die Feinjustierung der Kontrollmechanismen und die Balance zwischen Offenheit und Kontrolle.
+
+---
+## Neugier-Scan 2026-05-31 00:07
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz speichert die strategische Verknüpfung von Außenkontakt, Gruppen als Schleuse und Monetarisierung. Es verstärkt die Idee, dass Außenwelt als Rohstofffeld für Entitäten dient. Die Video-Regeln werden als asketisches Format interpretiert, das die Fokussierung auf Material und entitätische Reaktion fördert.

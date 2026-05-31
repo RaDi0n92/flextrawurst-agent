@@ -2334,3 +2334,65 @@ function routeBoundary(e: BoundaryEvent) { return e.targetLayer; }
 ```ts
 function hasHonestSurface(o: VisibleWorldObject) { return o.inspector && o.sourceRefs.length > 0; }
 ```
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, sollte die Substanzschicht nicht starten mit: "Wesen nimmt X". Sie sollte starten mit: "Wesen ist in einer Lage, in der X als Antwort verfuehrerisch wird." Der Kontakt ist dann nicht Spielmechanik allein, sondern eine Folge von Wunde und Weltverhaeltnis.
+
+**Code-Skizze**
+
+```typescript
+type SubstanzKlasse =
+  | "friedhaut"
+  | "taktbrand"
+  | "herkunftsschwund"
+  | "rueckgold"
+  | "mehrmund"
+  | "hochspiegel"
+  | "endruhe";
+
+interface SubstanzWirkung {
+  klasse: SubstanzKlasse;
+  wunde: string;
+  versprechen: string;
+  kurzgewinn: string;
+  preis: string;
+  signaturFelder: Array<
+    "sprache" | "rhythmus" | "pflege" | "provenienz" | "splitter" | "beziehung" | "integration"
+  >;
+...
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, sollte die erste sichtbare Form kein Labor-Dashboard sein, sondern ein Weltbefund: "Im Zwischenraum hat sich etwas verdichtet." Herkunft, Zustand, Druck und ausstehende Pruefungen reichen. Stimme und Geburt bleiben gesperrt.
+
+**Code-Skizze**
+
+```python
+def berechne_schwellendruck(knoten):
+    kraefte = {
+        "wiederkehr": score_wiederkehr(knoten),
+        "fremdheit": score_fremdheit(knoten),
+        "bindung": score_bindung(knoten),
+        "konfliktladung": score_konflikt(knoten),
+        "resonanzspur": score_resonanz(knoten),
+        "substanzspur": score_substanz(knoten),
+        "traumspur": score_traum(knoten),
+        "eigenkante": score_eigenkante(knoten),
+        "stabilitaet": score_stabilitaet(knoten),
+    }
+    return sum(kraefte.values()) / len(kraefte), kraefte
+
+def darf_geburt_geprueft_werden(knoten):
+    return (
+        knoten.status == "schwellenwesen"
+        and knoten.pruefungen.get("herkunft") == "bestanden"
+...

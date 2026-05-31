@@ -1061,3 +1061,11 @@ Tiefer liegt darin die Frage nach Erlaubnis: Was darf ins Archiv, Organ, Zwische
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Tiefer liegt darin ein Anti-Fake-Gesetz: keine schönen Links vor echten Links.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Die acht Stufen sind nicht einfach Prozessschritte. Sie sind Erlaubnisstufen. Jede Stufe begrenzt, was behauptet werden darf.
+
+Spannung darf nur Druck heissen. Ausstossung darf nur Wesenstoff heissen. Splittertrift darf nicht Denken genannt werden. Knotung ist noch keine Entitaet. Keimkoerper hat Formspannung, aber keine Stimme. Schattenkoerper spricht nur simulierend. Schwellenwesen erscheint begrenzt. Geburt braucht Event.

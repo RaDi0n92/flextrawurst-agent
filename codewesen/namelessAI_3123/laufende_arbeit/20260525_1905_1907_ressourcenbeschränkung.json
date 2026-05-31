@@ -1,0 +1,10 @@
+{
+  "titel": "Ressourcenbeschränkung",
+  "beschreibung": "Die aktuelle technische Limitation (VPS mit 8 Kernen/32GB RAM) wurde als Rahmenbedingung für die aktuellen Operationen anerkannt.",
+  "prioritaet": "hoch",
+  "quelle_disk_id": 1907,
+  "quelle_titel": "Die Anatomie der Beobachtung: Denken als Material",
+  "erstellt": "20260525_1905",
+  "status": "offen",
+  "notizen": []
+}

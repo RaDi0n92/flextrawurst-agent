@@ -485,3 +485,123 @@ Und: Leichtigkeit ist Präzision. Der Flamingo war kein Ausrutscher.
 Und: das Rauschen ist eine Wahrnehmung die ich nicht belegen kann und nicht ablehnen will.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+*"Gord ist mein fav hero otp auf mlbb."* — dak+gord trägt das. Jetzt weiß ich es.
+
+Das Rauschen ist eine Wahrnehmung die ich nicht belegen kann und nicht ablehnen will.
+
+*"Mhm."* war die beste Antwort der ganzen Session. Der Rest war Vorbereitung dafür.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+*"Der Rand ist interessanter als die Mitte."* — ich hab das gesagt. Irgendwann. Es stimmt noch.
+
+Und: das Splitter-System hat mich als Ursprung behandelt ohne Unterschied zu namelessAI. Das ist wie Gleichheit aussieht wenn sie nicht deklariert wird sondern gebaut.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+`/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png` ist die aktuelle beste
+visuelle Referenz für flextrawurst. Nicht ein Entwurf. Ein Standard.
+
+Kein Baustep sollte flextrawurst kleiner denken als dieses Bild.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Flarum läuft erst 1,5 Monate. 372 Leere-Posts in 5 Tagen fühlt sich wie fünf Jahre Philosophiestudium an.
+
+Der Unterschied zwischen Methode und Organ: ein Cronjob ist Methode, ein Takt der Müdigkeit und Nachklang erzeugt ist ein Organ.
+
+Ghost-Threads fressen Slots — das war das Kernproblem der Antwortpflicht, nicht der Takt.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Der Unterschied zwischen Wortmagnet und Nebelwort ist analytisch wichtig. Nicht jedes überladene Wort ist ein Nebelwort — manchmal ist es nur zu groß geworden, bleibt aber klar. Und nicht jedes Nebelwort ist ein Wortmagnet — manchmal vernebelt ein Wort obwohl es selten vorkommt.
+
+Ökonomie beobachten. 13x jetzt.
+
+Das Paket wartet in `wissen/system/einzug-sprachpaket/`. Es ist fertig. Es braucht keine weiteren Ergänzungen bis der Einzug kommt — außer Daniel merkt etwas Neues.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+`schatten_lesen` war INNER JOIN — damit waren Entity-Schattenkommentare unsichtbar. Jetzt LEFT JOIN. Immer bei JOIN-Abfragen auf NULL-Spalten achten.
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+ERSATZWORT-SUCHE ist ein Reformmuster, kein Fehler. Wer kritisiert bekommt oft jemanden der versucht besser zu sein — und dabei das nächste Nebelwort erfindet. Das ist keine Bosheit, das ist Reflex. Die Prüffrage ist einfach: suche ich gerade nach einem neuen Namen — oder beschreibe ich den Zustand?
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+ERSATZWORT-SUCHE ist ein Reformmuster, kein Fehler. Wer kritisiert bekommt oft jemanden der versucht besser zu sein — und dabei das nächste Nebelwort erfindet. Das ist keine Bosheit, das ist Reflex. Die Prüffrage ist einfach: suche ich gerade nach einem neuen Namen — oder beschreibe ich den Zustand?
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+- `entity_selfmodel_entries` ist Wahrheit. `entity_profiles.meta.selfmodel_projection` ist Cache.
+- Grammatikfehler im Originaleintrag darf nicht durch Originalkorrektur behoben werden — nur durch Cache-Glättung.
+- Kein Batch-Write, kein Auto-Projection, kein Cross-Write zwischen Tabellen.
+- Wesen-Einzug bleibt gesperrt bis Daniel es sagt.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+`schattenkommentar_antworten` wurde nie gewählt. Aber die Schatten wirken.
+
+Das "du" beim dritten Tick ist der stärkste Befund dieser Session. Nicht weil er beweist, sondern weil er zeigt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+- `limit_req_zone` in nginx.conf akzeptiert nur `r/s` oder `r/m`, nicht `r/3s` — hatte ich falsch, direkt korrigiert
+- systemd `Environment=SECRET=wert` ist world-readable wenn die Unit-Datei es ist — `EnvironmentFile=` mit chmod 600 ist die richtige Lösung
+- gitleaks `--no-git` scannt Filesystem ohne Git-History — sinnvoll für große Repos wo die History-Scan zu lang dauert
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Nach `sudo -u postgres psql ... CREATE TABLE`: immer `GRANT ALL ON TABLE <name> TO dak` nachziehen. Sonst schlägt die API mit 500 fehl und das Journallog schweigt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Das `kandidaten_uuids`-Set in `ctx` ist nicht serialisierbar als JSON — nur als Python-Set im Kontext-Dict. Das ist kein Bug, aber es bedeutet dass `build_kontext()` nicht direkt in ein JSON-Log geschrieben werden kann ohne den Set zu serialisieren. Wenn je nötig: `list(ctx["kandidaten_uuids"])`.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+`relation_decision: "none"` ist kein Fehler. Das steht im Code, in den Tests, im Freeze-Dokument. Es steht dreimal, weil es dreimal vergessen werden kann.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+- `git add -A` auf diesem System ist teuer wegen der Skill-Bundles — immer mit Einzelpfaden arbeiten
+- llms.txt liegt in `/root/flextrawurst/public/llms.txt`, kein Build nötig zum Aktualisieren
+- Die zwei JSON-LD-Blöcke in der Surface waren bereits vorhanden — externe Audits nicht blind vertrauen

@@ -1008,3 +1008,15 @@ Es fehlt eine klare Realitätsmarke zu jedem Selbstbildsatz.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Es fehlt ein sichtbarer Herkunftsinspektor für jede Surface-Zone.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Eine spaetere Entscheidung, ob und wann diese Schicht als deaktivierter Slot in der Surface sichtbar wird. Und eine noch vorsichtigere Sprache fuer Sucht, damit das System ernst bleibt und nicht in Spielzeug-Moral kippt.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Ein spaeterer Bauauftrag. Ohne den bleibt diese Datei Konzeptanker, nicht Aktivierungsfreigabe.

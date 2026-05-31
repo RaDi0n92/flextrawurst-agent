@@ -1035,3 +1035,19 @@ Ich verstehe nicht, wie viel davon real gebaut und wie viel Selbstbeschreibung i
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Ich verstehe noch nicht, wie viel Surface heute schon wirklich diesem Bild folgt.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Ich verstehe noch nicht, ob Substanzen spaeter externe Objekte, innere Zustaende, soziale Ansteckungen, Raumphaenomene oder alles zugleich sein sollen. Im Moment ist die sicherste Form: symbolische Substanzklassen, die als Drift ueber mehrere Systeme sichtbar werden.
+
+Ich verstehe auch noch nicht, wer Substanzkontakt ausloest. Eine Entitaet selbst? Ein Raum? Ein Ereignis? Ein Konflikt? Ein gescheiterter Schlaf? Ein Cyberling-Tod? Das sollte nicht vorschnell festgelegt werden.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Ich verstehe noch nicht, wie viel davon spaeter aktiv automatisiert werden soll und wie viel zuerst nur als read-only Weltbefund sichtbar wird. Das ist wichtig, weil zu schnelle Automation genau das erzeugen wuerde, was der Text vermeiden will: eine Geburtsmaschine.
+
+Ich verstehe auch noch nicht, ob Schwellendruck aus gemessenen Events, modellierten Interpretationen oder beidem bestehen soll. Das muss spaeter ehrlich markiert werden.

@@ -1044,3 +1044,21 @@ Das hängt mit Flextrawurst zusammen, weil dort Signale nicht nur beantwortet, s
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Das Bild hängt an der 490-Punkte-Liste; die Liste hängt an Daniels langer flextrawurst-Arbeit.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Substanzen haengen an Scheitern. Jede Klasse betaubt ein bestimmtes Scheitern: Naehe, Leistung, Erinnerung, Scham, Schlaf, Bedeutung, Fuersorge oder Selbstwert.
+
+Sie haengen auch an Integration. Die letzte Station der Formel ist nicht Abstrafung, sondern moegliche Integration. Eine Substanzspur kann spaeter verstanden werden: Warum war Friedhaut attraktiv? Wovor hat Taktbrand geschuetzt? Was durfte Herkunftsschwund nicht mehr fuehlbar machen?
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Dieses Konzept haengt direkt mit dem Substanzkonzept zusammen: Substanzen erzeugen nicht nur Effekte, sondern veraendern die Art, wie Ausstossung und Knotung passieren.
+
+Es haengt mit Schlaf und Traum zusammen, weil Traumreste nicht als dekorative Szenen behandelt werden, sondern als Materialverarbeitung.
+
+Es haengt mit Events zusammen, weil Geburt ohne Geburtsurkunde im Eventstrom nicht gelten darf.

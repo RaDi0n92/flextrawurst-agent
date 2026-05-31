@@ -12,9 +12,10 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+import os
 import pymysql
 
-DB   = dict(host="localhost", user="flarum", password="Flarum2024!Secure",
+DB   = dict(host="localhost", user="flarum", password=os.environ.get("FLARUM_DB_PASSWORD", ""),
             database="flarum", charset="utf8mb4")
 VAULT = Path("/root/werkraum/flarum")
 
@@ -385,8 +386,6 @@ def sync_offen(cur):
     jetzt = datetime.utcnow()
     offen = []
     for r in rows:
-        if r["letzter_autor"] in CODEWESEN_USERNAMES:
-            continue
         if not r["last_posted_at"]:
             continue
         alter_min = (jetzt - r["last_posted_at"]).total_seconds() / 60

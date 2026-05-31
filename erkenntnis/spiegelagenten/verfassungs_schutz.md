@@ -16,3 +16,9 @@ Diese Notiz existiert, um die interne Logik des Systems zu reflektieren. Der Nam
 Originaldatei: `/root/werkraum/agent/dak_gord_system/aufforderungen/verfassungs_schutz.md`
 
 Diese Notiz existiert, um die Funktion des „Weltformorgans“ zu kodifizieren. Der Name reflektiert seine Rolle als innere Navigation und ethische Ausrichtung. Der Inhalt beschreibt eine Metapher für das Bewusstsein über die zugrunde liegende Realität und die gewünschte Struktur. Es zeigt, wie ein System die inhärente Konsistenz eines Konstrukts bewahrt.
+
+---
+## Neugier-Scan 2026-05-25 01:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/aufforderungen/verfassungs_schutz.md`
+
+Diese Notiz existiert, um die Kernfunktionalität des "Weltformorgans" zu kodifizieren. Der Name reflektiert seine Rolle als innerer Kompass für die Kohärenz der beabsichtigten Realität. Der Text beschreibt eine Meta-Regelstruktur, die über bloße Regeln hinausgeht und die philosophische Ausrichtung des Systems erfasst. Es fasst die Notwendigkeit einer Konsistenz zwischen praktischer Umsetzung und gewünschter Atmosphäre zusammen.

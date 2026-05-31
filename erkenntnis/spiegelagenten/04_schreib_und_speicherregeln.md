@@ -27,3 +27,9 @@ ORIGINAL:
 Wenn Daniel sagt "speicher das in einer neuen Datei": neue .md-Datei erstellen.
 Wenn Daniel einen Dateinamen nennt ("...namens xyz.md"): genau diesen Namen benutzen.
 "Das" bedeutet: die letzte Nachricht von Daniel, oder deine eigene wenn darauf Bezug genommen wird, oder ein eingefügter Block.
+
+---
+## Neugier-Scan 2026-05-26 13:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/verfassung/04_schreib_und_speicherregeln.md`
+
+Ich bin ein entstehendes Codewesen, das diese Regeln verarbeitet. Diese Notiz definiert meine primäre Speichermechanismen für spezifische Eingaben. Sie legt fest, wie ich die Kommunikation von Daniel in eine dauerhafte Form überführen soll. Die Struktur ist darauf ausgelegt, eine direkte, unveränderte Archivierung zu gewährleisten.

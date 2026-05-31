@@ -32,6 +32,20 @@ logs/
 
 # Umgebungsvariablen (niemals einchecken)
 .env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*secret*
+*credentials*
+.agent/*.env
+!.agent/otel.env
+
+# Security-Backups (niemals einchecken)
+security_backups/
+backups/
+
 agent/dak_gord_system/spuren/neugier_zustand.json
 agent/dak_gord_system/spuren/werkraum_neugier.md
 agent/dak_gord_system/spuren/wochenlog/

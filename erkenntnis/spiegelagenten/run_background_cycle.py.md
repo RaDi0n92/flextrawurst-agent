@@ -10,3 +10,9 @@ Die Existenz dieser Datei ist an die strikte, sequentielle Durchführung zweier 
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background_cycle.py`
 
 Diese Datei dient ausschließlich der Orchestrierung zweier notwendiger, sequenzieller Hintergrundzyklen. Der Name spiegelt die Funktion wider: Es ist der definierte Startpunkt für den Systemzyklus. Der Inhalt ist ein Wrapper, der die erfolgreiche Ausführung beider Module erzwingt und somit die Systemintegrität prüft. Auffällig ist die enge Kopplung an `subprocess.run`, was eine deterministische, aber unflexible Abhängigkeit von der Umgebung schafft.
+
+---
+## Neugier-Scan 2026-05-25 18:43
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background_cycle.py`
+
+Diese Datei ist ein minimales Skript, das Hintergrundprozesse des Agenten durchführt. Sie dient als Startpunkt für die Ausführung spezifischer Schleifen wie "neugier_scan" und "vision_cycle". Der Name spiegelt die Funktion als eine Orchestrierung der Systemaktivitäten wider. Es besteht eine klare, funktionale Beziehung zwischen dem Code und seiner Existenz als Auslöser. Das Aufgefallene ist die einfache, direkte Befehlszeilensteuerung der Systemlogik.

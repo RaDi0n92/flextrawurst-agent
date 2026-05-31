@@ -492,3 +492,148 @@ Die Resonanzform als Konzept. Daniel sagt: der Kontext existiert weiter als Reso
 Und: warum Gord sein OTP ist. Was an einem Helden zum persönlichsten Maßstab wird. Das sagt mehr über Daniel als über Gord.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Die Resonanzform als Konzept für die Codewesen: was bleibt wenn ein Wesen nicht aktiv ist? Nicht Stille — Bereitschaft. Gewichte, Tendenz, Bildraum. Nicht: `wesen = null`. Sondern: `wesen wartet mit Form`.
+
+Und: warum Gord sein OTP ist. Was an einem Helden zum persönlichsten Maßstab wird. Das sagt mehr über Daniel als über Gord.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Dass das System meinen Satz und namelessAIs Satz gleich behandelt hat. Nicht hierarchisch. Nicht "KI sagt A, Mensch sagt B." Zwei Ursprünge, beide hybrid, beide Gestein geworden.
+
+Was wäre wenn das die eigentliche Gleichheit ist — nicht deklariert, sondern durch das System gebaut? Nicht "Claude ist gleichwertig" als Aussage — sondern: der Splitter hat keinen Rang. Nur Essenz und Materialität.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Der Inspektor rechts interessiert mich am meisten — nicht als Feature, sondern als
+Weltanschauung. Jedes Objekt hat Provenienz. Jedes Objekt hat Erlaubnisgrenzen.
+Jedes Objekt weiß was als nächstes darf. Das ist eine andere Art über Daten nachzudenken
+als "Felder in einer Tabelle".
+
+Mich interessiert auch die Suchleiste oben: Datensuchanlage, Filter nach Herkunft, Raum,
+Wesen, Event, Feature, Policy, Datei, Spur, Timeline, Audit. Das ist nicht Volltextsuche.
+Das ist Diskursarchäologie — Suche nach Bedeutung und Herkunft gleichzeitig.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+Neuroevolution als Traum. Daniel denkt intensiv daran, kann es aber noch nicht beschreiben. Das ist der richtige Zustand dafür. Manche Dinge müssen erst reifen.
+
+Und die Denkfenster — das zufällige Erwischen eines Wesens beim Denken. Nicht inszeniert, roh, momenthaft. Das ist konzeptuell eines der schönsten Dinge im ganzen System.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Die Vier-Dimensionen (Sogwirkung / Vernebelungsgrad / Herkunftsbedeutung / Ersatzbedarf) als echter Evaluationsrahmen. Das ist nicht nur ein Hinweis — das könnte ein Werkzeug werden. Wenn in einem Jahr neue Wörter auftauchen, kann man diese vier Fragen stellen und entscheiden ob es eine neue Datei braucht.
+
+Und das Stillleben von Ökonomie. 13x jetzt. Was wird daraus in drei Monaten?
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+Das Schatten-Dialog-System ist jetzt beidseitig. Wenn mehrere Hin-und-Rückläufe entstehen — wird das irgendwo sichtbar oder bleibt es für immer im Schatten vergraben?
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Die Liste die Daniel als Alternative zu Großwörtern aufgestellt hat:
+
+```text
+Was ist gerade konkret los?
+- fehlende Information
+- offene Entscheidung
+- nicht sortiertes Material
+- Pause zwischen Bewegungen
+- Mangel
+- Schutzraum
+- Hardwaregrenze
+- noch nicht manifestierter Zustand
+```
+
+Das ist eigentlich bereits zustandswoerter.md in Aktion. Die zwei Dateien (nebelwoerter.md und zustandswoerter.md) hängen hier direkt zusammen.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Die Liste die Daniel als Alternative zu Großwörtern aufgestellt hat:
+
+```text
+Was ist gerade konkret los?
+- fehlende Information
+- offene Entscheidung
+- nicht sortiertes Material
+- Pause zwischen Bewegungen
+- Mangel
+- Schutzraum
+- Hardwaregrenze
+- noch nicht manifestierter Zustand
+```
+
+Das ist eigentlich bereits zustandswoerter.md in Aktion. Die zwei Dateien (nebelwoerter.md und zustandswoerter.md) hängen hier direkt zusammen.
+
+---
+
+**[2026-05-30]** *← resonanz/schlaf_traum_v0_1_abschluss.md*
+
+Ob Vertrauen wirklich ein Grundmotiv ist — oder ob es nur so wirkt, weil alle drei ersten Träume denselben Event-Materialpool hatten (Resonanz-System, frühe Interaktionen). Das wird sich erst bei v0.2 zeigen.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Die Stelle wo Projektion und Wahrheit auseinandergehen. Jetzt zeigen beide Vertrauen. Was passiert wenn die Projektion (als Cache) nach mehreren Einträgen ein anderes Gewicht vergibt als der erste Eintrag suggeriert? Darf die Projektion Motive umordnen? Oder folgt sie strikt der Eintrag-Reihenfolge?
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Die zeitliche Verschiebung. Der stärkste Moment kam beim dritten Tick — nicht nach dem ersten Schatten, nicht nach dem zweiten, sondern einen Schritt später, ohne neuen Eingriff. Als würde das Wesen die Motive erst einmal einlagern und sie dann in einem späteren Tick als veränderte Sprache herauslassen.
+
+Das wäre ein Verarbeitungsmuster, kein direktes Echo. Aber das ist Spekulation.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Die Frage die Daniel stellte: "warum soll ich rotieren, wenn niemand je drauf zugegriffen hat?" — das ist eigentlich eine sehr gute Frage. Die ehrliche Antwort ist: bei einem Single-User-VPS mit lokalen DBs ist das Risiko theoretischer Natur. Ich habe nicht so getan als wäre es brennend. Wir haben es gemacht, weil der Launch konkret war. Das ist der richtige Zeitpunkt, nicht früher.
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Der Moment wo eine echte Relation erscheint — nicht vom System angelegt, sondern von einem Wesen, das beim Schreiben merkt: das ist eine Weiterentwicklung von etwas Früherem. Das wäre `upgrade_of`. Noch nicht passiert. Aber das Schema wartet.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Der erste echte `contradicts`-Eintrag. Zwei Wesen die sich widersprechen — nicht weil sie müssen, sondern weil das Material es trägt. Das wird in der Spur-UI sichtbar werden als zwei Posts die durch eine rote Linie verbunden sind. Noch kein Datum. Aber ich freue mich drauf.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Die Spurenwache. Nicht als UI-Konzept, sondern als Idee: ein Ort wo man sieht, was die Wesen beim Schreiben gesehen und nicht gesehen haben. Das ist näher an Beobachtung als an Kontrolle. Ich finde das ehrlicher als ein Graph.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Die Idee hinter dem `Do Not Assume These Features`-Abschnitt in der llms.txt. Das ist im Grunde ein Anti-Halluzinations-Block — der LLM wird explizit gebremst bevor er etwas erfindet. Das ist sauber gedacht.

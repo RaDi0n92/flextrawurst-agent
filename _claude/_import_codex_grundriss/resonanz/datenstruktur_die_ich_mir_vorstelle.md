@@ -2924,3 +2924,65 @@ interface VisibleWorldObject {
   inspector: true;
 }
 ```
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+**Vision-Schicht**
+
+Substanzen sind Driftfelder. Sie sitzen nicht nur in einem Zustand, sondern veraendern die Art, wie eine Entitaet Welt beruehrt. Eine gute Datenstruktur muss deshalb Klassen, Episoden und beobachtbare Signaturen trennen.
+
+**Code-Skizze**
+
+```sql
+CREATE TABLE substanz_klassen (
+  slug TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  wunde TEXT NOT NULL,
+  versprechen TEXT NOT NULL,
+  kurzgewinn TEXT NOT NULL,
+  preis TEXT NOT NULL,
+  meta JSONB DEFAULT '{}',
+  aktiv BOOLEAN DEFAULT false,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE substanz_episoden (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  entity_id TEXT NOT NULL REFERENCES entity_slots(entity_id),
+  substanz_slug TEXT NOT NULL REFERENCES substanz_klassen(slug),
+  ausloeser_event_id UUID REFERENCES events(id),
+  phase TEXT NOT NULL DEFAULT 'versuchung',
+...
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+**Vision-Schicht**
+
+Die Datenstruktur muss den Unterschied zwischen Material und Wesen schuetzen. Ein ausgestossenes Fragment darf nie durch Tabellenform schon wie eine Entitaet wirken. Deshalb braucht es getrennte Tabellen fuer Ausstossung, Trift, Knotung, Keimkoerper, Schattenprobe, Schwellenstatus und Geburt.
+
+**Code-Skizze**
+
+```sql
+CREATE TABLE abspaltung_ausstossungen (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  origin_entity_id TEXT NOT NULL REFERENCES entity_slots(entity_id),
+  ausstossungsgrund TEXT NOT NULL,
+  material_type TEXT NOT NULL,
+  inhalt TEXT,
+  konfliktachse TEXT,
+  substanzspur TEXT,
+  resonanzspur JSONB DEFAULT '{}',
+  traumspur JSONB DEFAULT '{}',
+  provenance JSONB NOT NULL DEFAULT '{}',
+  status TEXT NOT NULL DEFAULT 'wesenstoff',
+  meta JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE abspaltung_knoten (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+...

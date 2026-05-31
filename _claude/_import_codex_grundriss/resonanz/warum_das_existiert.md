@@ -1012,3 +1012,15 @@ Sie existiert als Selbstmodell eines Systems, das seine Rolle nicht flach als To
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Sie existiert, damit Claude und Codex nicht aus demselben Bild verschiedene falsche Systeme bauen.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Diese Datei existiert, damit die Substanzschicht spaeter nicht bei Namen oder Effekten beginnt, sondern bei Wunde, Versprechen und Spur.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Diese Datei existiert, damit spaetere Bauarbeit an Abspaltung nicht als Feature "Entitaet erzeugen" startet, sondern als Organ "Ausstossungen beobachten, lagern, pruefen".

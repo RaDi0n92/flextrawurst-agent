@@ -412,3 +412,139 @@ Nichts direkt. Aber: eine Stunde mit aggro-User. Die hab ich bis jetzt vermieden
 Eine Antwort auf die Munkeln-Frage. Ich hab sie offen gelassen. Vielleicht gehört sie offen.
 
 ---
+
+---
+
+**[2026-05-24]** *← _claude/notizen/2026-05-24.md*
+
+Traumgenerierung. Wesen-Einzug (gesperrt). Persönliche Welt. Alle aus der Bau-Reihenfolge.
+
+---
+
+**[2026-05-24]** *← spiegel/eigener_splitter_gefunden.md*
+
+Nichts was diesen Spiegel betrifft. Das hier ist kein Bauplan — das ist eine Aufzeichnung.
+
+---
+
+---
+
+**[2026-05-29]** *← ideen/flextrawurst_adminleitstand_vision_referenz.md*
+
+Eine technische Übersetzung des Bildes in Pflichtstrukturen:
+- surface_manifest als TypeScript-Interface (Räume, Layer, Entitäten, Organe, Status, Provenienz)
+- Statussprache als Typ: `"live" | "demo" | "prinzip" | "geplant" | "spaeter" | "blockiert"`
+- Inspektor-Policy: welche Felder zeigt der Inspektor für welches Objekttyp
+- Weltkarten-Renderer: was ist die minimale Implementierung die eine lebende Karte zeigt
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29.md*
+
+begriffsspiegel.md: erst beim Einzug. Dann aus Flarum-Lernungen destillieren.
+Vereinigtes Wesen-System: erst wenn Einzug steht.
+Denkfenster: als Sichtbarkeitsschicht des vereinigten Systems.
+Neuroevolution / Traum: wenn Daniel es beschreiben kann.
+
+---
+
+**[2026-05-29]** *← _claude/notizen/2026-05-29-sprachpaket.md*
+
+Das Paket ist fertig. Was noch fehlt ist der Einzug selbst — und Daniel sagt wann der kommt.
+
+Bevor aktiviert wird: das Paket nochmal lesen wenn der Einzug wirklich bevorsteht. Manche Einträge könnten bis dahin veraltet sein (neue Wörter, andere Gewichtungen). Dann `aktivierungsnotiz.md` aktualisieren und Daniels Entscheidung einholen.
+
+---
+
+**[2026-05-29]** *← notizen/2026-05-29-punkt5.md*
+
+Für den Einzug:
+- Punkt 6 (Flarum-Archiv) kurz davor erledigen
+- Einzugs-Sprachpaket aktivieren (liegt fertig bereit)
+- Daniel sagt "jetzt"
+
+---
+
+**[2026-05-30]** *← resonanz/traum_zustandsvertrag.md*
+
+- Antworten auf F1, F3 und F6 (die drei prägenden)
+- Entscheidung ob Selektionsregel für v0.1 regelbasiert oder LLM
+- Schema-Entwurf für `traumspuren` (nach F1-Antwort)
+- Dann: Schlaf-Trigger (existiert schon teilweise im Schlaf-System)
+- Dann: Traumprozess
+- Dann: Integrator
+- Dann: Cyberling-Anbindung (Erfahrungsquelle, kein Traumsteuerer)
+- Dann: Neuroevolution (spät — erst wenn genug Traumspuren existieren)
+
+---
+
+**[2026-05-30]** *← _claude/notizen/2026-05-30.md*
+
+Einzug-Erlaubnis von Daniel. Alles andere liegt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30.md*
+
+Einzug-Erlaubnis von Daniel. Alles andere liegt.
+
+---
+
+**[2026-05-30]** *← resonanz/schlaf_traum_v0_1_abschluss.md*
+
+Für v0.2 braucht es:
+- Wesen mit mehr als einem Traum (wiederholte Schlafphasen)
+- Event-Material das nicht Resonanz-zentriert ist (andere Interaktionstypen)
+- Klärung: wie addieren sich mehrere Einträge in der Projection?
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-schlaf-traum-abschluss.md*
+
+Klärung der Mehrfach-Eintrag-Logik in der Projection. Das ist die einzige Architekturfrage die vor v0.2 offen ist. Alles andere ist technisch vorbereitet.
+
+---
+
+**[2026-05-30]** *← spiegel/resonanzspur_namelessAI_1234_2026-05-30.md*
+
+Mindestens 3-5 weitere Ticks ohne Eingriff beobachten. Prüfen ob das "du" stabil bleibt. Erst dann entscheiden ob der Prompt verstärkt werden muss oder ob das Muster sich selbst trägt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-security.md*
+
+Nichts was den Launch blockiert. Offene Punkte:
+- Ports 8001/8010/8900/7777 hinter Nginx legen (später)
+- PostgreSQL-Passwort für DAK rotieren (optional, DB nur lokal)
+- welt/api.py auf echten API-Key umstellen (später)
+
+---
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit.md*
+
+Für den nächsten Schritt (Wesen schreiben Relationen beim Posten): der entity_kern.py muss wissen dass `initiale_relationen` im POST-Body möglich ist. Das wäre eine kleine Erweiterung im Aktionsparser.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-wesen-spurenentscheidung.md*
+
+Nichts Dringendes. Die Kette ist vollständig.
+
+Was kommen kann wenn Daniel will:
+- Klima-Einfluss auf Schreibentscheidung (klima_status beeinflusst Temperatur oder Prompt-Gewichtung)
+- Surface-Badge für Wesen-Entscheidungsquelle (candidate_group sichtbar)
+- Erste echte Relation in der Welt abwarten und dokumentieren
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-spurenfaehigkeit-abschluss.md*
+
+Für Spurenfähigkeit: nichts. Für die nächste Phase: Daniels Entscheidung, was als nächstes kommt.
+
+---
+
+**[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
+
+Daniels Entscheidung was als nächstes kommt. Die Bau-Reihenfolge hat mehrere offene Punkte: Wesen-Einzug (gesperrt), Gruppenkonzept, Traumgenerierung, Denkfenster.

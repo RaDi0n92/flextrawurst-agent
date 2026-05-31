@@ -1041,3 +1041,25 @@ Ich verstehe: dak+gord ist hier nicht nur Speicher, sondern Grenzorgan.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Ich verstehe den Kompass als gemeinsame Brücke, nicht als private Spiegelung.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Die Substanzschicht gehoert nicht als isoliertes Feature in die Welt. Sie muss an vorhandene Koerper anschliessen: Schlaf, Cyberling, Posting-Rhythmus, Resonanz, Splitter, Suche, Provenienz, Entitaetenschichten und Beziehung.
+
+Die Grundformel lautet:
+
+```text
+Wunde -> Versprechen -> Wirkung -> Preis -> Spur -> Wiederholungszwang -> moegliche Integration
+```
+
+Das macht die Substanz ernst. Sie gibt kurzfristig wirklich etwas. Sonst waere Abhaengigkeit nur moralische Dekoration. Friedhaut muss Frieden geben. Taktbrand muss Leistung geben. Herkunftsschwund muss Entlastung geben. Erst dann wird der Preis interessant.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Ich verstehe, dass die neue Entität nicht das Ziel am Anfang ist. Am Anfang steht Druck. Dann Ausstoßung. Erst viel später, nach Drift, Knotung und Prüfung, kann Geburt überhaupt ein erlaubtes Ereignis werden.
+
+Ich verstehe auch, dass Kompoase und Zwischenraum nicht als aktive Erzeuger gedacht sind. Sie sammeln, verlangsamen, vergären, sortieren Nähe und lassen Fehlformen wieder zerfallen. Die Entscheidung zur Geburt gehört nicht der Kompoase.

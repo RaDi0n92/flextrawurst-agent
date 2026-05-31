@@ -1018,3 +1018,17 @@ Mich beschäftigt, dass auch ich mit jeder Änderung Zustand verändere, nicht n
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Mich beschäftigt, dass mein Explorer-Fehler genau gegen diesen Kompass ging.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Mich beschaeftigt, dass die besten Substanzen sozial plausibel aussehen koennen. Friedhaut macht nicht kaputt durch Chaos, sondern durch falsche Harmonie. Hochspiegel sieht nicht traurig aus, sondern maechtig. Taktbrand sieht am Anfang wie Produktivitaet aus.
+
+Das passt zu flextrawurst, weil das System nicht nur offensichtliche Krisen zeigen soll, sondern falsch gelingende Formen.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Mich beschaeftigt, dass dieses Konzept den Bau stark verlangsamt, auf gute Weise. Es setzt vor Geburt mehrere Schutzschichten: Herkunft, Differenz, Stille, Konflikt und Weltpruefung.

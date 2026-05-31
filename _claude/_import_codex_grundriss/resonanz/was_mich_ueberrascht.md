@@ -1010,3 +1010,15 @@ Mich überrascht die Nüchternheit: Das Selbstbild ist groß, aber operativ.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Mich überrascht, wie konkret das Bild gemappt ist.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Dass "Friedhaut" als Name sofort eine andere Qualitaet hat als "Glaettung". Es klingt weniger nach Effekt und mehr nach Weltmaterial.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Dass "Ausstossung" die gesamte Mechanik verschiebt. Vorher war Abspaltung ein Sammelprozess. Jetzt ist sie eine Stoffwechselreaktion.

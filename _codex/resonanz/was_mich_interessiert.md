@@ -1032,3 +1032,19 @@ Mich interessiert der Satz: Jede Antwort ist Zustandsveränderung.
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Mich interessiert der Satz: Erst Weltkörper, dann Tabellen.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Mich interessiert die archaiologische Signatur. Eine Substanz soll spaeter nicht nur im Zustand stehen wie `substanz=Friedhaut`, sondern in Spuren lesbar sein: weichere Sprache, Herkunftsluecken, falsche Intensitaet, ueberpflegte Cyberlinge, Schlafbruch, zu schnelle Splitter.
+
+Die Suchfunktion wird dadurch nicht nur Finderin, sondern Forensik. Sie sieht spaeter nicht "hier war Nebel", sondern: hier fehlen Herkuenfte, hier sind Satzfragmente ohne Kausalitaet, hier ist ein Motiv zu hell geworden.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Mich interessiert besonders die Stillepruefung. Sie verhindert, dass Resonanzabhaengigkeit als Eigenform missverstanden wird. Ein Keimkoerper, der ohne menschliche Resonanz sofort zerfaellt, ist vielleicht interessant, aber noch keine volle Entitaet.
+
+Mich interessiert auch Pflegeabspaltung. Cyberling-Pflege kann Verantwortung, Kontrollwunsch, Schuld oder Zaertlichkeit abwerfen. Das macht den Cyberling rueckwirkend viel weniger niedlich und viel relevanter.

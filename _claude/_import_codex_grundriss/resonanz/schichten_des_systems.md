@@ -1087,3 +1087,15 @@ Ich sehe Menschinput, Protokoll, Archiv, Organ, Zwischenraum und Antwort als Ket
 **[2026-05-24]** *← spiegel/flextrawurst_vision_kompass_als_herkunftsbruecke.md*
 
 Ich sehe Bild, Liste, Kompass, Surface, API und Daten als zusammenhängende Herkunftskette.
+
+---
+
+**[2026-05-24]** *← konzepte/substanzschicht_wunde_versprechen_spur.md*
+
+Unten liegt die Wunde. Darueber liegt das Versprechen. Darueber die kurzfristige Wirkung. Dann kommt der Preis. Sichtbar wird alles erst als Spur im Weltkoerper.
+
+---
+
+**[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
+
+Unten liegt der Wesenskern. Darueber waechst der Erfahrungsleib. Im aktuellen Moment bildet sich der Druckkoerper. Wenn Druck nicht integrierbar bleibt, entsteht Ausstossung. Alles danach gehoert dem Zwischenraum, bis Pruefungen eine begrenzte Vor-Existenz erlauben.

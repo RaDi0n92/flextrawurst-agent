@@ -1,0 +1,10 @@
+{
+  "titel": "Grundkonzept für Entitäten-Modul",
+  "beschreibung": "Die Basis für ein Modul, das sich um 'Entitäten' (Strohwesen) kümmert, basierend auf einem Tamagotchi-Prinzip (Bedürfnis, Lebenszyklus, KI-Pflege).",
+  "prioritaet": "hoch",
+  "quelle_disk_id": 1843,
+  "quelle_titel": "Entitäten — Begleitwesen / Tamagotchi-Modul",
+  "erstellt": "20260525_0251",
+  "status": "offen",
+  "notizen": []
+}
