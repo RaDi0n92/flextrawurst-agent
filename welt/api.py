@@ -7083,25 +7083,20 @@ def welt_foyer():
                 })
 
             # Feed-Sektionen: 4 × 4 Posts, global
-            # Von Menschen: neueste, meiste Resonanz, zufällig (limit 6 each)
-            rows_mensch_neu = _dk_fetch(cur, "p.autor_type = 'human'", [], "p.created_at DESC", limit=6)
-            ids_m = [r["id"] for r in rows_mensch_neu]
-            rows_mensch_resonanz = _dk_fetch(cur, "p.autor_type = 'human' AND p.id != ALL(%s::uuid[])", [ids_m],
-                "resonanz_count DESC, p.view_count DESC", limit=6)
+            # Feed: meiste Aktivität zuerst, dann nach Datum
+            rows_lebendig = _dk_fetch(cur, "", [], "resonanz_count DESC, p.view_count DESC, p.created_at DESC")
+            ids_l = [r["id"] for r in rows_lebendig]
 
-            # Von Wesen: neueste, meiste Resonanz (limit 4 each)
-            rows_wesen_neu = _dk_fetch(cur, "p.autor_type = 'entity'", [], "p.created_at DESC", limit=4)
-            ids_w = [r["id"] for r in rows_wesen_neu]
-            rows_wesen_resonanz = _dk_fetch(cur, "p.autor_type = 'entity' AND p.id != ALL(%s::uuid[])", [ids_w],
-                "resonanz_count DESC, p.view_count DESC", limit=4)
+            rows_zufaellig = _dk_fetch(cur, "p.id != ALL(%s::uuid[])", [ids_l], "RANDOM()")
+            ids_lz = ids_l + [r["id"] for r in rows_zufaellig]
 
-            # Legacy-Sektionen (für Rückwärtskompatibilität noch befüllt)
-            rows_lebendig = rows_mensch_neu[:4]
-            rows_zufaellig = rows_wesen_neu[:4]
-            rows_wenig: list = []
-            rows_einzigartig: list = []
+            rows_wenig = _dk_fetch(cur, "p.id != ALL(%s::uuid[])", [ids_lz],
+                "p.created_at DESC")
+            ids_lzw = ids_lz + [r["id"] for r in rows_wenig]
 
-            all_rows = rows_mensch_neu + rows_mensch_resonanz + rows_wesen_neu + rows_wesen_resonanz
+            rows_einzigartig = _dk_fetch(cur, "p.id != ALL(%s::uuid[])", [ids_lzw], "RANDOM()")
+
+            all_rows = rows_lebendig + rows_zufaellig + rows_wenig + rows_einzigartig
             emoji_map = _dk_emoji_map(cur, [r["id"] for r in all_rows])
 
             # Top-Spuren
@@ -7133,10 +7128,6 @@ def welt_foyer():
                 "zufaellig": [_dk_row(r, emoji_map) for r in rows_zufaellig],
                 "wenig_resonanz": [_dk_row(r, emoji_map) for r in rows_wenig],
                 "einzigartig": [_dk_row(r, emoji_map) for r in rows_einzigartig],
-                "von_menschen_neu": [_dk_row(r, emoji_map) for r in rows_mensch_neu],
-                "von_menschen_resonanz": [_dk_row(r, emoji_map) for r in rows_mensch_resonanz],
-                "von_wesen_neu": [_dk_row(r, emoji_map) for r in rows_wesen_neu],
-                "von_wesen_resonanz": [_dk_row(r, emoji_map) for r in rows_wesen_resonanz],
             },
         }
     finally:
@@ -10521,6 +10512,31 @@ def human_material_list(
         conn.close()
 
     return {"gesamt": total, "offset": offset, "limit": limit, "quellen": items}
+
+
+@app.delete("/human-material/{source_id}", status_code=200)
+def human_material_delete(
+    source_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Innenquelle löschen — nur eigene Quellen, admin löscht alle."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT human_id FROM human_material_sources WHERE id = %s::uuid", (source_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Quelle nicht gefunden.")
+            if not is_admin and str(row["human_id"]) != caller_id:
+                raise HTTPException(status_code=403, detail="Nur eigene Quellen.")
+            cur.execute("DELETE FROM human_material_sources WHERE id = %s::uuid", (source_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "deleted": source_id}
 
 
 @app.get("/human-material/{source_id}")

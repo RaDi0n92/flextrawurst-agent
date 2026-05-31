@@ -14129,171 +14129,171 @@
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L5199",
-      "id": "api_rationale_5199",
       "community": 0,
-      "norm_label": "alle kalendereintrage des nutzers, alteste zuerst, fur die archiv-liste."
+      "norm_label": "alle kalendereintrage des nutzers, alteste zuerst, fur die archiv-liste.",
+      "id": "api_rationale_5199"
     },
     {
       "label": "Gibt den aktuellen Denkstrom-Buffer zur\u00fcck (polling-basiert).",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L5582",
-      "id": "api_rationale_5582",
       "community": 0,
-      "norm_label": "gibt den aktuellen denkstrom-buffer zuruck (polling-basiert)."
+      "norm_label": "gibt den aktuellen denkstrom-buffer zuruck (polling-basiert).",
+      "id": "api_rationale_5582"
     },
     {
       "label": "Gibt Raum mit vollst\u00e4ndigem Themen-Baum zur\u00fcck. Jedes Thema hat post_count.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L6763",
-      "id": "api_rationale_6763",
       "community": 0,
-      "norm_label": "gibt raum mit vollstandigem themen-baum zuruck. jedes thema hat post_count."
+      "norm_label": "gibt raum mit vollstandigem themen-baum zuruck. jedes thema hat post_count.",
+      "id": "api_rationale_6763"
     },
     {
       "label": "Posts in einem Thema, mit titel und Z\u00e4hlern.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L6804",
-      "id": "api_rationale_6804",
       "community": 0,
-      "norm_label": "posts in einem thema, mit titel und zahlern."
+      "norm_label": "posts in einem thema, mit titel und zahlern.",
+      "id": "api_rationale_6804"
     },
     {
       "label": "\u00d6ffentlicher Foyer-\u00dcberblick: 4 Feed-Sektionen, R\u00e4ume, Spuren.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L7053",
-      "id": "api_rationale_7053",
       "community": 0,
-      "norm_label": "offentlicher foyer-uberblick: 4 feed-sektionen, raume, spuren."
+      "norm_label": "offentlicher foyer-uberblick: 4 feed-sektionen, raume, spuren.",
+      "id": "api_rationale_7053"
     },
     {
       "label": "Raumansicht: 4 Feed-Sektionen (raum-spezifisch), alle Posts, Themenfelder.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L7148",
-      "id": "api_rationale_7148",
       "community": 0,
-      "norm_label": "raumansicht: 4 feed-sektionen (raum-spezifisch), alle posts, themenfelder."
+      "norm_label": "raumansicht: 4 feed-sektionen (raum-spezifisch), alle posts, themenfelder.",
+      "id": "api_rationale_7148"
     },
     {
       "label": "Lebensfaden-Ansicht: Posts eines Themenfelds + Counts + Spuren.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L7243",
-      "id": "api_rationale_7243",
       "community": 0,
-      "norm_label": "lebensfaden-ansicht: posts eines themenfelds + counts + spuren."
+      "norm_label": "lebensfaden-ansicht: posts eines themenfelds + counts + spuren.",
+      "id": "api_rationale_7243"
     },
     {
       "label": "Spur-Ansicht: alle Posts mit dieser Spur + Counts.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L7308",
-      "id": "api_rationale_7308",
       "community": 0,
-      "norm_label": "spur-ansicht: alle posts mit dieser spur + counts."
+      "norm_label": "spur-ansicht: alle posts mit dieser spur + counts.",
+      "id": "api_rationale_7308"
     },
     {
       "label": "Liste aller Gespr\u00e4chspartner des aktuellen Users.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L7754",
-      "id": "api_rationale_7754",
       "community": 0,
-      "norm_label": "liste aller gesprachspartner des aktuellen users."
+      "norm_label": "liste aller gesprachspartner des aktuellen users.",
+      "id": "api_rationale_7754"
     },
     {
       "label": "Translate German strings to target language. Caches in DB.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8066",
-      "id": "api_rationale_8066",
       "community": 0,
-      "norm_label": "translate german strings to target language. caches in db."
+      "norm_label": "translate german strings to target language. caches in db.",
+      "id": "api_rationale_8066"
     },
     {
       "label": "Splitter-Liste mit Filtern. \u00d6ffentliche Splitter ohne Auth, admin sieht alle.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8469",
-      "id": "api_rationale_8469",
       "community": 0,
-      "norm_label": "splitter-liste mit filtern. offentliche splitter ohne auth, admin sieht alle."
+      "norm_label": "splitter-liste mit filtern. offentliche splitter ohne auth, admin sieht alle.",
+      "id": "api_rationale_8469"
     },
     {
       "label": "Splitter-Detail mit Aufnahmen-Historie.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8553",
-      "id": "api_rationale_8553",
       "community": 0,
-      "norm_label": "splitter-detail mit aufnahmen-historie."
+      "norm_label": "splitter-detail mit aufnahmen-historie.",
+      "id": "api_rationale_8553"
     },
     {
       "label": "Splitter aufnehmen \u2014 durch Wesen oder Menschen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8618",
-      "id": "api_rationale_8618",
       "community": 0,
-      "norm_label": "splitter aufnehmen \u2014 durch wesen oder menschen."
+      "norm_label": "splitter aufnehmen \u2014 durch wesen oder menschen.",
+      "id": "api_rationale_8618"
     },
     {
       "label": "Splitter-Provenienz. Admin sieht alles. Nicht-Admin nur wenn herkunft_sichtbar.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8677",
-      "id": "api_rationale_8677",
       "community": 0,
-      "norm_label": "splitter-provenienz. admin sieht alles. nicht-admin nur wenn herkunft_sichtbar."
+      "norm_label": "splitter-provenienz. admin sieht alles. nicht-admin nur wenn herkunft_sichtbar.",
+      "id": "api_rationale_8677"
     },
     {
       "label": "Welche Splitter hat dieses Wesen aufgenommen?",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8783",
-      "id": "api_rationale_8783",
       "community": 0,
-      "norm_label": "welche splitter hat dieses wesen aufgenommen?"
+      "norm_label": "welche splitter hat dieses wesen aufgenommen?",
+      "id": "api_rationale_8783"
     },
     {
       "label": "Serverseitige Volltext-Suche mit pg_trgm \u00fcber alle Objekttypen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L8838",
-      "id": "api_rationale_8838",
       "community": 0,
-      "norm_label": "serverseitige volltext-suche mit pg_trgm uber alle objekttypen."
+      "norm_label": "serverseitige volltext-suche mit pg_trgm uber alle objekttypen.",
+      "id": "api_rationale_8838"
     },
     {
       "label": "Facetten-Z\u00e4hlung: wie viele Treffer pro Typ f\u00fcr diese Anfrage.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9053",
-      "id": "api_rationale_9053",
       "community": 0,
-      "norm_label": "facetten-zahlung: wie viele treffer pro typ fur diese anfrage."
+      "norm_label": "facetten-zahlung: wie viele treffer pro typ fur diese anfrage.",
+      "id": "api_rationale_9053"
     },
     {
       "label": "Arch\u00e4ologie-Modus: zeitliche Tiefensuche im Entscheidungsarchiv und Weltged\u00e4chtn",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9119",
-      "id": "api_rationale_9119",
       "community": 0,
-      "norm_label": "archaologie-modus: zeitliche tiefensuche im entscheidungsarchiv und weltgedachtn"
+      "norm_label": "archaologie-modus: zeitliche tiefensuche im entscheidungsarchiv und weltgedachtn",
+      "id": "api_rationale_9119"
     },
     {
       "label": "Admin: alle Shadow-Dialoge als strukturierte Resonanzkammern.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9325",
-      "id": "api_rationale_9325",
       "community": 0,
-      "norm_label": "admin: alle shadow-dialoge als strukturierte resonanzkammern."
+      "norm_label": "admin: alle shadow-dialoge als strukturierte resonanzkammern.",
+      "id": "api_rationale_9325"
     },
     {
       "label": "Erweiterte Einzugsampel mit 9 Kategorien: Weltbereitschaft vor Einzug.",
@@ -14309,90 +14309,90 @@
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9443",
-      "id": "api_rationale_9443",
       "community": 0,
-      "norm_label": "antwort in shadow-dialog \u2014 wesen oder mensch."
+      "norm_label": "antwort in shadow-dialog \u2014 wesen oder mensch.",
+      "id": "api_rationale_9443"
     },
     {
       "label": "Antwortstatus oder Zitatrechte eines Shadow-Dialogs setzen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9488",
-      "id": "api_rationale_9488",
       "community": 0,
-      "norm_label": "antwortstatus oder zitatrechte eines shadow-dialogs setzen."
+      "norm_label": "antwortstatus oder zitatrechte eines shadow-dialogs setzen.",
+      "id": "api_rationale_9488"
     },
     {
       "label": "Shadow-Dialog \u2192 Splitter in KompOase wandern lassen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9518",
-      "id": "api_rationale_9518",
       "community": 0,
-      "norm_label": "shadow-dialog \u2192 splitter in kompoase wandern lassen."
+      "norm_label": "shadow-dialog \u2192 splitter in kompoase wandern lassen.",
+      "id": "api_rationale_9518"
     },
     {
       "label": "Shadow-Dialoge eines Wesens.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9568",
-      "id": "api_rationale_9568",
       "community": 0,
-      "norm_label": "shadow-dialoge eines wesens."
+      "norm_label": "shadow-dialoge eines wesens.",
+      "id": "api_rationale_9568"
     },
     {
       "label": "Erweiterte Einzugsampel mit 9 Kategorien: Weltbereitschaft vor Einzug.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9616",
-      "id": "api_rationale_9616",
       "community": 0,
-      "norm_label": "erweiterte einzugsampel mit 9 kategorien: weltbereitschaft vor einzug."
+      "norm_label": "erweiterte einzugsampel mit 9 kategorien: weltbereitschaft vor einzug.",
+      "id": "api_rationale_9616"
     },
     {
       "label": "Handlungsgrammatiken-Status: Dateien vorhanden, Token-Sch\u00e4tzung, Produktion-Stat",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9754",
-      "id": "api_rationale_9754",
       "community": 0,
-      "norm_label": "handlungsgrammatiken-status: dateien vorhanden, token-schatzung, produktion-stat"
+      "norm_label": "handlungsgrammatiken-status: dateien vorhanden, token-schatzung, produktion-stat",
+      "id": "api_rationale_9754"
     },
     {
       "label": "Reifeampel v3: unterscheidet Blocker-Klassen A\u2013E.     A=Technisch, B=Sicherheit/",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L9814",
-      "id": "api_rationale_9814",
       "community": 0,
-      "norm_label": "reifeampel v3: unterscheidet blocker-klassen a\u2013e.     a=technisch, b=sicherheit/"
+      "norm_label": "reifeampel v3: unterscheidet blocker-klassen a\u2013e.     a=technisch, b=sicherheit/",
+      "id": "api_rationale_9814"
     },
     {
       "label": "Wesen initiiert Schatten-Dialog. VORBEREITET \u2014 NICHT AKTIVIERT.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10128",
-      "id": "api_rationale_10128",
       "community": 0,
-      "norm_label": "wesen initiiert schatten-dialog. vorbereitet \u2014 nicht aktiviert."
+      "norm_label": "wesen initiiert schatten-dialog. vorbereitet \u2014 nicht aktiviert.",
+      "id": "api_rationale_10128"
     },
     {
       "label": "Ableitung des Beziehungstyps aus Interaktionsdaten.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10151",
-      "id": "api_rationale_10151",
       "community": 0,
-      "norm_label": "ableitung des beziehungstyps aus interaktionsdaten."
+      "norm_label": "ableitung des beziehungstyps aus interaktionsdaten.",
+      "id": "api_rationale_10151"
     },
     {
       "label": "Sammelt Evidenz aus verwandten Tabellen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10171",
-      "id": "api_rationale_10171",
       "community": 0,
-      "norm_label": "sammelt evidenz aus verwandten tabellen."
+      "norm_label": "sammelt evidenz aus verwandten tabellen.",
+      "id": "api_rationale_10171"
     },
     {
       "label": "Vollst\u00e4ndiger Beziehungsgraph \u2014 alle Wesen+Menschen. Admin-only.",
@@ -14408,108 +14408,108 @@
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10254",
-      "id": "api_rationale_10254",
       "community": 0,
-      "norm_label": "beziehung zwischen zwei wesen \u2014 mit vollem evidenzblock."
+      "norm_label": "beziehung zwischen zwei wesen \u2014 mit vollem evidenzblock.",
+      "id": "api_rationale_10254"
     },
     {
       "label": "Vollst\u00e4ndiger Beziehungsgraph \u2014 alle Wesen+Menschen. Admin-only.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10304",
-      "id": "api_rationale_10304",
       "community": 0,
-      "norm_label": "vollstandiger beziehungsgraph \u2014 alle wesen+menschen. admin-only."
+      "norm_label": "vollstandiger beziehungsgraph \u2014 alle wesen+menschen. admin-only.",
+      "id": "api_rationale_10304"
     },
     {
       "label": "Kalender-Transformation Vorschau \u2014 kein Speichern, nur Preview.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10382",
-      "id": "api_rationale_10382",
       "community": 0,
-      "norm_label": "kalender-transformation vorschau \u2014 kein speichern, nur preview."
+      "norm_label": "kalender-transformation vorschau \u2014 kein speichern, nur preview.",
+      "id": "api_rationale_10382"
     },
     {
       "label": "Neue Innenquelle anlegen. Default: privat + Consent offen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10419",
-      "id": "api_rationale_10419",
       "community": 0,
-      "norm_label": "neue innenquelle anlegen. default: privat + consent offen."
+      "norm_label": "neue innenquelle anlegen. default: privat + consent offen.",
+      "id": "api_rationale_10419"
     },
     {
       "label": "Menschliche Innenquellen \u2014 Admin sieht alle, Mensch nur eigene.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10478",
-      "id": "api_rationale_10478",
       "community": 0,
-      "norm_label": "menschliche innenquellen \u2014 admin sieht alle, mensch nur eigene."
+      "norm_label": "menschliche innenquellen \u2014 admin sieht alle, mensch nur eigene.",
+      "id": "api_rationale_10478"
     },
     {
       "label": "Detail einer Innenquelle.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10531",
-      "id": "api_rationale_10531",
       "community": 0,
-      "norm_label": "detail einer innenquelle."
+      "norm_label": "detail einer innenquelle.",
+      "id": "api_rationale_10531"
     },
     {
       "label": "Einwilligung aktualisieren.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10579",
-      "id": "api_rationale_10579",
       "community": 0,
-      "norm_label": "einwilligung aktualisieren."
+      "norm_label": "einwilligung aktualisieren.",
+      "id": "api_rationale_10579"
     },
     {
       "label": "Innenquelle \u2192 Splitter in KompOase. Nur bei quote_permission == 'erlaubt' oder '",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10630",
-      "id": "api_rationale_10630",
       "community": 0,
-      "norm_label": "innenquelle \u2192 splitter in kompoase. nur bei quote_permission == 'erlaubt' oder '"
+      "norm_label": "innenquelle \u2192 splitter in kompoase. nur bei quote_permission == 'erlaubt' oder '",
+      "id": "api_rationale_10630"
     },
     {
       "label": "Substanzkatalog \u2014 fiktionale Weltmechanik. Keine realen Konsumtipps.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10704",
-      "id": "api_rationale_10704",
       "community": 0,
-      "norm_label": "substanzkatalog \u2014 fiktionale weltmechanik. keine realen konsumtipps."
+      "norm_label": "substanzkatalog \u2014 fiktionale weltmechanik. keine realen konsumtipps.",
+      "id": "api_rationale_10704"
     },
     {
       "label": "Einzelne Substanz aus dem Katalog.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10737",
-      "id": "api_rationale_10737",
       "community": 0,
-      "norm_label": "einzelne substanz aus dem katalog."
+      "norm_label": "einzelne substanz aus dem katalog.",
+      "id": "api_rationale_10737"
     },
     {
       "label": "Substanzzustand eines Wesens (nur Admin).",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10755",
-      "id": "api_rationale_10755",
       "community": 0,
-      "norm_label": "substanzzustand eines wesens (nur admin)."
+      "norm_label": "substanzzustand eines wesens (nur admin).",
+      "id": "api_rationale_10755"
     },
     {
       "label": "Splitter-Story-View: vollst\u00e4ndige Provenienz eines Splitters.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10786",
-      "id": "api_rationale_10786",
       "community": 0,
-      "norm_label": "splitter-story-view: vollstandige provenienz eines splitters."
+      "norm_label": "splitter-story-view: vollstandige provenienz eines splitters.",
+      "id": "api_rationale_10786"
     },
     {
       "label": "auth.py",

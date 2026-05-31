@@ -4439,14 +4439,15 @@ html[lang="en"] .de-only{display:none}
               + '<span style="font-size:.55rem;color:' + consentColor + ';border:1px solid ' + consentColor + ';padding:1px 5px;border-radius:2px">' + consentLabel + '</span>'
               + '<span style="font-size:.52rem;color:#1a3a4a;margin-left:auto">' + (q.erstellt_am || q.created_at || '').slice(0,10) + '</span>'
               + '</div>'
-              + '<div style="font-size:.6rem;color:#2a5a4a;line-height:1.4">' + mwEsc((q.zusammenfassung || q.summary || '').slice(0,120)) + '</div>'
-              + '<div style="display:flex;gap:6px;margin-top:6px">'
+              + '<div style="font-size:.6rem;color:#2a5a4a;line-height:1.4">' + mwEsc(((q.title||q.zusammenfassung || q.summary || q.content || '')).slice(0,120)) + '</div>'
+              + '<div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">'
               + (q.consent_status !== 'gegeben'
                 ? '<button style="font-size:.55rem;padding:2px 8px;background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;cursor:pointer;border-radius:2px" onclick="mwConsentGeben(&apos;' + q.id + '&apos;)">Freigeben</button>'
                 : '<button style="font-size:.55rem;padding:2px 8px;background:#1a0808;border:1px solid #5a1a1a;color:#e87a5a;cursor:pointer;border-radius:2px" onclick="mwConsentWiderrufen(&apos;' + q.id + '&apos;)">Widerrufen</button>')
               + (q.zitatrechte !== 'erlaubt'
                 ? '<button style="font-size:.55rem;padding:2px 8px;background:#080a1a;border:1px solid #2a2a5a;color:#5a5ae8;cursor:pointer;border-radius:2px" onclick="mwZitatrechteSetzen(&apos;' + q.id + '&apos;)">Zitatrecht setzen</button>'
                 : '<span style="font-size:.52rem;color:#2a2a8a;padding:2px 8px;border:1px solid #1a1a4a;border-radius:2px">Zitat ✓</span>')
+              + '<button style="font-size:.55rem;padding:2px 8px;background:#1a0808;border:1px solid #3a1010;color:#c87060;cursor:pointer;border-radius:2px;margin-left:auto" onclick="mwQuelleLoeschen(&apos;' + q.id + '&apos;)">Löschen</button>'
               + '</div>'
               + '</div>';
           });
@@ -4489,6 +4490,21 @@ html[lang="en"] .de-only{display:none}
       headers: {'Authorization': tok, 'Content-Type': 'application/json'},
       body: JSON.stringify({zitatrechte: 'erlaubt'})
     }).then(() => mwOeffne('innenquellen'));
+  };
+
+  window.mwQuelleLoeschen = function(sourceId) {
+    if (!confirm('Innenquelle löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return;
+    const tok = mwToken(); if (!tok) return;
+    fetch(MW_API+'/human-material/'+sourceId, {
+      method: 'DELETE',
+      headers: {'Authorization': tok}
+    }).then(r => {
+      if (r.ok || r.status === 204 || r.status === 200) {
+        mwOeffne('innenquellen');
+      } else {
+        r.json().catch(()=>({})).then(d => alert('Fehler: ' + (d.detail || r.status)));
+      }
+    }).catch(e => alert('Fehler: '+e));
   };
 
   // ── Gedanken-Archiv ───────────────────────────────────────────────────────
@@ -5231,7 +5247,7 @@ html[lang="en"] .de-only{display:none}
 
 <script>
 (function(){
-const API = '';
+const API = '/api';
 let _eiWesen = null;
 let _eiTab = 'entscheidungen';
 let _eiAmpel = null;
@@ -5565,11 +5581,10 @@ async function eiLadeTab(tab){
 
   else if(tab === 'innenquellen'){
     try{
-      const tok = () => (typeof window !== 'undefined' && window._tok) ? window._tok : '';
       const headers = {};
-      const t = typeof tok === 'function' ? tok() : '';
-      if(t) headers['Authorization'] = 'Bearer ' + t;
-      const r = await fetch(API + '/api/human-material', {headers});
+      const t = localStorage.getItem('ftw_token') || '';
+      if(t) headers['Authorization'] = t;
+      const r = await fetch(API + '/human-material', {headers});
       if(r.status === 401 || r.status === 403){
         list.innerHTML = '<div class="ei-empty" style="color:#c08060">Admin-Login erforderlich.</div>'; return;
       }
@@ -8171,40 +8186,11 @@ function _dkFeedHtml(feed, mitRaum) {
 }
 
 function _dkFeedInnerHtml(feed, mitRaum) {
-  // Neue getrennte Sektionen: Von Menschen / Von Wesen
-  const hatNeu = feed.von_menschen_neu || feed.von_wesen_neu;
-  if (hatNeu) {
-    let html = '';
-    const mNeu = feed.von_menschen_neu || [];
-    const mRes = feed.von_menschen_resonanz || [];
-    const wNeu = feed.von_wesen_neu || [];
-    const wRes = feed.von_wesen_resonanz || [];
-    if (mNeu.length || mRes.length) {
-      html += '<div class="dk-feed-sektion">'
-        + '<div class="dk-feed-hdr"><span class="dk-feed-hdr-dot" style="background:#3a8a7a"></span>VON MENSCHEN</div>'
-        + '<div class="dk-list">'
-        + mNeu.map(p=>_dkZeile(p,mitRaum)).join('')
-        + (mRes.length ? '<div class="dk-feed-trennlinie-mini" style="border-top:1px dashed #0a2030;margin:4px 0"></div>' : '')
-        + mRes.map(p=>_dkZeile(p,mitRaum)).join('')
-        + '</div></div>';
-    }
-    if (wNeu.length || wRes.length) {
-      html += '<div class="dk-feed-sektion">'
-        + '<div class="dk-feed-hdr"><span class="dk-feed-hdr-dot" style="background:#4a5a8a"></span>VON WESEN</div>'
-        + '<div class="dk-list">'
-        + wNeu.map(p=>_dkZeile(p,mitRaum)).join('')
-        + (wRes.length ? '<div class="dk-feed-trennlinie-mini" style="border-top:1px dashed #0a0820;margin:4px 0"></div>' : '')
-        + wRes.map(p=>_dkZeile(p,mitRaum)).join('')
-        + '</div></div>';
-    }
-    return html;
-  }
-  // Fallback: alte Sektionen (für Raum-Feeds die noch nicht migriert sind)
   const sek = [
-    {key:'lebendig', label:'GERADE LEBENDIG', farbe:'#3a8a5a'},
-    {key:'zufaellig', label:'ZUFÄLLIGE BEITRÄGE', farbe:'#3a6a9a'},
-    {key:'wenig_resonanz', label:'WENIG RESONANZ', farbe:'#7a6a2a'},
-    {key:'einzigartig', label:'EINZIGARTIGE BEITRÄGE', farbe:'#7a3a8a'},
+    {key:'lebendig',       label:'MEISTE RESONANZ',      farbe:'#3a8a5a'},
+    {key:'zufaellig',      label:'ZUFÄLLIGE BEITRÄGE',   farbe:'#3a6a9a'},
+    {key:'wenig_resonanz', label:'NEUESTE BEITRÄGE',      farbe:'#7a6a2a'},
+    {key:'einzigartig',    label:'EINZIGARTIGE BEITRÄGE', farbe:'#7a3a8a'},
   ];
   return sek.map(s=>{
     const posts = (feed[s.key]||[]);
@@ -9597,14 +9583,14 @@ function updateSeoMeta(id) {
 
 function switchView(id) {
   activeView = id;
-  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner'];
+  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
   views.forEach(v => {
     const el = document.getElementById('view-'+v);
-    const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner'];
+    const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
     if (el) el.style.display = v === id ? (flexViews.includes(v) ? 'flex' : 'block') : 'none';
   });
-  // Views mit v- Prefix: einsicht, suche, gruppen
-  ['einsicht','suche','gruppen'].forEach(function(v){
+  // Views mit v- Prefix (abweichende IDs): einsicht, suche
+  ['einsicht','suche'].forEach(function(v){
     const el = document.getElementById('v-'+v);
     if (el) el.style.display = v === id ? 'flex' : 'none';
   });
