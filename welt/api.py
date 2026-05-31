@@ -8383,6 +8383,259 @@ def einzugsampel():
     }
 
 
+# ── KompOase / Splitter-Archiv ───────────────────────────────────────────────
+
+@app.get("/api/kompoase/splitter")
+def kompoase_splitter_liste(
+    status: str | None = Query(default=None),
+    origin_type: str | None = Query(default=None),
+    entity_id: str | None = Query(default=None),
+    materialitaet: str | None = Query(default=None),
+    search: str | None = Query(default=None),
+    limit: int = Query(default=40, le=200),
+    offset: int = Query(default=0),
+    sort: str = Query(default="created_at"),
+    order: str = Query(default="desc"),
+    authorization: str | None = Header(default=None),
+):
+    """Splitter-Liste mit Filtern. Öffentliche Splitter ohne Auth, admin sieht alle."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    if sort not in ("created_at", "energie", "aufnahmen", "letzter_kontakt"):
+        sort = "created_at"
+    if order not in ("asc", "desc"):
+        order = "desc"
+
+    where = ["1=1"]
+    params: list[Any] = []
+
+    if not is_admin:
+        where.append("(entity_id IS NOT NULL OR herkunft_sichtbar = true)")
+
+    if status:
+        where.append("status = %s"); params.append(status)
+    else:
+        if not is_admin:
+            where.append("status IN ('aktiv','aufgenommen','verarbeitet')")
+
+    if origin_type:
+        where.append("origin_type = %s"); params.append(origin_type)
+    if entity_id:
+        where.append("entity_id = %s"); params.append(entity_id)
+    if materialitaet:
+        where.append("materialitaet = %s"); params.append(materialitaet)
+    if search:
+        where.append("essenz ILIKE %s"); params.append(f"%{search}%")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"SELECT COUNT(*) AS n FROM splitter WHERE {' AND '.join(where)}",
+                params)
+            total = cur.fetchone()["n"]
+
+            cur.execute(
+                f"SELECT id::text, origin_type, origin_id, entity_id, human_id::text, "
+                f"herkunft_sichtbar, essenz, materialitaet, energie, status, aufnahmen, "
+                f"substanzspur, thematische_tags, resonanzspur, traumspur, "
+                f"created_at, letzter_kontakt, herkunft_wesen "
+                f"FROM splitter WHERE {' AND '.join(where)} "
+                f"ORDER BY {sort} {order} LIMIT %s OFFSET %s",
+                params + [limit, offset])
+            items = []
+            for r in cur.fetchall():
+                items.append({
+                    "id": r["id"],
+                    "origin_type": r["origin_type"],
+                    "origin_id": r["origin_id"],
+                    "entity_id": r["entity_id"],
+                    "human_id": r["human_id"],
+                    "herkunft_sichtbar": r["herkunft_sichtbar"],
+                    "essenz": r["essenz"],
+                    "materialitaet": r["materialitaet"],
+                    "energie": r["energie"],
+                    "status": r["status"],
+                    "aufnahmen": r["aufnahmen"],
+                    "substanzspur": r["substanzspur"],
+                    "thematische_tags": r["thematische_tags"],
+                    "resonanzspur": r["resonanzspur"],
+                    "traumspur": r["traumspur"],
+                    "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+                    "letzter_kontakt": r["letzter_kontakt"].isoformat() if r["letzter_kontakt"] else None,
+                    "herkunft_wesen": r["herkunft_wesen"],
+                })
+    finally:
+        conn.close()
+
+    return {"gesamt": total, "offset": offset, "limit": limit, "splitter": items}
+
+
+@app.get("/api/kompoase/splitter/{splitter_id}")
+def kompoase_splitter_detail(
+    splitter_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Splitter-Detail mit Aufnahmen-Historie."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id::text, origin_type, origin_id, entity_id, human_id::text, "
+                "herkunft_sichtbar, essenz, materialitaet, energie, status, aufnahmen, "
+                "substanzspur, konfliktachse, ausstoessungsgrund, thematische_tags, "
+                "resonanzspur, traumspur, schwellendruck, verbindungen, abstossungen, "
+                "created_at, letzter_kontakt, herkunft_wesen, meta "
+                "FROM splitter WHERE id = %s::uuid",
+                (splitter_id,))
+            r = cur.fetchone()
+            if not r:
+                raise HTTPException(status_code=404, detail="Splitter nicht gefunden.")
+            splitter = dict(r)
+            splitter["created_at"] = r["created_at"].isoformat() if r["created_at"] else None
+            splitter["letzter_kontakt"] = r["letzter_kontakt"].isoformat() if r["letzter_kontakt"] else None
+
+            cur.execute(
+                "SELECT id::text, aufnehmer_type, aufnehmer_id, begruendung, aufgenommen_at "
+                "FROM splitter_aufnahmen WHERE splitter_id = %s::uuid "
+                "ORDER BY aufgenommen_at DESC",
+                (splitter_id,))
+            aufnahmen = []
+            for a in cur.fetchall():
+                aufnahmen.append({
+                    "id": a["id"],
+                    "aufnehmer_type": a["aufnehmer_type"],
+                    "aufnehmer_id": a["aufnehmer_id"],
+                    "begruendung": a["begruendung"],
+                    "aufgenommen_at": a["aufgenommen_at"].isoformat() if a["aufgenommen_at"] else None,
+                })
+            splitter["aufnahmen_liste"] = aufnahmen
+    finally:
+        conn.close()
+
+    return splitter
+
+
+class SplitterAufnahmeRequest(BaseModel):
+    aufnehmer_type: str
+    aufnehmer_id: str
+    begruendung: str | None = None
+
+
+@app.post("/api/kompoase/splitter/{splitter_id}/aufnehmen")
+def kompoase_splitter_aufnehmen(
+    splitter_id: str,
+    body: SplitterAufnahmeRequest,
+    authorization: str | None = Header(default=None),
+):
+    """Splitter aufnehmen — durch Wesen oder Menschen."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+
+    if body.aufnehmer_type not in ("entity", "human", "system"):
+        raise HTTPException(status_code=400, detail="aufnehmer_type muss 'entity', 'human' oder 'system' sein.")
+    if not body.aufnehmer_id:
+        raise HTTPException(status_code=400, detail="aufnehmer_id fehlt.")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id, status, aufnahmen FROM splitter WHERE id = %s::uuid", (splitter_id,))
+            sp = cur.fetchone()
+            if not sp:
+                raise HTTPException(status_code=404, detail="Splitter nicht gefunden.")
+
+            cur.execute(
+                "INSERT INTO splitter_aufnahmen (splitter_id, aufnehmer_type, aufnehmer_id, begruendung) "
+                "VALUES (%s::uuid, %s, %s, %s) RETURNING id::text",
+                (splitter_id, body.aufnehmer_type, body.aufnehmer_id, body.begruendung))
+            aufnahme_id = cur.fetchone()["id"]
+
+            cur.execute(
+                "UPDATE splitter SET aufnahmen = aufnahmen + 1, letzter_kontakt = now() "
+                "WHERE id = %s::uuid",
+                (splitter_id,))
+
+            import json as _json
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) "
+                "VALUES ('splitter.aufgenommen', %s, %s, %s::jsonb)",
+                (body.aufnehmer_type, body.aufnehmer_id,
+                 _json.dumps({"splitter_id": splitter_id, "begruendung": body.begruendung or ""})))
+
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True, "aufnahme_id": aufnahme_id, "splitter_id": splitter_id}
+
+
+@app.get("/api/entities/{entity_id}/splitter")
+def entity_splitter_aufnahmen(
+    entity_id: str,
+    limit: int = Query(default=20, le=100),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Welche Splitter hat dieses Wesen aufgenommen?"""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT COUNT(*) AS n FROM splitter_aufnahmen "
+                "WHERE aufnehmer_type='entity' AND aufnehmer_id=%s",
+                (entity_id,))
+            total = cur.fetchone()["n"]
+
+            cur.execute(
+                "SELECT a.id::text, a.splitter_id::text, a.begruendung, a.aufgenommen_at, "
+                "s.essenz, s.materialitaet, s.status, s.origin_type, s.herkunft_wesen "
+                "FROM splitter_aufnahmen a "
+                "JOIN splitter s ON s.id = a.splitter_id "
+                "WHERE a.aufnehmer_type='entity' AND a.aufnehmer_id=%s "
+                "ORDER BY a.aufgenommen_at DESC LIMIT %s OFFSET %s",
+                (entity_id, limit, offset))
+            items = []
+            for r in cur.fetchall():
+                items.append({
+                    "aufnahme_id": r["id"],
+                    "splitter_id": r["splitter_id"],
+                    "begruendung": r["begruendung"],
+                    "aufgenommen_at": r["aufgenommen_at"].isoformat() if r["aufgenommen_at"] else None,
+                    "essenz": (r["essenz"] or "")[:200],
+                    "materialitaet": r["materialitaet"],
+                    "status": r["status"],
+                    "origin_type": r["origin_type"],
+                    "herkunft_wesen": r["herkunft_wesen"],
+                })
+    finally:
+        conn.close()
+
+    return {"entity_id": entity_id, "gesamt": total, "offset": offset, "limit": limit, "aufnahmen": items}
+
+
 # ── Archäologie-Suche ────────────────────────────────────────────────────────
 
 @app.get("/api/search/global")
