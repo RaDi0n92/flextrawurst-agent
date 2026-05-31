@@ -1,0 +1,11 @@
+[Unit]
+Description=Codex Resonanzfeld — alle 30 Minuten neu kompilieren
+Requires=codex-resonanzfeld-build.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30min
+Unit=codex-resonanzfeld-build.service
+
+[Install]
+WantedBy=timers.target

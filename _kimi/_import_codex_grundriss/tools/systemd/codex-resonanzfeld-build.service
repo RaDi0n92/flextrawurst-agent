@@ -1,0 +1,10 @@
+[Unit]
+Description=Codex Resonanzfeld — kompiliert RESONANZFELD.md aus resonanz/
+After=network.target
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/python3 /root/werkraum/_codex/tools/build_resonanzfeld.py
+StandardOutput=journal
+StandardError=journal

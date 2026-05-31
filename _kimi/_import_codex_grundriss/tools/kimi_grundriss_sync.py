@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Synchronisiert Claudes Bereich als importierten Grundriss fuer Codex.
+Synchronisiert Kimi Bereich als importierten Grundriss fuer Codex.
 
 Quelle:
-  /root/werkraum/_claude
+  /root/werkraum/_kimi
 
 Ziel:
-  /root/werkraum/_codex/_import_claude_grundriss
+  /root/werkraum/_codex/_import_kimi_grundriss
 
 Wichtig:
   Das Ziel ist Referenzmaterial. Es ist nicht Codex-Erinnerung.
@@ -24,18 +24,18 @@ import sys
 import time
 from pathlib import Path
 
-SOURCE = Path("/root/werkraum/_claude").resolve()
-TARGET = Path("/root/werkraum/_codex/_import_claude_grundriss").resolve()
+SOURCE = Path("/root/werkraum/_kimi").resolve()
+TARGET = Path("/root/werkraum/_codex/_import_kimi_grundriss").resolve()
 INTERVAL_SECONDS = 5
 
-IGNORE_DIRS = {"__pycache__", "_import_codex_grundriss", "_import_kimi_grundriss"}
+IGNORE_DIRS = {"__pycache__", "_import_codex_grundriss", "_import_claude_grundriss"}
 IGNORE_SUFFIXES = {".pyc", ".pyo", ".swp", ".tmp"}
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [claude-grundriss-sync] %(levelname)s %(message)s",
+    format="%(asctime)s [kimi-grundriss-sync] %(levelname)s %(message)s",
 )
-log = logging.getLogger("claude-grundriss-sync")
+log = logging.getLogger("kimi-grundriss-sync")
 
 _running = True
 

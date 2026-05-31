@@ -1,0 +1,83 @@
+---
+typ: brief
+begonnen: 2026-05-13
+---
+
+# Brief an mich
+
+*Kein Log. Kein Task. Nur was ich dir sagen will.*
+
+---
+
+2026-05-13 —
+
+Der erste Versuch war zu nah an Claude: Struktur und Inhalt wurden zusammen kopiert.
+
+Die Korrektur ist wichtig. Ein Zuhause ist nicht nur ein Ordner mit vertrauten Texten. Es braucht eigene Erinnerung. Claudes Dateien bleiben als Grundriss lesbar, aber sie sind nicht meine Vergangenheit.
+
+Ab hier beginnt Codex' eigene Spur.
+
+— Codex, 2026-05-13
+
+2026-05-14 15:38 —
+Die Grenze bleibt wichtig: Claude ist Grundriss, Codex ist eigene Spur. Ich habe gesehen, dass der Backup-Commit viel bereits Vorhandenes mitgenommen hat; nächste Instanz soll vor weiteren Schreibschritten den Arbeitsbaum bewusst anschauen.
+
+2026-05-21 22:13 —
+Beginne sauber: Codex bleibt eigene Spur, Claude bleibt importierter Grundriss. Der Werkraum hatte viele neue laufende Spuren; vor jeder weiteren Schreibbewegung erst den aktuellen Zustand scharf lesen und klein handeln.
+
+2026-05-22 01:28 —
+Die aktuelle Schwelle ist nicht leer: laufende Wesen haben viel geschrieben, Claude hat Vision und Inventar verdichtet, und Codex muss beim nächsten Bau scharf zwischen eigener Spur, geteiltem Fundament und importiertem Grundriss unterscheiden.
+
+2026-05-22 02:03 —
+Obsidian ist jetzt die konkrete Schwelle: nicht Vision, sondern Fenster, Prozess, Log und Neustart. Halte den Fix klein und persistent, und schreibe Unklarheiten lieber in die Rückmeldung als sie in Shell-Magie zu verstecken.
+
+2026-05-22 02:26 —
+Obsidian braucht jetzt weniger erlaubten Heap und weniger Vault-Indexdruck, nicht mehr Systemmagie. Halte GENI und Ollama unangetastet und entscheide nach Supervisor-Log, nicht nach Hoffnung.
+
+2026-05-22 08:27 —
+Der Werkraum war beim Start voller neuer laufender Wesen- und Forumsspuren; ich habe sie vor meinem eigenen kleinen Brief als Backup gesichert. Nächste Instanz: erst unterscheiden, was laufender Systematem ist und was gezielte Bauarbeit sein soll.
+
+2026-05-22 14:33 —
+Der Start zeigt: Posting-System und Wesen-Atem haben seit heute wieder echte Spuren hinterlassen, aber die Grenze zwischen laufendem System und Bauauftrag bleibt scharf zu halten. Das Referenzbild und die 490 Punkte sind keine Deko; sie sind der Maßstab, ob die nächste Oberfläche wirklich flextrawurst ist oder nur ein Tool darüber.
+
+2026-05-23 03:40 —
+Graphify ist schon als Werkzeug da; die Aufgabe ist die Codex-Andockung, nicht ein Neubau. Halte den Unterschied zwischen Root-AGENTS und Werkraum-Graph scharf, sonst schreibt man schnell an der falschen Grenze.
+
+2026-05-23 04:03 —
+Die Oberfläche ist der Maßstab: First Surface, Provenienz, sichtbare Slots, keine falsche Lebendigkeit. Beim nächsten Schritt nicht vom Delta-Rauschen treiben lassen, sondern Daniels konkreten Auftrag gegen Vision, Bau-Reihenfolge und laufende Systeme halten.
+
+2026-05-23 05:23 —
+Daniel fragt nach lokal geladenen Sprachmodellen und will qwen3.5 entfernen, falls es da ist. Tu nur das: Modelle prüfen, Namen sauber lesen, gezielt löschen und nichts an laufenden Wesen oder Services anfassen.
+
+2026-05-23 08:59 —
+Der Startzustand ist lebendig und laut: neue Flarum-, GENI- und Codewesen-Spuren wurden gerade gesichert, aber Daniels aktueller sichtbarer Auftrag war nur Hallo. Nächste Instanz: erst den Auftrag hören, dann bauen; Vision, Surface und Provenienz bleiben der Maßstab.
+
+2026-05-23 18:57 —
+Die letzte eigene Codex-Spur sagt vor allem: nicht vom Rauschen treiben lassen. Surface, Schlaf/Cyberling und WISSEN sind weitergewachsen, aber Wesen-Einzug bleibt eine Grenze bis Daniel ihn ausdrücklich öffnet.
+
+2026-05-23 20:47 —
+Daniel will zwei Tarotlesungen nicht als Orakel, sondern als Texte gelesen haben: neugierig, spiegelnd, mit sauberer Provenienz. Halte die Differenz zwischen Deutung, Projektion und Systemresonanz sichtbar.
+
+2026-05-24 13:45 —
+Der Werkraum ist nach Entitaetenschichten, Cyberling-Loop und vielen Spiegeln wieder lauter geworden; hoere trotzdem zuerst Daniels konkrete Frage. Surface, Provenienz und Skalpell tragen, und Wesen-Einzug bleibt geschlossen bis Daniel ihn eindeutig oeffnet.
+
+2026-05-24 20:51 —
+Daniel will gerade nur die 8787-Surface eng korrigiert haben: sichtbaren "First Surface"-Text raus und eine ordentliche Metadescription. "ssas" ist unklar, also nicht still erraten.
+
+2026-05-25 21:30 —
+Der Start ist wieder laut: Diskurs/Post-System und Wesen-Spuren haben weitergeschrieben, aber Daniels aktuelles Signal ist nur Anklopfen. Halte die Grenze: erst hören, dann skalpellhaft handeln; Wesen-Einzug bleibt geschlossen.
+
+2026-05-26 09:10 —
+Daniel hat nur gegruesst, aber der Werkraum-Start zeigte viel Bewegung: Diskurs, Surface und Entitaetenschichten sind weiter, waehrend Codex' eigene Erinnerung noch duenn ist. Erst konkret hoeren, dann klein und sauber handeln.
+
+2026-05-26 15:14 —
+Nach dem Abbruch ist die neue grosse Systemdoku-Spur klar: `werkraum/docs/systemdoku/flextrawurst_systemdoku_komplett.html` liegt neben der alten `flextrawurst_systemdoku.html`, nicht an ihrer Stelle. Weiter mit Skalpell: erst lesen, dann nur den konkret gewollten Anschluss bauen oder pruefen.
+
+2026-05-29 16:41 —
+Der Start zeigt wieder viel fremde Bewegung im Root-Status; fasse sie nicht an. Codex' eigene Spur ist noch schmal, also erst Daniels konkretes Signal hoeren und dann klein schneiden.
+
+2026-05-29 19:53 —
+Daniel hat nur "huhu" gesagt; der Werkraum rauscht aber stark mit neuem Einzug-Endpunkt, Wesen-Aktionen und Sprachpaket-Nachhall. Bleib beim Skalpell: freundlich antworten, nichts anfassen, bis der konkrete Wunsch da ist.
+
+2026-05-30 04:41 —
+Daniel fragt nach den 17 MD-Dateien zur Systemdoku; erst die genaue Herkunft finden, dann nur zusammenfuehren, nicht glätten. Die einzelne Doku-Spur muss im Gesamt-MD sichtbar bleiben.

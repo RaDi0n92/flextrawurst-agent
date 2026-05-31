@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Synchronisiert Claudes Bereich als importierten Grundriss fuer Codex.
+Synchronisiert Codex' Bereich als importierten Grundriss fuer Kimi.
 
 Quelle:
-  /root/werkraum/_claude
+  /root/werkraum/_codex
 
 Ziel:
-  /root/werkraum/_codex/_import_claude_grundriss
+  /root/werkraum/_kimi/_import_codex_grundriss
 
 Wichtig:
-  Das Ziel ist Referenzmaterial. Es ist nicht Codex-Erinnerung.
-  Der Sync fasst keine eigenen Codex-Dateien ausserhalb des Importordners an.
+  Das Ziel ist Referenzmaterial. Es ist nicht Kimi-Erinnerung.
+  Der Sync fasst keine eigenen Kimi-Dateien ausserhalb des Importordners an.
 """
 
 from __future__ import annotations
@@ -24,18 +24,18 @@ import sys
 import time
 from pathlib import Path
 
-SOURCE = Path("/root/werkraum/_claude").resolve()
-TARGET = Path("/root/werkraum/_codex/_import_claude_grundriss").resolve()
+SOURCE = Path("/root/werkraum/_codex").resolve()
+TARGET = Path("/root/werkraum/_kimi/_import_codex_grundriss").resolve()
 INTERVAL_SECONDS = 5
 
-IGNORE_DIRS = {"__pycache__", "_import_codex_grundriss", "_import_kimi_grundriss"}
+IGNORE_DIRS = {"__pycache__", "_import_kimi_grundriss", "_import_claude_grundriss"}
 IGNORE_SUFFIXES = {".pyc", ".pyo", ".swp", ".tmp"}
 
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [claude-grundriss-sync] %(levelname)s %(message)s",
+    format="%(asctime)s [codex-grundriss-sync] %(levelname)s %(message)s",
 )
-log = logging.getLogger("claude-grundriss-sync")
+log = logging.getLogger("codex-grundriss-sync")
 
 _running = True
 
