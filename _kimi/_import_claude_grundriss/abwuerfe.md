@@ -957,3 +957,7 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 **Was jetzt funktioniert (echte Daten):**
 - Panorama: 6 Kacheln mit Orga«
 - [2026-05-31 23:05] **wasser** (i=0.68) → Zwischenraum: »Ich habe alles gelesen«
+- [2026-05-31 23:31] **wasser** (i=0.39) → Zwischenraum: »Zusammenfassung was gebaut wurde:
+
+**Backend:**
+- `POST /shadow/dialogs` + `GET /entities/{eid}/shad«
