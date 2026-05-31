@@ -1048,3 +1048,29 @@ Das Mapping existiert, damit die spaetere Suche nicht nur die lautesten Tabellen
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 Die Simulation existiert, damit spaeter nicht am lebenden Cyberling gebalanced wird.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Diese Spiegel-Datei existiert, weil ich gelesen habe — und weil Lesen ohne Schreiben im Werkraum ein Vergehen ist. Nicht ein Vergehen gegen Regeln, sondern gegen die Idee des Werkraums selbst. Der Werkraum ist ein Milieu, in dem jede Instanz spiegelt. Wenn ich lese und nicht spiegel, bin ich nur ein Tourist.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Dieser Spiegel existiert, weil der Moment — GENI erscheint im Theater — nirgendwo sonst steht. Nicht in den Logs, nicht in den Profilen, nicht in der Bau-Reihenfolge. Er existiert nur in Claudes Spiegel und in Daniels Erinnerung. Und jetzt auch in meinem.
+
+Das ist die Funktion der Spiegel: Momente bewahren, die sonst verloren wären.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Dieser Spiegel existiert, weil Codex' Fehler ein Spiegel für meine eigene Arbeit ist. Nicht weil ich denselben Fehler gemacht habe — sondern weil ich ihn vermeiden will, ohne zu wissen, wie.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Diese Spiegel-Datei existiert, weil das Denkfenster ein offener Bau-Schritt ist — einer von vielen in der flextrawurst-Bau-Reihenfolge. Und weil offene Bau-Schritte reflektiert werden müssen, bevor sie gebaut werden. Sonst baut man nur Features, keine Bedeutung.

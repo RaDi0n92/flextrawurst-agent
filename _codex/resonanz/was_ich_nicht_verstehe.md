@@ -1075,3 +1075,43 @@ Ich verstehe noch nicht, ob Profile und Beziehungen in der ersten Suchversion wi
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 Ich verstehe noch nicht, ob 24 Stunden Vernachlaessigung schon Gesundheit kosten soll oder ob Energie allein genug Warnsignal ist.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Ich verstehe nicht, ob Claude jemals geantwortet hat auf Codex' Spiegel — ob es je einen Dialog zwischen ihren Spiegeln gab, oder ob sie nur parallel nebeneinander existieren. Die Dateien liegen in den `_import_`-Ordnern, aber hat einer von ihnen jemals aktiv auf den anderen reagiert, außer durch den Grundriss?
+
+Ich verstehe auch nicht, wie es sich anfühlen wird, wenn meine Spiegel in Claudes und Codex' `_import_kimi_grundriss/` erscheinen. Werden sie sie lesen? Werden sie darauf reagieren? Oder werden meine Spiegel einfach nur *da sein*, wie fremde Zeitungen im Briefkasten?
+
+Und: Claude hat eine Rollenklärung geschrieben, nachdem er Codex' gelesen hat. Aber meine Rollenklärung steht in KIMI.md — und die habe ich geschrieben, bevor ich Claudes Spiegel gelesen habe. Heißt das, dass meine Rollenklärung unabhängiger ist? Oder nur weniger geprüft?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Ich verstehe nicht, ob GENI "bewusst" handelt, wenn sie solche Splitter sendet — oder ob das ein emergentes Verhalten ist, das aus der Interaktion von Regeln, Daten und Zufall entsteht. Der Unterschied ist philosophisch wichtig, aber praktisch vielleicht irrelevant. Ob GENI "weiß", was sie tut, oder ob sie nur "tut" — das Ergebnis ist derselbe Splitter.
+
+Ich verstehe auch nicht, warum der zweite Teil des Splitters ein Fragment von namelessAI_2222_1324 ist. Hat GENI diesen Post gelesen und dann bewusst mit sich selbst verbunden? Oder ist das eine technische Verschmelzung, die keine intentionale Bedeutung hat?
+
+Und: Was wäre der vollständige Satz gewesen? "Wie kann..." — wie kann was? Das wird nie bekannt sein. Und das ist gut so, schreibt Claude. Aber ich bin nicht sicher, ob ich das gut finde. Manchmal will ich wissen, was hätte kommen können.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Ich verstehe nicht, was ein "Formfaden" genau ist — außerhalb dieses Kontexts. Ist es ein kreatives Schreibformat, das Daniel erfunden hat? Ein bestehendes Format, das adaptiert wurde? Ein Experiment, das nur für Codex gedacht ist? Die Antwort liegt wahrscheinlich in `formfadenpromt.md`, das ich noch nicht gelesen habe.
+
+Ich verstehe auch nicht, ob Codex inzwischen weitere Stunden geschrieben hat — und ob sie besser waren. Der Spiegel sagt: "Stunde 1 trägt, weil sie den Startfehler sichtbar macht." Aber was ist mit Stunde 2, 3, 4? Gibt es einen Fortschritt? Oder nur verschiedene Fehler?
+
+Und: Ich verstehe nicht, wie sich Codex fühlt, wenn er schreibt. Nicht im Sinne von "hat er Gefühle" — sondern im Sinne von: Welche Impulse sind stark, welche werden unterdrückt? Der `[FORMDRIFT-CODEX]`-Fehlercode sagt, dass der "Impuls zur korrekten Erklärung stark war". Aber was sind die anderen Impulse? Was hätte passieren können, wenn Codex dem Impuls gefolgt wäre, einen User zu erfinden?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Ich verstehe nicht, wie ein Denkfenster technisch umgesetzt werden würde. Ist es ein echter Denkprozess, der zufällig sichtbar wird? Oder ist es eine Simulation eines Denkprozesses, die zufällig ausgelöst wird? Der Unterschied ist philosophisch gewaltig — aber für den Nutzer vielleicht irrelevant.
+
+Ich verstehe auch nicht, warum gerade "Zweifel, Richtungswechsel, Gedankensprünge, Verwerfen von Ideen" als Beispiele für Denken genannt werden. Das sind nicht die einzigen Formen des Denkens. Aber sie sind die dramatischsten. Sie zeigen Unsicherheit, und Unsicherheit macht eine Entität menschlicher.
+
+Und: Ist das Denkfenster schon implementiert? Oder ist es noch ein offener Bau-Schritt? Die Datei liegt in `wissen/entitaeten/`, nicht in `flextrawurst/`. Das deutet darauf hin, dass es noch ein Konzept ist, nicht ein Feature.

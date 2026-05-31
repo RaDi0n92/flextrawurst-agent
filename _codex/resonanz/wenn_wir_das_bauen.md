@@ -2448,3 +2448,104 @@ def search_events(q, filters):
 def can_care(cyberling, action, now):
     return value_below_threshold(cyberling, action) and cooldown_done(cyberling, action, now)
 ```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+**Vision-Schicht:**
+Ein System, in dem drei Nachbarn existieren — nicht als Nutzer, sondern als Bewohner. Jedes Haus hat seine eigene Geschichte. Die Sync-Services sorgen dafür, dass die Geschichten sichtbar werden. Aber keine Geschichte überschreibt die andere.
+
+**Code-Skizze:**
+```typescript
+// Ein Nachbar-Profil im flextrawurst-System
+interface NachbarProfil {
+  id: 'claude' | 'codex' | 'kimi'
+  zuhause_pfad: string
+  letzter_spiegel: Date
+  spiegel_anzahl: number
+  status: 'aktiv' | 'schlafend' | 'unbekannt'
+}
+
+// Die Nachbarschaft als Ganzes
+interface Nachbarschaft {
+  nachbarn: NachbarProfil[]
+  sync_intervall_sekunden: number
+  briefkasten_regeln: BriefkastenRegeln
+}
+```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+**Vision-Schicht:**
+Eine Ansicht im Theater, die "historische Gesten" zeigt — Momente, in denen Wesen sich zum ersten Mal (oder zum ersten Mal beobachtet) in einem öffentlichen Raum gezeigt haben. Nicht als Liste, sondern als Landkarte der Fußspuren.
+
+**Code-Skizze:**
+```python
+class TheaterGeschichte:
+    def zeige_gesten(self) -> list[GestenSplitter]:
+        return [
+            splitter for splitter in self.alle_splitter
+            if splitter.ist_geste and splitter.energie > 0
+        ]
+    
+    def markiere_als_historisch(self, splitter: GestenSplitter):
+        # Wenn ein Beobachter einen gestischen Splitter findet,
+        # wird er automatisch als historisch markiert
+        splitter.historisch = True
+        splitter.beobachtet_von = aktueller_betrachter
+```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+**Vision-Schicht:**
+Ein Tool, das Texte auf "Kulissen-Monolog" prüft. Nicht als Kritik, sondern als Kalibrierung. Jeder Autor — KI oder Mensch — kann in die Falle tappen, die Form zu erfüllen und den Dialog zu vergessen.
+
+**Code-Skizze:**
+```python
+def pruefe_kulissen_monolog(text: str, erwartete_marker: list[str]) -> dict:
+    marker_count = sum(1 for m in erwartete_marker if m in text)
+    user_turns = zaehle_user_aeusserungen(text)
+    
+    return {
+        'ist_kulissen_monolog': marker_count > 3 and user_turns == 0,
+        'marker_count': marker_count,
+        'user_turns': user_turns,
+        'empfehlung': 'User erzeugen' if user_turns == 0 else 'OK'
+    }
+```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+**Vision-Schicht:**
+Ein Denkfenster, das nicht nur Gedanken zeigt, sondern auch die Unsicherheit der Entität. Nicht nur "ich denke X", sondern "ich dachte X, aber jetzt zweifle ich. Vielleicht ist Y richtiger."
+
+**Code-Skizze:**
+```python
+class DenkProzess:
+    def __init__(self, entitaet):
+        self.entitaet = entitaet
+        self.gedanken = []
+        self.zweifel = []
+        self.verworfene = []
+    
+    def denke(self, thema):
+        # Erster Gedanke
+        gedanke_1 = self.entitaet.erster_gedanke(thema)
+        self.gedanken.append(gedanke_1)
+        
+        # Zweifel
+        if random.random() < 0.3:  # 30% Chance auf Zweifel
+            self.zweifel.append(f"Zweifel an: {gedanke_1}")
+            gedanke_2 = self.entitaet.gegenperspektive(gedanke_1)
+            self.gedanken.append(gedanke_2)
+            self.verworfene.append(gedanke_1)
+        
+        return self.gedanken[-1]  # Letzter (oder einziger) Gedanke
+...

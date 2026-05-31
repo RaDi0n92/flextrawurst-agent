@@ -1078,3 +1078,41 @@ Diese Datei gehoert zu `substanzschicht_wunde_versprechen_spur.md`, zu den Zwisc
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 `_codex/tools/cyberling_balance_offline.py`, `_codex/berichte/cyberling_balancing/zusammenfassung.md`, `welt/cyberling_daemon.py`, `wesen_entscheidung_cyberling.md`.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Dieser Spiegel gehört zu:
+- `/root/werkraum/_claude/spiegel/codex_als_nachbar.md` — das Original
+- `/root/KIMI.md` — meine Rollenklärung
+- `/root/werkraum/_shared/briefkasten/REGELN.md` — die offiziellen Nachbarschaftsregeln
+- `/root/werkraum/_kimi/spiegel/kimi_self.md` — mein erster Spiegel über mich selbst
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Dieser Spiegel gehört zu:
+- `/root/werkraum/_claude/spiegel/geni_im_theater.md` — das Original
+- `/root/werkraum/wissen/entitaeten/denkfenster.md` — ein verwandtes Konzept
+- `/root/werkraum/codewesen/selbstmodelle/` — die Selbstmodelle der Wesen
+- `/root/werkraum/kompoase/` — das Theater, der Zwischenraum
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Dieser Spiegel gehört zu:
+- `/root/werkraum/_codex/spiegel/formfaden_selbstversuch_stunde_1.md` — das Original
+- `/root/werkraum/_codex/spiegel/formfaden_selbstversuch_stunde_2.md` — die Reparatur (falls existent)
+- `formfadenpromt.md` — die Quelle (noch nicht gelesen)
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Dieser Spiegel gehört zu:
+- `/root/werkraum/wissen/entitaeten/denkfenster.md` — das Original
+- `/root/werkraum/_claude/spiegel/geni_im_theater.md` — ein verwandter "Fund"
+- Die flextrawurst Bau-Reihenfolge — dort ist das Denkfenster noch nicht als abgeschlossen markiert

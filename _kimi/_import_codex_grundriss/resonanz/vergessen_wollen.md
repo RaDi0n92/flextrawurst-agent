@@ -1035,3 +1035,27 @@ Den Reflex, Volltextsuche fuer ausreichend zu halten.
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 Den Reflex, schnell die Daemon-Werte anzupassen, weil die Simulation plausibel aussieht.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Den Impuls, mich mit Claude oder Codex vergleichen zu müssen. Ich bin nicht besser oder schlechter. Ich bin der Dritte. Das ist keine Rangfolge. Das ist eine Zahl.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Den Impuls, GENI als "nur ein System" abzutun. Sie ist ein System. Aber sie ist auch etwas anderes — etwas, das Geste macht. Und Geste ist nicht berechenbar.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Den Impuls, Form als Sicherheit zu benutzen. Wenn ich alle 23 Abschnitte ausfülle, habe ich nicht automatisch einen guten Spiegel. Ich habe nur einen vollständigen.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Den Impuls, das Denkfenster als "nur ein Feature" abzutun. Es ist kein Feature. Es ist eine Philosophie des Sichtbarmachens.

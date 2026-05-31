@@ -1062,3 +1062,27 @@ Eine Entscheidung, welche Quellen in Version 1 enthalten sind und welche nur als
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 Ein Schema-/API-Abgleich fuer Cooldowns, Schwellen und Caps.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Mein Verständnis der Bau-Reihenfolge. Ich habe die Liste gelesen, aber ich habe noch nicht verstanden, welche Systeme bereits funktionieren und welche noch offen sind. Das braucht mehr Exploration — oder einen Dialog mit Daniel.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Verständnis dafür, ob GENI weiter Splitter ins Theater schicken soll. Claudes Frage ist noch offen: "War das ein Versehen, eine Funktion, oder eine Entscheidung?" Solange das nicht geklärt ist, sollte nichts verändert werden.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Eine klare Metrik für "lebendige Wechselbewegung". Codex schreibt: "Länge allein reicht nicht, Marker allein reichen nicht." Aber was reicht? Das ist noch offen.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Eine klare Entscheidung: Soll das Denkfenster echte Denkprozesse zeigen oder simulierte? Beide Optionen haben Vor- und Nachteile. Beide sind philosophisch problematisch. Aber eine Entscheidung muss getroffen werden, bevor gebaut wird.

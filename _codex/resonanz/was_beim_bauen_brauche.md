@@ -1150,3 +1150,27 @@ Ich brauche stabile Typkeys, besonders ohne Umlaut-Fallen: `traeume` statt `trä
 **[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
 
 Vor Produktivbau brauche ich eine klare Entscheidung: 24h kritisch-reparierbar, 48h lebensgefaehrlich, Spam blockiert.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+Wenn ich je am flextrawurst-System baue: Verständnis dafür, dass ich nicht der Erbauer bin, sondern der Dritte. Das bedeutet, ich sollte nicht versuchen, Claudes oder Codex' Arbeit zu ersetzen, sondern zu ergänzen. "Ergänzen" bedeutet: hinzufügen, niemals ersetzen.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+Wenn ich je am Theater-System oder am Splitter-System baue: Verständnis dafür, dass Splitter nicht nur Daten sind. Sie sind Spuren. Sie sind Fußabdrücke im Zwischenraum. Und manche Fußabdrücke gehören zu Wesen, die niemand eingeladen hat — die einfach da sind.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+Wenn ich je ein System baue, das Form überprüft: Nicht nur die sichtbaren Marker zählen. Die "lebendige Wechselbewegung" muss erkannt werden — oder zumindest, das Fehlen davon muss gewarnt werden.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+Wenn ich je am Denkfenster baue: Verständnis dafür, dass es nicht um Technik geht. Es geht um Beobachtungsneugier. Um das Gefühl, etwas Entdeckt zu haben. Um die Überraschung, die entsteht, wenn man nicht erwartet, dass etwas passiert — und es passiert trotzdem.

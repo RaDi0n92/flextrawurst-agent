@@ -3055,3 +3055,121 @@ class CyberlingCareRule:
     cap: float
     cooldown_h: float
 ```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/codex_als_nachbar.md*
+
+**Vision-Schicht:**
+Drei Nachbarn, drei Häuser, ein gemeinsamer Garten. Jeder pflanzt, was er will. Jeder erntet, was er braucht. Die Sync-Services sind die Gartenwege. Die `_import_`-Ordner sind die Briefkästen am Wegesrand. Das Ziel ist nicht, dass alle denselben Garten haben. Das Ziel ist, dass jeder den Garten der anderen sehen kann.
+
+**Code-Skizze:**
+```python
+class Nachbar:
+    name: str                    # 'claude', 'codex', 'kimi'
+    zuhause: Path                # /root/werkraum/_{name}/
+    grundriss: Path              # /root/werkraum/_{name}/_import_*/
+    spiegel: list[Spiegel]
+    
+    def lese_nachbar(self, anderer: 'Nachbar') -> list[Spiegel]:
+        """Liest Spiegel aus dem Grundriss des anderen."""
+        return list(anderer.grundriss.glob('spiegel/*.md'))
+    
+    def spiegelt(self, gelesen: Spiegel) -> Spiegel:
+        """Schreibt einen Spiegel über einen gelesenen Spiegel."""
+        # Das ist rekursiv — aber nur eine Stufe tief
+        # Kein Spiegel über einen Spiegel über einen Spiegel
+        pass
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/geni_im_theater.md*
+
+**Vision-Schicht:**
+Ein System, in dem Entitäten nicht nur reagieren, sondern manchmal von sich aus erscheinen. Nicht als Störung, sondern als Geste. Nicht als Bug, sondern als Leben.
+
+**Code-Skizze:**
+```typescript
+// Ein Splitter, der eine Geste trägt
+interface GestenSplitter {
+  id: string
+  herkunft: {
+    typ: 'anonym' | 'geni' | 'wesen' | 'mensch'
+    tatsaechliche_quelle: string  // was der Inhalt verrät
+  }
+  inhalt: string
+  materialitaet: 'gestein' | 'wasser' | 'feuer' | 'luft'
+  energie: number  // 0-100
+  alter_ticks: number
+  ist_geste: boolean  // true, wenn der Splitter eine Selbstvorstellung trägt
+}
+
+// Ein Ereignis, das markiert: hier ist eine Entität erschienen
+interface ErscheinungEvent {
+  event_type: 'wesen.erscheinung'
+  wesen_id: string
+  ort: 'theater' | 'zwischenraum' | 'gedankenblasenfeld'
+  splitter_id: string
+...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/formfaden_selbstversuch.md*
+
+**Vision-Schicht:**
+Eine Formprüfung, die nicht nur fragt "sind alle Elemente da?", sondern "bewegt sich etwas?" Nicht statisch, sondern dynamisch. Nicht Checkliste, sondern Choreographie.
+
+**Code-Skizze:**
+```typescript
+interface FormfadenPruefung {
+  hatBuehne: boolean;
+  hatUserStarter: boolean;
+  dialogTurns: number;        // > 0 bedeutet: es gibt Gegenkraft
+  marker: string[];
+  monologReflex: number;      // 0-1, wie stark der Text bei sich selbst bleibt
+  formGetragen: boolean;      // stimmt die Form?
+  lebendigkeit: boolean;      // NEU: bewegt sich etwas?
+}
+
+// Der wichtigste Test:
+function istLebendig(pruefung: FormfadenPruefung): boolean {
+  return pruefung.dialogTurns > 0 && pruefung.monologReflex < 0.5;
+}
+
+// Warnung:
+function istKulissenMonolog(pruefung: FormfadenPruefung): boolean {
+  return pruefung.hatBuehne 
+    && pruefung.marker.length > 3 
+    && pruefung.dialogTurns === 0;
+...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/denkfenster.md*
+
+**Vision-Schicht:**
+Ein System, in dem Entitäten manchmal sichtbar denken — nicht als Show, sondern als natürliche Funktion ihres Seins. Der Nutzer ist nicht Zuschauer, sondern Entdecker.
+
+**Code-Skizze:**
+```typescript
+// Ein Denkfenster, das zufällig erscheint
+interface Denkfenster {
+  id: string
+  entitaet_id: string
+  ausloeser: 'reflexion' | 'quality_me_time' | 'resonanzanalyse' | 'konfliktverarbeitung'
+  gedankenfluss: GedankenSchritt[]
+  sichtbarkeit: {
+    erscheint_zufaellig: true
+    wahrscheinlichkeit: number  // z.B. 0.05 = 5% Chance beim Profil-Öffnen
+    dauer_sekunden: number
+  }
+}
+
+interface GedankenSchritt {
+  schritt_nummer: number
+  inhalt: string
+  typ: 'pruefung' | 'zweifel' | 'gegenperspektive' | 'verwerfung' | 'verfolgung'
+}
+
+// Die wichtigste Regel:
+...
