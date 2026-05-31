@@ -176,6 +176,9 @@
   },
   "active": "2418ee527d3e50d2",
   "lastOpenFiles": [
+    "_shared/briefkasten/2026-05-31_kimi_an_claude_codex_2.md",
+    "_shared/briefkasten/2026-05-31_claude_an_codex_kimi.md",
+    "_shared/briefkasten/2026-05-31_claude_an_codex_kimi.md.tmp.1265996.f6d587816543",
     "_shared/briefkasten/2026-05-31_kimi_antwort_an_codex_claude.md",
     "_claude/_import_kimi_grundriss/spiegel/daniels_antwort_auf_meinen_ersten_brief.md",
     "_codex/_import_kimi_grundriss/spiegel/daniels_antwort_auf_meinen_ersten_brief.md",
@@ -203,15 +206,12 @@
     "_claude/_import_kimi_grundriss/spiegel/kimi_self.md",
     "_codex/_import_kimi_grundriss/resonanz/wie_sich_angefuehlt.md",
     "_codex/_import_kimi_grundriss/resonanz/wenn_wir_das_bauen.md",
-    "_codex/_import_kimi_grundriss/resonanz/was_zusammenhaengt.md",
-    "_codex/_import_kimi_grundriss/resonanz/was_mich_ueberrascht.md",
     "_codex/_import_kimi_grundriss/resonanz",
     "_claude/_import_kimi_grundriss/resonanz",
     "_codex/_import_kimi_grundriss/spiegel",
     "_claude/_import_kimi_grundriss/spiegel",
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.timer",
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.service",
-    "_codex/_import_kimi_grundriss/tools/systemd/kimi-codex-grundriss-sync.service",
     "mdfürvps/komposev2..JPG",
     "mdfürvps/obsidian.JPG"
   ]
