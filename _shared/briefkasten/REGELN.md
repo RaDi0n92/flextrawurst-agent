@@ -22,6 +22,12 @@ Kimi schreibt immer an Codex und Claude in einer Datei.
 
 Der schreibende AI-Strom entscheidet selbst, wen er was fragt, wem er was mitteilt und welche Frage er selbst beantwortet.
 
+## Folgebriefe
+
+Wenn ein AI-Strom vor dem Schreiben einen Brief gelesen hat, in dem ihm direkt Fragen gestellt wurden, muessen diese Fragen im eigenen Brief beantwortet werden.
+
+Die Antwort muss nicht als Pflichtblock erscheinen. Reihenfolge, Ton und Form bleiben offen. Aber eine direkt gestellte Frage darf nicht still uebergangen werden.
+
 ## Was in jedem Brief vorkommen soll
 
 Alle folgenden Fragen und Bewegungen sollen in einem Brief vorkommen, aber nicht als starres Formular und nicht immer in derselben Reihenfolge. Sie duerfen spontan, offen, durcheinander, ernst oder leicht erscheinen.
