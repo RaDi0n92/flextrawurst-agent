@@ -4615,6 +4615,7 @@ html[lang="en"] .de-only{display:none}
     <button class="ei-tab" data-tab="ampeldetail" onclick="eiWechselTab('ampeldetail')" data-i18n="einsicht.tab.ampeldetail">EINZUGSAMPEL</button>
     <button class="ei-tab" data-tab="splitter" onclick="eiWechselTab('splitter')" data-i18n="einsicht.tab.splitter">SPLITTER</button>
     <button class="ei-tab" data-tab="schatten" onclick="eiWechselTab('schatten')" data-i18n="einsicht.tab.schatten">SCHATTEN</button>
+    <button class="ei-tab" data-tab="beziehungen" onclick="eiWechselTab('beziehungen')" data-i18n="einsicht.tab.beziehungen">BEZIEHUNGEN</button>
   </div>
 
   <div class="ei-body">
@@ -4673,7 +4674,7 @@ window.eiZeigeAmpel = function(){ eiWechselTab('ampeldetail'); };
 
 async function eiLadeAmpel(){
   try{
-    const r = await fetch(API + '/admin/einzugsampel/v2');
+    const r = await fetch(API + '/admin/einzugsampel/v3');
     _eiAmpel = await r.json();
     const b = document.getElementById('ei-ampel-badge');
     if(b){
@@ -4833,9 +4834,10 @@ async function eiLadeTab(tab){
     if(!_eiAmpel){ await eiLadeAmpel(); }
     if(!_eiAmpel){ list.innerHTML = '<div class="ei-empty">Ampel nicht geladen.</div>'; return; }
     const col = _eiAmpel.ampel==='gruen'?'#10f050':(_eiAmpel.ampel==='gelb'?'#f0c010':'#f01030');
-    const kat = _eiAmpel.kategorien || {};
-    const katCol = (s) => s==='gruen'?'#10f050':s==='gelb'?'#f0c010':'#f01030';
-    const katSym = (s) => s==='gruen'?'●':s==='gelb'?'◑':'○';
+    const klassen = _eiAmpel.klassen || {};
+    const kCol = (s) => s==='gruen'?'#10f050':s==='gelb'?'#f0c010':'#f01030';
+    const kSym = (s) => s==='gruen'?'●':s==='gelb'?'◑':'○';
+    const klassenLabels = {A:'Technisch',B:'Sicherheit',C:'Weltlogik',D:'BewusstBlockiert',E:'OffenDesign'};
     list.innerHTML = `
       <div style="border:1px solid ${col};border-radius:6px;padding:20px;max-width:600px;margin:0 auto">
         <div style="font-size:1.8rem;color:${col};text-align:center;margin-bottom:8px">
@@ -4845,19 +4847,22 @@ async function eiLadeTab(tab){
           ${(_eiAmpel.ampel||'?').toUpperCase()}
         </div>
         <div style="font-size:.65rem;color:#8a6aaa;text-align:center;margin-bottom:20px">${_eiAmpel.empfehlung||''}</div>
-        ${Object.keys(kat).length ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:16px">
-          ${Object.entries(kat).map(([k,v]:any) => `
-            <div style="border:1px solid ${katCol(v.status)};border-radius:4px;padding:6px 10px;font-size:.58rem;font-family:monospace">
-              <span style="color:${katCol(v.status)}">${katSym(v.status)}</span>
-              <span style="color:#8a6aaa;margin-left:6px">${k.replace('_',' ')}</span>
-              <span style="color:#4a3a6a;margin-left:4px">(${v.gruen||0}/${v.gesamt||0})</span>
-            </div>`).join('')}
+        ${Object.keys(klassen).length ? `<div style="display:grid;grid-template-columns:1fr;gap:4px;margin-bottom:16px">
+          ${(['A','B','C','D','E'] as const).filter(k => klassen[k]).map(k => {
+            const v = klassen[k] as any;
+            return `<div style="border:1px solid ${kCol(v.status)};border-radius:4px;padding:6px 10px;font-size:.58rem;font-family:monospace;display:flex;align-items:center;gap:8px">
+              <span style="color:${kCol(v.status)};font-size:.75rem">${kSym(v.status)}</span>
+              <span style="color:#f0c010;font-weight:bold">${k}</span>
+              <span style="color:#8a6aaa;flex:1">${klassenLabels[k]||k}</span>
+              <span style="color:#4a3a6a">(${v.gruen||0}/${v.gesamt||0})</span>
+            </div>`;
+          }).join('')}
         </div>` : ''}
         <ul class="ei-ampel-checks">
           ${(_eiAmpel.checks||[]).map(c => `
             <li>
               <div class="ei-dot ${c.ok?'ok':'fail'}"></div>
-              <span style="color:#8a6aaa;flex:1">${c.name}</span>
+              <span style="color:#8a6aaa;flex:1">[${c.klasse||'?'}] ${c.name}</span>
               <span style="color:${c.ok?'#10f050':'#f01030'}">${c.wert}</span>
             </li>`).join('')}
         </ul>
@@ -4909,6 +4914,29 @@ async function eiLadeTab(tab){
           </div>`;
         }).join('');
       window._eiSchatten = items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'beziehungen'){
+    try{
+      if(!_eiWesen){
+        list.innerHTML = '<div class="ei-empty" data-i18n="einsicht.beziehungen.leer">Keine Beziehungen vorhanden.</div>'; return;
+      }
+      const r = await fetch(API + '/api/entities/' + _eiWesen + '/relationships');
+      const data = await r.json();
+      const items = data.beziehungen || [];
+      if(items.length === 0){
+        list.innerHTML = '<div class="ei-empty" data-i18n="einsicht.beziehungen.leer">Keine Beziehungen vorhanden.</div>'; return;
+      }
+      const typCol = (t) => t==='nah'?'#10f050':t==='verbunden'?'#10d8f0':t==='bemerkt'?'#f0c010':t==='distanziert'?'#f07010':t==='unterbrochen'?'#f01030':'#8a6aaa';
+      list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${items.length} Beziehungen</div>`
+        + items.map((b,i) => `
+          <div class="ei-item" onclick="eiZeigeBeziehung(${i})" id="ei-bez-${i}">
+            <div class="ei-item-ts">${b.partner_type||'?'}<br><span style="color:#3a3060;font-size:.55rem">${b.letzte_interaktion ? fmt(b.letzte_interaktion) : '—'}</span></div>
+            <div class="ei-item-main">${b.partner_id||'?'}</div>
+            <span class="ei-item-tag" style="background:#1a0a3a;color:${typCol(b.beziehungstyp)}">${b.beziehungstyp||'unbekannt'}</span>
+          </div>`).join('');
+      window._eiBeziehungen = items;
     }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
   }
 }
@@ -5008,6 +5036,42 @@ window.eiZeigeSchatten = function(i){
         </div>`).join('')}
     </div>` : ''}
     ${d.folge_splitter_id ? `<div style="color:#10f050;font-size:.58rem;margin-top:8px">→ Splitter: ${d.folge_splitter_id}</div>` : ''}
+  `;
+};
+
+window.eiZeigeBeziehung = function(i){
+  const b = window._eiBeziehungen?.[i];
+  if(!b) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  const typCol = (t) => t==='nah'?'#10f050':t==='verbunden'?'#10d8f0':t==='bemerkt'?'#f0c010':t==='distanziert'?'#f07010':t==='unterbrochen'?'#f01030':'#8a6aaa';
+  const ev = b.evidence || {};
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${b.partner_id||'?'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">Typ: ${b.partner_type||'?'}</div>
+    <div style="margin-bottom:12px;display:flex;gap:6px;flex-wrap:wrap">
+      <span class="ei-item-tag" style="background:#1a0a3a;color:${typCol(b.beziehungstyp)}">${b.beziehungstyp||'unbekannt'}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
+      <div style="background:#0a0018;border-radius:4px;padding:8px;font-size:.58rem;font-family:monospace">
+        <div style="color:#4a3a6a">Interaktionen</div>
+        <div style="color:#c0b0e0;font-size:.85rem">${b.interaktionen||0}</div>
+      </div>
+      <div style="background:#0a0018;border-radius:4px;padding:8px;font-size:.58rem;font-family:monospace">
+        <div style="color:#4a3a6a">Resonanz</div>
+        <div style="color:#c0b0e0;font-size:.85rem">${(b.resonanz_score||0).toFixed(2)}</div>
+      </div>
+    </div>
+    ${b.letzte_interaktion ? `<div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">Letzte Interaktion: ${fmt(b.letzte_interaktion)}</div>` : ''}
+    ${Object.keys(ev).length ? `<div style="border-top:1px solid #1a0a3a;padding-top:10px;margin-top:10px">
+      <div style="color:#4a3a6a;font-size:.58rem;margin-bottom:6px">Belege:</div>
+      ${ev.shadow_dialogs !== undefined ? `<div style="color:#8a6aaa;font-size:.58rem">Schatten-Dialoge: ${ev.shadow_dialogs}</div>` : ''}
+      ${ev.splitter_aufnahmen !== undefined ? `<div style="color:#8a6aaa;font-size:.58rem">Splitter-Aufnahmen: ${ev.splitter_aufnahmen}</div>` : ''}
+      ${ev.events !== undefined ? `<div style="color:#8a6aaa;font-size:.58rem">Events: ${ev.events}</div>` : ''}
+    </div>` : ''}
+    ${b.meta && Object.keys(b.meta||{}).length ? `<details style="margin-top:10px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Meta</summary>
+      <pre style="color:#2a1a4a;font-size:.5rem;overflow:auto;max-height:100px">${JSON.stringify(b.meta,null,2)}</pre>
+    </details>` : ''}
   `;
 };
 
@@ -5596,8 +5660,10 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'einsicht.tab.ampeldetail':'EINZUGSAMPEL',
       'einsicht.tab.splitter':'SPLITTER',
       'einsicht.tab.schatten':'SCHATTEN',
+      'einsicht.tab.beziehungen':'BEZIEHUNGEN',
       'einsicht.splitter.leer':'Keine Splitter aufgenommen.',
       'einsicht.schatten.leer':'Keine Schatten-Dialoge vorhanden.',
+      'einsicht.beziehungen.leer':'Keine Beziehungen vorhanden.',
       'wiss.head':'Kategorien','wiss.intro':'Alle Konzepte die in flextrawurst gedacht wurden. <strong style="color:#3a7a8a">LIVE</strong> = umgesetzt. <strong style="color:#2a5a8a">GEPLANT</strong> = Konzept steht, Bau ausstehend. <strong style="color:#5a5a2a">SPÄTER</strong> = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.',
       'shelf.alle':'Alle','shelf.alle.sub':'nicht sortiert, nur sichtbar',
       'shelf.kanon':'Kanon','shelf.kanon.sub':'Verfassung und Linien',
@@ -5671,8 +5737,10 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'einsicht.tab.ampeldetail':'ENTRY SIGNAL',
       'einsicht.tab.splitter':'SPLITTER',
       'einsicht.tab.schatten':'SHADOW',
+      'einsicht.tab.beziehungen':'BEZIEHUNGEN',
       'einsicht.splitter.leer':'No splitters collected.',
       'einsicht.schatten.leer':'No shadow dialogs.',
+      'einsicht.beziehungen.leer':'No relationships.',
       'wiss.head':'Categories','wiss.intro':'All concepts that have been thought in flextrawurst. <strong style="color:#3a7a8a">LIVE</strong> = implemented. <strong style="color:#2a5a8a">PLANNED</strong> = concept exists, build pending. <strong style="color:#5a5a2a">LATER</strong> = idea documented, far away. Click a card for details.',
       'shelf.alle':'All','shelf.alle.sub':'unsorted, just visible',
       'shelf.kanon':'Canon','shelf.kanon.sub':'constitution and lines',

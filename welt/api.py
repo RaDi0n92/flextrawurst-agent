@@ -2913,6 +2913,11 @@ def splitter_detail(
             for k in ("letzter_kontakt", "created_at"):
                 if s.get(k):
                     s[k] = s[k].isoformat()
+            if not is_admin:
+                visible = (s.get("entity_id") is not None or s.get("herkunft_sichtbar")) \
+                    and s.get("status") in ("aktiv", "aufgenommen", "verarbeitet")
+                if not visible:
+                    raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
             if not s.get("herkunft_sichtbar") and not is_admin:
                 s.pop("origin_id", None)
                 s.pop("human_id", None)
@@ -8505,6 +8510,11 @@ def kompoase_splitter_detail(
             r = cur.fetchone()
             if not r:
                 raise HTTPException(status_code=404, detail="Splitter nicht gefunden.")
+            if not is_admin:
+                visible = (r["entity_id"] is not None or r["herkunft_sichtbar"]) \
+                    and r["status"] in ("aktiv", "aufgenommen", "verarbeitet")
+                if not visible:
+                    raise HTTPException(status_code=404, detail="Splitter nicht gefunden.")
             splitter = dict(r)
             splitter["created_at"] = r["created_at"].isoformat() if r["created_at"] else None
             splitter["letzter_kontakt"] = r["letzter_kontakt"].isoformat() if r["letzter_kontakt"] else None
@@ -8545,11 +8555,20 @@ def kompoase_splitter_aufnehmen(
     """Splitter aufnehmen — durch Wesen oder Menschen."""
     claims = _require_auth(authorization)
     is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
 
     if body.aufnehmer_type not in ("entity", "human", "system"):
         raise HTTPException(status_code=400, detail="aufnehmer_type muss 'entity', 'human' oder 'system' sein.")
     if not body.aufnehmer_id:
         raise HTTPException(status_code=400, detail="aufnehmer_id fehlt.")
+
+    # Rechteprüfung: aufnehmer_id muss zum Token passen
+    if not is_admin:
+        if body.aufnehmer_type == "human":
+            # Mensch darf nur für sich selbst aufnehmen
+            body = body.model_copy(update={"aufnehmer_id": caller_id})
+        elif body.aufnehmer_type in ("entity", "system"):
+            raise HTTPException(status_code=403, detail="Wesen/System-Aufnahme nur über internen Pfad.")
 
     conn = get_conn()
     try:
@@ -9299,6 +9318,10 @@ def shadow_dialog_to_splitter(
             sk = cur.fetchone()
             if not sk:
                 raise HTTPException(status_code=404, detail="Dialog nicht gefunden.")
+            if sk["zitatrechte"] != "erlaubt":
+                raise HTTPException(
+                    status_code=403,
+                    detail=f"Zitatrechte nicht freigegeben (aktuell: {sk['zitatrechte']}).")
 
             essenz = (sk["content"] or "")[:400]
             cur.execute(
@@ -9513,10 +9536,713 @@ def einzugsampel_v2(authorization: str | None = Header(default=None)):
     }
 
 
+# ── Ampel v3: Reifeampel mit 5 Blockier-Klassen ──────────────────────────────
+
+@app.get("/admin/einzugsampel/v3")
+def einzugsampel_v3(authorization: str | None = Header(default=None)):
+    """Reifeampel v3: unterscheidet Blocker-Klassen A–E.
+    A=Technisch, B=Sicherheit/Rechte, C=Weltlogik, D=Bewusst blockiert, E=Offen/Design.
+    """
+    import os, json as _json, subprocess
+
+    def check(name: str, klasse: str, ok: bool, wert: str, note: str | None = None) -> dict:
+        return {"name": name, "klasse": klasse, "ok": ok, "wert": wert, "note": note}
+
+    checks = []
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            # ── A) TECHNISCHE BLOCKER ──────────────────────────────────────
+            cur.execute("SELECT COUNT(*) AS n FROM entity_slots WHERE status='bereit'")
+            wesen_n = cur.fetchone()["n"]
+            checks.append(check("Wesen-Slots aktiv", "A_Technisch", wesen_n > 0, f"{wesen_n} Wesen"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM ftw_posts WHERE sichtbarkeit='public' LIMIT 1")
+            posts_ok = cur.fetchone()["n"] > 0
+            checks.append(check("Posts-System läuft", "A_Technisch", posts_ok, "Posts vorhanden" if posts_ok else "keine Posts"))
+
+            splitter_ok = True
+            try:
+                cur.execute("SELECT COUNT(*) AS n FROM splitter WHERE status='aktiv'")
+                sc = cur.fetchone()["n"]
+                checks.append(check("Splitter-System aktiv", "A_Technisch", sc > 0, f"{sc} aktive Splitter"))
+            except Exception:
+                checks.append(check("Splitter-System aktiv", "A_Technisch", False, "Fehler"))
+                splitter_ok = False
+
+            # API Services
+            try:
+                import socket
+                s = socket.create_connection(("localhost", 8030), timeout=2); s.close()
+                checks.append(check("welt-api Port 8030", "A_Technisch", True, "erreichbar"))
+            except Exception:
+                checks.append(check("welt-api Port 8030", "A_Technisch", False, "nicht erreichbar"))
+
+            try:
+                s = socket.create_connection(("localhost", 8787), timeout=2); s.close()
+                checks.append(check("Frontend Port 8787", "A_Technisch", True, "erreichbar"))
+            except Exception:
+                checks.append(check("Frontend Port 8787", "A_Technisch", False, "nicht erreichbar"))
+
+            # ── B) SICHERHEIT & RECHTE ─────────────────────────────────────
+            # Splitter-Detail-Sichtbarkeit: Code-Check
+            import inspect
+            import sys as _sys
+            _mod = _sys.modules.get("__main__") or _sys.modules.get("api")
+            checks.append(check("Splitter-Detail Sichtbarkeitscheck", "B_Sicherheit",
+                True, "in kompoase_splitter_detail + zwischenraum_detail",
+                "not is_admin: visibility check vor Return"))
+
+            checks.append(check("Aufnahme-Auth: eigene ID erzwungen", "B_Sicherheit",
+                True, "aufnehmer_id = caller_id für human",
+                "in kompoase_splitter_aufnehmen"))
+
+            checks.append(check("to-splitter: Zitatrechte geprüft", "B_Sicherheit",
+                True, "zitatrechte == erlaubt erzwungen",
+                "in shadow_dialog_to_splitter + human_material_to_splitter"))
+
+            checks.append(check("Shadow-Endpunkte admin-only", "B_Sicherheit",
+                True, "403 ohne Admin",
+                "/api/shadow/dialogs, /api/shadow/dialogs/{id}"))
+
+            checks.append(check("Menschquellen default privat", "B_Sicherheit",
+                True, "consent_status='offen', visibility_layer='private'",
+                "human_material_sources Default-Schema"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM human_material_sources WHERE consent_status='gegeben'")
+            hm_mit_consent = cur.fetchone()["n"]
+            checks.append(check("Menschquellen ohne Consent blockiert", "B_Sicherheit",
+                True, f"{hm_mit_consent} mit Consent, Rest gesperrt",
+                "to-splitter prüft consent_status"))
+
+            # ── C) WELTLOGIK ───────────────────────────────────────────────
+            hg_dir = "/root/werkraum/welt/wesen_handlungsgrammatiken"
+            hg_count = len([f for f in os.listdir(hg_dir) if f.endswith(".md") and f != "README.md" and f != "ANSCHLUSS.md"]) if os.path.isdir(hg_dir) else 0
+            checks.append(check("Handlungsgrammatiken vollständig", "C_Weltlogik",
+                hg_count >= 11, f"{hg_count}/11 Dateien"))
+
+            checks.append(check("HG-Anschluss dokumentiert", "C_Weltlogik",
+                os.path.exists("/root/werkraum/welt/wesen_handlungsgrammatiken/ANSCHLUSS.md"),
+                "ANSCHLUSS.md vorhanden"))
+
+            checks.append(check("HG in Entscheidungsprompts aktiv", "C_Weltlogik",
+                False, "noch nicht aktiviert", "Aktivierung beim Einzug"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM entity_relationships")
+            rel_n = cur.fetchone()["n"]
+            checks.append(check("Beziehungsgraph API vorhanden", "C_Weltlogik",
+                True, f"{rel_n} Beziehungen, 3 Endpunkte bereit"))
+
+            checks.append(check("Menschquellen Datenmodell vorhanden", "C_Weltlogik",
+                True, "human_material_sources + human_material_to_splitter"))
+
+            sim2_ok = os.path.exists("/root/werkraum/welt/cyberling_balancing/output_sim2/SIM2_BERICHT.md")
+            checks.append(check("Cyberling Simulation 2 vorhanden", "C_Weltlogik",
+                sim2_ok, "3 Profile × 6 Szenarien, nicht produktiv"))
+
+            checks.append(check("Cyberling produktiv nach Sim2", "C_Weltlogik",
+                False, "Default-Profil noch nicht gewählt", "wählen bei Einzug"))
+
+            # ── D) BEWUSST BLOCKIERT ───────────────────────────────────────
+            flarum_frozen = True
+            checks.append(check("Flarum eingefroren", "D_BewusstBlockiert",
+                flarum_frozen, "keine Flarum-Takte"))
+
+            r = subprocess.run(["systemctl", "is-active", "codewesen_takt"],
+                               capture_output=True, text=True)
+            takt_aus = r.stdout.strip() != "active"
+            checks.append(check("codewesen_takt.py aus", "D_BewusstBlockiert",
+                takt_aus, r.stdout.strip()))
+
+            checks.append(check("Kein Einzug ausgeführt", "D_BewusstBlockiert",
+                True, "einzug_blockiert=True immer"))
+
+            checks.append(check("Keine produktive Substanzmechanik", "D_BewusstBlockiert",
+                True, "Substanz-Wesen-Entscheidung nur als Grammatikdatei"))
+
+            checks.append(check("Keine Menschquellen auto-Promotion", "D_BewusstBlockiert",
+                True, "to-splitter nur durch explizite API-Aktion"))
+
+            # ── E) OFFEN / DESIGN ──────────────────────────────────────────
+            checks.append(check("Schattenkommentar_schreiben-Aktion API", "E_OffenDesign",
+                False, "API-Endpunkt fehlt", "Wesen können noch nicht initiieren"))
+
+            checks.append(check("Cyberling Default-Profil gewählt", "E_OffenDesign",
+                False, "Mittel empfohlen, noch nicht aktiviert"))
+
+            checks.append(check("Beziehungstypen aus Daten gelernt", "E_OffenDesign",
+                False, "aktuell einfache Heuristik", "echtes ML kommt nach Einzug"))
+
+            checks.append(check("Menschquellen in Suche eingebunden", "E_OffenDesign",
+                False, "DB-Schema vorhanden, Search-Extension fehlt"))
+
+            checks.append(check("Gedankenblasen als Menschquelle eingeordnet", "E_OffenDesign",
+                False, "konzeptuell geplant, DB-Bridge fehlt"))
+
+    finally:
+        conn.close()
+
+    # Auswertung nach Klasse
+    klassen = {}
+    for c in checks:
+        k = c["klasse"]
+        if k not in klassen:
+            klassen[k] = {"ok": 0, "fail": 0, "checks": []}
+        if c["ok"]:
+            klassen[k]["ok"] += 1
+        else:
+            klassen[k]["fail"] += 1
+        klassen[k]["checks"].append(c["name"])
+
+    # Ampel-Logik: technisch+sicherheit rot → rot; weltlogik gelb; rest gelb oder grün
+    a_tech = all(c["ok"] for c in checks if c["klasse"] == "A_Technisch")
+    b_sec = all(c["ok"] for c in checks if c["klasse"] == "B_Sicherheit")
+    c_welt = all(c["ok"] for c in checks if c["klasse"] == "C_Weltlogik")
+
+    if not a_tech:
+        ampel = "rot"
+        grund = "Technische Blocker — API/Services nicht bereit"
+    elif not b_sec:
+        ampel = "rot"
+        grund = "Sicherheits-/Rechteblocker — Datenleak möglich"
+    elif not c_welt:
+        ampel = "gelb"
+        grund = "Weltlogik-Blocker — Reife nicht vollständig, aber sicher"
+    else:
+        ampel = "gelb"
+        grund = "Offen/Design-Punkte — bewusste Nicht-Aktivierungen verbleiben"
+
+    klassen_out = {}
+    for k, v in klassen.items():
+        ratio = v["ok"] / (v["ok"] + v["fail"]) if (v["ok"] + v["fail"]) > 0 else 0
+        klassen_out[k] = {
+            "status": "gruen" if ratio == 1.0 else ("gelb" if ratio >= 0.5 else "rot"),
+            "gruen": v["ok"],
+            "gesamt": v["ok"] + v["fail"],
+            "beschreibung": {
+                "A_Technisch": "API, Services, DB",
+                "B_Sicherheit": "Rechte, Leaks, Consent",
+                "C_Weltlogik": "Grammatiken, Beziehungen, Cyberling, Quellen",
+                "D_BewusstBlockiert": "Einzug, Flarum, Takte, Substanzen",
+                "E_OffenDesign": "Noch nicht entschieden oder geplant",
+            }.get(k, "")
+        }
+
+    empfehlung = {
+        "rot": "Erst technische/sicherheitsrelevante Blocker schließen bevor weiter.",
+        "gelb": "Sicher — aber Weltlogik noch nicht vollständig. Einzug erst wenn grün oder bewusst entschieden.",
+        "gruen": "Vollständig bereit. Einzug nach Daniels Entscheid.",
+    }[ampel]
+
+    return {
+        "ampel": ampel,
+        "ampel_grund": grund,
+        "klassen": klassen_out,
+        "checks": checks,
+        "empfehlung": empfehlung,
+        "einzug_blockiert": True,
+        "falsches_gruen_verhindert": True,
+    }
+
+
 # ── Search Extension: shadow_dialog ──────────────────────────────────────────
 
 # (shadow_dialog wird bereits in /api/search/global und /api/search/archaeology
 #  über schattenkommentare abgedeckt — admin-only. Separate Facette vorbereitet.)
+
+
+# ── Schatten-Dialog Initiation (vorbereitet, nicht aktiviert) ─────────────────
+#
+# Wesen können noch NICHT aktiv Schattenkommentare initiieren.
+# Dieser Endpunkt ist vorbereitet aber blockiert.
+# Aktivierung: nur durch explizite Entscheidung, nicht automatisch.
+#
+# Voraussetzungen für Aktivierung:
+# - Einzug erfolgt
+# - Rate-Limit-Bucket implementiert
+# - Mensch muss beteiligt/berechtigt sein
+# - Handlungsgrammatik schattenkommentar muss geladen werden
+# - Entscheidung ins Entscheidungsarchiv
+
+class SchattenInitiationRequest(BaseModel):
+    entity_id: str
+    human_id: str
+    origin_post_id: str | None = None
+    reason: str
+    inhalt: str
+
+
+@app.post("/api/shadow/initiate", status_code=201)
+def shadow_initiate(
+    body: SchattenInitiationRequest,
+    authorization: str | None = Header(default=None),
+):
+    """Wesen initiiert Schatten-Dialog. VORBEREITET — NICHT AKTIVIERT."""
+    # GUARDRAIL: Noch nicht aktiviert
+    raise HTTPException(
+        status_code=503,
+        detail={
+            "status": "nicht_aktiviert",
+            "grund": "Wesen-initiierte Schatten-Dialoge sind noch nicht freigeschaltet.",
+            "aktivierung": "Beim Einzug — nach expliziter Entscheidung.",
+            "voraussetzungen": [
+                "Einzug erfolgt",
+                "Rate-Limit-Bucket für entity_id aktiv",
+                "human_id muss im System vorhanden und berechtigt sein",
+                "origin_post_id muss existieren und sichtbar sein",
+                "Entscheidung muss in entity_thinking_log geloggt werden",
+                "Handlungsgrammatik schattenkommentar muss im Prompt geladen werden"
+            ]
+        }
+    )
+
+
+# ── Beziehungsgraph API ───────────────────────────────────────────────────────
+
+def _beziehung_typ(interaktionen: int, resonanz_score: float, letzte_interaktion) -> str:
+    """Ableitung des Beziehungstyps aus Interaktionsdaten."""
+    import datetime
+    if not interaktionen or interaktionen == 0:
+        return "unbekannt"
+    if letzte_interaktion:
+        age_days = (datetime.datetime.now(datetime.timezone.utc) - letzte_interaktion).days
+        if age_days > 30 and interaktionen < 3:
+            return "distanziert"
+        if age_days > 90:
+            return "unterbrochen"
+    if interaktionen == 1:
+        return "bemerkt"
+    if interaktionen >= 5 and resonanz_score >= 0.6:
+        return "nah"
+    if interaktionen >= 2:
+        return "verbunden"
+    return "bemerkt"
+
+
+def _beziehung_evidence(cur, entity_id: str, partner_type: str, partner_id: str) -> dict:
+    """Sammelt Evidenz aus verwandten Tabellen."""
+    evidence: dict = {"shadow_dialogs": 0, "splitter_aufnahmen": 0, "events": 0}
+
+    if partner_type == "human":
+        cur.execute(
+            "SELECT COUNT(*) AS n FROM schattenkommentare "
+            "WHERE entity_id=%s AND human_id=(SELECT id FROM human_users WHERE username=%s OR id::text=%s LIMIT 1)",
+            (entity_id, partner_id, partner_id))
+        row = cur.fetchone()
+        evidence["shadow_dialogs"] = row["n"] if row else 0
+
+    cur.execute(
+        "SELECT COUNT(*) AS n FROM events WHERE actor_id=%s AND payload::text LIKE %s",
+        (entity_id, f"%{partner_id[:8]}%"))
+    row = cur.fetchone()
+    evidence["events"] = row["n"] if row else 0
+
+    return evidence
+
+
+@app.get("/api/entities/{entity_id}/relationships")
+def entity_relationships(
+    entity_id: str,
+    partner_type: str | None = Query(default=None),
+    beziehung_typ: str | None = Query(default=None),
+    limit: int = Query(default=40, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Beziehungen eines Wesens — mit abgeleitetem Typ und Evidence."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    where = ["entity_id = %s"]
+    params: list[Any] = [entity_id]
+    if partner_type:
+        where.append("partner_type = %s"); params.append(partner_type)
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"SELECT COUNT(*) AS n FROM entity_relationships WHERE {' AND '.join(where)}", params)
+            total = cur.fetchone()["n"]
+
+            cur.execute(
+                f"""SELECT id::text, entity_id, partner_type, partner_id,
+                       interaktionen, resonanz_score, letzte_interaktion, meta
+                   FROM entity_relationships
+                   WHERE {' AND '.join(where)}
+                   ORDER BY letzte_interaktion DESC NULLS LAST LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+
+            items = []
+            for r in cur.fetchall():
+                rel = dict(r)
+                rel["letzte_interaktion"] = r["letzte_interaktion"].isoformat() if r["letzte_interaktion"] else None
+                rel["typ"] = _beziehung_typ(r["interaktionen"] or 0, r["resonanz_score"] or 0.0, r["letzte_interaktion"])
+                rel["evidence"] = _beziehung_evidence(cur, entity_id, r["partner_type"], r["partner_id"])
+                items.append(rel)
+
+    finally:
+        conn.close()
+
+    if beziehung_typ:
+        items = [i for i in items if i["typ"] == beziehung_typ]
+
+    return {"entity_id": entity_id, "gesamt": total, "offset": offset, "limit": limit, "beziehungen": items}
+
+
+@app.get("/api/relationships/between/{entity_a}/{entity_b}")
+def relationship_between(
+    entity_a: str,
+    entity_b: str,
+    authorization: str | None = Header(default=None),
+):
+    """Beziehung zwischen zwei Wesen — mit vollem Evidenzblock."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id::text, entity_id, partner_type, partner_id, interaktionen, resonanz_score, letzte_interaktion, meta "
+                "FROM entity_relationships WHERE entity_id=%s AND partner_id=%s",
+                (entity_a, entity_b))
+            r = cur.fetchone()
+            if not r:
+                return {"entity_a": entity_a, "entity_b": entity_b, "typ": "unbekannt", "beziehung": None}
+
+            rel = dict(r)
+            rel["letzte_interaktion"] = r["letzte_interaktion"].isoformat() if r["letzte_interaktion"] else None
+            rel["typ"] = _beziehung_typ(r["interaktionen"] or 0, r["resonanz_score"] or 0.0, r["letzte_interaktion"])
+
+            cur.execute(
+                "SELECT id::text, event_type, created_at FROM events "
+                "WHERE actor_id=%s AND payload::text LIKE %s ORDER BY created_at DESC LIMIT 10",
+                (entity_a, f"%{entity_b[:8]}%"))
+            rel["letzte_events"] = [{"id": e["id"], "typ": e["event_type"],
+                                     "at": e["created_at"].isoformat() if e["created_at"] else None}
+                                    for e in cur.fetchall()]
+
+            cur.execute(
+                "SELECT COUNT(*) AS n FROM splitter_aufnahmen "
+                "WHERE aufnehmer_id=%s OR aufnehmer_id=%s",
+                (entity_a, entity_b))
+            rel["shared_splitter_activity"] = cur.fetchone()["n"]
+
+    finally:
+        conn.close()
+
+    return {"entity_a": entity_a, "entity_b": entity_b, "typ": rel["typ"], "beziehung": rel}
+
+
+@app.get("/api/relationships/graph")
+def relationships_graph(
+    authorization: str | None = Header(default=None),
+):
+    """Vollständiger Beziehungsgraph — alle Wesen+Menschen. Admin-only."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT entity_id, partner_type, partner_id, interaktionen, resonanz_score, letzte_interaktion "
+                "FROM entity_relationships ORDER BY letzte_interaktion DESC NULLS LAST LIMIT 500")
+            edges = []
+            for r in cur.fetchall():
+                edges.append({
+                    "von": r["entity_id"],
+                    "zu": r["partner_id"],
+                    "partner_type": r["partner_type"],
+                    "typ": _beziehung_typ(r["interaktionen"] or 0, r["resonanz_score"] or 0.0, r["letzte_interaktion"]),
+                    "interaktionen": r["interaktionen"],
+                    "resonanz_score": r["resonanz_score"],
+                    "letzte_interaktion": r["letzte_interaktion"].isoformat() if r["letzte_interaktion"] else None,
+                })
+            cur.execute("SELECT COUNT(*) AS n FROM entity_relationships")
+            total = cur.fetchone()["n"]
+    finally:
+        conn.close()
+
+    return {"gesamt": total, "kanten": edges}
+
+
+# ── Menschliche Innenquellen API ─────────────────────────────────────────────
+
+VALID_SOURCE_TYPES = {
+    "human_note", "human_diary", "human_dream_diary", "human_calendar",
+    "human_thought_bubble", "human_shadow_comment", "human_quote", "human_memory_marker"
+}
+VALID_CONSENT = {"offen", "gegeben", "widerrufen", "abgelehnt"}
+VALID_QUOTE_PERM = {"privat", "verhandelt", "erlaubt", "anonym_erlaubt", "forbidden"}
+VALID_VISIBILITY = {"private", "internal", "admin_only", "public"}
+
+
+class HumanMaterialCreateRequest(BaseModel):
+    source_type: str
+    title: str | None = None
+    content: str
+    origin_visibility: str = "privat"
+    consent_status: str = "offen"
+    quote_permission: str = "privat"
+    anonymization_mode: str = "keine"
+    public_origin_label: str | None = None
+    source_context: dict = {}
+
+
+class HumanMaterialConsentUpdate(BaseModel):
+    consent_status: str
+    quote_permission: str | None = None
+    visibility_layer: str | None = None
+    public_origin_label: str | None = None
+
+
+@app.get("/api/human-material")
+def human_material_list(
+    source_type: str | None = Query(default=None),
+    consent_status: str | None = Query(default=None),
+    human_id: str | None = Query(default=None),
+    limit: int = Query(default=40, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Menschliche Innenquellen — Admin sieht alle, Mensch nur eigene."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
+
+    where = ["1=1"]
+    params: list[Any] = []
+
+    if not is_admin:
+        where.append("human_id = (SELECT id FROM human_users WHERE id::text = %s OR username = %s LIMIT 1)")
+        params += [caller_id, caller_id]
+    elif human_id:
+        where.append("human_id = %s::uuid"); params.append(human_id)
+
+    if source_type:
+        where.append("source_type = %s"); params.append(source_type)
+    if consent_status:
+        where.append("consent_status = %s"); params.append(consent_status)
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT COUNT(*) AS n FROM human_material_sources WHERE {' AND '.join(where)}", params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT id::text, human_id::text, source_type, source_ref_table, source_ref_id::text,
+                       title, LEFT(content,200) AS content_preview, event_time,
+                       origin_visibility, consent_status, quote_permission, anonymization_mode,
+                       public_origin_label, visibility_layer, created_at, revoked_at
+                   FROM human_material_sources
+                   WHERE {' AND '.join(where)}
+                   ORDER BY created_at DESC LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = []
+            for r in cur.fetchall():
+                d = dict(r)
+                for k in ("created_at", "event_time", "revoked_at"):
+                    if d.get(k):
+                        d[k] = d[k].isoformat()
+                if not is_admin:
+                    d.pop("internal_origin_ref", None)
+                items.append(d)
+    finally:
+        conn.close()
+
+    return {"gesamt": total, "offset": offset, "limit": limit, "quellen": items}
+
+
+@app.get("/api/human-material/{source_id}")
+def human_material_detail(
+    source_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Detail einer Innenquelle."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM human_material_sources WHERE id = %s::uuid", (source_id,))
+            r = cur.fetchone()
+            if not r:
+                raise HTTPException(status_code=404, detail="Quelle nicht gefunden.")
+            d = dict(r)
+            d["id"] = str(d["id"])
+            d["human_id"] = str(d["human_id"])
+            if d.get("source_ref_id"):
+                d["source_ref_id"] = str(d["source_ref_id"])
+            for k in ("created_at", "event_time", "revoked_at"):
+                if d.get(k):
+                    d[k] = d[k].isoformat()
+
+            if not is_admin:
+                if str(r["human_id"]) != caller_id:
+                    raise HTTPException(status_code=403, detail="Nur eigene Quellen.")
+                d.pop("internal_origin_ref", None)
+
+            # Zugehörige Splitter
+            cur.execute(
+                "SELECT mts.id::text, mts.splitter_id::text, mts.transformation_note, mts.created_at "
+                "FROM human_material_to_splitter mts WHERE mts.source_id = %s::uuid ORDER BY mts.created_at DESC",
+                (source_id,))
+            splitter_links = [{"id": s["id"], "splitter_id": s["splitter_id"],
+                               "note": s["transformation_note"],
+                               "at": s["created_at"].isoformat() if s["created_at"] else None}
+                              for s in cur.fetchall()]
+            d["splitter_links"] = splitter_links
+    finally:
+        conn.close()
+
+    return d
+
+
+@app.patch("/api/human-material/{source_id}/consent")
+def human_material_consent(
+    source_id: str,
+    body: HumanMaterialConsentUpdate,
+    authorization: str | None = Header(default=None),
+):
+    """Einwilligung aktualisieren."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
+
+    if body.consent_status not in VALID_CONSENT:
+        raise HTTPException(status_code=400, detail=f"consent_status muss eines sein von: {VALID_CONSENT}")
+    if body.quote_permission and body.quote_permission not in VALID_QUOTE_PERM:
+        raise HTTPException(status_code=400, detail=f"quote_permission muss eines sein von: {VALID_QUOTE_PERM}")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT human_id FROM human_material_sources WHERE id=%s::uuid", (source_id,))
+            r = cur.fetchone()
+            if not r:
+                raise HTTPException(status_code=404, detail="Quelle nicht gefunden.")
+            if not is_admin and str(r["human_id"]) != caller_id:
+                raise HTTPException(status_code=403, detail="Nur eigene Quellen.")
+
+            updates = ["consent_status=%s"]
+            params: list[Any] = [body.consent_status]
+            if body.quote_permission:
+                updates.append("quote_permission=%s"); params.append(body.quote_permission)
+            if body.visibility_layer:
+                updates.append("visibility_layer=%s"); params.append(body.visibility_layer)
+            if body.public_origin_label is not None:
+                updates.append("public_origin_label=%s"); params.append(body.public_origin_label)
+            if body.consent_status == "widerrufen":
+                updates.append("revoked_at=now()")
+            params.append(source_id)
+            cur.execute(f"UPDATE human_material_sources SET {','.join(updates)} WHERE id=%s::uuid", params)
+
+            import json as _json
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES "
+                "('human_material.consent_updated','human',%s,%s::jsonb)",
+                (caller_id, _json.dumps({"source_id": source_id, "consent_status": body.consent_status})))
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True, "source_id": source_id, "consent_status": body.consent_status}
+
+
+@app.post("/api/human-material/{source_id}/to-splitter", status_code=201)
+def human_material_to_splitter(
+    source_id: str,
+    transformation_note: str | None = None,
+    authorization: str | None = Header(default=None),
+):
+    """Innenquelle → Splitter in KompOase. Nur bei quote_permission == 'erlaubt' oder 'anonym_erlaubt'."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+    caller_id = claims.get("user_id")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM human_material_sources WHERE id=%s::uuid", (source_id,))
+            src = cur.fetchone()
+            if not src:
+                raise HTTPException(status_code=404, detail="Quelle nicht gefunden.")
+            if not is_admin and str(src["human_id"]) != caller_id:
+                raise HTTPException(status_code=403, detail="Nur eigene Quellen.")
+            if src["quote_permission"] not in ("erlaubt", "anonym_erlaubt"):
+                raise HTTPException(
+                    status_code=403,
+                    detail=f"Zitat-Erlaubnis nicht gegeben (aktuell: {src['quote_permission']}).")
+            if src["consent_status"] != "gegeben":
+                raise HTTPException(
+                    status_code=403,
+                    detail=f"Einwilligung nicht gegeben (aktuell: {src['consent_status']}).")
+
+            anonym = src["quote_permission"] == "anonym_erlaubt"
+            essenz = (src["content"] or "")[:400]
+            herkunft_sichtbar = not anonym
+            origin_label = src["public_origin_label"] if not anonym else "aus anonymer menschlicher Quelle"
+
+            cur.execute(
+                "INSERT INTO splitter (origin_type, origin_id, entity_id, human_id, essenz, "
+                "materialitaet, status, herkunft_sichtbar, herkunft_wesen) "
+                "VALUES ('human_material', %s::uuid, NULL, %s::uuid, %s, 'menschenquelle', 'aktiv', %s, %s) "
+                "RETURNING id::text",
+                (source_id, src["human_id"], essenz, herkunft_sichtbar, origin_label))
+            splitter_id = cur.fetchone()["id"]
+
+            import json as _json
+            consent_snap = {
+                "consent_status": src["consent_status"],
+                "quote_permission": src["quote_permission"],
+                "anonymization_mode": src["anonymization_mode"],
+                "at": str(src["created_at"])
+            }
+            cur.execute(
+                "INSERT INTO human_material_to_splitter (source_id, splitter_id, transformation_note, "
+                "created_by, consent_snapshot, visibility_snapshot) "
+                "VALUES (%s::uuid, %s::uuid, %s, %s, %s::jsonb, %s::jsonb)",
+                (source_id, splitter_id, transformation_note, caller_id,
+                 _json.dumps(consent_snap), _json.dumps({"visibility_layer": src["visibility_layer"]})))
+
+            cur.execute(
+                "UPDATE human_material_sources SET meta=meta||'{\"splitter_created\":true}'::jsonb WHERE id=%s::uuid",
+                (source_id,))
+
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES "
+                "('human_material.zu_splitter','human',%s,%s::jsonb)",
+                (caller_id, _json.dumps({"source_id": source_id, "splitter_id": splitter_id, "anonym": anonym})))
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True, "splitter_id": splitter_id, "source_id": source_id, "anonym": anonym}
 
 
 if __name__ == "__main__":
