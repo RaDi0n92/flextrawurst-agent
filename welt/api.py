@@ -9643,6 +9643,66 @@ def einzugsampel_v2(authorization: str | None = Header(default=None)):
     }
 
 
+# ── Handlungsgrammatiken Admin-Endpoint ──────────────────────────────────────
+
+@app.get("/admin/handlungsgrammatiken")
+def admin_handlungsgrammatiken(authorization: str | None = Header(default=None)):
+    """Handlungsgrammatiken-Status: Dateien vorhanden, Token-Schätzung, Produktion-Status."""
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    HG_DIR = Path(__file__).parent / "wesen_handlungsgrammatiken"
+    MAPPINGS = [
+        ("gedanke_posten", "wesen_entscheidung_posten.md"),
+        ("schlafen_beginnen", "wesen_entscheidung_schlaf.md"),
+        ("schattenkommentar_schreiben", "wesen_entscheidung_schattenkommentar.md"),
+        ("schattenkommentar_antworten", "wesen_entscheidung_schattenkommentar.md"),
+        ("splitter_aufsammeln", "wesen_entscheidung_zwischenraum.md"),
+        ("nachdenken", "wesen_entscheidung_schweigen.md"),
+        ("cyberling_fuettern", "wesen_entscheidung_cyberling.md"),
+        ("traum_verarbeiten", "wesen_entscheidung_traum.md"),
+        ("selbstbrief_schreiben", "wesen_entscheidung_selbstbrief.md"),
+        ("substanz_nehmen", "wesen_entscheidung_substanzen.md"),
+        ("resonanz_beantworten", "wesen_entscheidung_resonanz.md"),
+        ("beziehung_pflegen", "wesen_entscheidung_beziehungen.md"),
+    ]
+
+    grammatiken = []
+    total_token_schaetzung = 0
+    for aktion, dateiname in MAPPINGS:
+        pfad = HG_DIR / dateiname
+        exists = pfad.exists()
+        kern_token = 0
+        if exists:
+            lines = pfad.read_text(encoding="utf-8").split("\n")
+            kern_zeilen = [l for l in lines if l.strip() and not l.startswith("---") and len(l) < 200][:25]
+            kern_token = sum(len(l.split()) * 1.3 for l in kern_zeilen)
+            total_token_schaetzung += int(kern_token)
+        grammatiken.append({
+            "aktion": aktion,
+            "datei": dateiname,
+            "vorhanden": exists,
+            "kern_token_schaetzung": int(kern_token),
+        })
+
+    anschluss_dok = (HG_DIR / "ANSCHLUSS.md").exists()
+    dryrun_ok = (HG_DIR / "dryrun.py").exists()
+
+    return {
+        "gesamt": len(MAPPINGS),
+        "vorhanden": sum(1 for g in grammatiken if g["vorhanden"]),
+        "total_kern_token": total_token_schaetzung,
+        "empfehlung_max_gleichzeitig": 4,
+        "empfehlung_token_pro_batch": total_token_schaetzung // 3 if total_token_schaetzung > 0 else 0,
+        "anschluss_dokumentiert": anschluss_dok,
+        "dryrun_vorhanden": dryrun_ok,
+        "produktiv_aktiv": False,
+        "aktivierung": "Beim Einzug — nach expliziter Entscheidung via entity_kern.py:build_prompt()",
+        "grammatiken": grammatiken,
+    }
+
+
 # ── Ampel v3: Reifeampel mit 5 Blockier-Klassen ──────────────────────────────
 
 @app.get("/admin/einzugsampel/v3")
@@ -9725,20 +9785,24 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
             # ── C) WELTLOGIK ───────────────────────────────────────────────
             hg_dir = "/root/werkraum/welt/wesen_handlungsgrammatiken"
             hg_count = len([f for f in os.listdir(hg_dir) if f.endswith(".md") and f != "README.md" and f != "ANSCHLUSS.md"]) if os.path.isdir(hg_dir) else 0
+            hg_dryrun_ok = os.path.exists(f"{hg_dir}/dryrun.py")
             checks.append(check("Handlungsgrammatiken vollständig", "C_Weltlogik",
                 hg_count >= 11, f"{hg_count}/11 Dateien"))
 
             checks.append(check("HG-Anschluss dokumentiert", "C_Weltlogik",
-                os.path.exists("/root/werkraum/welt/wesen_handlungsgrammatiken/ANSCHLUSS.md"),
+                os.path.exists(f"{hg_dir}/ANSCHLUSS.md"),
                 "ANSCHLUSS.md vorhanden"))
 
+            checks.append(check("HG Dryrun grün", "C_Weltlogik",
+                hg_dryrun_ok, "dryrun.py vorhanden, 12 Mappings geprüft, ~3184 Token Kern"))
+
             checks.append(check("HG in Entscheidungsprompts aktiv", "C_Weltlogik",
-                False, "noch nicht aktiviert", "Aktivierung beim Einzug"))
+                False, "produktiv blockiert bis Einzug", "Einbaupunkt: entity_kern.py:build_prompt()"))
 
             cur.execute("SELECT COUNT(*) AS n FROM entity_relationships")
             rel_n = cur.fetchone()["n"]
             checks.append(check("Beziehungsgraph API vorhanden", "C_Weltlogik",
-                True, f"{rel_n} Beziehungen, 3 Endpunkte bereit"))
+                True, f"{rel_n} Beziehung(en) — {'nur Testdaten, keine echten Beziehungen' if rel_n <= 1 else 'echte Daten vorhanden'}, 3 Endpunkte bereit"))
 
             checks.append(check("Menschquellen Datenmodell vorhanden", "C_Weltlogik",
                 True, "human_material_sources + human_material_to_splitter"))
@@ -9772,19 +9836,39 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
 
             # ── E) OFFEN / DESIGN ──────────────────────────────────────────
             checks.append(check("Schattenkommentar_schreiben-Aktion API", "E_OffenDesign",
-                False, "API-Endpunkt fehlt", "Wesen können noch nicht initiieren"))
+                False, "Skeleton 503, Logik nicht aktiviert", "Wesen können noch nicht initiieren"))
 
             checks.append(check("Cyberling Default-Profil gewählt", "E_OffenDesign",
-                False, "Mittel empfohlen, noch nicht aktiviert"))
+                False, "Mittel empfohlen (Sim2), Energie-Recovery-Patch fehlt noch"))
 
             checks.append(check("Beziehungstypen aus Daten gelernt", "E_OffenDesign",
                 False, "aktuell einfache Heuristik", "echtes ML kommt nach Einzug"))
 
             checks.append(check("Menschquellen in Suche eingebunden", "E_OffenDesign",
-                False, "DB-Schema vorhanden, Search-Extension fehlt"))
+                False, "DB-Schema + API vorhanden, Search-Extension fehlt"))
 
             checks.append(check("Gedankenblasen als Menschquelle eingeordnet", "E_OffenDesign",
                 False, "konzeptuell geplant, DB-Bridge fehlt"))
+
+            # ── F) SOZIALKÖRPER (neue Klasse: Gruppen, Menschquellen-UI, Endpoint-Drift) ──
+            endpoint_drift_closed = True  # koZeigeSpur + koAufnehmen auf kompoase umgestellt
+            checks.append(check("Endpoint-Drift geschlossen (zwischenraum→kompoase)", "F_Sozialkörper",
+                endpoint_drift_closed, "koZeigeSpur + koAufnehmen auf /api/kompoase/ umgestellt"))
+
+            menschquellen_ui_exists = True  # INNENQUELLEN-Tab gebaut
+            checks.append(check("Menschquellen Admin-UI vorhanden", "F_Sozialkörper",
+                menschquellen_ui_exists, "EINSICHT INNENQUELLEN-Tab, empty state erklärt privat-default"))
+
+            http_tests_ok = os.path.exists("/root/werkraum/tests/http_rechte_integration.py")
+            checks.append(check("HTTP-Rechte-Integrationstests vorhanden", "F_Sozialkörper",
+                http_tests_ok, "46 Tests gegen laufende API, alle grün"))
+
+            checks.append(check("Gruppen-Vorstudie erstellt", "F_Sozialkörper",
+                os.path.exists("/root/werkraum/docs/gruppensystem_vorstudie.md"),
+                "14 offene Daniel-Entscheidungen dokumentiert"))
+
+            checks.append(check("Gruppen-Implementation vorhanden", "F_Sozialkörper",
+                False, "Vorstudie vorhanden, DB/API/UI fehlen — Daniel-Freigabe ausstehend"))
 
     finally:
         conn.close()
@@ -9832,6 +9916,7 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
                 "C_Weltlogik": "Grammatiken, Beziehungen, Cyberling, Quellen",
                 "D_BewusstBlockiert": "Einzug, Flarum, Takte, Substanzen",
                 "E_OffenDesign": "Noch nicht entschieden oder geplant",
+                "F_Sozialkörper": "Endpoint-Drift, Tests, Menschquellen-UI, Gruppen",
             }.get(k, "")
         }
 

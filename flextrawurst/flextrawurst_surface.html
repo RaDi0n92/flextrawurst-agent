@@ -4838,7 +4838,15 @@ async function eiLadeTab(tab){
     const klassen = _eiAmpel.klassen || {};
     const kCol = (s) => s==='gruen'?'#10f050':s==='gelb'?'#f0c010':'#f01030';
     const kSym = (s) => s==='gruen'?'●':s==='gelb'?'◑':'○';
-    const klassenLabels = {A:'Technisch',B:'Sicherheit',C:'Weltlogik',D:'BewusstBlockiert',E:'OffenDesign'};
+    const klassenKeys = ['A_Technisch','B_Sicherheit','C_Weltlogik','D_BewusstBlockiert','E_OffenDesign','F_Sozialkörper'];
+    const klassenLabels = {
+      'A_Technisch':'Technisch','B_Sicherheit':'Sicherheit','C_Weltlogik':'Weltlogik',
+      'D_BewusstBlockiert':'BewusstBlockiert','E_OffenDesign':'OffenDesign','F_Sozialkörper':'Sozialkörper'
+    };
+    const klassenBrief = {
+      'A_Technisch':'A','B_Sicherheit':'B','C_Weltlogik':'C',
+      'D_BewusstBlockiert':'D','E_OffenDesign':'E','F_Sozialkörper':'F'
+    };
     list.innerHTML = `
       <div style="border:1px solid ${col};border-radius:6px;padding:20px;max-width:600px;margin:0 auto">
         <div style="font-size:1.8rem;color:${col};text-align:center;margin-bottom:8px">
@@ -4849,11 +4857,11 @@ async function eiLadeTab(tab){
         </div>
         <div style="font-size:.65rem;color:#8a6aaa;text-align:center;margin-bottom:20px">${_eiAmpel.empfehlung||''}</div>
         ${Object.keys(klassen).length ? `<div style="display:grid;grid-template-columns:1fr;gap:4px;margin-bottom:16px">
-          ${(['A','B','C','D','E'] as const).filter(k => klassen[k]).map(k => {
+          ${klassenKeys.filter(k => klassen[k]).map(k => {
             const v = klassen[k] as any;
             return `<div style="border:1px solid ${kCol(v.status)};border-radius:4px;padding:6px 10px;font-size:.58rem;font-family:monospace;display:flex;align-items:center;gap:8px">
               <span style="color:${kCol(v.status)};font-size:.75rem">${kSym(v.status)}</span>
-              <span style="color:#f0c010;font-weight:bold">${k}</span>
+              <span style="color:#f0c010;font-weight:bold">${klassenBrief[k]||k}</span>
               <span style="color:#8a6aaa;flex:1">${klassenLabels[k]||k}</span>
               <span style="color:#4a3a6a">(${v.gruen||0}/${v.gesamt||0})</span>
             </div>`;
