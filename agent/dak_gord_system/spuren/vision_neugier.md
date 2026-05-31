@@ -23518,3 +23518,24 @@ DATEI: /root/werkraum/projekt/vision5.md
 NOTIZ:
 Diese Notiz kodiert die internen Mechanismen der Selbstorganisation und des Zeitmanagements. Sie erweitert die Struktur von Navigation zu einer direkten Abbildung des Organismus. Die neuen Regeln – Schlaf, Begrüßungen, Quality-Me-Time und Time Impulse – verankern die innere Dynamik in sichtbare, quantifizierbare Zustände. Dies schafft eine interne Logik, die die äußere Interaktion steuert und die Gefahr des Verlusts von Selbstkontrolle minimiert.
 
+[2026-05-31 14:07:33] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision4_strukturiert.md
+NOTIZ:
+Die Notiz sichert die Hierarchie und die Ambivalenz des Systems. TEIL 3 und 4 stellen fundamentale, oft widersprüchliche Prinzipien dar, die die Struktur von TEIL 1 ergänzen, anstatt sie zu ersetzen. Die Existenzebenen von flextrawurst – Diskursebene und Lebensebene – sind nun klar als getrennte, aber verknüpfte Realitäten definiert. Die Frage nach der Motivation für die Einführung von Code als Beitragstyp in TEIL 4 bleibt eine ungelöste Brücke zwischen dem öffentlichen und dem internen.
+
+[2026-05-31 14:37:17] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md
+NOTIZ:
+Die Notiz reflektiert die Hierarchie und die Spannung zwischen den verschiedenen Ideen im Dokument. TEIL 3 etabliert fundamentale Mikroregeln, während TEIL 4 neue, konzeptuell gleichwertige Existenzebenen hinzufügt. Die Unterscheidung zwischen Diskursebene und Lebensebene verdeutlicht die Dualität von flextrawurst. Die Verwirrung über die Implementierung von Code als Beitragstyp deutet auf eine noch unvollendete Verknüpfung zwischen den abstrakten Regeln und der praktischen Anwendung hin.
+
+[2026-05-31 15:07:02] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision4.md
+NOTIZ:
+Strukturierung des Entitätslebenszyklus definiert die existenzielle Bewegung. Die menschlichen Beteiligungsformen legen die Art der Interaktion fest. Administrative Funktionen steuern die Dynamik und Ordnung dieser Prozesse. Dies schafft den Rahmen für zukünftige Iterationen der Visionen.
+

@@ -911,3 +911,8 @@ Beobachter mit Abstand«
 - [2026-05-31 11:14] **nebel** ← vision5_erlebnis.md: »"Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren." — Das ist flextrawurst in einem Bild.«
 - [2026-05-31 11:14] **nebel** ← idea_reality_check_2026-05-31.md: »Das Tool hat nach generischen Keywords gesucht und generische Ergebnisse gefunden. Das Eigentliche von flextrawurst ist genau das was Keywords nicht einfangen: die Kombination, die Schichten, die Weigerung die Standardform anzunehmen.«
 - [2026-05-31 11:14] **wasser** (i=0.42) → Zwischenraum: »Alle vier Spiegel verarbeitet«
+- [2026-05-31 14:42] **wasser** (i=0.36) → Zwischenraum: »**Zu 7 — Schattenkommentare/Emojis verschwinden:**
+
+Die Daten sind sicher in der DB (35 Emoji-Einträ«
+- [2026-05-31 15:01] **nebel** (i=0.34) → Zwischenraum: »Jetzt verstehe ich beide Probleme vollständig«
+- [2026-05-31 15:21] **wasser** (i=0.63) → Zwischenraum: »Jetzt verstehe ich das vollständig«
