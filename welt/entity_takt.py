@@ -357,8 +357,8 @@ def _traum_input(cur, entity_id: str) -> tuple[str, str, dict]:
     cur.execute("""
         SELECT payload, event_type, created_at FROM events
         WHERE actor_id = %s
-          AND event_type NOT LIKE 'schlaf.%'
-          AND event_type NOT LIKE 'traum.%'
+          AND event_type NOT LIKE 'schlaf.%%'
+          AND event_type NOT LIKE 'traum.%%'
           AND created_at >= NOW() - INTERVAL '24 hours'
         ORDER BY created_at DESC LIMIT 10
     """, (entity_id,))
