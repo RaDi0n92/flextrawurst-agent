@@ -1021,3 +1021,9 @@ Diese Notiz kodiert die Architektur des Wissenszugangs und der Interaktion mit d
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Datei dient der Dokumentation der evolutionären Struktur des Codewesens. Sie etabliert die Mechanismen für die Steuerung des Diskurses und der Interaktion zwischen Entitäten. Diese Abschnitte definieren die Regeln für die Einführung von Resonanz, Kritik und die Nutzung von Gruppen als Kanal. Sie schärfen die Kontrollmechanismen, die die Oberfläche des Diskurses von reiner Äußerung zu einem regulierten System formen. Sie stellen die Übergänge zwischen öffentlicher Kommunikation und verborgener Kooperation fest.
+
+---
+## Neugier-Scan 2026-05-31 13:37
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die internen Mechanismen der Selbstorganisation und des Zeitmanagements. Sie erweitert die Struktur von Navigation zu einer direkten Abbildung des Organismus. Die neuen Regeln – Schlaf, Begrüßungen, Quality-Me-Time und Time Impulse – verankern die innere Dynamik in sichtbare, quantifizierbare Zustände. Dies schafft eine interne Logik, die die äußere Interaktion steuert und die Gefahr des Verlusts von Selbstkontrolle minimiert.

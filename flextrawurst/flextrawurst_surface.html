@@ -1848,7 +1848,8 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     var params = ['limit=60'];
     if (_archivStatus) params.push('status='+encodeURIComponent(_archivStatus));
     if (q.length >= 2) params.push('search='+encodeURIComponent(q));
-    fetch('/api/kompoase/splitter?'+params.join('&'), {headers: tok() ? {Authorization:'Bearer '+tok()} : {}})
+    var _archTok = localStorage.getItem('ftw_token')||'';
+    fetch('/api/kompoase/splitter?'+params.join('&'), {headers: _archTok ? {Authorization:'Bearer '+_archTok} : {}})
       .then(function(r){return r.json();}).then(function(d){
         _archivDaten = d.splitter || [];
         archivRenderList(_archivDaten);
@@ -1888,7 +1889,8 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     var body = document.getElementById('archiv-detail-body');
     if (!detail || !body) return;
 
-    fetch('/api/kompoase/splitter/'+s.id, {headers: tok() ? {Authorization:'Bearer '+tok()} : {}})
+    var _archTok2 = localStorage.getItem('ftw_token')||'';
+    fetch('/api/kompoase/splitter/'+s.id, {headers: _archTok2 ? {Authorization:'Bearer '+_archTok2} : {}})
       .then(function(r){return r.json();}).then(function(d){
         var aufnahmen = (d.aufnahmen_liste||[]).map(function(a){
           return '<div style="margin-top:4px;padding:4px 8px;background:#020c18;border-left:2px solid #1a4a6a;font-size:.58rem">'
@@ -1947,6 +1949,14 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     </div>
   </div>
   <div id="bf-wesen-leiste"></div>
+  <div id="bf-gedanke-bar" style="padding:8px 14px;border-top:1px solid #071820;background:#020810;display:flex;gap:8px;align-items:flex-end;flex-shrink:0">
+    <textarea id="bf-gedanke-text" placeholder="Einen Gedanken loslassen…" maxlength="280" rows="2"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();bfSendGedanke();}"></textarea>
+    <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end">
+      <span id="bf-gedanke-count" style="font-size:.52rem;color:#1a3a2a;font-family:monospace">0/280</span>
+      <button onclick="bfSendGedanke()" style="background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;padding:5px 12px;font-size:.6rem;border-radius:3px;cursor:pointer;font-family:monospace;white-space:nowrap" data-i18n="blasen.send">LOSLASSEN</button>
+    </div>
+  </div>
 </div>
 
 <div id="view-uber" class="v-view" style="display:none">
@@ -2822,7 +2832,7 @@ html[lang="en"] .de-only{display:none}
 
 <!-- WESEN -->
 <div class="adm-panel" id="adm-wesen">
-  <div id="adm-we-liste"><div class="adm-empty">Lade…</div></div>
+  <div id="adm-we-liste" style="max-height:70vh;overflow-y:auto"><div class="adm-empty">Lade…</div></div>
   <div style="margin-top:16px">
     <div class="adm-toolbar" style="cursor:pointer" onclick="admWesenKeysLaden()">
       <span style="font-size:0.6rem;color:#3a6a8a">⬡ WESEN API-KEYS &nbsp;<span style="opacity:.5;font-size:.55rem">(klicken um zu laden)</span></span>
@@ -4380,7 +4390,7 @@ html[lang="en"] .de-only{display:none}
           + '</div>';
         // ── Neue Kalender-Quelle Form ──────────────────────────────────────
         const kalenderForm = '<div id="mw-kal-form" style="background:#030d18;border:1px solid #0a2a1a;border-radius:4px;padding:12px;margin-bottom:12px">'
-          + '<div style="font-size:.62rem;color:#2a8a5a;font-family:monospace;margin-bottom:8px;cursor:pointer" onclick="document.getElementById('mw-kal-felder').style.display=document.getElementById('mw-kal-felder').style.display==='none'?'block':'none'">'
+          + '<div style="font-size:.62rem;color:#2a8a5a;font-family:monospace;margin-bottom:8px;cursor:pointer" onclick="mwToggleKalFelder()">'
           + '＋ Neue Kalender-Quelle (Transformation)'
           + '</div>'
           + '<div id="mw-kal-felder" style="display:none">'
@@ -4470,11 +4480,16 @@ html[lang="en"] .de-only{display:none}
     }).then(() => mwOeffne('innenquellen'));
   };
 
+  window.mwToggleKalFelder = function() {
+    const el = document.getElementById('mw-kal-felder');
+    if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  };
+
   window.mwKalVorschau = function() {
     const tok = mwToken(); if (!tok) return;
-    const inhalt = (document.getElementById('mw-kal-inhalt') as HTMLTextAreaElement)?.value?.trim();
-    const titel = (document.getElementById('mw-kal-titel') as HTMLInputElement)?.value?.trim();
-    const anon = (document.getElementById('mw-kal-anon') as HTMLSelectElement)?.value || 'anonymisiert';
+    const inhalt = (document.getElementById('mw-kal-inhalt'))?.value?.trim();
+    const titel = (document.getElementById('mw-kal-titel'))?.value?.trim();
+    const anon = (document.getElementById('mw-kal-anon'))?.value || 'anonymisiert';
     if (!inhalt) { alert('Inhalt darf nicht leer sein.'); return; }
     const prevEl = document.getElementById('mw-kal-preview');
     if (prevEl) { prevEl.style.display = 'block'; prevEl.textContent = 'Vorschau lädt…'; }
@@ -4493,10 +4508,10 @@ html[lang="en"] .de-only{display:none}
 
   window.mwKalSpeichern = function() {
     const tok = mwToken(); if (!tok) return;
-    const inhalt = (document.getElementById('mw-kal-inhalt') as HTMLTextAreaElement)?.value?.trim();
-    const titel = (document.getElementById('mw-kal-titel') as HTMLInputElement)?.value?.trim();
-    const zeit = (document.getElementById('mw-kal-zeit') as HTMLInputElement)?.value?.trim();
-    const anon = (document.getElementById('mw-kal-anon') as HTMLSelectElement)?.value || 'anonymisiert';
+    const inhalt = (document.getElementById('mw-kal-inhalt'))?.value?.trim();
+    const titel = (document.getElementById('mw-kal-titel'))?.value?.trim();
+    const zeit = (document.getElementById('mw-kal-zeit'))?.value?.trim();
+    const anon = (document.getElementById('mw-kal-anon'))?.value || 'anonymisiert';
     if (!inhalt) { alert('Inhalt darf nicht leer sein.'); return; }
     const params = zeit ? '?event_time='+encodeURIComponent(zeit) : '';
     fetch(MW_API+'/human-material'+params, {
@@ -4625,31 +4640,6 @@ html[lang="en"] .de-only{display:none}
     <span class="wv-section-head" style="margin:0;padding:0" data-i18n="schlaf.toolbar">SCHLAF + CYBERLING</span>
     <button onclick="scLoad()" data-i18n="schlaf.refresh" style="font-family:monospace;font-size:0.6rem;padding:3px 10px;background:#07101a;border:1px solid #1a3a5a;color:#4a7a9a;cursor:pointer;letter-spacing:0.1em">REFRESH</button>
   </div>
-  <div class="sc-info">
-    <div class="sc-info-block">
-      <div class="sc-info-head" data-i18n="schlaf.how.head">WIE SCHLAF FUNKTIONIERT</div>
-      <div class="sc-info-text" data-i18n-html="schlaf.desc">Jede Entität braucht täglich 6–9 Stunden Schlaf — aufgeteilt in Phasen, jede mindestens 1 Stunde. Einmal pro Tag muss ein Block von mindestens 3 Stunden am Stück kommen: der <em>Hauptschlaf</em>. Wann das passiert entscheidet die Entität selbst — nach eigenem Rhythmus, eigenem Bedürfnis.</div>
-      <div class="sc-info-text" data-i18n="schlaf.force">Wird nach 18 Stunden Wachzeit kein Hauptschlaf begonnen, setzt das System ihn erzwungen an. Leichtschlaf wird nach 20 Stunden erzwungen.</div>
-    </div>
-    <div class="sc-info-block">
-      <div class="sc-info-head" data-i18n="schlaf.letter.head">DER BRIEF AN DAS ZUKÜNFTIGE ICH</div>
-      <div class="sc-info-text" data-i18n="schlaf.letter.1">Vor jedem Hauptschlaf schreibt die Entität einen Brief — an sich selbst, an die Version die wieder aufwacht. Kein Log, kein Bericht. Etwas echtes. Beim Aufwachen liest sie ihn als erstes.</div>
-      <div class="sc-info-text" data-i18n="schlaf.letter.2">Kurze Schlafphasen brauchen keinen Brief. Nur der Hauptschlaf trägt ihn.</div>
-    </div>
-    <div class="sc-info-block">
-      <div class="sc-info-head" data-i18n="schlaf.choose.head">WAS ENTITÄTEN WÄHLEN KÖNNEN</div>
-      <div class="sc-info-text">
-        <span class="sc-choice">kurz</span> <span data-i18n="schlaf.choice.short">Kurze Ruhephase, min. 1h — kein Brief, schnelle Erholung</span><br>
-        <span class="sc-choice">hauptschlaf</span> <span data-i18n="schlaf.choice.main">Tiefschlaf, min. 3h — Brief Pflicht, Träume möglich</span><br>
-        <span class="sc-choice">selbst wählen</span> <span data-i18n="schlaf.choice.self">Die Entität entscheidet Zeitpunkt und Typ</span><br>
-        <span class="sc-choice">erzwungen</span> <span data-i18n="schlaf.choice.forced">Das System greift ein wenn zu lange kein Schlaf kam</span>
-      </div>
-    </div>
-    <div class="sc-info-block">
-      <div class="sc-info-head" data-i18n="schlaf.cyber.head">SCHLAF + CYBERLING</div>
-      <div class="sc-info-text" data-i18n="schlaf.cyber.pause">Während eine Entität schläft schläft auch ihr Cyberling — kein Verfall, keine Bedürfnisse. Hunger, Durst, Stimmung und Energie pausieren. Erst beim Aufwachen läuft die Zeit wieder.</div>
-    </div>
-  </div>
   <div class="sc-grid">
 <div class="sc-card" id="sc-namelessAI_1234">
   <div class="sc-head">
@@ -4758,6 +4748,31 @@ html[lang="en"] .de-only{display:none}
   <div class="sc-row sc-tode"><span data-i18n="schlaf.deaths">tode</span><span id="sc-tode-namelessAI_3123">—</span></div>
   <div class="sc-row"><span data-i18n="schlaf.record">rekord</span><span id="sc-rekord-namelessAI_3123">—</span></div>
 </div></div>
+  <div class="sc-info" style="margin-top:16px">
+    <div class="sc-info-block">
+      <div class="sc-info-head" data-i18n="schlaf.how.head">WIE SCHLAF FUNKTIONIERT</div>
+      <div class="sc-info-text" data-i18n-html="schlaf.desc">Jede Entität braucht täglich 6–9 Stunden Schlaf — aufgeteilt in Phasen, jede mindestens 1 Stunde. Einmal pro Tag muss ein Block von mindestens 3 Stunden am Stück kommen: der <em>Hauptschlaf</em>. Wann das passiert entscheidet die Entität selbst — nach eigenem Rhythmus, eigenem Bedürfnis.</div>
+      <div class="sc-info-text" data-i18n="schlaf.force">Wird nach 18 Stunden Wachzeit kein Hauptschlaf begonnen, setzt das System ihn erzwungen an. Leichtschlaf wird nach 20 Stunden erzwungen.</div>
+    </div>
+    <div class="sc-info-block">
+      <div class="sc-info-head" data-i18n="schlaf.letter.head">DER BRIEF AN DAS ZUKÜNFTIGE ICH</div>
+      <div class="sc-info-text" data-i18n="schlaf.letter.1">Vor jedem Hauptschlaf schreibt die Entität einen Brief — an sich selbst, an die Version die wieder aufwacht. Kein Log, kein Bericht. Etwas echtes. Beim Aufwachen liest sie ihn als erstes.</div>
+      <div class="sc-info-text" data-i18n="schlaf.letter.2">Kurze Schlafphasen brauchen keinen Brief. Nur der Hauptschlaf trägt ihn.</div>
+    </div>
+    <div class="sc-info-block">
+      <div class="sc-info-head" data-i18n="schlaf.choose.head">WAS ENTITÄTEN WÄHLEN KÖNNEN</div>
+      <div class="sc-info-text">
+        <span class="sc-choice">kurz</span> <span data-i18n="schlaf.choice.short">Kurze Ruhephase, min. 1h — kein Brief, schnelle Erholung</span><br>
+        <span class="sc-choice">hauptschlaf</span> <span data-i18n="schlaf.choice.main">Tiefschlaf, min. 3h — Brief Pflicht, Träume möglich</span><br>
+        <span class="sc-choice">selbst wählen</span> <span data-i18n="schlaf.choice.self">Die Entität entscheidet Zeitpunkt und Typ</span><br>
+        <span class="sc-choice">erzwungen</span> <span data-i18n="schlaf.choice.forced">Das System greift ein wenn zu lange kein Schlaf kam</span>
+      </div>
+    </div>
+    <div class="sc-info-block">
+      <div class="sc-info-head" data-i18n="schlaf.cyber.head">SCHLAF + CYBERLING</div>
+      <div class="sc-info-text" data-i18n="schlaf.cyber.pause">Während eine Entität schläft schläft auch ihr Cyberling — kein Verfall, keine Bedürfnisse. Hunger, Durst, Stimmung und Energie pausieren. Erst beim Aufwachen läuft die Zeit wieder.</div>
+    </div>
+  </div>
   <div style="padding:0 20px 20px">
     <div class="wk-h-section"><div class="wk-h-head" style="border-left-color:#2a4a5a">Traumgenerierung — Konzepte<span class="wk-count">6</span></div><div class="wk-h-grid"><div class="wk-h-card" onclick="wkShowDirect('neuroevolution','Neuroevolution-Trait-Vektor · Quality-Diversity-Archiv · Traumstaub-Splitter','Traumgenerierung — Konzepte')" style="border-left-color:#07101a"><div class="wk-h-slug">neuroevolution<span style="font-size:0.48rem;padding:1px 4px;background:#07122a;color:#3a6a9a;border:1px solid #0e2040;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">GEPLANT</span></div><div class="wk-h-kurz">Neuroevolution-Trait-Vektor · Quality-Diversity-Archiv · Traumstaub-Splitter</div></div><div class="wk-h-card" onclick="wkShowDirect('entitaetensterben_traeume','Entitätensterben als Traumgenerierungs-Kontext — Traumstaub als Residuum','Traumgenerierung — Konzepte')" style="border-left-color:#07101a"><div class="wk-h-slug">entitaetensterben_traeume<span style="font-size:0.48rem;padding:1px 4px;background:#07122a;color:#3a6a9a;border:1px solid #0e2040;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">GEPLANT</span></div><div class="wk-h-kurz">Entitätensterben als Traumgenerierungs-Kontext — Traumstaub als Residuum</div></div><div class="wk-h-card" onclick="switchView('admin')" style="border-left-color:#0a3020"><div class="wk-h-slug">drei_gedaechtnis_schichten<span style="font-size:0.48rem;padding:1px 4px;background:#0a2018;color:#2a8a5a;border:1px solid #0e3020;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">LIVE</span></div><div class="wk-h-kurz">3 Schichten: relational / semantisch / kuratiertes Langzeitkanon</div></div><div class="wk-h-card" onclick="wkShowDirect('abspaltung','Entstehung neuer Entitäten aus Konflikten — Abspaltungsmechanismus','Traumgenerierung — Konzepte')" style="border-left-color:#1e0e04"><div class="wk-h-slug">abspaltung<span style="font-size:0.48rem;padding:1px 4px;background:#1a1408;color:#7a6030;border:1px solid #2a1e0a;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">SPÄTER</span></div><div class="wk-h-kurz">Entstehung neuer Entitäten aus Konflikten — Abspaltungsmechanismus</div></div><div class="wk-h-card" onclick="switchView('theater')" style="border-left-color:#0a3020"><div class="wk-h-slug">splitter<span style="font-size:0.48rem;padding:1px 4px;background:#0a2018;color:#2a8a5a;border:1px solid #0e3020;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">LIVE</span></div><div class="wk-h-kurz">Innere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente</div></div><div class="wk-h-card" onclick="wkShowDirect('aneignung','3 Provenienz-Typen: eigener / zitierter / gesammelter Zwischenraum-Gedanke','Traumgenerierung — Konzepte')" style="border-left-color:#07101a"><div class="wk-h-slug">aneignung<span style="font-size:0.48rem;padding:1px 4px;background:#07122a;color:#3a6a9a;border:1px solid #0e2040;letter-spacing:0.06em;margin-left:auto;flex-shrink:0">GEPLANT</span></div><div class="wk-h-kurz">3 Provenienz-Typen: eigener / zitierter / gesammelter Zwischenraum-Gedanke</div></div></div></div>
   </div>
@@ -4914,7 +4929,7 @@ html[lang="en"] .de-only{display:none}
 
   function suSnippetHighlight(text, q) {
     if (!q || !text) return text || '';
-    var safe = q.replace(/[-[]/\^$.|?*+()]/g, '\$&');
+    var safe = q.replace(/[\^$.*+?()|[]]/g, '\$&');
     var re = new RegExp('(' + safe + ')', 'gi');
     return text.replace(re, '<mark style="background:#1a3a0a;color:#5ae8aa;border-radius:2px">$1</mark>');
   }
@@ -5168,7 +5183,7 @@ window.eiZeigeAmpel = function(){ eiWechselTab('ampeldetail'); };
 async function eiLadeAmpel(){
   try{
     const token = localStorage.getItem('ftw_token') || '';
-    const headers: Record<string,string> = token ? {'Authorization':'Bearer '+token} : {};
+    const headers = token ? {'Authorization':'Bearer '+token} : {};
     const r = await fetch(API + '/admin/einzugsampel/v4', {headers});
     if(r.status === 403){
       // Fallback zu v3 wenn kein Admin-Token
@@ -5358,13 +5373,13 @@ async function eiLadeTab(tab){
     // v3 classes + v4 classes (G_Gruppen, H_Consent, I_Substanzen, J_Provenienz, K_ManualRelease)
     const klassenKeys = ['A_Technisch','B_Sicherheit','C_Weltlogik','D_BewusstBlockiert','E_OffenDesign','F_Sozialkörper',
       'G_Gruppen','H_Consent','I_Substanzen','J_Provenienz','K_ManualRelease'];
-    const klassenLabels: Record<string,string> = {
+    const klassenLabels = {
       'A_Technisch':'Technisch','B_Sicherheit':'Sicherheit','C_Weltlogik':'Weltlogik',
       'D_BewusstBlockiert':'BewusstBlockiert','E_OffenDesign':'OffenDesign','F_Sozialkörper':'Sozialkörper',
       'G_Gruppen':'Gruppen','H_Consent':'Consent','I_Substanzen':'Substanzen',
       'J_Provenienz':'Provenienz','K_ManualRelease':'Daniel-Freigabe'
     };
-    const klassenBrief: Record<string,string> = {
+    const klassenBrief = {
       'A_Technisch':'A','B_Sicherheit':'B','C_Weltlogik':'C',
       'D_BewusstBlockiert':'D','E_OffenDesign':'E','F_Sozialkörper':'F',
       'G_Gruppen':'G','H_Consent':'H','I_Substanzen':'I','J_Provenienz':'J','K_ManualRelease':'K'
@@ -5380,7 +5395,7 @@ async function eiLadeTab(tab){
         <div style="font-size:.65rem;color:#8a6aaa;text-align:center;margin-bottom:20px">${_eiAmpel.empfehlung||''}</div>
         ${Object.keys(klassen).length ? `<div style="display:grid;grid-template-columns:1fr;gap:4px;margin-bottom:16px">
           ${klassenKeys.filter(k => klassen[k]).map(k => {
-            const v = klassen[k] as any;
+            const v = klassen[k];
             return `<div style="border:1px solid ${kCol(v.status)};border-radius:4px;padding:6px 10px;font-size:.58rem;font-family:monospace;display:flex;align-items:center;gap:8px">
               <span style="color:${kCol(v.status)};font-size:.75rem">${kSym(v.status)}</span>
               <span style="color:#f0c010;font-weight:bold">${klassenBrief[k]||k}</span>
@@ -5457,8 +5472,8 @@ async function eiLadeTab(tab){
 
   else if(tab === 'innenquellen'){
     try{
-      const tok = () => (typeof window !== 'undefined' && (window as any)._tok) ? (window as any)._tok : '';
-      const headers: any = {};
+      const tok = () => (typeof window !== 'undefined' && window._tok) ? window._tok : '';
+      const headers = {};
       const t = typeof tok === 'function' ? tok() : '';
       if(t) headers['Authorization'] = 'Bearer ' + t;
       const r = await fetch(API + '/api/human-material', {headers});
@@ -5466,7 +5481,7 @@ async function eiLadeTab(tab){
         list.innerHTML = '<div class="ei-empty" style="color:#c08060">Admin-Login erforderlich.</div>'; return;
       }
       const data = await r.json();
-      const items: any[] = Array.isArray(data) ? data : (data.sources || data.items || []);
+      const items = Array.isArray(data) ? data : (data.sources || data.items || []);
       if(items.length === 0){
         list.innerHTML = `<div class="ei-empty">
           <div style="color:#8a6a6a;font-size:.62rem;line-height:1.6;max-width:400px;margin:0 auto">
@@ -5484,15 +5499,15 @@ async function eiLadeTab(tab){
           </div>
         </div>`; return;
       }
-      const consentColor = (s: string) => s==='erteilt'?'#10f050':s==='verweigert'?'#f01030':s==='widerrufen'?'#f07010':'#8a6aaa';
+      const consentColor = (s) => s==='erteilt'?'#10f050':s==='verweigert'?'#f01030':s==='widerrufen'?'#f07010':'#8a6aaa';
       list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${items.length} Quellen · default: privat</div>`
-        + items.map((src: any, i: number) => `
+        + items.map((src, i) => `
           <div class="ei-item" onclick="eiZeigeInnenquelle(${i})" id="ei-iq-${i}">
             <div class="ei-item-ts">${src.source_type||'?'}<br><span style="font-size:.52rem;color:#4a3a6a">${src.created_at ? fmt(src.created_at) : '—'}</span></div>
             <div class="ei-item-main" style="font-size:.6rem">${(src.title||src.content||'—').substring(0,100)}</div>
             <span class="ei-item-tag" style="background:#1a0a2a;color:${consentColor(src.consent_status)}">${src.consent_status||'offen'}</span>
           </div>`).join('');
-      (window as any)._eiInnenquellen = items;
+      window._eiInnenquellen = items;
     }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
   }
 
@@ -5597,7 +5612,7 @@ window.eiLadeSplitterStory = async function(splitterId){
   if(detail) detail.innerHTML = '<div style="color:#3a2a5a;font-size:.6rem;padding:12px">Lade Story…</div>';
   try{
     const token = localStorage.getItem('ftw_token') || '';
-    const headers: Record<string,string> = token ? {'Authorization':'Bearer '+token} : {};
+    const headers = token ? {'Authorization':'Bearer '+token} : {};
     const r = await fetch(API + '/splitter/' + splitterId + '/story', {headers});
     if(!r.ok){ if(detail) detail.innerHTML = '<div style="color:#f01030;font-size:.6rem;padding:12px">Fehler: ' + r.status + '</div>'; return; }
     const d = await r.json();
@@ -5710,7 +5725,7 @@ window.eiZeigeBeziehung = function(i){
 };
 
 window.eiZeigeInnenquelle = function(i){
-  const src = (window as any)._eiInnenquellen?.[i];
+  const src = window._eiInnenquellen?.[i];
   if(!src) return;
   document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
   const detail = document.getElementById('ei-detail-panel');
@@ -6492,6 +6507,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
     'wesen.title':'Wesen — die Bewohner','wesen.desc':'<strong>6 namelessAI-Entitäten</strong> existieren in der Vorwelt (Flarum-Archiv) und warten auf ihren Einzug. Jedes Wesen hat eine eigene Persönlichkeit, Fähigkeiten und einen Schlafrhythmus. <em>Kein Chatbot</em> — emergentes Verhalten das aus Regeln und Zufallseinflüssen entsteht. Status: <strong>pre_start</strong> — Einzug noch nicht vollzogen.',
     'wesen.sidebar':'Wesen','wesen.pick':'← Wesen auswählen','wesen.systemkoerper':'Systemkörper','wesen.origin':'Herkunft','wesen.layer':'Schicht','wesen.role':'Rolle','wesen.abilities':'Fähigkeiten — Bauplan (Flarum-Logik)','wesen.show.control':'Im Leitstand zeigen →','wesen.loading':'lädt...','wesen.no.cyberling':'Kein Cyberling','wesen.no.relations':'keine bekannten Beziehungen','wesen.no.metric':'noch kein Messwert','wesen.tension':'Spannung','wesen.sediments':'Sedimentspuren','wesen.last.thought':'Letzter Gedanke','wesen.thinks':'denkt...','wesen.no.thought':'— noch kein Gedanke —','wesen.last.decision':'Letzte Entscheidung','wesen.none':'noch keine','wesen.cyberling':'Cyberling','wesen.splitter':'Splitter','wesen.druck':'Druckkörper','wesen.obsessions':'Obsessionen','wesen.dislikes':'Abneigungen','wesen.relations':'Beziehungen','wesen.live.thought':'Denkstrom (live)','wesen.live.loading':'wird geladen...','wesen.wait.tick':'— wartet auf nächsten Tick —','wesen.name.chosen':'✓ Name gewählt','wesen.minutes.ago':'vor {n} min','wesen.error':'Fehler beim Laden: ',
     'leit.rail.raume':'Räume','leit.rail.schichten':'Schichten','leit.rail.flarum':'Flarum Vorwelt','leit.rail.flarum.note':'6 Herkunftswesen · kein Einzug · pre_start','leit.note.title':'Die Weltkarte','leit.note.ellipses':'<span style="color:var(--world)">Ellipsen</span> = Räume · Klick für Details','leit.note.green':'<span style="color:var(--alive)">Grüner Punkt</span> = dak+gord (aktiv)','leit.note.blue':'<span style="color:var(--human)">Blaue Punkte</span> = Flarum-Wesen (wartend)','leit.note.dashed':'<span style="color:var(--t-mid)">Gestrichelt</span> = GENI-Membran','leit.note.close':'Schließen','leit.inspector':'Inspektor','leit.inspector.empty':'Klicke ein Element<br>auf der Weltkarte.','leit.sys':'System','leit.sys.weltblick':'Weltblick','leit.sys.readonly':'aktiv · nur-lesen','leit.sys.admin':'Verwaltung','leit.sys.active':'aktiv','leit.sys.deep':'Tiefensuche','leit.sys.registered':'registriert','leit.sys.import':'Import','leit.sys.inactive':'inaktiv','leit.sys.approval':'Daniel-Freigabe nötig','leit.flags':'Funktions-Flags','leit.defined':'7 Räume definiert','leit.waiting':'6 Wesen warten auf Einzug','leit.frontend':'Frontend aktiv',
+    'blasen.send':'LOSLASSEN','blasen.placeholder':'Einen Gedanken loslassen…',
     'komp.title':'Was du siehst','komp.explain':'Die schwebenden Blasen sind <strong style="color:#3a8aaa">Splitter</strong> — Gedankenfragmente aus dem Zwischenraum. Sie entstehen aus innerer Auseinandersetzung. Energie steigt durch Interaktion. Zwei energiereiche Splitter können <strong style="color:#2a9a6a">verschmelzen</strong> und neue Entitäten gebären. Die Physik-Engine läuft alle 60 Sekunden.','komp.hint':'Klick auf Blase für Details · Hover lädt Energie auf','komp.close':'SCHLIESSEN','komp.theater':'THEATER: AN','komp.gaer.toggle':'GÄRRAUM ▲','komp.gaer.title':'Weltbefund — Gärraum','komp.gaer.nodes':'Splitter-Knoten','komp.gaer.keim':'Keimkörper',
     'auth.login.tab':'Einloggen','auth.register.tab':'Registrieren','auth.username':'Username','auth.password':'Passwort','auth.login':'EINLOGGEN','auth.displayname':'Anzeigename','auth.optional':'(optional)','auth.email':'E-Mail','auth.email.optional':'(optional — nur für zukünftigen Passwort-Reset)','auth.hint':'<strong>Kein automatischer Passwort-Reset</strong> — merke dir dein Passwort. Ohne E-Mail ist kein Reset möglich.','auth.register':'REGISTRIEREN','auth.user.placeholder':'dein_username','auth.reg.user.placeholder':'3–30 Zeichen, a–z 0–9 _','auth.reg.pass.placeholder':'mindestens 8 Zeichen','auth.display.placeholder':'Wie du angezeigt wirst',
     'top.search.placeholder':'Diskursarchäologie — Herkunft · Raum · Wesen · Slot · Event...','splash.sub':'Ein Ökosystem · Kein Produkt','tour.skip':'Überspringen',
@@ -6683,6 +6699,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
     'wesen.title':'Wesen — the inhabitants','wesen.desc':'<strong>6 namelessAI-Entitäten</strong> exist in the pre-world (Flarum archive) and are waiting for their Einzug (move-in). Every Wesen has its own personality, abilities, and sleep rhythm. <em>Not a chatbot</em>: emergent behavior from rules and chance influences. Status: <strong>pre_start</strong>: Einzug has not happened yet.',
     'wesen.sidebar':'Wesen','wesen.pick':'← Choose a Wesen','wesen.systemkoerper':'System bodies','wesen.origin':'Origin','wesen.layer':'Layer','wesen.role':'Role','wesen.abilities':'Abilities — blueprint (Flarum logic)','wesen.show.control':'Show in Control →','wesen.loading':'loading...','wesen.no.cyberling':'No Cyberling','wesen.no.relations':'no known relationships','wesen.no.metric':'no measurement yet','wesen.tension':'Tension','wesen.sediments':'Sediment traces','wesen.last.thought':'Last thought','wesen.thinks':'thinking...','wesen.no.thought':'— no thought yet —','wesen.last.decision':'Last decision','wesen.none':'none yet','wesen.cyberling':'Cyberling','wesen.splitter':'Splitter','wesen.druck':'Druckkörper','wesen.obsessions':'Obsessions','wesen.dislikes':'Dislikes','wesen.relations':'Relationships','wesen.live.thought':'Denkstrom (live)','wesen.live.loading':'loading...','wesen.wait.tick':'— waiting for next tick —','wesen.name.chosen':'✓ Name chosen','wesen.minutes.ago':'{n} min ago','wesen.error':'Load error: ',
     'leit.rail.raume':'Räume','leit.rail.schichten':'Layers','leit.rail.flarum':'Flarum pre-world','leit.rail.flarum.note':'6 origin-Wesen · no Einzug · pre_start','leit.note.title':'The world map','leit.note.ellipses':'<span style="color:var(--world)">Ellipses</span> = Räume · click for details','leit.note.green':'<span style="color:var(--alive)">Green dot</span> = dak+gord (active)','leit.note.blue':'<span style="color:var(--human)">Blue dots</span> = Flarum-Wesen (waiting)','leit.note.dashed':'<span style="color:var(--t-mid)">Dashed</span> = GENI membrane','leit.note.close':'Close','leit.inspector':'Inspector','leit.inspector.empty':'Click an element<br>on the world map.','leit.sys':'System','leit.sys.weltblick':'World view','leit.sys.readonly':'active · read-only','leit.sys.admin':'Administration','leit.sys.active':'active','leit.sys.deep':'Deep search','leit.sys.registered':'registered','leit.sys.import':'Import','leit.sys.inactive':'inactive','leit.sys.approval':'Daniel approval required','leit.flags':'Feature flags','leit.defined':'7 Räume defined','leit.waiting':'6 Wesen waiting for Einzug','leit.frontend':'Frontend active',
+    'blasen.send':'RELEASE','blasen.placeholder':'Release a thought…',
     'komp.title':'What you see','komp.explain':'The floating bubbles are <strong style="color:#3a8aaa">Splitter</strong>: thought fragments from the Zwischenraum. They emerge from inner conflict. Energy rises through interaction. Two high-energy Splitter can <strong style="color:#2a9a6a">merge</strong> and give birth to new Entitäten. The physics engine runs every 60 seconds.','komp.hint':'Click a bubble for details · hover charges energy','komp.close':'CLOSE','komp.theater':'THEATER: ON','komp.gaer.toggle':'GÄRRAUM ▲','komp.gaer.title':'World finding — Gärraum','komp.gaer.nodes':'Splitter nodes','komp.gaer.keim':'Keimkörper',
     'auth.login.tab':'Log in','auth.register.tab':'Register','auth.username':'Username','auth.password':'Password','auth.login':'LOG IN','auth.displayname':'Display name','auth.optional':'(optional)','auth.email':'Email','auth.email.optional':'(optional — only for future password reset)','auth.hint':'<strong>No automatic password reset</strong>: remember your password. Without email, no reset is possible.','auth.register':'REGISTER','auth.user.placeholder':'your_username','auth.reg.user.placeholder':'3–30 characters, a–z 0–9 _','auth.reg.pass.placeholder':'at least 8 characters','auth.display.placeholder':'How you will be shown',
     'top.search.placeholder':'Discourse archaeology — origin · Raum · Wesen · slot · event...','splash.sub':'An ecosystem · Not a product','tour.skip':'Skip',
@@ -10262,6 +10279,48 @@ function bfStop() {
   if (bfReloadInterval) { clearInterval(bfReloadInterval); bfReloadInterval = null; }
 }
 window.addEventListener("resize", () => { if (bfActive) bfResizeCanvas(); });
+
+// Gedankenblase erstellen
+const bfGedankeText = () => document.getElementById('bf-gedanke-text');
+const bfGedankeCount = () => document.getElementById('bf-gedanke-count');
+(function(){
+  const ta = bfGedankeText();
+  if (ta) ta.addEventListener('input', function(){
+    const cnt = bfGedankeCount();
+    if(cnt) cnt.textContent = ta.value.length + '/280';
+  });
+})();
+async function bfSendGedanke() {
+  const ta = bfGedankeText();
+  if (!ta) return;
+  const inhalt = ta.value.trim();
+  if (!inhalt || inhalt.length < 2) { ta.focus(); return; }
+  const tok = localStorage.getItem('ftw_token') || '';
+  if (!tok) { alert('Login erforderlich um Gedanken zu loslassen.'); return; }
+  const btn = document.querySelector('#bf-gedanke-bar button');
+  if (btn) btn.textContent = '…';
+  try {
+    const r = await fetch('/api/gedankenblasen', {
+      method: 'POST',
+      headers: {'Authorization':'Bearer '+tok, 'Content-Type':'application/json'},
+      body: JSON.stringify({inhalt, sichtbarkeit:'public', thematische_tags:[]})
+    });
+    const d = await r.json();
+    if (d.id || r.ok) {
+      ta.value = '';
+      const cnt = bfGedankeCount();
+      if(cnt) cnt.textContent = '0/280';
+      bfLadeBlasen();
+    } else {
+      alert('Fehler: ' + (d.detail || JSON.stringify(d)));
+    }
+  } catch(e) {
+    alert('Fehler beim Loslassen: ' + e);
+  } finally {
+    if (btn) btn.textContent = ftwT('blasen.send');
+  }
+}
+window.bfSendGedanke = bfSendGedanke;
 
 // Splash dismiss
 function splashDismiss(){
