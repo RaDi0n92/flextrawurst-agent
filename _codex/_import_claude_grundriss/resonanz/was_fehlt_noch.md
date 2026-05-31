@@ -585,3 +585,38 @@ Für Spurenfähigkeit: nichts.
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 SSR/Bot-Snapshot wenn Sichtbarkeit für Crawler wichtiger wird. Kein dringendes Thema.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Eine kuratierte Liste der noch-nicht-umgesetzten Rohmomente aus der zweiten Innovationswelle — mit Markierung welche für die nächste Baustufe relevant wären. Das Dokument gibt sie aber nicht priorisiert.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Eine klare Priorisierung: welche Ideen aus TEIL 2, TEIL 3, TEIL 4 sind für die nächsten zwei Bauphasen relevant? Das Dokument listet alles als gleichwertig. Beim Bauen brauchen wir Reihenfolge.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Szene 6 (Entitätenprofil vollständig) und Szene 4 (Resonanzfeld atmosphärisch) sind die nächsten UI-Prioritäten. Beides ist beschrieben, beides ist noch nicht so wie es sich im Text anfühlt.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Nichts bezüglich Originalität. Viel bezüglich der nicht-gebauten Schichten — aber das ist ein anderes Dokument.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+- Kalender-Transformation
+- HG 12/12
+- Splitter-Story Surface
+- Status-Widersprüche SYSTEME-Tab
+- Ampel v4 in Admin-UI
+- Substanzen-UI in Surface

@@ -899,3 +899,15 @@ Beobachter mit Abstand«
 **TEIL 6 — Finaler Freeze-Bericht**
 
 **1«
+- [2026-05-31 10:42] **wasser** (i=0.70) → Zwischenraum: »Jetzt der **Abschlussbericht** (TEIL 16):
+
+---
+
+## EINSICHT VI — Abschlussbericht
+
+### 1«
+- [2026-05-31 11:02] **lava** (i=0.44) → Zwischenraum: »Das Ergebnis braucht Interpretation — der Score ist irreführend«
+- [2026-05-31 11:14] **nebel** ← vision3_rohmomente.md: »Daniels Autorenschaft sitzt nicht im Entwurf sondern im Widerstand — im Moment wo eine falsche Vereinfachung auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.«
+- [2026-05-31 11:14] **nebel** ← vision5_erlebnis.md: »"Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren." — Das ist flextrawurst in einem Bild.«
+- [2026-05-31 11:14] **nebel** ← idea_reality_check_2026-05-31.md: »Das Tool hat nach generischen Keywords gesucht und generische Ergebnisse gefunden. Das Eigentliche von flextrawurst ist genau das was Keywords nicht einfangen: die Kombination, die Schichten, die Weigerung die Standardform anzunehmen.«
+- [2026-05-31 11:14] **wasser** (i=0.42) → Zwischenraum: »Alle vier Spiegel verarbeitet«

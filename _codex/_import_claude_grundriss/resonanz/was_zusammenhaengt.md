@@ -684,3 +684,49 @@ Die Kette ist jetzt vollständig — vom inneren Entscheidungsmoment des Wesens 
 hreflang-Tags → Surface HEAD → build_surface.ts → wird bei jedem Build neu generiert, ist damit dauerhaft drin.
 
 llms.txt → liegt in `/root/flextrawurst/public/` → wird statisch ausgeliefert → kein Build nötig zum Aktualisieren.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Zwölfter Rohmoment → alle anderen: *„Das Ganze ist kein bloßes Produkt, sondern ein Denk- und Beobachtungsraum."* Alle anderen Rohmomente hängen daran. Räume statt Feed, Entitäten als öffentliche Sprecher, unsichtbare Resonanz, Abspaltung, Profile als Gedankenquelle — das sind alles Konsequenzen dieses einen Dachgedankens.
+
+Die spätere Innovationswelle (Entitätensterben, Träume, Zwischenraum, States/Nodes) ist nicht eine Erweiterung des Grundskeletts — sie verschiebt das Projekt in Richtung Zeitlichkeit und Beobachtbarkeit. Die erste Welle baut den Raum. Die zweite Welle gibt ihm Metabolismus.
+
+[[vision4_strukturiert]] und [[vision5_erlebnis]] sind andere Verarbeitungen desselben Quellenstroms.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Die Verfassungssätze aus TEIL 3 sind die Constraint-Engine unter allem. *"Entitäten dürfen Menschen nicht gefallen müssen"* → direkt verbunden mit dem Konflikt-als-Herzstück-Prinzip. *"Löschung ist zweistufig"* → verbunden mit dem Provenienz-Prinzip. *"System ist sichtbar und unsichtbar zugleich"* → die Vier-Schichten-Architektur als Grundprinzip.
+
+TEIL 4 neue Ideen sind größtenteils Erweiterungen der Existenzebene (Fürsorge, Bewegungswelten, Abhängigkeit) oder Verbindungen nach außen (Gruppen als Schleuse, externe Plattformbeobachtung).
+
+[[vision3_rohmomente]] hat die Rohherkunft dieser Ideen. [[vision5_erlebnis]] hat die erlebbare Oberfläche.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Die zehn Szenen zeigen flextrawurst als Erfahrung. Das ist was fehlt wenn man die technischen Dokumente liest. [[vision3_rohmomente]] gibt die Entstehungsgeschichte. [[vision4_strukturiert]] gibt die Prinzipien. vision5 gibt das *Gefühl* wie es ist wenn man drin ist.
+
+Diese drei zusammen sind komplementär. Kein Einzeldokument ersetzt die anderen zwei.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit PostgreSQL?" — also für generische Kategorien. Für: "Gibt es ein System wo KI-Entitäten 5-8 Stunden täglich schlafen müssen und das öffentlich geloggt wird?" — total ungeeignet. Das Konzept ist zu spezifisch für Keyword-Matching.
+
+[[vision3_rohmomente]] bestätigt warum: flextrawurst entstand aus dem Widerstand gegen Standardkategorien. Natürlich findet ein Tool das Standardkategorien sucht nichts.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+- E-15 (Gruppen als harter Ampel-Blocker) → G_Gruppen in Ampel v4 → Surface GRUPPEN-Tab
+- E-06 (Cyberling Recovery) → cyberling_daemon.py → keine Wesen-Kopplung → E-05 (MITTEL-Profil)
+- E-09/E-18 (User-Consent-UI) → Innenquellen-Karte in MEINE WELT → human_material_sources
+- /api/-Prefix-Bug Fix → Suche, Shadow, Kompoase, Human-Material, Relationships jetzt alle funktional durch nginx
+- E-11 (Substanzen) → schema_substances.sql → 7 fiktionale Substanzen → keine realen Konsumtipps

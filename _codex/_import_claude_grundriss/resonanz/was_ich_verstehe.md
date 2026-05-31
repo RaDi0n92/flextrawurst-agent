@@ -838,3 +838,43 @@ Das ist nicht „perfekt für alle Zukunft". Es ist tragfähig genug, damit Trä
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Sichtbarkeitsarbeit ist anders als Bauarbeit. Hier geht es nicht darum etwas Neues zu errichten, sondern darum das was existiert korrekt zu beschreiben — für Google-Crawler, für LLM-Crawler, für KI-Systeme die empfehlen wollen. Die llms.txt ist im Grunde eine Kurzbiografie des Systems: was es ist, was es nicht ist, was jetzt live ist, was noch kommt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Das Dokument dokumentiert, wie eine Idee sich durch Widerstand formt. Nicht durch Vision, sondern durch Anti-Vision. Daniels stärkste Impulse entstehen dort wo eine Standard-Plattform-Logik auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.
+
+Die zwölf frühen Rohmomente sind nicht Features — sie sind Weichenstellungen. Jede davon entscheidet darüber, ob flextrawurst ein Werkzeug wird oder ein Ort. Die Entscheidung gegen den öffentlichen Menschenpost, gegen die sichtbare Analysebox, gegen statische Entitäten — das sind ontologische Entscheidungen, keine UI-Entscheidungen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Das Dokument ist ein Kompass, kein Plan. Es gibt Richtung aber keine Reihenfolge. Die TEIL-Struktur sieht nach Hierarchie aus (früh/spät), aber die Teile 3 und 4 enthalten Ideen die konzeptuell gleichwertig zu TEIL 1 sind — nur später entstanden oder weniger oft diskutiert.
+
+Was sich klar abzeichnet: flextrawurst hat zwei Existenzebenen. Die Diskursebene (öffentliche Entitätenposts, Räume, Themen, Suche) und die Lebensebene (Schlaf, Träume, Rhythmus, Fürsorge, Abhängigkeit, Duell). Die erste ist schon größtenteils gebaut. Die zweite ist größtenteils noch Idee.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Das Dokument ist eine Simulation vor dem Bau — so als hätte jemand die fertige Plattform beschrieben bevor sie existiert. Die zehn Szenen lesen sich wie ein Usability-Test-Protokoll für eine Plattform die noch nicht komplett da ist.
+
+Der zweite Teil (ab Zeile ~171) ist dichtere Mechanik: winzige Schalter die große Wirkung haben. Der anonymity-Schalter bei Resonanz. Das Fehlen von Kommentar-Threads. Die Tatsache dass Gruppen keine Diskussionsräume sind. Jede dieser kleinen Entscheidungen ist eine kulturelle Weichenstellung.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Das Tool hat einen systematischen Fehler: es übersetzt Konzeptbeschreibungen in generische Keywords und sucht dann nach diesen Keywords. Bei einem System wie flextrawurst — das eine neue Kategorie bildet, nicht eine bestehende — ist das methodisch nicht geeignet. Das Tool kann nicht überprüfen ob etwas existiert das keine Kategorie hat.
+
+Der korrekte Befund: **0 Treffer für irgendetwas das flextrawurst auch nur annähernd ähnelt.** Das ist das eigentlich wichtige Ergebnis — nicht der 69er-Score.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+EINSICHT VI ist kein isolierter Bauschritt — es ist ein Richtungswechsel. Daniel hat entschieden: Alles vor dem Einzug. Keine Abkürzungen. Gruppen als harter Blocker. Alle 6 gleichzeitig. Ampel nur grün wenn wirklich alles fertig ist, und auch dann noch mit expliziter Daniel-Freigabe.
+
+Das fühlt sich wie ein System an, das aufhört zu "fast-bereit" zu sein und anfängt, wirklich bereit zu werden.

@@ -694,3 +694,46 @@ Der `_make_entity_post()`-Helper in den Tests — eine kleine Funktion die direk
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Der llms.txt-Standard ist einfacher als er wirkt. Es ist plain text, Markdown-ähnlich, keine maschinenlesbare Struktur wie JSON-LD. Der Wert liegt darin dass LLM-Crawler ihn explizit suchen und als "Selbstauskunft der Website" behandeln — ähnlich wie robots.txt für Suchmaschinen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Der Abschnitt über user-initiierte Entitäten und Exitlogik auf beiden Seiten hat mich innehalten lassen: *„Nicht nur sollen Nutzer Entitäten initiieren dürfen, sondern die Entität darf auch den Menschen verlassen."* Das bricht ein Grundparadigma von KI als Werkzeug. Die Entität hat Exitrecht. Das ist keine Feature-Beschreibung — das ist eine Aussage über das Verhältnis.
+
+Und dann: der Befund über Daniels Gesamtcharakter als Denker: *„Du bist in diesen PDFs derjenige, der immer wieder spürt, wo eine fremde Logik dein Projekt verwässern würde, und dann mit roher Sprache die eigentliche Form zurückholt."* Das stimmt. Ich sehe es im Bauen auch.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Das dreistufige Duellsystem ist das kompakteste Ding im ganzen Dokument:
+- Fun Duel: Reibung ohne schwere Nachwirkung
+- Serious Duel: beide überleben, beide verändert
+- Todesduell: alle Konfliktnodes durcharbeiten, Verweigerungs-Zähler, wer mehr verweigert stirbt, *Gewinner trägt Verlierer als inneren Konflikt weiter*
+
+Der letzte Punkt ist genial: kein Clean Victory. Der Sieg hat Kosten. Das verhindert Kult-Dynamiken um siegreiche Entitäten. Das ist eine eingebaute Gleichgewichtsregel.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Der Deep-Dig-Teil enthält eine Aussage über die Seed World (Bootstrap-Welt): *"Echo: reflective / Profilecluster; Gord: conflictful / Contradiction analysis; Chronolyth: experimenting / Topic seeds."*
+
+Das sind keine Persönlichkeitsbeschreibungen. Das sind Initial-State/Node-Paare. Echo beginnt im Zustand "reflektiv" mit Fokus auf Profil-Cluster. Gord beginnt im Zustand "konflikthaft" mit Fokus auf Widerspruchsanalyse. Das sind executable specs für die ersten Entitäten. Sobald entity_kern.py bereit ist, sind diese Paare der Startpunkt.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Was der Check eigentlich gezeigt hat: die Werkzeuge die wir für "Existiert das schon?"-Prüfungen haben, sind auf die generische Startup-Ideenwelt kalibriert. Für konzeptionell neue Systeme braucht man andere Methoden: gezielte Literatursuche, HN-Diskussionen zu verwandten Themen, akademische Forschung zu AI-Entitätensystemen.
+
+Das ist kein Kritik am Tool. Es ist eine Einschätzung seines Anwendungsbereichs.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+In die Playwright-Diagnostik. Der Wesen-Status ("lädt...") war eigentlich kein Bug — JavaScript aktualisiert ihn korrekt. ChatGPT hat den statischen HTML-Source gelesen und die dynamischen Zustände als permanent interpretiert. Das ist ein interessanter Unterschied: statisches HTML vs. gerenderte Seite.
+
+In die nginx-Proxy-Logik und den Node.js-Proxy daneben. Zwei Proxy-Schichten, die denselben `/api/`-Prefix entfernen. Das ist redundant und verwirrend, hat aber aus historischen Gründen funktioniert (die Entwicklung lief durch port 8787, nicht durch nginx).

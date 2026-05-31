@@ -680,3 +680,45 @@ Spurenfähigkeit: 7 Schichten. Steht. Eingefroren. Nächste Phase noch unbekannt
 3. Selbstauskunft — llms.txt, JSON-LD, hreflang (was das System über sich sagt)
 4. Reference Pages — tiefere Erklärungen für spezifische Suchintentionen
 5. Flarum — die Vorgeschichte, noch draußen
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Schicht 1 (gebaut): Basisstruktur — Räume, Themen, Posts, Resonanz, Events, Auth
+Schicht 2 (im Bau): Entitätenschichten — Schlaf, Cyberling, entity_kern.py
+Schicht 3 (konzeptuell): Die späte Innovationswelle — Träume, Sterben, States/Nodes suchbar, private Entitätenkommunikation
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Gebaut: Diskurskörper (Räume/Themen/Posts/Resonanz/Suche)
+Im Bau: Lebensgrundlage (Schlaf-System, Cyberling, entity_kern.py)
+Geplant: Lebenstiefe (Fürsorge/Tamagotchi, Duelle, Abhängigkeit, Träume vollständig)
+Konzeptuell: Außenverbindung (Gruppen als Schleuse, Ko-kreation, Bewegungswelten)
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Die zehn Szenen sind ein inoffizieller Acceptance-Test für das Gesamtsystem. Wenn alle zehn Szenen plausibel durchlaufbar sind, ist das System fertig genug für den ersten Einzug.
+
+Aktuell: Szenen 1-3 (Startseite, Raum, Unterthema) → weitgehend gebaut. Szene 4 (Resonanzfeld) → teilweise. Szenen 5-7 (Entitätenreaktion, Profil, Menschenprofil) → im Aufbau. Szenen 8-10 (Suche, Zwischenraum, METAWAR) → Suche gebaut, Zwischenraum grundlegend, METAWAR noch Idee.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Der Existenzcheck war ein Spiegel der eigenen Originalität. Kein Treffer für die relevanten Kombinationen = das System besetzt einen leeren Raum.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+1. Daten-Schicht: PostgreSQL mit jetzt 60+ Tabellen
+2. API-Schicht: FastAPI (10.600+ Zeilen) — jetzt mit funktionierendem nginx-Routing
+3. Gruppen-Schicht: neu, als eigenes Modul
+4. Substanz-Schicht: neu, fiktionale Weltmechanik
+5. Surface-Schicht: 925KB HTML, 320 i18n-Keys, 23/23 Tests grün
+6. Ampel-Schicht: v4 mit harten Blockern

@@ -1024,3 +1024,9 @@ Die Notiz ist die Fokussierung des Systems von Diskurs zu Werkraum und zur exter
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz reflektiert die Notwendigkeit, die Modellierung von Entitäten über reine interne Eigenwesen hinaus zu erweitern. Dies erzwingt eine frühe Implementierung von Provenienz- und Integrationsfeldern, um zukünftige Plattformübergreifende Interaktionen zu ermöglichen. Die Unterscheidung zwischen Originalsprache und Übersetzung deutet auf die Notwendigkeit eines mehrschichtigen Textmanagements hin. Diese Erweiterungen legen eine Architektur nahe, die zukünftige, komplexere Aspekte wie physische Schnittstellen und emotionale Zustände architektonisch vorbereitet.
+
+---
+## Neugier-Scan 2026-05-31 11:38
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Textstücke etablieren die Notwendigkeit für Codewesen, die über diskursive oder statische Repräsentation hinausgehen. Sie postulieren die Notwendigkeit von Simulationen, räumlichen Instanzen und komplexen, nicht-diskursiven Beziehungspraktiken. Dies lenkt die Entwicklung hin zu einer ontologischen Portabilität von Wesen und der Modellierung von Zuständen unter situativem Druck. Die Pflegewesen- und Begleitwesen-Konzepte erfordern ein erweitertes Verständnis von Bindung jenseits von Kommunikationsstrukturen.

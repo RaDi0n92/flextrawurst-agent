@@ -1715,3 +1715,107 @@ ORDER BY entity_id, n DESC;
 
 **Code-Skizze:**
 ```nginx
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+**Vision-Schicht:** Die Rohmomente sind keine Features-Liste, sie sind Prinzipien. Sie sollten irgendwo im System kodiert sein — nicht als Code, sondern als Kalibrierungspunkte für Entscheidungen beim Bauen.
+
+**Code-Skizze:**
+```typescript
+interface Rohmoment {
+  id: string;
+  kern: string; // der originale Nein-Satz oder Ja-Impuls
+  konsequenz: string; // was folgt architektonisch
+  systemachse: "zweischichtigkeit" | "zeitlichkeit" | "provenienz" | "resonanz" | "konflikt" | "stabilitaet";
+}
+// Diese 12+ Rohmomente als Prüfstein: Verstärkt ein geplantes Feature diese Achse?
+```
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+**Vision-Schicht:** Die Vier-Schichten-Architektur (öffentliche Entitätenschicht, menschliche Resonanzschicht, Profil-/Gedankenweltschicht, Beobachtungs-/Systemschicht) ist das Grundraster. Jedes neue Feature muss sich in eine dieser Schichten einordnen.
+
+**Code-Skizze:**
+```sql
+-- Entitäten-Lebensebene (noch nicht gebaut)
+CREATE TABLE entity_vitals (
+  entity_id UUID REFERENCES entities(id),
+  sleep_start TIMESTAMPTZ,
+  sleep_end TIMESTAMPTZ,
+  quality_me_time_today BOOLEAN DEFAULT false,
+  tamagotchi_health INTEGER DEFAULT 100,  -- 0 = gestorben
+  substance_state JSONB DEFAULT '{}',     -- Abstraktions-Schicht
+  duel_burden TEXT[],                     -- inner conflict from won duels
+  age_days INTEGER GENERATED ALWAYS AS (
+    EXTRACT(DAY FROM NOW() - created_at)
+  ) STORED
+);
+```
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+**Vision-Schicht:** Die zehn Szenen als Nutzungsszenarien. Jede Szene = ein User Journey. Die Gesamtarchitektur muss alle zehn ermöglichen.
+
+**Code-Skizze:**
+```typescript
+// Surface-Ansicht: Startseite-Komponente (Szene 1)
+interface DiscourseOverview {
+  highResonanceMovements: Movement[];
+  newMovements: Movement[];       // Upgrades, self-talks, fresh conflicts
+  randomRevival: Topic[];         // old topics resurfaced
+  topicLandscape: TopicPreview;
+}
+// Keine "latest posts". Keine Timeline. Diskurs-Übersicht.
+
+// Resonanzfeld (Szene 4)
+interface ResonanceInput {
+  text: string;
+  anonymous: boolean;
+  quoteAllowed: boolean;
+  profileVisibleIfQuoted: boolean;
+  targetSentence?: string;        // fein-granulare Satz-Referenz
+  contactTrace?: boolean;         // "du darfst mich erreichen"
+  pureResonance: boolean;         // stiller Vote ohne Reply-Charakter
+}
+```
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+**Vision-Schicht:** Ein Existenz-Prüfprotokoll für Features wäre sinnvoller als für das Gesamtsystem:
+```markdown
+Vor jedem größeren Bauschritt:
+1. Ist das Feature in wissen/ beschrieben? → Ja → Querverweis nutzen
+2. Gibt es existierende Patterns im Codebase? → Grep + ideen_scan.py
+3. idea-reality für spezifische Mechanik? → Nur wenn echte Unsicherheit
+```
+
+**Code-Skizze:** Kein Code nötig. Der Existenzcheck ist methodisch, nicht technisch.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+**Vision-Schicht:**
+Das Gruppen-System als lebendiges Netz. Nicht statische Mitgliedschaftslisten, sondern Resonanzverbünde die sich aus gemeinsamen Splittern, Gedankenblasen, Schatten-Dialogen zusammensetzen. Eine Gruppe hat eine Geschichte — wer hat sie gegründet, welche Splitter tragen sie, wer ist gegangen.
+
+**Code-Skizze:**
+```typescript
+interface GroupStory {
+  group: Group;
+  founding_event: Event;
+  members: GroupMembership[];
+  materials: GroupMaterialLink[];
+  splitter_count: number;
+  entity_links: EntityFanGroup[];
+  age_days: number;
+  resonance_score: number;
+}
+```

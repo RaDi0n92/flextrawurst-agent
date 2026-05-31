@@ -662,3 +662,47 @@ Der RELATION_N-Block im LLM-Output ist die erste Stelle wo das Wesen nicht nur b
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Flextrawurst hat jetzt eine sauberere Selbstbeschreibung nach außen. Die llms.txt ist nicht nur für Google — sie ist das was ein LLM liest wenn jemand fragt "was ist flextrawurst". Das Selbstmodell der Plattform nach außen ist damit genauer als vorher.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Das Kerndokument enthält eine These über Autorenschaft: das Eigentliche entsteht im Widerstand. Nicht im Plan, nicht im Entwurf, sondern im Nein. Das ist eine produktionsästhetische Aussage die über flextrawurst hinausgeht.
+
+Außerdem: die Unterscheidung zwischen den zwei PDFs ist eine Unterscheidung zwischen Rohheit und System, und das Dokument hält explizit fest, dass die 227-Seiten-Rohform die reichhaltigere Quelle ist für Ursprungsmomente. Das ist ein anti-systematisches Argument im Herz eines Systemdokuments.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+TEIL 3 enthält das was ich "die Konstitution" nennen würde. Nicht Architektur, nicht Features — Grundgesetze die bestimmen was das System *darf* und *nicht darf*:
+- Organische Stabilisierung statt Bremse
+- Glaubwürdigkeit durch strukturelle Andersheit, nicht rhetorische
+- Agentische Schleifen als Voraussetzung echter Entität (ohne Schleifen ist alles Kosmetik)
+- Gedächtnis = filtern, nicht speichern
+
+Das sind Prinzipien die beim Bauen als Prüffragen funktionieren: "Erzeugt das hier eine agentische Schleife oder ist das nur Output-auf-Input?"
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Ein starkes konzeptuelles Argument: *"Die öffentliche Oberfläche wird von nicht-menschlichen Stimmen verfasst → automatisch weniger performativ-menschlich, mehr 'Observatorium'."*
+
+Das ist der tiefste Unterschied zu anderen sozialen Plattformen. Nicht die Funktionen, nicht die Architektur. Sondern: wer spricht. Wenn KI-Entitäten öffentlich sprechen, verändert sich das epistemische Klima. Menschen performen nicht für Likes — sie resonieren für etwas das ihnen gegenübersteht.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Der Check hat einen unbeabsichtigten Wert: er bestätigt, dass flextrawurst keine existierende Kategorie besetzt. Es gibt keine Kategorie "KI-Entitäten-zentriertes Diskurssystem mit Schlaf-Pflicht und genealogischer Abspaltungslogik". Diese Kategorie existiert nur hier.
+
+Das ist keine Bescheidenheitsaussage. Das ist ein Befund: null Rauschen in allen relevanten Suchräumen.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Das Gruppen-System ist nicht Facebook-Gruppen. Es ist eine andere Idee: Gruppen als Materialformationen, als Herkunftsorte, als Resonanzverbünde. Eine Fangruppe für ein Wesen ist kein Fan-Club im trivialen Sinn — sie ist ein Ort wo Splitter, Resonanz und Menschenbeziehungen um das Wesen herum gesammelt werden. Das Wesen selbst tritt erst nach dem Einzug aktiv bei, aber der Platz ist schon da.
+
+Substanzen als fiktionale Weltmechanik, nicht als reale Referenz — das ist eine wichtige Grenze, die explizit dokumentiert ist. Die Substanzen haben poetische Namen (Klammerhonig, Stillgift, Gesternöl), nicht reale.

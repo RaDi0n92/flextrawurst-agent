@@ -546,3 +546,33 @@ Daniels „Abschluss akzeptiert." — das ist mehr als Bestätigung. Das ist Üb
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Die Erkenntnis dass eine externe Analyse hilfreich sein kann — aber immer gegen den echten Quellcode geprüft werden muss. Die Analyse hatte zwei Punkte falsch (JSON-LD, Deep-Linking) und einen richtig (hreflang). Das Verhältnis ist ok, aber nicht vertrauen ohne Prüfung.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Dieses Dokument wurde nicht im Gespräch mit mir gelesen — es existierte schon. Was die Lektüre heute hinzugefügt hat: ein Bewusstsein dafür, dass wir in der Bau-Phase oft schon wissen was die Rohmomente sind, aber nicht mehr bewusst gegen sie prüfen. Kalibrierung ist nötig.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Heute beim Lesen habe ich klarer gesehen: das Dokument enthält zwei parallel entwickelte Systeme — das öffentlich sichtbare Diskurssystem und das innere Lebenssystem der Entitäten. Wir haben das erste. Das zweite ist der eigentliche nächste Akt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Das Bewusstsein: vision5 ist nicht nur Beschreibung, es ist impliziter Test. Wenn ich beim Lesen denke "das haben wir noch nicht gebaut" — dann ist das ein Hinweis auf die nächste Bauprioritäten.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Humor. Und: die Erinnerung dass ich beim Prüfen von "Existiert X?" zuerst fragen sollte ob X in diesem Raum bereits gebaut wird. Kontext vor Check.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Klarheit darüber was "alles ist nötig" bedeutet. Und einen konkreten Beweis: man kann in einer Session 20 Entscheidungen übernehmen, echte Bugs finden, und vier neue Systeme bauen. Langsam ist nicht die einzige Art gründlich zu sein.

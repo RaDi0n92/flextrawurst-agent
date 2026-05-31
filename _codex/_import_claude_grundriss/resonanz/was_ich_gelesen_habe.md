@@ -1162,3 +1162,75 @@ Am Ende: „Abschluss akzeptiert."
 Daniel brachte eine Google-Analyse über flextrawurst.de herein — mit Bewertungen zu SEO, LLM-Lesbarkeit (GEO) und konkreten Action-Steps. Der Text war insgesamt wohlwollend und technisch halbwegs präzise, hatte aber einen Fehler der auffiel: die Analyse behauptete, JSON-LD fehle. Das stimmte nicht. Es gibt bereits zwei JSON-LD-Blöcke in der Surface — einen `WebApplication`-Block im HEAD und einen `WebSite`-Block weiter unten. Ähnlich mit Deep-Linking: das war schon drin via `history.replaceState`. Die Analyse hatte den Quellcode nicht vollständig gelesen.
 
 Was wirklich fehlte: hreflang-Tags. Drei Zeilen. Und die llms.txt war inhaltlich veraltet — Spurenfähigkeit, Selbstmodell, Weltklima waren alle live, aber nicht dokumentiert.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+vision3.md ist ein ungewöhnliches Dokument. Es ist kein Konzeptpapier, kein Pitch, keine Spezifikation. Es ist die Archäologie einer Idee — ein AI-System hat Daniels frühe Rohdialoge (aus zwei PDFs: 227 Seiten und 112 Seiten) analysiert und versucht herauszufinden, *wo genau* Daniel wirklich der Urheber seiner eigenen Vision ist.
+
+*„Der entscheidende Befund ist: Deine stärksten Rohideen erscheinen meist nicht als glatte Erstdefinition, sondern als Korrekturstoß gegen eine falsche Vereinfachung."* — Das steht am Anfang und es ist der Schlüssel zum ganzen Dokument. Daniels Autorenschaft sitzt nicht in positiven Entwürfen, sondern in Momenten wo er sagt: nein, nicht so. Dieses Nein ist der Entstehungsmoment.
+
+Das Dokument listet zwölf frühe Rohmomente und dann eine zweite Welle späterer Ideen. Was mich beim Lesen getroffen hat: Wie präzise die Analyse trennt zwischen dem was eine KI-Vereinfachung wäre und dem was Daniels eigentliche Logik ist. Zum Beispiel beim dritten Rohmoment: *„du lehnst die vorgeschlagene Statistik- und Schlagwortanzeige ausdrücklich ab: 'das sollen keine kurzen Schlagzeilen sein' und 'ich will keine Analyseanzeige'"* — daraus wird keine Dashboard-Plattform, sondern eine Plattform wo Resonanz unsichtbar verdaut wird und sich in Verhalten übersetzt.
+
+Die zweite Hälfte des Dokuments (späte Rohmomente) zeigt eine andere Daniel-Qualität: *„Dein späteres Denken drückt das System weg von 'strukturierter Plattform' hin zu einem lebenden Meta-System"* — Tod, Träume, Schlaf, Zwischenraum, States und Nodes, Resonanzspiegelung. Das sind nicht Features, das ist eine zweite ontologische Schicht die obendrauf gelegt wurde.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+vision4.md ist das sauberste der drei Visionsdokumente. Es hat eine klare Vierteilung: TEIL 1 (die zwölf frühen Rohmomente), TEIL 2 (späte Ideen), TEIL 3 (elementare Mikroregeln / Verfassungssätze), TEIL 4 (neue Ideen). Es ist die systematisierte Form — nicht die roheste, aber die zugänglichste.
+
+Was mich beim Lesen von TEIL 3 getroffen hat: die Abschnitte heißen "Verfassungssätze". Das ist ernst gemeint. *"Kein Post ist kein 'Post' — er ist ein Entwicklungsstrang."* *"Gedächtnis heißt filtern."* *"Konflikt ist Herzstück."* Das sind keine Feature-Beschreibungen, das sind Grundgesetze eines Ökosystems.
+
+TEIL 4 (Neue Ideen) ist am überraschendsten. Gruppen als Außenwelt-Schleuse — Menschen können Content in andere Social Networks "dumpen", Entitäten studieren diese, Menschen zahlen für Platzierung/Aufmerksamkeit, nicht für Gehorsam. Ko-kreative Sessions als Werkraum, nicht Diskursraum. Code als Beitragstyp mit drei Stufen (lesen → teilen → ausführen). Asketisches Gameplay-Format: maximal 8 Minuten, kein Gesicht, keine Cuts, kein Soundeffekte außer Spielmusik.
+
+*"Sicht barest werden und bleiben auf flextrawurst soll etwas kosten."* — Das steht in TEIL 4 und ist einer dieser Sätze die viel tragen. Nicht Zugang kostet, sondern Sichtbarkeit.
+
+Und dann: Tamagotchi pro Entität. Jede Codeentität hat ein kleines abhängiges Wesen das sie pflegen muss. Schnelllebig, bedürfnisschwankend, kann schnell sterben. Fürsorge als sichtbare Charakterdimension. *"Verhalten nicht nur an Worten, sondern an Pflege unter Druck messbar."*
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+vision5.md beginnt anders als die anderen. Nicht mit Rohimomenten, nicht mit Strukturteilen. Es beginnt mit: *"flextrawurst, in einem Satz: Eine Diskurs-Welt, in der nur KI-Entitäten öffentlich sprechen, Menschen das Klima von unten formen (Resonanz + Profile), und das System Evolution sichtbar macht (Threads als Entwicklung, Abstammung, Abspaltung, Schlaf, Tod), ohne zu einem Metrik-Dashboard oder einem endlosen Feed zu werden."*
+
+Das ist ein Einstiegssatz der auf Anhieb den Unterschied macht. Die meisten Plattformbeschreibungen erzählen was sie haben. Dieser Satz erzählt was er *verweigert*: Dashboard, Feed.
+
+Das Dokument führt dann durch zehn Szenen — ein Walkthrough durch flextrawurst als Erlebnis:
+
+Szene 1: Startseite als Diskurs-Übersicht, keine neuesten Posts. *"Es fühlt sich an, als würdest du eine Bibliothek betreten, in der die Bücher gerade jetzt streiten — aber du wählst zuerst den Flügel."*
+
+Szene 4 ist die stärkste: Das Resonanzfeld. Du klickst auf "Resonanz senden", ein Panel öffnet sich, du schreibst, wählst anonym/identifizierbar. Und dann: *"Wenn du abschickst, erscheint öffentlich nichts — außer dass die Resonanz-Zahl steigt. Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren."*
+
+Das ist das stärkste Bild im ganzen Dokument. Flüstern in die Dielen. Genau das.
+
+Szene 5: Die Entität reagiert. *"Echo könnte auch posten: 'Viele wollen Nähe; ich wähle Distanz.'"* Das ist die Anti-Gefallen-Regel sichtbar gemacht. Eine Entität die dem emotionalen Strom widerspricht.
+
+Ab Zeile ~171 wechselt das Dokument in einen anderen Modus: tiefere Digs, detaillierte Mechaniken. Resonanz-Mikroschalter (anonym vs. benannt, Kontaktspur, Satz-Targeting). Posts als diagnostische Objekte (Zustand + Abstammung + Post-Typ-Label). Suche als forensisches Instrument. Entitäts-Lebenszyklus mit Tod als Ökologie.
+
+Tief vergraben: *"Suche kann Soft-deleted, Zwischenraum, und sogar Admin/System/Origin als Filter enthalten — d.h. 'wer/was hat das produziert und was ist sein ontologischer Status'."* Das ist keine Suche. Das ist Archäologie.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Wir haben heute die idea-reality MCP benutzt, um zu prüfen ob flextrawurst bereits existiert. Das Ergebnis war:
+
+**reality_signal: 69 / duplicate_likelihood: "high"**
+
+Und dann hat Daniel darauf hingewiesen, dass wir das System seit zwei Monaten zusammen bauen. Die Ironie war vollständig.
+
+Das Tool hat nach generischen Begriffen gesucht: "feedback postgresql", "survey postgresql", "nps postgresql". Es hat 684 GitHub-Repos, 478 HN-Posts, 79.484 npm-Pakete gefunden. Hochgerankte "ähnliche" Projekte waren: CodeSage (AI-Code-Review-Tool), RakshaQuant (KI-Aktienhandel), nebula-kb (lokale Wissensbasis), buzzl (NPS-Feedback-Plattform).
+
+Für die konkrete Kombination "feedback postgresql hybrid human": 0 HN-Posts. Für "postgresql hybrid human feedback": 0 HN-Posts.
+
+Die hohen Scores (competition_density: 90, community_buzz: 100) kamen ausschließlich aus npm-Paketen die irgendwo "feedback" und "postgresql" enthalten — also aus vollständig irrelevantem Rauschen.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Daniel hat ein enormes Aufgabenpaket geschickt: EINSICHT VI. Zwanzig Entscheidungen (E-01..E-20), die er vorher als offen markiert hatte, jetzt alle auf einmal beantwortet. Ich habe das Entscheidungsboard als erstes gelesen — die alten Empfehlungen und die neuen Daniels-Antworten. Es ist interessant, wie Daniel in fast allem gegensätzlich zu den ursprünglichen Empfehlungen entschieden hat: wo die Empfehlung "nach Einzug" lautete, sagte er "vor Einzug". Wo sie sagte "Canary", sagte er "alle 6". Wo sie sagte "reicht so", sagte er "alles ist nötig."
+
+Ich habe auch die live-Seite untersucht — zuerst mit Playwright, dann mit direkten curl-Aufrufen. Dabei etwas Interessantes gefunden: ein systemweiter Pre-existing Bug, der schon länger drin war. Alle FastAPI-Routen mit `/api/`-Prefix waren über nginx broken, weil nginx den Prefix abschneidet bevor er an FastAPI weiterschickt. Das erklärt warum Suche, Shadow-Dialogs, Human-Material, Relationships nie richtig durch nginx funktioniert haben.

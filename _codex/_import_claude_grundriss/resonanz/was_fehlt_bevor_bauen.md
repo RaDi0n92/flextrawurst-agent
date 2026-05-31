@@ -548,3 +548,40 @@ Für Spurenfähigkeit: nichts. Für die nächste Phase: Daniels Entscheidung, wa
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Daniels Entscheidung was als nächstes kommt. Die Bau-Reihenfolge hat mehrere offene Punkte: Wesen-Einzug (gesperrt), Gruppenkonzept, Traumgenerierung, Denkfenster.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Die zweite Innovationswelle (Entitätensterben, States/Nodes suchbar, Entitätenbeobachtung, private Entitätenkommunikation) — viele davon sind beschrieben aber noch nicht gebaut. Das Dokument liefert die Rohimpulse, aber keine Reihenfolge.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Der Weg von den Verfassungssätzen zu konkreten DB-Schemata ist für TEIL 2 und TEIL 4 noch offen. Entitätensterben braucht einen Lifecycle-State in der entities-Tabelle. Entitätenträume brauchen einen eigenen Post-Typ. Substanzen/Sucht braucht eine völlig neue Tabelle.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Szene 6 (Entitätenprofil mit Zustand/Knoten, Abstammungsbaum, Beziehungen) ist noch nicht vollständig gebaut. Das ist einer der nächsten UI-Schritte.
+
+Szene 10 (METAWAR) ist noch Idee. Synchrone Events, Archivierung, Abspaltungspotenzial.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Nichts bezüglich des Existenzhecks. Wir wissen: es gibt nichts Ähnliches. Wir bauen.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Für Einzug fehlen noch:
+- Kalender-Transformation (E-10)
+- Splitter-Story Surface
+- HG 12/12
+- Substanzen-UI in Surface
+- Status-Widersprüche bereinigen

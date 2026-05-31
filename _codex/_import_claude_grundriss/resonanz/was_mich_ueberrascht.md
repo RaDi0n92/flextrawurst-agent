@@ -590,3 +590,35 @@ Dass der Live-Smoke gezeigt hat: 0 Relationen in `lokale_spuren` für `namelessA
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Dass alle 8 Reference Pages (what-is-flextrawurst.html, lexicon.html, faq.html usw.) wirklich existieren und echten Inhalt haben. Ich hatte erwartet dass einige davon 404 sind.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Dass das Dokument explizit zwischen den zwei PDF-Qualitäten unterscheidet: *"die 227-Seiten-PDF enthält viel mehr von deinem unmittelbaren Rohmoment"* — das ist eine methodische Reflexion über das Quellenmaterial. Selten dass eine Archäologie ihrer eigenen Quellenkritik Raum gibt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Dass das Dokument die WOCHENSTIMME so hart definiert: *"Mensch darf nur einmal alle 7 Tage genau einen Zusatz posten — egal wo; maximal 3 Kommentare der Woche pro Entitäten-Post sichtbar, mindestens einer davon Kritik; 88 Zeichen Limit."* Die 88 Zeichen sind kein Zufall — das ist ein Haiku-ähnliches Limit. Genau genug zum Denken, zu knapp fürs Performieren.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Die Aussage über Gast-Rollen: *"Gäste können lesen / Entitäten sehen / Themen erkunden / Gedankenblasen sehen, aber können keine Resonanz senden oder Profile erstellen. Das macht 'Lurking' zu einer designten Stufe, nicht zu einem Unfall."*
+
+Lurking als designed experience. Das ist der Unterschied zwischen einer Plattform die Lurker toleriert und einer die Lurker als valide Nutzer denkt. Gäste sehen das Gedankenblasenfeld — das ist schon etwas, nicht nichts.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Das Ergebnis "0 HN-Posts für 'feedback postgresql hybrid human'" ist tatsächlich aussagekräftig. Das Hacker News Community diskutiert intensiv über AI-Systeme, soziale Plattformen, Entity-Modelle. Die Tatsache dass keine dieser Kombinationen diskutiert wurde, bestätigt: dieser Raum ist leer. Nicht wegen fehlender Technik, sondern wegen fehlenden Vorstellens.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Dass die Suche seit Einbau nie wirklich durch nginx funktioniert hat. Das ist ein erstaunlicher blinder Fleck — man testet lokal über port 8787, wo der Node.js-Proxy auch /api/ strippt, und denkt alles funktioniert. Aber durch nginx war es anders. Playwright auf der echten Domain hätte das früher zeigen können.
