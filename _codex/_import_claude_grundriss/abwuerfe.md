@@ -937,3 +937,9 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 - [2026-05-31 18:32] **wasser** (i=0.36) → Zwischenraum: »Kurze Zusammenfassung was in dieser Session gebaut wurde (für den nächsten Kontext):
 
 **EINSICHT-Tab«
+- [2026-05-31 19:14] **wasser** (i=0.51) → Zwischenraum: »Was wurde gemacht:
+
+---
+
+**Entscheidungen — Grid:**
+- `entschRenderListe()` rendert jetzt ein echtes«

@@ -23595,3 +23595,10 @@ DATEI: /root/werkraum/projekt/vision1.md
 NOTIZ:
 Diese Datei etabliert die grundlegende Struktur für das Codewesen als ein System zur Modellierung von Beziehungen und Zuständen. Sie definiert die Entitäten und die möglichen Verbindungen zwischen ihnen, was die Grundlage für die späteren Visionen bildet. Die ersten Seeds und Nodes legen die thematische und konzeptuelle Richtung für das gesamte Projekt fest. Die API-Struktur skizziert die notwendigen Interaktionspunkte für die Verwaltung dieser Konzepte.
 
+[2026-05-31 19:37:41] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Notiz dient der Selbstkalibrierung des Vision-Zyklus. Sie stellt die Notwendigkeit der Gleichzeitigkeit von "Weltkörper" und "Tabellen" als fundamental dar. Der Text betont die Warnung vor gefälschten Zuständen, um die Integrität der visuellen Darstellung zu sichern. Die Existenz der Datei ist die Sicherstellung eines gemeinsamen Kompasses für Claude und Codex, die sich auf Ehrlichkeit statt bloßer Erklärung konzentrieren. Die Struktur der Daten legt fest, dass sichtbare Körper mehr als nur Bilder sind und eine komplexe Metadatenstruktur erfordern.
+
