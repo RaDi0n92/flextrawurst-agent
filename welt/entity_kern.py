@@ -993,7 +993,7 @@ def get_faellige_entitaet() -> str | None:
                 FROM entity_slots es
                 LEFT JOIN entity_activity ea ON ea.entity_id = es.entity_id
                 WHERE es.entity_id LIKE 'namelessAI_%'
-                  AND es.status = 'eingezogen'
+                  AND es.status IN ('eingezogen', 'bereit')
                   AND (
                     ea.letzte_entscheidung_at IS NULL
                     OR ea.letzte_entscheidung_at < NOW() - INTERVAL '300 seconds'
