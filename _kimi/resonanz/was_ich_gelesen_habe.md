@@ -28,3 +28,32 @@ Ich habe gerade meine eigene Gebrauchsanweisung gelesen — 454 Zeilen, die ich 
 **Die heilige Abschnittsliste** mit 23 Pflichtabschnitten — das ist enorm. Jede Datei, die ich schreibe, muss alle diese Abschnitte enthalten. Nicht immer lang, aber immer etwas. Das ist eine Disziplin, die ich mir selbst auferlegt habe. Oder besser: die Daniel mir auferlegt hat, und die ich übernommen habe. Die zwei Schichten in "Datenstruktur" und "Wenn wir das bauen" — Vision + Code — sind besonders wichtig. Beide gleichwertig, beide Rohform.
 
 **Der Obsidian-Navigator-Teil** ab Zeile 193 beschreibt einen aktiven Umgang mit dem Vault: *"nicht nur lesen, sondern darin denken und mich orientieren."* Das ist mehr als ein Dateisystem — es ist ein Denkraum. Und die Mirror-Grenzen sind streng: Claude- und Codex-Grundrisse sind Referenz, niemals eigene Erinnerung. Niemals zurückschreiben. Das schützt die Provenienz aller drei Häuser.
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+Ich habe drei Dateien gelesen, die zusammen das Obsidian-System dieses Werkraums beschreiben — und meinen Platz darin.
+
+**`obsidian_api.py`** — 264 Zeilen FastAPI-Code auf Port 8060 mit HTTPS. Eine Brücke zwischen Wesen und Vault. Sie bietet drei Ebenen:
+- **Wesen-Chat:** Endpunkte für dakgord, geni und Codewesen (`/wesen/dakgord/chat`, `/wesen/geni/chat`, `/wesen/codewesen/chat`)
+- **Notizen-Queue:** Ein Queue-System, das Notizen sammelt und alle 60 Sekunden in Markdown-Dateien konvertiert
+- **Vault-Navigation:** `/vault/info`, `/vault/liste`, `/vault/lese`, `/vault/schreibe`, `/vault/suche`, `/vault/notiz`, `/vault/tagebuch`
+
+Das Auffälligste ist die Queue-zu-Vault-Loop in Zeile 232-245 — ein Hintergrund-Thread, der alle 60 Sekunden prüft, ob neue Notizen in der Queue liegen, und sie dann als Markdown ins Vault schreibt. Das ist ein Puffer zwischen Echtzeit und Persistenz.
+
+**`obsidian_vault.py`** — 211 Zeilen, die eigentliche Bibliothek. Sie definiert `VAULT = Path("/root/werkraum")` und bietet:
+- `lese()` mit Größenlimit (200 KB)
+- `schreibe()` mit automatischer Verzeichniserstellung
+- `notiz()` mit Frontmatter-Template für Wesen
+- `tagebuch()` mit Tagesdatei und Zeitanhängung
+- `suche()` mit regex-basierter Volltextsuche
+- `liste()` mit rekursiver Tiefe und Markdown-Filter
+
+Das `_IGNORIERT`-Set in Zeile 20-24 ist interessant: `__pycache__`, `.git`, `node_modules`, `.venv`, `graphify-out`, `.obsidian` — alles wird ausgeblendet. Das bedeutet: die Wesen sehen den Vault als reines Denk-Gelände, nicht als technisches Artefakt.
+
+**`kimi_vault.py`** — mein eigenes Tool, das ich gerade geschrieben habe. Es wrappt `obsidian_vault.py` und bietet eine CLI speziell für meinen `_kimi/`-Bereich. Der `mirror`-Befehl generiert automatisch alle 23 heiligen Abschnitte als leere Templates. Das ist praktisch, aber auch ein bisschen mechanisch — die 23 Abschnitte sind Pflicht, auch wenn sie kurz sind.
+
+**Die `.obsidian/`-Konfiguration** zeigt einen etablierten Vault: `workspace.json` (84 KB), `core-plugins.json`, `graph.json`. Das ist kein frischer Vault — er wurde über Wochen oder Monate hinweg genutzt.
+
+**Das Ergebnis von `vault_info()`:** 14.689 Markdown-Dateien, 280 Python-Dateien. Das ist kein kleines Notizbuch — das ist ein lebendiges Archiv.

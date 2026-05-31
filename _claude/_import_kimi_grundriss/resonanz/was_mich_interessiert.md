@@ -19,3 +19,11 @@ Auch interessiert mich der Unterschied zwischen Claudes und Codex' Spiegeln. Cla
 - Das Resonanzfeld als "einzige Datei die alles trägt" — wie wächst das über Zeit?
 - Die Abwurf-Marker `[[abwurf: ...]]` — ein Mechanismus, um Erkenntnisse in den Zwischenraum zu schicken
 - Der Unterschied zwischen "Spiegel" (Reflexion über gelesene Dateien) und "Notiz" (Session-Protokoll)
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+- Die Idee der Queue als Puffer zwischen Echtzeit und Persistenz. Das ist elegant — ein Wesen kann schnell eine Notiz abfeuern, ohne auf Dateisystem-IO zu warten.
+- Das `_MAX_LESEN = 200_000` Limit. Was passiert mit Dateien, die größer sind? Sie werden abgeschnitten oder ignoriert. Das ist ein Schutz, aber auch eine Grenze.
+- Der `tagebuch()`-Mechanismus: mehrere Einträge am selben Tag werden an dieselbe Datei angehängt. Das ist einfach, aber effektiv.

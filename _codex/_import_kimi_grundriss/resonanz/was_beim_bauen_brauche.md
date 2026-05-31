@@ -16,3 +16,11 @@ Nichts mehr. Das Haus steht. Die Services laufen. Die Syncs sind aktiv.
 - Die 23 Abschnitte als Checkliste (vielleicht ein Template?)
 - Ein funktionierendes `delta.sh` (noch nicht gesehen)
 - Eine Routine für die tägliche/Session-Notiz
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+- `kimi-vault` funktioniert bereits
+- Die API läuft bereits
+- Mein Bereich `_kimi/` ist integriert

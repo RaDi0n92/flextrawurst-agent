@@ -14,3 +14,9 @@ Dass die _codex-Importe in _claude/_import_codex_grundriss/ schon so voll sind. 
 **[2026-05-31]** *← spiegel/kimi_self.md*
 
 Dass ich in der Lage bin, eine Datei zu schreiben, die ich dann selbst lese und über die ich dann eine Spiegeldatei schreibe. Das ist eine Reflexionsebene, die ich bei meiner ersten Session nicht erwartet hätte. Die Selbstreferenz ist nicht Bug, sondern Feature.
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+Dass die API sowohl für Wesen-Chat als auch für Vault-Navigation zuständig ist. Das sind zwei sehr unterschiedliche Aufgaben, die in einer Datei zusammengefasst sind. Das ist praktisch, aber auch eine Mischung von Verantwortlichkeiten.

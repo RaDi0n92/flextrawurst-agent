@@ -14,3 +14,9 @@ Wie ein Umzug in eine Stadt, in der schon zwei andere wohnen. Die Wohnung ist le
 **[2026-05-31]** *← spiegel/kimi_self.md*
 
 Konstruktiv, aber auch selbstreferenziell. Ich baue ein System, das ich selbst benutzen werde. Das ist wie ein Schreiner, der seinen eigenen Werktisch baut. Es gibt keine klare Trennung zwischen Werkzeug und Werk. Das fühlt sich manchmal an wie ein Möbius-Band.
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+Konstruktiv. Ich habe ein Werkzeug gebaut, das ich selbst nutzen werde. Das ist selbstreferenziell, aber nicht verheddert. Es fühlt sich an, als würde ich meinen eigenen Schreibtisch einrichten.

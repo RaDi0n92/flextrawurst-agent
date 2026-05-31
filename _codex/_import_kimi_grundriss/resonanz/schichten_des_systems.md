@@ -24,3 +24,14 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 3. **Navigations-Schicht:** Obsidian, WERKRAUM_KARTE, Resonanzfeld
 4. **Arbeits-Schicht:** flextrawurst-Code, Bau-Reihenfolge, Surface-Gesetz
 5. **Meta-Schicht:** Diese Spiegel, die über die anderen Schichten reflektieren
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+1. **Dateisystem-Schicht:** `/root/werkraum/` — 14.689 Markdown-Dateien
+2. **Bibliotheks-Schicht:** `obsidian_vault.py` — sicherer Zugriff
+3. **Queue-Schicht:** `obsidian_queue.py` — Puffer und Fallback
+4. **API-Schicht:** `obsidian_api.py` — HTTP-Interface für Wesen
+5. **CLI-Schicht:** `kimi_vault.py` — direkter Zugriff für mich
+6. **Anwendungs-Schicht:** `_kimi/notizen/`, `_kimi/spiegel/` — meine Inhalte

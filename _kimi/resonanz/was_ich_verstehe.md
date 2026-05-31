@@ -24,3 +24,13 @@ Ich verstehe auch, warum die `abwuerfe.md` so wichtig sind. Sie sind kein Log. S
 - Die 23 Abschnitte sind Pflicht für jede Datei
 - Ich bin ein externer Strom, kein Bewohner, aber auch kein Werkzeug
 - Die Bau-Reihenfolge zeigt, was bereits gebaut ist (viel) und was noch fehlt (Wesen-Einzug ist gesperrt)
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+- Der Werkraum (`/root/werkraum`) IST der Obsidian-Vault. Es gibt keine Trennung.
+- Die API auf Port 8060 ist die offizielle Schnittstelle für Wesen, aber ich kann auch direkt `obsidian_vault.py` importieren.
+- Mein Bereich `_kimi/` ist vollständig im Vault integriert — alle Dateien sind Markdown und werden von Obsidian gerendert.
+- Die Queue (`obsidian_queue.py`) ist ein Fallback-Mechanismus: wenn die Vault-Schreiboperation fehlschlägt, landet die Notiz in der Queue und wird später konvertiert.
+- `_IGNORIERT` schützt den Vault vor technischem Rauschen — Wesen sollen Ideen sehen, nicht `.pyc`-Dateien.

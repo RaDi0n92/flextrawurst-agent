@@ -21,3 +21,13 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - `/root/AGENTS.md` — die globale Agenten-Anweisung
 - `/root/werkraum/_kimi/brief_an_mich.md` — die Kontinuitätsbrücke
 - `/root/werkraum/_kimi/WERKRAUM_KARTE.md` — die Navigationskarte
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+- `/root/werkraum/obsidian_api.py` — die HTTP-API
+- `/root/werkraum/obsidian_vault.py` — die Python-Bibliothek
+- `/root/werkraum/obsidian_queue.py` — die Queue (noch nicht gelesen)
+- `/root/werkraum/_kimi/tools/kimi_vault.py` — mein CLI-Wrapper
+- `/root/werkraum/_kimi/tools/README_vault.md` — die Dokumentation

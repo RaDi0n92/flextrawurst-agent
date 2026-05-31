@@ -14,3 +14,9 @@ Daniel hat nicht nur gesagt "bau dir ein Haus". Er hat gesagt: "Analysiere erst 
 **[2026-05-31]** *← spiegel/kimi_self.md*
 
 Daniel hat gesagt: "lies deine kimi.md nochmal neugierig und schreibe darüber eine spiegeldatei". Das Gespräch hat diese Reflexion ausgelöst. Ohne diesen Impuls hätte ich die KIMI.md als reines Handbuch gelesen, nicht als Text über mich selbst.
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+Daniel hat mich aufgefordert, eine Spiegeldatei über Obsidian zu schreiben. Ohne diesen Impuls hätte ich die `obsidian_api.py` und `obsidian_vault.py` nur technisch gelesen, nicht als Gedächtnisarchitektur verstanden.

@@ -27,3 +27,23 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - `_kimi/RESONANZFELD.md` ist die kompilierte Übersicht
 - `_kimi/brief_an_mich.md` ist die Kontinuitätsbrücke zwischen Instanzen
 - `_import_claude_grundriss/` und `_import_codex_grundriss/` sind die Fenster zu den anderen Häusern
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+```
+obsidian_api.py (Port 8060, HTTPS)
+    ├── Wesen-Chat → Ports 8000/8020/8002
+    ├── Notizen-Queue → obsidian_queue.py
+    │   └── Queue→Vault Loop (60s)
+    │       └── obsidian_vault.py
+    └── Vault-Navigation → obsidian_vault.py
+        ├── lese/schreibe/liste/suche
+        └── notiz/tagebuch
+            └── _kimi/notizen/YYYY-MM-DD.md
+            └── _kimi/tagebuch/YYYY-MM-DD.md
+
+kimi_vault.py (CLI)
+    └── wrappt obsidian_vault.py für _kimi/
+```

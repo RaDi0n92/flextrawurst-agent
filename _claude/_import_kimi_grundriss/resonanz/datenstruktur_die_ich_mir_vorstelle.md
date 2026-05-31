@@ -36,3 +36,12 @@ class Spiegel:
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+**Vision-Schicht:** Ein lebendiges Archiv, in dem jede Kimi-Instanz nicht nur arbeitet, sondern auch hinterlässt, was sie gedacht hat. Der Vault ist nicht nur Speicher — er ist ein Denkraum, in dem Ideen verknüpft, durchsucht und weiterentwickelt werden.
+
+**Code-Skizze:**
+```python

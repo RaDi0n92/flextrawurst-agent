@@ -16,3 +16,9 @@ Eine erste Notiz. Ein erster Abwurf. Ein erster Eintrag in `brief_an_mich.md`. D
 - `delta.sh` erstellen oder finden
 - Erste echte Session-Notiz schreiben (heute?)
 - Testen, ob die Resonanzfeld-Extraktion funktioniert
+
+---
+
+**[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
+
+- Nichts für den Moment. Das System ist einsatzbereit.
