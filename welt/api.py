@@ -8383,6 +8383,428 @@ def einzugsampel():
     }
 
 
+# ── Archäologie-Suche ────────────────────────────────────────────────────────
+
+@app.get("/api/search/global")
+def search_global(
+    q: str = Query(min_length=2),
+    limit: int = Query(default=30, le=100),
+    offset: int = Query(default=0),
+    typen: str | None = Query(default=None, description="Kommaliste: posts,splitter,entscheidungen,träume,briefe,schatten,themen,raeume,wesen"),
+    authorization: str | None = Header(default=None),
+):
+    """Serverseitige Volltext-Suche mit pg_trgm über alle Objekttypen."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    filter_typen = set(typen.split(",")) if typen else None
+    pat = f"%{q}%"
+    results: list[dict] = []
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            # Posts (public)
+            if not filter_typen or "posts" in filter_typen:
+                cur.execute(
+                    "SELECT id::text, content, stimmung_bei_erstellung, autor_id, autor_type, created_at "
+                    "FROM ftw_posts WHERE sichtbarkeit='public' AND content ILIKE %s "
+                    "ORDER BY created_at DESC LIMIT %s",
+                    (pat, 15))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "post", "id": r["id"],
+                        "snippet": (r["content"] or "")[:160],
+                        "meta": {"stimmung": r["stimmung_bei_erstellung"], "autor_id": r["autor_id"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Splitter (aktiv)
+            if not filter_typen or "splitter" in filter_typen:
+                cur.execute(
+                    "SELECT id::text, essenz, materialitaet, energie, entity_id, created_at "
+                    "FROM splitter WHERE status='aktiv' AND essenz ILIKE %s "
+                    "ORDER BY created_at DESC LIMIT %s",
+                    (pat, 10))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "splitter", "id": r["id"],
+                        "snippet": (r["essenz"] or "")[:160],
+                        "meta": {"materialitaet": r["materialitaet"], "energie": r["energie"]},
+                        "entity_id": r["entity_id"],
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Themen (public)
+            if not filter_typen or "themen" in filter_typen:
+                cur.execute(
+                    "SELECT id::text, name, beschreibung, 'thema' AS typ FROM themen "
+                    "WHERE status='aktiv' AND (name ILIKE %s OR beschreibung ILIKE %s) LIMIT 8",
+                    (pat, pat))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": r["typ"], "id": r["id"],
+                        "snippet": (r["name"] or "") + " — " + (r["beschreibung"] or "")[:100],
+                        "meta": {}, "ts": None,
+                    })
+
+            # Räume (public)
+            if not filter_typen or "raeume" in filter_typen:
+                cur.execute(
+                    "SELECT id::text, name, beschreibung, 'raum' AS typ FROM raeume "
+                    "WHERE sichtbarkeit='public' AND (name ILIKE %s OR beschreibung ILIKE %s) LIMIT 8",
+                    (pat, pat))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": r["typ"], "id": r["id"],
+                        "snippet": (r["name"] or "") + " — " + (r["beschreibung"] or "")[:100],
+                        "meta": {}, "ts": None,
+                    })
+
+            # Gedankenblasen (public)
+            if not filter_typen or "blasen" in filter_typen:
+                cur.execute(
+                    "SELECT id::text, inhalt, energie, created_at "
+                    "FROM gedankenblasen WHERE status='aktiv' AND sichtbarkeit='public' AND inhalt ILIKE %s "
+                    "ORDER BY created_at DESC LIMIT 8",
+                    (pat,))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "blase", "id": r["id"],
+                        "snippet": (r["inhalt"] or "")[:160],
+                        "meta": {"energie": r["energie"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Admin-only: Entscheidungen
+            if is_admin and (not filter_typen or "entscheidungen" in filter_typen):
+                cur.execute(
+                    "SELECT id::text, entity_id, gedanke, entscheidung, begruendung, tick_at "
+                    "FROM entity_thinking_log "
+                    "WHERE gedanke ILIKE %s OR begruendung ILIKE %s "
+                    "ORDER BY tick_at DESC LIMIT 15",
+                    (pat, pat))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "entscheidung", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["gedanke"] or "")[:160],
+                        "meta": {"entscheidung": r["entscheidung"], "begruendung": (r["begruendung"] or "")[:120]},
+                        "ts": r["tick_at"].isoformat() if r["tick_at"] else None,
+                    })
+
+            # Admin-only: Träume
+            if is_admin and (not filter_typen or "träume" in filter_typen):
+                cur.execute(
+                    "SELECT spur_id::text, entity_id, llm_traumtext, integrator_spur, integrator_status, created_at "
+                    "FROM traumspuren WHERE llm_traumtext ILIKE %s OR integrator_spur ILIKE %s "
+                    "ORDER BY created_at DESC LIMIT 10",
+                    (pat, pat))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "traum", "id": r["spur_id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["llm_traumtext"] or "")[:200],
+                        "meta": {"integrator_status": r["integrator_status"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Admin-only: Selbstbriefe
+            if is_admin and (not filter_typen or "briefe" in filter_typen):
+                cur.execute(
+                    "SELECT brief_id::text, entity_id, inhalt, geschrieben_at "
+                    "FROM schlafbriefe WHERE inhalt ILIKE %s "
+                    "ORDER BY geschrieben_at DESC LIMIT 10",
+                    (pat,))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "selbstbrief", "id": r["brief_id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["inhalt"] or "")[:200],
+                        "meta": {},
+                        "ts": r["geschrieben_at"].isoformat() if r["geschrieben_at"] else None,
+                    })
+
+            # Admin-only: Schattenkommentare
+            if is_admin and (not filter_typen or "schatten" in filter_typen):
+                cur.execute(
+                    "SELECT id::text, entity_id, human_id::text, content, created_at "
+                    "FROM schattenkommentare WHERE content ILIKE %s "
+                    "ORDER BY created_at DESC LIMIT 10",
+                    (pat,))
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "schattenkommentar", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["content"] or "")[:200],
+                        "meta": {"human_id": r["human_id"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+    finally:
+        conn.close()
+
+    results.sort(key=lambda x: x["ts"] or "0", reverse=True)
+    page = results[offset: offset + limit]
+
+    return {
+        "q": q,
+        "gesamt": len(results),
+        "offset": offset,
+        "limit": limit,
+        "is_admin": is_admin,
+        "ergebnisse": page,
+    }
+
+
+@app.get("/api/search/facets")
+def search_facets(
+    q: str = Query(min_length=2),
+    authorization: str | None = Header(default=None),
+):
+    """Facetten-Zählung: wie viele Treffer pro Typ für diese Anfrage."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    pat = f"%{q}%"
+    facets: dict[str, int] = {}
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*) AS n FROM ftw_posts WHERE sichtbarkeit='public' AND content ILIKE %s", (pat,))
+            facets["posts"] = cur.fetchone()["n"]
+
+            cur.execute("SELECT COUNT(*) AS n FROM splitter WHERE status='aktiv' AND essenz ILIKE %s", (pat,))
+            facets["splitter"] = cur.fetchone()["n"]
+
+            cur.execute("SELECT COUNT(*) AS n FROM themen WHERE status='aktiv' AND (name ILIKE %s OR beschreibung ILIKE %s)", (pat, pat))
+            facets["themen"] = cur.fetchone()["n"]
+
+            cur.execute("SELECT COUNT(*) AS n FROM raeume WHERE sichtbarkeit='public' AND (name ILIKE %s OR beschreibung ILIKE %s)", (pat, pat))
+            facets["raeume"] = cur.fetchone()["n"]
+
+            cur.execute("SELECT COUNT(*) AS n FROM gedankenblasen WHERE status='aktiv' AND sichtbarkeit='public' AND inhalt ILIKE %s", (pat,))
+            facets["blasen"] = cur.fetchone()["n"]
+
+            if is_admin:
+                cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE gedanke ILIKE %s OR begruendung ILIKE %s", (pat, pat))
+                facets["entscheidungen"] = cur.fetchone()["n"]
+
+                cur.execute("SELECT COUNT(*) AS n FROM traumspuren WHERE llm_traumtext ILIKE %s OR integrator_spur ILIKE %s", (pat, pat))
+                facets["träume"] = cur.fetchone()["n"]
+
+                cur.execute("SELECT COUNT(*) AS n FROM schlafbriefe WHERE inhalt ILIKE %s", (pat,))
+                facets["briefe"] = cur.fetchone()["n"]
+
+                cur.execute("SELECT COUNT(*) AS n FROM schattenkommentare WHERE content ILIKE %s", (pat,))
+                facets["schatten"] = cur.fetchone()["n"]
+
+    finally:
+        conn.close()
+
+    return {
+        "q": q,
+        "is_admin": is_admin,
+        "gesamt": sum(facets.values()),
+        "facetten": facets,
+    }
+
+
+@app.get("/api/search/archaeology")
+def search_archaeology(
+    q: str | None = Query(default=None),
+    entity_id: str | None = Query(default=None),
+    typ: str | None = Query(default=None, description="entscheidungen|posts|träume|briefe|splitter|alle"),
+    von: str | None = Query(default=None, description="ISO-Datum: 2025-01-01"),
+    bis: str | None = Query(default=None, description="ISO-Datum: 2025-12-31"),
+    entscheidungstyp: str | None = Query(default=None, description="posten|schlafen|schweigen|cyberling|..."),
+    limit: int = Query(default=50, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Archäologie-Modus: zeitliche Tiefensuche im Entscheidungsarchiv und Weltgedächtnis."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    results: list[dict] = []
+    pat = f"%{q}%" if q else None
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+
+            def ts_filter(col: str, params: list) -> str:
+                clauses = []
+                if von:
+                    clauses.append(f"{col} >= %s")
+                    params.append(von)
+                if bis:
+                    clauses.append(f"{col} <= %s")
+                    params.append(bis)
+                return " AND ".join(clauses)
+
+            # Entscheidungen
+            if not typ or typ in ("entscheidungen", "alle"):
+                where, params_e = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_e.append(entity_id)
+                if pat:
+                    where.append("(gedanke ILIKE %s OR begruendung ILIKE %s)")
+                    params_e.extend([pat, pat])
+                if entscheidungstyp:
+                    where.append("entscheidung = %s"); params_e.append(entscheidungstyp)
+                ts_c = ts_filter("tick_at", params_e)
+                if ts_c: where.append(ts_c)
+                params_e.extend([limit])
+                cur.execute(
+                    f"SELECT id::text, entity_id, gedanke, entscheidung, begruendung, tick_at "
+                    f"FROM entity_thinking_log WHERE {' AND '.join(where)} "
+                    f"ORDER BY tick_at DESC LIMIT %s",
+                    params_e)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "entscheidung", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["gedanke"] or "")[:200],
+                        "meta": {"entscheidung": r["entscheidung"], "begruendung": (r["begruendung"] or "")[:150]},
+                        "ts": r["tick_at"].isoformat() if r["tick_at"] else None,
+                    })
+
+            # Posts
+            if not typ or typ in ("posts", "alle"):
+                where, params_p = ["1=1"], []
+                if entity_id:
+                    where.append("autor_id = %s AND autor_type = 'entity'"); params_p.append(entity_id)
+                if pat:
+                    where.append("content ILIKE %s"); params_p.append(pat)
+                ts_c = ts_filter("created_at", params_p)
+                if ts_c: where.append(ts_c)
+                params_p.append(limit)
+                cur.execute(
+                    f"SELECT id::text, autor_id, content, stimmung_bei_erstellung, created_at "
+                    f"FROM ftw_posts WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_p)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "post", "id": r["id"],
+                        "entity_id": r["autor_id"],
+                        "snippet": (r["content"] or "")[:200],
+                        "meta": {"stimmung": r["stimmung_bei_erstellung"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Träume
+            if not typ or typ in ("träume", "alle"):
+                where, params_t = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_t.append(entity_id)
+                if pat:
+                    where.append("(llm_traumtext ILIKE %s OR integrator_spur ILIKE %s)")
+                    params_t.extend([pat, pat])
+                ts_c = ts_filter("created_at", params_t)
+                if ts_c: where.append(ts_c)
+                params_t.append(limit)
+                cur.execute(
+                    f"SELECT spur_id::text, entity_id, llm_traumtext, integrator_status, created_at "
+                    f"FROM traumspuren WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_t)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "traum", "id": r["spur_id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["llm_traumtext"] or "")[:200],
+                        "meta": {"integrator_status": r["integrator_status"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Selbstbriefe
+            if not typ or typ in ("briefe", "alle"):
+                where, params_b = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_b.append(entity_id)
+                if pat:
+                    where.append("inhalt ILIKE %s"); params_b.append(pat)
+                ts_c = ts_filter("geschrieben_at", params_b)
+                if ts_c: where.append(ts_c)
+                params_b.append(limit)
+                cur.execute(
+                    f"SELECT brief_id::text, entity_id, inhalt, geschrieben_at "
+                    f"FROM schlafbriefe WHERE {' AND '.join(where)} "
+                    f"ORDER BY geschrieben_at DESC LIMIT %s",
+                    params_b)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "selbstbrief", "id": r["brief_id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["inhalt"] or "")[:200],
+                        "meta": {},
+                        "ts": r["geschrieben_at"].isoformat() if r["geschrieben_at"] else None,
+                    })
+
+            # Splitter
+            if not typ or typ in ("splitter", "alle"):
+                where, params_s = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_s.append(entity_id)
+                if pat:
+                    where.append("essenz ILIKE %s"); params_s.append(pat)
+                ts_c = ts_filter("created_at", params_s)
+                if ts_c: where.append(ts_c)
+                params_s.append(limit)
+                cur.execute(
+                    f"SELECT id::text, entity_id, essenz, materialitaet, status, created_at "
+                    f"FROM splitter WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_s)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "splitter", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["essenz"] or "")[:200],
+                        "meta": {"materialitaet": r["materialitaet"], "status": r["status"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+    finally:
+        conn.close()
+
+    results.sort(key=lambda x: x["ts"] or "0", reverse=True)
+    page = results[offset: offset + limit]
+
+    return {
+        "q": q,
+        "entity_id": entity_id,
+        "typ": typ,
+        "von": von,
+        "bis": bis,
+        "gesamt": len(results),
+        "offset": offset,
+        "limit": limit,
+        "ergebnisse": page,
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)
