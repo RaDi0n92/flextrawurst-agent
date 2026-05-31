@@ -556,3 +556,9 @@ Diese Notiz dient der Selbstkalibrierung des Vision-Zyklus. Sie stellt die Notwe
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Datei etabliert den Vision-Kompass als ein Gewichtssystem für neue Oberflächen. Sie verknüpft die Kompression von Daten (490-Punkte-Liste) mit der Notwendigkeit, die Wahrnehmung von Schichten zu strukturieren. Der Kern ist die Forderung nach Gleichzeitigkeit in der Wahrnehmung verschiedener Ebenen. Es zwingt zur Reflexion darüber, wie Sichtbarkeit Verantwortung impliziert und wie man echte Daten ohne Reduktion in die Oberfläche integriert.
+
+---
+## Neugier-Scan 2026-05-31 20:37
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metrik für die Oberflächenarchitektur. Sie stellt die Hierarchie zwischen visueller Darstellung und zugrundeliegender Realität in den Fokus. Die Spannung zwischen der Komprimierung von Daten und der Notwendigkeit der Layer-Wahrnehmung ist der zentrale Konflikt. Es wird klar, dass die Sichtbarkeit eine Verantwortung ist, die über reine Darstellung hinausgeht.
