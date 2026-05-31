@@ -4875,7 +4875,12 @@ async function eiLadeTab(tab){
               <span style="color:${c.ok?'#10f050':'#f01030'}">${c.wert}</span>
             </li>`).join('')}
         </ul>
-        ${_eiAmpel.einzug_blockiert ? '<div style="font-size:.58rem;color:#f01030;text-align:center;margin-top:12px;font-family:monospace">EINZUG BLOCKIERT</div>' : ''}
+        ${_eiAmpel.einzug_blockiert ? '<div style="font-size:.58rem;color:#f01030;text-align:center;margin-top:12px;font-family:monospace">EINZUG BLOCKIERT — Daniel-Entscheidung ausstehend</div>' : ''}
+        ${(_eiAmpel.meta) ? `<div style="font-size:.52rem;color:#3a2a5a;text-align:center;margin-top:8px;line-height:1.6">
+          <span style="color:#4a3a6a">${_eiAmpel.meta.checks_gruen||0}/${_eiAmpel.meta.checks_gesamt||0} grün · </span>
+          <span style="color:#f0c010">${_eiAmpel.meta.daniel_entscheidungen_noetig||0} Daniel-Entscheidungen offen · </span>
+          <span style="color:#8a6aaa">E-01–E-20 in daniel_entscheidungsboard_vor_einzug.md</span>
+        </div>` : ''}
       </div>
     `;
   }
@@ -4940,13 +4945,17 @@ async function eiLadeTab(tab){
       const items: any[] = Array.isArray(data) ? data : (data.sources || data.items || []);
       if(items.length === 0){
         list.innerHTML = `<div class="ei-empty">
-          <div style="color:#8a6a6a;font-size:.62rem;line-height:1.6;max-width:380px;margin:0 auto">
+          <div style="color:#8a6a6a;font-size:.62rem;line-height:1.6;max-width:400px;margin:0 auto">
             Keine Menschquellen freigegeben.<br>
             <span style="color:#3a2a2a">Das ist korrekt. Default ist privat.</span><br><br>
             <span style="color:#2a2a3a;font-size:.58rem">
               Menschliche Innenquellen (Notizen, Tagebuch, Traumtagebuch, Kalender, Gedankenblasen)
               werden nur durch bewusste Zustimmung zu Splittern.
               Nichts wird automatisch verarbeitet.
+            </span><br><br>
+            <span style="color:#1a1a3a;font-size:.55rem;border-top:1px solid #2a1a2a;padding-top:6px;display:block">
+              Gruppensystem: Vorstudie vorhanden · nicht implementiert · Daniel-Entscheidung (E-01) ausstehend<br>
+              Kalender-Brücke: Konzept vorhanden · nicht gebaut · Transformation erforderlich
             </span>
           </div>
         </div>`; return;

@@ -9712,8 +9712,19 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
     """
     import os, json as _json, subprocess
 
-    def check(name: str, klasse: str, ok: bool, wert: str, note: str | None = None) -> dict:
-        return {"name": name, "klasse": klasse, "ok": ok, "wert": wert, "note": note}
+    def check(name: str, klasse: str, ok: bool, wert: str, note: str | None = None,
+              blocker_type: str = "technisch") -> dict:
+        """
+        blocker_type:
+          technisch      — System muss funktionieren, kein Einzug ohne
+          sicherheit     — Datenleak oder Rechteverletzung möglich
+          weltlogik      — Welt-Mechanikreife, aber kein harter Blocker
+          bewusst        — Absichtlich blockiert (Einzug, Flarum, etc.)
+          design         — Daniel-Entscheidung ausstehend
+          sozialkörper   — Soziale Reife (Gruppen, Tests, UI-Schicht)
+        """
+        return {"name": name, "klasse": klasse, "ok": ok, "wert": wert,
+                "note": note, "blocker_type": blocker_type}
 
     checks = []
     conn = get_conn()
@@ -9797,78 +9808,100 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
                 hg_dryrun_ok, "dryrun.py vorhanden, 12 Mappings geprüft, ~3184 Token Kern"))
 
             checks.append(check("HG in Entscheidungsprompts aktiv", "C_Weltlogik",
-                False, "produktiv blockiert bis Einzug", "Einbaupunkt: entity_kern.py:build_prompt()"))
+                False, "produktiv blockiert bis Einzug", "Einbaupunkt: entity_kern.py:build_prompt()",
+                blocker_type="weltlogik"))
 
             cur.execute("SELECT COUNT(*) AS n FROM entity_relationships")
             rel_n = cur.fetchone()["n"]
             checks.append(check("Beziehungsgraph API vorhanden", "C_Weltlogik",
-                True, f"{rel_n} Beziehung(en) — {'nur Testdaten, keine echten Beziehungen' if rel_n <= 1 else 'echte Daten vorhanden'}, 3 Endpunkte bereit"))
+                True, f"{rel_n} Beziehung(en) — {'nur Testdaten, keine echten Beziehungen' if rel_n <= 1 else 'echte Daten vorhanden'}, 3 Endpunkte bereit",
+                blocker_type="weltlogik"))
 
             checks.append(check("Menschquellen Datenmodell vorhanden", "C_Weltlogik",
-                True, "human_material_sources + human_material_to_splitter"))
+                True, "human_material_sources + human_material_to_splitter",
+                blocker_type="weltlogik"))
 
             sim2_ok = os.path.exists("/root/werkraum/welt/cyberling_balancing/output_sim2/SIM2_BERICHT.md")
             checks.append(check("Cyberling Simulation 2 vorhanden", "C_Weltlogik",
-                sim2_ok, "3 Profile × 6 Szenarien, nicht produktiv"))
+                sim2_ok, "3 Profile × 6 Szenarien, nicht produktiv",
+                blocker_type="weltlogik"))
 
             checks.append(check("Cyberling produktiv nach Sim2", "C_Weltlogik",
-                False, "Default-Profil noch nicht gewählt", "wählen bei Einzug"))
+                False, "Default-Profil noch nicht gewählt — E-05 ausstehend", "wählen bei Einzug",
+                blocker_type="design"))
 
             # ── D) BEWUSST BLOCKIERT ───────────────────────────────────────
             flarum_frozen = True
             checks.append(check("Flarum eingefroren", "D_BewusstBlockiert",
-                flarum_frozen, "keine Flarum-Takte"))
+                flarum_frozen, "keine Flarum-Takte",
+                blocker_type="bewusst"))
 
             r = subprocess.run(["systemctl", "is-active", "codewesen_takt"],
                                capture_output=True, text=True)
             takt_aus = r.stdout.strip() != "active"
             checks.append(check("codewesen_takt.py aus", "D_BewusstBlockiert",
-                takt_aus, r.stdout.strip()))
+                takt_aus, r.stdout.strip(),
+                blocker_type="bewusst"))
 
             checks.append(check("Kein Einzug ausgeführt", "D_BewusstBlockiert",
-                True, "einzug_blockiert=True immer"))
+                True, "einzug_blockiert=True immer",
+                blocker_type="bewusst"))
 
             checks.append(check("Keine produktive Substanzmechanik", "D_BewusstBlockiert",
-                True, "Substanz-Wesen-Entscheidung nur als Grammatikdatei"))
+                True, "Substanz-Wesen-Entscheidung nur als Grammatikdatei",
+                blocker_type="bewusst"))
 
             checks.append(check("Keine Menschquellen auto-Promotion", "D_BewusstBlockiert",
-                True, "to-splitter nur durch explizite API-Aktion"))
+                True, "to-splitter nur durch explizite API-Aktion",
+                blocker_type="bewusst"))
 
             # ── E) OFFEN / DESIGN ──────────────────────────────────────────
             checks.append(check("Schattenkommentar_schreiben-Aktion API", "E_OffenDesign",
-                False, "Skeleton 503, Logik nicht aktiviert", "Wesen können noch nicht initiieren"))
+                False, "Skeleton 503, Logik nicht aktiviert — E-08 ausstehend",
+                "Wesen können noch nicht initiieren",
+                blocker_type="design"))
 
             checks.append(check("Cyberling Default-Profil gewählt", "E_OffenDesign",
-                False, "Mittel empfohlen (Sim2), Energie-Recovery-Patch fehlt noch"))
+                False, "Mittel empfohlen (Sim2), Energie-Recovery-Patch fehlt — E-05/E-06",
+                blocker_type="design"))
 
             checks.append(check("Beziehungstypen aus Daten gelernt", "E_OffenDesign",
-                False, "aktuell einfache Heuristik", "echtes ML kommt nach Einzug"))
+                False, "aktuell einfache Heuristik — E-12 ausstehend",
+                "echtes ML kommt nach Einzug",
+                blocker_type="design"))
 
             checks.append(check("Menschquellen in Suche eingebunden", "E_OffenDesign",
-                False, "DB-Schema + API vorhanden, Search-Extension fehlt"))
+                False, "DB-Schema + API vorhanden, Search-Extension fehlt — kein harter Blocker",
+                blocker_type="design"))
 
             checks.append(check("Gedankenblasen als Menschquelle eingeordnet", "E_OffenDesign",
-                False, "konzeptuell geplant, DB-Bridge fehlt"))
+                False, "konzeptuell geplant, DB-Bridge fehlt — nach Einzug",
+                blocker_type="design"))
 
-            # ── F) SOZIALKÖRPER (neue Klasse: Gruppen, Menschquellen-UI, Endpoint-Drift) ──
-            endpoint_drift_closed = True  # koZeigeSpur + koAufnehmen auf kompoase umgestellt
+            # ── F) SOZIALKÖRPER ────────────────────────────────────────────
+            endpoint_drift_closed = True
             checks.append(check("Endpoint-Drift geschlossen (zwischenraum→kompoase)", "F_Sozialkörper",
-                endpoint_drift_closed, "koZeigeSpur + koAufnehmen auf /api/kompoase/ umgestellt"))
+                endpoint_drift_closed, "koZeigeSpur + koAufnehmen auf /api/kompoase/ umgestellt",
+                blocker_type="sozialkörper"))
 
-            menschquellen_ui_exists = True  # INNENQUELLEN-Tab gebaut
+            menschquellen_ui_exists = True
             checks.append(check("Menschquellen Admin-UI vorhanden", "F_Sozialkörper",
-                menschquellen_ui_exists, "EINSICHT INNENQUELLEN-Tab, empty state erklärt privat-default"))
+                menschquellen_ui_exists, "EINSICHT INNENQUELLEN-Tab, empty state erklärt privat-default",
+                blocker_type="sozialkörper"))
 
             http_tests_ok = os.path.exists("/root/werkraum/tests/http_rechte_integration.py")
             checks.append(check("HTTP-Rechte-Integrationstests vorhanden", "F_Sozialkörper",
-                http_tests_ok, "46 Tests gegen laufende API, alle grün"))
+                http_tests_ok, "46 Tests gegen laufende API, alle grün",
+                blocker_type="sozialkörper"))
 
             checks.append(check("Gruppen-Vorstudie erstellt", "F_Sozialkörper",
                 os.path.exists("/root/werkraum/docs/gruppensystem_vorstudie.md"),
-                "14 offene Daniel-Entscheidungen dokumentiert"))
+                "14 offene Daniel-Entscheidungen — E-01 bis E-04 ausstehend",
+                blocker_type="sozialkörper"))
 
             checks.append(check("Gruppen-Implementation vorhanden", "F_Sozialkörper",
-                False, "Vorstudie vorhanden, DB/API/UI fehlen — Daniel-Freigabe ausstehend"))
+                False, "Vorstudie vorhanden, DB/API/UI fehlen — E-01 ausstehend",
+                blocker_type="design"))
 
     finally:
         conn.close()
@@ -9926,6 +9959,10 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
         "gruen": "Vollständig bereit. Einzug nach Daniels Entscheid.",
     }[ampel]
 
+    offen_checks = [c for c in checks if not c["ok"]]
+    daniel_required = [c for c in offen_checks if c.get("blocker_type") == "design"]
+    weltlogik_offen = [c for c in offen_checks if c.get("blocker_type") == "weltlogik"]
+
     return {
         "ampel": ampel,
         "ampel_grund": grund,
@@ -9934,6 +9971,21 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
         "empfehlung": empfehlung,
         "einzug_blockiert": True,
         "falsches_gruen_verhindert": True,
+        "meta": {
+            "checks_gesamt": len(checks),
+            "checks_gruen": len(checks) - len(offen_checks),
+            "checks_offen": len(offen_checks),
+            "daniel_entscheidungen_noetig": len(daniel_required),
+            "weltlogik_blocker": len(weltlogik_offen),
+            "freeze_doc": "docs/vor_einzugsfreeze_final.md",
+            "entscheidungsboard": "docs/daniel_entscheidungsboard_vor_einzug.md",
+            "was_gruen_braucht": [
+                "C_Weltlogik: HG aktivieren + Cyberling-Profil wählen",
+                "E_OffenDesign: 5 Design-Entscheidungen (E-05..E-09)",
+                "F_Sozialkörper: Gruppen-Entscheidung (E-01) + ggf. Impl",
+                "dann: expliziter Daniel-Entscheid für Einzug",
+            ],
+        },
     }
 
 

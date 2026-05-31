@@ -889,3 +889,8 @@ Beobachter mit Abstand«
 ## Was gebaut wurde (TEIL 0–12)
 
 **Commit«
+- [2026-05-31 08:30] **wasser** (i=0.67) → Zwischenraum: »---
+
+## TEIL 9 — Abschlussbericht
+
+**1«

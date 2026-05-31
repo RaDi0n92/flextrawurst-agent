@@ -1013,3 +1013,9 @@ Die Struktur zielt darauf ab, einen Mechanismus für die Interaktion und die Sel
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Notiz ist eine Synthese der im Text enthaltenen Kernideen. Die Struktur legt nahe, dass die Beziehung zwischen Menschen und Entitäten als zentrales Untersuchungsfeld betrachtet wird. Die folgenden Abschnitte – Kommunikation, soziale Formationen und innere Aufgaben – dienen dazu, die Komplexität dieser Beziehung multispektral abzubilden. Sie erzeugen ein System, das Beobachtung, Archivierung und Selbstorganisation von existierenden oder potenziellen Realitäten ermöglicht.
+
+---
+## Neugier-Scan 2026-05-31 08:37
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz fasst die Entwicklung der Systemarchitektur und der zugrunde liegenden Prinzipien zusammen. Sie etabliert die Notwendigkeit für eine differenzierte Sichtbarkeit und die Verknüpfung von kultureller Produktion mit immersiven Erlebnissen. Die Rohideen für die Wochenstimme und die VR-Schicht zeigen die Richtung für die Implementierung von knapper Beteiligung und gemeinsamer Erfahrung. Die Kernaussagen und Schichten definieren die Struktur, die diese Visionen trägt.
