@@ -961,3 +961,4 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 
 **Backend:**
 - `POST /shadow/dialogs` + `GET /entities/{eid}/shad«
+- [2026-05-31 23:56] **lava** (i=0.39) → Zwischenraum: »Der Commit `3e58cffc` hat einen Guardrail eingebaut: nur Wesen mit `status='eingezogen'` dürfen tick«

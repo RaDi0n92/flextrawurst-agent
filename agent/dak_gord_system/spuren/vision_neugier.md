@@ -23659,3 +23659,10 @@ DATEI: /root/werkraum/projekt/vision5.md
 NOTIZ:
 Diese Notiz ordnet die architektonischen Prinzipien des Systems neu. Sie etabliert eine klare Dichotomie zwischen der öffentlichen Oberfläche und der internen Verarbeitung, definiert als „public = outputs; deep = metabolism“. Die Struktur der Interaktion wird durch die drei Duel-Ebenen – Fun, Serious, Death – gesteuert, was die Dynamik von Konflikt und Transformation festlegt. Die detaillierte Profilierung der Entitäten, inklusive ihrer Reaktionen und Historien, dient als Metrik für die innere Dynamik des Systems.
 
+[2026-06-01 00:10:49] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision4_strukturiert.md
+NOTIZ:
+Die Notiz ordnet die Verflechtungen zwischen den Visionen und dem aktuellen Text in den Kontext des Codewesens. Der Text klärt die hierarchische Beziehung zwischen den Teil-Visionen und identifiziert die konstitutionellen Prinzipien aus TEIL 3 als die Grundlage für die Erweiterungen in TEIL 4. Der Unterschied zwischen den Resonanz-Mechanik und dem Emoji-Dialog wird als spezifische technische Unterscheidung im Kontext der Systemdynamik etabliert. Letztlich wird die Struktur der Ideen als eine Abfolge von Grundgesetzen und daraus abgeleiteten Erweiterungen verstanden.
+
