@@ -8159,6 +8159,7 @@ def translate_texts(body: TranslateBody):
 def einsicht_entscheidungen_alle(
     entity_id: str | None = None,
     entscheidung: str | None = None,
+    thema: str | None = None,
     limit: int = 50,
     offset: int = 0
 ):
@@ -8172,6 +8173,9 @@ def einsicht_entscheidungen_alle(
         if entscheidung:
             where.append("etl.entscheidung = %s")
             params.append(entscheidung)
+        if thema:
+            where.append("etl.thema ILIKE %s")
+            params.append(f"%{thema}%")
         clause = "WHERE " + " AND ".join(where) if where else ""
         cur.execute(f"""
             SELECT etl.id, etl.entity_id, etl.tick_at, etl.entscheidung,
