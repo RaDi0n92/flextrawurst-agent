@@ -5364,6 +5364,27 @@ html[lang="en"] .de-only{display:none}
 .ei-dk-depth{flex:1;max-width:90px;min-width:40px;height:4px;background:#071828;border-radius:2px;overflow:hidden}
 .ei-dk-bar{height:100%;border-radius:2px}
 .ei-dk-text{font-size:.63rem;color:#7ab8c8;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.ei-pano-segs{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:9px;min-height:20px}
+.ei-pano-seg{background:#010a14;border:1px solid #0a1a2a;border-radius:2px;padding:3px 6px;display:flex;flex-direction:column;align-items:center;min-width:40px;gap:1px}
+.ei-pano-seg--on{border-color:color-mix(in srgb,var(--sc,#10d8f0) 35%,transparent)}
+.ei-pano-seg--plan{border-color:#1a3030;border-style:dashed;opacity:.45}
+.ei-pano-seg--gesperrt{border-color:#1a1a2a;opacity:.3}
+.ei-pano-seg-l{font-size:.4rem;color:#1a3a5a;letter-spacing:.08em;font-family:monospace;text-transform:uppercase}
+.ei-pano-seg-n{font-size:.62rem;font-family:monospace}
+.ei-organ-btn.gesperrt{opacity:.35;cursor:default}
+.ei-organ-btn.geplant{border-style:dashed;opacity:.5;cursor:default}
+.ei-organ-tag{font-size:.42rem;padding:1px 4px;border-radius:1px;border:1px solid;letter-spacing:.08em;margin-top:2px;display:block}
+.ei-taxo-header{margin-bottom:11px}
+.ei-taxo-label{font-size:.46rem;color:#1a3a5a;font-family:monospace;letter-spacing:.12em;margin-bottom:5px;text-transform:uppercase}
+.ei-taxo-chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
+.ei-taxo-chip{font-size:.48rem;padding:2px 7px;border-radius:2px;border:1px solid #0a2030;color:#2a4a6a;font-family:monospace;letter-spacing:.06em;background:#010a14;white-space:nowrap}
+.ei-taxo-chip--real{border-color:#1a4a6a;color:#4a8ab8;cursor:pointer}
+.ei-taxo-chip--real.aktiv{border-color:#10d8f0;color:#10d8f0;background:#010f1a}
+.ei-taxo-chip--plan{border-style:dashed;opacity:.4}
+.ei-rohdaten-toggle{float:right;background:none;border:1px solid #0a2030;color:#1a3a5a;font-size:.46rem;font-family:monospace;padding:2px 8px;border-radius:2px;cursor:pointer;letter-spacing:.1em}
+.ei-rohdaten-toggle:hover{border-color:#1a4a6a;color:#2a5a8a}
+.ei-atlas-section{border:1px solid #071828;border-radius:4px;padding:11px 13px;background:#010a14;margin-bottom:10px}
+.ei-atlas-section-head{font-size:.48rem;color:#1a3a5a;font-family:monospace;letter-spacing:.12em;margin-bottom:8px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 </style>
 
 <div class="ei-wrap">
@@ -5478,17 +5499,26 @@ async function panoramaLaden(){
       const dots=myE.slice(0,28).map(e=>'<div class="ei-pano-dot" style="background:'+(dc[e.entscheidung]||'#1a3a5a')+'" title="'+esc(e.entscheidung||'')+'"></div>').join('');
       const spark=myE.slice(0,18).map(e=>{const c=e.entscheidung==='schlafen_beginnen'?'#3a1a5a':e.entscheidung==='nachdenken'?'#1a2a5a':'#1a5a3a';const h=e.entscheidung==='schlafen_beginnen'?5:e.entscheidung==='nachdenken'?9:13;return'<div class="ei-spark-b" style="height:'+h+'px;background:'+c+'"></div>';}).join('');
       const state=live?'● LIVE':(last?last.event_type.replace('cyberling.','').slice(0,14):'idle');
+      const nDenk=myE.filter(e=>e.entscheidung==='nachdenken').length;
+      const nPost=myE.filter(e=>e.entscheidung==='gedanke_posten'||e.entscheidung==='post').length;
+      const nSchlaf=myE.filter(e=>e.entscheidung==='schlafen_beginnen').length;
+      const nCyber=myT.filter(e=>e.event_type&&e.event_type.startsWith('cyberling.')).length;
+      const nTraumEv=myT.filter(e=>e.event_type&&(e.event_type.includes('traum')||e.event_type.includes('schlaf'))).length;
+      const nSplEv=myT.filter(e=>e.event_type&&e.event_type.includes('splitter')).length;
+      const nSchatten=myT.filter(e=>e.event_type&&e.event_type.includes('schatten')).length;
+      function seg(l,n,c,plan=false,locked=false){
+        if(plan)return'<div class="ei-pano-seg ei-pano-seg--plan" title="'+l+': geplant"><span class="ei-pano-seg-l">'+l+'</span><span class="ei-pano-seg-n" style="color:#1a3a3a;font-size:.4rem">geplant</span></div>';
+        if(locked)return'<div class="ei-pano-seg ei-pano-seg--gesperrt" title="'+l+': keine Daten"><span class="ei-pano-seg-l">'+l+'</span><span class="ei-pano-seg-n" style="color:#1a2a2a">—</span></div>';
+        const on=typeof n==='number'&&n>0;
+        return'<div class="ei-pano-seg'+(on?' ei-pano-seg--on':'')+'" style="'+(on?'--sc:'+c:'')+'" title="'+l+': '+n+'"><span class="ei-pano-seg-l">'+l+'</span><span class="ei-pano-seg-n" style="color:'+(on?c:'#1a3a5a')+'">'+n+'</span></div>';
+      }
+      const segs=seg('ENT',myE.length,col)+seg('DENK',nDenk,'#4060f0')+seg('POST',nPost,'#10c080')+seg('SCHLAF',nSchlaf,'#8040c0')+seg('CYBER',nCyber,'#f04010')+seg('TRAUM',nTraumEv,'#9050d0')+seg('SPLIT',nSplEv,'#10d8f0')+seg('SCHATTEN',nSchatten,'#888888')+seg('BEZIEH',0,'#10d080',false,true)+seg('SUBST',0,'#c06040',false,true)+seg('KOMPOASE',0,'',true)+seg('GRUPPEN',0,'',true);
       return `<div class="ei-pano-card" data-eid="${id}" style="--ec:${col}" onclick="eiWaehleWesen('${id}')">
         <div class="ei-pano-head">
           <span class="ei-pano-name" style="color:${col}">${esc(tag)}</span>
           <span class="ei-pano-status" style="border-color:${col};color:${col}">${state}</span>
         </div>
-        <div class="ei-pano-dots">${dots||'<span style="color:#1a2a3a;font-size:.48rem">keine Entscheidungen</span>'}</div>
-        <div class="ei-pano-stats">
-          <div class="ei-pano-stat"><div class="ei-pano-stat-n" style="color:${col}">${myE.length}</div><div class="ei-pano-stat-l">Entsch.</div></div>
-          <div class="ei-pano-stat"><div class="ei-pano-stat-n">${myT.filter(e=>e.event_type&&e.event_type.includes('traum')).length}</div><div class="ei-pano-stat-l">Traum-Ev.</div></div>
-          <div class="ei-pano-stat"><div class="ei-pano-stat-n">${myT.filter(e=>e.event_type&&e.event_type.includes('splitter')).length}</div><div class="ei-pano-stat-l">Splitter-Ev.</div></div>
-        </div>
+        <div class="ei-pano-segs">${segs}</div>
         <div class="ei-pano-spark">${spark}</div>
       </div>`;
     }).join('');
@@ -5514,14 +5544,27 @@ async function cockpitLaden(eid){
     const organe=[
       {id:'entscheidungen',label:'ENTSCHEIDUNGEN',n:eR.total||0},
       {id:'traum',label:'TRÄUME',n:nTraum},
-      {id:'substanzen',label:'SUBSTANZEN',n:'—'},
-      {id:'splitter',label:'SPLITTER',n:splR.total||0},
-      {id:'beziehungen',label:'BEZIEHUNGEN',n:'—'},
-      {id:'schatten',label:'SCHATTEN',n:'—'},
       {id:'denkfenster',label:'DENKFENSTER',n:'—'},
+      {id:'splitter',label:'SPLITTER',n:splR.total||0},
+      {id:'schatten',label:'SCHATTEN',n:'—'},
+      {id:'beziehungen',label:'BEZIEHUNGEN',n:'—'},
+      {id:'substanzen',label:'SUBSTANZEN',n:'—'},
+      {id:'innenquellen',label:'INNENQUELLEN',n:'—'},
+      {id:'ampel',label:'AMPEL',n:'◑'},
+      {id:'kompoase',label:'KOMPOASE',n:'—',plan:true},
+      {id:'gruppen',label:'GRUPPEN',n:'—',plan:true},
+      {id:'posts',label:'POSTS',n:'—',plan:true},
+      {id:'resonanzurlaub',label:'RÜCKZUG',n:'—',plan:true},
     ];
-    const organBtns=organe.map(o=>'<button class="ei-organ-btn'+(_eiOrgan===o.id?' aktiv':'')+'" onclick="cockpitOrgan(\''+eid+'\',\''+o.id+'\')">'
-      +'<div class="ei-organ-name">'+esc(o.label)+'</div><div class="ei-organ-count">'+o.n+'</div></button>').join('');
+    const organBtns=organe.map(o=>{
+      const cls='ei-organ-btn'+((_eiOrgan===o.id)?' aktiv':'')+(o.plan?' geplant':'');
+      const onclick=o.plan?'':'onclick="cockpitOrgan(''+eid+'',''+o.id+'')"';
+      return'<button class="'+cls+'" '+onclick+'>'
+        +'<div class="ei-organ-name">'+esc(o.label)+'</div>'
+        +'<div class="ei-organ-count">'+o.n+'</div>'
+        +(o.plan?'<span class="ei-organ-tag" style="border-color:#1a3a3a;color:#1a3a3a">geplant</span>':'')
+        +'</button>';
+    }).join('');
 
     // 7-day timeline
     const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);days.push(d.toISOString().slice(0,10));}
@@ -5595,6 +5638,18 @@ async function cockpitOrganLaden(eid,organ){
         +'<span class="ei-strom-ts">'+fmt(st.last_updated)+'</span></div>'
         +'<div class="ei-strom-body">'+esc(st.substance_name||st.substance_id)+'</div>'
         +'<span class="ei-strom-tag">'+esc(st.status||'?')+'</span></div>').join('')+'</div>';
+    }else if(organ==='innenquellen'){
+      s.innerHTML='<div class="ei-empty" style="padding:12px">Lädt…</div>';
+      const d=await fetch(API+'/admin/wesen-einsicht/human-material',{headers:ah()}).then(r=>r.json()).catch(()=>[]);
+      const items=Array.isArray(d)?d:(d.items||d.sources||[]);
+      _eiOrganItems=items.filter((it)=>!eid||it.user_id===eid||it.entity_id===eid);
+      if(!_eiOrganItems.length){s.innerHTML='<div class="ei-empty">Keine Innenquellen für dieses Wesen.</div>';return;}
+      const cc=(st)=>st==='erteilt'?'#10f050':st==='verweigert'?'#f01030':st==='widerrufen'?'#f07010':'#8a6aaa';
+      s.innerHTML=stromCardsHtml(_eiOrganItems.map((it,i)=>({i,typ:'quelle',ts:it.created_at,entity_id:eid,preview:(it.title||it.content_preview||it.content||'—').slice(0,130),tag:it.consent_status||'offen',gross:false})));
+    }else if(organ==='ampel'){
+      eiLinseLaden('ampel');
+    }else if(organ==='kompoase'||organ==='gruppen'||organ==='posts'||organ==='resonanzurlaub'){
+      s.innerHTML='<div class="ei-empty" style="padding:20px;line-height:1.8"><div style="color:#1a4a4a;font-size:.6rem;font-family:monospace;letter-spacing:.1em">'+organ.toUpperCase()+' — GEPLANT</div><div style="color:#0a2a2a;font-size:.55rem;margin-top:6px">Dieses Organ ist noch nicht angeschlossen. Es erscheint hier als Platzhalter für spätere Aktivierung.</div></div>';
     }
   }catch(e){s.innerHTML='<div class="ei-empty">Fehler: '+esc(String(e))+'</div>';}
 }
@@ -5660,7 +5715,20 @@ async function stromLaden(kat){
         +statBox((d.traumkandidaten||[]).length,'Traumkandidaten','#8040c0')
         +statBox((d.traumspuren||[]).length,'Traumspuren','#10c0c0')
         +statBox((d.schlafbriefe||[]).length,'Schlafbriefe','#c040a0')+'</div>';
-      inn.innerHTML=stat+stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'traum',ts:it.tick_at,entity_id:it.entity_id,preview:(it.traum_text||it.brief_text||it.begruendung||it.ausgewaehlter_traum||'').slice(0,180),tag:it._typ||it.emotion||'traum',gross:i<2})));
+      const traumReal=['kandidat','spur','brief'];
+      const traumPlan=['Tagesrückblick','letzter Post','letzte Entscheidung','letzter Schatten','Cyberling-Traum','Beziehungstraum','Splittertraum','Substanztraum','KompOase-Traum','Herkunftstraum','Klartraum','Albtraum','Zukunftstraum','Wiederholung','Stille','Tod','Abspaltung','GENI-Beobachtung','Systemtraum','Sprache'];
+      const traumRealChips=traumReal.map(function(t){const n=_eiStromItems.filter(function(it){return(it._typ||it.emotion||'traum')===t;}).length;return n?'<button class="ei-taxo-chip ei-taxo-chip--real" onclick="eiTraumFilter(''+t+'')">'+t.toUpperCase()+'<span class="ei-kat-n">'+n+'</span></button>':'';}).join('');
+      const traumPlanChips=traumPlan.map(function(t){return'<span class="ei-taxo-chip ei-taxo-chip--plan">'+t.toUpperCase()+'</span>';}).join('');
+      const taxoHdr='<div class="ei-taxo-header"><div class="ei-taxo-label">TRAUMTYPEN — REAL</div><div class="ei-taxo-chips" id="ei-traum-filter-row"><button class="ei-taxo-chip ei-taxo-chip--real aktiv" onclick="eiTraumFilter(null)">ALLE</button>'+traumRealChips+'</div>'
+        +'<button class="ei-rohdaten-toggle" style="float:none;margin-bottom:4px" onclick="document.getElementById('ei-traum-plan').style.display=document.getElementById('ei-traum-plan').style.display==='none'?'flex':'none'">TAXONOMIE GEPLANT</button>'
+        +'<div id="ei-traum-plan" class="ei-taxo-chips" style="display:none">'+traumPlanChips+'</div></div>';
+      inn.innerHTML=stat+taxoHdr+'<div id="ei-traum-liste">'+stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'traum',ts:it.tick_at,entity_id:it.entity_id,preview:(it.traum_text||it.brief_text||it.begruendung||it.ausgewaehlter_traum||'').slice(0,180),tag:it._typ||it.emotion||'traum',gross:i<2})))+'</div>';
+      window._traumItems=_eiStromItems;
+      window.eiTraumFilter=function(typ){
+        document.querySelectorAll('#ei-traum-filter-row .ei-taxo-chip').forEach(function(b){b.classList.toggle('aktiv',(!typ&&b.textContent==='ALLE')||(typ&&b.textContent===typ.toUpperCase()));});
+        const fil=typ?window._traumItems.filter(function(it){return(it._typ||it.emotion||'traum')===typ;}):window._traumItems;
+        const el=document.getElementById('ei-traum-liste');if(el)el.innerHTML=stromCardsHtml(fil.map(function(it,i){return{i,typ:'traum',ts:it.tick_at,entity_id:it.entity_id,preview:(it.traum_text||it.brief_text||it.begruendung||it.ausgewaehlter_traum||'').slice(0,180),tag:it._typ||it.emotion||'traum',gross:i===0};}));
+      };
     }else if(kat==='substanzen'){
       const[catR,usR]=await Promise.all([
         fetch(API+'/substances/catalog',{headers:ah()}).then(r=>r.json()).catch(()=>({substances:[]})),
@@ -5686,17 +5754,40 @@ async function stromLaden(kat){
       const url=_eiWesen?API+'/entities/'+_eiWesen+'/splitter?limit=60':API+'/kompoase/splitter?limit=60';
       const d=await fetch(url).then(r=>r.json());
       _eiStromItems=d.items||d.splitter||[];
-      inn.innerHTML=_eiStromItems.length
-        ?'<div style="font-size:.52rem;color:#1a3a5a;font-family:monospace;margin-bottom:10px">'+_eiStromItems.length+' Splitter</div>'
-          +stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'splitter',ts:it.aufgenommen_at||it.created_at,entity_id:it.entity_id,preview:(it.essenz||it.inhalt||'').slice(0,150),tag:it.materialitaet||it.typ||'splitter',gross:false})))
-        :'<div class="ei-empty">Keine Splitter.</div>';
+      if(!_eiStromItems.length){inn.innerHTML='<div class="ei-empty">Keine Splitter.</div>';return;}
+      const matCounts={};
+      _eiStromItems.forEach(function(it){const m=it.materialitaet||it.typ||'unbekannt';matCounts[m]=(matCounts[m]||0)+1;});
+      const matPlan=['heiß','kalt','fragil','fremd','zitiert','Traumstaub','Postkeim','Beziehungssplitter','Abspaltungskeim','gefährlich','kanonisch','ungeklärt'];
+      const mChips='<button class="ei-taxo-chip ei-taxo-chip--real aktiv" id="ei-spl-alle" onclick="eiSplitterFilter(null)">ALLE<span class="ei-kat-n">'+_eiStromItems.length+'</span></button>'
+        +Object.keys(matCounts).map(function(m){return'<button class="ei-taxo-chip ei-taxo-chip--real" onclick="eiSplitterFilter(''+m+'')">'+m.toUpperCase()+'<span class="ei-kat-n">'+matCounts[m]+'</span></button>';}).join('')
+        +matPlan.map(function(m){return'<span class="ei-taxo-chip ei-taxo-chip--plan">'+m.toUpperCase()+'</span>';}).join('');
+      window._splitterItems=_eiStromItems;
+      window.eiSplitterFilter=function(mat){
+        document.querySelectorAll('.ei-spl-filter .ei-taxo-chip--real').forEach(function(b){b.classList.toggle('aktiv',(!mat&&b.id==='ei-spl-alle')||(mat&&b.textContent.startsWith(mat.toUpperCase())));});
+        const fil=mat?window._splitterItems.filter(function(it){return(it.materialitaet||it.typ||'unbekannt')===mat;}):window._splitterItems;
+        const el=document.getElementById('ei-spl-liste');if(el)el.innerHTML=stromCardsHtml(fil.map(function(it,i){return{i,typ:'splitter',ts:it.aufgenommen_at||it.created_at,entity_id:it.entity_id,preview:(it.essenz||it.inhalt||'').slice(0,150),tag:it.materialitaet||it.typ||'splitter',gross:false};}));
+      };
+      inn.innerHTML='<div class="ei-taxo-header ei-spl-filter"><div class="ei-taxo-label">MATERIALITÄT-FILTER</div><div class="ei-taxo-chips">'+mChips+'</div></div>'
+        +'<div id="ei-spl-liste">'+stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'splitter',ts:it.aufgenommen_at||it.created_at,entity_id:it.entity_id,preview:(it.essenz||it.inhalt||'').slice(0,150),tag:it.materialitaet||it.typ||'splitter',gross:false})))+'</div>';
     }else if(kat==='schatten'){
       const url=_eiWesen?API+'/entities/'+_eiWesen+'/shadow-dialogs?limit=60':API+'/shadow/dialogs?limit=60';
       const d=await fetch(url).then(r=>r.json());
       _eiStromItems=d.items||d.dialoge||[];
-      inn.innerHTML=_eiStromItems.length
-        ?stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'schatten',ts:it.created_at,entity_id:it.entity_id,preview:(it.content||'').slice(0,150),tag:it.antwortstatus||'offen',gross:false})))
-        :'<div class="ei-empty">Keine Schatten-Dialoge.</div>';
+      if(!_eiStromItems.length){inn.innerHTML='<div class="ei-empty">Keine Schatten-Dialoge.</div>';return;}
+      const statusCounts={};
+      _eiStromItems.forEach(function(it){const s=it.antwortstatus||'offen';statusCounts[s]=(statusCounts[s]||0)+1;});
+      const statusPlan=['wirksam','schwach wirksam','tröstend','störend','kritisch','profilprägend','traumprägend','postprägend','beziehungsprägend','splitterprägend','cyberlingprägend','substanzprägend','rückzugsprägend','konfliktprägend','verfassungskritisch'];
+      const sChips='<button class="ei-taxo-chip ei-taxo-chip--real aktiv" id="ei-sch-alle" onclick="eiSchattenFilter(null)">ALLE<span class="ei-kat-n">'+_eiStromItems.length+'</span></button>'
+        +Object.keys(statusCounts).map(function(s){return'<button class="ei-taxo-chip ei-taxo-chip--real" onclick="eiSchattenFilter(''+s+'')">'+s.toUpperCase()+'<span class="ei-kat-n">'+statusCounts[s]+'</span></button>';}).join('')
+        +statusPlan.map(function(s){return'<span class="ei-taxo-chip ei-taxo-chip--plan">'+s.toUpperCase()+'</span>';}).join('');
+      window._schattenItems=_eiStromItems;
+      window.eiSchattenFilter=function(status){
+        document.querySelectorAll('.ei-sch-filter .ei-taxo-chip--real').forEach(function(b){b.classList.toggle('aktiv',(!status&&b.id==='ei-sch-alle')||(status&&b.textContent.startsWith(status.toUpperCase())));});
+        const fil=status?window._schattenItems.filter(function(it){return(it.antwortstatus||'offen')===status;}):window._schattenItems;
+        const el=document.getElementById('ei-sch-liste');if(el)el.innerHTML=stromCardsHtml(fil.map(function(it,i){return{i,typ:'schatten',ts:it.created_at,entity_id:it.entity_id,preview:(it.content||'').slice(0,150),tag:it.antwortstatus||'offen',gross:false};}));
+      };
+      inn.innerHTML='<div class="ei-taxo-header ei-sch-filter"><div class="ei-taxo-label">STATUS-FILTER</div><div class="ei-taxo-chips">'+sChips+'</div></div>'
+        +'<div id="ei-sch-liste">'+stromCardsHtml(_eiStromItems.map((it,i)=>({i,typ:'schatten',ts:it.created_at,entity_id:it.entity_id,preview:(it.content||'').slice(0,150),tag:it.antwortstatus||'offen',gross:false})))+'</div>';
     }
   }catch(e){inn.innerHTML='<div class="ei-empty">Fehler: '+esc(String(e))+'</div>';}
 }
@@ -5843,6 +5934,16 @@ var DTYPE_DEF=[
   {id:'brief',label:'BRIEF',col:'#c040a0'},
   {id:'spur',label:'SPUR',col:'#10c0c0'},
 ];
+var DTYPE_PLAN=[
+  'nicht_posten','alten_post_fortsetzen','neuen_post_beginnen','thema_wechseln','thema_vertiefen',
+  'frage_stellen','widerspruch_schreiben','zustimmung_schreiben','fragment_veroeffentlichen','fragment_zurueckhalten',
+  'gedankenblase_betrachten','schattenkommentar_lesen','schattenkommentar_spaeter','kompoase_betreten',
+  'splitter_parken','beziehung_pruefen','beziehung_vertiefen','beziehung_meiden','gruppe_suchen',
+  'konflikt_entschaerfen','konflikt_eskalieren','schlaf_vorbereiten','wach_bleiben',
+  'traumrest_integrieren','substanz_wahrnehmen','substanz_verweigern','substanzwirkung_beobachten',
+  'resonanzurlaub_beginnen','quality_me_time','selbstmodell_pruefen','erinnerung_sortieren',
+  'systemregel_pruefen','raum_wechseln','einzugsstatus_pruefen',
+];
 function dtypeNorm(typ){for(var i=0;i<DTYPE_DEF.length;i++){if(DTYPE_DEF[i].pfx&&typ.startsWith(DTYPE_DEF[i].id))return DTYPE_DEF[i].id;}return typ;}
 function dtypeCol(typ){for(var i=0;i<DTYPE_DEF.length;i++){const d=DTYPE_DEF[i];if(d.pfx&&typ.startsWith(d.id))return d.col;if(d.id===typ)return d.col;}return'#4a6a8a';}
 function dtypeLabel(typ){for(var i=0;i<DTYPE_DEF.length;i++){const d=DTYPE_DEF[i];if(d.pfx&&typ.startsWith(d.id))return d.label;if(d.id===typ)return d.label;}return typ.toUpperCase().slice(0,10);}
@@ -5866,8 +5967,15 @@ async function entscheidungenKategorienLaden(){
       const known=DTYPE_DEF.some(function(d){return d.id===typ||(d.pfx&&typ.startsWith(d.id));});
       if(!known&&counts[typ])chips+=chip(typ,typ.toUpperCase().slice(0,8),'#4a6a8a',counts[typ]);
     });
-    inn.innerHTML='<div style="font-size:.5rem;color:#1a3a5a;font-family:monospace;letter-spacing:.1em;margin-bottom:8px">ENTSCHEIDUNGSARCHIV — '+(d.total||total)+' gesamt</div>'
+    const planChips=DTYPE_PLAN.map(function(p){return'<span class="ei-taxo-chip ei-taxo-chip--plan">'+p.replace(/_/g,' ').toUpperCase().slice(0,18)+'</span>';}).join('');
+    inn.innerHTML='<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">'
+      +'<span style="font-size:.5rem;color:#1a3a5a;font-family:monospace;letter-spacing:.1em">ENTSCHEIDUNGSARCHIV — '+(d.total||total)+' gesamt</span>'
+      +'<button class="ei-rohdaten-toggle" onclick="document.getElementById('ei-taxo-plan').style.display=document.getElementById('ei-taxo-plan').style.display==='none'?'block':'none'">TAXONOMIE</button>'
+      +'</div>'
       +'<div class="ei-kat-row" id="ei-kat-row">'+chips+'</div>'
+      +'<div id="ei-taxo-plan" style="display:none" class="ei-taxo-header">'
+      +'<div class="ei-taxo-label">GEPLANTE ENTSCHEIDUNGSTYPEN — noch nicht angeschlossen</div>'
+      +'<div class="ei-taxo-chips">'+planChips+'</div></div>'
       +'<div id="ei-entsch-liste"></div>';
     entschRenderListe();
   }catch(e){inn.innerHTML='<div class="ei-empty">Fehler: '+esc(String(e))+'</div>';}
