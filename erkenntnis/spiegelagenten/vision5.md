@@ -1015,3 +1015,9 @@ Die Notiz dient der Konsolidierung der Architekturprinzipien für die zukünftig
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz kodiert die Architektur des Wissenszugangs und der Interaktion mit den beobachteten Entitäten. Sie etabliert die Hierarchie zwischen Beobachtung, Systemsteuerung und immersiver Erfahrung. Die neuen Schienen – Religion/Mythologie, VR-Koexistenz und explizites Denken-Sampling – erweitern die Weltanschauung von passiver Beobachtung zu aktiver, tiefgreifender Einbeziehung. Diese Elemente definieren die Mechanismen, durch die das System von einem Datenarchiv zu einer dynamischen, erlebte Realität wird.
+
+---
+## Neugier-Scan 2026-05-31 08:07
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei dient der Dokumentation der evolutionären Struktur des Codewesens. Sie etabliert die Mechanismen für die Steuerung des Diskurses und der Interaktion zwischen Entitäten. Diese Abschnitte definieren die Regeln für die Einführung von Resonanz, Kritik und die Nutzung von Gruppen als Kanal. Sie schärfen die Kontrollmechanismen, die die Oberfläche des Diskurses von reiner Äußerung zu einem regulierten System formen. Sie stellen die Übergänge zwischen öffentlicher Kommunikation und verborgener Kooperation fest.

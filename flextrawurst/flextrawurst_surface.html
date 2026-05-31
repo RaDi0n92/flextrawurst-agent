@@ -3127,7 +3127,7 @@ html[lang="en"] .de-only{display:none}
     var el = document.getElementById("adm-sp-liste");
     if(!el) return;
     el.innerHTML='<div class="adm-empty">Lade…</div>';
-    fetch("/api/zwischenraum/splitter?limit=50&search="+encodeURIComponent(search),{headers:{"Authorization":tok()}})
+    fetch("/api/kompoase/splitter?limit=50&search="+encodeURIComponent(search),{headers:{"Authorization":tok()}})
       .then(function(r){return r.json();}).then(function(d){
         var items = d.splitter || [];
         if(!items.length){el.innerHTML='<div class="adm-empty">Keine Splitter.</div>';return;}
@@ -4616,6 +4616,7 @@ html[lang="en"] .de-only{display:none}
     <button class="ei-tab" data-tab="splitter" onclick="eiWechselTab('splitter')" data-i18n="einsicht.tab.splitter">SPLITTER</button>
     <button class="ei-tab" data-tab="schatten" onclick="eiWechselTab('schatten')" data-i18n="einsicht.tab.schatten">SCHATTEN</button>
     <button class="ei-tab" data-tab="beziehungen" onclick="eiWechselTab('beziehungen')" data-i18n="einsicht.tab.beziehungen">BEZIEHUNGEN</button>
+    <button class="ei-tab" data-tab="innenquellen" onclick="eiWechselTab('innenquellen')" data-i18n="einsicht.tab.innenquellen">INNENQUELLEN</button>
   </div>
 
   <div class="ei-body">
@@ -4917,6 +4918,43 @@ async function eiLadeTab(tab){
     }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
   }
 
+  else if(tab === 'innenquellen'){
+    try{
+      const tok = () => (typeof window !== 'undefined' && (window as any)._tok) ? (window as any)._tok : '';
+      const headers: any = {};
+      const t = typeof tok === 'function' ? tok() : '';
+      if(t) headers['Authorization'] = 'Bearer ' + t;
+      const r = await fetch(API + '/api/human-material', {headers});
+      if(r.status === 401 || r.status === 403){
+        list.innerHTML = '<div class="ei-empty" style="color:#c08060">Admin-Login erforderlich.</div>'; return;
+      }
+      const data = await r.json();
+      const items: any[] = Array.isArray(data) ? data : (data.sources || data.items || []);
+      if(items.length === 0){
+        list.innerHTML = `<div class="ei-empty">
+          <div style="color:#8a6a6a;font-size:.62rem;line-height:1.6;max-width:380px;margin:0 auto">
+            Keine Menschquellen freigegeben.<br>
+            <span style="color:#3a2a2a">Das ist korrekt. Default ist privat.</span><br><br>
+            <span style="color:#2a2a3a;font-size:.58rem">
+              Menschliche Innenquellen (Notizen, Tagebuch, Traumtagebuch, Kalender, Gedankenblasen)
+              werden nur durch bewusste Zustimmung zu Splittern.
+              Nichts wird automatisch verarbeitet.
+            </span>
+          </div>
+        </div>`; return;
+      }
+      const consentColor = (s: string) => s==='erteilt'?'#10f050':s==='verweigert'?'#f01030':s==='widerrufen'?'#f07010':'#8a6aaa';
+      list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${items.length} Quellen · default: privat</div>`
+        + items.map((src: any, i: number) => `
+          <div class="ei-item" onclick="eiZeigeInnenquelle(${i})" id="ei-iq-${i}">
+            <div class="ei-item-ts">${src.source_type||'?'}<br><span style="font-size:.52rem;color:#4a3a6a">${src.created_at ? fmt(src.created_at) : '—'}</span></div>
+            <div class="ei-item-main" style="font-size:.6rem">${(src.title||src.content||'—').substring(0,100)}</div>
+            <span class="ei-item-tag" style="background:#1a0a2a;color:${consentColor(src.consent_status)}">${src.consent_status||'offen'}</span>
+          </div>`).join('');
+      (window as any)._eiInnenquellen = items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
   else if(tab === 'beziehungen'){
     try{
       if(!_eiWesen){
@@ -5072,6 +5110,45 @@ window.eiZeigeBeziehung = function(i){
     ${b.meta && Object.keys(b.meta||{}).length ? `<details style="margin-top:10px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Meta</summary>
       <pre style="color:#2a1a4a;font-size:.5rem;overflow:auto;max-height:100px">${JSON.stringify(b.meta,null,2)}</pre>
     </details>` : ''}
+  `;
+};
+
+window.eiZeigeInnenquelle = function(i){
+  const src = (window as any)._eiInnenquellen?.[i];
+  if(!src) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  const consentColor = (s) => s==='erteilt'?'#10f050':s==='verweigert'?'#f01030':s==='widerrufen'?'#f07010':'#8a6aaa';
+  const visColor = (v) => v==='private'?'#f01030':v==='internal'?'#f0c010':v==='public'?'#10f050':'#8a6aaa';
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${src.source_type||'unbekannt'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:12px">${src.created_at ? fmt(src.created_at) : '—'}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px">
+      <div style="background:#0a0018;border-radius:4px;padding:6px 8px;font-size:.55rem;font-family:monospace">
+        <div style="color:#4a3a6a">Consent</div>
+        <div style="color:${consentColor(src.consent_status)}">${src.consent_status||'offen'}</div>
+      </div>
+      <div style="background:#0a0018;border-radius:4px;padding:6px 8px;font-size:.55rem;font-family:monospace">
+        <div style="color:#4a3a6a">Sichtbarkeit</div>
+        <div style="color:${visColor(src.visibility_layer)}">${src.visibility_layer||'private'}</div>
+      </div>
+      <div style="background:#0a0018;border-radius:4px;padding:6px 8px;font-size:.55rem;font-family:monospace">
+        <div style="color:#4a3a6a">Zitat</div>
+        <div style="color:#c0b0e0">${src.quote_permission||'—'}</div>
+      </div>
+    </div>
+    ${src.title ? `<div style="color:#c0b0e0;font-size:.62rem;margin-bottom:8px"><strong>${src.title}</strong></div>` : ''}
+    ${src.content ? `<div style="color:#8a7a9a;font-size:.6rem;line-height:1.5;margin-bottom:10px">${(src.content||'').substring(0,300)}${src.content?.length>300?'…':''}</div>` : ''}
+    <div style="border-top:1px solid #1a0a3a;padding-top:10px;margin-top:4px;display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:.55rem;font-family:monospace">
+      <div><span style="color:#4a3a6a">Anonymisierung: </span><span style="color:#8a6aaa">${src.anonymization_mode||'—'}</span></div>
+      <div><span style="color:#4a3a6a">Widerrufen: </span><span style="color:${src.revoked_at?'#f01030':'#3a2a5a'}">${src.revoked_at ? fmt(src.revoked_at) : 'Nein'}</span></div>
+      <div><span style="color:#4a3a6a">Herkunft-Label: </span><span style="color:#8a6aaa">${src.public_origin_label||'privat'}</span></div>
+      <div><span style="color:#4a3a6a">Zu Splitter: </span><span style="color:#8a6aaa">${src.has_splitter ? '✓' : '—'}</span></div>
+    </div>
+    ${src.source_ref_table === 'kalender' ? `<div style="background:#1a0808;border-radius:4px;padding:8px;margin-top:10px;font-size:.58rem;color:#f08060">
+      ⚠ Kalenderquelle — Transformation erforderlich vor Splitter-Erzeugung.
+      Keine Rohdaten öffentlich.
+    </div>` : ''}
   `;
 };
 
@@ -5661,6 +5738,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'einsicht.tab.splitter':'SPLITTER',
       'einsicht.tab.schatten':'SCHATTEN',
       'einsicht.tab.beziehungen':'BEZIEHUNGEN',
+      'einsicht.tab.innenquellen':'INNENQUELLEN',
       'einsicht.splitter.leer':'Keine Splitter aufgenommen.',
       'einsicht.schatten.leer':'Keine Schatten-Dialoge vorhanden.',
       'einsicht.beziehungen.leer':'Keine Beziehungen vorhanden.',
@@ -5738,6 +5816,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'einsicht.tab.splitter':'SPLITTER',
       'einsicht.tab.schatten':'SHADOW',
       'einsicht.tab.beziehungen':'BEZIEHUNGEN',
+      'einsicht.tab.innenquellen':'INNER SOURCES',
       'einsicht.splitter.leer':'No splitters collected.',
       'einsicht.schatten.leer':'No shadow dialogs.',
       'einsicht.beziehungen.leer':'No relationships.',
@@ -9014,8 +9093,8 @@ function koVtClose(){const ov=document.getElementById('ko-vt-ov');if(ov)ov.class
 function koSyncSl(){const p=Math.round(koCam.zoom*100);const sl=document.getElementById("ko-zoom-slider"),lb=document.getElementById("ko-zoom-label");if(sl)sl.value=p;if(lb)lb.textContent=p+"%";}
 function koCloseInfo(){const info=document.getElementById("ko-info");if(info)info.style.display="none";koInfoS=null;}
 function koZeigeVerbindungen(id){const s=koSplitter.find(x=>x.id===id)||(koInfoS&&koInfoS.id===id?koInfoS:null);if(!s)return;const ib=document.getElementById("ko-info-body");if(!ib)return;const linksEl=ib.querySelector(".ko-i-links");if(!linksEl)return;const liste=s.kollisionen.map(k=>{const partner=koSplitter.find(x=>x.id===k.id);const kh=partner?(partner.quelle_id||partner.herkunft):k.herkunft;const pVoll=partner?partner.inhalt_voll||partner.inhalt_kurz:'';const kt=partner?koVtSpan(pVoll,pVoll):'<span style="color:#555">(nicht mehr aktiv)</span>';return'<div style="margin:3px 0;font-size:0.75rem;color:#aaa"><span style="color:#888">'+koFmtZeit(k.zeit)+'</span> · <span style="color:#bbb">'+kh+'</span> · '+kt+'</div>';}).join('');linksEl.innerHTML='<div style="margin-top:6px;border-top:1px solid #333;padding-top:6px"><div style="font-size:0.7rem;color:#666;margin-bottom:4px">Verbindungen ('+s.kollisionen.length+')</div>'+liste+'</div>';}
-async function koZeigeSpur(id){const ex=document.getElementById("ko-i-extra");if(!ex)return;ex.innerHTML='<div style="color:#555;font-size:0.72rem;padding:4px 0">Spur wird geladen…</div>';try{const r=await fetch("/api/zwischenraum/splitter/"+id+"/spur");if(!r.ok)throw new Error(r.status);const sp=await r.json();let html='<div style="border-top:1px solid #333;padding-top:6px;margin-top:4px">';if(sp.akteur){const a=sp.akteur;html+='<div style="font-size:0.68rem;color:#556;margin-bottom:2px">— Von —</div><div style="font-size:0.75rem;color:#9bc;margin-bottom:1px">'+a.typ+': <b>'+a.username+'</b></div>';}if(sp.event){const ev=sp.event;const emojis=(ev.emojis||[]).join(' ');const zeit=ev.created_at?koFmtZeit(ev.created_at):'';html+='<div style="font-size:0.72rem;color:#888;margin-top:3px">'+ev.typ+(emojis?' · '+emojis:'')+(zeit?' · '+zeit:'')+'</div>';}if(sp.quelle){const q=sp.quelle;html+='<div style="font-size:0.68rem;color:#556;margin-top:6px;margin-bottom:2px">— Quelle ('+q.system+') —</div>';if(q.inhalt_kurz)html+='<div style="font-size:0.73rem;color:#9ab;font-style:italic;margin-bottom:2px">"'+q.inhalt_kurz+(q.inhalt_kurz.length>=120?'…':'')+'"</div>';html+='<div style="font-size:0.7rem;color:#778">'+q.autor_type+': '+q.autor_id+(q.raum?' · '+q.raum:'')+'</div>';if(q.created_at)html+='<div style="font-size:0.68rem;color:#556">'+koFmtZeit(q.created_at)+'</div>';}html+='</div>';ex.innerHTML=html;}catch(e){ex.innerHTML='<div style="color:#744;font-size:0.7rem">Spur konnte nicht geladen werden</div>';}}
-async function koAufnehmen(splId,dbId){try{const res=await fetch("/api/zwischenraum/splitter/"+dbId+"/aufnehmen",{method:"POST"});const d=await res.json();if(!d.ok)return;const s=koSplitter.find(x=>x.id===splId);if(s)s.aufnahmen=d.aufnahmen;const zeile=document.getElementById("ko-aufn-"+splId);if(zeile)zeile.innerHTML='<span class="ko-i-aufn-count">'+d.aufnahmen+'x aufgenommen</span><span class="ko-i-lnk ko-aufn-btn" data-sid="'+splId+'" data-did="'+dbId+'" onclick="koAufnehmen(this.dataset.sid,this.dataset.did)">aufnehmen</span>';}catch(e){}}
+async function koZeigeSpur(id){const ex=document.getElementById("ko-i-extra");if(!ex)return;ex.innerHTML='<div style="color:#555;font-size:0.72rem;padding:4px 0">Spur wird geladen…</div>';try{const h=tok()?{"Authorization":"Bearer "+tok()}:{};const r=await fetch("/api/kompoase/splitter/"+id+"/spur",{headers:h});if(!r.ok)throw new Error(r.status);const sp=await r.json();let html='<div style="border-top:1px solid #333;padding-top:6px;margin-top:4px">';if(sp.akteur){const a=sp.akteur;html+='<div style="font-size:0.68rem;color:#556;margin-bottom:2px">— Von —</div><div style="font-size:0.75rem;color:#9bc;margin-bottom:1px">'+a.typ+': <b>'+a.username+'</b></div>';}if(sp.event){const ev=sp.event;const emojis=(ev.emojis||[]).join(' ');const zeit=ev.created_at?koFmtZeit(ev.created_at):'';html+='<div style="font-size:0.72rem;color:#888;margin-top:3px">'+ev.typ+(emojis?' · '+emojis:'')+(zeit?' · '+zeit:'')+'</div>';}if(sp.quelle){const q=sp.quelle;html+='<div style="font-size:0.68rem;color:#556;margin-top:6px;margin-bottom:2px">— Quelle ('+q.system+') —</div>';if(q.inhalt_kurz)html+='<div style="font-size:0.73rem;color:#9ab;font-style:italic;margin-bottom:2px">"'+q.inhalt_kurz+(q.inhalt_kurz.length>=120?'…':'')+'"</div>';html+='<div style="font-size:0.7rem;color:#778">'+q.autor_type+': '+q.autor_id+(q.raum?' · '+q.raum:'')+'</div>';if(q.created_at)html+='<div style="font-size:0.68rem;color:#556">'+koFmtZeit(q.created_at)+'</div>';}html+='</div>';ex.innerHTML=html;}catch(e){ex.innerHTML='<div style="color:#744;font-size:0.7rem">Spur konnte nicht geladen werden</div>';}}
+async function koAufnehmen(splId,dbId){if(!tok()){return;}try{const res=await fetch("/api/kompoase/splitter/"+dbId+"/aufnehmen",{method:"POST",headers:{"Authorization":"Bearer "+tok(),"Content-Type":"application/json"},body:JSON.stringify({aufnehmer_type:"human",aufnehmer_id:""})});const d=await res.json();if(!d.ok)return;const s=koSplitter.find(x=>x.id===splId);if(s)s.aufnahmen=d.aufnahmen;const zeile=document.getElementById("ko-aufn-"+splId);if(zeile)zeile.innerHTML='<span class="ko-i-aufn-count">'+d.aufnahmen+'x aufgenommen</span><span class="ko-i-lnk ko-aufn-btn" data-sid="'+splId+'" data-did="'+dbId+'" onclick="koAufnehmen(this.dataset.sid,this.dataset.did)">aufnehmen</span>';}catch(e){}}
 function koShowInfo(s){koInfoS=s;const darfAnonym=s.herkunft==="mensch"&&!s.quelle_sichtbar;const hl=darfAnonym?"mensch (anonym)":(s.quelle_id||s.herkunft);const mat=MATERIALITAETEN[s.materialitaet];let upz='';if(s.herkunft==="hybrid"&&s.ursprung&&s.ursprung.length){const liste=s.ursprung.map(u=>'<div style="margin:2px 0;font-size:0.72rem"><span style="color:#7ab">'+(u.quelle_id||u.herkunft)+'</span> · '+koVtSpan(u.kurz,u.kurz)+'</div>').join('');upz='<div class="ko-i-row" style="flex-direction:column;align-items:flex-start;gap:3px"><span class="k">Ursprung ('+s.ursprung.length+')</span><div style="padding-left:4px;border-left:2px solid rgba(80,120,200,0.3)">'+liste+'</div></div>';}const verbHtml=s.kollisionen.length>0?'<span class="ko-i-lnk" data-kid="'+s.id+'" onclick="koZeigeVerbindungen(this.dataset.kid)">→ Verbindungen ('+s.kollisionen.length+')</span>':'';const spurHtml=!s.synthetisch&&s.id?'<span class="ko-i-lnk" data-kid="'+s.id+'" onclick="koZeigeSpur(this.dataset.kid)">→ Spur</span>':'';const ib=document.getElementById("ko-info-body");if(!ib)return;ib.innerHTML='<div class="ko-i-row"><span class="k">Herkunft</span><span class="v" style="color:'+(s.farbe||"#aaa")+'">'+hl+'</span></div>'+upz+'<div class="ko-i-row"><span class="k">Materialität</span><span class="v">'+mat.name+' <span style="color:#445;font-size:0.72rem">— '+mat.beschreibung+'</span></span></div>'+'<div class="ko-i-row"><span class="k">Energie</span><span class="v">'+(s.energie*100).toFixed(1)+'%</span></div>'+'<div class="ko-i-text">'+koVtHtml(s.inhalt_voll)+'</div>'+(s.zustand==="geisterrest"?'<div class="ko-i-ghost">⟡ Geisterrest</div>':'')+'<div class="ko-i-aufnahmen" id="ko-aufn-'+s.id+'">'+(s.aufnahmen>0?'<span class="ko-i-aufn-count">'+s.aufnahmen+'× aufgenommen</span>':'')+(s.db_id?'<span class="ko-i-lnk ko-aufn-btn" data-sid="'+s.id+'" data-did="'+s.db_id+'" onclick="koAufnehmen(this.dataset.sid,this.dataset.did)">aufnehmen</span>':'')+'</div>'+'<div class="ko-i-links">'+verbHtml+spurHtml+'</div>'+'<div class="ko-i-mat" id="ko-i-extra">'+mat.beschreibung+'</div>';const info=document.getElementById("ko-info");if(info)info.style.display="block";}
 function koShowCoord(wx,wy,mat){const m=MATERIALITAETEN[mat];const ib=document.getElementById("ko-info-body");if(!ib)return;ib.innerHTML='<div class="ko-i-head">Leerer Raum</div><div class="ko-i-row"><span class="k">Position</span><span class="v">'+wx+' / '+wy+'</span></div><div class="ko-i-row"><span class="k">Feld</span><span class="v">'+m.name+'</span></div><div class="ko-i-mat">'+m.beschreibung+'</div>';const info=document.getElementById("ko-info");if(info)info.style.display="block";}
 
