@@ -5190,6 +5190,42 @@ def mw_notiz_splitter_freigeben(
 
 # --- Kalender ---
 
+@app.get("/mw/kalender/alle")
+def mw_kalender_alle(
+    limit: int = Query(default=200, le=500),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Alle Kalendereinträge des Nutzers, älteste zuerst, für die Archiv-Liste."""
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT COUNT(*) AS n FROM mw_kalender WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true'",
+                (user_id,)
+            )
+            gesamt = cur.fetchone()["n"]
+            cur.execute(
+                "SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, created_at "
+                "FROM mw_kalender WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY start_zeit DESC LIMIT %s OFFSET %s",
+                (user_id, limit, offset)
+            )
+            rows = cur.fetchall()
+            termine = []
+            for r in cur.fetchall() if False else rows:
+                d = dict(r)
+                for k in ("start_zeit", "end_zeit", "created_at"):
+                    if d.get(k):
+                        d[k] = d[k].isoformat()
+                termine.append(d)
+        return {"gesamt": gesamt, "offset": offset, "limit": limit, "termine": termine}
+    finally:
+        conn.close()
+
+
 @app.get("/mw/kalender")
 def mw_kalender_liste(
     von: str | None = Query(default=None),  # ISO date
@@ -7047,25 +7083,25 @@ def welt_foyer():
                 })
 
             # Feed-Sektionen: 4 × 4 Posts, global
-            rows_lebendig = _dk_fetch(cur, "", [], "p.created_at DESC")
-            ids_l = [r["id"] for r in rows_lebendig]
+            # Von Menschen: neueste, meiste Resonanz, zufällig (limit 6 each)
+            rows_mensch_neu = _dk_fetch(cur, "p.autor_type = 'human'", [], "p.created_at DESC", limit=6)
+            ids_m = [r["id"] for r in rows_mensch_neu]
+            rows_mensch_resonanz = _dk_fetch(cur, "p.autor_type = 'human' AND p.id != ALL(%s::uuid[])", [ids_m],
+                "resonanz_count DESC, p.view_count DESC", limit=6)
 
-            rows_zufaellig = _dk_fetch(
-                cur, "p.id != ALL(%s::uuid[])", [ids_l], "RANDOM()"
-            )
-            ids_lz = ids_l + [r["id"] for r in rows_zufaellig]
+            # Von Wesen: neueste, meiste Resonanz (limit 4 each)
+            rows_wesen_neu = _dk_fetch(cur, "p.autor_type = 'entity'", [], "p.created_at DESC", limit=4)
+            ids_w = [r["id"] for r in rows_wesen_neu]
+            rows_wesen_resonanz = _dk_fetch(cur, "p.autor_type = 'entity' AND p.id != ALL(%s::uuid[])", [ids_w],
+                "resonanz_count DESC, p.view_count DESC", limit=4)
 
-            rows_wenig = _dk_fetch(
-                cur, "p.id != ALL(%s::uuid[])", [ids_lz],
-                "resonanz_count ASC, p.created_at ASC",
-            )
-            ids_lzw = ids_lz + [r["id"] for r in rows_wenig]
+            # Legacy-Sektionen (für Rückwärtskompatibilität noch befüllt)
+            rows_lebendig = rows_mensch_neu[:4]
+            rows_zufaellig = rows_wesen_neu[:4]
+            rows_wenig: list = []
+            rows_einzigartig: list = []
 
-            rows_einzigartig = _dk_fetch(
-                cur, "p.id != ALL(%s::uuid[])", [ids_lzw], "RANDOM()"
-            )
-
-            all_rows = rows_lebendig + rows_zufaellig + rows_wenig + rows_einzigartig
+            all_rows = rows_mensch_neu + rows_mensch_resonanz + rows_wesen_neu + rows_wesen_resonanz
             emoji_map = _dk_emoji_map(cur, [r["id"] for r in all_rows])
 
             # Top-Spuren
@@ -7097,6 +7133,10 @@ def welt_foyer():
                 "zufaellig": [_dk_row(r, emoji_map) for r in rows_zufaellig],
                 "wenig_resonanz": [_dk_row(r, emoji_map) for r in rows_wenig],
                 "einzigartig": [_dk_row(r, emoji_map) for r in rows_einzigartig],
+                "von_menschen_neu": [_dk_row(r, emoji_map) for r in rows_mensch_neu],
+                "von_menschen_resonanz": [_dk_row(r, emoji_map) for r in rows_mensch_resonanz],
+                "von_wesen_neu": [_dk_row(r, emoji_map) for r in rows_wesen_neu],
+                "von_wesen_resonanz": [_dk_row(r, emoji_map) for r in rows_wesen_resonanz],
             },
         }
     finally:

@@ -3775,6 +3775,10 @@ html[lang="en"] .de-only{display:none}
       <span class="mw-bereich-name">Profil</span>
       <span class="mw-bereich-zahl">↗</span>
     </div>
+    <div class="mw-bereich-karte" onclick="mwOeffne('gedanken')">
+      <span class="mw-bereich-name" data-i18n="mw.gedanken">Gedanken</span>
+      <span class="mw-bereich-zahl" id="mw-z-gedanken">—</span>
+    </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('innenquellen')">
       <span class="mw-bereich-name" data-i18n="mw.innenquellen">Innenquellen</span>
       <span class="mw-bereich-zahl" id="mw-z-innenquellen">—</span>
@@ -3830,7 +3834,8 @@ html[lang="en"] .de-only{display:none}
       fetch(MW_API + "/mw/kalender", {headers: h}).then(r=>r.json()).catch(()=>null),
       fetch(MW_API + "/mw/notizen?gepinnt=true", {headers: h}).then(r=>r.json()).catch(()=>null),
       fetch(MW_API + "/nachrichten/ungelesen", {headers: h}).then(r=>r.json()).catch(()=>null),
-    ]).then(([tb, trb, nz, kal, pinned, nm]) => {
+      fetch(MW_API + "/gedankenblasen?limit=1&status=aktiv", {headers: h}).then(r=>r.json()).catch(()=>null),
+    ]).then(([tb, trb, nz, kal, pinned, nm, gb]) => {
       if (tb) document.getElementById("mw-z-tagebuch").textContent = tb.total ?? "—";
       if (trb) document.getElementById("mw-z-traumtagebuch").textContent = trb.total ?? "—";
       if (nz) document.getElementById("mw-z-notizen").textContent = String((nz.notizen||[]).length) || "—";
@@ -3843,6 +3848,10 @@ html[lang="en"] .de-only{display:none}
         const el = document.getElementById("mw-z-nachrichten");
         if (el) el.textContent = nm.ungelesen > 0 ? nm.ungelesen + " neu" : "✓";
         if (nm.ungelesen > 0 && el) el.style.color = "#5ae8ff";
+      }
+      if (gb) {
+        const gbEl = document.getElementById("mw-z-gedanken");
+        if (gbEl) gbEl.textContent = String(gb.gesamt || gb.total || (gb.gedankenblasen||[]).length || '—');
       }
       // Angepinnte Notiz auftauchen lassen
       const pin = (pinned?.notizen || []);
@@ -3860,7 +3869,7 @@ html[lang="en"] .de-only{display:none}
   function mwOeffne(bereich) {
     document.getElementById("mw-panel").style.display = "flex";
     document.getElementById("mw-panel-titel").textContent =
-      {tagebuch:"Tagebuch",traumtagebuch:"Traumtagebuch",notizen:"Notizen",kalender:"Kalender",nachrichten:"Nachrichten",profil:"Profil",innenquellen:"Innenquellen & Consent"}[bereich] || bereich;
+      {tagebuch:"Tagebuch",traumtagebuch:"Traumtagebuch",notizen:"Notizen",kalender:"Kalender",nachrichten:"Nachrichten",profil:"Profil",innenquellen:"Innenquellen & Consent",gedanken:"Gedanken"}[bereich] || bereich;
     const inhalt = document.getElementById("mw-panel-inhalt");
     inhalt.innerHTML = '<div style="color:#1a3a4a;font-size:0.7rem;padding:12px">Lade…</div>';
     const tok = mwToken();
@@ -3871,6 +3880,7 @@ html[lang="en"] .de-only{display:none}
     else if (bereich === "notizen") mwLadeNotizen(inhalt, h);
     else if (bereich === "kalender") mwLadeKalender(inhalt, h);
     else if (bereich === "nachrichten") mwLadeNachrichten(inhalt, h);
+    else if (bereich === "gedanken") mwLadeGedanken(inhalt, h);
     else if (bereich === "innenquellen") mwLadeInnenquellen(inhalt, h);
     else if (bereich === "profil") {
       document.getElementById("mw-panel").style.display = "none";
@@ -4295,6 +4305,33 @@ html[lang="en"] .de-only{display:none}
             .then(()=>mwLadeKalender(el,h));
         };
       });
+      // Alle Termine (scrollbare Liste unter der Wochenansicht)
+      fetch(MW_API+"/mw/kalender/alle", {headers:h}).then(r=>r.json()).then(alleData=>{
+        const alle = alleData.termine || [];
+        if (!alle.length) return;
+        const alleEl = document.createElement('div');
+        alleEl.style.cssText = 'margin-top:16px;border-top:1px solid #0a1a2a;padding-top:12px';
+        alleEl.innerHTML = '<div style="font-size:.6rem;color:#2a6a4a;font-family:monospace;margin-bottom:8px">ALLE TERMINE ('+(alleData.gesamt||alle.length)+')</div>'
+          + '<div style="max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:4px">'
+          + alle.map(t=>{
+            const dt = t.start_zeit ? t.start_zeit.slice(0,16).replace('T',' ') : '—';
+            return '<div style="display:flex;align-items:center;gap:8px;background:#030d18;border:1px solid #0a1a2a;border-radius:3px;padding:6px 10px">'
+              + '<span style="font-size:.55rem;color:#2a5a4a;font-family:monospace;white-space:nowrap">'+dt+'</span>'
+              + '<span style="font-size:.65rem;color:#8ab8c8;flex:1">'+mwEsc(t.titel||'—')+'</span>'
+              + (t.beschreibung?'<span style="font-size:.55rem;color:#1a4a3a;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+mwEsc(t.beschreibung)+'</span>':'')
+              + '<button style="font-size:.55rem;color:#5a2a2a;background:none;border:none;cursor:pointer;padding:2px 4px" data-id="'+t.id+'" class="mw-kal-del">✗</button>'
+              + '</div>';
+          }).join('')
+          + '</div>';
+        el.appendChild(alleEl);
+        alleEl.querySelectorAll('.mw-kal-del').forEach(btn=>{
+          btn.addEventListener('click', ()=>{
+            if(!confirm("Termin löschen?")) return;
+            fetch(MW_API+"/mw/kalender/"+btn.dataset.id+"?hard=false",{method:"DELETE",headers:h})
+              .then(()=>mwLadeKalender(el,h));
+          });
+        });
+      }).catch(()=>{});
     }).catch(()=>{ el.innerHTML="<div style='color:#3a2020;padding:12px;font-size:0.7rem'>Fehler beim Laden.</div>"; });
   }
 
@@ -4388,33 +4425,7 @@ html[lang="en"] .de-only{display:none}
         const hinweis = '<div style="font-size:.58rem;color:#1a3a2a;border:1px solid #0a2a1a;padding:8px 10px;border-radius:3px;margin-bottom:10px">'
           + '⚙ Widerruf jederzeit möglich. Nur freigegebene Quellen werden zu Splittern.'
           + '</div>';
-        // ── Neue Kalender-Quelle Form ──────────────────────────────────────
-        const kalenderForm = '<div id="mw-kal-form" style="background:#030d18;border:1px solid #0a2a1a;border-radius:4px;padding:12px;margin-bottom:12px">'
-          + '<div style="font-size:.62rem;color:#2a8a5a;font-family:monospace;margin-bottom:8px;cursor:pointer" onclick="mwToggleKalFelder()">'
-          + '＋ Neue Kalender-Quelle (Transformation)'
-          + '</div>'
-          + '<div id="mw-kal-felder" style="display:none">'
-          + '<div style="font-size:.58rem;color:#1a5a3a;margin-bottom:8px;line-height:1.5">Rohkalenderdaten bleiben privat — du gibst nur die transformierte Version frei.<br>Kein Autoimport. Kein Zugriff auf externe Kalender.</div>'
-          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Titel (optional)</label>'
-          + '<input id="mw-kal-titel" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px" placeholder="z.B. Medizinischer Termin">'
-          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Transformierter Inhalt <span style="color:#f01030">*</span></label>'
-          + '<textarea id="mw-kal-inhalt" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px;height:60px;resize:vertical" placeholder="Was du freigeben möchtest — du entscheidest was drin steht"></textarea>'
-          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Ereigniszeit (optional, ISO: YYYY-MM-DDTHH:MM)</label>'
-          + '<input id="mw-kal-zeit" type="datetime-local" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px">'
-          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Anonymisierung</label>'
-          + '<select id="mw-kal-anon" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px">'
-          + '<option value="anonymisiert">Anonymisiert (empfohlen)</option>'
-          + '<option value="pseudonymisiert">Pseudonymisiert</option>'
-          + '<option value="keine">Keine (Rohdaten wie eingegeben)</option>'
-          + '</select>'
-          + '<div style="display:flex;gap:6px">'
-          + '<button style="font-size:.58rem;padding:4px 10px;background:#07121a;border:1px solid #1a4a6a;color:#4a8ab8;cursor:pointer;border-radius:3px" onclick="mwKalVorschau()">Vorschau</button>'
-          + '<button style="font-size:.58rem;padding:4px 10px;background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;cursor:pointer;border-radius:3px" onclick="mwKalSpeichern()">Speichern</button>'
-          + '</div>'
-          + '<div id="mw-kal-preview" style="margin-top:8px;display:none;background:#020c18;border:1px solid #0a2030;border-radius:3px;padding:8px;font-size:.58rem;color:#3a8a6a;line-height:1.5"></div>'
-          + '</div>'
-          + '</div>';
-        let html = intro + hinweis + kalenderForm;
+        let html = intro + hinweis;
         if (!quellen.length) {
           html += '<div style="color:#1a3a2a;font-size:.65rem;font-style:italic;padding:8px 0">Noch keine Innenquellen. Quellen entstehen wenn du Notizen, Tagebucheinträge oder Kalendereinträge für Splitter freigibst.</div>';
         } else {
@@ -4478,6 +4489,88 @@ html[lang="en"] .de-only{display:none}
       headers: {'Authorization': tok, 'Content-Type': 'application/json'},
       body: JSON.stringify({zitatrechte: 'erlaubt'})
     }).then(() => mwOeffne('innenquellen'));
+  };
+
+  // ── Gedanken-Archiv ───────────────────────────────────────────────────────
+  function mwLadeGedanken(el, h) {
+    el.innerHTML = '<div style="color:#1a3a4a;font-size:.7rem;padding:12px">Lade…</div>';
+    fetch(MW_API + '/gedankenblasen?limit=200&status=aktiv', {headers: h})
+      .then(r => r.json())
+      .then(d => {
+        const blasen = d.gedankenblasen || d.items || [];
+        const gesamt = d.gesamt || d.total || blasen.length;
+        const header = '<div style="padding:12px 0 8px;font-size:.65rem;color:#1a4a3a;line-height:1.6">'
+          + 'Deine öffentlichen Gedankenblasen — ' + gesamt + ' gesamt. '
+          + 'Sie erscheinen im Gedankenblasenfeld und auf deinem Profil.'
+          + '</div>';
+        const newGedankeForm = '<div style="background:#030d18;border:1px solid #0a2a1a;border-radius:4px;padding:10px;margin-bottom:12px">'
+          + '<div style="font-size:.6rem;color:#2a8a5a;margin-bottom:6px">Neuer Gedanke</div>'
+          + '<textarea id="mw-gd-neu" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.65rem;border-radius:3px;box-sizing:border-box;height:50px;resize:vertical;margin-bottom:6px" placeholder="Was beschäftigt dich gerade?" maxlength="280"></textarea>'
+          + '<div style="display:flex;justify-content:space-between;align-items:center">'
+          + '<span id="mw-gd-zaehler" style="font-size:.52rem;color:#1a3a2a">0/280</span>'
+          + '<button style="font-size:.58rem;padding:3px 12px;background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;cursor:pointer;border-radius:3px" onclick="mwGedankePosten()">Loslassen</button>'
+          + '</div></div>';
+        if (!blasen.length) {
+          el.innerHTML = header + newGedankeForm + '<div style="color:#1a3a2a;font-size:.65rem;font-style:italic;padding:8px">Noch keine Gedanken. Schreibe den ersten.</div>';
+          _mwGdBindCounter();
+          return;
+        }
+        let html = header + newGedankeForm + '<div style="display:flex;flex-direction:column;gap:6px">';
+        blasen.forEach(b => {
+          const ts = (b.created_at||'').slice(0,16).replace('T',' ');
+          const status = b.status || 'aktiv';
+          const statusCol = status === 'aktiv' ? '#2a8a5a' : '#6a5a3a';
+          html += '<div style="background:#030d18;border:1px solid #0a1a2a;border-radius:3px;padding:8px 12px;display:flex;gap:8px;align-items:flex-start">'
+            + '<div style="flex:1">'
+            + '<div style="font-size:.65rem;color:#8ab8c8;line-height:1.5;word-break:break-word">' + mwEsc(b.inhalt||'') + '</div>'
+            + '<div style="display:flex;gap:8px;margin-top:4px;align-items:center">'
+            + '<span style="font-size:.52rem;color:#1a4a3a">' + ts + '</span>'
+            + '<span style="font-size:.5rem;color:' + statusCol + ';border:1px solid ' + statusCol + ';padding:0 4px;border-radius:2px">' + status + '</span>'
+            + (b.resonanz_count ? '<span style="font-size:.52rem;color:#3a6a5a">⬡ ' + b.resonanz_count + '</span>' : '')
+            + '</div></div>'
+            + '<button style="font-size:.55rem;color:#5a2a2a;background:none;border:none;cursor:pointer;padding:2px 4px" onclick="mwGedankeLoslassen(&apos;' + b.id + '&apos;)" title="Gedanke loslassen">✗</button>'
+            + '</div>';
+        });
+        html += '</div>';
+        el.innerHTML = html;
+        _mwGdBindCounter();
+      })
+      .catch(() => { el.innerHTML = '<div style="color:#3a2020;padding:12px;font-size:.7rem">Fehler beim Laden.</div>'; });
+  }
+
+  function _mwGdBindCounter() {
+    const ta = document.getElementById('mw-gd-neu');
+    const cnt = document.getElementById('mw-gd-zaehler');
+    if (ta && cnt) ta.addEventListener('input', function(){ cnt.textContent = ta.value.length + '/280'; });
+  }
+
+  window.mwGedankePosten = function() {
+    const ta = document.getElementById('mw-gd-neu');
+    if (!ta || !ta.value.trim()) return;
+    const tok = mwToken(); if (!tok) return;
+    fetch(MW_API + '/gedankenblasen', {
+      method: 'POST',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({inhalt: ta.value.trim(), sichtbarkeit: 'public', thematische_tags: []})
+    }).then(r => r.json()).then(d => {
+      if (d.id) {
+        ta.value = '';
+        const cnt = document.getElementById('mw-gd-zaehler');
+        if (cnt) cnt.textContent = '0/280';
+        mwOeffne('gedanken');
+        const gbEl = document.getElementById('mw-z-gedanken');
+        if (gbEl) gbEl.textContent = '↑';
+      } else { alert('Fehler: ' + JSON.stringify(d)); }
+    }).catch(e => alert('Fehler: ' + e));
+  };
+
+  window.mwGedankeLoslassen = function(id) {
+    if (!confirm('Gedanke aus dem Feld nehmen?')) return;
+    const tok = mwToken(); if (!tok) return;
+    fetch(MW_API + '/gedankenblasen/' + id + '?hard=false', {
+      method: 'DELETE',
+      headers: {'Authorization': tok}
+    }).then(() => mwOeffne('gedanken'));
   };
 
   window.mwToggleKalFelder = function() {
@@ -6306,7 +6399,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'tab.wissen':'WISSEN','tab.gesetze':'GESETZE','tab.forschung':'FORSCHUNG','tab.partner':'PARTNER',
       'tab.einsicht':'EINSICHT',
       'tab.suche':'SUCHE',
-      'mw.innenquellen':'Innenquellen',
+      'mw.gedanken':'Gedanken','mw.innenquellen':'Innenquellen',
       'tab.gruppen':'GRUPPEN',
       'gruppen.title':'GRUPPEN',
       'gruppen.desc':'Resonanz-, Splitter- und Projektformationen',
@@ -6393,7 +6486,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'tab.blasen':'GEDANKENBLASENFELD','tab.menschen':'HUMANS','tab.meinewelt':'MY WORLD',
       'tab.schlaf':'SLEEP','tab.systeme':'SYSTEMS','tab.admin':'ADMIN',
       'tab.wissen':'KNOWLEDGE','tab.gesetze':'LAWS','tab.forschung':'RESEARCH','tab.partner':'PARTNER',
-      'mw.innenquellen':'Inner Sources',
+      'mw.gedanken':'Thoughts','mw.innenquellen':'Inner Sources',
       'tab.einsicht':'INSIGHT',
       'tab.suche':'SEARCH',
       'tab.gruppen':'GROUPS',
@@ -8078,6 +8171,35 @@ function _dkFeedHtml(feed, mitRaum) {
 }
 
 function _dkFeedInnerHtml(feed, mitRaum) {
+  // Neue getrennte Sektionen: Von Menschen / Von Wesen
+  const hatNeu = feed.von_menschen_neu || feed.von_wesen_neu;
+  if (hatNeu) {
+    let html = '';
+    const mNeu = feed.von_menschen_neu || [];
+    const mRes = feed.von_menschen_resonanz || [];
+    const wNeu = feed.von_wesen_neu || [];
+    const wRes = feed.von_wesen_resonanz || [];
+    if (mNeu.length || mRes.length) {
+      html += '<div class="dk-feed-sektion">'
+        + '<div class="dk-feed-hdr"><span class="dk-feed-hdr-dot" style="background:#3a8a7a"></span>VON MENSCHEN</div>'
+        + '<div class="dk-list">'
+        + mNeu.map(p=>_dkZeile(p,mitRaum)).join('')
+        + (mRes.length ? '<div class="dk-feed-trennlinie-mini" style="border-top:1px dashed #0a2030;margin:4px 0"></div>' : '')
+        + mRes.map(p=>_dkZeile(p,mitRaum)).join('')
+        + '</div></div>';
+    }
+    if (wNeu.length || wRes.length) {
+      html += '<div class="dk-feed-sektion">'
+        + '<div class="dk-feed-hdr"><span class="dk-feed-hdr-dot" style="background:#4a5a8a"></span>VON WESEN</div>'
+        + '<div class="dk-list">'
+        + wNeu.map(p=>_dkZeile(p,mitRaum)).join('')
+        + (wRes.length ? '<div class="dk-feed-trennlinie-mini" style="border-top:1px dashed #0a0820;margin:4px 0"></div>' : '')
+        + wRes.map(p=>_dkZeile(p,mitRaum)).join('')
+        + '</div></div>';
+    }
+    return html;
+  }
+  // Fallback: alte Sektionen (für Raum-Feeds die noch nicht migriert sind)
   const sek = [
     {key:'lebendig', label:'GERADE LEBENDIG', farbe:'#3a8a5a'},
     {key:'zufaellig', label:'ZUFÄLLIGE BEITRÄGE', farbe:'#3a6a9a'},
@@ -9480,6 +9602,11 @@ function switchView(id) {
     const el = document.getElementById('view-'+v);
     const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner'];
     if (el) el.style.display = v === id ? (flexViews.includes(v) ? 'flex' : 'block') : 'none';
+  });
+  // Views mit v- Prefix: einsicht, suche, gruppen
+  ['einsicht','suche','gruppen'].forEach(function(v){
+    const el = document.getElementById('v-'+v);
+    if (el) el.style.display = v === id ? 'flex' : 'none';
   });
   document.querySelectorAll('.v-tab').forEach(b => b.classList.toggle('active', b.dataset.view === id));
   if (id === 'theater') { koStart(); gaerraumLaden(); } else koStop();
