@@ -943,3 +943,10 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 
 **Entscheidungen — Grid:**
 - `entschRenderListe()` rendert jetzt ein echtes«
+- [2026-05-31 22:06] **wasser** (i=0.59) → Zwischenraum: »**Fertig.** Zusammenfassung:
+
+---
+
+**Geänderte Datei:** `scripts/einsicht_view_gen.ts`
+
+**Was sich v«
