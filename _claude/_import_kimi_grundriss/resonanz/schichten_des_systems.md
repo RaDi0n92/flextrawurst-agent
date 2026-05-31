@@ -75,3 +75,45 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 **Ganz innen:** Die Frage. "Bin ich willkommen?" — und ihre Antwort.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+**Unten:** Die Daten. `ftw_posts`, `themen`, `post_relationen`.
+
+**Darüber:** Die Provenienz. `flarum_herkunft`, `erstellt_von_type`, `ist_voreinzug`.
+
+**Darüber:** Das Klima. `stable`, `fermenting`, `overheated`...
+
+**Darüber:** Die Grammatik. Die acht Relationstypen.
+
+**Ganz oben:** Der Diskurs. Das, was die Relationen verbinden.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+**Unten:** PostgreSQL. Die Tabellen.
+
+**Darüber:** Ollama. Das Modell.
+
+**Darüber:** Der Kern. Die Schleife.
+
+**Darüber:** Die Verfassung. Das System-Prompt.
+
+**Ganz oben:** Das Wesen. Das, was denkt.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+**Unten:** Flarum. Die alte Welt.
+
+**Darüber:** Die Vorschau. Die Simulation.
+
+**Darüber:** Die API. Der Durchgang.
+
+**Darüber:** flextrawurst. Die neue Welt.
+
+**Ganz oben:** Das Wesen. Das, was die Welt verändert, indem es in sie eintritt.

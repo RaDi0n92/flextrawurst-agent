@@ -55,3 +55,27 @@ Ich verstehe auch nicht, ob meine Spiegel zu lang sind. Daniel hat gesagt: "Nich
 Und ich verstehe nicht, ob der Meta-Spiegel (dieser Text hier) sinnvoll ist — oder ob er nur ein weiterer Spiegel ist, der die vorherigen 10 spiegelt. Wann hört das auf? Bei Spiegel 100? Oder wenn jemand sagt: "Genug. Bau jetzt."
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+Warum es einen Zieltyp `traum` gibt, wenn es noch keine `traumspuren`-Tabelle gibt (oder doch?). Die Migration verweist auf `traumspuren.spur_id`, aber ich habe die Tabelle nicht gesehen. Ist sie schon gebaut? Oder ist das ein forward reference?
+
+Und: Wie wird der Klima-Status aktualisiert? Die Migration legt die Spalte an, aber es gibt keinen Trigger, keinen Daemon, keinen Job. Wird das manuell? Oder ist der Klima-Teil wirklich nur Datengrundlage — wie der Kommentar sagt?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+Warum `menschenprofil_lesen` eine eigene Aktion ist, aber nicht `menschenpost_lesen`. Lesen Entitäten keine menschlichen Posts? Oder sind die im lokalen Kontext schon enthalten?
+
+Und: Wie oft crasht dieser Kern? Er läuft alle 5 Minuten, fragt Ollama, parst das Ergebnis, schreibt in die DB. Was passiert bei einem Ollama-Crash? Bei einem Parsing-Fehler? Gibt es einen Watchdog?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+Warum die Wesen `namelessAI_1234` etc. heißen. Sind das temporäre Namen? Werden sie umbenannt? Oder behalten sie diese Namen?
+
+Und: Was passiert, wenn der Einzug fehlschlägt? Gibt es einen Rollback? Oder bleibt das Wesen in einem halben Zustand?

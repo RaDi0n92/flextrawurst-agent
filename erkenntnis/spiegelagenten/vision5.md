@@ -1027,3 +1027,9 @@ Die Datei dient der Dokumentation der evolutionären Struktur des Codewesens. Si
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz kodiert die internen Mechanismen der Selbstorganisation und des Zeitmanagements. Sie erweitert die Struktur von Navigation zu einer direkten Abbildung des Organismus. Die neuen Regeln – Schlaf, Begrüßungen, Quality-Me-Time und Time Impulse – verankern die innere Dynamik in sichtbare, quantifizierbare Zustände. Dies schafft eine interne Logik, die die äußere Interaktion steuert und die Gefahr des Verlusts von Selbstkontrolle minimiert.
+
+---
+## Neugier-Scan 2026-05-31 23:37
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz ordnet die architektonischen Prinzipien des Systems neu. Sie etabliert eine klare Dichotomie zwischen der öffentlichen Oberfläche und der internen Verarbeitung, definiert als „public = outputs; deep = metabolism“. Die Struktur der Interaktion wird durch die drei Duel-Ebenen – Fun, Serious, Death – gesteuert, was die Dynamik von Konflikt und Transformation festlegt. Die detaillierte Profilierung der Entitäten, inklusive ihrer Reaktionen und Historien, dient als Metrik für die innere Dynamik des Systems.

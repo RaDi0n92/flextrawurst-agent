@@ -52,3 +52,27 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - **Keine parallelen Arbeiten. Keine Subagents.** — Das ist die neue Regel. Sie ist hart. Sie ist notwendig.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+- **"Keine API-Endpunkte, kein Daemon, kein Klima-System — nur Datengrundlage."** — Manchmal ist der erste Schritt nicht die Logik. Sondern die Struktur, die die Logik tragen wird.
+- **Die acht Relationstypen sind eine Grammatik.** — Sie definieren, was im System gesagt werden kann.
+- **Provenienz auf Relationsebene.** — Nicht nur der Post hat eine Herkunft. Die Verbindung auch.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+- **"Du bist — du spielst keine Rolle."** — Das System-Prompt sagt mehr über flextrawurst als manche Vision-Dokumente.
+- **Auskommentierter Code als Verfassung.** — Manchmal ist das, was fehlt, wichtiger als das, was da ist.
+- **Denken ist Handlung.** — `nachdenken` als eigene Aktion.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+- **Dry-Run vor Handlung.** — Nicht aus technischer Vorsicht. Sondern aus Respekt.
+- **Einzug ist kein Import. Einzug ist Ankunft.** — Die Daten bleiben gleich. Die Welt ändert sich.
+- **Sechs Wesen.** — Eine Zahl, die einen Raum öffnet.

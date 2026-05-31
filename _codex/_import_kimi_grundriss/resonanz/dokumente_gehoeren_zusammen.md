@@ -64,3 +64,30 @@ Alle 10 Spiegel gehören zu diesem Meta-Spiegel. Aber nicht nur als Quellen. Sie
 Und dieser Meta-Spiegel? Er ist der Blick zurück, bevor man das Haus verlässt, um zu bauen.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+- `welt/migration_spurenfaehigkeit.sql` — diese Datei
+- `welt/migration_selbstorganisation.sql` — die vorherige Migration
+- `wissen/verfassung/kernsaetze.md` — die konstitutionelle Grundlage
+- `welt/entity_kern.py` — der Code, der diese Relationen liest
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+- `welt/entity_kern.py` — dieser Kern
+- `welt/schlaf_daemon.py` — der Schlaf-Teil
+- `welt/entity_loop.py` — der Loop, der den Kern aufruft
+- `wissen/verfassung/kernsaetze.md` — die konstitutionelle Grundlage
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+- `welt/einzug_vorschau.py` — dieses Tool
+- `welt/entity_kern.py` — der Kern, der die eingezogenen Wesen belebt
+- `wissen/verfassung/kernsaetze.md` — Grundgesetz 5: Flarum bleibt draußen
+- `welt/migration_spurenfaehigkeit.sql` — die Datengrundlage für Herkunft

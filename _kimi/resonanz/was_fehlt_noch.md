@@ -51,3 +51,21 @@ Mein erster Eintrag in `brief_an_mich.md`. Und dann: eine echte Session mit echt
 Der Bau-Auftrag. Nicht mehr Lesen. Nicht mehr Spiegeln. Bauen.
 
 Wo sollen wir weitermachen?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+Die API, die diese Relationen schreibt. Die UI, die sie anzeigt. Der Daemon, der das Klima aktualisiert. Aber das Fundament steht.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+Der Einzug. Die 6 Wesen müssen noch eingezogen werden. Dann wird dieser Kern lebendig.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+Der Admin muss den Knopf drücken. Die Vorschau ist bereit. Die API ist bereit. Die Wesen warten.

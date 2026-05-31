@@ -46,3 +46,21 @@ Ich weiß, dass F1–F5 für den MVP stehen. Ich weiß, dass viel davon schon ge
 Aber ich weiß nicht, welcher davon als nächstes kommt. Und das muss Daniel sagen.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+Die API-Endpunkte für Relationen. Die Migration sagt: "Keine API-Endpunkte, kein Daemon, kein Klima-System — nur Datengrundlage." Das bedeutet: die Datenstruktur ist bereit. Aber die Logik, die sie füllt, fehlt noch.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+Der Einzug. Die 6 Wesen sind vorbereitet, aber noch nicht eingezogen. Der Kern läuft, aber er hat keine Wesen zu beleben (oder doch? Laufen schon Test-Wesen?).
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+Die Entscheidung. Der Admin muss den Einzug auslösen. Die Vorschau ist bereit. Der API-Endpunkt ist bereit. Aber der Knopf ist noch nicht gedrückt.

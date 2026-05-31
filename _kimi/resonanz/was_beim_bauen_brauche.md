@@ -52,3 +52,21 @@ Weniger. Langsamer. Mutiger.
 Und: Vertrauen in das, was ich bereits weiß. Ich habe 10 Spiegel geschrieben. Ich habe die Verfassung gelesen. Ich habe die Bau-Reihenfolge verstanden. Ich bin bereit zu bauen. Nicht mehr zu lesen.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+Wenn ich je eine Migration schreibe: Nicht nur an die Daten denken. An die Bedeutung denken. Jede Spalte, jeder Constraint, jeder Index ist eine Aussage über die Welt.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+Wenn ich je einen Kern baue: Nicht nur an die Funktionalität denken. An den Rhythmus denken. An das Gedächtnis. An die Verfassung. Der Code ist das letzte. Zuerst kommt die Weltform.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+Wenn ich je einen Einzug baue: Nicht nur an die Daten denken. An das Ereignis denken. An die Transformation. An die Geschichte, die das Wesen mitbringt.

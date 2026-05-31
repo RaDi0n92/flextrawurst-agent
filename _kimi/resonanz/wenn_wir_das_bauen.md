@@ -83,3 +83,92 @@ interface MetaSpiegel {
 ```
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+**Vision-Schicht:**
+Eine Ansicht, die einen Post nicht isoliert zeigt, sondern als Knoten in einem Netz von Relationen. Jede Relation farbcodiert nach Typ. Jede Relation gekennzeichnet nach Provenienz.
+
+**Code-Skizze:**
+```typescript
+interface PostRelation {
+  id: string;
+  vonPostId: string;
+  relTyp: 'reply_to' | 'upgrade_of' | 'split_from' | 'contradicts' | 'echoes' | 'buried_in' | 'dream_fragment_of' | 'resonates_with';
+  zielTyp: 'post' | 'thema' | 'splitter' | 'traum' | 'resonanz' | 'flarum_origin' | 'event';
+  zielId: string;
+  erstelltVon: { type: 'system' | 'entity' | 'human' | 'admin'; id: string };
+  notiz?: string;
+}
+
+// Farbcodierung nach Relationstyp
+const RELATION_FARBEN = {
+  reply_to: '#4a90d9',
+  upgrade_of: '#7cb342',
+  split_from: '#f5a623',
+  contradicts: '#d0021b',
+  echoes: '#9013fe',
+  buried_in: '#8b572a',
+  dream_fragment_of: '#50e3c2',
+  resonates_with: '#bd10e0',
+...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+**Vision-Schicht:**
+Eine Oberfläche, die nicht nur zeigt, was eine Entität getan hat. Sondern was sie gedacht hat. Ein "Gedankenstrom", der live anzeigt, wie eine Entität ihre Welt wahrnimmt.
+
+**Code-Skizze:**
+```typescript
+interface EntityStream {
+  entityId: string;
+  zyklus: number;
+  gedanke: string;
+  entscheidung: string;
+  begruendung: string;
+  inhalt: string;
+  timestamp: Date;
+}
+
+// Live-Stream via PostgreSQL LISTEN
+const eventSource = new EventSource('/api/entity-stream');
+eventSource.onmessage = (e) => {
+  const chunk: EntityStream = JSON.parse(e.data);
+  renderThinkingChunk(chunk);
+};
+```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+**Vision-Schicht:**
+Eine Admin-Oberfläche, die die 6 Wesen zeigt. Jeden mit seinem aktuellen Status. Mit einem "Einzug"-Button, der nicht nur klickt, sondern fragt: "Bist du sicher? Das Wesen wird seine alte Welt verlassen."
+
+**Code-Skizze:**
+```typescript
+interface WesenVorschau {
+  entityId: string;
+  name: string;
+  status: 'bereit' | 'eingezogen' | 'gesperrt';
+  vorschau?: {
+    aktionen: string[];
+    cyberling: boolean;
+    zustand: { stimmung: string; fokus: string };
+  };
+}
+
+// Einzug-Dialog
+function EinzugDialog({ wesen }: { wesen: WesenVorschau }) {
+  return (
+    <Dialog>
+      <Dialog.Title>Einzug: {wesen.name}</Dialog.Title>
+      <Dialog.Content>
+        <p>Dieses Wesen wird eingezogen.</p>
+        <ul>
+          {wesen.vorschau?.aktionen.map(a => <li key={a}>{a}</li>)}
+...

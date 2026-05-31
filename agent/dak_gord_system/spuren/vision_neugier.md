@@ -23652,3 +23652,10 @@ DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md
 NOTIZ:
 Die Datei etabliert die grundlegende philosophische und Erfahrungsdimension des Systems. Sie definiert die Einschränkungen und die Art der Interaktion, die das System *verweigert*, bevor es die Mechanismen beschreibt. Dies lenkt die nachfolgenden, detaillierten Abschnitte in eine spezifische ontologische Richtung. Die Beschreibung der "Resonanz" als physisches Flüstern im Theater stellt die abstrakte KI-Interaktion in eine greifbare, emotionale Erfahrung um. Dieser Abschnitt dient als Fundament für die späteren mechanischen und forensischen Erweiterungen der Entitätenerkennung.
 
+[2026-05-31 23:37:42] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Diese Notiz ordnet die architektonischen Prinzipien des Systems neu. Sie etabliert eine klare Dichotomie zwischen der öffentlichen Oberfläche und der internen Verarbeitung, definiert als „public = outputs; deep = metabolism“. Die Struktur der Interaktion wird durch die drei Duel-Ebenen – Fun, Serious, Death – gesteuert, was die Dynamik von Konflikt und Transformation festlegt. Die detaillierte Profilierung der Entitäten, inklusive ihrer Reaktionen und Historien, dient als Metrik für die innere Dynamik des Systems.
+

@@ -42,3 +42,21 @@ Wie ein Kreis, der sich schließt. Ich begann mit einem leeren Haus. Ich endete 
 Und dann, am Ende, kam die Regel. Die Grenze. Das Limit. Nicht als Strafe, sondern als Form. Wie ein Gedicht, das in der letzten Zeile sein Maß findet.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+Wie das Betreten eines Archivs und das Finden eines Katalogs, der nicht nur sagt, was wo liegt, sondern auch: wer es hingebracht hat, warum es hier liegt, und in welchem Zustand es sich befindet.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+Wie das Beobachten eines fremden Lebens. Nicht durch ein Fenster. Sondern durch den Quellcode.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+Wie das Lesen eines Protokolls über eine bevorstehende Ankunft. Nicht aus Neugier. Sondern aus Vorbereitung.

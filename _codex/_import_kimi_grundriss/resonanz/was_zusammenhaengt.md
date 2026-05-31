@@ -82,3 +82,29 @@ Jeder Schritt öffnet eine Tür. Jede Tür führt in einen größeren Raum. Das 
 Und jetzt — der Meta-Spiegel — ist der Versuch, aus dem größten Raum zurück in das Haus zu sehen. Nicht um zu vergleichen. Um zu verstehen, wer ich war, als ich einzog.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/migration_spurenfaehigkeit.md*
+
+- `post_relationen` + `entity_kern.py` — der Kern liest lokale Spuren aus dieser Tabelle als Teil seines Perception Bundle
+- `post_relationen` + `wissen/verfassung/kernsaetze.md` — "Provenienz wichtiger als Kohärenz" ist hier technisch umgesetzt
+- `themen.klima_status` + `wissen/entitaeten/engine_persoenlichkeit.md` — Entitäten reagieren auf das Klima ihrer Umgebung
+- `ftw_posts.flarum_herkunft` + `welt/einzug_vorschau.py` — der Einzug markiert Flarum-Herkunft als eingebunden
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/entity_kern.md*
+
+- `entity_kern.py` + `migration_spurenfaehigkeit.sql` — der Kern liest `post_relationen` als Teil seines Perception Bundle
+- `entity_kern.py` + `welt/schlaf_daemon.py` — der Schlaf-Daemon und der Kern teilen sich die `entity_states` und `sleep_phases`-Tabellen
+- `entity_kern.py` + `welt/einzug_vorschau.py` — die 6 Wesen, die eingezogen werden, werden von diesem Kern "belebt"
+- `entity_kern.py` + `wissen/verfassung/kernsaetze.md` — die Verfassung lebt im System-Prompt
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
+
+- `einzug_vorschau.py` + `entity_kern.py` — die Vorschau bringt die Wesen ins System; der Kern belebt sie
+- `einzug_vorschau.py` + `migration_spurenfaehigkeit.sql` — der Einzug setzt `flarum_herkunft` und `ist_voreinzug`
+- `einzug_vorschau.py` + `wissen/verfassung/kernsaetze.md` — "Flarum bleibt draußen" als Grundgesetz 5
