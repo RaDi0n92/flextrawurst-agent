@@ -579,3 +579,47 @@ nebelwoerter.md ↔ zustandswoerter.md ↔ begriffsspiegel.md ↔ wortmagnete.md
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt zusammen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+- [[vision4_strukturiert]] — systematisierte Version desselben Quellenstroms
+- [[vision5_erlebnis]] — experiential walkthrough Version
+- [[project_flextrawurst]] — technischer Baustand
+- Die 490-Punkte-Liste (flextrawurst_490_punkte_quellliste.md) — spätere Verdichtung
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+- [[vision3_rohmomente]] — Rohherkunft der Ideen
+- [[vision5_erlebnis]] — erlebbare Oberfläche
+- CLAUDE.md (Grundgesetze) — viele davon spiegeln TEIL 3 Verfassungssätze
+- [[project_flextrawurst]] — was schon gebaut ist
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+- [[vision3_rohmomente]] — wie die Ideen entstanden
+- [[vision4_strukturiert]] — systematische Prinzipien
+- vision5_erlebnis — diese Datei: Erfahrungsdimension
+- [[idea_reality_check]] — Bestätigung dass das nirgendwo sonst existiert
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+- [[vision3_rohmomente]] — warum flextrawurst keine Standardkategorie besetzt
+- [[vision4_strukturiert]] — die Verfassungssätze die es einzigartig machen
+- [[vision5_erlebnis]] — die Erfahrung die nirgendwo sonst existiert
+- project_flextrawurst — was wir in 2 Monaten gebaut haben
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+- [[daniel_entscheidungsboard_vor_einzug]] — jetzt vollständig
+- [[gruppensystem_vorstudie]] — Vorstudie, die jetzt Realität wurde
+- [[vor_einzugsfreeze_final]] — der freeze der jetzt aufgehoben ist durch Baustart

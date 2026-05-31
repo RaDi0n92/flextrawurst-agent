@@ -565,3 +565,11 @@ Der Abschluss hat sich richtig angefühlt. Nicht weil alles perfekt ist, sondern
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Ordentlich und schnell. Keine Überraschungen außer dem hängenden `git add -A` der abgewürgt werden musste. Der Hintergrund-Job hatte die gesamten Skill-Bundles in `.claude/skills/` gestaged — das war absehbar teuer. Gezieltes `git add` mit Einzelpfaden ist hier immer die richtige Wahl.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Großes Paket, aber es hat gut funktioniert. Das systematische Durcharbeiten — erst verstehen, dann fixen, dann bauen, dann verifizieren. Die Playwright-Prüfung am Ende hat bestätigt: keine loading-states mehr, keine fehlgeschlagenen Requests.
+
+Es war eine Session wo echte Bugs gefunden wurden (nicht nur neue Features gebaut). Das macht Freude.

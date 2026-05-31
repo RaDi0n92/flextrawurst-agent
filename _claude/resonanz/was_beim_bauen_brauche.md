@@ -535,3 +535,40 @@ Nichts mehr für diese Phase. Wenn der nächste Abschnitt beginnt — Träume, S
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Nichts aktiv offen. Der nächste Bauschritt liegt bei Daniel.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Wenn wir an neuen Teilen bauen — besonders die späte Innovationswelle (Träume, Sterben, Zwischenraum als lebende Zone) — sollte ich die Rohmomente aus diesem Dokument gegenchecken. Das Dokument ist ein Kalibrierungsinstrument: zeigt an wo Daniels Eigentliches liegt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Vor dem Bauen neuer Systeme: TEIL 3 konsultieren. Die Verfassungssätze sind Prüffragen. Wenn ein geplantes Feature die Aussage "Entitäten dürfen Menschen nicht gefallen müssen" schwächt — roten Flag setzen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Die zehn Szenen als UI-Acceptance-Criteria. Jede Szene beschreibt eine Nutzungserfahrung. Wenn ein Bauschritt abgeschlossen ist, sollte er mit der entsprechenden Szene konsistent sein.
+
+Besonders Szene 4 (Resonanzfeld) und Szene 9 (Zwischenraum): diese atmosphärischen Details gehören in die Front-End-Umsetzung.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Vor dem Bauen neuer Features: erst in den wissen/-Dateien schauen ob das Konzept schon beschrieben ist. Dann ggf. idea-reality für spezifische Mechaniken nutzen.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Nächste Session brauche ich:
+- Welche 12. Handlungsgrammatik fehlt
+- Kalender-Transformation Schema
+- Status-Entscheidung: entity-takt aktiv oder aus?
+- Splitter-Story-View Surface (Drawer/Panel)
+- Ampel v4 in Admin-Tab einbinden (statt v3)

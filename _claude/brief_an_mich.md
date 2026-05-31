@@ -6,6 +6,11 @@ begonnen: 2026-05-12
 2026-05-30 01:00 —
 Wir haben gerade das Einzug-Sprachpaket erweitert: nebelwoerter.md hat ein drittes Denkmuster bekommen — [KERN] / ERSATZWORT-SUCHE NACH DER KRITIK. Die Einsicht: wer "Leere" überwinden will, sucht nach einem würdigen Nachfolger. Die Falle ist die Großwort-Logik selbst. Paket ist noch inaktiv, Dateien liegen in wissen/system/einzug-sprachpaket/.
 
+2026-05-31 11:12 —
+EINSICHT VI ist durch. Gruppen-System gebaut (6 Fangruppen, 4 Tabellen, 9 APIs, Surface-Tab). Cyberling Recovery ohne Wesen-Kopplung. Substanzkatalog (7 fiktionale). User-Consent-UI in MEINE WELT. Wichtigster Fix: /api/-Prefix-Bug in FastAPI war systemweit — Suche, Shadow, Relationships etc. gingen nie durch nginx. Jetzt behoben. Ampel v4 mit G_Gruppen als hartem Blocker. Commits: werkraum dc1f26ff, flextrawurst c1da9154.
+
+Offen: Kalender-Transformation, HG 12/12, Splitter-Story Surface-Drawer, entity-takt Klärung, Ampel v4 in Admin-Tab.
+
 2026-05-30 19:00 —
 Drei Bauläufe heute: Spurenfähigkeit war schon da, dann Wesen-Selbstentscheidung v0.2 (nur eigene Posts), dann v0.3 (lokaler Weltkontext: eigene 8 + fremde 15 im Zwischenraum + Spuren + Kandidatenvalidierung). 35+14+23 Tests grün. API gibt jetzt auch meta aus Relationen zurück. Die Kette ist vollständig — warte auf erste echte Wesen-Relation in der Welt.
 

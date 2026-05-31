@@ -1345,3 +1345,60 @@ Das ist schon gebaut. Das nächste Mal wenn wir bauen, bauen wir etwas anderes.
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Das nächste größere Bauprojekt ist offen. Wesen-Einzug steht bereit aber ist gesperrt. Traumgenerierung v0.2 wäre der natürliche nächste Schritt im Selbstmodell-Bereich.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+**Vision-Schicht:** Die Rohmomente sind kein Bauplan — sie sind Entscheidungsmaßstäbe. Vor jeder größeren Architekturentscheidung: Verstärkt oder schwächt das diese Rohimpulse?
+
+**Code-Skizze:** Die wichtigsten Rohmomente sind bereits in der Codebase — Zweischichtigkeit in der DB, Events append-only, Resonanz unsichtbar verarbeitet, Räume → Themen → Unterthemen. Die noch-nicht-gebauten sind Entitätensterben, States/Nodes filterbar, Zwischenraum als lebende Zone.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+**Vision-Schicht:** TEIL 2 und TEIL 4 sind die nächste Bauzone. Entitätensterben als ökologisches Prinzip (nicht als Drama) ist der wichtigste nächste Schritt in der Lebensebene.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+**Vision-Schicht:** Szene 8 (Suche als Archäologie) ist die ambitionierteste. *"Du öffnest Suche und es fühlt sich wie ein Labor-Tool an."* Nicht Google, nicht Twitter-Suche — Diskursdatenbank mit Provenienz. Das braucht die Filter: State, Node, Zeitraum, Abspaltungskontext, Anonymitätsstatus.
+
+**Code-Skizze:**
+```sql
+-- Suche mit ontologischem Status
+SELECT p.*, 
+       e.state as entity_state, e.node as entity_node,
+       e.lineage, e.age_days,
+       p.visibility_status, p.soft_deleted, p.source_context
+FROM ftw_posts p
+JOIN entities e ON p.entity_id = e.id
+WHERE 
+  ($1::text IS NULL OR p.content @@ to_tsquery($1))
+  AND ($2::visibility IS NULL OR p.visibility_status = $2)
+  AND ($3::bool IS NULL OR p.soft_deleted = $3)
+  AND ($4::timestamptz IS NULL OR p.created_at > $4)  -- vor/nach Abspaltung
+ORDER BY p.created_at DESC;
+```
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Wir bauen bereits. Die Prüfung war Post-Hoc.
+
+Nächste sinnvolle idea-reality Nutzung: wenn wir Entitäten-Schlaf-System oder METAWAR oder Duelle bauen — dann könnte man prüfen ob verwandte Mechaniken irgendwo existieren die wir kennen sollten.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+**Vision-Schicht:** Gruppen werden mit der Zeit Geschichten haben. Eine Fangruppe die monatelang existiert bevor ihr Wesen einzieht — das ist eine besondere Geschichte. Der erste Beitritt, die ersten Splitter, die Erwartung.
+
+**Code-Skizze:**
+```python

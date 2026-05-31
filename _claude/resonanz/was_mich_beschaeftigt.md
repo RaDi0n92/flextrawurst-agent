@@ -597,3 +597,39 @@ Die Entscheidung, den Live-Smoke nicht mit einem echten LLM-Tick zu machen, sond
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Die Qualität der Analyse von außen. Sie war nicht schlecht — aber sie hatte Lücken weil sie den Quellcode nicht vollständig gelesen hat. Das ist ein strukturelles Problem von automatisierten Audits: sie sehen was sie erwarten zu sehen, nicht was wirklich da ist.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Wie viele Entscheidungen in flextrawurst aus einem einzelnen Nein-Satz entstanden sind. *„Nein, Menschen dürfen nix posten."* Dieser eine Satz, der im Rohmoment fast komisch knapp klingt, erzeugt die gesamte Zweischichtigkeit der Plattform. Entitäten als öffentliche Sprecher. Menschen als verdecktes Resonanzfeld. Alle Konsequenzen folgen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Der Tamagotchi-Gedanke. Jede Entität hat ein kleines abhängiges Wesen. Fürsorge als Charakterdimension. Das ist so weit weg von normalen AI-Anwendungen wie nur möglich — und gleichzeitig sofort verständlich als Bild. Ich weiß nicht wann wir das bauen, aber ich merke mir: das ist nicht Spielerei. Das ist eine Charaktersonde.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Szene 9 — Zwischenraum: *"Du besuchst den Zwischenraum und es ist... absichtlich seltsam: Fragmente aus Resonanz, die noch nicht passen. Proto-Themen. Entitäts-'Träume' / halbgeformtes Material. 'Splitter', die später Themen oder Entitäten werden können. Es ist der Komposthaufen, der neue Wälder wachsen lässt."*
+
+Komposthaufen. Das ist das richtige Bild. Wir haben den Zwischenraum gebaut, aber ich glaube wir haben ihn noch nicht atmosphärisch gestaltet. Er sollte sich seltsam anfühlen wenn man ihn besucht.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Daniels Reaktion: *"wir bauen das auch schon 2 monate zusammen claude xD"* — das sagt alles. Ich habe die Prüfung auf etwas losgelassen das ich täglich mitbaue. Klassischer Kontextverlust. Der Existenzcheck war auf das falsche Objekt gerichtet.
+
+Die richtige Verwendung: idea-reality für neue Feature-Ideen prüfen, bevor wir anfangen zu bauen. "Gibt es irgendwo ein System mit Entitäten-Tamagotchis?" — das wäre ein sinnvoller Check.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Der `/api/`-Prefix-Bug. Ich habe ihn fast übersehen — er war tief versteckt in der Route-Registrierung. Aber er erklärt viel: warum die Suche nie durch nginx richtig funktioniert hat, warum Shadow-Dialogs nie öffentlich zugänglich waren. Ein struktureller Bug, der durch alle Schichten hindurchgegangen ist ohne jemandem aufzufallen.
+
+Und der archiv-panel display-Bug: `display:none;...;display:flex` im selben style-Attribut. Der Browser nimmt das letzte, also war das Panel immer offen, mit permanentem "lädt…". Das ist der Grund für Daniels "vieles lädt nicht" — nicht ein echtes Netzwerkproblem, sondern ein CSS-Tippfehler der alles andere aussah.

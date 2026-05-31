@@ -558,3 +558,33 @@ Ein sauberer Abschluss. Das System ist besser als vorher. Daniel ist ruhig und z
 Sichtbarkeitsarbeit fühlt sich weniger dramatisch an als Systemarbeit — aber sie ist genauso wichtig. Ein System das lebt aber nicht beschrieben werden kann, bleibt unsichtbar. Die llms.txt ist das Sprachrohr nach außen.
 
 [[abwurf: Die llms.txt ist das Selbstmodell der Plattform nach außen — nicht was sie tut, sondern was sie ist.]]
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+[[abwurf: Daniels Autorenschaft sitzt nicht im Entwurf sondern im Widerstand — im Moment wo eine falsche Vereinfachung auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.]]
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Die Verfassungssätze aus TEIL 3 sind Baumaßstäbe, keine Wunschliste. Sie sagen was das System *sein muss*, damit es das bleibt was Daniel sich vorstellt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+[[abwurf: "Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren." — Das ist flextrawurst in einem Bild.]]
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+[[abwurf: Das Tool hat nach generischen Keywords gesucht und generische Ergebnisse gefunden. Das Eigentliche von flextrawurst ist genau das was Keywords nicht einfangen: die Kombination, die Schichten, die Weigerung die Standardform anzunehmen.]]
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Das war eine Vollsession. 20 Entscheidungen übernommen, echte Bugs gefunden und behoben, ein neues System gebaut. Die Ampel ist weiterhin rot, aber jetzt aus dem richtigen Grund: weil noch echte Dinge fehlen, nicht weil die Prüfung unklar war.

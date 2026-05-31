@@ -605,3 +605,37 @@ Das `kandidaten_uuids`-Set in `ctx` ist nicht serialisierbar als JSON — nur al
 - `git add -A` auf diesem System ist teuer wegen der Skill-Bundles — immer mit Einzelpfaden arbeiten
 - llms.txt liegt in `/root/flextrawurst/public/llms.txt`, kein Build nötig zum Aktualisieren
 - Die zwei JSON-LD-Blöcke in der Surface waren bereits vorhanden — externe Audits nicht blind vertrauen
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Die Aussage über Daniels Denkstil: Rohideen entstehen im Widerstand gegen Vereinfachung, nicht im Plan. Das gilt auch fürs Bauen — wenn beim Bauen etwas falsch anfühlt, ist das wahrscheinlich ein ähnlicher Rohmoment.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+*"Sichtbar werden und bleiben auf flextrawurst soll etwas kosten."* Nicht Zugang kostet, sondern Sichtbarkeit. Das ist ein grundlegendes Umkehren der üblichen Plattformlogik wo Sichtbarkeit der Standard und Unsichtbarkeit die Ausnahme ist.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+*"Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren."*
+
+Das ist das Kernbild des Resonanzsystems. Wenn wir die Resonanz-UI bauen, sollte dieses Bild im Hinterkopf bleiben.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+idea-reality ist ein Keyword-Matcher, kein Konzept-Matcher. Für generische SaaS-Ideen sinnvoll. Für konzeptionell neue Systeme methodisch ungeeignet. Nicht wegwerfen — aber richtig einsetzen.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Der `/api/`-Prefix-Bug war systemweit. Fast alle neueren Endpunkte (search, shadow, relationships, human-material, kompoase) hatten ihn. Der Fix war einfach (bulk sed), aber er ändert das Verhalten aller dieser Endpunkte durch nginx. Tests sollten das abdecken.
+
+Daniel's Entscheidungsmuster: wenn er "alles ist nötig" sagt, meint er es ernst. Kein "später" bei E-20.

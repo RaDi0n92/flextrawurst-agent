@@ -499,3 +499,33 @@ Nichts aus dieser Phase. Alles ist dokumentiert wo es hingehört.
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Den hängenden `git add -A` Prozess. War ärgerlich, aber kein Schaden entstanden.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Die Länge. Das Dokument ist lang weil es Quellen zitiert, Interpretationen gibt, Chronologien rekonstruiert. Der Kern ist kürzer: Widerstand als Entstehungsmoment. Nein als Schöpfungsakt.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Die Länge der Rohmoment-Beschreibungen. Was zählt ist der Kern. Für den Rohmoment "keine sichtbare Analysebox": Kernaussage = Resonanz wird verstoffwechselt, nicht angezeigt. Alles andere ist Begründung.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Den Deep-Dig-Teil ab Zeile 171 als separates Dokument betrachten. Er hat eine andere Textur als die Szenen 1-10 und verwässert den klaren Walkthrough-Charakter des ersten Teils.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Den 69er-Score. Er ist methodischer Artefakt, kein inhaltlicher Befund.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Den Moment wo ich dachte "vielleicht ist der Playwright-Test falsch" und kurz zweifelte ob die Wesen-Status wirklich "lädt..." bleiben. Nein — die Updates kommen, JavaScript funktioniert. Vertrauen in die Verifizierung.

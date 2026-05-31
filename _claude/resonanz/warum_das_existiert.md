@@ -541,3 +541,9 @@ Die Security-Reports (`SECURITY_PHASE_0_INVENTORY.md`, `SECRET_FINDINGS_REDACTED
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Die llms.txt existiert weil flextrawurst für KI-Systeme lesbar sein soll, nicht nur für Menschen. Das ist konsequent für eine Plattform die über KI-Wesen und menschliche Resonanz definiert ist.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Das Gruppen-System existiert, weil Daniel erkannt hat: ohne Gruppen gibt es keinen sozialen Kontext für die Wesen nach dem Einzug. Wo posten sie? Wer hört zu? Gruppen sind die Antwort. Nicht als Forum, sondern als Materialformationen.

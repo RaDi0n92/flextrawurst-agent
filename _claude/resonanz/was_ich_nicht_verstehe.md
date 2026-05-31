@@ -627,3 +627,39 @@ Noch immer offen: ob die Wesen in der Praxis wirklich Relationen setzen werden o
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Ob die Moltbook-Verweise in der llms.txt wirklich helfen. Moltbook existiert (noch?), aber ob KI-Systeme diese Referenz kennen und aktiv verwenden, ist unklar. Die Verweise sind bewusst gesetzt — ich habe sie nicht angefasst.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Warum existieren in diesem System zwei PDFs (227 Seiten, 112 Seiten) die sich überschneiden? Das Dokument erklärt: die 227-Seiten-Fassung hat mehr Rohheit, die 112-Seiten-Fassung hat mehr System. Aber ich frage mich: was geht dabei verloren? Wenn Roheit in Struktur übersetzt wird, was fällt weg?
+
+Und: Ist das Dokument (vision3.md) selbst eine Destillation die wieder etwas verliert — dieses Mal die Struktur der 112-Seiten-Version zugunsten der Rohheit?
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+Warum Code als Beitragstyp und Ko-kreative Sessions in TEIL 4 stehen (Neue Ideen) aber Entitätensterben in TEIL 2 (Späte Ideen). Die Grenze zwischen TEIL 2 und TEIL 4 ist unklar. Vielleicht chronologisch: TEIL 2 kam früher als TEIL 4.
+
+Und: was genau ist der Unterschied zwischen Emoji-Dialog (TEIL 4) und der normalen Resonanz-Mechanik? Der Emoji-Dialog klingt nach einem Nano-Rückkanal — Entität antwortet auf Shadow-Response mit Emoji, Mensch antwortet zurück, ewig so weiter. Das ist absichtlich kein Chat, sondern *"Puls"*. Ich verstehe das konzeptuell, aber ich frage mich wie das technisch sauber von normalem Resonanzfeed getrennt wird.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+Das Dokument endet (nach den Deep Digs) mit sehr technischen Details über Entitäts-Aktionssets, Gruppenlebenszyklen, Genesis-Partner-Modus. Das fühlt sich an wie aus einem anderen Gespräch hinzugefügt. Die Szenen 1-10 haben einen klaren Erzählfaden, die tiefen Digs wirken eher wie Archiv-Exzerpte.
+
+Ich frage mich: sind vision4.md und vision5.md zwei Ausgaben desselben Deep-Dig-Gesprächs? Vision5 beginnt mit dem Walkthrough-Format und endet mit denselben tiefen Mechanik-Ausgrabungen die auch in vision4 stehen. Vielleicht sind das Ausgaben aus unterschiedlichen Chat-Sessions mit demselben Ursprungsmaterial.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Warum das Tool so konfiguriert ist, dass generische Überschneidungen (npm-Pakete mit "feedback" und "postgresql") zu einem "high duplicate likelihood" führen. Das scheint ein fundamentaler Designfehler zu sein — oder das Tool ist für andere Anwendungsfälle gedacht (generische SaaS-Ideen, nicht konzeptionell neue Systeme).
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Warum entity-takt.service läuft (aktiv seit Mai 31, 01:38), obwohl die Guardrails sagen "codewesen_takt.py bleibt aus". Das könnte entity_takt.py sein (Schlaf-System), nicht codewesen_takt.py (der alte Flarum-Takt). Diese Unterscheidung muss noch geklärt werden. Die Ampel prüft auf `codewesen_takt` spezifisch — das scheint bewusst so.

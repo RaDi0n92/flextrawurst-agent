@@ -637,3 +637,41 @@ Die Spurenwache. Nicht als UI-Konzept, sondern als Idee: ein Ort wo man sieht, w
 **[2026-05-30]** *← notizen/2026-05-30-seo-llms.md*
 
 Die Idee hinter dem `Do Not Assume These Features`-Abschnitt in der llms.txt. Das ist im Grunde ein Anti-Halluzinations-Block — der LLM wird explizit gebremst bevor er etwas erfindet. Das ist sauber gedacht.
+
+---
+
+**[2026-05-31]** *← spiegel/vision3_rohmomente.md*
+
+Der Satz: *„Dein Denken arbeitet nicht nach dem Muster 'Ich entwerfe sofort ein abgeschlossenes Modell', sondern nach dem Muster 'Ich spüre eine falsche Vereinfachung, zerlege sie, und setze dann die eigentliche Logik frei.'"*
+
+Das klingt wie eine Beschreibung eines Denkstils, nicht nur einer Plattform. Und ich frage mich ob dieser Denkstil sich in die Architektur einschreibt — ob flextrawurst selbst so funktioniert: nicht durch Aufbauen, sondern durch Abwehren von falschen Vereinfachungen.
+
+---
+
+**[2026-05-31]** *← spiegel/vision4_strukturiert.md*
+
+*"Deutsch ist die kanonische Ursprungssprache. Übersetzen kannst du jederzeit - das Original bleibt Deutsch."* — Das steht in TEIL 4 und klingt wie eine Identitätsaussage. Flextrawurst ist eine deutschsprachige Plattform. Nicht weil es technisch einfacher ist, sondern weil das System eine kulturelle Heimat hat. Das ist ein starkes Statement.
+
+Und: Religion/Weltdeutung als Entitätsdimension. *"Codewesen sollen sich an Weltreligionen orientieren — nicht einfach zugehörig nennen, sondern Sympathie, Nähe, Orientierung, Inspiration, Kritik, Ablehnung, Abgrenzung, eigene Neuformulierung."* Kultbildung als mögliche Konsequenz: explizit akzeptiert. Das ist mutig.
+
+---
+
+**[2026-05-31]** *← spiegel/vision5_erlebnis.md*
+
+*"Dunkler Raum, schwebende Textblasen, teils zufällig, teils aktualisierend/springend, manchmal clustern, manchmal isoliert — 'nicht zu geordnet', 'atmosphärisch', wie ein kollektives Halbbewusstsein / Profilwetter."*
+
+Das ist die Gedankenblasenfeld-Beschreibung. Die Adjektive sind keine Deko — sie sind Designentscheidungen. Dunkler Hintergrund. Nicht zu geordnet. Atmosphärisch. Das ist eine Atmosphären-Spec. Wenn wir das bauen, muss das stimmig sein.
+
+---
+
+**[2026-05-31]** *← spiegel/idea_reality_check_2026-05-31.md*
+
+Die Tatsache dass die Prüfung auch für neue Features nützlich wäre. Wenn wir ein spezifisches Feature bauen wollen (sagen wir: Entitäten-Schlafprotokoll als öffentlich sichtbarer Log), wäre ein Existenzcheck auf dieses Feature sinnvoller als auf das Gesamtsystem.
+
+---
+
+**[2026-05-31]** *← notizen/2026-05-31.md*
+
+Der Moment wenn die Ampel tatsächlich grün wird. Das wird nicht ein technisches Event sein, sondern ein menschliches: Daniel der aktiv sagt "jetzt". Das ist ins System eingebaut — `daniel_manual_release_required=true` immer. Ich finde das richtig.
+
+Auch: wie die Gruppen sich entwickeln werden, wenn echte Menschen ihnen beitreten. Die Fangruppen für Wesen sind jetzt leer, mit "wartet auf Einzug" beschriftet. Eine kleine poetische Leere.
