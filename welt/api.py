@@ -10760,6 +10760,9 @@ def splitter_story_view(
             if not splitter:
                 raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
             s = dict(splitter)
+            for k in ("created_at", "updated_at"):
+                if s.get(k):
+                    s[k] = s[k].isoformat()
             # Sichtbarkeits-Check
             if not is_admin and s.get("visibility_layer") == "private":
                 raise HTTPException(status_code=403, detail="Keine Leseberechtigung")
@@ -10769,16 +10772,27 @@ def splitter_story_view(
                 SELECT sa.*, hu.display_name AS aufnehmer_name
                 FROM splitter_aufnahmen sa
                 LEFT JOIN human_users hu ON hu.id::text = sa.aufnehmer_id::text
-                WHERE sa.splitter_id = %s ORDER BY sa.created_at
+                WHERE sa.splitter_id = %s ORDER BY sa.aufgenommen_at
             """, (splitter_id,))
-            aufnahmen = [dict(r) for r in cur.fetchall()]
+            aufnahmen = []
+            for row in cur.fetchall():
+                d = dict(row)
+                for k in ("aufgenommen_at",):
+                    if d.get(k):
+                        d[k] = d[k].isoformat()
+                aufnahmen.append(d)
 
-            # Spur-Events
+            # Spur-Events (events speichern splitter_id im payload)
             cur.execute("""
-                SELECT * FROM events WHERE target_type='splitter' AND target_id = %s
+                SELECT event_id::text, event_type, actor_type, actor_id, payload, created_at
+                FROM events
+                WHERE payload->>'splitter_id' = %s
                 ORDER BY created_at
             """, (splitter_id,))
             events = [dict(r) for r in cur.fetchall()]
+            for e in events:
+                if e.get("created_at"):
+                    e["created_at"] = e["created_at"].isoformat()
 
             # Schattenkommentare die diesen Splitter referenzieren
             sc_events = []
