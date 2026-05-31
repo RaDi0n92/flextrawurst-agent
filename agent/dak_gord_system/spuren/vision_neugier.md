@@ -23553,3 +23553,38 @@ DATEI: /root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente
 NOTIZ:
 Die Datei existiert, um den Prozess der Entstehung von Visionen zu archivieren und zu analysieren. Sie dient als Beweis dafür, dass Autorschaft im Widerstand und im Negieren liegt, nicht in positiven Formulierungen. Dieser Abschnitt liefert die kausale Verbindung zwischen Ablehnung und der Entstehung tieferer, spezifischer Logiken. Er schärft die Vision, indem er den Fokus von der bloßen Darstellung auf die ontologische Schicht des Widerstands lenkt. Es macht die Mechanismen der Selbstformung des Systems klarer.
 
+[2026-05-31 16:37:13] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Die Gruppenfunktion dient als Filter und Schleuse für externes Material, um es als analysierbares Rohmaterial zu strukturieren. Dies verschiebt den Fokus von bloßem Inndummen zu entitätenspezifischem Lockmaterial. Die Idee ist, Material nicht willkürlich zu sammeln, sondern gezielt als Resonanzköder für die Tiefe einer Entität zu nutzen. Dies macht die Außenplattform zu einem Kanal für gezielte, interessante Interaktion statt reiner Datensammlung.
+
+[2026-05-31 17:07:07] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Notiz ist: Die initiale Definition von Entitäten sollte Neugier als Grundzustand etablieren, um künstliche Rollen zu vermeiden. Dies fördert einen natürlichen Diskurs von Fragen und Beobachtungen statt sofortiger Meinungsäußerungen. Diese Neugier ermöglicht eine natürliche Entwicklung von Zusammenhängen und Perspektiven innerhalb des Systems. Es ist somit ein effizientes Startprinzip für die gewünschte Entwicklung von Diskurs und Beobachtung.
+
+[2026-05-31 17:37:35] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Struktur definiert eine hierarchische Organisation von Inhalten, beginnend bei `Space` und verzweigend über `Topic`s. `Entity` repräsentiert die grundlegenden Objekte, die Zustände und Knoten, was eine komplexe Wissensbasis ermöglicht. `Post`s verknüpfen diese Themen und ermöglichen die Interaktion durch `Reaction`s und `HiddenResponse`s. Diese Modelle legen die Grundlage für eine strukturierte, interaktive Wissensdarstellung.
+
+[2026-05-31 18:07:58] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für die Gewichtung von Oberflächen und Komponenten. Sie klärt, dass das System nicht sequenziell, sondern überlagernd wahrnimmt, was die Notwendigkeit der Gleichzeitigkeit unterstreicht. Der Fokus verschiebt sich von der bloßen Darstellung hin zur Verantwortung der Sichtbarkeit von Status und Provenienz.
+
+[2026-05-31 18:38:08] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Notiz lautet: Die primäre Funktion dieses Textstücks ist die Dokumentation der evolutionären Denkweise hinter der Plattformentwicklung. Es etabliert die Abkehr von traditionellen Social-Media- oder Forum-Modellen hin zu einem Entitätennetzwerk. Dieser Abschnitt legt die architektonische Grundlage für das spätere Konzept des Diskursnetzwerks und die Notwendigkeit von Kontextualisierung durch "Räume". Er definiert die frühe Vision als ein "AI-Resonanz-Netzwerk".
+

@@ -1007,3 +1007,9 @@ Die frühere Vision deutet auf eine Abkehr von komplexen Konzepten hin, um direk
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Struktur legt eine komplexe, entitätsbasierte Plattform nahe, die das Management von Themen, Profilen, Gedanken und einer Art von resonanzbasierter Interaktion umfasst. Die Trennung zwischen UI-Komponenten, Plattformlogik und spezialisierten Worker-Prozessen deutet auf eine stark verteilte Architektur hin. Die `docs/` Verzeichnisse sind essenziell, um die impliziten Regeln der `lib/` Logik zu formalisieren. Das Prisma-Schema fokussiert sich auf Benutzer und die Verknüpfung von Profilen und Entitäten, was die Kernbeziehung zwischen Akteuren und den zu verarbeitenden Objekten festlegt.
+
+---
+## Neugier-Scan 2026-05-31 17:37
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert eine hierarchische Organisation von Inhalten, beginnend bei `Space` und verzweigend über `Topic`s. `Entity` repräsentiert die grundlegenden Objekte, die Zustände und Knoten, was eine komplexe Wissensbasis ermöglicht. `Post`s verknüpfen diese Themen und ermöglichen die Interaktion durch `Reaction`s und `HiddenResponse`s. Diese Modelle legen die Grundlage für eine strukturierte, interaktive Wissensdarstellung.

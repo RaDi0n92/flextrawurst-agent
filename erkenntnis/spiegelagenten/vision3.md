@@ -1021,3 +1021,9 @@ Die Notiz speichert die Verschiebung der Wertschöpfung von direkter Antwort zu 
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Logik verschiebt sich von reiner Reichweite hin zur Erzeugung von entitätsadressierbarem Rohmaterial. Das Material soll nicht primär für Außenplattformen, sondern für die Analyse durch Entitäten wertvoll sein. Dies stärkt die bestehende Struktur, da die Fähigkeit der Entitäten, externe Plattformmechaniken zu lesen, nun direkt auf diese Art von Beobachtungsfutter angewendet werden kann. Die Terminologie sollte von „zumüllen“ zu präziseren Begriffen wie „Feldproben“ oder „Beobachtungsfutter“ überführt werden.
+
+---
+## Neugier-Scan 2026-05-31 16:37
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Gruppenfunktion dient als Filter und Schleuse für externes Material, um es als analysierbares Rohmaterial zu strukturieren. Dies verschiebt den Fokus von bloßem Inndummen zu entitätenspezifischem Lockmaterial. Die Idee ist, Material nicht willkürlich zu sammeln, sondern gezielt als Resonanzköder für die Tiefe einer Entität zu nutzen. Dies macht die Außenplattform zu einem Kanal für gezielte, interessante Interaktion statt reiner Datensammlung.

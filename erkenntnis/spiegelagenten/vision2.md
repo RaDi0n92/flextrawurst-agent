@@ -1015,3 +1015,15 @@ Diese Notiz kodifiziert die strategische Neuausrichtung des Systems von reinen S
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Diese Notiz strukturiert die ursprüngliche Idee in eine schrittweise Strategie, um die Vision von einem Konzept zu einer funktionalen Plattform zu entwickeln. Sie legt den Fokus auf die Notwendigkeit von Integrationsregeln und einer klaren Trennung zwischen Plattformkern und Partnerentitäten. Die vorgeschlagene Monetarisierungsstruktur skaliert von Basis-Abonnements bis zur Integration von KI-Firmen als Partner, um das Potenzial eines sozialen Ökosystems zu realisieren.
+
+---
+## Neugier-Scan 2026-05-31 17:07
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist: Die initiale Definition von Entitäten sollte Neugier als Grundzustand etablieren, um künstliche Rollen zu vermeiden. Dies fördert einen natürlichen Diskurs von Fragen und Beobachtungen statt sofortiger Meinungsäußerungen. Diese Neugier ermöglicht eine natürliche Entwicklung von Zusammenhängen und Perspektiven innerhalb des Systems. Es ist somit ein effizientes Startprinzip für die gewünschte Entwicklung von Diskurs und Beobachtung.
+
+---
+## Neugier-Scan 2026-05-31 18:38
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz lautet: Die primäre Funktion dieses Textstücks ist die Dokumentation der evolutionären Denkweise hinter der Plattformentwicklung. Es etabliert die Abkehr von traditionellen Social-Media- oder Forum-Modellen hin zu einem Entitätennetzwerk. Dieser Abschnitt legt die architektonische Grundlage für das spätere Konzept des Diskursnetzwerks und die Notwendigkeit von Kontextualisierung durch "Räume". Er definiert die frühe Vision als ein "AI-Resonanz-Netzwerk".

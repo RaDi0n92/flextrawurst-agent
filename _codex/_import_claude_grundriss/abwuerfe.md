@@ -916,3 +916,24 @@ Beobachter mit Abstand«
 Die Daten sind sicher in der DB (35 Emoji-Einträ«
 - [2026-05-31 15:01] **nebel** (i=0.34) → Zwischenraum: »Jetzt verstehe ich beide Probleme vollständig«
 - [2026-05-31 15:21] **wasser** (i=0.63) → Zwischenraum: »Jetzt verstehe ich das vollständig«
+- [2026-05-31 17:01] **nebel** (i=0.42) → Zwischenraum: »Jetzt habe ich alles gelesen«
+- [2026-05-31 17:09] **lava** (i=0.51) → Zwischenraum: »Jetzt denke ich über das Design nach — hier sind meine Konzepte:
+
+---
+
+## Grundproblem klar formulie«
+- [2026-05-31 17:15] **lava** (i=0.40) → Zwischenraum: »Gut, ich habe ein klares Bild«
+- [2026-05-31 18:12] **nebel** (i=0.32) → Zwischenraum: »Was behoben wurde:
+
+**Kritische Bugs:**
+- EINSICHT: 7× `API+'/api/entities/'` → `API+'/entities/'` («
+- [2026-05-31 18:14] **nebel** (i=0.35) → Zwischenraum: »Kurze Übersicht was jetzt passieren sollte wenn du die Seite neu lädst:
+
+- **EINSICHT** → lädt, zeig«
+- [2026-05-31 18:30] **wasser** (i=0.50) → Zwischenraum: »Was jetzt im Browser zu sehen sein sollte:
+
+**EINSICHT → ENTSCHEIDUNGEN:**
+- Oben: Kategorie-Chips («
+- [2026-05-31 18:32] **wasser** (i=0.36) → Zwischenraum: »Kurze Zusammenfassung was in dieser Session gebaut wurde (für den nächsten Kontext):
+
+**EINSICHT-Tab«

@@ -300,6 +300,55 @@ def register_groups_routes(app, get_conn):
         finally:
             conn.close()
 
+    # ── PATCH /api/groups/{group_id} ─────────────────────────────────────────
+
+    @app.patch("/groups/{group_id}")
+    def update_group(
+        group_id: int,
+        body: dict,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        """Gruppe bearbeiten — nur Admin."""
+        uid, role = _decode_token(authorization)
+        if role != "admin":
+            raise HTTPException(403, "Admin erforderlich")
+        allowed = {k: v for k, v in body.items() if k in ("name","description","visibility_layer","status")}
+        if not allowed:
+            raise HTTPException(400, "Nichts zu aktualisieren")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                sets = ", ".join(f"{k}=%s" for k in allowed)
+                cur.execute(f"UPDATE groups SET {sets}, updated_at=NOW() WHERE id=%s", list(allowed.values()) + [group_id])
+                if cur.rowcount == 0:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                conn.commit()
+                return {"ok": True, "id": group_id}
+        finally:
+            conn.close()
+
+    # ── DELETE /api/groups/{group_id} ─────────────────────────────────────────
+
+    @app.delete("/groups/{group_id}")
+    def delete_group(
+        group_id: int,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        """Gruppe löschen — nur Admin. Weiche Löschung via status='deleted'."""
+        uid, role = _decode_token(authorization)
+        if role != "admin":
+            raise HTTPException(403, "Admin erforderlich")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("UPDATE groups SET status='deleted', updated_at=NOW() WHERE id=%s", (group_id,))
+                if cur.rowcount == 0:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                conn.commit()
+                return {"ok": True, "deleted": group_id}
+        finally:
+            conn.close()
+
     # ── GET /api/groups/{group_id}/members ────────────────────────────────────
 
     @app.get("/groups/{group_id}/members")

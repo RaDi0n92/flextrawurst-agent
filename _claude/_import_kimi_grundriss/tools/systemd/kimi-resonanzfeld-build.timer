@@ -1,0 +1,11 @@
+[Unit]
+Description=Kimi Resonanzfeld — alle 30 Minuten neu kompilieren
+Requires=kimi-resonanzfeld-build.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30min
+Unit=kimi-resonanzfeld-build.service
+
+[Install]
+WantedBy=timers.target

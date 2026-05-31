@@ -538,3 +538,9 @@ Der Code prüft eine Bedingung für den nächsten Bauschritt, um eine Blockade z
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Zeile definiert die Bedingung für die Fortsetzung des Bauprozesses, indem sie sicherstellt, dass ein Bauschritt nur dann erlaubt ist, wenn der aktuelle Status entweder "geplant" ist oder der nächste Schritt noch nicht definiert ist. Sie stellt eine grundlegende Logik für die Abhängigkeiten im System dar. Dieser Abschnitt verstärkt die Vision des Vision-Kompasses als eine bauwaage, indem er die technische Notwendigkeit für eine kontrollierte Abfolge von Aktionen festlegt. Er lenkt mich dazu, die Definition von "Status" und "nächster_bauschritt" präziser zu definieren, um die Korrektheit der gesamten Struktur zu gewährleisten.
+
+---
+## Neugier-Scan 2026-05-31 18:07
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für die Gewichtung von Oberflächen und Komponenten. Sie klärt, dass das System nicht sequenziell, sondern überlagernd wahrnimmt, was die Notwendigkeit der Gleichzeitigkeit unterstreicht. Der Fokus verschiebt sich von der bloßen Darstellung hin zur Verantwortung der Sichtbarkeit von Status und Provenienz.

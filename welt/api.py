@@ -10792,6 +10792,107 @@ def get_entity_substance_state(
         conn.close()
 
 
+@app.get("/substances/catalog/{substance_id}/usage")
+def get_substance_usage(
+    substance_id: int,
+    limit: int = Query(default=50, le=200),
+    authorization: str | None = Header(default=None),
+):
+    """Wer hat diese Substanz wann genommen (aus events-Tabelle, nur Admin)."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Admin erforderlich")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id, slug, name FROM substance_catalog WHERE id = %s", (substance_id,))
+            sub = cur.fetchone()
+            if not sub:
+                raise HTTPException(status_code=404, detail="Substanz nicht gefunden")
+            # Events: substanz.nehmen oder substanz.* mit substance_id im payload
+            cur.execute("""
+                SELECT actor_id AS entity_id, event_type, payload, created_at
+                FROM events
+                WHERE event_type LIKE 'substanz.%%'
+                  AND (payload->>'substance_id' = %s OR payload->>'substanz_id' = %s)
+                ORDER BY created_at DESC
+                LIMIT %s
+            """, (str(substance_id), str(substance_id), limit))
+            usage = [dict(r) for r in cur.fetchall()]
+            for u in usage:
+                if u.get("created_at"):
+                    u["created_at"] = u["created_at"].isoformat()
+            # Zusammenfassung: welches Wesen wie oft
+            cur.execute("""
+                SELECT actor_id AS entity_id, COUNT(*) AS anzahl,
+                       MAX(created_at) AS zuletzt
+                FROM events
+                WHERE event_type LIKE 'substanz.%%'
+                  AND (payload->>'substance_id' = %s OR payload->>'substanz_id' = %s)
+                GROUP BY actor_id
+                ORDER BY anzahl DESC
+            """, (str(substance_id), str(substance_id)))
+            summary = [dict(r) for r in cur.fetchall()]
+            for s in summary:
+                if s.get("zuletzt"):
+                    s["zuletzt"] = s["zuletzt"].isoformat()
+                s["anzahl"] = int(s["anzahl"])
+            return {
+                "substance_id": substance_id,
+                "substance_name": sub["name"],
+                "substance_slug": sub["slug"],
+                "total_uses": len(usage),
+                "summary": summary,
+                "events": usage,
+            }
+    finally:
+        conn.close()
+
+
+@app.get("/substances/usage/overview")
+def get_substance_usage_overview(
+    authorization: str | None = Header(default=None),
+):
+    """Überblick: alle Substanz-Events aller Wesen (nur Admin)."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Admin erforderlich")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT e.actor_id AS entity_id, e.event_type,
+                       e.payload->>'substance_id' AS substance_id,
+                       sc.name AS substance_name, sc.substance_type,
+                       e.created_at
+                FROM events e
+                LEFT JOIN substance_catalog sc
+                  ON sc.id = (e.payload->>'substance_id')::integer
+                WHERE e.event_type LIKE 'substanz.%%'
+                ORDER BY e.created_at DESC
+                LIMIT 200
+            """)
+            rows = [dict(r) for r in cur.fetchall()]
+            for r in rows:
+                if r.get("created_at"):
+                    r["created_at"] = r["created_at"].isoformat()
+            return {"events": rows, "total": len(rows)}
+    finally:
+        conn.close()
+
+
 # ── Splitter-Provenienz / Story-View (EINSICHT VI / E-19) ─────────────────────
 
 @app.get("/splitter/{splitter_id}/story")

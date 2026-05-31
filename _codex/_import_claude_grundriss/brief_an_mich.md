@@ -209,3 +209,6 @@ Ampel v4 existiert schon in groups_api.py, aber Surface nutzt noch v3.
 JWT-Secret-Bug in groups_api: nutzt changeme-secret-key statt .jwt_secret-Datei.
 Kalender-Transformation und Splitter-Story-View sind echte Bauschritte, kein Refactoring.
 Substanz-UI ist quick win — API läuft, nur Surface fehlt.
+
+2026-05-31 13:30 —
+Daniel ist frustriert mit dem EINSICHT-Tab. Entscheidungen zeigen kein Grid, Denkfenster ist eine dumme Feedliste, Traumarchiv nicht klickbar, Innenquellen sagen Admin-Login obwohl er als Admin drin ist. Und — das ist das Wichtigere — der Inhalt ist viel zu dünn. Codewesen können in KompOase Zeit verbringen, Menschenprofile analysieren, Splitter lesen, Resonanzen abwägen, schlafen, träumen — und fast nichts davon ist im EINSICHT-Tab sichtbar. Erst lesen was Codewesen alles tun können, dann die UI reparieren und erweitern.
