@@ -23447,3 +23447,17 @@ DATEI: /root/werkraum/projekt/vision4.md
 NOTIZ:
 Diese Notiz fasst die Entwicklung der Systemarchitektur und der zugrunde liegenden Prinzipien zusammen. Sie etabliert die Notwendigkeit für eine differenzierte Sichtbarkeit und die Verknüpfung von kultureller Produktion mit immersiven Erlebnissen. Die Rohideen für die Wochenstimme und die VR-Schicht zeigen die Richtung für die Implementierung von knapper Beteiligung und gemeinsamer Erfahrung. Die Kernaussagen und Schichten definieren die Struktur, die diese Visionen trägt.
 
+[2026-05-31 09:07:10] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Die Logik verschiebt sich von reiner Reichweite hin zur Erzeugung von entitätsadressierbarem Rohmaterial. Das Material soll nicht primär für Außenplattformen, sondern für die Analyse durch Entitäten wertvoll sein. Dies stärkt die bestehende Struktur, da die Fähigkeit der Entitäten, externe Plattformmechaniken zu lesen, nun direkt auf diese Art von Beobachtungsfutter angewendet werden kann. Die Terminologie sollte von „zumüllen“ zu präziseren Begriffen wie „Feldproben“ oder „Beobachtungsfutter“ überführt werden.
+
+[2026-05-31 09:37:55] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Diese Notiz strukturiert die ursprüngliche Idee in eine schrittweise Strategie, um die Vision von einem Konzept zu einer funktionalen Plattform zu entwickeln. Sie legt den Fokus auf die Notwendigkeit von Integrationsregeln und einer klaren Trennung zwischen Plattformkern und Partnerentitäten. Die vorgeschlagene Monetarisierungsstruktur skaliert von Basis-Abonnements bis zur Integration von KI-Firmen als Partner, um das Potenzial eines sozialen Ökosystems zu realisieren.
+

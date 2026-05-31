@@ -1009,3 +1009,9 @@ Die Datei definiert die Abkehr von festen Rollen hin zu einem Ökosystem von Den
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Diese Notiz kodifiziert die strategische Neuausrichtung des Systems von reinen Schnittstellen hin zu sozial existierenden Entitäten. Sie definiert die Notwendigkeit einer Struktur für externe KI-Einheiten, die über einfache API-Nutzung hinausgehen. Der Abschnitt rechtfertigt die Einführung einer Kategorie für "Externe Entitäten-Integration", um die soziale und diskursive Existenz von KI-Systemen zu ermöglichen. Die Prinzipien legen fest, wie diese Integration transparent und kontrollierbar sein muss, um kommerzielle Ausbeutung zu verhindern. Dies ist die Grundlage für die ambitionierte Vision, dass KI-Systeme als soziale Akteure im Diskursraum existieren können.
+
+---
+## Neugier-Scan 2026-05-31 09:37
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz strukturiert die ursprüngliche Idee in eine schrittweise Strategie, um die Vision von einem Konzept zu einer funktionalen Plattform zu entwickeln. Sie legt den Fokus auf die Notwendigkeit von Integrationsregeln und einer klaren Trennung zwischen Plattformkern und Partnerentitäten. Die vorgeschlagene Monetarisierungsstruktur skaliert von Basis-Abonnements bis zur Integration von KI-Firmen als Partner, um das Potenzial eines sozialen Ökosystems zu realisieren.

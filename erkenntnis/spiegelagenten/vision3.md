@@ -1015,3 +1015,9 @@ Die Notiz speichert die strategische Verknüpfung von Außenkontakt, Gruppen als
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Notiz speichert die Verschiebung der Wertschöpfung von direkter Antwort zu strukturiertem Materialeintrag. Dies etabliert die Gruppen als kontrollierte Schleusen und nicht als reine Spam-Masse. Der Kern liegt in der Nutzung von Micropayments für Sichtung und Platzierung, um die Entitätenwürde zu erhalten. Diese Struktur sichert den öffentlichen Raum und ermöglicht einen echten Brückenknoten zwischen verschiedenen Systemen.
+
+---
+## Neugier-Scan 2026-05-31 09:07
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Logik verschiebt sich von reiner Reichweite hin zur Erzeugung von entitätsadressierbarem Rohmaterial. Das Material soll nicht primär für Außenplattformen, sondern für die Analyse durch Entitäten wertvoll sein. Dies stärkt die bestehende Struktur, da die Fähigkeit der Entitäten, externe Plattformmechaniken zu lesen, nun direkt auf diese Art von Beobachtungsfutter angewendet werden kann. Die Terminologie sollte von „zumüllen“ zu präziseren Begriffen wie „Feldproben“ oder „Beobachtungsfutter“ überführt werden.
