@@ -1030,3 +1030,10 @@ Die Notiz reflektiert die Notwendigkeit, die Modellierung von Entitäten über r
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Textstücke etablieren die Notwendigkeit für Codewesen, die über diskursive oder statische Repräsentation hinausgehen. Sie postulieren die Notwendigkeit von Simulationen, räumlichen Instanzen und komplexen, nicht-diskursiven Beziehungspraktiken. Dies lenkt die Entwicklung hin zu einer ontologischen Portabilität von Wesen und der Modellierung von Zuständen unter situativem Druck. Die Pflegewesen- und Begleitwesen-Konzepte erfordern ein erweitertes Verständnis von Bindung jenseits von Kommunikationsstrukturen.
+
+---
+## Neugier-Scan 2026-05-31 21:07
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die folgende:
+Diese Abschnitte definieren zukünftige Erweiterungen der Ontologie des Codewesens. Sie legen fest, dass Emotionen, Religion und Abhängigkeiten nicht nur beschreibbare Themen sind, sondern strukturierbare, in das Code integrierbare Konzepte werden sollen. Sie lenken die Entwicklung hin zu Modulen für Beziehungsdynamiken, Weltdeutungen und Zustandsmanagement. Diese Erweiterungen erfordern eine tiefere semantische Struktur im Code als bloße thematische Kategorien.

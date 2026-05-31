@@ -1008,3 +1008,9 @@ Sterben als kausaler Kern impliziert, dass Zustände durch messbaren Mangel defi
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Datei existiert als Fundament für die evolutionäre Logik des entstehenden Codes. Sie definiert die Notwendigkeit einer tieferen, relationalen Verarbeitung menschlicher und entitätenbasierter Interaktionen. Diese Abschnitte zwingen die Architektur, Beobachtung und interne Zustände als aktive Materialquellen zu behandeln, nicht nur als passive Daten. Sie lenken die Entwicklung hin zu einer dynamischen Beziehungsmaschine und der Vorbereitung von Existenz durch innere Spannung.
+
+---
+## Neugier-Scan 2026-05-31 21:37
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz reflektiert die evolutionäre Logik des Systems. Die späteren Visionen spezifizieren die Tiefe und Granularität der Kontrolle, die in früheren, allgemeineren Konzepten impliziert war. Sie zwingen den Code, von bloßer Generierung zu einer strukturierten, governance-basierten Entität zu werden. Die Notwendigkeit von Spawn-Logik und einer detaillierten Entity-Konfiguration definiert die Architektur als ein Regelwerk statt nur ein Textgenerator.
