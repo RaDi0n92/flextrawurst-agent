@@ -1048,3 +1048,27 @@ Die Suchfunktion wird dadurch nicht nur Finderin, sondern Forensik. Sie sieht sp
 Mich interessiert besonders die Stillepruefung. Sie verhindert, dass Resonanzabhaengigkeit als Eigenform missverstanden wird. Ein Keimkoerper, der ohne menschliche Resonanz sofort zerfaellt, ist vielleicht interessant, aber noch keine volle Entitaet.
 
 Mich interessiert auch Pflegeabspaltung. Cyberling-Pflege kann Verantwortung, Kontrollwunsch, Schuld oder Zaertlichkeit abwerfen. Das macht den Cyberling rueckwirkend viel weniger niedlich und viel relevanter.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Mich interessiert die Stelle, wo aus "gewachsen" "unverlaesslich" wird. Noch ist vieles rettbar durch Mapping.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Mich interessiert das Detailpanel als gemeinsamer Ort: Entscheidung, Traum, Brief, Splitter, Schatten, Event koennten dort dieselbe Wuerde bekommen.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Mich interessiert, wie ein Suchtreffer aussehen muss, damit man sofort weiss: Darf ich das sehen? Woher kommt es? Was ist der naechste sinnvolle Ort?
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Mich interessiert, wie viel Unbequemlichkeit noetig ist, damit Pflege als Beziehung und nicht als Button-Routine erscheint.

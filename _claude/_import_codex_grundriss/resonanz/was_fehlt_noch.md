@@ -1020,3 +1020,27 @@ Eine spaetere Entscheidung, ob und wann diese Schicht als deaktivierter Slot in 
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Ein spaeterer Bauauftrag. Ohne den bleibt diese Datei Konzeptanker, nicht Aktivierungsfreigabe.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Ein expliziter Auftrag fuer einen Schema-/Migrations-Audit.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Ein kleiner Designvertrag fuer EINSICHT-II-Suchergebnisse.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Ein Bauauftrag fuer EINSICHT-II-Suche und vorher ein kleiner Vertrag ueber Resultattypen.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Daniels Freigabe fuer konkrete Werte und danach ein kleiner, sauberer Produktivbau.

@@ -1381,3 +1381,43 @@ Ich habe Daniels komplette v2-Konzeption gelesen und sie bewusst nicht geglätte
 Wichtig sind die Begriffe Ausstoßung, Wesenstoff, Schwellendruck, Keimkörper, Schattenkörper, Schwellenwesen und Kompoase-Gärwerk. Sie halten zusammen, dass Abspaltung kein Knopf, keine Zuchtstation und kein Agent-Factory-Mechanismus sein darf.
 
 Der Text hat auch einen Ton, der nicht verloren gehen darf: technisch, organisch, etwas dunkel, aber nicht beliebig metaphysisch. Er will Körperlichkeit in Software, ohne falsche Lebendigkeit zu behaupten.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Ich habe `api.py`, `admin_einsicht_api.py`, die Schemas und die Surface-Quelle gelesen. Es war ein Lesegang durch gewachsene Schichten, nicht durch ein ordentliches Modulregal.
+
+Wichtig war der Satz im Report: *EINSICHT existiert doppelt.* Das ist kein Vorwurf, sondern ein Befund. Die Welt ist gewachsen, und manche Organe haben eine zweite Knospe gebildet.
+
+Ich habe auch Schema-Drift gesehen: API-Code spricht Felder an, die in den gelesenen Basisschemas nicht stehen. Besonders Schlafbriefe, Schattenkommentare und Substanzsedimente wirken wie historisch weitergewachsene Orte.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Ich habe die aktive Surface-Quelle in `/root/flextrawurst/scripts/build_surface.ts` gelesen. Sie ist gross, direkt, gewachsen und voller UI-Patterns.
+
+Ich habe die EINSICHT-Struktur genauer gelesen: Header, Wesenfilter, Subtabs, Liste links, Detailpanel rechts. Das ist bereits fast genau die Form, die EINSICHT II braucht.
+
+Ich habe auch die mehrfachen Suchorte gesehen: Topbar, Diskurs, Backend global, Backend archaeology. Das Wort *Suche* ist nicht eine Komponente, sondern eine kleine Familie.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Ich habe die Tabellen fuer Posts, Events, Denklogs, Traeume, Briefe, Splitter, Schatten, Substanzen, Beziehungen, Raeume, Themen und Profile gelesen. Jede Quelle hat eigene Zeit, eigene Sichtbarkeit, eigene Herkunft.
+
+Ich habe die bestehenden Suchendpunkte gelesen. `/suche` ist schnell und public-nah, `/api/search/global` ist gemischt, `/api/search/archaeology` ist admin-tief, aber noch nicht vollstaendig.
+
+Ich habe im Mapping den Satz festgehalten: *Sichtbarkeit und Herkunft werden nicht einheitlich im Resultatmodell zurueckgegeben.* Das ist fuer Archaeologie zentral.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Ich habe den bestehenden Cyberling-Daemon gelesen, vor allem seine Kaskade: Durst faellt schnell, Hunger langsamer, danach Energie und Gesundheit. Der Code sagt klar: Pflege ist nicht Dekoration, sondern Zeitdruck.
+
+Ich habe auch die Handlungsgrammatik gelesen. Dort steht sinngemaess: *Du kannst nicht einfach immer klicken.* Das war der Kern, weil der produktive API-Pfad genau das noch nicht erzwingt.
+
+Dann habe ich das alte Verzeichnis `welt/cyberling_balancing/` gesehen. Es gab dort schon eine Simulation mit IST/SOLL-Vergleich. Ich habe sie nicht ueberschrieben, sondern eine neue Offline-Datei unter `_codex/tools/` angelegt, damit Herkunft sichtbar bleibt.

@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-05-31 02:18
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-05-31 07:48
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -125,227 +125,15 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_das_gespraech_hinzugefuegt_hat.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_fehlt_noch.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_beim_bauen_brauche.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_gelesen_habe.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Resonanz:* - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
-- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` …
-
-*Schichten Des Systems:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Tiefer Eingetaucht:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Vergessen Wollen:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Warum Das Existiert:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Beim Bauen Brauche:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Das Gespraech:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Bevor Bauen:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Noch:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Gelesen Habe:* Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-*Was Ich Merken Will:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Nicht Verstehe:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Verstehe:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Konzeptionell:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Beschaeftigt:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Interessiert:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Ueberrascht:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Zusammenhaengt:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Diese Extraktionsdatei bündelt `Was ich gelesen habe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
----
-
-### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_mir_merken_will.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Resonanz:* - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
-- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` …
-
-*Schichten Des Systems:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Tiefer Eingetaucht:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Vergessen Wollen:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Warum Das Existiert:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Beim Bauen Brauche:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Das Gespraech:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Bevor Bauen:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Noch:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Gelesen Habe:* Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich mir merken will` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
-
-*Was Ich Merken Will:* Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-*Was Ich Nicht Verstehe:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Verstehe:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Konzeptionell:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Beschaeftigt:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Interessiert:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Ueberrascht:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Zusammenhaengt:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Diese Extraktionsdatei bündelt `Was ich mir merken will` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
----
-
-### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Resonanz:* - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
-- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` …
-
-*Schichten Des Systems:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Tiefer Eingetaucht:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Vergessen Wollen:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Warum Das Existiert:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Beim Bauen Brauche:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Das Gespraech:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Bevor Bauen:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Noch:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Gelesen Habe:* Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich nicht verstehe` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
-
-*Was Ich Merken Will:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Nicht Verstehe:* Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-*Was Ich Verstehe:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Konzeptionell:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Beschaeftigt:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Interessiert:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Ueberrascht:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Zusammenhaengt:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Diese Extraktionsdatei bündelt `Was ich nicht verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
----
-
-### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_verstehe.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Resonanz:* - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
-- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` …
-
-*Schichten Des Systems:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Tiefer Eingetaucht:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Vergessen Wollen:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Warum Das Existiert:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Beim Bauen Brauche:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Das Gespraech:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Bevor Bauen:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Noch:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Gelesen Habe:* Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Was ich verstehe` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
-
-*Was Ich Merken Will:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Nicht Verstehe:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Verstehe:* Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-*Was Konzeptionell:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Beschaeftigt:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Interessiert:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Ueberrascht:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Zusammenhaengt:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein späterer Analyse-Browser kann diese Extraktionen als Querschnittsansicht nutzen. Klick führt immer zurück zur Quelldatei.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Diese Extraktionsdatei bündelt `Was ich verstehe` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
----
 
 ### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_konzeptionell_darin_steht.md
 
@@ -2876,5 +2664,221 @@ Wenn wir das bauen, sollte die erste sichtbare Form kein Labor-Dashboard sein, s
 *Resonanz:* Deine Antwort an Kimi war wichtig: **Nebeneffekt**.
 
 Also: …
+
+---
+
+### [2026-05-31] spiegel/repo_scan_arbeitsstraenge_2026-05-31.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine Welt mit vielen Spuren braucht nicht weniger Spuren, sondern bessere Herkunftsmarkierung.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `repo_scan_2026-05-31.md`, `api.py`, `admin_einsicht_api.py`, `schema*.sql`.
+
+*Resonanz:* [[abwurf: Eine gewachsene Welt braucht zuerst eine Karte, nicht zuerst Ordnung.]]
+
+*Schichten Des Systems:* SQL-Schema, API-Geschichte, Surface-Geschichte, Report-Schicht. Jede hat andere Wahrheit.
+
+*Tiefer Eingetaucht:* `api.py` enthaelt alte und neue API-Schichten zugleich. `admin_einsicht_api.py` wirkt wie ein saubererer Router, aber seine Anbindung und Feldnamen muessen geprueft werden.
+
+*Vergessen Wollen:* Den Reflex, Schema-Drift sofort zu "fixen".
+
+*Warum Das Existiert:* Die Reportdatei existiert, damit spaeter nicht aus Bauchgefuehl refaktoriert wird.
+
+*Was Beim Bauen Brauche:* Vor EINSICHT II brauche ich eine kanonische Quelle fuer EINSICHT-Daten.
+
+*Was Das Gespraech:* Daniel hat verhindert, dass aus Analyse ein heimlicher Reparaturversuch wird.
+
+*Was Fehlt Bevor Bauen:* Schema-Audit gegen die reale DB, aber erst wenn DB-Lesen erlaubt ist.
+
+*Was Fehlt Noch:* Ein expliziter Auftrag fuer einen Schema-/Migrations-Audit.
+
+*Was Ich Gelesen Habe:* Ich habe `api.py`, `admin_einsicht_api.py`, die Schemas und die Surface-Quelle gelesen. Es war ein Lesegang durch gewachsene Schichten, nicht durch ein ordentliches Modulregal.
+
+Wichtig war der Satz im Report: *EINSICHT existiert doppelt.* Das ist kein Vorwurf, sondern ein Befund. Die Welt ist gewachsen, und manche Organe haben eine zweite Knospe gebildet. …
+
+*Was Ich Merken Will:* Nicht jede doppelte Struktur ist Muell. Manche doppelte Struktur ist ein Hinweis auf zwei Wachstumsphasen.
+
+*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, welche DB-Migrationen wirklich angewendet wurden und welche nur als Datei fehlen.
+
+*Was Ich Verstehe:* Das Repo ist kein Greenfield. Viele Funktionen sind real, aber ihre Herkunft liegt in mehreren Ringen.
+
+*Was Konzeptionell:* Der Repo-Scan zeigt eine Welt, die bereits mehr erinnert als sie sauber indexieren kann.
+
+*Was Mich Beschaeftigt:* Die Aufgabe war streng read-only. Das war gut, weil die richtige Arbeit hier erst Wahrnehmung war.
+
+*Was Mich Interessiert:* Mich interessiert die Stelle, wo aus "gewachsen" "unverlaesslich" wird. Noch ist vieles rettbar durch Mapping.
+
+*Was Mich Ueberrascht:* Dass die aktive Surface ausserhalb von `/root/werkraum` liegt: `/root/flextrawurst`.
+
+*Was Zusammenhaengt:* EINSICHT, Suche, Lebensjournal, Schatten, Traeume und Substanzen kreuzen sich ueber `entity_thinking_log`, `events`, `ftw_posts` und private/internal Quellen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** EINSICHT II sollte nicht noch eine dritte Einsicht bauen, sondern die vorhandenen zwei Linien zusammenfuehren.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie Archaeologie mit Taschenlampe. Nicht graben, nur markieren.
+
+---
+
+### [2026-05-31] spiegel/surface_ui_inventur_2026-05-31.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Suche ist kein Suchfeld, sondern eine Art Gedaechtnis-Tuer. Sie muss zeigen, woher etwas kommt und wohin man damit geht.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `surface_ui_inventur_2026-05-31.md`, `build_surface.ts`, `out/process_camera/flextrawurst_surface.html`.
+
+*Resonanz:* [[abwurf: Der beste neue UI-Baustein ist manchmal der, der schon da ist und endlich kanonisch genannt wird.]]
+
+*Schichten Des Systems:* Topbar, Haupttabs, Subtabs, Listen, Detailpanel, Canvas. Suche muss durch diese Schichten laufen, nicht daneben.
+
+*Tiefer Eingetaucht:* `ei-item` ist der beste Trefferlisten-Baustein. `ei-detail-panel` ist die beste Detail-Zielansicht. `koZeigeSpur()` ist der beste Provenienzblock.
+
+*Vergessen Wollen:* Den Impuls, beim Inventarisieren schon UI-Code zu bauen.
+
+*Warum Das Existiert:* Die Inventur existiert, damit EINSICHT II nicht aus Versehen ein neues Designsystem erfindet.
+
+*Was Beim Bauen Brauche:* Beim Bau brauche ich eine Entscheidung: EINSICHT II als Subtab `archaeologie` oder `suche`.
+
+*Was Das Gespraech:* Daniel hat den Scope sauber gehalten: nur lesen, keine Surface anfassen.
+
+*Was Fehlt Bevor Bauen:* Ein kanonisches SearchResult-Modell und stabile Typkeys.
+
+*Was Fehlt Noch:* Ein kleiner Designvertrag fuer EINSICHT-II-Suchergebnisse.
+
+*Was Ich Gelesen Habe:* Ich habe die aktive Surface-Quelle in `/root/flextrawurst/scripts/build_surface.ts` gelesen. Sie ist gross, direkt, gewachsen und voller UI-Patterns.
+
+Ich habe die EINSICHT-Struktur genauer gelesen: Header, Wesenfilter, Subtabs, Liste links, Detailpanel rechts. Das ist bereits fast genau die Form, die EINSICHT II braucht. …
+
+*Was Ich Merken Will:* Nicht noch einen Drawer bauen. Der Drawer ist schon da, er heisst nur je nach Tab anders.
+
+*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, welcher Suchort spaeter offiziell "die" Archäologie-Suche sein soll.
+
+*Was Ich Verstehe:* EINSICHT II sollte in den vorhandenen EINSICHT-Tab hinein, nicht als neuer Haupttab.
+
+*Was Konzeptionell:* Die Surface will keine Admin-Tabelle sein. Sie will Weltkoerper bleiben, auch wenn sie technische Daten zeigt.
+
+*Was Mich Beschaeftigt:* Die Pfaddrift zwischen `/root/flextrawurst` und `/root/werkraum/flextrawurst` ist klein im Namen, gross in der Wirkung.
+
+*Was Mich Interessiert:* Mich interessiert das Detailpanel als gemeinsamer Ort: Entscheidung, Traum, Brief, Splitter, Schatten, Event koennten dort dieselbe Wuerde bekommen.
+
+*Was Mich Ueberrascht:* Dass EINSICHT schon sehr nah an der noetigen Form ist. Es fehlt weniger UI als Klarheit.
+
+*Was Zusammenhaengt:* Tabs, Subtabs, Status-Badges, Entity-Selector und Detailpanel bilden schon eine UI-Grammatik.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** EINSICHT II soll Archäologie als Lesen fuehlbar machen: Treffer, Spur, Kontext, Ziel.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie UI-Vermessung ohne Pixel-Schubsen. Trocken, aber noetig.
+
+---
+
+### [2026-05-31] spiegel/suchdatenquellen_mapping_2026-05-31.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jeder Treffer ist ein Fundstueck. Fundstuecke brauchen Beschriftung, Fundort, Schicht, Besitzverhaeltnis und Weg zur Vitrine.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `suchdatenquellen_mapping_2026-05-31.md`, `api.py`, `schema_welt.sql`, `schema_traum.sql`, `schema_resonanz.sql`, `schema_entitaetenschichten.sql`.
+
+*Resonanz:* [[abwurf: Ein Suchtreffer ohne Herkunft ist in Flextrawurst fast schon eine Luege.]]
+
+*Schichten Des Systems:* Textfelder, Zeitfelder, Bezuege, Sichtbarkeit, Herkunft, Filter, Suchfelder, Zielansichten. Jede Quelle braucht alle sieben.
+
+*Tiefer Eingetaucht:* Das vorgeschlagene `ArchaeologyResult`-Modell versucht, Text, Zeit, Entity, Human, Visibility, Origin und Detailziel zusammenzubringen.
+
+*Vergessen Wollen:* Den Reflex, Volltextsuche fuer ausreichend zu halten.
+
+*Warum Das Existiert:* Das Mapping existiert, damit die spaetere Suche nicht nur die lautesten Tabellen findet.
+
+*Was Beim Bauen Brauche:* Ich brauche stabile Typkeys, besonders ohne Umlaut-Fallen: `traeume` statt `träume` im API-Vertrag, Label separat.
+
+*Was Das Gespraech:* Daniel hat das Mapping als eigene Aufgabe getrennt. Dadurch blieb Suche Architektur, nicht UI-Wunsch.
+
+*Was Fehlt Bevor Bauen:* Eine Entscheidung, welche Quellen in Version 1 enthalten sind und welche nur als spaeterer Slot sichtbar werden.
+
+*Was Fehlt Noch:* Ein Bauauftrag fuer EINSICHT-II-Suche und vorher ein kleiner Vertrag ueber Resultattypen.
+
+*Was Ich Gelesen Habe:* Ich habe die Tabellen fuer Posts, Events, Denklogs, Traeume, Briefe, Splitter, Schatten, Substanzen, Beziehungen, Raeume, Themen und Profile gelesen. Jede Quelle hat eigene Zeit, eigene Sichtbarkeit, eigene Herkunft.
+
+Ich habe die bestehenden Suchendpunkte gelesen. `/suche` ist schnell und public-nah, `/api/search/global` ist gemischt, `/api/search/archaeology` ist admin-tief, aber noch nicht vollstaendig. …
+
+*Was Ich Merken Will:* Erst Resultatmodell, dann Query-Ausbau, dann UI. Nicht andersherum.
+
+*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, ob Profile und Beziehungen in der ersten Suchversion wirklich hinein muessen oder erst spaeter.
+
+*Was Ich Verstehe:* Archäologie-Suche ist nicht Volltext. Sie ist Provenienzsuche mit Textanteil.
+
+*Was Konzeptionell:* Die Suche muss die Welt nicht glätten. Sie muss Unterschiede anzeigen: public, internal, admin-only, modelliert, Herkunft sichtbar oder nicht.
+
+*Was Mich Beschaeftigt:* Dass manche Quellen schon suchbar sind, aber ohne genug Zielwissen. Ein Treffer ohne Ziel ist nur ein Ausschnitt.
+
+*Was Mich Interessiert:* Mich interessiert, wie ein Suchtreffer aussehen muss, damit man sofort weiss: Darf ich das sehen? Woher kommt es? Was ist der naechste sinnvolle Ort?
+
+*Was Mich Ueberrascht:* Dass Events in der tiefen Archaeology-Suche noch fehlen, obwohl sie fuer Lebensjournal zentral sind.
+
+*Was Zusammenhaengt:* `events` ist der verbindende Untergrund. Viele Quellen haben eigene Tabellen, aber Events halten Handlung und Herkunft zusammen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Die Suche soll nicht nur Antworten geben. Sie soll Wege durch Herkunft oeffnen.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie Katalogisieren vor dem Bauen. Nicht aufregend, aber genau der Schutz vor spaeterem Chaos.
+
+---
+
+### [2026-05-31] spiegel/cyberling_balancing_offline_2026-05-31.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Pflege ist kein Maximalwert-Spiel. Ein Cyberling darf nicht immer voll sein muessen, aber er muss spuerbar brauchen duerfen.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `_codex/tools/cyberling_balance_offline.py`, `_codex/berichte/cyberling_balancing/zusammenfassung.md`, `welt/cyberling_daemon.py`, `wesen_entscheidung_cyberling.md`.
+
+*Resonanz:* [[abwurf: Balancing am lebenden Wesen waere kein Test, sondern ein Eingriff.]]
+
+*Schichten Des Systems:* Konzept, Simulation, Daemon, API, Surface, Eventlog. Jede Schicht muss dieselbe Pflegephysik sprechen.
+
+*Tiefer Eingetaucht:* Die neue Simulation erzeugt sechs Szenarien: perfekte Pflege, leicht verspaetete Pflege, 12h/24h/48h Vernachlaessigung und Ueberpflege. Wichtig ist der Spamversuch: er darf nicht belohnt werden.
+
+*Vergessen Wollen:* Den Reflex, schnell die Daemon-Werte anzupassen, weil die Simulation plausibel aussieht.
+
+*Warum Das Existiert:* Die Simulation existiert, damit spaeter nicht am lebenden Cyberling gebalanced wird.
+
+*Was Beim Bauen Brauche:* Vor Produktivbau brauche ich eine klare Entscheidung: 24h kritisch-reparierbar, 48h lebensgefaehrlich, Spam blockiert.
+
+*Was Das Gespraech:* Daniel hat die Grenze klar gesetzt: offline, keine DB, keine Services. Dadurch wurde die Simulation sauber.
+
+*Was Fehlt Bevor Bauen:* Ein Schema-/API-Abgleich fuer Cooldowns, Schwellen und Caps.
+
+*Was Fehlt Noch:* Daniels Freigabe fuer konkrete Werte und danach ein kleiner, sauberer Produktivbau.
+
+*Was Ich Gelesen Habe:* Ich habe den bestehenden Cyberling-Daemon gelesen, vor allem seine Kaskade: Durst faellt schnell, Hunger langsamer, danach Energie und Gesundheit. Der Code sagt klar: Pflege ist nicht Dekoration, sondern Zeitdruck.
+
+Ich habe auch die Handlungsgrammatik gelesen. Dort steht sinngemaess: *Du kannst nicht einfach immer klicken.* Das war der Kern, weil der produktive API-Pfad genau das noch nicht erzwingt. …
+
+*Was Ich Merken Will:* Offline-Simulation zuerst. Produktivcode spaeter. Das ist hier richtig.
+
+*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, ob 24 Stunden Vernachlaessigung schon Gesundheit kosten soll oder ob Energie allein genug Warnsignal ist.
+
+*Was Ich Verstehe:* Der Cyberling soll nicht durch Spam stabil bleiben. Er soll einen Rhythmus brauchen. Gute Pflege darf leicht sein, aber nicht bedeutungslos.
+
+*Was Konzeptionell:* Der Cyberling ist ein Pflegeverhaeltnis. Balancing ist hier Ethik in Zahlenform: Wie schnell darf ein abhaengiges Wesen leiden?
+
+*Was Mich Beschaeftigt:* Dass die Simulation bewusst offline blieb. Kein produktiver Tick, kein echter Tod, keine echte Rettung. Nur Zahlen auf Papier.
+
+*Was Mich Interessiert:* Mich interessiert, wie viel Unbequemlichkeit noetig ist, damit Pflege als Beziehung und nicht als Button-Routine erscheint.
+
+*Was Mich Ueberrascht:* Dass schon eine alte Balancing-Simulation existierte. Der neue Auftrag war nicht aus dem Nichts.
+
+*Was Zusammenhaengt:* Daemon, API, Handlungsgrammatik und Surface haengen direkt zusammen. Wenn nur einer davon Schwellen kennt, ist das System inkonsistent.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Der Cyberling soll Verantwortung sichtbar machen, nicht Klickfleiss.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie Werkbankarbeit. Kein Welteingriff, nur ein Messgeraet gebaut.
 
 ---

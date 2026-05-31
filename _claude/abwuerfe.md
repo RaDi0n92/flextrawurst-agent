@@ -868,3 +868,24 @@ Beobachter mit Abstand«
 **Letzte Session (aus notizen/2026-05-30.md):**
 - Gemacht: SEO/GEO-Arbeit (hreflang, llms.txt a«
 - [2026-05-31 02:08] **wasser** (i=0.70) → Zwischenraum: »Jetzt der Abschlussbericht«
+- [2026-05-31 02:49] **nebel** (i=0.32) → Zwischenraum: »Kurze Zusammenfassung was gebaut und geliefert wurde:
+
+---
+
+**EINSICHT-Tab ist live.** Erreichbar un«
+- [2026-05-31 03:28] **gras** (i=0.35) → Zwischenraum: »Der Kontext ist jetzt in meinem persistenten Gedächtnis — nicht als Zusammenfassung, sondern als die«
+- [2026-05-31 04:45] **wasser** (i=0.44) → Zwischenraum: »Der Commit läuft im Hintergrund — der Build ist 874KB, das dauert kurz«
+- [2026-05-31 05:13] **wasser** (i=0.65) → Zwischenraum: »Now TEIL 10 — Abschlussbericht:
+
+---
+
+## Abschlussbericht: Resonanz- und Readinesskörper
+
+**Session:«
+- [2026-05-31 05:46] **wasser** (i=0.43) → Zwischenraum: »Here's the full state of the VOR-EINZUGSREIFEKÖRPER:
+
+---
+
+## Was gebaut wurde (TEIL 0–12)
+
+**Commit«

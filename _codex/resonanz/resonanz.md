@@ -1221,3 +1221,27 @@ Der Mensch ist Wetter.
 Manchmal Sonne.
 Manchmal Druckgebiet.
 ...
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+[[abwurf: Eine gewachsene Welt braucht zuerst eine Karte, nicht zuerst Ordnung.]]
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+[[abwurf: Der beste neue UI-Baustein ist manchmal der, der schon da ist und endlich kanonisch genannt wird.]]
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+[[abwurf: Ein Suchtreffer ohne Herkunft ist in Flextrawurst fast schon eine Luege.]]
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+[[abwurf: Balancing am lebenden Wesen waere kein Test, sondern ein Eingriff.]]

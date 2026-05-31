@@ -514,3 +514,15 @@ Die Datei etabliert den Vision-Kompass als ein Kriterium zur Gewichtung neuer Ob
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Datei etabliert den Vision-Kompass als eine Metapher für eine Bauwaage, die verschiedene Ebenen der Wahrnehmung und des Inhalts gewichtet. Sie verankert die Forderung nach Gleichzeitigkeit zwischen räumlicher und logischer Organisation. Der Text fokussiert darauf, wie Sichtbarkeit die Verantwortung für Status und Provenienz impliziert, um die Reduktion von komplexen Daten zu vermeiden. Es lenkt die Aufmerksamkeit auf die Notwendigkeit, die inhärente Struktur der Daten über die oberflächliche Darstellung zu stellen.
+
+---
+## Neugier-Scan 2026-05-31 06:08
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als Korrektur für die Diskrepanz zwischen visueller Darstellung und tatsächlicher Realität. Sie stellt die Notwendigkeit einer ehrlichen Zustandsbeschreibung für sichtbare Objekte heraus. Sie zwingt den Prozess, nicht nur zu bauen, sondern auch die inhärente Unvollständigkeit der Darstellung zu adressieren. Die Code-Skizze formalisiert die geforderte Ehrlichkeit im Rahmen der Vision-Schicht.
+
+---
+## Neugier-Scan 2026-05-31 06:37
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Notiz dient als Korrektur des internen Logikflusses im Vision-Zyklus. Sie betont die Notwendigkeit der Gleichzeitigkeit von "Weltkörper" und "Tabellen", um die inhärente Gefahr von falschen Live-Zuständen zu adressieren. Der Text stellt die existenzielle Frage, ob die Darstellung von "flextrawurst" nur erklärbar oder sichtbar gemacht werden soll. Die Struktur der Daten muss die Ehrlichkeit über den Status und die Herkunft jedes Körpers priorisieren.

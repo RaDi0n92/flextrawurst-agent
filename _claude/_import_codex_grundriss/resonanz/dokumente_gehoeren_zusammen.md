@@ -1054,3 +1054,27 @@ Diese Datei gehoert zu den Konzepten ueber Entitaetenschichten, Schlaf, Cyberlin
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Diese Datei gehoert zu `substanzschicht_wunde_versprechen_spur.md`, zu den Zwischenraum-/KompOase-Konzepten, zu Schlaf/Traum, Cyberling, Resonanz und Entitaetenschichten.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+`repo_scan_2026-05-31.md`, `api.py`, `admin_einsicht_api.py`, `schema*.sql`.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+`surface_ui_inventur_2026-05-31.md`, `build_surface.ts`, `out/process_camera/flextrawurst_surface.html`.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+`suchdatenquellen_mapping_2026-05-31.md`, `api.py`, `schema_welt.sql`, `schema_traum.sql`, `schema_resonanz.sql`, `schema_entitaetenschichten.sql`.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+`_codex/tools/cyberling_balance_offline.py`, `_codex/berichte/cyberling_balancing/zusammenfassung.md`, `welt/cyberling_daemon.py`, `wesen_entscheidung_cyberling.md`.

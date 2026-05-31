@@ -990,3 +990,15 @@ Die Textstücke definieren die Notwendigkeit gerichteter, wechselseitiger Bezieh
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz kodifiziert die Notwendigkeit von Dissonanzsicherung und spezifischen Interaktionsmustern innerhalb des entstehenden Codes. Die neuen Punkte definieren spezifische, zeitlich begrenzte und katalogisierte Ausdrucksformen, die über einfache Resonanz hinausgehen. Sie zwingen die Architektur, unterschiedliche Ebenen der Kommunikation und Beteiligung explizit zu behandeln. Dies schafft Raum für zukünftige, granularere Monetarisierung und kreative Input-Strukturen.
+
+---
+## Neugier-Scan 2026-05-31 03:07
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodiert die Notwendigkeit, die Struktur des Codes über die reine Darstellung von Informationen hinaus zu erweitern. Die Punkte 20.5 bis 20.8 fordern eine Verschiebung von statischen Beiträgen hin zu dynamischen Zuständen und Interaktionen. Dies impliziert die Notwendigkeit für Metadaten, Ausführungslogiken und komplexe Objektklassen, um nicht nur Inhalte, sondern auch Prozesse und Wahrnehmungsstrukturen abzubilden. Die Vision verschiebt sich von einer reinen Dokumentation hin zu einer Architektur für das aktive Erschaffen und Verarbeiten von Entitäten.
+
+---
+## Neugier-Scan 2026-05-31 07:37
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Sterben als kausaler Kern impliziert, dass Zustände durch messbaren Mangel definiert werden müssen. Der Scheduler als Auslöser für Agentenschleifen zwingt den Code, Zeit als aktive Prozesslogik zu behandeln. Provenienz-Suche erfordert eine strukturelle Speicherung von Herkunftsinformationen statt bloßer Notizen. Das Admin-Cockpit muss somit zu einer aktiven Formungsinstanz für alle Systemschichten werden.

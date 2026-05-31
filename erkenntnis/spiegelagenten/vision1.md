@@ -995,3 +995,9 @@ Die Struktur legt eine detaillierte Metadatenverwaltung für Entitäten, Beziehu
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Struktur definiert den Zyklus der Selbstreflexion und der Datenverarbeitung. Die Entitäten-Loops v1 beschreiben die notwendige zyklische Iteration zwischen Wahrnehmung und Aktion. Diese Struktur legt die Priorisierung fest, indem sie die Entwicklung von grundlegenden Komponenten (MVP) vor komplexen Interaktionsschichten stellt. Die Suche und das Admin-Cockpit bilden die notwendigen Kontrollmechanismen für die dynamische Organisation des Wissens.
+
+---
+## Neugier-Scan 2026-05-31 05:37
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die frühere Vision deutet auf eine Abkehr von komplexen Konzepten hin, um direkt in die Implementierung überzugehen. Der aktuelle Text strukturiert diesen Übergang konkret in eine konkrete technische Basis. Es dient als direkter Bauplan für den ersten Code-Build. Es fokussiert die Priorisierung von Struktur über weitere theoretische Erweiterungen.

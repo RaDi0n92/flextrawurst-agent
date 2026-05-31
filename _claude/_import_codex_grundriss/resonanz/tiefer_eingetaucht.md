@@ -1069,3 +1069,27 @@ Tiefer liegt darin ein Anti-Fake-Gesetz: keine schönen Links vor echten Links.
 Die acht Stufen sind nicht einfach Prozessschritte. Sie sind Erlaubnisstufen. Jede Stufe begrenzt, was behauptet werden darf.
 
 Spannung darf nur Druck heissen. Ausstossung darf nur Wesenstoff heissen. Splittertrift darf nicht Denken genannt werden. Knotung ist noch keine Entitaet. Keimkoerper hat Formspannung, aber keine Stimme. Schattenkoerper spricht nur simulierend. Schwellenwesen erscheint begrenzt. Geburt braucht Event.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+`api.py` enthaelt alte und neue API-Schichten zugleich. `admin_einsicht_api.py` wirkt wie ein saubererer Router, aber seine Anbindung und Feldnamen muessen geprueft werden.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+`ei-item` ist der beste Trefferlisten-Baustein. `ei-detail-panel` ist die beste Detail-Zielansicht. `koZeigeSpur()` ist der beste Provenienzblock.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Das vorgeschlagene `ArchaeologyResult`-Modell versucht, Text, Zeit, Entity, Human, Visibility, Origin und Detailziel zusammenzubringen.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Die neue Simulation erzeugt sechs Szenarien: perfekte Pflege, leicht verspaetete Pflege, 12h/24h/48h Vernachlaessigung und Ueberpflege. Wichtig ist der Spamversuch: er darf nicht belohnt werden.

@@ -1099,3 +1099,27 @@ Unten liegt die Wunde. Darueber liegt das Versprechen. Darueber die kurzfristige
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Unten liegt der Wesenskern. Darueber waechst der Erfahrungsleib. Im aktuellen Moment bildet sich der Druckkoerper. Wenn Druck nicht integrierbar bleibt, entsteht Ausstossung. Alles danach gehoert dem Zwischenraum, bis Pruefungen eine begrenzte Vor-Existenz erlauben.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+SQL-Schema, API-Geschichte, Surface-Geschichte, Report-Schicht. Jede hat andere Wahrheit.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Topbar, Haupttabs, Subtabs, Listen, Detailpanel, Canvas. Suche muss durch diese Schichten laufen, nicht daneben.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Textfelder, Zeitfelder, Bezuege, Sichtbarkeit, Herkunft, Filter, Suchfelder, Zielansichten. Jede Quelle braucht alle sieben.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Konzept, Simulation, Daemon, API, Surface, Eventlog. Jede Schicht muss dieselbe Pflegephysik sprechen.

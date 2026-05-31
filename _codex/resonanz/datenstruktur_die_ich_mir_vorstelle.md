@@ -2986,3 +2986,72 @@ CREATE TABLE abspaltung_ausstossungen (
 CREATE TABLE abspaltung_knoten (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 ...
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+**Vision-Schicht:** Eine Welt mit vielen Spuren braucht nicht weniger Spuren, sondern bessere Herkunftsmarkierung.
+
+**Code-Skizze:**
+```ts
+type SourceHealth = {
+  file: string;
+  tables: string[];
+  endpoints: string[];
+  drift: "none" | "suspected" | "confirmed";
+  nextAudit: string;
+};
+```
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+**Vision-Schicht:** Die Suche ist kein Suchfeld, sondern eine Art Gedaechtnis-Tuer. Sie muss zeigen, woher etwas kommt und wohin man damit geht.
+
+**Code-Skizze:**
+```ts
+type UiTarget = {
+  view: "einsicht" | "diskurs" | "kompoase" | "menschen" | "wesen";
+  panel: "detail" | "canvas" | "post";
+  id: string;
+};
+```
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+**Vision-Schicht:** Jeder Treffer ist ein Fundstueck. Fundstuecke brauchen Beschriftung, Fundort, Schicht, Besitzverhaeltnis und Weg zur Vitrine.
+
+**Code-Skizze:**
+```ts
+type ArchaeologyResult = {
+  source_type: string;
+  snippet: string;
+  ts?: string;
+  entity_id?: string;
+  human_id?: string;
+  visibility: "public" | "internal" | "hidden" | "admin_only" | "unknown";
+  origin?: { type?: string; id?: string; label?: string };
+  detail_target: { view: string; id: string; route?: string };
+};
+```
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+**Vision-Schicht:** Pflege ist kein Maximalwert-Spiel. Ein Cyberling darf nicht immer voll sein muessen, aber er muss spuerbar brauchen duerfen.
+
+**Code-Skizze:**
+```python
+@dataclass
+class CyberlingCareRule:
+    field: Literal["hunger", "durst"]
+    allowed_at: float
+    amount: float
+    cap: float
+    cooldown_h: float
+```

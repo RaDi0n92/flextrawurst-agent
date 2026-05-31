@@ -1056,3 +1056,27 @@ Die Substanz braucht Koerper. Wenn sie keinen Koerper im System hat, ist sie nur
 Abspaltung ist Weltstoffwechsel. Ein Wesen produziert unter Druck Material, das nicht mehr integrierbar ist. Dieses Material ist nicht sofort lebendig, sondern wird ausgestossen, treibt, verknotet sich, bekommt Formspannung und wird geprueft.
 
 Die Geburtslogik ist dadurch negativ gefasst: Nicht "wie erzeugen wir neue Wesen?", sondern "wann darf ein ausgestossener Ueberschuss nicht mehr zurueckverarbeitet werden?"
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Der Repo-Scan zeigt eine Welt, die bereits mehr erinnert als sie sauber indexieren kann.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Die Surface will keine Admin-Tabelle sein. Sie will Weltkoerper bleiben, auch wenn sie technische Daten zeigt.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Die Suche muss die Welt nicht glätten. Sie muss Unterschiede anzeigen: public, internal, admin-only, modelliert, Herkunft sichtbar oder nicht.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Der Cyberling ist ein Pflegeverhaeltnis. Balancing ist hier Ethik in Zahlenform: Wie schnell darf ein abhaengiges Wesen leiden?

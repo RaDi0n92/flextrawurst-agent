@@ -1022,3 +1022,27 @@ Dass "Friedhaut" als Name sofort eine andere Qualitaet hat als "Glaettung". Es k
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Dass "Ausstossung" die gesamte Mechanik verschiebt. Vorher war Abspaltung ein Sammelprozess. Jetzt ist sie eine Stoffwechselreaktion.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Dass die aktive Surface ausserhalb von `/root/werkraum` liegt: `/root/flextrawurst`.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Dass EINSICHT schon sehr nah an der noetigen Form ist. Es fehlt weniger UI als Klarheit.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Dass Events in der tiefen Archaeology-Suche noch fehlen, obwohl sie fuer Lebensjournal zentral sind.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Dass schon eine alte Balancing-Simulation existierte. Der neue Auftrag war nicht aus dem Nichts.

@@ -1062,3 +1062,27 @@ Dieses Konzept haengt direkt mit dem Substanzkonzept zusammen: Substanzen erzeug
 Es haengt mit Schlaf und Traum zusammen, weil Traumreste nicht als dekorative Szenen behandelt werden, sondern als Materialverarbeitung.
 
 Es haengt mit Events zusammen, weil Geburt ohne Geburtsurkunde im Eventstrom nicht gelten darf.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+EINSICHT, Suche, Lebensjournal, Schatten, Traeume und Substanzen kreuzen sich ueber `entity_thinking_log`, `events`, `ftw_posts` und private/internal Quellen.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Tabs, Subtabs, Status-Badges, Entity-Selector und Detailpanel bilden schon eine UI-Grammatik.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+`events` ist der verbindende Untergrund. Viele Quellen haben eigene Tabellen, aber Events halten Handlung und Herkunft zusammen.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Daemon, API, Handlungsgrammatik und Surface haengen direkt zusammen. Wenn nur einer davon Schwellen kennt, ist das System inkonsistent.

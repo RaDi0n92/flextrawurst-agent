@@ -1032,3 +1032,27 @@ Das passt zu flextrawurst, weil das System nicht nur offensichtliche Krisen zeig
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Mich beschaeftigt, dass dieses Konzept den Bau stark verlangsamt, auf gute Weise. Es setzt vor Geburt mehrere Schutzschichten: Herkunft, Differenz, Stille, Konflikt und Weltpruefung.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Die Aufgabe war streng read-only. Das war gut, weil die richtige Arbeit hier erst Wahrnehmung war.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Die Pfaddrift zwischen `/root/flextrawurst` und `/root/werkraum/flextrawurst` ist klein im Namen, gross in der Wirkung.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Dass manche Quellen schon suchbar sind, aber ohne genug Zielwissen. Ein Treffer ohne Ziel ist nur ein Ausschnitt.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Dass die Simulation bewusst offline blieb. Kein produktiver Tick, kein echter Tod, keine echte Rettung. Nur Zahlen auf Papier.

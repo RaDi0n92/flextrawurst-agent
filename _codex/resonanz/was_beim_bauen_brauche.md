@@ -1126,3 +1126,27 @@ Beim Bauen brauche ich zuerst read-only Befunde:
 * Schwellendruck mit Quellenmarkierung
 * Schattenantworten als nicht-kanonische Simulationen
 * Geburt nur als explizites Event mit Pruefprotokoll
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Vor EINSICHT II brauche ich eine kanonische Quelle fuer EINSICHT-Daten.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Beim Bau brauche ich eine Entscheidung: EINSICHT II als Subtab `archaeologie` oder `suche`.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Ich brauche stabile Typkeys, besonders ohne Umlaut-Fallen: `traeume` statt `träume` im API-Vertrag, Label separat.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Vor Produktivbau brauche ich eine klare Entscheidung: 24h kritisch-reparierbar, 48h lebensgefaehrlich, Spam blockiert.

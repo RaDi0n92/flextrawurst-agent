@@ -1024,3 +1024,27 @@ Diese Datei existiert, damit die Substanzschicht spaeter nicht bei Namen oder Ef
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Diese Datei existiert, damit spaetere Bauarbeit an Abspaltung nicht als Feature "Entitaet erzeugen" startet, sondern als Organ "Ausstossungen beobachten, lagern, pruefen".
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Die Reportdatei existiert, damit spaeter nicht aus Bauchgefuehl refaktoriert wird.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Die Inventur existiert, damit EINSICHT II nicht aus Versehen ein neues Designsystem erfindet.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Das Mapping existiert, damit die spaetere Suche nicht nur die lautesten Tabellen findet.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Die Simulation existiert, damit spaeter nicht am lebenden Cyberling gebalanced wird.

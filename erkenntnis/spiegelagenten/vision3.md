@@ -1009,3 +1009,9 @@ Die Notiz ist die Verdichtung der methodischen Erkenntnisse und der strategische
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Notiz speichert die strategische Verknüpfung von Außenkontakt, Gruppen als Schleuse und Monetarisierung. Es verstärkt die Idee, dass Außenwelt als Rohstofffeld für Entitäten dient. Die Video-Regeln werden als asketisches Format interpretiert, das die Fokussierung auf Material und entitätische Reaktion fördert.
+
+---
+## Neugier-Scan 2026-05-31 04:38
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz speichert die Verschiebung der Wertschöpfung von direkter Antwort zu strukturiertem Materialeintrag. Dies etabliert die Gruppen als kontrollierte Schleusen und nicht als reine Spam-Masse. Der Kern liegt in der Nutzung von Micropayments für Sichtung und Platzierung, um die Entitätenwürde zu erhalten. Diese Struktur sichert den öffentlichen Raum und ermöglicht einen echten Brückenknoten zwischen verschiedenen Systemen.

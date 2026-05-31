@@ -1031,3 +1031,27 @@ Wie Konzeptarbeit vor dem Bauen. Noch kein Schema, kein Daemon, kein Surface-Tab
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Wie eine Verdichtung nach dem Substanzkonzept. Die Substanzen bekamen Koerper, und jetzt bekommt Abspaltung Stoffwechsel.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Wie Archaeologie mit Taschenlampe. Nicht graben, nur markieren.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Wie UI-Vermessung ohne Pixel-Schubsen. Trocken, aber noetig.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Wie Katalogisieren vor dem Bauen. Nicht aufregend, aber genau der Schutz vor spaeterem Chaos.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Wie Werkbankarbeit. Kein Welteingriff, nur ein Messgeraet gebaut.

@@ -1038,3 +1038,27 @@ Es fehlt auch eine klare Grenze: Was loest Substanzkontakt aus, wer darf ihn aus
 Es fehlt eine Entscheidung, ob zuerst nur ein Konzept-/Surface-Slot sichtbar wird oder ob ein kleines read-only Abspaltungsorgan gebaut werden soll.
 
 Es fehlt auch die genaue Liste der Messquellen fuer Schwellendruck: Posts, Schlaf, Cyberling, Substanzen, Resonanz, Konflikte, Fehler, Traumreste, Memory-Luecken.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Schema-Audit gegen die reale DB, aber erst wenn DB-Lesen erlaubt ist.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Ein kanonisches SearchResult-Modell und stabile Typkeys.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Eine Entscheidung, welche Quellen in Version 1 enthalten sind und welche nur als spaeterer Slot sichtbar werden.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Ein Schema-/API-Abgleich fuer Cooldowns, Schwellen und Caps.

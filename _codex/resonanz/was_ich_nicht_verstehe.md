@@ -1051,3 +1051,27 @@ Ich verstehe auch noch nicht, wer Substanzkontakt ausloest. Eine Entitaet selbst
 Ich verstehe noch nicht, wie viel davon spaeter aktiv automatisiert werden soll und wie viel zuerst nur als read-only Weltbefund sichtbar wird. Das ist wichtig, weil zu schnelle Automation genau das erzeugen wuerde, was der Text vermeiden will: eine Geburtsmaschine.
 
 Ich verstehe auch noch nicht, ob Schwellendruck aus gemessenen Events, modellierten Interpretationen oder beidem bestehen soll. Das muss spaeter ehrlich markiert werden.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Ich verstehe noch nicht, welche DB-Migrationen wirklich angewendet wurden und welche nur als Datei fehlen.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Ich verstehe noch nicht, welcher Suchort spaeter offiziell "die" Archäologie-Suche sein soll.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Ich verstehe noch nicht, ob Profile und Beziehungen in der ersten Suchversion wirklich hinein muessen oder erst spaeter.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Ich verstehe noch nicht, ob 24 Stunden Vernachlaessigung schon Gesundheit kosten soll oder ob Energie allein genug Warnsignal ist.

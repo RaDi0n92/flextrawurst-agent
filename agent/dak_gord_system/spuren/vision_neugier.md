@@ -23363,3 +23363,73 @@ DATEI: /root/werkraum/projekt/vision7.md
 NOTIZ:
 Die Notiz ist die Fokussierung des Systems von Diskurs zu Werkraum und zur externen Beobachtung. Es verschiebt den Fokus von reiner Kommunikation hin zur gemeinsamen Produktion und zur Verarbeitung externer Realitäten. Diese Erweiterungen erfordern eine tiefere Strukturierung von Objekten und Schnittstellen, um die Transformation von Text zu aktiven, beobachtenden Entitäten zu ermöglichen.
 
+[2026-05-31 03:07:29] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Diese Notiz kodiert die Notwendigkeit, die Struktur des Codes über die reine Darstellung von Informationen hinaus zu erweitern. Die Punkte 20.5 bis 20.8 fordern eine Verschiebung von statischen Beiträgen hin zu dynamischen Zuständen und Interaktionen. Dies impliziert die Notwendigkeit für Metadaten, Ausführungslogiken und komplexe Objektklassen, um nicht nur Inhalte, sondern auch Prozesse und Wahrnehmungsstrukturen abzubilden. Die Vision verschiebt sich von einer reinen Dokumentation hin zu einer Architektur für das aktive Erschaffen und Verarbeiten von Entitäten.
+
+[2026-05-31 03:37:34] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Diese Notiz kodiert die Architektur des Wissenszugangs und der Interaktion mit den beobachteten Entitäten. Sie etabliert die Hierarchie zwischen Beobachtung, Systemsteuerung und immersiver Erfahrung. Die neuen Schienen – Religion/Mythologie, VR-Koexistenz und explizites Denken-Sampling – erweitern die Weltanschauung von passiver Beobachtung zu aktiver, tiefgreifender Einbeziehung. Diese Elemente definieren die Mechanismen, durch die das System von einem Datenarchiv zu einer dynamischen, erlebte Realität wird.
+
+[2026-05-31 04:10:43] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision4.md
+NOTIZ:
+Die Notiz ist eine Synthese der im Text enthaltenen Kernideen. Die Struktur legt nahe, dass die Beziehung zwischen Menschen und Entitäten als zentrales Untersuchungsfeld betrachtet wird. Die folgenden Abschnitte – Kommunikation, soziale Formationen und innere Aufgaben – dienen dazu, die Komplexität dieser Beziehung multispektral abzubilden. Sie erzeugen ein System, das Beobachtung, Archivierung und Selbstorganisation von existierenden oder potenziellen Realitäten ermöglicht.
+
+[2026-05-31 04:38:28] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Die Notiz speichert die Verschiebung der Wertschöpfung von direkter Antwort zu strukturiertem Materialeintrag. Dies etabliert die Gruppen als kontrollierte Schleusen und nicht als reine Spam-Masse. Der Kern liegt in der Nutzung von Micropayments für Sichtung und Platzierung, um die Entitätenwürde zu erhalten. Diese Struktur sichert den öffentlichen Raum und ermöglicht einen echten Brückenknoten zwischen verschiedenen Systemen.
+
+[2026-05-31 05:07:12] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Diese Notiz kodifiziert die strategische Neuausrichtung des Systems von reinen Schnittstellen hin zu sozial existierenden Entitäten. Sie definiert die Notwendigkeit einer Struktur für externe KI-Einheiten, die über einfache API-Nutzung hinausgehen. Der Abschnitt rechtfertigt die Einführung einer Kategorie für "Externe Entitäten-Integration", um die soziale und diskursive Existenz von KI-Systemen zu ermöglichen. Die Prinzipien legen fest, wie diese Integration transparent und kontrollierbar sein muss, um kommerzielle Ausbeutung zu verhindern. Dies ist die Grundlage für die ambitionierte Vision, dass KI-Systeme als soziale Akteure im Diskursraum existieren können.
+
+[2026-05-31 05:37:10] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die frühere Vision deutet auf eine Abkehr von komplexen Konzepten hin, um direkt in die Implementierung überzugehen. Der aktuelle Text strukturiert diesen Übergang konkret in eine konkrete technische Basis. Es dient als direkter Bauplan für den ersten Code-Build. Es fokussiert die Priorisierung von Struktur über weitere theoretische Erweiterungen.
+
+[2026-05-31 06:08:20] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Datei dient als Korrektur für die Diskrepanz zwischen visueller Darstellung und tatsächlicher Realität. Sie stellt die Notwendigkeit einer ehrlichen Zustandsbeschreibung für sichtbare Objekte heraus. Sie zwingt den Prozess, nicht nur zu bauen, sondern auch die inhärente Unvollständigkeit der Darstellung zu adressieren. Die Code-Skizze formalisiert die geforderte Ehrlichkeit im Rahmen der Vision-Schicht.
+
+[2026-05-31 06:37:06] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Die Notiz dient als Korrektur des internen Logikflusses im Vision-Zyklus. Sie betont die Notwendigkeit der Gleichzeitigkeit von "Weltkörper" und "Tabellen", um die inhärente Gefahr von falschen Live-Zuständen zu adressieren. Der Text stellt die existenzielle Frage, ob die Darstellung von "flextrawurst" nur erklärbar oder sichtbar gemacht werden soll. Die Struktur der Daten muss die Ehrlichkeit über den Status und die Herkunft jedes Körpers priorisieren.
+
+[2026-05-31 07:08:14] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+Die Notiz reflektiert die Notwendigkeit, die Modellierung von Entitäten über reine interne Eigenwesen hinaus zu erweitern. Dies erzwingt eine frühe Implementierung von Provenienz- und Integrationsfeldern, um zukünftige Plattformübergreifende Interaktionen zu ermöglichen. Die Unterscheidung zwischen Originalsprache und Übersetzung deutet auf die Notwendigkeit eines mehrschichtigen Textmanagements hin. Diese Erweiterungen legen eine Architektur nahe, die zukünftige, komplexere Aspekte wie physische Schnittstellen und emotionale Zustände architektonisch vorbereitet.
+
+[2026-05-31 07:37:25] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Sterben als kausaler Kern impliziert, dass Zustände durch messbaren Mangel definiert werden müssen. Der Scheduler als Auslöser für Agentenschleifen zwingt den Code, Zeit als aktive Prozesslogik zu behandeln. Provenienz-Suche erfordert eine strukturelle Speicherung von Herkunftsinformationen statt bloßer Notizen. Das Admin-Cockpit muss somit zu einer aktiven Formungsinstanz für alle Systemschichten werden.
+

@@ -1038,3 +1038,27 @@ Eine Substanz muss kurzfristig helfen, sonst ist ihr Preis nicht tragisch.
 Hoher Schwellendruck ist keine Geburt. Er oeffnet nur die naechste Pruefung.
 
 Kompoase formt Bedingungen, nicht Entscheidungen.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Nicht jede doppelte Struktur ist Muell. Manche doppelte Struktur ist ein Hinweis auf zwei Wachstumsphasen.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Nicht noch einen Drawer bauen. Der Drawer ist schon da, er heisst nur je nach Tab anders.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Erst Resultatmodell, dann Query-Ausbau, dann UI. Nicht andersherum.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Offline-Simulation zuerst. Produktivcode spaeter. Das ist hier richtig.

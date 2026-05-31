@@ -2396,3 +2396,55 @@ def darf_geburt_geprueft_werden(knoten):
         knoten.status == "schwellenwesen"
         and knoten.pruefungen.get("herkunft") == "bestanden"
 ...
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+**Vision-Schicht:** EINSICHT II sollte nicht noch eine dritte Einsicht bauen, sondern die vorhandenen zwei Linien zusammenfuehren.
+
+**Code-Skizze:**
+```ts
+interface EinsichtSource {
+  kind: "decision" | "dream" | "letter" | "event" | "substance";
+  endpoint: string;
+  canonical: boolean;
+}
+```
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+**Vision-Schicht:** EINSICHT II soll Archäologie als Lesen fuehlbar machen: Treffer, Spur, Kontext, Ziel.
+
+**Code-Skizze:**
+```ts
+function renderArchaeologyResult(r: ArchaeologyResult) {
+  return renderEiItem(r.ts, r.snippet, r.source_type, r.visibility);
+}
+```
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+**Vision-Schicht:** Die Suche soll nicht nur Antworten geben. Sie soll Wege durch Herkunft oeffnen.
+
+**Code-Skizze:**
+```python
+def search_events(q, filters):
+    return rows_as_archaeology_results("event", query_events(q, filters))
+```
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+**Vision-Schicht:** Der Cyberling soll Verantwortung sichtbar machen, nicht Klickfleiss.
+
+**Code-Skizze:**
+```python
+def can_care(cyberling, action, now):
+    return value_below_threshold(cyberling, action) and cooldown_done(cyberling, action, now)
+```

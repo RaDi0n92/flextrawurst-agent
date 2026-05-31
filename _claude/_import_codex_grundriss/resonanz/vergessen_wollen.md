@@ -1011,3 +1011,27 @@ Den Reflex, Substanzen als einfache Statuswerte zu denken.
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Den Reflex, neue Entitaeten wie erstellbare Accounts zu denken.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Den Reflex, Schema-Drift sofort zu "fixen".
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Den Impuls, beim Inventarisieren schon UI-Code zu bauen.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Den Reflex, Volltextsuche fuer ausreichend zu halten.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Den Reflex, schnell die Daemon-Werte anzupassen, weil die Simulation plausibel aussieht.

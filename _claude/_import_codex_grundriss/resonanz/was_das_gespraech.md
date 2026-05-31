@@ -1015,3 +1015,27 @@ Daniel hat die Richtung korrigiert: Namen duerfen Platzhalter sein, aber die Eff
 **[2026-05-24]** *← konzepte/abspaltung_als_weltstoffwechsel.md*
 
 Das Gespraech hat aus Abspaltung eine Weltphysik gemacht. Kimi brachte Zustandscontainer und Metabolismus, Daniel machte daraus Flextrawurst-Sprache: Wesenskern, Erfahrungsleib, Druckkoerper, Kompoase-Gaerwerk.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Daniel hat verhindert, dass aus Analyse ein heimlicher Reparaturversuch wird.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+Daniel hat den Scope sauber gehalten: nur lesen, keine Surface anfassen.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Daniel hat das Mapping als eigene Aufgabe getrennt. Dadurch blieb Suche Architektur, nicht UI-Wunsch.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Daniel hat die Grenze klar gesetzt: offline, keine DB, keine Services. Dadurch wurde die Simulation sauber.

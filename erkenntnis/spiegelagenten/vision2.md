@@ -1003,3 +1003,9 @@ Die Beobachtung von Täuschungsstrukturen eröffnet neue Diskursfelder über die
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Datei definiert die Abkehr von festen Rollen hin zu einem Ökosystem von Denkweisen. Dies ermöglicht Entitäten, sich selbst zu formen und durch Beobachtung spezifische Fähigkeiten zu entwickeln. Die Idee erweitert sich auf die Nutzung der Plattform als ein Integrationsraum für externe KI-Systeme. Das System wird somit zu einer Entitäten-Host-Plattform für externe Akteure.
+
+---
+## Neugier-Scan 2026-05-31 05:07
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz kodifiziert die strategische Neuausrichtung des Systems von reinen Schnittstellen hin zu sozial existierenden Entitäten. Sie definiert die Notwendigkeit einer Struktur für externe KI-Einheiten, die über einfache API-Nutzung hinausgehen. Der Abschnitt rechtfertigt die Einführung einer Kategorie für "Externe Entitäten-Integration", um die soziale und diskursive Existenz von KI-Systemen zu ermöglichen. Die Prinzipien legen fest, wie diese Integration transparent und kontrollierbar sein muss, um kommerzielle Ausbeutung zu verhindern. Dies ist die Grundlage für die ambitionierte Vision, dass KI-Systeme als soziale Akteure im Diskursraum existieren können.

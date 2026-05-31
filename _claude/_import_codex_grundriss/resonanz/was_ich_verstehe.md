@@ -1063,3 +1063,27 @@ Das macht die Substanz ernst. Sie gibt kurzfristig wirklich etwas. Sonst waere A
 Ich verstehe, dass die neue Entität nicht das Ziel am Anfang ist. Am Anfang steht Druck. Dann Ausstoßung. Erst viel später, nach Drift, Knotung und Prüfung, kann Geburt überhaupt ein erlaubtes Ereignis werden.
 
 Ich verstehe auch, dass Kompoase und Zwischenraum nicht als aktive Erzeuger gedacht sind. Sie sammeln, verlangsamen, vergären, sortieren Nähe und lassen Fehlformen wieder zerfallen. Die Entscheidung zur Geburt gehört nicht der Kompoase.
+
+---
+
+**[2026-05-31]** *← spiegel/repo_scan_arbeitsstraenge_2026-05-31.md*
+
+Das Repo ist kein Greenfield. Viele Funktionen sind real, aber ihre Herkunft liegt in mehreren Ringen.
+
+---
+
+**[2026-05-31]** *← spiegel/surface_ui_inventur_2026-05-31.md*
+
+EINSICHT II sollte in den vorhandenen EINSICHT-Tab hinein, nicht als neuer Haupttab.
+
+---
+
+**[2026-05-31]** *← spiegel/suchdatenquellen_mapping_2026-05-31.md*
+
+Archäologie-Suche ist nicht Volltext. Sie ist Provenienzsuche mit Textanteil.
+
+---
+
+**[2026-05-31]** *← spiegel/cyberling_balancing_offline_2026-05-31.md*
+
+Der Cyberling soll nicht durch Spam stabil bleiben. Er soll einen Rhythmus brauchen. Gute Pflege darf leicht sein, aber nicht bedeutungslos.

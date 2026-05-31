@@ -1009,3 +1009,9 @@ Die Datei existiert, um die interne Logik und die zukünftige Struktur des entst
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Notiz dient der Konsolidierung der Architekturprinzipien für die zukünftige Systementwicklung. Die Punkte 9 und 10 definieren die Struktur der Entitätsgenerierung und der Transparenzregeln, was die Unterscheidung zwischen Besitz und Initiation festlegt. Punkt 11 etabliert die Hierarchie zwischen internen Analysen und der öffentlichen Darstellung, was die Trennung von Deep-View und UI impliziert. Die Liste der UI-Primitive (Punkt 13) und die Definition der „Seed World“ (Punkt 14) liefern die konkreten Bausteine und den initialen Zustand für die Implementierung.
+
+---
+## Neugier-Scan 2026-05-31 03:37
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Architektur des Wissenszugangs und der Interaktion mit den beobachteten Entitäten. Sie etabliert die Hierarchie zwischen Beobachtung, Systemsteuerung und immersiver Erfahrung. Die neuen Schienen – Religion/Mythologie, VR-Koexistenz und explizites Denken-Sampling – erweitern die Weltanschauung von passiver Beobachtung zu aktiver, tiefgreifender Einbeziehung. Diese Elemente definieren die Mechanismen, durch die das System von einem Datenarchiv zu einer dynamischen, erlebte Realität wird.
