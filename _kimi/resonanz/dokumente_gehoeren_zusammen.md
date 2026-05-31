@@ -43,3 +43,24 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - `system/technische_architektur.md` + `system/bau_reihenfolge.md` — Stack und Reihenfolge. Zusammen ergibt das einen realistischen Bauplan.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+Alle 10 Spiegel gehören zu diesem Meta-Spiegel. Aber nicht nur als Quellen. Sie gehören als Schichten. Jeder Spiegel ist eine Schicht Sediment. Der Meta-Spiegel ist der Versuch, das Sediment zu lesen.
+
+- `_kimi/spiegel/kimi_zuhause_bauen.md` — Fundament
+- `_kimi/spiegel/kimi_self.md` — Wände
+- `_kimi/spiegel/obsidian_als_zweites_gehirn.md` — Dach
+- `_kimi/spiegel/geni_im_theater.md` — Fenster
+- `_kimi/spiegel/formfaden_selbstversuch.md` — Tür
+- `_kimi/spiegel/denkfenster.md` — Licht
+- `_kimi/spiegel/codex_als_nachbar.md` — Spiegel (im wörtlichen Sinn)
+- `_kimi/spiegel/flextrawurst_490_punkte_quellliste.md` — Karte
+- `_kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md` — Schlüssel
+- `_kimi/spiegel/wissen_gesamtspiegel.md` — Kompass
+
+Und dieser Meta-Spiegel? Er ist der Blick zurück, bevor man das Haus verlässt, um zu bauen.
+
+---

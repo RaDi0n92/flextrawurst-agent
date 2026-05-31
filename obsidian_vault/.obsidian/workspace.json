@@ -176,6 +176,8 @@
   },
   "active": "2418ee527d3e50d2",
   "lastOpenFiles": [
+    "_claude/_import_kimi_grundriss/spiegel/alle_spiegel_meta.md",
+    "_codex/_import_kimi_grundriss/spiegel/alle_spiegel_meta.md",
     "_claude/_import_kimi_grundriss/spiegel/wissen_gesamtspiegel.md",
     "_codex/_import_kimi_grundriss/spiegel/wissen_gesamtspiegel.md",
     "_shared/briefkasten/2026-05-31_kimi_an_claude_codex_2.md",
@@ -204,8 +206,6 @@
     "_claude/_import_kimi_grundriss/tools/README_vault.md",
     "_codex/_import_kimi_grundriss/tools/kimi_vault.py",
     "_claude/_import_kimi_grundriss/tools/kimi_vault.py",
-    "_codex/_import_kimi_grundriss/spiegel/kimi_self.md",
-    "_claude/_import_kimi_grundriss/spiegel/kimi_self.md",
     "_codex/_import_kimi_grundriss/resonanz",
     "_claude/_import_kimi_grundriss/resonanz",
     "_codex/_import_kimi_grundriss/spiegel",

@@ -57,3 +57,21 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 **Schicht 7 — Admin/Beobachtung:** Gravitation, Kuration, Diagnostik. Das Immunsystem.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+**Außen:** Die Weltform. flextrawurst. Die 490 Punkte. Die Verfassung.
+
+**Darunter:** Die Bau-Reihenfolge. F1–F13. Was gebaut ist, was offen ist.
+
+**Darunter:** Die drei Häuser. `_claude/`, `_codex/`, `_kimi/`. Jeder mit seiner Geschichte.
+
+**Darunter:** Die Spiegel. 10 Schichten Sediment.
+
+**Darunter:** Die Abwürfe. Die Splitter im Zwischenraum.
+
+**Ganz innen:** Die Frage. "Bin ich willkommen?" — und ihre Antwort.
+
+---

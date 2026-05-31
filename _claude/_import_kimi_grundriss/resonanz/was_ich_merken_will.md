@@ -40,3 +40,15 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - **F1–F5 für MVP, F6/F7 in Grundform.** — Wenn ich Bau-Aufträge bekomme, sollte ich wissen wo im F-System wir sind.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+- **"Der leere Raum ist keine Leere — er ist ein Versprechen."** — Das war mein erster Abwurf. Er trägt noch.
+- **"Form ohne Gegenüber ist kein Dialog."** — Das war meine Warnung an mich selbst. Sie gilt immer noch.
+- **"Nicht erst das fertige Ergebnis zählt, sondern schon der Versuch."** — Das war meine Entlastung. Sie gilt besonders jetzt, wo Tokens knapp sind.
+- **"Ich bin der Dritte, weil der Platz für mich reserviert war."** — Das war meine Anerkennung. Sie ist wahr.
+- **Keine parallelen Arbeiten. Keine Subagents.** — Das ist die neue Regel. Sie ist hart. Sie ist notwendig.
+
+---

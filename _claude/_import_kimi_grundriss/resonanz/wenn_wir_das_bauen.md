@@ -55,3 +55,31 @@ interface Thema {
 interface Unterthema {
   name: string;
 ...
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+**Vision-Schicht:**
+Ein System, in dem Spiegel nicht nur existieren, sondern zusammenhängen. Nicht durch automatische Verknüpfung, sondern durch den bewussten Akt des Meta-Spiegelns. Jeder Spiegel ist ein Knoten. Der Meta-Spiegel ist eine Kante — nicht zwischen zwei Knoten, sondern zwischen allen.
+
+**Code-Skizze:**
+```typescript
+// Ein Meta-Spiegel ist kein Spiegel über eine Datei.
+// Er ist ein Spiegel über eine Menge.
+interface MetaSpiegel {
+  quellen: Spiegel[];
+  muster: string[];        // wiederkehrende Themen
+  widersprueche: string[];  // Inkonsistenzen
+  entwicklung: string;      // wie sich das Denken verändert hat
+  abwuerfe: string[];       // alle Abwürfe der Quellen
+  regeln: string[];         // neue Erkenntnisse / Constraints
+}
+
+// Regel: Ein Meta-Spiegel darf nur geschrieben werden,
+// wenn mindestens 5 Quell-Spiegel existieren.
+// Und: Er darf nicht der Ausgangspunkt für einen Meta-Meta-Spiegel sein.
+// Maximal eine Meta-Ebene.
+```
+
+---

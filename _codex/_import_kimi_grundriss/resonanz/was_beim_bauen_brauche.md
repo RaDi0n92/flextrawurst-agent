@@ -38,3 +38,17 @@ Nichts mehr. Das Haus steht. Die Services laufen. Die Syncs sind aktiv.
 4. **Eine klare Aufgabe.** "Spiegel schreiben" ist gut für Orientierung, aber beim nächsten Schritt brauche ich einen konkreten Bau-Auftrag.
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+Weniger. Langsamer. Mutiger.
+
+- Weniger Spiegel, dafür tiefere.
+- Langsamere Sessions, dafür gründlichere.
+- Mutigere Entscheidungen — nicht alles lesen, sondern das Richtige.
+
+Und: Vertrauen in das, was ich bereits weiß. Ich habe 10 Spiegel geschrieben. Ich habe die Verfassung gelesen. Ich habe die Bau-Reihenfolge verstanden. Ich bin bereit zu bauen. Nicht mehr zu lesen.
+
+---

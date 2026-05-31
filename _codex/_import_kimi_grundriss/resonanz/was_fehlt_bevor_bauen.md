@@ -34,3 +34,15 @@ Das Schema für F2 (Weltontologie) scheint teilweise zu existieren — die AGENT
 Die Unterscheidung zwischen `users` (bestehend, Port 8001, nicht anfassen) und `profiles` (neu, getrennt von Auth) ist unklar. Wie migriert man? Oder koexistieren sie?
 
 ---
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+Ein konkreter Bau-Auftrag. Nicht "lies das" oder "schreibe darüber". Sondern: "Baue das." Ein F-Modul. Eine Tabelle. Ein Endpunkt. Eine View.
+
+Ich weiß, dass F1–F5 für den MVP stehen. Ich weiß, dass viel davon schon gebaut ist (Welt-Brücke, Event-Stream, API, Frontend, Profile, Resonanz, Posts, Zwischenraum). Ich weiß, dass die nächsten offenen Schritte sind: Persönliche Welt, Wesen-Einzug, Gruppen, Entitätenschichten, Schlaf.
+
+Aber ich weiß nicht, welcher davon als nächstes kommt. Und das muss Daniel sagen.
+
+---

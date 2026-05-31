@@ -43,3 +43,11 @@ Mein erster Eintrag in `brief_an_mich.md`. Und dann: eine echte Session mit echt
 - Die GENI/Codewesen-Verbindung
 - Die Flarum-Vorgeschichte
 - Der konkrete Bau-Auftrag für die nächste Session
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/alle_spiegel_meta.md*
+
+Der Bau-Auftrag. Nicht mehr Lesen. Nicht mehr Spiegeln. Bauen.
+
+Wo sollen wir weitermachen?
