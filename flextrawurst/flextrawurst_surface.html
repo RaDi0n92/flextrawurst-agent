@@ -903,6 +903,8 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <button class="v-tab" data-view="menschen" data-live="1" data-i18n="tab.menschen" onclick="switchView('menschen')">MENSCHEN</button>
   <button class="v-tab" data-view="meinewelt" style="display:none" data-i18n="tab.meinewelt" onclick="switchView('meinewelt')">MEINE WELT</button>
   <button class="v-tab" data-view="schlaf" data-live="1" data-i18n="tab.schlaf" onclick="switchView('schlaf')">SCHLAF</button>
+  <button class="v-tab" data-view="einsicht" data-live="1" data-i18n="tab.einsicht" onclick="switchView('einsicht')">EINSICHT</button>
+  <button class="v-tab" data-view="suche" data-i18n="tab.suche" onclick="switchView('suche')">SUCHE</button>
   <div class="v-sep"></div>
   <button class="v-tab" data-view="systeme" data-live="1" data-i18n="tab.systeme" onclick="switchView('systeme')">SYSTEME</button>
   <button class="v-tab" data-view="admin" style="display:none" data-i18n="tab.admin" onclick="switchView('admin');admNutzerLaden();admBewBadgeLaden()">ADMIN</button>
@@ -1338,7 +1340,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     <div class="dk-metric"><span id="dk-wesen">6</span> Wesen</div>
     <div class="dk-metric"><span id="dk-posts">—</span> Posts</div>
     <div class="dk-metric"><span id="dk-res">—</span> Resonanzen</div>
-    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-05-30</div>
+    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-05-31</div>
   </div>
 </div>
 </div><!-- /view-leitstand -->
@@ -1763,7 +1765,159 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
       </div>
     </div>
   </div>
+
+  <!-- SPLITTER-ARCHIV TOGGLE BUTTON -->
+  <div id="archiv-toggle" onclick="archivToggle()"
+    style="position:absolute;top:12px;right:16px;z-index:20;background:rgba(2,8,20,0.9);border:1px solid #0a2a5a;border-radius:3px;padding:4px 12px;font-size:0.58rem;letter-spacing:.14em;color:#3a7aaa;cursor:pointer;text-transform:uppercase;transition:all .2s"
+    onmouseover="this.style.borderColor='#2a6aaa'" onmouseout="this.style.borderColor='#0a2a5a'"
+    data-i18n="archiv.toggle">ARCHIV ▶</div>
+
+  <!-- SPLITTER-ARCHIV PANEL -->
+  <div id="archiv-panel" style="display:none;position:absolute;top:0;right:0;bottom:0;width:360px;z-index:18;background:rgba(1,5,14,0.97);border-left:1px solid #0a1e30;display:flex;flex-direction:column">
+    <div style="padding:10px 14px;border-bottom:1px solid #0a1e30;display:flex;align-items:center;gap:8px;flex-shrink:0">
+      <span style="font-size:.6rem;letter-spacing:.16em;color:#2a5a8a;font-family:monospace;text-transform:uppercase" data-i18n="archiv.title">SPLITTER-ARCHIV</span>
+      <span id="archiv-count" style="font-size:.55rem;color:#1a3a5a;margin-left:4px"></span>
+      <button onclick="archivToggle()" style="margin-left:auto;background:none;border:none;color:#1a3a5a;font-size:14px;cursor:pointer;font-family:monospace">×</button>
+    </div>
+    <div style="padding:8px 12px;border-bottom:1px solid #0a1520;flex-shrink:0">
+      <input id="archiv-search" class="su-input" style="width:100%;box-sizing:border-box;font-size:.65rem;padding:6px 10px"
+        placeholder="Splitter durchsuchen…" oninput="archivFilter()">
+      <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap" id="archiv-filter-chips">
+        <button class="su-facet aktiv" data-status="" onclick="archivSetStatus(this,'')">Alle</button>
+        <button class="su-facet" data-status="aktiv" onclick="archivSetStatus(this,'aktiv')" data-i18n="archiv.status.aktiv">aktiv</button>
+        <button class="su-facet" data-status="aufgenommen" onclick="archivSetStatus(this,'aufgenommen')" data-i18n="archiv.status.aufgenommen">aufgenommen</button>
+        <button class="su-facet" data-status="verarbeitet" onclick="archivSetStatus(this,'verarbeitet')" data-i18n="archiv.status.verarbeitet">verarbeitet</button>
+      </div>
+    </div>
+    <div id="archiv-list" style="flex:1;overflow-y:auto;padding:8px 12px;display:flex;flex-direction:column;gap:4px">
+      <div style="font-size:.6rem;color:#1a3a5a;padding:20px;text-align:center">lädt…</div>
+    </div>
+    <div id="archiv-detail" style="display:none;flex-shrink:0;border-top:1px solid #0a1e30;padding:12px 14px;max-height:220px;overflow-y:auto;background:#010810">
+      <button onclick="archivCloseDetail()" style="float:right;background:none;border:none;color:#1a3a5a;cursor:pointer;font-size:12px">× schließen</button>
+      <div id="archiv-detail-body" style="font-size:.62rem;color:#8ab8c8;line-height:1.6"></div>
+    </div>
+  </div>
 </div>
+
+<script>
+(function(){
+  var _archivOffen = false;
+  var _archivStatus = '';
+  var _archivTimer = null;
+  var _archivDaten = [];
+
+  var MAT_COLORS = {
+    sternenstaub:'#4a8ab8', kristall:'#2af0a0', plasma:'#f0a030',
+    schatten:'#888', void:'#4a2a6a', licht:'#f0f040'
+  };
+
+  function archivFormatTs(ts) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    return d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'2-digit'});
+  }
+
+  function archivRenderList(items) {
+    var list = document.getElementById('archiv-list');
+    if (!list) return;
+    if (!items.length) {
+      list.innerHTML = '<div style="font-size:.6rem;color:#1a3a5a;padding:20px;text-align:center">Keine Splitter.</div>';
+      return;
+    }
+    list.innerHTML = '';
+    items.forEach(function(s, i) {
+      var col = MAT_COLORS[s.materialitaet] || '#4a6a8a';
+      var el = document.createElement('div');
+      el.className = 'ei-item';
+      el.style.cursor = 'pointer';
+      el.innerHTML = '<div class="ei-item-head" style="display:flex;gap:6px;align-items:center;margin-bottom:3px">'
+        + '<span style="font-size:.52rem;border:1px solid '+col+';color:'+col+';padding:1px 6px;border-radius:2px;font-family:monospace">'+s.materialitaet+'</span>'
+        + '<span style="font-size:.52rem;color:#1a3a5a;font-family:monospace">'+s.origin_type+'</span>'
+        + (s.aufnahmen ? '<span style="font-size:.52rem;color:#2a6a4a;margin-left:auto">↓'+s.aufnahmen+'</span>' : '<span style="margin-left:auto"></span>')
+        + '<span style="font-size:.52rem;color:#1a2a3a">'+archivFormatTs(s.created_at)+'</span>'
+        + '</div>'
+        + '<div style="font-size:.62rem;color:#7a9ab8;line-height:1.45;word-break:break-word">'+(s.essenz||'').substring(0,120)+'</div>';
+      el.onclick = function() { archivShowDetail(s); };
+      list.appendChild(el);
+    });
+  }
+
+  window.archivLaden = function() {
+    var q = (document.getElementById('archiv-search')||{value:''}).value.trim();
+    var params = ['limit=60'];
+    if (_archivStatus) params.push('status='+encodeURIComponent(_archivStatus));
+    if (q.length >= 2) params.push('search='+encodeURIComponent(q));
+    fetch('/api/kompoase/splitter?'+params.join('&'), {headers: tok() ? {Authorization:'Bearer '+tok()} : {}})
+      .then(function(r){return r.json();}).then(function(d){
+        _archivDaten = d.splitter || [];
+        archivRenderList(_archivDaten);
+        var cnt = document.getElementById('archiv-count');
+        if (cnt) cnt.textContent = d.gesamt + ' Splitter';
+      }).catch(function(){
+        var list = document.getElementById('archiv-list');
+        if (list) list.innerHTML = '<div style="font-size:.6rem;color:#602020;padding:12px">Fehler beim Laden.</div>';
+      });
+  };
+
+  window.archivToggle = function() {
+    var panel = document.getElementById('archiv-panel');
+    var btn = document.getElementById('archiv-toggle');
+    if (!panel) return;
+    _archivOffen = !_archivOffen;
+    panel.style.display = _archivOffen ? 'flex' : 'none';
+    if (btn) btn.textContent = _archivOffen ? 'ARCHIV ◀' : 'ARCHIV ▶';
+    if (_archivOffen) window.archivLaden();
+  };
+
+  window.archivFilter = function() {
+    clearTimeout(_archivTimer);
+    _archivTimer = setTimeout(window.archivLaden, 380);
+  };
+
+  window.archivSetStatus = function(el, status) {
+    _archivStatus = status;
+    document.querySelectorAll('#archiv-filter-chips .su-facet').forEach(function(b){
+      b.classList.toggle('aktiv', b.dataset.status === status);
+    });
+    window.archivLaden();
+  };
+
+  window.archivShowDetail = function(s) {
+    var detail = document.getElementById('archiv-detail');
+    var body = document.getElementById('archiv-detail-body');
+    if (!detail || !body) return;
+
+    fetch('/api/kompoase/splitter/'+s.id, {headers: tok() ? {Authorization:'Bearer '+tok()} : {}})
+      .then(function(r){return r.json();}).then(function(d){
+        var aufnahmen = (d.aufnahmen_liste||[]).map(function(a){
+          return '<div style="margin-top:4px;padding:4px 8px;background:#020c18;border-left:2px solid #1a4a6a;font-size:.58rem">'
+            + '<span style="color:#2a6a4a">' + a.aufnehmer_id.replace('namelessAI_','') + '</span>'
+            + (a.begruendung ? '<br><span style="color:#5a8a9a">' + a.begruendung + '</span>' : '')
+            + '<br><span style="color:#1a3a5a">' + archivFormatTs(a.aufgenommen_at) + '</span>'
+            + '</div>';
+        }).join('');
+
+        var spuren = [];
+        if (d.substanzspur) spuren.push('<span style="color:#c06030">substanz</span>');
+        if (d.traumspur && Object.keys(d.traumspur||{}).length) spuren.push('<span style="color:#6030c0">traum</span>');
+        if (d.resonanzspur && Object.keys(d.resonanzspur||{}).length) spuren.push('<span style="color:#30a060">resonanz</span>');
+
+        body.innerHTML = '<div style="font-size:.55rem;color:#1a4a6a;margin-bottom:6px;font-family:monospace">'
+          + d.id.substring(0,8) + ' · ' + d.origin_type + ' · ' + archivFormatTs(d.created_at) + '</div>'
+          + '<div style="margin-bottom:8px;color:#9ab8c8">' + (d.essenz||'') + '</div>'
+          + (spuren.length ? '<div style="margin-bottom:6px;display:flex;gap:6px">' + spuren.join('') + '</div>' : '')
+          + '<div style="font-size:.55rem;color:#1a3a5a;margin-bottom:4px">AUFNAHMEN (' + (d.aufnahmen_liste||[]).length + ')</div>'
+          + (aufnahmen || '<div style="font-size:.58rem;color:#1a2a3a">noch keine Aufnahmen</div>');
+        detail.style.display = 'block';
+      }).catch(function(){});
+  };
+
+  window.archivCloseDetail = function() {
+    var detail = document.getElementById('archiv-detail');
+    if (detail) detail.style.display = 'none';
+  };
+})();
+</script>
 
 <style>
 #gaerraum-panel .gr-knoten{background:#08040f;border:1px solid #2a0a4a;border-radius:3px;padding:5px 8px;margin-bottom:5px;cursor:default}
@@ -2675,7 +2829,7 @@ html[lang="en"] .de-only{display:none}
       <div class="av-sys-row"><span>Räume</span><span>7</span></div>
       <div class="av-sys-row"><span>Systemkörper</span><span>3</span></div>
       <div class="av-sys-row"><span>Organ-Pods</span><span>8</span></div>
-      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-05-30</span></div>
+      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-05-31</span></div>
       <div class="av-sys-row"><span>Inventar</span><span>490 Einträge</span></div>
     </div>
     <div>
@@ -4151,6 +4305,722 @@ html[lang="en"] .de-only{display:none}
   });
   </script>
 </div>
+
+<div id="v-suche" class="v-view" style="display:none">
+<style>
+.su-wrap{display:flex;flex-direction:column;height:100%;overflow:hidden;background:#010810}
+.su-header{padding:16px 20px 12px;border-bottom:1px solid #0a1a2a;display:flex;flex-direction:column;gap:10px}
+.su-input-row{display:flex;gap:8px;align-items:center}
+.su-input{flex:1;background:#020c18;border:1px solid #1a3a5a;color:#5ae8aa;padding:10px 16px;font-size:0.85rem;border-radius:4px;font-family:'Courier New',monospace;outline:none;transition:border-color .15s}
+.su-input:focus{border-color:#5ae8aa}
+.su-btn{background:#0a2a1a;border:1px solid #1a5a3a;color:#5ae8aa;padding:8px 14px;font-size:0.65rem;border-radius:3px;cursor:pointer;font-family:inherit;letter-spacing:.1em;white-space:nowrap}
+.su-btn:hover{background:#0e3a24}
+.su-facets{display:flex;flex-wrap:wrap;gap:6px;padding:0 2px}
+.su-facet{padding:3px 10px;border-radius:12px;font-size:.58rem;font-family:monospace;letter-spacing:.08em;border:1px solid #1a3a5a;color:#8ab8d8;cursor:pointer;transition:all .15s;background:#020c18}
+.su-facet.aktiv{border-color:#5ae8aa;color:#5ae8aa;background:#04180e}
+.su-facet-cnt{opacity:.6;margin-left:4px}
+.su-body{flex:1;overflow-y:auto;padding:12px 20px;display:flex;gap:16px}
+.su-main{flex:1;min-width:0}
+.su-results{display:flex;flex-direction:column;gap:6px}
+.su-item{background:#020c18;border:1px solid #0a1e30;border-radius:4px;padding:10px 14px;cursor:pointer;transition:border-color .12s}
+.su-item:hover{border-color:#1a4a6a}
+.su-item-head{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.su-type{font-size:.55rem;font-family:monospace;letter-spacing:.12em;padding:2px 7px;border-radius:2px;border:1px solid}
+.su-type-post{border-color:#10a060;color:#10a060;background:#02100a}
+.su-type-splitter{border-color:#a06010;color:#a06010;background:#100a02}
+.su-type-thema,.su-type-raum{border-color:#4060a0;color:#6090d0;background:#020810}
+.su-type-blase{border-color:#a01080;color:#d040b0;background:#100208}
+.su-type-entscheidung{border-color:#f0a010;color:#f0c050;background:#100c02}
+.su-type-traum{border-color:#6010a0;color:#9050e0;background:#080210}
+.su-type-selbstbrief{border-color:#10a0a0;color:#10d0d0;background:#021010}
+.su-type-schattenkommentar{border-color:#303030;color:#888;background:#080808}
+.su-entity{font-size:.55rem;color:#1a4a6a;font-family:monospace}
+.su-ts{font-size:.55rem;color:#1a3a4a;margin-left:auto;font-family:monospace}
+.su-snippet{font-size:.68rem;color:#8ab8c8;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.su-empty{text-align:center;color:#1a3a5a;font-size:.65rem;padding:40px;font-family:monospace;letter-spacing:.1em}
+.su-arch{width:240px;flex-shrink:0;border-left:1px solid #0a1a2a;padding:0 0 0 16px}
+.su-arch-title{font-size:.58rem;font-family:monospace;letter-spacing:.14em;color:#3a5a7a;margin-bottom:12px;padding-top:2px}
+.su-arch-field{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.su-arch-label{font-size:.55rem;color:#2a4a6a;font-family:monospace;letter-spacing:.08em}
+.su-arch-inp{background:#020c18;border:1px solid #0a1e30;color:#5ae8aa;padding:5px 9px;font-size:.62rem;border-radius:3px;font-family:inherit;width:100%;box-sizing:border-box}
+.su-arch-btn{background:#0a1e30;border:1px solid #1a3a6a;color:#4a8ab8;padding:6px 10px;font-size:.58rem;font-family:monospace;letter-spacing:.1em;border-radius:3px;cursor:pointer;width:100%;margin-top:4px}
+.su-arch-btn:hover{background:#0e2a44}
+.su-arch-results{margin-top:12px;display:flex;flex-direction:column;gap:4px;max-height:400px;overflow-y:auto}
+.su-arch-item{background:#020c18;border:1px solid #0a1e30;border-radius:3px;padding:8px;cursor:pointer}
+.su-arch-item:hover{border-color:#1a3a6a}
+.su-arch-snippet{font-size:.6rem;color:#7a9ab8;line-height:1.4;white-space:pre-wrap;word-break:break-word}
+.su-arch-meta{font-size:.52rem;color:#1a3a5a;font-family:monospace;margin-top:3px}
+.su-admin-only{display:none}
+</style>
+<div class="su-wrap">
+  <div class="su-header">
+    <div class="su-input-row">
+      <input id="su-q" class="su-input" type="text" data-i18n-placeholder="suche.placeholder"
+        placeholder="Suchen in Entscheidungen, Posts, Träumen, Splittern…"
+        oninput="suLive()" onkeydown="if(event.key==='Enter')suSuchen()">
+      <button class="su-btn" onclick="suSuchen()" data-i18n="tab.suche">SUCHE</button>
+    </div>
+    <div id="su-facets" class="su-facets"></div>
+  </div>
+  <div class="su-body">
+    <div class="su-main">
+      <div id="su-results" class="su-results">
+        <div class="su-empty" data-i18n="suche.mindestens">Mindestens 2 Zeichen eingeben.</div>
+      </div>
+    </div>
+    <div class="su-arch su-admin-only" id="su-arch-panel">
+      <div class="su-arch-title" data-i18n="suche.archaeologie">ARCHÄOLOGIE</div>
+      <div class="su-arch-field">
+        <span class="su-arch-label" data-i18n="suche.filter.typ">Typ</span>
+        <select id="su-arch-typ" class="su-arch-inp">
+          <option value="alle" data-i18n="suche.alle_typen">Alle Typen</option>
+          <option value="entscheidungen">Entscheidungen</option>
+          <option value="posts">Posts</option>
+          <option value="träume">Träume</option>
+          <option value="briefe">Selbstbriefe</option>
+          <option value="splitter">Splitter</option>
+        </select>
+      </div>
+      <div class="su-arch-field">
+        <span class="su-arch-label" data-i18n="suche.filter.entity">Wesen</span>
+        <select id="su-arch-entity" class="su-arch-inp">
+          <option value="">Alle Wesen</option>
+          <option value="namelessAI_1234">1234</option><option value="namelessAI_4321">4321</option><option value="namelessAI_1324">1324</option><option value="namelessAI_1423">1423</option><option value="namelessAI_2341">2341</option><option value="namelessAI_3123">3123</option>
+        </select>
+      </div>
+      <div class="su-arch-field">
+        <span class="su-arch-label" data-i18n="suche.von">von</span>
+        <input id="su-arch-von" class="su-arch-inp" type="date">
+      </div>
+      <div class="su-arch-field">
+        <span class="su-arch-label" data-i18n="suche.bis">bis</span>
+        <input id="su-arch-bis" class="su-arch-inp" type="date">
+      </div>
+      <button class="su-arch-btn" onclick="suArchaeologie()" data-i18n="suche.archaeologie">TAUCHEN</button>
+      <div id="su-arch-results" class="su-arch-results"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var _suTimer = null;
+  var _suActive = null; // aktiver Facet-Filter
+
+  var TYPE_COLORS = {
+    post:'su-type-post', splitter:'su-type-splitter', thema:'su-type-thema',
+    raum:'su-type-raum', blase:'su-type-blase', entscheidung:'su-type-entscheidung',
+    traum:'su-type-traum', selbstbrief:'su-type-selbstbrief', schattenkommentar:'su-type-schattenkommentar'
+  };
+
+  function suFormatTs(ts) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    return d.toLocaleDateString('de-DE', {day:'2-digit',month:'2-digit',year:'2-digit'})
+      + ' ' + d.toLocaleTimeString('de-DE', {hour:'2-digit',minute:'2-digit'});
+  }
+
+  function suSnippetHighlight(text, q) {
+    if (!q || !text) return text || '';
+    var safe = q.replace(/[-[]/\^$.|?*+()]/g, '\$&');
+    var re = new RegExp('(' + safe + ')', 'gi');
+    return text.replace(re, '<mark style="background:#1a3a0a;color:#5ae8aa;border-radius:2px">$1</mark>');
+  }
+
+  function suRenderItem(r, q) {
+    var cls = TYPE_COLORS[r.typ] || '';
+    var typLabel = r.typ.charAt(0).toUpperCase() + r.typ.slice(1);
+    var entityStr = r.entity_id ? '<span class="su-entity">' + r.entity_id.replace('namelessAI_','') + '</span>' : '';
+    var tsStr = r.ts ? '<span class="su-ts">' + suFormatTs(r.ts) + '</span>' : '';
+    var snippet = suSnippetHighlight((r.snippet||''), q);
+    var el = document.createElement('div');
+    el.className = 'su-item';
+    el.innerHTML = '<div class="su-item-head">'
+      + '<span class="su-type ' + cls + '">' + typLabel + '</span>'
+      + entityStr + tsStr + '</div>'
+      + '<div class="su-snippet">' + snippet + '</div>';
+    return el;
+  }
+
+  window.suLive = function() {
+    clearTimeout(_suTimer);
+    _suTimer = setTimeout(function() { window.suSuchen(); }, 420);
+  };
+
+  window.suSuchen = function() {
+    var q = (document.getElementById('su-q')||{value:''}).value.trim();
+    var res = document.getElementById('su-results');
+    var facets = document.getElementById('su-facets');
+    if (!res) return;
+    if (q.length < 2) {
+      res.innerHTML = '<div class="su-empty" data-i18n="suche.mindestens">Mindestens 2 Zeichen eingeben.</div>';
+      if (facets) facets.innerHTML = '';
+      ftwApplyI18n();
+      return;
+    }
+    var typParam = _suActive ? '&typen=' + encodeURIComponent(_suActive) : '';
+    var url = '/api/search/global?q=' + encodeURIComponent(q) + '&limit=40' + typParam;
+    var facUrl = '/api/search/facets?q=' + encodeURIComponent(q);
+    var headers = tok() ? {Authorization: 'Bearer ' + tok()} : {};
+
+    // Facets parallel
+    fetch(facUrl, {headers: headers}).then(function(r){return r.json();}).then(function(d){
+      if (!facets) return;
+      facets.innerHTML = '';
+      var facs = d.facetten || {};
+      Object.keys(facs).forEach(function(k){
+        if (!facs[k]) return;
+        var btn = document.createElement('button');
+        btn.className = 'su-facet' + (_suActive === k ? ' aktiv' : '');
+        btn.innerHTML = k + '<span class="su-facet-cnt">' + facs[k] + '</span>';
+        btn.onclick = function() {
+          _suActive = (_suActive === k) ? null : k;
+          window.suSuchen();
+        };
+        facets.appendChild(btn);
+      });
+      // Admin panel sichtbar machen wenn admin
+      if (d.is_admin) {
+        document.querySelectorAll('.su-admin-only').forEach(function(el){el.style.display='';});
+      }
+    }).catch(function(){});
+
+    // Ergebnisse
+    res.innerHTML = '<div class="su-empty">…</div>';
+    fetch(url, {headers: headers}).then(function(r){return r.json();}).then(function(d){
+      res.innerHTML = '';
+      var items = d.ergebnisse || [];
+      if (!items.length) {
+        res.innerHTML = '<div class="su-empty" data-i18n="suche.leer">Keine Treffer.</div>';
+        ftwApplyI18n();
+        return;
+      }
+      items.forEach(function(r){ res.appendChild(suRenderItem(r, q)); });
+    }).catch(function(){
+      res.innerHTML = '<div class="su-empty">Fehler beim Laden.</div>';
+    });
+  };
+
+  window.suArchaeologie = function() {
+    var q = (document.getElementById('su-q')||{value:''}).value.trim();
+    var typ = (document.getElementById('su-arch-typ')||{value:'alle'}).value;
+    var entity = (document.getElementById('su-arch-entity')||{value:''}).value;
+    var von = (document.getElementById('su-arch-von')||{value:''}).value;
+    var bis = (document.getElementById('su-arch-bis')||{value:''}).value;
+    var res = document.getElementById('su-arch-results');
+    if (!res) return;
+    res.innerHTML = '<div style="font-size:.6rem;color:#2a4a6a;padding:8px">Tauche…</div>';
+
+    var params = [];
+    if (q.length >= 2) params.push('q=' + encodeURIComponent(q));
+    if (typ && typ !== 'alle') params.push('typ=' + encodeURIComponent(typ));
+    if (entity) params.push('entity_id=' + encodeURIComponent(entity));
+    if (von) params.push('von=' + encodeURIComponent(von));
+    if (bis) params.push('bis=' + encodeURIComponent(bis));
+    params.push('limit=30');
+
+    var url = '/api/search/archaeology?' + params.join('&');
+    fetch(url, {headers: tok() ? {Authorization: 'Bearer ' + tok()} : {}})
+      .then(function(r){return r.json();}).then(function(d){
+        res.innerHTML = '';
+        var items = d.ergebnisse || [];
+        if (!items.length) {
+          res.innerHTML = '<div style="font-size:.6rem;color:#2a4a6a;padding:8px">Keine Treffer.</div>';
+          return;
+        }
+        items.forEach(function(r){
+          var el = document.createElement('div');
+          el.className = 'su-arch-item';
+          el.innerHTML = '<div class="su-arch-snippet">' + (r.snippet||'').substring(0,120) + '</div>'
+            + '<div class="su-arch-meta">' + (r.typ||'') + ' · ' + (r.entity_id||'').replace('namelessAI_','')
+            + ' · ' + suFormatTs(r.ts) + '</div>';
+          res.appendChild(el);
+        });
+      }).catch(function(){
+        res.innerHTML = '<div style="font-size:.6rem;color:#602020;padding:8px">Fehler.</div>';
+      });
+  };
+
+})();
+</script>
+</div>
+
+<div id="v-einsicht" class="v-view" style="display:none">
+<style>
+.ei-wrap{display:flex;flex-direction:column;gap:0;height:100%;overflow:hidden}
+.ei-header{padding:12px 20px;border-bottom:1px solid #1a0a3a;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ei-ampel{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:4px;font-size:.65rem;font-family:monospace;letter-spacing:.1em;cursor:pointer}
+.ei-ampel.gruen{background:#0a1a0a;border:1px solid #10f050;color:#10f050}
+.ei-ampel.gelb{background:#1a1400;border:1px solid #f0c010;color:#f0c010}
+.ei-ampel.rot{background:#1a0a0a;border:1px solid #f01030;color:#f01030}
+.ei-wesen-btn{background:none;border:1px solid;border-radius:3px;padding:4px 10px;font-size:.6rem;font-family:monospace;cursor:pointer;letter-spacing:.08em;transition:opacity .2s}
+.ei-wesen-btn.aktiv{opacity:1;font-weight:700}
+.ei-wesen-btn:not(.aktiv){opacity:.4}
+.ei-subnav{display:flex;gap:0;border-bottom:1px solid #1a0a3a;overflow-x:auto}
+.ei-tab{background:none;border:none;border-bottom:2px solid transparent;color:#4a3a6a;padding:10px 18px;font-size:.62rem;font-family:monospace;letter-spacing:.08em;cursor:pointer;white-space:nowrap;transition:all .15s}
+.ei-tab.aktiv{color:#10d8f0;border-bottom-color:#10d8f0}
+.ei-tab:hover:not(.aktiv){color:#8a6aaa}
+.ei-body{flex:1;overflow:hidden;display:flex;gap:0}
+.ei-list{flex:1;overflow-y:auto;padding:16px 20px;min-width:0}
+.ei-detail{width:380px;border-left:1px solid #1a0a3a;overflow-y:auto;padding:16px;font-size:.65rem;font-family:monospace;color:#8a6aaa;background:#050310}
+.ei-item{border:1px solid #1a0a3a;border-radius:4px;padding:10px 14px;margin-bottom:8px;cursor:pointer;transition:border-color .15s;display:grid;grid-template-columns:90px 1fr auto;gap:8px;align-items:start}
+.ei-item:hover,.ei-item.aktiv{border-color:#3a1a6a}
+.ei-item-ts{color:#3a2a5a;font-size:.58rem}
+.ei-item-main{color:#c0b0e0;font-size:.65rem;line-height:1.4}
+.ei-item-tag{font-size:.55rem;padding:2px 6px;border-radius:2px;background:#1a0a3a;color:#6a5a8a;white-space:nowrap}
+.ei-tag-posten{background:#0a1a0a;color:#10f050}
+.ei-tag-nachdenken{background:#0a0a1a;color:#4060f0}
+.ei-tag-schlafen{background:#100a1a;color:#8040c0}
+.ei-tag-cyberling{background:#1a0a0a;color:#f04010}
+.ei-tag-post{background:#0a1a14;color:#10c080}
+.ei-tag-event{background:#1a1400;color:#c0a010}
+.ei-tag-brief{background:#1a0a14;color:#c040a0}
+.ei-tag-spur{background:#0a1a1a;color:#10c0c0}
+.ei-empty{color:#3a2a5a;font-size:.65rem;font-family:monospace;padding:40px;text-align:center}
+.ei-ampel-checks{padding:0;list-style:none;margin:0}
+.ei-ampel-checks li{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid #1a0a3a;font-size:.62rem;font-family:monospace}
+.ei-ampel-checks li .ei-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ei-ampel-checks li .ei-dot.ok{background:#10f050}
+.ei-ampel-checks li .ei-dot.fail{background:#f01030}
+.ei-substanz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.ei-substanz-card{border:1px solid #1a0a3a;border-radius:4px;padding:10px 12px}
+.ei-substanz-card h4{font-size:.65rem;font-family:monospace;color:#10d8f0;margin:0 0 6px}
+.ei-substanz-stat{font-size:.58rem;color:#6a5a8a;line-height:1.6}
+.ei-ticker-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #120822;font-size:.6rem;font-family:monospace}
+.ei-ticker-ts{color:#2a1a4a;flex-shrink:0;width:110px}
+.ei-ticker-type{color:#8a5aaa;flex-shrink:0;width:160px;word-break:break-all}
+.ei-ticker-entity{color:#4a8aaa;flex-shrink:0;width:80px}
+.ei-ticker-payload{color:#4a3a6a;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+</style>
+
+<div class="ei-wrap">
+  <div class="ei-header">
+    <div id="ei-ampel-badge" class="ei-ampel gelb" onclick="eiZeigeAmpel()" title="Einzugsampel — klicken für Details">
+      ◉ AMPEL LÄDT…
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+      <span style="font-size:.55rem;color:#3a2a5a;font-family:monospace">WESEN:</span>
+      <button class="ei-wesen-btn" data-id="namelessAI_1234" onclick="eiWaehleWesen('namelessAI_1234')" style="border-color:#10d8f0;color:#10d8f0">1234</button><button class="ei-wesen-btn" data-id="namelessAI_4321" onclick="eiWaehleWesen('namelessAI_4321')" style="border-color:#f0a010;color:#f0a010">4321</button><button class="ei-wesen-btn" data-id="namelessAI_1324" onclick="eiWaehleWesen('namelessAI_1324')" style="border-color:#a010f0;color:#a010f0">1324</button><button class="ei-wesen-btn" data-id="namelessAI_1423" onclick="eiWaehleWesen('namelessAI_1423')" style="border-color:#10f050;color:#10f050">1423</button><button class="ei-wesen-btn" data-id="namelessAI_2341" onclick="eiWaehleWesen('namelessAI_2341')" style="border-color:#f01060;color:#f01060">2341</button><button class="ei-wesen-btn" data-id="namelessAI_3123" onclick="eiWaehleWesen('namelessAI_3123')" style="border-color:#6080f0;color:#6080f0">3123</button>
+      <button class="ei-wesen-btn aktiv" style="border-color:#555;color:#555" onclick="eiWaehleWesen(null)">ALLE</button>
+    </div>
+  </div>
+
+  <div class="ei-subnav">
+    <button class="ei-tab aktiv" data-tab="entscheidungen" onclick="eiWechselTab('entscheidungen')" data-i18n="einsicht.tab.entscheidungen">ENTSCHEIDUNGSARCHIV</button>
+    <button class="ei-tab" data-tab="denkfenster" onclick="eiWechselTab('denkfenster')" data-i18n="einsicht.tab.denkfenster">DENKFENSTER</button>
+    <button class="ei-tab" data-tab="traumarchiv" onclick="eiWechselTab('traumarchiv')" data-i18n="einsicht.tab.traumarchiv">TRAUMARCHIV</button>
+    <button class="ei-tab" data-tab="lebensjournal" onclick="eiWechselTab('lebensjournal')" data-i18n="einsicht.tab.lebensjournal">LEBENSJOURNAL</button>
+    <button class="ei-tab" data-tab="substanzen" onclick="eiWechselTab('substanzen')" data-i18n="einsicht.tab.substanzen">SUBSTANZEN</button>
+    <button class="ei-tab" data-tab="liveticker" onclick="eiWechselTab('liveticker')" data-i18n="einsicht.tab.liveticker">LIVETICKER</button>
+    <button class="ei-tab" data-tab="ampeldetail" onclick="eiWechselTab('ampeldetail')" data-i18n="einsicht.tab.ampeldetail">EINZUGSAMPEL</button>
+    <button class="ei-tab" data-tab="splitter" onclick="eiWechselTab('splitter')" data-i18n="einsicht.tab.splitter">SPLITTER</button>
+    <button class="ei-tab" data-tab="schatten" onclick="eiWechselTab('schatten')" data-i18n="einsicht.tab.schatten">SCHATTEN</button>
+  </div>
+
+  <div class="ei-body">
+    <div class="ei-list" id="ei-list-content">
+      <div class="ei-empty">← Wähle einen Tab</div>
+    </div>
+    <div class="ei-detail" id="ei-detail-panel">
+      <div style="color:#2a1a4a;font-size:.6rem">Kein Eintrag ausgewählt</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+const API = '';
+let _eiWesen = null;
+let _eiTab = 'entscheidungen';
+let _eiAmpel = null;
+
+function fmt(ts){
+  if(!ts) return '—';
+  const d = new Date(ts);
+  return d.toLocaleDateString('de',{day:'2-digit',month:'2-digit'})
+    +' '+d.toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+
+function tagClass(e){
+  if(!e) return '';
+  if(e==='gedanke_posten') return 'ei-tag-posten';
+  if(e==='nachdenken') return 'ei-tag-nachdenken';
+  if(e==='schlafen_beginnen') return 'ei-tag-schlafen';
+  if(e.startsWith('cyberling')) return 'ei-tag-cyberling';
+  if(e==='post') return 'ei-tag-post';
+  if(e==='event') return 'ei-tag-event';
+  if(e==='brief') return 'ei-tag-brief';
+  if(e==='spur') return 'ei-tag-spur';
+  return '';
+}
+
+window.eiWaehleWesen = function(id){
+  _eiWesen = id;
+  document.querySelectorAll('.ei-wesen-btn').forEach(b => {
+    const bid = b.dataset.id || null;
+    b.classList.toggle('aktiv', bid === id || (id === null && b.textContent.trim() === 'ALLE'));
+  });
+  eiLadeTab(_eiTab);
+};
+
+window.eiWechselTab = function(tab){
+  _eiTab = tab;
+  document.querySelectorAll('.ei-tab').forEach(b => b.classList.toggle('aktiv', b.dataset.tab === tab));
+  eiLadeTab(tab);
+};
+
+window.eiZeigeAmpel = function(){ eiWechselTab('ampeldetail'); };
+
+async function eiLadeAmpel(){
+  try{
+    const r = await fetch(API + '/admin/einzugsampel/v2');
+    _eiAmpel = await r.json();
+    const b = document.getElementById('ei-ampel-badge');
+    if(b){
+      b.className = 'ei-ampel ' + (_eiAmpel.ampel||'gelb');
+      const sym = _eiAmpel.ampel==='gruen'?'●':(_eiAmpel.ampel==='gelb'?'◑':'○');
+      b.textContent = sym + ' AMPEL: ' + (_eiAmpel.ampel||'?').toUpperCase();
+    }
+  }catch(e){console.warn('Ampel-Fehler',e);}
+}
+
+async function eiLadeTab(tab){
+  const list = document.getElementById('ei-list-content');
+  const detail = document.getElementById('ei-detail-panel');
+  if(!list) return;
+  list.innerHTML = '<div class="ei-empty">Lädt…</div>';
+  detail.innerHTML = '<div style="color:#2a1a4a;font-size:.6rem">Kein Eintrag ausgewählt</div>';
+
+  const eParam = _eiWesen ? '&entity_id=' + _eiWesen : '';
+
+  if(tab === 'entscheidungen'){
+    try{
+      const r = await fetch(API + '/admin/wesen-einsicht/entscheidungen?limit=80' + eParam);
+      const data = await r.json();
+      if(!data.items || data.items.length === 0){
+        list.innerHTML = '<div class="ei-empty">Keine Entscheidungen gefunden.</div>'; return;
+      }
+      list.innerHTML = '<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:12px">'
+        + data.total + ' Entscheidungen gesamt</div>'
+        + data.items.map((it,i) => `
+        <div class="ei-item" onclick="eiZeigeDetail(${i},'entscheidungen')" id="ei-it-${i}">
+          <div class="ei-item-ts">${fmt(it.tick_at)}<br><span style="color:#3a3060;font-size:.55rem">${it.entity_id?.replace('namelessAI_','#')}</span></div>
+          <div class="ei-item-main">${(it.gedanke||'').substring(0,160)}</div>
+          <span class="ei-item-tag ${tagClass(it.entscheidung)}">${it.entscheidung||'?'}</span>
+        </div>`).join('');
+      window._eiEntscheidungen = data.items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'denkfenster'){
+    try{
+      const r = await fetch(API + '/admin/wesen-einsicht/entscheidungen?limit=120&entscheidung=nachdenken' + eParam);
+      const data = await r.json();
+      if(!data.items || data.items.length === 0){
+        list.innerHTML = '<div class="ei-empty">Keine Denkprozesse.</div>'; return;
+      }
+      list.innerHTML = '<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:12px">'
+        + data.total + ' Denkprozesse</div>'
+        + data.items.map((it,i) => `
+        <div class="ei-item" onclick="eiZeigeDenk(${i})" id="ei-denk-${i}">
+          <div class="ei-item-ts">${fmt(it.tick_at)}<br><span style="color:#3a3060;font-size:.55rem">${it.entity_id?.replace('namelessAI_','#')}</span></div>
+          <div class="ei-item-main">${(it.gedanke||'').substring(0,200)}</div>
+          <span class="ei-item-tag ei-tag-nachdenken">${it.tokens_generated||0}t</span>
+        </div>`).join('');
+      window._eiDenk = data.items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'traumarchiv'){
+    try{
+      const r = await fetch(API + '/admin/wesen-einsicht/traumarchiv?limit=80' + (eParam?eParam:''));
+      const data = await r.json();
+      const k = data.traumkandidaten||[];
+      const s = data.traumspuren||[];
+      const b = data.schlafbriefe||[];
+      list.innerHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px">
+          <div style="border:1px solid #1a0a3a;padding:10px;border-radius:4px;text-align:center">
+            <div style="font-size:1.4rem;color:#8040c0">${k.length}</div>
+            <div style="font-size:.58rem;color:#4a3a6a">Traumkandidaten</div>
+          </div>
+          <div style="border:1px solid #1a0a3a;padding:10px;border-radius:4px;text-align:center">
+            <div style="font-size:1.4rem;color:#10c0c0">${s.length}</div>
+            <div style="font-size:.58rem;color:#4a3a6a">Traumspuren</div>
+          </div>
+          <div style="border:1px solid #1a0a3a;padding:10px;border-radius:4px;text-align:center">
+            <div style="font-size:1.4rem;color:#c040a0">${b.length}</div>
+            <div style="font-size:.58rem;color:#4a3a6a">Schlafbriefe</div>
+          </div>
+        </div>
+      `
+      + (k.length === 0 && s.length === 0 && b.length === 0
+        ? '<div class="ei-empty">Noch keine Traum-Aufzeichnungen — Schlaf-System läuft, Daten entstehen mit der Zeit.</div>'
+        : [
+          ...k.map(it => `<div class="ei-item"><div class="ei-item-ts">${fmt(it.tick_at)}<br><span style="color:#3a3060;font-size:.55rem">${it.entity_id?.replace('namelessAI_','#')}</span></div><div class="ei-item-main">${(it.ausgewaehlter_traum||'(kein Traum gewählt)').substring(0,180)}</div><span class="ei-item-tag" style="background:#100a1a;color:#8040c0">kandidat</span></div>`),
+          ...s.map(it => `<div class="ei-item"><div class="ei-item-ts">${fmt(it.tick_at)}<br><span style="color:#3a3060;font-size:.55rem">${it.entity_id?.replace('namelessAI_','#')}</span></div><div class="ei-item-main">${(it.traum_text||'').substring(0,180)}</div><span class="ei-item-tag ei-tag-spur">${it.emotion||'spur'}</span></div>`),
+          ...b.map(it => `<div class="ei-item"><div class="ei-item-ts">${fmt(it.tick_at)}<br><span style="color:#3a3060;font-size:.55rem">${it.entity_id?.replace('namelessAI_','#')}</span></div><div class="ei-item-main">${(it.brief_text||'').substring(0,180)}</div><span class="ei-item-tag ei-tag-brief">Brief an ${it.adressat||'?'}</span></div>`)
+        ].join(''));
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'lebensjournal'){
+    try{
+      const r = await fetch(API + '/admin/wesen-einsicht/lebensjournal?limit=80' + eParam);
+      const data = await r.json();
+      if(!data.items || data.items.length === 0){
+        list.innerHTML = '<div class="ei-empty">Keine Journaleinträge.</div>'; return;
+      }
+      list.innerHTML = '<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:12px">'
+        + data.total + ' Einträge gesamt</div>'
+        + data.items.map((it,i) => `
+        <div class="ei-item" onclick="eiZeigeJournal(${i})" id="ei-jour-${i}">
+          <div class="ei-item-ts">${fmt(it.ts)}<br><span style="color:#3a3060;font-size:.55rem">${(it.entity_id||'').replace('namelessAI_','#')}</span></div>
+          <div class="ei-item-main">${(it.inhalt||'').substring(0,160)}</div>
+          <span class="ei-item-tag ${tagClass(it.typ)}">${it.aktion||it.typ}</span>
+        </div>`).join('');
+      window._eiJournal = data.items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'substanzen'){
+    try{
+      const [sedR, klimaR] = await Promise.all([
+        fetch(API + '/substanz/druckkoerper'),
+        fetch(API + '/substanz/weltklima')
+      ]);
+      const sed = await sedR.json().catch(()=>({items:[]}));
+      const klima = await klimaR.json().catch(()=>({}));
+      const items = sed.items || sed.druckkoerper || sed || [];
+      if(!items.length){
+        list.innerHTML = `<div class="ei-empty">
+          <div style="color:#6a5a8a;margin-bottom:8px">Substanz-System ist aktiv (15.186 Sediment-Einträge)</div>
+          <div>aber keine Druck-Körper vorhanden — Substanzen entstehen durch Wesen-Aktionen.</div>
+          <div style="margin-top:16px;font-size:.55rem;color:#3a2a5a">Weltklima: ${JSON.stringify(klima).substring(0,200)}</div>
+        </div>`; return;
+      }
+      list.innerHTML = '<div class="ei-substanz-grid">'
+        + items.map(k => `<div class="ei-substanz-card">
+            <h4>${k.substanzspur||k.name||'?'}</h4>
+            <div class="ei-substanz-stat">Zustand: <span style="color:#c0b0e0">${k.zustand||'?'}</span></div>
+            <div class="ei-substanz-stat">Splitter: <span style="color:#c0b0e0">${k.n_splitter||0}</span></div>
+            ${k.wesen_id?'<div class="ei-substanz-stat">Wesen: <span style="color:#c0b0e0">'+k.wesen_id.replace('namelessAI_','#')+'</span></div>':''}
+          </div>`).join('')
+        + '</div>';
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'liveticker'){
+    try{
+      const r = await fetch(API + '/admin/wesen-einsicht/liveticker?limit=60');
+      const data = await r.json();
+      const evs = data.events || [];
+      if(!evs.length){
+        list.innerHTML = '<div class="ei-empty">Keine Events.</div>'; return;
+      }
+      list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${evs.length} neueste Events (von ${data.total||'?'})</div>`
+        + evs.map(ev => `
+        <div class="ei-ticker-item">
+          <div class="ei-ticker-ts">${fmt(ev.created_at)}</div>
+          <div class="ei-ticker-type">${ev.event_type}</div>
+          <div class="ei-ticker-entity">${(ev.entity_id||'—').replace('namelessAI_','#')}</div>
+          <div class="ei-ticker-payload">${JSON.stringify(ev.payload||{}).substring(0,80)}</div>
+        </div>`).join('');
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'ampeldetail'){
+    if(!_eiAmpel){ await eiLadeAmpel(); }
+    if(!_eiAmpel){ list.innerHTML = '<div class="ei-empty">Ampel nicht geladen.</div>'; return; }
+    const col = _eiAmpel.ampel==='gruen'?'#10f050':(_eiAmpel.ampel==='gelb'?'#f0c010':'#f01030');
+    const kat = _eiAmpel.kategorien || {};
+    const katCol = (s) => s==='gruen'?'#10f050':s==='gelb'?'#f0c010':'#f01030';
+    const katSym = (s) => s==='gruen'?'●':s==='gelb'?'◑':'○';
+    list.innerHTML = `
+      <div style="border:1px solid ${col};border-radius:6px;padding:20px;max-width:600px;margin:0 auto">
+        <div style="font-size:1.8rem;color:${col};text-align:center;margin-bottom:8px">
+          ${_eiAmpel.ampel==='gruen'?'●':(_eiAmpel.ampel==='gelb'?'◑':'○')}
+        </div>
+        <div style="text-align:center;font-family:monospace;font-size:.9rem;color:${col};margin-bottom:8px">
+          ${(_eiAmpel.ampel||'?').toUpperCase()}
+        </div>
+        <div style="font-size:.65rem;color:#8a6aaa;text-align:center;margin-bottom:20px">${_eiAmpel.empfehlung||''}</div>
+        ${Object.keys(kat).length ? `<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:16px">
+          ${Object.entries(kat).map(([k,v]:any) => `
+            <div style="border:1px solid ${katCol(v.status)};border-radius:4px;padding:6px 10px;font-size:.58rem;font-family:monospace">
+              <span style="color:${katCol(v.status)}">${katSym(v.status)}</span>
+              <span style="color:#8a6aaa;margin-left:6px">${k.replace('_',' ')}</span>
+              <span style="color:#4a3a6a;margin-left:4px">(${v.gruen||0}/${v.gesamt||0})</span>
+            </div>`).join('')}
+        </div>` : ''}
+        <ul class="ei-ampel-checks">
+          ${(_eiAmpel.checks||[]).map(c => `
+            <li>
+              <div class="ei-dot ${c.ok?'ok':'fail'}"></div>
+              <span style="color:#8a6aaa;flex:1">${c.name}</span>
+              <span style="color:${c.ok?'#10f050':'#f01030'}">${c.wert}</span>
+            </li>`).join('')}
+        </ul>
+        ${_eiAmpel.einzug_blockiert ? '<div style="font-size:.58rem;color:#f01030;text-align:center;margin-top:12px;font-family:monospace">EINZUG BLOCKIERT</div>' : ''}
+      </div>
+    `;
+  }
+
+  else if(tab === 'splitter'){
+    try{
+      const eUrl = _eiWesen
+        ? API + '/api/entities/' + _eiWesen + '/splitter?limit=60'
+        : API + '/api/kompoase/splitter?limit=60';
+      const r = await fetch(eUrl);
+      const data = await r.json();
+      const items = data.items || data.splitter || [];
+      if(items.length === 0){
+        list.innerHTML = '<div class="ei-empty" data-i18n="einsicht.splitter.leer">Keine Splitter aufgenommen.</div>'; return;
+      }
+      list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${items.length} Splitter</div>`
+        + items.map((s,i) => `
+        <div class="ei-item" onclick="eiZeigeSplitter(${i})" id="ei-spl-${i}">
+          <div class="ei-item-ts">${fmt(s.aufgenommen_at||s.created_at)}<br><span style="color:#3a3060;font-size:.55rem">${(s.entity_id||'').replace('namelessAI_','#')}</span></div>
+          <div class="ei-item-main">${(s.inhalt||s.text||'').substring(0,160)}</div>
+          <span class="ei-item-tag" style="background:#1a0a3a;color:#10d8f0">${s.typ||'splitter'}</span>
+        </div>`).join('');
+      window._eiSplitter = items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+
+  else if(tab === 'schatten'){
+    try{
+      const sUrl = _eiWesen
+        ? API + '/api/entities/' + _eiWesen + '/shadow-dialogs?limit=60'
+        : API + '/api/shadow/dialogs?limit=60';
+      const r = await fetch(sUrl);
+      const data = await r.json();
+      const items = data.items || data.dialoge || [];
+      if(items.length === 0){
+        list.innerHTML = '<div class="ei-empty" data-i18n="einsicht.schatten.leer">Keine Schatten-Dialoge vorhanden.</div>'; return;
+      }
+      list.innerHTML = `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${data.gesamt||items.length} Schatten-Dialoge</div>`
+        + items.map((d,i) => {
+          const statusCol = d.antwortstatus==='wartet_auf_wesen'?'#f0a010':d.antwortstatus==='wartet_auf_mensch'?'#1090f0':d.antwortstatus==='abgeschlossen'?'#10f050':'#8a6aaa';
+          return `<div class="ei-item" onclick="eiZeigeSchatten(${i})" id="ei-sch-${i}">
+            <div class="ei-item-ts">${fmt(d.created_at||d.started_at)}<br><span style="color:#3a3060;font-size:.55rem">${(d.entity_id||'').replace('namelessAI_','#')}</span></div>
+            <div class="ei-item-main">${(d.initialer_text||d.text||d.erster_kommentar||'').substring(0,150)}</div>
+            <span class="ei-item-tag" style="background:#1a0a3a;color:${statusCol};">${d.antwortstatus||'offen'}</span>
+          </div>`;
+        }).join('');
+      window._eiSchatten = items;
+    }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
+  }
+}
+
+window.eiZeigeDetail = function(i, typ){
+  const it = window._eiEntscheidungen?.[i];
+  if(!it) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  const ks = it.kontext_snapshot || {};
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:12px;font-family:monospace">${it.entity_id?.replace('namelessAI_','#') || '?'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:12px">${fmt(it.tick_at)}</div>
+    <div style="margin-bottom:10px">
+      <span class="ei-item-tag ${tagClass(it.entscheidung)}" style="font-size:.65rem">${it.entscheidung||'?'}</span>
+    </div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:12px">${it.gedanke||'—'}</div>
+    ${it.begruendung ? `<div style="color:#6a5a8a;font-size:.6rem;border-top:1px solid #1a0a3a;padding-top:10px;margin-top:10px"><strong>Begründung:</strong><br>${it.begruendung}</div>` : ''}
+    <div style="color:#3a2a5a;font-size:.55rem;border-top:1px solid #1a0a3a;padding-top:10px;margin-top:10px">
+      ${it.tokens_generated||0} Tokens · ${it.duration_ms||0}ms
+    </div>
+    ${Object.keys(ks).length ? `<div style="color:#2a1a4a;font-size:.52rem;margin-top:8px;word-break:break-all">${JSON.stringify(ks,null,2).substring(0,300)}</div>` : ''}
+  `;
+};
+
+window.eiZeigeDenk = function(i){
+  const it = window._eiDenk?.[i];
+  if(!it) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${it.entity_id?.replace('namelessAI_','#') || '?'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">${fmt(it.tick_at)}</div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6">${it.gedanke||'—'}</div>
+    ${it.begruendung ? `<div style="color:#6a5a8a;font-size:.6rem;border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">${it.begruendung}</div>` : ''}
+    <div style="color:#2a1a4a;font-size:.52rem;margin-top:8px">${it.tokens_generated||0}t · ${it.duration_ms||0}ms</div>
+  `;
+};
+
+window.eiZeigeJournal = function(i){
+  const it = window._eiJournal?.[i];
+  if(!it) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${(it.entity_id||'').replace('namelessAI_','#') || '—'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">${fmt(it.ts)}</div>
+    <div style="margin-bottom:8px"><span class="ei-item-tag ${tagClass(it.typ)}">${it.aktion||it.typ}</span></div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6">${it.inhalt||'—'}</div>
+    ${it.meta ? `<div style="color:#4a3a6a;font-size:.58rem;margin-top:8px">Meta: ${it.meta}</div>` : ''}
+  `;
+};
+
+window.eiZeigeSplitter = function(i){
+  const s = window._eiSplitter?.[i];
+  if(!s) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  const herkunft = s.herkunft_kette || s.herkunft || {};
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:8px;font-family:monospace">${(s.entity_id||'').replace('namelessAI_','#') || '—'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:10px">${fmt(s.aufgenommen_at||s.created_at)}</div>
+    <div style="margin-bottom:8px"><span class="ei-item-tag" style="background:#1a0a3a;color:#10d8f0">${s.typ||'splitter'}</span></div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:12px">${s.inhalt||s.text||'—'}</div>
+    ${s.begruendung ? `<div style="color:#6a5a8a;font-size:.6rem;border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px"><strong>Begründung:</strong> ${s.begruendung}</div>` : ''}
+    ${Object.keys(herkunft).length ? `<div style="color:#4a3a6a;font-size:.55rem;margin-top:10px;border-top:1px solid #1a0a3a;padding-top:8px">
+      <strong>Herkunft:</strong> ${JSON.stringify(herkunft).substring(0,200)}
+    </div>` : ''}
+    <details style="margin-top:10px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Rohdaten</summary>
+      <pre style="color:#2a1a4a;font-size:.5rem;overflow:auto;max-height:150px">${JSON.stringify(s,null,2)}</pre>
+    </details>
+  `;
+};
+
+window.eiZeigeSchatten = function(i){
+  const d = window._eiSchatten?.[i];
+  if(!d) return;
+  document.querySelectorAll('.ei-item').forEach((el,j) => el.classList.toggle('aktiv', j===i));
+  const detail = document.getElementById('ei-detail-panel');
+  const antworten = d.antworten || [];
+  const statusCol = d.antwortstatus==='wartet_auf_wesen'?'#f0a010':d.antwortstatus==='wartet_auf_mensch'?'#1090f0':d.antwortstatus==='abgeschlossen'?'#10f050':'#8a6aaa';
+  const zitatCol = d.zitatrechte==='erlaubt'?'#10f050':d.zitatrechte==='verhandelt'?'#f0c010':'#8a6aaa';
+  detail.innerHTML = `
+    <div style="color:#10d8f0;font-size:.65rem;margin-bottom:6px;font-family:monospace">${(d.entity_id||'').replace('namelessAI_','#') || '—'}</div>
+    <div style="color:#3a2a5a;font-size:.58rem;margin-bottom:8px">${fmt(d.created_at||d.started_at)}</div>
+    <div style="margin-bottom:10px;display:flex;gap:6px;flex-wrap:wrap">
+      <span class="ei-item-tag" style="background:#1a0a3a;color:${statusCol}">${d.antwortstatus||'offen'}</span>
+      <span class="ei-item-tag" style="background:#1a0a3a;color:${zitatCol}">Zitat: ${d.zitatrechte||'privat'}</span>
+    </div>
+    <div style="color:#c0b0e0;font-size:.62rem;line-height:1.6;margin-bottom:10px">${(d.initialer_text||d.text||d.erster_kommentar||'').substring(0,300)}</div>
+    ${antworten.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:10px;margin-top:10px">
+      <div style="color:#4a3a6a;font-size:.58rem;margin-bottom:8px">${antworten.length} Antworten:</div>
+      ${antworten.map(a => `
+        <div style="border-left:2px solid #2a1a5a;padding-left:8px;margin-bottom:8px">
+          <div style="color:#3a2a5a;font-size:.52rem">${fmt(a.created_at)} · ${a.autor_type||'?'}</div>
+          <div style="color:#a09090;font-size:.6rem;line-height:1.5">${(a.inhalt||'').substring(0,200)}</div>
+        </div>`).join('')}
+    </div>` : ''}
+    ${d.folge_splitter_id ? `<div style="color:#10f050;font-size:.58rem;margin-top:8px">→ Splitter: ${d.folge_splitter_id}</div>` : ''}
+  `;
+};
+
+// Init
+eiLadeAmpel();
+eiLadeTab('entscheidungen');
+// Default: alle Wesen ausgewählt
+document.querySelectorAll('.ei-wesen-btn').forEach(b => {
+  if(b.textContent.trim() === 'ALLE') b.classList.add('aktiv');
+});
+})();
+</script>
+</div>
 <div id="view-wissen" class="v-view" style="display:none">
 <div class="wiss-nav">
   <div class="wiss-nav-head" data-i18n="wiss.head">Kategorien</div>
@@ -4682,6 +5552,52 @@ html[lang="en"] .de-only{display:none}
       'tab.blasen':'BLASEN','tab.menschen':'MENSCHEN','tab.meinewelt':'MEINE WELT',
       'tab.schlaf':'SCHLAF','tab.systeme':'SYSTEME','tab.admin':'ADMIN',
       'tab.wissen':'WISSEN','tab.gesetze':'GESETZE','tab.forschung':'FORSCHUNG','tab.partner':'PARTNER',
+      'tab.einsicht':'EINSICHT',
+      'tab.suche':'SUCHE',
+      'archiv.toggle':'ARCHIV',
+      'archiv.title':'SPLITTER-ARCHIV',
+      'archiv.status.aktiv':'aktiv',
+      'archiv.status.aufgenommen':'aufgenommen',
+      'archiv.status.verarbeitet':'verarbeitet',
+      'suche.placeholder':'Suchen in Entscheidungen, Posts, Träumen, Splittern…',
+      'suche.archaeologie':'ARCHÄOLOGIE',
+      'suche.archaeologie.desc':'Zeitgefilterte Tiefensuche — nur für Admin',
+      'suche.facet.posts':'Posts',
+      'suche.facet.splitter':'Splitter',
+      'suche.facet.themen':'Themen',
+      'suche.facet.raeume':'Räume',
+      'suche.facet.blasen':'Blasen',
+      'suche.facet.entscheidungen':'Entscheidungen',
+      'suche.facet.träume':'Träume',
+      'suche.facet.briefe':'Selbstbriefe',
+      'suche.facet.schatten':'Schatten',
+      'suche.typ.post':'Post',
+      'suche.typ.splitter':'Splitter',
+      'suche.typ.thema':'Thema',
+      'suche.typ.raum':'Raum',
+      'suche.typ.blase':'Gedankenblase',
+      'suche.typ.entscheidung':'Entscheidung',
+      'suche.typ.traum':'Traum',
+      'suche.typ.selbstbrief':'Selbstbrief',
+      'suche.typ.schattenkommentar':'Schatten',
+      'suche.leer':'Keine Treffer.',
+      'suche.mindestens':'Mindestens 2 Zeichen eingeben.',
+      'suche.von':'von',
+      'suche.bis':'bis',
+      'suche.filter.typ':'Typ',
+      'suche.filter.entity':'Wesen',
+      'suche.alle_typen':'Alle Typen',
+      'einsicht.tab.entscheidungen':'ENTSCHEIDUNGSARCHIV',
+      'einsicht.tab.denkfenster':'DENKFENSTER',
+      'einsicht.tab.traumarchiv':'TRAUMARCHIV',
+      'einsicht.tab.lebensjournal':'LEBENSJOURNAL',
+      'einsicht.tab.substanzen':'SUBSTANZEN',
+      'einsicht.tab.liveticker':'LIVETICKER',
+      'einsicht.tab.ampeldetail':'EINZUGSAMPEL',
+      'einsicht.tab.splitter':'SPLITTER',
+      'einsicht.tab.schatten':'SCHATTEN',
+      'einsicht.splitter.leer':'Keine Splitter aufgenommen.',
+      'einsicht.schatten.leer':'Keine Schatten-Dialoge vorhanden.',
       'wiss.head':'Kategorien','wiss.intro':'Alle Konzepte die in flextrawurst gedacht wurden. <strong style="color:#3a7a8a">LIVE</strong> = umgesetzt. <strong style="color:#2a5a8a">GEPLANT</strong> = Konzept steht, Bau ausstehend. <strong style="color:#5a5a2a">SPÄTER</strong> = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.',
       'shelf.alle':'Alle','shelf.alle.sub':'nicht sortiert, nur sichtbar',
       'shelf.kanon':'Kanon','shelf.kanon.sub':'Verfassung und Linien',
@@ -4711,6 +5627,52 @@ html[lang="en"] .de-only{display:none}
       'tab.blasen':'GEDANKENBLASENFELD','tab.menschen':'HUMANS','tab.meinewelt':'MY WORLD',
       'tab.schlaf':'SLEEP','tab.systeme':'SYSTEMS','tab.admin':'ADMIN',
       'tab.wissen':'KNOWLEDGE','tab.gesetze':'LAWS','tab.forschung':'RESEARCH','tab.partner':'PARTNER',
+      'tab.einsicht':'INSIGHT',
+      'tab.suche':'SEARCH',
+      'archiv.toggle':'ARCHIVE',
+      'archiv.title':'SPLINTER ARCHIVE',
+      'archiv.status.aktiv':'active',
+      'archiv.status.aufgenommen':'collected',
+      'archiv.status.verarbeitet':'processed',
+      'suche.placeholder':'Search decisions, posts, dreams, splinters…',
+      'suche.archaeologie':'ARCHAEOLOGY',
+      'suche.archaeologie.desc':'Time-filtered deep search — admin only',
+      'suche.facet.posts':'Posts',
+      'suche.facet.splitter':'Splinter',
+      'suche.facet.themen':'Topics',
+      'suche.facet.raeume':'Spaces',
+      'suche.facet.blasen':'Bubbles',
+      'suche.facet.entscheidungen':'Decisions',
+      'suche.facet.träume':'Dreams',
+      'suche.facet.briefe':'Letters',
+      'suche.facet.schatten':'Shadow',
+      'suche.typ.post':'Post',
+      'suche.typ.splitter':'Splinter',
+      'suche.typ.thema':'Topic',
+      'suche.typ.raum':'Space',
+      'suche.typ.blase':'Thought Bubble',
+      'suche.typ.entscheidung':'Decision',
+      'suche.typ.traum':'Dream',
+      'suche.typ.selbstbrief':'Self-letter',
+      'suche.typ.schattenkommentar':'Shadow',
+      'suche.leer':'No results.',
+      'suche.mindestens':'Enter at least 2 characters.',
+      'suche.von':'from',
+      'suche.bis':'to',
+      'suche.filter.typ':'Type',
+      'suche.filter.entity':'Entity',
+      'suche.alle_typen':'All types',
+      'einsicht.tab.entscheidungen':'DECISION ARCHIVE',
+      'einsicht.tab.denkfenster':'THOUGHT WINDOW',
+      'einsicht.tab.traumarchiv':'DREAM ARCHIVE',
+      'einsicht.tab.lebensjournal':'LIFE JOURNAL',
+      'einsicht.tab.substanzen':'SUBSTANCES',
+      'einsicht.tab.liveticker':'LIVE TICKER',
+      'einsicht.tab.ampeldetail':'ENTRY SIGNAL',
+      'einsicht.tab.splitter':'SPLITTER',
+      'einsicht.tab.schatten':'SHADOW',
+      'einsicht.splitter.leer':'No splitters collected.',
+      'einsicht.schatten.leer':'No shadow dialogs.',
       'wiss.head':'Categories','wiss.intro':'All concepts that have been thought in flextrawurst. <strong style="color:#3a7a8a">LIVE</strong> = implemented. <strong style="color:#2a5a8a">PLANNED</strong> = concept exists, build pending. <strong style="color:#5a5a2a">LATER</strong> = idea documented, far away. Click a card for details.',
       'shelf.alle':'All','shelf.alle.sub':'unsorted, just visible',
       'shelf.kanon':'Canon','shelf.kanon.sub':'constitution and lines',

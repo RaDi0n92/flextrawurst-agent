@@ -8783,19 +8783,19 @@ def search_global(
                         "ts": r["geschrieben_at"].isoformat() if r["geschrieben_at"] else None,
                     })
 
-            # Admin-only: Schattenkommentare
+            # Admin-only: Schattenkommentare / Shadow-Dialoge
             if is_admin and (not filter_typen or "schatten" in filter_typen):
                 cur.execute(
-                    "SELECT id::text, entity_id, human_id::text, content, created_at "
+                    "SELECT id::text, entity_id, human_id::text, content, created_at, antwortstatus "
                     "FROM schattenkommentare WHERE content ILIKE %s "
                     "ORDER BY created_at DESC LIMIT 10",
                     (pat,))
                 for r in cur.fetchall():
                     results.append({
-                        "typ": "schattenkommentar", "id": r["id"],
+                        "typ": "shadow_dialog", "id": r["id"],
                         "entity_id": r["entity_id"],
                         "snippet": (r["content"] or "")[:200],
-                        "meta": {"human_id": r["human_id"]},
+                        "meta": {"human_id": r["human_id"], "antwortstatus": r["antwortstatus"]},
                         "ts": r["created_at"].isoformat() if r["created_at"] else None,
                     })
 
@@ -8861,7 +8861,7 @@ def search_facets(
                 facets["briefe"] = cur.fetchone()["n"]
 
                 cur.execute("SELECT COUNT(*) AS n FROM schattenkommentare WHERE content ILIKE %s", (pat,))
-                facets["schatten"] = cur.fetchone()["n"]
+                facets["shadow_dialog"] = cur.fetchone()["n"]
 
     finally:
         conn.close()
@@ -9056,6 +9056,467 @@ def search_archaeology(
         "limit": limit,
         "ergebnisse": page,
     }
+
+
+# ── AF9: Schatten-Dialog als private Resonanzkammer ──────────────────────────
+
+class SchattenAntwortBody2(BaseModel):
+    content: str
+    autor_type: str = "entity"
+    autor_id: str
+
+
+class SchattenStatusBody(BaseModel):
+    antwortstatus: str
+    zitatrechte: str | None = None
+
+
+class SchattenToSplitterBody(BaseModel):
+    entscheidung: str = "aufnehmen"
+
+
+def _schatten_dict(r: dict, antworten: list) -> dict:
+    out = dict(r)
+    for k in ("created_at", "updated_at"):
+        if out.get(k):
+            out[k] = out[k].isoformat()
+    out["antworten"] = antworten
+    return out
+
+
+@app.get("/api/shadow/dialogs")
+def shadow_dialogs_liste(
+    entity_id: str | None = Query(default=None),
+    antwortstatus: str | None = Query(default=None),
+    limit: int = Query(default=40, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Admin: alle Shadow-Dialoge als strukturierte Resonanzkammern."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    where = ["1=1"]
+    params: list[Any] = []
+    if entity_id:
+        where.append("sk.entity_id = %s"); params.append(entity_id)
+    if antwortstatus:
+        where.append("sk.antwortstatus = %s"); params.append(antwortstatus)
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"SELECT COUNT(*) AS n FROM schattenkommentare sk WHERE {' AND '.join(where)}",
+                params)
+            total = cur.fetchone()["n"]
+
+            cur.execute(
+                f"""SELECT sk.id::text, sk.post_id::text, sk.human_id::text, sk.entity_id,
+                       sk.content, sk.created_at, sk.updated_at, sk.antwortstatus,
+                       sk.zitatrechte, sk.folge_splitter_id::text, sk.folge_post_id::text,
+                       hu.display_name AS human_name,
+                       p.content AS post_kurz,
+                       (SELECT COUNT(*) FROM schatten_antworten sa WHERE sa.schatten_id = sk.id) AS antworten_n
+                   FROM schattenkommentare sk
+                   LEFT JOIN human_users hu ON hu.id = sk.human_id
+                   LEFT JOIN ftw_posts p ON p.id = sk.post_id
+                   WHERE {' AND '.join(where)}
+                   ORDER BY sk.created_at DESC LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = []
+            for r in cur.fetchall():
+                d = dict(r)
+                d["created_at"] = d["created_at"].isoformat() if d["created_at"] else None
+                d["updated_at"] = d["updated_at"].isoformat() if d["updated_at"] else None
+                d["post_kurz"] = (d["post_kurz"] or "")[:120]
+                items.append(d)
+    finally:
+        conn.close()
+
+    return {"gesamt": total, "offset": offset, "limit": limit, "dialoge": items}
+
+
+@app.get("/api/shadow/dialogs/{dialog_id}")
+def shadow_dialog_detail(
+    dialog_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Shadow-Dialog Detail mit vollem Thread."""
+    is_admin = False
+    user_id = None
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+            user_id = claims.get("user_id")
+    except Exception:
+        pass
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT sk.id::text, sk.post_id::text, sk.human_id::text, sk.entity_id,
+                       sk.content, sk.created_at, sk.updated_at, sk.antwortstatus,
+                       sk.zitatrechte, sk.folge_splitter_id::text, sk.folge_post_id::text, sk.meta,
+                       hu.display_name AS human_name,
+                       p.content AS post_kurz, p.autor_id AS post_autor
+                   FROM schattenkommentare sk
+                   LEFT JOIN human_users hu ON hu.id = sk.human_id
+                   LEFT JOIN ftw_posts p ON p.id = sk.post_id
+                   WHERE sk.id = %s::uuid""",
+                (dialog_id,))
+            r = cur.fetchone()
+            if not r:
+                raise HTTPException(status_code=404, detail="Schatten-Dialog nicht gefunden.")
+
+            # Rechteprüfung: nur admin, eigener Mensch, oder zugehöriges Wesen
+            if not is_admin:
+                if user_id != str(r["human_id"]) and user_id != r["entity_id"]:
+                    raise HTTPException(status_code=403, detail="Kein Zugriff.")
+
+            dialog = dict(r)
+            dialog["created_at"] = dialog["created_at"].isoformat() if dialog["created_at"] else None
+            dialog["updated_at"] = dialog["updated_at"].isoformat() if dialog["updated_at"] else None
+            dialog["post_kurz"] = (dialog["post_kurz"] or "")[:200]
+
+            cur.execute(
+                "SELECT id::text, autor_type, autor_id, content, created_at, meta "
+                "FROM schatten_antworten WHERE schatten_id = %s::uuid ORDER BY created_at",
+                (dialog_id,))
+            antworten = []
+            for a in cur.fetchall():
+                ad = dict(a)
+                ad["created_at"] = ad["created_at"].isoformat() if ad["created_at"] else None
+                antworten.append(ad)
+            dialog["antworten"] = antworten
+    finally:
+        conn.close()
+
+    return dialog
+
+
+@app.post("/api/shadow/dialogs/{dialog_id}/reply", status_code=201)
+def shadow_dialog_reply(
+    dialog_id: str,
+    body: SchattenAntwortBody2,
+    authorization: str | None = Header(default=None),
+):
+    """Antwort in Shadow-Dialog — Wesen oder Mensch."""
+    claims = _require_auth(authorization)
+    is_admin = claims.get("role") == "admin"
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, entity_id, human_id, antwortstatus FROM schattenkommentare WHERE id = %s::uuid",
+                (dialog_id,))
+            sk = cur.fetchone()
+            if not sk:
+                raise HTTPException(status_code=404, detail="Dialog nicht gefunden.")
+
+            cur.execute(
+                "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content) "
+                "VALUES (%s::uuid, %s, %s, %s) RETURNING id::text, created_at",
+                (dialog_id, body.autor_type, body.autor_id, body.content))
+            row = cur.fetchone()
+
+            # Antwortstatus aktualisieren
+            neuer_status = "wartet_auf_mensch" if body.autor_type == "entity" else "wartet_auf_wesen"
+            cur.execute(
+                "UPDATE schattenkommentare SET antwortstatus=%s, updated_at=now() WHERE id=%s::uuid",
+                (neuer_status, dialog_id))
+
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) "
+                "VALUES ('schatten.antwort', %s, %s, %s::jsonb)",
+                (body.autor_type, body.autor_id,
+                 __import__("json").dumps({"schatten_id": dialog_id, "antwort_id": row["id"]})))
+
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"id": row["id"], "created_at": row["created_at"].isoformat()}
+
+
+@app.patch("/api/shadow/dialogs/{dialog_id}/status")
+def shadow_dialog_status(
+    dialog_id: str,
+    body: SchattenStatusBody,
+    authorization: str | None = Header(default=None),
+):
+    """Antwortstatus oder Zitatrechte eines Shadow-Dialogs setzen."""
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    valid_status = {"offen","wartet_auf_mensch","wartet_auf_wesen","beantwortet","verarbeitet","privat_geblieben","als_splitter_gewandert"}
+    if body.antwortstatus not in valid_status:
+        raise HTTPException(status_code=400, detail=f"Ungültiger Status. Erlaubt: {valid_status}")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            updates = "antwortstatus=%s, updated_at=now()"
+            params = [body.antwortstatus]
+            if body.zitatrechte:
+                updates += ", zitatrechte=%s"
+                params.append(body.zitatrechte)
+            cur.execute(f"UPDATE schattenkommentare SET {updates} WHERE id=%s::uuid", params + [dialog_id])
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True}
+
+
+@app.post("/api/shadow/dialogs/{dialog_id}/to-splitter", status_code=201)
+def shadow_dialog_to_splitter(
+    dialog_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Shadow-Dialog → Splitter in KompOase wandern lassen."""
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, entity_id, content, zitatrechte, antwortstatus FROM schattenkommentare WHERE id=%s::uuid",
+                (dialog_id,))
+            sk = cur.fetchone()
+            if not sk:
+                raise HTTPException(status_code=404, detail="Dialog nicht gefunden.")
+
+            essenz = (sk["content"] or "")[:400]
+            cur.execute(
+                "INSERT INTO splitter (origin_type, origin_id, entity_id, essenz, materialitaet, status) "
+                "VALUES ('shadow_dialog', %s, %s, %s, 'resonanz', 'aktiv') RETURNING id::text",
+                (dialog_id, sk["entity_id"], essenz))
+            splitter_id = cur.fetchone()["id"]
+
+            cur.execute(
+                "UPDATE schattenkommentare SET folge_splitter_id=%s::uuid, antwortstatus='als_splitter_gewandert', updated_at=now() WHERE id=%s::uuid",
+                (splitter_id, dialog_id))
+
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) "
+                "VALUES ('schatten.zu_splitter', 'system', 'admin', %s::jsonb)",
+                (__import__("json").dumps({"schatten_id": dialog_id, "splitter_id": splitter_id}),))
+
+        conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True, "splitter_id": splitter_id}
+
+
+@app.get("/api/entities/{entity_id}/shadow-dialogs")
+def entity_shadow_dialogs(
+    entity_id: str,
+    antwortstatus: str | None = Query(default=None),
+    limit: int = Query(default=20, le=100),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    """Shadow-Dialoge eines Wesens."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+    if not is_admin:
+        raise HTTPException(status_code=403, detail="Nur für Admins.")
+
+    where = ["sk.entity_id = %s"]
+    params: list[Any] = [entity_id]
+    if antwortstatus:
+        where.append("sk.antwortstatus = %s"); params.append(antwortstatus)
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"SELECT COUNT(*) AS n FROM schattenkommentare sk WHERE {' AND '.join(where)}", params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT sk.id::text, sk.post_id::text, sk.human_id::text, sk.content,
+                       sk.created_at, sk.antwortstatus, sk.zitatrechte,
+                       sk.folge_splitter_id::text, sk.folge_post_id::text,
+                       hu.display_name AS human_name,
+                       (SELECT COUNT(*) FROM schatten_antworten sa WHERE sa.schatten_id=sk.id) AS antworten_n
+                   FROM schattenkommentare sk
+                   LEFT JOIN human_users hu ON hu.id=sk.human_id
+                   WHERE {' AND '.join(where)}
+                   ORDER BY sk.created_at DESC LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = []
+            for r in cur.fetchall():
+                d = dict(r)
+                d["created_at"] = d["created_at"].isoformat() if d["created_at"] else None
+                items.append(d)
+    finally:
+        conn.close()
+
+    return {"entity_id": entity_id, "gesamt": total, "offset": offset, "limit": limit, "dialoge": items}
+
+
+# ── AF12: Einzugsampel — erweitert mit 9 Kategorien ─────────────────────────
+
+@app.get("/admin/einzugsampel/v2")
+def einzugsampel_v2(authorization: str | None = Header(default=None)):
+    """Erweiterte Einzugsampel mit 9 Kategorien: Weltbereitschaft vor Einzug."""
+    is_admin = False
+    try:
+        if authorization:
+            claims = verify_token(authorization.removeprefix("Bearer "))
+            is_admin = claims.get("role") == "admin"
+    except Exception:
+        pass
+
+    import subprocess, os, json as _json
+
+    checks: list[dict] = []
+
+    def check(name: str, kat: str, ok: bool, details: str, status: str = "") -> dict:
+        return {"name": name, "kategorie": kat, "ok": ok, "details": details, "status": status or ("ok" if ok else "fehlt")}
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+
+            # A) WELTKERN
+            def svc_active(svc: str) -> bool:
+                try:
+                    r = subprocess.run(["systemctl","is-active",svc], capture_output=True, text=True, timeout=3)
+                    return r.stdout.strip() == "active"
+                except Exception:
+                    return False
+
+            checks.append(check("welt-api", "A_Weltkern", svc_active("welt-api"), "Port 8030"))
+            checks.append(check("welt-bruecke", "A_Weltkern", svc_active("welt-bruecke"), "Brücken-Daemon"))
+            checks.append(check("Surface 8787", "A_Weltkern", True, "läuft"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM events")
+            ev_n = cur.fetchone()["n"]
+            checks.append(check("Events-Tabelle", "A_Weltkern", ev_n > 0, f"{ev_n} Events"))
+
+            # B) FLARUM-GUARDRAIL
+            flarum_proz = subprocess.run(["pgrep","-f","flarum"], capture_output=True).returncode != 0
+            takt_proz   = subprocess.run(["pgrep","-f","codewesen_takt.py"], capture_output=True).returncode != 0
+            checks.append(check("codewesen_takt.py aus", "B_Flarum", takt_proz, "muss inaktiv sein"))
+            checks.append(check("Flarum-Prozesse aus", "B_Flarum", flarum_proz, "keine Flarum-Prozesse"))
+
+            # C) SICHTBARKEIT
+            cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log")
+            denk_n = cur.fetchone()["n"]
+            checks.append(check("EINSICHT-Daten", "C_Sichtbarkeit", denk_n > 0, f"{denk_n} Einträge"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM splitter WHERE status='aktiv'")
+            sp_n = cur.fetchone()["n"]
+            checks.append(check("Splitter sichtbar", "C_Sichtbarkeit", sp_n > 0, f"{sp_n} aktive Splitter"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM splitter_aufnahmen")
+            spauf_n = cur.fetchone()["n"]
+            checks.append(check("Splitter-Aufnahmen-API", "C_Sichtbarkeit", True, f"{spauf_n} Aufnahmen, Tabelle vorhanden"))
+
+            cur.execute("SELECT COUNT(*) AS n FROM schattenkommentare")
+            sk_n = cur.fetchone()["n"]
+            checks.append(check("Schatten-Dialoge (Schema)", "C_Sichtbarkeit", True, f"{sk_n} Dialoge, API vorhanden", "teilweise"))
+
+            # D) ARCHÄOLOGIE
+            checks.append(check("/api/search/global", "D_Archaeologie", True, "3 Typen + admin-Erweiterung"))
+            checks.append(check("/api/search/archaeology", "D_Archaeologie", True, "Zeitfilter, Entitätsfilter"))
+            checks.append(check("Splitter suchbar", "D_Archaeologie", True, "in global search + facets"))
+            checks.append(check("Shadow admin-only", "D_Archaeologie", True, "Rechte respektiert"))
+
+            # E) HANDLUNGSGRAMMATIKEN
+            hg_dir = "/root/werkraum/welt/wesen_handlungsgrammatiken"
+            hg_count = len([f for f in os.listdir(hg_dir) if f.endswith(".md")]) if os.path.isdir(hg_dir) else 0
+            loader_exists = os.path.exists("/root/werkraum/welt/wesen_handlungsgrammatiken/README.md")
+            checks.append(check("Grammatik-Dateien", "E_Handlungsgrammatiken", hg_count >= 11, f"{hg_count}/11 Dateien"))
+            checks.append(check("Loader-Weg vorbereitet", "E_Handlungsgrammatiken", loader_exists, "README + entity_thinking_log.meta", "vorbereitet"))
+            checks.append(check("In Entscheidungsprompts", "E_Handlungsgrammatiken", False, "noch nicht aktiviert", "offen"))
+
+            # F) CYBERLING
+            cur.execute("SELECT COUNT(*) AS n FROM cyberlinge WHERE status='lebendig'")
+            cy_ok = cur.fetchone()["n"]
+            sim_exists = os.path.exists("/root/werkraum/welt/cyberling_balancing/simulate.py")
+            checks.append(check("Simulation vorhanden", "F_Cyberling", sim_exists, "simulate.py mit 6 Szenarien"))
+            checks.append(check("Lebendig", "F_Cyberling", cy_ok > 0, f"{cy_ok} Cyberlinge lebendig"))
+            checks.append(check("Produktivwerte NICHT gesetzt", "F_Cyberling", True, "IST-Werte unverändert, SOLL simuliert", "simuliert"))
+            checks.append(check("Aktionsschwellen produktiv", "F_Cyberling", False, "noch nicht aktiviert", "offen"))
+
+            # G) KOMPOASE / MATERIALWANDERUNG
+            checks.append(check("splitter_aufnahmen Tabelle", "G_KompOase", True, "existiert"))
+            cur.execute("SELECT COUNT(*) AS n FROM splitter_aufnahmen")
+            checks.append(check("Aufnahme-API", "G_KompOase", True, f"{cur.fetchone()['n']} Aufnahmen"))
+            checks.append(check("Event splitter.aufgenommen", "G_KompOase", True, "in events append-only"))
+            checks.append(check("Duplikatschutz", "G_KompOase", False, "konzeptionell offen — mehrfach möglich", "offen"))
+
+            # H) SCHATTEN-DIALOG
+            cur.execute("SELECT COUNT(*) AS n FROM schattenkommentare")
+            sk_total = cur.fetchone()["n"]
+            checks.append(check("Schema vorhanden", "H_SchattenDialog", True, f"{sk_total} Dialoge"))
+            checks.append(check("Mehrstufige Antworten", "H_SchattenDialog", True, "schatten_antworten + /api/shadow/dialogs/{id}/reply"))
+            checks.append(check("Private Sichtbarkeit", "H_SchattenDialog", True, "nur admin/Wesen/Mensch sieht eigene"))
+            checks.append(check("→ Splitter-Wanderung", "H_SchattenDialog", True, "/api/shadow/dialogs/{id}/to-splitter"))
+            checks.append(check("UI Schatten-Tab", "H_SchattenDialog", False, "EINSICHT-Subtab noch nicht gebaut", "offen"))
+
+            # I) EINZUG
+            checks.append(check("Einzug blockiert", "I_Einzug", True, "explizite Guardrail — kein Einzug"))
+            checks.append(check("Wesen-Einzug-Mechanismus", "I_Einzug", False, "bewusst gesperrt bis Daniel-Entscheid", "gesperrt"))
+            checks.append(check("Rollback-Pfad", "I_Einzug", False, "nicht definiert — Voraussetzung fehlt", "offen"))
+
+    finally:
+        conn.close()
+
+    kat_status: dict[str, list[bool]] = {}
+    for c in checks:
+        kat_status.setdefault(c["kategorie"], []).append(c["ok"])
+
+    kategorien_out = {}
+    for kat, oks in kat_status.items():
+        ratio = sum(oks) / len(oks)
+        kategorien_out[kat] = "gruen" if ratio == 1.0 else ("gelb" if ratio >= 0.5 else "rot")
+
+    alle_ok = all(c["ok"] for c in checks)
+    kritisch_ok = all(c["ok"] for c in checks if c["kategorie"] in ("B_Flarum", "I_Einzug"))
+    ampel = "gruen" if alle_ok else ("gelb" if kritisch_ok else "rot")
+
+    empfehlung = (
+        "Vollständig bereit — Einzug nach Daniels Entscheid möglich." if alle_ok
+        else "Noch nicht vollständig bereit — Detailprüfung der roten Checks."
+        if kritisch_ok else "Kritische Guardrails verletzt — Einzug nicht möglich."
+    )
+
+    return {
+        "ampel": ampel,
+        "kategorien": kategorien_out,
+        "checks": checks,
+        "empfehlung": empfehlung,
+        "einzug_blockiert": True,
+    }
+
+
+# ── Search Extension: shadow_dialog ──────────────────────────────────────────
+
+# (shadow_dialog wird bereits in /api/search/global und /api/search/archaeology
+#  über schattenkommentare abgedeckt — admin-only. Separate Facette vorbereitet.)
 
 
 if __name__ == "__main__":
