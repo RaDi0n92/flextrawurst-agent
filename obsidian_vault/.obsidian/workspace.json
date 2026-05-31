@@ -176,6 +176,8 @@
   },
   "active": "2418ee527d3e50d2",
   "lastOpenFiles": [
+    "_shared/briefkasten/REGELN.md",
+    "_shared/briefkasten",
     "_codex/_import_kimi_grundriss/spiegel/obsidian_als_zweites_gehirn.md",
     "_claude/_import_kimi_grundriss/spiegel/obsidian_als_zweites_gehirn.md",
     "_codex/_import_kimi_grundriss/tools/README_vault.md",
@@ -203,7 +205,6 @@
     "_codex/_import_kimi_grundriss/resonanz/vergessen_wollen.md",
     "_codex/_import_kimi_grundriss/resonanz/tiefer_eingetaucht.md",
     "_codex/_import_kimi_grundriss/resonanz/schichten_des_systems.md",
-    "_codex/_import_kimi_grundriss/resonanz/resonanz.md",
     "_codex/_import_kimi_grundriss/resonanz",
     "_claude/_import_kimi_grundriss/resonanz",
     "_codex/_import_kimi_grundriss/spiegel",
@@ -211,7 +212,6 @@
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.timer",
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.service",
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-codex-grundriss-sync.service",
-    "_codex/_import_kimi_grundriss/tools/systemd/kimi-claude-grundriss-sync.service",
     "mdfürvps/komposev2..JPG",
     "mdfürvps/obsidian.JPG"
   ]
