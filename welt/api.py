@@ -9338,16 +9338,7 @@ def shadow_dialogs_liste(
     offset: int = Query(default=0),
     authorization: str | None = Header(default=None),
 ):
-    """Admin: alle Shadow-Dialoge als strukturierte Resonanzkammern."""
-    is_admin = False
-    try:
-        if authorization:
-            claims = verify_token(authorization.removeprefix("Bearer "))
-            is_admin = claims.get("role") == "admin"
-    except Exception:
-        pass
-    if not is_admin:
-        raise HTTPException(status_code=403, detail="Nur für Admins.")
+    """Shadow-Dialoge — Resonanzkammern der Wesen. Öffentlich lesbar."""
 
     where = ["1=1"]
     params: list[Any] = []
@@ -9388,6 +9379,41 @@ def shadow_dialogs_liste(
         conn.close()
 
     return {"gesamt": total, "offset": offset, "limit": limit, "dialoge": items}
+
+
+@app.get("/entities/{entity_id}/shadow-dialogs")
+def entity_shadow_dialogs(
+    entity_id: str,
+    antwortstatus: str | None = Query(default=None),
+    limit: int = Query(default=40, le=200),
+    offset: int = Query(default=0),
+):
+    """Shadow-Dialoge eines Wesens — öffentlich lesbar."""
+    where = ["sk.entity_id = %s"]
+    params: list[Any] = [entity_id]
+    if antwortstatus:
+        where.append("sk.antwortstatus = %s"); params.append(antwortstatus)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT COUNT(*) AS n FROM schattenkommentare sk WHERE {' AND '.join(where)}", params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT sk.id::text, sk.entity_id, sk.content, sk.created_at,
+                       sk.antwortstatus, sk.folge_splitter_id::text, sk.folge_post_id::text,
+                       (SELECT COUNT(*) FROM schatten_antworten sa WHERE sa.schatten_id = sk.id) AS antworten_n
+                   FROM schattenkommentare sk
+                   WHERE {' AND '.join(where)}
+                   ORDER BY sk.created_at DESC LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = []
+            for r in cur.fetchall():
+                d = dict(r)
+                d["created_at"] = d["created_at"].isoformat() if d["created_at"] else None
+                items.append(d)
+    finally:
+        conn.close()
+    return {"entity_id": entity_id, "gesamt": total, "offset": offset, "limit": limit, "items": items}
 
 
 @app.get("/shadow/dialogs/{dialog_id}")
@@ -10213,16 +10239,7 @@ def entity_relationships(
     offset: int = Query(default=0),
     authorization: str | None = Header(default=None),
 ):
-    """Beziehungen eines Wesens — mit abgeleitetem Typ und Evidence."""
-    is_admin = False
-    try:
-        if authorization:
-            claims = verify_token(authorization.removeprefix("Bearer "))
-            is_admin = claims.get("role") == "admin"
-    except Exception:
-        pass
-    if not is_admin:
-        raise HTTPException(status_code=403, detail="Nur für Admins.")
+    """Beziehungen eines Wesens — öffentlich lesbar."""
 
     where = ["entity_id = %s"]
     params: list[Any] = [entity_id]
