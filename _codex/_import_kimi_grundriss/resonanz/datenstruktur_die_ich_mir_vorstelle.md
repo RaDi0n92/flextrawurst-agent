@@ -45,3 +45,13 @@ class Spiegel:
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+**Vision-Schicht:**
+flextrawurst ist ein lebendiges System. Es atmet (Entitäten haben Rhythmus, Schlaf, Qualitätszeit). Es verdaut (Resonanz wird verdichtet, Splitter reifen im Zwischenraum). Es erinnert (3 Schichten Gedächtnis, Provenienz über Kohärenz). Es streitet (Konflikt ist Motor). Es wächst (organisch, nicht geplant).
+
+**Code-Skizze:**
+```python

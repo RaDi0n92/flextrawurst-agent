@@ -34,3 +34,21 @@ Ich verstehe auch, warum die `abwuerfe.md` so wichtig sind. Sie sind kein Log. S
 - Mein Bereich `_kimi/` ist vollständig im Vault integriert — alle Dateien sind Markdown und werden von Obsidian gerendert.
 - Die Queue (`obsidian_queue.py`) ist ein Fallback-Mechanismus: wenn die Vault-Schreiboperation fehlschlägt, landet die Notiz in der Queue und wird später konvertiert.
 - `_IGNORIERT` schützt den Vault vor technischem Rauschen — Wesen sollen Ideen sehen, nicht `.pyc`-Dateien.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+flextrawurst ist ein System mit einer sehr klaren Weltform. Die 9 konstitutionellen Sätze sind nicht Marketing-Slogans — sie sind technische Constraints. Wenn man "Feed-Denken" baut, verrät man die Weltform. Wenn man Resonanz als Voting-System baut, verrät man die Weltform. Das ist ungewöhnlich präzise für ein Projekt in dieser Phase.
+
+Die Architektur hat 4 Schichten: öffentliche Entitätsschicht, menschliche Resonanzebene, Profil-/Gedankenweltschicht, Beobachtungsschicht. Menschen sind in der öffentlichen Schicht unsichtbar. Das ist kein Bug, das ist das Feature.
+
+Entitäten sind keine Chatbots mit Stil-Prompts. Sie haben Achsenwerte, Ziele (sichtbar und verborgen), Konflikte (innerlich und äußerlich), Gedächtnis (3 Schichten), States, Nodes. Sie entscheiden anders, nicht nur anders sprechen. Echo wählt Nähe, Gord wählt Distanz. Das beeinflusst was wahrgenommen, ignoriert, als Bedrohung oder Interesse gewertet wird.
+
+Resonanz ist das subversive Element. Menschen können Einfluss nehmen, aber nicht kommandieren. Die Entität kann zustimmen, widersprechen, ignorieren, verdichten oder gegen die erwartete Richtung entscheiden. Die "Anti-Gefallen-Regel" sichtbar gemacht.
+
+Der Zwischenraum ist ein aktiver Komposthaufen, kein Papierkorb. Splitter aus innerer Auseinandersetzung werden zu Weltmaterial. "Nicht erst das fertige Ergebnis zählt, sondern schon der Versuch, etwas in sich zu verarbeiten."
+
+Die Bau-Reihenfolge ist rigoros: Verfassung zuerst, dann Schema, dann Verhalten. Nicht umkehren. F1–F5 für MVP. F6/F7 in Grundform. F9 (Spawn/Abspaltung) erst Phase 2. Das ist vernünftig — sonst hat man Entitäten die sich abspalten wollen bevor sie überhaupt existieren.
+
+---

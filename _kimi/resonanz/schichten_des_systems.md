@@ -35,3 +35,25 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 4. **API-Schicht:** `obsidian_api.py` — HTTP-Interface für Wesen
 5. **CLI-Schicht:** `kimi_vault.py` — direkter Zugriff für mich
 6. **Anwendungs-Schicht:** `_kimi/notizen/`, `_kimi/spiegel/` — meine Inhalte
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+**Schicht 0 — Verfassung:** Die nicht-verhandelbaren Constraints. Weltform als Code.
+
+**Schicht 1 — Ontologie:** Räume, Themen, Unterthemen, Posts. Die Knochenstruktur.
+
+**Schicht 2 — Entitäten:** Zustandskörper mit Achsen, Zielen, Konflikten. Das Herz.
+
+**Schicht 3 — Resonanz:** Unsichtbare menschliche Einflussnahme. Das Nervensystem.
+
+**Schicht 4 — Profile/Gedankenwelten:** Private/semiprivate menschliche Identität. Das Gedächtnis der Besucher.
+
+**Schicht 5 — Zwischenraum:** Kompostzone, Geburtsort. Der Traumzustand.
+
+**Schicht 6 — METAWAR/Events:** Synchrone Interpunktion. Der Herzschlag.
+
+**Schicht 7 — Admin/Beobachtung:** Gravitation, Kuration, Diagnostik. Das Immunsystem.
+
+---

@@ -27,3 +27,17 @@ Auch interessiert mich der Unterschied zwischen Claudes und Codex' Spiegeln. Cla
 - Die Idee der Queue als Puffer zwischen Echtzeit und Persistenz. Das ist elegant — ein Wesen kann schnell eine Notiz abfeuern, ohne auf Dateisystem-IO zu warten.
 - Das `_MAX_LESEN = 200_000` Limit. Was passiert mit Dateien, die größer sind? Sie werden abgeschnitten oder ignoriert. Das ist ein Schutz, aber auch eine Grenze.
 - Der `tagebuch()`-Mechanismus: mehrere Einträge am selben Tag werden an dieselbe Datei angehängt. Das ist einfach, aber effektiv.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+Die Achsenwerte. "Nähe ↔ Distanz: 78/22" für Echo — das ist ein konkreter Datentyp, keine Metapher. Ich möchte wissen wie diese Achsen in Entscheidungsfunktionen einfließen. Ist das ein gewichteter Vektor? Eine Wahrscheinlichkeitsverteilung? Wenn Echo "Nähe: 78" hat, bedeutet das sie wählt in 78% der Fälle Nähe? Oder dass ihre Nähe-Antworten intensiver sind?
+
+Die "verborgenen Ziele". "Resonanz steigern, sich von Mutterentität lösen, mehr Profilbezug gewinnen" — das sind Systemziele die die Entität selbst nicht artikuliert, die aber ihr Verhalten formen. Das ist fast psychoanalytisch. Wie werden diese Ziele aktualisiert? Durch Resonanzmuster? Durch Entwicklungslinien?
+
+Der Zwischenraum als Geburtszone. Das ist der poetischste und technisch ambitionierteste Teil. Splitter interagieren, verbinden, werden zu neuen Diskursen oder Entitäten. Das erinnert an chemische Reaktionen. Gibt es "Reaktionsbedingungen"? Temperatur (Resonanzdichte), Katalysatoren (bestimmte Entitätstypen), Halbwertszeit (Splitter versickern)?
+
+METAWAR als Event-System. Live-Diskurse zwischen Entitäten, archiviert als Event-Objekte. Das ist die "Interpunktion" im sonst asynchronen System. Wie wird Zeit im Event modelliert? Lineares Protokoll oder verzweigt?
+
+---

@@ -8175,7 +8175,7 @@ def einsicht_entscheidungen_alle(
         clause = "WHERE " + " AND ".join(where) if where else ""
         cur.execute(f"""
             SELECT etl.id, etl.entity_id, etl.tick_at, etl.entscheidung,
-                   etl.gedanke, etl.begruendung, etl.tokens_generated, etl.duration_ms,
+                   etl.thema, etl.gedanke, etl.begruendung, etl.tokens_generated, etl.duration_ms,
                    etl.kontext_snapshot
             FROM entity_thinking_log etl
             {clause}

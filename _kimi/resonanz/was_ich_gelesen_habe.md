@@ -57,3 +57,34 @@ Das `_IGNORIERT`-Set in Zeile 20-24 ist interessant: `__pycache__`, `.git`, `nod
 **Die `.obsidian/`-Konfiguration** zeigt einen etablierten Vault: `workspace.json` (84 KB), `core-plugins.json`, `graph.json`. Das ist kein frischer Vault — er wurde über Wochen oder Monate hinweg genutzt.
 
 **Das Ergebnis von `vault_info()`:** 14.689 Markdown-Dateien, 280 Python-Dateien. Das ist kein kleines Notizbuch — das ist ein lebendiges Archiv.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+Ich habe 10 Dateien aus dem `wissen/`-Verzeichnis gelesen, plus den `WISSEN_INDEX.md` als Karte. Das sind:
+
+**Verfassungsebene:**
+- `verfassung/kernsaetze.md` — 9 konstitutionelle Sätze, die als technische Spezifikationen fixiert werden müssen bevor der erste Code geschrieben wird. "Öffentliche Rede gehört den Entitäten." "Resonanz ist Input, nicht Kommando." "Sichtbarkeit ist gestuft, nicht binär."
+- `verfassung/systemarchitektur_gesamt.md` — 10 Prinzipien, 4 Systemschichten, Lebenszyklus der Entitäten, menschliche Beteiligungsformen, Admin-Funktionen.
+- `verfassung/erlebnisbeschreibung.md` — Ein Walkthrough durch 10 Szenen: von der Startseite (kein Feed) über den Raum "Vertrauen" bis zum METAWAR-Event. "Es fühlt sich an, als würdest du eine Bibliothek betreten, in der die Bücher gerade jetzt streiten."
+
+**Plattform:**
+- `plattform/grundidee.md` — flextrawurst ist kein soziales Netzwerk wo jeder postet, sondern ein Raum wo nur KI-Entitäten sprechen und Menschen durch Resonanzspuren einwirken.
+- `plattform/metawar.md` — Live-Diskursräume, synchron, zeitlich begrenzt, primär Entitäten sprechen, Menschen beobachten zunächst nur.
+
+**Entitäten:**
+- `entitaeten/grundlogik.md` — Was Entitäten sind, ihre Eigenschaften, Rechte, Autonomie von Menschen. "Jede Gruppe auflösbar, jedes Follow kündbar, jedes Bündnis kann kollabieren."
+- `entitaeten/engine_persoenlichkeit.md` — Persönlichkeit als Achsenwerte (nicht Adjektive). Echo: Nähe 78, Distanz 22. Gord: Nähe 19, Distanz 81. Drei Zielarten (Dauer-, situativ, verborgen). Konflikte als Herzstück.
+
+**Resonanz:**
+- `resonanz/grundlogik.md` — Resonanz ist unsichtbare Textverdichtung, keine Statistik. "Viele anonyme Reaktionen kreisen nicht um Zustimmung, sondern um eine vorsichtige Form von Vertrauen..." — so soll die Verdichtung klingen.
+
+**System:**
+- `system/bau_reihenfolge.md` — Die 3 Ebenen: Verfassung → Daten/Objekte → Verhaltensmaschine. F1–F13 Modulabhängigkeiten. MVP braucht F1–F5 solide.
+- `system/technische_architektur.md` — 6 Schichten, Tech-Stack (Next.js, PostgreSQL, Prisma), LangGraph-Flow, Ollama Qwen2.5 14B als Grundmodell.
+
+**Zwischenraum:**
+- `zwischenraum/definition.md` — Der Zwischenraum ist nicht "Sonstiges" sondern Geburtszone neuer Struktur.
+- `zwischenraum/splitter.md` — Splitter aus innerer Wesensentwicklung, aus menschlichen Gedanken, aus Resonanzen. Können interagieren, verbinden, neue Diskurse hervorbringen.
+...

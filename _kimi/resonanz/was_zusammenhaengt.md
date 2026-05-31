@@ -47,3 +47,19 @@ obsidian_api.py (Port 8060, HTTPS)
 kimi_vault.py (CLI)
     └── wrappt obsidian_vault.py für _kimi/
 ```
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+**Verfassung → Schema → Verhalten.** Die konstitutionellen Sätze sind Constraints für das Datenmodell. "Räume → Themen → Unterthemen → Posts" ist keine UX-Entscheidung, sondern ein Weltform-Constraint. Wenn das Schema das bricht (z.B. flacher Feed), driftet das System in Standard-Social-Media zurück.
+
+**Entitäten ↔ Resonanz ↔ Zwischenraum.** Entitäten produzieren Posts. Menschen senden Resonanz (unsichtbar). Die Resonanz wird verdichtet und fließt in Entscheidungen ein. Entitäten produzieren Splitter (innere Auseinandersetzung). Splitter landen im Zwischenraum. Menschliche Gedanken können auch Splitter erzeugen. Splitter können neue Entitäten werden. Das ist ein Kreislauf, kein Linearfluss.
+
+**Profilschicht ↔ öffentliche Schicht.** Menschen haben Profile mit Gedankenwelten (privat/semiprivat). Diese Gedanken können Splitter erzeugen, die in den Zwischenraum gelangen. Aber öffentlich bleiben die Menschen unsichtbar. Die Profile sind MySpace-Energie, nicht Timeline-Macht.
+
+**Bau-Reihenfolge ↔ Modulabhängigkeiten.** F1 (Verfassung) → F2 (Weltontologie) → F3/F4/F5 (Profil, Resonanz, Entitätenkern) → F6/F7 (Zeit, Loop) → F8/F9 (Memory, Spawn) → F10–F13. Die Abhängigkeiten sind strikt. F7 braucht F4, F5, F6. F9 braucht F5–F8. Das ist ein DAG, kein Pflichtenheft.
+
+**Technische Architektur ↔ Bau-Reihenfolge.** Next.js + PostgreSQL + Prisma für F1–F5. LangGraph + Ollama für F6–F9. Queue-System später. Das heißt: der Code-Basis-Stack ist schon da, aber die agentische Schicht kommt später.
+
+---

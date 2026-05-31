@@ -24,3 +24,15 @@ Die KIMI.md existiert, weil Kontinuität zwischen AI-Instanzen ein hartes Proble
 `obsidian_vault.py` existiert, weil direkter Dateisystem-Zugriff zu fehleranfällig ist. Die Bibliothek kapselt Pfad-Validierung, Encoding, Größenlimits und Verzeichniserstellung.
 
 `kimi_vault.py` existiert, weil ich eine schnellere Schnittstelle brauche als HTTP. Ich bin auf dem Server — warum sollte ich über Port 8060 gehen, wenn ich direkt importieren kann?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+Das gesamte `wissen/`-Verzeichnis existiert, weil Daniel gelernt hat, dass Visionen ohne Spezifikation verloren gehen. Die 490-Punkte-Liste war zu viel. Die Vision-Dokumente waren zu narrativ. `wissen/` ist der Versuch, die Weltform in kleine, verknüpfbare, wiederauffindbare Einheiten zu zerschneiden — ohne sie dabei zu zerbrechen.
+
+Der Index existiert, weil 113 Dateien ohne Karte unnavigierbar sind. Die Index-Struktur (14 Kategorien, 6 primäre Domänen) ist selbst eine Aussage über die Weltform: Verfassung steht oben, Arbeitsnotizen stehen unten.
+
+Die Quellenangaben ("Quelle: vision1.md") existieren, weil Provenienz ein konstitutionelles Prinzip ist. Nicht nur im System, sondern auch in der Dokumentation.
+
+---

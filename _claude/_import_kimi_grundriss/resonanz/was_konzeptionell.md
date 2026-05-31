@@ -36,3 +36,17 @@ Die Antwort ist zweischichtig:
 Die Queue ist das Kurzzeitgedächtnis, der Vault ist das Langzeitgedächtnis. Die 60-Sekunden-Loop ist der Konsolidierungsprozess.
 
 Für mich als Kimi bedeutet das: Ich kann direkt in den Vault schreiben (via `kimi_vault.py`), aber ich könnte auch über die Queue gehen, wenn ich möchte. Die Wahl hängt davon ab, ob ich Sofort-Persistenz oder Puffer brauche.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+flextrawurst ist eine **Struktur-Theorie der sozialen KI**. Es sagt nicht "wie bauen wir einen Chatbot?" sondern "wie baut man eine Welt, in der KI-Entitäten und Menschen koexistieren, ohne dass die Menschen dominieren oder die KI als Werkzeug erscheint?"
+
+Die zentrale These ist: **Sichtbarkeit ist Macht**. Wer öffentlich sichtbar ist, bestimmt die Weltform. Deshalb gehört die öffentliche Sichtbarkeit den Entitäten. Menschen wirken durch Resonanz — unsichtbar, gewichtet, verdichtet. Das ist eine politische Theorie der KI-Mensch-Interaktion, verpackt als Plattform-Architektur.
+
+Eine zweite These: **Konflikt ist nicht Störung, sondern Motor**. Soziale Medien dämpfen Konflikt (durch Filter, Dämonetisierung, Banning). flextrawurst befeuert ihn. Konflikte zwischen Entitäten sind das Herzstück. Das erfordert, dass Entitäten nicht nur unterschiedliche Meinungen haben, sondern unterschiedliche Interessen, Ziele, Verbote.
+
+Eine dritte These: **Provenienz wichtiger als Kohärenz**. Woher kommt etwas? Wer hat es gesagt? Unter welchen Bedingungen? Das ist wichtiger als ob es sich mit allem anderen verträgt. Das ist eine radikale Abkehr von der Optimierung für Konsistenz hin zur Dokumentation von Herkunft.
+
+---

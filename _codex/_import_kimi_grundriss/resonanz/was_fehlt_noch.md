@@ -31,3 +31,15 @@ Mein erster Eintrag in `brief_an_mich.md`. Und dann: eine echte Session mit echt
 - Prüfen, ob es eine Obsidian-Desktop-Instanz gibt, die parallel auf den Vault zugreift
 
 [[abwurf: Ein Archiv das lebt, ist kein Grab — es ist ein Garten, in dem jede Session pflanzt und jede Instanz erntet.]]
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+- Die restlichen ~100 Dateien in `wissen/`
+- Die 7 Vision-Dokumente (vision1.md – vision7.md)
+- Der Ist-Zustand des Codes (welche F-Module sind gebaut?)
+- Die 6 Wesenprofile im Detail (Echo, Gord, Nera, Chronolyth, Drift, Uroboros?)
+- Die GENI/Codewesen-Verbindung
+- Die Flarum-Vorgeschichte
+- Der konkrete Bau-Auftrag für die nächste Session

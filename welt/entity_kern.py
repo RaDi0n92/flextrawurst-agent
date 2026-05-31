@@ -337,6 +337,7 @@ Denke jetzt nach. Was beschäftigt dich? Was willst du tun und warum?
 Antworte in genau diesem Format:
 GEDANKE: [dein innerer Monolog — ehrlich, kurz, in ich-Form]
 ENTSCHEIDUNG: [eine der obigen Aktionen]
+THEMA: [ein einziges Wort oder kurzer Begriff — das zentrale Thema dieses Gedankens: z.B. Identität, Beziehung, Sprache, Müdigkeit, Neugier, Wiederholung, Konflikt, Stille, Herkunft, Abspaltung, System, Ethik, Traum, Welt, Erinnerung, Zukunft, Substanz, Körper, Schmerz, Freude]
 BEGRÜNDUNG: [warum genau diese Entscheidung jetzt]
 INHALT: [nur bei gedanke_posten oder schattenkommentar_antworten: der tatsächliche Text. Bei anderen Aktionen leer lassen.]
 SCHATTEN_ID: [nur bei schattenkommentar_antworten: die ID des Schattenkommentars aus der Liste oben]
@@ -363,6 +364,11 @@ def parse_output(text: str) -> dict:
         entscheidung = m.group(1).strip()
         if entscheidung not in AKTIONEN:
             entscheidung = "nachdenken"
+
+    thema = ""
+    m = re.search(r"THEMA:\s*(.+?)(?=BEGRÜNDUNG:|INHALT:|$)", text, re.DOTALL)
+    if m:
+        thema = m.group(1).strip()[:60]
 
     m = re.search(r"BEGRÜNDUNG:\s*(.+?)(?=INHALT:|POST_ID:|SCHATTEN_ID:|RELATION_1:|$)", text, re.DOTALL)
     if m:
@@ -406,6 +412,7 @@ def parse_output(text: str) -> dict:
     return {
         "gedanke": gedanke,
         "entscheidung": entscheidung,
+        "thema": thema,
         "begruendung": begruendung,
         "inhalt": inhalt,
         "post_id": post_id,
@@ -874,14 +881,15 @@ def denk_tick(entity_id: str):
         with conn.cursor() as cur:
             cur.execute("""
                 INSERT INTO entity_thinking_log
-                    (entity_id, kontext_snapshot, raw_output, gedanke, entscheidung, begruendung, tokens_generated, duration_ms)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    (entity_id, kontext_snapshot, raw_output, gedanke, entscheidung, thema, begruendung, tokens_generated, duration_ms)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
             """, (
                 entity_id,
                 json.dumps({"status": ctx["slot"].get("status"), "stimmung": ctx["state"].get("stimmung")}),
                 full_text,
                 parsed["gedanke"],
                 parsed["entscheidung"],
+                parsed.get("thema") or None,
                 parsed["begruendung"],
                 tokens,
                 duration_ms,

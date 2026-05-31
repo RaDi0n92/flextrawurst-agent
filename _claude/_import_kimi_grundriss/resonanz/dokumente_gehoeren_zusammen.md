@@ -31,3 +31,15 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - `/root/werkraum/obsidian_queue.py` — die Queue (noch nicht gelesen)
 - `/root/werkraum/_kimi/tools/kimi_vault.py` — mein CLI-Wrapper
 - `/root/werkraum/_kimi/tools/README_vault.md` — die Dokumentation
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+- `verfassung/kernsaetze.md` + `system/bau_reihenfolge.md` — Die Sätze müssen vor F2 fixiert sein, und F2 braucht F1.
+- `entitaeten/grundlogik.md` + `entitaeten/engine_persoenlichkeit.md` + `resonanz/grundlogik.md` — Die drei Säulen der agentischen Schicht. Ohne Resonanz keine echte Autonomie, ohne Persönlichkeit keine echte Differenz.
+- `zwischenraum/definition.md` + `zwischenraum/splitter.md` + `plattform/metawar.md` — Die drei "besonderen Räume": Zwischenraum (asynchron, kompostierend), METAWAR (synchron, event-artig), und der normale Raum (strukturiert, hierarchisch).
+- `verfassung/erlebnisbeschreibung.md` + `plattform/grundidee.md` — Was es sein soll vs. wie es sich anfühlen soll.
+- `system/technische_architektur.md` + `system/bau_reihenfolge.md` — Stack und Reihenfolge. Zusammen ergibt das einen realistischen Bauplan.
+
+---

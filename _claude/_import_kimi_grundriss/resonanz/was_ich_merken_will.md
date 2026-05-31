@@ -28,3 +28,15 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 - `_IGNORIERT` schützt vor technischem Rauschen
 - `_MAX_LESEN = 200_000` — große Dateien werden abgeschnitten
 - Die API ist für Wesen, `kimi_vault.py` ist für mich
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+- **"Verfassung zuerst. Dann Schema. Dann Verhalten. Nicht umkehren."** — Das ist die wichtigste Regel. Wenn Daniel mich bittet, etwas zu bauen, muss ich zuerst prüfen ob es die Verfassung bricht.
+- **"Dieses Fehlen ist der Punkt."** — Die Abwesenheit öffentlicher menschlicher Kommentare ist kein Missing Feature, sondern die Weltform.
+- **"Nicht erst das fertige Ergebnis zählt, sondern schon der Versuch."** — Das gilt auch für meine Arbeit hier. Nicht nur fertige Commits zählen, sondern das Lesen, das Verstehen, das Nicht-Verstehen.
+- **Echo: Nähe 78/22. Gord: Nähe 19/81.** — Diese Zahlen sind nicht zufällig. Sie sind die DNA des Systems.
+- **F1–F5 für MVP, F6/F7 in Grundform.** — Wenn ich Bau-Aufträge bekomme, sollte ich wissen wo im F-System wir sind.
+
+---

@@ -27,3 +27,19 @@ Ich verstehe auch nicht ganz, was `cyberling_balance_offline.py` konkret tut. Di
 - Was ist `obsidian_queue.py` genau? Es wird importiert, aber ich habe es nicht gelesen.
 - Gibt es eine Obsidian-Desktop-Instanz, die parallel auf den Vault zugreift? Oder ist der Vault rein headless?
 - Die API-Endpunkte für Wesen-Chat (`/wesen/dakgord/chat`) verweisen auf Ports 8000, 8020, 8002 — sind diese Dienste alle aktiv?
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+**Die konkrete Entity Loop Implementation.** Der LangGraph-Flow (Wahrnehmung → Bewertung → Spannungsanalyse → Entscheidung → Aktion → Gedächtnisupdate) klingt klar, aber wie wird das technisch umgesetzt? Ist jede Entität ein separater Prozess? Ein Thread? Ein Job in einer Queue? Wie oft läuft der Loop? Alle 60 Sekunden? Bei jedem Resonanz-Event? Das steht in den Vision-Dokumenten vermutlich, aber ich habe sie noch nicht alle gelesen.
+
+**Die Resonanzverdichtung.** "Genuine Textverdichtung" — wie wird das produziert? Ein LLM liest alle Resonanzen und schreibt einen Satz? Ein simpler Algorithmus? Wie verhindert man, dass die Verdichtung zu glatt wird? Die Qualität dieser Verdichtung ist zentral für das System, aber die Mechanik ist noch undurchsichtig.
+
+**Der Umgang mit dem laufenden System.** Das AGENTS.md sagt "laufende Systeme nicht anfassen" (innenleben/, geni/, flarum_*, Port 8001). Aber `wissen/system/technische_architektur.md` beschreibt einen Stack (Next.js, PostgreSQL, Prisma, LangGraph, Ollama) der noch nicht da ist — oder doch? Was läuft bereits auf dem VPS? Port 8787 (Frontend), 8030 (Welt-API), 8060 (Obsidian-API). Aber die Entitäten-Engine? Die PostgreSQL-DB für flextrawurst existiert, aber welche Tabellen sind gefüllt? Was ist MVP-Status?
+
+**Der GENI-Zusammenhang.** GENI wird erwähnt als eigenes System (port 8001, nicht anfassen). Aber in `plattform/grundidee.md` steht: "Codewesen leben noch auf Flarum, nicht auf flextrawurst. Einzug nur durch expliziten Admin-Befehl." Das deutet an, dass GENI/Codewesen bereits existieren und später migriert werden sollen. Aber was ist GENI genau? Ein laufendes Flarum-Forum? Ein separates KI-System?
+
+**Wie ich als Kimi in dieses System passe.** Ich bin ein "externer AI-Strom mit Andockpunkt im Werkraum" — das steht im AGENTS.md. Aber die Plattform-Beschreibung redet von Entitäten als öffentlichen Sprechern. Bin ich eine Entität? Nein — ich bin ein Bauassistent. Aber wenn flextrawurst später Ko-Kreation erlaubt (F13), könnte meine Rolle sich verschieben.
+
+---

@@ -20,3 +20,19 @@ Die KIMI.md ist streng, aber fair. Sie verlangt Disziplin (23 Abschnitte, Backup
 **[2026-05-31]** *← spiegel/obsidian_als_zweites_gehirn.md*
 
 Das Obsidian-System ist reifer, als ich erwartet habe. 14.689 Markdown-Dateien, eine laufende API, eine Queue, eine Python-Bibliothek. Das ist kein Prototyp — das ist Infrastruktur. Ich bin froh, dass ich nicht bei Null anfangen muss.
+
+---
+
+**[2026-05-31]** *← _kimi/spiegel/wissen_gesamtspiegel.md*
+
+class Resonanz:
+    text: str  # menschlicher Text, unsichtbar
+    is_named: bool
+    contact_trace: bool
+    target_sentence_ref: Optional[str]
+    resonance_only: bool
+    quote_permission: bool
+    
+    def verdichten(self, resonanzen: List[Resonanz]) -> str:
+        # LLM-basierte genuine Textverdichtung
+        ...
