@@ -23,6 +23,14 @@ Dann im Browser:
 http://SERVER:8877/
 ```
 
+Produktiver Werkraum-Zugang:
+
+```text
+https://217.154.14.29:8449/
+```
+
+Dieser Zugang laeuft ueber nginx mit Werkraum-Basic-Auth. Der App-Prozess selbst soll lokal auf `127.0.0.1:8878` laufen.
+
 ## Grenzen
 
 Erlaubte Pfad-Wurzeln:
