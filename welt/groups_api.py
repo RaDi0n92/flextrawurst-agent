@@ -45,9 +45,15 @@ def register_groups_routes(app, get_conn):
             return None, None
         try:
             import jwt as _jwt
+            import os, pathlib
             token = authorization.replace("Bearer ", "")
-            import os
-            secret = os.getenv("JWT_SECRET", "changeme-secret-key")
+            # Gleicher Secret-Ladeweg wie auth.py
+            env_secret = os.environ.get("WELT_JWT_SECRET")
+            if env_secret:
+                secret = env_secret
+            else:
+                secret_file = pathlib.Path(__file__).parent / ".jwt_secret"
+                secret = secret_file.read_text(encoding="utf-8").strip() if secret_file.exists() else "changeme-secret-key"
             payload = _jwt.decode(token, secret, algorithms=["HS256"])
             return payload.get("sub"), payload.get("role", "mensch")
         except Exception:
@@ -608,15 +614,22 @@ def register_groups_routes(app, get_conn):
                     blocker_type="consent"))
 
                 # ── I) SUBSTANZEN/CYBERLING (E-11/E-05/E-06) ─────────────────
+                substanz_count = 0
+                try:
+                    cur.execute("SELECT COUNT(*) AS n FROM substance_catalog")
+                    substanz_count = cur.fetchone()["n"]
+                except Exception:
+                    pass
                 checks.append(check("Substanzsystem vorbereitet (E-11)", "I_Substanzen",
-                    True, "substance_catalog Schema/API geplant — noch nicht gebaut",
-                    note="Vor Einzug zu bauen",
+                    substanz_count > 0,
+                    f"{substanz_count} Substanzen in substance_catalog" if substanz_count > 0 else "substance_catalog leer oder fehlt",
+                    note="Rein fiktionale Weltmechanik",
                     blocker_type="substanz"))
 
-                # Cyberling Recovery
+                # Cyberling Recovery (case-insensitive grep)
                 cyberling_recovery = False
                 try:
-                    res = sp.run(["grep", "-c", "recovery\|energie_recovery", "/root/werkraum/welt/cyberling_daemon.py"],
+                    res = sp.run(["grep", "-ic", "recovery", "/root/werkraum/welt/cyberling_daemon.py"],
                                  capture_output=True, text=True)
                     cyberling_recovery = int(res.stdout.strip() or "0") > 0
                 except Exception:

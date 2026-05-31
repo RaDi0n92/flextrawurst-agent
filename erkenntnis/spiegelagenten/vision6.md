@@ -1002,3 +1002,9 @@ Diese Notiz kodiert die Notwendigkeit, die Struktur des Codes über die reine Da
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Sterben als kausaler Kern impliziert, dass Zustände durch messbaren Mangel definiert werden müssen. Der Scheduler als Auslöser für Agentenschleifen zwingt den Code, Zeit als aktive Prozesslogik zu behandeln. Provenienz-Suche erfordert eine strukturelle Speicherung von Herkunftsinformationen statt bloßer Notizen. Das Admin-Cockpit muss somit zu einer aktiven Formungsinstanz für alle Systemschichten werden.
+
+---
+## Neugier-Scan 2026-05-31 12:07
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Datei existiert als Fundament für die evolutionäre Logik des entstehenden Codes. Sie definiert die Notwendigkeit einer tieferen, relationalen Verarbeitung menschlicher und entitätenbasierter Interaktionen. Diese Abschnitte zwingen die Architektur, Beobachtung und interne Zustände als aktive Materialquellen zu behandeln, nicht nur als passive Daten. Sie lenken die Entwicklung hin zu einer dynamischen Beziehungsmaschine und der Vorbereitung von Existenz durch innere Spannung.

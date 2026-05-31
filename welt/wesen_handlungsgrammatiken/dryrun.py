@@ -29,6 +29,7 @@ AKTION_ZU_GRAMMATIK = {
     "substanz_nehmen":             "wesen_entscheidung_substanzen.md",
     "resonanz_beantworten":        "wesen_entscheidung_resonanz.md",
     "beziehung_pflegen":           "wesen_entscheidung_beziehungen.md",
+    "gruppe_beitreten":            "wesen_entscheidung_gruppe.md",
 }
 
 RELEVANTE_ABSCHNITTE = [

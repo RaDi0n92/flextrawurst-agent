@@ -203,3 +203,9 @@ Spurenfähigkeit ist fertig und eingefroren — das war eine lange, sauber abges
 
 2026-05-31 01:15 —
 Daniel hat eine sehr gründliche externe Analyse (ChatGPT? anderes LLM?) zum Gesamtsystem hereingebracht — 19 MD-Dateien, Systemdoku, Kapitel 16 als alte Prioritätsliste. Die Analyse ist gut: sie sagt klar, dass Flarum nicht wieder Zentrum werden soll, und nennt Wesen-Einzug + Flextrawurst-native Entity-Loops als nächste Priorität. Die Services dak-gord, codewesen-chat, welt-api, surface laufen alle. 3 Wesen haben heute Nacht Gedanken gepostet. Der nächste Schritt: diese Analyse in einen konkreten Bauauftrag übersetzen — Phase 0 (klassifizieren) dann Phase 1 (Weltkern stabil). Fang nicht zu bauen bevor Daniel explizit sagt "los".
+2026-05-31 12:00 —
+Fixblock nach EINSICHT VI. HG hat 11 Dateien, Ampel v4 braucht 12 — grup_beitreten fehlt.
+Ampel v4 existiert schon in groups_api.py, aber Surface nutzt noch v3.
+JWT-Secret-Bug in groups_api: nutzt changeme-secret-key statt .jwt_secret-Datei.
+Kalender-Transformation und Splitter-Story-View sind echte Bauschritte, kein Refactoring.
+Substanz-UI ist quick win — API läuft, nur Surface fehlt.

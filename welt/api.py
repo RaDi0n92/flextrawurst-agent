@@ -10327,6 +10327,105 @@ class HumanMaterialConsentUpdate(BaseModel):
     public_origin_label: str | None = None
 
 
+class CalendarTransformPreviewRequest(BaseModel):
+    raw_text: str
+    event_title: str | None = None
+    event_time: str | None = None
+    anonymization_mode: str = "anonymisiert"
+
+
+@app.post("/human-material/calendar/transform-preview")
+def calendar_transform_preview(
+    body: CalendarTransformPreviewRequest,
+    authorization: str | None = Header(default=None),
+):
+    """Kalender-Transformation Vorschau — kein Speichern, nur Preview."""
+    _require_auth(authorization)
+    raw = body.raw_text.strip()
+    if not raw:
+        raise HTTPException(status_code=422, detail="raw_text darf nicht leer sein.")
+    # Einfache Transformation: Rohtext bleibt privat, transformierter Text wird angezeigt
+    transformed = raw
+    anonymization_note = ""
+    if body.anonymization_mode == "anonymisiert":
+        anonymization_note = "Namen und persönliche Referenzen werden nicht gespeichert."
+        transformed = raw  # Nutzer entscheidet selbst was gespeichert wird
+    elif body.anonymization_mode == "pseudonymisiert":
+        anonymization_note = "Persönliche Daten werden durch Pseudonyme ersetzt."
+        transformed = raw
+    preview_essenz = (body.event_title or raw[:80]).strip()
+    preview_inhalt = transformed[:500]
+    return {
+        "raw_length": len(raw),
+        "transformed": transformed,
+        "anonymization_mode": body.anonymization_mode,
+        "anonymization_note": anonymization_note,
+        "preview": {
+            "essenz": preview_essenz,
+            "inhalt": preview_inhalt,
+            "materialitaet": "kalender",
+            "origin_type": "human_calendar",
+        },
+        "hint": "Rohkalenderdaten werden NICHT gespeichert — nur der transformierte Text.",
+    }
+
+
+@app.post("/human-material", status_code=201)
+def human_material_create(
+    body: HumanMaterialCreateRequest,
+    event_time: str | None = Query(default=None),
+    authorization: str | None = Header(default=None),
+):
+    """Neue Innenquelle anlegen. Default: privat + Consent offen."""
+    claims = _require_auth(authorization)
+    caller_id = claims.get("user_id")
+
+    if body.consent_status not in VALID_CONSENT:
+        raise HTTPException(422, f"Ungültiger consent_status: {body.consent_status}")
+    if body.quote_permission not in VALID_QUOTE_PERM:
+        raise HTTPException(422, f"Ungültige quote_permission: {body.quote_permission}")
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id FROM human_users WHERE id::text = %s OR username = %s LIMIT 1",
+                (caller_id, caller_id))
+            user = cur.fetchone()
+            if not user:
+                raise HTTPException(403, "Nutzer nicht gefunden.")
+            human_uuid = user["id"]
+
+            event_time_val = None
+            if event_time:
+                try:
+                    from datetime import datetime
+                    event_time_val = datetime.fromisoformat(event_time)
+                except ValueError:
+                    raise HTTPException(422, "event_time: ISO-Format erwartet (YYYY-MM-DDTHH:MM:SS).")
+
+            cur.execute(
+                """INSERT INTO human_material_sources
+                   (human_id, source_type, title, content, event_time,
+                    origin_visibility, consent_status, quote_permission,
+                    anonymization_mode, public_origin_label,
+                    source_context, created_by_process, visibility_layer)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s::jsonb, %s, %s)
+                   RETURNING id::text""",
+                (human_uuid, body.source_type, body.title, body.content,
+                 event_time_val,
+                 body.origin_visibility, body.consent_status, body.quote_permission,
+                 body.anonymization_mode, body.public_origin_label,
+                 json.dumps(body.source_context), "manual", "private"))
+            new_id = cur.fetchone()["id"]
+            conn.commit()
+    finally:
+        conn.close()
+
+    return {"ok": True, "id": new_id, "source_type": body.source_type,
+            "consent_status": body.consent_status, "visibility_layer": "private"}
+
+
 @app.get("/human-material")
 def human_material_list(
     source_type: str | None = Query(default=None),

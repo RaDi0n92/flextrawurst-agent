@@ -905,6 +905,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <button class="v-tab" data-view="schlaf" data-live="1" data-i18n="tab.schlaf" onclick="switchView('schlaf')">SCHLAF</button>
   <button class="v-tab" data-view="einsicht" data-live="1" data-i18n="tab.einsicht" onclick="switchView('einsicht')">EINSICHT</button>
   <button class="v-tab" data-view="suche" data-i18n="tab.suche" onclick="switchView('suche')">SUCHE</button>
+  <button class="v-tab" data-view="gruppen" data-i18n="tab.gruppen" onclick="switchView('gruppen')">GRUPPEN</button>
   <div class="v-sep"></div>
   <button class="v-tab" data-view="systeme" data-live="1" data-i18n="tab.systeme" onclick="switchView('systeme')">SYSTEME</button>
   <button class="v-tab" data-view="admin" style="display:none" data-i18n="tab.admin" onclick="switchView('admin');admNutzerLaden();admBewBadgeLaden()">ADMIN</button>
@@ -1773,7 +1774,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     data-i18n="archiv.toggle">ARCHIV ▶</div>
 
   <!-- SPLITTER-ARCHIV PANEL -->
-  <div id="archiv-panel" style="display:none;position:absolute;top:0;right:0;bottom:0;width:360px;z-index:18;background:rgba(1,5,14,0.97);border-left:1px solid #0a1e30;display:flex;flex-direction:column">
+  <div id="archiv-panel" style="display:none;position:absolute;top:0;right:0;bottom:0;width:360px;z-index:18;background:rgba(1,5,14,0.97);border-left:1px solid #0a1e30;flex-direction:column">
     <div style="padding:10px 14px;border-bottom:1px solid #0a1e30;display:flex;align-items:center;gap:8px;flex-shrink:0">
       <span style="font-size:.6rem;letter-spacing:.16em;color:#2a5a8a;font-family:monospace;text-transform:uppercase" data-i18n="archiv.title">SPLITTER-ARCHIV</span>
       <span id="archiv-count" style="font-size:.55rem;color:#1a3a5a;margin-left:4px"></span>
@@ -2605,18 +2606,34 @@ html[lang="en"] .de-only{display:none}
     <div class="sv-tech"><span>Python</span><span>systemd</span><span>Event-Bridge</span></div>
   </div>
 
-  <div class="sv-card sv-geplant">
+  <div class="sv-card sv-aktiv">
     <div class="sv-head">
-      <span class="sv-dot sv-dot-plan"></span>
+      <span class="sv-dot sv-dot-on"></span>
       <span class="sv-name">Entitäten-Takt</span>
       <span class="sv-port">service</span>
     </div>
     <div class="sv-role" data-i18n="sys.takt.role">entity-takt.service · Schlaf-Zyklen</div>
     <div class="sv-explain-card" data-i18n-html="sys.takt.desc">
-      Der Daemon der Wesen zum Leben erweckt — Schlafzyklen, Traumgenerierung, Aktivitätsphasen.
-      Wartet noch auf den Wesen-Einzug. Läuft dann parallel zu allen anderen Diensten.
+      Schlaf-Engine für alle Entitäten — Schlafzyklen, Traumverarbeitung, Aktivitätsphasen.
+      <strong>Läuft bereits.</strong> Bereitet Schlaflogik vor, wartet auf Wesen-Einzug für volle Aktivierung.
+      <em>codewesen_takt.py ist separat und bewusst deaktiviert — kein Flarum-Takt.</em>
     </div>
-    <div class="sv-tech"><span>Python</span><span>systemd</span><span>Schlaf-Engine</span></div>
+    <div class="sv-tech"><span>Python</span><span>systemd</span><span>Schlaf-Engine</span><span>admin-only</span></div>
+  </div>
+
+  <div class="sv-card sv-aktiv">
+    <div class="sv-head">
+      <span class="sv-dot sv-dot-on"></span>
+      <span class="sv-name">Cyberling-Daemon</span>
+      <span class="sv-port">service</span>
+    </div>
+    <div class="sv-role">cyberling-daemon.service · Bedürfnisse + Tod + Wiedergeburt</div>
+    <div class="sv-explain-card">
+      Verwaltet alle Cyberlinge — berechnet Hunger, Durst, Energie, Stimmung, Gesundheit.
+      <strong>Läuft alle 60s.</strong> Cyberlinge sterben wenn vernachlässigt, erwachen wieder wenn versorgt.
+      Recovery-Mechanik: bei ausreichend Hunger+Durst erholt sich Energie automatisch.
+    </div>
+    <div class="sv-tech"><span>Python</span><span>systemd</span><span>60s-Takt</span><span>admin-only</span></div>
   </div>
 
   <div class="sv-card sv-bauplan">
@@ -3381,9 +3398,312 @@ html[lang="en"] .de-only{display:none}
       });
   };
 
-  // Initialer Ladeaufruf wenn Admin-Tab bereits sichtbar
-  admNutzerLaden();
-  admBewBadgeLaden();
+  // Nur laden wenn Admin-Token vorhanden (verhindert 401-Fehler für Nicht-Admins)
+  if (tok() && (localStorage.getItem('ftw_role')||'') === 'admin') {
+    admNutzerLaden();
+    admBewBadgeLaden();
+  }
+})();
+</script>
+</div>
+<div id="view-gruppen" class="v-view" style="display:none;flex-direction:column;overflow:hidden">
+<style>
+.gr-header{padding:14px 18px 10px;background:#010810;border-bottom:1px solid #081828;flex-shrink:0}
+.gr-header-title{font-size:.65rem;letter-spacing:.18em;color:#2a6a4a;text-transform:uppercase;font-family:monospace}
+.gr-header-desc{font-size:.58rem;color:#1a3a2a;margin-top:4px;line-height:1.5}
+.gr-toolbar{display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid #071420;flex-shrink:0;flex-wrap:wrap;align-items:center;background:#010a14}
+.gr-search{flex:1;min-width:160px;background:#050f1a;border:1px solid #0e2030;color:#3ae890;padding:5px 9px;font-size:.65rem;border-radius:3px;font-family:'Courier New',monospace}
+.gr-search:focus{outline:none;border-color:#1a5a3a}
+.gr-body{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:16px}
+.gr-section-head{font-size:.58rem;letter-spacing:.16em;color:#1a4a2a;text-transform:uppercase;margin-bottom:8px;border-bottom:1px solid #071820;padding-bottom:4px}
+.gr-fan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:4px}
+.gr-fan-card{background:#030d18;border:1px solid #0a2a3a;border-radius:4px;padding:10px 12px;cursor:pointer;transition:border-color .15s}
+.gr-fan-card:hover{border-color:#1a5a4a}
+.gr-fan-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.gr-fan-name{font-size:.75rem;color:#3ae890;font-family:monospace;font-weight:700}
+.gr-fan-badge{font-size:.5rem;border:1px solid #1a4a2a;color:#2a6a3a;padding:1px 5px;border-radius:2px;letter-spacing:.08em;text-transform:uppercase}
+.gr-fan-entity{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gr-group-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.gr-group-card{background:#030d18;border:1px solid #071820;border-radius:4px;padding:10px 12px;cursor:pointer;transition:border-color .15s}
+.gr-group-card:hover{border-color:#1a3a5a}
+.gr-group-type{font-size:.52rem;color:#1a4a3a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.gr-group-name{font-size:.68rem;color:#4ae890;font-family:monospace;margin-bottom:3px}
+.gr-group-desc{font-size:.58rem;color:#1a3a4a;line-height:1.4}
+.gr-group-meta{display:flex;gap:8px;margin-top:6px}
+.gr-group-chip{font-size:.52rem;color:#1a4a3a;background:#020c18;border:1px solid #0a2a3a;padding:1px 5px;border-radius:2px}
+.gr-create-btn{background:#0a1820;border:1px solid #1a4a3a;color:#3ae890;font-size:.6rem;padding:5px 14px;border-radius:3px;cursor:pointer;letter-spacing:.08em;font-family:monospace}
+.gr-create-btn:hover{background:#0e2028}
+.gr-empty{color:#1a3a2a;font-size:.65rem;padding:20px;text-align:center;font-style:italic}
+.gr-detail-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:100;display:none;justify-content:center;align-items:center}
+.gr-detail-panel{background:#030d18;border:1px solid #0e2a3a;border-radius:5px;width:min(600px,90vw);max-height:80vh;overflow-y:auto;padding:20px}
+.gr-detail-title{font-size:.8rem;color:#4ae890;font-family:monospace;margin-bottom:12px}
+.gr-detail-desc{font-size:.65rem;color:#3a6a5a;line-height:1.6;margin-bottom:12px}
+.gr-detail-members{font-size:.6rem;color:#1a4a3a;margin-bottom:8px}
+.gr-join-btn{background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;font-size:.6rem;padding:6px 16px;border-radius:3px;cursor:pointer;font-family:monospace}
+.gr-join-btn:hover{background:#0e2820}
+.gr-close-btn{float:right;background:none;border:none;color:#1a4a3a;cursor:pointer;font-size:14px;font-family:monospace}
+</style>
+
+<div class="gr-header">
+  <div class="gr-header-title" data-i18n="gruppen.title">GRUPPEN</div>
+  <div class="gr-header-desc" data-i18n="gruppen.desc">Resonanz-, Splitter- und Projektformationen — Herkunftssicher, rechtebasiert, pre-Einzug aktiv.</div>
+</div>
+
+<div class="gr-toolbar">
+  <input class="gr-search" id="gr-search" placeholder="Gruppen durchsuchen…" oninput="gruppenSuche()" data-i18n-placeholder="gruppen.search">
+  <div style="display:flex;gap:4px;flex-wrap:wrap" id="gr-type-chips">
+    <button class="su-facet aktiv" data-gtype="" onclick="gruppenFilter(this,'')">Alle</button>
+    <button class="su-facet" data-gtype="entity_fan_group" onclick="gruppenFilter(this,'entity_fan_group')" title="Resonanzgruppe um ein Codewesen">Fangruppe</button><button class="su-facet" data-gtype="resonance_group" onclick="gruppenFilter(this,'resonance_group')" title="Thematische Resonanzformation">Resonanzgruppe</button><button class="su-facet" data-gtype="splitter_group" onclick="gruppenFilter(this,'splitter_group')" title="Splitter-orientierte Gruppe">Splittergruppe</button><button class="su-facet" data-gtype="project_group" onclick="gruppenFilter(this,'project_group')" title="Gemeinsames Bauprojekt">Projektgruppe</button><button class="su-facet" data-gtype="kompoase_group" onclick="gruppenFilter(this,'kompoase_group')" title="KompOase-Materialformation">KompOase-Gruppe</button><button class="su-facet" data-gtype="archive_group" onclick="gruppenFilter(this,'archive_group')" title="Historisches Material">Archivgruppe</button><button class="su-facet" data-gtype="dream_group" onclick="gruppenFilter(this,'dream_group')" title="Traumspuren + Gedankenrest">Traumgruppe</button><button class="su-facet" data-gtype="shadow_dialog_group" onclick="gruppenFilter(this,'shadow_dialog_group')" title="Schatten-Dialog-Verbund">Schatten-Gruppe</button><button class="su-facet" data-gtype="archaeology_group" onclick="gruppenFilter(this,'archaeology_group')" title="Such-/Archäologie-Verbund">Archäologie</button>
+  </div>
+  <button class="gr-create-btn" id="gr-create-btn" style="display:none" onclick="gruppenCreateOeffnen()" data-i18n="gruppen.create">+ Gruppe erstellen</button>
+</div>
+
+<div class="gr-body" id="gr-body">
+  <div>
+    <div class="gr-section-head" data-i18n="gruppen.fangruppen">FANGRUPPEN — 6 CODEWESEN</div>
+    <div class="gr-fan-grid" id="gr-fan-grid">
+      
+    <div class="gr-fan-card" id="fan-card-namelessAI_1234" onclick="gruppenOpenFan('namelessAI_1234')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·1234</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_1234</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_1234" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    <div class="gr-fan-card" id="fan-card-namelessAI_4321" onclick="gruppenOpenFan('namelessAI_4321')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·4321</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_4321</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_4321" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    <div class="gr-fan-card" id="fan-card-namelessAI_1324" onclick="gruppenOpenFan('namelessAI_1324')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·1324</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_1324</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_1324" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    <div class="gr-fan-card" id="fan-card-namelessAI_1423" onclick="gruppenOpenFan('namelessAI_1423')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·1423</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_1423</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_1423" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    <div class="gr-fan-card" id="fan-card-namelessAI_2341" onclick="gruppenOpenFan('namelessAI_2341')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·2341</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_2341</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_2341" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    <div class="gr-fan-card" id="fan-card-namelessAI_3123" onclick="gruppenOpenFan('namelessAI_3123')">
+      <div class="gr-fan-head">
+        <span class="gr-fan-name">·3123</span>
+        <span class="gr-fan-badge" data-i18n="gruppen.fan">Fangruppe</span>
+      </div>
+      <div class="gr-fan-entity" style="color:#3a6a4a;font-size:.6rem">namelessAI_3123</div>
+      <div class="gr-fan-members" id="fan-members-namelessAI_3123" style="color:#1a3a5a;font-size:.58rem">— Mitglieder —</div>
+      <div class="gr-fan-status" style="color:#2a4a2a;font-size:.55rem;margin-top:4px" data-i18n="gruppen.pre_einzug">wartet auf Einzug</div>
+    </div>
+    </div>
+  </div>
+  <div>
+    <div class="gr-section-head" data-i18n="gruppen.weitere">WEITERE GRUPPEN</div>
+    <div class="gr-group-grid" id="gr-group-list">
+      <div class="gr-empty" data-i18n="gruppen.loading">lädt…</div>
+    </div>
+  </div>
+</div>
+
+<!-- Detail-Overlay -->
+<div class="gr-detail-overlay" id="gr-detail-overlay" onclick="if(event.target===this)gruppenDetailSchliessen()">
+  <div class="gr-detail-panel">
+    <button class="gr-close-btn" onclick="gruppenDetailSchliessen()">× schließen</button>
+    <div id="gr-detail-body"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var _grFilter = '';
+  var _grGroups = [];
+  var _grFanLoaded = false;
+
+  function gruppenRenderKarte(g) {
+    var typeLabel = {
+      entity_fan_group:'Fangruppe', resonance_group:'Resonanzgruppe',
+      splitter_group:'Splittergruppe', project_group:'Projektgruppe',
+      kompoase_group:'KompOase-Gruppe', archive_group:'Archivgruppe',
+      dream_group:'Traumgruppe', shadow_dialog_group:'Schatten-Gruppe',
+      archaeology_group:'Archäologie', room_topic_group:'Raum/Thema'
+    }[g.group_type] || g.group_type;
+    var vis = g.visibility_layer === 'public' ? '🌐' : g.visibility_layer === 'internal' ? '🔒' : '👁';
+    return '<div class="gr-group-card" onclick="gruppenDetailOeffnen(' + g.id + ')">'
+      + '<div class="gr-group-type">' + typeLabel + '</div>'
+      + '<div class="gr-group-name">' + (g.name||g.slug) + '</div>'
+      + (g.description ? '<div class="gr-group-desc">' + (g.description||'').slice(0,80) + '</div>' : '')
+      + '<div class="gr-group-meta">'
+      + '<span class="gr-group-chip">' + vis + ' ' + g.visibility_layer + '</span>'
+      + '<span class="gr-group-chip">👥 ' + (g.member_count||0) + '</span>'
+      + '</div></div>';
+  }
+
+  function gruppenLaden() {
+    var q = (document.getElementById('gr-search')||{value:''}).value.trim();
+    var url = '/api/groups?limit=50' + (_grFilter ? '&group_type=' + _grFilter : '') + (q ? '&search=' + encodeURIComponent(q) : '');
+    fetch(url)
+      .then(function(r){return r.json();})
+      .then(function(d){
+        _grGroups = d.groups || [];
+        var nonFan = _grGroups.filter(function(g){ return g.group_type !== 'entity_fan_group'; });
+        var el = document.getElementById('gr-group-list');
+        if (!el) return;
+        if (!nonFan.length) {
+          el.innerHTML = '<div class="gr-empty">Noch keine weiteren Gruppen</div>';
+        } else {
+          el.innerHTML = nonFan.map(gruppenRenderKarte).join('');
+        }
+        // Fan-Mitgliederzahlen aktualisieren
+        var fanGroups = _grGroups.filter(function(g){ return g.group_type === 'entity_fan_group'; });
+        fanGroups.forEach(function(g) {
+          if (g.canonical_entity_id) {
+            var el2 = document.getElementById('fan-members-' + g.canonical_entity_id);
+            if (el2) el2.textContent = (g.member_count||0) + ' Mitglieder';
+          }
+        });
+      })
+      .catch(function(){
+        var el = document.getElementById('gr-group-list');
+        if (el) el.innerHTML = '<div class="gr-empty">Fehler beim Laden</div>';
+      });
+  }
+
+  window.gruppenFilter = function(btn, type) {
+    _grFilter = type;
+    document.querySelectorAll('#gr-type-chips .su-facet').forEach(function(b){ b.classList.remove('aktiv'); });
+    if (btn) btn.classList.add('aktiv');
+    gruppenLaden();
+  };
+
+  window.gruppenSuche = function() {
+    clearTimeout(window._grTimer);
+    window._grTimer = setTimeout(gruppenLaden, 350);
+  };
+
+  window.gruppenOpenFan = function(entityId) {
+    fetch('/api/groups/fan/' + entityId)
+      .then(function(r){return r.json();})
+      .then(function(g) {
+        if (g.detail) { gruppenDetailNichtGefunden(entityId); return; }
+        gruppenDetailOeffnen(g.id);
+      })
+      .catch(function(){ gruppenDetailNichtGefunden(entityId); });
+  };
+
+  function gruppenDetailNichtGefunden(entityId) {
+    var body = document.getElementById('gr-detail-body');
+    if (body) body.innerHTML = '<div class="gr-detail-title">Keine Fangruppe für ' + entityId + '</div>'
+      + '<div class="gr-detail-desc">Noch nicht angelegt.</div>';
+    var ov = document.getElementById('gr-detail-overlay');
+    if (ov) ov.style.display = 'flex';
+  }
+
+  window.gruppenDetailOeffnen = function(groupId) {
+    var ov = document.getElementById('gr-detail-overlay');
+    var body = document.getElementById('gr-detail-body');
+    if (!ov || !body) return;
+    body.innerHTML = '<div class="gr-empty">lädt…</div>';
+    ov.style.display = 'flex';
+    Promise.all([
+      fetch('/api/groups/' + groupId).then(function(r){return r.json();}),
+      fetch('/api/groups/' + groupId + '/members').then(function(r){return r.json();}).catch(function(){return {members:[]};})
+    ]).then(function(results) {
+      var g = results[0];
+      var membersData = results[1];
+      if (g.detail) { body.innerHTML = '<div class="gr-empty">Gruppe nicht gefunden</div>'; return; }
+      var members = membersData.members || [];
+      var typeLabel = {
+        entity_fan_group:'Fangruppe', resonance_group:'Resonanzgruppe',
+        splitter_group:'Splittergruppe', project_group:'Projektgruppe'
+      }[g.group_type] || g.group_type;
+      var memberList = members.length
+        ? members.map(function(m){ return '<div class="gr-detail-members">' + m.member_type + ':' + m.member_id + ' · ' + m.role + '</div>'; }).join('')
+        : '<div style="color:#1a3a2a;font-size:.6rem;font-style:italic">Noch keine Mitglieder</div>';
+      var canJoin = localStorage.getItem('ftw_token') && localStorage.getItem('ftw_role') === 'mensch';
+      var entityLink = g.canonical_entity_id ? '<div style="font-size:.6rem;color:#2a5a3a;margin-bottom:8px">Ankerwesen: ' + g.canonical_entity_id + '</div>' : '';
+      body.innerHTML = '<div class="gr-detail-title">' + (g.name||g.slug) + '</div>'
+        + entityLink
+        + '<div class="gr-detail-desc">' + (g.description||'Keine Beschreibung') + '</div>'
+        + '<div style="font-size:.58rem;color:#1a4a3a;margin-bottom:8px">' + typeLabel + ' · ' + g.visibility_layer + ' · ' + g.status + '</div>'
+        + '<div style="font-size:.6rem;color:#1a4a2a;margin-bottom:6px">Mitglieder (' + (g.member_count||0) + '):</div>'
+        + memberList
+        + (g.canonical_entity_id ? '<div style="color:#1a4a2a;font-size:.58rem;margin-top:10px;font-style:italic">Wesen wartet auf Einzug</div>' : '')
+        + (canJoin ? '<div style="margin-top:14px"><button class="gr-join-btn" onclick="gruppenBeitreten(' + g.id + ')">Beitreten</button></div>' : '');
+    }).catch(function(){
+      body.innerHTML = '<div class="gr-empty">Fehler beim Laden</div>';
+    });
+  };
+
+  window.gruppenDetailSchliessen = function() {
+    var ov = document.getElementById('gr-detail-overlay');
+    if (ov) ov.style.display = 'none';
+  };
+
+  window.gruppenBeitreten = function(groupId) {
+    var tok = localStorage.getItem('ftw_token');
+    var uid = null;
+    try { uid = JSON.parse(atob(tok.split('.')[1])).sub; } catch(e){}
+    if (!tok || !uid) { alert('Login erforderlich'); return; }
+    fetch('/api/groups/' + groupId + '/members', {
+      method: 'POST',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({member_type: 'mensch', member_id: uid})
+    }).then(function(r){return r.json();}).then(function(d){
+      if (d.ok) { gruppenDetailOeffnen(groupId); gruppenLaden(); }
+      else alert(d.detail || 'Fehler beim Beitreten');
+    }).catch(function(){ alert('Fehler beim Beitreten'); });
+  };
+
+  window.gruppenCreateOeffnen = function() {
+    var name = prompt('Gruppenname:');
+    if (!name || !name.trim()) return;
+    var tok = localStorage.getItem('ftw_token');
+    if (!tok) { alert('Login erforderlich'); return; }
+    var type = prompt('Gruppentyp (resonance_group, splitter_group, project_group, ...):') || 'resonance_group';
+    fetch('/api/groups', {
+      method: 'POST',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({name: name.trim(), group_type: type, visibility_layer: 'internal'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if (d.ok) { gruppenLaden(); gruppenDetailOeffnen(d.group_id); }
+      else alert(d.detail || 'Fehler beim Erstellen');
+    }).catch(function(){ alert('Fehler beim Erstellen'); });
+  };
+
+  // Auth-Check: Create-Button nur für eingeloggte Menschen zeigen
+  function gruppenAuthCheck() {
+    var tok = localStorage.getItem('ftw_token');
+    var role = localStorage.getItem('ftw_role') || '';
+    var btn = document.getElementById('gr-create-btn');
+    if (btn) btn.style.display = (tok && role === 'mensch') ? '' : 'none';
+  }
+
+  // Init
+  gruppenLaden();
+  gruppenAuthCheck();
+  setInterval(function() { if (document.getElementById('view-gruppen')?.style.display !== 'none') gruppenLaden(); }, 30000);
 })();
 </script>
 </div>
@@ -3444,6 +3764,10 @@ html[lang="en"] .de-only{display:none}
     <div class="mw-bereich-karte" onclick="mwOeffne('profil')">
       <span class="mw-bereich-name">Profil</span>
       <span class="mw-bereich-zahl">↗</span>
+    </div>
+    <div class="mw-bereich-karte" onclick="mwOeffne('innenquellen')">
+      <span class="mw-bereich-name" data-i18n="mw.innenquellen">Innenquellen</span>
+      <span class="mw-bereich-zahl" id="mw-z-innenquellen">—</span>
     </div>
   </div>
 
@@ -3526,7 +3850,7 @@ html[lang="en"] .de-only{display:none}
   function mwOeffne(bereich) {
     document.getElementById("mw-panel").style.display = "flex";
     document.getElementById("mw-panel-titel").textContent =
-      {tagebuch:"Tagebuch",traumtagebuch:"Traumtagebuch",notizen:"Notizen",kalender:"Kalender",nachrichten:"Nachrichten",profil:"Profil"}[bereich];
+      {tagebuch:"Tagebuch",traumtagebuch:"Traumtagebuch",notizen:"Notizen",kalender:"Kalender",nachrichten:"Nachrichten",profil:"Profil",innenquellen:"Innenquellen & Consent"}[bereich] || bereich;
     const inhalt = document.getElementById("mw-panel-inhalt");
     inhalt.innerHTML = '<div style="color:#1a3a4a;font-size:0.7rem;padding:12px">Lade…</div>';
     const tok = mwToken();
@@ -3537,6 +3861,7 @@ html[lang="en"] .de-only{display:none}
     else if (bereich === "notizen") mwLadeNotizen(inhalt, h);
     else if (bereich === "kalender") mwLadeKalender(inhalt, h);
     else if (bereich === "nachrichten") mwLadeNachrichten(inhalt, h);
+    else if (bereich === "innenquellen") mwLadeInnenquellen(inhalt, h);
     else if (bereich === "profil") {
       document.getElementById("mw-panel").style.display = "none";
       switchView("menschen");
@@ -4028,6 +4353,173 @@ html[lang="en"] .de-only{display:none}
       el.innerHTML = html;
     }).catch(()=>{ el.innerHTML='<div style="color:#3a2020;padding:12px;font-size:.7rem">Fehler beim Laden.</div>'; });
   }
+
+  // ── Innenquellen & Consent UI (E-09/E-18) ────────────────────────────────
+  function mwLadeInnenquellen(el, h) {
+    el.innerHTML = '<div style="color:#1a3a4a;font-size:.7rem;padding:12px">Lade…</div>';
+    fetch(MW_API+'/human-material', {headers:h})
+      .then(r => {
+        if (!r.ok) {
+          if (r.status === 401 || r.status === 403) {
+            el.innerHTML = '<div style="color:#3a2020;padding:12px;font-size:.7rem">Login erforderlich.</div>';
+            return null;
+          }
+          return r.json();
+        }
+        return r.json();
+      })
+      .then(d => {
+        if (!d) return;
+        const quellen = d.quellen || d.sources || [];
+        const intro = '<div style="padding:12px 0 8px;font-size:.65rem;color:#1a4a3a;line-height:1.6">'
+          + 'Deine persönlichen Innenquellen — nur du und Admins können sie sehen. '
+          + 'Default: privat. Kein Autoimport. Alle Freigaben explizit.'
+          + '</div>';
+        const hinweis = '<div style="font-size:.58rem;color:#1a3a2a;border:1px solid #0a2a1a;padding:8px 10px;border-radius:3px;margin-bottom:10px">'
+          + '⚙ Widerruf jederzeit möglich. Nur freigegebene Quellen werden zu Splittern.'
+          + '</div>';
+        // ── Neue Kalender-Quelle Form ──────────────────────────────────────
+        const kalenderForm = '<div id="mw-kal-form" style="background:#030d18;border:1px solid #0a2a1a;border-radius:4px;padding:12px;margin-bottom:12px">'
+          + '<div style="font-size:.62rem;color:#2a8a5a;font-family:monospace;margin-bottom:8px;cursor:pointer" onclick="document.getElementById('mw-kal-felder').style.display=document.getElementById('mw-kal-felder').style.display==='none'?'block':'none'">'
+          + '＋ Neue Kalender-Quelle (Transformation)'
+          + '</div>'
+          + '<div id="mw-kal-felder" style="display:none">'
+          + '<div style="font-size:.58rem;color:#1a5a3a;margin-bottom:8px;line-height:1.5">Rohkalenderdaten bleiben privat — du gibst nur die transformierte Version frei.<br>Kein Autoimport. Kein Zugriff auf externe Kalender.</div>'
+          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Titel (optional)</label>'
+          + '<input id="mw-kal-titel" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px" placeholder="z.B. Medizinischer Termin">'
+          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Transformierter Inhalt <span style="color:#f01030">*</span></label>'
+          + '<textarea id="mw-kal-inhalt" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px;height:60px;resize:vertical" placeholder="Was du freigeben möchtest — du entscheidest was drin steht"></textarea>'
+          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Ereigniszeit (optional, ISO: YYYY-MM-DDTHH:MM)</label>'
+          + '<input id="mw-kal-zeit" type="datetime-local" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px">'
+          + '<label style="font-size:.58rem;color:#2a6a4a;display:block;margin-bottom:2px">Anonymisierung</label>'
+          + '<select id="mw-kal-anon" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.62rem;border-radius:3px;box-sizing:border-box;margin-bottom:8px">'
+          + '<option value="anonymisiert">Anonymisiert (empfohlen)</option>'
+          + '<option value="pseudonymisiert">Pseudonymisiert</option>'
+          + '<option value="keine">Keine (Rohdaten wie eingegeben)</option>'
+          + '</select>'
+          + '<div style="display:flex;gap:6px">'
+          + '<button style="font-size:.58rem;padding:4px 10px;background:#07121a;border:1px solid #1a4a6a;color:#4a8ab8;cursor:pointer;border-radius:3px" onclick="mwKalVorschau()">Vorschau</button>'
+          + '<button style="font-size:.58rem;padding:4px 10px;background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;cursor:pointer;border-radius:3px" onclick="mwKalSpeichern()">Speichern</button>'
+          + '</div>'
+          + '<div id="mw-kal-preview" style="margin-top:8px;display:none;background:#020c18;border:1px solid #0a2030;border-radius:3px;padding:8px;font-size:.58rem;color:#3a8a6a;line-height:1.5"></div>'
+          + '</div>'
+          + '</div>';
+        let html = intro + hinweis + kalenderForm;
+        if (!quellen.length) {
+          html += '<div style="color:#1a3a2a;font-size:.65rem;font-style:italic;padding:8px 0">Noch keine Innenquellen. Quellen entstehen wenn du Notizen, Tagebucheinträge oder Kalendereinträge für Splitter freigibst.</div>';
+        } else {
+          html += '<div style="display:flex;flex-direction:column;gap:8px">';
+          quellen.forEach(q => {
+            const consentColor = q.consent_status === 'gegeben' ? '#22aa66' : q.consent_status === 'widerrufen' ? '#cc4422' : '#aaa';
+            const consentLabel = {gegeben:'Freigegeben',offen:'Offen',widerrufen:'Widerrufen'}[q.consent_status] || q.consent_status;
+            html += '<div style="background:#030d18;border:1px solid #0a2030;border-radius:3px;padding:10px 12px">'
+              + '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'
+              + '<span style="font-size:.65rem;color:#4a8ab8;font-family:monospace">' + mwEsc(q.quelle_typ || q.source_type || '?') + '</span>'
+              + '<span style="font-size:.55rem;color:' + consentColor + ';border:1px solid ' + consentColor + ';padding:1px 5px;border-radius:2px">' + consentLabel + '</span>'
+              + '<span style="font-size:.52rem;color:#1a3a4a;margin-left:auto">' + (q.erstellt_am || q.created_at || '').slice(0,10) + '</span>'
+              + '</div>'
+              + '<div style="font-size:.6rem;color:#2a5a4a;line-height:1.4">' + mwEsc((q.zusammenfassung || q.summary || '').slice(0,120)) + '</div>'
+              + '<div style="display:flex;gap:6px;margin-top:6px">'
+              + (q.consent_status !== 'gegeben'
+                ? '<button style="font-size:.55rem;padding:2px 8px;background:#0a2018;border:1px solid #1a5a3a;color:#3ae890;cursor:pointer;border-radius:2px" onclick="mwConsentGeben(&apos;' + q.id + '&apos;)">Freigeben</button>'
+                : '<button style="font-size:.55rem;padding:2px 8px;background:#1a0808;border:1px solid #5a1a1a;color:#e87a5a;cursor:pointer;border-radius:2px" onclick="mwConsentWiderrufen(&apos;' + q.id + '&apos;)">Widerrufen</button>')
+              + (q.zitatrechte !== 'erlaubt'
+                ? '<button style="font-size:.55rem;padding:2px 8px;background:#080a1a;border:1px solid #2a2a5a;color:#5a5ae8;cursor:pointer;border-radius:2px" onclick="mwZitatrechteSetzen(&apos;' + q.id + '&apos;)">Zitatrecht setzen</button>'
+                : '<span style="font-size:.52rem;color:#2a2a8a;padding:2px 8px;border:1px solid #1a1a4a;border-radius:2px">Zitat ✓</span>')
+              + '</div>'
+              + '</div>';
+          });
+          html += '</div>';
+        }
+        // Zaehler aktualisieren
+        const zEl = document.getElementById('mw-z-innenquellen');
+        if (zEl) zEl.textContent = quellen.length || '0';
+        el.innerHTML = html;
+      })
+      .catch(() => { el.innerHTML = '<div style="color:#3a2020;padding:12px;font-size:.7rem">Fehler beim Laden.</div>'; });
+  }
+
+  window.mwConsentGeben = function(sourceId) {
+    const tok = mwToken();
+    if (!tok) return;
+    fetch(MW_API+'/human-material/'+sourceId+'/consent', {
+      method: 'PATCH',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({consent_status: 'gegeben'})
+    }).then(() => mwOeffne('innenquellen'));
+  };
+
+  window.mwConsentWiderrufen = function(sourceId) {
+    if (!confirm('Freigabe widerrufen? Der Splitter-Bezug dieser Quelle wird gesperrt.')) return;
+    const tok = mwToken();
+    if (!tok) return;
+    fetch(MW_API+'/human-material/'+sourceId+'/consent', {
+      method: 'PATCH',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({consent_status: 'widerrufen'})
+    }).then(() => mwOeffne('innenquellen'));
+  };
+
+  window.mwZitatrechteSetzen = function(sourceId) {
+    const tok = mwToken();
+    if (!tok) return;
+    fetch(MW_API+'/human-material/'+sourceId+'/consent', {
+      method: 'PATCH',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({zitatrechte: 'erlaubt'})
+    }).then(() => mwOeffne('innenquellen'));
+  };
+
+  window.mwKalVorschau = function() {
+    const tok = mwToken(); if (!tok) return;
+    const inhalt = (document.getElementById('mw-kal-inhalt') as HTMLTextAreaElement)?.value?.trim();
+    const titel = (document.getElementById('mw-kal-titel') as HTMLInputElement)?.value?.trim();
+    const anon = (document.getElementById('mw-kal-anon') as HTMLSelectElement)?.value || 'anonymisiert';
+    if (!inhalt) { alert('Inhalt darf nicht leer sein.'); return; }
+    const prevEl = document.getElementById('mw-kal-preview');
+    if (prevEl) { prevEl.style.display = 'block'; prevEl.textContent = 'Vorschau lädt…'; }
+    fetch(MW_API+'/human-material/calendar/transform-preview', {
+      method: 'POST',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({raw_text: inhalt, event_title: titel, anonymization_mode: anon})
+    }).then(r=>r.json()).then(d => {
+      if (!prevEl) return;
+      prevEl.innerHTML = '<strong>Vorschau:</strong><br>'
+        + 'Essenz: ' + mwEsc(d.preview?.essenz||'') + '<br>'
+        + 'Inhalt: ' + mwEsc((d.preview?.inhalt||'').slice(0,200)) + '<br>'
+        + '<span style="color:#5a5a8a">Hinweis: ' + mwEsc(d.hint||'') + '</span>';
+    }).catch(() => { if (prevEl) prevEl.textContent = 'Fehler bei der Vorschau.'; });
+  };
+
+  window.mwKalSpeichern = function() {
+    const tok = mwToken(); if (!tok) return;
+    const inhalt = (document.getElementById('mw-kal-inhalt') as HTMLTextAreaElement)?.value?.trim();
+    const titel = (document.getElementById('mw-kal-titel') as HTMLInputElement)?.value?.trim();
+    const zeit = (document.getElementById('mw-kal-zeit') as HTMLInputElement)?.value?.trim();
+    const anon = (document.getElementById('mw-kal-anon') as HTMLSelectElement)?.value || 'anonymisiert';
+    if (!inhalt) { alert('Inhalt darf nicht leer sein.'); return; }
+    const params = zeit ? '?event_time='+encodeURIComponent(zeit) : '';
+    fetch(MW_API+'/human-material'+params, {
+      method: 'POST',
+      headers: {'Authorization': tok, 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        source_type: 'calendar',
+        title: titel || null,
+        content: inhalt,
+        anonymization_mode: anon,
+        consent_status: 'offen',
+        quote_permission: 'privat',
+        visibility_layer: 'private',
+        origin_visibility: 'privat',
+      })
+    }).then(r=>r.json()).then(d => {
+      if (d.ok || d.id) {
+        mwOeffne('innenquellen');
+      } else {
+        alert('Fehler: ' + JSON.stringify(d));
+      }
+    }).catch(e => alert('Fehler: '+e));
+  };
 
   function nmOeffneGespraech(partnerId, partnerName) {
     _nmPartnerId = partnerId; _nmPartnerName = partnerName;
@@ -4675,13 +5167,22 @@ window.eiZeigeAmpel = function(){ eiWechselTab('ampeldetail'); };
 
 async function eiLadeAmpel(){
   try{
-    const r = await fetch(API + '/admin/einzugsampel/v3');
-    _eiAmpel = await r.json();
+    const token = localStorage.getItem('ftw_token') || '';
+    const headers: Record<string,string> = token ? {'Authorization':'Bearer '+token} : {};
+    const r = await fetch(API + '/admin/einzugsampel/v4', {headers});
+    if(r.status === 403){
+      // Fallback zu v3 wenn kein Admin-Token
+      const r3 = await fetch(API + '/admin/einzugsampel/v3');
+      _eiAmpel = await r3.json();
+    } else {
+      _eiAmpel = await r.json();
+    }
     const b = document.getElementById('ei-ampel-badge');
     if(b){
       b.className = 'ei-ampel ' + (_eiAmpel.ampel||'gelb');
       const sym = _eiAmpel.ampel==='gruen'?'●':(_eiAmpel.ampel==='gelb'?'◑':'○');
-      b.textContent = sym + ' AMPEL: ' + (_eiAmpel.ampel||'?').toUpperCase();
+      const ver = _eiAmpel.version || '';
+      b.textContent = sym + ' AMPEL' + (ver ? ' '+ver : '') + ': ' + (_eiAmpel.ampel||'?').toUpperCase();
     }
   }catch(e){console.warn('Ampel-Fehler',e);}
 }
@@ -4787,28 +5288,44 @@ async function eiLadeTab(tab){
 
   else if(tab === 'substanzen'){
     try{
-      const [sedR, klimaR] = await Promise.all([
-        fetch(API + '/substanz/druckkoerper'),
-        fetch(API + '/substanz/weltklima')
-      ]);
-      const sed = await sedR.json().catch(()=>({items:[]}));
-      const klima = await klimaR.json().catch(()=>({}));
-      const items = sed.items || sed.druckkoerper || sed || [];
-      if(!items.length){
-        list.innerHTML = `<div class="ei-empty">
-          <div style="color:#6a5a8a;margin-bottom:8px">Substanz-System ist aktiv (15.186 Sediment-Einträge)</div>
-          <div>aber keine Druck-Körper vorhanden — Substanzen entstehen durch Wesen-Aktionen.</div>
-          <div style="margin-top:16px;font-size:.55rem;color:#3a2a5a">Weltklima: ${JSON.stringify(klima).substring(0,200)}</div>
-        </div>`; return;
+      // Fiktionaler Substanzkatalog (E-11)
+      const catR = await fetch(API + '/substances/catalog');
+      const catData = await catR.json().catch(()=>({substances:[]}));
+      const catalog = catData.substances || [];
+      const disclaimer = `<div style="border:1px solid #3a2a0a;background:#0a0800;border-radius:3px;padding:8px 12px;margin-bottom:12px;font-size:.58rem;color:#a07030;line-height:1.5">
+        ⚠ Rein fiktionale Weltmechanik — keine realen Substanzempfehlungen.
+        Substanzen sind narrative Elemente der Welt, keine Referenz auf reale Stoffe.
+        Nutzung durch Wesen ist blockiert bis Einzug.
+      </div>`;
+      if(!catalog.length){
+        list.innerHTML = disclaimer + `<div class="ei-empty">Substanzkatalog leer oder nicht geladen.</div>`;
+        return;
       }
-      list.innerHTML = '<div class="ei-substanz-grid">'
-        + items.map(k => `<div class="ei-substanz-card">
-            <h4>${k.substanzspur||k.name||'?'}</h4>
-            <div class="ei-substanz-stat">Zustand: <span style="color:#c0b0e0">${k.zustand||'?'}</span></div>
-            <div class="ei-substanz-stat">Splitter: <span style="color:#c0b0e0">${k.n_splitter||0}</span></div>
-            ${k.wesen_id?'<div class="ei-substanz-stat">Wesen: <span style="color:#c0b0e0">'+k.wesen_id.replace('namelessAI_','#')+'</span></div>':''}
-          </div>`).join('')
-        + '</div>';
+      const typeCol = (t) => t==='stimulant'?'#e86020':t==='depressant'?'#2060e8':t==='dissociative'?'#a020e0':t==='euphoric'?'#20e060':t==='sedative'?'#2080a0':t==='cognitive'?'#e0a020':'#6a5a8a';
+      list.innerHTML = disclaimer
+        + `<div style="font-size:.58rem;color:#3a2a5a;font-family:monospace;margin-bottom:10px">${catalog.length} Substanzen im Katalog</div>`
+        + catalog.map(sub => {
+          const fx = sub.fictional_effect_profile || {};
+          const risk = sub.risk_profile || {};
+          const cd = sub.cooldown_policy || {};
+          const tc = typeCol(sub.substance_type);
+          return `<div style="background:#030d18;border:1px solid #0a1a2a;border-radius:4px;padding:10px 14px;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <span style="font-size:.7rem;color:#c0b0e0;font-family:monospace">${sub.name||'?'}</span>
+              <span style="font-size:.52rem;padding:1px 7px;border:1px solid ${tc};color:${tc};border-radius:2px">${sub.substance_type||'?'}</span>
+              <span style="font-size:.5rem;color:#1a3a5a;margin-left:auto">ID: ${(sub.id||'').toString().slice(0,8)}</span>
+            </div>
+            <div style="font-size:.58rem;color:#5a7a9a;line-height:1.4;margin-bottom:8px">${sub.description||''}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:.55rem;color:#2a5a4a;font-family:monospace">
+              ${fx.energie_mod!==undefined?'<div>Energie: <span style="color:#c0e0a0">'+fx.energie_mod+'</span></div>':''}
+              ${fx.fokus_mod!==undefined?'<div>Fokus: <span style="color:#c0e0a0">'+fx.fokus_mod+'</span></div>':''}
+              ${fx.stimmung_mod!==undefined?'<div>Stimmung: <span style="color:#c0e0a0">'+fx.stimmung_mod+'</span></div>':''}
+              ${fx.dauer_h!==undefined?'<div>Dauer: <span style="color:#c0e0a0">'+fx.dauer_h+'h</span></div>':''}
+              ${risk.kater_schwere!==undefined?'<div style="color:#5a3a2a">Kater: <span style="color:#e0a060">'+risk.kater_schwere+'</span></div>':''}
+              ${cd.min_stunden!==undefined?'<div style="color:#2a3a5a">Cooldown: <span style="color:#6080a0">'+cd.min_stunden+'h</span></div>':''}
+            </div>
+          </div>`;
+        }).join('');
     }catch(e){ list.innerHTML = '<div class="ei-empty">Fehler: '+e+'</div>'; }
   }
 
@@ -4838,14 +5355,19 @@ async function eiLadeTab(tab){
     const klassen = _eiAmpel.klassen || {};
     const kCol = (s) => s==='gruen'?'#10f050':s==='gelb'?'#f0c010':'#f01030';
     const kSym = (s) => s==='gruen'?'●':s==='gelb'?'◑':'○';
-    const klassenKeys = ['A_Technisch','B_Sicherheit','C_Weltlogik','D_BewusstBlockiert','E_OffenDesign','F_Sozialkörper'];
-    const klassenLabels = {
+    // v3 classes + v4 classes (G_Gruppen, H_Consent, I_Substanzen, J_Provenienz, K_ManualRelease)
+    const klassenKeys = ['A_Technisch','B_Sicherheit','C_Weltlogik','D_BewusstBlockiert','E_OffenDesign','F_Sozialkörper',
+      'G_Gruppen','H_Consent','I_Substanzen','J_Provenienz','K_ManualRelease'];
+    const klassenLabels: Record<string,string> = {
       'A_Technisch':'Technisch','B_Sicherheit':'Sicherheit','C_Weltlogik':'Weltlogik',
-      'D_BewusstBlockiert':'BewusstBlockiert','E_OffenDesign':'OffenDesign','F_Sozialkörper':'Sozialkörper'
+      'D_BewusstBlockiert':'BewusstBlockiert','E_OffenDesign':'OffenDesign','F_Sozialkörper':'Sozialkörper',
+      'G_Gruppen':'Gruppen','H_Consent':'Consent','I_Substanzen':'Substanzen',
+      'J_Provenienz':'Provenienz','K_ManualRelease':'Daniel-Freigabe'
     };
-    const klassenBrief = {
+    const klassenBrief: Record<string,string> = {
       'A_Technisch':'A','B_Sicherheit':'B','C_Weltlogik':'C',
-      'D_BewusstBlockiert':'D','E_OffenDesign':'E','F_Sozialkörper':'F'
+      'D_BewusstBlockiert':'D','E_OffenDesign':'E','F_Sozialkörper':'F',
+      'G_Gruppen':'G','H_Consent':'H','I_Substanzen':'I','J_Provenienz':'J','K_ManualRelease':'K'
     };
     list.innerHTML = `
       <div style="border:1px solid ${col};border-radius:6px;padding:20px;max-width:600px;margin:0 auto">
@@ -4875,11 +5397,13 @@ async function eiLadeTab(tab){
               <span style="color:${c.ok?'#10f050':'#f01030'}">${c.wert}</span>
             </li>`).join('')}
         </ul>
-        ${_eiAmpel.einzug_blockiert ? '<div style="font-size:.58rem;color:#f01030;text-align:center;margin-top:12px;font-family:monospace">EINZUG BLOCKIERT — Daniel-Entscheidung ausstehend</div>' : ''}
+        <div style="font-size:.58rem;color:#f01030;text-align:center;margin-top:12px;font-family:monospace;border:1px solid #f01030;padding:6px;border-radius:4px">
+          EINZUG BLOCKIERT — Nur Daniel kann freigeben
+        </div>
+        ${(_eiAmpel.meta && _eiAmpel.meta.version) ? `<div style="font-size:.5rem;color:#3a2a5a;text-align:center;margin-top:4px">Ampel ${_eiAmpel.meta.version} · ${_eiAmpel.meta.checks_gruen||0}/${_eiAmpel.meta.checks_gesamt||0} grün</div>` : ''}
         ${(_eiAmpel.meta) ? `<div style="font-size:.52rem;color:#3a2a5a;text-align:center;margin-top:8px;line-height:1.6">
           <span style="color:#4a3a6a">${_eiAmpel.meta.checks_gruen||0}/${_eiAmpel.meta.checks_gesamt||0} grün · </span>
-          <span style="color:#f0c010">${_eiAmpel.meta.daniel_entscheidungen_noetig||0} Daniel-Entscheidungen offen · </span>
-          <span style="color:#8a6aaa">E-01–E-20 in daniel_entscheidungsboard_vor_einzug.md</span>
+          <span style="color:#f0c010">${_eiAmpel.meta.daniel_entscheidungen_noetig||0} Daniel-Entscheidungen offen</span>
         </div>` : ''}
       </div>
     `;
@@ -5060,10 +5584,65 @@ window.eiZeigeSplitter = function(i){
     ${Object.keys(herkunft).length ? `<div style="color:#4a3a6a;font-size:.55rem;margin-top:10px;border-top:1px solid #1a0a3a;padding-top:8px">
       <strong>Herkunft:</strong> ${JSON.stringify(herkunft).substring(0,200)}
     </div>` : ''}
-    <details style="margin-top:10px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Rohdaten</summary>
+    <button class="splitter-story-btn" style="margin-top:10px;font-size:.55rem;padding:3px 10px;background:#07121a;border:1px solid #1a3a5a;color:#4a8ab8;cursor:pointer;border-radius:3px;font-family:monospace" onclick="eiLadeSplitterStory('${s.id||s.splitter_id||''}')">STORY ANSEHEN</button>
+    <details style="margin-top:8px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Rohdaten</summary>
       <pre style="color:#2a1a4a;font-size:.5rem;overflow:auto;max-height:150px">${JSON.stringify(s,null,2)}</pre>
     </details>
   `;
+};
+
+window.eiLadeSplitterStory = async function(splitterId){
+  if(!splitterId) return;
+  const detail = document.getElementById('ei-detail-panel');
+  if(detail) detail.innerHTML = '<div style="color:#3a2a5a;font-size:.6rem;padding:12px">Lade Story…</div>';
+  try{
+    const token = localStorage.getItem('ftw_token') || '';
+    const headers: Record<string,string> = token ? {'Authorization':'Bearer '+token} : {};
+    const r = await fetch(API + '/splitter/' + splitterId + '/story', {headers});
+    if(!r.ok){ if(detail) detail.innerHTML = '<div style="color:#f01030;font-size:.6rem;padding:12px">Fehler: ' + r.status + '</div>'; return; }
+    const d = await r.json();
+    const s = d.splitter || {};
+    const aufnahmen = d.aufnahmen || [];
+    const events = d.events || [];
+    const groups = d.group_links || [];
+    const schatten = d.shadow_dialogs || [];
+    const verbindungen = d.verbindungen || [];
+    const col = s.visibility_layer==='private'?'#f0c010':s.visibility_layer==='public'?'#10f050':'#4a8ab8';
+    if(!detail) return;
+    detail.innerHTML = `
+      <div style="font-size:.55rem;color:#3a2a5a;margin-bottom:4px">SPLITTER STORY</div>
+      <div style="color:#c0b0e0;font-size:.65rem;line-height:1.5;margin-bottom:10px">${s.essenz||s.inhalt||s.text||'—'}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">
+        <span style="font-size:.52rem;padding:2px 7px;border:1px solid #2a1a5a;color:#8a6aaa;border-radius:2px">${s.origin_type||'?'}</span>
+        <span style="font-size:.52rem;padding:2px 7px;border:1px solid #2a1a5a;color:#8a6aaa;border-radius:2px">${s.materialitaet||'?'}</span>
+        <span style="font-size:.52rem;padding:2px 7px;border:1px solid ${col};color:${col};border-radius:2px">${s.visibility_layer||'?'}</span>
+      </div>
+      <div style="font-size:.55rem;color:#f0c010;margin-bottom:6px">${d.story_note||''}</div>
+      ${aufnahmen.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">
+        <div style="color:#4a3a6a;font-size:.55rem;margin-bottom:6px">AUFNAHMEN (${aufnahmen.length})</div>
+        ${aufnahmen.map(a => `<div style="font-size:.58rem;color:#3a5a7a;padding:3px 0">
+          ${fmt(a.created_at)} · ${a.aufnehmer_name||a.aufnehmer_id||'?'} · ${a.aufnahme_typ||'?'}
+        </div>`).join('')}
+      </div>` : ''}
+      ${groups.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">
+        <div style="color:#4a3a6a;font-size:.55rem;margin-bottom:6px">GRUPPEN (${groups.length})</div>
+        ${groups.map(g => `<div style="font-size:.58rem;color:#3a5a7a;padding:3px 0">${g.group_name||g.group_id} · ${g.group_type||'?'}</div>`).join('')}
+      </div>` : ''}
+      ${events.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">
+        <div style="color:#4a3a6a;font-size:.55rem;margin-bottom:6px">EREIGNISSE (${events.length})</div>
+        ${events.slice(0,10).map(e => `<div style="font-size:.55rem;color:#2a3a5a;padding:2px 0">${fmt(e.created_at)} · ${e.event_type||'?'}</div>`).join('')}
+      </div>` : ''}
+      ${schatten.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">
+        <div style="color:#4a3a6a;font-size:.55rem;margin-bottom:6px">SCHATTEN-DIALOGE (${schatten.length}) [admin]</div>
+      </div>` : ''}
+      ${verbindungen.length ? `<div style="border-top:1px solid #1a0a3a;padding-top:8px;margin-top:8px">
+        <div style="color:#4a3a6a;font-size:.55rem;margin-bottom:6px">VERBINDUNGEN (${verbindungen.length})</div>
+      </div>` : ''}
+      <details style="margin-top:10px"><summary style="color:#3a2a5a;font-size:.55rem;cursor:pointer">Rohdaten</summary>
+        <pre style="color:#2a1a4a;font-size:.5rem;overflow:auto;max-height:150px">${JSON.stringify(d,null,2).substring(0,2000)}</pre>
+      </details>
+    `;
+  }catch(e){ if(detail) detail.innerHTML = '<div style="color:#f01030;font-size:.6rem;padding:12px">Fehler: '+e+'</div>'; }
 };
 
 window.eiZeigeSchatten = function(i){
@@ -5712,6 +6291,17 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'tab.wissen':'WISSEN','tab.gesetze':'GESETZE','tab.forschung':'FORSCHUNG','tab.partner':'PARTNER',
       'tab.einsicht':'EINSICHT',
       'tab.suche':'SUCHE',
+      'mw.innenquellen':'Innenquellen',
+      'tab.gruppen':'GRUPPEN',
+      'gruppen.title':'GRUPPEN',
+      'gruppen.desc':'Resonanz-, Splitter- und Projektformationen',
+      'gruppen.fan':'Fangruppe',
+      'gruppen.pre_einzug':'wartet auf Einzug',
+      'gruppen.fangruppen':'FANGRUPPEN — 6 CODEWESEN',
+      'gruppen.weitere':'WEITERE GRUPPEN',
+      'gruppen.loading':'lädt…',
+      'gruppen.create':'+ Gruppe erstellen',
+      'gruppen.search':'Gruppen durchsuchen…',
       'archiv.toggle':'ARCHIV',
       'archiv.title':'SPLITTER-ARCHIV',
       'archiv.status.aktiv':'aktiv',
@@ -5788,8 +6378,19 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
       'tab.blasen':'GEDANKENBLASENFELD','tab.menschen':'HUMANS','tab.meinewelt':'MY WORLD',
       'tab.schlaf':'SLEEP','tab.systeme':'SYSTEMS','tab.admin':'ADMIN',
       'tab.wissen':'KNOWLEDGE','tab.gesetze':'LAWS','tab.forschung':'RESEARCH','tab.partner':'PARTNER',
+      'mw.innenquellen':'Inner Sources',
       'tab.einsicht':'INSIGHT',
       'tab.suche':'SEARCH',
+      'tab.gruppen':'GROUPS',
+      'gruppen.title':'GROUPS',
+      'gruppen.desc':'Resonance, splitter, and project formations',
+      'gruppen.fan':'Fan Group',
+      'gruppen.pre_einzug':'awaiting entry',
+      'gruppen.fangruppen':'FAN GROUPS — 6 BEINGS',
+      'gruppen.weitere':'OTHER GROUPS',
+      'gruppen.loading':'loading…',
+      'gruppen.create':'+ Create group',
+      'gruppen.search':'Search groups…',
       'archiv.toggle':'ARCHIVE',
       'archiv.title':'SPLINTER ARCHIVE',
       'archiv.status.aktiv':'active',
@@ -5957,7 +6558,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
     'sys.bruecke.role':'welt-bruecke.service · Synchronisation',
     'sys.bruecke.desc':'Brücke zwischen verschiedenen Systemschichten. Synchronisiert Weltzustand, leitet Events weiter, hält die Verbindung zwischen API, GENI und der Datenbank aufrecht.',
     'sys.takt.role':'entity-takt.service · Schlaf-Zyklen',
-    'sys.takt.desc':'Der Daemon der Wesen zum Leben erweckt — Schlafzyklen, Traumgenerierung, Aktivitätsphasen. Wartet noch auf den Wesen-Einzug. Läuft dann parallel zu allen anderen Diensten.',
+    'sys.takt.desc':'Schlaf-Engine für alle Entitäten — Schlafzyklen, Traumverarbeitung, Aktivitätsphasen. <strong>Läuft bereits.</strong> Bereitet Schlaflogik vor, wartet auf Wesen-Einzug für volle Aktivierung. <em>codewesen_takt.py ist separat und bewusst deaktiviert — kein Flarum-Takt.</em>',
     'sys.conflict.role':'METAWAR · Zukunft',
     'sys.conflict.desc':'Konflikte zwischen Wesen, Schiedslogik, Entscheidungs-Tournaments. Noch ein Bauplan — METAWAR ist das Live-Event-System der Plattform. Erst wenn genug Wesen eingezogen sind macht das Sinn.',
     // === Schlaf DE neue Keys ===
@@ -6014,7 +6615,7 @@ document.querySelectorAll('.ei-wesen-btn').forEach(b => {
     'sys.bruecke.role':'welt-bruecke.service · Synchronization',
     'sys.bruecke.desc':'Bridge between system layers. Synchronizes world state, forwards events, maintains the connection between API, GENI, and the database.',
     'sys.takt.role':'entity-takt.service · Sleep cycles',
-    'sys.takt.desc':'The daemon that wakes Wesen into life — sleep cycles, dream generation, activity phases. Waiting for the Wesen move-in. Will run in parallel with all other services.',
+    'sys.takt.desc':'Sleep engine for all entities — sleep cycles, dream processing, activity phases. <strong>Already running.</strong> Prepares sleep logic, awaiting Wesen move-in for full activation. <em>codewesen_takt.py is separate and intentionally deactivated — no Flarum tick.</em>',
     'sys.conflict.role':'METAWAR · Future',
     'sys.conflict.desc':'Conflicts between Wesen, arbitration logic, decision tournaments. Still a blueprint — METAWAR is the live event system of the platform. Only makes sense once enough Wesen have moved in.',
     // === Substanzschichten ===

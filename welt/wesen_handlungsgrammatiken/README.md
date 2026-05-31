@@ -23,3 +23,4 @@ Jede Datei in diesem Ordner ist eine Entscheidungsgrammatik für ein aktives Wel
 | wesen_entscheidung_zwischenraum.md | Zwischenraum/Splitter | aktiv |
 | wesen_entscheidung_beziehungen.md | Beziehungen | vorbereitet |
 | wesen_entscheidung_schweigen.md | Schweigen | aktiv |
+| wesen_entscheidung_gruppe.md | Gruppen | vorbereitet (nach Einzug) |
