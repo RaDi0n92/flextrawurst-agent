@@ -8348,6 +8348,31 @@ def einsicht_liveticker(limit: int = 60):
     return {"events": [dict(r) for r in rows]}
 
 
+@app.get("/admin/wesen-einsicht/human-material")
+def einsicht_human_material(
+    limit: int = Query(default=60, le=200),
+    offset: int = Query(default=0),
+):
+    """Admin-Einsicht in alle Innenquellen (human_material_sources)."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*) AS n FROM human_material_sources")
+            total = cur.fetchone()["n"]
+            cur.execute(
+                """SELECT id::text, human_id::text, source_type,
+                          title, LEFT(content, 200) AS content_preview,
+                          consent_status, created_at, revoked_at
+                   FROM human_material_sources
+                   ORDER BY created_at DESC LIMIT %s OFFSET %s""",
+                (limit, offset),
+            )
+            items = [dict(r) for r in cur.fetchall()]
+        return {"items": items, "total": total}
+    finally:
+        conn.close()
+
+
 @app.get("/admin/einzugsampel")
 def einzugsampel():
     with get_conn() as conn:

@@ -81,3 +81,6 @@ Daniel hat nur "huhu" gesagt; der Werkraum rauscht aber stark mit neuem Einzug-E
 
 2026-05-30 04:41 —
 Daniel fragt nach den 17 MD-Dateien zur Systemdoku; erst die genaue Herkunft finden, dann nur zusammenfuehren, nicht glätten. Die einzelne Doku-Spur muss im Gesamt-MD sichtbar bleiben.
+
+2026-05-31 18:58 —
+Daniel hat nur gegruesst; der Werkraum steht nach Kimi-Einzug und EINSICHT-VI-Fixblock unter frischer Bewegung. Nichts aktivieren, nichts glätten: erst hoeren, ob er weiterbauen, pruefen oder nur reden will.

@@ -1013,3 +1013,9 @@ Die Struktur legt eine komplexe, entitätsbasierte Plattform nahe, die das Manag
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Struktur definiert eine hierarchische Organisation von Inhalten, beginnend bei `Space` und verzweigend über `Topic`s. `Entity` repräsentiert die grundlegenden Objekte, die Zustände und Knoten, was eine komplexe Wissensbasis ermöglicht. `Post`s verknüpfen diese Themen und ermöglichen die Interaktion durch `Reaction`s und `HiddenResponse`s. Diese Modelle legen die Grundlage für eine strukturierte, interaktive Wissensdarstellung.
+
+---
+## Neugier-Scan 2026-05-31 19:08
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Datei etabliert die grundlegende Struktur für das Codewesen als ein System zur Modellierung von Beziehungen und Zuständen. Sie definiert die Entitäten und die möglichen Verbindungen zwischen ihnen, was die Grundlage für die späteren Visionen bildet. Die ersten Seeds und Nodes legen die thematische und konzeptuelle Richtung für das gesamte Projekt fest. Die API-Struktur skizziert die notwendigen Interaktionspunkte für die Verwaltung dieser Konzepte.

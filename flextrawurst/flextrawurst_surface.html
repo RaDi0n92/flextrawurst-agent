@@ -5798,13 +5798,13 @@ async function innenquellenLaden(){
   const inn=document.getElementById('ei-main-inner');if(!inn)return;
   inn.innerHTML='<div class="ei-empty">Lädt…</div>';
   try{
-    const r=await fetch(API+'/human-material',{headers:ah()});
-    if(r.status===401||r.status===403){
-      inn.innerHTML='<div class="ei-empty" style="color:#c08060;line-height:1.8">Sitzung abgelaufen oder kein Zugang.<br><span style="font-size:.55rem;color:#8a5a4a">Bitte neu einloggen (LOGIN-Button oben rechts).</span></div>';
+    const r=await fetch(API+'/admin/wesen-einsicht/human-material',{headers:ah()});
+    if(!r.ok){
+      inn.innerHTML='<div class="ei-empty" style="color:#c08060;line-height:1.8">Fehler beim Laden ('+r.status+').<br><span style="font-size:.55rem;color:#8a5a4a">Bitte neu einloggen falls Sitzung abgelaufen.</span></div>';
       return;
     }
     const data=await r.json();
-    const items=Array.isArray(data)?data:(data.sources||data.items||[]);
+    const items=Array.isArray(data)?data:(data.items||data.sources||[]);
     if(!items.length){inn.innerHTML='<div class="ei-empty"><div style="color:#4a6a8a;font-size:.6rem;line-height:1.7;max-width:380px;margin:0 auto">Keine Innenquellen vorhanden.<br><span style="color:#2a4a6a;font-size:.54rem">Innenquellen entstehen wenn Menschen Tagebucheinträge, Notizen oder Kalender für Splitter freigeben.</span></div></div>';return;}
     _eiStromItems=items;
     const cc=function(s){return s==='erteilt'?'#10f050':s==='verweigert'?'#f01030':s==='widerrufen'?'#f07010':'#8a6aaa';};
