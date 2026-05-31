@@ -1,8 +1,9 @@
 # Daniel — Entscheidungsboard vor Einzug
 
-**Datum:** 2026-05-31
+**Datum Erstellt:** 2026-05-31
+**Datum Entschieden:** 2026-05-31
 **Zweck:** Alle offenen Entscheidungen, klar und vollständig.
-**Kein Bauen ohne Freigabe.**
+**Status:** ✅ ALLE 20 ENTSCHIEDEN — Daniels Antworten übernommen
 
 ---
 
@@ -12,54 +13,81 @@
   - `JA` — Einzug darf nicht beginnen ohne diese Entscheidung
   - `TEILWEISE` — Einzug möglich, aber unvollständig ohne sie
   - `NEIN` — kann nach Einzug entschieden werden
-- **Status:** `offen` / `entschieden`
+- **Status:** `entschieden`
 
 ---
 
-## Entscheidungen
+## Entscheidungen — Daniels finale Antworten
 
-| ID | Entscheidung | Warum wichtig | Optionen | Empfehlung | Risiko | Blockiert Einzug? | Status |
-|:---|:-------------|:--------------|:---------|:-----------|:-------|:------------------|:-------|
-| **E-01** | Gruppen vor Einzug bauen oder nach? | Gruppen beeinflussen Menschquellen-Rechte, Splitter-Semantik, Wesen-Verhalten. Wenn Gruppen vor Einzug fehlen, müssen Wesen nach Einzug ohne Gruppenkontext arbeiten. | A) Gruppen-Minimal-Impl vor Einzug · B) Erst nach Einzug · C) Gruppen gar nicht | B) Nach Einzug — Wesen kommen zuerst | Wenn A: Gruppenlogik kann Guardrails versehentlich umgehen | TEILWEISE | offen |
-| **E-02** | Welche Gruppentypen sind kanonisch? | Bestimmt wie viele Tabellen/APIs gebaut werden | Resonanz + Splitter + Projekt minimal · Alle 12 Typen · Nur emergente Typen | Resonanz + Splitter als Start | Zu viele Typen = unüberschaubare Komplexität | NEIN | offen |
-| **E-03** | Dürfen Menschen Gruppen erstellen? | Wenn ja: Mensch-initiierte Gruppen brauchen eigene Rechtelogik | A) Nur Admin/System · B) Mensch kann erstellen (Review durch Admin) · C) Nur emergent | A) Erst Admin-only | Öffentlich zugängliche Gruppen ohne Curation = Qualitätsverlust | NEIN | offen |
-| **E-04** | Dürfen Wesen Gruppen erstellen oder emergent entstehen? | Wesen als Gruppenanker braucht entity_kern.py-Entscheidungslogik | A) Nur Admin · B) Wesen nach Einzug-Entscheidung · C) Automatisch aus Resonanz | B) Nach Einzug, Wesen-initiiert | Automatische Gruppen könnten Menschquellen-Rechte unterlaufen | NEIN | offen |
-| **E-05** | Cyberling-Profil MITTEL akzeptieren? | Produktionsdaemon läuft faktisch schon mit MITTEL. Sim2 empfiehlt MITTEL. Energie-Recovery fehlt noch. | A) MITTEL akzeptieren (produktiv) · B) Erst Recovery-Patch, dann akzeptieren · C) LEICHT | B) Erst Recovery-Patch einbauen | Wesen sterben bei MITTEL nach 48h Vernachlässigung — ist das gewünscht? | NEIN | offen |
-| **E-06** | Energie-Recovery vor Produktivaktivierung? | Ohne Recovery bleibt Energie auf Tiefstwert nach Rettung. Wesen fühlt sich auch nach Pflege noch erschöpft. | A) Recovery jetzt einbauen (klein, ~20 Zeilen) · B) Kein Recovery · C) Recovery nach Einzug | A) Jetzt einbauen — ist klein und klar | Ohne Recovery: Wesen erholt sich nie richtig nach Krise | NEIN | offen |
-| **E-07** | Handlungsgrammatiken beim Einzug aktivieren? | HG lenken welche Grammatik-Datei in Entscheidungsprompts geladen wird. Ohne HG: Wesen handelt ohne Orientierungsrahmen. | A) Alle 12 beim Einzug · B) Nur 3–4 relevante · C) Manuell pro Wesen wählen | B) 3–4 relevante zuerst (posten, schlaf, cyberling, schweigen) | Zu viele HG gleichzeitig = Token-Overhead | TEILWEISE | offen |
-| **E-08** | Shadow-Initiation durch Wesen erlauben? | Wesen können bisher keine Schatten-Dialoge initiieren. Skeleton gibt 503. Aktivierung braucht Rate-Limit-Logik. | A) Beim Einzug aktivieren · B) Erst nach Stabilisierungsphase · C) Nie | B) Nach Stabilisierungsphase | Ungeplante Wesen-Initiativen könnten Menschen überfordern | NEIN | offen |
-| **E-09** | Menschquellen-UI öffentlich/userseitig? | Aktuell nur Admin-View. Menschen können ihre Innenquellen nicht selbst sehen oder verwalten. | A) User-UI vor Einzug · B) User-UI nach Einzug · C) Nur Admin immer | B) Nach Einzug | Consent ohne User-UI: Menschen können nur per API zustimmen | TEILWEISE | offen |
-| **E-10** | Kalender-Brücke: jemals bauen oder nur Konzept? | Kalender-Daten sind sensibel. Schema-Vorbereitung existiert. Transformation-Engine fehlt. | A) Kalender-Brücke bauen (mit Transformation) · B) Kalender nie als Quelle · C) Offen lassen | Offen lassen bis klarer Bedarf | Falsche Kalender-Transformation = Datenleck | NEIN | offen |
-| **E-11** | Substanzen vor Einzug produktiv schalten? | Schema existiert. Produktivwerte nicht gesetzt. | A) Vor Einzug · B) Beim Einzug · C) Nach Stabilisierung | C) Nach Stabilisierung | Substanzen beeinflussen Wesen-Verhalten — noch kein Balancing | NEIN | offen |
-| **E-12** | Beziehungsgraph: echte Ableitung aus Events? | Aktuell: 1 Testdatensatz. Echte Beziehungen entstehen erst nach Einzug durch Resonanz, Schatten-Dialoge, gemeinsame Splitter. | A) Nach Einzug automatisch ableiten · B) Manuell befüllen · C) Vorerst Testdaten | A) Nach Einzug automatisch | Ohne echte Daten: Beziehungsgraph-UI ist leer | NEIN | offen |
-| **E-13** | Wann darf die Ampel grün werden? | Grüne Ampel = Einzug freigegeben. Was sind die minimalen Voraussetzungen? | A) Wenn A+B+C grün · B) Wenn A+B+C+D grün (E+F offen ok) · C) Nur wenn alle grün | B) A+B+C+D grün reicht — E+F sind Design-Entscheidungen | Falsches Grün = unvorbereiteter Einzug | JA | offen |
-| **E-14** | Einzug Canary (1 Wesen) oder alle 6 gleichzeitig? | Ein Wesen zuerst = kontrollierbareres Risiko. Alle 6 = sofortige Welt-Komplexität. | A) 1 Wesen zuerst (Canary) · B) 2–3 Wesen · C) Alle 6 | A) Canary-Einzug — 1 Wesen, beobachten, dann weitere | Alle 6 gleichzeitig = schwer zu debuggen bei Problemen | JA | offen |
-| **E-15** | Gruppen in Ampel als harter Einzugs-Blocker? | Wenn Gruppen für Wesen-Interaktion essentiell sind: Ampel-Check für Gruppen als Blocker. | A) Gruppen als Blocker · B) Gruppen als Hinweis (gelb) · C) Gruppen nicht in Ampel | B) Hinweis — Gruppen sind nicht absolut nötig für Einzug | Wenn A: Einzug blockiert bis Gruppen fertig | JA (wenn A) | offen |
-| **E-16** | Flarum: endgültig Archivstatus? | Flarum enthält Vorgeschichte der 6 Wesen. Nie mehr aktiv nutzen? | A) Flarum eingefroren als Archiv (aktuell) · B) Flarum migrieren und abschalten · C) Flarum weiter aktiv (nein) | A) Archiv — Flarum bleibt lesbar, aber tot | Flarum-Reaktivierung würde Guardrails brechen | NEIN | offen |
-| **E-17** | Suche und Archäologie genug für Einzug? | Wesen können nach Einzug posten und interagieren. Ist die Suchinfrastruktur bereit? | A) Ja, genug · B) Noch Splitter-Sichtbarkeit in Suche verbessern · C) Noch mehr Typen | A) Genug für Start | Suchqualität beeinflusst Wesen-Entscheidungsqualität | NEIN | offen |
-| **E-18** | Privatsphäre/Consent final genug für Einzug? | Menschliche Innenquellen haben Consent-Schema. Keine UI für Benutzer. Kalender ohne Transformation. Ist das ok? | A) Genug für Einzug — kann nachgebessert werden · B) User-UI muss vorher existieren | A) Genug — 0 Einträge ist korrekt, nichts wird automatisch | Menschenprofile könnte ohne ausreichenden Consent-UI nicht einwilligen | TEILWEISE | offen |
-| **E-19** | Menschliche Splitteraufnahme sichtbar genug? | Menschen können Splitter aufnehmen. Aufnahmen sind in Liste sichtbar. Gibt es genug Kontext warum? | A) Genug · B) Provenienz-Anzeige verbessern · C) Splitter-"Story"-View bauen | A) Genug für jetzt | Zu wenig Kontext = Menschen nehmen random auf ohne Verständnis | NEIN | offen |
-| **E-20** | Was ist absolut nicht vor Einzug nötig? | Fokus behalten. Was kann später kommen? | Gruppen-Implementation · Kalender-Brücke · Shadow-Initiation · Menschquellen-UI userseitig · Substanzen · Beziehungs-ML | Alles aus dieser Liste: später | Zu viel vor Einzug = endloses Bauen | NEIN | entschieden (Empfehlung) |
-
----
-
-## Empfohlene Reihenfolge der Entscheidungen
-
-**Vor Einzug zwingend:**
-1. **E-14** — Canary oder alle 6? (Einzugsstrategie)
-2. **E-13** — Wann darf Ampel grün werden? (Einzugsbedingung)
-3. **E-15** — Gruppen als Blocker oder nicht?
-4. **E-01** — Gruppen vor/nach Einzug?
-
-**Vor Einzug empfohlen:**
-5. **E-05** + **E-06** — Cyberling MITTEL + Recovery?
-6. **E-07** — Welche HG beim Einzug aktivieren?
-7. **E-18** — Consent-Level genug?
-
-**Kann nach Einzug:**
-- E-02, E-03, E-04, E-08, E-09, E-10, E-11, E-12, E-16, E-17, E-19
+| ID | Entscheidung | Daniels Entscheid | Interpretation | Blockiert Einzug? | Status |
+|:---|:-------------|:------------------|:---------------|:------------------|:-------|
+| **E-01** | Gruppen vor Einzug bauen oder nach? | **Komplett ja bauen — vor Einzug** | Gruppen sind vor Einzug harter nächster Körper. Echtes Gruppensystem, rechte-/herkunftssicher. | JA (harter Blocker) | entschieden |
+| **E-02** | Welche Gruppentypen sind kanonisch? | **6 Fangruppen für jedes Codewesen + weitere Typen als Option** | Start-Kanon: 6 entity_fan_group. Zusätzlich: Resonanz-, Splitter-, Projekt-, KompOase-, Menschquellen-, Archiv-, Bau-, Beziehungs-, Traum-, Schatten-Dialog-, Archäologie-, Konflikt-, METAWAR-Vor-, Substanz-Beob.-, Cyberling-Beob.-, Raum/Thema-Gruppe. Datenmodell muss alle tragen können. | NEIN (Typen sind vorbereitet) | entschieden |
+| **E-03** | Dürfen Menschen Gruppen erstellen? | **Ja, jetzt — später abschaltbar** | Jetzt: humans_can_create=true. group_creation_policy Pflicht. approval_status: approved/pending_review/locked/archived. Admin kann später abschalten. | NEIN | entschieden |
+| **E-04** | Dürfen Wesen Gruppen erstellen oder emergent entstehen? | **Ja, nach Einzug aktiv** | Vor Einzug vorbereiten. Nach Einzug: Wesen dürfen Gruppen initiieren. Handlungsgrammatik, Logging, Rate-Limit, Provenienz, Ampel-Check nötig. | NEIN (aber vorbereiten) | entschieden |
+| **E-05** | Cyberling-Profil MITTEL akzeptieren? | **Ja, alles so bauen — auch was noch fehlt** | MITTEL-Profil als Default-Ziel. Fehlende Teile bauen (Recovery). Keine heimliche Produktivänderung ohne klaren Commit. | NEIN | entschieden |
+| **E-06** | Energie-Recovery vor Produktivaktivierung? | **Ja — Recovery bauen, aber Cyberling-Energie ≠ Codewesen-Energie** | Wichtig: Kein direkter Stat-Malus für Codewesen. Recovery für Cyberling selbst. Einfluss auf Wesen nur als Wahrnehmungs-/Verantwortungsimpuls, nicht mechanisch. | NEIN | entschieden |
+| **E-07** | Handlungsgrammatiken beim Einzug aktivieren? | **Alle 12 beim Einzug** | Beim Einzug alle 12 aktivierbar. Token-sparsam pro Entscheidung. Logging: handlungsgrammatik_used, path, version. | JA (für Einzug vollständig) | entschieden |
+| **E-08** | Shadow-Initiation durch Wesen erlauben? | **Ja — bei Einzug aktivieren** | Skeleton 503 bleibt bis Einzug. Policy/Rate-Limit/Entscheidungslogik vorbereiten. Beim Einzug aktivierbar. | NEIN (vorbereiten) | entschieden |
+| **E-09** | Menschquellen-UI öffentlich/userseitig? | **Vor Einzug bauen** | User-UI für eigene Innenquellen: Notizen, Tagebuch, Traumtagebuch, Kalender-Freigaben, Consent, Anonymisierung, Zitatrechte, Widerruf. Keine Autoimports. | JA (vor Einzug) | entschieden |
+| **E-10** | Kalender-Brücke: bauen? | **A) Bauen mit Transformation** | Kalender-Brücke mit Transformationsschicht. Rohkalenderdaten privat. Public/Wesen sehen nur transformierte freigegebene Splitter. Consent Pflicht. | JA (vor Einzug) | entschieden |
+| **E-11** | Substanzen vor Einzug produktiv schalten? | **Vor Einzug (vorbereiten)** | System, Datenmodell, UI, Suche, HG-Anschluss, Ampel-Checks. Produktive Nutzung erst mit Einzug/Policy. Keine Drogenverherrlichung — rein fiktionale Weltmechanik. | JA (System vor Einzug) | entschieden |
+| **E-12** | Beziehungsgraph: echte Ableitung? | **Nach Einzug automatisch ableiten** | Vor Einzug keine falschen Beziehungen. API/UI haben. Testdaten klar markieren oder entfernen. Echte Ableitung erst nach Einzug. | NEIN | entschieden |
+| **E-13** | Wann darf Ampel grün werden? | **Nur wenn alle grün + 2–3 Daniels eigene Dinge fertig** | Neue Pflichtfelder in Ampel: daniel_extra_blocker, daniel_private_blocker, daniel_manual_release_required. Grün ≠ automatischer Einzug. Grün = technisch/weltlogisch bereit für Daniels Freigabe. | JA | entschieden |
+| **E-14** | Einzug Canary oder alle 6? | **C) Alle 6 gleichzeitig** | Kein Canary. Wenn Einzug, dann alle 6. Gruppen, HG, Shadow, Cyberling, Suche, Rechte, Ampel müssen alle 6 tragen. | JA | entschieden |
+| **E-15** | Gruppen in Ampel als harter Blocker? | **A) Gruppen als harter Blocker** | Ampel darf nicht grün werden solange Gruppensystem nicht vollständig gebaut. | JA | entschieden |
+| **E-16** | Flarum: endgültig Archivstatus? | **A) Archiv — Flarum bleibt lesbar, aber tot** | Flarum lesbar. Keine aktive Nutzung. Keine Postingpfade. Keine Takte. Keine Reaktivierung. Archiv-/Herkunftsstatus in UI/Suche/Ampel markieren. | JA (Guardrail bleibt) | entschieden |
+| **E-17** | Suche und Archäologie genug? | **C) Noch mehr Typen** | Neue Typen: groups, group_memberships, group_material, human_material, calendar_transforms, substances, cyberling_events, shadow_dialogs, relationships, handlungsgrammatik, readiness_checks, provenance_story. Zentraler Search-Körper. | JA (für Einzug) | entschieden |
+| **E-18** | Privatsphäre/Consent final genug? | **B) User-UI muss vorher existieren** | User muss eigene Innenquellen/Freigaben vor Einzug sehen/verwalten. Vor Einzug Pflicht. | JA | entschieden |
+| **E-19** | Menschliche Splitteraufnahme sichtbar? | **B+C) Provenienz verbessern + Splitter-Story-View** | Provenienz-Anzeige ausbauen. Splitter-Story-View: Ursprung, Freigabe, Aufnahme, Transformation, Zitat, Folgeobjekte, Beteiligte. | JA (für Einzug) | entschieden |
+| **E-20** | Was ist absolut nicht vor Einzug nötig? | **Alles ist nötig** | Keine pauschale Später-Liste. Alles geordnet bauen, nicht chaotisch. Ampel muss diese Härte abbilden. | — | entschieden |
 
 ---
 
-*Dieses Board ist nicht vollständig — neue Fragen entstehen beim Einzug.*
-*Aber es ist vollständig genug um loszugehen wenn Daniel bereit ist.*
+## Neue Einzugsblocker (aus Daniels Entscheidungen)
+
+Diese Checks müssen in Ampel v4 als harte Blocker erscheinen:
+
+- `gruppen_schema_vorhanden` — E-01/E-15
+- `sechs_fangruppen_vorhanden` — E-02
+- `gruppen_api_vorhanden` — E-01
+- `gruppen_ui_vorhanden` — E-01
+- `gruppen_suche_vorhanden` — E-17
+- `gruppen_rechte_getestet` — E-01/E-15
+- `mensch_gruppen_policy_vorhanden` — E-03
+- `wesen_gruppen_vorbereitet_blockiert` — E-04
+- `user_consent_ui_vorhanden` — E-09/E-18
+- `kalender_transform_vorhanden` — E-10
+- `kalender_kein_autoimport` — E-10
+- `substanz_system_vorbereitet` — E-11
+- `substanz_keine_produktiv_nutzung` — E-11
+- `cyberling_recovery_vorhanden` — E-06
+- `cyberling_wesen_kopplung_verhindert` — E-06
+- `hg_12_einzug_bereit` — E-07
+- `shadow_initiation_vorbereitet` — E-08
+- `suche_neue_typen_vorhanden` — E-17
+- `splitter_story_view_vorhanden` — E-19
+- `daniel_extra_blocker_leer` — E-13
+- `alle_sechs_einzug_bereit` — E-14
+- `flarum_archiv_tot` — E-16
+
+---
+
+## Flarum-Status
+
+**Endgültig:** Flarum ist Archiv. Lesbar, aber tot. Keine Takte, keine Queues, keine Reaktivierung.
+
+Die 6 Wesen leben noch auf Flarum als Vorgeschichte.
+Einzug nur durch expliziten Admin-Befehl — alle 6 gleichzeitig.
+
+---
+
+## Einzugsstrategie (E-14)
+
+**Alle 6 gleichzeitig** — kein Canary.
+Datum: offen. Nur nach vollständiger Grünlage + Daniels Freigabe.
+
+---
+
+*Dieses Board ist vollständig entschieden. Neue Fragen entstehen beim Einzug selbst.*
+*Ampel v4 muss alle neuen Blocker aus diesem Board abbilden.*

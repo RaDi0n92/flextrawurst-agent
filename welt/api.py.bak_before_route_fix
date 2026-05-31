@@ -8413,7 +8413,7 @@ def einzugsampel():
 
 # ── KompOase / Splitter-Archiv ───────────────────────────────────────────────
 
-@app.get("/kompoase/splitter")
+@app.get("/api/kompoase/splitter")
 def kompoase_splitter_liste(
     status: str | None = Query(default=None),
     origin_type: str | None = Query(default=None),
@@ -8505,7 +8505,7 @@ def kompoase_splitter_liste(
     return {"gesamt": total, "offset": offset, "limit": limit, "splitter": items}
 
 
-@app.get("/kompoase/splitter/{splitter_id}")
+@app.get("/api/kompoase/splitter/{splitter_id}")
 def kompoase_splitter_detail(
     splitter_id: str,
     authorization: str | None = Header(default=None),
@@ -8569,7 +8569,7 @@ class SplitterAufnahmeRequest(BaseModel):
     begruendung: str | None = None
 
 
-@app.post("/kompoase/splitter/{splitter_id}/aufnehmen")
+@app.post("/api/kompoase/splitter/{splitter_id}/aufnehmen")
 def kompoase_splitter_aufnehmen(
     splitter_id: str,
     body: SplitterAufnahmeRequest,
@@ -8629,7 +8629,7 @@ def kompoase_splitter_aufnehmen(
     return {"ok": True, "aufnahme_id": aufnahme_id, "splitter_id": splitter_id, "aufnahmen": neue_aufnahmen}
 
 
-@app.get("/kompoase/splitter/{splitter_id}/spur")
+@app.get("/api/kompoase/splitter/{splitter_id}/spur")
 def kompoase_splitter_spur(
     splitter_id: str,
     authorization: str | None = Header(default=None),
@@ -8733,7 +8733,7 @@ def kompoase_splitter_spur(
         conn.close()
 
 
-@app.get("/entities/{entity_id}/splitter")
+@app.get("/api/entities/{entity_id}/splitter")
 def entity_splitter_aufnahmen(
     entity_id: str,
     limit: int = Query(default=20, le=100),
@@ -8787,7 +8787,7 @@ def entity_splitter_aufnahmen(
 
 # ── Archäologie-Suche ────────────────────────────────────────────────────────
 
-@app.get("/search/global")
+@app.get("/api/search/global")
 def search_global(
     q: str = Query(min_length=2),
     limit: int = Query(default=30, le=100),
@@ -9005,7 +9005,7 @@ def search_global(
     }
 
 
-@app.get("/search/facets")
+@app.get("/api/search/facets")
 def search_facets(
     q: str = Query(min_length=2),
     authorization: str | None = Header(default=None),
@@ -9064,7 +9064,7 @@ def search_facets(
     }
 
 
-@app.get("/search/archaeology")
+@app.get("/api/search/archaeology")
 def search_archaeology(
     q: str | None = Query(default=None),
     entity_id: str | None = Query(default=None),
@@ -9274,7 +9274,7 @@ def _schatten_dict(r: dict, antworten: list) -> dict:
     return out
 
 
-@app.get("/shadow/dialogs")
+@app.get("/api/shadow/dialogs")
 def shadow_dialogs_liste(
     entity_id: str | None = Query(default=None),
     antwortstatus: str | None = Query(default=None),
@@ -9334,7 +9334,7 @@ def shadow_dialogs_liste(
     return {"gesamt": total, "offset": offset, "limit": limit, "dialoge": items}
 
 
-@app.get("/shadow/dialogs/{dialog_id}")
+@app.get("/api/shadow/dialogs/{dialog_id}")
 def shadow_dialog_detail(
     dialog_id: str,
     authorization: str | None = Header(default=None),
@@ -9394,7 +9394,7 @@ def shadow_dialog_detail(
     return dialog
 
 
-@app.post("/shadow/dialogs/{dialog_id}/reply", status_code=201)
+@app.post("/api/shadow/dialogs/{dialog_id}/reply", status_code=201)
 def shadow_dialog_reply(
     dialog_id: str,
     body: SchattenAntwortBody2,
@@ -9439,7 +9439,7 @@ def shadow_dialog_reply(
     return {"id": row["id"], "created_at": row["created_at"].isoformat()}
 
 
-@app.patch("/shadow/dialogs/{dialog_id}/status")
+@app.patch("/api/shadow/dialogs/{dialog_id}/status")
 def shadow_dialog_status(
     dialog_id: str,
     body: SchattenStatusBody,
@@ -9470,7 +9470,7 @@ def shadow_dialog_status(
     return {"ok": True}
 
 
-@app.post("/shadow/dialogs/{dialog_id}/to-splitter", status_code=201)
+@app.post("/api/shadow/dialogs/{dialog_id}/to-splitter", status_code=201)
 def shadow_dialog_to_splitter(
     dialog_id: str,
     authorization: str | None = Header(default=None),
@@ -9517,7 +9517,7 @@ def shadow_dialog_to_splitter(
     return {"ok": True, "splitter_id": splitter_id}
 
 
-@app.get("/entities/{entity_id}/shadow-dialogs")
+@app.get("/api/entities/{entity_id}/shadow-dialogs")
 def entity_shadow_dialogs(
     entity_id: str,
     antwortstatus: str | None = Query(default=None),
@@ -10080,7 +10080,7 @@ class SchattenInitiationRequest(BaseModel):
     inhalt: str
 
 
-@app.post("/shadow/initiate", status_code=201)
+@app.post("/api/shadow/initiate", status_code=201)
 def shadow_initiate(
     body: SchattenInitiationRequest,
     authorization: str | None = Header(default=None),
@@ -10148,7 +10148,7 @@ def _beziehung_evidence(cur, entity_id: str, partner_type: str, partner_id: str)
     return evidence
 
 
-@app.get("/entities/{entity_id}/relationships")
+@app.get("/api/entities/{entity_id}/relationships")
 def entity_relationships(
     entity_id: str,
     partner_type: str | None = Query(default=None),
@@ -10205,7 +10205,7 @@ def entity_relationships(
     return {"entity_id": entity_id, "gesamt": total, "offset": offset, "limit": limit, "beziehungen": items}
 
 
-@app.get("/relationships/between/{entity_a}/{entity_b}")
+@app.get("/api/relationships/between/{entity_a}/{entity_b}")
 def relationship_between(
     entity_a: str,
     entity_b: str,
@@ -10257,7 +10257,7 @@ def relationship_between(
     return {"entity_a": entity_a, "entity_b": entity_b, "typ": rel["typ"], "beziehung": rel}
 
 
-@app.get("/relationships/graph")
+@app.get("/api/relationships/graph")
 def relationships_graph(
     authorization: str | None = Header(default=None),
 ):
@@ -10327,7 +10327,7 @@ class HumanMaterialConsentUpdate(BaseModel):
     public_origin_label: str | None = None
 
 
-@app.get("/human-material")
+@app.get("/api/human-material")
 def human_material_list(
     source_type: str | None = Query(default=None),
     consent_status: str | None = Query(default=None),
@@ -10384,7 +10384,7 @@ def human_material_list(
     return {"gesamt": total, "offset": offset, "limit": limit, "quellen": items}
 
 
-@app.get("/human-material/{source_id}")
+@app.get("/api/human-material/{source_id}")
 def human_material_detail(
     source_id: str,
     authorization: str | None = Header(default=None),
@@ -10431,7 +10431,7 @@ def human_material_detail(
     return d
 
 
-@app.patch("/human-material/{source_id}/consent")
+@app.patch("/api/human-material/{source_id}/consent")
 def human_material_consent(
     source_id: str,
     body: HumanMaterialConsentUpdate,
@@ -10482,7 +10482,7 @@ def human_material_consent(
     return {"ok": True, "source_id": source_id, "consent_status": body.consent_status}
 
 
-@app.post("/human-material/{source_id}/to-splitter", status_code=201)
+@app.post("/api/human-material/{source_id}/to-splitter", status_code=201)
 def human_material_to_splitter(
     source_id: str,
     transformation_note: str | None = None,
@@ -10555,7 +10555,7 @@ def human_material_to_splitter(
 
 # ── Substanzkatalog API (EINSICHT VI / E-11) ─────────────────────────────────
 
-@app.get("/substances/catalog")
+@app.get("/api/substances/catalog")
 def get_substance_catalog(
     search: str | None = Query(default=None),
     substance_type: str | None = Query(default=None),
@@ -10593,7 +10593,7 @@ def get_substance_catalog(
         conn.close()
 
 
-@app.get("/substances/catalog/{substance_id}")
+@app.get("/api/substances/catalog/{substance_id}")
 def get_substance(substance_id: int):
     """Einzelne Substanz aus dem Katalog."""
     conn = get_conn()
@@ -10608,7 +10608,7 @@ def get_substance(substance_id: int):
         conn.close()
 
 
-@app.get("/substances/entity/{entity_id}/state")
+@app.get("/api/substances/entity/{entity_id}/state")
 def get_entity_substance_state(
     entity_id: str,
     authorization: str | None = Header(default=None),
@@ -10639,7 +10639,7 @@ def get_entity_substance_state(
 
 # ── Splitter-Provenienz / Story-View (EINSICHT VI / E-19) ─────────────────────
 
-@app.get("/splitter/{splitter_id}/story")
+@app.get("/api/splitter/{splitter_id}/story")
 def splitter_story_view(
     splitter_id: str,
     authorization: str | None = Header(default=None),

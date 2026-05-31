@@ -41,6 +41,13 @@ ENERGIE_PRO_H_KASKADE    = 0.08
 STIMMUNG_PRO_H_KASKADE   = 0.06
 GESUNDHEIT_PRO_H_KASKADE = 0.04
 
+# Recovery-Raten (E-06): nur Cyberling-Energie, keine Wesen-Kopplung
+ENERGIE_RECOVERY_PRO_H   = 0.05   # erholt sich langsam wenn gut versorgt
+STIMMUNG_RECOVERY_PRO_H  = 0.04   # stimmung erholt sich wenn energie hoch
+RECOVERY_SCHWELLE_HUNGER = 0.6     # hunger muss über dieser Schwelle sein für Recovery
+RECOVERY_SCHWELLE_DURST  = 0.6     # durst muss über dieser Schwelle sein für Recovery
+RECOVERY_ENERGIE_FUER_STIMMUNG = 0.5  # energie muss über dieser Schwelle für Stimmungs-Recovery
+
 REVIVAL_NACH_H = 24
 
 
@@ -69,13 +76,19 @@ def tick_cyberling(cur, c: dict, stunden: float):
     durst  = max(0.0, durst  - DURST_PRO_H  * stunden)
     hunger = max(0.0, hunger - HUNGER_PRO_H * stunden)
 
-    # Energie-Kaskade
+    # Energie-Kaskade (Verfall bei Vernachlässigung)
     if hunger < KASKADE_SCHWELLE and durst < KASKADE_SCHWELLE:
         energie = max(0.0, energie - ENERGIE_PRO_H_KASKADE * stunden)
+    # Energie-Recovery nach Rettung (E-06): nur Cyberling-Energie, keine Wesen-Kopplung
+    elif hunger >= RECOVERY_SCHWELLE_HUNGER and durst >= RECOVERY_SCHWELLE_DURST and energie < 1.0:
+        energie = min(1.0, energie + ENERGIE_RECOVERY_PRO_H * stunden)
 
-    # Stimmungs-Kaskade
+    # Stimmungs-Kaskade (Verfall)
     if hunger < STIMMUNG_SCHWELLE or durst < STIMMUNG_SCHWELLE:
         stimmung = max(0.0, stimmung - STIMMUNG_PRO_H_KASKADE * stunden)
+    # Stimmungs-Recovery wenn gut versorgt und energie hoch genug
+    elif hunger >= RECOVERY_SCHWELLE_HUNGER and durst >= RECOVERY_SCHWELLE_DURST and energie >= RECOVERY_ENERGIE_FUER_STIMMUNG and stimmung < 1.0:
+        stimmung = min(1.0, stimmung + STIMMUNG_RECOVERY_PRO_H * stunden)
 
     # Gesundheits-Kaskade
     if energie < GESUNDHEIT_SCHWELLE:

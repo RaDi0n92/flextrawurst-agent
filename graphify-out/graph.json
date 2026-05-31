@@ -14273,90 +14273,90 @@
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10024",
-      "id": "api_rationale_10024",
       "community": 0,
-      "norm_label": "wesen initiiert schatten-dialog. vorbereitet \u2014 nicht aktiviert."
+      "norm_label": "wesen initiiert schatten-dialog. vorbereitet \u2014 nicht aktiviert.",
+      "id": "api_rationale_10024"
     },
     {
       "label": "Ableitung des Beziehungstyps aus Interaktionsdaten.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10047",
-      "id": "api_rationale_10047",
       "community": 0,
-      "norm_label": "ableitung des beziehungstyps aus interaktionsdaten."
+      "norm_label": "ableitung des beziehungstyps aus interaktionsdaten.",
+      "id": "api_rationale_10047"
     },
     {
       "label": "Sammelt Evidenz aus verwandten Tabellen.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10067",
-      "id": "api_rationale_10067",
       "community": 0,
-      "norm_label": "sammelt evidenz aus verwandten tabellen."
+      "norm_label": "sammelt evidenz aus verwandten tabellen.",
+      "id": "api_rationale_10067"
     },
     {
       "label": "Beziehungen eines Wesens \u2014 mit abgeleitetem Typ und Evidence.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10096",
-      "id": "api_rationale_10096",
       "community": 0,
-      "norm_label": "beziehungen eines wesens \u2014 mit abgeleitetem typ und evidence."
+      "norm_label": "beziehungen eines wesens \u2014 mit abgeleitetem typ und evidence.",
+      "id": "api_rationale_10096"
     },
     {
       "label": "Beziehung zwischen zwei Wesen \u2014 mit vollem Evidenzblock.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10150",
-      "id": "api_rationale_10150",
       "community": 0,
-      "norm_label": "beziehung zwischen zwei wesen \u2014 mit vollem evidenzblock."
+      "norm_label": "beziehung zwischen zwei wesen \u2014 mit vollem evidenzblock.",
+      "id": "api_rationale_10150"
     },
     {
       "label": "Vollst\u00e4ndiger Beziehungsgraph \u2014 alle Wesen+Menschen. Admin-only.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10200",
-      "id": "api_rationale_10200",
       "community": 0,
-      "norm_label": "vollstandiger beziehungsgraph \u2014 alle wesen+menschen. admin-only."
+      "norm_label": "vollstandiger beziehungsgraph \u2014 alle wesen+menschen. admin-only.",
+      "id": "api_rationale_10200"
     },
     {
       "label": "Menschliche Innenquellen \u2014 Admin sieht alle, Mensch nur eigene.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10275",
-      "id": "api_rationale_10275",
       "community": 0,
-      "norm_label": "menschliche innenquellen \u2014 admin sieht alle, mensch nur eigene."
+      "norm_label": "menschliche innenquellen \u2014 admin sieht alle, mensch nur eigene.",
+      "id": "api_rationale_10275"
     },
     {
       "label": "Detail einer Innenquelle.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10328",
-      "id": "api_rationale_10328",
       "community": 0,
-      "norm_label": "detail einer innenquelle."
+      "norm_label": "detail einer innenquelle.",
+      "id": "api_rationale_10328"
     },
     {
       "label": "Einwilligung aktualisieren.",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10376",
-      "id": "api_rationale_10376",
       "community": 0,
-      "norm_label": "einwilligung aktualisieren."
+      "norm_label": "einwilligung aktualisieren.",
+      "id": "api_rationale_10376"
     },
     {
       "label": "Innenquelle \u2192 Splitter in KompOase. Nur bei quote_permission == 'erlaubt' oder '",
       "file_type": "rationale",
       "source_file": "welt/api.py",
       "source_location": "L10427",
-      "id": "api_rationale_10427",
       "community": 0,
-      "norm_label": "innenquelle \u2192 splitter in kompoase. nur bei quote_permission == 'erlaubt' oder '"
+      "norm_label": "innenquelle \u2192 splitter in kompoase. nur bei quote_permission == 'erlaubt' oder '",
+      "id": "api_rationale_10427"
     },
     {
       "label": "auth.py",

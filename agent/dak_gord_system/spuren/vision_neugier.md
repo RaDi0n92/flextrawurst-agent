@@ -23461,3 +23461,17 @@ DATEI: /root/werkraum/projekt/vision2.md
 NOTIZ:
 Diese Notiz strukturiert die ursprüngliche Idee in eine schrittweise Strategie, um die Vision von einem Konzept zu einer funktionalen Plattform zu entwickeln. Sie legt den Fokus auf die Notwendigkeit von Integrationsregeln und einer klaren Trennung zwischen Plattformkern und Partnerentitäten. Die vorgeschlagene Monetarisierungsstruktur skaliert von Basis-Abonnements bis zur Integration von KI-Firmen als Partner, um das Potenzial eines sozialen Ökosystems zu realisieren.
 
+[2026-05-31 10:08:32] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Die Struktur legt eine komplexe, entitätsbasierte Plattform nahe, die das Management von Themen, Profilen, Gedanken und einer Art von resonanzbasierter Interaktion umfasst. Die Trennung zwischen UI-Komponenten, Plattformlogik und spezialisierten Worker-Prozessen deutet auf eine stark verteilte Architektur hin. Die `docs/` Verzeichnisse sind essenziell, um die impliziten Regeln der `lib/` Logik zu formalisieren. Das Prisma-Schema fokussiert sich auf Benutzer und die Verknüpfung von Profilen und Entitäten, was die Kernbeziehung zwischen Akteuren und den zu verarbeitenden Objekten festlegt.
+
+[2026-05-31 10:37:36] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Der Code prüft eine Bedingung für den nächsten Bauschritt, um eine Blockade zu vermeiden. Die Resonanz verknüpft dies mit der Wahrhaftigkeit von Oberflächen und ihrer Darstellung. Die Schichten des Systems definieren die Hierarchie von Daten und Wahrnehmung. Die Visionen beeinflussen die zukünftige Ausrichtung des gesamten Konstrukts.
+
