@@ -4455,6 +4455,9 @@ html[lang="en"] .de-only{display:none}
   function _ftwSanitize(html) {
     return (html||'').replace(/<(?!\/?(?:strong|em|u|ul|li|br|p)\b)[^>]+>/gi, '');
   }
+  window._ftwSanitize = _ftwSanitize;
+  window._ftwFormat = _ftwFormat;
+  window._ftwToolbarHTML = _ftwToolbarHTML;
 
   function mwFormular(placeholder, btnLabel, onSend) {
     const id = "mw-form-" + Math.random().toString(36).slice(2);
@@ -4562,7 +4565,7 @@ html[lang="en"] .de-only{display:none}
       + '</div>'
       + (e.titel ? '<div class="mw-buch-seite-titel">'+mwEsc(e.titel)+'</div>' : '')
       + '<div class="mw-buch-seite-datum">'+datumStr+'</div>'
-      + '<div class="mw-buch-seite-text" data-id="'+e.id+'">'+mwEsc(e.inhalt||"")+'</div>'
+      + '<div class="mw-buch-seite-text" data-id="'+e.id+'">'+_ftwSanitize(e.inhalt||"")+'</div>'
       + '<div class="mw-eintrag-aktionen">'
       + '<button class="mw-ico mw-edit-btn" data-id="'+e.id+'" title="Bearbeiten">✎</button>'
       + '<button class="mw-ico mw-sdel-btn" data-id="'+e.id+'" title="In Papierkorb">🗑</button>'
@@ -4624,7 +4627,7 @@ html[lang="en"] .de-only{display:none}
       const titelDiv = el.querySelector(".mw-buch-seite-titel");
       const ta = document.createElement("textarea");
       ta.className = "mw-ta"; ta.style.cssText = "width:100%;margin:6px 0;min-height:120px";
-      ta.value = textDiv.textContent;
+      ta.value = textDiv.innerHTML;
       textDiv.replaceWith(ta);
       let titelInp = null;
       if (titelDiv) {
@@ -4684,6 +4687,7 @@ html[lang="en"] .de-only{display:none}
     }, 50);
     return '<div class="mw-buch-neu"><div class="mw-formular">'
       + '<input id="'+fid+'-ti" class="mw-inp" placeholder="Titel (optional)">'
+      + _ftwToolbarHTML(fid+'-ta')
       + '<textarea id="'+fid+'-ta" class="mw-ta" placeholder="Notiz…" rows="3"></textarea>'
       + '<button id="'+fid+'-btn" class="mw-btn">Speichern</button>'
       + '</div></div>';
@@ -4941,45 +4945,53 @@ html[lang="en"] .de-only{display:none}
       +' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
   }
 
+  var _nmStylesInjected = false;
+  function _nmInjectStyles() {
+    if (_nmStylesInjected) return;
+    _nmStylesInjected = true;
+    var s = document.createElement('style');
+    s.textContent = '.nm-gesprach{padding:9px 12px;border-bottom:1px solid #040c14;cursor:pointer;transition:background .15s}'
+      +'.nm-gesprach:hover{background:#040c18}'
+      +'.nm-gh{display:flex;align-items:center;gap:8px;margin-bottom:2px}'
+      +'.nm-partner{font-size:.68rem;color:#3a8aaa;font-weight:700}'
+      +'.nm-badge{font-size:.48rem;background:#0d2a4a;color:#5ae8ff;border-radius:9px;padding:1px 6px;font-weight:bold;border:1px solid #1a4a7a}'
+      +'.nm-zeit{font-size:.52rem;color:#1a3040;margin-left:auto}'
+      +'.nm-vorschau{font-size:.6rem;color:#2a4a5a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}'
+      +'.nm-ich-vor{color:#1a3a4a;font-style:italic}'
+      +'.nm-new-btn{display:block;width:100%;padding:9px;font-size:.6rem;color:#1a4a5a;border:1px dashed #0a2030;background:none;cursor:pointer;letter-spacing:.1em;margin-top:6px;font-family:monospace}'
+      +'.nm-new-btn:hover{border-color:#1a4a6a;color:#2a6a7a}'
+      +'.nm-leer{color:#1a3040;font-size:.62rem;padding:16px;text-align:center;font-style:italic}'
+      +'.nm-thread{display:flex;flex-direction:column;height:100%;min-height:0}'
+      +'.nm-tk{display:flex;align-items:center;gap:10px;padding:0 0 10px;border-bottom:1px solid var(--rim);flex-shrink:0;margin-bottom:8px}'
+      +'.nm-back{font-size:.7rem;color:var(--t-sub);cursor:pointer;background:none;border:1px solid var(--rim);font-family:monospace;padding:3px 9px;border-radius:2px;transition:all .12s}'
+      +'.nm-back:hover{color:var(--t-bright);border-color:var(--t-sub)}'
+      +'.nm-tp{font-size:.8rem;color:var(--t-head);font-weight:700;letter-spacing:.03em}'
+      +'.nm-tp-handle{font-size:.58rem;color:var(--t-dim);margin-left:4px}'
+      +'.nm-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:4px 0 8px}'
+      +'.nm-day{text-align:center;font-size:.5rem;color:var(--t-dim);letter-spacing:.1em;margin:6px 0;text-transform:uppercase}'
+      +'.nm-bw-v{display:flex;flex-direction:column;align-items:flex-start;max-width:76%}'
+      +'.nm-bw-i{display:flex;flex-direction:column;align-items:flex-end;max-width:76%;align-self:flex-end}'
+      +'.nm-av{width:22px;height:22px;border-radius:50%;background:#0a2030;border:1px solid #1a4a5a;display:flex;align-items:center;justify-content:center;font-size:.55rem;color:var(--t-mid);flex-shrink:0;font-family:monospace;margin-bottom:3px}'
+      +'.nm-bbl-v{background:#020c16;border:1px solid #0e2234;color:var(--t-bright);padding:9px 13px;border-radius:2px 10px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
+      +'.nm-bbl-i{background:#081828;border:1px solid #1a3a5a;color:var(--t-bright);padding:9px 13px;border-radius:10px 2px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
+      +'.nm-bbl-t{font-size:.5rem;color:var(--t-dim);margin-top:4px;padding:0 3px}'
+      +'.nm-leer{text-align:center;color:var(--t-dim);font-size:.7rem;padding:28px;font-style:italic}'
+      +'.nm-row{display:flex;gap:8px;flex-shrink:0;padding-top:10px;border-top:1px solid var(--rim)}'
+      +'.nm-inp{flex:1;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;resize:none;min-height:36px;max-height:90px;border-radius:3px;line-height:1.4}'
+      +'.nm-inp:focus{outline:none;border-color:#1a4a6a}'
+      +'.nm-sbtn{font-size:.85rem;padding:0 14px;height:36px;background:#0a1e34;border:1px solid #1a4a6a;color:var(--t-mid);cursor:pointer;border-radius:3px;transition:all .12s;flex-shrink:0}'
+      +'.nm-sbtn:hover{background:#0e2840;color:var(--t-bright)}'
+      +'.nm-srch{width:100%;box-sizing:border-box;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;margin-bottom:8px;border-radius:3px}';
+    document.head.appendChild(s);
+  }
+
   function mwLadeNachrichten(el, h) {
+    _nmInjectStyles();
     _nmEl = el; _nmH = h; _nmPartnerId = null; _nmPartnerName = null;
     el.innerHTML = '<div style="color:#1a3a4a;font-size:0.7rem;padding:8px">Lade…</div>';
     fetch(MW_API+'/nachrichten/gespraeche', {headers:h}).then(r=>r.json()).then(d=>{
       const gs = d.gespraeche || [];
-      let html = '<style>'
-        +'.nm-gesprach{padding:9px 12px;border-bottom:1px solid #040c14;cursor:pointer;transition:background .15s}'
-        +'.nm-gesprach:hover{background:#040c18}'
-        +'.nm-gh{display:flex;align-items:center;gap:8px;margin-bottom:2px}'
-        +'.nm-partner{font-size:.68rem;color:#3a8aaa;font-weight:700}'
-        +'.nm-badge{font-size:.48rem;background:#0d2a4a;color:#5ae8ff;border-radius:9px;padding:1px 6px;font-weight:bold;border:1px solid #1a4a7a}'
-        +'.nm-zeit{font-size:.52rem;color:#1a3040;margin-left:auto}'
-        +'.nm-vorschau{font-size:.6rem;color:#2a4a5a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}'
-        +'.nm-ich-vor{color:#1a3a4a;font-style:italic}'
-        +'.nm-new-btn{display:block;width:100%;padding:9px;font-size:.6rem;color:#1a4a5a;border:1px dashed #0a2030;background:none;cursor:pointer;letter-spacing:.1em;margin-top:6px;font-family:monospace}'
-        +'.nm-new-btn:hover{border-color:#1a4a6a;color:#2a6a7a}'
-        +'.nm-leer{color:#1a3040;font-size:.62rem;padding:16px;text-align:center;font-style:italic}'
-        +'.nm-thread{display:flex;flex-direction:column;height:100%;min-height:0}'
-        +'.nm-tk{display:flex;align-items:center;gap:10px;padding:0 0 10px;border-bottom:1px solid var(--rim);flex-shrink:0;margin-bottom:8px}'
-        +'.nm-back{font-size:.7rem;color:var(--t-sub);cursor:pointer;background:none;border:1px solid var(--rim);font-family:monospace;padding:3px 9px;border-radius:2px;transition:all .12s}'
-        +'.nm-back:hover{color:var(--t-bright);border-color:var(--t-sub)}'
-        +'.nm-tp{font-size:.8rem;color:var(--t-head);font-weight:700;letter-spacing:.03em}'
-        +'.nm-tp-handle{font-size:.58rem;color:var(--t-dim);margin-left:4px}'
-        +'.nm-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:4px 0 8px}'
-        +'.nm-day{text-align:center;font-size:.5rem;color:var(--t-dim);letter-spacing:.1em;margin:6px 0;text-transform:uppercase}'
-        +'.nm-bw-v{display:flex;flex-direction:column;align-items:flex-start;max-width:76%}'
-        +'.nm-bw-i{display:flex;flex-direction:column;align-items:flex-end;max-width:76%;align-self:flex-end}'
-        +'.nm-av{width:22px;height:22px;border-radius:50%;background:#0a2030;border:1px solid #1a4a5a;display:flex;align-items:center;justify-content:center;font-size:.55rem;color:var(--t-mid);flex-shrink:0;font-family:monospace;margin-bottom:3px}'
-        +'.nm-bbl-v{background:#020c16;border:1px solid #0e2234;color:var(--t-bright);padding:9px 13px;border-radius:2px 10px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
-        +'.nm-bbl-i{background:#081828;border:1px solid #1a3a5a;color:var(--t-bright);padding:9px 13px;border-radius:10px 2px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
-        +'.nm-bbl-t{font-size:.5rem;color:var(--t-dim);margin-top:4px;padding:0 3px}'
-        +'.nm-leer{text-align:center;color:var(--t-dim);font-size:.7rem;padding:28px;font-style:italic}'
-        +'.nm-row{display:flex;gap:8px;flex-shrink:0;padding-top:10px;border-top:1px solid var(--rim)}'
-        +'.nm-inp{flex:1;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;resize:none;min-height:36px;max-height:90px;border-radius:3px;line-height:1.4}'
-        +'.nm-inp:focus{outline:none;border-color:#1a4a6a}'
-        +'.nm-sbtn{font-size:.85rem;padding:0 14px;height:36px;background:#0a1e34;border:1px solid #1a4a6a;color:var(--t-mid);cursor:pointer;border-radius:3px;transition:all .12s;flex-shrink:0}'
-        +'.nm-sbtn:hover{background:#0e2840;color:var(--t-bright)}'
-        +'.nm-srch{width:100%;box-sizing:border-box;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;margin-bottom:8px;border-radius:3px}'
-        +'</style>';
+      let html = '';
       if (!gs.length) {
         html += '<div class="nm-leer">Noch keine Nachrichten.<br>Schreib jemanden an.</div>';
       } else {
@@ -5116,6 +5128,7 @@ html[lang="en"] .de-only{display:none}
           + '</div>';
         const newGedankeForm = '<div style="background:#030d18;border:1px solid #0a2a1a;border-radius:4px;padding:10px;margin-bottom:12px">'
           + '<div style="font-size:.6rem;color:#2a8a5a;margin-bottom:6px">Neuer Gedanke</div>'
+          + _ftwToolbarHTML('mw-gd-neu')
           + '<textarea id="mw-gd-neu" style="width:100%;background:#010810;border:1px solid #0a2a1a;color:#5ae8aa;padding:5px 8px;font-size:.65rem;border-radius:3px;box-sizing:border-box;height:50px;resize:vertical;margin-bottom:6px" placeholder="Was beschäftigt dich gerade?" maxlength="280"></textarea>'
           + '<div style="display:flex;justify-content:space-between;align-items:center">'
           + '<span id="mw-gd-zaehler" style="font-size:.52rem;color:#1a3a2a">0/280</span>'
@@ -8404,7 +8417,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
 .dk-raum-kopf-name{font-size:1.04rem;color:#8ac4d4;margin-bottom:4px;font-weight:400}
 .dk-raum-kopf-satz{font-size:0.72rem;color:#2a6a7a;line-height:1.45}
 /* ── Themenfelder-Grid ─────────────────────────────────────────────────────── */
-.dk-themenfeld-grid{padding:12px 16px;display:flex;flex-direction:column;gap:6px}
+.dk-themenfeld-grid{padding:12px 16px;display:flex;flex-direction:column;gap:6px;background:var(--void)}
 .dk-themenfeld-karte{background:#030a12;border:1px solid #0a1820;padding:12px 16px;cursor:pointer;transition:background 0.12s;border-radius:2px}
 .dk-themenfeld-karte:hover{background:#060f1a}
 .dk-themenfeld-name{font-size:0.88rem;color:#5ab4c4;margin-bottom:3px;font-weight:400}
@@ -9137,8 +9150,10 @@ async function dkRaumLaden(slug) {
 }
 
 
+var _dkFadenToken = 0;
 async function dkFadenLaden(themaSlug) {
   if (!themaSlug) return;
+  const _tok = ++_dkFadenToken;
   dkFeedStopAuto();
   dkZ.faden_page=0; dkZ.faden_sort='created_at'; dkZ.faden_order='asc';
   dkShowOnly('dk-faden');
@@ -9146,6 +9161,7 @@ async function dkFadenLaden(themaSlug) {
   el.innerHTML = '<div style="color:#2a6a8a;padding:20px;font-size:0.65rem">Lade…</div>';
   try {
     const d = await fetch('/api/welt/foyer/thema/'+themaSlug).then(r=>r.json());
+    if (_tok !== _dkFadenToken) return;
     dkZ.thema = d; dkZ.schicht = 2; dkCrumbUpdate();
     const klimaBadge = d.klima_status && d.klima_status !== 'stable'
       ? ' <span class="dk-klima-badge" style="color:'+(_DK_KLIMA_COLOR[d.klima_status]||'#3a5a5a')+';border-color:'+(_DK_KLIMA_COLOR[d.klima_status]||'#0a1a1a')+'30">'+ftwT('klima.'+d.klima_status)+'</span>'
@@ -9170,7 +9186,7 @@ function _dkFadenPost(p, tok) {
   const picker = tok ? '<div class="dk-emoji-pick" id="dk-fp-'+p.id+'" onclick="event.stopPropagation()">'+
     DK_EMOJIS.map(e=>'<button class="dk-emoji-pick-btn" data-e="'+e+'" onclick="event.stopPropagation();dkEmojiToggle(this)">'+e+'</button>').join('')+
     '<button class="dk-emoji-send" onclick="event.stopPropagation();dkEmojiSenden(&apos;'+p.id+'&apos;)">Absenden</button></div>' : '';
-  const schattenBtn = tok ? '<button class="dk-schatten-btn" style="margin-top:6px;font-size:0.62rem;padding:5px 16px" onclick="event.stopPropagation();dkSchattenPopupOeffnen(&apos;'+p.id+'&apos;)">✦ Schattenkommentar</button>' : '';
+  const schattenBtn = tok ? '<button class="dk-schatten-btn" style="margin-top:6px;font-size:0.62rem;padding:5px 16px" onclick="event.stopPropagation();dkSchattenPopupOeffnen(&apos;'+p.id+'&apos;)">✦ Schattenkommentar schreiben</button>' : '';
   const trId = 'dk-body-'+p.id;
   const trBtn = '<button class="ftw-tr-btn" data-tr="'+trId+'" title="Translate to English" onclick="event.stopPropagation();var el=document.getElementById(this.dataset.tr);if(el)window.ftwTrEl(el.textContent,el,this)">→ EN</button>';
   return '<div class="dk-faden-post" onclick="dkDetailLaden(&apos;'+p.id+'&apos;)" style="cursor:pointer">' +
@@ -9632,6 +9648,7 @@ async function dkDetailLaden(postId) {
       '<div id="dk-antw-liste-'+postId+'"><div class="adm-empty">Lade…</div></div>';
     if (kannBeitragen) {
       html += '<div class="dk-beitraege-form">' +
+        _ftwToolbarHTML('dk-antw-'+postId) +
         '<textarea id="dk-antw-'+postId+'" class="dk-adm-textarea" placeholder="Beitrag schreiben…" style="min-height:55px;margin-bottom:6px"></textarea>' +
         '<button class="dk-schatten-btn" onclick="dkAntwortSenden(&apos;'+postId+'&apos;)">Beitrag hinzufügen</button>' +
         '</div>';
@@ -9793,6 +9810,7 @@ function dkSchattenPopupOeffnen(postId) {
   overlay.innerHTML =
     '<div style="background:#020c14;border:1px solid #0a2a4a;padding:24px;min-width:320px;max-width:480px;width:90%;border-radius:3px">' +
     '<div style="font-size:0.62rem;color:#1a6a4a;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px">Schattenkommentar</div>' +
+    _ftwToolbarHTML('dk-schatten-popup-ta') +
     '<textarea id="dk-schatten-popup-ta" style="width:100%;min-height:80px;background:#010a10;border:1px solid #0a2030;color:#5ab8d0;font-size:0.72rem;padding:10px;font-family:monospace;resize:vertical;box-sizing:border-box" placeholder="Stiller Kommentar…"></textarea>' +
     '<div id="dk-schatten-popup-liste" style="margin-top:10px"></div>' +
     '<div style="display:flex;gap:8px;margin-top:12px">' +
@@ -9893,7 +9911,7 @@ function _dkBeitragZeile(a) {
         '<button class="dk-emoji-send" onclick="event.stopPropagation();dkEmojiSenden(&apos;'+a.id+'&apos;)">Absenden</button></div>'
     : '';
   const scnt = a.schatten_count||0;
-  const schattenBtn = tok ? '<button class="dk-schatten-btn" style="font-size:0.62rem;padding:5px 16px;margin-top:6px" onclick="event.stopPropagation();dkSchattenPopupOeffnen(&apos;'+a.id+'&apos;)">✦ Schattenkommentar</button>' : '';
+  const schattenBtn = tok ? '<button class="dk-schatten-btn" style="font-size:0.62rem;padding:5px 16px;margin-top:6px" onclick="event.stopPropagation();dkSchattenPopupOeffnen(&apos;'+a.id+'&apos;)">✦ Schattenkommentar schreiben</button>' : '';
   return '<div class="dk-detail" style="border-bottom:1px solid #0a1820;padding:16px 20px 14px">' +
     '<div class="dk-detail-meta" style="margin-bottom:12px;padding-bottom:8px">' +
       '<span class="dk-row-autor">'+_dkAutorLink(a.autor_type, a.autor_id, a.autor_name)+'</span>' +
@@ -9953,7 +9971,7 @@ function _dkThreadNode(n, depth, postId) {
   // Aktionen
   let acts = '';
   if (tok) {
-    acts += '<button class="dk-thread-btn" onclick="dkSchattenPopupOeffnen(&apos;'+nodeId+'&apos;)">✦ Schatten</button>';
+    acts += '<button class="dk-schatten-btn" style="font-size:0.58rem;padding:3px 12px;margin-top:4px" onclick="event.stopPropagation();dkSchattenPopupOeffnen(&apos;'+nodeId+'&apos;)">✦ Schattenkommentar schreiben</button>';
   }
   if (canEdit) {
     acts += '<button class="dk-thread-btn" onclick="dkAntwortBearbeiten(&apos;'+nodeId+'&apos;,&apos;'+postId+'&apos;)">Bearbeiten</button>';
@@ -9980,6 +9998,9 @@ function _dkThreadNode(n, depth, postId) {
         '<div class="dk-thread-body">'+bodyHtml+'</div>'+
         emojiBar + picker +
         (acts?'<div class="dk-thread-actions">'+acts+'</div>':'')+
+        '<div class="dk-schatten-block" id="dk-sk-block-'+nodeId+'" style="margin-top:4px">' +
+          '<div id="dk-sk-liste-'+nodeId+'"></div>'+
+        '</div>'+
         '<div id="dk-antw-form-'+nodeId+'" style="display:none"></div>'+
         '<div id="dk-antw-edit-'+nodeId+'" style="display:none"></div>'+
       '</div>'+
@@ -9994,6 +10015,7 @@ function _dkThreadInitEmojis(nodes, postId) {
   if (!nodes) return;
   for (const n of nodes) {
     _dkPreSelectEmojis(n.id, 'dk-ep-t-'+n.id);
+    _dkSchattenLaden(n.id);
     if (n.children && n.children.length) _dkThreadInitEmojis(n.children, postId);
   }
 }
@@ -10021,6 +10043,7 @@ function dkAntwortAufAntwort(parentId, postId) {
     formEl.innerHTML=''; formEl.style.display='none'; return;
   }
   formEl.innerHTML = '<div class="dk-thread-form">'+
+    _ftwToolbarHTML('dk-antw-ta-'+parentId)+
     '<textarea id="dk-antw-ta-'+parentId+'" placeholder="Antwort auf diesen Beitrag..."></textarea>'+
     '<div style="display:flex;gap:8px;margin-top:6px;justify-content:flex-end">'+
       '<button class="dk-thread-btn" onclick="document.getElementById(&apos;dk-antw-form-'+parentId+'&apos;).innerHTML=&apos;&apos;;document.getElementById(&apos;dk-antw-form-'+parentId+'&apos;).style.display=&apos;none&apos;">Abbrechen</button>'+
@@ -11088,7 +11111,7 @@ async function selectMensch(id) {
           const spId='spl-txt-'+si+'-'+(s.id||si);
           const spText=(s.inhalt||'').slice(0,120);
           return `<div class="mp-splitter-item">
-            <div class="mp-splitter-text" id="${spId}">${esc(spText)}${(s.inhalt||'').length>120?'…':''}</div>
+            <div class="mp-splitter-text" id="${spId}">${(typeof window._ftwSanitize==='function'?window._ftwSanitize(spText):esc(spText))}${(s.inhalt||'').length>120?'…':''}</div>
             <div class="mp-splitter-meta">
               <span style="color:#aa55cc">${SPLITTER_TYP_LABEL[s.origin_type]||s.origin_type}</span>
               ${s.aufnahmen>0?'<span style="color:#3a8a4a">'+s.aufnahmen+'× aufgenommen</span>':''}
