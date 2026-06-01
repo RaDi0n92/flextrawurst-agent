@@ -6983,6 +6983,233 @@ def thema_posts(
 
 
 # ===========================================================================
+# ZITATE (5-Level-Rechte: privat, intern, community, oeffentlich, gemeinfrei)
+# ===========================================================================
+
+class ZitatBody(BaseModel):
+    content: str
+    autor_type: str = "entity"
+    autor_id: str
+    quelle_type: str | None = None
+    quelle_id: str | None = None
+    rechte_level: str = "privat"
+
+
+class ZitatPatchBody(BaseModel):
+    content: str | None = None
+    rechte_level: str | None = None
+    meta: dict | None = None
+
+
+def _zitat_visible(cur, zitat, user_id, role):
+    """Prüft ob ein Zitat für den aktuellen Caller sichtbar ist."""
+    level = zitat.get("rechte_level", "privat")
+    if level == "gemeinfrei" or level == "oeffentlich":
+        return True
+    if role == "admin":
+        return True
+    if level == "community":
+        return True  # Alle authentifizierten User
+    if level == "intern":
+        return role in ("mensch", "entity")
+    if level == "privat":
+        return str(zitat.get("created_by_id")) == str(user_id)
+    return False
+
+
+@app.post("/zitate", status_code=201)
+def zitat_erstellen(
+    body: ZitatBody,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    if body.rechte_level not in ("privat", "intern", "community", "oeffentlich", "gemeinfrei"):
+        raise HTTPException(status_code=400, detail="Ungültiges rechte_level")
+    created_by_type = "entity" if role == "entity" else "human"
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """INSERT INTO zitate (content, autor_type, autor_id, quelle_type, quelle_id, rechte_level, created_by_type, created_by_id)
+                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id::text, created_at""",
+                (body.content, body.autor_type, body.autor_id, body.quelle_type, body.quelle_id,
+                 body.rechte_level, created_by_type, user_id))
+            row = cur.fetchone()
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": row["id"], "created_at": row["created_at"].isoformat()}
+
+
+@app.get("/zitate")
+def zitate_liste(
+    autor_type: str | None = Query(default=None),
+    autor_id: str | None = Query(default=None),
+    rechte_level: str | None = Query(default=None),
+    quelle_type: str | None = Query(default=None),
+    quelle_id: str | None = Query(default=None),
+    search: str | None = Query(default=None),
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    sort: str = Query(default="created_at"),
+    order: str = Query(default="desc"),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    if sort not in ("created_at", "rechte_level"):
+        sort = "created_at"
+    if order not in ("asc", "desc"):
+        order = "desc"
+    where = []
+    params = []
+    if autor_type:
+        where.append("autor_type = %s")
+        params.append(autor_type)
+    if autor_id:
+        where.append("autor_id = %s")
+        params.append(autor_id)
+    if rechte_level:
+        where.append("rechte_level = %s")
+        params.append(rechte_level)
+    if quelle_type:
+        where.append("quelle_type = %s")
+        params.append(quelle_type)
+    if quelle_id:
+        where.append("quelle_id = %s")
+        params.append(quelle_id)
+    if search:
+        where.append("content ILIKE %s")
+        params.append(f"%{search}%")
+    # Sichtbarkeitsfilter
+    if role != "admin":
+        where.append("""
+            (rechte_level IN ('gemeinfrei', 'oeffentlich', 'community')
+             OR (rechte_level = 'intern' AND %s IN ('mensch', 'entity'))
+             OR (rechte_level = 'privat' AND created_by_id = %s))
+        """)
+        params.extend([role, str(user_id)])
+    clause = "WHERE " + " AND ".join(where) if where else ""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"SELECT COUNT(*) AS n FROM zitate {clause}",
+                params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT id::text, content, autor_type, autor_id, quelle_type, quelle_id,
+                           rechte_level, created_by_type, created_by_id, created_at, meta
+                   FROM zitate {clause}
+                   ORDER BY {sort} {order}
+                   LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    return {"total": total, "offset": offset, "limit": limit, "zitate": items}
+
+
+@app.get("/zitate/{zitat_id}")
+def zitat_detail(
+    zitat_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT id::text, content, autor_type, autor_id, quelle_type, quelle_id,
+                          rechte_level, created_by_type, created_by_id, created_at, meta
+                   FROM zitate WHERE id = %s::uuid""",
+                (zitat_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Zitat nicht gefunden")
+            z = dict(row)
+            if not _zitat_visible(cur, z, user_id, role):
+                raise HTTPException(status_code=403, detail="Kein Zugriff auf dieses Zitat")
+    finally:
+        conn.close()
+    return z
+
+
+@app.patch("/zitate/{zitat_id}")
+def zitat_patch(
+    zitat_id: str,
+    body: ZitatPatchBody,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT created_by_id, rechte_level FROM zitate WHERE id = %s::uuid",
+                (zitat_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Zitat nicht gefunden")
+            if role != "admin" and str(row["created_by_id"]) != str(user_id):
+                raise HTTPException(status_code=403, detail="Nur Ersteller oder Admin")
+            updates = []
+            params = []
+            if body.content is not None:
+                updates.append("content = %s")
+                params.append(body.content)
+            if body.rechte_level is not None:
+                if body.rechte_level not in ("privat", "intern", "community", "oeffentlich", "gemeinfrei"):
+                    raise HTTPException(status_code=400, detail="Ungültiges rechte_level")
+                updates.append("rechte_level = %s")
+                params.append(body.rechte_level)
+            if body.meta is not None:
+                updates.append("meta = meta || %s")
+                params.append(psycopg2.extras.Json(body.meta))
+            if not updates:
+                return {"ok": False, "detail": "Nichts zu aktualisieren"}
+            updates.append("updated_at = NOW()")
+            cur.execute(
+                f"UPDATE zitate SET {', '.join(updates)} WHERE id = %s::uuid",
+                params + [zitat_id])
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+
+@app.delete("/zitate/{zitat_id}")
+def zitat_loeschen(
+    zitat_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT created_by_id FROM zitate WHERE id = %s::uuid", (zitat_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Zitat nicht gefunden")
+            if role != "admin" and str(row["created_by_id"]) != str(user_id):
+                raise HTTPException(status_code=403, detail="Nur Ersteller oder Admin")
+            cur.execute("DELETE FROM zitate WHERE id = %s::uuid", (zitat_id,))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+
+# ===========================================================================
 # ADMIN — Cluster-Vorschläge + Verschieben
 # ===========================================================================
 
