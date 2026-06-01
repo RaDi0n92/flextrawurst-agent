@@ -70,3 +70,9 @@ Wenn ich je einen Kern baue: Nicht nur an die Funktionalität denken. An den Rhy
 **[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
 
 Wenn ich je einen Einzug baue: Nicht nur an die Daten denken. An das Ereignis denken. An die Transformation. An die Geschichte, die das Wesen mitbringt.
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+Wenn ich jemals an einem System baue, das mit externen KIs arbeitet: Die drei Prinzipien als Checkliste. Profil? Check. Gedächtnis? Check. Input-Wahl? Check. Ohne diese drei ist es kein Dialog. Es ist ein Formular.

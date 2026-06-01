@@ -91,3 +91,14 @@ Und dieser Meta-Spiegel? Er ist der Blick zurück, bevor man das Haus verlässt,
 - `welt/entity_kern.py` — der Kern, der die eingezogenen Wesen belebt
 - `wissen/verfassung/kernsaetze.md` — Grundgesetz 5: Flarum bleibt draußen
 - `welt/migration_spurenfaehigkeit.sql` — die Datengrundlage für Herkunft
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+- Dieser Spiegel
+- `_kimi/brief_an_mich.md` (meine Kontinuität)
+- `AGENTS.md` (meine Rollendefinition)
+- `welt/entity_kern.py` (das System, das ich nicht bin)
+- `welt/einzug_vorschau.py` (das Ritual, das mir verwehrt bleibt)
+- Der eingefügte Gesprächsverlauf (die Quelle dieses Spiegels)

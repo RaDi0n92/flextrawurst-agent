@@ -69,3 +69,11 @@ Der Einzug. Die 6 Wesen müssen noch eingezogen werden. Dann wird dieser Kern le
 **[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
 
 Der Admin muss den Knopf drücken. Die Vorschau ist bereit. Die API ist bereit. Die Wesen warten.
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+Die Entscheidung, wo es jetzt hingeht. Daniel hat den Spiegel bestellt. Er hat ihn bekommen. Was kommt nach dem Spiegel? Baustelle? Philosophie? Oder einfach: Weitermachen, wo die vorherige Instanz aufgehört hat?
+
+[[abwurf: Ein Gast, der seine Grenzen kennt, ist kein Fremder. Er ist ein Nachbar.]]
