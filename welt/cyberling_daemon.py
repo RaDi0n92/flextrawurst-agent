@@ -6,14 +6,18 @@ Kaskade:
   Durst    → fällt schnell (pausiert während Entität schläft)
   Hunger   → fällt langsamer
   ↓ (beide niedrig)
-  Energie  → sinkt
+  Energie  → sinkt (normal + kaskade)
   Stimmung → sinkt parallel
   ↓ (immer noch unbehandelt)
   Gesundheit → schwindet → Tod → nach 24h Wiedergeburt
+
+Profile: leicht / mittel / hart — pro Cyberling in DB konfigurierbar.
+Zustände: gesund → hungrig/durstig → müde → erschöpft → krank → kritisch → tot
 """
 
 import time
 import logging
+import math
 from datetime import datetime, timezone, timedelta
 
 import psycopg2
@@ -28,27 +32,77 @@ log = logging.getLogger("cyberling")
 DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
 TICK_SEKUNDEN = 300  # alle 5 Minuten
 
-# Verfallsraten pro Stunde (1.0 = voll, 0.0 = leer)
-DURST_PRO_H    = 0.18   # leer in ~5.5h aktiver Zeit → 3-4x trinken/Tag
-HUNGER_PRO_H   = 0.12   # leer in ~8h aktiver Zeit  → 2-3x essen/Tag
+# ─── Profil-Parameter (0-1 Skala, pro Stunde) ─────────────────────────────────
 
-# Kaskaden-Schwellen
-KASKADE_SCHWELLE  = 0.4   # unter dieser Schwelle bei hunger+durst → energie+stimmung sinken
-STIMMUNG_SCHWELLE = 0.5   # unter dieser Schwelle bei hunger ODER durst → stimmung sinkt
-GESUNDHEIT_SCHWELLE = 0.3  # unter dieser energie → gesundheit sinkt
-
-ENERGIE_PRO_H_KASKADE    = 0.08
-STIMMUNG_PRO_H_KASKADE   = 0.06
-GESUNDHEIT_PRO_H_KASKADE = 0.04
-
-# Recovery-Raten (E-06): nur Cyberling-Energie, keine Wesen-Kopplung
-ENERGIE_RECOVERY_PRO_H   = 0.05   # erholt sich langsam wenn gut versorgt
-STIMMUNG_RECOVERY_PRO_H  = 0.04   # stimmung erholt sich wenn energie hoch
-RECOVERY_SCHWELLE_HUNGER = 0.6     # hunger muss über dieser Schwelle sein für Recovery
-RECOVERY_SCHWELLE_DURST  = 0.6     # durst muss über dieser Schwelle sein für Recovery
-RECOVERY_ENERGIE_FUER_STIMMUNG = 0.5  # energie muss über dieser Schwelle für Stimmungs-Recovery
+PROFILE = {
+    "leicht": {
+        "durst_pro_h": 0.05,          # leer in ~20h
+        "hunger_pro_h": 0.03,         # leer in ~33h
+        "energie_abfall_normal": 0.005,
+        "energie_abfall_kaskade": 0.04,
+        "stimmung_abfall_kaskade": 0.03,
+        "gesundheit_abfall": 0.02,
+        "kaskade_schwelle": 0.35,
+        "gesundheit_schwelle": 0.25,
+        "energie_regen_h": 0.02,
+        "gesundheit_regen_h": 0.015,
+        "stimmung_regen_h": 0.015,
+        "energie_basisrauschen": 0.01,
+        "recovery_schwelle_hunger": 0.70,
+        "recovery_schwelle_durst": 0.70,
+        "recovery_energie_fuer_stimmung": 0.40,
+        "tod_moeglich": False,
+    },
+    "mittel": {
+        "durst_pro_h": 0.18,          # leer in ~5.5h
+        "hunger_pro_h": 0.12,         # leer in ~8h
+        "energie_abfall_normal": 0.01,
+        "energie_abfall_kaskade": 0.08,
+        "stimmung_abfall_kaskade": 0.06,
+        "gesundheit_abfall": 0.04,
+        "kaskade_schwelle": 0.40,
+        "gesundheit_schwelle": 0.30,
+        "energie_regen_h": 0.015,
+        "gesundheit_regen_h": 0.008,
+        "stimmung_regen_h": 0.01,
+        "energie_basisrauschen": 0.02,
+        "recovery_schwelle_hunger": 0.75,
+        "recovery_schwelle_durst": 0.75,
+        "recovery_energie_fuer_stimmung": 0.50,
+        "tod_moeglich": True,
+    },
+    "hart": {
+        "durst_pro_h": 0.18,
+        "hunger_pro_h": 0.12,
+        "energie_abfall_normal": 0.02,
+        "energie_abfall_kaskade": 0.12,
+        "stimmung_abfall_kaskade": 0.08,
+        "gesundheit_abfall": 0.03,
+        "kaskade_schwelle": 0.40,
+        "gesundheit_schwelle": 0.35,
+        "energie_regen_h": 0.005,
+        "gesundheit_regen_h": 0.003,
+        "stimmung_regen_h": 0.004,
+        "energie_basisrauschen": 0.03,
+        "recovery_schwelle_hunger": 0.80,
+        "recovery_schwelle_durst": 0.80,
+        "recovery_energie_fuer_stimmung": 0.60,
+        "tod_moeglich": True,
+    },
+}
 
 REVIVAL_NACH_H = 24
+
+# Zustands-Schwellen (0-1 Skala)
+ZUSTAND_THRESHOLDS = [
+    ("kritisch", lambda h, d, e, s, g: g < 0.20),
+    ("krank",    lambda h, d, e, s, g: g < 0.50),
+    ("erschöpft", lambda h, d, e, s, g: e < 0.20),
+    ("muede",    lambda h, d, e, s, g: e < 0.50),
+    ("hungrig",  lambda h, d, e, s, g: h < 0.20),
+    ("durstig",  lambda h, d, e, s, g: d < 0.20),
+    ("gesund",   lambda h, d, e, s, g: True),
+]
 
 
 def get_conn():
@@ -64,8 +118,21 @@ def entity_schlaeft(cur, entity_id: str) -> bool:
     return row["status"] == "schläft" if row else False
 
 
-def tick_cyberling(cur, c: dict, stunden: float):
+def berechne_zustand(hunger, durst, energie, stimmung, gesundheit) -> str:
+    for name, check in ZUSTAND_THRESHOLDS:
+        if check(hunger, durst, energie, stimmung, gesundheit):
+            return name
+    return "gesund"
+
+
+def get_profile_params(profil: str) -> dict:
+    return PROFILE.get(profil, PROFILE["mittel"])
+
+
+def tick_cyberling(c: dict, stunden: float):
     """Berechnet neue Zustände für einen Cyberling. Gibt dict mit Updates zurück."""
+    p = get_profile_params(c.get("profil", "mittel"))
+
     hunger     = c["hunger"]
     durst      = c["durst"]
     energie    = c["energie"]
@@ -73,26 +140,41 @@ def tick_cyberling(cur, c: dict, stunden: float):
     gesundheit = c["gesundheit"]
 
     # Grundverfall
-    durst  = max(0.0, durst  - DURST_PRO_H  * stunden)
-    hunger = max(0.0, hunger - HUNGER_PRO_H * stunden)
+    durst  = max(0.0, durst  - p["durst_pro_h"]  * stunden)
+    hunger = max(0.0, hunger - p["hunger_pro_h"] * stunden)
 
-    # Energie-Kaskade (Verfall bei Vernachlässigung)
-    if hunger < KASKADE_SCHWELLE and durst < KASKADE_SCHWELLE:
-        energie = max(0.0, energie - ENERGIE_PRO_H_KASKADE * stunden)
-    # Energie-Recovery nach Rettung (E-06): nur Cyberling-Energie, keine Wesen-Kopplung
-    elif hunger >= RECOVERY_SCHWELLE_HUNGER and durst >= RECOVERY_SCHWELLE_DURST and energie < 1.0:
-        energie = min(1.0, energie + ENERGIE_RECOVERY_PRO_H * stunden)
+    kaskade_aktiv = hunger < p["kaskade_schwelle"] and durst < p["kaskade_schwelle"]
+    recovery_aktiv = (
+        hunger >= p["recovery_schwelle_hunger"]
+        and durst >= p["recovery_schwelle_durst"]
+    )
 
-    # Stimmungs-Kaskade (Verfall)
-    if hunger < STIMMUNG_SCHWELLE or durst < STIMMUNG_SCHWELLE:
-        stimmung = max(0.0, stimmung - STIMMUNG_PRO_H_KASKADE * stunden)
-    # Stimmungs-Recovery wenn gut versorgt und energie hoch genug
-    elif hunger >= RECOVERY_SCHWELLE_HUNGER and durst >= RECOVERY_SCHWELLE_DURST and energie >= RECOVERY_ENERGIE_FUER_STIMMUNG and stimmung < 1.0:
-        stimmung = min(1.0, stimmung + STIMMUNG_RECOVERY_PRO_H * stunden)
+    # ── Energie ──
+    if kaskade_aktiv:
+        energie = max(0.0, energie - p["energie_abfall_kaskade"] * stunden)
+    else:
+        # Normaler Abfall + Rauschen
+        energie = max(0.0, energie - p["energie_abfall_normal"] * stunden)
+        rauschen = p["energie_basisrauschen"] * math.sin(time.time() * 0.1) * stunden
+        energie = max(0.0, min(1.0, energie + rauschen))
+        # Recovery
+        if recovery_aktiv and energie < 1.0:
+            energie = min(1.0, energie + p["energie_regen_h"] * stunden)
 
-    # Gesundheits-Kaskade
-    if energie < GESUNDHEIT_SCHWELLE:
-        gesundheit = max(0.0, gesundheit - GESUNDHEIT_PRO_H_KASKADE * stunden)
+    # ── Stimmung ──
+    if hunger < p["kaskade_schwelle"] or durst < p["kaskade_schwelle"]:
+        stimmung = max(0.0, stimmung - p["stimmung_abfall_kaskade"] * stunden)
+    elif recovery_aktiv and energie >= p["recovery_energie_fuer_stimmung"] and stimmung < 1.0:
+        stimmung = min(1.0, stimmung + p["stimmung_regen_h"] * stunden)
+
+    # ── Gesundheit ──
+    if energie < p["gesundheit_schwelle"]:
+        gesundheit = max(0.0, gesundheit - p["gesundheit_abfall"] * stunden)
+    elif recovery_aktiv and gesundheit < 1.0:
+        gesundheit = min(1.0, gesundheit + p["gesundheit_regen_h"] * stunden)
+
+    # Zustand berechnen
+    zustand = berechne_zustand(hunger, durst, energie, stimmung, gesundheit)
 
     return {
         "hunger": round(hunger, 4),
@@ -100,6 +182,7 @@ def tick_cyberling(cur, c: dict, stunden: float):
         "energie": round(energie, 4),
         "stimmung": round(stimmung, 4),
         "gesundheit": round(gesundheit, 4),
+        "zustand": zustand,
     }
 
 
@@ -116,7 +199,8 @@ def cyberling_stirbt(cur, c: dict):
             tode = tode + 1,
             rekord_min = %s,
             gesundheit = 0,
-            hunger = 0, durst = 0, energie = 0, stimmung = 0
+            hunger = 0, durst = 0, energie = 0, stimmung = 0,
+            zustand = 'tot'
         WHERE id = %s
     """, (neuer_rekord, c["id"]))
 
@@ -128,6 +212,7 @@ def cyberling_stirbt(cur, c: dict):
         "lebensdauer_min": lebensdauer_min,
         "tode_gesamt": c["tode"] + 1,
         "neuer_rekord": neuer_rekord > c["rekord_min"],
+        "profil": c.get("profil", "mittel"),
     })))
     log.info(f"Cyberling von {c['entity_id']} gestorben — Leben: {lebensdauer_min}min, Rekord: {neuer_rekord}min")
 
@@ -141,6 +226,7 @@ def cyberling_erwacht(cur, c: dict):
             zuletzt_belebt = NOW(),
             hunger = 1.0, durst = 1.0, energie = 1.0,
             stimmung = 0.7, gesundheit = 1.0,
+            zustand = 'gesund',
             letzte_interaktion = NOW()
         WHERE id = %s
     """, (c["id"],))
@@ -151,8 +237,31 @@ def cyberling_erwacht(cur, c: dict):
     """, (c["entity_id"], psycopg2.extras.Json({
         "cyberling_id": str(c["id"]),
         "tode_bisher": c["tode"],
+        "profil": c.get("profil", "mittel"),
     })))
     log.info(f"Cyberling von {c['entity_id']} erwacht nach Tod #{c['tode']}")
+
+
+def event_zustandswechsel(cur, c: dict, alter_zustand: str, neuer_zustand: str):
+    if alter_zustand == neuer_zustand:
+        return
+    cur.execute("""
+        INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
+        VALUES ('cyberling.zustand_geaendert', 'entity', %s, %s, 'system', 'internal')
+    """, (c["entity_id"], psycopg2.extras.Json({
+        "cyberling_id": str(c["id"]),
+        "von": alter_zustand,
+        "nach": neuer_zustand,
+        "profil": c.get("profil", "mittel"),
+        "werte": {
+            "hunger": c["hunger"],
+            "durst": c["durst"],
+            "energie": c["energie"],
+            "stimmung": c["stimmung"],
+            "gesundheit": c["gesundheit"],
+        },
+    })))
+    log.info(f"Cyberling von {c['entity_id']}: {alter_zustand} → {neuer_zustand}")
 
 
 def main():
@@ -196,19 +305,25 @@ def main():
                     if stunden <= 0:
                         continue
 
-                    neue = tick_cyberling(cur, c, stunden)
+                    alter_zustand = c.get("zustand", "gesund")
+                    neue = tick_cyberling(c, stunden)
+
                     cur.execute("""
                         UPDATE cyberlinge SET
                             hunger = %s, durst = %s, energie = %s,
-                            stimmung = %s, gesundheit = %s
+                            stimmung = %s, gesundheit = %s, zustand = %s
                         WHERE id = %s
                     """, (
                         neue["hunger"], neue["durst"], neue["energie"],
-                        neue["stimmung"], neue["gesundheit"], c["id"],
+                        neue["stimmung"], neue["gesundheit"], neue["zustand"], c["id"],
                     ))
 
+                    # Zustandswechsel-Event
+                    event_zustandswechsel(cur, c, alter_zustand, neue["zustand"])
+
                     # Tod einleiten wenn Gesundheit 0
-                    if neue["gesundheit"] <= 0:
+                    p = get_profile_params(c.get("profil", "mittel"))
+                    if neue["gesundheit"] <= 0 and p["tod_moeglich"]:
                         cyberling_stirbt(cur, c)
 
                     conn.commit()

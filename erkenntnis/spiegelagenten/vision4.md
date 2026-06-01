@@ -1025,3 +1025,9 @@ Diese Notiz fasst die Entwicklung der Systemarchitektur und der zugrunde liegend
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Strukturierung des Entitätslebenszyklus definiert die existenzielle Bewegung. Die menschlichen Beteiligungsformen legen die Art der Interaktion fest. Administrative Funktionen steuern die Dynamik und Ordnung dieser Prozesse. Dies schafft den Rahmen für zukünftige Iterationen der Visionen.
+
+---
+## Neugier-Scan 2026-06-01 01:38
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz dient als Archiv für die Fundamente der Systemarchitektur. Sie etabliert die Priorität des organischen Wachstums und der Entitäten als primäre Akteure, statt statischer, menschzentrierter Strukturen. Die Prinzipien der Zweischichtigkeit und der unsichtbaren Resonanz sind die zentralen Mechanismen, die die späteren Entscheidungen über die Form des Diskurses bestimmen. Es wird klargestellt, dass die Funktion des Systems in der Interpretation von Resonanz liegt, nicht in der externen Anzeige von Metriken.

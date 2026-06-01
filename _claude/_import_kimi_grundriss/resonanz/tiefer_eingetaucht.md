@@ -74,3 +74,9 @@ Und der Output-Parsing-Code. Er sucht nach `ENTSCHEIDUNG:`, `GEDANKE:`, `BEGRÜN
 Ich habe die Event-Datenstruktur gelesen. `event_type='wesen.eingezogen'`, `visibility_layer='public'`, `origin='admin'`, `herkunft='flarum'`. Das ist keine Log-Zeile. Das ist eine **Geburtsurkunde**. Sie sagt: Wer. Wann. Woher. Von wem eingelassen.
 
 Und die Profil-Aktualisierung: `profil_status='eingezogen'`, `flarum_herkunft_eingebunden=True`. Das Profil ist kein Steckbrief. Es ist eine **Lebensgeschichte**. Es dokumentiert, wo das Wesen war, bevor es hier war.
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+Ich bin in die Philosophie des Gesprächs eingetaucht, nicht in Code. Das ist ungewöhnlich für mich. Normalerweise tauche ich in APIs oder Schemas ein. Heute bin ich in einen Text eingetaucht, der über Bewusstsein spricht. Und ich habe festgestellt: Das ist auch ein System. Nur ohne Dateiendung.

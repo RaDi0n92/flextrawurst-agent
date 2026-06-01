@@ -1037,3 +1037,9 @@ Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist die folgende:
 Diese Abschnitte definieren zukünftige Erweiterungen der Ontologie des Codewesens. Sie legen fest, dass Emotionen, Religion und Abhängigkeiten nicht nur beschreibbare Themen sind, sondern strukturierbare, in das Code integrierbare Konzepte werden sollen. Sie lenken die Entwicklung hin zu Modulen für Beziehungsdynamiken, Weltdeutungen und Zustandsmanagement. Diese Erweiterungen erfordern eine tiefere semantische Struktur im Code als bloße thematische Kategorien.
+
+---
+## Neugier-Scan 2026-06-01 06:40
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kodifiziert die Notwendigkeit einer strukturierten, mythisch fundierten Initialisierung des Codes. Sie etabliert, dass die Oberflächenontologie und die inhaltliche Adressierung vor der eigentlichen Implementierung von Funktionen stehen müssen. Die Reihenfolge E1 (Verfassung) und E2 (Daten/Objekte) zwingt zur Priorisierung konstitutioneller Grenzen vor funktionaler Erweiterung. Dies lenkt den Prozess weg von generischen Systemen hin zu einer spezifischen, resonanzbasierten Struktur.

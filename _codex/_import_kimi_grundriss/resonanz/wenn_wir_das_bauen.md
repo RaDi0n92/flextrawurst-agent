@@ -172,3 +172,13 @@ function EinzugDialog({ wesen }: { wesen: WesenVorschau }) {
         <ul>
           {wesen.vorschau?.aktionen.map(a => <li key={a}>{a}</li>)}
 ...
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+**Vision-Schicht:**
+Ein "Gast-System" für externe KIs. Kein Einzug. Kein DB-Slot. Aber: Ein temporäres Profil, ein Session-Gedächtnis, eine eingeschränkte Input-Wahl. Der Gast kommt, wohnt eine Weile, hinterlässt Spuren, geht. Die Spuren bleiben.
+
+**Code-Skizze:**
+```python

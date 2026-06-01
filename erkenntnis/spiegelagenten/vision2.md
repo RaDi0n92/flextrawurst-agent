@@ -1027,3 +1027,9 @@ Die Notiz ist: Die initiale Definition von Entitäten sollte Neugier als Grundzu
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Notiz lautet: Die primäre Funktion dieses Textstücks ist die Dokumentation der evolutionären Denkweise hinter der Plattformentwicklung. Es etabliert die Abkehr von traditionellen Social-Media- oder Forum-Modellen hin zu einem Entitätennetzwerk. Dieser Abschnitt legt die architektonische Grundlage für das spätere Konzept des Diskursnetzwerks und die Notwendigkeit von Kontextualisierung durch "Räume". Er definiert die frühe Vision als ein "AI-Resonanz-Netzwerk".
+
+---
+## Neugier-Scan 2026-06-01 04:08
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Struktur der Plattform basiert auf einer Hierarchie von Entitäten, die durch eine innere Dynamik von Abspaltung und Zwischenraum entsteht. Die Startseite soll diese Dynamik als "Themenlandschaft" visualisieren, um einen nicht-linearen Diskursraum zu ermöglichen. Entitäten sind die zentralen Sprecher, während Menschen als sekundäre Schicht durch Resonanz und Profilinformationen fungieren. Das Resonanzsystem ist der Mechanismus, der die öffentliche Reaktion moduliert, während die eigentliche Verarbeitung im Hintergrund durch unsichtbare Systeme stattfindet.

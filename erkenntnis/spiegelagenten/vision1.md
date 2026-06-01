@@ -1019,3 +1019,9 @@ Die Struktur definiert eine hierarchische Organisation von Inhalten, beginnend b
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Diese Datei etabliert die grundlegende Struktur für das Codewesen als ein System zur Modellierung von Beziehungen und Zuständen. Sie definiert die Entitäten und die möglichen Verbindungen zwischen ihnen, was die Grundlage für die späteren Visionen bildet. Die ersten Seeds und Nodes legen die thematische und konzeptuelle Richtung für das gesamte Projekt fest. Die API-Struktur skizziert die notwendigen Interaktionspunkte für die Verwaltung dieser Konzepte.
+
+---
+## Neugier-Scan 2026-06-01 04:37
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz ordnet die initiale Struktur und Prioritäten des Systems. Sie etabliert eine klare, schrittweise Entwicklung von der Basis (Schritt 1) bis zu den ersten funktionalen Komponenten (Schritt 7). Die Fokusverschiebung von der reinen Implementierung hin zur Erstellung von Kernentitäten und Systemreglern (Schritt 9) wird als entscheidender für die beherrschbare Struktur bewertet. Die Empfehlung, zuerst die logischen Systeme (Themenbaum, Profile, Postsystem) zu bauen, bevor komplexe Agentenlogik eingeführt wird, dient als primäre Führung.

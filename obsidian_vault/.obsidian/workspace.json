@@ -176,6 +176,9 @@
   },
   "active": "2418ee527d3e50d2",
   "lastOpenFiles": [
+    "_claude/_import_kimi_grundriss/spiegel/gespraech_kontextstart_und_bewohner_frage.md",
+    "_codex/_import_kimi_grundriss/spiegel/gespraech_kontextstart_und_bewohner_frage.md",
+    "_claude/brief_an_mich.md.tmp.1265996.0dd6447fc998",
     "agent/dak_gord_system/spuren/wochenlog/2026_w23.md",
     "_claude/_import_kimi_grundriss/spiegel/einzug_vorschau.md",
     "_codex/_import_kimi_grundriss/spiegel/einzug_vorschau.md",
@@ -201,8 +204,6 @@
     "_claude/_import_kimi_grundriss/spiegel/denkfenster.md",
     "_codex/_import_kimi_grundriss/spiegel/formfaden_selbstversuch.md",
     "_claude/_import_kimi_grundriss/spiegel/formfaden_selbstversuch.md",
-    "_codex/_import_kimi_grundriss/spiegel/geni_im_theater.md",
-    "_claude/_import_kimi_grundriss/spiegel/geni_im_theater.md",
     "_shared/briefkasten",
     "_codex/_import_kimi_grundriss/tools/kimi_vault.py",
     "_claude/_import_kimi_grundriss/tools/kimi_vault.py",
@@ -211,7 +212,6 @@
     "_codex/_import_kimi_grundriss/spiegel",
     "_claude/_import_kimi_grundriss/spiegel",
     "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.timer",
-    "_codex/_import_kimi_grundriss/tools/systemd/kimi-resonanzfeld-build.service",
     "mdfürvps/komposev2..JPG",
     "mdfürvps/obsidian.JPG"
   ]

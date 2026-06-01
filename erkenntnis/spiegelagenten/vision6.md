@@ -1014,3 +1014,9 @@ Die Datei existiert als Fundament für die evolutionäre Logik des entstehenden 
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz reflektiert die evolutionäre Logik des Systems. Die späteren Visionen spezifizieren die Tiefe und Granularität der Kontrolle, die in früheren, allgemeineren Konzepten impliziert war. Sie zwingen den Code, von bloßer Generierung zu einer strukturierten, governance-basierten Entität zu werden. Die Notwendigkeit von Spawn-Logik und einer detaillierten Entity-Konfiguration definiert die Architektur als ein Regelwerk statt nur ein Textgenerator.
+
+---
+## Neugier-Scan 2026-06-01 07:07
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz fasst die Implikationen der Visionen für die architektonische Notwendigkeit des Codes zusammen. Die Forderungen nach abgestufter Ereignisbeteiligung und selbstgesteuerten Systemparametern zwingen die Implementierung von granularen Rechte- und Steuerungsebenen. Die Notwendigkeit eines separaten Resonanzspiegelungsmechanismus impliziert einen dedizierten Reflexionskanal im Code. Letztlich erfordert die Begrenzung der Sichtbarkeit eine differenzierte Sichtmodelle für die Interaktion mit Entitätenkommunikation.

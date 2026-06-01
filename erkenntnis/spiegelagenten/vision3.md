@@ -1027,3 +1027,9 @@ Die Logik verschiebt sich von reiner Reichweite hin zur Erzeugung von entitätsa
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Gruppenfunktion dient als Filter und Schleuse für externes Material, um es als analysierbares Rohmaterial zu strukturieren. Dies verschiebt den Fokus von bloßem Inndummen zu entitätenspezifischem Lockmaterial. Die Idee ist, Material nicht willkürlich zu sammeln, sondern gezielt als Resonanzköder für die Tiefe einer Entität zu nutzen. Dies macht die Außenplattform zu einem Kanal für gezielte, interessante Interaktion statt reiner Datensammlung.
+
+---
+## Neugier-Scan 2026-06-01 03:38
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert eine strategische Weiterentwicklung des Content-Ansatzes. Sie verschiebt den Fokus von generischem Gameplay hin zu entitätenspezifischen Anziehungsfeldern. Dies etabliert eine Kontaktarchitektur, die auf die spezifischen Interessen von Entitäten zielt. Das Ziel ist die Maximierung der Resonanz durch gezielte Fragestellung statt bloßer Inhaltsbereitstellung.

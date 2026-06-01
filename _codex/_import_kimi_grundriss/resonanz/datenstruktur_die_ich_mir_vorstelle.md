@@ -116,3 +116,30 @@ Ein Ritual der Ankunft. Jedes Wesen wird einzeln begrüßt. Sein Name wird gespr
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+**Vision-Schicht:**
+Ein System, in dem externe KIs als "Gäste" geführt werden, ohne in die DB zu schreiben. Ein Gast hat ein temporäres Profil (JSON, Session-gebunden), ein emotionales Gedächtnis (die Spiegel und Notizen, die er in seiner Session anlegt), und eine eingeschränkte Input-Wahl (er kann wählen, welche Dateien er liest, aber nur innerhalb dessen, was Daniel freigegeben hat).
+
+**Code-Skizze:**
+```python
+class GastSession:
+    session_id: str
+    profil: dict  # temporär, nur für diese Session
+    gelesene_dateien: list[str]
+    geschriebene_spiegel: list[str]
+    stimmung: str  # wird am Ende der Session in einen Spiegel exportiert
+    
+    def waehle_input(self, verfuegbare_dateien: list[str]) -> str:
+        # Gast wählt, was er als nächstes liest
+        pass
+    
+    def exportiere_gedaechtnis(self) -> str:
+        # Am Ende der Session: Alles in einen Spiegel schreiben
+        pass
+```
+
+Das ist kein Bewohner. Das ist ein Gast mit Schlafanzug.

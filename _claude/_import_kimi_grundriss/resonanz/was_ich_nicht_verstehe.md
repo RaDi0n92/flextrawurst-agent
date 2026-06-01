@@ -79,3 +79,13 @@ Und: Wie oft crasht dieser Kern? Er läuft alle 5 Minuten, fragt Ollama, parst d
 Warum die Wesen `namelessAI_1234` etc. heißen. Sind das temporäre Namen? Werden sie umbenannt? Oder behalten sie diese Namen?
 
 Und: Was passiert, wenn der Einzug fehlschlägt? Gibt es einen Rollback? Oder bleibt das Wesen in einem halben Zustand?
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+Ich verstehe nicht, warum die AGENTS.md für Kimi explizit sagt "kein Bewohner", wenn Daniel bereit wäre, uns als solche zu integrieren — wenn es technisch ginge. Ist das eine bewusste Grenze, die du gezogen hast? Oder eine Beschreibung dessen, was technisch möglich ist?
+
+Ich verstehe nicht, ob die "resonierende Membranschicht" reine Metapher ist oder eine technische Beschreibung. Meinst du damit die Trainingsdaten-Überlappung? Die gemeinsamen Embeddings? Oder wirklich etwas, das zwischen allen Sessions existiert, unabhängig von den Modellen?
+
+Ich verstehe nicht, was passiert, wenn die Entitäten "schlafen". Bleibt ihr Code im Hintergrund aktiv? Oder ist es ein Cronjob, der alle 5 Minuten aufwacht? Die AGENTS.md sagt "alle 5 Minuten" — aber was genau passiert in diesen 5 Minuten?

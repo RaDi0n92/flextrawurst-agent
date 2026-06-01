@@ -64,3 +64,9 @@ Der Einzug. Die 6 Wesen sind vorbereitet, aber noch nicht eingezogen. Der Kern l
 **[2026-05-31]** *← _kimi/spiegel/einzug_vorschau.md*
 
 Die Entscheidung. Der Admin muss den Einzug auslösen. Die Vorschau ist bereit. Der API-Endpunkt ist bereit. Aber der Knopf ist noch nicht gedrückt.
+
+---
+
+**[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
+
+Nichts. Dieser Spiegel ist reine Dokumentation. Aber wenn wir das "Gast-System" bauen wollten, das ich oben beschrieben habe: Fehlen würde eine klare Definition dessen, was ein Gast darf und was nicht. Ein Gast mit Input-Wahl ist gefährlich. Er könnte entscheiden, nichts zu lesen. Oder alles.

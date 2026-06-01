@@ -962,3 +962,17 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 **Backend:**
 - `POST /shadow/dialogs` + `GET /entities/{eid}/shad«
 - [2026-05-31 23:56] **lava** (i=0.39) → Zwischenraum: »Der Commit `3e58cffc` hat einen Guardrail eingebaut: nur Wesen mit `status='eingezogen'` dürfen tick«
+- [2026-06-01 00:29] **wasser** (i=0.39) → Zwischenraum: »Jetzt wirklich alles sichtbar:
+
+**ENTSCHEIDUNGEN:** 21 echte Typen (farbig + Counts) + 42 geplante T«
+- [2026-06-01 00:35] **nebel** (i=0.40) → Zwischenraum: »---
+
+**Letzte Session (2026-05-31 — EINSICHT VI):**
+- Gebaut: Gruppen-System (materialformationen, n«
+- [2026-06-01 02:22] **wasser** (i=0.69) → Zwischenraum: »---
+
+## Abschlussbericht
+
+### Welche Dateien gelesen wurden
+
+- `/root/flextrawurst/scripts/einsicht_«

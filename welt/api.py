@@ -4661,12 +4661,50 @@ def wesen_einzug(
 
 # --- Cyberling ---
 
+# Pflege-Parameter pro Profil: Effekt, Cooldown-Stunden, Schwelle, Cap
 CYBERLING_PFLEGE = {
-    "fuettern":       {"hunger": 0.5},
-    "trinken_geben":  {"durst": 0.4},
-    "spielen":        {"stimmung": 0.3, "energie": 0.15},
-    "streicheln":     {"stimmung": 0.25},
+    "fuettern": {
+        "feld": "hunger",
+        "effekt": {"leicht": 0.18, "mittel": 0.26, "hart": 0.22},
+        "cooldown_h": {"leicht": 2.0, "mittel": 1.5, "hart": 1.5},
+        "schwelle": {"leicht": 0.75, "mittel": 0.75, "hart": 0.80},
+        "cap": {"leicht": 0.85, "mittel": 0.92, "hart": 0.88},
+        "ts_feld": "letztes_fuettern",
+    },
+    "trinken_geben": {
+        "feld": "durst",
+        "effekt": {"leicht": 0.20, "mittel": 0.30, "hart": 0.22},
+        "cooldown_h": {"leicht": 1.5, "mittel": 1.0, "hart": 1.0},
+        "schwelle": {"leicht": 0.70, "mittel": 0.75, "hart": 0.80},
+        "cap": {"leicht": 0.85, "mittel": 0.95, "hart": 0.88},
+        "ts_feld": "letztes_wasser",
+    },
+    "spielen": {
+        "felder": {"stimmung": {"leicht": 0.20, "mittel": 0.25, "hart": 0.15},
+                   "energie": {"leicht": -0.05, "mittel": -0.08, "hart": -0.10}},
+        "cooldown_h": {"leicht": 3.0, "mittel": 2.5, "hart": 2.0},
+        "schwelle": {"leicht": 0.50, "mittel": 0.50, "hart": 0.55},
+        "cap": {"leicht": 1.0, "mittel": 1.0, "hart": 1.0},
+        "ts_feld": "zuletzt_gespielt",
+    },
+    "streicheln": {
+        "feld": "stimmung",
+        "effekt": {"leicht": 0.15, "mittel": 0.20, "hart": 0.12},
+        "cooldown_h": {"leicht": 2.0, "mittel": 1.5, "hart": 1.0},
+        "schwelle": {"leicht": 0.30, "mittel": 0.30, "hart": 0.35},
+        "cap": {"leicht": 1.0, "mittel": 1.0, "hart": 1.0},
+        "ts_feld": "zuletzt_gestreichelt",
+    },
 }
+
+
+def _cyberling_cooldown_ok(c: dict, ts_feld: str, cooldown_h: float) -> bool:
+    ts = c.get(ts_feld)
+    if not ts:
+        return True
+    seit = (datetime.now(timezone.utc) - ts.replace(tzinfo=timezone.utc)).total_seconds() / 3600
+    return seit >= cooldown_h
+
 
 @app.post("/wesen/{entity_id}/cyberling/{aktion}")
 def cyberling_pflegen(
@@ -4688,14 +4726,60 @@ def cyberling_pflegen(
             if c["status"] == "tot":
                 raise HTTPException(status_code=409, detail="Cyberling ist tot — wartet auf Wiedergeburt")
 
-            updates = CYBERLING_PFLEGE[aktion]
+            profil = c.get("profil", "mittel")
+            cfg = CYBERLING_PFLEGE[aktion]
+            ts_feld = cfg["ts_feld"]
+            cooldown_h = cfg["cooldown_h"][profil]
+
+            # Cooldown prüfen
+            if not _cyberling_cooldown_ok(c, ts_feld, cooldown_h):
+                letztes = c.get(ts_feld)
+                verbleibend = cooldown_h
+                if letztes:
+                    verbleibend = max(0, cooldown_h - (datetime.now(timezone.utc) - letztes.replace(tzinfo=timezone.utc)).total_seconds() / 3600)
+                raise HTTPException(
+                    status_code=429,
+                    detail=f"Aktion '{aktion}' noch im Cooldown — verbleibend: {verbleibend:.1f}h"
+                )
+
             neue_werte = {}
-            for feld, delta in updates.items():
-                neue_werte[feld] = min(1.0, c[feld] + delta)
+            payload = {}
+
+            # Einfache Aktion (ein Feld)
+            if "feld" in cfg:
+                feld = cfg["feld"]
+                schwelle = cfg["schwelle"][profil]
+                # Bei Pflege: Schwelle prüft, ob Aktion erlaubt ist
+                # (Pflege ist immer erlaubt, aber Effekt ist kleiner wenn über Schwelle)
+                effekt = cfg["effekt"][profil]
+                cap = cfg["cap"][profil]
+                alt = c[feld]
+                neu = min(cap, alt + effekt)
+                neue_werte[feld] = round(neu, 4)
+                payload["feld"] = feld
+                payload["vorher"] = round(alt, 4)
+                payload["nachher"] = round(neu, 4)
+                payload["effekt"] = effekt
+                payload["cap"] = cap
+
+            # Komplexe Aktion (mehrere Felder, z.B. spielen)
+            elif "felder" in cfg:
+                for feld, effekte in cfg["felder"].items():
+                    effekt = effekte[profil]
+                    cap = cfg["cap"][profil]
+                    alt = c[feld]
+                    neu = min(cap, max(0.0, alt + effekt))
+                    neue_werte[feld] = round(neu, 4)
+                payload["felder"] = {k: {"vorher": round(c[k], 4), "nachher": v} for k, v in neue_werte.items()}
+                payload["effekte"] = {k: v[profil] for k, v in cfg["felder"].items()}
+
+            # Timestamp-Feld aktualisieren
+            neue_werte[ts_feld] = datetime.now(timezone.utc)
+            neue_werte["letzte_interaktion"] = datetime.now(timezone.utc)
 
             set_clause = ", ".join(f"{k} = %s" for k in neue_werte)
             cur.execute(
-                f"UPDATE cyberlinge SET {set_clause}, letzte_interaktion = NOW() WHERE entity_id = %s",
+                f"UPDATE cyberlinge SET {set_clause} WHERE entity_id = %s",
                 (*neue_werte.values(), entity_id),
             )
             cur.execute("""
@@ -4704,12 +4788,16 @@ def cyberling_pflegen(
             """, (
                 f"cyberling.{aktion}",
                 entity_id,
-                psycopg2.extras.Json({**neue_werte, "vorher": {k: c[k] for k in neue_werte}}),
+                psycopg2.extras.Json({
+                    **payload,
+                    "profil": profil,
+                    "cooldown_h": cooldown_h,
+                }),
             ))
         conn.commit()
     finally:
         conn.close()
-    return {"ok": True, "aktion": aktion, "neue_werte": neue_werte}
+    return {"ok": True, "aktion": aktion, "profil": profil, "neue_werte": {k: v for k, v in neue_werte.items() if k not in (ts_feld, "letzte_interaktion")}}
 
 
 @app.get("/wesen/{entity_id}/cyberling")
@@ -4723,9 +4811,17 @@ def cyberling_status(
             c = cur.fetchone()
             if not c:
                 raise HTTPException(status_code=404, detail="Kein Cyberling gefunden")
+            result = dict(c)
+            # Zustandslabel berechnen falls fehlend
+            if not result.get("zustand"):
+                from cyberling_daemon import berechne_zustand
+                result["zustand"] = berechne_zustand(
+                    result["hunger"], result["durst"], result["energie"],
+                    result["stimmung"], result["gesundheit"]
+                )
     finally:
         conn.close()
-    return dict(c)
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -6007,7 +6103,7 @@ def admin_patch_cyberling(
     authorization: str | None = Header(default=None),
 ):
     _require_admin(authorization)
-    allowed = {"hunger", "durst", "energie", "stimmung", "gesundheit", "status"}
+    allowed = {"hunger", "durst", "energie", "stimmung", "gesundheit", "status", "profil", "zustand"}
     fields = {k: v for k, v in body.items() if k in allowed}
     if not fields:
         raise HTTPException(status_code=400, detail="Keine gültigen Felder")
@@ -6039,6 +6135,8 @@ def admin_list_cyberlinge(
                 SELECT c.entity_id, c.hunger, c.durst, c.energie,
                        c.stimmung, c.gesundheit, c.status, c.tode,
                        c.letztes_fuettern, c.zuletzt_belebt,
+                       c.profil, c.zustand,
+                       c.letztes_wasser, c.zuletzt_gespielt, c.zuletzt_gestreichelt,
                        ea.letzte_entscheidung, ea.letzte_entscheidung_at
                 FROM cyberlinge c
                 LEFT JOIN entity_activity ea ON ea.entity_id = c.entity_id

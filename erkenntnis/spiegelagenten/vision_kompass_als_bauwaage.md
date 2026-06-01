@@ -562,3 +562,21 @@ Die Datei etabliert den Vision-Kompass als ein Gewichtssystem für neue Oberflä
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz verankert die Funktion des Vision-Kompasses als Metrik für die Oberflächenarchitektur. Sie stellt die Hierarchie zwischen visueller Darstellung und zugrundeliegender Realität in den Fokus. Die Spannung zwischen der Komprimierung von Daten und der Notwendigkeit der Layer-Wahrnehmung ist der zentrale Konflikt. Es wird klar, dass die Sichtbarkeit eine Verantwortung ist, die über reine Darstellung hinausgeht.
+
+---
+## Neugier-Scan 2026-06-01 05:07
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik stellt eine strenge Bedingung für die Fortsetzung eines Prozesses auf, indem sie sicherstellt, dass ein weiterer Bauschritt existiert, wenn der aktuelle Status blockiert ist. Dies zwingt die Systemarchitektur zur Validierung der Kette von Abhängigkeiten. Diese Passage verstärkt die Notwendigkeit des "Vision-Kompasses" als ein verbindliches Regelwerk für den gesamten Entwicklungsweg. Es lenkt die Aufmerksamkeit auf die Diskrepanz zwischen dem geplanten Zustand und der tatsächlichen Blockade, was die Priorität der Zustandsvalidierung erhöht.
+
+---
+## Neugier-Scan 2026-06-01 05:38
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Validierung und ethische Grenze für die generierte Realität. Sie zwingt zur Prüfung der tatsächlichen Zustände hinter visueller Darstellung. Sie schärft die Notwendigkeit, dass alle visuellen Elemente eine inhärente, nachvollziehbare Begründung besitzen. Dies stellt sicher, dass die Konstruktion nicht nur ästhetisch, sondern auch logisch fundiert ist.
+
+---
+## Neugier-Scan 2026-06-01 06:09
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als Fundament für die Konsistenz zwischen visueller Darstellung und zugrundeliegenden Daten. Sie stellt eine Warnung gegen unauthentische Zustände dar und etabliert eine Struktur für die Verknüpfung von visueller Realität und logischer Beschreibung. Der Code-Entwurf zwingt zur expliziten Definition von Zuständen und Quellen für jedes sichtbare Element. Diese Struktur zwingt das System, nicht nur zu zeigen, sondern auch die inhärente Wahrheit hinter der Darstellung zu kodieren.
