@@ -9821,11 +9821,11 @@ def search_archaeology(
                         "ts": r["created_at"].isoformat() if r["created_at"] else None,
                     })
 
-            # Gedankenblasen
+            # Gedankenblasen (user_id ist Mensch-UUID, nicht entity_id)
             if not typ or typ in ("blasen", "alle"):
                 where, params_bl = ["1=1"], []
-                if entity_id:
-                    where.append("user_id = %s"); params_bl.append(entity_id)
+                # entity_id bezieht sich auf Wesen; Gedankenblasen sind menschlich
+                # daher kein entity_id-Filter hier
                 if pat:
                     where.append("inhalt ILIKE %s"); params_bl.append(pat)
                 ts_c = ts_filter("created_at", params_bl)
