@@ -5483,6 +5483,135 @@ def mw_kalender_loeschen(
         conn.close()
     return {"ok": True}
 
+# --- Meine Welt Feed ---
+
+@app.get("/mw/feed")
+def mw_feed(
+    kategorie: str = Query(default="alles"),
+    limit: int = Query(default=40, le=100),
+    nach: str | None = Query(default=None),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            items = []
+            if kategorie in ("alles", "neu"):
+                where = "WHERE p.sichtbarkeit='public' AND p.autor_type='entity'"
+                params: list = []
+                if nach:
+                    where += " AND p.created_at > %s"
+                    params.append(nach)
+                cur.execute(f"""
+                    SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
+                           'wesen_post' AS quelle
+                    FROM ftw_posts p
+                    {where}
+                    ORDER BY p.created_at DESC LIMIT %s
+                """, params + [limit // 2])
+                items += [dict(r) for r in cur.fetchall()]
+
+            if kategorie in ("alles", "relevant"):
+                try:
+                    cur.execute("""
+                        SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
+                               'splitter' AS quelle
+                        FROM splitter p
+                        WHERE p.status='aktiv'
+                        ORDER BY p.created_at DESC LIMIT %s
+                    """, (limit // 2,))
+                    items += [dict(r) for r in cur.fetchall()]
+                except Exception:
+                    pass
+
+            if kategorie in ("alles", "im_kommen"):
+                try:
+                    cur.execute("""
+                        SELECT id, user_id AS autor_id, 'mensch' AS autor_type,
+                               titel AS inhalt, startzeit AS created_at,
+                               'kalender' AS quelle
+                        FROM mw_kalender
+                        WHERE user_id = %s AND startzeit > NOW()
+                          AND (meta->>'deleted') IS DISTINCT FROM 'true'
+                        ORDER BY startzeit ASC LIMIT %s
+                    """, (user_id, 10))
+                    items += [dict(r) for r in cur.fetchall()]
+                except Exception:
+                    pass
+
+            if kategorie == "zufaellig":
+                cur.execute("""
+                    SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
+                           'zufaellig' AS quelle
+                    FROM ftw_posts p
+                    WHERE p.sichtbarkeit='public'
+                    ORDER BY RANDOM() LIMIT %s
+                """, (limit,))
+                items = [dict(r) for r in cur.fetchall()]
+
+            if kategorie == "irrelevant":
+                try:
+                    cur.execute("""
+                        SELECT item_id AS id, item_type AS autor_type, item_id AS autor_id,
+                               '' AS inhalt, markiert_at AS created_at,
+                               'irrelevant' AS quelle
+                        FROM mw_feed_markierungen
+                        WHERE user_id = %s AND markierung='irrelevant'
+                        ORDER BY markiert_at DESC LIMIT %s
+                    """, (user_id, limit))
+                    items = [dict(r) for r in cur.fetchall()]
+                except Exception:
+                    items = []
+
+            # Dedup + sort
+            seen = set()
+            result = []
+            for it in sorted(items, key=lambda x: str(x.get("created_at","") or ""), reverse=True):
+                key = str(it.get("id",""))
+                if key and key not in seen:
+                    seen.add(key)
+                    result.append(it)
+            return {"items": result[:limit], "kategorie": kategorie}
+    finally:
+        conn.close()
+
+
+@app.post("/mw/feed/markieren", status_code=200)
+def mw_feed_markieren(body: dict, authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    item_id = body.get("item_id") or ""
+    item_type = body.get("item_type") or "post"
+    markierung = body.get("markierung") or "irrelevant"
+    if not item_id:
+        raise HTTPException(400, "item_id fehlt")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS mw_feed_markierungen (
+                    id SERIAL PRIMARY KEY,
+                    user_id TEXT NOT NULL,
+                    item_id TEXT NOT NULL,
+                    item_type TEXT NOT NULL DEFAULT 'post',
+                    markierung TEXT NOT NULL DEFAULT 'irrelevant',
+                    markiert_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                    UNIQUE(user_id, item_id)
+                )
+            """)
+            cur.execute("""
+                INSERT INTO mw_feed_markierungen (user_id, item_id, item_type, markierung)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (user_id, item_id) DO UPDATE SET markierung = EXCLUDED.markierung
+            """, (user_id, item_id, item_type, markierung))
+            conn.commit()
+        return {"ok": True}
+    finally:
+        conn.close()
+
+
 # --- Bild-Moderation (Admin) ---
 
 @app.get("/admin/bild-moderation")

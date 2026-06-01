@@ -170,6 +170,23 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .mw-notiz-titel{font-size:0.62rem;color:var(--t-sub);letter-spacing:0.12em;margin-bottom:4px;text-transform:uppercase}
 .mw-notiz-text{font-size:0.72rem;color:var(--t-mid);line-height:1.5}
 .mw-bereiche{display:flex;gap:1px;background:var(--void);border-top:1px solid var(--rim);flex-shrink:0}
+.mw-feed-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.mw-feed-chip{background:#030c14;border:1px solid var(--rim);color:var(--t-sub);font-size:.58rem;padding:3px 9px;border-radius:2px;cursor:pointer;letter-spacing:.06em;transition:all .12s;font-family:monospace}
+.mw-feed-chip:hover{border-color:var(--t-sub);color:var(--t-mid)}
+.mw-feed-chip.aktiv{border-color:var(--world);color:var(--t-bright)}
+.mw-feed-liste{display:flex;flex-direction:column;gap:6px}
+.mw-feed-gruppe-lbl{font-size:.52rem;color:var(--t-dim);letter-spacing:.14em;text-transform:uppercase;padding-bottom:5px;border-bottom:1px solid var(--rim);margin-top:10px;margin-bottom:4px}
+.mw-feed-eintrag{background:#030c14;border:1px solid var(--rim);border-radius:3px;padding:9px 11px;position:relative;transition:border-color .12s}
+.mw-feed-eintrag:hover{border-color:var(--t-sub)}
+.mw-feed-eintrag:hover .mw-feed-irr{opacity:.6}
+.mw-feed-meta{display:flex;justify-content:space-between;margin-bottom:4px}
+.mw-feed-quelle{font-size:.5rem;color:var(--t-dim);letter-spacing:.08em;text-transform:uppercase}
+.mw-feed-zeit{font-size:.5rem;color:var(--t-dim)}
+.mw-feed-preview{font-size:.72rem;color:var(--t-mid);line-height:1.5}
+.mw-feed-irr{position:absolute;top:6px;right:8px;background:none;border:none;color:var(--t-dim);font-size:.65rem;cursor:pointer;opacity:0;transition:opacity .12s;padding:2px 4px}
+.mw-feed-irr:hover{color:#e84040;opacity:1!important}
+.mw-feed-leer{color:var(--t-dim);font-size:.68rem;font-style:italic;text-align:center;padding:24px 0}
+@keyframes mw-fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 .mw-bereich-karte{flex:1;padding:12px 16px;cursor:pointer;background:var(--deep);transition:all var(--ease);display:flex;flex-direction:column;align-items:flex-start;gap:4px;border-right:1px solid var(--rim)}
 .mw-bereich-karte:last-child{border-right:none}
 .mw-bereich-karte:hover{background:rgba(16,216,240,0.04)}
@@ -4145,6 +4162,10 @@ html[lang="en"] .de-only{display:none}
       <span class="mw-bereich-name">Tagebuch</span>
       <span class="mw-bereich-zahl" id="mw-z-tagebuch">—</span>
     </div>
+    <div class="mw-bereich-karte" onclick="mwOeffne('feed')">
+      <span class="mw-bereich-name" data-i18n="mw.feed">Feed</span>
+      <span class="mw-bereich-zahl" id="mw-z-feed">↻</span>
+    </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('traumtagebuch')">
       <span class="mw-bereich-name">Traumtagebuch</span>
       <span class="mw-bereich-zahl" id="mw-z-traumtagebuch">—</span>
@@ -4265,7 +4286,8 @@ html[lang="en"] .de-only{display:none}
     const tok = mwToken();
     if (!tok) { inhalt.innerHTML = '<div style="color:#3a2020;font-size:0.7rem;padding:12px">Nicht eingeloggt.</div>'; return; }
     const h = {"Authorization": tok, "Content-Type": "application/json"};
-    if (bereich === "tagebuch") mwLadeTagebuch(inhalt, h);
+    if (bereich === "feed") mwLadeFeed(inhalt, h, "alles");
+    else if (bereich === "tagebuch") mwLadeTagebuch(inhalt, h);
     else if (bereich === "traumtagebuch") mwLadeTraumtagebuch(inhalt, h);
     else if (bereich === "notizen") mwLadeNotizen(inhalt, h);
     else if (bereich === "kalender") mwLadeKalender(inhalt, h);
@@ -4589,6 +4611,70 @@ html[lang="en"] .de-only{display:none}
       + '<button id="'+fid+'-btn" class="mw-btn">Speichern</button>'
       + '</div></div>';
   }
+
+  // ── Meine Welt Feed ──────────────────────────────────────────────────────────
+  var _mwFeedKat = 'alles', _mwFeedTimer = null, _mwFeedEl = null, _mwFeedH = null;
+  var _mwFeedKats = ['alles','relevant','neu','im_kommen','irrelevant','zufaellig'];
+  var _mwFeedKatLabels = {alles:'Alles',relevant:'Relevant',neu:'Neu',im_kommen:'Im Kommen',irrelevant:'Irrelevant',zufaellig:'Zufällig'};
+
+  function mwLadeFeed(el, h, kat) {
+    _mwFeedEl = el; _mwFeedH = h; _mwFeedKat = kat || 'alles';
+    clearInterval(_mwFeedTimer);
+    var chips = _mwFeedKats.map(function(k){
+      return '<button class="mw-feed-chip'+(k===_mwFeedKat?' aktiv':'')+'" onclick="mwFeedKatWaehlen(\''+k+'\')">'+_mwFeedKatLabels[k]+'</button>';
+    }).join('');
+    el.innerHTML = '<div class="mw-feed-chips">'+chips+'</div>'
+      + '<div id="mw-feed-liste" class="mw-feed-liste"><div class="mw-feed-leer">Lade…</div></div>';
+    mwFeedRefresh();
+    _mwFeedTimer = setInterval(mwFeedRefresh, 10000);
+  }
+
+  window.mwFeedKatWaehlen = function(kat) {
+    _mwFeedKat = kat;
+    if (!_mwFeedEl || !_mwFeedH) return;
+    _mwFeedEl.querySelectorAll('.mw-feed-chip').forEach(function(b){ b.classList.toggle('aktiv', b.textContent===_mwFeedKatLabels[kat]); });
+    mwFeedRefresh();
+  };
+
+  function mwFeedRefresh() {
+    if (!_mwFeedEl || !_mwFeedH) return;
+    fetch(MW_API+'/mw/feed?kategorie='+_mwFeedKat+'&limit=40', {headers:_mwFeedH})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var liste = document.getElementById('mw-feed-liste'); if (!liste) return;
+        var items = d.items || [];
+        if (!items.length) { liste.innerHTML = '<div class="mw-feed-leer">◌ Nichts hier gerade.</div>'; return; }
+        var now = new Date(); var gestern = new Date(now); gestern.setDate(gestern.getDate()-1);
+        var lastDate = null;
+        liste.innerHTML = items.map(function(it, i){
+          var dt = it.created_at ? new Date(it.created_at) : null;
+          var dstr = dt ? dt.toDateString() : '';
+          var gruppenLabel = '';
+          if (dstr && dstr !== lastDate) {
+            lastDate = dstr;
+            var label = dt.toDateString()===now.toDateString() ? 'Heute' : dt.toDateString()===gestern.toDateString() ? 'Gestern' : dt.toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
+            gruppenLabel = '<div class="mw-feed-gruppe-lbl">'+label+'</div>';
+          }
+          var preview = (it.inhalt||'').slice(0,120) + ((it.inhalt||'').length>120 ? '…' : '');
+          var zeit = dt ? dt.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}) : '';
+          var quelle = mwEsc(it.quelle||'');
+          var anim = 'animation:mw-fade-in 0.2s ease both;animation-delay:'+Math.min(i,10)*0.04+'s';
+          return gruppenLabel
+            + '<div class="mw-feed-eintrag" style="'+anim+'">'
+            + '<div class="mw-feed-meta"><span class="mw-feed-quelle">'+quelle+'</span><span class="mw-feed-zeit">'+zeit+'</span></div>'
+            + '<div class="mw-feed-preview">'+mwEsc(preview)+'</div>'
+            + '<button class="mw-feed-irr" onclick="mwFeedIrrelevant(\''+mwEsc(String(it.id||''))+'\')" title="Als irrelevant markieren">✕</button>'
+            + '</div>';
+        }).join('');
+      })
+      .catch(function(){ var l=document.getElementById('mw-feed-liste'); if(l) l.innerHTML='<div class="mw-feed-leer">Fehler beim Laden.</div>'; });
+  }
+
+  window.mwFeedIrrelevant = function(itemId) {
+    if (!_mwFeedH || !itemId) return;
+    fetch(MW_API+'/mw/feed/markieren', {method:'POST',headers:_mwFeedH,body:JSON.stringify({item_id:itemId,item_type:'post',markierung:'irrelevant'})})
+      .then(function(){ mwFeedRefresh(); });
+  };
 
   function mwLadeTagebuch(el, h) {
     fetch(MW_API+"/mw/tagebuch?limit=100", {headers:h}).then(r=>r.json()).then(d=>{
@@ -7057,7 +7143,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
       'tab.wissen':'WISSEN','tab.gesetze':'GESETZE','tab.forschung':'FORSCHUNG','tab.partner':'PARTNER',
       'tab.einsicht':'EINSICHT',
       'tab.suche':'SUCHE',
-      'mw.gedanken':'Gedanken','mw.innenquellen':'Innenquellen',
+      'mw.feed':'Feed','mw.gedanken':'Gedanken','mw.innenquellen':'Innenquellen',
       'tab.gruppen':'GRUPPEN',
       'gruppen.title':'GRUPPEN',
       'gruppen.desc':'Resonanz-, Splitter- und Projektformationen',
@@ -7144,7 +7230,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
       'tab.blasen':'GEDANKENBLASENFELD','tab.menschen':'HUMANS','tab.meinewelt':'MY WORLD',
       'tab.schlaf':'SLEEP','tab.systeme':'SYSTEMS','tab.admin':'ADMIN',
       'tab.wissen':'KNOWLEDGE','tab.gesetze':'LAWS','tab.forschung':'RESEARCH','tab.partner':'PARTNER',
-      'mw.gedanken':'Thoughts','mw.innenquellen':'Inner Sources',
+      'mw.feed':'Feed','mw.gedanken':'Thoughts','mw.innenquellen':'Inner Sources',
       'tab.einsicht':'INSIGHT',
       'tab.suche':'SEARCH',
       'tab.gruppen':'GROUPS',
