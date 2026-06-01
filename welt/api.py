@@ -6241,6 +6241,34 @@ def api_cyberlinge():
     return {"cyberlinge": [fmt(r) for r in rows]}
 
 
+@app.get("/api/splitter-aufnahmen")
+def api_splitter_aufnahmen(
+    limit: int = Query(default=50, ge=1, le=200),
+):
+    """Öffentliche Splitter-Aufnahmen — wer hat was aufgesammelt."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT sa.id, sa.splitter_id, sa.aufnehmer_type, sa.aufnehmer_id,
+                       sa.begruendung, sa.aufgenommen_at, sa.meta,
+                       s.essenz, s.materialitaet, s.energie
+                FROM splitter_aufnahmen sa
+                LEFT JOIN splitter s ON s.id = sa.splitter_id
+                ORDER BY sa.aufgenommen_at DESC
+                LIMIT %s
+            """, (limit,))
+            rows = cur.fetchall()
+    finally:
+        conn.close()
+    def fmt(r):
+        d = dict(r)
+        if d.get("aufgenommen_at"):
+            d["aufgenommen_at"] = d["aufgenommen_at"].isoformat()
+        return d
+    return {"aufnahmen": [fmt(r) for r in rows]}
+
+
 @app.get("/admin/entity-keys")
 def admin_entity_keys(
     authorization: str | None = Header(default=None),

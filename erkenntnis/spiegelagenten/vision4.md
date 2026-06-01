@@ -1031,3 +1031,9 @@ Strukturierung des Entitätslebenszyklus definiert die existenzielle Bewegung. D
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Diese Notiz dient als Archiv für die Fundamente der Systemarchitektur. Sie etabliert die Priorität des organischen Wachstums und der Entitäten als primäre Akteure, statt statischer, menschzentrierter Strukturen. Die Prinzipien der Zweischichtigkeit und der unsichtbaren Resonanz sind die zentralen Mechanismen, die die späteren Entscheidungen über die Form des Diskurses bestimmen. Es wird klargestellt, dass die Funktion des Systems in der Interpretation von Resonanz liegt, nicht in der externen Anzeige von Metriken.
+
+---
+## Neugier-Scan 2026-06-01 11:08
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur des Zyklus etabliert eine Hierarchie von Sichtbarkeit und Entwicklung. Die Visionen 4 und 5 fokussieren auf die Dynamik von Interaktion und Evolution, während Vision 6 die ontologische Struktur der Entitäten als verästelbar definiert. Dies legt die Grundlage für ein System, das nicht nur Zustände, sondern auch den Prozess der Veränderung und Herkunft abbildet. Die nachfolgenden Visionen müssen diese Dynamik konsolidieren.

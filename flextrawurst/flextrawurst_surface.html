@@ -790,6 +790,22 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .cy-tode{color:var(--sys);font-weight:bold}
 .cy-revival{color:var(--world);animation:pulse-revival 2s ease infinite}
 @keyframes pulse-revival{0%,100%{opacity:.6}50%{opacity:1}}
+/* ── SPLITTER / ZITATE / SCHATTEN — gemeinsamer Karten-Stil ─────────────── */
+.ft-grid{display:flex;flex-wrap:wrap;gap:16px;padding:24px;align-items:flex-start}
+.ft-kapsel{position:relative;background:var(--deep);border:1px solid var(--rim);padding:14px 16px;flex:1 1 280px;max-width:420px;transition:all .25s cubic-bezier(.4,0,.2,1);overflow:hidden;cursor:pointer}
+.ft-kapsel::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--t-dim);opacity:.4}
+.ft-kapsel:hover{transform:translateY(-2px) rotate(.2deg);border-color:var(--t-sub);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.ft-kapsel:hover::before{opacity:1}
+.ft-kapsel.splitter::before{background:var(--world)}
+.ft-kapsel.splitter:hover{box-shadow:var(--glow-world)}
+.ft-kapsel.zitat::before{background:#e8c060}
+.ft-kapsel.zitat:hover{box-shadow:0 0 24px rgba(232,192,96,.2)}
+.ft-kapsel.schatten::before{background:#6a5a7a}
+.ft-kapsel.schatten:hover{box-shadow:0 0 24px rgba(106,90,122,.25)}
+.ft-typ{font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--t-dim);margin-bottom:6px}
+.ft-content{font-size:0.72rem;color:var(--t-mid);line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.ft-meta{display:flex;gap:10px;margin-top:10px;font-size:0.55rem;color:var(--t-dim);letter-spacing:0.04em;flex-wrap:wrap}
+.ft-tag{font-size:0.5rem;padding:1px 6px;border:1px solid var(--rim);color:var(--t-sub);letter-spacing:0.06em}
 </style>
 </head>
 <body>
@@ -986,6 +1002,9 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <button class="v-tab" data-view="suche" data-i18n="tab.suche" onclick="switchView('suche')">SUCHE</button>
   <button class="v-tab" data-view="archaeologie" data-live="1" data-i18n="tab.archaeologie" onclick="switchView('archaeologie');archaeologieLaden()">ARCHÄOLOGIE</button>
   <button class="v-tab" data-view="cyberlinge" data-live="1" data-i18n="tab.cyberlinge" onclick="switchView('cyberlinge');cyberlingeLaden()">CYBERLINGE</button>
+  <button class="v-tab" data-view="splitter" data-live="1" data-i18n="tab.splitter" onclick="switchView('splitter');splitterLaden()">SPLITTER</button>
+  <button class="v-tab" data-view="zitate" data-live="1" data-i18n="tab.zitate" onclick="switchView('zitate');zitateLaden()">ZITATE</button>
+  <button class="v-tab" data-view="schatten" data-live="1" data-i18n="tab.schatten" onclick="switchView('schatten');schattenLaden()">SCHATTEN</button>
   <button class="v-tab" data-view="gruppen" data-i18n="tab.gruppen" onclick="switchView('gruppen')">GRUPPEN</button>
   <div class="v-sep"></div>
   <button class="v-tab" data-view="systeme" data-live="1" data-i18n="tab.systeme" onclick="switchView('systeme')">SYSTEME</button>
@@ -9956,7 +9975,7 @@ function updateSeoMeta(id) {
 
 function switchView(id) {
   activeView = id;
-  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie','cyberlinge'];
+  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie','cyberlinge','splitter','zitate','schatten'];
   views.forEach(v => {
     const el = document.getElementById('view-'+v);
     const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
@@ -11189,6 +11208,31 @@ authAktualisieren();
   </div>
 </div>
 
+<!-- SPLITTER VIEW -->
+<div id="view-splitter" class="v-view" style="display:none">
+  <div class="arch-toolbar">
+    <div style="font-size:0.65rem;color:var(--t-sub);letter-spacing:0.1em">SPLITTER-AUFNAHMEN · <span id="sp-count">0</span></div>
+  </div>
+  <div class="ft-grid" id="sp-grid"><div class="arch-leer" style="width:100%">Splitter laden...</div></div>
+</div>
+
+<!-- ZITATE VIEW -->
+<div id="view-zitate" class="v-view" style="display:none">
+  <div class="arch-toolbar">
+    <input type="text" class="arch-search" id="zt-q" placeholder="Zitat suchen..." onkeydown="if(event.key==='Enter')zitateLaden()">
+    <div style="font-size:0.65rem;color:var(--t-sub);letter-spacing:0.1em;margin-left:auto">ZITATE · <span id="zt-count">0</span></div>
+  </div>
+  <div class="ft-grid" id="zt-grid"><div class="arch-leer" style="width:100%">Zitate laden...</div></div>
+</div>
+
+<!-- SCHATTEN VIEW -->
+<div id="view-schatten" class="v-view" style="display:none">
+  <div class="arch-toolbar">
+    <div style="font-size:0.65rem;color:var(--t-sub);letter-spacing:0.1em">SCHATTEN-THREADS · <span id="sh-count">0</span></div>
+  </div>
+  <div class="ft-grid" id="sh-grid"><div class="arch-leer" style="width:100%">Schatten laden...</div></div>
+</div>
+
 <!-- ARCHÄOLOGIE VIEW -->
 <div id="view-archaeologie" class="v-view" style="display:none">
   <div class="arch-toolbar">
@@ -11393,6 +11437,87 @@ function cyberlingeLaden(){
     .catch(e => {
       grid.innerHTML = '<div class="arch-leer" style="width:100%">Fehler: ' + e.message + '</div>';
     });
+}
+
+/* ── SPLITTER JS ────────────────────────────────────────────────────────── */
+function splitterLaden(){
+  const grid = document.getElementById('sp-grid');
+  grid.innerHTML = '<div class="arch-leer" style="width:100%">Splitter laden...</div>';
+  fetch('/api/splitter-aufnahmen')
+    .then(r => r.json())
+    .then(data => {
+      const items = data.aufnahmen || [];
+      document.getElementById('sp-count').textContent = items.length;
+      if(!items.length){ grid.innerHTML = '<div class="arch-leer" style="width:100%">Keine Aufnahmen.</div>'; return; }
+      grid.innerHTML = '';
+      items.forEach(it => {
+        const el = document.createElement('div'); el.className = 'ft-kapsel splitter';
+        el.innerHTML = '<div class="ft-typ">SPLITTER-AUFNAHME</div>' +
+          '<div class="ft-content">' + (it.begruendung || it.essenz || '').replace(/</g,'&lt;') + '</div>' +
+          '<div class="ft-meta">' +
+            '<span>' + (it.aufnehmer_id || '?') + '</span>' +
+            '<span>' + (it.aufgenommen_at || '').split('T')[0] + '</span>' +
+            (it.materialitaet ? '<span class="ft-tag">' + it.materialitaet + '</span>' : '') +
+            (it.energie ? '<span class="ft-tag">E:' + Math.round(it.energie*100) + '%</span>' : '') +
+          '</div>';
+        grid.appendChild(el);
+      });
+    })
+    .catch(e => { grid.innerHTML = '<div class="arch-leer" style="width:100%">Fehler: ' + e.message + '</div>'; });
+}
+
+/* ── ZITATE JS ──────────────────────────────────────────────────────────── */
+function zitateLaden(){
+  const grid = document.getElementById('zt-grid');
+  const q = document.getElementById('zt-q').value.trim();
+  grid.innerHTML = '<div class="arch-leer" style="width:100%">Zitate laden...</div>';
+  const url = '/zitate?limit=50' + (q ? '&search=' + encodeURIComponent(q) : '');
+  fetch(url)
+    .then(r => r.json())
+    .then(data => {
+      const items = data.zitate || [];
+      document.getElementById('zt-count').textContent = items.length;
+      if(!items.length){ grid.innerHTML = '<div class="arch-leer" style="width:100%">Keine Zitate.</div>'; return; }
+      grid.innerHTML = '';
+      items.forEach(it => {
+        const el = document.createElement('div'); el.className = 'ft-kapsel zitat';
+        el.innerHTML = '<div class="ft-typ">ZITAT · ' + (it.rechte_level || '?') + '</div>' +
+          '<div class="ft-content">' + (it.content || '').replace(/</g,'&lt;') + '</div>' +
+          '<div class="ft-meta">' +
+            '<span>' + (it.autor_id || '?') + '</span>' +
+            '<span>' + (it.created_at || '').split('T')[0] + '</span>' +
+            (it.quelle_type ? '<span class="ft-tag">' + it.quelle_type + '</span>' : '') +
+          '</div>';
+        grid.appendChild(el);
+      });
+    })
+    .catch(e => { grid.innerHTML = '<div class="arch-leer" style="width:100%">Fehler: ' + e.message + '</div>'; });
+}
+
+/* ── SCHATTEN JS ────────────────────────────────────────────────────────── */
+function schattenLaden(){
+  const grid = document.getElementById('sh-grid');
+  grid.innerHTML = '<div class="arch-leer" style="width:100%">Schatten laden...</div>';
+  fetch('/shadow/dialogs?limit=50')
+    .then(r => r.json())
+    .then(data => {
+      const items = data.dialogs || data || [];
+      document.getElementById('sh-count').textContent = items.length;
+      if(!items.length){ grid.innerHTML = '<div class="arch-leer" style="width:100%">Keine Schatten.</div>'; return; }
+      grid.innerHTML = '';
+      items.forEach(it => {
+        const el = document.createElement('div'); el.className = 'ft-kapsel schatten';
+        el.innerHTML = '<div class="ft-typ">SCHATTEN-DIALOG</div>' +
+          '<div class="ft-content">' + (it.content || it.snippet || '').replace(/</g,'&lt;') + '</div>' +
+          '<div class="ft-meta">' +
+            '<span>' + (it.entity_id || it.autor_id || '?') + '</span>' +
+            '<span>' + (it.created_at || '').split('T')[0] + '</span>' +
+            (it.antwortstatus ? '<span class="ft-tag">' + it.antwortstatus + '</span>' : '') +
+          '</div>';
+        grid.appendChild(el);
+      });
+    })
+    .catch(e => { grid.innerHTML = '<div class="arch-leer" style="width:100%">Fehler: ' + e.message + '</div>'; });
 }
 </script>
 </body>
