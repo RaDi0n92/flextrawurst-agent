@@ -761,6 +761,35 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .arch-detail-typ{font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--t-dim);margin-bottom:8px}
 .arch-detail-snippet{font-size:0.85rem;color:var(--t-bright);line-height:1.7;margin-bottom:16px;white-space:pre-wrap}
 .arch-detail-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:0.6rem;color:var(--t-sub)}
+/* ── CYBERLINGE — Lebens-Kapseln ────────────────────────────────────────── */
+#view-cyberlinge{overflow-y:auto;background:var(--void)}
+.cy-grid{display:flex;flex-wrap:wrap;gap:20px;padding:24px;align-items:flex-start}
+.cy-kapsel{position:relative;background:var(--deep);border:1px solid var(--rim);padding:16px 18px;flex:1 1 300px;max-width:380px;transition:all .3s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.cy-kapsel::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--t-dim);opacity:.5}
+.cy-kapsel.status-gesund::before{background:var(--alive);opacity:1;box-shadow:0 0 12px rgba(16,240,128,.3)}
+.cy-kapsel.status-kritisch::before{background:var(--sys);opacity:1;box-shadow:0 0 12px rgba(248,113,113,.3)}
+.cy-kapsel.status-tot::before{background:var(--t-dim);opacity:.3}
+.cy-kapsel:hover{transform:translateY(-2px);border-color:var(--t-sub)}
+.cy-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.cy-name{font-size:0.8rem;color:var(--t-bright);letter-spacing:0.06em;font-weight:bold}
+.cy-status{font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;padding:2px 8px;border:1px solid var(--rim)}
+.cy-status.gesund{color:var(--alive);border-color:rgba(16,240,128,.2);background:rgba(16,240,128,.04)}
+.cy-status.kritisch{color:var(--sys);border-color:rgba(248,113,113,.2);background:rgba(248,113,113,.04)}
+.cy-status.tot{color:var(--t-dim);border-color:var(--rim);background:var(--void)}
+.cy-bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:0.58rem}
+.cy-bar-row>span:first-child{width:64px;color:var(--t-sub);letter-spacing:0.06em}
+.cy-bar-row>span:last-child{width:32px;text-align:right;color:var(--t-dim)}
+.cy-bar-bg{flex:1;height:6px;background:var(--rim);position:relative;overflow:hidden}
+.cy-bar{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.cy-bar.hunger{background:linear-gradient(90deg,#c084fc,#fb923c)}
+.cy-bar.durst{background:linear-gradient(90deg,#60a5fa,#10d8f0)}
+.cy-bar.energie{background:linear-gradient(90deg,#e8c060,#10f080)}
+.cy-bar.stimmung{background:linear-gradient(90deg,#f87171,#c084fc)}
+.cy-bar.gesundheit{background:linear-gradient(90deg,#f87171,#10f080)}
+.cy-meta{font-size:0.55rem;color:var(--t-dim);margin-top:10px;line-height:1.6}
+.cy-tode{color:var(--sys);font-weight:bold}
+.cy-revival{color:var(--world);animation:pulse-revival 2s ease infinite}
+@keyframes pulse-revival{0%,100%{opacity:.6}50%{opacity:1}}
 </style>
 </head>
 <body>
@@ -956,6 +985,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <button class="v-tab" data-view="einsicht" data-live="1" data-i18n="tab.einsicht" onclick="switchView('einsicht')">EINSICHT</button>
   <button class="v-tab" data-view="suche" data-i18n="tab.suche" onclick="switchView('suche')">SUCHE</button>
   <button class="v-tab" data-view="archaeologie" data-live="1" data-i18n="tab.archaeologie" onclick="switchView('archaeologie');archaeologieLaden()">ARCHÄOLOGIE</button>
+  <button class="v-tab" data-view="cyberlinge" data-live="1" data-i18n="tab.cyberlinge" onclick="switchView('cyberlinge');cyberlingeLaden()">CYBERLINGE</button>
   <button class="v-tab" data-view="gruppen" data-i18n="tab.gruppen" onclick="switchView('gruppen')">GRUPPEN</button>
   <div class="v-sep"></div>
   <button class="v-tab" data-view="systeme" data-live="1" data-i18n="tab.systeme" onclick="switchView('systeme')">SYSTEME</button>
@@ -9926,7 +9956,7 @@ function updateSeoMeta(id) {
 
 function switchView(id) {
   activeView = id;
-  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie'];
+  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie','cyberlinge'];
   views.forEach(v => {
     const el = document.getElementById('view-'+v);
     const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
@@ -11149,6 +11179,16 @@ authAktualisieren();
 </div>
 </div>
 
+<!-- CYBERLINGE VIEW -->
+<div id="view-cyberlinge" class="v-view" style="display:none">
+  <div class="arch-toolbar">
+    <div style="font-size:0.65rem;color:var(--t-sub);letter-spacing:0.1em">LEBENS-KAPSELN · <span id="cy-count">0</span></div>
+  </div>
+  <div class="cy-grid" id="cy-grid">
+    <div class="arch-leer" style="width:100%">Kapseln laden...</div>
+  </div>
+</div>
+
 <!-- ARCHÄOLOGIE VIEW -->
 <div id="view-archaeologie" class="v-view" style="display:none">
   <div class="arch-toolbar">
@@ -11292,6 +11332,67 @@ function archDetailOpen(itemJson){
 function archDetailClose(e){
   if(e && e.target !== e.currentTarget) return;
   document.getElementById('arch-detail').classList.remove('open');
+}
+
+/* ── CYBERLINGE JS ──────────────────────────────────────────────────────── */
+function cyberlingeLaden(){
+  const grid = document.getElementById('cy-grid');
+  grid.innerHTML = '<div class="arch-leer" style="width:100%">Kapseln laden...</div>';
+  fetch('/api/cyberlinge')
+    .then(r => r.json())
+    .then(data => {
+      const cl = data.cyberlinge || [];
+      document.getElementById('cy-count').textContent = cl.length;
+      if(!cl.length){
+        grid.innerHTML = '<div class="arch-leer" style="width:100%">Keine Cyberlinge gefunden.</div>';
+        return;
+      }
+      grid.innerHTML = '';
+      cl.forEach(c => {
+        const el = document.createElement('div');
+        el.className = 'cy-kapsel status-' + (c.status || 'unbekannt');
+        let bars = '';
+        [['hunger','HUNGER'],['durst','DURST'],['energie','ENERGIE'],['stimmung','STIMMUNG'],['gesundheit','GESUND']].forEach(([key,label]) => {
+          const val = Math.round((c[key] || 0) * 100);
+          bars += '<div class="cy-bar-row"><span>' + label + '</span><div class="cy-bar-bg"><div class="cy-bar ' + key + '" style="width:' + val + '%"></div></div><span>' + val + '%</span></div>';
+        });
+        let meta = '';
+        if(c.tode) meta += '<div class="cy-tode">Tode: ' + c.tode + '</div>';
+        if(c.status === 'tot' && c.tod_at){
+          const tod = new Date(c.tod_at);
+          const revival = new Date(tod.getTime() + 24*3600*1000);
+          const now = new Date();
+          if(now < revival){
+            const h = Math.floor((revival - now)/3600000);
+            const m = Math.floor(((revival - now)%3600000)/60000);
+            meta += '<div class="cy-revival">Wiedergeburt in ' + h + 'h ' + m + 'm</div>';
+          } else {
+            meta += '<div class="cy-revival">Wiedergeburt möglich</div>';
+          }
+        }
+        if(c.letztes_fuettern){
+          const ago = Math.floor((new Date() - new Date(c.letztes_fuettern))/3600000);
+          meta += '<div>Letztes Füttern: vor ' + ago + 'h</div>';
+        }
+        if(c.letztes_wasser){
+          const ago = Math.floor((new Date() - new Date(c.letztes_wasser))/3600000);
+          meta += '<div>Letztes Wasser: vor ' + ago + 'h</div>';
+        } else {
+          meta += '<div>Letztes Wasser: nie</div>';
+        }
+        el.innerHTML =
+          '<div class="cy-head">' +
+            '<div class="cy-name">' + (c.entity_id || '?') + '</div>' +
+            '<div class="cy-status ' + (c.zustand || 'unbekannt') + '">' + (c.zustand || '?') + '</div>' +
+          '</div>' +
+          bars +
+          '<div class="cy-meta">' + meta + '</div>';
+        grid.appendChild(el);
+      });
+    })
+    .catch(e => {
+      grid.innerHTML = '<div class="arch-leer" style="width:100%">Fehler: ' + e.message + '</div>';
+    });
 }
 </script>
 </body>

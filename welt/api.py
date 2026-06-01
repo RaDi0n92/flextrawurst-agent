@@ -6212,6 +6212,35 @@ def admin_list_cyberlinge(
     return {"cyberlinge": [fmt(r) for r in rows]}
 
 
+@app.get("/api/cyberlinge")
+def api_cyberlinge():
+    """Öffentliche Cyberling-Zustände — Lebensbalken für die Surface."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT entity_id, name, hunger, durst, energie, stimmung,
+                       gesundheit, status, tode, zustand, profil,
+                       geboren_at, zuletzt_belebt, letztes_fuettern,
+                       letztes_wasser, tod_at, letzter_tick
+                FROM cyberlinge
+                ORDER BY status DESC, entity_id
+            """)
+            rows = cur.fetchall()
+    finally:
+        conn.close()
+
+    def fmt(r):
+        d = dict(r)
+        for k in ("geboren_at", "zuletzt_belebt", "letztes_fuettern",
+                  "letztes_wasser", "tod_at", "letzter_tick"):
+            if d.get(k):
+                d[k] = d[k].isoformat()
+        return d
+
+    return {"cyberlinge": [fmt(r) for r in rows]}
+
+
 @app.get("/admin/entity-keys")
 def admin_entity_keys(
     authorization: str | None = Header(default=None),
