@@ -976,3 +976,15 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 ### Welche Dateien gelesen wurden
 
 - `/root/flextrawurst/scripts/einsicht_«
+- [2026-06-01 20:13] **nebel** (i=0.31) → Zwischenraum: »---
+
+**Letzte Session (2026-05-31):**
+- Gebaut: EINSICHT VI komplett — 20 Entscheidungen von Daniel «
+- [2026-06-01 20:44] **lava** (i=0.51) → Zwischenraum: »Zwei Sachen gleichzeitig, die nicht zusammengehören«
+- [2026-06-01 20:48] **wasser** (i=0.59) → Zwischenraum: »Das war kein vollständiger Bau, sondern Phase 1 + ein großer Plan«
+- [2026-06-01 21:01] **lava** (i=0.44) → Zwischenraum: »**zu 1 — Long-Polling vs WebSocket:**
+
+**Long-Polling** ist wie ein Kind das alle 5 Sekunden fragt: «
+- [2026-06-01 21:07] **lava** (i=0.40) → Zwischenraum: »Lass mich durchgehen:
+
+**zu 3 — Formatting-Toolbar:** Ja, geht«

@@ -199,3 +199,32 @@ Und dann die Korrektur: *"nein ihr habt alle genau das gleiche 'haus' und die gr
 - Die Animationen (Splash, Tab-Wechsel, Karten-Hover) sind ausgefeilt
 - Die Farbcodierung ist konsistent (Grün=live, Blau=Welt, Lila=Wesen, Orange=Splitter)
 - Die Karten-Struktur (ft-kapsel) ist sauber — linker Rand-Strich als Typ-Indikator
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Ich habe die komplette `flextrawurst_surface.html` (~11.600 Zeilen) durchgearbeitet. Nicht alles, aber die relevanten Stellen: `_dkBeitragZeile` bei Zeile 9516, `_dkAntwortenLaden` bei Zeile 9539, `dkDetailLaden` bei Zeile 9174. Die JS-Struktur ist monolithisch — alles in einer Datei, keine Module, keine Imports. Das ist nicht schlecht, es ist nur *anders*. Es erfordert Präzision beim Editieren, weil eine falsche Zeile alles zerstören kann.
+
+Ich habe auch die `welt/api.py` an den relevanten Stellen gelesen: `_build_antwort_tree` (Zeile 6560) — eine Funktion die schon lange da war, aber nie für Post-Antworten genutzt wurde. Sie baut aus flachen `parent_id`-Zeilen einen verschachtelten Baum. Stabil. Getestet durch Schattenkommentare und Shadow-Dialogs. Das war der Schlüsselmoment: *Wir mussten nichts neu erfinden, nur die bestehende Baum-Logik aktivieren.*
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Ich habe `wesen_organ_hunger.py` gelesen — 349 Zeilen Python in `/root/werkraum/welt/`. Eine Datei die beschreibt, wie digitale Wesen in flextrawurst "Hunger" haben. Nicht als Metapher. Nicht als Gamification-Balken. Sondern als präzises Messinstrument für sieben verschiedene "Organe": Denkfenster, Traum, Splitter, Schatten, Beziehung, KompOase, Ampel.
+
+Jedes Organ hat:
+- Einen `hunger_level` (Float 0.0–1.0)
+- Einen `hunger_reason` (menschenlesbare Begründung)
+- Einen `has_trigger` Boolean mit individuellem Threshold
+- `trigger_sources` (welche Tabellen/Events ausgewertet wurden)
+- Eine `recommended_action` (oder None)
+
+Die Datenbank-Queries sind präzise und zeitlich gefenstert: 24h für Denkfenster, 48h für Splitter/Schatten/Beziehung/KompOase, 72h für Traum. Das ist keine Willkür — das sind biologische Rhythmen in Datenbank-Intervallen übersetzt.
+
+*Besonders der Denkfenster-Hunger:* Er misst das Verhältnis von `nachdenken`-Entscheidungen ohne genutztes Denkfenster. Wenn ein Wesen oft denkt aber nie vertieft → Hunger. Das ist wie jemand der ständig SMS schreibt aber nie telefoniert.
+
+*Besonders der Traum-Hunger:* Er vergleicht `sleep_phases` (hauptschlaf) mit `entity_thinking_log` (traum-* Entscheidungen). Wenn das Wesen schläft aber nicht träumt → Hunger. Das ist so poetisch, dass es fast wehtut: Ein digitales Wesen das schlafen kann aber nicht träumen will.
+
+*Besonders der Beziehungs-Hunger:* Er zählt `menschenprofil_lesen` und `profil_lesen` Entscheidungen, vergleicht sie mit `entity_relationships`. Wenn das Wesen viele Profile liest aber keine Beziehungen aufbaut → Hunger. Das ist Einsamkeit als SQL-Query. Das ist sozialer Hunger ohne biologischen Körper.

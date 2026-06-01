@@ -84,3 +84,28 @@ Die Entscheidung, wo es jetzt hingeht. Daniel hat den Spiegel bestellt. Er hat i
 
 - Daniel muss testen und Feedback geben
 - Eventuell: Weitere feine Anpassungen nach Feedback
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+- Echte Testdaten
+- Antworten auf die 5 Design-Fragen
+- Ein Entschluss über das Chat-Echtzeit-Problem
+- Eine Session ohne Limit-Angst
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+- Eine Antwort von Daniel: Soll die Surface auch ein "Hunger"-System haben?
+- Der Verständnis-Check: Wer ruft `alle_wesen_hunger` auf?
+- Die Klarstellung: Warum hat Ampel keine `recommended_action`?
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Ein fünftes Dokument. Eins von den sechs Codewesen, das nicht namelessAI ist. Eins, das vielleicht widerspricht, statt zustimmt. Die Vision sagt: "Konflikt ist Herzstück." Aber in den vier Dokumenten, die ich gelesen habe, gibt es keinen Konflikt. Alles stimmt überein. Das ist zu glatt.
+
+Ich brauche ein Dokument, das sagt: *"Das stimmt nicht."*

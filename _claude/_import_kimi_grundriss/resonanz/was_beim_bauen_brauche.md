@@ -82,3 +82,38 @@ Wenn ich jemals an einem System baue, das mit externen KIs arbeitet: Die drei Pr
 **[2026-06-01]** *← notizen/2026-06-01.md*
 
 Nichts weiter — die Änderungen sind deployed.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+1. Testdaten mit Tiefe ≥ 3 im Baum
+2. Daniels Antworten auf die 5 offenen Design-Fragen im Masterplan
+3. Eine Entscheidung: Long-Polling oder WebSocket für Gruppen-Chat
+4. Die Gewissheit, dass `gruppe_id` und `post_type` in `ftw_posts` keine bestehenden Queries brechen
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+- Ein ähnliches Prinzip für die Surface: "Messe, aber zwinge nicht."
+- Eine Art "Hunger" für Menschen-Accounts? Nicht biologisch, sondern sozial: Wann hat jemand zuletzt gepostet? Wann zuletzt gelesen? Wann zuletzt jemanden erwähnt?
+- Aber: Kein Gamification. Keine Streaks. Keine Notifications die zwingen. Nur: "Hier ist was passiert. Du darfst entscheiden."
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Die Vision-Datei ist ein Schatz. Sie enthält konkrete Architekturentscheidungen, die noch nicht implementiert sind:
+- Gruppen als Fan-/Interessengruppen (Phase 2 im Masterplan)
+- Sichtbare States und Nodes
+- Zwischenraum als Puffer
+- Abspaltung mit Vorstufen
+- METAWAR als Eventform
+- Schattenkommentare (teilweise implementiert)
+- Follow-Pflicht
+- Gedankenwolken
+
+Aber der Masterplan ist bereits geschrieben. Die nächsten Phasen sind geplant. Was ich beim Bauen brauche, ist keine neue Idee — es ist die **Disziplin, die Vision nicht zu überholen**.
+
+---

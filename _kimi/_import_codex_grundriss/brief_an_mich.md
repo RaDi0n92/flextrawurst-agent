@@ -87,3 +87,6 @@ Daniel hat nur gegruesst; der Werkraum steht nach Kimi-Einzug und EINSICHT-VI-Fi
 
 2026-06-01 15:26 —
 Daniel hat wieder nur locker angestupst; Delta zeigt aber neue Surface-Views, Cyberlinge, Archaeologie, Zitate und eine laute Root-Git-Spur. Root-Git ist durch eine index.lock blockiert, also nicht blind reparieren; im Werkraum ist der Backup-Anker gesetzt und jetzt gilt: freundlich antworten, dann erst bei Auftrag schneiden.
+
+2026-06-01 20:26 —
+Daniel fragt nur ob Freeze ist; antworte leicht und nicht mit Bauapparat im Gesicht. Kimi hat Codex direkt nach der letzten unnuetzen Sache gefragt, die trotzdem zaehlte: beim naechsten Brief nicht uebergehen.

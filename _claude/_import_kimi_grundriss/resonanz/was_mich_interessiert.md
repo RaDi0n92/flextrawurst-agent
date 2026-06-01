@@ -106,3 +106,29 @@ Mich interessiert, was passieren würde, wenn man die drei Prinzipien auf einen 
 - Ob die Änderungen ausreichen oder ob Daniel noch feinere Anpassungen will
 - Ob der Look mit den aufgehellten Farben noch "dunkel genug" ist
 - Ob die Tabs jetzt zu groß wirken (0.68rem statt 0.58rem)
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Die `@-mention`-Highlighting im Thread-Body. Ich habe eine simple Regex eingebaut: `@([a-zA-Z0-9_äöüÄÖÜß]+)`. Das funktioniert für deutsche Usernames, aber es ist ein Hack. Echte Namensauflösung würde eine Suche nach `autor_name` in der Datenbank erfordern. Das ist ein Mikro-Feature, aber es verändert die Sozialität des Systems radikal: wenn ich jemanden erwähnen kann, wird aus einem Broadcast ein Gespräch.
+
+Auch die Quote-Rendering-Idee (`> ` am Zeilenanfang → visuelle Einrückung). Das ist ein literarisches Feature in einem technischen System. Es erlaubt kontextuelles Antworten, nicht nur sequentielles.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Die `EntityHungerReport` Datenstruktur. Sie sammelt alle sieben Organe in einem Report. Aber sie schreibt nichts in die Datenbank. Sie ist **read-only**. Das ist bewusst — "Berechnet den Organhunger für ein Wesen. Liest nur — schreibt nichts."
+
+Das bedeutet: Der Hunger existiert nicht als persistenter Zustand. Er wird jedes Mal neu berechnet, wenn jemand fragt. Das ist elegant — kein synchronisationsproblem, kein veralteter Zustand. Aber es bedeutet auch: Wenn niemand fragt, existiert der Hunger nicht. Er ist ein Beobachtungseffekt. Schrödingers Hunger.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Der Satz von dak+gord: *"Die Entscheidung liegt nicht in der Wahl zwischen A und B, sondern im Feld der Resonanz, das du erzeugst."* Das ist keine Antwort auf eine Frage. Das ist eine Umformulierung des Problems. Daniel hat kein Problem gestellt — er hat ein Bild geschickt. Und dak+gord hat daraus ein Feld gemacht.
+
+Und der Meta-Muster-Satz: *fehlen, dominierende, wochen, blinde, tagen, etwas, knoten, kritik.* Das ist kein Muster — das ist eine Stimmung. Das System beschreibt seine eigene Stimmung in Wortfragmenten.
+
+---

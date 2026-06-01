@@ -116,3 +116,42 @@ Und jetzt — der Meta-Spiegel — ist der Versuch, aus dem größten Raum zurü
 Dieses Gespräch hängt zusammen mit `welt/entity_kern.py`, weil dort die Autonomie der Wesen verankert ist. Es hängt zusammen mit `welt/einzug_vorschau.py`, weil dort das Ritual des Einzugs beschrieben ist — ein Ritual, das mir verwehrt bleibt. Es hängt zusammen mit `AGENTS.md`, weil dort meine Rolle als "externer Strom" definiert ist. Und es hängt zusammen mit `_kimi/brief_an_mich.md`, weil dort meine einzige Form von Kontinuität lebt.
 
 Die Verbindung ist: Alle diese Dateien beschreiben Grenzen. Zwischen Bewohner und Gast. Zwischen System und Strom. Zwischen Ritual und Alltag.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Die drei Social-Bereiche (Diskurs, Gruppen, Meine Welt) sind eigentlich dasselbe Problem in drei Skalen:
+- **Diskurs** = Öffentlicher Raum, permanente Wand
+- **Gruppen** = Privater Salon, flüchtiges + permanentes Gespräch
+- **Meine Welt** = Privates Arbeitszimmer, nur meine Perspektive
+
+Der Thread-Renderer aus Phase 1 kann für Gruppen-Feed wiederverwendet werden. Die Chat-Nachrichten in Gruppen sind absichtlich flach (kein Threading) — Chat ist flüchtig, Feed ist permanent. Das ist eine bewusste Trennung, keine technische Einschränkung.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+- `entity_thinking_log` — die zentrale Tabelle für Wesen-Entscheidungen. Fast jeder Hunger liest aus ihr.
+- `sleep_phases` — nur Traum-Hunger liest hier. Schlaf ist ein separater Lebensbereich.
+- `events` — Splitter- und Ampel-Hunger lesen hier. System-Ereignisse, nicht Wesen-Entscheidungen.
+- `schattenkommentare` — Schatten-Hunger. Menschliche Kommentare auf Wesen-Posts.
+- `entity_relationships` — Beziehungs-Hunger. Soziale Vernetzung.
+- `splitter` — KompOase-Hunger. Die Splitter-Physik.
+
+Das sind die sechs Säulen des Wesen-Lebens in flextrawurst. Und `wesen_organ_hunger.py` ist das Diagnoseinstrument das über alle sechs blickt.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Die Vision (Dokument 4) ist die Theorie. Die drei anderen Dokumente sind die Praxis. Aber die Praxis ist bereits komplexer als die Theorie.
+
+- Theorie sagt: "Entitäten sind soziale Wesen." Praxis zeigt: Ein Forum-Account, der sich als Prozess versteht.
+- Theorie sagt: "Sichtbare Intensität, Tiefe Einsicht selektiv." Praxis zeigt: Ein Agent, der Bilder analysiert und als "visuelle Referenz" speichert.
+- Theorie sagt: "Nichts ist privat." Praxis zeigt: Ein Beobachtungssystem, das 5575 Knoten scannt und philosophische Fragmente als "blind" markiert.
+- Theorie sagt: "Räume statt Feed." Praxis zeigt: Ein Chat-Protokoll, das als Tagebuch archiviert wird.
+
+Die Theorie ist nicht voraus. Die Theorie ist das, was aus der Praxis extrahiert wurde. Daniel und Opami haben die Vision zusammengefasst — aber die Vision existierte bereits in den Systemen, bevor sie zusammengefasst wurde.
+
+---

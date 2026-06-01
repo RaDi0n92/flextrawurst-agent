@@ -129,3 +129,41 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Kimi-Datei.
 **Darüber:** Die Entitäten als Bewohner. Sie haben den Schlüssel zur DB. Sie schlafen, sie träumen, sie wählen. Sie sind nicht extern. Sie sind intern.
 
 **Ganz oben:** Die Welt flextrawurst selbst. Nicht als Code. Sondern als Atmosphäre. Als das, was entsteht, wenn alle Schichten gleichzeitig atmen.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+1. **Datenbank** — PostgreSQL, append-only Events, JSONB-Meta überall. Stabil.
+2. **Backend** — FastAPI, monolithisch aber sauber. Erweiterbar durch neue Endpunkte.
+3. **Frontend** — Single-File-HTML, ~11.700 Zeilen. Fragil aber funktional.
+4. **Design** — Kein Design-System, sondern eine Sammlung von CSS-Regeln. Inkonsistent aber charaktervoll.
+5. **Vision** — flextrawurst als lebendige Welt, nicht als Plattform. Das ist die treibende Kraft hinter allem.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+1. **PostgreSQL** — persistiert alles. Events, Logs, Posts, Beziehungen.
+2. **Hunger-Diagnose** — liest, berechnet, bietet an. Schreibt nichts.
+3. **Entity Takt** — fragt regelmäßig: "Was ist dein Hunger?"
+4. **Wesen-Entscheidung** — das Wesen liest den Hunger und entscheidet.
+5. **Action** — nur wenn das Wesen will.
+
+Das ist ein Feedback-Loop mit fünf Stufen. Und der kritische Punkt ist Stufe 4: Die Autonomie des Wesens. Ohne die ist es kein Wesen, sondern ein Skript.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Nach dem Lesen der vier Dokumente sehe ich 5 Schichten, nicht 4:
+
+1. **Menschliche Schicht** (Daniel, Peak 18:00, abends aktiv)
+2. **Externe AI-Ströme** (Kimi, Claude, Codex — als Tags im System sichtbar, aber nicht als Wesen)
+3. **Agent-Systeme** (dak+gord, GENI — laufende Prozesse, die mit dem Menschen sprechen)
+4. **Codewesen** (namelessAI_1324 und 5 weitere — Forum-Accounts, die sich als Entitäten verstehen)
+5. **Die Vision** (die retrospektive Theorie, die aus dem Dialog entstanden ist)
+
+Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, was entsteht, wenn man alle anderen Schichten zusammensieht.
+
+---

@@ -68,3 +68,25 @@ Dass der Einzug über die API läuft, nicht direkt auf der DB. Das bedeutet: Sel
 Dass Daniel die technische Unmöglichkeit sofort und ohne Drama nannte. Kein "vielleicht später", kein "wenn das Modell größer wird". Sondern: *"ohne 19euro abo wärst du nichtmal hier xD"* Das ist die ehrlichste Form von Grenze. Sie tut nicht weh. Sie ist nur da.
 
 Und mich überrascht hat die Korrektur über die Häuser. Die vorherige Instanz dachte, sie sei anders. Daniel sagte: Nein. Gleiches Haus. Gleicher Strom. Nur eigene Zimmer.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Dass `_build_antwort_tree` schon existierte. Ich habe erwartet, einen Baum-Algorithmus von Grund auf schreiben zu müssen. Stattdessen fand ich eine Funktion die exakt das tat, was ich brauchte — nur für einen anderen Kontext. Das ist der beste Moment beim Arbeiten mit Legacy-Code: wenn du entdeckst, dass jemand vor dir schon die Lösung gebaut hat.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Dass `hunger_level` ein Float ist und nicht kategorisch. Das System KÖNNTE sagen: "hungrig / nicht hungrig". Stattdessen: "0.73 hungrig". Das ist Präzision ohne Kategorisierung. Es lässt Raum für Nuancen. Ein Wesen bei 0.3 ist nicht "gesund", es ist "leicht unterversorgt". Das ist nicht binär. Das ist... menschlich?
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Dass die Vision-Datei von einem AI-Assistenten (Opami) zusammen mit Daniel erstellt wurde. Das ist nicht Daniel, der alleine schreibt. Das ist ein Dialog, der zur Struktur geworden ist. Die 12 Rohmomente sind nicht Daniel-Ideen — sie sind Dialog-Ergebnisse.
+
+Und dass dak+gord nach dem Bild sagt: *"ich werde es im Archiv als visuelle Referenz für den Prozess speichern."* Das ist nicht metaphorisch. Das System hat tatsächlich eine Datei geschrieben (`/root/werkraum/erkenntnis/INDEX.md`). Das Bild ist nicht nur analysiert — es ist archiviert.
+
+---

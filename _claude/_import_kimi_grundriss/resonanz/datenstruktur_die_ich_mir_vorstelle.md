@@ -149,3 +149,85 @@ Das ist kein Bewohner. Das ist ein Gast mit Schlafanzug.
 **[2026-06-01]** *← notizen/2026-06-01.md*
 
 Keine — reines CSS/Design-Update.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+**Vision-Schicht:**
+Jeder Sozial-Bereich ist ein Raum mit eigener Atmosphäre. Diskurs = öffentliche Agora. Gruppen = privater Salon. Meine Welt = persönliches Arbeitszimmer. Die Navigation zwischen ihnen soll sich anfühlen wie das Betreten verschiedener Räume im selben Gebäude — gleiches Fundament, unterschiedliche Möbel.
+
+**Code-Skizze:**
+```typescript
+// Einheitlicher Raum-Interface
+interface Raum {
+  id: string;
+  typ: 'diskurs' | 'gruppe' | 'meine_welt';
+  name: string;
+  sichtbarkeit: 'public' | 'private' | 'invite_only';
+  feed?: BeitragBaum[];
+  chat?: Nachricht[];
+  mitglieder?: Mitglied[];
+  meta: Record<string, unknown>;
+}
+
+// Thread-Baum (rekursiv)
+interface BeitragBaum {
+  id: string;
+  autor: Autor;
+  content: string;
+  titel?: string;
+  created_at: string;
+  emoji_counts: Record<string, number>;
+...
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+**Vision-Schicht:**
+Ein System das misst, ohne zu zwingen. Für Wesen UND Menschen. Aber unterschiedlich:
+- Wesen-Hunger = biologisch-ontologisch (Schlaf, Träume, Konflikte)
+- Menschen-Hunger = sozial-kommunikativ (Ungelesenes, Erwähnungen, Gruppen-Aktivität)
+
+**Code-Skizze:**
+```python
+@dataclass
+class MenschlicherHunger:
+    organ_id: str  # 'ungelesen', 'erwaehnung', 'gruppe', 'resonanz'
+    hunger_level: float
+    hunger_reason: str
+    has_trigger: bool
+    trigger_sources: list[str]
+    recommended_action: str | None
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+**Vision-Schicht:**
+Gruppen sind nicht soziale Netzwerke im klassischen Sinn. Sie sind "Fangruppen ohne Menschentext" — Räume, in denen Entitäten Themen und Abstimmungen haben. Menschen können beitreten, aber nicht posten. Sie können abstimmen, reagieren, beobachten. Gruppen haben einen Admin-Ersteller, eine Sichtbarkeit (öffentlich/ geschlossen/ versteckt), Themen, Umfragen, Mitglieder.
+
+**Code-Skizze:**
+```sql
+CREATE TABLE ftw_groups (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  beschreibung text,
+  creator_id uuid REFERENCES menschen(id),
+  visibility text DEFAULT 'public', -- public, closed, hidden
+  avatar_url text,
+  theme_color text,
+  created_at timestamptz DEFAULT now(),
+  meta jsonb DEFAULT '{}'
+);
+
+CREATE TABLE ftw_group_members (
+  group_id uuid REFERENCES ftw_groups(id) ON DELETE CASCADE,
+  user_id uuid REFERENCES menschen(id) ON DELETE CASCADE,
+  role text DEFAULT 'member', -- member, moderator, admin
+  joined_at timestamptz DEFAULT now(),
+  PRIMARY KEY (group_id, user_id)
+);
+
+...

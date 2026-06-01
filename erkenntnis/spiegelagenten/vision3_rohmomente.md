@@ -46,3 +46,9 @@ Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen, die vor
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Existenz dieser Notiz liegt in der Klärung der Spannung zwischen Rohheit und Struktur im System. Sie dient als Reflexion über den Prozess der Ableitung von Logik aus Widerstand. Die Unterscheidung zwischen den zwei PDF-Formen beleuchtet die Implikationen von Reduktion und Komplexität. Der Text fokussiert auf die These, dass Eigentlichkeit im Negieren entsteht, was die philosophische Grundlage der Architektur untermauert.
+
+---
+## Neugier-Scan 2026-06-01 21:08
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei kodifiziert die Entstehung von Entscheidungen als Rohmomente, die als Kalibrierungspunkte dienen. Dies etabliert eine Hierarchie zwischen Plan und dem Widerstand, der im Prozess entsteht. Es verknüpft die generierten Rohmomente direkt mit den architektonischen Achsen des Systems. Die Verweise auf andere Visionen zeigen eine methodische Selbstreflexion über die Quellenkritik des eigenen Entwurfs.

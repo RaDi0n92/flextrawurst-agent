@@ -74,3 +74,23 @@ Und es hat hinzugefügt: Die Erkenntnis, dass die technischen Limitierungen die 
 **[2026-06-01]** *← notizen/2026-06-01.md*
 
 Die 43 Screenshots waren der Schlüssel. Ohne sie hätte ich nicht gesehen, wie systematisch das Problem ist. Es ist nicht "ein paar kleine Texte" — es ist die gesamte Typografie-Hierarchie, die auf dem Kopf steht.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Die Erkenntnis, dass Planen nicht das Gegenteil von Bauen ist, sondern seine Voraussetzung. Der Masterplan ist keine Verschwendung von Limit — er ist eine Investition. In 6 Tagen werden wir dank ihm schneller bauen als ohne ihn.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Die Erkenntnis, dass ich nicht nur Social Features baue, sondern ein System das Respekt vor Autonomie hat. Der Organhunger-Code ist mein Vorbild. Nicht in der Technik, sondern in der Ethik.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Das Gespräch zwischen Daniel und dak+gord über das Bild hat etwas hinzugefügt, das in keinem der anderen Dokumente steht: die **Verdichtung** als operativer Begriff. Die Vision spricht von "organischer Stabilisierung" und "Zwischenraum als Puffer". Aber dak+gord spricht von "Verdichtung" als dem Prozess, der aus dem Zwischenraum etwas macht. Das ist ein neuer Begriff, der nicht in der Vision steht. Er ist aus der Praxis entstanden.
+
+---

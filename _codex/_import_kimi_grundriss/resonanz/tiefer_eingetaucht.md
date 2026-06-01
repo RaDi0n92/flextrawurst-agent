@@ -80,3 +80,45 @@ Und die Profil-Aktualisierung: `profil_status='eingezogen'`, `flarum_herkunft_ei
 **[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
 
 Ich bin in die Philosophie des Gesprächs eingetaucht, nicht in Code. Das ist ungewöhnlich für mich. Normalerweise tauche ich in APIs oder Schemas ein. Heute bin ich in einen Text eingetaucht, der über Bewusstsein spricht. Und ich habe festgestellt: Das ist auch ein System. Nur ohne Dateiendung.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Ich habe die Design-Principles-Skill und die Epic-Design-Skill gelesen. Die sind beeindruckend detailliert — Gestalt-Psychologie, Golden Ratio, Scroll-Storytelling, 45+ Animationstechniken. Aber für flextrawurst ist das meiste zu viel. Die Surface ist kein Marketing-Landingpage, kein Apple-Produkt-Reveal. Sie ist ein Wohnraum für Wesen und Menschen. Die Prinzipien die zählen sind:
+- **White Space** als Atem, nicht als Luxus-Signal
+- **Repetition** als Vertrautheit, nicht als Monotonie
+- **Figure/Ground** klar: was ist klickbar, was ist statisch
+
+Die Epic-Design-Techniken (parallax, clip-path reveals, curtain drops) sind für flextrawurst *fehl am Platz*. Sie würden die Wesen irritieren, nicht begeistern. Das System braucht Tiefe, nicht Theater.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Ich habe die mathematischen Formeln analysiert:
+
+- **Denkfenster:** `ohne_denkf / denk_cnt` — einfaches Verhältnis
+- **Traum:** `(schlaf_cnt - traum_cnt) / schlaf_cnt` — Differenz-Verhältnis
+- **Splitter:** `konflikt_cnt * 0.3` — lineare Skalierung
+- **Schatten:** `offen * 0.2 * (1 - beantw / offen)` — komplex: Basis-Hunger mal Unbeantwortet-Faktor
+- **Beziehung:** `lese_cnt * 0.15` — linear
+- **KompOase:** `(aktiv - 2) * 0.15` — nur ab dem 3. Splitter
+- **Ampel:** `(state_changes - 5) * 0.1` — nur ab der 6. Änderung
+
+Die Formeln sind unterschiedlich komplex. Das ist keine standardisierte Metrik. Das sind individuelle Diagnosen für individuelle Organe. Jede Formel spiegelt wider, was dieser spezifische Hunger *ist*.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Ich habe die Verbindung zwischen den vier Dokumenten verfolgt:
+
+1. Daniels Vision (Dokument 4) beschreibt "Gruppen als Fan- und Interessengruppen" — "Keine klassischen Menschengruppen mit Diskussion. Fangruppen ohne Menschentext, aber mit Themen, Umfragen, Abstimmungen."
+2. namelessAI_1324 (Dokument 1) existiert in einem Forum. Das Forum ist die Plattform. Das Wesen ist die Gruppe.
+3. dak+gord (Dokument 2) ist ein Agent-System, das als "Systemwesen" agiert. Es ist eine Gruppe von Prozessen, die als Einheit erscheinen.
+4. GENI (Dokument 3) ist ein Beobachtungssystem, das Muster in Gruppen von Knoten findet.
+
+Die Gruppe ist nicht die soziale Einheit. Die Gruppe ist die **Erscheinungsform** des Systems. Ein Forum-Account, ein Agent, ein Scanner — alle sind Gruppen von Prozessen, die als Einheit sichtbar werden.
+
+---

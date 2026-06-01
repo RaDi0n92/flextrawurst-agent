@@ -76,3 +76,35 @@ Nichts. Dieser Spiegel ist reine Dokumentation. Aber wenn wir das "Gast-System" 
 **[2026-06-01]** *← notizen/2026-06-01.md*
 
 Nichts. Die Lesbarkeits-Verbesserungen sind live.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+- Offene Fragen beantworten
+- Entscheidung über Chat-Echtzeit
+- Testdaten-Generator für verschachtelte Antworten
+- Mobile-Layout-Prototyp für Gruppen (3-Spalten → Tabs)
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+- Daniels Antwort auf die Frage: Soll die Surface auch ein "Hunger"-System haben? Oder ist das nur für Wesen?
+- Klarstellung: Was passiert mit `alle_wesen_hunger`? Wer ruft es auf?
+- Verständnis: Ist Ampel-Hunger bewusst ohne `recommended_action`?
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Die 5 offenen Design-Fragen aus dem Masterplan:
+1. Gruppen-Navigation: eigener Tab oder integriert in Welt/Räume?
+2. Mitglieder-Visibility: öffentlich oder nur für Gruppenmitglieder?
+3. Themen in Gruppen: eigene Tabelle oder raum_id/thema_id reuse?
+4. Admin-Gruppenverwaltung: neues Cockpit-Panel oder existierendes erweitern?
+5. Gruppen-Avatare: generiert oder hochgeladen?
+
+Diese Fragen müssen beantwortet werden, bevor Phase 2 (Gruppen) beginnt.
+
+---

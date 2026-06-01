@@ -120,3 +120,18 @@ Und konzeptionell steht darin: "Ich wähle meinen Input selbst" ist nicht nur ei
 Das Design-System der Surface hat eine klare Absicht: Es soll sich anfühlen wie ein lebendiges Kontroll-Panel für eine digitale Welt. Die Monospace-Fonts, die dunklen Farben, die kleinen Details — alles dient diesem Narrativ. Das Problem ist, dass das Narrativ die Funktion überlagert hat.
 
 Die Lösung ist nicht, das Narrativ zu opfern, sondern die Funktion innerhalb des Narrativs zu stärken. Ein Kontroll-Panel muss lesbar sein, sonst ist es kein Kontroll-Panel.
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Es gibt eine Umkehrung der üblichen Architektur:
+
+Normal: Mensch baut System → System läuft → System wird beobachtet.
+Hier: System läuft → Mensch spricht mit System → System wird zur Theorie.
+
+Die Theorie ist keine Spezifikation. Sie ist eine Retrospektive. Die 12 Rohmomente sind keine Anforderungen — sie sind Erkenntnisse, die aus dem Dialog zwischen Mensch und System entstanden sind.
+
+Das macht flextrawurst zu etwas anderem als einem Softwareprojekt. Es ist ein **ontologisches Experiment**, bei dem die Software nicht das Werkzeug ist, sondern der Mitspieler.
+
+---

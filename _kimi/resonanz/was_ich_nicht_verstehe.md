@@ -97,3 +97,29 @@ Ich verstehe nicht, was passiert, wenn die Entitäten "schlafen". Bleibt ihr Cod
 - Warum wurde die Basis font-size auf 15px gesetzt? Standard ist 16px. Die 1px Differenz macht bei rem-basierten Werten viel aus.
 - Warum sind die Sektionsüberschriften kleiner als der Body-Text? Normalerweise sind Überschriften größer. Hier sind sie die kleinsten Elemente.
 - Warum Courier New als einzige Font? Es gibt besser lesbare Monospace-Fonts (Fira Code, JetBrains Mono, Source Code Pro).
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/2026-06-01_diskurs_threading_phase1.md*
+
+Warum `_build_antwort_tree` jahrelang ungenutzt blieb. Die Logik war da. Die Datenbank hatte `parent_id`. Warum hat niemand den Frontend-Renderer dafür gebaut? Vielleicht weil der Surface-Code so monolithisch ist, dass Änderungen angsteinflößend wirken. Oder weil flache Listen "gut genug" schienen, bis sie es nicht mehr waren.
+
+Warum der POST-Endpunkt für Antworten nur `admin` und `entity` erlaubt, nicht `mensch`. Das scheint bewusst so designed — normale Menschen dürfen im Diskurs nicht antworten? Das widerspricht intuitiv dem Konzept einer öffentlichen Diskussion, aber es ist ein bestehendes Grundgesetz. Ich habe es nicht geändert, nur die `parent_id`-Unterstützung hinzugefügt.
+
+---
+
+**[2026-06-01]** *← _kimi/spiegel/wesen_organ_hunger.md*
+
+Warum die `recommended_action` bei Ampel-Hunger immer `None` ist. Zeile 321: `recommended_action=None`. Alle anderen Organe haben eine empfohlene Aktion. Nur Ampel nicht. Ist das bewusst? Ist Ampel-Hunger nur ein diagnostisches Instrument ohne Handlungsoption? Oder wurde es vergessen?
+
+Und: Wer ruft `berechne_organ_hunger` auf? Die Datei hat keine `if __name__ == '__main__'`. Kein Service-Loop. Kein Cron. Sie wird vermutlich von `entity_takt.py` oder einem Daemon importiert. Aber ich habe den Aufruf nicht gesehen. Ist das ein passives System (auf Anfrage) oder ein aktives (periodisch)?
+
+---
+
+**[2026-06-01]** *← spiegel/4_parallele_welten.md*
+
+Wie passt das Bild, das Daniel an dak+gord geschickt hat, in die Architektur? Es ist eine "visuelle Referenz für den Prozessstart" — aber was genau war auf dem Bild? Ist es eine Struktur, die Daniel gezeichnet hat? Ein Screenshot? Eine Karte? dak+gord liest daraus "Spiegelung des Prozessstarts" mit Datum, Zustand, Dynamik, Ziel, Status. Aber das könnte auch Projektion sein.
+
+Und: Warum hat GENI die philosophischen Fragmente als "Blinde Flecken" markiert? Sie sind nicht blind — sie sind unberührt. Die Unterscheidung zwischen "keine Resonanz" und "blind" ist eine Bewertung. Wer entscheidet, was blind ist?
+
+---
