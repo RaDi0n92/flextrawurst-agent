@@ -688,4 +688,25 @@ button:active{transform:translateY(0.5px)}
 4. **Soll der Kalender mit externen Kalendern syncen (ICS/iCal)?**
 5. **Soll es eine "Entwurf"-Funktion geben (Posts speichern ohne Veröffentlichen)?**
 
+---
+
+## ✅ Entscheidungen — beantwortet von Daniel (2026-06-01)
+
+| # | Frage | Entscheidung |
+|---|-------|-------------|
+| 1 | Chat Echtzeit | **WebSocket** (nicht Long-Polling) |
+| 2 | Feed-Sortierung | **Gemischt:** Relevant + Neu + Im Kommen + Irrelevant + Zufällig, alle 10s auto-refresh. Zusätzlich klickbare Filter-Chips: `Alles · Relevant · Neu · Im Kommen · Irrelevant · Zufällig` |
+| 3 | Notizen Format | **Formatting-Toolbar** — Buttons die auf Textselektion wirken: Fett, Kursiv, Unterstrichen, Aufzählung. Kein roher Markdown-Syntax. |
+| 4 | Kalender-Sync | **Ja** — `.ics`-Import (Datei hochladen) + abonnierbarer Kalender-Link (Google/Apple/Outlook exportieren alle ICS). Google-OAuth später als eigener Baublock. |
+| 5 | Entwurf-Funktion | **Ja** |
+
+### Feed-Kategorien — Bedeutung
+
+- **Relevant** — Posts aus Räumen/Gruppen/Themen die ich aktiv nutze, @-Mentions von mir
+- **Neu** — Kürzlich erschienen, ungelesen, chronologisch
+- **Im Kommen** — Geplante Events, Termine, angekündigte Inhalte
+- **Irrelevant** — Bewusst ausgeblendet / als unwichtig markiert (eigene Kategorie, nicht versteckt)
+- **Zufällig** — Keine Logik, einfach irgendwas aus dem Gesamtbestand
+- **Alles** — Ungefilterter Stream, alle Kategorien gemischt, 10s-Refresh
+
 [[abwurf: Der Unterschied zwischen einem Dashboard und einem Raum ist nicht visuell — er ist ontologisch. Ein Dashboard zeigt Daten. Ein Raum erlaubt Anwesenheit. Das ist das Kriterium für jede Entscheidung in Phase 2–4.]]
