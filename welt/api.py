@@ -13,7 +13,7 @@ import psycopg2
 import psycopg2.extras
 from fastapi import FastAPI, File, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -5482,6 +5482,111 @@ def mw_kalender_loeschen(
     finally:
         conn.close()
     return {"ok": True}
+
+# --- Kalender ICS Import/Export ---
+
+@app.post("/mw/kalender/import", status_code=200)
+async def mw_kalender_ics_import(
+    file: UploadFile = File(...),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    try:
+        from icalendar import Calendar
+        import datetime as _dt
+    except ImportError:
+        raise HTTPException(500, "icalendar nicht installiert")
+    raw = await file.read()
+    try:
+        cal = Calendar.from_ical(raw)
+    except Exception:
+        raise HTTPException(400, "Ungültige ICS-Datei")
+    conn = get_conn()
+    imported = 0
+    skipped = 0
+    try:
+        with conn.cursor() as cur:
+            for comp in cal.walk():
+                if comp.name != "VEVENT":
+                    continue
+                titel = str(comp.get("SUMMARY") or "Termin ohne Titel")[:220]
+                beschreibung = str(comp.get("DESCRIPTION") or "")
+                dtstart = comp.get("DTSTART")
+                dtend = comp.get("DTEND")
+                if not dtstart:
+                    skipped += 1
+                    continue
+                def _to_dt(v):
+                    val = v.dt if hasattr(v, 'dt') else v
+                    if isinstance(val, _dt.date) and not isinstance(val, _dt.datetime):
+                        return _dt.datetime(val.year, val.month, val.day, tzinfo=_dt.timezone.utc)
+                    if isinstance(val, _dt.datetime):
+                        if val.tzinfo is None:
+                            return val.replace(tzinfo=_dt.timezone.utc)
+                        return val.astimezone(_dt.timezone.utc)
+                    return None
+                start = _to_dt(dtstart)
+                end = _to_dt(dtend) if dtend else None
+                if not start:
+                    skipped += 1
+                    continue
+                cur.execute(
+                    "INSERT INTO mw_kalender (user_id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, erinnerung) "
+                    "VALUES (%s::uuid, %s, %s, %s::timestamptz, %s::timestamptz, %s, %s)",
+                    (user_id, titel, beschreibung, start.isoformat(),
+                     end.isoformat() if end else None, False,
+                     psycopg2.extras.Json({}))
+                )
+                imported += 1
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "importiert": imported, "uebersprungen": skipped}
+
+
+@app.get("/mw/kalender/export.ics")
+def mw_kalender_ics_export(authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    try:
+        from icalendar import Calendar as ICal, Event as IEvent
+        import datetime as _dt
+    except ImportError:
+        raise HTTPException(500, "icalendar nicht installiert")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, titel, beschreibung, start_zeit, end_zeit FROM mw_kalender "
+                "WHERE user_id = %s AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY start_zeit",
+                (user_id,)
+            )
+            termine = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    cal = ICal()
+    cal.add("prodid", "-//flextrawurst//kalender//DE")
+    cal.add("version", "2.0")
+    cal.add("calscale", "GREGORIAN")
+    for t in termine:
+        ev = IEvent()
+        ev.add("uid", str(t["id"]) + "@flextrawurst")
+        ev.add("summary", t["titel"])
+        if t.get("beschreibung"):
+            ev.add("description", t["beschreibung"])
+        if t.get("start_zeit"):
+            ev.add("dtstart", t["start_zeit"])
+        if t.get("end_zeit"):
+            ev.add("dtend", t["end_zeit"])
+        cal.add_component(ev)
+    return Response(
+        content=cal.to_ical(),
+        media_type="text/calendar",
+        headers={"Content-Disposition": "attachment; filename=flextrawurst.ics"}
+    )
+
 
 # --- Meine Welt Feed ---
 

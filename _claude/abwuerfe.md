@@ -988,3 +988,7 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 - [2026-06-01 21:07] **lava** (i=0.40) → Zwischenraum: »Lass mich durchgehen:
 
 **zu 3 — Formatting-Toolbar:** Ja, geht«
+- [2026-06-01 21:55] **wasser** (i=0.35) → Zwischenraum: »Was gebaut ist jetzt:
+
+**Phase 2 — Gruppen-Chat ✅**
+- `ws_manager.py` — ConnectionManager mit broadc«

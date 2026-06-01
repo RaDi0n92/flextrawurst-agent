@@ -55,9 +55,17 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);font-family:var(--font-body);font-size:16px}
-::-webkit-scrollbar{width:4px;height:4px}
-::-webkit-scrollbar-track{background:var(--void)}
-::-webkit-scrollbar-thumb{background:#0d2030;border-radius:2px}
+::-webkit-scrollbar{width:6px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--t-dim,#1c3040);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--t-sub,#3a7080)}
+button:active{transform:translateY(0.5px)}
+.ftw-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;gap:10px;color:var(--t-sub,#3a7080);font-size:.68rem}
+.ftw-loading-dot{width:7px;height:7px;border-radius:50%;background:var(--t-sub,#3a7080);animation:ftw-pulse 1.4s ease-in-out infinite}
+@keyframes ftw-pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+.ftw-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px;gap:7px;color:var(--t-dim,#1c3040);font-size:.7rem}
+.ftw-empty-icon{font-size:1.4rem;opacity:.35}
+@media (pointer:coarse){button,.v-tab,.mw-bereich-karte{min-height:44px!important}}
 *{scrollbar-width:thin;scrollbar-color:#0d2030 var(--void)}
 
 /* ROOT */
@@ -270,6 +278,9 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .mw-formular{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #06101a}
 .mw-ta{background:#010508;border:1px solid #0e2040;color:#4a7a9a;font-family:'Courier New',monospace;font-size:0.7rem;padding:8px 10px;resize:vertical;min-height:60px}
 .mw-ta:focus{outline:none;border-color:#1a4a6a}
+.ftw-toolbar{display:flex;gap:4px;margin-bottom:5px}
+.ftw-tb-btn{background:#030c14;border:1px solid var(--rim);color:var(--t-sub);font-size:.68rem;padding:2px 8px;border-radius:2px;cursor:pointer;font-family:monospace;transition:all .1s;min-width:24px}
+.ftw-tb-btn:hover{border-color:var(--t-sub);color:var(--t-bright)}
 .mw-inp{background:#010508;border:1px solid #0e2040;color:#4a7a9a;font-family:'Courier New',monospace;font-size:0.7rem;padding:6px 10px;width:100%;box-sizing:border-box;margin-bottom:4px}
 .mw-inp:focus{outline:none;border-color:#1a4a6a}
 .mw-btn{background:#07101a;border:1px solid #1a3a5a;color:#3a6a8a;font-family:'Courier New',monospace;font-size:0.6rem;padding:5px 14px;cursor:pointer;letter-spacing:0.1em;align-self:flex-start}
@@ -4377,18 +4388,50 @@ html[lang="en"] .de-only{display:none}
   }
 
   function mwEintragHtml(text, datum, extra) {
-    return '<div class="mw-eintrag"><div class="mw-eintrag-datum">'+(datum||'')+(extra?' · '+extra:'')+'</div><div class="mw-eintrag-text">'+mwEsc(text)+'</div></div>';
+    var safeText = _ftwSanitize ? _ftwSanitize(text||'') : mwEsc(text||'');
+    return '<div class="mw-eintrag"><div class="mw-eintrag-datum">'+(datum||'')+(extra?' · '+extra:'')+'</div><div class="mw-eintrag-text">'+safeText+'</div></div>';
   }
   function mwEsc(s) { return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
+  function _ftwFormat(taId, tag) {
+    var ta = document.getElementById(taId); if (!ta) return;
+    var s = ta.selectionStart, e = ta.selectionEnd;
+    var sel = ta.value.substring(s, e) || 'Text';
+    var html;
+    if (tag === 'li') {
+      html = '<ul>' + sel.split('\n').filter(Boolean).map(function(l){ return '<li>'+l+'</li>'; }).join('') + '</ul>';
+    } else {
+      var tags = {b:['<strong>','</strong>'],i:['<em>','</em>'],u:['<u>','</u>']};
+      html = (tags[tag]||['',''])[0] + sel + (tags[tag]||['',''])[1];
+    }
+    ta.value = ta.value.substring(0, s) + html + ta.value.substring(e);
+    ta.selectionStart = s; ta.selectionEnd = s + html.length;
+    ta.focus();
+  }
+
+  function _ftwToolbarHTML(taId) {
+    return '<div class="ftw-toolbar">'
+      + '<button class="ftw-tb-btn" type="button" onclick="_ftwFormat(\''+taId+'\',\'b\')" title="Fett"><strong>B</strong></button>'
+      + '<button class="ftw-tb-btn" type="button" onclick="_ftwFormat(\''+taId+'\',\'i\')" title="Kursiv"><em>I</em></button>'
+      + '<button class="ftw-tb-btn" type="button" onclick="_ftwFormat(\''+taId+'\',\'u\')" title="Unterstreichen"><u>U</u></button>'
+      + '<button class="ftw-tb-btn" type="button" onclick="_ftwFormat(\''+taId+'\',\'li\')" title="Liste">☰</button>'
+      + '</div>';
+  }
+
+  function _ftwSanitize(html) {
+    return (html||'').replace(/<(?!\/?(?:strong|em|u|ul|li|br|p)\b)[^>]+>/gi, '');
+  }
+
   function mwFormular(placeholder, btnLabel, onSend) {
     const id = "mw-form-" + Math.random().toString(36).slice(2);
+    const taId = id+"-ta";
     setTimeout(()=>{
       const btn = document.getElementById(id+"-btn");
-      const ta = document.getElementById(id+"-ta");
+      const ta = document.getElementById(taId);
       if (btn) btn.onclick = ()=>{ if(ta.value.trim()) onSend(ta.value.trim(), ta); };
     }, 50);
-    return '<div class="mw-formular"><textarea id="'+id+'-ta" class="mw-ta" placeholder="'+placeholder+'" rows="3"></textarea>'
+    return '<div class="mw-formular">'+_ftwToolbarHTML(taId)
+      + '<textarea id="'+taId+'" class="mw-ta" placeholder="'+placeholder+'" rows="3"></textarea>'
       + '<button id="'+id+'-btn" class="mw-btn">'+btnLabel+'</button></div>';
   }
 
@@ -4744,6 +4787,20 @@ html[lang="en"] .de-only{display:none}
       .then(() => mwOeffne("kalender"));
   }
 
+  window.mwIcsImport = function(input, h) {
+    var file = input.files[0]; if (!file) return;
+    var msg = document.getElementById('mw-ics-msg');
+    if (msg) msg.textContent = 'Importiere…';
+    var fd = new FormData(); fd.append('file', file);
+    fetch(MW_API+'/mw/kalender/import', {method:'POST', headers:{Authorization: mwToken()}, body: fd})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if (msg) msg.textContent = d.importiert+' Termine importiert'+(d.uebersprungen?' ('+d.uebersprungen+' übersprungen)':'');
+        mwOeffne('kalender');
+      })
+      .catch(function(){ if(msg) msg.textContent = 'Fehler beim Import'; });
+  };
+
   function mwKalNav(delta) {
     mwKalWochenOffset += delta;
     const el = document.getElementById("mw-panel-inhalt");
@@ -4793,6 +4850,11 @@ html[lang="en"] .de-only{display:none}
       html += '<input id="mw-kal-titel" class="mw-inp" placeholder="Titel"><input id="mw-kal-start" class="mw-inp" type="datetime-local">';
       html += '<button class="mw-btn" onclick="mwKalEintragen()">Eintragen</button>';
       html += '</div>';
+      html += '<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">'
+        + '<label style="cursor:pointer"><input type="file" id="mw-ics-file" accept=".ics" style="display:none" onchange="mwIcsImport(this,h)"><button class="mw-btn" style="font-size:.56rem" onclick="document.getElementById(\'mw-ics-file\').click()">ICS importieren</button></label>'
+        + '<a href="/api/mw/kalender/export.ics" style="text-decoration:none"><button class="mw-btn" style="font-size:.56rem">Kalender-Link (.ics)</button></a>'
+        + '<div id="mw-ics-msg" style="font-size:.6rem;color:#3a6a4a;align-self:center"></div>'
+        + '</div>';
       if (!termine.length) html += '<div class="mw-leer" style="padding-top:8px">Keine Termine diese Woche.</div>';
       el.innerHTML = html;
       el.querySelectorAll(".mw-kal-del").forEach(btn=>{
@@ -10539,7 +10601,14 @@ function updateSeoMeta(id) {
   history.replaceState(null, '', id === 'uber' ? '/' : '#' + id);
 }
 
+var _viewScrollPos = {};
+var _reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function switchView(id) {
+  // Scroll-Position der aktuellen View merken
+  var prevEl = document.getElementById('view-' + activeView) || document.getElementById('v-' + activeView);
+  if (prevEl && prevEl.style.display !== 'none') _viewScrollPos[activeView] = prevEl.scrollTop;
+
   activeView = id;
   const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie','cyberlinge','splitter','zitate','schatten'];
   views.forEach(v => {
@@ -10559,10 +10628,15 @@ function switchView(id) {
   if (id === 'schlaf') scLoad();
   if (id === 'uber') {}
   updateSeoMeta(id);
-  const active = document.getElementById('view-' + id);
+  const active = document.getElementById('view-' + id) || document.getElementById('v-' + id);
   if (active) {
-    active.classList.remove('v-anim');
-    requestAnimationFrame(() => requestAnimationFrame(() => active.classList.add('v-anim')));
+    // Scroll-Position wiederherstellen
+    if (_viewScrollPos[id] !== undefined) active.scrollTop = _viewScrollPos[id];
+    // Animation (nur wenn nicht prefers-reduced-motion)
+    if (!_reduceMotion) {
+      active.classList.remove('v-anim');
+      requestAnimationFrame(() => requestAnimationFrame(() => active.classList.add('v-anim')));
+    }
   }
 }
 
