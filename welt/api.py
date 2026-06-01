@@ -5604,14 +5604,14 @@ def mw_feed(
         with conn.cursor() as cur:
             items = []
             if kategorie in ("alles", "neu"):
-                where = "WHERE p.sichtbarkeit='public' AND p.autor_type='entity'"
+                where = "WHERE p.sichtbarkeit='public'"
                 params: list = []
                 if nach:
                     where += " AND p.created_at > %s"
                     params.append(nach)
                 cur.execute(f"""
-                    SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
-                           'wesen_post' AS quelle
+                    SELECT p.id::text, p.autor_type, p.autor_id, p.content AS inhalt,
+                           p.created_at, 'post' AS quelle
                     FROM ftw_posts p
                     {where}
                     ORDER BY p.created_at DESC LIMIT %s
@@ -5621,11 +5621,11 @@ def mw_feed(
             if kategorie in ("alles", "relevant"):
                 try:
                     cur.execute("""
-                        SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
-                               'splitter' AS quelle
-                        FROM splitter p
-                        WHERE p.status='aktiv'
-                        ORDER BY p.created_at DESC LIMIT %s
+                        SELECT s.id::text, 'entity' AS autor_type, s.entity_id AS autor_id,
+                               s.essenz AS inhalt, s.created_at, 'splitter' AS quelle
+                        FROM splitter s
+                        WHERE s.status='aktiv'
+                        ORDER BY s.created_at DESC LIMIT %s
                     """, (limit // 2,))
                     items += [dict(r) for r in cur.fetchall()]
                 except Exception:
@@ -5648,8 +5648,8 @@ def mw_feed(
 
             if kategorie == "zufaellig":
                 cur.execute("""
-                    SELECT p.id, p.autor_type, p.autor_id, p.inhalt, p.created_at,
-                           'zufaellig' AS quelle
+                    SELECT p.id::text, p.autor_type, p.autor_id, p.content AS inhalt,
+                           p.created_at, 'post' AS quelle
                     FROM ftw_posts p
                     WHERE p.sichtbarkeit='public'
                     ORDER BY RANDOM() LIMIT %s

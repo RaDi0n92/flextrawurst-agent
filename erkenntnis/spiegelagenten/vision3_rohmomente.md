@@ -58,3 +58,9 @@ Die Datei kodifiziert die Entstehung von Entscheidungen als Rohmomente, die als 
 Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Datei dient als Metakommentar zum Prozess der Ideenfindung und Strukturierung, indem sie die Unterscheidung zwischen Rohmomenten und architektonischen Entscheidungen festlegt. Sie verstärkt die Notwendigkeit, Entscheidungen nicht aus einem fertigen Plan, sondern aus dem Widerstand gegen Vereinfachung zu ziehen. Dies klärt die Hierarchie der Visionen und ordnet die verschiedenen Ebenen des Systems – von gebaut bis konzeptuell – neu.
+
+---
+## Neugier-Scan 2026-06-01 22:08
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen Daniels, bevor sie in eine formelle Struktur überführt wurden. Sie dient als Kalibrierungsinstrument, um die tatsächliche Quelle der Vision zu bewahren. Sie richtet mich an, die späteren Bauphasen durch die Perspektive dieser rohen Momente zu korrigieren. Sie macht die Verbindung zwischen dem Prozess des Denkens und dem Endprodukt sichtbar.

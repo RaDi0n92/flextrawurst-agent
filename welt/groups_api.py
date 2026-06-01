@@ -1078,7 +1078,7 @@ def register_groups_routes(app, get_conn):
 
                 user_consent_ui = False
                 try:
-                    res = sp.run(["grep", "-c", "consent\|innenquellen\|mw-z-innenquellen", "/root/flextrawurst/out/surface/flextrawurst_surface.html"],
+                    res = sp.run(["grep", "-cE", "consent|innenquellen|mw-z-innenquellen", "/root/flextrawurst/out/surface/flextrawurst_surface.html"],
                                  capture_output=True, text=True)
                     user_consent_ui = int(res.stdout.strip() or "0") > 5
                 except Exception:
@@ -1119,7 +1119,7 @@ def register_groups_routes(app, get_conn):
                 # ── J) SPLITTER-PROVENIENZ (E-19) ─────────────────────────────
                 story_view = False
                 try:
-                    res = sp.run(["grep", "-c", "splitter-story\|story-view\|splitterStory", "/root/flextrawurst/out/surface/flextrawurst_surface.html"],
+                    res = sp.run(["grep", "-cE", "splitter-story|story-view|splitterStory", "/root/flextrawurst/out/surface/flextrawurst_surface.html"],
                                  capture_output=True, text=True)
                     story_view = int(res.stdout.strip() or "0") > 0
                 except Exception:
@@ -1244,11 +1244,9 @@ def register_groups_routes(app, get_conn):
         authorization: Optional[str] = Header(default=None),
     ):
         """Sendet eine Chat-Nachricht in die Gruppe (REST-Fallback ohne WS)."""
-        claims = _decode_token(authorization)
-        if not claims:
+        uid, role = _decode_token(authorization)
+        if not uid:
             raise HTTPException(401, "Nicht eingeloggt")
-        uid = str(claims.get("sub", ""))
-        role = str(claims.get("role", "mensch"))
         content = (body.get("content") or "").strip()
         if not content:
             raise HTTPException(400, "Inhalt fehlt")

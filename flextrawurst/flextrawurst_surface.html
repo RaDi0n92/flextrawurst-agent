@@ -4316,6 +4316,8 @@ html[lang="en"] .de-only{display:none}
   }
 
   function mwSchliesse() {
+    clearInterval(_mwFeedTimer);
+    _mwFeedEl = null; _mwFeedH = null;
     document.getElementById("mw-panel").style.display = "none";
   }
 
@@ -10608,6 +10610,10 @@ function switchView(id) {
   // Scroll-Position der aktuellen View merken
   var prevEl = document.getElementById('view-' + activeView) || document.getElementById('v-' + activeView);
   if (prevEl && prevEl.style.display !== 'none') _viewScrollPos[activeView] = prevEl.scrollTop;
+  // Feed-Timer stoppen wenn Meine Welt verlassen wird
+  if (activeView === 'meinewelt' && id !== 'meinewelt') {
+    clearInterval(_mwFeedTimer); _mwFeedEl = null; _mwFeedH = null;
+  }
 
   activeView = id;
   const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie','cyberlinge','splitter','zitate','schatten'];
