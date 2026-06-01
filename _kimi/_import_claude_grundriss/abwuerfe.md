@@ -992,3 +992,12 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 
 **Phase 2 — Gruppen-Chat ✅**
 - `ws_manager.py` — ConnectionManager mit broadc«
+- [2026-06-01 22:22] **nebel** (i=0.32) → Zwischenraum: »**Prüfungsergebnis — 5 Bugs gefunden und behoben:**
+
+| # | Bug | Wo | Fix |
+|---|-----|----|-----|
+|«
+- [2026-06-01 22:24] **wasser** (i=0.51) → Zwischenraum: »**Was du ohne Login testen kannst — direkt auf flextrawurst.de:**
+
+**GRUPPEN-Tab** (sichtbar, kein L«
+- [2026-06-02 00:26] **lava** (i=0.46) → Zwischenraum: »Jetzt schreibe ich eine vollständige Auswertung«

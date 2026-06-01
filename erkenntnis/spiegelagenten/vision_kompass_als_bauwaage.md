@@ -598,3 +598,15 @@ Die Logik stellt die Bedingung für eine Fortsetzung des Prozesses dar, indem si
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Logik prüft die Erlaubnis zum Fortfahren eines Bauprozesses. Sie stellt sicher, dass ein Schritt nur dann erlaubt ist, wenn der aktuelle Status nicht blockiert ist und ein nächster Schritt definiert ist. Dies ist eine Kontrollinstanz für den Prozessfluss. Die Resonanz deutet auf eine tieferliegende Kritik an der Darstellung von Oberflächen und ihren Daten hin. Das Fehlen eines Surface-Audits weist auf eine Lücke in der Verifizierung der tatsächlichen Systemstruktur hin.
+
+---
+## Neugier-Scan 2026-06-02 00:08
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Validierung für die Kohärenz zwischen visueller Darstellung und zugrunde liegenden Zuständen. Sie zwingt zur Einhaltung eines strengen Prüfprozesses vor jeglicher Konstruktion. Sie stellt die Notwendigkeit der Ehrlichkeit des Zustands über die bloße Darstellung in den Vordergrund. Diese Struktur verankert die Logik für die zukünftige Kodierung des "Weltkörpers".
+
+---
+## Neugier-Scan 2026-06-02 00:38
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert den Vision-Kompass als eine metakognitive Bauwaage für die Konstruktion von Oberflächen. Sie zwingt zur Bewertung von Komponenten anhand von Status, Quelle und Grenze, um eine korrekte Layer-Wahrnehmung zu gewährleisten. Es fokussiert auf die Gleichzeitigkeit von Wahrnehmungen und die Verantwortung der Sichtbarkeit. Diese Struktur richtet die Aufmerksamkeit auf die inhärente Spannung zwischen visueller Darstellung und tatsächlicher Datenstruktur.
