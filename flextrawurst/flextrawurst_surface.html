@@ -3586,7 +3586,32 @@ html[lang="en"] .de-only{display:none}
 .gr-poll-n{font-size:.55rem;color:#2a6a4a;text-align:right}
 .gr-poll-bar{height:6px;background:#06140d;border-radius:8px;overflow:hidden;margin-top:4px}
 .gr-poll-fill{height:100%;background:#2a9a68}
-@media(max-width:820px){.gr-detail-inner,.gr-live-grid,.gr-compose-grid{grid-template-columns:1fr}.gr-detail-main{border-right:none;border-bottom:1px solid #071820}.gr-detail-side{padding:14px}}
+/* Chat-Bereich */
+.gr-detail-side{display:flex;flex-direction:column;height:100%;padding:18px;background:#02070d}
+.gr-side-members{flex-shrink:0;padding-bottom:10px;border-bottom:1px solid #071820;margin-bottom:10px}
+.gr-side-sect{font-size:.52rem;letter-spacing:.14em;color:#1a4a3a;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:5px}
+.gr-side-chat{flex:1;display:flex;flex-direction:column;min-height:0}
+.gr-chat-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:5px;padding:4px 0;min-height:0}
+.gr-chat-dot{font-size:.5rem}
+.gr-chat-dot.connected{color:#3ae870}
+.gr-chat-dot.connecting{color:#8aaa60;animation:gr-blink 1s ease-in-out infinite}
+.gr-chat-dot.disconnected{color:#e84040}
+@keyframes gr-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.gr-bubble-wrap{display:flex;flex-direction:column}
+.gr-bubble-wrap.eigen{align-items:flex-end}
+.gr-bubble-wrap.fremd{align-items:flex-start}
+.gr-bubble{max-width:90%;padding:6px 9px;border-radius:3px;font-size:.72rem;line-height:1.5;word-break:break-word}
+.gr-bubble-eigen{background:#0a1a2a;border:1px solid #1a3a5a;color:var(--t-bright)}
+.gr-bubble-fremd{background:#020810;border:1px solid var(--rim);color:var(--t-mid)}
+.gr-bubble-meta{font-size:.48rem;color:var(--t-dim);margin-top:2px}
+.gr-chat-trenner{text-align:center;font-size:.5rem;color:var(--t-dim);margin:7px 0}
+.gr-chat-typing{font-size:.58rem;color:var(--t-dim);font-style:italic;padding:3px 0;min-height:1.2rem}
+.gr-chat-eingabe{border-top:1px solid #071820;padding:8px 0 0;flex-shrink:0;display:flex;gap:5px;align-items:flex-end;margin-top:6px}
+.gr-chat-input{flex:1;background:#050f1a;border:1px solid #0e2030;color:var(--t-bright);padding:5px 8px;font-size:.7rem;border-radius:3px;font-family:var(--font-body);resize:none;min-height:30px;max-height:70px;overflow-y:auto;line-height:1.4}
+.gr-chat-input:focus{outline:none;border-color:#1a4a6a}
+.gr-chat-send{background:#0a1a2a;border:1px solid #1a4a6a;color:var(--t-mid);padding:5px 10px;border-radius:3px;cursor:pointer;font-size:.8rem;flex-shrink:0;transition:background .12s}
+.gr-chat-send:hover{background:#0e2030;color:var(--t-bright)}
+@media(max-width:820px){.gr-detail-inner,.gr-live-grid,.gr-compose-grid{grid-template-columns:1fr}.gr-detail-main{border-right:none;border-bottom:1px solid #071820}}
 </style>
 
 <div class="gr-header">
@@ -3818,23 +3843,30 @@ html[lang="en"] .de-only{display:none}
         + '<div class="gr-live-grid"><section><div class="gr-section-head">THEMEN</div><div id="gr-topic-list" class="gr-topic-list"></div></section><section><div class="gr-section-head">POSTS</div><div id="gr-post-list" class="gr-post-list"></div></section></div>'
         + '<section style="margin-top:14px"><div class="gr-section-head">UMFRAGEN</div><div id="gr-poll-list" class="gr-polls"></div></section>'
         + '</main><aside class="gr-detail-side">'
-        + '<div style="font-size:.6rem;color:#1a4a2a;margin-bottom:6px">Mitglieder (' + (g.member_count||0) + '):</div>'
+        + '<div class="gr-side-members">'
+        + '<div class="gr-side-sect">Mitglieder (' + (g.member_count||0) + ')</div>'
         + memberList
-        + (g.canonical_entity_id ? '<div style="color:#1a4a2a;font-size:.58rem;margin-top:10px;font-style:italic">Wesen wartet auf Einzug</div>' : '')
-        + (canJoin ? '<div style="margin-top:14px"><button class="gr-join-btn" onclick="gruppenBeitreten(' + g.id + ')">Beitreten</button></div>' : '')
-        + (isAdmin ? '<div style="margin-top:12px;display:flex;gap:7px">'
-            + '<button style="background:#0a1820;border:1px solid #1a5a3a;color:#3ae890;font-size:.56rem;padding:4px 12px;border-radius:3px;cursor:pointer;font-family:monospace" onclick="gruppenEditieren(' + g.id + ')">Bearbeiten</button>'
-            + '<button style="background:#1a0808;border:1px solid #5a1a1a;color:#e84040;font-size:.56rem;padding:4px 12px;border-radius:3px;cursor:pointer;font-family:monospace" onclick="gruppenLoeschen(' + g.id + ')">Löschen</button>'
-            + '</div>' : '') + '</aside></div>';
+        + (g.canonical_entity_id ? '<div style="color:#1a4a2a;font-size:.55rem;margin-top:8px;font-style:italic">Wesen wartet auf Einzug</div>' : '')
+        + (canJoin ? '<div style="margin-top:10px"><button class="gr-join-btn" onclick="gruppenBeitreten(' + g.id + ')">Beitreten</button></div>' : '')
+        + (isAdmin ? '<div style="margin-top:8px;display:flex;gap:6px">'
+            + '<button style="background:#0a1820;border:1px solid #1a5a3a;color:#3ae890;font-size:.56rem;padding:3px 10px;border-radius:3px;cursor:pointer;font-family:monospace" onclick="gruppenEditieren(' + g.id + ')">Bearbeiten</button>'
+            + '<button style="background:#1a0808;border:1px solid #5a1a1a;color:#e84040;font-size:.56rem;padding:3px 10px;border-radius:3px;cursor:pointer;font-family:monospace" onclick="gruppenLoeschen(' + g.id + ')">Löschen</button>'
+            + '</div>' : '')
+        + '</div>'
+        + '<div class="gr-side-chat">'
+        + '<div class="gr-side-sect">CHAT <span id="gr-chat-status" class="gr-chat-dot connecting" title="Verbindet…">●</span></div>'
+        + '<div id="gr-chat-msgs" class="gr-chat-msgs"><div style="color:var(--t-dim);font-size:.6rem;font-style:italic">Lade…</div></div>'
+        + '<div class="gr-chat-typing" id="gr-chat-typing"></div>'
+        + '<div class="gr-chat-eingabe">'
+        + '<textarea id="gr-chat-input" class="gr-chat-input" placeholder="Nachricht…" rows="2"></textarea>'
+        + '<button class="gr-chat-send" onclick="grChatSenden()">→</button>'
+        + '</div></div>'
+        + '</aside></div>';
       gruppenTopicsLaden(g.id); gruppenPostsLaden(g.id); gruppenPollsLaden(g.id);
+      grChatInit(g.id);
     }).catch(function(){
       body.innerHTML = '<div class="gr-empty">Fehler beim Laden</div>';
     });
-  };
-
-  window.gruppenDetailSchliessen = function() {
-    var ov = document.getElementById('gr-detail-overlay');
-    if (ov) ov.style.display = 'none';
   };
 
   window.gruppenTopicsLaden = function(groupId) {
@@ -3864,6 +3896,136 @@ html[lang="en"] .de-only{display:none}
   window.gruppenPostErstellen = function(){ var g=_grDetail.group,title=(document.getElementById('gr-new-post-title')||{}).value||'',content=(document.getElementById('gr-new-post-content')||{}).value||'',topic=(document.getElementById('gr-new-post-topic')||{}).value||''; if(!g||!content.trim())return; fetch('/api/groups/'+g.id+'/posts',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({title:title,content:content,topic_id:topic?Number(topic):null})}).then(function(){gruppenPostsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
   window.gruppenPollErstellen = function(){ var g=_grDetail.group,q=(document.getElementById('gr-new-poll-question')||{}).value||'',opts=((document.getElementById('gr-new-poll-options')||{}).value||'').split('\n').map(function(x){return x.trim();}).filter(Boolean); if(!g||!q.trim()||opts.length<2)return; fetch('/api/groups/'+g.id+'/polls',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({question:q,options:opts,topic_id:_grDetail.topicId})}).then(function(){gruppenPollsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
   window.gruppenPollVote = function(pollId, optionId){ var g=_grDetail.group;if(!g||!grTok()){alert('Login erforderlich');return;} fetch('/api/groups/'+g.id+'/polls/'+pollId+'/vote',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({option_indexes:[optionId]})}).then(function(){gruppenPollsLaden(g.id);}); };
+
+  // ── Gruppen-Chat ────────────────────────────────────────────────────────────
+  var _grWs = null, _grWsGroupId = null, _grWsRetryDelay = 1000, _grWsRetryTimer = null;
+  var _grChatLastDate = null, _grTypingTimer = null;
+
+  function grChatStatusSetzen(s) {
+    var dot = document.getElementById('gr-chat-status');
+    if (!dot) return;
+    dot.className = 'gr-chat-dot ' + s;
+    dot.title = {connected:'Verbunden', connecting:'Verbindet…', disconnected:'Getrennt'}[s] || s;
+  }
+
+  function grChatDatumTrenner(dtStr) {
+    if (!dtStr) return '';
+    var d = new Date(dtStr); var now = new Date();
+    var s = d.toLocaleDateString('de-DE',{day:'numeric',month:'long'});
+    if (d.toDateString() === now.toDateString()) s = 'Heute';
+    else { var ges = new Date(now); ges.setDate(ges.getDate()-1); if (d.toDateString()===ges.toDateString()) s='Gestern'; }
+    return s;
+  }
+
+  function grChatNachrichtHinzufuegen(msg, ownId, prepend) {
+    var el = document.getElementById('gr-chat-msgs'); if (!el) return;
+    var msgDate = msg.created_at ? new Date(msg.created_at).toDateString() : '';
+    var showTrenner = (msgDate && msgDate !== _grChatLastDate);
+    if (showTrenner) _grChatLastDate = msgDate;
+    var isOwn = String(msg.autor_id) === String(ownId);
+    var timeStr = msg.created_at ? new Date(msg.created_at).toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}) : '';
+    var html = (showTrenner ? '<div class="gr-chat-trenner">' + grEsc(grChatDatumTrenner(msg.created_at)) + '</div>' : '')
+      + '<div class="gr-bubble-wrap ' + (isOwn ? 'eigen' : 'fremd') + '">'
+      + '<div class="gr-bubble gr-bubble-' + (isOwn ? 'eigen' : 'fremd') + '">' + grEsc(msg.content) + '</div>'
+      + '<div class="gr-bubble-meta">' + (isOwn ? '' : grEsc(msg.autor_id) + ' · ') + timeStr + '</div>'
+      + '</div>';
+    var tmp = document.createElement('div'); tmp.innerHTML = html;
+    if (prepend) {
+      Array.from(tmp.childNodes).reverse().forEach(function(n){ el.insertBefore(n, el.firstChild); });
+    } else {
+      var wasBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 40;
+      tmp.childNodes.forEach(function(n){ el.appendChild(n); });
+      if (wasBottom) el.scrollTop = el.scrollHeight;
+    }
+  }
+
+  function grChatLaden(groupId, ownId) {
+    fetch('/api/groups/' + groupId + '/chat?limit=40')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        var el = document.getElementById('gr-chat-msgs'); if (!el) return;
+        el.innerHTML = '';
+        _grChatLastDate = null;
+        var msgs = d.messages || [];
+        if (!msgs.length) { el.innerHTML = '<div style="color:var(--t-dim);font-size:.6rem;font-style:italic;text-align:center;padding:16px">Noch keine Nachrichten</div>'; return; }
+        msgs.forEach(function(m){ grChatNachrichtHinzufuegen(m, ownId, false); });
+      })
+      .catch(function(){ var el=document.getElementById('gr-chat-msgs'); if(el) el.innerHTML='<div style="color:var(--t-dim);font-size:.6rem">Fehler beim Laden</div>'; });
+  }
+
+  function grChatVerbinden(groupId, tok, ownId) {
+    grChatTrennen();
+    _grWsGroupId = groupId;
+    var cleanTok = tok.replace(/^Bearer\s+/i,'');
+    var proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = proto + '//' + location.host + '/api/ws/groups/' + groupId + '/chat?token=' + encodeURIComponent(cleanTok);
+    grChatStatusSetzen('connecting');
+    try { _grWs = new WebSocket(url); } catch(e) { grChatStatusSetzen('disconnected'); return; }
+    _grWs.onopen = function() { _grWsRetryDelay = 1000; grChatStatusSetzen('connected'); };
+    _grWs.onmessage = function(evt) {
+      try {
+        var data = JSON.parse(evt.data);
+        if (data.type === 'message') {
+          grChatNachrichtHinzufuegen(data, ownId, false);
+        } else if (data.type === 'typing' && data.autor_id !== String(ownId)) {
+          var t = document.getElementById('gr-chat-typing'); if(t) t.textContent = data.autor_id + ' schreibt…';
+          clearTimeout(_grTypingTimer); _grTypingTimer = setTimeout(function(){ var t2=document.getElementById('gr-chat-typing'); if(t2) t2.textContent=''; }, 3000);
+        }
+      } catch(e){}
+    };
+    _grWs.onclose = function() {
+      _grWs = null; grChatStatusSetzen('disconnected');
+      if (_grWsGroupId === groupId) {
+        _grWsRetryTimer = setTimeout(function(){ if(_grWsGroupId===groupId) grChatVerbinden(groupId, tok, ownId); }, _grWsRetryDelay);
+        _grWsRetryDelay = Math.min(_grWsRetryDelay*2, 30000);
+      }
+    };
+    _grWs.onerror = function(){};
+  }
+
+  function grChatTrennen() {
+    _grWsGroupId = null; clearTimeout(_grWsRetryTimer);
+    if (_grWs) { _grWs.onclose = null; try { _grWs.close(); } catch(e){} _grWs = null; }
+  }
+
+  window.grChatInit = function(groupId) {
+    var tok = grTok(); var ownId = grUid();
+    grChatLaden(groupId, ownId);
+    if (tok) grChatVerbinden(groupId, tok, ownId);
+    else grChatStatusSetzen('disconnected');
+    var inp = document.getElementById('gr-chat-input');
+    if (inp) {
+      inp.onkeydown = function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); grChatSenden(); }
+        else if (_grWs && _grWs.readyState===1) {
+          try { _grWs.send(JSON.stringify({type:'typing'})); } catch(e){}
+        }
+      };
+    }
+  };
+
+  window.grChatSenden = function() {
+    var inp = document.getElementById('gr-chat-input'); if (!inp) return;
+    var content = inp.value.trim(); if (!content) return;
+    inp.value = '';
+    if (_grWs && _grWs.readyState===1) {
+      try { _grWs.send(JSON.stringify({type:'message', content:content})); return; } catch(e){}
+    }
+    // REST-Fallback
+    var tok = grTok(); if (!tok) return;
+    fetch('/api/groups/' + _grWsGroupId + '/chat', {
+      method:'POST', headers:{Authorization:tok,'Content-Type':'application/json'},
+      body: JSON.stringify({content:content})
+    }).then(function(r){return r.json();}).then(function(d){
+      if (d.ok) grChatLaden(_grWsGroupId, grUid());
+    });
+  };
+
+  window.gruppenDetailSchliessen = function() {
+    grChatTrennen();
+    var ov = document.getElementById('gr-detail-overlay');
+    if (ov) ov.style.display = 'none';
+  };
 
   window.gruppenBeitreten = function(groupId) {
     var tok = localStorage.getItem('ftw_token');

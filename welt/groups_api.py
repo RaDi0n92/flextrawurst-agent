@@ -1,11 +1,17 @@
 # groups_api.py — Gruppen-System API (EINSICHT VI)
 # Eingebunden über: from groups_api import register_groups_routes
 
-from fastapi import Header, Query, HTTPException
+from fastapi import Header, Query, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel
 from typing import Optional
 import datetime
+import pathlib
+import os
 import psycopg2.extras
+try:
+    from ws_manager import manager as _chat_manager
+except ImportError:
+    _chat_manager = None
 
 
 def register_groups_routes(app, get_conn):
@@ -162,6 +168,18 @@ def register_groups_routes(app, get_conn):
                 """)
                 cur.execute("CREATE INDEX IF NOT EXISTS idx_group_poll_votes_poll ON group_poll_votes(poll_id)")
                 cur.execute("CREATE INDEX IF NOT EXISTS idx_group_poll_votes_voter ON group_poll_votes(voter_type, voter_id)")
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS group_chat_messages (
+                        id SERIAL PRIMARY KEY,
+                        group_id INTEGER NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
+                        autor_type VARCHAR(20) NOT NULL,
+                        autor_id VARCHAR(100) NOT NULL,
+                        content TEXT NOT NULL,
+                        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                        meta JSONB NOT NULL DEFAULT '{}'
+                    )
+                """)
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_chat_messages_group ON group_chat_messages(group_id, created_at DESC)")
                 conn.commit()
         finally:
             conn.close()
@@ -1176,3 +1194,171 @@ def register_groups_routes(app, get_conn):
                 "neue_blocker": ["G_Gruppen", "H_Consent", "I_Substanzen", "J_Provenienz", "K_ManualRelease"],
             }
         }
+
+    # ── GET /api/groups/{group_id}/chat ───────────────────────────────────────
+
+    @app.get("/groups/{group_id}/chat")
+    def get_group_chat(
+        group_id: int,
+        limit: int = Query(default=50, le=200),
+        before: Optional[str] = Query(default=None),
+        authorization: Optional[str] = Header(default=None),
+    ):
+        """Chat-Verlauf einer Gruppe (neueste zuerst, cursor-basiert)."""
+        is_admin = _is_admin(authorization)
+        uid = _get_human_id(authorization)
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT visibility_layer, status FROM groups WHERE id=%s", (group_id,))
+                g = cur.fetchone()
+                if not g:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                if not is_admin and g["visibility_layer"] not in ("public", "internal"):
+                    raise HTTPException(403, "Kein Zugriff")
+                params = [group_id]
+                where_extra = ""
+                if before:
+                    where_extra = " AND created_at < %s"
+                    params.append(before)
+                cur.execute(f"""
+                    SELECT id, group_id, autor_type, autor_id, content,
+                           created_at, meta
+                    FROM group_chat_messages
+                    WHERE group_id = %s{where_extra}
+                    ORDER BY created_at DESC
+                    LIMIT %s
+                """, params + [limit])
+                msgs = [dict(r) for r in cur.fetchall()]
+                msgs.reverse()
+                return {"messages": msgs, "group_id": group_id}
+        finally:
+            conn.close()
+
+    # ── POST /api/groups/{group_id}/chat ──────────────────────────────────────
+
+    @app.post("/groups/{group_id}/chat", status_code=201)
+    def post_group_chat(
+        group_id: int,
+        body: dict,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        """Sendet eine Chat-Nachricht in die Gruppe (REST-Fallback ohne WS)."""
+        claims = _decode_token(authorization)
+        if not claims:
+            raise HTTPException(401, "Nicht eingeloggt")
+        uid = str(claims.get("sub", ""))
+        role = str(claims.get("role", "mensch"))
+        content = (body.get("content") or "").strip()
+        if not content:
+            raise HTTPException(400, "Inhalt fehlt")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT id FROM groups WHERE id=%s", (group_id,))
+                if not cur.fetchone():
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                cur.execute("""
+                    INSERT INTO group_chat_messages (group_id, autor_type, autor_id, content)
+                    VALUES (%s, %s, %s, %s)
+                    RETURNING id, created_at
+                """, (group_id, role, uid, content))
+                row = cur.fetchone()
+                conn.commit()
+                return {"ok": True, "id": row["id"], "created_at": str(row["created_at"])}
+        finally:
+            conn.close()
+
+    # ── WS /api/ws/groups/{group_id}/chat ─────────────────────────────────────
+
+    @app.websocket("/ws/groups/{group_id}/chat")
+    async def ws_group_chat(websocket: WebSocket, group_id: int, token: Optional[str] = None):
+        """WebSocket-Endpunkt für Echtzeit-Gruppen-Chat."""
+        if _chat_manager is None:
+            await websocket.close(code=1011)
+            return
+
+        # JWT aus Query-Param auslesen
+        claims = None
+        if token:
+            try:
+                import jwt as _jwt
+                env_secret = os.environ.get("WELT_JWT_SECRET")
+                secret_file = pathlib.Path(__file__).parent / ".jwt_secret"
+                secret = env_secret or (secret_file.read_text(encoding="utf-8").strip() if secret_file.exists() else "changeme-secret-key")
+                claims = _jwt.decode(token, secret, algorithms=["HS256"])
+            except Exception:
+                pass
+
+        if not claims:
+            await websocket.close(code=4001)
+            return
+
+        uid = str(claims.get("sub", "unknown"))
+        role = str(claims.get("role", "mensch"))
+
+        await _chat_manager.connect(websocket, group_id)
+        await _chat_manager.broadcast(group_id, {
+            "type": "presence",
+            "online": _chat_manager.online_count(group_id),
+        })
+
+        try:
+            while True:
+                data = await websocket.receive_json()
+                msg_type = data.get("type", "message")
+
+                if msg_type == "typing":
+                    await _chat_manager.broadcast(group_id, {
+                        "type": "typing",
+                        "autor_id": uid,
+                    }, exclude=websocket)
+
+                elif msg_type == "message":
+                    content = (data.get("content") or "").strip()
+                    if not content:
+                        continue
+                    # In DB speichern
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    row_id = None
+                    created_at = None
+
+                    def _store():
+                        conn = get_conn()
+                        try:
+                            with conn.cursor() as cur:
+                                cur.execute("""
+                                    INSERT INTO group_chat_messages
+                                        (group_id, autor_type, autor_id, content)
+                                    VALUES (%s, %s, %s, %s)
+                                    RETURNING id, created_at
+                                """, (group_id, role, uid, content))
+                                r = cur.fetchone()
+                                conn.commit()
+                                return r["id"], str(r["created_at"])
+                        finally:
+                            conn.close()
+
+                    row_id, created_at = await loop.run_in_executor(None, _store)
+                    broadcast_msg = {
+                        "type": "message",
+                        "id": row_id,
+                        "group_id": group_id,
+                        "autor_type": role,
+                        "autor_id": uid,
+                        "content": content,
+                        "created_at": created_at,
+                    }
+                    # Sender bekommt Bestätigung, alle anderen bekommen Broadcast
+                    await websocket.send_json({**broadcast_msg, "own": True})
+                    await _chat_manager.broadcast(group_id, broadcast_msg, exclude=websocket)
+
+        except WebSocketDisconnect:
+            pass
+        finally:
+            _chat_manager.disconnect(websocket, group_id)
+            await _chat_manager.broadcast(group_id, {
+                "type": "presence",
+                "online": _chat_manager.online_count(group_id),
+            })
