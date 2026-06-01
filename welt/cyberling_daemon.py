@@ -268,6 +268,19 @@ def main():
     log.info("Cyberling-Daemon startet")
     letzter_tick: dict[str, datetime] = {}
 
+    # letzter_tick aus DB laden (Provenienz-Sicherung)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id, letzter_tick FROM cyberlinge WHERE letzter_tick IS NOT NULL")
+            for row in cur.fetchall():
+                letzter_tick[str(row["id"])] = row["letzter_tick"].replace(tzinfo=timezone.utc)
+        log.info(f"letzter_tick geladen für {len(letzter_tick)} Cyberlinge")
+    except Exception as e:
+        log.warning(f"Konnte letzter_tick nicht laden: {e}")
+    finally:
+        conn.close()
+
     while True:
         jetzt = datetime.now(timezone.utc)
         conn = get_conn()
@@ -327,6 +340,15 @@ def main():
                         cyberling_stirbt(cur, c)
 
                     conn.commit()
+
+                # letzter_tick persistieren (unabhängig vom Zustand)
+                if cid in letzter_tick:
+                    with conn.cursor() as cur2:
+                        cur2.execute(
+                            "UPDATE cyberlinge SET letzter_tick = %s WHERE id = %s",
+                            (letzter_tick[cid], c["id"]),
+                        )
+                        conn.commit()
 
         except Exception as e:
             log.error(f"Tick-Fehler: {e}")
