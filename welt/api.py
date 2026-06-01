@@ -6425,6 +6425,21 @@ class SchattenBody(BaseModel):
 
 class SchattenAntwortBody(BaseModel):
     content: str
+    parent_id: str | None = None
+
+
+def _build_antwort_tree(antworten):
+    """Baut aus flachen Antworten mit parent_id einen verschachtelten Baum."""
+    by_id = {a["id"]: {**a, "children": []} for a in antworten}
+    roots = []
+    for a in antworten:
+        node = by_id[a["id"]]
+        pid = a.get("parent_id")
+        if pid and pid in by_id:
+            by_id[pid]["children"].append(node)
+        else:
+            roots.append(node)
+    return roots
 
 
 @app.post("/welt/posts/{post_id}/schatten", status_code=201)
@@ -6543,11 +6558,12 @@ def schatten_lesen(
                         kommentare = []
                         for r in cur.fetchall():
                             cur.execute(
-                                "SELECT * FROM schatten_antworten WHERE schatten_id = %s ORDER BY created_at",
+                                "SELECT id, schatten_id, autor_type, autor_id, content, created_at, meta, parent_id, thread_id "
+                                "FROM schatten_antworten WHERE schatten_id = %s ORDER BY created_at",
                                 (r["id"],),
                             )
                             antworten = [dict(a) for a in cur.fetchall()]
-                            kommentare.append({**dict(r), "antworten": antworten})
+                            kommentare.append({**dict(r), "antworten": _build_antwort_tree(antworten)})
                         return {"count": count, "kommentare": kommentare}
                     elif role == "mensch":
                         # Mensch sieht seinen eigenen Schattenkommentar auf dem Post + Antworten
@@ -6562,11 +6578,12 @@ def schatten_lesen(
                         row = cur.fetchone()
                         if row:
                             cur.execute(
-                                "SELECT * FROM schatten_antworten WHERE schatten_id = %s ORDER BY created_at",
+                                "SELECT id, schatten_id, autor_type, autor_id, content, created_at, meta, parent_id, thread_id "
+                                "FROM schatten_antworten WHERE schatten_id = %s ORDER BY created_at",
                                 (row["id"],),
                             )
                             antworten = [dict(a) for a in cur.fetchall()]
-                            return {"count": count, "kommentare": [{**dict(row), "antworten": antworten}]}
+                            return {"count": count, "kommentare": [{**dict(row), "antworten": _build_antwort_tree(antworten)}]}
                 except Exception:
                     pass
     finally:
@@ -6594,12 +6611,30 @@ def schatten_antwort(
             )
             if not cur.fetchone():
                 raise HTTPException(status_code=404, detail="Schattenkommentar nicht gefunden")
+            parent_id = None
+            if body.parent_id:
+                cur.execute(
+                    "SELECT id, thread_id FROM schatten_antworten WHERE id = %s::uuid AND schatten_id = %s::uuid",
+                    (body.parent_id, schatten_id),
+                )
+                parent = cur.fetchone()
+                if not parent:
+                    raise HTTPException(status_code=404, detail="Eltern-Antwort nicht gefunden")
+                parent_id = parent["id"]
+                thread_id = parent["thread_id"] or parent["id"]
+            else:
+                thread_id = None
             cur.execute(
-                "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content) "
-                "VALUES (%s::uuid, %s, %s, %s) RETURNING id, created_at",
-                (schatten_id, autor_type, user_id, body.content),
+                "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content, parent_id, thread_id) "
+                "VALUES (%s::uuid, %s, %s, %s, %s::uuid, %s::uuid) RETURNING id, created_at",
+                (schatten_id, autor_type, user_id, body.content, parent_id, thread_id),
             )
             row = cur.fetchone()
+            if not thread_id:
+                cur.execute(
+                    "UPDATE schatten_antworten SET thread_id = %s::uuid WHERE id = %s::uuid",
+                    (row["id"], row["id"]),
+                )
         conn.commit()
     finally:
         conn.close()
@@ -9412,6 +9447,7 @@ class SchattenAntwortBody2(BaseModel):
     content: str
     autor_type: str = "entity"
     autor_id: str
+    parent_id: str | None = None
 
 
 class SchattenStatusBody(BaseModel):
@@ -9563,7 +9599,7 @@ def shadow_dialog_detail(
             dialog["post_kurz"] = (dialog["post_kurz"] or "")[:200]
 
             cur.execute(
-                "SELECT id::text, autor_type, autor_id, content, created_at, meta "
+                "SELECT id::text, autor_type, autor_id, content, created_at, meta, parent_id::text, thread_id::text "
                 "FROM schatten_antworten WHERE schatten_id = %s::uuid ORDER BY created_at",
                 (dialog_id,))
             antworten = []
@@ -9571,7 +9607,7 @@ def shadow_dialog_detail(
                 ad = dict(a)
                 ad["created_at"] = ad["created_at"].isoformat() if ad["created_at"] else None
                 antworten.append(ad)
-            dialog["antworten"] = antworten
+            dialog["antworten"] = _build_antwort_tree(antworten)
     finally:
         conn.close()
 
@@ -9598,11 +9634,28 @@ def shadow_dialog_reply(
             if not sk:
                 raise HTTPException(status_code=404, detail="Dialog nicht gefunden.")
 
+            parent_id = None
+            thread_id = None
+            if body.parent_id:
+                cur.execute(
+                    "SELECT id, thread_id FROM schatten_antworten WHERE id = %s::uuid AND schatten_id = %s::uuid",
+                    (body.parent_id, dialog_id),
+                )
+                parent = cur.fetchone()
+                if not parent:
+                    raise HTTPException(status_code=404, detail="Eltern-Antwort nicht gefunden")
+                parent_id = parent["id"]
+                thread_id = parent["thread_id"] or parent["id"]
             cur.execute(
-                "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content) "
-                "VALUES (%s::uuid, %s, %s, %s) RETURNING id::text, created_at",
-                (dialog_id, body.autor_type, body.autor_id, body.content))
+                "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content, parent_id, thread_id) "
+                "VALUES (%s::uuid, %s, %s, %s, %s::uuid, %s::uuid) RETURNING id::text, created_at",
+                (dialog_id, body.autor_type, body.autor_id, body.content, parent_id, thread_id))
             row = cur.fetchone()
+            if not thread_id:
+                cur.execute(
+                    "UPDATE schatten_antworten SET thread_id = %s::uuid WHERE id = %s::uuid",
+                    (row["id"], row["id"]),
+                )
 
             # Antwortstatus aktualisieren
             neuer_status = "wartet_auf_mensch" if body.autor_type == "entity" else "wartet_auf_wesen"
