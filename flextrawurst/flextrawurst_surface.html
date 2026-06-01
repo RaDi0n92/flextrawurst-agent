@@ -1763,9 +1763,6 @@ button:active{transform:translateY(0.5px)}
         ${a.letzte_entscheidung ? `<span class="wd-entscheidung">${a.letzte_entscheidung}</span>` : '<span style="color:#2a4a6a;font-size:11px">'+ftwT('wesen.none')+'</span>'}
         ${a.letzte_begruendung ? `<div style="font-size:10px;color:#4a7a9a;margin-top:5px">${a.letzte_begruendung.slice(0,120)}${a.letzte_begruendung.length>120?'…':''}</div>` : ''}
 
-        <div class="wd-section">${ftwT('wesen.cyberling')}</div>
-        ${clHtml}
-
         <div class="wd-section">${ftwT('wesen.splitter')}</div>
         <div class="wd-fact-row">
           <span class="splitter-badge" title="Abgegebene Splitter">↑ ${sp.abgegeben} abgegeben</span>
@@ -3606,10 +3603,14 @@ html[lang="en"] .de-only{display:none}
 .gr-compose textarea{min-height:76px;resize:vertical;grid-column:1/-1}
 .gr-polls{display:flex;flex-direction:column;gap:10px;margin-top:12px}
 .gr-poll{border:1px solid #142418;background:#040c08;border-radius:5px;padding:10px}
-.gr-poll-title{font-size:.64rem;color:#7ad4a4;margin-bottom:8px;line-height:1.45}
-.gr-poll-option{display:grid;grid-template-columns:18px minmax(0,1fr) 34px;gap:7px;align-items:center;margin-top:8px}
-.gr-poll-option button{width:16px;height:16px;border-radius:50%;border:1px solid #1a5a3a;background:#06120a;cursor:pointer}
-.gr-poll-option button.sel{background:#3ae890}
+.gr-poll-title{font-size:.72rem;color:var(--t-bright);margin-bottom:10px;line-height:1.5;font-weight:600}
+.gr-poll-meta{font-size:.52rem;color:var(--t-dim);margin-bottom:8px}
+.gr-poll-opt{display:flex;align-items:center;gap:10px;margin-top:6px;padding:8px 10px;background:#020a12;border:1px solid #0a1e2e;border-radius:3px;cursor:pointer;transition:border-color .12s,background .12s;text-align:left;width:100%;position:relative;overflow:hidden}
+.gr-poll-opt:hover{border-color:var(--t-sub);background:#030d18}
+.gr-poll-opt.voted{border-color:var(--world)}
+.gr-poll-opt-bar{position:absolute;left:0;top:0;bottom:0;background:rgba(16,216,240,0.07);pointer-events:none;transition:width .3s ease}
+.gr-poll-opt-label{flex:1;font-size:.72rem;color:var(--t-bright);position:relative;z-index:1}
+.gr-poll-opt-n{font-size:.6rem;color:var(--t-mid);font-family:monospace;position:relative;z-index:1;white-space:nowrap}
 .gr-poll-label{font-size:.6rem;color:#6ab890;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .gr-poll-n{font-size:.55rem;color:#2a6a4a;text-align:right}
 .gr-poll-bar{height:6px;background:#06140d;border-radius:8px;overflow:hidden;margin-top:4px}
@@ -3908,20 +3909,51 @@ html[lang="en"] .de-only{display:none}
     var url='/api/groups/'+groupId+'/posts?limit=40'+(_grDetail.topicId?'&topic_id='+_grDetail.topicId:'');
     fetch(url).then(function(r){return r.json();}).then(function(d){
       var el=document.getElementById('gr-post-list'); if(!el)return; var a=d.posts||[];
-      el.innerHTML = a.length ? a.map(function(p){return '<article class="gr-post"><div class="gr-post-title">'+grEsc(p.title||'Post')+'</div><div class="gr-post-body">'+grEsc(p.content||'')+'</div><div class="gr-post-meta">'+(p.topic_title ? grEsc(p.topic_title)+' · ' : '')+grEsc(p.created_by_type||'')+':'+grEsc(p.created_by_id||'')+'</div></article>';}).join('') : '<div class="gr-empty">Noch keine Posts</div>';
+      el.innerHTML = a.length ? a.map(function(p){
+        var autor = p.created_by_name || p.created_by_id || '?';
+        var dt = p.created_at ? (new Date(p.created_at)).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+        return '<article class="gr-post">'
+          +(p.title ? '<div class="gr-post-title">'+grEsc(p.title)+'</div>' : '')
+          +'<div class="gr-post-body">'+grEsc(p.content||'')+'</div>'
+          +'<div class="gr-post-meta">'
+          +'<span>'+grEsc(autor)+'</span>'
+          +(dt ? '<span>'+dt+'</span>' : '')
+          +(p.topic_title ? '<span>'+grEsc(p.topic_title)+'</span>' : '')
+          +'</div></article>';
+      }).join('') : '<div class="gr-empty">Noch keine Posts</div>';
     }).catch(function(){var el=document.getElementById('gr-post-list'); if(el)el.innerHTML='<div class="gr-empty">Posts nicht geladen</div>';});
   };
   window.gruppenPollsLaden = function(groupId) {
     fetch('/api/groups/'+groupId+'/polls').then(function(r){return r.json();}).then(function(d){
       var el=document.getElementById('gr-poll-list'); if(!el)return; var a=d.polls||[];
-      el.innerHTML = a.length ? a.map(function(p){var opts=p.options||[]; var vc=p.vote_counts||{}; var total=opts.reduce(function(s,_,i){return s+Number(vc[i]||vc[String(i)]||0);},0)||1; return '<div class="gr-poll"><div class="gr-poll-title">'+grEsc(p.question)+'</div>'+ opts.map(function(o,i){var n=Number(vc[i]||vc[String(i)]||0); var pc=Math.round(n*100/total); return '<button class="gr-poll-option" onclick="gruppenPollVote('+p.id+','+i+')"><span class="gr-poll-label">'+grEsc(o)+'</span><span class="gr-poll-n">'+n+'</span><span class="gr-poll-bar"><i class="gr-poll-fill" style="width:'+pc+'%"></i></span></button>';}).join('')+'</div>';}).join('') : '<div class="gr-empty">Noch keine Umfragen</div>';
+      el.innerHTML = a.length ? a.map(function(p){
+        var opts=p.options||[]; var vc=p.vote_counts||{};
+        var totalVotes=opts.reduce(function(s,_,i){return s+Number(vc[i]||vc[String(i)]||0);},0);
+        var total=totalVotes||1;
+        var dt=p.created_at?(new Date(p.created_at)).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'';
+        var status=p.status||'active';
+        var statusLabel=status==='active'?'<span style="color:#2a9a68;font-size:.5rem;border:1px solid #1a5a3a;padding:0 4px;border-radius:2px">OFFEN</span>':'<span style="color:var(--t-dim);font-size:.5rem;border:1px solid var(--rim);padding:0 4px;border-radius:2px">GESCHLOSSEN</span>';
+        return '<div class="gr-poll">'
+          +'<div class="gr-poll-title">'+grEsc(p.question)+'</div>'
+          +'<div class="gr-poll-meta">'+dt+(dt?' · ':'')+totalVotes+' Stimmen · '+statusLabel+'</div>'
+          +opts.map(function(o,i){
+            var n=Number(vc[i]||vc[String(i)]||0);
+            var pc=Math.round(n*100/total);
+            return '<button class="gr-poll-opt" onclick="gruppenPollVote('+p.id+','+i+')">'
+              +'<div class="gr-poll-opt-bar" style="width:'+pc+'%"></div>'
+              +'<span class="gr-poll-opt-label">'+grEsc(o)+'</span>'
+              +'<span class="gr-poll-opt-n">'+n+' ('+pc+'%)</span>'
+              +'</button>';
+          }).join('')
+          +'</div>';
+      }).join('') : '<div class="gr-empty">Noch keine Umfragen</div>';
     }).catch(function(){var el=document.getElementById('gr-poll-list'); if(el)el.innerHTML='<div class="gr-empty">Umfragen nicht geladen</div>';});
   };
   window.gruppenTopicForm = function(){ if(!_grDetail.canManage)return; var el=document.getElementById('gr-compose-live'); el.innerHTML='<div class="gr-compose"><div class="gr-compose-grid"><input id="gr-new-topic-title" placeholder="Thema"><input id="gr-new-topic-desc" placeholder="Kurzbeschreibung"></div><button class="gr-mini-btn" onclick="gruppenTopicErstellen()">Thema erstellen</button></div>'; };
   window.gruppenPostForm = function(){ if(!_grDetail.canManage)return; var el=document.getElementById('gr-compose-live'); el.innerHTML='<div class="gr-compose"><div class="gr-compose-grid"><input id="gr-new-post-title" placeholder="Titel"><input id="gr-new-post-topic" placeholder="Topic-ID optional" value="'+(_grDetail.topicId||'')+'"></div><textarea id="gr-new-post-content" placeholder="Post"></textarea><button class="gr-mini-btn" onclick="gruppenPostErstellen()">Post erstellen</button></div>'; };
   window.gruppenPollForm = function(){ if(!_grDetail.canManage)return; var el=document.getElementById('gr-compose-live'); el.innerHTML='<div class="gr-compose"><input id="gr-new-poll-question" placeholder="Frage"><textarea id="gr-new-poll-options" placeholder="Optionen, eine pro Zeile"></textarea><button class="gr-mini-btn" onclick="gruppenPollErstellen()">Umfrage erstellen</button></div>'; };
   window.gruppenTopicErstellen = function(){ var g=_grDetail.group,t=(document.getElementById('gr-new-topic-title')||{}).value||'',d=(document.getElementById('gr-new-topic-desc')||{}).value||''; if(!g||!t.trim())return; fetch('/api/groups/'+g.id+'/topics',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({title:t.trim(),description:d})}).then(function(){gruppenTopicsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
-  window.gruppenPostErstellen = function(){ var g=_grDetail.group,title=(document.getElementById('gr-new-post-title')||{}).value||'',content=(document.getElementById('gr-new-post-content')||{}).value||'',topic=(document.getElementById('gr-new-post-topic')||{}).value||''; if(!g||!content.trim())return; fetch('/api/groups/'+g.id+'/posts',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({title:title,content:content,topic_id:topic?Number(topic):null})}).then(function(){gruppenPostsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
+  window.gruppenPostErstellen = function(){ var g=_grDetail.group,title=(document.getElementById('gr-new-post-title')||{}).value||'',content=(document.getElementById('gr-new-post-content')||{}).value||'',topic=(document.getElementById('gr-new-post-topic')||{}).value||''; if(!g||!content.trim())return; fetch('/api/groups/'+g.id+'/posts',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({title:title,content:content,topic_id:topic?Number(topic):null})}).then(function(){gruppenPostsLaden(g.id);gruppenTopicsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
   window.gruppenPollErstellen = function(){ var g=_grDetail.group,q=(document.getElementById('gr-new-poll-question')||{}).value||'',opts=((document.getElementById('gr-new-poll-options')||{}).value||'').split('\n').map(function(x){return x.trim();}).filter(Boolean); if(!g||!q.trim()||opts.length<2)return; fetch('/api/groups/'+g.id+'/polls',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({question:q,options:opts,topic_id:_grDetail.topicId})}).then(function(){gruppenPollsLaden(g.id);document.getElementById('gr-compose-live').innerHTML='';}); };
   window.gruppenPollVote = function(pollId, optionId){ var g=_grDetail.group;if(!g||!grTok()){alert('Login erforderlich');return;} fetch('/api/groups/'+g.id+'/polls/'+pollId+'/vote',{method:'POST',headers:{Authorization:grTok(),'Content-Type':'application/json'},body:JSON.stringify({option_indexes:[optionId]})}).then(function(){gruppenPollsLaden(g.id);}); };
 
@@ -4926,21 +4958,27 @@ html[lang="en"] .de-only{display:none}
         +'.nm-new-btn{display:block;width:100%;padding:9px;font-size:.6rem;color:#1a4a5a;border:1px dashed #0a2030;background:none;cursor:pointer;letter-spacing:.1em;margin-top:6px;font-family:monospace}'
         +'.nm-new-btn:hover{border-color:#1a4a6a;color:#2a6a7a}'
         +'.nm-leer{color:#1a3040;font-size:.62rem;padding:16px;text-align:center;font-style:italic}'
-        +'.nm-thread{display:flex;flex-direction:column;height:380px}'
-        +'.nm-tk{display:flex;align-items:center;gap:8px;padding:0 0 8px;border-bottom:1px solid #060e14;flex-shrink:0;margin-bottom:6px}'
-        +'.nm-back{font-size:.58rem;color:#2a5a7a;cursor:pointer;background:none;border:none;font-family:monospace;padding:0}'
-        +'.nm-back:hover{color:#3a7a9a}'
-        +'.nm-tp{font-size:.68rem;color:#3a8aaa;font-weight:700}'
-        +'.nm-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:5px;padding-bottom:4px}'
-        +'.nm-msg{max-width:78%;padding:6px 10px;border-radius:3px;font-size:.63rem;line-height:1.5;word-break:break-word}'
-        +'.nm-mv{background:#030810;border:1px solid #0a1e30;color:#3a7a9a;align-self:flex-start}'
-        +'.nm-mi{background:#060f1a;border:1px solid #152a42;color:#5a9abb;align-self:flex-end;text-align:right}'
-        +'.nm-mz{font-size:.48rem;color:#0e2030;margin-top:2px}'
-        +'.nm-row{display:flex;gap:6px;flex-shrink:0;margin-top:6px}'
-        +'.nm-inp{flex:1;background:#010407;border:1px solid #0e2040;color:#4a7a9a;font-family:monospace;font-size:.63rem;padding:6px 9px;resize:none;min-height:34px;max-height:80px}'
-        +'.nm-sbtn{font-size:.58rem;padding:6px 12px;background:#07101a;border:1px solid #1a3a5a;color:#3a6a8a;cursor:pointer;font-family:monospace;align-self:flex-end;white-space:nowrap}'
-        +'.nm-sbtn:hover{background:#0a182a;border-color:#2a5a8a;color:#5a9abb}'
-        +'.nm-srch{width:100%;box-sizing:border-box;background:#010407;border:1px solid #0e2040;color:#4a7a9a;font-family:monospace;font-size:.63rem;padding:6px 9px;margin-bottom:6px}'
+        +'.nm-thread{display:flex;flex-direction:column;height:100%;min-height:0}'
+        +'.nm-tk{display:flex;align-items:center;gap:10px;padding:0 0 10px;border-bottom:1px solid var(--rim);flex-shrink:0;margin-bottom:8px}'
+        +'.nm-back{font-size:.7rem;color:var(--t-sub);cursor:pointer;background:none;border:1px solid var(--rim);font-family:monospace;padding:3px 9px;border-radius:2px;transition:all .12s}'
+        +'.nm-back:hover{color:var(--t-bright);border-color:var(--t-sub)}'
+        +'.nm-tp{font-size:.8rem;color:var(--t-head);font-weight:700;letter-spacing:.03em}'
+        +'.nm-tp-handle{font-size:.58rem;color:var(--t-dim);margin-left:4px}'
+        +'.nm-msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:4px 0 8px}'
+        +'.nm-day{text-align:center;font-size:.5rem;color:var(--t-dim);letter-spacing:.1em;margin:6px 0;text-transform:uppercase}'
+        +'.nm-bw-v{display:flex;flex-direction:column;align-items:flex-start;max-width:76%}'
+        +'.nm-bw-i{display:flex;flex-direction:column;align-items:flex-end;max-width:76%;align-self:flex-end}'
+        +'.nm-av{width:22px;height:22px;border-radius:50%;background:#0a2030;border:1px solid #1a4a5a;display:flex;align-items:center;justify-content:center;font-size:.55rem;color:var(--t-mid);flex-shrink:0;font-family:monospace;margin-bottom:3px}'
+        +'.nm-bbl-v{background:#020c16;border:1px solid #0e2234;color:var(--t-bright);padding:9px 13px;border-radius:2px 10px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
+        +'.nm-bbl-i{background:#081828;border:1px solid #1a3a5a;color:var(--t-bright);padding:9px 13px;border-radius:10px 2px 10px 10px;font-size:.75rem;line-height:1.55;word-break:break-word}'
+        +'.nm-bbl-t{font-size:.5rem;color:var(--t-dim);margin-top:4px;padding:0 3px}'
+        +'.nm-leer{text-align:center;color:var(--t-dim);font-size:.7rem;padding:28px;font-style:italic}'
+        +'.nm-row{display:flex;gap:8px;flex-shrink:0;padding-top:10px;border-top:1px solid var(--rim)}'
+        +'.nm-inp{flex:1;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;resize:none;min-height:36px;max-height:90px;border-radius:3px;line-height:1.4}'
+        +'.nm-inp:focus{outline:none;border-color:#1a4a6a}'
+        +'.nm-sbtn{font-size:.85rem;padding:0 14px;height:36px;background:#0a1e34;border:1px solid #1a4a6a;color:var(--t-mid);cursor:pointer;border-radius:3px;transition:all .12s;flex-shrink:0}'
+        +'.nm-sbtn:hover{background:#0e2840;color:var(--t-bright)}'
+        +'.nm-srch{width:100%;box-sizing:border-box;background:#010810;border:1px solid #0e2040;color:var(--t-bright);font-family:var(--font-body);font-size:.75rem;padding:8px 11px;margin-bottom:8px;border-radius:3px}'
         +'</style>';
       if (!gs.length) {
         html += '<div class="nm-leer">Noch keine Nachrichten.<br>Schreib jemanden an.</div>';
@@ -5031,7 +5069,6 @@ html[lang="en"] .de-only{display:none}
   };
 
   window.mwConsentWiderrufen = function(sourceId) {
-    if (!confirm('Freigabe widerrufen? Der Splitter-Bezug dieser Quelle wird gesperrt.')) return;
     const tok = mwToken();
     if (!tok) return;
     fetch(MW_API+'/human-material/'+sourceId+'/consent', {
@@ -5052,7 +5089,6 @@ html[lang="en"] .de-only{display:none}
   };
 
   window.mwQuelleLoeschen = function(sourceId) {
-    if (!confirm('Innenquelle löschen? Diese Aktion kann nicht rückgängig gemacht werden.')) return;
     const tok = mwToken(); if (!tok) return;
     fetch(MW_API+'/human-material/'+sourceId, {
       method: 'DELETE',
@@ -5103,7 +5139,7 @@ html[lang="en"] .de-only{display:none}
             + '<span style="font-size:.5rem;color:' + statusCol + ';border:1px solid ' + statusCol + ';padding:0 4px;border-radius:2px">' + status + '</span>'
             + (b.resonanz_count ? '<span style="font-size:.52rem;color:#3a6a5a">⬡ ' + b.resonanz_count + '</span>' : '')
             + '</div></div>'
-            + '<button style="font-size:.55rem;color:#5a2a2a;background:none;border:none;cursor:pointer;padding:2px 4px" onclick="mwGedankeLoslassen(&apos;' + b.id + '&apos;)" title="Gedanke loslassen">✗</button>'
+            + '<button style="font-size:.55rem;color:var(--t-dim);background:none;border:1px solid var(--rim);cursor:pointer;padding:2px 7px;border-radius:2px;flex-shrink:0;transition:all .12s" onmouseover="this.style.color=\'#e84040\';this.style.borderColor=\'#3a1010\'" onmouseout="this.style.color=\'\';this.style.borderColor=\'\'" onclick="mwGedankeLoslassen(&apos;' + b.id + '&apos;)" title="Löschen">✕</button>'
             + '</div>';
         });
         html += '</div>';
@@ -5150,7 +5186,7 @@ html[lang="en"] .de-only{display:none}
     }
     const text = document.createElement('div');
     text.style.cssText = 'font-size:.65rem;color:#6ab8c8;line-height:1.7;white-space:pre-wrap;word-break:break-word';
-    text.textContent = String(e.inhalt || '');
+    text.innerHTML = typeof _ftwSanitize === 'function' ? _ftwSanitize(String(e.inhalt||'')) : mwEsc(String(e.inhalt||''));
     box.appendChild(text);
     ov.appendChild(box);
     ov.onclick = function(ev){ if (ev.target === ov) ov.remove(); };
@@ -5178,7 +5214,6 @@ html[lang="en"] .de-only{display:none}
   };
 
   window.mwGedankeLoslassen = function(id) {
-    if (!confirm('Gedanke aus dem Feld nehmen?')) return;
     const tok = mwToken(); if (!tok) return;
     fetch(MW_API + '/gedankenblasen/' + id + '?hard=false', {
       method: 'DELETE',
@@ -5249,22 +5284,44 @@ html[lang="en"] .de-only{display:none}
     fetch(MW_API+'/nachrichten/gespraech/'+partnerId, {headers:_nmH}).then(r=>r.json()).then(d=>{
       const msgs = d.nachrichten || [];
       const myId = localStorage.getItem('ftw_user_id') || '';
+      const partnerInitial = (partnerName||'?')[0].toUpperCase();
       let html = '<div class="nm-thread">'
-        +'<div class="nm-tk"><button class="nm-back" onclick="mwLadeNachrichten(_nmEl,_nmH)">← zurück</button>'
-        +'<span class="nm-tp">'+mwEsc(partnerName)+'</span></div>'
+        +'<div class="nm-tk">'
+        +'<button class="nm-back" onclick="mwLadeNachrichten(_nmEl,_nmH)">←</button>'
+        +'<div class="nm-av">'+mwEsc(partnerInitial)+'</div>'
+        +'<span class="nm-tp">'+mwEsc(partnerName)+'</span>'
+        +'</div>'
         +'<div class="nm-msgs" id="nm-msgs-scroll">';
-      if (!msgs.length) html += '<div class="nm-leer">Noch keine Nachrichten.</div>';
-      msgs.forEach(m=>{
-        const ich = m.sender_id === myId;
-        html += '<div class="nm-msg '+(ich?'nm-mi':'nm-mv')+'">'
-          +mwEsc(m.inhalt)
-          +'<div class="nm-mz">'+nmFmt(m.created_at)+(ich?' · du':'')+'</div>'
-          +'</div>';
-      });
+      if (!msgs.length) {
+        html += '<div class="nm-leer">◌ Noch keine Nachrichten.<br>Schreib als Erster.</div>';
+      } else {
+        let lastDay = '';
+        msgs.forEach(m=>{
+          const ich = String(m.sender_id) === String(myId);
+          const dt = m.created_at ? new Date(m.created_at) : null;
+          const dayStr = dt ? dt.toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'}) : '';
+          const timeStr = dt ? dt.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'}) : '';
+          if (dayStr && dayStr !== lastDay) {
+            html += '<div class="nm-day">'+mwEsc(dayStr)+'</div>';
+            lastDay = dayStr;
+          }
+          if (ich) {
+            html += '<div class="nm-bw-i">'
+              +'<div class="nm-bbl-i">'+mwEsc(m.inhalt||'')+'</div>'
+              +'<div class="nm-bbl-t">'+timeStr+'</div>'
+              +'</div>';
+          } else {
+            html += '<div class="nm-bw-v">'
+              +'<div class="nm-bbl-v">'+mwEsc(m.inhalt||'')+'</div>'
+              +'<div class="nm-bbl-t">'+timeStr+'</div>'
+              +'</div>';
+          }
+        });
+      }
       html += '</div>'
         +'<div class="nm-row">'
-        +'<textarea class="nm-inp" id="nm-send-inp" placeholder="Nachricht…" onkeydown="if(event.key===&quot;Enter&quot;&&!event.shiftKey){event.preventDefault();nmSenden();}"></textarea>'
-        +'<button class="nm-sbtn" onclick="nmSenden()">Senden</button>'
+        +'<textarea class="nm-inp" id="nm-send-inp" placeholder="Nachricht…" rows="1" onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();nmSenden();}"></textarea>'
+        +'<button class="nm-sbtn" onclick="nmSenden()">→</button>'
         +'</div></div>';
       _nmEl.innerHTML = html;
       const scroll = document.getElementById('nm-msgs-scroll');
@@ -9608,7 +9665,7 @@ function dkEmojiToggle(btn) {
 async function dkEmojiSenden(postId) {
   const tok = localStorage.getItem('ftw_token');
   if (!tok) return;
-  const pick = document.getElementById('dk-ep-'+postId)||document.getElementById('dk-fp-'+postId)||document.getElementById('dk-ep-b-'+postId);
+  const pick = document.getElementById('dk-ep-'+postId)||document.getElementById('dk-fp-'+postId)||document.getElementById('dk-ep-b-'+postId)||document.getElementById('dk-ep-t-'+postId);
   if (!pick) return;
   const emojis = Array.from(pick.querySelectorAll('.dk-emoji-pick-btn.sel')).map(function(b){return b.dataset.e;});
   if (!emojis.length) { alert('Wähle mindestens ein Emoji'); return; }
@@ -9783,6 +9840,7 @@ async function dkSchattenPopupSenden(postId) {
     if (!r.ok) throw new Error(await r.text());
     ta.value = '';
     _dkSchattenLadenInPopup(postId);
+    _dkSchattenLaden(postId);
   } catch(e) { alert('Fehler: '+e.message); }
 }
 
@@ -9895,7 +9953,7 @@ function _dkThreadNode(n, depth, postId) {
   // Aktionen
   let acts = '';
   if (tok) {
-    acts += '<button class="dk-thread-btn" onclick="dkAntwortAufAntwort(&apos;'+nodeId+'&apos;,&apos;'+postId+'&apos;)">Antworten</button>';
+    acts += '<button class="dk-thread-btn" onclick="dkSchattenPopupOeffnen(&apos;'+nodeId+'&apos;)">✦ Schatten</button>';
   }
   if (canEdit) {
     acts += '<button class="dk-thread-btn" onclick="dkAntwortBearbeiten(&apos;'+nodeId+'&apos;,&apos;'+postId+'&apos;)">Bearbeiten</button>';
@@ -11005,13 +11063,15 @@ async function selectMensch(id) {
       `).join('')}
     </div>`;
 
-    const gedankenHtml = (m.gedanken_recent||[]).length
-      ? `<div class="mp-gedanken-strom">${(m.gedanken_recent||[]).map((g,gi)=>{
-          const ago = g.erstellt_at ? Math.round((Date.now()-new Date(g.erstellt_at).getTime())/60000) : 0;
-          const agoStr = ago < 60 ? ago+'min' : Math.round(ago/60)+'h';
+    const gedankenAll = m.gedanken_recent||[];
+    const gedankenTop3 = gedankenAll.slice(0,3);
+    const gedankenRest = gedankenAll.length > 3;
+    const gedankenHtml = gedankenTop3.length
+      ? `<div class="mp-gedanken-strom">${gedankenTop3.map((g,gi)=>{
+          const dt = g.erstellt_at ? (new Date(g.erstellt_at)).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'}) : '';
           const gId='mp-g-'+gi+'-'+(g.id||gi);
-          return '<div class="mp-gedanke"><span id="'+gId+'">'+esc(g.inhalt)+'</span><div class="mp-gedanke-meta">'+agoStr+' her · ⚡'+Math.round((g.energie||0.5)*100)+'% <button class="ftw-tr-btn" data-tr="'+gId+'" onclick="var el=document.getElementById(this.dataset.tr);if(el)window.ftwTrEl(el.textContent,el,this)">→ EN</button></div></div>';
-        }).join('')}</div>`
+          return '<div class="mp-gedanke"><span id="'+gId+'">'+esc(g.inhalt)+'</span><div class="mp-gedanke-meta">'+dt+' <button class="ftw-tr-btn" data-tr="'+gId+'" onclick="var el=document.getElementById(this.dataset.tr);if(el)window.ftwTrEl(el.textContent,el,this)">→ EN</button></div></div>';
+        }).join('')}${gedankenRest?'<div style="font-size:.55rem;color:#1a4a3a;text-align:center;margin-top:4px;cursor:pointer" onclick="mwOeffne(\'gedanken\')">+ weitere im Archiv →</div>':''}</div>`
       : '<div style="color:#0e2030;font-size:0.6rem">Noch keine öffentlichen Gedanken.</div>';
 
     const splitterTypHtml = Object.keys(nach_typ).length
@@ -12038,7 +12098,17 @@ function cyberlingeLaden(){
         grid.innerHTML = '<div class="arch-leer" style="width:100%">Keine Cyberlinge gefunden.</div>';
         return;
       }
-      grid.innerHTML = '';
+      // Rekord berechnen
+      const maxTode = cl.reduce((m, c) => Math.max(m, c.tode||0), 0);
+      const rekordEntity = cl.find(c => (c.tode||0) === maxTode);
+      if (maxTode > 0 && rekordEntity) {
+        const rekordBanner = document.createElement('div');
+        rekordBanner.style.cssText = 'width:100%;padding:8px 16px;background:#0a0408;border:1px solid rgba(248,113,113,.15);border-radius:3px;margin-bottom:14px;font-size:.6rem;color:var(--sys);letter-spacing:.12em;display:flex;gap:10px;align-items:center';
+        rekordBanner.innerHTML = '<span style="letter-spacing:.18em;text-transform:uppercase;opacity:.5">TODE-REKORD</span>'
+          + '<span style="font-size:.9rem;font-weight:bold">' + maxTode + '×</span>'
+          + '<span style="color:var(--t-sub)">' + (rekordEntity.name||rekordEntity.entity_id) + '</span>';
+        grid.appendChild(rekordBanner);
+      }
       cl.forEach(c => {
         const el = document.createElement('div');
         el.className = 'cy-kapsel status-' + (c.status || 'unbekannt');
@@ -12048,7 +12118,7 @@ function cyberlingeLaden(){
           bars += '<div class="cy-bar-row"><span>' + label + '</span><div class="cy-bar-bg"><div class="cy-bar ' + key + '" style="width:' + val + '%"></div></div><span>' + val + '%</span></div>';
         });
         let meta = '';
-        if(c.tode) meta += '<div class="cy-tode">Tode: ' + c.tode + '</div>';
+        meta += '<div class="cy-tode">Tode: <strong>' + (c.tode||0) + '</strong></div>';
         if(c.status === 'tot' && c.tod_at){
           const tod = new Date(c.tod_at);
           const revival = new Date(tod.getTime() + 24*3600*1000);
