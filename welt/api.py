@@ -3113,27 +3113,48 @@ def splitter_einsammeln(
         conn.close()
 
 
+class SplitterAufnahmeBody(BaseModel):
+    begruendung: str | None = None
+
+
 @app.post("/zwischenraum/splitter/{splitter_id}/aufnehmen")
-def splitter_aufnehmen(splitter_id: str):
-    """Zählt wie oft ein Splitter aufgenommen wurde. Splitter bleibt im Canvas."""
+def splitter_aufnehmen(
+    splitter_id: str,
+    body: SplitterAufnahmeBody | None = None,
+    authorization: str | None = Header(default=None),
+):
+    """Nimmt einen Splitter auf — authentifiziert, loggt in splitter_aufnahmen."""
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role", "mensch")
+    aufnehmer_type = "entity" if role == "entity" else "human"
     conn = get_conn()
     try:
         with conn.cursor() as cur:
-            cur.execute("SELECT id FROM splitter WHERE id = %s", (splitter_id,))
-            if not cur.fetchone():
+            cur.execute("SELECT id, status, aufnahmen FROM splitter WHERE id = %s", (splitter_id,))
+            sp = cur.fetchone()
+            if not sp:
                 raise HTTPException(status_code=404, detail="Splitter nicht gefunden")
+            begruendung = (body and body.begruendung) or ""
             cur.execute(
-                "UPDATE splitter SET aufnahmen = aufnahmen + 1 WHERE id = %s RETURNING aufnahmen",
+                "INSERT INTO splitter_aufnahmen (splitter_id, aufnehmer_type, aufnehmer_id, begruendung) "
+                "VALUES (%s::uuid, %s, %s, %s) RETURNING id::text",
+                (splitter_id, aufnehmer_type, user_id, begruendung),
+            )
+            aufnahme_id = cur.fetchone()["id"]
+            cur.execute(
+                "UPDATE splitter SET aufnahmen = aufnahmen + 1, letzter_kontakt = now() WHERE id = %s RETURNING aufnahmen",
                 (splitter_id,),
             )
             aufnahmen = cur.fetchone()["aufnahmen"]
             cur.execute(
-                """INSERT INTO events (event_type, actor_type, payload)
-                   VALUES ('splitter.aufgenommen', 'system', %s)""",
-                (psycopg2.extras.Json({"splitter_id": splitter_id}),),
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) "
+                "VALUES ('splitter.aufgenommen', %s, %s, %s::jsonb)",
+                (aufnehmer_type, user_id,
+                 psycopg2.extras.Json({"splitter_id": splitter_id, "aufnahme_id": aufnahme_id, "begruendung": begruendung})),
             )
         conn.commit()
-        return {"ok": True, "splitter_id": splitter_id, "aufnahmen": aufnahmen}
+        return {"ok": True, "splitter_id": splitter_id, "aufnahme_id": aufnahme_id, "aufnahmen": aufnahmen}
     finally:
         conn.close()
 
