@@ -11050,6 +11050,45 @@ except ImportError as _e:
     _logging.warning(f"groups_api nicht geladen: {_e}")
 
 
+# ── Wesen Life Contracts + Organ Hunger ──────────────────────────────────────
+try:
+    from wesen_life_contracts import as_dict as _contracts_as_dict, LIFE_CONTRACTS as _LIFE_CONTRACTS
+    from wesen_organ_hunger import berechne_organ_hunger as _berechne_hunger, alle_wesen_hunger as _alle_hunger
+
+    _ALLE_WESEN_IDS = [
+        "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
+        "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    ]
+
+    @app.get("/admin/wesen-einsicht/life-contracts")
+    def einsicht_life_contracts(authorization: str | None = Header(default=None)):
+        """Taxonomie-Verträge aller Wesen-Erfahrungsräume."""
+        _require_admin(authorization)
+        return {
+            "contracts": _contracts_as_dict(),
+            "total": len(_LIFE_CONTRACTS),
+            "aktiv": sum(1 for c in _LIFE_CONTRACTS if c.visibility_default == "aktiv"),
+            "geplant": sum(1 for c in _LIFE_CONTRACTS if c.visibility_default == "geplant"),
+            "blockiert": sum(1 for c in _LIFE_CONTRACTS if c.visibility_default == "blockiert"),
+        }
+
+    @app.get("/admin/wesen-einsicht/organ-hunger")
+    def einsicht_organ_hunger(entity_id: str | None = None, authorization: str | None = Header(default=None)):
+        """Organhunger — prüft welche Organe unterversorgt sind. Kein Fake, nur Prüfanlässe."""
+        _require_admin(authorization)
+        if entity_id:
+            try:
+                report = _berechne_hunger(entity_id)
+                return report.to_dict()
+            except Exception as e:
+                return {"error": str(e), "entity_id": entity_id}
+        return {"hunger_reports": _alle_hunger(_ALLE_WESEN_IDS)}
+
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"wesen_life_contracts/organ_hunger nicht geladen: {_e}")
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)

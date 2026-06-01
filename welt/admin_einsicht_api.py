@@ -19,6 +19,9 @@ import psycopg2
 import psycopg2.extras
 from fastapi import APIRouter, Query
 
+from wesen_life_contracts import as_dict as contracts_as_dict, LIFE_CONTRACTS
+from wesen_organ_hunger import berechne_organ_hunger, alle_wesen_hunger
+
 router = APIRouter(prefix="/admin", tags=["einsicht"])
 
 DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
@@ -796,6 +799,35 @@ def admin_human_material(
 
 
 # ── WELTORGAN-BAUPLAN ─────────────────────────────────────────────────────────
+
+@router.get("/wesen-einsicht/life-contracts")
+def wesen_life_contracts_liste():
+    """Alle Wesen Life Contracts — Taxonomie-Verträge für alle Erfahrungsräume."""
+    return {
+        "contracts": contracts_as_dict(),
+        "total": len(LIFE_CONTRACTS),
+        "aktiv": sum(1 for c in LIFE_CONTRACTS if c.visibility_default == "aktiv"),
+        "geplant": sum(1 for c in LIFE_CONTRACTS if c.visibility_default == "geplant"),
+        "blockiert": sum(1 for c in LIFE_CONTRACTS if c.visibility_default == "blockiert"),
+    }
+
+
+@router.get("/wesen-einsicht/organ-hunger")
+def wesen_organ_hunger_alle(entity_id: str | None = Query(default=None)):
+    """
+    Organhunger — prüft welche Organe unterversorgt sind.
+    Erzeugt KEINE Fake-Events. Erzeugt Prüfanlässe.
+    """
+    if entity_id:
+        try:
+            report = berechne_organ_hunger(entity_id)
+            return report.to_dict()
+        except Exception as e:
+            return {"error": str(e), "entity_id": entity_id}
+    else:
+        from admin_einsicht_api import ALLE_WESEN
+        return {"hunger_reports": alle_wesen_hunger(ALLE_WESEN)}
+
 
 @router.get("/world-organs/roadmap")
 def world_organs_roadmap():
