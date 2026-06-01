@@ -143,3 +143,9 @@ class GastSession:
 ```
 
 Das ist kein Bewohner. Das ist ein Gast mit Schlafanzug.
+
+---
+
+**[2026-06-01]** *← notizen/2026-06-01.md*
+
+Keine — reines CSS/Design-Update.

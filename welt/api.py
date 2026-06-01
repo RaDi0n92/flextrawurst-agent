@@ -6241,6 +6241,12 @@ def api_cyberlinge():
     return {"cyberlinge": [fmt(r) for r in rows]}
 
 
+@app.get("/cyberlinge")
+def cyberlinge_alias():
+    """Alias für /api/cyberlinge — nginx entfernt /api/ Prefix."""
+    return api_cyberlinge()
+
+
 @app.get("/api/splitter-aufnahmen")
 def api_splitter_aufnahmen(
     limit: int = Query(default=50, ge=1, le=200),
@@ -6267,6 +6273,14 @@ def api_splitter_aufnahmen(
             d["aufgenommen_at"] = d["aufgenommen_at"].isoformat()
         return d
     return {"aufnahmen": [fmt(r) for r in rows]}
+
+
+@app.get("/splitter-aufnahmen")
+def splitter_aufnahmen_alias(
+    limit: int = Query(default=50, ge=1, le=200),
+):
+    """Alias für /api/splitter-aufnahmen — nginx entfernt /api/ Prefix."""
+    return api_splitter_aufnahmen(limit=limit)
 
 
 @app.get("/admin/entity-keys")
@@ -6763,6 +6777,7 @@ def schatten_antwort(
 class PostAntwortBody(BaseModel):
     content: str
     titel: str | None = None
+    parent_id: str | None = None
 
 
 @app.post("/welt/posts/{post_id}/antworten", status_code=201)
@@ -6790,7 +6805,7 @@ def post_antwort_erstellen(
                    VALUES (%s::uuid, %s, %s, %s, %s, %s, %s, 'public')
                    RETURNING id, created_at""",
                 (
-                    post_id,
+                    body.parent_id or post_id,
                     parent["raum_id"],
                     parent["thema_id"],
                     autor_type,
@@ -6833,6 +6848,61 @@ def post_antworten_lesen(post_id: str):
             rows = cur.fetchall()
             emoji_map = _dk_emoji_map(cur, [r["id"] for r in rows])
         return {"antworten": [_dk_row(r, emoji_map) for r in rows]}
+    finally:
+        conn.close()
+
+
+@app.get("/welt/posts/{post_id}/thread")
+def post_thread(post_id: str):
+    """Liefert einen Post mit allen Antworten als verschachtelter Baum."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1 FROM ftw_posts WHERE id = %s::uuid", (post_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Post nicht gefunden")
+
+            # Alle Antwort-IDs im Thread (rekursiv, max Tiefe 10)
+            cur.execute("""
+                WITH RECURSIVE thread_ids AS (
+                    SELECT id, 1 as depth
+                    FROM ftw_posts
+                    WHERE parent_id = %s::uuid
+                    UNION ALL
+                    SELECT p.id, ti.depth + 1
+                    FROM ftw_posts p
+                    INNER JOIN thread_ids ti ON p.parent_id = ti.id
+                    WHERE ti.depth < 10
+                )
+                SELECT id FROM thread_ids
+            """, (post_id,))
+            thread_ids = [r["id"] for r in cur.fetchall()]
+
+            # Post laden
+            cur.execute(f"{_DK_POST_SELECT} WHERE p.id = %s::uuid", (post_id,))
+            post_row = cur.fetchone()
+            post_emoji = _dk_emoji_map(cur, [post_row["id"]])
+            post = _dk_row(post_row, post_emoji)
+
+            # Antworten laden (falls vorhanden)
+            antworten = []
+            baum = []
+            if thread_ids:
+                cur.execute(
+                    f"{_DK_POST_SELECT} WHERE p.id = ANY(%s) ORDER BY p.created_at ASC",
+                    (thread_ids,),
+                )
+                antwort_rows = cur.fetchall()
+                emoji_map = _dk_emoji_map(cur, [r["id"] for r in antwort_rows])
+                antworten = [_dk_row(r, emoji_map) for r in antwort_rows]
+                baum = _build_antwort_tree(antworten)
+
+            return {
+                "post": post,
+                "antworten": antworten,
+                "baum": baum,
+                "gesamt": len(antworten),
+            }
     finally:
         conn.close()
 

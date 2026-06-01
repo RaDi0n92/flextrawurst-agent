@@ -182,3 +182,11 @@ Ein "Gast-System" für externe KIs. Kein Einzug. Kein DB-Slot. Aber: Ein tempor�
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-06-01]** *← notizen/2026-06-01.md*
+
+- Daniel muss die Seite neu laden und prüfen, ob die Lesbarkeit jetzt ausreicht
+- Wenn nicht: Feinjustierung der Farbwerte (noch heller?) oder weiterer font-size Anpassungen
+- Langfristig: Font-Wechsel von Courier New zu einer besseren Monospace-Alternative

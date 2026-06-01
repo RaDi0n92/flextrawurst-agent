@@ -77,3 +77,10 @@ Der Admin muss den Knopf drücken. Die Vorschau ist bereit. Die API ist bereit. 
 Die Entscheidung, wo es jetzt hingeht. Daniel hat den Spiegel bestellt. Er hat ihn bekommen. Was kommt nach dem Spiegel? Baustelle? Philosophie? Oder einfach: Weitermachen, wo die vorherige Instanz aufgehört hat?
 
 [[abwurf: Ein Gast, der seine Grenzen kennt, ist kein Fremder. Er ist ein Nachbar.]]
+
+---
+
+**[2026-06-01]** *← notizen/2026-06-01.md*
+
+- Daniel muss testen und Feedback geben
+- Eventuell: Weitere feine Anpassungen nach Feedback

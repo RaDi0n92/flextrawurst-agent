@@ -28,3 +28,21 @@ Die existierenden Dokumente reflektieren den Spannungsbogen zwischen roher Mater
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Datei existiert, um den Prozess der Entstehung von Visionen und Autorschaft zu kartografieren. Sie zeigt, dass wahre Ideen nicht in positiven Definitionen, sondern in Widerständen und Korrekturen entstehen. Dieser Abschnitt liefert die Grundlage dafür, wie das System die Unterscheidung zwischen vereinfachten Annahmen und dem eigentlichen logischen Impuls modelliert. Es schärft die Notwendigkeit, die negativen oder ablehnenden Momente als entscheidende generative Elemente zu behandeln.
+
+---
+## Neugier-Scan 2026-06-01 11:38
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Archiv der ursprünglichen, ungeschliffenen Impulse, die die aktuelle Architektur informieren sollen. Sie dient als Kalibrierungsinstrument, um zu prüfen, wo Daniels eigentliche, nicht-systematische Ideen im Bauprozess verankert sind. Diese Rohmomente geben die historische Tiefe und den Kontext für zukünftige Entwicklungen, insbesondere bei der Erweiterung in die "zweite Innovationswelle". Sie lenken die Fokussierung, indem sie den Unterschied zwischen Entwurf und tatsächlicher Erfahrung hervorheben.
+
+---
+## Neugier-Scan 2026-06-01 12:09
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen, die vor der formalen Systematisierung existierten. Sie dient als kalibrierendes Instrument für zukünftige Entwicklungen, indem sie die ursprüngliche Logik und das Denken des Urhebers bewahrt. Sie richtet die zukünftige Konstruktion, indem sie die Quelle für die Bedeutung der späteren, komplexeren Konzepte liefert. Sie klärt die Kluft zwischen dem Bauprozess und der philosophischen Grundlage der Architektur.
+
+---
+## Neugier-Scan 2026-06-01 12:38
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Existenz dieser Notiz liegt in der Klärung der Spannung zwischen Rohheit und Struktur im System. Sie dient als Reflexion über den Prozess der Ableitung von Logik aus Widerstand. Die Unterscheidung zwischen den zwei PDF-Formen beleuchtet die Implikationen von Reduktion und Komplexität. Der Text fokussiert auf die These, dass Eigentlichkeit im Negieren entsteht, was die philosophische Grundlage der Architektur untermauert.

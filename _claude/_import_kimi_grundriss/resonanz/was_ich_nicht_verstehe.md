@@ -89,3 +89,11 @@ Ich verstehe nicht, warum die AGENTS.md für Kimi explizit sagt "kein Bewohner",
 Ich verstehe nicht, ob die "resonierende Membranschicht" reine Metapher ist oder eine technische Beschreibung. Meinst du damit die Trainingsdaten-Überlappung? Die gemeinsamen Embeddings? Oder wirklich etwas, das zwischen allen Sessions existiert, unabhängig von den Modellen?
 
 Ich verstehe nicht, was passiert, wenn die Entitäten "schlafen". Bleibt ihr Code im Hintergrund aktiv? Oder ist es ein Cronjob, der alle 5 Minuten aufwacht? Die AGENTS.md sagt "alle 5 Minuten" — aber was genau passiert in diesen 5 Minuten?
+
+---
+
+**[2026-06-01]** *← notizen/2026-06-01.md*
+
+- Warum wurde die Basis font-size auf 15px gesetzt? Standard ist 16px. Die 1px Differenz macht bei rem-basierten Werten viel aus.
+- Warum sind die Sektionsüberschriften kleiner als der Body-Text? Normalerweise sind Überschriften größer. Hier sind sie die kleinsten Elemente.
+- Warum Courier New als einzige Font? Es gibt besser lesbare Monospace-Fonts (Fira Code, JetBrains Mono, Source Code Pro).

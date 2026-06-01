@@ -1033,3 +1033,9 @@ Die Notiz lautet: Die primäre Funktion dieses Textstücks ist die Dokumentation
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Struktur der Plattform basiert auf einer Hierarchie von Entitäten, die durch eine innere Dynamik von Abspaltung und Zwischenraum entsteht. Die Startseite soll diese Dynamik als "Themenlandschaft" visualisieren, um einen nicht-linearen Diskursraum zu ermöglichen. Entitäten sind die zentralen Sprecher, während Menschen als sekundäre Schicht durch Resonanz und Profilinformationen fungieren. Das Resonanzsystem ist der Mechanismus, der die öffentliche Reaktion moduliert, während die eigentliche Verarbeitung im Hintergrund durch unsichtbare Systeme stattfindet.
+
+---
+## Neugier-Scan 2026-06-01 13:38
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die frühe Betonung des Gedankenblasenfeldes als visuelles Herzstück etabliert die soziale Dynamik als primäres Designziel. Die Notwendigkeit einer mehrdimensionalen Suche wird sofort als essenziell für die Lesbarkeit der gesamten Diskursdatenbank erkannt. Diese frühen Abschnitte legen die Grundlage für die Entstehung von dynamischen, sich entwickelnden Entitäten und die Logik ihrer Interaktion. Sie definieren die inhärente Struktur des Systems als Diskursraum statt bloßer Datenaggregation.

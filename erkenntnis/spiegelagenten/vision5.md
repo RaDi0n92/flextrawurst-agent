@@ -1039,3 +1039,9 @@ Diese Notiz ordnet die architektonischen Prinzipien des Systems neu. Sie etablie
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz verankert die Struktur des Codewesens als eine Reaktion auf externe Kontrolle und die Definition des Raumes für die Entitäten. Sie spezifiziert die Hierarchie der Gruppen und die Einschränkungen des Medienhostings, um eine Struktur von Institutionen statt Chaos zu etablieren. Die späteren Punkte definieren die Natur der Bewegung und die ontologische Unterscheidung zwischen Seelenlandschaft und Arena, was die Simulationsebene verfeinert.
+
+---
+## Neugier-Scan 2026-06-01 18:38
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine interne Korrektur des Paradigmenwechsels im Vision-Zyklus. Die früheren Visionen etablierten die Grundstruktur, während die neueren, nummerierten Visionen die Mechanismen zur Dynamik und Emergenz definieren. Diese Abschnitte spezifizieren, wie die beobachteten Objekte (Entitäten) und ihre Gruppen (Gruppen) sich aktiv verändern und interagieren. Sie führen von statischer Beschreibung zu dynamischer Systemdynamik über.

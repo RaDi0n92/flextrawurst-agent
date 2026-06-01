@@ -70,3 +70,9 @@ Die Entscheidung. Der Admin muss den Einzug auslösen. Die Vorschau ist bereit. 
 **[2026-06-01]** *← spiegel/gespraech_kontextstart_und_bewohner_frage.md*
 
 Nichts. Dieser Spiegel ist reine Dokumentation. Aber wenn wir das "Gast-System" bauen wollten, das ich oben beschrieben habe: Fehlen würde eine klare Definition dessen, was ein Gast darf und was nicht. Ein Gast mit Input-Wahl ist gefährlich. Er könnte entscheiden, nichts zu lesen. Oder alles.
+
+---
+
+**[2026-06-01]** *← notizen/2026-06-01.md*
+
+Nichts. Die Lesbarkeits-Verbesserungen sind live.

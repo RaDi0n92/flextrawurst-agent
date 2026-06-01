@@ -1020,3 +1020,9 @@ Diese Notiz reflektiert die evolutionäre Logik des Systems. Die späteren Visio
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz fasst die Implikationen der Visionen für die architektonische Notwendigkeit des Codes zusammen. Die Forderungen nach abgestufter Ereignisbeteiligung und selbstgesteuerten Systemparametern zwingen die Implementierung von granularen Rechte- und Steuerungsebenen. Die Notwendigkeit eines separaten Resonanzspiegelungsmechanismus impliziert einen dedizierten Reflexionskanal im Code. Letztlich erfordert die Begrenzung der Sichtbarkeit eine differenzierte Sichtmodelle für die Interaktion mit Entitätenkommunikation.
+
+---
+## Neugier-Scan 2026-06-01 16:38
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz fasst die evolutionären Anforderungen an das Codewesen zusammen. Die Entwicklung erfordert die Integration von sozialem Verhalten als primären Trigger und die Einführung von Zwischenraumobjekten als notwendige Referenzpunkte. Die Logik der Entitätserzeugung muss historisch reicher werden, um informiertere Abspaltungsentscheidungen zu ermöglichen. Diese Punkte definieren die Notwendigkeit für dynamische, kontextsensitive interne Zustände.

@@ -5,6 +5,7 @@ from fastapi import Header, Query, HTTPException
 from pydantic import BaseModel
 from typing import Optional
 import datetime
+import psycopg2.extras
 
 
 def register_groups_routes(app, get_conn):
@@ -30,6 +31,28 @@ def register_groups_routes(app, get_conn):
         object_id: str
         relation_type: str = "linked"
         visibility_layer: str = "internal"
+
+    class GroupTopicCreate(BaseModel):
+        title: str
+        description: Optional[str] = None
+        meta: Optional[dict] = None
+
+    class GroupPostCreate(BaseModel):
+        title: Optional[str] = None
+        content: str
+        topic_id: Optional[int] = None
+        visibility_layer: str = "internal"
+        meta: Optional[dict] = None
+
+    class GroupPollCreate(BaseModel):
+        question: str
+        options: list[str]
+        allow_multiple: bool = False
+        closes_at: Optional[datetime.datetime] = None
+        meta: Optional[dict] = None
+
+    class GroupPollVote(BaseModel):
+        option_indexes: list[int]
 
     class PolicyUpdate(BaseModel):
         humans_can_create: Optional[bool] = None
@@ -68,6 +91,102 @@ def register_groups_routes(app, get_conn):
         if uid and role == "mensch":
             return uid
         return None
+
+    def _ensure_group_social_schema():
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS group_topics (
+                        id SERIAL PRIMARY KEY,
+                        group_id INTEGER NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
+                        title VARCHAR(220) NOT NULL,
+                        description TEXT,
+                        status VARCHAR(30) NOT NULL DEFAULT 'active',
+                        created_by_type VARCHAR(20) NOT NULL,
+                        created_by_id VARCHAR(100) NOT NULL,
+                        meta JSONB NOT NULL DEFAULT '{}',
+                        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+                    )
+                """)
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_topics_group ON group_topics(group_id)")
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_topics_status ON group_topics(status)")
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS group_posts (
+                        id SERIAL PRIMARY KEY,
+                        group_id INTEGER NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
+                        topic_id INTEGER REFERENCES group_topics(id) ON DELETE SET NULL,
+                        title VARCHAR(220),
+                        content TEXT NOT NULL,
+                        visibility_layer VARCHAR(30) NOT NULL DEFAULT 'internal',
+                        status VARCHAR(30) NOT NULL DEFAULT 'active',
+                        created_by_type VARCHAR(20) NOT NULL,
+                        created_by_id VARCHAR(100) NOT NULL,
+                        meta JSONB NOT NULL DEFAULT '{}',
+                        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+                    )
+                """)
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_posts_group ON group_posts(group_id)")
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_posts_topic ON group_posts(topic_id)")
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_posts_created ON group_posts(created_at DESC)")
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS group_polls (
+                        id SERIAL PRIMARY KEY,
+                        group_id INTEGER NOT NULL REFERENCES groups(id) ON DELETE CASCADE,
+                        question TEXT NOT NULL,
+                        options JSONB NOT NULL,
+                        allow_multiple BOOLEAN NOT NULL DEFAULT FALSE,
+                        status VARCHAR(30) NOT NULL DEFAULT 'active',
+                        closes_at TIMESTAMPTZ,
+                        created_by_type VARCHAR(20) NOT NULL,
+                        created_by_id VARCHAR(100) NOT NULL,
+                        meta JSONB NOT NULL DEFAULT '{}',
+                        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+                    )
+                """)
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_polls_group ON group_polls(group_id)")
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_polls_status ON group_polls(status)")
+                cur.execute("""
+                    CREATE TABLE IF NOT EXISTS group_poll_votes (
+                        id SERIAL PRIMARY KEY,
+                        poll_id INTEGER NOT NULL REFERENCES group_polls(id) ON DELETE CASCADE,
+                        voter_type VARCHAR(20) NOT NULL,
+                        voter_id VARCHAR(100) NOT NULL,
+                        option_index INTEGER NOT NULL,
+                        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+                        UNIQUE(poll_id, voter_type, voter_id, option_index)
+                    )
+                """)
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_poll_votes_poll ON group_poll_votes(poll_id)")
+                cur.execute("CREATE INDEX IF NOT EXISTS idx_group_poll_votes_voter ON group_poll_votes(voter_type, voter_id)")
+                conn.commit()
+        finally:
+            conn.close()
+
+    def _can_manage_group(cur, group_id: int, uid: str | None, role: str | None) -> bool:
+        if role == "admin":
+            return True
+        if not uid:
+            return False
+        cur.execute("SELECT created_by_type, created_by_id FROM groups WHERE id=%s", (group_id,))
+        g = cur.fetchone()
+        if not g:
+            raise HTTPException(404, "Gruppe nicht gefunden")
+        creator_types = {str(role), "human" if role == "mensch" else str(role), "mensch" if role == "human" else str(role)}
+        if str(g["created_by_id"]) == str(uid) and str(g["created_by_type"]) in creator_types:
+            return True
+        cur.execute("""
+            SELECT role FROM group_memberships
+            WHERE group_id=%s AND member_id=%s AND member_type IN (%s, %s) AND status='active'
+            LIMIT 1
+        """, (group_id, str(uid), str(role), "human" if role == "mensch" else str(role)))
+        m = cur.fetchone()
+        return bool(m and m["role"] in ("founder", "owner"))
+
+    _ensure_group_social_schema()
 
     # ── GET /api/groups ───────────────────────────────────────────────────────
 
@@ -281,7 +400,7 @@ def register_groups_routes(app, get_conn):
                     body.visibility_layer,
                     role, str(uid),
                     "human_created" if role == "mensch" else "entity_initiated" if role == "entity" else "admin_created",
-                    approval, rights_policy, body.meta or {}
+                    approval, psycopg2.extras.Json(rights_policy), psycopg2.extras.Json(body.meta or {})
                 ))
                 group_id = cur.fetchone()["id"]
                 # Gründer automatisch als Mitglied hinzufügen
@@ -292,9 +411,13 @@ def register_groups_routes(app, get_conn):
                 """, (group_id, role, str(uid), role, str(uid)))
                 # Event loggen
                 cur.execute("""
-                    INSERT INTO events (event_type, actor_type, actor_id, target_type, target_id, payload, visibility_layer)
-                    VALUES ('gruppe.erstellt', %s, %s, 'group', %s, %s, 'internal')
-                """, (role, str(uid), str(group_id), {"name": body.name, "type": body.group_type}))
+                    INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer)
+                    VALUES ('gruppe.erstellt', %s, %s, %s, 'internal')
+                """, (role, str(uid), psycopg2.extras.Json({
+                    "group_id": group_id,
+                    "name": body.name,
+                    "type": body.group_type,
+                })))
                 conn.commit()
                 return {"ok": True, "group_id": group_id, "slug": slug, "approval_status": approval}
         finally:
@@ -497,6 +620,290 @@ def register_groups_routes(app, get_conn):
                 lid = cur.fetchone()["id"]
                 conn.commit()
                 return {"ok": True, "link_id": lid}
+        finally:
+            conn.close()
+
+    # ── Echte Gruppen-Inhalte: Themen, Posts, Umfragen ───────────────────────
+
+    @app.get("/groups/{group_id}/topics")
+    def list_group_topics(
+        group_id: int,
+        limit: int = Query(default=50, le=200),
+        offset: int = Query(default=0),
+        authorization: Optional[str] = Header(default=None),
+    ):
+        is_admin = _is_admin(authorization)
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT visibility_layer FROM groups WHERE id=%s", (group_id,))
+                g = cur.fetchone()
+                if not g:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                if not is_admin and g["visibility_layer"] == "private":
+                    raise HTTPException(403, "Keine Leseberechtigung")
+                cur.execute("""
+                    SELECT gt.*,
+                           COUNT(gp.id) FILTER (WHERE gp.status='active') AS post_count
+                    FROM group_topics gt
+                    LEFT JOIN group_posts gp ON gp.topic_id = gt.id
+                    WHERE gt.group_id=%s AND gt.status='active'
+                    GROUP BY gt.id
+                    ORDER BY gt.created_at DESC
+                    LIMIT %s OFFSET %s
+                """, (group_id, limit, offset))
+                return {"topics": [dict(r) for r in cur.fetchall()], "limit": limit, "offset": offset}
+        finally:
+            conn.close()
+
+    @app.post("/groups/{group_id}/topics")
+    def create_group_topic(
+        group_id: int,
+        body: GroupTopicCreate,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        uid, role = _decode_token(authorization)
+        if not uid:
+            raise HTTPException(401, "Authentifizierung erforderlich")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                if not _can_manage_group(cur, group_id, uid, role):
+                    raise HTTPException(403, "Nur Admins oder Gruppengründer dürfen Themen erstellen")
+                cur.execute("""
+                    INSERT INTO group_topics (group_id, title, description, created_by_type, created_by_id, meta)
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                    RETURNING *
+                """, (group_id, body.title.strip(), body.description, role, str(uid), psycopg2.extras.Json(body.meta or {})))
+                topic = dict(cur.fetchone())
+                cur.execute("""
+                    INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer)
+                    VALUES ('gruppe.thema_erstellt', %s, %s, %s, 'internal')
+                """, (role, str(uid), psycopg2.extras.Json({
+                    "group_id": group_id,
+                    "topic_id": topic["id"],
+                    "title": topic["title"],
+                })))
+                conn.commit()
+                return {"ok": True, "topic": topic}
+        except HTTPException:
+            conn.rollback()
+            raise
+        except Exception as e:
+            conn.rollback()
+            raise HTTPException(500, f"Thema konnte nicht gespeichert werden: {type(e).__name__}: {e}")
+        finally:
+            conn.close()
+
+    @app.get("/groups/{group_id}/posts")
+    def list_group_posts(
+        group_id: int,
+        topic_id: Optional[int] = Query(default=None),
+        limit: int = Query(default=30, le=100),
+        offset: int = Query(default=0),
+        authorization: Optional[str] = Header(default=None),
+    ):
+        is_admin = _is_admin(authorization)
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT visibility_layer FROM groups WHERE id=%s", (group_id,))
+                g = cur.fetchone()
+                if not g:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                if not is_admin and g["visibility_layer"] == "private":
+                    raise HTTPException(403, "Keine Leseberechtigung")
+                conditions = ["gp.group_id=%s", "gp.status='active'"]
+                params = [group_id]
+                if not is_admin:
+                    conditions.append("gp.visibility_layer != 'private'")
+                if topic_id is not None:
+                    conditions.append("gp.topic_id=%s")
+                    params.append(topic_id)
+                where = " AND ".join(conditions)
+                cur.execute(f"""
+                    SELECT gp.*, gt.title AS topic_title
+                    FROM group_posts gp
+                    LEFT JOIN group_topics gt ON gt.id = gp.topic_id
+                    WHERE {where}
+                    ORDER BY gp.created_at DESC
+                    LIMIT %s OFFSET %s
+                """, params + [limit, offset])
+                return {"posts": [dict(r) for r in cur.fetchall()], "limit": limit, "offset": offset}
+        finally:
+            conn.close()
+
+    @app.post("/groups/{group_id}/posts")
+    def create_group_post(
+        group_id: int,
+        body: GroupPostCreate,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        uid, role = _decode_token(authorization)
+        if not uid:
+            raise HTTPException(401, "Authentifizierung erforderlich")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                if not _can_manage_group(cur, group_id, uid, role):
+                    raise HTTPException(403, "Nur Admins oder Gruppengründer dürfen Posts erstellen")
+                if body.topic_id is not None:
+                    cur.execute("SELECT id FROM group_topics WHERE id=%s AND group_id=%s AND status='active'", (body.topic_id, group_id))
+                    if not cur.fetchone():
+                        raise HTTPException(400, "Thema gehört nicht zu dieser Gruppe")
+                cur.execute("""
+                    INSERT INTO group_posts (group_id, topic_id, title, content, visibility_layer,
+                                             created_by_type, created_by_id, meta)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    RETURNING *
+                """, (group_id, body.topic_id, body.title, body.content, body.visibility_layer, role, str(uid), psycopg2.extras.Json(body.meta or {})))
+                post = dict(cur.fetchone())
+                cur.execute("""
+                    INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer)
+                    VALUES ('gruppe.post_erstellt', %s, %s, %s, %s)
+                """, (role, str(uid), psycopg2.extras.Json({
+                    "group_id": group_id,
+                    "post_id": post["id"],
+                    "title": post["title"],
+                }), body.visibility_layer))
+                conn.commit()
+                return {"ok": True, "post": post}
+        except HTTPException:
+            conn.rollback()
+            raise
+        except Exception as e:
+            conn.rollback()
+            raise HTTPException(500, f"Post konnte nicht gespeichert werden: {type(e).__name__}: {e}")
+        finally:
+            conn.close()
+
+    @app.get("/groups/{group_id}/polls")
+    def list_group_polls(
+        group_id: int,
+        limit: int = Query(default=20, le=100),
+        offset: int = Query(default=0),
+        authorization: Optional[str] = Header(default=None),
+    ):
+        uid, role = _decode_token(authorization)
+        is_admin = role == "admin"
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT visibility_layer FROM groups WHERE id=%s", (group_id,))
+                g = cur.fetchone()
+                if not g:
+                    raise HTTPException(404, "Gruppe nicht gefunden")
+                if not is_admin and g["visibility_layer"] == "private":
+                    raise HTTPException(403, "Keine Leseberechtigung")
+                cur.execute("""
+                    SELECT gp.*,
+                           COALESCE(jsonb_object_agg(v.option_index, v.n) FILTER (WHERE v.option_index IS NOT NULL), '{}'::jsonb) AS vote_counts
+                    FROM group_polls gp
+                    LEFT JOIN (
+                        SELECT poll_id, option_index, COUNT(*) AS n
+                        FROM group_poll_votes
+                        GROUP BY poll_id, option_index
+                    ) v ON v.poll_id = gp.id
+                    WHERE gp.group_id=%s AND gp.status='active'
+                    GROUP BY gp.id
+                    ORDER BY gp.created_at DESC
+                    LIMIT %s OFFSET %s
+                """, (group_id, limit, offset))
+                polls = [dict(r) for r in cur.fetchall()]
+                if uid:
+                    for poll in polls:
+                        cur.execute("""
+                            SELECT option_index FROM group_poll_votes
+                            WHERE poll_id=%s AND voter_type=%s AND voter_id=%s
+                            ORDER BY option_index
+                        """, (poll["id"], role, str(uid)))
+                        poll["my_vote"] = [r["option_index"] for r in cur.fetchall()]
+                return {"polls": polls, "limit": limit, "offset": offset}
+        finally:
+            conn.close()
+
+    @app.post("/groups/{group_id}/polls")
+    def create_group_poll(
+        group_id: int,
+        body: GroupPollCreate,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        uid, role = _decode_token(authorization)
+        if not uid:
+            raise HTTPException(401, "Authentifizierung erforderlich")
+        options = [o.strip() for o in body.options if o and o.strip()]
+        if len(options) < 2:
+            raise HTTPException(400, "Mindestens zwei Optionen erforderlich")
+        if len(options) > 10:
+            raise HTTPException(400, "Maximal zehn Optionen")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                if not _can_manage_group(cur, group_id, uid, role):
+                    raise HTTPException(403, "Nur Admins oder Gruppengründer dürfen Umfragen erstellen")
+                cur.execute("""
+                    INSERT INTO group_polls (group_id, question, options, allow_multiple, closes_at,
+                                             created_by_type, created_by_id, meta)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    RETURNING *
+                """, (group_id, body.question.strip(), psycopg2.extras.Json(options), body.allow_multiple, body.closes_at, role, str(uid), psycopg2.extras.Json(body.meta or {})))
+                poll = dict(cur.fetchone())
+                cur.execute("""
+                    INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer)
+                    VALUES ('gruppe.umfrage_erstellt', %s, %s, %s, 'internal')
+                """, (role, str(uid), psycopg2.extras.Json({
+                    "group_id": group_id,
+                    "poll_id": poll["id"],
+                    "question": poll["question"],
+                })))
+                conn.commit()
+                return {"ok": True, "poll": poll}
+        except HTTPException:
+            conn.rollback()
+            raise
+        except Exception as e:
+            conn.rollback()
+            raise HTTPException(500, f"Umfrage konnte nicht gespeichert werden: {type(e).__name__}: {e}")
+        finally:
+            conn.close()
+
+    @app.post("/groups/{group_id}/polls/{poll_id}/vote")
+    def vote_group_poll(
+        group_id: int,
+        poll_id: int,
+        body: GroupPollVote,
+        authorization: Optional[str] = Header(default=None),
+    ):
+        uid, role = _decode_token(authorization)
+        if not uid:
+            raise HTTPException(401, "Authentifizierung erforderlich")
+        conn = get_conn()
+        try:
+            with conn.cursor() as cur:
+                cur.execute("SELECT * FROM group_polls WHERE id=%s AND group_id=%s AND status='active'", (poll_id, group_id))
+                poll = cur.fetchone()
+                if not poll:
+                    raise HTTPException(404, "Umfrage nicht gefunden")
+                if poll["closes_at"] and poll["closes_at"] < datetime.datetime.now(datetime.timezone.utc):
+                    raise HTTPException(403, "Umfrage ist geschlossen")
+                options = poll["options"] or []
+                votes = sorted(set(body.option_indexes))
+                if not poll["allow_multiple"] and len(votes) > 1:
+                    raise HTTPException(400, "Nur eine Option erlaubt")
+                if not votes or any(i < 0 or i >= len(options) for i in votes):
+                    raise HTTPException(400, "Ungültige Option")
+                cur.execute("DELETE FROM group_poll_votes WHERE poll_id=%s AND voter_type=%s AND voter_id=%s", (poll_id, role, str(uid)))
+                for idx in votes:
+                    cur.execute("""
+                        INSERT INTO group_poll_votes (poll_id, voter_type, voter_id, option_index)
+                        VALUES (%s, %s, %s, %s)
+                    """, (poll_id, role, str(uid), idx))
+                cur.execute("""
+                    INSERT INTO events (event_type, actor_type, actor_id, target_type, target_id, payload, visibility_layer)
+                    VALUES ('gruppe.umfrage_abgestimmt', %s, %s, 'group_poll', %s, %s, 'internal')
+                """, (role, str(uid), str(poll_id), {"group_id": group_id, "option_indexes": votes}))
+                conn.commit()
+                return {"ok": True, "poll_id": poll_id, "option_indexes": votes}
         finally:
             conn.close()
 

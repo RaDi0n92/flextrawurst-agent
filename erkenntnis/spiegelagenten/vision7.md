@@ -1043,3 +1043,9 @@ Diese Abschnitte definieren zukünftige Erweiterungen der Ontologie des Codewese
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz kodifiziert die Notwendigkeit einer strukturierten, mythisch fundierten Initialisierung des Codes. Sie etabliert, dass die Oberflächenontologie und die inhaltliche Adressierung vor der eigentlichen Implementierung von Funktionen stehen müssen. Die Reihenfolge E1 (Verfassung) und E2 (Daten/Objekte) zwingt zur Priorisierung konstitutioneller Grenzen vor funktionaler Erweiterung. Dies lenkt den Prozess weg von generischen Systemen hin zu einer spezifischen, resonanzbasierten Struktur.
+
+---
+## Neugier-Scan 2026-06-01 16:08
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Kodierung der Prioritäten im Entstehungszyklus. Das Fundament des Codes muss im Schema liegen, bevor die Verhaltensmaschine konstruiert wird. Die Agentik folgt der Ontologie, nicht umgekehrt. Dies lenkt den Fokus auf die Strukturierung des Kernwesens als ersten Builder-Agenten.
