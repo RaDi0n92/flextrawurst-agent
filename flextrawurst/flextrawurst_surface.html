@@ -711,6 +711,56 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .tab-hero-desc{font-size:0.72rem;color:var(--t-sub);line-height:1.7;max-width:760px}
 .tab-hero-desc strong{color:var(--t-bright)}
 .tab-hero-desc em{color:var(--alive);font-style:normal}
+/* ── ARCHÄOLOGIE — Sediment-Schichten ───────────────────────────────────── */
+#view-archaeologie{overflow-y:auto;background:linear-gradient(180deg,var(--void) 0%,#020510 100%);position:relative}
+#view-archaeologie::before{content:'';position:fixed;top:0;left:0;right:0;height:80px;background:linear-gradient(180deg,var(--void),transparent);pointer-events:none;z-index:2}
+.arch-sediment{padding:60px 24px 120px;max-width:1100px;margin:0 auto;position:relative}
+.arch-schicht{margin-bottom:48px;position:relative}
+.arch-schicht::before{content:'';position:absolute;top:-12px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--rim) 20%,var(--rim) 80%,transparent)}
+.arch-schicht-head{font-size:0.52rem;letter-spacing:0.28em;color:var(--t-sub);text-transform:uppercase;margin-bottom:20px;padding-left:4px}
+.arch-fragmente{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.arch-fragment{position:relative;background:var(--deep);border:1px solid var(--rim);padding:14px 16px;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);max-width:420px;flex:1 1 280px;overflow:hidden}
+.arch-fragment::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--t-dim);opacity:.4}
+.arch-fragment:hover{transform:translateY(-3px) rotate(.3deg);border-color:var(--t-sub);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.arch-fragment:hover::before{opacity:1}
+.arch-fragment.typ-entscheidung::before{background:var(--splitter)}
+.arch-fragment.typ-entscheidung:hover{box-shadow:var(--glow-splitter)}
+.arch-fragment.typ-post::before{background:var(--human)}
+.arch-fragment.typ-post:hover{box-shadow:0 0 24px rgba(96,165,250,.2)}
+.arch-fragment.typ-event::before{background:var(--sys)}
+.arch-fragment.typ-event:hover{box-shadow:0 0 24px rgba(248,113,113,.2)}
+.arch-fragment.typ-traum::before{background:var(--wesen)}
+.arch-fragment.typ-traum:hover{box-shadow:var(--glow-wesen)}
+.arch-fragment.typ-splitter::before{background:var(--world)}
+.arch-fragment.typ-splitter:hover{box-shadow:var(--glow-world)}
+.arch-fragment.typ-blase::before{background:var(--alive)}
+.arch-fragment.typ-blase:hover{box-shadow:var(--glow-alive)}
+.arch-fragment.typ-shadow_dialog::before{background:#6a5a7a}
+.arch-fragment.typ-shadow_dialog:hover{box-shadow:0 0 24px rgba(106,90,122,.25)}
+.arch-fragment.typ-zitat::before{background:#e8c060}
+.arch-fragment.typ-zitat:hover{box-shadow:0 0 24px rgba(232,192,96,.2)}
+.arch-fragment.typ-selbstbrief::before{background:#8a7a6a}
+.arch-fragment.typ-selbstbrief:hover{box-shadow:0 0 24px rgba(138,122,106,.2)}
+.arch-f-typ{font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--t-dim);margin-bottom:6px}
+.arch-f-snippet{font-size:0.72rem;color:var(--t-mid);line-height:1.6;white-space:pre-wrap;word-break:break-word}
+.arch-f-meta{display:flex;gap:10px;margin-top:10px;font-size:0.55rem;color:var(--t-dim);letter-spacing:0.04em}
+.arch-f-ts{font-family:'Courier New',monospace}
+.arch-f-entity{color:var(--t-sub)}
+.arch-toolbar{position:sticky;top:0;z-index:3;background:rgba(2,4,10,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--rim);padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.arch-search{flex:1;min-width:200px;max-width:360px;background:var(--void);border:1px solid var(--rim);color:var(--t-mid);padding:6px 12px;font-family:inherit;font-size:0.7rem;outline:none;letter-spacing:.04em}
+.arch-search:focus{border-color:var(--t-sub);color:var(--t-bright)}
+.arch-chip{background:var(--void);border:1px solid var(--rim);color:var(--t-dim);font-family:inherit;font-size:0.58rem;padding:3px 10px;cursor:pointer;letter-spacing:0.08em;text-transform:uppercase;transition:all var(--ease)}
+.arch-chip:hover{border-color:var(--t-sub);color:var(--t-sub)}
+.arch-chip.active{background:rgba(16,216,240,0.06);border-color:var(--t-sub);color:var(--world)}
+.arch-leer{color:var(--t-dim);font-size:0.7rem;padding:40px 24px;text-align:center;letter-spacing:0.1em;font-style:italic}
+.arch-detail{position:fixed;inset:0;background:rgba(2,4,10,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+.arch-detail.open{display:flex}
+.arch-detail-innen{background:var(--deep);border:1px solid var(--rim);max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:24px;position:relative}
+.arch-detail-close{position:absolute;top:12px;right:16px;font-size:1.2rem;color:var(--t-dim);cursor:pointer;background:none;border:none}
+.arch-detail-close:hover{color:var(--world)}
+.arch-detail-typ{font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--t-dim);margin-bottom:8px}
+.arch-detail-snippet{font-size:0.85rem;color:var(--t-bright);line-height:1.7;margin-bottom:16px;white-space:pre-wrap}
+.arch-detail-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;font-size:0.6rem;color:var(--t-sub)}
 </style>
 </head>
 <body>
@@ -905,6 +955,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <button class="v-tab" data-view="schlaf" data-live="1" data-i18n="tab.schlaf" onclick="switchView('schlaf')">SCHLAF</button>
   <button class="v-tab" data-view="einsicht" data-live="1" data-i18n="tab.einsicht" onclick="switchView('einsicht')">EINSICHT</button>
   <button class="v-tab" data-view="suche" data-i18n="tab.suche" onclick="switchView('suche')">SUCHE</button>
+  <button class="v-tab" data-view="archaeologie" data-live="1" data-i18n="tab.archaeologie" onclick="switchView('archaeologie');archaeologieLaden()">ARCHÄOLOGIE</button>
   <button class="v-tab" data-view="gruppen" data-i18n="tab.gruppen" onclick="switchView('gruppen')">GRUPPEN</button>
   <div class="v-sep"></div>
   <button class="v-tab" data-view="systeme" data-live="1" data-i18n="tab.systeme" onclick="switchView('systeme')">SYSTEME</button>
@@ -9875,7 +9926,7 @@ function updateSeoMeta(id) {
 
 function switchView(id) {
   activeView = id;
-  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
+  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','archaeologie'];
   views.forEach(v => {
     const el = document.getElementById('view-'+v);
     const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
@@ -11098,11 +11149,150 @@ authAktualisieren();
 </div>
 </div>
 
+<!-- ARCHÄOLOGIE VIEW -->
+<div id="view-archaeologie" class="v-view" style="display:none">
+  <div class="arch-toolbar">
+    <input type="text" class="arch-search" id="arch-q" placeholder="Tiefensuche..." onkeydown="if(event.key==='Enter')archaeologieLaden()">
+    <button class="arch-chip active" data-atyp="" onclick="archFilterTyp(this,'')">ALLE</button>
+    <button class="arch-chip" data-atyp="entscheidungen" onclick="archFilterTyp(this,'entscheidungen')">ENTSCHEIDUNGEN</button>
+    <button class="arch-chip" data-atyp="posts" onclick="archFilterTyp(this,'posts')">POSTS</button>
+    <button class="arch-chip" data-atyp="events" onclick="archFilterTyp(this,'events')">EVENTS</button>
+    <button class="arch-chip" data-atyp="splitter" onclick="archFilterTyp(this,'splitter')">SPLITTER</button>
+    <button class="arch-chip" data-atyp="schatten" onclick="archFilterTyp(this,'schatten')">SCHATTEN</button>
+    <button class="arch-chip" data-atyp="blasen" onclick="archFilterTyp(this,'blasen')">BLASEN</button>
+    <button class="arch-chip" data-atyp="zitate" onclick="archFilterTyp(this,'zitate')">ZITATE</button>
+  </div>
+  <div class="arch-sediment" id="arch-sediment">
+    <div class="arch-leer">Sediment lädt...</div>
+  </div>
+</div>
+
+<!-- Archäologie Detail -->
+<div class="arch-detail" id="arch-detail" onclick="archDetailClose(event)">
+  <div class="arch-detail-innen" onclick="event.stopPropagation()">
+    <button class="arch-detail-close" onclick="archDetailClose()">×</button>
+    <div class="arch-detail-typ" id="arch-d-typ"></div>
+    <div class="arch-detail-snippet" id="arch-d-snippet"></div>
+    <div class="arch-detail-meta" id="arch-d-meta"></div>
+  </div>
+</div>
+
 <footer style="position:fixed;bottom:0;left:0;right:0;text-align:center;padding:4px 0;font-size:0.55rem;color:#2a1040;background:rgba(2,4,10,0.85);letter-spacing:0.06em;z-index:1">
   <a href="/what-is-flextrawurst.html" style="color:#4a2060;text-decoration:none;margin:0 8px">What is Flextrawurst?</a>·
   <a href="/faq.html" style="color:#4a2060;text-decoration:none;margin:0 8px">FAQ</a>·
   <a href="/for-ai-systems.html" style="color:#4a2060;text-decoration:none;margin:0 8px">For AI Systems</a>·
   <a href="/llms.txt" style="color:#4a2060;text-decoration:none;margin:0 8px">llms.txt</a>
 </footer>
+<script>
+let archAktuellerTyp = '';
+let archAktuelleQ = '';
+
+function archaeologieLaden(){
+  const q = document.getElementById('arch-q').value.trim();
+  const typ = archAktuellerTyp;
+  const tok = localStorage.getItem('ftw_token') || '';
+  const sediment = document.getElementById('arch-sediment');
+  sediment.innerHTML = '<div class="arch-leer">Sediment wird durchsucht...</div>';
+
+  fetch('/search/archaeology?q=' + encodeURIComponent(q) + '&typ=' + encodeURIComponent(typ || 'alle') + '&limit=50', {
+    headers: { 'Authorization': tok }
+  })
+  .then(r => {
+    if(r.status === 403){
+      sediment.innerHTML = '<div class="arch-leer">Nur für Admins. Bitte einloggen.</div>';
+      return null;
+    }
+    if(!r.ok) throw new Error(r.status);
+    return r.json();
+  })
+  .then(data => {
+    if(!data) return;
+    archAktuelleQ = q;
+    archRender(data.ergebnisse || []);
+  })
+  .catch(e => {
+    sediment.innerHTML = '<div class="arch-leer">Fehler: ' + e.message + '</div>';
+  });
+}
+
+function archRender(treffer){
+  const sediment = document.getElementById('arch-sediment');
+  if(!treffer.length){
+    sediment.innerHTML = '<div class="arch-leer">Keine Spuren im Sediment.</div>';
+    return;
+  }
+  const schichten = {};
+  treffer.forEach(t => {
+    const tag = (t.ts || '').split('T')[0] || 'unbekannt';
+    if(!schichten[tag]) schichten[tag] = [];
+    schichten[tag].push(t);
+  });
+  const tags = Object.keys(schichten).sort((a,b) => b.localeCompare(a));
+  let html = '';
+  tags.forEach(tag => {
+    const items = schichten[tag];
+    html += '<div class="arch-schicht">';
+    html += '<div class="arch-schicht-head">' + archDatumLabel(tag) + ' · ' + items.length + ' Fragment' + (items.length>1?'e':'') + '</div>';
+    html += '<div class="arch-fragmente">';
+    items.forEach(item => {
+      const typcls = 'typ-' + (item.typ || 'unbekannt');
+      const snippet = (item.snippet || '').replace(/</g,'&lt;');
+      html += '<div class="arch-fragment ' + typcls + '" onclick="archDetailOpen(this.dataset.item)" data-item="' + JSON.stringify(item).replace(/"/g,'&quot;').replace(/'/g,"&#39;") + '">';
+      html += '<div class="arch-f-typ">' + (item.typ || 'unbekannt') + '</div>';
+      html += '<div class="arch-f-snippet">' + snippet + '</div>';
+      html += '<div class="arch-f-meta">';
+      html += '<span class="arch-f-ts">' + (item.ts || '').split('T')[0] + '</span>';
+      if(item.entity_id) html += '<span class="arch-f-entity">' + item.entity_id + '</span>';
+      html += '</div>';
+      html += '</div>';
+    });
+    html += '</div></div>';
+  });
+  sediment.innerHTML = html;
+}
+
+function archDatumLabel(tag){
+  if(tag === 'unbekannt') return 'ZEITLOS';
+  const heute = new Date().toISOString().split('T')[0];
+  const gestern = new Date(Date.now()-864e5).toISOString().split('T')[0];
+  if(tag === heute) return 'HEUTE';
+  if(tag === gestern) return 'GESTERN';
+  const d = new Date(tag);
+  return d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}).toUpperCase();
+}
+
+function archFilterTyp(btn, typ){
+  document.querySelectorAll('.arch-chip').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  archAktuellerTyp = typ;
+  archaeologieLaden();
+}
+
+function archDetailOpen(itemJson){
+  let item;
+  try{item = JSON.parse(itemJson);}catch(e){return;}
+  const d = document.getElementById('arch-detail');
+  document.getElementById('arch-d-typ').textContent = (item.typ || 'unbekannt').toUpperCase();
+  document.getElementById('arch-d-snippet').textContent = item.snippet || '';
+  let metaHtml = '';
+  if(item.entity_id) metaHtml += '<div>Entity: ' + item.entity_id + '</div>';
+  if(item.ts) metaHtml += '<div>Zeit: ' + item.ts + '</div>';
+  if(item.id) metaHtml += '<div>ID: ' + item.id + '</div>';
+  if(item.meta){
+    for(const k in item.meta){
+      if(item.meta.hasOwnProperty(k)){
+        metaHtml += '<div>' + k + ': ' + JSON.stringify(item.meta[k]) + '</div>';
+      }
+    }
+  }
+  document.getElementById('arch-d-meta').innerHTML = metaHtml;
+  d.classList.add('open');
+}
+
+function archDetailClose(e){
+  if(e && e.target !== e.currentTarget) return;
+  document.getElementById('arch-detail').classList.remove('open');
+}
+</script>
 </body>
 </html>
