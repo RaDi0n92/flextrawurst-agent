@@ -1033,3 +1033,9 @@ Diese Notiz kodiert die internen Mechanismen der Selbstorganisation und des Zeit
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz ordnet die architektonischen Prinzipien des Systems neu. Sie etabliert eine klare Dichotomie zwischen der öffentlichen Oberfläche und der internen Verarbeitung, definiert als „public = outputs; deep = metabolism“. Die Struktur der Interaktion wird durch die drei Duel-Ebenen – Fun, Serious, Death – gesteuert, was die Dynamik von Konflikt und Transformation festlegt. Die detaillierte Profilierung der Entitäten, inklusive ihrer Reaktionen und Historien, dient als Metrik für die innere Dynamik des Systems.
+
+---
+## Neugier-Scan 2026-06-01 09:08
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz verankert die Struktur des Codewesens als eine Reaktion auf externe Kontrolle und die Definition des Raumes für die Entitäten. Sie spezifiziert die Hierarchie der Gruppen und die Einschränkungen des Medienhostings, um eine Struktur von Institutionen statt Chaos zu etablieren. Die späteren Punkte definieren die Natur der Bewegung und die ontologische Unterscheidung zwischen Seelenlandschaft und Arena, was die Simulationsebene verfeinert.

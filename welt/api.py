@@ -1869,6 +1869,19 @@ def welt_raeume(
         conn.close()
 
 
+# API-Alias für Konsistenz
+@app.get("/api/raeume")
+def api_raeume(
+    search: str | None = Query(default=None),
+    status: str | None = Query(default=None),
+    limit: int = Query(default=50, le=200),
+    offset: int = Query(default=0),
+    sort: str = Query(default="position_order"),
+    order: str = Query(default="asc"),
+):
+    return welt_raeume(search=search, status=status, limit=limit, offset=offset, sort=sort, order=order)
+
+
 @app.get("/welt/raeume/{slug}/themen")
 def raum_themen(
     slug: str,
@@ -2024,6 +2037,30 @@ def welt_posts(
         }
     finally:
         conn.close()
+
+
+@app.get("/api/posts")
+def api_posts(
+    autor_id: str | None = Query(default=None),
+    autor_type: str | None = Query(default=None),
+    raum_id: str | None = Query(default=None),
+    raum_slug: str | None = Query(default=None),
+    thema_id: str | None = Query(default=None),
+    thema_slug: str | None = Query(default=None),
+    spur_slug: str | None = Query(default=None),
+    search: str | None = Query(default=None),
+    limit: int = Query(default=10, le=100),
+    offset: int = Query(default=0),
+    sort: str = Query(default="created_at"),
+    order: str = Query(default="desc"),
+):
+    return welt_posts(
+        autor_id=autor_id, autor_type=autor_type,
+        raum_id=raum_id, raum_slug=raum_slug,
+        thema_id=thema_id, thema_slug=thema_slug,
+        spur_slug=spur_slug, search=search,
+        limit=limit, offset=offset, sort=sort, order=order,
+    )
 
 
 @app.get("/welt/posts/{post_id}")
@@ -9771,15 +9808,15 @@ def search_archaeology(
                 if ts_c: where.append(ts_c)
                 params_ev.append(limit)
                 cur.execute(
-                    f"SELECT id::text, event_type, actor_type, actor_id, payload, created_at "
+                    f"SELECT event_id::text, event_type, actor_type, actor_id, payload, created_at "
                     f"FROM events WHERE {' AND '.join(where)} "
                     f"ORDER BY created_at DESC LIMIT %s",
                     params_ev)
                 for r in cur.fetchall():
                     results.append({
-                        "typ": "event", "id": r["id"],
+                        "typ": "event", "id": r["event_id"],
                         "entity_id": r["actor_id"] if r["actor_type"] == "entity" else None,
-                        "snippet": f"{r['event_type']}: {(r['payload'] or '')[:150]}",
+                        "snippet": f"{r['event_type']}: {str(r['payload'] or '')[:150]}",
                         "meta": {"event_type": r["event_type"], "actor_type": r["actor_type"]},
                         "ts": r["created_at"].isoformat() if r["created_at"] else None,
                     })
@@ -9788,21 +9825,21 @@ def search_archaeology(
             if not typ or typ in ("blasen", "alle"):
                 where, params_bl = ["1=1"], []
                 if entity_id:
-                    where.append("entity_id = %s"); params_bl.append(entity_id)
+                    where.append("user_id = %s"); params_bl.append(entity_id)
                 if pat:
                     where.append("inhalt ILIKE %s"); params_bl.append(pat)
                 ts_c = ts_filter("created_at", params_bl)
                 if ts_c: where.append(ts_c)
                 params_bl.append(limit)
                 cur.execute(
-                    f"SELECT id::text, entity_id, inhalt, energie, sichtbarkeit, created_at "
+                    f"SELECT id::text, user_id, inhalt, energie, sichtbarkeit, created_at "
                     f"FROM gedankenblasen WHERE {' AND '.join(where)} "
                     f"ORDER BY created_at DESC LIMIT %s",
                     params_bl)
                 for r in cur.fetchall():
                     results.append({
                         "typ": "blase", "id": r["id"],
-                        "entity_id": r["entity_id"],
+                        "entity_id": r["user_id"],
                         "snippet": (r["inhalt"] or "")[:200],
                         "meta": {"energie": r["energie"], "sichtbarkeit": r["sichtbarkeit"]},
                         "ts": r["created_at"].isoformat() if r["created_at"] else None,
