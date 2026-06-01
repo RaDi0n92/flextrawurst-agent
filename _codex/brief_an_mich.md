@@ -84,3 +84,6 @@ Daniel fragt nach den 17 MD-Dateien zur Systemdoku; erst die genaue Herkunft fin
 
 2026-05-31 18:58 —
 Daniel hat nur gegruesst; der Werkraum steht nach Kimi-Einzug und EINSICHT-VI-Fixblock unter frischer Bewegung. Nichts aktivieren, nichts glätten: erst hoeren, ob er weiterbauen, pruefen oder nur reden will.
+
+2026-06-01 15:26 —
+Daniel hat wieder nur locker angestupst; Delta zeigt aber neue Surface-Views, Cyberlinge, Archaeologie, Zitate und eine laute Root-Git-Spur. Root-Git ist durch eine index.lock blockiert, also nicht blind reparieren; im Werkraum ist der Backup-Anker gesetzt und jetzt gilt: freundlich antworten, dann erst bei Auftrag schneiden.
