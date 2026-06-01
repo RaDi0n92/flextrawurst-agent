@@ -7515,6 +7515,86 @@ def welt_foyer():
         conn.close()
 
 
+@app.get("/raeume")
+def raeume_liste(
+    search: str | None = Query(default=None),
+    limit: int = Query(default=50, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    sort: str = Query(default="name"),
+    order: str = Query(default="asc"),
+):
+    """Öffentliche Räume — konsistenter Alias."""
+    if sort not in ("name", "created_at", "position_order"):
+        sort = "name"
+    order_sql = "DESC" if order.lower() == "desc" else "ASC"
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            where = ["r.sichtbarkeit = 'public'"]
+            params = []
+            if search:
+                where.append("(r.name ILIKE %s OR r.beschreibung ILIKE %s)")
+                params.extend([f"%{search}%", f"%{search}%"])
+            cur.execute(
+                f"""SELECT COUNT(*) AS n FROM raeume r WHERE {' AND '.join(where)}""",
+                params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT r.id, r.name, r.slug, r.farbe, r.status, r.beschreibung,
+                          r.meta, r.position_order, r.created_at,
+                          COUNT(DISTINCT t.id) AS themen_count,
+                          COUNT(DISTINCT p.id) AS post_count
+                   FROM raeume r
+                   LEFT JOIN themen t ON t.raum_id = r.id AND t.sichtbarkeit = 'public'
+                   LEFT JOIN ftw_posts p ON p.raum_id = r.id AND p.sichtbarkeit = 'public'
+                   WHERE {' AND '.join(where)}
+                   GROUP BY r.id
+                   ORDER BY r.{sort} {order_sql}
+                   LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            raeume = []
+            for row in cur.fetchall():
+                meta = row["meta"] or {}
+                raeume.append({
+                    "id": str(row["id"]),
+                    "name": row["name"],
+                    "slug": row["slug"],
+                    "farbe": row["farbe"],
+                    "status": row["status"],
+                    "beschreibung": row["beschreibung"],
+                    "meta": meta,
+                    "position_order": row["position_order"],
+                    "themen_count": row["themen_count"],
+                    "post_count": row["post_count"],
+                    "created_at": row["created_at"].isoformat() if row["created_at"] else None,
+                })
+    finally:
+        conn.close()
+    return {"total": total, "offset": offset, "limit": limit, "raeume": raeume}
+
+
+@app.get("/posts")
+def posts_liste(
+    autor_id: str | None = Query(default=None),
+    autor_type: str | None = Query(default=None),
+    raum_id: str | None = Query(default=None),
+    raum_slug: str | None = Query(default=None),
+    thema_id: str | None = Query(default=None),
+    thema_slug: str | None = Query(default=None),
+    search: str | None = Query(default=None),
+    limit: int = Query(default=10, le=100),
+    offset: int = Query(default=0),
+    sort: str = Query(default="created_at"),
+    order: str = Query(default="desc"),
+):
+    """Öffentliche Posts — konsistenter Alias für /welt/posts."""
+    return welt_posts(
+        autor_id=autor_id, autor_type=autor_type, raum_id=raum_id, raum_slug=raum_slug,
+        thema_id=thema_id, thema_slug=thema_slug, spur_slug=None,
+        search=search, limit=limit, offset=offset, sort=sort, order=order,
+    )
+
+
 @app.get("/welt/foyer/raum/{slug}")
 def welt_foyer_raum(slug: str):
     """Raumansicht: 4 Feed-Sektionen (raum-spezifisch), alle Posts, Themenfelder."""
