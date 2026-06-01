@@ -9494,6 +9494,15 @@ def search_facets(
                 cur.execute("SELECT COUNT(*) AS n FROM schattenkommentare WHERE content ILIKE %s", (pat,))
                 facets["shadow_dialog"] = cur.fetchone()["n"]
 
+                cur.execute("SELECT COUNT(*) AS n FROM events WHERE event_type ILIKE %s OR payload::text ILIKE %s", (pat, pat))
+                facets["events"] = cur.fetchone()["n"]
+
+                cur.execute("SELECT COUNT(*) AS n FROM gedankenblasen WHERE inhalt ILIKE %s", (pat,))
+                facets["blasen"] = cur.fetchone()["n"]
+
+                cur.execute("SELECT COUNT(*) AS n FROM zitate WHERE content ILIKE %s", (pat,))
+                facets["zitate"] = cur.fetchone()["n"]
+
     finally:
         conn.close()
 
@@ -9667,6 +9676,103 @@ def search_archaeology(
                         "entity_id": r["entity_id"],
                         "snippet": (r["essenz"] or "")[:200],
                         "meta": {"materialitaet": r["materialitaet"], "status": r["status"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Events
+            if not typ or typ in ("events", "alle"):
+                where, params_ev = ["1=1"], []
+                if entity_id:
+                    where.append("actor_id = %s"); params_ev.append(entity_id)
+                if pat:
+                    where.append("(event_type ILIKE %s OR payload::text ILIKE %s)")
+                    params_ev.extend([pat, pat])
+                ts_c = ts_filter("created_at", params_ev)
+                if ts_c: where.append(ts_c)
+                params_ev.append(limit)
+                cur.execute(
+                    f"SELECT id::text, event_type, actor_type, actor_id, payload, created_at "
+                    f"FROM events WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_ev)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "event", "id": r["id"],
+                        "entity_id": r["actor_id"] if r["actor_type"] == "entity" else None,
+                        "snippet": f"{r['event_type']}: {(r['payload'] or '')[:150]}",
+                        "meta": {"event_type": r["event_type"], "actor_type": r["actor_type"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Gedankenblasen
+            if not typ or typ in ("blasen", "alle"):
+                where, params_bl = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_bl.append(entity_id)
+                if pat:
+                    where.append("inhalt ILIKE %s"); params_bl.append(pat)
+                ts_c = ts_filter("created_at", params_bl)
+                if ts_c: where.append(ts_c)
+                params_bl.append(limit)
+                cur.execute(
+                    f"SELECT id::text, entity_id, inhalt, energie, sichtbarkeit, created_at "
+                    f"FROM gedankenblasen WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_bl)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "blase", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["inhalt"] or "")[:200],
+                        "meta": {"energie": r["energie"], "sichtbarkeit": r["sichtbarkeit"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Schattenkommentare
+            if not typ or typ in ("schatten", "alle"):
+                where, params_sk = ["1=1"], []
+                if entity_id:
+                    where.append("entity_id = %s"); params_sk.append(entity_id)
+                if pat:
+                    where.append("content ILIKE %s"); params_sk.append(pat)
+                ts_c = ts_filter("created_at", params_sk)
+                if ts_c: where.append(ts_c)
+                params_sk.append(limit)
+                cur.execute(
+                    f"SELECT id::text, entity_id, human_id::text, content, antwortstatus, created_at "
+                    f"FROM schattenkommentare WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_sk)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "shadow_dialog", "id": r["id"],
+                        "entity_id": r["entity_id"],
+                        "snippet": (r["content"] or "")[:200],
+                        "meta": {"human_id": r["human_id"], "antwortstatus": r["antwortstatus"]},
+                        "ts": r["created_at"].isoformat() if r["created_at"] else None,
+                    })
+
+            # Zitate
+            if not typ or typ in ("zitate", "alle"):
+                where, params_z = ["1=1"], []
+                if entity_id:
+                    where.append("autor_id = %s AND autor_type = 'entity'"); params_z.append(entity_id)
+                if pat:
+                    where.append("content ILIKE %s"); params_z.append(pat)
+                ts_c = ts_filter("created_at", params_z)
+                if ts_c: where.append(ts_c)
+                params_z.append(limit)
+                cur.execute(
+                    f"SELECT id::text, content, autor_type, autor_id, rechte_level, created_at "
+                    f"FROM zitate WHERE {' AND '.join(where)} "
+                    f"ORDER BY created_at DESC LIMIT %s",
+                    params_z)
+                for r in cur.fetchall():
+                    results.append({
+                        "typ": "zitat", "id": r["id"],
+                        "entity_id": r["autor_id"] if r["autor_type"] == "entity" else None,
+                        "snippet": (r["content"] or "")[:200],
+                        "meta": {"rechte_level": r["rechte_level"], "autor_type": r["autor_type"]},
                         "ts": r["created_at"].isoformat() if r["created_at"] else None,
                     })
 
