@@ -12077,6 +12077,48 @@ except ImportError as _e:
     _logging.warning(f"wesen_life_contracts/organ_hunger nicht geladen: {_e}")
 
 
+# ── Provenienz — wer hat was gebaut ──────────────────────────────────────────
+@app.get("/provenienz")
+def provenienz_liste(typ: str | None = Query(default=None)):
+    """Alle Strukturen die von Wesen erstellt wurden — öffentlich."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            ergebnisse = []
+            # Räume
+            if not typ or typ == "raum":
+                cur.execute("""
+                    SELECT id::text, name, slug, 'raum' AS typ,
+                        meta->>'created_by_id' AS erstellt_von,
+                        meta->>'created_by_type' AS ersteller_typ,
+                        created_at
+                    FROM raeume
+                    WHERE meta->>'created_by_type' = 'entity'
+                    ORDER BY created_at DESC
+                """)
+                ergebnisse += [dict(r) for r in cur.fetchall()]
+            # Themen
+            if not typ or typ == "thema":
+                cur.execute("""
+                    SELECT t.id::text, t.name, t.slug, 'thema' AS typ,
+                        t.meta->>'created_by_id' AS erstellt_von,
+                        t.meta->>'created_by_type' AS ersteller_typ,
+                        t.created_at, r.name AS raum_name
+                    FROM themen t
+                    LEFT JOIN raeume r ON r.id = t.raum_id
+                    WHERE t.meta->>'created_by_type' = 'entity'
+                    ORDER BY t.created_at DESC
+                """)
+                ergebnisse += [dict(r) for r in cur.fetchall()]
+        # Timestamps serialisieren
+        for e in ergebnisse:
+            if e.get("created_at"):
+                e["created_at"] = e["created_at"].isoformat()
+        return {"provenienz": ergebnisse, "count": len(ergebnisse)}
+    finally:
+        conn.close()
+
+
 # ── Denkstream (Browser-Agent Live-Stream) ───────────────────────────────────
 try:
     from denkstream_api import denkstream_router as _denkstream_router
