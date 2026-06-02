@@ -37,7 +37,7 @@ OLLAMA = "http://localhost:11434"
 MODEL = "gemma4:e2b-it-q4_K_M"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
-OBSIDIAN_URL = "http://localhost:8443"
+OBSIDIAN_URL = "http://localhost:8787/werkraum"  # Werkraum-Dateien via Surface-Server
 LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
 SCREENSHOT_DIR = "/tmp/wesen_screenshots"
@@ -167,13 +167,16 @@ Klickbar: {elemente_str}
 LETZTER GEDANKE: {letzter_gedanke or '(erster Tick)'}
 
 VERFÜGBARE AKTIONEN:
-navigiere:<url>          — zu einer URL gehen
-klicke:<element-text>    — Button oder Link anklicken
-scrolle:unten            — nach unten scrollen
-scrolle:oben             — nach oben scrollen
-tippe:<text>|<selektor>  — in ein Feld tippen
-schlafen                 — jetzt schlafen (mind. 3h)
-nachdenken               — innehalten, nichts tun
+navigiere:<url>                 — zu einer URL auf flextrawurst.de gehen
+klicke:<element-text>           — Button oder Link anklicken
+scrolle:unten                   — nach unten scrollen
+scrolle:oben                    — nach oben scrollen
+tippe:<text>|<selektor>         — in ein Feld tippen
+obsidian_lesen:<pfad>           — eine Datei im Werkraum lesen
+                                  z.B. obsidian_lesen:codewesen/namelessAI_3123/wesen.md
+obsidian_zurueck                — zurück zu flextrawurst.de
+schlafen                        — jetzt schlafen (mind. 3h)
+nachdenken                      — innehalten, nichts tun
 
 Antworte NUR in diesem Format:
 GEDANKE: [was du wahrnimmst und denkst]
@@ -229,6 +232,13 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
                     page.locator(selektor).first.fill(text, timeout=3000)
                 except Exception:
                     pass
+        elif e.startswith("obsidian_lesen:"):
+            pfad = e[len("obsidian_lesen:"):].strip().lstrip("/")
+            url = f"{OBSIDIAN_URL}/{pfad}"
+            page.goto(url, timeout=8000, wait_until="domcontentloaded")
+        elif e == "obsidian_zurueck":
+            page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
+            page.wait_for_timeout(1000)
         elif e == "schlafen":
             return "schlafen"
         # nachdenken: nichts tun
