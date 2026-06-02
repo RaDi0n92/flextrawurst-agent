@@ -244,18 +244,16 @@ def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
         with conn.cursor() as cur:
             cur.execute("""
                 INSERT INTO entity_thinking_log
-                    (entity_id, tick_at, raw_output, parsed_decision, meta)
-                VALUES (%s, NOW(), %s, %s, %s)
+                    (entity_id, tick_at, raw_output, gedanke, entscheidung, begruendung, meta)
+                VALUES (%s, NOW(), %s, %s, %s, %s, %s)
             """, (
                 entity_id,
                 f"GEDANKE: {gedanke}\nENTSCHEIDUNG: {entscheidung}\nBEGRÜNDUNG: {begruendung}",
-                entscheidung,
+                gedanke, entscheidung, begruendung,
                 psycopg2.extras.Json({
                     "url": url,
                     "source": "browser_agent",
                     "screenshot": screenshot_pfad,
-                    "gedanke": gedanke,
-                    "begruendung": begruendung,
                 })
             ))
         conn.commit()
@@ -437,18 +435,44 @@ def haupt_loop(entity_id: str):
             # 3. Andere Wesen status
             andere = hole_andere_wesen_status(conn, entity_id)
 
-            # 4. LLM entscheidet
+            # 4. LLM entscheidet — mit Live-Streaming in entity_denkstream
             prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere)
+            import uuid as _uuid
+            stream_id = str(_uuid.uuid4())
+            llm_out = ""
             try:
-                resp = requests.post(f"{OLLAMA}/api/chat", json={
+                stream_resp = requests.post(f"{OLLAMA}/api/chat", json={
                     "model": MODEL,
                     "messages": [{"role": "user", "content": prompt}],
-                    "stream": False,
+                    "stream": True,
                     "options": {"think": False, "num_ctx": 4096},
-                }, timeout=LLM_TIMEOUT)
-                llm_out = resp.json().get("message", {}).get("content", "")
+                }, timeout=LLM_TIMEOUT, stream=True)
+                seq = 0
+                for line in stream_resp.iter_lines():
+                    if not line or not _laufend:
+                        break
+                    try:
+                        d = json.loads(line)
+                        chunk = d.get("message", {}).get("content", "")
+                        if chunk:
+                            llm_out += chunk
+                            done = d.get("done", False)
+                            # Live-Chunk in DB schreiben → NOTIFY → SSE
+                            try:
+                                with conn.cursor() as _c:
+                                    _c.execute("""
+                                        INSERT INTO entity_denkstream
+                                            (entity_id, stream_id, chunk, seq, done, url)
+                                        VALUES (%s, %s, %s, %s, %s, %s)
+                                    """, (entity_id, stream_id, chunk, seq, done, seite["url"]))
+                                conn.commit()
+                            except Exception:
+                                pass
+                            seq += 1
+                    except Exception:
+                        pass
             except Exception as e:
-                log.warning("Ollama Timeout/Fehler: %s — nachdenken", e)
+                log.warning("Ollama Streaming-Fehler: %s — nachdenken", e)
                 llm_out = "GEDANKE: warte\nENTSCHEIDUNG: nachdenken\nBEGRÜNDUNG: Ollama nicht erreichbar"
 
             gedanke, entscheidung, begruendung = parse_output(llm_out)

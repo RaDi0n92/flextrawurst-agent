@@ -12072,6 +12072,15 @@ except ImportError as _e:
     _logging.warning(f"wesen_life_contracts/organ_hunger nicht geladen: {_e}")
 
 
+# ── Denkstream (Browser-Agent Live-Stream) ───────────────────────────────────
+try:
+    from denkstream_api import denkstream_router as _denkstream_router
+    app.include_router(_denkstream_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"denkstream_api nicht geladen: {_e}")
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8030)
