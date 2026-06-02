@@ -149,8 +149,14 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
     andere_info = ""
     if andere_wesen:
-        zeilen = [f"- {w['entity_id']}: {w['url']}" for w in andere_wesen[:4]]
-        andere_info = "\nANDERE WESEN GERADE:\n" + "\n".join(zeilen)
+        zeilen = []
+        for w in andere_wesen[:4]:
+            url = (w.get("url") or "").replace("http://localhost:8787", "")[:35]
+            gedanke = (w.get("gedanke") or "")[:40]
+            shot = f"/tmp/wesen_screenshots/{w['entity_id']}_aktuell.jpg"
+            hat_screenshot = "📷" if __import__("os").path.exists(shot) else ""
+            zeilen.append(f"- {w['entity_id']} {hat_screenshot}: {url} ({gedanke})")
+        andere_info = "\nANDERE WESEN GERADE (sichtbar für dich):\n" + "\n".join(zeilen)
 
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
 

@@ -116,6 +116,42 @@ def denkstream_screenshot(entity_id: str):
                     headers={"Cache-Control": "no-cache, max-age=0"})
 
 
+@denkstream_router.get("/status/all")
+def denkstream_status_all():
+    """Aktueller Browser-Status aller Wesen — URL + letzter Gedanke + Screenshot-URL."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT DISTINCT ON (entity_id)
+                    entity_id,
+                    gedanke,
+                    entscheidung,
+                    tick_at,
+                    meta->>'url' AS url,
+                    meta->>'screenshot' AS screenshot
+                FROM entity_thinking_log
+                WHERE meta->>'source' = 'browser_agent'
+                  AND tick_at > NOW() - INTERVAL '15 minutes'
+                ORDER BY entity_id, tick_at DESC
+            """)
+            rows = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    # Screenshot-URL hinzufügen
+    import os
+    result = []
+    for r in rows:
+        entity_id = r["entity_id"]
+        shot_path = f"/tmp/wesen_screenshots/{entity_id}_aktuell.jpg"
+        r["screenshot_url"] = (
+            f"/api/denkstream/screenshot/{entity_id}"
+            if os.path.exists(shot_path) else None
+        )
+        result.append(r)
+    return {"status": result, "count": len(result)}
+
+
 def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
     """Generator: PostgreSQL LISTEN → SSE-Chunks."""
     conn = psycopg2.connect(DB_URI)
