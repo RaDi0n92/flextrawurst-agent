@@ -384,7 +384,7 @@ def schlafe(conn, entity_id: str, page):
     except Exception:
         pass
 
-    # Traum generieren (läuft parallel zum Schlafen)
+    # Traum generieren
     traumtext = ""
     try:
         from traum_generator import generiere_traum as _generiere_traum
@@ -393,6 +393,14 @@ def schlafe(conn, entity_id: str, page):
         log.info("%s: Traum fertig (%d Zeichen)", entity_id, len(traumtext))
     except Exception as e:
         log.warning("Traumgenerierung fehlgeschlagen: %s", e)
+
+    # Luzide Beobachtungs-Schicht (Wesen schaut eigenem Traum zu)
+    if traumtext and _laufend:
+        try:
+            from traum_luzid import beobachte_traum as _beobachte_traum
+            _beobachte_traum(entity_id, traumtext, laufend_check=lambda: _laufend)
+        except Exception as e:
+            log.warning("Luzide Beobachtung fehlgeschlagen: %s", e)
 
     # Restliche Schlafzeit abwarten (nach Traum)
     geschlafen = 0
