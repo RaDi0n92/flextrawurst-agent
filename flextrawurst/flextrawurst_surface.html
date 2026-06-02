@@ -9022,10 +9022,9 @@ async function _dkFoyerLaden() {
       try {
         const d2 = await fetch('/api/welt/foyer').then(r=>r.json());
         const fd = document.getElementById('dk-home-feed');
-        if (fd && d2.feed) fd.innerHTML = _dkFeedInnerHtml(d2.feed, true);
+        if (fd && d2.feed) { fd.innerHTML = _dkFeedInnerHtml(d2.feed, true); _dkBind(fd); }
         const kat = document.getElementById('dk-foyer-kategorien');
-        if (kat) kat.innerHTML = _dkFoyerKategorienHtml(d2.raeume||[], d2.spuren||[]);
-        _dkBind(el);
+        if (kat) { kat.innerHTML = _dkFoyerKategorienHtml(d2.raeume||[], d2.spuren||[]); _dkBind(kat); }
       } catch(e){}
     });
   } catch(e) { el.innerHTML='<div style="color:#8a2a2a;padding:20px">'+e.message+'</div>'; }
@@ -9142,8 +9141,7 @@ async function dkRaumLaden(slug) {
       try {
         const d2=await fetch('/api/welt/foyer/raum/'+slug).then(r=>r.json());
         const fd=document.getElementById('dk-raum-feed');
-        if(fd && d2.feed) fd.innerHTML=_dkFeedInnerHtml(d2.feed,false);
-        _dkBind(el);
+        if(fd && d2.feed) { fd.innerHTML=_dkFeedInnerHtml(d2.feed,false); _dkBind(fd); }
       } catch(e){}
     });
   } catch(e) { el.innerHTML='<div style="color:#8a2a2a;padding:20px">'+e.message+'</div>'; }
