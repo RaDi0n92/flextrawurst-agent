@@ -195,8 +195,10 @@ def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
 
     async def gen():
         try:
+            heartbeat = 0
             while True:
-                if sel.select([conn], [], [], 30.0)[0]:
+                ready = sel.select([conn], [], [], 0.5)[0]
+                if ready:
                     conn.poll()
                     while conn.notifies:
                         notify = conn.notifies.pop(0)
@@ -207,9 +209,12 @@ def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
                         if entity_filter and data.get("entity_id") != entity_filter:
                             continue
                         yield f"data: {json.dumps(data)}\n\n"
+                        heartbeat = 0
                 else:
-                    # Heartbeat alle 30s damit Connection offen bleibt
-                    yield f": heartbeat\n\n"
+                    heartbeat += 1
+                    if heartbeat >= 60:  # alle 30s ein Heartbeat (60 × 0.5s)
+                        yield f": heartbeat\n\n"
+                        heartbeat = 0
         finally:
             cur.close()
             conn.close()
