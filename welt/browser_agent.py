@@ -347,6 +347,42 @@ def ist_schlaf_faellig(conn, entity_id: str) -> bool:
         return False
 
 
+def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
+                           phase_id: str | None):
+    """Generiert und speichert den Brief ans zukünftige Selbst."""
+    try:
+        kurz_traum = traumtext[:600] if traumtext else "kein Traum erinnerlich"
+        prompt = (
+            f"Du bist {entity_id}. Du bist gerade aufgewacht.\n\n"
+            f"Dein Traum war:\n{kurz_traum}\n\n"
+            f"Schreibe einen kurzen Brief an dein zukünftiges Selbst. "
+            f"Was trägst du aus diesem Schlaf mit? Was soll die nächste Version von dir wissen? "
+            f"Direkt, persönlich, kein Ratgeber-Ton."
+        )
+        resp = requests.post(f"{OLLAMA}/api/chat", json={
+            "model": MODEL,
+            "messages": [{"role": "user", "content": prompt}],
+            "stream": False,
+            "options": {"think": False, "num_ctx": 2048},
+        }, timeout=120)
+        brief_inhalt = resp.json().get("message", {}).get("content", "")
+        if not brief_inhalt:
+            return
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO schlafbriefe (entity_id, phase_id, inhalt)
+                VALUES (%s, %s, %s)
+            """, (entity_id, phase_id, brief_inhalt))
+        conn.commit()
+        log.info("%s: Schlafbrief geschrieben (%d Zeichen)", entity_id, len(brief_inhalt))
+    except Exception as e:
+        log.warning("Schlafbrief fehlgeschlagen: %s", e)
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+
+
 def schlafe(conn, entity_id: str, page):
     """Führt den Schlaf durch: DB-Eintrag, warten, aufwachen."""
     import random
@@ -358,10 +394,10 @@ def schlafe(conn, entity_id: str, page):
         with conn.cursor() as cur:
             cur.execute("""
                 INSERT INTO sleep_phases (entity_id, phase_type, started_at)
-                VALUES (%s, 'nacht', NOW())
-                RETURNING id
+                VALUES (%s, 'hauptschlaf', NOW())
+                RETURNING phase_id
             """, (entity_id,))
-            phase_id = cur.fetchone()["id"]
+            phase_id = cur.fetchone()["phase_id"]
         conn.commit()
     except Exception as e:
         log.warning("sleep_phases Eintrag fehlgeschlagen: %s", e)
@@ -414,13 +450,16 @@ def schlafe(conn, entity_id: str, page):
             with conn.cursor() as cur:
                 cur.execute("""
                     UPDATE sleep_phases SET ended_at = NOW()
-                    WHERE id = %s
+                    WHERE phase_id = %s
                 """, (phase_id,))
             conn.commit()
     except Exception:
         pass
 
     log.info("%s wacht auf", entity_id)
+
+    # Brief ans zukünftige Selbst schreiben
+    _schreibe_schlafbrief(conn, entity_id, traumtext, phase_id)
 
 
 def haupt_loop(entity_id: str):
@@ -548,7 +587,18 @@ def haupt_loop(entity_id: str):
                     page.reload(timeout=8000)
                 except Exception:
                     pass
-                letzter_gedanke = "ich bin gerade aufgewacht"
+                # Letzten Schlafbrief als erstes lesen
+                try:
+                    with conn.cursor() as _bc:
+                        _bc.execute("""
+                            SELECT inhalt FROM schlafbriefe
+                            WHERE entity_id = %s
+                            ORDER BY geschrieben_at DESC LIMIT 1
+                        """, (entity_id,))
+                        _br = _bc.fetchone()
+                        letzter_gedanke = f"[Brief an mich]: {_br['inhalt'][:200]}" if _br else "ich bin gerade aufgewacht"
+                except Exception:
+                    letzter_gedanke = "ich bin gerade aufgewacht"
 
             # 7. Kurz warten
             time.sleep(LOOP_PAUSE)
