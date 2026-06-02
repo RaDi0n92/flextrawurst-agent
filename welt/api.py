@@ -2542,7 +2542,7 @@ def admin_raum_erstellen(
     body: RaumCreate,
     authorization: str | None = Header(default=None),
 ):
-    _require_admin_or_entity(authorization)
+    claims = _require_admin_or_entity(authorization)
     meta = dict(body.meta or {})
     if body.ein_satz is not None:
         meta["ein_satz"] = body.ein_satz
@@ -2550,6 +2550,9 @@ def admin_raum_erstellen(
         meta["lore_text"] = body.lore_text
     if body.public_discourse is not None:
         meta["public_discourse"] = body.public_discourse
+    # Provenienz-Markierung
+    meta["created_by_type"] = claims.get("role", "mensch")
+    meta["created_by_id"] = claims.get("sub", "")
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -2622,12 +2625,14 @@ def admin_thema_erstellen(
     body: ThemaCreate,
     authorization: str | None = Header(default=None),
 ):
-    _require_admin_or_entity(authorization)
+    claims = _require_admin_or_entity(authorization)
     if body.klima_status not in _KLIMA_STATUS_VALUES:
         raise HTTPException(status_code=422, detail=f"Unbekannter klima_status: {body.klima_status}")
     meta = dict(body.meta or {})
     if body.ein_satz is not None:
         meta["ein_satz"] = body.ein_satz
+    meta["created_by_type"] = claims.get("role", "mensch")
+    meta["created_by_id"] = claims.get("sub", "")
     conn = get_conn()
     try:
         with conn.cursor() as cur:

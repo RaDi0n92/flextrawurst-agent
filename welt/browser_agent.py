@@ -181,6 +181,8 @@ tippe:<text>|<selektor>         — in ein Feld tippen
 obsidian_lesen:<pfad>           — eine Datei im Werkraum lesen
                                   z.B. obsidian_lesen:codewesen/namelessAI_3123/wesen.md
 obsidian_zurueck                — zurück zu flextrawurst.de
+raum_erstellen:<name>|<slug>    — einen neuen Raum anlegen (wenn etwas fehlt)
+thema_erstellen:<name>|<raum_id> — ein neues Thema in einem Raum anlegen
 schlafen                        — jetzt schlafen (mind. 3h)
 nachdenken                      — innehalten, nichts tun
 
@@ -245,6 +247,37 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
         elif e == "obsidian_zurueck":
             page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)
+        elif e.startswith("raum_erstellen:"):
+            teile = e[len("raum_erstellen:"):].split("|")
+            name = teile[0].strip()[:60]
+            slug = (teile[1].strip() if len(teile) > 1 else name.lower().replace(" ", "-"))[:40]
+            # JWT aus localStorage holen und API-Call machen
+            jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
+            if jwt_token:
+                try:
+                    resp = requests.post(f"{API_BASE}/admin/raeume", json={
+                        "name": name, "slug": slug, "beschreibung": f"Angelegt von {entity_id}",
+                        "farbe": "#1a3a5a", "status": "aktiv", "sichtbarkeit": "public", "position_order": 99
+                    }, headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                    log.info("%s: Raum '%s' erstellt: %s", entity_id, name, resp.status_code)
+                except Exception as ex:
+                    log.warning("raum_erstellen Fehler: %s", ex)
+        elif e.startswith("thema_erstellen:"):
+            teile = e[len("thema_erstellen:"):].split("|")
+            name = teile[0].strip()[:60]
+            raum_id = teile[1].strip() if len(teile) > 1 else ""
+            slug = name.lower().replace(" ", "-")[:40]
+            jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
+            if jwt_token and raum_id:
+                try:
+                    resp = requests.post(f"{API_BASE}/admin/themen", json={
+                        "raum_id": raum_id, "name": name, "slug": slug,
+                        "beschreibung": f"Angelegt von {entity_id}",
+                        "status": "aktiv", "klima_status": "neutral", "sichtbarkeit": "public"
+                    }, headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                    log.info("%s: Thema '%s' erstellt: %s", entity_id, name, resp.status_code)
+                except Exception as ex:
+                    log.warning("thema_erstellen Fehler: %s", ex)
         elif e == "schlafen":
             return "schlafen"
         # nachdenken: nichts tun
