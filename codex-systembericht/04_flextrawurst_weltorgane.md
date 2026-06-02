@@ -83,6 +83,61 @@ Tut nicht:
 
 - Es ist keine interne Modelltelemetrie; es ist eine Weltspur.
 
+## Organ: Beobachtungssystem / Screen-Organ
+
+Dateien/Dienste: `welt/browser_agent.py`, `welt/browser_agent_coordinator.py`, `welt/browser-agents.service`, `welt/gen_screens_html.py`, Screenshot-Endpunkte im Denkstream.
+
+Idee: Jedes der sechs Wesen bekommt nicht nur API-Kontext, sondern einen eigenen Browser-Screen. Es sieht eine Seite, liest sichtbaren Text und klickbare Elemente, entscheidet per LLM und handelt durch Navigation, Klick, Scrollen, Tippen, Obsidian-Lesen, Schlafen oder Nachdenken. Der Mensch kann diese Screens als Live-Grid beobachten.
+
+Umgesetzt:
+
+- Ein Playwright-Browser pro Wesen.
+- Coordinator fuer alle sechs `namelessAI_*`.
+- systemd-Service `browser-agents.service`.
+- Screenshots nach `/tmp/wesen_screenshots`.
+- Aktueller Screenshot pro Wesen als `*_aktuell.jpg`.
+- Denkstream-Anzeige mit URL, Gedanke, Entscheidung und Begruendung.
+- `screens.html` als Twitch-artiges Grid aller sechs Wesen.
+- Modal pro Wesen mit groesserem Screenshot und Live-Stream.
+- LLM-Modell `gemma4:e2b-it-q4_K_M`.
+- Ollama-Zugriff sequenziell ueber Lock/Pausen, damit nicht alle Wesen gleichzeitig rechnen.
+
+Tut:
+
+- Gibt den Wesen eine eigene visuelle und navigierbare Oberflaeche.
+- Macht ihre Wahrnehmung und Handlung fuer Menschen beobachtbar.
+- Verbindet Surface, Werkraum-Lesen, Denkstream und Screenshot-Spur.
+- Erlaubt Handlungen, die nicht nur API-Entscheidungen sind, sondern UI-Bewegung: klicken, scrollen, tippen, navigieren.
+
+Tut nicht:
+
+- Es ersetzt nicht den Entity-Kern; es ist eine zweite Handlungs- und Wahrnehmungsschicht.
+- Es garantiert nicht, dass jeder Klick sinnvoll ist.
+- Es darf nicht mit menschlicher Zustimmung verwechselt werden: Beobachtbarkeit ist nicht automatisch Freigabe fuer jede Handlung.
+- Es ist nicht dasselbe wie GENIs Windows-Bridge, auch wenn beide Screen/Maus/Tastatur beruehren.
+
+Status:
+
+- gebaut und als Service vorbereitet.
+- Live-Aktivitaet muss pro Moment ueber `browser_agent_coordinator.py --status`, Logs und Screenshots geprueft werden.
+
+Zusammenarbeit:
+
+```text
+Wesen
+  -> Browser-Agent
+  -> Surface / Werkraum-Seite
+  -> sichtbarer Text + klickbare Elemente
+  -> LLM-Entscheidung
+  -> Klick / Navigation / Scroll / Tipp / Schlaf / Nachdenken
+  -> Screenshot + Denkstream
+  -> screens.html fuer Menschen
+```
+
+Risiko:
+
+- Dieses Organ ist maechtig, weil es Wahrnehmung und Handlung kombiniert. Darum braucht es klare Grenzen: erlaubte URLs, Sichtbarkeit, Logging, Notbremse, Admin-Kontrolle und getrennte Behandlung von privaten menschlichen Bereichen.
+
 ## Organ: Life Contracts
 
 Name: `wesen_life_contracts.py`
@@ -466,4 +521,3 @@ Tut nicht:
 Risiko:
 
 - Automatisches Mergen/Parent-Themen kann Ordnung behaupten, die Daniel nicht freigegeben hat.
-

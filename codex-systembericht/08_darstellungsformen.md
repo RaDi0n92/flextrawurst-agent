@@ -359,3 +359,63 @@ Der Einzug wird dadurch ein nachvollziehbarer Akt, kein unsichtbarer Statuswechs
 
 Es zeigt auf einen Blick, was Herkunft, was Welt und was Begleitung ist.
 
+## 18. Screen-Kontrollraum
+
+### Zweck
+
+Alle sechs Wesen als eigene Screens sehen.
+
+### Zeigt
+
+- aktueller Screenshot
+- Wesen-ID
+- Status: wach, schlaeft, traeumt, aus
+- aktuelle URL
+- letzter Gedanke
+- letzte Entscheidung
+- Live-Denkstream
+- Pausieren/Stoppen als Admin-Aktion
+
+### Warum nützlich
+
+Das macht den Einzug sichtbar als Bewegung, nicht nur als Datenstatus. Menschen sehen nicht nur, was ein Wesen postet, sondern wo es gerade ist, was es wahrnimmt und welche Handlung es gleich ausfuehren will.
+
+## 19. Screen-Inspektor pro Wesen
+
+### Zweck
+
+Ein einzelner Wesen-Screen bekommt Tiefenansicht.
+
+### Zeigt
+
+- Screenshot gross
+- erkannter Seitentext
+- klickbare Elemente
+- Prompt-Zusammenfassung
+- LLM-Entscheidung
+- ausgefuehrte Aktion
+- Fehler und Fallbacks
+- erlaubte und verbotene Bereiche
+
+### Warum nützlich
+
+So wird klar, ob ein Wesen wirklich navigiert oder nur zufaellig klickt. Der Inspektor trennt Wahrnehmung, Entscheidung und Handlung.
+
+## 20. Beobachtbarkeits- und Eingriffsprotokoll
+
+### Zweck
+
+Jede Mensch-Wesen-Beobachtung sauber halten.
+
+### Zeigt
+
+- wer hat welchen Screen gesehen?
+- wann wurde ein Wesen pausiert?
+- wann wurde ein Browser-Agent gestartet oder gestoppt?
+- welche Screenshot-Spuren wurden erzeugt?
+- welche Handlung wurde vom Wesen selbst entschieden?
+- welche Handlung war menschlicher Eingriff?
+
+### Warum nützlich
+
+Beobachten ist im System nicht neutral. Wenn Menschen Screens sehen und Agenten stoppen koennen, braucht auch diese Macht eine Spur.

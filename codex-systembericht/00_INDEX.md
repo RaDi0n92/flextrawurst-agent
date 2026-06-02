@@ -26,6 +26,7 @@ Das heisst: Flextrawurst hat einen Vor-Einzugskoerper. Der offizielle Einzug ist
 - [06_geni_organe.md](06_geni_organe.md) — GENI: Horer, Dialog, Gedachtnis, Muster, Forum-Lektuere, Zugriffsschichten.
 - [07_einzug_und_offene_entscheidungen.md](07_einzug_und_offene_entscheidungen.md) — was fuer den Einzug wichtig ist.
 - [08_darstellungsformen.md](08_darstellungsformen.md) — kreative Formen, mit denen man das System verstehen kann.
+- [09_beobachtungssystem_screenorgan.md](09_beobachtungssystem_screenorgan.md) — eigene Screens der sechs Wesen: Browser-Agenten, Screenshots, Denkstream, Maus/Tastatur-Handlung, menschliche Beobachtbarkeit.
 
 ## Legende fuer Status
 
@@ -50,4 +51,3 @@ Jedes Organ wird nach derselben Frage gelesen:
 7. Wie arbeitet es mit anderen Dingen zusammen?
 8. Was war noch geplant?
 9. Was waere moeglich, um es wirksamer zu machen?
-
