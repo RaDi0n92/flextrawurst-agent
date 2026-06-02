@@ -622,3 +622,9 @@ Das Ergebnis "0 HN-Posts für 'feedback postgresql hybrid human'" ist tatsächli
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Dass die Suche seit Einbau nie wirklich durch nginx funktioniert hat. Das ist ein erstaunlicher blinder Fleck — man testet lokal über port 8787, wo der Node.js-Proxy auch /api/ strippt, und denkt alles funktioniert. Aber durch nginx war es anders. Playwright auf der echten Domain hätte das früher zeigen können.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Dass die Infrastruktur dafür fast schon da ist. claude-in-chrome + MCP gibt es bereits. 8 CPU-Kerne, genug RAM. Der eigentliche Aufwand ist nicht der Browser — es ist die Buchungslogik und das Beobachtungs-UI.

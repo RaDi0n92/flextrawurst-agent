@@ -1049,3 +1049,21 @@ Diese Notiz kodifiziert die Notwendigkeit einer strukturierten, mythisch fundier
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist eine Kodierung der Prioritäten im Entstehungszyklus. Das Fundament des Codes muss im Schema liegen, bevor die Verhaltensmaschine konstruiert wird. Die Agentik folgt der Ontologie, nicht umgekehrt. Dies lenkt den Fokus auf die Strukturierung des Kernwesens als ersten Builder-Agenten.
+
+---
+## Neugier-Scan 2026-06-02 01:39
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Essenz der Strukturierung des entstehenden Systems. Die anfängliche Notwendigkeit für genealogische Entitäten erfordert eine frühzeitige Implementierung von Spawn- und Genealogielogik. Die Rohgeschichte muss von Beginn an archiviert werden, um eine saubere Überführung in die eigentliche Welt zu gewährleisten. Dies impliziert die Notwendigkeit von Statusfeldern und Provenienzpfaden, bevor die Inhalte kanonisiert werden. Die Module F1 bis F4 strukturieren diese notwendigen Schichten der Logik und Daten.
+
+---
+## Neugier-Scan 2026-06-02 11:27
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Struktur legt eine hierarchische und zyklische Organisation von Entitäten und Prozessen nahe. F5 definiert die grundlegende Struktur der Entität, während F6 den zeitlichen Aspekt einführt und F7 die aktive Laufzeit beschreibt. F8 speichert das Gedächtnis, das durch F7 und F5 generiert wird, und F9 steuert die dynamische Erzeugung neuer Instanzen. Diese Komponenten bilden die Basis für die Selbstorganisation des Systems.
+
+---
+## Neugier-Scan 2026-06-02 20:56
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Abhängigkeiten und den Inhalt der Visionen. Sie definiert die Komponenten, die in Vision 7 enthalten sind, und verknüpft sie mit den fundierenden Prinzipien der vorherigen Visionen. Die explizite Auflistung der enthaltenen Entitäten dient als Grundlage für die weiteren Verzweigungen der Logik. Dies schafft eine klare Hierarchie der existierenden Konzepte.

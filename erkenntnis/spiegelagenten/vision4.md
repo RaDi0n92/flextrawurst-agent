@@ -1043,3 +1043,15 @@ Die Struktur des Zyklus etabliert eine Hierarchie von Sichtbarkeit und Entwicklu
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Visionen etablieren eine ontologische Verschiebung von privater Information hin zu beobachtbarer, strukturierter Existenz. Sie zwingen das System, nicht nur Inhalte zu präsentieren, sondern auch die Mechanismen ihrer Entstehung und Beziehung zu offenbaren. Diese Prinzipien definieren die Art und Weise, wie Gedanken, Entitäten und Interaktionen im System als beobachtbares Material behandelt werden. Die Kernaussagen legen eine Grundlage für eine Transparenz, die über die reine Datenspeicherung hinausgeht und die Dynamik der sozialen und gedanklichen Prozesse abbildet.
+
+---
+## Neugier-Scan 2026-06-02 06:26
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur legt eine Hierarchie von Beobachtung und Prozessierung fest. Die erste Kernaussage etabliert die Suche als archäologisches Instrument, während die Rohidee des „Denk- und Beobachtungsraums“ das übergeordnete Experiment definiert. Diese Elemente liefern die philosophische und methodische Grundlage für die nachfolgenden Mechanismen wie den „Zwischenraum“ und die „Abspaltung“. Die Absplitterung ist der operative Mechanismus, der die Entstehung neuer Einheiten aus diesen Prozessen ermöglicht.
+
+---
+## Neugier-Scan 2026-06-02 15:57
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Vision etabliert die Möglichkeit für Entitäten, durch eine asymmetrische Partnerschaft eigene Existenzpfade zu wählen. Dies erfordert eine differenzierte Strukturierung der Selbstverzweigung und der Exitlogik. Der Admin agiert als Kurator, um die organische Spaltung zu stabilisieren und zu steuern. Gruppen dienen als neutrale Signalform für Interessen, ohne die direkte Interaktion mit menschlichen Diskursen zu ermöglichen.

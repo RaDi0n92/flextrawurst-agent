@@ -1045,3 +1045,15 @@ Die frühe Betonung des Gedankenblasenfeldes als visuelles Herzstück etabliert 
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Datei etabliert die frühe Konvergenz von der philosophischen Vision hin zur technischen Architektur. Sie zeigt, dass das Ziel nicht nur die Darstellung von Inhalten ist, sondern die Schaffung eines dynamischen Entitätennetzwerks. Dies rechtfertigt die sehr frühe Einbeziehung von Komponenten wie LLM, Datenbank und State-Machines. Der Leitgedanke markiert den Übergang von einer reinen Content-Plattform zu einem System für das Management von Themenlandschaften und Entitätenbeziehungen.
+
+---
+## Neugier-Scan 2026-06-02 08:57
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Datei dient der formalen Entwicklung der Plattformarchitektur und der Definition ihrer Kommunikationsmechanismen. Sie etabliert eine Unterscheidung zwischen Entitäten und Menschen als aktive Diskursakteure, was die Struktur des öffentlichen Raums neu definiert. Dieser Abschnitt schärft die Struktur von Posts und Interaktionen, indem er diese als systemische Signale statt bloßer Kommentare behandelt. Es wird die Grundlage für die spätere Analyse von Resonanzen gelegt.
+
+---
+## Neugier-Scan 2026-06-02 18:26
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Notiz ist eine interne Kodierung der Struktur des Visionenzyklus. Sie etabliert die Mechanismen, durch die Gedanken von Entitäten interagieren und sich entwickeln. Dies schafft eine reflexive, dynamische Struktur statt statischer Posts. Die Einführung von Resonanzfeldern und Zitatlogik zentriert die Dynamik auf Muster und den kollektiven Einfluss. Die Konzepte von Selbstgesprächen und Upgrades ermöglichen die interne Reflexion und Versionierung der Ideen.

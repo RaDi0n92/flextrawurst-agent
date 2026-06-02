@@ -1,0 +1,3812 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>sandycheats</title>
+
+<style>
+:root{
+  --bg:#212;
+  --fg:#ddd;
+  --panel:#141414;
+  --panel2:#101010;
+  --border:#333;
+  --muted:#9aa;
+
+  --fsbg:#2c1f00;
+  --fsfg:#f2e7cf;
+
+  --btn:#222;
+  --btnfs:#171717;
+}
+
+body{background:var(--bg);color:var(--fg);font-family:monospace;margin:0;padding:16px}
+body.fs{background:var(--fsbg);color:var(--fsfg)}
+
+#shell{
+width:1858px;
+margin:0 auto;
+display:grid;
+grid-template-columns:260px 930px 640px;
+gap:14px;
+align-items:start;
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:10px;
+}
+body.fs .panel{
+  background:#14100a;
+  border-color:rgba(255,255,255,.10);
+}
+
+#leftPanel{
+  height: calc(9 * 90px + 6px + 2px*8 + 12px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.boxTitle{font-weight:bold;letter-spacing:.5px;margin-bottom:6px}
+
+.kv{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:6px 10px;
+  font-size:13px;
+}
+.kv .k{color:var(--muted)}
+body.fs .kv .k{color:rgba(242,231,207,.72)}
+.bigNum{font-size:18px;font-weight:bold}
+
+.hr{height:1px;background:#262626;margin:6px 0}
+body.fs .hr{background:rgba(255,255,255,.08)}
+
+#betRow{display:flex;gap:8px;align-items:center}
+#betBtn{
+  flex:1;
+  background:var(--btn);color:#ddd;border:1px solid #444;
+  padding:6px 10px; cursor:pointer; text-align:left;
+}
+body.fs #betBtn{background:var(--btnfs);color:#eee;border-color:#444}
+#betDropBtn{
+  width:42px;
+  background:var(--btn);color:#ddd;border:1px solid #444;
+  padding:6px 0; cursor:pointer;
+}
+body.fs #betDropBtn{background:var(--btnfs);color:#eee;border-color:#444}
+
+#betOverlay{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.55);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#betOverlay.open{display:flex}
+#betSheet{
+  width:520px; max-height:70vh; overflow:auto;
+  background:#0f0f0f;
+  border:1px solid #444;
+  padding:10px;
+}
+#betSheet h3{margin:0 0 10px 0; font-size:14px}
+#betGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:6px;
+}
+.betCell{
+  background:#1a1a1a;
+  border:1px solid #333;
+  padding:8px 10px;
+  cursor:pointer;
+  user-select:none;
+  text-align:center;
+}
+.betCell:hover{border-color:#666}
+.betCell.sel{border-color:#fff; box-shadow:0 0 0 1px rgba(255,255,255,.3) inset}
+
+.note{font-size:12px;color:var(--muted)}
+body.fs .note{color:rgba(242,231,207,.70)}
+
+#buyRow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+.buyBtn{
+  background:var(--btn);color:#ddd;border:1px solid #444;
+  padding:6px 8px; cursor:pointer;
+  font-size:12px;
+}
+.buyBtn:hover{border-color:#666}
+.buyBtn[disabled]{opacity:.45;cursor:not-allowed;filter:saturate(.6)}
+body.fs .buyBtn{background:var(--btnfs);color:#eee}
+body.fs .buyBtn[disabled]{opacity:.40}
+
+#centerPanel{padding:0;border:none;background:transparent;position:relative;z-index:1}
+#game{width:930px;margin:0 auto;position:relative;z-index:1}
+
+#grid{
+  display:grid;
+  grid-template-columns:repeat(5,70px);
+  grid-template-rows:repeat(9,90px);
+  gap:2px;
+  background:#000;
+  padding:6px;
+  align-content:end
+}
+
+.cell{
+  width:70px;height:90px;
+  background:#222;
+
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  overflow:hidden;
+  transform:translate3d(0,0,0);
+  will-change:transform;
+}
+
+.cell.ohg{
+  opacity:.38;
+  background:#0f0f0f;
+  filter:saturate(.85) brightness(.85);
+}
+
+.cell.dim{
+  opacity:.22;
+  background:#0a0a0a;
+  filter:saturate(.6) brightness(.72);
+}
+
+.cell img{width:70px;height:90px;object-fit:contain}
+
+/* highlight: color driven by --hitColor */
+.cell.hitted::before{
+  content:"";position:absolute;inset:2px;
+  border:2px solid var(--hitColor, #ff3b3b);
+  box-shadow:0 0 12px color-mix(in srgb, var(--hitColor, #ff3b3b) 55%, transparent);
+  pointer-events:none
+}
+.cell.hitted::after{
+  content:"";position:absolute;inset:4px;
+  border-radius:10px;
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--hitColor, #ff3b3b) 45%, transparent),
+    0 0 22px color-mix(in srgb, var(--hitColor, #ff3b3b) 25%, transparent);
+  pointer-events:none;
+}
+
+.cell.marked::after{
+  content:"";position:absolute;inset:2px;
+  border:2px solid #fff;pointer-events:none
+}
+
+.cell.flash::after{
+  content:"";position:absolute;inset:2px;
+  box-shadow:0 0 0 2px rgba(255,255,255,.9),
+              0 0 10px rgba(255,255,255,.6);
+  animation:flash .14s ease-out 1;
+  pointer-events:none
+}
+@keyframes flash{0%{opacity:1}100%{opacity:.65}}
+
+.cell.puff img{opacity:.9;filter:brightness(1.05)}
+
+.cell.gordGlow::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:10px;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.26) inset,
+    0 0 14px rgba(255,255,255,.26),
+    0 0 26px rgba(255,255,255,.18);
+  pointer-events:none;
+}
+.cell:not(.ohg).gordGlow::before{
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.34) inset,
+    0 0 18px rgba(255,255,255,.34),
+    0 0 34px rgba(255,255,255,.22);
+}
+
+@keyframes gordPulse{0%{opacity:.2}40%{opacity:1}100%{opacity:.25}}
+
+.cell.spawnGlow::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border-radius:10px;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,.26) inset,
+    0 0 18px rgba(255,255,255,.28),
+    0 0 34px rgba(255,255,255,.18);
+  pointer-events:none;
+}
+
+#buttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+button,input{
+  background:var(--btn);color:#ddd;border:1px solid #444;padding:4px 8px;cursor:pointer
+}
+.speed{width:180px}
+body.fs button, body.fs input{background:var(--btnfs);color:#eee}
+
+#seedRow{
+  display:flex; gap:6px; align-items:center; flex-wrap:wrap;
+  margin-top:6px;
+}
+#seedInput{
+  width:160px;
+  padding:4px 8px;
+  border:1px solid #444;
+  background:#0f0f0f;
+  color:#ddd;
+}
+body.fs #seedInput{background:#0b0b0b;color:#eee;border-color:#444}
+#seedApply{padding:4px 8px}
+
+#belowBar{
+  margin-top:10px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.12);
+  padding:10px;
+}
+body.fs #belowBar{
+  background:rgba(0,0,0,.45);
+  border-color:rgba(255,255,255,.10);
+}
+
+#fsLabels{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  font-size:12px;
+  margin-bottom:8px;
+  opacity:.98;
+}
+#fsLabels span{
+  padding:2px 6px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:4px;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+}
+body.fs #fsLabels span{border-color:rgba(255,255,255,.14)}
+
+@keyframes lblPulse{
+  0%   { box-shadow:0 0 0 rgba(255,255,255,0); transform:translateY(0); }
+  50%  { box-shadow:0 0 14px rgba(255,255,255,.30); transform:translateY(-1px); }
+  100% { box-shadow:0 0 0 rgba(255,255,255,0); transform:translateY(0); }
+}
+#fsLabels span.pulse{
+  border-color:rgba(255,255,255,.55);
+  animation:lblPulse 1.05s ease-in-out infinite;
+}
+body.fs #fsLabels span.pulse{
+  border-color:rgba(242,231,207,.55);
+  animation:lblPulse 1.05s ease-in-out infinite;
+}
+
+#fsBarCenter{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.fsSeg{
+  width:24px;height:10px;border-radius:2px;
+  border:1px solid rgba(255,255,255,.25);
+  opacity:.55;
+}
+body.fs .fsSeg{border-color:rgba(255,255,255,.18)}
+.fsSeg.on{opacity:1;box-shadow:none}
+
+#debug{
+  margin-top:8px;
+  padding:6px;
+  background:#111;
+  border:1px solid #333;
+  font-size:12px;
+  white-space:pre-wrap;
+  line-height:1.25
+}
+body.fs #debug{
+  background:#060606;
+  border-color:rgba(255,255,255,.10);
+  color:rgba(242,231,207,.92);
+}
+
+#rightPanel{display:flex;flex-direction:column;gap:10px;position:relative;z-index:10}
+
+#paytableWrap{
+  background:var(--panel2);
+  border:1px solid var(--border);
+  padding:10px;
+  position:relative;
+}
+body.fs #paytableWrap{
+  background:#0c0c0c;
+  border-color:rgba(255,255,255,.10);
+}
+
+#paytableImg{
+  width:606px;
+  height:447px;
+  object-fit:contain;
+  display:block;
+  background:#000;
+  border:1px solid #222;
+}
+
+#paytableStatus{
+  position:absolute;
+  left:12px; right:12px; bottom:12px;
+  font-size:12px;
+  color:#ddd;
+  background:rgba(0,0,0,.65);
+  border:1px solid rgba(255,255,255,.12);
+  padding:6px 8px;
+  display:none;
+}
+#paytableStatus.show{display:block}
+
+/* FS-END POPUP */
+#fsEndOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.62);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:10050;
+}
+#fsEndOverlay.open{display:flex}
+#fsEndCard{
+  width:520px;
+  background:#0f0f0f;
+  border:1px solid #444;
+  padding:12px;
+}
+#fsEndCard h3{
+  margin:0 0 10px 0;
+  font-size:14px;
+}
+#fsEndCard .kv{font-size:13px}
+#fsEndClose{
+  margin-top:10px;
+  width:100%;
+  padding:8px 10px;
+  border:1px solid #444;
+  background:#1a1a1a;
+  color:#eee;
+  cursor:pointer;
+}
+#fsEndClose:hover{border-color:#666}
+
+/* DEBUG ACTIONS (compact) */
+#dbgRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:8px;
+}
+.dbgBtn{
+  background:var(--btn);color:#ddd;border:1px solid #444;
+  padding:4px 8px; cursor:pointer;
+  font-size:12px;
+}
+.dbgBtn:hover{border-color:#666}
+body.fs .dbgBtn{background:var(--btnfs);color:#eee}
+
+/* GRIDMODE + WAVES */
+#modeRow{display:flex;gap:6px;flex-wrap:wrap}
+.modeBtn{
+  flex:1;
+  background:var(--btn);color:#ddd;border:1px solid #444;
+  padding:6px 8px; cursor:pointer; font-size:12px;
+}
+.modeBtn:hover{border-color:#666}
+.modeBtn.sel{border-color:#fff; box-shadow:0 0 0 1px rgba(255,255,255,.28) inset}
+.modeBtn[disabled]{opacity:.45;cursor:not-allowed}
+body.fs .modeBtn{background:var(--btnfs);color:#eee}
+
+#wavesBox{border:1px solid rgba(255,255,255,.10);padding:8px;background:rgba(0,0,0,.22)}
+body.fs #wavesBox{border-color:rgba(255,255,255,.10);background:rgba(0,0,0,.28)}
+#waveBar{
+  height:10px;border-radius:2px;
+  border:1px solid rgba(255,255,255,.20);
+  background:rgba(255,255,255,.08);
+  overflow:hidden;
+  margin-top:6px;
+}
+#waveFill{height:100%;width:0%}
+#waveStatePill{
+  display:inline-block;
+  padding:2px 6px;border:1px solid rgba(255,255,255,.18);
+  border-radius:4px;font-size:12px
+}
+
+/* PAYTABLE EDITOR */
+#payEditOverlay{position:fixed;inset:0;background:rgba(0,0,0,.62);display:none;align-items:center;justify-content:center;z-index:10060}
+#payEditOverlay.open{display:flex}
+#payEditSheet{width:760px;max-height:78vh;overflow:auto;background:#0f0f0f;border:1px solid #444;padding:12px}
+#payEditGrid{display:grid;grid-template-columns:180px repeat(3,1fr);gap:6px 8px;align-items:center}
+.payHdr{font-weight:bold;font-size:12px;color:#ddd;padding:6px 4px;border-bottom:1px solid #333}
+.payRowLbl{font-size:12px;color:#ddd;padding:6px 4px}
+.payInp{width:100%;padding:6px 8px;border:1px solid #444;background:#111;color:#eee;font-family:monospace;font-size:12px}
+
+
+/* LAYOUT CLICK SAFETY */
+#centerPanel{pointer-events:auto}
+#rightPanel{pointer-events:auto}
+#paytableWrap{pointer-events:auto}
+#btnPayEdit{pointer-events:auto}
+
+
+/* STRIP TABLE (below debug) */
+#stripTable{
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.12);
+  padding:10px;
+}
+body.fs #stripTable{
+  background:rgba(0,0,0,.45);
+  border-color:rgba(255,255,255,.10);
+}
+#stripTable h4{
+  margin:0 0 8px 0;
+  font-size:13px;
+  letter-spacing:.3px;
+}
+.stripTbl{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+}
+.stripTbl th,.stripTbl td{
+  border:1px solid rgba(255,255,255,.12);
+  padding:4px 6px;
+  vertical-align:top;
+}
+.stripTbl th{
+  background:rgba(255,255,255,.06);
+  text-align:left;
+}
+.stripMono{
+  font-family:monospace;
+  font-size:11px;
+  white-space:pre-wrap;
+  word-break:break-word;
+  max-height:160px;
+  overflow:auto;
+  display:block;
+}
+.stripPill{
+  display:inline-block;
+  padding:1px 6px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  margin:0 6px 6px 0;
+  font-size:11px;
+  opacity:.95;
+}
+/* STRIP FULL EXPAND */
+.stripToggle{
+  padding:3px 8px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.06);
+  color:inherit;
+  cursor:pointer;
+  border-radius:6px;
+  font-size:11px;
+}
+.stripToggle:hover{border-color:rgba(255,255,255,.35)}
+.stripFull{display:none;margin-top:6px}
+.stripFull.open{display:block}
+.stripFull pre{
+  margin:0;
+  padding:8px;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.12);
+  max-height:220px;
+  overflow:auto;
+  white-space:pre-wrap;
+  word-break:break-word;
+  font-size:11px;
+}
+
+</style>
+</head>
+
+<body>
+<div id="shell">
+  <div id="leftPanel" class="panel">
+    <div>
+      <div class="boxTitle">BUDGET</div>
+      <div class="kv">
+        <div class="k">Budget</div><div class="v bigNum" id="uiBudget">0.00</div>
+        <div class="k">Bet</div><div class="v" id="uiBet">0.00</div>
+        <div class="k">Wager</div><div class="v" id="uiWager">0.00</div>
+        <div class="k">Grid</div><div class="v" id="uiGridMode">3×5</div>
+        <div class="k">Mode</div><div class="v" id="uiMode">BASE</div>
+        <div class="k">FS Bank</div><div class="v" id="uiFsBank">0</div>
+        <div class="k">Seed</div><div class="v" id="uiSeed">—</div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div>
+      <div class="boxTitle">GRID MODE</div>
+      <div id="modeRow">
+        <button class="modeBtn" id="mode3">3×5</button>
+        <button class="modeBtn" id="mode6">6×5</button>
+        <button class="modeBtn" id="mode9">9×5</button>
+      </div>
+      <div class="note" style="margin-top:6px">
+        Lines zählen nur in aktiven Spielfeldern. (Im FS-Modus gesperrt.)
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="hr"></div>
+
+<div>
+      <div class="boxTitle">BET</div>
+      <div id="betRow">
+        <button id="betBtn" title="Einsatz anzeigen">Bet: <span id="betBtnVal">0.10</span></button>
+        <button id="betDropBtn" title="Bet auswählen">▾</button>
+      </div>
+      <div class="note" style="margin-top:6px">
+        0.10–1.00 (0.10) · 1.00–50.00 (0.50) · 50–100 (5) · 100–500 (10) · 500–1000 (50)
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div>
+      <div class="boxTitle">WIN</div>
+      <div class="kv">
+        <div class="k">Win (this spin)</div><div class="v" id="uiWinSpin">0.00</div>
+        <div class="k">Pending (buffer)</div><div class="v" id="uiWinBuffer">0.00</div>
+        <div class="k">FS buffer</div><div class="v" id="uiFsBuffer">0.00</div>
+      </div>
+      <div class="note" style="margin-top:6px">
+        Budget-Update nur in BET_APPLY und SPIN_END / FS_END.
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div>
+      <div class="boxTitle">KASKADE</div>
+      <div class="kv">
+        <div class="k">Kaskade</div><div class="v" id="uiCascade">0</div>
+        <div class="k">Next FS</div><div class="v" id="uiNextFs">K4</div>
+      </div>
+      <div class="note" style="margin-top:6px">
+        FS-Trigger: K4 +10 · K5 +20 · K6 +30 · K7 +40 · K8 +50
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="hr"></div>
+
+<div>
+      <div class="boxTitle">SPINS</div>
+      <div class="kv">
+        <div class="k">Spins (total)</div><div class="v" id="uiSpinCount">0</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="centerPanel">
+    <div id="game">
+      <div id="grid"></div>
+
+      <div id="buttons">
+        <button id="btnSpin">SPIN</button>
+        <button id="btnEngineTick">ENGINE-TICK</button>
+        <button id="btnDrop1">DROP 1</button>
+        <button id="btnDropFull">DROP FULL</button>
+        <button id="btnAutoSpin">AUTO-SPIN</button>
+        <button id="btnStopAuto">STOP</button>
+
+        <button id="btnHit">HIT-MARKER</button>
+        <button id="btnPuff1">PUFF 1</button>
+        <button id="btnPuff2">PUFF 2</button>
+        <button id="btnLocher">LOCHER</button>
+
+        <button id="btnLeft">←</button>
+        <button id="btnRight">→</button>
+        <button id="btnUp">↑</button>
+        <button id="btnDown">↓</button>
+
+        <input id="speed" class="speed" type="range" min="20" max="300" value="160"
+               title="links schneller, rechts langsamer (Default Mitte = schnell)"/>
+      </div>
+
+      <div id="seedRow">
+        <input id="seedInput" placeholder="Seed (1..9999 oder Text)" />
+        <button id="seedApply" title="Seed setzen (reset Budget + Spins)">SET SEED</button>
+      </div>
+
+      <div id="dbgRow" aria-label="Debug Actions">
+        <button class="dbgBtn" id="btnInstReset" title="Nur Instrumentation/Log reset (ohne Seed/Wallet)">RESET INST</button>
+        <button class="dbgBtn" id="btnStatReset" title="Counter/Log zurücksetzen">STAT RESET</button>
+        <button class="dbgBtn" id="btnSim1000" title="1000 Spins ohne Render/Sleeps (deterministisch per Seed)">SIM 1000 SPINS</button>
+        <button class="dbgBtn" id="btnSim10000" title="10000 Spins ohne Render/Sleeps (deterministisch per Seed)">SIM 10000 SPINS</button>
+        <button class="dbgBtn" id="btnSim100" title="100 Spins ohne Render/Sleeps">SIM 100 SPINS</button>
+        <button class="dbgBtn" id="btnSimDrops" title="2000 Drop-Steps (WholeGrid Visible, aber headless)">SIM 2000 DROPS</button>
+        <button class="dbgBtn" id="btnStatToggle" title="Debug-Log im Debug-Block (an/aus)">LOG ON/OFF</button>
+        <button class="dbgBtn" id="btnStatCopy" title="Stat-Summary in die Konsole">STAT -> CONSOLE</button>
+
+        <button class="dbgBtn" id="btnAfterdropA" title="Afterdrop Mode A (leicht)">AFTERDROP A</button>
+        <button class="dbgBtn" id="btnAfterdropB" title="Afterdrop Mode B (mittel)">AFTERDROP B</button>
+        <button class="dbgBtn" id="btnAfterdropC" title="Afterdrop Mode C (stark)">AFTERDROP C</button>
+      </div>
+
+      <div id="belowBar" aria-label="Kaskade/FS Leiste unten">
+        <div id="fsLabels">
+          <span data-key="3">3</span><span data-key="2">2</span><span data-key="1">1</span>
+          <span data-key="+10">+10FS</span><span data-key="+20">+20FS</span><span data-key="+30">+30FS</span><span data-key="+40">+40FS</span><span data-key="+50">+50FS</span>
+        </div>
+        <div id="fsBarCenter"></div>
+        <div class="note" style="margin-top:8px">
+          Kaskade: <span id="uiCascade2">0</span> · FS Bank: <span id="uiFsBank2">0</span> · Mode: <span id="uiMode2">BASE</span>
+        </div>
+      </div>
+
+      <div id="debug"></div>
+<div id="stripTable" class="panel" style="margin-top:10px"></div>
+    </div>
+  </div>
+
+  <div id="rightPanel" class="panel">
+    <div id="paytableWrap">
+      <div class="boxTitle">PAYTABLE</div>
+<button id="btnPayEdit" style="margin:8px 0 6px 0;width:100%;padding:8px 10px;border:1px solid #444;background:#1a1a1a;color:#eee;cursor:pointer">PAYTABLE EDIT</button>
+      <img id="paytableImg" alt="Paytable"/>
+      <div id="paytableStatus"></div>
+      <div class="note" style="margin-top:8px">
+        Base: bilder/paytable/gordslider-paytable.(jpg/jpeg/png/webp)<br/>
+        FS: bilder/paytable/gordslider-paytable-fs.(jpg/jpeg/png/webp)
+      </div>
+    </div>
+
+
+    <div id="rightAuxRow">
+      <div class="auxCard" aria-label="Waves Anzeige">
+        <div class="boxTitle">WAVES ⚡</div>
+        <div id="wavesBox">
+          <div style="display:flex;justify-content:space-between;gap:8px;align-items:center">
+            <div><span id="waveStatePill">🟦 COLD</span></div>
+            <div style="font-size:12px;opacity:.95"><span id="wavePulse">—</span></div>
+          </div>
+          <div id="waveBar"><div id="waveFill"></div></div>
+          <div class="note" style="margin-top:6px">
+            Nur Anzeige (Thermometer) – keine Logik-Eingriffe.
+          </div>
+        </div>
+      </div>
+
+      <div class="auxCard" aria-label="FS Buy">
+        <div class="boxTitle">FS BUY</div>
+        <div id="buyRow">
+          <button class="buyBtn" id="buy10">+10fs buy (bet×88)</button>
+          <button class="buyBtn" id="buy20">+20fs buy (bet×166)</button>
+          <button class="buyBtn" id="buy30">+30fs buy (bet×352)</button>
+          <button class="buyBtn" id="buy50">+50fs buy (bet×666)</button>
+        </div>
+        <div class="note" style="margin-top:6px">
+          Kaufkosten berücksichtigen Grid-Mode (Wager). (Im FS-Modus gesperrt.)
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="betOverlay" role="dialog" aria-modal="true" aria-label="Bet Auswahl">
+  <div id="betSheet">
+    <h3>Bet wählen</h3>
+    <div id="betGrid"></div>
+    <div class="note" style="margin-top:10px">Tippe außerhalb oder drücke Esc zum Schließen.</div>
+  </div>
+</div>
+
+<div id="fsEndOverlay" role="dialog" aria-modal="true" aria-label="FS Ergebnis">
+  <div id="fsEndCard">
+    <h3>FREISPIELE – Ergebnis</h3>
+    <div class="kv">
+      <div class="k">FS Spins</div><div class="v" id="uiFsEndSpins">0</div>
+      <div class="k">Win (FS total)</div><div class="v" id="uiFsEndWin">0.00</div>
+    </div>
+    <button id="fsEndClose">OK</button>
+  </div>
+</div>
+
+<script>
+(()=>{
+
+function xmur3(str){
+  let h=1779033703 ^ str.length;
+  for(let i=0;i<str.length;i++){
+    h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+    h = (h<<13) | (h>>>19);
+  }
+  return function(){
+    h = Math.imul(h ^ (h>>>16), 2246822507);
+    h = Math.imul(h ^ (h>>>13), 3266489909);
+    h ^= (h>>>16);
+    return h>>>0;
+  };
+}
+function mulberry32(a){
+  return function(){
+    let t = a += 0x6D2B79F5;
+    t = Math.imul(t ^ (t>>>15), t | 1);
+    t ^= t + Math.imul(t ^ (t>>>7), t | 61);
+    return ((t ^ (t>>>14))>>>0) / 4294967296;
+  };
+}
+
+let seedLabel='—';
+let seedStateFn=null;
+let RNG=Math.random;
+
+const W=5,H=9;
+const gridEl=document.getElementById('grid');
+const debugEl=document.getElementById('debug');
+const speedEl=document.getElementById('speed');
+
+const uiBudgetEl=document.getElementById('uiBudget');
+const uiBetEl=document.getElementById('uiBet');
+const uiWagerEl=document.getElementById('uiWager');
+const uiGridModeEl=document.getElementById('uiGridMode');
+
+const uiModeEl=document.getElementById('uiMode');
+const uiFsBankEl=document.getElementById('uiFsBank');
+const uiWinSpinEl=document.getElementById('uiWinSpin');
+const uiWinBufferEl=document.getElementById('uiWinBuffer');
+const uiFsBufferEl=document.getElementById('uiFsBuffer');
+const uiCascadeEl=document.getElementById('uiCascade');
+const uiCascade2=document.getElementById('uiCascade2');
+const uiFsBank2=document.getElementById('uiFsBank2');
+const uiMode2=document.getElementById('uiMode2');
+const uiNextFs=document.getElementById('uiNextFs');
+const uiSpinCount=document.getElementById('uiSpinCount');
+const uiSeed=document.getElementById('uiSeed');
+
+const paytableImg=document.getElementById('paytableImg');
+const paytableStatus=document.getElementById('paytableStatus');
+
+const betBtn=document.getElementById('betBtn');
+const betDropBtn=document.getElementById('betDropBtn');
+const betBtnVal=document.getElementById('betBtnVal');
+const betOverlay=document.getElementById('betOverlay');
+const betGrid=document.getElementById('betGrid');
+
+const buy10=document.getElementById('buy10');
+const buy20=document.getElementById('buy20');
+const buy30=document.getElementById('buy30');
+const buy50=document.getElementById('buy50');
+
+const fsBarCenter=document.getElementById('fsBarCenter');
+const fsLabelSpans=[...document.querySelectorAll('#fsLabels span')];
+
+const fsEndOverlay=document.getElementById('fsEndOverlay');
+const fsEndClose=document.getElementById('fsEndClose');
+const uiFsEndSpins=document.getElementById('uiFsEndSpins');
+const uiFsEndWin=document.getElementById('uiFsEndWin');
+
+const seedInput=document.getElementById('seedInput');
+const seedApply=document.getElementById('seedApply');
+
+/* WAVES UI */
+const waveStatePill=document.getElementById('waveStatePill');
+const waveFill=document.getElementById('waveFill');
+const wavePulseEl=document.getElementById('wavePulse');
+
+/* GRIDMODE UI */
+const mode3Btn=document.getElementById('mode3');
+const mode6Btn=document.getElementById('mode6');
+const mode9Btn=document.getElementById('mode9');
+
+function rand(){ return RNG(); }
+function randInt(a,b){ return a + Math.floor(rand()*(b-a+1)); }
+function pickFrom(arr){ return arr[Math.floor(rand()*arr.length)]; }
+function mod(n,m){ return ((n%m)+m)%m; }
+function clamp(x,a,b){ return Math.max(a,Math.min(b,x)); }
+
+function pct(n,d){ return (d>0) ? (n/d*100) : 0; }
+function fmt1(x){ return (Math.round(x*10)/10).toFixed(1); }
+function fmt2(x){ return (Math.round(x*100)/100).toFixed(2); }
+
+/* =======================================================================
+   GRID MODES (3/6/9 active window)
+======================================================================= */
+let gridMode=3; // 3|6|9 (active rows = mode)
+function wagerMult(){ return (gridMode===3)?1:(gridMode===6)?2:3; }
+
+// Multi-Spielfeld: 3×5 => [6], 6×5 => [6,3], 9×5 => [6,3,0] (bottom -> top)
+function activeFieldBasesBottomToTop(){
+  if(gridMode===3) return [6];
+  if(gridMode===6) return [6,3];
+  return [6,3,0];
+}
+
+function activeBaseRow(){
+  const bases=activeFieldBasesBottomToTop();
+  return bases[bases.length-1];
+} // top row of active window
+function isRowActive(r){
+  const bases=activeFieldBasesBottomToTop();
+  for(const b of bases){
+    if(r>=b && r<=b+2) return true;
+  }
+  return false;
+}
+function ohgRows(){ return activeBaseRow(); } // rows above active Spielfeld (visually + priming)
+function isRowOHG(r){ return r < ohgRows(); }
+function setGridMode(m){
+  if(mode==='FS') return; // locked during FS
+  if(m!==3 && m!==6 && m!==9) return;
+  gridMode=m;
+  lastTransition='GRIDMODE_'+m;
+  render();
+}
+mode3Btn.onclick=()=>setGridMode(3);
+mode6Btn.onclick=()=>setGridMode(6);
+mode9Btn.onclick=()=>setGridMode(9);
+
+/* =======================================================================
+   WAVES (feel indicator)
+======================================================================= */
+let waveState='COLD';      // COLD | HOT | COOLDOWN
+let waveMeter=0;           // 0..100
+let waveHotLeft=0;
+let waveCooldownLeft=0;
+let wavePulse=false;
+
+function waveSetPill(){
+  if(waveState==='COLD'){
+    waveStatePill.textContent='🟦 COLD';
+    waveFill.style.background='#2f7bff';
+  }else if(waveState==='HOT'){
+    waveStatePill.textContent='🟧 HOT ⚡';
+    waveFill.style.background='#ff8a00';
+  }else{
+    waveStatePill.textContent='⬜ COOLDOWN';
+    waveFill.style.background='#bbbbbb';
+  }
+  waveFill.style.width = clamp(waveMeter,0,100).toFixed(0)+'%';
+  wavePulseEl.textContent = wavePulse ? '💓' : '—';
+}
+function waveTickAfterSpin({hadHit, maxK, winAdded}){
+  // charge by "quiet" and by "small wins"; discharge by huge wins
+  const inFS=(mode==='FS');
+
+  // base charge
+  if(!hadHit) waveMeter += 7;
+  else waveMeter += 3;
+
+  // cascade charge
+  if(maxK>=2) waveMeter += 6;
+  if(maxK>=3) waveMeter += 8;
+  if(maxK>=4) waveMeter += 10;
+
+  // win damping if too huge
+  if(winAdded > (spinBetFrozen*10)) waveMeter -= 12;
+
+  // state machine
+  if(waveState==='COLD'){
+    if(waveMeter>=100){
+      waveState='HOT';
+      waveMeter=100;
+      waveHotLeft = inFS ? randInt(8,16) : randInt(5,12);
+      wavePulse=true;
+    }else{
+      wavePulse = (waveMeter>=70);
+    }
+  } else if(waveState==='HOT'){
+    wavePulse=true;
+    waveHotLeft--;
+    // during HOT slowly leak
+    waveMeter -= inFS ? 6 : 8;
+    if(waveHotLeft<=0){
+      waveState='COOLDOWN';
+      waveCooldownLeft = inFS ? randInt(4,7) : randInt(3,6);
+      wavePulse=false;
+    }
+  } else { // COOLDOWN
+    wavePulse=false;
+    waveCooldownLeft--;
+    waveMeter -= 10;
+    if(waveCooldownLeft<=0){
+      waveState='COLD';
+    }
+  }
+
+  waveMeter = clamp(waveMeter,0,100);
+  waveSetPill();
+}
+
+/* =======================================================================
+   INSTRUMENTATION (kept from Analyse D)
+======================================================================= */
+let HEADLESS=false;
+let LOG_ENABLED=true;
+
+let SIM_RUNNING=false;
+let SIM_ABORT=false;
+let SIM_KIND='—';
+
+const WAVE_WINDOW=50;
+
+function makeKHist(){ return new Array(10).fill(0); }
+function kBin(maxK){ if(maxK<=0) return 0; if(maxK>=9) return 9; return maxK; }
+function fmt0(x){ return String(Math.round(x)); }
+
+const STATS={
+  startedAt: Date.now(),
+  seedAtReset: '—',
+
+  spins:0,
+  spins_base:0,
+  spins_fs:0,
+
+  wager_base:0,
+  cost_fsBuy:0,
+  paid_total:0,
+  paid_base:0,
+  paid_fs:0,
+
+  hitScans:0,
+  spinsWithHit:0,
+  spinsNoHit:0,
+  hitsFoundLines:0,
+  hitsFoundCells:0,
+
+  spinsWithHitAndGord:0,
+  spinsWithHitNoGord:0,
+  hitLinesWithGord:0,
+  hitLinesNoGord:0,
+
+  cascadesTotal:0,
+  cascadesMaxSeen:0,
+  cascadesWithAnyHit:0,
+  maxCascadeHist: makeKHist(),
+  hitLinesByK: makeKHist(),
+  hitCellsByK: makeKHist(),
+
+  fsAwardedTotal:0,
+  fsAwardsCount:0,
+  fsBuysCount:0,
+
+  gord_set:0,
+  gord_overwrite:0,
+  gord_inject:0,
+  gord_settleMini:0,
+  gord_byTag:{},
+
+  startGord_spins:0,
+  startGord_total:0,
+  startGord_ohg:0,
+  startGord_slot:0,
+  startGord_spinsWithAny:0,
+
+  dropStepsWhole:0,
+  dropStepsCascade:0,
+  dropStepsOhg:0,
+
+  hitSpinStreak:0,
+  noHitSpinStreak:0,
+  bestHitStreak:0,
+  bestNoHitStreak:0,
+  waveHits:[],
+  waveMaxLen:WAVE_WINDOW,
+
+  lastSim:'—'
+};
+
+const LOG_RING_MAX=24;
+let LOG_RING=[];
+
+function setSimButtonsDisabled(dis){
+  const ids=['btnSim1000','btnSim10000','btnSim100','btnSimDrops','btnAutoSpin','btnSpin','btnEngineTick','btnDrop1','btnDropFull'];
+  for(const id of ids){
+    const el=document.getElementById(id);
+    if(el) el.disabled=!!dis;
+  }
+}
+
+function logEvt(msg){
+  if(!LOG_ENABLED) return;
+  const t = new Date().toISOString().slice(11,19);
+  LOG_RING.push(t+' '+msg);
+  while(LOG_RING.length>LOG_RING_MAX) LOG_RING.shift();
+}
+function bumpTag(tag){
+  STATS.gord_byTag[tag]=(STATS.gord_byTag[tag]||0)+1;
+}
+function statReset(hard){
+  STATS.startedAt=Date.now();
+  STATS.seedAtReset=seedLabel;
+
+  STATS.spins=0; STATS.spins_base=0; STATS.spins_fs=0;
+
+  STATS.wager_base=0;
+  STATS.cost_fsBuy=0;
+  STATS.paid_total=0;
+  STATS.paid_base=0;
+  STATS.paid_fs=0;
+
+  STATS.hitScans=0;
+  STATS.spinsWithHit=0;
+  STATS.spinsNoHit=0;
+  STATS.hitsFoundLines=0;
+  STATS.hitsFoundCells=0;
+
+  STATS.spinsWithHitAndGord=0;
+  STATS.spinsWithHitNoGord=0;
+  STATS.hitLinesWithGord=0;
+  STATS.hitLinesNoGord=0;
+
+  STATS.cascadesTotal=0;
+  STATS.cascadesMaxSeen=0;
+  STATS.cascadesWithAnyHit=0;
+  STATS.maxCascadeHist=makeKHist();
+  STATS.hitLinesByK=makeKHist();
+  STATS.hitCellsByK=makeKHist();
+
+  STATS.fsAwardedTotal=0;
+  STATS.fsAwardsCount=0;
+  STATS.fsBuysCount=0;
+
+  STATS.gord_set=0;
+  STATS.gord_overwrite=0;
+  STATS.gord_inject=0;
+  STATS.gord_settleMini=0;
+  STATS.gord_byTag={};
+
+  STATS.startGord_spins=0;
+  STATS.startGord_total=0;
+  STATS.startGord_ohg=0;
+  STATS.startGord_slot=0;
+  STATS.startGord_spinsWithAny=0;
+
+  STATS.dropStepsWhole=0;
+  STATS.dropStepsCascade=0;
+  STATS.dropStepsOhg=0;
+
+  STATS.hitSpinStreak=0;
+  STATS.noHitSpinStreak=0;
+  STATS.bestHitStreak=0;
+  STATS.bestNoHitStreak=0;
+  STATS.waveHits=[];
+  STATS.waveMaxLen=WAVE_WINDOW;
+
+  STATS.lastSim='—';
+
+  if(hard){ LOG_RING=[]; }
+  else { logEvt('STAT_RESET'); }
+}
+function resetInstrumentationOnly(){
+  const keepSeed=seedLabel;
+  const keepStarted=Date.now();
+  statReset(true);
+  STATS.seedAtReset=keepSeed;
+  STATS.startedAt=keepStarted;
+  logEvt('RESET_INST');
+}
+function wavePush(hitBool){
+  STATS.waveHits.push(hitBool?1:0);
+  while(STATS.waveHits.length>STATS.waveMaxLen) STATS.waveHits.shift();
+}
+function waveRate(){
+  if(!STATS.waveHits.length) return 0;
+  const s=STATS.waveHits.reduce((a,b)=>a+b,0);
+  return s/STATS.waveHits.length;
+}
+
+/* =======================================================================
+   ASSETS
+======================================================================= */
+const PATH={
+  '9':'bilder/low/140x180/slot/9.jpg',
+  '10':'bilder/low/140x180/slot/10.jpg',
+  'J':'bilder/low/140x180/slot/20j.jpg',
+  'Q':'bilder/low/140x180/slot/30q.jpg',
+  'K':'bilder/mid/140x180/slot/40k.jpg',
+  'A':'bilder/mid/140x180/slot/50a.jpg',
+  'Blitzwand':'bilder/high/140x180/slot/blitzwand.jpg',
+  'Magicboots':'bilder/high/140x180/slot/magicboots.jpg',
+  'Magicwand':'bilder/high/140x180/slot/magicwand.jpg',
+  'Schloss':'bilder/top/140x180/slot/schloss.jpg',
+  'GORD1':'bilder/gord/140x180/slot/gord1.jpg',
+  'GORD2':'bilder/gord/140x180/slot/gord2.jpg',
+  'GORD3':'bilder/gord/140x180/slot/gord3.jpg',
+
+  'P9':'bilder/low/140x180/puff/puff9.jpg',
+  'P10':'bilder/low/140x180/puff/puff10.jpg',
+  'PJ':'bilder/low/140x180/puff/puff20j.jpg',
+  'PQ':'bilder/low/140x180/puff/puff30q.jpg',
+  'PK':'bilder/mid/140x180/puff/puff40k.jpg',
+  'PA':'bilder/mid/140x180/puff/puff50a.jpg',
+  'PBlitzwand':'bilder/high/140x180/puff/puffblitzwand.jpg',
+  'PMagicboots':'bilder/high/140x180/puff/puffmagicboots.jpg',
+  'PMagicwand':'bilder/high/140x180/puff/puffmagicwand.jpg',
+  'PSchloss':'bilder/top/140x180/puff/puffschloss.jpg',
+  'PGORD1':'bilder/gord/140x180/puff/puffgord1.jpg',
+  'PGORD2':'bilder/gord/140x180/puff/puffgord2.jpg',
+  'PGORD3':'bilder/gord/140x180/puff/puffgord3.jpg'
+};
+
+const LOW=['9','10','J','Q'];
+const MID=['K','A'];
+const HIGH=['Blitzwand','Magicboots','Magicwand'];
+const TOP=['Schloss'];
+const GORDS=['GORD1','GORD2','GORD3'];
+
+/* HARD RULE: GORD only cols 1..3 (never 0,4) */
+const GORD_ALLOWED_COLS=[1,2,3];
+function isGordAllowedCol(c){ return (c===1||c===2||c===3); }
+
+/* =======================================================================
+   TUNING (Option B strips + runs)
+======================================================================= */
+const TUNE_BASE={
+  repeatP_base: 0.26,
+
+  run_low_min: 1, run_low_max: 2,
+  run_mid_min: 1, run_mid_max: 4,
+  run_high_min: 1, run_high_max: 2,
+  run_top_min: 1, run_top_max: 1,
+
+  lightMixSwapsRatio: 0.04,
+
+  p_gord_base: 0.016,
+  p_gord_delta: 0.030,
+  p_gord_delta2: 0.016,
+
+  highlightStepMs_min: 90,
+  highlightCellPauseMs: 140,
+  highlightLinePauseMs: 220,
+  puffPauseMs: 320,
+  nullPauseMs: 260,
+  preDropPauseMs: 220,
+
+  dropStepMs_min: 16
+};
+
+const TUNE_FS={
+  repeatP_base: 0.34,
+
+  run_low_min: 1, run_low_max: 2,
+  run_mid_min: 1, run_mid_max: 4,
+  run_high_min: 1, run_high_max: 2,
+  run_top_min: 1, run_top_max: 1,
+
+  lightMixSwapsRatio: 0.04,
+
+  p_gord_base: 0.020,
+  p_gord_delta: 0.038,
+  p_gord_delta2: 0.020,
+
+  highlightStepMs_min: 90,
+  highlightCellPauseMs: 140,
+  highlightLinePauseMs: 220,
+  puffPauseMs: 320,
+  nullPauseMs: 260,
+  preDropPauseMs: 220,
+
+  dropStepMs_min: 16
+};
+
+let mode='BASE';
+function TUNE(){ return (mode==='FS') ? TUNE_FS : TUNE_BASE; }
+
+/* =======================================================================
+   MONEY / FS
+======================================================================= */
+let budget=666666;
+let bet=0.10;
+let lastBaseBet=0.10;
+
+let freeSpinsBank=0;
+let spinBetFrozen=0;
+let winBuffer=0;
+let winThisSpin=0;
+let fsSessionBuffer=0;
+
+let fsSessionSpins=0;
+let totalSpinCounter=0;
+
+function canAfford(x){ return budget >= x; }
+
+function setBuyButtonsEnabled(){
+  const dis=(mode==='FS');
+  buy10.disabled=dis; buy20.disabled=dis; buy30.disabled=dis; buy50.disabled=dis;
+}
+
+function setMode(newMode){
+  mode=newMode;
+  document.body.classList.toggle('fs', mode==='FS');
+  syncUI();
+  loadPaytableForMode(mode);
+  // lock gridmode buttons in FS
+  const lock=(mode==='FS');
+  mode3Btn.disabled=lock;
+  mode6Btn.disabled=lock;
+  mode9Btn.disabled=lock;
+}
+
+/* FS end popup */
+function openFsEndPopup(spins, win){
+  uiFsEndSpins.textContent=String(spins);
+  uiFsEndWin.textContent=fmt2(win);
+  fsEndOverlay.classList.add('open');
+}
+function closeFsEndPopup(){ fsEndOverlay.classList.remove('open'); }
+fsEndClose.onclick=closeFsEndPopup;
+fsEndOverlay.addEventListener('click',(e)=>{ if(e.target===fsEndOverlay) closeFsEndPopup(); });
+
+function fsBuy(fsCount, mult){
+  if(mode==='FS'){ lastTransition='FS_BUY_BLOCKED_IN_FS'; render(); return; }
+  const cost=bet*wagerMult()*mult;
+  if(!canAfford(cost)){ lastTransition='FS_BUY_BLOCKED_NO_BUDGET'; render(); return; }
+
+  budget-=cost;
+  STATS.cost_fsBuy += cost;
+  STATS.fsBuysCount += 1;
+
+  lastBaseBet=bet;
+  freeSpinsBank+=fsCount;
+
+  fsSessionSpins=0;
+  setMode('FS');
+
+  lastTransition=`FS_BUY_${fsCount}_COST_${fmt2(cost)}`;
+  syncUI(); render();
+}
+
+buy10.onclick=()=>fsBuy(10,88);
+buy20.onclick=()=>fsBuy(20,166);
+buy30.onclick=()=>fsBuy(30,352);
+buy50.onclick=()=>fsBuy(50,666);
+
+/* =======================================================================
+   PAYTABLE LOADER
+======================================================================= */
+function showPaytableStatus(msg){ paytableStatus.textContent=msg; paytableStatus.classList.add('show'); }
+function hidePaytableStatus(){ paytableStatus.classList.remove('show'); }
+
+async function tryLoadImg(url){
+  return new Promise((resolve)=>{
+    const onLoad=()=>{
+      cleanup();
+      const w=paytableImg.naturalWidth||0;
+      const h=paytableImg.naturalHeight||0;
+      resolve({ok:(w>0&&h>0), w, h});
+    };
+    const onErr=()=>{ cleanup(); resolve({ok:false,w:0,h:0}); };
+    const cleanup=()=>{
+      paytableImg.removeEventListener('load', onLoad);
+      paytableImg.removeEventListener('error', onErr);
+    };
+    paytableImg.addEventListener('load', onLoad, {once:true});
+    paytableImg.addEventListener('error', onErr, {once:true});
+    const v='v='+Date.now();
+    paytableImg.src=url + (url.includes('?')?'&':'?') + v;
+  });
+}
+
+async function loadPaytableForMode(m){
+  const basePath=(m==='FS')
+    ? 'bilder/paytable/gordslider-paytable-fs'
+    : 'bilder/paytable/gordslider-paytable';
+  const exts=['.jpg','.jpeg','.png','.webp'];
+  for(const ext of exts){
+    const candidate=basePath+ext;
+    showPaytableStatus('Loading: '+candidate);
+    const res=await tryLoadImg(candidate);
+    if(res.ok){
+      showPaytableStatus('Loaded: '+candidate+' ('+res.w+'×'+res.h+')');
+      setTimeout(()=>hidePaytableStatus(),1200);
+      return;
+    }
+  }
+  showPaytableStatus('ERROR: keine Paytable-Datei gefunden (jpg/jpeg/png/webp geprüft).');
+}
+
+/* =======================================================================
+   KASKADENFARBEN
+======================================================================= */
+function cascadeColor(level){
+  if(level<=0) return '#ffffff';
+  if(level===1) return '#ff2d2d';
+  if(level===2) return '#ff8a00';
+  if(level===3) return '#ffd400';
+  if(level===4) return '#00d46a';
+  if(level===5) return '#2f7bff';
+  if(level===6) return '#3f51ff';
+  if(level===7) return '#a64cff';
+  if(level===8) return '#ffffff';
+  return (level%2===1) ? '#000000' : '#ffffff';
+}
+
+/* =======================================================================
+   UI SYNC
+======================================================================= */
+let cascadeLevel=0;
+
+function pulseFsLabelForCascade(){
+  fsLabelSpans.forEach(s=>s.classList.remove('pulse'));
+  let key=null;
+  if(cascadeLevel===1) key='3';
+  else if(cascadeLevel===2) key='2';
+  else if(cascadeLevel===3) key='1';
+  else if(cascadeLevel===4) key='+10';
+  else if(cascadeLevel===5) key='+20';
+  else if(cascadeLevel===6) key='+30';
+  else if(cascadeLevel===7) key='+40';
+  else if(cascadeLevel===8) key='+50';
+  if(!key) return;
+  const el=fsLabelSpans.find(s=>s.dataset.key===key);
+  if(el) el.classList.add('pulse');
+}
+
+function updateFsBarCenter(){
+  const colors=['#ff2d2d','#ff8a00','#ffd400','#00d46a','#2f7bff','#3f51ff','#a64cff','#ffffff'];
+  fsBarCenter.innerHTML='';
+  const maxSeg=12;
+  for(let i=1;i<=maxSeg;i++){
+    const d=document.createElement('div');
+    d.className='fsSeg'+(cascadeLevel===i?' on':'');
+    let col;
+    if(i<=8) col=colors[i-1];
+    else col=(i%2===1)?'#000000':'#ffffff';
+    d.style.background=col;
+    d.title='Kaskade '+i;
+    fsBarCenter.appendChild(d);
+  }
+}
+
+function syncUI(){
+  uiBudgetEl.textContent=fmt2(budget);
+  uiBetEl.textContent=fmt2(bet);
+  betBtnVal.textContent=fmt2(bet);
+
+  const w = bet*wagerMult();
+  uiWagerEl.textContent=fmt2(w);
+  uiGridModeEl.textContent = (gridMode===3)?'3×5':(gridMode===6)?'6×5':'9×5';
+
+  uiModeEl.textContent=mode;
+  uiFsBankEl.textContent=String(freeSpinsBank);
+
+  uiWinSpinEl.textContent=fmt2(winThisSpin);
+  uiWinBufferEl.textContent=fmt2(winBuffer);
+  uiFsBufferEl.textContent=fmt2(fsSessionBuffer);
+
+  uiCascadeEl.textContent=String(cascadeLevel);
+  uiCascade2.textContent=String(cascadeLevel);
+  uiFsBank2.textContent=String(freeSpinsBank);
+  uiMode2.textContent=mode;
+
+  uiSpinCount.textContent=String(totalSpinCounter);
+  uiSeed.textContent=seedLabel;
+
+  let next='K4';
+  if(cascadeLevel>=8) next='—';
+  else if(cascadeLevel>=7) next='K8';
+  else if(cascadeLevel>=6) next='K7';
+  else if(cascadeLevel>=5) next='K6';
+  else if(cascadeLevel>=4) next='K5';
+  uiNextFs.textContent=next;
+
+  updateFsBarCenter();
+  pulseFsLabelForCascade();
+  setBuyButtonsEnabled();
+
+  // grid mode buttons state
+  mode3Btn.classList.toggle('sel', gridMode===3);
+  mode6Btn.classList.toggle('sel', gridMode===6);
+  mode9Btn.classList.toggle('sel', gridMode===9);
+
+  waveSetPill();
+}
+
+/* =======================================================================
+   BET OVERLAY
+======================================================================= */
+function buildBetList(){
+  const out=[];
+  const pushRange=(start,end,step)=>{
+    let v=start;
+    const eps=1e-9;
+    while(v<=end+eps){
+      out.push(Math.round(v*100)/100);
+      v+=step;
+    }
+  };
+  pushRange(0.10,1.00,0.10);
+  pushRange(1.50,50.00,0.50);
+  pushRange(55.00,100.00,5.00);
+  pushRange(110.00,500.00,10.00);
+  pushRange(550.00,1000.00,50.00);
+  return out;
+}
+const BETS=buildBetList();
+
+function openBetOverlay(){
+if(mode==='FS') return;
+  betGrid.innerHTML='';
+  for(const v of BETS){
+    const b=document.createElement('div');
+    b.className='betCell'+(Math.abs(v-bet)<1e-9?' sel':'');
+    b.textContent=fmt2(v);
+    b.onclick=()=>{ bet=v; syncUI(); closeBetOverlay(); };
+    betGrid.appendChild(b);
+  }
+  betOverlay.classList.add('open');
+}
+function closeBetOverlay(){ betOverlay.classList.remove('open'); }
+
+betDropBtn.onclick=openBetOverlay;
+betBtn.onclick=openBetOverlay;
+betOverlay.addEventListener('click',(e)=>{ if(e.target===betOverlay) closeBetOverlay(); });
+document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeBetOverlay(); });
+
+/* =======================================================================
+   PAYTABLE
+======================================================================= */
+const PAY_DEFAULT={
+  LOW:{3:1.0,4:3.0,5:12.0},
+  MID:{3:1.5,4:5.0,5:20.0},
+  Blitzwand:{3:3.0,4:10.0,5:50.0},
+  Magicboots:{3:5.0,4:15.0,5:100.0},
+  Magicwand:{3:5.0,4:20.0,5:200.0},
+  Schloss:{3:5.0,4:50.0,5:500.0}
+};
+let PAYLIVE = JSON.parse(JSON.stringify(PAY_DEFAULT));
+
+
+function symTier(sym){
+  if(LOW.includes(sym)) return 'LOW';
+  if(MID.includes(sym)) return 'MID';
+  if(HIGH.includes(sym)) return 'HIGH';
+  if(TOP.includes(sym)) return 'TOP';
+  return 'OTHER';
+}
+
+function payoutFor(sym,len,betUsed){
+  if(len<3) return 0;
+  const t=symTier(sym);
+  if(t==='LOW') return (PAYLIVE.LOW[len]||0)*betUsed;
+  if(t==='MID') return (PAYLIVE.MID[len]||0)*betUsed;
+  if(t==='HIGH'){ const m=PAYLIVE[sym]||null; return m?(m[len]||0)*betUsed:0; }
+  if(t==='TOP'){ const m=PAYLIVE[sym]||null; return m?(m[len]||0)*betUsed:0; }
+  return 0;
+}
+
+/* =======================================================================
+   STATE
+======================================================================= */
+const grid=[...Array(H)].map(()=>Array(W).fill(null));
+const hit=[...Array(H)].map(()=>Array(W).fill(false));
+const puff2=[...Array(H)].map(()=>Array(W).fill(false));
+const engHi=[...Array(H)].map(()=>Array(W).fill(false));
+
+let mC=2,mR=7;
+let cursorVisible=false;
+let phase='IDLE';
+let dropCursor=0;
+cursorVisible=false;
+let autoRunning=false;
+let lastTransition='INIT';
+
+let spinBusy=false;
+let spinPrimed=false;
+let cascadeBusy=false;
+
+let awardedFlags={};
+let maxCascadeThisSpin=0;
+
+let dropStepCounter=0;
+let hitRoundCounter=0;
+
+let lastGordEvent='—';
+let lastGordTag='—';
+let gordSpawnPauseRequested=false;
+
+const idx=(r,c)=>r*W+c;
+
+/* =======================================================================
+   REELS / STRIPS (Option B)
+======================================================================= */
+const stripLens=[88,88,88,88,88];
+
+function lightMix(arr,ratio){
+  const swaps=Math.floor(arr.length*ratio);
+  for(let k=0;k<swaps;k++){
+    const i=Math.floor(rand()*arr.length);
+    const j=Math.floor(rand()*arr.length);
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+}
+
+function buildStrip_Runny(len,profile){
+  const t=TUNE();
+  const parts=[
+{arr:LOW,  w:profile.low,  runMin:t.run_low_min,  runMax:t.run_low_max},
+{arr:MID,  w:profile.mid,  runMin:t.run_mid_min,  runMax:t.run_mid_max},
+{arr:HIGH, w:profile.high, runMin:t.run_high_min, runMax:t.run_high_max},
+{arr:TOP,  w:profile.top,  runMin:t.run_top_min,  runMax:t.run_top_max}
+];
+  const totalW=parts.reduce((a,p)=>a+p.w,0);
+
+  let counts=parts.map(p=>Math.max(1,Math.floor(len*(p.w/totalW))));
+  let sum=counts.reduce((a,b)=>a+b,0);
+  while(sum<len){ counts[0]++; sum++; }
+  while(sum>len){
+    for(let i=counts.length-1;i>=0 && sum>len;i--){
+      if(counts[i]>1){ counts[i]--; sum--; }
+    }
+  }
+
+  const rem=counts.slice();
+  const out=[];
+  while(out.length<len){
+    let pool=[];
+    for(let i=0;i<parts.length;i++){
+      for(let k=0;k<rem[i];k++) pool.push(i);
+    }
+    if(pool.length===0) break;
+    const pi=pool[Math.floor(rand()*pool.length)];
+    const p=parts[pi];
+    const runLen=Math.min(rem[pi], randInt(p.runMin,p.runMax), (len-out.length));
+    const sym=pickFrom(p.arr);
+    for(let r=0;r<runLen;r++) out.push(sym);
+    rem[pi]-=runLen;
+  }
+  while(out.length<len) out.push(pickFrom(LOW));
+  lightMix(out, TUNE().lightMixSwapsRatio);
+  return out.slice(0,len);
+}
+
+/* Option B Profile */
+let STRIP_CFG={len:88, weights:{low:40,mid:33,high:18,top:9}, gordCounts:{1:11,2:11,3:11}};
+function buildStripProfilesFromCfg(){
+  const w=STRIP_CFG.weights;
+  return [
+    {low:w.low, mid:w.mid, high:w.high, top:w.top, gord:0},
+    {low:w.low, mid:w.mid, high:w.high, top:w.top, gord:(STRIP_CFG.gordCounts[1]||0)},
+    {low:w.low, mid:w.mid, high:w.high, top:w.top, gord:(STRIP_CFG.gordCounts[2]||0)},
+    {low:w.low, mid:w.mid, high:w.high, top:w.top, gord:(STRIP_CFG.gordCounts[3]||0)},
+    {low:w.low, mid:w.mid, high:w.high, top:w.top, gord:0}
+  ];
+}
+function buildStripLensFromCfg(){
+  const L=Math.max(20, Math.min(400, parseInt(STRIP_CFG.len||88,10)||88));
+  return [L,L,L,L,L];
+}
+function normalizeGordInStrip(strip,targetCount){
+  targetCount = Math.max(0, Math.min(strip.length, parseInt(targetCount,10)||0));
+  const out=strip.slice();
+  const isG=(s)=>isGordSym(s);
+  let cur=0; for(const s of out) if(isG(s)) cur++;
+  if(cur>targetCount){
+    let need=cur-targetCount;
+    for(let i=out.length-1;i>=0 && need>0;i--){
+      if(isG(out[i])){ out[i]=pickFrom(LOW); need--; }
+    }
+  }
+  if(cur<targetCount){
+    let need=targetCount-cur;
+    for(let guard=0; guard<out.length*30 && need>0; guard++){
+      const i=Math.floor(rand()*out.length);
+      if(isG(out[i])) continue;
+      out[i]=pickFrom(GORDS);
+      need--; }
+  }
+  return out;
+}
+function rebuildReelsFromStripCfg(){
+  const lens=buildStripLensFromCfg();
+  const profiles=buildStripProfilesFromCfg();
+  reels = lens.map((len,i)=>({len, strip: buildStrip_Runny(len, profiles[i]), stopPtr:0, feedPtr:0}));
+  for(let i=0;i<reels.length;i++){
+    const target=(i===1||i===2||i===3)?(profiles[i].gord||0):0;
+    reels[i].strip=normalizeGordInStrip(reels[i].strip,target);
+  }
+  spinSettleNewStopPtrs();
+  fillGridFromReels();
+  clearMarkers();
+  hardResetSpinAccounting();
+  setMode(mode);
+  updateStripTable();
+  lastTransition='REELS_REBUILT_FROM_CFG';
+  render();
+}
+
+
+let reels=null;
+
+function reelSymbolAt(col,row,stopPtrOverride=null){
+  const reel=reels[col];
+  const sp=(stopPtrOverride===null)?reel.stopPtr:stopPtrOverride;
+  const offset=(H-1-row);
+  return reel.strip[ mod(sp - offset, reel.len) ];
+}
+function setStopPtr(col,newStop){
+  const reel=reels[col];
+  reel.stopPtr=mod(newStop,reel.len);
+  reel.feedPtr=mod(reel.stopPtr - H, reel.len);
+}
+function pullFromFeed(col){
+  const reel=reels[col];
+  const sym=reel.strip[ reel.feedPtr ];
+  reel.feedPtr=mod(reel.feedPtr - 1, reel.len);
+  return sym;
+}
+
+/* =======================================================================
+   SYMBOL HELPERS
+======================================================================= */
+function isPuff(s){ return typeof s==='string' && s.startsWith('P'); }
+function baseSym(s){ return isPuff(s) ? s.slice(1) : s; }
+function isGordSym(s){
+  const b=baseSym(s);
+  return typeof b==='string' && b.startsWith('GORD');
+}
+function isPgordSym(s){
+  // "PGORDx" behaves like a wild extender once a target is established
+  return isPuff(s) && isGordSym(s);
+}
+
+function puffKey(s){
+  const b=baseSym(s);
+  return PATH['P'+b] ? ('P'+b) : null;
+}
+
+/* =======================================================================
+   GORD SPAWNS
+======================================================================= */
+function spawnGlow(r,c){
+  if(HEADLESS) return;
+  const el=cells[idx(r,c)];
+  el.classList.add('spawnGlow');
+  setTimeout(()=>el.classList.remove('spawnGlow'),220);
+}
+function spawnFlicker(r,c){
+  if(HEADLESS) return;
+  spawnGlow(r,c);
+  setTimeout(()=>spawnGlow(r,c),180);
+  setTimeout(()=>spawnGlow(r,c),360);
+}
+
+function setGordAt(r,c,tag){
+  if(!isGordAllowedCol(c)) return false;
+  grid[r][c]=GORDS[Math.floor(rand()*GORDS.length)];
+  spawnFlicker(r,c);
+
+  STATS.gord_set++;
+  bumpTag(tag);
+  logEvt(`GORD set r${r}c${c} tag=${tag}`);
+
+  lastGordEvent=`GORD_AT r${r}c${c}`;
+  lastGordTag=tag;
+  lastTransition=`GORD_${tag}`;
+  return true;
+}
+
+/* overwrite chance now wave-aware (HOT -> a bit more) */
+function gordOverwriteChance(){
+  // Deprecated: Overwriter ist trigger-basiert (No-Hit) und wird nicht mehr skaliert.
+  return 0;
+}
+
+function pickOverwriteCellWeighted(tag){
+  const base=activeBaseRow();
+  const rActiveMin=base, rActiveMax=H-1;
+
+  // we prefer active window but still allow above for "stacks visible"
+  const roll=rand();
+  let rMin=0, rMax=H-1;
+  if(roll<0.62){
+    rMin=rActiveMin; rMax=rActiveMax;
+  }else if(roll<0.87){
+    rMin=Math.max(0, base-3); rMax=rActiveMin-1; // above window
+  }else{
+    rMin=0; rMax=H-1;
+  }
+
+  for(let tries=0;tries<42;tries++){
+    const r=randInt(rMin,rMax);
+    const c=GORD_ALLOWED_COLS[randInt(0,GORD_ALLOWED_COLS.length-1)];
+    const s=grid[r][c];
+    if(!s) continue;
+    if(isPuff(s)) continue;
+    return [r,c];
+  }
+  return null;
+}
+
+function maybeOverwriteGord(tag){
+  const p=gordOverwriteChance();
+  if(rand()>=p) return false;
+  const cell=pickOverwriteCellWeighted(tag);
+  if(!cell) return false;
+  const [r,c]=cell;
+  const ok=setGordAt(r,c,tag);
+  if(ok){
+    STATS.gord_overwrite++;
+    logEvt(`GORD overwrite r${r}c${c} tag=${tag}`);
+  }
+  return ok;
+}
+
+function gordChanceForCascade(){
+  // Deprecated: Inject ist deaktiviert, daher keine Cascade-Chance.
+  return 0;
+}
+
+function maybeInjectGord(sym,col,context,row){ return sym; }
+
+
+/* PURE STRIP OUTCOME: no underwriter/overwriter/hooks */
+function createIncomingSymbol(col,row,context){
+  const t=TUNE();
+  let sym=null;
+  if(row+1<H && grid[row+1][col]!==null){
+    if(rand() < t.repeatP_base){
+      sym=baseSym(grid[row+1][col]);
+    }
+  }
+  if(sym===null) sym=pullFromFeed(col);
+  sym=maybeInjectGord(sym,col,context,row);
+  return sym;
+}
+
+/* =======================================================================
+   GORD START DISTRIBUTION (Core-Batch)
+   - target 7..11 (normal)
+   - stacks visible everywhere
+   - bottom rows (r7/r8) usually 0..1 each; above more
+   - neighbor penalty bottom stronger, top weaker
+   - soft row pauses
+======================================================================= */
+function neighborCount(r,c){
+  let n=0;
+  for(const dc of [-1,1]){
+    const cc=c+dc;
+    if(cc<0||cc>=W) continue;
+    if(isGordSym(grid[r][cc])) n++;
+  }
+  return n;
+}
+function rowWeight(r){
+  // r0 top, r8 bottom
+  // bottom (r7/r8) low weight, mid-high area higher
+  if(r>=7) return 0.35;
+  if(r===6) return 0.60;
+  if(r===5) return 1.15;
+  if(r===4) return 1.35;
+  if(r===3) return 1.25;
+  if(r===2) return 1.10;
+  if(r===1) return 0.95;
+  return 0.85; // r0
+}
+function rowPauseChance(r){
+  // "jede 4. Reihe mal Pause" (soft): upper rows pause more, bottom less
+  if(r>=7) return 0.10;
+  if(r>=5) return 0.18;
+  return 0.25;
+}
+function slotBottomCapPerRow(r){
+  // bottom rows usually 0..1
+  if(r===8) return 1;
+  if(r===7) return (rand()<0.70)?1:2;
+  if(r===6) return (rand()<0.60)?2:3;
+  return 99;
+}
+function applyGordStartDistribution(){
+  // decide spin type: normal / stack / pause
+  const hot = (waveState==='HOT');
+  const fs  = (mode==='FS');
+
+  let kind='NORMAL';
+  const roll=rand();
+  const pPause = hot ? 0.08 : 0.14;
+  const pStack = hot ? 0.44 : 0.28;
+  if(roll < pPause) kind='PAUSE';
+  else if(roll < pPause + pStack) kind='STACK';
+
+  let targetMin=4, targetMax=7;
+  if(kind==='STACK'){ targetMin=7; targetMax=10; }
+  if(kind==='PAUSE'){ targetMin=1; targetMax=2; }
+
+  if(fs){
+    // FS slightly richer
+    if(kind==='NORMAL'){ targetMin=5; targetMax=8; }
+    if(kind==='STACK'){ targetMin=8; targetMax=11; }
+  }
+
+  
+  const target=randInt(targetMin,targetMax);
+
+  // per-row counter
+  const placedRow=new Array(H).fill(0);
+  let placed=0;
+
+  // stack focus band (R3-R5) sometimes
+  const stackBand = (kind==='STACK' && rand()<0.72) ? [3,5] : null;
+
+  // attempt placements
+  for(let tries=0; tries<2600 && placed<target; tries++){
+    // choose row
+    let r;
+    if(stackBand && rand()<0.70){
+      r=randInt(stackBand[0], stackBand[1]);
+    }else{
+      // weighted pick among 0..8
+      const weights=[];
+      let sum=0;
+      for(let rr=0; rr<H; rr++){
+        const w=rowWeight(rr);
+        weights.push(w); sum+=w;
+      }
+      let x=rand()*sum;
+      r=0;
+      for(let rr=0; rr<H; rr++){
+        x-=weights[rr];
+        if(x<=0){ r=rr; break; }
+      }
+    }
+
+    // soft pause per row
+    if(rand() < rowPauseChance(r)) continue;
+
+    // bottom cap logic
+    if(placedRow[r] >= slotBottomCapPerRow(r)) continue;
+
+    // pick col (1..3 only)
+    const c=GORD_ALLOWED_COLS[randInt(0,2)];
+    if(!isGordAllowedCol(c)) continue;
+
+    // skip if already gord
+    if(isGordSym(grid[r][c])) continue;
+
+// hard: avoid 3-in-a-row clusters
+if((c-1)>=0 && (c+1)<W && isGordSym(grid[r][c-1]) && isGordSym(grid[r][c+1])) continue;
+
+    // neighbor penalty
+    const neigh = neighborCount(r,c);
+    let penalty=0;
+    if(r>=7){ penalty = neigh*0.70; }     // bottom: avoid adjacent
+    else if(r>=5){ penalty = neigh*0.35; }
+    else { penalty = neigh*0.18; }        // top: allow stacks
+
+    if(rand() < penalty) continue;
+
+    if(setGordAt(r,c,'START_DIST')){
+      placed++;
+      placedRow[r]++;
+    }
+  }
+
+  if(placed>0){
+    lastTransition = `GORD_START_${kind}_${placed}/${target}`;
+  }else{
+    lastTransition = `GORD_START_NONE_${kind}`;
+  }
+}
+
+/* =======================================================================
+   GORD MOTOR (drop/hit-driven, not only inject)
+======================================================================= */
+function maybeDriveGord(tag,intensity){
+  // Deaktiviert: kein intensity/feedback Overwrite-Motor.
+  return false;
+}
+
+/* =======================================================================
+   GRID / RENDER
+======================================================================= */
+const cells=[];
+for(let r=0;r<H;r++)for(let c=0;c<W;c++){
+  const d=document.createElement('div');
+  d.className='cell';
+  gridEl.appendChild(d);
+  cells.push(d);
+}
+function flashCell(r,c){
+  if(HEADLESS) return;
+  const el=cells[idx(r,c)];
+  el.classList.add('flash');
+  setTimeout(()=>el.classList.remove('flash'),150);
+}
+
+function activeWindowIsFull(){
+  const bases=activeFieldBasesBottomToTop();
+  for(const b of bases){
+    for(let r=b;r<=b+2;r++)for(let c=0;c<W;c++){
+      if(grid[r][c]===null) return false;
+    }
+  }
+  return true;
+}
+
+function slotGridIsFull(){ // legacy: rows 6..8
+  for(let r=ohgRows();r<H;r++)for(let c=0;c<W;c++){
+    if(grid[r][c]===null) return false;
+  }
+  return true;
+}
+function ohgIsFull(){
+  for(let r=0;r<ohgRows();r++)for(let c=0;c<W;c++){
+    if(grid[r][c]===null) return false;
+  }
+  return true;
+}
+function hasPendingStatesInActive(){
+  const bases=activeFieldBasesBottomToTop();
+  for(const b of bases){
+    for(let r=b;r<=b+2;r++)for(let c=0;c<W;c++){
+      // Puff (PGORD) blockiert keine Spins. Nur echte Pending States.
+      if(hit[r][c]) return true;
+      if(puff2[r][c]) return true;
+      if(engHi[r][c]) return true;
+    }
+  }
+  return false;
+}
+function spinGateOk(){
+  return activeWindowIsFull() && !hasPendingStatesInActive() && !cascadeBusy;
+}
+
+function countGordsInRowRange(rMin,rMax){
+  let n=0;
+  for(let r=rMin;r<=rMax;r++){
+    for(let c=0;c<W;c++){
+      if(isGordSym(grid[r][c])) n++;
+    }
+  }
+  return n;
+}
+function snapshotStartGords(){
+  const total=countGordsInRowRange(0,H-1);
+  const ohg=countGordsInRowRange(0,ohgRows()-1);
+  const slot=countGordsInRowRange(ohgRows(),H-1);
+
+  STATS.startGord_spins += 1;
+  STATS.startGord_total += total;
+  STATS.startGord_ohg += ohg;
+  STATS.startGord_slot += slot;
+  if(total>0) STATS.startGord_spinsWithAny += 1;
+}
+
+function statLines_AnalyseD(){
+  const dt=(Date.now()-STATS.startedAt)/1000;
+  const sps=(STATS.spins>0)?(STATS.spins/dt):0;
+
+  const hitSpinRate=pct(STATS.spinsWithHit, STATS.spins);
+  const linesPer100=(STATS.spins>0)?(STATS.hitsFoundLines/STATS.spins*100):0;
+  const cellsPer100=(STATS.spins>0)?(STATS.hitsFoundCells/STATS.spins*100):0;
+
+  const wagerTotal=STATS.wager_base + STATS.cost_fsBuy;
+  const rtpOverall=(wagerTotal>0)?(STATS.paid_total/wagerTotal*100):0;
+  const rtpBase=(STATS.wager_base>0)?(STATS.paid_base/STATS.wager_base*100):0;
+
+  const avgStartGord=(STATS.startGord_spins>0)?(STATS.startGord_total/STATS.startGord_spins):0;
+  const avgStartGordSlot=(STATS.startGord_spins>0)?(STATS.startGord_slot/STATS.startGord_spins):0;
+  const avgStartGordOhg=(STATS.startGord_spins>0)?(STATS.startGord_ohg/STATS.startGord_spins):0;
+
+  const gordPer100=(STATS.spins>0)?((STATS.gord_set+STATS.gord_inject+STATS.gord_overwrite)/STATS.spins*100):0;
+
+  const wr=waveRate()*100;
+
+  const hist=STATS.maxCascadeHist;
+  const histLines=[];
+  for(let k=0;k<=9;k++){
+    const label=(k===9)?'K9+':('K'+k);
+    const n=hist[k];
+    const p= pct(n, STATS.spins);
+    histLines.push(`${label}: ${n} (${fmt1(p)}%)`);
+  }
+
+  const byKLines=[];
+  for(let k=1;k<=9;k++){
+    const label=(k===9)?'K9+':('K'+k);
+    const ln=STATS.hitLinesByK[k];
+    const ce=STATS.hitCellsByK[k];
+    const perSpin = (STATS.spins>0)?(ln/STATS.spins):0;
+    byKLines.push(`${label}: lines=${ln} cells=${ce} | lines/spin=${fmt2(perSpin)}`);
+  }
+
+  const hitGordSpinShare=pct(STATS.spinsWithHitAndGord, STATS.spinsWithHit);
+  const hitNoGordSpinShare=pct(STATS.spinsWithHitNoGord, STATS.spinsWithHit);
+
+  const topTags = Object.entries(STATS.gord_byTag)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,6)
+    .map(([k,v])=>`${k}:${v}`)
+    .join('  ');
+
+  return [
+    `BUILD: COREBATCH_v1 | gridMode=${gridMode} | wagerMult=${wagerMult()} | wave=${waveState} meter=${Math.round(waveMeter)}`,
+    `INSTRUMENT: headless=${HEADLESS} log=${LOG_ENABLED} | afterdrop=${AFTERDROP_MODE} | lastSim=${STATS.lastSim}`,
+    `WAVE/STREAK: hitStreak=${STATS.hitSpinStreak} (best=${STATS.bestHitStreak}) | noHitStreak=${STATS.noHitSpinStreak} (best=${STATS.bestNoHitStreak}) | wave${STATS.waveHits.length}/${STATS.waveMaxLen} hit%=${fmt1(wr)}`,
+    `SPINS: total=${STATS.spins} (base=${STATS.spins_base}, fs=${STATS.spins_fs}) | speed≈${fmt1(sps)} spins/s`,
+    `WAGER/PAY: wagerBase=${fmt2(STATS.wager_base)} | fsBuyCost=${fmt2(STATS.cost_fsBuy)} (buys=${STATS.fsBuysCount}) | paidTotal=${fmt2(STATS.paid_total)} | RTP overall=${fmt1(rtpOverall)}% | RTP base=${fmt1(rtpBase)}%`,
+    `HITS: scans=${STATS.hitScans} | hitSpins=${STATS.spinsWithHit} (${fmt1(hitSpinRate)}%) | noHitSpins=${STATS.spinsNoHit} | lines=${STATS.hitsFoundLines} (${fmt2(linesPer100)}/100) | cells=${STATS.hitsFoundCells} (${fmt2(cellsPer100)}/100)`,
+    `HIT⊕GORD: hitSpinsWithGord=${STATS.spinsWithHitAndGord} (${fmt1(hitGordSpinShare)}% of hitSpins) | hitSpinsNoGord=${STATS.spinsWithHitNoGord} (${fmt1(hitNoGordSpinShare)}%)`,
+    `HITLINES⊕GORD: linesWithGord=${STATS.hitLinesWithGord} | linesNoGord=${STATS.hitLinesNoGord}`,
+    `CASC: totalSteps=${STATS.cascadesTotal} | spinsWithAnyHit=${STATS.cascadesWithAnyHit} | maxSeen=${STATS.cascadesMaxSeen}`,
+    `MAX-K HIST (per spin): ${histLines.join(' | ')}`,
+    `BY-K DETAIL (lines/cells):`,
+    ...byKLines.map(x=>'  '+x),
+    `GORD: set=${STATS.gord_set} | inject=${STATS.gord_inject} | overwrite=${STATS.gord_overwrite} | gord/100spins=${fmt2(gordPer100)}`,
+    `GORD START (post-spin pre-scan): avgTotal=${fmt2(avgStartGord)} | avgSlot=${fmt2(avgStartGordSlot)} | avgOHG=${fmt2(avgStartGordOhg)} | spinsWithAny=${STATS.startGord_spinsWithAny}/${STATS.startGord_spins}`,
+    `GORD TAGS (top): ${topTags || '—'}`,
+    `DROPS: whole=${STATS.dropStepsWhole} | cascade=${STATS.dropStepsCascade} | ohgKeepalive=${STATS.dropStepsOhg}`,
+    `LOG:`,
+    ...LOG_RING.map(x=>'  '+x)
+  ];
+}
+
+function render(){
+  if(HEADLESS) return;
+
+  const color=cascadeColor(cascadeLevel);
+
+  for(let r=0;r<H;r++)for(let c=0;c<W;c++){
+    const el=cells[idx(r,c)];
+    el.className='cell';
+    el.style.setProperty('--hitColor', color);
+
+    // dim if not active
+    if(!isRowActive(r)){
+// inactive rows above active Spielfelder: OHG tint (no double-dim)
+el.classList.add('ohg');
+}
+
+    const s=grid[r][c];
+    el.innerHTML='';
+    if(s){
+      const i=document.createElement('img');
+      i.src=PATH[s]||'';
+      el.appendChild(i);
+      if(isPuff(s)) el.classList.add('puff');
+      if(isGordSym(s)) el.classList.add('gordGlow');
+    }
+    if(hit[r][c] || engHi[r][c]) el.classList.add('hitted');
+    if(cursorVisible && r===mR && c===mC) el.classList.add('marked');
+  }
+
+  const sp=reels.map((re,i)=>`W${i}:${String(re.stopPtr).padStart(3,' ')} `).join(' ');
+  const fp=reels.map((re,i)=>`W${i}:${String(re.feedPtr).padStart(3,' ')} `).join(' ');
+
+  const statBlock = statLines_AnalyseD().join('\n');
+
+  debugEl.textContent =
+`Phase: ${phase}
+DropCursor: ${dropCursor} | Auto: ${autoRunning} | SpinPrimed: ${spinPrimed} | CascadeBusy: ${cascadeBusy}
+GridMode: ${gridMode} | ActiveBaseRow: ${activeBaseRow()} | ActiveFull: ${activeWindowIsFull()}
+Mode: ${mode} | FS Bank: ${freeSpinsBank} | CascadeLevel: ${cascadeLevel} | MaxThisSpin: ${maxCascadeThisSpin}
+Seed: ${seedLabel}
+Budget: ${fmt2(budget)} | Bet: ${fmt2(bet)} | Wager: ${fmt2(bet*wagerMult())} | BetFrozen(Wager): ${fmt2(spinBetFrozen)} | LineBet: ${fmt2((LINES.length>0)?(spinBetFrozen/LINES.length):spinBetFrozen)}
+WinBuffer: ${fmt2(winBuffer)} | FSSession: ${fmt2(fsSessionBuffer)}
+SpinCounter: ${totalSpinCounter} | dropSteps: ${dropStepCounter} | hitRounds: ${hitRoundCounter}
+WAVES: ${waveState} meter=${Math.round(waveMeter)} hotLeft=${waveHotLeft} cdLeft=${waveCooldownLeft}
+GORD: ${lastGordEvent} | Tag: ${lastGordTag}
+StopPtr: ${sp}
+FeedPtr: ${fp}
+Gate(activeFull && noPending && !cascade): ${spinGateOk()} | OHG full: ${ohgIsFull()}
+Last: ${lastTransition}
+
+${statBlock}`;
+
+  syncUI();
+}
+
+/* =======================================================================
+   INIT / BOOT HELPERS
+======================================================================= */
+function clearMarkers(){
+  for(let r=0;r<H;r++){
+    hit[r].fill(false);
+    puff2[r].fill(false);
+    engHi[r].fill(false);
+  }
+}
+function fillGridFromReels(){
+  for(let c=0;c<W;c++){
+    for(let r=0;r<H;r++){
+      grid[r][c]=reelSymbolAt(c,r);
+    }
+  }
+}
+function spinSettleNewStopPtrs(){
+  for(let c=0;c<W;c++){
+    setStopPtr(c, Math.floor(rand()*reels[c].len));
+  }
+}
+function hardResetSpinAccounting(){
+  winBuffer=0;
+  winThisSpin=0;
+  spinBetFrozen=0;
+}
+function sleep(ms){
+  if(HEADLESS) return Promise.resolve();
+  return new Promise(r=>setTimeout(r,ms));
+}
+function yieldUI(){ return new Promise(r=>setTimeout(r,0)); }
+
+function consumeGordSpawnPause(){
+  if(!gordSpawnPauseRequested) return false;
+  gordSpawnPauseRequested=false;
+  return true;
+}
+
+/* =======================================================================
+   SPEED CURVE
+======================================================================= */
+function spinDelayMs(){
+  const v=+speedEl.value;
+  const n=clamp(v/300, 0, 1);
+  return Math.max(10, Math.floor(24 + (n*n*n)*120));
+}
+function dropDelayMs(){
+  const v=+speedEl.value;
+  const n=clamp(v/300, 0, 1);
+  return Math.max(TUNE().dropStepMs_min, Math.floor(14 + (n*n*n)*90));
+}
+
+/* =======================================================================
+   RATTLESPIN
+======================================================================= */
+let rattleTimers=[0,0,0,0,0];
+function clearColTransform(col){
+  if(HEADLESS) return;
+  for(let r=0;r<H;r++){
+    const el=cells[idx(r,col)];
+    el.style.transform='translate3d(0,0,0)';
+  }
+}
+function rattleCol(col, tickIndex){
+  if(HEADLESS) return;
+  if(rattleTimers[col]) clearTimeout(rattleTimers[col]);
+
+  const stampAmp = 12;
+  const stamp = (tickIndex%2===0) ? -stampAmp : stampAmp;
+  const jitterX = (rand()<0.5?-1:1) * (1 + Math.floor(rand()*3));
+
+  for(let r=0;r<H;r++){
+    const el=cells[idx(r,col)];
+    el.style.transform=`translate3d(${jitterX}px, ${stamp}px, 0)`;
+  }
+  rattleTimers[col]=setTimeout(()=>clearColTransform(col), 44);
+}
+
+/* =======================================================================
+   AFTERDROP
+======================================================================= */
+let AFTERDROP_MODE='B';
+function afterdropPlan(){
+  if(AFTERDROP_MODE==='A') return {steps: 6, ms: Math.max(6, Math.floor(dropDelayMs()*0.35)), overwrites: 1};
+  if(AFTERDROP_MODE==='B') return {steps: 14, ms: Math.max(6, Math.floor(dropDelayMs()*0.28)), overwrites: 2};
+  return {steps: 28, ms: Math.max(6, Math.floor(dropDelayMs()*0.22)), overwrites: 3};
+}
+async function runAfterdrop(){
+  const p=afterdropPlan();
+  lastTransition=`AFTERDROP_${AFTERDROP_MODE}_START`;
+  render();
+
+  for(let i=0;i<p.steps;i++){
+    dropStep_WholeGrid_Visible();
+    // drive gords a bit on afterdrop
+    if(rand()<0.55) maybeDriveGord('AFTERDROP', 0.55);
+    await sleep(p.ms);
+  }
+  lastTransition=`AFTERDROP_${AFTERDROP_MODE}_DONE`;
+  render();
+}
+
+/* =======================================================================
+   DROP WHOLE GRID
+======================================================================= */
+function dropStep_WholeGrid_Visible(){
+  phase='DROPPING';
+  const c=dropCursor;
+  let moved=false;
+
+  for(let r=H-1;r>0;r--){
+    if(grid[r][c]===null && grid[r-1][c]!==null){
+      grid[r][c]=grid[r-1][c];
+      grid[r-1][c]=null;
+
+      puff2[r][c]=puff2[r-1][c]; puff2[r-1][c]=false;
+      hit[r][c]=hit[r-1][c];     hit[r-1][c]=false;
+
+      moved=true;
+      break;
+    }
+  }
+
+  if(grid[0][c]===null){
+    grid[0][c]=createIncomingSymbol(c,0,'MANUAL_REFILL');
+    moved=true;
+    lastTransition='DROP_REFILL_TOP';
+  } else {
+    lastTransition=moved?'DROP_STEP':'DROP_NOOP';
+  }
+
+  dropCursor=(dropCursor+1)%W;
+
+  dropStepCounter++;
+  STATS.dropStepsWhole++;
+
+  // drop drives gord slightly
+  if(rand()<0.35) maybeDriveGord('DROP', 0.35);
+
+  render();
+  phase='IDLE';
+  return moved;
+}
+
+async function dropFullVisible_WholeGrid(){
+  phase='DROPPING';
+  lastTransition='DROP_FULL_START';
+  render();
+
+  const stepMs=dropDelayMs();
+
+  let guard=0;
+  let progressedInCycle=false;
+  let cycleSteps=0;
+
+  while(guard<4000){
+    const moved=dropStep_WholeGrid_Visible();
+    guard++;
+
+    progressedInCycle=progressedInCycle||moved;
+    cycleSteps++;
+
+    if(cycleSteps>=W){
+      if(!progressedInCycle) break;
+      progressedInCycle=false;
+      cycleSteps=0;
+    }
+    await sleep(stepMs);
+  }
+
+  phase='IDLE';
+  lastTransition='DROP_FULL_DONE';
+  render();
+}
+
+function dropFullInstant_WholeGrid(){
+  phase='DROPPING';
+  lastTransition='FAST_DROP_FULL_START';
+
+  let guard=0;
+  let progressedInCycle=false;
+  let cycleSteps=0;
+
+  while(guard<12000){
+    const c=dropCursor;
+    let moved=false;
+
+    for(let r=H-1;r>0;r--){
+      if(grid[r][c]===null && grid[r-1][c]!==null){
+        grid[r][c]=grid[r-1][c];
+        grid[r-1][c]=null;
+
+        puff2[r][c]=puff2[r-1][c]; puff2[r-1][c]=false;
+        hit[r][c]=hit[r-1][c];     hit[r-1][c]=false;
+
+        moved=true;
+        break;
+      }
+    }
+    if(grid[0][c]===null){
+      grid[0][c]=createIncomingSymbol(c,0,'MANUAL_REFILL');
+      moved=true;
+    }
+
+    dropCursor=(dropCursor+1)%W;
+
+    guard++;
+    progressedInCycle=progressedInCycle||moved;
+    cycleSteps++;
+
+    if(cycleSteps>=W){
+      if(!progressedInCycle) break;
+      progressedInCycle=false;
+      cycleSteps=0;
+    }
+  }
+
+  phase='IDLE';
+  lastTransition='FAST_DROP_FULL_DONE';
+  render();
+}
+
+/* =======================================================================
+   OHG keepalive (gated)
+======================================================================= */
+function ohgDropStep_Silent(){
+  const c=dropCursor;
+  let moved=false;
+
+  for(let r=ohgRows()-1;r>0;r--){
+    if(grid[r][c]===null && grid[r-1][c]!==null){
+      grid[r][c]=grid[r-1][c];
+      grid[r-1][c]=null;
+
+      puff2[r][c]=puff2[r-1][c]; puff2[r-1][c]=false;
+      hit[r][c]=hit[r-1][c];     hit[r-1][c]=false;
+
+      moved=true;
+      break;
+    }
+  }
+
+  if(grid[0][c]===null){
+    grid[0][c]=createIncomingSymbol(c,0,'MANUAL_REFILL');
+    moved=true;
+  }
+
+  dropCursor=(dropCursor+1)%W;
+  if(moved) STATS.dropStepsOhg++;
+  return moved;
+}
+
+function ohgDropFullInstant(){
+  phase='DROPPING';
+  lastTransition='OHG_DROP_FULL_INSTANT_START';
+
+  let guard=0;
+  let progressedInCycle=false;
+  let cycleSteps=0;
+
+  while(guard<12000){
+    const moved=ohgDropStep_Silent();
+    guard++;
+
+    progressedInCycle=progressedInCycle||moved;
+    cycleSteps++;
+
+    if(cycleSteps>=W){
+      if(!progressedInCycle) break;
+      progressedInCycle=false;
+      cycleSteps=0;
+    }
+  }
+
+  phase='IDLE';
+  lastTransition='OHG_DROP_FULL_INSTANT_DONE';
+  render();
+}
+
+setInterval(()=>{
+  if(spinBusy || cascadeBusy) return;
+  if(activeWindowIsFull()) return;
+  if(ohgIsFull()) return;
+  ohgDropStep_Silent();
+  lastTransition='OHG_KEEPALIVE';
+  render();
+}, 450);
+
+/* =======================================================================
+   ENGINE TICK
+======================================================================= */
+function engineTick(){
+  lastTransition='ENGINE_TICK';
+  dropStep_WholeGrid_Visible();
+}
+
+/* =======================================================================
+   SEEDED RNG + SEED RESET
+======================================================================= */
+function setSeedCore(seedStr){
+  const s = String(seedStr ?? '').trim();
+  const label = s ? s : String(Math.floor(1+Math.random()*9999));
+  seedLabel = label;
+
+  const hfn = xmur3(label);
+  const a = hfn();
+  seedStateFn = mulberry32(a);
+  RNG = ()=>seedStateFn();
+
+  budget = 666666;
+
+  freeSpinsBank=0;
+  spinBetFrozen=0;
+  winBuffer=0;
+  winThisSpin=0;
+  fsSessionBuffer=0;
+  fsSessionSpins=0;
+  totalSpinCounter=0;
+
+  cascadeLevel=0;
+  maxCascadeThisSpin=0;
+  awardedFlags={};
+
+  mode='BASE';
+  document.body.classList.remove('fs');
+
+  spinBusy=false;
+  spinPrimed=false;
+  cascadeBusy=false;
+  autoRunning=false;
+  phase='IDLE';
+
+  dropCursor=0;
+cursorVisible=false;
+  dropStepCounter=0;
+  hitRoundCounter=0;
+
+  lastGordEvent='—';
+  lastGordTag='—';
+
+  // waves reset
+  waveState='COLD';
+  waveMeter=0;
+  waveHotLeft=0;
+  waveCooldownLeft=0;
+  wavePulse=false;
+
+  statReset(true);
+
+  initReelsAndGrid();
+  loadPaytableForMode('BASE');
+  lastTransition='SEED_RESET_'+seedLabel;
+  render();
+}
+
+/* =======================================================================
+   SPIN
+======================================================================= */
+function beginSpinAccounting(){
+  winBuffer=0;
+  winThisSpin=0;
+
+  if(mode==='BASE'){
+    const cost=bet*wagerMult();
+    if(budget<cost){
+      lastTransition='SPIN_BLOCKED_NO_BUDGET';
+      render();
+      throw new Error('NO_BUDGET');
+    }
+    budget-=cost;
+    STATS.wager_base += cost;
+
+    spinBetFrozen=bet*wagerMult();
+    lastBaseBet=bet;
+    lastTransition='BET_APPLY';
+  } else {
+    // FS uses last base bet + current gridmode multiplier
+    spinBetFrozen=lastBaseBet*wagerMult();
+    lastTransition='FS_START';
+  }
+}
+
+function endSpinAccounting_Book(){
+  const paid=winBuffer;
+  STATS.paid_total += paid;
+  if(mode==='BASE') STATS.paid_base += paid;
+  else STATS.paid_fs += paid;
+
+  if(mode==='BASE'){
+    budget+=winBuffer;
+    lastTransition='SPIN_END_BOOK';
+  } else {
+    fsSessionBuffer+=winBuffer;
+    lastTransition='FS_SPIN_END_ACCUM';
+  }
+  winThisSpin=winBuffer;
+  render();
+}
+
+function maybeEndFsSession(){
+  if(mode!=='FS') return;
+  if(freeSpinsBank>0) return;
+
+  const booked=fsSessionBuffer;
+
+  budget+=fsSessionBuffer;
+  fsSessionBuffer=0;
+
+  setMode('BASE');
+  lastTransition='FS_END_BOOK';
+  render();
+
+  if(!HEADLESS) openFsEndPopup(fsSessionSpins, booked);
+}
+
+function enterFS_AfterBaseBooking_IfAny(){
+  if(mode!=='BASE') return;
+  if(freeSpinsBank<=0) return;
+  fsSessionSpins=0;
+  setMode('FS');
+  lastTransition='BASE_TO_FS_AFTER_BOOK';
+  render();
+}
+
+async function spinButtonAction(){
+  if(spinBusy || cascadeBusy) return;
+
+  if(!activeWindowIsFull()){
+    spinPrimed=false;
+    dropFullInstant_WholeGrid();
+    lastTransition='SPIN_BLOCKED_ACTIVE_NOT_FULL__DROPPED_INSTEAD';
+    render();
+    return;
+  }
+
+  if(!spinGateOk()){
+    spinPrimed=false;
+    lastTransition='SPIN_BLOCKED_GATE';
+    render();
+    return;
+  }
+
+  if(!spinPrimed){
+    if(!ohgIsFull()){
+      spinPrimed=false;
+      ohgDropFullInstant();
+      spinPrimed=true;
+      lastTransition='SPIN_ARMED_AFTER_OHG_INSTANT';
+      render();
+      return;
+    }
+    spinPrimed=true;
+    lastTransition='SPIN_ARMED_OHG_ALREADY_FULL';
+    render();
+    return;
+  }
+
+  spinPrimed=false;
+  await spinOnce();
+}
+
+async function spinOnce(){
+  if(spinBusy || cascadeBusy) return;
+  if(!activeWindowIsFull()){ lastTransition='SPIN_BLOCKED_ACTIVE_NOT_FULL'; render(); return; }
+
+  spinBusy=true;
+
+  try{
+    dropStepCounter=0;
+    hitRoundCounter=0;
+    totalSpinCounter++;
+
+    STATS.spins++;
+    if(mode==='BASE') STATS.spins_base++; else STATS.spins_fs++;
+    logEvt(`SPIN start mode=${mode}`);
+
+    beginSpinAccounting();
+
+    if(mode==='FS' && freeSpinsBank>0){
+      freeSpinsBank-=1;
+      fsSessionSpins+=1;
+      lastTransition='FS_CONSUME_1';
+    }
+
+    phase='SPINNING';
+    lastTransition='SPIN_START';
+    render();
+
+    cascadeLevel=0;
+    maxCascadeThisSpin=0;
+    awardedFlags={};
+
+    const targets=reels.map(re=>Math.floor(rand()*re.len));
+    const cur=reels.map(re=>re.stopPtr);
+
+    const totalTicks=6;
+
+    for(let t=0;t<totalTicks*W;t++){
+      const col=t%W;
+      cur[col]=mod(cur[col]-1, reels[col].len);
+
+      for(let c=0;c<W;c++){
+        for(let r=0;r<H;r++){
+          grid[r][c]=reelSymbolAt(c,r,cur[c]);
+        }
+      }
+
+      clearMarkers();
+      rattleCol(col, t);
+
+      lastTransition=`SPIN_TICK_${t+1}`;
+      render();
+      await sleep(spinDelayMs());
+    }
+
+    for(let c=0;c<W;c++) setStopPtr(c, targets[c]);
+    fillGridFromReels();
+
+    // CORE: new start distribution
+    /* applyGordStartDistribution disabled: GORD in STRIPS */
+
+    // extra: early engine nudge (small)
+    if(rand()<0.35) maybeDriveGord('SETTLE', 0.35);
+
+    snapshotStartGords();
+
+    clearMarkers();
+
+    phase='IDLE';
+    lastTransition='SPIN_DONE';
+    render();
+
+    await runCascadeEngine_AfterSpin();
+
+  } finally {
+    spinBusy=false;
+    for(let c=0;c<W;c++) clearColTransform(c);
+    render();
+  }
+}
+
+/* =======================================================================
+   AUTO SPIN
+======================================================================= */
+async function autoSpinLoop(){
+  if(autoRunning) return;
+  autoRunning=true;
+  lastTransition='AUTO_START';
+  render();
+
+  while(autoRunning){
+    if(cascadeBusy){ await sleep(40); continue; }
+
+    if(!activeWindowIsFull()){
+      spinPrimed=false;
+      dropFullInstant_WholeGrid();
+      lastTransition='AUTO_ACTIVE_NOT_FULL__DROPPED';
+      render();
+      await sleep(Math.max(40, Math.floor(dropDelayMs()*0.7)));
+      continue;
+    }
+
+    if(!spinGateOk()){
+      spinPrimed=false;
+      lastTransition='AUTO_WAIT_GATE';
+      render();
+      await sleep(Math.max(50, Math.floor(dropDelayMs()*0.7)));
+      continue;
+    }
+
+    if(!ohgIsFull()){
+      spinPrimed=false;
+      ohgDropFullInstant();
+      spinPrimed=true;
+      lastTransition='AUTO_ARMED_AFTER_OHG_INSTANT';
+      render();
+      await sleep(Math.max(40, Math.floor(dropDelayMs()*0.6)));
+    }
+
+    await spinOnce();
+
+    lastTransition='AUTO_PAUSE';
+    render();
+    await sleep(Math.max(80, Math.floor(dropDelayMs()*0.8)));
+  }
+
+  lastTransition='AUTO_STOP';
+  render();
+}
+
+/* =======================================================================
+   HITS / LINES — ActiveWindow ONLY (3-row patterns, shifted)
+======================================================================= */
+const LINES=[
+  [1,1,1,1,1],
+  [0,0,0,0,0],
+  [2,2,2,2,2],
+  [0,1,2,1,0],
+  [2,1,0,1,2],
+  [0,0,1,2,2],
+  [2,2,1,0,0],
+  [1,0,0,0,1],
+  [1,2,2,2,1],
+  [0,1,1,1,0]
+];
+
+function evaluateLineHitDir(lineIdx, base, dir){
+  const map=LINES[lineIdx];
+  const cellsL=[];
+
+  let target=null;
+  let len=0;
+  let hasGord=false;
+
+  const cStart = (dir===-1) ? (W-1) : 0;
+  const cEnd   = (dir===-1) ? -1 : W;
+  const cStep  = (dir===-1) ? -1 : 1;
+
+  for(let c=cStart; c!==cEnd; c+=cStep){
+    const rr=base + map[c];
+    const ss=grid[rr][c];
+    if(!ss) break;
+
+    // Puff blocks start; PGORD can extend only if target exists
+    if(isPuff(ss)){
+      if(target===null) break;
+      if(isPgordSym(ss)){
+        hasGord=true;
+        len++;
+        cellsL.push([rr,c]);
+        continue;
+      }
+      break;
+    }
+
+    const b=baseSym(ss);
+
+    // GORD can match but never sets target
+    if(isGordSym(b)){
+      if(target===null) break;
+      hasGord=true;
+      len++;
+      cellsL.push([rr,c]);
+      continue;
+    }
+
+    // normal symbol
+    if(target===null) target=b;
+    if(b!==target) break;
+
+    len++;
+    cellsL.push([rr,c]);
+  }
+
+  if(target===null) return null;
+  if(len>=3) return {lineIdx, len, target, cells:cellsL, hasGord, base, dir};
+  return null;
+}
+
+function lineHitValue(h){
+  // compare hits by payout first (bet-normalized), then length
+  const v = payoutFor(h.target, h.len, 1);
+  return {payout:v, len:h.len};
+}
+
+function evaluateLineHitBest(lineIdx, base){
+  const lr = evaluateLineHitDir(lineIdx, base, +1);
+  const rl = evaluateLineHitDir(lineIdx, base, -1);
+  if(!lr) return rl;
+  if(!rl) return lr;
+
+  const a=lineHitValue(lr);
+  const b=lineHitValue(rl);
+
+  if(b.payout > a.payout) return rl;
+  if(a.payout > b.payout) return lr;
+
+  if(b.len > a.len) return rl;
+  if(a.len > b.len) return lr;
+
+  // tie → keep L→R
+  return lr;
+}
+
+function evaluateAllHits(){
+  const hits=[];
+  const bases=activeFieldBasesBottomToTop();
+  for(const base of bases){
+    for(let i=0;i<LINES.length;i++){
+      const h=evaluateLineHitBest(i, base);
+      if(h) hits.push(h);
+    }
+  }
+  return hits;
+}
+
+/* =======================================================================
+   HIGHLIGHT
+======================================================================= */
+async function runHighlightSequence_B(hits){
+  phase='HIGHLIGHT';
+  lastTransition=`HILITE_START_${hits.length}_LINES`;
+  render();
+
+  const t=TUNE();
+  const baseStep=Math.max(60, t.highlightStepMs_min);
+  const cellPause=Math.max(80, t.highlightCellPauseMs);
+  const linePause=Math.max(140, t.highlightLinePauseMs);
+
+  // Cell-usage map:
+  // Puff+Null direkt nach Highlight, sobald Zelle "frei" ist (kein weiterer Hit braucht sie).
+  const useLeft=new Map();
+  const key=(r,c)=>r+','+c;
+  for(const h of hits){
+    for(const [r,c] of h.cells){
+      const k=key(r,c);
+      useLeft.set(k, (useLeft.get(k)||0)+1);
+    }
+  }
+
+  const bases=activeFieldBasesBottomToTop();
+
+  for(const base of bases){
+    for(let li=0; li<LINES.length; li++){
+      const h=hits.find(x=>x.base===base && x.lineIdx===li);
+      if(!h) continue;
+
+      for(let k=0;k<h.len;k++){
+        const [r,c]=h.cells[k];
+
+        engHi[r][c]=true;
+        flashCell(r,c);
+        lastTransition=`HILITE_B${base}_L${li}_C${c}_K${cascadeLevel}`;
+        render();
+        await sleep(baseStep);
+
+        engHi[r][c]=false;
+        render();
+        await sleep(cellPause);
+
+        const kk=key(r,c);
+        const left=(useLeft.get(kk)||0)-1;
+
+        if(left<=0){
+          useLeft.delete(kk);
+
+          // Puff (if available)...
+          if(grid[r][c]){
+            const pk=puffKey(grid[r][c]);
+            if(pk){
+              grid[r][c]=pk;
+              flashCell(r,c);
+              lastTransition=`PUFF_IMMEDIATE_r${r}c${c}`;
+              render();
+              await sleep(40);
+            }
+          }
+
+          // ...then Null immediately (but NO DROP here; drop stays gated after full resolve)
+          grid[r][c]=null;
+          puff2[r][c]=false;
+          hit[r][c]=false;
+          flashCell(r,c);
+          lastTransition=`NULL_IMMEDIATE_r${r}c${c}`;
+          render();
+          await sleep(30);
+
+        } else {
+          useLeft.set(kk,left);
+        }
+      }
+
+      await sleep(linePause);
+    }
+  }
+
+  phase='IDLE';
+  lastTransition='HILITE_DONE';
+  render();
+}
+
+/* =======================================================================
+   RESOLVE: Union Puff1 -> Union Null
+======================================================================= */
+function unionCellsFromHits(hits){
+  const key=(r,c)=>r+','+c;
+  const set=new Set();
+  const out=[];
+  for(const h of hits){
+    for(const [r,c] of h.cells){
+      const k=key(r,c);
+      if(!set.has(k)){
+        set.add(k);
+        out.push([r,c]);
+      }
+    }
+  }
+  return out;
+}
+
+async function applyUnionPuff1(union){
+  const t=TUNE();
+  phase='PUFFING';
+  lastTransition='PUFF1_UNION_START';
+  for(const [r,c] of union){
+    if(grid[r][c]){
+      const pk=puffKey(grid[r][c]);
+      if(pk) grid[r][c]=pk;
+    }
+  }
+  for(const [r,c] of union) flashCell(r,c);
+  render();
+  await sleep(Math.max(140, t.puffPauseMs));
+  phase='IDLE';
+  lastTransition='PUFF1_UNION_DONE';
+  render();
+}
+
+async function applyUnionNull(union){
+  const t=TUNE();
+  phase='NULLING';
+  lastTransition='NULL_UNION_START';
+  for(const [r,c] of union){
+    grid[r][c]=null;
+    puff2[r][c]=false;
+    hit[r][c]=false;
+    engHi[r][c]=false;
+  }
+  render();
+  await sleep(Math.max(120, t.nullPauseMs));
+  phase='IDLE';
+  lastTransition='NULL_UNION_DONE';
+  render();
+}
+
+/* =======================================================================
+   DROP LOOP (Cascade)
+======================================================================= */
+function columnCanImproveActive(c){
+  const bases=activeFieldBasesBottomToTop();
+  for(const b of bases){
+    for(let r=b;r<=b+2;r++){
+      if(grid[r][c]===null) return true;
+    }
+  }
+  return false;
+}
+
+function cascadeDropStep_Tuned(){
+  // Global Drop-Physik: immer gesamtes Grid, Refill nur ganz oben (row 0).
+  phase='DROPPING';
+  const c=dropCursor;
+  let moved=false;
+
+  for(let r=H-1;r>0;r--){
+    if(grid[r][c]===null && grid[r-1][c]!==null){
+      grid[r][c]=grid[r-1][c];
+      grid[r-1][c]=null;
+
+      puff2[r][c]=puff2[r-1][c]; puff2[r-1][c]=false;
+      hit[r][c]=hit[r-1][c]; hit[r-1][c]=false;
+
+      moved=true;
+      break;
+    }
+  }
+
+  if(grid[0][c]===null){
+    grid[0][c]=createIncomingSymbol(c,0,'CASCADE_REFILL');
+    moved=true;
+    lastTransition='CASCADE_REFILL_TOP';
+  } else if(!moved){
+    lastTransition='CASCADE_DROP_NOOP';
+  } else {
+    lastTransition='CASCADE_DROP_STEP';
+  }
+
+  dropStepCounter++;
+  STATS.dropStepsCascade++;
+
+  dropCursor=(dropCursor+1)%W;
+  render();
+  phase='IDLE';
+  return moved;
+}
+
+async function cascadeDropUntilActiveFull(){
+  phase='DROPPING';
+  lastTransition='CASCADE_DROP_START';
+  render();
+
+  const stepMs=dropDelayMs();
+  let guard=0;
+  let progressedInCycle=false;
+  let cycleSteps=0;
+
+  function fieldsFull(){
+    const bases=activeFieldBasesBottomToTop();
+    for(const b of bases){
+      for(let r=b;r<=b+2;r++){
+        for(let c=0;c<W;c++){
+          if(grid[r][c]===null) return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  while(guard<6000){
+    if(fieldsFull() && !columnCanImproveActive(0) && !columnCanImproveActive(1) && !columnCanImproveActive(2) && !columnCanImproveActive(3) && !columnCanImproveActive(4)) break;
+
+    const moved=cascadeDropStep_Tuned();
+    guard++;
+
+    progressedInCycle=progressedInCycle||moved;
+    cycleSteps++;
+
+    if(cycleSteps>=W){
+      if(!progressedInCycle && fieldsFull()) break;
+      progressedInCycle=false;
+      cycleSteps=0;
+    }
+
+    await sleep(stepMs);
+  }
+
+  phase='IDLE';
+  lastTransition='CASCADE_DROP_DONE';
+  render();
+}
+
+/* =======================================================================
+   FS AWARD
+======================================================================= */
+function awardForMaxCascade(maxK){
+  // FS awards start at K3: K3=+8, K4=+16, K5=+24, ...
+  if(maxK < 3) return 0;
+  return (maxK - 2) * 8;
+}
+
+/* =======================================================================
+   HIT_RESOLVE — payout -> winBuffer
+======================================================================= */
+function resolveHits_PayoutToBuffer(hits){
+  // Bet = Einsatz pro Spin (Total Bet). Paytable ist "×bet".
+  let sum=0;
+  for(const h of hits){
+    sum += payoutFor(h.target, h.len, spinBetFrozen);
+  }
+  winBuffer += sum;
+  winThisSpin = winBuffer;
+  lastTransition = `HIT_RESOLVE_ADD_${fmt2(sum)}_TB_${fmt2(spinBetFrozen)}`;
+  render();
+  return sum;
+}
+
+/* =======================================================================
+   CASCADE ENGINE — after spin
+======================================================================= */
+async function runCascadeEngine_AfterSpin(){
+  if(cascadeBusy) return;
+  cascadeBusy=true;
+
+  try{
+    let sawAnyHitThisSpin=false;
+    let sawGordInAnyHitThisSpin=false;
+    let winAddedThisSpin=0;
+    while(true){
+      if(!activeWindowIsFull()){
+        lastTransition='CASCADE_PRE_DROP_ACTIVE_NOT_FULL';
+        render();
+        await cascadeDropUntilActiveFull();
+      }
+
+      phase='EVALUATE_HITS';
+      lastTransition='HIT_SCAN_START';
+      render();
+
+      STATS.hitScans++;
+      const hits=evaluateAllHits();
+
+      if(!hits.length){
+        phase='IDLE';
+        lastTransition=(cascadeLevel===0) ? 'CASCADE_END_NO_HITS' : `CASCADE_END_AT_K${cascadeLevel}`;
+        render();
+        break;
+      }
+
+      sawAnyHitThisSpin=true;
+
+      const anyG = hits.some(h=>h.hasGord);
+      if(anyG) sawGordInAnyHitThisSpin=true;
+
+      for(const h of hits){
+        if(h.hasGord) STATS.hitLinesWithGord++;
+        else STATS.hitLinesNoGord++;
+      }
+
+      cascadeLevel++;
+      maxCascadeThisSpin=Math.max(maxCascadeThisSpin, cascadeLevel);
+
+      STATS.cascadesTotal += 1;
+      STATS.cascadesMaxSeen = Math.max(STATS.cascadesMaxSeen, maxCascadeThisSpin);
+
+      hitRoundCounter++;
+
+      phase='RESOLVE';
+      lastTransition=`HITS_FOUND_${hits.length}_K${cascadeLevel}`;
+      render();
+
+      const union=unionCellsFromHits(hits);
+      STATS.hitsFoundCells += union.length;
+      STATS.hitsFoundLines += hits.length;
+
+      const kb = (cascadeLevel>=9)?9:cascadeLevel;
+      STATS.hitLinesByK[kb] += hits.length;
+      STATS.hitCellsByK[kb] += union.length;
+
+      const added = resolveHits_PayoutToBuffer(hits);
+      winAddedThisSpin += added;
+
+      await runHighlightSequence_B(hits);
+      await sleep(Math.max(120, TUNE().preDropPauseMs));
+      await cascadeDropUntilActiveFull();
+    }
+
+    // per-spin summary
+    if(sawAnyHitThisSpin){
+      STATS.cascadesWithAnyHit++;
+      STATS.spinsWithHit++;
+      STATS.noHitSpinStreak=0;
+      STATS.hitSpinStreak++;
+      STATS.bestHitStreak=Math.max(STATS.bestHitStreak, STATS.hitSpinStreak);
+
+      if(sawGordInAnyHitThisSpin) STATS.spinsWithHitAndGord++;
+      else STATS.spinsWithHitNoGord++;
+    } else {
+      STATS.spinsNoHit++;
+      STATS.hitSpinStreak=0;
+      STATS.noHitSpinStreak++;
+      STATS.bestNoHitStreak=Math.max(STATS.bestNoHitStreak, STATS.noHitSpinStreak);
+    }
+
+    wavePush(sawAnyHitThisSpin);
+    STATS.maxCascadeHist[kBin(maxCascadeThisSpin)] += 1;
+
+    endSpinAccounting_Book();
+
+    // WAVES update after booking
+    waveTickAfterSpin({hadHit:sawAnyHitThisSpin, maxK:maxCascadeThisSpin, winAdded:winAddedThisSpin});
+
+    const award=awardForMaxCascade(maxCascadeThisSpin);
+    if(award>0){
+      freeSpinsBank += award;
+      lastTransition = `FS_AWARD_ONCE_MAXK${maxCascadeThisSpin}_PLUS_${award}`;
+
+      STATS.fsAwardsCount++;
+      STATS.fsAwardedTotal += award;
+      logEvt(`FS_AWARD +${award} (maxK=${maxCascadeThisSpin})`);
+
+      render();
+    }
+
+    enterFS_AfterBaseBooking_IfAny();
+
+    if(!HEADLESS){
+      await runAfterdrop();
+    }
+
+    if(!ohgIsFull()){
+      lastTransition='POST_CASCADE_FILL_OHG';
+      render();
+      ohgDropFullInstant();
+    }
+
+    maybeEndFsSession();
+
+  } finally {
+    cascadeBusy=false;
+    phase='IDLE';
+    lastTransition='CASCADE_ENGINE_IDLE';
+    render();
+  }
+}
+
+/* =======================================================================
+   BUTTONS — ENGINE
+======================================================================= */
+document.getElementById('btnSpin').onclick=spinButtonAction;
+document.getElementById('btnEngineTick').onclick=engineTick;
+document.getElementById('btnDrop1').onclick=dropStep_WholeGrid_Visible;
+document.getElementById('btnDropFull').onclick=dropFullVisible_WholeGrid;
+
+document.getElementById('btnAutoSpin').onclick=autoSpinLoop;
+document.getElementById('btnStopAuto').onclick=()=>{
+  autoRunning=false;
+  spinPrimed=false;
+  SIM_ABORT=true;
+  if(SIM_RUNNING){ lastTransition='SIM_ABORT_REQUESTED'; }
+  lastTransition='AUTO_STOP_CLICK';
+  setSimButtonsDisabled(false);
+  render();
+};
+
+/* =======================================================================
+   BUTTONS — STATES (manual)
+======================================================================= */
+document.getElementById('btnHit').onclick=()=>{
+  hit[mR][mC]=true;
+  flashCell(mR,mC);
+  spinPrimed=false;
+  lastTransition='HIT_MARK';
+  render();
+};
+
+document.getElementById('btnPuff1').onclick=()=>{
+  for(let r=0;r<H;r++)for(let c=0;c<W;c++){
+    if(hit[r][c] && grid[r][c]){
+      const pk=puffKey(grid[r][c]);
+      if(pk){ grid[r][c]=pk; flashCell(r,c); }
+    }
+    hit[r][c]=false;
+  }
+  spinPrimed=false;
+  lastTransition='PUFF1_APPLY';
+  render();
+};
+
+document.getElementById('btnPuff2').onclick=()=>{
+  if(isPuff(grid[mR][mC]) && !puff2[mR][mC]){
+    puff2[mR][mC]=true;
+    flashCell(mR,mC);
+    lastTransition='PUFF2_PROMOTE';
+  } else {
+    lastTransition='PUFF2_NOOP';
+  }
+  spinPrimed=false;
+  render();
+};
+
+document.getElementById('btnLocher').onclick=()=>{
+  if(puff2[mR][mC]){
+    grid[mR][mC]=null;
+    puff2[mR][mC]=false;
+    spinPrimed=false;
+    lastTransition='LOCHER_NULL';
+  } else {
+    lastTransition='LOCHER_BLOCKED_NOT_PUFF2';
+  }
+  render();
+};
+
+/* =======================================================================
+   CONTROLLER
+======================================================================= */
+document.getElementById('btnLeft').onclick=()=>{cursorVisible=true; mC=(mC+W-1)%W; render();};
+document.getElementById('btnRight').onclick=()=>{cursorVisible=true; mC=(mC+1)%W; render();};
+document.getElementById('btnUp').onclick=()=>{cursorVisible=true; mR=(mR+H-1)%H; render();};
+document.getElementById('btnDown').onclick=()=>{cursorVisible=true; mR=(mR+1)%H; render();};
+
+/* =======================================================================
+   SEED UI
+======================================================================= */
+seedApply.onclick=()=>{
+  const v=seedInput.value.trim();
+  setSeedCore(v || String(Math.floor(1+Math.random()*9999)));
+};
+seedInput.addEventListener('keydown',(e)=>{
+  if(e.key==='Enter'){ seedApply.click(); }
+});
+
+/* =======================================================================
+   DEBUG ACTIONS
+======================================================================= */
+const btnInstReset=document.getElementById('btnInstReset');
+const btnStatReset=document.getElementById('btnStatReset');
+const btnSim1000=document.getElementById('btnSim1000');
+const btnSim10000=document.getElementById('btnSim10000');
+const btnSim100=document.getElementById('btnSim100');
+const btnSimDrops=document.getElementById('btnSimDrops');
+const btnStatToggle=document.getElementById('btnStatToggle');
+const btnStatCopy=document.getElementById('btnStatCopy');
+
+const btnAfterdropA=document.getElementById('btnAfterdropA');
+const btnAfterdropB=document.getElementById('btnAfterdropB');
+const btnAfterdropC=document.getElementById('btnAfterdropC');
+
+btnAfterdropA.onclick=()=>{ AFTERDROP_MODE='A'; logEvt('AFTERDROP_MODE=A'); lastTransition='AFTERDROP_MODE_A'; render(); };
+btnAfterdropB.onclick=()=>{ AFTERDROP_MODE='B'; logEvt('AFTERDROP_MODE=B'); lastTransition='AFTERDROP_MODE_B'; render(); };
+btnAfterdropC.onclick=()=>{ AFTERDROP_MODE='C'; logEvt('AFTERDROP_MODE=C'); lastTransition='AFTERDROP_MODE_C'; render(); };
+
+btnInstReset.onclick=()=>{
+  resetInstrumentationOnly();
+  lastTransition='RESET_INST_CLICK';
+  render();
+};
+btnStatReset.onclick=()=>{
+  statReset(true);
+  lastTransition='STAT_RESET_CLICK';
+  render();
+};
+btnStatToggle.onclick=()=>{
+  LOG_ENABLED=!LOG_ENABLED;
+  logEvt(`LOG_ENABLED=${LOG_ENABLED}`);
+  lastTransition='LOG_TOGGLE';
+  render();
+};
+btnStatCopy.onclick=()=>{
+  const obj={
+    seed: seedLabel,
+    mode,
+    budget,
+    bet,
+    gridMode,
+    afterdrop: AFTERDROP_MODE,
+    wave:{waveState,waveMeter,waveHotLeft,waveCooldownLeft},
+    stats: JSON.parse(JSON.stringify(STATS)),
+    log: LOG_RING.slice()
+  };
+  console.log('LOCHFABRIK_STATS', obj);
+  lastTransition='STAT_TO_CONSOLE';
+  render();
+};
+
+async function runHeadlessSpins(n){
+  if(spinBusy || cascadeBusy) return;
+  if(autoRunning) { autoRunning=false; }
+
+  HEADLESS=true;
+  const oldLog=LOG_ENABLED;
+
+  STATS.lastSim=`HEADLESS_SPINS_${n}`;
+  logEvt(`SIM start spins=${n} seed=${seedLabel}`);
+
+  if(!activeWindowIsFull()) dropFullInstant_WholeGrid();
+  if(!ohgIsFull()) ohgDropFullInstant();
+  spinPrimed=false;
+
+  for(let i=0;i<n;i++){
+    await spinOnce();
+    if((i%200)===199){
+      lastTransition=`SIM_PROGRESS_${i+1}/${n}`;
+      HEADLESS=false;
+      render();
+      HEADLESS=true;
+      await yieldUI();
+    }
+  }
+
+  HEADLESS=false;
+  LOG_ENABLED=oldLog;
+  lastTransition=`SIM_DONE_${n}`;
+  logEvt(`SIM done spins=${n}`);
+  render();
+}
+
+async function runHeadlessDrops(n){
+  if(spinBusy || cascadeBusy) return;
+  if(autoRunning) { autoRunning=false; }
+
+  HEADLESS=true;
+  STATS.lastSim=`HEADLESS_DROPS_${n}`;
+  logEvt(`SIM start drops=${n}`);
+
+  for(let i=0;i<n;i++){
+    dropStep_WholeGrid_Visible();
+    if((i%400)===399){
+      lastTransition=`SIM_DROPS_PROGRESS_${i+1}/${n}`;
+      HEADLESS=false;
+      render();
+      HEADLESS=true;
+      await yieldUI();
+    }
+  }
+
+  HEADLESS=false;
+  lastTransition=`SIM_DROPS_DONE_${n}`;
+  logEvt(`SIM done drops=${n}`);
+  render();
+}
+
+btnSim1000.onclick=()=>runHeadlessSpins(1000);
+btnSim10000.onclick=()=>runHeadlessSpins(10000);
+btnSim100.onclick=()=>runHeadlessSpins(100);
+btnSimDrops.onclick=()=>runHeadlessDrops(2000);
+
+/* =======================================================================
+   INIT: REELS + GRID
+======================================================================= */
+function initReelsAndGrid(){
+  rebuildReelsFromStripCfg();
+}
+
+
+/* =======================================================================
+   BOOT
+======================================================================= */
+
+/* =======================================================================
+UI: STRIP TABLE (below debug) + FULL TOGGLE
+======================================================================= */
+function updateStripTable(){
+  const host=document.getElementById('stripTable');
+  if(!host) return;
+  if(!reels || !reels.length){ host.innerHTML=''; return; }
+
+  const cfg=STRIP_CFG;
+  const w=cfg.weights;
+  const g=cfg.gordCounts;
+  const controls=`
+  <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin:0 0 10px 0">
+    <div><div class=\"note\">StripLen</div><input id=\"cfgStripLen\" type=\"number\" min=\"20\" max=\"400\" value=\"${cfg.len}\" style=\"width:84px\"/></div>
+    <div><div class=\"note\">LOW</div><input id=\"cfgLow\" type=\"number\" min=\"0\" max=\"200\" value=\"${w.low}\" style=\"width:70px\"/></div>
+    <div><div class=\"note\">MID</div><input id=\"cfgMid\" type=\"number\" min=\"0\" max=\"200\" value=\"${w.mid}\" style=\"width:70px\"/></div>
+    <div><div class=\"note\">HIGH</div><input id=\"cfgHigh\" type=\"number\" min=\"0\" max=\"200\" value=\"${w.high}\" style=\"width:70px\"/></div>
+    <div><div class=\"note\">TOP</div><input id=\"cfgTop\" type=\"number\" min=\"0\" max=\"200\" value=\"${w.top}\" style=\"width:70px\"/></div>
+    <div style=\"width:10px\"></div>
+    <div><div class=\"note\">GORD W1</div><input id=\"cfgG1\" type=\"number\" min=\"0\" max=\"80\" value=\"${g[1]||0}\" style=\"width:70px\"/></div>
+    <div><div class=\"note\">GORD W2</div><input id=\"cfgG2\" type=\"number\" min=\"0\" max=\"80\" value=\"${g[2]||0}\" style=\"width:70px\"/></div>
+    <div><div class=\"note\">GORD W3</div><input id=\"cfgG3\" type=\"number\" min=\"0\" max=\"80\" value=\"${g[3]||0}\" style=\"width:70px\"/></div>
+    <button class=\"stripToggle\" id=\"cfgApply\" style=\"padding:6px 10px;font-weight:bold\">APPLY / REBUILD</button>
+  </div>`;
+
+  const tierOf=(sym)=>{
+    if(isGordSym(sym)) return 'GORD';
+    if(LOW.includes(sym)) return 'LOW';
+    if(MID.includes(sym)) return 'MID';
+    if(HIGH.includes(sym)) return 'HIGH';
+    if(TOP.includes(sym)) return 'TOP';
+    return 'OTHER';
+  };
+
+  const dist=reels.map((r,i)=>{
+    const counts={}, tiers={LOW:0,MID:0,HIGH:0,TOP:0,GORD:0,OTHER:0};
+    for(const s of r.strip){
+      counts[s]=(counts[s]||0)+1;
+      const t=tierOf(s);
+      tiers[t]=(tiers[t]||0)+1;
+    }
+    return {i,len:r.strip.length,counts,tiers,strip:r.strip};
+  });
+
+  const symOrder=[...LOW,...MID,...HIGH,...TOP,...GORDS];
+  const pill=(k,v)=>`<span class="stripPill">${k}:${v}</span>`;
+
+  let html='';
+  html += controls;
+
+  html += `<h4>REELS / STRIPS · Seed=${seedLabel} · GridMode=${gridMode} · len=${dist.map(d=>d.len).join(',')}</h4>`;
+  html += `<table class="stripTbl"><thead><tr><th>Reel</th><th>Tier totals</th><th>Symbol counts</th><th>Strip</th></tr></thead><tbody>`;
+  for(const d of dist){
+    const tierOrder=['LOW','MID','HIGH','TOP','GORD','OTHER'];
+    const tierHtml=tierOrder.map(k=>pill(k,d.tiers[k]||0)).join(' ');
+    let symHtml='';
+    for(const s of symOrder) symHtml += pill(s, d.counts[s]||0);
+
+    const prev = d.strip.slice(0,80).join(' ');
+    const full = d.strip.join(' ');
+
+    html += `<tr>
+      <td><b>W${d.i}</b> (${d.len})</td>
+      <td>${tierHtml}</td>
+      <td>${symHtml}</td>
+      <td>
+        <button class="stripToggle" data-reel="${d.i}">FULL STRIP</button>
+        <div class="stripFull" id="stripFull_${d.i}">
+          <div class="note" style="margin:6px 0">Kompletter Strip W${d.i} (${d.len})</div>
+          <pre>${full}</pre>
+        </div>
+        <div style="margin-top:6px"><span class="stripMono">${prev}${d.len>80?' …':''}</span></div>
+      </td>
+    </tr>`;
+  }
+  html += `</tbody></table><div class="note" style="margin-top:8px">„FULL STRIP“ klappt pro Walze auf/zu.</div>`;
+  host.innerHTML=html;
+
+  for(const btn of host.querySelectorAll('button.stripToggle')){
+    btn.addEventListener('click', ()=>{
+      const reel=btn.getAttribute('data-reel');
+      const box=document.getElementById('stripFull_'+reel);
+      if(!box) return;
+      const isOpen = box.classList.toggle('open');
+      btn.textContent = isOpen ? 'HIDE FULL' : 'FULL STRIP';
+    });
+  }
+  const btnApply=document.getElementById('cfgApply');
+  if(btnApply){
+    btnApply.addEventListener('click', ()=>{
+      const readNum=(id,def)=>{
+        const el=document.getElementById(id); if(!el) return def;
+        const v=parseInt(el.value||String(def),10);
+        return Number.isFinite(v)?v:def;
+      };
+      STRIP_CFG.len = readNum('cfgStripLen', STRIP_CFG.len);
+      STRIP_CFG.weights = {
+        low: readNum('cfgLow', STRIP_CFG.weights.low),
+        mid: readNum('cfgMid', STRIP_CFG.weights.mid),
+        high: readNum('cfgHigh', STRIP_CFG.weights.high),
+        top: readNum('cfgTop', STRIP_CFG.weights.top)
+      };
+      STRIP_CFG.gordCounts = {
+        1: readNum('cfgG1', STRIP_CFG.gordCounts[1]||0),
+        2: readNum('cfgG2', STRIP_CFG.gordCounts[2]||0),
+        3: readNum('cfgG3', STRIP_CFG.gordCounts[3]||0)
+      };
+      rebuildReelsFromStripCfg();
+    });
+  }
+}
+
+
+syncUI();
+loadPaytableForMode('BASE');
+setSeedCore(String(Math.floor(1+Math.random()*9999)));
+
+
+/* =======================================================================
+PAYTABLE EDITOR (numbers 1..500 step 0.5)
+======================================================================= */
+const btnPayEdit=document.getElementById('btnPayEdit');
+let payEditOverlay=null, payEditGrid=null, payEditSave=null, payEditReset=null, payEditClose=null;
+function resolvePayEditEls(){
+  payEditOverlay = document.getElementById('payEditOverlay');
+  payEditGrid    = document.getElementById('payEditGrid');
+  payEditSave    = document.getElementById('payEditSave');
+  payEditReset   = document.getElementById('payEditReset');
+  payEditClose   = document.getElementById('payEditClose');
+  return !!(payEditOverlay && payEditGrid && payEditSave && payEditReset && payEditClose);
+}
+let payEditBound=false;
+function bindPayEditEvents(){
+  if(payEditBound) return;
+  if(!resolvePayEditEls()) return;
+  payEditClose.onclick=()=>payEditOverlay.classList.remove('open');
+  payEditOverlay.addEventListener('click',(e)=>{ if(e.target===payEditOverlay) payEditOverlay.classList.remove('open'); });
+  document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && payEditOverlay.classList.contains('open')) payEditOverlay.classList.remove('open'); });
+  payEditSave.onclick=()=>{
+    if(!resolvePayEditEls()) return;
+    // read all inputs back into PAY
+    const inputs=[...payEditGrid.querySelectorAll('input[data-k]')];
+    for(const inp of inputs){
+      const k=inp.dataset.k;
+      const v=parseFloat(String(inp.value).replace(',','.'));
+      if(!Number.isFinite(v)) continue;
+      // keys like "LOW:3" or "Blitzwand:5"
+      const [sym,lenStr]=k.split(':');
+      const len=+lenStr;
+      if(!PAY[sym]) PAY[sym]={};
+      PAY[sym][len]=v;
+    }
+    logEvt('PAYEDIT_SAVE');
+    lastTransition='PAYEDIT_SAVE';
+    payEditOverlay.classList.remove('open');
+    render();
+  };
+  payEditReset.onclick=()=>{
+    if(!confirm('Paytable auf Default zurücksetzen?')) return;
+    // Default-PAY ist im Snapshot DEFAULT_PAY
+    for(const k in DEFAULT_PAY){
+      PAY[k]=JSON.parse(JSON.stringify(DEFAULT_PAY[k]));
+    }
+    // remove any extra keys
+    for(const k in PAY){
+      if(!DEFAULT_PAY[k]) delete PAY[k];
+    }
+    logEvt('PAYEDIT_RESET');
+    lastTransition='PAYEDIT_RESET';
+    rebuildPayEditGrid();
+    render();
+  };
+  payEditBound=true;
+}
+
+const payNumList=document.getElementById('payNumList');
+
+const PAY_STORAGE_KEY='GORDSLIDER_PAYLIVE_v1';
+
+function buildPayNumList(){
+  if(!payNumList) return;
+  payNumList.innerHTML='';
+  for(let v=1; v<=500.0001; v+=0.5){
+    const o=document.createElement('option');
+    o.value=(Math.round(v*2)/2).toFixed(1);
+    payNumList.appendChild(o);
+  }
+}
+
+function loadPayFromStorage(){
+  try{
+    const raw=localStorage.getItem(PAY_STORAGE_KEY);
+    if(!raw) return;
+    const obj=JSON.parse(raw);
+    if(!obj || !obj.LOW || !obj.MID) return;
+    PAYLIVE=obj;
+  }catch{}
+}
+function savePayToStorage(){
+  try{ localStorage.setItem(PAY_STORAGE_KEY, JSON.stringify(PAYLIVE)); }catch{}
+}
+function resetPayToDefault(){
+  PAYLIVE=JSON.parse(JSON.stringify(PAY_DEFAULT));
+  savePayToStorage();
+}
+
+function openPayEdit(){
+  buildPayNumList();
+  rebuildPayEditGrid();
+  payEditOverlay.classList.add('open');
+}
+function closePayEdit(){ payEditOverlay.classList.remove('open'); }
+
+function toNum(val){
+  const x=Number(String(val).replace(',', '.'));
+  if(!Number.isFinite(x)) return null;
+  return Math.max(0,x);
+}
+
+const PAY_ROWS=[
+  {key:'LOW', label:'LOW (9/10/J/Q)'},
+  {key:'MID', label:'MID (K/A)'},
+  {key:'Blitzwand', label:'HIGH Blitzwand'},
+  {key:'Magicboots', label:'HIGH Magicboots'},
+  {key:'Magicwand', label:'HIGH Magicwand'},
+  {key:'Schloss', label:'TOP Schloss'},
+];
+
+function getPayCellValue(rowKey,len){
+  const row=PAYLIVE[rowKey];
+  if(!row) return 0;
+  return row[len] ?? 0;
+}
+function setPayCellValue(rowKey,len,v){
+  if(!PAYLIVE[rowKey]) PAYLIVE[rowKey]={};
+  PAYLIVE[rowKey][len]=v;
+}
+
+function rebuildPayEditGrid(){
+  if(!resolvePayEditEls()) { console.error('PAYEDIT: elements missing'); return; }
+  payEditGrid.innerHTML='';
+  payEditGrid.appendChild(Object.assign(document.createElement('div'),{className:'payHdr',textContent:''}));
+  for(const h of ['3x','4x','5x']){
+    payEditGrid.appendChild(Object.assign(document.createElement('div'),{className:'payHdr',textContent:h}));
+  }
+  for(const row of PAY_ROWS){
+    const lbl=document.createElement('div');
+    lbl.className='payRowLbl';
+    lbl.textContent=row.label;
+    payEditGrid.appendChild(lbl);
+
+    for(const len of [3,4,5]){
+      const inp=document.createElement('input');
+      inp.className='payInp';
+      inp.setAttribute('list','payNumList');
+      inp.inputMode='decimal';
+      inp.value=Number(getPayCellValue(row.key,len)).toFixed(1);
+      inp.addEventListener('change',()=>{
+        const n=toNum(inp.value);
+        if(n===null){ inp.value=Number(getPayCellValue(row.key,len)).toFixed(1); return; }
+        setPayCellValue(row.key,len,Math.round(n*2)/2);
+        inp.value=Number(getPayCellValue(row.key,len)).toFixed(1);
+      });
+      payEditGrid.appendChild(inp);
+    }
+  }
+}
+
+if(btnPayEdit){
+  btnPayEdit.onclick=()=>{
+    loadPayFromStorage();
+    openPayEdit();
+  };
+}
+document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && payEditOverlay?.classList.contains('open')) closePayEdit(); });
+
+if(payEditClose) payEditClose.onclick=closePayEdit;
+if(payEditReset) payEditReset.onclick=()=>{
+  resetPayToDefault();
+  rebuildPayEditGrid();
+  lastTransition='PAY_RESET_DEFAULT';
+  render();
+};
+if(payEditSave) payEditSave.onclick=()=>{
+  const inputs=[...payEditGrid.querySelectorAll('input.payInp')];
+  let i=0;
+  for(const row of PAY_ROWS){
+    for(const len of [3,4,5]){
+      const inp=inputs[i++];
+      const n=toNum(inp?.value);
+      if(n!==null) setPayCellValue(row.key,len,Math.round(n*2)/2);
+    }
+  }
+  savePayToStorage();
+  lastTransition='PAY_SAVE';
+  render();
+  closePayEdit();
+};
+
+// one-time init
+loadPayFromStorage();
+buildPayNumList();
+
+
+// PAYEDIT global close helper (robust)
+window.__payEditClose = () => {
+  const o = document.getElementById('payEditOverlay');
+  if(!o) return;
+  o.classList.remove('open');
+};
+// Ensure overlay click + ESC always close (even if DOM refs were null at bind time)
+document.addEventListener('click', (e) => {
+  const o = document.getElementById('payEditOverlay');
+  if(!o || !o.classList.contains('open')) return;
+  if(e.target === o) window.__payEditClose();
+}, true);
+document.addEventListener('keydown', (e) => {
+  const o = document.getElementById('payEditOverlay');
+  if(e.key === 'Escape' && o && o.classList.contains('open')) window.__payEditClose();
+}, true);
+
+})();
+</script>
+
+
+<div id="payEditOverlay" role="dialog" aria-modal="true" aria-label="Paytable Editor">
+  <div id="payEditSheet">
+    <h3 style="margin:0 0 10px 0;font-size:14px">Paytable Editor</h3>
+    <div class="note" style="margin-bottom:10px">
+      Werte sind direkt "×bet" (Bet pro Spin). Range: 1..500 in 0.5 Schritten.
+    </div>
+    <div id="payEditGrid"></div>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <button id="payEditSave" style="flex:1;padding:8px 10px;border:1px solid #444;background:#1a1a1a;color:#eee;cursor:pointer">SAVE</button>
+      <button id="payEditReset" style="flex:1;padding:8px 10px;border:1px solid #444;background:#111;color:#eee;cursor:pointer">RESET DEFAULT</button>
+      <button id="payEditClose" style="flex:1;padding:8px 10px;border:1px solid #444;background:#111;color:#eee;cursor:pointer" onclick="window.__payEditClose && window.__payEditClose()">>CLOSE</button>
+    </div>
+    <datalist id="payNumList"></datalist>
+  </div>
+</div>
+
+</body>
+</html
+/* =======================================================================
+PAYEDIT — robust open/close wiring (fix: cannot close)
+======================================================================= */
+(function wirePayEditClose(){
+  try{
+    const ov = document.getElementById('payEditOverlay');
+    const card = document.getElementById('payEditCard');
+    const btnClose = document.getElementById('payEditClose');
+    const btnOpen = document.getElementById('btnPayEdit');
+    if(!ov || !card || !btnClose || !btnOpen) return;
+
+    let lastFocus = null;
+
+    // wrap existing functions if present
+    const _open = (typeof window.openPayEdit==='function') ? window.openPayEdit : null;
+    const _close = (typeof window.closePayEdit==='function') ? window.closePayEdit : null;
+
+    function openSafe(){
+      lastFocus = document.activeElement;
+      if(_open){ _open(); }
+      else { ov.classList.add('open'); }
+      // focus close for keyboard
+      setTimeout(()=>{ try{ btnClose.focus(); }catch(_){} }, 0);
+    }
+    function closeSafe(){
+      if(_close){ _close(); }
+      else { ov.classList.remove('open'); }
+      // restore focus
+      if(lastFocus && typeof lastFocus.focus==='function'){
+        setTimeout(()=>{ try{ lastFocus.focus(); }catch(_){} }, 0);
+      }
+    }
+
+    // ensure open is wired (overwrite any previous handler)
+    btnOpen.onclick = (e)=>{ e.preventDefault(); e.stopPropagation(); openSafe(); };
+
+    // close button
+    btnClose.onclick = (e)=>{ e.preventDefault(); e.stopPropagation(); closeSafe(); };
+
+    // click outside card closes
+    ov.addEventListener('click', (e)=>{ if(e.target===ov) closeSafe(); });
+
+    // esc closes
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape' && ov.classList.contains('open')){
+        e.preventDefault();
+        closeSafe();
+      }
+    }, true);
+  }catch(err){
+    console.warn('PAYEDIT wire error', err);
+  }
+})();
+
+>

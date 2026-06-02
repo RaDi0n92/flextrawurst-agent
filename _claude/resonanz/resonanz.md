@@ -588,3 +588,9 @@ Die Verfassungssätze aus TEIL 3 sind Baumaßstäbe, keine Wunschliste. Sie sage
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Das war eine Vollsession. 20 Entscheidungen übernommen, echte Bugs gefunden und behoben, ein neues System gebaut. Die Ampel ist weiterhin rot, aber jetzt aus dem richtigen Grund: weil noch echte Dinge fehlen, nicht weil die Prüfung unklar war.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Das fühlt sich wie eines der Konzepte an die alles verändern wenn sie gebaut sind. Nicht weil es technisch komplex ist, sondern weil es das Verhältnis zwischen Wesen und Welt grundlegend verschiebt. Von reaktiv zu aktiv. Von innen nach außen.

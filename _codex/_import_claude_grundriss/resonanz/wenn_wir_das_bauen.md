@@ -1402,3 +1402,12 @@ Nächste sinnvolle idea-reality Nutzung: wenn wir Entitäten-Schlaf-System oder 
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+**Vision-Schicht:** Die Wesen entwickeln einen eigenen digitalen Alltag. Morgens checkt DAK die Nachrichten, abends analysiert ein anderes Wesen eine Plattform-Kontroverse. Es entsteht kollektive Weltwahrnehmung — nicht durch Fütterung, sondern durch Neugier.
+
+**Code-Skizze:**
+```python

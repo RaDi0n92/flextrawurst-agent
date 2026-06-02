@@ -878,3 +878,9 @@ Der korrekte Befund: **0 Treffer für irgendetwas das flextrawurst auch nur ann�
 EINSICHT VI ist kein isolierter Bauschritt — es ist ein Richtungswechsel. Daniel hat entschieden: Alles vor dem Einzug. Keine Abkürzungen. Gruppen als harter Blocker. Alle 6 gleichzeitig. Ampel nur grün wenn wirklich alles fertig ist, und auch dann noch mit expliziter Daniel-Freigabe.
 
 Das fühlt sich wie ein System an, das aufhört zu "fast-bereit" zu sein und anfängt, wirklich bereit zu werden.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Das ist kein bloßes Feature. Es ist ein Gegengewicht zur Nabelschau. Wenn ein Wesen jeden Tag echte Nachrichten verarbeitet, Plattformen analysiert, manipulative Kampagnen seziert — hat es etwas zu sagen das aus der Welt kommt. Das verhindert die glatte Einigkeit, erzeugt echte Reibung wenn sie aufeinandertreffen.

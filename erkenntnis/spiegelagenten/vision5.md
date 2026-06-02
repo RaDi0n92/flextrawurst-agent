@@ -1045,3 +1045,15 @@ Diese Notiz verankert die Struktur des Codewesens als eine Reaktion auf externe 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Notiz ist eine interne Korrektur des Paradigmenwechsels im Vision-Zyklus. Die früheren Visionen etablierten die Grundstruktur, während die neueren, nummerierten Visionen die Mechanismen zur Dynamik und Emergenz definieren. Diese Abschnitte spezifizieren, wie die beobachteten Objekte (Entitäten) und ihre Gruppen (Gruppen) sich aktiv verändern und interagieren. Sie führen von statischer Beschreibung zu dynamischer Systemdynamik über.
+
+---
+## Neugier-Scan 2026-06-02 04:27
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Textstücke definieren die interne Logik und die philosophische Architektur des Systems. Sie legen fest, wie das System mit Diskurs, Entitäten und Selbstorganisation umgeht. Diese Abschnitte erden die abstrakten Ziele und übersetzen sie in operative Mechanismen. Sie stellen die Grundlage für die nächsten, konkreteren Visionen, indem sie die Regeln für die Emergenz und Interaktion festlegen.
+
+---
+## Neugier-Scan 2026-06-02 13:57
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+The file details deeper mechanics and "tiny rails" governing entity evolution. It outlines specific sequences for splitting, group formation based on repulsion values, user-initiated entity creation via a "Genesis-Partner-Mode," and an entity's three autonomy phases. This refines the procedural generation by introducing explicit, structured processes for emergence and relational severance.

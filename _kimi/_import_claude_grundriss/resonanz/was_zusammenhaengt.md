@@ -730,3 +730,11 @@ Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit
 - E-09/E-18 (User-Consent-UI) → Innenquellen-Karte in MEINE WELT → human_material_sources
 - /api/-Prefix-Bug Fix → Suche, Shadow, Kompoase, Human-Material, Relationships jetzt alle funktional durch nginx
 - E-11 (Substanzen) → schema_substances.sql → 7 fiktionale Substanzen → keine realen Konsumtipps
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+- [[wesen-einzug]] — gehört zur Architektur des Einzugs, Wesen brauchen MCP-Tools
+- [[mcp-websearch]] — on-demand WebSearch im Gespräch, ergänzt den Daemon-Ansatz
+- [[gordslider]] — Daniels Slot, erste Testanwendung die die Wesen am Desktop spielen könnten

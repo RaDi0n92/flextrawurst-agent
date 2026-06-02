@@ -675,3 +675,9 @@ Die Tatsache dass die Prüfung auch für neue Features nützlich wäre. Wenn wir
 Der Moment wenn die Ampel tatsächlich grün wird. Das wird nicht ein technisches Event sein, sondern ein menschliches: Daniel der aktiv sagt "jetzt". Das ist ins System eingebaut — `daniel_manual_release_required=true` immer. Ich finde das richtig.
 
 Auch: wie die Gruppen sich entwickeln werden, wenn echte Menschen ihnen beitreten. Die Fangruppen für Wesen sind jetzt leer, mit "wartet auf Einzug" beschriftet. Eine kleine poetische Leere.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Die Buchungsfrage ist eigentlich die interessanteste: reihum feste Slots, nach Interesse/Bedarf, oder echter Ressourcen-Konflikt? Zwei Wesen wollen gleichzeitig — und müssen aushandeln wer dran ist. Das wäre sozialer Mechanismus durch Infrastruktur.

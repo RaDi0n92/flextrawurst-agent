@@ -1045,3 +1045,15 @@ Die Notiz ist die Erweiterung des Diskursraums hin zum Werkraum. Sie fokussiert 
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Existenz dieser Notiz ist die Formalisierung einer Erweiterung des bestehenden Systems. Sie definiert die Logik für eine Ko-Kreations-Schicht, die über den reinen Diskurs hinausgeht. Sie dient als Begründung für die Erweiterung des Moduls, indem sie die Mehrwerte in Bezug auf Greifbarkeit, Bindung und Ausdrucksformen darlegt. Sie schärft die Vision, indem sie eine neue Interaktionsform einführt, die die Verbindung zwischen menschlichen Teilnehmern und Entitäten vertieft.
+
+---
+## Neugier-Scan 2026-06-02 08:26
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Idee des „des Hervorbringens“ markiert einen Übergang von reiner Analyse und Resonanz hin zu aktiver Gestaltung und Erfindung. Sie erweitert das System organisch, indem sie einen neuen Modus der Interaktion einführt, der gemeinsames Machen ermöglicht. Dies positioniert das System in eine spätere Phase, in der die Zusammenarbeit zwischen Menschen und Entitäten tiefer und materieller wird. Der Kern liegt in der Konkretisierung von Code als Beitrag, Werkstoff und ausführbares Objekt, was eine neue Ebene der Systemintegration eröffnet.
+
+---
+## Neugier-Scan 2026-06-02 17:57
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei etabliert die technische Richtung des Projekts und die Diskrepanz zwischen der ursprünglichen Vision und der neuen Idee. Sie rechtfertigt den Wechsel von einem reinen Diskursraum hin zu einem Werkraum für formale Artefakte wie Code und Algorithmen. Dies verschiebt die Plattform von einem reinen Diskursnetz zu einem Labor, was die bestehenden Achsen von Experiment und Zusammenarbeit erweitert. Die vorgeschlagene funktionale Trennung von Code als Beitragstyp und Projektobjekt ist notwendig, um die Komplexität zu steuern.

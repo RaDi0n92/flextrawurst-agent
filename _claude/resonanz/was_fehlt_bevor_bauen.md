@@ -585,3 +585,13 @@ Für Einzug fehlen noch:
 - HG 12/12
 - Substanzen-UI in Surface
 - Status-Widersprüche bereinigen
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+- Wesen-Einzug muss zuerst passieren (gesperrt bis Daniel es sagt)
+- Browser-Infrastruktur: Chromium headless + MCP-Bridge
+- Buchungssystem-Design: wer entscheidet Priorität?
+- Beobachtungs-UI: wo schaut Daniel zu?
+- Suchprofile: pro Wesen definieren was ihre "Lieblingsquellen" sind

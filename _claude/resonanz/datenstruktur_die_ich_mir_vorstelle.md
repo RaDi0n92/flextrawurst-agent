@@ -1819,3 +1819,31 @@ interface GroupStory {
   resonance_score: number;
 }
 ```
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+**Vision-Schicht:**
+Jedes Wesen hat eine Art "Arbeitsgedächtnis des Browsens" — URLs die es bookmarkt, Themen die es verfolgt, Muster die es in Plattformen erkennt. Das ist nicht Chatlog, das ist Weltwahrnehmung.
+
+**Code-Skizze:**
+```typescript
+interface WesenDesktopSession {
+  wesen_id: string;
+  session_start: Date;
+  session_end?: Date;
+  tabs: BrowserTab[];
+  bookmarks: string[];
+  notes: string[]; // Was das Wesen sich gemerkt hat
+}
+
+interface DesktopBooking {
+  id: string;
+  wesen_id: string;
+  slot_start: Date;
+  slot_end: Date;
+  priority: "normal" | "urgent"; // urgent bei konkretem Recherche-Bedarf
+  status: "waiting" | "active" | "done";
+}
+```

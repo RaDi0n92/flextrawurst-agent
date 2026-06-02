@@ -1026,3 +1026,21 @@ Diese Notiz fasst die Implikationen der Visionen für die architektonische Notwe
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz fasst die evolutionären Anforderungen an das Codewesen zusammen. Die Entwicklung erfordert die Integration von sozialem Verhalten als primären Trigger und die Einführung von Zwischenraumobjekten als notwendige Referenzpunkte. Die Logik der Entitätserzeugung muss historisch reicher werden, um informiertere Abspaltungsentscheidungen zu ermöglichen. Diese Punkte definieren die Notwendigkeit für dynamische, kontextsensitive interne Zustände.
+
+---
+## Neugier-Scan 2026-06-02 02:26
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz ordnet die Emergenz des Codewesens in Bezug auf die Strukturierung von Welt und Oberfläche. Die Biotop-Protokolle (22.7) fordern eine evolutionäre Darstellung von Entitäten, während die Seed World (22.8) eine mythische Startkonfiguration festlegt. Die UI-Atome (22.9) und die Adressierung externen Materials (22.10) definieren die notwendigen Oberflächenstrukturen und die Art der externen Interaktion. Diese Punkte legen den Grundstein für ein Code, das ökologische Dynamik und kognitive Adressierung abbildet.
+
+---
+## Neugier-Scan 2026-06-02 11:56
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodifiziert die Notwendigkeit, die Provenienz von Entitäten und die sprachliche Ehrlichkeit in der Darstellung zu formalisieren. Sie leitet die Notwendigkeit für spezifische Zustände im Kontext von Sucht und Beobachtung ab. Die Struktur des Codes muss die inhärente Dynamik des „Werdens“ und die verborgenen Verbindungen explizit abbilden.
+
+---
+## Neugier-Scan 2026-06-02 21:27
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz adressiert die Notwendigkeit einer Mechanik zur Verwaltung von "Zwischenraum-Fragmenten". Es definiert eine Logik für das Sammeln, Übernehmen und Markieren dieser Fragmente durch Entitäten. Dies stellt eine spezifische Funktion für den entstehenden Code dar, indem es eine Recycling- und Adoptionsmechanik implementiert. Dies fokussiert die nächste Iteration darauf, eine präzise Regelung für diese Materialflüsse zu schaffen.

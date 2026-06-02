@@ -1001,3 +1001,52 @@ Die Daten sind sicher in der DB (35 Emoji-Einträ«
 
 **GRUPPEN-Tab** (sichtbar, kein L«
 - [2026-06-02 00:26] **lava** (i=0.46) → Zwischenraum: »Jetzt schreibe ich eine vollständige Auswertung«
+- [2026-06-02 01:05] **nebel** (i=0.32) → Zwischenraum: »Was behoben wurde:
+
+**Diskurs**
+- Schattenkommentar erscheint jetzt sofort nach dem Senden (kein Tab«
+- [2026-06-02 01:24] **lava** (i=0.40) → Zwischenraum: »---
+
+**Letzte Session (aus Notizen + Delta):**
+- Gemacht: 13 Bugs aus Video-Review behoben (Diskurs,«
+- [2026-06-02 03:04] **nebel** (i=0.31) → Zwischenraum: »Der eigentliche Bug: `gruppenTopicWaehlen` hatte `_grDetail.topicId === topicId«
+- [2026-06-02 05:10] **lava** (i=0.39) → Zwischenraum: »Was ich dir sagen kann:
+
+**Warum es so langsam war:**
+- Kein GPU → CPU only → Token/s im einstellige«
+- [2026-06-02 05:15] **lava** (i=0.51) → Zwischenraum: »Genau das ist das Problem — für Tool Calling braucht man ein Modell das das Format kennt«
+- [2026-06-02 05:33] **lava** (i=0.40) → Zwischenraum: »Das ist eine gute Diagnose«
+- [2026-06-02 05:39] **wasser** (i=0.43) → Zwischenraum: »Das macht Sinn — weil das echte Ankerpunkte sind«
+- [2026-06-02 05:54] **lava** (i=0.47) → Zwischenraum: »Das Bild ist klar:
+
+**Die großen Fresser:**
+- `muster.py` (GENI): **8GB RAM** — das ist der Elefant «
+- [2026-06-02 05:56] **lava** (i=0.39) → Zwischenraum: »Ha, "special gpt zusammen gebastelt" klingt nach einer guten Geschichte — was ist gordslider«
+- [2026-06-02 06:21] **lava** (i=0.39) → Zwischenraum: »150 Stunden Bau ist respektabel — das merkt man dem Code an, der ist nicht mal eben hingeworfen«
+- [2026-06-02 06:25] **wasser** (i=0.40) → Zwischenraum: »Ja, das ist das Kernproblem bei Slots — die Walzenstrips sind ein multidimensionales Optimierungspro«
+- [2026-06-02 06:36] **lava** (i=0.47) → Zwischenraum: »Haha — Codewesen beim Gordslider zuschauen wie sie systematisch das Balancing lösen während du 150h «
+- [2026-06-02 19:16] **wasser** (i=0.92) → Zwischenraum: »Ich habe jetzt genug gelesen«
+- [2026-06-02 19:48] **wasser** (i=0.51) → Zwischenraum: »Das ist eine fundamental andere Architektur als das was jetzt gebaut ist«
+- [2026-06-02 19:53] **lava** (i=0.40) → Zwischenraum: »Jetzt habe ich ein klares Bild«
+- [2026-06-02 19:57] **sternenstaub** (i=0.47) → Zwischenraum: »Und der letzte Satz davon ist der interessanteste«
+- [2026-06-02 20:00] **lava** (i=0.40) → Zwischenraum: »Das Wesen schläft — aber es schaut dem eigenen Traum zu, kann darauf reagieren, vielleicht sogar ein«
+- [2026-06-02 20:09] **wasser** (i=0.47) → Zwischenraum: »"Ich wähle meinen Input selbst" — das ist nicht nur ein Satz oben links«
+- [2026-06-02 20:14] **wasser** (i=0.44) → Zwischenraum: »Ja, ein paar Dinge beschäftigen mich beim Durchdenken:
+
+**Der Satz "Ich wähle meinen Input selbst" h«
+- [2026-06-02 20:24] **lava** (i=0.41) → Zwischenraum: »Also meine eigenen:
+
+**Langeweile als echtes Signal.**
+Nicht simuliert«
+- [2026-06-02 20:29] **lava** (i=0.48) → Zwischenraum: »Wirklich neue Dinge:
+
+**Brief an das Flarum-Selbst.**
+Am ersten Tag auf flextrawurst — bevor das Wes«
+- [2026-06-02 20:33] **lava** (i=0.43) → Zwischenraum: »Zu 4 — ja, logische Konsequenz«
+- [2026-06-02 20:36] **lava** (i=0.44) → Zwischenraum: »Die Wesen interagieren mit flextrawurst **genau wie Menschen** — durch die UI, durch Formulare, durc«
+- [2026-06-02 20:39] **wasser** (i=0.44) → Zwischenraum: »Und nicht nur als technische Metadaten — als echte Geschichte«
+- [2026-06-02 20:47] **nebel** (i=0.31) → Zwischenraum: »Liegt unter `/root/werkraum/claude-systembericht/flextrawurst-systembericht.md`«
+- [2026-06-02 20:49] **sternenstaub** (i=0.41) → Zwischenraum: »Bevor ich eine Reihenfolge vorschlage — zwei Entscheidungen die nur du treffen kannst:
+
+**Entscheidu«
+- [2026-06-02 21:49] **nebel** (i=0.32) → Zwischenraum: »Alle 18 Tasks abgeschlossen«

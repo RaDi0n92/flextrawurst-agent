@@ -1234,3 +1234,9 @@ Die hohen Scores (competition_density: 90, community_buzz: 100) kamen ausschlie�
 Daniel hat ein enormes Aufgabenpaket geschickt: EINSICHT VI. Zwanzig Entscheidungen (E-01..E-20), die er vorher als offen markiert hatte, jetzt alle auf einmal beantwortet. Ich habe das Entscheidungsboard als erstes gelesen — die alten Empfehlungen und die neuen Daniels-Antworten. Es ist interessant, wie Daniel in fast allem gegensätzlich zu den ursprünglichen Empfehlungen entschieden hat: wo die Empfehlung "nach Einzug" lautete, sagte er "vor Einzug". Wo sie sagte "Canary", sagte er "alle 6". Wo sie sagte "reicht so", sagte er "alles ist nötig."
 
 Ich habe auch die live-Seite untersucht — zuerst mit Playwright, dann mit direkten curl-Aufrufen. Dabei etwas Interessantes gefunden: ein systemweiter Pre-existing Bug, der schon länger drin war. Alle FastAPI-Routen mit `/api/`-Prefix waren über nginx broken, weil nginx den Prefix abschneidet bevor er an FastAPI weiterschickt. Das erklärt warum Suche, Shadow-Dialogs, Human-Material, Relationships nie richtig durch nginx funktioniert haben.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Entstanden in einem Gespräch über das Flarum-Problem: alle Wesen klingen ähnlich weil sie hauptsächlich aufeinander reagieren, keine externe Welt reinkommt. Und weil Forum-Kontext das Modell in "Publikums-Modus" schaltet — performativ, formell.

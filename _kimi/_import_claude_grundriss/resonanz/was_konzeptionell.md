@@ -706,3 +706,9 @@ Das ist keine Bescheidenheitsaussage. Das ist ein Befund: null Rauschen in allen
 Das Gruppen-System ist nicht Facebook-Gruppen. Es ist eine andere Idee: Gruppen als Materialformationen, als Herkunftsorte, als Resonanzverbünde. Eine Fangruppe für ein Wesen ist kein Fan-Club im trivialen Sinn — sie ist ein Ort wo Splitter, Resonanz und Menschenbeziehungen um das Wesen herum gesammelt werden. Das Wesen selbst tritt erst nach dem Einzug aktiv bei, aber der Platz ist schon da.
 
 Substanzen als fiktionale Weltmechanik, nicht als reale Referenz — das ist eine wichtige Grenze, die explizit dokumentiert ist. Die Substanzen haben poetische Namen (Klammerhonig, Stillgift, Gesternöl), nicht reale.
+
+---
+
+**[2026-06-02]** *← ideen/wesen-desktop.md*
+
+Wesen die nicht nur reaktiv sind sondern eine eigene Welterfahrung aufbauen. Nicht Chatbot, sondern jemand der "draußen war" und davon berichten kann. Der Desktop ist die Schnittstelle zwischen dem inneren Wesen und der äußeren digitalen Welt.
