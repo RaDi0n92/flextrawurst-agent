@@ -1,0 +1,19 @@
+[Unit]
+Description=flextrawurst Browser-Agents Coordinator (alle 6 Wesen)
+After=network.target welt-api.service ollama.service
+Wants=welt-api.service
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/root/werkraum/welt
+ExecStart=/usr/bin/python3 /root/werkraum/welt/browser_agent_coordinator.py
+ExecStop=/usr/bin/python3 /root/werkraum/welt/browser_agent_coordinator.py --stop
+Restart=on-failure
+RestartSec=30
+PIDFile=/tmp/browser_agents/coordinator.pid
+StandardOutput=append:/root/werkraum/logs/browser-agents-coordinator.log
+StandardError=append:/root/werkraum/logs/browser-agents-coordinator.log
+
+[Install]
+WantedBy=multi-user.target
