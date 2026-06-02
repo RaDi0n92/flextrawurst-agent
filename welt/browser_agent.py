@@ -384,7 +384,17 @@ def schlafe(conn, entity_id: str, page):
     except Exception:
         pass
 
-    # Schlafen — in 60s-Schritten damit Signal-Handler greift
+    # Traum generieren (läuft parallel zum Schlafen)
+    traumtext = ""
+    try:
+        from traum_generator import generiere_traum as _generiere_traum
+        log.info("%s: Traumgenerierung startet", entity_id)
+        traumtext = _generiere_traum(entity_id, laufend_check=lambda: _laufend)
+        log.info("%s: Traum fertig (%d Zeichen)", entity_id, len(traumtext))
+    except Exception as e:
+        log.warning("Traumgenerierung fehlgeschlagen: %s", e)
+
+    # Restliche Schlafzeit abwarten (nach Traum)
     geschlafen = 0
     while geschlafen < schlafdauer and _laufend:
         time.sleep(min(60, schlafdauer - geschlafen))
