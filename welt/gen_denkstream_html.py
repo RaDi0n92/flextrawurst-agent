@@ -164,15 +164,37 @@ function verbinden() {
 function updateCard(d) {
   var id = d.entity_id || d.id;
   if (!id) return;
+  var isTraum = d.url && d.url.startsWith('traum://');
+  var isLuzid = d.url && d.url.startsWith('luzid://');
+  var card = document.getElementById('card-' + id);
+
+  // Karte einfärben je nach Zustand
+  if (card) {
+    if (isTraum) card.style.background = '#030618';
+    else if (isLuzid) card.style.background = '#060310';
+    else card.style.background = '#030810';
+  }
+
   var urlEl = document.getElementById('url-' + id);
-  if (urlEl && d.url) urlEl.textContent = d.url.replace(/^https?:\/\/[^\/]+/,'').substring(0,35);
+  if (urlEl && d.url) {
+    if (isTraum) { urlEl.textContent = '☽ schläft — träumt'; urlEl.style.color = '#2a4a8a'; }
+    else if (isLuzid) { urlEl.textContent = '◎ luzid beobachtet'; urlEl.style.color = '#4a2a8a'; }
+    else { urlEl.textContent = d.url.replace(/^https?:\/\/[^\/]+/,'').substring(0,35); urlEl.style.color = ''; }
+  }
+
   if (d.chunk !== undefined) {
     var lv = document.getElementById('live-' + id);
-    if (lv) { lv.textContent = d.done ? '' : (lv.textContent + d.chunk).slice(-80); }
-    // Screenshot nach done aktualisieren
-    if (d.done) {
-      var img = document.querySelector('#shot-' + id + ' img');
-      if (img) { img.src = '/api/denkstream/screenshot/' + id + '?t=' + Date.now(); img.style.display = ''; }
+    if (lv) {
+      if (d.done) {
+        lv.textContent = '';
+        if (!isTraum && !isLuzid) {
+          var img = document.querySelector('#shot-' + id + ' img');
+          if (img) { img.src = '/api/denkstream/screenshot/' + id + '?t=' + Date.now(); img.style.display = ''; }
+        }
+      } else {
+        lv.style.color = isTraum ? '#4a6aba' : (isLuzid ? '#8a4aba' : '#3ae890');
+        lv.textContent = (lv.textContent + d.chunk).slice(-80);
+      }
     }
   }
   if (d.gedanke) {
