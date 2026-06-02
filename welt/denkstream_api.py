@@ -103,6 +103,40 @@ def denkstream_all_last(limit: int = 10):
     return {"logs": rows}
 
 
+@denkstream_router.get("/traumbilder/{entity_id}")
+def denkstream_traumbilder(entity_id: str):
+    """Liste der letzten Traumbilder eines Wesens."""
+    import os, glob as _glob
+    bild_dir = "/tmp/wesen_traumbilder"
+    pattern = f"{bild_dir}/{entity_id}_*.jpg"
+    dateien = sorted(_glob.glob(pattern), reverse=True)[:5]
+    bilder = []
+    for p in dateien:
+        fname = os.path.basename(p)
+        ts_str = fname.replace(f"{entity_id}_", "").replace(".jpg", "")
+        try:
+            ts = int(ts_str)
+            from datetime import datetime
+            dt = datetime.fromtimestamp(ts).isoformat()
+        except Exception:
+            dt = ts_str
+        bilder.append({"pfad": p, "url": f"/api/denkstream/traumbild/{entity_id}/{fname}", "erstellt": dt})
+    return {"bilder": bilder}
+
+
+@denkstream_router.get("/traumbild/{entity_id}/{filename}")
+def denkstream_traumbild_file(entity_id: str, filename: str):
+    """Einzelnes Traumbild als JPEG."""
+    import os
+    pfad = f"/tmp/wesen_traumbilder/{filename}"
+    if not os.path.exists(pfad) or not pfad.endswith(".jpg"):
+        raise HTTPException(status_code=404, detail="Traumbild nicht gefunden")
+    with open(pfad, "rb") as f:
+        data = f.read()
+    return Response(content=data, media_type="image/jpeg",
+                    headers={"Cache-Control": "public, max-age=3600"})
+
+
 @denkstream_router.get("/screenshot/{entity_id}")
 def denkstream_screenshot(entity_id: str):
     """Aktueller Screenshot eines Wesens als JPEG."""

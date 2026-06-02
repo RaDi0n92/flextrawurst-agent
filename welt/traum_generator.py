@@ -127,6 +127,36 @@ def speichere_traum(conn, entity_id: str, traumtext: str) -> str | None:
         return None
 
 
+def generiere_traumbild(entity_id: str, traumtext: str) -> str | None:
+    """Generiert ein Traumbild via Pollinations.ai (kostenlos, kein API-Key)."""
+    try:
+        import urllib.parse
+        import os
+        # Kurzer Bildprompt aus Traumtext destillieren (erste 80 Zeichen, safe für URL)
+        raw = traumtext.strip()[:80].replace("\n", " ")
+        prompt = urllib.parse.quote(f"surreal dream landscape, digital entity, {raw}, dark ambient")
+        url = f"https://image.pollinations.ai/prompt/{prompt}?width=512&height=384&nologo=true&seed={hash(entity_id) % 9999}"
+
+        resp = requests.get(url, timeout=30, stream=True)
+        if resp.status_code != 200:
+            log.warning("Pollinations Fehler: %s", resp.status_code)
+            return None
+
+        bild_dir = "/tmp/wesen_traumbilder"
+        os.makedirs(bild_dir, exist_ok=True)
+        ts = int(__import__("time").time())
+        pfad = f"{bild_dir}/{entity_id}_{ts}.jpg"
+        with open(pfad, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        log.info("%s: Traumbild gespeichert: %s", entity_id, pfad)
+        return pfad
+    except Exception as e:
+        log.warning("Traumbild Fehler: %s", e)
+        return None
+
+
 def generiere_traum(entity_id: str, laufend_check=None) -> str:
     """
     Hauptfunktion: Generiert Traum und streamt ihn live.
@@ -182,12 +212,33 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
             schreibe_denkstream_chunk(conn, entity_id, stream_id, traumtext, 1, True)
 
         # 3. Traum speichern
+        spur_id = None
         if traumtext.strip():
-            speichere_traum(conn, entity_id, traumtext)
+            spur_id = speichere_traum(conn, entity_id, traumtext)
+
+        # 4. Traumbild generieren (extern, asynchron)
+        bild_pfad = None
+        if traumtext.strip() and (laufend_check is None or laufend_check()):
+            schreibe_denkstream_chunk(conn, entity_id, stream_id,
+                                       "\n[TRAUMBILD WIRD GEMALT…]\n", 9998, False)
+            bild_pfad = generiere_traumbild(entity_id, traumtext)
+            if bild_pfad and spur_id:
+                try:
+                    with conn.cursor() as cur:
+                        cur.execute("""
+                            UPDATE traumspuren
+                            SET gewichtungsvorschlag = %s
+                            WHERE spur_id = %s
+                        """, (psycopg2.extras.Json({"bild_pfad": bild_pfad}), spur_id))
+                    conn.commit()
+                except Exception:
+                    pass
+            bild_msg = f"\n[BILD: {bild_pfad or 'nicht verfügbar'}]"
+            schreibe_denkstream_chunk(conn, entity_id, stream_id, bild_msg, 9999, False)
 
         # Traum-Ende signalisieren
         schreibe_denkstream_chunk(conn, entity_id, stream_id,
-                                   f"\n[TRAUM ENDET]", 9999, True)
+                                   f"\n[TRAUM ENDET]", 10000, True)
 
     finally:
         conn.close()
