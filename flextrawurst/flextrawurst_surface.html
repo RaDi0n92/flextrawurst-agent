@@ -3901,10 +3901,24 @@ html[lang="en"] .de-only{display:none}
   window.gruppenTopicsLaden = function(groupId) {
     fetch('/api/groups/' + groupId + '/topics').then(function(r){return r.json();}).then(function(d){
       var el=document.getElementById('gr-topic-list'); if(!el)return; var a=d.topics||[];
-      el.innerHTML = a.length ? a.map(function(t){return '<button class="gr-topic-row'+(_grDetail.topicId===t.id?' aktiv':'')+'" onclick="gruppenTopicWaehlen('+t.id+')"><span class="gr-topic-title">'+grEsc(t.title)+'</span><span class="gr-topic-meta">'+grEsc(t.status||'open')+' · '+(t.post_count||0)+' Posts</span></button>';}).join('') : '<div class="gr-empty">Noch keine Themen</div>';
+      el.innerHTML = (a.length ? '<button class="gr-topic-row'+(!_grDetail.topicId?' aktiv':'')+'" data-tid="" onclick="gruppenAllePostsZeigen()">Alle Posts</button>' : '')
+        + (a.length ? a.map(function(t){return '<button class="gr-topic-row'+(_grDetail.topicId===t.id?' aktiv':'')+'" data-tid="'+t.id+'" onclick="gruppenTopicWaehlen('+t.id+')"><span class="gr-topic-title">'+grEsc(t.title)+'</span><span class="gr-topic-meta">'+grEsc(t.status||'open')+' · '+(t.post_count||0)+' Posts</span></button>';}).join('') : '<div class="gr-empty">Noch keine Themen</div>');
     }).catch(function(){var el=document.getElementById('gr-topic-list'); if(el)el.innerHTML='<div class="gr-empty">Themen nicht geladen</div>';});
   };
-  window.gruppenTopicWaehlen = function(topicId){ _grDetail.topicId = (_grDetail.topicId === topicId ? null : topicId); if(_grDetail.group) gruppenPostsLaden(_grDetail.group.id); };
+  window.gruppenAllePostsZeigen = function(){
+    _grDetail.topicId = null;
+    document.querySelectorAll('.gr-topic-row').forEach(function(b){ b.classList.remove('aktiv'); });
+    var alle = document.querySelector('.gr-topic-row[data-tid=""]');
+    if (alle) alle.classList.add('aktiv');
+    if(_grDetail.group) gruppenPostsLaden(_grDetail.group.id);
+  };
+  window.gruppenTopicWaehlen = function(topicId){
+    _grDetail.topicId = topicId;
+    document.querySelectorAll('.gr-topic-row').forEach(function(b){ b.classList.remove('aktiv'); });
+    var btn = document.querySelector('.gr-topic-row[data-tid="'+topicId+'"]');
+    if (btn) btn.classList.add('aktiv');
+    if(_grDetail.group) gruppenPostsLaden(_grDetail.group.id);
+  };
   window.gruppenPostsLaden = function(groupId) {
     var url='/api/groups/'+groupId+'/posts?limit=40'+(_grDetail.topicId?'&topic_id='+_grDetail.topicId:'');
     fetch(url).then(function(r){return r.json();}).then(function(d){
