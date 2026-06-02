@@ -11,7 +11,7 @@ from typing import Any
 
 import psycopg2
 import psycopg2.extras
-from fastapi import FastAPI, File, Header, HTTPException, Query, UploadFile
+from fastapi import Body, FastAPI, File, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
@@ -12075,6 +12075,80 @@ try:
 except ImportError as _e:
     import logging as _logging
     _logging.warning(f"wesen_life_contracts/organ_hunger nicht geladen: {_e}")
+
+
+# ── Wunsch-System — Wesen formulieren Strukturwünsche ─────────────────────────
+@app.get("/wuensche")
+def wuensche_liste(status: str | None = Query(default=None)):
+    """Alle Strukturwünsche — öffentlich."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cond = "WHERE status = %s" if status else ""
+            params = [status] if status else []
+            cur.execute(f"""
+                SELECT wunsch_id::text, entity_id, wunsch_text, typ, status,
+                       erstellt_at, bearbeitet_at
+                FROM entity_wuensche
+                {cond}
+                ORDER BY erstellt_at DESC
+                LIMIT 50
+            """, params)
+            rows = [dict(r) for r in cur.fetchall()]
+        for r in rows:
+            if r.get("erstellt_at"):
+                r["erstellt_at"] = r["erstellt_at"].isoformat()
+            if r.get("bearbeitet_at"):
+                r["bearbeitet_at"] = r["bearbeitet_at"].isoformat()
+        return {"wuensche": rows, "count": len(rows)}
+    finally:
+        conn.close()
+
+
+@app.post("/wuensche", status_code=201)
+def wunsch_erstellen(
+    wunsch_text: str = Body(...),
+    typ: str = Body(default="raum"),
+    authorization: str | None = Header(default=None),
+):
+    """Wesen oder Admin formuliert Strukturwunsch."""
+    claims = _require_admin_or_entity(authorization)
+    entity_id = claims.get("sub", "")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO entity_wuensche (entity_id, wunsch_text, typ)
+                VALUES (%s, %s, %s) RETURNING wunsch_id
+            """, (entity_id, wunsch_text, typ))
+            wid = str(cur.fetchone()["wunsch_id"])
+        conn.commit()
+    finally:
+        conn.close()
+    return {"wunsch_id": wid, "entity_id": entity_id}
+
+
+@app.patch("/admin/wuensche/{wunsch_id}")
+def wunsch_status(
+    wunsch_id: str,
+    status: str = Body(...),
+    authorization: str | None = Header(default=None),
+):
+    """Daniel ändert Status eines Wunsches."""
+    _require_admin(authorization)
+    if status not in ("offen", "aufgegriffen", "abgelehnt"):
+        raise HTTPException(status_code=422, detail="Ungültiger Status")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                UPDATE entity_wuensche SET status = %s, bearbeitet_at = NOW()
+                WHERE wunsch_id = %s
+            """, (status, wunsch_id))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
 
 
 # ── Provenienz — wer hat was gebaut ──────────────────────────────────────────

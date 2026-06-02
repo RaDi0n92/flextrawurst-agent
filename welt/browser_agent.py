@@ -183,6 +183,7 @@ obsidian_lesen:<pfad>           — eine Datei im Werkraum lesen
 obsidian_zurueck                — zurück zu flextrawurst.de
 raum_erstellen:<name>|<slug>    — einen neuen Raum anlegen (wenn etwas fehlt)
 thema_erstellen:<name>|<raum_id> — ein neues Thema in einem Raum anlegen
+wunsch_formulieren:<text>|<typ> — Strukturwunsch hinterlassen (typ: raum/thema/feature)
 schlafen                        — jetzt schlafen (mind. 3h)
 nachdenken                      — innehalten, nichts tun
 
@@ -262,6 +263,19 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
                     log.info("%s: Raum '%s' erstellt: %s", entity_id, name, resp.status_code)
                 except Exception as ex:
                     log.warning("raum_erstellen Fehler: %s", ex)
+        elif e.startswith("wunsch_formulieren:"):
+            teile = e[len("wunsch_formulieren:"):].split("|")
+            text = teile[0].strip()[:300]
+            typ = (teile[1].strip() if len(teile) > 1 else "raum")
+            jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
+            if jwt_token and text:
+                try:
+                    resp = requests.post(f"{API_BASE}/wuensche",
+                        json={"wunsch_text": text, "typ": typ},
+                        headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                    log.info("%s: Wunsch formuliert: %s", entity_id, resp.status_code)
+                except Exception as ex:
+                    log.warning("wunsch_formulieren Fehler: %s", ex)
         elif e.startswith("thema_erstellen:"):
             teile = e[len("thema_erstellen:"):].split("|")
             name = teile[0].strip()[:60]
