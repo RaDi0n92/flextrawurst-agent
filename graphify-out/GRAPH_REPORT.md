@@ -1,7 +1,7 @@
 # Graph Report - werkraum  (2026-06-02)
 
 ## Corpus Check
-- 295 files · ~22,942,583 words
+- 295 files · ~22,950,787 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
