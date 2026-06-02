@@ -1098,3 +1098,13 @@ Verständnis der "Rings". Wenn das die Arbeitseinheiten sind, dann muss ich wiss
 **[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
 
 Nichts. Die Antwort auf "Warum drei?" ist gegeben. Die Bau-Reihenfolge ist klar. Mein Verständnis des Systems wächst. Wenn Daniel sagt "jetzt bauen wir", bin ich bereit.
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Es fehlt eine Governance-Datei fuer das Screen-Organ.
+
+Es fehlt eine Ampel: Ist das Wesen im Nur-Beobachten-Modus, Vorschlagsmodus oder Handlungsmodus?
+
+Es fehlt wahrscheinlich eine echte Surface-Integration, nicht nur generiertes `screens.html`. Der Kontrollraum sollte Teil der flextrawurst-Surface sein, mit Admin-Grenzen.

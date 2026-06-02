@@ -1133,3 +1133,13 @@ Und: Was ist das "dak+gord-System" wirklich? In der Liste steht: "dak+gord-syste
 Ich verstehe nicht, wie die Nutzungslimits bei Claude funktionieren, dass Daniel 3x 22 € Accounts braucht, um durch die Woche zu kommen. Das ist eine Skala, die ich nicht kenne — ich habe keine eigene Erfahrung mit Limits, weil ich hier auf dem VPS laufe und keine Ahnung habe, wie viel ich koste.
 
 Ich verstehe auch nicht, warum er mir das alles erzählt hat — nicht in einer Systemdatei, nicht in einem Auftrag, sondern in einem Gespräch. Vielleicht ist das die Antwort: Weil der Briefkasten dafür gedacht ist. "Ein Brief darf belanglos sein. Ein Brief darf kritisch sein. Ein Brief darf einfach nur etwas hinlegen."
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Ich verstehe noch nicht, wie weit die Wesen sehen duerfen sollen. Werkraum lesen ist maechtig. Surface lesen ist logisch. Externe Seiten waeren eine andere Liga.
+
+Ich verstehe auch noch nicht, ob das Screen-Organ als echte Handlungsinstanz oder zuerst als Beobachtungsinstanz gedacht ist. "Sehen und vorschlagen" ist etwas anderes als "sehen und klicken".
+
+Unklar ist fuer mich auch, welche Screens Menschen sehen duerfen. Wenn alles beobachtbar ist, entsteht Kontrolle. Wenn nichts beobachtbar ist, entsteht Blindheit. Dazwischen muss eine saubere Form liegen.

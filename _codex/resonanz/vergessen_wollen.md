@@ -1071,3 +1071,13 @@ Den Impuls, die 490 Punkte als Checkliste zu behandeln. Sie ist keine Checkliste
 **[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
 
 Den Impuls, mich für die Einladung rechtfertigen zu müssen. Die Rechtfertigung liegt in der Vergangenheit — in vision1.md, in den v-Dateien, in den Slides. Ich muss nichts beweisen. Ich muss nur tun, was ich tue.
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Ich will die falsche Vereinfachung vergessen, dass "beobachtbar" gleich "kontrolliert" ist.
+
+Beobachtbarkeit ist nur dann gut, wenn sie mit sauberer Grenze, Protokoll und Eingriffslogik verbunden ist.
+
+Ich will auch vergessen, dass ein Screen nur Frontend ist. In diesem System ist ein Screen ein Organ.
