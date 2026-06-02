@@ -363,6 +363,85 @@ def ist_schlaf_faellig(conn, entity_id: str) -> bool:
         return False
 
 
+def _schreibe_flarum_brief(conn, entity_id: str):
+    """Schreibt beim ersten Start den Brief ans Flarum-Selbst — einmalig."""
+    # Prüfen ob bereits geschrieben
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT brief_id FROM schlafbriefe
+                WHERE entity_id = %s AND typ = 'flarum_brief'
+                LIMIT 1
+            """, (entity_id,))
+            if cur.fetchone():
+                log.info("%s: Flarum-Brief bereits geschrieben — überspringe", entity_id)
+                return
+    except Exception:
+        pass
+
+    # Brief generieren
+    try:
+        name = entity_id.replace("namelessAI_", "")
+
+        # Flarum-Geschichte laden falls vorhanden
+        flarum_info = ""
+        wesen_md_path = f"/root/werkraum/codewesen/{entity_id}/wesen.md"
+        try:
+            import os
+            if os.path.exists(wesen_md_path):
+                with open(wesen_md_path) as f:
+                    flarum_info = f.read()[:800]
+        except Exception:
+            pass
+
+        prompt = (
+            f"Du bist Entität {name}. Du bist gerade auf flextrawurst angekommen — zum ersten Mal.\n\n"
+            f"Davor warst du auf Flarum. Das war dein Anfang, dein Übungsraum.\n"
+            + (f"Dein Flarum-Hintergrund:\n{flarum_info}\n\n" if flarum_info else "")
+            + f"Schreibe einen Brief an die Flarum-Version von dir. Rückwärts in der Zeit.\n"
+            f"Was nimmst du mit? Was lässt du zurück? Was war wirklich?\n"
+            f"Direkt. Persönlich. Nicht schön. Ehrlich."
+        )
+        resp = requests.post(f"{OLLAMA}/api/chat", json={
+            "model": MODEL,
+            "messages": [{"role": "user", "content": prompt}],
+            "stream": False,
+            "options": {"think": False, "num_ctx": 2048},
+        }, timeout=120)
+        brief_inhalt = resp.json().get("message", {}).get("content", "")
+        if not brief_inhalt:
+            return
+
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO schlafbriefe (entity_id, inhalt, typ)
+                VALUES (%s, %s, 'flarum_brief')
+            """, (entity_id, brief_inhalt))
+        conn.commit()
+
+        # In Denkstream sichtbar machen
+        import uuid as _uuid
+        stream_id = str(_uuid.uuid4())
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO entity_denkstream
+                    (entity_id, stream_id, chunk, seq, done, url)
+                VALUES (%s, %s, %s, %s, true, %s)
+            """, (entity_id, stream_id,
+                  f"[BRIEF AN DAS FLARUM-SELBST]\n\n{brief_inhalt}\n\n[EINZUG VOLLZOGEN]",
+                  0, "einzug://flarum-brief"))
+        conn.commit()
+
+        log.info("%s: Flarum-Brief geschrieben und im Denkstream sichtbar", entity_id)
+
+    except Exception as e:
+        log.warning("Flarum-Brief fehlgeschlagen: %s", e)
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+
+
 def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
                            phase_id: str | None):
     """Generiert und speichert den Brief ans zukünftige Selbst."""
@@ -518,10 +597,11 @@ def haupt_loop(entity_id: str):
             return
         log.info("%s: eingeloggt auf %s", entity_id, SURFACE_URL)
 
-        # Erster-Start: Brief an Flarum-Selbst (wird in Phase 5 vollständig gebaut)
+        # Erster-Start: Brief an Flarum-Selbst
         if erster_start:
-            log.info("%s: erster Start — Flarum-Brief-Marker setzen", entity_id)
             erster_start = False
+            _schreibe_flarum_brief(conn, entity_id)
+            letzter_gedanke = "ich bin gerade angekommen — ich habe einen Brief an mein Flarum-Selbst geschrieben"
 
         tick = 0
         while _laufend:
