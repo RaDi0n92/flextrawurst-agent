@@ -285,29 +285,63 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
 
 
 def ist_schlaf_faellig(conn, entity_id: str) -> bool:
-    """Prüft ob das Wesen 6+ Stunden wach war ohne 3h-Schlafblock."""
+    """Prüft ob das Wesen schlafen sollte.
+    Bedingungen: 6+ Stunden wach ODER Gesamtschlaf in 24h < 6h.
+    Verhindert: zu kurze Wachphasen (< 30 min), zu viel Schlaf (> 9h/24h).
+    """
     try:
         with conn.cursor() as cur:
-            # Letzter Schlafblock
+            # Letzter Schlaf-Ende
             cur.execute("""
-                SELECT started_at FROM sleep_phases
+                SELECT started_at, ended_at FROM sleep_phases
                 WHERE entity_id = %s
                 ORDER BY started_at DESC LIMIT 1
             """, (entity_id,))
             row = cur.fetchone()
+
+            now = datetime.now(timezone.utc)
+
+            # Gesamtschlaf in letzten 24h prüfen (max 9h)
+            cur.execute("""
+                SELECT COALESCE(SUM(
+                    EXTRACT(EPOCH FROM (COALESCE(ended_at, NOW()) - started_at))
+                ), 0) AS total_schlaf
+                FROM sleep_phases
+                WHERE entity_id = %s AND started_at > NOW() - INTERVAL '24h'
+            """, (entity_id,))
+            total = cur.fetchone()["total_schlaf"] or 0
+            if total >= 9 * 3600:
+                return False  # Genug geschlafen in 24h
+
             if not row:
-                # Noch nie geschlafen — nach 8h empfehlen
+                # Noch nie geschlafen — nach 8h Aktivität empfehlen
                 cur.execute("""
-                    SELECT COUNT(*) AS n FROM entity_thinking_log
+                    SELECT MIN(tick_at) AS erster FROM entity_thinking_log
                     WHERE entity_id = %s AND meta->>'source' = 'browser_agent'
                 """, (entity_id,))
-                n = cur.fetchone()["n"]
-                return n > (8 * 3600 // (LOOP_PAUSE + 5))
-            from datetime import timedelta
-            letzter_schlaf = row["started_at"]
-            if letzter_schlaf.tzinfo is None:
-                letzter_schlaf = letzter_schlaf.replace(tzinfo=timezone.utc)
-            wach_seit = (datetime.now(timezone.utc) - letzter_schlaf).total_seconds()
+                r = cur.fetchone()
+                if not r or not r["erster"]:
+                    return False
+                erster = r["erster"]
+                if erster.tzinfo is None:
+                    erster = erster.replace(tzinfo=timezone.utc)
+                return (now - erster).total_seconds() > 8 * 3600
+
+            letzter_schlaf_start = row["started_at"]
+            letzter_schlaf_ende = row["ended_at"]
+
+            if letzter_schlaf_start.tzinfo is None:
+                letzter_schlaf_start = letzter_schlaf_start.replace(tzinfo=timezone.utc)
+
+            # Mindest-Wachzeit nach letztem Schlaf: 30 Minuten
+            referenz = letzter_schlaf_ende or letzter_schlaf_start
+            if referenz.tzinfo is None:
+                referenz = referenz.replace(tzinfo=timezone.utc)
+            wach_seit = (now - referenz).total_seconds()
+            if wach_seit < 1800:
+                return False  # Noch keine 30 min wach
+
+            # Nach 6h Wachzeit: schlafen empfehlen
             return wach_seit > 6 * 3600
     except Exception:
         return False
