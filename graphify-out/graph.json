@@ -64932,8 +64932,8 @@
       "source_file": "welt/einzug_vorschau.py",
       "source_location": "L167",
       "weight": 1.0,
-      "_src": "einzug_vorschau_main",
-      "_tgt": "input_input",
+      "_src": "input_input",
+      "_tgt": "einzug_vorschau_main",
       "source": "input_input",
       "target": "einzug_vorschau_main"
     },
