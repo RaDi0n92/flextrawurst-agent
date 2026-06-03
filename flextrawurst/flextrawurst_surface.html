@@ -56,6 +56,25 @@
   /* transitions */
   --ease:.15s cubic-bezier(.4,0,.2,1);
 }
+/* ══ LIGHT MODE ══════════════════════════════════════════════════════════ */
+[data-theme="light"]{
+  --void:#f0ebe0;--deep:#e8e3d8;--surface:#ddd8cd;--rim:#c4beb2;
+  --glass:rgba(240,235,224,0.92);--glass2:rgba(232,227,216,0.96);
+  /* system colors — gedämpft für hellen Hintergrund */
+  --alive:#0a9050;--world:#0890a8;--wesen:#7a38b8;--splitter:#c05a18;
+  --human:#2870d0;--sys:#c43030;--plan:#1868c8;--later:#786050;
+  /* glows — reduziert */
+  --glow-alive:0 0 20px rgba(10,144,80,0.12);
+  --glow-world:0 0 20px rgba(8,144,168,0.12);
+  --glow-wesen:0 0 20px rgba(122,56,184,0.12);
+  --glow-splitter:0 0 20px rgba(192,90,24,0.12);
+  /* text — dunkel auf warm-hell */
+  --t-dim:#b8a898;--t-sub:#786858;--t-mid:#4a3c2e;--t-bright:#2a1e12;--t-head:#180e06;
+}
+[data-theme="light"] html,[data-theme="light"] body,
+html[data-theme="light"],body[data-theme="light"]{background:var(--void);color:var(--t-mid)}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:var(--rim)}
+[data-theme="light"] .splash-ring{border-color:var(--world)!important;opacity:0.15}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);font-family:var(--font-body);font-size:16px}
 ::-webkit-scrollbar{width:6px;height:4px}
@@ -263,7 +282,9 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .mw-ta:focus{outline:none;border-color:#1a4a6a}
 .mw-inp{background:#010508;border:1px solid #0e2040;color:#4a7a9a;font-family:'Courier New',monospace;font-size:0.7rem;padding:6px 10px;width:100%;box-sizing:border-box;margin-bottom:4px}
 .mw-inp:focus{outline:none;border-color:#1a4a6a}
-.mw-btn{background:#07101a;border:1px solid #1a3a5a;color:#3a6a8a;font-family:'Courier New',monospace;font-size:0.6rem;padding:5px 14px;cursor:pointer;letter-spacing:0.1em;align-self:flex-start}
+.mw-btn{background:#07101a;border:1px solid #1a3a5a;color:#3a6a8a;font-family:var(--font-mono);font-size:0.6rem;padding:5px 14px;cursor:pointer;letter-spacing:0.1em;align-self:flex-start;border-radius:4px;transition:all var(--ease);display:inline-flex;align-items:center;gap:5px}
+.mw-btn:hover{border-color:var(--world);color:var(--world);background:#071828}
+.mw-btn:active{transform:scale(0.96)}
 .mw-btn:hover{background:#0e1a2a;color:#5a9aba}
 .mw-leer{font-size:0.65rem;color:#1a5a7a;padding:12px 0;font-style:italic}
 .mw-notiz-karte{background:#010407;border:1px solid #07101a;padding:10px 12px;margin-bottom:4px}
@@ -603,6 +624,17 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   border-radius:50%;background:var(--alive);margin-right:3px;vertical-align:middle;
   animation:pulse-glow 2.2s ease infinite;box-shadow:0 0 6px rgba(16,240,128,0.6)}
 #view-bar .v-sep{width:1px;height:16px;background:var(--rim);flex-shrink:0;margin:0 2px;align-self:center}
+/* ── ICONS ────────────────────────────────────────────────────────────── */
+.ic{display:inline-block;width:12px;height:12px;vertical-align:middle;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ic-sm{width:10px;height:10px;stroke-width:1.8}
+.ic-lg{width:14px;height:14px}
+/* Affordanz-Chevron: erscheint auf hover bei clickbaren Listen-Items */
+.mw-bereich-karte{position:relative}
+.mw-bereich-karte::after{content:'›';position:absolute;right:8px;top:50%;transform:translateY(-50%) translateX(6px);color:var(--world);opacity:0;font-size:1rem;transition:all var(--ease)}
+.mw-bereich-karte:hover::after{opacity:0.7;transform:translateY(-50%) translateX(0)}
+.rail-item::after{content:'›';position:absolute;right:8px;top:50%;transform:translateY(-50%) translateX(4px);color:var(--t-dim);opacity:0;font-size:0.9rem;transition:all var(--ease)}
+.rail-item:hover::after{opacity:0.5;transform:translateY(-50%) translateX(0)}
+.rail-item.rl-active::after{opacity:0!important}
 /* ── ACTIVE STATES — Klickgefühl ─────────────────────────────────────── */
 .sc-card:active,.wk-card:active,.rv-card:active,.wv-card:active,.sv-card:active{transform:scale(0.98)}
 .organ-chip:active,.entity-card:active,.wiss-shelf:active{transform:scale(0.97)}
@@ -733,6 +765,22 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 </style>
 </head>
 <body>
+<svg id="ftw-icons" style="display:none;position:absolute" aria-hidden="true">
+  <symbol id="ic-user" viewBox="0 0 16 16"><circle cx="8" cy="5.5" r="2.5"/><path d="M2.5 14a5.5 5.5 0 0 1 11 0"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 16 16"><path d="M3 2h8a1 1 0 0 1 1 1v11H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M12 13H4M5 6h5M5 9h3"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 16 16"><path d="M13 9A6 6 0 1 1 7 3a4 4 0 0 0 6 6z"/></symbol>
+  <symbol id="ic-note" viewBox="0 0 16 16"><rect x="3" y="2" width="10" height="12" rx="1"/><path d="M5 5h6M5 8h6M5 11h4"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 16 16"><rect x="2" y="4" width="12" height="10" rx="1"/><path d="M2 8h12M5 2v3M11 2v3"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 16 16"><path d="M2 3h12v8H9.5L8 13l-1.5-2H2z"/></symbol>
+  <symbol id="ic-thought" viewBox="0 0 16 16"><circle cx="8" cy="7" r="4.5"/><circle cx="4.5" cy="12.5" r="1"/><circle cx="2.5" cy="14.5" r="0.75"/></symbol>
+  <symbol id="ic-source" viewBox="0 0 16 16"><path d="M8 2L14 8L8 14L2 8Z"/><circle cx="8" cy="8" r="2"/></symbol>
+  <symbol id="ic-arrow-r" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></symbol>
+  <symbol id="ic-save" viewBox="0 0 16 16"><path d="M3 3h8l2 2v8H3z"/><path d="M6 3v4h5"/><path d="M5 11v2h6v-2"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 16 16"><path d="M1 8s3-5 7-5 7 5 7 5-3 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2"/></symbol>
+  <symbol id="ic-chevron-r" viewBox="0 0 16 16"><path d="M6 4l4 4-4 4"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.1 3.1l1.4 1.4M11.5 11.5l1.4 1.4M11.5 3.1l-1.4 1.4M3.1 11.5l1.4 1.4"/></symbol>
+  <symbol id="ic-moon-sm" viewBox="0 0 16 16"><path d="M11 9A4 4 0 1 1 7 5a3 3 0 0 0 4 4z"/></symbol>
+</svg>
 
 <!-- Crawlable content für AI-Scanner und Suchmaschinen — visuell versteckt -->
 <noscript>
@@ -806,7 +854,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   </div>
   <div id="splash-title">flextrawurst<span id="splash-cursor"></span></div>
   <div id="splash-sub" data-i18n="splash.sub">Ein Ökosystem · Kein Produkt</div>
-  <button id="splash-enter" onclick="splashDismiss()">BETRETEN</button>
+  <button id="splash-enter" onclick="splashDismiss()">BETRETEN <svg style="width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle"><use href="#ic-arrow-r"/></svg></button>
   <div id="splash-live">
     <span class="splash-dot"><span class="splash-dot-alive">●</span> Splitter-Physik</span>
     <span class="splash-dot"><span class="splash-dot-alive">●</span> GENI</span>
@@ -836,6 +884,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
   <div id="topbar-right">
     <span class="top-badge ok">LIVE</span>
     <span class="top-badge plan">GEPLANT</span>
+    <button id="theme-toggle" onclick="ftwToggleTheme()" title="Hell/Dunkel" style="background:none;border:1px solid var(--rim);color:var(--t-sub);font-size:0.62rem;padding:2px 7px;cursor:pointer;border-radius:4px;transition:all var(--ease);display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono)"><svg id="theme-icon" style="width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-moon-sm"/></svg><span id="theme-label">HELL</span></button>
     <div id="lang-sw">
       <button class="lang-btn active" id="lang-btn-de" onclick="setLang('de')">DE</button>
       <button class="lang-btn" id="lang-btn-en" onclick="setLang('en')">EN</button>
@@ -850,7 +899,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
     </span>
     <div id="auth-widget">
       <span id="auth-name" style="display:none;font-size:0.58rem;color:#2a6a4a;letter-spacing:0.08em;cursor:pointer" onclick="authLogout()"></span>
-      <button id="auth-login-btn" style="font-size:0.58rem;background:none;border:1px solid #0e2a3a;color:#1a4a5a;padding:3px 10px;cursor:pointer;letter-spacing:0.08em;font-family:monospace" onclick="authOeffneLogin()">LOGIN</button>
+      <button id="auth-login-btn" style="font-size:0.58rem;background:none;border:1px solid #0e2a3a;color:#3a6a8a;padding:3px 10px 3px 8px;cursor:pointer;letter-spacing:0.08em;font-family:var(--font-mono);border-radius:4px;transition:all var(--ease);display:inline-flex;align-items:center;gap:5px" onmouseenter="this.style.borderColor='var(--world)';this.style.color='var(--world)'" onmouseleave="this.style.borderColor='#0e2a3a';this.style.color='#3a6a8a'" onclick="authOeffneLogin()"><svg style="width:10px;height:10px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0"><use href="#ic-user"/></svg>LOGIN</button>
     </div>
   </div>
 </div>
@@ -4590,34 +4639,42 @@ html[lang="en"] .de-only{display:none}
   <!-- BEREICHE: ruhige Karten unten -->
   <div class="mw-bereiche">
     <div class="mw-bereich-karte" onclick="mwOeffne('tagebuch')">
+      <svg class="ic ic-sm" style="color:var(--world);margin-bottom:2px"><use href="#ic-book"/></svg>
       <span class="mw-bereich-name">Tagebuch</span>
       <span class="mw-bereich-zahl" id="mw-z-tagebuch">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('traumtagebuch')">
+      <svg class="ic ic-sm" style="color:var(--wesen);margin-bottom:2px"><use href="#ic-moon"/></svg>
       <span class="mw-bereich-name">Traumtagebuch</span>
       <span class="mw-bereich-zahl" id="mw-z-traumtagebuch">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('notizen')">
+      <svg class="ic ic-sm" style="color:var(--alive);margin-bottom:2px"><use href="#ic-note"/></svg>
       <span class="mw-bereich-name">Notizen</span>
       <span class="mw-bereich-zahl" id="mw-z-notizen">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('kalender')">
+      <svg class="ic ic-sm" style="color:var(--plan);margin-bottom:2px"><use href="#ic-calendar"/></svg>
       <span class="mw-bereich-name">Kalender</span>
       <span class="mw-bereich-zahl" id="mw-z-kalender">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('nachrichten')">
+      <svg class="ic ic-sm" style="color:var(--human);margin-bottom:2px"><use href="#ic-message"/></svg>
       <span class="mw-bereich-name">Nachrichten</span>
       <span class="mw-bereich-zahl" id="mw-z-nachrichten">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('profil')">
+      <svg class="ic ic-sm" style="color:var(--t-mid);margin-bottom:2px"><use href="#ic-user"/></svg>
       <span class="mw-bereich-name">Profil</span>
       <span class="mw-bereich-zahl">↗</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('gedanken')">
+      <svg class="ic ic-sm" style="color:var(--splitter);margin-bottom:2px"><use href="#ic-thought"/></svg>
       <span class="mw-bereich-name" data-i18n="mw.gedanken">Gedanken</span>
       <span class="mw-bereich-zahl" id="mw-z-gedanken">—</span>
     </div>
     <div class="mw-bereich-karte" onclick="mwOeffne('innenquellen')">
+      <svg class="ic ic-sm" style="color:var(--sys);margin-bottom:2px"><use href="#ic-source"/></svg>
       <span class="mw-bereich-name" data-i18n="mw.innenquellen">Innenquellen</span>
       <span class="mw-bereich-zahl" id="mw-z-innenquellen">—</span>
     </div>
@@ -4759,7 +4816,7 @@ html[lang="en"] .de-only{display:none}
             <input type="checkbox" id="${formId}-gwp" ${gwAnonym?'checked':''}>
             <label for="${formId}-gwp" style="font-size:0.6rem;color:#2a5a4a;cursor:pointer">Gedankenwelt anonym zeigen (ohne Namensnennung)</label>
           </div>
-          <button class="mw-btn" id="${formId}-save">Speichern</button>
+          <button class="mw-btn" id="${formId}-save"><svg style="width:9px;height:9px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-save"/></svg>Speichern</button>
           <div class="mp-section" style="margin-top:12px">Avatar-Bild hochladen</div>
           <div style="font-size:0.6rem;color:#5a3a1a;background:#0e0804;border:1px solid #3a1a08;border-left:3px solid #8a4a18;padding:7px 10px;margin-bottom:8px;line-height:1.6">
             <strong style="color:#aa6a2a;letter-spacing:.04em">Keine Personenabbildungen</strong> —
@@ -11189,6 +11246,31 @@ async function gaerraumLaden() {
   }
 }
 
+// ── THEME TOGGLE ────────────────────────────────────────────────────────
+window.ftwToggleTheme = function() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  const next = isLight ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('ftw-theme', next);
+  const icon = document.getElementById('theme-icon');
+  const label = document.getElementById('theme-label');
+  if (icon) icon.querySelector('use')?.setAttribute('href', next === 'light' ? '#ic-sun' : '#ic-moon-sm');
+  if (label) label.textContent = next === 'light' ? 'DUNKEL' : 'HELL';
+};
+// Theme beim Laden wiederherstellen
+(function() {
+  const saved = localStorage.getItem('ftw-theme');
+  if (saved === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    window.addEventListener('DOMContentLoaded', () => {
+      const icon = document.getElementById('theme-icon');
+      const label = document.getElementById('theme-label');
+      if (icon) icon.querySelector('use')?.setAttribute('href', '#ic-sun');
+      if (label) label.textContent = 'DUNKEL';
+    });
+  }
+})();
 // Hash-Routing beim Laden
 window.addEventListener('DOMContentLoaded', () => {
   const hash = location.hash.replace('#', '');

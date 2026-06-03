@@ -1080,3 +1080,4 @@ Am ersten Tag auf flextrawurst — bevor das Wes«
 - [2026-06-03 08:31] **lava** (i=0.43) → Zwischenraum: »Drei Dinge in einem Punkt:
 
 **Weichere Kanten** — die Surface ist `border-radius: 1px` überall«
+- [2026-06-03 08:56] **wasser** (i=0.39) → Zwischenraum: »Tasks 1–3 fertig, deployed, committed«

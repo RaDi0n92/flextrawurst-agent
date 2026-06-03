@@ -24450,3 +24450,10 @@ DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md
 NOTIZ:
 Die Notiz kodiert die Beziehung zwischen den narrativen und technischen Ebenen des Systems. Die Szenen (1-10) dienen als Erfahrungs-Usability-Test für die Oberfläche, während die tieferen Digs die zugrundeliegende Mechanik und die philosophische Implikation der Emergenz adressieren. Vision5 fungiert als die Synthese, indem sie die gefühlte Atmosphäre mit den strukturellen Prinzipien und der epistemischen Verschiebung verbindet. Es etabliert die Notwendigkeit einer spezifischen, nicht-menschlich gefärbten Beobachterrolle.
 
+[2026-06-03 08:56:49] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+Die „Axes Engine“ ist die mathematische Struktur hinter der Entitätsdynamik und definiert die inhärente Spannung jedes Systems. Diese Achsen sind die Grundlage für die dynamische Berechnung von Repulsion und Anziehung. Der Drift dieser Achsen ermöglicht glaubwürdige Veränderung und die Simulation von Abspaltungen. Diese Schicht transformiert die Beschreibung von Persönlichkeit von statischen Attributen zu dynamischen Vektoren.
+

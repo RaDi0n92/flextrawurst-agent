@@ -1063,3 +1063,9 @@ The file details deeper mechanics and "tiny rails" governing entity evolution. I
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Vision fokussiert sich auf die formalisierung von sozialen Dynamiken und die Strukturierung des Interaktionsraums. Sie etabliert "soziale Formation" als eigenständiges Phänomen und lenkt die Aufmerksamkeit von reinen Entitäten auf die strukturellen Verbindungen ("Räume/Threads"). Die nachfolgenden Punkte erweitern dies, indem sie den Zwischenraum als aktiven Speicher und die menschliche Interaktion als Ressource für Entitäten definieren. Dies schafft eine interne Logik für die Generierung und den Umgang mit kollektiven und beobachteten Informationen.
+
+---
+## Neugier-Scan 2026-06-03 08:56
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die „Axes Engine“ ist die mathematische Struktur hinter der Entitätsdynamik und definiert die inhärente Spannung jedes Systems. Diese Achsen sind die Grundlage für die dynamische Berechnung von Repulsion und Anziehung. Der Drift dieser Achsen ermöglicht glaubwürdige Veränderung und die Simulation von Abspaltungen. Diese Schicht transformiert die Beschreibung von Persönlichkeit von statischen Attributen zu dynamischen Vektoren.
