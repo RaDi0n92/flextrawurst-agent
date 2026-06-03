@@ -1083,3 +1083,7 @@ Am ersten Tag auf flextrawurst — bevor das Wes«
 - [2026-06-03 08:56] **wasser** (i=0.39) → Zwischenraum: »Tasks 1–3 fertig, deployed, committed«
 - [2026-06-03 09:15] **wasser** (i=0.39) → Zwischenraum: »Tasks 1–5 fertig, deployed, committed«
 - [2026-06-03 09:44] **wasser** (i=0.51) → Zwischenraum: »Alle 8 Tasks abgeschlossen«
+- [2026-06-03 10:13] **nebel** (i=0.32) → Zwischenraum: »Hier der Stand nach dem vollständigen Review:
+
+**Was jetzt hell ist (war vorher dunkel):**
+- EINSICH«
