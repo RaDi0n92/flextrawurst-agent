@@ -9713,7 +9713,7 @@ def entity_splitter_aufnahmen(
 
 @app.get("/search/global")
 def search_global(
-    q: str = Query(min_length=2),
+    q: str | None = Query(default=None),
     limit: int = Query(default=30, le=100),
     offset: int = Query(default=0),
     typen: str | None = Query(default=None, description="Kommaliste: posts,splitter,entscheidungen,träume,briefe,schatten,themen,raeume,wesen"),
@@ -9729,7 +9729,7 @@ def search_global(
         pass
 
     filter_typen = set(typen.split(",")) if typen else None
-    pat = f"%{q}%"
+    pat = f"%{q}%" if q else "%"
     results: list[dict] = []
 
     conn = get_conn()
@@ -9856,13 +9856,13 @@ def search_global(
                         "ts": r["geschrieben_at"].isoformat() if r["geschrieben_at"] else None,
                     })
 
-            # Admin-only: Schattenkommentare / Shadow-Dialoge
-            if is_admin and (not filter_typen or "schatten" in filter_typen):
+            # Schattenkommentare / Shadow-Dialoge (öffentlich sichtbar)
+            if not filter_typen or "schatten" in filter_typen:
                 cur.execute(
                     "SELECT id::text, entity_id, human_id::text, content, created_at, antwortstatus "
                     "FROM schattenkommentare WHERE content ILIKE %s "
-                    "ORDER BY created_at DESC LIMIT 10",
-                    (pat,))
+                    "ORDER BY created_at DESC LIMIT %s",
+                    (pat, limit))
                 for r in cur.fetchall():
                     results.append({
                         "typ": "shadow_dialog", "id": r["id"],
