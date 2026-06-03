@@ -183,7 +183,7 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 /* VIEW CONTAINERS */
 .v-view{flex:1;min-height:0;overflow-y:auto}
 #view-leitstand{display:flex;flex-direction:column;overflow:hidden}
-#view-raume,#view-wesen,#view-theater,#view-admin,#view-blasen,#view-schlaf,#view-uber,#view-systeme,#view-denken,#view-screens{display:none}
+#view-raume,#view-wesen,#view-theater,#view-admin,#view-blasen,#view-schlaf,#view-uber,#view-systeme,#view-denken,#view-screens,#view-gordslider{display:none}
 /* SCHLAF + CYBERLING VIEW */
 .sc-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border-bottom:1px solid var(--rim);flex-shrink:0}
 .sc-info{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;border-bottom:1px solid var(--rim)}
@@ -1314,6 +1314,31 @@ html[data-theme="light"] .ticker-item.ti-live{color:var(--alive)!important}
 [data-theme="light"] .sc-card:hover{background:rgba(8,144,168,.07)!important}
 /* ── Light Mode: auth-ok box — dunkelmodus-Hintergrund */
 [data-theme="light"] .auth-ok{background:var(--g0)!important;border-color:var(--alive)!important}
+/* ── Light Mode: WESEN - wd-denkstrom inline color:#4ae890 neon */
+[data-theme="light"] .wd-denkstrom{color:var(--t-mid)!important;background:var(--b6)!important}
+[data-theme="light"] .wd-denkstrom.aktiv{border-color:var(--alive)!important;box-shadow:0 0 6px rgba(10,144,80,.15)!important}
+/* ── Light Mode: BLASEN - bf-canvas-wrap blockiert Cinema-Canvas */
+html[data-theme="light"][data-surface-mode="cinema"] #bf-canvas-wrap{background:transparent!important}
+/* ── Light Mode: MENSCHEN - mp-splitter hardcoded dark-mode Farben */
+[data-theme="light"] .mp-splitter-item{background:var(--b6)!important;border-color:var(--rim)!important}
+[data-theme="light"] .mp-splitter-text{color:var(--wesen)!important}
+[data-theme="light"] .mp-splitter-meta{color:var(--t-sub)!important}
+[data-theme="light"] .mp-splitter-typ-n{color:var(--wesen)!important}
+[data-theme="light"] .mp-splitter-typ-l{color:var(--t-sub)!important}
+[data-theme="light"] .mp-spl-badge{color:var(--t-sub)!important}
+[data-theme="light"] .mp-gedanken-strom{border-color:var(--rim)!important}
+/* ── Light Mode: GRUPPEN - neon/unsichtbare Textfarben + dunkle Hintergründe */
+[data-theme="light"] .gr-section-head{color:var(--t-sub)!important;border-bottom-color:var(--rim)!important}
+[data-theme="light"] .gr-group-name{color:var(--world)!important}
+[data-theme="light"] .gr-detail-title{color:var(--world)!important}
+[data-theme="light"] .gr-topic-title{color:var(--t-bright)!important}
+[data-theme="light"] .gr-post-title{color:var(--t-bright)!important}
+[data-theme="light"] .gr-post-body{color:var(--t-mid)!important}
+[data-theme="light"] .gr-topic-row:hover,[data-theme="light"] .gr-topic-row.aktiv{background:rgba(8,144,168,.07)!important}
+[data-theme="light"] .gr-mini-btn{background:var(--b5)!important;border-color:var(--rim)!important;color:var(--t-mid)!important}
+[data-theme="light"] .gr-mini-btn:hover{background:var(--b9)!important}
+[data-theme="light"] .gr-poll{background:var(--b6)!important;border-color:var(--rim)!important}
+[data-theme="light"] .gr-poll-opt-bar{background:rgba(8,144,168,.08)!important}
 /* ══ END LIGHT MODE ══════════════════════════════════════════════════════════ */
 </style>
 </head>
