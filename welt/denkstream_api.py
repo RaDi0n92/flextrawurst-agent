@@ -193,12 +193,11 @@ def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
     cur = conn.cursor()
     cur.execute(f"LISTEN {channel}")
 
-    loop = asyncio.get_event_loop()
-
     def _poll_once():
         return bool(sel.select([conn], [], [], 0.5))
 
     async def gen():
+        loop = asyncio.get_running_loop()
         try:
             heartbeat = 0
             while True:
