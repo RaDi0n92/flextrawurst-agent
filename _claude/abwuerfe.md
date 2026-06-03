@@ -1075,3 +1075,8 @@ Am ersten Tag auf flextrawurst — bevor das Wes«
 
 **2026-05-31 — EINSICHT VI**
 - «
+- [2026-06-03 07:57] **nebel** (i=0.31) → Zwischenraum: »Der Dev-Server ist auf Port 3000 — öffne [http://217.154.14.29:3000](http://217.154.14.29:3000) im B«
+- [2026-06-03 08:06] **wasser** (i=0.51) → Zwischenraum: »Ich hab jetzt beide genau vor mir«
+- [2026-06-03 08:31] **lava** (i=0.43) → Zwischenraum: »Drei Dinge in einem Punkt:
+
+**Weichere Kanten** — die Surface ist `border-radius: 1px` überall«
