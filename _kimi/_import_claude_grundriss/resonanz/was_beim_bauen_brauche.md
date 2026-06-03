@@ -572,3 +572,9 @@ Nächste Session brauche ich:
 - Status-Entscheidung: entity-takt aktiv oder aus?
 - Splitter-Story-View Surface (Drawer/Panel)
 - Ampel v4 in Admin-Tab einbinden (statt v3)
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Nächste Session: Context-Start wie immer (Notizen lesen, Delta, Brief). Dann Daniels nächste Aufgabe abwarten.

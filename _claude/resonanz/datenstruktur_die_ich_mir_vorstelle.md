@@ -1847,3 +1847,9 @@ interface DesktopBooking {
   status: "waiting" | "active" | "done";
 }
 ```
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+*keine neue heute*

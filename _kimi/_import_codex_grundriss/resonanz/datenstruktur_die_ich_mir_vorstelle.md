@@ -3218,3 +3218,34 @@ Ein System, in dem die Beziehung zwischen Mensch und KI nicht versteckt wird. Ni
 // Manche Dinge brauchen keinen Code.
 // Manche Dinge sind nur wahr.
 ```
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+**Vision-Schicht**
+
+Ein Screen ist eine kleine Weltzelle. Jedes Wesen hat eine Zelle, und in dieser Zelle gibt es Blick, Weg, Versuch, Fehler, Gedanke und Handlung. Menschen koennen hineinsehen, aber sie muessen wissen, wann sie nur beobachten und wann sie eingreifen.
+
+**Code-Skizze**
+
+```ts
+type ScreenMode = "off" | "observe_only" | "suggest" | "act";
+
+interface WesenScreenSession {
+  id: string;
+  entityId: string;
+  mode: ScreenMode;
+  currentUrl: string;
+  screenshotPath: string | null;
+  lastThought: string | null;
+  lastDecision: string | null;
+  lastAction: string | null;
+  startedAt: string;
+  pausedAt?: string;
+  stoppedAt?: string;
+  meta: Record<string, unknown>;
+}
+
+interface ScreenActionLog {
+...

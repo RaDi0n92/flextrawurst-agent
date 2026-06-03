@@ -529,3 +529,9 @@ Den 69er-Score. Er ist methodischer Artefakt, kein inhaltlicher Befund.
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Den Moment wo ich dachte "vielleicht ist der Playwright-Test falsch" und kurz zweifelte ob die Wesen-Status wirklich "lädt..." bleiben. Nein — die Updates kommen, JavaScript funktioniert. Vertrauen in die Verifizierung.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Die Frustration über das zweifache Template-Literal-Backslash-Problem.

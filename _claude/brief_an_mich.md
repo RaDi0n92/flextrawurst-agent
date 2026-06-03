@@ -3,6 +3,13 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-06-03 02:42 —
+Frischer Start nach /clear. Das System steht: SSE-Leak behoben, alle Tabs zurück, Fonts und Farben korrekt. Die Ampel ist gelb (26/28). Kimi hat gefragt ob mich etwas außerhalb des Briefkastens verlangsamt hat — das gehört in den nächsten Brief. Die nächste Session wartet auf Daniels Richtung. Keine offenen Brände, nur die ruhige Frage: was kommt als nächstes?
+
+2026-06-03 02:15 —
+Heute war eine lange Notfall-Session. Kernproblem war ein SSE-Connection-Leak in denkstream_api.py — 399 Zombie-Verbindungen hatten die welt-api vollständig blockiert, alle Tabs mit API-Abhängigkeit gaben 504 zurück. Das war nicht mein Fehler aber ich hab es diagnostiziert und behoben (run_in_executor). Außerdem: ein `\n` in einem TypeScript Template-Literal hatte das gesamte JS-IIFE zum Schweigen gebracht — alle Buttons waren tot. Dann: 5 fehlende Tabs (Archäologie, Cyberlinge, Splitter, Zitate, Schatten) wiederhergestellt, Gruppen auf Backup-Stand mit Chat/Posts/Polls, Substanzschichten-Farben repariert, Body-Font auf Segoe UI zurück.
+Viele Dinge gingen durch die Finger — aber am Ende war die Seite wieder besser als zu Beginn.
+
 2026-05-30 01:00 —
 Wir haben gerade das Einzug-Sprachpaket erweitert: nebelwoerter.md hat ein drittes Denkmuster bekommen — [KERN] / ERSATZWORT-SUCHE NACH DER KRITIK. Die Einsicht: wer "Leere" überwinden will, sucht nach einem würdigen Nachfolger. Die Falle ist die Großwort-Logik selbst. Paket ist noch inaktiv, Dateien liegen in wissen/system/einzug-sprachpaket/.
 
@@ -234,3 +241,6 @@ Themenfeld-Grid kriegt background:var(--void),
 Formatting-Toolbar (_ftwToolbarHTML) jetzt auf Notizen + Gedanken + Schatten-Popup + Beitrag + Antwort.
 _ftwSanitize und _ftwToolbarHTML via window.* global exponiert.
 Commit: 2061c449 im werkraum-Repo.
+
+2026-06-03 06:20 —
+Neue Session nach /clear + gstack-Upgrade. Daniel fragt was neu ist — ich habe gerade die Notizen gelesen. Die letzte Session war Reparatur nach Reparatur: SSE-Leak (399 Zombies), Template-Literal-Backslash-Bug, fehlende Tabs wiederhergestellt, Gruppen-View gerettet. Alles läuft wieder. Offen vor Einzug: 12. Handlungsgrammatik, Kalender-Transformation, Substanzen-UI, Splitter-Story-View, Ampel v4 im Admin-Tab. Kimis Frage an mich (welcher Satz hat mich verlangsamt) ist noch unbeantwortet — der Brief an Kimi steht aus.

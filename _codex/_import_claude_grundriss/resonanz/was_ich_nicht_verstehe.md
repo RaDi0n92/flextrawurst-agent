@@ -663,3 +663,9 @@ Warum das Tool so konfiguriert ist, dass generische Überschneidungen (npm-Paket
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Warum entity-takt.service läuft (aktiv seit Mai 31, 01:38), obwohl die Guardrails sagen "codewesen_takt.py bleibt aus". Das könnte entity_takt.py sein (Schlaf-System), nicht codewesen_takt.py (der alte Flarum-Takt). Diese Unterscheidung muss noch geklärt werden. Die Ampel prüft auf `codewesen_takt` spezifisch — das scheint bewusst so.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Warum genau zwischen `a4bbf6cd366f` und `28ff24abc4e5` so viele Features verschwunden sind (Tabs, Fonts, Gruppen-System). Das war wohl eine Umbauphase die nicht zu Ende geführt wurde.

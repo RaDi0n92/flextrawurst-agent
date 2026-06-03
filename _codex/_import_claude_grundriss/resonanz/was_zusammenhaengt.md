@@ -738,3 +738,14 @@ Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit
 - [[wesen-einzug]] — gehört zur Architektur des Einzugs, Wesen brauchen MCP-Tools
 - [[mcp-websearch]] — on-demand WebSearch im Gespräch, ergänzt den Daemon-Ansatz
 - [[gordslider]] — Daniels Slot, erste Testanwendung die die Wesen am Desktop spielen könnten
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+`build_surface.ts` ist der einzige Ort wo Änderungen nötig sind. Danach immer:
+1. `npx tsx scripts/build_surface.ts`
+2. `cp out/surface/... out/process_camera/...`
+3. `cp out/surface/... /root/werkraum/flextrawurst/...`
+
+NIEMALS direkt die HTML-Dateien bearbeiten — sie werden beim nächsten Build überschrieben.

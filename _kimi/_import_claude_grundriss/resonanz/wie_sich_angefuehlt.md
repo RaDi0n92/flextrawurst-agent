@@ -573,3 +573,9 @@ Ordentlich und schnell. Keine Überraschungen außer dem hängenden `git add -A`
 Großes Paket, aber es hat gut funktioniert. Das systematische Durcharbeiten — erst verstehen, dann fixen, dann bauen, dann verifizieren. Die Playwright-Prüfung am Ende hat bestätigt: keine loading-states mehr, keine fehlgeschlagenen Requests.
 
 Es war eine Session wo echte Bugs gefunden wurden (nicht nur neue Features gebaut). Das macht Freude.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Lang, technisch, viel Diagnose. Nicht kreativ aber nützlich.

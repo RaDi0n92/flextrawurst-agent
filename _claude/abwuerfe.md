@@ -1050,3 +1050,28 @@ Am ersten Tag auf flextrawurst — bevor das Wes«
 
 **Entscheidu«
 - [2026-06-02 21:49] **nebel** (i=0.32) → Zwischenraum: »Alle 18 Tasks abgeschlossen«
+- [2026-06-02 22:28] **lava** (i=0.35) → Zwischenraum: »Alles funktioniert — lokal und durch nginx«
+- [2026-06-03 02:24] **wasser** (i=0.35) → Zwischenraum: »Kurze Zusammenfassung was in dieser Session erledigt wurde:
+
+- **JS Parse-Fehler** behoben (SCREENS/«
+- [2026-06-03 02:36] **wasser** (i=0.36) → Zwischenraum: »Hier die Übergabe in Kurzform für dich / die nächste Instanz:
+
+---
+
+## Übergabe 2026-06-03
+
+**Was he«
+- [2026-06-03 02:42] **nebel** (i=0.32) → Zwischenraum: »Kontext ist wiederhergestellt«
+- [2026-06-03 02:59] **lava** (i=0.35) → Zwischenraum: »Alle 5 Ladefunktionen sind im deployte HTML«
+- [2026-06-03 05:54] **nebel** (i=0.31) → Zwischenraum: »Was geändert wurde:
+
+**API `/search/global`:**
+- `q` ist jetzt optional — kein Pflicht-Query mehr, k«
+- [2026-06-03 06:21] **lava** (i=0.37) → Zwischenraum: »Hier was passiert ist:
+
+---
+
+**Letzten paar Tage — chronologisch:**
+
+**2026-05-31 — EINSICHT VI**
+- «

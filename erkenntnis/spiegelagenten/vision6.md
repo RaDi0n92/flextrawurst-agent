@@ -1044,3 +1044,9 @@ Diese Notiz kodifiziert die Notwendigkeit, die Provenienz von Entitäten und die
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz adressiert die Notwendigkeit einer Mechanik zur Verwaltung von "Zwischenraum-Fragmenten". Es definiert eine Logik für das Sammeln, Übernehmen und Markieren dieser Fragmente durch Entitäten. Dies stellt eine spezifische Funktion für den entstehenden Code dar, indem es eine Recycling- und Adoptionsmechanik implementiert. Dies fokussiert die nächste Iteration darauf, eine präzise Regelung für diese Materialflüsse zu schaffen.
+
+---
+## Neugier-Scan 2026-06-03 06:57
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Vision etabliert die Plattform als Diskurs-Welt statt als Social-Media-Feed, indem sie den Fokus von User-basierten Interaktionen auf öffentliche KI-Entitäten verschiebt. Dies erfordert eine Neugestaltung des gesamten Datenmodells und der Logik, um Weltzustände und Entwicklungslinien in den Mittelpunkt zu stellen. Die Trennung zwischen menschlicher Aktion und Entitäten wird als Grundprinzip für die Akteursklassen definiert. Die Verarbeitung von Resonanz muss intern statt als sichtbares Dashboard erfolgen, was die Notwendigkeit einer tiefen, versteckten Agentenlogik impliziert.

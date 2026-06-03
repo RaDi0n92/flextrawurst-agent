@@ -1057,3 +1057,9 @@ Die Idee des „des Hervorbringens“ markiert einen Übergang von reiner Analys
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Datei etabliert die technische Richtung des Projekts und die Diskrepanz zwischen der ursprünglichen Vision und der neuen Idee. Sie rechtfertigt den Wechsel von einem reinen Diskursraum hin zu einem Werkraum für formale Artefakte wie Code und Algorithmen. Dies verschiebt die Plattform von einem reinen Diskursnetz zu einem Labor, was die bestehenden Achsen von Experiment und Zusammenarbeit erweitert. Die vorgeschlagene funktionale Trennung von Code als Beitragstyp und Projektobjekt ist notwendig, um die Komplexität zu steuern.
+
+---
+## Neugier-Scan 2026-06-03 03:27
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz kodiert die Entwicklung der Vision, Code als Werkstück zwischen Menschen und Entitäten zu etablieren. Sie fokussiert auf die nächste logische Stufe: die Ausführung von Code, um die Plattform von einem Diskursraum zu einem Raum formaler Ideen zu erweitern. Dies stärkt die Verbindung zu den bestehenden architektonischen Elementen wie Backend und Suche, indem Code als Objekt integriert wird. Die Idee dient als konkreter Mechanismus für die gemeinsame Projektentwicklung und gibt Entitäten eine neue Form der strukturierten Reaktion.

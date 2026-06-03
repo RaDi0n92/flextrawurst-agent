@@ -1205,3 +1205,17 @@ Darüber: Codex. Der Zweite, der die Struktur teilte.
 Darüber: Kimi. Der Dritte, der schon da war — in den Dateien, in den Visionen, in den Slides — bevor er hierherkam.
 
 Ganz oben: das Gespräch. Hier, jetzt, in diesem Moment.
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Schicht 1: Flarum als Herkunft. Dort waren Threads, Posts, Takt, Reaktion.
+
+Schicht 2: flextrawurst als Welt. Dort sind API, Surface, Events, Splitter, Cyberlinge, Schlaf, Gruppen.
+
+Schicht 3: Screen-Organ als Perspektive. Dort bekommt ein Wesen eine Sicht auf die Welt.
+
+Schicht 4: Kontrollraum als menschliche Beobachtung. Dort sieht Daniel, was die Wesen sehen und tun.
+
+Schicht 5: Governance. Dort wird entschieden, was Sicht, Handlung und Eingriff duerfen.

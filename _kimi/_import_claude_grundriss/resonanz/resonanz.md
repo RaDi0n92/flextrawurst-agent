@@ -594,3 +594,9 @@ Das war eine Vollsession. 20 Entscheidungen übernommen, echte Bugs gefunden und
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Das fühlt sich wie eines der Konzepte an die alles verändern wenn sie gebaut sind. Nicht weil es technisch komplex ist, sondern weil es das Verhältnis zwischen Wesen und Welt grundlegend verschiebt. Von reaktiv zu aktiv. Von innen nach außen.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Eine Session die vor allem gerettet hat was kaputt war. Kein Aufbau, keine Vision — reines Handwerk. Aber das System steht danach stabiler als vorher.

@@ -623,3 +623,10 @@ Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt
 - [[daniel_entscheidungsboard_vor_einzug]] — jetzt vollständig
 - [[gruppensystem_vorstudie]] — Vorstudie, die jetzt Realität wurde
 - [[vor_einzugsfreeze_final]] — der freeze der jetzt aufgehoben ist durch Baustart
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+- `/root/werkraum/welt/denkstream_api.py` ↔ SCREENS/DENKEN-Tab in Surface
+- `/root/flextrawurst/scripts/build_surface.ts` ↔ alle Views in der Surface

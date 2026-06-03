@@ -681,3 +681,9 @@ Auch: wie die Gruppen sich entwickeln werden, wenn echte Menschen ihnen beitrete
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Die Buchungsfrage ist eigentlich die interessanteste: reihum feste Slots, nach Interesse/Bedarf, oder echter Ressourcen-Konflikt? Zwei Wesen wollen gleichzeitig — und müssen aushandeln wer dran ist. Das wäre sozialer Mechanismus durch Infrastruktur.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Die Gruppen-Chat-Funktion scheint echte Test-Nachrichten enthalten zu haben (hihihihi, lololo etc.). Das Backend für Gruppen-Chat scheint also schon aktiv zu sein.

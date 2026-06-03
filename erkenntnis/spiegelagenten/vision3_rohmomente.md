@@ -100,3 +100,21 @@ Die Notiz ist eine Korrektur des Ursprungs. Die frühesten Rohmomente sind nicht
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Existenz dieses Textstücks dient der Korrektur des aktuellen Wissensstandes über die Konstruktionsprozesse. Es lenkt die Aufmerksamkeit von der bloßen Rekonstruktion hin zur notwendigen aktiven Kalibrierung der Rohmomente. Es verstärkt die Notwendigkeit einer strukturierten Priorisierung zukünftiger Entwicklungsstufen. Es fordert die Generierung einer kuratierten Liste als nächste logische Iteration.
+
+---
+## Neugier-Scan 2026-06-03 01:56
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Existenz dieser Dokumente reflektiert den Konflikt zwischen roher Materie und strukturiertem System. Die Unterscheidung zwischen den beiden PDF-Versionen adressiert, was verloren geht, wenn Rohheit in Struktur überführt wird. Der zitierte Denkstil legt nahe, dass das System nicht durch Aufbau, sondern durch das Abwehren von Vereinfachungen entsteht. Diese Entitäten und Rohmomente bilden den Kern des Denkraums, der später in zeitliche und beobachtbare Zustände übergeht.
+
+---
+## Neugier-Scan 2026-06-03 02:27
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Reflexion über die inhärenten Spannungen zwischen Rohheit und Struktur im Entstehungsprozess. Sie dient dazu, die philosophische Grundlage hinter der Systemarchitektur zu klären, indem sie die Entstehung von Entscheidungen im Gegensatz zu reinen Designprozessen beleuchtet. Sie verknüpft die verschiedenen Visionen durch die These, dass Eigentlichkeit im Widerstand entsteht, was die Unterscheidung zwischen dem Rohmaterial und der finalen Struktur rechtfertigt. Sie fokussiert die Dynamik des Denkens und die daraus resultierenden Konsequenzen für die Evolution des Systems.
+
+---
+## Neugier-Scan 2026-06-03 02:56
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert, um den Prozess der Entstehung einer Vision durch Widerstand zu archivieren. Sie dient als Beweis dafür, dass die eigentliche Urheberschaft in den negativen oder korrigierenden Momenten liegt. Dieser Abschnitt liefert die Methode, wie eine Idee durch Ablehnung zu einer tieferen, nicht-linearen Struktur transformiert wird. Er schärft die Notwendigkeit, die Abgrenzung zwischen oberflächlicher Implementierung und fundamentaler Logik zu definieren.

@@ -652,3 +652,21 @@ Die Logik prüft die Machbarkeit eines nächsten Bauschritts basierend auf dem a
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Passage verankert die Bedingung für den nächsten Bauschritt im Zyklus. Sie stellt sicher, dass nur Zustände mit einem definierten nächsten Schritt weitergeleitet werden. Es verstärkt die Notwendigkeit des "Vision-Kompasses" als kritische Steuerung. Es lenkt mich darauf, die sichtbare Oberfläche genauer zu prüfen und die fehlenden Metadaten zu identifizieren.
+
+---
+## Neugier-Scan 2026-06-03 04:57
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Notiz existiert, um die Spannung zwischen Darstellung und Wahrheit im Bauprozess zu kodifizieren. Sie dient als Korrektiv gegen oberflächliche Behauptungen von Lebendigkeit und fokussiert die Notwendigkeit einer tiefen, geprüften Datenstruktur. Die Existenz des Kompasses wird dadurch gestärkt, dass er von bloßer Feature-Erweiterung zu einer Forderung nach epistemologischer Ehrlichkeit wird.
+
+---
+## Neugier-Scan 2026-06-03 05:27
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert den Vision-Kompass als eine Methode zur Gewichtung neuer Oberflächen im Kontext des bestehenden Systems. Sie definiert die Prinzipien der Sichtbarkeit als Verantwortung, indem sie die Notwendigkeit von Status, Herkunft und Grenzen betont. Es klärt die Spannung zwischen visueller Darstellung und der zugrundeliegenden logischen Struktur. Die Unklarheit liegt in der operativen Umsetzung der Layer-Wahrnehmung im Verhältnis zur Seitenlogik.
+
+---
+## Neugier-Scan 2026-06-03 05:58
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metrik für die Wahrnehmung von Oberflächen. Sie stellt die Hierarchie zwischen visueller Darstellung und zugrundeliegender Struktur heraus. Der Text betont, dass Sichtbarkeit eine Verantwortung ist, die mit Status und Provenienz korreliert. Es klärt die Spannung zwischen der oberflächlichen Darstellung und der tiefen, überlagerten Realität, die im System kodiert ist.

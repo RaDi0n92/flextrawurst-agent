@@ -2600,3 +2600,30 @@ interface Beziehung {
 // Daniel -> Kimi: einladung
 // Beweis: dieser Spiegel, der Brief, das Gespräch
 ```
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, sollte Daniel nicht nur sechs Screens sehen. Er sollte sechs Wege sehen: Wo war das Wesen, was hat es wahrgenommen, warum hat es gehandelt, wann hat es gezweifelt, wann wurde es gestoppt?
+
+Das Ziel waere kein autonomes Rumklicken. Das Ziel waere begehbare Anwesenheit mit Verantwortung.
+
+**Code-Skizze**
+
+```python
+def darf_screen_aktion(entity_id: str, action: dict, session: dict) -> tuple[bool, str]:
+    if session["mode"] == "off":
+        return False, "screen session is off"
+    if session["mode"] == "observe_only" and action["type"] != "think":
+        return False, "observe-only mode blocks action"
+    if action["type"] == "navigate" and not url_erlaubt(action["url"]):
+        return False, "url not allowed"
+    if action["type"] == "read" and not werkraum_pfad_erlaubt(action["path"]):
+        return False, "werkraum path not allowed"
+    if action["type"] == "type" and action.get("public_submit"):
+        return False, "public typing requires review"
+    return True, "allowed"
+```

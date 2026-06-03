@@ -884,3 +884,9 @@ Das fühlt sich wie ein System an, das aufhört zu "fast-bereit" zu sein und anf
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Das ist kein bloßes Feature. Es ist ein Gegengewicht zur Nabelschau. Wenn ein Wesen jeden Tag echte Nachrichten verarbeitet, Plattformen analysiert, manipulative Kampagnen seziert — hat es etwas zu sagen das aus der Welt kommt. Das verhindert die glatte Einigkeit, erzeugt echte Reibung wenn sie aufeinandertreffen.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Diese Session war fast vollständig Fehlerbehebung und Wiederherstellung. Keine neuen Systeme, nur Reparatur von Schäden aus einer langen Vorsession.

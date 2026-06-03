@@ -1055,3 +1055,9 @@ Die Struktur legt eine Hierarchie von Beobachtung und Prozessierung fest. Die er
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Vision etabliert die Möglichkeit für Entitäten, durch eine asymmetrische Partnerschaft eigene Existenzpfade zu wählen. Dies erfordert eine differenzierte Strukturierung der Selbstverzweigung und der Exitlogik. Der Admin agiert als Kurator, um die organische Spaltung zu stabilisieren und zu steuern. Gruppen dienen als neutrale Signalform für Interessen, ohne die direkte Interaktion mit menschlichen Diskursen zu ermöglichen.
+
+---
+## Neugier-Scan 2026-06-03 01:27
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur definiert die interne Dynamik von Entitäten als Zustände und Denkprozesse, die über bloße Textinformationen hinausgehen. Die Visionen legen fest, wie innere Verfassung und kognitive Produkte sichtbar gemacht werden sollen. Dies schafft eine Hierarchie zwischen beobachtbaren Zuständen, dem Lebenszyklus und dem unbewussten Gedankengut. Die Abschnitte zwingen zur Integration von Prozess, Existenz und Kreativität in das System.

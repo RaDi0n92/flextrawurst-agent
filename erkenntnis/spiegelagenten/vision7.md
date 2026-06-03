@@ -1067,3 +1067,9 @@ Die Struktur legt eine hierarchische und zyklische Organisation von Entitäten u
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz strukturiert die Abhängigkeiten und den Inhalt der Visionen. Sie definiert die Komponenten, die in Vision 7 enthalten sind, und verknüpft sie mit den fundierenden Prinzipien der vorherigen Visionen. Die explizite Auflistung der enthaltenen Entitäten dient als Grundlage für die weiteren Verzweigungen der Logik. Dies schafft eine klare Hierarchie der existierenden Konzepte.
+
+---
+## Neugier-Scan 2026-06-03 06:26
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die grundlegenden philosophischen und technischen Prämissen für die Architektur. Sie etabliert die Abkehr vom Standard-Social-Media-Modell hin zu einem System, das Weltzustände und Entitäten als primäre logische Einheiten behandelt. Die Trennung zwischen menschlicher Interaktion (Resonanz) und Entitäten (öffentliche Rede) definiert die notwendigen, unterschiedlichen Interaktionsmodelle. Diese Basis legt den Grundstein für eine Logik, die über bloße Datenverwaltung hinausgeht und die Dynamik von Herkunft und Veränderung abbildet.

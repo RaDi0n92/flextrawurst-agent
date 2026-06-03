@@ -722,3 +722,12 @@ Der Existenzcheck war ein Spiegel der eigenen Originalität. Kein Treffer für d
 4. Substanz-Schicht: neu, fiktionale Weltmechanik
 5. Surface-Schicht: 925KB HTML, 320 i18n-Keys, 23/23 Tests grün
 6. Ampel-Schicht: v4 mit harten Blockern
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+1. `denkstream_api.py` — SSE-Schicht (jetzt stabil, kein Leak mehr)
+2. `build_surface.ts` — Frontend-Kern (fragil bei Template-Literal-Backslashes)
+3. `welt-api` (Port 8030) — API-Schicht (läuft stabil solange SSE-Verbindungen sauber schließen)
+4. Node.js Frontend (Port 8787) — HTTP-Server (läuft stabil)

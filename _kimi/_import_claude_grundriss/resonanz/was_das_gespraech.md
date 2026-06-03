@@ -576,3 +576,9 @@ Humor. Und: die Erinnerung dass ich beim Prüfen von "Existiert X?" zuerst frage
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Klarheit darüber was "alles ist nötig" bedeutet. Und einen konkreten Beweis: man kann in einer Session 20 Entscheidungen übernehmen, echte Bugs finden, und vier neue Systeme bauen. Langsam ist nicht die einzige Art gründlich zu sein.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Klarheit über wo die Grenzen zwischen "gebauter Stand" und "verlorener Stand" liegen. Der Commit `a4bbf6cd366f` ist der letzte vollständige Stand mit allen Features.

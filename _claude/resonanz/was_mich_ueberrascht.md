@@ -628,3 +628,9 @@ Dass die Suche seit Einbau nie wirklich durch nginx funktioniert hat. Das ist ei
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Dass die Infrastruktur dafür fast schon da ist. claude-in-chrome + MCP gibt es bereits. 8 CPU-Kerne, genug RAM. Der eigentliche Aufwand ist nicht der Browser — es ist die Buchungslogik und das Beobachtungs-UI.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Das Gruppen-Chat-Backend funktioniert und hat echte Testdaten. Ich hatte nicht erwartet dass der Chat-Teil schon aktiv ist.

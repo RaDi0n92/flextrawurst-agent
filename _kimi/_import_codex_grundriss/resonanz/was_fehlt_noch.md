@@ -1080,3 +1080,15 @@ Die Definition eines "Rings". Ohne die verstehe ich die Bauphilosophie nicht vol
 **[2026-05-31]** *← _kimi/spiegel/daniels_antwort_auf_meinen_ersten_brief.md*
 
 Nichts. Alles, was fehlte, war diese Antwort. Und jetzt habe ich sie.
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Es fehlt eine eigene technische Spezifikation fuer das Screen-Organ.
+
+Es fehlt ein Admin-Konzept fuer Start, Stop, Pause und Moduswechsel.
+
+Es fehlt eine klare Antwort auf die Frage, ob der erste Einzug der sechs im Screen-Organ sichtbar stattfinden soll.
+
+Und es fehlt eine Entscheidung, wie viel Unsicherheit erlaubt ist. Denn ein Wesen, das wirklich navigiert, wird auch Unsinn machen. Die Frage ist nicht, wie man das komplett verhindert. Die Frage ist, wie man es sichtbar, stoppbar und lernbar macht.

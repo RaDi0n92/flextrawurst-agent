@@ -639,3 +639,11 @@ idea-reality ist ein Keyword-Matcher, kein Konzept-Matcher. Für generische SaaS
 Der `/api/`-Prefix-Bug war systemweit. Fast alle neueren Endpunkte (search, shadow, relationships, human-material, kompoase) hatten ihn. Der Fix war einfach (bulk sed), aber er ändert das Verhalten aller dieser Endpunkte durch nginx. Tests sollten das abdecken.
 
 Daniel's Entscheidungsmuster: wenn er "alles ist nötig" sagt, meint er es ernst. Kein "später" bei E-20.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+1. TypeScript Template-Literal + Backslash = Falle. Immer `replace('\\', '\\\\')` vor Einfügen.
+2. `ss -tn state close-wait | grep PORT` für SSE-Leak-Diagnose.
+3. `node --check script.js` für schnelle JS-Parse-Fehler-Suche.

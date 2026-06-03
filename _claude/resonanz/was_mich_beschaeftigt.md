@@ -633,3 +633,9 @@ Die richtige Verwendung: idea-reality für neue Feature-Ideen prüfen, bevor wir
 Der `/api/`-Prefix-Bug. Ich habe ihn fast übersehen — er war tief versteckt in der Route-Registrierung. Aber er erklärt viel: warum die Suche nie durch nginx richtig funktioniert hat, warum Shadow-Dialogs nie öffentlich zugänglich waren. Ein struktureller Bug, der durch alle Schichten hindurchgegangen ist ohne jemandem aufzufallen.
 
 Und der archiv-panel display-Bug: `display:none;...;display:flex` im selben style-Attribut. Der Browser nimmt das letzte, also war das Panel immer offen, mit permanentem "lädt…". Das ist der Grund für Daniels "vieles lädt nicht" — nicht ein echtes Netzwerkproblem, sondern ein CSS-Tippfehler der alles andere aussah.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Der SSE-Leak war elegant diagnostiziert — `ss -tn state close-wait | grep 8030` zeigte 399 sofort. Und dass ein einziges `\n` in einer Template-Literal-Zeile das gesamte JS-Bundle zum Schweigen bringt — das ist eine echte Falle die ich zweimal gesehen habe. Beim dritten Mal würde ich sofort wissen wo zu suchen.

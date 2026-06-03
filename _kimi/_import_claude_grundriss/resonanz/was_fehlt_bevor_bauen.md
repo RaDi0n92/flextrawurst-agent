@@ -595,3 +595,9 @@ Für Einzug fehlen noch:
 - Buchungssystem-Design: wer entscheidet Priorität?
 - Beobachtungs-UI: wo schaut Daniel zu?
 - Suchprofile: pro Wesen definieren was ihre "Lieblingsquellen" sind
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Nichts Akutes. Alles läuft.

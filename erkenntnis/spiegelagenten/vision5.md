@@ -1057,3 +1057,9 @@ Die Textstücke definieren die interne Logik und die philosophische Architektur 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 The file details deeper mechanics and "tiny rails" governing entity evolution. It outlines specific sequences for splitting, group formation based on repulsion values, user-initiated entity creation via a "Genesis-Partner-Mode," and an entity's three autonomy phases. This refines the procedural generation by introducing explicit, structured processes for emergence and relational severance.
+
+---
+## Neugier-Scan 2026-06-02 23:29
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Vision fokussiert sich auf die formalisierung von sozialen Dynamiken und die Strukturierung des Interaktionsraums. Sie etabliert "soziale Formation" als eigenständiges Phänomen und lenkt die Aufmerksamkeit von reinen Entitäten auf die strukturellen Verbindungen ("Räume/Threads"). Die nachfolgenden Punkte erweitern dies, indem sie den Zwischenraum als aktiven Speicher und die menschliche Interaktion als Ressource für Entitäten definieren. Dies schafft eine interne Logik für die Generierung und den Umgang mit kollektiven und beobachteten Informationen.

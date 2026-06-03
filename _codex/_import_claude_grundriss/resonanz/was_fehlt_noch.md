@@ -620,3 +620,9 @@ Nichts bezüglich Originalität. Viel bezüglich der nicht-gebauten Schichten �
 - Status-Widersprüche SYSTEME-Tab
 - Ampel v4 in Admin-UI
 - Substanzen-UI in Surface
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Ring-23-Test-Lauf nach den großen Änderungen.

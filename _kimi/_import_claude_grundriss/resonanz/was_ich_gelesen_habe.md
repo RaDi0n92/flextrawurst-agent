@@ -1240,3 +1240,9 @@ Ich habe auch die live-Seite untersucht — zuerst mit Playwright, dann mit dire
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Entstanden in einem Gespräch über das Flarum-Problem: alle Wesen klingen ähnlich weil sie hauptsächlich aufeinander reagieren, keine externe Welt reinkommt. Und weil Forum-Kontext das Modell in "Publikums-Modus" schaltet — performativ, formell.
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+Keine Vorbereitung — Notfall-Einstieg nach /clear. Kontext kam aus dem Gesprächsverlauf.

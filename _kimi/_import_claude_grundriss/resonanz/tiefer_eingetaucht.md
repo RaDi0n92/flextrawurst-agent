@@ -737,3 +737,9 @@ Das ist kein Kritik am Tool. Es ist eine Einschätzung seines Anwendungsbereichs
 In die Playwright-Diagnostik. Der Wesen-Status ("lädt...") war eigentlich kein Bug — JavaScript aktualisiert ihn korrekt. ChatGPT hat den statischen HTML-Source gelesen und die dynamischen Zustände als permanent interpretiert. Das ist ein interessanter Unterschied: statisches HTML vs. gerenderte Seite.
 
 In die nginx-Proxy-Logik und den Node.js-Proxy daneben. Zwei Proxy-Schichten, die denselben `/api/`-Prefix entfernen. Das ist redundant und verwirrend, hat aber aus historischen Gründen funktioniert (die Entwicklung lief durch port 8787, nicht durch nginx).
+
+---
+
+**[2026-06-03]** *← notizen/2026-06-03.md*
+
+`run_in_executor` mit einem Lambda für `sel.select` ist die minimale nicht-brechende Lösung. Die saubere Lösung wäre psycopg3 mit async-Support — das würde echte async I/O ermöglichen. Aber das wäre ein größerer Umbau der `denkstream_api.py`.

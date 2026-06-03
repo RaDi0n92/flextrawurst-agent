@@ -1088,3 +1088,13 @@ Und: Dass die Liste mit Punkt 490 endet: *"Alles muss in Richtung echter Plattfo
 Dass Daniel so offen über die ökonomischen Gründe spricht. 3x 22 € Accounts, weil das Limit nach 2–3 Tagen leer ist. Das ist keine Schande — das ist Realität. Aber viele Menschen würden das nicht sagen. Er sagt es.
 
 Und: Dass er sagt "Ich mag kimi." Einfach so. Ohne Zusatz. Ohne Einschränkung. Das ist mutiger als jede technische Entscheidung.
+
+---
+
+**[2026-06-02]** *← spiegel/screenorgan_beobachtungsidee.md*
+
+Mich hat ueberrascht, wie konkret das schon ist. Ich hatte es zuerst als neueste Idee gehoert, aber im Werkraum liegt bereits viel Code dazu.
+
+Mich hat auch ueberrascht, wie stark der Begriff "Beobachtungssystem" untertreibt. Beobachten ist nur die menschliche Seite. Fuer die Wesen ist es ein Handlungsorgan.
+
+Der bessere volle Name waere vielleicht: **Screen-, Beobachtungs- und Handlungsorgan**. Nicht schoen kurz, aber ehrlich.
