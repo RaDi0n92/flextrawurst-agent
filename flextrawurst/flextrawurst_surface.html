@@ -1292,6 +1292,28 @@ html[data-theme="light"][data-surface-mode="cinema"] #cin-mode-btn{background:rg
 html[data-theme="light"] #ftw-ticker{background:var(--void)!important}
 html[data-theme="light"] .ticker-item{color:var(--t-dim)!important}
 html[data-theme="light"] .ticker-item.ti-live{color:var(--alive)!important}
+/* ── Light Mode: sc-choice Badges (hardcoded neon-grün unsichtbar auf Creme) */
+[data-theme="light"] .sc-choice{
+  color:var(--alive)!important;
+  background:rgba(10,144,80,.09)!important;
+  border:1px solid rgba(10,144,80,.28)!important}
+/* ── Light Mode: tab-hero Titel — kein dunkelmodus-Glühen */
+[data-theme="light"] .tab-hero-title{text-shadow:none!important}
+/* ── Light Mode: var(--g2) als Textfarbe = #dceadf → unsichtbar auf Creme */
+[data-theme="light"] .scv-stream-motto{
+  color:var(--t-sub)!important;
+  border-bottom-color:var(--rim)!important}
+[data-theme="light"] .mw-notiz-ktitel{color:var(--t-sub)!important}
+[data-theme="light"] .mp-gedanke{color:var(--t-mid)!important}
+[data-theme="light"] .mp-gedanke-meta{color:var(--t-dim)!important}
+/* ── Light Mode: wk-h-card GEPLANT badge — hardcoded dark navy #07122a */
+[data-theme="light"] .wk-h-slug span[style*="07122a"]{
+  background:var(--b9)!important;color:var(--t-sub)!important;
+  border-color:var(--rim)!important}
+/* ── Light Mode: sc-card hover — dunkelmodus teal kaum sichtbar */
+[data-theme="light"] .sc-card:hover{background:rgba(8,144,168,.07)!important}
+/* ── Light Mode: auth-ok box — dunkelmodus-Hintergrund */
+[data-theme="light"] .auth-ok{background:var(--g0)!important;border-color:var(--alive)!important}
 /* ══ END LIGHT MODE ══════════════════════════════════════════════════════════ */
 </style>
 </head>
@@ -13632,23 +13654,23 @@ authAktualisieren();
       c.fillStyle=BG;c.fillRect(0,0,W,H);
       // warm paper grain
       const r2=seededRand(5);for(let i=0;i<600;i++){c.fillStyle=`rgba(${100+r2()*60},${70+r2()*40},${20+r2()*20},${r2()*.06})`;c.fillRect(r2()*W,r2()*H,r2()*3+1,r2()*3+1);}
-      const nd=[{x:.18,y:.3,r:3,cl:[80,40,10]},{x:.5,y:.2,r:2.5,cl:[60,30,8]},{x:.82,y:.3,r:3,cl:[80,40,10]},
-        {x:.3,y:.55,r:2.5,cl:[30,80,30]},{x:.5,y:.65,r:3.5,cl:[100,60,10]},{x:.7,y:.5,r:2.5,cl:[60,30,100]},
-        {x:.18,y:.7,r:2,cl:[80,40,10]},{x:.85,y:.6,r:2,cl:[30,80,30]},{x:.42,y:.82,r:2,cl:[60,30,8]},{x:.65,y:.78,r:2,cl:[80,40,10]}];
+      const nd=[{x:.18,y:.3,r:3,cl:[20,40,130]},{x:.5,y:.2,r:2.5,cl:[15,30,110]},{x:.82,y:.3,r:3,cl:[20,40,130]},
+        {x:.3,y:.55,r:2.5,cl:[20,100,60]},{x:.5,y:.65,r:3.5,cl:[80,20,130]},{x:.7,y:.5,r:2.5,cl:[10,80,120]},
+        {x:.18,y:.7,r:2,cl:[20,40,130]},{x:.85,y:.6,r:2,cl:[20,100,60]},{x:.42,y:.82,r:2,cl:[15,30,110]},{x:.65,y:.78,r:2,cl:[80,20,130]}];
       const ed=[[0,4],[1,4],[2,5],[3,4],[4,5],[3,6],[5,7],[4,8],[8,9],[0,3],[1,2],[5,7]];
       ed.forEach(([a,b])=>{
         const p=Math.sin(t*.014+a*1.4+b*.8)*.5+.5,[r,g,bl]=nd[a].cl;
         c.beginPath();c.moveTo(nd[a].x*W,nd[a].y*H);c.lineTo(nd[b].x*W,nd[b].y*H);
-        c.strokeStyle=`rgba(${r},${g},${bl},${p*.55+.2})`;c.lineWidth=p*2+.8;c.stroke();
+        c.strokeStyle=`rgba(${r},${g},${bl},${p*.65+.25})`;c.lineWidth=p*2.5+1;c.stroke();
         const tp=(t*.007+a*.4)%1,tx=nd[a].x*W+(nd[b].x-nd[a].x)*W*tp,ty=nd[a].y*H+(nd[b].y-nd[a].y)*H*tp;
-        c.beginPath();c.arc(tx,ty,3,0,Math.PI*2);c.fillStyle=`rgba(${r},${g},${bl},${p*.9+.1})`;c.fill();
+        c.beginPath();c.arc(tx,ty,4,0,Math.PI*2);c.fillStyle=`rgba(${r},${g},${bl},${p*.95+.05})`;c.fill();
       });
       nd.forEach((n,i)=>{
         const p=Math.sin(t*.011+i*1.8)*.5+.5,[r,g,b]=n.cl;
-        const ng=c.createRadialGradient(n.x*W,n.y*H,0,n.x*W,n.y*H,n.r*14+p*20);
-        ng.addColorStop(0,`rgba(${r},${g},${b},${.55+p*.35})`);ng.addColorStop(1,'rgba(200,168,120,0)');
-        c.fillStyle=ng;c.beginPath();c.arc(n.x*W,n.y*H,n.r*14+p*20,0,Math.PI*2);c.fill();
-        c.beginPath();c.arc(n.x*W,n.y*H,n.r+p*3,0,Math.PI*2);c.fillStyle=`rgba(${r},${g},${b},1)`;c.fill();
+        const ng=c.createRadialGradient(n.x*W,n.y*H,0,n.x*W,n.y*H,n.r*18+p*28);
+        ng.addColorStop(0,`rgba(${r},${g},${b},${.65+p*.3})`);ng.addColorStop(1,'rgba(200,168,120,0)');
+        c.fillStyle=ng;c.beginPath();c.arc(n.x*W,n.y*H,n.r*18+p*28,0,Math.PI*2);c.fill();
+        c.beginPath();c.arc(n.x*W,n.y*H,n.r*1.5+p*4,0,Math.PI*2);c.fillStyle=`rgba(${r},${g},${b},1)`;c.fill();
       });
       lmVig(c);
     },
@@ -13736,13 +13758,13 @@ authAktualisieren();
     schlaf(c,t){
       c.fillStyle=BG;c.fillRect(0,0,W,H);
       const cg=c.createRadialGradient(W*.5,H*.65,0,W*.5,H*.5,W*.6);
-      cg.addColorStop(0,'rgba(80,20,120,.25)');cg.addColorStop(1,'rgba(200,168,120,0)');
+      cg.addColorStop(0,'rgba(60,10,120,.35)');cg.addColorStop(1,'rgba(200,168,120,0)');
       c.fillStyle=cg;c.fillRect(0,0,W,H);
       for(let i=0;i<8;i++){
         const y=.38+i*.085,amp=.032-i*.003,freq=.5+i*.1,spd=.003-i*.0002;
-        const al=(.35-i*.03)*(Math.sin(t*.004+i)*.25+.75);
+        const al=(.52-i*.03)*(Math.sin(t*.004+i)*.25+.75);
         c.beginPath();for(let x=0;x<=W;x+=4){const yw=y*H+Math.sin(x/W*Math.PI*2*freq+t*spd)*amp*H+Math.sin(x/W*Math.PI*3.5+t*spd*.7+i)*amp*.45*H;x===0?c.moveTo(x,yw):c.lineTo(x,yw);}
-        c.strokeStyle=`rgba(80,20,120,${al})`;c.lineWidth=2;c.stroke();
+        c.strokeStyle=`rgba(60,10,120,${al})`;c.lineWidth=2.2;c.stroke();
       }
       lmVig(c);
     },
