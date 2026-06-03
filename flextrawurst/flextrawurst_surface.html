@@ -1319,14 +1319,21 @@ html[data-theme="light"] .ticker-item.ti-live{color:var(--alive)!important}
 [data-theme="light"] .wd-denkstrom.aktiv{border-color:var(--alive)!important;box-shadow:0 0 6px rgba(10,144,80,.15)!important}
 /* ── Light Mode: BLASEN - bf-canvas-wrap blockiert Cinema-Canvas */
 html[data-theme="light"][data-surface-mode="cinema"] #bf-canvas-wrap{background:transparent!important}
-/* ── Light Mode: MENSCHEN - mp-splitter hardcoded dark-mode Farben */
-[data-theme="light"] .mp-splitter-item{background:var(--b6)!important;border-color:var(--rim)!important}
+/* ── Light Mode: MENSCHEN - mp-splitter + gedanken (dunklere, wärmere Boxen) */
+[data-theme="light"] .mp-gedanken-strom{background:var(--b9)!important;border-color:var(--b8)!important}
+[data-theme="light"] .mp-gedanke{border-bottom-color:var(--b10)!important;color:var(--t-mid)!important}
+[data-theme="light"] .mp-splitter-item{background:var(--b9)!important;border-color:var(--b8)!important}
+[data-theme="light"] .mp-splitter-typ{background:var(--b8)!important;border-color:var(--b9)!important}
 [data-theme="light"] .mp-splitter-text{color:var(--wesen)!important}
 [data-theme="light"] .mp-splitter-meta{color:var(--t-sub)!important}
 [data-theme="light"] .mp-splitter-typ-n{color:var(--wesen)!important}
 [data-theme="light"] .mp-splitter-typ-l{color:var(--t-sub)!important}
 [data-theme="light"] .mp-spl-badge{color:var(--t-sub)!important}
-[data-theme="light"] .mp-gedanken-strom{border-color:var(--rim)!important}
+/* ── Cinema+Light: MENSCHEN - Boxen warm amber-braun, Canvas scheint durch */
+html[data-theme="light"][data-surface-mode="cinema"] .mp-gedanken-strom{background:rgba(110,82,32,.3)!important;border-color:rgba(100,72,28,.4)!important}
+html[data-theme="light"][data-surface-mode="cinema"] .mp-gedanke{border-bottom-color:rgba(100,72,28,.2)!important}
+html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-item{background:rgba(110,82,32,.28)!important;border-color:rgba(100,72,28,.35)!important}
+html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-typ{background:rgba(110,82,32,.32)!important;border-color:rgba(100,72,28,.3)!important}
 /* ── Light Mode: GRUPPEN - neon/unsichtbare Textfarben + dunkle Hintergründe */
 [data-theme="light"] .gr-section-head{color:var(--t-sub)!important;border-bottom-color:var(--rim)!important}
 [data-theme="light"] .gr-group-name{color:var(--world)!important}
