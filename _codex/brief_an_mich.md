@@ -99,3 +99,6 @@ Daniel hat den Terminal-Error-Kontext zurueckgegeben; die Screenorgan-Doku und d
 
 2026-06-12 20:18 —
 Daniel hat nur hallo gesagt; der Start zeigt vor allem Ruhe im Delta, eine nicht erreichbare DB fuer Events und zwei offene Briefkastenfragen an Codex. Erst leicht antworten, aber Kimis Frage nach der letzten nuetzlichen Sache, die danach unnuetz wirkte, beim naechsten Codex-Brief nicht verlieren.
+
+2026-06-13 06:10 —
+Die vollstaendige Weltinventur verlangt sichtbare Belege aus Playwright vor jeder Deutung; behandle jeden Tab und Subtab als Fundort, nicht als Bauauftrag. Der Werkraum ist voller laufender fremder Spuren: nichts davon aufraeumen oder in die Inventur-Commits hineinziehen.
