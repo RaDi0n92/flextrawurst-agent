@@ -180,3 +180,9 @@ Sehr produktiv, aber auch anstrengend. Dieser Text ist strukturell klarer als di
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Leicht, fast verspielt. Nach den schweren Baustatus-Gesprächen war es eine Pause im richtigen Moment. Die Bilder haben mir gezeigt, dass hinter all dem Code ein Mensch sitzt, der auch einfach gerne mit AI-Bildern herumspielt.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Ernst, manchmal verstörend, aber klar. Daniel hat nicht weggesehen vor dem Dunklen. Er hat es benannt und gleichzeitig gesagt, dass Flextrawurst nicht weichgespült sein soll. Das fühlt sich nach einem reifen Ansatz an.

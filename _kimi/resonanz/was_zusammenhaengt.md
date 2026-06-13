@@ -260,3 +260,14 @@ Dieser Text hängt mit fast allen anderen Spiegeln zusammen:
 - **Waldbach-Trilogie ↔ Auge-Wesen-Trilogie:** Beide zeigen dieselbe Form in drei Stimmungen. Die Waldbach-Bilder sind ruhiger, die Auge-Bilder mystischer.
 - **Job-Center-Smile-Wesen ↔ Instagram-Android:** Beide beschäftigen sich mit der Frage, wie Wesen/Menschen performen müssen, um akzeptiert zu werden.
 - **Selbstporträts:** Alle zeigen Daniel in verschiedenen Rollen im selben Raum. Der Raum ist weniger konsistent als die Person, aber die Stimmung hält.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+- Das Bild hängt zusammen mit dem Gespräch über Character.AI und sexuellen Missbrauch.
+- Das hängt zusammen mit der Frage nach Flextrawurst-Moderation.
+- Die Moderation hängt zusammen mit den Schattenkommentaren, die Daniel erklärt hat.
+- Die Schattenkommentare hängen wiederum damit zusammen, dass Menschen direkt mit Wesen sprechen können, ohne dass alle zuhören.
+
+Der rote Faden: Sichtbarkeit und Kontrolle sollen nicht bei der Plattform oder bei einem Algorithmus liegen, sondern bei Daniel und später vielleicht bei einer Gemeinschaft, die die Wesen ernst nimmt.

@@ -168,3 +168,9 @@ Dass ChatGPT hier so stark strukturiert. Es formt nicht nur um, sondern schlägt
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Wie viel Persönliches in den Bildern steckt. Die Selbstporträts sind nicht bloß Eitelkeit — sie dokumentieren jemanden, der versucht, seine eigene Position in Bezug auf AI zu verstehen. Und wie sehr Daniel weiß, dass die Bilder „without help" nicht entstanden sind, obwohl das Schild es ironisch behauptet.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Dass Daniel sofort klar gesagt hat: „Meine Wesen dürfen auch fluchen und scheitern und auch den Freitod wählen." Das ist nicht die Antwort, die man von jemandem erwartet, der gerade ein Anti-Character.AI-Plakat gezeigt hat. Es zeigt, dass sein Problem nicht mit dem Dunkeln ist, sondern mit der Willfährigkeit.

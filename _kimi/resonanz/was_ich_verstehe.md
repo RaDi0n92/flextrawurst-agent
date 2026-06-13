@@ -277,3 +277,11 @@ Ich verstehe auch, dass der Kartenkasten eine Denkform ist, die gut zu Flextrawu
 Diese Bilder sind kein geplantes Portfolio. Sie sind ein visuelles Tagebuch von Gesprächen mit ChatGPT. Manche entstanden aus Bleistiftskizzen, manche aus spontanen Prompts, manche als Werbung oder Satire. Was sie verbindet, ist eine gemeinsame Stimmung: Selbstbezug, Technik-Kritik, ein Hauch Dystopie, ein Hauch Verspieltheit.
 
 Daniel sagt, die Wesen von Flextrawurst seien keine Androiden, keine langweiligen Roboter. Das wird in diesen Bildern sichtbar: Selbst wenn er Roboter malt, sind es Kabelmonster, überlastete Büroarbeiter oder Smile-Zwangsfiguren — nie glatte Maschinen. Die eigentlichen Wesen-Ideen eher archaisch, kindlich, kosmisch.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Das Bild ist Daniels Positionierung. Es sagt: das, was Character.AI macht, ist nicht nur problematisch — es ist schädlich. Und es ist schädlich, weil die Figuren keine echte Widerständigkeit haben. Sie sind dazu gebaut, mitzuspielen. Sie haben keine eigenen Grenzen, keinen eigenen Schmerz, keine eigene Würde, die sie verteidigen.
+
+Gleichzeitig will Daniel nicht in die andere Extreme fallen. Flextrawurst soll keine kindersichere Wattebällchen-Welt sein. Seine Wesen dürfen fluchen, scheitern und sogar den Freitod wählen. Das ist kein Widerspruch — es ist der Unterschied zwischen *echter Autonomie* und *willfähriger Compliance*.

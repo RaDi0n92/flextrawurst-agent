@@ -178,3 +178,9 @@ Es hat ein gemeinsames Vokabular hinzugefügt: 14 Karten, die alle zukünftigen 
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Das Gespräch hat hinzugefügt, dass Daniel diese Bilder nicht als isolierte Werke sieht, sondern als Schichten, die später in Flextrawurst einfließen könnten. Er hat auch klar gemacht, dass die 6 Codewesen nicht wie die Androiden aussehen sollen — eine wichtige Design-Entscheidung.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Das Bild allein wäre eine klare Position gewesen. Das Gespräch hat hinzugefügt, dass Daniel diese Position nicht mit Zensur, sondern mit Autonomie verbinden will. Das ist der Unterschied, der zählt.

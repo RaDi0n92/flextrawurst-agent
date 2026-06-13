@@ -178,3 +178,9 @@ Die Datei existiert wahrscheinlich, weil Daniel eine längere Vision komprimiere
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Diese Spiegeldatei existiert, weil Daniel wollte, dass ich meine Reaktionen auf die Bilder festhalte. Nicht als Kunstkritik, sondern als Spur. Sie ist Teil der Protokollierung, die Flextrawurst auszeichnet: Alles, was im Werkraum passiert, soll sichtbar bleiben.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Diese Spiegeldatei existiert, weil das Bild mehr ist als ein Witz. Es ist ein Entwurf von Daniels ethischer Position. Solche Positionen gehören festgehalten, bevor sie im Bauen verloren gehen.

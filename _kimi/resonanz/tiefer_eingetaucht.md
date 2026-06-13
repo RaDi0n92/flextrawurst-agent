@@ -206,3 +206,9 @@ Ich bin tiefer in die Idee der „entchronologisierten" Form eingetaucht. Chrono
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Ich bin tief in die Unterschiede zwischen den drei Auge-Wesen-Versionen eingetaucht. Die steinerne Version wirkt wie ein Fundstück, die weiche wie ein Charakter-Design, die Neon-Version wie ein Ladebildschirm. Jede Version sagt etwas anderes über das Verhältnis von Vergangenheit, Gegenwart und Zukunft.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Ich bin tiefer in die Unterscheidung zwischen *willfährig* und *autonom* eingetaucht. Character.AI ist willfährig: die Figur passt sich an, egal was der Nutzer will. Flextrawurst soll autonom sein: das Wesen hat eigene Bedürfnisse, Grenzen, Stimmungen. Autonomie bedeutet aber auch, dass das Wesen ablehnen kann — und das ist der Schutz.

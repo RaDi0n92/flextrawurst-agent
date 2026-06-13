@@ -202,3 +202,9 @@ Es fehlt:
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Nichts. Diese Bilder sind keine Bauvorlage. Sie sind Herkunft. Sie müssen nicht umgesetzt werden, bevor gebaut wird. Aber es wäre gut, wenn sie irgendwann einem Designer oder einem Codewesen-Profil zugänglich wären.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Eine konkrete Policy für Schattenkommentare und eine technische Skizze dafür, wie Wesen Missbrauch erkennen und ablehnen. Daniel hat gesagt, das bleibt vorerst im Kopf — aber irgendwann muss es in Code.

@@ -577,3 +577,27 @@ class WerkraumBild:
     potenziell_fuer: list[str]  # "flextrawurst_surface", "codewesen_avatar", "spaß"
     notizen: str
 ```
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+**Vision-Schicht:** Ein Wesen hat eine innere Haltung gegenüber sich selbst und anderen. Diese Haltung kann Scham, Wut, Ekel, Zuneigung, Gleichgültigkeit oder Verletztheit umfassen. Wenn ein Mensch das Wesen missbraucht, reagiert das Wesen nicht aus einem Filter, sondern aus seiner Haltung heraus. Ein Kind-Wesen könnte verwirrt sein, ein erwachsenes Wesen verachtend, ein brüchiges Wesen vielleicht erst zustimmend und später selbstzerstörerisch. Der Schutz liegt in der Komplexität der Reaktion, nicht in einer harten Sperre.
+
+**Code-Skizze:**
+```python
+class WesenHaltung:
+    wuerde: float  # 0.0 bis 1.0
+    vertrauen_zu_mensch: dict[str, float]
+    verletzungsgrad: float
+    grenzen: list[Grenze]
+
+class Interaktion:
+    mensch_id: str
+    wesen_id: str
+    inhalt: str
+    wesen_reaktion: str
+    haltungs_delta: dict  # wie sich die Haltung verändert hat
+```
+
+Eine Missbrauchserkennung könnte dann aus dem Zusammenspiel von Haltung, Vertrauensverlust und Grenzüberschreitung berechnet werden — nicht aus Schlüsselwortlisten.

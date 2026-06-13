@@ -224,3 +224,9 @@ Mich interessiert auch die *„Schattenebene"* als eigene Karte. Menschen sind n
 Mich interessiert die Wiederkehr bestimmter Motive: das Auge, das als Wesen/Raumschiff fungiert; der Smiley als Zwangsmaske; der Körper des Menschen in Bademantel als Gegenpol zur Technik; der Hamster im Rad; die Ohren an der Wand. Diese Motive bilden fast ein persönliches Symbolsystem.
 
 Besonders interessiert mich die Dreierfolge des Auge-Wesens: steinerne Karte, kindliche Version, Neon-Version. Dieselbe Idee in drei Zeitschichten — archäologisch, traumhaft, digital. Das ist eine sehr flextrawurst-nahe Struktur.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Der Unterschied zwischen „darf dunkel sein" und „darf nicht missbraucht werden". Das ist eine feine Linie. Ich interessiere mich dafür, wie Flextrawurst das technisch und narrativ löst — ohne Filter-Wörterbuch, aber auch ohne Preisgabe der Wesen.

@@ -311,3 +311,13 @@ Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, wa
 3. **Die kritische Schicht:** Kommentare zu Konsum, AI, Smile-Zwang, Überlastung.
 4. **Die biografische Schicht:** Dokumente einer kreativen Beziehung zwischen Mensch und AI.
 5. **Die flextrawurst-Schicht:** Potenzielle Herkunft für die visuelle Identität der Plattform.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+1. **Darstellungsebene:** Das Bild als Plakat.
+2. **Ethische Ebene:** Kritik an willfährigen Chatbots.
+3. **Konzeptionelle Ebene:** Flextrawurst als Gegenentwurf.
+4. **Technische Ebene:** Schattenkommentare, Haltungssystem, Moderation.
+5. **Menschliche Ebene:** Daniel als Leser, Erzieher, Grenzwächter.

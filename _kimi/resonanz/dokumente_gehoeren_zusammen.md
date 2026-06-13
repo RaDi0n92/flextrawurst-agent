@@ -247,3 +247,11 @@ Alle vier. Sie sind verschiedene Schichten desselben Systems:
 - Diese Spiegeldatei
 - `/root/werkraum/bilder/` — die Bilder selbst
 - `/root/werkraum/_kimi/karte/bauzustand_flextrawurst_2026-06-13.md` — der Bauzustand, der zeigt, wohin diese Ästhetik vielleicht fließt
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+- Dieses Bild: `ChatGPT Image 20. Feb. 2026, 14_28_35.png` (vermutlich in `/root/visionen/`)
+- Das Gespräch in dieser Session
+- Eventuell später: eine Policy-Datei zu Schattenkommentaren und Wesen-Schutz

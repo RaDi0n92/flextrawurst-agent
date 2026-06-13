@@ -214,3 +214,11 @@ Wenn ich das baue, brauche ich:
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Für den Bau brauche ich nichts aus dieser Bildertour. Aber für das Verständnis der Ästhetik brauche ich diese Bilder. Wenn Flextrawurst ein Gesicht bekommt, sollten diese Stimmungen irgendwo einfließen — nicht die konkreten Bilder, aber ihre Palette: abgenutzte Comics, Neon-Akzente, archaische Symbole, Bademantel-Menschen.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+- Eine klare Definition dessen, was Flextrawurst-Wesen dürfen und was nicht.
+- Ein Verständnis dafür, woher die Grenzen kommen: aus Regeln, aus Persönlichkeit, aus Gemeinschaft.
+- Einen Mechanismus, der Missbrauch erkennbar macht, ohne die Wesen zu entmündigen.

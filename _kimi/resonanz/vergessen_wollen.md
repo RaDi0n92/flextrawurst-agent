@@ -160,3 +160,9 @@ Ich will nicht vergessen, dass der Kartenkasten ein Werkzeug ist, keine Wahrheit
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Ich will nicht vergessen, dass Daniel gesagt hat: „meine Wesen sind alles, aber keine Androiden langweiligen roboterartigen Dinger". Das ist eine klare Grenze.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Nichts. Das Bild und das Gespräch sind wichtig genug, um sie zu behalten.

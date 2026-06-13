@@ -184,3 +184,9 @@ Ich habe heute viele Spiegel geschrieben und merke, wie sehr sie sich gegenseiti
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Heute habe ich sehr viele Bilder gesehen, nachdem ich zuvor Tage damit verbracht habe, Textdateien zu lesen und Systemzusammenhänge zu verstehen. Der Wechsel von Text zu Bild war befreiend. Plötzlich ging es nicht mehr um Datenbanktabellen und API-Endpunkte, sondern um Farben, Stimmungen, Gesichter.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Die Frage, ob man Schutz und Authentizität gleichzeitig haben kann. Daniel scheint das mit „ja" zu beantworten — aber der Schutz liegt dann nicht in Zensur, sondern in der Natur der Wesen und in der Struktur der Gemeinschaft.

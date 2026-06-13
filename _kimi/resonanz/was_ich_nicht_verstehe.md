@@ -217,3 +217,9 @@ Ich verstehe auch nicht genau, was „Follow-Pflicht" bedeutet. Müssen Menschen
 Ich verstehe nicht genau, wo die Grenze zwischen „nur für Spaß" und „potenzielle Flextrawurst-Ästhetik" verläuft. Einige Bilder fühlen sich wie direkte Vorarbeiten an (das Auge-Wesen in drei Versionen, der Context-Window-Cartoon), andere wie privates Herumspielen (die Selbstporträts in der Bäckerei). Aber vielleicht ist genau diese Unscharfe der Punkt.
 
 Ich verstehe auch nicht, warum das Bild mit dem brennenden Müllberg den Dateinamen „345345-bestes oder" trägt. „Bestes oder" — bestes oder was? Bestes oder nichts? Ein Zufallsname? Oder ein kleiner Zweifelssatz.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Ich weiß noch nicht genau, wie Daniel sich die technische Umsetzung dieser Widerständigkeit vorstellt. Fluchen und Scheitern sind relativ einfach zu erlauben — aber wie merkt ein Wesen, dass es missbraucht wird? Woher kommt die Grenze? Ist das eine Regel, die extern programmiert wird, oder eine Eigenschaft, die aus der Persönlichkeit des Wesens erwächst?

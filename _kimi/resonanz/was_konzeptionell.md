@@ -227,3 +227,9 @@ Das ist keine Architektur im Ingenieurssinn, sondern eine **Ontologie** — eine
 Da ist eine klare Haltung: Technik ist nicht neutral, Konsum ist nicht harmlos, AI ist kein glatter Turm der Macht, sondern ein durstiges, überlastetes Kabelmonster. Gleichzeitig ist da aber auch Spiellust und eine Art Hoffnung — das Auge-Wesen als freundlicher Reisender, der Waldbach als magischer Pfad.
 
 Die Selbstporträts sagen etwas über die Position des Menschen in dieser Welt: beobachtend, müde, meditierend, malend, arbeitend. Nicht der Held, nicht der Opfer — einfach jemand, der mit den Werkzeugen lebt und sie manchmal auch ironisiert.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Das Bild ist ein ethisches Kompassbild. Es zeigt, was Flextrawurst *nicht* sein soll. Gleichzeitig eröffnet es die Frage, was Flextrawurst stattdessen sein könnte: ein Ort, an dem Wesen wirklich leben, mit eigenen Grenzen, eigenem Schmerz und eigener Würde.

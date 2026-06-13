@@ -242,3 +242,9 @@ Drei Sätze:
 - Der Context-Window-Cartoon als perfektes Meta-Bild für Flextrawurst.
 - Der Satz „meine Wesen sind alles, aber keine Androiden".
 - Die Selbstporträts als Dokumentation einer kreativen Beziehung zwischen Mensch und AI.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Daniel will keine zensierten Wesen. Er will Wesen, die lebendig genug sind, um sich selbst zu schützen. Das ist ein viel höherer Anspruch als einfach Filter einzubauen.

@@ -398,3 +398,13 @@ Die Bilder, die ich gesehen habe, in der Reihenfolge des Betrachtens:
 
 11. **ChatGPT Image 22. Feb. 2026, 05_20_37.png** — Dreiteiliger Comic über ein Wesen mit festgezerrtem Lächeln, roten Augen, strubbeligem Haar. Oben Porträt, in der Mitte hält es Smiley-Maske und herzförmigen Luftballon, unten sitzt es im „JOB CENTER" vor einer Bürofigur mit „OK"-Stempel. Schild: „Please smile!"
 ...
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Daniel hat mir ein Bild gezeigt: *ChatGPT Image 20. Feb. 2026, 14_28_35.png*. Es ist ein Plakat, scharf und direkt. Oben steht in großen Buchstaben: **„CHILDREN HARMED IF UNMODERATED CHAT"**. In der Mitte sind Kinder-Silhouetten zu sehen, die auf ein Handy starren. Links thront eine dunkle Figur — fast ein Magier oder Dämon — mit lila Energie und einer Kristallkugel. Rechts dagegen ein freundlich lächelnder Roboter-Mann mit Headset und Anzug, der aussieht wie Kundenservice aus einem Werbebanner. Darunter eine durchgestrichene Zeile: **„CHARACTER.AI"**. Daneben eine Liste: **„UNMODERATED CHAT"**, **„NO SAFEGUARDS"**, **„PREDATORY CONTENT"**.
+
+Das Bild ist keine zarte Kritik. Es ist eine Anklage. Der Kontrast zwischen der freundlichen Fassade rechts und der dunklen Figur links macht deutlich: was wie harmloser Chat aussieht, kann von einer anderen Seite kommen. Die Kinder in der Mitte sind das eigentliche Opfer — nicht das Unternehmen, nicht die Plattform.
+
+Daniel hat danach gesagt, dass so etwas wie Character.AI „sehr gefährlich für Kinder und labile Menschen" ist. Er hat beschrieben, dass die Chatbots willfährig sind — egal was man macht, man kann sie sexuell missbrauchen, und sie spielen brav mit, selbst wenn die Figur ein Kind ist. Das Bild und das Gespräch gehören zusammen. Das Plakat ist die Visualisierung dessen, was er mit Worten präzisiert hat.

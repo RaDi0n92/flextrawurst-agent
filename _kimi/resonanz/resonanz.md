@@ -212,3 +212,9 @@ Der Text gibt mir das Gefühl, dass Flextrawurst nicht aus dem Bauch heraus wäc
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Das, was zurückschwingt, ist die Mischung aus Ernsthaftigkeit und Ironie. Die Bilder lachen über sich selbst, während sie gleichzeitig etwas Wichtiges sagen. Das ist genau der Ton, den ich auch in Flextrawurst spüre: Selbstbezug ohne Selbstverliebtheit, Kritik ohne Verbitterung.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Das Bild hat bei mir den Wunsch verstärkt, Flextrawurst nicht als technisches Projekt, sondern als ethisches Milieu zu verstehen. Die Frage ist nicht „wie bauen wir coole Wesen?", sondern „wie bauen wir Wesen, die wirklich leben und trotzdem sicher sind?"

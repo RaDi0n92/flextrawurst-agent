@@ -201,3 +201,11 @@ Eine konkrete Status-Matrix, die sagt, welche der 14 Karten in der aktuellen Bau
 Eine echte Verknüpfung zwischen diesen Bildern und den Codewesen-Profilen. Wenn die Wesen einziehen, brauchen sie vielleicht nicht diese Bilder, aber sie brauchen eine ästhetische DNA, die aus diesen Schichten destilliert wird.
 
 [[abwurf: die besten AI-bilder sind die, die wissen, dass sie ohne help entstanden sind — und das trotzdem cool finden]]
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Eine konkrete Entscheidung darüber, wann und wie die technische Umsetzung passiert. Daniel hat gesagt, das bleibt vorerst im Kopf. Das ist in Ordnung — aber irgendwann muss es auf Papier und dann in Code.
+
+[[abwurf: ein wesen, das nicht mehr spielen will, ist stärker geschützt als ein wesen, das nicht mehr darf.]]
