@@ -2627,3 +2627,20 @@ def darf_screen_aktion(entity_id: str, action: dict, session: dict) -> tuple[boo
         return False, "public typing requires review"
     return True, "allowed"
 ```
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+**Vision-Schicht:** Heute wurde nichts gebaut. Falls später aus der Inventur gehandelt wird, muss der vorhandene Sinn jedes Organs sichtbar bleiben; Zusammenlegen darf nicht Auslöschen von Herkunft bedeuten.
+
+**Code-Skizze:**
+
+```python
+def darf_spaeter_veraendert_werden(tab: TabInventur) -> bool:
+    return bool(tab.sichtbareBelege) and tab.bewertung in {
+        "Übergangslösung", "Altlast", "Nützlich"
+    }
+```
+
+Diese Skizze ist keine Bauentscheidung, nur eine Erinnerung daran, dass Bewertung und Handlung getrennt bleiben.

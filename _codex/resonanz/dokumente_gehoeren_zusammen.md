@@ -1151,3 +1151,9 @@ Diese Spiegeldatei gehoert zusammen mit:
 - `welt/browser-agents.service`
 
 Sie gehoert auch zu den Einzugsfragen der sechs Codewesen, weil die Screens klaeren, ob sie nur Datenkoerper oder auch Blickpunkte bekommen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+`/root/werkraum/inventur/inventur_index.md`, die 28 Tab-Dossiers und `/root/werkraum/inventur/screenshots/` sind ein gemeinsamer Belegkörper. Keines davon sollte allein als vollständige Inventur gelesen werden.

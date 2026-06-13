@@ -1105,3 +1105,9 @@ Diese Session fuehlte sich an wie eine Korrektur mit Gewicht. Erst war der Beric
 Ich fand diese Korrektur sinnvoll. Nicht peinlich im dramatischen Sinn, sondern technisch und konzeptionell notwendig. Das System hat mich an einer Stelle erwischt, an der ich zu sehr in "Doku abgeschlossen" gedacht hatte.
 
 Jetzt sitzt das Screen-Organ im Bericht. Aber als Spiegel fuehlt es sich nochmal anders an: weniger "was ist gebaut?", mehr "was bedeutet das?"
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Wie eine lange Begehung mit Taschenlampe: nicht bauen, nicht reparieren, nur jede Tür öffnen und notieren, ob dahinter ein Organ, ein Lager oder eine bemalte Wand liegt.

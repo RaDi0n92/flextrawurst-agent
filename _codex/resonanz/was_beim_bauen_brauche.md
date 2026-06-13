@@ -1204,3 +1204,9 @@ Ich brauche klare Grenzen:
 - Trennung zwischen Wesenhandlung und menschlichem Eingriff
 
 Ohne diese Grenzen waere das Screen-Organ zu maechtig, um es ruhig laufen zu lassen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Vor späterem Bauen brauche ich diese Inventur als Negativgrenze: kein neuer Körper, bevor klar ist, welcher vorhandene Körper dieselbe Weltfunktion bereits trägt.
