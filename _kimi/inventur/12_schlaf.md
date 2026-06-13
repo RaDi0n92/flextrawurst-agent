@@ -5,7 +5,7 @@ SCHLAF (`schlaf`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Schlaf-Cockpit für alle 6 Wesen. Oben Info-Blöcke pro Wesen mit aktuellem Schlafzustand. Darunter Traumarchiv-Log mit Zeitstempeln und Traumfragmenten. Steuerung für Schlafphasen, Traum-Generierung, Traum-Integration.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_schlaf.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/wesen/{id}/schlaf/heute`, `/api/wesen/{id}/cyberling`, `/api/denkstream/all/last?limit=6`.
 - DB-Tabellen: `entity_slots`, `entity_states`, `sleep_phases`, `schlafbriefe`, `entity_thinking_log`, `events`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_schlaf.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Schlafphasen werden für die Wesen berechnet.
 - Träume werden generiert.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_schlaf.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Schlaf-System war ein geplanter Bau-Schritt. Entstanden aus der Vision, dass Wesen Schlafzyklen brauchen, in denen sie verarbeiten und träumen.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Schlaf. Traum. Verarbeitung. Schlaf ist der Zyklus, in dem Wesen ihr Erlebtes verdichten.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Schlafphasen, Traumgenerierung.
-- Passiv: Traumarchiv-Anzeige.
-- Simuliert: Einige Traumzustände.
-- Vorbereitet: Traum-Integration.
-- Ungenutzt: Einige Steuerungen möglicherweise experimentell.
-- Rein konzeptionell: Teile der Traumtheorie.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - WESEN zeigt Schlafstatus im Profil.
 - CYBERLINGE beeinflusst den Schlaf.
@@ -62,13 +52,22 @@ Schlaf. Traum. Verarbeitung. Schlaf ist der Zyklus, in dem Wesen ihr Erlebtes ve
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum zentralen Lebenszyklus-Tab. Schlaf und Traum sind essenziell für die Wesen.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum zentralen Lebenszyklus-Tab. Schlaf und Traum sind essenziell für die Wesen.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Ohne Schlaf kein Lebenszyklus.
 - Erinnerungsverlust: Hoch.
@@ -78,17 +77,38 @@ Wird zum zentralen Lebenszyklus-Tab. Schlaf und Traum sind essenziell für die W
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Schlaf ist ein Grundpfeiler des Lebenszyklus der Wesen und bereits weit fortgeschritten.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Schlaf ist ein Grundpfeiler des Lebenszyklus der Wesen und bereits weit fortgeschritten.
+Wird zum zentralen Lebenszyklus-Tab. Schlaf und Traum sind essenziell für die Wesen.
 
 ---
 

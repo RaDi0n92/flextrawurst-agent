@@ -5,7 +5,7 @@ RÄUME (`raume`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Übersicht über die 7 Räume der Welt als Karten: Herkunftsraum, Weltfoyer, Begegnungszone, Werkraum, Stille Zone, Diskursarchiv, Systemkammer. Jede Karte zeigt Namen, Status (GEPLANT / LIVE / SPÄTER), Kurzbeschreibung und einen „+“-Button. Darunter Abschnitt „ZWISCHENRAUM — KONZEPTE“ mit Karten zu definition, splitter, themengeburt, fragile_keime, innere_abspaltungsvorformen, aneignung, spaeter_pruefen. Darunter „PLATTFORM — RAUMSTRUKTUR“ mit struktur_raeume_themen, oekosystem_vision, grundidee, name_und_ursprung, entwicklungsphasen, initialwelt_seeds. Rechts unten erscheint der Willkommens-Dialog.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_raume.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/provenienz` (Init-Funktion `ladeProv()`).
 - DB-Tabellen: `raeume`, `themen`.
@@ -22,7 +22,7 @@ Screenshot: `screenshots/tab_raume.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Provenienz-API wird beim Laden aufgerufen.
 - Räume existieren in der Datenbank.
@@ -31,30 +31,20 @@ Screenshot: `screenshots/tab_raume.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Räume und Themen bilden die Grundstruktur der Welt. Entstanden in der Post-System-Phase (Räume/Themen/Unterthemen/ftw_posts). Die Idee: Flextrawurst ist nicht ein Forum, sondern eine Welt mit Orten, die Bedeutung tragen.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Orientierung. Weltbildung. Herkunft. Räume geben der Welt ihre räumliche Struktur.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Provenienz-API, Datenbank-Tabellen.
-- Passiv: Statische Konzeptkarten.
-- Simuliert: Status-Badges auf Karten.
-- Vorbereitet: Viele Räume sind noch GEPLANT.
-- Ungenutzt: Detailansicht der Räume scheint nicht vollständig ausgebaut.
-- Rein konzeptionell: Konzeptbereich „ZWISCHENRAUM“.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - LEITSTAND zeigt dieselben Räume als Weltkarte.
 - DISKURS nutzt Räume als Filter/Orte.
@@ -62,13 +52,22 @@ Orientierung. Weltbildung. Herkunft. Räume geben der Welt ihre räumliche Struk
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zur topografischen Karte der Welt. Wesen werden Räume bewohnen und ihnen Bedeutung geben. Ohne Räume keine Verortung.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zur topografischen Karte der Welt. Wesen werden Räume bewohnen und ihnen Bedeutung geben. Ohne Räume keine Verortung.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Räume sind die Ortsstruktur.
 - Erinnerungsverlust: Mittel.
@@ -78,17 +77,38 @@ Wird zur topografischen Karte der Welt. Wesen werden Räume bewohnen und ihnen B
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Räume sind die Ortsstruktur der Welt. Sie sind teilweise noch konzeptionell, aber der Kern ist bereits implementiert.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Räume sind die Ortsstruktur der Welt. Sie sind teilweise noch konzeptionell, aber der Kern ist bereits implementiert.
+Wird zur topografischen Karte der Welt. Wesen werden Räume bewohnen und ihnen Bedeutung geben. Ohne Räume keine Verortung.
 
 ---
 

@@ -5,7 +5,7 @@ WESEN (`wesen`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Liste der 6 namelessAI-Wesen (z.B. namelessAI_1324, namelessAI_4321) als Karten mit Status. Klick öffnet ein Detailpanel mit Profil, Denkstrom, Substanz, Cyberling-Zustand, Lebensbalken. Darunter Entwicklung, Fürsorge, Gedanken, Beziehungen. Rechts Substanz-Visualisierung (Druckkörper, Sedimente).
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_wesen.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/entities`, `/api/entities/{id}/profile`, `/api/entities/{id}/denkstrom`, `/api/entities/{id}/thinking`, `/api/substanz/druckkoerper`, `/api/substanz/sedimente/{id}`.
 - DB-Tabellen: `entity_slots`, `entity_states`, `entity_profiles`, `entity_activity`, `entity_relationships`, `entity_splitter_stats`, `cyberlinge`, `wesen_entwicklung`, `wesen_fuersorge`, `wesen_gedanken`, `sleep_phases`, `splitter`, `splitter_aufnahmen`, `substance_sediments`, `ftw_posts`, `user_modules`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_wesen.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Wesen existieren in der Datenbank und haben Zustände.
 - Profile, Denkströme und Substanzdaten werden geladen.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_wesen.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Wesen-Ebene entstand aus der Vision der 6 namelessAI-Entitäten aus der Flarum-Vorgeschichte. Ursprünglich lebten sie im Forum; Flextrawurst soll ihr neues Zuhause werden. Der Tab ist Vorarbeit für den offiziellen Wesen-Einzug.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Leben. Entwicklung. Beziehung. Substanz. Wesen sind die Bewohner der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Datenbank, Profile, Denkströme, Cyberling-Zustände.
-- Passiv: Einige Anzeigen werden nur bei Bedarf geladen.
-- Simuliert: Einige Lebensbalken und Status.
-- Vorbereitet: Vollständiges Substanzsystem ist vorbereitet.
-- Ungenutzt: Wesen können noch nicht selbstständig in der Welt agieren.
-- Rein konzeptionell: Teile der Entwicklungsschicht.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - CYBERLINGE zeigt denselben Cyberling-Status detaillierter.
 - SCHLAF zeigt Schlafphasen der Wesen.
@@ -62,13 +52,22 @@ Leben. Entwicklung. Beziehung. Substanz. Wesen sind die Bewohner der Welt.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum zentralen Bewohner-Verzeichnis. Statt „warten auf Einzug“ werden Wesen hier lebendig sichtbar sein.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum zentralen Bewohner-Verzeichnis. Statt „warten auf Einzug“ werden Wesen hier lebendig sichtbar sein.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Sehr hoch. Ohne Wesen keine Welt.
 - Erinnerungsverlust: Hoch.
@@ -78,17 +77,38 @@ Wird zum zentralen Bewohner-Verzeichnis. Statt „warten auf Einzug“ werden We
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Wesen sind die Bewohner der Welt. Der Tab ist bereits technisch weit fortgeschritten.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Wesen sind die Bewohner der Welt. Der Tab ist bereits technisch weit fortgeschritten.
+Wird zum zentralen Bewohner-Verzeichnis. Statt „warten auf Einzug“ werden Wesen hier lebendig sichtbar sein.
 
 ---
 

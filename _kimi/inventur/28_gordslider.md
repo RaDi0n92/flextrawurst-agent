@@ -5,7 +5,7 @@ GORDSLIDER (`gordslider`) — VERSTECKT
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Versteckter Tab ohne sichtbaren Inhalt. Bei Sichtbarmachen nur leerer Bereich oder Platzhalter. Init-Funktion `gordsliderInit()` ist leer.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_hidden_gordslider.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - Keine APIs.
 - Keine DB-Tabellen.
@@ -21,49 +21,48 @@ Screenshot: `screenshots/tab_hidden_gordslider.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Keine.
 - Init-Funktion ist leer.
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Gordslider war ein geplantes Interface-Element oder Werkzeug, das offenbar nie vollendet wurde. Letzter Commit: „feat: gordslider tab — auth-Beschränkung + fix + 50%-Zoom“.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Unklar. Möglicherweise ein Steuer- oder Visualisierungswerkzeug.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Nichts.
-- Passiv: Leerer Container.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Vollständig.
-- Rein konzeptionell: Unklar.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - Keine bekannten.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Unklar. Ohne Funktion keine Bedeutung.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Unklar. Ohne Funktion keine Bedeutung.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Keiner.
 - Erinnerungsverlust: Gering.
@@ -73,17 +72,38 @@ Unklar. Ohne Funktion keine Bedeutung.
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Altlast
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** ALT-LAST
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Entfernen
+
+**Begründung:** GORDSLIDER hat keine Funktion, keine Daten, keinen Inhalt. Er ist ein toter Platzhalter.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Entfernen
-
-Begründung: GORDSLIDER hat keine Funktion, keine Daten, keinen Inhalt. Er ist ein toter Platzhalter.
+Unklar. Ohne Funktion keine Bedeutung.
 
 ---
 

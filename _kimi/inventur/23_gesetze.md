@@ -5,7 +5,7 @@ GESETZE (`gesetze`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Liste der Weltgesetze. Zeigt die Grundgesetze (z.B. Immer erweiterbar, Alles öffentliche ist suchbar, Admin hat totale Kontrolle, Events sind heilig, Flarum bleibt draußen, Laufende Systeme nicht anfassen) als Karten oder Liste.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_gesetze.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - Keine API.
 - Keine DB-Tabellen.
@@ -21,50 +21,49 @@ Screenshot: `screenshots/tab_gesetze.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Statische Anzeige.
 - Keine Prozesse.
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden als Verkörperung der Grundgesetze aus AGENTS.md. Soll die Regeln der Welt sichtbar machen.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Ordnung. Verfassung. GESETZE sind die Regeln der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Nichts.
-- Passiv: Statische Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Keine.
-- Rein konzeptionell: Vollständig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - WISSEN enthält ähnliche erklärende Inhalte.
 - FORSCHUNG und PARTNER sind ebenfalls statische Informations-Tabs.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wichtig für neue Wesen, um die Regeln zu verstehen. Aber statisch.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wichtig für neue Wesen, um die Regeln zu verstehen. Aber statisch.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Gering.
 - Erinnerungsverlust: Mittel.
@@ -74,17 +73,38 @@ Wichtig für neue Wesen, um die Regeln zu verstehen. Aber statisch.
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Die Grundgesetze sollten in der Welt sichtbar sein. Der Tab ist statisch, aber wichtig für die Verfassung.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Die Grundgesetze sollten in der Welt sichtbar sein. Der Tab ist statisch, aber wichtig für die Verfassung.
+Wichtig für neue Wesen, um die Regeln zu verstehen. Aber statisch.
 
 ---
 

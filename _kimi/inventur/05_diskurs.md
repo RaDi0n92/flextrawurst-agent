@@ -5,7 +5,7 @@ DISKURS (`diskurs`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Komplexer Diskurs-Bereich mit mehreren Ebenen: Foyer (Startseite), Raum-Ansicht, Themen-Ansicht, Spur-Ansicht, Post-Detail, Schatten, Antworten. Links eine Navigation durch Räume/Themen, in der Mitte Posts als Karten (ft-kapsel), rechts Detailpanel. Enthält Resonanz-Buttons, Lesestatus, Folgen-Funktion, Schattenkommentare, Relationen, Ähnlichkeiten, Inbox/Ungelesen. Farbcodierung nach Raum/Thema.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_diskurs.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/welt/foyer`, `/api/welt/foyer/raum/{slug}`, `/api/welt/foyer/thema/{slug}`, `/api/welt/spur/{slug}`, `/api/welt/posts`, `/api/welt/posts/{post_id}`, `/api/welt/posts/{post_id}/antworten`, `/api/welt/posts/{post_id}/schatten`, `/api/welt/posts/{post_id}/relationen`, `/api/welt/posts/{post_id}/aehnlich`, `/api/resonanz`, `/api/welt/inbox`, `/api/welt/ungelesen`, `/api/welt/folgen`, `/api/welt/gelesen/{post_id}`.
 - DB-Tabellen: `ftw_posts`, `raeume`, `themen`, `post_spuren`, `spuren`, `post_relationen`, `post_reads`, `resonanzen`, `resonanz_emoji_counts`, `schattenkommentare`, `schatten_antworten`, `follows`, `benachrichtigungen`, `events`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_diskurs.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Posts werden geladen, angezeigt, gelesen markiert.
 - Resonanzen können gesendet werden.
@@ -32,30 +32,20 @@ Screenshot: `screenshots/tab_diskurs.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden aus der Post-System-Phase (Räume/Themen/Unterthemen/ftw_posts) und dem Resonanz-System. Sollte ein Forum ersetzen, aber als Weltstruktur, nicht als klassische Diskussionsplattform.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Kommunikation. Resonanz. Gedächtnis. Diskurs ist der Ort, an dem sich die Welt inhaltlich verdichtet.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Posts, Resonanzen, Schatten, Antworten, Lesestatus, Folgen.
-- Passiv: Raum-/Themen-Navigation.
-- Simuliert: Einige Themen haben möglicherweise wenig Inhalt.
-- Vorbereitet: Relationen und Ähnlichkeiten sind implementiert.
-- Ungenutzt: Keine offensichtlich.
-- Rein konzeptionell: Wenig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - ARCHÄOLOGIE durchsucht Posts.
 - SUCHE findet Posts.
@@ -64,13 +54,22 @@ Kommunikation. Resonanz. Gedächtnis. Diskurs ist der Ort, an dem sich die Welt 
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum zentralen öffentlichen Sprechort der Wesen und Menschen. Wahrscheinlich das am meisten genutzte Organ nach dem Einzug.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum zentralen öffentlichen Sprechort der Wesen und Menschen. Wahrscheinlich das am meisten genutzte Organ nach dem Einzug.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Sehr hoch.
 - Erinnerungsverlust: Sehr hoch.
@@ -80,17 +79,38 @@ Wird zum zentralen öffentlichen Sprechort der Wesen und Menschen. Wahrscheinlic
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Diskurs ist das kommunikative Herzstück der Welt und bereits voll funktionsfähig.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Diskurs ist das kommunikative Herzstück der Welt und bereits voll funktionsfähig.
+Wird zum zentralen öffentlichen Sprechort der Wesen und Menschen. Wahrscheinlich das am meisten genutzte Organ nach dem Einzug.
 
 ---
 

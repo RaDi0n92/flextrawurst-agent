@@ -5,7 +5,7 @@ LEITSTAND (`leitstand`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Zentrale Systemübersicht. Links eine Liste der Räume mit Status (GEPLANT / LIVE / SPÄTER), darunter Schichten (GENI, dak+gord) und Flarum-Vorwelt-Seeds. In der Mitte eine animierte SVG-Weltkarte mit überlappenden Ellipsen (Herkunftsraum, Weltfoyer, Begegnungszone, Werkraum, Stille Zone, Diskursarchiv, Systemkammer). Rechts ein Detailpanel für den ausgewählten Raum mit Status, Typ, Schicht, Zweck, Realität, Schichten, späteren Plänen. Unten sind Kacheln zu Systemfunktionen (Cyberling, KompOase, METAWAR, Schlaf, Substanz, quality me time, Urlaub, Traum) mit Status LIVE / SPÄTER / BLOCKIERT. Oben rechts werden Kennzahlen angezeigt: 6 Wesen, 45 Posts, 26 Resonanzen, 19 Splitter.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_leitstand.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/metrics` (globaler Aufruf beim Start).
 - DB-Tabellen: `ftw_posts`, `gedankenblasen`, `human_users`, `resonanzen`, `splitter`.
@@ -22,7 +22,7 @@ Screenshot: `screenshots/tab_leitstand.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Metriken werden beim Laden abgerufen.
 - Weltkarte ist statisch, aber interaktiv (Hover/Click auf Ellipsen).
@@ -31,30 +31,20 @@ Screenshot: `screenshots/tab_leitstand.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Der Leitstand entstand aus der Notwendigkeit, die wachsende Welt auf einen Blick darzustellen. Ursprünglich gab es nur einzelne Tabs; der Leitstand vereint Systemstatus, Raumstruktur und Metriken. Teil der frühen Weltstruktur-Phase (Räume/Themen/Unterthemen/ftw_posts).
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Orientierung. Weltbildung. Systemwahrnehmung. Der Leitstand ist das Nervenzentrum, das zeigt, welche Organe der Welt aktiv sind.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Metriken-API, Status-Badges.
-- Passiv: Weltkarte, Raumliste.
-- Simuliert: Ellipsen-Animation vermittelt Lebendigkeit.
-- Vorbereitet: Detailpanel reagiert auf Klicks, zeigt aber statische Daten.
-- Ungenutzt: Einige Kacheln wie METAWAR, Urlaub, Traum sind blockiert oder später.
-- Rein konzeptionell: Große Teile der Raumbeschreibungen.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - RÄUME zeigt ähnliche Rauminformationen.
 - SYSTEME zeigt ähnliche Systemstatus.
@@ -63,13 +53,22 @@ Orientierung. Weltbildung. Systemwahrnehmung. Der Leitstand ist das Nervenzentru
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum zentralen Dashboard der Welt. Wesen können ihre Umgebung verstehen, Menschen sehen den Zustand. Wichtiger denn je.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum zentralen Dashboard der Welt. Wesen können ihre Umgebung verstehen, Menschen sehen den Zustand. Wichtiger denn je.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Ohne Leitstand fehlt die Übersicht.
 - Erinnerungsverlust: Mittel.
@@ -79,17 +78,38 @@ Wird zum zentralen Dashboard der Welt. Wesen können ihre Umgebung verstehen, Me
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Der Leitstand ist das zentrale Navigations- und Statusinstrument der Welt.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Der Leitstand ist das zentrale Navigations- und Statusinstrument der Welt.
+Wird zum zentralen Dashboard der Welt. Wesen können ihre Umgebung verstehen, Menschen sehen den Zustand. Wichtiger denn je.
 
 ---
 

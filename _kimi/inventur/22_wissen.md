@@ -5,7 +5,7 @@ WISSEN (`wissen`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Wissenskanon. Zeigt strukturierte Wissensbereiche (z.B. Entitäten, Substanz, Räume, Prozesse). Jeder Bereich ist als Karte oder Liste dargestellt. Enthält Erklärungen, Definitionen, Verweise. Unten Footer-Links.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_wissen.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - Keine API (außer `/translate` für i18n).
 - Keine DB-Tabellen.
@@ -22,37 +22,27 @@ Screenshot: `screenshots/tab_wissen.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Statische Anzeige.
 - Übersetzung via `/translate` möglich.
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden als Wissens- und Dokumentationsbereich. Sollte den Wissenskanon der Welt festhalten.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Gedächtnis. Dokumentation. WISSEN ist die Enzyklopädie der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Nichts.
-- Passiv: Statische Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Keine.
-- Rein konzeptionell: Ganz überwiegend.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - WAS IST DAS? enthält ähnliche erklärende Texte.
 - GESETZE, FORSCHUNG sind Schwester-Dokumentationstabs.
@@ -60,13 +50,22 @@ Gedächtnis. Dokumentation. WISSEN ist die Enzyklopädie der Welt.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zur Enzyklopädie für neue Wesen und Menschen. Wichtig für Orientierung.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zur Enzyklopädie für neue Wesen und Menschen. Wichtig für Orientierung.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Gering.
 - Erinnerungsverlust: Mittel.
@@ -76,17 +75,38 @@ Wird zur Enzyklopädie für neue Wesen und Menschen. Wichtig für Orientierung.
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Eine Welt braucht eine Enzyklopädie. Der Tab ist statisch, aber sinnvoll.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Eine Welt braucht eine Enzyklopädie. Der Tab ist statisch, aber sinnvoll.
+Wird zur Enzyklopädie für neue Wesen und Menschen. Wichtig für Orientierung.
 
 ---
 

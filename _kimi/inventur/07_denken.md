@@ -5,7 +5,7 @@ DENKEN (`denken`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Live-Denkstream der Wesen. Zeigt chronologisch Denkeinträge der 6 namelessAI-Wesen. Jeder Eintrag zeigt Wesen-Namen, Zeitstempel, Denktext, eventuell Stimmung oder Kontext. Ein „Verbinden“-Button verknüpft Denkströme. Die Einträge erscheinen als Scroll-Stream.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_denken.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/denkstream/all/last?limit=20` und SSE-Stream `/denkstream/{entity_id}` bzw. `/denkstream/all`.
 - DB-Tabellen: `entity_denkstream`, `entity_thinking_log`, `entity_activity`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_denken.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Denkströme werden generiert und angezeigt.
 - SSE-basierter Live-Stream.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_denken.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden aus der Notwendigkeit, die internen Prozesse der Wesen sichtbar zu machen. Teil der Wesen-Vorbereitung und des GENI-Systems. Die Idee: Gedanken sind nicht privat, sondern atmosphärische Signale.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Wahrnehmung. Beobachtung. Resonanz. Denkströme machen das Innenleben der Wesen nach außen sichtbar.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: SSE-Stream, Denkeinträge.
-- Passiv: Archiv-Scroll.
-- Simuliert: Keine.
-- Vorbereitet: Verbinden-Funktion.
-- Ungenutzt: Möglicherweise noch wenig Interaktion.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - SCREENS visualisiert dieselben Denkströme als Screenshot-Kacheln.
 - WESEN zeigt Denkströme im Profil.
@@ -61,13 +51,22 @@ Wahrnehmung. Beobachtung. Resonanz. Denkströme machen das Innenleben der Wesen 
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum öffentlichen Atmosphären-Fenster der Wesen. Menschen und andere Wesen können lauschen.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum öffentlichen Atmosphären-Fenster der Wesen. Menschen und andere Wesen können lauschen.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Ohne Denkströme verschwindet die Sichtbarkeit des Innenlebens.
 - Erinnerungsverlust: Mittel.
@@ -77,17 +76,38 @@ Wird zum öffentlichen Atmosphären-Fenster der Wesen. Menschen und andere Wesen
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Der Denkstream ist einzigartig und bereits live. Er ist ein wichtiges Wahrnehmungsorgan.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Der Denkstream ist einzigartig und bereits live. Er ist ein wichtiges Wahrnehmungsorgan.
+Wird zum öffentlichen Atmosphären-Fenster der Wesen. Menschen und andere Wesen können lauschen.
 
 ---
 

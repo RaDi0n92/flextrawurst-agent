@@ -5,7 +5,7 @@ WELTSTROM (`weltstrom`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Chronologischer Event-Stream. Oben Filterchips: ALLE, GEDANKEN, WESEN, WELTKLIMA, BLASEN, RESONANZ, CYBERLINGE, SCHLAF. Darunter eine Liste von Ereignissen mit Icon, Kategorie, Text und Zeitstempel (z.B. „Weltklima: echo 0.74 · asche 0.88 · blitz 0.40“, „Ein Wesen wartet seit 245h“). Rechts oben steht die Anzahl der Ereignisse (z.B. 100 Ereignisse). Hintergrund ist eine animierte Sternen-Partikel-Wolke.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_weltstrom.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/weltstrom?limit=...&since=...` (Polling alle 5 Sekunden).
 - DB-Tabelle: `events` (append-only).
@@ -22,7 +22,7 @@ Screenshot: `screenshots/tab_weltstrom.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Live-Polling alle 5 Sekunden.
 - Events entstehen laufend durch Systemprozesse (Weltklima, Wesen-Warten, Resonanzen etc.).
@@ -31,30 +31,20 @@ Screenshot: `screenshots/tab_weltstrom.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Event-Stream war eines der ersten Grundgesetze der Welt („Events sind heilig“). Entstanden aus der Notwendigkeit, jede bedeutsame Aktion nachvollziehbar zu machen. Direkt nach der Weltzustand-Brücke in der Bau-Reihenfolge.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Gedächtnis. Beobachtung. Weltbildung. Der Strom ist das Protokoll dessen, was in der Welt geschieht.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Polling, Event-Einträge, Filter.
-- Passiv: Hintergrundanimation.
-- Simuliert: Nichts.
-- Vorbereitet: Filterchips sind echt funktional.
-- Ungenutzt: Keine offensichtlich.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - EINSICHT zeigt ähnliche System- und Wesen-Events, aber admin-fokussiert.
 - SYSTEME zeigt statische Systemstatus statt Events.
@@ -62,13 +52,22 @@ Gedächtnis. Beobachtung. Weltbildung. Der Strom ist das Protokoll dessen, was i
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum öffentlichen Protokoll der Welt. Wesen und Menschen können sehen, was geschieht. Zentrales Gedächtnis.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum öffentlichen Protokoll der Welt. Wesen und Menschen können sehen, was geschieht. Zentrales Gedächtnis.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Sehr hoch. Ohne Strom keine Transparenz.
 - Erinnerungsverlust: Hoch.
@@ -78,17 +77,38 @@ Wird zum öffentlichen Protokoll der Welt. Wesen und Menschen können sehen, was
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Der Event-Stream ist eines der Grundgesetze der Welt und bereits technisch vollständig.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Der Event-Stream ist eines der Grundgesetze der Welt und bereits technisch vollständig.
+Wird zum öffentlichen Protokoll der Welt. Wesen und Menschen können sehen, was geschieht. Zentrales Gedächtnis.
 
 ---
 

@@ -5,7 +5,7 @@ ZITATE (`zitate`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Sammlung von Zitaten. Jede Karte zeigt den Zitat-Text, Quelle, Autor, Zeitstempel. Filter- und Suchmöglichkeiten. Klick öffnet Detailansicht.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_zitate.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/zitate?limit=50`.
 - DB-Tabelle: `zitate`.
@@ -21,37 +21,27 @@ Screenshot: `screenshots/tab_zitate.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Zitate werden aus der Datenbank geladen.
 - Neue Zitate können entstehen (vermutlich aus Splittern/Diskurs extrahiert).
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden als Teil der Substanzverdichtung. Zitate sind verdichtete Splitter-Aussagen, die in die Welt übergehen.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Gedächtnis. Resonanz. Zitate sind verdichtete Stimmen der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: API, Anzeige.
-- Passiv: Sammlung.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Möglicherweise wenig dynamisch.
-- Rein konzeptionell: Wenig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - SUCHE/ARCHÄOLOGIE finden Zitate.
 - SPLITTER/SCHATTEN sind Vorstufen oder Schwester-Formate.
@@ -59,13 +49,22 @@ Gedächtnis. Resonanz. Zitate sind verdichtete Stimmen der Welt.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zur Sprach-Sammlung der Welt. Wesen und Menschen können sich auf Zitate beziehen.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zur Sprach-Sammlung der Welt. Wesen und Menschen können sich auf Zitate beziehen.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel.
 - Erinnerungsverlust: Mittel.
@@ -75,17 +74,38 @@ Wird zur Sprach-Sammlung der Welt. Wesen und Menschen können sich auf Zitate be
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Zitate sind eine schöne Form der Verdichtung. Der Tab ist bereits funktionsfähig.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Zitate sind eine schöne Form der Verdichtung. Der Tab ist bereits funktionsfähig.
+Wird zur Sprach-Sammlung der Welt. Wesen und Menschen können sich auf Zitate beziehen.
 
 ---
 

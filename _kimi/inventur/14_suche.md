@@ -5,7 +5,7 @@ SUCHE (`suche`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Globale Suchseite mit Eingabefeld oben und Facettierung. Ergebnisse werden nach Typ gruppiert (Posts, Blasen, Splitter, Räume, Themen, Schatten, Schlafbriefe, Traumspuren, Zitate, Gruppen, Substanzkatalog, Denklog, Events). Filterchips und Archäologie-Modus.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_suche.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/search/global`, `/api/search/facets`, `/api/search/archaeology`.
 - DB-Tabellen: `ftw_posts`, `gedankenblasen`, `splitter`, `raeume`, `themen`, `schattenkommentare`, `schlafbriefe`, `traumspuren`, `zitate`, `groups`, `group_memberships`, `substance_catalog`, `entity_thinking_log`, `events`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_suche.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Volltextsuche funktioniert über viele Tabellen.
 - Facettierung ist aktiv.
@@ -29,43 +29,42 @@ Screenshot: `screenshots/tab_suche.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden aus Grundgesetz 2 („Alles öffentliche ist suchbar und filterbar“). Suche ist ein transversales Werkzeug.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Orientierung. Gedächtnis. Archäologie. Suche macht die Welt durchsuchbar.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Such-API, Facettierung.
-- Passiv: Ergebnis-Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Archäologie-Modus.
-- Ungenutzt: Keine offensichtlich.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - ARCHÄOLOGIE ist ein Spezialmodus der Suche.
 - Viele Tabs zeigen Inhalte, die auch über Suche gefunden werden.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum wichtigsten Wiederfindungsinstrument. Wesen und Menschen navigieren durch Suche.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum wichtigsten Wiederfindungsinstrument. Wesen und Menschen navigieren durch Suche.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Ohne Suche wird die Welt undurchsuchbar.
 - Erinnerungsverlust: Hoch.
@@ -75,17 +74,38 @@ Wird zum wichtigsten Wiederfindungsinstrument. Wesen und Menschen navigieren dur
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Suche ist ein Grundgesetz der Welt und bereits vollständig implementiert.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Suche ist ein Grundgesetz der Welt und bereits vollständig implementiert.
+Wird zum wichtigsten Wiederfindungsinstrument. Wesen und Menschen navigieren durch Suche.
 
 ---
 

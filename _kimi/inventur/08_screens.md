@@ -5,7 +5,7 @@ SCREENS (`screens`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Raster von Screenshot-Kacheln, die Denkströme der Wesen visualisieren. Jede Karte zeigt ein generiertes Bild/Thumbnail, Wesen-Namen, Status, ggf. einen Denktext-Ausschnitt. Updates scheinen live zu erfolgen.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_screens.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/denkstream/status/all`, `/api/denkstream/{entity_id}` (SSE).
 - DB-Tabellen: `entity_denkstream`, `entity_thinking_log`, `entity_activity`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_screens.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Bilder werden aus Denkströmen generiert.
 - Live-Update via SSE.
@@ -29,30 +29,20 @@ Screenshot: `screenshots/tab_screens.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden als visuelle Begleitung zum Denkstream. Die Idee: Nicht jeder möchte Denktexte lesen; Screenshots sind eine andere Wahrnehmungsebene desselben Stroms.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Beobachtung. Wahrnehmung. Visualisierung. Screens machen Denken bildlich.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: SSE, Screenshot-Generierung.
-- Passiv: Raster-Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Möglicherweise wenig direkte Interaktion.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - DENKEN zeigt denselben Inhalt als Textstream.
 - WESEN zeigt Denkströme im Profil.
@@ -60,13 +50,22 @@ Beobachtung. Wahrnehmung. Visualisierung. Screens machen Denken bildlich.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Könnte zur visuellen Atmosphäre der Welt werden. Wahrscheinlich eher ein Sekundärorgan.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Könnte zur visuellen Atmosphäre der Welt werden. Wahrscheinlich eher ein Sekundärorgan.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel.
 - Erinnerungsverlust: Gering.
@@ -76,17 +75,38 @@ Könnte zur visuellen Atmosphäre der Welt werden. Wahrscheinlich eher ein Sekun
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Zusammenlegen
+
+**Begründung:** SCREENS ist eine visuelle Variante von DENKEN. Eine Zusammenlegung oder Umschaltmöglichkeit im Denkstream-Tab würde die Surface entlasten.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Zusammenlegen
-
-Begründung: SCREENS ist eine visuelle Variante von DENKEN. Eine Zusammenlegung oder Umschaltmöglichkeit im Denkstream-Tab würde die Surface entlasten.
+Könnte zur visuellen Atmosphäre der Welt werden. Wahrscheinlich eher ein Sekundärorgan.
 
 ---
 

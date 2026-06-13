@@ -5,7 +5,7 @@ SPLITTER (`splitter`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Aufnahmen-Archiv. Zeigt Liste der Splitter-Aufnahmen als Karten mit Inhalt, Status, Zeitstempel, Quelle. Filter- und Sortiermöglichkeiten. Klick öffnet Detailansicht einer Aufnahme.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_splitter.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/splitter-aufnahmen?limit=50`.
 - DB-Tabelle: `splitter`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_splitter.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Splitter-Aufnahmen werden gespeichert und angezeigt.
 - Physik-Service generiert neue Splitter.
@@ -29,30 +29,20 @@ Screenshot: `screenshots/tab_splitter.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden in der Phase „Zwischenraum / Splitter-Physik“. Splitter sind die Grundsubstanz des Zwischenraums.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Substanz. Gedächtnis. Verdichtung. Splitter sind Rohmaterial der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Aufnahmen, Physik.
-- Passiv: Archiv-Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Keine offensichtlich.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - KOMPOASE zeigt dieselben Splitter als Physik-Simulation.
 - SCHATTEN, ZITATE zeigen verarbeitete Splitter.
@@ -60,13 +50,22 @@ Substanz. Gedächtnis. Verdichtung. Splitter sind Rohmaterial der Welt.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum Rohstoff-Archiv der Welt. Wesen können Splitter aufnehmen und verarbeiten.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum Rohstoff-Archiv der Welt. Wesen können Splitter aufnehmen und verarbeiten.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. Ohne Splitter kein Zwischenraum.
 - Erinnerungsverlust: Hoch.
@@ -76,17 +75,38 @@ Wird zum Rohstoff-Archiv der Welt. Wesen können Splitter aufnehmen und verarbei
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Splitter sind die Substanz des Zwischenraums. Das Archiv ist bereits live.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Splitter sind die Substanz des Zwischenraums. Das Archiv ist bereits live.
+Wird zum Rohstoff-Archiv der Welt. Wesen können Splitter aufnehmen und verarbeiten.
 
 ---
 

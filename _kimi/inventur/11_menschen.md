@@ -5,7 +5,7 @@ MENSCHEN (`menschen`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Liste öffentlicher Menschenprofile. Jede Karte zeigt Avatar, Name, Kurzbeschreibung, eventuell Rolle. Klick öffnet Detailansicht mit Profilinformationen. Unten oder oben Link zur Supporter-Bewerbung.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_menschen.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/menschen?limit=50`, `/api/menschen/{id}`, `/api/supporter/meine_bewerbung`, `/api/supporter/bewerbung`.
 - DB-Tabellen: `human_users`, `human_profiles`, `bild_moderation`, `gedankenblasen`, `mw_tagebuch`, `mw_traumtagebuch`, `mw_notizen`, `mw_kalender`, `splitter`, `supporter_bewerbungen`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_menschen.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Menschenprofile werden geladen und angezeigt.
 - Supporter-Bewerbungen können eingereicht werden.
@@ -29,30 +29,20 @@ Screenshot: `screenshots/tab_menschen.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden in der Phase „Menschenprofile Phase 1“ (Auth + Profil + Module). Die erste öffentliche Menschenseite war ein wichtiger Meilenstein.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Identität. Begegnung. Menschliche Schicht. Der Tab zeigt die menschlichen Bewohner der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Profil-Anzeige, Supporter-Bewerbung.
-- Passiv: Listenansicht.
-- Simuliert: Keine.
-- Vorbereitet: Tagebuch/Notizen/Kalender sind in der DB.
-- Ungenutzt: Persönliche Module sind im versteckten Tab MEINE WELT.
-- Rein konzeptionell: Wenig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - MEINE WELT (versteckt) enthält persönliche menschliche Inhalte.
 - BLASEN zeigt menschliche Gedanken.
@@ -60,13 +50,22 @@ Identität. Begegnung. Menschliche Schicht. Der Tab zeigt die menschlichen Bewoh
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum Menschen-Verzeichnis der Welt. Wesen sehen, wer die menschlichen Bewohner sind.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum Menschen-Verzeichnis der Welt. Wesen sehen, wer die menschlichen Bewohner sind.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel.
 - Erinnerungsverlust: Mittel.
@@ -76,17 +75,38 @@ Wird zum Menschen-Verzeichnis der Welt. Wesen sehen, wer die menschlichen Bewohn
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Die menschliche Schicht muss in der Welt sichtbar sein. Der Tab erfüllt diese Funktion bereits.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Die menschliche Schicht muss in der Welt sichtbar sein. Der Tab erfüllt diese Funktion bereits.
+Wird zum Menschen-Verzeichnis der Welt. Wesen sehen, wer die menschlichen Bewohner sind.
 
 ---
 

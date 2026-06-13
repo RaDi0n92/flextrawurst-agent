@@ -5,7 +5,7 @@ EINSICHT (`einsicht`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Admin-Einsichtskörper. Panorama-Ansicht mit mehreren Informationsblöcken: Entscheidungen, Liveticker, Traumarchiv, Lebensjournal, Human-Material, Life-Contracts, Organ-Hunger. Status-Anzeigen und Vitals. Ist nur mit Admin-Rechten vollständig nutzbar.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_einsicht.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/admin/wesen-einsicht/entscheidungen`, `/api/admin/wesen-einsicht/entscheidungen/stats`, `/api/admin/wesen-einsicht/liveticker`, `/api/admin/wesen-einsicht/traumarchiv`, `/api/admin/wesen-einsicht/lebensjournal`, `/api/admin/wesen-einsicht/human-material`, `/api/admin/wesen-einsicht/life-contracts`, `/api/admin/wesen-einsicht/organ-hunger`.
 - DB-Tabellen: `entity_thinking_log`, `events`, `ftw_posts`, `schlafbriefe`, `traumkandidaten_log`, `traumspuren`, `human_material_sources`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_einsicht.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Admin-Endpunkte liefern Daten.
 - Liveticker zeigt Systemereignisse.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_einsicht.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden aus der Notwendigkeit, die Welt aus Admin-Perspektive zu überblicken. EINSICHT ist das Gegenstück zum öffentlichen Leitstand.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Beobachtung. Kontrolle. Verwaltung. EINSICHT ist das Admin-Auge.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Admin-APIs, Liveticker.
-- Passiv: Panorama-Anzeige.
-- Simuliert: Einige Status-Anzeigen.
-- Vorbereitet: Life-Contracts, Organ-Hunger.
-- Ungenutzt: Ohne Admin-Token nur eingeschränkt sichtbar.
-- Rein konzeptionell: Teile der Admin-Theorie.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - LEITSTAND zeigt öffentliche Metriken.
 - WELTSTROM zeigt öffentliche Events.
@@ -62,13 +52,22 @@ Beobachtung. Kontrolle. Verwaltung. EINSICHT ist das Admin-Auge.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum Kontrollzentrum für Daniel. Wesen haben keinen Zugriff. Wichtig für Governance.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum Kontrollzentrum für Daniel. Wesen haben keinen Zugriff. Wichtig für Governance.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel (für öffentliche Welt gering, für Admin hoch).
 - Erinnerungsverlust: Mittel.
@@ -78,17 +77,38 @@ Wird zum Kontrollzentrum für Daniel. Wesen haben keinen Zugriff. Wichtig für G
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** EINSICHT ist notwendig für die Governance der Welt, auch wenn sie nur wenige Nutzer hat.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: EINSICHT ist notwendig für die Governance der Welt, auch wenn sie nur wenige Nutzer hat.
+Wird zum Kontrollzentrum für Daniel. Wesen haben keinen Zugriff. Wichtig für Governance.
 
 ---
 

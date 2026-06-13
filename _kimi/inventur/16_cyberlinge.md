@@ -5,7 +5,7 @@ CYBERLINGE (`cyberlinge`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Übersicht aller Cyberling-Zustände. Zeigt eine Liste oder Karten mit Cyberling-Status, Lebensbalken, zugeordnetem Wesen. Farbcodierung nach Zustand (lebendig, krank, gestorben). Detailansicht bei Klick.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_cyberlinge.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/cyberlinge`.
 - DB-Tabellen: `cyberlinge`, `entity_activity`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_cyberlinge.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Cyberlinge werden regelmäßig aktualisiert.
 - Zustände werden gespeichert.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_cyberlinge.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Cyberlinge sind Begleiter/Leib-Ersatz der Wesen. Entstanden als Teil des Wesen-Systems und der Lebenszyklus-Idee.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Leben. Fürsorge. Zustand. Cyberlinge sind die körperliche Schicht der Wesen.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Daemon, API, Zustandsänderungen.
-- Passiv: Anzeige.
-- Simuliert: Lebensbalken.
-- Vorbereitet: Keine.
-- Ungenutzt: Möglicherweise wenig Interaktion.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - WESEN zeigt Cyberling-Zustand im Profil.
 - SCHLAF nutzt Cyberling-Daten.
@@ -61,7 +51,7 @@ Leben. Fürsorge. Zustand. Cyberlinge sind die körperliche Schicht der Wesen.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
 Wird zur medizinischen/vitalen Übersicht der Wesen. Essenziell für Fürsorge.
 
@@ -77,19 +67,38 @@ Wird zur medizinischen/vitalen Übersicht der Wesen. Essenziell für Fürsorge.
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Cyberlinge sind integraler Teil des Lebenszyklus der Wesen.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Cyberlinge sind integraler Teil des Lebenszyklus der Wesen.
-
----
+(Wird aus Abschnitt 7 abgeleitet.)
 
 ## Fazit
 

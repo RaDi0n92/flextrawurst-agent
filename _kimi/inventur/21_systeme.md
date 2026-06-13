@@ -5,7 +5,7 @@ SYSTEME (`systeme`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Statische Systemübersicht. Zeigt laufende Services (flextrawurst-surface, welt-api, welt-bruecke, splitter-physik, GENI, etc.) mit Status. Enthält technische Details zu Ports, Pfaden, Datenbanken. Keine Live-Daten.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_systeme.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - Keine API.
 - Keine DB-Tabellen.
@@ -22,37 +22,27 @@ Screenshot: `screenshots/tab_systeme.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Statische Anzeige.
 - Keine laufenden Prozesse innerhalb des Tabs.
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden als technische Dokumentation der Welt. Teil der frühen Systemdokumentation.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Orientierung. Dokumentation. SYSTEME zeigt das Gerüst der Welt.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Nichts.
-- Passiv: Statische Anzeige.
-- Simuliert: Status-Badges sind statisch.
-- Vorbereitet: Keine.
-- Ungenutzt: Keine.
-- Rein konzeptionell: Ganz überwiegend.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - LEITSTAND zeigt echte Systemmetriken.
 - WELTSTROM zeigt echte System-Events.
@@ -60,13 +50,22 @@ Orientierung. Dokumentation. SYSTEME zeigt das Gerüst der Welt.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zur technischen Dokumentation. Für Wesen und normale Nutzer weniger relevant.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zur technischen Dokumentation. Für Wesen und normale Nutzer weniger relevant.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Gering.
 - Erinnerungsverlust: Mittel.
@@ -76,17 +75,38 @@ Wird zur technischen Dokumentation. Für Wesen und normale Nutzer weniger releva
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Zusammenlegen
+
+**Begründung:** SYSTEME ist stark mit LEITSTAND überschneidungsreich, aber ohne Live-Daten. Eine Zusammenlegung oder Umwandlung in eine Dokumentationsseite im LEITSTAND wäre sinnvoll.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Zusammenlegen
-
-Begründung: SYSTEME ist stark mit LEITSTAND überschneidungsreich, aber ohne Live-Daten. Eine Zusammenlegung oder Umwandlung in eine Dokumentationsseite im LEITSTAND wäre sinnvoll.
+Wird zur technischen Dokumentation. Für Wesen und normale Nutzer weniger relevant.
 
 ---
 

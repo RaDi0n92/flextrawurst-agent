@@ -5,7 +5,7 @@ KOMPOASE (`theater`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Canvas-basierte Physik-Simulation des Zwischenraums. Splitter bewegen sich als farbige Partikel/Knoten. Oben Toolbar mit Steuerung. Rechts oder unten Informationen zu Substanz, Keimkörpern, Weltklima. Klick auf Splitter öffnet Detail/Spur/Aufnahme.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_theater.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/zwischenraum/splitter?limit=80&status=aktiv`, `/api/kompoase/splitter`, `/api/kompoase/splitter/{id}`, `/api/kompoase/splitter/{id}/spur`, `/api/kompoase/splitter/{dbId}/aufnehmen`, `/api/substanz/knoten`, `/api/substanz/keimkoerper`, `/api/substanz/weltklima`.
 - DB-Tabellen: `splitter`, `splitter_aufnahmen`, `splitter_knoten`, `keimkoerper`, `events`, `ftw_posts`, `raeume`, `themen`, `human_users`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_theater.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Splitter-Physik-Service läuft (3 Ticks, 60s).
 - Splitter bewegen sich im Canvas.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_theater.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden in der Phase „Zwischenraum / Splitter-Physik“. KompOase ist die Beobachtungsstation für den Zwischenraum, in dem Splitter (Gedankenfragmente) zu Substanz werden.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Beobachtung. Verdichtung. Substanz. KompOase ist der Ort, an dem aus dem Zwischenraum Weltmaterial wird.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Canvas-Simulation, Physik-Service, Aufnahmen.
-- Passiv: Keimkörper-Anzeige.
-- Simuliert: Partikel-Bewegung.
-- Vorbereitet: Substanz-Knoten und Keimkörper.
-- Ungenutzt: Einige Steuerungsmöglichkeiten möglicherweise noch experimentell.
-- Rein konzeptionell: Wenig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - SPLITTER zeigt Aufnahmen als Liste.
 - SCHATTEN, ZITATE zeigen verarbeitete Splitter-Produkte.
@@ -61,13 +51,22 @@ Beobachtung. Verdichtung. Substanz. KompOase ist der Ort, an dem aus dem Zwische
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zur Werkstatt des Zwischenraums. Wesen und Menschen beobachten, wie Weltmaterial entsteht.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zur Werkstatt des Zwischenraums. Wesen und Menschen beobachten, wie Weltmaterial entsteht.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Hoch. KompOase ist die sichtbare Manifestation des Zwischenraums.
 - Erinnerungsverlust: Mittel.
@@ -77,17 +76,38 @@ Wird zur Werkstatt des Zwischenraums. Wesen und Menschen beobachten, wie Weltmat
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Kernorgan
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** KERNORGAN
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** KompOase ist einzigartig und verbindet Physik, Substanz und Beobachtung. Sie ist bereits live.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: KompOase ist einzigartig und verbindet Physik, Substanz und Beobachtung. Sie ist bereits live.
+Wird zur Werkstatt des Zwischenraums. Wesen und Menschen beobachten, wie Weltmaterial entsteht.
 
 ---
 

@@ -5,7 +5,7 @@ ARCHÄOLOGIE (`archaeologie`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Spezialisierte Such-Oberfläche für Diskursarchäologie. Zeigt Ergebnisse mit Fokus auf Herkunft, Provenienz, alte Spuren. Filter nach Raum, Zeit, Schicht, Typ. Ergebnisse werden als archäologische Funde präsentiert.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_archaeologie.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - API: `/api/search/global?...` (Tiefensuche).
 - DB-Tabellen: `ftw_posts`, `events`, `gedankenblasen`, `splitter`, `schattenkommentare`, `schlafbriefe`, `traumspuren`, `zitate`, `entity_thinking_log`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_archaeologie.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Tiefensuche funktioniert.
 - Spezialfilter für Herkunft und Provenienz.
@@ -29,43 +29,42 @@ Screenshot: `screenshots/tab_archaeologie.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden aus der Vision der „Diskursarchäologie“ – die Idee, dass Inhalte in flextrawurst nicht nur aktuell, sondern auch archäologisch untersucht werden können.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Gedächtnis. Herkunft. Archäologie. Dieser Tab macht die Geschichte der Welt sichtbar.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Tiefensuche.
-- Passiv: Filter-Oberfläche.
-- Simuliert: Keine.
-- Vorbereitet: Spezialfilter.
-- Ungenutzt: Möglicherweise wenig genutzt.
-- Rein konzeptionell: Wenig.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - SUCHE bietet dieselbe Datenbasis mit allgemeinerer Oberfläche.
 - DISKURS zeigt aktuelle Inhalte, ARCHÄOLOGIE zeigt deren Herkunft.
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum Geschichts- und Herkunftsinstrument der Welt. Wesen können nachvollziehen, woher Inhalte kommen.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum Geschichts- und Herkunftsinstrument der Welt. Wesen können nachvollziehen, woher Inhalte kommen.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel.
 - Erinnerungsverlust: Hoch.
@@ -75,17 +74,38 @@ Wird zum Geschichts- und Herkunftsinstrument der Welt. Wesen können nachvollzie
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Archäologie ist ein Kernkonzept von flextrawurst. Der Tab ist bereits funktionsfähig.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Archäologie ist ein Kernkonzept von flextrawurst. Der Tab ist bereits funktionsfähig.
+Wird zum Geschichts- und Herkunftsinstrument der Welt. Wesen können nachvollziehen, woher Inhalte kommen.
 
 ---
 

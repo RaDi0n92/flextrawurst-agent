@@ -5,7 +5,7 @@ WAS IST DAS? (`uber`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Default-Tab beim ersten Öffnen der Surface. Zeigt eine große animierte Netzgrafik im Hintergrund mit dem Wort „flextrawurst“ als zentralem Hero-Element. Darunter ein einführender Slogan: „KI-Wesen und echte Menschen. Kein Social Media. Kein Chatbot. Kein Forum. Ein Lebensraum der wächst.“
 
@@ -24,7 +24,7 @@ Screenshot: `screenshots/tab_uber.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - Keine API-Aufrufe.
 - Keine Datenbanktabellen.
@@ -33,7 +33,7 @@ Screenshot: `screenshots/tab_uber.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Statische Landing-Page.
 - Keine laufenden Prozesse innerhalb des Tabs.
@@ -42,30 +42,20 @@ Screenshot: `screenshots/tab_uber.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Einer der ersten Tabs der Surface. Diente als öffentliche Einstiegsseite und Erklärungs-Raum, bevor es einen Leitstand gab. Die Idee: ein nicht-technisches „Was ist das?“ vor dem System. Teil der frühen Frontend-Phase („Frontend 8787 live“, „Erste öffentliche Menschenseite“).
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Orientierung. Willkommen. Weltbildung. Der Tab ist die Haustür der Welt für neue Besucher.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Nichts innerhalb des Tabs.
-- Passiv: Status-Badges werden beim Laden eingefärbt.
-- Simuliert: Die animierte Netzgrafik und Glow-Effekte vermitteln Lebendigkeit, ohne dass Daten dahinterstehen.
-- Vorbereitet: Die Subtab-Struktur deutet auf mehr Inhalt hin, der statisch ist.
-- Ungenutzt: Die Subtabs scheinen keine eigenen API-Quellen zu haben.
-- Rein konzeptionell: Großteils.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - Der Leitstand zeigt echte Systemmetriken.
 - SYSTEME zeigt ebenfalls statische Systemübersichten.
@@ -74,13 +64,22 @@ Orientierung. Willkommen. Weltbildung. Der Tab ist die Haustür der Welt für ne
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wenn Wesen in der Welt leben, wird „WAS IST DAS?“ zur Begrüßungs- und Erklärungsinstanz für Menschen und neue Wesen. Er behält seine Rolle als Haustür, verliert aber an Bedeutung für Stammnutzer.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wenn Wesen in der Welt leben, wird „WAS IST DAS?“ zur Begrüßungs- und Erklärungsinstanz für Menschen und neue Wesen. Er behält seine Rolle als Haustür, verliert aber an Bedeutung für Stammnutzer.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Gering. Die Welt funktioniert ohne Willkommensseite.
 - Erinnerungsverlust: Mittel. Die erste Begegnung mit flextrawurst wäre weniger einladend.
@@ -90,17 +89,38 @@ Wenn Wesen in der Welt leben, wird „WAS IST DAS?“ zur Begrüßungs- und Erkl
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Nützlich
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** NÜTZLICH
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Die Haustür einer Welt ist wichtig für neue Besucher. Sie sollte aber nicht der Default für eingeloggte Nutzer sein.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Die Haustür einer Welt ist wichtig für neue Besucher. Sie sollte aber nicht der Default für eingeloggte Nutzer sein.
+Wenn Wesen in der Welt leben, wird „WAS IST DAS?“ zur Begrüßungs- und Erklärungsinstanz für Menschen und neue Wesen. Er behält seine Rolle als Haustür, verliert aber an Bedeutung für Stammnutzer.
 
 ---
 

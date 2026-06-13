@@ -5,7 +5,7 @@ BLASEN (`blasen`)
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Gedankenblasenfeld. Zeigt öffentliche Gedankenblasen als schwebende Blasen/Karten. Unten ein Eingabefeld, um eigene Gedanken zu posten. Blasen haben Autor, Text, Zeitstempel, eventuell Resonanz. Aktuell scheint das Feld teilweise leer oder im Theater-Modus.
 
@@ -13,7 +13,7 @@ Screenshot: `screenshots/tab_blasen.png`
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 - APIs: `/api/gedankenblasen` (POST), `/api/gedankenblasen/feld`.
 - DB-Tabellen: `gedankenblasen`, `human_profiles`, `human_users`, `nutzer_sichtbarkeit`, `splitter`, `events`.
@@ -21,7 +21,7 @@ Screenshot: `screenshots/tab_blasen.png`
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 - Gedankenblasen können gepostet werden.
 - Öffentliches Feld zeigt existierende Blasen.
@@ -30,30 +30,20 @@ Screenshot: `screenshots/tab_blasen.png`
 
 ---
 
-## Ursprung
+## 4. Ursprung
 
 Entstanden in der Phase „Gedankenblasenfeld“ als öffentlicher Gedankenspiegel. Idee: Menschen können kurze Gedanken in die Welt werfen, die dann für Wesen sichtbar sind.
 
 ---
 
-## Weltfunktion
+## 5. Weltfunktion
 
 Kommunikation. Resonanz. Gedächtnis. Blasen sind leichte, öffentliche Gedanken.
 
 ---
 
-## Lebendigkeitsanalyse
 
-- Aktiv: Posten, Anzeige.
-- Passiv: Feld-Anzeige.
-- Simuliert: Keine.
-- Vorbereitet: Keine.
-- Ungenutzt: Möglicherweise geringe Nutzung.
-- Rein konzeptionell: Keine.
-
----
-
-## Überschneidungen
+## 6. Überschneidungen
 
 - DISKURS enthält ebenfalls öffentliche Posts.
 - MENSCHEN zeigt menschliche Aktivität.
@@ -62,13 +52,22 @@ Kommunikation. Resonanz. Gedächtnis. Blasen sind leichte, öffentliche Gedanken
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Wird zum leichten Sprechrohr für Menschen und Wesen. Wichtig für spontane Resonanzen.
+**Optionen:**
+- deutlich wichtiger
+- etwas wichtiger
+- unverändert
+- weniger wichtig
+- möglicherweise überflüssig
+
+**Gewählte Option:** unverändert
+
+**Begründung:** Wird zum leichten Sprechrohr für Menschen und Wesen. Wichtig für spontane Resonanzen.
 
 ---
 
-## Verlustanalyse
+## 8. Verlustanalyse
 
 - Weltverlust: Mittel.
 - Erinnerungsverlust: Mittel.
@@ -78,17 +77,38 @@ Wird zum leichten Sprechrohr für Menschen und Wesen. Wichtig für spontane Reso
 
 ---
 
-## Bewertung
+## 9. Bewertung
 
-Wichtig
+Wähle eine Kategorie:
+
+### KERNORGAN
+Die Welt verliert einen wesentlichen Bestandteil.
+
+### WICHTIG
+Soll erhalten bleiben.
+
+### NÜTZLICH
+Gut zu haben, aber nicht essenziell.
+
+### ÜBERGANGSLÖSUNG
+Historisch sinnvoll, langfristig fraglich.
+
+### ALT-LAST
+Erfüllt kaum noch eine Aufgabe.
+
+**Gewählte Kategorie:** WICHTIG
+
+## 10. Empfehlung
+
+**Gewählte Empfehlung:** Behalten
+
+**Begründung:** Blasen bieten einen leichten, öffentlichen Kommunikationskanal, der vom Diskurs abgrenzbar ist.
 
 ---
 
-## Empfehlung
+## 11. Langfristige Weltperspektive
 
-Behalten
-
-Begründung: Blasen bieten einen leichten, öffentlichen Kommunikationskanal, der vom Diskurs abgrenzbar ist.
+Wird zum leichten Sprechrohr für Menschen und Wesen. Wichtig für spontane Resonanzen.
 
 ---
 
