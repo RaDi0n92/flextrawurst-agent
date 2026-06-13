@@ -1,0 +1,352 @@
+{
+  "view_id": "admin",
+  "tab_name": "ADMIN",
+  "url": "http://127.0.0.1:8787/#admin",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "admin__admin__top.png"
+  ],
+  "text": "NUTZER\nSUPPORTER\nINHALTE\nWESEN\nBILDER\nSYSTEM\nEINZUG\n+ Neuer Nutzer\nNutzer\tRolle\tStatus\tDabei seit\tAktionen\nEntity-Takt System\n@entity_takt\tadmin\taktiv\t31.5.2026\t\n✎\n✗\n⌫\n\nHakuna Matata\n@HakunaMatata\tadmin\taktiv\t31.5.2026\t\n✎\n✗\n⌫\n\nklappspaten\n@klappspaten\tadmin\taktiv\t26.5.2026\t\n✎\n✗\n⌫\n\nflextrawurst\n@flextrawurst\tadmin\taktiv\t26.5.2026\t\n✎\n✗\n⌫\n\n1337\n@1337\tadmin\taktiv\t25.5.2026\t\n✎\n✗\n⌫\n\nAdmin\n@Admin\tadmin\taktiv\t24.5.2026\t\n✎\n✗\n⌫\n\nSystem\n@System\tadmin\taktiv\t24.5.2026\t\n✎\n✗\n⌫\n\nDaniel\n@daniel\tadmin\taktiv\t11.5.2026\t\n✎\n✗\n⌫",
+  "controls": [
+    {
+      "tag": "div",
+      "text": "NUTZER",
+      "id": "",
+      "class": "adm-tab active",
+      "onclick": "admTab('nutzer')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SUPPORTER",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('supporter')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "INHALTE",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('inhalte')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "WESEN",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('wesen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "BILDER",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('bilder')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SYSTEM",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('system')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "EINZUG",
+      "id": "",
+      "class": "adm-tab",
+      "onclick": "admTab('einzug')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "input",
+      "text": "",
+      "id": "adm-nu-search",
+      "class": "adm-search",
+      "onclick": "",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "+ Neuer Nutzer",
+      "id": "",
+      "class": "adm-btn adm-btn-green",
+      "onclick": "admNutzerNeuOeffnen()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('c5fa33cb-ff8a-4900-9eb0-144550f569f0')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('c5fa33cb-ff8a-4900-9eb0-144550f569f0','entity_takt')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('c5fa33cb-ff8a-4900-9eb0-144550f569f0','entity_takt')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('7f316f7d-b1a0-4697-9631-c4cfd7d3b06f')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('7f316f7d-b1a0-4697-9631-c4cfd7d3b06f','HakunaMatata')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('7f316f7d-b1a0-4697-9631-c4cfd7d3b06f','HakunaMatata')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('2e4ea069-7334-4245-b34a-a0454b61fbdb')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('2e4ea069-7334-4245-b34a-a0454b61fbdb','klappspaten')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('2e4ea069-7334-4245-b34a-a0454b61fbdb','klappspaten')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('9b3f65e9-1bf7-481a-938a-a53d9540f418')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('9b3f65e9-1bf7-481a-938a-a53d9540f418','flextrawurst')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('9b3f65e9-1bf7-481a-938a-a53d9540f418','flextrawurst')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('63d2b72f-ff9c-48db-ba29-2062005c24ce')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('63d2b72f-ff9c-48db-ba29-2062005c24ce','1337')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('63d2b72f-ff9c-48db-ba29-2062005c24ce','1337')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('2151ecc2-2a61-465a-b12b-b3197a2fe1fc')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('2151ecc2-2a61-465a-b12b-b3197a2fe1fc','Admin')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('2151ecc2-2a61-465a-b12b-b3197a2fe1fc','Admin')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('d50e560c-f097-4c12-b01b-79af7e8f921c')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('d50e560c-f097-4c12-b01b-79af7e8f921c','System')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('d50e560c-f097-4c12-b01b-79af7e8f921c','System')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✎",
+      "id": "",
+      "class": "adm-ico adm-ico-edit",
+      "onclick": "admNutzerBearbeiten('b1c50ed5-f0ad-409c-b653-4b31ab3ef6ec')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "✗",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerDeaktivieren('b1c50ed5-f0ad-409c-b653-4b31ab3ef6ec','daniel')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "⌫",
+      "id": "",
+      "class": "adm-ico adm-ico-del",
+      "onclick": "admNutzerLoeschen('b1c50ed5-f0ad-409c-b653-4b31ab3ef6ec','daniel')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "admin"
+}

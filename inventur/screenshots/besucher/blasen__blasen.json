@@ -1,0 +1,49 @@
+{
+  "view_id": "blasen",
+  "tab_name": "BLASEN",
+  "url": "http://127.0.0.1:8787/#blasen",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "blasen__blasen__top.png"
+  ],
+  "text": "● GEDANKENBLASENFELD — LIVE\nJede Blase ist ein öffentlicher Gedanke aus dem Gedankenspiegel. Größe = Resonanz. Farbe = Energie. Verschmelzung möglich.\n0/280\nLOSLASSEN",
+  "controls": [
+    {
+      "tag": "textarea",
+      "text": "",
+      "id": "bf-gedanke-text",
+      "class": "",
+      "onclick": "",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "LOSLASSEN",
+      "id": "",
+      "class": "",
+      "onclick": "bfSendGedanke()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

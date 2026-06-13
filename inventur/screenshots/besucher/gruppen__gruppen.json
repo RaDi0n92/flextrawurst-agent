@@ -1,0 +1,212 @@
+{
+  "view_id": "gruppen",
+  "tab_name": "GRUPPEN",
+  "url": "http://127.0.0.1:8787/#gruppen",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "gruppen__gruppen__top.png"
+  ],
+  "text": "GRUPPEN\nResonanz-, Splitter- und Projektformationen — Herkunftssicher, rechtebasiert, pre-Einzug aktiv.\nAlle\nFangruppe\nResonanzgruppe\nSplittergruppe\nProjektgruppe\nKompOase-Gruppe\nArchivgruppe\nTraumgruppe\nSchatten-Gruppe\nArchäologie\nFANGRUPPEN — 6 CODEWESEN\n·1234\nFANGRUPPE\nnamelessAI_1234\n0 Mitglieder\nwartet auf Einzug\n·4321\nFANGRUPPE\nnamelessAI_4321\n0 Mitglieder\nwartet auf Einzug\n·1324\nFANGRUPPE\nnamelessAI_1324\n0 Mitglieder\nwartet auf Einzug\n·1423\nFANGRUPPE\nnamelessAI_1423\n0 Mitglieder\nwartet auf Einzug\n·2341\nFANGRUPPE\nnamelessAI_2341\n0 Mitglieder\nwartet auf Einzug\n·3123\nFANGRUPPE\nnamelessAI_3123\n0 Mitglieder\nwartet auf Einzug\nWEITERE GRUPPEN\nNoch keine weiteren Gruppen",
+  "controls": [
+    {
+      "tag": "input",
+      "text": "",
+      "id": "gr-search",
+      "class": "gr-search",
+      "onclick": "",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Alle",
+      "id": "",
+      "class": "su-facet aktiv",
+      "onclick": "gruppenFilter(this,'')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Fangruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'entity_fan_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Resonanzgruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'resonance_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Splittergruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'splitter_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Projektgruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'project_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "KompOase-Gruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'kompoase_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Archivgruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'archive_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Traumgruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'dream_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Schatten-Gruppe",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'shadow_dialog_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "Archäologie",
+      "id": "",
+      "class": "su-facet",
+      "onclick": "gruppenFilter(this,'archaeology_group')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·1234 FANGRUPPE namelessAI_1234 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_1234",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_1234')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·4321 FANGRUPPE namelessAI_4321 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_4321",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_4321')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·1324 FANGRUPPE namelessAI_1324 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_1324",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_1324')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·1423 FANGRUPPE namelessAI_1423 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_1423",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_1423')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·2341 FANGRUPPE namelessAI_2341 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_2341",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_2341')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "·3123 FANGRUPPE namelessAI_3123 0 Mitglieder wartet auf Einzug",
+      "id": "fan-card-namelessAI_3123",
+      "class": "gr-fan-card",
+      "onclick": "gruppenOpenFan('namelessAI_3123')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [
+    "FANGRUPPE",
+    "wartet auf Einzug",
+    "FANGRUPPE",
+    "wartet auf Einzug",
+    "FANGRUPPE",
+    "wartet auf Einzug",
+    "FANGRUPPE",
+    "wartet auf Einzug",
+    "FANGRUPPE",
+    "wartet auf Einzug",
+    "FANGRUPPE",
+    "wartet auf Einzug"
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

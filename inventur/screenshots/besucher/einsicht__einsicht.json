@@ -1,0 +1,289 @@
+{
+  "view_id": "einsicht",
+  "tab_name": "EINSICHT",
+  "url": "http://127.0.0.1:8787/#einsicht",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "einsicht__einsicht__top.png"
+  ],
+  "text": "1234\n4321\n1324\n1423\n2341\n3123\nALLE\n◑ AMPEL\nPANORAMA\n·\nZEITFLUSS\n·\nENTSCHEIDUNGEN\nTRÄUME\nSUBSTANZEN\nSPLITTER\n·\nSCHATTEN\nBEZIEHUNGEN\nINNENQUELLEN\nDENKFENSTER\nAMPEL\n·\nORGANHUNGER\n1234\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\n4321\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\n1324\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\n1423\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\n2341\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\n3123\nwesen.vernachl\n50\nEntsch.\n0\nTraum-Ev.\n0\nSplitter-Ev.\nKein Eintrag ausgewählt\nsystem.bruecken_syncsystem13.06. 06:21:34\nsystem.bruecken_syncsystem13.06. 06:21:04\nsystem.bruecken_syncsystem13.06. 06:20:34\nsystem.bruecken_syncsystem13.06. 06:20:04\nsystem.bruecken_syncsystem13.06. 06:19:34\nsystem.bruecken_syncsystem13.06. 06:19:04\nsystem.bruecken_syncsystem13.06. 06:18:34\nsystem.bruecken_syncsystem13.06. 06:18:04\nsystem.bruecken_syncsystem13.06. 06:17:34\nsystem.bruecken_syncsystem13.06. 06:17:04\nsystem.bruecken_syncsystem13.06. 06:16:34\nsystem.bruecken_syncsystem13.06. 06:16:04\nsystem.bruecken_syncsystem13.06. 06:15:34\nsystem.bruecken_syncsystem13.06. 06:15:04\nsystem.bruecken_syncsystem13.06. 06:14:34\nweltklima.ticktension_daemon13.06. 06:14:04\nsystem.bruecken_syncsystem13.06. 06:14:04\nsystem.bruecken_syncsystem13.06. 06:13:34\nsystem.bruecken_syncsystem13.06. 06:13:04\nsystem.bruecken_syncsystem13.06. 06:12:34\nsystem.bruecken_syncsystem13.06. 06:12:04\nsystem.bruecken_syncsystem13.06. 06:11:34\nsystem.bruecken_syncsystem13.06. 06:11:04\nsystem.bruecken_syncsystem13.06. 06:10:34\nsystem.bruecken_syncsystem13.06. 06:10:04\nsystem.bruecken_syncsystem13.06. 06:09:34\nsystem.bruecken_syncsystem13.06. 06:09:04\nsystem.bruecken_syncsystem13.06. 06:08:34\nsystem.bruecken_syncsystem13.06. 06:08:04\nsystem.bruecken_syncsystem13.06. 06:07:34\nsystem.bruecken_syncsystem13.06. 06:07:04\nsystem.bruecken_syncsystem13.06. 06:06:34\nsystem.bruecken_syncsystem13.06. 06:06:04\nsystem.bruecken_syncsystem13.06. 06:05:34\nsystem.bruecken_syncsystem13.06. 06:05:04\nsystem.bruecken_syncsystem13.06. 06:04:34\nweltklima.ticktension_daemon13.06. 06:04:04\nwesen.vernachlaessigt132413.06. 06:04:04\nwesen.vernachlaessigt234113.06. 06:04:04\nwesen.vernachlaessigt432113.06. 06:04:04\nsystem.bruecken_syncsystem13.06. 06:21:34\nsystem.bruecken_syncsystem13.06. 06:21:04\nsystem.bruecken_syncsystem13.06. 06:20:34\nsystem.bruecken_syncsystem13.06. 06:20:04\nsystem.bruecken_syncsystem13.06. 06:19:34\nsystem.bruecken_syncsystem13.06. 06:19:04\nsystem.bruecken_syncsystem13.06. 06:18:34\nsystem.bruecken_syncsystem13.06. 06:18:04\nsystem.bruecken_syncsystem13.06. 06:17:34\nsystem.bruecken_syncsystem13.06. 06:17:04\nsystem.bruecken_syncsystem13.06. 06:16:34\nsystem.bruecken_syncsystem13.06. 06:16:04\nsystem.bruecken_syncsystem13.06. 06:15:34\nsystem.bruecken_syncsystem13.06. 06:15:04\nsystem.bruecken_syncsystem13.06. 06:14:34\nweltklima.ticktension_daemon13.06. 06:14:04\nsystem.bruecken_syncsystem13.06. 06:14:04\nsystem.bruecken_syncsystem13.06. 06:13:34\nsystem.bruecken_syncsystem13.06. 06:13:04\nsystem.bruecken_syncsystem13.06. 06:12:34\nsystem.bruecken_syncsystem13.06. 06:12:04\nsystem.bruecken_syncsystem13.06. 06:11:34\nsystem.bruecken_syncsystem13.06. 06:11:04\nsystem.bruecken_syncsystem13.06. 06:10:34\nsystem.bruecken_syncsystem13.06. 06:10:04\nsystem.bruecken_syncsystem13.06. 06:09:34\nsystem.bruecken_syncsystem13.06. 06:09:04\nsystem.bruecken_syncsystem13.06. 06:08:34\nsystem.bruecken_syncsystem13.06. 06:08:04\nsystem.bruecken_syncsystem13.06. 06:07:34\nsystem.bruecken_syncsystem13.06. 06:07:04\nsystem.bruecken_syncsystem13.06. 06:06:34\nsystem.bruecken_syncsystem13.06. 06:06:04\nsystem.bruecken_syncsystem13.06. 06:05:34\nsystem.bruecken_syncsystem13.06. 06:05:04\nsystem.bruecken_syncsystem13.06. 06:04:34\nweltklima.ticktension_daemon13.06. 06:04:04\nwesen.vernachlaessigt132413.06. 06:04:04\nwesen.vernachlaessigt234113.06. 06:04:04\nwesen.vernachlaessigt432113.06. 06:04:04",
+  "controls": [
+    {
+      "tag": "button",
+      "text": "1234",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_1234')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "4321",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_4321')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "1324",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_1324')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "1423",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_1423')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "2341",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_2341')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "3123",
+      "id": "",
+      "class": "ei-vital-chip",
+      "onclick": "eiWaehleWesen('namelessAI_3123')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ALLE",
+      "id": "ei-alle-btn",
+      "class": "ei-vital-chip aktiv",
+      "onclick": "eiWaehleWesen(null)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◑ AMPEL",
+      "id": "ei-ampel-chip",
+      "class": "ei-ampel-chip",
+      "onclick": "eiLinseLaden('ampel')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "PANORAMA",
+      "id": "",
+      "class": "ei-linse-btn aktiv",
+      "onclick": "eiLinseLaden('panorama')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ZEITFLUSS",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('zeitfluss')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ENTSCHEIDUNGEN",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('entscheidungen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "TRÄUME",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('traum')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SUBSTANZEN",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('substanzen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SPLITTER",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('splitter')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SCHATTEN",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('schatten')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "BEZIEHUNGEN",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('beziehungen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "INNENQUELLEN",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('innenquellen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "DENKFENSTER",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('denkfenster')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "AMPEL",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('ampel')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ORGANHUNGER",
+      "id": "",
+      "class": "ei-linse-btn",
+      "onclick": "eiLinseLaden('organhunger')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "1234 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_1234')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "4321 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_4321')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "1324 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_1324')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "1423 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_1423')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "2341 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_2341')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "3123 wesen.vernachl 50 Entsch. 0 Traum-Ev. 0 Splitter-Ev.",
+      "id": "",
+      "class": "ei-pano-card",
+      "onclick": "eiWaehleWesen('namelessAI_3123')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [
+    "wesen.vernachl",
+    "wesen.vernachl",
+    "wesen.vernachl",
+    "wesen.vernachl",
+    "wesen.vernachl",
+    "wesen.vernachl"
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

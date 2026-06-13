@@ -1,0 +1,173 @@
+{
+  "meinewelt": {
+    "selector": ".mw-bereich-karte",
+    "items": [
+      {
+        "index": 0,
+        "text": "TAGEBUCH 2",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('tagebuch')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__01__tagebuch_2__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 377,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nTAGEBUCH\n×\n‹\n1 / 2\n›\n☰\n2. JUNI 2026\n<strong>asdasdasd</strong>       <u>asdasdasd</u>   <ul><li> 234234324</li></ul>\n✎\n🗑\n✗\n✦ Splitter freigegeben\nEintragen\nALLE EINTRÄGE (2)\n02.06.26 01:14\n<strong>asdasdasd</strong> <u>asdasdasd</u> <ul><li>\n01.06.26 16:34\nlol",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 1,
+        "text": "TRAUMTAGEBUCH 1",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('traumtagebuch')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__02__traumtagebuch_1__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 228,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nTRAUMTAGEBUCH\n×\n‹\n1 / 1\n›\n☰\n1. JUNI 2026\nhuhu\n✎\n🗑\n✗\n◈ freigeben\nEintragen\nALLE EINTRÄGE (1)\n01.06.26 12:00\nhuhu",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 2,
+        "text": "NOTIZEN 1",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('notizen')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__03__notizen_1__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 291,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nNOTIZEN\n×\n‹\n1 / 3\n›\n☰\n○\n2. JUNI 2026\ndddd\n✎\n🗑\n✗\n◈ freigeben\nSpeichern\nALLE EINTRÄGE (3)\n02.06.26 02:48\ndddd\n30.05.26 06:04\nübersetzung\n29.05.26 22:51\nder bau von flextrawurst",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 3,
+        "text": "KALENDER —",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('kalender')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__04__kalender__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 322,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nKALENDER\n×\n‹\n8. Jun — 14. Jun 2026\n›\nMO\n8\nDI\n9\nMI\n10\nDO\n11\nFR\n12\nSA\n13\nSO\n14\nEintragen\nKeine Termine diese Woche.\nALLE TERMINE (2)\n2026-05-31 14:33\ninsta-post\n✗\n2026-05-23 22:22\nflextrawurst weiter bauen\n✗",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 4,
+        "text": "NACHRICHTEN ✓",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('nachrichten')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__05__nachrichten__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 265,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nNACHRICHTEN\n×\nHakuna Matata\n@HakunaMatata\n02.06. 01:13\nDu: sdfsdfsdf\nflextrawurst\n@flextrawurst\n01.06. 23:32\nDu: dddddddddddddddddd\n+ Neue Nachricht",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 5,
+        "text": "PROFIL ↗",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('profil')",
+        "ok": false,
+        "error": "Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"#view-meinewelt\") to be visible\n    61 × locator resolved to hidden <div id=\"view-meinewelt\" class=\"v-view v-anim\">…</div>\n",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 6,
+        "text": "GEDANKEN —",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('gedanken')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__07__gedanken__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 305,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—\nGEDANKEN\n×\nDeine öffentlichen Gedankenblasen — 0 gesamt. Sie erscheinen im Gedankenblasenfeld und auf deinem Profil.\nNeuer Gedanke\n0/280\nLoslassen\nNoch keine Gedanken. Schreibe den ersten.",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 7,
+        "text": "INNENQUELLEN —",
+        "id": "",
+        "class": "mw-bereich-karte",
+        "onclick": "mwOeffne('innenquellen')",
+        "ok": true,
+        "screenshots": [
+          "meinewelt__08__innenquellen__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 469,
+        "visible_text_excerpt": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n0\nINNENQUELLEN & CONSENT\n×\nDeine persönlichen Innenquellen — nur du und Admins können sie sehen. Default: privat. Kein Autoimport. Alle Freigaben explizit.\n⚙ Widerruf jederzeit möglich. Nur freigegebene Quellen werden zu Splittern.\nNoch keine Innenquellen. Quellen entstehen wenn du Notizen, Tagebucheinträge oder Kalendereinträge für Splitter freigibst.",
+        "console": [],
+        "page": [],
+        "failed": []
+      }
+    ]
+  }
+}

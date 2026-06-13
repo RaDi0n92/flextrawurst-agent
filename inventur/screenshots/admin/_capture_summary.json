@@ -1,0 +1,59 @@
+[
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/admin/meine_welt__meinewelt.json",
+    "view": "meinewelt",
+    "tab": "MEINE WELT",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 8,
+    "text_chars": 116,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "admin",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/admin/admin__admin.json",
+    "view": "admin",
+    "tab": "ADMIN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 33,
+    "text_chars": 511,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "admin",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/admin/gordslider__gordslider.json",
+    "view": "gordslider",
+    "tab": "GORDSLIDER",
+    "screenshots": 2,
+    "scroll": {
+      "scrollHeight": 952,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 0,
+    "console_errors": 0,
+    "page_errors": 1,
+    "failed_requests": 0,
+    "auth_role": "admin",
+    "ok": true
+  }
+]

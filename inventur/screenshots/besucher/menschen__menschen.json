@@ -1,0 +1,109 @@
+{
+  "view_id": "menschen",
+  "tab_name": "MENSCHEN",
+  "url": "http://127.0.0.1:8787/#menschen",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "menschen__menschen__top.png"
+  ],
+  "text": "◈\nEntity-Takt System\n@entity_takt\n◈\nHakuna Matata\n@HakunaMatata\n◈\nklappspaten\n@klappspaten\n◈\nflextrawurst\n@flextrawurst\n◈\n1337\n@1337\n◈\nAdmin\n@Admin\n◈\nSystem\n@System\nDaniel\n@daniel\n◈\nEntity-Takt System\n@entity_takt · dabei seit 31. Mai 2026\nAKTIVITÄT\n0\nTagebuch\n0\nNotizen\n0\nKalender\n0\nTraum\n0\nGedanken\nLETZTE GEDANKEN\nNoch keine öffentlichen Gedanken.",
+  "controls": [
+    {
+      "tag": "div",
+      "text": "◈ Entity-Takt System @entity_takt",
+      "id": "mpl-c5fa33cb-ff8a-4900-9eb0-144550f569f0",
+      "class": "mp-liste-item aktiv",
+      "onclick": "selectMensch('c5fa33cb-ff8a-4900-9eb0-144550f569f0')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ Hakuna Matata @HakunaMatata",
+      "id": "mpl-7f316f7d-b1a0-4697-9631-c4cfd7d3b06f",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('7f316f7d-b1a0-4697-9631-c4cfd7d3b06f')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ klappspaten @klappspaten",
+      "id": "mpl-2e4ea069-7334-4245-b34a-a0454b61fbdb",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('2e4ea069-7334-4245-b34a-a0454b61fbdb')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ flextrawurst @flextrawurst",
+      "id": "mpl-9b3f65e9-1bf7-481a-938a-a53d9540f418",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('9b3f65e9-1bf7-481a-938a-a53d9540f418')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ 1337 @1337",
+      "id": "mpl-63d2b72f-ff9c-48db-ba29-2062005c24ce",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('63d2b72f-ff9c-48db-ba29-2062005c24ce')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ Admin @Admin",
+      "id": "mpl-2151ecc2-2a61-465a-b12b-b3197a2fe1fc",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('2151ecc2-2a61-465a-b12b-b3197a2fe1fc')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "◈ System @System",
+      "id": "mpl-d50e560c-f097-4c12-b01b-79af7e8f921c",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('d50e560c-f097-4c12-b01b-79af7e8f921c')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Daniel @daniel",
+      "id": "mpl-b1c50ed5-f0ad-409c-b653-4b31ab3ef6ec",
+      "class": "mp-liste-item",
+      "onclick": "selectMensch('b1c50ed5-f0ad-409c-b653-4b31ab3ef6ec')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

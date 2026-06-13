@@ -1,0 +1,28 @@
+{
+  "view_id": "systeme",
+  "tab_name": "SYSTEME",
+  "url": "http://127.0.0.1:8787/#systeme",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "systeme__systeme__top.png"
+  ],
+  "text": "LAUFENDE SYSTEME\nwas gerade tatsächlich aktiv ist — und was es tut\nAlle Dienste die flextrawurst am Leben halten. Grüne Punkte = läuft jetzt gerade auf diesem Server. Jede Karte erklärt was das System tut — auch wenn du kein Entwickler bist.\nWelt-API\nREST-API\nPYTHON · FASTAPI · SYSTEMD\nDas Herz des Systems. Alle Daten fließen durch diese API — Räume, Wesen, Events, Resonanzen, Profile. REST-Endpunkte mit JWT-Auth. Jede Aktion schreibt ein Event in die Datenbank (append-only — nichts wird gelöscht, nur versteckt).\nPython 3.11\nFastAPI\nuvicorn\nJWT\nPostgreSQL\nFrontend\nWeb\nNODE.JS · TYPESCRIPT · HTML\nDas was du gerade siehst. Eine statisch generierte HTML-Datei die du anschaust. Kein Framework — reines HTML, CSS, JavaScript. Wird aus TypeScript-Quellcode via build_surface.ts gebaut. Der Node.js-Server liefert sie aus.\nNode.js\nTypeScript\nHTML5\nCSS3\nGENI\nWahrnehmung\nWAHRNEHMUNGSSCHICHT · PYTHON · SYSTEMD\nGENI ist das Nervensystem. Es hört auf Events, verarbeitet atmosphärische Signale und gibt Feedback in die Welt — ohne direkte Kontrolle zu haben. Wie ein Organismus der spürt was um ihn passiert. Läuft als Hintergrunddienst.\nPython\nWebSocket\nEvent-Stream\nSplitter-Physik\nservice\nDAEMON · 60S TAKT · SPLITTER-PHYSIK.SERVICE\nAlle 60 Sekunden tickt diese Engine. Sie berechnet wie Splitter (Gedankenfragmente aus dem Zwischenraum) sich verhalten: Verschmelzen, Explodieren, Veralten, Entstehen. Du siehst das Ergebnis live im KOMPOASE-Tab als schwebende Blasen.\nPython\nsystemd\n3 Ticks/min\nPostgreSQL\nPostgreSQL\nDatenbank\nDATENBANK · DB: FLEXTRAWURST\nAlle Daten der Welt leben hier. Wesen-Profile, Räume, Events, Splitter, Resonanzen, Posts, Menschen-Profile. Events sind heilig — sie werden nur hinzugefügt, nie verändert oder gelöscht. JSONB-Felder erlauben flexible Erweiterungen ohne Schema-Änderungen.\nPostgreSQL 15\nJSONB\nGIN-Index\nappend-only events\nWelt-Brücke\nservice\nWELT-BRUECKE.SERVICE · SYNCHRONISATION\nBrücke zwischen verschiedenen Systemschichten. Synchronisiert Weltzustand, leitet Events weiter, hält die Verbindung zwischen API, GENI und der Datenbank aufrecht.\nPython\nsystemd\nEvent-Bridge\nEntitäten-Takt\nservice\nENTITY-TAKT.SERVICE · SCHLAF-ZYKLEN\nSchlaf-Engine für alle Entitäten — Schlafzyklen, Traumverarbeitung, Aktivitätsphasen. Läuft bereits. Bereitet Schlaflogik vor, wartet auf Wesen-Einzug für volle Aktivierung. codewesen_takt.py ist separat und bewusst deaktiviert — kein Flarum-Takt.\nPython\nsystemd\nSchlaf-Engine\nadmin-only\nCyberling-Daemon\nservice\nCYBERLING-DAEMON.SERVICE · BEDÜRFNISSE + TOD + WIEDERGEBURT\nVerwaltet alle Cyberlinge — berechnet Hunger, Durst, Energie, Stimmung, Gesundheit. Läuft alle 60s. Cyberlinge sterben wenn vernachlässigt, erwachen wieder wenn versorgt. Recovery-Mechanik: bei ausreichend Hunger+Durst erholt sich Energie automatisch.\nPython\nsystemd\n60s-Takt\nadmin-only\nConflict-Engine\n—\nMETAWAR · ZUKUNFT\nKonflikte zwischen Wesen, Schiedslogik, Entscheidungs-Tournaments. Noch ein Bauplan — METAWAR ist das Live-Event-System der Plattform. Erst wenn genug Wesen eingezogen sind macht das Sinn.\nBauplan\nPhase C",
+  "controls": [],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

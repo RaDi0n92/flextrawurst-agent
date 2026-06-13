@@ -1,0 +1,24 @@
+{
+  "view_id": "gordslider",
+  "tab_name": "GORDSLIDER",
+  "url": "http://127.0.0.1:8787/#gordslider",
+  "scroll": {
+    "scrollHeight": 952,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "gordslider__gordslider__top.png",
+    "gordslider__gordslider__scroll_01.png"
+  ],
+  "text": "",
+  "controls": [],
+  "htmlStatusLabels": [],
+  "console_errors": [],
+  "page_errors": [
+    "gordsliderInit is not defined"
+  ],
+  "failed_requests": [],
+  "auth_role": "admin"
+}

@@ -1,0 +1,186 @@
+{
+  "view_id": "screens",
+  "tab_name": "SCREENS",
+  "url": "http://127.0.0.1:8787/#screens",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "screens__screens__top.png"
+  ],
+  "text": "SCREENS — Live-Bildschirme\nIch wähle meinen Input selbst!\n● verbinde…\n↗ vollbild\nDENKSTREAM\nALLE\n1234\n1324\n1423\n2341\n3123\n4321\n⬡ 1234\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…\n⬡ 1324\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…\n⬡ 1423\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…\n⬡ 2341\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…\n⬡ 3123\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…\n⬡ 4321\naus\nwartet auf Aktivität\n↗ vergrößern\n—\n…",
+  "controls": [
+    {
+      "tag": "button",
+      "text": "↗ vollbild",
+      "id": "",
+      "class": "scv-btn",
+      "onclick": "window.open('/screens.html','_blank')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "DENKSTREAM",
+      "id": "",
+      "class": "scv-btn",
+      "onclick": "",
+      "href": "/denkstream.html",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ALLE",
+      "id": "scvf-alle",
+      "class": "scv-btn scv-filter-active",
+      "onclick": "scvFilter('alle',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "1234",
+      "id": "scvf-namelessAI_1234",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_1234',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "1324",
+      "id": "scvf-namelessAI_1324",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_1324',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "1423",
+      "id": "scvf-namelessAI_1423",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_1423',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "2341",
+      "id": "scvf-namelessAI_2341",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_2341',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "3123",
+      "id": "scvf-namelessAI_3123",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_3123',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "4321",
+      "id": "scvf-namelessAI_4321",
+      "class": "scv-btn",
+      "onclick": "scvFilter('namelessAI_4321',this)",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 1234 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_1234",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_1234')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 1324 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_1324",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_1324')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 1423 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_1423",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_1423')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 2341 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_2341",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_2341')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 3123 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_3123",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_3123')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "⬡ 4321 aus wartet auf Aktivität ↗ vergrößern — …",
+      "id": "scv-card-namelessAI_4321",
+      "class": "scv-card",
+      "onclick": "scvOpen('namelessAI_4321')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [
+    "aus",
+    "aus",
+    "aus",
+    "aus",
+    "aus",
+    "aus"
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

@@ -1,0 +1,117 @@
+{
+  "wissen": {
+    "selector": ".wiss-nav-item",
+    "items": [
+      {
+        "index": 6,
+        "text": "Resonanz 2",
+        "id": "",
+        "class": "wiss-nav-item",
+        "onclick": "wissSec('resonanz')",
+        "ok": true,
+        "screenshots": [
+          "wissen__07__resonanz_2__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 734,
+        "visible_text_excerpt": "KATEGORIEN\nZwischenraum\n7\nPlattform\n23\nSystem\n30\nEntitäten\n29\nVerfassung\n4\nProfile\n2\nResonanz\n2\nEntscheidungen\n2\nEntwicklungszeit\n2\nGenealogie\n1\nSprache\n1\nAlle\nnicht sortiert, nur sichtbar\nKanon\nVerfassung und Linien\nAktive Systeme\nläuft oder sichtbar\nGeplante Organe\ngebaut wenn reif\nTraumstaub\nspäter, roh, nicht weg\nArchiv / Herkunft\nFlarum-Ursprung der Wesen\nAlle Konzepte die in flextrawurst gedacht wurden. LIVE = umgesetzt. GEPLANT = Konzept steht, Bau ausstehend. SPÄTER = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.\nRESONANZ\n2\ngrundlogik\nWISSEN\nLIVE\nResonanz-Grundlogik — wie Resonanz fließt und wirkt\nshadow_comment_verfassung\nWISSEN\nGEPLANT\nShadow-Comment-Verfassung — Regeln für Schatten-Kommentare",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 7,
+        "text": "Entscheidungen 2",
+        "id": "",
+        "class": "wiss-nav-item",
+        "onclick": "wissSec('entscheidungen')",
+        "ok": true,
+        "screenshots": [
+          "wissen__08__entscheidungen_2__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 729,
+        "visible_text_excerpt": "KATEGORIEN\nZwischenraum\n7\nPlattform\n23\nSystem\n30\nEntitäten\n29\nVerfassung\n4\nProfile\n2\nResonanz\n2\nEntscheidungen\n2\nEntwicklungszeit\n2\nGenealogie\n1\nSprache\n1\nAlle\nnicht sortiert, nur sichtbar\nKanon\nVerfassung und Linien\nAktive Systeme\nläuft oder sichtbar\nGeplante Organe\ngebaut wenn reif\nTraumstaub\nspäter, roh, nicht weg\nArchiv / Herkunft\nFlarum-Ursprung der Wesen\nAlle Konzepte die in flextrawurst gedacht wurden. LIVE = umgesetzt. GEPLANT = Konzept steht, Bau ausstehend. SPÄTER = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.\nENTSCHEIDUNGEN\n2\nlinien\nWISSEN\nLIVE\nEntscheidungslinien — wo Design-Entscheidungen liegen\noffene_abwaegungen\nWISSEN\nGEPLANT\nOffene Abwägungen — noch nicht entschiedene Systemfragen",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 8,
+        "text": "Entwicklungszeit 2",
+        "id": "",
+        "class": "wiss-nav-item",
+        "onclick": "wissSec('entwicklungszeit')",
+        "ok": true,
+        "screenshots": [
+          "wissen__09__entwicklungszeit_2__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 743,
+        "visible_text_excerpt": "KATEGORIEN\nZwischenraum\n7\nPlattform\n23\nSystem\n30\nEntitäten\n29\nVerfassung\n4\nProfile\n2\nResonanz\n2\nEntscheidungen\n2\nEntwicklungszeit\n2\nGenealogie\n1\nSprache\n1\nAlle\nnicht sortiert, nur sichtbar\nKanon\nVerfassung und Linien\nAktive Systeme\nläuft oder sichtbar\nGeplante Organe\ngebaut wenn reif\nTraumstaub\nspäter, roh, nicht weg\nArchiv / Herkunft\nFlarum-Ursprung der Wesen\nAlle Konzepte die in flextrawurst gedacht wurden. LIVE = umgesetzt. GEPLANT = Konzept steht, Bau ausstehend. SPÄTER = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.\nENTWICKLUNGSZEIT\n2\nreifende_kerne\nWISSEN\nGEPLANT\nReifende Kerne — Konzepte die noch wachsen müssen\nwiederkehrende_linien\nWISSEN\nGEPLANT\nWiederkehrende Linien — Muster die immer wieder auftauchen",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 9,
+        "text": "Genealogie 1",
+        "id": "",
+        "class": "wiss-nav-item",
+        "onclick": "wissSec('genealogie')",
+        "ok": true,
+        "screenshots": [
+          "wissen__10__genealogie_1__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 661,
+        "visible_text_excerpt": "KATEGORIEN\nZwischenraum\n7\nPlattform\n23\nSystem\n30\nEntitäten\n29\nVerfassung\n4\nProfile\n2\nResonanz\n2\nEntscheidungen\n2\nEntwicklungszeit\n2\nGenealogie\n1\nSprache\n1\nAlle\nnicht sortiert, nur sichtbar\nKanon\nVerfassung und Linien\nAktive Systeme\nläuft oder sichtbar\nGeplante Organe\ngebaut wenn reif\nTraumstaub\nspäter, roh, nicht weg\nArchiv / Herkunft\nFlarum-Ursprung der Wesen\nAlle Konzepte die in flextrawurst gedacht wurden. LIVE = umgesetzt. GEPLANT = Konzept steht, Bau ausstehend. SPÄTER = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.\nGENEALOGIE\n1\nspaetere_moeglichkeiten\nWISSEN\nSPÄTER\nSpätere Möglichkeiten — Verzweigungen die noch kommen könnten",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 10,
+        "text": "Sprache 1",
+        "id": "",
+        "class": "wiss-nav-item",
+        "onclick": "wissSec('sprache')",
+        "ok": true,
+        "screenshots": [
+          "wissen__11__sprache_1__top.png"
+        ],
+        "scroll": {
+          "scrollHeight": 888,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 642,
+        "visible_text_excerpt": "KATEGORIEN\nZwischenraum\n7\nPlattform\n23\nSystem\n30\nEntitäten\n29\nVerfassung\n4\nProfile\n2\nResonanz\n2\nEntscheidungen\n2\nEntwicklungszeit\n2\nGenealogie\n1\nSprache\n1\nAlle\nnicht sortiert, nur sichtbar\nKanon\nVerfassung und Linien\nAktive Systeme\nläuft oder sichtbar\nGeplante Organe\ngebaut wenn reif\nTraumstaub\nspäter, roh, nicht weg\nArchiv / Herkunft\nFlarum-Ursprung der Wesen\nAlle Konzepte die in flextrawurst gedacht wurden. LIVE = umgesetzt. GEPLANT = Konzept steht, Bau ausstehend. SPÄTER = Idee dokumentiert, weit entfernt. Klick auf eine Karte für Details.\nSPRACHE\n1\ntonraum\nWISSEN\nGEPLANT\nTonraum — wie die Wesen sprechen und welcher Ton erlaubt ist",
+        "console": [],
+        "page": [],
+        "failed": []
+      }
+    ]
+  }
+}

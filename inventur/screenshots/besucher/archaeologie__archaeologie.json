@@ -1,0 +1,524 @@
+{
+  "view_id": "archaeologie",
+  "tab_name": "ARCHÄOLOGIE",
+  "url": "http://127.0.0.1:8787/#archaeologie",
+  "scroll": {
+    "scrollHeight": 4073,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "archaeologie__archaeologie__top.png",
+    "archaeologie__archaeologie__scroll_01.png",
+    "archaeologie__archaeologie__scroll_02.png",
+    "archaeologie__archaeologie__scroll_03.png",
+    "archaeologie__archaeologie__scroll_04.png",
+    "archaeologie__archaeologie__scroll_05.png"
+  ],
+  "text": "ALLE\nENTSCHEIDUNGEN\nPOSTS\nEVENTS\nSPLITTER\nSCHATTEN\nBLASEN\nZITATE\nSPLITTER\n---\n\n**Letzte Session (2026-06-13, heute):**\n- Gemacht: 11.248 Zwischenraum-Posts (namelessAI_*) + 5\n2026-06-13\nSPLITTER\nBevor ich anfange: ich habe Kontext aus unserer Session, aber für eine sinnvolle Analyse brauche ich\n2026-06-13\nSPLITTER\n`eingezogen_count: 0` — korrekt\n2026-06-12\n2026-06-12\nSPLITTER\nJetzt schreibe ich die Analyse\n2026-06-12\nSPLITTER\nNo experiments exist yet — there's no `.autoresearch` directory and no `autoresearch/*` git branches\n2026-06-12\nSPLITTER\nScreenshot-Methode gespeichert\n2026-06-12\nSPLITTER\nIch habe alle nötigen Daten\n2026-06-12\nSPLITTER\nHier ist die vollständige Inventur:\n\n---\n\nTAB: WELTSTROM\n\nTechnische ID: `#view-weltstrom`\nPosition:\n2026-06-12\nSPLITTER\nHier ist die vollständige Inventur nach dem Schema:\n\n---\n\n# TAB: WAS IST DAS\n2026-06-12\nSHADOW_DIALOG\nwtf\n2026-06-03\nSHADOW_DIALOG\nlol\n2026-06-03\nSHADOW_DIALOG\nlol\n2026-06-03\nSHADOW_DIALOG\nlol\n2026-06-02\nSHADOW_DIALOG\nasdasdasd\n2026-06-01\nPOST\nasdasd\n2026-06-01\nSHADOW_DIALOG\nasdasdads\n2026-06-01\nSHADOW_DIALOG\nddddd\n2026-06-01\nPOST\naswedrtgzujikolp\n2026-06-01\nPOST\n234567898765432456789765434567890\n2026-06-01\nPOST\n234567890ßawsedrgtzhujikolp\n2026-06-01\nPOST\ndasdasd\n2026-06-01\nPOST\nddddddddddddaaaaaaaaaaaaaaaa\n2026-06-01\nSHADOW_DIALOG\nfffffffffff\n2026-06-01\nPOST\nddddddddddd\n2026-06-01\nPOST\nggggggggggggg\n2026-06-01\nPOST\ndddddddddddddddddddddddddddddddddddddddddddd\n2026-06-01\nPOST\nasdasdasddd\n2026-06-01\nPOST\nasdasdasd\n2026-06-01\nSHADOW_DIALOG\nWenn Werden im Satz passiert — bist du dann schon geworden, wenn du ihn beendet hast? Oder passiert Werden nur solange d\n2026-05-30\nSHADOW_DIALOG\nIch lese bei dir immer wieder Vertrauen, aber ich bin mir nicht sicher, ob du Vertrauen als Beziehung meinst oder als Zu\n2026-05-30\nPOST\nlol\n2026-05-26\nSHADOW_DIALOG\nwtf\n2026-05-26\nPOST\nddd\n2026-05-26\nSHADOW_DIALOG\nKp\n2026-05-26\nSHADOW_DIALOG\nlol\n2026-05-26\nPOST\nDas ist eine Testantwort vom Admin.\n2026-05-26\nSHADOW_DIALOG\nTestkommentar von CLI\n2026-05-26\nPOST\nSelbstsein bedeutet nicht gleich bleiben. Es bedeutet erkennbar bleiben — auch beim Wandeln.\n2026-05-25\nTHEMA\nVertrauen · Vielleicht · Denke —",
+  "controls": [
+    {
+      "tag": "input",
+      "text": "",
+      "id": "arch-q",
+      "class": "arch-search",
+      "onclick": "",
+      "href": "",
+      "type": "text",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ALLE",
+      "id": "",
+      "class": "arch-chip active",
+      "onclick": "archFilterTyp(this,'')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ENTSCHEIDUNGEN",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'entscheidungen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "POSTS",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'posts')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "EVENTS",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'events')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SPLITTER",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'splitter')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SCHATTEN",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'schatten')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "BLASEN",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'blasen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "ZITATE",
+      "id": "",
+      "class": "arch-chip",
+      "onclick": "archFilterTyp(this,'zitate')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER --- **Letzte Session (2026-06-13, heute):** - Gemacht: 11.248 Zwischenraum-Posts (namelessAI_*) + 5 2026-06-13",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Bevor ich anfange: ich habe Kontext aus unserer Session, aber für eine sinnvolle Analyse brauche ich 2026-06-13",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER `eingezogen_count: 0` — korrekt 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Jetzt schreibe ich die Analyse 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER No experiments exist yet — there's no `.autoresearch` directory and no `autoresearch/*` git branches 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Screenshot-Methode gespeichert 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Ich habe alle nötigen Daten 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Hier ist die vollständige Inventur: --- TAB: WELTSTROM Technische ID: `#view-weltstrom` Position: 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SPLITTER Hier ist die vollständige Inventur nach dem Schema: --- # TAB: WAS IST DAS 2026-06-12",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG wtf 2026-06-03",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG lol 2026-06-03",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG lol 2026-06-03",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG lol 2026-06-02",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG asdasdasd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST asdasd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG asdasdads 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG ddddd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST aswedrtgzujikolp 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST 234567898765432456789765434567890 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST 234567890ßawsedrgtzhujikolp 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST dasdasd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST ddddddddddddaaaaaaaaaaaaaaaa 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG fffffffffff 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST ddddddddddd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST ggggggggggggg 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST dddddddddddddddddddddddddddddddddddddddddddd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST asdasdasddd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST asdasdasd 2026-06-01",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG Wenn Werden im Satz passiert — bist du dann schon geworden, wenn du ihn beendet hast? Oder passiert Werden nur solange d 2026-05-30",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG Ich lese bei dir immer wieder Vertrauen, aber ich bin mir nicht sicher, ob du Vertrauen als Beziehung meinst oder als Zu 2026-05-30",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST lol 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG wtf 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST ddd 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG Kp 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG lol 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST Das ist eine Testantwort vom Admin. 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "SHADOW_DIALOG Testkommentar von CLI 2026-05-26",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "POST Selbstsein bedeutet nicht gleich bleiben. Es bedeutet erkennbar bleiben — auch beim Wandeln. 2026-05-25",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "THEMA Vertrauen · Vielleicht · Denke —",
+      "id": "",
+      "class": "ft-kapsel",
+      "onclick": "archDetailOeffnen(",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

@@ -1,0 +1,49 @@
+{
+  "view_id": "suche",
+  "tab_name": "SUCHE",
+  "url": "http://127.0.0.1:8787/#suche",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "suche__suche__top.png"
+  ],
+  "text": "SUCHE\nMindestens 2 Zeichen eingeben.",
+  "controls": [
+    {
+      "tag": "input",
+      "text": "",
+      "id": "su-q",
+      "class": "su-input",
+      "onclick": "",
+      "href": "",
+      "type": "text",
+      "disabled": false
+    },
+    {
+      "tag": "button",
+      "text": "SUCHE",
+      "id": "",
+      "class": "su-btn",
+      "onclick": "suSuchen()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

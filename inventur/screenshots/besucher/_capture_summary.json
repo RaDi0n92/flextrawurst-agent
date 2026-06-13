@@ -1,0 +1,458 @@
+[
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/leitstand__leitstand.json",
+    "view": "leitstand",
+    "tab": "LEITSTAND",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 62,
+    "text_chars": 2647,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/weltstrom__weltstrom.json",
+    "view": "weltstrom",
+    "tab": "WELTSTROM",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 8,
+    "text_chars": 5846,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/raeume__raume.json",
+    "view": "raume",
+    "tab": "RÄUME",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 20,
+    "text_chars": 1794,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/diskurs__diskurs.json",
+    "view": "diskurs",
+    "tab": "DISKURS",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 29,
+    "text_chars": 6219,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/wesen__wesen.json",
+    "view": "wesen",
+    "tab": "WESEN",
+    "screenshots": 3,
+    "scroll": {
+      "scrollHeight": 2303,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 49,
+    "text_chars": 4711,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/denken__denken.json",
+    "view": "denken",
+    "tab": "DENKEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 7,
+    "text_chars": 394,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/screens__screens.json",
+    "view": "screens",
+    "tab": "SCREENS",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 15,
+    "text_chars": 420,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/kompoase__theater.json",
+    "view": "theater",
+    "tab": "KOMPOASE",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 4,
+    "text_chars": 389,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/blasen__blasen.json",
+    "view": "blasen",
+    "tab": "BLASEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 2,
+    "text_chars": 166,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/menschen__menschen.json",
+    "view": "menschen",
+    "tab": "MENSCHEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 8,
+    "text_chars": 350,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/schlaf__schlaf.json",
+    "view": "schlaf",
+    "tab": "SCHLAF",
+    "screenshots": 2,
+    "scroll": {
+      "scrollHeight": 1208,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 8,
+    "text_chars": 3137,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/einsicht__einsicht.json",
+    "view": "einsicht",
+    "tab": "EINSICHT",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 26,
+    "text_chars": 3909,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/suche__suche.json",
+    "view": "suche",
+    "tab": "SUCHE",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 2,
+    "text_chars": 36,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/archaeologie__archaeologie.json",
+    "view": "archaeologie",
+    "tab": "ARCHÄOLOGIE",
+    "screenshots": 6,
+    "scroll": {
+      "scrollHeight": 4073,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 49,
+    "text_chars": 2169,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/cyberlinge__cyberlinge.json",
+    "view": "cyberlinge",
+    "tab": "CYBERLINGE",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 747,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/splitter__splitter.json",
+    "view": "splitter",
+    "tab": "SPLITTER",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 38,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/zitate__zitate.json",
+    "view": "zitate",
+    "tab": "ZITATE",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 1,
+    "text_chars": 45,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/schatten__schatten.json",
+    "view": "schatten",
+    "tab": "SCHATTEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 802,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/gruppen__gruppen.json",
+    "view": "gruppen",
+    "tab": "GRUPPEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 17,
+    "text_chars": 678,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/systeme__systeme.json",
+    "view": "systeme",
+    "tab": "SYSTEME",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 3074,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/wissen__wissen.json",
+    "view": "wissen",
+    "tab": "WISSEN",
+    "screenshots": 1,
+    "scroll": {
+      "scrollHeight": 888,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 120,
+    "text_chars": 10358,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/gesetze__gesetze.json",
+    "view": "gesetze",
+    "tab": "GESETZE",
+    "screenshots": 2,
+    "scroll": {
+      "scrollHeight": 1325,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 1492,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/forschung__forschung.json",
+    "view": "forschung",
+    "tab": "FORSCHUNG",
+    "screenshots": 2,
+    "scroll": {
+      "scrollHeight": 1090,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 1588,
+    "console_errors": 6,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/partner__partner.json",
+    "view": "partner",
+    "tab": "PARTNER",
+    "screenshots": 2,
+    "scroll": {
+      "scrollHeight": 1076,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 0,
+    "text_chars": 1395,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  }
+]

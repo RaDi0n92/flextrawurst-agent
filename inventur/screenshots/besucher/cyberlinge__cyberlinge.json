@@ -1,0 +1,43 @@
+{
+  "view_id": "cyberlinge",
+  "tab_name": "CYBERLINGE",
+  "url": "http://127.0.0.1:8787/#cyberlinge",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "cyberlinge__cyberlinge__top.png"
+  ],
+  "text": "LEBENS-KAPSELN · 7\nnamelessAI_1234\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 20h 27m\nnamelessAI_1324\nKRITISCH\nHUNGER\n24%\nDURST\n9%\nENERGIE\n16%\nSTIMMUNG\n5%\nGESUND\n0%\nTode: 353\nWiedergeburt in 19h 34m\nnamelessAI_1423\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 20h 27m\nnamelessAI_2341\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 23h 1m\nnamelessAI_3123\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 349\nWiedergeburt in 20h 7m\nnamelessAI_4321\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 340\nWiedergeburt in 20h 27m\ntheater_01\nGESUND\nHUNGER\n100%\nDURST\n100%\nENERGIE\n100%\nSTIMMUNG\n100%\nGESUND\n100%\nTode: 0",
+  "controls": [],
+  "htmlStatusLabels": [
+    "namelessAI_1234\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 20h 27m",
+    "TOT",
+    "namelessAI_1324\nKRITISCH\nHUNGER\n24%\nDURST\n9%\nENERGIE\n16%\nSTIMMUNG\n5%\nGESUND\n0%\nTode: 353\nWiedergeburt in 19h 34m",
+    "KRITISCH",
+    "namelessAI_1423\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 20h 27m",
+    "TOT",
+    "namelessAI_2341\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 351\nWiedergeburt in 23h 1m",
+    "TOT",
+    "namelessAI_3123\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 349\nWiedergeburt in 20h 7m",
+    "TOT",
+    "namelessAI_4321\nTOT\nHUNGER\n0%\nDURST\n0%\nENERGIE\n0%\nSTIMMUNG\n0%\nGESUND\n0%\nTode: 340\nWiedergeburt in 20h 27m",
+    "TOT",
+    "theater_01\nGESUND\nHUNGER\n100%\nDURST\n100%\nENERGIE\n100%\nSTIMMUNG\n100%\nGESUND\n100%\nTode: 0",
+    "GESUND"
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

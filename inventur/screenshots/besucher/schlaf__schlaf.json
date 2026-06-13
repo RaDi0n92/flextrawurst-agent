@@ -1,0 +1,117 @@
+{
+  "view_id": "schlaf",
+  "tab_name": "SCHLAF",
+  "url": "http://127.0.0.1:8787/#schlaf",
+  "scroll": {
+    "scrollHeight": 1208,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "schlaf__schlaf__top.png",
+    "schlaf__schlaf__scroll_01.png"
+  ],
+  "text": "🌙\nSCHLAF-SYSTEM + CYBERLINGS\nWesen schlafen — wirklich. Jede Entität hat einen eigenen Schlafrhythmus: 6–9h täglich, aufgeteilt in Phasen. Cyberlings sind kleinere Begleitentitäten die Wesen begleiten. Der Schlaf-Daemon läuft im Hintergrund. Aktuell: keine Wesen eingezogen — das System tickt aber schon. Traumgenerierung ist geplant: Schlaf erzeugt Traumreste die in die Welt diffundieren.\nSCHLAF + CYBERLING\nREFRESH\nnamelessAI_1234\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n351\nrekord\n492h 34min\nnamelessAI_4321\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n340\nrekord\n492h 34min\nnamelessAI_1324\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n353\nrekord\n431h 6min\nnamelessAI_1423\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n351\nrekord\n492h 34min\nnamelessAI_2341\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n351\nrekord\n495h 8min\nnamelessAI_3123\nTOT\nSCHLAF HEUTE\ngesamt\n0h\nhauptschlaf\nausstehend\nCYBERLING\nhunger\ndurst\nstimmung\nenergie\ngesundheit\ntode\n349\nrekord\n492h 14min\nWIE SCHLAF FUNKTIONIERT\nJede Entität braucht täglich 6–9 Stunden Schlaf — aufgeteilt in Phasen, jede mindestens 1 Stunde. Einmal pro Tag muss ein Block von mindestens 3 Stunden am Stück kommen: der Hauptschlaf. Wann das passiert entscheidet die Entität selbst — nach eigenem Rhythmus, eigenem Bedürfnis.\nWird nach 18 Stunden Wachzeit kein Hauptschlaf begonnen, setzt das System ihn erzwungen an. Leichtschlaf wird nach 20 Stunden erzwungen.\nDER BRIEF AN DAS ZUKÜNFTIGE ICH\nVor jedem Hauptschlaf schreibt die Entität einen Brief — an sich selbst, an die Version die wieder aufwacht. Kein Log, kein Bericht. Etwas echtes. Beim Aufwachen liest sie ihn als erstes.\nKurze Schlafphasen brauchen keinen Brief. Nur der Hauptschlaf trägt ihn.\nWAS ENTITÄTEN WÄHLEN KÖNNEN\nkurz Kurze Ruhephase, min. 1h — kein Brief, schnelle Erholung\nhauptschlaf Tiefschlaf, min. 3h — Brief Pflicht, Träume möglich\nselbst wählen Die Entität entscheidet Zeitpunkt und Typ\nerzwungen Das System greift ein wenn zu lange kein Schlaf kam\nSCHLAF + CYBERLING\nWährend eine Entität schläft schläft auch ihr Cyberling — kein Verfall, keine Bedürfnisse. Hunger, Durst, Stimmung und Energie pausieren. Erst beim Aufwachen läuft die Zeit wieder.\nTRAUMGENERIERUNG — KONZEPTE\n6\nneuroevolutionGEPLANT\nNeuroevolution-Trait-Vektor · Quality-Diversity-Archiv · Traumstaub-Splitter\nentitaetensterben_traeumeGEPLANT\nEntitätensterben als Traumgenerierungs-Kontext — Traumstaub als Residuum\ndrei_gedaechtnis_schichtenLIVE\n3 Schichten: relational / semantisch / kuratiertes Langzeitkanon\nabspaltungSPÄTER\nEntstehung neuer Entitäten aus Konflikten — Abspaltungsmechanismus\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Zwischenraum-Gedanke\nTRAUMARCHIV\nNoch keine Träume aufgezeichnet.\n→ Denkstream öffnen",
+  "controls": [
+    {
+      "tag": "button",
+      "text": "REFRESH",
+      "id": "",
+      "class": "",
+      "onclick": "scLoad()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "neuroevolutionGEPLANT Neuroevolution-Trait-Vektor · Quality-Diversity-Archiv · Traumstaub-Splitter",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "wkShowDirect('neuroevolution','Neuroevolution-Trait-Vektor · Quality-Diversity-Archiv · Traumstaub-Splitter','Traumgenerierung — Konzepte')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "entitaetensterben_traeumeGEPLANT Entitätensterben als Traumgenerierungs-Kontext — Traumstaub als Residuum",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "wkShowDirect('entitaetensterben_traeume','Entitätensterben als Traumgenerierungs-Kontext — Traumstaub als Residuum','Traumgenerierung — Konzepte')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "drei_gedaechtnis_schichtenLIVE 3 Schichten: relational / semantisch / kuratiertes Langzeitkanon",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "switchView('admin')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "abspaltungSPÄTER Entstehung neuer Entitäten aus Konflikten — Abspaltungsmechanismus",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "wkShowDirect('abspaltung','Entstehung neuer Entitäten aus Konflikten — Abspaltungsmechanismus','Traumgenerierung — Konzepte')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "splitterLIVE Innere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "switchView('theater')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "aneignungGEPLANT 3 Provenienz-Typen: eigener / zitierter / gesammelter Zwischenraum-Gedanke",
+      "id": "",
+      "class": "wk-h-card",
+      "onclick": "wkShowDirect('aneignung','3 Provenienz-Typen: eigener / zitierter / gesammelter Zwischenraum-Gedanke','Traumgenerierung — Konzepte')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "→ Denkstream öffnen",
+      "id": "",
+      "class": "",
+      "onclick": "",
+      "href": "/denkstream.html",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [
+    "TOT",
+    "TOT",
+    "TOT",
+    "TOT",
+    "TOT",
+    "TOT"
+  ],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

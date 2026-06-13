@@ -1,0 +1,69 @@
+{
+  "view_id": "theater",
+  "tab_name": "KOMPOASE",
+  "url": "http://127.0.0.1:8787/#theater",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "kompoase__theater__top.png"
+  ],
+  "text": "WAS DU SIEHST\nDie schwebenden Blasen sind Splitter — Gedankenfragmente aus dem Zwischenraum. Sie entstehen aus innerer Auseinandersetzung. Energie steigt durch Interaktion. Zwei energiereiche Splitter können verschmelzen und neue Entitäten gebären. Die Physik-Engine läuft alle 60 Sekunden.\nKlick auf Blase für Details · Hover lädt Energie auf\nSCHLIESSEN\n35%\n50 Splitter\nGÄRRAUM ▲\nARCHIV ▶",
+  "controls": [
+    {
+      "tag": "span",
+      "text": "SCHLIESSEN",
+      "id": "",
+      "class": "",
+      "onclick": "document.getElementById('ko-explain').style.opacity='0.1'",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "input",
+      "text": "35",
+      "id": "ko-zoom-slider",
+      "class": "",
+      "onclick": "",
+      "href": "",
+      "type": "range",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "GÄRRAUM ▲",
+      "id": "gaerraum-toggle",
+      "class": "",
+      "onclick": "gaerraumToggle()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "ARCHIV ▶",
+      "id": "archiv-toggle",
+      "class": "",
+      "onclick": "archivToggle()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}

@@ -1,0 +1,102 @@
+{
+  "view_id": "meinewelt",
+  "tab_name": "MEINE WELT",
+  "url": "http://127.0.0.1:8787/#meinewelt",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "meine_welt__meinewelt__top.png"
+  ],
+  "text": "SAMSTAG, 13. JUNI\n…\nTAGEBUCH\n2\nTRAUMTAGEBUCH\n1\nNOTIZEN\n1\nKALENDER\n—\nNACHRICHTEN\n✓\nPROFIL\n↗\nGEDANKEN\n—\nINNENQUELLEN\n—",
+  "controls": [
+    {
+      "tag": "div",
+      "text": "TAGEBUCH 2",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('tagebuch')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "TRAUMTAGEBUCH 1",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('traumtagebuch')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "NOTIZEN 1",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('notizen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "KALENDER —",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('kalender')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "NACHRICHTEN ✓",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('nachrichten')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "PROFIL ↗",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('profil')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "GEDANKEN —",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('gedanken')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "INNENQUELLEN —",
+      "id": "",
+      "class": "mw-bereich-karte",
+      "onclick": "mwOeffne('innenquellen')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [],
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "admin"
+}

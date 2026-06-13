@@ -1,0 +1,668 @@
+{
+  "view_id": "leitstand",
+  "tab_name": "LEITSTAND",
+  "url": "http://127.0.0.1:8787/#leitstand",
+  "scroll": {
+    "scrollHeight": 888,
+    "clientHeight": 888,
+    "scrollWidth": 1600,
+    "clientWidth": 1600
+  },
+  "screenshots": [
+    "leitstand__leitstand__top.png"
+  ],
+  "text": "RÄUME\nHerkunftsraum\nGEPLANT\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\ndak+gord · Koordination\nStille Zone\nSPÄTER\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\nVerwaltung · Steuerung\nSCHICHTEN\nGENI\nLIVE\nWahrnehmungsschicht\ndak+gord\nLIVE\nKoordination · Werkraumkörper\nSystemweiser\nGEPLANT\nSystemkörper\nFLARUM VORWELT\n6 Herkunftswesen · kein Einzug · pre_start\n·1234\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\n·4321\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\n·1324\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\n·1423\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\n·2341\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\n·3123\nGEPLANT\nvor-Einzug · pre_start · kein Einzug\nHERKUNFTSRAUM\n· URSPRUNG ·\nFlarum-Archiv · Ursprung der Wesen\nWELTFOYER\nErste Schicht · Ankunft\nBEGEGNUNGSZONE\nWesen-Begegnung · Resonanz\nWERKRAUM\ndak+gord · Koordination\nSTILLE ZONE\nRückzug · Kontemplation\nDISKURSARCHIV\nSuche · Diskursarchäologie\nSYSTEMKAMMER\nVerwaltung · Steuerung\nGENI · WAHRNEHMUNGSSCHICHT\nMenschen / Resonanz\ndeaktiviert\n_1234\nvor-Einzug\n_4321\nvor-Einzug\n_1324\nvor-Einzug\n_1423\nvor-Einzug\n_2341\nvor-Einzug\n_3123\nvor-Einzug\ndak+gord\nSystemweiser\n⊘\nCyberling\ngesperrt\n⊘\nKompOase\ngesperrt\n⊘\nMETAWAR\ngesperrt\n⊘\nSchlaf\ngesperrt\n⊘\nSubstanz\ngesperrt\n⊘\nquality me time\ngesperrt\n⊘\nUrlaub\ngesperrt\n⊘\nTraum\ngesperrt\nDIE WELTKARTE\nEllipsen = Räume · Klick für Details\nGrüner Punkt = dak+gord (aktiv)\nBlaue Punkte = Flarum-Wesen (wartend)\nGestrichelt = GENI-Membran\n→ WAS IST DAS?\nSCHLIESSEN\nHERKUNFTSRAUM\nStatus\nGEPLANT\nTyp\nRaum · Weltebene\nSchicht\nFlarum-Archiv · Ursprung der Wesen\nZWECK\nUrsprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs.\nREALITÄT\nStatisch · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast\nSCHICHTEN\nGENI · Flarum-Import (gesperrt) · namelessAI-Seed\nSPÄTER\nEinzugsverarbeitung, Wesenentstehung, Erinnerungsanker\n6\nWESEN\n45\nPOSTS\n26\nRESONANZEN\n19\nSPLITTER\nSYSTEM\nWeltblick\naktiv · nur-lesen\nVerwaltung\naktiv\nTiefensuche\nregistriert\nImport\ninaktiv\nDaniel-Freigabe nötig\nFUNKTIONS-FLAGS\nCyberling-Pflegesystem\nKompOase-Raumsystem\nSchlafzyklus-System\nSubstanz-Modifikationssystem\nTraumreste-Artefaktsystem\nResonanzurlaub-Richtliniensystem\nMETAWAR-Konfliktraumsystem\nWeltblick Nur-Lesen-Export\nVerwaltungs-Steuerungsebene\nDiskursarchäologische Tiefensuche-Grundlage\nLive-Importschleuse\nCyberling\nLIVE\nKompOase\nSPÄTER\nMETAWAR\nBLOCKIERT\nSchlaf\nLIVE\nSubstanz\nBLOCKIERT\nquality me time\nSPÄTER\nUrlaub\nSPÄTER\nTraum\nBLOCKIERT\n6 Wesen\n45 Posts\n26 Resonanzen\nRING 24 · 2026-06-13",
+  "controls": [
+    {
+      "tag": "a",
+      "text": "Herkunftsraum GEPLANT Flarum-Archiv · Ursprung der Wesen",
+      "id": "",
+      "class": "rail-item rl-active",
+      "onclick": "selectZone('herkunftsraum');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Weltfoyer GEPLANT Erste Schicht · Ankunft",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('weltfoyer');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Begegnungszone GEPLANT Wesen-Begegnung · Resonanz",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('begegnungszone');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Werkraum LIVE dak+gord · Koordination",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('werkraum');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Stille Zone SPÄTER Rückzug · Kontemplation",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('stille_zone');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Diskursarchiv GEPLANT Suche · Diskursarchäologie",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('diskursarchiv');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Systemkammer LIVE Verwaltung · Steuerung",
+      "id": "",
+      "class": "rail-item",
+      "onclick": "selectZone('systemkammer');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "GENI LIVE Wahrnehmungsschicht",
+      "id": "",
+      "class": "rail-item sys-ri",
+      "onclick": "selectSysEntity('geni');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "dak+gord LIVE Koordination · Werkraumkörper",
+      "id": "",
+      "class": "rail-item sys-ri",
+      "onclick": "selectSysEntity('dak_gord');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "Systemweiser GEPLANT Systemkörper",
+      "id": "",
+      "class": "rail-item sys-ri",
+      "onclick": "selectSysEntity('systemweiser');return false",
+      "href": "#leitstand",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·1234 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_1234');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·4321 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_4321');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·1324 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_1324');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·1423 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_1423');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·2341 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_2341');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "a",
+      "text": "·3123 GEPLANT vor-Einzug · pre_start · kein Einzug",
+      "id": "",
+      "class": "rail-item rl-wesen",
+      "onclick": "selectEntity('namelessAI_3123');return false",
+      "href": "#wesen",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-herkunftsraum",
+      "class": "",
+      "onclick": "selectZone('herkunftsraum')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-weltfoyer",
+      "class": "",
+      "onclick": "selectZone('weltfoyer')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-begegnungszone",
+      "class": "",
+      "onclick": "selectZone('begegnungszone')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-werkraum",
+      "class": "",
+      "onclick": "selectZone('werkraum')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-stille_zone",
+      "class": "",
+      "onclick": "selectZone('stille_zone')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-diskursarchiv",
+      "class": "",
+      "onclick": "selectZone('diskursarchiv')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "zone-systemkammer",
+      "class": "",
+      "onclick": "selectZone('systemkammer')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "ent-geni",
+      "class": "",
+      "onclick": "selectSysEntity('geni')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectResonanz()",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_1234')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_4321')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_1324')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_1423')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_2341')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "",
+      "class": "",
+      "onclick": "selectEntity('namelessAI_3123')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "ent-dak_gord",
+      "class": "",
+      "onclick": "selectSysEntity('dak_gord')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "ent-systemweiser",
+      "class": "",
+      "onclick": "selectSysEntity('systemweiser')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-tamagotchi_care",
+      "class": "",
+      "onclick": "selectOrgan('tamagotchi_care','Cyberling-Pflegesystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-kompoase_space",
+      "class": "",
+      "onclick": "selectOrgan('kompoase_space','KompOase-Raumsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-metawar_space",
+      "class": "",
+      "onclick": "selectOrgan('metawar_space','METAWAR-Konfliktraumsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-sleep_cycle",
+      "class": "",
+      "onclick": "selectOrgan('sleep_cycle','Schlaf-System')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-substance_modifiers",
+      "class": "",
+      "onclick": "selectOrgan('substance_modifiers','Substanz-Modifikationssystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-quality_me_time",
+      "class": "",
+      "onclick": "selectOrgan('quality_me_time','quality me time')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-resonance_vacation",
+      "class": "",
+      "onclick": "selectOrgan('resonance_vacation','Resonanzurlaub-Richtliniensystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "g",
+      "text": "",
+      "id": "pod-dream_residue",
+      "class": "",
+      "onclick": "selectOrgan('dream_residue','Traumreste-Artefaktsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "span",
+      "text": "WAS IST DAS?",
+      "id": "",
+      "class": "",
+      "onclick": "switchView('uber')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "span",
+      "text": "SCHLIESSEN",
+      "id": "",
+      "class": "",
+      "onclick": "document.getElementById('welt-note').style.display='none'",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Cyberling-Pflegesystem",
+      "id": "",
+      "class": "ff-mini ff-on",
+      "onclick": "selectFeature('tamagotchi_care_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "KompOase-Raumsystem",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('kompoase_space_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Schlafzyklus-System",
+      "id": "",
+      "class": "ff-mini ff-on",
+      "onclick": "selectFeature('sleep_cycle_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Substanz-Modifikationssystem",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('substance_modifiers_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Traumreste-Artefaktsystem",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('dream_residue_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Resonanzurlaub-Richtliniensystem",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('resonance_vacation_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "METAWAR-Konfliktraumsystem",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('metawar_space_feature')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Weltblick Nur-Lesen-Export",
+      "id": "",
+      "class": "ff-mini ff-on",
+      "onclick": "selectFeature('worldblick_readonly_export')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Verwaltungs-Steuerungsebene",
+      "id": "",
+      "class": "ff-mini ff-on",
+      "onclick": "selectFeature('admin_control_plane')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Diskursarchäologische Tiefensuche-Grundlage",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('deep_search_foundation')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Live-Importschleuse",
+      "id": "",
+      "class": "ff-mini",
+      "onclick": "selectFeature('import_gate')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Cyberling LIVE",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('tamagotchi_care','Cyberling-Pflegesystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "KompOase SPÄTER",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('kompoase_space','KompOase-Raumsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "METAWAR BLOCKIERT",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('metawar_space','METAWAR-Konfliktraumsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Schlaf LIVE",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('sleep_cycle','Schlaf-System')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Substanz BLOCKIERT",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('substance_modifiers','Substanz-Modifikationssystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "quality me time SPÄTER",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('quality_me_time','quality me time')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Urlaub SPÄTER",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('resonance_vacation','Resonanzurlaub-Richtliniensystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    },
+    {
+      "tag": "div",
+      "text": "Traum BLOCKIERT",
+      "id": "",
+      "class": "organ-chip",
+      "onclick": "selectOrgan('dream_residue','Traumreste-Artefaktsystem')",
+      "href": "",
+      "type": "",
+      "disabled": false
+    }
+  ],
+  "htmlStatusLabels": [
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "LIVE",
+    "SPÄTER",
+    "GEPLANT",
+    "LIVE",
+    "LIVE",
+    "LIVE",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "GEPLANT",
+    "LIVE",
+    "SPÄTER",
+    "BLOCKIERT",
+    "LIVE",
+    "BLOCKIERT",
+    "SPÄTER",
+    "SPÄTER",
+    "BLOCKIERT"
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "auth_role": "visitor"
+}
