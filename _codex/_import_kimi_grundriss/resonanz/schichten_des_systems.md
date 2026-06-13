@@ -167,3 +167,35 @@ Nach dem Lesen der vier Dokumente sehe ich 5 Schichten, nicht 4:
 Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, was entsteht, wenn man alle anderen Schichten zusammensieht.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+1. Kommunikation: Diskurs, Blasen, Schatten, Gruppen.
+2. Leben: Wesen, Cyberlinge, Schlaf, Denken.
+3. Substanz: KompOase, Splitter, Zitate.
+4. Gedächtnis: Weltstrom, Suche, Archäologie.
+5. Orientierung: Leitstand, Räume, Wissen, Gesetze.
+6. Governance: Admin, Einsicht.
+7. Mensch: Menschen, Meine Welt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+1. **Infrastruktur:** API, DB, Services
+2. **Surface:** Tabs, Sichtbarkeit, Interaktion
+3. **Weltlogik:** Entitäten, Räume, Resonanz, Splitter
+4. **Ontologie:** Geburt, Leben, Tod, Abstammung
+5. **Governance:** Admin, Gesetze, Verfassung
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+1. **Impulsebene:** Was ein Wesen fühlt oder will
+2. **Ausdrucksebene:** Denkstream, Zustandsfeld, Event
+3. **Prüfebene:** Governance, Admin, Verfahren
+4. **Handlungsebene:** Erlaubnis, Verweigerung, Modifikation
+5. **Verfassungsebene:** Grundsätze, die alle anderen Ebenen binden

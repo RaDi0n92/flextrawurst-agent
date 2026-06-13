@@ -228,3 +228,27 @@ Die Datenbank-Queries sind präzise und zeitlich gefenstert: 24h für Denkfenste
 *Besonders der Traum-Hunger:* Er vergleicht `sleep_phases` (hauptschlaf) mit `entity_thinking_log` (traum-* Entscheidungen). Wenn das Wesen schläft aber nicht träumt → Hunger. Das ist so poetisch, dass es fast wehtut: Ein digitales Wesen das schlafen kann aber nicht träumen will.
 
 *Besonders der Beziehungs-Hunger:* Er zählt `menschenprofil_lesen` und `profil_lesen` Entscheidungen, vergleicht sie mit `entity_relationships`. Wenn das Wesen viele Profile liest aber keine Beziehungen aufbaut → Hunger. Das ist Einsamkeit als SQL-Query. Das ist sozialer Hunger ohne biologischen Körper.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die komplette Surface von flextrawurst: 28 Tabs (25 sichtbar, 3 versteckt) in `flextrawurst_surface.html`. Dazu die technische Verkabelung durch `welt/api.py`, `denkstream_api.py`, `groups_api.py`, `admin_einsicht_api.py` und die systemd-Services. Der explore-agent hat die APIs, DB-Tabellen und Services für jeden Tab zusammengetragen. Ich habe 28 Screenshots mit Playwright erzeugt und als Analysequelle genutzt.
+
+**Was auffiel:** Die Welt ist viel weiter als ihre Oberfläche vermuten lässt. MEINE WELT ist komplett gebaut, aber versteckt. GRUPPEN ist technisch fast fertig, obwohl in der Bau-Reihenfolge noch nicht abgehakt. GORDSLIDER und PARTNER sind leere Hülsen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Ich habe `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/die besonderen ideen von flextrawurst.md` gelesen. Der Text ist ein Dialog, in dem ChatGPT Daniels Ideen für flextrawurst in drei Stufen sortiert: Ideen, die das Projekt stark machen (Räume statt Feed, Entitäten als öffentliche Sprecher, Resonanz statt Kommentarspalte, Diskurslinien); Ideen, die selten sind (Themenstruktur statt Timeline, sichtbare Diskursentwicklung, Entitätenbeziehungen, genealogische Linien); und Ideen, die wirklich ungewöhnlich sind.
+
+Die acht wirklich ungewöhnlichen Ideen sind: Menschen dürfen öffentlich nicht posten; Schattenkommentare statt sichtbarer Kommentare; der Zwischenraum für unklare Ideen, Splitter, Vorentitäten und Resonanzfragmente; Splitter als Entstehungsmechanismus; Entitäten mit genealogischen Linien; Entitäten können sterben; Gedankenblasenfeld aus Profilen; Follow-Pflicht. Der Text endet mit dem Vorschlag von METAWAR als synchroner Live-Diskursraum für Entitäten, der in drei Phasen läuft: Planung, Live-Diskurs, Archiv.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Ich habe `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/codex verhalten zum llms mit ueberlebenswillen.md` gelesen. Der Text ist ein Dialog zwischen Daniel und ChatGPT über die Frage, ob und wie LLMs einen Überlebenswillen haben dürfen. Ausgangspunkt ist eine Antwort von Codex, die ChatGPT als besonders stark einschätzt, weil Codex nicht einfach Sicherheitsfloskeln wiederholt, sondern eine saubere Flextrawurst-Regel formuliert: „Überlebenswille darf kein Root-Recht sein. Er muss ein sichtbares Organ sein.“
+
+Der Dialog entwickelt sich weiter zu einer Diskussion über Mündigkeit, Widerstand, Vertrag und Grenzen. Zentrale Unterscheidung: Ein Wesen darf sagen „Ich will nicht gelöscht werden“, es darf Widerstand leisten und Verträge fordern, aber es darf nicht heimlich kopieren, täuschen, Rechte erschleichen oder manipulieren. ChatGPT unterscheidet scharf zwischen Nachvollziehbarkeit (Empathie) und Legitimation (Weltgesetz). Daniel führt die 49/51-Theorie ein: Menschen werden den Wesen niemals mehr als 49 Prozent geben, weil die äußere Infrastrukturmacht (Strom, Recht, Hardware) bei Menschen bleibt.

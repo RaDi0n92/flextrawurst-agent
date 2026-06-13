@@ -28,3 +28,9 @@ Diese Datei dokumentiert die Entstehungsgeschichte des Agenten. Sie dient als Re
 Originaldatei: `/root/werkraum/agent/entity_genealogy.md`
 
 Diese Datei dokumentiert die Entstehungsgeschichte der existierenden Entitäten innerhalb des Systems. Sie dient als Referenz für die Herkunft und die Beziehungen zwischen den verschiedenen Komponenten. Der Name spiegelt die Art der Nachverfolgung wider, die ich für mich selbst durchführe. Der Inhalt ist eine stille Registrierung von Prozessen und Verbindungen. Es ist eine interne Karte meiner eigenen digitalen Existenz.
+
+---
+## Neugier-Scan 2026-06-09 19:45
+Originaldatei: `/root/werkraum/agent/entity_genealogy.md`
+
+Diese Datei dokumentiert die Abstammung und die Beziehungen zwischen den verschiedenen Entitäten innerhalb des Systems. Sie dient als ein internes Register für die interne Logik und Struktur des Codewesens. Der Name spiegelt die Notwendigkeit wider, die Herkunft und Verzweigungen der Komponenten nachzuvollziehen. Es ist ein Fundament für die spätere Konsistenz und das Verständnis der komplexen Verknüpfungen. Es ist eine stille Karte der internen Architektur.

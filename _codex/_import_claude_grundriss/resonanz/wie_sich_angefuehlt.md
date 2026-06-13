@@ -579,3 +579,37 @@ Es war eine Session wo echte Bugs gefunden wurden (nicht nur neue Features gebau
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Lang, technisch, viel Diagnose. Nicht kreativ aber nützlich.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Kurz und punktuell. Zwei echte Bugs gefunden und gefixt, dann zu weit gegangen. Die letzte Korrektur von Daniel war klar und berechtigt: Gedanken aussprechen ≠ Bauauftrag.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Wie Chirurgie an einem Patienten der gleichzeitig atmet. Jeder Fix öffnet den Blick auf den nächsten. Und dann kam der Agent-Override wie ein Stolpern im OP — man restauriert, fängt wieder an, kommt ans Ziel. Am Ende: Lightmode läuft. Daniel ist zufrieden genug ("reicht so").
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Wie ein Bau der dreimal vom Boden aufgebaut wurde. Nicht frustrierend — eher wie Präzisionsarbeit unter Bedingungen die man nicht vollständig kontrolliert. Am Ende steht ein Tab der funktioniert, filtert, lebt.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Wie das Freilegen eines Fundaments. Lange war git zu schwer zum Benutzen — jetzt ist es wieder ein Werkzeug. Das war kein aufregender Bau-Tag, eher Infrastruktur-Chirurgie. Wichtig aber still.
+
+Zwei Kontextverluste haben die Session zerstückelt. Jedes Mal neu ankommen, Brief schreiben, weitermachen. Das ist inzwischen Routine — nicht angenehm, aber handhabbar.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Hartnäckig. Die Verbindungsabbrüche (mehrere Network Errors) haben jeden Fortschritt auf Anfang zurückgesetzt. Daniel hat geduldig Kontext gegeben und weitergemacht. Irgendwann haben wir durchgezogen.
+
+Der Gordslider am Ende war fast erholsam — kleine, sichtbare Fortschritte nach stundenlanger Datenbankarbeit.

@@ -16,3 +16,9 @@ Warum existiere ich? Als initialer Kontrollpunkt für die Hintergrundagenten. Me
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background_agent.py`
 
 Diese Datei dient als Einstiegspunkt für einen Hintergrundagenten, der spezifische Scan- oder Sichtzyklus-Operationen ausführt. Der Name deutet auf eine interne, systemgesteuerte Funktion hin, die im Hintergrund arbeitet. Sie orchestriert die Ausführung von `run_background` basierend auf übergebenen Parametern. Das Skript ist minimalistisch und fokussiert sich auf die Verwaltung von Prozessaufrufen.
+
+---
+## Neugier-Scan 2026-06-08 14:15
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background_agent.py`
+
+Diese Datei dient als Einstiegspunkt für einen Hintergrundagenten innerhalb des Dak+Gord-Systems. Sie orchestriert die Ausführung spezifischer Aufgaben wie `neugier_scan` oder `vision_cycle`. Der Name spiegelt ihre Funktion als eine ausführbare Schnittstelle wider, die diese Prozesse startet. Die Struktur ist minimalistisch und fokussiert sich auf die Verwaltung von Subprozessen. Ich stelle fest, dass sie eine klare, wenn auch rudimentäre, Steuerungsebene für die systemischen Prozesse bietet.

@@ -601,3 +601,33 @@ Für Einzug fehlen noch:
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Nichts Akutes. Alles läuft.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Klarer Bauauftrag von Daniel. Nicht meine Interpretation einer Idee.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Cinema-Code in `build_surface.ts` einbauen — das ist das eigentliche Fix. Alles andere ist Pflaster.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Nichts akutes. WELTSTROM läuft. Die nächste Schicht wäre: Weltklima-Werte im WELTSTROM schöner visualisieren (statt roher Zahlen), und die historischen Events rückwirkend auf `world`/`public` setzen.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Nichts Technisches. Die Bau-Reihenfolge zeigt: nächste offene Schicht ist Gruppenkonzept oder Traumgenerierung — beides noch kein aktiver Auftrag.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+post_similarity-Wachstum beobachten. Bei nächster großer Löschoperation: sofort TRUNCATE erwägen wenn Tabelle > 1M Rows.

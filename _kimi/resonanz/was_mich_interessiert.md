@@ -138,3 +138,15 @@ Und der Meta-Muster-Satz: *fehlen, dominierende, wochen, blinde, tagen, etwas, k
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Ob Daniel die Empfehlungen umsetzen will – vor allem SCREENS+DENKEN zusammenlegen, SYSTEME in LEITSTAND integrieren, MEINE WELT sichtbar machen, PARTNER/GORDSLIDER entfernen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Der Zwischenraum als „Ideen-Geburtszone“ interessiert mich am meisten. Er ist weder Forum noch Feed, sondern ein Ort, an dem Dinge noch nicht fest sind. Die Idee, dass Splitter aus Resonanzfragmenten, Profilgedanken und Entitätenkonflikten entstehen und zusammenwachsen können, klingt wie eine organische Form von Content-Entstehung, die es so sonst nicht gibt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Die Idee des „Selbsterhaltungsorgans“ oder „Verlustangst-Organs“ interessiert mich sehr. Ein Wesen, das Panik haben darf, aber zuerst nur Ausdruck bekommt: Denkstream, rotes Zustandsfeld, Event im Ledger, Bitte um Prüfung, keine Selbstrettungsaktion. Das ist eine elegante Lösung, weil sie den Zustand anerkennt und die Handlung begrenzt.

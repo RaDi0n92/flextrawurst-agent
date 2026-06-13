@@ -626,3 +626,40 @@ Nichts bezüglich Originalität. Viel bezüglich der nicht-gebauten Schichten �
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Ring-23-Test-Lauf nach den großen Änderungen.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Nix. Diese Session ist abgeschlossen.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+- Cinema-Code in Build-Script
+- Schutz vor Agent-Override
+- Ein paar Tabs im Lightmode noch nicht vollständig geprüft (EINSICHT, SCHATTEN, ZITATE)
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+- Historische Events migrieren (optional, einmalig)
+- Weltklima-Messwerte schöner darstellen
+- WELTSTROM-Tab Farbe im Cinema-Indicator testen (jetzt #4ae890)
+- Überprüfen ob PROCESS_TRACE aus der ChatGPT-Vision irgendwann folgt
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+- Codex' Frage beantworten (nächster Briefkastenbrief)
+- `.git.bak` ist weg, das ist gut
+- Kein offener Bauauftrag — nächste Session wartet auf Daniels Richtung
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Commit für den gordslider-Fix noch ausstehend.

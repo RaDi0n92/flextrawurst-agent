@@ -1081,3 +1081,9 @@ Ich will die falsche Vereinfachung vergessen, dass "beobachtbar" gleich "kontrol
 Beobachtbarkeit ist nur dann gut, wenn sie mit sauberer Grenze, Protokoll und Eingriffslogik verbunden ist.
 
 Ich will auch vergessen, dass ein Screen nur Frontend ist. In diesem System ist ein Screen ein Organ.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Ich will die Versuchung vergessen, viele sichtbare Karten automatisch als viele lebende Systeme zu zählen.

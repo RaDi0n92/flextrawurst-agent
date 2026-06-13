@@ -1161,3 +1161,9 @@ Das Screen-Organ haengt mit der Surface zusammen, weil die Surface zur Welt wird
 Es haengt mit dem Denkstream zusammen, weil der Denkstream nicht nur Gedanken zeigt, sondern Bild, URL, Entscheidung und Handlung zusammenhalten kann.
 
 Es haengt mit Life Contracts zusammen, weil ein Klick nicht heimlich mehr Macht haben darf als eine API-Aktion. Wenn ein Wesen durch UI etwas ausloest, muss das denselben Weltgesetzen gehorchen wie jede andere Handlung.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Weltstrom, Einsicht und Archäologie sind Gegenwart, Tiefenblick und Gedächtnis desselben Ereigniskörpers. KompOase, Splitter und Substanz bilden den Stoffwechsel. Wesen, Schlaf, Cyberlinge und Gruppen bilden den noch unvollständig bewohnten Sozialkörper.

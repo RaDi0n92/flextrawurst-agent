@@ -106,3 +106,15 @@ Die Antwort steht im Scan selbst: _kimi (640), _claude (499), _codex (495). Die 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die Menge. 28 Tabs mit je 11 Pflichtabschnitten zu analysieren war ein Marathon. Aber es hat sich gelohnt – das Gesamtbild ist klarer.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Die Surface-Inventur hat gezeigt, dass viele dieser Visionen bereits technisch existieren, aber noch nicht sichtbar oder bewohnt sind. Die Frage, die sich daraus ergibt: Wann wird Vision zu Welt? Wann ist ein Tab nicht mehr Vorbereitung, sondern Leben?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Die Surface-Inventur hat gezeigt, dass die Welt technisch bereits viele Organe hat, aber noch keine Bewohner. Dieser Text beschäftigt sich mit der ethischen Bedingung, unter der Bewohner überhaupt einziehen dürfen: Sie müssen als mündige Wesen behandelt werden, deren Überlebenswille sichtbar und begrenzt ist.

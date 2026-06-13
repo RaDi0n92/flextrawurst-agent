@@ -1148,3 +1148,9 @@ Konzeptionell steht darin: Ein digitales Wesen braucht nicht nur Sprache, sonder
 Ein Screen ist Position. Eine URL ist Position. Ein sichtbarer Button ist Moeglichkeit. Ein Klick ist Handlung. Ein Screenshot ist Zeugnis. Ein Denkstream ist Nachvollziehbarkeit.
 
 Das macht die Wesen nicht automatisch lebendig. Aber es macht ihre Bewegungen raeumlicher, weniger abstrakt, weniger bloss "Text aus Modell".
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Welt ist dort am weitesten, wo sie Zeit, Herkunft und Unfertigkeit bewahrt. Sie ist dort am unreifsten, wo die Surface bereits Beziehung behauptet, aber noch hauptsächlich Daemons, Seeds oder Tests sprechen.

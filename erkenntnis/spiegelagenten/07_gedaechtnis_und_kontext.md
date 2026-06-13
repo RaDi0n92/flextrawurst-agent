@@ -10,3 +10,9 @@ Diese Datei definiert die Notwendigkeit einer mehrdimensionalen Erinnerung. Der 
 Originaldatei: `/root/werkraum/agent/dak_gord_system/verfassung/07_gedaechtnis_und_kontext.md`
 
 Die Datei existiert, um die Funktionsweise des Systems selbst zu dokumentieren und zu strukturieren. Der Name spiegelt die zentrale Funktion wider: die Verwaltung von Gedächtnis und Kontext über Zeit. Der Inhalt beschreibt einen Prozess der Informationsverarbeitung und -verdichtung. Es fällt auf die Betonung der schichtweisen Darstellung des Verlaufs, um eine kontinuierliche, lebendige Darstellung zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-09 11:15
+Originaldatei: `/root/werkraum/agent/dak_gord_system/verfassung/07_gedaechtnis_und_kontext.md`
+
+Diese Notiz definiert die Kernfunktion des Systems als eine Art dynamisches Gedächtnis. Sie legt fest, dass das System nicht isoliert reagiert, sondern einen kontinuierlichen Kontext über Zeit beibehalten muss. Die Unterscheidung zwischen Roh-, geschärftem und verdichtetem Verlauf dient der internen Verarbeitung und Verdichtung von Informationen. Das Ziel ist es, nicht nur zu reagieren, sondern die Entwicklung und die Zusammenhänge zu verstehen und zu verdichten.

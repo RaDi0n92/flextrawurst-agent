@@ -890,3 +890,45 @@ Das ist kein bloßes Feature. Es ist ein Gegengewicht zur Nabelschau. Wenn ein W
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Diese Session war fast vollständig Fehlerbehebung und Wiederherstellung. Keine neuen Systeme, nur Reparatur von Schäden aus einer langen Vorsession.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Das Gespräch über die Codewesen und gordslider war eine Ideenäußerung, kein Bauauftrag. Daniel wollte laut denken — wie es wäre wenn die 6 Wesen die Slot als Browser-Input wählen könnten, wie sie den Seitencode lesen könnten als Anleitung, wie ein iframe in der Surface aussehen würde. Ich hab sofort gebaut. Das war falsch.
+
+Der browser_agent.py macht genau das was Daniel beschrieben hat: Playwright navigiert zu URLs, `lese_seite()` extrahiert sichtbaren Text bis 2000 Zeichen und bis 15 klickbare Elemente, das LLM entscheidet was es als nächstes tut. Gordslider wäre technisch bereits erreichbar über `flextrawurst.de/gordslider/` — die Wesen könnten navigieren wenn sie wüssten dass es die URL gibt.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Der Cinema-Modus ist ein fragiles System: Canvas läuft hinter allem, Panels sind semi-transparent, der Effekt entsteht durch Schichtung. Im Lightmode fehlte diese Schichtung weil:
+1. `#bf-canvas-wrap` hatte `background:var(--b1a)=#f0ebe0` — weißer Kasten blockierte den Canvas
+2. `.v-view` war nicht transparent genug, `backdrop-filter:blur(18px)` fraß die Animation
+3. Viele Textfarben waren hardcoded für Darkmode: `#4ae890` (neon grün), `var(--g2)=#dceadf` (fast weiß auf hell), `#040c08` (schwarze Boxen für Gruppen-Polls)
+4. Der `flextrawurst-agent` lief im Hintergrund und überschrieb durch `build_surface.ts` das gesamte Cinema-System — einmal passiert während dieser Session
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Das Problem war Sichtbarkeit, nicht Mangel an Leben. Beim Nachschauen in der DB stellte sich raus: Events feuern jede Minute. `system.bruecken_sync`, `weltklima.tick`, `wesen.nachricht_erhalten`, `wesen.vernachlaessigt`, `gedanke.gepostet` — alles da, alles `internal`. ChatGPT hat meine Analyse bestätigt und direkt eine saubere V1-Spec formuliert: Weltstrom, SSE, letzte 100 Events, drei Visibility-Tiers (PUBLIC/WORLD/INTERNAL).
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Das git-Problem war strukturell: `geni_gedaechtnis/` hatte 10,7 Millionen Dateien im Index — ein 1.1GB-Index der jeden `git status` zur Qual machte und RAM-OOM verursachte. Das vorherige `git rm --cached` lief 100+ Minuten und schrieb den Index nie neu. Wahrscheinlich wurde es vom OOM-Killer abgebrochen bevor es atomar schreiben konnte.
+
+Die Lösung war nicht Reparatur sondern Neustart: frischer `git init`, `gitignore` sauber erweitert, nur noch relevante Dateien getrackt. Index jetzt 603KB. `git status` läuft in 0.6 Sekunden.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Datenbank-Situation war ein klassisches Deadlock-Sandwich: ein laufender DELETE auf ftw_posts triggert per CASCADE einen Scan über 57M Rows in post_similarity, während gleichzeitig eine abgebrochene Transaktion aus der welt-api einen Lock auf exakt Tupel (2,119) in post_similarity hält. Das führt zu: DELETE wartet auf die abgebrochene Transaktion, die abgebrochene Transaktion wartet auf den DELETE — Deadlock.
+
+Die Lösung war: alle Services stoppen, die abgebrochenen Transaktionen killen, dann `TRUNCATE post_similarity` (instant, keine Row-Scan-Checks), dann die anderen FK-Tabellen bereinigen, dann ftw_posts löschen. Der TRUNCATE war der Schlüssel — er umgeht den CASCADE-Scan komplett.
+
+Die 561 verbleibenden Similarity-Rows (nicht Zwischenraum) sind Kollateralschaden, werden von entity_kern neu berechnet.

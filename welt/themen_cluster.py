@@ -55,6 +55,9 @@ def get_conn():
 
 
 def compute_similarities(cur):
+    # Nur Paare berechnen bei denen mindestens ein Post neu ist (letzte 24h).
+    # Bestehende Alt-vs-Alt-Paare sind bereits in post_similarity — kein
+    # CROSS JOIN über alle 11K+ Posts nötig.
     cur.execute("""
         INSERT INTO post_similarity (post_a_id, post_b_id, score)
         SELECT
@@ -68,11 +71,15 @@ def compute_similarities(cur):
           AND p2.sichtbarkeit = 'public'
           AND p1.parent_id IS NULL
           AND p2.parent_id IS NULL
+          AND (
+              p1.created_at > NOW() - INTERVAL '24 hours'
+              OR p2.created_at > NOW() - INTERVAL '24 hours'
+          )
           AND similarity(p1.content, p2.content) >= %s
         ON CONFLICT (post_a_id, post_b_id)
         DO UPDATE SET score = EXCLUDED.score, updated_at = NOW()
     """, (SIMILARITY_THRESHOLD,))
-    log.info(f"Similarity berechnet ({cur.rowcount} Paare)")
+    log.info(f"Similarity berechnet ({cur.rowcount} neue Paare)")
 
 
 def extract_keywords(texts: list, n: int = 5) -> list:
@@ -136,11 +143,14 @@ def run_cycle():
         with conn.cursor() as cur:
             compute_similarities(cur)
 
-            cur.execute("""
-                SELECT post_a_id::text, post_b_id::text
-                FROM post_similarity WHERE score >= %s
-            """, (CLUSTER_THRESHOLD,))
-            edges = [(r["post_a_id"], r["post_b_id"]) for r in cur.fetchall()]
+            # Server-side cursor: streamt Edges ohne alles in Python-RAM zu laden
+            with conn.cursor("edges_cursor", cursor_factory=psycopg2.extras.RealDictCursor) as sc:
+                sc.execute("""
+                    SELECT post_a_id::text, post_b_id::text
+                    FROM post_similarity WHERE score >= %s
+                    LIMIT 200000
+                """, (CLUSTER_THRESHOLD,))
+                edges = [(r["post_a_id"], r["post_b_id"]) for r in sc]
 
             cur.execute("""
                 SELECT id::text, content, raum_id::text, thema_id::text

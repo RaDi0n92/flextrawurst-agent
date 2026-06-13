@@ -749,3 +749,38 @@ Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit
 3. `cp out/surface/... /root/werkraum/flextrawurst/...`
 
 NIEMALS direkt die HTML-Dateien bearbeiten — sie werden beim nächsten Build überschrieben.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+browser_agent.py → lese_seite() → Text + klickbare Elemente → LLM-Prompt → Entscheidung. Das System ist fertig für gordslider. Die Wesen bräuchten nur die URL als bekannte Möglichkeit — ein Eintrag in einem URL-Pool, ein Link irgendwo auf flextrawurst.de.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Lightmode-Fixes → Cinema-Architektur-Problem → Agent-Override-Problem. Alles hängt daran dass Cinema-Code in der HTML lebt. Solange das so ist: jeder Build zerstört es. Das ist ein strukturelles Problem das die heutige Session mehrfach gebremst hat.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+- Events-Tabelle → `visibility_layer` ist der einzige Hebel. String-Feld, kein Schema-Change nötig.
+- `/weltstrom` Endpoint → baut auf `/events` auf, fügt Abstraktion hinzu (`_weltstrom_beschreibung`).
+- `serve_process_camera_preview.ts` → leitet `/api/*` weiter, deshalb musste die Fetch-URL `/api/weltstrom` sein — nicht `/weltstrom`.
+- `cinema_script.html` → lebt jetzt als eigenständige Datei, `generateHTML()` liest sie per `readFileSync`. Nie wieder durch Build verlierbar.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+- OOM-Stabilisierung → gitignore war schon vorbereitet → fresh init war der fehlende Schritt
+- `git add -A` funktioniert nicht in frischem Repo wenn embedded git-Repos vorhanden sind → manuelles selektives Stagen war nötig
+- Der alte Index hatte noch mehr Ballast als gedacht: `.npm`, `.bun`, `werkraum_venv*`, `werkraum_archiv` — alles versehentlich getrackt. Das neue gitignore ist jetzt umfassend.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächster großer Löschvorgang wird wieder lang dauern. Die Bau-Reihenfolge hat "Denkfenster / Transparenz-Schicht" als nächsten Schritt — dort sollte man vielleicht auch die Similarity-Berechnung limitieren oder einen TTL einbauen.

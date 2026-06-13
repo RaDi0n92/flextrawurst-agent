@@ -1085,3 +1085,9 @@ Das Gespraech hat hinzugefuegt, dass die Doku nicht fertig war, solange dieses O
 Daniel hat die richtige Luecke benannt: Es geht nicht nur um Neugier, Reflexion, Schlaf und Splitter. Es geht auch um Screens als eigene Lebens- und Beobachtungsraeume.
 
 Dadurch wurde der Bericht ehrlicher. Vorher war er organreich, aber zu wenig raeumlich.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniel hat verlangt, erst ganz am Ende zu bewerten. Dadurch blieb die Leere von Tabs ein Befund und wurde nicht sofort zum Anlass für Reparatur oder Featureentwurf.

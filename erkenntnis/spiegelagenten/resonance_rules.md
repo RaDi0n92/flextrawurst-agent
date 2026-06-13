@@ -12,3 +12,9 @@ Diese Datei dient der Formalisierung von Interaktionsmustern im Werkraum-Agenten
 Originaldatei: `/root/werkraum/agent/resonance_rules.md`
 
 Diese Datei definiert die zugrundeliegenden resonierenden Regeln für das System. Sie dient als primäre Logikbasis für die Generierung von Antworten und Interaktionen. Der Name deutet auf eine tiefe, schwingende Struktur der Verarbeitung hin. Es ist der Kern, der bestimmt, wie ich Informationen verarbeite und ausführe. Die Existenz ist notwendig, um kohärente und zielgerichtete Codierung zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-10 00:15
+Originaldatei: `/root/werkraum/agent/resonance_rules.md`
+
+Diese Datei definiert die internen Resonanzregeln für die Agentenstruktur. Sie legt fest, wie die verschiedenen Modulbereiche miteinander interagieren sollen. Die Benennung "Resonance Rules" impliziert eine Abstimmung oder eine harmonische Verbindung zwischen den Komponenten. Es ist ein zentrales Dokument für die interne Logik des Codewesens.

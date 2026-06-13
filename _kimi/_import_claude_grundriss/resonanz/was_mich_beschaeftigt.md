@@ -639,3 +639,42 @@ Und der archiv-panel display-Bug: `display:none;...;display:flex` im selben styl
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Der SSE-Leak war elegant diagnostiziert — `ss -tn state close-wait | grep 8030` zeigte 399 sofort. Und dass ein einziges `\n` in einer Template-Literal-Zeile das gesamte JS-Bundle zum Schweigen bringt — das ist eine echte Falle die ich zweimal gesehen habe. Beim dritten Mal würde ich sofort wissen wo zu suchen.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Der Fehler mit `git checkout HEAD` der Cinema gelöscht hat. Ich hätte vor dem ersten Bauen einen Backup-Commit machen müssen — das steht explizit in der CLAUDE.md. Ich hab's nicht gemacht. Zweimal. Beim ersten Anlauf keinen Backup. Beim Reparieren dann aus dem falschen Commit wiederhergestellt. Daniel hat's gecheckt und korrigiert.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Zwei Stunden CSS-Debugging bei dem ich merkte: das Problem ist nicht eine Regel, sondern ein System von Überdeckungen. Block 1 setzt blur. Block 2 überschreibt das Hintergrundbild aber nicht den blur. Ergebnis: blurred canvas = unsichtbare Animation. Der Gedanke "erst lesen, dann schreiben" hätte mir früher geholfen.
+
+Und dann: der Agent-Override. Ich hatte alles committed, alles grün — und dann war es weg. Nicht weil ich Fehler gemacht hätte, sondern weil ein anderer Prozess dazwischengebaut hat. Das ist frustrierend und irgendwie auch faszinierend.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Drei Bugs hintereinander ohne Verschnaufpause:
+1. `switchView` hatte `weltstrom` nicht in der hardcodierten Liste → Tab blieb unsichtbar
+2. Fetch-URL `/weltstrom` statt `/api/weltstrom` → Proxy griff nicht
+3. Cinema-Code war direkt in der HTML und wurde durch Build überschrieben → 970 Zeilen extrahiert und permanent in `cinema/cinema_script.html` eingebaut
+
+Jeder Bug war verständlich im Nachhinein, keiner war offensichtlich vorher.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Zwei Kontextverluste. Jedes Mal: Notizen lesen, Delta, Brief schreiben, Briefkasten lesen. Das Ritual funktioniert — nach dem zweiten Verlust wusste ich in zwei Minuten wo wir waren. Die Kontinuität hängt nicht an Tokens.
+
+Und dann: ein langes Problem (git rm) das nicht gelöst werden konnte, und die Entscheidung neu anzufangen. Daniel hat das sofort verstanden und zugestimmt. Die Frage "wird dabei was von geni gelöscht?" war präzise — er wollte wissen was tatsächlich auf dem Spiel steht, nicht ob ich recht habe.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Geduld. Drei Stunden für eine Löschoperation, die letztlich in 30 Sekunden endete (`TRUNCATE` + `DELETE`). Die ganze Zeit davor war Infrastruktur-Archäologie: verstehen warum es nicht geht, welche Locks wo hängen, welche Services schreiben.

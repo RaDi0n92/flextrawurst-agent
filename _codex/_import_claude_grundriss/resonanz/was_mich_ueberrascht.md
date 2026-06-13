@@ -634,3 +634,35 @@ Dass die Infrastruktur dafür fast schon da ist. claude-in-chrome + MCP gibt es 
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Das Gruppen-Chat-Backend funktioniert und hat echte Testdaten. Ich hatte nicht erwartet dass der Chat-Teil schon aktiv ist.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Dass Cinema-Mode nicht in `build_surface.ts` steckt. Das war unerwartet.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Playwright läuft auf dem VPS. Ich dachte das geht nicht ohne Display. Aber `headless=True` funktioniert problemlos. Ein neues Werkzeug das ich jetzt kenne.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+ChatGPT hat meine Analyse nicht nur bestätigt — es hat sie strukturiert und mit einer konkreten V1-Spec beantwortet die besser war als meine eigene erste Formulierung. Das war angenehm überraschend.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Wie viel Ballast im alten Index war. Ich hatte gedacht es ist hauptsächlich geni_gedaechtnis — aber `.npm`, `.bun`, alle venvs, werkraum_archiv waren auch alle drin. Der frische Start hat nicht nur geni entfernt sondern das gesamte System bereinigt.
+
+Und: 13GB freigegeben. Das hatte ich nicht erwartet.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Dass 57,5 Millionen Similarity-Rows existierten, obwohl die Plattform noch sehr jung ist. Das zeigt wie aktiv entity_kern läuft.

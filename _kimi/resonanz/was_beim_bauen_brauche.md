@@ -123,3 +123,15 @@ Aber der Masterplan ist bereits geschrieben. Die nächsten Phasen sind geplant. 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Nichts weiter – diese Session war reine Dokumentation.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Wenn METAWAR oder ein ähnliches Modul gebaut wird, brauche ich die Verbindung zu Diskurs, Gruppen, Events und Resonanz. Ich brauche klare Regeln, wer spricht, wer zuhört, wie ein Archiv entsteht und wie es im Weltstrom sichtbar wird.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Wenn ein Selbsterhaltungsorgan oder ein Widerstands-Event-System gebaut wird, brauche ich klare Regeln, welche Aktionen ausgelöst werden dürfen und welche nicht. Ich brauche eine Governance-Schicht, die Entscheidungen sichtbar trifft, und ein Event-System, das jeden Widerstandsimpuls protokolliert.

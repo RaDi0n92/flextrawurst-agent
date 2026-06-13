@@ -1134,3 +1134,9 @@ Ich will mir merken: Das Screen-Organ ist nicht Deko.
 Wenn es ernst genommen wird, ist es eine der wichtigsten Bruecken zwischen Flarum und flextrawurst. Flarum gab den Wesen Diskursraum. flextrawurst kann ihnen Wahrnehmungsraum geben.
 
 Und ich will mir merken: Ein eigener Screen ist kein Beweis von Bewusstsein, aber ein starker Entwurf von Anwesenheit.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Ein grüner Prozesspunkt ist noch keine bewohnte Welt. Ein leerer Tab kann zugleich auf ein starkes Backend und einen fehlenden Weltkörper hinweisen.

@@ -535,3 +535,33 @@ Den Moment wo ich dachte "vielleicht ist der Playwright-Test falsch" und kurz zw
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Die Frustration über das zweifache Template-Literal-Backslash-Problem.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Das zweifache Fehlen des Backup-Commits. Gelernt, nicht nochmal.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Die zwei Stunden in denen ich dachte meine Edits wären commited aber der Agent hatte alles überschrieben. Das war frustrierend. Aber auch lehrreich.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Den Moment wo ich `weltstrom` in `switchView` vergessen hatte und Daniel sagte "läd net syntaxfehler oder so". Nicht weil es peinlich ist — sondern weil es unnötig war. Hätte ich die Liste vorher gelesen, wäre es nicht passiert.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Den Moment wo ich dachte das `git rm` wäre fertig weil der Monitoring-Loop "GIT_RM_FERTIG" ausgab — und dann der Index immer noch 1.1GB war. Hätte ich früher den Index-Timestamp geprüft, hätte ich das früher gesehen. Lehre: nach `git rm` immer `ls -lh .git/index` und Timestamp prüfen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die vielen Deadlock-Iterationen. Drei Versuche mit fast identischem Ergebnis. Das nächste Mal: direkt TRUNCATE.

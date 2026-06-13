@@ -743,3 +743,40 @@ In die nginx-Proxy-Logik und den Node.js-Proxy daneben. Zwei Proxy-Schichten, di
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 `run_in_executor` mit einem Lambda für `sel.select` ist die minimale nicht-brechende Lösung. Die saubere Lösung wäre psycopg3 mit async-Support — das würde echte async I/O ermöglichen. Aber das wäre ein größerer Umbau der `denkstream_api.py`.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Die GORD-Spawn-Logik in gordslider ist wirklich durchdacht. `applyGordStartDistribution()` entscheidet pro Spin ob es ein NORMAL-, STACK- oder PAUSE-Spin ist. STACK-Spins konzentrieren GORD-Symbole in einem Band (R3–R5). Die Wave-State-Abhängigkeit ist theater — beeinflusst laut Daniel nichts. Die Reel-Strips werden mit `buildStrip_Runny()` gebaut, das Symbole in Runs statt uniform verteilt. Das gibt dem Strip eine organischere Textur als ein gleichmäßiger Mix.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+CSS-Spezifität und Inline-Styles: `color:#aa55cc` als Inline-Style im JavaScript-Template ließ sich nicht mit normaler CSS-Klasse überschreiben. Erst `!important` + direkter span-Selektor hat es gelöst. Wichtig zu merken für zukünftige JS-generierte HTML-Fragmente.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+`cinema_script.html` enthält ~970 Zeilen generativen Canvas-Code: 20 Dark-Mode-Szenen, 20 Light-Mode-Szenen (LM), Crossfade zwischen Canvases A und B, Tab-Indicator-Tracking, Ripple-Effekte. Der Code ist komplex und funktioniert nur weil er direkt auf `window.switchView` aufbaut. Das Überschreiben von `switchView` am Ende des Cinema-Scripts ist elegant — es wraps die Original-Funktion ohne sie zu ersetzen.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+`git ls-files --cached | wc -l` im alten Repo: 10.757.882 nur für geni_gedaechtnis. Plus 19.925 werkraum_node_modules. Plus 16.161 .npm, 13.109 werkraum_archiv, 13.041 .bun, 7.295 graphify-out, 6.451 werkraum_git, 6.152 .cache, 4.154 werkraum_venv — alles versehentlich tracked.
+
+Neuer Index: 4.518 Dateien, 603KB. Der Unterschied ist nicht graduell — es ist ein anderes System.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+GORDSLIDER: drei Bugs in Sequenz.
+1. Tab war in `switchView` nicht registriert → alle Views hidden, gordslider nie shown → leere Seite
+2. `src=""` im iframe → Surface lädt sich rekursiv selbst → lila Hintergrund sichtbar, iframe recursiv broken
+3. CSS-Scaling-Mathematik falsch (60% statt 65%) → visuell falsch
+
+Fix: gordslider in views-Array eintragen, `src=""` entfernen, direkt `src="/gordslider/"` setzen, 50%-Scaling mit korrekter Mathematik (`width:200%;height:200%;transform:scale(0.5)`).

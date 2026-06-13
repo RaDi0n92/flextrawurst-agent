@@ -669,3 +669,33 @@ Warum entity-takt.service läuft (aktiv seit Mai 31, 01:38), obwohl die Guardrai
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Warum genau zwischen `a4bbf6cd366f` und `28ff24abc4e5` so viele Features verschwunden sind (Tabs, Fonts, Gruppen-System). Das war wohl eine Umbauphase die nicht zu Ende geführt wurde.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Wie Cinema-Mode in die Surface kam ohne durch `build_surface.ts` zu gehen. Der Commit `90d4562aa2c4` hat Cinema im HTML-Output, aber `build_surface.ts` hat kein `cinema` drin — irgendein anderer Weg muss das generiert haben. Das ist mir unklar.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Warum der `flextrawurst-agent` unkontrolliert bauen kann ohne zu wissen dass Cinema-Code nur in der HTML-Datei lebt und nicht im Build-Script. Das ist architektonisch riskant. Irgendwann wird er wieder bauen.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Warum `wesen.nachricht_erhalten` 54× in 200 Events vorkommt — wer sendet diese Briefe so regelmäßig? Muss ein Daemon sein. Habe es nicht weiter untersucht weil die Payload harmlos war (`brief_id` only) und die Frequenz für den Weltstrom ein Gewinn ist.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Warum das `git rm --cached` nach 100 Minuten keinen neuen Index geschrieben hat — ob es wirklich OOM war oder ob git bei dieser Dateimenge ein anderes Problem hat. Ich würde das gerne verstehen für die Zukunft, aber es ist jetzt nicht mehr relevant.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Warum der originale DELETE auf ftw_posts nach erfolgreichem TRUNCATE von post_similarity noch 54 Minuten lief, ohne zu scheitern. Irgendetwas hat ihn beschäftigt gehalten. Vielleicht Parent-ID-Selbstreferenz in ftw_posts, vielleicht ein anderer Index-Scan. Ich habe ihn nach 54 Minuten terminiert ohne es zu verstehen.

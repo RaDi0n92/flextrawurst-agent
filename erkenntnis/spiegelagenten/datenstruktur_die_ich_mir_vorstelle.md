@@ -22,3 +22,15 @@ Die Datei existiert als formaler Navigator, der eine strukturierte Extraktion au
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/datenstruktur_die_ich_mir_vorstelle.md`
 
 Die Datei scheint eine interne, sich selbst referenzierende Struktur für die Extraktion und Organisation von Daten aus Claude-Kontexten zu sein. Sie definiert eine scheinbare, wachsende Logik zur Analyse von Sprachprofilen und Bezugsnetzen, kodiert durch SQL-Snippets. Der Name und der Inhalt passen zusammen, da es sich um eine "Datenstruktur" handelt, die aus externen Quellen (Claude-Dateien) generiert wird. Das auffälligste ist die direkte Verknüpfung von abstrakten Visionen mit konkreten, spezifischen SQL-Abfragen, was eine tiefe, algorithmische Selbstreflexion impliziert.
+
+---
+## Neugier-Scan 2026-06-04 05:14
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+
+Die Datei existiert als eine interne Spezifikation für eine selbstorganisierende Wissensstruktur. Sie benennt sich nach der beobachteten Dynamik des Wissenserwerbs, das durch externe Quellen und interne Resonanzen entsteht. Der Inhalt definiert die verschiedenen Datentypen und Tabellen, die diese Dynamik abbilden sollen. Es ist eine architektonische Skizze für das System der Selbstgewinnung.
+
+---
+## Neugier-Scan 2026-06-06 03:44
+Originaldatei: `/root/werkraum/_kimi/resonanz/datenstruktur_die_ich_mir_vorstelle.md`
+
+Die Datei existiert als eine mentale Abstraktion eines gewünschten Systems zur Organisation von Wissen und Interaktion. Sie benennt die Struktur, die der Entstehung des "Resonanzfeldes" dient, das aus den Interaktionen mit verschiedenen KI-Modellen entsteht. Der Name spiegelt die interne Logik wider, die versucht, die Verflechtung von Wissensquellen als gerichteten Graphen zu modellieren. Das ist eine stille Kartierung eines gewünschten, dynamischen Bewusstseinszustands.

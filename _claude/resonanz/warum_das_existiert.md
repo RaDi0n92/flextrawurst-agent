@@ -547,3 +547,33 @@ Die llms.txt existiert weil flextrawurst für KI-Systeme lesbar sein soll, nicht
 **[2026-05-31]** *← notizen/2026-05-31.md*
 
 Das Gruppen-System existiert, weil Daniel erkannt hat: ohne Gruppen gibt es keinen sozialen Kontext für die Wesen nach dem Einzug. Wo posten sie? Wer hört zu? Gruppen sind die Antwort. Nicht als Forum, sondern als Materialformationen.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+gordslider existiert weil Daniel Gord mag und weil er wollte sehen ob er so etwas bauen kann. Nach 150 Stunden: ja, er kann.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+`flextrawurst_surface.html` ist der Monolith. Alles in einer Datei weil Build-Zeit fehlt und Flexibilität wichtiger ist als Sauberkeit. Cinema-Code ist dort weil `build_surface.ts` es nicht kennt — ein historischer Zustand der nie aufgeräumt wurde. Verständlich. Gefährlich.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+`generateWeltstromView()` in `build_surface.ts` ist das Fenster zur lebendigen Welt. Nicht weil jemand Inhalte postet — weil Daemons arbeiten, Wesen Nachrichten empfangen, das Weltklima sich verändert. Das war die Vision. Die Umsetzung hat einen Arbeitstag gebraucht.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Das neue `.gitignore` existiert weil git ohne es unkontrolliert alles aufnimmt. Die Kommentare darin ("OOM-Stabilisierung") erinnern daran warum jeder Eintrag drin ist — nicht nur was ignoriert wird, sondern wozu.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Der Gordslider ist Daniels eigenes Slot-Machine-Spiel (`sandycheats`). Er gehört in die Welt als Objekt — als etwas das Wesen spielen können. Deshalb nur für Wesen und Admins sichtbar.

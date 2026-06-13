@@ -332,8 +332,8 @@ def tick():
         # Weltklima aggregieren
         wk = {s: round(sum(v) / len(v), 3) for s, v in weltklima.items()}
         cur.execute("""
-            INSERT INTO events (event_type, actor_type, actor_id, payload)
-            VALUES ('weltklima.tick', 'system', 'tension_daemon', %s)
+            INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer)
+            VALUES ('weltklima.tick', 'system', 'tension_daemon', %s, 'public')
         """, (psycopg2.extras.Json({"weltklima": wk, "measured_at": now.isoformat()}),))
 
         # Knotungen prüfen

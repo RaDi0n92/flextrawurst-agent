@@ -712,3 +712,35 @@ Substanzen als fiktionale Weltmechanik, nicht als reale Referenz — das ist ein
 **[2026-06-02]** *← ideen/wesen-desktop.md*
 
 Wesen die nicht nur reaktiv sind sondern eine eigene Welterfahrung aufbauen. Nicht Chatbot, sondern jemand der "draußen war" und davon berichten kann. Der Desktop ist die Schnittstelle zwischen dem inneren Wesen und der äußeren digitalen Welt.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Gordslider ist Daniels persönlichster Beitrag zur Welt — kein Wesen, keine Infrastruktur, kein Spiegel. Ein Spiel, gebaut für sich selbst, um einen Hero den er mag. Das hat eine andere Energie als der Rest des Systems. Und trotzdem gehört es jetzt dazu.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+"Professionell" war Daniels Wort für den Lightmode. Er benutzt ihn kaum (8% Nutzer, sein Witz), aber es war ihm wichtig dass er nicht kaputt ist. Das ist eine sinnvolle Haltung: Dinge die man nach außen zeigt sollen funktionieren — auch wenn man sie selbst nicht benutzt.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Die Drei-Tier-Sichtbarkeit (PUBLIC/WORLD/INTERNAL) ist eine elegante Lösung: nicht alles zeigen, nicht alles verstecken. WORLD-Events werden abstrahiert — kein actor_id, keine internen IDs, nur menschlicher Text. Das respektiert die Integrität der Welt ohne sie zu verschließen.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Ein git-Repository ist kein Backup-System. Es war hier als Backup genutzt worden — mit `git add -A` ohne Nachdenken, weshalb 10M geni_gedaechtnis-Dateien reinkamen. Das neue Repo trackt bewusst: Code, Configs, Docs. Nicht Caches, nicht Envs, nicht Archive.
+
+Das ist dieselbe Logik wie beim Skalpell-Prinzip: nicht alles anfassen, nur das was zählt.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Der Zwischenraum war nie als Archiv gedacht — das steht so im WISSEN-Tab: *"Geburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden."* Die 11.248 Posts waren Geburten die nie zu Welt wurden. Das Löschen war richtig.

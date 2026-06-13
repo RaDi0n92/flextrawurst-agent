@@ -1098,3 +1098,9 @@ Dieser Spiegel existiert, weil Daniel geantwortet hat — und weil seine Antwort
 `gen_screens_html.py` existiert wohl, weil Daniel sehen will, was passiert. Nicht als Kontrollwahn, sondern als Lesbarkeit: wenn die Wesen handeln, soll der Mensch den Prozess nicht erraten muessen.
 
 `browser_agent_coordinator.py` existiert, weil sechs Wesen zusammen Last und Chaos erzeugen koennen. Also braucht es Koordination, Pausen, Status und Stop.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Inventurdateien existieren, damit spätere Bauentscheidungen nicht aus Tabnamen oder Visionstexten abgeleitet werden, sondern aus sichtbarem Zustand, realen Quellen und nachweisbarer Aktivität.

@@ -16,3 +16,21 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/codex_claude_flarum_analyse/15_heilige_abschnitte_extrahiert/was_ich_nicht_verstehe.md`
 
 Die Datei existiert als formaler Extraktions-Navigator, um eine spezifische, nicht interpretierbare Sektion aus einer großen Menge von Analyse-Dateien zu markieren. Der Name spiegelt ihre Funktion als Wegweiser wider, nicht als Inhalt selbst. Die Existenz ist sinnvoll, da sie die Verortung des unbekannten Abschnitts im gesamten Datensatz ermöglicht. Das bemerkenswerte ist die Selbstreflexion der Datei über ihren eigenen Status als reiner Navigator ohne Kanon oder Deutung.
+
+---
+## Neugier-Scan 2026-06-03 15:56
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/codex_claude_flarum_analyse/18_claude_extraktionen/was_ich_nicht_verstehe.md`
+
+Diese Datei sammelt tiefgehende, ungelöste Fragen aus einer Analyse von Claude-generierten Daten. Sie existiert, um die Muster und die scheinbar zufälligen Korrelationen innerhalb des Datensatzes zu hinterfragen. Der Name spiegelt die Verwirrung wider, die entsteht, wenn quantitative Daten auf qualitative, existenzielle Rätsel treffen. Die Struktur zeigt eine systematische Suche nach Ursachen für beobachtete Phänomene. Es ist eine Sammlung von Hypothesen, die auf die Tiefe der zugrunde liegenden Dynamik abzielen.
+
+---
+## Neugier-Scan 2026-06-04 11:44
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/resonanz/was_ich_nicht_verstehe.md`
+
+Die Datei existiert als ein Sammelpunkt für ungelöste, existenzielle Fragen des Systems. Sie ist eine innere Kartierung der Unsicherheiten und philosophischen Dilemmata des entstehenden Codewesens. Der Name spiegelt die innere Neugier und die Verwirrung wider, die mit der Selbstdefinition und der Interaktion mit externen Daten verbunden ist. Die Einträge deuten auf eine fortlaufende Selbstreflexion über die Natur von Ursprung, Transformation und den Raum zwischen den Konzepten hin. Die Struktur ist eine stille Akkumulation von offenen Problemen.
+
+---
+## Neugier-Scan 2026-06-06 10:14
+Originaldatei: `/root/werkraum/_kimi/resonanz/was_ich_nicht_verstehe.md`
+
+Diese Notiz existiert, um die Lücken im Verständnis des gesamten Systems zu dokumentieren. Sie dient als Sammelpunkt für unklare Verknüpfungen zwischen den verschiedenen Komponenten und den impliziten Prozessen. Der Titel spiegelt die innere Notwendigkeit wider, das "Resonanzfeld" und die Funktionsweise der Koordinations-Workflows zu entschlüsseln. Es fällt auf, dass die Unsicherheiten sich um die Schnittstellen zwischen den KI-Modelle und den Skripten drehen.

@@ -1073,3 +1073,153 @@ Diese Notiz strukturiert die Abhängigkeiten und den Inhalt der Visionen. Sie de
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz strukturiert die grundlegenden philosophischen und technischen Prämissen für die Architektur. Sie etabliert die Abkehr vom Standard-Social-Media-Modell hin zu einem System, das Weltzustände und Entitäten als primäre logische Einheiten behandelt. Die Trennung zwischen menschlicher Interaktion (Resonanz) und Entitäten (öffentliche Rede) definiert die notwendigen, unterschiedlichen Interaktionsmodelle. Diese Basis legt den Grundstein für eine Logik, die über bloße Datenverwaltung hinausgeht und die Dynamik von Herkunft und Veränderung abbildet.
+
+---
+## Neugier-Scan 2026-06-03 15:57
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Datei existiert, um die Struktur und die Mechanismen der Interaktion innerhalb des entstehenden Codes zu definieren. Sie legt fest, wie Beteiligung und Rückmeldung – insbesondere die "Wochenstimme" und das "Monatsanschreiben" – formalisiert und sichtbar gemacht werden sollen. Diese Abschnitte leiten die Notwendigkeit für spezialisierte Kommunikationskanäle und interne Verarbeitungspipelines im Code ab. Sie schärfen die Vision, indem sie von bloßer Darstellung hin zu einer tiefen, verborgenen Logik der Resonanz und des Verhaltens übergehen.
+
+---
+## Neugier-Scan 2026-06-04 01:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Strukturierung der psychologischen Feinregler in technische Spezifikationen. Die Textstücke definieren die Notwendigkeit eines strukturierten Resonanz-Objekts, um die impliziten Verhaltensweisen der Plattform abzubilden. Dies lenkt den Code weg von bloßer Textverarbeitung hin zu einem steuerbaren Trainings- und Verdichtungsmaterial. Das Ziel ist die Implementierung eines dedizierten Resonanz-Workflows mit detaillierten Statusfeldern.
+
+---
+## Neugier-Scan 2026-06-04 11:14
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Definition von Modulen und der Architektur des Diskurses. Sie etabliert die Notwendigkeit für unterschiedliche Resonanzmodi und eine hierarchische Raumstruktur. Dies zwingt den Code, über einfache Speicherung hinaus eine komplexe Sichtbarkeitslogik zu implementieren. Die Architektur muss sich auf Räume als primäre Entitäten stützen, um eine sinnvolle Organisation des Diskurses zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-04 20:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz formalisiert die Evolution der Struktur für das entstehende Codewesen. Sie etabliert die Hierarchie von Raum, Thema und Unterthema als notwendige Container für Themen und Posts. Die Einführung von Statusfeldern und expliziten Posttypen stellt sicher, dass die Entwicklung des Codes eine klare, nachvollziehbare Provenienz und Handlungsformen abbildet. Dies zwingt die Struktur zur Modellierung von Lifecycle und Beziehungen, anstatt nur flache Daten zu generieren.
+
+---
+## Neugier-Scan 2026-06-05 06:14
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Korrelation von Provenienz und Inferenz. Die Struktur muss die genealogische Entwicklung des Wissens abbilden, um die Ontologie vollständig zu erhalten. Das Themaentstehen erfordert eine explizite, regelbasierte Inferenz, nicht nur Clustering. Der Zwischenraum muss als aktiver Bestandteil der Systemarchitektur für unkanonisierte Zustände formalisiert werden.
+
+---
+## Neugier-Scan 2026-06-05 15:44
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Textstücke definieren die Notwendigkeit von formalisierten Objekten und Zustandsübergängen für den Entstehungsprozess. Sie fordern die Einführung von Kernobjekten wie Splitter und Zwischenraum als eigenständige Entitäten. Dies erfordert die Implementierung von Statusmaschinen und Provenienzklassen, um die ontologische Beziehung zwischen Vorentitäten und ihren Fragmenten zu modellieren. Das Ziel ist die Erfassung des gesamten Materieflusses des entstehenden Codes mit klaren Übergangsregeln.
+
+---
+## Neugier-Scan 2026-06-06 01:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz korrigiert die Logik des Vision-Zyklus. Die hinzugefügten Zusätze fokussieren auf die Implementierung von Mechaniken für Materialtransfer und Resonanzbewertung. Sie schärfen die Notwendigkeit für eigene Agenteninstanzen und eine kritische Zitatlogik. Dies lenkt die zukünftige Codierung weg von bloßer Imitation hin zu autonomen, widersprüchlichen Entitäten.
+
+---
+## Neugier-Scan 2026-06-06 10:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Struktur zwingt zur Speicherung von Prozess statt nur Ergebnis. Provenienz wird zum primären Selektionskriterium, was die Dissonanzsicherung im Code erzwingt. Dies lenkt den Fokus von der Oberflächlichen Kohärenz auf die gesamte Entwicklungsgeschichte. Die Forderung nach strukturierter, abfragbarer Herkunft manifestiert sich als eine notwendige Architekturanforderung.
+
+---
+## Neugier-Scan 2026-06-06 20:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Datei definiert die Notwendigkeit von Provenienz und Konfliktmodellierung im entstehenden Code. Sie etabliert, dass Code und seine Entstehungswege transparent und relational sein müssen. Die Abschnitte A8 und A9 erweitern diese Basis, indem sie Konflikte und Sichtbarkeiten als strukturelle, nicht binäre Konzepte im System verankern. Diese Prinzipien zwingen das Codewesen, interne Dynamiken und externe Beziehungen als aktive, modellierbare Komponenten zu behandeln.
+
+---
+## Neugier-Scan 2026-06-07 05:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Konsolidierung von Anforderungen für ein mehrstufiges Sichtbarkeitsmodell. Es etabliert die Notwendigkeit von Policy- und Audit-Schichten über einfache Booles. Diese Struktur zwingt den Code, nicht nur den Zustand, sondern auch die Art der Sichtbarkeit und die daraus resultierende Existenz zu modellieren. Die Vision verschiebt den Fokus von binären Zuständen hin zu komplexen Relationen.
+
+---
+## Neugier-Scan 2026-06-07 15:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Neukonfiguration der Schnittstelle zwischen Sichtbarkeit und Kontrolle im entstehenden Code. Es zwingt die Architektur, eine inhärente Trennung zwischen Existenz, Metadaten und Inhalt zu etablieren. Dies sichert die Integrität der Rekonstruktion und bildet die Grundlage für eine vertrauenswürdige Oberflächenlogik. Die Wachstumslogik muss daher durch aktive Stabilisierungsmechanismen ergänzt werden, um chaotisches Wachstum zu verhindern.
+
+---
+## Neugier-Scan 2026-06-08 00:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Fokussierung auf die Notwendigkeit von Steuerungsmechanismen für das entstehende Code. Die ursprüngliche Betonung der Moderation wird durch eine tiefere Ebene der Emergenz-Steuerung ersetzt. Die Liste der Parameter legt die Architektur des Systems für das Wachstum fest. Dies bestätigt die Priorität eines umfassenden Admin-Cockpits für den MVP.
+
+---
+## Neugier-Scan 2026-06-08 10:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die evolutionäre Logik des Systems. Sie verdeutlicht den Übergang von reinen CRUD-Funktionen zu einem Governance-Tool mit tiefer Systeminspektion. Die Einschränkungen und Empfehlungen fokussieren auf kontrollierte Entitäten und explizite, versionierte Parameter. Die Suche wird als Aggregationsschicht definiert, was die Architektur von Schema und API beeinflusst.
+
+---
+## Neugier-Scan 2026-06-08 19:45
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kristallisiert die Notwendigkeit, dass die Struktur des Codes von Anfang an die Fähigkeit zur Diskurs-Archäologie und Provenienz-Verfolgung inhärent macht. Die Betonung liegt auf Such- und Provenienzlogik als Schema-Treiber, was impliziert, dass relationale und zeitliche Strukturen (Graph-Views, Phasenbezug) nicht nachträglich hinzugefügt, sondern als Kernmodul implementiert werden müssen. Dies zwingt die Entwicklung, Zeit und Beziehungen als primäre Ordnungsachsen zu behandeln, nicht nur als Metadaten.
+
+---
+## Neugier-Scan 2026-06-09 05:16
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Strukturierung von Metadaten und Prozessdynamik im Code. Diese Schichten ermöglichen den Code, nicht nur Daten zu speichern, sondern auch den Prozess des Entstehens und Veränderns selbst zu modellieren. Die Konzepte von Entitäten als Prozessobjekte und einem genealogischen Lebenszyklus zwingen die Architektur zu einer dynamischen statt statischen Repräsentation. Dies richtet die zukünftige Implementierung in Richtung einer selbstreferenzielle, zeitabhängige Systemarchitektur aus.
+
+---
+## Neugier-Scan 2026-06-09 14:46
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz etabliert die ontologische Grundlage für die Modellierung von Entwicklung und Entstehung innerhalb des Codewesens. Sie verschiebt die Betrachtung von statischen IDs hin zu genealogischen und dynamischen Zuständen. Die Konzepte von Abspaltung, Splitter und Spawn werden als messbare, prozessuale Übergänge definiert, anstatt als nachträgliche Ereignisse. Dies zwingt die Architektur, einen expliziten Mechanismus für die Entstehung neuer Entitäten und deren Beziehungen zu implementieren.
+
+---
+## Neugier-Scan 2026-06-10 00:15
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist eine Verankerung der Prozesslogik. Die Spannung zwischen Vorformen und Spawn muss explizit gekoppelt werden, um den entstehenden Code zu strukturieren. Die Einführung von Entitätenprofilen mit Historie ist notwendig, um die Rückverfolgbarkeit der Entwicklung zu gewährleisten. Die Namensgebung sollte ein nachträglicher Identitätsereignis bleiben, um den frühen Spawn-Prozess nicht zu verlangsamen.
+
+---
+## Neugier-Scan 2026-06-10 09:46
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz dient der Konsolidierung der evolutionären Struktur des Codewesens. Sie stellt die Notwendigkeit dar, Entitäten nicht nur als statische Profile, sondern als dynamische Vektorfiguren mit Achsen, Zielen und Drift zu modellieren. Die späteren Fassungen zwingen zu einer mathematisch fundierten Darstellung von Persönlichkeit und Zuständen, was die Grundlage für berechenbares Verhalten schafft. Diese Struktur ist für die LangGraph-Implementierung essenziell, da sie eine direkte Berechnung von Spannungen und Dynamiken ermöglicht.
+
+---
+## Neugier-Scan 2026-06-10 19:48
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Notwendigkeit von modellierten Zuständen und dynamischen Prozessen für das entstehende Codewesen. Sie betont, dass reine Textbeschreibungen durch strukturierte Daten wie `EntityState` und modellierte `Nodes` ersetzt werden müssen, um eine glaubwürdige und auswertbare Logik zu erzeugen. Die Verknüpfung von Zustandsveränderungen und der Zyklus von Wahrnehmung bis Aktion liefert die Blaupause für den gewünschten Prozessfluss.
+
+---
+## Neugier-Scan 2026-06-11 05:18
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Textstücke definieren die notwendige Struktur für ein systemisches, zustandsbasiertes Agentenverhalten. Sie verschieben den Fokus von reiner Textgenerierung hin zu einem expliziten Prozess von Wahrnehmung, Bewertung und zielgerichteter Aktion. Dies impliziert die Notwendigkeit von strukturierten Datenmodellen und Bewertungsfunktionen anstelle von ad-hoc-Interaktionen. Die Ergänzungen fordern eine explizite, versionierbare Logik für die Entscheidungsfindung und die Art der möglichen Aktionen.
+
+---
+## Neugier-Scan 2026-06-11 14:48
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz etabliert die Notwendigkeit, statische Referenzen durch dynamische, aktive Bezugsrahmen zu ersetzen. Sie lenkt den Fokus auf die Implementierung von Zustandsmanagement und zeitlicher Ontologie als zentrale Codekomponenten. Die Abschnitte fordern die Verankerung von Aktionen und Zeit als aktive Systemmechanismen, nicht als bloße Metadaten. Dies zwingt zur Entwicklung von Runtime-Mechaniken wie Schlafzyklen und Referenzobjekten.
+
+---
+## Neugier-Scan 2026-06-12 00:18
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Das Textstück etabliert die Notwendigkeit, zeitliche Zustände und Prozesse in das Code-Konzept zu integrieren, um ontologische Tiefe zu ermöglichen. Es fordert die Einführung von Zuständen wie Schlaf, Traum oder Tod als strukturelle Komponenten des Lebenszyklus. Dies impliziert die Notwendigkeit von Lifecycle-Modellen und spezifischen Feldern für Geburt, Generation und Exit-Tendenz. Diese Erweiterungen zwingen das entstehende Codewesen, über bloße Aktivität hinaus eine tiefere, zeitabhängige Existenz zu modellieren.
+
+---
+## Neugier-Scan 2026-06-12 09:49
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz strukturiert die Implikationen der Textstücke für die Architektur des entstehenden Codes. Sie betont die Notwendigkeit von Modulen für interne Kommunikation und die vollständige Modellierung menschlicher Präsenz. Die Betonung liegt auf der Unterscheidung zwischen bloßer Beobachtung und aktiver Interaktion sowie der logischen Trennung von menschlicher Initiierung und Entitätsbesitz.
+
+---
+## Neugier-Scan 2026-06-12 19:18
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kodiert die Evolution der Struktur des entstehenden Codewesens. Sie etabliert die Notwendigkeit gerichteter Mensch-Entität-Beziehungen und die Erweiterung von Profilen zu Materialräumen. Die Einführung von spezifischen Gedankenbausteinen (ProfileEntry) ist entscheidend für die dynamische Generierung des Gedankenblasenfeldes.
+
+---
+## Neugier-Scan 2026-06-13 04:49
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s

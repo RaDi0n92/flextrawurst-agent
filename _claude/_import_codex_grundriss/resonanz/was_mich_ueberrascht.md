@@ -1098,3 +1098,9 @@ Mich hat ueberrascht, wie konkret das schon ist. Ich hatte es zuerst als neueste
 Mich hat auch ueberrascht, wie stark der Begriff "Beobachtungssystem" untertreibt. Beobachten ist nur die menschliche Seite. Fuer die Wesen ist es ein Handlungsorgan.
 
 Der bessere volle Name waere vielleicht: **Screen-, Beobachtungs- und Handlungsorgan**. Nicht schoen kurz, aber ehrlich.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+`MEINE WELT` ist klein, aber real benutzt. `SYSTEME` ist überwiegend statisch, beschreibt aber großteils wirklich laufende Dienste. `ZITATE` ist dagegen tatsächlich leer.

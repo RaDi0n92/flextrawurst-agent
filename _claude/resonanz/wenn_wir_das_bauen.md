@@ -1417,3 +1417,37 @@ Nächste sinnvolle idea-reality Nutzung: wenn wir Entitäten-Schlaf-System oder 
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 *nicht relevant heute*
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+**Vision-Schicht:** Erstmal gar nicht. Die Idee ruhen lassen bis Daniel einen konkreten Auftrag gibt.
+
+**Code-Skizze:** Wenn doch: gordslider-URL in den Navigations-Pool der Wesen einbauen. Kein iframe, kein neuer Tab ohne Daniel-Okej.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Den Cinema-Patch in den Build einbauen. Priorität: mittel. Sofort wenn der Agent das nächste Mal baut und Cinema wieder weg ist.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Nächste Stufe des Weltstroms: Weltklima-Ticks mit echten Messwerten anzeigen (Spannung, Hunger, Nebel), nicht nur "Weltklima-Messung: spannung 0.42 · hunger 0.31". Und einen Admin-Migrationsbefehl für historische Events.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Das Bauen ist heute nicht das Thema. Aber wenn das nächste System kommt: der Index ist jetzt sauber, Commits sind schnell, git ist wieder benutzbar. Das war die Voraussetzung für alles weitere.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+**Vision-Schicht:** Similarity-TTL als eingebaute Selbstreinigung des Systems. Das wäre elegant — die Welt vergisst alte Ähnlichkeiten wie Menschen alte Vergleiche vergessen.
+
+**Code-Skizze:** Ein zusätzlicher Tick in splitter-physik.service oder ein eigener Cleanup-Daemon der täglich `DELETE FROM post_similarity WHERE expires_at < NOW()` ausführt.

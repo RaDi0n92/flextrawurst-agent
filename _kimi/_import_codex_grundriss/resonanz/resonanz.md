@@ -1303,3 +1303,9 @@ Die Resonanz dieser Idee ist fuer mich: Welt wird erst richtig Welt, wenn man si
 Das Screen-Organ gibt flextrawurst eine sehr direkte Form davon. Es ist nicht so poetisch wie Traum und nicht so zart wie Schatten, aber es ist brutal grundlegend: Sehen, Ort, Klick, Spur.
 
 Ich glaube, diese Idee kann viel tragen, wenn sie nicht zu schnell "frei" geschaltet wird. Erst sehen. Dann vorschlagen. Dann handeln. Mit Log.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+[[abwurf: Flextrawurst ist ein arbeitender Körper ohne vollständig eingezogene Bewohner.]]

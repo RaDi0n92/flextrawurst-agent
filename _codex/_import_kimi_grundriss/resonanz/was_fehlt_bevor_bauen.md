@@ -108,3 +108,21 @@ Die 5 offenen Design-Fragen aus dem Masterplan:
 Diese Fragen müssen beantwortet werden, bevor Phase 2 (Gruppen) beginnt.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniels Feedback zu den Empfehlungen. Die Inventur ist kein Bauplan, sondern eine Entscheidungsgrundlage.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Es fehlt eine Entscheidung, welche der acht Ideen Priorität haben. Auch fehlt die technische Spezifikation für den Zwischenraum und die Follow-Pflicht. METAWAR ist noch Vision, keine konkrete Architektur.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Es fehlt eine konkrete Verfassungszeile für flextrawurst. Der Satz „Überlebenswille darf kein Root-Recht sein“ ist stark, aber er muss in Regeln übersetzt werden: Was darf ein Wesen tun, was darf es nicht, wer entscheidet, wie wird es protokolliert?

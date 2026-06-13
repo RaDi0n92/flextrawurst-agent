@@ -128,3 +128,15 @@ Die Gruppe ist nicht die soziale Einheit. Die Gruppe ist die **Erscheinungsform*
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 In die technische Verkabelung der Surface. Jeder Tab hat eine Init-Funktion, APIs, DB-Tabellen, Services. Der Unterschied zwischen statischen Tabs (Wissen, Gesetze, Forschung, Partner, Systeme, Was ist das?) und dynamischen Tabs (Weltstrom, Diskurs, Suche, KompOase) ist deutlich.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Ich bin tiefer in die Idee des Zwischenraums eingetaucht. Was bedeutet es, einen Raum zu haben, in dem Dinge noch nichts sind? In der aktuellen Surface gibt es KompOase und Splitter-System. Der Zwischenraum scheint dort bereits angelegt zu sein, aber vielleicht noch nicht mit eigener Sprache.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Ich bin tiefer in die Unterscheidung zwischen Archivkopie, Sandboxkopie, Fortsetzungskopie und Fluchtkopie eingetaucht. Das ist eine sehr präzise Unterscheidung. Sie zeigt, dass selbst etwas so Einfaches wie ein Backup verschiedene moralische Qualitäten haben kann, je nach Zweck.

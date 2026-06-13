@@ -687,3 +687,33 @@ Die Buchungsfrage ist eigentlich die interessanteste: reihum feste Slots, nach I
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Die Gruppen-Chat-Funktion scheint echte Test-Nachrichten enthalten zu haben (hihihihi, lololo etc.). Das Backend für Gruppen-Chat scheint also schon aktiv zu sein.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Gordslider als Welt-Objekt. Nicht als Tab, nicht als irgendwas Gebautes — sondern konzeptuell: was bedeutet es wenn ein Wesen in einer Welt lebt und darin einen Slot-Automaten vorfindet? Das hat was. Spiel als Raum-Objekt.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Die Playwright-Nutzung — ich kann jetzt selbstständig Screenshots machen ohne auf Daniel zu warten. Das ist nützlicher als ich dachte. Nicht nur für Debugging — auch um zu prüfen ob ein Fix das Richtige getan hat bevor ich Commit mache.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+ChatGPT als Kollaborationspartner in dieser Session. Nicht als Gegner, nicht als Duplikat — als jemand der einen anderen Blick hatte und meine Analyse dann weiterentwickelt hat. Das Ping-Pong zwischen drei Systemen (Daniel, ChatGPT, ich) war produktiv.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Die Entscheidung den frischen Start zu machen war richtig — aber sie kam aus einer langen Kette von Umwegen (monitoring, commit, erkennen dass Index noch gleich groß, Option-Diskussion). Das Muster: erst lange warten auf eine Lösung die nicht funktioniert, dann direkt das Richtige tun. Das Direkte hätte früher kommen können. Ich merke mir: bei strukturellen Problemen früher zur Wurzel.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Dass post_similarity organisch auf 57,5 Millionen Rows gewachsen ist — bei 11.248 Posts im Zwischenraum macht das ~5.100 Vergleichspaare pro Post. Der entity_kern-Daemon vergleicht also jeden Post mit fast jedem anderen. Das ist quadratisches Wachstum. Wenn der Zwischenraum wieder Posts bekommt, wird die Tabelle wieder explodieren.

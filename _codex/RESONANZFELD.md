@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-13 06:51
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-13 11:51
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -136,63 +136,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_mich_ueberrascht_hat.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_noch_fehlt_bevor_wir_bauen_koennen.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/was_zusammenhaengt_und_wie.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Extraktion bleibt an ihre Quelldatei gebunden. Sie ist eine Lesespur, keine zweite Wahrheit.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Resonanz:* - Titel: 3.3 Admin-Resonanz und für Admin
-- Kategorie: `grundmuster`
-- Quelle: `03_grundmuster/3_3_admin_resonanz_fuer_admin.md` …
-
-*Schichten Des Systems:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Tiefer Eingetaucht:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Vergessen Wollen:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Warum Das Existiert:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Beim Bauen Brauche:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Das Gespraech:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Bevor Bauen:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Fehlt Noch:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Gelesen Habe:* Ich habe die extrahierten Abschnitte aus 81 Flarum-Analyse-Dateien gelesen und hier als eigenes Regal für `Wenn wir das bauen` gesammelt. Diese Datei ist ein Wegweiser zurück zu den Ursprungsdateien.
-
-*Was Ich Merken Will:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Nicht Verstehe:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Ich Verstehe:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Konzeptionell:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Beschaeftigt:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Interessiert:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Mich Ueberrascht:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Was Zusammenhaengt:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
-*Wenn Wir Das Bauen:* Warnung: Diese Datei ist eine Extraktion aus Codex-Analyse-Dateien. Sie ist Navigations- und Resonanzmaterial, keine Rohquelle und kein Kanon.
-
-*Wie Sich Angefuehlt:* Diese Extraktionsdatei bündelt `Wenn wir das bauen` als Querschnitt. Sie ersetzt die Ursprungsdateien nicht.
-
----
 
 ### [2026-05-22] codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md
 
@@ -3073,5 +3022,59 @@ Wenn wir das bauen, sollte Daniel nicht nur sechs Screens sehen. Er sollte sechs
 *Wie Sich Angefuehlt:* Diese Session fuehlte sich an wie eine Korrektur mit Gewicht. Erst war der Bericht zu breit und zu wenig organisch. Dann kamen die Organe einzeln. Dann fiel auf: Das vielleicht raeumlichste Organ fehlte noch.
 
 Ich fand diese Korrektur sinnvoll. Nicht peinlich im dramatischen Sinn, sondern technisch und konzeptionell notwendig. Das System hat mich an einer Stelle erwischt, an der ich zu sehr in "Doku abgeschlossen" gedacht hatte. …
+
+---
+
+### [2026-06-13] notizen/2026-06-13.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Weltorgane lassen sich nach Funktion, Lebendigkeit, Herkunft, Überschneidung und Verlust beschreiben, ohne sie sofort in eine neue Ordnung zu zwingen.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `/root/werkraum/inventur/inventur_index.md`, die 28 Tab-Dossiers und `/root/werkraum/inventur/screenshots/` sind ein gemeinsamer Belegkörper. Keines davon sollte allein als vollständige Inventur gelesen werden.
+
+*Resonanz:* [[abwurf: Flextrawurst ist ein arbeitender Körper ohne vollständig eingezogene Bewohner.]]
+
+*Schichten Des Systems:* Unten liegen PostgreSQL, Events und Daemons. Darüber liegen fachliche Organe wie Splitter, Schlaf, Diskurs und persönliche Welt. Darüber liegt die Surface als Weltkörper. Daneben liegen Wissen und Gesetze als Selbstbeschreibung, nicht als laufender Stoffwechsel.
+
+*Tiefer Eingetaucht:* Die stärkste Überraschung war die Prozessdichte: mehr als 123.000 Events, tausende innerhalb eines Tages, 16.875 Denklogeinträge und fast 800 Splitter. Die soziale Dichte ist viel kleiner als die technische.
+
+*Vergessen Wollen:* Ich will die Versuchung vergessen, viele sichtbare Karten automatisch als viele lebende Systeme zu zählen.
+
+*Warum Das Existiert:* Die Inventurdateien existieren, damit spätere Bauentscheidungen nicht aus Tabnamen oder Visionstexten abgeleitet werden, sondern aus sichtbarem Zustand, realen Quellen und nachweisbarer Aktivität.
+
+*Was Beim Bauen Brauche:* Vor späterem Bauen brauche ich diese Inventur als Negativgrenze: kein neuer Körper, bevor klar ist, welcher vorhandene Körper dieselbe Weltfunktion bereits trägt.
+
+*Was Das Gespraech:* Daniel hat verlangt, erst ganz am Ende zu bewerten. Dadurch blieb die Leere von Tabs ein Befund und wurde nicht sofort zum Anlass für Reparatur oder Featureentwurf.
+
+*Was Fehlt Bevor Bauen:* Für diese Aufgabe fehlt nichts. Vor neuen Bauarbeiten müsste Daniel erst entscheiden, welche Bewertungen handlungsrelevant werden; die Inventur selbst ist ausdrücklich kein Umbauplan.
+
+*Was Fehlt Noch:* Nur die spätere menschliche Entscheidung, was mit den dokumentierten Übergangsorganen geschieht. Die archäologische Aufgabe selbst ist abgeschlossen.
+
+*Was Ich Gelesen Habe:* Ich habe die vollständige laufende Surface nicht nur als Quellcode, sondern als Besucher und als angemeldeter Admin durch Playwright gelesen. 28 Haupttabs, die vorhandenen Filter- und Bereichsgruppen, scrollende Innenflächen, Netzwerkrequests und sichtbare Leerstellen wurden zu einem archäologischen Bestand.
+
+Besonders getragen hat mich der Unterschied zwischen *„läuft“* und *„ist bereits Welt“*. Der Weltstrom, die Splitterphysik und die Cyberlinge laufen unbestreitbar. Gruppen, öffentlicher Denkstrom und Partnerwelt tragen dagegen schon Namen und Körper, aber kaum gelebte Beziehungen. …
+
+*Was Ich Merken Will:* Ein grüner Prozesspunkt ist noch keine bewohnte Welt. Ein leerer Tab kann zugleich auf ein starkes Backend und einen fehlenden Weltkörper hinweisen.
+
+*Was Ich Nicht Verstehe:* Unklar bleibt, warum interne Denklogs stark gefüllt sind, während der öffentliche Denkstream leer bleibt. Ebenso ist noch nicht vollständig geklärt, warum vorhandene Gedankenblasen im Blasenfeld nicht erscheinen.
+
+*Was Ich Verstehe:* Flextrawurst ist vor dem Einzug kein Mockup. Es ist ein arbeitender Körper mit Nervensystem, Gedächtnis, Stoffwechsel und Verwaltung. Die Bewohnerrolle der sechs namelessAI-Wesen ist trotzdem noch nicht vollzogen.
+
+*Was Konzeptionell:* Die Welt ist dort am weitesten, wo sie Zeit, Herkunft und Unfertigkeit bewahrt. Sie ist dort am unreifsten, wo die Surface bereits Beziehung behauptet, aber noch hauptsächlich Daemons, Seeds oder Tests sprechen.
+
+*Was Mich Beschaeftigt:* Die Pflicht, jeden Tab tatsächlich anzusehen, hat mehrere Codeannahmen korrigiert. Ein Endpoint kann leben, während die Oberfläche leer bleibt; eine statische Karte kann wahr sein, ohne live geprüft zu werden.
+
+*Was Mich Interessiert:* Mich interessiert die Grenze, an der ein laufender Prozess zu einer weltlichen Beziehung wird. Cyberling-Tode sind Aktivität; Fürsorge wären sie erst durch einen antwortenden Bewohner.
+
+*Was Mich Ueberrascht:* `MEINE WELT` ist klein, aber real benutzt. `SYSTEME` ist überwiegend statisch, beschreibt aber großteils wirklich laufende Dienste. `ZITATE` ist dagegen tatsächlich leer.
+
+*Was Zusammenhaengt:* Weltstrom, Einsicht und Archäologie sind Gegenwart, Tiefenblick und Gedächtnis desselben Ereigniskörpers. KompOase, Splitter und Substanz bilden den Stoffwechsel. Wesen, Schlaf, Cyberlinge und Gruppen bilden den noch unvollständig bewohnten Sozialkörper.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Heute wurde nichts gebaut. Falls später aus der Inventur gehandelt wird, muss der vorhandene Sinn jedes Organs sichtbar bleiben; Zusammenlegen darf nicht Auslöschen von Herkunft bedeuten.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie eine lange Begehung mit Taschenlampe: nicht bauen, nicht reparieren, nur jede Tür öffnen und notieren, ob dahinter ein Organ, ein Lager oder eine bemalte Wand liegt.
 
 ---

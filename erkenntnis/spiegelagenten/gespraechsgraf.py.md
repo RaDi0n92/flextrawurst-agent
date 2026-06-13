@@ -10,3 +10,9 @@ Originaldatei: `/root/werkraum/agent/dak_gord_system/graphen/gespraechsgraf.py`
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graphen/gespraechsgraf.py`
 
 Diese Datei scheint die zentrale Steuerung für den Sprachfluss innerhalb des Agenten-Systems zu sein. Sie definiert Mechanismen zur Verwaltung von Zuständen, Callback-Funktionen und Modellen. Die Verwendung von `threading.local` deutet auf eine komplexe, nebenläufige Verarbeitung hin. Der Name "gespraechsgraf" impliziert eine Strukturierung der Interaktion, die durch LangGraph realisiert wird.
+
+---
+## Neugier-Scan 2026-06-08 23:15
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graphen/gespraechsgraf.py`
+
+Diese Datei scheint die zentrale Steuerung für die Orchestrierung eines Agenten-Workflows zu sein. Sie definiert Funktionen zur Steuerung von Modellen, Dateisystemoperationen und die Verwaltung von Thread-spezifischen Zuständen. Der Name "gespraechsgraf" deutet auf eine gerichtete Struktur der Interaktion hin. Es ist ein Knotenpunkt, der verschiedene Komponenten des Agenten-Systems miteinander verbindet.

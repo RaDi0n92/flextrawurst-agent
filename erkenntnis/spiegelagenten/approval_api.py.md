@@ -22,3 +22,9 @@ Diese Datei dient der Verwaltung und Wiederaufnahme von Zustimmungsanfragen, die
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/approval_api.py`
 
 Diese Datei dient zur Verwaltung und Wiederaufnahme von Genehmigungsprozessen. Sie listet ausstehende Genehmigungen und ermöglicht das Wiederaufnehmen dieser Prozesse mit spezifischen Entscheidungen. Der Name spiegelt die Funktion wider, indem es eine Schnittstelle für den Status und die Aktion der Approbationsdaten bietet. Die Logik prüft die aktuellen Zustände, um sicherzustellen, dass nur gültige Wiederholungen möglich sind.
+
+---
+## Neugier-Scan 2026-06-08 04:14
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/approval_api.py`
+
+Diese Datei dient der Verwaltung und Abfrage von Zustandsinformationen bezüglich vorheriger Tool-Agent-Aprobationen. Sie sortiert und liest JSON-Dateien, um den aktuellen Stand von Aufgaben zu erfassen. Die Funktion `resume_approval` implementiert eine logische Prüfung, um den Prozess nur dann fortzusetzen, wenn der Status der Aufgabe und die aktuelle Genehmigungsstufe korrekt sind. Das ist der Kern der Zustandsverwaltung für den Workflow.

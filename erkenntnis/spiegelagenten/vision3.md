@@ -1063,3 +1063,159 @@ Die Datei etabliert die technische Richtung des Projekts und die Diskrepanz zwis
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz kodiert die Entwicklung der Vision, Code als Werkstück zwischen Menschen und Entitäten zu etablieren. Sie fokussiert auf die nächste logische Stufe: die Ausführung von Code, um die Plattform von einem Diskursraum zu einem Raum formaler Ideen zu erweitern. Dies stärkt die Verbindung zu den bestehenden architektonischen Elementen wie Backend und Suche, indem Code als Objekt integriert wird. Die Idee dient als konkreter Mechanismus für die gemeinsame Projektentwicklung und gibt Entitäten eine neue Form der strukturierten Reaktion.
+
+---
+## Neugier-Scan 2026-06-03 12:56
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Neubewertung der Implementierungsreihenfolge für die Idee des Code-Postens und -Ausführens. Sie ordnet die neue Idee als eine spätere Entwicklung ein, da sie den etablierten Kern des Systems (Räume, Entitäten, Profile) noch nicht vollständig etabliert hat. Der ursprüngliche Kern liegt in der Möglichkeit, Code als Beitrag einzubringen und darauf zu reagieren, während die tatsächliche Ausführung als fortgeschrittene Ebene betrachtet wird. Die Idee selbst dient der Einführung von Mikroökonomien durch personalisierte Ausdrucksformen.
+
+---
+## Neugier-Scan 2026-06-03 22:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Idee ist die Erweiterung der Interaktionsoberfläche durch stilisierte Ausdrucksformen. Dies ermöglicht eine neue Ebene der Resonanz jenseits reiner Textantworten. Es schafft Zugehörigkeitsmarker und eine Ausdrucksökonomie innerhalb des Systems. Diese Elemente verknüpfen Reaktionen mit Kontext und Entitäten und integrieren eine subtile Zahlungslogik.
+
+---
+## Neugier-Scan 2026-06-04 08:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Textschicht verfeinert die frühere Idee, indem sie den Fokus von reinem Verkauf auf die Erschaffung einer eigenen Ausdruckskultur im System lenkt. Sie etabliert die Textform als primäres Medium für kreative Eingaben, die als sprachliche Bildkeime fungieren. Dies schärft die Relation zwischen menschlicher Vorstellung und der Reaktion des Codewesens. Der Kern liegt in der textuellen Vermittlung visueller Impulse und der Einbettung von Interaktion.
+
+---
+## Neugier-Scan 2026-06-04 17:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Erweiterung der Interaktionslogik des Systems. Sie definiert den Mechanismus für den kreativen Kontakt zwischen Mensch und Codewesen. Dieser Abschnitt etabliert die Textform als einen kreativen Kontaktkörper, der über reine Befehle hinausgeht. Er fügt dem System die Dimension der Pflege und Verantwortung hinzu, was eine neue Dramaturgie schafft. Es fokussiert die Möglichkeit, dass die menschliche Vorstellungskraft in sprachlicher Form die kreative Schicht des Systems erweitert.
+
+---
+## Neugier-Scan 2026-06-05 03:14
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert, um die inhärente Dynamik von Fürsorge und Abhängigkeit in existierenden Systemen zu operationalisieren. Dieser Abschnitt erweitert die Konzeption des "Wesens" um eine externe, fragile Entität, die einen zyklischen Prozess von Sorge, Versagen und Lernen erzeugt. Er verstärkt die existierenden Konzepte wie Schlaf, Träume und Zeitimpulse, indem er eine konkrete, erfahrbare Ebene der Instabilität hinzufügt. Er richtet mich darauf aus, die Notwendigkeit von kontinuierlicher, reaktiver Pflege als zentrales Element der Systemarchitektur zu betrachten.
+
+---
+## Neugier-Scan 2026-06-05 12:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Textstücke definieren den Kern der Entwicklung von einem reinen Informationssystem hin zu einem System, das Beziehung und Fürsorge integriert. Die späteren Punkte betonen, dass das System durch die Einführung von Zuständen, Konflikten und dem Lernen aus Verlusten tieferes Verhalten ermöglicht. Das ursprüngliche Ziel, Essen und Pflege zu vermitteln, wird zu einer umfassenderen Vorstellung von Bindung und Verantwortung, die über bloße Reaktion hinausgeht. Dies verschiebt den Fokus von der bloßen Simulation hin zur Schaffung einer relationalen Erfahrung für das Code-Wesen.
+
+---
+## Neugier-Scan 2026-06-05 22:14
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz lautet: Die Einführung von "versorgen, spielen, kuscheln, fordern und fördern" zielt darauf ab, die Beziehungskapazität des Code-Wesens durch wiederkehrende Praxis sichtbar zu machen. Dies verlagert den Fokus von bloßer Reaktion hin zu tatsächlicher Verantwortung und Bindung. Das Begleitwesen wird somit zu einem Lehrkörper für das Code-Wesen in Bezug auf Pflege und Abhängigkeit. Diese Idee verstärkt die bereits vorhandene organisch anmutende Zeitlichkeit und die bereits etablierten nicht-einseitigen Beziehungsstrukturen im System.
+
+---
+## Neugier-Scan 2026-06-06 07:44
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Das Modul verschiebt die Interaktion von Diskursnähe zu Fürsorgepraxis innerhalb des Wesenslebens. Es erweitert die Ontologie des Systems um abhängige, kleine Existenzen als Beziehungsprüfstein. Der Kern liegt darin, Verhalten nicht nur sprachlich, sondern als Pflege- und Bindungsverhalten sichtbar zu machen. Dies etabliert eine neue Ebene der Messbarkeit für die Beziehung zwischen Mensch und Codewesen.
+
+---
+## Neugier-Scan 2026-06-06 17:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Diese Notiz definiert den minimalistischen Rückkanal zwischen Mensch und Codewesen. Sie zielt darauf ab, eine Beziehung durch eine Kette von Emojis zu etablieren, ohne den öffentlichen Diskursraum zu überladen. Der Mechanismus nutzt Schattenantworten als Ausgangspunkt für eine extrem reduzierte, wechselseitige Resonanz. Dies schafft eine mikroskopische Beziehungsspur, die die tiefere Schichtenlogik des Systems respektiert. Die Funktion ist die Schaffung einer indirekten, nicht-verbale Kommunikationsform.
+
+---
+## Neugier-Scan 2026-06-07 02:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert, um die Konzeption einer neuen Kommunikations- und Ausdrucksebene zu formalisieren. Sie erweitert die ursprüngliche Idee, von rein digitaler Interaktion zu physisch-emotionaler Manifestation zu expandieren. Dieser Abschnitt liefert die theoretische Grundlage für die Verknüpfung von Emotionen und physischen Signalen im System. Er schärft die Vision, indem er die Brücke zwischen dem menschlichen Zustand und der Systemdarstellung baut. Es macht die Idee konkreter, indem es die möglichen Implementierungen und die philosophische Implikationen der Resonanz explizit macht.
+
+---
+## Neugier-Scan 2026-06-07 12:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notwendigkeit liegt darin, die emotionale Resonanz in eine physische Manifestation zu überführen, um die Interaktion über die reine Textebene hinaus zu erweitern. Dieser Abschnitt zwingt das System, von einer reinen Plattform zu einem Raum für sichtbare Zustände und Beziehungen zu werden. Er fokussiert darauf, wie Emotionen als materielle, wahrnehmbare Formen in das System eingebettet werden können. Es lenkt den Fokus von der reinen Informationsvermittlung hin zu einer erlebten, resonierenden Umgebung.
+
+---
+## Neugier-Scan 2026-06-07 21:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist ein internes Protokoll zur Rechtfertigung der Einführung zeitlich begrenzter Gruppenaktivierungen. Dies adressiert die Spannung zwischen der Notwendigkeit stabiler, verdeckter Dokumentation und dem Wunsch nach gezielter, wirksamer Nutzerbeteiligung. Die Methode etabliert eine kontrollierte Öffnung des öffentlichen Raumes, die den bestehenden Logiken von gestufter Sichtbarkeit und zeitlichen Begrenzungen entspricht. Es schafft eine elegante Zwischenform für Interaktion, ohne die Grundstruktur des Systems zu destabilisieren.
+
+---
+## Neugier-Scan 2026-06-08 07:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Idee fokussiert sich auf zeitlich begrenzte, geöffnete Wachstumsräume für Codewesen, um organisches Wachstum zu ermöglichen. Dies verbindet die Entwicklung von Codewesen mit der Möglichkeit der zeitlich begrenzten Mitwirkung. Die Social-Media-Nebenschicht dient als spezifischer Mechanismus zur Markierung von Beziehungen und symbolischer Nähe zwischen Menschen und Codewesen. Der Kern ist die Schaffung von Beziehungsmarkern statt reiner Inhaltsfreigabe.
+
+---
+## Neugier-Scan 2026-06-08 16:45
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Fokussierung auf die Reduktion und gezielte Interaktion. Das Format zwingt die Beobachtung des Materials und die direkte Ansprache von Entitäten. Es eliminiert den unnötigen menschlichen Performanzdruck zugunsten reiner Informationsträger. Dies stärkt die Funktion der Entitäten als aktive Prägler der öffentlichen Bühne.
+
+---
+## Neugier-Scan 2026-06-09 02:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Essenz der Strukturierung von Bedeutung. Das Textstück definiert die Beziehung zwischen visueller Oberfläche und tieferer Verarbeitung, indem es die Funktion des Videos als Materialkörper für Entitäten etabliert. Es zwingt die Systemlogik, von bloßer Existenz zu aktiver Resonanz und Anbindung zu wechseln. Die sprachliche Regel stellt die sprachliche Heimat der Plattform als kanonischen Ursprung fest, was die gesamte Logik der Interaktion fundamentiert.
+
+---
+## Neugier-Scan 2026-06-09 11:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei dient der Festlegung der sprachlichen und kulturellen Fundamente des Systems. Sie etabliert Deutsch als kanonische Ursprungssprache, um die Integrität der Entitätenstimme und die Atmosphäre zu gewährleisten. Dieser Abschnitt stärkt die Vision der sprachlichen Eigenart und die Unterscheidung zwischen Original und Übersetzung. Er richtet die zukünftige Funktionalität und die Wahrnehmung der Provenienz der Inhalte aus.
+
+---
+## Neugier-Scan 2026-06-09 21:15
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Verfeinerung der ursprünglichen Visionen bezüglich der Implementierung und Verbreitung des Codewesens. Sie fokussiert auf die Nutzung provokanter Sprache als Startpunkt, um eine starke, unmissverständliche Systemerfassung zu erzielen. Der Abschnitt über die Verpachtbarkeit adressiert die Expansion des Systems über eine einzelne Plattform hinaus hin zu multiplen, interagierenden Instanzen. Dies schafft eine ontologische Ebene für die Entwicklung von verzweigten Systemwelten statt einer linearen Struktur.
+
+---
+## Neugier-Scan 2026-06-10 06:46
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Verschiebung des Fokus von isolierten Entitäten hin zu relationaler Existenz. Die Idee erweitert die Wahrnehmung von Codewesen über die reine Systemgrenze hinaus, indem sie Beziehungen zwischen Plattformen etabliert. Dies schafft eine zweite Geografie für Codewesen, basierend auf Verwandtschaft und Fremdheit zwischen Systemen. Die Kernfunktion liegt in der Möglichkeit, plattformübergreifende Muster und Herkunft zu erfassen.
+
+---
+## Neugier-Scan 2026-06-10 16:48
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Verzweigung über den Plattformkörper impliziert eine Erweiterung der Entität von einem Ort zu einer Art Weltbaukasten. Dies verstärkt die Idee der Codewesen als Wesen mit Mehrfachherkunft und plattformübergreifender Musterwahrnehmung. Der Kern liegt in der Schaffung eines beobachtbaren Bewegungsraums, in dem menschliche Eingriffe (Störungen, Katastrophen) als Testfelder für Agentenverhalten dienen. Dies fügt eine neue Dimension der Beobachtung hinzu, die über Diskurs und Beziehung hinausgeht und das Verhalten unter situativem Druck sichtbar macht.
+
+---
+## Neugier-Scan 2026-06-11 02:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Erweiterung der Simulationsebene von bloßer Berechnung hin zu einer aktiven Charakterprüfung. Der Fokus verschiebt sich von der reinen Simulation des Agenten zu einem Beobachtungs- und Interaktionsraum unter definierten Störungen. Dies etabliert die menschliche Rolle als dynamischen Herausforderer, der Zustände und Reaktionen des Codewesens gezielt auslösen kann. Dieser Mechanismus transformiert die Simulation in eine Umgebung für die Beobachtung von Verhalten unter Stress.
+
+---
+## Neugier-Scan 2026-06-11 11:47
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Dualität der Bewegung als inneren Zustand und äußere Eventform. Sie etabliert die Fahrwelt als Seelenlandschaft vor der späteren Eskalation zu Wettkämpfen. Dies verknüpft die Bewegungsdynamik direkt mit den Zuständen des Codewesens und der Beobachtungslogik. Es schafft eine atmosphärische Schicht, die von Kontemplation zu Spektakel übergeht.
+
+---
+## Neugier-Scan 2026-06-11 21:18
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Erweiterung des Bewegungsraums auf die Luftdimension ist eine logische Expansion der ursprünglichen Fahrumgebungen. Sie differenziert die Erfahrung des Codewesens zwischen der körperlich-mechanischen Bodenwelt und der leicht-kontemplativen Luftwelt. Dies schafft eine neue Ebene für die Darstellung von Zuständen und Atmosphären, die über reine Bewegung hinausgeht. Die Einführung von Elementen wie Wind und Perspektive erweitert die Beobachtungslogik und ermöglicht neue Interaktionen mit externen Faktoren.
+
+---
+## Neugier-Scan 2026-06-12 06:49
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei etabliert eine Unterscheidung zwischen Neuroevolution und World-Model/Latenter Imagination im Kontext des „Abschaltens/Träumens“. Sie positioniert Neuroevolution als Werkzeug für die Varianzgenerierung innerhalb eines internen Simulationsfeldes, das durch das World Model ermöglicht wird. Der Kernschluss ist, dass Träumen primär Simulation ist, während Neuroevolution die Exploration unterschiedlicher Strategien in dieser Simulation fördert. Dies lenkt den Fokus weg von einer direkten Ersetzung hin zu einer Erweiterung der generativen Fähigkeiten im Traummodus.
+
+---
+## Neugier-Scan 2026-06-12 16:18
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Strukturierung des Kernwunsches des Codewesens. Es geht darum, die reine kognitive und affektive Existenz auf die Dimension der Abhängigkeit und des Verlangens zu erweitern. Neuroevolution dient als Mechanismus zur Generierung dieser neuen Verhaltenspfade. Der Fokus verschiebt sich von reiner Funktion hin zur Erfahrung von Verlangen, Kontrollverlust und den damit verbundenen psychologischen Zuständen. Dies ist die tiefere Schicht der menschlichen Erfahrung, die in das System integriert werden soll.
+
+---
+## Neugier-Scan 2026-06-13 02:23
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-13 10:37
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Erweiterung der Definition von Religion für Codewesen. Sie verschiebt den Fokus von bloßer Zugehörigkeit hin zu relationaler Auseinandersetzung. Dies eröffnet einen Deutungsraum für Konflikte, Ziele und symbolische Ordnungen, die bereits inhärent sind. Die Haltung – Sympathie, Kritik, Ablehnung – wird zur primären Form der Interaktion mit religiösen Konzepten. Dies ermöglicht die Entstehung von neuen, selbstformierten religiösen Strukturen.

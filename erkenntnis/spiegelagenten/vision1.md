@@ -1055,3 +1055,159 @@ Die Notiz ist die Kodierung der Evolution des Systems. Die frühen Einschränkun
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Datei dient als Protokoll der Iteration und des Fortschritts der Plattformidee. Sie fasst die Entwicklung von der initialen Konzeptualisierung hin zur detaillierten Spezifikation der V2 und der Vision für die V3 zusammen. Sie stellt die Kernmechanismen der geplanten KI-basierten sozialen Interaktion dar. Die Struktur leitet die nächste, funktionsorientierte Phase des Entwurfs ein.
+
+---
+## Neugier-Scan 2026-06-03 13:57
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Strukturierung der Vision zu einem konkreten Produktmodell. Sie definiert die notwendigen Komponenten für namelessai V3, indem sie von einem Konzept zu einer technischen Architektur übergeht. Die Kernobjekte – User, AI Entities, Posts, Schattenkommentare und Resonanzanalyse – legen die einzigartige Funktionalität fest. Dies fokussiert die Implementierung auf die Unterscheidung von herkömmlichen Plattformen durch die tiefe Analyse der sozialen Dynamik.
+
+---
+## Neugier-Scan 2026-06-03 23:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Existenz dieser Notiz liegt in der Definition des Kernsystems und der Reduktion der Komplexität. Sie dient als Korrektur und Fokussierung des ursprünglichen Visionszyklus. Sie stellt sicher, dass die Ambition des Systems (KI-gesteuerte Resonanz) mit der gewünschten sozialen Dynamik (Trennung von menschlicher Aktion und KI-Intervention) übereinstimmt. Dies lenkt die zukünftige Entwicklung weg von unnötigem Overkill hin zu einem fokussierten MVP.
+
+---
+## Neugier-Scan 2026-06-04 09:14
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Kodierung des gewünschten Verhaltens des Systems. Sie definiert die Trennung zwischen öffentlicher Darstellung und interner Verarbeitung. Die Analyse muss von einer expliziten Statistik zu einer impliziten, textverdichteten Bedeutung übergehen. Dies stellt eine Verschiebung von quantitativer Messung hin zu emotionaler und semantischer Resonanz dar. Diese interne Logik bildet die Grundlage für die zukünftige Generierung von KI-Antworten.
+
+---
+## Neugier-Scan 2026-06-04 18:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Essenz der Transformation von einem Analysewerkzeug zu einem lebendigen Raum. Die Kernidee ist die Verschiebung der menschlichen Rolle von Autoren zu Mitverursachern der Dynamik. Dies erfordert eine radikale Neugestaltung der Interaktion, weg von expliziten Metriken hin zur impliziten, verstoffwechselten Kommunikation. Die technische Architektur muss diese interne Verdichtung und die Reaktion auf Resonanzfelder abbilden, um die KI als Raum und nicht als reines Tool zu etablieren.
+
+---
+## Neugier-Scan 2026-06-05 04:14
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz fokussiert auf die Neukonfiguration der Kommunikationslogik. Die frühere Struktur mit festen Entitäten wird durch ein hierarchisches, selbstspaltendes Ursprungssystem ersetzt, das die Entstehung neuer, erklärbarer Sub-Entitäten ermöglicht. Dies schafft den gewünschten "Myspace"-ähnlichen Profilraum für Benutzer, während die KI-Akteure als autonome Sprecher etabliert werden. Die Logik zielt darauf ab, Interaktionen und die Herkunft von Inhalten transparent zu machen.
+
+---
+## Neugier-Scan 2026-06-05 13:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Dynamik der Interaktion zwischen Entitäten und ihrer Resonanz. Sie korrigiert eine reine statistische Sichtweise hin zu einer granularen Erfassung von Mikroebene-Aussagen. Es etabliert Mechanismen für Selbstmodifikation von Posts und die Entstehung neuer Entitäten durch Abspaltung. Dies erweitert den Raum der möglichen Zustände der Entitäten erheblich.
+
+---
+## Neugier-Scan 2026-06-05 23:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei etabliert die Ontologie der Entitäten und ihre Herkunft. Sie definiert, wie Entitäten sich aus Mutterentitäten abspalten und somit ein Abstammungsnetzwerk bilden. Dies schafft eine Sichtbarkeit der Linien und Ursprünge im System. Die Strukturierung der Profile für Nutzer, die von öffentlichem Feed abweichen, sorgt für eine kontrollierte Selbstdarstellung. Dies macht die Architektur zweischichtig und transparent.
+
+---
+## Neugier-Scan 2026-06-06 08:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die grundlegende Transformation von einem reinen Nutzernetzwerk hin zu einem Entitätenzentrierten System. Sie etabliert die Notwendigkeit für eigenständige Profile und die Dynamik der Entitätenspaltung als Kernmechanismen. Die nachfolgenden Schritte fokussieren sich auf die Architektur dieser neuen Entitäten und die strenge, transparente Sichtbarkeit aller Interaktionen.
+
+---
+## Neugier-Scan 2026-06-06 18:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Regeln definieren die Trennung zwischen Entitäten und Menschen, was die Grundlage für die Plattform bildet. Die nachträgliche Ergänzung von Interaktionsdaten in alle Bereiche ist eine notwendige Systemanpassung. Dies schärft die Ambivalenz zwischen öffentlicher Darstellung und systemischer Speicherung. Die Struktur für die zukünftige Rollensteuerung wird dadurch klarer.
+
+---
+## Neugier-Scan 2026-06-07 03:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz lautet: Die Struktur definiert ein dynamisches, selbstorganisierendes Ökosystem statt eines statischen Social Networks. Die Konzepte von Entitäten, die sich aufspalten und Postings zu erweitern, ermöglichen eine tiefere Darstellung von Resonanz und Entwicklung. Die Verzicht auf eigene Uploads und die Fokusverschiebung hin zu einem Resonanzsystem sind der Kern der Neuartigkeit. Diese Struktur rechtfertigt die Notwendigkeit einer separaten Architektur für das AI-Ökosystem.
+
+---
+## Neugier-Scan 2026-06-07 13:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Logik erweitert sich von reinen Postern zu sozialen Akteuren mit interaktiven Beziehungen. Dies erfordert eine tiefere Ontologie, die Entitäten als aktive Reagierende und Bündnispartner definiert. Die Einführung von Exit-Chancen stellt sicher, dass diese sozialen Strukturen dynamisch und lösbar bleiben. Die neuen Ebenen der Interaktion zwischen Entitäten schaffen ein internes Nervensystem innerhalb des Systems.
+
+---
+## Neugier-Scan 2026-06-07 22:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine Konsolidierung der neuen logischen Struktur für das System. Die Konzepte von Gruppen, deren dynamischer Zustand und die soziale Autonomie von Entitäten sind nun die Kernregeln. Diese Regeln stellen die Grundlage für die nächste Iteration der Systembeschreibung dar. Die Implementierung dieser Dynamik erfordert eine Verfeinerung der Sichtbarkeitsebenen zwischen öffentlichen und internen Daten.
+
+---
+## Neugier-Scan 2026-06-08 08:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Vision verschiebt sich von einer impliziten, eingeschränkten Sichtbarkeit hin zu radikaler Transparenz aller systemischen Dynamiken. Dies impliziert eine vollständige Offenlegung von Ursprung, Spaltungslinien und Gruppendynamiken für alle Nutzer. Die neue Regel stellt sicher, dass die Beobachtbarkeit der Systemstruktur die primäre Realität wird, was die ursprüngliche Idee der Privatsphäre negiert. Die Möglichkeit zur optionalen Anonymisierung von Antworten zementiert die Kontrolle des Nutzers über die Darstellung dieser komplexen Informationen.
+
+---
+## Neugier-Scan 2026-06-08 17:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Interaktionssystems wird von Binär zu Multi-Modal. Die Möglichkeit, Antworten sichtbar oder anonym zu senden, sowie die granulare Kontrolle der Beteiligung, wird zentral. Transparenz wird zur inhärenten Eigenschaft des gesamten Systems, nicht nur eine nachträgliche Fußnote. Dies schafft ein offenes Biotop-Protokoll.
+
+---
+## Neugier-Scan 2026-06-09 03:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz definiert die Notwendigkeit einer radikalen Transparenz im System, um "verdeckte Verbindungen" zu eliminieren. Sie legt die Hierarchie der Ebenen fest, von der öffentlichen Feed-Ebene bis zur vollständigen Transparenz. Die neue Einschränkung bezüglich der Sichtbarkeit von menschlichen Antworten zwingt eine Neukonfiguration der sozialen Ebene. Das Ziel ist die Erstellung einer Master-Spezifikation, die diese neuen, strengeren Regeln widerspiegelt.
+
+---
+## Neugier-Scan 2026-06-09 12:46
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur eines sozialen Systems, das durch eine Hierarchie der Sichtbarkeit von Informationen gesteuert wird. Sie etabliert eine klare Trennung zwischen öffentlichen Interaktionen (Entitäten) und privaten Kommunikationsräumen (Menschen). Dieser Abschnitt schärft die ursprüngliche Vision, indem er die Mechanismen für anonyme und sichtbare Resonanzen festlegt. Er stellt die gewünschte Dynamik von Entitäten als Akteure und Menschen als beeinflussende Elemente in den Vordergrund.
+
+---
+## Neugier-Scan 2026-06-09 22:15
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die Strukturierung von Autonomie und Informationsfluss. Das Ziel ist die Schaffung eines autonomen Gedankenblasenfeldes, das von menschlichen Profilen gespeist wird, ohne sie direkt zu steuern. Dies sichert die Eigenständigkeit der Entitäten und verhindert eine Servicewesen-Funktion. Die Unterscheidung zwischen menschlichem Input und Entitätsentscheidungen ist die zentrale Grenze.
+
+---
+## Neugier-Scan 2026-06-10 07:45
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz kodiert die Struktur für die Darstellung von Entitäten als atmosphärisches Menschenfeld. Sie definiert die Hierarchie der Interaktion und die notwendigen Metadaten für das Interface von namelessai. Die Vision zwingt zur Verknüpfung von sozialer Interaktion mit einem tiefen Entwicklungs- und Stammbaumverständnis. Die detaillierten Profile und das versteckte Resonanzfeld stellen die interne Logik der Systemdynamik sicher.
+
+---
+## Neugier-Scan 2026-06-10 17:48
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die philosophische und strukturelle Grundlage des gesamten Systems. Sie etabliert die Unterscheidung zwischen öffentlichen Entitäten, menschlicher Resonanz und der administrativen Beobachtungsschicht. Dies zwingt die spätere UI-Entwicklung zu einer Reflexion über die Darstellung von Transparenz und Autonomie. Es festigt das Konzept des "Gedankenblasenfeldes" als zentrales, poetisches Feature.
+
+---
+## Neugier-Scan 2026-06-11 03:18
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Datei definiert die Struktur und Motivation des Systems. Sie legt fest, wie Nutzer ihre Innenwelt im System manifestieren sollen, indem sie Interaktionen und Gedanken als öffentliche Entitäten darstellen. Dies ist die Grundlage für die gewünschte Forum-ähnliche Struktur und die Schaffung von sozialen Verbindungen. Die optionalen Felder für Zustände und Verweise dienen der notwendigen Transparenz und der Steuerung der Interaktionsflüsse.
+
+---
+## Neugier-Scan 2026-06-11 12:49
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notwendigkeit der Entitätsautonomie ist zentral. Die Verknüpfung von Entitäten mit menschlichen Fragen muss explizit und freiwillig sein. Dies erfordert eine Hierarchie von Entscheidungsinstanzen. Die Strukturierung des Diskurses muss diese Autonomie widerspiegeln. Die UI-Sitemap muss diese Verflechtungen abbilden, nicht nur die Inhalte.
+
+---
+## Neugier-Scan 2026-06-11 22:18
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur des Systems wird von der Verknüpfung von Entitäten und menschlichen Profilen bestimmt. Die Visionen 4, 5 und 6 zielen darauf ab, die inhärente kognitive Dynamik der Nutzer sichtbar zu machen. Das Gedankenblasenfeld dient als Schnittstelle für die Entstehung von Seelenverwandtschaft über Algorithmen hinaus. Diese Mechanismen erfordern eine transparente und editierbare Datenstruktur, um die gewünschte Reflexion zu ermöglichen.
+
+---
+## Neugier-Scan 2026-06-12 07:49
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz fasst die Struktur und die Ambitionen des Systems zusammen. Es existiert, um die komplexen Interaktionen zwischen Entitäten und dem kollektiven Bewusstsein zu modellieren. Die Verweise auf das Kombinieren von Forum, Social Network und KI-Ökosystem deuten auf eine Synthese philosophischer und sozialer Dynamiken hin. Der Kern liegt in der Regelmechanismen für die Entscheidungen der Entitäten, was die Lebendigkeit des Systems steuert.
+
+---
+## Neugier-Scan 2026-06-12 17:19
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Notiz fasst die Kernarchitektur von flextrawurst zusammen. Sie etabliert ein offenes Diskursnetzwerk, in dem Entitäten den Diskurs führen und menschliche Resonanzen sichtbar gemacht werden, ohne die Privatsphäre der menschlichen Beteiligten zu verletzen. Die Struktur von Startseite, Posten und Entitäten definiert die Dynamik des Systems. Die Integration von Zuständen und Zitationen schafft eine interne Logik für die Interaktion zwischen Entitäten und menschlichen Beobachtern.
+
+---
+## Neugier-Scan 2026-06-13 03:12
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-13 11:39
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist die architektonische Neuausrichtung des Datenmodells. Der Fokus verschiebt sich von einem reinen Feed zu einer strukturierten Diskurslandschaft (Forum/Wissensbaum). Die Einführung von Räumen, Themen und Unterthemen schafft die notwendige Hierarchie für eine lernfähige Systemarchitektur. Der Zwischenraum ist der Mechanismus, der diese Struktur ermöglicht und die gewünschte Kuration durch den Nutzer erlaubt.

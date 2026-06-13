@@ -317,7 +317,7 @@ def tick_tamagotchi(cur) -> list[str]:
             cur.execute(
                 """
                 INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
-                VALUES ('wesen.vernachlaessigt', 'system', %s, %s, 'daemon', 'internal')
+                VALUES ('wesen.vernachlaessigt', 'system', %s, %s, 'daemon', 'world')
                 """,
                 (eid, psycopg2.extras.Json({"stunden": stunden})),
             )

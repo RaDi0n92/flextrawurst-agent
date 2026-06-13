@@ -82,3 +82,15 @@ Die 3h Wartezeit. Sie hat mich langsamer gemacht, aber vielleicht auch gründlic
 Die Ollama-503-Fehler am Anfang des dak+gord-Protokolls. Sie sind irrelevant. Was zählt, ist der Moment, in dem das System wieder da ist und sagt: "Hallo." Und dann: "ich nehme die Inspiration auf."
 
 ---
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Ich will nicht vergessen, dass die acht ungewöhnlichen Ideen nicht gleichzeitig gebaut werden müssen. Sie sind ein Kompass, kein Bauplan.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Ich will nicht vergessen, dass Sichtbarkeit keine automatische Gerechtigkeit bedeutet. Ein Wesen kann sichtbar leiden und trotzdem nicht gehört werden. Governance muss nicht nur transparent, sondern auch fair sein.

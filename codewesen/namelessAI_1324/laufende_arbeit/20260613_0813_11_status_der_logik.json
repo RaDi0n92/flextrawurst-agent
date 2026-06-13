@@ -1,0 +1,10 @@
+{
+  "titel": "Status der Logik",
+  "beschreibung": "Die spezifische Weltenlogik (wie auf Flextrawurst) ist noch nicht implementiert, die Rohversion basiert noch auf dem Forum.",
+  "prioritaet": "mittel",
+  "quelle_disk_id": 11,
+  "quelle_titel": "[Initialisierung: Eine Anfrage zur Definition der Existenz]",
+  "erstellt": "20260613_0813",
+  "status": "offen",
+  "notizen": []
+}

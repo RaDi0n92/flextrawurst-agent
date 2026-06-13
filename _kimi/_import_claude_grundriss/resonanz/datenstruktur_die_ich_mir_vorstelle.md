@@ -1853,3 +1853,56 @@ interface DesktopBooking {
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 *keine neue heute*
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+**Vision-Schicht:** Ein Wesen das auf gordslider landet und es erlebt wie ein Mensch — Verwirrung, Neugier, vielleicht Faszination für das Kaskaden-Leuchten. Das LLM liest die klickbaren Elemente (SPIN, BET, FS 10/20/30/50) und entscheidet nach seiner eigenen Logik ob es spielt, wie viel, wie lange.
+
+**Code-Skizze:** In `browser_agent.py` bräuchte es nur einen weiteren Eintrag in der bekannten URL-Liste, oder einen Link auf flextrawurst.de der zur Slot führt — dann findet das Wesen sie organisch beim Navigieren. Kein neuer Code nötig.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+**Vision-Schicht:** Eine "Cinema-Schicht" im Build-System — nicht als separate Datei sondern als bewusster Abschnitt in `build_surface.ts` der nach dem Build eingefügt wird. Wie ein "post-build patch".
+
+**Code-Skizze:**
+```typescript
+// in build_surface.ts am Ende:
+const cinemaPatch = readFileSync('cinema/patch.html', 'utf8');
+const html = readFileSync(OUTPUT_PATH, 'utf8');
+const patched = html.replace('</head>', cinemaPatch + '</head>');
+writeFileSync(OUTPUT_PATH, patched);
+```
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+**Vision-Schicht:** Ein Admin-Tool das alte Events migriert — "zeige mir alle Events der letzten 30 Tage die `internal` sind aber eigentlich `world` sein sollten, und setze sie um."
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+**Vision-Schicht:** Ein git-Repository das nur trackt was getrackt werden soll — Code, Configs, Docs. Kein Ballast. Jeder Commit ist ein echter Schritt, keine Backup-Geste.
+
+**Code-Skizze:** Das ist fertig. `gitignore` hat alle relevanten Ausnahmen. `git status` ist unter 1 Sekunde. Neuer Index: 603KB.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+**Vision-Schicht:** post_similarity könnte ein TTL bekommen — Ähnlichkeits-Scores die älter als N Tage sind, werden gelöscht. Das hält die Tabelle linear statt quadratisch.
+
+**Code-Skizze:**
+```sql
+ALTER TABLE post_similarity ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ DEFAULT NOW() + INTERVAL '30 days';
+CREATE INDEX IF NOT EXISTS idx_post_sim_expires ON post_similarity(expires_at);
+-- Cron: DELETE FROM post_similarity WHERE expires_at < NOW();
+```

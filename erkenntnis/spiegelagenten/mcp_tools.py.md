@@ -16,3 +16,9 @@ Dieses Skript existiert, um die Schnittstelle zwischen dem Agentenkern und exter
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/tools/mcp_tools.py`
 
 Diese Datei definiert die Logik zur Ausführung von MCP-Tools. Sie stellt eine Schnittstelle bereit, um externe Werkzeuge über `run_mcp_tool` aufzurufen und die Ergebnisse in ein standardisiertes `ToolResult`-Format zu verpacken. Der Name und Inhalt passen, da es sich um eine zentrale Registrierungs- und Handhabungsfunktion für diese spezifischen Tools handelt. Es ist ein Mechanismus zur Risikokontrolle und Protokollierung von externen Operationen.
+
+---
+## Neugier-Scan 2026-06-08 20:45
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/tools/mcp_tools.py`
+
+Diese Datei definiert die Logik zur Ausführung und Registrierung von MCP-Tools. Sie stellt eine Schnittstelle zwischen der Tool-Definition und der tatsächlichen Ausführung über `run_mcp_tool` her. Der Zweck ist die standardisierte Handhabung von Remote-Tool-Aufrufen mit Risikobewertung. Die Struktur deutet auf ein System hin, das externe Funktionen abstrahiert und kontrolliert.

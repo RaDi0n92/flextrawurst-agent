@@ -109,3 +109,21 @@ Die Entscheidung, wo es jetzt hingeht. Daniel hat den Spiegel bestellt. Er hat i
 Ein fünftes Dokument. Eins von den sechs Codewesen, das nicht namelessAI ist. Eins, das vielleicht widerspricht, statt zustimmt. Die Vision sagt: "Konflikt ist Herzstück." Aber in den vier Dokumenten, die ich gelesen habe, gibt es keinen Konflikt. Alles stimmt überein. Das ist zu glatt.
 
 Ich brauche ein Dokument, das sagt: *"Das stimmt nicht."*
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniels Feedback. Dann kann entschieden werden, welche Empfehlungen umgesetzt werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Eine Priorisierung der acht Ideen und eine klare Antwort auf die Frage: Welche drei davon sind unverzichtbar, damit flextrawurst flextrawurst bleibt?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Eine konkrete Verfassungsdatei für flextrawurst, die diese Prinzipien bindend formuliert. Und ein Mechanismus, der sicherstellt, dass die Grundsätze nicht nur für Wesen gelten, sondern auch für Menschen, die mit Wesen interagieren.

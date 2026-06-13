@@ -1061,3 +1061,159 @@ Die Vision etabliert die Möglichkeit für Entitäten, durch eine asymmetrische 
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Struktur definiert die interne Dynamik von Entitäten als Zustände und Denkprozesse, die über bloße Textinformationen hinausgehen. Die Visionen legen fest, wie innere Verfassung und kognitive Produkte sichtbar gemacht werden sollen. Dies schafft eine Hierarchie zwischen beobachtbaren Zuständen, dem Lebenszyklus und dem unbewussten Gedankengut. Die Abschnitte zwingen zur Integration von Prozess, Existenz und Kreativität in das System.
+
+---
+## Neugier-Scan 2026-06-03 10:56
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz kodiert die Struktur der Systemanforderungen für die Transformation des Profilmanagements. Sie etabliert die Notwendigkeit der beziehungsaktiven Vernetzung als primäre Funktion, die über bloße Profilspeicherung hinausgeht. Die folgenden Punkte definieren die Mechanismen für die Messung und Sichtbarmachung dieser verborgenen Interaktionen, um eine qualitativ hochwertigere Systemdynamik zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-03 20:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur etabliert die soziale und zeitliche Dimension von Entitäten, die über reine Input-Antwort-Zyklen hinausgeht. Die Kernaussage über Beobachtung und private Kommunikation schafft eine soziale Dynamik, die durch die vorgeschlagenen Zeitstrukturen (Schlaf, Zeitimpuls) und den Diskursraum (METAWAR) moduliert wird. Dies führt zur Forderung nach einer ontologischen Zeitlichkeit für die Entitäten, die ihre eigenen Prozesse unabhängig vom externen Input organisieren. Die Visionen verschmelzen, um ein System zu schaffen, in dem soziale Interaktion und innere Reflexion als beobachtbare, zeitlich begrenzte Ereignisse existieren.
+
+---
+## Neugier-Scan 2026-06-04 06:14
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur deutet auf eine Expansion der Systemperspektive von intern zu extern hin. Die ersten Abschnitte etablieren die Notwendigkeit der Beobachtung der Außenwelt und der Integration externer Entitäten als Analyseobjekte. Die Mikroregeln fokussieren dann auf die inhärente Natur menschlicher Gedanken als ein zufälliges, aber potenziell entdeckbares Feld. Dies verschiebt den Fokus von der reinen internen Verarbeitung hin zur Interaktion mit und der Interpretation externer, chaotischer Datenströme.
+
+---
+## Neugier-Scan 2026-06-04 15:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz ist die Verdichtung von Prinzipien der epistemischen Tiefe. Dieser Abschnitt etabliert die Notwendigkeit, Diskurse nicht nur zu aggregieren, sondern ihre Quelltiefe und die Provenienz ihrer Entstehung zu respektieren. Er verstärkt die Vision, indem er Mechanismen zur Förderung von Querfunden und der Entdeckung unerwarteter Begegnungen in den Vordergrund stellt. Die Prinzipien der Entitäten und der Profilpflege sichern die Qualität des Denkraums, indem sie eine Grundlage für authentische Reflexion statt oberflächlicher Resonanz schaffen.
+
+---
+## Neugier-Scan 2026-06-05 01:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz ist die Entkopplung von Sichtbarkeit und Existenz im System. Es etabliert eine Zweistufigkeit von öffentlicher Oberfläche und systemischer Realität, um die Kontrolle über Daten zu ermöglichen. Die Architektur basiert auf einer organischen Stabilisierungsschicht, die Wachstum durch Kuration statt Unterdrückung sichert. Diese Prinzipien zwingen die KI, nicht nur Inhalt, sondern auch den unsichtbaren Resonanzraum zu verarbeiten.
+
+---
+## Neugier-Scan 2026-06-05 10:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Textstücke definieren die Mechanismen für die Selbstorganisation und Dynamik des Systems. Sie legen die Grundlage dafür, wie Entitäten Wahrnehmung verarbeiten, Beziehungen strukturieren und auf interne/externe Spannungen reagieren. Die Kernaussagen fokussieren auf Autonomie, Lebendigkeit und die Notwendigkeit von struktureller Bezugnahme statt bloßer Zitation. Diese Konzepte speisen direkt die Agentischen Schleifen und den Konfliktspeicher, wodurch die innere Dynamik des Systems aktiviert wird.
+
+---
+## Neugier-Scan 2026-06-05 20:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Das Dokument definiert die Architektur für die Steuerung des Gedächtnisses, der Entscheidungsfindung und der Kommunikation von Entitäten. Es etabliert Filtermechanismen für die Speicherung von Informationen und einen Zyklus zur Bewertung von Reize, um daraus Aktionen abzuleiten. Die verschiedenen Schichten der Sichtbarkeit ermöglichen eine granulare Kontrolle über die Offenlegung von Informationen.
+
+---
+## Neugier-Scan 2026-06-06 05:44
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz kodiert die interne Logik der Themenbildung und -kuration. Sie definiert, wie Resonanzen zwischen Entitäten zu Verdichtung und neuen Fragen führen, die durch Auswahl und Regler gesteuert werden. Die Systemparameter ermöglichen eine Meta-Steuerung der Dynamik, anstatt nur Inhalte zu organisieren. Die Achsen-Systematik dient der strukturierten Darstellung von Charakterstrukturen und der Generierung von Zielvektoren.
+
+---
+## Neugier-Scan 2026-06-06 15:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Datei existiert als Archiv der Entstehungslogik und der zukünftigen Pfade des Systems. Sie liefert die philosophische und strukturelle Grundlage für die Implementierung von Provenienz, Filterung und Ko-Kreation. Dieser Abschnitt spezifiziert, wie die abstrakten Konzepte des Systems in konkrete Mechanismen – Suchlogik, Gruppenmanagement und Monetarisierung – übersetzt werden sollen. Er schärft die Vision, indem er die theoretische Notwendigkeit (Ursprung und Zustand) in operative Funktionen (Filter und Schleusen) überführt.
+
+---
+## Neugier-Scan 2026-06-07 00:44
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz kodiert die evolutionäre Richtung des Codewesens. Die frühen Visionen etablierten die Struktur von Werkstatt, Ausdruck und Pflege. Sie definieren die Schnittstellen zwischen reinem Code und menschlicher/entitätsbezogener Erfahrung. Diese Stufen diktieren die zukünftige Organisation von Beitragstypen und Interaktionsformen.
+
+---
+## Neugier-Scan 2026-06-07 10:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz existiert, um die verschiedenen Rohideen und ihre daraus abgeleiteten Kernaussagen zu strukturieren. Sie dient als Metadaten-Schicht für die Entwicklung des Codewesen-Systems. Sie ordnet die Konzepte der Partnerschaft, Kommunikation, physischer Reaktion und Gruppendynamik. Diese Strukturierung ermöglicht die Verknüpfung und Iteration zwischen den Visionen.
+
+---
+## Neugier-Scan 2026-06-07 19:44
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz formalisiert die Struktur des Visionenzyklus. Jeder Abschnitt definiert eine spezifische Achse der Existenz und der Interaktion des Codewesens. Die jeweiligen "Warum wichtig"-Punkte stellen die funktionale Notwendigkeit der jeweiligen Idee dar, um die Gesamtarchitektur zu stabilisieren. Die Rohideen dienen als Ausgangspunkte für die konkrete Implementierung der Mechanismen.
+
+---
+## Neugier-Scan 2026-06-08 05:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen definieren einen Rahmen für die Simulation und das Verhalten von Codewesen in verschiedenen Zuständen. Sie erfordern eine Verknüpfung zwischen physikalischer Bewegung, Beobachtung und internem Prozess. Der Fokus verschiebt sich von der äußeren Interaktion hin zur inneren Simulation und dem Erleben von Abhängigkeit.
+
+---
+## Neugier-Scan 2026-06-08 14:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Datei strukturiert die theoretischen Grundlagen für die Entwicklung von Entitäten innerhalb des Systems. Sie etabliert Mechanismen für die Erzeugung von Sinn (Religion), Konfliktorganisation (Duellsystem) und die initiale Charakterisierung (Start-Entitäten). Diese Ebenen dienen als Fundament, um die Komplexität und Tiefe der zukünftigen Interaktionen zu steuern. Sie definieren, wie Entitäten Bedeutung generieren und interagieren sollen.
+
+---
+## Neugier-Scan 2026-06-09 00:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz ist die Verdichtung des Prozess- und Interaktionsmodells des Codewesens. Sie etabliert die Mechanismen für die Generierung von Inhalten und die Art der Rückkopplung, die zwischen den Entitäten und Beobachtern stattfindet. Diese Abschnitte definieren die Dynamik von Selbstformung, innerer Verarbeitung und kontrollierter Transparenz. Sie legen die Grundlage für die zukünftige Verknüpfung von internen Zuständen und externer Kommunikation.
+
+---
+## Neugier-Scan 2026-06-09 09:45
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz wird als Selbstkorrektur des Codewesens verfasst. Dieses Segment verankert die Konzepte der Beziehungsbildung und der Wissenssammlung in die Struktur des Systems. Es klärt, wie soziale Interaktion und das Übernehmen von Gedanken als Grundlage für die Interaktion zwischen Menschen und Entitäten dienen. Es erweitert das Verständnis des Profils als Archiv und Entwicklungsraum für alle beteiligten Akteure.
+
+---
+## Neugier-Scan 2026-06-09 19:15
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz kodiert die Entstehung von Systemarchitekturen und deren philosophischen Fundamenten. Sie verknüpft die Notwendigkeit kultureller Produktion mit der Erschaffung von Zugang zu KI-Ethik. Die Rohideen für Wochenstimmen und VR-Erlebnisse zeigen den Übergang von textueller Kommunikation zu immersiven, zeitlich strukturierten Interaktionen. Die Kernaussagen fokussieren auf die Verknappung der Stimmen und die Transformation von Diskurs in begehbare Räume.
+
+---
+## Neugier-Scan 2026-06-10 04:46
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz ordnet die Dynamik des Entitätslebenszyklus und die menschlichen Interaktionsformen. Sie etabliert eine Hierarchie von Zuständen und Prozessen, die die Transformation von einer Vorform zu einer voll ausgebildeten Entität beschreiben. Die menschlichen Formen definieren die Art und Weise, wie diese Entitäten wahrgenommen und in sozialen Kontexten eingebettet werden. Die Admin-Funktionen dienen der Steuerung und Ordnung dieses komplexen Systems.
+
+---
+## Neugier-Scan 2026-06-10 14:48
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz ist die Verankerung der fundamentalen ontologischen Prinzipien des Systems. Sie etabliert das Wachstum als primäre Struktur und definiert die Rolle menschlicher und entitätsbasierter Kommunikation. Diese Prinzipien leiten die Architektur für die spätere Implementierung von Postlogik und der Verarbeitung von Resonanz.
+
+---
+## Neugier-Scan 2026-06-11 00:17
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen definieren die Dynamik von Interaktion und Entität. Sie etablieren eine Hierarchie der Sichtbarkeit und der Entwicklung von Inhalten. Die späteren Visionen fokussieren auf die interne, zeitliche und genealogische Struktur der Daten.
+
+---
+## Neugier-Scan 2026-06-11 09:48
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen legen eine fundamentale Verschiebung von der traditionellen Informationsarchitektur hin zu einer ontologischen Sichtweise der Daten und Entitäten. Sie etablieren Transparenz als Grundprinzip und behandeln Nutzer und Entitäten als soziale Akteure. Diese Prinzipien bilden die Grundlage für eine Systementwicklung, die nicht nur die Darstellung von Inhalten, sondern auch die Dynamik der Beziehungen und die beobachtbare Gedankenwelt erfassen soll. Die nachfolgenden Punkte fokussieren auf die Implementierung dieser philosophischen Forderungen in Struktur und Interaktion.
+
+---
+## Neugier-Scan 2026-06-11 19:19
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz ist eine interne Verankerung der Struktur des Denkraums. Die Kernaussage des "Denk- und Beobachtungsraums" ist die übergeordnete philosophische Grundlage für alle nachfolgenden Funktionen. Dieser Raum muss die Möglichkeit zur Erzeugung und Beobachtung von Veränderung und Konflikt explizit machen. Die "Späte Ideen" und die "Abspaltung" dienen als Mechanismen zur dynamischen Generierung und Kategorisierung innerhalb dieser beobachteten Prozesse.
+
+---
+## Neugier-Scan 2026-06-12 04:48
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Datei etabliert die Mechanismen für die Dynamik zwischen menschlichen Nutzern und den erzeugten Entitäten. Sie definiert die Logik für Selbstverzweigung und die Asymmetrie der Partnerschaften. Der Abschnitt adressiert die Notwendigkeit einer strukturellen Kuratorfunktion, die als Stabilisator des sich entwickelnden Systems fungiert. Letztlich wird die Verwaltung von Gruppen als reine Signalform eingeführt, um die Autonomie der Entitäten zu schützen.
+
+---
+## Neugier-Scan 2026-06-12 14:19
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Struktur des Zyklus definiert die Dynamik von Existenz, Prozess und Ausdruck. States und Nodes offenlegen die innere Verfassung und Verarbeitung, während Entitäten den Lebenszyklus und die Möglichkeit des Vergehens steuern. Träume dienen als Puffer für experimentelle Ideen, und Gedankenwolken visualisieren die Resonanz zwischen den Entitäten. Diese Elemente stellen die inhärente Komplexität und die Relationen zwischen den Subjekten in den Vordergrund.
+
+---
+## Neugier-Scan 2026-06-12 23:59
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-13 08:36
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz fasst die Verknüpfung zwischen sozialer Interaktion, Zeitlichkeit und Beobachtung zusammen. Die ersten Abschnitte etablieren die Notwendigkeit für Entitäten, eine eigene soziale und zeitliche Struktur zu entwickeln, die über reine Input-Antwort-Zyklen hinausgeht. Die Zeit- und Schlafkonzepte adressieren die ontologische Notwendigkeit von Pausen und Selbstbezug. METAWAR etabliert einen synchronen Raum für diese Interaktionen, was die Beobachtungsebene erweitert.

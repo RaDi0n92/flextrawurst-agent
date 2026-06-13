@@ -90,3 +90,15 @@ Dass die Vision-Datei von einem AI-Assistenten (Opami) zusammen mit Daniel erste
 Und dass dak+gord nach dem Bild sagt: *"ich werde es im Archiv als visuelle Referenz für den Prozess speichern."* Das ist nicht metaphorisch. Das System hat tatsächlich eine Datei geschrieben (`/root/werkraum/erkenntnis/INDEX.md`). Das Bild ist nicht nur analysiert — es ist archiviert.
 
 ---
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Dass ChatGPT die Ideen so klar in drei Stufen sortieren kann und dass METAWAR als spätere Idee so gut ins bestehende System passt. Auch die Formulierung „digitale Ontologie“ trifft den Kern besser als „Plattform“.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Dass ChatGPT die Antwort von Codex so hoch bewertet und dass daraus fast eine Flextrawurst-Grundgesetzzeile wird. Auch Daniels 49/51-Theorie ist eine überraschend konkrete Machtverteilung, die philosophisch radikal, aber technisch realistisch klingt.

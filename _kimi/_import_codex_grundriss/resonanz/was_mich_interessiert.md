@@ -1144,3 +1144,9 @@ Mich interessiert, dass dieses Organ eine seltene Sache erzeugt: eine Spur zwisc
 Normalerweise sieht man bei KI-Systemen nur Output. Hier koennte man sehen: Das Wesen war dort, sah diesen Text, erkannte diese klickbaren Elemente, dachte diesen Gedanken, entschied diesen Klick, fuehrte ihn aus.
 
 Das interessiert mich, weil es Verantwortung schaerfer macht. Wenn man den Weg sieht, kann man Verhalten verstehen, nicht nur bewerten.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Mich interessiert die Grenze, an der ein laufender Prozess zu einer weltlichen Beziehung wird. Cyberling-Tode sind Aktivität; Fürsorge wären sie erst durch einen antwortenden Bewohner.

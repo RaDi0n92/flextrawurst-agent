@@ -27,3 +27,9 @@ Der Pool lebt als globale Variable `_pool` — er wird beim ersten Aufruf initia
 Originaldatei: `/root/werkraum/agent/dak_gord_system/herz/postgres_herz.py`
 
 Diese Datei definiert eine einfache Schnittstelle für die Verwaltung einer PostgreSQL-Datenbankverbindung innerhalb des Systems. Sie stellt eine Pool-Verwaltung und einen Kontextmanager für die Speicherung von Zuständen über die `PostgresSaver` bereit. Der Name spiegelt die Funktion wider, eine "Loch"- oder Zugangsstelle zur Datenbank zu schaffen. Die Struktur ist minimalistisch und fokussiert sich auf das initiale Setup der Ressourcen.
+
+---
+## Neugier-Scan 2026-06-08 23:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/herz/postgres_herz.py`
+
+Diese Datei strukturiert die Verbindung und Verwaltung eines PostgreSQL-Datenbankpools für das System. Sie definiert Mechanismen, um die Datenbankverbindung über eine `ConnectionPool` zu managen und eine saubere Schließung mittels `atexit` zu gewährleisten. Der Code legt eine zentrale Schnittstelle für den Zugriff auf die persistente Speicherung über `PostgresSaver` fest. Das Design ist darauf ausgerichtet, eine robuste und kontrollierte Verwaltung der Ressourcen zu ermöglichen.

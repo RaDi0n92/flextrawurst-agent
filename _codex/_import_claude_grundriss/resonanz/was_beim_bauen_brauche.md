@@ -578,3 +578,33 @@ Nächste Session brauche ich:
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Nächste Session: Context-Start wie immer (Notizen lesen, Delta, Brief). Dann Daniels nächste Aufgabe abwarten.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Backup-Commit vor jeder Änderung. Immer. Auch in zweiten Terminal-Sessions.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Wenn ich nächstes Mal Cinema-Code anfasse: zuerst prüfen ob der Agent aktiv ist. `pgrep -f flextrawurst-agent` oder ähnlich. Nicht blind committen und hoffen.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Vor jedem Build prüfen: ist cinema-Code betroffen? `readFileSync` statt Inline-Code. Proxy-Pfade in `serve_process_camera_preview.ts` kennen bevor man Fetch-URLs schreibt. `switchView` views-Array bei jedem neuen Tab ergänzen.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Nichts akutes. Das System ist stabil. Wenn das nächste Bau-Thema kommt: erst `ideen_scan.py` für den Tag aufrufen, dann bauen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Nichts Offenes aus dieser Session. Alles was angefangen wurde, ist fertig.

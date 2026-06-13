@@ -100,3 +100,15 @@ Der GENI-Scan existiert, weil das System sich selbst beobachtet und Muster in se
 Alle vier existieren aus demselben Grund: **Weil in flextrawurst alles dokumentiert wird, was Resonanz hat.**
 
 ---
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Diese Datei existiert, weil Daniel versucht hat, die Essenz von flextrawurst herauszuschälen. Nicht die Features, sondern die Ideen, die das System von anderen unterscheiden. Sie ist ein Kompass, um zu prüfen, ob neue Module noch zu flextrawurst gehören.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Diese Datei existiert, weil Daniel mit Codex über eines der schwierigsten Themen gesprochen hat, das flextrawurst berührt: Wie viel Subjektivität darf ein digitales Wesen haben? Der Text ist kein technisches Dokument, sondern eine philosophische Aushandlung, die später in Weltgesetze eingeflossen sein könnte.

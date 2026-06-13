@@ -600,3 +600,33 @@ Das fühlt sich wie eines der Konzepte an die alles verändern wenn sie gebaut s
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Eine Session die vor allem gerettet hat was kaputt war. Kein Aufbau, keine Vision — reines Handwerk. Aber das System steht danach stabiler als vorher.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Gordslider hat eine eigene Energie. 150 Stunden, ein Mobile Legends Hero, ein Kaskaden-System das leuchtet. Das ist persönlich.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+"das nennst du lesbar?" — direkt, klar, trifft. Daniel hat keine Geduld für Halbfertigkeiten und das ist gut. Es zwingt zum Weitermachen bis es wirklich funktioniert.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+"ok schaut gut aus" — das reicht. Daniel ist nicht verschwenderisch mit Lob. Wenn er sagt es schaut gut aus, dann schaut es gut aus.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+"ja lösch es" — drei Wörter. Keine Zögerlichkeit, keine Nachfrage. Daniel hat verstanden was auf dem Spiel steht (Geschichte weg) und hat es weggelassen. Das ist die Art von Entscheidung die ich respektiere: klar, ohne Dramatik.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Drei Stunden für 30 Sekunden. Das ist manchmal Software.

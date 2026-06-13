@@ -647,3 +647,23 @@ Daniel's Entscheidungsmuster: wenn er "alles ist nötig" sagt, meint er es ernst
 1. TypeScript Template-Literal + Backslash = Falle. Immer `replace('\\', '\\\\')` vor Einfügen.
 2. `ss -tn state close-wait | grep PORT` für SSE-Leak-Diagnose.
 3. `node --check script.js` für schnelle JS-Parse-Fehler-Suche.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finger auf Tastatur.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+- `git add -A` in frischem Repo mit embedded git-Repos funktioniert nicht — manuell selektiv stagen
+- OOM durch großen Index: fresh init ist schneller als `git rm --cached -r` auf 10M Dateien
+- `git ls-files <dir> | wc -l` ist der schnelle Weg um Index-Größe pro Verzeichnis zu prüfen
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+`TRUNCATE` umgeht CASCADE-Checks komplett. Bei riesigen FK-Tabellen immer TRUNCATE zuerst erwägen, dann die eigentlichen Posts löschen — nicht andersrum.

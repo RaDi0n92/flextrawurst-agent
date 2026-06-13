@@ -15,6 +15,7 @@ Was es tut:
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import threading
@@ -58,14 +59,24 @@ TAG_FILTER = frozenset([
 # ── Lade-Funktionen ───────────────────────────────────────────────────────────
 
 def lade_alle_knoten() -> list[dict]:
+    # Lädt nur Knoten die in den letzten 30 Tagen geändert wurden.
+    # Verhindert das Einlesen aller ~10M Dateien: scandir() ist ein Generator,
+    # mtime-Filter reduziert tatsächliche JSON-Reads auf wenige Tausend.
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=30)).timestamp()
     knoten = []
-    for f in KNOTEN_DIR.glob("*.json"):
-        if f.stem == "schema":
-            continue
-        try:
-            knoten.append(json.loads(f.read_text()))
-        except Exception:
-            pass
+    try:
+        with os.scandir(KNOTEN_DIR) as it:
+            for entry in it:
+                if not entry.name.endswith(".json") or entry.name == "schema.json":
+                    continue
+                try:
+                    if entry.stat().st_mtime < cutoff:
+                        continue
+                    knoten.append(json.loads(Path(entry.path).read_text()))
+                except Exception:
+                    pass
+    except Exception:
+        pass
     return knoten
 
 

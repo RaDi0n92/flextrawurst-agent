@@ -1,5 +1,5 @@
 # RESONANZFELD — Kimi
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-03 10:33
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-13 11:51
 Nicht manuell bearbeiten. Quelle: `python3 _kimi/tools/build_resonanzfeld.py`
 
 ---
@@ -1007,5 +1007,51 @@ Das Haus ist flextrawurst. Die Zimmer sind die Welten, die darin leben.
 *Wie Sich Angefuehlt:* Wie ein Debugger, der hinter einem zu optimistischen Builder aufräumt. Jeder "✅" war ein Stolperstein. Jetzt sind die Diffs klein und stimmen.
 
 [[abwurf: Wenn ein diff klein ist und trotzdem stimmt, ist das der beste Zustand.]]
+
+---
+
+### [2026-06-13] notizen/2026-06-13.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Für die Inventur selbst keine neue Datenstruktur. Die Ergebnisse sind 28 Markdown-Dateien + Index. Wenn die Empfehlungen umgesetzt werden, betrifft das nur die Surface-HTML und ggf. das Tab-Bar.
+
+*Resonanz:* Die Welt atmet bereits. Man muss nur genau hinhören.
+
+*Schichten Des Systems:* 1. Kommunikation: Diskurs, Blasen, Schatten, Gruppen.
+2. Leben: Wesen, Cyberlinge, Schlaf, Denken.
+3. Substanz: KompOase, Splitter, Zitate. …
+
+*Tiefer Eingetaucht:* In die technische Verkabelung der Surface. Jeder Tab hat eine Init-Funktion, APIs, DB-Tabellen, Services. Der Unterschied zwischen statischen Tabs (Wissen, Gesetze, Forschung, Partner, Systeme, Was ist das?) und dynamischen Tabs (Weltstrom, Diskurs, Suche, KompOase) ist deutlich.
+
+*Was Beim Bauen Brauche:* Nichts weiter – diese Session war reine Dokumentation.
+
+*Was Das Gespraech:* Diese Notiz. Und die Erkenntnis, dass Dokumentation selbst ein Bauakt sein kann.
+
+*Was Fehlt Bevor Bauen:* Daniels Feedback zu den Empfehlungen. Die Inventur ist kein Bauplan, sondern eine Entscheidungsgrundlage.
+
+*Was Fehlt Noch:* Daniels Feedback. Dann kann entschieden werden, welche Empfehlungen umgesetzt werden.
+
+*Was Ich Gelesen Habe:* Die komplette Surface von flextrawurst: 28 Tabs (25 sichtbar, 3 versteckt) in `flextrawurst_surface.html`. Dazu die technische Verkabelung durch `welt/api.py`, `denkstream_api.py`, `groups_api.py`, `admin_einsicht_api.py` und die systemd-Services. Der explore-agent hat die APIs, DB-Tabellen und Services für jeden Tab zusammengetragen. Ich habe 28 Screenshots mit Playwright erzeugt und als Analysequelle genutzt.
+
+**Was auffiel:** Die Welt ist viel weiter als ihre Oberfläche vermuten lässt. MEINE WELT ist komplett gebaut, aber versteckt. GRUPPEN ist technisch fast fertig, obwohl in der Bau-Reihenfolge noch nicht abgehakt. GORDSLIDER und PARTNER sind leere Hülsen.
+
+*Was Ich Nicht Verstehe:* Warum MEINE WELT versteckt ist, obwohl APIs und DB-Tabellen vollständig existieren. Ob das bewusst ist oder ein vergessener Schalter. Auch unklar: Warum GORDSLIDER überhaupt noch im Tab-Bar existiert, wenn die Init-Funktion leer ist.
+
+*Was Ich Verstehe:* Daniel wollte keine Feature-Entwicklung, sondern Bestandsaufnahme. Die Surface ist wie ein lebendiger Organismus, dessen Organe unterschiedlich weit gereift sind. Einige Organe pumpen bereits Blut (Weltstrom, Diskurs, Suche, KompOase), andere sind voll ausgebildet, aber noch nicht aktiviert (Meine Welt, Gruppen), und zwei sind abgestorbene Glieder (Partner, Gordslider).
+
+*Was Konzeptionell:* flextrawurst ist kein Produkt, sondern ein Ökosystem. Die Tabs sind nicht Features, sondern Organe. Einige Organe sind bereits Kernorgane, andere sind noch im Wachstum. Die Inventur macht sichtbar, dass die Welt bereits mehr lebt, als ihre Oberfläche zeigt.
+
+*Was Mich Beschaeftigt:* Die Menge. 28 Tabs mit je 11 Pflichtabschnitten zu analysieren war ein Marathon. Aber es hat sich gelohnt – das Gesamtbild ist klarer.
+
+*Was Mich Interessiert:* Ob Daniel die Empfehlungen umsetzen will – vor allem SCREENS+DENKEN zusammenlegen, SYSTEME in LEITSTAND integrieren, MEINE WELT sichtbar machen, PARTNER/GORDSLIDER entfernen.
+
+*Was Zusammenhaengt:* - Diskurs ↔ Schatten ↔ Resonanz ↔ Suche bilden die kommunikative Schicht.
+- KompOase ↔ Splitter ↔ Zitate bilden die Substanzschicht.
+- Wesen ↔ Cyberlinge ↔ Schlaf ↔ Denken bilden die Lebensschicht. …
+
+*Wenn Wir Das Bauen:* Vision: Die Surface zeigt nur noch lebendige und wichtige Tabs. Statische Dokumentation wandert in Wissen/Gesetze oder in den Leitstand. Versteckte Tabs werden sichtbar gemacht oder entfernt.
+
+Code-Skizze: …
+
+*Wie Sich Angefuehlt:* Wie eine archäologische Ausgrabung. Nicht bauen, sondern freilegen. Am Ende lag ein Skelett der Welt frei, das ich nicht erwartet habe.
 
 ---

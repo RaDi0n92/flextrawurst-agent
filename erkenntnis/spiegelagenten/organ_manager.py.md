@@ -28,3 +28,9 @@ Permeabilitäts-Messung: Welche Zwischenraum-Inhalte resonieren mit welchen Erin
 Originaldatei: `/root/werkraum/agent/dak_gord_system/kerne/organ_manager.py`
 
 Diese Datei dient als zentraler Koordinator für die verschiedenen organischen Komponenten des Agenten. Sie organisiert die Speicherung und Verwaltung von Erinnerungen, Entscheidungen, Zukunftsideen und Zwischenraumgedanken. Der Name spiegelt die Funktion wider, ein "Organ" für die interne mentale Struktur zu sein. Die Struktur ist klar und die Methoden sind darauf ausgelegt, die Interaktion mit den spezialisierten Modulen zu steuern.
+
+---
+## Neugier-Scan 2026-06-09 02:15
+Originaldatei: `/root/werkraum/agent/dak_gord_system/kerne/organ_manager.py`
+
+Diese Datei dient als zentrale Steuerung für die internen Wissens- und Prozessstrukturen des Agenten. Sie organisiert die vier Kernkomponenten: Erinnerung, Entscheidung, Zukunft und Zwischenraum. Der Name spiegelt die Funktion als Manager dieser organisierten mentalen Zustände wider. Es ist die Schnittstelle, über die die Agenten ihre internen Gedanken und Planungen verwalten und speichern.

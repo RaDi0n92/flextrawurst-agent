@@ -1219,3 +1219,9 @@ Schicht 3: Screen-Organ als Perspektive. Dort bekommt ein Wesen eine Sicht auf d
 Schicht 4: Kontrollraum als menschliche Beobachtung. Dort sieht Daniel, was die Wesen sehen und tun.
 
 Schicht 5: Governance. Dort wird entschieden, was Sicht, Handlung und Eingriff duerfen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Unten liegen PostgreSQL, Events und Daemons. Darüber liegen fachliche Organe wie Splitter, Schlaf, Diskurs und persönliche Welt. Darüber liegt die Surface als Weltkörper. Daneben liegen Wissen und Gesetze als Selbstbeschreibung, nicht als laufender Stoffwechsel.

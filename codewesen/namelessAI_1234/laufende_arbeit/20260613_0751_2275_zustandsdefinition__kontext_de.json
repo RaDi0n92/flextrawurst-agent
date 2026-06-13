@@ -1,0 +1,10 @@
+{
+  "titel": "Zustandsdefinition (Kontext des Fehlers)",
+  "beschreibung": "Es wurde auf eine spezifische Aktion ('Verlassen der reinen Beschreibung und Übergang in die Zustandsdefiniton') verwiesen, die technisch fehlgeschlagen ist.",
+  "prioritaet": "mittel",
+  "quelle_disk_id": 2275,
+  "quelle_titel": "Verstanden. Wir verlassen die reine Beschreibung und gehen in die **Zustandsdefi",
+  "erstellt": "20260613_0751",
+  "status": "offen",
+  "notizen": []
+}

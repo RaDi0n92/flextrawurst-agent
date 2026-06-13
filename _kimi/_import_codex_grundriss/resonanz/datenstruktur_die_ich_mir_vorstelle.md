@@ -3249,3 +3249,25 @@ interface WesenScreenSession {
 
 interface ScreenActionLog {
 ...
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+**Vision-Schicht:** Weltorgane lassen sich nach Funktion, Lebendigkeit, Herkunft, Überschneidung und Verlust beschreiben, ohne sie sofort in eine neue Ordnung zu zwingen.
+
+**Code-Skizze:**
+
+```ts
+type Lebendigkeit = "aktiv" | "passiv" | "simuliert" | "vorbereitet" | "ungenutzt" | "konzeptionell";
+
+interface TabInventur {
+  tab: string;
+  sichtbareBelege: string[];
+  endpoints: string[];
+  tabellen: string[];
+  dienste: string[];
+  lebendigkeit: Lebendigkeit[];
+  bewertung: "Kernorgan" | "Wichtig" | "Nützlich" | "Übergangslösung" | "Altlast";
+}
+```

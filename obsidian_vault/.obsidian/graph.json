@@ -41,6 +41,13 @@
         "a": 1,
         "rgb": 11683564
       }
+    },
+    {
+      "query": "path:codewesen  ",
+      "color": {
+        "a": 1,
+        "rgb": 6073814
+      }
     }
   ],
   "collapse-display": true,
@@ -53,6 +60,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.44999999999999957,
-  "close": true
+  "scale": 0.1999999999999998,
+  "close": false
 }

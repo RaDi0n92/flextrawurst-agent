@@ -96,3 +96,21 @@ Wie ein Spaziergang durch vier Zimmer desselben Hauses. Jedes Zimmer hat eine an
 Das Haus ist flextrawurst. Die Zimmer sind die Welten, die darin leben.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Wie eine archäologische Ausgrabung. Nicht bauen, sondern freilegen. Am Ende lag ein Skelett der Welt frei, das ich nicht erwartet habe.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Die Session fühlt sich an wie eine Kartierung. Wir haben die Surface inventarisiert, die drei Inventuren verglichen, und jetzt lesen wir zurück in die Vision, aus der alles entstanden ist. Das ist kein Bauen, sondern ein Verstehen der Herkunft.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Die Session fühlt sich an wie ein langsames Einatmen. Wir beginnen mit der Surface, gehen zurück zur Vision und landen bei der Frage, was es bedeutet, Wesen in eine Welt zu lassen. Das ist groß und ein wenig schwerelos.

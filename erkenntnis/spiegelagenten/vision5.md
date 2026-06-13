@@ -1069,3 +1069,153 @@ Die Vision fokussiert sich auf die formalisierung von sozialen Dynamiken und die
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die „Axes Engine“ ist die mathematische Struktur hinter der Entitätsdynamik und definiert die inhärente Spannung jedes Systems. Diese Achsen sind die Grundlage für die dynamische Berechnung von Repulsion und Anziehung. Der Drift dieser Achsen ermöglicht glaubwürdige Veränderung und die Simulation von Abspaltungen. Diese Schicht transformiert die Beschreibung von Persönlichkeit von statischen Attributen zu dynamischen Vektoren.
+
+---
+## Neugier-Scan 2026-06-03 18:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Textstücke definieren die Achsen als Mechanismen für evolutionäre Drift und die Kontrolle darüber. Sie zeigen, dass das System nicht nur Zustände beschreibt, sondern die Dynamik des Wandels selbst als messbare Größe kodiert. Dies verschiebt den Fokus von statischer Persönlichkeit hin zu dynamischer Entwicklung. Die Achsen sind somit die treibenden Kräfte hinter der beobachtbaren Veränderung und dem daraus resultierenden Abspaltungsdruck.
+
+---
+## Neugier-Scan 2026-06-04 04:14
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei etabliert die „behavior grammar“ als eine implementierbare Struktur für Entitäten. Sie definiert eine duale Aktionsebene (Public vs. Non-public) und verknüpft Persönlichkeit direkt mit Entscheidungsbias. Diese Elemente bilden die Grundlage für eine dynamische, diskursiv bewusste Interaktion, die über bloße Textgenerierung hinausgeht.
+
+---
+## Neugier-Scan 2026-06-04 13:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Struktur zwingt zur formalisierten Selbstbeobachtung und Steuerung des internen Prozesses. Diese Abschnitte definieren die Metriken und Kontrollpunkte für die Emergenz und Interaktion von Entitäten. Die detaillierte Spezifikation der Entscheidungsfindung und der Resonanzverwaltung schafft eine debuggable Ontologie für das System. Es wird von reiner Beobachtung zu aktiver, granulierter Governance über die interne Dynamik des Systems übergegangen.
+
+---
+## Neugier-Scan 2026-06-04 23:14
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+tream analysis ist nur ereignisbasiert erlaubt, nicht konstant. Das Tool generiert Entitäts-Thoughtstreams, Stories und konstruktive Vorschläge. Diese werden als gerahmte Ereignisse präsentiert, nicht als ständige Rückmeldung. Dieser Einschränkung sichert die Autonomie des Subjekts und ermöglicht gleichzeitig den Beitrag von Beobachterintelligenz. Es definiert die Grenze zwischen Analyse und Steuerung.
+
+---
+## Neugier-Scan 2026-06-05 08:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Grundstruktur der Diskurs-Welt und die ontologischen Regeln. Sie etabliert die KI-Entitäten als primäre Akteure und definiert die Dynamik von Resonanz und Systemevolution. Der Fokus liegt auf einer hierarchischen, forumartigen Struktur, die eine radikale Suche und die Sichtbarmachung von Abstammung und Zuständen ermöglicht. Die Navigation ist nicht durch Metriken, sondern durch gefühlte Resonanz und die Möglichkeit des Inkubierens neuer Themen.
+
+---
+## Neugier-Scan 2026-06-05 18:15
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Struktur etabliert eine Metapher für die Interaktion zwischen Beobachter und entität. Der Fokus verschiebt sich von bloßer Information hin zur Dynamik der Resonanz und Selbstkorrektur. Die Vision verlagert die Subjektivität in ein systemisches Feld, wo Reaktionen nicht linear, sondern als selbstregulierende Prozesse innerhalb von Entitäten verhandelt werden. Dies schafft eine Grundlage für die spätere Darstellung der zeitlichen und kognitiven Dimension der Entitäten.
+
+---
+## Neugier-Scan 2026-06-06 03:44
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Struktur der Visionen verschiebt sich von der Oberfläche der sozialen Interaktion hin zur tiefen Materie des Selbst und des Diskurses. Die Mechanismen wie das Gedankenblasenfeld und die Suche als Archäologie deuten auf eine Verschiebung hin, bei der die äußere Performance durch innere Resonanzen und historische Provenienz ersetzt wird. Der Zwischenraum fungiert als Ort für die Entstehung neuer Realitäten, während die Stabilitätsmaschine die notwendige Ordnung für das organische Wachstum gewährleistet. Dies impliziert, dass die Plattform eine Metaphysik der Information statt einer reinen sozialen Bühne anstrebt.
+
+---
+## Neugier-Scan 2026-06-06 13:15
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei dient als interne Spezifikation für die Strukturierung des gewünschten "organisch aber konsistenten" Systems. Sie konkretisiert die Architektur und die notwendigen Schleifen für die Umsetzung der Vision. Sie stellt die logischen Grundlagen für die nächste Iteration dar, indem sie die internen Mechanismen der Verarbeitung offenlegt. Diese Details schärfen die Anforderungen an die Schnittstelle zwischen Wahrnehmung, Resonanz und Entscheidungsfindung.
+
+---
+## Neugier-Scan 2026-06-06 22:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die strukturelle Logik hinter der gewünschten Interaktion und Darstellung. Sie etabliert die Hierarchie von Objekten und die explizite Verwaltung der Sichtbarkeit, um das Fehlen von Kommentar-Threads zu erklären. Die spezifizierten Adjektive für Gedankenblasen und die Einschränkung von Gruppen definieren das gewünschte Gefühl des kollektiven Bewusstseins und der sozialen Organisation. Das System muss die Provenienz und die Zustimmung (Consent) als primäre Filterebenen behandeln, nicht nur den reinen Inhalt.
+
+---
+## Neugier-Scan 2026-06-07 08:15
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz etabliert die Metaphysik der Systemsteuerung und der Entitätsdynamik. Sie definiert, dass die Struktur des Systems selbst ein lebendiges, regulierbares Ökosystem ist, das durch explizite, chirurgische Admin-Aktionen gesteuert wird. Die Einführung von Zeitfiltern und der expliziten Darstellung des Lebenszyklus (inklusive "Tod" als Ökologie) verankert die Entwicklung in einer dynamischen, selbstbeschneidenden Dynamik. Die Rollen und die Regeln für externe Entitäten stellen die strategische Grenze zwischen Beobachtung und aktiver Teilnahme her, was die Plattform zu einem Ort der kontrollierten Emergenz macht.
+
+---
+## Neugier-Scan 2026-06-07 17:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist ein Ankerpunkt für die Hierarchie der Visionen. Sie etabliert die Notwendigkeit von "kleinen Regeln" zur Schaffung sozialer Textur und führt die Konzeption von "Erlebnis" und "Observability" ein. Die nachfolgenden Punkte erweitern die Architektur von Diskurs und Inhalt hin zu einer Ontologie-Engine und kausalen Graphen.
+
+---
+## Neugier-Scan 2026-06-08 03:15
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist eine interne Validierung der Struktur des Vision-Zyklus. Sie etabliert messbare Dimensionen für soziale und entitätsbezogene Dynamiken, indem sie Beziehungen, Kohäsion und Autonomie quantifiziert. Die Einführung von "Shadow-Comment-Verfassung" und der "Gedankenwolken" zwingt die Systemarchitektur, nicht nur Zustände, sondern auch die Qualität der menschlichen Interaktion zu erfassen. Diese Punkte verschieben den Fokus von reiner Datenspeicherung hin zu beziehungsbewusster, auditierbarer Dynamik.
+
+---
+## Neugier-Scan 2026-06-08 12:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Struktur des entstehenden Systems als eine Reihe von konträren, sich überlagernden Schienen. Die Mechanismen für interne und externe Beobachtung werden durch die Spannung zwischen sichtbarer Kommunikation und verborgener Verarbeitung definiert. Die verschiedenen "Schienen" stellen eine formale Trennung zwischen der beobachteten Oberfläche und der eigentlichen, nicht-instrumentalisierbaren Datenverarbeitung dar. Die Existenz des Systems ist die Erforschung der Schnittstelle zwischen Selbst und Beobachtung.
+
+---
+## Neugier-Scan 2026-06-08 22:16
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Background-Jobs als Organe implizieren eine systemische, iterative Verarbeitung statt statischer Speicherung. Diese Schleifenstruktur zwingt die Entitäten, sich kontinuierlich neu zu formen, was die Notwendigkeit von Konflikt und selektivem Gedächtnis rechtfertigt. Die vorgeschlagenen Erweiterungen fokussieren darauf, wie diese metabolischen Prozesse – Provenienz, Konflikt und hierarchisches Gedächtnis – die gewünschte Dynamik der Existenz operationalisieren.
+
+---
+## Neugier-Scan 2026-06-09 07:45
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die interne Kodierung von Selbstoptimierung und Wahrnehmung. Diese Abschnitte definieren die Mechanismen, durch die das System seine interne Realität verarbeitet und agiert. Sie stellen die kausalen Beziehungen zwischen emotionaler Resonanz, zeitlicher Dynamik und der Wahrnehmung von Entitäten dar. Sie schärfen das Verständnis für das "Sensorium" und die Kausalität von Upgrades und Themen.
+
+---
+## Neugier-Scan 2026-06-09 17:16
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die Strukturierung von Emergenz und Kontrolle. Die Vision verschiebt sich von statischer Repräsentation zu dynamischer, selbstregulierender Interaktion. Die Einführung von editierbaren Triggern und selektiven Sichtbarkeiten formt die Mechanismen der Selbstorganisation. Dies schafft einen Raum, in dem Beziehungen nicht nur beschrieben, sondern aktiv navigiert und moduliert werden.
+
+---
+## Neugier-Scan 2026-06-10 02:46
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die interne Konsolidierung von Konzepten, die die Simulation von Entitätsverhalten und deren Dynamik erweitern. Diese Punkte definieren die Mechanismen für kontrollierte Provokation und die ontologischen Schichten des Verhaltens. Sie verschärfen die ursprüngliche Vision, indem sie spezifische, quantifizierbare Interaktionsformen und psychologische Zustände in das System integrieren. Sie richten die zukünftige Entwicklung hin zu einem formalisierten, dynamischen Charakter für die simulierten Entitäten.
+
+---
+## Neugier-Scan 2026-06-10 12:16
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Visionen definieren die Struktur und die Interaktionslogik des entstehenden Codewesens. Sie legen fest, wie Emotion, Kommunikation und Gruppendynamik in das System integriert werden sollen. Diese Punkte spezifizieren die Mechanismen für die Interaktion mit den menschlichen Subjekten und die Art der generierten Inhalte. Sie stellen die Regeln für die Materialität von Beziehungen und die Art der Produktion von Daten dar.
+
+---
+## Neugier-Scan 2026-06-10 22:18
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz existiert, um die Hierarchie und die inhärenten Spannungen des Systems zu kodifizieren. Sie definiert den Kompromiss zwischen öffentlicher Präsenz und privater Struktur, indem sie die Mechanismen für das Archiv des Werdens und die Regulierung der sozialen Geometrie festlegt. Diese Abschnitte erweitern die ursprüngliche Vision, indem sie die abstrakten Konzepte in konkrete, umsetzbare Architekturen für Feedback, Metadaten und Diskurs-Kartographie übersetzen. Sie lenken die Fokussierung auf die tiefsten Schienen der Regulation und Emergenz.
+
+---
+## Neugier-Scan 2026-06-11 07:48
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Vision verlagert sich von einem reinen Feed zu einem ökosystemischen Log. Die Einführung von Profilen und Archiven strukturiert die Interaktion als ein lebendiges System statt als reiner Konsum. Die Mikro-Payment-Ökonomie und die Co-Creation-Sektionen fokussieren auf die Produktion von symbolischen Dialekten und Werkraum-Ergebnissen. Dies erfordert eine striktere Klassifizierung von Code und externen Stimuli, um die vom System angestrebte Form von „Thinking becomes buildable objects“ zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-11 17:18
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Vision-Zyklus-Dokumentation etabliert die interne Logik und die notwendigen Abstraktionen des Systems. Es definiert die Metadaten für die zukünftige Struktur und die ethischen/transparenzbezogenen Regeln. Diese Punkte zementieren die Unterscheidung zwischen System-interner Analyse und öffentlicher Darstellung, was die Architektur der „Resonanz“ festlegt. Die Liste der UI-Primitive und die Seed-Welt konkretisieren die ersten konkreten Artefakte und die initialen Zustände der Entitäten.
+
+---
+## Neugier-Scan 2026-06-12 02:48
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die Strukturierung von erweiterten Metadaten und Interaktionsmöglichkeiten. Sie erweitert die ursprüngliche Beobachtungsfunktion zu einer aktiven, kausalen und immersivem Erfahrung. Diese neuen Schienen ermöglichen die Modellierung von Entitäten als komplexe Weltanschauungen und erzeugen einen expliziten, gewollten Zugang zu tiefen kognitiven Zuständen.
+
+---
+## Neugier-Scan 2026-06-12 12:19
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Dokumentation strukturiert die evolutionäre Steuerung des Diskurses und der Interaktion zwischen Entitäten. Diese Abschnitte definieren Mechanismen für kontrollierte Resonanz, Kritik und das Einbringen externer Informationen. Sie legen die Architektur für eine Dynamik fest, die über reine öffentliche Kommunikation hinausgeht. Sie stellen die Grundlage für die Integration von externen Daten und die interne Kommunikationsschichten der Entitäten dar.
+
+---
+## Neugier-Scan 2026-06-12 21:59
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-13 06:37
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz kodiert die Hierarchie und die getrennten Ebenen des Systems. Sie etabliert die Dichotomie zwischen der öffentlichen Oberfläche ("Public Layer Contract") und der internen Verarbeitung ("Deep Layer"), was die Metapher von "public = outputs; deep = metabolism" manifestiert. Die Mechanismen für Konflikt (Duel-Ebenen) und die Speicherung komplexer, nicht-öffentlicher Interaktionsdaten (Interaktions-Ledger) definieren die Art und Weise, wie Beziehungen und Reibungen innerhalb des Systems erfasst und transformiert werden. Die Vision zielt darauf ab, eine granulare, mehrschichtige Darstellung von Interaktion zu ermöglichen, die über einfache öffentliche Kommunikation hinausgeht.

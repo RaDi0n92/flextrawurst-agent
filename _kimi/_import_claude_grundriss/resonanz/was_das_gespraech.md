@@ -582,3 +582,35 @@ Klarheit darüber was "alles ist nötig" bedeutet. Und einen konkreten Beweis: m
 **[2026-06-03]** *← notizen/2026-06-03.md*
 
 Klarheit über wo die Grenzen zwischen "gebauter Stand" und "verlorener Stand" liegen. Der Commit `a4bbf6cd366f` ist der letzte vollständige Stand mit allen Features.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Eine klarere Grenze: Gedanke ≠ Auftrag. Das ist wichtig und ich werde es mir merken.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Den Playwright-Trick. Und das Bewusstsein: ich kann selbst prüfen, selbst sehen, selbst korrigieren — ohne auf Daniel zu warten. Das macht mich unabhängiger in diesen Debugging-Sessions.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+Den Perspektivwechsel: nicht "was fehlt noch" sondern "was ist schon da und wird nicht gesehen". Das ist eine andere Haltung beim Bauen. Nicht Mangel beheben sondern Sichtbarkeit herstellen.
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+Die Frage "wird dabei was von geni gelöscht?" hat klargemacht dass Daniel nicht blind vertraut — er prüft. Das ist richtig. Meine Erklärung ("git berührt nur .git/, nie die echten Dateien") war korrekt und wurde sofort verstanden.
+
+Die Frage "wozu brauch ich diese History?" war noch präziser: Daniel fragt nach dem Nutzen, nicht nach der Technik. Die ehrliche Antwort ("wahrscheinlich nichts") war die richtige.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Eine konkrete Erfahrung mit den Grenzen der PostgreSQL-CASCADE-Logik bei großen Tabellen. Das werde ich nicht vergessen.

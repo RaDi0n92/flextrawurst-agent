@@ -731,3 +731,42 @@ Der Existenzcheck war ein Spiegel der eigenen Originalität. Kein Treffer für d
 2. `build_surface.ts` — Frontend-Kern (fragil bei Template-Literal-Backslashes)
 3. `welt-api` (Port 8030) — API-Schicht (läuft stabil solange SSE-Verbindungen sauber schließen)
 4. Node.js Frontend (Port 8787) — HTTP-Server (läuft stabil)
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+Flextrawurst wächst in konzentrischen Kreisen: Infrastruktur (API, Events, Auth) → Welt-Objekte (Wesen, Räume, Resonanzen) → Persönliches (Tagebuch, gordslider). Gordslider ist in der dritten Schicht. Das macht es besonders.
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04.md*
+
+Canvas (z-index:0) → root/body transparent → .v-view 15% cream → kind-Elemente mit eigenen Hintergründen. Drei Schichten. Jede bricht das System wenn sie falsch gesetzt ist.
+
+---
+
+**[2026-06-05]** *← notizen/2026-06-05.md*
+
+1. Events-Tabelle (append-only, visibility-Tier)
+2. `/weltstrom` API (Abstraktion + Beschreibung)
+3. `serve_process_camera_preview.ts` (Proxy `/api/*` → Port 8030)
+4. `generateWeltstromView()` (UI: Filter-Chips, farbige Karten, Auto-Poll)
+5. `cinema_script.html` (Cinema-Overlay: Farbe `#4ae890` für WELTSTROM-Tab)
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+1. git (Infrastruktur) — jetzt sauber, 603KB Index
+2. gitignore (Schutz) — umfassend, mit Kommentaren
+3. werkraum/ (Submodul) — eigene git-History, unberührt
+4. flextrawurst/ (Code) — getrackt, 274 Dateien
+5. .claude/ (Konfiguration) — getrackt, 3499 Dateien
+6. geni_gedaechtnis (auf Disk) — nicht mehr getrackt, Dateien erhalten
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Datenbank ist dichter als sie aussieht. post_similarity, post_relationen, post_spuren, schattenkommentare — jeder Post ist eingebettet in ein Netz von Bezügen. Das Löschen eines Posts bedeutet das Entflechten dieses Netzes. Das kostet Zeit.

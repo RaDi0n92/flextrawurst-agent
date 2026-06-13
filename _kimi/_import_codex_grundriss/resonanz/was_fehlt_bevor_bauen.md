@@ -1108,3 +1108,9 @@ Es fehlt eine Governance-Datei fuer das Screen-Organ.
 Es fehlt eine Ampel: Ist das Wesen im Nur-Beobachten-Modus, Vorschlagsmodus oder Handlungsmodus?
 
 Es fehlt wahrscheinlich eine echte Surface-Integration, nicht nur generiertes `screens.html`. Der Kontrollraum sollte Teil der flextrawurst-Surface sein, mit Admin-Grenzen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Für diese Aufgabe fehlt nichts. Vor neuen Bauarbeiten müsste Daniel erst entscheiden, welche Bewertungen handlungsrelevant werden; die Inventur selbst ist ausdrücklich kein Umbauplan.

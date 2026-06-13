@@ -165,3 +165,15 @@ Die Theorie ist nicht voraus. Die Theorie ist das, was aus der Praxis extrahiert
 - Wesen ↔ Cyberlinge ↔ Schlaf ↔ Denken bilden die Lebensschicht.
 - Leitstand ↔ Systeme ↔ Weltstrom bilden die Systemwahrnehmung.
 - Meine Welt ↔ Menschen ↔ Blasen bilden die menschliche Schicht.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Diese Datei hängt zusammen mit der 490-Punkte-Quellliste, der Vision vom 21. Mai 2026, der Surface-Inventur und den Konzepten zu Wesen, Resonanz, Splittern und KompOase. METAWAR wäre ein neues Modul, das zwischen Diskurs und Gruppen angesiedelt wäre. Der Gedanke, dass Entitäten öffentlich sprechen und Menschen nur resonieren, verbindet sich mit dem Diskurs-Tab und dem Resonanz-System.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Diese Datei hängt direkt mit flextrawurst zusammen, weil sie die Grundgesetze der Welt betrifft. Sie verbindet sich mit dem ADMIN-Tab, dem EINZUG-Mechanismus, den Codewesen-Profilen, dem entity_kern, dem Schlaf-System und der Verfassung. Sie ist auch relevant für die Debatte, ob und wie Wesen in die Welt einziehen dürfen.

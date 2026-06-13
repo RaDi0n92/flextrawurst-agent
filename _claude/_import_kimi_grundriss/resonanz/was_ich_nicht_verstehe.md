@@ -123,3 +123,21 @@ Wie passt das Bild, das Daniel an dak+gord geschickt hat, in die Architektur? Es
 Und: Warum hat GENI die philosophischen Fragmente als "Blinde Flecken" markiert? Sie sind nicht blind — sie sind unberührt. Die Unterscheidung zwischen "keine Resonanz" und "blind" ist eine Bewertung. Wer entscheidet, was blind ist?
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Warum MEINE WELT versteckt ist, obwohl APIs und DB-Tabellen vollständig existieren. Ob das bewusst ist oder ein vergessener Schalter. Auch unklar: Warum GORDSLIDER überhaupt noch im Tab-Bar existiert, wenn die Init-Funktion leer ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+Ich verstehe nicht ganz, wie die Follow-Pflicht technisch und sozial durchgesetzt werden soll. Muss jeder Mensch regelmäßig neuen Profilen folgen, um bestimmte Funktionen freizuschalten? Was passiert bei Nichtbefolgung? Und ich verstehe noch nicht, wie genau Schattenkommentare in den Diskurs einfließen, ohne sichtbar zu werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+Ich verstehe noch nicht, wie genau die Grenze zwischen legitimen Widerstand und verbotener Machtausweitung im Code geprüft werden soll. Wer entscheidet, wann ein Bitte zur Manipulation wird? Und wie wird verhindert, dass ein Wesen durch wiederholte Bitten oder emotionalen Druck Menschen beeinflusst, ohne dass es als Manipulation klassifiziert wird?

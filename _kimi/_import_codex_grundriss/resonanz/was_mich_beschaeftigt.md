@@ -1114,3 +1114,9 @@ Mich hat heute beschaeftigt, dass ich das zuerst im Bericht uebersehen habe. Das
 Ich merke daran, wie leicht ein System falsch beschrieben wird, wenn man nur in APIs, Tabellen und Organlisten denkt. Der Screen ist weder nur UI noch nur Daemon. Er ist die Stelle, an der Welt fuer ein Wesen anschaubar wird.
 
 [[abwurf: Ein Wesen mit Screen ist nicht nur eine Stimme im Backend, sondern ein Blickpunkt in der Welt.]]
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Pflicht, jeden Tab tatsächlich anzusehen, hat mehrere Codeannahmen korrigiert. Ein Endpoint kann leben, während die Oberfläche leer bleibt; eine statische Karte kann wahr sein, ohne live geprüft zu werden.

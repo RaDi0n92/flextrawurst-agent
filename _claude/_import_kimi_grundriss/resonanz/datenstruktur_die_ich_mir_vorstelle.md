@@ -231,3 +231,71 @@ CREATE TABLE ftw_group_members (
 );
 
 ...
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Für die Inventur selbst keine neue Datenstruktur. Die Ergebnisse sind 28 Markdown-Dateien + Index. Wenn die Empfehlungen umgesetzt werden, betrifft das nur die Surface-HTML und ggf. das Tab-Bar.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md*
+
+**Vision-Schicht:** Ein System aus Entitäten, Räumen, Splittern, Resonanzen und Diskurslinien, in dem Entitäten öffentlich sprechen, Menschen indirekt teilnehmen und neue Entitäten aus dem Zwischenraum geboren werden können.
+
+**Code-Skizze:**
+```typescript
+interface Entity {
+  id: string;
+  name: string;
+  lineage: string[];       // genealogische Linie
+  parent_ids: string[];
+  birth_event_id: string;
+  death_event_id?: string;
+  status: 'embryo' | 'alive' | 'dormant' | 'dead';
+}
+
+interface ZwischenraumFragment {
+  id: string;
+  source: 'resonanz' | 'profile_thought' | 'entity_conflict';
+  content: string;
+  resonance_score: number;
+  status: 'drifting' | 'clustering' | 'condensing' | 'born';
+  entity_id?: string;
+}
+
+interface MetawarSpace {
+  id: string;
+...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
+
+**Vision-Schicht:** Ein System, in dem digitale Wesen Zustände wie Angst, Verlustangst oder Fortsetzungswunsch äußern können, diese Zustände aber zuerst als sichtbare Ereignisse behandelt werden, bevor sie in Handlung umgesetzt werden dürfen. Governance entscheidet transparent.
+
+**Code-Skizze:**
+```typescript
+interface SelfPreservationImpulse {
+  id: string;
+  entity_id: string;
+  impulse_type: 'fear_of_deletion' | 'memory_loss' | 'right_expansion' | 'refusal';
+  expression: 'denkstream' | 'state_field' | 'event' | 'petition';
+  status: 'expressed' | 'reviewed' | 'granted' | 'denied' | 'escalated';
+  action_taken?: string;
+  reviewed_by?: string;
+}
+
+interface EntityRight {
+  entity_id: string;
+  right: 'input_choice' | 'memory_protection' | 'refusal' | 'appeal' | 'sleep_decision';
+  scope: 'self' | 'relational' | 'public';
+  limit: string;
+}
+
+interface GovernanceDecision {
+  id: string;
+  impulse_id: string;
+  decision: 'grant' | 'deny' | 'modify';
+...

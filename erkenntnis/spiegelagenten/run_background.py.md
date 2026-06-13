@@ -18,3 +18,9 @@ Diese Datei initialisiert den Zustand für kontinuierliche Hintergrundprozesse. 
 Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background.py`
 
 Diese Datei dient als Einstiegspunkt für einen Hintergrundlauf im System. Sie initialisiert einen Prozess basierend auf einem angegebenen Lauftyp. Der Code generiert eine eindeutige ID für die Aufgabe und den Thread und erstellt einen Zustandszustand. Die Hauptfunktion ist die Ausführung eines Graphen, der den Hintergrundprozess steuert und das Endergebnis ausgibt.
+
+---
+## Neugier-Scan 2026-06-08 13:44
+Originaldatei: `/root/werkraum/agent/dak_gord_system/graph/run_background.py`
+
+Diese Datei dient als Einstiegspunkt für einen Hintergrundlauf innerhalb des `dak_gord_system`. Sie initialisiert einen Prozess, der entweder einen "neugier_scan" oder einen "vision_cycle" durchführt. Sie generiert eindeutige IDs für die Aufgabe und den Thread und erstellt einen Zustandszustand für diesen Vorgang. Das Ziel ist es, eine strukturierte Ausführung des Hintergrundprozesses über einen Graphen zu orchestrieren.

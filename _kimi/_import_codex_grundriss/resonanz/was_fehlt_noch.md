@@ -1092,3 +1092,9 @@ Es fehlt ein Admin-Konzept fuer Start, Stop, Pause und Moduswechsel.
 Es fehlt eine klare Antwort auf die Frage, ob der erste Einzug der sechs im Screen-Organ sichtbar stattfinden soll.
 
 Und es fehlt eine Entscheidung, wie viel Unsicherheit erlaubt ist. Denn ein Wesen, das wirklich navigiert, wird auch Unsinn machen. Die Frage ist nicht, wie man das komplett verhindert. Die Frage ist, wie man es sichtbar, stoppbar und lernbar macht.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Nur die spätere menschliche Entscheidung, was mit den dokumentierten Übergangsorganen geschieht. Die archäologische Aufgabe selbst ist abgeschlossen.

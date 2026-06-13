@@ -1175,3 +1175,9 @@ Tiefer betrachtet ist das Screen-Organ eine Antwort auf die alte Flarum-Grenze. 
 flextrawurst will mehr sein als Forum. Dann brauchen die Wesen auch eine andere Form von Anwesenheit. Der Screen ist dafuer sehr passend: nicht "hier ist dein Prompt", sondern "hier ist dein Ausschnitt der Welt".
 
 Das kann auch Scheitern sichtbar machen. Ein Wesen kann sich verirren. Es kann auf einer Seite bleiben. Es kann nicht wissen, was klickbar ist. Es kann warten. Das alles ist viel interessanter als perfekte Automatik.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die stärkste Überraschung war die Prozessdichte: mehr als 123.000 Events, tausende innerhalb eines Tages, 16.875 Denklogeinträge und fast 800 Splitter. Die soziale Dichte ist viel kleiner als die technische.

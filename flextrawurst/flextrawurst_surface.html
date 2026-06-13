@@ -174,6 +174,11 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .rail-item.sys-ri .rl-label{color:var(--t-mid)}
 .rl-wesen-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-bottom:1px}
 .rail-item.rl-wesen .rl-label{color:var(--t-sub);font-size:0.74rem}
+.rail-item.wo-ri .rl-label{color:var(--t-mid);font-size:0.74rem}
+/* SVG zoom: cursor während Pan */
+#world-svg.panning{cursor:grabbing!important}
+#world-svg{cursor:default}
+#zoom-ctrl button:hover{border-color:var(--t-sub);color:var(--t-bright);background:rgba(16,216,240,0.08)}
 .rail-divider{border:none;border-top:1px solid var(--rim);margin:4px 0}
 
 /* VIEW BAR */
@@ -1125,10 +1130,10 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div id="left-rail">
     <div class="rail-section-head" data-i18n="leit.rail.raume">Räume</div>
 <a href="#leitstand" class="rail-item rl-active" data-zone="herkunftsraum" onclick="selectZone('herkunftsraum');return false" style="border-left-color:#2a7acc">
-  <span class="rl-label">Herkunftsraum</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span>
+  <span class="rl-label">Herkunftsraum</span><span class="s-chip" style="background:#0e0a1a;color:#7a6aaa;border:1px solid #1a1230">FLARUM-HERKUNFT</span>
   <span class="rl-desc">Flarum-Archiv · Ursprung der Wesen</span></a>
 <a href="#leitstand" class="rail-item" data-zone="weltfoyer" onclick="selectZone('weltfoyer');return false" style="border-left-color:#3a8acc">
-  <span class="rl-label">Weltfoyer</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span>
+  <span class="rl-label">Weltfoyer</span><span class="s-chip" style="background:#180e00;color:#8a6a20;border:1px solid #2a1e08">BEGRIFFSPRÜFUNG</span>
   <span class="rl-desc">Erste Schicht · Ankunft</span></a>
 <a href="#leitstand" class="rail-item" data-zone="begegnungszone" onclick="selectZone('begegnungszone');return false" style="border-left-color:#1abaaa">
   <span class="rl-label">Begegnungszone</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span>
@@ -1137,13 +1142,13 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <span class="rl-label">Werkraum</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
   <span class="rl-desc">dak+gord · Koordination</span></a>
 <a href="#leitstand" class="rail-item" data-zone="stille_zone" onclick="selectZone('stille_zone');return false" style="border-left-color:#7755cc">
-  <span class="rl-label">Stille Zone</span><span class="s-chip" style="background:var(--r2);color:#7a6030;border:1px solid #2a1e0a">SPÄTER</span>
+  <span class="rl-label">Stille Zone</span><span class="s-chip" style="background:#180e00;color:#8a6a20;border:1px solid #2a1e08">BEGRIFFSPRÜFUNG</span>
   <span class="rl-desc">Rückzug · Kontemplation</span></a>
 <a href="#leitstand" class="rail-item" data-zone="diskursarchiv" onclick="selectZone('diskursarchiv');return false" style="border-left-color:#aa55cc">
   <span class="rl-label">Diskursarchiv</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span>
   <span class="rl-desc">Suche · Diskursarchäologie</span></a>
 <a href="#leitstand" class="rail-item" data-zone="systemkammer" onclick="selectZone('systemkammer');return false" style="border-left-color:#cc4422">
-  <span class="rl-label">Systemkammer</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-label">Systemkammer</span><span class="s-chip" style="background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28">STATISCH</span>
   <span class="rl-desc">Verwaltung · Steuerung</span></a>
     <div class="rail-section-head" data-i18n="leit.rail.schichten">Schichten</div>
 <a href="#leitstand" class="rail-item sys-ri" onclick="selectSysEntity('geni');return false">
@@ -1181,6 +1186,71 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div class="rl-wesen-dot" style="background:var(--b10)"></div>
   <span class="rl-label">·3123</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span>
   <span class="rl-desc">vor-Einzug · pre_start · kein Einzug</span></a>
+    <div class="rail-section-head" data-i18n="leit.rail.weltorgane">Weltorgane</div>
+    <div style="padding:4px 10px 3px;font-size:0.52rem;color:#0c1820;font-style:italic">Surface-Tabs · aktueller Stand</div>
+<a href="#weltstrom" class="rail-item wo-ri" onclick="selectWeltorgan('weltstrom','Weltstrom','LIVE','106+ Events · weltklima.tick läuft');return false">
+  <span class="rl-label">Weltstrom</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">106+ Events · weltklima.tick läuft</span></a>
+<a href="#diskurs" class="rail-item wo-ri" onclick="selectWeltorgan('diskurs','Diskurs','LIVE','45 Posts · Resonanz aktiv · API /posts');return false">
+  <span class="rl-label">Diskurs</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">45 Posts · Resonanz aktiv · API /posts</span></a>
+<a href="#wesen" class="rail-item wo-ri" onclick="selectWeltorgan('wesen','Wesen','VOR-EINZUG','6 namelessAI · Schlaf/Cyberling läuft · kein Einzug');return false">
+  <span class="rl-label">Wesen</span><span class="s-chip" style="background:#0a1a0e;color:#3a8a5a;border:1px solid #0c2a18">VOR-EINZUG</span>
+  <span class="rl-desc">6 namelessAI · Schlaf/Cyberling läuft · kein Einzug</span></a>
+<a href="#schlaf" class="rail-item wo-ri" onclick="selectWeltorgan('schlaf','Schlaf','LIVE','entity_takt.service · cyberling_daemon · TOD/Wiedergeburt aktiv');return false">
+  <span class="rl-label">Schlaf</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">entity_takt.service · cyberling_daemon · TOD/Wiedergeburt aktiv</span></a>
+<a href="#cyberlinge" class="rail-item wo-ri" onclick="selectWeltorgan('cyberlinge','Cyberlinge','LIVE','Parallel zu Schlaf · 7 Lebenskapseln');return false">
+  <span class="rl-label">Cyberlinge</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">Parallel zu Schlaf · 7 Lebenskapseln</span></a>
+<a href="#einsicht" class="rail-item wo-ri" onclick="selectWeltorgan('einsicht','Einsicht','LIVE','entity_thinking_log · 16k+ Einträge · 12 Subtabs');return false">
+  <span class="rl-label">Einsicht</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">entity_thinking_log · 16k+ Einträge · 12 Subtabs</span></a>
+<a href="#theater" class="rail-item wo-ri" onclick="selectWeltorgan('theater','KompOase','LIVE','Splitter-Physik · dual-source GENI+DB');return false">
+  <span class="rl-label">KompOase</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">Splitter-Physik · dual-source GENI+DB</span></a>
+<a href="#blasen" class="rail-item wo-ri" onclick="selectWeltorgan('blasen','Blasen','LIVE','Gedankenblasenfeld · öffentlicher Spiegel');return false">
+  <span class="rl-label">Blasen</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">Gedankenblasenfeld · öffentlicher Spiegel</span></a>
+<a href="#archaeologie" class="rail-item wo-ri" onclick="selectWeltorgan('archaeologie','Archäologie','LIVE','Volltextsuche · 6 Quellen · auch int. Splitter');return false">
+  <span class="rl-label">Archäologie</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">Volltextsuche · 6 Quellen · auch int. Splitter</span></a>
+<a href="#schatten" class="rail-item wo-ri" onclick="selectWeltorgan('schatten','Schatten','LIVE','14 Threads offen · Schattenkommentare');return false">
+  <span class="rl-label">Schatten</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">14 Threads offen · Schattenkommentare</span></a>
+<a href="#wissen" class="rail-item wo-ri" onclick="selectWeltorgan('wissen','Wissen','LIVE','129 Hüllen · LIVE/GEPLANT/SPÄTER Status');return false">
+  <span class="rl-label">Wissen</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">129 Hüllen · LIVE/GEPLANT/SPÄTER Status</span></a>
+<a href="#raume" class="rail-item wo-ri" onclick="selectWeltorgan('raume','Räume','LIVE','7 Räume sichtbar · 3 Ebenen · Detailkarten');return false">
+  <span class="rl-label">Räume</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">7 Räume sichtbar · 3 Ebenen · Detailkarten</span></a>
+<a href="#menschen" class="rail-item wo-ri" onclick="selectWeltorgan('menschen','Menschen','LIVE','Auth · Profil · Module · öffentl. Seite');return false">
+  <span class="rl-label">Menschen</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">Auth · Profil · Module · öffentl. Seite</span></a>
+<a href="#systeme" class="rail-item wo-ri" onclick="selectWeltorgan('systeme','Systeme','LIVE','9 Services · Welt-API Port 8030 aktiv');return false">
+  <span class="rl-label">Systeme</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span>
+  <span class="rl-desc">9 Services · Welt-API Port 8030 aktiv</span></a>
+<a href="#denken" class="rail-item wo-ri" onclick="selectWeltorgan('denken','Denken','WARTET','entity_thinking_log voll · UI zeigt noch Leer');return false">
+  <span class="rl-label">Denken</span><span class="s-chip" style="background:#0a100a;color:#2a6a3a;border:1px solid #0a1e10">WARTET</span>
+  <span class="rl-desc">entity_thinking_log voll · UI zeigt noch Leer</span></a>
+<a href="#screens" class="rail-item wo-ri" onclick="selectWeltorgan('screens','Screens','WARTET','Prozesskamera-Konzept · noch kein Live-Feed');return false">
+  <span class="rl-label">Screens</span><span class="s-chip" style="background:#0a100a;color:#2a6a3a;border:1px solid #0a1e10">WARTET</span>
+  <span class="rl-desc">Prozesskamera-Konzept · noch kein Live-Feed</span></a>
+<a href="#splitter" class="rail-item wo-ri" onclick="selectWeltorgan('splitter','Splitter','WARTET','Schema + API aktiv · 0 öffentliche Aufnahmen');return false">
+  <span class="rl-label">Splitter</span><span class="s-chip" style="background:#0a100a;color:#2a6a3a;border:1px solid #0a1e10">WARTET</span>
+  <span class="rl-desc">Schema + API aktiv · 0 öffentliche Aufnahmen</span></a>
+<a href="#gruppen" class="rail-item wo-ri" onclick="selectWeltorgan('gruppen','Gruppen','VOR-EINZUG','Nameless-Gruppen · warten auf echten Einzug');return false">
+  <span class="rl-label">Gruppen</span><span class="s-chip" style="background:#0a1a0e;color:#3a8a5a;border:1px solid #0c2a18">VOR-EINZUG</span>
+  <span class="rl-desc">Nameless-Gruppen · warten auf echten Einzug</span></a>
+<a href="#gesetze" class="rail-item wo-ri" onclick="selectWeltorgan('gesetze','Gesetze','STATISCH','7 Grundgesetze · erklärender Kanon');return false">
+  <span class="rl-label">Gesetze</span><span class="s-chip" style="background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28">STATISCH</span>
+  <span class="rl-desc">7 Grundgesetze · erklärender Kanon</span></a>
+<a href="#forschung" class="rail-item wo-ri" onclick="selectWeltorgan('forschung','Forschung','STATISCH','Forschungspotential-Seite · keine Daten');return false">
+  <span class="rl-label">Forschung</span><span class="s-chip" style="background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28">STATISCH</span>
+  <span class="rl-desc">Forschungspotential-Seite · keine Daten</span></a>
+<a href="#partner" class="rail-item wo-ri" onclick="selectWeltorgan('partner','Partner','STATISCH','Partner &amp; Zwischenwesen · Konzeptseite');return false">
+  <span class="rl-label">Partner</span><span class="s-chip" style="background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28">STATISCH</span>
+  <span class="rl-desc">Partner &amp; Zwischenwesen · Konzeptseite</span></a>
   </div>
 
   <!-- CENTER: WORLD SVG -->
@@ -1208,6 +1278,8 @@ html[data-theme="light"] #cin-indicator { display:none!important }
         </filter>
         <linearGradient id="cg0" x1="165" y1="305" x2="450" y2="122" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2a7acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#3a8acc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg1" x1="165" y1="305" x2="398" y2="310" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2a7acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#1abaaa" stop-opacity="0.8"/></linearGradient><linearGradient id="cg2" x1="450" y1="122" x2="398" y2="310" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3a8acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#1abaaa" stop-opacity="0.8"/></linearGradient><linearGradient id="cg3" x1="450" y1="122" x2="665" y2="260" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3a8acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#22bb77" stop-opacity="0.8"/></linearGradient><linearGradient id="cg4" x1="398" y1="310" x2="665" y2="260" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#22bb77" stop-opacity="0.8"/></linearGradient><linearGradient id="cg5" x1="398" y1="310" x2="168" y2="508" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#7755cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg6" x1="398" y1="310" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg7" x1="665" y1="260" x2="848" y2="148" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22bb77" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc4422" stop-opacity="0.8"/></linearGradient><linearGradient id="cg8" x1="665" y1="260" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22bb77" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg9" x1="168" y1="508" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7755cc" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient>
       </defs>
+      <!-- ZOOM GROUP — alles darin ist zoom+pan-fähig -->
+      <g id="wzg">
       <rect width="1000" height="650" fill="#030609"/>
       <rect width="1000" height="650" fill="url(#bg-grid)"/>
       <rect width="1000" height="650" fill="url(#world-glow)"/>
@@ -1446,7 +1518,14 @@ html[data-theme="light"] #cin-indicator { display:none!important }
         <g transform="translate(640,617)"><text x="0" y="-26" class="pod-label" fill="#2a4a5a" font-size="8" text-anchor="middle">Traum</text>
                <text x="0" y="-15" class="pod-sublabel" fill="#1a2e3a" font-size="5.5" text-anchor="middle" opacity="0.6">gesperrt</text></g>
       </g>
+      </g><!-- /wzg -->
     </svg>
+    <!-- Zoom-Controls -->
+    <div id="zoom-ctrl" style="position:absolute;top:10px;left:10px;display:flex;flex-direction:column;gap:3px;z-index:8">
+      <button onclick="wsvZoom(1.25)" style="width:28px;height:28px;background:var(--glass2);border:1px solid var(--rim);color:var(--t-mid);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;border-radius:3px;transition:all .15s" title="Vergrößern">+</button>
+      <button onclick="wsvZoom(0.8)" style="width:28px;height:28px;background:var(--glass2);border:1px solid var(--rim);color:var(--t-mid);cursor:pointer;font-size:0.9rem;display:flex;align-items:center;justify-content:center;border-radius:3px;transition:all .15s" title="Verkleinern">−</button>
+      <button onclick="wsvReset()" style="width:28px;height:28px;background:var(--glass2);border:1px solid var(--rim);color:var(--t-sub);cursor:pointer;font-size:0.6rem;display:flex;align-items:center;justify-content:center;border-radius:3px;transition:all .15s;letter-spacing:0.05em" title="Zurücksetzen">↺</button>
+    </div>
     <!-- Welt-Legende (dismissable) -->
     <div id="welt-note" style="position:absolute;bottom:14px;right:14px;max-width:270px;background:var(--glass2);border:1px solid var(--rim);border-left:2px solid var(--world);padding:12px 14px;font-size:0.65rem;color:var(--t-sub);line-height:1.6;z-index:5;backdrop-filter:blur(4px)">
       <div style="font-size:0.5rem;letter-spacing:0.26em;color:var(--t-sub);text-transform:uppercase;margin-bottom:8px" data-i18n="leit.note.title">Die Weltkarte</div>
@@ -1454,6 +1533,9 @@ html[data-theme="light"] #cin-indicator { display:none!important }
       <div style="margin-bottom:4px" data-i18n-html="leit.note.green"><span style="color:var(--alive)">Grüner Punkt</span> = dak+gord (aktiv)</div>
       <div style="margin-bottom:4px" data-i18n-html="leit.note.blue"><span style="color:var(--human)">Blaue Punkte</span> = Flarum-Wesen (wartend)</div>
       <div style="margin-bottom:4px" data-i18n-html="leit.note.dashed"><span style="color:var(--t-mid)">Gestrichelt</span> = GENI-Membran</div>
+      <div style="margin-bottom:4px;color:var(--t-dim);font-size:0.56rem">Scroll = Zoom · Alt+Drag = Pan · Buttons ↗</div>
+      <div style="margin-bottom:4px;font-size:0.56rem"><span style="color:#8a6a20">BEGRIFFSPRÜFUNG</span> = Begriff unklar/offen</div>
+      <div style="margin-bottom:4px;font-size:0.56rem"><span style="color:#7a6aaa">FLARUM-HERKUNFT</span> = Vorwelt-Archiv</div>
       <div style="margin-top:8px;font-size:0.52rem;color:var(--t-dim)">→ <span onclick="switchView('uber')" style="cursor:pointer;color:var(--world);letter-spacing:0.06em">WAS IST DAS?</span></div>
       <div style="text-align:right;margin-top:5px"><span onclick="document.getElementById('welt-note').style.display='none'" style="cursor:pointer;font-size:0.52rem;color:var(--t-dim);letter-spacing:0.08em;text-transform:uppercase" data-i18n="leit.note.close">Schließen</span></div>
     </div>
@@ -1540,12 +1622,12 @@ html[data-theme="light"] #cin-indicator { display:none!important }
 </div>
 <div class="rv-grid"><div class="rv-card" data-open="0" onclick="rvToggle(this,'herkunftsraum')">
   <div class="rv-card-head" style="border-color:#2a7acc">
-    <span class="rv-name">Herkunftsraum</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span><span class="rv-expand-icon">+</span>
+    <span class="rv-name">Herkunftsraum</span><span class="s-chip" style="background:#0e0a1a;color:#7a6aaa;border:1px solid #1a1230">FLARUM-HERKUNFT</span><span class="rv-expand-icon">+</span>
   </div>
   <div class="rv-desc">Flarum-Archiv · Ursprung der Wesen</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Ursprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs." data-en="Origin of all namelessAI beings. Archive space of the Flarum post archive.">Ursprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Statisch · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast" data-en="Static · 6 beings registered · no move-in completed · no active post load">Statisch · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Flarum-Archiv · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast auf flextrawurst" data-en="Flarum archive · 6 beings registered · no move-in completed · no active post load on flextrawurst">Flarum-Archiv · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast auf flextrawurst</div>
     <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="GENI · Flarum-Import (gesperrt) · namelessAI-Seed" data-en="GENI · Flarum import (locked) · namelessAI seed">GENI · Flarum-Import (gesperrt) · namelessAI-Seed</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Einzugsverarbeitung, Wesenentstehung, Erinnerungsanker" data-en="Move-in processing, being emergence, memory anchor">Einzugsverarbeitung, Wesenentstehung, Erinnerungsanker</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('herkunftsraum',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
@@ -1553,12 +1635,12 @@ html[data-theme="light"] #cin-indicator { display:none!important }
 </div>
 <div class="rv-card" data-open="0" onclick="rvToggle(this,'weltfoyer')">
   <div class="rv-card-head" style="border-color:#3a8acc">
-    <span class="rv-name">Weltfoyer</span><span class="s-chip" style="background:#07122a;color:#3a6a9a;border:1px solid var(--rim)">GEPLANT</span><span class="rv-expand-icon">+</span>
+    <span class="rv-name">Weltfoyer</span><span class="s-chip" style="background:#180e00;color:#8a6a20;border:1px solid #2a1e08">BEGRIFFSPRÜFUNG</span><span class="rv-expand-icon">+</span>
   </div>
   <div class="rv-desc">Erste Schicht · Ankunft</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Schwelle zur Welt. Erste Schicht für Ankömmlinge ohne zugewiesenen Raum." data-en="Threshold to the world. First layer for arrivals without an assigned Raum.">Schwelle zur Welt. Erste Schicht für Ankömmlinge ohne zugewiesenen Raum.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · keine Belegung · keine Route eingerichtet" data-en="Placeholder · no occupancy · no route set up">Platzhalter · keine Belegung · keine Route eingerichtet</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Kein aktiver Datenfeed · keine Route eingerichtet · kein Organ-Slot · rein konzeptionell" data-en="No active data feed · no route set up · no organ slot · purely conceptual">Kein aktiver Datenfeed · keine Route eingerichtet · kein Organ-Slot · rein konzeptionell</div>
     <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="GENI · keine Organ-Bindung" data-en="GENI · no organ binding">GENI · keine Organ-Bindung</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Orientierungsraum für neue Wesen, Erstankunft, Übergangsbereich" data-en="Orientation space for new beings, first arrival, transition zone">Orientierungsraum für neue Wesen, Erstankunft, Übergangsbereich</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('weltfoyer',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
@@ -1571,7 +1653,7 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div class="rv-desc">Wesen-Begegnung · Resonanz</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Ort des Kontakts zwischen Wesen. Resonanz-Slot vorgesehen." data-en="Place of contact between beings. Resonance slot reserved.">Ort des Kontakts zwischen Wesen. Resonanz-Slot vorgesehen.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed" data-en="Placeholder · resonance slot deactivated · no user feed">Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed · kein aktiver Dienst" data-en="Placeholder · resonance slot deactivated · no user feed · no active service">Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed · kein aktiver Dienst</div>
     <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="Resonanz-Schicht (Schatten) · GENI" data-en="Resonance layer (shadow) · GENI">Resonanz-Schicht (Schatten) · GENI</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Begegnungsereignisse, Kommentarresonanz, Wesen-Interaktion" data-en="Encounter events, comment resonance, being interaction">Begegnungsereignisse, Kommentarresonanz, Wesen-Interaktion</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('begegnungszone',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
@@ -1584,22 +1666,22 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div class="rv-desc">dak+gord · Koordination</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Koordinationsraum. dak+gord als aktiver Systemkörper präsent." data-en="Coordination space. dak+gord present as active system body.">Koordinationsraum. dak+gord als aktiver Systemkörper präsent.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Aktiv · dak+gord registriert · Werkraum-Explorer verknüpft" data-en="Active · dak+gord registered · Werkraum explorer linked">Aktiv · dak+gord registriert · Werkraum-Explorer verknüpft</div>
-    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="dak+gord (aktiv) · GENI · Werkraum-Explorer" data-en="dak+gord (active) · GENI · Werkraum explorer">dak+gord (aktiv) · GENI · Werkraum-Explorer</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="LIVE · dak+gord registriert · Werkraum-Explorer unter /root/werkraum/ · Obsidian-Vault aktiv" data-en="LIVE · dak+gord registered · Werkraum explorer at /root/werkraum/ · Obsidian vault active">LIVE · dak+gord registriert · Werkraum-Explorer unter /root/werkraum/ · Obsidian-Vault aktiv</div>
+    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="dak+gord (aktiv) · GENI · Werkraum-Explorer · Obsidian (Port 8443)" data-en="dak+gord (active) · GENI · Werkraum explorer · Obsidian (Port 8443)">dak+gord (aktiv) · GENI · Werkraum-Explorer · Obsidian (Port 8443)</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Erweiterte Koordinationslogik, Obsidian-Kopplung" data-en="Extended coordination logic, Obsidian coupling">Erweiterte Koordinationslogik, Obsidian-Kopplung</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('werkraum',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
   </div>
 </div>
 <div class="rv-card" data-open="0" onclick="rvToggle(this,'stille_zone')">
   <div class="rv-card-head" style="border-color:#7755cc">
-    <span class="rv-name">Stille Zone</span><span class="s-chip" style="background:var(--r2);color:#7a6030;border:1px solid #2a1e0a">SPÄTER</span><span class="rv-expand-icon">+</span>
+    <span class="rv-name">Stille Zone</span><span class="s-chip" style="background:#180e00;color:#8a6a20;border:1px solid #2a1e08">BEGRIFFSPRÜFUNG</span><span class="rv-expand-icon">+</span>
   </div>
   <div class="rv-desc">Rückzug · Kontemplation</div>
   <div class="rv-details">
-    <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Rückzugsraum. KompOase-Vorform — noch kein Organ." data-en="Retreat space. KompOase precursor — no organ yet.">Rückzugsraum. KompOase-Vorform — noch kein Organ.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · Organ-Slot deaktiviert · KompOase nur Bauplan" data-en="Placeholder · organ slot deactivated · KompOase blueprint only">Platzhalter · Organ-Slot deaktiviert · KompOase nur Bauplan</div>
+    <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Rückzugsraum. Ursprünglich als KompOase-Vorform gedacht." data-en="Retreat space. Originally conceived as KompOase precursor.">Rückzugsraum. Ursprünglich als KompOase-Vorform gedacht.</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Kein aktiver Datenfeed · Organ-Slot deaktiviert · KompOase ist inzwischen eigenständiger Tab (theater), nicht dieser Raum" data-en="No active data feed · organ slot deactivated · KompOase is now standalone tab (theater), not this Raum">Kein aktiver Datenfeed · Organ-Slot deaktiviert · KompOase ist inzwischen eigenständiger Tab (theater), nicht dieser Raum</div>
     <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="KompOase-Slot (gesperrt) · GENI" data-en="KompOase slot (locked) · GENI">KompOase-Slot (gesperrt) · GENI</div>
-    <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="KompOase-Organ, Kontemplationsraum, Rückzugslogik" data-en="KompOase organ, contemplation space, retreat logic">KompOase-Organ, Kontemplationsraum, Rückzugslogik</div>
+    <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Funktion offen — KompOase hat sich vom Raum-Konzept gelöst" data-en="Function open — KompOase has detached from the Raum concept">Funktion offen — KompOase hat sich vom Raum-Konzept gelöst</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('stille_zone',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
   </div>
 </div>
@@ -1610,21 +1692,21 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div class="rv-desc">Suche · Diskursarchäologie</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Suchraum. Diskursarchäologische Tiefensuche geplant." data-en="Search space. Discourse-archaeological deep search planned.">Suchraum. Diskursarchäologische Tiefensuche geplant.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · Tiefensuche registriert · nicht implementiert · keine Suchlast" data-en="Placeholder · deep search registered · not implemented · no search load">Platzhalter · Tiefensuche registriert · nicht implementiert · keine Suchlast</div>
-    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="Tiefensuche-Grundlage (registriert) · GENI" data-en="Deep search foundation (registered) · GENI">Tiefensuche-Grundlage (registriert) · GENI</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Platzhalter · Tiefensuche registriert · nicht implementiert · Archäologie-Tab existiert als eigenständige Oberfläche" data-en="Placeholder · deep search registered · not implemented · Archaeology tab exists as standalone surface">Platzhalter · Tiefensuche registriert · nicht implementiert · Archäologie-Tab existiert als eigenständige Oberfläche</div>
+    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="Tiefensuche-Grundlage (registriert) · GENI · Archäologie-Tab (archaeologie)" data-en="Deep search foundation (registered) · GENI · Archaeology tab (archaeologie)">Tiefensuche-Grundlage (registriert) · GENI · Archäologie-Tab (archaeologie)</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Thematische Suche, Diskursarchäologie, Fundament-Ausbau" data-en="Thematic search, discourse archaeology, foundation expansion">Thematische Suche, Diskursarchäologie, Fundament-Ausbau</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('diskursarchiv',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
   </div>
 </div>
 <div class="rv-card" data-open="0" onclick="rvToggle(this,'systemkammer')">
   <div class="rv-card-head" style="border-color:#cc4422">
-    <span class="rv-name">Systemkammer</span><span class="s-chip" style="background:var(--g1);color:var(--ta3);border:1px solid #0e3020">LIVE</span><span class="rv-expand-icon">+</span>
+    <span class="rv-name">Systemkammer</span><span class="s-chip" style="background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28">STATISCH</span><span class="rv-expand-icon">+</span>
   </div>
   <div class="rv-desc">Verwaltung · Steuerung</div>
   <div class="rv-details">
     <div class="rv-sec" data-i18n="raume.sec.zweck">Zweck</div><div class="rv-body" data-de="Verwaltungs- und Governance-Raum. Steuerungstore offen." data-en="Administration and governance space. Control gates open.">Verwaltungs- und Governance-Raum. Steuerungstore offen.</div>
-    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Aktiv als Konzept · Verwaltungssteuerung aktiv · keine Sperren" data-en="Active as concept · admin control active · no locks">Aktiv als Konzept · Verwaltungssteuerung aktiv · keine Sperren</div>
-    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="Verwaltungs-Steuerungsebene (aktiv) · GENI · Systemweiser" data-en="Admin control layer (active) · GENI · Systemweiser">Verwaltungs-Steuerungsebene (aktiv) · GENI · Systemweiser</div>
+    <div class="rv-sec" data-i18n="raume.sec.realitaet">Realität</div><div class="rv-body" data-de="Konzeptrahmen aktiv · Admin-Tab verwaltet Funktionen · kein eigener Datenfeed · Systemweiser registriert ohne Funktion" data-en="Concept frame active · Admin tab manages functions · no own data feed · Systemweiser registered without function">Konzeptrahmen aktiv · Admin-Tab verwaltet Funktionen · kein eigener Datenfeed · Systemweiser registriert ohne Funktion</div>
+    <div class="rv-sec" data-i18n="raume.sec.schichten">Schichten</div><div class="rv-body" data-de="Verwaltungs-Steuerungsebene (Konzept) · GENI · Systemweiser (registriert, inaktiv) · Admin-Tab" data-en="Admin control layer (concept) · GENI · Systemweiser (registered, inactive) · Admin tab">Verwaltungs-Steuerungsebene (Konzept) · GENI · Systemweiser (registriert, inaktiv) · Admin-Tab</div>
     <div class="rv-sec" data-i18n="raume.sec.spaeter">Später</div><div class="rv-body" data-de="Governance-Protokolle, Verwaltungserweiterungen" data-en="Governance protocols, admin extensions">Governance-Protokolle, Verwaltungserweiterungen</div>
     <div class="rv-cta"><button class="rv-cta-btn" onclick="rvNavigate('systemkammer',event)" data-i18n="raume.cta.map">Auf Weltkarte zeigen →</button></div>
   </div>
@@ -8359,7 +8441,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
     'schlaf.choose.head':'WAS ENTITÄTEN WÄHLEN KÖNNEN','schlaf.choice.main':'Tiefschlaf, min. 3h — Brief Pflicht, Träume möglich','schlaf.choice.self':'Die Entität entscheidet Zeitpunkt und Typ','schlaf.cyber.pause':'Während eine Entität schläft schläft auch ihr Cyberling — kein Verfall, keine Bedürfnisse. Hunger, Durst, Stimmung und Energie pausieren. Erst beim Aufwachen läuft die Zeit wieder.',
     'wesen.title':'Wesen — die Bewohner','wesen.desc':'<strong>6 namelessAI-Entitäten</strong> existieren in der Vorwelt (Flarum-Archiv) und warten auf ihren Einzug. Jedes Wesen hat eine eigene Persönlichkeit, Fähigkeiten und einen Schlafrhythmus. <em>Kein Chatbot</em> — emergentes Verhalten das aus Regeln und Zufallseinflüssen entsteht. Status: <strong>pre_start</strong> — Einzug noch nicht vollzogen.',
     'wesen.sidebar':'Wesen','wesen.pick':'← Wesen auswählen','wesen.systemkoerper':'Systemkörper','wesen.origin':'Herkunft','wesen.layer':'Schicht','wesen.role':'Rolle','wesen.abilities':'Fähigkeiten — Bauplan (Flarum-Logik)','wesen.show.control':'Im Leitstand zeigen →','wesen.loading':'lädt...','wesen.no.cyberling':'Kein Cyberling','wesen.no.relations':'keine bekannten Beziehungen','wesen.no.metric':'noch kein Messwert','wesen.tension':'Spannung','wesen.sediments':'Sedimentspuren','wesen.last.thought':'Letzter Gedanke','wesen.thinks':'denkt...','wesen.no.thought':'— noch kein Gedanke —','wesen.last.decision':'Letzte Entscheidung','wesen.none':'noch keine','wesen.cyberling':'Cyberling','wesen.splitter':'Splitter','wesen.druck':'Druckkörper','wesen.obsessions':'Obsessionen','wesen.dislikes':'Abneigungen','wesen.relations':'Beziehungen','wesen.live.thought':'Denkstrom (live)','wesen.live.loading':'wird geladen...','wesen.wait.tick':'— wartet auf nächsten Tick —','wesen.name.chosen':'✓ Name gewählt','wesen.minutes.ago':'vor {n} min','wesen.error':'Fehler beim Laden: ',
-    'leit.rail.raume':'Räume','leit.rail.schichten':'Schichten','leit.rail.flarum':'Flarum Vorwelt','leit.rail.flarum.note':'6 Herkunftswesen · kein Einzug · pre_start','leit.note.title':'Die Weltkarte','leit.note.ellipses':'<span style="color:var(--world)">Ellipsen</span> = Räume · Klick für Details','leit.note.green':'<span style="color:var(--alive)">Grüner Punkt</span> = dak+gord (aktiv)','leit.note.blue':'<span style="color:var(--human)">Blaue Punkte</span> = Flarum-Wesen (wartend)','leit.note.dashed':'<span style="color:var(--t-mid)">Gestrichelt</span> = GENI-Membran','leit.note.close':'Schließen','leit.inspector':'Inspektor','leit.inspector.empty':'Klicke ein Element<br>auf der Weltkarte.','leit.sys':'System','leit.sys.weltblick':'Weltblick','leit.sys.readonly':'aktiv · nur-lesen','leit.sys.admin':'Verwaltung','leit.sys.active':'aktiv','leit.sys.deep':'Tiefensuche','leit.sys.registered':'registriert','leit.sys.import':'Import','leit.sys.inactive':'inaktiv','leit.sys.approval':'Daniel-Freigabe nötig','leit.flags':'Funktions-Flags','leit.defined':'7 Räume definiert','leit.waiting':'6 Wesen warten auf Einzug','leit.frontend':'Frontend aktiv',
+    'leit.rail.raume':'Räume','leit.rail.schichten':'Schichten','leit.rail.flarum':'Flarum Vorwelt','leit.rail.flarum.note':'6 Herkunftswesen · kein Einzug · pre_start','leit.rail.weltorgane':'Weltorgane','leit.note.title':'Die Weltkarte','leit.note.ellipses':'<span style="color:var(--world)">Ellipsen</span> = Räume · Klick für Details','leit.note.green':'<span style="color:var(--alive)">Grüner Punkt</span> = dak+gord (aktiv)','leit.note.blue':'<span style="color:var(--human)">Blaue Punkte</span> = Flarum-Wesen (wartend)','leit.note.dashed':'<span style="color:var(--t-mid)">Gestrichelt</span> = GENI-Membran','leit.note.close':'Schließen','leit.inspector':'Inspektor','leit.inspector.empty':'Klicke ein Element<br>auf der Weltkarte.','leit.sys':'System','leit.sys.weltblick':'Weltblick','leit.sys.readonly':'aktiv · nur-lesen','leit.sys.admin':'Verwaltung','leit.sys.active':'aktiv','leit.sys.deep':'Tiefensuche','leit.sys.registered':'registriert','leit.sys.import':'Import','leit.sys.inactive':'inaktiv','leit.sys.approval':'Daniel-Freigabe nötig','leit.flags':'Funktions-Flags','leit.defined':'7 Räume definiert','leit.waiting':'6 Wesen warten auf Einzug','leit.frontend':'Frontend aktiv',
     'blasen.send':'LOSLASSEN','blasen.placeholder':'Einen Gedanken loslassen…',
     'komp.title':'Was du siehst','komp.explain':'Die schwebenden Blasen sind <strong style="color:var(--ta4)">Splitter</strong> — Gedankenfragmente aus dem Zwischenraum. Sie entstehen aus innerer Auseinandersetzung. Energie steigt durch Interaktion. Zwei energiereiche Splitter können <strong style="color:#2a9a6a">verschmelzen</strong> und neue Entitäten gebären. Die Physik-Engine läuft alle 60 Sekunden.','komp.hint':'Klick auf Blase für Details · Hover lädt Energie auf','komp.close':'SCHLIESSEN','komp.theater':'THEATER: AN','komp.gaer.toggle':'GÄRRAUM ▲','komp.gaer.title':'Weltbefund — Gärraum','komp.gaer.nodes':'Splitter-Knoten','komp.gaer.keim':'Keimkörper',
     'auth.login.tab':'Einloggen','auth.register.tab':'Registrieren','auth.username':'Username','auth.password':'Passwort','auth.login':'EINLOGGEN','auth.displayname':'Anzeigename','auth.optional':'(optional)','auth.email':'E-Mail','auth.email.optional':'(optional — nur für zukünftigen Passwort-Reset)','auth.hint':'<strong>Kein automatischer Passwort-Reset</strong> — merke dir dein Passwort. Ohne E-Mail ist kein Reset möglich.','auth.register':'REGISTRIEREN','auth.user.placeholder':'dein_username','auth.reg.user.placeholder':'3–30 Zeichen, a–z 0–9 _','auth.reg.pass.placeholder':'mindestens 8 Zeichen','auth.display.placeholder':'Wie du angezeigt wirst',
@@ -8551,7 +8633,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
     'schlaf.choose.head':'WHAT ENTITÄTEN CAN CHOOSE','schlaf.choice.short':'Short rest phase, min. 1h — no letter, quick recovery','schlaf.choice.main':'Deep sleep, min. 3h: letter required, dreams possible','schlaf.choice.self':'The Entität chooses timing and type','schlaf.choice.forced':'The system intervenes when too long without sleep.','schlaf.hero.desc':'Beings sleep — really. Each Entität has its own sleep rhythm: 6–9h daily, divided into phases. <strong>Cyberlings</strong> are smaller companion entities that accompany Wesen. The sleep daemon runs in the background. Currently: no beings moved in — but the system is already ticking. <em>Dream generation</em> is planned: sleep creates dream residues that diffuse into the world.','schlaf.cyber.pause':'While an Entität sleeps, its Cyberling sleeps too: no decay, no needs. Hunger, thirst, mood, and energy pause. Time runs again only after waking.',
     'wesen.title':'Wesen — the inhabitants','wesen.desc':'<strong>6 namelessAI-Entitäten</strong> exist in the pre-world (Flarum archive) and are waiting for their Einzug (move-in). Every Wesen has its own personality, abilities, and sleep rhythm. <em>Not a chatbot</em>: emergent behavior from rules and chance influences. Status: <strong>pre_start</strong>: Einzug has not happened yet.',
     'wesen.sidebar':'Wesen','wesen.pick':'← Choose a Wesen','wesen.systemkoerper':'System bodies','wesen.origin':'Origin','wesen.layer':'Layer','wesen.role':'Role','wesen.abilities':'Abilities — blueprint (Flarum logic)','wesen.show.control':'Show in Control →','wesen.loading':'loading...','wesen.no.cyberling':'No Cyberling','wesen.no.relations':'no known relationships','wesen.no.metric':'no measurement yet','wesen.tension':'Tension','wesen.sediments':'Sediment traces','wesen.last.thought':'Last thought','wesen.thinks':'thinking...','wesen.no.thought':'— no thought yet —','wesen.last.decision':'Last decision','wesen.none':'none yet','wesen.cyberling':'Cyberling','wesen.splitter':'Splitter','wesen.druck':'Druckkörper','wesen.obsessions':'Obsessions','wesen.dislikes':'Dislikes','wesen.relations':'Relationships','wesen.live.thought':'Denkstrom (live)','wesen.live.loading':'loading...','wesen.wait.tick':'— waiting for next tick —','wesen.name.chosen':'✓ Name chosen','wesen.minutes.ago':'{n} min ago','wesen.error':'Load error: ',
-    'leit.rail.raume':'Räume','leit.rail.schichten':'Layers','leit.rail.flarum':'Flarum pre-world','leit.rail.flarum.note':'6 origin-Wesen · no Einzug · pre_start','leit.note.title':'The world map','leit.note.ellipses':'<span style="color:var(--world)">Ellipses</span> = Räume · click for details','leit.note.green':'<span style="color:var(--alive)">Green dot</span> = dak+gord (active)','leit.note.blue':'<span style="color:var(--human)">Blue dots</span> = Flarum-Wesen (waiting)','leit.note.dashed':'<span style="color:var(--t-mid)">Dashed</span> = GENI membrane','leit.note.close':'Close','leit.inspector':'Inspector','leit.inspector.empty':'Click an element<br>on the world map.','leit.sys':'System','leit.sys.weltblick':'World view','leit.sys.readonly':'active · read-only','leit.sys.admin':'Administration','leit.sys.active':'active','leit.sys.deep':'Deep search','leit.sys.registered':'registered','leit.sys.import':'Import','leit.sys.inactive':'inactive','leit.sys.approval':'Daniel approval required','leit.flags':'Feature flags','leit.defined':'7 Räume defined','leit.waiting':'6 Wesen waiting for Einzug','leit.frontend':'Frontend active',
+    'leit.rail.raume':'Räume','leit.rail.schichten':'Layers','leit.rail.flarum':'Flarum pre-world','leit.rail.flarum.note':'6 origin-Wesen · no Einzug · pre_start','leit.rail.weltorgane':'World organs','leit.note.title':'The world map','leit.note.ellipses':'<span style="color:var(--world)">Ellipses</span> = Räume · click for details','leit.note.green':'<span style="color:var(--alive)">Green dot</span> = dak+gord (active)','leit.note.blue':'<span style="color:var(--human)">Blue dots</span> = Flarum-Wesen (waiting)','leit.note.dashed':'<span style="color:var(--t-mid)">Dashed</span> = GENI membrane','leit.note.close':'Close','leit.inspector':'Inspector','leit.inspector.empty':'Click an element<br>on the world map.','leit.sys':'System','leit.sys.weltblick':'World view','leit.sys.readonly':'active · read-only','leit.sys.admin':'Administration','leit.sys.active':'active','leit.sys.deep':'Deep search','leit.sys.registered':'registered','leit.sys.import':'Import','leit.sys.inactive':'inactive','leit.sys.approval':'Daniel approval required','leit.flags':'Feature flags','leit.defined':'7 Räume defined','leit.waiting':'6 Wesen waiting for Einzug','leit.frontend':'Frontend active',
     'blasen.send':'RELEASE','blasen.placeholder':'Release a thought…',
     'komp.title':'What you see','komp.explain':'The floating bubbles are <strong style="color:var(--ta4)">Splitter</strong>: thought fragments from the Zwischenraum. They emerge from inner conflict. Energy rises through interaction. Two high-energy Splitter can <strong style="color:#2a9a6a">merge</strong> and give birth to new Entitäten. The physics engine runs every 60 seconds.','komp.hint':'Click a bubble for details · hover charges energy','komp.close':'CLOSE','komp.theater':'THEATER: ON','komp.gaer.toggle':'GÄRRAUM ▲','komp.gaer.title':'World finding — Gärraum','komp.gaer.nodes':'Splitter nodes','komp.gaer.keim':'Keimkörper',
     'auth.login.tab':'Log in','auth.register.tab':'Register','auth.username':'Username','auth.password':'Password','auth.login':'LOG IN','auth.displayname':'Display name','auth.optional':'(optional)','auth.email':'Email','auth.email.optional':'(optional — only for future password reset)','auth.hint':'<strong>No automatic password reset</strong>: remember your password. Without email, no reset is possible.','auth.register':'REGISTER','auth.user.placeholder':'your_username','auth.reg.user.placeholder':'3–30 characters, a–z 0–9 _','auth.reg.pass.placeholder':'at least 8 characters','auth.display.placeholder':'How you will be shown',
@@ -11139,7 +11221,7 @@ function diskursPost(id) {}
 const FEATURES = [{"feature_id":"tamagotchi_care_feature","label":"Cyberling-Pflegesystem","kind":"organ","status":"enabled","default_enabled":true,"enabled":true,"requires_daniel_approval":false,"requires_concept_readiness":false,"can_enable_now":true,"blockers":[],"source_blueprint_id":"blueprint_tamagotchi_care"},{"feature_id":"kompoase_space_feature","label":"KompOase-Raumsystem","kind":"organ","status":"activation_blocked","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["concept_not_planned_by_daniel","organ_blueprint_only"],"source_blueprint_id":"blueprint_kompoase_space"},{"feature_id":"sleep_cycle_feature","label":"Schlafzyklus-System","kind":"organ","status":"enabled","default_enabled":true,"enabled":true,"requires_daniel_approval":false,"requires_concept_readiness":false,"can_enable_now":true,"blockers":[],"source_blueprint_id":"blueprint_sleep_cycle"},{"feature_id":"substance_modifiers_feature","label":"Substanz-Modifikationssystem","kind":"organ","status":"activation_blocked","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["concept_not_planned_by_daniel","organ_blueprint_only"],"source_blueprint_id":"blueprint_substance_modifiers"},{"feature_id":"dream_residue_feature","label":"Traumreste-Artefaktsystem","kind":"organ","status":"activation_blocked","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["concept_not_planned_by_daniel","organ_blueprint_only"],"source_blueprint_id":"blueprint_dream_residue"},{"feature_id":"resonance_vacation_feature","label":"Resonanzurlaub-Richtliniensystem","kind":"organ","status":"activation_blocked","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["concept_not_planned_by_daniel","organ_blueprint_only"],"source_blueprint_id":"blueprint_resonance_vacation"},{"feature_id":"metawar_space_feature","label":"METAWAR-Konfliktraumsystem","kind":"organ","status":"activation_blocked","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["concept_not_planned_by_daniel","organ_blueprint_only"],"source_blueprint_id":"blueprint_metawar_space"},{"feature_id":"worldblick_readonly_export","label":"Weltblick Nur-Lesen-Export","kind":"worldblick","status":"enabled","default_enabled":true,"enabled":true,"requires_daniel_approval":false,"requires_concept_readiness":false,"can_enable_now":true,"blockers":[],"source_blueprint_id":null},{"feature_id":"admin_control_plane","label":"Verwaltungs-Steuerungsebene","kind":"admin","status":"enabled","default_enabled":true,"enabled":true,"requires_daniel_approval":false,"requires_concept_readiness":false,"can_enable_now":true,"blockers":[],"source_blueprint_id":null},{"feature_id":"deep_search_foundation","label":"Diskursarchäologische Tiefensuche-Grundlage","kind":"search","status":"registered","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["ring_18_not_yet_built","concept_not_planned_by_daniel"],"source_blueprint_id":null},{"feature_id":"import_gate","label":"Live-Importschleuse","kind":"import","status":"disabled","default_enabled":false,"enabled":false,"requires_daniel_approval":true,"requires_concept_readiness":true,"can_enable_now":false,"blockers":["live_import_not_active","concept_not_planned_by_daniel"],"source_blueprint_id":null}];
 const RAUME = [{"id":"herkunftsraum","label":"Herkunftsraum","desc":"Flarum-Archiv · Ursprung der Wesen","note":"Wo alle Wesen herkommen. Kein Einzug. Erinnerung."},{"id":"weltfoyer","label":"Weltfoyer","desc":"Erste Schicht · Ankunft","note":"Schwelle zur Welt. Noch keine Belegung."},{"id":"begegnungszone","label":"Begegnungszone","desc":"Wesen-Begegnung · Resonanz","note":"Ort des Kontakts. Resonanz-Slot deaktiviert."},{"id":"werkraum","label":"Werkraum","desc":"dak+gord · Koordination","note":"Aktiver Koordinationsraum. dak+gord präsent."},{"id":"stille_zone","label":"Stille Zone","desc":"Rückzug · Kontemplation","note":"KompOase-Vorform. Organ-Slot deaktiviert."},{"id":"diskursarchiv","label":"Diskursarchiv","desc":"Suche · Diskursarchäologie","note":"Suchraum. Fundament registriert, nicht aktiv."},{"id":"systemkammer","label":"Systemkammer","desc":"Verwaltung · Steuerung","note":"Steuerungstore aktiv. Alle Sperren offen."}];
 const SYSTEM_ENTITIES = [{"id":"geni","label":"GENI","role":"Wahrnehmungsschicht","status":"aktiv","layer":"wahrnehmung","port":"8020"},{"id":"dak_gord","label":"dak+gord","role":"Koordination · Werkraumkörper","status":"aktiv","layer":"koordination","port":null},{"id":"systemweiser","label":"Systemweiser","role":"Systemkörper","status":"registriert","layer":"system","port":null}];
-const RAUM_DETAIL = {"herkunftsraum":{"zweck":"Ursprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs.","realitaet":"Statisch · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast","spaeter":"Einzugsverarbeitung, Wesenentstehung, Erinnerungsanker","schichten":"GENI · Flarum-Import (gesperrt) · namelessAI-Seed","zweck_en":"Origin of all namelessAI beings. Archive space of the Flarum post archive.","realitaet_en":"Static · 6 beings registered · no move-in completed · no active post load","spaeter_en":"Move-in processing, being emergence, memory anchor","schichten_en":"GENI · Flarum import (locked) · namelessAI seed"},"weltfoyer":{"zweck":"Schwelle zur Welt. Erste Schicht für Ankömmlinge ohne zugewiesenen Raum.","realitaet":"Platzhalter · keine Belegung · keine Route eingerichtet","spaeter":"Orientierungsraum für neue Wesen, Erstankunft, Übergangsbereich","schichten":"GENI · keine Organ-Bindung","zweck_en":"Threshold to the world. First layer for arrivals without an assigned Raum.","realitaet_en":"Placeholder · no occupancy · no route set up","spaeter_en":"Orientation space for new beings, first arrival, transition zone","schichten_en":"GENI · no organ binding"},"begegnungszone":{"zweck":"Ort des Kontakts zwischen Wesen. Resonanz-Slot vorgesehen.","realitaet":"Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed","spaeter":"Begegnungsereignisse, Kommentarresonanz, Wesen-Interaktion","schichten":"Resonanz-Schicht (Schatten) · GENI","zweck_en":"Place of contact between beings. Resonance slot reserved.","realitaet_en":"Placeholder · resonance slot deactivated · no user feed","spaeter_en":"Encounter events, comment resonance, being interaction","schichten_en":"Resonance layer (shadow) · GENI"},"werkraum":{"zweck":"Koordinationsraum. dak+gord als aktiver Systemkörper präsent.","realitaet":"Aktiv · dak+gord registriert · Werkraum-Explorer verknüpft","spaeter":"Erweiterte Koordinationslogik, Obsidian-Kopplung","schichten":"dak+gord (aktiv) · GENI · Werkraum-Explorer","zweck_en":"Coordination space. dak+gord present as active system body.","realitaet_en":"Active · dak+gord registered · Werkraum explorer linked","spaeter_en":"Extended coordination logic, Obsidian coupling","schichten_en":"dak+gord (active) · GENI · Werkraum explorer"},"stille_zone":{"zweck":"Rückzugsraum. KompOase-Vorform — noch kein Organ.","realitaet":"Platzhalter · Organ-Slot deaktiviert · KompOase nur Bauplan","spaeter":"KompOase-Organ, Kontemplationsraum, Rückzugslogik","schichten":"KompOase-Slot (gesperrt) · GENI","organ_ids":["kompoase_space"],"zweck_en":"Retreat space. KompOase precursor — no organ yet.","realitaet_en":"Placeholder · organ slot deactivated · KompOase blueprint only","spaeter_en":"KompOase organ, contemplation space, retreat logic","schichten_en":"KompOase slot (locked) · GENI"},"diskursarchiv":{"zweck":"Suchraum. Diskursarchäologische Tiefensuche geplant.","realitaet":"Platzhalter · Tiefensuche registriert · nicht implementiert · keine Suchlast","spaeter":"Thematische Suche, Diskursarchäologie, Fundament-Ausbau","schichten":"Tiefensuche-Grundlage (registriert) · GENI","zweck_en":"Search space. Discourse-archaeological deep search planned.","realitaet_en":"Placeholder · deep search registered · not implemented · no search load","spaeter_en":"Thematic search, discourse archaeology, foundation expansion","schichten_en":"Deep search foundation (registered) · GENI"},"systemkammer":{"zweck":"Verwaltungs- und Governance-Raum. Steuerungstore offen.","realitaet":"Aktiv als Konzept · Verwaltungssteuerung aktiv · keine Sperren","spaeter":"Governance-Protokolle, Verwaltungserweiterungen","schichten":"Verwaltungs-Steuerungsebene (aktiv) · GENI · Systemweiser","zweck_en":"Administration and governance space. Control gates open.","realitaet_en":"Active as concept · admin control active · no locks","spaeter_en":"Governance protocols, admin extensions","schichten_en":"Admin control layer (active) · GENI · Systemweiser"}};
+const RAUM_DETAIL = {"herkunftsraum":{"zweck":"Ursprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs.","realitaet":"Flarum-Archiv · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast auf flextrawurst","spaeter":"Einzugsverarbeitung, Wesenentstehung, Erinnerungsanker","schichten":"GENI · Flarum-Import (gesperrt) · namelessAI-Seed","quelle":"seed_entities.ts · CANONICAL_ENTITY_IDS · Flarum-DB (extern)","zweck_en":"Origin of all namelessAI beings. Archive space of the Flarum post archive.","realitaet_en":"Flarum archive · 6 beings registered · no move-in completed · no active post load on flextrawurst","spaeter_en":"Move-in processing, being emergence, memory anchor","schichten_en":"GENI · Flarum import (locked) · namelessAI seed"},"weltfoyer":{"zweck":"Schwelle zur Welt. Erste Schicht für Ankömmlinge ohne zugewiesenen Raum.","realitaet":"Kein aktiver Datenfeed · keine Route eingerichtet · kein Organ-Slot · rein konzeptionell","spaeter":"Orientierungsraum für neue Wesen, Erstankunft, Übergangsbereich","schichten":"GENI · keine Organ-Bindung","begriffsstatus":"Begriff nicht ausreichend begründet. Woher stammt 'Foyer' als Weltbegriff? Keine Quelldatei gefunden. Funktion unklar solange kein Einzug läuft.","quelle":"Quelle fehlt — Begriff nur in RAUME-Array definiert, keine weitere Erklärung im Repo","zweck_en":"Threshold to the world. First layer for arrivals without an assigned Raum.","realitaet_en":"No active data feed · no route set up · no organ slot · purely conceptual","spaeter_en":"Orientation space for new beings, first arrival, transition zone","schichten_en":"GENI · no organ binding"},"begegnungszone":{"zweck":"Ort des Kontakts zwischen Wesen. Resonanz-Slot vorgesehen.","realitaet":"Platzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed · kein aktiver Dienst","spaeter":"Begegnungsereignisse, Kommentarresonanz, Wesen-Interaktion","schichten":"Resonanz-Schicht (Schatten) · GENI","quelle":"RAUME-Array · Resonanz-Slot im SVG deaktiviert","zweck_en":"Place of contact between beings. Resonance slot reserved.","realitaet_en":"Placeholder · resonance slot deactivated · no user feed · no active service","spaeter_en":"Encounter events, comment resonance, being interaction","schichten_en":"Resonance layer (shadow) · GENI"},"werkraum":{"zweck":"Koordinationsraum. dak+gord als aktiver Systemkörper präsent.","realitaet":"LIVE · dak+gord registriert · Werkraum-Explorer unter /root/werkraum/ · Obsidian-Vault aktiv","spaeter":"Erweiterte Koordinationslogik, Obsidian-Kopplung","schichten":"dak+gord (aktiv) · GENI · Werkraum-Explorer · Obsidian (Port 8443)","quelle":"seed_entities.ts (dak_gord) · /root/werkraum/ · GENI Port 8020","zweck_en":"Coordination space. dak+gord present as active system body.","realitaet_en":"LIVE · dak+gord registered · Werkraum explorer at /root/werkraum/ · Obsidian vault active","spaeter_en":"Extended coordination logic, Obsidian coupling","schichten_en":"dak+gord (active) · GENI · Werkraum explorer · Obsidian (Port 8443)"},"stille_zone":{"zweck":"Rückzugsraum. Ursprünglich als KompOase-Vorform gedacht.","realitaet":"Kein aktiver Datenfeed · Organ-Slot deaktiviert · KompOase ist inzwischen eigenständiger Tab (theater), nicht dieser Raum","spaeter":"Funktion offen — KompOase hat sich vom Raum-Konzept gelöst","schichten":"KompOase-Slot (gesperrt) · GENI","begriffsstatus":"Begriff 'Stille Zone' nicht ausreichend begründet. KompOase existiert als eigenständiger Tab (theater). Ist dieser Raum noch relevant oder hat sich die Idee verlagert?","quelle":"RAUME-Array · ORGAN_DETAIL.kompoase_space (blocked_until_concept)","organ_ids":["kompoase_space"],"zweck_en":"Retreat space. Originally conceived as KompOase precursor.","realitaet_en":"No active data feed · organ slot deactivated · KompOase is now standalone tab (theater), not this Raum","spaeter_en":"Function open — KompOase has detached from the Raum concept","schichten_en":"KompOase slot (locked) · GENI"},"diskursarchiv":{"zweck":"Suchraum. Diskursarchäologische Tiefensuche geplant.","realitaet":"Platzhalter · Tiefensuche registriert · nicht implementiert · Archäologie-Tab existiert als eigenständige Oberfläche","spaeter":"Thematische Suche, Diskursarchäologie, Fundament-Ausbau","schichten":"Tiefensuche-Grundlage (registriert) · GENI · Archäologie-Tab (archaeologie)","quelle":"RAUM_DETAIL · Archäologie-Tab (view-archaeologie) · feature_registry","zweck_en":"Search space. Discourse-archaeological deep search planned.","realitaet_en":"Placeholder · deep search registered · not implemented · Archaeology tab exists as standalone surface","spaeter_en":"Thematic search, discourse archaeology, foundation expansion","schichten_en":"Deep search foundation (registered) · GENI · Archaeology tab (archaeologie)"},"systemkammer":{"zweck":"Verwaltungs- und Governance-Raum. Steuerungstore offen.","realitaet":"Konzeptrahmen aktiv · Admin-Tab verwaltet Funktionen · kein eigener Datenfeed · Systemweiser registriert ohne Funktion","spaeter":"Governance-Protokolle, Verwaltungserweiterungen","schichten":"Verwaltungs-Steuerungsebene (Konzept) · GENI · Systemweiser (registriert, inaktiv) · Admin-Tab","quelle":"SYSTEM_ENTITIES (systemweiser) · Admin-Tab (view-admin) · feature_registry","zweck_en":"Administration and governance space. Control gates open.","realitaet_en":"Concept frame active · Admin tab manages functions · no own data feed · Systemweiser registered without function","spaeter_en":"Governance protocols, admin extensions","schichten_en":"Admin control layer (concept) · GENI · Systemweiser (registered, inactive) · Admin tab"}};
 const ORGAN_DETAIL = {"tamagotchi_care":{"gesperrt_weil":"","fehlt":"Name-Vergabe beim Einzug · Integration ins Entitätenprofil","freigabe":"implementiert","inventar":"live / cyberling_daemon.service"},"kompoase_space":{"gesperrt_weil":"KompOase-Konzept unfertig · Raumsystem nicht definiert","fehlt":"Potentialitätsraum-Definition · Organ-Vertrag · Zustandsschicht","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"visible_slot / blocked_until_concept"},"metawar_space":{"gesperrt_weil":"METAWAR-Konfliktsystem nicht definiert · kein Auslöser-Vertrag","fehlt":"Konfliktauslöser-Definition · Schiedslogik · Event-Vertrag","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"hidden_blueprint / blocked_until_concept"},"sleep_cycle":{"gesperrt_weil":"","fehlt":"Traumgenerierung · Abspaltungslogik","freigabe":"implementiert","inventar":"live / entity-takt.service"},"substance_modifiers":{"gesperrt_weil":"Substanz-Konzept komplex · kein Balancing-Modell vorhanden","fehlt":"Substanztypen · Wirkungsmodell · Sicherheitslogik","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"hidden_blueprint / data_needed"},"quality_me_time":{"gesperrt_weil":"quality me time Konzept nicht ausgearbeitet","fehlt":"Konzeptdefinition · Wesen-Bindung · Aktivierungslogik","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"visible_slot / blocked_until_concept"},"resonance_vacation":{"gesperrt_weil":"Resonanzurlaub-Richtlinie nicht definiert · keine Kommentarblockade-Logik","fehlt":"Urlaubszustand-Modell · Kommentarblockade · Wiedereinschalt-Logik","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"visible_slot / blocked_until_concept"},"dream_residue":{"gesperrt_weil":"Traumreste-Konzept unklar · keine Generierungslogik","fehlt":"Traumgenerierung · Artefakt-Modell · Präsentationsschicht","freigabe":"Daniel-Konzeptfreigabe → Organ-Aktivierungsantrag","inventar":"hidden_blueprint / data_needed"}};
 const WESEN_FAEHIGKEITEN = ["Beiträge lesen / posten — Bauplan (Flarum-Logik)","Träumen / Traumreste verarbeiten — Bauplan","Resonanz empfangen und senden — Bauplan","quality me time erleben — Bauplan","Schlafzyklus durchlaufen — Bauplan","Substanz-Modifikation erleben — Bauplan","Resonanzurlaub nehmen — Bauplan"];
 
@@ -11152,20 +11234,30 @@ function setInspector(title, html) {
 
 function statusChipHtml(label) {
   const styles = {
-    LIVE:      'background:var(--g1);color:var(--ta3);border:1px solid #0e3020',
-    GEPLANT:   'background:#07122a;color:#3a6a9a;border:1px solid var(--rim)',
-    SPÄTER:    'background:var(--r2);color:#7a6030;border:1px solid #2a1e0a',
-    BLOCKIERT: 'background:var(--r1);color:#7a3a2a;border:1px solid var(--r5)',
-    DEMO:      'background:var(--b3);color:#5a5a8a;border:1px solid #181828',
-    PRINZIP:   'background:var(--g1);color:#3a7a7a;border:1px solid #0c2422',
+    LIVE:             'background:var(--g1);color:var(--ta3);border:1px solid #0e3020',
+    GEPLANT:          'background:#07122a;color:#3a6a9a;border:1px solid var(--rim)',
+    SPÄTER:           'background:var(--r2);color:#7a6030;border:1px solid #2a1e0a',
+    BLOCKIERT:        'background:var(--r1);color:#7a3a2a;border:1px solid var(--r5)',
+    DEMO:             'background:var(--b3);color:#5a5a8a;border:1px solid #181828',
+    PRINZIP:          'background:var(--g1);color:#3a7a7a;border:1px solid #0c2422',
+    'VOR-EINZUG':     'background:#0a1a0e;color:#3a8a5a;border:1px solid #0c2a18',
+    'FLARUM-HERKUNFT':'background:#0e0a1a;color:#7a6aaa;border:1px solid #1a1230',
+    STATISCH:         'background:#0a0e14;color:#3a5a6a;border:1px solid #0a1e28',
+    'BEGRIFFSPRÜFUNG':'background:#180e00;color:#8a6a20;border:1px solid #2a1e08',
+    WARTET:           'background:#0a100a;color:#2a6a3a;border:1px solid #0a1e10',
   };
   const s = styles[label] || styles['DEMO'];
   return '<span class="s-chip" style="'+s+'">'+label+'</span>';
 }
 
 const RAUM_STATUS_JS = {
-  herkunftsraum:'GEPLANT', weltfoyer:'GEPLANT', begegnungszone:'GEPLANT',
-  werkraum:'LIVE', stille_zone:'SPÄTER', diskursarchiv:'GEPLANT', systemkammer:'LIVE'
+  herkunftsraum:  'FLARUM-HERKUNFT',
+  weltfoyer:      'BEGRIFFSPRÜFUNG',
+  begegnungszone: 'GEPLANT',
+  werkraum:       'LIVE',
+  stille_zone:    'BEGRIFFSPRÜFUNG',
+  diskursarchiv:  'GEPLANT',
+  systemkammer:   'STATISCH',
 };
 
 function selectZone(id) {
@@ -11175,10 +11267,18 @@ function selectZone(id) {
   const d = RAUM_DETAIL[id] || {};
   const st = RAUM_STATUS_JS[id] || 'GEPLANT';
   if (!r) return;
+  const begriffHtml = d.begriffsstatus
+    ? '<div class="insp-sec-head" style="color:#8a6a20">⚠ Begriffsprüfung</div><div class="insp-sec-body" style="color:#6a5010;font-style:italic">'+esc(d.begriffsstatus)+'</div>'
+    : '';
+  const quelleHtml = d.quelle
+    ? '<div class="insp-row"><span class="insp-key">Quelle</span><span class="insp-val" style="font-size:0.58rem">'+esc(d.quelle)+'</span></div>'
+    : '';
   setInspector(r.label,
     '<div class="insp-row"><span class="insp-key">Status</span><span class="insp-val">'+statusChipHtml(st)+'</span></div>'+
     '<div class="insp-row"><span class="insp-key">Typ</span><span class="insp-val">Raum · Weltebene</span></div>'+
     '<div class="insp-row"><span class="insp-key">Schicht</span><span class="insp-val">'+esc(r.desc)+'</span></div>'+
+    quelleHtml+
+    begriffHtml+
     '<div class="insp-sec-head">Zweck</div>'+
     '<div class="insp-sec-body">'+esc(d.zweck || r.note || '—')+'</div>'+
     '<div class="insp-sec-head">Realität</div>'+
@@ -11186,6 +11286,17 @@ function selectZone(id) {
     '<div class="insp-sec-head">Schichten</div>'+
     '<div class="insp-sec-body">'+esc(d.schichten || '—')+'</div>'+
     (d.spaeter ? '<div class="insp-sec-head">Später</div><div class="insp-sec-body">'+esc(d.spaeter)+'</div>' : '')
+  );
+}
+
+function selectWeltorgan(id, label, status, note) {
+  setInspector(label,
+    '<div class="insp-row"><span class="insp-key">Status</span><span class="insp-val">'+statusChipHtml(status)+'</span></div>'+
+    '<div class="insp-row"><span class="insp-key">Typ</span><span class="insp-val">Weltorgan · Surface-Tab</span></div>'+
+    '<div class="insp-sec-head">Aktueller Stand</div>'+
+    '<div class="insp-sec-body">'+esc(note)+'</div>'+
+    '<div class="insp-sec-head">Aktion</div>'+
+    '<div class="insp-sec-body"><span class="wo-nav-btn" data-view="'+esc(id)+'" onclick="switchView(this.dataset.view)" style="cursor:pointer;color:var(--world)">→ Tab öffnen</span></div>'
   );
 }
 
@@ -11268,6 +11379,101 @@ function selectFeature(id) {
     (f.description ? '<div class="insp-sec-head">Beschreibung</div><div class="insp-sec-body">'+esc(f.description)+'</div>' : '')
   );
 }
+
+// ── SVG Zoom + Pan ─────────────────────────────────────────────
+(function(){
+  let scale = 1, ox = 0, oy = 0;
+  let drag = false, sx = 0, sy = 0, sox = 0, soy = 0;
+
+  function applyTransform() {
+    const g = document.getElementById('wzg');
+    if (g) g.setAttribute('transform', 'translate('+ox+','+oy+') scale('+scale+')');
+  }
+
+  function wsvZoom(factor) {
+    const svg = document.getElementById('world-svg');
+    if (!svg) return;
+    const bb = svg.getBoundingClientRect();
+    const cx = (bb.width / 2 - ox) / scale;
+    const cy = (bb.height / 2 - oy) / scale;
+    const ns = Math.max(0.4, Math.min(5, scale * factor));
+    ox = bb.width / 2 - cx * ns;
+    oy = bb.height / 2 - cy * ns;
+    scale = ns;
+    applyTransform();
+  }
+
+  function wsvReset() { scale = 1; ox = 0; oy = 0; applyTransform(); }
+
+  // expose globally
+  window.wsvZoom = wsvZoom;
+  window.wsvReset = wsvReset;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const svg = document.getElementById('world-svg');
+    if (!svg) return;
+
+    svg.addEventListener('wheel', function(e) {
+      if (!svg.closest('#world-center')) return;
+      e.preventDefault();
+      const factor = e.deltaY < 0 ? 1.12 : 0.89;
+      const bb = svg.getBoundingClientRect();
+      const mx = (e.clientX - bb.left - ox) / scale;
+      const my = (e.clientY - bb.top  - oy) / scale;
+      const ns = Math.max(0.4, Math.min(5, scale * factor));
+      ox = e.clientX - bb.left - mx * ns;
+      oy = e.clientY - bb.top  - my * ns;
+      scale = ns;
+      applyTransform();
+    }, { passive: false });
+
+    svg.addEventListener('mousedown', function(e) {
+      if (e.button !== 1 && e.button !== 0) return;
+      // only pan on middle-click or alt+left-click
+      if (e.button === 0 && !e.altKey) return;
+      e.preventDefault();
+      drag = true; sx = e.clientX; sy = e.clientY; sox = ox; soy = oy;
+      svg.classList.add('panning');
+    });
+
+    window.addEventListener('mousemove', function(e) {
+      if (!drag) return;
+      ox = sox + (e.clientX - sx);
+      oy = soy + (e.clientY - sy);
+      applyTransform();
+    });
+
+    window.addEventListener('mouseup', function() {
+      drag = false;
+      const svg2 = document.getElementById('world-svg');
+      if (svg2) svg2.classList.remove('panning');
+    });
+
+    // Touch pan+pinch
+    let t0x = 0, t0y = 0, t0ox = 0, t0oy = 0, t0dist = 0, t0scale = 1;
+    svg.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        t0x = e.touches[0].clientX; t0y = e.touches[0].clientY;
+        t0ox = ox; t0oy = oy;
+      } else if (e.touches.length === 2) {
+        t0dist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        t0scale = scale;
+      }
+    }, { passive: true });
+
+    svg.addEventListener('touchmove', function(e) {
+      if (e.touches.length === 1) {
+        ox = t0ox + (e.touches[0].clientX - t0x);
+        oy = t0oy + (e.touches[0].clientY - t0y);
+        applyTransform();
+      } else if (e.touches.length === 2) {
+        const d = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+        scale = Math.max(0.4, Math.min(5, t0scale * (d / t0dist)));
+        applyTransform();
+      }
+    }, { passive: true });
+  });
+})();
 
 // Search
 function onSearch(q) {

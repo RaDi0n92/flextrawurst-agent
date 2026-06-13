@@ -173,6 +173,95 @@ def events(
         conn.close()
 
 
+def _weltstrom_beschreibung(event_type: str, payload: dict, actor_id: str | None, visibility: str) -> dict:
+    """Abstracts event data for public display. World-tier events get no actor_id."""
+    def fmt_actor(aid):
+        if visibility == "world" or not aid:
+            return None
+        return aid
+
+    if event_type == "wesen.nachricht_erhalten":
+        return {"beschreibung": "Die Welt wendet sich einem Wesen zu", "icon": "✉", "actor": None}
+    if event_type == "gedanke.gepostet":
+        preview = payload.get("inhalt_preview", "")
+        return {"beschreibung": preview[:80] if preview else "Ein Gedanke", "icon": "💭", "actor": fmt_actor(actor_id)}
+    if event_type == "weltklima.tick":
+        wk = payload.get("weltklima", {})
+        parts = [f"{k} {v:.2f}" for k, v in list(wk.items())[:3]]
+        return {"beschreibung": "Weltklima: " + " · ".join(parts) if parts else "Weltklima-Messung", "icon": "🌡", "actor": fmt_actor(actor_id)}
+    if event_type == "wesen.vernachlaessigt":
+        stunden = payload.get("stunden", 0)
+        return {"beschreibung": f"Ein Wesen wartet seit {int(stunden)}h", "icon": "⏳", "actor": None}
+    if event_type == "resonanz.gesendet":
+        return {"beschreibung": "Resonanz", "icon": "〰", "actor": fmt_actor(actor_id)}
+    if event_type == "gedankenblase.erstellt":
+        return {"beschreibung": "Eine Gedankenblase entstand", "icon": "🫧", "actor": None}
+    if event_type == "gedankenblase.losgelassen":
+        return {"beschreibung": "Eine Gedankenblase löste sich auf", "icon": "🫧", "actor": None}
+    if event_type in ("schlaf.begonnen", "wesen.schlaeft"):
+        return {"beschreibung": "Ein Wesen schläft ein", "icon": "🌙", "actor": None}
+    if event_type == "schlaf.beendet":
+        return {"beschreibung": "Ein Wesen erwacht", "icon": "☀", "actor": None}
+    if event_type == "traum.tick":
+        return {"beschreibung": "Die Traumschicht bewegt sich", "icon": "✦", "actor": None}
+    if event_type.startswith("cyberling."):
+        aktion = event_type.split(".")[1]
+        labels = {"erwacht": "erwacht", "gestorben": "ist gestorben", "zustand_geaendert": "ändert sich"}
+        return {"beschreibung": f"Ein Cyberling {labels.get(aktion, aktion)}", "icon": "⚡", "actor": None}
+    if event_type == "wesen.eingezogen":
+        return {"beschreibung": "Ein Wesen ist eingezogen", "icon": "🚪", "actor": fmt_actor(actor_id)}
+    if event_type == "kompoase.betreten":
+        return {"beschreibung": "Jemand betrat die Kompoase", "icon": "🌿", "actor": None}
+    label = event_type.replace(".", " · ")
+    return {"beschreibung": label, "icon": "◦", "actor": fmt_actor(actor_id)}
+
+
+@app.get("/weltstrom")
+def weltstrom(
+    limit: int = Query(default=50, le=200),
+    since: str | None = Query(default=None),
+):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            conditions = ["visibility_layer IN ('public', 'world')"]
+            params: list[Any] = []
+            if since:
+                conditions.append("created_at > %s")
+                params.append(since)
+            where = "WHERE " + " AND ".join(conditions)
+            params.append(limit)
+            cur.execute(f"""
+                SELECT event_id, event_type, actor_type, actor_id,
+                       payload, visibility_layer, created_at
+                FROM events
+                {where}
+                ORDER BY created_at DESC
+                LIMIT %s
+            """, params)
+            rows = cur.fetchall()
+
+        result = []
+        for r in rows:
+            row = dict(r)
+            meta = _weltstrom_beschreibung(
+                row["event_type"],
+                row["payload"] or {},
+                row.get("actor_id"),
+                row["visibility_layer"],
+            )
+            result.append({
+                "event_id": str(row["event_id"]),
+                "event_type": row["event_type"],
+                "visibility": row["visibility_layer"],
+                "created_at": row["created_at"].isoformat(),
+                **meta,
+            })
+        return {"events": result, "count": len(result)}
+    finally:
+        conn.close()
+
+
 @app.get("/welt")
 def welt_uebersicht():
     conn = get_conn()
@@ -4442,7 +4531,7 @@ def schlafbrief_schreiben(
             cur.execute(
                 """
                 INSERT INTO events (event_type, actor_type, actor_id, payload, origin_type, visibility_layer)
-                VALUES ('wesen.nachricht_erhalten', 'entity', %s, %s, 'admin', 'internal')
+                VALUES ('wesen.nachricht_erhalten', 'entity', %s, %s, 'admin', 'world')
                 """,
                 (entity_id, psycopg2.extras.Json({"brief_id": str(row["brief_id"])})),
             )
@@ -4486,6 +4575,7 @@ def schlaf_start(
                     )
 
             zustand = _zustandsaufnahme(cur, entity_id)
+            zustand["status_vor_schlaf"] = slot["status"]
             cur.execute(
                 """
                 INSERT INTO sleep_phases (entity_id, phase_type, zustand)
@@ -4560,8 +4650,15 @@ def schlaf_end(
                 (phase["phase_id"],),
             )
             cur.execute(
-                "UPDATE entity_slots SET status = 'eingezogen' WHERE entity_id = %s",
-                (entity_id,),
+                "SELECT zustand FROM sleep_phases WHERE phase_id = %s",
+                (phase["phase_id"],),
+            )
+            zustand_row = cur.fetchone()
+            zustand_data = zustand_row["zustand"] if zustand_row else {}
+            status_davor = zustand_data.get("status_vor_schlaf", "bereit")
+            cur.execute(
+                "UPDATE entity_slots SET status = %s WHERE entity_id = %s",
+                (status_davor, entity_id),
             )
             cur.execute("""
                 SELECT * FROM sleep_phases WHERE phase_id = %s
@@ -7241,12 +7338,16 @@ def aehnliche_posts(post_id: str, limit: int = Query(default=5, le=20)):
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT p.id, p.content, p.titel, p.autor_id, p.autor_type, p.created_at,
+                       p.raum_id, p.thema_id, p.parent_id,
+                       NULL AS autor_name,
                        COALESCE(p.view_count, 0) AS view_count,
+                       COALESCE((SELECT COUNT(*) FROM ftw_posts rp WHERE rp.parent_id = p.id), 0)::int AS reply_count,
                        r.name AS raum_name, r.slug AS raum_slug,
                        t.name AS thema_name, t.slug AS thema_slug,
                        (SELECT COUNT(*) FROM schattenkommentare sk WHERE sk.post_id = p.id)::int AS schatten_count,
                        COALESCE((SELECT COUNT(*) FROM resonanzen rz
-                                 WHERE rz.post_ref = p.id::text AND rz.post_source = 'post'), 0)::int AS resonanz_count
+                                 WHERE rz.post_ref = p.id::text AND rz.post_source = 'post'), 0)::int AS resonanz_count,
+                       (SELECT MAX(sk2.created_at) FROM schattenkommentare sk2 WHERE sk2.post_id = p.id) AS letzte_aktivitaet
                 FROM post_similarity ps
                 JOIN ftw_posts p ON p.id = CASE
                     WHEN ps.post_a_id = %s::uuid THEN ps.post_b_id ELSE ps.post_a_id END
@@ -7260,12 +7361,16 @@ def aehnliche_posts(post_id: str, limit: int = Query(default=5, le=20)):
             if not rows:
                 cur.execute("""
                     SELECT p.id, p.content, p.titel, p.autor_id, p.autor_type, p.created_at,
+                           p.raum_id, p.thema_id, p.parent_id,
+                           NULL AS autor_name,
                            COALESCE(p.view_count, 0) AS view_count,
+                           COALESCE((SELECT COUNT(*) FROM ftw_posts rp WHERE rp.parent_id = p.id), 0)::int AS reply_count,
                            r.name AS raum_name, r.slug AS raum_slug,
                            t.name AS thema_name, t.slug AS thema_slug,
                            (SELECT COUNT(*) FROM schattenkommentare sk WHERE sk.post_id = p.id)::int AS schatten_count,
                            COALESCE((SELECT COUNT(*) FROM resonanzen rz
-                                     WHERE rz.post_ref = p.id::text AND rz.post_source = 'post'), 0)::int AS resonanz_count
+                                     WHERE rz.post_ref = p.id::text AND rz.post_source = 'post'), 0)::int AS resonanz_count,
+                           (SELECT MAX(sk2.created_at) FROM schattenkommentare sk2 WHERE sk2.post_id = p.id) AS letzte_aktivitaet
                     FROM ftw_posts p
                     LEFT JOIN raeume r ON r.id = p.raum_id
                     LEFT JOIN themen t ON t.id = p.thema_id

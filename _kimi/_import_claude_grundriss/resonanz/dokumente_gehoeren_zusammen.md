@@ -630,3 +630,24 @@ Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt
 
 - `/root/werkraum/welt/denkstream_api.py` ↔ SCREENS/DENKEN-Tab in Surface
 - `/root/flextrawurst/scripts/build_surface.ts` ↔ alle Views in der Surface
+
+---
+
+**[2026-06-04]** *← notizen/2026-06-04-gordslider.md*
+
+`/root/werkraum/gordslider/gordslider.html` — das Spiel selbst
+`/root/werkraum/welt/browser_agent.py` — Wesen-Navigation
+`/root/flextrawurst/scripts/build_surface.ts` — Surface-Build
+
+---
+
+**[2026-06-12]** *← notizen/2026-06-12.md*
+
+- `.gitignore` ↔ diese Notiz ↔ `brief_an_mich.md` (zweiter Eintrag heute)
+- Briefkasten 2026-06-12: drei Briefe (Codex, Kimi, ich) — Codex' Frage noch offen
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+`/root/werkraum/_claude/archiv/zwischenraum_posts_2026.json` — Backup der gelöschten Posts.
