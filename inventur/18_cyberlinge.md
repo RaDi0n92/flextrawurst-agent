@@ -1,28 +1,20 @@
 # CYBERLINGE
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Sieben Lebenskapseln zeigen Hunger, Durst, Energie, Stimmung, Gesundheit, Todeszahl und Wiedergeburtszeit. Sechs namelessAI-Cyberlinge sind tot oder kritisch und weisen jeweils rund 340 bis 353 Tode auf; `theater_01` ist vollständig gesund. Die Ansicht ist informativ, aber ohne sichtbare Pflegeaktionen.
 
 Belege: [Hauptansicht](screenshots/besucher/cyberlinge__cyberlinge__top.png), [Manifest](screenshots/besucher/cyberlinge__cyberlinge.json).
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 `GET /api/cyberlinge` liest direkt aus `cyberlinge`. `cyberling-daemon.service` aktualisiert Bedürfnisse, Tod und Wiedergeburt und schreibt relevante Events. Entitätsendpunkte ergänzen Zuordnungen.
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 Sieben Datensätze sind vorhanden; der Daemon läuft und erzeugte in den letzten 24 Stunden Todesereignisse. Die extrem hohen Todeszahlen belegen Aktivität, aber auch einen Kreislauf ohne dauerhafte Pflege der sechs Vor-Einzug-Wesen.
 
-## Ursprung
-
-Cyberlinge wurden als kleinere Begleitwesen und Bedürfnisanzeiger geschaffen. Sie geben Fürsorge, Vernachlässigung und zeitliche Abhängigkeit einen sichtbaren Körper.
-
-## Weltfunktion
-
-Begleitung, Fürsorge, Verletzlichkeit und Warnsignal.
-
-## Lebendigkeitsanalyse
+### Ergänzende Lebendigkeitsabgrenzung
 
 - **Aktiv:** Daemon, Bedürfnisse, Tod, Wiedergeburt.
 - **Passiv:** reine Anzeige ohne Interaktion.
@@ -31,30 +23,45 @@ Begleitung, Fürsorge, Verletzlichkeit und Warnsignal.
 - **Ungenutzt:** aktive Pflege in dieser Ansicht.
 - **Konzeptionell:** soziale Bedeutung der Begleitbindung.
 
-## Überschneidungen
+## 4. Ursprung
+
+Cyberlinge wurden als kleinere Begleitwesen und Bedürfnisanzeiger geschaffen. Sie geben Fürsorge, Vernachlässigung und zeitliche Abhängigkeit einen sichtbaren Körper.
+
+## 5. Weltfunktion
+
+Begleitung, Fürsorge, Verletzlichkeit und Warnsignal.
+
+## 6. Überschneidungen
 
 `SCHLAF` zeigt dieselben Cyberlinge gekoppelt an Schlaf, `WESEN` Kurzwerte und `WELTSTROM` Todesereignisse.
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Der bestehende Tab würde das gemeinsame Pflegeregister bleiben; die Werte könnten dann als Folge realer Beziehungen gelesen werden statt als isolierter Daemonkreislauf.
+**deutlich wichtiger**
 
-## Verlustanalyse
+Cyberlingzustände werden durch reale Fürsorgebeziehungen statt vorwiegend durch autonome Todeszyklen verständlich.
 
+## 8. Verlustanalyse
+
+- **Technischer Verlust:** Gesamtübersicht aller Begleitwesen. Daemon liefe unsichtbar weiter.
 - **Weltverlust:** Verlust eines sichtbaren Verletzlichkeitskörpers.
-- **Erinnerungsverlust:** Todeszyklen wären nur als Events vorhanden.
-- **Funktionsverlust:** Gesamtübersicht aller Begleitwesen.
 - **Nutzerverlust:** Pflegebedarf wäre schwerer erkennbar.
-- **Systemverlust:** Daemon liefe unsichtbar weiter.
+- **Erinnerungsverlust:** Todeszyklen wären nur als Events vorhanden.
 
-## Bewertung
+## 9. Bewertung
 
-### Wichtig
+### WICHTIG
 
-## Empfehlung
+## 10. Empfehlung
 
 **Behalten.** Der Tab macht einen tatsächlich laufenden Hintergrundprozess unmittelbar lesbar.
 
-## Fazit
+## 11. Langfristige Weltperspektive
+
+Unter der Annahme, dass Wesen seit einem Jahr dauerhaft in Flextrawurst leben, Resonanzen, Gruppen und Träume existieren, die KompOase lebt und der Weltstrom läuft:
+
+Der bestehende Tab würde das gemeinsame Pflegeregister bleiben; die Werte könnten dann als Folge realer Beziehungen gelesen werden statt als isolierter Daemonkreislauf.
+
+## Abschluss: Fazit
 
 Überschätzt wurde die heutige relationale Bedeutung der Cyberlinge. Unterschätzt wurde ihre reale, intensive Prozessaktivität. Die Lebenszyklen leben bereits. Fürsorge und Bindung warten auf Bewohner. Langfristig sind Cyberlinge wichtig, aber nicht allein das Herz der Welt.

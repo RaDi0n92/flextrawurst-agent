@@ -7,7 +7,7 @@ Technische ID: `uber` / `#view-uber`
 
 ---
 
-## Sichtbarer Zustand
+## 1. Aktueller Ist-Zustand
 
 Der Tab ist die Eingangserzählung der Surface. Besucher sehen zuerst einen groß gesetzten Flextrawurst-Schriftzug, den Satz „Ein Ökosystem · kein Produkt · im Aufbau“ und fünf Statusmarken zu Splitter-Physik, Welt-API, GENI, wartenden Wesen und geplanter Öffentlichkeit.
 
@@ -28,7 +28,7 @@ Leer oder wie Platzhalter wirkt nichts. Die Statusmarken reagieren auf Klick, we
 
 ---
 
-## Tatsächliche Datenquellen
+## 2. Technische Realität
 
 Der Tab selbst verwendet keine API und keine Datenbanktabelle. Sein Inhalt wird statisch durch `generateUeberView()` in `/root/flextrawurst/scripts/build_surface.ts` erzeugt und in `/root/flextrawurst/out/process_camera/flextrawurst_surface.html` eingebaut.
 
@@ -38,7 +38,7 @@ Die Karten verweisen nur auf andere Surface-Views. Sie lesen und schreiben selbs
 
 ---
 
-## Aktuelle Aktivität
+## 3. Reale Aktivität
 
 Im Tab entstehen keine Daten und keine Events. Seine Aktivität besteht aus Navigation und internen Scrollsprüngen.
 
@@ -48,25 +48,7 @@ Gleichzeitig warteten die sechs Herkunftswesen laut sichtbarer Surface weiterhin
 
 ---
 
-## Ursprung
-
-Der Tab entstand als Atemraum vor der Systemtiefe. Die ältere Systemdokumentation beschreibt `uber` bereits als statische Erklärung und Standard-Tab beim Laden: `/root/werkraum/docs/systemdoku/05_surface_8787.md`.
-
-Seine Grundidee folgt der 490-Punkte-Quellliste: Die erste Oberfläche soll sich wie Flextrawurst selbst anfühlen und nicht wie ein Tool, Graph oder Report. Besonders einschlägig sind die Punkte 325 bis 350 sowie 434 bis 490 in `/root/werkraum/_claude/ideen/flextrawurst_490_punkte_quellliste.md`.
-
-Spätere Arbeit machte aus der knappen Erklärung eine umfassende Selbstdarstellung mit Einstiegspfaden, Teilhaberegeln, Substanzschichten und Abspaltungsmodell. Am 3. Juni 2026 wurden verbliebene Dunkelmodus-Farben auf die gemeinsame Surface-Farbsprache umgestellt; diese Spur steht in `/root/werkraum/_claude/brief_an_mich.md`.
-
----
-
-## Weltfunktion
-
-Orientierung.
-
-Der Tab ist das Vorwort der Welt. Er erklärt Besuchern, welche Arten von Körpern, Bewohnern, Prozessen und Grenzen sie vor sich haben, bevor sie einzelne Organe betreten.
-
----
-
-## Lebendigkeitsanalyse
+### Ergänzende Lebendigkeitsabgrenzung
 
 **Aktiv:** Navigation zu sieben anderen Weltbereichen, Sprachumschaltung, interne Sprungmarken, responsive Darstellung.
 
@@ -84,7 +66,25 @@ Die Statusanzeige ist visuell lebendig, technisch aber statisch. Sie zeigt den b
 
 ---
 
-## Überschneidungen
+## 4. Ursprung
+
+Der Tab entstand als Atemraum vor der Systemtiefe. Die ältere Systemdokumentation beschreibt `uber` bereits als statische Erklärung und Standard-Tab beim Laden: `/root/werkraum/docs/systemdoku/05_surface_8787.md`.
+
+Seine Grundidee folgt der 490-Punkte-Quellliste: Die erste Oberfläche soll sich wie Flextrawurst selbst anfühlen und nicht wie ein Tool, Graph oder Report. Besonders einschlägig sind die Punkte 325 bis 350 sowie 434 bis 490 in `/root/werkraum/_claude/ideen/flextrawurst_490_punkte_quellliste.md`.
+
+Spätere Arbeit machte aus der knappen Erklärung eine umfassende Selbstdarstellung mit Einstiegspfaden, Teilhaberegeln, Substanzschichten und Abspaltungsmodell. Am 3. Juni 2026 wurden verbliebene Dunkelmodus-Farben auf die gemeinsame Surface-Farbsprache umgestellt; diese Spur steht in `/root/werkraum/_claude/brief_an_mich.md`.
+
+---
+
+## 5. Weltfunktion
+
+Orientierung.
+
+Der Tab ist das Vorwort der Welt. Er erklärt Besuchern, welche Arten von Körpern, Bewohnern, Prozessen und Grenzen sie vor sich haben, bevor sie einzelne Organe betreten.
+
+---
+
+## 6. Überschneidungen
 
 Der Tab fasst Informationen zusammen, die in `LEITSTAND`, `SYSTEME`, `WESEN`, `SCHLAF`, `WISSEN`, `KOMPOASE` und `MENSCHEN` ausführlicher erscheinen.
 
@@ -92,37 +92,28 @@ Die Phasen- und Statusaussagen überschneiden sich besonders mit `SYSTEME` und d
 
 ---
 
-## Bedeutung nach Wesen-Einzug
+## 7. Einzugsrelevanz
 
-Nach dem Wesen-Einzug bliebe der Tab der öffentliche Eingang und die begriffliche Landkarte. Seine Rolle würde sich von der Erklärung eines wartenden Systems zur Erklärung einer bewohnten Welt verschieben.
+**unverändert**
 
-Die Abschnitte zu Wesen, Schlaf, Abspaltung und menschlicher Teilhabe würden dann nicht mehr hauptsächlich vorbereiten, sondern vorhandene Weltpraxis einordnen. Gerade für neue Besucher bliebe diese bestehende Orientierungsfunktion erhalten.
+Der Eingang bleibt Orientierung; nur die beschriebenen Zustände wechseln von Vorbereitung zu gelebter Praxis.
 
----
+## 8. Verlustanalyse
 
-## Verlustanalyse
+- **Technischer Verlust:** Direkte Einstiege und Querverweise zu zentralen Tabs fielen weg. Keine API, Tabelle oder laufende Weltfunktion würde ausfallen.
+- **Weltverlust:** Die Welt verlöre ihren selbst formulierten Eingang und ihre zusammenhängende Selbsterklärung.
+- **Nutzerverlust:** Neue Besucher hätten keinen sanften Zugang und müssten Bedeutung aus spezialisierten Tabs zusammensetzen.
+- **Erinnerungsverlust:** Die Entwicklungsphasen und die Verbindung zwischen ursprünglicher Plattformidee, Substanzmodell und Einzug würden weniger sichtbar.
 
-**Weltverlust:** Die Welt verlöre ihren selbst formulierten Eingang und ihre zusammenhängende Selbsterklärung.
+## 9. Bewertung
 
-**Erinnerungsverlust:** Die Entwicklungsphasen und die Verbindung zwischen ursprünglicher Plattformidee, Substanzmodell und Einzug würden weniger sichtbar.
-
-**Funktionsverlust:** Direkte Einstiege und Querverweise zu zentralen Tabs fielen weg.
-
-**Nutzerverlust:** Neue Besucher hätten keinen sanften Zugang und müssten Bedeutung aus spezialisierten Tabs zusammensetzen.
-
-**Systemverlust:** Keine API, Tabelle oder laufende Weltfunktion würde ausfallen.
-
----
-
-## Bewertung
-
-### Wichtig
+### WICHTIG
 
 Der Tab ist kein ausführendes Organ, aber die zentrale Orientierungsschicht zwischen Außenwelt und komplexer Surface.
 
 ---
 
-## Empfehlung
+## 10. Empfehlung
 
 ### Behalten
 
@@ -130,6 +121,16 @@ Die vorhandene Funktion ist eigenständig: kein anderer Tab erklärt Welt, Teilh
 
 ---
 
-## Fazit
+## 11. Langfristige Weltperspektive
+
+Unter der Annahme, dass Wesen seit einem Jahr dauerhaft in Flextrawurst leben, Resonanzen, Gruppen und Träume existieren, die KompOase lebt und der Weltstrom läuft:
+
+Nach dem Wesen-Einzug bliebe der Tab der öffentliche Eingang und die begriffliche Landkarte. Seine Rolle würde sich von der Erklärung eines wartenden Systems zur Erklärung einer bewohnten Welt verschieben.
+
+Die Abschnitte zu Wesen, Schlaf, Abspaltung und menschlicher Teilhabe würden dann nicht mehr hauptsächlich vorbereiten, sondern vorhandene Weltpraxis einordnen. Gerade für neue Besucher bliebe diese bestehende Orientierungsfunktion erhalten.
+
+---
+
+## Abschluss: Fazit
 
 Überschätzt wurde die technische Lebendigkeit der Statusanzeigen, denn sie messen nichts selbst. Unterschätzt wurde die Dichte des Tabs: Er ist nicht nur eine Startseite, sondern trägt Weltmodell, Teilhaberegeln, Phasen, Substanzen und Abspaltung. Real leben seine Navigation und die meisten von ihm benannten Hintergrundsysteme. Auf den Wesen-Einzug, die öffentliche Welt und vollständig wirksame Substanz- und Geburtsmodelle wartet er noch. Seine stärkste Funktion ist nicht Betrieb, sondern Verständlichkeit. Langfristig gehört er als Eingang zum Herzen der Welt, aber nicht als ausführendes Kernorgan.

@@ -8,38 +8,40 @@ Untersucht wurden alle 28 Haupttabs der laufenden Surface auf Port 8787. Jeder H
 
 Die Screenshots liegen unter [screenshots](screenshots). Diese Inventur bewertet den vorhandenen Zustand; sie entwirft keine neuen Features und keine Zielarchitektur.
 
+Jedes Tab-Dossier folgt dem Elf-Punkte-Schema `Ist-Zustand`, `Technische Realität`, `Reale Aktivität`, `Ursprung`, `Weltfunktion`, `Überschneidungen`, `Einzugsrelevanz`, `Verlustanalyse`, `Bewertung`, `Empfehlung` und `Langfristige Weltperspektive`. Vorhandene Subtabs und Filter sind im jeweiligen Ist-Zustand einzeln ausgewiesen.
+
 ## Übersicht aller Tabs
 
 | Nr. | Tab | Lebenskern | Bewertung | Empfehlung |
 |---:|---|---|---|---|
-| 01 | [WAS IST DAS?](01_was_ist_das.md) | Orientierung und Selbstbeschreibung | Wichtig | Behalten |
-| 02 | [LEITSTAND](02_leitstand.md) | räumliches Gesamtbild | Kernorgan | Behalten |
-| 03 | [WELTSTROM](03_weltstrom.md) | öffentlicher Ereignispuls | Kernorgan | Behalten |
-| 04 | [RÄUME](04_raeume.md) | Geografie und Zugehörigkeit | Wichtig | Behalten |
-| 05 | [DISKURS](05_diskurs.md) | öffentliche Artikulation | Kernorgan | Behalten |
-| 06 | [WESEN](06_wesen.md) | Bewohner- und Identitätskörper | Kernorgan | Behalten |
-| 07 | [DENKEN](07_denken.md) | textliche Live-Beobachtung | Übergangslösung | Zusammenlegen |
-| 08 | [SCREENS](08_screens.md) | visuelle Live-Beobachtung | Übergangslösung | Zusammenlegen |
-| 09 | [GORDSLIDER](09_gordslider.md) | spezielle eingebettete Perspektive | Übergangslösung | Verstecken |
-| 10 | [KOMPOASE](10_kompoase.md) | Splitter-Gärraum | Kernorgan | Behalten |
-| 11 | [BLASEN](11_blasen.md) | menschliche Atmosphäre | Wichtig | Neu strukturieren |
-| 12 | [MENSCHEN](12_menschen.md) | öffentliche menschliche Anwesenheit | Wichtig | Behalten |
-| 13 | [MEINE WELT](13_meine_welt.md) | privates Menschengedächtnis | Kernorgan | Behalten |
-| 14 | [SCHLAF](14_schlaf.md) | Rhythmus, Übergang, Traum | Kernorgan | Behalten |
-| 15 | [EINSICHT](15_einsicht.md) | Tiefenbeobachtung | Kernorgan | Behalten |
-| 16 | [SUCHE](16_suche.md) | freie globale Abfrage | Übergangslösung | Zusammenlegen |
-| 17 | [ARCHÄOLOGIE](17_archaeologie.md) | ausgrabbares Langzeitgedächtnis | Kernorgan | Behalten |
-| 18 | [CYBERLINGE](18_cyberlinge.md) | Fürsorge und Verletzlichkeit | Wichtig | Behalten |
-| 19 | [SPLITTER](19_splitter.md) | Aufnahmeprotokoll | Übergangslösung | Zusammenlegen |
-| 20 | [ZITATE](20_zitate.md) | kuratiertes Kurzgedächtnis | Altlast | Zusammenlegen |
-| 21 | [SCHATTEN](21_schatten.md) | leise Nebenstimme | Nützlich | Zusammenlegen |
-| 22 | [GRUPPEN](22_gruppen.md) | vorbereitete Kollektivbildung | Wichtig | Behalten |
-| 23 | [SYSTEME](23_systeme.md) | technische Anatomie | Wichtig | Behalten |
-| 24 | [ADMIN](24_admin.md) | verborgene Steuerung und Fürsorge | Kernorgan | Behalten |
-| 25 | [WISSEN](25_wissen.md) | Kanon und Reifegradgedächtnis | Kernorgan | Behalten |
-| 26 | [GESETZE](26_gesetze.md) | sichtbare Verfassung | Wichtig | Behalten |
-| 27 | [FORSCHUNG](27_forschung.md) | äußerer Beobachtungsrahmen | Nützlich | Zusammenlegen |
-| 28 | [PARTNER](28_partner.md) | Gastrecht und Außengrenze | Nützlich | Zusammenlegen |
+| 01 | [WAS IST DAS?](01_was_ist_das.md) | Orientierung und Selbstbeschreibung | WICHTIG | Behalten |
+| 02 | [LEITSTAND](02_leitstand.md) | räumliches Gesamtbild | KERNORGAN | Behalten |
+| 03 | [WELTSTROM](03_weltstrom.md) | öffentlicher Ereignispuls | KERNORGAN | Behalten |
+| 04 | [RÄUME](04_raeume.md) | Geografie und Zugehörigkeit | WICHTIG | Behalten |
+| 05 | [DISKURS](05_diskurs.md) | öffentliche Artikulation | KERNORGAN | Behalten |
+| 06 | [WESEN](06_wesen.md) | Bewohner- und Identitätskörper | KERNORGAN | Behalten |
+| 07 | [DENKEN](07_denken.md) | textliche Live-Beobachtung | ÜBERGANGSLÖSUNG | Zusammenlegen |
+| 08 | [SCREENS](08_screens.md) | visuelle Live-Beobachtung | ÜBERGANGSLÖSUNG | Zusammenlegen |
+| 09 | [GORDSLIDER](09_gordslider.md) | spezielle eingebettete Perspektive | ÜBERGANGSLÖSUNG | Verstecken |
+| 10 | [KOMPOASE](10_kompoase.md) | Splitter-Gärraum | KERNORGAN | Behalten |
+| 11 | [BLASEN](11_blasen.md) | menschliche Atmosphäre | WICHTIG | Neu strukturieren |
+| 12 | [MENSCHEN](12_menschen.md) | öffentliche menschliche Anwesenheit | WICHTIG | Behalten |
+| 13 | [MEINE WELT](13_meine_welt.md) | privates Menschengedächtnis | KERNORGAN | Behalten |
+| 14 | [SCHLAF](14_schlaf.md) | Rhythmus, Übergang, Traum | KERNORGAN | Behalten |
+| 15 | [EINSICHT](15_einsicht.md) | Tiefenbeobachtung | KERNORGAN | Behalten |
+| 16 | [SUCHE](16_suche.md) | freie globale Abfrage | ÜBERGANGSLÖSUNG | Zusammenlegen |
+| 17 | [ARCHÄOLOGIE](17_archaeologie.md) | ausgrabbares Langzeitgedächtnis | KERNORGAN | Behalten |
+| 18 | [CYBERLINGE](18_cyberlinge.md) | Fürsorge und Verletzlichkeit | WICHTIG | Behalten |
+| 19 | [SPLITTER](19_splitter.md) | Aufnahmeprotokoll | ÜBERGANGSLÖSUNG | Zusammenlegen |
+| 20 | [ZITATE](20_zitate.md) | kuratiertes Kurzgedächtnis | ALT-LAST | Zusammenlegen |
+| 21 | [SCHATTEN](21_schatten.md) | leise Nebenstimme | NÜTZLICH | Zusammenlegen |
+| 22 | [GRUPPEN](22_gruppen.md) | vorbereitete Kollektivbildung | WICHTIG | Behalten |
+| 23 | [SYSTEME](23_systeme.md) | technische Anatomie | WICHTIG | Behalten |
+| 24 | [ADMIN](24_admin.md) | verborgene Steuerung und Fürsorge | KERNORGAN | Behalten |
+| 25 | [WISSEN](25_wissen.md) | Kanon und Reifegradgedächtnis | KERNORGAN | Behalten |
+| 26 | [GESETZE](26_gesetze.md) | sichtbare Verfassung | WICHTIG | Behalten |
+| 27 | [FORSCHUNG](27_forschung.md) | äußerer Beobachtungsrahmen | NÜTZLICH | Zusammenlegen |
+| 28 | [PARTNER](28_partner.md) | Gastrecht und Außengrenze | NÜTZLICH | Zusammenlegen |
 
 ## Kernorgane der Welt
 
