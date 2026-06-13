@@ -231,3 +231,9 @@ CREATE TABLE ftw_group_members (
 );
 
 ...
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Für die Inventur selbst keine neue Datenstruktur. Die Ergebnisse sind 28 Markdown-Dateien + Index. Wenn die Empfehlungen umgesetzt werden, betrifft das nur die Surface-HTML und ggf. das Tab-Bar.

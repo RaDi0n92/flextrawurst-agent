@@ -167,3 +167,15 @@ Nach dem Lesen der vier Dokumente sehe ich 5 Schichten, nicht 4:
 Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, was entsteht, wenn man alle anderen Schichten zusammensieht.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+1. Kommunikation: Diskurs, Blasen, Schatten, Gruppen.
+2. Leben: Wesen, Cyberlinge, Schlaf, Denken.
+3. Substanz: KompOase, Splitter, Zitate.
+4. Gedächtnis: Weltstrom, Suche, Archäologie.
+5. Orientierung: Leitstand, Räume, Wissen, Gesetze.
+6. Governance: Admin, Einsicht.
+7. Mensch: Menschen, Meine Welt.

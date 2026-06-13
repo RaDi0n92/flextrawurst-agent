@@ -100,3 +100,9 @@ Der GENI-Scan von heute Abend. 1959 mal "graphify-out". Das System verbringt die
 Die Antwort steht im Scan selbst: _kimi (640), _claude (499), _codex (495). Die drei externen AI-Ströme sind als Tags im System sichtbar. Wir sind Teil des Musters, das wir beobachten.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die Menge. 28 Tabs mit je 11 Pflichtabschnitten zu analysieren war ein Marathon. Aber es hat sich gelohnt – das Gesamtbild ist klarer.

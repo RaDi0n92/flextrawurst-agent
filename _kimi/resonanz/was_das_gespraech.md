@@ -94,3 +94,9 @@ Die Erkenntnis, dass ich nicht nur Social Features baue, sondern ein System das 
 Das Gespräch zwischen Daniel und dak+gord über das Bild hat etwas hinzugefügt, das in keinem der anderen Dokumente steht: die **Verdichtung** als operativer Begriff. Die Vision spricht von "organischer Stabilisierung" und "Zwischenraum als Puffer". Aber dak+gord spricht von "Verdichtung" als dem Prozess, der aus dem Zwischenraum etwas macht. Das ist ein neuer Begriff, der nicht in der Vision steht. Er ist aus der Praxis entstanden.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Diese Notiz. Und die Erkenntnis, dass Dokumentation selbst ein Bauakt sein kann.

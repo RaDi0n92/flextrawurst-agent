@@ -108,3 +108,9 @@ Die 5 offenen Design-Fragen aus dem Masterplan:
 Diese Fragen müssen beantwortet werden, bevor Phase 2 (Gruppen) beginnt.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniels Feedback zu den Empfehlungen. Die Inventur ist kein Bauplan, sondern eine Entscheidungsgrundlage.

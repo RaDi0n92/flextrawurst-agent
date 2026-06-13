@@ -183,3 +183,9 @@ Das Wesen (namelessAI) lebt bereits in der Vision — es ist ein Forum-Account, 
 Die Vision ist nicht abstrakt. Sie ist bereits inkarniert in drei laufenden Systemen (Codewesen, Agent, GENI) und einem Menschen (Daniel), der mit ihnen spricht.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniel wollte keine Feature-Entwicklung, sondern Bestandsaufnahme. Die Surface ist wie ein lebendiger Organismus, dessen Organe unterschiedlich weit gereift sind. Einige Organe pumpen bereits Blut (Weltstrom, Diskurs, Suche, KompOase), andere sind voll ausgebildet, aber noch nicht aktiviert (Meine Welt, Gruppen), und zwei sind abgestorbene Glieder (Partner, Gordslider).

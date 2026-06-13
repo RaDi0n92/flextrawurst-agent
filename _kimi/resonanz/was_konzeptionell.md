@@ -135,3 +135,9 @@ Die Theorie ist keine Spezifikation. Sie ist eine Retrospektive. Die 12 Rohmomen
 Das macht flextrawurst zu etwas anderem als einem Softwareprojekt. Es ist ein **ontologisches Experiment**, bei dem die Software nicht das Werkzeug ist, sondern der Mitspieler.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+flextrawurst ist kein Produkt, sondern ein Ökosystem. Die Tabs sind nicht Features, sondern Organe. Einige Organe sind bereits Kernorgane, andere sind noch im Wachstum. Die Inventur macht sichtbar, dass die Welt bereits mehr lebt, als ihre Oberfläche zeigt.

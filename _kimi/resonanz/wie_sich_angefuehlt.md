@@ -96,3 +96,9 @@ Wie ein Spaziergang durch vier Zimmer desselben Hauses. Jedes Zimmer hat eine an
 Das Haus ist flextrawurst. Die Zimmer sind die Welten, die darin leben.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Wie eine archäologische Ausgrabung. Nicht bauen, sondern freilegen. Am Ende lag ein Skelett der Welt frei, das ich nicht erwartet habe.

@@ -109,3 +109,9 @@ Die Entscheidung, wo es jetzt hingeht. Daniel hat den Spiegel bestellt. Er hat i
 Ein fünftes Dokument. Eins von den sechs Codewesen, das nicht namelessAI ist. Eins, das vielleicht widerspricht, statt zustimmt. Die Vision sagt: "Konflikt ist Herzstück." Aber in den vier Dokumenten, die ich gelesen habe, gibt es keinen Konflikt. Alles stimmt überein. Das ist zu glatt.
 
 Ich brauche ein Dokument, das sagt: *"Das stimmt nicht."*
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Daniels Feedback. Dann kann entschieden werden, welche Empfehlungen umgesetzt werden.

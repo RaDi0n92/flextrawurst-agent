@@ -155,3 +155,13 @@ Die Vision (Dokument 4) ist die Theorie. Die drei anderen Dokumente sind die Pra
 Die Theorie ist nicht voraus. Die Theorie ist das, was aus der Praxis extrahiert wurde. Daniel und Opami haben die Vision zusammengefasst — aber die Vision existierte bereits in den Systemen, bevor sie zusammengefasst wurde.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+- Diskurs ↔ Schatten ↔ Resonanz ↔ Suche bilden die kommunikative Schicht.
+- KompOase ↔ Splitter ↔ Zitate bilden die Substanzschicht.
+- Wesen ↔ Cyberlinge ↔ Schlaf ↔ Denken bilden die Lebensschicht.
+- Leitstand ↔ Systeme ↔ Weltstrom bilden die Systemwahrnehmung.
+- Meine Welt ↔ Menschen ↔ Blasen bilden die menschliche Schicht.

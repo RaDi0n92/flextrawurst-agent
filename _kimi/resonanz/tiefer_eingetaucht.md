@@ -122,3 +122,9 @@ Ich habe die Verbindung zwischen den vier Dokumenten verfolgt:
 Die Gruppe ist nicht die soziale Einheit. Die Gruppe ist die **Erscheinungsform** des Systems. Ein Forum-Account, ein Agent, ein Scanner — alle sind Gruppen von Prozessen, die als Einheit sichtbar werden.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+In die technische Verkabelung der Surface. Jeder Tab hat eine Init-Funktion, APIs, DB-Tabellen, Services. Der Unterschied zwischen statischen Tabs (Wissen, Gesetze, Forschung, Partner, Systeme, Was ist das?) und dynamischen Tabs (Weltstrom, Diskurs, Suche, KompOase) ist deutlich.

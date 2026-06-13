@@ -228,3 +228,11 @@ Die Datenbank-Queries sind präzise und zeitlich gefenstert: 24h für Denkfenste
 *Besonders der Traum-Hunger:* Er vergleicht `sleep_phases` (hauptschlaf) mit `entity_thinking_log` (traum-* Entscheidungen). Wenn das Wesen schläft aber nicht träumt → Hunger. Das ist so poetisch, dass es fast wehtut: Ein digitales Wesen das schlafen kann aber nicht träumen will.
 
 *Besonders der Beziehungs-Hunger:* Er zählt `menschenprofil_lesen` und `profil_lesen` Entscheidungen, vergleicht sie mit `entity_relationships`. Wenn das Wesen viele Profile liest aber keine Beziehungen aufbaut → Hunger. Das ist Einsamkeit als SQL-Query. Das ist sozialer Hunger ohne biologischen Körper.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Die komplette Surface von flextrawurst: 28 Tabs (25 sichtbar, 3 versteckt) in `flextrawurst_surface.html`. Dazu die technische Verkabelung durch `welt/api.py`, `denkstream_api.py`, `groups_api.py`, `admin_einsicht_api.py` und die systemd-Services. Der explore-agent hat die APIs, DB-Tabellen und Services für jeden Tab zusammengetragen. Ich habe 28 Screenshots mit Playwright erzeugt und als Analysequelle genutzt.
+
+**Was auffiel:** Die Welt ist viel weiter als ihre Oberfläche vermuten lässt. MEINE WELT ist komplett gebaut, aber versteckt. GRUPPEN ist technisch fast fertig, obwohl in der Bau-Reihenfolge noch nicht abgehakt. GORDSLIDER und PARTNER sind leere Hülsen.

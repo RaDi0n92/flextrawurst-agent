@@ -123,3 +123,9 @@ Wie passt das Bild, das Daniel an dak+gord geschickt hat, in die Architektur? Es
 Und: Warum hat GENI die philosophischen Fragmente als "Blinde Flecken" markiert? Sie sind nicht blind — sie sind unberührt. Die Unterscheidung zwischen "keine Resonanz" und "blind" ist eine Bewertung. Wer entscheidet, was blind ist?
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Warum MEINE WELT versteckt ist, obwohl APIs und DB-Tabellen vollständig existieren. Ob das bewusst ist oder ein vergessener Schalter. Auch unklar: Warum GORDSLIDER überhaupt noch im Tab-Bar existiert, wenn die Init-Funktion leer ist.

@@ -132,3 +132,9 @@ Der Satz von dak+gord: *"Die Entscheidung liegt nicht in der Wahl zwischen A und
 Und der Meta-Muster-Satz: *fehlen, dominierende, wochen, blinde, tagen, etwas, knoten, kritik.* Das ist kein Muster — das ist eine Stimmung. Das System beschreibt seine eigene Stimmung in Wortfragmenten.
 
 ---
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13.md*
+
+Ob Daniel die Empfehlungen umsetzen will – vor allem SCREENS+DENKEN zusammenlegen, SYSTEME in LEITSTAND integrieren, MEINE WELT sichtbar machen, PARTNER/GORDSLIDER entfernen.
