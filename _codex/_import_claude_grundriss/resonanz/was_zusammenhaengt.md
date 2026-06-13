@@ -784,3 +784,11 @@ Lightmode-Fixes → Cinema-Architektur-Problem → Agent-Override-Problem. Alles
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächster großer Löschvorgang wird wieder lang dauern. Die Bau-Reihenfolge hat "Denkfenster / Transparenz-Schicht" als nächsten Schritt — dort sollte man vielleicht auch die Similarity-Berechnung limitieren oder einen TTL einbauen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+- Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
+- `_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
+- Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`: scroll + grünes Outline-Highlight für 2,5 Sekunden. Das ist ein einfaches aber wirksames UX-Muster.

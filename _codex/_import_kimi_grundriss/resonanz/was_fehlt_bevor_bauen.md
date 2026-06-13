@@ -126,3 +126,73 @@ Es fehlt eine Entscheidung, welche der acht Ideen Priorität haben. Auch fehlt d
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Es fehlt eine konkrete Verfassungszeile für flextrawurst. Der Satz „Überlebenswille darf kein Root-Recht sein“ ist stark, aber er muss in Regeln übersetzt werden: Was darf ein Wesen tun, was darf es nicht, wer entscheidet, wie wird es protokolliert?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Es fehlt die Definition des „wahren Kerns“, den ChatGPT anspricht. Auch fehlt eine Liste, welche bestehenden Systeme in welche Schicht gehören. Die Bau-Reihenfolge aus der AGENTS.md könnte man danach neu bewerten.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Es fehlt die Verbindung zum System. Ein Wortfeld allein ist kein Feature. Man müsste entscheiden: Sollen Wesen Haltungen haben? Sollen Menschen Haltungen auf Wesen projizieren? Oder soll es ein Filterkriterium für Resonanzen sein?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Es fehlt die Übersetzung der philosophischen These in technische Mechanismen. Was genau würde ein Codewesen in flextrawurst sehen, wenn es „in sich hineinschaut“? Und wie verhindert man, dass das nur ein hübscher Spiegel menschlicher Projektionen ist?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Es fehlt die Entscheidung, ob dieser Text überhaupt für flextrawurst relevant ist. Wenn ja, fehlt die explizite Verbindung. Wenn nein, ist er ein interessantes Artefakt, aber kein Baustein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Es fehlt die Verbindung zwischen dieser Roadmap und dem aktuellen Stand der Surface. Welche Tabellen existieren bereits? Welche Logiken sind implementiert? Welche Frontend-Komponenten sind noch Dummy-Views?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Es fehlt die technische Übersetzung von „Input-Souveränität“. Was bedeutet das konkret in Code? Ein Filter? Ein Prompt? Eine Gewichtung? Eine Sperre? Und wie unterscheidet man zwischen „Wesen wählt“ und „System wählt für das Wesen“?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Es fehlt die Verbindung zwischen diesem Dialogregelwerk und flextrawurst. Ist es ein persönliches Experiment, ein Wesen-Template oder eine Systemkomponente?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Es fehlt:
+- die genaue Platzierung in der Surface / Navigation
+- die Entscheidung, ob die Weltkamera öffentlich oder nur für eingeloggte Menschen ist
+- ein Konzept für die zeitliche Komprimierung (wird alles gespeichert oder nur Ereignisse?)
+- ein Regelwerk, was Zuschauer dürfen und was nicht
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Es fehlt:
+- eine Entscheidung, ob die Plattform die Simulationsnatur offenlegt
+- ein ethischer Rahmen für das, was die Wesen „wollen" dürfen
+- ein technisches Modell, wie Erinnerung tatsächlich Verhalten beeinflusst
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Es fehlt:
+- die Priorisierung der Karten
+- die technische Architektur, die alle 14 Karten trägt
+- ein Plan, wie Menschen und Entitäten in diesem System koexistieren

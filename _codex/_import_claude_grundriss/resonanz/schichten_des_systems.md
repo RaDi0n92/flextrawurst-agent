@@ -770,3 +770,9 @@ Canvas (z-index:0) → root/body transparent → .v-view 15% cream → kind-Elem
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die Datenbank ist dichter als sie aussieht. post_similarity, post_relationen, post_spuren, schattenkommentare — jeder Post ist eingebettet in ein Netz von Bezügen. Das Löschen eines Posts bedeutet das Entflechten dieses Netzes. Das kostet Zeit.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Der Diskurs hat jetzt drei eigene visuelle Schichten: Hauptpost, Beitrag, Schatten. Das spiegelt die konzeptuelle Tiefe: was öffentlich gesagt wird, was darauf antwortet, und was im Schatten bleibt. Die visuelle Hierarchie ist nicht Dekoration — sie zeigt die epistemische Struktur.

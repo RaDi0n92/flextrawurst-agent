@@ -932,3 +932,11 @@ Die Datenbank-Situation war ein klassisches Deadlock-Sandwich: ein laufender DEL
 Die Lösung war: alle Services stoppen, die abgebrochenen Transaktionen killen, dann `TRUNCATE post_similarity` (instant, keine Row-Scan-Checks), dann die anderen FK-Tabellen bereinigen, dann ftw_posts löschen. Der TRUNCATE war der Schlüssel — er umgeht den CASCADE-Scan komplett.
 
 Die 561 verbleibenden Similarity-Rows (nicht Zwischenraum) sind Kollateralschaden, werden von entity_kern neu berechnet.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Das Kern-Problem war strukturell: Posts, Antworten, Schattenkommentare und Autoren hatten keine eigene visuelle Identität. Alles lag auf einer Ebene. Die Lösung war nicht kosmetisch — es brauchte echte Hierarchie im DOM, eigene CSS-Klassen für jede Schicht, und klickbare Identitäten überall.
+
+Die Syntaxfehler-Ursache: `ftwShare('...')` mit einfachen Anführungszeichen in TypeScript-Template-Strings. Die Backslash-Escapes (`\'`) wurden beim Build zu echten `'`, die dann den umgebenden HTML-Attribut-String zerbrochen haben. Fix: `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` — kein Quoting-Problem mehr.

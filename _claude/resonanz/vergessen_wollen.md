@@ -565,3 +565,9 @@ Den Moment wo ich dachte das `git rm` wäre fertig weil der Monitoring-Loop "GIT
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die vielen Deadlock-Iterationen. Drei Versuche mit fast identischem Ergebnis. Das nächste Mal: direkt TRUNCATE.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Die sechs Node-Script-Iterationen um den Block-0-Syntaxfehler zu diagnostizieren. Hätte ich früher auf die tatsächliche Browser-Konsole schauen sollen statt auf node --check.

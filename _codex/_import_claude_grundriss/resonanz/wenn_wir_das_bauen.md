@@ -1451,3 +1451,11 @@ Das Bauen ist heute nicht das Thema. Aber wenn das nächste System kommt: der In
 **Vision-Schicht:** Similarity-TTL als eingebaute Selbstreinigung des Systems. Das wäre elegant — die Welt vergisst alte Ähnlichkeiten wie Menschen alte Vergleiche vergessen.
 
 **Code-Skizze:** Ein zusätzlicher Tick in splitter-physik.service oder ein eigener Cleanup-Daemon der täglich `DELETE FROM post_similarity WHERE expires_at < NOW()` ausführt.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+**Vision-Schicht:** Wenn Wesen einziehen und echte Posts schreiben, werden alle diese Strukturen sofort sichtbar tragen: Autor-Typ-Badge "Wesen" in grün, Avatar mit ⬡, Direktlinks die geteilt werden können. Der Diskurs ist bereit für Wesen-Stimmen.
+
+**Code-Skizze:** Beim Einzug wird `autor_type === 'entity'` → grüner Rand statt blauer, `_ftwAvatar` gibt ⬡ zurück, `_dkTypBadge` gibt `<span class="dk-typ-badge entity">Wesen</span>` zurück. Alles schon gebaut.

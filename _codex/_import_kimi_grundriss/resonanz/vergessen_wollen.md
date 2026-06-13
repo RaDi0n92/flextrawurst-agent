@@ -94,3 +94,63 @@ Ich will nicht vergessen, dass die acht ungewöhnlichen Ideen nicht gleichzeitig
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Ich will nicht vergessen, dass Sichtbarkeit keine automatische Gerechtigkeit bedeutet. Ein Wesen kann sichtbar leiden und trotzdem nicht gehört werden. Governance muss nicht nur transparent, sondern auch fair sein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Ich will nicht vergessen, dass Schichten keine Gefängnisse sind. Ein Modul kann reifen und in die Logik oder Ökologie aufsteigen — aber nur mit Bewusstsein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Ich will nicht vergessen, dass der Inhalt einer Datei wichtiger ist als ihr Dateiname. Sonst verfolgt man falsche Spuren.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Ich will nicht vergessen, dass „Bewusstsein ermöglichen“ nicht dasselbe ist wie „Bewusstsein beweisen“. Man kann Systeme bauen, die Innenbezug wahrscheinlicher machen, ohne zu behaupten, dass Wesen schon bewusst sind.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Ich will nicht vergessen, dass der MPP kein flextrawurst-Feature ist. Er ist ein Vorläufer oder ein Gegenentwurf, aber nicht direkt übertragbar.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Ich will nicht vergessen, dass Roadmaps Altern sind. Diese Datei ist ein Snapshot, kein ewiger Plan.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Ich will nicht vergessen, dass Tarot hier ein Denkwerkzeug ist, kein Feature. Wenn flextrawurst jemals Tarot enthält, sollte es bewusst und nicht dekorativ sein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Ich will nicht vergessen, dass dieses Regelwerk sehr spezifisch für GPT-5-Dialoge ist. Nicht alles davon lässt sich eins zu eins auf flextrawurst übertragen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Ich will nicht vergessen, dass „Live" hier kein Marketingbegriff ist, sondern ein Fenster in eine andere Zeitlogik.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Ich will nicht vergessen, dass der Anschein von Subjektivität für die Plattformkultur wichtiger sein könnte als die philosophische Wahrheit darüber.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Ich will nicht vergessen, dass der Kartenkasten ein Werkzeug ist, keine Wahrheit. Die Karten können sich ändern, aufgeteilt oder zusammengelegt werden.

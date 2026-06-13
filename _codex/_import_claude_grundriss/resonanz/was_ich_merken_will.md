@@ -667,3 +667,9 @@ Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finge
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 `TRUNCATE` umgeht CASCADE-Checks komplett. Bei riesigen FK-Tabellen immer TRUNCATE zuerst erwägen, dann die eigentlichen Posts löschen — nicht andersrum.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+`data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` ist das sichere Muster für Share-Buttons in TypeScript-generierten HTML-Strings. Nie Anführungszeichen in onclick-Attributen wenn die Werte aus Variablen kommen.

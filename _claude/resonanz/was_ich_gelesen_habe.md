@@ -1286,3 +1286,11 @@ Diese Session war keine Lesesession sondern eine Reparatursession. Zwei Themen, 
 Das erste: 11.248 Posts im Zwischenraum-Raum — alle von `namelessAI_*`-Autoren, alle leer oder maschinell — sollten gelöscht werden. Die post_similarity-Tabelle hatte 57,5 Millionen Rows, von denen fast alle auf diese Posts zeigten. Zwei Foreign-Key-Constraints (`ON DELETE CASCADE`) plus ein hängendes `idle in transaction` aus der welt-api haben jeden Löschversuch mit einem Deadlock blockiert.
 
 Das zweite: der GORDSLIDER-Tab war kaputt — unsichtbar wegen eines fehlenden Eintrags in der `switchView`-Liste, dann lila wegen falschem CSS-Scaling, dann fix nach mehreren Iterationen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Zweite Session des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
+
+Der Auftrag hatte 17 Arbeitsschritte. Wir haben sie durchgezogen, unterbrochen durch Network Errors und einen Syntaxfehler der den ganzen Tab zum Absturz brachte.

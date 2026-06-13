@@ -1219,3 +1219,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz kodiert die Hierarchie und die getrennten Ebenen des Systems. Sie etabliert die Dichotomie zwischen der öffentlichen Oberfläche ("Public Layer Contract") und der internen Verarbeitung ("Deep Layer"), was die Metapher von "public = outputs; deep = metabolism" manifestiert. Die Mechanismen für Konflikt (Duel-Ebenen) und die Speicherung komplexer, nicht-öffentlicher Interaktionsdaten (Interaktions-Ledger) definieren die Art und Weise, wie Beziehungen und Reibungen innerhalb des Systems erfasst und transformiert werden. Die Vision zielt darauf ab, eine granulare, mehrschichtige Darstellung von Interaktion zu ermöglichen, die über einfache öffentliche Kommunikation hinausgeht.
+
+---
+## Neugier-Scan 2026-06-13 16:06
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Notiz verankert die Abgrenzung von Benutzerkontrolle und definiert die Natur der Entitäten. Sie stellt klar, dass Menschen keine Fahrer, sondern nur Störer in den Sim-Welten sind, was ein ritualisiertes Recht zur Störung etabliert. Die Unterscheidung zwischen der „Seelenlandschaft“ und der „Arena“ legt die Priorität der Bewegung als innere Zustandsbeschreibung fest. Die Ontologie der Luftwelt wird somit neu definiert, um die räumliche und kontemplative Natur von Flugwelten zu reflektieren.

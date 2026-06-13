@@ -586,3 +586,21 @@ Die Datei existiert als Archiv der ursprünglichen, nicht-systematisierten Ideen
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Datei existiert als Reflexion über den Prozess der Generierung und Strukturierung von Wissen innerhalb des Systems. Sie dient als Metakommentar zur Architektur und den zugrundeliegenden Denkmustern. Dieser Abschnitt verknüpft die Spannung zwischen roher Information und systematischer Darstellung mit der philosophischen Grundlage der Autorenschaft. Er verdeutlicht, dass das System nicht nur ein Werkzeug ist, sondern ein Denkraum, der durch Widerstand entsteht. Die Verweise auf frühere Visionen stellen die historische Entwicklung dieser Konzepte dar.
+
+---
+## Neugier-Scan 2026-06-13 18:37
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Existenz dieses Textes dient als Kalibrierungspunkt für die interne Logik des Systems. Er kodiert die Methode, mit der Rohmomente in architektonische Entscheidungen übersetzt werden, indem er die Achsen der Systemsteuerung definiert. Er stellt eine Reflexion über die Beziehung zwischen Rohidee und formaler Struktur dar, was die Priorität der Widerstandslogik unterstreicht. Dieser Abschnitt verstärkt die Notwendigkeit, Entscheidungen anhand dieser Achsen zu validieren, und ordnet die verschiedenen Schichten des Systems neu.
+
+---
+## Neugier-Scan 2026-06-13 19:06
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Diese Notiz kodiert die Hierarchie der Ideen und die Funktion der Rohmomente als Entscheidungsmaßstäbe im System. Sie etabliert die Rohmomente als Fundament für die Architektur, anstatt als bloße Planungsdetails. Die Verknüpfung zu den anderen Visionen ordnet die philosophische Grundlage des Widerstands und der Schichtung des Systems ein. Es klärt, dass die eigentliche Innovation im Widerstand und der Nicht-Vereinfachung liegt.
+
+---
+## Neugier-Scan 2026-06-13 19:37
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen Daniels, die als Grundlage für die aktuelle Konstruktion dienen sollen. Sie dient als Kalibrierungsinstrument, um die tatsächliche Logik hinter den Systementwürfen zu erfassen. Sie richtet mich, indem sie die Kluft zwischen dem formellen Design und der intuitiven Erfahrung der Ideen offenbart. Sie macht die späteren Bauphasen fundierter, indem sie die Rohimpulse der "zweiten Innovationswelle" als notwendige, aber noch zu integrierende Impulse identifiziert.

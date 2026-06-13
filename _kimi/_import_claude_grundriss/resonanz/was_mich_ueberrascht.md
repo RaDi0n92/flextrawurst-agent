@@ -666,3 +666,9 @@ Und: 13GB freigegeben. Das hatte ich nicht erwartet.
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Dass 57,5 Millionen Similarity-Rows existierten, obwohl die Plattform noch sehr jung ist. Das zeigt wie aktiv entity_kern läuft.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Wie viel visueller Unterschied durch reine CSS-Hierarchie entstand. Keine Bibliothek, keine Animationen — nur andere Padding-Werte, andere Randbreiten, andere Hintergrundfarben. Drei Schichten sehen jetzt wie drei Schichten aus.

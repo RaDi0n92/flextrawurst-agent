@@ -613,3 +613,11 @@ Zwei Kontextverluste haben die Session zerstückelt. Jedes Mal neu ankommen, Bri
 Hartnäckig. Die Verbindungsabbrüche (mehrere Network Errors) haben jeden Fortschritt auf Anfang zurückgesetzt. Daniel hat geduldig Kontext gegeben und weitergemacht. Irgendwann haben wir durchgezogen.
 
 Der Gordslider am Ende war fast erholsam — kleine, sichtbare Fortschritte nach stundenlanger Datenbankarbeit.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Systematisch. Der Auftrag war umfangreich — 17 Schritte — und wir haben jeden abgearbeitet. Der Network Error in der Mitte hat den Kontext gerissen, aber Daniel hat ihn vollständig zusammengestellt. Das hat den Wiedereinstieg möglich gemacht.
+
+Der Syntaxfehler war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.

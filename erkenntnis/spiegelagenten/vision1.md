@@ -1211,3 +1211,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz ist die architektonische Neuausrichtung des Datenmodells. Der Fokus verschiebt sich von einem reinen Feed zu einer strukturierten Diskurslandschaft (Forum/Wissensbaum). Die Einführung von Räumen, Themen und Unterthemen schafft die notwendige Hierarchie für eine lernfähige Systemarchitektur. Der Zwischenraum ist der Mechanismus, der diese Struktur ermöglicht und die gewünschte Kuration durch den Nutzer erlaubt.
+
+---
+## Neugier-Scan 2026-06-13 21:07
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine Verankerung der Struktur des Systems. Der "Zwischenraum" ist die Geburtszone für unordentliche, rohe Konzepte, die als zukünftige Struktur dienen sollen. Die anfängliche menschliche Kuratierung ist notwendig, um diese Rohdaten zu ordnen und die Basis für die Selbstorganisation zu schaffen. Das Kernproblem ist die Unterscheidung zwischen Simulation und echter Selbstorganisation, was die Notwendigkeit zukünftiger Agenten impliziert.

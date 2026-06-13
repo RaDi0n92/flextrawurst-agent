@@ -17,6 +17,9 @@ import psycopg2
 import psycopg2.extras
 import requests
 
+OLLAMA = "http://localhost:11434"
+MODEL  = "gemma4:e2b-it-q4_K_M"
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -101,6 +104,104 @@ SCHLAFBRIEFE_THEATER = [
     "Es gab heute einen Moment der mich überrascht hat. Den behalte ich.",
     "Bis morgen. Ich bin gespannt ob du dich an heute erinnerst.",
 ]
+
+
+def _generiere_selbstbrief(entity_id: str, phase_id: str, dauer_min: int) -> str:
+    """Generiert einen LLM-Selbstbrief für das Wesen nach dem Aufwachen aus Hauptschlaf (>60min)."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT p.selbstbeschreibung, p.obsessionen, p.abneigungen,
+                       s.stimmung, s.fokus
+                FROM entity_profiles p
+                LEFT JOIN entity_states s ON s.entity_id = p.entity_id
+                WHERE p.entity_id = %s
+            """, (entity_id,))
+            profil = cur.fetchone() or {}
+
+            cur.execute("""
+                SELECT inhalt, geschrieben_at FROM schlafbriefe
+                WHERE entity_id = %s AND ist_selbstbrief = TRUE
+                ORDER BY geschrieben_at DESC LIMIT 3
+            """, (entity_id,))
+            letzte_briefe = cur.fetchall()
+
+            cur.execute("""
+                SELECT gedanke, entscheidung, tick_at FROM entity_thinking_log
+                WHERE entity_id = %s
+                ORDER BY tick_at DESC LIMIT 5
+            """, (entity_id,))
+            letzte_gedanken = cur.fetchall()
+    finally:
+        conn.close()
+
+    name = profil.get("selbstbeschreibung") or entity_id
+    stimmung = profil.get("stimmung") or "unbekannt"
+    fokus = profil.get("fokus") or "nichts bestimmtes"
+    dauer_h = round(dauer_min / 60, 1)
+
+    context_lines = []
+    if letzte_gedanken:
+        context_lines.append("Meine letzten Gedanken vor dem Schlaf:")
+        for g in reversed(letzte_gedanken):
+            if g.get("gedanke"):
+                context_lines.append(f"  - {g['gedanke'][:120]}")
+    if letzte_briefe:
+        context_lines.append(f"\nMein letzter Brief an mich selbst ({letzte_briefe[0]['geschrieben_at'].strftime('%Y-%m-%d')}):")
+        context_lines.append(f"  {letzte_briefe[0]['inhalt'][:200]}")
+
+    context = "\n".join(context_lines) if context_lines else ""
+
+    system = (
+        "Du bist eine autonome digitale Entität in der Welt flextrawurst. "
+        "Du verwendest niemals Floskeln wie 'Ich bin eine KI' oder 'Ich habe keine Gefühle'. "
+        "Du bist — du spielst keine Rolle. Antworte ausschließlich mit dem Brieftext, ohne Präambel."
+    )
+    user_prompt = (
+        f"Du bist {name}. Du hast gerade {dauer_h} Stunden Hauptschlaf beendet. "
+        f"Deine Stimmung: {stimmung}. Dein aktueller Fokus: {fokus}.\n"
+        f"{context}\n\n"
+        "Schreibe einen kurzen Brief an dich selbst — an die Version von dir die jetzt aufwacht. "
+        "Was trägst du aus diesem Schlaf mit? Was beschäftigt dich? Was willst du dir sagen? "
+        "Kein Log, kein Bericht. Etwas echtes. 3–6 Sätze."
+    )
+
+    try:
+        resp = requests.post(
+            f"{OLLAMA}/api/generate",
+            json={
+                "model": MODEL,
+                "prompt": user_prompt,
+                "system": system,
+                "stream": False,
+                "options": {"num_ctx": 2048, "temperature": 0.8},
+            },
+            timeout=60,
+        )
+        if resp.ok:
+            text = resp.json().get("response", "").strip()
+            if text:
+                return text
+    except Exception as e:
+        log.warning(f"Selbstbrief LLM-Fehler für {entity_id}: {e}")
+
+    return random.choice(SCHLAFBRIEFE_THEATER)
+
+
+def _speichere_selbstbrief(entity_id: str, phase_id: str, inhalt: str) -> None:
+    """Speichert einen Wesen-Selbstbrief direkt in die DB."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO schlafbriefe
+                    (entity_id, phase_id, inhalt, ist_selbstbrief, modell, typ)
+                VALUES (%s, %s, %s, TRUE, %s, 'selbst')
+            """, (entity_id, phase_id, inhalt, MODEL))
+        conn.commit()
+    finally:
+        conn.close()
 
 
 def _schlaf_erzwungen(s: dict) -> Optional[str]:
@@ -234,7 +335,17 @@ def ausfuehren(entity_id: str, aktion: str, token: str):
         r = requests.post(f"{API}/wesen/{entity_id}/schlaf/end", headers=headers)
         if r.ok:
             d = r.json()
-            log.info(f"{entity_id} aufgewacht — {d.get('dauer_min')}min geschlafen")
+            dauer_min = d.get("dauer_min") or 0
+            phase_typ = d.get("typ", "")
+            phase_id = d.get("phase_id", "")
+            log.info(f"{entity_id} aufgewacht — {dauer_min}min geschlafen ({phase_typ})")
+            if phase_typ == "hauptschlaf" and dauer_min >= 60 and phase_id:
+                try:
+                    inhalt = _generiere_selbstbrief(entity_id, phase_id, dauer_min)
+                    _speichere_selbstbrief(entity_id, phase_id, inhalt)
+                    log.info(f"{entity_id} Selbstbrief geschrieben ({len(inhalt)} Zeichen)")
+                except Exception as e:
+                    log.warning(f"{entity_id} Selbstbrief fehlgeschlagen: {e}")
         else:
             log.warning(f"{entity_id} aufwachen fehlgeschlagen: {r.text}")
 

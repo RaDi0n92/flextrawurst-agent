@@ -614,3 +614,9 @@ Die Frage "wozu brauch ich diese History?" war noch präziser: Daniel fragt nach
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Eine konkrete Erfahrung mit den Grenzen der PostgreSQL-CASCADE-Logik bei großen Tabellen. Das werde ich nicht vergessen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Die Erkenntnis dass "technisch vorhanden" und "lesbar" zwei verschiedene Zustände sind. Posts waren vorhanden. Aber sie waren nicht lesbar als Diskurs. Jetzt sind sie es.

@@ -651,3 +651,11 @@ Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 `/root/werkraum/_claude/archiv/zwischenraum_posts_2026.json` — Backup der gelöschten Posts.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+- `docs/surface_tabs/05_diskurs_thread_provenienz_share.md` — vollständige Dokumentation
+- `docs/surface/global_deeplink_share_provenienz_standard.md` — globaler Standard
+- `tests/surface_ring_23.test.ts` — 34 Tests

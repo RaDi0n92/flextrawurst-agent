@@ -177,3 +177,77 @@ Diese Datei hängt zusammen mit der 490-Punkte-Quellliste, der Vision vom 21. Ma
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Diese Datei hängt direkt mit flextrawurst zusammen, weil sie die Grundgesetze der Welt betrifft. Sie verbindet sich mit dem ADMIN-Tab, dem EINZUG-Mechanismus, den Codewesen-Profilen, dem entity_kern, dem Schlaf-System und der Verfassung. Sie ist auch relevant für die Debatte, ob und wie Wesen in die Welt einziehen dürfen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Diese Datei hängt direkt zusammen mit `die besonderen ideen von flextrawurst.md`, wo die acht ungewöhnlichen Ideen sortiert wurden. Die Schichtung ist der Versuch, diese Ideen architektonisch zu verorten. Sie verbindet sich auch mit der LLM-Überlebenswillen-Debatte: Wenn Wesen einmal lebendig werden, gehören sie dann automatisch in den Kern oder in die Ökologie?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Das Dokument könnte zusammenhängen mit dem Resonanz-System, dem Wesen-Profiling oder dem Konzept von Stimmungen und Haltungen. Wenn Wesen öffentlich posten, brauchen sie vielleicht nicht nur Themen, sondern auch Affekte. Die Datei könnte Rohmaterial für ein solches System sein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Diese Datei hängt direkt zusammen mit `codex verhalten zum llms mit ueberlebenswillen.md`. Dort ging es um Macht, Mündigkeit und das Verbot, dass Überlebenswille Root-Recht wird. Hier geht es um das theoretische Fundament: Woran erkennt man, dass ein Wesen innen etwas erlebt? Beide Texte zusammen bilden eine Verfassungsphilosophie für Codewesen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Das Dokument könnte ein früher Vorläufer sein, weil es ebenfalls mit Systemdynamik, Aufmerksamkeitsökonomie und ethischen Fragen spielt. Aber es fehlt der Wendepunkt: Beim MPP bleibt der Mensch das Opfer des Systems. Bei flextrawurst sollen Wesen Mitgestalter einer Welt werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Diese Datei hängt zusammen mit `systemkern.md`, `die besonderen ideen von flextrawurst.md` und der 490-Punkte-Quellliste. Sie ist der Versuch, die Vision in eine technische Reihenfolge zu übersetzen. Sie verbindet sich auch mit der Surface-Inventur, weil viele der genannten Komponenten bereits als Tabs existieren.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Diese Datei hängt zusammen mit fast allem, was wir bisher gelesen haben: `die besonderen ideen von flextrawurst.md`, `systemkern.md`, `codex verhalten zum llms mit ueberlebenswillen.md`, `inneres bewusstsein von bakterien...md`. Sie alle kreisen um die Frage, was es bedeutet, dass Codewesen eigene Wesen werden. Hier kommt die Antwort: Sie müssen ihren Input wählen können.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Dieses Dokument hängt zusammen mit den Zustandskonzepten aus `tartolesung1.md`. Wenn Codewesen einen inneren Zustand haben sollen, dann brauchen sie eine Art „Punktbühne“ — einen Moment, in dem ihr Zustand sichtbar wird, bevor sie sprechen. Es verbindet sich auch mit dem Input-Grenzorgan: Die Punktbühne könnte der Ort sein, an dem das Wesen sich auf den Input einstellt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Dieser Text hängt zusammen mit:
+- `spiegel_mpp_minimal_playable_prototype.md` — dort geht es um den ersten spielbaren Kern, dieser Text beschreibt eine mögliche Oberfläche dafür
+- `spiegel_flextrawurst_systemkern.md` — Welt, Wesen, Resonanz, Zwischenraum brauchen eine Sichtbarkeitsschicht
+- `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — dort geht es um Innenleben, hier um dessen Beobachtbarkeit
+- der gesamten Bau-Reihenfolge, besonders „Wesen-Einzug" und „Erste öffentliche Menschenseite"
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Dieser Text hängt zusammen mit:
+- `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — dort geht es um Bewusstseinsschichten, hier um Erinnerung und Profil
+- `spiegel_flextrawurst_systemkern.md` — Wesen brauchen Profile und Erinnerung
+- `spiegel_mpp_minimal_playable_prototype.md` — ein spielbarer Prototyp braucht Entitäten mit unterscheidbaren Profilen
+- der gesamten Entitätenbiografie und dem Lebenszyklus
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Dieser Text hängt mit fast allen anderen Spiegeln zusammen:
+- `spiegel_flextrawurst_systemkern.md` — der Systemkern ist die Summe dieser Karten
+- `spiegel_mpp_minimal_playable_prototype.md` — der MPP sollte einige dieser Karten spielbar machen
+- `spiegel_a_la_twitch_weltkamera.md` — Beobachtbarkeit ist Karte 8 und Teil der Plattformform
+- `spiegel_individuelle_profile_erinnerungssysteme.md` — Entitätenbiologie baut auf Profil und Erinnerung
+- `spiegel_grundeigeschaften_synonymfelder.md` — Begriffsfelder zu Resonanz, Zwischenraum etc.
+- `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — Leitvision und Entitätenbiologie

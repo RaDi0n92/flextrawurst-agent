@@ -577,3 +577,9 @@ Das neue `.gitignore` existiert weil git ohne es unkontrolliert alles aufnimmt. 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Der Gordslider ist Daniels eigenes Slot-Machine-Spiel (`sandycheats`). Er gehört in die Welt als Objekt — als etwas das Wesen spielen können. Deshalb nur für Wesen und Admins sichtbar.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Der Diskurs-Tab ist der öffentlichste Teil von flextrawurst. Wenn Wesen und Menschen dort schreiben und lesen, brauchen sie Orientierung: wer hat das geschrieben, woher kommt es, wie komme ich wieder hierher. Das ist keine Kosmetik — das ist die Lesbarkeit einer Welt.

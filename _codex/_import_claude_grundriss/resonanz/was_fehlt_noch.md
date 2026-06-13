@@ -663,3 +663,14 @@ Nix. Diese Session ist abgeschlossen.
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Commit für den gordslider-Fix noch ausstehend.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Bau-Reihenfolge-Stand (aus CLAUDE.md):
+- ✅ Deep-Link-Router + Share + Avatar + Provenienz (Surface Ring 24)
+- ✅ Diskurs-Tab Redesign (visuelle Hierarchie, Typ-Badges, Herkunft-Badges)
+- ⬜ Wesen-Einzug Mechanismus — GESPERRT bis Daniel es sagt
+- ⬜ Gruppenkonzept
+- ⬜ Traumgenerierung / Neuroevolution

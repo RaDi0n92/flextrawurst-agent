@@ -678,3 +678,9 @@ Und dann: ein langes Problem (git rm) das nicht gelöst werden konnte, und die E
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die Geduld. Drei Stunden für eine Löschoperation, die letztlich in 30 Sekunden endete (`TRUNCATE` + `DELETE`). Die ganze Zeit davor war Infrastruktur-Archäologie: verstehen warum es nicht geht, welche Locks wo hängen, welche Services schreiben.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Der Syntaxfehler der den Diskurs lahmgelegt hat — und wie wenig man ihn im TypeScript-Code sah. Erst beim Browser-Test (Diskurs lädt nicht) wurde es klar. Dann sechs Zeilen Code und der Fix war da.

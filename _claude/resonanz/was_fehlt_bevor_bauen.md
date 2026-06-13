@@ -631,3 +631,11 @@ Nichts Technisches. Die Bau-Reihenfolge zeigt: nächste offene Schicht ist Grupp
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 post_similarity-Wachstum beobachten. Bei nächster großer Löschoperation: sofort TRUNCATE erwägen wenn Tabelle > 1M Rows.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+- API muss `parent_id` bei Beiträgen liefern (für den Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`)
+- Schatten-Timestamps brauchen `created_at` in der API-Response
+- Flarum-Import: erst dann werden Herkunft-Badges auf echten Daten sichtbar

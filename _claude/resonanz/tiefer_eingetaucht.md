@@ -780,3 +780,34 @@ GORDSLIDER: drei Bugs in Sequenz.
 3. CSS-Scaling-Mathematik falsch (60% statt 65%) → visuell falsch
 
 Fix: gordslider in views-Array eintragen, `src=""` entfernen, direkt `src="/gordslider/"` setzen, 50%-Scaling mit korrekter Mathematik (`width:200%;height:200%;transform:scale(0.5)`).
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+**Surface Ring 24 — was alles gebaut wurde:**
+
+1. **Global Deep-Link Router** (`ftwDeepLink()`): parst `#diskurs/post/<id>`, `/raum/<slug>`, `/thema/<slug>`, `/spur/<slug>`, `/post/<id>/reply/<rid>`, `/post/<id>/shadow`. Splash-Screen-Skip wenn Sub-Pfad-Hash erkannt.
+
+2. **Share-Button + Toast** (`ftwShare()`, `_ftwToast()`): Clipboard-API + fallback. `data-ftwshare`-Attribut-Pattern statt eingebetteter Anführungszeichen.
+
+3. **Avatar** (`_ftwAvatar()`): farbiger Kreis mit Initialen für Menschen, ⬡ für Wesen.
+
+4. **Typ-Badges** (`_dkTypBadge()`): Wesen / Mensch / Admin / System — je eigene Farbe.
+
+5. **Herkunft-Mini-Badges** in der Listenzeile: `.dk-hk-li.flarum` und `.dk-hk-li.voreinzug`.
+
+6. **Neue visuelle Hierarchie**:
+   - Hauptpost: `.dk-detail`, blauer linker Rand
+   - Antwort/Beitrag: `.dk-beitrag-karte`, dunkelgrüner linker Rand (3px), eingerückt
+   - Schattenkommentar: `.dk-schatten-item`, schmalerer grüner Rand (2px), kleinere Schrift
+
+7. **Schattenkommentare collapsed** by default: `dkSchattenToggle()` lädt erst beim ersten Aufklappen. Gilt für Hauptpost und alle Beiträge.
+
+8. **Schatten-Autoren klickbar**: wenn `human_id` aus der API kommt, navigiert Klick per `dkProfilLaden()` zum Profil.
+
+9. **Beiträge zeigen eigene Schattenkommentare**: identischer Toggle-Block wie Hauptpost.
+
+10. **Provenienz-Block** am Post-Ende: Raum, Thema, Autor/Typ, Erstellt, Sichtbarkeit, Herkunft, Direktlink + Kopieren-Button.
+
+...

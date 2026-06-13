@@ -173,6 +173,27 @@ def events(
         conn.close()
 
 
+def _weltstrom_links(event_type: str, payload: dict) -> list[dict]:
+    """Extract clickable jump targets from event payload."""
+    if event_type == "gedanke.gepostet":
+        return [{"view": "diskurs", "label": "Diskurs"}]
+    if event_type == "resonanz.gesendet" and payload.get("post_source") == "ftw_posts":
+        return [{"view": "diskurs", "label": "Diskurs"}]
+    if event_type in ("gedankenblase.erstellt", "gedankenblase.losgelassen"):
+        return [{"view": "blasen", "label": "Blasen"}]
+    if event_type == "kompoase.betreten":
+        return [{"view": "theater", "label": "KompOase"}]
+    if event_type.startswith("cyberling."):
+        return [{"view": "cyberlinge", "label": "Cyberlinge"}]
+    if event_type.startswith("schlaf.") or event_type.startswith("traum."):
+        return [{"view": "schlaf", "label": "Schlaf"}]
+    if event_type.startswith("schatten."):
+        return [{"view": "schatten", "label": "Schatten"}]
+    if event_type.startswith("wesen."):
+        return [{"view": "wesen", "label": "Wesen"}]
+    return []
+
+
 def _weltstrom_beschreibung(event_type: str, payload: dict, actor_id: str | None, visibility: str) -> dict:
     """Abstracts event data for public display. World-tier events get no actor_id."""
     def fmt_actor(aid):
@@ -233,7 +254,7 @@ def weltstrom(
             params.append(limit)
             cur.execute(f"""
                 SELECT event_id, event_type, actor_type, actor_id,
-                       payload, visibility_layer, created_at
+                       payload, origin_type, visibility_layer, created_at
                 FROM events
                 {where}
                 ORDER BY created_at DESC
@@ -253,8 +274,11 @@ def weltstrom(
             result.append({
                 "event_id": str(row["event_id"]),
                 "event_type": row["event_type"],
+                "actor_type": row["actor_type"],
+                "origin_type": row["origin_type"] or "live_world",
                 "visibility": row["visibility_layer"],
                 "created_at": row["created_at"].isoformat(),
+                "links": _weltstrom_links(row["event_type"], row["payload"] or {}),
                 **meta,
             })
         return {"events": result, "count": len(result)}
@@ -1949,8 +1973,26 @@ def welt_raeume(
                 params + [limit, offset],
             )
             rows = [dict(r) for r in cur.fetchall()]
+            if rows:
+                room_ids = [r["id"] for r in rows]
+                cur.execute(
+                    "SELECT raum_id, COUNT(*) as cnt FROM ftw_posts WHERE raum_id = ANY(%s::uuid[]) GROUP BY raum_id",
+                    (room_ids,),
+                )
+                post_counts = {str(r["raum_id"]): r["cnt"] for r in cur.fetchall()}
+                cur.execute(
+                    "SELECT raum_id, COUNT(*) as cnt FROM themen WHERE raum_id = ANY(%s::uuid[]) GROUP BY raum_id",
+                    (room_ids,),
+                )
+                thema_counts = {str(r["raum_id"]): r["cnt"] for r in cur.fetchall()}
+            else:
+                post_counts = {}
+                thema_counts = {}
             for r in rows:
-                r["id"] = str(r["id"])
+                rid = str(r["id"])
+                r["id"] = rid
+                r["post_count"] = post_counts.get(rid, 0)
+                r["themen_count"] = thema_counts.get(rid, 0)
                 if r.get("created_at"):
                     r["created_at"] = r["created_at"].isoformat()
         return {"raeume": rows, "count": len(rows), "offset": offset}
@@ -4539,6 +4581,51 @@ def schlafbrief_schreiben(
     finally:
         conn.close()
     return {"brief_id": str(row["brief_id"]), "geschrieben_at": row["geschrieben_at"].isoformat()}
+
+
+@app.get("/wesen/{entity_id}/selbstbriefe")
+def selbstbriefe_lesen(
+    entity_id: str,
+    limit: int = 50,
+    offset: int = 0,
+):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT entity_id FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            cur.execute("""
+                SELECT brief_id, inhalt, geschrieben_at, phase_id, modell, meta
+                FROM schlafbriefe
+                WHERE entity_id = %s AND ist_selbstbrief = TRUE
+                ORDER BY geschrieben_at ASC
+                LIMIT %s OFFSET %s
+            """, (entity_id, limit, offset))
+            rows = cur.fetchall()
+            cur.execute(
+                "SELECT COUNT(*) AS n FROM schlafbriefe WHERE entity_id = %s AND ist_selbstbrief = TRUE",
+                (entity_id,),
+            )
+            total = cur.fetchone()["n"]
+    finally:
+        conn.close()
+    return {
+        "entity_id": entity_id,
+        "total": total,
+        "limit": limit,
+        "offset": offset,
+        "briefe": [
+            {
+                "brief_id": str(r["brief_id"]),
+                "inhalt": r["inhalt"],
+                "geschrieben_at": r["geschrieben_at"].isoformat(),
+                "phase_id": str(r["phase_id"]) if r["phase_id"] else None,
+                "modell": r.get("modell"),
+            }
+            for r in rows
+        ],
+    }
 
 
 @app.post("/wesen/{entity_id}/schlaf/start")

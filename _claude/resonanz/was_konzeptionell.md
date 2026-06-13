@@ -744,3 +744,11 @@ Das ist dieselbe Logik wie beim Skalpell-Prinzip: nicht alles anfassen, nur das 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Der Zwischenraum war nie als Archiv gedacht — das steht so im WISSEN-Tab: *"Geburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden."* Die 11.248 Posts waren Geburten die nie zu Welt wurden. Das Löschen war richtig.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Die Idee von "Objektidentität" wird ernst genommen. Nicht nur Posts haben IDs und Direktlinks — auch Antworten, Schattenkommentare (über Post-ID adressierbar), Räume, Themen, Spuren. Jedes Objekt das eine eigene Existenz hat, soll teilbar sein. Das ist eine Design-Philosophie, kein Feature.
+
+Flarum und Vor-Einzug werden durch Mini-Badges sichtbar gemacht — nicht versteckt. Der Leser sieht wo etwas herkommt. Das ist ehrlich.

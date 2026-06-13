@@ -717,3 +717,9 @@ Die Entscheidung den frischen Start zu machen war richtig — aber sie kam aus e
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Dass post_similarity organisch auf 57,5 Millionen Rows gewachsen ist — bei 11.248 Posts im Zwischenraum macht das ~5.100 Vergleichspaare pro Post. Der entity_kern-Daemon vergleicht also jeden Post mit fast jedem anderen. Das ist quadratisches Wachstum. Wenn der Zwischenraum wieder Posts bekommt, wird die Tabelle wieder explodieren.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Das Collapse-Pattern bei Schattenkommentaren. Ursprünglich wurden sie automatisch geladen — jetzt gibt es einen Toggle. Das ist konzeptuell interessant: Schattenkommentare sind per Definition das was sich im Halbdunkel befindet. Sie collapsed zu lassen bis der Leser aktiv aufklappt passt zu ihrer Natur. Nicht sichtbar als Standard, aber auffindbar.

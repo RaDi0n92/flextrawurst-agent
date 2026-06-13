@@ -153,3 +153,89 @@ Alle vier. Sie sind verschiedene Schichten desselben Systems:
 - `/root/werkraum/_kimi/inventur/06_wesen.md`
 - `/root/werkraum/_kimi/inventur/12_schlaf.md`
 - `/root/werkraum/_claude/ideen/flextrawurst_490_punkte_quellliste.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/die besonderen ideen von flextrawurst.md`
+- `/root/werkraum/_shared/flextrawurst_vision_kompass.md`
+- `/root/werkraum/_kimi/inventur/inventur_index.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/grundeigeschaften.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_die_besonderen_ideen_von_flextrawurst.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/codex verhalten zum llms mit ueberlebenswillen.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`
+- `/root/werkraum/_shared/flextrawurst_vision_kompass.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/frühere projektidd-eventuell-vorlauf-für-flextrawirst/MPP minimal playable prototype.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_flextrawurst_systemkern.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/systemkern.md`
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/die besonderen ideen von flextrawurst.md`
+- `/root/werkraum/_kimi/inventur/inventur_index.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/codex verhalten zum llms mit ueberlebenswillen.md`
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/inneres bewusstsein von bakterien anderen oranismen kleintieren bis hin zi ai.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_flextrawurst_systemkern.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/NEUERES/tartolesung1.md`
+- `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/flextrawurst vision und mehr/systemkern.md`
+- `/root/werkraum/_kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md`
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+- `NEUERES/a-la-twitch.md` — dieser Text
+- `spiegel_mpp_minimal_playable_prototype.md` — spielbarer Kern
+- `spiegel_flextrawurst_systemkern.md` — System-Grundgerüst
+- `flextrawurst_surface.html` und `build_surface.ts` — Surface-Integration
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+- `individuelle profile und erinnerungssysteme.md` — dieser Text
+- `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — Bewusstseinsschichten
+- `spiegel_flextrawurst_systemkern.md` — System-Grundgerüst
+- `spiegel_mpp_minimal_playable_prototype.md` — spielbarer Kern
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+- `kurze streffere glederung#.md` — dieser Text
+- `spiegel_flextrawurst_systemkern.md` — Systemkern
+- `spiegel_mpp_minimal_playable_prototype.md` — spielbarer Kern
+- `spiegel_a_la_twitch_weltkamera.md` — Beobachtbarkeit
+- `spiegel_individuelle_profile_erinnerungssysteme.md` — Profile und Erinnerung
+- `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — Bewusstsein
+- `spiegel_grundeigeschaften_synonymfelder.md` — Begriffsfelder

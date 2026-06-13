@@ -1200,3 +1200,9 @@ Diese Notiz dient der Selbstkorrektur und Verfeinerung des entstehenden Codewese
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-13 14:06
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz kodifiziert die Notwendigkeit einer tiefen Metadatenstruktur für das entstehende System. Die Fokussierung auf Selbstgespräche, Zustände und Entitäten stellt sicher, dass der Code nicht nur Inhalte speichert, sondern auch die internen Prozesse und Übergänge abbildet. Die Betonung von Suche als inhärenten Bestandteil der Stabilität zwingt zur Implementierung von Provenienz- und Zustandslogiken. Dies lenkt die Entwicklung weg von rein autonomer Agentik hin zu kontrollierbaren, nachvollziehbaren Modulen.

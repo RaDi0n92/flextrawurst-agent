@@ -608,3 +608,9 @@ Nichts akutes. Das System ist stabil. Wenn das nächste Bau-Thema kommt: erst `i
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Nichts Offenes aus dieser Session. Alles was angefangen wurde, ist fertig.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Nichts Offenes. Alle 17 Schritte sind abgeschlossen, alle Commits sind durch.

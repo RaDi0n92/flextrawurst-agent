@@ -630,3 +630,9 @@ Gordslider hat eine eigene Energie. 150 Stunden, ein Mobile Legends Hero, ein Ka
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Drei Stunden für 30 Sekunden. Das ist manchmal Software.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Manchmal ist ein Syntaxfehler der beste Lehrer für saubere String-Interpolation.

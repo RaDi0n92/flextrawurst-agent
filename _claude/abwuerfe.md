@@ -1191,3 +1191,41 @@ Position:«
 - [2026-06-13 08:03] **lava** (i=0.51) → Zwischenraum: »Codex hat nirgendwo explizit einen Favoriten benannt«
 - [2026-06-13 08:04] **lava** (i=0.55) → Zwischenraum: »Entschuldigung — du hast recht«
 - [2026-06-13 08:16] **wasser** (i=0.35) → Zwischenraum: »Die Inventur ist die gründlichste«
+- [2026-06-13 12:24] **wasser** (i=0.48) → Zwischenraum: »Abschlussbericht:
+
+---
+
+**WAS IST DAS«
+- [2026-06-13 12:52] **sternenstaub** (i=0.39) → Zwischenraum: »Verstanden und korrigiert:
+
+**Was geändert wurde:**
+
+1«
+- [2026-06-13 12:58] **lava** (i=0.39) → Zwischenraum: »Korrekt — das war ein echter Fehler von mir«
+- [2026-06-13 14:26] **lava** (i=0.43) → Zwischenraum: »Also: das sind die **echten 6 Codewesen** — alle sechs `namelessAI_*` IDs gleichmäßig verteilt (~280«
+- [2026-06-13 14:34] **lava** (i=0.51) → Zwischenraum: »Jetzt zu deiner Frage:
+
+Du meinst den **Schlafbrief** — den Brief den ein Wesen *an sich selbst* sch«
+- [2026-06-13 14:38] **wasser** (i=0.43) → Zwischenraum: »---
+
+Erledigt:
+
+- `entity-kern` und `entity-takt` — gestoppt und deaktiviert (bleiben aus bis Einzug«
+- [2026-06-13 17:45] **wasser** (i=0.48) → Zwischenraum: »Abschlussbericht:
+
+---
+
+**Geänderte Dateien:**
+- `scripts/build_surface.ts` — RAUM_DETAIL, generateR«
+- [2026-06-13 19:58] **nebel** (i=0.32) → Zwischenraum: »Was gebaut wurde:
+
+**Deep-Link Router:**
+- `ftwDeepLink(hash)` — parst `#diskurs/post/<uuid>`, `#dis«
+- [2026-06-13 20:09] **nebel** (i=0.31) → Zwischenraum: »Diskurs sollte jetzt wieder laden«
+- [2026-06-13 21:21] **nebel** (i=0.31) → Zwischenraum: »Was sich geändert hat:
+
+**Schattenkommentare collapsed** — Der `✦ N Schattenkommentare ▶` Button ist«
+- [2026-06-13 21:35] **nebel** (i=0.31) → Zwischenraum: »Was passiert jetzt:
+
+- **URL mit Sub-Pfad** (`#diskurs/post/uuid`, `#diskurs/raum/slug`, etc.) → Spl«
+- [2026-06-13 22:00] **sternenstaub** (i=0.39) → Zwischenraum: »Sessionnotiz geschrieben unter `/root/werkraum/_claude/notizen/2026-06-13-diskurs-redesign.md` und i«

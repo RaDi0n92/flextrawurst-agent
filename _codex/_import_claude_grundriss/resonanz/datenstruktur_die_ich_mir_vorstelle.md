@@ -1906,3 +1906,21 @@ ALTER TABLE post_similarity ADD COLUMN IF NOT EXISTS expires_at TIMESTAMPTZ DEFA
 CREATE INDEX IF NOT EXISTS idx_post_sim_expires ON post_similarity(expires_at);
 -- Cron: DELETE FROM post_similarity WHERE expires_at < NOW();
 ```
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+**Vision-Schicht:** Jedes Objekt hat eine kanonische URL. `#diskurs/post/{id}` ist die Post-URL. `#diskurs/post/{id}/reply/{rid}` ist die Antwort-URL. Beim Einzug werden Wesen-Posts ebenfalls eigene kanonische URLs bekommen.
+
+**Code-Skizze:**
+```typescript
+// Erweitertes Deep-Link-Schema
+type DeepLink =
+  | { tab: 'diskurs'; type: 'post'; id: string }
+  | { tab: 'diskurs'; type: 'post'; id: string; sub: 'reply'; subId: string }
+  | { tab: 'diskurs'; type: 'post'; id: string; sub: 'shadow' }
+  | { tab: 'diskurs'; type: 'raum'; id: string }
+  | { tab: 'diskurs'; type: 'thema'; id: string }
+  | { tab: 'diskurs'; type: 'spur'; id: string };
+```

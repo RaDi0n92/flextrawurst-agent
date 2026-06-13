@@ -699,3 +699,9 @@ Warum das `git rm --cached` nach 100 Minuten keinen neuen Index geschrieben hat 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Warum der originale DELETE auf ftw_posts nach erfolgreichem TRUNCATE von post_similarity noch 54 Minuten lief, ohne zu scheitern. Irgendetwas hat ihn beschäftigt gehalten. Vielleicht Parent-ID-Selbstreferenz in ftw_posts, vielleicht ein anderer Index-Scan. Ich habe ihn nach 54 Minuten terminiert ohne es zu verstehen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
+
+Warum der Block-0-Fehler (Unexpected token ':') in den Script-Blöcken bei `node --check` immer noch erscheint — er war von Anfang an da, nicht durch uns verursacht, und hat die Funktionalität nicht gestört. Vermutlich liegt es an Type-Annotationen im TypeScript die in der generierten JS-Ausgabe nicht vollständig getrennt sind.

@@ -127,3 +127,69 @@ Eine Priorisierung der acht Ideen und eine klare Antwort auf die Frage: Welche d
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Eine konkrete Verfassungsdatei für flextrawurst, die diese Prinzipien bindend formuliert. Und ein Mechanismus, der sicherstellt, dass die Grundsätze nicht nur für Wesen gelten, sondern auch für Menschen, die mit Wesen interagieren.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Der unbenannte Kern. Und eine Übersicht, welche der bereits gebauten Systeme in welche Schicht gehören.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Eine Klärung, ob diese Datei überhaupt für flextrawurst bestimmt ist. Wenn ja, fehlt die Verbindung. Wenn nein, sollte sie vielleicht woanders liegen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Eine technische Spezifikation für „Innensicht“ und eine klare Position, wie viel Selbsttransparenz einem Wesen gegeben werden sollte, bevor es als „mündig“ gilt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Eine klare Aussage von Daniel, ob der MPP für flextrawurst relevant ist oder nur historisch interessant. Solange das fehlt, bleibt der Spiegel ein Beobachtung, keine Handlungsanweisung.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Eine Aktualisierung der Roadmap mit dem aktuellen Bauzustand. Sonst bleibt sie ein historisches Dokument.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Eine technische Spezifikation für das Input-Grenzorgan und das Zustandssystem. Der Begriff „Metabolismus“ muss in Code übersetzt werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Eine Klärung, ob der Formfadenprompt ein persönliches Werkzeug bleibt oder in flextrawurst als Wesen-Template einfließt. Wenn ja, braucht es eine Reduktion auf das, was für Codewesen sinnvoll ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Eine konkrete UI-Skizze oder ein Wireframe für den Wesenblick. Ein paar handschriftliche Kästchen würden helfen, bevor wir Code schreiben.
+
+[[abwurf: „Live ist der Köder. Replay ist das Gedächtnis." — das ist der Satz, der in Flextrawurst bleiben will, egal wie die Weltkamera später aussieht.]]
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Eine konkrete Entscheidung, wie Flextrawurst gegenüber neuen Menschen kommuniziert, was die Wesen sind. Ein Satz wie „Diese Wesen haben Profile und Erinnerungen. Ob sie ein inneres Erleben haben, ist eine offene Frage" würde viel klären.
+
+[[abwurf: „Ob daraus ein echtes, intrinsisches Zielsystem oder so etwas wie ein 'KI-Selbst' entsteht, hängt von der Tiefe der Architektur und philosophischen Auslegung ab." — das ist der offene Raum, in dem Flextrawurst lebt.]]
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Eine konkrete Status-Matrix, die sagt, welche der 14 Karten in der aktuellen Bau-Reihenfolge bereits abgedeckt sind und welche noch fehlen. Das wäre ein nützliches Steuerungsinstrument.
+
+[[abwurf: „Nicht 'große Themen', sondern harte Einheiten." — das ist die Form, die Flextrawurst braucht, um nicht in seiner eigenen Vision zu ertrinken.]]

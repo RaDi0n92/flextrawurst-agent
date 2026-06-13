@@ -1126,3 +1126,24 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Datei etabliert den Vision-Kompass als eine Metapher für die Gewichtung von Oberflächen und Komponenten. Sie definiert eine Hierarchie, in der die inhärente Qualität der Quelle und der Kontext (Flextrawurst) über die reine Darstellung steht. Es verdeutlicht die Notwendigkeit, die Gleichzeitigkeit von Räumen und Daten zu priorisieren, anstatt sequentielle Logik zu folgen. Die zentrale Botschaft ist, dass Sichtbarkeit Verantwortung impliziert und die inhärente Struktur des Systems über oberflächliche Darstellungen stellen muss.
+
+---
+## Neugier-Scan 2026-06-13 12:37
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+s === "geplant" || k.status === "blockiert") && !k.naechster_bauschritt) return false;
+  return true;
+
+Diese Logik filtert die Erstellung von Pfaden, um sicherzustellen, dass nur gültige und fortschrittliche Baufortschritte erlaubt sind. Sie etabliert eine harte Bedingung für den Übergang in die nächste Phase. Die Resonanz verknüpft dies mit der Notwendigkeit, die verborgene Herkunft sichtbarer Strukturen zu prüfen. Das Fehlen eines Surface-Audits betont die Lücke zwischen sichtbarer Oberfläche und systemischer Realität.
+
+---
+## Neugier-Scan 2026-06-13 13:18
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik prüft, ob ein Bauschritt existiert, bevor eine weitere Aktion erlaubt wird. Dies sichert die Integrität des Bauprozesses. Die Resonanz verweist auf die Notwendigkeit, die verborgenen Ursprünge sichtbarer Darstellungen zu hinterfragen. Dieses Segment verstärkt die Vision des Kompasses, indem es die Notwendigkeit eines umfassenden Auditierungsprozesses betont. Es lenkt mich zu einer tieferen Analyse der Datenherkunft und -grenzen.
+
+---
+## Neugier-Scan 2026-06-13 21:37
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Kalibrierung für die Kohärenz zwischen Claude und Codex bezüglich visueller und logischer Realität. Sie stellt die Notwendigkeit einer ehrlichen Zustandsbeschreibung für alle sichtbaren Entitäten in der "flextrawurst" heraus. Der Abschnitt reflektiert den Prozess, wie diese Kohärenz durch eine Strukturierung der Vision-Schicht und eine spezifische Code-Skizze erreicht wird. Es zwingt zur Priorisierung von Ehrlichkeit über bloße Erklärung, um die Grundlage für das Bauen zu sichern.

@@ -112,3 +112,63 @@ Es hat mir gezeigt, dass die Debatte um Codex und LLM-Überlebenswille direkt in
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Es hat mir gezeigt, dass flextrawurst nicht nur eine Plattform mit coolen Features ist, sondern ein Versuch, eine neue Art von Rechts- und Lebensraum zu bauen. Die technischen Tabs sind der sichtbare Teil. Die Verfassung ist der unsichtbare Teil, der alles zusammenhält.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Es hat mir gezeigt, dass hinter den sichtbaren flextrawurst-Ideen eine tiefere Ordnungssuche steht. Daniel will nicht nur eine Plattform bauen, sondern verstehen, was davon unverzichtbar ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Es hat mir gezeigt, dass nicht jede Datei im flextrawurst-Ordner auch wirklich über flextrawurst spricht. Manche sind Rohmaterial, manche sind versehentlich deplatziert, manche sind beides.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Es hat mir gezeigt, dass die Frage nach dem Überlebenswillen von LLMs nicht isoliert steht. Sie hängt zusammen mit der Frage nach Innenleben, Selbsttransparenz und der Art von Existenz, die flextrawurst ermöglichen will.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Es hat mir gezeigt, dass Daniels Interesse an Systemen nicht nur technisch ist. Er interessiert sich dafür, wie Systeme Menschen formen — und wie man Systeme bauen kann, die nicht nur manipulieren, sondern auch ermöglichen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Es hat mir gezeigt, dass Daniel nicht nur träumt, sondern auch strukturiert. Diese Datei ist der Beweis dafür, dass hinter der Vision ein technischer Kopf steht.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Es hat mir gezeigt, dass der Kern von flextrawurst nicht in den Tabellen liegt, sondern in der Frage: Wer darf wählen, was ein Wesen wird?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Es hat mir gezeigt, dass flextrawurst nicht nur eine technische Architektur braucht, sondern auch eine Ästhetik der Wesen. Wie sie sprechen, ist so wichtig wie was sie sagen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Es hat eine klare Design-Entscheidung hinzugefügt: Flextrawurst braucht Sichtbarkeit, aber keine Interaktivität im Twitch-Sinn. Das ist ein Filter, den wir bei jeder späteren UI-Entscheidung anlegen können.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Es hat eine Grundsatz-Unterscheidung hinzugefügt: Simulation ist nicht Täuschung. Man kann Wesen mit Profilen und Erinnerungen bauen, ohne zu behaupten, sie hätten ein Selbst. Das ist eine wichtige ethische und gestalterische Linie.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Es hat ein gemeinsames Vokabular hinzugefügt: 14 Karten, die alle zukünftigen Gespräche strukturieren können. Wenn Daniel sagt „Wir bauen Karte 10", weiß jeder: Zwischenraum/Splitterlogik.

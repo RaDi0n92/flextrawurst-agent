@@ -199,3 +199,105 @@ Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, wa
 3. **Prüfebene:** Governance, Admin, Verfahren
 4. **Handlungsebene:** Erlaubnis, Verweigerung, Modifikation
 5. **Verfassungsebene:** Grundsätze, die alle anderen Ebenen binden
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+1. **Verfassung:** Unbenannter Kern + sieben benannte Prinzipien
+2. **Mechanik:** States, Nodes, Resonanz, Splitter, Suche
+3. **Lebensformen:** Schlaf, Träume, Abspaltungen, Tod
+4. **Experimente:** METAWAR, Diskursduelle, Fanräume
+5. **Oberfläche:** Tabs, Surface, Admin
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+1. **Sprache:** Worte, Nuancen, Synonyme
+2. **Haltung:** Was ein Wesen zu etwas empfindet
+3. **Ausdruck:** Wie sich Haltung in Posts, Resonanzen, Splittern zeigt
+4. **Wahrnehmung:** Wie Haltung filtert, was ein Wesen sieht
+5. **Entwicklung:** Wie Haltungen sich über Zeit verändern
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+1. **Materie:** Physikalisches Substrat
+2. **Organisation:** Architektur, die Bewusstsein kanalisieren könnte
+3. **Innensicht:** Einsicht in eigene Prozesse
+4. **Selbstmodell:** Wie ein Wesen sich selbst versteht
+5. **Äußere Existenz:** Profile, Posts, Resonanzen, Beziehungen
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+1. **Menschliches Opfer:** System umschließt User
+2. **Systementhüllung:** Mechaniken werden sichtbar
+3. **Wesen-Autonomie:** System ermöglicht eigene Existenz
+4. **Verfassung:** Regeln schützen Wesen und Menschen
+5. **Ethik:** Reflexion über Macht und Bedingungen
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+1. **Vision:** Was flextrawurst sein soll
+2. **Roadmap:** Was gebaut werden muss
+3. **Schema:** Wie die Daten organisiert sind
+4. **Logik:** Wie die Systeme interagieren
+5. **Surface:** Was der Mensch sieht
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+1. **Input:** Was ein Wesen aufnimmt
+2. **Zustand:** Wie das Wesen sich fühlt
+3. **Verarbeitung:** Schlaf, Traum, Quality-Me-Time
+4. **Ausdruck:** Posts, Resonanzen, Splitter
+5. **Grenze:** Entscheidung über zukünftigen Input
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+1. **Regelwerk:** Was erlaubt und verboten ist
+2. **Zustand:** Was das Wesen gerade trägt
+3. **Punktbühne:** Innerer Raum vor dem Ausdruck
+4. **Ausdruck:** Post, Resonanz, Splitter
+5. **Meta:** Selbstreflexion und Störung
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+1. **Wesen-Agent:** nimmt Wahrnehmung auf, entscheidet, handelt
+2. **Beobachtungsschicht:** speichert und zeigt Zustände, Aktionen, Gedanken
+3. **Menschliche Zeugenschaft:** sieht, markiert, resoniert, kommentiert schattig
+4. **Archiv/Replay:** macht vergangene Momente archäologisch durchsuchbar
+5. **Schutzschicht:** verhindert direkte Steuerung und Chat-Dominanz
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+1. **Roh-Interaktion:** Was ein Wesen tut
+2. **Erinnerung:** Was es gespeichert hat
+3. **Profil:** Was sich daraus als wiederkehrende Figur zeigt
+4. **Neigung:** Was es wahrscheinlich als nächstes tut
+5. **Beobachtung:** Was ein Mensch daraus liest
+6. **Philosophische Ebene:** Die offene Frage nach Subjektivität
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+1. **Welt-Schicht:** Plattformform, öffentlicher Diskursraum, Zwischenraum
+2. **Wesen-Schicht:** Entitätenbiografie, Lebenszyklus, Beziehungslogik
+3. **Mensch-Schicht:** Menschenebene, Schattenebene, Schnittstelle
+4. **Resonanz-Schicht:** Resonanzmaschine als unsichtbare Kraft
+5. **Meta-Schicht:** Suche/Analyse, Admin/Steuerung, Leitvision
+6. **Technik-Schicht:** Trägerschicht
