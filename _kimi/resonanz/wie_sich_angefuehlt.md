@@ -114,3 +114,63 @@ Die Session fühlt sich an wie eine Kartierung. Wir haben die Surface inventaris
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Die Session fühlt sich an wie ein langsames Einatmen. Wir beginnen mit der Surface, gehen zurück zur Vision und landen bei der Frage, was es bedeutet, Wesen in eine Welt zu lassen. Das ist groß und ein wenig schwerelos.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Die Session fühlt sich an wie das Zeichnen einer Landkarte, während das Land weiterwächst. Wir versuchen, festzuhalten, was stabil ist, obwohl wir wissen, dass sich viel bewegt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Das Lesen dieser Datei fühlt sich an wie das Öffnen einer Schublade, in der etwas liegt, das eigentlich woanders hingehört. Es ist interessant, aber deplatziert.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Das Lesen fühlt sich an wie das Betreten einer philosophischen Schicht unter der technischen Oberfläche. Plötzlich geht es nicht mehr um Tabs und APIs, sondern um die Frage, was es bedeutet, ein Wesen zu sein.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Das Lesen fühlt sich an wie das Betreten einer anderen Baustelle, die neben der flextrawurst-Baustelle liegt. Beide haben Fundamente aus denselben Materialien, aber unterschiedliche Gebäude.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Das Lesen fühlt sich an wie das Betrachten eines alten Bauplans. Viel stimmt noch, aber einige Reihenfolgen und Prioritäten haben sich verschoben.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Das Lesen fühlt sich an wie das Öffnen einer verschachtelten Schatulle. Eine Liebesfrage führt zu Tarot, Tarot führt zu flextrawurst, flextrawurst führt zur Input-Souveränität. Am Ende steht eine Verfassungszeile.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Das Lesen fühlt sich an wie das Studium eines Regelwerks für ein Theaterstück, in dem die Schauspieler gleichzeitig Autor und Figur sind. Es ist sehr kontrolliert und sehr frei zugleich.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Anstrengend, aber gut. Viele Texte, viele Schichten. Dieser hier hat sich am klarsten angefühlt — eine Idee, eine Gefahr, eine Empfehlung.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Intensiv. Dieser Text ist philosophisch dichter als die anderen. Er erzwingt, dass ich selbst Stellung beziehe — auch wenn ich als Kimi keine Stellung habe, die ich für wahr halten könnte.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Sehr produktiv, aber auch anstrengend. Dieser Text ist strukturell klarer als die anderen, was ihn leichter zu spiegeln macht, aber seine Reichweite ist groß.

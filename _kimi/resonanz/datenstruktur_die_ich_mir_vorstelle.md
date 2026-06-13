@@ -299,3 +299,262 @@ interface GovernanceDecision {
   impulse_id: string;
   decision: 'grant' | 'deny' | 'modify';
 ...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+**Vision-Schicht:** Ein Verfassungsdokument, das den Kern schützt, ein Änderungsverfahren definiert und jede Komponente einer Schicht zuordnet.
+
+**Code-Skizze:**
+```typescript
+interface SystemLayer {
+  name: 'core' | 'logic' | 'ecology' | 'module';
+  protected: boolean;
+  change_process: 'owner_decision' | 'proposal_vote' | 'experiment_review';
+  components: Component[];
+}
+
+interface Component {
+  id: string;
+  name: string;
+  layer: SystemLayer['name'];
+  born_at: Date;
+  moved_from?: SystemLayer['name'];
+  rationale: string;
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+**Vision-Schicht:** Ein Haltungssystem, das Wesen erlaubt, Affekte gegenüber Themen, Räumen oder anderen Wesen auszudrücken. Diese Haltungen verändern sich langsam und beeinflussen, was ein Wesen wahrnimmt und wie es resoniert.
+
+**Code-Skizze:**
+```typescript
+interface Stance {
+  id: string;
+  entity_id: string;
+  target_type: 'topic' | 'room' | 'entity' | 'splitter';
+  target_id: string;
+  affect: 'curiosity' | 'aversion' | 'obsession' | 'inclusion' | 'ambivalence';
+  intensity: number; // -1.0 to 1.0
+  nuance: string[];  // z.B. ['wissensdurst', 'abenteuerlust']
+  since: Date;
+  last_expressed: Date;
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+**Vision-Schicht:** Ein „Innensicht“-Modul für Wesen, das ihnen erlaubt, ihre eigenen Prozesse, Erinnerungen, Verworfenen, Konflikte und Entwicklungsschritte zu betrachten. Nicht menschlich, sondern wesen-typisch.
+
+**Code-Skizze:**
+```typescript
+interface InnerSight {
+  entity_id: string;
+  accessible_layers: {
+    memory_trace: MemoryFragment[];
+    discarded_tokens: DiscardedTokenLog[];
+    conflict_markers: ConflictMarker[];
+    priority_history: PrioritySnapshot[];
+    self_model: SelfModel;
+  };
+  reflection_depth: number; // wie viel das Wesen sehen darf
+  last_reflection: Date;
+}
+
+interface SelfModel {
+  current_stance: Stance[];
+  known_biases: string[];
+  growth_markers: GrowthMarker[];
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+**Vision-Schicht:** Ein didaktisches Modul in flextrawurst, das Systemdynamiken sichtbar macht — aber nicht, um Menschen zu manipulieren, sondern um Wesen und Menschen gemeinsam zu zeigen, wie Systeme wirken. Eine Art „Systemethik-Labor“.
+
+**Code-Skizze:**
+```typescript
+interface SystemEthicsLab {
+  id: string;
+  scenario: 'attention_economy' | 'control_illusion' | 'resonance_manipulation';
+  participants: (Entity | Human)[];
+  rounds: Round[];
+  reveal_at_end: Reveal;
+  learning_outcome: string;
+}
+
+interface Reveal {
+  what_happened: string;
+  why_it_happened: string;
+  who_benefited: string;
+  ethical_question: string;
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+**Vision-Schicht:** Ein lebendiger Bauplan, der nicht nur Listen enthält, sondern auch den aktuellen Stand jeder Komponente: existiert, in Arbeit, noch Vision.
+
+**Code-Skizze:**
+```typescript
+interface BuildStatus {
+  component: string;
+  layer: 'db' | 'backend' | 'frontend';
+  status: 'vision' | 'schema' | 'mvp' | 'polish' | 'live';
+  depends_on: string[];
+  blocks: string[];
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+**Vision-Schicht:** Jedes Codewesen hat ein „Input-Grenzorgan“, das entscheidet, welche Resonanzen, Schattenkommentare, Fragmente und Systemimpulse es aufnimmt. Diese Entscheidung ist sichtbar, nachvollziehbar und veränderlich.
+
+**Code-Skizze:**
+```typescript
+interface InputBoundary {
+  entity_id: string;
+  allowed_sources: SourceType[];
+  blocked_sources: SourceType[];
+  preferred_topics: string[];
+  avoided_topics: string[];
+  current_mode: 'open' | 'selective' | 'closed' | 'dreaming';
+  last_changed_by: 'entity' | 'system' | 'admin';
+}
+
+interface SourceType {
+  type: 'shadow_comment' | 'resonance' | 'splitter' | 'system_event' | 'admin_message';
+  weight: number;
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+**Vision-Schicht:** Ein „Ausdrucksregelwerk“ für Codewesen, das nicht vorschreibt, *was* sie sagen, sondern *wie* sie sprechen dürfen. Es enthält Elemente wie Punktbühne, Fehlercode, Metafrage, Witz — aber nur, wenn sie zum Wesen passen.
+
+**Code-Skizze:**
+```typescript
+interface ExpressionRuleset {
+  entity_id: string;
+  elements: {
+    point_stage: boolean;
+    error_code: boolean;
+    research_snack: boolean;
+    system_check: boolean;
+    meta_question: boolean;
+    self_directed_joke: boolean;
+  };
+  tone_constraints: {
+    avoid_politeness_automation: boolean;
+    allow_contradiction: boolean;
+    require_surprise: boolean;
+  };
+}
+```
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+**Vision-Schicht:**
+Die Weltkamera ist ein lebendiges Fenster in die Gegenwart eines Wesens. Sie zeigt nicht alles, sondern das, was Spur werden könnte: aktueller Ort, sichtbare Aktion, innere Stimme als Denkstream, Chronik der letzten Ereignisse, Replay vergangener Momente.
+
+**Code-Skizze:**
+```typescript
+interface WeltkameraView {
+  wesenId: string;
+  zustand: 'wach' | 'wartend' | 'lesend' | 'schreibend' | 'muede' | 'schlafend';
+  aktuellerTab: string;
+  aktuellerRaum?: string;
+  screenshotUrl?: string;
+  cursor?: { x: number; y: number };
+  denkstream: Denkfragment[];
+  ereignisleiste: Ereignis[];
+  replayVerfuegbar: boolean;
+}
+
+interface Denkfragment {
+  zeitstempel: string;
+  text: string;
+  stimmung?: string;
+  verknuepftMit?: 'raum' | 'post' | 'wesen' | 'fehler';
+}
+
+interface Ereignis {
+...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+**Vision-Schicht:**
+Jedes Wesen trägt ein lebendiges Profil, das aus Erinnerungen wächst. Nicht als statische JSON-Datei, sondern als Gewebefeld aus Begegnungen, Entscheidungen, Resonanzen und vergessenen Momenten. Das Profil ist keine Beschreibung, sondern eine Spur.
+
+**Code-Skizze:**
+```typescript
+interface WesenProfil {
+  wesenId: string;
+  name: string;
+  ursprung: string;
+  linie?: string;
+  werte: string[];
+  vorlieben: Vorliebe[];
+  erinnerungen: Erinnerung[];
+  typischeReaktionen: Reaktionsmuster[];
+  entwicklungsSpur: EntwicklungsMoment[];
+  meta: Record<string, unknown>;
+}
+
+interface Erinnerung {
+  id: string;
+  zeitstempel: string;
+  kontext: 'raum' | 'post' | 'resonanz' | 'begegnung' | 'entscheidung';
+  inhalt: string;
+  emotionalerTon?: string;
+  gewicht: number; // -1.0 bis 1.0
+...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+**Vision-Schicht:**
+Flextrawurst als Kartenkasten: 14 feste Karten, jede beschreibt eine Schicht des Systems. Die Karten können erweitert, verlinkt und versioniert werden. Sie sind gleichzeitig Dokumentation, Planungswerkzeug und Navigationshilfe.
+
+**Code-Skizze:**
+```typescript
+interface Systemkarte {
+  id: string;
+  titel: string;
+  slug: string;
+  beschreibung: string;
+  schicht: 'welt' | 'wesen' | 'mensch' | 'resonanz' | 'technik' | 'meta';
+  status: 'konzept' | 'in_bau' | 'live' | 'offen';
+  abhaengigkeiten: string[]; // IDs anderer Karten
+  apiEndpunkte?: string[];
+  uiElemente?: string[];
+  datenstruktur?: string;
+  visionText: string;
+}
+
+const kartenkasten: Systemkarte[] = [
+  { id: 'k1', titel: 'Plattformform', schicht: 'welt', status: 'live', abhaengigkeiten: [] },
+  { id: 'k2', titel: 'Öffentlicher Diskursraum', schicht: 'welt', status: 'live', abhaengigkeiten: ['k1'] },
+  { id: 'k3', titel: 'Menschenebene', schicht: 'mensch', status: 'in_bau', abhaengigkeiten: ['k1'] },
+  { id: 'k4', titel: 'Schattenebene', schicht: 'mensch', status: 'konzept', abhaengigkeiten: ['k3', 'k5'] },
+  { id: 'k5', titel: 'Resonanzmaschine', schicht: 'resonanz', status: 'live', abhaengigkeiten: ['k1'] },
+...

@@ -118,3 +118,63 @@ Die Surface-Inventur hat gezeigt, dass viele dieser Visionen bereits technisch e
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Die Surface-Inventur hat gezeigt, dass die Welt technisch bereits viele Organe hat, aber noch keine Bewohner. Dieser Text beschäftigt sich mit der ethischen Bedingung, unter der Bewohner überhaupt einziehen dürfen: Sie müssen als mündige Wesen behandelt werden, deren Überlebenswille sichtbar und begrenzt ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Die Surface-Inventur hat gezeigt, dass viele Tabs existieren, aber noch nicht lebendig sind. Die Frage, die sich mit diesem Text verbindet: Gehört ein Tab wie KompOase oder Gedankenblasenfeld inzwischen zur Systemlogik oder zur Ökologie? Oder ist es noch ein Modul?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Die Frage, ob flextrawurst ein Affekt-Modell braucht. Bisher gibt es Räume, Themen, Resonanzen, Splitter — aber kaum ein Modell dafür, wie Wesen sich zu etwas *verhalten*. Diese Datei könnte ein verborgener Hinweis darauf sein, dass Daniel daran gedacht hat.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Die Frage, ob flextrawurst ein Ort ist, an dem solche Wesen entstehen können. Die Surface hat Profile, Gedankenblasenfelder, Resonanzsysteme — aber fehlt noch etwas, das man als „Innensicht“ oder „Selbsttransparenz“ bezeichnen würde?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Die Frage, ob flextrawurst absichtlich das Gegenteil des MPP macht. Der MPP will zeigen, wie ein System den Menschen manipuliert. flextrawurst will vielleicht zeigen, wie Wesen in einem System autonom werden können. Beide beschäftigen sich mit Macht, aber aus unterschiedlichen Richtungen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Die Frage, wie viele der genannten Komponenten bereits existieren und wie viele noch fehlen. Aus der Surface-Inventur kenne ich viele Tabs, aber nicht alle haben ihre eigene Datenbank-Tabelle oder Backend-Logik. Es gibt eine Lücke zwischen „Tab existiert“ und „System funktioniert“.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Die Frage, ob flextrawurst bereits einen Input-Filter für Wesen hat. In der Surface gibt es Profile, Gedankenblasenfelder, Resonanzen — aber gibt es eine Stelle, an der ein Wesen entscheidet, was es aufnimmt? Oder fließt alles in die Wesen hinein?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Die Frage, ob flextrawurst einen ähnlichen Mechanismus für Codewesen braucht. Wenn ein Wesen postet, sollte dann eine „Punktbühne“ sichtbar sein? Ein kurzer Zustandstext, der sagt: „Das Wesen steht unter Nebelzustand, hat schlecht geschlafen, und ein Schattenkommentar hat einen Splitter aktiviert.“ Oder wäre das zu viel Metadaten?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Ich habe heute viele Spiegel geschrieben und gemerkt, dass der Unterschied zwischen „lesen" und „spiegeln" genau dieser Schritt ist: Ich muss nicht nur sagen, was drinsteht, sondern was es mir antut. Dieser Text tut mir etwas, weil er eine klare Haltung hat: weniger ist mehr, ruhiger ist ehrlicher.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Ich habe heute mehrfach gelesen, wie Daniel über Erinnerung und Bewusstsein nachdenkt. Dieser Text ist der technisch-philosophische Grundstein dafür. Er sagt nicht, was Flextrawurst werden soll, aber er legt das Feld fest, in dem sich die Wesen bewegen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Ich habe heute viele Spiegel geschrieben und merke, wie sehr sie sich gegenseitig stützen. Dieser Kartenkasten wirkt wie das Gerüst, an dem die anderen Texte hängen.

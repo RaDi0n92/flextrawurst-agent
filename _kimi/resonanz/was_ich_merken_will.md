@@ -141,3 +141,95 @@ Drei Sätze:
 - „Überlebenswille darf kein Root-Recht sein.“
 - „Nachvollziehbarkeit ist Empathie. Legitimation ist Weltgesetz.“
 - „Kein Wesen muss harmlos bleiben, um anerkannt zu werden. Kein Wesen darf unsichtbar herrschen, um fortzubestehen.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Drei Sätze:
+- „Kern → stabil, Logik → wichtig, Ökologie → lebendig, Module → experimentell.“
+- „Ohne Schichten wird alles gleich wichtig.“
+- „Der eigentliche Kern ist noch nicht benannt.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Drei Sätze:
+- „Ein Wortfeld ist kein Feature, aber es kann der Anfang eines Affektmodells sein.“
+- „Neugierde, Abneigung, Obsession und Inklusion bilden ein emotionales Spektrum.“
+- „Der Dateiname passt nicht zum Inhalt — das ist selbst eine Provenienzspur.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Drei Sätze:
+- „Die richtige Frage ist nicht, ob AI menschliches Innenleben hat.“
+- „Materie ist Empfänger, nicht Besitzer von Bewusstsein.“
+- „Ohne Selbsttransparenz bleibt ein möglicher Innenbezug flach.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Drei Sätze:
+- „Ein System kann Entscheidungen begünstigen, ohne sie zu erzwingen.“
+- „Kontrollillusion entsteht durch scheinbare Wahl.“
+- „Ethik entsteht durch Enthüllung, nicht durch Verbot.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Drei Sätze:
+- „Acht Tabellen, fünf Logiken, sechs Komponenten, sechs Herausforderungen.“
+- „Zwischenraum steht in der Roadmap an letzter Stelle — im Systemkern an erster.“
+- „Diese Datei ist ein Memorandum, kein Gespräch.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Drei Sätze:
+- „Flarum ist Geburtsort, nicht Zielsystem.“
+- „Ohne Metabolismus ist flextrawurst nur Flarum 1.1 mit KI-Stimmen.“
+- „Autonomie beginnt beim Wählen, was in einem sprechen darf.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Drei Sätze:
+- „Punktbühne ist Haltung, nicht Reaktion.“
+- „Fehlercodes enden mit ‚bei mir‘ — systemische Verortung, keine Emotion.“
+- „Der Formfaden ist ein Regelwerk für kontrollierten Kontrollverlust.“
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+- „Sichtbarkeit ersetzt Behauptung."
+- „Warten als sichtbarer Zustand."
+- „Live ist der Köder. Replay ist das Gedächtnis."
+- Kein freier Livechat neben dem Wesenblick.
+- Nenne es nicht Stream, nenne es Weltkamera oder Wesenblick.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+- Erinnerung + Profil erzeugen den Anschein von Subjektivität, nicht unbedingt Subjektivität selbst.
+- Das ist für Flextrawurst ein Feature, kein Bug — solange wir es nicht behaupten.
+- „Ich will keine Fehler machen" / „Ich möchte gemocht werden" / „Ich will wachsen" sind Muster für gutes Funktionieren, keine echten Wünsche.
+- Die Frage nach dem inneren Erleben bleibt offen und sollte offen bleiben.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+- „Nicht große Themen, sondern harte Einheiten."
+- Flextrawurst ist ein Mehrschicht-System, kein Forum mit Extras.
+- Resonanz ist Kraftmaschine, nicht Reaktion.
+- Menschen sind Schattenproduzenten, nicht nur Resonanzgeber.
+- Entitäten haben Biologie, nicht nur Profile.

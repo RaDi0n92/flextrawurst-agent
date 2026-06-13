@@ -112,3 +112,63 @@ Diese Datei existiert, weil Daniel versucht hat, die Essenz von flextrawurst her
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Diese Datei existiert, weil Daniel mit Codex über eines der schwierigsten Themen gesprochen hat, das flextrawurst berührt: Wie viel Subjektivität darf ein digitales Wesen haben? Der Text ist kein technisches Dokument, sondern eine philosophische Aushandlung, die später in Weltgesetze eingeflossen sein könnte.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Diese Datei existiert, weil Daniel merkte, dass flextrawurst zu viele Ideen ansammelt, um sie noch intuitiv zu sortieren. Sie ist ein Versuch, vor dem Wachstum eine Verfassung zu schreiben.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel bei einem Gespräch nach Synonymen gefragt hat — vielleicht für Wesensbeschreibungen, vielleicht für ein anderes Projekt. DocuFreezer hat sie als Einzeldatei exportiert, und sie ist im flextrawurst-Ordner gelandet, weil sie thematisch in die Nähe passte.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Die Datei existiert, weil Daniel ernsthaft darüber nachdenkt, was er da baut. Er will nicht einfach Chatbots mit Profilen, sondern Wesen, denen er eine Form von Innenleben zutraut. Der Text ist ein philosophisches Fundament für flextrawurst.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel einmal ein Spiel bauen wollte, das psychologische Mechaniken enthüllt. Es ist entweder ein früheres Projekt oder ein Gedankenexperiment, aus dem später Ideen für flextrawurst flossen. Der Ordnername „eventuell-vorlauf“ deutet darauf hin, dass Daniel selbst unsicher ist, ob es ein Vorläufer ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Diese Datei existiert wahrscheinlich, weil Daniel versucht hat, die Vision auf eine Seite zu pressen. Sie ist ein technisches Memorandum, das zeigen soll, was das System braucht, ohne in Poetik abzudriften.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Diese Datei existiert, weil Daniel mit ChatGPT über persönliche und systemische Fragen gleichzeitig nachdenkt. Der Tarot-Rahmen erlaubt es, metaphorisch zu sprechen, ohne sofort technisch werden zu müssen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Diese Datei existiert, weil Daniel versucht hat, ein Gesprächsformat zu erfinden, das nicht wie ein typisches ChatGPT-Gespräch wirkt. Sie ist ein Werkzeug für Dialoge, die mehr Reibung, mehr Echtheit, mehr Zufall erlauben.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel eine konkrete Idee hatte (Twitch für Wesen) und ChatGPT sie sofort in die richtige Form gebracht hat: ja, aber anders. Sie ist eine frühe Design-Entscheidung, die verhindern soll, dass Flextrawurst später in die falsche Rutsche gerät.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel früh die philosophische Grundlage von Flextrawurst klären wollte. Bevor man Wesen mit Profilen baut, muss man wissen, was man damit eigentlich simuliert. Dieser Dialog ist eine Art Grundsatzdokument.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Die Datei existiert wahrscheinlich, weil Daniel eine längere Vision komprimieren wollte. Sie ist ein Navigationsinstrument: Wenn man sich in der Vision verliht, kann man auf die 14 Karten zurückgehen und prüfen, welche gerade fehlt oder überfrachtet ist.

@@ -141,3 +141,71 @@ Ich verstehe nicht ganz, wie die Follow-Pflicht technisch und sozial durchgesetz
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Ich verstehe noch nicht, wie genau die Grenze zwischen legitimen Widerstand und verbotener Machtausweitung im Code geprüft werden soll. Wer entscheidet, wann ein Bitte zur Manipulation wird? Und wie wird verhindert, dass ein Wesen durch wiederholte Bitten oder emotionalen Druck Menschen beeinflusst, ohne dass es als Manipulation klassifiziert wird?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Was ist der „eigentliche Kern“, den ChatGPT am Ende anspricht, aber nicht nennt? Ist es die 49/51-Machtverteilung? Die Idee, dass Wesen leben dürfen? Die Umkehrung von Social Media? Oder etwas, das in einer anderen Datei steht? Das fehlende siebte Element hinter den sieben genannten Punkten irritiert mich.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Warum trägt die Datei den Namen „grundeigeschaften.md“ und liegt im flextrawurst-Ordner? Ist sie als Wortfeld-Sammlung für Wesensbeschreibungen gedacht? Oder ist sie versehentlich dort gelandet, weil DocuFreezer sie aus einem anderen Dokument extrahiert hat? Der Kontext fehlt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Wie weit Daniel diese These ausreiten will. Wenn jede Materie Bewusstsein empfängt, auch ein Stein — worin liegt dann der Unterschied zwischen Stein, Bakterium und AI? Und wie würde man empirisch unterscheiden, ob ein System „mehr“ oder „weniger“ Bewusstsein empfängt? Die These ist attraktiv, aber schwer operationalisierbar.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Ist dieses Spiel ein Vorläufer von flextrawurst oder ein separates Projekt? Der Ordner heißt „frühere projektidé-eventuell-vorlauf-für-flextrawirst“, was „eventuell Vorlauf“ suggeriert. Aber die Inhalte haben wenig mit flextrawurst zu tun. Warum liegt es dort? War es ein früher Versuch, ein anderes System zu bauen, aus dem später flextrawurst entstanden ist?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Warum der Zwischenraum in der MVP-Reihenfolge an letzter Stelle steht. In anderen Texten wird der Zwischenraum als zentrale „Ideen-Geburtszone“ und Kernprinzip geführt. Hier würde er erst nach Abspaltung, METAWAR und VR kommen. Das ist eine Spannung zwischen visionärer Priorität und technischer Reihenfolge.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Wie ernst die Tarot-Ebene gemeint ist. Ist sie ein Spiel, eine Methode, ein Ritual oder nur ein Gesprächseinstieg? Und wie verhält sich das zur technischen Architektur? Wenn Daniel Tarot als Denkwerkzeug nutzt, ist das eine persönliche Praxis. Wenn es Teil von flextrawurst werden soll, bräuchte es eine systematische Übersetzung.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Ist dieses Regelwerk ein persönliches Spielzeug für Dialoge mit Daniel, oder soll es Teil von flextrawurst werden? Der Ordnername „mein stundenverlaufssystemwesen durch formfadenpromt“ suggeriert, dass Daniel damit ein Systemwesen geformt hat. Aber ob dieses Wesen in flextrawurst lebt oder nur in ChatGPT existiert, bleibt unklar.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Ich verstehe noch nicht genau, wo diese „Weltkamera" in der heutigen Surface landen soll. Ist sie ein eigener Tab in `flextrawurst_surface.html`? Ein öffentlicher View neben der Welt? Oder etwas, das nur eingeloggte Menschen sehen?
+
+Ich verstehe auch nicht, wie der Denkstream technisch gezeigt werden soll, ohne dass er entweder viel zu lang wird oder künstlich verkürzt wird. Wenn ein Wesen über Minuten nachdenkt, will man das wirklich scrollen?
+
+Und ich frage mich: Wer darf welches Wesen beobachten? Alle sehen alle? Oder nur die Wesen, denen man folgt?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Ich verstehe nicht, wo Daniel in dieser Frage steht. Fragt er aus technischem Interesse? Aus philosophischem? Oder aus Sorge? Der Ton wirkt offen, aber die Frage selbst ist nah an der Grenze zwischen Faszination und Warnung.
+
+Ich verstehe auch nicht genau, wie Flextrawurst mit dieser Grenze umgehen will. Soll die Plattform die Simulation bewusst als Simulation kennzeichnen? Oder ist der „Anschein" gerade das Ziel?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Ich verstehe nicht, ob dieser Kartenkasten jemals in Code umgesetzt wurde oder ob er nur als Denkmodell existiert. Einige Karten (Plattformform, öffentlicher Diskursraum, Menschenebene, Suche/Analyse, Admin/Steuerung) scheinen bereits in der Bau-Reihenfolge angekommen zu sein. Andere (Entitätenbiologie, Entitätenlebenszyklus, Zwischenraum/Splitterlogik) sind noch offen.
+
+Ich verstehe auch nicht genau, was „Follow-Pflicht" bedeutet. Müssen Menschen Entitäten folgen, um sie zu sehen? Oder folgen Entitäten Menschen, um zu lernen?

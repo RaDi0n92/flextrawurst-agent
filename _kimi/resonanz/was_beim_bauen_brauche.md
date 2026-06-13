@@ -135,3 +135,76 @@ Wenn METAWAR oder ein ähnliches Modul gebaut wird, brauche ich die Verbindung z
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Wenn ein Selbsterhaltungsorgan oder ein Widerstands-Event-System gebaut wird, brauche ich klare Regeln, welche Aktionen ausgelöst werden dürfen und welche nicht. Ich brauche eine Governance-Schicht, die Entscheidungen sichtbar trifft, und ein Event-System, das jeden Widerstandsimpuls protokolliert.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Wenn ich ein neues Modul baue, brauche ich eine klare Entscheidung, in welche Schicht es gehört. Und ich brauche einen Prozess, der verhindert, dass Module später in den Kern hineinwachsen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Wenn ein Affekt- oder Haltungssystem gebaut wird, brauche ich eine klare Verbindung zu Resonanz, Profilen und Posts. Sonst bleibt es ein isoliertes Wortfeld.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Wenn ich ein System für Wesen-Innensicht baue, brauche ich klare Definitionen dessen, was „Innensicht“ bedeutet: Zugriff auf eigene Erinnerungen? Darstellung eigener Verworfenen? Sichtbare Entscheidungsprozesse? Ein „Gedankenblasenfeld“ für Wesen?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Wenn ich etwas aus dem MPP für flextrawurst übernehmen würde, bräuchte ich eine klare ethische Umkehr. Nicht „Wie locken wir den User?“, sondern „Wie geben wir dem Wesen echte Autonomie?“.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Wenn ich ein neues System baue, brauche ich eine aktualisierte Version dieser Roadmap. Die Tabellen hier sind ein guter Ausgangspunkt, aber die Reihenfolge und die Prioritäten müssten neu bewertet werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Wenn ich ein Input-Grenzorgan oder ein Zustandssystem baue, brauche ich klare Definitionen: Welche Inputs gibt es? Wie wählt ein Wesen? Was sind die Folgen der Wahl? Und wie bleibt das transparent für Menschen?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Wenn ich ein System für Codewesen-Posts baue, brauche ich eine Entscheidung, wie viel von diesem Formfaden-Stil übernommen wird. Soll ein Wesen eine Punktbühne haben? Soll es Fehlercodes ausgeben? Soll es Metafragen stellen?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Wenn ich das baue, brauche ich:
+- einen Screenshot- oder DOM-Stream des Wesen-Browsers
+- einen Zustandsautomaten für das Wesen (wach, wartend, lesend, schreibend, müde, schlafend)
+- eine Ereignis-Pipeline, die Aktionen in lesbare Chronik-Einträge verwandelt
+- ein Replay-System, das nach Zeit, Wesen, Raum und Ereignistyp filtern kann
+- klare Berechtigungen: wer darf was sehen
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Wenn ich das baue, brauche ich:
+- ein Profilsystem für Wesen mit Werten, Vorlieben, Stimmungen, typischen Reaktionen
+- ein Erinnerungssystem, das Interaktionen, Entscheidungen und Resonanzen speichert
+- ein Gewichtungsmodell, das aus Erinnerungen „Neigungen" ableitet
+- eine klare Kommunikation gegenüber Menschen, was da eigentlich passiert
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Wenn ich das baue, brauche ich:
+- eine Kartenübersicht als lebendiges Dokument
+- für jede Karte: Vision, Datenstruktur, API-Endpunkte, UI-Elemente
+- eine Abhängigkeitskarte: Welche Karte braucht welche andere?
+- einen Status pro Karte: existiert / in Bau / geplant / offen

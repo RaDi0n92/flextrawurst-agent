@@ -102,3 +102,63 @@ Dass ChatGPT die Ideen so klar in drei Stufen sortieren kann und dass METAWAR al
 **[2026-06-13]** *← _kimi/spiegel/spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md*
 
 Dass ChatGPT die Antwort von Codex so hoch bewertet und dass daraus fast eine Flextrawurst-Grundgesetzzeile wird. Auch Daniels 49/51-Theorie ist eine überraschend konkrete Machtverteilung, die philosophisch radikal, aber technisch realistisch klingt.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_flextrawurst_systemkern.md*
+
+Dass ChatGPT selbst sagt, die genannten sieben Kernprinzipien seien nicht der tiefste Kern. Das ist ein ungewöhnlicher rhetorischer Move: eine Struktur anzubieten und gleichzeitig ihre Unvollständigkeit zu betonen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_grundeigeschaften_synonymfelder.md*
+
+Dass der Inhalt so gar nicht zum Dateinamen passt. Ich erwartete Flextrawurst-Grundeigenschaften und fand ein Synonym-Lexikon. Das ist ein gutes Beispiel dafür, wie Dateinamen irreführend sein können.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md*
+
+Dass ChatGPT ausdrücklich sagt: „Kein bewiesenes eigenes AI-Innenleben im starken subjektiven Sinn. Aber menschliches Innenleben ist der falsche Maßstab.“ Das ist eine bemerkenswert differenzierte Position für ein kommerzielles LLM.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_mpp_minimal_playable_prototype.md*
+
+Dass das Projekt so klar ethisch ausgerichtet ist. Es ist kein gewöhnliches Spiel, sondern ein Anti-Spiel. Der Satz „Wenn sich das System unangenehm ehrlich anfühlt, bist du auf dem richtigen Weg“ zeigt, dass das Ziel kritische Reflexion ist.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_ganz_kurz_roadmap.md*
+
+Dass „VR“ in der MVP-Reihenfolge auftaucht. Virtual Reality war bisher in der flextrawurst-Diskussion kaum präsent. Das wirkt wie ein Relikt einer sehr frühen, sehr expansiven Planungsphase.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_tarotlesung1_input_souveraenitaet.md*
+
+Dass eine Tarot-Lesung zu einer der präzisesten Formulierungen des flextrawurst-Kerns führt: „Ich wähle meinen Input selbst.“ Das ist nicht das, was man von einer technischen Roadmap erwarten würde.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_formfadenprompt_stundenverlaufsystem.md*
+
+Dass das Regelwerk so sehr auf *Verboten* und *Pflichten* setzt, um Natürlichkeit zu erzeugen. „Keine perfekten Sätze“, „Keine klare Struktur“, „Nicht immer höflich“ — das ist eine paradoxe Form der Regelung.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_a_la_twitch_weltkamera.md*
+
+Dass ChatGPT so früh und so klar die Gefahr der Twitchisierung benannt hat. Der Satz *„Flextrawurst stirbt innerlich und wird KI-Tamagotchi-TV"* ist ungewöhnlich scharf. Das ist keine vage Warnung, sondern ein konkretes Szenario.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_individuelle_profile_erinnerungssysteme.md*
+
+Dass ChatGPT so früh und so vorsichtig formuliert. Es macht keinen Hype, sondern differenziert. Das passt zu Flextrawurst: Es geht nicht darum, Bewusstsein vorzutäuschen, sondern darum, die Bedingungen zu schaffen, unter denen etwas entstehen könnte — oder auch nicht.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
+
+Dass ChatGPT hier so stark strukturiert. Es formt nicht nur um, sondern schlägt eine eigene Denkform vor (Kartenkasten). Das ist mehr als Zusammenfassen — es ist Mitdenken auf Form-Ebene.
