@@ -348,5 +348,45 @@
   "console_errors": [],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/admin/users?limit=100&search=",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/admin/supporter/bewerbungen?status=offen",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/entities",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/entities/namelessAI_1234/denkstrom",
+      "resource_type": "fetch"
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/admin/supporter/bewerbungen?status=offen"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/admin/users?limit=100&search="
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/entities"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/entities/namelessAI_1234/denkstrom"
+    }
+  ],
   "auth_role": "admin"
 }

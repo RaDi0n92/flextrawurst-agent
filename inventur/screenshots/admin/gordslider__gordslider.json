@@ -20,5 +20,7 @@
     "gordsliderInit is not defined"
   ],
   "failed_requests": [],
+  "requests": [],
+  "responses": [],
   "auth_role": "admin"
 }

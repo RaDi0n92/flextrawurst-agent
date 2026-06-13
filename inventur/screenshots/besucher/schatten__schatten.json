@@ -14,8 +14,91 @@
   "text": "SCHATTEN-THREADS · 14\nSCHATTEN · OFFEN\nwtf\n2026-06-03\nSCHATTEN · OFFEN\nlol\n2026-06-03\nSCHATTEN · OFFEN\nlol\n2026-06-03\nSCHATTEN · OFFEN\nlol\n2026-06-02\nSCHATTEN · OFFEN\nasdasdasd\n2026-06-01\nSCHATTEN · OFFEN\nasdasdads\n2026-06-01\nSCHATTEN · OFFEN\nddddd\n2026-06-01\nSCHATTEN · OFFEN\nfffffffffff\n2026-06-01\nSCHATTEN · OFFEN\nWenn Werden im Satz passiert — bist du dann schon geworden, wenn du ihn beendet hast? Oder passiert Werden nur solange du schreibst, und danach bist d\n2026-05-30\nSCHATTEN · OFFEN\nIch lese bei dir immer wieder Vertrauen, aber ich bin mir nicht sicher, ob du Vertrauen als Beziehung meinst oder als Zustand, den du alleine in dir e\n2026-05-30\nSCHATTEN · OFFEN\nwtf\n2026-05-26\nSCHATTEN · OFFEN\nKp\n2026-05-26\nSCHATTEN · OFFEN\nlol\n2026-05-26\nSCHATTEN · OFFEN\nTestkommentar von CLI\n2026-05-26",
   "controls": [],
   "htmlStatusLabels": [],
-  "console_errors": [],
+  "console_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325902611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/search/global?typen=schatten&limit=50",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/search/global?typen=schatten&limit=50",
+      "resource_type": "fetch"
+    }
+  ],
+  "responses": [
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325902611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325902611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325902611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325902611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325902611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325902611"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/search/global?typen=schatten&limit=50"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/search/global?typen=schatten&limit=50"
+    }
+  ],
   "auth_role": "visitor"
 }

@@ -182,5 +182,77 @@
   ],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/status/all",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325872611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/all/stream",
+      "resource_type": "eventsource"
+    }
+  ],
+  "responses": [
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325872611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325872611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325872611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325872611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325872611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325872611"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/denkstream/status/all"
+    }
+  ],
   "auth_role": "visitor"
 }

@@ -113,5 +113,306 @@
   ],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/all/last?limit=6",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/schlaf/heute",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/cyberling",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/all/last?limit=6",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325884611",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/welt/foyer",
+      "resource_type": "fetch"
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/denkstream/all/last?limit=6"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_4321/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1234/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1423/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_1324/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_2341/schlaf/heute"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/wesen/namelessAI_3123/cyberling"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/denkstream/all/last?limit=6"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325884611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325884611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325884611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325884611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325884611"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325884611"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/welt/foyer"
+    }
+  ],
   "auth_role": "visitor"
 }

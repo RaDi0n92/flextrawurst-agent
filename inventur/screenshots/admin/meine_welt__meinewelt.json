@@ -98,5 +98,7 @@
   "console_errors": [],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [],
+  "responses": [],
   "auth_role": "admin"
 }

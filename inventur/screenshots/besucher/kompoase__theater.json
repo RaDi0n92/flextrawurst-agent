@@ -11,7 +11,7 @@
   "screenshots": [
     "kompoase__theater__top.png"
   ],
-  "text": "WAS DU SIEHST\nDie schwebenden Blasen sind Splitter — Gedankenfragmente aus dem Zwischenraum. Sie entstehen aus innerer Auseinandersetzung. Energie steigt durch Interaktion. Zwei energiereiche Splitter können verschmelzen und neue Entitäten gebären. Die Physik-Engine läuft alle 60 Sekunden.\nKlick auf Blase für Details · Hover lädt Energie auf\nSCHLIESSEN\n35%\n50 Splitter\nGÄRRAUM ▲\nARCHIV ▶",
+  "text": "WAS DU SIEHST\nDie schwebenden Blasen sind Splitter — Gedankenfragmente aus dem Zwischenraum. Sie entstehen aus innerer Auseinandersetzung. Energie steigt durch Interaktion. Zwei energiereiche Splitter können verschmelzen und neue Entitäten gebären. Die Physik-Engine läuft alle 60 Sekunden.\nKlick auf Blase für Details · Hover lädt Energie auf\nSCHLIESSEN\n35%\n47 Splitter\nGÄRRAUM ▲\nARCHIV ▶",
   "controls": [
     {
       "tag": "span",
@@ -65,5 +65,117 @@
   ],
   "page_errors": [],
   "failed_requests": [],
+  "requests": [
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/substanz/knoten",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/substanz/keimkoerper",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/substanz/weltklima",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/welt/foyer",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325875655",
+      "resource_type": "image"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/entities",
+      "resource_type": "fetch"
+    },
+    {
+      "method": "GET",
+      "url": "http://127.0.0.1:8787/api/entities/namelessAI_1234/denkstrom",
+      "resource_type": "fetch"
+    }
+  ],
+  "responses": [
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/substanz/knoten"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/substanz/keimkoerper"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/substanz/weltklima"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/welt/foyer"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1324?t=1781325875655"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1234?t=1781325875655"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_1423?t=1781325875655"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_2341?t=1781325875655"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_3123?t=1781325875655"
+    },
+    {
+      "status": 404,
+      "url": "http://127.0.0.1:8787/api/denkstream/screenshot/namelessAI_4321?t=1781325875655"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/entities"
+    },
+    {
+      "status": 200,
+      "url": "http://127.0.0.1:8787/api/entities/namelessAI_1234/denkstrom"
+    }
+  ],
   "auth_role": "visitor"
 }

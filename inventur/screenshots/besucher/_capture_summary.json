@@ -19,6 +19,25 @@
     "ok": true
   },
   {
+    "manifest": "/root/werkraum/inventur/screenshots/besucher/was_ist_das__uber.json",
+    "view": "uber",
+    "tab": "WAS IST DAS?",
+    "screenshots": 5,
+    "scroll": {
+      "scrollHeight": 3124,
+      "clientHeight": 888,
+      "scrollWidth": 1600,
+      "clientWidth": 1600
+    },
+    "controls": 26,
+    "text_chars": 6702,
+    "console_errors": 0,
+    "page_errors": 0,
+    "failed_requests": 0,
+    "auth_role": "visitor",
+    "ok": true
+  },
+  {
     "manifest": "/root/werkraum/inventur/screenshots/besucher/weltstrom__weltstrom.json",
     "view": "weltstrom",
     "tab": "WELTSTROM",
@@ -30,7 +49,7 @@
       "clientWidth": 1600
     },
     "controls": 8,
-    "text_chars": 5846,
+    "text_chars": 5935,
     "console_errors": 0,
     "page_errors": 0,
     "failed_requests": 0,
@@ -68,7 +87,7 @@
       "clientWidth": 1600
     },
     "controls": 29,
-    "text_chars": 6219,
+    "text_chars": 6262,
     "console_errors": 0,
     "page_errors": 0,
     "failed_requests": 0,
@@ -220,8 +239,8 @@
       "clientWidth": 1600
     },
     "controls": 26,
-    "text_chars": 3909,
-    "console_errors": 0,
+    "text_chars": 3915,
+    "console_errors": 6,
     "page_errors": 0,
     "failed_requests": 0,
     "auth_role": "visitor",
@@ -252,13 +271,13 @@
     "tab": "ARCHÄOLOGIE",
     "screenshots": 6,
     "scroll": {
-      "scrollHeight": 4073,
+      "scrollHeight": 3841,
       "clientHeight": 888,
       "scrollWidth": 1600,
       "clientWidth": 1600
     },
     "controls": 49,
-    "text_chars": 2169,
+    "text_chars": 2136,
     "console_errors": 6,
     "page_errors": 0,
     "failed_requests": 0,
@@ -277,7 +296,7 @@
       "clientWidth": 1600
     },
     "controls": 0,
-    "text_chars": 747,
+    "text_chars": 746,
     "console_errors": 6,
     "page_errors": 0,
     "failed_requests": 0,
@@ -316,7 +335,7 @@
     },
     "controls": 1,
     "text_chars": 45,
-    "console_errors": 6,
+    "console_errors": 0,
     "page_errors": 0,
     "failed_requests": 0,
     "auth_role": "visitor",
@@ -335,7 +354,7 @@
     },
     "controls": 0,
     "text_chars": 802,
-    "console_errors": 0,
+    "console_errors": 6,
     "page_errors": 0,
     "failed_requests": 0,
     "auth_role": "visitor",
@@ -449,7 +468,7 @@
     },
     "controls": 0,
     "text_chars": 1395,
-    "console_errors": 0,
+    "console_errors": 6,
     "page_errors": 0,
     "failed_requests": 0,
     "auth_role": "visitor",
