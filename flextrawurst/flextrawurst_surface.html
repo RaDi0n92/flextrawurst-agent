@@ -798,7 +798,8 @@ html,body{height:100%;overflow:hidden;background:var(--void);color:var(--t-mid);
 .tab-hero-desc{font-size:0.72rem;color:var(--t-sub);line-height:1.7;max-width:760px}
 .tab-hero-desc strong{color:var(--t-bright)}
 .tab-hero-desc em{color:var(--alive);font-style:normal}
-
+</style>
+<style>
 /* ══ CINEMA MODE ═══════════════════════════════════════════════════════════ */
 #cin-a,#cin-b{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;transition:opacity .55s ease}
 #cin-b{opacity:0}
@@ -861,498 +862,6 @@ html[data-theme="light"][data-surface-mode="cinema"] .wk-card {
   background:rgba(244,239,231,.65)!important }
 html[data-theme="light"] #cin-indicator { display:none!important }
 
-/* ── Keyframes ───────────────────────────────────────────────────────────── */
-@keyframes lm-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
-@keyframes lm-breathe { 0%,100%{opacity:.18;transform:scale(1)} 50%{opacity:.32;transform:scale(1.04)} }
-@keyframes lm-shimmer { 0%{background-position:200% 50%} 100%{background-position:-200% 50%} }
-@keyframes lm-pulse-warm { 0%,100%{box-shadow:0 0 0 0 rgba(180,120,40,.0)} 50%{box-shadow:0 0 28px 4px rgba(180,120,40,.12)} }
-@keyframes lm-scan { 0%{transform:translateY(-100%)} 100%{transform:translateY(100vh)} }
-@keyframes lm-radar { 0%{transform:scale(0);opacity:.4} 100%{transform:scale(2.2);opacity:0} }
-@keyframes lm-drift-r { 0%{transform:translateX(0) rotate(0deg)} 100%{transform:translateX(4px) rotate(2deg)} }
-@keyframes lm-inkline { 0%{width:0;opacity:0} 100%{width:100%;opacity:1} }
-@keyframes lm-hexglow { 0%,100%{border-color:rgba(140,100,60,.12)} 50%{border-color:rgba(140,100,60,.32)} }
-@keyframes lm-nodepulse { 0%,100%{transform:scale(1);opacity:.6} 50%{transform:scale(1.18);opacity:1} }
-@keyframes lm-strata { 0%{background-position:0 0} 100%{background-position:0 -40px} }
-@keyframes lm-connbeam { 0%{stroke-dashoffset:200} 100%{stroke-dashoffset:0} }
-@keyframes lm-layer-up { 0%{transform:translateY(0)} 100%{transform:translateY(-100vh)} }
-@keyframes lm-worm { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(1.08) scaleY(.94)} }
-@keyframes lm-ember { 0%{transform:translateY(0) scale(1);opacity:.7} 100%{transform:translateY(-40px) scale(.2);opacity:0} }
-
-/* ── Allgemeine Light-Mode Basisstruktur ─────────────────────────────────── */
-[data-theme="light"] #world-center { background:var(--surface)!important }
-[data-theme="light"] #left-rail { background:var(--deep)!important }
-[data-theme="light"] .rail-section-head { background:var(--surface)!important }
-[data-theme="light"] .rail-item:hover { background:rgba(140,100,60,.06)!important }
-[data-theme="light"] .rail-item.rl-active { background:rgba(8,144,168,.07)!important }
-
-/* ── DISKURS ─────────────────────────────────────────────────────────────── */
-[data-theme="light"] .dk-row { background:var(--void) }
-[data-theme="light"] .dk-row:hover { background:rgba(140,100,60,.06)!important }
-[data-theme="light"] .dk-row-titel { color:var(--t-bright)!important }
-[data-theme="light"] .dk-row-intro { color:var(--t-mid)!important }
-[data-theme="light"] .dk-row-autor { color:var(--world)!important }
-[data-theme="light"] .dk-row-zeit { color:var(--t-sub)!important }
-[data-theme="light"] .dk-row-lastakt { color:var(--t-dim)!important }
-[data-theme="light"] .dk-row.ungelesen {
-  background:linear-gradient(90deg,rgba(8,144,168,.09) 0%,var(--void) 100%)!important;
-  border-left:3px solid var(--world)!important }
-[data-theme="light"] .dk-row.ungelesen .dk-row-titel { color:var(--world)!important }
-[data-theme="light"] .dk-row.ungelesen .dk-row-intro { color:var(--t-mid)!important }
-[data-theme="light"] .dk-row.ungelesen .dk-row-accent { background:var(--world)!important }
-[data-theme="light"] .dk-ungelesen-dot { background:var(--world)!important;box-shadow:0 0 6px var(--world)!important }
-/* Diskurs — animierter Top-Separator */
-[data-theme="light"] #view-diskurs::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--world),var(--alive),transparent);
-  background-size:200% auto;animation:lm-shimmer 5s linear infinite;z-index:2;pointer-events:none }
-[data-theme="light"] #view-diskurs { position:relative }
-
-/* ── THEATER (Wesen-Posts) ───────────────────────────────────────────────── */
-[data-theme="light"] .th-post { background:var(--void);border-color:var(--rim) }
-[data-theme="light"] .th-post:hover { border-color:var(--world)!important;background:rgba(8,144,168,.04)!important }
-[data-theme="light"] .th-wesen { color:var(--world)!important }
-[data-theme="light"] .th-title { color:var(--t-bright)!important }
-[data-theme="light"] .th-excerpt { color:var(--t-mid)!important }
-[data-theme="light"] .th-energie { color:var(--t-sub)!important }
-[data-theme="light"] .th-time { color:var(--t-dim)!important }
-[data-theme="light"] .th-empty { color:var(--t-mid)!important }
-[data-theme="light"] .th-herkunft.entitaet { background:rgba(8,144,168,.08)!important;color:var(--world)!important;border:1px solid rgba(8,144,168,.2)!important }
-[data-theme="light"] .th-herkunft.mensch { background:rgba(10,144,80,.07)!important;color:var(--alive)!important;border:1px solid rgba(10,144,80,.18)!important }
-[data-theme="light"] .th-herkunft.resonanz { background:rgba(122,56,184,.07)!important;color:var(--wesen)!important;border:1px solid rgba(122,56,184,.18)!important }
-/* Theater — Bühnen-Licht Animation */
-[data-theme="light"] #view-theater::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(192,90,24,.07) 0%,transparent 70%);
-  animation:lm-breathe 6s ease-in-out infinite }
-[data-theme="light"] #view-theater { position:relative }
-
-/* ── MEINE WELT ──────────────────────────────────────────────────────────── */
-[data-theme="light"] .mw-eintrag { border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .mw-eintrag-datum { color:var(--t-sub)!important }
-[data-theme="light"] .mw-eintrag-text { color:var(--t-mid)!important }
-[data-theme="light"] .mw-panel-titel { color:var(--world)!important }
-[data-theme="light"] .mw-panel-x { color:var(--t-mid)!important }
-[data-theme="light"] .mw-buch-tag { color:var(--world)!important }
-[data-theme="light"] .mw-buch-vorschau { color:var(--t-mid)!important }
-[data-theme="light"] .mw-buch-mark { color:var(--alive)!important }
-[data-theme="light"] .mw-buch-seite-nr { color:var(--t-sub)!important }
-[data-theme="light"] .mw-buch-seite-titel { color:var(--world)!important }
-[data-theme="light"] .mw-buch-seite-datum { color:var(--t-sub)!important }
-[data-theme="light"] .mw-buch-seite-text { color:var(--t-mid)!important }
-[data-theme="light"] .mw-buch-neu { border-top:1px solid var(--rim)!important }
-[data-theme="light"] .mw-kal-nav { border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .mw-kal-label { color:var(--t-sub)!important }
-[data-theme="light"] .mw-kal-termin { background:rgba(10,144,80,.08)!important;color:var(--alive)!important }
-[data-theme="light"] .mw-formular { border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .mw-leer { color:var(--t-sub)!important }
-[data-theme="light"] .mw-notiz-ktext { color:var(--t-mid)!important }
-[data-theme="light"] .mw-ico { color:var(--t-sub)!important }
-[data-theme="light"] .mw-ico:hover { color:var(--world)!important }
-[data-theme="light"] .mw-notiz-gruppe { color:var(--t-sub)!important;border-top:1px solid var(--rim)!important }
-[data-theme="light"] .mw-kal-wt { color:var(--t-sub)!important }
-[data-theme="light"] .mw-kal-d { color:var(--t-bright)!important }
-[data-theme="light"] .mw-kal-neu { border-top:1px solid var(--rim)!important }
-[data-theme="light"] .mw-btn:hover { background:var(--world)!important;color:#fff!important }
-[data-theme="light"] .mw-ta,[data-theme="light"] .mw-inp {
-  background:var(--surface)!important;border-color:var(--rim)!important;color:var(--t-mid)!important }
-[data-theme="light"] .mw-ta:focus,[data-theme="light"] .mw-inp:focus { border-color:var(--world)!important }
-/* MeineWelt — warmes Tagebuch-Glühen */
-[data-theme="light"] #view-meinewelt::before {
-  content:'';position:absolute;top:0;right:0;width:180px;height:100%;pointer-events:none;z-index:0;
-  background:linear-gradient(270deg,rgba(192,90,24,.05) 0%,transparent 100%);
-  animation:lm-breathe 8s ease-in-out infinite }
-[data-theme="light"] #view-meinewelt { position:relative }
-
-/* ── GEDANKENBLASEN (bf-*) ───────────────────────────────────────────────── */
-[data-theme="light"] #bf-detail-panel { background:var(--deep)!important;border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .bf-dp-close { color:var(--t-sub)!important }
-[data-theme="light"] #bf-dp-inhalt { color:var(--t-bright)!important }
-[data-theme="light"] #bf-dp-meta { color:var(--t-mid)!important }
-[data-theme="light"] #bf-dp-verwendungen { color:var(--world)!important }
-[data-theme="light"] #bf-eingabe-panel h3 { color:var(--t-sub)!important }
-[data-theme="light"] #bf-gedanke-text {
-  background:var(--surface)!important;border:1px solid var(--rim)!important;color:var(--t-mid)!important }
-[data-theme="light"] #bf-gedanke-text:focus { border-color:var(--world)!important }
-[data-theme="light"] #bf-tags-input {
-  background:var(--surface)!important;border:1px solid var(--rim)!important;color:var(--t-mid)!important }
-[data-theme="light"] #bf-zeichenzahl { color:var(--t-sub)!important }
-[data-theme="light"] #bf-btn-submit { border-color:var(--world)!important;color:var(--world)!important }
-[data-theme="light"] #bf-btn-submit:hover { background:var(--world)!important;color:#fff!important }
-[data-theme="light"] #bf-feedback { color:var(--world)!important }
-[data-theme="light"] .bf-wesen-ind { border-color:var(--rim)!important;color:var(--t-sub)!important }
-[data-theme="light"] .bf-wi-dot { background:var(--world)!important }
-[data-theme="light"] .bf-wi-name { color:var(--t-mid)!important }
-[data-theme="light"] .bf-wi-stufe { color:var(--t-sub)!important }
-[data-theme="light"] .bf-drift-pos { color:var(--alive)!important }
-[data-theme="light"] .bf-drift-neg { color:var(--sys)!important }
-[data-theme="light"] .bf-drift-neu { color:var(--t-sub)!important }
-/* Blasen — schwimmende Punkte */
-[data-theme="light"] #view-blasen::before {
-  content:'';position:absolute;bottom:10%;left:50%;transform:translateX(-50%);
-  width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(8,144,168,.08) 0%,transparent 70%);
-  animation:lm-float 7s ease-in-out infinite }
-[data-theme="light"] #view-blasen { position:relative }
-
-/* ── WISSEN (Knowledge) ──────────────────────────────────────────────────── */
-[data-theme="light"] .wk-h-section { border-top:1px solid var(--rim)!important }
-[data-theme="light"] .wk-h-head { color:var(--world)!important;border-left-color:var(--world)!important }
-[data-theme="light"] .wk-h-card:hover { border-color:var(--world)!important;background:rgba(8,144,168,.04)!important }
-[data-theme="light"] .wk-h-slug { color:var(--world)!important }
-[data-theme="light"] .wk-h-kurz { color:var(--t-mid)!important }
-[data-theme="light"] .wk-title { color:var(--world)!important }
-[data-theme="light"] .wk-sub { color:var(--t-sub)!important }
-/* Wissen — Tintenbaum-Wachstum */
-[data-theme="light"] #view-wissen::after {
-  content:'';position:fixed;bottom:0;left:50%;transform:translateX(-50%);
-  width:2px;height:60%;background:linear-gradient(to top,rgba(8,144,168,.2),transparent);
-  pointer-events:none;z-index:0;animation:lm-breathe 6s ease-in-out infinite }
-
-/* ── SPLITTER/KOMPOASE (mp-*) ────────────────────────────────────────────── */
-[data-theme="light"] .mp-splitter-item {
-  background:rgba(192,90,24,.06)!important;border:1px solid rgba(192,90,24,.15)!important }
-[data-theme="light"] .mp-splitter-text { color:var(--splitter)!important }
-[data-theme="light"] .mp-splitter-meta { color:var(--t-sub)!important }
-[data-theme="light"] .mp-splitter-typ-n { color:var(--splitter)!important }
-[data-theme="light"] .mp-splitter-typ-l { color:var(--t-sub)!important }
-[data-theme="light"] .mp-edit-btn { border-color:var(--rim)!important;color:var(--t-mid)!important }
-
-/* ── AV / SYSTEME ────────────────────────────────────────────────────────── */
-[data-theme="light"] .av-sys-row { border-bottom:1px solid var(--rim)!important;color:var(--t-mid)!important }
-/* Systeme — warmer Grid-Scan */
-[data-theme="light"] #view-systeme::before {
-  content:'';position:absolute;top:-2px;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--world),transparent);
-  animation:lm-shimmer 4s linear infinite;pointer-events:none;z-index:1 }
-[data-theme="light"] #view-systeme { position:relative }
-
-/* ── NACHRICHTEN (nm-*, inline-injiziert) ────────────────────────────────── */
-[data-theme="light"] .nm-gesprach { border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .nm-zeit { color:var(--t-sub)!important }
-[data-theme="light"] .nm-vorschau { color:var(--t-mid)!important }
-[data-theme="light"] .nm-ich-vor { color:var(--t-sub)!important }
-[data-theme="light"] .nm-leer { color:var(--t-sub)!important }
-[data-theme="light"] .nm-back { color:var(--world)!important }
-[data-theme="light"] .nm-mz { color:var(--t-sub)!important }
-[data-theme="light"] .nm-new-btn { border-color:var(--world)!important;color:var(--world)!important }
-
-/* ── WESEN ───────────────────────────────────────────────────────────────── */
-[data-theme="light"] .sc-card { background:var(--surface)!important;border-color:var(--rim)!important }
-[data-theme="light"] .sc-card:hover { border-color:var(--wesen)!important;background:rgba(122,56,184,.04)!important }
-/* Wesen — sanfte Aura */
-[data-theme="light"] #view-wesen::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 50% 60% at 75% 50%,rgba(122,56,184,.06) 0%,transparent 65%);
-  animation:lm-breathe 9s ease-in-out infinite }
-[data-theme="light"] #view-wesen { position:relative }
-
-/* ── DENKEN ──────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-denken::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 40% 40% at 30% 30%,rgba(10,144,80,.06) 0%,transparent 60%),
-             radial-gradient(ellipse 30% 35% at 70% 65%,rgba(8,144,168,.05) 0%,transparent 55%);
-  animation:lm-breathe 7s ease-in-out infinite }
-[data-theme="light"] #view-denken { position:relative }
-
-/* ── RÄUME ───────────────────────────────────────────────────────────────── */
-[data-theme="light"] .rv-card { background:var(--surface)!important;border-color:var(--rim)!important }
-[data-theme="light"] .rv-card:hover {
-  border-color:var(--world)!important;background:rgba(8,144,168,.04)!important;
-  box-shadow:0 2px 18px rgba(8,144,168,.1)!important }
-[data-theme="light"] .rv-name { color:var(--t-bright)!important }
-[data-theme="light"] .rv-desc { color:var(--t-mid)!important }
-[data-theme="light"] .rv-sec { color:var(--t-sub)!important;border-top:1px solid var(--rim)!important }
-[data-theme="light"] .rv-body { color:var(--t-mid)!important }
-[data-theme="light"] .rv-expand-icon { color:var(--t-dim)!important }
-[data-theme="light"] .rv-card[data-open="1"] { border-color:var(--world)!important }
-[data-theme="light"] .rv-cta-btn { background:rgba(8,144,168,.06)!important;border-color:var(--t-dim)!important;color:var(--world)!important }
-[data-theme="light"] .rv-cta-btn:hover { background:rgba(8,144,168,.12)!important }
-/* Räume — Blueprint-Scan */
-[data-theme="light"] #view-raume::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:repeating-linear-gradient(90deg,rgba(8,144,168,.025) 0px,rgba(8,144,168,.025) 1px,transparent 1px,transparent 60px),
-             repeating-linear-gradient(0deg,rgba(8,144,168,.025) 0px,rgba(8,144,168,.025) 1px,transparent 1px,transparent 60px);
-  animation:lm-strata 30s linear infinite }
-[data-theme="light"] #view-raume { position:relative }
-
-/* ── LEITSTAND ───────────────────────────────────────────────────────────── */
-[data-theme="light"] #world-center { background:var(--surface)!important }
-/* Weltkarte — warmer Amber-Puls auf SVG */
-[data-theme="light"] #view-leitstand::before {
-  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:300px;height:300px;border-radius:50%;pointer-events:none;z-index:0;
-  background:radial-gradient(circle,rgba(180,120,40,.07) 0%,transparent 70%);
-  animation:lm-float 10s ease-in-out infinite }
-[data-theme="light"] #view-leitstand { position:relative }
-
-/* ── WAS IST DAS (uber) ──────────────────────────────────────────────────── */
-[data-theme="light"] #view-uber { background:var(--void)!important }
-[data-theme="light"] .ub2-hero-grid {
-  background-image:linear-gradient(rgba(140,100,60,.12) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(140,100,60,.12) 1px,transparent 1px)!important;
-  opacity:0.5!important }
-[data-theme="light"] .ub2-hero::before {
-  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(8,144,168,.06) 0%,transparent 70%)!important }
-[data-theme="light"] .ub2-eyebrow { color:var(--t-sub)!important }
-[data-theme="light"] .ub2-claim { color:var(--t-mid)!important }
-[data-theme="light"] .ub2-claim strong { color:var(--t-bright)!important }
-/* Uber — floating warm motes */
-[data-theme="light"] #view-uber::before {
-  content:'';position:absolute;top:20%;left:10%;width:40px;height:40px;
-  border-radius:50%;background:rgba(192,90,24,.12);pointer-events:none;z-index:0;
-  animation:lm-float 6s ease-in-out infinite }
-[data-theme="light"] #view-uber::after {
-  content:'';position:absolute;top:40%;right:15%;width:24px;height:24px;
-  border-radius:50%;background:rgba(8,144,168,.1);pointer-events:none;z-index:0;
-  animation:lm-float 8s ease-in-out infinite 2s }
-[data-theme="light"] #view-uber { position:relative }
-
-/* ── ARCHÄOLOGIE ─────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-archaeologie::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:repeating-linear-gradient(0deg,
-    rgba(140,100,60,.06) 0px,rgba(140,100,60,.06) 1px,
-    transparent 1px,transparent 32px);
-  animation:lm-strata 20s linear infinite }
-[data-theme="light"] #view-archaeologie { position:relative }
-
-/* ── SUCHE ───────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-suche::before,[data-theme="light"] #v-suche::before {
-  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:200px;height:200px;border-radius:50%;pointer-events:none;z-index:0;
-  border:1px solid rgba(8,144,168,.15);
-  animation:lm-radar 3s ease-out infinite }
-[data-theme="light"] #view-suche,[data-theme="light"] #v-suche { position:relative }
-
-/* ── GRUPPEN ─────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-gruppen::before {
-  content:'';position:absolute;bottom:20%;right:10%;width:120px;height:120px;
-  border-radius:50%;background:rgba(40,112,208,.06);pointer-events:none;z-index:0;
-  animation:lm-float 9s ease-in-out infinite 1s }
-[data-theme="light"] #view-gruppen::after {
-  content:'';position:absolute;top:15%;left:5%;width:80px;height:80px;
-  border-radius:50%;background:rgba(8,144,168,.05);pointer-events:none;z-index:0;
-  animation:lm-float 11s ease-in-out infinite 3s }
-[data-theme="light"] #view-gruppen { position:relative }
-
-/* ── ZITATE ──────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-zitate::before {
-  content:'"';position:absolute;top:5%;left:5%;font-size:8rem;line-height:1;
-  color:rgba(8,144,168,.07);pointer-events:none;z-index:0;font-family:serif;
-  animation:lm-float 12s ease-in-out infinite }
-[data-theme="light"] #view-zitate::after {
-  content:'"';position:absolute;bottom:5%;right:5%;font-size:8rem;line-height:1;
-  color:rgba(8,144,168,.07);pointer-events:none;z-index:0;font-family:serif;
-  animation:lm-float 10s ease-in-out infinite 4s }
-[data-theme="light"] #view-zitate { position:relative }
-
-/* ── GESETZE ─────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-gesetze::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:repeating-linear-gradient(90deg,rgba(24,104,200,.04) 0px,rgba(24,104,200,.04) 1px,transparent 1px,transparent 48px),
-             repeating-linear-gradient(0deg,rgba(24,104,200,.04) 0px,rgba(24,104,200,.04) 1px,transparent 1px,transparent 48px) }
-[data-theme="light"] #view-gesetze { position:relative }
-[data-theme="light"] #view-gesetze .ub2-hero-grid {
-  background-image:linear-gradient(rgba(24,104,200,.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(24,104,200,.06) 1px,transparent 1px)!important }
-
-/* ── FORSCHUNG ───────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-forschung::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 50% 70% at 50% 50%,rgba(10,144,80,.05) 0%,transparent 65%);
-  animation:lm-breathe 8s ease-in-out infinite }
-[data-theme="light"] #view-forschung { position:relative }
-
-/* ── PARTNER ─────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-partner::before {
-  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:60%;height:1px;background:linear-gradient(90deg,transparent,rgba(8,144,168,.2),transparent);
-  pointer-events:none;z-index:0;animation:lm-shimmer 6s linear infinite }
-[data-theme="light"] #view-partner::after {
-  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:1px;height:60%;background:linear-gradient(180deg,transparent,rgba(8,144,168,.15),transparent);
-  pointer-events:none;z-index:0;animation:lm-shimmer 8s linear infinite 2s }
-[data-theme="light"] #view-partner { position:relative }
-
-/* ── ADMIN ───────────────────────────────────────────────────────────────── */
-[data-theme="light"] .admin-bild-row { border-bottom:1px solid var(--rim)!important }
-[data-theme="light"] .admin-bild-user { color:var(--world)!important }
-[data-theme="light"] .admin-bild-zweck { color:var(--t-sub)!important }
-[data-theme="light"] .admin-bild-pfad { color:var(--t-mid)!important }
-[data-theme="light"] .admin-bild-no { border-color:var(--sys)!important;color:var(--sys)!important }
-/* Admin — System-Monitor Shimmer */
-[data-theme="light"] #view-admin::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--sys),transparent);
-  animation:lm-shimmer 3s linear infinite;pointer-events:none;z-index:1 }
-[data-theme="light"] #view-admin { position:relative }
-
-/* ── EINSICHT / SCHATTEN ─────────────────────────────────────────────────── */
-[data-theme="light"] #v-einsicht::before,[data-theme="light"] #view-einsicht::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(122,56,184,.06) 0%,transparent 65%);
-  animation:lm-breathe 10s ease-in-out infinite }
-[data-theme="light"] #v-einsicht,[data-theme="light"] #view-einsicht { position:relative }
-[data-theme="light"] #view-schatten::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 70% 50% at 50% 80%,rgba(122,56,184,.05) 0%,transparent 60%);
-  animation:lm-breathe 12s ease-in-out infinite }
-[data-theme="light"] #view-schatten { position:relative }
-
-/* ── CYBERLINGE / SCREENS ────────────────────────────────────────────────── */
-[data-theme="light"] #view-cyberlinge::before,[data-theme="light"] #view-screens::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:100%;pointer-events:none;z-index:0;
-  background:repeating-linear-gradient(0deg,rgba(10,144,80,.025) 0px,rgba(10,144,80,.025) 1px,transparent 1px,transparent 20px);
-  animation:lm-strata 6s linear infinite }
-[data-theme="light"] #view-cyberlinge,[data-theme="light"] #view-screens { position:relative }
-
-/* ── SPLITTER ────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-splitter::before {
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background:radial-gradient(ellipse 40% 50% at 50% 50%,rgba(192,90,24,.06) 0%,transparent 60%);
-  animation:lm-breathe 7s ease-in-out infinite }
-[data-theme="light"] #view-splitter { position:relative }
-
-/* ── SCHLAF ──────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-schlaf::before {
-  content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:100%;height:40%;pointer-events:none;z-index:0;
-  background:linear-gradient(to top,rgba(122,56,184,.05) 0%,transparent 100%);
-  animation:lm-breathe 11s ease-in-out infinite }
-[data-theme="light"] #view-schlaf { position:relative }
-
-/* ── MENSCHEN ────────────────────────────────────────────────────────────── */
-[data-theme="light"] #view-menschen::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--human),transparent);
-  animation:lm-shimmer 7s linear infinite;pointer-events:none;z-index:1 }
-[data-theme="light"] #view-menschen { position:relative }
-
-/* ── LIGHT MODE: Tab-Indikator ───────────────────────────────────────────── */
-[data-theme="light"] #cin-indicator { display:none!important }
-[data-theme="light"] .v-tab.active::after {
-  display:block!important;height:2px!important;
-  background:var(--world)!important;animation:lm-shimmer 4s linear infinite!important }
-
-/* ── Karten und allgemeine UI im Lightmode ───────────────────────────────── */
-[data-theme="light"] .wk-card,[data-theme="light"] .wv-card {
-  background:var(--surface)!important;border-color:var(--rim)!important }
-[data-theme="light"] .wk-card:hover,[data-theme="light"] .wv-card:hover {
-  border-color:var(--world)!important;background:rgba(8,144,168,.04)!important }
-[data-theme="light"] .sv-card {
-  background:var(--surface)!important;border-color:var(--rim)!important }
-[data-theme="light"] .ft-kapsel {
-  background:var(--surface)!important;border-color:var(--rim)!important }
-
-/* ── Cinema-Mode-Btn im Lightmode ────────────────────────────────────────── */
-[data-theme="light"] #cin-mode-btn {
-  background:none!important;border:1px solid var(--rim)!important;
-  color:var(--t-sub)!important;opacity:.6!important }
-[data-theme="light"] #cin-mode-btn:hover { opacity:1!important }
-
-/* ── Light Mode: SVG Weltkarte, Theater, Wissen-Items ───────────────────── */
-[data-theme="light"] #world-svg > rect:first-of-type,[data-theme="light"] .svg-world-bg { fill:var(--void)!important }
-[data-theme="light"] #world-svg { background:var(--void)!important }
-[data-theme="light"] .zone-label { fill:var(--t-mid)!important }
-[data-theme="light"] .ent-label,[data-theme="light"] .pod-label { fill:var(--t-sub)!important }
-[data-theme="light"] .wiss-item { background:var(--surface)!important;border-color:var(--rim)!important }
-[data-theme="light"] .wiss-item:hover { background:rgba(8,144,168,.04)!important;border-color:var(--world)!important }
-html[data-theme="light"][data-surface-mode="cinema"] #view-theater { background:rgba(244,239,231,.72)!important }
-/* ── LM v2: v-view sehr transparent, Cards lesbar, Canvas amber sichtbar ─── */
-html[data-theme="light"][data-surface-mode="cinema"] .v-view{background:rgba(244,239,231,.15)!important;backdrop-filter:none!important;box-shadow:none!important}
-html[data-theme="light"][data-surface-mode="cinema"] #view-diskurs{background:rgba(244,239,231,.72)!important;backdrop-filter:blur(4px)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #view-theater{background:rgba(244,239,231,.35)!important;backdrop-filter:none!important}
-html[data-theme="light"][data-surface-mode="cinema"] #view-uber{background:rgba(244,239,231,.18)!important;backdrop-filter:none!important}
-html[data-theme="light"][data-surface-mode="cinema"] #left-rail{background:rgba(245,238,225,.88)!important;backdrop-filter:blur(18px)!important;border-right:1px solid rgba(180,140,80,.2)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #topbar{background:rgba(248,242,232,.94)!important;border-bottom:1px solid rgba(180,140,80,.2)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #view-bar{background:rgba(245,238,225,.92)!important;border-bottom:1px solid rgba(180,140,80,.18)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #ftw-ticker{background:rgba(242,235,222,.92)!important;border-bottom:1px solid rgba(180,140,80,.12)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .rv-card{background:rgba(254,251,246,.76)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .sc-card,html[data-theme="light"][data-surface-mode="cinema"] .wk-card,html[data-theme="light"][data-surface-mode="cinema"] .sv-card{background:rgba(254,251,246,.74)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .entity-card{background:rgba(252,248,242,.72)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .wiss-item{background:rgba(252,248,242,.72)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .adm-wesen-card{background:rgba(252,248,242,.70)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mw-blase-wrap{background:rgba(252,248,242,.68)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mw-bereiche{background:rgba(245,238,225,.55)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mw-bereich-karte{background:rgba(248,242,232,.65)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mw-notiz-karte{background:rgba(252,248,242,.68)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .dk-row{background:rgba(252,248,242,.55)!important}
-/* ── Cinema + Light Mode: Topbar, Viewbar, Ticker warm ───────────────────── */
-html[data-theme="light"][data-surface-mode="cinema"] #topbar{background:rgba(240,235,225,.92)!important;backdrop-filter:blur(22px) saturate(130%)!important;border-bottom:1px solid rgba(140,100,60,.2)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #topbar::before{background:linear-gradient(90deg,transparent,rgba(8,144,168,.22) 35%,rgba(10,144,80,.15) 65%,transparent)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #view-bar{background:rgba(232,227,216,.88)!important;backdrop-filter:blur(14px)!important;border-bottom:1px solid rgba(140,100,60,.15)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #ftw-ticker{background:rgba(240,235,225,.85)!important;border-bottom:1px solid rgba(140,100,60,.12)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .ticker-item{color:var(--t-sub)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .ticker-item.ti-live{color:var(--alive)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .v-tab{color:var(--t-mid)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .v-tab.active{color:var(--world)!important;text-shadow:0 0 10px rgba(8,144,168,.25)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .v-tab:hover{background:rgba(8,144,168,.07)!important}
-html[data-theme="light"][data-surface-mode="cinema"] #cin-mode-btn{background:rgba(8,144,168,.06)!important;border:1px solid rgba(8,144,168,.22)!important;color:var(--world)!important}
-/* Classic + Light: Topbar und Ticker normal */
-html[data-theme="light"] #ftw-ticker{background:var(--void)!important}
-html[data-theme="light"] .ticker-item{color:var(--t-dim)!important}
-html[data-theme="light"] .ticker-item.ti-live{color:var(--alive)!important}
-/* ── Light Mode: sc-choice Badges (hardcoded neon-grün unsichtbar auf Creme) */
-[data-theme="light"] .sc-choice{
-  color:var(--alive)!important;
-  background:rgba(10,144,80,.09)!important;
-  border:1px solid rgba(10,144,80,.28)!important}
-/* ── Light Mode: tab-hero Titel — kein dunkelmodus-Glühen */
-[data-theme="light"] .tab-hero-title{text-shadow:none!important}
-/* ── Light Mode: var(--g2) als Textfarbe = #dceadf → unsichtbar auf Creme */
-[data-theme="light"] .scv-stream-motto{
-  color:var(--t-sub)!important;
-  border-bottom-color:var(--rim)!important}
-[data-theme="light"] .mw-notiz-ktitel{color:var(--t-sub)!important}
-[data-theme="light"] .mp-gedanke{color:var(--t-mid)!important}
-[data-theme="light"] .mp-gedanke-meta{color:var(--t-dim)!important}
-/* ── Light Mode: wk-h-card GEPLANT badge — hardcoded dark navy #07122a */
-[data-theme="light"] .wk-h-slug span[style*="07122a"]{
-  background:var(--b9)!important;color:var(--t-sub)!important;
-  border-color:var(--rim)!important}
-/* ── Light Mode: sc-card hover — dunkelmodus teal kaum sichtbar */
-[data-theme="light"] .sc-card:hover{background:rgba(8,144,168,.07)!important}
-/* ── Light Mode: auth-ok box — dunkelmodus-Hintergrund */
-[data-theme="light"] .auth-ok{background:var(--g0)!important;border-color:var(--alive)!important}
-/* ── Light Mode: WESEN - wd-denkstrom inline color:#4ae890 neon */
-[data-theme="light"] .wd-denkstrom{color:var(--t-mid)!important;background:var(--b6)!important}
-[data-theme="light"] .wd-denkstrom.aktiv{border-color:var(--alive)!important;box-shadow:0 0 6px rgba(10,144,80,.15)!important}
-/* ── Light Mode: BLASEN - bf-canvas-wrap blockiert Cinema-Canvas */
-html[data-theme="light"][data-surface-mode="cinema"] #bf-canvas-wrap{background:transparent!important}
-/* ── Light Mode: MENSCHEN - mp-splitter + gedanken (dunklere, wärmere Boxen) */
-[data-theme="light"] .mp-gedanken-strom{background:var(--b9)!important;border-color:var(--b8)!important}
-[data-theme="light"] .mp-gedanke{border-bottom-color:var(--b10)!important;color:var(--t-mid)!important}
-[data-theme="light"] .mp-splitter-item{background:var(--b9)!important;border-color:var(--b8)!important}
-[data-theme="light"] .mp-splitter-typ{background:var(--b8)!important;border-color:var(--b9)!important}
-[data-theme="light"] .mp-splitter-text{color:var(--wesen)!important}
-[data-theme="light"] .mp-splitter-meta{color:var(--t-sub)!important}
-[data-theme="light"] .mp-splitter-typ-n{color:var(--wesen)!important}
-[data-theme="light"] .mp-splitter-typ-l{color:var(--t-sub)!important}
-[data-theme="light"] .mp-spl-badge{color:var(--t-sub)!important}
-/* ── Cinema+Light: MENSCHEN - dunkler Goldton, klar vom Amber-Canvas trennbar */
-html[data-theme="light"][data-surface-mode="cinema"] .mp-gedanken-strom{background:rgba(160,125,65,.92)!important;border-color:rgba(120,90,40,.6)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-gedanke{border-bottom-color:rgba(120,90,40,.3)!important;color:#fff8ec!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-gedanke-meta{color:rgba(255,240,210,.65)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-item{background:rgba(155,120,62,.90)!important;border-color:rgba(120,90,40,.55)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-typ{background:rgba(145,112,55,.88)!important;border-color:rgba(120,90,40,.5)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-typ-n{color:#fff0cc!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-typ-l{color:rgba(255,235,185,.7)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-text{color:#fff8ec!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta{color:rgba(255,240,210,.75)!important}
-html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta span{color:rgba(255,220,160,.9)!important}
-/* ── Light Mode: GRUPPEN - neon/unsichtbare Textfarben + dunkle Hintergründe */
-[data-theme="light"] .gr-section-head{color:var(--t-sub)!important;border-bottom-color:var(--rim)!important}
-[data-theme="light"] .gr-group-name{color:var(--world)!important}
-[data-theme="light"] .gr-detail-title{color:var(--world)!important}
-[data-theme="light"] .gr-topic-title{color:var(--t-bright)!important}
-[data-theme="light"] .gr-post-title{color:var(--t-bright)!important}
-[data-theme="light"] .gr-post-body{color:var(--t-mid)!important}
-[data-theme="light"] .gr-topic-row:hover,[data-theme="light"] .gr-topic-row.aktiv{background:rgba(8,144,168,.07)!important}
-[data-theme="light"] .gr-mini-btn{background:var(--b5)!important;border-color:var(--rim)!important;color:var(--t-mid)!important}
-[data-theme="light"] .gr-mini-btn:hover{background:var(--b9)!important}
-[data-theme="light"] .gr-poll{background:var(--b6)!important;border-color:var(--rim)!important}
-[data-theme="light"] .gr-poll-opt-bar{background:rgba(8,144,168,.08)!important}
-/* ══ END LIGHT MODE ══════════════════════════════════════════════════════════ */
 </style>
 </head>
 <body>
@@ -1559,11 +1068,13 @@ html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta span{colo
   <a href="#leitstand" class="v-tab" data-view="leitstand" data-live="1" data-i18n="tab.leitstand" onclick="switchView('leitstand')">LEITSTAND</a>
   <a href="#uber" class="v-tab active" data-view="uber" data-i18n="tab.uber" onclick="switchView('uber')">WAS IST DAS?</a>
   <div class="v-sep"></div>
+  <a href="#weltstrom" class="v-tab" data-view="weltstrom" data-live="1" data-i18n="tab.weltstrom" onclick="switchView('weltstrom');weltstromInit()">WELTSTROM</a>
   <a href="#raume" class="v-tab" data-view="raume" data-i18n="tab.raume" onclick="switchView('raume')">RÄUME</a>
   <a href="#diskurs" class="v-tab" data-view="diskurs" data-live="1" data-i18n="tab.diskurs" onclick="switchView('diskurs');diskursLaden()">DISKURS</a>
   <a href="#wesen" class="v-tab" data-view="wesen" data-i18n="tab.wesen" onclick="switchView('wesen')">WESEN</a>
   <a href="#denken" class="v-tab" data-view="denken" data-live="1" data-i18n="tab.denken" onclick="switchView('denken');dkstreamInit()">DENKEN</a>
   <a href="#screens" class="v-tab" data-view="screens" data-live="1" data-i18n="tab.screens" onclick="switchView('screens');scrInit()">SCREENS</a>
+  <a href="#gordslider" class="v-tab" data-view="gordslider" style="display:none" data-i18n="tab.gordslider" onclick="switchView('gordslider');gordsliderInit()">GORDSLIDER</a>
   <a href="#theater" class="v-tab" data-view="theater" data-live="1" data-i18n="tab.theater" onclick="switchView('theater')">KOMPOASE</a>
   <a href="#blasen" class="v-tab" data-view="blasen" data-live="1" data-i18n="tab.blasen" onclick="switchView('blasen')">BLASEN</a>
   <a href="#menschen" class="v-tab" data-view="menschen" data-live="1" data-i18n="tab.menschen" onclick="switchView('menschen')">MENSCHEN</a>
@@ -1697,7 +1208,7 @@ html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta span{colo
         </filter>
         <linearGradient id="cg0" x1="165" y1="305" x2="450" y2="122" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2a7acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#3a8acc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg1" x1="165" y1="305" x2="398" y2="310" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#2a7acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#1abaaa" stop-opacity="0.8"/></linearGradient><linearGradient id="cg2" x1="450" y1="122" x2="398" y2="310" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3a8acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#1abaaa" stop-opacity="0.8"/></linearGradient><linearGradient id="cg3" x1="450" y1="122" x2="665" y2="260" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#3a8acc" stop-opacity="0.8"/><stop offset="100%" stop-color="#22bb77" stop-opacity="0.8"/></linearGradient><linearGradient id="cg4" x1="398" y1="310" x2="665" y2="260" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#22bb77" stop-opacity="0.8"/></linearGradient><linearGradient id="cg5" x1="398" y1="310" x2="168" y2="508" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#7755cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg6" x1="398" y1="310" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#1abaaa" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg7" x1="665" y1="260" x2="848" y2="148" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22bb77" stop-opacity="0.8"/><stop offset="100%" stop-color="#cc4422" stop-opacity="0.8"/></linearGradient><linearGradient id="cg8" x1="665" y1="260" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22bb77" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient><linearGradient id="cg9" x1="168" y1="508" x2="625" y2="490" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#7755cc" stop-opacity="0.8"/><stop offset="100%" stop-color="#aa55cc" stop-opacity="0.8"/></linearGradient>
       </defs>
-      <rect class="svg-world-bg" width="1000" height="650" fill="#030609"/>
+      <rect width="1000" height="650" fill="#030609"/>
       <rect width="1000" height="650" fill="url(#bg-grid)"/>
       <rect width="1000" height="650" fill="url(#world-glow)"/>
       <!-- atmosphere lines -->
@@ -2012,7 +1523,7 @@ html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta span{colo
     <div class="dk-metric"><span id="dk-wesen">6</span> Wesen</div>
     <div class="dk-metric"><span id="dk-posts">—</span> Posts</div>
     <div class="dk-metric"><span id="dk-res">—</span> Resonanzen</div>
-    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-06-03</div>
+    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-06-13</div>
   </div>
 </div>
 </div><!-- /view-leitstand -->
@@ -2798,6 +2309,15 @@ html[data-theme="light"][data-surface-mode="cinema"] .mp-splitter-meta span{colo
       </div>
     </div>
   </div>
+</div>
+</div>
+<div id="view-gordslider" class="v-view" style="display:none;overflow:hidden;padding:0;position:relative">
+<style>
+.gord-wrap{width:100%;height:calc(100vh - 48px);overflow:hidden;position:relative}
+.gord-wrap iframe{width:200%;height:200%;transform:scale(0.5);transform-origin:top left;border:none;display:block}
+</style>
+<div class="gord-wrap">
+  <iframe id="gord-iframe" src="/gordslider/" allowfullscreen></iframe>
 </div>
 </div>
 
@@ -3777,7 +3297,7 @@ html[lang="en"] .de-only{display:none}
       <div class="av-sys-row"><span>Räume</span><span>7</span></div>
       <div class="av-sys-row"><span>Systemkörper</span><span>3</span></div>
       <div class="av-sys-row"><span>Organ-Pods</span><span>8</span></div>
-      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-06-03</span></div>
+      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-06-13</span></div>
       <div class="av-sys-row"><span>Inventar</span><span>490 Einträge</span></div>
     </div>
     <div>
@@ -4679,6 +4199,8 @@ html[lang="en"] .de-only{display:none}
     es.onerror = function(){if(conn){conn.textContent='● getrennt';conn.style.color='#e03a2a';}setTimeout(scvConnect,5000);};
     es.onmessage = function(ev){try{scvUpdateCard(JSON.parse(ev.data));}catch(e){}};
   }
+
+  function gordsliderInit() {}
 
   function scrInit() {
     if (!_scvEs) {
@@ -6829,6 +6351,207 @@ html[lang="en"] .de-only{display:none}
     <div class="arch-detail-meta" id="arch-d-meta"></div>
   </div>
 </div>
+<div id="view-weltstrom" class="v-view" style="display:none;flex-direction:column;overflow:hidden">
+<style>
+/* ── WELTSTROM LAYOUT ── */
+.ws-head{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid var(--b5);flex-shrink:0;background:var(--b1b)}
+.ws-title{font-size:.62rem;letter-spacing:.18em;color:var(--ta1);font-family:monospace;text-transform:uppercase}
+.ws-pulse{color:#4ae890;font-size:.5rem;animation:ws-blink 2s ease-in-out infinite;margin-left:2px}
+@keyframes ws-blink{0%,100%{opacity:1}50%{opacity:.2}}
+.ws-total{font-size:.5rem;color:var(--t-sub);font-family:monospace;margin-left:auto}
+
+/* ── FILTER BAR ── */
+.ws-filters{display:flex;gap:6px;padding:8px 16px;border-bottom:1px solid rgba(255,255,255,.04);flex-shrink:0;overflow-x:auto;background:var(--deep)}
+.ws-filter{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:12px;font-size:.52rem;font-family:monospace;cursor:pointer;border:1px solid transparent;white-space:nowrap;transition:all .18s;color:var(--t-sub);background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06)}
+.ws-filter:hover{background:rgba(255,255,255,.06)}
+.ws-filter.ws-active{border-color:currentColor;font-weight:600}
+.ws-filter-count{font-size:.45rem;opacity:.7}
+.ws-f-alle.ws-active{color:var(--ta1)}
+.ws-f-gedanke.ws-active{color:#4ae890}
+.ws-f-wesen.ws-active{color:#b088e8}
+.ws-f-weltklima.ws-active{color:#5ab0c0}
+.ws-f-blase.ws-active{color:#4499aa}
+.ws-f-resonanz.ws-active{color:#e8a840}
+.ws-f-cyberling.ws-active{color:#fb923c}
+.ws-f-schlaf.ws-active{color:#7899cc}
+
+/* ── STREAM ── */
+.ws-stream{flex:1;overflow-y:auto;padding:0}
+.ws-event{display:grid;grid-template-columns:4px 28px 1fr auto;grid-template-rows:auto auto;gap:0 10px;padding:10px 16px 10px 0;border-bottom:1px solid rgba(255,255,255,.025);cursor:default;transition:background .15s;align-items:start}
+.ws-event:hover{background:rgba(255,255,255,.02)}
+.ws-event.ws-new{animation:ws-appear .3s ease-out}
+@keyframes ws-appear{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* left color bar */
+.ws-bar{grid-row:1/3;width:4px;height:100%;min-height:36px;border-radius:0 2px 2px 0;align-self:stretch}
+/* icon */
+.ws-icon{grid-row:1/3;font-size:.85rem;text-align:center;padding-top:1px;align-self:center}
+/* main content */
+.ws-body{grid-column:3;grid-row:1}
+.ws-meta{grid-column:3;grid-row:2;display:flex;align-items:center;gap:8px;margin-top:2px}
+/* right: time */
+.ws-time{grid-column:4;grid-row:1;font-family:monospace;font-size:.48rem;color:var(--t-sub);text-align:right;white-space:nowrap;padding-top:2px}
+
+.ws-cat{display:inline-block;font-size:.44rem;letter-spacing:.1em;font-family:monospace;text-transform:uppercase;padding:1px 5px;border-radius:3px;margin-right:4px;opacity:.8}
+.ws-desc{font-size:.6rem;color:var(--ta1);line-height:1.5;display:inline}
+.ws-actor{font-size:.48rem;font-family:monospace;color:#3a8a5a}
+
+/* per-type colors */
+.ws-t-gedanke .ws-bar{background:#4ae890}
+.ws-t-gedanke .ws-cat{background:rgba(74,232,144,.12);color:#4ae890}
+.ws-t-gedanke .ws-desc{color:#a8e8c0}
+.ws-t-wesen .ws-bar{background:#b088e8}
+.ws-t-wesen .ws-cat{background:rgba(176,136,232,.12);color:#b088e8}
+.ws-t-wesen .ws-desc{color:#c8aaf0}
+.ws-t-weltklima .ws-bar{background:#5ab0c0}
+.ws-t-weltklima .ws-cat{background:rgba(90,176,192,.12);color:#5ab0c0}
+.ws-t-weltklima .ws-desc{color:#8accd8;font-style:italic}
+.ws-t-blase .ws-bar{background:#4499aa}
+.ws-t-blase .ws-cat{background:rgba(68,153,170,.12);color:#4499aa}
+.ws-t-blase .ws-desc{color:#77bbcc}
+.ws-t-resonanz .ws-bar{background:#e8a840}
+.ws-t-resonanz .ws-cat{background:rgba(232,168,64,.12);color:#e8a840}
+.ws-t-resonanz .ws-desc{color:#f0c070}
+.ws-t-cyberling .ws-bar{background:#fb923c}
+.ws-t-cyberling .ws-cat{background:rgba(251,146,60,.12);color:#fb923c}
+.ws-t-cyberling .ws-desc{color:#fdb07a}
+.ws-t-schlaf .ws-bar{background:#7899cc}
+.ws-t-schlaf .ws-cat{background:rgba(120,153,204,.12);color:#7899cc}
+.ws-t-schlaf .ws-desc{color:#aabde0}
+
+.ws-empty{padding:48px 20px;text-align:center;color:var(--t-sub);font-size:.58rem;font-style:italic;grid-column:1/-1}
+</style>
+
+<div class="ws-head">
+  <div class="ws-title" data-i18n="ws.title">WELTSTROM</div>
+  <span class="ws-pulse" id="ws-pulse" style="display:none">●</span>
+  <span class="ws-total" id="ws-total"></span>
+</div>
+
+<div class="ws-filters" id="ws-filters">
+  <span class="ws-filter ws-f-alle ws-active" data-cat="alle" onclick="wsSetFilter(this)">ALLE <span class="ws-filter-count" id="wsc-alle"></span></span>
+  <span class="ws-filter ws-f-gedanke" data-cat="gedanke" onclick="wsSetFilter(this)">💭 GEDANKEN <span class="ws-filter-count" id="wsc-gedanke"></span></span>
+  <span class="ws-filter ws-f-wesen" data-cat="wesen" onclick="wsSetFilter(this)">✉ WESEN <span class="ws-filter-count" id="wsc-wesen"></span></span>
+  <span class="ws-filter ws-f-weltklima" data-cat="weltklima" onclick="wsSetFilter(this)">🌡 WELTKLIMA <span class="ws-filter-count" id="wsc-weltklima"></span></span>
+  <span class="ws-filter ws-f-blase" data-cat="blase" onclick="wsSetFilter(this)">🫧 BLASEN <span class="ws-filter-count" id="wsc-blase"></span></span>
+  <span class="ws-filter ws-f-resonanz" data-cat="resonanz" onclick="wsSetFilter(this)">〰 RESONANZ <span class="ws-filter-count" id="wsc-resonanz"></span></span>
+  <span class="ws-filter ws-f-cyberling" data-cat="cyberling" onclick="wsSetFilter(this)">⚡ CYBERLINGE <span class="ws-filter-count" id="wsc-cyberling"></span></span>
+  <span class="ws-filter ws-f-schlaf" data-cat="schlaf" onclick="wsSetFilter(this)">🌙 SCHLAF <span class="ws-filter-count" id="wsc-schlaf"></span></span>
+</div>
+
+<div class="ws-stream" id="ws-stream">
+  <div class="ws-empty">Lade Ereignisse…</div>
+</div>
+
+<script>
+(function(){
+const CAT_LABEL={gedanke:'Gedanke',wesen:'Wesen',weltklima:'Weltklima',blase:'Blase',resonanz:'Resonanz',cyberling:'Cyberling',schlaf:'Schlaf',sys:'System'};
+let _wsAll=[],_wsLast=null,_wsTimer=null,_wsCat='alle';
+
+function _cat(et){
+  if(et.startsWith('gedanke'))return 'gedanke';
+  if(et.startsWith('wesen')||et.startsWith('resonanz.empfangen'))return 'wesen';
+  if(et.startsWith('weltklima'))return 'weltklima';
+  if(et.startsWith('gedankenblase')||et.startsWith('kompoase'))return 'blase';
+  if(et.startsWith('resonanz'))return 'resonanz';
+  if(et.startsWith('cyberling'))return 'cyberling';
+  if(et.startsWith('schlaf')||et.startsWith('traum'))return 'schlaf';
+  return 'sys';
+}
+
+function _tf(iso){
+  const d=new Date(iso),now=new Date();
+  const m=Math.floor((now-d)/60000);
+  if(m<1)return 'jetzt';
+  if(m<60)return 'vor '+m+'m';
+  const h=Math.floor(m/60);
+  if(h<24)return 'vor '+h+'h';
+  return d.toLocaleDateString('de',{day:'2-digit',month:'2-digit'});
+}
+
+function _row(ev,isNew){
+  const cat=_cat(ev.event_type);
+  const lbl=CAT_LABEL[cat]||cat;
+  const actor=ev.actor?'<span class="ws-actor">'+ev.actor.replace('namelessAI_','#')+'</span>':'';
+  const nc=isNew?' ws-new':'';
+  return '<div class="ws-event ws-t-'+cat+nc+'" data-cat="'+cat+'">'+
+    '<div class="ws-bar"></div>'+
+    '<div class="ws-icon">'+ev.icon+'</div>'+
+    '<div class="ws-body"><span class="ws-cat">'+lbl+'</span><span class="ws-desc">'+ev.beschreibung+'</span></div>'+
+    '<div class="ws-time">'+_tf(ev.created_at)+'</div>'+
+    '<div class="ws-meta">'+actor+'</div>'+
+    '</div>';
+}
+
+function _updateCounts(){
+  const counts={alle:_wsAll.length};
+  _wsAll.forEach(e=>{const c=_cat(e.event_type);counts[c]=(counts[c]||0)+1;});
+  ['alle','gedanke','wesen','weltklima','blase','resonanz','cyberling','schlaf'].forEach(k=>{
+    const el=document.getElementById('wsc-'+k);
+    if(el)el.textContent=counts[k]?'('+counts[k]+')':'';
+  });
+  const tot=document.getElementById('ws-total');
+  if(tot)tot.textContent=_wsAll.length+' Ereignisse';
+}
+
+function _applyFilter(){
+  const s=document.getElementById('ws-stream');
+  if(!s)return;
+  const filtered=_wsCat==='alle'?_wsAll:_wsAll.filter(e=>_cat(e.event_type)===_wsCat);
+  if(filtered.length===0){s.innerHTML='<div class="ws-empty">Keine Ereignisse in dieser Kategorie</div>';return;}
+  s.innerHTML=filtered.map(e=>_row(e,false)).join('');
+}
+
+window.wsSetFilter=function(btn){
+  _wsCat=btn.dataset.cat;
+  document.querySelectorAll('.ws-filter').forEach(b=>b.classList.remove('ws-active'));
+  btn.classList.add('ws-active');
+  _applyFilter();
+};
+
+async function _load(){
+  try{
+    const url='/api/weltstrom?limit='+(_wsLast?'50':'100')+(_wsLast?'&since='+encodeURIComponent(_wsLast):'');
+    const r=await fetch(url);if(!r.ok)return;
+    const d=await r.json();
+    if(d.events.length===0)return;
+    if(!_wsLast){
+      _wsAll=d.events;
+    } else {
+      _wsAll=d.events.concat(_wsAll).slice(0,200);
+    }
+    if(d.events.length>0)_wsLast=d.events[0].created_at;
+    _updateCounts();
+    // re-render visible stream
+    const s=document.getElementById('ws-stream');if(!s)return;
+    const filtered=_wsCat==='alle'?_wsAll:_wsAll.filter(e=>_cat(e.event_type)===_wsCat);
+    if(filtered.length===0){s.innerHTML='<div class="ws-empty">Noch keine Ereignisse</div>';return;}
+    if(!_wsLast||d.events.length===filtered.length){
+      s.innerHTML=filtered.map(e=>_row(e,false)).join('');
+    } else {
+      const newFiltered=d.events.filter(e=>_wsCat==='alle'||_cat(e.event_type)===_wsCat);
+      if(newFiltered.length>0){
+        s.insertAdjacentHTML('afterbegin',newFiltered.map(e=>_row(e,true)).join(''));
+        const all=s.querySelectorAll('.ws-event');
+        if(all.length>150)Array.from(all).slice(150).forEach(el=>el.remove());
+      }
+    }
+    const p=document.getElementById('ws-pulse');if(p)p.style.display='';
+  }catch(e){console.warn('weltstrom',e);}
+}
+
+window.weltstromInit=function(){
+  _wsAll=[];_wsLast=null;_wsCat='alle';
+  document.querySelectorAll('.ws-filter').forEach(b=>b.classList.toggle('ws-active',b.dataset.cat==='alle'));
+  _load();
+  if(_wsTimer)clearInterval(_wsTimer);
+  _wsTimer=setInterval(()=>{
+    if(document.getElementById('view-weltstrom').style.display!=='none')_load();
+  },5000);
+};
+})();
+</script>
+</div>
 <div id="view-cyberlinge" class="v-view" style="display:none">
   <div class="arch-toolbar">
     <div style="font-size:0.65rem;color:var(--t-sub);letter-spacing:0.1em">LEBENS-KAPSELN · <span id="cy-count">0</span></div>
@@ -8423,6 +8146,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
   }
   const UI_TR={
     de:{
+      'tab.weltstrom':'WELTSTROM','ws.title':'WELTSTROM','ws.subtitle':'Ereignisse der Welt — live','ws.loading':'Lade Ereignisse…',
       'tab.leitstand':'LEITSTAND','tab.uber':'WAS IST DAS?','tab.raume':'RÄUME',
       'tab.diskurs':'DISKURS','tab.wesen':'WESEN','tab.theater':'KOMPOASE',
       'tab.blasen':'BLASEN','tab.menschen':'MENSCHEN','tab.meinewelt':'MEINE WELT',
@@ -8431,7 +8155,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
       'tab.einsicht':'EINSICHT',
       'tab.suche':'SUCHE','tab.archaeologie':'ARCHÄOLOGIE','tab.cyberlinge':'CYBERLINGE','tab.splitter':'SPLITTER','tab.zitate':'ZITATE','tab.schatten':'SCHATTEN',
       'mw.gedanken':'Gedanken','mw.innenquellen':'Innenquellen',
-      'tab.gruppen':'GRUPPEN','tab.denken':'DENKEN','tab.screens':'SCREENS',
+      'tab.gruppen':'GRUPPEN','tab.denken':'DENKEN','tab.screens':'SCREENS','tab.gordslider':'GORDSLIDER',
       'denken.title':'Denken — live',
       'gruppen.title':'GRUPPEN',
       'gruppen.desc':'Resonanz-, Splitter- und Projektformationen',
@@ -8514,6 +8238,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
       'klima.exhausted':'erschöpft','klima.seeded':'Keim'
     },
     en:{
+      'tab.weltstrom':'WORLDSTREAM','ws.title':'WORLDSTREAM','ws.subtitle':'Live world events','ws.loading':'Loading events…',
       'tab.leitstand':'CONTROL','tab.uber':'WHAT IS THIS?','tab.raume':'ROOMS',
       'tab.diskurs':'DISCOURSE','tab.wesen':'WESEN','tab.theater':'KOMPOASE',
       'tab.blasen':'GEDANKENBLASENFELD','tab.menschen':'HUMANS','tab.meinewelt':'MY WORLD',
@@ -8522,7 +8247,7 @@ if(_eiEl)_eiObs.observe(_eiEl,{attributes:true});
       'mw.gedanken':'Thoughts','mw.innenquellen':'Inner Sources',
       'tab.einsicht':'INSIGHT',
       'tab.suche':'SEARCH','tab.archaeologie':'ARCHAEOLOGY','tab.cyberlinge':'CYBERLINGS','tab.splitter':'SPLITTER','tab.zitate':'QUOTES','tab.schatten':'SHADOWS',
-      'tab.gruppen':'GROUPS','tab.denken':'THINKING','tab.screens':'SCREENS',
+      'tab.gruppen':'GROUPS','tab.denken':'THINKING','tab.screens':'SCREENS','tab.gordslider':'GORDSLIDER',
       'denken.title':'Thinking — live',
       'gruppen.title':'GROUPS',
       'gruppen.desc':'Resonance, splitter, and project formations',
@@ -11821,11 +11546,11 @@ async function schattenLaden() {
 function switchView(id) {
   activeView = id;
   history.pushState(null, '', '#' + id);
-  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','denken','screens','archaeologie','cyberlinge','splitter','zitate','schatten'];
+  const views = ['leitstand','raume','wesen','theater','blasen','admin','menschen','meinewelt','schlaf','wissen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen','denken','screens','gordslider','archaeologie','cyberlinge','splitter','zitate','schatten','weltstrom'];
   views.forEach(v => {
     const el = document.getElementById('view-'+v);
     const flexViews = ['leitstand','blasen','meinewelt','wissen','menschen','uber','systeme','diskurs','gesetze','forschung','partner','gruppen'];
-    const colViews = ['denken','screens'];
+    const colViews = ['denken','screens','weltstrom'];
     if (el) {
       if (v === id) {
         el.style.display = colViews.includes(v) ? 'flex' : (flexViews.includes(v) ? 'flex' : 'block');
@@ -12952,16 +12677,20 @@ function authAktualisieren() {
   // Tab-Sichtbarkeit: KompOase bleibt sichtbar; nur Theater-Schalter und Admin sind rollenbegrenzt.
   const tabMeinewelt = document.querySelector('.v-tab[data-view="meinewelt"]');
   const tabAdmin = document.querySelector('.v-tab[data-view="admin"]');
+  const tabGordslider = document.querySelector('.v-tab[data-view="gordslider"]');
   const koTheaterWrap = document.getElementById("ko-theater-wrap");
   const bfTheaterWrap = document.getElementById("bf-theater-wrap");
   if (tabMeinewelt) tabMeinewelt.style.display = gueltig ? "" : "none";
   if (tabAdmin) tabAdmin.style.display = (gueltig && role === "admin") ? "" : "none";
+  if (tabGordslider) tabGordslider.style.display = (gueltig && (role === "entity" || role === "admin")) ? "" : "none";
   if (koTheaterWrap) koTheaterWrap.style.display = (gueltig && role === "admin") ? "" : "none";
   if (bfTheaterWrap) bfTheaterWrap.style.display = (gueltig && role === "admin") ? "" : "none";
   // Wenn aktiver Tab ausgeblendet wird → auf leitstand wechseln
   const adminOnly = ["admin"];
-  if (!gueltig && (activeView === "meinewelt" || adminOnly.includes(activeView))) switchView("leitstand");
+  const entityAdminOnly = ["gordslider"];
+  if (!gueltig && (activeView === "meinewelt" || adminOnly.includes(activeView) || entityAdminOnly.includes(activeView))) switchView("leitstand");
   if (gueltig && role !== "admin" && adminOnly.includes(activeView)) switchView("leitstand");
+  if (gueltig && role !== "entity" && role !== "admin" && entityAdminOnly.includes(activeView)) switchView("leitstand");
   // Topbar-Badges: nur wenn eingeloggt
   if (gueltig) { _topDmBadgeLaden(); _dkLadeInboxBadge(); }
   else {
@@ -13170,7 +12899,6 @@ authAktualisieren();
   <a href="/for-ai-systems.html" style="color:#4a2060;text-decoration:none;margin:0 8px">For AI Systems</a>·
   <a href="/llms.txt" style="color:#4a2060;text-decoration:none;margin:0 8px">llms.txt</a>
 </footer>
-
 <script>
 /* ══════════════════════════════════════════════════════════════════════
    FLEXTRAWURST CINEMA MODE — generative animated backgrounds per tab
@@ -14085,6 +13813,7 @@ authAktualisieren();
 
   // ── hook into switchView ──────────────────────────────────────────────
   const tabColors={
+    weltstrom:'#4ae890',
     leitstand:'#10d8f0',uber:'#10d8f0',raume:'#4a9eff',diskurs:'#4a9eff',
     wesen:'#c084fc',denken:'#10f080',screens:'#10d8f0',theater:'#fb923c',
     blasen:'#60a5fa',menschen:'#60a5fa',meinewelt:'#c084fc',schlaf:'#c084fc',
@@ -14141,5 +13870,6 @@ authAktualisieren();
 
 })();
 </script>
+
 </body>
 </html>
