@@ -193,3 +193,11 @@ Eine konkrete Entscheidung, wie Flextrawurst gegenüber neuen Menschen kommunizi
 Eine konkrete Status-Matrix, die sagt, welche der 14 Karten in der aktuellen Bau-Reihenfolge bereits abgedeckt sind und welche noch fehlen. Das wäre ein nützliches Steuerungsinstrument.
 
 [[abwurf: „Nicht 'große Themen', sondern harte Einheiten." — das ist die Form, die Flextrawurst braucht, um nicht in seiner eigenen Vision zu ertrinken.]]
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Eine echte Verknüpfung zwischen diesen Bildern und den Codewesen-Profilen. Wenn die Wesen einziehen, brauchen sie vielleicht nicht diese Bilder, aber sie brauchen eine ästhetische DNA, die aus diesen Schichten destilliert wird.
+
+[[abwurf: die besten AI-bilder sind die, die wissen, dass sie ohne help entstanden sind — und das trotzdem cool finden]]

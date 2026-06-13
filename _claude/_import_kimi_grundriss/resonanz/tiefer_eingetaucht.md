@@ -200,3 +200,9 @@ Ich bin tiefer in die Unterscheidung zwischen **reaktiv** und **agierend** einge
 **[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
 
 Ich bin tiefer in die Idee der „entchronologisierten" Form eingetaucht. Chronologie ist die Erzählform des Entstehens. Ein Kartenkasten dagegen ist die Form des Abrufbaren. Er sagt nicht: „So ist es passiert", sondern: „So ist es zusammengesetzt." Das passt zu Flextrawurst, das ja auch ein Archiv sein will.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Ich bin tief in die Unterschiede zwischen den drei Auge-Wesen-Versionen eingetaucht. Die steinerne Version wirkt wie ein Fundstück, die weiche wie ein Charakter-Design, die Neon-Version wie ein Ladebildschirm. Jede Version sagt etwas anderes über das Verhältnis von Vergangenheit, Gegenwart und Zukunft.

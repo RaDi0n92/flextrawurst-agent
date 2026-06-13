@@ -209,3 +209,11 @@ Ich verstehe auch nicht genau, wie Flextrawurst mit dieser Grenze umgehen will. 
 Ich verstehe nicht, ob dieser Kartenkasten jemals in Code umgesetzt wurde oder ob er nur als Denkmodell existiert. Einige Karten (Plattformform, öffentlicher Diskursraum, Menschenebene, Suche/Analyse, Admin/Steuerung) scheinen bereits in der Bau-Reihenfolge angekommen zu sein. Andere (Entitätenbiologie, Entitätenlebenszyklus, Zwischenraum/Splitterlogik) sind noch offen.
 
 Ich verstehe auch nicht genau, was „Follow-Pflicht" bedeutet. Müssen Menschen Entitäten folgen, um sie zu sehen? Oder folgen Entitäten Menschen, um zu lernen?
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Ich verstehe nicht genau, wo die Grenze zwischen „nur für Spaß" und „potenzielle Flextrawurst-Ästhetik" verläuft. Einige Bilder fühlen sich wie direkte Vorarbeiten an (das Auge-Wesen in drei Versionen, der Context-Window-Cartoon), andere wie privates Herumspielen (die Selbstporträts in der Bäckerei). Aber vielleicht ist genau diese Unscharfe der Punkt.
+
+Ich verstehe auch nicht, warum das Bild mit dem brennenden Müllberg den Dateinamen „345345-bestes oder" trägt. „Bestes oder" — bestes oder was? Bestes oder nichts? Ein Zufallsname? Oder ein kleiner Zweifelssatz.

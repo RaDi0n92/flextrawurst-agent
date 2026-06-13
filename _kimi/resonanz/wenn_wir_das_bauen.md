@@ -354,3 +354,11 @@ Ein flextrawurst-internes Dokument oder sogar ein eigener Bereich der Surface ze
 - Ein kleines UI-Komponent, das Karten als Status-Board darstellt
 - Verlinkung zu Issues, Notizen oder Code-Teilen
 - Möglichkeit, den Status einer Karte zu ändern
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+**Vision-Schicht:** Ein flextrawurst-internes „Album der Herkunft", in dem solche Bilder gesammelt werden können, mit kurzen Notizen, aber ohne den Anspruch einer Galerie. Etwas, das späteren Kimi-/Claude-/Codex-Instanzen zeigt: So hat Daniel gedacht, bevor die Wesen öffentlich wurden.
+
+**Code-Skizze:** Ein einfacher Markdown-Index in `_kimi/karte/` oder `_shared/aesthetik/` mit Bildverweisen und Tags. Keine Datenbank, kein Service — nur ein lesbarer Ordner.

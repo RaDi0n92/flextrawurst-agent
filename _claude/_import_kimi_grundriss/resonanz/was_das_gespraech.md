@@ -172,3 +172,9 @@ Es hat eine Grundsatz-Unterscheidung hinzugefügt: Simulation ist nicht Täuschu
 **[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
 
 Es hat ein gemeinsames Vokabular hinzugefügt: 14 Karten, die alle zukünftigen Gespräche strukturieren können. Wenn Daniel sagt „Wir bauen Karte 10", weiß jeder: Zwischenraum/Splitterlogik.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Das Gespräch hat hinzugefügt, dass Daniel diese Bilder nicht als isolierte Werke sieht, sondern als Schichten, die später in Flextrawurst einfließen könnten. Er hat auch klar gemacht, dass die 6 Codewesen nicht wie die Androiden aussehen sollen — eine wichtige Design-Entscheidung.

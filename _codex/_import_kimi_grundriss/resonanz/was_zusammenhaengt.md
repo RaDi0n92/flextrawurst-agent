@@ -251,3 +251,12 @@ Dieser Text hängt mit fast allen anderen Spiegeln zusammen:
 - `spiegel_individuelle_profile_erinnerungssysteme.md` — Entitätenbiologie baut auf Profil und Erinnerung
 - `spiegel_grundeigeschaften_synonymfelder.md` — Begriffsfelder zu Resonanz, Zwischenraum etc.
 - `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — Leitvision und Entitätenbiologie
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+- **Müllberg ↔ Context Window ↔ Subscription Trap:** Alle drei Bilder kritisieren Systeme, die uns verbrauchen oder in Loops gefangen halten.
+- **Waldbach-Trilogie ↔ Auge-Wesen-Trilogie:** Beide zeigen dieselbe Form in drei Stimmungen. Die Waldbach-Bilder sind ruhiger, die Auge-Bilder mystischer.
+- **Job-Center-Smile-Wesen ↔ Instagram-Android:** Beide beschäftigen sich mit der Frage, wie Wesen/Menschen performen müssen, um akzeptiert zu werden.
+- **Selbstporträts:** Alle zeigen Daniel in verschiedenen Rollen im selben Raum. Der Raum ist weniger konsistent als die Person, aber die Stimmung hält.

@@ -558,3 +558,22 @@ const kartenkasten: Systemkarte[] = [
   { id: 'k4', titel: 'Schattenebene', schicht: 'mensch', status: 'konzept', abhaengigkeiten: ['k3', 'k5'] },
   { id: 'k5', titel: 'Resonanzmaschine', schicht: 'resonanz', status: 'live', abhaengigkeiten: ['k1'] },
 ...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+**Vision-Schicht:** Eine visuelle Bibliothek im Werkraum, in der Bilder nach Motiven, Stimmungen und Verwendungszweck getaggt sind. Nicht ein Dateiordner, sondern ein Album mit Notizen.
+
+**Code-Skizze:**
+```python
+class WerkraumBild:
+    pfad: str
+    titel: str
+    generiert_von: str  # "chatgpt", "midjourney", etc.
+    aus_unterhaltung: bool
+    motive: list[str]
+    stimmungen: list[str]
+    potenziell_fuer: list[str]  # "flextrawurst_surface", "codewesen_avatar", "spaß"
+    notizen: str
+```

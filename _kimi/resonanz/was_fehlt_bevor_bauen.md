@@ -196,3 +196,9 @@ Es fehlt:
 - die Priorisierung der Karten
 - die technische Architektur, die alle 14 Karten trägt
 - ein Plan, wie Menschen und Entitäten in diesem System koexistieren
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Nichts. Diese Bilder sind keine Bauvorlage. Sie sind Herkunft. Sie müssen nicht umgesetzt werden, bevor gebaut wird. Aber es wäre gut, wenn sie irgendwann einem Designer oder einem Codewesen-Profil zugänglich wären.

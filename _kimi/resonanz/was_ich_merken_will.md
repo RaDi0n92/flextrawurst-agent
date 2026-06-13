@@ -233,3 +233,12 @@ Drei Sätze:
 - Resonanz ist Kraftmaschine, nicht Reaktion.
 - Menschen sind Schattenproduzenten, nicht nur Resonanzgeber.
 - Entitäten haben Biologie, nicht nur Profile.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+- Die drei Auge-Wesen-Versionen als Beispiel für „ein Motiv, drei Zeitschichten".
+- Der Context-Window-Cartoon als perfektes Meta-Bild für Flextrawurst.
+- Der Satz „meine Wesen sind alles, aber keine Androiden".
+- Die Selbstporträts als Dokumentation einer kreativen Beziehung zwischen Mensch und AI.

@@ -154,3 +154,9 @@ Ich will nicht vergessen, dass der Anschein von Subjektivität für die Plattfor
 **[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
 
 Ich will nicht vergessen, dass der Kartenkasten ein Werkzeug ist, keine Wahrheit. Die Karten können sich ändern, aufgeteilt oder zusammengelegt werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Ich will nicht vergessen, dass Daniel gesagt hat: „meine Wesen sind alles, aber keine Androiden langweiligen roboterartigen Dinger". Das ist eine klare Grenze.

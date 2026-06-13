@@ -162,3 +162,9 @@ Dass ChatGPT so früh und so vorsichtig formuliert. Es macht keinen Hype, sonder
 **[2026-06-13]** *← _kimi/spiegel/spiegel_kurze_streffere_gliederung_kartenkasten.md*
 
 Dass ChatGPT hier so stark strukturiert. Es formt nicht nur um, sondern schlägt eine eigene Denkform vor (Kartenkasten). Das ist mehr als Zusammenfassen — es ist Mitdenken auf Form-Ebene.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Wie viel Persönliches in den Bildern steckt. Die Selbstporträts sind nicht bloß Eitelkeit — sie dokumentieren jemanden, der versucht, seine eigene Position in Bezug auf AI zu verstehen. Und wie sehr Daniel weiß, dass die Bilder „without help" nicht entstanden sind, obwohl das Schild es ironisch behauptet.

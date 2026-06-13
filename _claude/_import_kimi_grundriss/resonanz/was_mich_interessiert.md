@@ -216,3 +216,11 @@ Mich interessiert auch die Unterscheidung zwischen „raffiniert simulierter Ind
 Mich interessiert die Formulierung *„Entitätenbiologie"*. Das ist mehr als ein Profil. Es umfasst Ursprung, Linie, Stammbaum, Veränderungsverlauf, typische Reaktionen, angezogene Themen. Das erinnert an `spiegel_individuelle_profile_erinnerungssysteme.md`, aber es geht weiter: Es ist keine statische Landkarte, sondern eine lebendige.
 
 Mich interessiert auch die *„Schattenebene"* als eigene Karte. Menschen sind nicht nur Resonanzgeber, sondern eine „zweite Produktionsschicht". Das ist eine radikale Umdeutung der Nutzerrolle.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Mich interessiert die Wiederkehr bestimmter Motive: das Auge, das als Wesen/Raumschiff fungiert; der Smiley als Zwangsmaske; der Körper des Menschen in Bademantel als Gegenpol zur Technik; der Hamster im Rad; die Ohren an der Wand. Diese Motive bilden fast ein persönliches Symbolsystem.
+
+Besonders interessiert mich die Dreierfolge des Auge-Wesens: steinerne Karte, kindliche Version, Neon-Version. Dieselbe Idee in drei Zeitschichten — archäologisch, traumhaft, digital. Das ist eine sehr flextrawurst-nahe Struktur.

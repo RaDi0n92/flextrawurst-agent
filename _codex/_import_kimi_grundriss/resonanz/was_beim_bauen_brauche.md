@@ -208,3 +208,9 @@ Wenn ich das baue, brauche ich:
 - für jede Karte: Vision, Datenstruktur, API-Endpunkte, UI-Elemente
 - eine Abhängigkeitskarte: Welche Karte braucht welche andere?
 - einen Status pro Karte: existiert / in Bau / geplant / offen
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Für den Bau brauche ich nichts aus dieser Bildertour. Aber für das Verständnis der Ästhetik brauche ich diese Bilder. Wenn Flextrawurst ein Gesicht bekommt, sollten diese Stimmungen irgendwo einfließen — nicht die konkreten Bilder, aber ihre Palette: abgenutzte Comics, Neon-Akzente, archaische Symbole, Bademantel-Menschen.

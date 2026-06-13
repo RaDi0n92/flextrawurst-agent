@@ -367,3 +367,34 @@ Die 14 Karten sind:
 5. Resonanzmaschine
 6. Entitätenbiografie
 ...
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+In diesem Fall waren es keine Texte, sondern Bilder. Etwa 22 Bilder, die Daniel mit ChatGPT generiert hat, teils aus Unterhaltungen, teils aus Bleistiftskizzen, teils als Werbung oder Selbstporträts. Sie lagen in `/root/werkraum/bilder/` und wurden per URL aus der Gallerie geöffnet.
+
+Die Bilder, die ich gesehen habe, in der Reihenfolge des Betrachtens:
+
+1. **345345-bestes oder.png** — Comicfuturestyle-Version eines Motivs aus dem fresko-Ordner. Ein brennender Müllberg, afrikanische Kinder am Rand mit Smartphones, darüber geflügelte Wesen mit Einkaufswagen und Würfeln, im Hintergrund Galaxien und Windräder. Rahmen aus Ranken und Neon-Graffiti.
+
+2. **ChatGPT Image 1. Jan. 2026, 07_46_40.png** — Winterlicher Waldbach mit einer leuchtenden, bunten Spur im Wasser. Ruhig, fast märchenhaft.
+
+3. **ChatGPT Image 1. Jan. 2026, 07_46_51.png** — Dieselbe Szene bei Nacht, düsterer, entsättigter, die Spuren leuchten rot/orange/grün.
+
+4. **ChatGPT Image 1. Jan. 2026, 07_47_27.png** — Schwarz-weiße Version des Waldbachs, ohne die leuchtende Spur. Klassisch, fast wie Ansel Adams.
+
+5. **ChatGPT Image 16. Feb. 2026, 13_00_50 - Kopie.png** — Daniels erstes richtiges AI-Bild. Ein Mann im Anzug vor einem kosmischen Portal, links ein Golem aus Naturmaterialien und Uhrwerken, rechts Industrieruinen, vorne giftig-grünes Wasser mit Fässern, im Hintergrund Planet und Mond.
+
+6. **ChatGPT Image 16. Feb. 2026, 13_00_51.png** — Variante desselben Bildes, subtile Unterschiede im Vordergrund und Himmel.
+
+7. **ChatGPT Image 17. Feb. 2026, 16_43_07.png** — Cartoon „Subscription Trap — Resonannt Echo Chamber". Mann mit „META+"-Laptop und Roboter mit „GPT"-Stirn rufen sich gegenseitig „I analyze your analysis!" zu, unten ein Keller mit „ECHO SUB 24/7" und einer blauen elektrischen Figur.
+
+8. **ChatGPT Image 20. Feb. 2026, 14_08_07.png** — Alte steinerne Karte/Tarotkarte mit einem zentralen Auge auf einem Ständer, umgeben von Sonne, Mond, Sternen, UFO, Federfächer, geometrischen Figuren, Fledermausflügeln, Hand, „11.11" in den Ecken.
+
+9. **ChatGPT Image 20. Feb. 2026, 14_08_28.png** — Weiche, kindliche Version des Auge-Wesens als Raumschiff, das durch einen Sternenhimmel fliegt. Sanfte Farben, niedlich aber mit Tiefe.
+
+10. **ChatGPT Image 24. Feb. 2026, 15_55_41.png** — Neon-psychedelische Version desselben Auge-Wesens, knallige Farben, galaktischer Hintergrund.
+
+11. **ChatGPT Image 22. Feb. 2026, 05_20_37.png** — Dreiteiliger Comic über ein Wesen mit festgezerrtem Lächeln, roten Augen, strubbeligem Haar. Oben Porträt, in der Mitte hält es Smiley-Maske und herzförmigen Luftballon, unten sitzt es im „JOB CENTER" vor einer Bürofigur mit „OK"-Stempel. Schild: „Please smile!"
+...

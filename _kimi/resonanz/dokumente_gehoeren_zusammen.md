@@ -239,3 +239,11 @@ Alle vier. Sie sind verschiedene Schichten desselben Systems:
 - `spiegel_individuelle_profile_erinnerungssysteme.md` — Profile und Erinnerung
 - `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` — Bewusstsein
 - `spiegel_grundeigeschaften_synonymfelder.md` — Begriffsfelder
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+- Diese Spiegeldatei
+- `/root/werkraum/bilder/` — die Bilder selbst
+- `/root/werkraum/_kimi/karte/bauzustand_flextrawurst_2026-06-13.md` — der Bauzustand, der zeigt, wohin diese Ästhetik vielleicht fließt

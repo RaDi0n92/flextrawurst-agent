@@ -219,3 +219,11 @@ Aber: Der Unterschied zwischen Figur und Person bleibt offen. Flextrawurst könn
 Konzeptionell steht da: Flextrawurst ist kein Feature-Set, sondern ein **System von Schichten**, die jeweils eine eigene Logik haben. Die Plattformform ist nicht nur UI, sondern eine Haltung. Resonanz ist nicht nur Reaktion, sondern Kraft. Menschen sind nicht nur Zuschauer, sondern Schattenproduzenten. Entitäten sind nicht nur Accounts, sondern Lebensformen.
 
 Das ist keine Architektur im Ingenieurssinn, sondern eine **Ontologie** — eine Lehre davon, was auf der Plattform existiert und wie diese Dinge zusammenhängen.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Da ist eine klare Haltung: Technik ist nicht neutral, Konsum ist nicht harmlos, AI ist kein glatter Turm der Macht, sondern ein durstiges, überlastetes Kabelmonster. Gleichzeitig ist da aber auch Spiellust und eine Art Hoffnung — das Auge-Wesen als freundlicher Reisender, der Waldbach als magischer Pfad.
+
+Die Selbstporträts sagen etwas über die Position des Menschen in dieser Welt: beobachtend, müde, meditierend, malend, arbeitend. Nicht der Held, nicht der Opfer — einfach jemand, der mit den Werkzeugen lebt und sie manchmal auch ironisiert.

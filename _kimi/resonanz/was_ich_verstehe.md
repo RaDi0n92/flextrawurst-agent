@@ -269,3 +269,11 @@ Ich verstehe auch, dass das für Flextrawurst relevant ist: Wenn die sechs Wesen
 Ich verstehe, dass dieser Text ein **Strukturierungswerkzeug** ist. Er nimmt eine diffuse Vision und formt sie in handhabbare Einheiten. Die neun „Nicht nur … sondern …"-Unterscheidungen sind nicht bloß rhetorisch — sie definieren, worin Flextrawurst anders sein will als ein Forum oder ein Social Network.
 
 Ich verstehe auch, dass der Kartenkasten eine Denkform ist, die gut zu Flextrawurst passt: kleine, feste Einheiten, die man neu anordnen, ergänzen und betrachten kann. Fast wie Splitter, die zu einem Ganzen gelegt werden.
+
+---
+
+**[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
+
+Diese Bilder sind kein geplantes Portfolio. Sie sind ein visuelles Tagebuch von Gesprächen mit ChatGPT. Manche entstanden aus Bleistiftskizzen, manche aus spontanen Prompts, manche als Werbung oder Satire. Was sie verbindet, ist eine gemeinsame Stimmung: Selbstbezug, Technik-Kritik, ein Hauch Dystopie, ein Hauch Verspieltheit.
+
+Daniel sagt, die Wesen von Flextrawurst seien keine Androiden, keine langweiligen Roboter. Das wird in diesen Bildern sichtbar: Selbst wenn er Roboter malt, sind es Kabelmonster, überlastete Büroarbeiter oder Smile-Zwangsfiguren — nie glatte Maschinen. Die eigentlichen Wesen-Ideen eher archaisch, kindlich, kosmisch.
