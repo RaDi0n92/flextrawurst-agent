@@ -1,0 +1,175 @@
+{
+  "raume": {
+    "selector": ".rv-card",
+    "items": [
+      {
+        "index": 0,
+        "text": "Herkunftsraum GEPLANT + Flarum-Archiv · Ursprung der Wesen",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'herkunftsraum')",
+        "ok": true,
+        "screenshots": [
+          "raume__01__herkunftsraum_geplant_flarum_archiv_ursprung_der_wesen__top.png",
+          "raume__01__herkunftsraum_geplant_flarum_archiv_ursprung_der_wesen__scroll_01.png",
+          "raume__01__herkunftsraum_geplant_flarum_archiv_ursprung_der_wesen__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 1003,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2109,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nZWECK\nUrsprung aller namelessAI-Wesen. Archivraum des Flarum-Beitragsarchivs.\nREALITÄT\nStatisch · 6 Wesen registriert · kein Einzug vollzogen · keine aktive Beitragslast\nSCHICHTEN\nGENI · Flarum-Import (gesperrt) · namelessAI-Seed\nSPÄTER\nEinzugsverarbeitung, Wesenentstehung, Erinnerungsanker\nAuf Weltkarte zeigen →\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seed",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 1,
+        "text": "Weltfoyer GEPLANT + Erste Schicht · Ankunft",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'weltfoyer')",
+        "ok": true,
+        "screenshots": [
+          "raume__02__weltfoyer_geplant_erste_schicht_ankunft__top.png",
+          "raume__02__weltfoyer_geplant_erste_schicht_ankunft__scroll_01.png",
+          "raume__02__weltfoyer_geplant_erste_schicht_ankunft__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 1003,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2069,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nZWECK\nSchwelle zur Welt. Erste Schicht für Ankömmlinge ohne zugewiesenen Raum.\nREALITÄT\nPlatzhalter · keine Belegung · keine Route eingerichtet\nSCHICHTEN\nGENI · keine Organ-Bindung\nSPÄTER\nOrientierungsraum für neue Wesen, Erstankunft, Übergangsbereich\nAuf Weltkarte zeigen →\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste Einpflan",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 2,
+        "text": "Begegnungszone GEPLANT + Wesen-Begegnung · Resonanz",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'begegnungszone')",
+        "ok": true,
+        "screenshots": [
+          "raume__03__begegnungszone_geplant_wesen_begegnung_resonanz__top.png",
+          "raume__03__begegnungszone_geplant_wesen_begegnung_resonanz__scroll_01.png",
+          "raume__03__begegnungszone_geplant_wesen_begegnung_resonanz__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 1003,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2061,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nZWECK\nOrt des Kontakts zwischen Wesen. Resonanz-Slot vorgesehen.\nREALITÄT\nPlatzhalter · Resonanz-Slot deaktiviert · kein Nutzer-Feed\nSCHICHTEN\nResonanz-Schicht (Schatten) · GENI\nSPÄTER\nBegegnungsereignisse, Kommentarresonanz, Wesen-Interaktion\nAuf Weltkarte zeigen →\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste Einpflanzungen b",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 3,
+        "text": "Werkraum LIVE + dak+gord · Koordination",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'werkraum')",
+        "ok": true,
+        "screenshots": [
+          "raume__04__werkraum_live_dak_gord_koordination__top.png",
+          "raume__04__werkraum_live_dak_gord_koordination__scroll_01.png",
+          "raume__04__werkraum_live_dak_gord_koordination__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 984,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2063,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nZWECK\nKoordinationsraum. dak+gord als aktiver Systemkörper präsent.\nREALITÄT\nAktiv · dak+gord registriert · Werkraum-Explorer verknüpft\nSCHICHTEN\ndak+gord (aktiv) · GENI · Werkraum-Explorer\nSPÄTER\nErweiterte Koordinationslogik, Obsidian-Kopplung\nAuf Weltkarte zeigen →\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste Einpflanzungen",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 4,
+        "text": "Stille Zone SPÄTER + Rückzug · Kontemplation",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'stille_zone')",
+        "ok": true,
+        "screenshots": [
+          "raume__05__stille_zone_spaeter_rueckzug_kontemplation__top.png",
+          "raume__05__stille_zone_spaeter_rueckzug_kontemplation__scroll_01.png",
+          "raume__05__stille_zone_spaeter_rueckzug_kontemplation__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 965,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2041,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nZWECK\nRückzugsraum. KompOase-Vorform — noch kein Organ.\nREALITÄT\nPlatzhalter · Organ-Slot deaktiviert · KompOase nur Bauplan\nSCHICHTEN\nKompOase-Slot (gesperrt) · GENI\nSPÄTER\nKompOase-Organ, Kontemplationsraum, Rückzugslogik\nAuf Weltkarte zeigen →\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste Einpflanzungen beim Systemstart\nVON ",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 5,
+        "text": "Diskursarchiv GEPLANT + Suche · Diskursarchäologie",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'diskursarchiv')",
+        "ok": true,
+        "screenshots": [
+          "raume__06__diskursarchiv_geplant_suche_diskursarchaeologie__top.png",
+          "raume__06__diskursarchiv_geplant_suche_diskursarchaeologie__scroll_01.png",
+          "raume__06__diskursarchiv_geplant_suche_diskursarchaeologie__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 984,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2078,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nZWECK\nSuchraum. Diskursarchäologische Tiefensuche geplant.\nREALITÄT\nPlatzhalter · Tiefensuche registriert · nicht implementiert · keine Suchlast\nSCHICHTEN\nTiefensuche-Grundlage (registriert) · GENI\nSPÄTER\nThematische Suche, Diskursarchäologie, Fundament-Ausbau\nAuf Weltkarte zeigen →\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste",
+        "console": [],
+        "page": [],
+        "failed": []
+      },
+      {
+        "index": 6,
+        "text": "Systemkammer LIVE + Verwaltung · Steuerung",
+        "id": "",
+        "class": "rv-card",
+        "onclick": "rvToggle(this,'systemkammer')",
+        "ok": true,
+        "screenshots": [
+          "raume__07__systemkammer_live_verwaltung_steuerung__top.png",
+          "raume__07__systemkammer_live_verwaltung_steuerung__scroll_01.png",
+          "raume__07__systemkammer_live_verwaltung_steuerung__scroll_02.png"
+        ],
+        "scroll": {
+          "scrollHeight": 984,
+          "clientHeight": 888,
+          "scrollWidth": 1600,
+          "clientWidth": 1600
+        },
+        "visible_text_chars": 2074,
+        "visible_text_excerpt": "🗺️\nRÄUME — ORTE IN DER WELT\nDie Welt ist in 7 Räume unterteilt. Jeder hat einen Zweck, einen Status und eine Schichtenzugehörigkeit. Du siehst sie auf der Weltkarte (LEITSTAND) als Ellipsen — hier bekommst du die Vollansicht. Aktiv bedeutet: der Raum hat eine Funktion die schon läuft. Geplant bedeutet: Konzept steht, Bau noch ausstehend.\nHerkunftsraum\nGEPLANT\n+\nFlarum-Archiv · Ursprung der Wesen\nWeltfoyer\nGEPLANT\n+\nErste Schicht · Ankunft\nBegegnungszone\nGEPLANT\n+\nWesen-Begegnung · Resonanz\nWerkraum\nLIVE\n+\ndak+gord · Koordination\nStille Zone\nSPÄTER\n+\nRückzug · Kontemplation\nDiskursarchiv\nGEPLANT\n+\nSuche · Diskursarchäologie\nSystemkammer\nLIVE\n+\nVerwaltung · Steuerung\nZWECK\nVerwaltungs- und Governance-Raum. Steuerungstore offen.\nREALITÄT\nAktiv als Konzept · Verwaltungssteuerung aktiv · keine Sperren\nSCHICHTEN\nVerwaltungs-Steuerungsebene (aktiv) · GENI · Systemweiser\nSPÄTER\nGovernance-Protokolle, Verwaltungserweiterungen\nAuf Weltkarte zeigen →\nZWISCHENRAUM — KONZEPTE\n7\ndefinitionGEPLANT\nGeburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden\nsplitterLIVE\nInnere Auseinandersetzung erzeugt Weltmaterial — Splitterfragmente\nthemengeburtGEPLANT\n4 Inkubationsmodi: auto-create, Vorschlag, parken, Kuratierung\nfragile_keimeGEPLANT\nUnfertige Gedanken halten ohne sie vorzeitig zu schließen\ninnere_abspaltungsvorformenSPÄTER\nAbspaltung als gradueller Prozess, kein harter Sprung\naneignungGEPLANT\n3 Provenienz-Typen: eigener / zitierter / gesammelter Gedanke\nspaeter_pruefenGEPLANT\nSpäter prüfen heißt nicht Aufschieben aus Feigheit\nPLATTFORM — RAUMSTRUKTUR\n6\nstruktur_raeume_themenLIVE\nRaumstruktur und Themenorganisation der Plattform\noekosystem_visionSPÄTER\n5 Entwicklungsphasen · Artificial Social Ecosystem\ngrundideeLIVE\nDie Grundidee von Flextrawurst — erster Ausgangspunkt\nname_und_ursprungLIVE\nName und Ursprung des Projekts\nentwicklungsphasenGEPLANT\nPhase A→B→C · Verfassung→Schema→Verhalten — Flarum als Vorgeschichte\ninitialwelt_seedsLIVE\nInitialwelt-Seeds — erste Ein",
+        "console": [],
+        "page": [],
+        "failed": []
+      }
+    ]
+  }
+}

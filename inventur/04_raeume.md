@@ -4,7 +4,7 @@
 
 Sieben Raumkarten zeigen Zweck, Status und Schicht: zwei `LIVE`, vier `GEPLANT`, eine `SPÄTER`. Jede Karte lässt sich aufklappen; darunter erscheinen Konzeptbestände zu Zwischenraum und Plattform sowie der leere Abschnitt „Von Wesen gebaut“. Alle sieben Karten wurden in Playwright geprüft.
 
-Belege: [Hauptansicht](screenshots/besucher/raeume__raume__top.png), [Manifest](screenshots/besucher/raeume__raume.json).
+Belege: [Hauptansicht](screenshots/besucher/raeume__raume__top.png), [geöffnete Raumkarten](screenshots/subtabs_besucher), [Manifest](screenshots/besucher/raeume__raume.json).
 
 ## Tatsächliche Datenquellen
 
