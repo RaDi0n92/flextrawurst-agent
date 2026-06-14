@@ -4,6 +4,8 @@
 import json
 import math as _math
 import shutil
+import urllib.parse
+import urllib.request
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -904,6 +906,28 @@ def widmung_ablehnen(wid: str, authorization: str | None = Header(default=None))
         return {"ok": True}
     finally:
         conn.close()
+
+
+_PROXY_ALLOWED_HOST = "217.154.14.29"
+_PROXY_ALLOWED_PORT = 7777
+
+@app.get("/bild-proxy")
+def bild_proxy(url: str = Query(...)):
+    parsed = urllib.parse.urlparse(url)
+    if parsed.hostname != _PROXY_ALLOWED_HOST or parsed.port != _PROXY_ALLOWED_PORT:
+        raise HTTPException(status_code=403, detail="Host nicht erlaubt")
+    if not parsed.path.lower().split("?")[0].endswith((".jpg",".jpeg",".png",".gif",".webp")):
+        raise HTTPException(status_code=400, detail="Kein Bildpfad")
+    try:
+        safe_url = urllib.parse.quote(url, safe="/:@?=&#+ ")
+        safe_url = safe_url.replace(" ", "%20")
+        req = urllib.request.Request(safe_url, headers={"User-Agent": "flextrawurst-proxy/1.0"})
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            content = resp.read()
+            ctype = resp.headers.get_content_type() or "image/jpeg"
+    except Exception:
+        raise HTTPException(status_code=502, detail="Bild nicht erreichbar")
+    return Response(content=content, media_type=ctype, headers={"Cache-Control": "public, max-age=3600"})
 
 
 @app.get("/menschen")
