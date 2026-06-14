@@ -602,7 +602,8 @@ def me(authorization: str | None = Header(default=None)):
                 SELECT u.id, u.username, u.display_name, u.role,
                        u.created_at, u.last_seen, u.meta,
                        p.bio, p.gedankenwelt, p.public_tags,
-                       p.avatar_symbol, p.visibility, p.updated_at
+                       p.avatar_symbol, p.visibility, p.updated_at,
+                       p.meta as profil_meta
                 FROM human_users u
                 LEFT JOIN human_profiles p ON p.user_id = u.id
                 WHERE u.id = %s
