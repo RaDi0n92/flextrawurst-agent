@@ -72,6 +72,21 @@ try:
 except Exception:
     BRIDGE_TOKEN = ""
 
+import hmac as _hmac
+
+def _bridge_auth_ok(request: "Request") -> bool:
+    """Fail-closed Token-Prüfung für die Bridge-Steuerrouten (C-006).
+    Ohne gesetzten BRIDGE_TOKEN sind die Routen gesperrt — identisch zum
+    WebSocket-Handler. Token via X-Bridge-Token oder Authorization: Bearer."""
+    if not BRIDGE_TOKEN:
+        return False
+    sent = request.headers.get("x-bridge-token", "")
+    if not sent:
+        auth = request.headers.get("authorization", "")
+        if auth.startswith("Bearer "):
+            sent = auth[7:].strip()
+    return bool(sent) and _hmac.compare_digest(sent, BRIDGE_TOKEN)
+
 _bridge_ws: "WebSocket | None" = None
 _bridge_info: dict = {}
 _bridge_pending: dict[str, asyncio.Queue] = {}
@@ -1261,6 +1276,8 @@ async def bridge_status():
 
 @app.post("/api/bridge/befehl")
 async def bridge_befehl(request: Request):
+    if not _bridge_auth_ok(request):
+        return JSONResponse({"fehler": "nicht autorisiert"}, status_code=401)
     if _bridge_ws is None:
         return JSONResponse({"fehler": "Bridge nicht verbunden"}, status_code=503)
     body = await request.json()
@@ -1281,7 +1298,9 @@ async def bridge_befehl(request: Request):
 
 
 @app.get("/api/bridge/screenshot")
-async def bridge_screenshot_endpoint():
+async def bridge_screenshot_endpoint(request: Request):
+    if not _bridge_auth_ok(request):
+        return JSONResponse({"fehler": "nicht autorisiert"}, status_code=401)
     if _letztes_desktop_bild is None:
         return JSONResponse({"fehler": "noch kein Screenshot empfangen"}, status_code=404)
     return JSONResponse({"bild": _letztes_desktop_bild, "ts": _letztes_desktop_ts})
@@ -1289,6 +1308,8 @@ async def bridge_screenshot_endpoint():
 
 @app.post("/api/bridge/kontrolle")
 async def bridge_kontrolle_endpoint(request: Request):
+    if not _bridge_auth_ok(request):
+        return JSONResponse({"fehler": "nicht autorisiert"}, status_code=401)
     if _bridge_ws is None:
         return JSONResponse({"fehler": "Bridge nicht verbunden"}, status_code=503)
     body = await request.json()
@@ -1313,7 +1334,9 @@ async def bridge_kontrolle_endpoint(request: Request):
 
 
 @app.post("/api/bridge/screenshot_jetzt")
-async def bridge_screenshot_jetzt():
+async def bridge_screenshot_jetzt(request: Request):
+    if not _bridge_auth_ok(request):
+        return JSONResponse({"fehler": "nicht autorisiert"}, status_code=401)
     if _bridge_ws is None:
         return JSONResponse({"fehler": "Bridge nicht verbunden"}, status_code=503)
     cmd_id = uuid.uuid4().hex[:8]

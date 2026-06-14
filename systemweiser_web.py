@@ -440,7 +440,7 @@ async def api_login(request: Request):
     data = await request.json()
     if _verify_password(data.get("passwort", "")):
         resp = JSONResponse({"ok": True})
-        resp.set_cookie("sw_session", SESSION_TOKEN, httponly=True, max_age=86400 * 30, samesite="lax")
+        resp.set_cookie("sw_session", SESSION_TOKEN, httponly=True, secure=True, max_age=86400 * 30, samesite="lax")
         return resp
     return JSONResponse({"error": "Falsches Passwort"}, status_code=403)
 
