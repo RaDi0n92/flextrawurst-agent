@@ -11,7 +11,7 @@ from typing import Any
 
 import psycopg2
 import psycopg2.extras
-from fastapi import Body, FastAPI, File, Header, HTTPException, Query, UploadFile
+from fastapi import Body, FastAPI, File, Form, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
@@ -24,6 +24,12 @@ ERLAUBTE_EMOJIS = ["😵", "😳", "😩", "😴", "🙄", "😬", "😂", "🤐
 SELBSTMODELLE_DIR = Path("/root/werkraum/innenleben/selbstmodelle")
 UPLOADS_DIR = Path("/root/werkraum/uploads/avatars")
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+
+WIDMUNGEN_DIR = Path("/root/werkraum/uploads/widmungen")
+WIDMUNGEN_DIR.mkdir(parents=True, exist_ok=True)
+
+WESEN_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321']
+WIDMUNG_MAX_BYTES = 666 * 1024
 
 app = FastAPI(title="Welt-API", version="0.1.0")
 # CORS auf bekannte Origins beschränkt (C-007/Kimi-04). Die Surface läuft same-origin
@@ -727,6 +733,177 @@ async def me_avatar_hochladen(
         conn.close()
 
     return {"ok": True, "bild_id": bild_id, "pfad": pfad, "status": "wartend"}
+
+
+# ── Widmungen ──────────────────────────────────────────────────────────────
+
+@app.post("/widmungen")
+async def widmung_hochladen(
+    bild: UploadFile = File(...),
+    wesen_id: str = Form(default=""),
+    widmungstext: str = Form(default=""),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    if not bild.content_type or not bild.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="Nur Bilder erlaubt")
+    content = await bild.read()
+    if len(content) > WIDMUNG_MAX_BYTES:
+        raise HTTPException(status_code=413, detail="Datei zu groß (max 666 KB)")
+    ext = (bild.filename or "bild.jpg").rsplit(".", 1)[-1].lower()
+    if ext not in ("jpg", "jpeg", "png", "gif", "webp"):
+        raise HTTPException(status_code=400, detail="Ungültige Dateiendung")
+    wesen_id = wesen_id.strip() or None
+    if wesen_id and wesen_id not in WESEN_IDS:
+        raise HTTPException(status_code=400, detail="Unbekanntes Wesen")
+    widmungstext = widmungstext.strip()[:88]
+    from uuid import uuid4
+    filename = f"{uuid4()}.{ext}"
+    (WIDMUNGEN_DIR / filename).write_bytes(content)
+    pfad = f"/uploads/widmungen/{filename}"
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "INSERT INTO widmungen (user_id, wesen_id, bild_pfad, widmungstext) VALUES (%s::uuid, %s, %s, %s) RETURNING id",
+                (user_id, wesen_id, pfad, widmungstext),
+            )
+            row = cur.fetchone()
+        conn.commit()
+        return {"id": str(row[0]), "status": "pending"}
+    finally:
+        conn.close()
+
+
+@app.get("/widmungen")
+def widmungen_liste(
+    wesen_id: str | None = Query(default=None),
+    limit: int = Query(default=50, le=100),
+    offset: int = Query(default=0),
+):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            if wesen_id:
+                cur.execute(
+                    "SELECT w.id, w.wesen_id, w.bild_pfad, w.widmungstext, w.created_at, u.display_name "
+                    "FROM widmungen w JOIN human_users u ON u.id = w.user_id "
+                    "WHERE w.status='approved' AND (w.wesen_id=%s OR w.wesen_id IS NULL) "
+                    "ORDER BY w.created_at DESC LIMIT %s OFFSET %s",
+                    (wesen_id, limit, offset),
+                )
+            else:
+                cur.execute(
+                    "SELECT w.id, w.wesen_id, w.bild_pfad, w.widmungstext, w.created_at, u.display_name "
+                    "FROM widmungen w JOIN human_users u ON u.id = w.user_id "
+                    "WHERE w.status='approved' "
+                    "ORDER BY w.created_at DESC LIMIT %s OFFSET %s",
+                    (limit, offset),
+                )
+            rows = cur.fetchall()
+            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
+                     "created_at": r[4].isoformat() if r[4] else None, "von": r[5]} for r in rows]
+    finally:
+        conn.close()
+
+
+@app.get("/widmungen/meine")
+def meine_widmungen(authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT id, wesen_id, bild_pfad, widmungstext, status, created_at FROM widmungen "
+                "WHERE user_id=%s::uuid ORDER BY created_at DESC LIMIT 30",
+                (user_id,),
+            )
+            rows = cur.fetchall()
+            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
+                     "status": r[4], "created_at": r[5].isoformat() if r[5] else None} for r in rows]
+    finally:
+        conn.close()
+
+
+@app.get("/admin/widmungen")
+def admin_widmungen_liste(
+    status: str = Query(default="pending"),
+    limit: int = Query(default=50, le=200),
+    offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="nur admin")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT w.id, w.wesen_id, w.bild_pfad, w.widmungstext, w.status, w.created_at, u.display_name "
+                "FROM widmungen w JOIN human_users u ON u.id = w.user_id "
+                "WHERE w.status=%s ORDER BY w.created_at ASC LIMIT %s OFFSET %s",
+                (status, limit, offset),
+            )
+            rows = cur.fetchall()
+            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
+                     "status": r[4], "created_at": r[5].isoformat() if r[5] else None, "von": r[6]} for r in rows]
+    finally:
+        conn.close()
+
+
+@app.post("/admin/widmungen/{wid}/freischalten")
+def widmung_freischalten(wid: str, authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="nur admin")
+    reviewer_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE widmungen SET status='approved', reviewed_at=NOW(), reviewed_by=%s::uuid "
+                "WHERE id=%s::uuid RETURNING wesen_id, widmungstext, bild_pfad, user_id",
+                (reviewer_id, wid),
+            )
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="nicht gefunden")
+            w_wesen_id, widmungstext, bild_pfad, user_id = row
+            targets = [w_wesen_id] if w_wesen_id else WESEN_IDS
+            for target in targets:
+                cur.execute(
+                    "INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer) "
+                    "VALUES (%s, %s, %s, %s, %s)",
+                    ("widmung.erhalten", "entity", target,
+                     json.dumps({"widmung_id": wid, "user_id": str(user_id),
+                                 "widmungstext": widmungstext, "bild_pfad": bild_pfad}),
+                     "internal"),
+                )
+        conn.commit()
+        return {"ok": True}
+    finally:
+        conn.close()
+
+
+@app.post("/admin/widmungen/{wid}/ablehnen")
+def widmung_ablehnen(wid: str, authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    if claims.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="nur admin")
+    reviewer_id = claims["user_id"]
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE widmungen SET status='rejected', reviewed_at=NOW(), reviewed_by=%s::uuid WHERE id=%s::uuid",
+                (reviewer_id, wid),
+            )
+        conn.commit()
+        return {"ok": True}
+    finally:
+        conn.close()
 
 
 @app.get("/menschen")
