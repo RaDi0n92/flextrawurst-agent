@@ -204,7 +204,7 @@ def build_file_tree(files: list[SourceFile]) -> dict[str, object]:
         for segment in segments[:-1]:
             dirs = node["dirs"]  # type: ignore[index]
             node = dirs.setdefault(segment, {"dirs": {}, "files": []})  # type: ignore[assignment]
-        node["files"].append((segments[-1], file, anchor))  # type: ignore[index]
+        node["files"].append((segments[-1], file, anchor, f"f{i}"))  # type: ignore[index]
     return tree
 
 
@@ -216,23 +216,28 @@ def render_markdown_tree(node: dict[str, object], depth: int = 0) -> list[str]:
     for name in sorted(dirs):
         lines.append(f"{indent}- **{name}/**")
         lines.extend(render_markdown_tree(dirs[name], depth + 1))  # type: ignore[index]
-    for name, file, anchor in sorted(files, key=lambda item: item[0].lower()):
+    for name, file, anchor, html_anchor in sorted(files, key=lambda item: item[0].lower()):
         lines.append(f"{indent}- [[#{anchor}|{name}]]")
     return lines
 
 
 def render_html_tree(node: dict[str, object]) -> str:
-    parts = ['<ol class="path-tree">']
+    parts = ['<ol class="path-tree" role="tree">']
     dirs = node["dirs"]  # type: ignore[index]
     files = node["files"]  # type: ignore[index]
     for name in sorted(dirs):
         child = dirs[name]  # type: ignore[index]
         parts.append(
-            f"<li><details open><summary>{html.escape(name)}/</summary>{render_html_tree(child)}</details></li>"
+            '<li class="path-dir" role="treeitem">'
+            f'<details open><summary><span class="tree-icon tree-folder" aria-hidden="true"></span>'
+            f'<span>{html.escape(name)}</span></summary>{render_html_tree(child)}</details></li>'
         )
-    for name, file, anchor in sorted(files, key=lambda item: item[0].lower()):
+    for name, file, anchor, html_anchor in sorted(files, key=lambda item: item[0].lower()):
         parts.append(
-            f'<li class="path-file"><a href="#{anchor}">{html.escape(name)}</a><span>{html.escape(display_path(file))}</span></li>'
+            f'<li class="path-file" role="treeitem" data-tree-target="{html_anchor}">'
+            f'<a href="#{html_anchor}"><span class="tree-icon tree-document" aria-hidden="true"></span>'
+            f'<span class="tree-file-label">{html.escape(name)}</span></a>'
+            f'<span class="tree-file-path">{html.escape(display_path(file))}</span></li>'
         )
     parts.append("</ol>")
     return "".join(parts)
@@ -358,6 +363,7 @@ def export_editor_script() -> str:
 (() => {
   const nav = document.querySelector('[data-file-nav]');
   const stack = document.querySelector('[data-file-stack]');
+  const tree = document.querySelector('[data-file-tree]');
   const searchInput = document.getElementById('file-search');
   const resultCount = document.getElementById('file-result-count');
   let dragSource = null;
@@ -372,6 +378,29 @@ def export_editor_script() -> str:
 
   function currentSearchTerm() {
     return (searchInput?.value || '').trim().toLowerCase();
+  }
+
+  function updateTreeState(term) {
+    if (!tree) return;
+
+    tree.querySelectorAll('[data-tree-target]').forEach((item) => {
+      const target = item.dataset.treeTarget;
+      const section = target ? document.getElementById(target) : null;
+      item.hidden = !section || section.hidden;
+    });
+
+    const directories = Array.from(tree.querySelectorAll('.path-dir')).reverse();
+    directories.forEach((item) => {
+      const details = item.querySelector(':scope > details');
+      const hasVisibleChild = Array.from(details?.children || []).some((child) => {
+        if (child.tagName === 'SUMMARY') return false;
+        return Array.from(child.children).some((entry) => !entry.hidden);
+      });
+      item.hidden = !hasVisibleChild;
+      if (term && hasVisibleChild && details) {
+        details.open = true;
+      }
+    });
   }
 
   function rebuildNav() {
@@ -412,6 +441,8 @@ def export_editor_script() -> str:
       const section = target ? document.getElementById(target) : null;
       item.hidden = !section || section.hidden;
     });
+
+    updateTreeState(term);
 
     if (resultCount) {
       resultCount.textContent = `${visible} / ${getSections().length}`;
@@ -472,7 +503,7 @@ def export_editor_script() -> str:
 
   function serializeDocument() {
     const clone = document.documentElement.cloneNode(true);
-    clone.querySelectorAll('.file, [data-nav-item]').forEach((node) => {
+    clone.querySelectorAll('.file, [data-nav-item], [data-tree-target], .path-dir').forEach((node) => {
       node.hidden = false;
       node.removeAttribute('hidden');
     });
@@ -523,6 +554,20 @@ def export_editor_script() -> str:
 
     if (event.target.closest('#file-download')) {
       downloadCurrentDocument();
+      return;
+    }
+
+    if (event.target.closest('#tree-expand')) {
+      tree?.querySelectorAll('details').forEach((details) => {
+        details.open = true;
+      });
+      return;
+    }
+
+    if (event.target.closest('#tree-collapse')) {
+      tree?.querySelectorAll('details').forEach((details) => {
+        details.open = false;
+      });
     }
   });
   document.addEventListener('dragstart', handleDragStart);
@@ -643,36 +688,146 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       background: var(--panel);
       padding: 18px;
     }}
+    .tree-panel-head {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }}
     .tree-panel h2 {{
-      margin: 0 0 12px;
+      margin: 0;
+    }}
+    .tree-actions {{
+      display: flex;
+      gap: 8px;
+    }}
+    .tree-actions button {{
+      min-height: 34px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      padding: 0 11px;
+      font: inherit;
+      font-size: .82rem;
+      font-weight: 750;
+      cursor: pointer;
     }}
     .path-tree {{
       margin: 0;
-      padding-left: 22px;
+      padding-left: 20px;
       display: grid;
-      gap: 6px;
+      gap: 4px;
+      list-style: none;
+      position: relative;
+    }}
+    .path-tree .path-tree {{
+      margin: 5px 0 2px 8px;
+      border-left: 1px solid var(--line);
+    }}
+    .path-tree li {{
+      position: relative;
+      margin: 0;
+    }}
+    .path-tree .path-tree > li::before {{
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 13px;
+      width: 13px;
+      border-top: 1px solid var(--line);
     }}
     .path-tree summary {{
+      display: flex;
+      align-items: center;
+      gap: 8px;
       cursor: pointer;
       color: var(--ink);
       font-weight: 700;
+      list-style: none;
+      min-height: 28px;
     }}
-    .path-tree li {{
-      margin: 0;
+    .path-tree summary::-webkit-details-marker {{
+      display: none;
+    }}
+    .path-tree summary::before {{
+      content: "›";
+      width: 11px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1;
+      transform-origin: center;
+      transition: transform .15s ease;
+    }}
+    .path-tree details[open] > summary::before {{
+      transform: rotate(90deg);
+    }}
+    .tree-icon {{
+      display: inline-block;
+      width: 15px;
+      height: 12px;
+      flex: 0 0 auto;
+      position: relative;
+    }}
+    .tree-folder {{
+      border: 1px solid var(--accent);
+      border-radius: 2px;
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+    }}
+    .tree-folder::before {{
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: -4px;
+      width: 7px;
+      height: 4px;
+      border: 1px solid var(--accent);
+      border-bottom: 0;
+      border-radius: 2px 2px 0 0;
+      background: var(--panel);
+    }}
+    .tree-document {{
+      width: 12px;
+      height: 15px;
+      border: 1px solid var(--muted);
+      border-radius: 1px;
+      background: var(--field);
+    }}
+    .tree-document::after {{
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      width: 4px;
+      height: 4px;
+      border-left: 1px solid var(--muted);
+      border-bottom: 1px solid var(--muted);
+      background: var(--panel);
     }}
     .path-tree .path-file {{
-      list-style: disc;
       color: var(--muted);
+      padding: 3px 0;
     }}
     .path-tree .path-file a {{
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: var(--ink);
       text-decoration: none;
       font-weight: 650;
+      min-height: 24px;
     }}
-    .path-tree .path-file span {{
+    .path-tree .path-file a:hover .tree-file-label {{
+      color: var(--accent);
+      text-decoration: underline;
+    }}
+    .path-tree .tree-file-path {{
       display: block;
+      margin-left: 20px;
       color: var(--muted);
-      font-size: .86rem;
+      font-size: .78rem;
+      overflow-wrap: anywhere;
     }}
     .statusbar {{
       display: flex;
@@ -835,8 +990,16 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       <p class="meta">Inhalte sind escaped und werden angezeigt, nicht ausgefuehrt.</p>
     </header>
     <section class="tree-panel">
-      <h2>Ordnerbaum</h2>
-      {render_html_tree(tree)}
+      <div class="tree-panel-head">
+        <h2>Ordnerbaum</h2>
+        <div class="tree-actions">
+          <button type="button" id="tree-expand">Alles öffnen</button>
+          <button type="button" id="tree-collapse">Alles schließen</button>
+        </div>
+      </div>
+      <div data-file-tree>
+        {render_html_tree(tree)}
+      </div>
     </section>
     <section class="statusbar" aria-label="Werkzeuge für den Export">
       <label class="searchbox" for="file-search">
