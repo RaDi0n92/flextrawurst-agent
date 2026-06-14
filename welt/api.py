@@ -3660,21 +3660,21 @@ def gedankenblasen_feld():
                 """
                 (SELECT id, inhalt, pos_x, pos_y, energie, status,
                         thematische_tags, wesen_verwendungen,
-                        user_id, herkunft_sichtbar, 'aktuell' AS bucket
+                        user_id, herkunft_sichtbar, created_at, 'aktuell' AS bucket
                  FROM gedankenblasen
                  WHERE status='aktiv' AND created_at > NOW() - INTERVAL '7 days'
                  ORDER BY energie DESC LIMIT 80)
                 UNION ALL
                 (SELECT id, inhalt, pos_x, pos_y, energie, status,
                         thematische_tags, wesen_verwendungen,
-                        user_id, herkunft_sichtbar, 'alt' AS bucket
+                        user_id, herkunft_sichtbar, created_at, 'alt' AS bucket
                  FROM gedankenblasen
                  WHERE status='aktiv' AND created_at <= NOW() - INTERVAL '7 days'
                  ORDER BY RANDOM() LIMIT 60)
                 UNION ALL
                 (SELECT id, inhalt, pos_x, pos_y, energie, status,
                         thematische_tags, wesen_verwendungen,
-                        user_id, herkunft_sichtbar, 'random' AS bucket
+                        user_id, herkunft_sichtbar, created_at, 'random' AS bucket
                  FROM gedankenblasen
                  WHERE status='aktiv'
                  ORDER BY RANDOM() LIMIT 60)
@@ -3682,24 +3682,27 @@ def gedankenblasen_feld():
             )
             rows = cur.fetchall()
 
-            # Herkunft auflösen (display_name + avatar_symbol wenn sichtbar)
-            user_ids = list({str(r["user_id"]) for r in rows if r["herkunft_sichtbar"] and r["user_id"]})
+            # Herkunft + profil_farbe auflösen (wenn sichtbar)
+            all_user_ids = list({str(r["user_id"]) for r in rows if r["user_id"]})
+            user_ids_visible = list({str(r["user_id"]) for r in rows if r["herkunft_sichtbar"] and r["user_id"]})
             profile_map: dict[str, dict] = {}
-            if user_ids:
+            if all_user_ids:
                 cur.execute(
                     """
                     SELECT u.id::text, u.display_name,
-                           COALESCE(p.avatar_symbol, '?') AS avatar_symbol
+                           COALESCE(p.avatar_symbol, '?') AS avatar_symbol,
+                           COALESCE(p.meta->>'profil_farbe', '#3a9aaa') AS profil_farbe
                     FROM human_users u
                     LEFT JOIN human_profiles p ON p.user_id = u.id
                     WHERE u.id = ANY(%s::uuid[])
                     """,
-                    (user_ids,),
+                    (all_user_ids,),
                 )
                 for row in cur.fetchall():
                     profile_map[row["id"]] = {
                         "display_name": row["display_name"],
                         "avatar_symbol": row["avatar_symbol"],
+                        "profil_farbe": row["profil_farbe"],
                     }
     finally:
         conn.close()
@@ -3712,9 +3715,15 @@ def gedankenblasen_feld():
             continue
         seen.add(rid)
         inhalt = r["inhalt"]
+        uid = str(r["user_id"]) if r["user_id"] else None
+        prof = profile_map.get(uid) if uid else None
         herkunft = None
-        if r["herkunft_sichtbar"] and r["user_id"]:
-            herkunft = profile_map.get(str(r["user_id"]))
+        if r["herkunft_sichtbar"] and prof:
+            herkunft = {
+                "display_name": prof["display_name"],
+                "avatar_symbol": prof["avatar_symbol"],
+                "user_id": uid,
+            }
         result.append({
             "id": rid,
             "inhalt_kurz": inhalt[:50] + ("…" if len(inhalt) > 50 else ""),
@@ -3726,6 +3735,8 @@ def gedankenblasen_feld():
             "thematische_tags": r["thematische_tags"],
             "wesen_verwendungen": r["wesen_verwendungen"],
             "herkunft": herkunft,
+            "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+            "profil_farbe": prof["profil_farbe"] if prof else None,
         })
     return {"blasen": result, "count": len(result)}
 
