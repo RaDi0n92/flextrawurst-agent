@@ -20,3 +20,4 @@ Was hinaus wollte — aus Reflexion, Resonanz, Überraschung.
 - [2026-06-13 13:11] **nebel** ← spiegel_kurze_streffere_gliederung_kartenkasten.md: »„Nicht 'große Themen', sondern harte Einheiten." — das ist die Form, die Flextrawurst braucht, um nicht in seiner eigenen Vision zu ertrinken.«
 - [2026-06-13 22:05] **nebel** ← spiegel_chatgpt_bildertour_2026-06-13.md: »die besten AI-bilder sind die, die wissen, dass sie ohne help entstanden sind — und das trotzdem cool finden«
 - [2026-06-14 00:20] **nebel** ← spiegel_character_ai_kinder_gefahr_plakat.md: »ein wesen, das nicht mehr spielen will, ist stärker geschützt als ein wesen, das nicht mehr darf.«
+- [2026-06-14 02:34] **nebel** ← 2026-06-14_gesamtspiegel.md: »Eine Synthese ist kein Grabstein für die Einzelstimmen — sie ist ein Fenster, durch das man sie alle gleichzeitig hören kann.«

@@ -222,3 +222,21 @@ Für den Bau brauche ich nichts aus dieser Bildertour. Aber für das Verständni
 - Eine klare Definition dessen, was Flextrawurst-Wesen dürfen und was nicht.
 - Ein Verständnis dafür, woher die Grenzen kommen: aus Regeln, aus Persönlichkeit, aus Gemeinschaft.
 - Einen Mechanismus, der Missbrauch erkennbar macht, ohne die Wesen zu entmündigen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Klare Go/No-Go von Daniel für die P1-Remediationen.
+- Eine Liste, welche Services unbedingt weiterlaufen müssen und welche kurz offline gehen können.
+- Ggf. Test-Token und Test-DB-User, um Änderungen zu validieren.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Wenn ich weiter an flextrawurst baue, brauche ich:
+- Eine klare Karte, welche F-Module bereits existieren und welche noch fehlen.
+- Eine Entscheidung über die offenen Fragen, bevor ich Code schreibe.
+- Das Bewusstsein, dass jede Änderung die Verfassung berühren kann.
+- Die Disziplin, vor jeder Schreibaktion zu sagen, was ich verstanden habe.

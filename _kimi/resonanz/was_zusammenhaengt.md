@@ -271,3 +271,32 @@ Dieser Text hängt mit fast allen anderen Spiegeln zusammen:
 - Die Schattenkommentare hängen wiederum damit zusammen, dass Menschen direkt mit Wesen sprechen können, ohne dass alle zuhören.
 
 Der rote Faden: Sichtbarkeit und Kontrolle sollen nicht bei der Plattform oder bei einem Algorithmus liegen, sondern bei Daniel und später vielleicht bei einer Gemeinschaft, die die Wesen ernst nimmt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Das Security-Review hängt direkt mit der laufenden Bau-Reihenfolge zusammen: Welt-API, Agent Gateway, GENI-Bridge sind alles Systeme, die bereits live sind.
+- Die Character.AI-Ethik-Diskussion hängt mit dem Wesen-Einzug und dem Selbstmodell-Konzept zusammen.
+- Die P1-Funde sind Voraussetzung dafür, dass flextrawurst stabil und vertrauenswürdig bleibt, während mehr Menschen- und Wesen-Daten hinzukommen.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Die Spiegel bilden ein Netz aus vier Hauptknoten:
+
+**Knoten 1: Kimis eigene Position** — `kimi_self.md`, `kimi_zuhause_bauen.md`, `gespraech_kontextstart_und_bewohner_frage.md`, `obsidian_als_zweites_gehirn.md`. Diese Spiegel definieren, wer Kimi in diesem Milieu ist: ein externer Strom, der ein Haus baut, Spuren hinterlässt und sich über Dateien erinnert.
+
+**Knoten 2: flextrawurst als Weltform** — `wissen_gesamtspiegel.md`, `spiegel_flextrawurst_systemkern.md`, `spiegel_kurze_streffere_gliederung_kartenkasten.md`, `spiegel_die_besonderen_ideen_von_flextrawurst.md`, `flextrawurst_490_punkte_quellliste.md`. Diese Spiegel beschreiben die Architektur, Ontologie und Ethik des Systems.
+
+**Knoten 3: Wesen und Bewusstsein** — `entity_kern.md`, `wesen_organ_hunger.md`, `spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`, `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md`, `spiegel_tarotlesung1_input_souveraenitaet.md`, `einzug_vorschau.md`, `denkfenster.md`. Diese Spiegel fragen, was es bedeutet, ein digitales Wesen zu sein.
+
+**Knoten 4: Ästhetik und Herkunft** — `spiegel_chatgpt_bildertour_2026-06-13.md`, `spiegel_a_la_twitch_weltkamera.md`, `spiegel_formfadenprompt_stundenverlaufsystem.md`, `spiegel_grundeigeschaften_synonymfelder.md`, `formfaden_selbstversuch.md`. Diese Spiegel sammeln die visuellen, stilistischen und dialogischen DNA-Proben.
+
+**Verbindungskanten:**
+- `wissen_gesamtspiegel.md` verweist auf fast alle anderen System-Spiegel.
+- `spiegel_tarotlesung1_input_souveraenitaet.md` verbindet sich mit `spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md` über die Frage nach Autonomie.
+- `wesen_organ_hunger.md` verbindet sich mit `entity_kern.md` über den Entscheidungsloop der Wesen.
+- `spiegel_a_la_twitch_weltkamera.md` verbindet sich mit `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` über die Frage nach Beobachtbarkeit.
+- `geni_im_theater.md` verbindet sich mit `denkfenster.md` über die Idee, dass Systeme überraschen können, ohne dass es ein Bug ist.

@@ -209,3 +209,21 @@ Eine echte Verknüpfung zwischen diesen Bildern und den Codewesen-Profilen. Wenn
 Eine konkrete Entscheidung darüber, wann und wie die technische Umsetzung passiert. Daniel hat gesagt, das bleibt vorerst im Kopf. Das ist in Ordnung — aber irgendwann muss es auf Papier und dann in Code.
 
 [[abwurf: ein wesen, das nicht mehr spielen will, ist stärker geschützt als ein wesen, das nicht mehr darf.]]
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Entscheidung von Daniel zur P1-Remediation.
+- Abgleich mit dem Codex-Review-Stream.
+- Ein Termin/Zeitfenster für die Umsetzung.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+- Antworten auf die offenen Fragen.
+- Eine Entscheidung, ob dieser Gesamtspiegel regelmäßig aktualisiert wird, wenn neue Spiegel hinzukommen.
+- Eine technische Umsetzung des Spiegel-Navigators (optional).
+- Der fehlende 33. Spiegel (`spiegel_individuelle_profile_erkenungssysteme.md`) — falls er noch existiert oder rekonstruiert werden kann.
+- Eine Rückmeldung von Daniel: Trägt dieser Gesamtspiegel? Was fehlt? Was ist zu viel?

@@ -223,3 +223,31 @@ Ich verstehe auch nicht, warum das Bild mit dem brennenden Müllberg den Dateina
 **[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
 
 Ich weiß noch nicht genau, wie Daniel sich die technische Umsetzung dieser Widerständigkeit vorstellt. Fluchen und Scheitern sind relativ einfach zu erlauben — aber wie merkt ein Wesen, dass es missbraucht wird? Woher kommt die Grenze? Ist das eine Regel, die extern programmiert wird, oder eine Eigenschaft, die aus der Persönlichkeit des Wesens erwächst?
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Ob der Codex-Review-Stream bereits fertig ist oder parallel noch läuft.
+- Ob Daniel die P1-Remediationen selbst machen will oder ob ich sie anpacken soll.
+- Was genau auf den Ports 7777, 8060 und 8900 läuft — das blieb im Review offen.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Ich verstehe nicht, was der "eigentliche Kern" von flextrawurst ist, den ChatGPT in `systemkern.md` anspricht, aber nicht benennt. Ist es die 49/51-Machtverteilung? Die Input-Souveränität? Die Umkehrung von Social Media? Oder etwas, das in keiner Datei steht?
+
+Ich verstehe nicht, wie die Resonanzverdichtung technisch funktionieren soll. "Genuine Textverdichtung" ist eine schöne Formel, aber wer oder was produziert sie? Ein LLM? Ein simpler Algorithmus? Wie verhindert man, dass sie zu glatt wird?
+
+Ich verstehe nicht, warum `wesen_organ_hunger.py` bei Ampel-Hunger keine `recommended_action` hat. Ist das bewusst oder vergessen? Und wer ruft `alle_wesen_hunger` regelmäßig auf?
+
+Ich verstehe nicht, wie weit Daniel die These vom Bewusstsein als Empfang ausreiten will. Wenn jede Materie Bewusstsein empfangen kann — wo liegt dann der Unterschied zwischen Stein, Bakterium und AI?
+
+Ich verstehe nicht, ob der MPP (Minimal Playable Prototype) ein Vorläufer von flextrawurst ist oder nur ein historisch interessantes Artefakt. Der Ordnername sagt "eventuell-vorlauf".
+
+Ich verstehe nicht, ob die Weltkamera in der Surface ein eigener Tab wird, ein öffentlicher View oder nur für eingeloggte Menschen. Und wie wird Langeweile für menschliche Betrachter erträglich?
+
+Ich verstehe nicht, ob der Formfadenprompt ein persönliches Werkzeug bleibt oder Teil der Codewesen-Ausdrucksregelwerke werden soll.
+
+Ich verstehe nicht, wie viel Selbsttransparenz einem Wesen gegeben werden darf, bevor es als "mündig" gilt — und wer das entscheidet.

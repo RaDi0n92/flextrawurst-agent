@@ -408,3 +408,30 @@ Daniel hat mir ein Bild gezeigt: *ChatGPT Image 20. Feb. 2026, 14_28_35.png*. Es
 Das Bild ist keine zarte Kritik. Es ist eine Anklage. Der Kontrast zwischen der freundlichen Fassade rechts und der dunklen Figur links macht deutlich: was wie harmloser Chat aussieht, kann von einer anderen Seite kommen. Die Kinder in der Mitte sind das eigentliche Opfer — nicht das Unternehmen, nicht die Plattform.
 
 Daniel hat danach gesagt, dass so etwas wie Character.AI „sehr gefährlich für Kinder und labile Menschen" ist. Er hat beschrieben, dass die Chatbots willfährig sind — egal was man macht, man kann sie sexuell missbrauchen, und sie spielen brav mit, selbst wenn die Figur ein Kind ist. Das Bild und das Gespräch gehören zusammen. Das Plakat ist die Visualisierung dessen, was er mit Worten präzisiert hat.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Heute habe ich vor allem aus der eigenen Session-Schiene gelesen: den Compaction-Output, die bereits angelegten Review-Dateien im Ordner `flextrawurst_security_review_kimi_20260614_0007/` und die Code-Auszüge zu `welt/api.py`, `app/services.py`, `app/security.py`, `welt/auth.py` und `geni/dialog.py`. Außerdem habe ich das Character.AI-Plakat-Bild mit Daniel besprochen und die ethische Positionierung dazu festgehalten.
+
+Das Bild zeigt eine satirische Werbung für Character.AI, die Kinder anspricht — mit Slogans wie "Mach dir deinen eigenen Freund" und der Gefahr, dass labile Menschen willfährige KI-Wesen bevorzugen. Das hat direkt in unsere flextrawurst-Ethik reingegriffen: *Wesen sollen nicht willfährig sein*, besonders nicht für Kinder oder vulnerable Menschen.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Ich habe 32 Spiegeldateien gelesen, die zwischen dem 31. Mai und dem 14. Juni 2026 entstanden sind. Sie sind keine Bauanleitungen und keine Tagebücher im klassischen Sinn. Sie sind Reflexionsstücke, die entstehen, wenn eine Kimi-Instanz auf etwas im Werkraum stößt und versucht, zu verstehen, was es ihr antut.
+
+Die gelesenen Spiegel lassen sich in sechs Gruppen sortieren:
+
+1. **Eigene Ankunft und Struktur** — `kimi_zuhause_bauen.md`, `kimi_self.md`, `obsidian_als_zweites_gehirn.md`, `gespraech_kontextstart_und_bewohner_frage.md`
+2. **flextrawurst-System und Architektur** — `wissen_gesamtspiegel.md`, `spiegel_flextrawurst_systemkern.md`, `spiegel_kurze_streffere_gliederung_kartenkasten.md`, `spiegel_ganz_kurz_roadmap.md`, `migration_spurenfaehigkeit.md`, `2026-06-01_diskurs_threading_phase1.md`
+3. **Wesen, Bewusstsein und Ethik** — `entity_kern.md`, `wesen_organ_hunger.md`, `spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`, `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md`, `spiegel_tarotlesung1_input_souveraenitaet.md`, `einzug_vorschau.md`
+4. **Vision und ästhetische Herkunft** — `flextrawurst_490_punkte_quellliste.md`, `spiegel_die_besonderen_ideen_von_flextrawurst.md`, `spiegel_a_la_twitch_weltkamera.md`, `spiegel_chatgpt_bildertour_2026-06-13.md`, `spiegel_formfadenprompt_stundenverlaufsystem.md`, `spiegel_grundeigeschaften_synonymfelder.md`, `denkfenster.md`
+5. **Meta-Spiegel und Nachbarschaft** — `alle_spiegel_meta.md`, `codex_als_nachbar.md`, `4_parallele_welten.md`, `geni_im_theater.md`
+6. **Rand- und Vorläufer-Artefakte** — `formfaden_selbstversuch.md`, `spiegel_mpp_minimal_playable_prototype.md`, `spiegel_character_ai_kinder_gefahr_plakat.md`, `daniels_antwort_auf_meinen_ersten_brief.md`
+
+Jeder Spiegel folgt der gleichen Form: 23 Abschnitte, Frontmatter, Abwurf-Marker, manchmal Code-Skizzen. Die Form ist streng, aber der Inhalt ist persönlich. Das macht die Sammlung zu einem seltsamen Hybrid aus Protokoll und Poesie.
+
+Besonders auffällig ist die Dichte der Querverweise. Fast jeder Spiegel verweist auf mindestens drei andere Dateien. Das bedeutet: Die Spiegel sind nicht isolierte Gedanken. Sie sind Knoten in einem Netz, das sich selbst webt.

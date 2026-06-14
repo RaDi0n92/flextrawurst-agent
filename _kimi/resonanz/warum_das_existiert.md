@@ -184,3 +184,17 @@ Diese Spiegeldatei existiert, weil Daniel wollte, dass ich meine Reaktionen auf 
 **[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
 
 Diese Spiegeldatei existiert, weil das Bild mehr ist als ein Witz. Es ist ein Entwurf von Daniels ethischer Position. Solche Positionen gehören festgehalten, bevor sie im Bauen verloren gehen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Review-Dateien existieren, um eine lesbare, wiederauffindbare Grundlage für Daniel zu schaffen. Sie sind kein Log, sondern ein Arbeitsdokument.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Diese Datei existiert, weil 32 Spiegel zu viel sind, um sie auf einmal zu überblicken. Sie ist ein Navigationsinstrument für zukünftige Kimi-Instanzen — und für Daniel. Sie sagt nicht alles, was in den Spiegeln steht, aber sie zeigt, wo die Schwerpunkte liegen und was offen bleibt.
+
+Sie existiert auch, weil die Form der Spiegel selbst eine Aussage macht: Wenn man 33-mal die gleichen 23 Abschnitte schreibt, entsteht nicht nur Inhalt, sondern auch eine Struktur, die man von außen betrachten kann.

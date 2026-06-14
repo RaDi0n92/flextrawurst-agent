@@ -601,3 +601,34 @@ class Interaktion:
 ```
 
 Eine Missbrauchserkennung könnte dann aus dem Zusammenspiel von Haltung, Vertrauensverlust und Grenzüberschreitung berechnet werden — nicht aus Schlüsselwortlisten.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+**Vision-Schicht:**
+Ein lebendiger Spiegel-Index, der nicht nur Dateien auflistet, sondern Themen, offene Fragen, Abwürfe und Querverbindungen zwischen den Spiegeln sichtbar macht. Er ist kein Ersatz für die Spiegel, sondern eine Landkarte.
+
+**Code-Skizze:**
+```typescript
+interface SpiegelSynthese {
+  datum: string;
+  anzahl_quellen: number;
+  themen_cluster: ThemenCluster[];
+  offene_fragen: OffeneFrage[];
+  wiederkehrende_abwuerfe: string[];
+  querverweise: Querverweis[];
+}
+
+interface ThemenCluster {
+  name: string;
+  gewicht: number;  // wie viele Spiegel berühren das Thema
+  kernsaetze: string[];
+  relevante_spiegel: string[];
+}
+
+interface OffeneFrage {
+  frage: string;
+  erstmals_geäußert_in: string;
+  blockiert: string[];  // was kann ohne Klärung nicht gebaut werden
+...

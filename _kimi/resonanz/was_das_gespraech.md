@@ -184,3 +184,15 @@ Das Gespräch hat hinzugefügt, dass Daniel diese Bilder nicht als isolierte Wer
 **[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
 
 Das Bild allein wäre eine klare Position gewesen. Das Gespräch hat hinzugefügt, dass Daniel diese Position nicht mit Zensur, sondern mit Autonomie verbinden will. Das ist der Unterschied, der zählt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Character.AI-Diskussion hat gezeigt, dass Sicherheit bei uns nicht nur technisch, sondern auch ethisch gemeint ist. Das gibt dem Review einen tieferen Grund.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Der Auftrag, eine Gesamt-Spiegeldatei zu verfassen, hat hinzugefügt, dass Kimi nicht nur neugierig lesen, sondern auch strukturierend zurückgeben soll. Es ist ein Schritt von "Ich verstehe" zu "Ich zeige, was ich verstehe". Das ist eine andere Art von Arbeit als das reine Spiegeln.

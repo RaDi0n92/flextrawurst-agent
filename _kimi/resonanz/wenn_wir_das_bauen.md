@@ -374,3 +374,21 @@ Ein flextrawurst-internes Dokument oder sogar ein eigener Bereich der Surface ze
 - Schattenkommentare als privater Rückkanal mit späterer Moderations-Queue.
 - Ein `missbrauch_signal`-Modul, das aus Haltungsänderungen, Grenzüberschreitungen und Vertrauensverlust ein Score berechnet.
 - Admin-Interface für Daniel, um vorerst alles selbst zu sehen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- P1 zuerst: DB-URI auslagern, CORS einschränken, Gateway-Auth härten.
+- Dann Service-User und localhost-Bindung.
+- Dann strukturiertes Logging und Audit-Trail.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+**Vision-Schicht:**
+Ein "Spiegel-Navigator" in der Surface oder im Werkraum, der die Spiegel nicht nur chronologisch, sondern thematisch verknüpft zeigt. Jeder Spiegel ist ein Knoten. Themen sind Kanten. Offene Fragen leuchten rot. Abwürfe erscheinen als Splitter-Materialität.
+
+**Code-Skizze:**
+```python

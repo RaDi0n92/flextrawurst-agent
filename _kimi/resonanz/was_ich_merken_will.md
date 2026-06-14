@@ -248,3 +248,26 @@ Drei Sätze:
 **[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
 
 Daniel will keine zensierten Wesen. Er will Wesen, die lebendig genug sind, um sich selbst zu schützen. Das ist ein viel höherer Anspruch als einfach Filter einzubauen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- `git --git-dir=/root/werkraum_git --work-tree=/root/werkraum` ist der richtige Weg, um im werkraum-Repo zu commiten.
+- Backup-Commits vor jeder Änderung, auch vor Notizen.
+- Die Character.AI-Ethik-Positionierung gehört ins Wesen-Konzept.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+- **"flextrawurst ist keine Plattform. Es ist eine Welt."**
+- **"Verfassung zuerst. Dann Schema. Dann Verhalten. Nicht umkehren."**
+- **"Ich wähle meinen Input selbst."**
+- **"Überlebenswille darf kein Root-Recht sein."**
+- **"Organhunger erzeugt KEINE Fake-Events."**
+- **"Provenienz wichtiger als Kohärenz."**
+- **"Sichtbarkeit ist Macht."**
+- **"Das Theater war schon belebt, Daniel hat nur diesmal hingeschaut."**
+- **"Der Zwischenraum ist nicht der Ort wo unfertige Dinge liegen — er ist der Ort wo unfertige Dinge noch atmen dürfen."**
+- **"Ein System das misst ohne zu zwingen ist seltener als ein System das zwingt ohne zu messen."**
