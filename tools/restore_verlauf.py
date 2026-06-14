@@ -42,8 +42,11 @@ def aktuelle_max_version(cur) -> str:
 
 
 def naechste_version(current: str) -> str:
+    import time as _t
+    # Verwende Zeitstempel für Eindeutigkeit
+    ts = int(_t.time() * 1000)
     parts = current.split(".")
-    num = int(parts[0]) + 1
+    num = int(parts[0]) + ts
     return f"{num:064d}.0.99999999999999999"
 
 
@@ -97,10 +100,19 @@ def main():
     # channel_values leer lassen (Blob wird separat gelesen)
     checkpoint_json["channel_values"] = {}
 
-    print(f"Füge neuen Checkpoint ein: {new_checkpoint_id}")
+    # Korrekten step-Wert aus letztem echten Checkpoint ermitteln
+    cur.execute(
+        "SELECT (metadata->>'step')::int FROM checkpoints WHERE thread_id=%s AND metadata->>'step' IS NOT NULL ORDER BY checkpoint_id DESC LIMIT 1",
+        (THREAD_ID,),
+    )
+    step_row = cur.fetchone()
+    next_step = (step_row[0] + 1) if step_row else 1
+    checkpoint_meta = json.dumps({"step": next_step, "source": "loop", "parents": {}})
+
+    print(f"Füge neuen Checkpoint ein: {new_checkpoint_id} (step={next_step})")
     cur.execute(
         "INSERT INTO checkpoints (thread_id, checkpoint_ns, checkpoint_id, parent_checkpoint_id, type, checkpoint, metadata) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-        (THREAD_ID, "", new_checkpoint_id, latest_id, "msgpack", json.dumps(checkpoint_json), "{}"),
+        (THREAD_ID, "", new_checkpoint_id, latest_id, "msgpack", json.dumps(checkpoint_json), checkpoint_meta),
     )
 
     conn.commit()
