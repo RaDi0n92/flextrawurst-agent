@@ -1,4 +1,4 @@
-﻿Created by trial version of DocuFreezer
+Created by trial version of DocuFreezer
 
 Ja — wir können das kleinschrittig machen.
 Aber ich muss eine Sache sauber sagen: Bei der hochgeladenen .doc-Datei ist die Textauslese

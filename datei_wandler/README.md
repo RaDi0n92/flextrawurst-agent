@@ -9,6 +9,8 @@ Kleiner Werkraum-Webservice fuer gemischte Datei-Exporte.
 - Ausgabe als Offline-HTML, Markdown oder beides als ZIP.
 - HTML-Dateien wahlweise als Quelltext, als extrahierter Markdown oder beides behandeln.
 - Inhalte werden escaped und nicht ausgefuehrt.
+- Offline-HTML bekommt eine Suche, Verschiebe-Buttons und einen Download der aktuellen Reihenfolge.
+- Markdown-Export baut ein Verzeichnis und erkennt einfache Verweise zu anderen ausgewählten Dateien.
 
 ## Start
 

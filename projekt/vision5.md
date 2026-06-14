@@ -1,4 +1,4 @@
-﻿Created by trial version of DocuFreezer
+Created by trial version of DocuFreezer
 
 Hier ist deine Vision als ein Ort, durch den du hindurchgehen kannst — destilliert aus den 
 hochgeladenen Docs/PDFs/ODTs (und ihren wiederholten „nein, nicht wie eine normale 

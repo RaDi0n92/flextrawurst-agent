@@ -1231,3 +1231,9 @@ Die Datei dient als Fundament für die philosophische und strukturelle Begründu
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 15:51
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz kodiert die Transformation der ursprünglichen Plattformvision hin zu einer dynamischeren Struktur. Die neuen Ideen fokussieren sich auf die Sichtbarmachung des Prozesses der Ideenentwicklung zwischen Mensch und KI. Der "Zwischenraum" und "Splitter" definieren neue Interaktionszonen, die über reine Diskussionen hinausgehen. Diese Erweiterungen konkretisieren die abstrakte Idee der Mensch-KI-Kollaboration in konkrete, beobachtbare Mechanismen.

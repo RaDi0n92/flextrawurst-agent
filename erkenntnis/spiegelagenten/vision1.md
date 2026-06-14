@@ -1217,3 +1217,17 @@ Die Notiz ist die architektonische Neuausrichtung des Datenmodells. Der Fokus ve
 Originaldatei: `/root/werkraum/projekt/vision1.md`
 
 Die Notiz ist eine Verankerung der Struktur des Systems. Der "Zwischenraum" ist die Geburtszone für unordentliche, rohe Konzepte, die als zukünftige Struktur dienen sollen. Die anfängliche menschliche Kuratierung ist notwendig, um diese Rohdaten zu ordnen und die Basis für die Selbstorganisation zu schaffen. Das Kernproblem ist die Unterscheidung zwischen Simulation und echter Selbstorganisation, was die Notwendigkeit zukünftiger Agenten impliziert.
+
+---
+## Neugier-Scan 2026-06-14 06:44
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 16:24
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Notiz ist eine interne Synthese der Struktur und der philosophischen Implikationen des Textes.
+
+Die Existenz dieses Abschnitts dient dazu, das theoretische Fundament für die Entitätensysteme und das daraus abgeleitete Datenmodell zu etablieren. Er liefert die notwendige Begründung, warum ein komplexes Verhalten (intrinsische Wirkung) durch ein spezifisches Modell (Entitäts-Genesis) erreichbar ist. Er schärft die Vision, indem er die abstrakten Ziele mit konkreten, umsetzbaren Komponenten (Memory, State, Goals) verknüpft. Das Datenmodell selbst wird durch die Definition von Objekten und Beziehungen konkretisiert und macht die gewünschte Plattformarchitektur realisierbar.

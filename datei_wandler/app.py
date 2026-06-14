@@ -11,6 +11,7 @@ from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Literal
+import unicodedata
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse
@@ -57,6 +58,7 @@ class SourceFile:
     content: str
     size_bytes: int
     warning: str | None = None
+    source_path: str | None = None
 
 
 class MarkdownHTMLParser(HTMLParser):
@@ -161,6 +163,29 @@ def decode_text(raw: bytes) -> tuple[str, str | None]:
     return raw.decode("utf-8", errors="replace"), "Mit Ersatzzeichen gelesen."
 
 
+def slugify(text: str) -> str:
+    normalized = unicodedata.normalize("NFKD", text)
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_text.lower()).strip("-")
+    return slug or "datei"
+
+
+def export_label(file: SourceFile) -> str:
+    if file.origin == "path":
+        return Path(file.label).name or file.label
+    return file.label
+
+
+def relative_werkraum_path(path_text: str | None) -> str | None:
+    if not path_text:
+        return None
+    path = Path(path_text)
+    try:
+        return str(path.relative_to(Path("/root/werkraum")))
+    except ValueError:
+        return None
+
+
 def read_path(path_text: str) -> SourceFile:
     path = Path(path_text).expanduser().resolve()
     if not path.exists() or not path.is_file():
@@ -173,7 +198,7 @@ def read_path(path_text: str) -> SourceFile:
     if size > MAX_FILE_BYTES:
         raise HTTPException(status_code=400, detail=f"Datei zu gross ({size} Bytes): {path}")
     content, warning = decode_text(path.read_bytes())
-    return SourceFile(str(path), "path", path.suffix.lower(), content, size, warning)
+    return SourceFile(str(path), "path", path.suffix.lower(), content, size, warning, str(path))
 
 
 async def read_upload(upload: UploadFile) -> SourceFile:
@@ -187,7 +212,7 @@ async def read_upload(upload: UploadFile) -> SourceFile:
         content, warning = decode_text(raw)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"{name}: {exc}") from exc
-    return SourceFile(name, "upload", Path(name).suffix.lower(), content, len(raw), warning)
+    return SourceFile(name, "upload", Path(name).suffix.lower(), content, len(raw), warning, None)
 
 
 def html_to_markdown(source: str) -> str:
@@ -204,11 +229,54 @@ def code_block(content: str, suffix: str) -> str:
     return f"{fence}{lang}\n{content.rstrip()}\n{fence}"
 
 
-def file_as_markdown(file: SourceFile, html_mode: str) -> str:
+def collect_related_files(file: SourceFile, files: list[SourceFile]) -> list[SourceFile]:
+    related: list[SourceFile] = []
+    haystack = file.content
+    candidates: list[tuple[str, SourceFile, bool]] = []
+    for other in files:
+        if other is file:
+            continue
+        names = {
+            other.label,
+            export_label(other),
+            Path(other.label).name,
+            Path(other.label).stem,
+        }
+        rel = relative_werkraum_path(other.source_path)
+        if rel:
+            names.add(rel)
+            names.add(Path(rel).name)
+            names.add(Path(rel).stem)
+        for name in sorted({value for value in names if value}):
+            candidates.append((name, other, "/" in name or "." in name))
+
+    seen_ids: set[str] = set()
+    for needle, other, is_path_like in candidates:
+        if other.label in seen_ids:
+            continue
+        pattern = re.escape(needle) if is_path_like else rf"\b{re.escape(needle)}\b"
+        if re.search(pattern, haystack):
+            related.append(other)
+            seen_ids.add(other.label)
+    return related
+
+
+def file_as_markdown(file: SourceFile, html_mode: str, anchor: str, files: list[SourceFile]) -> str:
     lines = [f"## {file.label}", "", f"- Quelle: {file.origin}", f"- Groesse: {file.size_bytes} Bytes"]
+    if file.source_path:
+        rel = relative_werkraum_path(file.source_path)
+        lines.append(f"- Pfad: {rel or file.source_path}")
     if file.warning:
         lines.append(f"- Hinweis: {file.warning}")
     lines.append("")
+
+    related = collect_related_files(file, files)
+    if related:
+        lines.extend(["### Verweise", ""])
+        for other in related:
+            other_anchor = f"datei-{files.index(other) + 1}-{slugify(export_label(other))}"
+            lines.append(f"- [[#{other_anchor}|{export_label(other)}]]")
+        lines.append("")
 
     if file.suffix in {".html", ".htm"} and html_mode in {"markdown", "both"}:
         lines.extend(["### Aus HTML extrahierter Markdown-Text", "", html_to_markdown(file.content) or "_Kein Text extrahiert._", ""])
@@ -224,18 +292,209 @@ def file_as_markdown(file: SourceFile, html_mode: str) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def export_editor_script() -> str:
+    return r"""
+<script>
+(() => {
+  const nav = document.querySelector('[data-file-nav]');
+  const stack = document.querySelector('[data-file-stack]');
+  const searchInput = document.getElementById('file-search');
+  const resultCount = document.getElementById('file-result-count');
+  let dragSource = null;
+
+  function getSections() {
+    return Array.from(document.querySelectorAll('.file'));
+  }
+
+  function sectionLabel(section) {
+    return section.querySelector('h2')?.textContent?.trim() || section.id;
+  }
+
+  function currentSearchTerm() {
+    return (searchInput?.value || '').trim().toLowerCase();
+  }
+
+  function rebuildNav() {
+    if (!nav) return;
+    nav.innerHTML = '';
+    getSections().forEach((section) => {
+      const item = document.createElement('li');
+      item.dataset.navItem = 'true';
+      item.dataset.target = section.id;
+
+      const link = document.createElement('a');
+      link.href = `#${section.id}`;
+      link.textContent = sectionLabel(section);
+
+      const meta = document.createElement('span');
+      const origin = section.dataset.origin || '';
+      const size = section.dataset.size || '';
+      meta.textContent = `${origin} · ${size} B`;
+
+      item.append(link, meta);
+      nav.appendChild(item);
+    });
+  }
+
+  function updateSearchState() {
+    const term = currentSearchTerm();
+    let visible = 0;
+
+    getSections().forEach((section) => {
+      const haystack = (section.textContent || '').toLowerCase();
+      const match = !term || haystack.includes(term);
+      section.hidden = !match;
+      if (match) visible += 1;
+    });
+
+    nav?.querySelectorAll('[data-nav-item]').forEach((item) => {
+      const target = item.dataset.target;
+      const section = target ? document.getElementById(target) : null;
+      item.hidden = !section || section.hidden;
+    });
+
+    if (resultCount) {
+      resultCount.textContent = `${visible} / ${getSections().length}`;
+    }
+  }
+
+  function refreshView() {
+    rebuildNav();
+    updateSearchState();
+  }
+
+  function moveSection(section, direction) {
+    if (!stack || !section) return;
+    const sibling = direction < 0 ? section.previousElementSibling : section.nextElementSibling;
+    if (!sibling || !sibling.classList.contains('file')) return;
+    if (direction < 0) {
+      stack.insertBefore(section, sibling);
+    } else {
+      stack.insertBefore(sibling, section);
+    }
+    refreshView();
+    section.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function handleDragStart(event) {
+    const section = event.target.closest('.file');
+    if (!section || !stack?.contains(section)) return;
+    dragSource = section;
+    section.classList.add('dragging');
+    if (event.dataTransfer) {
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/plain', section.id);
+    }
+  }
+
+  function handleDragOver(event) {
+    if (!dragSource || !stack) return;
+    const target = event.target.closest('.file');
+    if (!target || target === dragSource) return;
+    event.preventDefault();
+    const rect = target.getBoundingClientRect();
+    const before = event.clientY < rect.top + rect.height / 2;
+    if (before) {
+      stack.insertBefore(dragSource, target);
+    } else {
+      stack.insertBefore(dragSource, target.nextElementSibling);
+    }
+    refreshView();
+  }
+
+  function handleDragEnd() {
+    if (dragSource) {
+      dragSource.classList.remove('dragging');
+    }
+    dragSource = null;
+    refreshView();
+  }
+
+  function serializeDocument() {
+    const clone = document.documentElement.cloneNode(true);
+    clone.querySelectorAll('.file, [data-nav-item]').forEach((node) => {
+      node.hidden = false;
+      node.removeAttribute('hidden');
+    });
+
+    const search = clone.querySelector('#file-search');
+    if (search) {
+      search.value = '';
+    }
+
+    const result = clone.querySelector('#file-result-count');
+    if (result) {
+      result.textContent = `${getSections().length} / ${getSections().length}`;
+    }
+
+    return '<!doctype html>\n' + clone.outerHTML;
+  }
+
+  function downloadCurrentDocument() {
+    const blob = new Blob([serializeDocument()], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    const now = new Date();
+    const pad = (value) => String(value).padStart(2, '0');
+    const stamp = `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+    anchor.href = url;
+    anchor.download = `datei_wandler_export_${stamp}.html`;
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  document.addEventListener('click', (event) => {
+    const control = event.target.closest('[data-move]');
+    if (control) {
+      const section = control.closest('.file');
+      const direction = control.dataset.move === 'up' ? -1 : 1;
+      moveSection(section, direction);
+      return;
+    }
+
+    if (event.target.closest('#file-search-clear')) {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      refreshView();
+      return;
+    }
+
+    if (event.target.closest('#file-download')) {
+      downloadCurrentDocument();
+    }
+  });
+  document.addEventListener('dragstart', handleDragStart);
+  document.addEventListener('dragover', handleDragOver);
+  document.addEventListener('dragend', handleDragEnd);
+
+  searchInput?.addEventListener('input', updateSearchState);
+
+  refreshView();
+})();
+</script>
+""".strip()
+
+
 def build_markdown(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
-    body = ["# Datei-Wandler Export", "", f"Erzeugt: {now}", f"Dateien: {len(files)}", ""]
-    for file in files:
-        body.append(file_as_markdown(file, html_mode))
+    body = ["# Datei-Wandler Export", "", f"Erzeugt: {now}", f"Dateien: {len(files)}", "", "## Verzeichnis", ""]
+    for i, file in enumerate(files, 1):
+        anchor = f"datei-{i}-{slugify(export_label(file))}"
+        body.append(f"- [[#{anchor}|{export_label(file)}]]")
+    body.append("")
+    for i, file in enumerate(files, 1):
+        anchor = f"datei-{i}-{slugify(export_label(file))}"
+        body.append(f"<a id=\"{anchor}\"></a>")
+        body.append(file_as_markdown(file, html_mode, anchor, files))
     return "\n".join(body)
 
 
 def build_html(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     nav = "\n".join(
-        f'<li><a href="#f{i}">{html.escape(file.label)}</a><span>{file.origin} · {file.size_bytes} B</span></li>'
+        f'<li data-nav-item="true" data-target="f{i}"><a href="#f{i}">{html.escape(file.label)}</a><span>{file.origin} · {file.size_bytes} B</span></li>'
         for i, file in enumerate(files, 1)
     )
     sections: list[str] = []
@@ -251,11 +510,17 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
             content = f'<pre><code>{html.escape(file.content)}</code></pre>'
         sections.append(
             f"""
-            <section class="file" id="f{i}">
-              <header>
-                <p>{html.escape(file.origin)} · {html.escape(mime)} · {file.size_bytes} Bytes</p>
-                <h2>{html.escape(file.label)}</h2>
-                {warning}
+            <section class="file" id="f{i}" draggable="true" data-origin="{html.escape(file.origin)}" data-size="{file.size_bytes}" data-mime="{html.escape(mime)}">
+              <header class="file-head">
+                <div>
+                  <p>{html.escape(file.origin)} · {html.escape(mime)} · {file.size_bytes} Bytes</p>
+                  <h2>{html.escape(file.label)}</h2>
+                  {warning}
+                </div>
+                <div class="file-controls" aria-label="Datei verschieben">
+                  <button type="button" data-move="up" aria-label="Datei nach oben verschieben">↑</button>
+                  <button type="button" data-move="down" aria-label="Datei nach unten verschieben">↓</button>
+                </div>
               </header>
               {content}
             </section>
@@ -270,31 +535,36 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
   <style>
     :root {{
       color-scheme: light dark;
-      --bg: #f6f5f2;
-      --ink: #171717;
-      --muted: #62615d;
-      --line: #d8d5ce;
-      --panel: #ffffff;
-      --accent: #0c6b58;
-      --code: #111;
-      --code-ink: #e9ece8;
+      --bg: #f4eefb;
+      --ink: #22153a;
+      --muted: #6b5d84;
+      --line: #d7c8ea;
+      --panel: #fffafc;
+      --accent: #6b2f8f;
+      --code: #1d132b;
+      --code-ink: #f1ecfb;
+      --field: #fbf7ff;
     }}
     @media (prefers-color-scheme: dark) {{
       :root {{
-        --bg: #161716;
-        --ink: #e9e8e2;
-        --muted: #a9a79e;
-        --line: #3a3b37;
-        --panel: #20211f;
-        --accent: #69c5a8;
-        --code: #0c0d0c;
-        --code-ink: #e9ece8;
+        --bg: #110d19;
+        --ink: #f2ebff;
+        --muted: #b4a8cc;
+        --line: #3d324e;
+        --panel: #1c1628;
+        --accent: #c79aff;
+        --code: #0f0b16;
+        --code-ink: #f6f0ff;
+        --field: #18121f;
       }}
     }}
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(107,47,143,.18), transparent 34%),
+        radial-gradient(circle at 80% 0%, rgba(199,154,255,.14), transparent 30%),
+        linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 84%, black));
       color: var(--ink);
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
@@ -305,6 +575,72 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       max-width: 1500px;
       margin: 0 auto;
       padding: 24px;
+    }}
+    .statusbar {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: end;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 16px;
+    }}
+    .searchbox {{
+      display: grid;
+      gap: 6px;
+      flex: 1 1 320px;
+      min-width: 240px;
+    }}
+    .searchbox span {{
+      color: var(--muted);
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }}
+    .searchbox input {{
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--field, var(--panel));
+      color: var(--ink);
+      padding: 11px 12px;
+      font: inherit;
+    }}
+    .status-actions {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }}
+    .status-actions button,
+    .file-controls button {{
+      min-height: 40px;
+      border: 1px solid var(--line);
+      background: var(--code);
+      color: var(--code-ink);
+      padding: 0 14px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }}
+    .status-actions button:hover,
+    .file-controls button:hover {{
+      filter: brightness(1.08);
+    }}
+    .status-actions button.secondary {{
+      background: transparent;
+      color: var(--ink);
+    }}
+    .status-summary {{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: .92rem;
+      margin: 0;
     }}
     .masthead, .file {{
       border: 1px solid var(--line);
@@ -329,10 +665,40 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
     }}
     nav ol {{ padding-left: 22px; margin: 0; }}
     nav li {{ margin-bottom: 12px; }}
+    nav li[hidden] {{ display: none; }}
     nav a {{ color: var(--ink); font-weight: 650; text-decoration: none; }}
     nav span {{ display: block; color: var(--muted); font-size: .88rem; }}
+    .file-stack {{ display: grid; gap: 24px; }}
     .file {{ padding: 20px; margin-bottom: 24px; }}
+    .file[hidden] {{ display: none; }}
+    .file.dragging {{
+      opacity: .58;
+      outline: 2px dashed var(--accent);
+      outline-offset: 2px;
+    }}
+    .file-head {{
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }}
     .file header p {{ color: var(--muted); margin-bottom: 6px; }}
+    .file-controls {{
+      display: flex;
+      gap: 8px;
+      flex: 0 0 auto;
+    }}
+    .file,
+    .file-controls button {{
+      cursor: grab;
+    }}
+    .file:active,
+    .file-controls button:active {{
+      cursor: grabbing;
+    }}
     .warning {{ color: #9a5b00 !important; }}
     pre {{
       overflow: auto;
@@ -364,11 +730,25 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       <h1>Datei-Wandler Export</h1>
       <p class="meta">Inhalte sind escaped und werden angezeigt, nicht ausgefuehrt.</p>
     </header>
+    <section class="statusbar" aria-label="Werkzeuge für den Export">
+      <label class="searchbox" for="file-search">
+        <span>Suche</span>
+        <input id="file-search" type="search" placeholder="Dateiname, Inhalt, Herkunft">
+      </label>
+      <div class="status-actions">
+        <button type="button" id="file-download">HTML herunterladen</button>
+        <button type="button" id="file-search-clear" class="secondary">Suche leeren</button>
+      </div>
+    </section>
+    <p class="status-summary"><span>Sichtbar nach Filter</span><strong id="file-result-count">{len(files)} / {len(files)}</strong></p>
     <div class="layout">
-      <nav aria-label="Dateien"><ol>{nav}</ol></nav>
-      <div>{''.join(sections)}</div>
+      <nav aria-label="Dateien">
+        <ol data-file-nav>{nav}</ol>
+      </nav>
+      <div class="file-stack" data-file-stack>{''.join(sections)}</div>
     </div>
   </main>
+  {export_editor_script()}
 </body>
 </html>
 """

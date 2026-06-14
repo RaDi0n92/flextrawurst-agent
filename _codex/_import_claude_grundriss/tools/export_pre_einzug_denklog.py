@@ -9,7 +9,18 @@ import os
 from pathlib import Path
 from datetime import timezone
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os
+def _ftw_db():
+    u = _os.environ.get("FLEXTRAWURST_DB_URI")
+    if u: return u
+    try:
+        for _l in open("/root/werkraum/.agent/flextrawurst-db.env"):
+            if _l.startswith("FLEXTRAWURST_DB_URI="):
+                return _l.split("=", 1)[1].strip()
+    except Exception:
+        pass
+    return "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+DB_URI = _ftw_db()
 ARCHIV = Path("/root/werkraum/_claude/archiv/pre_einzug_denklog")
 ARCHIV.mkdir(parents=True, exist_ok=True)
 

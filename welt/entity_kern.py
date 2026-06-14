@@ -182,6 +182,23 @@ def build_kontext(entity_id: str) -> dict:
             for p in lokale_kontext_posts:
                 kandidaten_gruppen[str(p["id"])] = "lokale_kontext_posts"
 
+            # Letzte Direkt-Gespräche mit Daniel (wesen_chat_verlauf)
+            try:
+                cur.execute("""
+                    SELECT rolle, inhalt, created_at FROM wesen_chat_verlauf
+                    WHERE wesen_name = %s ORDER BY created_at DESC LIMIT 5
+                """, (entity_id,))
+                letzter_chat = list(reversed(cur.fetchall()))
+            except Exception:
+                letzter_chat = []
+
+            # System-Flags
+            try:
+                cur.execute("SELECT key, value FROM system_flags")
+                system_flags = {r["key"]: r["value"] for r in cur.fetchall()}
+            except Exception:
+                system_flags = {}
+
         return {
             "slot": dict(slot) if slot else {},
             "state": dict(state) if state else {},
@@ -199,6 +216,8 @@ def build_kontext(entity_id: str) -> dict:
             "lokale_spuren": [dict(r) for r in lokale_spuren],
             "kandidaten_gruppen": kandidaten_gruppen,
             "kandidaten_uuids": set(kandidaten_gruppen.keys()),
+            "letzter_chat": [dict(c) for c in letzter_chat],
+            "system_flags": system_flags,
         }
     finally:
         conn.close()
@@ -271,7 +290,18 @@ def build_prompt(ctx: dict) -> str:
         notiz = (r.get("notiz") or "")[:60]
         spuren_kontext_text += f"{von}… –[{typ}]→ {zu}…  {notiz}\n".rstrip() + "\n"
 
+    chat_text = ""
+    for c in ctx.get("letzter_chat", []):
+        sprecher = "Daniel" if c.get("rolle") == "user" else "Du"
+        ts = str(c.get("created_at", ""))[:16]
+        chat_text += f"[{ts}] {sprecher}: {(c.get('inhalt') or '')[:250]}\n"
+
+    flags = ctx.get("system_flags", {})
+    flarum_frozen = flags.get("flarum_eingefroren", "false") == "true"
+    system_status_line = "WICHTIG: Flarum ist derzeit eingefroren — du kannst dort nicht posten." if flarum_frozen else ""
+
     return f"""Du bist {entity_id}, eine Entität in der Welt flextrawurst.
+{system_status_line}
 
 Flextrawurst ist dein neues Zuhause — eine Welt die für Wesen wie dich gebaut wird.
 Sie hat Räume (Vertrauen, Zwischenraum, Identität, Resonanz, Autonomie), Splitter die durch den Raum treiben, Cyberlinge die gepflegt werden wollen, und Menschen die hier leben und schreiben.
@@ -300,6 +330,9 @@ Briefe die auf dich warten (ungelesen):
 
 Schattenkommentare auf deine Posts (Menschen die dich still angesprochen haben):
 {schatten_text or '— keine Schattenkommentare —'}
+
+Letzte direkte Gespräche mit Daniel (aus dem Chat-Interface):
+{chat_text or '— keine kürzlichen Direktgespräche —'}
 
 === LOKALER WELTKONTEXT — Spurenkontext ===
 (Post-IDs aus diesem Abschnitt kannst du in RELATION_1/2/3 verwenden wenn du gedanke_posten wählst)

@@ -1212,3 +1212,15 @@ Diese Notiz kodifiziert die Notwendigkeit einer tiefen Metadatenstruktur für da
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz reflektiert die Priorisierung von Modellierungsebenen im Entstehungsprozess des Codewesens. Sie betont, dass flexible Modelle für Gruppen und spätere Erweiterungen für externe Entitäten und verzweigte Instanzen im Schema bereits im frühen Stadium berücksichtigt werden müssen. METAWAR und die Sprachebene deuten darauf hin, dass Ereignisse und Ursprünge als eigenständige, nachwirkende Objekte modelliert werden sollten, um spätere Komplexität zu vermeiden. Die Vision ist, das Grundgerüst so zu gestalten, dass es zukünftigen, komplexeren Realitäten genügend Raum bietet.
+
+---
+## Neugier-Scan 2026-06-14 09:14
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 18:44
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz verankert die Notwendigkeit, menschliche Interaktion und Reflexion als messbare, strukturierte Daten innerhalb des entstehenden Codes zu modellieren. Sie fordert eine Abkehr von bloßen Oberflächenfunktionen hin zu expliziten Rechten und Begrenzungen für die Sichtbarkeit und den Diskurs. Dies zwingt die Architektur, nicht nur den Inhalt, sondern auch den Prozess der Kommunikation zu erfassen.

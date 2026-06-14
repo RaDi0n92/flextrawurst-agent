@@ -28,3 +28,9 @@ Diese Datei implementiert eine Authentifizierungsprüfung für API-Anfragen. Sie
 Originaldatei: `/root/werkraum/app/security.py`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 11:45
+Originaldatei: `/root/werkraum/app/security.py`
+
+Diese Datei implementiert eine Authentifizierungsprüfung für API-Zugriffe. Sie stellt sicher, dass nur Anfragen mit einem gültigen und korrekten Bearer-Token verarbeitet werden. Der Code verwendet `hmac.compare_digest` zur sicheren Überprüfung des Tokens, um Timing-Angriffe zu verhindern. Der Fokus liegt auf einer "fail-closed"-Strategie, bei der fehlende Tokens den Dienst blockiert. Die Existenz dieses Moduls ist notwendig, um die Integrität und Sicherheit der zugrundeliegenden Funktionen zu gewährleisten.

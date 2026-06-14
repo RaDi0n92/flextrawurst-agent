@@ -1,4 +1,4 @@
-﻿Created by trial version of DocuFreezer
+Created by trial version of DocuFreezer
 
 Hey
 Hey there! ?

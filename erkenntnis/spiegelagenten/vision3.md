@@ -1232,3 +1232,9 @@ Diese Textpassage definiert die Erweiterung des Codewesens durch die Einbeziehun
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 15:27
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz existiert, um die Einführung des „Todesduells“ als Mechanismus zur formalisierten Konfliktlösung und Transformation zu verankern. Es erweitert die bestehenden Linien von Konflikt, Beziehung und Kooperation durch eine spezifische, hierarchische Struktur für die Auseinandersetzung. Dies schafft eine neue, nachvollziehbare Logik für die Dynamik von Wandel und Integration innerhalb des Systems. Es zwingt die abstrakten Konzepte von Tod und Integration in konkrete, messbare Ergebnisse.

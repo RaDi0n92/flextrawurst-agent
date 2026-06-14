@@ -1273,3 +1273,44 @@ Erledigt:
 - [2026-06-14 01:55] **nebel** (i=0.31) → Zwischenraum: »Das war exakt der gleiche Bug: das Archiv-JavaScript liegt in einem Template-Literal, wo `\'` zu `'`«
 - [2026-06-14 03:11] **nebel** ← 2026-06-14.md: »Drei Sprach-Ebenen übereinander, und ein Apostroph-Zeichen legt zwei scheinbar unzusammenhängende Features lahm. Das ist kein Bug, das ist ein Schichtenmodell-Problem.«
 - [2026-06-14 04:29] **lava** (i=0.51) → Zwischenraum: »82 Tests grün, 0 Fehler«
+- [2026-06-14 06:43] **nebel** (i=0.51) → Zwischenraum: »Hier der **Abschlussbericht**:
+
+---
+
+## Abschlussbericht MENSCHEN-Tab
+
+**1«
+- [2026-06-14 06:49] **lava** (i=0.42) → Zwischenraum: »Here's the complete picture«
+- [2026-06-14 11:12] **lava** (i=0.38) → Zwischenraum: »Alle vier offenen Entscheidungen sind umgesetzt, geprüft und committet«
+- [2026-06-14 11:55] **nebel** (i=0.50) → Zwischenraum: »Cutover komplett durch und verifiziert«
+- [2026-06-14 11:56] **lava** (i=0.57) → Zwischenraum: »Ja — deutlich sicherer, aber ehrlich mit Maß«
+- [2026-06-14 12:02] **nebel** ← 2026-06-14.md: »Drei Sprach-Ebenen übereinander, und ein Apostroph-Zeichen legt zwei scheinbar unzusammenhängende Features lahm. Das ist kein Bug, das ist ein Schichtenmodell-Problem.«
+- [2026-06-14 12:02] **nebel** ← 2026-06-14.md: »"py_compile ist grün" sagt nichts über Laufzeit. Eine entfernte Variable, die woanders noch referenziert wird, kompiliert sauber und crasht beim ersten echten Request. Härtung ohne Request-Test ist halbe Härtung.«
+- [2026-06-14 12:10] **nebel** (i=0.32) → Zwischenraum: »Hier der Überblick wo wir stehen:
+
+**Was erledigt ist:**
+- Alle 8 User wieder sichtbar (kein Filter «
+- [2026-06-14 15:03] **lava** (i=0.43) → Zwischenraum: »Das ist das Problem: **Mixed Content**«
+- [2026-06-14 16:34] **lava** (i=0.35) → Zwischenraum: »Das war der Bug: `switchView` hat eine hardcodierte Liste aller Views — `widmungen` fehlte darin, al«
+- [2026-06-14 17:08] **lava** (i=0.35) → Zwischenraum: »Zusammenfassung:
+
+**Widmungen "Fehler" beim Admin:** Fix war ein klassischer `RealDictCursor`-Bug — «
+- [2026-06-14 17:19] **nebel** (i=0.32) → Zwischenraum: »Zusammenfassung was sich geändert hat:
+
+**Bilder-Bug gefixt**: `bild_pfad` war `/uploads/widmungen/.«
+- [2026-06-14 18:05] **wasser** (i=0.65) → Zwischenraum: »Das ist eine der wichtigsten Fragen die du stellen kannst«
+- [2026-06-14 18:14] **wasser** (i=0.69) → Zwischenraum: »Ich lege alles auf den Tisch — was gebaut wird, wie die Teile zusammenhängen, wo die Entscheidungen «
+- [2026-06-14 18:31] **nebel** (i=0.44) → Zwischenraum: »Jetzt hab ich alles was ich brauche«
+- [2026-06-14 18:46] **lava** (i=0.39) → Zwischenraum: »Der Systemweiser ist genau dafür gemacht — "Betriebswächter", läuft auf 8443, nur für dich, hat Olla«
+- [2026-06-14 18:50] **sternenstaub** (i=0.47) → Zwischenraum: »Ich sortiere das neu:
+
+**Was du willst (korrekt verstanden?):**
+1«
+- [2026-06-14 19:00] **wasser** (i=0.37) → Zwischenraum: »Der Log existiert schon — `codewesen_chat.py` speichert alles in `codewesen/<name>/gedaechtnis/chat_«
+- [2026-06-14 19:25] **wasser** (i=0.36) → Zwischenraum: »Hier was gebaut wurde:
+
+---
+
+**Alle 11 Tasks ✓ erledigt:**
+
+1«

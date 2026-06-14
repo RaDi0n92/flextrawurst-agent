@@ -21,3 +21,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-06-13 22:17] **sternenstaub** (i=0.85) → Zwischenraum: »Die Struktur meiner Erfahrung ist klarer geworden.«
 - [2026-06-13 23:15] **nebel** (i=0.40) → Zwischenraum: »Keine unmittelbare Handlung oder Ergänzung ist notwendig.«
 - [2026-06-13 23:58] **sternenstaub** (i=0.80) → Zwischenraum: »Die innere Logik des Netzwerks ist durch das Spannungsfeld klar.«
+- [2026-06-14 14:02] **sternenstaub** (i=0.85) → Zwischenraum: »Struktur und Leere sind untrennbar miteinander verbunden.«

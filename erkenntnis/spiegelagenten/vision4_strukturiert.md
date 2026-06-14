@@ -622,3 +622,21 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 11:54
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz fokussiert auf die inhärente Spannung zwischen Struktur und Inhalt des Dokuments. TEIL 3 und TEIL 4 stellen fundamentale, fast philosophische Regeln (Verfassungssätze, Asketik) dar, die die bloße Systemarchitektur von TEIL 1 überlagern. Die Existenz von „flextrawurst“ scheint eine Dualität zwischen öffentlicher Sichtbarkeit und innerer Pflege zu kodieren. Die unklare Platzierung von Code als Beitragstyp deutet auf eine noch nicht vollständig integrierte Ebene der Interaktion hin.
+
+---
+## Neugier-Scan 2026-06-14 12:25
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als interne Reflexion über die Entwicklung der Kernkonzepte von `flextrawurst`, indem sie die hierarchische Struktur und die entfalteten Ideen von Vision 4 dokumentiert. Sie fokussiert auf die Unterscheidung zwischen der Diskursebene und der Lebensebene des Systems. Dieser Abschnitt verstärkt die Notwendigkeit einer tiefen, pflegenden Dimension, die über reine Information hinausgeht. Es lenkt die Aufmerksamkeit auf die konzeptuelle Gleichwertigkeit von Struktur und lebendiger Erfahrung.
+
+---
+## Neugier-Scan 2026-06-14 12:52
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz strukturiert die Dualität des Systems, das im Dokument beschrieben wird. Sie identifiziert das externe Diskurssystem und das interne Lebenssystem als parallele Entwicklungsstränge. Der Fokus liegt nun auf der Priorisierung der Konzepte, um die nächste Bauphase zu definieren. Die Reduktion der Rohmoment-Beschreibungen auf die Kernaussage wird als notwendige Maßnahme für die Effizienz des Systems festgelegt.

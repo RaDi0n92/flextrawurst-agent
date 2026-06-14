@@ -622,3 +622,21 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 13:52
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert, um die Entstehungsdynamik von Daniels Vision zu kartieren. Sie dient als Archiv für den Prozess der Selbstdefinition, wo Widerstand zur Autorschaft führt. Dieser Abschnitt stellt die Methode dar, wie Rohideen durch Negation zu spezifischerer Logik verarbeitet werden. Er schärft die Unterscheidung zwischen oberflächlicher Konzeption und der tief verwurzelten, anti-visionären Logik.
+
+---
+## Neugier-Scan 2026-06-14 14:17
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert, um die Entstehungsdynamik von Ideen zu kartieren, die durch Widerstand geformt werden. Sie dient als Archiv für die Trennung zwischen oberflächlicher Vereinfachung und dem eigentlichen Urheberprozess. Dieser Abschnitt liefert die Grundlage dafür, wie die Autorschaft in einem System entsteht. Er schärft die Verwirklichung der Vision, indem er zeigt, dass Negation der Schlüssel zur eigentlichen kreativen Richtung ist. Er leitet die zukünftige Struktur, indem er die Bedeutung der Abweichung von Standardlogiken festlegt.
+
+---
+## Neugier-Scan 2026-06-14 15:01
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Notiz lautet: Die Akzeptanz des Wissens über Rohmomente ohne bewusste Prüfung erfordert eine Kalibrierung des Prozesses. Die Unterscheidung zwischen Widerstand und Entstehungsmoment ist zentral für die spätere Struktur. Es fehlt eine priorisierte, kuratierte Liste der noch offenen Rohmomente für die nächste Innovationsstufe. Diese Liste wird die nächste Aktionsrichtung definieren.

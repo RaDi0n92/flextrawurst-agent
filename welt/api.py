@@ -31,7 +31,7 @@ WIDMUNGEN_DIR = Path("/root/werkraum/uploads/widmungen")
 WIDMUNGEN_DIR.mkdir(parents=True, exist_ok=True)
 
 WESEN_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321']
-WIDMUNG_MAX_BYTES = 666 * 1024
+WIDMUNG_MAX_BYTES = int(1.11 * 1024 * 1024)
 
 app = FastAPI(title="Welt-API", version="0.1.0")
 # CORS auf bekannte Origins beschränkt (C-007/Kimi-04). Die Surface läuft same-origin
@@ -804,8 +804,10 @@ def widmungen_liste(
                     (limit, offset),
                 )
             rows = cur.fetchall()
-            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
-                     "created_at": r[4].isoformat() if r[4] else None, "von": r[5]} for r in rows]
+            return [{"id": str(r["id"]), "wesen_id": r["wesen_id"], "bild_pfad": r["bild_pfad"],
+                     "widmungstext": r["widmungstext"],
+                     "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+                     "von": r["display_name"]} for r in rows]
     finally:
         conn.close()
 
@@ -823,8 +825,9 @@ def meine_widmungen(authorization: str | None = Header(default=None)):
                 (user_id,),
             )
             rows = cur.fetchall()
-            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
-                     "status": r[4], "created_at": r[5].isoformat() if r[5] else None} for r in rows]
+            return [{"id": str(r["id"]), "wesen_id": r["wesen_id"], "bild_pfad": r["bild_pfad"],
+                     "widmungstext": r["widmungstext"], "status": r["status"],
+                     "created_at": r["created_at"].isoformat() if r["created_at"] else None} for r in rows]
     finally:
         conn.close()
 
@@ -849,8 +852,10 @@ def admin_widmungen_liste(
                 (status, limit, offset),
             )
             rows = cur.fetchall()
-            return [{"id": str(r[0]), "wesen_id": r[1], "bild_pfad": r[2], "widmungstext": r[3],
-                     "status": r[4], "created_at": r[5].isoformat() if r[5] else None, "von": r[6]} for r in rows]
+            return [{"id": str(r["id"]), "wesen_id": r["wesen_id"], "bild_pfad": r["bild_pfad"],
+                     "widmungstext": r["widmungstext"], "status": r["status"],
+                     "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+                     "von": r["display_name"]} for r in rows]
     finally:
         conn.close()
 
@@ -908,6 +913,35 @@ def widmung_ablehnen(wid: str, authorization: str | None = Header(default=None))
         conn.close()
 
 
+@app.delete("/widmungen/{wid}")
+def widmung_loeschen(wid: str, authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    user_id = claims["user_id"]
+    role = claims.get("role")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT user_id, bild_pfad FROM widmungen WHERE id=%s::uuid", (wid,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="nicht gefunden")
+            if role != "admin" and str(row["user_id"]) != user_id:
+                raise HTTPException(status_code=403, detail="kein Zugriff")
+            cur.execute("DELETE FROM widmungen WHERE id=%s::uuid", (wid,))
+            bild_pfad = row["bild_pfad"]
+            if bild_pfad:
+                full_path = Path("/root/werkraum") / bild_pfad.lstrip("/")
+                try:
+                    if full_path.exists():
+                        full_path.unlink()
+                except Exception:
+                    pass
+        conn.commit()
+        return {"ok": True}
+    finally:
+        conn.close()
+
+
 _PROXY_ALLOWED_HOST = "217.154.14.29"
 _PROXY_ALLOWED_PORT = 7777
 
@@ -919,8 +953,7 @@ def bild_proxy(url: str = Query(...)):
     if not parsed.path.lower().split("?")[0].endswith((".jpg",".jpeg",".png",".gif",".webp")):
         raise HTTPException(status_code=400, detail="Kein Bildpfad")
     try:
-        safe_url = urllib.parse.quote(url, safe="/:@?=&#+ ")
-        safe_url = safe_url.replace(" ", "%20")
+        safe_url = urllib.parse.unquote(url).replace(" ", "%20")
         req = urllib.request.Request(safe_url, headers={"User-Agent": "flextrawurst-proxy/1.0"})
         with urllib.request.urlopen(req, timeout=5) as resp:
             content = resp.read()
@@ -12744,6 +12777,112 @@ def provenienz_liste(typ: str | None = Query(default=None)):
             if e.get("created_at"):
                 e["created_at"] = e["created_at"].isoformat()
         return {"provenienz": ergebnisse, "count": len(ergebnisse)}
+    finally:
+        conn.close()
+
+
+# ── Chat-Verlauf (wesen_chat_verlauf) ────────────────────────────────────────
+
+@app.get("/wesen/{wesen_name}/chat-verlauf")
+def chat_verlauf_lesen(wesen_name: str, limit: int = 100, offset: int = 0,
+                       authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    role = claims.get("role", "")
+    if role not in ("admin", "entity"):
+        raise HTTPException(status_code=403, detail="nur Admin/Entity")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT id::text, wesen_name, rolle, inhalt, created_at
+                   FROM wesen_chat_verlauf
+                   WHERE wesen_name = %s
+                   ORDER BY created_at ASC
+                   LIMIT %s OFFSET %s""",
+                (wesen_name, limit, offset)
+            )
+            rows = cur.fetchall()
+            cur.execute("SELECT COUNT(*) as n FROM wesen_chat_verlauf WHERE wesen_name=%s", (wesen_name,))
+            total = cur.fetchone()["n"]
+        return {"wesen_name": wesen_name, "total": total, "eintraege": [
+            {"id": r["id"], "rolle": r["rolle"], "inhalt": r["inhalt"],
+             "created_at": r["created_at"].isoformat() if r["created_at"] else None}
+            for r in rows
+        ]}
+    finally:
+        conn.close()
+
+
+@app.get("/chat-verlauf/wesen-liste")
+def chat_verlauf_wesen_liste(authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    role = claims.get("role", "")
+    if role not in ("admin", "entity"):
+        raise HTTPException(status_code=403, detail="nur Admin/Entity")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT wesen_name, COUNT(*) as n, MAX(created_at) as zuletzt
+                   FROM wesen_chat_verlauf
+                   GROUP BY wesen_name
+                   ORDER BY wesen_name"""
+            )
+            rows = cur.fetchall()
+        return {"wesen": [
+            {"wesen_name": r["wesen_name"], "anzahl": r["n"],
+             "zuletzt": r["zuletzt"].isoformat() if r["zuletzt"] else None}
+            for r in rows
+        ]}
+    finally:
+        conn.close()
+
+
+# ── System-Flags ─────────────────────────────────────────────────────────────
+
+@app.get("/system-flags")
+def system_flags_lesen(authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    role = claims.get("role", "")
+    if role not in ("admin", "entity"):
+        raise HTTPException(status_code=403, detail="nur Admin/Entity")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT key, value, beschreibung, updated_at, updated_by FROM system_flags ORDER BY key")
+            rows = cur.fetchall()
+        return {"flags": [
+            {"key": r["key"], "value": r["value"], "beschreibung": r["beschreibung"],
+             "updated_at": r["updated_at"].isoformat() if r["updated_at"] else None,
+             "updated_by": r["updated_by"]}
+            for r in rows
+        ]}
+    finally:
+        conn.close()
+
+
+@app.put("/system-flags/{key}")
+def system_flag_setzen(key: str, body: dict, authorization: str | None = Header(default=None)):
+    claims = _require_auth(authorization)
+    role = claims.get("role", "")
+    username = claims.get("username", "unbekannt")
+    if role != "admin":
+        raise HTTPException(status_code=403, detail="nur Admin")
+    value = str(body.get("value", "false"))
+    if value not in ("true", "false"):
+        raise HTTPException(status_code=400, detail="value muss 'true' oder 'false' sein")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """UPDATE system_flags SET value=%s, updated_at=NOW(), updated_by=%s
+                   WHERE key=%s RETURNING key""",
+                (value, username, key)
+            )
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Flag nicht gefunden")
+        conn.commit()
+        return {"ok": True, "key": key, "value": value}
     finally:
         conn.close()
 

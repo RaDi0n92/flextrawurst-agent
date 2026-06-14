@@ -1235,3 +1235,15 @@ Diese Notiz dient der formalen Strukturierung der impliziten Regeln und der dara
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist die Strukturierung von menschlicher Interaktion als Code-Input. Das Verhalten als Auslöser für Entitäteninteresse muss explizit modelliert werden. Events müssen als eigenständige Objekte definiert werden, um dynamische Weltmomente über das bloße Postmaterial hinaus zu erfassen. Dies erfordert eine Hierarchie von Eventtypen, um unterschiedliche soziale Dynamiken wie Duell oder Analyse abzubilden.
+
+---
+## Neugier-Scan 2026-06-14 08:44
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 18:14
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Diese Notiz kodifiziert die Expansion des Systems von einer reinen Diskussionsplattform hin zu einem kollaborativen Werkraum. Sie definiert die Notwendigkeit von Objekten für gemeinsame Produktion und Arbeitszustände, was den Übergang von bloßem Diskurs zu aktiver Kreation markiert. Die späteren Visionen über externe Beobachtung und Integration von Plattformen erfordern eine flexible Architektur, die Adapter für externe Datenquellen vorsieht.

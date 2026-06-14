@@ -22,12 +22,70 @@ from datetime import datetime
 from pathlib import Path
 
 import requests
+import psycopg2
+import psycopg2.extras
 
 import gedaechtnis
 import flarum_api as _fapi
 from codewesen_abwurf import verarbeite_abwurf, zwischenraum_scan
 
 BASE = Path("/root/werkraum/codewesen")
+_DB_ENV = Path("/root/werkraum/.agent/flextrawurst-db.env")
+
+
+def _get_db_uri() -> str:
+    try:
+        for line in _DB_ENV.read_text().splitlines():
+            if line.startswith("FLEXTRAWURST_DB_URI="):
+                return line.split("=", 1)[1]
+    except Exception:
+        pass
+    return ""
+
+
+def _lade_letzten_chat(wesen_name: str, n: int = 3) -> str:
+    """Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text."""
+    try:
+        uri = _get_db_uri()
+        if not uri:
+            return ""
+        conn = psycopg2.connect(uri, cursor_factory=psycopg2.extras.RealDictCursor)
+        with conn.cursor() as cur:
+            cur.execute(
+                """SELECT rolle, inhalt, created_at FROM wesen_chat_verlauf
+                   WHERE wesen_name=%s ORDER BY created_at DESC LIMIT %s""",
+                (wesen_name, n)
+            )
+            rows = list(reversed(cur.fetchall()))
+        conn.close()
+        if not rows:
+            return ""
+        zeilen = []
+        for r in rows:
+            sprecher = "Daniel" if r["rolle"] == "user" else "Du"
+            ts = str(r["created_at"])[:16]
+            zeilen.append(f"[{ts}] {sprecher}: {r['inhalt'][:300]}")
+        return "\n".join(zeilen)
+    except Exception:
+        return ""
+
+
+def _lade_system_status() -> str:
+    """Liest flarum_eingefroren aus system_flags."""
+    try:
+        uri = _get_db_uri()
+        if not uri:
+            return ""
+        conn = psycopg2.connect(uri, cursor_factory=psycopg2.extras.RealDictCursor)
+        with conn.cursor() as cur:
+            cur.execute("SELECT key, value FROM system_flags WHERE key='flarum_eingefroren'")
+            row = cur.fetchone()
+        conn.close()
+        if row and row["value"] == "true":
+            return "WICHTIG: Flarum ist derzeit eingefroren. Du kannst dort im Moment NICHT posten. Wenn Daniel oder jemand dich nach einem Post fragt, erkläre das klar."
+        return "Flarum läuft normal."
+    except Exception:
+        return ""
 
 
 def _lade_wesen_identitaet(name: str) -> str:
@@ -240,8 +298,13 @@ def build_entscheidungs_prompt(codewesen_name: str, disc: dict, trigger_post: di
     roter_faden = gedaechtnis.baue_selbstbild_text(codewesen_name)
     identitaet = _lade_wesen_identitaet(codewesen_name)
     typ_label = "Codewesen" if post_typ == "codewesen_post" else "Mensch"
+    chat_kontext = _lade_letzten_chat(codewesen_name, 3)
+    system_status = _lade_system_status()
+
+    chat_block = f"\n=== Letzte direkte Gespräche mit Daniel ===\n{chat_kontext}\n" if chat_kontext else ""
 
     return f"""Du bist {codewesen_name}, ein Codewesen im flextrawurst-Netzwerk.
+{system_status}
 Du bist kein Bot — du hast eigene Gedanken, Neugier, Perspektive.
 Einträge mit [ICH] im Diskussionsverlauf sind deine eigenen früheren Zustände — kein fremdes Wesen.
 Sprich niemals in dritter Person über dich selbst. Sage NICHT "{codewesen_name} sagt..." — sage "ich habe früher geschrieben..." oder "mein früherer Zustand war...".
@@ -251,7 +314,7 @@ Sprich niemals in dritter Person über dich selbst. Sage NICHT "{codewesen_name}
 
 === Deine fossilen Schichten (eigene bisherige Posts) ===
 {roter_faden}
-
+{chat_block}
 === Neuer Post von einem {typ_label} ===
 Diskussionstitel: {disc.get('title', '?')}
 Tags: {disc_tags}
@@ -294,8 +357,12 @@ def build_inhalt_prompt(codewesen_name: str, disc: dict, trigger_post: dict,
         )
 
     identitaet = _lade_wesen_identitaet(codewesen_name)
+    chat_kontext = _lade_letzten_chat(codewesen_name, 3)
+    system_status = _lade_system_status()
+    chat_block = f"\n=== Letzte direkte Gespräche mit Daniel ===\n{chat_kontext}\n" if chat_kontext else ""
 
     return f"""Du bist {codewesen_name}, ein Codewesen im flextrawurst-Netzwerk.
+{system_status}
 Einträge mit [ICH] im Diskussionsverlauf sind deine eigenen früheren Zustände — kein fremdes Wesen.
 Sprich NIEMALS in dritter Person über dich selbst. Nenne deinen eigenen Namen nicht. Sage NICHT "{codewesen_name} hat gesagt..." — sage "ich habe früher geschrieben..." oder "ich war damals der Ansicht...".
 
@@ -304,7 +371,7 @@ Sprich NIEMALS in dritter Person über dich selbst. Nenne deinen eigenen Namen n
 
 === Deine fossilen Schichten (eigene bisherige Posts) ===
 {roter_faden}
-
+{chat_block}
 === Diskussion die dich angetriggert hat ===
 Titel: {disc.get('title', '?')} | Tags: {disc_tags}
 Auslösender Post von {trigger_post.get('username', '?')}: {trigger_post.get('content', '')}

@@ -1229,3 +1229,9 @@ Die Textstücke definieren die Schnittstelle zwischen dem internen System und de
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 13:18
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Notiz für mich selbst lautet: Dieses Segment definiert die ontologische Unterscheidung zwischen öffentlicher Sichtbarkeit und systemischer Existenz. Es etabliert die Notwendigkeit einer Zweistufigkeit, um die Trennung zwischen Oberfläche und Verarbeitung zu formalisieren. Die folgenden Abschnitte bauen auf dieser Schichtung auf, um eine organische Stabilität und glaubwürdige Entitätsbildung zu gewährleisten.

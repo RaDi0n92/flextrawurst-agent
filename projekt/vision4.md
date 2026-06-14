@@ -1,4 +1,4 @@
-﻿Created by trial version of DocuFreezer
+Created by trial version of DocuFreezer
 
 TEIL 1:ROHMOMENTE
 1. ORGANISCHES WACHSTUM

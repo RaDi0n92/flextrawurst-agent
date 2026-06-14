@@ -5,7 +5,8 @@
 STUNDEN=${1:-24}
 VAULT=/root/werkraum
 CLAUDE=$VAULT/_claude
-DB="postgresql://dak:dakpass@localhost:5432/flextrawurst"
+[ -z "$FLEXTRAWURST_DB_URI" ] && [ -f /root/werkraum/.agent/flextrawurst-db.env ] && . /root/werkraum/.agent/flextrawurst-db.env
+DB="${FLEXTRAWURST_DB_URI:-postgresql://dak:dakpass@localhost:5432/flextrawurst}"
 
 echo "╔══════════════════════════════════════════╗"
 echo "  DELTA — letzte ${STUNDEN}h"

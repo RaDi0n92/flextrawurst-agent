@@ -1,4 +1,4 @@
-﻿Created by trial version of DocuFreezer
+Created by trial version of DocuFreezer
 
 Ja — und diesmal ziehe ich dich raus, nicht bloß das System.
 Der entscheidende Befund ist: Deine stärksten Rohideen erscheinen meist nicht als glatte 

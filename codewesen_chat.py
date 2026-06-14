@@ -28,6 +28,7 @@ from typing import AsyncGenerator
 
 import edge_tts
 import httpx
+import psycopg2
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -42,6 +43,20 @@ BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
 TOKENS      = BASE / "_api_tokens.json"
 OLLAMA_URL  = "http://localhost:11434/api/chat"
+
+_DB_URI = None
+def _get_db_uri() -> str:
+    global _DB_URI
+    if _DB_URI is None:
+        env_file = Path("/root/werkraum/.agent/flextrawurst-db.env")
+        if env_file.exists():
+            for line in env_file.read_text().splitlines():
+                if line.startswith("FLEXTRAWURST_DB_URI="):
+                    _DB_URI = line.split("=", 1)[1]
+                    break
+    return _DB_URI or ""
+
+ROLLE_DB_MAP = {"mensch": "user", "codewesen": "assistant", "system": "system"}
 OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
 MODELLE = {
     "mittel": "gemma4:e4b-it-q4_K_M",
@@ -225,9 +240,24 @@ def lade_chat_verlauf(name: str, max_eintraege: int = 20) -> list[dict]:
 def speichere_chat_eintrag(name: str, rolle: str, inhalt: str):
     datei = chat_verlauf_datei(name)
     datei.parent.mkdir(parents=True, exist_ok=True)
-    eintrag = {"ts": datetime.utcnow().isoformat(), "rolle": rolle, "inhalt": inhalt}
+    ts = datetime.utcnow().isoformat()
+    eintrag = {"ts": ts, "rolle": rolle, "inhalt": inhalt}
     with open(datei, "a", encoding="utf-8") as f:
         f.write(json.dumps(eintrag, ensure_ascii=False) + "\n")
+    try:
+        uri = _get_db_uri()
+        if uri:
+            db_rolle = ROLLE_DB_MAP.get(rolle, "user")
+            conn = psycopg2.connect(uri)
+            with conn.cursor() as cur:
+                cur.execute(
+                    "INSERT INTO wesen_chat_verlauf (wesen_name, rolle, inhalt, created_at) VALUES (%s, %s, %s, %s)",
+                    (name, db_rolle, inhalt, ts)
+                )
+            conn.commit()
+            conn.close()
+    except Exception:
+        pass
 
 
 def _lade_grundhaltung() -> str:

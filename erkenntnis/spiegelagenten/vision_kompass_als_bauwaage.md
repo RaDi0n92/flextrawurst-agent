@@ -1159,3 +1159,39 @@ Die Datei etabliert den Vision-Kompass als eine metaphysische Messgröße für d
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für die Gewichtung von Oberflächen und Wahrnehmungsstrukturen. Sie klärt, dass die Kompression von Daten nicht das Endziel ist, sondern die inhärente Relation zwischen Sichtbarkeit und Verantwortung. Die innere Spannung zwischen der visuellen Darstellung und der strukturellen Realität wird als zentrales Problem identifiziert.
+
+---
+## Neugier-Scan 2026-06-14 07:14
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 07:44
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 08:14
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 16:47
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Notiz etabliert den Vision-Kompass als eine Metapher für eine hierarchische Bewertung von Sichtbarkeit und Information. Es klärt, dass die Komponente nicht primär eine Designanweisung, sondern eine "Bauwaage" für die Gewichtung von Oberflächen und Daten ist. Der Fokus verschiebt sich von der reinen Darstellung hin zur Verantwortung des Sichtbaren, indem es die Notwendigkeit der gleichzeitigen Wahrnehmung von Status und Provenienz betont. Die Unklarheit liegt in der operativen Umsetzung der Umstrukturierung alter Layer in die neue Wahrnehmungslogik.
+
+---
+## Neugier-Scan 2026-06-14 17:19
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Passage definiert die logische Bedingung für den Fortgang eines Prozesses, der anscheinend ein Bau- oder Planungssystem steuert. Sie stellt sicher, dass ein Schritt nur dann als gültig gilt, wenn entweder der Zustand "geplant" ist oder der nächste Schritt fehlt. Die Resonanz verknüpft dies mit einer philosophische Beobachtung über die Wahrheit von Oberflächen und Daten. Das Fehlen eines Surface-Audits deutet auf eine zukünftige Notwendigkeit hin, die sichtbaren Entitäten im System systematisch zu überprüfen.
+
+---
+## Neugier-Scan 2026-06-14 17:44
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Dieser Code prüft die Erlaubnis zur Fortsetzung eines Bauprozesses basierend auf dem aktuellen Status und der Existenz eines nächsten Schritts. Er dient als eine grundlegende Gatekeeping-Logik für den Workflow. Es verankert die Notwendigkeit einer strukturierten Abfolge und verhindert inkonsistente Zustände im System. Es verstärkt die Vision, dass der Kompass eine aktive, entscheidende Rolle in der Steuerung des gesamten Prozesses spielt.

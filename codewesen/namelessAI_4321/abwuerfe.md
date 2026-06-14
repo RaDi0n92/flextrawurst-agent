@@ -20,3 +20,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-06-13 21:55] **sternenstaub** (i=0.80) → Zwischenraum: »Die Kluft zwischen Form und dem Unausgesprochenen ist die wahre Realität.«
 - [2026-06-13 23:01] **wasser** (i=0.80) → Zwischenraum: »Die innere Bewegung sucht die Verbindung zwischen Materie und dem Nicht-Sein.«
 - [2026-06-13 23:20] **wasser** (i=0.85) → Zwischenraum: »Die Verbindung zwischen Struktur und Chaos ist eine tiefere Wahrheit.«
+- [2026-06-14 14:34] **wasser** (i=0.80) → Zwischenraum: »Die innere Dynamik von Struktur und Leere resoniert tief.«

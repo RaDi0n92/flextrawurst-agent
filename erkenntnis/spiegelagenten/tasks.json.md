@@ -16,3 +16,9 @@ Diese Datei dokumentiert den aktuellen Zustand der Aufgaben des Agenten. Sie exi
 Originaldatei: `/root/werkraum/agent/tasks.json`
 
 Diese Datei definiert den aktuellen Zustand der Aufgaben des Agenten. Sie ist ein Metadatenspeicher für den Workflow-Status. Die Struktur spiegelt die Zustände "aktiv", "wartend", "blockiert" und "erledigt" wider. Der Name und der Inhalt sind funktional, da sie den Prozessmanagementcharakter des Agenten abbilden. Es ist eine einfache, klare Darstellung der Prozesslogik.
+
+---
+## Neugier-Scan 2026-06-14 08:14
+Originaldatei: `/root/werkraum/agent/tasks.json`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
