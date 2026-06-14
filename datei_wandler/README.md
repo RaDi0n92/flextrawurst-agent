@@ -13,6 +13,7 @@ Kleiner Werkraum-Webservice fuer gemischte Datei-Exporte.
 - Markdown-Export baut ein Verzeichnis und erkennt einfache Verweise zu anderen ausgewählten Dateien.
 - Uploads koennen als einzelne Dateien oder ganze Ordner mit Unterordnern gesammelt werden; die Pfade bleiben im Export sichtbar.
 - Auch unter `Quellen` werden Ordner rekursiv eingelesen; Unterordner bleiben im Export als Pfad erhalten.
+- Der HTML-Export zeigt einen aufklappbaren Ordnerbaum.
 
 ## Start
 

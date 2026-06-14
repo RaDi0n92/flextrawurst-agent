@@ -189,6 +189,55 @@ def export_label(file: SourceFile) -> str:
     return display_path(file)
 
 
+def path_segments(file: SourceFile) -> list[str]:
+    return [part for part in display_path(file).replace("\\", "/").split("/") if part]
+
+
+def build_file_tree(files: list[SourceFile]) -> dict[str, object]:
+    tree: dict[str, object] = {"dirs": {}, "files": []}
+    for i, file in enumerate(files, 1):
+        segments = path_segments(file)
+        if not segments:
+            continue
+        anchor = f"datei-{i}-{slugify(display_path(file))}"
+        node = tree
+        for segment in segments[:-1]:
+            dirs = node["dirs"]  # type: ignore[index]
+            node = dirs.setdefault(segment, {"dirs": {}, "files": []})  # type: ignore[assignment]
+        node["files"].append((segments[-1], file, anchor))  # type: ignore[index]
+    return tree
+
+
+def render_markdown_tree(node: dict[str, object], depth: int = 0) -> list[str]:
+    lines: list[str] = []
+    indent = "  " * depth
+    dirs = node["dirs"]  # type: ignore[index]
+    files = node["files"]  # type: ignore[index]
+    for name in sorted(dirs):
+        lines.append(f"{indent}- **{name}/**")
+        lines.extend(render_markdown_tree(dirs[name], depth + 1))  # type: ignore[index]
+    for name, file, anchor in sorted(files, key=lambda item: item[0].lower()):
+        lines.append(f"{indent}- [[#{anchor}|{name}]]")
+    return lines
+
+
+def render_html_tree(node: dict[str, object]) -> str:
+    parts = ['<ol class="path-tree">']
+    dirs = node["dirs"]  # type: ignore[index]
+    files = node["files"]  # type: ignore[index]
+    for name in sorted(dirs):
+        child = dirs[name]  # type: ignore[index]
+        parts.append(
+            f"<li><details open><summary>{html.escape(name)}/</summary>{render_html_tree(child)}</details></li>"
+        )
+    for name, file, anchor in sorted(files, key=lambda item: item[0].lower()):
+        parts.append(
+            f'<li class="path-file"><a href="#{anchor}">{html.escape(name)}</a><span>{html.escape(display_path(file))}</span></li>'
+        )
+    parts.append("</ol>")
+    return "".join(parts)
+
+
 def read_file_path(path: Path) -> SourceFile:
     if not path.exists() or not path.is_file():
         raise HTTPException(status_code=400, detail=f"Nicht gefunden oder keine Datei: {path}")
@@ -490,10 +539,9 @@ def export_editor_script() -> str:
 
 def build_markdown(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    tree = build_file_tree(files)
     body = ["# Datei-Wandler Export", "", f"Erzeugt: {now}", f"Dateien: {len(files)}", "", "## Verzeichnis", ""]
-    for i, file in enumerate(files, 1):
-        anchor = f"datei-{i}-{slugify(display_path(file))}"
-        body.append(f"- [[#{anchor}|{export_label(file)}]]")
+    body.extend(render_markdown_tree(tree))
     body.append("")
     for i, file in enumerate(files, 1):
         anchor = f"datei-{i}-{slugify(display_path(file))}"
@@ -504,6 +552,7 @@ def build_markdown(files: list[SourceFile], html_mode: str) -> str:
 
 def build_html(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    tree = build_file_tree(files)
     nav = "\n".join(
         f'<li data-nav-item="true" data-target="f{i}"><a href="#f{i}">{html.escape(display_path(file))}</a><span>{file.origin} · {file.size_bytes} B</span></li>'
         for i, file in enumerate(files, 1)
@@ -588,6 +637,42 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       max-width: 1500px;
       margin: 0 auto;
       padding: 24px;
+    }}
+    .tree-panel {{
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 18px;
+    }}
+    .tree-panel h2 {{
+      margin: 0 0 12px;
+    }}
+    .path-tree {{
+      margin: 0;
+      padding-left: 22px;
+      display: grid;
+      gap: 6px;
+    }}
+    .path-tree summary {{
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 700;
+    }}
+    .path-tree li {{
+      margin: 0;
+    }}
+    .path-tree .path-file {{
+      list-style: disc;
+      color: var(--muted);
+    }}
+    .path-tree .path-file a {{
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 650;
+    }}
+    .path-tree .path-file span {{
+      display: block;
+      color: var(--muted);
+      font-size: .86rem;
     }}
     .statusbar {{
       display: flex;
@@ -749,6 +834,10 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       <h1>Datei-Wandler Export</h1>
       <p class="meta">Inhalte sind escaped und werden angezeigt, nicht ausgefuehrt.</p>
     </header>
+    <section class="tree-panel">
+      <h2>Ordnerbaum</h2>
+      {render_html_tree(tree)}
+    </section>
     <section class="statusbar" aria-label="Werkzeuge für den Export">
       <label class="searchbox" for="file-search">
         <span>Suche</span>
