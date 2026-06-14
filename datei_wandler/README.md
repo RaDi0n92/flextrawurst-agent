@@ -14,6 +14,8 @@ Kleiner Werkraum-Webservice fuer gemischte Datei-Exporte.
 - Uploads koennen als einzelne Dateien oder ganze Ordner mit Unterordnern gesammelt werden; die Pfade bleiben im Export sichtbar.
 - Auch unter `Quellen` werden Ordner rekursiv eingelesen; Unterordner bleiben im Export als Pfad erhalten.
 - Der HTML-Export zeigt einen aufklappbaren, durchsuchbaren Ordnerbaum mit Datei- und Ordnersymbolen.
+- Einzeldateien, Gesamtupload und erzeugte Exporte haben keine konfigurierte Groessenobergrenze.
+- DOCX-Dateien werden als lesbarer Text extrahiert.
 
 ## Start
 
@@ -48,5 +50,4 @@ Blockiert:
 - `.env`
 - private Keys und Zertifikate
 - lokale Datenbanken wie `.sqlite` / `.db`
-- Binaerdateien
-- Dateien ueber 2 MB
+- Binaerdateien ohne unterstuetzte Textextraktion

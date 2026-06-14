@@ -6,6 +6,7 @@ import json
 import mimetypes
 import re
 import zipfile
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime
 from html.parser import HTMLParser
@@ -21,7 +22,7 @@ from fastapi.staticfiles import StaticFiles
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 EXPORT_DIR = BASE_DIR / "exports"
-MAX_FILE_BYTES = 2 * 1024 * 1024
+MAX_FILE_BYTES: int | None = None
 ALLOWED_ROOTS = [Path("/root/werkraum").resolve(), Path("/root/visionen").resolve()]
 BLOCKED_NAME_PATTERNS = (
     re.compile(r"(^|/)\.env($|\.)"),
@@ -163,6 +164,29 @@ def decode_text(raw: bytes) -> tuple[str, str | None]:
     return raw.decode("utf-8", errors="replace"), "Mit Ersatzzeichen gelesen."
 
 
+def extract_docx_text(raw: bytes) -> str:
+    try:
+        with zipfile.ZipFile(io.BytesIO(raw)) as archive:
+            document = archive.read("word/document.xml")
+    except (KeyError, zipfile.BadZipFile) as exc:
+        raise ValueError("Ungueltige oder beschaedigte DOCX-Datei.") from exc
+
+    root = ET.fromstring(document)
+    namespace = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    paragraphs: list[str] = []
+    for paragraph in root.iter(f"{namespace}p"):
+        text = "".join(node.text or "" for node in paragraph.iter(f"{namespace}t")).strip()
+        if text:
+            paragraphs.append(text)
+    return "\n\n".join(paragraphs)
+
+
+def decode_source(raw: bytes, suffix: str) -> tuple[str, str | None]:
+    if suffix == ".docx":
+        return extract_docx_text(raw), "Text aus DOCX extrahiert."
+    return decode_text(raw)
+
+
 def slugify(text: str) -> str:
     normalized = unicodedata.normalize("NFKD", text)
     ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
@@ -251,9 +275,9 @@ def read_file_path(path: Path) -> SourceFile:
     if is_blocked(path):
         raise HTTPException(status_code=400, detail=f"Blockierter Dateityp oder Geheimdatei: {path}")
     size = path.stat().st_size
-    if size > MAX_FILE_BYTES:
+    if MAX_FILE_BYTES is not None and size > MAX_FILE_BYTES:
         raise HTTPException(status_code=400, detail=f"Datei zu gross ({size} Bytes): {path}")
-    content, warning = decode_text(path.read_bytes())
+    content, warning = decode_source(path.read_bytes(), path.suffix.lower())
     return SourceFile(str(path), "path", path.suffix.lower(), content, size, warning, str(path))
 
 
@@ -269,13 +293,13 @@ def resolve_sources(path_text: str) -> list[SourceFile]:
 
 async def read_upload(upload: UploadFile) -> SourceFile:
     raw = await upload.read()
-    if len(raw) > MAX_FILE_BYTES:
+    if MAX_FILE_BYTES is not None and len(raw) > MAX_FILE_BYTES:
         raise HTTPException(status_code=400, detail=f"Upload zu gross ({len(raw)} Bytes): {upload.filename}")
     name = (upload.filename or "upload").replace("\\", "/")
     if is_blocked(Path(name)):
         raise HTTPException(status_code=400, detail=f"Blockierter Upload-Name: {name}")
     try:
-        content, warning = decode_text(raw)
+        content, warning = decode_source(raw, Path(name).suffix.lower())
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"{name}: {exc}") from exc
     return SourceFile(name, "upload", Path(name).suffix.lower(), content, len(raw), warning, name)
@@ -1099,4 +1123,6 @@ def health() -> dict[str, object]:
         "ok": True,
         "allowed_roots": [str(root) for root in ALLOWED_ROOTS],
         "max_file_bytes": MAX_FILE_BYTES,
+        "max_export_bytes": None,
+        "max_total_upload_bytes": None,
     }
