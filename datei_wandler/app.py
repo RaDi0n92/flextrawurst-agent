@@ -7,6 +7,7 @@ import mimetypes
 import re
 import zipfile
 import xml.etree.ElementTree as ET
+from collections import deque
 from dataclasses import dataclass
 from datetime import datetime
 from html.parser import HTMLParser
@@ -319,38 +320,96 @@ def code_block(content: str, suffix: str) -> str:
     return f"{fence}{lang}\n{content.rstrip()}\n{fence}"
 
 
-def collect_related_files(file: SourceFile, files: list[SourceFile]) -> list[SourceFile]:
-    related: list[SourceFile] = []
-    haystack = file.content
-    candidates: list[tuple[str, SourceFile, bool]] = []
-    for other in files:
-        if other is file:
-            continue
-        other_path = display_path(other)
-        names = {
-            other.label,
-            export_label(other),
-            Path(other_path).name,
-            Path(other_path).stem,
-        }
-        names.add(other_path)
-        names.add(Path(other_path).name)
-        names.add(Path(other_path).stem)
-        for name in sorted({value for value in names if value}):
-            candidates.append((name, other, "/" in name or "." in name))
+class ReferenceMatcher:
+    def __init__(self, files: list[SourceFile]) -> None:
+        self.transitions: list[dict[str, int]] = [{}]
+        self.failures = [0]
+        self.outputs: list[list[str]] = [[]]
+        self.alias_files: dict[str, set[int]] = {}
+        self.word_boundaries: dict[str, bool] = {}
 
-    seen_ids: set[str] = set()
-    for needle, other, is_path_like in candidates:
-        if other.label in seen_ids:
-            continue
-        pattern = re.escape(needle) if is_path_like else rf"\b{re.escape(needle)}\b"
-        if re.search(pattern, haystack):
-            related.append(other)
-            seen_ids.add(other.label)
-    return related
+        for index, file in enumerate(files):
+            file_path = display_path(file)
+            aliases = {
+                file.label,
+                export_label(file),
+                file_path,
+                Path(file_path).name,
+                Path(file_path).stem,
+            }
+            for alias in {value for value in aliases if value}:
+                self.alias_files.setdefault(alias, set()).add(index)
+                self.word_boundaries[alias] = "/" not in alias and "." not in alias
+
+        for alias in self.alias_files:
+            state = 0
+            for char in alias:
+                next_state = self.transitions[state].get(char)
+                if next_state is None:
+                    next_state = len(self.transitions)
+                    self.transitions[state][char] = next_state
+                    self.transitions.append({})
+                    self.failures.append(0)
+                    self.outputs.append([])
+                state = next_state
+            self.outputs[state].append(alias)
+
+        queue: deque[int] = deque(self.transitions[0].values())
+        while queue:
+            state = queue.popleft()
+            for char, next_state in self.transitions[state].items():
+                queue.append(next_state)
+                fallback = self.failures[state]
+                while fallback and char not in self.transitions[fallback]:
+                    fallback = self.failures[fallback]
+                self.failures[next_state] = self.transitions[fallback].get(char, 0)
+                self.outputs[next_state].extend(self.outputs[self.failures[next_state]])
+
+    @staticmethod
+    def is_word_char(char: str) -> bool:
+        return char == "_" or char.isalnum()
+
+    def has_required_boundaries(self, content: str, alias: str, start: int, end: int) -> bool:
+        if not self.word_boundaries[alias]:
+            return True
+        before_is_word = start > 0 and self.is_word_char(content[start - 1])
+        after_is_word = end < len(content) and self.is_word_char(content[end])
+        return (
+            before_is_word != self.is_word_char(alias[0])
+            and self.is_word_char(alias[-1]) != after_is_word
+        )
+
+    def related_indexes(self, content: str, current_index: int, files: list[SourceFile]) -> list[int]:
+        matched: set[int] = set()
+        state = 0
+        for position, char in enumerate(content):
+            while state and char not in self.transitions[state]:
+                state = self.failures[state]
+            state = self.transitions[state].get(char, 0)
+            for alias in self.outputs[state]:
+                end = position + 1
+                start = end - len(alias)
+                if self.has_required_boundaries(content, alias, start, end):
+                    matched.update(self.alias_files[alias])
+
+        related: list[int] = []
+        seen_labels: set[str] = set()
+        for index, file in enumerate(files):
+            if index == current_index or index not in matched or file.label in seen_labels:
+                continue
+            related.append(index)
+            seen_labels.add(file.label)
+        return related
 
 
-def file_as_markdown(file: SourceFile, html_mode: str, anchor: str, files: list[SourceFile]) -> str:
+def file_as_markdown(
+    file: SourceFile,
+    file_index: int,
+    html_mode: str,
+    anchor: str,
+    files: list[SourceFile],
+    reference_matcher: ReferenceMatcher,
+) -> str:
     path_text = display_path(file)
     lines = [f"## {path_text}", "", f"- Quelle: {file.origin}", f"- Groesse: {file.size_bytes} Bytes"]
     if file.source_path:
@@ -359,11 +418,12 @@ def file_as_markdown(file: SourceFile, html_mode: str, anchor: str, files: list[
         lines.append(f"- Hinweis: {file.warning}")
     lines.append("")
 
-    related = collect_related_files(file, files)
-    if related:
+    related_indexes = reference_matcher.related_indexes(file.content, file_index, files)
+    if related_indexes:
         lines.extend(["### Verweise", ""])
-        for other in related:
-            other_anchor = f"datei-{files.index(other) + 1}-{slugify(display_path(other))}"
+        for other_index in related_indexes:
+            other = files[other_index]
+            other_anchor = f"datei-{other_index + 1}-{slugify(display_path(other))}"
             lines.append(f"- [[#{other_anchor}|{export_label(other)}]]")
         lines.append("")
 
@@ -609,13 +669,14 @@ def export_editor_script() -> str:
 def build_markdown(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     tree = build_file_tree(files)
+    reference_matcher = ReferenceMatcher(files)
     body = ["# Datei-Wandler Export", "", f"Erzeugt: {now}", f"Dateien: {len(files)}", "", "## Verzeichnis", ""]
     body.extend(render_markdown_tree(tree))
     body.append("")
     for i, file in enumerate(files, 1):
         anchor = f"datei-{i}-{slugify(display_path(file))}"
         body.append(f"<a id=\"{anchor}\"></a>")
-        body.append(file_as_markdown(file, html_mode, anchor, files))
+        body.append(file_as_markdown(file, i - 1, html_mode, anchor, files, reference_matcher))
     return "\n".join(body)
 
 

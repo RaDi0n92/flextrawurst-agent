@@ -407,7 +407,12 @@
           note.textContent = 'Download gestartet.';
         } catch (error) {
           note.textContent = 'Export fehlgeschlagen.';
-          alert(String(error.message || error));
+          const message = String(error.message || error);
+          if (message === 'Failed to fetch') {
+            alert('Die Verbindung zum Export wurde unterbrochen. Bitte die Seite neu laden und erneut versuchen. Falls es wieder passiert, bleibt die Dateiauswahl bis zum Neuladen erhalten und der Serverfehler kann im Protokoll geprüft werden.');
+          } else {
+            alert(message);
+          }
         }
       });
 
