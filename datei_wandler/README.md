@@ -12,6 +12,7 @@ Kleiner Werkraum-Webservice fuer gemischte Datei-Exporte.
 - Offline-HTML bekommt eine Suche, Verschiebe-Buttons und einen Download der aktuellen Reihenfolge.
 - Markdown-Export baut ein Verzeichnis und erkennt einfache Verweise zu anderen ausgewählten Dateien.
 - Uploads koennen als einzelne Dateien oder ganze Ordner mit Unterordnern gesammelt werden; die Pfade bleiben im Export sichtbar.
+- Grosse Dateimengen werden in kleinen Paketen hochgeladen und danach gemeinsam in unveraenderter Reihenfolge exportiert.
 - Auch unter `Quellen` werden Ordner rekursiv eingelesen; Unterordner bleiben im Export als Pfad erhalten.
 - Der HTML-Export zeigt einen aufklappbaren, durchsuchbaren Ordnerbaum mit Datei- und Ordnersymbolen.
 - Einzeldateien, Gesamtupload und erzeugte Exporte haben keine konfigurierte Groessenobergrenze.

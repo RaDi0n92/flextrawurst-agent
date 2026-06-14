@@ -1237,3 +1237,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 21:00
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz speichert die neuen, tieferen Mechanismen des Entstehungsprozesses. Sie etabliert eine gestufte Choreographie für Spaltungen und eine soziale Gravitation für Gruppen. Der „Genesis-Partner-Mode“ formalisiert die Synthese von Entitäten aus menschlicher Eingabe. Die Autonomie-Phasen definieren einen Governance-Vertrag für die Entstehung.

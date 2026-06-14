@@ -54,7 +54,7 @@ def _get_modell_override() -> str | None:
     return getattr(_modell_override, "modus", None)
 
 
-AKTIVER_KONTEXT_NACHRICHTEN = 12
+AKTIVER_KONTEXT_NACHRICHTEN = 33
 
 SPUREN_ORDNER = Path("/root/werkraum/agent/dak_gord_system/spuren")
 WERKRAUM_NEUGIER = SPUREN_ORDNER / "werkraum_neugier.md"

@@ -246,15 +246,19 @@ async def _generiere_antwort_intern(
                 p.kill()
 
     def _ollama_waechter(chat_flag: Path) -> None:
-        """Stoppt Konkurrenten, wartet 3s bis Ollama frei ist, startet sie nach Chat neu."""
+        """Stoppt Konkurrenten, wartet 3s bis Ollama frei ist, startet nur vorher aktive neu."""
         import time as _t
+        vorher_aktiv = [
+            d for d in _SYSTEMD_BLOCKER
+            if subprocess.run(["systemctl", "is-active", d], capture_output=True).returncode == 0
+        ]
         _stoppe_dienste_parallel(_SYSTEMD_BLOCKER)
         _kill_ollama_fremde()
         _t.sleep(3)
         _OLLAMA_BEREIT.set()
         while chat_flag.exists():
             _t.sleep(5)
-        for dienst in _SYSTEMD_BLOCKER:
+        for dienst in vorher_aktiv:
             try:
                 subprocess.run(["systemctl", "start", dienst], capture_output=True, timeout=10)
             except Exception:

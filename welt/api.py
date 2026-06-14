@@ -12797,7 +12797,7 @@ def chat_verlauf_lesen(wesen_name: str, limit: int = 100, offset: int = 0,
                 """SELECT id::text, wesen_name, rolle, inhalt, created_at
                    FROM wesen_chat_verlauf
                    WHERE wesen_name = %s
-                   ORDER BY created_at ASC
+                   ORDER BY created_at DESC
                    LIMIT %s OFFSET %s""",
                 (wesen_name, limit, offset)
             )

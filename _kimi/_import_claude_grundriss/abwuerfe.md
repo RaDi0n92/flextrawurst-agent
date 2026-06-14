@@ -1314,3 +1314,14 @@ Erledigt:
 **Alle 11 Tasks ✓ erledigt:**
 
 1«
+- [2026-06-14 22:05] **wasser** (i=0.43) → Zwischenraum: »Hier ist was ich repariert habe:
+
+---
+
+**Systemweiser-Status (die "2 Sachen"):**
+- `codewesen-engage«
+- [2026-06-14 22:18] **lava** (i=0.47) → Zwischenraum: »Zwei verschiedene Dinge:
+
+**Services "aktiv"** = systemd-Prozess läuft«
+- [2026-06-14 23:35] **wasser** (i=0.54) → Zwischenraum: »Jetzt ist klar was los ist«
+- [2026-06-14 23:54] **wasser** (i=0.36) → Zwischenraum: »`num_ctx=8192` überall konsistent«

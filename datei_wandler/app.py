@@ -5,6 +5,9 @@ import io
 import json
 import mimetypes
 import re
+import shutil
+import time
+import uuid
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import deque
@@ -23,6 +26,8 @@ from fastapi.staticfiles import StaticFiles
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 EXPORT_DIR = BASE_DIR / "exports"
+UPLOAD_SESSION_DIR = BASE_DIR / "upload_sessions"
+UPLOAD_SESSION_MAX_AGE_SECONDS = 24 * 60 * 60
 MAX_FILE_BYTES: int | None = None
 ALLOWED_ROOTS = [Path("/root/werkraum").resolve(), Path("/root/visionen").resolve()]
 BLOCKED_NAME_PATTERNS = (
@@ -1117,36 +1122,27 @@ def write_export(name: str, content: bytes) -> Path:
     return path
 
 
-@app.get("/", response_class=HTMLResponse)
-def index() -> str:
-    return (STATIC_DIR / "index.html").read_text(encoding="utf-8")
-
-
-@app.post("/convert")
-async def convert(
-    paths: str = Form(""),
-    output: str = Form("html"),
-    html_mode: str = Form("markdown"),
-    uploads: list[UploadFile] = File(default=[]),
-) -> FileResponse:
+def validate_export_options(output: str, html_mode: str) -> None:
     if output not in {"html", "markdown", "both"}:
         raise HTTPException(status_code=400, detail="Ungueltiges Ausgabeformat.")
     if html_mode not in {"source", "markdown", "both"}:
         raise HTTPException(status_code=400, detail="Ungueltiger HTML-Modus.")
 
+
+def collect_path_sources(paths: str) -> list[SourceFile]:
     files: list[SourceFile] = []
     for line in paths.splitlines():
         path_text = line.strip()
         if path_text:
             files.extend(resolve_sources(path_text))
-    for upload in uploads:
-        if upload.filename:
-            files.append(await read_upload(upload))
+    return files
 
+
+def create_export(files: list[SourceFile], output: str, html_mode: str) -> FileResponse:
     if not files:
         raise HTTPException(status_code=400, detail="Keine Dateien angegeben.")
 
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     if output == "html":
         html_doc = build_html(files, html_mode)
         path = write_export(f"datei_wandler_{stamp}.html", html_doc.encode("utf-8"))
@@ -1176,6 +1172,155 @@ async def convert(
         )
     path = write_export(f"datei_wandler_{stamp}.zip", zip_buffer.getvalue())
     return FileResponse(path, media_type="application/zip", filename=path.name)
+
+
+def cleanup_upload_sessions() -> None:
+    if not UPLOAD_SESSION_DIR.exists():
+        return
+    cutoff = time.time() - UPLOAD_SESSION_MAX_AGE_SECONDS
+    for path in UPLOAD_SESSION_DIR.iterdir():
+        if path.is_dir() and path.stat().st_mtime < cutoff:
+            shutil.rmtree(path, ignore_errors=True)
+
+
+def upload_session_path(session_id: str, must_exist: bool = True) -> Path:
+    if not re.fullmatch(r"[a-f0-9]{32}", session_id):
+        raise HTTPException(status_code=404, detail="Upload-Sitzung nicht gefunden.")
+    path = UPLOAD_SESSION_DIR / session_id
+    if must_exist and not path.is_dir():
+        raise HTTPException(status_code=404, detail="Upload-Sitzung nicht gefunden.")
+    return path
+
+
+def load_upload_manifest(session_path: Path) -> dict[str, object]:
+    try:
+        return json.loads((session_path / "manifest.json").read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError) as exc:
+        raise HTTPException(status_code=409, detail="Upload-Sitzung ist beschaedigt.") from exc
+
+
+def save_upload_manifest(session_path: Path, manifest: dict[str, object]) -> None:
+    temporary = session_path / "manifest.json.tmp"
+    temporary.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
+    temporary.replace(session_path / "manifest.json")
+
+
+def staged_source_file(session_path: Path, entry: dict[str, object]) -> SourceFile:
+    content_path = session_path / str(entry["content_file"])
+    return SourceFile(
+        label=str(entry["label"]),
+        origin="upload",
+        suffix=str(entry["suffix"]),
+        content=content_path.read_text(encoding="utf-8"),
+        size_bytes=int(entry["size_bytes"]),
+        warning=str(entry["warning"]) if entry.get("warning") else None,
+        source_path=str(entry["source_path"]),
+    )
+
+
+@app.get("/", response_class=HTMLResponse)
+def index() -> str:
+    return (STATIC_DIR / "index.html").read_text(encoding="utf-8")
+
+
+@app.post("/upload-sessions")
+def start_upload_session() -> dict[str, str]:
+    cleanup_upload_sessions()
+    UPLOAD_SESSION_DIR.mkdir(parents=True, exist_ok=True)
+    session_id = uuid.uuid4().hex
+    session_path = upload_session_path(session_id, must_exist=False)
+    session_path.mkdir()
+    save_upload_manifest(session_path, {"files": {}})
+    return {"session_id": session_id}
+
+
+@app.post("/upload-sessions/{session_id}/files")
+async def upload_session_files(
+    session_id: str,
+    start_index: int = Form(...),
+    uploads: list[UploadFile] = File(...),
+) -> dict[str, int]:
+    if start_index < 0:
+        raise HTTPException(status_code=400, detail="Ungueltiger Dateiindex.")
+    session_path = upload_session_path(session_id)
+    manifest = load_upload_manifest(session_path)
+    entries = manifest.get("files")
+    if not isinstance(entries, dict):
+        raise HTTPException(status_code=409, detail="Upload-Sitzung ist beschaedigt.")
+
+    for offset, upload in enumerate(uploads):
+        if not upload.filename:
+            continue
+        position = start_index + offset
+        source = await read_upload(upload)
+        content_file = f"{position:08}.txt"
+        (session_path / content_file).write_text(source.content, encoding="utf-8")
+        entries[str(position)] = {
+            "label": source.label,
+            "suffix": source.suffix,
+            "size_bytes": source.size_bytes,
+            "warning": source.warning,
+            "source_path": source.source_path,
+            "content_file": content_file,
+        }
+
+    save_upload_manifest(session_path, manifest)
+    return {"received": len(entries)}
+
+
+@app.post("/upload-sessions/{session_id}/convert")
+def convert_upload_session(
+    session_id: str,
+    expected_count: int = Form(...),
+    paths: str = Form(""),
+    output: str = Form("html"),
+    html_mode: str = Form("markdown"),
+) -> FileResponse:
+    validate_export_options(output, html_mode)
+    if expected_count < 0:
+        raise HTTPException(status_code=400, detail="Ungueltige Dateianzahl.")
+    session_path = upload_session_path(session_id)
+    try:
+        manifest = load_upload_manifest(session_path)
+        entries = manifest.get("files")
+        if not isinstance(entries, dict):
+            raise HTTPException(status_code=409, detail="Upload-Sitzung ist beschaedigt.")
+        missing = [index for index in range(expected_count) if str(index) not in entries]
+        if missing:
+            raise HTTPException(
+                status_code=409,
+                detail=f"Upload unvollstaendig: {len(missing)} von {expected_count} Dateien fehlen.",
+            )
+        files = collect_path_sources(paths)
+        files.extend(
+            staged_source_file(session_path, entries[str(index)])
+            for index in range(expected_count)
+        )
+        return create_export(files, output, html_mode)
+    finally:
+        shutil.rmtree(session_path, ignore_errors=True)
+
+
+@app.delete("/upload-sessions/{session_id}")
+def delete_upload_session(session_id: str) -> dict[str, bool]:
+    session_path = upload_session_path(session_id, must_exist=False)
+    shutil.rmtree(session_path, ignore_errors=True)
+    return {"deleted": True}
+
+
+@app.post("/convert")
+async def convert(
+    paths: str = Form(""),
+    output: str = Form("html"),
+    html_mode: str = Form("markdown"),
+    uploads: list[UploadFile] = File(default=[]),
+) -> FileResponse:
+    validate_export_options(output, html_mode)
+    files = collect_path_sources(paths)
+    for upload in uploads:
+        if upload.filename:
+            files.append(await read_upload(upload))
+    return create_export(files, output, html_mode)
 
 
 @app.get("/health")

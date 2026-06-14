@@ -94,18 +94,22 @@ class ReferenceMatcherTest(unittest.TestCase):
 
 
 class MultipartExportTest(unittest.IsolatedAsyncioTestCase):
-    async def test_exports_622_markdown_uploads(self) -> None:
+    def make_uploads(self, start: int, count: int) -> list[UploadFile]:
         uploads = [
             UploadFile(
                 file=tempfile.SpooledTemporaryFile(),
                 filename=f"ordner/file-{index:03}.md",
                 headers=Headers({"content-type": "text/markdown"}),
             )
-            for index in range(622)
+            for index in range(start, start + count)
         ]
-        for index, upload in enumerate(uploads):
+        for index, upload in enumerate(uploads, start):
             upload.file.write((f"# Datei {index}\n\nInhalt ohne Verweis.\n" * 20).encode())
             upload.file.seek(0)
+        return uploads
+
+    async def test_exports_622_markdown_uploads(self) -> None:
+        uploads = self.make_uploads(0, 622)
 
         response = await app.convert(
             paths="",
@@ -122,6 +126,36 @@ class MultipartExportTest(unittest.IsolatedAsyncioTestCase):
             export_path.unlink(missing_ok=True)
             for upload in uploads:
                 await upload.close()
+
+    async def test_exports_622_markdown_uploads_in_batches(self) -> None:
+        session_id = app.start_upload_session()["session_id"]
+        for start in range(0, 622, 25):
+            uploads = self.make_uploads(start, min(25, 622 - start))
+            try:
+                result = await app.upload_session_files(
+                    session_id=session_id,
+                    start_index=start,
+                    uploads=uploads,
+                )
+                self.assertEqual(start + len(uploads), result["received"])
+            finally:
+                for upload in uploads:
+                    await upload.close()
+
+        response = app.convert_upload_session(
+            session_id=session_id,
+            expected_count=622,
+            paths="",
+            output="markdown",
+            html_mode="markdown",
+        )
+        export_path = Path(response.path)
+        try:
+            self.assertEqual(200, response.status_code)
+            self.assertGreater(export_path.stat().st_size, 100_000)
+            self.assertFalse((app.UPLOAD_SESSION_DIR / session_id).exists())
+        finally:
+            export_path.unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

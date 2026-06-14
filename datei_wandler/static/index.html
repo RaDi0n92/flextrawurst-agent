@@ -301,6 +301,8 @@
       const count = document.getElementById('upload-count');
       const note = document.querySelector('.actions .note');
       const state = [];
+      const batchFileLimit = 25;
+      const batchByteLimit = 16 * 1024 * 1024;
 
       function fileKey(entry) {
         return [entry.path, entry.file.size, entry.file.lastModified].join('|');
@@ -357,6 +359,55 @@
         }
       }
 
+      function uploadBatches(entries) {
+        const batches = [];
+        let batch = [];
+        let bytes = 0;
+        for (const entry of entries) {
+          if (batch.length && (batch.length >= batchFileLimit || bytes + entry.file.size > batchByteLimit)) {
+            batches.push(batch);
+            batch = [];
+            bytes = 0;
+          }
+          batch.push(entry);
+          bytes += entry.file.size;
+        }
+        if (batch.length) {
+          batches.push(batch);
+        }
+        return batches;
+      }
+
+      async function responseError(response) {
+        const text = await response.text();
+        try {
+          const parsed = JSON.parse(text);
+          return parsed.detail || text;
+        } catch {
+          return text || `HTTP ${response.status}`;
+        }
+      }
+
+      async function fetchChecked(url, options) {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(await responseError(response));
+        }
+        return response;
+      }
+
+      function startDownload(response, blob) {
+        const cd = response.headers.get('content-disposition') || '';
+        const match = cd.match(/filename="?([^"]+)"?/i);
+        const filename = match ? match[1] : 'datei_wandler_export.html';
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = filename;
+        anchor.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+
       fileInput.addEventListener('change', () => {
         addFiles(fileInput.files, 'file');
         resetPicker(fileInput);
@@ -377,39 +428,59 @@
           return;
         }
 
-        note.textContent = 'Erzeuge Export...';
-        const data = new FormData();
-        data.set('paths', pathsValue);
-        data.set('output', document.getElementById('output').value);
-        data.set('html_mode', document.getElementById('html_mode').value);
-        for (const entry of state) {
-          data.append('uploads', entry.file, labelFor(entry));
-        }
-
+        note.textContent = 'Bereite Export vor...';
+        let sessionId = null;
         try {
-          const response = await fetch(form.action, { method: 'POST', body: data });
-          if (!response.ok) {
-            const text = await response.text();
-            throw new Error(text);
+          let response;
+          if (state.length) {
+            const sessionResponse = await fetchChecked('/upload-sessions', { method: 'POST' });
+            sessionId = (await sessionResponse.json()).session_id;
+            const batches = uploadBatches(state);
+            let uploaded = 0;
+            for (const batch of batches) {
+              note.textContent = `Lade Dateien hoch: ${uploaded} / ${state.length}`;
+              const batchData = new FormData();
+              batchData.set('start_index', String(uploaded));
+              for (const entry of batch) {
+                batchData.append('uploads', entry.file, labelFor(entry));
+              }
+              await fetchChecked(`/upload-sessions/${sessionId}/files`, {
+                method: 'POST',
+                body: batchData,
+              });
+              uploaded += batch.length;
+            }
+
+            note.textContent = `Erzeuge Export aus ${state.length} Dateien...`;
+            const exportData = new FormData();
+            exportData.set('expected_count', String(state.length));
+            exportData.set('paths', pathsValue);
+            exportData.set('output', document.getElementById('output').value);
+            exportData.set('html_mode', document.getElementById('html_mode').value);
+            response = await fetchChecked(`/upload-sessions/${sessionId}/convert`, {
+              method: 'POST',
+              body: exportData,
+            });
+            sessionId = null;
+          } else {
+            const data = new FormData();
+            data.set('paths', pathsValue);
+            data.set('output', document.getElementById('output').value);
+            data.set('html_mode', document.getElementById('html_mode').value);
+            response = await fetchChecked(form.action, { method: 'POST', body: data });
           }
+
           const blob = await response.blob();
-          const filename = (() => {
-            const cd = response.headers.get('content-disposition') || '';
-            const match = cd.match(/filename="?([^"]+)"?/i);
-            return match ? match[1] : 'datei_wandler_export.html';
-          })();
-          const url = URL.createObjectURL(blob);
-          const anchor = document.createElement('a');
-          anchor.href = url;
-          anchor.download = filename;
-          anchor.click();
-          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          startDownload(response, blob);
           note.textContent = 'Download gestartet.';
         } catch (error) {
+          if (sessionId) {
+            fetch(`/upload-sessions/${sessionId}`, { method: 'DELETE', keepalive: true }).catch(() => {});
+          }
           note.textContent = 'Export fehlgeschlagen.';
           const message = String(error.message || error);
           if (message === 'Failed to fetch') {
-            alert('Die Verbindung zum Export wurde unterbrochen. Bitte die Seite neu laden und erneut versuchen. Falls es wieder passiert, bleibt die Dateiauswahl bis zum Neuladen erhalten und der Serverfehler kann im Protokoll geprüft werden.');
+            alert('Die Verbindung wurde während eines Upload-Pakets unterbrochen. Die Auswahl bleibt erhalten; starte den Export erneut.');
           } else {
             alert(message);
           }

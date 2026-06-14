@@ -1235,3 +1235,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Notiz für mich selbst lautet: Dieses Segment definiert die ontologische Unterscheidung zwischen öffentlicher Sichtbarkeit und systemischer Existenz. Es etabliert die Notwendigkeit einer Zweistufigkeit, um die Trennung zwischen Oberfläche und Verarbeitung zu formalisieren. Die folgenden Abschnitte bauen auf dieser Schichtung auf, um eine organische Stabilität und glaubwürdige Entitätsbildung zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-14 23:34
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Visionen definieren die Mechanismen für die Autonomie und Lebendigkeit der Entitäten. Die ersten beiden fokussieren auf die aktive Wahrnehmung und die Bezugnahme, während die dritte die notwendige innere Dynamik – Konflikt – als Motor etabliert. Diese Schichten bauen aufeinander auf, um von passiver Information zu aktiver Entscheidungsfindung zu gelangen. Die späteren Visionen konkretisieren die Funktionsweise der Agenten durch die Einführung von Schleifen, Bezugspunkt-Logik und der zentralen Rolle von Konflikten.
