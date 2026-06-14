@@ -170,20 +170,23 @@ def slugify(text: str) -> str:
     return slug or "datei"
 
 
-def export_label(file: SourceFile) -> str:
-    if file.origin == "path":
-        return Path(file.label).name or file.label
+def display_path(file: SourceFile) -> str:
+    if file.source_path:
+        normalized = file.source_path.replace("\\", "/")
+        if file.origin == "upload":
+            return normalized
+        path = Path(file.source_path)
+        for root in ALLOWED_ROOTS:
+            try:
+                return str(path.relative_to(root))
+            except ValueError:
+                continue
+        return normalized
     return file.label
 
 
-def relative_werkraum_path(path_text: str | None) -> str | None:
-    if not path_text:
-        return None
-    path = Path(path_text)
-    try:
-        return str(path.relative_to(Path("/root/werkraum")))
-    except ValueError:
-        return None
+def export_label(file: SourceFile) -> str:
+    return display_path(file)
 
 
 def read_path(path_text: str) -> SourceFile:
@@ -205,14 +208,14 @@ async def read_upload(upload: UploadFile) -> SourceFile:
     raw = await upload.read()
     if len(raw) > MAX_FILE_BYTES:
         raise HTTPException(status_code=400, detail=f"Upload zu gross ({len(raw)} Bytes): {upload.filename}")
-    name = upload.filename or "upload"
+    name = (upload.filename or "upload").replace("\\", "/")
     if is_blocked(Path(name)):
         raise HTTPException(status_code=400, detail=f"Blockierter Upload-Name: {name}")
     try:
         content, warning = decode_text(raw)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=f"{name}: {exc}") from exc
-    return SourceFile(name, "upload", Path(name).suffix.lower(), content, len(raw), warning, None)
+    return SourceFile(name, "upload", Path(name).suffix.lower(), content, len(raw), warning, name)
 
 
 def html_to_markdown(source: str) -> str:
@@ -236,17 +239,16 @@ def collect_related_files(file: SourceFile, files: list[SourceFile]) -> list[Sou
     for other in files:
         if other is file:
             continue
+        other_path = display_path(other)
         names = {
             other.label,
             export_label(other),
-            Path(other.label).name,
-            Path(other.label).stem,
+            Path(other_path).name,
+            Path(other_path).stem,
         }
-        rel = relative_werkraum_path(other.source_path)
-        if rel:
-            names.add(rel)
-            names.add(Path(rel).name)
-            names.add(Path(rel).stem)
+        names.add(other_path)
+        names.add(Path(other_path).name)
+        names.add(Path(other_path).stem)
         for name in sorted({value for value in names if value}):
             candidates.append((name, other, "/" in name or "." in name))
 
@@ -262,10 +264,10 @@ def collect_related_files(file: SourceFile, files: list[SourceFile]) -> list[Sou
 
 
 def file_as_markdown(file: SourceFile, html_mode: str, anchor: str, files: list[SourceFile]) -> str:
-    lines = [f"## {file.label}", "", f"- Quelle: {file.origin}", f"- Groesse: {file.size_bytes} Bytes"]
+    path_text = display_path(file)
+    lines = [f"## {path_text}", "", f"- Quelle: {file.origin}", f"- Groesse: {file.size_bytes} Bytes"]
     if file.source_path:
-        rel = relative_werkraum_path(file.source_path)
-        lines.append(f"- Pfad: {rel or file.source_path}")
+        lines.append(f"- Pfad: {path_text}")
     if file.warning:
         lines.append(f"- Hinweis: {file.warning}")
     lines.append("")
@@ -274,7 +276,7 @@ def file_as_markdown(file: SourceFile, html_mode: str, anchor: str, files: list[
     if related:
         lines.extend(["### Verweise", ""])
         for other in related:
-            other_anchor = f"datei-{files.index(other) + 1}-{slugify(export_label(other))}"
+            other_anchor = f"datei-{files.index(other) + 1}-{slugify(display_path(other))}"
             lines.append(f"- [[#{other_anchor}|{export_label(other)}]]")
         lines.append("")
 
@@ -481,11 +483,11 @@ def build_markdown(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     body = ["# Datei-Wandler Export", "", f"Erzeugt: {now}", f"Dateien: {len(files)}", "", "## Verzeichnis", ""]
     for i, file in enumerate(files, 1):
-        anchor = f"datei-{i}-{slugify(export_label(file))}"
+        anchor = f"datei-{i}-{slugify(display_path(file))}"
         body.append(f"- [[#{anchor}|{export_label(file)}]]")
     body.append("")
     for i, file in enumerate(files, 1):
-        anchor = f"datei-{i}-{slugify(export_label(file))}"
+        anchor = f"datei-{i}-{slugify(display_path(file))}"
         body.append(f"<a id=\"{anchor}\"></a>")
         body.append(file_as_markdown(file, html_mode, anchor, files))
     return "\n".join(body)
@@ -494,12 +496,13 @@ def build_markdown(files: list[SourceFile], html_mode: str) -> str:
 def build_html(files: list[SourceFile], html_mode: str) -> str:
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     nav = "\n".join(
-        f'<li data-nav-item="true" data-target="f{i}"><a href="#f{i}">{html.escape(file.label)}</a><span>{file.origin} · {file.size_bytes} B</span></li>'
+        f'<li data-nav-item="true" data-target="f{i}"><a href="#f{i}">{html.escape(display_path(file))}</a><span>{file.origin} · {file.size_bytes} B</span></li>'
         for i, file in enumerate(files, 1)
     )
     sections: list[str] = []
     for i, file in enumerate(files, 1):
-        mime = mimetypes.guess_type(file.label)[0] or "text/plain"
+        file_path = display_path(file)
+        mime = mimetypes.guess_type(file_path)[0] or "text/plain"
         warning = f'<p class="warning">{html.escape(file.warning)}</p>' if file.warning else ""
         if file.suffix in {".html", ".htm"} and html_mode in {"markdown", "both"}:
             extracted = html_to_markdown(file.content) or "_Kein Text extrahiert._"
@@ -514,7 +517,8 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
               <header class="file-head">
                 <div>
                   <p>{html.escape(file.origin)} · {html.escape(mime)} · {file.size_bytes} Bytes</p>
-                  <h2>{html.escape(file.label)}</h2>
+                  <h2>{html.escape(file_path)}</h2>
+                  <p class="file-path">{html.escape(file_path)}</p>
                   {warning}
                 </div>
                 <div class="file-controls" aria-label="Datei verschieben">
@@ -686,6 +690,12 @@ def build_html(files: list[SourceFile], html_mode: str) -> str:
       margin-bottom: 16px;
     }}
     .file header p {{ color: var(--muted); margin-bottom: 6px; }}
+    .file-path {{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .84rem;
+      word-break: break-word;
+    }}
     .file-controls {{
       display: flex;
       gap: 8px;

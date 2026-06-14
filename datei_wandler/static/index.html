@@ -128,6 +128,55 @@
       display: grid;
       gap: 8px;
     }
+    .upload-list {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 88%, var(--bg));
+      padding: 12px;
+    }
+    .upload-list-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: .86rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+    .upload-items {
+      display: grid;
+      gap: 8px;
+    }
+    .upload-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .upload-item strong {
+      display: block;
+      font-weight: 700;
+      word-break: break-word;
+    }
+    .upload-item span {
+      display: block;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .upload-item button {
+      min-height: 34px;
+      padding: 0 12px;
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+      flex: 0 0 auto;
+    }
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -180,7 +229,7 @@
       <p class="sub">VPS-Pfade und Uploads koennen gemischt werden. Der Export ist offline nutzbar; Inhalte werden escaped und nicht ausgefuehrt.</p>
     </header>
 
-    <form action="/convert" method="post" enctype="multipart/form-data">
+    <form id="convert-form" action="/convert" method="post" enctype="multipart/form-data">
       <div class="grid">
         <section class="panel">
           <h2>Quellen</h2>
@@ -192,9 +241,21 @@
         <div class="options">
           <section class="panel">
             <h2>Uploads</h2>
-            <label for="uploads">Dateien hochladen</label>
+            <label for="uploads">Dateien wählen</label>
             <input id="uploads" name="uploads" type="file" multiple>
+            <label for="folders" style="margin-top:12px">Ordner wählen</label>
+            <input id="folders" name="folders" type="file" multiple webkitdirectory directory>
+            <div class="upload-list" aria-live="polite">
+              <div class="upload-list-head">
+                <span>Gesammelte Dateien</span>
+                <strong id="upload-count">0</strong>
+              </div>
+              <div id="upload-items" class="upload-items">
+                <p class="hint" id="upload-empty">Noch keine Dateien gewählt.</p>
+              </div>
+            </div>
             <p class="hint">Mehrfachauswahl ist erlaubt. Binaerdateien werden fuer diesen ersten Wandler nicht als Text exportiert.</p>
+            <p class="hint">Ordnerauswahl nimmt auch Unterordner mit. Die Pfade bleiben im Export sichtbar.</p>
           </section>
 
           <section class="panel">
@@ -230,5 +291,128 @@
       </div>
     </form>
   </main>
+  <script>
+    (() => {
+      const form = document.getElementById('convert-form');
+      const fileInput = document.getElementById('uploads');
+      const folderInput = document.getElementById('folders');
+      const items = document.getElementById('upload-items');
+      const empty = document.getElementById('upload-empty');
+      const count = document.getElementById('upload-count');
+      const note = document.querySelector('.actions .note');
+      const state = [];
+
+      function fileKey(entry) {
+        return [entry.path, entry.file.size, entry.file.lastModified].join('|');
+      }
+
+      function labelFor(entry) {
+        return entry.path || entry.file.name;
+      }
+
+      function addFiles(fileList, mode) {
+        for (const file of Array.from(fileList || [])) {
+          const path = (file.webkitRelativePath || file.name || '').replace(/\\/g, '/');
+          const entry = { file, path, mode };
+          if (!state.some((existing) => fileKey(existing) === fileKey(entry))) {
+            state.push(entry);
+          }
+        }
+      }
+
+      function render() {
+        items.innerHTML = '';
+        if (!state.length) {
+          items.appendChild(empty);
+        } else {
+          state.forEach((entry, index) => {
+            const row = document.createElement('div');
+            row.className = 'upload-item';
+
+            const meta = document.createElement('div');
+            const name = document.createElement('strong');
+            name.textContent = labelFor(entry);
+            const details = document.createElement('span');
+            details.textContent = `${entry.mode === 'folder' ? 'Ordner' : 'Datei'} · ${entry.file.size} Bytes`;
+            meta.append(name, details);
+
+            const remove = document.createElement('button');
+            remove.type = 'button';
+            remove.textContent = 'Entfernen';
+            remove.addEventListener('click', () => {
+              state.splice(index, 1);
+              render();
+            });
+
+            row.append(meta, remove);
+            items.appendChild(row);
+          });
+        }
+        count.textContent = String(state.length);
+      }
+
+      function resetPicker(input) {
+        if (input) {
+          input.value = '';
+        }
+      }
+
+      fileInput.addEventListener('change', () => {
+        addFiles(fileInput.files, 'file');
+        resetPicker(fileInput);
+        render();
+      });
+
+      folderInput.addEventListener('change', () => {
+        addFiles(folderInput.files, 'folder');
+        resetPicker(folderInput);
+        render();
+      });
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const pathsValue = document.getElementById('paths').value.trim();
+        if (!state.length && !pathsValue) {
+          note.textContent = 'Bitte wähle mindestens eine Datei, einen Ordner oder einen VPS-Pfad.';
+          return;
+        }
+
+        note.textContent = 'Erzeuge Export...';
+        const data = new FormData();
+        data.set('paths', pathsValue);
+        data.set('output', document.getElementById('output').value);
+        data.set('html_mode', document.getElementById('html_mode').value);
+        for (const entry of state) {
+          data.append('uploads', entry.file, labelFor(entry));
+        }
+
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: data });
+          if (!response.ok) {
+            const text = await response.text();
+            throw new Error(text);
+          }
+          const blob = await response.blob();
+          const filename = (() => {
+            const cd = response.headers.get('content-disposition') || '';
+            const match = cd.match(/filename="?([^"]+)"?/i);
+            return match ? match[1] : 'datei_wandler_export.html';
+          })();
+          const url = URL.createObjectURL(blob);
+          const anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.download = filename;
+          anchor.click();
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+          note.textContent = 'Download gestartet.';
+        } catch (error) {
+          note.textContent = 'Export fehlgeschlagen.';
+          alert(String(error.message || error));
+        }
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>

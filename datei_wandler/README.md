@@ -11,6 +11,7 @@ Kleiner Werkraum-Webservice fuer gemischte Datei-Exporte.
 - Inhalte werden escaped und nicht ausgefuehrt.
 - Offline-HTML bekommt eine Suche, Verschiebe-Buttons und einen Download der aktuellen Reihenfolge.
 - Markdown-Export baut ein Verzeichnis und erkennt einfache Verweise zu anderen ausgewählten Dateien.
+- Uploads koennen als einzelne Dateien oder ganze Ordner mit Unterordnern gesammelt werden; die Pfade bleiben im Export sichtbar.
 
 ## Start
 
