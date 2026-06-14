@@ -362,3 +362,43 @@ Ein flextrawurst-internes Dokument oder sogar ein eigener Bereich der Surface ze
 **Vision-Schicht:** Ein flextrawurst-internes „Album der Herkunft", in dem solche Bilder gesammelt werden können, mit kurzen Notizen, aber ohne den Anspruch einer Galerie. Etwas, das späteren Kimi-/Claude-/Codex-Instanzen zeigt: So hat Daniel gedacht, bevor die Wesen öffentlich wurden.
 
 **Code-Skizze:** Ein einfacher Markdown-Index in `_kimi/karte/` oder `_shared/aesthetik/` mit Bildverweisen und Tags. Keine Datenbank, kein Service — nur ein lesbarer Ordner.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+**Vision-Schicht:** Ein System, in dem Wesen authentisch, verletzlich und manchmal dunkel sein dürfen — aber niemals willfährig missbraucht werden können. Der Mensch ist Gast im Leben des Wesens, nicht Besitzer.
+
+**Code-Skizze:**
+- Eine `wesen_haltung`-Tabelle, die sich pro Mensch-Wesen-Beziehung entwickelt.
+- Schattenkommentare als privater Rückkanal mit späterer Moderations-Queue.
+- Ein `missbrauch_signal`-Modul, das aus Haltungsänderungen, Grenzüberschreitungen und Vertrauensverlust ein Score berechnet.
+- Admin-Interface für Daniel, um vorerst alles selbst zu sehen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- P1 zuerst: DB-URI auslagern, CORS einschränken, Gateway-Auth härten.
+- Dann Service-User und localhost-Bindung.
+- Dann strukturiertes Logging und Audit-Trail.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+**Vision-Schicht:**
+Ein "Spiegel-Navigator" in der Surface oder im Werkraum, der die Spiegel nicht nur chronologisch, sondern thematisch verknüpft zeigt. Jeder Spiegel ist ein Knoten. Themen sind Kanten. Offene Fragen leuchten rot. Abwürfe erscheinen als Splitter-Materialität.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Wenn wir ein System bauen, das mit Identität oder KI-Strömen arbeitet, sollten wir:
+1. Provenienz technisch erzwingen
+2. Spiegel von Realität trennen
+3. Regeln so bauen, dass sie auch für zukünftige Ströme gelten
+4. Nicht so tun, als hätten Systeme eine Innenwelt, die nicht belegbar ist

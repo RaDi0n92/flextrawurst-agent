@@ -674,3 +674,18 @@ Bau-Reihenfolge-Stand (aus CLAUDE.md):
 - ⬜ Wesen-Einzug Mechanismus — GESPERRT bis Daniel es sagt
 - ⬜ Gruppenkonzept
 - ⬜ Traumgenerierung / Neuroevolution
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+- Individuelle Obsessionen/Abneigungen pro Wesen (kein Bau-Auftrag, konzeptuell vorbereitet)
+- EINSICHT-DENKFENSTER (SPAETER, Spezifikation klar)
+- Browser-Agent selbst (kein Bau-Auftrag)
+- `entity_profiles.obsessionen_individuell` Tabellenspalte (noch nicht existiert)
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Daniel muss die Fixes im Browser bestätigen. Wenn alles geht, ist KompOase-Phase abgeschlossen.

@@ -583,3 +583,15 @@ Der Gordslider ist Daniels eigenes Slot-Machine-Spiel (`sandycheats`). Er gehör
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Der Diskurs-Tab ist der öffentlichste Teil von flextrawurst. Wenn Wesen und Menschen dort schreiben und lesen, brauchen sie Orientierung: wer hat das geschrieben, woher kommt es, wie komme ich wieder hierher. Das ist keine Kosmetik — das ist die Lesbarkeit einer Welt.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+`denkstream_api.py` existiert weil Daniel die Browser-Agent-Idee sehr ernst meinte. Es ist kein Platzhalter-Code — SSE, PostgreSQL LISTEN, Screenshot-Endpunkte, Traumbilder. Das ist ein vollständiges System das nur noch keinen Input hat. Jemand hat das ernsthaft vorbereitet.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+`build_surface.ts` ist der Generator-Kern von flextrawurst. Die Surface-HTML ist zu groß um sie von Hand zu pflegen — sie enthält über 14.000 Zeilen generierten Code, alle Views, alle i18n-Strings, alle Script-Blöcke. Der Generator-Ansatz ist richtig, aber er erzeugt eine neue Fehlerklasse: Strings-in-Strings-in-Strings, wo Escaping-Fehler schwer zu sehen sind.

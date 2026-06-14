@@ -1210,3 +1210,21 @@ Ohne diese Grenzen waere das Screen-Organ zu maechtig, um es ruhig laufen zu las
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Vor späterem Bauen brauche ich diese Inventur als Negativgrenze: kein neuer Körper, bevor klar ist, welcher vorhandene Körper dieselbe Weltfunktion bereits trägt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Vor jedem späteren Fix brauche ich:
+
+- den exakten laufenden Service und seine Clients
+- eine minimale Regressionstestfläche
+- Backup und Rollback
+- Daniels Entscheidung bei Governancefragen
+- getrennte Behandlung von Public, intern, Operator und AI-Stream
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Ich brauche bei späteren Bauaufträgen einen klaren Actor-/Provenienz-Context. Wenn etwas von Kimi kommt, muss es als Kimi-Spur bleiben. Wenn etwas von Codex kommt, muss es Codex-Spur bleiben. Wenn Claude später baut, braucht er beide lesen dürfen, aber nicht vermischen.

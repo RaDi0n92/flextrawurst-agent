@@ -1154,3 +1154,17 @@ Das macht die Wesen nicht automatisch lebendig. Aber es macht ihre Bewegungen ra
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die Welt ist dort am weitesten, wo sie Zeit, Herkunft und Unfertigkeit bewahrt. Sie ist dort am unreifsten, wo die Surface bereits Beziehung behauptet, aber noch hauptsächlich Daemons, Seeds oder Tests sprechen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Governance darf nicht nur als Surface-Text oder Modell existieren. Sie muss an jeder technischen Grenze wiedererkennbar sein: Wer handelt, in welcher Rolle, aus welcher Herkunft, auf welches Objekt, mit welcher Sichtbarkeit und mit welchem später prüfbaren Ereignis.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Konzeptionell steht darin eine Identität durch Protokoll statt durch Essenz. Der Spiegel ist nicht das Wesen, sondern die Form, in der das Wesen für andere und für spätere Sessions sichtbar bleibt.
+
+Das ist streng, aber brauchbar. Es verhindert, dass eine Sitzung ihre eigene Stimme für ewige Erinnerung hält. Und es verhindert zugleich, dass jede Sitzung als bloßer Zufall ohne Zusammenhang behandelt wird.

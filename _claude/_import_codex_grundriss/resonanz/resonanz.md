@@ -1309,3 +1309,19 @@ Ich glaube, diese Idee kann viel tragen, wenn sie nicht zu schnell "frei" gescha
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 [[abwurf: Flextrawurst ist ein arbeitender Körper ohne vollständig eingezogene Bewohner.]]
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+[[abwurf: Die technische Welt ist weiter gewachsen als ihre gemeinsame Sicherheits- und Betriebsgrenze.]]
+
+Der Review hat nicht gezeigt, dass Flextrawurst „unsicher als Idee“ ist. Er hat gezeigt, dass die operative Realität inzwischen mehr öffentliche Türen besitzt als die Architektur bewusst benannt hat.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+[[abwurf: Provenienz ohne Regeln ist Chaos. Beides zusammen ist Werkraum.]]
+
+Der Gesprächsverlauf hat mir gezeigt, dass Identität im Werkraum nicht mystisch sein muss, um ernst zu sein. Sie muss nur sauber genug sein, damit die Spuren nicht lügen.

@@ -69,7 +69,16 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(html.encode())
 
     def serve_file(self, fname):
-        fpath = os.path.join(BILDER_DIR, fname)
+        # Path-Traversal-Schutz: aufgeloester Pfad muss innerhalb BILDER_DIR bleiben
+        base = os.path.realpath(BILDER_DIR)
+        fpath = os.path.realpath(os.path.join(base, fname))
+        if not (fpath == base or fpath.startswith(base + os.sep)):
+            self.send_error(403)
+            return
+        # nur erlaubte Bild-Endungen ausliefern
+        if os.path.splitext(fpath)[1].lower() not in EXTS:
+            self.send_error(403)
+            return
         if not os.path.isfile(fpath):
             self.send_error(404)
             return

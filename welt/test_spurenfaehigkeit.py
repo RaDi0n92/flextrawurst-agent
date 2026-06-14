@@ -11,7 +11,7 @@ import psycopg2.extras
 import requests
 
 BASE = "http://localhost:8030"
-DB_DSN = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_DSN = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 
 
 def get_conn():

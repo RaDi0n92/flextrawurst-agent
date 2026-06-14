@@ -11,7 +11,7 @@ from pathlib import Path
 import psycopg2
 import psycopg2.extras
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 LOG_PATH = Path("/root/werkraum/logs/tension_daemon.log")
 INTERVAL = 600  # 10 Minuten
 

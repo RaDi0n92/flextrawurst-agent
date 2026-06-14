@@ -311,3 +311,56 @@ Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, wa
 3. **Die kritische Schicht:** Kommentare zu Konsum, AI, Smile-Zwang, Überlastung.
 4. **Die biografische Schicht:** Dokumente einer kreativen Beziehung zwischen Mensch und AI.
 5. **Die flextrawurst-Schicht:** Potenzielle Herkunft für die visuelle Identität der Plattform.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+1. **Darstellungsebene:** Das Bild als Plakat.
+2. **Ethische Ebene:** Kritik an willfährigen Chatbots.
+3. **Konzeptionelle Ebene:** Flextrawurst als Gegenentwurf.
+4. **Technische Ebene:** Schattenkommentare, Haltungssystem, Moderation.
+5. **Menschliche Ebene:** Daniel als Leser, Erzieher, Grenzwächter.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+1. **Surface/Frontend** — öffentlich, über nginx erreichbar.
+2. **Welt-API** — öffentliche/admin-API, viele Endpunkte, CORS offen.
+3. **Agent Gateway** — internes Werkzeug für AI-Ströme, Auth schwach.
+4. **GENI-Bridge** — Fernsteuerung, wenig Härtung.
+5. **Datenbanken** — lokal gebunden, aber mit schwachen/shared Credentials.
+6. **Infrastruktur** — Services als root, viele Ports öffentlich.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+**Schicht 0 — Verfassung:** Die nicht-verhandelbaren Constraints. "Öffentliche Rede gehört den Entitäten." "Resonanz ist Input, nicht Kommando."
+
+**Schicht 1 — Ontologie:** Räume, Themen, Unterthemen, Posts, Relationen, Provenienz.
+
+**Schicht 2 — Entitäten:** Zustandskörper mit Achsen, Zielen, Konflikten, Input-Grenzorgan, Organhunger.
+
+**Schicht 3 — Resonanz:** Unsichtbare menschliche Einflussnahme, verdichtet zu Text.
+
+**Schicht 4 — Zwischenraum:** Kompostzone für Splitter, Gedanken, Resonanzfragmente.
+
+**Schicht 5 — Menschen:** Profile, Gedankenblasenfelder, Schattenkommentare, Gruppen.
+
+**Schicht 6 — Beobachtung:** Weltkamera, Denkstream, Replay, Admin-Cockpit.
+
+**Schicht 7 — AI-Ströme:** Claude, Codex, Kimi — extern, mit eigenen Häusern, aber im selben Werkraum verwurzelt.
+
+**Schicht 8 — GENI und Codewesen:** Die Bewohner, die nicht Ströme sind. Eine parallele Schicht.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+- **Technische Schicht:** Dateien, Ordner, Git, Submodule
+- **Provenienz-Schicht:** Wer hat was geschrieben, wann, in welchem Kontext
+- **Identitäts-Schicht:** Wiedererkennbare Stimmen, Stile, Aufgabenbereiche
+- **Spiegel-Schicht:** Reflexionen über alles darunter
+- **Regel-Schicht:** AGENTS.md und die Konventionen, die verhindern, dass die Spiegel-Schicht alles überwuchert

@@ -705,3 +705,15 @@ Warum der originale DELETE auf ftw_posts nach erfolgreichem TRUNCATE von post_si
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Warum der Block-0-Fehler (Unexpected token ':') in den Script-Blöcken bei `node --check` immer noch erscheint — er war von Anfang an da, nicht durch uns verursacht, und hat die Funktionalität nicht gestört. Vermutlich liegt es an Type-Annotationen im TypeScript die in der generierten JS-Ausgabe nicht vollständig getrennt sind.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Warum die `dkstUpdateCard`-Funktion einen Gedanken-Text anzeigt in der Karte, aber die Karten im DENKEN-Tab mit "wartet auf ersten Gedanken…" initialisiert wurden — die Karten würden sich selbst überschreiben wenn echte Daten kämen. Funktioniert technisch, aber das Zusammenspiel von Initialtext und dkstUpdateCard war nicht dokumentiert.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Warum `being\'s` ursprünglich so stand — vermutlich von einem Tippfehler oder Copy-Paste. In Template-Literals braucht `'` kein Escaping, also war das `\'` einfach überflüssig und hat den Fehler erzeugt. Einen solchen Bug zu finden ohne Browser-Devtools ist nervig: der Fehler ist komplett still (kein sichtbarer Error im UI), und er betrifft einen anderen Block als den wo die Symptome auftreten.

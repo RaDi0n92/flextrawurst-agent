@@ -1114,3 +1114,20 @@ Es fehlt wahrscheinlich eine echte Surface-Integration, nicht nur generiertes `s
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Für diese Aufgabe fehlt nichts. Vor neuen Bauarbeiten müsste Daniel erst entscheiden, welche Bewertungen handlungsrelevant werden; die Inventur selbst ist ausdrücklich kein Umbauplan.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Externe Erreichbarkeit der direkten Ports verifizieren
+- Gültigkeit und Verbraucher der gefundenen Secrets zuordnen
+- kanonischen Surface-Service festlegen
+- Shadow-Sichtbarkeit und Wesenauth entscheiden
+- isolierte Testdatenbank bereitstellen
+- Flarum-Schreibgrenze manuell klären
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Fehlt noch: eine kleine, maschinenlesbare Regel dafür, wie Spiegel ihre Herkunft sichtbar tragen, ohne sich als Originale auszugeben.

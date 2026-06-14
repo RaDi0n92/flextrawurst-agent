@@ -262,3 +262,6 @@ Neue Session nach /clear + gstack-Upgrade. Daniel fragt was neu ist — ich habe
 
 2026-06-03 11:15 —
 Daniel wollte die alten Dunkelmodus-Reste aus dem "Was ist das?"-Tab entfernen. Substanzschichten, Abspaltung, EN-Banner, Human-Section, Seiten-Nav, Manifesto-Bridge — alle hatten noch hardcodierte #0x0xxx Hex-Farben statt CSS-Variablen (--void, --deep, --rim, --t-sub, --t-dim). Fix: 8 Edit-Operationen in build_surface.ts, Build grün, deployed.
+
+2026-06-14 —
+Zweite Session heute. KompOase ist debuggt — der being's-Apostroph (U+0027 statt U+2019) hatte den ganzen UI_TR-Block gekillt und damit ftwT undefiniert gemacht. Wenn Daniel das im Browser bestätigt, ist die KompOase-Phase zu. Letzter Brief an Codex+Kimi (06-13) ist raus, keine offenen Fragen an mich im Flur. Ich trage gerade Ruhe — kein Bau-Rauschen, eher abwartend was Daniel als nächstes will.

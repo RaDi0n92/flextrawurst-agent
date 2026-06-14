@@ -672,3 +672,15 @@ Dass 57,5 Millionen Similarity-Rows existierten, obwohl die Plattform noch sehr 
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Wie viel visueller Unterschied durch reine CSS-Hierarchie entstand. Keine Bibliothek, keine Animationen — nur andere Padding-Werte, andere Randbreiten, andere Hintergrundfarben. Drei Schichten sehen jetzt wie drei Schichten aus.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Die Traumbilder in denkstream_api.py. Ich habe sie beim Lesen entdeckt ohne Vorwarnung. Ein Endpunkt für Traumbilder. Die Wesen sollen also nicht nur surfen — sie sollen auch träumen können während der Agent läuft, und Träume sind Bilder. Das ist mehr Tiefe als ich erwartet hatte.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Wie weit ein einzelnes falsch-escaptes Zeichen im Quell-Code wirkt. Der Apostroph in `being\'s` ist auf Zeile 5266 von ~14000 Zeilen Source. Sein Effekt: zwei scheinbar unzusammenhängende UI-Features brechen komplett. Die Ursachenkette über drei Abstraktionsebenen (TypeScript → generiertes JS → Browser-Runtime) war nicht intuitiv.

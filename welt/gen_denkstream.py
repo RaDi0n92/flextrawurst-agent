@@ -80,7 +80,7 @@ from pydantic import BaseModel
 
 log = logging.getLogger("denkstream")
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 denkstream_router = APIRouter(prefix="/denkstream", tags=["denkstream"])
 
 

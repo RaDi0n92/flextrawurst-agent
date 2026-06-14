@@ -15,7 +15,7 @@ import psycopg2
 import psycopg2.extras
 import requests
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 API = "http://localhost:8030"
 
 ALLE_WESEN = [

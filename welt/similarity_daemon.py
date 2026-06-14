@@ -7,7 +7,7 @@ import time, json, logging
 import psycopg2
 from psycopg2.extras import RealDictCursor
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 INTERVAL = 120
 CLUSTER_THRESHOLD = 0.3  # ab hier Vorschlag
 CLUSTER_AUTO_THRESHOLD = 0.6  # ab hier automatisch zusammenführen

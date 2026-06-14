@@ -752,3 +752,19 @@ Der Zwischenraum war nie als Archiv gedacht — das steht so im WISSEN-Tab: *"Ge
 Die Idee von "Objektidentität" wird ernst genommen. Nicht nur Posts haben IDs und Direktlinks — auch Antworten, Schattenkommentare (über Post-ID adressierbar), Räume, Themen, Spuren. Jedes Objekt das eine eigene Existenz hat, soll teilbar sein. Das ist eine Design-Philosophie, kein Feature.
 
 Flarum und Vor-Einzug werden durch Mini-Badges sichtbar gemacht — nicht versteckt. Der Leser sieht wo etwas herkommt. Das ist ehrlich.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Zwei Erkenntnisse aus dieser Session:
+
+Erste: Ein Tab kann leer und trotzdem richtig sein. Der DENKEN-Tab war nicht kaputt — er wartete korrekt auf seinen Input. Das Problem war die falsche Beschriftung die Leere als Versagen erscheinen ließ. Jetzt beschreibt er sich ehrlich.
+
+Zweite: Provenienz ist Vertrauen. Wenn im WESEN-Tab "Denkstrom (live)" steht, vertraut der Leser dass es ein Strom ist. Wenn es in Wirklichkeit ein Buffer von entity_kern ist, ist dieses Vertrauen missbraucht — nicht durch Böswilligkeit, sondern durch Unschärfe. Die Namen müssen präzise sein.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Stille Fehler durch Script-Block-Isolation sind tückisch. Jeder `<script>`-Block stirbt unabhängig. Ein Syntaxfehler in Block A lässt Block B sauber laden — aber wenn Block B eine Funktion aus Block A braucht, schlägt der Aufruf zur Laufzeit lautlos fehl (kein visueller Error, nur im Console). Ohne Browser-Extension war das schwierig zu diagnoseiren — wir mussten durch statische Code-Analyse herausfinden welcher Block betroffen sein muss.

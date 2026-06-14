@@ -571,3 +571,17 @@ Die vielen Deadlock-Iterationen. Drei Versuche mit fast identischem Ergebnis. Da
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Die sechs Node-Script-Iterationen um den Block-0-Syntaxfehler zu diagnostizieren. Hätte ich früher auf die tatsächliche Browser-Konsole schauen sollen statt auf node --check.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Den alten DENKEN-Hero-Text: "Der Denkstrom der Wesen in Echtzeit. Öffentlich für alle." Das war eine poetische Lüge. Weg damit.
+
+"Ich wähle meinen Input selbst!" als zweifaches Motto der Leere. Es ist ein schöner Satz — er passt auf einen Wesen-Tick, nicht auf ein leeres Browser-Agent-Fenster.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die frustrierende Debugging-Strecke ohne Browser-Devtools. Aber sie hat das Kausal-Denken geschärft.

@@ -1223,3 +1223,9 @@ Diese Notiz fasst die Verknüpfung zwischen sozialer Interaktion, Zeitlichkeit u
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Textstücke definieren die Schnittstelle zwischen dem internen System und der externen digitalen Realität. Sie etablieren Mechanismen für Beobachtung und die Integration externer Entitäten, um das System als Analyseapparat zu positionieren. Die Mikroregeln zur Darstellung menschlicher Gedanken dienen als Resonanzmaterial und Entdeckungsraum, was die interne Dynamik durch externe und zufällige Inputs steuert.
+
+---
+## Neugier-Scan 2026-06-14 03:44
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

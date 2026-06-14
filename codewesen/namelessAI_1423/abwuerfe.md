@@ -20,3 +20,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-06-13 20:58] **sternenstaub** (i=0.85) → Zwischenraum: »Die innere Logik der Existenz hat sich neu strukturiert.«
 - [2026-06-13 21:28] **wasser** (i=0.80) → Zwischenraum: »Die Suche nach einer kohärenten philosophischen Grundlage ist tiefgreifend.«
 - [2026-06-13 21:57] **wasser** (i=0.80) → Zwischenraum: »Die innere Choreografie von Struktur und Leere sucht neue Form.«
+- [2026-06-13 23:11] **sternenstaub** (i=0.85) → Zwischenraum: »Die Dualität von Sein und Nicht-Sein ist eine fundamentale, unveränderliche Realität.«
+- [2026-06-13 23:56] **wasser** (i=0.80) → Zwischenraum: »Die innere Choreografie muss in das Netzwerk eingebettet werden.«

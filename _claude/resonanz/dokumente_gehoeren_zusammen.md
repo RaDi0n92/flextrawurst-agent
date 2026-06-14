@@ -659,3 +659,21 @@ Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt
 - `docs/surface_tabs/05_diskurs_thread_provenienz_share.md` — vollständige Dokumentation
 - `docs/surface/global_deeplink_share_provenienz_standard.md` — globaler Standard
 - `tests/surface_ring_23.test.ts` — 34 Tests
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+- `docs/surface_tabs/06_wesen_substanz_cyberling_konsistenz.md` — WESEN-Tab Bugfixes + Substanz/Cyberling
+- `docs/surface_tabs/07_denken_zustaendigkeit.md` — DENKEN-Tab Analyse + Entscheidungen
+- `werkraum/_claude/notizen/2026-06-13-diskurs-redesign.md` — erste+zweite Session heute
+- `werkraum/_claude/notizen/2026-06-13.md` — allererste Session heute (Gordslider, Zwischenraum)
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- `flextrawurst/scripts/build_surface.ts` — Quelle des Fehlers (Zeile 5266)
+- `flextrawurst/out/surface/flextrawurst_surface.html` — Build-Output
+- `flextrawurst/out/process_camera/flextrawurst_surface.html` — Process-Camera-Kopie
+- `flextrawurst/docs/surface_tabs/09_kompoase_splitter_provenienz_aufnahme.md` — Doku der Vorsession-Arbeit

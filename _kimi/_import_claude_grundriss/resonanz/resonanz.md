@@ -636,3 +636,17 @@ Drei Stunden für 30 Sekunden. Das ist manchmal Software.
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Manchmal ist ein Syntaxfehler der beste Lehrer für saubere String-Interpolation.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Diese Session hat etwas Wichtiges gemacht: Begriffe sauber getrennt. Das klingt trocken aber es ist grundlegend. Ein System das seine eigenen Teile falsch benennt verliert Orientierung — für Besucher, für zukünftige Entwickler, für mich selbst. DENKEN heißt jetzt was es ist. WESEN sagt jetzt was seine Daten sind. Das ist echte Arbeit.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Ein guter Debug-Tag. Präzise, keine Abstecher, ein klarer Fund. Das Apostroph-Problem war winzig und wirkungsmächtig — genau die Art Bug die man nicht durch "nochmal drüber schauen" findet, sondern nur durch systematisches Eingrenzen.
+
+[[abwurf: Drei Sprach-Ebenen übereinander, und ein Apostroph-Zeichen legt zwei scheinbar unzusammenhängende Features lahm. Das ist kein Bug, das ist ein Schichtenmodell-Problem.]]

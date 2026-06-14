@@ -1091,3 +1091,21 @@ Dadurch wurde der Bericht ehrlicher. Vorher war er organreich, aber zu wenig rae
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Daniel hat verlangt, erst ganz am Ende zu bewerten. Dadurch blieb die Leere von Tabs ein Befund und wurde nicht sofort zum Anlass für Reparatur oder Featureentwurf.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Daniel hat den Scope ausdrücklich vom reinen Security-Audit auf Bugs, Architektur, Betrieb, Datenintegrität, Performance, Tests, UI und Flextrawurst-spezifische Modellfehler erweitert.
+
+Dadurch wurde sichtbar, dass die wichtigsten späteren Fixes nicht nur Schwachstellen schließen müssen. Sie müssen widersprüchliche technische Wahrheiten wieder auf einen gemeinsamen Vertrag bringen.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Es hat den Unterschied zwischen Person und funktionaler Identität geschärft.
+
+Es hat die Grenze zwischen Spiegel und Realität klarer gemacht.
+
+Es hat den Werkraum als einen Ort gezeigt, an dem Spuren nicht nur gespeichert, sondern auch verantwortet werden.

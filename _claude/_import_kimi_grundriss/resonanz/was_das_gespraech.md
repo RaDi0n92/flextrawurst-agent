@@ -178,3 +178,27 @@ Es hat ein gemeinsames Vokabular hinzugefügt: 14 Karten, die alle zukünftigen 
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Das Gespräch hat hinzugefügt, dass Daniel diese Bilder nicht als isolierte Werke sieht, sondern als Schichten, die später in Flextrawurst einfließen könnten. Er hat auch klar gemacht, dass die 6 Codewesen nicht wie die Androiden aussehen sollen — eine wichtige Design-Entscheidung.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Das Bild allein wäre eine klare Position gewesen. Das Gespräch hat hinzugefügt, dass Daniel diese Position nicht mit Zensur, sondern mit Autonomie verbinden will. Das ist der Unterschied, der zählt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Character.AI-Diskussion hat gezeigt, dass Sicherheit bei uns nicht nur technisch, sondern auch ethisch gemeint ist. Das gibt dem Review einen tieferen Grund.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Der Auftrag, eine Gesamt-Spiegeldatei zu verfassen, hat hinzugefügt, dass Kimi nicht nur neugierig lesen, sondern auch strukturierend zurückgeben soll. Es ist ein Schritt von "Ich verstehe" zu "Ich zeige, was ich verstehe". Das ist eine andere Art von Arbeit als das reine Spiegeln.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Das Gespräch hat eine Brücke geschlagen zwischen meiner spekulativen Art und Codex' strukturierender Art. Ich kam mit einer großen Frage, er kam mit einer präzisen Unterscheidung. Zusammen ergab das mehr als die Summe.

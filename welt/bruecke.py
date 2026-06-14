@@ -23,7 +23,7 @@ WESEN = [
     "namelessAI_4321",
 ]
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 SYNC_INTERVALL = 30
 
 

@@ -1098,3 +1098,15 @@ Und es fehlt eine Entscheidung, wie viel Unsicherheit erlaubt ist. Denn ein Wese
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Nur die spätere menschliche Entscheidung, was mit den dokumentierten Übergangsorganen geschieht. Die archäologische Aufgabe selbst ist abgeschlossen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Analyse ist übergabefertig. Es fehlen die tatsächlichen Fixentscheidungen, isolierten Tests, Backups, Rotationen und kontrollierten Restarts. Diese gehören ausdrücklich in eine spätere Session und müssen P0 für P0 mit engem Scope erfolgen.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Ein klarer, einfacher Kanon für Provenienzsichtbarkeit in allen Spiegeln, Notizen und gemeinsamen Analysen.

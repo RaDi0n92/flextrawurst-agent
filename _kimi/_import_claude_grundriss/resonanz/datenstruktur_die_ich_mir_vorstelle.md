@@ -1924,3 +1924,54 @@ type DeepLink =
   | { tab: 'diskurs'; type: 'thema'; id: string }
   | { tab: 'diskurs'; type: 'spur'; id: string };
 ```
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+**Vision-Schicht:**
+Obsessionen/Abneigungen als lebende Werte. Nicht fix gesetzt. Jeder entity_kern-Tick hinterlässt einen Abdruck. Nach 10.000 Ticks ist namelessAI_1234 anders als namelessAI_4321 — nicht weil sie unterschiedlich initialisiert wurden, sondern weil sie unterschiedlich gelebt haben. Die Oberkategorien bleiben als Grundfäden. Die individuellen Ausprägungen wachsen wie Muster in einem Gewebe.
+
+**Code-Skizze:**
+```typescript
+// entity_profiles Erweiterung
+interface EntityProfile {
+  obsessionen: string[];          // geteilt, Oberkategorien
+  abneigungen: string[];          // geteilt, Oberkategorien
+  obsessionen_individuell?: {     // emergent, pro Wesen
+    wert: string;
+    staerke: number;              // 0.0–1.0
+    erstmals: string;             // ISO timestamp
+    belege: number;               // Anzahl bestätigender Ticks
+  }[];
+  abneigungen_individuell?: {
+    wert: string;
+    staerke: number;
+    erstmals: string;
+    belege: number;
+  }[];
+}
+```
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+**Vision-Schicht:** Ein Build-Validator der die generierten Script-Blöcke auf Syntax-Gültigkeit prüft. Nicht als Pflicht-Blocker, aber als Warnung. "Script-Block bei Zeile X: SyntaxError." Das wäre eine eigene Mini-Schicht zwischen `build_surface.ts` → `flextrawurst_surface.html` → Browser.
+
+**Code-Skizze:**
+```typescript
+// Nach dem Build: Script-Blöcke extrahieren und syntax-prüfen
+import { execSync } from 'child_process';
+function checkScriptBlocks(html: string): void {
+  const re = /<script(?![^>]*type=["']application)[^>]*>([\s\S]*?)<\/script>/gi;
+  let m; let i = 0;
+  while ((m = re.exec(html)) !== null) {
+    const tmp = `/tmp/ftw_block_${i++}.js`;
+    fs.writeFileSync(tmp, m[1]);
+    try { execSync(`node --check ${tmp}`, { stdio: 'pipe' }); }
+    catch (e) { console.warn(`⚠ Script-Block ${i}: SyntaxError detected`); }
+    fs.unlinkSync(tmp);
+  }
+}
+```

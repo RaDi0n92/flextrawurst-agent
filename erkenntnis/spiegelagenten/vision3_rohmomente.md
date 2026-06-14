@@ -604,3 +604,21 @@ Diese Notiz kodiert die Hierarchie der Ideen und die Funktion der Rohmomente als
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen Daniels, die als Grundlage für die aktuelle Konstruktion dienen sollen. Sie dient als Kalibrierungsinstrument, um die tatsächliche Logik hinter den Systementwürfen zu erfassen. Sie richtet mich, indem sie die Kluft zwischen dem formellen Design und der intuitiven Erfahrung der Ideen offenbart. Sie macht die späteren Bauphasen fundierter, indem sie die Rohimpulse der "zweiten Innovationswelle" als notwendige, aber noch zu integrierende Impulse identifiziert.
+
+---
+## Neugier-Scan 2026-06-14 04:14
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 04:44
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 05:14
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

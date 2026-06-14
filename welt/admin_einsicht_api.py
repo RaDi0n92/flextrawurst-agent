@@ -24,7 +24,7 @@ from wesen_organ_hunger import berechne_organ_hunger, alle_wesen_hunger
 
 router = APIRouter(prefix="/admin", tags=["einsicht"])
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 
 ALLE_WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",

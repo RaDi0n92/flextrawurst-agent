@@ -811,3 +811,15 @@ Fix: gordslider in views-Array eintragen, `src=""` entfernen, direkt `src="/gord
 10. **Provenienz-Block** am Post-Ende: Raum, Thema, Autor/Typ, Erstellt, Sichtbarkeit, Herkunft, Direktlink + Kopieren-Button.
 
 ...
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Die `denkstream_api.py` hat Traumbilder (`/traumbilder/{entity_id}`, `/traumbild/{entity_id}/{filename}`). Die Wesen sollen also auch träumen können während der Browser-Agent läuft — `traum://` und `luzid://` URLs triggern im SCREENS-Tab andersfarbige Chunks. Das ist eine eigene Logikschicht: wach surfen vs. träumend surfen. Diese Unterscheidung ist im SCREENS-Code sichtbar (`isTraum`, `isLuzid`, CSS `.scv-chunk-traum`, `.scv-chunk-luzid`).
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Kette: `being\'s` → U+0027 in Output → SyntaxError → Block 9166 dead → ftwT undefined → beide KompOase-Features broken. Sehr leicht zu beheben sobald man die Kette gesehen hat. Schwer zu sehen weil drei Sprach-Ebenen übereinander liegen: TypeScript-Quelle → generiertes JS (im `<script>`-Block der HTML-Datei) → Browser-Runtime.

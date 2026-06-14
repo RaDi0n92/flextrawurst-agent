@@ -614,3 +614,20 @@ Nichts Offenes aus dieser Session. Alles was angefangen wurde, ist fertig.
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Nichts Offenes. Alle 17 Schritte sind abgeschlossen, alle Commits sind durch.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Wenn Browser-Agent irgendwann gebaut wird:
+- `POST /api/denkstream/chunk` ist der Write-Endpunkt
+- `entity_id`, `stream_id`, `chunk`, `seq`, `done`, `url` — das Payload-Schema
+- Screenshots nach `/tmp/wesen_screenshots/{entity_id}_aktuell.jpg` schreiben
+- Traumbilder nach `/tmp/wesen_traumbilder/{entity_id}_{timestamp}.jpg`
+- `traum://` und `luzid://` als URL-Prefixe für Traumzustände
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Wenn wir weiter an KompOase bauen: das Apostroph-Problem ist jetzt behoben, aber es wäre sinnvoll, die Script-Block-Syntax nach dem Build automatisch zu prüfen (z.B. via `node --check` auf den extrahierten Script-Inhalten). Das würde ähnliche Bugs früh fangen.

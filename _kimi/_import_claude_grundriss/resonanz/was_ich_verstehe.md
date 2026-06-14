@@ -940,3 +940,44 @@ Die 561 verbleibenden Similarity-Rows (nicht Zwischenraum) sind Kollateralschade
 Das Kern-Problem war strukturell: Posts, Antworten, Schattenkommentare und Autoren hatten keine eigene visuelle Identität. Alles lag auf einer Ebene. Die Lösung war nicht kosmetisch — es brauchte echte Hierarchie im DOM, eigene CSS-Klassen für jede Schicht, und klickbare Identitäten überall.
 
 Die Syntaxfehler-Ursache: `ftwShare('...')` mit einfachen Anführungszeichen in TypeScript-Template-Strings. Die Backslash-Escapes (`\'`) wurden beim Build zu echten `'`, die dann den umgebenden HTML-Attribut-String zerbrochen haben. Fix: `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` — kein Quoting-Problem mehr.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+**Obsessionen/Abneigungen:** Die Werte in `entity_profiles` sind identisch für alle 6 Wesen, weil es Oberkategorien sind — Ausgangsmaterial, kein differenziertes Profil. Individual-Ausprägungen würden durch Verhalten entstehen (entity_kern-Ticks, Entscheidungsmuster). entity_takt ist gestoppt → kein Verhalten → keine Differenzierung. Das ist kein Bug, das ist Vor-Einzug-Zustand.
+
+**DENKEN vs. SCREENS:** Beide sind Browser-Agent-Beobachtungsorgane. DENKEN = Text, SCREENS = Screenshot + Text im Modal. Nicht redundant, sondern komplementär. SCREENS hat den `/denkstream.html`-Link und Screenshots, DENKEN hat nur den Textfeed. Wenn Browser-Agent läuft, zeigen beide denselben Agent-Output aus verschiedenen Perspektiven.
+
+**Begriffstrennung:** Das war der Kern dieser Session. Vorher stand im DENKEN-Hero: "Der Denkstrom der Wesen in Echtzeit. Öffentlich für alle." — das ist falsch. Es ist kein allgemeiner Wesen-Denkstrom. Es ist Browser-Agent-Output. Im WESEN-Tab stand "Denkstrom (live)" für entity_kern-denkstrom_buffer — das klingt wie Browser-Agent, ist es aber nicht. Zwei verschiedene Dinge hatten denselben Namen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+**Was repariert wurde (diese Session):**
+
+**1. Z-Index-Konflikt: Archiv-Toggle unter Theater-Wrap vergraben (abgeschlossen)**
+
+`ko-theater-wrap` (CSS: `position:absolute;top:10px;right:14px;z-index:100`) lag über `archiv-toggle` (HTML: `position:absolute;top:12px;right:16px;z-index:20`). Praktisch dieselbe Pixelposition, aber Theater-Wrap mit z-index 100 > archiv-toggle z-index 20. Da Theater-Wrap nur für Admin-User sichtbar ist (`display:none` für alle anderen), war das ein Admin-only-Bug.
+
+Lösung: archiv-toggle auf `top:82px` verschoben (unterhalb des ~70px hohen Theater-Wrap). archiv-panel ebenfalls auf `top:82px`. Daniel bestätigte: Archiv funktioniert wieder.
+
+**2. Null-Fallback in `koShowInfo` (abgeschlossen)**
+
+`var mat=MATERIALITAETEN[s.materialitaet]` konnte undefined sein wenn ein unbekannter Materialitäts-Schlüssel kam. Fallback hinzugefügt: `||MATERIALITAETEN.sternenstaub`.
+
+**3. Der eigentliche Hauptfehler: `being\'s` Apostroph (abgeschlossen)**
+
+Das war der Kern von allem. In `build_surface.ts` Zeile 5266 stand in einem TypeScript-Template-Literal:
+
+```
+'denken.prov.was.text':'Browser-agent text output — a being\'s thought stream...'
+```
+
+Im Template-Literal wird `\'` einfach zu `'` (ASCII, U+0027). Der Output im generierten HTML war:
+
+```javascript
+'denken.prov.was.text':'Browser-agent text output — a being's thought stream...'
+```
+...

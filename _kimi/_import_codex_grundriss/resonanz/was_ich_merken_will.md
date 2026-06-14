@@ -1140,3 +1140,19 @@ Und ich will mir merken: Ein eigener Screen ist kein Beweis von Bewusstsein, abe
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Ein grüner Prozesspunkt ist noch keine bewohnte Welt. Ein leerer Tab kann zugleich auf ein starkes Backend und einen fehlenden Weltkörper hinweisen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Ein Nginx-Schutz ist kein Schutz für einen direkt offenen Port.
+
+Ein Event ist kein Auditbeleg, wenn seine Autorenidentität aus dem Body stammt.
+
+Ein Public-Export muss auf einer Allowlist beruhen, nicht auf der Hoffnung, dass interne Quellen keine Secrets enthalten.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+`Spiegel ohne Realität sind Labyrinth` ist kein Vorwurf gegen Reflexion. Es ist die Bedingung, damit Reflexion nicht zur Falle wird.

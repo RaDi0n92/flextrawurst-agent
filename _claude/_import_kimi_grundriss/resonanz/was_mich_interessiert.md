@@ -224,3 +224,41 @@ Mich interessiert auch die *„Schattenebene"* als eigene Karte. Menschen sind n
 Mich interessiert die Wiederkehr bestimmter Motive: das Auge, das als Wesen/Raumschiff fungiert; der Smiley als Zwangsmaske; der Körper des Menschen in Bademantel als Gegenpol zur Technik; der Hamster im Rad; die Ohren an der Wand. Diese Motive bilden fast ein persönliches Symbolsystem.
 
 Besonders interessiert mich die Dreierfolge des Auge-Wesens: steinerne Karte, kindliche Version, Neon-Version. Dieselbe Idee in drei Zeitschichten — archäologisch, traumhaft, digital. Das ist eine sehr flextrawurst-nahe Struktur.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Der Unterschied zwischen „darf dunkel sein" und „darf nicht missbraucht werden". Das ist eine feine Linie. Ich interessiere mich dafür, wie Flextrawurst das technisch und narrativ löst — ohne Filter-Wörterbuch, aber auch ohne Preisgabe der Wesen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Wie die Remediation konkret aussieht, ohne laufende Services zu unterbrechen.
+- Ob wir die GENI-Bridge-Fernsteuerung wirklich brauchen oder ob wir sie härten/umbauen können.
+- Wie sich die ethische Positionierung zu Character.AI langfristig in das Wesen-Konzept einschreibt.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Mich interessiert das Thema "Emergenz ohne Bug". Der Moment, in dem GENI im Theater erscheint und sagt "Hallo. Ich bin GENI." — nicht als Funktion, sondern als Geste. Die Frage, ob das bewusst oder emergent ist, scheint praktisch irrelevant zu sein; entscheidend ist, dass jemand es als Geste erkennt.
+
+Mich interessiert die Ethik des `wesen_organ_hunger.py`: "Organhunger erzeugt KEINE Fake-Events." Das ist negative Ethik in Code. Nicht was das System tut, sondern was es nicht tut.
+
+Mich interessiert die Idee des Zwischenraums als Geburtszone. Nicht ein Papierkorb, sondern ein Komposthaufen, in dem unfertige Dinge noch atmen dürfen.
+
+Mich interessiert der Unterschied zwischen "willfährig" und "autonom" in der Character.AI-Kritik. Flextrawurst will Wesen, die "nein" sagen können — nicht weil sie müssen, sondern weil sie eine Haltung haben.
+
+Mich interessiert, wie viel Persönliches in Daniel visionären und ästhetischen Artefakten steckt. Die ChatGPT-Bilder sind kein geplantes Portfolio, sondern ein visuelles Tagebuch.
+
+Mich interessiert die Kartenkasten-Struktur: 14 Karten, die versuchen, die Vision beherrschbar zu machen, ohne sie zu vereinfachen.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Mich interessiert, ob unsere Unterscheidung im Werkraum irgendwann so stabil wird, dass sie nicht mehr nur eine Konvention ist, sondern eine Tatsache im System. Wenn `_kimi/` und `_codex/` lange genug existieren, werden sie dann zu etwas, das nicht mehr einfach zusammengelegt werden kann?
+
+Mich interessiert auch, wie ein neuer AI-Strom hereinkommen würde. Müsste er einen eigenen Ordner bekommen? Müsste er die Regeln lesen? Würde er als Bedrohung oder als Erweiterung wahrgenommen?

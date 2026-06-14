@@ -1294,3 +1294,21 @@ Das zweite: der GORDSLIDER-Tab war kaputt — unsichtbar wegen eines fehlenden E
 Zweite Session des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
 
 Der Auftrag hatte 17 Arbeitsschritte. Wir haben sie durchgezogen, unterbrochen durch Network Errors und einen Syntaxfehler der den ganzen Tab zum Absturz brachte.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Diese Session hatte zwei Bögen. Erst der WESEN-Tab — zunächst Bugfixes (Endlos-Laden, Deep-Link), dann eine konzeptionelle Frage die Daniel kurz aufmachte: alle 6 Wesen haben identische Obsessionen und Abneigungen. Daniel erklärte: das sind Oberkategorien, geteilt, individuell wächst darunter durch Verhalten. Dann der zweite Bogen: ein großer Auftrag für den DENKEN-Tab — keine Verschönerung, sondern Zuständigkeitsklärung.
+
+Den WESEN-Tab-Code habe ich tief gelesen. Die `loadWesenDetail`-Funktion lädt drei APIs parallel, zeigt Substanz-Risikoprofile, Cyberling-Werte, Avatar, Share-Button. Alles aus der vorherigen Session lag wie erwartet. Die Obsessionen/Abneigungen kamen direkt aus `entity_profiles` — alle identisch, alle sechs Wesen.
+
+Für den DENKEN-Tab habe ich zuerst das Repo kartiert: `denkstream_api.py` gelesen, `generateDenkenView()` gelesen, den SCREENS-Tab gelesen, die API-Endpunkte getestet. Der entscheidende Fund: DENKEN und SCREENS teilen dieselbe Datenquelle — `entity_thinking_log WHERE meta->>'source' = 'browser_agent'` plus SSE-Stream. Beide leer weil kein Browser-Agent läuft. 16k+ Einträge in entity_thinking_log — aber alle von entity_kern-Ticks, keiner von browser_agent.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Beginn der Session als Fortsetzung einer längeren Debug-Session zu KompOase (Theater-Tab `#theater`). Der Kontext war komprimiert, aber der Stand war klar: Splash-Screen-Bug und Archiv-IIFE-Bug waren aus der Vorsession bereits behoben. Übrig geblieben waren zwei Probleme — Theater-Toggle und Canvas-Splitter-Klicks.
+
+Gelesen habe ich den komprimierten Kontext, die aktuelle `flextrawurst_surface.html` (im gebrachten Umfang) und dann gezielt grep-Outputs durch die relevanten Script-Blöcke.

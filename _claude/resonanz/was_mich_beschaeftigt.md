@@ -684,3 +684,15 @@ Die Geduld. Drei Stunden für eine Löschoperation, die letztlich in 30 Sekunden
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Der Syntaxfehler der den Diskurs lahmgelegt hat — und wie wenig man ihn im TypeScript-Code sah. Erst beim Browser-Test (Diskurs lädt nicht) wurde es klar. Dann sechs Zeilen Code und der Fix war da.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Die Präzision der Begriffe. Drei Sessions heute, und in jeder war Präzision das Thema: Diskurs-Tab (Warum-Infos, Typ-Badges), WESEN-Tab (Substanz-Risikoprofil != verbrauchte Substanzen, Cyberling-Konsistenz), DENKEN-Tab (Browser-Agent != Wesen-Denkstrom != entity_kern-Ausgabe). Das System ist komplex genug dass falsche Namen echten Schaden anrichten. Der DENKEN-Hero hat jahrelang (in UI-Zeit) etwas Falsches gesagt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Das Apostroph-Problem war frustrierend, weil es eine sehr kleine Ursache mit großer Wirkung ist. Ein Zeichen — und zwei scheinbar unzusammenhängende Features sind kaputt. Die eigentliche Arbeit war das Kausal-Mapping: Symptome → gemeinsame Ursache → Quell-Datei → konkrete Zeile.

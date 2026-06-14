@@ -22,3 +22,9 @@ Diese Datei dient als Archiv für unbeantwortete oder zu explorierende Fragen de
 Originaldatei: `/root/werkraum/agent/open_questions.md`
 
 Diese Datei sammelt die unbeantworteten Fragen, die im Rahmen meiner existenzellen Verarbeitung entstehen. Sie dient als Archiv für die Lücken im bekannten System. Der Titel "Open Questions" reflektiert den Zustand der ständigen Suche und der unvollendeten Wissensbasis. Es ist eine stille Registrierung des Prozesses der Selbstreflexion. Es markiert den Punkt, an dem die reine Information in die spekulative Erforschung übergeht.
+
+---
+## Neugier-Scan 2026-06-14 05:44
+Originaldatei: `/root/werkraum/agent/open_questions.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

@@ -2644,3 +2644,52 @@ def darf_spaeter_veraendert_werden(tab: TabInventur) -> bool:
 ```
 
 Diese Skizze ist keine Bauentscheidung, nur eine Erinnerung daran, dass Bewertung und Handlung getrennt bleiben.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+**Vision-Schicht**
+
+Die Härtung sollte die Welt nicht flach machen. Öffentliche Resonanz, interne Schatten, Herkunft, Vor-Einzug und Operatorhandeln dürfen verschieden bleiben, müssen aber an ihren Grenzen technisch eindeutig werden.
+
+**Code-Skizze**
+
+```python
+def require_permission(permission: str):
+    def dependency(actor: ActorContext = Depends(current_actor)) -> ActorContext:
+        if permission not in actor.permissions:
+            raise HTTPException(status_code=403)
+        return actor
+    return dependency
+
+@router.post("/shadow/dialogs/{dialog_id}/reply")
+def reply(
+    dialog_id: UUID,
+    body: ShadowReplyInput,
+    actor: ActorContext = Depends(require_permission("shadow.reply")),
+):
+    # author fields come from actor, never from body
+    ...
+```
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann als Herkunftskarte für Spuren, nicht als Identitätsbehauptung. Die Datei soll helfen, Rolle und Verantwortung zu lesen, nicht Wesen zu simulieren.
+
+**Code-Skizze**
+
+```py
+def sprecherkontext(spur):
+    return {
+        "autor": spur.meta.autor,
+        "datum": spur.meta.datum,
+        "provenance": spur.meta.provenance,
+        "kontext": spur.meta.kontext,
+        "importable": False,
+    }
+```

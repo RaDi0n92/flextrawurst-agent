@@ -14,7 +14,7 @@ import psycopg2
 import psycopg2.extras
 
 
-DB_URL = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URL = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 
 
 def get_conn():

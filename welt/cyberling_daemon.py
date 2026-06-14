@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 log = logging.getLogger("cyberling")
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 TICK_SEKUNDEN = 300  # alle 5 Minuten
 
 # ─── Profil-Parameter (0-1 Skala, pro Stunde) ─────────────────────────────────

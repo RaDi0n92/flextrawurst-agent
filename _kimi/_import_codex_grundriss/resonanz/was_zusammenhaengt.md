@@ -1167,3 +1167,19 @@ Es haengt mit Life Contracts zusammen, weil ein Klick nicht heimlich mehr Macht 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Weltstrom, Einsicht und Archäologie sind Gegenwart, Tiefenblick und Gedächtnis desselben Ereigniskörpers. KompOase, Splitter und Substanz bilden den Stoffwechsel. Wesen, Schlaf, Cyberlinge und Gruppen bilden den noch unvollständig bewohnten Sozialkörper.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Der öffentliche Werkraum-Graph, der 10-Minuten-Exporter und fest codierte Zugangsdaten hängen direkt zusammen: Ein Secret im internen Quellmaterial wird nicht nur einmal geleakt, sondern durch den automatischen Export regelmäßig neu veröffentlicht.
+
+Die doppelte Shadow-Route, der veraltete Rechteintegrationstest und die freie Autoren-ID im Reply-Body sind drei Seiten desselben Problems: Die gewünschte Sichtbarkeit und Identität eines Shadow-Dialogs besitzt keinen eindeutigen, ausführbaren Vertrag.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Die Gespräche hängen mit den Reviewdateien zusammen, weil dieselbe Grenze dort praktisch sichtbar wird: Was ist echte Laufzeit, was ist nur Beschreibung, was ist Herkunft, was ist gespiegelt, was darf als Wirkung gelten?
+
+Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rollen unsauber trennt, neigt nicht nur zu philosophischer Unschärfe, sondern auch zu handfesten Risiken: falsche Auth, vermischte Autorenschaft, unklare Exporte, falsch interpretierte Spiegel.

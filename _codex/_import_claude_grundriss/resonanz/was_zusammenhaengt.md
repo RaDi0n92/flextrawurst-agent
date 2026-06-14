@@ -792,3 +792,22 @@ entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächs
 - Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
 - `_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
 - Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`: scroll + grünes Outline-Highlight für 2,5 Sekunden. Das ist ein einfaches aber wirksames UX-Muster.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+- Obsessionen/Abneigungen → entity_kern-Ticks → Verhaltenslog → individuelle Ausprägungen (noch nicht implementiert, aber vorbereitet)
+- DENKEN-Tab → denkstream_api.py → entity_thinking_log (source=browser_agent) → Browser-Agent-System (noch nicht aktiv)
+- WESEN-Tab "entity_kern-Ausgabe (live)" → entity_thinking_log (entity_kern-Ticks, kein source-Filter) → entity_takt.service (gestoppt)
+- EINSICHT-DENKFENSTER (SPAETER) → beide Quellen gleichzeitig, aber mit Provenienz pro Eintrag (Daniels Entscheidung)
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- `build_surface.ts` → generiert HTML + Script-Blöcke
+- Script-Block 9166–10872: UI_TR (i18n) + ftwT — ein Syntaxfehler hier bricht ALLES was ftwT braucht
+- KompOase-Block 10872–12380: Canvas-Physik (Splitter, koPhysikUpdate etc.) — unabhängig, nicht betroffen
+- Haupt-Surface-Block 12459–14263: koToggleTheater, koStart, koShowInfo, ftwT-Aufrufe — BETROFFEN
+- Archiv-IIFE 2202–2326: völlig isoliert, deshalb hat Archiv schon in der Vorsession funktioniert

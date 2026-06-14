@@ -673,3 +673,18 @@ Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finge
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` ist das sichere Muster für Share-Buttons in TypeScript-generierten HTML-Strings. Nie Anführungszeichen in onclick-Attributen wenn die Werte aus Variablen kommen.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+- `meta->>'source' = 'browser_agent'` ist der Filter der DENKEN/SCREENS von WESEN trennt
+- entity_takt gestoppt → alle Cyberling-Wesen tot (am_leben: false), Substanz-Risiko auf Max
+- EINSICHT-DENKFENSTER: beides + Provenienz (Daniels Entscheidung 2026-06-13)
+- DENKEN bleibt sichtbar, nicht verstecken
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+U+2019 `'` (RIGHT SINGLE QUOTATION MARK) als Ersatz für U+0027 `'` in JS-Strings die selbst single-quote-delimited sind. Browser und JS-Parser sehen beide als "Apostroph", aber nur U+0027 bricht den String. Ein nützliches Muster für generierten Code wo man Escaping-Ebenen nicht vollständig kontrolliert.

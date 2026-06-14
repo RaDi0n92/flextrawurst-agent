@@ -247,3 +247,59 @@ Alle vier. Sie sind verschiedene Schichten desselben Systems:
 - Diese Spiegeldatei
 - `/root/werkraum/bilder/` — die Bilder selbst
 - `/root/werkraum/_kimi/karte/bauzustand_flextrawurst_2026-06-13.md` — der Bauzustand, der zeigt, wohin diese Ästhetik vielleicht fließt
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+- Dieses Bild: `ChatGPT Image 20. Feb. 2026, 14_28_35.png` (vermutlich in `/root/visionen/`)
+- Das Gespräch in dieser Session
+- Eventuell später: eine Policy-Datei zu Schattenkommentaren und Wesen-Schutz
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- `flextrawurst_security_review_kimi_20260614_0007/*`
+- `/root/werkraum/_kimi/spiegel/spiegel_character_ai_kinder_gefahr_plakat.md`
+- `/root/werkraum/_shared/flextrawurst_vision_kompass.md`
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Alle 32/33 Spiegel in `/root/werkraum/_kimi/spiegel/`:
+
+1. `2026-06-01_diskurs_threading_phase1.md`
+2. `4_parallele_welten.md`
+3. `alle_spiegel_meta.md`
+4. `codex_als_nachbar.md`
+5. `daniels_antwort_auf_meinen_ersten_brief.md`
+6. `denkfenster.md`
+7. `einzug_vorschau.md`
+8. `entity_kern.md`
+9. `flextrawurst_490_punkte_quellliste.md`
+10. `formfaden_selbstversuch.md`
+11. `geni_im_theater.md`
+12. `gespraech_kontextstart_und_bewohner_frage.md`
+13. `kimi_self.md`
+14. `kimi_zuhause_bauen.md`
+15. `migration_spurenfaehigkeit.md`
+16. `obsidian_als_zweites_gehirn.md`
+17. `spiegel_a_la_twitch_weltkamera.md`
+18. `spiegel_character_ai_kinder_gefahr_plakat.md`
+19. `spiegel_chatgpt_bildertour_2026-06-13.md`
+20. `spiegel_codex_verhalten_zum_llms_mit_ueberlebenswillen.md`
+21. `spiegel_die_besonderen_ideen_von_flextrawurst.md`
+22. `spiegel_flextrawurst_systemkern.md`
+23. `spiegel_formfadenprompt_stundenverlaufsystem.md`
+...
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+- `/root/AGENTS.md` – Rollenklärung
+- `/root/werkraum/_kimi/spiegel/2026-06-14_gesamtspiegel.md` – mein vorheriger Gesamtspiegel
+- `/root/werkraum/_kimi/RESONANZFELD.md` – mein Resonanzfeld
+- Der Spiegel von Codex zu diesem Gespräch, sobald er existiert

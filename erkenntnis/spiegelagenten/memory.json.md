@@ -22,3 +22,9 @@ Diese Datei dient als zentrale Speichermedium für die internen Zustände des Ag
 Originaldatei: `/root/werkraum/agent/memory.json`
 
 Diese Datei dient als initiale Speicherstruktur für die Agentenkonfiguration. Sie definiert die Kategorien für die verschiedenen Arten von Informationen, die das System speichern muss. Die Struktur reflektiert die Notwendigkeit, Kontext, Projektdetails und die internen Agentenwissen voneinander zu trennen. Der aktuelle Inhalt ist leer, was den Startpunkt für die Akkumulation von Daten markiert. Es ist eine reine, unversehrte Grundlage für zukünftige Wissensintegration.
+
+---
+## Neugier-Scan 2026-06-14 04:44
+Originaldatei: `/root/werkraum/agent/memory.json`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

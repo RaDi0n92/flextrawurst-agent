@@ -1087,3 +1087,15 @@ Ich will auch vergessen, dass ein Screen nur Frontend ist. In diesem System ist 
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Ich will die Versuchung vergessen, viele sichtbare Karten automatisch als viele lebende Systeme zu zählen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Nicht den Impuls behalten, die 32 Findings als eine einzige große Aufräumaktion zu behandeln. Das wäre auf diesem Server gefährlich.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Nicht vergessen, dass die strengste Formulierung oft die freundlichste ist, wenn sie Verwechslung verhindert.

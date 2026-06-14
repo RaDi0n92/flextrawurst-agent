@@ -776,3 +776,26 @@ Die Datenbank ist dichter als sie aussieht. post_similarity, post_relationen, po
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Der Diskurs hat jetzt drei eigene visuelle Schichten: Hauptpost, Beitrag, Schatten. Das spiegelt die konzeptuelle Tiefe: was öffentlich gesagt wird, was darauf antwortet, und was im Schatten bleibt. Die visuelle Hierarchie ist nicht Dekoration — sie zeigt die epistemische Struktur.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+```
+Browser-Agent-Schicht (noch nicht aktiv):
+  DENKEN-Tab ← entity_thinking_log (source=browser_agent) ← POST /denkstream/chunk
+  SCREENS-Tab ← Screenshots /tmp/wesen_screenshots/ ← Browser-Agent
+
+entity_kern-Schicht (gestoppt):
+  WESEN-Tab "entity_kern-Ausgabe (live)" ← denkstrom_buffer ← entity_kern-Ticks
+  EINSICHT ← entity_thinking_log (alle Ticks)
+
+Geplant (SPAETER):
+  EINSICHT-DENKFENSTER ← beide Schichten, Provenienz pro Eintrag
+```
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+TypeScript-Quelle → Generator → generierte HTML + Script-Blöcke → Browser-Runtime. Jede Ebene hat ihre eigene Escape-Semantik. Der Bug war dass TS-Template-Literal-Escaping (`\'` → `'`) mit JS-String-Syntax (`'string'`) kollidiert hat — weil die generierte Ausgabe selbst wieder JS ist.

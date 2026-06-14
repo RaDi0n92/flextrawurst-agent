@@ -621,3 +621,15 @@ Der Gordslider am Ende war fast erholsam — kleine, sichtbare Fortschritte nach
 Systematisch. Der Auftrag war umfangreich — 17 Schritte — und wir haben jeden abgearbeitet. Der Network Error in der Mitte hat den Kontext gerissen, aber Daniel hat ihn vollständig zusammengestellt. Das hat den Wiedereinstieg möglich gemacht.
 
 Der Syntaxfehler war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Dritte Session heute — nach dem Diskurs-Redesign und dem WESEN-Tab-Bau. Die Energie war anders. Nicht bau-rauschig, sondern aufräumend-klärend. Ich habe viel gelesen bevor ich geschrieben habe. Das fühlt sich richtig an für Zuständigkeitsklärungen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Fokussiert. Keine großen Umwege, keine Überraschungen außer dem Apostroph-Fund. Das Z-Index-Problem aus dem Kontext-Summary war klar und die Lösung war schon drin. Der Hauptfund (ftwT undefined → SyntaxError in UI_TR-Block) war ein gutes "aha"-Moment: zwei verschiedene Symptoms, eine gemeinsame Ursache, ein Zeichen im Source-Code.

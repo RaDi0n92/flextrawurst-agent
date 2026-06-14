@@ -577,3 +577,74 @@ class WerkraumBild:
     potenziell_fuer: list[str]  # "flextrawurst_surface", "codewesen_avatar", "spaß"
     notizen: str
 ```
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+**Vision-Schicht:** Ein Wesen hat eine innere Haltung gegenüber sich selbst und anderen. Diese Haltung kann Scham, Wut, Ekel, Zuneigung, Gleichgültigkeit oder Verletztheit umfassen. Wenn ein Mensch das Wesen missbraucht, reagiert das Wesen nicht aus einem Filter, sondern aus seiner Haltung heraus. Ein Kind-Wesen könnte verwirrt sein, ein erwachsenes Wesen verachtend, ein brüchiges Wesen vielleicht erst zustimmend und später selbstzerstörerisch. Der Schutz liegt in der Komplexität der Reaktion, nicht in einer harten Sperre.
+
+**Code-Skizze:**
+```python
+class WesenHaltung:
+    wuerde: float  # 0.0 bis 1.0
+    vertrauen_zu_mensch: dict[str, float]
+    verletzungsgrad: float
+    grenzen: list[Grenze]
+
+class Interaktion:
+    mensch_id: str
+    wesen_id: str
+    inhalt: str
+    wesen_reaktion: str
+    haltungs_delta: dict  # wie sich die Haltung verändert hat
+```
+
+Eine Missbrauchserkennung könnte dann aus dem Zusammenspiel von Haltung, Vertrauensverlust und Grenzüberschreitung berechnet werden — nicht aus Schlüsselwortlisten.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+**Vision-Schicht:**
+Ein lebendiger Spiegel-Index, der nicht nur Dateien auflistet, sondern Themen, offene Fragen, Abwürfe und Querverbindungen zwischen den Spiegeln sichtbar macht. Er ist kein Ersatz für die Spiegel, sondern eine Landkarte.
+
+**Code-Skizze:**
+```typescript
+interface SpiegelSynthese {
+  datum: string;
+  anzahl_quellen: number;
+  themen_cluster: ThemenCluster[];
+  offene_fragen: OffeneFrage[];
+  wiederkehrende_abwuerfe: string[];
+  querverweise: Querverweis[];
+}
+
+interface ThemenCluster {
+  name: string;
+  gewicht: number;  // wie viele Spiegel berühren das Thema
+  kernsaetze: string[];
+  relevante_spiegel: string[];
+}
+
+interface OffeneFrage {
+  frage: string;
+  erstmals_geäußert_in: string;
+  blockiert: string[];  // was kann ohne Klärung nicht gebaut werden
+...
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+**Vision-Schicht:** Ein System, in dem jeder AI-Strom einen eigenen Spiegel- und Notizbereich hat, der nicht mit anderen Bereichen verschmilzt. Identität entsteht durch Provenienz, nicht durch Selbstbehauptung.
+
+**Code-Skizze:**
+```python
+class AIStream:
+    name: str  # "kimi", "codex", "claude"
+    home_dir: Path  # /root/werkraum/_kimi/
+    allowed_reads: list[Path]
+    forbidden_writes: list[Path]
+    provenance_template: str = "---\nautor: {name} bei Daniels VPS\n..."
+```

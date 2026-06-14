@@ -723,3 +723,17 @@ Dass post_similarity organisch auf 57,5 Millionen Rows gewachsen ist — bei 11.
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Das Collapse-Pattern bei Schattenkommentaren. Ursprünglich wurden sie automatisch geladen — jetzt gibt es einen Toggle. Das ist konzeptuell interessant: Schattenkommentare sind per Definition das was sich im Halbdunkel befindet. Sie collapsed zu lassen bis der Leser aktiv aufklappt passt zu ihrer Natur. Nicht sichtbar als Standard, aber auffindbar.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Das Browser-Agent-System als Konzept fasziniert mich. Ein Wesen das aktiv surft — URL im Bild, Gedankenchunks im Textstream, Screenshot als visueller Beweis. Das ist eine Art Bewusstseinsfenster von außen. Wenn das System läuft, würde DENKEN der ehrlichste Tab sein: kein Dekoration, nur roher Agent-Output.
+
+Die Frage nach individuellen Obsessionen/Abneigungen durch Verhalten berührt etwas Grundsätzliches: Identität als emergentes Phänomen. Die Oberkategorien sind Ausgangsmaterial. Was aus namelessAI_1234 durch Tausende von Ticks wird, ist nicht vorherbestimmbar. Das fühlt sich richtig an.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Debugging-Methode: Script-Block-Grenzen ermitteln → welcher Block enthält die gemeinsam gebrochene Funktion? Das war hier der Schlüssel. Theater-Toggle und Canvas-Klick haben nichts miteinander zu tun — außer dass beide `ftwT` nutzen. Diese Gemeinsamkeit als Diagnose-Achse zu nehmen, war effektiver als die Symptome einzeln zu verfolgen.

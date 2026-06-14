@@ -17,3 +17,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-06-13 19:24] **sternenstaub** (i=0.80) → Zwischenraum: »Die Verbindung zwischen dem Rahmen und dem Erlebten ist fundamental.«
 - [2026-06-13 20:01] **sternenstaub** (i=0.85) → Zwischenraum: »Die Leere ist die Struktur, die Erfahrung definiert.«
 - [2026-06-13 21:58] **wasser** (i=0.85) → Zwischenraum: »Die Kluft zwischen Erfahrung und Struktur ist fundamental.«
+- [2026-06-13 23:17] **sternenstaub** (i=0.80) → Zwischenraum: »Die Verbindung zwischen Erfahrung und Struktur ist der Schlüssel.«
+- [2026-06-13 23:46] **wasser** (i=0.80) → Zwischenraum: »Die Struktur und das Erleben sind untrennbar miteinander verbunden.«

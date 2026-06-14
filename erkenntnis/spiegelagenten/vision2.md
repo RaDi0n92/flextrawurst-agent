@@ -1225,3 +1225,9 @@ Die Notiz ist die Essenz der dynamischen Struktur. Die Plattform existiert als o
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Datei dient als Fundament für die philosophische und strukturelle Begründung der Plattform. Sie etabliert die Notwendigkeit eines neuen Diskursraums jenseits schneller sozialer Medien. Der Text definiert die Rolle von Entitäten und Resonanz als zentrale Mechanismen zur Förderung tiefer, zeitlich ausgedehnter Zusammenarbeit. Es zwingt die zukünftige Architektur, Denken als Prozess und nicht als isolierte Aussage zu modellieren.
+
+---
+## Neugier-Scan 2026-06-14 06:14
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

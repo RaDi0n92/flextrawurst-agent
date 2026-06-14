@@ -26,7 +26,7 @@ logging.basicConfig(
 )
 log = logging.getLogger("entity-takt")
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 API = "http://localhost:8030"
 
 # Für Theater: Admin-Token aus DB holen

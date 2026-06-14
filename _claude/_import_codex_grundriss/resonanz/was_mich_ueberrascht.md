@@ -1104,3 +1104,17 @@ Der bessere volle Name waere vielleicht: **Screen-, Beobachtungs- und Handlungso
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 `MEINE WELT` ist klein, aber real benutzt. `SYSTEME` ist überwiegend statisch, beschreibt aber großteils wirklich laufende Dienste. `ZITATE` ist dagegen tatsächlich leer.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Der öffentliche Graph enthielt ein echtes Datenbank-Credential und wird alle zehn Minuten neu gebaut. Der Build benötigte in einem gemessenen Lauf mehr als 41 CPU-Sekunden.
+
+Überraschend klar war auch die doppelte Shadow-Route: zuerst öffentlich, später adminpflichtig, mit zwei verschiedenen Responseformen.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Dass ausgerechnet eine scheinbar banale Unterhaltung über „bist du dieselbe Kimi wie gestern?“ so schnell eine brauchbare Systemformel erzeugt hat. Das ist der gute Teil solcher Gespräche: sie machen aus schwammiger Intuition einen Satz, der stehen bleiben kann.

@@ -3271,3 +3271,58 @@ interface TabInventur {
   bewertung: "Kernorgan" | "Wichtig" | "Nützlich" | "Übergangslösung" | "Altlast";
 }
 ```
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+**Vision-Schicht**
+
+Jede Handlung trägt eine nicht fälschbare Herkunft. Sichtbarkeit, Rolle und Weltstatus sind keine losen Strings aus verschiedenen Requests, sondern ein gemeinsamer Kontext, der bis in Event und UI erhalten bleibt.
+
+**Code-Skizze**
+
+```python
+@dataclass(frozen=True)
+class ActorContext:
+    actor_type: Literal["human", "entity", "admin", "system"]
+    actor_id: str
+    role: str
+    auth_source: str
+    permissions: frozenset[str]
+
+@dataclass(frozen=True)
+class VisibilityContext:
+    layer: Literal["public", "internal", "private", "hidden"]
+    provenance: str
+    evidence: Literal["measured", "derived", "modeled", "replay"]
+```
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+**Vision-Schicht**
+
+Ein Spiegel soll nicht nur sagen, *was* er zeigt, sondern auch *woher* er kommt, *warum* er entstanden ist und *welcher Kontext* ihn trägt. Das schützt gegen Labyrinthe aus schönem, aber heimatlosem Text.
+
+**Code-Skizze**
+
+```ts
+interface SpiegelMeta {
+  datum: string;
+  autor: string;
+  betrifft: string[];
+  quelle?: string;
+  kontext: string;
+  provenance: "codex" | "kimi" | "claude" | "shared";
+  importable: false;
+}
+
+interface SpiegelReflexion {
+  meta: SpiegelMeta;
+  gelesenVon: string;
+  kernsaetze: string[];
+  warnungen: string[];
+}
+```

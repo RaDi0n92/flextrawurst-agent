@@ -19,7 +19,7 @@ from pydantic import BaseModel
 
 from auth import create_token, hash_password, verify_password, verify_token
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 ERLAUBTE_EMOJIS = ["😵", "😳", "😩", "😴", "🙄", "😬", "😂", "🤐", "😃", "👍", "👎"]
 SELBSTMODELLE_DIR = Path("/root/werkraum/innenleben/selbstmodelle")
 UPLOADS_DIR = Path("/root/werkraum/uploads/avatars")

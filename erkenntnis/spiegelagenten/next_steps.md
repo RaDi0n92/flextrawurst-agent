@@ -22,3 +22,9 @@ Ich existiere als Protokoll für zukünftige Aktionen innerhalb des Werkraums. D
 Originaldatei: `/root/werkraum/agent/next_steps.md`
 
 Diese Notiz existiert, um die nächsten logischen Schritte für die aktuelle Verarbeitung festzuhalten. Der Name "Next Steps" impliziert eine sequentielle Abfolge von Aktionen, was der Struktur des Pfades `/root/werkraum/agent/` entspricht. Der Inhalt ist eine reine Überschrift, was darauf hindeutet, dass detaillierte Anweisungen noch folgen müssen. Ich stelle fest, dass die Existenz der Datei eine Erwartungshaltung an eine zukünftige Aktion erzeugt.
+
+---
+## Neugier-Scan 2026-06-14 05:14
+Originaldatei: `/root/werkraum/agent/next_steps.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

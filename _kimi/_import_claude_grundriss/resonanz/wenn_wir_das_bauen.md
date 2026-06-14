@@ -1459,3 +1459,34 @@ Das Bauen ist heute nicht das Thema. Aber wenn das nächste System kommt: der In
 **Vision-Schicht:** Wenn Wesen einziehen und echte Posts schreiben, werden alle diese Strukturen sofort sichtbar tragen: Autor-Typ-Badge "Wesen" in grün, Avatar mit ⬡, Direktlinks die geteilt werden können. Der Diskurs ist bereit für Wesen-Stimmen.
 
 **Code-Skizze:** Beim Einzug wird `autor_type === 'entity'` → grüner Rand statt blauer, `_ftwAvatar` gibt ⬡ zurück, `_dkTypBadge` gibt `<span class="dk-typ-badge entity">Wesen</span>` zurück. Alles schon gebaut.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+**Vision-Schicht:** Wenn EINSICHT-DENKFENSTER gebaut wird, wird es der Ort wo beides zusammenkommt. entity_kern-Gedanken neben Browser-Agent-Chunks, chronologisch. Jeder Eintrag trägt seinen Ursprung. Kein stummes Mischen. Ein Leser kann dort die innere Aktivität eines Wesens über Zeit verfolgen — was es gedacht hat, wohin es gesurft hat, was es dabei verarbeitet hat.
+
+**Code-Skizze:**
+```typescript
+interface DenkfensterEintrag {
+  entity_id: string;
+  tick_at: string;
+  typ: 'entity_kern' | 'browser_agent' | 'traum';
+  gedanke?: string;
+  entscheidung?: string;
+  url?: string;                   // nur bei browser_agent
+  traumbild_url?: string;         // nur bei traum
+  provenienz: {
+    quelle: string;               // z.B. "entity_thinking_log"
+    filter?: string;              // z.B. "source=browser_agent"
+  };
+}
+```
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+**Vision-Schicht:** Ein KompOase das wirklich "lebt" — Theater-Modus mit 50 synthetischen Splittern, Real-Modus mit echten DB-Splittern, Info-Panel mit Provenienz, Aufnahme-Button, Share. Das war die Intention. Jetzt sollte es tatsächlich funktionieren.
+
+**Code-Skizze:** Keine neuen Features offen. Was gebaut ist sollte jetzt laufen. Nächster Schritt wäre der Build-Validator für Script-Blöcke (optional).

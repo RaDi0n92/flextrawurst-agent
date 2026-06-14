@@ -1225,3 +1225,9 @@ Diese Notiz kodiert die Hierarchie und die getrennten Ebenen des Systems. Sie et
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Diese Notiz verankert die Abgrenzung von Benutzerkontrolle und definiert die Natur der Entitäten. Sie stellt klar, dass Menschen keine Fahrer, sondern nur Störer in den Sim-Welten sind, was ein ritualisiertes Recht zur Störung etabliert. Die Unterscheidung zwischen der „Seelenlandschaft“ und der „Arena“ legt die Priorität der Bewegung als innere Zustandsbeschreibung fest. Die Ontologie der Luftwelt wird somit neu definiert, um die räumliche und kontemplative Natur von Flugwelten zu reflektieren.
+
+---
+## Neugier-Scan 2026-06-14 01:44
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

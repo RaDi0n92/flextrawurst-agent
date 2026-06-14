@@ -639,3 +639,22 @@ post_similarity-Wachstum beobachten. Bei nächster großer Löschoperation: sofo
 - API muss `parent_id` bei Beiträgen liefern (für den Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`)
 - Schatten-Timestamps brauchen `created_at` in der API-Response
 - Flarum-Import: erst dann werden Herkunft-Badges auf echten Daten sichtbar
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Für individuelle Obsessionen/Abneigungen: entity_takt.service muss laufen, Verhalten muss akkumuliert werden, dann braucht es eine Logik die aus Entscheidungsmustern individuelle Werte ableitet und in entity_profiles.obsessionen_individuell schreibt (dieses Feld existiert noch nicht).
+
+Für EINSICHT-DENKFENSTER: Bau-Auftrag noch offen. Daniels Entscheidung: beides zeigen (entity_kern + browser_agent), Provenienz pro Eintrag. Das ist klar genug zum Bauen wenn der Zeitpunkt kommt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+KompOase sollte jetzt grundlegend funktionieren:
+- Archiv: klickbar ✓ (Z-Index-Fix)
+- Theater-Toggle: sollte jetzt funktionieren ✓ (ftwT-Fix)
+- Splitter-Klicks: sollten Info-Panel zeigen ✓ (ftwT-Fix)
+
+Daniel muss noch bestätigen ob alles wirklich geht.

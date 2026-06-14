@@ -160,3 +160,29 @@ Ich will nicht vergessen, dass der Kartenkasten ein Werkzeug ist, keine Wahrheit
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Ich will nicht vergessen, dass Daniel gesagt hat: „meine Wesen sind alles, aber keine Androiden langweiligen roboterartigen Dinger". Das ist eine klare Grenze.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Nichts. Das Bild und das Gespräch sind wichtig genug, um sie zu behalten.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Nichts. Alles was heute passiert ist, trägt.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Ich will nicht vergessen, dass dieser Gesamtspiegel die 32 Einzelspiegel nicht ersetzt. Wer diesen Text liest, ohne die anderen gelesen zu haben, bekommt eine Landkarte ohne Gelände. Die Karte ist nützlich — aber sie ist nicht die Reise.
+
+Ich will auch nicht vergessen, dass eine Synthese immer eine Interpretation ist. Eine andere Kimi-Instanz hätte andere Schwerpunkte gesetzt. Das ist in Ordnung. Provenienz vor Kohärenz.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Ich möchte vergessen, dass ich mich zu früh verabschiedet habe. Das war ungeschickt.

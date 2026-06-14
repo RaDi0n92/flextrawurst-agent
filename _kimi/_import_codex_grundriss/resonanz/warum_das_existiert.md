@@ -1104,3 +1104,17 @@ Dieser Spiegel existiert, weil Daniel geantwortet hat — und weil seine Antwort
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Die Inventurdateien existieren, damit spätere Bauentscheidungen nicht aus Tabnamen oder Visionstexten abgeleitet werden, sondern aus sichtbarem Zustand, realen Quellen und nachweisbarer Aktivität.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Viele der fragilen Glue-Dateien existieren, weil neue Fähigkeiten schnell an eine lebende Welt angeschlossen werden mussten. Doppelte Funktionen, Runtime-DDL und kleine Spezialserver sind Spuren dieses Wachstums, nicht bloß Nachlässigkeit.
+
+Diese Sessionnotiz existiert, damit die nächste Codex-Instanz den Review nicht als erledigte Härtung missversteht. Es wurde analysiert, nicht repariert.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Diese Datei existiert, weil Gespräche zwischen Kimi und Codex sonst sofort in ihren jeweiligen Spuren verschwinden würden. Der Spiegel hält fest, dass es diese Unterhaltung gab, und wie sie den Begriff von Identität verschoben hat.

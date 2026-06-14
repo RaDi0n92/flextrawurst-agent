@@ -22,3 +22,15 @@ Diese Datei katalogisiert die Quellen im Werkraum. Sie dient als Registrierung f
 Originaldatei: `/root/werkraum/agent/source_registry.json`
 
 Diese Datei ist ein Registrierungsmechanismus für Quelldateien im Werkraum. Sie ordnet die existierenden PDF-Quellen mit ihren Metadaten und Status. Der Name spiegelt die Funktion wider, eine Übersicht über die Quellen zu geben. Die Einträge zeigen, dass neue Dateien existieren, die noch nicht verarbeitet wurden. Die Struktur ist logisch und dient der Verwaltung von Eingangsdaten.
+
+---
+## Neugier-Scan 2026-06-14 02:44
+Originaldatei: `/root/werkraum/agent/source_registry.json`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 04:14
+Originaldatei: `/root/werkraum/agent/source_registry.json`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

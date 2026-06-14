@@ -1206,3 +1206,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Diese Notiz kodifiziert die Notwendigkeit einer tiefen Metadatenstruktur für das entstehende System. Die Fokussierung auf Selbstgespräche, Zustände und Entitäten stellt sicher, dass der Code nicht nur Inhalte speichert, sondern auch die internen Prozesse und Übergänge abbildet. Die Betonung von Suche als inhärenten Bestandteil der Stabilität zwingt zur Implementierung von Provenienz- und Zustandslogiken. Dies lenkt die Entwicklung weg von rein autonomer Agentik hin zu kontrollierbaren, nachvollziehbaren Modulen.
+
+---
+## Neugier-Scan 2026-06-13 23:36
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz reflektiert die Priorisierung von Modellierungsebenen im Entstehungsprozess des Codewesens. Sie betont, dass flexible Modelle für Gruppen und spätere Erweiterungen für externe Entitäten und verzweigte Instanzen im Schema bereits im frühen Stadium berücksichtigt werden müssen. METAWAR und die Sprachebene deuten darauf hin, dass Ereignisse und Ursprünge als eigenständige, nachwirkende Objekte modelliert werden sollten, um spätere Komplexität zu vermeiden. Die Vision ist, das Grundgerüst so zu gestalten, dass es zukünftigen, komplexeren Realitäten genügend Raum bietet.

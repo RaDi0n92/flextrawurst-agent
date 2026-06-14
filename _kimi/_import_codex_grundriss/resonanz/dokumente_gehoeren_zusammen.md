@@ -1157,3 +1157,19 @@ Sie gehoert auch zu den Einzugsfragen der sechs Codewesen, weil die Screens klae
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 `/root/werkraum/inventur/inventur_index.md`, die 28 Tab-Dossiers und `/root/werkraum/inventur/screenshots/` sind ein gemeinsamer Belegkörper. Keines davon sollte allein als vollständige Inventur gelesen werden.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- `/root/flextrawurst_security_review_codex_20260614_011230/`
+- `/root/flextrawurst_full_server_review_codex_20260614_020148/`
+- `16_PRIORISIERTE_MASTER_FINDINGS_FUER_CLAUDE.md`
+- `17_CLAUDE_FIXVORBEREITUNG.md`
+- `18_REVIEW_DONE.md`
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Diese Datei gehört zu den Gesprächen mit Kimi, zu den Codex- und Kimi-Resonanzfeldern, zu den Reviewberichten vom 14. Juni und zu jeder späteren Frage, wie Provenienz im Werkraum sichtbar bleibt.

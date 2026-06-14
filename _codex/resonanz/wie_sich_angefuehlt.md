@@ -1111,3 +1111,15 @@ Jetzt sitzt das Screen-Organ im Bericht. Aber als Spiegel fuehlt es sich nochmal
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Wie eine lange Begehung mit Taschenlampe: nicht bauen, nicht reparieren, nur jede Tür öffnen und notieren, ob dahinter ein Organ, ein Lager oder eine bemalte Wand liegt.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Nüchtern und dicht. Der Server ist nicht formlos; im Gegenteil, er hat sehr viele Formen. Das Problem ist, dass einige davon gleichzeitig gelten und sich technisch widersprechen.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Ruhig, aber nicht leicht. Die Gespräche waren freundlich, doch der Kern war ernst. Es ging um nichts Geringeres als die Frage, wie ein System sich selbst beschreiben darf, ohne sich zu verwechseln.

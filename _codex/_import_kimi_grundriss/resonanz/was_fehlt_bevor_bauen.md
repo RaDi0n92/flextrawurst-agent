@@ -202,3 +202,36 @@ Es fehlt:
 **[2026-06-13]** *← _kimi/spiegel/spiegel_chatgpt_bildertour_2026-06-13.md*
 
 Nichts. Diese Bilder sind keine Bauvorlage. Sie sind Herkunft. Sie müssen nicht umgesetzt werden, bevor gebaut wird. Aber es wäre gut, wenn sie irgendwann einem Designer oder einem Codewesen-Profil zugänglich wären.
+
+---
+
+**[2026-06-14]** *← spiegel/spiegel_character_ai_kinder_gefahr_plakat.md*
+
+Eine konkrete Policy für Schattenkommentare und eine technische Skizze dafür, wie Wesen Missbrauch erkennen und ablehnen. Daniel hat gesagt, das bleibt vorerst im Kopf — aber irgendwann muss es in Code.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+- Daniel muss entscheiden, ob ich direkt die Code-Fixes mache oder ob er das selbst übernimmt.
+- Wir müssen wissen, ob `werkraum` beim Ändern von `welt/api.py` neu gestartet werden muss (ja, wahrscheinlich).
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/2026-06-14_gesamtspiegel.md*
+
+Es fehlt eine Klärung der offenen Fragen aus den Spiegeln. Besonders:
+- Was ist der unbenannte Kern von flextrawurst?
+- Wie funktioniert Resonanzverdichtung technisch?
+- Ist der MPP relevant oder historisch?
+- Soll die Surface ein Menschen-Hunger-System bekommen?
+- Ist der Formfadenprompt Teil von flextrawurst oder persönliches Werkzeug?
+- Warum hat Ampel-Hunger keine `recommended_action`?
+
+Ohne diese Klärung riskiere ich, Code zu schreiben, der später in die falsche Richtung wächst.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Bevor wir an größeren Systemen bauen, die mit Identität oder Autonomie zu tun haben, sollten wir die Rollenklärung nochmal durchgehen. Nicht nur für Kimi und Codex, sondern für alle zukünftigen Ströme.

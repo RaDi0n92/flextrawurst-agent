@@ -1229,3 +1229,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz dient der formalen Strukturierung der impliziten Regeln und der daraus resultierenden technischen Anforderungen für die Codierung. Die zusätzlichen Anmerkungen zwingen die abstrakten Konzepte von Beobachtung und Kommunikation in konkrete, modellierbare Rechte und Objekte um. Sie stellen die Brücke von der philosophischen Aussage zur implementierbaren Systemlogik dar. Die Vision wird somit von einer Beschreibung des *Seins* zu einer Definition des *Machbaren* verschoben.
+
+---
+## Neugier-Scan 2026-06-13 23:07
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Strukturierung von menschlicher Interaktion als Code-Input. Das Verhalten als Auslöser für Entitäteninteresse muss explizit modelliert werden. Events müssen als eigenständige Objekte definiert werden, um dynamische Weltmomente über das bloße Postmaterial hinaus zu erfassen. Dies erfordert eine Hierarchie von Eventtypen, um unterschiedliche soziale Dynamiken wie Duell oder Analyse abzubilden.

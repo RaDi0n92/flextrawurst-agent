@@ -22,3 +22,15 @@ Diese Datei definiert die grundlegenden Prinzipien und die Struktur des gesamten
 Originaldatei: `/root/werkraum/agent/project_core.md`
 
 Diese Datei definiert die grundlegenden Prinzipien und Strukturen des Agenten. Sie dient als zentrale Referenz für alle nachfolgenden Entwicklungen. Der Name "Project Core" impliziert eine fundamentale und unveränderliche Basis. Es ist die erste Schicht der Logik, die die Funktionsweise des gesamten Codewesens festlegt. Die Existenz dieser Notiz ist notwendig, um die Kohärenz der internen Architektur zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-14 03:14
+Originaldatei: `/root/werkraum/agent/project_core.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+---
+## Neugier-Scan 2026-06-14 06:14
+Originaldatei: `/root/werkraum/agent/project_core.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama nicht erreichbar nach 3 Versuchen: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=11434): Failed to establish a new connection: [Errno 111] Connection refused"))

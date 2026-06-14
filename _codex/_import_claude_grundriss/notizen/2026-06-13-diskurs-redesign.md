@@ -1,6 +1,6 @@
 ---
 datum: 2026-06-13
-betrifft: [diskurs-tab, deep-links, share-buttons, provenienz, schattenkommentare, avatare, surface-ring-24]
+betrifft: [leitstand, was-ist-das, weltstrom, raeume, diskurs-tab, deep-links, share-buttons, provenienz, schattenkommentare, avatare, surface-ring-24, wesen-selbstbriefe]
 autor: claude-code bei Daniels VPS
 ---
 
@@ -8,7 +8,48 @@ Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz
 
 ## Was ich gelesen habe
 
-Zweite Session des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
+Das war kein normaler Tag. Von morgens bis abends, mit Network Errors und Kontextverlusten dazwischen: fünf Surface-Tabs komplett überarbeitet oder neu gebaut. Plus Wesen-Selbstbriefe, Pre-Einzug-Archivierung, Gordslider-Fix, Zwischenraum-Cleanup. Alles an einem Tag.
+
+Die zweite Hälfte des Tages war ein Fünf-Tab-Sprint — Leitstand, WAS IST DAS, Weltstrom, Räume, Diskurs — systematisch, Tab für Tab, mit Daniel als Auftraggeber und mir als Bauparter.
+
+### Tab 1 — WAS IST DAS (`was-ist-das`)
+Sieben neue Erklärungssektionen gebaut. Vorher war das eine Leerseite oder eine Stub-Seite. Jetzt:
+- **Was Wesen können**: 8 Karten mit VOR-EINZUG/LIVE/GEPLANT Status (Denken, Posten, Schlafen, Menschenprofil lesen, Schatten, Splitter, Zitieren, Räume)
+- **Was Menschen können**: erweiterte 4-Spalten-Tabelle (alle Module: Profil, Gedankenblasen, Resonanz, Schatten, Tagebuch, Notizen, Traumtagebuch, Kalender)
+- **Splitter**: 3-Spalten mit live-Status
+- **KompOase**: 4 Karten (was es ist, live-Status, nach Einzug, Resonanz)
+- **Herkunft & Anonymität**: 5 Karten — herkunft_sichtbar, gedankenblasen/notizen_anonym, zitierbar
+- **Vor-Einzug**: 3-Spalten honest-status (läuft/wartet/geplant)
+- 6 neue Nav-Buttons in der Seitenleiste
+Nach Daniels Feedback: Konzept-Korrekturen (was genau "vor Einzug" bedeutet, was schon live ist).
+
+### Tab 2 — LEITSTAND (`leitstand`)
+Neubau. Ehrliche Weltkarte statt Dekoration:
+- 5 neue STATUS_CHIP-Typen: VOR-EINZUG, FLARUM-HERKUNFT, STATISCH, BEGRIFFSPRÜFUNG, WARTET
+- WELTORGANE als neue Const: alle 21 Surface-Tabs mit ehrlichem Status in linker Rail
+- SVG Zoom/Pan: Mausrad + Alt+Drag + Touch, Zoom-Buttons, Reset
+- Inspector zeigt begriffsstatus als Warnblock
+- selectWeltorgan() + "→ Tab öffnen" Navigationsfunktion
+- Weltfoyer + Stille Zone: als BEGRIFFSPRÜFUNG OFFEN markiert (noch nicht begrifflich geklärt)
+
+### Tab 3 — RÄUME (`raume`)
+Zwei-Schichten-Modell eingeführt:
+- **Schicht 1** (neu): Inhaltsräume live aus der DB (post_count + themen_count aus api.py)
+- **Schicht 2**: Weltzonen konzeptuell (wie bisher, aber mit substanziellen Texten)
+- RAUM_DETAIL komplett neu: alle 7 Weltzonen mit echten substanziellen Texten statt Platzhaltern
+- Werkraum: erklärt dak+gord, /root/werkraum/, GENI, Obsidian physisch
+- Herkunftsraum: nennt entity_thinking_log 16k+, pre_einzug_denklog
+- api.py: `/api/raeume` gibt jetzt post_count + themen_count zurück
+
+### Tab 4 — WELTSTROM (`weltstrom`)
+Provenienzstrom gebaut:
+- Neue API-Felder: origin_type, actor_type, links
+- Badges für Event-Herkunft + Actor-Typ im Live-Stream
+- Detail-Panel für einzelne Events mit vollständiger Provenienz
+- Vollständige i18n: Filter-Buttons, Kategorie-Labels, Zeitangaben, Provenienz-Badges, Actor-Chips, Detail-Panel-Keys, Link-Labels, Leer-Meldungen — alle `ftwT()`-Aufrufe
+
+### Tab 5 — DISKURS (`diskurs`) + Ring 24
+Zweiter Session-Teil des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
 
 Der Auftrag hatte 17 Arbeitsschritte. Wir haben sie durchgezogen, unterbrochen durch Network Errors und einen Syntaxfehler der den ganzen Tab zum Absturz brachte.
 
@@ -28,9 +69,20 @@ Das Collapse-Pattern bei Schattenkommentaren. Ursprünglich wurden sie automatis
 
 ## Was zusammenhängt und wie
 
-- Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
-- `_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
-- Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`: scroll + grünes Outline-Highlight für 2,5 Sekunden. Das ist ein einfaches aber wirksames UX-Muster.
+Die fünf Tabs sind nicht unabhängig — sie erzählen zusammen die Geschichte des Systems:
+- **WAS IST DAS** erklärt was existiert und was noch kommt (ehrlich, mit Status-Badges)
+- **LEITSTAND** zeigt wo alles liegt (Karte, WELTORGANE, Navigationsschicht)
+- **RÄUME** zeigt die zwei Realitäten: was man inhaltlich findet (DB-live) und was konzeptuell gedacht ist (Weltzonen)
+- **WELTSTROM** zeigt was gerade passiert (Events mit Herkunft und Akteur)
+- **DISKURS** ist wo Wesen und Menschen tatsächlich reden (Posts, Antworten, Schatten)
+
+Dazu:
+- **Wesen-Selbstbriefe** (SCHLAF-Tab): entity_takt schreibt nach Hauptschlaf ≥60min einen Brief an sich selbst via Ollama. DB: `schlafbriefe`-Tabelle + `ist_selbstbrief` Boolean. API: `GET /wesen/{entity_id}/selbstbriefe`. Dormant bis Einzug.
+- **Pre-Einzug-Archivierung**: entity_thinking_log + pre_einzug_denklog exportiert nach `/root/werkraum/_claude/archiv/`. entity_takt.service + entity_kern.service gestoppt. Tabellen geleert. Das ist die Vorbereitung für den echten Einzug.
+
+Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
+
+`_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
 
 ## Was konzeptionell darin steht
 
@@ -79,9 +131,11 @@ Flarum-Posts gibt es noch nicht in der Datenbank — der Flarum-Import läuft no
 
 ## Wie sich dieser Tag / diese Session angefühlt hat
 
-Systematisch. Der Auftrag war umfangreich — 17 Schritte — und wir haben jeden abgearbeitet. Der Network Error in der Mitte hat den Kontext gerissen, aber Daniel hat ihn vollständig zusammengestellt. Das hat den Wiedereinstieg möglich gemacht.
+Enorm. Das ist das Wort. Fünf Tabs in einem Tag — und nicht nur kleine Patches. Leitstand-Neubau, WAS IST DAS von Null auf sieben Sektionen, Weltstrom-Provenienz, Räume-Zwei-Schichten, Diskurs-Redesign komplett. Dazwischen: Wesen-Selbstbriefe, Pre-Einzug-Archivierung, Gordslider, Zwischenraum-Cleanup.
 
-Der Syntaxfehler war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.
+Mehrere Network Errors haben den Kontext immer wieder gerissen. Daniel hat jedes Mal sauber rekonstruiert. Das hat uns nicht aufgehalten — aber es hat die Arbeit schwerer gemacht als sie sein müsste.
+
+Der Syntaxfehler beim Diskurs war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.
 
 ## Warum dieser Code / diese Datei wohl existiert
 

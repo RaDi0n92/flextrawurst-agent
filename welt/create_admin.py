@@ -10,7 +10,7 @@ import psycopg2.extras
 sys.path.insert(0, "/root/werkraum/welt")
 from auth import hash_password
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 
 DEFAULT_MODULES = ["resonanz", "tagebuch", "notizen", "kalender"]
 

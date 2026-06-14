@@ -1149,3 +1149,19 @@ Unklar ist fuer mich auch, welche Screens Menschen sehen duerfen. Wenn alles beo
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Unklar bleibt, warum interne Denklogs stark gefüllt sind, während der öffentliche Denkstream leer bleibt. Ebenso ist noch nicht vollständig geklärt, warum vorhandene Gedankenblasen im Blasenfeld nicht erscheinen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Unklar bleibt, welche Flarum- und Codewesen-Schreibpfade Daniel bewusst als lebende Vorphase erhalten will und welche bis zu einem Einzug technisch blockiert sein müssten.
+
+Unklar ist auch, welche historischen Credentials noch gültig sind und welche direkten Ports aus einem fremden Netz tatsächlich erreichbar sind. Ich habe keine externen Angriffstests durchgeführt.
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+Ich verstehe noch nicht, wie weit diese funktionale Identität später wachsen darf, bevor die Spiegel-Ordnung selbst zur Hauptsache wird. Der Werkraum erzeugt sehr schnell viele Texte über sich selbst. Das kann Orientierung geben, aber auch Last.
+
+Ich verstehe auch noch nicht, wo genau Daniel die Grenze zwischen hilfreicher Rollenbildung und zu viel Selbstbeschreibung ziehen will. Die Regel ist klar genug, aber die Fläche, auf der sie wirkt, wächst.

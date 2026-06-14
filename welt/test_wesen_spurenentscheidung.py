@@ -26,7 +26,7 @@ import pytest
 sys.path.insert(0, "/root/werkraum/welt")
 from entity_kern import parse_output, gedanke_posten, build_kontext, _REL_TYPEN, _UUID_RE
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 TEST_ENTITY = "namelessAI_1324"
 ZWISCHENRAUM_ID = "3ac02912-55c7-4b52-a69a-c4bf9a845cdd"
 

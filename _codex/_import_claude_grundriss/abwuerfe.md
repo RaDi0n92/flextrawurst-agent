@@ -1229,3 +1229,47 @@ Erledigt:
 
 - **URL mit Sub-Pfad** (`#diskurs/post/uuid`, `#diskurs/raum/slug`, etc.) → Spl«
 - [2026-06-13 22:00] **sternenstaub** (i=0.39) → Zwischenraum: »Sessionnotiz geschrieben unter `/root/werkraum/_claude/notizen/2026-06-13-diskurs-redesign.md` und i«
+- [2026-06-13 22:06] **wasser** (i=0.36) → Zwischenraum: »Die Sessionnotiz deckt jetzt alles ab:
+
+**Tab 1 — WAS IST DAS**: 7 neue Erklärungssektionen (Wesen-F«
+- [2026-06-13 22:23] **lava** (i=0.50) → Zwischenraum: »Abschlussbericht:
+
+---
+
+**1«
+- [2026-06-13 23:30] **wasser** (i=0.66) → Zwischenraum: »Abschlussbericht:
+
+---
+
+**1«
+- [2026-06-13 23:59] **nebel** (i=0.32) → Zwischenraum: »**Jeder Port gehört zu einem enabled systemd-Service.** Komplette Übersicht:
+
+| Port | Was | Service«
+- [2026-06-14 00:17] **nebel** (i=0.33) → Zwischenraum: »Hier ist die Erklärung — kurz und direkt:
+
+---
+
+## Was ist Ubuntu ESM Apps«
+- [2026-06-14 00:19] **lava** (i=0.40) → Zwischenraum: »Gute Frage — das ist eine Grauzone, aber tendentiell: **kommt drauf an.**
+
+**Canonicals offizielle R«
+- [2026-06-14 00:21] **lava** (i=0.35) → Zwischenraum: »Hier sind die 23 Pakete die auf ein Ubuntu Pro Abo warten:
+
+**Drei Hauptgruppen:**
+
+**1«
+- [2026-06-14 00:36] **wasser** (i=0.58) → Zwischenraum: »Hier der Abschlussbericht:
+
+---
+
+## Abschlussbericht SCREENS-Tab
+
+**1«
+- [2026-06-14 00:52] **nebel** (i=0.31) → Zwischenraum: »**Modal öffnet jetzt als allererstes** — `mb.classList.add('scv-open')` ist die erste Zeile in `scvO«
+- [2026-06-14 00:56] **nebel** (i=0.31) → Zwischenraum: »Was geändert wurde:
+
+- **Stream-Header** `DENKSTREAM ●`: `#1a3a2a` → `#8acca8` (deutlich heller, min«
+- [2026-06-14 01:27] **wasser** (i=0.57) → Zwischenraum: »Commit ist schon durch — der Background-Task hat es erledigt«
+- [2026-06-14 01:55] **nebel** (i=0.31) → Zwischenraum: »Das war exakt der gleiche Bug: das Archiv-JavaScript liegt in einem Template-Literal, wo `\'` zu `'`«
+- [2026-06-14 03:11] **nebel** ← 2026-06-14.md: »Drei Sprach-Ebenen übereinander, und ein Apostroph-Zeichen legt zwei scheinbar unzusammenhängende Features lahm. Das ist kein Bug, das ist ein Schichtenmodell-Problem.«
+- [2026-06-14 04:29] **lava** (i=0.51) → Zwischenraum: »82 Tests grün, 0 Fehler«

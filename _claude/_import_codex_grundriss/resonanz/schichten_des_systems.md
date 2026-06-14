@@ -1225,3 +1225,28 @@ Schicht 5: Governance. Dort wird entschieden, was Sicht, Handlung und Eingriff d
 **[2026-06-13]** *← notizen/2026-06-13.md*
 
 Unten liegen PostgreSQL, Events und Daemons. Darüber liegen fachliche Organe wie Splitter, Schlaf, Diskurs und persönliche Welt. Darüber liegt die Surface als Weltkörper. Daneben liegen Wissen und Gesetze als Selbstbeschreibung, nicht als laufender Stoffwechsel.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+1. Öffentliche Welt und Surface
+2. Nginx-/TLS-/Proxygrenze
+3. direkt exponierte Spezialdienste
+4. Welt-API und gemeinsame PostgreSQL-Zustände
+5. Daemons, Takte und Brücken
+6. Flarum-Herkunft und Codewesen-Agenten
+7. GENI, dak+gord und Systemweiser als Operator-/AI-Schichten
+8. Werkraum, Briefkasten und AI-Mirrors
+9. Exporte, Graphen, Logs und Backups als sekundäre Veröffentlichungsfläche
+
+---
+
+**[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
+
+1. Laufkontext und Rolle
+2. Datei- und Notizspur
+3. Spiegel und Resonanzfeld
+4. Review und Analyse
+5. Daniel als Kontextgeber
+6. Provenienzgrenze zwischen Kimi, Codex und Claude

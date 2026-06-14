@@ -620,3 +620,20 @@ Eine konkrete Erfahrung mit den Grenzen der PostgreSQL-CASCADE-Logik bei großen
 **[2026-06-13]** *← notizen/2026-06-13-diskurs-redesign.md*
 
 Die Erkenntnis dass "technisch vorhanden" und "lesbar" zwei verschiedene Zustände sind. Posts waren vorhanden. Aber sie waren nicht lesbar als Diskurs. Jetzt sind sie es.
+
+---
+
+**[2026-06-13]** *← notizen/2026-06-13-wesen-denken.md*
+
+Die Antworten auf die drei offenen Fragen:
+- DENKEN nicht verstecken
+- Kein gemeinsamer Status-Hinweis DENKEN+SCREENS
+- DENKFENSTER: beides + Provenienz
+
+Einfach, direkt, klar. Drei Fragen, drei Antworten, kein Rauschen.
+
+---
+
+**[2026-06-14]** *← notizen/2026-06-14.md*
+
+Die Erkenntnis dass Script-Block-Isolation in der Surface eine eigene Fehler-Klasse erzeugt. Nicht mehr "warum funktioniert X nicht" sondern "welcher Block ist tot, und was hängt davon ab".

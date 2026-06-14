@@ -36,7 +36,7 @@ import psycopg2
 import psycopg2.extras
 from datetime import datetime, timezone
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
 MODEL  = "gemma4:e2b-it-q4_K_M"
 ENTITY_FILTER = "namelessAI_%"

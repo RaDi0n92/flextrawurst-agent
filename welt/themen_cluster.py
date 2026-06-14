@@ -15,7 +15,7 @@ from collections import Counter, defaultdict
 import psycopg2
 import psycopg2.extras
 
-DB_URI = "postgresql://dak:dakpass@localhost:5432/flextrawurst"
+import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 SIMILARITY_THRESHOLD = 0.12
 CLUSTER_THRESHOLD = 0.18
 MIN_CLUSTER_SIZE = 2
