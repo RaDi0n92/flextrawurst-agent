@@ -112,16 +112,44 @@ _LESEN_PAT    = re.compile(r'##LESEN:\s*(.+?)##')
 _SCHREIBEN_PAT = re.compile(r'##SCHREIBEN:\s*(.+?)##\n(.*?)##SCHREIBEN_ENDE##', re.DOTALL)
 
 
-def _datei_lesen(pfad: str) -> str:
+# C-005: Datei-Marker aus LLM-Output dürfen nur innerhalb des Werkraums wirken
+# und keine Secret-/Config-Dateien berühren. Verhindert, dass per Prompt-Injection
+# erzeugte ##LESEN##/##SCHREIBEN##-Marker beliebige Root-Dateien lesen/überschreiben.
+_MARKER_BASE = Path("/root/werkraum").resolve()
+_MARKER_DENY = (".agent", "/.git/", "/.ssh", ".env", ".jwt_secret",
+                "credential", "id_ed25519", "id_rsa", "_api_tokens")
+
+
+def _pfad_im_werkraum(pfad: str) -> Path | None:
+    """Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums
+    liegt und keine Secret-/Config-Datei ist — sonst None."""
     try:
-        return Path(pfad).read_text(encoding="utf-8")[:5000]
+        p = Path(pfad).resolve()
+    except Exception:
+        return None
+    if p != _MARKER_BASE and _MARKER_BASE not in p.parents:
+        return None
+    low = str(p).lower()
+    if any(tok in low for tok in _MARKER_DENY):
+        return None
+    return p
+
+
+def _datei_lesen(pfad: str) -> str:
+    p = _pfad_im_werkraum(pfad)
+    if p is None:
+        return "[Zugriff verweigert: Pfad außerhalb des Werkraums oder geschützt]"
+    try:
+        return p.read_text(encoding="utf-8")[:5000]
     except Exception as e:
         return f"[Fehler beim Lesen: {e}]"
 
 
 def _datei_schreiben(pfad: str, inhalt: str) -> str:
+    p = _pfad_im_werkraum(pfad)
+    if p is None:
+        return "[Zugriff verweigert: Pfad außerhalb des Werkraums oder geschützt]"
     try:
-        p = Path(pfad)
         p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(inhalt, encoding="utf-8")
         return f"[Geschrieben: {pfad}]"

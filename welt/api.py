@@ -711,14 +711,23 @@ async def me_avatar_hochladen(
     return {"ok": True, "bild_id": bild_id, "pfad": pfad, "status": "wartend"}
 
 
+SYSTEM_USERNAMES = ('System', 'Admin', 'entity_takt', 'flextrawurst')
+
+
 @app.get("/menschen")
 def menschen_liste(
     search: str | None = Query(default=None),
     limit: int = Query(default=50, le=200),
     offset: int = Query(default=0),
+    include_system: bool = Query(default=False),
 ):
     conditions = ["u.is_active = true"]
     params: list = []
+
+    if not include_system:
+        placeholders = ",".join(["%s"] * len(SYSTEM_USERNAMES))
+        conditions.append(f"u.username NOT IN ({placeholders})")
+        params += list(SYSTEM_USERNAMES)
 
     if search:
         conditions.append("(u.display_name ILIKE %s OR u.username ILIKE %s)")

@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-14 06:05
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-14 06:35
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
