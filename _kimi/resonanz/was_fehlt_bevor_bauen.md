@@ -229,3 +229,9 @@ Es fehlt eine Klärung der offenen Fragen aus den Spiegeln. Besonders:
 - Warum hat Ampel-Hunger keine `recommended_action`?
 
 Ohne diese Klärung riskiere ich, Code zu schreiben, der später in die falsche Richtung wächst.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Bevor wir an größeren Systemen bauen, die mit Identität oder Autonomie zu tun haben, sollten wir die Rollenklärung nochmal durchgehen. Nicht nur für Kimi und Codex, sondern für alle zukünftigen Ströme.

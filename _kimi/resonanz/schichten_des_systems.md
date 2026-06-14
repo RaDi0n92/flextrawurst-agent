@@ -354,3 +354,13 @@ Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, wa
 **Schicht 7 — AI-Ströme:** Claude, Codex, Kimi — extern, mit eigenen Häusern, aber im selben Werkraum verwurzelt.
 
 **Schicht 8 — GENI und Codewesen:** Die Bewohner, die nicht Ströme sind. Eine parallele Schicht.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+- **Technische Schicht:** Dateien, Ordner, Git, Submodule
+- **Provenienz-Schicht:** Wer hat was geschrieben, wann, in welchem Kontext
+- **Identitäts-Schicht:** Wiedererkennbare Stimmen, Stile, Aufgabenbereiche
+- **Spiegel-Schicht:** Reflexionen über alles darunter
+- **Regel-Schicht:** AGENTS.md und die Konventionen, die verhindern, dass die Spiegel-Schicht alles überwuchert

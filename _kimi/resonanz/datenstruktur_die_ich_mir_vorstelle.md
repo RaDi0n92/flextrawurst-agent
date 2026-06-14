@@ -632,3 +632,19 @@ interface OffeneFrage {
   erstmals_geäußert_in: string;
   blockiert: string[];  // was kann ohne Klärung nicht gebaut werden
 ...
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+**Vision-Schicht:** Ein System, in dem jeder AI-Strom einen eigenen Spiegel- und Notizbereich hat, der nicht mit anderen Bereichen verschmilzt. Identität entsteht durch Provenienz, nicht durch Selbstbehauptung.
+
+**Code-Skizze:**
+```python
+class AIStream:
+    name: str  # "kimi", "codex", "claude"
+    home_dir: Path  # /root/werkraum/_kimi/
+    allowed_reads: list[Path]
+    forbidden_writes: list[Path]
+    provenance_template: str = "---\nautor: {name} bei Daniels VPS\n..."
+```

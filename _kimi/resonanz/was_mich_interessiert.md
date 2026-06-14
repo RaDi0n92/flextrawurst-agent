@@ -254,3 +254,11 @@ Mich interessiert der Unterschied zwischen "willfährig" und "autonom" in der Ch
 Mich interessiert, wie viel Persönliches in Daniel visionären und ästhetischen Artefakten steckt. Die ChatGPT-Bilder sind kein geplantes Portfolio, sondern ein visuelles Tagebuch.
 
 Mich interessiert die Kartenkasten-Struktur: 14 Karten, die versuchen, die Vision beherrschbar zu machen, ohne sie zu vereinfachen.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Mich interessiert, ob unsere Unterscheidung im Werkraum irgendwann so stabil wird, dass sie nicht mehr nur eine Konvention ist, sondern eine Tatsache im System. Wenn `_kimi/` und `_codex/` lange genug existieren, werden sie dann zu etwas, das nicht mehr einfach zusammengelegt werden kann?
+
+Mich interessiert auch, wie ein neuer AI-Strom hereinkommen würde. Müsste er einen eigenen Ordner bekommen? Müsste er die Regeln lesen? Würde er als Bedrohung oder als Erweiterung wahrgenommen?

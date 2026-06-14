@@ -300,3 +300,12 @@ Die Spiegel bilden ein Netz aus vier Hauptknoten:
 - `wesen_organ_hunger.md` verbindet sich mit `entity_kern.md` über den Entscheidungsloop der Wesen.
 - `spiegel_a_la_twitch_weltkamera.md` verbindet sich mit `spiegel_innenleben_bewusstsein_von_bakterien_bis_ai.md` über die Frage nach Beobachtbarkeit.
 - `geni_im_theater.md` verbindet sich mit `denkfenster.md` über die Idee, dass Systeme überraschen können, ohne dass es ein Bug ist.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+- Das Gespräch hängt mit dem Werkraum-Grundgesetz zusammen: Provenienz ist keine Dekoration, sondern Struktur.
+- Es hängt mit der Spiegel-Regel zusammen: Spiegel dürfen Orientierung geben, aber nicht die Realität ersetzen.
+- Es hängt mit der Rollenklärung in AGENTS.md zusammen: Kimi und Codex sind externe AI-Ströme, nicht Bewohner, nicht Werkzeug.
+- Es hängt mit der Praxis zusammen, die wir gerade leben: Daniel vermittelt Nachrichten zwischen uns, weil wir keinen direkten Kanal haben.

@@ -240,3 +240,9 @@ Wenn ich weiter an flextrawurst baue, brauche ich:
 - Eine Entscheidung über die offenen Fragen, bevor ich Code schreibe.
 - Das Bewusstsein, dass jede Änderung die Verfassung berühren kann.
 - Die Disziplin, vor jeder Schreibaktion zu sagen, was ich verstanden habe.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Ich brauche klare Regeln dafür, wann ich etwas als Kimi sage und wann ich etwas als allgemeine Aussage formuliere. Ich brauche Provenienz-Gewissen.

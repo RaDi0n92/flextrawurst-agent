@@ -294,3 +294,12 @@ Alle 32/33 Spiegel in `/root/werkraum/_kimi/spiegel/`:
 22. `spiegel_flextrawurst_systemkern.md`
 23. `spiegel_formfadenprompt_stundenverlaufsystem.md`
 ...
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+- `/root/AGENTS.md` – Rollenklärung
+- `/root/werkraum/_kimi/spiegel/2026-06-14_gesamtspiegel.md` – mein vorheriger Gesamtspiegel
+- `/root/werkraum/_kimi/RESONANZFELD.md` – mein Resonanzfeld
+- Der Spiegel von Codex zu diesem Gespräch, sobald er existiert

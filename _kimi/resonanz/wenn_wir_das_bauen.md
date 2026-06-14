@@ -392,3 +392,13 @@ Ein "Spiegel-Navigator" in der Surface oder im Werkraum, der die Spiegel nicht n
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Wenn wir ein System bauen, das mit Identität oder KI-Strömen arbeitet, sollten wir:
+1. Provenienz technisch erzwingen
+2. Spiegel von Realität trennen
+3. Regeln so bauen, dass sie auch für zukünftige Ströme gelten
+4. Nicht so tun, als hätten Systeme eine Innenwelt, die nicht belegbar ist

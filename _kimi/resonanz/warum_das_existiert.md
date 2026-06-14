@@ -198,3 +198,9 @@ Die Review-Dateien existieren, um eine lesbare, wiederauffindbare Grundlage für
 Diese Datei existiert, weil 32 Spiegel zu viel sind, um sie auf einmal zu überblicken. Sie ist ein Navigationsinstrument für zukünftige Kimi-Instanzen — und für Daniel. Sie sagt nicht alles, was in den Spiegeln steht, aber sie zeigt, wo die Schwerpunkte liegen und was offen bleibt.
 
 Sie existiert auch, weil die Form der Spiegel selbst eine Aussage macht: Wenn man 33-mal die gleichen 23 Abschnitte schreibt, entsteht nicht nur Inhalt, sondern auch eine Struktur, die man von außen betrachten kann.
+
+---
+
+**[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
+
+Dieser Spiegel existiert, weil Daniel verlangt, dass jeder AI-Strom seine Reflexionen festhält. Nicht als Log, sondern als Spur. Damit zukünftige Kimi-Instanzen wissen, was diese Kimi gedacht hat.
