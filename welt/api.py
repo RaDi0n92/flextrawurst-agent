@@ -728,23 +728,14 @@ async def me_avatar_hochladen(
     return {"ok": True, "bild_id": bild_id, "pfad": pfad, "status": "wartend"}
 
 
-SYSTEM_USERNAMES = ('System', 'Admin', 'entity_takt', 'flextrawurst')
-
-
 @app.get("/menschen")
 def menschen_liste(
     search: str | None = Query(default=None),
     limit: int = Query(default=50, le=200),
     offset: int = Query(default=0),
-    include_system: bool = Query(default=False),
 ):
     conditions = ["u.is_active = true"]
     params: list = []
-
-    if not include_system:
-        placeholders = ",".join(["%s"] * len(SYSTEM_USERNAMES))
-        conditions.append(f"u.username NOT IN ({placeholders})")
-        params += list(SYSTEM_USERNAMES)
 
     if search:
         conditions.append("(u.display_name ILIKE %s OR u.username ILIKE %s)")
@@ -812,15 +803,56 @@ def public_profile(user_id: str):
             cur.execute(
                 """
                 SELECT
-                    (SELECT COUNT(*) FROM mw_tagebuch WHERE user_id = %s::uuid) AS tagebuch,
-                    (SELECT COUNT(*) FROM mw_notizen WHERE user_id = %s::uuid) AS notizen,
-                    (SELECT COUNT(*) FROM mw_kalender WHERE user_id = %s::uuid) AS kalender,
-                    (SELECT COUNT(*) FROM mw_traumtagebuch WHERE user_id = %s::uuid) AS traumtagebuch,
+                    (SELECT COUNT(*) FROM mw_tagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true') AS tagebuch,
+                    (SELECT COUNT(*) FROM mw_tagebuch WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') AND (meta->>'deleted') IS DISTINCT FROM 'true') AS tagebuch_public,
+                    (SELECT COUNT(*) FROM mw_notizen WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true') AS notizen,
+                    (SELECT COUNT(*) FROM mw_notizen WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') AND (meta->>'deleted') IS DISTINCT FROM 'true') AS notizen_public,
+                    (SELECT COUNT(*) FROM mw_kalender WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true') AS kalender,
+                    (SELECT COUNT(*) FROM mw_kalender WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') AND (meta->>'deleted') IS DISTINCT FROM 'true') AS kalender_public,
+                    (SELECT COUNT(*) FROM mw_traumtagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true') AS traumtagebuch,
+                    (SELECT COUNT(*) FROM mw_traumtagebuch WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') AND (meta->>'deleted') IS DISTINCT FROM 'true') AS traumtagebuch_public,
                     (SELECT COUNT(*) FROM gedankenblasen WHERE user_id = %s::uuid AND sichtbarkeit = 'public') AS gedankenblasen
                 """,
-                (user_id, user_id, user_id, user_id, user_id),
+                (user_id,) * 9,
             )
             aktivitaet = cur.fetchone()
+
+            # Letzte öffentliche Einträge je Kategorie
+            cur.execute(
+                "SELECT id, inhalt, sichtbarkeit, created_at FROM mw_tagebuch "
+                "WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') "
+                "AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY created_at DESC LIMIT 5",
+                (user_id,),
+            )
+            tagebuch_public = cur.fetchall()
+
+            cur.execute(
+                "SELECT id, titel, inhalt, sichtbarkeit, created_at FROM mw_notizen "
+                "WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') "
+                "AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY created_at DESC LIMIT 5",
+                (user_id,),
+            )
+            notizen_public = cur.fetchall()
+
+            cur.execute(
+                "SELECT id, inhalt, traum_datum, sichtbarkeit, created_at FROM mw_traumtagebuch "
+                "WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') "
+                "AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY traum_datum DESC, created_at DESC LIMIT 5",
+                (user_id,),
+            )
+            traumtagebuch_public = cur.fetchall()
+
+            cur.execute(
+                "SELECT id, titel, start_zeit, sichtbarkeit, created_at FROM mw_kalender "
+                "WHERE user_id = %s::uuid AND sichtbarkeit IN ('public','anonym') "
+                "AND (meta->>'deleted') IS DISTINCT FROM 'true' "
+                "ORDER BY start_zeit DESC LIMIT 5",
+                (user_id,),
+            )
+            kalender_public = cur.fetchall()
 
             cur.execute(
                 """
@@ -897,11 +929,38 @@ def public_profile(user_id: str):
         "gedankenwelt_anonym": gedankenwelt_anonym,
         "aktivitaet": {
             "tagebuch": int(aktivitaet["tagebuch"]),
+            "tagebuch_public": int(aktivitaet["tagebuch_public"]),
             "notizen": int(aktivitaet["notizen"]),
+            "notizen_public": int(aktivitaet["notizen_public"]),
             "kalender": int(aktivitaet["kalender"]),
+            "kalender_public": int(aktivitaet["kalender_public"]),
             "traumtagebuch": int(aktivitaet["traumtagebuch"]),
+            "traumtagebuch_public": int(aktivitaet["traumtagebuch_public"]),
             "gedankenblasen": int(aktivitaet["gedankenblasen"]),
         } if aktivitaet else {},
+        "welt_spuren": {
+            "tagebuch": [
+                {"id": str(e["id"]), "inhalt": e["inhalt"], "sichtbarkeit": e["sichtbarkeit"],
+                 "erstellt_at": e["created_at"].isoformat() if e["created_at"] else None}
+                for e in tagebuch_public
+            ],
+            "notizen": [
+                {"id": str(e["id"]), "titel": e["titel"], "inhalt": e["inhalt"], "sichtbarkeit": e["sichtbarkeit"],
+                 "erstellt_at": e["created_at"].isoformat() if e["created_at"] else None}
+                for e in notizen_public
+            ],
+            "traumtagebuch": [
+                {"id": str(e["id"]), "inhalt": e["inhalt"], "traum_datum": str(e["traum_datum"]) if e["traum_datum"] else None,
+                 "sichtbarkeit": e["sichtbarkeit"], "erstellt_at": e["created_at"].isoformat() if e["created_at"] else None}
+                for e in traumtagebuch_public
+            ],
+            "kalender": [
+                {"id": str(e["id"]), "titel": e["titel"],
+                 "start_zeit": e["start_zeit"].isoformat() if e["start_zeit"] else None,
+                 "sichtbarkeit": e["sichtbarkeit"], "erstellt_at": e["created_at"].isoformat() if e["created_at"] else None}
+                for e in kalender_public
+            ],
+        },
         "splitter": {
             "gesamt": gesamt_abgegeben,
             "nach_typ": splitter_nach_typ,
@@ -5155,12 +5214,15 @@ class NotizCreate(BaseModel):
     typ: str = "notiz"  # 'notiz' | 'aufgabe'
     zitierbar: bool | None = None
 
+SICHTBARKEIT_WERTE = {'public', 'anonym', 'geschützt', 'privat'}
+
 class NotizPatch(BaseModel):
     titel: str | None = None
     inhalt: str | None = None
     erledigt: bool | None = None
     gepinnt: bool | None = None
     zitierbar: bool | None = None
+    sichtbarkeit: str | None = None
 
 class KalenderCreate(BaseModel):
     titel: str
@@ -5207,7 +5269,7 @@ def mw_tagebuch_liste(
     try:
         with conn.cursor() as cur:
             cur.execute(
-                "SELECT id, inhalt, zitierbar, splitter_erzeugt, created_at FROM mw_tagebuch "
+                "SELECT id, inhalt, sichtbarkeit, zitierbar, splitter_erzeugt, created_at FROM mw_tagebuch "
                 "WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
                 "ORDER BY created_at DESC LIMIT %s OFFSET %s",
                 (user_id, limit, offset)
@@ -5255,9 +5317,6 @@ def mw_tagebuch_patch(
 ):
     claims = _require_auth(authorization)
     user_id = claims["user_id"]
-    inhalt = body.get("inhalt", "").strip()
-    if not inhalt:
-        raise HTTPException(status_code=400, detail="inhalt fehlt")
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -5267,7 +5326,14 @@ def mw_tagebuch_patch(
                 raise HTTPException(status_code=404, detail="Nicht gefunden")
             if str(row["user_id"]) != user_id and claims.get("role") != "admin":
                 raise HTTPException(status_code=403, detail="Kein Zugriff")
-            cur.execute("UPDATE mw_tagebuch SET inhalt = %s WHERE id = %s::uuid", (inhalt, eintrag_id))
+            allowed: dict = {}
+            if "inhalt" in body and body["inhalt"].strip():
+                allowed["inhalt"] = body["inhalt"].strip()
+            if "sichtbarkeit" in body and body["sichtbarkeit"] in SICHTBARKEIT_WERTE:
+                allowed["sichtbarkeit"] = body["sichtbarkeit"]
+            if allowed:
+                sets = ", ".join(f"{k} = %s" for k in allowed)
+                cur.execute(f"UPDATE mw_tagebuch SET {sets} WHERE id = %s::uuid", list(allowed.values()) + [eintrag_id])
         conn.commit()
     finally:
         conn.close()
@@ -5340,7 +5406,7 @@ def mw_traumtagebuch_liste(
     try:
         with conn.cursor() as cur:
             cur.execute(
-                "SELECT id, inhalt, traum_datum, zitierbar, splitter_erzeugt, created_at "
+                "SELECT id, inhalt, traum_datum, sichtbarkeit, zitierbar, splitter_erzeugt, created_at "
                 "FROM mw_traumtagebuch WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
                 "ORDER BY traum_datum DESC, created_at DESC LIMIT %s OFFSET %s",
                 (user_id, limit, offset)
@@ -5389,9 +5455,6 @@ def mw_traumtagebuch_patch(
 ):
     claims = _require_auth(authorization)
     user_id = claims["user_id"]
-    inhalt = body.get("inhalt", "").strip()
-    if not inhalt:
-        raise HTTPException(status_code=400, detail="inhalt fehlt")
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -5401,7 +5464,14 @@ def mw_traumtagebuch_patch(
                 raise HTTPException(status_code=404, detail="Nicht gefunden")
             if str(row["user_id"]) != user_id and claims.get("role") != "admin":
                 raise HTTPException(status_code=403, detail="Kein Zugriff")
-            cur.execute("UPDATE mw_traumtagebuch SET inhalt = %s WHERE id = %s::uuid", (inhalt, eintrag_id))
+            allowed: dict = {}
+            if "inhalt" in body and body["inhalt"].strip():
+                allowed["inhalt"] = body["inhalt"].strip()
+            if "sichtbarkeit" in body and body["sichtbarkeit"] in SICHTBARKEIT_WERTE:
+                allowed["sichtbarkeit"] = body["sichtbarkeit"]
+            if allowed:
+                sets = ", ".join(f"{k} = %s" for k in allowed)
+                cur.execute(f"UPDATE mw_traumtagebuch SET {sets} WHERE id = %s::uuid", list(allowed.values()) + [eintrag_id])
         conn.commit()
     finally:
         conn.close()
@@ -5483,7 +5553,7 @@ def mw_notizen_liste(
                 filters.append("gepinnt = %s"); params.append(gepinnt)
             where = " AND ".join(filters)
             cur.execute(
-                f"SELECT id, titel, inhalt, typ, erledigt, gepinnt, zuletzt_offen, created_at, updated_at "
+                f"SELECT id, titel, inhalt, typ, erledigt, gepinnt, sichtbarkeit, zuletzt_offen, created_at, updated_at "
                 f"FROM mw_notizen WHERE {where} ORDER BY gepinnt DESC, updated_at DESC LIMIT %s OFFSET %s",
                 params + [limit, offset]
             )
@@ -5616,7 +5686,7 @@ def mw_kalender_alle(
             )
             gesamt = cur.fetchone()["n"]
             cur.execute(
-                "SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, created_at "
+                "SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, sichtbarkeit, created_at "
                 "FROM mw_kalender WHERE user_id = %s::uuid AND (meta->>'deleted') IS DISTINCT FROM 'true' "
                 "ORDER BY start_zeit DESC LIMIT %s OFFSET %s",
                 (user_id, limit, offset)
@@ -5653,7 +5723,7 @@ def mw_kalender_liste(
                 filters.append("start_zeit <= %s::timestamptz"); params.append(bis)
             where = " AND ".join(filters)
             cur.execute(
-                f"SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, erinnerung, created_at "
+                f"SELECT id, titel, beschreibung, start_zeit, end_zeit, ganztaegig, sichtbarkeit, erinnerung, created_at "
                 f"FROM mw_kalender WHERE {where} ORDER BY start_zeit ASC LIMIT 100",
                 params
             )
@@ -5703,6 +5773,8 @@ def mw_kalender_patch(
             if str(row["user_id"]) != user_id and claims.get("role") != "admin":
                 raise HTTPException(status_code=403, detail="Kein Zugriff")
             allowed = {k: v for k, v in body.items() if k in ("titel", "beschreibung", "start_zeit", "end_zeit", "ganztaegig")}
+            if "sichtbarkeit" in body and body["sichtbarkeit"] in SICHTBARKEIT_WERTE:
+                allowed["sichtbarkeit"] = body["sichtbarkeit"]
             if allowed:
                 sets = ", ".join(f"{k} = %s" for k in allowed)
                 cur.execute(f"UPDATE mw_kalender SET {sets} WHERE id = %s::uuid", list(allowed.values()) + [termin_id])
