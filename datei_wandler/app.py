@@ -189,10 +189,9 @@ def export_label(file: SourceFile) -> str:
     return display_path(file)
 
 
-def read_path(path_text: str) -> SourceFile:
-    path = Path(path_text).expanduser().resolve()
+def read_file_path(path: Path) -> SourceFile:
     if not path.exists() or not path.is_file():
-        raise HTTPException(status_code=400, detail=f"Nicht gefunden oder keine Datei: {path_text}")
+        raise HTTPException(status_code=400, detail=f"Nicht gefunden oder keine Datei: {path}")
     if not is_under_allowed_root(path):
         raise HTTPException(status_code=400, detail=f"Pfad ausserhalb erlaubter Wurzeln: {path}")
     if is_blocked(path):
@@ -202,6 +201,16 @@ def read_path(path_text: str) -> SourceFile:
         raise HTTPException(status_code=400, detail=f"Datei zu gross ({size} Bytes): {path}")
     content, warning = decode_text(path.read_bytes())
     return SourceFile(str(path), "path", path.suffix.lower(), content, size, warning, str(path))
+
+
+def resolve_sources(path_text: str) -> list[SourceFile]:
+    path = Path(path_text).expanduser().resolve()
+    if path.is_dir():
+        files: list[SourceFile] = []
+        for candidate in sorted((p for p in path.rglob("*") if p.is_file()), key=lambda p: p.as_posix()):
+            files.append(read_file_path(candidate))
+        return files
+    return [read_file_path(path)]
 
 
 async def read_upload(upload: UploadFile) -> SourceFile:
@@ -792,7 +801,7 @@ async def convert(
     for line in paths.splitlines():
         path_text = line.strip()
         if path_text:
-            files.append(read_path(path_text))
+            files.extend(resolve_sources(path_text))
     for upload in uploads:
         if upload.filename:
             files.append(await read_upload(upload))
