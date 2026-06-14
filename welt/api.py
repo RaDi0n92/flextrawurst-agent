@@ -15,7 +15,7 @@ from fastapi import Body, FastAPI, File, Header, HTTPException, Query, UploadFil
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from auth import create_token, hash_password, verify_password, verify_token
 
@@ -41,6 +41,23 @@ app.add_middleware(
     allow_headers=["Authorization", "Content-Type"],
 )
 app.mount("/uploads", StaticFiles(directory="/root/werkraum/uploads"), name="uploads")
+
+# C-019: Body-Größe global begrenzen. Der Direktport 8030 umgeht nginx'
+# client_max_body_size — diese App-Schicht greift auch dort. 6 MB deckt den
+# Avatar-Upload (max 5 MB) ab und kappt absurde Payloads (Speicher-DoS).
+_MAX_BODY_BYTES = 6 * 1024 * 1024
+
+
+@app.middleware("http")
+async def _limit_body_size(request, call_next):
+    cl = request.headers.get("content-length")
+    if cl is not None:
+        try:
+            if int(cl) > _MAX_BODY_BYTES:
+                return JSONResponse(status_code=413, content={"detail": "Request-Body zu groß"})
+        except ValueError:
+            return JSONResponse(status_code=400, content={"detail": "Ungültige Content-Length"})
+    return await call_next(request)
 
 
 def get_conn():
@@ -1076,9 +1093,9 @@ class ResonanzBody(BaseModel):
 
 
 class SchattenkommentarBody(BaseModel):
-    post_ref: str
-    post_source: str = "flarum"
-    content: str
+    post_ref: str = Field(max_length=256)
+    post_source: str = Field(default="flarum", max_length=64)
+    content: str = Field(max_length=20000)  # C-019: Längenlimit gegen DB-Bloat/DoS
 
 
 class VerweilenStartBody(BaseModel):
@@ -7021,10 +7038,10 @@ def ungelesen_zaehler(authorization: str | None = Header(default=None)):
 # ===========================================================================
 
 class SchattenBody(BaseModel):
-    content: str
+    content: str = Field(max_length=20000)  # C-019
 
 class SchattenAntwortBody(BaseModel):
-    content: str
+    content: str = Field(max_length=20000)  # C-019
     parent_id: str | None = None
 
 
@@ -10521,7 +10538,7 @@ def search_archaeology(
 # ── AF9: Schatten-Dialog als private Resonanzkammer ──────────────────────────
 
 class SchattenAntwortBody2(BaseModel):
-    content: str
+    content: str = Field(max_length=20000)  # C-019
     autor_type: str = "entity"
     autor_id: str
     parent_id: str | None = None
