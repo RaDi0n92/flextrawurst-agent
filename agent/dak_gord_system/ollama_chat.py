@@ -237,7 +237,7 @@ def ollama_chat(
         "keep_alive": -1,
         "think": False,
         "options": {
-            "num_ctx": 8192,
+            "num_ctx": 4096,
             "num_predict": num_predict,
             "temperature": temperature,
             "top_k": 64,

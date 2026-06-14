@@ -28,9 +28,10 @@ WESEN = [
     "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
 ]
 
+import os as _os
 DB = {
     "host": "localhost", "port": 3306, "db": "flarum",
-    "user": "flarum", "password": "Flarum2024!Secure",
+    "user": "flarum", "password": _os.environ.get("FLARUM_DB_PASSWORD", "!Windowsxp9645"),
     "charset": "utf8mb4", "autocommit": True,
     "cursorclass": pymysql.cursors.DictCursor,
 }
