@@ -18,15 +18,32 @@ import select as sel
 import threading
 from typing import AsyncGenerator
 
+import hmac
+
 import psycopg2
 import psycopg2.extras
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Header
 from fastapi.responses import StreamingResponse, Response
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 log = logging.getLogger("denkstream")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
+
+# Interner Producer-Token (C-011): nur authentisierte Browser-Agent-Daemons dürfen
+# Chunks schreiben. Ohne gesetzten Token ist der Schreib-Endpunkt fail-closed gesperrt.
+_INTERNAL_TOKEN = _os.environ.get("DENKSTREAM_INTERNAL_TOKEN", "")
+
+
+def _require_internal(authorization: str | None) -> None:
+    if not _INTERNAL_TOKEN:
+        raise HTTPException(status_code=503, detail="Denkstream-Schreibzugriff gesperrt: kein Token konfiguriert")
+    if not authorization or not authorization.startswith("Bearer "):
+        raise HTTPException(status_code=401, detail="Token fehlt")
+    if not hmac.compare_digest(authorization.removeprefix("Bearer ").strip(), _INTERNAL_TOKEN):
+        raise HTTPException(status_code=401, detail="Ungültiges Token")
+
+
 denkstream_router = APIRouter(prefix="/denkstream", tags=["denkstream"])
 
 
@@ -35,17 +52,18 @@ def get_conn():
 
 
 class ChunkBody(BaseModel):
-    entity_id: str
-    stream_id: str
-    chunk: str
+    entity_id: str = Field(max_length=128)
+    stream_id: str = Field(max_length=128)
+    chunk: str = Field(max_length=20000)
     seq: int = 0
     done: bool = False
-    url: str = ""
+    url: str = Field(default="", max_length=2048)
 
 
 @denkstream_router.post("/chunk", status_code=201)
-def denkstream_chunk(body: ChunkBody):
-    """Browser-Agent schreibt einen Chunk — intern."""
+def denkstream_chunk(body: ChunkBody, authorization: str | None = Header(default=None)):
+    """Browser-Agent schreibt einen Chunk — nur intern authentisiert (C-011)."""
+    _require_internal(authorization)
     conn = get_conn()
     try:
         with conn.cursor() as cur:

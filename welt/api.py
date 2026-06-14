@@ -26,7 +26,20 @@ UPLOADS_DIR = Path("/root/werkraum/uploads/avatars")
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="Welt-API", version="0.1.0")
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+# CORS auf bekannte Origins beschränkt (C-007/Kimi-04). Die Surface läuft same-origin
+# über nginx; zusätzliche Origins via FLEXTRAWURST_CORS_ORIGINS (kommagetrennt) überschreibbar.
+_default_origins = [
+    "https://flextrawurst.de", "https://www.flextrawurst.de",
+    "http://localhost:8787", "http://127.0.0.1:8787",
+]
+_cors_env = _os.environ.get("FLEXTRAWURST_CORS_ORIGINS", "")
+ALLOWED_ORIGINS = [o.strip() for o in _cors_env.split(",") if o.strip()] or _default_origins
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=ALLOWED_ORIGINS,
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
+)
 app.mount("/uploads", StaticFiles(directory="/root/werkraum/uploads"), name="uploads")
 
 
@@ -64,8 +77,9 @@ def metrics():
 
 
 @app.get("/wesen")
-def alle_wesen(admin: str | None = Query(default=None)):
-    is_admin = admin == "true"
+def alle_wesen(admin: str | None = Query(default=None),
+              authorization: str | None = Header(default=None)):
+    is_admin = _is_admin(authorization)  # C-007: nur echtes Admin-JWT, nicht ?admin=true
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -99,8 +113,9 @@ def alle_wesen(admin: str | None = Query(default=None)):
 
 
 @app.get("/wesen/{entity_id}")
-def ein_wesen(entity_id: str, admin: str | None = Query(default=None)):
-    is_admin = admin == "true"
+def ein_wesen(entity_id: str, admin: str | None = Query(default=None),
+              authorization: str | None = Header(default=None)):
+    is_admin = _is_admin(authorization)  # C-007
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -136,8 +151,9 @@ def events(
     actor_id: str | None = Query(default=None),
     event_type: str | None = Query(default=None),
     admin: str | None = Query(default=None),
+    authorization: str | None = Header(default=None),
 ):
-    is_admin = admin == "true"
+    is_admin = _is_admin(authorization)  # C-007
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -340,6 +356,18 @@ def _require_admin_or_entity(authorization: str | None) -> dict:
     if claims.get("role") not in ("admin", "entity"):
         raise HTTPException(status_code=403, detail="nur für Admins oder Codewesen")
     return claims
+
+
+def _is_admin(authorization: str | None) -> bool:
+    """Weiche Admin-Prüfung: True nur bei gültigem JWT mit role=admin.
+    Ersetzt den unsicheren ?admin=true-Query-Parameter (C-007). Wirft nie —
+    öffentliche Sicht bleibt für Nicht-Admins erhalten."""
+    if not authorization or not authorization.startswith("Bearer "):
+        return False
+    try:
+        return verify_token(authorization.removeprefix("Bearer ")).get("role") == "admin"
+    except Exception:
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -10516,7 +10544,9 @@ def shadow_dialogs_liste(
     offset: int = Query(default=0),
     authorization: str | None = Header(default=None),
 ):
-    """Shadow-Dialoge — Resonanzkammern der Wesen. Öffentlich lesbar."""
+    """Shadow-Dialoge — öffentliche Übersicht (ohne private Identität/Inhalt).
+    Voller Inhalt nur über die teilnehmer-/admin-geschützte Detail-Route (C-008)."""
+    is_admin = _is_admin(authorization)
 
     where = ["1=1"]
     params: list[Any] = []
@@ -10552,6 +10582,11 @@ def shadow_dialogs_liste(
                 d["created_at"] = d["created_at"].isoformat() if d["created_at"] else None
                 d["updated_at"] = d["updated_at"].isoformat() if d["updated_at"] else None
                 d["post_kurz"] = (d["post_kurz"] or "")[:120]
+                if not is_admin:
+                    # C-008: private Mensch-Identität und Schatten-Inhalt nicht öffentlich
+                    d["human_id"] = None
+                    d["human_name"] = None
+                    d["content"] = None
                 items.append(d)
     finally:
         conn.close()
@@ -10565,8 +10600,10 @@ def entity_shadow_dialogs(
     antwortstatus: str | None = Query(default=None),
     limit: int = Query(default=40, le=200),
     offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
 ):
-    """Shadow-Dialoge eines Wesens — öffentlich lesbar."""
+    """Shadow-Dialoge eines Wesens — öffentliche Übersicht ohne privaten Inhalt (C-008)."""
+    is_admin = _is_admin(authorization)
     where = ["sk.entity_id = %s"]
     params: list[Any] = [entity_id]
     if antwortstatus:
@@ -10588,6 +10625,8 @@ def entity_shadow_dialogs(
             for r in cur.fetchall():
                 d = dict(r)
                 d["created_at"] = d["created_at"].isoformat() if d["created_at"] else None
+                if not is_admin:
+                    d["content"] = None  # C-008: privater Schatten-Inhalt nicht öffentlich
                 items.append(d)
     finally:
         conn.close()
@@ -10663,6 +10702,7 @@ def shadow_dialog_reply(
     """Antwort in Shadow-Dialog — Wesen oder Mensch."""
     claims = _require_auth(authorization)
     is_admin = claims.get("role") == "admin"
+    uid = claims.get("user_id")
 
     conn = get_conn()
     try:
@@ -10673,6 +10713,18 @@ def shadow_dialog_reply(
             sk = cur.fetchone()
             if not sk:
                 raise HTTPException(status_code=404, detail="Dialog nicht gefunden.")
+
+            # C-009: Teilnehmer-Prüfung + Autorschaft serverseitig ableiten.
+            # autor_type/autor_id aus dem Body werden NICHT vertraut (Spoofing-Schutz).
+            if is_admin:
+                autor_type = body.autor_type if body.autor_type in ("entity", "human", "system") else "system"
+                autor_id = body.autor_id or uid
+            elif uid is not None and uid == sk["entity_id"]:
+                autor_type, autor_id = "entity", sk["entity_id"]
+            elif uid is not None and uid == str(sk["human_id"]):
+                autor_type, autor_id = "human", uid
+            else:
+                raise HTTPException(status_code=403, detail="Kein Teilnehmer dieses Dialogs.")
 
             parent_id = None
             thread_id = None
@@ -10689,7 +10741,7 @@ def shadow_dialog_reply(
             cur.execute(
                 "INSERT INTO schatten_antworten (schatten_id, autor_type, autor_id, content, parent_id, thread_id) "
                 "VALUES (%s::uuid, %s, %s, %s, %s::uuid, %s::uuid) RETURNING id::text, created_at",
-                (dialog_id, body.autor_type, body.autor_id, body.content, parent_id, thread_id))
+                (dialog_id, autor_type, autor_id, body.content, parent_id, thread_id))
             row = cur.fetchone()
             if not thread_id:
                 cur.execute(
@@ -10698,7 +10750,7 @@ def shadow_dialog_reply(
                 )
 
             # Antwortstatus aktualisieren
-            neuer_status = "wartet_auf_mensch" if body.autor_type == "entity" else "wartet_auf_wesen"
+            neuer_status = "wartet_auf_mensch" if autor_type == "entity" else "wartet_auf_wesen"
             cur.execute(
                 "UPDATE schattenkommentare SET antwortstatus=%s, updated_at=now() WHERE id=%s::uuid",
                 (neuer_status, dialog_id))
@@ -10706,7 +10758,7 @@ def shadow_dialog_reply(
             cur.execute(
                 "INSERT INTO events (event_type, actor_type, actor_id, payload) "
                 "VALUES ('schatten.antwort', %s, %s, %s::jsonb)",
-                (body.autor_type, body.autor_id,
+                (autor_type, autor_id,
                  __import__("json").dumps({"schatten_id": dialog_id, "antwort_id": row["id"]})))
 
         conn.commit()
