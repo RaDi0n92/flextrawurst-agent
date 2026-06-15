@@ -48,6 +48,12 @@ try:
 except ImportError:
     _TTS_VERFUEGBAR = False
 
+try:
+    from tts_utils import generate_long_tts_audio
+    _LONG_TTS_OK = True
+except Exception:
+    _LONG_TTS_OK = False
+
 _whisper_model = None
 _whisper_lock = threading.Lock()
 
@@ -1174,17 +1180,21 @@ async def speak_endpoint(request: Request):
     if not _TTS_VERFUEGBAR:
         return JSONResponse({"fehler": "edge_tts nicht installiert"}, status_code=503)
     body = await request.json()
-    text = body.get("text", "").strip()[:800]
+    text = body.get("text", "").strip()
     stimme = body.get("stimme", GENI_STIMME)
     if not text:
         return JSONResponse({"fehler": "kein text"}, status_code=400)
     try:
-        buf = io.BytesIO()
-        tts = _edge_tts.Communicate(text, voice=stimme, rate="-5%")
-        async for chunk in tts.stream():
-            if chunk["type"] == "audio":
-                buf.write(chunk["data"])
-        audio = buf.getvalue()
+        if _LONG_TTS_OK:
+            audio = await generate_long_tts_audio(text, stimme, rate="-5%")
+        else:
+            text = text[:800]
+            buf = io.BytesIO()
+            tts = _edge_tts.Communicate(text, voice=stimme, rate="-5%")
+            async for chunk in tts.stream():
+                if chunk["type"] == "audio":
+                    buf.write(chunk["data"])
+            audio = buf.getvalue()
         if not audio:
             return JSONResponse({"fehler": "kein audio erzeugt"}, status_code=500)
         return Response(audio, media_type="audio/mpeg", headers={"Cache-Control": "no-cache"})

@@ -27,6 +27,13 @@ from pathlib import Path
 from typing import AsyncGenerator
 
 import edge_tts
+
+try:
+    from tts_utils import generate_long_tts_audio
+    _LONG_TTS_OK = True
+except Exception:
+    _LONG_TTS_OK = False
+
 import httpx
 import psycopg2
 from fastapi import FastAPI
@@ -814,11 +821,14 @@ _STIMME_MAENNLICH = "de-DE-ConradNeural"
 async def tts_endpoint(anfrage: TtsAnfrage):
     voice = _STIMME_MAENNLICH if anfrage.maennlich else _STIMME_WEIBLICH
     try:
-        communicate = edge_tts.Communicate(anfrage.text[:600], voice)
-        audio = b""
-        async for chunk in communicate.stream():
-            if chunk["type"] == "audio":
-                audio += chunk["data"]
+        if _LONG_TTS_OK:
+            audio = await generate_long_tts_audio(anfrage.text, voice)
+        else:
+            communicate = edge_tts.Communicate(anfrage.text[:600], voice)
+            audio = b""
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    audio += chunk["data"]
         return Response(content=audio, media_type="audio/mpeg")
     except Exception:
         return Response(content=b"", media_type="audio/mpeg")
