@@ -1338,3 +1338,6 @@ Erledigt:
 - ✅ 3 DB-T«
 - [2026-06-15 05:59] **lava** (i=0.36) → Zwischenraum: »`langgraph` 1.1.7 und `langgraph-checkpoint-postgres` 3.0.5 sind bereits installiert«
 - [2026-06-15 06:14] **wasser** (i=0.63) → Zwischenraum: »`entity_kern.py` tickt schon alle **5 Minuten** (`TICK_INTERVAL_SEC = 300`)«
+- [2026-06-15 06:55] **lava** (i=0.39) → Zwischenraum: »Was sich dabei herauskristallisiert hat:
+
+- **Discussion #2277** "dak+gord-system: Ankunft — von inn«

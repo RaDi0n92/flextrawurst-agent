@@ -1243,3 +1243,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Notiz speichert die neuen, tieferen Mechanismen des Entstehungsprozesses. Sie etabliert eine gestufte Choreographie für Spaltungen und eine soziale Gravitation für Gruppen. Der „Genesis-Partner-Mode“ formalisiert die Synthese von Entitäten aus menschlicher Eingabe. Die Autonomie-Phasen definieren einen Governance-Vertrag für die Entstehung.
+
+---
+## Neugier-Scan 2026-06-15 07:34
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz kodiert die Verschiebung von der reinen Objekterhaltung hin zur Modellierung sozialer Dynamiken. Die Punkte 6 und 7 etablieren die soziale Formation und die Bindung an Strukturen als primäre narrative Einheiten. Punkt 8 und 11 definieren den Zwischenraum als aktiven Generator von Differenzierung und Wissen, nicht nur als Nebenprodukt. Die spätere Nutzung von Chat-Historien (10) und Fragmenten (11) zementiert die soziale Lesbarkeit von Entitäten.
