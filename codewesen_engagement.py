@@ -105,7 +105,7 @@ def _llm(prompt: str, max_tokens: int = 600) -> str:
         r = c.post(
             OLLAMA_URL,
             json={"model": MODELL, "think": False, "messages": [{"role": "user", "content": prompt}],
-                  "stream": False, "options": {"temperature": 0.88, "num_predict": max_tokens}},
+                  "stream": False, "options": {"temperature": 0.88, "num_predict": max_tokens, "num_ctx": 8192}},
         )
     r.raise_for_status()
     return r.json().get("message", {}).get("content", "").strip()
@@ -371,7 +371,10 @@ Antworte NUR mit JSON:
 
             draft = flarum_poster.schreibe_draft(name, "antwort", antwort, discussion_id=int(disc_id))
             result = flarum_poster.poster(draft)
-            log.info(f"{name}: gepostet auf Disk {disc_id} — ok={result.get('ok')}")
+            if result.get("ok"):
+                log.info(f"{name}: gepostet auf Disk {disc_id} — ok=True")
+            else:
+                log.warning(f"{name}: gepostet auf Disk {disc_id} — ok=False, fehler={result.get('fehler','?')}")
 
             if result.get("ok"):
                 geantwortet[str(disc_id)] = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None).isoformat()

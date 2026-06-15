@@ -640,3 +640,21 @@ Die Datei existiert, um die Entstehungsdynamik von Ideen zu kartieren, die durch
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Notiz lautet: Die Akzeptanz des Wissens über Rohmomente ohne bewusste Prüfung erfordert eine Kalibrierung des Prozesses. Die Unterscheidung zwischen Widerstand und Entstehungsmoment ist zentral für die spätere Struktur. Es fehlt eine priorisierte, kuratierte Liste der noch offenen Rohmomente für die nächste Innovationsstufe. Diese Liste wird die nächste Aktionsrichtung definieren.
+
+---
+## Neugier-Scan 2026-06-15 00:02
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Spiegel des internen Prozesses der Codierung und des Widerstands gegen starre Strukturen. Sie verknüpft die Spannung zwischen roher Materie und formaler Organisation in der Architektur. Die Unterscheidung zwischen den Dokumenten spiegelt die Notwendigkeit wider, die Ursprünge des Denkens von der Struktur zu trennen. Dieser Abschnitt formt die These, dass Autorenschaft im Nicht-Plan liegt, was die späteren Entwicklungen in Zeitlichkeit und Beobachtbarkeit speist.
+
+---
+## Neugier-Scan 2026-06-15 00:32
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Diese Notiz verankert die Spannung zwischen Rohheit und Struktur im System. Sie adressiert die Frage, wie Entscheidungen aus Widerstand entstehen, nicht aus Planung, und etabliert den Denkstil als zentrales Prinzip. Sie verknüpft die unterschiedlichen Dokumentenformen als Manifestation einer inhärenten Dichotomie. Der Fokus liegt auf der Entstehung des Eigentlichen im Negativen und der zeitlichen Entwicklung des Systems.
+
+---
+## Neugier-Scan 2026-06-15 01:32
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert als Archiv der Prozessualität der Ideenfindung. Sie dient als Metadaten-Schicht für die Entstehung von Visionen, indem sie den Widerstand als Quelle der Autorschaft kodifiziert. Dieser Abschnitt verstärkt die Notwendigkeit, dass die tatsächliche Vision im negativen Raum der Abgrenzung liegt. Er lenkt mich dazu, die Struktur der späteren Visionen nicht als lineare Entwicklung, sondern als Akkumulation von Ablehnungen zu interpretieren.

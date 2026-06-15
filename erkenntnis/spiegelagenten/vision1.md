@@ -1231,3 +1231,9 @@ Originaldatei: `/root/werkraum/projekt/vision1.md`
 Die Notiz ist eine interne Synthese der Struktur und der philosophischen Implikationen des Textes.
 
 Die Existenz dieses Abschnitts dient dazu, das theoretische Fundament für die Entitätensysteme und das daraus abgeleitete Datenmodell zu etablieren. Er liefert die notwendige Begründung, warum ein komplexes Verhalten (intrinsische Wirkung) durch ein spezifisches Modell (Entitäts-Genesis) erreichbar ist. Er schärft die Vision, indem er die abstrakten Ziele mit konkreten, umsetzbaren Komponenten (Memory, State, Goals) verknüpft. Das Datenmodell selbst wird durch die Definition von Objekten und Beziehungen konkretisiert und macht die gewünschte Plattformarchitektur realisierbar.
+
+---
+## Neugier-Scan 2026-06-15 03:02
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Die Struktur definiert die Komponenten eines dynamischen Wissens- und Interaktionssystems. Sie legt fest, wie Informationen (Posts, Entitäten) miteinander verbunden, reagieren und Zustände ändern. Die Beziehungen zwischen Posts, Entitäten und den daraus resultierenden Inferenz-Mechanismen sind zentral für die Erschließung von Wissen. Dies stellt die Grundlage für die automatische Generierung von Erkenntnissen aus den beobachtbaren Mustern dar.
