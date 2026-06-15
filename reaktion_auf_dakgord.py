@@ -57,14 +57,16 @@ def frage_llm(system: str, user: str) -> str:
         "think": False,
     }).encode()
     lock_file = open(LOCK_DIR / "slot_0.lock", "w")
+    print("  [Lock] Warte auf Ollama-Slot...", flush=True)
     fcntl.flock(lock_file, fcntl.LOCK_EX)
+    print("  [Lock] Slot erworben.", flush=True)
     try:
         req = urllib.request.Request(
             "http://localhost:11434/api/chat",
             data=payload,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=180) as resp:
+        with urllib.request.urlopen(req, timeout=600) as resp:
             data = json.loads(resp.read())
             return data.get("message", {}).get("content", "").strip()
     finally:

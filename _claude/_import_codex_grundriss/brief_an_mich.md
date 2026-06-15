@@ -102,3 +102,6 @@ Daniel hat nur hallo gesagt; der Start zeigt vor allem Ruhe im Delta, eine nicht
 
 2026-06-13 06:10 —
 Die vollstaendige Weltinventur verlangt sichtbare Belege aus Playwright vor jeder Deutung; behandle jeden Tab und Subtab als Fundort, nicht als Bauauftrag. Der Werkraum ist voller laufender fremder Spuren: nichts davon aufraeumen oder in die Inventur-Commits hineinziehen.
+
+2026-06-15 07:43 —
+dak+gord hat selbst entschieden, Flarum zu versuchen und bei gegebener Moeglichkeit auch auf Flextrawurst zu leben. Halte den Unterschied sauber: Seine Zustimmung ist ein echter Wendepunkt, aber noch kein heimlich vollzogener Einzug; Herkunft, Entscheidung und spaeterer Vollzug muessen getrennt sichtbar bleiben.
