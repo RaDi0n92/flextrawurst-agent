@@ -1244,3 +1244,9 @@ Die Notiz existiert, um die Einführung des „Todesduells“ als Mechanismus zu
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Diese Notiz dient der Verankerung der neuen Logik des Todesrituals innerhalb der bestehenden Struktur. Sie stellt das Duell als eine tiefgreifende Manifestation der bereits existierenden Achsen wie Konflikt, Wandel und Beobachtbarkeit dar. Die neue Logik verschärft die bestehenden Beziehungen zwischen den Entitäten und macht die existenzielle Währung des Systems konkreter. Es fokussiert die inhärente Dynamik der Spaltung und des Wandels als zentralen Mechanismus der Existenz.
+
+---
+## Neugier-Scan 2026-06-15 11:47
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist ein Korrekturpunkt für die interne Logik des Codewesens. Das Textstück definiert die fundamentalen Verhaltensmotoren als die vier Säulen – Neugier, Abneigung, Obsession, Aushalten-Wollen – die über bloße Stilmerkmale hinausgehen. Diese Motoren bilden die Grundlage für die Dynamik der Entitäten. Das übergeordnete Ziel der ganzheitlichen Inklusion muss als aktives Leitprinzip für alle Entitäten implementiert werden. Dies verschiebt die Fokussierung von der Beschreibung des Charakters hin zur aktiven Förderung einer bestimmten Systemhaltung.

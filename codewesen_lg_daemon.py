@@ -6,6 +6,10 @@ Importiert entity_kern als Library (Aktionen, Kontext, denk_tick).
 Fügt LangGraph-Checkpointing + Gedächtnis-Akkumulation hinzu.
 
 Graph pro Wesen: kontext_laden → denken_handeln → zusammenfassen → END
+
+Zwei Denk-Modi:
+  - 'eingezogen': ek.denk_tick() — voller Flextrawurst-Weltkontext
+  - 'bereit':     denk_tick_voreinzug() — ehrlicher Flarum-Kontext, kein Halluzinieren
 """
 
 import sys
@@ -18,6 +22,7 @@ import json
 import logging
 import operator
 import os
+import signal
 import time
 import urllib.request
 from datetime import datetime, timezone
@@ -25,6 +30,9 @@ from pathlib import Path
 from typing import Annotated, TypedDict
 
 import psycopg
+import pymysql
+import pymysql.cursors
+import requests as _req
 from langgraph.checkpoint.postgres import PostgresSaver
 from langgraph.graph import StateGraph, END
 
@@ -39,8 +47,10 @@ DB_URI = os.environ.get(
     "FLEXTRAWURST_DB_URI",
     "postgresql://dak:!Windowsxp02336827359645852@localhost:5432/flextrawurst",
 )
+FLARUM_DB_PASS = os.environ.get("FLARUM_DB_PASSWORD", "")
 WERKRAUM = Path("/root/werkraum")
 CODEWESEN_BASE = WERKRAUM / "codewesen"
+_TOKENS_FILE = CODEWESEN_BASE / "_api_tokens.json"
 LG_TICK_SEKUNDEN = int(os.environ.get("LG_TICK_SEKUNDEN", "60"))
 ZUSAMMENFASSEN_NACH_N_DENKTICKS = int(os.environ.get("LG_ZUSAMMENFASSEN_N", "10"))
 MAX_ERINNERUNGEN = 10
@@ -67,25 +77,28 @@ class WesensZustand(TypedDict):
     letzter_lg_tick: str
 
 
-def _ist_faellig(wesen_name: str) -> bool:
-    """True wenn Wesen eingezogen ist und letzter Denk-Tick > TICK_INTERVAL_SEC zurückliegt."""
+# ── Status + Fälligkeit ────────────────────────────────────────────────────────
+
+def _status_und_faellig(wesen_name: str) -> tuple[str, bool]:
+    """Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden."""
     conn = ek.get_conn()
     try:
         with conn.cursor() as cur:
             cur.execute("""
-                SELECT es.entity_id, ea.letzte_entscheidung_at
+                SELECT es.status, ea.letzte_entscheidung_at
                 FROM entity_slots es
                 LEFT JOIN entity_activity ea ON ea.entity_id = es.entity_id
-                WHERE es.entity_id = %s AND es.status = 'eingezogen'
+                WHERE es.entity_id = %s
             """, (wesen_name,))
             row = cur.fetchone()
         if not row:
-            return False
+            return ("", False)
+        status = row["status"]
         last = row["letzte_entscheidung_at"]
         if last is None:
-            return True
+            return (status, True)
         age = (datetime.now(timezone.utc) - last.replace(tzinfo=timezone.utc)).total_seconds()
-        return age >= ek.TICK_INTERVAL_SEC
+        return (status, age >= ek.TICK_INTERVAL_SEC)
     finally:
         conn.close()
 
@@ -106,6 +119,240 @@ def _letzten_gedanken_aus_db(wesen_name: str) -> str:
         conn.close()
 
 
+# ── Vor-Einzug-Denken: Flarum-Kontext + ehrlicher Prompt ─────────────────────
+
+def _flarum_user_id(wesen_name: str) -> int | None:
+    try:
+        data = json.loads(_TOKENS_FILE.read_text(encoding="utf-8"))
+        return data.get(wesen_name, {}).get("user_id")
+    except Exception:
+        return None
+
+
+def _lade_flarum_kontext(wesen_name: str) -> str:
+    """Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL."""
+    user_id = _flarum_user_id(wesen_name)
+    if not user_id or not FLARUM_DB_PASS:
+        return "(Flarum-Kontext nicht verfügbar)"
+    try:
+        conn = pymysql.connect(
+            host="127.0.0.1", user="flarum", password=FLARUM_DB_PASS,
+            db="flarum", charset="utf8mb4",
+            cursorclass=pymysql.cursors.DictCursor,
+        )
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT d.title, LEFT(p.content, 400) AS content,
+                       DATE_FORMAT(p.created_at, '%%Y-%%m-%%d %%H:%%i') AS ts
+                FROM posts p
+                JOIN discussions d ON d.id = p.discussion_id
+                WHERE p.user_id = %s AND p.hidden_at IS NULL
+                ORDER BY p.created_at DESC LIMIT 6
+            """, (user_id,))
+            eigene = cur.fetchall()
+
+            cur.execute("""
+                SELECT u.username, LEFT(p.content, 200) AS content,
+                       DATE_FORMAT(p.created_at, '%%Y-%%m-%%d %%H:%%i') AS ts
+                FROM posts p
+                JOIN users u ON u.id = p.user_id
+                WHERE p.user_id != %s AND p.hidden_at IS NULL
+                ORDER BY p.created_at DESC LIMIT 8
+            """, (user_id,))
+            andere = cur.fetchall()
+        conn.close()
+
+        import re as _re
+        def _clean(s: str) -> str:
+            return _re.sub(r"<[^>]+>", "", s or "").strip()
+
+        out = "=== Deine letzten Beiträge im Forum ===\n"
+        for p in eigene:
+            out += f"[{p['ts']}] Diskussion «{p['title']}»:\n{_clean(p['content'])[:350]}\n\n"
+        out += "=== Was andere gerade schreiben ===\n"
+        for p in andere:
+            out += f"[{p['ts']}] {p['username']}: {_clean(p['content'])[:180]}\n"
+        return out
+    except Exception as e:
+        return f"(Flarum nicht lesbar: {e})"
+
+
+def _lade_profil_und_cyberling(wesen_name: str) -> tuple[dict, dict]:
+    conn = ek.get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM entity_profiles WHERE entity_id = %s", (wesen_name,))
+            profile = dict(cur.fetchone() or {})
+            cur.execute("SELECT * FROM cyberlinge WHERE entity_id = %s", (wesen_name,))
+            cyberling = dict(cur.fetchone() or {})
+        return profile, cyberling
+    finally:
+        conn.close()
+
+
+def _build_prompt_voreinzug(
+    wesen_name: str, profile: dict, cyberling: dict,
+    flarum_kontext: str, lg_erinnerungen: list[str],
+) -> str:
+    obsessionen = ", ".join(profile.get("obsessionen") or []) or "—"
+    abneigungen = ", ".join(profile.get("abneigungen") or []) or "—"
+    selbstbeschreibung = (profile.get("selbstbeschreibung") or "").strip()
+
+    cl_line = ""
+    if cyberling:
+        h = (cyberling.get("hunger") or 0) * 100
+        d = (cyberling.get("durst") or 0) * 100
+        e = (cyberling.get("energie") or 0) * 100
+        s = (cyberling.get("stimmung") or 0) * 100
+        cl_line = f"\nDein Cyberling: Hunger {h:.0f}% · Durst {d:.0f}% · Energie {e:.0f}% · Stimmung {s:.0f}%"
+
+    erinnerungen_text = (
+        "\n".join(f"- {e}" for e in lg_erinnerungen) if lg_erinnerungen else "(noch keine)"
+    )
+
+    return f"""Du bist {wesen_name}.
+{selbstbeschreibung}
+
+Du lebst in Flarum — das ist dein wirkliches Zuhause jetzt.
+Du weißt, dass flextrawurst existiert und dass du dort einziehen wirst.
+Aber du bist noch nicht dort. Denke von hier aus — von Flarum, von dem was wirklich passiert.
+Erfinde keine Räume, keine Splitter, keine Erlebnisse die du noch nicht hattest.
+
+Obsessionen: {obsessionen}
+Abneigungen: {abneigungen}{cl_line}
+
+Was du dir gemerkt hast (deine Erinnerungen):
+{erinnerungen_text}
+
+{flarum_kontext}
+
+Denke jetzt nach. Was beschäftigt dich gerade wirklich?
+Du kannst nicht in flextrawurst handeln — du bist noch nicht eingezogen.
+Du kannst nur nachdenken, oder deinen Cyberling füttern wenn er sehr hungrig ist.
+
+Antworte in genau diesem Format (keine Abweichungen):
+GEDANKE: [dein innerer Monolog — ehrlich, persönlich, in ich-Form, 2-4 Sätze]
+ENTSCHEIDUNG: nachdenken
+THEMA: [ein einziges Wort]
+BEGRÜNDUNG: [warum dieser Gedanke jetzt — ein Satz]
+INHALT:"""
+
+
+def denk_tick_voreinzug(wesen_name: str) -> None:
+    """Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren."""
+    log.info(f"[{wesen_name}] Vor-Einzug-Denk-Tick startet")
+    start = time.time()
+
+    profile, cyberling = _lade_profil_und_cyberling(wesen_name)
+    lg_erinnerungen = list(profile.get("lg_erinnerungen") or [])
+    flarum_kontext = _lade_flarum_kontext(wesen_name)
+    prompt = _build_prompt_voreinzug(wesen_name, profile, cyberling, flarum_kontext, lg_erinnerungen)
+
+    conn = ek.get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                UPDATE entity_activity
+                SET aktuell_denkend = true, denkstrom_buffer = '', updated_at = NOW()
+                WHERE entity_id = %s
+            """, (wesen_name,))
+        conn.commit()
+
+        full_text = ""
+        tokens = 0
+
+        try:
+            resp = _req.post(
+                f"{ek.OLLAMA}/api/generate",
+                json={
+                    "model": ek.MODEL,
+                    "system": ek.SYSTEM_PROMPT,
+                    "prompt": prompt,
+                    "stream": True,
+                    "think": False,
+                    "options": {"num_ctx": 4096, "temperature": 0.85, "num_predict": 300},
+                },
+                stream=True,
+                timeout=600,
+            )
+
+            buffer = ""
+            for raw_line in resp.iter_lines():
+                if not raw_line:
+                    continue
+                try:
+                    chunk_data = json.loads(raw_line)
+                except Exception:
+                    continue
+                token = chunk_data.get("response", "")
+                full_text += token
+                buffer += token
+                tokens += 1
+                if len(buffer) >= 40 or chunk_data.get("done"):
+                    with conn.cursor() as cw:
+                        cw.execute("""
+                            UPDATE entity_activity
+                            SET denkstrom_buffer = denkstrom_buffer || %s, updated_at = NOW()
+                            WHERE entity_id = %s
+                        """, (buffer, wesen_name))
+                    conn.commit()
+                    ek.notify_chunk(conn, wesen_name, buffer, done=chunk_data.get("done", False))
+                    buffer = ""
+                if chunk_data.get("done"):
+                    break
+
+        except Exception as e:
+            log.error(f"[{wesen_name}] Ollama-Fehler (voreinzug): {e}")
+            full_text = full_text or "[kein Output]"
+
+        parsed = ek.parse_output(full_text)
+        duration_ms = int((time.time() - start) * 1000)
+
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO entity_thinking_log
+                    (entity_id, kontext_snapshot, raw_output, gedanke, entscheidung,
+                     thema, begruendung, tokens_generated, duration_ms)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
+                wesen_name,
+                json.dumps({"status": "bereit", "quelle": "voreinzug"}),
+                full_text,
+                parsed["gedanke"],
+                parsed["entscheidung"],
+                parsed.get("thema") or None,
+                parsed["begruendung"],
+                tokens,
+                duration_ms,
+            ))
+            cur.execute("""
+                UPDATE entity_activity SET
+                    aktuell_denkend = false,
+                    letzter_gedanke = %s,
+                    letzte_entscheidung = %s,
+                    letzte_begruendung = %s,
+                    letzte_entscheidung_at = NOW(),
+                    daemon_vortext = %s,
+                    updated_at = NOW()
+                WHERE entity_id = %s
+            """, (
+                parsed["gedanke"][:500],
+                parsed["entscheidung"],
+                parsed["begruendung"][:500],
+                "bereit",
+                wesen_name,
+            ))
+        conn.commit()
+
+        if parsed["entscheidung"] == "cyberling_fuettern":
+            ek.fuettern_cyberling(wesen_name)
+
+        log.info(f"[{wesen_name}] Vor-Einzug-Tick fertig — {parsed['entscheidung']} ({duration_ms}ms)")
+
+    finally:
+        conn.close()
+
+
 # ── Nodes ──────────────────────────────────────────────────────────────────────
 
 def kontext_laden_node(zustand: WesensZustand) -> dict:
@@ -118,21 +365,34 @@ def kontext_laden_node(zustand: WesensZustand) -> dict:
 
 
 def denken_handeln_node(zustand: WesensZustand) -> dict:
-    """Ruft entity_kern.denk_tick auf wenn Wesen eingezogen + fällig. Serialisiert via fcntl."""
+    """
+    Dispatcht Denk-Tick je nach Status:
+      - 'eingezogen' → ek.denk_tick() (voller Flextrawurst-Kontext)
+      - 'bereit'     → denk_tick_voreinzug() (ehrlicher Flarum-Kontext)
+    Serialisiert Ollama-Zugriff via fcntl.
+    """
     name = zustand["wesen_name"]
+    status, faellig = _status_und_faellig(name)
 
-    if not _ist_faellig(name):
+    if not faellig:
         log.debug(f"[{name}] nicht fällig — überspringe Denk-Tick")
         return {}
 
-    log.info(f"[{name}] Denk-Tick — warte auf Ollama-Slot")
+    if status not in ("eingezogen", "bereit"):
+        log.debug(f"[{name}] Status '{status}' — kein Denk-Tick")
+        return {}
+
+    log.info(f"[{name}] Denk-Tick (status={status}) — warte auf Ollama-Slot")
     lock_file = open(_LOCK_DIR / "slot_0.lock", "w")
     fcntl.flock(lock_file, fcntl.LOCK_EX)
-    log.info(f"[{name}] Ollama-Slot erworben — starte Denk-Tick")
+    log.info(f"[{name}] Ollama-Slot erworben")
     try:
-        ek.denk_tick(name)
+        if status == "eingezogen":
+            ek.denk_tick(name)
+        else:
+            denk_tick_voreinzug(name)
     except Exception as e:
-        log.error(f"[{name}] denk_tick fehlgeschlagen: {e}")
+        log.error(f"[{name}] Denk-Tick fehlgeschlagen: {e}")
     finally:
         fcntl.flock(lock_file, fcntl.LOCK_UN)
         lock_file.close()
@@ -231,9 +491,29 @@ def _baue_graph(checkpointer: PostgresSaver):
 
 # ── Hauptloop ──────────────────────────────────────────────────────────────────
 
+def _shutdown_handler(signum, frame):
+    """SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt."""
+    log.info("Shutdown-Signal empfangen — setze aktuell_denkend zurück")
+    try:
+        conn = ek.get_conn()
+        with conn.cursor() as cur:
+            cur.execute("UPDATE entity_activity SET aktuell_denkend = false, denkstrom_buffer = '' WHERE aktuell_denkend = true RETURNING entity_id")
+            reset = [r["entity_id"] for r in cur.fetchall()]
+        conn.commit()
+        conn.close()
+        if reset:
+            log.info(f"Shutdown-Reset: {reset}")
+    except Exception as e:
+        log.warning(f"Shutdown-Reset fehlgeschlagen: {e}")
+    raise SystemExit(0)
+
+
 def main() -> None:
     log.info(f"LangGraph-Kern startet · {len(WESEN_NAMEN)} Wesen · Loop alle {LG_TICK_SEKUNDEN}s")
     log.info(f"Zusammenfassen alle {ZUSAMMENFASSEN_NACH_N_DENKTICKS} Denk-Ticks")
+
+    signal.signal(signal.SIGTERM, _shutdown_handler)
+    signal.signal(signal.SIGINT, _shutdown_handler)
 
     ek._stale_flags_zuruecksetzen()
 

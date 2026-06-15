@@ -1347,3 +1347,9 @@ Erledigt:
 **Loop-Zyklus** (nur prüfen, kein Ollama):
 - 7 Wesen × 5 Sekunden Pa«
 - [2026-06-15 09:34] **lava** (i=0.43) → Zwischenraum: »Gute Frage — da ist eine Spannung«
+- [2026-06-15 09:52] **wasser** (i=0.43) → Zwischenraum: »1423 wartet auf den Ollama-Slot (LG-Daemon hat ihn gerade)«
+- [2026-06-15 10:28] **lava** (i=0.35) → Zwischenraum: »Was das Problem war und was jetzt besser ist:
+
+**Ursache des Hängenbleibens:** SIGTERM trifft den LG«
+- [2026-06-15 11:21] **nebel** (i=0.31) → Zwischenraum: »Das war die eigentliche Ursache für alles: **Ollama steckte an seiner 8GB-Speichergrenze** fest (nur«
+- [2026-06-15 11:46] **lava** (i=0.35) → Zwischenraum: »Kurze Analyse: GENI hat aktuell nur `_sessions` (In-Memory, max 12 Messages, weg nach Neustart)«

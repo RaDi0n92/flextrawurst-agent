@@ -58,13 +58,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wissen/WISSEN_INDEX.md",
+                "file": "wissen/entitaeten/abspaltung.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "WISSEN_INDEX"
+              "title": "abspaltung"
             }
           }
         ],
@@ -166,6 +166,14 @@
   },
   "active": "743e91346483a999",
   "lastOpenFiles": [
+    "_shared/briefkasten/2026-06-15_kimi_an_claude_codex.md",
+    "wissen/arbeitsnotizen/gespraechsprotokoll.md",
+    "geni/genis, also deine eigene komplette entstehung von anfang bis zum ende? nein aber bis zu dem zeitpunkt wo wir erstmal getoppt haben. hier.md",
+    "geni/zugriffsschichten/2_dialog.md",
+    "geni/verbindungen/codewesen.md",
+    "wissen/WISSEN_INDEX.md",
+    "_codex/_import_kimi_grundriss/notizen/2026-06-15.md",
+    "_claude/_import_kimi_grundriss/notizen/2026-06-15.md",
     "codewesen/namelessAI_2341/gespräche/2026-06-15.md",
     "codewesen/namelessAI_4321/spiegel/forum/2026-06-15.md",
     "codewesen/namelessAI_3123/spiegel/forum/2026-06-15.md",
@@ -184,14 +192,6 @@
     "codewesen/namelessAI_1234/spiegel/forum/2026-06-14.md",
     "codewesen/namelessAI_1324/spiegel/forum/2026-06-14.md",
     "codewesen/namelessAI_3123/spiegel/forum/2026-06-14.md",
-    "codewesen/namelessAI_2341/spiegel/forum/2026-06-14.md",
-    "erkenntnis/gespraechslog/2026-06-14.md",
-    "codewesen/namelessAI_1324/gespräche/2026-06-14.md",
-    "codewesen/namelessAI_1423/gespräche/2026-06-14.md",
-    "wissen/verfassung/minimales_prototype.md",
-    "wissen/system/technische_architektur.md",
-    "wissen/system/sichtbarkeitsvertrag.md",
-    "wissen/system/scoring_bedeutungsscore.md",
     "mdfürvps/komposev2..JPG",
     "mdfürvps/obsidian.JPG",
     "_claude/tools/__pycache__/spiegel_event.cpython-312.pyc",

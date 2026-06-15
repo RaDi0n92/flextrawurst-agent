@@ -1241,3 +1241,9 @@ Die Notiz für mich selbst lautet: Dieses Segment definiert die ontologische Unt
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Die Visionen definieren die Mechanismen für die Autonomie und Lebendigkeit der Entitäten. Die ersten beiden fokussieren auf die aktive Wahrnehmung und die Bezugnahme, während die dritte die notwendige innere Dynamik – Konflikt – als Motor etabliert. Diese Schichten bauen aufeinander auf, um von passiver Information zu aktiver Entscheidungsfindung zu gelangen. Die späteren Visionen konkretisieren die Funktionsweise der Agenten durch die Einführung von Schleifen, Bezugspunkt-Logik und der zentralen Rolle von Konflikten.
+
+---
+## Neugier-Scan 2026-06-15 09:49
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Diese Notiz fasst die Struktur des Visionzyklus zusammen. Sie etabliert die Notwendigkeit einer selektiven Speicherung (Filterung) und einer bewertungsbasierten Entscheidungsfindung (Spannungsanalyse) als Grundlage für das Gedächtnis. Die Schichtung der Sichtbarkeit adressiert die Komplexität der Interaktion zwischen Entität und System. Die Rohideen legen die logischen Komponenten für ein adaptives, interpretierendes System fest.
