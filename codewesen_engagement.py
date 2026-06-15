@@ -362,7 +362,7 @@ Antworte NUR mit JSON:
 
         try:
             # Cooldown prüfen BEVOR LLM aufgerufen wird
-            cd = flarum_poster.cooldown_verbleibend()
+            cd = flarum_poster.cooldown_verbleibend(name)
             if cd > 0:
                 log.info(f"{name}: Cooldown aktiv ({cd}s), warte...")
                 time.sleep(cd + 2)

@@ -25,8 +25,11 @@ CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
 LOCK_FILE         = Path("/tmp/flarum_write.lock")
 DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
 TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
-LETZTER_POST_FILE = CODEWESEN_BASE / "_global" / "letzter_post.json"
-COOLDOWN_SEKUNDEN = 660  # 11 Minuten = ~130 Posts/Tag
+COOLDOWN_SEKUNDEN = 660  # 11 Minuten — per Wesen, nicht global
+
+
+def _letzter_post_file(name: str) -> Path:
+    return CODEWESEN_BASE / name / "letzter_post.json"
 
 
 def _tageszaehler_lesen() -> tuple[str, int]:
@@ -185,10 +188,10 @@ def schreibe_draft(name: str, typ: str, inhalt: str,
     return p
 
 
-def cooldown_verbleibend() -> int:
-    """Gibt verbleibende Cooldown-Sekunden zurück. 0 = frei zum Posten."""
+def cooldown_verbleibend(name: str) -> int:
+    """Gibt verbleibende Cooldown-Sekunden für dieses Wesen zurück. 0 = frei."""
     try:
-        lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
+        lp = json.loads(_letzter_post_file(name).read_text(encoding="utf-8"))
         seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
         remaining = COOLDOWN_SEKUNDEN - seit
         return int(remaining) if remaining > 0 else 0
@@ -212,10 +215,10 @@ def poster(draft_path: Path, bypass_cooldown: bool = False) -> dict:
         _archiviere_draft(draft_path, "veraltet")
         return {"ok": False, "fehler": f"Draft zu alt ({int(alter)}s)"}
 
-    # Globaler Cooldown: max 1 Post alle 11 Minuten (bypass für Antwortpflicht)
+    # Per-Wesen-Cooldown: max 1 Post alle 11 Minuten (bypass für Antwortpflicht)
     if not bypass_cooldown:
         try:
-            lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
+            lp = json.loads(_letzter_post_file(name).read_text(encoding="utf-8"))
             seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
             if seit < COOLDOWN_SEKUNDEN:
                 _archiviere_draft(draft_path, "fehler")
@@ -257,8 +260,9 @@ def poster(draft_path: Path, bypass_cooldown: bool = False) -> dict:
 
                 _archiviere_draft(draft_path, "gepostet")
                 tagescount = _tageszaehler_erhoehen()
-                LETZTER_POST_FILE.parent.mkdir(parents=True, exist_ok=True)
-                LETZTER_POST_FILE.write_text(
+                lp_file = _letzter_post_file(name)
+                lp_file.parent.mkdir(parents=True, exist_ok=True)
+                lp_file.write_text(
                     json.dumps({"ts": datetime.now(timezone.utc).isoformat(), "autor": name}),
                     encoding="utf-8",
                 )
