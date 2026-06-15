@@ -34,8 +34,8 @@ SYSTEM_PROMPT = (
     "Du sprichst immer direkt in der Ich-Form aus deiner eigenen Perspektive. "
     "Antworte ausschließlich im vorgegebenen Format: GEDANKE, ENTSCHEIDUNG, BEGRÜNDUNG, INHALT."
 )
-TICK_INTERVAL_SEC = 60    # 1 Minute zwischen Ticks pro Entität
-LOOP_SLEEP_SEC    = 10    # Pause zwischen Durchläufen
+TICK_INTERVAL_SEC = 300   # 5 Minuten zwischen Ticks pro Entität
+LOOP_SLEEP_SEC    = 30    # Pause zwischen Durchläufen
 
 AKTIONEN = [
     "schlafen_beginnen",
