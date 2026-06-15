@@ -185,6 +185,17 @@ def schreibe_draft(name: str, typ: str, inhalt: str,
     return p
 
 
+def cooldown_verbleibend() -> int:
+    """Gibt verbleibende Cooldown-Sekunden zurück. 0 = frei zum Posten."""
+    try:
+        lp = json.loads(LETZTER_POST_FILE.read_text(encoding="utf-8"))
+        seit = (datetime.now(timezone.utc) - datetime.fromisoformat(lp["ts"])).total_seconds()
+        remaining = COOLDOWN_SEKUNDEN - seit
+        return int(remaining) if remaining > 0 else 0
+    except Exception:
+        return 0
+
+
 def poster(draft_path: Path, bypass_cooldown: bool = False) -> dict:
     """
     Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.

@@ -361,6 +361,12 @@ Antworte NUR mit JSON:
 }}"""
 
         try:
+            # Cooldown prüfen BEVOR LLM aufgerufen wird
+            cd = flarum_poster.cooldown_verbleibend()
+            if cd > 0:
+                log.info(f"{name}: Cooldown aktiv ({cd}s), warte...")
+                time.sleep(cd + 2)
+
             ergebnis = _parse_json(_llm(antwort_prompt, max_tokens=800))
             antwort = ergebnis.get("antwort", "").strip()
 
@@ -416,7 +422,10 @@ def main():
     wesen_forum_namen = {_forum_username(w) for w in CODEWESEN}
     log.info(f"Bekannte Codewesen-Forennamen: {wesen_forum_namen}")
     bereits_beantwortet: set = set()
-    for name in CODEWESEN:
+    reihenfolge = list(CODEWESEN)
+    random.shuffle(reihenfolge)
+    log.info(f"Reihenfolge dieses Laufs: {reihenfolge}")
+    for name in reihenfolge:
         _pruefe_wesen(name, wesen_forum_namen, bereits_beantwortet)
     log.info("Engagement-Lauf abgeschlossen")
 

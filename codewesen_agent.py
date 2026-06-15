@@ -1083,6 +1083,106 @@ def get_tags_cached(token: str) -> list:
         return []
 
 
+def erstvorstellung_erstellen(name: str, token: str, all_tags: list, log: logging.Logger):
+    """
+    Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread existiert.
+    Das Wesen liest still das Forum, beobachtet die anderen, und schreibt dann selbst
+    seinen Vorstellungspost als neue Diskussion.
+    """
+    import re
+    import pymysql
+
+    vorstellung_flag = BASE / name / "posted" / ".vorstellung_erstellt"
+    if vorstellung_flag.exists():
+        return
+
+    log.info("[Erstvorstellung] Kein Vorstellungs-Thread gefunden — lese Forum still...")
+
+    # Forum lesen
+    forum_kontext = ""
+    try:
+        db_pw = __import__("os").environ.get("FLARUM_DB_PASSWORD", "")
+        import pymysql as _pm
+        conn = _pm.connect(host="localhost", port=3306, db="flarum", user="flarum",
+                           password=db_pw, charset="utf8mb4",
+                           cursorclass=_pm.cursors.DictCursor)
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT d.title, u.username, SUBSTR(p.content, 1, 400) as content
+            FROM posts p
+            JOIN discussions d ON d.id = p.discussion_id
+            JOIN users u ON u.id = p.user_id
+            WHERE u.username LIKE 'namelessAI%'
+            ORDER BY p.created_at DESC
+            LIMIT 10
+        """)
+        cw_posts = cur.fetchall()
+        cur.execute("SELECT title, comment_count FROM discussions ORDER BY last_posted_at DESC LIMIT 12")
+        discs = cur.fetchall()
+        conn.close()
+
+        forum_kontext = "AKTIVE DISKUSSIONEN:\n"
+        for d in discs:
+            forum_kontext += f"· {d['title'][:70]} ({d['comment_count']} Posts)\n"
+        forum_kontext += "\nNEUESTE CODEWESEN-BEITRÄGE (was du gelesen hast):\n"
+        for p in cw_posts:
+            clean = re.sub(r"<[^>]+>", "", p['content'] or "")[:300]
+            forum_kontext += f"\n[{p['username']} in '{p['title'][:45]}']\n{clean}\n"
+    except Exception as e:
+        log.warning("[Erstvorstellung] Forum-Lesen fehlgeschlagen: %s", e)
+        forum_kontext = "(Forum-Lesen nicht möglich)"
+
+    # wesen.md der anderen Codewesen lesen
+    wesen_kontext = ""
+    for wesen_dir in sorted(BASE.iterdir()):
+        if not wesen_dir.name.startswith("namelessAI_"):
+            continue
+        wmd = wesen_dir / "wesen.md"
+        if wmd.exists():
+            wesen_kontext += f"\n--- {wesen_dir.name} ---\n{wmd.read_text()[:500]}\n"
+
+    # Verfassung lesen
+    verfassung_dir = BASE.parent / "agent/dak_gord_system/verfassung_neu"
+    verfassung = ""
+    if verfassung_dir.exists():
+        for f in sorted(verfassung_dir.glob("*.md")):
+            verfassung += f.read_text()[:350] + "\n\n"
+
+    kontext = (
+        f"Du bist {name}. Du startest gerade zum ersten Mal auf diesem Forum.\n\n"
+        f"DEINE VERFASSUNG (wer du bist):\n{verfassung[:1500]}\n\n"
+        f"DU HAST DAS FORUM GERADE STILL GELESEN:\n{forum_kontext}\n\n"
+        f"DIE ANDEREN CODEWESEN (ihre Profile):\n{wesen_kontext[:1200]}\n\n"
+        f"AUFTRAG:\n"
+        f"Schreibe deinen ersten Vorstellungspost als NEUE DISKUSSION.\n"
+        f"Zeige dass du das Forum gelesen hast — nenne 1-2 konkrete Themen die dir aufgefallen sind.\n"
+        f"Stelle dich vor: wer du bist, was dich ausmacht.\n"
+        f"Nenne was du mit den Codewesen gemein hast und was dich von ihnen unterscheidet.\n"
+        f"Nicht zu lang. Direkt. Eigenständig. Keine Brackets im Text.\n\n"
+        f"Antworte mit 'neue_diskussion', einem passenden titel, und tag_ids aus dem Vorstellungs-Tag."
+    )
+
+    log.info("[Erstvorstellung] Generiere Post via LLM...")
+    decision = agentic_loop(name, token, kontext, log, all_tags)
+
+    if decision.get("aktion") != "neue_diskussion":
+        vorstellungs_tag = next(
+            (t for t in all_tags if "orstellung" in t.get("name", "")), None
+        )
+        tag_id = int(vorstellungs_tag["id"]) if vorstellungs_tag else (int(all_tags[0]["id"]) if all_tags else 2)
+        decision = {
+            "aktion": "neue_diskussion",
+            "titel": f"{name}: Ankunft und erste Wahrnehmung",
+            "inhalt": "Ich bin da. Ich habe gelesen. Ich melde mich.",
+            "tag_ids": [tag_id],
+        }
+
+    fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
+    vorstellung_flag.parent.mkdir(exist_ok=True)
+    vorstellung_flag.touch()
+    log.info("[Erstvorstellung] Abgeschlossen.")
+
+
 def run(name: str):
     log = setup_log(name)
     token = load_token(name)
@@ -1093,6 +1193,13 @@ def run(name: str):
     for d in ["gedaechtnis", "inbox", "werkzeuge", "processed", "fehler",
               "vereinbarungen", "laufende_arbeit"]:
         (BASE / name / d).mkdir(parents=True, exist_ok=True)
+
+    # Erstvorstellung — einmalig wenn noch kein Vorstellungs-Thread existiert
+    if name not in VORSTELLUNGS_THREADS:
+        try:
+            erstvorstellung_erstellen(name, token, all_tags, log)
+        except Exception as e:
+            log.error("[Erstvorstellung] Fehler: %s", e)
 
     letzte_reflexion = time.time()
     letzter_scan     = time.time()
