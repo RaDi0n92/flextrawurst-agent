@@ -1126,8 +1126,7 @@ function reinigeFuerTts(text) {
     .replace(/```[\\s\\S]*?```/g, "")
     .replace(/`[^`]+`/g, "")
     .replace(/\\n{3,}/g, "\\n")
-    .trim()
-    .substring(0, 600);
+    .trim();
 }
 
 function sprichText(text) {

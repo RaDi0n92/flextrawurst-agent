@@ -2045,7 +2045,7 @@ async function ttsSprich(text) {
   if (!ttsAktiv || ttsLaeuft || !text.trim()) return;
   ttsLaeuft = true;
   try {
-    const gekuerzt = text.replace(/[#*`_]/g, '').trim().substring(0, 600);
+    const gekuerzt = text.replace(/[#*`_]/g, '').trim();
     const r = await fetch('/api/speak', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},

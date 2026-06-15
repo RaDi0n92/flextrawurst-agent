@@ -557,8 +557,7 @@ function reinigeFuerTts(text) {
     .replace(/`[^`]+`/g, '')
     .replace(/\[TOOL[^\]]*\][\s\S]*?\[\/TOOL[^\]]*\]/g, '')
     .replace(/\n{3,}/g, '\n')
-    .trim()
-    .substring(0, 600);
+    .trim();
 }
 
 function sprichText(text) {
