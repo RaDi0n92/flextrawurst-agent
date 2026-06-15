@@ -5175,6 +5175,39 @@ def schlaf_heute(
     return bilanz
 
 
+@app.get("/wesen/{entity_id}/schlaf/archiv")
+def schlaf_archiv(
+    entity_id: str,
+    limit: int = 90,
+):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT entity_id FROM entity_slots WHERE entity_id = %s", (entity_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Wesen nicht gefunden")
+            cur.execute("""
+                SELECT phase_id::text, phase_type, started_at, ended_at, duration_min, zustand
+                FROM sleep_phases
+                WHERE entity_id = %s
+                ORDER BY started_at DESC
+                LIMIT %s
+            """, (entity_id, min(limit, 500)))
+            rows = cur.fetchall()
+    finally:
+        conn.close()
+
+    phasen = []
+    for r in rows:
+        p = dict(r)
+        if p.get("started_at"):
+            p["started_at"] = p["started_at"].isoformat()
+        if p.get("ended_at"):
+            p["ended_at"] = p["ended_at"].isoformat()
+        phasen.append(p)
+    return {"phasen": phasen, "total": len(phasen)}
+
+
 # --- Einzug ---
 
 @app.post("/admin/wesen/{entity_id}/einzug")
