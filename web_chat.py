@@ -560,26 +560,68 @@ function reinigeFuerTts(text) {
     .trim();
 }
 
-function sprichText(text) {
-  if (!ttsAktiv || text.trim().length < 5) return;
-  const reinText = reinigeFuerTts(text);
-  if (reinText.length < 5) return;
-  fetch('/api/tts', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({text: reinText, maennlich: true})
-  }).then(r => r.blob()).then(blob => {
-    if (blob.size < 100) return;
+function ttsSplitChunks(text, maxLen) {
+  const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+  const chunks = [];
+  let current = '';
+  for (const s of sentences) {
+    if (s.length > maxLen) {
+      if (current) { chunks.push(current.trim()); current = ''; }
+      const words = s.split(/\s+/);
+      let wcurrent = '';
+      for (const w of words) {
+        if ((wcurrent + ' ' + w).length > maxLen && wcurrent) {
+          chunks.push(wcurrent.trim());
+          wcurrent = w;
+        } else {
+          wcurrent = (wcurrent + ' ' + w).trim();
+        }
+      }
+      if (wcurrent) chunks.push(wcurrent.trim());
+    } else if ((current + s).length > maxLen && current) {
+      chunks.push(current.trim());
+      current = s;
+    } else {
+      current += s;
+    }
+  }
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+
+function playTtsBlob(blob) {
+  return new Promise((resolve) => {
     const url = URL.createObjectURL(blob);
     if (window._ttsAudio) {
       window._ttsAudio.pause();
       window._ttsAudio.src = '';
     }
     window._ttsAudio = new Audio(url);
-    window._ttsAudio.onended = () => { URL.revokeObjectURL(url); window._ttsAudio = null; };
-    window._ttsAudio.onerror = () => { window._ttsAudio = null; };
-    window._ttsAudio.play().catch(() => { window._ttsAudio = null; });
-  }).catch(() => {});
+    window._ttsAudio.onended = () => { URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); };
+    window._ttsAudio.onerror = () => { URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); };
+    window._ttsAudio.play().catch(() => { URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); });
+  });
+}
+
+async function sprichText(text) {
+  if (!ttsAktiv || text.trim().length < 5) return;
+  const reinText = reinigeFuerTts(text);
+  if (reinText.length < 5) return;
+  const chunks = ttsSplitChunks(reinText, 400);
+  for (const chunk of chunks) {
+    if (!chunk.trim()) continue;
+    try {
+      const r = await fetch('/api/tts', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text: chunk, maennlich: true})
+      });
+      if (!r.ok) continue;
+      const blob = await r.blob();
+      if (blob.size < 100) continue;
+      await playTtsBlob(blob);
+    } catch(e) {}
+  }
 }
 
 // ── Chat ──────────────────────────────────────────────────────────────────────

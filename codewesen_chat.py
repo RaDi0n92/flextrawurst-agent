@@ -1129,26 +1129,71 @@ function reinigeFuerTts(text) {
     .trim();
 }
 
-function sprichText(text) {
-  if (!ttsAktiv || text.trim().length < 5) return;
-  var reinText = reinigeFuerTts(text);
-  if (reinText.length < 5) return;
-  fetch("/api/tts", {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({text: reinText, maennlich: true})
-  }).then(function(r){ return r.blob(); }).then(function(blob) {
-    if (blob.size < 100) return;
+function ttsSplitChunks(text, maxLen) {
+  var sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+  var chunks = [];
+  var current = '';
+  for (var i = 0; i < sentences.length; i++) {
+    var s = sentences[i];
+    if (s.length > maxLen) {
+      if (current) { chunks.push(current.trim()); current = ''; }
+      var words = s.split(/\\s+/);
+      var wcurrent = '';
+      for (var j = 0; j < words.length; j++) {
+        var w = words[j];
+        if ((wcurrent + ' ' + w).length > maxLen && wcurrent) {
+          chunks.push(wcurrent.trim());
+          wcurrent = w;
+        } else {
+          wcurrent = (wcurrent + ' ' + w).trim();
+        }
+      }
+      if (wcurrent) chunks.push(wcurrent.trim());
+    } else if ((current + s).length > maxLen && current) {
+      chunks.push(current.trim());
+      current = s;
+    } else {
+      current += s;
+    }
+  }
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+
+function playTtsBlob(blob) {
+  return new Promise(function(resolve) {
     var url = URL.createObjectURL(blob);
     if (window._ttsAudio) {
       window._ttsAudio.pause();
       window._ttsAudio.src = '';
     }
     window._ttsAudio = new Audio(url);
-    window._ttsAudio.onended = function(){ URL.revokeObjectURL(url); window._ttsAudio = null; };
-    window._ttsAudio.onerror = function(){ window._ttsAudio = null; };
-    window._ttsAudio.play().catch(function(){ window._ttsAudio = null; });
-  }).catch(function(){});
+    window._ttsAudio.onended = function(){ URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); };
+    window._ttsAudio.onerror = function(){ URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); };
+    window._ttsAudio.play().catch(function(){ URL.revokeObjectURL(url); window._ttsAudio = null; resolve(); });
+  });
+}
+
+async function sprichText(text) {
+  if (!ttsAktiv || text.trim().length < 5) return;
+  var reinText = reinigeFuerTts(text);
+  if (reinText.length < 5) return;
+  var chunks = ttsSplitChunks(reinText, 400);
+  for (var i = 0; i < chunks.length; i++) {
+    var chunk = chunks[i];
+    if (!chunk.trim()) continue;
+    try {
+      var r = await fetch("/api/tts", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text: chunk, maennlich: true})
+      });
+      if (!r.ok) continue;
+      var blob = await r.blob();
+      if (blob.size < 100) continue;
+      await playTtsBlob(blob);
+    } catch(e) {}
+  }
 }
 
 // ── Bild-Upload ────────────────────────────────────────────────────────────────
