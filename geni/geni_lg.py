@@ -18,10 +18,12 @@ from langgraph.graph import StateGraph, END
 
 log = logging.getLogger("geni-lg")
 
-DB_URI = os.environ.get(
+# Eigenes geni-Schema — LangGraph-Tabellen landen in geni.* statt public.*
+_BASE_URI = os.environ.get(
     "FLEXTRAWURST_DB_URI",
     "postgresql://dak:!Windowsxp02336827359645852@localhost:5432/flextrawurst",
 )
+DB_URI = _BASE_URI + ("&" if "?" in _BASE_URI else "?") + "options=-csearch_path%3Dgeni"
 OLLAMA = "http://localhost:11434"
 MODEL = "gemma4:e2b-it-q4_K_M"
 MAX_VERLAUF = 20
