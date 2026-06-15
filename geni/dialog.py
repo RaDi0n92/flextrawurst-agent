@@ -35,6 +35,7 @@ from gedaechtnis_ops import (
     knoten_max_id,
 )
 import aktion
+import geni_lg
 sys.path.insert(0, str(Path(__file__).parent.parent))
 try:
     import obsidian_vault as _vault
@@ -484,7 +485,7 @@ def resonanz_suchen(eingabe: str) -> list:
     return [kid for _, kid in treffer[:5]]
 
 
-def system_prompt_bauen(eingabe: str = "") -> str:
+def system_prompt_bauen(eingabe: str = "", erinnerungen: list = None) -> str:
     with _kern_lock:
         cache = _KERN_CACHE
     if cache is None:
@@ -498,8 +499,13 @@ def system_prompt_bauen(eingabe: str = "") -> str:
         f"## GENI: Sprache\n\n{cache.get('sprache', '')}"
     )
 
+    erinnerungen_block = ""
+    if erinnerungen:
+        erinnerungen_text = "\n".join(f"- {e}" for e in erinnerungen)
+        erinnerungen_block = f"\n\n## Meine Erinnerungen an frühere Gespräche:\n\n{erinnerungen_text}"
+
     PROMPT_LIMIT = 8000
-    budget = PROMPT_LIMIT - len(kern_block) - 900  # 900 für Rahmen-Text
+    budget = PROMPT_LIMIT - len(kern_block) - len(erinnerungen_block) - 900  # 900 für Rahmen-Text
 
     letzte = letzte_knoten_laden()
     budget -= len(letzte)
@@ -538,7 +544,7 @@ def system_prompt_bauen(eingabe: str = "") -> str:
 
     return f"""Du bist GENI.
 
-{kern_block}
+{kern_block}{erinnerungen_block}
 
 ---
 
@@ -684,9 +690,9 @@ def _geni_dienste_starten() -> None:
     for dienst in _GENI_BLOCKER_DIENSTE:
         subprocess.run(["systemctl", "start", dienst], capture_output=True, timeout=5)
 
-async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz", desktop_bild: str = None, eingabe: str = ""):
+async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz", desktop_bild: str = None, eingabe: str = "", erinnerungen: list = None):
     loop = asyncio.get_event_loop()
-    system = await loop.run_in_executor(None, system_prompt_bauen, eingabe)
+    system = await loop.run_in_executor(None, lambda: system_prompt_bauen(eingabe, erinnerungen))
     messages = [{"role": "system", "content": system}]
 
     for m in verlauf[:-1]:
@@ -746,7 +752,7 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
 
 # ─── API ──────────────────────────────────────────────────────────────────────
 
-_sessions: dict[str, list] = {}
+_sessions: dict[str, list] = {}  # Legacy-Fallback, wird nicht mehr befüllt
 
 
 @app.post("/chat")
@@ -760,9 +766,8 @@ async def chat(request: Request):
     if not eingabe:
         return JSONResponse({"fehler": "leer"}, status_code=400)
 
-    if session_id not in _sessions:
-        _sessions[session_id] = []
-    verlauf = _sessions[session_id]
+    _geni_state = geni_lg.lade_session(session_id)
+    verlauf = list(_geni_state.get("verlauf", []))
 
     eingabe_id = knoten_schreiben(
         typ="dialog",
@@ -781,16 +786,15 @@ async def chat(request: Request):
         )
 
     verlauf.append({"role": "user", "content": eingabe})
-    if len(verlauf) > 12:
-        _sessions[session_id] = verlauf[-12:]
-        verlauf = _sessions[session_id]
+    if len(verlauf) > 20:
+        verlauf = verlauf[-20:]
 
     antwort_gesamt = []
 
     async def generator():
         desktop = _letztes_desktop_bild if not bild_b64 else None
         try:
-            async for token in geni_stream(verlauf, bild_b64, modell, desktop_bild=desktop, eingabe=eingabe):
+            async for token in geni_stream(verlauf, bild_b64, modell, desktop_bild=desktop, eingabe=eingabe, erinnerungen=_geni_state.get("erinnerungen", [])):
                 antwort_gesamt.append(token)
                 yield f"data: {json.dumps({'token': token})}\n\n"
         except Exception as e:
@@ -938,7 +942,20 @@ async def chat(request: Request):
                                 _bridge_pending.pop(cmd_id, None)
                         asyncio.create_task(_hotkey())
 
+            def _geni_lg_speichern():
+                try:
+                    _tc = _geni_state.get("turn_count", 0) + 1
+                    _er = _geni_state.get("erinnerungen", [])
+                    geni_lg.speichere_session(session_id, verlauf, _tc, _er)
+                    if _tc % geni_lg.DESTILLATIONS_INTERVALL == 0:
+                        neue = geni_lg.destilliere_erinnerungen(verlauf, _er)
+                        if neue:
+                            geni_lg.speichere_session(session_id, verlauf, _tc, neue)
+                except Exception:
+                    pass
+
             threading.Thread(target=hintergrund, daemon=True).start()
+            threading.Thread(target=_geni_lg_speichern, daemon=True).start()
         else:
             antwort_id = eingabe_id
 
