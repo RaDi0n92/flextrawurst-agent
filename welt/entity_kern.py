@@ -34,8 +34,8 @@ SYSTEM_PROMPT = (
     "Du sprichst immer direkt in der Ich-Form aus deiner eigenen Perspektive. "
     "Antworte ausschließlich im vorgegebenen Format: GEDANKE, ENTSCHEIDUNG, BEGRÜNDUNG, INHALT."
 )
-TICK_INTERVAL_SEC = 300   # 5 Minuten zwischen Ticks pro Entität
-LOOP_SLEEP_SEC    = 30    # Pause zwischen Durchläufen
+TICK_INTERVAL_SEC = 60    # 1 Minute zwischen Ticks pro Entität
+LOOP_SLEEP_SEC    = 10    # Pause zwischen Durchläufen
 
 AKTIONEN = [
     "schlafen_beginnen",
@@ -199,6 +199,15 @@ def build_kontext(entity_id: str) -> dict:
             except Exception:
                 system_flags = {}
 
+        lg_erinnerungen = []
+        if profile:
+            raw = profile.get("lg_erinnerungen")
+            if raw:
+                try:
+                    lg_erinnerungen = list(raw) if isinstance(raw, list) else []
+                except Exception:
+                    pass
+
         return {
             "slot": dict(slot) if slot else {},
             "state": dict(state) if state else {},
@@ -218,6 +227,7 @@ def build_kontext(entity_id: str) -> dict:
             "kandidaten_uuids": set(kandidaten_gruppen.keys()),
             "letzter_chat": [dict(c) for c in letzter_chat],
             "system_flags": system_flags,
+            "lg_erinnerungen": lg_erinnerungen,
         }
     finally:
         conn.close()
@@ -296,6 +306,9 @@ def build_prompt(ctx: dict) -> str:
         ts = str(c.get("created_at", ""))[:16]
         chat_text += f"[{ts}] {sprecher}: {(c.get('inhalt') or '')[:250]}\n"
 
+    lg_erinnerungen = ctx.get("lg_erinnerungen", [])
+    lg_text = "\n".join(f"- {e}" for e in lg_erinnerungen) if lg_erinnerungen else ""
+
     flags = ctx.get("system_flags", {})
     flarum_frozen = flags.get("flarum_eingefroren", "false") == "true"
     system_status_line = "WICHTIG: Flarum ist derzeit eingefroren — du kannst dort nicht posten." if flarum_frozen else ""
@@ -333,6 +346,9 @@ Schattenkommentare auf deine Posts (Menschen die dich still angesprochen haben):
 
 Letzte direkte Gespräche mit Daniel (aus dem Chat-Interface):
 {chat_text or '— keine kürzlichen Direktgespräche —'}
+
+Was du dir aus vergangenen Reflexionen gemerkt hast (LangGraph-Gedächtnis):
+{lg_text or '— noch keine akkumulierten Erinnerungen —'}
 
 === LOKALER WELTKONTEXT — Spurenkontext ===
 (Post-IDs aus diesem Abschnitt kannst du in RELATION_1/2/3 verwenden wenn du gedanke_posten wählst)

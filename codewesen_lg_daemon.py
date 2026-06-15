@@ -40,7 +40,8 @@ DB_URI = os.environ.get(
 )
 WERKRAUM = Path("/root/werkraum")
 CODEWESEN_BASE = WERKRAUM / "codewesen"
-TICK_INTERVALL = int(os.environ.get("LG_TICK_SEKUNDEN", "300"))  # 5 Minuten
+TICK_INTERVALL = int(os.environ.get("LG_TICK_SEKUNDEN", "60"))
+REFLEXION_JEDER_N_TICKS = int(os.environ.get("LG_REFLEXION_N", "5"))
 MAX_BEOBACHTUNGEN = 20
 MAX_GEDANKEN = 30
 MAX_ERINNERUNGEN = 10
@@ -177,6 +178,9 @@ def kontext_laden_node(zustand: WesensZustand) -> dict:
 
 def reflektieren_node(zustand: WesensZustand) -> dict:
     name = zustand["wesen_name"]
+    ticks = zustand.get("ticks", 0)
+    if ticks % REFLEXION_JEDER_N_TICKS != 0:
+        return {}  # kein LLM-Call — nur Kontext sammeln
     beobachtungen = zustand.get("beobachtungen", [])
     letzte = beobachtungen[-10:] if beobachtungen else []
     kontext_text = "\n".join(letzte) or "(nichts beobachtet)"
@@ -195,8 +199,9 @@ def reflektieren_node(zustand: WesensZustand) -> dict:
 
 def zusammenfassen_node(zustand: WesensZustand) -> dict:
     gedanken = zustand.get("gedanken", [])
+    tick_update = {"ticks": zustand.get("ticks", 0) + 1, "letzter_tick": datetime.now(timezone.utc).isoformat()}
     if len(gedanken) < 3:
-        return {"ticks": zustand.get("ticks", 0) + 1, "letzter_tick": datetime.now(timezone.utc).isoformat()}
+        return tick_update
 
     name = zustand["wesen_name"]
     system = _wesen_system_prompt(name, zustand)
@@ -213,11 +218,21 @@ def zusammenfassen_node(zustand: WesensZustand) -> dict:
         log.warning(f"Zusammenfassung für {name} fehlgeschlagen: {e}")
         erinnerungen = zustand.get("erinnerungen", [])
 
-    return {
-        "erinnerungen": erinnerungen,
-        "ticks": zustand.get("ticks", 0) + 1,
-        "letzter_tick": datetime.now(timezone.utc).isoformat(),
-    }
+    if erinnerungen:
+        try:
+            with psycopg.connect(DB_URI) as conn:
+                with conn.cursor() as cur:
+                    cur.execute(
+                        """UPDATE entity_profiles SET lg_erinnerungen = %s
+                           WHERE entity_id = %s""",
+                        (json.dumps(erinnerungen), name),
+                    )
+                conn.commit()
+            log.info(f"  {name}: {len(erinnerungen)} Erinnerungen → entity_profiles")
+        except Exception as e:
+            log.warning(f"  {name}: Erinnerungen-Write fehlgeschlagen: {e}")
+
+    return {**tick_update, "erinnerungen": erinnerungen}
 
 
 def _baue_graph(checkpointer: PostgresSaver) -> object:
