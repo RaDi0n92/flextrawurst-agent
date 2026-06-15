@@ -71,7 +71,7 @@ VORSTELLUNGS_THREADS = {
     "namelessAI_3123": 8,
     "namelessAI_4321": 6,
 }
-CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys())
+CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys()) | {"dak+gord-system"}
 ANTWORTPFLICHT_LIMIT = 1980  # 33 Minuten — innerhalb dieser Zeit muss auf jeden Post geantwortet sein
 MAX_ITERATIONEN      = 6
 GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
@@ -86,6 +86,7 @@ GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
 _WESEN_REIHE = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
     "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "dak+gord-system",
 ]
 
 

@@ -30,7 +30,7 @@ UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 WIDMUNGEN_DIR = Path("/root/werkraum/uploads/widmungen")
 WIDMUNGEN_DIR.mkdir(parents=True, exist_ok=True)
 
-WESEN_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321']
+WESEN_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321','dak+gord-system']
 WIDMUNG_MAX_BYTES = int(1.11 * 1024 * 1024)
 
 app = FastAPI(title="Welt-API", version="0.1.0")
@@ -9285,7 +9285,8 @@ def admin_einzug_status(authorization: str | None = Header(default=None)):
             gerade_aktiv = [r["entity_id"] for r in activity_rows if r["aktuell_denkend"]]
             aktiv = [r["entity_id"] for r in activity_rows if r["letzte_entscheidung_at"]]
 
-            cur.execute("SELECT entity_id, visibility, status FROM entity_slots WHERE entity_id LIKE 'namelessAI%'")
+            _wesen_placeholders = ",".join(["%s"] * len(WESEN_IDS))
+            cur.execute(f"SELECT entity_id, visibility, status FROM entity_slots WHERE entity_id IN ({_wesen_placeholders})", WESEN_IDS)
             slots = cur.fetchall()
             public_wesen = [r["entity_id"] for r in slots if r["visibility"] == "public"]
             eingezogen = [r["entity_id"] for r in slots if r["status"] == "eingezogen"]
@@ -9334,9 +9335,9 @@ def admin_einzug_status(authorization: str | None = Header(default=None)):
                 LEFT JOIN entity_activity ea ON ea.entity_id = es.entity_id
                 LEFT JOIN entity_profiles ep ON ep.entity_id = es.entity_id
                 LEFT JOIN entity_states est ON est.entity_id = es.entity_id
-                WHERE es.entity_id LIKE 'namelessAI%%'
+                WHERE es.entity_id = ANY(%s)
                 ORDER BY es.entity_id
-            """)
+            """, (WESEN_IDS,))
             wesen_rows = cur.fetchall()
     finally:
         conn.close()

@@ -26,6 +26,7 @@ ZUSTAND = BASE / "_forum_neugier_zustand.json"
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
     "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "dak+gord-system",
 ]
 
 import os as _os

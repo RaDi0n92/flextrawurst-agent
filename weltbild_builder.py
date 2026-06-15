@@ -52,6 +52,7 @@ log = logging.getLogger("weltbild")
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
     "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "dak+gord-system",
 ]
 
 CODEWESEN_USERNAMES = set(WESEN)
@@ -127,8 +128,8 @@ def baue_forum_kompakt() -> str:
             "letzter_autor": letzter_autor,
             "erster":       erster,
             "letzter":      letzter,
-            "ist_codewesen": fm.get("autor", "").startswith("namelessAI"),
-            "letzter_ist_cw": letzter_autor.startswith("namelessAI"),
+            "ist_codewesen": fm.get("autor", "") in CODEWESEN_USERNAMES or fm.get("autor", "").startswith("namelessAI"),
+            "letzter_ist_cw": letzter_autor in CODEWESEN_USERNAMES or letzter_autor.startswith("namelessAI"),
         })
 
     # Sortieren: neueste zuerst

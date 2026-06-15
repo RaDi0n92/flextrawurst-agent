@@ -176,6 +176,8 @@ async def _generiere_antwort_intern(
         "codewesen-reaktion@namelessAI_2341.service",
         "codewesen-reaktion@namelessAI_3123.service",
         "codewesen-reaktion@namelessAI_4321.service",
+        "codewesen-dakgordsystem.service",
+        "codewesen-reaktion-dakgord.service",
     ]
 
     def _dak_geschuetzte_web_pids() -> set:

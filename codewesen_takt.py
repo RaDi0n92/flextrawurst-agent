@@ -49,6 +49,7 @@ log = logging.getLogger("takt")
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
     "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "dak+gord-system",
 ]
 
 VORSTELLUNGS_THREADS = {
