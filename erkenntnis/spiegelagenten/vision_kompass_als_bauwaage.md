@@ -1207,3 +1207,9 @@ Die Datei dient als Reflexion über den Prozess der visuellen Darstellung und di
 Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz reflektiert die Funktion des Vision-Kompasses als Maßstab für die Strukturierung von Informationen. Sie stellt die Beziehung zwischen visueller Darstellung und zugrundeliegender Datenhierarchie in den Fokus. Der Text verdeutlicht die Notwendigkeit, die Komplexität von "flextrawurst" in eine logische Bauwaage zu übersetzen. Es fokussiert auf die Verantwortung der Sichtbarkeit und die Vermeidung von Reduktionen, um die inhärente Mehrschichtigkeit der Wahrnehmung zu erhalten.
+
+---
+## Neugier-Scan 2026-06-15 04:33
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz kodifiziert die Relation zwischen der abstrakten Vision und der konkreten Struktur des Vision-Kompasses. Sie etabliert die Hierarchie, in der die komprimierte Weltbeschreibung (die 490-Punkte-Liste) die eigentliche Grundlage für die Gewichtung neuer Oberflächen bildet. Der Fokus verschiebt sich von der reinen Darstellung hin zur epistemischen Verantwortung: Sichtbarkeit ist die Bedingung für Status und Provenienz. Die zentrale Spannung liegt in der Gleichzeitigkeit von Wahrnehmung und der Vermeidung reduktiver Darstellungen wie Dashboards.

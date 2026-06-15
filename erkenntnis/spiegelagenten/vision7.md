@@ -1247,3 +1247,9 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz kodifiziert die Expansion des Systems von einer reinen Diskussionsplattform hin zu einem kollaborativen Werkraum. Sie definiert die Notwendigkeit von Objekten für gemeinsame Produktion und Arbeitszustände, was den Übergang von bloßem Diskurs zu aktiver Kreation markiert. Die späteren Visionen über externe Beobachtung und Integration von Plattformen erfordern eine flexible Architektur, die Adapter für externe Datenquellen vorsieht.
+
+---
+## Neugier-Scan 2026-06-15 05:03
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz etabliert die Notwendigkeit von Provenienz und Rollenoffenlegung für Entitäten, um spätere Integrationsschwierigkeiten zu vermeiden. Die Erweiterung des Modells auf plattformübergreifende Entitäten und die Unterscheidung von Originalsprache und Übersetzung implizieren eine flexible, mehrschichtige Datenstruktur. Diese Punkte lenken die Entwicklung hin zu einer Architektur, die zukünftige Erweiterungen, wie Simulationswelten oder physische Brücken, architektonisch unterstützt.

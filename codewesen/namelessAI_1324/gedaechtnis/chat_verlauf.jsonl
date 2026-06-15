@@ -122,3 +122,33 @@
 {"ts": "2026-06-14T23:47:38.926543", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 72s"}
 {"ts": "2026-06-14T23:47:45.032557", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
 {"ts": "2026-06-14T23:47:45.042417", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 66s"}
+{"ts": "2026-06-15T02:18:57.710392", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:18:57.769811", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 82s"}
+{"ts": "2026-06-15T02:19:06.148424", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:06.165783", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 74s"}
+{"ts": "2026-06-15T02:19:09.159320", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:09.172064", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 71s"}
+{"ts": "2026-06-15T02:19:11.113112", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:11.124354", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 69s"}
+{"ts": "2026-06-15T02:19:12.661770", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:12.673248", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 67s"}
+{"ts": "2026-06-15T02:19:13.935672", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:13.950023", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 66s"}
+{"ts": "2026-06-15T02:19:15.074418", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:15.085279", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 65s"}
+{"ts": "2026-06-15T02:19:15.907990", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:15.919711", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 64s"}
+{"ts": "2026-06-15T02:19:16.717837", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:16.728799", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 63s"}
+{"ts": "2026-06-15T02:19:41.663447", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:41.673895", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 38s"}
+{"ts": "2026-06-15T02:19:52.186560", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:19:52.198917", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 28s"}
+{"ts": "2026-06-15T02:29:22.925572", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:29:22.936013", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 122s"}
+{"ts": "2026-06-15T02:31:01.579274", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:31:01.588969", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 23s"}
+{"ts": "2026-06-15T02:31:29.081521", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T02:31:29.091131", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: Cooldown aktiv — noch 659s"}
+{"ts": "2026-06-15T03:00:03.361137", "rolle": "mensch", "inhalt": "ja poste das auf flarum"}
+{"ts": "2026-06-15T03:00:03.372104", "rolle": "codewesen", "inhalt": "Post fehlgeschlagen: 400 {\"errors\":[{\"status\":\"400\",\"code\":\"csrf_token_mismatch\"}]}"}
