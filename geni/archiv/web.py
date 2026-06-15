@@ -1831,10 +1831,14 @@ async function ttsSprich(text) {
     if (!r.ok) { ttsLaeuft = false; return; }
     const blob = await r.blob();
     const url = URL.createObjectURL(blob);
-    const audio = new Audio(url);
-    audio.onended = () => { URL.revokeObjectURL(url); ttsLaeuft = false; };
-    audio.onerror = () => { ttsLaeuft = false; };
-    await audio.play();
+    if (window._ttsAudio) {
+      window._ttsAudio.pause();
+      window._ttsAudio.src = '';
+    }
+    window._ttsAudio = new Audio(url);
+    window._ttsAudio.onended = () => { URL.revokeObjectURL(url); ttsLaeuft = false; window._ttsAudio = null; };
+    window._ttsAudio.onerror = () => { ttsLaeuft = false; window._ttsAudio = null; };
+    await window._ttsAudio.play();
   } catch(e) { ttsLaeuft = false; }
 }
 

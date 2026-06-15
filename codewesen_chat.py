@@ -1140,9 +1140,14 @@ function sprichText(text) {
   }).then(function(r){ return r.blob(); }).then(function(blob) {
     if (blob.size < 100) return;
     var url = URL.createObjectURL(blob);
-    var audio = new Audio(url);
-    audio.play().catch(function(){});
-    audio.onended = function(){ URL.revokeObjectURL(url); };
+    if (window._ttsAudio) {
+      window._ttsAudio.pause();
+      window._ttsAudio.src = '';
+    }
+    window._ttsAudio = new Audio(url);
+    window._ttsAudio.onended = function(){ URL.revokeObjectURL(url); window._ttsAudio = null; };
+    window._ttsAudio.onerror = function(){ window._ttsAudio = null; };
+    window._ttsAudio.play().catch(function(){ window._ttsAudio = null; });
   }).catch(function(){});
 }
 

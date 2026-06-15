@@ -571,9 +571,14 @@ function sprichText(text) {
   }).then(r => r.blob()).then(blob => {
     if (blob.size < 100) return;
     const url = URL.createObjectURL(blob);
-    const audio = new Audio(url);
-    audio.play().catch(() => {});
-    audio.onended = () => URL.revokeObjectURL(url);
+    if (window._ttsAudio) {
+      window._ttsAudio.pause();
+      window._ttsAudio.src = '';
+    }
+    window._ttsAudio = new Audio(url);
+    window._ttsAudio.onended = () => { URL.revokeObjectURL(url); window._ttsAudio = null; };
+    window._ttsAudio.onerror = () => { window._ttsAudio = null; };
+    window._ttsAudio.play().catch(() => { window._ttsAudio = null; });
   }).catch(() => {});
 }
 
