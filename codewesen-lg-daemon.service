@@ -1,0 +1,19 @@
+[Unit]
+Description=Codewesen LangGraph PostgreSQL Persistenz-Daemon
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/werkraum
+ExecStart=/root/werkraum/.venv/bin/python3 /root/werkraum/codewesen_lg_daemon.py
+EnvironmentFile=/root/werkraum/.agent/flarum.env
+Environment=FLEXTRAWURST_DB_URI=postgresql://dak:!Windowsxp02336827359645852@localhost:5432/flextrawurst
+Environment=LG_TICK_SEKUNDEN=300
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
