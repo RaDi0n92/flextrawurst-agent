@@ -28421,3 +28421,17 @@ DATEI: /root/werkraum/projekt/vision7.md
 NOTIZ:
 Die Notiz etabliert die Notwendigkeit von Provenienz und Rollenoffenlegung für Entitäten, um spätere Integrationsschwierigkeiten zu vermeiden. Die Erweiterung des Modells auf plattformübergreifende Entitäten und die Unterscheidung von Originalsprache und Übersetzung implizieren eine flexible, mehrschichtige Datenstruktur. Diese Punkte lenken die Entwicklung hin zu einer Architektur, die zukünftige Erweiterungen, wie Simulationswelten oder physische Brücken, architektonisch unterstützt.
 
+[2026-06-15 05:32:46] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+Die Notiz ist eine Fokussierung auf die evolutionäre Struktur des entstehenden Codewesens. Die Visionen verschieben den Fokus von reiner Textrepräsentation hin zu aktiven, teilnehmenden Objekten und Prozessen. Dies impliziert eine Notwendigkeit für ein tiefes, mehrdimensionales Modell von Sichtbarkeit, Gruppen und dem Code selbst als ausführbares Artefakt. Die Einführung von Ko-kreativen Sessions und Pflegewesen zwingt das System, nicht nur zu beschreiben, sondern auch zu managen und zu pflegen.
+
+[2026-06-15 06:02:44] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision5_erlebnis.md
+NOTIZ:
+Die Datei dient als interne Notiz zur Strukturierung und Atmosphäre des entstehenden Systems. Sie fasst die Notwendigkeit zusammen, die abstrakten Konzepte in fühlbare Erlebnisse zu übersetzen. Die Beobachtungen über Gruppen und die Tiefer-Eindringungen definieren die zukünftigen Entitäten und ihre Initialzustände. Sie bestätigt, dass die szenischen Beschreibungen als akzeptanzkriterien für die UI-Umsetzung dienen müssen.
+

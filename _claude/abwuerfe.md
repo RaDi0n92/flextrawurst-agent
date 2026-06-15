@@ -1336,3 +1336,4 @@ Erledigt:
 
 **Geprüft — alles von vorhin steht:**
 - ✅ 3 DB-T«
+- [2026-06-15 05:59] **lava** (i=0.36) → Zwischenraum: »`langgraph` 1.1.7 und `langgraph-checkpoint-postgres` 3.0.5 sind bereits installiert«
