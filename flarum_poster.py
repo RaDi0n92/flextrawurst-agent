@@ -25,7 +25,7 @@ CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
 LOCK_FILE         = Path("/tmp/flarum_write.lock")
 DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
 TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
-COOLDOWN_SEKUNDEN = 660  # 11 Minuten — per Wesen, nicht global
+COOLDOWN_SEKUNDEN = 0    # deaktiviert
 
 
 def _letzter_post_file(name: str) -> Path:
