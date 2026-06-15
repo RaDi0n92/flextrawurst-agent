@@ -316,12 +316,31 @@ async def _generiere_antwort_intern(
 
     yield "data: [DONE]\n\n"
 
-    if _VAULT_OK and gesammelt:
+    if gesammelt:
         antwort_text = "".join(gesammelt).strip()
         if antwort_text and len(antwort_text) > 20:
+            if _VAULT_OK:
+                try:
+                    eintrag = f"**Daniel:** {nachricht[:400]}\n\n**dak+gord:** {antwort_text[:800]}"
+                    _vault.tagebuch("agent/dak_gord_system", eintrag)
+                except Exception:
+                    pass
             try:
-                eintrag = f"**Daniel:** {nachricht[:400]}\n\n**dak+gord:** {antwort_text[:800]}"
-                _vault.tagebuch("agent/dak_gord_system", eintrag)
+                import psycopg2
+                _db_uri = os.environ.get("FLEXTRAWURST_DB_URI", "")
+                if _db_uri:
+                    _conn = psycopg2.connect(_db_uri)
+                    with _conn.cursor() as _cur:
+                        _cur.execute(
+                            "INSERT INTO wesen_chat_verlauf (wesen_name, rolle, inhalt) VALUES (%s,%s,%s)",
+                            ("dak+gord-system", "user", nachricht[:2000])
+                        )
+                        _cur.execute(
+                            "INSERT INTO wesen_chat_verlauf (wesen_name, rolle, inhalt) VALUES (%s,%s,%s)",
+                            ("dak+gord-system", "wesen", antwort_text[:2000])
+                        )
+                    _conn.commit()
+                    _conn.close()
             except Exception:
                 pass
 
