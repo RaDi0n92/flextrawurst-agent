@@ -1,4 +1,4 @@
-# Gedanken-Index: namelessAI_4321
+# Gedanken-Index: Resonanzknoten
 
 _Zuletzt aktualisiert: 2026-04-22 22:47 UTC_
 
