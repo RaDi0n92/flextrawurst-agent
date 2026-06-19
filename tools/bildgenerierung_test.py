@@ -1059,19 +1059,7 @@ HTML_UI = r"""<!DOCTYPE html>
       <textarea id="prompt" placeholder="z.B. ein roter Apfel auf einem Holztisch, abendliches Licht..."></textarea>
     </div>
 
-    <div id="ponyHint" style="display:none; padding:12px 16px; background:#1a1200; border:1px solid #4a3800; border-radius:8px; font-size:12px; color:#c8a030; line-height:1.8;">
-      <strong style="font-size:13px;">Pony Diffusion — so funktioniert dieses Modell</strong><br><br>
-      Pony wurde auf Danbooru trainiert — einer riesigen Bild-Datenbank wo jedes Bild mit Tags bewertet ist.
-      <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_9</code> = bestes 1% der Bilder.
-      <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_4</code> = schlechtestes 10%.<br>
-      Das Modell hat gelernt: hohe Score = gutes Bild. Ohne diese Tags generiert es im Mittelmaß — mit ihnen zieht es das Beste raus.<br><br>
-      <strong>Prompt immer starten mit:</strong><br>
-      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">score_9, score_8_up, score_7_up</code><br><br>
-      <strong>Für explizite Inhalte zusätzlich:</strong><br>
-      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">explicit, nude, nsfw</code><br><br>
-      <strong>Negativer Prompt empfohlen:</strong><br>
-      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">score_6, score_5, score_4, low quality, bad anatomy, clothes</code>
-    </div>
+    <div id="modelHint" style="display:none; padding:12px 16px; border-radius:8px; font-size:12px; line-height:1.8;"></div>
 
     <div>
       <label for="negativePrompt">Negativer Prompt <span style="color:#555; font-size:10px; text-transform:none; letter-spacing:0">(was NICHT im Bild sein soll)</span></label>
@@ -1289,15 +1277,116 @@ function updateZeitDisplay() {
   document.getElementById('zeitDisplay').textContent = 'Geschätzte Zeit: ' + calcZeit(mKey, rKey);
 }
 
+const C = (t) => `<code style="background:#111;padding:2px 6px;border-radius:3px;color:#eee;font-size:11px;">${t}</code>`;
+const CB = (t) => `<code style="background:#111;padding:3px 9px;border-radius:3px;color:#eee;display:inline-block;margin:3px 0;">${t}</code>`;
+
+const MODEL_HINTS = {
+  sdxl_lightning: {
+    bg: '#0e0e1a', border: '#2a2a55', color: '#8888cc',
+    html: `<strong style="font-size:13px;">SDXL-Lightning — nur 4 Schritte, dafür anders</strong><br><br>
+Lightning ist ein destilliertes Modell: es wurde darauf trainiert in 4 Schritten das gleiche zu erreichen was normale Modelle in 20–30 brauchen.
+Das klingt toll — hat aber einen Haken: der CFG-Scale muss niedrig bleiben (hier 2.0). Höher drehen = schlechtere Qualität, nicht besser.<br><br>
+<strong>Prompt-Stil:</strong> kommagetrennte englische Tags, ähnlich wie Stable Diffusion 1.5.<br>
+${CB('a woman sitting in a park, golden hour, cinematic lighting, detailed, sharp')}<br><br>
+<strong>Gut für:</strong> schnelle Entwürfe, Stil-Tests, einfache Szenen.<br>
+<strong>Schwächer bei:</strong> sehr detaillierten Gesichtern, komplexer Komposition, Text im Bild.`
+  },
+  juggernaut_xl: {
+    bg: '#0f0d0d', border: '#3a2020', color: '#cc8888',
+    html: `<strong style="font-size:13px;">Juggernaut XL v9 — fotorealistisch, stark bei Menschen</strong><br><br>
+Juggernaut wurde auf einer kuratierten Sammlung hochwertiger Fotos trainiert — besonders stark bei Porträts, Haut, Licht und realistischen Texturen.
+Der CFG-Scale 7.0 ist bewusst höher als bei FLUX — das Modell braucht das um Details zu schärfen.<br><br>
+<strong>Prompt-Qualitäts-Booster (vorne rein):</strong><br>
+${CB('RAW photo, 8k uhd, dslr, sharp focus, high quality, film grain')}<br><br>
+<strong>Negativer Prompt hilft hier besonders:</strong><br>
+${CB('bad anatomy, blurry, low quality, ugly, deformed, watermark, extra limbs')}<br><br>
+<strong>Gut für:</strong> Menschen, Gesichter, Porträts, realistische Szenen.<br>
+<strong>Hinweis zur Zensur:</strong> kein Safety-Checker, aber das Modell wurde nicht explizit auf NSFW-Inhalte trainiert — Ergebnisse variieren.`
+  },
+  pony: {
+    bg: '#1a1200', border: '#4a3800', color: '#c8a030',
+    html: `<strong style="font-size:13px;">Pony Diffusion V6 XL — das einzige wirklich uncensored Modell hier</strong><br><br>
+Pony wurde auf Danbooru trainiert — einer riesigen Datenbank mit Anime- und Illustrations-Bildern, die alle mit Tags bewertet sind.
+${C('score_9')} = bestes 1% der Bilder. ${C('score_4')} = unterste 10%. Das Modell hat gelernt: hohe Score = gutes Bild.
+Ohne diese Tags generiert es im Mittelmaß. Mit ihnen zieht es das Beste aus seinem Training.<br><br>
+<strong>Prompt immer starten mit:</strong><br>
+${CB('score_9, score_8_up, score_7_up')}<br><br>
+<strong>Für explizite Inhalte zusätzlich:</strong><br>
+${CB('explicit, nude, nsfw')}<br><br>
+<strong>Negativer Prompt empfohlen:</strong><br>
+${CB('score_6, score_5, score_4, low quality, bad anatomy, clothes')}<br><br>
+<strong>Stil:</strong> eher Illustration/Anime als Foto. Für fotorealistisch → Juggernaut oder RealVisXL.`
+  },
+  realvis_xl: {
+    bg: '#0d0f0d', border: '#1e3020', color: '#78bb88',
+    html: `<strong style="font-size:13px;">RealVisXL V5 — realistisch, stark bei Texturen und Licht</strong><br><br>
+RealVisXL ist auf Fotorealismus spezialisiert — ähnlich wie Juggernaut, aber mit anderem Schwerpunkt.
+Besonders stark bei Materialien (Stoff, Haut, Metall), natürlichem Licht und Umgebungsdetails.
+Weniger auf Porträts ausgerichtet als Juggernaut, dafür besser bei Szenen und Objekten.<br><br>
+<strong>Prompt-Tipp:</strong><br>
+${CB('photorealistic, ultra detailed, natural lighting, sharp focus')}<br><br>
+<strong>Negativer Prompt:</strong><br>
+${CB('cartoon, anime, painting, illustration, low quality, blurry, noise')}<br><br>
+<strong>Gut für:</strong> Landschaften, Objekte, Räume, Nahaufnahmen mit Textur.<br>
+<strong>Hinweis zur Zensur:</strong> kein Safety-Checker, aber Training enthält keine NSFW-Daten — für explizite Inhalte → Pony Diffusion.`
+  },
+  flux_schnell: {
+    bg: '#0a0f14', border: '#1a3050', color: '#6aaacc',
+    html: `<strong style="font-size:13px;">FLUX.1-schnell — natürliche Sprache statt Tags</strong><br><br>
+FLUX versteht echte Sätze — keine kommagetrennte Tag-Listen nötig.
+Schreib einfach was du sehen willst, wie du es einem Menschen erklären würdest.<br><br>
+<strong>So promten:</strong><br>
+${CB('a woman sitting by a window at night, rain outside, soft lamp light, photorealistic')}<br><br>
+<strong>Statt:</strong><br>
+${CB('woman, window, night, rain, lamp, photo, realistic, detailed')} ← unnötig bei FLUX<br><br>
+<strong>Wichtig:</strong> Englisch funktioniert deutlich besser als Deutsch — FLUX wurde fast ausschließlich auf englischen Texten trainiert.<br><br>
+<strong>4 Steps reichen.</strong> Mehr Steps bei "schnell" bringt keinen Vorteil — das Modell ist dafür nicht ausgelegt.<br><br>
+<strong>Inhalte:</strong> kein Safety-Checker, aber das Training hat implizite Einschränkungen — explizite Inhalte entstehen selten. Für NSFW → Pony Diffusion.`
+  },
+  flux_dev: {
+    bg: '#0a0f14', border: '#1a3050', color: '#6aaacc',
+    html: `<strong style="font-size:13px;">FLUX.1-dev — bestes Qualitäts-Modell hier, aber langsamer</strong><br><br>
+FLUX.1-dev ist die vollwertige Version — 20 Steps statt 4, deutlich bessere Komposition, mehr Details, schärfere Ergebnisse.
+Gleiche Regeln wie FLUX.1-schnell: natürliche Sätze auf Englisch, keine Tag-Listen.<br><br>
+<strong>Prompt-Stil:</strong><br>
+${CB('a detailed portrait of an old fisherman, weathered face, harbor at dusk, cinematic, sharp')}<br><br>
+<strong>Wann dev statt schnell:</strong> immer wenn das Ergebnis wirklich gut sein muss — Portraits, komplexe Szenen, viele Details im Bild.<br><br>
+<strong>Inhalte:</strong> Gleiche Einschränkung wie schnell — explizite Inhalte entstehen kaum, auch ohne Safety-Checker.
+Das ist Training, kein Filter. Für NSFW → Pony Diffusion.`
+  },
+  flux_kontext: {
+    bg: '#0f0a14', border: '#301a50', color: '#aa88cc',
+    html: `<strong style="font-size:13px;">FLUX.1-Kontext — Bild bearbeiten, keine Neuerstellung</strong><br><br>
+Kontext ist ein anderes Modell als die anderen: es erstellt kein Bild aus dem Nichts.
+Es nimmt ein <strong>Referenzbild</strong> und verändert es anhand deines Prompts — die Grundstruktur bleibt, die Szene/Details ändern sich.<br><br>
+<strong>Ohne Referenzbild:</strong> läuft als normales FLUX txt2img — keine Identitätserkennung, kein Unterschied zu FLUX.1-dev.<br><br>
+<strong>Mit Referenzbild(ern):</strong> Mehrere Fotos werden zusammengeblended und dem Modell als Ausgangsbasis gegeben.
+Das Modell "liest" Pose, Lichtstimmung und grobe Strukturen — aber es erkennt keine Identität wie ein Mensch es täte.<br><br>
+<strong>Prompt beschreibt die Änderung, nicht das Bild:</strong><br>
+${CB('the person from the reference image in a dark forest at night, cinematic lighting')}<br>
+${CB('same pose, but change background to a snowy mountain, sunset')}<br><br>
+<strong>Gut für:</strong> Szenen tauschen, Licht ändern, Stil übertragen.<br>
+<strong>Nicht für:</strong> Gesichtsidentität präzise übernehmen (dafür bräuchte es PhotoMaker oder IP-Adapter — noch nicht integriert).`
+  },
+};
+
 function onModelChange() {
   const mKey = document.getElementById('modelSel').value;
   document.querySelectorAll('#modellTableBody tr').forEach(tr => {
     tr.classList.toggle('aktiv', tr.dataset.model === mKey);
   });
   updateZeitDisplay();
-  // Pony-Hinweis ein-/ausblenden
-  const ponyHint = document.getElementById('ponyHint');
-  if (ponyHint) ponyHint.style.display = (mKey === 'pony') ? 'block' : 'none';
+  const hintEl = document.getElementById('modelHint');
+  const hint = MODEL_HINTS[mKey];
+  if (hint) {
+    hintEl.style.display = 'block';
+    hintEl.style.background = hint.bg;
+    hintEl.style.border = '1px solid ' + hint.border;
+    hintEl.style.color = hint.color;
+    hintEl.innerHTML = hint.html;
+  } else {
+    hintEl.style.display = 'none';
+  }
 }
 
 function onResolutionChange() {
