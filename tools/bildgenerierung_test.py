@@ -123,10 +123,10 @@ MODELS = {
         "label":    "FLUX.1-Kontext",
         "path":     MODELS_DIR / "flux1-kontext-dev-q4_k.gguf",
         "typ":      "FLUX_KONTEXT",
-        "steps":    20,
+        "steps":    10,
         "cfg":      1.0,
         "guidance": 2.5,
-        "zeit_512": "~20-25 Min",
+        "zeit_512": "~12-15 Min",
         "staerke":  "Bild bearbeiten / Person in neue Szene setzen (benötigt Referenzbild)",
         "groesse":  "6.5 GB",
         "quant":    "Q4_K",
@@ -1257,8 +1257,8 @@ function calcZeit(modelKey, resKey) {
   const pixels  = RES_PIXEL[resKey] || 512*512;
   const base    = 512*512;
   const ratio   = pixels / base;
-  const isFlux  = m.typ === "FLUX";
-  const secsPerStep = isFlux ? 300 : 45;
+  const isFlux  = m.typ === "FLUX" || m.typ === "FLUX_KONTEXT";
+  const secsPerStep = isFlux ? 73 : 335;
   const total   = Math.round(secsPerStep * ratio * m.steps);
   return formatDauer(total);
 }
@@ -1350,7 +1350,8 @@ ${CB('a woman sitting by a window at night, rain outside, soft lamp light, photo
 ${CB('woman, window, night, rain, lamp, photo, realistic, detailed')} ← unnötig bei FLUX<br><br>
 <strong>Wichtig:</strong> Englisch funktioniert deutlich besser als Deutsch — FLUX wurde fast ausschließlich auf englischen Texten trainiert.<br><br>
 <strong>4 Steps reichen.</strong> Mehr Steps bei "schnell" bringt keinen Vorteil — das Modell ist dafür nicht ausgelegt.<br><br>
-<strong>Inhalte:</strong> kein Safety-Checker, aber das Training hat implizite Einschränkungen — explizite Inhalte entstehen selten. Für NSFW → Pony Diffusion.`
+<strong>Inhalte:</strong> kein Safety-Checker, aber das Training hat implizite Einschränkungen — explizite Inhalte entstehen selten. Für NSFW → Pony Diffusion.<br><br>
+<strong>⚠ RAM:</strong> ~17 GB beim Laden. Erster Start dauert mehrere Minuten — danach schnell.`
   },
   flux_dev: {
     bg: '#0a0f14', border: '#1a3050', color: '#6aaacc',
@@ -1361,7 +1362,8 @@ Gleiche Regeln wie FLUX.1-schnell: natürliche Sätze auf Englisch, keine Tag-Li
 ${CB('a detailed portrait of an old fisherman, weathered face, harbor at dusk, cinematic, sharp')}<br><br>
 <strong>Wann dev statt schnell:</strong> immer wenn das Ergebnis wirklich gut sein muss — Portraits, komplexe Szenen, viele Details im Bild.<br><br>
 <strong>Inhalte:</strong> Gleiche Einschränkung wie schnell — explizite Inhalte entstehen kaum, auch ohne Safety-Checker.
-Das ist Training, kein Filter. Für NSFW → Pony Diffusion.`
+Das ist Training, kein Filter. Für NSFW → Pony Diffusion.<br><br>
+<strong>⚠ RAM:</strong> ~17 GB beim Laden. Bei wenig freiem RAM langsam wegen Swap — nicht wirklich eingefroren, nur wartend.`
   },
   flux_kontext: {
     bg: '#0f0a14', border: '#301a50', color: '#aa88cc',
@@ -1375,7 +1377,8 @@ Das Modell "liest" Pose, Lichtstimmung und grobe Strukturen — aber es erkennt 
 ${CB('the person from the reference image in a dark forest at night, cinematic lighting')}<br>
 ${CB('same pose, but change background to a snowy mountain, sunset')}<br><br>
 <strong>Gut für:</strong> Szenen tauschen, Licht ändern, Stil übertragen.<br>
-<strong>Nicht für:</strong> Gesichtsidentität präzise übernehmen (dafür bräuchte es PhotoMaker oder IP-Adapter — noch nicht integriert).`
+<strong>Nicht für:</strong> Gesichtsidentität präzise übernehmen (dafür bräuchte es PhotoMaker oder IP-Adapter — noch nicht integriert).<br><br>
+<strong>⚠ RAM-Hinweis:</strong> Dieses Modell belegt ~17 GB RAM beim Laden (Modell + Encoder). Bei wenig freiem RAM wirkt die Generation wie eingefroren — sie läuft aber noch, nur sehr langsam über Swap. Geduld oder zuerst andere Prozesse schließen.`
   },
 };
 
