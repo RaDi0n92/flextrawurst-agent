@@ -347,6 +347,7 @@ def _estimate_secs(model_cfg: dict, w: int, h: int) -> int:
 JOBS: dict = {}
 JOB_QUEUE = queue.Queue()
 JOBS_LOCK = threading.Lock()
+CURRENT_PROC: dict = {}   # job_id → subprocess.Popen, nur während Lauf
 
 
 # ---------------------------------------------------------------------------
@@ -430,6 +431,7 @@ def worker():
                 stderr=subprocess.STDOUT,
                 text=True,
             )
+            CURRENT_PROC[job_id] = proc
 
             step_total     = MODELS[model_key]["steps"]
             step_done      = 0
@@ -437,6 +439,13 @@ def worker():
             step_times: list[float] = []
 
             for line in proc.stdout:
+                # Abbruch-Check: falls Job auf cancelled gesetzt wurde, Prozess killen
+                with JOBS_LOCK:
+                    cancelled = JOBS[job_id]["status"] == "cancelled"
+                if cancelled:
+                    proc.kill()
+                    break
+
                 line = line.strip()
 
                 # Echte Diffusions-Steps erkennen: Zeilen mit "s/it" oder "it/s"
@@ -479,7 +488,12 @@ def worker():
 
             proc.wait(timeout=14400)  # 4h max
 
-            if proc.returncode != 0:
+            with JOBS_LOCK:
+                already = JOBS[job_id]["status"]
+
+            if already == "cancelled":
+                pass  # bleibt cancelled
+            elif proc.returncode != 0:
                 with JOBS_LOCK:
                     JOBS[job_id]["status"] = "error"
                     JOBS[job_id]["error"]  = f"sd-cli exit code {proc.returncode}"
@@ -504,6 +518,7 @@ def worker():
                 JOBS[job_id]["status"] = "error"
                 JOBS[job_id]["error"]  = str(ex)
         finally:
+            CURRENT_PROC.pop(job_id, None)
             if init_img_path:
                 p = Path(init_img_path)
                 if p.exists() and str(p).startswith("/tmp/"):
@@ -944,6 +959,19 @@ HTML_UI = r"""<!DOCTYPE html>
 
   .progress-wrap.visible { display: flex; }
 
+  .btn-cancel {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid #555;
+    color: #aaa;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-cancel:hover { border-color: #e55; color: #e55; }
+
   .progress-bar-bg {
     width: 100%;
     height: 6px;
@@ -1228,6 +1256,7 @@ HTML_UI = r"""<!DOCTYPE html>
         <div class="progress-bar-fill" id="progressFill"></div>
       </div>
       <div class="progress-label" id="progressLabel">Starte...</div>
+      <button class="btn-cancel" id="btnCancel" onclick="cancelGeneration()">&#x2715; Abbrechen</button>
     </div>
 
     <div class="error-box" id="errorBox"></div>
@@ -1855,6 +1884,11 @@ function pollStatus() {
         document.getElementById('queueHint').classList.remove('visible');
         playDoneSound();
         showResult('/api/image/' + currentJobId);
+      } else if (data.status === 'cancelled') {
+        stopPolling();
+        showProgress(false);
+        setButton(false);
+        document.getElementById('queueHint').classList.remove('visible');
       } else if (data.status === 'error') {
         stopPolling();
         showProgress(false);
@@ -1868,6 +1902,19 @@ function pollStatus() {
 
 function stopPolling() {
   if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+}
+
+function cancelGeneration() {
+  if (!currentJobId) return;
+  document.getElementById('btnCancel').disabled = true;
+  fetch('/api/cancel/' + currentJobId, { method: 'POST' })
+    .then(() => {
+      stopPolling();
+      showProgress(false);
+      setButton(false);
+      document.getElementById('queueHint').classList.remove('visible');
+    })
+    .catch(() => {});
 }
 
 function formatEta(secs) {
@@ -2256,6 +2303,29 @@ def status(job_id):
         "error":        job["error"],
         "phase":        job.get("phase", "loading"),
     })
+
+
+@app.route("/api/cancel/<job_id>", methods=["POST"])
+def cancel(job_id):
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+    if not job:
+        return jsonify({"error": "Job nicht gefunden"}), 404
+    with JOBS_LOCK:
+        s = job["status"]
+    if s not in ("pending", "running"):
+        return jsonify({"ok": False, "reason": s}), 200
+    # Status sofort auf cancelled setzen — Worker liest das und killt den Prozess
+    with JOBS_LOCK:
+        JOBS[job_id]["status"] = "cancelled"
+    # Falls der Prozess bereits läuft: direkt killen
+    proc = CURRENT_PROC.get(job_id)
+    if proc:
+        try:
+            proc.kill()
+        except Exception:
+            pass
+    return jsonify({"ok": True}), 200
 
 
 @app.route("/api/image/<job_id>", methods=["GET"])
