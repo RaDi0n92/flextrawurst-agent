@@ -75,14 +75,13 @@ MODELS = {
         "label":    "Pony Diffusion V6 XL",
         "path":     MODELS_DIR / "pony_diffusion_v6_q5_0.gguf",
         "typ":      "SDXL_FULL",
-        "steps":    25,
+        "steps":    8,
         "cfg":      6.0,
-        "zeit_512": "~40-50 Min",
+        "zeit_512": "~45-50 Min",
         "staerke":  "NSFW-trainiert, Illustration, Anime — für explizite Inhalte",
         "groesse":  "2.9 GB",
         "quant":    "Q5_K",
         "zensur":   "✓ explizit uncensored",
-        "pony_hint": True,
     },
     "realvis_xl": {
         "label":    "RealVisXL V5",
@@ -1315,7 +1314,10 @@ ${CB('score_9, score_8_up, score_7_up')}<br><br>
 ${CB('explicit, nude, nsfw')}<br><br>
 <strong>Negativer Prompt empfohlen:</strong><br>
 ${CB('score_6, score_5, score_4, low quality, bad anatomy, clothes')}<br><br>
-<strong>Stil:</strong> eher Illustration/Anime als Foto. Für fotorealistisch → Juggernaut oder RealVisXL.`
+<strong>Stil:</strong> eher Illustration/Anime als Foto. Für fotorealistisch → Juggernaut oder RealVisXL.<br><br>
+<strong>⏱ Geschwindigkeit:</strong> SDXL-Modelle sind auf dieser CPU langsamer als FLUX — das liegt an der Architektur, nicht den Steps.
+Pony läuft mit 8 Steps (wie alle SDXL-Modelle hier). 128×128 dauert ~3 Min, 512×512 ~45 Min.
+Für schnelle Tests: kleine Auflösung wählen, Ergebnis prüfen, dann größer generieren.`
   },
   realvis_xl: {
     bg: '#0d0f0d', border: '#1e3020', color: '#78bb88',
