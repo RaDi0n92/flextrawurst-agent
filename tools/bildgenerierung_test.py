@@ -54,6 +54,7 @@ MODELS = {
     # clip_skip: --clip-skip N (nur Pony benötigt 2)
     "sdxl_lightning": {
         "label":     "SDXL-Lightning (4-Step)",
+        "short_name": "sdxl-lightning",
         "path":      MODELS_DIR / "sdxl_lightning_4step_q5_0.gguf",
         "typ":       "SDXL_FULL",
         "steps":     4,
@@ -69,6 +70,7 @@ MODELS = {
     },
     "juggernaut_xl": {
         "label":     "Juggernaut XL v9",
+        "short_name": "juggernaut-xl",
         "path":      MODELS_DIR / "juggernaut_xl_v9_q5_0.gguf",
         "typ":       "SDXL_FULL",
         "steps":     8,
@@ -84,6 +86,7 @@ MODELS = {
     },
     "pony": {
         "label":     "Pony Diffusion V6 XL",
+        "short_name": "pony",
         "path":      MODELS_DIR / "pony_diffusion_v6_q5_0.gguf",
         "typ":       "SDXL_FULL",
         "steps":     8,
@@ -100,6 +103,7 @@ MODELS = {
     },
     "realvis_xl": {
         "label":     "RealVisXL V5",
+        "short_name": "realvis-xl",
         "path":      MODELS_DIR / "realvisxl_v5_q5_0.gguf",
         "typ":       "SDXL_FULL",
         "steps":     8,
@@ -115,6 +119,7 @@ MODELS = {
     },
     "flux_schnell": {
         "label":     "FLUX.1-schnell",
+        "short_name": "flux-schnell",
         "path":      MODELS_DIR / "flux1-schnell-q4_k.gguf",
         "typ":       "FLUX",
         "steps":     4,
@@ -131,6 +136,7 @@ MODELS = {
     },
     "flux_dev": {
         "label":     "FLUX.1-dev",
+        "short_name": "flux-dev",
         "path":      MODELS_DIR / "flux1-dev-q4_k.gguf",
         "typ":       "FLUX",
         "steps":     15,
@@ -147,6 +153,7 @@ MODELS = {
     },
     "flux_kontext": {
         "label":     "FLUX.1-Kontext",
+        "short_name": "flux-kontext",
         "path":      MODELS_DIR / "flux1-kontext-dev-q4_k.gguf",
         "typ":       "FLUX_KONTEXT",
         "steps":     15,
@@ -462,6 +469,14 @@ def worker():
                     break
 
                 line = line.strip()
+
+                # Seed aus sd-cli Ausgabe parsen: "seed: 1234567890"
+                if line.startswith("seed:") or "- seed " in line:
+                    import re as _re
+                    m = _re.search(r'seed[:\s]+(\d+)', line)
+                    if m:
+                        with JOBS_LOCK:
+                            JOBS[job_id]["seed_used"] = int(m.group(1))
 
                 # Echte Diffusions-Steps erkennen: Zeilen mit "s/it" oder "it/s"
                 is_sampling_line = "s/it" in line or "it/s" in line
@@ -1653,6 +1668,14 @@ HTML_UI = r"""<!DOCTYPE html>
 
     <div class="error-box" id="errorBox"></div>
 
+    <div id="seedInfo" style="display:none; font-size:12px; color:#666; margin-bottom:6px;">
+      Seed: <span id="seedValue" style="color:#aaa; font-family:monospace"></span>
+      <button onclick="useSeed()" style="margin-left:8px; background:transparent; border:1px solid #333;
+              color:#888; padding:2px 8px; border-radius:4px; cursor:pointer; font-size:11px">
+        ↑ übernehmen
+      </button>
+    </div>
+
     <div class="result-wrap" id="resultWrap">
       <img class="result-img" id="resultImg" src="" alt="Generiertes Bild" onclick="openFull(this.src)">
       <a class="btn-download" id="btnDownload" href="#" download="bild.png">
@@ -2176,6 +2199,7 @@ function startGeneration() {
 
   hideError();
   hideResult();
+  document.getElementById('seedInfo').style.display = 'none';
   setProgress(0, 'Startet...');
   showProgress(true);
   setButton(true);
@@ -2277,6 +2301,7 @@ function pollStatus() {
         document.getElementById('queueHint').classList.remove('visible');
         playDoneSound();
         showResult('/api/image/' + currentJobId);
+        if (data.seed_used != null) showSeedInfo(data.seed_used);
       } else if (data.status === 'cancelled') {
         stopPolling();
         showProgress(false);
@@ -2311,6 +2336,16 @@ function addTag(tag, target) {
   el.value = cur ? cur + ', ' + tag : tag;
   el.style.borderColor = target === 'prompt' ? '#2a5c3f' : '#5c2a2a';
   setTimeout(() => el.style.borderColor = '', 600);
+}
+
+function showSeedInfo(seed) {
+  document.getElementById('seedValue').textContent = seed;
+  document.getElementById('seedInfo').style.display = 'block';
+}
+
+function useSeed() {
+  const seed = document.getElementById('seedValue').textContent;
+  if (seed) document.getElementById('seedInput').value = seed;
 }
 
 function cancelGeneration() {
@@ -2675,13 +2710,13 @@ def generate():
     estimated_secs = _estimate_secs(model_cfg, w, h)
 
     job_id      = str(uuid.uuid4())
+    import re
     if image_name:
-        import re
         safe = re.sub(r'[^\w\-]', '-', image_name, flags=re.UNICODE).strip('-')
         safe = re.sub(r'-+', '-', safe)[:60]
-        output_path = OUTPUT_DIR / f"{safe}_{job_id[:8]}.png"
     else:
-        output_path = OUTPUT_DIR / f"{job_id}.png"
+        safe = model_cfg.get("short_name", model_key)
+    output_path = OUTPUT_DIR / f"{safe}_{job_id[:8]}.png"
 
     with JOBS_LOCK:
         JOBS[job_id] = {
@@ -2695,6 +2730,7 @@ def generate():
             "img2img":        init_img_path is not None,
             "model_used":     model_key,
             "output_path":    str(output_path),
+            "seed_used":      None,
         }
 
     queued = not JOB_QUEUE.empty()
@@ -2717,6 +2753,7 @@ def status(job_id):
         "image_url":    job["image_url"],
         "error":        job["error"],
         "phase":        job.get("phase", "loading"),
+        "seed_used":    job.get("seed_used"),
     })
 
 
