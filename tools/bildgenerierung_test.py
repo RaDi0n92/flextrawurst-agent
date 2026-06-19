@@ -532,10 +532,23 @@ def worker():
                     JOBS[job_id]["status"] = "error"
                     JOBS[job_id]["error"]  = "Kein Ausgabe-PNG erzeugt"
             else:
+                # Datei mit Seed umbenennen
+                final_path = Path(output_path)
+                with JOBS_LOCK:
+                    seed_used = JOBS[job_id].get("seed_used")
+                if seed_used is not None:
+                    stem = final_path.stem  # z.B. "pony_abc12345"
+                    new_path = final_path.parent / f"{stem}_seed{seed_used}.png"
+                    try:
+                        final_path.rename(new_path)
+                        final_path = new_path
+                    except Exception:
+                        pass  # umbenennen fehlgeschlagen → Original behalten
                 with JOBS_LOCK:
                     JOBS[job_id]["status"]       = "done"
                     JOBS[job_id]["progress_pct"] = 100
                     JOBS[job_id]["eta_seconds"]  = 0
+                    JOBS[job_id]["output_path"]  = str(final_path)
                     JOBS[job_id]["image_url"]    = f"/api/image/{job_id}"
 
         except subprocess.TimeoutExpired:
