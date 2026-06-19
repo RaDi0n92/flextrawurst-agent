@@ -651,15 +651,16 @@ def _models_js_data():
     data = {}
     for key, cfg in MODELS.items():
         data[key] = {
-            "label":     cfg["label"],
-            "typ":       cfg["typ"].replace("_SPLIT","").replace("_FULL",""),
-            "steps":     cfg["steps"],
-            "steps_res": cfg.get("steps_res", []),
-            "zeit_512":  cfg["zeit_512"],
-            "staerke":   cfg["staerke"],
-            "groesse":   cfg["groesse"],
-            "zensur":    cfg.get("zensur", ""),
-            "broken":    cfg.get("broken", False) or _is_pending(cfg),
+            "label":      cfg["label"],
+            "short_name": cfg.get("short_name", key),
+            "typ":        cfg["typ"].replace("_SPLIT","").replace("_FULL",""),
+            "steps":      cfg["steps"],
+            "steps_res":  cfg.get("steps_res", []),
+            "zeit_512":   cfg["zeit_512"],
+            "staerke":    cfg["staerke"],
+            "groesse":    cfg["groesse"],
+            "zensur":     cfg.get("zensur", ""),
+            "broken":     cfg.get("broken", False) or _is_pending(cfg),
         }
     return json.dumps(data)
 
@@ -1890,6 +1891,9 @@ ${CB('same pose, but change background to a snowy mountain, sunset')}<br><br>
   },
 };
 
+// alle short_names der Modelle — zum Erkennen ob Feld noch "Model-Default" ist
+const ALL_SHORT_NAMES = Object.values(MODELLE).map(m => m.short_name);
+
 function onModelChange() {
   const mKey = document.getElementById('modelSel').value;
   document.querySelectorAll('#modellTableBody tr').forEach(tr => {
@@ -1906,6 +1910,12 @@ function onModelChange() {
     hintEl.innerHTML = hint.html;
   } else {
     hintEl.style.display = 'none';
+  }
+  // Dateiname: wenn leer oder noch ein reiner Modell-Name → neuen Modellnamen setzen
+  const nameEl = document.getElementById('imageName');
+  const cur = nameEl.value.trim();
+  if (cur === '' || ALL_SHORT_NAMES.includes(cur)) {
+    nameEl.value = MODELLE[mKey]?.short_name || mKey;
   }
 }
 
