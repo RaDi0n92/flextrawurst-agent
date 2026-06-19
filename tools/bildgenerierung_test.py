@@ -2232,6 +2232,7 @@ def generate():
             "estimated_secs": estimated_secs,
             "img2img":        init_img_path is not None,
             "model_used":     model_key,
+            "output_path":    str(output_path),
         }
 
     queued = not JOB_QUEUE.empty()
@@ -2266,7 +2267,7 @@ def image(job_id):
     if job["status"] != "done":
         return jsonify({"error": "Bild noch nicht fertig"}), 202
 
-    output_path = OUTPUT_DIR / f"{job_id}.png"
+    output_path = Path(job.get("output_path") or OUTPUT_DIR / f"{job_id}.png")
     if not output_path.exists():
         return jsonify({"error": "PNG nicht gefunden"}), 404
 
