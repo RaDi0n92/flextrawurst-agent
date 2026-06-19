@@ -1912,10 +1912,13 @@ function onModelChange() {
     hintEl.style.display = 'none';
   }
   // Dateiname: wenn leer oder noch ein reiner Modell-Name → neuen Modellnamen setzen
-  const nameEl = document.getElementById('imageName');
-  const cur = nameEl.value.trim();
-  if (cur === '' || ALL_SHORT_NAMES.includes(cur)) {
-    nameEl.value = MODELLE[mKey]?.short_name || mKey;
+  // "auto" überspringen — erst wenn ein echtes Modell gewählt ist
+  if (mKey !== 'auto' && MODELLE[mKey]) {
+    const nameEl = document.getElementById('imageName');
+    const cur = nameEl.value.trim();
+    if (cur === '' || cur === 'auto' || ALL_SHORT_NAMES.includes(cur)) {
+      nameEl.value = MODELLE[mKey].short_name;
+    }
   }
 }
 
