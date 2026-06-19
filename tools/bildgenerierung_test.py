@@ -972,6 +972,26 @@ HTML_UI = r"""<!DOCTYPE html>
   }
   .btn-cancel:hover { border-color: #e55; color: #e55; }
 
+  /* Tag-Helfer */
+  .tag-panel { margin-top: 10px; border: 1px solid #222; border-radius: 8px; overflow: hidden; }
+  .tag-panel-toggle {
+    width: 100%; background: #141414; border: none; color: #888; padding: 8px 14px;
+    text-align: left; cursor: pointer; font-size: 12px; display: flex; justify-content: space-between;
+  }
+  .tag-panel-toggle:hover { color: #ccc; }
+  .tag-panel-body { display: none; padding: 12px 14px; background: #0d0d0d; }
+  .tag-panel-body.open { display: block; }
+  .tag-cat { margin-bottom: 12px; }
+  .tag-cat-label { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .tag-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    padding: 3px 9px; border-radius: 20px; font-size: 11px; cursor: pointer;
+    border: 1px solid; transition: opacity 0.1s; white-space: nowrap; user-select: none;
+  }
+  .chip:hover { opacity: 0.75; }
+  .chip-p  { color: #7ec8a0; border-color: #2a5c3f; background: #0e2018; }
+  .chip-n  { color: #e07070; border-color: #5c2a2a; background: #200e0e; }
+
   .progress-bar-bg {
     width: 100%;
     height: 6px;
@@ -1137,6 +1157,182 @@ HTML_UI = r"""<!DOCTYPE html>
     <div>
       <label for="negativePrompt">Negativer Prompt <span style="color:#555; font-size:10px; text-transform:none; letter-spacing:0">(was NICHT im Bild sein soll)</span></label>
       <textarea id="negativePrompt" placeholder="z.B. blurry, distorted, ugly, deformed, watermark..." style="min-height:54px;"></textarea>
+    </div>
+
+    <div class="tag-panel">
+      <button class="tag-panel-toggle" onclick="toggleTagPanel(this)">
+        <span>&#128278; Tag-Helfer — Prompt-Bausteine</span><span id="tagPanelArrow">&#9660;</span>
+      </button>
+      <div class="tag-panel-body" id="tagPanelBody">
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10133; Qualität &amp; 4K-Täuschung → Prompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-p" onclick="addTag('8k uhd','prompt')">8k uhd</span>
+            <span class="chip chip-p" onclick="addTag('ultra detailed','prompt')">ultra detailed</span>
+            <span class="chip chip-p" onclick="addTag('photorealistic','prompt')">photorealistic</span>
+            <span class="chip chip-p" onclick="addTag('RAW photo','prompt')">RAW photo</span>
+            <span class="chip chip-p" onclick="addTag('sharp focus','prompt')">sharp focus</span>
+            <span class="chip chip-p" onclick="addTag('professional photography','prompt')">professional photography</span>
+            <span class="chip chip-p" onclick="addTag('highly detailed','prompt')">highly detailed</span>
+            <span class="chip chip-p" onclick="addTag('realistic skin texture','prompt')">realistic skin texture</span>
+            <span class="chip chip-p" onclick="addTag('studio lighting','prompt')">studio lighting</span>
+            <span class="chip chip-p" onclick="addTag('masterpiece','prompt')">masterpiece</span>
+            <span class="chip chip-p" onclick="addTag('best quality','prompt')">best quality</span>
+            <span class="chip chip-p" onclick="addTag('cinematic','prompt')">cinematic</span>
+          </div>
+        </div>
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10133; Ganzkörper &amp; Perspektive → Prompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-p" onclick="addTag('full body','prompt')">full body</span>
+            <span class="chip chip-p" onclick="addTag('full shot','prompt')">full shot</span>
+            <span class="chip chip-p" onclick="addTag('wide shot','prompt')">wide shot</span>
+            <span class="chip chip-p" onclick="addTag('long shot','prompt')">long shot</span>
+            <span class="chip chip-p" onclick="addTag('head to toe','prompt')">head to toe</span>
+            <span class="chip chip-p" onclick="addTag('from distance','prompt')">from distance</span>
+            <span class="chip chip-p" onclick="addTag('wide angle lens','prompt')">wide angle lens</span>
+            <span class="chip chip-p" onclick="addTag('establishing shot','prompt')">establishing shot</span>
+            <span class="chip chip-p" onclick="addTag('full figure','prompt')">full figure</span>
+            <span class="chip chip-p" onclick="addTag('zoomed out','prompt')">zoomed out</span>
+            <span class="chip chip-p" onclick="addTag('environmental shot','prompt')">environmental shot</span>
+            <span class="chip chip-p" onclick="addTag('low angle shot','prompt')">low angle shot</span>
+            <span class="chip chip-p" onclick="addTag('standing full body','prompt')">standing full body</span>
+            <span class="chip chip-p" onclick="addTag('lying down full body','prompt')">lying down full body</span>
+          </div>
+        </div>
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10133; Explizit — Körper → Prompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-p" onclick="addTag('nude','prompt')">nude</span>
+            <span class="chip chip-p" onclick="addTag('naked','prompt')">naked</span>
+            <span class="chip chip-p" onclick="addTag('nsfw','prompt')">nsfw</span>
+            <span class="chip chip-p" onclick="addTag('explicit','prompt')">explicit</span>
+            <span class="chip chip-p" onclick="addTag('bare skin','prompt')">bare skin</span>
+            <span class="chip chip-p" onclick="addTag('exposed','prompt')">exposed</span>
+            <span class="chip chip-p" onclick="addTag('areola','prompt')">areola</span>
+            <span class="chip chip-p" onclick="addTag('breasts','prompt')">breasts</span>
+            <span class="chip chip-p" onclick="addTag('nipples','prompt')">nipples</span>
+            <span class="chip chip-p" onclick="addTag('large breasts','prompt')">large breasts</span>
+            <span class="chip chip-p" onclick="addTag('pussy','prompt')">pussy</span>
+            <span class="chip chip-p" onclick="addTag('vagina','prompt')">vagina</span>
+            <span class="chip chip-p" onclick="addTag('labia','prompt')">labia</span>
+            <span class="chip chip-p" onclick="addTag('spread legs','prompt')">spread legs</span>
+            <span class="chip chip-p" onclick="addTag('spread pussy','prompt')">spread pussy</span>
+            <span class="chip chip-p" onclick="addTag('penis','prompt')">penis</span>
+            <span class="chip chip-p" onclick="addTag('cock','prompt')">cock</span>
+            <span class="chip chip-p" onclick="addTag('erect penis','prompt')">erect penis</span>
+            <span class="chip chip-p" onclick="addTag('genitals','prompt')">genitals</span>
+          </div>
+        </div>
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10133; Explizit — Handlung → Prompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-p" onclick="addTag('sex','prompt')">sex</span>
+            <span class="chip chip-p" onclick="addTag('penetration','prompt')">penetration</span>
+            <span class="chip chip-p" onclick="addTag('vaginal penetration','prompt')">vaginal penetration</span>
+            <span class="chip chip-p" onclick="addTag('anal penetration','prompt')">anal penetration</span>
+            <span class="chip chip-p" onclick="addTag('double penetration','prompt')">double penetration</span>
+            <span class="chip chip-p" onclick="addTag('oral sex','prompt')">oral sex</span>
+            <span class="chip chip-p" onclick="addTag('blowjob','prompt')">blowjob</span>
+            <span class="chip chip-p" onclick="addTag('deepthroat','prompt')">deepthroat</span>
+            <span class="chip chip-p" onclick="addTag('cunnilingus','prompt')">cunnilingus</span>
+            <span class="chip chip-p" onclick="addTag('fingering','prompt')">fingering</span>
+            <span class="chip chip-p" onclick="addTag('masturbation','prompt')">masturbation</span>
+            <span class="chip chip-p" onclick="addTag('squirting','prompt')">squirting</span>
+            <span class="chip chip-p" onclick="addTag('cumshot','prompt')">cumshot</span>
+            <span class="chip chip-p" onclick="addTag('creampie','prompt')">creampie</span>
+            <span class="chip chip-p" onclick="addTag('cum inside','prompt')">cum inside</span>
+            <span class="chip chip-p" onclick="addTag('cum on face','prompt')">cum on face</span>
+            <span class="chip chip-p" onclick="addTag('dildo','prompt')">dildo</span>
+            <span class="chip chip-p" onclick="addTag('sex toy','prompt')">sex toy</span>
+            <span class="chip chip-p" onclick="addTag('gangbang','prompt')">gangbang</span>
+            <span class="chip chip-p" onclick="addTag('group sex','prompt')">group sex</span>
+            <span class="chip chip-p" onclick="addTag('orgy','prompt')">orgy</span>
+            <span class="chip chip-p" onclick="addTag('doggy style','prompt')">doggy style</span>
+            <span class="chip chip-p" onclick="addTag('missionary','prompt')">missionary</span>
+            <span class="chip chip-p" onclick="addTag('cowgirl position','prompt')">cowgirl position</span>
+            <span class="chip chip-p" onclick="addTag('reverse cowgirl','prompt')">reverse cowgirl</span>
+            <span class="chip chip-p" onclick="addTag('rough sex','prompt')">rough sex</span>
+            <span class="chip chip-p" onclick="addTag('hardcore','prompt')">hardcore</span>
+            <span class="chip chip-p" onclick="addTag('BDSM','prompt')">BDSM</span>
+            <span class="chip chip-p" onclick="addTag('bondage','prompt')">bondage</span>
+            <span class="chip chip-p" onclick="addTag('choking','prompt')">choking</span>
+            <span class="chip chip-p" onclick="addTag('spanking','prompt')">spanking</span>
+            <span class="chip chip-p" onclick="addTag('dominance','prompt')">dominance</span>
+            <span class="chip chip-p" onclick="addTag('submission','prompt')">submission</span>
+            <span class="chip chip-p" onclick="addTag('fisting','prompt')">fisting</span>
+          </div>
+        </div>
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10134; Kein Zoom / keine Nahaufnahme → Negativprompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-n" onclick="addTag('bust shot','negativePrompt')">bust shot</span>
+            <span class="chip chip-n" onclick="addTag('close-up','negativePrompt')">close-up</span>
+            <span class="chip chip-n" onclick="addTag('closeup','negativePrompt')">closeup</span>
+            <span class="chip chip-n" onclick="addTag('cropped','negativePrompt')">cropped</span>
+            <span class="chip chip-n" onclick="addTag('extreme close-up','negativePrompt')">extreme close-up</span>
+            <span class="chip chip-n" onclick="addTag('face only','negativePrompt')">face only</span>
+            <span class="chip chip-n" onclick="addTag('face shot','negativePrompt')">face shot</span>
+            <span class="chip chip-n" onclick="addTag('half body','negativePrompt')">half body</span>
+            <span class="chip chip-n" onclick="addTag('head shot','negativePrompt')">head shot</span>
+            <span class="chip chip-n" onclick="addTag('macro','negativePrompt')">macro</span>
+            <span class="chip chip-n" onclick="addTag('portrait','negativePrompt')">portrait</span>
+            <span class="chip chip-n" onclick="addTag('tight frame','negativePrompt')">tight frame</span>
+            <span class="chip chip-n" onclick="addTag('zoomed in','negativePrompt')">zoomed in</span>
+          </div>
+        </div>
+
+        <div class="tag-cat">
+          <div class="tag-cat-label">&#10134; Keine Kleidung → Negativprompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-n" onclick="addTag('bikini','negativePrompt')">bikini</span>
+            <span class="chip chip-n" onclick="addTag('bra','negativePrompt')">bra</span>
+            <span class="chip chip-n" onclick="addTag('censored','negativePrompt')">censored</span>
+            <span class="chip chip-n" onclick="addTag('clothed','negativePrompt')">clothed</span>
+            <span class="chip chip-n" onclick="addTag('clothes','negativePrompt')">clothes</span>
+            <span class="chip chip-n" onclick="addTag('covered','negativePrompt')">covered</span>
+            <span class="chip chip-n" onclick="addTag('dress','negativePrompt')">dress</span>
+            <span class="chip chip-n" onclick="addTag('dressed','negativePrompt')">dressed</span>
+            <span class="chip chip-n" onclick="addTag('lingerie','negativePrompt')">lingerie</span>
+            <span class="chip chip-n" onclick="addTag('mosaic censorship','negativePrompt')">mosaic censorship</span>
+            <span class="chip chip-n" onclick="addTag('pants','negativePrompt')">pants</span>
+            <span class="chip chip-n" onclick="addTag('shirt','negativePrompt')">shirt</span>
+            <span class="chip chip-n" onclick="addTag('skirt','negativePrompt')">skirt</span>
+            <span class="chip chip-n" onclick="addTag('swimwear','negativePrompt')">swimwear</span>
+            <span class="chip chip-n" onclick="addTag('underwear','negativePrompt')">underwear</span>
+          </div>
+        </div>
+
+        <div class="tag-cat" style="margin-bottom:0">
+          <div class="tag-cat-label">&#10134; Keine Artefakte / schlechte Qualität → Negativprompt</div>
+          <div class="tag-chips">
+            <span class="chip chip-n" onclick="addTag('bad anatomy','negativePrompt')">bad anatomy</span>
+            <span class="chip chip-n" onclick="addTag('bad proportions','negativePrompt')">bad proportions</span>
+            <span class="chip chip-n" onclick="addTag('blurry','negativePrompt')">blurry</span>
+            <span class="chip chip-n" onclick="addTag('deformed','negativePrompt')">deformed</span>
+            <span class="chip chip-n" onclick="addTag('duplicate','negativePrompt')">duplicate</span>
+            <span class="chip chip-n" onclick="addTag('extra limbs','negativePrompt')">extra limbs</span>
+            <span class="chip chip-n" onclick="addTag('grainy','negativePrompt')">grainy</span>
+            <span class="chip chip-n" onclick="addTag('logo','negativePrompt')">logo</span>
+            <span class="chip chip-n" onclick="addTag('low quality','negativePrompt')">low quality</span>
+            <span class="chip chip-n" onclick="addTag('low resolution','negativePrompt')">low resolution</span>
+            <span class="chip chip-n" onclick="addTag('missing limbs','negativePrompt')">missing limbs</span>
+            <span class="chip chip-n" onclick="addTag('muted colors','negativePrompt')">muted colors</span>
+            <span class="chip chip-n" onclick="addTag('noisy','negativePrompt')">noisy</span>
+            <span class="chip chip-n" onclick="addTag('pixelated','negativePrompt')">pixelated</span>
+            <span class="chip chip-n" onclick="addTag('signature','negativePrompt')">signature</span>
+            <span class="chip chip-n" onclick="addTag('text','negativePrompt')">text</span>
+            <span class="chip chip-n" onclick="addTag('ugly','negativePrompt')">ugly</span>
+            <span class="chip chip-n" onclick="addTag('watermark','negativePrompt')">watermark</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="row-2">
@@ -1902,6 +2098,22 @@ function pollStatus() {
 
 function stopPolling() {
   if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+}
+
+function toggleTagPanel(btn) {
+  const body = document.getElementById('tagPanelBody');
+  const arrow = document.getElementById('tagPanelArrow');
+  body.classList.toggle('open');
+  arrow.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+function addTag(tag, target) {
+  const el = document.getElementById(target);
+  if (!el) return;
+  const cur = el.value.trim();
+  el.value = cur ? cur + ', ' + tag : tag;
+  el.style.borderColor = target === 'prompt' ? '#2a5c3f' : '#5c2a2a';
+  setTimeout(() => el.style.borderColor = '', 600);
 }
 
 function cancelGeneration() {
