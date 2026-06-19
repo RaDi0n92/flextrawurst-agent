@@ -48,109 +48,118 @@ FLUX_SHARED   = MODELS_DIR / "flux_shared"
 # ---------------------------------------------------------------------------
 MODELS = {
     # steps_res: [(max_dim, steps), ...] — max(w,h) wird mit den Schwellwerten verglichen
-    # sampler: sd.cpp --sampling-method Wert
-    # guidance: FLUX distilled-guidance-scale (nur dev + kontext)
+    # sampler:   sd.cpp --sampling-method
+    # scheduler: sd.cpp --scheduler (karras für SDXL, simple für FLUX)
+    # guidance:  FLUX distilled-guidance-scale (nur dev + kontext + schnell)
     # clip_skip: --clip-skip N (nur Pony benötigt 2)
     "sdxl_lightning": {
-        "label":    "SDXL-Lightning (4-Step)",
-        "path":     MODELS_DIR / "sdxl_lightning_4step_q5_0.gguf",
-        "typ":      "SDXL_FULL",
-        "steps":    4,
+        "label":     "SDXL-Lightning (4-Step)",
+        "path":      MODELS_DIR / "sdxl_lightning_4step_q5_0.gguf",
+        "typ":       "SDXL_FULL",
+        "steps":     4,
         "steps_res": [(512, 4), (1024, 4), (9999, 6)],
-        "cfg":      1.0,
-        "sampler":  "euler",
-        "zeit_512": "~20-25 Min",
-        "staerke":  "schnell, gute Qualität, vielseitig",
-        "groesse":  "2.8 GB",
-        "quant":    "Q5_0",
-        "zensur":   "◑ kein Filter",
+        "cfg":       1.5,   # Lightning: CFG eingebacken, 1.0–2.0 optimal
+        "sampler":   "euler",
+        "scheduler": "karras",
+        "zeit_512":  "~20-25 Min",
+        "staerke":   "schnell, gute Qualität, vielseitig",
+        "groesse":   "2.8 GB",
+        "quant":     "Q5_0",
+        "zensur":    "◑ kein Filter",
     },
     "juggernaut_xl": {
-        "label":    "Juggernaut XL v9",
-        "path":     MODELS_DIR / "juggernaut_xl_v9_q5_0.gguf",
-        "typ":      "SDXL_FULL",
-        "steps":    8,
+        "label":     "Juggernaut XL v9",
+        "path":      MODELS_DIR / "juggernaut_xl_v9_q5_0.gguf",
+        "typ":       "SDXL_FULL",
+        "steps":     8,
         "steps_res": [(256, 4), (512, 8), (768, 10), (1024, 12), (9999, 14)],
-        "cfg":      6.0,
-        "sampler":  "dpm++2m",
-        "zeit_512": "~45-50 Min",
-        "staerke":  "fotorealistisch, Portraits, Szenen",
-        "groesse":  "3.1 GB",
-        "quant":    "Q5_K",
-        "zensur":   "◑ kein Filter",
+        "cfg":       6.0,
+        "sampler":   "dpm++2m",
+        "scheduler": "karras",
+        "zeit_512":  "~45-50 Min",
+        "staerke":   "fotorealistisch, Portraits, Szenen",
+        "groesse":   "3.1 GB",
+        "quant":     "Q5_K",
+        "zensur":    "◑ kein Filter",
     },
     "pony": {
-        "label":    "Pony Diffusion V6 XL",
-        "path":     MODELS_DIR / "pony_diffusion_v6_q5_0.gguf",
-        "typ":      "SDXL_FULL",
-        "steps":    8,
+        "label":     "Pony Diffusion V6 XL",
+        "path":      MODELS_DIR / "pony_diffusion_v6_q5_0.gguf",
+        "typ":       "SDXL_FULL",
+        "steps":     8,
         "steps_res": [(256, 4), (512, 8), (768, 12), (1024, 15), (9999, 18)],
-        "cfg":      7.0,
-        "sampler":  "euler_a",
+        "cfg":       7.0,
+        "sampler":   "euler_a",
+        "scheduler": "karras",
         "clip_skip": 2,
-        "zeit_512": "~45-50 Min",
-        "staerke":  "NSFW-trainiert, Illustration, Anime — für explizite Inhalte",
-        "groesse":  "2.9 GB",
-        "quant":    "Q5_K",
-        "zensur":   "✓ explizit uncensored",
+        "zeit_512":  "~45-50 Min",
+        "staerke":   "NSFW-trainiert, Illustration, Anime — für explizite Inhalte",
+        "groesse":   "2.9 GB",
+        "quant":     "Q5_K",
+        "zensur":    "✓ explizit uncensored",
     },
     "realvis_xl": {
-        "label":    "RealVisXL V5",
-        "path":     MODELS_DIR / "realvisxl_v5_q5_0.gguf",
-        "typ":      "SDXL_FULL",
-        "steps":    8,
+        "label":     "RealVisXL V5",
+        "path":      MODELS_DIR / "realvisxl_v5_q5_0.gguf",
+        "typ":       "SDXL_FULL",
+        "steps":     8,
         "steps_res": [(256, 4), (512, 8), (768, 10), (1024, 12), (9999, 14)],
-        "cfg":      5.0,
-        "sampler":  "dpm++2m",
-        "zeit_512": "~45-50 Min",
-        "staerke":  "realistisch, Fotos, Menschen, Details",
-        "groesse":  "2.9 GB",
-        "quant":    "Q5_K",
-        "zensur":   "◑ kein Filter",
+        "cfg":       3.5,   # RealVisXL: 2.0–3.5 optimal, >5 = unrealistisch
+        "sampler":   "dpm++2m",
+        "scheduler": "karras",
+        "zeit_512":  "~45-50 Min",
+        "staerke":   "realistisch, Fotos, Menschen, Details",
+        "groesse":   "2.9 GB",
+        "quant":     "Q5_K",
+        "zensur":    "◑ kein Filter",
     },
     "flux_schnell": {
-        "label":    "FLUX.1-schnell",
-        "path":     MODELS_DIR / "flux1-schnell-q4_k.gguf",
-        "typ":      "FLUX",
-        "steps":    4,
+        "label":     "FLUX.1-schnell",
+        "path":      MODELS_DIR / "flux1-schnell-q4_k.gguf",
+        "typ":       "FLUX",
+        "steps":     4,
         "steps_res": [(9999, 4)],
-        "cfg":      1.0,
-        "sampler":  "euler",
-        "zeit_512": "~5-6 Min",
-        "staerke":  "deutlich besser als SDXL, schnellstes FLUX",
-        "groesse":  "6.5 GB",
-        "quant":    "Q4_K",
-        "zensur":   "✓ lokal frei",
+        "cfg":       1.0,
+        "guidance":  3.5,
+        "sampler":   "euler",
+        "scheduler": "simple",
+        "zeit_512":  "~5-6 Min",
+        "staerke":   "deutlich besser als SDXL, schnellstes FLUX",
+        "groesse":   "6.5 GB",
+        "quant":     "Q4_K",
+        "zensur":    "✓ lokal frei",
     },
     "flux_dev": {
-        "label":    "FLUX.1-dev",
-        "path":     MODELS_DIR / "flux1-dev-q4_k.gguf",
-        "typ":      "FLUX",
-        "steps":    15,
+        "label":     "FLUX.1-dev",
+        "path":      MODELS_DIR / "flux1-dev-q4_k.gguf",
+        "typ":       "FLUX",
+        "steps":     15,
         "steps_res": [(256, 10), (512, 15), (768, 18), (1024, 20), (9999, 25)],
-        "cfg":      1.0,
-        "guidance": 3.5,
-        "sampler":  "euler",
-        "zeit_512": "~18-20 Min",
-        "staerke":  "bestes open-source Modell, komplexe Prompts",
-        "groesse":  "6.5 GB",
-        "quant":    "Q4_K",
-        "zensur":   "✓ lokal frei",
+        "cfg":       1.0,
+        "guidance":  3.5,
+        "sampler":   "euler",
+        "scheduler": "simple",
+        "zeit_512":  "~18-20 Min",
+        "staerke":   "bestes open-source Modell, komplexe Prompts",
+        "groesse":   "6.5 GB",
+        "quant":     "Q4_K",
+        "zensur":    "✓ lokal frei",
     },
     "flux_kontext": {
-        "label":    "FLUX.1-Kontext",
-        "path":     MODELS_DIR / "flux1-kontext-dev-q4_k.gguf",
-        "typ":      "FLUX_KONTEXT",
-        "steps":    15,
+        "label":     "FLUX.1-Kontext",
+        "path":      MODELS_DIR / "flux1-kontext-dev-q4_k.gguf",
+        "typ":       "FLUX_KONTEXT",
+        "steps":     15,
         "steps_res": [(256, 10), (512, 15), (768, 20), (1024, 25), (9999, 28)],
-        "cfg":      1.0,
-        "guidance": 2.5,
-        "sampler":  "euler",
-        "zeit_512": "~18-20 Min",
-        "staerke":  "Bild bearbeiten / Person in neue Szene setzen (benötigt Referenzbild)",
-        "groesse":  "6.5 GB",
-        "quant":    "Q4_K",
-        "zensur":   "✓ lokal frei",
+        "cfg":       1.0,
+        "guidance":  2.5,
+        "sampler":   "euler",
+        "scheduler": "simple",
+        "zeit_512":  "~18-20 Min",
+        "staerke":   "Bild bearbeiten / Person in neue Szene setzen (benötigt Referenzbild)",
+        "groesse":   "6.5 GB",
+        "quant":     "Q4_K",
+        "zensur":    "✓ lokal frei",
     },
 }
 
@@ -355,11 +364,12 @@ CURRENT_PROC: dict = {}   # job_id → subprocess.Popen, nur während Lauf
 # ---------------------------------------------------------------------------
 def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Path,
                init_img_path: Path | None = None, strength: float = 0.75,
-               negative_prompt: str = "") -> list[str]:
-    cfg    = MODELS[model_key]
-    typ    = cfg["typ"]
-    steps  = _get_steps(cfg, w, h)
-    sampler = cfg.get("sampler", "euler")
+               negative_prompt: str = "", seed: int = -1) -> list[str]:
+    cfg       = MODELS[model_key]
+    typ       = cfg["typ"]
+    steps     = _get_steps(cfg, w, h)
+    sampler   = cfg.get("sampler", "euler")
+    scheduler = cfg.get("scheduler")
 
     base = [str(SD_CLI)]
 
@@ -387,10 +397,13 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
             "--t5xxl",           str(FLUX_T5XXL),
             "--vae",             str(FLUX_VAE),
             "--cfg-scale",       str(cfg["cfg"]),
-            "--sampling-method", "euler",
+            "--sampling-method", sampler,
         ]
         if cfg.get("guidance"):
             base += ["--guidance", str(cfg["guidance"])]
+
+    if scheduler:
+        base += ["--schedule-type", scheduler]
 
     base += [
         "--prompt", full_prompt,
@@ -402,6 +415,8 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
 
     if negative_prompt:
         base += ["--negative-prompt", negative_prompt]
+
+    base += ["--seed", str(seed)]
 
     if init_img_path:
         base += ["--init-img", str(init_img_path), "--strength", str(round(strength, 2))]
@@ -417,12 +432,12 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
 # ---------------------------------------------------------------------------
 def worker():
     while True:
-        job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt = JOB_QUEUE.get()
+        job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed = JOB_QUEUE.get()
         with JOBS_LOCK:
             JOBS[job_id]["status"]     = "running"
             JOBS[job_id]["started_at"] = time.time()
 
-        cmd = _build_cmd(model_key, full_prompt, w, h, output_path, init_img_path, strength, negative_prompt)
+        cmd = _build_cmd(model_key, full_prompt, w, h, output_path, init_img_path, strength, negative_prompt, seed)
 
         try:
             proc = subprocess.Popen(
@@ -1611,9 +1626,18 @@ HTML_UI = r"""<!DOCTYPE html>
     </div>
     <div class="auto-info" id="autoInfo"></div>
 
-    <button class="btn-generate" id="btnGenerate" onclick="startGeneration()">
-      Bild generieren
-    </button>
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+      <button class="btn-generate" id="btnGenerate" onclick="startGeneration()" style="flex:1">
+        Bild generieren
+      </button>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <label style="font-size:10px; color:#555; text-transform:uppercase; letter-spacing:0.05em">Seed</label>
+        <input type="number" id="seedInput" value="-1" min="-1" max="2147483647"
+               style="width:100px; background:#111; border:1px solid #2a2a2a; color:#aaa;
+                      padding:6px 8px; border-radius:6px; font-size:12px; text-align:center"
+               title="-1 = zufällig">
+      </div>
+    </div>
 
     <div class="queue-hint" id="queueHint">
       Ein anderes Bild wird gerade generiert — dein Auftrag wartet in der Warteschlange.
@@ -2160,7 +2184,8 @@ function startGeneration() {
   const doGenerate = (uploads) => {
     const negativePrompt = document.getElementById('negativePrompt').value.trim();
     const imageName = document.getElementById('imageName').value.trim();
-    const body = { prompt, negative_prompt: negativePrompt, image_name: imageName, model, resolution, style, strength, mix_type: mixType, uploads };
+    const seed = parseInt(document.getElementById('seedInput').value) || -1;
+    const body = { prompt, negative_prompt: negativePrompt, image_name: imageName, seed, model, resolution, style, strength, mix_type: mixType, uploads };
     fetch(BASE_URL + '/api/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -2573,6 +2598,7 @@ def generate():
     prompt           = (data.get("prompt") or "").strip()
     negative_prompt  = (data.get("negative_prompt") or "").strip()
     image_name       = (data.get("image_name") or "").strip()
+    seed             = int(data.get("seed", -1))
     resolution       = data.get("resolution", "512x512")
     style_key        = data.get("style", "default")
     model_key        = data.get("model", "flux_schnell")
@@ -2641,6 +2667,11 @@ def generate():
 
     style_suffix   = STYLE_MAP.get(style_key, "")
     full_prompt    = prompt + style_suffix
+    # Pony Diffusion braucht Quality- und Rating-Tags als Prefix
+    if model_key == "pony":
+        pony_prefix = "score_9, score_8_up, score_7_up, score_6_up, score_5_up, score_4_up, rating_explicit"
+        if not full_prompt.startswith("score_"):
+            full_prompt = pony_prefix + ", " + full_prompt
     estimated_secs = _estimate_secs(model_cfg, w, h)
 
     job_id      = str(uuid.uuid4())
@@ -2667,7 +2698,7 @@ def generate():
         }
 
     queued = not JOB_QUEUE.empty()
-    JOB_QUEUE.put((job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt))
+    JOB_QUEUE.put((job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed))
 
     return jsonify({"job_id": job_id, "queued": queued, "model_used": model_key,
                     "model_label": model_cfg["label"], "mix_type": mix_type})
