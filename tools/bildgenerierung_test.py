@@ -47,12 +47,18 @@ FLUX_SHARED   = MODELS_DIR / "flux_shared"
 #      "FLUX"       → --diffusion-model <path> + --clip_l + --t5xxl + --vae
 # ---------------------------------------------------------------------------
 MODELS = {
+    # steps_res: [(max_dim, steps), ...] — max(w,h) wird mit den Schwellwerten verglichen
+    # sampler: sd.cpp --sampling-method Wert
+    # guidance: FLUX distilled-guidance-scale (nur dev + kontext)
+    # clip_skip: --clip-skip N (nur Pony benötigt 2)
     "sdxl_lightning": {
         "label":    "SDXL-Lightning (4-Step)",
         "path":     MODELS_DIR / "sdxl_lightning_4step_q5_0.gguf",
         "typ":      "SDXL_FULL",
         "steps":    4,
-        "cfg":      2.0,
+        "steps_res": [(512, 4), (1024, 4), (9999, 6)],
+        "cfg":      1.0,
+        "sampler":  "euler",
         "zeit_512": "~20-25 Min",
         "staerke":  "schnell, gute Qualität, vielseitig",
         "groesse":  "2.8 GB",
@@ -64,8 +70,10 @@ MODELS = {
         "path":     MODELS_DIR / "juggernaut_xl_v9_q5_0.gguf",
         "typ":      "SDXL_FULL",
         "steps":    8,
-        "cfg":      7.0,
-        "zeit_512": "~40-50 Min",
+        "steps_res": [(256, 4), (512, 8), (768, 10), (1024, 12), (9999, 14)],
+        "cfg":      6.0,
+        "sampler":  "dpm++2m",
+        "zeit_512": "~45-50 Min",
         "staerke":  "fotorealistisch, Portraits, Szenen",
         "groesse":  "3.1 GB",
         "quant":    "Q5_K",
@@ -76,7 +84,10 @@ MODELS = {
         "path":     MODELS_DIR / "pony_diffusion_v6_q5_0.gguf",
         "typ":      "SDXL_FULL",
         "steps":    8,
-        "cfg":      6.0,
+        "steps_res": [(256, 4), (512, 8), (768, 12), (1024, 15), (9999, 18)],
+        "cfg":      7.0,
+        "sampler":  "euler_a",
+        "clip_skip": 2,
         "zeit_512": "~45-50 Min",
         "staerke":  "NSFW-trainiert, Illustration, Anime — für explizite Inhalte",
         "groesse":  "2.9 GB",
@@ -88,8 +99,10 @@ MODELS = {
         "path":     MODELS_DIR / "realvisxl_v5_q5_0.gguf",
         "typ":      "SDXL_FULL",
         "steps":    8,
-        "cfg":      7.0,
-        "zeit_512": "~40-50 Min",
+        "steps_res": [(256, 4), (512, 8), (768, 10), (1024, 12), (9999, 14)],
+        "cfg":      5.0,
+        "sampler":  "dpm++2m",
+        "zeit_512": "~45-50 Min",
         "staerke":  "realistisch, Fotos, Menschen, Details",
         "groesse":  "2.9 GB",
         "quant":    "Q5_K",
@@ -100,7 +113,9 @@ MODELS = {
         "path":     MODELS_DIR / "flux1-schnell-q4_k.gguf",
         "typ":      "FLUX",
         "steps":    4,
+        "steps_res": [(9999, 4)],
         "cfg":      1.0,
+        "sampler":  "euler",
         "zeit_512": "~5-6 Min",
         "staerke":  "deutlich besser als SDXL, schnellstes FLUX",
         "groesse":  "6.5 GB",
@@ -111,9 +126,12 @@ MODELS = {
         "label":    "FLUX.1-dev",
         "path":     MODELS_DIR / "flux1-dev-q4_k.gguf",
         "typ":      "FLUX",
-        "steps":    20,
+        "steps":    15,
+        "steps_res": [(256, 10), (512, 15), (768, 18), (1024, 20), (9999, 25)],
         "cfg":      1.0,
-        "zeit_512": "~20-25 Min",
+        "guidance": 3.5,
+        "sampler":  "euler",
+        "zeit_512": "~18-20 Min",
         "staerke":  "bestes open-source Modell, komplexe Prompts",
         "groesse":  "6.5 GB",
         "quant":    "Q4_K",
@@ -123,10 +141,12 @@ MODELS = {
         "label":    "FLUX.1-Kontext",
         "path":     MODELS_DIR / "flux1-kontext-dev-q4_k.gguf",
         "typ":      "FLUX_KONTEXT",
-        "steps":    10,
+        "steps":    15,
+        "steps_res": [(256, 10), (512, 15), (768, 20), (1024, 25), (9999, 28)],
         "cfg":      1.0,
         "guidance": 2.5,
-        "zeit_512": "~12-15 Min",
+        "sampler":  "euler",
+        "zeit_512": "~18-20 Min",
         "staerke":  "Bild bearbeiten / Person in neue Szene setzen (benötigt Referenzbild)",
         "groesse":  "6.5 GB",
         "quant":    "Q4_K",
@@ -290,20 +310,32 @@ STYLES = [
 STYLE_MAP = {s[0]: s[2] for s in STYLES}
 
 # ---------------------------------------------------------------------------
+# Steps per Auflösung
+# ---------------------------------------------------------------------------
+def _get_steps(model_cfg: dict, w: int, h: int) -> int:
+    steps_res = model_cfg.get("steps_res")
+    if not steps_res:
+        return model_cfg["steps"]
+    max_dim = max(w, h)
+    for max_d, s in steps_res:
+        if max_dim <= max_d:
+            return s
+    return steps_res[-1][1]
+
+
+# ---------------------------------------------------------------------------
 # Zeitschätzung (Sekunden) für verschiedene Auflösungen pro Modell-Typ
 # ---------------------------------------------------------------------------
 def _estimate_secs(model_cfg: dict, w: int, h: int) -> int:
-    """Schätze Renderzeit in Sekunden anhand Pixel-Anzahl und Schritt-Anzahl."""
-    pixels    = w * h
-    base_pix  = 512 * 512
-    steps     = model_cfg["steps"]
-    typ       = model_cfg["typ"]
+    pixels   = w * h
+    base_pix = 512 * 512
+    steps    = _get_steps(model_cfg, w, h)
+    typ      = model_cfg["typ"]
 
-    # Basis: Sekunden pro Pixel*Step auf dieser CPU (rough estimate)
-    if typ == "FLUX":
-        secs_per_512x512_step = 73   # ~73s per step for FLUX on CPU (293s/4steps measured at 512x512)
+    if typ in ("FLUX", "FLUX_KONTEXT"):
+        secs_per_512x512_step = 73
     else:
-        secs_per_512x512_step = 335  # ~335s per step for SDXL on CPU (45min/8steps measured)
+        secs_per_512x512_step = 335
 
     ratio = pixels / base_pix
     return int(secs_per_512x512_step * ratio * steps)
@@ -323,23 +355,29 @@ JOBS_LOCK = threading.Lock()
 def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Path,
                init_img_path: Path | None = None, strength: float = 0.75,
                negative_prompt: str = "") -> list[str]:
-    cfg = MODELS[model_key]
-    typ = cfg["typ"]
+    cfg    = MODELS[model_key]
+    typ    = cfg["typ"]
+    steps  = _get_steps(cfg, w, h)
+    sampler = cfg.get("sampler", "euler")
 
     base = [str(SD_CLI)]
 
     if typ == "SDXL_FULL":
         base += [
-            "--model",     str(cfg["path"]),
-            "--cfg-scale", str(cfg.get("cfg", 7.0)),
+            "--model",            str(cfg["path"]),
+            "--cfg-scale",        str(cfg.get("cfg", 7.0)),
+            "--sampling-method",  sampler,
             "--force-sdxl-vae-conv-scale",
         ]
+        if cfg.get("clip_skip"):
+            base += ["--clip-skip", str(cfg["clip_skip"])]
     elif typ == "SDXL_SPLIT":
         base += [
-            "--diffusion-model", str(cfg["path"]),
-            "--clip_l", str(SDXL_CLIP_L),
-            "--clip_g", str(SDXL_CLIP_G),
-            "--vae",    str(SDXL_VAE),
+            "--diffusion-model",  str(cfg["path"]),
+            "--clip_l",           str(SDXL_CLIP_L),
+            "--clip_g",           str(SDXL_CLIP_G),
+            "--vae",              str(SDXL_VAE),
+            "--sampling-method",  sampler,
         ]
     elif typ in ("FLUX", "FLUX_KONTEXT"):
         base += [
@@ -357,7 +395,7 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
         "--prompt", full_prompt,
         "--width",  str(w),
         "--height", str(h),
-        "--steps",  str(cfg["steps"]),
+        "--steps",  str(steps),
         "--output", str(output_path),
     ]
 
@@ -555,14 +593,15 @@ def _models_js_data():
     data = {}
     for key, cfg in MODELS.items():
         data[key] = {
-            "label":    cfg["label"],
-            "typ":      cfg["typ"].replace("_SPLIT","").replace("_FULL",""),
-            "steps":    cfg["steps"],
-            "zeit_512": cfg["zeit_512"],
-            "staerke":  cfg["staerke"],
-            "groesse":  cfg["groesse"],
-            "zensur":   cfg.get("zensur", ""),
-            "broken":   cfg.get("broken", False) or _is_pending(cfg),
+            "label":     cfg["label"],
+            "typ":       cfg["typ"].replace("_SPLIT","").replace("_FULL",""),
+            "steps":     cfg["steps"],
+            "steps_res": cfg.get("steps_res", []),
+            "zeit_512":  cfg["zeit_512"],
+            "staerke":   cfg["staerke"],
+            "groesse":   cfg["groesse"],
+            "zensur":    cfg.get("zensur", ""),
+            "broken":    cfg.get("broken", False) or _is_pending(cfg),
         }
     return json.dumps(data)
 
@@ -1251,15 +1290,27 @@ let currentJobId = null;
 let pollTimer = null;
 
 // --- Zeitschätzung ---
+function getStepsForRes(m, resKey) {
+  if (!m.steps_res || !m.steps_res.length) return m.steps;
+  const [rw, rh] = (resKey || '512x512').split('x').map(Number);
+  const maxDim = Math.max(rw || 512, rh || 512);
+  for (const [maxD, s] of m.steps_res) {
+    if (maxDim <= maxD) return s;
+  }
+  return m.steps_res[m.steps_res.length - 1][1];
+}
+
 function calcZeit(modelKey, resKey) {
   const m = MODELLE[modelKey];
   if (!m) return "—";
-  const pixels  = RES_PIXEL[resKey] || 512*512;
-  const base    = 512*512;
+  const [rw, rh] = (resKey || '512x512').split('x').map(Number);
+  const pixels  = (rw || 512) * (rh || 512);
+  const base    = 512 * 512;
   const ratio   = pixels / base;
   const isFlux  = m.typ === "FLUX" || m.typ === "FLUX_KONTEXT";
   const secsPerStep = isFlux ? 73 : 335;
-  const total   = Math.round(secsPerStep * ratio * m.steps);
+  const steps   = getStepsForRes(m, resKey);
+  const total   = Math.round(secsPerStep * ratio * steps);
   return formatDauer(total);
 }
 
