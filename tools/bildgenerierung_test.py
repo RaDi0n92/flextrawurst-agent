@@ -1054,6 +1054,13 @@ HTML_UI = r"""<!DOCTYPE html>
     </div>
 
     <div>
+      <label for="imageName">Name der Datei <span style="color:#555; font-size:10px; text-transform:none; letter-spacing:0">(optional — leer = automatisch)</span></label>
+      <input type="text" id="imageName" placeholder="z.B. portrait-nacht oder drache-blau" autocomplete="off"
+             style="width:100%; background:#111; border:1px solid #2a2a2a; border-radius:8px; color:#e0e0e0; font-size:14px; padding:10px 14px; outline:none; font-family:inherit; transition:border-color 0.2s;"
+             onfocus="this.style.borderColor='#3a7d50'" onblur="this.style.borderColor='#2a2a2a'">
+    </div>
+
+    <div>
       <label for="prompt">Beschreibe dein Bild</label>
       <textarea id="prompt" placeholder="z.B. ein roter Apfel auf einem Holztisch, abendliches Licht..."></textarea>
     </div>
@@ -1701,7 +1708,8 @@ function startGeneration() {
 
   const doGenerate = (uploads) => {
     const negativePrompt = document.getElementById('negativePrompt').value.trim();
-    const body = { prompt, negative_prompt: negativePrompt, model, resolution, style, strength, mix_type: mixType, uploads };
+    const imageName = document.getElementById('imageName').value.trim();
+    const body = { prompt, negative_prompt: negativePrompt, image_name: imageName, model, resolution, style, strength, mix_type: mixType, uploads };
     fetch(BASE_URL + '/api/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1833,7 +1841,8 @@ function showResult(url) {
   img.src = url;
   const dl  = document.getElementById('btnDownload');
   dl.href   = url;
-  dl.download = 'bild-' + Date.now() + '.png';
+  const name = document.getElementById('imageName').value.trim();
+  dl.download = (name ? name.replace(/[^a-zA-Z0-9_\-äöüÄÖÜß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') : 'bild-' + Date.now()) + '.png';
   document.getElementById('resultWrap').classList.add('visible');
 }
 
@@ -2078,6 +2087,7 @@ def generate():
 
     prompt           = (data.get("prompt") or "").strip()
     negative_prompt  = (data.get("negative_prompt") or "").strip()
+    image_name       = (data.get("image_name") or "").strip()
     resolution       = data.get("resolution", "512x512")
     style_key        = data.get("style", "default")
     model_key        = data.get("model", "flux_schnell")
@@ -2149,7 +2159,13 @@ def generate():
     estimated_secs = _estimate_secs(model_cfg, w, h)
 
     job_id      = str(uuid.uuid4())
-    output_path = OUTPUT_DIR / f"{job_id}.png"
+    if image_name:
+        import re
+        safe = re.sub(r'[^\w\-]', '-', image_name, flags=re.UNICODE).strip('-')
+        safe = re.sub(r'-+', '-', safe)[:60]
+        output_path = OUTPUT_DIR / f"{safe}_{job_id[:8]}.png"
+    else:
+        output_path = OUTPUT_DIR / f"{job_id}.png"
 
     with JOBS_LOCK:
         JOBS[job_id] = {
