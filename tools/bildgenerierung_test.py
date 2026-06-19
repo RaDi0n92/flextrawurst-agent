@@ -1059,11 +1059,18 @@ HTML_UI = r"""<!DOCTYPE html>
       <textarea id="prompt" placeholder="z.B. ein roter Apfel auf einem Holztisch, abendliches Licht..."></textarea>
     </div>
 
-    <div id="ponyHint" style="display:none; padding:10px 14px; background:#1a1200; border:1px solid #4a3800; border-radius:8px; font-size:12px; color:#c8a030; line-height:1.6;">
-      <strong>Pony Diffusion — Tipps für beste Ergebnisse:</strong><br>
-      Starte deinen Prompt mit: <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_9, score_8_up, score_7_up</code><br>
-      Für explizite Inhalte ergänze: <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">explicit, nude, nsfw</code><br>
-      Negativer Prompt empfohlen: <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_6, score_5, score_4, low quality, bad anatomy</code>
+    <div id="ponyHint" style="display:none; padding:12px 16px; background:#1a1200; border:1px solid #4a3800; border-radius:8px; font-size:12px; color:#c8a030; line-height:1.8;">
+      <strong style="font-size:13px;">Pony Diffusion — so funktioniert dieses Modell</strong><br><br>
+      Pony wurde auf Danbooru trainiert — einer riesigen Bild-Datenbank wo jedes Bild mit Tags bewertet ist.
+      <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_9</code> = bestes 1% der Bilder.
+      <code style="background:#111; padding:2px 5px; border-radius:3px; color:#eee;">score_4</code> = schlechtestes 10%.<br>
+      Das Modell hat gelernt: hohe Score = gutes Bild. Ohne diese Tags generiert es im Mittelmaß — mit ihnen zieht es das Beste raus.<br><br>
+      <strong>Prompt immer starten mit:</strong><br>
+      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">score_9, score_8_up, score_7_up</code><br><br>
+      <strong>Für explizite Inhalte zusätzlich:</strong><br>
+      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">explicit, nude, nsfw</code><br><br>
+      <strong>Negativer Prompt empfohlen:</strong><br>
+      <code style="background:#111; padding:3px 8px; border-radius:3px; color:#eee; display:inline-block; margin:4px 0;">score_6, score_5, score_4, low quality, bad anatomy, clothes</code>
     </div>
 
     <div>
