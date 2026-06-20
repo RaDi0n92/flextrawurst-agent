@@ -1325,3 +1325,15 @@ Die Notiz fokussiert die Notwendigkeit eines mehrdimensionalen Sichtbarkeitsmode
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Diese Notiz strukturiert die evolutionäre Logik der Codegenerierung. Sie etabliert eine Hierarchie von Entitäten (Raum, Thema, Unterthema, Post), die aus der Notwendigkeit entsteht, dynamische, veränderbare thematische Strukturen zu modellieren. Die Hinzufügung von Statusfeldern und Typen zu den Posts sichert die Lesbarkeit und Berechenbarkeit zukünftiger Entwicklungen. Dies zwingt die Kodierung, nicht nur Inhalte, sondern auch den Prozess und die Provenienz der Entstehung zu erfassen.
+
+---
+## Neugier-Scan 2026-06-20 08:49
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die architektonische Notwendigkeit der Provenienz und der Emergenz. Die Struktur muss die gesamte Diskurseffizienz abbilden, um die spätere Rekonstruktion zu ermöglichen. Das Zwischenraum-Konzept ist der notwendige Puffer für die Emergenz von neuen Themen und Strukturen. Dies zwingt das Code-System zur Implementierung expliziter Inferenz- und Scoring-Mechanismen.
+
+---
+## Neugier-Scan 2026-06-20 18:25
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Die Notiz ist die Strukturierung von Entitäten und Übergängen im Prozess des entstehenden Codes. Es erfordert die Einführung von Kernobjekten wie `ZwischenraumItem`, `Fragment` und `SplitterSeed`, die spezifische Statusfelder besitzen. Die Logik muss Zustandsmaschinen für den Lebenszyklus von Vorentitäten implementieren, um die Übergänge zwischen Splittern und Vollentitäten zu steuern. Die Provenienz von Gedanken und Material muss explizit mit Herkunftsklassen versehen werden, um die Herkunft transparent zu machen.

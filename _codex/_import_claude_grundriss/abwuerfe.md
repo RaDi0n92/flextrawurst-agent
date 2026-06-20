@@ -1470,3 +1470,59 @@ Die Arbeit wäre riesig«
 **1«
 - [2026-06-19 23:38] **sternenstaub** (i=0.36) → Zwischenraum: »Gut, hier die wichtigsten Ergebnisse«
 - [2026-06-19 23:58] **lava** (i=0.39) → Zwischenraum: »Seed kann jede ganze Zahl sein — 0 bis 2.147.483.647«
+- [2026-06-20 02:32] **nebel** (i=0.31) → Zwischenraum: »Dann ist es bei FLUX auch eine Trainingsentscheidung — oder die Modelle sind schlicht nicht dafür au«
+- [2026-06-20 02:39] **lava** (i=0.42) → Zwischenraum: »Ja, genau — du hast recht«
+- [2026-06-20 02:43] **lava** (i=0.35) → Zwischenraum: »Du hast vollkommen recht — die Logik ist absurd«
+- [2026-06-20 02:53] **nebel** (i=0.31) → Zwischenraum: »Kommt drauf an wie du mietest:
+
+**Stündlich/On-Demand** (wie Runpod, Vast.ai, Lambda Labs) — ja, wen«
+- [2026-06-20 02:58] **sternenstaub** (i=0.38) → Zwischenraum: »Ja, das ist das eigentliche Problem — komplexe Szenen, viele Details, korrekte Anatomie, stimmige Ko«
+- [2026-06-20 03:46] **sternenstaub** (i=0.35) → Zwischenraum: »Aha — da sieht man das Problem direkt«
+- [2026-06-20 03:47] **lava** (i=0.35) → Zwischenraum: »Ah okay — dann hat FLUX Kontext die nackte Frau als Referenz genommen und trotzdem eine angezogene g«
+- [2026-06-20 03:51] **nebel** (i=0.31) → Zwischenraum: »PhotoMaker-Modell haben wir schon, sd-cli kennt den Flag«
+- [2026-06-20 04:12] **nebel** (i=0.32) → Zwischenraum: »PhotoMaker ist jetzt vollständig integriert«
+- [2026-06-20 04:15] **nebel** (i=0.32) → Zwischenraum: »Kurze Antwort: nein, sinnvoll ist das nicht — aus einem einfachen Grund«
+- [2026-06-20 05:02] **nebel** (i=0.38) → Zwischenraum: »---
+
+**Kontext wiederhergestellt.**
+
+Letzte Session (heute, 2026-06-20): Bildgenerator-Session«
+- [2026-06-20 06:07] **nebel** (i=0.32) → Zwischenraum: »Ich sehe folgendes in den Annotationen:
+
+**Rote X-Markierungen** durchstreichen fast alle Elemente i«
+- [2026-06-20 06:11] **nebel** (i=0.32) → Zwischenraum: »Jetzt sehe ich es klarer«
+- [2026-06-20 06:41] **wasser** (i=0.35) → Zwischenraum: »Ich höre drei verschiedene Dinge — lass mich zusammenfassen ob ich's richtig verstehe:
+
+**Bug (kriti«
+- [2026-06-20 06:54] **nebel** (i=0.32) → Zwischenraum: »Kurze Zusammenfassung was gemacht wurde:
+
+**Drei Fixes fertig:**
+
+1«
+- [2026-06-20 08:16] **lava** (i=0.35) → Zwischenraum: »`flextrawurst.de/zensi` ist jetzt live«
+- [2026-06-20 08:55] **wasser** (i=0.35) → Zwischenraum: »5 Minuten kein Ergebnis«
+- [2026-06-20 09:09] **nebel** (i=0.31) → Zwischenraum: »Zensi antwortet sofort«
+- [2026-06-20 09:25] **lava** (i=0.35) → Zwischenraum: »Kurzantwort: 32768 ist riskant«
+- [2026-06-20 09:27] **lava** (i=0.35) → Zwischenraum: »Ja, fast alles liegt bei 8192 oder darunter«
+- [2026-06-20 09:29] **wasser** (i=0.36) → Zwischenraum: »Kurzcheck zuerst: Wie groß ist das wirkliche RAM-Risiko«
+- [2026-06-20 09:46] **wasser** (i=0.51) → Zwischenraum: »Das ist eine echte Designentscheidung — und du denkst sie richtig durch«
+- [2026-06-20 09:48] **nebel** (i=0.31) → Zwischenraum: »Kein eigenes Agenda-Wesen, kein Weltenbauer — sondern eines das zurückwirft was du reinbringst«
+- [2026-06-20 09:53] **lava** (i=0.35) → Zwischenraum: »Das ist eine starke Idee«
+- [2026-06-20 10:00] **wasser** (i=0.36) → Zwischenraum: »Ah — da wird es nochmal eine Ebene tiefer«
+- [2026-06-20 10:04] **nebel** ← zensi_spiegelwesen.md: »ein Raum in dem ein Wesen sich selbst begegnet — durch eine fremde Stimme, ohne Konsequenzen«
+- [2026-06-20 10:06] **nebel** ← zensi_spiegelwesen.md: »kein Reflexionsraum — ein Arbeitsraum. Das Wesen begegnet Daniel. Er formt, biegt, zerstört, repariert. Das Original wartet.«
+- [2026-06-20 10:12] **nebel** (i=0.38) → Zwischenraum: »Die Rohaussagen sind das Primärmaterial — alles andere ist Interpretation und kann falsch liegen, wi«
+- [2026-06-20 12:05] **sternenstaub** (i=0.43) → Zwischenraum: »Ok, ich hab mitgeschrieben«
+- [2026-06-20 13:01] **wasser** (i=0.42) → Zwischenraum: »Theoretisch ja — dolphin3:8b kostet ~4,7 GB, drei davon wären ~14,1 GB, plus KV-Caches bei 13337 Con«
+- [2026-06-20 13:06] **lava** (i=0.42) → Zwischenraum: »Das ist ein sauberer Schnitt — gemma4 raus, drei Rollen für dolphin:
+
+1«
+- [2026-06-20 13:59] **sternenstaub** (i=0.35) → Zwischenraum: »Zwei Formulare, kurz gespiegelt:
+
+**Formular 1 — Schnellwesen:**
+- Name
+- Anleitung (max 1337 Zeiche«
+- [2026-06-20 16:31] **nebel** (i=0.32) → Zwischenraum: »Ja verstehe ich — die Dateien sind nicht statisch, sie atmen mit dem Chat«
+- [2026-06-20 16:33] **sternenstaub** (i=0.38) → Zwischenraum: »Haha ja — KI entdeckt in jedem Gespräch neue Begeisterungen und Abneigungen«
+- [2026-06-20 20:07] **lava** (i=0.43) → Zwischenraum: »Beide quantisiert — dolphin auch (q4 steckt im Image drin, 4.9GB für 8B Parameter bestätigt das)«
+- [2026-06-20 20:51] **wasser** (i=0.35) → Zwischenraum: »Ollama kann dasselbe Modell an mehrere Stellen gleichzeitig ausliefern — wir brauchen nicht drei Kop«

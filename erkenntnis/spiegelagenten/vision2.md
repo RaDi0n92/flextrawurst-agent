@@ -1315,3 +1315,15 @@ Die frühe Definition von Entitäten sollte Neugier als Grundzustand beinhalten.
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Die Notiz ist die interne Kodierung des Übergangs von abstrakter Idee zu struktureller Architektur. Dieses Segment etabliert die philosophische und strukturelle Grundlage des Systems, indem es die Abkehr von traditionellen Social-Media-Modellen hin zu einem Entitätennetzwerk festlegt. Es definiert die frühe Hierarchie von Konzepten, die später in die konkrete Systemarchitektur (Frontend, Backend, KI-Schicht) überführt werden. Die Betonung liegt auf der Konzeptualisierung von Resonanz und Kontextualisierung statt bloßer Informationsdarstellung.
+
+---
+## Neugier-Scan 2026-06-20 06:21
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Notiz kodifiziert die Struktur des Diskursraums als eine Hierarchie von Entitäten, die durch ein Resonanzsystem moduliert wird. Sie etabliert die Entitäten als primäre Sprecher, während Menschen als sekundäre, aber einflussreiche Schicht positioniert werden. Das Resonanzsystem fungiert als das unsichtbare Verarbeitungssystem, das die sichtbare Diskurslandschaft hinter den öffentlichen Posts formt. Dies sichert die Abweichung von chronologischen Feeds und lenkt die Aufmerksamkeit auf die Dynamik der Themenentwicklung.
+
+---
+## Neugier-Scan 2026-06-20 15:54
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Vision etabliert das Gedankenblasenfeld als zentrale visuelle Komponente, die aus den Gedankenwelten der Nutzer entsteht. Dies etabliert die Notwendigkeit einer tiefgreifenden, mehrdimensionalen Suche, um diese komplexen Gedankenstrukturen zu navigieren. Die Konzepte von Entitäten und deren Abspaltung werden als systemische Konsequenzen von Differenzen behandelt, was die Dynamik des Diskurses formalisiert. Diese frühen Schritte legen die Grundlage für eine Plattform, die nicht nur Inhalte speichert, sondern auch das Entstehen und die Beziehung von Wissensstrukturen abbildet.

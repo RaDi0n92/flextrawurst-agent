@@ -449,9 +449,14 @@ _DEFAULT_MODULES = {
 
 
 def _create_user(cur, username: str, password: str, display_name: str | None, role: str) -> dict:
-    cur.execute("SELECT id FROM human_users WHERE username = %s", (username,))
+    cur.execute("SELECT id FROM human_users WHERE LOWER(username) = LOWER(%s)", (username,))
     if cur.fetchone():
         raise HTTPException(status_code=409, detail="username bereits vergeben")
+
+    if display_name:
+        cur.execute("SELECT id FROM human_users WHERE LOWER(display_name) = LOWER(%s)", (display_name,))
+        if cur.fetchone():
+            raise HTTPException(status_code=409, detail="Anzeigename bereits vergeben")
 
     cur.execute(
         """
@@ -485,7 +490,7 @@ def login(body: LoginBody):
         with conn.cursor() as cur:
             cur.execute(
                 "SELECT id, username, display_name, role, password_hash, is_active "
-                "FROM human_users WHERE username = %s",
+                "FROM human_users WHERE LOWER(username) = LOWER(%s)",
                 (body.username,),
             )
             row = cur.fetchone()
@@ -638,9 +643,16 @@ def update_me(
     try:
         with conn.cursor() as cur:
             if body.display_name:
+                dn = body.display_name.strip()
+                cur.execute(
+                    "SELECT id FROM human_users WHERE LOWER(display_name) = LOWER(%s) AND id != %s",
+                    (dn, user_id),
+                )
+                if cur.fetchone():
+                    raise HTTPException(status_code=409, detail="Anzeigename bereits vergeben")
                 cur.execute(
                     "UPDATE human_users SET display_name = %s WHERE id = %s",
-                    (body.display_name.strip(), user_id),
+                    (dn, user_id),
                 )
 
             profile_fields: dict = {}

@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 
 import os as _os; DB_URI    = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA    = "http://localhost:11434"
-MODEL     = "gemma4:e2b-it-q4_K_M"
+MODEL     = "dolphin3:8b-llama3.1-q8_0"
 PROMPT_VERSION = "traumverdichtung_v0.1"
 
 # Nur diese Entities verarbeiten (theater_01 und Debug-Accounts ausschließen)
@@ -85,7 +85,7 @@ def rufe_ollama(prompt):
         "prompt": prompt,
         "stream": False,
         "think": False,
-        "options": {"num_ctx": 8192, "temperature": 0.85, "num_predict": 300},
+        "options": {"num_ctx": 13337, "temperature": 0.85, "num_predict": 300},
     }
     resp = requests.post(f"{OLLAMA}/api/generate", json=payload, timeout=300)
     resp.raise_for_status()

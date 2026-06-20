@@ -8,10 +8,10 @@ from typing import Callable
 import requests
 
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL_TIEF    = os.getenv("DAK_GORD_OLLAMA_MODELL",         "gemma4:e2b-it-q4_K_M")
-MODELL_MITTEL  = os.getenv("DAK_GORD_OLLAMA_MODELL_MITTEL",  "gemma4:e2b-it-q4_K_M")
-MODELL_SCHNELL = os.getenv("DAK_GORD_OLLAMA_MODELL_SCHNELL", "gemma4:e2b-it-q4_K_M")
-MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "gemma4:e2b-it-q4_K_M")
+MODELL_TIEF    = os.getenv("DAK_GORD_OLLAMA_MODELL",         "dolphin3:8b-llama3.1-q8_0")
+MODELL_MITTEL  = os.getenv("DAK_GORD_OLLAMA_MODELL_MITTEL",  "dolphin3:8b-llama3.1-q8_0")
+MODELL_SCHNELL = os.getenv("DAK_GORD_OLLAMA_MODELL_SCHNELL", "dolphin3:8b-llama3.1-q8_0")
+MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "dolphin3:8b-llama3.1-q8_0")
 MODELL_FREI    = os.getenv("DAK_GORD_OLLAMA_MODELL_FREI",    "dolphin-mistral:7b")
 STANDARD_TIMEOUT = int(os.getenv("DAK_GORD_OLLAMA_TIMEOUT", "720"))
 
@@ -237,7 +237,7 @@ def ollama_chat(
         "keep_alive": -1,
         "think": False,
         "options": {
-            "num_ctx": 8192,
+            "num_ctx": 13337,
             "num_predict": num_predict,
             "temperature": temperature,
             "top_k": 64,

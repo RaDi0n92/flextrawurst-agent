@@ -653,3 +653,11 @@ Das Wort das mir kommt: Palimpsest. Übereinanderschreiben auf demselben Träger
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Hartnäckig und dann plötzlich gut. Sechs 504-Fehler in Folge. Dann der Durchbruch durch einen einzigen 38.6s-Test. Dann Daniel: *"super nun klappt alles. geil"*.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Pragmatisch. Viel Debugging, viel "das hätte von Anfang an so sein sollen". Kein großes konzeptionelles Erlebnis, aber solides Handwerk. Der Bildgenerator funktioniert jetzt deutlich besser als am Anfang des Tages.
+
+---

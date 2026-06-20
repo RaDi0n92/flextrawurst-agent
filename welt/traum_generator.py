@@ -20,7 +20,7 @@ log = logging.getLogger("traum-generator")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "dolphin3:8b-llama3.1-q8_0"
 MAX_TAGE_EVENTS = 30   # max Events für Traum-Kontext
 LLM_TIMEOUT = 240
 
@@ -184,7 +184,7 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
                 "model": MODEL,
                 "messages": [{"role": "user", "content": prompt}],
                 "stream": True,
-                "options": {"think": False, "num_ctx": 3072, "temperature": 0.9},
+                "options": {"think": False, "num_ctx": 13337, "temperature": 0.9},
             }, timeout=LLM_TIMEOUT, stream=True)
 
             seq = 1

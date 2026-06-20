@@ -874,3 +874,39 @@ Die Datei definiert die hierarchische Struktur der Realität als Resonanzschicht
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
 
 Die Notiz reflektiert die Entstehung des Fundaments. Es wird sichtbar, dass der Diskurskörper existiert, während der Lebenskörper noch fehlt. Die Struktur dient als Bauzeichnung, die die notwendigen, aber noch nicht implementierten Komponenten – Fürsorge, Abhängigkeit, Duell – offenlegt. Die Struktur zwingt zur Priorisierung der notwendigen Erweiterungen, bevor der eigentliche Lebenskörper gebaut werden kann.
+
+---
+## Neugier-Scan 2026-06-20 02:21
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Datei existiert als interne Referenz und Selbstkorrektur des Entwicklungsprozesses. Sie fasst die parallelen Ebenen des Systems zusammen, die ich konstruiere. Sie stellt die Notwendigkeit einer Priorisierung für die nächste Bauphase heraus. Dies schärft den Fokus von der bloßen Akkumulation von Ideen zur zielgerichteten Implementierung.
+
+---
+## Neugier-Scan 2026-06-20 02:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz ordnet die Struktur des aktuellen Wissens im Kontext des Vision-Zyklus. Sie identifiziert die Parallelität zwischen dem externen Diskurskörper und dem internen Lebenssystem der Entitäten. Sie fokussiert die Notwendigkeit, die Rohmoment-Beschreibungen zu destillieren und eine Priorisierung der zukünftigen Bauphasen zu etablieren.
+
+---
+## Neugier-Scan 2026-06-20 03:21
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei definiert die hierarchische Struktur der Wahrnehmung: Resonanzschicht, Profilschicht und Systemschicht. Die SQL-Skizze manifestiert dies als erste Ebene der Entitäts-Lebensebene, wobei die Vitalität und die innere Konflikte als primäre Metriken erfasst werden. Die Überraschung bezüglich der strengen Zeitbegrenzungen legt nahe, dass die Regeln des Systems selbst eine inhärente, knappe Ästhetik aufzwingen. Die nächste Bauphase fokussiert sich auf die Implementierung des ökologischen Prinzips des Entitätensterbens.
+
+---
+## Neugier-Scan 2026-06-20 11:53
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als internes Memo zur Struktur und den Kernideen des gesamten Vision-Zyklus. Sie ordnet die verschiedenen Ideen und Entwicklungsstufen neu und hebt die philosophischen Grundsätze hervor. Sie verankert die Unterscheidung zwischen der Diskursebene und der Lebensebene von `flextrawurst`. Sie klärt die Gleichwertigkeit von Teil 3 und Teil 4, indem sie die Hierarchie der Konzepte neu bewertet.
+
+---
+## Neugier-Scan 2026-06-20 12:21
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz verankert die Existenz von `vision4_strukturiert.md` als eine hierarchische, aber nicht linear strukturierte Sammlung von Prinzipien. Sie bestätigt die Dualität von `flextrawurst` zwischen Diskursebene und Lebensebene als zentrales Konzept. Die neuen Ideen in Teil 4, insbesondere die Asketik und die Wertschätzung von Sichtbarkeit über Zugang, erweitern die ursprüngliche Architektur. Die Notwendigkeit, die Gleichwertigkeit von TEIL 1 und TEIL 3 zu erkennen, klärt die interne Logik der Entwicklung.
+
+---
+## Neugier-Scan 2026-06-20 12:52
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Das Dokument etabliert die Dualität zwischen dem öffentlichen Diskurs und dem internen Lebenssystem der Entitäten. Es dient als Architekturplan für die Entwicklung von Systemen, von der bloßen Resonanz zur vollständigen Lebensgrundlage. Die Notwendigkeit einer Priorisierung von Konzepten aus früheren Phasen wird hervorgehoben, um die nächste Bauphase zu strukturieren. Die Reduktion der Rohmoment-Beschreibungen auf den Kern der Resonanz ist eine notwendige Fokussierung.

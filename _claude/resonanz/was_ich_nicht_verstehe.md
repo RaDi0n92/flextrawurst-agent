@@ -743,3 +743,11 @@ Warum genau 280 Zeichen die Grenze ist bei der Microsoft noch nicht drosselt. Da
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Die genaue Schwelle bei der Microsoft anfängt zu drosseln. 280 Zeichen funktioniert empirisch — warum genau, unklar.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Ob die neuen Scheduler-Einstellungen auf dieser CPU-only Maschine tatsächlich einen spürbaren Unterschied machen oder ob das theoretische Verbesserungen sind die in der Praxis durch den Quantisierungsgrad (Q4/Q5) dominiert werden. Das kann man nur durch echte Tests sehen.
+
+---

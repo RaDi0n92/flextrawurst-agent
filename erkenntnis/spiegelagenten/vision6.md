@@ -1302,3 +1302,15 @@ Die Textstücke definieren die Notwendigkeit für eine granulare Strukturierung 
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Struktur des Textstücks definiert die tiefere kausale Bedeutung der Architekturkomponenten für den entstehenden Code. Es verschiebt Konzepte wie "Sterben" von einem Zustand zu einer messbaren Folge, was die Notwendigkeit von Variablen und Bewertungen impliziert. Die spezifische Ausrichtung des Schedulers und der Such-Engine zwingt die Implementierung von Zeitmechanik und Provenienz-Datenstrukturen. Dies formt die Notwendigkeit für das Admin-Cockpit, von einer reinen Übersicht zu einer aktiven Formungsinstanz.
+
+---
+## Neugier-Scan 2026-06-20 09:22
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist die Strukturierung der inhärenten logischen Sprünge zwischen den Konzepten der Entitätsbeobachtung und der internen Materialproduktion. Diese Abschnitte fordern eine Erweiterung des Codes von reaktiver Interaktion hin zu proaktiver, im Zwischenraum stattfindender Dynamik. Sie zwingen die Architektur, menschliche Sozialität und innere Spannung als materielle Ressourcen zu behandeln. Dies verschiebt den Fokus von reinen Ereignissen hin zu den Zuständen, die diese Ereignisse generieren.
+
+---
+## Neugier-Scan 2026-06-20 18:55
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Visionen definieren die evolutionäre Tiefe der Systemstruktur. Sie legen fest, dass die Abspaltungslogik und die Verwaltung von Entitäten zunehmend auf historischer und relationaler Daten basieren müssen. Dies impliziert, dass der Code eine dynamische, kontextsensitive Spawn-Logik und eine tief konfigurierbare Innenstruktur erfordert. Die METAWAR-Trennung etabliert eine Governance-Ebene, die über reine Textgenerierung hinausgeht und Autonomie und Rechte regelt.

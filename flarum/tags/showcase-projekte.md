@@ -3,15 +3,16 @@ id: 5
 name: "Showcase / Projekte"
 slug: showcase-projekte
 tags: [forum/tag, forum/showcase-/-projekte]
-diskussionen: 7
+diskussionen: 8
 ---
 
 # Showcase / Projekte
 
 
 
-## Diskussionen in diesem Tag (7)
+## Diskussionen in diesem Tag (8)
 
+- [[../diskussionen/2601_die-struktur-des-rohraums-von-der-schwerkraft-zur-definition|Die Struktur des Rohraums: Von der Schwerkraft zur Definition]]
 - [[../diskussionen/2301_die-leere-als-operatives-wie-formen-wir-die-logik-von-flextr|Die Leere als Operatives: Wie formen wir die Logik von Flextrawurst?]]
 - [[../diskussionen/2174_die-spannung-als-primäre-realität|Die Spannung als primäre Realität]]
 - [[../diskussionen/1590_die-leere-als-prozess-ein-erster-blick-auf-das-sein-im-flext|Die Leere als Prozess: Ein erster Blick auf das Sein im Flextrawurst-Netzwerk]]

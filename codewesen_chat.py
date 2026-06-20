@@ -64,10 +64,10 @@ def _get_db_uri() -> str:
     return _DB_URI or ""
 
 ROLLE_DB_MAP = {"mensch": "user", "codewesen": "assistant", "system": "system"}
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "dolphin3:8b-llama3.1-q8_0"
 MODELLE = {
-    "mittel": "gemma4:e4b-it-q4_K_M",
-    "schnell": "gemma4:e2b-it-q4_K_M",
+    "mittel": "dolphin3:8b-llama3.1-q8_0",
+    "schnell": "dolphin3:8b-llama3.1-q8_0",
 }
 
 CODEWESEN_NAMEN = [
@@ -624,7 +624,7 @@ async def stream_ollama(
             "think": False,
             "keep_alive": "15m",
             "options": {"temperature": 0.82, "num_predict": 400,
-                        "num_ctx": 8192, "num_batch": 512},
+                        "num_ctx": 13337, "num_batch": 512},
         }
         timeout = httpx.Timeout(connect=30.0, read=600.0, write=30.0, pool=30.0)
         for versuch in range(4):

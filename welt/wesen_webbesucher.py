@@ -32,7 +32,7 @@ log = logging.getLogger("webbesucher")
 _env_file = Path("/root/werkraum/.agent/flextrawurst-db.env")
 DB_URI = ""
 OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MODEL = "dolphin3:8b-llama3.1-q8_0"
 POLL_INTERVAL = 30
 
 
@@ -102,7 +102,7 @@ Schreibe deine ehrliche Reaktion auf das Gesehene. 2-4 Sätze. Ich-Form. Keine Z
             "prompt": prompt,
             "stream": False,
             "think": False,
-            "options": {"temperature": 0.75, "num_predict": 400, "num_ctx": 4096, "num_thread": 6}
+            "options": {"temperature": 0.75, "num_predict": 400, "num_ctx": 13337, "num_thread": 6}
         }, timeout=180)
         r.raise_for_status()
         return r.json().get("response", "").strip()

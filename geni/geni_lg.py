@@ -25,7 +25,7 @@ _BASE_URI = os.environ.get(
 )
 DB_URI = _BASE_URI + ("&" if "?" in _BASE_URI else "?") + "options=-csearch_path%3Dgeni"
 OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "dolphin3:8b-llama3.1-q8_0"
 MAX_VERLAUF = 20
 MAX_ERINNERUNGEN = 8
 DESTILLATIONS_INTERVALL = 10
@@ -129,7 +129,7 @@ def destilliere_erinnerungen(verlauf: list, existing: list) -> list:
                 {"role": "user", "content": prompt},
             ],
             "stream": False,
-            "options": {"num_ctx": 4096, "num_predict": 300},
+            "options": {"num_ctx": 13337, "num_predict": 300},
             "think": False,
         }).encode()
         req = urllib.request.Request(

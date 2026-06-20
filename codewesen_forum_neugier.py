@@ -20,7 +20,7 @@ import pymysql
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
 BASE    = Path("/root/werkraum/codewesen")
-MODELL  = "gemma4:e2b-it-q4_K_M"
+MODELL  = "dolphin3:8b-llama3.1-q8_0"
 ZUSTAND = BASE / "_forum_neugier_zustand.json"
 
 WESEN = [

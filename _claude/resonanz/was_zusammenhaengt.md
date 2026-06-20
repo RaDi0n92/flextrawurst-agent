@@ -839,3 +839,11 @@ Florian ist jetzt die Stimme auf flextrawurst.de. Das ist nicht trivial — wir 
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 TTS-Service (`/tts/`) ↔ Nginx-Config ↔ edge-tts ↔ Microsoft Neural Voices ↔ Web Audio API im Browser. Alle Schichten heute angefasst.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Der Bildgenerator ist kein isoliertes Tool — er soll irgendwann in den Flüchtlings-Erstellungsflow eingebunden werden (Bild-Upload ODER Link zu /bildgenerator). Das steht im Zwischenwesen-Konzept. Deshalb macht es Sinn ihn jetzt sauber zu bekommen.
+
+---

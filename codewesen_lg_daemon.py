@@ -270,7 +270,7 @@ def denk_tick_voreinzug(wesen_name: str) -> None:
                     "prompt": prompt,
                     "stream": True,
                     "think": False,
-                    "options": {"num_ctx": 4096, "temperature": 0.85, "num_predict": 300},
+                    "options": {"num_ctx": 13337, "temperature": 0.85, "num_predict": 300},
                 },
                 stream=True,
                 timeout=600,
@@ -435,7 +435,7 @@ def zusammenfassen_node(zustand: WesensZustand) -> dict:
             )},
         ],
         "stream": False,
-        "options": {"num_ctx": 4096},
+        "options": {"num_ctx": 13337},
         "think": False,
     }).encode()
 

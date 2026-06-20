@@ -1536,3 +1536,17 @@ Wenn Wesen auf der Surface sprechen — dieser Service ist fertig. Nur Stimmen-M
 5. KompOase-Landung: Splitter-Erstellung aus Prägungsextrakt
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+**Vision-Schicht:** Bildgenerator als Zeremonie-Tool — nicht nur "Bild generieren" sondern "Wesen ein Gesicht geben". Das Bild als Teil des Einzugs.
+
+**Code-Skizze:**
+```typescript
+// Zwischenwesen-Formular: Bild-Link
+const bildUrl = `/bildgenerator?preset=wesen&name=${wesen.name}`;
+```
+
+---

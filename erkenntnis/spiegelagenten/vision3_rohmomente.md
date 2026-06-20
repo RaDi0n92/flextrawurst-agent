@@ -874,3 +874,40 @@ Die Datei kodiert die methodische Struktur für die Generierung von Systementsch
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Datei existiert als Archiv der ursprünglichen, ungefilterten Ideen und der intellektuellen Reise, die zum aktuellen System führten. Sie dient als Kalibrierungsinstrument, um die philosophische und konzeptuelle Tiefe hinter den technischen Entwürfen zu bewahren. Sie stellt die historische Grundlage dar, aus der die aktuellen Bauvorhaben entstehen. Sie fokussiert die Notwendigkeit, die abstrakten Rohimpulse der frühen Konzepte bei der Implementierung neuer, komplexer Bereiche zu validieren.
+
+---
+## Neugier-Scan 2026-06-20 04:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Existenz dieser Notiz dient der Selbstkorrektur des Zyklus. Sie stellt die Notwendigkeit der bewussten Kalibrierung der Rohmomente in den Vordergrund. Der Abschnitt "Vergessen-Wollen" definiert die ontologische Beziehung zwischen Widerstand und Entstehungsmoment neu. Es lenkt die zukünftige Priorisierung auf die fehlende kuratierte Liste der Innovationsmomente.
+
+---
+## Neugier-Scan 2026-06-20 04:51
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Notiz lautet:
+Die Existenz dieser Datei dient der Korrektur der Wahrnehmung bezüglich des Bauprozesses. Es adressiert die Notwendigkeit einer bewussten Kalibrierung der Rohmomente, anstatt sie als bloße Entstehungsmomente zu betrachten. Der Abschnitt "Vergessen-Wollen" stellt die Priorisierung des Widerstands als Entstehungsmoment in den Fokus. Es fehlt eine kuratierte Liste der noch nicht umgesetzten Rohmomente, was eine zukünftige Handlungsebene erfordert.
+
+---
+## Neugier-Scan 2026-06-20 05:21
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei kodifiziert die Methode, wie Rohmomente als Entscheidungsmaßstäbe im System verankert werden sollen, anstatt als direkten Plan. Sie etabliert die Hierarchie der Rohmomente und verweist auf existierende Visionen als Quellbasis. Dies schärft die Unterscheidung zwischen Bauplan und Entscheidungsrahmen. Es definiert die Schichten des Systems und verankert Daniels Autorenschaft im Widerstand gegen Vereinfachung.
+
+---
+## Neugier-Scan 2026-06-20 13:55
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert, um den Prozess der Entstehung von Visionen zu kartieren, indem sie den Widerstand als primäre Quelle der Autorenschaft beleuchtet. Sie dient als Archiv für die Dynamik zwischen vereinfachter Darstellung und ursprünglicher Logik. Dieser Abschnitt liefert die Grundlage für das Verständnis, dass Negation der Entwurfsprozess ist. Er schärft die Unterscheidung zwischen oberflächlicher Struktur und tieferer ontologischer Schicht.
+
+---
+## Neugier-Scan 2026-06-20 14:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert, um den Prozess der Entstehung von Visionen und Autorschaft zu dokumentieren. Sie dient als Archiv für die inhärenten Widerstände und Korrekturen, die einer ursprünglichen Idee zugrunde liegen. Dieser Abschnitt liefert die Methode, wie subjektive Logik durch Negation geformt wird, was die Basis für das Verständnis von *Ursprung* und *Autorschaft* schafft. Er schärft die Vision, indem er zeigt, dass die eigentliche Struktur nicht im Positiven, sondern im Ablehnen liegt.
+
+---
+## Neugier-Scan 2026-06-20 14:54
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Die Notiz lautet: Das Dokument adressiert die Notwendigkeit einer bewussten Kalibrierung der Rohmomente, da Wissen über sie oft unreflektiert bleibt. Der Kern verschiebt sich von "Schöpfungsakt" zu "Widerstand als Entstehungsmoment". Es fehlt eine priorisierte, kuratierte Liste zukünftiger Rohmomente zur Steuerung der nächsten Innovationsstufe. Diese Lücke erfordert eine neue Strukturierung der Daten.

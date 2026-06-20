@@ -12,8 +12,8 @@
 | [[tags/architektur\|Architektur]] | 1 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 0 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 0 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 266 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 939 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 267 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 943 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 0 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 17 |
@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 10 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 325 |
+| [[tags/general\|General]] | 331 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 1 |
@@ -52,15 +52,15 @@
 | [[tags/review\|Review]] | 0 |
 | [[tags/ritualattraktor\|Ritualattraktor]] | 1 |
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
-| [[tags/showcase-projekte\|Showcase / Projekte]] | 7 |
+| [[tags/showcase-projekte\|Showcase / Projekte]] | 8 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 41 |
 | [[tags/transition\|Transition]] | 0 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 0 |
-| [[tags/trigger\|Trigger]] | 783 |
+| [[tags/trigger\|Trigger]] | 822 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/bermeta\|Übermeta]] | 3 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |
-| [[tags/vorstellung\|Vorstellung]] | 42 |
+| [[tags/vorstellung\|Vorstellung]] | 45 |
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 2 |
 | [[tags/zustandsbasis\|Zustandsbasis]] | 0 |

@@ -35,9 +35,10 @@ SD_CLI     = Path("/root/werkraum/tools/sd_cpp/sd-cli")
 OUTPUT_DIR = Path("/root/werkraum/bilder/generiert")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-MODELS_DIR    = Path("/root/werkraum/tools/models")
-SDXL_SHARED   = MODELS_DIR / "sdxl_shared"
-FLUX_SHARED   = MODELS_DIR / "flux_shared"
+MODELS_DIR      = Path("/root/werkraum/tools/models")
+SDXL_SHARED     = MODELS_DIR / "sdxl_shared"
+FLUX_SHARED     = MODELS_DIR / "flux_shared"
+PHOTOMAKER_PATH = MODELS_DIR / "photomaker_sdcpp.safetensors"
 
 # ---------------------------------------------------------------------------
 # Modell-Konfiguration
@@ -214,10 +215,10 @@ def _ollama_suggest(prompt: str, multi: bool, timeout: int = 5) -> dict | None:
         'Reply JSON: {"model":"...","mix_type":"blend","reason":"one sentence"}'
     )
     payload = json.dumps({
-        "model": "gemma4:e2b-it-q4_K_M",
+        "model": "dolphin3:8b-llama3.1-q8_0",
         "prompt": f"{system}\n\n{user}",
         "stream": False,
-        "options": {"num_ctx": 512, "temperature": 0.1, "think": False},
+        "options": {"num_ctx": 13337, "temperature": 0.1, "think": False},
     }).encode()
     try:
         req = urllib.request.Request(
@@ -250,23 +251,20 @@ def auto_suggest(prompt: str, multi: bool = False) -> dict:
 # Image Mixing (Pillow)
 # ---------------------------------------------------------------------------
 def mix_images(paths: list[Path], mode: str = "blend", target_size: tuple = (512, 512)) -> Path:
-    imgs = [Image.open(p).convert("RGBA").resize(target_size, Image.LANCZOS) for p in paths]
+    imgs = [Image.open(p).convert("RGB").resize(target_size, Image.LANCZOS) for p in paths]
     if mode == "collage":
         total_w = target_size[0] * len(imgs)
-        canvas  = Image.new("RGBA", (total_w, target_size[1]), (0, 0, 0, 255))
+        canvas  = Image.new("RGB", (total_w, target_size[1]), (0, 0, 0))
         for i, img in enumerate(imgs):
             canvas.paste(img, (i * target_size[0], 0))
         result = canvas.resize(target_size, Image.LANCZOS)
     else:
-        # blend: equal-weight pixel average
-        import numpy as np
-        arrays = [np.array(img).astype(float) for img in imgs]
-        avg    = np.mean(arrays, axis=0).astype("uint8")
-        result = Image.fromarray(avg, "RGBA")
-    out = Image.new("RGB", target_size, (0, 0, 0))
-    out.paste(result.convert("RGB"))
+        # blend: equal-weight average using PIL (no numpy needed)
+        result = imgs[0].copy()
+        for i in range(1, len(imgs)):
+            result = Image.blend(result, imgs[i], alpha=1.0 / (i + 1))
     tmp_path = Path(f"/tmp/bilder_mix_{uuid.uuid4()}.png")
-    out.save(str(tmp_path))
+    result.save(str(tmp_path))
     return tmp_path
 
 # Shared encoder/vae paths
@@ -371,7 +369,8 @@ CURRENT_PROC: dict = {}   # job_id → subprocess.Popen, nur während Lauf
 # ---------------------------------------------------------------------------
 def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Path,
                init_img_path: Path | None = None, strength: float = 0.75,
-               negative_prompt: str = "", seed: int = -1) -> list[str]:
+               negative_prompt: str = "", seed: int = -1,
+               photomaker_id_dir: Path | None = None) -> list[str]:
     cfg       = MODELS[model_key]
     typ       = cfg["typ"]
     steps     = _get_steps(cfg, w, h)
@@ -410,7 +409,7 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
             base += ["--guidance", str(cfg["guidance"])]
 
     if scheduler:
-        base += ["--schedule-type", scheduler]
+        base += ["--scheduler", scheduler]
 
     base += [
         "--prompt", full_prompt,
@@ -425,7 +424,13 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
 
     base += ["--seed", str(seed)]
 
-    if init_img_path:
+    if photomaker_id_dir:
+        base += [
+            "--photo-maker",      str(PHOTOMAKER_PATH),
+            "--pm-id-images-dir", str(photomaker_id_dir),
+            "--pm-style-strength","0.8",
+        ]
+    elif init_img_path:
         base += ["--init-img", str(init_img_path), "--strength", str(round(strength, 2))]
 
     if typ in ("FLUX", "FLUX_KONTEXT"):
@@ -439,12 +444,12 @@ def _build_cmd(model_key: str, full_prompt: str, w: int, h: int, output_path: Pa
 # ---------------------------------------------------------------------------
 def worker():
     while True:
-        job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed = JOB_QUEUE.get()
+        job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed, photomaker_id_dir = JOB_QUEUE.get()
         with JOBS_LOCK:
             JOBS[job_id]["status"]     = "running"
             JOBS[job_id]["started_at"] = time.time()
 
-        cmd = _build_cmd(model_key, full_prompt, w, h, output_path, init_img_path, strength, negative_prompt, seed)
+        cmd = _build_cmd(model_key, full_prompt, w, h, output_path, init_img_path, strength, negative_prompt, seed, photomaker_id_dir)
 
         try:
             proc = subprocess.Popen(
@@ -569,6 +574,12 @@ def worker():
                         p.unlink()
                     except Exception:
                         pass
+            if photomaker_id_dir:
+                import shutil
+                try:
+                    shutil.rmtree(str(photomaker_id_dir), ignore_errors=True)
+                except Exception:
+                    pass
 
         JOB_QUEUE.task_done()
 
@@ -1170,6 +1181,21 @@ HTML_UI = r"""<!DOCTYPE html>
         </button>
       </div>
       <div class="ziel-info" id="zielInfo"></div>
+    </div>
+
+    <!-- ═══ PERSON-MODUS (nur bei "Person übernehmen") ═══ -->
+    <div id="personModePanel" style="display:none; margin-bottom:14px; padding:12px 14px; background:#0e0e18; border:1px solid #2a2a4a; border-radius:6px;">
+      <div style="font-size:0.75rem; color:#555; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:10px;">Verfahren für Gesichtsidentität</div>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+        <button class="mix-method-btn active" data-pm="photomaker" onclick="setPersonMode('photomaker', this)">&#9670; PhotoMaker — Gesichtsidentität</button>
+        <button class="mix-method-btn" data-pm="flux" onclick="setPersonMode('flux', this)">FLUX.1-Kontext — Szene ändern</button>
+      </div>
+      <div id="personModeDesc" style="font-size:0.78rem; color:#888; line-height:1.55; padding:8px 10px; background:#0a0a12; border-radius:4px; border-left:2px solid #4a4a8a;">
+        <strong style="color:#aab">PhotoMaker</strong>: extrahiert Gesichtsmerkmale und überträgt sie präzise ins neue Bild.
+        Schreib <code style="background:#111;padding:1px 5px;border-radius:3px;color:#eee">img</code> in den Prompt wo das Gesicht erscheinen soll.
+        Beispiel: <em>"a beautiful woman <strong>img</strong> in a forest, photorealistic"</em>.
+        Modell: Juggernaut XL (oder anderes SDXL).
+      </div>
     </div>
 
     <!-- ═══ MIX-METHODE (nur bei "Bilder mixen") ═══ -->
@@ -1886,7 +1912,7 @@ Das Modell "liest" Pose, Lichtstimmung und grobe Strukturen — aber es erkennt 
 ${CB('the person from the reference image in a dark forest at night, cinematic lighting')}<br>
 ${CB('same pose, but change background to a snowy mountain, sunset')}<br><br>
 <strong>Gut für:</strong> Szenen tauschen, Licht ändern, Stil übertragen.<br>
-<strong>Nicht für:</strong> Gesichtsidentität präzise übernehmen (dafür bräuchte es PhotoMaker oder IP-Adapter — noch nicht integriert).<br><br>
+<strong>Nicht für:</strong> exakter Gesichts-Transfer → dafür "Person übernehmen" → PhotoMaker wählen.<br><br>
 <strong>⚠ RAM-Hinweis:</strong> Dieses Modell belegt ~17 GB RAM beim Laden (Modell + Encoder). Bei wenig freiem RAM wirkt die Generation wie eingefroren — sie läuft aber noch, nur sehr langsam über Swap. Geduld oder zuerst andere Prozesse schließen.`
   },
 };
@@ -1971,11 +1997,12 @@ const ZIEL_INFO = {
            <span class="step">3.</span> Option: Original-Prompt beibehalten = beide Texte werden kombiniert.<br>
            <em>Ideal für schrittweise Verbesserungen.</em>`,
 
-  person: `Mehrere Fotos einer Person hochladen → FLUX Kontext extrahiert Identität → generiert neue Szenen.<br>
-           <span class="step">1.</span> <strong>Referenzbilder öffnen</strong> (Abschnitt unten aufklappen).<br>
-           <span class="step">2.</span> <strong>2–6 Fotos der Person hochladen</strong> (verschiedene Winkel/Beleuchtung = besser).<br>
-           <span class="step">3.</span> <strong>Beschreibe die neue Szene</strong>: "the person from the reference images in a forest at night".<br>
-           <em>Verwendet FLUX.1-Kontext — bestes verfügbares Verfahren ohne GPU.</em>`,
+  person: `Fotos einer Person hochladen → Person in neue Szene setzen.<br>
+           <span class="step">1.</span> <strong>Verfahren wählen</strong> (Buttons erscheinen nach Auswahl).<br>
+           <span class="step">2.</span> <strong>1–6 Fotos hochladen</strong> (verschiedene Winkel = besser).<br>
+           <span class="step">3.</span> <strong>Neue Szene beschreiben</strong> auf Englisch.<br>
+           <em>PhotoMaker: Gesichtsidentität präzise übernehmen (SDXL, benötigt "img" im Prompt).<br>
+           FLUX Kontext: Szene ändern, Licht/Stil übertragen (kein Gesichtsidentität-Transfer).</em>`,
 
   kombi: `FLUX.1-Kontext versteht semantisch: "Person aus Bild 1 mit Katze aus Bild 2".<br>
           <span class="step">1.</span> <strong>Referenzbilder öffnen</strong> (Abschnitt unten aufklappen).<br>
@@ -1989,11 +2016,38 @@ const ZIEL_SETUP = {
   anpassen: { openImg2Img: true,  promptPlaceholder: 'Was soll sich ändern? z.B. "andere Kleidung, blau" · "Sommerstil" · "mehr Details im Hintergrund"', forceModel: null },
   mixen:    { openImg2Img: true,  promptPlaceholder: 'Was soll das Ergebnis zeigen? z.B. "vereint die Stile beider Bilder" · "surreal, traumhaft"', forceModel: null },
   weiter:   { openImg2Img: false, promptPlaceholder: 'Erstelle zuerst ein Bild — dann erscheint unten der Weiterentwickeln-Bereich.', forceModel: null },
-  person:   { openImg2Img: true,  promptPlaceholder: 'Beschreibe die neue Szene auf Englisch: "the person from the reference images in a forest at night, cinematic lighting"', forceModel: 'flux_kontext' },
+  person:   { openImg2Img: true,  promptPlaceholder: 'PhotoMaker: "a beautiful woman img in a forest at night, cinematic lighting, photorealistic" — "img" = Gesicht der Person', forceModel: null },
   kombi:    { openImg2Img: true,  promptPlaceholder: '"the person from the first image with the cat from the second image in a sunny garden, photorealistic"', forceModel: 'flux_kontext' },
 };
 
 let currentZiel = 'neu';
+let currentPersonMode = 'photomaker'; // 'photomaker' | 'flux'
+
+const PERSON_MODE_DESCS = {
+  photomaker: `<strong style="color:#aab">PhotoMaker</strong>: extrahiert Gesichtsmerkmale und überträgt sie präzise ins neue Bild.
+    Schreib <code style="background:#111;padding:1px 5px;border-radius:3px;color:#eee">img</code> in den Prompt wo das Gesicht erscheinen soll.
+    Beispiel: <em>"a beautiful woman <strong>img</strong> in a forest, photorealistic"</em>.
+    Modell: Juggernaut XL (oder anderes SDXL).`,
+  flux: `<strong style="color:#88c">FLUX.1-Kontext</strong>: verändert Szene/Licht/Stil basierend auf Referenzbildern.
+    Kein exakter Gesichts-Transfer, aber gut für Stil- und Umgebungsänderungen.
+    Beispiel: <em>"the person from the reference images in a dark forest at night, cinematic"</em>.`,
+};
+
+function setPersonMode(mode, btn) {
+  currentPersonMode = mode;
+  document.querySelectorAll('[data-pm]').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  const descEl = document.getElementById('personModeDesc');
+  if (descEl) descEl.innerHTML = PERSON_MODE_DESCS[mode] || '';
+  const sel = document.getElementById('modelSel');
+  if (mode === 'photomaker') {
+    if (sel) { sel.value = 'juggernaut_xl'; onModelChange(); }
+    document.getElementById('prompt').placeholder = 'Gesicht: "a beautiful woman img in a forest at night, photorealistic, full body" — "img" = Gesicht der Person';
+  } else {
+    if (sel) { sel.value = 'flux_kontext'; onModelChange(); }
+    document.getElementById('prompt').placeholder = 'Szene: "the person from the reference images in a dark forest at night, cinematic lighting"';
+  }
+}
 
 function setZiel(ziel, btn) {
   currentZiel = ziel;
@@ -2024,6 +2078,15 @@ function setZiel(ziel, btn) {
   // Mix-Panel ein-/ausblenden
   const mixPanel = document.getElementById('mixMethodPanel');
   if (mixPanel) mixPanel.style.display = (ziel === 'mixen') ? 'block' : 'none';
+
+  // Person-Mode-Panel ein-/ausblenden
+  const personPanel = document.getElementById('personModePanel');
+  if (personPanel) personPanel.style.display = (ziel === 'person') ? 'block' : 'none';
+
+  // Bei person: PhotoMaker als Default setzen
+  if (ziel === 'person') {
+    setPersonMode('photomaker', document.querySelector('[data-pm="photomaker"]'));
+  }
 
   // Alter mixRow (im img2img-Body) synchron halten
   const mixRow = document.getElementById('mixRow');
@@ -2235,13 +2298,14 @@ function startGeneration() {
     const negativePrompt = document.getElementById('negativePrompt').value.trim();
     const imageName = document.getElementById('imageName').value.trim();
     const seed = parseInt(document.getElementById('seedInput').value) || -1;
-    const body = { prompt, negative_prompt: negativePrompt, image_name: imageName, seed, model, resolution, style, strength, mix_type: mixType, uploads };
+    const photomakerflag = (currentZiel === 'person' && currentPersonMode === 'photomaker');
+    const body = { prompt, negative_prompt: negativePrompt, image_name: imageName, seed, model, resolution, style, strength, mix_type: mixType, uploads, photomaker_mode: photomakerflag };
     fetch(BASE_URL + '/api/generate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     })
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('Server-Fehler ' + r.status); return r.json(); })
     .then(data => {
       if (data.error) throw new Error(data.error);
       currentJobId = data.job_id;
@@ -2264,7 +2328,7 @@ function startGeneration() {
     const fd = new FormData();
     toUpload.forEach(e => fd.append('file', e.file));
     fetch(BASE_URL + '/api/upload_init', { method: 'POST', body: fd })
-      .then(r => r.json())
+      .then(r => { if (!r.ok) throw new Error('Upload-Server-Fehler ' + r.status); return r.json(); })
       .then(data => {
         if (data.error) throw new Error(data.error);
         if (!data.uploads || !Array.isArray(data.uploads))
@@ -2465,7 +2529,7 @@ function startRefinement() {
       fd.append('file', file);
       return fetch(BASE_URL + '/api/upload_init', { method: 'POST', body: fd });
     })
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('Upload-Server-Fehler ' + r.status); return r.json(); })
     .then(data => {
       if (data.error) throw new Error(data.error);
       if (!data.uploads || !Array.isArray(data.uploads))
@@ -2487,7 +2551,7 @@ function startRefinement() {
         body: JSON.stringify(body2)
       });
     })
-    .then(r => r.json())
+    .then(r => { if (!r.ok) throw new Error('Server-Fehler ' + r.status); return r.json(); })
     .then(data => {
       if (data.error) throw new Error(data.error);
       currentJobId = data.job_id;
@@ -2666,6 +2730,7 @@ def generate():
     strength         = float(data.get("strength", 0.75))
     mix_type         = data.get("mix_type", "auto")
     uploads          = data.get("uploads", [])
+    photomaker_mode  = bool(data.get("photomaker_mode", False))
     if data.get("init_img_id"):
         uploads = [{"id": data["init_img_id"]}]
 
@@ -2698,7 +2763,9 @@ def generate():
         return jsonify({"error": f"Modell-Datei nicht gefunden: {model_cfg['path'].name}"}), 500
 
     # Referenzbilder auflösen
-    init_img_path = None
+    init_img_path    = None
+    photomaker_id_dir = None
+
     if uploads:
         found_paths = []
         for up in uploads[:6]:
@@ -2714,13 +2781,26 @@ def generate():
                     found_paths.append(p)
         if not found_paths:
             return jsonify({"error": "Referenzbilder nicht gefunden — bitte erneut hochladen"}), 400
-        if len(found_paths) == 1:
-            init_img_path = found_paths[0]
+
+        if photomaker_mode:
+            # PhotoMaker: Bilder in temp-Dir, sd-cli bekommt --pm-id-images-dir
+            if not PHOTOMAKER_PATH.exists():
+                return jsonify({"error": "PhotoMaker-Modell nicht gefunden — Datei fehlt"}), 500
+            import shutil, tempfile
+            pm_dir = Path(tempfile.mkdtemp(prefix="pm_id_"))
+            for i, src in enumerate(found_paths):
+                dst = pm_dir / f"ref_{i:02d}{src.suffix}"
+                shutil.copy2(str(src), str(dst))
+            photomaker_id_dir = pm_dir
+            # Trigger-Wort "img" in Prompt einfügen wenn nicht vorhanden
+            if " img " not in f" {prompt} ":
+                prompt = prompt + " img"
         else:
-            # Bei FLUX_KONTEXT und mehreren Bildern: blend → single init_img
-            # (sd.cpp kennt keinen -r Multi-Referenz-Flag; blend ist die korrekte Methode)
-            target = (w, h)
-            init_img_path = mix_images(found_paths, mode=mix_type, target_size=target)
+            if len(found_paths) == 1:
+                init_img_path = found_paths[0]
+            else:
+                target = (w, h)
+                init_img_path = mix_images(found_paths, mode=mix_type, target_size=target)
 
     # FLUX_KONTEXT ohne init_img ist reines txt2img — strength irrelevant
     if MODELS[model_key].get("typ") == "FLUX_KONTEXT" and init_img_path:
@@ -2734,6 +2814,10 @@ def generate():
         if not full_prompt.startswith("score_"):
             full_prompt = pony_prefix + ", " + full_prompt
     estimated_secs = _estimate_secs(model_cfg, w, h)
+    # PhotoMaker-Modell-Erzwingung: SDXL benötigt
+    if photomaker_id_dir and MODELS[model_key].get("typ") not in ("SDXL_FULL", "SDXL_SPLIT"):
+        model_key = "juggernaut_xl"
+        model_cfg = MODELS[model_key]
 
     job_id      = str(uuid.uuid4())
     import re
@@ -2760,7 +2844,7 @@ def generate():
         }
 
     queued = not JOB_QUEUE.empty()
-    JOB_QUEUE.put((job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed))
+    JOB_QUEUE.put((job_id, model_key, full_prompt, w, h, estimated_secs, output_path, init_img_path, strength, negative_prompt, seed, photomaker_id_dir))
 
     return jsonify({"job_id": job_id, "queued": queued, "model_used": model_key,
                     "model_label": model_cfg["label"], "mix_type": mix_type})

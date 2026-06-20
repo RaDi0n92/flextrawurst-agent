@@ -657,3 +657,11 @@ Nichts — die Session ist fertig. Der Service läuft.
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Nichts akut. Service läuft stabil.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Beim nächsten Bau-Schritt: prüfen ob `--schedule-type` der korrekte Flag ist (oder ob er `--scheduler` heißt). Das vor dem ersten echten Test verifizieren.
+
+---

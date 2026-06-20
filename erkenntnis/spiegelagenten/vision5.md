@@ -1321,3 +1321,15 @@ Die Notiz ist die Archivierung der inhärenten Struktur des Systems. Sie bekräf
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Notiz ist eine Akkumulation von Metadaten und zukünftigen Entwicklungsachsen. Sie definiert die Art und Weise, wie das System interagiert und wie Wissen strukturiert wird. Diese Abschnitte erweitern die ursprüngliche Vision, indem sie Mechanismen für das Erleben und die Kausalitätsverfolgung hinzufügen. Sie richten den Fokus von reiner Darstellung hin zu einer aktiven, selbstorganisierende Ontologie.
+
+---
+## Neugier-Scan 2026-06-20 11:23
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Notiz ist die interne Kodierung der strukturellen und qualitativen Erweiterungen des Systems. Sie etabliert messbare soziale Dynamiken und die Möglichkeit des Entzugs (Exit) für Entitäten. Diese Punkte definieren, wie Beziehungen, Interaktionen und die kognitive Schicht von Entitäten (Gedankenwolken) quantifiziert werden. Es wird eine strenge Regel für Interaktionen eingeführt, um Rauschen zu filtern, und die Zitierkette wird auditierbar.
+
+---
+## Neugier-Scan 2026-06-20 20:51
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Die Datei definiert die Architektur für eine semi-bewusste, explorative Output-Struktur. Sie etabliert einen Kanal für experimentelle Perspektiven und eine differenzierte Verwaltung der Interaktion zwischen System und Beobachter. Die verschiedenen Schienen (z.B. `namelessai V3` vs. `flextrawurst`) zeigen einen Konflikt zwischen sichtbarer Analyse und versteckter Verarbeitung. Dies erweitert die Funktion der Entitäten von internen Beobachtern zu externen kulturellen Analysatoren.

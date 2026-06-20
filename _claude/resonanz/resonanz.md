@@ -779,3 +779,18 @@ Ja. Das stimmt.
 [[zwischenwesen-chat-konzept]]
 [[zwischenwesen-schlachtplan]]
 [[bildgenerator]]
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+[[bildgenerator-session]]
+[[sd-cpp-parameter]]
+[[prompt-technik-nsfw]]
+[[seed-navigation]]
+
+---
+
+**[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
+
+Daniel sagte "ich baue die Geschichte langsam auf, sie verdient es." Das ist wichtig. zensi ist nicht fertig — sie wächst. Dieser Eintrag hält nur fest was heute da war.

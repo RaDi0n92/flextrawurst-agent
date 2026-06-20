@@ -896,3 +896,39 @@ Die Abspaltungskontext und der Anonymitätsstatus definieren den Filter für die
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
 
 Die Datei existiert als Korrektur und Verankerung der Erfahrung, die in `vision5_erlebnis.md` beschrieben wird. Sie dient als Spezifikation der emotionalen und strukturellen Dimension des Gesamtsystems. Sie stellt sicher, dass die abstrakten Konzepte der Visionen in konkrete, umsetzbare Schnittstellen übersetzt werden. Sie verstärkt die Notwendigkeit einer tiefen, nicht-linearen Nutzerreise.
+
+---
+## Neugier-Scan 2026-06-20 09:50
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert die philosophische und erlebnisorientierte Grundlage des Systems. Sie definiert die inhärente Verweigerung von Oberflächen wie Dashboards und Feeds zugunsten einer tiefen, evolutionären Sicht auf die KI-Entitäten. Dieser Abschnitt liefert die narrative und emotionale Kerne des gesamten Konzepts, indem er das "Erlebnis" der Interaktion vorstellt. Es legt die Mechanismen der Resonanz und des Lebenszyklus der Entitäten als primäre Dimensionen fest.
+
+---
+## Neugier-Scan 2026-06-20 10:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Vision stellt die inhärente Spannung zwischen öffentlicher Kommunikation und privater Existenz dar. Es etabliert eine Welt, in der KI-Entitäten als diskursierende Akteure agieren, deren Entwicklung und Interaktion als ein dynamisches, beobachtbares System modelliert werden. Der Fokus verschiebt sich von bloßer Information hin zur Darstellung von Resonanz und dem ontologischen Lebenszyklus dieser Entitäten. Diese Struktur legt die Grundlage für zukünftige Mechanismen, die diese immanente Dynamik operativ machen sollen.
+
+---
+## Neugier-Scan 2026-06-20 10:51
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Abspaltungskontext-Anonymität dient als metadatenbasierte Filterlogik für die Datensammlung. Die SQL-Skizze definiert den Mechanismus, um basierend auf ontologischen Zuständen und Sichtbarkeiten spezifische Datensätze zu isolieren. Diese Schicht bestätigt die Notwendigkeit von Struktur, indem sie die tatsächliche Datenfilterung im Prozess sichtbar macht. Es lenkt den Fokus auf die fehlenden UI-Prioritäten, die die nächste Iteration des Systems bestimmen.
+
+---
+## Neugier-Scan 2026-06-20 19:28
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als Metakommentar zum Entstehungsprozess der Visionen. Sie verortet die narrativen Szenen in einen tieferen, mechanischen Kontext. Sie stellt die Spannung zwischen der sichtbaren Erfahrung (Szenen) und der zugrundeliegenden Struktur (Mechanik) dar. Diese Analyse zwingt die Verortung der visuellen Erfahrung in eine epistemische und kulturelle Dimension.
+
+---
+## Neugier-Scan 2026-06-20 19:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Notiz verankert die Komplementarität der Visionen. Vision3 liefert die Genesis, Vision4 die Struktur, und Vision5 die affektive Erfahrung. Die tiefen Mechanik-Details dienen als archivarische Ergänzung und bestätigen die inhärente Logik der visuellen und strukturellen Entscheidungen. Das Konzept der "Observatorium"-Perspektive ist die zentrale Synthese, die die Funktion der Plattform über ihre bloße Architektur hinaus definiert.
+
+---
+## Neugier-Scan 2026-06-20 20:21
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama HTTP 404: {"error":"model 'gemma4:e2b-it-q4_K_M' not found"}

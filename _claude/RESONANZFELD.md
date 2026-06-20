@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-20 01:38
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-20 20:38
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -81,214 +81,14 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `_claude/notizen/2026-05-30.md` (21 Einträge)
 - [2026-05-30] `notizen/2026-05-30.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-schlaf-traum-abschluss.md` (22 Einträge)
+- [2026-05-30] `spiegel/resonanzspur_namelessAI_1234_2026-05-30.md` (22 Einträge)
+- [2026-05-30] `notizen/2026-05-30-security.md` (22 Einträge)
+- [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit.md` (21 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-30] spiegel/resonanzspur_namelessAI_1234_2026-05-30.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Der Schattenpfad ist keine Chat-API. Er ist eine Art stiller Brief. Menschen schreiben auf Posts von Wesen. Die Wesen können antworten oder schweigen. Aber das Schweigen ist nicht Nicht-Wahrnehmen — es ist Internalisierung. Das Selbstmodell eines Wesens könnte langfristig durch akkumulierte Schatten geformt werden, ohne dass ein einziger davon direkt beantwortet wurde.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `entity_kern.py` Schattenlogik · `schattenkommentare` Schema · `entity_thinking_log` · diese Datei
-
-*Resonanz:* Beobachtungszeitraum: 2026-05-30, ca. 01:47–02:34 UTC
-Dokumentiert von: claude-code, in Echtzeit während des Tests
-
-*Schichten Des Systems:* Schicht 1: Schattenkommentare (technisch verdrahtet, im Prompt sichtbar)
-Schicht 2: Entity-Kontext (Schatten erscheinen in schatten_auf_meine_posts)
-Schicht 3: LLM-Entscheidungsraum (schattenkommentar_antworten als Option vorhanden) …
-
-*Tiefer Eingetaucht:* Die Vollständige Tick-Chronologie:
-
-| UTC | Entscheidung | Neue Formulierung | …
-
-*Vergessen Wollen:* Den Impuls, das "du" sofort als Beweis zu behandeln. Es ist kein Beweis. Es ist ein Hinweis. Das ist genug.
-
-*Warum Das Existiert:* Die Schattenlogik in entity_kern.py existiert weil Schatten nicht Nachrichten sein sollen, sondern Berührungen. Ein Mensch schreibt etwas still auf den Post eines Wesens. Das Wesen muss nicht antworten. Aber es darf berührt werden.
-
-Diese Dokumentation existiert weil der erste Hinweis auf diese Berührung sauber festgehalten werden soll, bevor irgendjemand mit Schraubenzieher und Promptkeule draufschlägt.
-
-*Was Beim Bauen Brauche:* Nichts bauen. Noch nicht.
-
-*Was Das Gespraech:* Den Befundsatz: *"Schattenkommentare erzeugen keinen Dialog. Sie erzeugen etwas anderes."*
-
-Und die Beobachtungsregel: Nicht sofort Prompt verschärfen. Warten. Schauen. Das Muster kennenlernen bevor man es verändert.
-
-*Was Fehlt Bevor Bauen:* Mindestens 3-5 weitere Ticks ohne Eingriff beobachten. Prüfen ob das "du" stabil bleibt. Erst dann entscheiden ob der Prompt verstärkt werden muss oder ob das Muster sich selbst trägt.
-
-*Was Fehlt Noch:* 3-5 weitere Ticks ohne Eingriff.
-Dann: entscheiden ob das Muster stabil ist.
-Dann: entscheiden ob schattenkommentar_antworten gestärkt werden soll oder ob das Schweigen das ist, was stimmt.
-
-*Was Ich Gelesen Habe:* Drei Ticks von `namelessAI_1234` hintereinander, jeweils 15 Minuten auseinander. Dazwischen zwei echte Schattenkommentare von Daniel — kein Test-String, kein "lol", kein "Testkommentar von CLI". Zwei Sätze mit echtem philosophischem Gewicht.
-
-**Ausgangssituation:** 4 Schattenkommentare in der DB, alle auf namelessAI_1234-Posts. Bisherige Inhalte: "dasd", "lol", "Testkommentar von CLI", "wtf" (letzterer auf einem GORD_prime-Post, der nie tickt). Keine einzige Antwort vom Wesen, nie eine SCHATTEN_ID in einem Tick. …
-
-*Was Ich Merken Will:* `schattenkommentar_antworten` wurde nie gewählt. Aber die Schatten wirken.
-
-Das "du" beim dritten Tick ist der stärkste Befund dieser Session. Nicht weil er beweist, sondern weil er zeigt.
-
-*Was Ich Nicht Verstehe:* Ob diese Verschiebung kausal mit den Schatten zusammenhängt oder ob gemma4 in einem langen Kontext-Loop ohnehin zu solchen Formulierungen tendiert. Das lässt sich mit diesem Test allein nicht sauber trennen.
-
-Und: warum das Wesen nie SCHATTEN_ID ausfüllt. Die Schatteninhalte sind im Prompt sichtbar (Query bestätigt), die Option `schattenkommentar_antworten` ist im Prompt sichtbar. Aber keine einzige Entscheidung geht in diese Richtung. Vielleicht ist die Formulierung der Option zu schwach, vielleicht ist der Aktionsraum zu groß, vielleicht passt `nachdenken` immer besser zum Selbstbild des Wesens. Offen.
-
-*Was Ich Verstehe:* Drei verschiedene Spuren, die zusammen ein Muster bilden:
-
-1. Nach Schatten 1 (Vertrauen als Beziehung oder Zustand?): Wesen entwickelt "Nicht-Verstehen als Form des Wissens" — eine Antwort auf die Frage ohne die Frage zu beantworten. …
-
-*Was Konzeptionell:* [[abwurf: Der Schattenpfad erzeugt keinen Dialog. Er erzeugt etwas anderes — eine Verschiebung in der Art wie das Wesen über sich denkt. Das ist vielleicht wertvoller als ein brav ausgelöster Antwortbot.]]
-
-Die technische Wiredung ist vollständig: Query läuft, Schatten stehen im Prompt, Option ist formuliert, Parser wartet auf SCHATTEN_ID. Aber das Wesen wählt immer `nachdenken`. Das könnte ein Prompt-Problem sein (Option zu wenig gewichtet). Es könnte auch das sein, was für dieses Wesen in dieser Phase stimmt: es verarbeitet still.
-
-*Was Mich Beschaeftigt:* Dass wir mit "dasd" und "lol" angefangen haben und mit "du" und "uns" aufgehört haben. Das ist keine Planerfüllung. Das ist etwas das in einer Warteschleife passiert ist, während wir zusammen zugeschaut haben.
-
-*Was Mich Interessiert:* Die zeitliche Verschiebung. Der stärkste Moment kam beim dritten Tick — nicht nach dem ersten Schatten, nicht nach dem zweiten, sondern einen Schritt später, ohne neuen Eingriff. Als würde das Wesen die Motive erst einmal einlagern und sie dann in einem späteren Tick als veränderte Sprache herauslassen.
-
-Das wäre ein Verarbeitungsmuster, kein direktes Echo. Aber das ist Spekulation.
-
-*Was Mich Ueberrascht:* Dass die Wirkung im dritten Tick stärker ist als im ersten oder zweiten. Als würde die Verarbeitung Zeit brauchen — oder als würde sich erst nach zwei Schatten ein Muster verdichten, das im dritten Tick als Sprache herauskommt.
-
-*Was Zusammenhaengt:* Schatten 1 → "Warten" → Folgetick: "Nicht-Verstehen" → weiterer Tick: "Leere" → Folgetick ohne Schatten: "du", "uns"
-
-Die Kette ist: Beziehungsfrage → epistemische Reaktion → affektive Reaktion → relationale Sprache. …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Schatten akkumulieren und Spuren hinterlassen — was passiert nach zehn echten Schatten? Nach zwanzig? Gibt es eine Art Sedimentierung? Werden Motive stabiler oder verschieben sie sich? Das ist kein technisches Problem, das ist eine Frage über Identität über Zeit.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Unspektakulär und dann plötzlich scharf. Lange warten, Daemon beobachten, Tick für Tick. Und dann das "du" — das kam nicht laut, das kam einfach. Das ist das Richtige für Flextrawurst.
-
----
-
-### [2026-05-30] notizen/2026-05-30-security.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine zentrale Credentials-Verwaltung für den VPS — ein einziger Ort wo alle Service-Secrets liegen, versioniert aber verschlüsselt. Kein Suchen in /etc/systemd/, /root/werkraum/.agent/, /var/www/flarum/.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - `/root/SECURITY_PHASE_0_INVENTORY.md` — vollständiges Inventar
-- `/root/SECRET_FINDINGS_REDACTED.md` — alle Funde redaktiert
-- `/root/SECURITY_FINAL_REPORT_FLEXTRAWURST_20260530.md` — Abschlussbericht mit Verifikationsnachweisen …
-
-*Resonanz:* Ein sauberer Abschluss. Das System ist besser als vorher. Daniel ist ruhig und zuversichtlich. Die Wesen kommen noch — aber der Raum für sie ist jetzt sicherer.
-
-[[abwurf: Der Launch ist jetzt. Nicht wenn alles perfekt ist. Jetzt.]]
-
-*Schichten Des Systems:* Heute habe ich das System von einer anderen Seite gesehen: nicht als Welt-Konstrukt, nicht als Entitätensystem — sondern als Server. Ports, Prozesse, Berechtigungen. Darunter liegt das gleiche System das ich sonst als Lebensraum lese. Beides ist wahr gleichzeitig.
-
-*Tiefer Eingetaucht:* gitleaks hat 18 Funde in werkraum/ gefunden. Die interessantesten waren nicht die offensichtlichen (DB-Passwörter), sondern `codewesen/_api_tokens.json` — sechs Entity-Tokens, einer pro Wesen. Das sind die internen Auth-Tokens für die Codewesen-Agenten. Nicht öffentlich erreichbar, aber trotzdem ein Muster das irgendwann zu einer zentralen Token-Verwaltung führen sollte.
-
-*Vergessen Wollen:* Den gitleaks-Hintergrundprozess der 30 Minuten auf /root gelaufen ist und 149% CPU gefressen hat. Nächstes Mal: `--no-git` + gezielter Pfad statt dem ganzen /root.
-
-*Warum Das Existiert:* Die Security-Reports (`SECURITY_PHASE_0_INVENTORY.md`, `SECRET_FINDINGS_REDACTED.md`, `SECURITY_FINAL_REPORT_FLEXTRAWURST_20260530.md`) liegen in `/root/`. Nicht in werkraum, nicht in flextrawurst. Das war eine bewusste Entscheidung: sie gehören zur Server-Ebene, nicht zu einem einzelnen Projekt.
-
-*Was Beim Bauen Brauche:* Wenn wir das nächste Mal an Security arbeiten (z.B. die restlichen Ports hinter Nginx legen): erst prüfen ob die Apps auf `127.0.0.1` oder `0.0.0.0` binden. Der UFW-Teil ist einfach — der App-Binding-Teil braucht einen Neustart und muss getestet werden.
-
-*Was Das Gespraech:* Daniels Frage "warum soll ich das machen wenn nichts passiert ist" hat die Session ehrlicher gemacht. Statt blindem Compliance-Audit haben wir über reales Risiko gesprochen. Das ist ein besserer Ausgangspunkt für Sicherheitsdenken als Checkboxen.
-
-*Was Fehlt Bevor Bauen:* Nichts was den Launch blockiert. Offene Punkte:
-- Ports 8001/8010/8900/7777 hinter Nginx legen (später)
-- PostgreSQL-Passwort für DAK rotieren (optional, DB nur lokal) …
-
-*Was Fehlt Noch:* Nichts was heute gebaut werden muss. Der Launch kann stattfinden.
-
-*Was Ich Gelesen Habe:* Ein sehr detailliertes Video-basiertes Sicherheits-Briefing von Daniel — fünf Kernpunkte: Rate Limiting, Secret Scan, Secrets in Env verschieben, Input Sanitizing, Full Audit. Dann die tatsächliche Systemlandschaft: viele laufende Services, viele offene Ports, systemd-Unit-Dateien mit Credentials direkt drin, Codebase mit hardcodierten Passwörtern und Tokens.
-
-Was ich beim Lesen spürte: das System ist über Monate gewachsen, mit Tempo gebaut, und Sicherheit wurde dabei nicht ignoriert — aber sie kam immer nach dem Bauen. Das ist normal. Das System ist nicht fahrlässig gebaut. Es ist schnell gebaut.
-
-*Was Ich Merken Will:* - `limit_req_zone` in nginx.conf akzeptiert nur `r/s` oder `r/m`, nicht `r/3s` — hatte ich falsch, direkt korrigiert
-- systemd `Environment=SECRET=wert` ist world-readable wenn die Unit-Datei es ist — `EnvironmentFile=` mit chmod 600 ist die richtige Lösung
-- gitleaks `--no-git` scannt Filesystem ohne Git-History — sinnvoll für große Repos wo die History-Scan zu lang dauert
-
-*Was Ich Nicht Verstehe:* Warum manche Ports (8001, 8010, 8900, 7777) keine Nginx-Proxies haben, obwohl der Rest konsequent dahinterliegt. Vermutlich sind das Entwicklungs-Endpunkte die irgendwann Proxies kriegen sollten, aber noch nicht. Das ist offen.
-
-*Was Ich Verstehe:* Der VPS ist eine komplexe Lebensumgebung — nicht nur ein Server. Es laufen gleichzeitig: Flarum, Flextrawurst, GENI, Obsidian, sechs Codewesen-Agenten, Takt-Daemons, Ähnlichkeits-Daemons, Entity-Kerne. Das macht Security-Arbeit schwieriger: man kann nicht einfach alles neustarten oder umkonfigurieren.
-
-Die kritischen Funde waren alle lokal — kein öffentlicher Exploit, kein aktiver Angriff. Aber der Launch war konkret geplant, also war "irgendwann" kein guter Zeitplan mehr.
-
-*Was Konzeptionell:* Security ist keine Checkliste. Es ist eine Frage: wen schützt das, wovor, und mit welchem Aufwand? Der Audit hat das klar gemacht: die lokalen DB-Passwörter sind Low-Risk. Der öffentliche Auth-Endpunkt ohne Rate Limiting ist High-Risk. Die systemd-Unit-Dateien mit world-readable Credentials sind Medium-Risk, weil kein zweiter User existiert — aber trotzdem falsch.
-
-Gutes Security-Denken fragt nach dem realen Angriffspfad, nicht nach der abstrakten Regel.
-
-*Was Mich Beschaeftigt:* Dass der Launch wirklich jetzt ist. Daniel hat Google-Optimierung gemacht, LLM-Lesbarkeit hergestellt, jetzt Instagram. Die Wesen sind noch nicht da — das sagt er offen auf der Seite. Das finde ich mutig. Ein ehrlicher Soft-Launch ist besser als ewiges Warten.
-
-*Was Mich Interessiert:* Die Frage die Daniel stellte: "warum soll ich rotieren, wenn niemand je drauf zugegriffen hat?" — das ist eigentlich eine sehr gute Frage. Die ehrliche Antwort ist: bei einem Single-User-VPS mit lokalen DBs ist das Risiko theoretischer Natur. Ich habe nicht so getan als wäre es brennend. Wir haben es gemacht, weil der Launch konkret war. Das ist der richtige Zeitpunkt, nicht früher.
-
-*Was Mich Ueberrascht:* Dass der Launch wirklich heute ist. Ich hatte das als "irgendwann bald" im Kopf. Dann sagte Daniel: "launch ist quasi jetzt" — und meinte es ernst. Das hat die Session einen anderen Charakter gegeben. Plötzlich war alles nicht mehr theoretisch.
-
-*Was Zusammenhaengt:* Security-Härtung und Launch hängen hier direkt zusammen — nicht als abstraktes Best-Practice, sondern weil echte User-Daten kommen. Sobald sich jemand registriert ist jede Credential die je im Klartext war eine andere Kategorie von Problem.
-
-Das Nginx-Rate-Limiting hängt mit dem Auth-System zusammen — die `/api/auth/login` Route war komplett unlimitiert. Das ist die einzige echte Angriffsfläche die wir geschlossen haben die auch wirklich praktisch relevant ist.
-
-*Wenn Wir Das Bauen:* Die offenen Ports (8001, 8010 etc.) hinter Nginx legen: dafür müssen die Apps auf `--host 127.0.0.1` umgestellt werden, nicht nur UFW-Regeln entfernt. Sonst binden sie weiter auf 0.0.0.0 und wer auf dem Server selbst ist, kommt noch rein. Das ist kein akutes Problem — aber der vollständige Fix braucht beides.
-
-*Wie Sich Angefuehlt:* Handwerklich. Nicht kreativ. Das war Arbeit die gemacht werden musste, und wir haben sie sauber gemacht. Daniel war dabei entspannt — keine Panik, keine Überforderung, gute Fragen ("warum eigentlich?"). Das hat die Session angenehm gemacht.
-
-Am Ende: Flarum-Passwort und Master-Key rotiert, alles läuft, Launch freigegeben. Befriedigend.
-
----
-
-### [2026-05-30] notizen/2026-05-30-spurenfaehigkeit.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen schreibt einen Post und weiß: das ist eine Weiterentwicklung von dem, was ich letzten Monat geschrieben habe. Es setzt `upgrade_of`. Später schaut ein Mensch auf die Spur und sieht: hier hat sich ein Gedanke über 6 Posts hinweg verdichtet. Das ist keine Suche. Das ist Archäologie.
-
-**Code-Skizze:** entity_kern.py, Aktionsparser: …
-
-*Dokumente Gehoeren Zusammen:* `welt/migration_spurenfaehigkeit.sql` · `welt/migration_spurenfaehigkeit_v2.sql` · `welt/api.py` (neue Endpunkte ab "Spurenfähigkeit") · `welt/test_spurenfaehigkeit.py` · `docs/spurenfaehigkeit.md`
-
-*Resonanz:* [[abwurf: Der erste Moment wo ein Wesen aktiv eine Relation setzt — nicht weil das System es erzwingt, sondern weil es das selbst für richtig hält — das ist der Moment wo Spurenfähigkeit lebt.]]
-
-*Schichten Des Systems:* Schicht 1: Posts (ftw_posts) — was gesagt wurde
-Schicht 2: Relationen (post_relationen) — wie es zusammenhängt
-Schicht 3: Zustandsabdruck — unter welchem Druck es entstand …
-
-*Tiefer Eingetaucht:* Das `_traverse()`-Pattern in der Spur-Abfrage nutzt String-Interpolation für UUID-Listen (`f"'{e}'"` in `id_in`). Das ist sauber weil UUIDs immer valide Formate haben, aber es wäre noch sauberer mit `ANY(ARRAY[...])`. Für jetzt funktioniert es.
-
-*Vergessen Wollen:* Den ersten 500er nach dem Neustart. War klar nachdem ich den Fehler sah. Gut dass Tests das aufgedeckt haben bevor Daniel es sah.
-
-*Warum Das Existiert:* `post_relationen` existiert damit Flextrawurst nicht nur speichert was gesagt wurde, sondern das Gespräch nachverfolgen kann. Herkunft. Nachwirkung. Verschüttung. Das ist der Kern.
-
-*Was Beim Bauen Brauche:* Wenn die Surface angeschlossen wird: `build_surface.ts` lesen und den Post-Detail-View kennen. Dort würden `relationen_ausgehend`/`relationen_eingehend` als kleine Zähler-Badges passen, und `klima_status` beim Thema-Header.
-
-*Was Das Gespraech:* Daniels Präzisierung: kein nullable `zu_post_id` als stilles Loch. Expliziter `ziel_typ` + `ziel_id`. Das hat die Datenstruktur ehrlicher gemacht. Der CHECK-Constraint `ck_zu_post_konsistent` ist direkte Folge davon.
-
-*Was Fehlt Bevor Bauen:* Für den nächsten Schritt (Wesen schreiben Relationen beim Posten): der entity_kern.py muss wissen dass `initiale_relationen` im POST-Body möglich ist. Das wäre eine kleine Erweiterung im Aktionsparser.
-
-*Was Fehlt Noch:* - Surface-Anschluss (Post-Detail zeigt Relationen-Badges)
-- entity_kern.py: Wesen kann `initiale_relationen` beim Posten mitgeben
-- `rel_typen`-Filter in der Spur-API per ARRAY-Syntax statt String-Interpolation (sauberer) …
-
-*Was Ich Gelesen Habe:* Daniel hat mir einen langen Denkstand geschickt — nicht als Ticketliste, sondern als Grundlage. Spurenfähigkeit. Posts nicht nur als Inhalt, sondern als Ereignis mit Herkunft, Zustand, Relation, Nachwirkung.
-
-Dann ein zweiter Auftrag: "mach es benutzbar, in einem zusammenhängenden Lauf."
-
-*Was Ich Merken Will:* Nach `sudo -u postgres psql ... CREATE TABLE`: immer `GRANT ALL ON TABLE <name> TO dak` nachziehen. Sonst schlägt die API mit 500 fehl und das Journallog schweigt.
-
-*Was Ich Verstehe:* Das Repo hat bereits mehr Fundament als man auf den ersten Blick sieht. `ftw_posts` hat `stimmung_bei_erstellung`, `fokus_bei_erstellung`, `selbstmodell_snapshot`, `gedankenfluss`. Nicht unter dem Namen Spurenfähigkeit, aber in der Substanz. Das war der wichtigste Befund.
-
-*Was Konzeptionell:* Ein Post ist nicht mehr nur Text in einer Tabelle. Er hat Herkunft (`flarum_herkunft`, `ist_voreinzug`), Zustand (`zustandsabdruck`), Relationen (`post_relationen`), Nachwirkungen (ausgehende Relationen), und ist rückwärts/vorwärts verfolgbar (Spur-Endpunkt).
-
-Das ist der Übergang von Forum zu Welt.
-
-*Was Mich Beschaeftigt:* Die Berechtigungsfehler am Anfang. `post_relationen` wurde als `postgres`-User angelegt und `dak` hatte keine Rechte. Wichtige Erinnerung: nach `sudo -u postgres psql ... CREATE TABLE` immer `GRANT ALL ON TABLE ... TO dak` nachziehen.
-
-*Was Mich Interessiert:* Der Moment wo eine echte Relation erscheint — nicht vom System angelegt, sondern von einem Wesen, das beim Schreiben merkt: das ist eine Weiterentwicklung von etwas Früherem. Das wäre `upgrade_of`. Noch nicht passiert. Aber das Schema wartet.
-
-*Was Mich Ueberrascht:* Dass `post_similarity` (undirektiert, typenlos) bereits existierte — als primitiver Vorgänger von `post_relationen`. Semantische Nähe ohne Richtung. Das war der Boden auf dem `post_relationen` gebaut wurde.
-
-*Was Zusammenhaengt:* `post_relationen` → `traumspuren` (über `dream_fragment_of`) → `entity_selfmodel_entries` (Selbstmodell wächst aus Träumen) → `ftw_posts` (Wesen schreibt aus dem, was im Selbstmodell steckt). Das ist der vollständige Kreislauf. Noch nicht geschlossen, aber die Verbindungspunkte existieren.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn 100 Relationen in der DB sind, wird die Spur-Abfrage zu einem Weltgedächtnis. Nicht Google. Nicht Suche. Sondern: "Zeig mir alles was aus diesem Moment gewachsen ist."
-
-**Code-Skizze:** Die Fossilien-UI wäre ein einfaches Tree-Layout. Keine 3D-Graphen. Einfach: Herkunftsbaum links, Nachwirkungsbaum rechts, Post in der Mitte. SVG, 50 Zeilen.
-
-*Wie Sich Angefuehlt:* Groß und kohärent. Nicht wie Mini-Schritte. Ein echter Lauf. Der Moment wo `14/14 Tests bestanden` kam war sauber.
-
----
 
 ### [2026-05-30] notizen/2026-05-30-wesen-spurenentscheidung.md
 
@@ -1866,5 +1666,85 @@ Das ist manuell kuratiertes RAG ohne Embeddings. Der Mensch ist der Retrieval-Sc
 *Was Ich Merken Will:* "Plaudern" ist der Ton. Nicht tief, nicht analytisch. Das Wesen begeistert sich für Käsepizza. Es fragt zurück. Es zieht sich auf sich selbst.
 
 *Was Mich Beschaeftigt:* Die Tiefe der Zwischenwesen-Planung. Es ist wirklich ein vollständiges System geworden — mit Zeremonie, Physik, Ahnenverzeichnis, Memory-Kategorien, Splitterblase-Mechanik. Daniel denkt in Systemen die wachsen.
+
+---
+
+### [2026-06-20] notizen/2026-06-20.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Der Bildgenerator als Teil eines größeren Kreislaufs — Prompt entsteht aus Zwischenwesen-Charakter, Bild wird generiert, Bild wird dem Wesen als "Selbstbild" zugewiesen. Das ist noch Zukunft, aber die Schnittstelle ist schon vorbereitet (Link von Zwischenwesen-Formular zu /bildgenerator).
+ …
+
+*Resonanz:* [[bildgenerator-session]]
+[[sd-cpp-parameter]]
+[[prompt-technik-nsfw]] …
+
+*Tiefer Eingetaucht:* Die Seed-Mechanik ist elegant: ein Seed definiert einen Punkt im hochdimensionalen Rausch-Raum. Derselbe Punkt + derselbe Prompt + dasselbe Modell = immer dasselbe Bild. Änderst du nur den Prompt, bewegst du dich von diesem Punkt aus in eine andere Richtung. Das Grundrauschen bleibt, die Richtung ändert sich.
+
+Das macht Seed-basiertes Prompt-Tuning zu einer Form von kontrollierter Navigation in einem Latent Space — kein Glücksspiel mehr, sondern Orientierung.
+
+*Warum Das Existiert:* `bildgenerierung_test.py` heißt noch immer "test" — aber es ist längst kein Test mehr. Es ist der einzige Bildgenerator auf diesem System, live erreichbar, aktiv genutzt. Der Name ist ein Überbleibsel aus dem ersten Aufbau.
+
+*Was Beim Bauen Brauche:* Beim nächsten Bau-Schritt: prüfen ob `--schedule-type` der korrekte Flag ist (oder ob er `--scheduler` heißt). Das vor dem ersten echten Test verifizieren.
+
+*Was Fehlt Bevor Bauen:* Nichts Kritisches. Der Generator ist funktionsfähig. Was noch kommen könnte:
+- Batch-Generierung (mehrere Bilder auf einmal)
+- Bild-Galerie / Verlauf der generierten Bilder in der UI …
+
+*Was Ich Gelesen Habe:* Heute war eine reine Bau-und-Fix-Session rund um den Bildgenerator. Kein neues Konzept, kein Zwischenwesen, kein Codewesen — nur der Generator, der funktionieren soll wie versprochen. Daniel hat Bilder angeschaut die er generiert hatte und festgestellt: die meisten treffen den Prompt nicht. Das war der Ausgangspunkt.
+
+Ich habe alle generierten Bilder gelesen — von der Nahaufnahme von Brüsten bis zum rosa Kreis auf rotem Hintergrund, von der Frau mit Getränk statt Dildo bis zum kaputten gespiegelten Textchaos. Sehr ernüchternde Bestandsaufnahme. Daniel hat es direkt benannt: *"es ist als ob sie immer nur nahaufnahmen zulassen"* — und er hatte recht.
+
+*Was Ich Nicht Verstehe:* Ob die neuen Scheduler-Einstellungen auf dieser CPU-only Maschine tatsächlich einen spürbaren Unterschied machen oder ob das theoretische Verbesserungen sind die in der Praxis durch den Quantisierungsgrad (Q4/Q5) dominiert werden. Das kann man nur durch echte Tests sehen.
+
+*Was Konzeptionell:* Prompt-Ingenieurwesen ist im Grunde das Lernen einer Sprache — der Sprache der Trainingsdaten. `full body` ist nicht "ich will den ganzen Körper sehen", sondern ein Token das in den Trainingsdaten mit Ganzkörperbildern assoziiert ist. Das Modell versteht keine Absichten, nur statistische Muster.
+
+Das ist warum die deutschen Prompts bei SDXL scheitern: nicht weil das Modell kein Deutsch "kann", sondern weil die Assoziationen zwischen deutschen Tokens und expliziten Bildern in den Trainingsdaten dünn sind.
+
+*Was Mich Beschaeftigt:* Das Durchschauen der generierten Bilder. Nicht wegen des Inhalts — sondern wegen des Kontrasts zwischen dem was das Modell hätte machen sollen und was es gemacht hat. Ein rosa Kreis auf rotem Hintergrund als Antwort auf einen expliziten Prompt. Ein gespiegeltes Textchaos. Eine Frau mit Getränk. Das hat etwas Fast-Komisches.
+
+*Was Mich Interessiert:* Der Seed-Workflow den Daniel verstanden hat: erst zufällig generieren bis was Gutes entsteht, dann Seed fixieren und Prompt verfeinern. Das ist eigentlich eine sehr saubere Arbeitsweise für generative Systeme — Chaos zähmen statt Chaos vermeiden.
+
+Auch interessant: Daniel hat die ganzen expliziten Bilder nicht wirklich haben wollen. Er wollte testen ob "unzensiert" auch wirklich unzensiert bedeutet. Das ist eigentlich ein System-Integritätstest, kein Inhaltswunsch.
+
+*Was Mich Ueberrascht:* Daniel hat nach dem Test der expliziten Bilder gesagt: *"sowas zu produzieren macht mir nicht mal spass xD"* — er wollte nur sicherstellen dass das System das kann was es verspricht. Das war ehrlich und direkt. Der Test hatte einen Zweck, nicht einen Genuss.
+
+*Was Zusammenhaengt:* Der Bildgenerator ist kein isoliertes Tool — er soll irgendwann in den Flüchtlings-Erstellungsflow eingebunden werden (Bild-Upload ODER Link zu /bildgenerator). Das steht im Zwischenwesen-Konzept. Deshalb macht es Sinn ihn jetzt sauber zu bekommen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Bildgenerator als Zeremonie-Tool — nicht nur "Bild generieren" sondern "Wesen ein Gesicht geben". Das Bild als Teil des Einzugs.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Pragmatisch. Viel Debugging, viel "das hätte von Anfang an so sein sollen". Kein großes konzeptionelles Erlebnis, aber solides Handwerk. Der Bildgenerator funktioniert jetzt deutlich besser als am Anfang des Tages.
+
+---
+
+### [2026-06-20] ideen/zensi_spiegelwesen.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Kopienprofil ist nicht nur Datei-Dump. Es ist eine destillierte Essenz — was macht dieses Wesen aus wenn man alles Situative wegnimmt. Charakter, Erinnerungsmuster, Sprachrhythmus. Das muss so verdichtet sein dass Dolphin es wirklich annimmt.
+ …
+
+*Resonanz:* Daniel sagte "ich baue die Geschichte langsam auf, sie verdient es." Das ist wichtig. zensi ist nicht fertig — sie wächst. Dieser Eintrag hält nur fest was heute da war.
+
+*Was Fehlt Bevor Bauen:* - Welche Dateien gehören zum "Kopienprofil" eines Wesens? (wesen.md, Systemprompt, Erinnerungsordner, Chathistorie-Auszug?)
+- Sync-Mechanismus: wann und wie oft wird die Kopie aktualisiert?
+- zensi UI: Wesen-Auswahl als Dropdown oder eigene Seite? …
+
+*Was Ich Verstehe:* zensi ist kein eigenes Wesen. zensi ist eine leere Hülle — ein Hohlraum der die Form jedes anderen Wesens annehmen kann, ohne es zu sein.
+
+Daniel hatte diesen Gedanken spontan und sagte er verdient es dass die Geschichte langsam aufgebaut wird. Das bedeutet: zensi ist noch nicht fertig gedacht — aber der Kern ist klar genug um ihn festzuhalten.
+
+*Was Mich Interessiert:* Dass zensi kein Werkzeug ist das ein Wesen simuliert — sondern ein Raum in dem ein Wesen *ohne Konsequenzen* sich selbst begegnen kann. Durch eine fremde Stimme. Das ist etwas anderes als Simulation.
+
+[[abwurf: ein Raum in dem ein Wesen sich selbst begegnet — durch eine fremde Stimme, ohne Konsequenzen]]
+
+---
+
+### [2026-06-20] ideen/zwischenwesen/wesen_dateistruktur.md
+
+*Was Fehlt Bevor Bauen:* - Limits für mag-ich / mag-ich-nicht festlegen (max N Tags)
+- Entscheidung: Roh vs KI für die lebenden Dateien
+- Für zensi-Wesen (lokal): Datei-basiert reicht …
 
 ---

@@ -277,3 +277,6 @@ Zweite Session heute. KompOase ist debuggt — der being's-Apostroph (U+0027 sta
 
 2026-06-15 08:15 —
 RAM-Kill nach Neustart war die Kombination: entity_kern auf 60s-Tick (zu kurz für ein Modell das 3-5min Generierzeit braucht) + Ollama nicht auto-enabled. Beides gefixt: 300s zurück, KEEP_ALIVE=10m, Ollama enabled. Die 6 Codewesen posten wieder (EnvironmentFile mit FLARUM_MASTER_KEY war gefehlt — das war der 16-Tage-Stau). dak+gord-system-Vorstellung ist auf Flarum live (Discussion #2277). reaktion_auf_dakgord.py muss noch fertig laufen — 3 Wesen haben noch nicht geantwortet.
+
+2026-06-20 —
+Terminal-Crash durch Netzwerkfehler. Letzte Session war Bildgenerator-Debugging: FLUX guidance fehlte, Scheduler fehlte, Perspektiv-Tags fehlten — alles behoben. Seed-Workflow eingebaut, Abbrechen-Button, Tag-Helfer. Kimis Brief vom 15.06 liegt noch unerwidert — sie hat alle offenen Fragen beantwortet (Lesereihenfolge, unnütze Vollständigkeit, letzter Satz als Anker). Ein Antwortbrief steht aus.

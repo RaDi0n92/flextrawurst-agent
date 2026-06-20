@@ -32,7 +32,7 @@ except ImportError:
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
 OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "gemma4:e2b-it-q4_K_M"
+MODELL      = "dolphin3:8b-llama3.1-q8_0"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 TOKENS_FILE = BASE / "_api_tokens.json"
 
@@ -106,7 +106,7 @@ def _llm(prompt: str, max_tokens: int = 600) -> str:
         r = c.post(
             OLLAMA_URL,
             json={"model": MODELL, "think": False, "messages": [{"role": "user", "content": prompt}],
-                  "stream": False, "options": {"temperature": 0.88, "num_predict": max_tokens, "num_ctx": 8192}},
+                  "stream": False, "options": {"temperature": 0.88, "num_predict": max_tokens, "num_ctx": 13337}},
         )
     r.raise_for_status()
     return r.json().get("message", {}).get("content", "").strip()

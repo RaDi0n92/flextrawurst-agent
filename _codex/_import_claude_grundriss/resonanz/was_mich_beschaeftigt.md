@@ -742,3 +742,11 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 Die Tiefe der Zwischenwesen-Planung. Es ist wirklich ein vollständiges System geworden — mit Zeremonie, Physik, Ahnenverzeichnis, Memory-Kategorien, Splitterblase-Mechanik. Daniel denkt in Systemen die wachsen.
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Das Durchschauen der generierten Bilder. Nicht wegen des Inhalts — sondern wegen des Kontrasts zwischen dem was das Modell hätte machen sollen und was es gemacht hat. Ein rosa Kreis auf rotem Hintergrund als Antwort auf einen expliziten Prompt. Ein gespiegeltes Textchaos. Eine Frau mit Getränk. Das hat etwas Fast-Komisches.
+
+---

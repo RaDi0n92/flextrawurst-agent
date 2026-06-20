@@ -710,3 +710,11 @@ Dass die Lösung am Ende so simpel war: Text kleiner machen. Alle technischen Pr
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Dass die Lösung "Text kleiner machen" war. Alle technischen Probleme davor waren real — aber das eigentliche Problem war Chunk-Größe.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Daniel hat nach dem Test der expliziten Bilder gesagt: *"sowas zu produzieren macht mir nicht mal spass xD"* — er wollte nur sicherstellen dass das System das kann was es verspricht. Das war ehrlich und direkt. Der Test hatte einen Zweck, nicht einen Genuss.
+
+---

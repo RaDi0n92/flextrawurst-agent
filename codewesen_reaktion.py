@@ -108,8 +108,8 @@ def _lade_wesen_identitaet(name: str) -> str:
             pass
     return "\n\n".join(teile) if teile else "(Keine Identitätsdatei gefunden.)"
 OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL        = "gemma4:e4b-it-q4_K_M"
-OLLAMA_MODEL_SCHNELL = "gemma4:e2b-it-q4_K_M"  # Schnelles Modell — für Entscheidungen
+OLLAMA_MODEL        = "dolphin3:8b-llama3.1-q8_0"
+OLLAMA_MODEL_SCHNELL = "dolphin3:8b-llama3.1-q8_0"  # Schnelles Modell — für Entscheidungen
 TOKENS_FILE = BASE / "_api_tokens.json"
 CHECK_INTERVAL = 600       # Sekunden zwischen Inbox-Checks
 REFLEXIONS_INTERVAL = 300  # Sekunden zwischen Selbstreflexions-Checks
@@ -223,7 +223,7 @@ def _llm_call(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
         "stream": False,
         "think": False,
         "options": {"temperature": temperature, "num_predict": num_predict,
-                    "num_ctx": 8192, "num_thread": 8, "num_batch": 512},
+                    "num_ctx": 13337, "num_thread": 8, "num_batch": 512},
     }
     with OllamaSlot():
         r = requests.post(OLLAMA_URL, json=payload, timeout=600)

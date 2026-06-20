@@ -25,7 +25,7 @@ FORUM_VAULT    = Path("/root/werkraum/flarum/diskussionen")
 SPIEGEL_DIR    = GENI_ROOT / "spiegel" / "forum"
 ZUSTAND_FILE   = SPIEGEL_DIR / "_zustand.json"
 OLLAMA_URL     = "http://localhost:11434/api/chat"
-MODELL         = "gemma4:e2b-it-q4_K_M"
+MODELL         = "dolphin3:8b-llama3.1-q8_0"
 
 
 def _lade_zustand() -> set[int]:

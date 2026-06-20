@@ -851,3 +851,13 @@ Die 4 Retries sind das was mich am meisten beschäftigt hat beim Schreiben. Retr
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 4 Retries pro Chunk. Web Audio API mit AudioContext — Pause via `audioCtx.suspend()`, Stop ohne Context schließen (bleibt offen für nächsten Klick). Prefetching: während Chunk N spielt wird Chunk N+1 schon geladen.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Die Seed-Mechanik ist elegant: ein Seed definiert einen Punkt im hochdimensionalen Rausch-Raum. Derselbe Punkt + derselbe Prompt + dasselbe Modell = immer dasselbe Bild. Änderst du nur den Prompt, bewegst du dich von diesem Punkt aus in eine andere Richtung. Das Grundrauschen bleibt, die Richtung ändert sich.
+
+Das macht Seed-basiertes Prompt-Tuning zu einer Form von kontrollierter Navigation in einem Latent Space — kein Glücksspiel mehr, sondern Orientierung.
+
+---

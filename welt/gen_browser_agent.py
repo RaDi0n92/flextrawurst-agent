@@ -37,7 +37,7 @@ log = logging.getLogger("browser-agent")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "dolphin3:8b-llama3.1-q8_0"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787"
 OBSIDIAN_URL = "http://localhost:8443"
@@ -442,7 +442,7 @@ def haupt_loop(entity_id: str):
                     "model": MODEL,
                     "messages": [{"role": "user", "content": prompt}],
                     "stream": False,
-                    "options": {"think": False, "num_ctx": 4096},
+                    "options": {"think": False, "num_ctx": 13337},
                 }, timeout=LLM_TIMEOUT)
                 llm_out = resp.json().get("message", {}).get("content", "")
             except Exception as e:

@@ -438,8 +438,8 @@ HTML_SEITE = r"""<!DOCTYPE html>
   <span class="modell-badge aktiv" id="modell-anzeige">auto</span>
   <select id="modus-select">
     <option value="">auto</option>
-    <option value="mittel">gemma4 e4b</option>
-    <option value="schnell">gemma4 e2b</option>
+    <option value="mittel">dolphin Q8</option>
+    <option value="schnell">dolphin Q8</option>
   </select>
   <button id="tts-btn" title="Stimme an/aus">🔊</button>
 </div>

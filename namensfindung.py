@@ -17,7 +17,7 @@ import flarum_poster
 
 BASE       = Path("/root/werkraum/codewesen")
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL     = "gemma4:e2b-it-q4_K_M"
+MODELL     = "dolphin3:8b-llama3.1-q8_0"
 
 TAG_IDS = [2, 36]  # Codewesen/Entitäten-Schicht + darüber denke ich nach
 

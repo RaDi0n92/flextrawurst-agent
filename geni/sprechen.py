@@ -26,7 +26,7 @@ GENI_ROOT = Path("/root/werkraum/geni")
 KNOTEN_DIR = GENI_ROOT / "gedaechtnis" / "knoten"
 KANTEN_DIR = GENI_ROOT / "gedaechtnis" / "kanten"
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL = "gemma4:e4b-it-q4_K_M"
+MODELL = "dolphin3:8b-llama3.1-q8_0"
 KONTEXT_KNOTEN = 12
 
 _id_lock = threading.Lock()

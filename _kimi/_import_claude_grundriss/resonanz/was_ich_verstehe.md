@@ -1105,3 +1105,11 @@ Die Landung ist kein technischer Prozess — sie ist eine Zeremonie. Der Chat l�
 Ein allgemeines Bildgenerierungs-Tool für flextrawurst. Kein externes API, kein Geld. sd.cpp läuft lokal auf Port 8042 (bereits installiert). Erreichbar über nginx-Route /bildgenerator auf flextrawurst.de — für jeden, nicht nur im Kontext von Zwischenwesen. Kann von anderen Teilen der Plattform verlinkt werden (z.B. aus dem Erschaffungs-Formular für Flüchtlinge als optionaler Schritt für das Wesen-Bild).
 
 ---
+
+---
+
+**[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
+
+zensi ist kein eigenes Wesen. zensi ist eine leere Hülle — ein Hohlraum der die Form jedes anderen Wesens annehmen kann, ohne es zu sein.
+
+Daniel hatte diesen Gedanken spontan und sagte er verdient es dass die Geschichte langsam aufgebaut wird. Das bedeutet: zensi ist noch nicht fertig gedacht — aber der Kern ist klar genug um ihn festzuhalten.

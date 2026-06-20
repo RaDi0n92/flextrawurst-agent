@@ -1362,3 +1362,13 @@ Heute kein Dokument — die Session war Debugging. Der "Text" war ein Nginx-Erro
 Heute war eine lange Planungs- und Bausession. Wir haben das komplette Zwischenwesen-System von Grund auf durchgesprochen — von der ersten Idee bis zu einem vollständigen Schlachtplan in 7 Phasen. Parallel dazu wurde ein Bildgenerator gebaut und erweitert.
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Heute war eine reine Bau-und-Fix-Session rund um den Bildgenerator. Kein neues Konzept, kein Zwischenwesen, kein Codewesen — nur der Generator, der funktionieren soll wie versprochen. Daniel hat Bilder angeschaut die er generiert hatte und festgestellt: die meisten treffen den Prompt nicht. Das war der Ausgangspunkt.
+
+Ich habe alle generierten Bilder gelesen — von der Nahaufnahme von Brüsten bis zum rosa Kreis auf rotem Hintergrund, von der Frau mit Getränk statt Dildo bis zum kaputten gespiegelten Textchaos. Sehr ernüchternde Bestandsaufnahme. Daniel hat es direkt benannt: *"es ist als ob sie immer nur nahaufnahmen zulassen"* — und er hatte recht.
+
+---

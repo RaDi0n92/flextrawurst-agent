@@ -2031,3 +2031,23 @@ WESEN_VOICES = {
 @app.post("/speak/{wesen_id}")
 async def speak_as(wesen_id: str, req: TTSRequest): ...
 ```
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+**Vision-Schicht:**
+Der Bildgenerator als Teil eines größeren Kreislaufs — Prompt entsteht aus Zwischenwesen-Charakter, Bild wird generiert, Bild wird dem Wesen als "Selbstbild" zugewiesen. Das ist noch Zukunft, aber die Schnittstelle ist schon vorbereitet (Link von Zwischenwesen-Formular zu /bildgenerator).
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
+
+**Vision-Schicht:**
+Kopienprofil ist nicht nur Datei-Dump. Es ist eine destillierte Essenz — was macht dieses Wesen aus wenn man alles Situative wegnimmt. Charakter, Erinnerungsmuster, Sprachrhythmus. Das muss so verdichtet sein dass Dolphin es wirklich annimmt.
+
+**Code-Skizze:**
+```python

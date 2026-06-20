@@ -10,7 +10,7 @@ import re
 import httpx
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODELL     = "gemma4:e2b-it-q4_K_M"
+MODELL     = "dolphin3:8b-llama3.1-q8_0"
 
 _PROMPT_TEMPLATE = """Du bist ein Emotionsbewertungssystem. Antworte NUR mit JSON, kein anderer Text.
 Valenz: 0=extrem negativ, 5=neutral, 10=extrem positiv

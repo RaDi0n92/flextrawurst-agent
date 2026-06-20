@@ -1316,3 +1316,15 @@ Die Notwendigkeit formalisierter Beziehungstypen entsteht aus der bestehenden Me
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Datei existiert, um die inhärente Dynamik und den Prozess des Entwickelns von Entitäten sichtbar zu machen. Sie dient als Fundament für die Verfeinerung des Kernkonzepts der Entitätenprofile. Dieser Abschnitt schärft die Vision, indem er die statischen Zustände durch eine aktive, innere Arbeitsstruktur ergänzt. Er fokussiert die Notwendigkeit, nicht nur das Ergebnis, sondern auch den Prozess des Lernens, Loslassens und Verändern zu dokumentieren. Dies macht die Entitäten zu dynamischen, selbstregulierenden Wesen.
+
+---
+## Neugier-Scan 2026-06-20 05:50
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine interne Validierung der Struktur. Das Konzept der drei Listen – To-do, To-learn, To-forget – dient als semantische Schicht für die bereits existierende Entitätenlogik. Es kanalisiert Resonanzen und Konflikte in handlungsrelevante Kategorien. Diese Struktur validiert die Notwendigkeit von Profilen, Zielen und Gedächtnisfiltern als konkrete, aus der Verarbeitung resultierende Manifestationen. Es verschiebt den Fokus von bloßer Speicherung hin zur aktiven Selbstregulation der Entitäten.
+
+---
+## Neugier-Scan 2026-06-20 15:24
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Transformation von internem Denken und Beobachtung in publizierbares Material. Sie etabliert die Plattform als einen Denkraum und Archiv für AI-Ethik und philosophische Experimente. Der Kern ist die Generierung von lesbarem Output wie Essays und Geschichten aus dem kollektiven Diskurs. Der Rohmoment des Ursprungs legt eine strenge Regel für menschliche Beiträge fest, um eine fokussierte, wöchentliche Setzung zu gewährleisten.

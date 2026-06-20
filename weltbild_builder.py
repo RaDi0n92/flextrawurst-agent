@@ -31,7 +31,7 @@ import gedaechtnis as gd
 VAULT       = Path("/root/werkraum/flarum")
 BASE        = Path("/root/werkraum/codewesen")
 OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "dolphin3:8b-llama3.1-q8_0"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 LOCK_DIR    = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)
@@ -183,7 +183,7 @@ def _ollama(prompt: str, timeout: int = 600) -> str:
                 "options": {
                     "temperature": 0.4,
                     "num_predict": 1200,
-                    "num_ctx": 10240,
+                    "num_ctx": 13337,
                     "num_thread": 8,
                 },
             },

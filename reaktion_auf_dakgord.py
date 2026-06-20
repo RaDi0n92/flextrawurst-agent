@@ -47,13 +47,13 @@ def lade_wesen_md(name: str) -> str:
 def frage_llm(system: str, user: str) -> str:
     import urllib.request
     payload = json.dumps({
-        "model": "gemma4:e2b-it-q4_K_M",
+        "model": "dolphin3:8b-llama3.1-q8_0",
         "messages": [
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
         "stream": False,
-        "options": {"num_ctx": 4096},
+        "options": {"num_ctx": 13337},
         "think": False,
     }).encode()
     lock_file = open(LOCK_DIR / "slot_0.lock", "w")

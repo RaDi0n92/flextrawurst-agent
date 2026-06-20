@@ -104,8 +104,8 @@ BILDER_DIR = GENI_ROOT / "sinne" / "bilder"
 WERKRAUM = Path("/root/werkraum")
 OLLAMA_URL = "http://localhost:11434/api/chat"
 MODELLE = {
-    "blitz": "gemma4:e2b-it-q4_K_M",
-    "tief": "gemma4:e4b-it-q4_K_M",
+    "blitz": "dolphin3:8b-llama3.1-q8_0",
+    "tief": "dolphin3:8b-llama3.1-q8_0",
 }
 CODEWESEN_DIR = WERKRAUM / "codewesen"
 
@@ -713,7 +713,7 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
         "messages": messages,
         "stream": True,
         "think": False,
-        "options": {"temperature": 0.85, "num_predict": 600, "num_ctx": 8192},
+        "options": {"temperature": 0.85, "num_predict": 600, "num_ctx": 13337},
     }
 
     CHAT_FLAG.touch()  # Erst Flag setzen — neu startende Services warten ab

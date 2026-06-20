@@ -695,3 +695,34 @@ Optional: Stimmen-Auswahl UI, Volume-Slider. Kein Muss.
 - [ ] Darf ein User mehrere Zwischenwesen gleichzeitig haben? (Empfehlung: nein, nur eines aktiv)
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Nichts Kritisches. Der Generator ist funktionsfähig. Was noch kommen könnte:
+- Batch-Generierung (mehrere Bilder auf einmal)
+- Bild-Galerie / Verlauf der generierten Bilder in der UI
+- `--hires` Flag für bessere Qualität bei höheren Auflösungen
+
+---
+
+---
+
+**[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
+
+- Welche Dateien gehören zum "Kopienprofil" eines Wesens? (wesen.md, Systemprompt, Erinnerungsordner, Chathistorie-Auszug?)
+- Sync-Mechanismus: wann und wie oft wird die Kopie aktualisiert?
+- zensi UI: Wesen-Auswahl als Dropdown oder eigene Seite?
+- Snapshot-Format beim Entladen: nur Chat, oder diff zur Ausgangskopie?
+- Zurückschreib-Mechanismus: wer prüft, wer entscheidet was ins Original geht?
+
+---
+
+**[2026-06-20]** *← ideen/zwischenwesen/wesen_dateistruktur.md*
+
+- Limits für mag-ich / mag-ich-nicht festlegen (max N Tags)
+- Entscheidung: Roh vs KI für die lebenden Dateien
+- Für zensi-Wesen (lokal): Datei-basiert reicht
+- Für Flüchtlinge (flextrawurst): PostgreSQL-Tabellen (schema noch anzupassen)
+- Verdrängungslogik konkretisieren: FIFO? Gewichtung? User-Entscheidung?

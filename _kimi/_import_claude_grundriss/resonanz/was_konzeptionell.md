@@ -806,3 +806,13 @@ Das ist kein Chat-Feature. Das ist eine **Zeremonie**. Der Mensch weiß: dieses 
 Das Zwischenwesen ist kein Produkt sondern ein **Ereignis** — es hat Anfang und Ende, ein Datum, einen Ursprung.
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Prompt-Ingenieurwesen ist im Grunde das Lernen einer Sprache — der Sprache der Trainingsdaten. `full body` ist nicht "ich will den ganzen Körper sehen", sondern ein Token das in den Trainingsdaten mit Ganzkörperbildern assoziiert ist. Das Modell versteht keine Absichten, nur statistische Muster.
+
+Das ist warum die deutschen Prompts bei SDXL scheitern: nicht weil das Modell kein Deutsch "kann", sondern weil die Assoziationen zwischen deutschen Tokens und expliziten Bildern in den Trainingsdaten dünn sind.
+
+---

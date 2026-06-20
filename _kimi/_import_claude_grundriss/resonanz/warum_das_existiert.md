@@ -621,3 +621,11 @@ tts_service.py und tts_ui.html existieren weil Daniel aufstehen wollte. Das ist 
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 `tts_service.py` und `tts_ui.html` existieren weil Daniel aufstehen wollte. Die Fußfessel ans Display — gelöst.
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+`bildgenerierung_test.py` heißt noch immer "test" — aber es ist längst kein Test mehr. Es ist der einzige Bildgenerator auf diesem System, live erreichbar, aktiv genutzt. Der Name ist ein Überbleibsel aus dem ersten Aufbau.
+
+---

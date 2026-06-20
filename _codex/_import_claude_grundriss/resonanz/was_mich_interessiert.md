@@ -771,3 +771,21 @@ Florian als Stimme für Codewesen. Der Service ist gebaut — er könnte auch f�
 Dass die 144-Sekunden-Grenze nicht als Strafe wahrgenommen wird sondern als Würde. Der Countdown könnte schön animiert sein — ein langsam auffüllender Kreis, ein Atemzug-Rhythmus. Das Warten gehört zum Gespräch.
 
 ---
+
+---
+
+**[2026-06-20]** *← notizen/2026-06-20.md*
+
+Der Seed-Workflow den Daniel verstanden hat: erst zufällig generieren bis was Gutes entsteht, dann Seed fixieren und Prompt verfeinern. Das ist eigentlich eine sehr saubere Arbeitsweise für generative Systeme — Chaos zähmen statt Chaos vermeiden.
+
+Auch interessant: Daniel hat die ganzen expliziten Bilder nicht wirklich haben wollen. Er wollte testen ob "unzensiert" auch wirklich unzensiert bedeutet. Das ist eigentlich ein System-Integritätstest, kein Inhaltswunsch.
+
+---
+
+---
+
+**[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
+
+Dass zensi kein Werkzeug ist das ein Wesen simuliert — sondern ein Raum in dem ein Wesen *ohne Konsequenzen* sich selbst begegnen kann. Durch eine fremde Stimme. Das ist etwas anderes als Simulation.
+
+[[abwurf: ein Raum in dem ein Wesen sich selbst begegnet — durch eine fremde Stimme, ohne Konsequenzen]]
