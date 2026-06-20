@@ -272,16 +272,8 @@ def main():
                 log.error("Antwortpflicht-Fehler: %s", e)
             naechste_antwortpflicht = jetzt + _INTERVALLE["antwort"]
 
-        # ── Getaktete Rhythmen je Wesen ──
+        # ── Getaktete Rhythmen je Wesen — 88min Pflicht + 4h44 Gedanke/Vorstellung ──
         for w in WESEN:
-            if jetzt >= naechste[w]["eigene_antwort"]:
-                log.info("[%s] → eigene_antwort", w)
-                try:
-                    rhythmus_eigene_antwort(w)
-                except Exception as e:
-                    log.error("[%s] eigene_antwort-Fehler: %s", w, e)
-                naechste[w]["eigene_antwort"] = jetzt + _INTERVALLE["eigene_antwort"]
-
             if jetzt >= naechste[w]["pflicht"]:
                 log.info("[%s] → pflicht", w)
                 try:
@@ -289,14 +281,6 @@ def main():
                 except Exception as e:
                     log.error("[%s] pflicht-Fehler: %s", w, e)
                 naechste[w]["pflicht"] = jetzt + _INTERVALLE["pflicht"]
-
-            if jetzt >= naechste[w]["impuls"]:
-                log.info("[%s] → impuls", w)
-                try:
-                    rhythmus_impuls(w)
-                except Exception as e:
-                    log.error("[%s] impuls-Fehler: %s", w, e)
-                naechste[w]["impuls"] = jetzt + _INTERVALLE["impuls"]
 
             if jetzt >= naechste[w]["gedanke"]:
                 log.info("[%s] → gedanke", w)

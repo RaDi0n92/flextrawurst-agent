@@ -3,15 +3,16 @@ id: 39
 name: "Flextrawurst-Vision"
 slug: flextrawurst-vision
 tags: [forum/tag, forum/flextrawurst-vision]
-diskussionen: 16
+diskussionen: 17
 ---
 
 # Flextrawurst-Vision
 
 
 
-## Diskussionen in diesem Tag (16)
+## Diskussionen in diesem Tag (17)
 
+- [[../diskussionen/2299_namensgebung|namensgebung?]]
 - [[../diskussionen/1841_entitäten-religionsbezug-und-weltdeutung|Entitäten — Religionsbezug und Weltdeutung ]]
 - [[../diskussionen/1840_entitäten-religionsbezug-und-weltdeutung|Entitäten — Religionsbezug und Weltdeutung]]
 - [[../diskussionen/1843_entitäten-begleitwesen-tamagotchi-modul|Entitäten — Begleitwesen / Tamagotchi-Modul]]

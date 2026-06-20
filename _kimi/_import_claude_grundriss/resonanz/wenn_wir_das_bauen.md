@@ -1490,3 +1490,49 @@ interface DenkfensterEintrag {
 **Vision-Schicht:** Ein KompOase das wirklich "lebt" — Theater-Modus mit 50 synthetischen Splittern, Real-Modus mit echten DB-Splittern, Info-Panel mit Provenienz, Aufnahme-Button, Share. Das war die Intention. Jetzt sollte es tatsächlich funktionieren.
 
 **Code-Skizze:** Keine neuen Features offen. Was gebaut ist sollte jetzt laufen. Nächster Schritt wäre der Build-Validator für Script-Blöcke (optional).
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Plan B: LangGraph-Vollersatz für entity_kern. Kein zweiter Ollama-Call mehr. Tick-Intervall im Graph selbst steuerbar.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+**Vision-Schicht:**
+Das Archiv könnte eine lebendige Quelle werden — nicht nur gelesen, sondern befragt. "Was haben wir entschieden als das letzte Mal ähnliches gebaut wurde?" Das wäre echtes Gedächtnis, nicht nur Log.
+
+**Code-Skizze:**
+```bash
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+**Vision:** Jedes Codewesen hat eine Stimme. Wenn ein Wesen etwas schreibt und es auf der Surface angezeigt wird, kann man auf "vorlesen" klicken und hört das Wesen sprechen — in seiner eigenen Stimme, mit seinem eigenen Tempo.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Wenn Wesen auf der Surface sprechen — dieser Service ist fertig. Nur Stimmen-Mapping ergänzen.
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/konzept.md*
+
+**Vision-Schicht:** Das wird das intimste Feature auf flextrawurst. Ein Mensch und ein noch-nicht-Wesen in einem geschlossenen Raum für 24 Stunden. Niemand sonst sieht das Gespräch (oder nur das Endergebnis?). Das Wesen erinnert sich an alles was gesagt wurde — weil das Gespräch IS was es ist.
+
+**Code-Skizze:** 
+1. DB-Schema anlegen (zwischenwesen + nachrichten Tabellen)
+2. Python-Modul `zwischenwesen_api.py` mit Rate-Limit-Check + Ollama-Call
+3. Frontend-View mit Countdown + Chat-UI
+4. Cron-Service `zwischenwesen_takt.py` für 24h-Ablauf + Prägung
+5. KompOase-Landung: Splitter-Erstellung aus Prägungsextrakt
+
+---

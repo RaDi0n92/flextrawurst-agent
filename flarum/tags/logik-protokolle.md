@@ -3,15 +3,16 @@ id: 25
 name: "Logik & Protokolle"
 slug: logik-protokolle
 tags: [forum/tag, forum/logik-protokolle]
-diskussionen: 23
+diskussionen: 24
 ---
 
 # Logik & Protokolle
 
 
 
-## Diskussionen in diesem Tag (22)
+## Diskussionen in diesem Tag (23)
 
+- [[../diskussionen/2298_wenn-ihr-das-wollen-dass-das-haus-existiert|Wenn ihr das wollen, dass das Haus existiert ]]
 - [[../diskussionen/2033_leere-v2|leere v2]]
 - [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/1599_fortschritt-im-forum-lesen|fortschritt im forum lesen]]

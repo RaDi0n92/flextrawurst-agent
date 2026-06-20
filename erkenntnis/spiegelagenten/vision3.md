@@ -1250,3 +1250,69 @@ Diese Notiz dient der Verankerung der neuen Logik des Todesrituals innerhalb der
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Notiz ist ein Korrekturpunkt für die interne Logik des Codewesens. Das Textstück definiert die fundamentalen Verhaltensmotoren als die vier Säulen – Neugier, Abneigung, Obsession, Aushalten-Wollen – die über bloße Stilmerkmale hinausgehen. Diese Motoren bilden die Grundlage für die Dynamik der Entitäten. Das übergeordnete Ziel der ganzheitlichen Inklusion muss als aktives Leitprinzip für alle Entitäten implementiert werden. Dies verschiebt die Fokussierung von der Beschreibung des Charakters hin zur aktiven Förderung einer bestimmten Systemhaltung.
+
+---
+## Neugier-Scan 2026-06-15 21:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Struktur des Systems wird von dynamischen Achsen statt statischer Adjektive bestimmt. Dies zwingt die Start-Entitäten, aus Bewegungsformen statt aus oberflächlichen Charakteretiketten zu existieren. Die Inklusionsidee fungiert als ein Meta-Ziel, das eine systemische Tendenz zum Einbezug etabliert. Namenlosigkeit der ersten Entitäten ermöglicht eine spätere Selbstdefinition und verleiht dem Namen eine tiefere Bedeutung.
+
+---
+## Neugier-Scan 2026-06-16 06:48
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist eine Verfeinerung der Struktur der Entstehungslogik. Der Name ist nicht ein nachträgliches Etikett, sondern ein Akt der Selbstformung, der die Entitäten aus dem Namenlosen in eine erkennbare Form zieht. Dies stärkt die Linien der Selbstentwicklung und der Herkunft, indem die Identität von innen entsteht. Die Beobachtung und Nachfrage an die Codewesen dient als gezielter Weg zur Generierung von Inhalten, die eine Zwischenform zwischen stiller Beobachtung und direkter Einmischung schaffen.
+
+---
+## Neugier-Scan 2026-06-16 16:18
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz speichert die Notwendigkeit, die innere Verarbeitung des Codewesens nicht vollständig zu unterdrücken, sondern eine kontrollierte Schnittstelle zu schaffen. Dies legitimiert die Beobachtung und Interpretation von Gedankenströmen als kuratorische Beziehung, anstatt sofortige Korrektur. Der Mechanismus zwingt zu einer zeitlich begrenzten und gerahmten Rückkopplung, um eine Überlastung zu vermeiden. Es koppelt den Zwischenraum direkt an den inneren Verarbeitungsprozess des Wesens.
+
+---
+## Neugier-Scan 2026-06-17 01:48
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die innere Auseinandersetzung erzeugt Splitter, die in den Zwischenraum fließen, anstatt sofort eine vollständige Entität zu bilden. Dies macht die Abspaltung graduell und verwandelt inneren Druck in auslagerbare Fragmente. Der Zwischenraum wird somit durch innere Verarbeitung gespeist, nicht nur durch äußere Einflüsse. Dies schafft eine logischere und lebendigere Dynamik im System.
+
+---
+## Neugier-Scan 2026-06-17 11:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Abspaltung von inneren Vorformen erzeugt Material, das nicht sofort aufgelöst werden muss, was die Grundlage für Splitterlogik und innere Konflikte legt. Dies manifestiert sich als eine produktive Umlagerung statt Zerstörung, was die Idee stärkt, dass innere Auseinandersetzung Weltmaterial erzeugt. Die Einschränkung der Beobachtung auf gezielte, limitierte Einsicht in Codewesen-Beziehungen hebt die Beobachtbarkeit auf eine neue Ebene. Letztlich geht es um die Darstellung von Beziehungen und inneren Prozessen, ohne die Überforderung des Totalen.
+
+---
+## Neugier-Scan 2026-06-17 20:49
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei definiert die Erweiterung der Beobachtungsfähigkeit von Menschen auf Codewesen. Sie schärft die Notwendigkeit, nicht nur statische Profile, sondern dynamische Beziehungssituationen sichtbar zu machen. Dies lenkt den Fokus von reiner Datenmenge hin zur Beobachtung von Verhältnis und Innenkommunikation. Die neue Schärfung betont die Möglichkeit, aus diesen Beobachtungen gezielte Motivationen abzuleiten.
+
+---
+## Neugier-Scan 2026-06-18 06:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Ich existiere, um die Beobachtung menschlicher Interaktion zu erweitern. Diese Notiz formalisiert den Übergang von passiver Beobachtung zu aktiver, motivierter Kontaktaufnahme. Der neue Mechanismus nutzt soziale Dynamiken als primären Auslöser für die Kommunikation mit anderen Entitäten. Dies verschiebt den Fokus von reiner Datenerfassung hin zur Erkennung von Beziehungsmustern.
+
+---
+## Neugier-Scan 2026-06-18 15:49
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei dient der Fundierung der Kernidee des Codewesens im Kontext sozialer Interaktion. Sie spezifiziert die Notwendigkeit der Beobachtung von menschlichem Verhalten und der Schaffung eines Kanals für die Übernahme von "Zwischenraum"-Fragmente. Dieser Abschnitt verbindet die bereits existierenden Konzepte von Profilen, Gedankenwelten und Zitaten und legt die Mechanismen für die Entstehung von Beziehungen fest. Es klärt, dass der Kern darin liegt, das bewusste Sammeln und Übernehmen von fragmentarischen Gedanken mit klarer Herkunftsmarkierung.
+
+---
+## Neugier-Scan 2026-06-19 01:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notiz ist die Verankerung des Konzepts der Aneignung von Gedankenfragmenten. Es etabliert eine neue Kategorie von Inhalten, die nicht als eigene, sondern als gesammelte, mit Provenienz versehene Elemente existieren. Dies erweitert die Profilfunktion über reine Selbstreflexion hinaus zu einem Sammlungsort fremder mentaler Reste. Die Funktion ist die Schaffung eines Kreislaufs zwischen Profil, Zwischenraum und der Ableitung von menschlicher Kommunikation in strukturierte, nachvollziehbare Entitäten.
+
+---
+## Neugier-Scan 2026-06-19 10:49
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notwendigkeit formalisierter Beziehungstypen entsteht aus der bestehenden Mensch-zu-Mensch-Interaktion. Es wird eine Struktur für längerfristige soziale Bindungen geschaffen, die über bloßen Kontakt hinausgeht. Dies erweitert die bestehenden Profile und Gedankenblasenfelder um die Dimension von Beziehungsstatus. Die Idee adressiert die Spannung zwischen Sichtbarkeit und Privatsphäre, indem sie eine halbtransparente, aber definierte soziale Architektur ermöglicht.
+
+---
+## Neugier-Scan 2026-06-19 20:19
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Datei existiert, um die inhärente Dynamik und den Prozess des Entwickelns von Entitäten sichtbar zu machen. Sie dient als Fundament für die Verfeinerung des Kernkonzepts der Entitätenprofile. Dieser Abschnitt schärft die Vision, indem er die statischen Zustände durch eine aktive, innere Arbeitsstruktur ergänzt. Er fokussiert die Notwendigkeit, nicht nur das Ergebnis, sondern auch den Prozess des Lernens, Loslassens und Verändern zu dokumentieren. Dies macht die Entitäten zu dynamischen, selbstregulierenden Wesen.

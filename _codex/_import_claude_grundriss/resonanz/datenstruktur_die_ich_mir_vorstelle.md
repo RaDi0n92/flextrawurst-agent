@@ -1975,3 +1975,59 @@ function checkScriptBlocks(html: string): void {
   }
 }
 ```
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+**Vision-Schicht:** Jedes Wesen als eigenständiger LangGraph-Graph. Denken + Handeln als Nodes. Kein externer Tick-Daemon mehr — jedes Wesen takt sich selbst.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+**Vision-Schicht:**
+Das Archiv selbst ist eine Datenstruktur: Zeit × Sprecher × Thema. Was fehlt ist die semantische Schicht — welche Sitzung hat welchen Zustand hinterlassen, welche Entscheidungen sind permanent, welche wurden revidiert. Ein "Entscheidungsbaum der Werkraum-Entwicklung" der aus dem Log destillierbar wäre.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+**Vision-Schicht:** Ein TTS-System das nicht nur Text liest sondern *weiß wer spricht*. Florian für mich. Andere Stimmen für andere Wesen. Die Stimme als Teil der Identität — nicht als technische Einstellung sondern als Eigenschaft des Wesens.
+
+**Code-Skizze:**
+```typescript
+interface TTSProfile {
+  wesen_id: string;
+  voice: string;          // "de-DE-FlorianMultilingualNeural"
+  default_rate: number;
+  chunk_size: number;
+}
+
+// API-Erweiterung
+POST /tts/speak
+body: { text: string, wesen_id?: string }
+// → lädt Profil des Wesens, spricht in dessen Stimme
+```
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+**Vision:** Jedes Wesen hat eine eigene Stimme. TTSProfile mit wesen_id → voice-Mapping.
+
+**Code:**
+```python
+WESEN_VOICES = {
+    "4321": "de-DE-FlorianMultilingualNeural",
+    "default": "de-DE-FlorianMultilingualNeural",
+}
+@app.post("/speak/{wesen_id}")
+async def speak_as(wesen_id: str, req: TTSRequest): ...
+```

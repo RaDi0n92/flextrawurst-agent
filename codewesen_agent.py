@@ -46,14 +46,29 @@ _LOCK_DIR.mkdir(exist_ok=True)
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
 
 
+class OllamaSlotTimeout(Exception):
+    pass
+
 class OllamaSlot:
-    """Context-Manager: belegt Slot 0. Wartet wenn Chat-Flag gesetzt ist."""
+    """Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten."""
+    MAX_WAIT = 120
+
     def __enter__(self):
+        deadline = time.time() + self.MAX_WAIT
         while CHAT_AKTIV_FLAG.exists():
+            if time.time() > deadline:
+                raise OllamaSlotTimeout("Ollama-Slot blockiert — Iteration übersprungen")
             time.sleep(2)
         self._f = open(_LOCK_DIR / "slot_0.lock", "w")
-        fcntl.flock(self._f, fcntl.LOCK_EX)
-        return self
+        while True:
+            try:
+                fcntl.flock(self._f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                return self
+            except BlockingIOError:
+                if time.time() > deadline:
+                    self._f.close()
+                    raise OllamaSlotTimeout("Ollama-Slot blockiert — Iteration übersprungen")
+                time.sleep(5)
 
     def __exit__(self, *_):
         fcntl.flock(self._f, fcntl.LOCK_UN)

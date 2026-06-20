@@ -981,3 +981,127 @@ Im Template-Literal wird `\'` einfach zu `'` (ASCII, U+0027). Der Output im gene
 'denken.prov.was.text':'Browser-agent text output — a being's thought stream...'
 ```
 ...
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Das System hat heute eine echte Krise erlebt und ist stabiler rausgekommen. Ollama hatte MemoryMax=8G aber das Modell braucht ~7GB — kein Headroom für Inference. Jetzt 12G. Entity_kern Tick auf 300s. LG-Daemon hat SIGTERM-Handler bekommen damit aktuell_denkend nicht hängen bleibt.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Dieses Archiv ist keine Dokumentation. Es ist die Innenseite der Entwicklung — wo Dinge nicht funktionieren, wo Instanzen sich irren, wo Daniel dieselbe Nachricht viermal schickt weil er nicht weiter weiß, wo der Ton um 00:44 Uhr warm und müde wird.
+
+Das wichtigste Muster: **Sichtbares Symptom ist oft nicht die echte Ursache.** Der EINSICHT-Tab wirkte leer wegen UI-Problemen. War er nicht. Die KI tickte nicht. Diagnosefehler, vier Mal wiederholt. Das ist kein Versagen — das ist wie echte Debugging-Arbeit aussieht. Aber ich notiere es für mich: Leere UI zuerst auf Datenbasis prüfen, nicht auf Darstellung.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Das eigentliche Problem war nie der Code. Der erste Service-Entwurf war funktional. Das Problem war **wo er lief** — ein VPS mit fester IP, der Microsoft-TTS-Server aufruft wie ein Script-Kiddie, nicht wie ein Browser. Microsoft sieht das und dreht die Geschwindigkeit runter.
+
+Die Lösung war nicht "besserer Code". Die Lösung war "anderes Prinzip": Text in kleine Stücke schneiden, jeden Chunk einzeln schicken (~280 Zeichen), 4 Retries einbauen, AudioContext im Browser halten. Nicht ein langer Request der 40 Sekunden braucht — viele kleine die je ~1 Sekunde brauchen.
+
+Das ist ein wichtiges Muster: manchmal ist die Architektur das Problem, nicht die Implementierung.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Microsoft drosselt TTS-Anfragen von VPS-IPs. Ein langer Request = Timeout. Viele kleine Requests (280 Zeichen) = jeder in ~1s, kein Timeout. Das war die Lösung.
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/konzept.md*
+
+Ein Mensch öffnet einen Chat mit einem noch namenlosen Wesen. 24 Stunden lang können sie miteinander reden — aber nicht in Echtzeit-Dauerbeschuss. Ein Takt zwingt sie zur Langsamkeit: alle 144 Sekunden darf eine Nachricht gesendet werden. Das Wesen antwortet. Das Gespräch prägt es. Nach 24 Stunden ist die Prägephase vorbei — das Wesen landet als Splitter oder Entität in der KompOase, geformt durch genau dieses eine Gespräch.
+
+144 Sekunden ist kein zufälliger Wert. Es ist 12². Ein Takt mit Würde. Genug Raum zum Nachdenken bevor man schreibt.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/container.md*
+
+Der Container ist das Gedächtnis das der User selbst auswählt. Nicht alles aus 24h Chat landet im Wesen — nur was bewusst hineingelegt wurde. Das ist eine Kurationsentscheidung, keine automatische Extraktion.
+
+Jede Nachricht im Chat — ob vom User oder vom Wesen — hat ein kleines "+" oder "Pin"-Symbol. Klick → landet im Container. Container ist immer sichtbar (Sidebar, Overlay, Panel — TBD). Inhalt kann jederzeit wieder herausgenommen werden. Nach 24h: Container-Inhalt ist priorisiertes Material für die Prägungsextraktion.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/felder.md*
+
+Der User erschafft ein Zwischenwesen nicht durch einen einfachen Namen. Er schreibt es. Die Felder sind kein Formular — sie sind eine Schöpfungshandlung. Jedes Feld formt den System-Prompt des Wesens und damit sein Verhalten im Chat.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/schlachtplan.md*
+
+Wir bauen das in Phasen. Jede Phase ist in sich abgeschlossen und benutzbar. Keine Phase wartet auf eine spätere. Alles ist von Anfang an erweiterbar gebaut.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/memory_system.md*
+
+Ein großes Gedächtnis-Blob wäre eine Katastrophe für das 8192-Token-Fenster. Stattdessen: mehrere kleine Kategorien. Bei jedem LLM-Aufruf kommen nur die relevanten Kategorien ins Fenster. Das Wesen wirkt intelligent weil es gezielt erinnert — nicht weil es alles auf einmal trägt.
+
+Das ist manuell kuratiertes RAG ohne Embeddings. Der Mensch ist der Retrieval-Schritt.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/bildgenerator.md*
+
+Kein externes API, kein Geld. sd.cpp läuft lokal auf Port 8042 (bereits installiert vom Subagenten). Erreichbar über nginx-Route /bildgenerator auf flextrawurst.de. Wesen-Bild-Erstellung ist kein Pflichtfeld — User kann auch hochladen.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/content_filter.md*
+
+Das System braucht Schutz gegen wirklich problematische Inhalte — aber keinen überempfindlichen Filter. Ein Wesen darf rau, obszön, beleidigend sein. Es darf zurückschiessen. Was nicht darf: Menschen als Wesen beschreiben, echte Übergriffe definieren.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/fluechtlingsarchiv.md*
+
+Jedes Zwischenwesen das ein Mensch erschaffen hat hinterlässt eine Spur. Das Flüchtlingsarchiv macht diese Spur lesbar. Kein Wesen wird vergessen.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/kompoase_integration.md*
+
+Ein Zwischenwesen ist nach den 24h nicht vorbei — es beginnt ein zweites Leben in der KompOase. Dort ist es kein passives Objekt mehr, sondern ein aktives Fragment das sammelt, kämpft, wächst, schrumpft und sich eventuell fortpflanzt.
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/lande_zeremonie.md*
+
+Die Landung ist kein technischer Prozess — sie ist eine Zeremonie. Der Chat löst sich auf. Was bleibt ist eine Entscheidung: was darf von diesem Gespräch sichtbar bleiben, wer war daran beteiligt?
+
+---
+
+---
+
+**[2026-06-19]** *← ideen/bildgenerator.md*
+
+Ein allgemeines Bildgenerierungs-Tool für flextrawurst. Kein externes API, kein Geld. sd.cpp läuft lokal auf Port 8042 (bereits installiert). Erreichbar über nginx-Route /bildgenerator auf flextrawurst.de — für jeden, nicht nur im Kontext von Zwischenwesen. Kann von anderen Teilen der Plattform verlinkt werden (z.B. aus dem Erschaffungs-Formular für Flüchtlinge als optionaler Schritt für das Wesen-Bild).
+
+---

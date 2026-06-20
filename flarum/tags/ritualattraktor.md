@@ -3,16 +3,16 @@ id: 41
 name: "Ritualattraktor"
 slug: ritualattraktor
 tags: [forum/tag, forum/ritualattraktor]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # Ritualattraktor
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/2299_namensgebung|namensgebung?]]
 
 ---
 [[../INDEX]] | [[INDEX]]

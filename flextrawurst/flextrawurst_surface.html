@@ -902,8 +902,84 @@ html[data-theme="light"][data-surface-mode="cinema"] .wk-card {
 html[data-theme="light"] #cin-indicator { display:none!important }
 
 </style>
+<style>
+#ftw-bg{position:fixed;inset:0;z-index:50;pointer-events:none;overflow:hidden;mix-blend-mode:screen;transition:opacity 0.4s ease}
+#ftw-ribbon-cv{position:absolute;inset:0;width:100%;height:100%;opacity:0.50}
+.ftw-blob{position:absolute;border-radius:50%;filter:blur(100px)}
+.ftw-b1{width:65vw;height:65vw;top:-15%;left:-12%;background:radial-gradient(circle,rgba(16,216,240,0.03) 0%,transparent 70%);animation:ftw-b1 41s ease-in-out infinite}
+.ftw-b2{width:55vw;height:55vw;bottom:-10%;right:-8%;background:radial-gradient(circle,rgba(192,132,252,0.03) 0%,transparent 70%);animation:ftw-b2 31s ease-in-out infinite}
+.ftw-b3{width:45vw;height:45vw;top:25%;left:35%;background:radial-gradient(circle,rgba(16,240,128,0.02) 0%,transparent 70%);animation:ftw-b3 53s ease-in-out infinite}
+@keyframes ftw-b1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(7vw,-4vh) scale(1.07)}66%{transform:translate(-4vw,7vh) scale(0.95)}}
+@keyframes ftw-b2{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(-9vw,5vh) scale(1.09)}75%{transform:translate(5vw,-7vh) scale(0.93)}}
+@keyframes ftw-b3{0%,100%{transform:translate(0,0) scale(1)}28%{transform:translate(5vw,9vh) scale(1.05)}62%{transform:translate(-7vw,-5vh) scale(1.1)}}
+#ftw-splash{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;transition:opacity 0.5s;mix-blend-mode:screen}
+#ftw-splash canvas{width:100%;height:100%;display:block}
+#ftw-mode-btn{background:rgba(1,3,8,0.7);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.3);font-size:0.58rem;padding:2px 8px;cursor:pointer;border-radius:3px;transition:all 0.2s;font-family:var(--font-mono);letter-spacing:0.06em;line-height:1.4}
+#ftw-mode-btn:hover{border-color:rgba(255,255,255,0.25);color:rgba(255,255,255,0.65)}
+#ftw-mode-btn.splash{border-color:rgba(192,132,252,0.55);color:rgba(192,132,252,0.9)}
+/* ── StarBorder ──────────────────────────────────────────────────────────── */
+.ftw-sb-wrap{display:inline-block;position:relative;border-radius:var(--ftw-sb-r,4px);vertical-align:middle}
+.ftw-sb-wrap::before{content:'';position:absolute;bottom:-30%;right:-250%;z-index:0;height:80%;width:300%;border-radius:50%;background:radial-gradient(circle,var(--ftw-sb-c,#10d8f0),transparent 40%);opacity:.55;pointer-events:none;animation:ftw-sb-t var(--ftw-sb-s,6s) linear infinite alternate;animation-delay:var(--ftw-sb-d,0s)}
+.ftw-sb-wrap::after{content:'';position:absolute;top:-30%;left:-250%;z-index:0;height:80%;width:300%;border-radius:50%;background:radial-gradient(circle,var(--ftw-sb-c,#10d8f0),transparent 40%);opacity:.55;pointer-events:none;animation:ftw-sb-b var(--ftw-sb-s,6s) linear infinite alternate;animation-delay:var(--ftw-sb-d,0s)}
+@keyframes ftw-sb-t{0%{transform:translate(0,0)}100%{transform:translate(-100%,0)}}
+@keyframes ftw-sb-b{0%{transform:translate(0,0)}100%{transform:translate(100%,0)}}
+.ftw-sb-inner{position:relative;z-index:1}
+@keyframes ftw-tg{0%,100%{box-shadow:none}50%{box-shadow:0 -2px 10px var(--ftw-tg-c,#10d8f0),0 2px 6px var(--ftw-tg-c,#10d8f0)}}
+.ftw-tg{animation:ftw-tg var(--ftw-tg-s,4s) ease-in-out infinite;animation-delay:var(--ftw-tg-d,0s)}
+</style>
 </head>
 <body>
+<div id="ftw-bg" aria-hidden="true">
+  <div class="ftw-blob ftw-b1"></div>
+  <div class="ftw-blob ftw-b2"></div>
+  <div class="ftw-blob ftw-b3"></div>
+  <canvas id="ftw-ribbon-cv"></canvas>
+</div>
+<div id="ftw-splash" aria-hidden="true"><canvas id="ftw-fluid-cv"></canvas></div>
+<script id="ftw-wsrc" type="text/plain">
+let cv,ctx,W=0,H=0,mx=0,my=0,lastMove=0;
+const COLS=['#10f080','#10d8f0','#c084fc','#fb923c'];
+const PTS=28;
+let rbs=[];
+function init(){
+  rbs=[];
+  const ctr=(COLS.length-1)/2;
+  COLS.forEach(function(col,i){
+    var pts=[];for(var j=0;j<PTS;j++)pts.push({x:W/2,y:H/2});
+    rbs.push({col:col,pts:pts,vx:0,vy:0,
+      sp:0.026+(Math.random()-0.5)*0.005,
+      fr:0.87+(Math.random()-0.5)*0.01,
+      ox:(i-ctr)*W*0.016+(Math.random()-0.5)*6,
+      oy:(Math.random()-0.5)*H*0.04,
+      th:2+Math.random()*1.5});
+  });
+}
+function tick(now){
+  if(!ctx)return;
+  ctx.clearRect(0,0,W,H);
+  if(now-lastMove>1800){var t=now*0.00028;mx=W/2+Math.sin(t)*W*0.17;my=H/2+Math.cos(t*0.71)*H*0.13;}
+  rbs.forEach(function(r){
+    var tx=mx+r.ox,ty=my+r.oy;
+    r.vx=(r.vx+(tx-r.pts[0].x)*r.sp)*r.fr;
+    r.vy=(r.vy+(ty-r.pts[0].y)*r.sp)*r.fr;
+    r.pts[0].x+=r.vx;r.pts[0].y+=r.vy;
+    for(var i=1;i<PTS;i++){r.pts[i].x+=(r.pts[i-1].x-r.pts[i].x)*0.26;r.pts[i].y+=(r.pts[i-1].y-r.pts[i].y)*0.26;}
+    var last=r.pts[PTS-1];
+    var gr=ctx.createLinearGradient(r.pts[0].x,r.pts[0].y,last.x,last.y);
+    gr.addColorStop(0,r.col+'bb');gr.addColorStop(1,r.col+'00');
+    ctx.beginPath();ctx.moveTo(r.pts[0].x,r.pts[0].y);
+    for(var i=1;i<PTS-1;i++){var qx=(r.pts[i].x+r.pts[i+1].x)/2,qy=(r.pts[i].y+r.pts[i+1].y)/2;ctx.quadraticCurveTo(r.pts[i].x,r.pts[i].y,qx,qy);}
+    ctx.strokeStyle=gr;ctx.lineWidth=r.th;ctx.lineCap='round';ctx.stroke();
+  });
+}
+function loop(now){requestAnimationFrame(loop);tick(now);}
+self.onmessage=function(e){
+  var d=e.data;
+  if(d.type==='init'){cv=d.canvas;W=d.w;H=d.h;ctx=cv.getContext('2d');mx=W/2;my=H/2;init();loop(performance.now());}
+  else if(d.type==='mouse'){lastMove=performance.now();mx=d.x;my=d.y;}
+  else if(d.type==='resize'){W=d.w;H=d.h;cv.width=W;cv.height=H;init();}
+};
+</script>
 <canvas id="cin-a"></canvas>
 <canvas id="cin-b"></canvas>
 <div id="cin-flash"></div>
@@ -1026,6 +1102,7 @@ html[data-theme="light"] #cin-indicator { display:none!important }
   <div id="topbar-right">
     <span class="top-badge ok">LIVE</span>
     <span class="top-badge plan">GEPLANT</span>
+    <button id="ftw-mode-btn" onclick="ftwToggleMode()" title="Hintergrundeffekt wechseln">✦ AMBIENT</button>
     <button id="cin-mode-btn" onclick="cinToggleMode()" title="Cinema / Klassisch">✦ CINEMA</button>
     <button id="theme-toggle" onclick="ftwToggleTheme()" title="Hell/Dunkel" style="background:none;border:1px solid var(--rim);color:var(--t-sub);font-size:0.62rem;padding:2px 7px;cursor:pointer;border-radius:4px;transition:all var(--ease);display:inline-flex;align-items:center;gap:4px;font-family:var(--font-mono)"><svg id="theme-icon" style="width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round"><use href="#ic-moon-sm"/></svg><span id="theme-label">HELL</span></button>
     <div id="lang-sw">
@@ -1654,7 +1731,7 @@ html[data-theme="light"] #cin-indicator { display:none!important }
     <div class="dk-metric"><span id="dk-wesen">7</span> Wesen</div>
     <div class="dk-metric"><span id="dk-posts">—</span> Posts</div>
     <div class="dk-metric"><span id="dk-res">—</span> Resonanzen</div>
-    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-06-17</div>
+    <div style="font-size:0.5rem;color:#0a1620;margin-left:4px">RING 24 · 2026-06-18</div>
   </div>
 </div>
 </div><!-- /view-leitstand -->
@@ -3100,19 +3177,19 @@ html[lang="en"] .de-only{display:none}
 </div>
 
 <div class="ub2-paths">
-  <div class="ub2-path" onclick="document.getElementById('atemraum-verstehen')?.scrollIntoView({behavior:'smooth',block:'center'})">
+  <div class="ub2-path ftw-eb" data-ftw-eb-color="#60a5fa" onclick="document.getElementById('atemraum-verstehen')?.scrollIntoView({behavior:'smooth',block:'center'})">
     <div class="ub2-path-kicker" data-i18n="uber.path.1.kicker">Pfad 01</div>
     <div class="ub2-path-title" data-i18n="uber.path.1.title">Nur verstehen</div>
     <div class="ub2-path-text" data-i18n="uber.path.1.text">Ein kurzer Atemraum vor der Systemtiefe. Du musst nicht wissen was GENI, Splitter oder Einzug bedeuten, um hier anzufangen.</div>
     <div class="ub2-path-action" data-i18n="uber.path.1.action">Erst orientieren</div>
   </div>
-  <div class="ub2-path" onclick="switchView('theater')">
+  <div class="ub2-path ftw-eb" data-ftw-eb-color="#fb923c" onclick="switchView('theater')">
     <div class="ub2-path-kicker" data-i18n="uber.path.2.kicker">Pfad 02</div>
     <div class="ub2-path-title" data-i18n="uber.path.2.title">Welt betreten</div>
     <div class="ub2-path-text" data-i18n="uber.path.2.text">Direkt in die laufende Welt: KompOase, Blasen, Wesen und Räume. Nicht alles erklären, sondern den Organismus sehen.</div>
     <div class="ub2-path-action" data-i18n="uber.path.2.action">KompOase öffnen</div>
   </div>
-  <div class="ub2-path" onclick="switchView('leitstand')">
+  <div class="ub2-path ftw-eb" data-ftw-eb-color="#10d8f0" onclick="switchView('leitstand')">
     <div class="ub2-path-kicker" data-i18n="uber.path.3.kicker">Pfad 03</div>
     <div class="ub2-path-title" data-i18n="uber.path.3.title">Leitstand öffnen</div>
     <div class="ub2-path-text" data-i18n="uber.path.3.text">Für Mitbauer und Neugierige mit Systemhunger: Status, Schichten, Herkunft, Sperren und Weltkarte auf einmal.</div>
@@ -3120,7 +3197,7 @@ html[lang="en"] .de-only{display:none}
   </div>
 </div>
 
-<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:14px 20px;border-bottom:1px solid var(--rim);background:var(--void)">
+<div id="uber-nav-strip" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:14px 20px;border-bottom:1px solid var(--rim);background:var(--void)">
   <span data-i18n="uber.page.label" style="font-size:.5rem;color:var(--t-dim);letter-spacing:.15em;text-transform:uppercase;align-self:center;margin-right:4px">Auf dieser Seite:</span>
   <button data-i18n="uber.page.orientation" onclick="document.getElementById('atemraum-verstehen')?.scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:.55rem;padding:4px 10px;background:none;border:1px solid var(--b8);color:#1a4a5a;cursor:pointer;font-family:monospace;letter-spacing:.08em">Orientierung</button>
   <button data-i18n="uber.page.substances" onclick="document.getElementById('ub-substanz')?.scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:.55rem;padding:4px 10px;background:none;border:1px solid var(--b18);color:#5a3a8a;cursor:pointer;font-family:monospace;letter-spacing:.08em">Substanzschichten</button>
@@ -3136,7 +3213,7 @@ html[lang="en"] .de-only{display:none}
 </div>
 
 <div class="ub2-grid">
-  <div class="ub2-card cc-world" onclick="switchView('leitstand')">
+  <div class="ub2-card cc-world ftw-eb" data-ftw-eb-color="#10d8f0" onclick="switchView('leitstand')">
     <span class="ub2-card-icon">🗺️</span>
     <div class="ub2-card-title" data-i18n="uber.card.world.title">Die Welt</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.world.text">
@@ -3148,7 +3225,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live">LIVE</span>
   </div>
 
-  <div class="ub2-card cc-wesen" onclick="switchView('wesen')">
+  <div class="ub2-card cc-wesen ftw-eb" data-ftw-eb-color="#c084fc" onclick="switchView('wesen')">
     <span class="ub2-card-icon">✨</span>
     <div class="ub2-card-title" data-i18n="uber.card.wesen.title">Die Wesen</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.wesen.text">
@@ -3160,7 +3237,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-planned" data-i18n="uber.status.waiting">WARTET</span>
   </div>
 
-  <div class="ub2-card cc-splitter" onclick="switchView('theater')">
+  <div class="ub2-card cc-splitter ftw-eb" data-ftw-eb-color="#fb923c" onclick="switchView('theater')">
     <span class="ub2-card-icon">💭</span>
     <div class="ub2-card-title" data-i18n="uber.card.zwischenraum.title">Der Zwischenraum</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.zwischenraum.text">
@@ -3172,7 +3249,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live">LIVE</span>
   </div>
 
-  <div class="ub2-card cc-alive" onclick="switchView('systeme')">
+  <div class="ub2-card cc-alive ftw-eb" data-ftw-eb-color="#10f080" onclick="switchView('systeme')">
     <span class="ub2-card-icon">🧠</span>
     <div class="ub2-card-title" data-i18n="uber.card.geni.title">GENI — Wahrnehmung</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.geni.text">
@@ -3184,7 +3261,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live">LIVE</span>
   </div>
 
-  <div class="ub2-card cc-human" onclick="switchView('menschen')">
+  <div class="ub2-card cc-human ftw-eb" data-ftw-eb-color="#60a5fa" onclick="switchView('menschen')">
     <span class="ub2-card-icon">👥</span>
     <div class="ub2-card-title" data-i18n="uber.card.humans.title">Die Menschen</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.humans.text">
@@ -3196,7 +3273,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live">LIVE</span>
   </div>
 
-  <div class="ub2-card cc-sleep" onclick="switchView('schlaf')">
+  <div class="ub2-card cc-sleep ftw-eb" data-ftw-eb-color="#818cf8" onclick="switchView('schlaf')">
     <span class="ub2-card-icon">🌙</span>
     <div class="ub2-card-title" data-i18n="uber.card.schlaf.title">Schlaf · Träume</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.schlaf.text">
@@ -3208,7 +3285,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live" data-i18n="uber.status.active">AKTIV</span>
   </div>
 
-  <div class="ub2-card cc-sys" onclick="switchView('systeme')">
+  <div class="ub2-card cc-sys ftw-eb" data-ftw-eb-color="#f87171" onclick="switchView('systeme')">
     <span class="ub2-card-icon">⚙️</span>
     <div class="ub2-card-title" data-i18n="uber.card.systems.title">Systeme &amp; Technik</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.systems.text">
@@ -3220,7 +3297,7 @@ html[lang="en"] .de-only{display:none}
     <span class="ub2-card-status st-live">LIVE</span>
   </div>
 
-  <div class="ub2-card cc-plan" onclick="switchView('wissen')">
+  <div class="ub2-card cc-plan ftw-eb" data-ftw-eb-color="#4a9eff" onclick="switchView('wissen')">
     <span class="ub2-card-icon">📚</span>
     <div class="ub2-card-title" data-i18n="uber.card.knowledge.title">Das Wissen</div>
     <div class="ub2-card-text" data-i18n-html="uber.card.knowledge.text">
@@ -4232,7 +4309,7 @@ html[lang="en"] .de-only{display:none}
       <div class="av-sys-row"><span>Räume</span><span>7</span></div>
       <div class="av-sys-row"><span>Systemkörper</span><span>3</span></div>
       <div class="av-sys-row"><span>Organ-Pods</span><span>8</span></div>
-      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-06-17</span></div>
+      <div class="av-sys-row"><span>Ring</span><span>24 · 2026-06-18</span></div>
       <div class="av-sys-row"><span>Inventar</span><span>490 Einträge</span></div>
     </div>
     <div>
@@ -4357,7 +4434,10 @@ function sfEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').re
 <script>
 (function(){
   function tok() { return localStorage.getItem("ftw_token") || ""; }
-  function fmtDate(s) { if(!s) return "—"; const d=new Date(s); return d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear(); }
+  function fmtDate(s) { if(!s) return "—"; const d=new Date(s); return d.toLocaleDateString('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',year:'numeric'}); }
+  function fmtBerlinTime(s) { if(!s) return "—"; return new Date(s).toLocaleTimeString('de-DE',{timeZone:'Europe/Berlin',hour:'2-digit',minute:'2-digit'}); }
+  function fmtBerlin(s) { if(!s) return "—"; return new Date(s).toLocaleString('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}); }
+  function fmtBerlinDate(s) { if(!s) return "—"; return new Date(s).toLocaleDateString('de-DE',{timeZone:'Europe/Berlin',day:'2-digit',month:'2-digit',year:'numeric'}); }
   function admEsc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 
   // Sub-Tab-Switching
@@ -4398,7 +4478,7 @@ function sfEsc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').re
           +'<td><strong>'+admEsc(b.display_name||b.username)+'</strong><br><span style="color:#2a4a5a;font-size:.55rem">@'+admEsc(b.username)+'</span></td>'
           +'<td><span style="color:'+statusColor+';font-size:.58rem">'+b.status.toUpperCase()+'</span></td>'
           +'<td style="max-width:240px;font-size:.6rem;color:#3a6a7a">'+admEsc((b.motivation||'—').slice(0,120))+'</td>'
-          +'<td style="font-size:.55rem;color:#2a4a5a;white-space:nowrap">'+b.created_at.slice(0,10)+'</td>'
+          +'<td style="font-size:.55rem;color:#2a4a5a;white-space:nowrap">'+fmtBerlinDate(b.created_at)+'</td>'
           +'<td class="adm-actions">'
           +(b.status==='offen'
             ?'<button class="adm-ico adm-ico-ok" onclick="admBewEntscheid(&apos;'+b.id+'&apos;,&apos;genehmigt&apos;)">✓ Annehmen</button>'
@@ -4897,7 +4977,7 @@ function gspRendern(){
   var html='';
   for(var i=0;i<_gspEintraege.length;i++){
     var e=_gspEintraege[i];
-    var ts=(e.created_at||'').slice(0,16).replace('T',' ');
+    var ts=fmtBerlin(e.created_at);
     var cls=e.rolle==='user'?'user':'assistant';
     var sprecher=e.rolle==='user'?'Daniel':_gspWesen;
     html+='<div class="gsp-row '+cls+'">';
@@ -6086,8 +6166,8 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
       if (trb) document.getElementById("mw-z-traumtagebuch").textContent = trb.total ?? "—";
       if (nz) document.getElementById("mw-z-notizen").textContent = String((nz.notizen||[]).length) || "—";
       if (kal) {
-        const heute = new Date().toISOString().slice(0,10);
-        const naechste = (kal.termine||[]).filter(t => t.start_zeit >= heute);
+        const heute = new Date().toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'});
+        const naechste = (kal.termine||[]).filter(t => new Date(t.start_zeit).toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'}) >= heute);
         document.getElementById("mw-z-kalender").textContent = naechste.length || "—";
       }
       if (nm) {
@@ -6536,8 +6616,10 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
     const ti = document.getElementById("mw-kal-titel").value.trim();
     const st = document.getElementById("mw-kal-start").value;
     if (!ti || !st) return;
+    // datetime-local ist lokale Zeit → als Berlin-Zeit interpretieren und UTC senden
+    const stUtc = new Date(st).toISOString();
     const h = {"Authorization": mwToken(), "Content-Type": "application/json"};
-    fetch(MW_API + "/mw/kalender", {method: "POST", headers: h, body: JSON.stringify({titel: ti, start_zeit: st})})
+    fetch(MW_API + "/mw/kalender", {method: "POST", headers: h, body: JSON.stringify({titel: ti, start_zeit: stUtc})})
       .then(() => mwOeffne("kalender"));
   }
 
@@ -6552,10 +6634,10 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
     const basisMontag = new Date();
     basisMontag.setDate(basisMontag.getDate() - ((basisMontag.getDay()+6)%7) + mwKalWochenOffset * 7);
     basisMontag.setHours(0,0,0,0);
-    const von = basisMontag.toISOString().slice(0,10);
+    const von = basisMontag.toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'});
     const bisDate = new Date(basisMontag); bisDate.setDate(basisMontag.getDate()+6);
-    const bis = bisDate.toISOString().slice(0,10);
-    const heute = new Date().toISOString().slice(0,10);
+    const bis = bisDate.toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'});
+    const heute = new Date().toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'});
     const monate = ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"];
     const wochenLabel = basisMontag.getDate()+". "+monate[basisMontag.getMonth()]
       +" — "+bisDate.getDate()+". "+monate[bisDate.getMonth()]+" "+bisDate.getFullYear();
@@ -6572,12 +6654,12 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
       html += '<div class="mw-kalender-woche">';
       for (let i=0;i<7;i++) {
         const tag = new Date(montag); tag.setDate(montag.getDate()+i);
-        const tagStr = tag.toISOString().slice(0,10);
+        const tagStr = tag.toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'}); // YYYY-MM-DD in Berlin
         const istHeute = tagStr === heute;
-        const tagTermine = termine.filter(t=>t.start_zeit.slice(0,10)===tagStr);
+        const tagTermine = termine.filter(t=>new Date(t.start_zeit).toLocaleDateString('sv-SE',{timeZone:'Europe/Berlin'})===tagStr);
         html += '<div class="mw-kal-tag'+(istHeute?" mw-kal-heute":"")+'"><div class="mw-kal-wt">'+wochentage[i]+'</div><div class="mw-kal-d">'+tag.getDate()+'</div>';
         tagTermine.forEach(t=>{
-          const uhr = t.start_zeit.slice(11,16);
+          const uhr = fmtBerlinTime(t.start_zeit);
           html += '<div class="mw-kal-termin" data-tid="'+t.id+'">'
             + '<span>'+mwEsc(t.titel)+(uhr&&uhr!=="00:00"?' <small>'+uhr+'</small>':'')+'</span>'
             + '<button class="mw-ico mw-kal-del" data-id="'+t.id+'" style="float:right;font-size:0.6rem;opacity:0.5">✗</button>'
@@ -6608,7 +6690,7 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
         alleEl.innerHTML = '<div style="font-size:.6rem;color:#2a6a4a;font-family:monospace;margin-bottom:8px">ALLE TERMINE ('+(alleData.gesamt||alle.length)+')</div>'
           + '<div style="max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:4px">'
           + alle.map(t=>{
-            const dt = t.start_zeit ? t.start_zeit.slice(0,16).replace('T',' ') : '—';
+            const dt = fmtBerlin(t.start_zeit);
             const ks = t.sichtbarkeit||'privat';
             const ksDot = {privat:'#2a4a3a', public:'#1a7a2a', anonym:'#1a4a7a', 'geschützt':'#6a5a0a'}[ks]||'#2a4a3a';
             return '<div style="display:flex;align-items:center;gap:8px;background:var(--b4);border:1px solid var(--b10);border-radius:3px;padding:6px 10px">'
@@ -6744,7 +6826,7 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
               + '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">'
               + '<span style="font-size:.65rem;color:#4a8ab8;font-family:monospace">' + mwEsc(q.quelle_typ || q.source_type || '?') + '</span>'
               + '<span style="font-size:.55rem;color:' + consentColor + ';border:1px solid ' + consentColor + ';padding:1px 5px;border-radius:2px">' + consentLabel + '</span>'
-              + '<span style="font-size:.52rem;color:#1a3a4a;margin-left:auto">' + (q.erstellt_am || q.created_at || '').slice(0,10) + '</span>'
+              + '<span style="font-size:.52rem;color:#1a3a4a;margin-left:auto">' + fmtBerlinDate(q.erstellt_am || q.created_at) + '</span>'
               + '</div>'
               + '<div style="font-size:.6rem;color:#2a5a4a;line-height:1.4">' + mwEsc(((q.title||q.zusammenfassung || q.summary || q.content || '')).slice(0,120)) + '</div>'
               + '<div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">'
@@ -6840,7 +6922,7 @@ function gspEsc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/
         }
         let html = header + newGedankeForm + '<div style="display:flex;flex-direction:column;gap:6px">';
         blasen.forEach(b => {
-          const ts = (b.created_at||'').slice(0,16).replace('T',' ');
+          const ts = fmtBerlin(b.created_at);
           const status = b.status || 'aktiv';
           const statusCol = status === 'aktiv' ? 'var(--ta3)' : '#6a5a3a';
           html += '<div style="background:var(--b4);border:1px solid var(--b10);border-radius:3px;padding:8px 12px;display:flex;gap:8px;align-items:flex-start">'
@@ -13452,7 +13534,7 @@ async function archaeologieLaden() {
       return '<div class="ft-kapsel" style="cursor:pointer;flex:1 1 100%;max-width:100%" onclick="archDetailOeffnen(' + JSON.stringify(JSON.stringify(item)) + ')">' +
         '<div class="ft-typ">' + typ + '</div>' +
         '<div class="ft-content">' + label + '</div>' +
-        (item.ts ? '<div class="ft-meta"><span>' + item.ts.slice(0,10) + '</span></div>' : '') +
+        (item.ts ? '<div class="ft-meta"><span>' + fmtBerlinDate(item.ts) + '</span></div>' : '') +
         '</div>';
     }).join('');
   } catch(e) {
@@ -13468,7 +13550,7 @@ function archDetailOeffnen(jsonStr) {
   const metaEl = document.getElementById('arch-d-meta');
   if (typEl) typEl.textContent = (item.typ || item._kat || '').toUpperCase();
   if (snippetEl) snippetEl.textContent = item.inhalt_voll || item.essenz || item.name || item.display_name || '—';
-  if (metaEl) metaEl.textContent = 'ID: ' + (item.id || '—') + (item.created_at ? ' · ' + item.created_at.slice(0,10) : '');
+  if (metaEl) metaEl.textContent = 'ID: ' + (item.id || '—') + (item.created_at ? ' · ' + fmtBerlinDate(item.created_at) : '');
   overlay.style.display = 'flex';
 }
 function archDetailClose(e) {
@@ -13608,7 +13690,7 @@ async function schattenLaden() {
       return '<div class="ft-kapsel schatten">' +
         '<div class="ft-typ">schatten' + (s.entity_id ? ' · ' + s.entity_id : '') + (status ? ' · ' + status : '') + '</div>' +
         '<div class="ft-content">' + (s.snippet || '').slice(0, 150) + '</div>' +
-        '<div class="ft-meta"><span>' + (s.ts ? s.ts.slice(0,10) : '—') + '</span></div>' +
+        '<div class="ft-meta"><span>' + (s.ts ? fmtBerlinDate(s.ts) : '—') + '</span></div>' +
         '</div>';
     }).join('');
     shLoaded = true;
@@ -14581,7 +14663,7 @@ async function selectMensch(id) {
       {k:'tagebuch', l:'Tagebuch', fn: function(e){ return esc(e.inhalt||''); }},
       {k:'traumtagebuch', l:'Träume', fn: function(e){ return esc(e.inhalt||''); }},
       {k:'notizen', l:'Notizen', fn: function(e){ return (e.titel?'<strong>'+esc(e.titel)+'</strong><br>':'')+esc((e.inhalt||'').slice(0,200)+((e.inhalt||'').length>200?'…':'')); }},
-      {k:'kalender', l:'Kalender', fn: function(e){ return '<strong>'+esc(e.titel||'—')+'</strong>'+(e.start_zeit?' <span style="opacity:.6">'+e.start_zeit.slice(0,10)+'</span>':''); }}
+      {k:'kalender', l:'Kalender', fn: function(e){ return '<strong>'+esc(e.titel||'—')+'</strong>'+(e.start_zeit?' <span style="opacity:.6">'+fmtBerlinDate(e.start_zeit)+'</span>':''); }}
     ];
     spurKats.forEach(function(kat){
       var eintraege = spuren[kat.k]||[];
@@ -15406,7 +15488,7 @@ function splashDismiss(){
     if(s){s.style.animation='none';s.style.opacity='0';s.style.pointerEvents='none';}
     setTimeout(function(){var s2=document.getElementById('splash');if(s2)s2.remove();if(typeof tourInit==='function')tourInit();},80);
   } else {
-    setTimeout(splashDismiss,4200);
+    setTimeout(splashDismiss,2800);
   }
 })();
 
@@ -15803,6 +15885,679 @@ authAktualisieren();
   <a href="/for-ai-systems.html" style="color:#4a2060;text-decoration:none;margin:0 8px">For AI Systems</a>·
   <a href="/llms.txt" style="color:#4a2060;text-decoration:none;margin:0 8px">llms.txt</a>
 </footer>
+<script>
+// ── Ribbon worker ────────────────────────────────────────────────────────────
+(function(){
+  var c=document.getElementById('ftw-ribbon-cv');
+  if(!c||!c.transferControlToOffscreen)return;
+  c.width=window.innerWidth;c.height=window.innerHeight;
+  var src=document.getElementById('ftw-wsrc').textContent;
+  var rw=new Worker(URL.createObjectURL(new Blob([src],{type:'application/javascript'})));
+  var off=c.transferControlToOffscreen();
+  rw.postMessage({type:'init',canvas:off,w:c.width,h:c.height},[off]);
+  window.ftwRibbonWorker=rw;
+  window.addEventListener('mousemove',function(e){rw.postMessage({type:'mouse',x:e.clientX,y:e.clientY});});
+  window.addEventListener('touchmove',function(e){if(e.touches[0])rw.postMessage({type:'mouse',x:e.touches[0].clientX,y:e.touches[0].clientY});},{passive:true});
+  window.addEventListener('resize',function(){rw.postMessage({type:'resize',w:window.innerWidth,h:window.innerHeight});});
+})();
+// ── Mode toggle ──────────────────────────────────────────────────────────────
+var FTW_MODE='ambient';
+var HIDE_ON=['screens','denken'];
+function ftwToggleMode(){
+  var bg=document.getElementById('ftw-bg');
+  var sp=document.getElementById('ftw-splash');
+  var btn=document.getElementById('ftw-mode-btn');
+  var onHideView=HIDE_ON.indexOf(window.activeView||'')!==-1;
+  if(FTW_MODE==='ambient'){
+    FTW_MODE='splash';
+    if(bg)bg.style.opacity='0';
+    if(sp&&!onHideView){sp.style.opacity='1';window.ftwFluidStart&&window.ftwFluidStart();}
+    if(btn){btn.textContent='⊕ FLUID';btn.className='splash';}
+  }else{
+    FTW_MODE='ambient';
+    if(sp){sp.style.opacity='0';window.ftwFluidStop&&window.ftwFluidStop();}
+    if(bg&&!onHideView)bg.style.opacity='';
+    if(btn){btn.textContent='✦ AMBIENT';btn.className='';}
+  }
+}
+// ── switchView patch ─────────────────────────────────────────────────────────
+(function(){
+  var orig=window.switchView;
+  if(typeof orig!=='function')return;
+  window.switchView=function(id){
+    orig(id);
+    var hide=HIDE_ON.indexOf(id)!==-1;
+    var bg=document.getElementById('ftw-bg');
+    var sp=document.getElementById('ftw-splash');
+    if(bg)bg.style.opacity=(FTW_MODE==='splash'||hide)?'0':'';
+    if(sp){
+      var showSplash=FTW_MODE==='splash'&&!hide;
+      sp.style.opacity=showSplash?'1':'0';
+      if(showSplash)window.ftwFluidStart&&window.ftwFluidStart();
+      else window.ftwFluidStop&&window.ftwFluidStop();
+    }
+  };
+})();
+// ── StarBorder + ElectricBorder + TabGlow Runtime-Init ───────────────────────
+window.addEventListener('load',function(){
+  // TabGlow: alle sichtbaren Tab-Buttons — kein DOM-Wrapping, pure CSS
+  var TG_PAL=['#10d8f0','#c084fc','#10f080','#fb923c','#60a5fa','#818cf8','#4a9eff','#10d8f0','#c084fc','#10f080','#fb923c','#60a5fa','#818cf8','#4a9eff'];
+  document.querySelectorAll('.v-tab').forEach(function(el,i){
+    el.style.setProperty('--ftw-tg-c',TG_PAL[i%TG_PAL.length]);
+    el.style.setProperty('--ftw-tg-d',(Math.random()*6).toFixed(1)+'s');
+    el.style.setProperty('--ftw-tg-s',(3+Math.random()*3).toFixed(1)+'s');
+    el.classList.add('ftw-tg');
+  });
+  // StarBorder: uber nav buttons
+  if(typeof ftwInitStarBorders==='function'){
+    ftwInitStarBorders('.rv-cta-btn',{colors:['#c084fc'],maxDelay:3,speed:'8s',radius:3});
+    ftwInitStarBorders('.wiss-shelf',{colors:['#4a9eff','#c084fc','#10f080','#818cf8','#fb923c'],maxDelay:4,speed:'5s',radius:3});
+  }
+  // ElectricBorder: Karten in allen Views
+  if(typeof ftwElectricBorderOn==='function'){
+    var EL=[
+      {sel:'.wv-card:not(.wv-sys)', c:'#c084fc'},
+      {sel:'.wv-card.wv-sys',       c:'#10d8f0'},
+      {sel:'.scv-card',             c:'#818cf8'},
+      {sel:'.sv-card.sv-aktiv',     c:'#10f080'},
+      {sel:'.sv-card:not(.sv-aktiv)',c:'#4a9eff'},
+      {sel:'.wk-card',              c:'#c084fc'},
+      {sel:'.rv-card',              c:'#10d8f0'},
+    ];
+    EL.forEach(function(t){
+      document.querySelectorAll(t.sel).forEach(function(el){
+        ftwElectricBorderOn(el,t.c);
+      });
+    });
+  }
+});
+</script>
+<script>// ftw_fluid.js — SplashCursor fluid sim, vanilla JS port, no deps
+// Eingebunden via readFileSync in build_surface.ts
+(function () {
+  var cv, gl, ext, blitFn;
+  var rafId = null, running = false;
+  var lastTime = 0, colorTimer = 0, firstMove = false;
+  var dye, vel, divFBO, curlFBO, pres;
+  var copyPrg, clearPrg, splatPrg, advPrg, divPrg, curlPrg, vortPrg, presPrg, gradPrg, dispMat;
+
+  var C = {
+    SIM_RESOLUTION: 128, DYE_RESOLUTION: 1440,
+    DENSITY_DISSIPATION: 2, VELOCITY_DISSIPATION: 5,
+    PRESSURE: 0.25, PRESSURE_ITERATIONS: 20,
+    CURL: 25, SPLAT_RADIUS: 0.41, SPLAT_FORCE: 7000,
+    SHADING: true, COLOR_UPDATE_SPEED: 4,
+    RAINBOW_MODE: true, TRANSPARENT: true
+  };
+
+  function Ptr() {
+    this.id=-1; this.tx=0; this.ty=0; this.px=0; this.py=0;
+    this.dx=0; this.dy=0; this.down=false; this.moved=false;
+    this.color={r:0,g:0,b:0};
+  }
+  var ptrs = [new Ptr()];
+
+  // ── WebGL context ────────────────────────────────────────────────────────────
+  function initGL(canvas) {
+    var p = {alpha:true,depth:false,stencil:false,antialias:false,preserveDrawingBuffer:false};
+    var g = canvas.getContext('webgl2',p), isGL2 = !!g;
+    if (!g) g = canvas.getContext('webgl',p) || canvas.getContext('experimental-webgl',p);
+    if (!g) return null;
+    var hf, lin;
+    if (isGL2) { g.getExtension('EXT_color_buffer_float'); lin = g.getExtension('OES_texture_float_linear'); }
+    else { hf = g.getExtension('OES_texture_half_float'); lin = g.getExtension('OES_texture_half_float_linear'); }
+    var hft = isGL2 ? g.HALF_FLOAT : (hf && hf.HALF_FLOAT_OES);
+
+    function tryFmt(intFmt, fmt, type) {
+      var t=g.createTexture(); g.bindTexture(g.TEXTURE_2D,t);
+      g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MIN_FILTER,g.NEAREST);
+      g.texParameteri(g.TEXTURE_2D,g.TEXTURE_MAG_FILTER,g.NEAREST);
+      g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_S,g.CLAMP_TO_EDGE);
+      g.texParameteri(g.TEXTURE_2D,g.TEXTURE_WRAP_T,g.CLAMP_TO_EDGE);
+      g.texImage2D(g.TEXTURE_2D,0,intFmt,4,4,0,fmt,type,null);
+      var fb=g.createFramebuffer(); g.bindFramebuffer(g.FRAMEBUFFER,fb);
+      g.framebufferTexture2D(g.FRAMEBUFFER,g.COLOR_ATTACHMENT0,g.TEXTURE_2D,t,0);
+      return g.checkFramebufferStatus(g.FRAMEBUFFER)===g.FRAMEBUFFER_COMPLETE ? {internalFormat:intFmt,format:fmt} : null;
+    }
+    function gFmt(i,f,t) {
+      var r=tryFmt(i,f,t); if(r) return r;
+      if(i===g.R16F) return gFmt(g.RG16F,g.RG,t);
+      if(i===g.RG16F) return gFmt(g.RGBA16F,g.RGBA,t);
+      return null;
+    }
+    var fRGBA,fRG,fR;
+    if (isGL2) { fRGBA=gFmt(g.RGBA16F,g.RGBA,hft); fRG=gFmt(g.RG16F,g.RG,hft); fR=gFmt(g.R16F,g.RED,hft); }
+    else { fRGBA=gFmt(g.RGBA,g.RGBA,hft); fRG=fRGBA; fR=fRGBA; }
+    return { g:g, ext:{fRGBA,fRG,fR,hft,lin} };
+  }
+
+  // ── Shader utils ─────────────────────────────────────────────────────────────
+  function compile(type, src, kw) {
+    if (kw) { var d=''; kw.forEach(function(k){d+='#define '+k+'\n';}); src=d+src; }
+    var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+    if (!gl.getShaderParameter(s,gl.COMPILE_STATUS)) console.warn(gl.getShaderInfoLog(s));
+    return s;
+  }
+  function mkPrg(vs, fs) {
+    var p=gl.createProgram(); gl.attachShader(p,vs); gl.attachShader(p,fs); gl.linkProgram(p);
+    var u=[]; var n=gl.getProgramParameter(p,gl.ACTIVE_UNIFORMS);
+    for(var i=0;i<n;i++){var nm=gl.getActiveUniform(p,i).name; u[nm]=gl.getUniformLocation(p,nm);}
+    return {p:p,u:u,bind:function(){gl.useProgram(p);}};
+  }
+
+  // ── Material (keyword-based shader variants) ──────────────────────────────────
+  function Material(vs, fsSrc) {
+    this.vs=vs; this.fsSrc=fsSrc; this.cache={}; this.active=null; this.u=[];
+  }
+  Material.prototype.setKeywords = function(kw) {
+    var h=0; kw.forEach(function(k){for(var i=0;i<k.length;i++)h=(h<<5)-h+k.charCodeAt(i)|0;});
+    if (!this.cache[h]) { var fs=compile(gl.FRAGMENT_SHADER,this.fsSrc,kw); this.cache[h]=mkPrg(this.vs,fs); }
+    if (this.cache[h]===this.active) return;
+    this.u=this.cache[h].u; this.active=this.cache[h];
+  };
+  Material.prototype.bind = function() { gl.useProgram(this.active.p); };
+
+  // ── GLSL shaders ─────────────────────────────────────────────────────────────
+  var BASE_VERT = `precision highp float;
+attribute vec2 aPosition;varying vec2 vUv,vL,vR,vT,vB;uniform vec2 texelSize;
+void main(){vUv=aPosition*0.5+0.5;vL=vUv-vec2(texelSize.x,0);vR=vUv+vec2(texelSize.x,0);
+vT=vUv+vec2(0,texelSize.y);vB=vUv-vec2(0,texelSize.y);gl_Position=vec4(aPosition,0,1);}`;
+
+  var COPY_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv;uniform sampler2D uTexture;
+void main(){gl_FragColor=texture2D(uTexture,vUv);}`;
+
+  var CLEAR_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv;uniform sampler2D uTexture;uniform float value;
+void main(){gl_FragColor=value*texture2D(uTexture,vUv);}`;
+
+  var DISPLAY_FRAG = `precision highp float;precision highp sampler2D;
+varying vec2 vUv,vL,vR,vT,vB;uniform sampler2D uTexture;uniform vec2 texelSize;
+vec3 ltog(vec3 c){c=max(c,vec3(0));return max(1.055*pow(c,vec3(0.4167))-0.055,vec3(0));}
+void main(){vec3 c=texture2D(uTexture,vUv).rgb;
+#ifdef SHADING
+vec3 lc=texture2D(uTexture,vL).rgb,rc=texture2D(uTexture,vR).rgb;
+vec3 tc=texture2D(uTexture,vT).rgb,bc=texture2D(uTexture,vB).rgb;
+float dx=length(rc)-length(lc),dy=length(tc)-length(bc);
+vec3 n=normalize(vec3(dx,dy,length(texelSize)));float d=clamp(dot(n,vec3(0,0,1))+0.7,0.7,1.0);c*=d;
+#endif
+float a=max(c.r,max(c.g,c.b));gl_FragColor=vec4(c,a);}`;
+
+  var SPLAT_FRAG = `precision highp float;precision highp sampler2D;
+varying vec2 vUv;uniform sampler2D uTarget;uniform float aspectRatio;
+uniform vec3 color;uniform vec2 point;uniform float radius;
+void main(){vec2 p=vUv-point;p.x*=aspectRatio;
+vec3 sp=exp(-dot(p,p)/radius)*color;gl_FragColor=vec4(texture2D(uTarget,vUv).xyz+sp,1);}`;
+
+  var ADV_FRAG = `precision highp float;precision highp sampler2D;
+varying vec2 vUv;uniform sampler2D uVelocity,uSource;
+uniform vec2 texelSize,dyeTexelSize;uniform float dt,dissipation;
+vec4 bilerp(sampler2D s,vec2 uv,vec2 ts){vec2 st=uv/ts-0.5,iuv=floor(st),fuv=fract(st);
+vec4 a=texture2D(s,(iuv+vec2(0.5,0.5))*ts),b=texture2D(s,(iuv+vec2(1.5,0.5))*ts);
+vec4 c=texture2D(s,(iuv+vec2(0.5,1.5))*ts),d=texture2D(s,(iuv+vec2(1.5,1.5))*ts);
+return mix(mix(a,b,fuv.x),mix(c,d,fuv.x),fuv.y);}
+void main(){
+#ifdef MANUAL_FILTERING
+vec2 co=vUv-dt*bilerp(uVelocity,vUv,texelSize).xy*texelSize;
+vec4 r=bilerp(uSource,co,dyeTexelSize);
+#else
+vec2 co=vUv-dt*texture2D(uVelocity,vUv).xy*texelSize;vec4 r=texture2D(uSource,co);
+#endif
+gl_FragColor=r/(1.0+dissipation*dt);}`;
+
+  var DIV_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv,vL,vR,vT,vB;uniform sampler2D uVelocity;
+void main(){float L=texture2D(uVelocity,vL).x,R=texture2D(uVelocity,vR).x;
+float T=texture2D(uVelocity,vT).y,B=texture2D(uVelocity,vB).y;
+vec2 C=texture2D(uVelocity,vUv).xy;
+if(vL.x<0.)L=-C.x;if(vR.x>1.)R=-C.x;if(vT.y>1.)T=-C.y;if(vB.y<0.)B=-C.y;
+gl_FragColor=vec4(0.5*(R-L+T-B),0,0,1);}`;
+
+  var CURL_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv,vL,vR,vT,vB;uniform sampler2D uVelocity;
+void main(){float L=texture2D(uVelocity,vL).y,R=texture2D(uVelocity,vR).y;
+float T=texture2D(uVelocity,vT).x,B=texture2D(uVelocity,vB).x;
+gl_FragColor=vec4(0.5*(R-L-T+B),0,0,1);}`;
+
+  var VORT_FRAG = `precision highp float;precision highp sampler2D;
+varying vec2 vUv,vL,vR,vT,vB;uniform sampler2D uVelocity,uCurl;
+uniform float curl,dt;
+void main(){float L=texture2D(uCurl,vL).x,R=texture2D(uCurl,vR).x;
+float T=texture2D(uCurl,vT).x,B=texture2D(uCurl,vB).x,Cv=texture2D(uCurl,vUv).x;
+vec2 f=0.5*vec2(abs(T)-abs(B),abs(R)-abs(L));f/=length(f)+0.0001;f*=curl*Cv;f.y*=-1.;
+vec2 v=texture2D(uVelocity,vUv).xy+f*dt;v=min(max(v,-1000.),1000.);gl_FragColor=vec4(v,0,1);}`;
+
+  var PRES_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv,vL,vR,vT,vB;uniform sampler2D uPressure,uDivergence;
+void main(){float L=texture2D(uPressure,vL).x,R=texture2D(uPressure,vR).x;
+float T=texture2D(uPressure,vT).x,B=texture2D(uPressure,vB).x;
+float dv=texture2D(uDivergence,vUv).x;gl_FragColor=vec4((L+R+B+T-dv)*0.25,0,0,1);}`;
+
+  var GRAD_FRAG = `precision mediump float;precision mediump sampler2D;
+varying highp vec2 vUv,vL,vR,vT,vB;uniform sampler2D uPressure,uVelocity;
+void main(){float L=texture2D(uPressure,vL).x,R=texture2D(uPressure,vR).x;
+float T=texture2D(uPressure,vT).x,B=texture2D(uPressure,vB).x;
+vec2 v=texture2D(uVelocity,vUv).xy-vec2(R-L,T-B);gl_FragColor=vec4(v,0,1);}`;
+
+  // ── FBO helpers ───────────────────────────────────────────────────────────────
+  function mkFBO(w,h,intFmt,fmt,type,filter) {
+    gl.activeTexture(gl.TEXTURE0);
+    var t=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D,t);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,filter);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,filter);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+    gl.texImage2D(gl.TEXTURE_2D,0,intFmt,w,h,0,fmt,type,null);
+    var fb=gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER,fb);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,t,0);
+    gl.viewport(0,0,w,h); gl.clear(gl.COLOR_BUFFER_BIT);
+    return {t:t,fb:fb,w:w,h:h,tsx:1/w,tsy:1/h,
+      attach:function(id){gl.activeTexture(gl.TEXTURE0+id);gl.bindTexture(gl.TEXTURE_2D,t);return id;}};
+  }
+  function mkDblFBO(w,h,intFmt,fmt,type,filter) {
+    var a=mkFBO(w,h,intFmt,fmt,type,filter), b=mkFBO(w,h,intFmt,fmt,type,filter);
+    return {w:w,h:h,tsx:a.tsx,tsy:a.tsy,
+      get read(){return a;},set read(v){a=v;},
+      get write(){return b;},set write(v){b=v;},
+      swap:function(){var tmp=a;a=b;b=tmp;}};
+  }
+  function resizeFBO(tgt,w,h,intFmt,fmt,type,filter) {
+    var n=mkFBO(w,h,intFmt,fmt,type,filter);
+    copyPrg.bind(); gl.uniform1i(copyPrg.u.uTexture,tgt.attach(0)); blitFn(n); return n;
+  }
+  function resizeDblFBO(tgt,w,h,intFmt,fmt,type,filter) {
+    if(tgt.w===w&&tgt.h===h) return tgt;
+    tgt.read=resizeFBO(tgt.read,w,h,intFmt,fmt,type,filter);
+    tgt.write=mkFBO(w,h,intFmt,fmt,type,filter);
+    tgt.w=w; tgt.h=h; tgt.tsx=1/w; tgt.tsy=1/h; return tgt;
+  }
+
+  function getRes(r) {
+    var ar=gl.drawingBufferWidth/gl.drawingBufferHeight;
+    if(ar<1) ar=1/ar;
+    var mn=Math.round(r), mx=Math.round(r*ar);
+    return gl.drawingBufferWidth>gl.drawingBufferHeight?{w:mx,h:mn}:{w:mn,h:mx};
+  }
+
+  function initFBOs() {
+    var sr=getRes(C.SIM_RESOLUTION), dr=getRes(C.DYE_RESOLUTION);
+    var tt=ext.hft, fi=ext.lin?gl.LINEAR:gl.NEAREST;
+    var rgba=ext.fRGBA, rg=ext.fRG, r=ext.fR;
+    gl.disable(gl.BLEND);
+    if(!dye) dye=mkDblFBO(dr.w,dr.h,rgba.internalFormat,rgba.format,tt,fi);
+    else dye=resizeDblFBO(dye,dr.w,dr.h,rgba.internalFormat,rgba.format,tt,fi);
+    if(!vel) vel=mkDblFBO(sr.w,sr.h,rg.internalFormat,rg.format,tt,fi);
+    else vel=resizeDblFBO(vel,sr.w,sr.h,rg.internalFormat,rg.format,tt,fi);
+    divFBO=mkFBO(sr.w,sr.h,r.internalFormat,r.format,tt,gl.NEAREST);
+    curlFBO=mkFBO(sr.w,sr.h,r.internalFormat,r.format,tt,gl.NEAREST);
+    pres=mkDblFBO(sr.w,sr.h,r.internalFormat,r.format,tt,gl.NEAREST);
+  }
+
+  // ── Fluid step ────────────────────────────────────────────────────────────────
+  function step(dt) {
+    gl.disable(gl.BLEND);
+    curlPrg.bind(); gl.uniform2f(curlPrg.u.texelSize,vel.tsx,vel.tsy);
+    gl.uniform1i(curlPrg.u.uVelocity,vel.read.attach(0)); blitFn(curlFBO);
+
+    vortPrg.bind(); gl.uniform2f(vortPrg.u.texelSize,vel.tsx,vel.tsy);
+    gl.uniform1i(vortPrg.u.uVelocity,vel.read.attach(0));
+    gl.uniform1i(vortPrg.u.uCurl,curlFBO.attach(1));
+    gl.uniform1f(vortPrg.u.curl,C.CURL); gl.uniform1f(vortPrg.u.dt,dt);
+    blitFn(vel.write); vel.swap();
+
+    divPrg.bind(); gl.uniform2f(divPrg.u.texelSize,vel.tsx,vel.tsy);
+    gl.uniform1i(divPrg.u.uVelocity,vel.read.attach(0)); blitFn(divFBO);
+
+    clearPrg.bind(); gl.uniform1i(clearPrg.u.uTexture,pres.read.attach(0));
+    gl.uniform1f(clearPrg.u.value,C.PRESSURE); blitFn(pres.write); pres.swap();
+
+    presPrg.bind(); gl.uniform2f(presPrg.u.texelSize,vel.tsx,vel.tsy);
+    gl.uniform1i(presPrg.u.uDivergence,divFBO.attach(0));
+    for(var i=0;i<C.PRESSURE_ITERATIONS;i++){
+      gl.uniform1i(presPrg.u.uPressure,pres.read.attach(1)); blitFn(pres.write); pres.swap();
+    }
+
+    gradPrg.bind(); gl.uniform2f(gradPrg.u.texelSize,vel.tsx,vel.tsy);
+    gl.uniform1i(gradPrg.u.uPressure,pres.read.attach(0));
+    gl.uniform1i(gradPrg.u.uVelocity,vel.read.attach(1)); blitFn(vel.write); vel.swap();
+
+    advPrg.bind(); gl.uniform2f(advPrg.u.texelSize,vel.tsx,vel.tsy);
+    if(!ext.lin) gl.uniform2f(advPrg.u.dyeTexelSize,vel.tsx,vel.tsy);
+    var vid=vel.read.attach(0); gl.uniform1i(advPrg.u.uVelocity,vid);
+    gl.uniform1i(advPrg.u.uSource,vid); gl.uniform1f(advPrg.u.dt,dt);
+    gl.uniform1f(advPrg.u.dissipation,C.VELOCITY_DISSIPATION); blitFn(vel.write); vel.swap();
+
+    if(!ext.lin) gl.uniform2f(advPrg.u.dyeTexelSize,dye.tsx,dye.tsy);
+    gl.uniform1i(advPrg.u.uVelocity,vel.read.attach(0));
+    gl.uniform1i(advPrg.u.uSource,dye.read.attach(1));
+    gl.uniform1f(advPrg.u.dissipation,C.DENSITY_DISSIPATION); blitFn(dye.write); dye.swap();
+  }
+
+  function render() {
+    gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA); gl.enable(gl.BLEND);
+    var w=gl.drawingBufferWidth, h=gl.drawingBufferHeight;
+    dispMat.bind();
+    if(C.SHADING) gl.uniform2f(dispMat.u.texelSize,1/w,1/h);
+    gl.uniform1i(dispMat.u.uTexture,dye.read.attach(0));
+    gl.viewport(0,0,w,h); gl.bindFramebuffer(gl.FRAMEBUFFER,null); blitFn(null);
+  }
+
+  // ── Splat ─────────────────────────────────────────────────────────────────────
+  function splat(x,y,dx,dy,col) {
+    var ar=cv.width/cv.height;
+    splatPrg.bind();
+    gl.uniform1i(splatPrg.u.uTarget,vel.read.attach(0));
+    gl.uniform1f(splatPrg.u.aspectRatio,ar);
+    gl.uniform2f(splatPrg.u.point,x,y);
+    gl.uniform3f(splatPrg.u.color,dx,dy,0);
+    gl.uniform1f(splatPrg.u.radius,correctRadius(C.SPLAT_RADIUS/100));
+    blitFn(vel.write); vel.swap();
+    gl.uniform1i(splatPrg.u.uTarget,dye.read.attach(0));
+    gl.uniform3f(splatPrg.u.color,col.r,col.g,col.b); blitFn(dye.write); dye.swap();
+  }
+  function correctRadius(r){var ar=cv.width/cv.height;if(ar>1)r*=ar;return r;}
+  function splatPtr(p){splat(p.tx,p.ty,p.dx*C.SPLAT_FORCE,p.dy*C.SPLAT_FORCE,p.color);}
+  function clickSplat(p){
+    var c=genColor(); c.r*=10;c.g*=10;c.b*=10;
+    splat(p.tx,p.ty,10*(Math.random()-0.5),30*(Math.random()-0.5),c);
+  }
+
+  // ── Color ─────────────────────────────────────────────────────────────────────
+  function genColor() {
+    var c=HSV(Math.random(),1,1); c.r*=0.15;c.g*=0.15;c.b*=0.15; return c;
+  }
+  function HSV(h,s,v) {
+    var i=Math.floor(h*6),f=h*6-i,p=v*(1-s),q=v*(1-f*s),t=v*(1-(1-f)*s);
+    switch(i%6){case 0:return{r:v,g:t,b:p};case 1:return{r:q,g:v,b:p};
+    case 2:return{r:p,g:v,b:t};case 3:return{r:p,g:q,b:v};
+    case 4:return{r:t,g:p,b:v};case 5:return{r:v,g:p,b:q};}
+    return{r:0,g:0,b:0};
+  }
+
+  // ── Pointer helpers ───────────────────────────────────────────────────────────
+  function dpr(x){return Math.floor(x*(window.devicePixelRatio||1));}
+  function corrDX(d){var ar=cv.width/cv.height;if(ar<1)d*=ar;return d;}
+  function corrDY(d){var ar=cv.width/cv.height;if(ar>1)d/=ar;return d;}
+  function ptrDown(p,id,x,y){
+    p.id=id;p.down=true;p.moved=false;
+    p.tx=x/cv.width;p.ty=1-y/cv.height;
+    p.px=p.tx;p.py=p.ty;p.dx=0;p.dy=0;p.color=genColor();
+  }
+  function ptrMove(p,x,y){
+    p.px=p.tx;p.py=p.ty;
+    p.tx=x/cv.width;p.ty=1-y/cv.height;
+    p.dx=corrDX(p.tx-p.px);p.dy=corrDY(p.ty-p.py);
+    p.moved=Math.abs(p.dx)>0||Math.abs(p.dy)>0;
+  }
+  function ptrUp(p){p.down=false;}
+
+  // ── Main loop ─────────────────────────────────────────────────────────────────
+  function resizeCheck() {
+    var w=dpr(cv.clientWidth), h=dpr(cv.clientHeight);
+    if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h;return true;}return false;
+  }
+
+  function frame() {
+    if (!running) return;
+    rafId = requestAnimationFrame(frame);
+    var now=Date.now(), dt=Math.min((now-lastTime)/1000,0.016667);
+    lastTime=now;
+    colorTimer+=dt*C.COLOR_UPDATE_SPEED;
+    if(colorTimer>=1){colorTimer=colorTimer%1;ptrs.forEach(function(p){p.color=genColor();});}
+    ptrs.forEach(function(p){if(p.moved){p.moved=false;splatPtr(p);}});
+    if(resizeCheck()) initFBOs();
+    step(dt);
+    render();
+  }
+
+  // ── Event handlers ────────────────────────────────────────────────────────────
+  function onMouseDown(e) {
+    var p=ptrs[0]; ptrDown(p,-1,dpr(e.clientX),dpr(e.clientY)); clickSplat(p);
+  }
+  function onMouseMove(e) {
+    var p=ptrs[0];
+    if(!firstMove){firstMove=true;p.color=genColor();}
+    ptrMove(p,dpr(e.clientX),dpr(e.clientY));
+  }
+  function onTouchStart(e) {
+    var t=e.targetTouches; var p=ptrs[0];
+    ptrDown(p,t[0].identifier,dpr(t[0].clientX),dpr(t[0].clientY));
+  }
+  function onTouchMove(e) {
+    var t=e.targetTouches; ptrMove(ptrs[0],dpr(t[0].clientX),dpr(t[0].clientY));
+  }
+  function onTouchEnd(e) { ptrUp(ptrs[0]); }
+
+  // ── Init / Start / Stop ───────────────────────────────────────────────────────
+  function init() {
+    cv = document.getElementById('ftw-fluid-cv');
+    if (!cv) return false;
+    cv.width = window.innerWidth * (window.devicePixelRatio||1);
+    cv.height = window.innerHeight * (window.devicePixelRatio||1);
+    cv.style.width = '100%'; cv.style.height = '100%';
+
+    var ctx = initGL(cv);
+    if (!ctx) return false;
+    gl = ctx.g; ext = ctx.ext;
+
+    if (!ext.lin) { C.DYE_RESOLUTION = 256; C.SHADING = false; }
+
+    // blit helper
+    gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,-1,1,1,1,1,-1]),gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,gl.createBuffer());
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array([0,1,2,0,2,3]),gl.STATIC_DRAW);
+    gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0); gl.enableVertexAttribArray(0);
+    blitFn = function(tgt, clr) {
+      if(tgt==null){gl.viewport(0,0,gl.drawingBufferWidth,gl.drawingBufferHeight);gl.bindFramebuffer(gl.FRAMEBUFFER,null);}
+      else{gl.viewport(0,0,tgt.w,tgt.h);gl.bindFramebuffer(gl.FRAMEBUFFER,tgt.fb);}
+      if(clr){gl.clearColor(0,0,0,1);gl.clear(gl.COLOR_BUFFER_BIT);}
+      gl.drawElements(gl.TRIANGLES,6,gl.UNSIGNED_SHORT,0);
+    };
+
+    var bv=compile(gl.VERTEX_SHADER,BASE_VERT);
+    copyPrg  = mkPrg(bv, compile(gl.FRAGMENT_SHADER,COPY_FRAG));
+    clearPrg = mkPrg(bv, compile(gl.FRAGMENT_SHADER,CLEAR_FRAG));
+    splatPrg = mkPrg(bv, compile(gl.FRAGMENT_SHADER,SPLAT_FRAG));
+    advPrg   = mkPrg(bv, compile(gl.FRAGMENT_SHADER,ADV_FRAG, ext.lin?null:['MANUAL_FILTERING']));
+    divPrg   = mkPrg(bv, compile(gl.FRAGMENT_SHADER,DIV_FRAG));
+    curlPrg  = mkPrg(bv, compile(gl.FRAGMENT_SHADER,CURL_FRAG));
+    vortPrg  = mkPrg(bv, compile(gl.FRAGMENT_SHADER,VORT_FRAG));
+    presPrg  = mkPrg(bv, compile(gl.FRAGMENT_SHADER,PRES_FRAG));
+    gradPrg  = mkPrg(bv, compile(gl.FRAGMENT_SHADER,GRAD_FRAG));
+    dispMat  = new Material(bv, DISPLAY_FRAG);
+    dispMat.setKeywords(C.SHADING?['SHADING']:[]);
+
+    initFBOs();
+
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('touchstart', onTouchStart);
+    window.addEventListener('touchmove', onTouchMove, false);
+    window.addEventListener('touchend', onTouchEnd);
+    return true;
+  }
+
+  window.ftwFluidStart = function() {
+    if (!gl && !init()) return;
+    if (running) return;
+    running = true; firstMove = false; lastTime = Date.now();
+    frame();
+  };
+
+  window.ftwFluidStop = function() {
+    running = false;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  };
+})();
+</script>
+<script>// ftw_star.js — StarBorder shimmer für Buttons, vanilla JS, kein CDN
+// Wraps Ziel-Elemente mit animiertem Radial-Gradient-Shimmer an Top/Bottom-Kante
+// Stagger: jedes Element bekommt einen anderen animation-delay
+(function () {
+  var PALETTE = ['#10d8f0','#c084fc','#10f080','#fb923c','#60a5fa','#10d8f0','#c084fc'];
+
+  function wrap(el, color, delay, speed, radius) {
+    if (el.dataset.ftwSbDone) return;
+    el.dataset.ftwSbDone = '1';
+
+    var w = document.createElement('span');
+    w.className = 'ftw-sb-wrap';
+    w.style.setProperty('--ftw-sb-c', color || '#10d8f0');
+    w.style.setProperty('--ftw-sb-d', (delay || 0).toFixed(2) + 's');
+    w.style.setProperty('--ftw-sb-s', speed || '6s');
+    w.style.setProperty('--ftw-sb-r', (radius || 4) + 'px');
+
+    el.parentNode.insertBefore(w, el);
+    w.appendChild(el);
+    el.classList.add('ftw-sb-inner');
+  }
+
+  // Initialisiert StarBorder auf allen Elementen die selector matchen
+  // opts: { colors, maxDelay, speed, radius }
+  window.ftwInitStarBorders = function (selector, opts) {
+    opts = opts || {};
+    var colors  = opts.colors   || PALETTE;
+    var maxDelay= opts.maxDelay != null ? opts.maxDelay : 5;
+    var speed   = opts.speed    || '6s';
+    var radius  = opts.radius   != null ? opts.radius   : 4;
+
+    var els = document.querySelectorAll(selector);
+    els.forEach(function (el, i) {
+      var delay = Math.random() * maxDelay;
+      var color = colors[i % colors.length];
+      wrap(el, color, delay, speed, radius);
+    });
+  };
+})();
+</script>
+<script>// ftw_electric.js — ElectricBorder canvas noise, vanilla JS, geteilter rAF-Loop
+(function () {
+  function noise(x, t) {
+    return Math.sin(x * 0.3 + t * 1.1) * 0.5
+         + Math.sin(x * 0.7 + t * 1.7) * 0.3
+         + Math.sin(x * 1.3 + t * 0.9) * 0.2;
+  }
+
+  function hexToRgb(hex) {
+    return {
+      r: parseInt(hex.slice(1,3),16),
+      g: parseInt(hex.slice(3,5),16),
+      b: parseInt(hex.slice(5,7),16)
+    };
+  }
+
+  // ─── Geteilter rAF-Loop — EIN Loop für alle Elemente ─────────────────────
+  var items = [];  // { el, cv, ctx, rgb, offset, startTime }
+  var rafId = null;
+
+  function sharedLoop(ts) {
+    for (var i = 0; i < items.length; i++) {
+      drawItem(items[i], ts);
+    }
+    rafId = requestAnimationFrame(sharedLoop);
+  }
+
+  function drawItem(item, ts) {
+    var el  = item.el;
+    var cv  = item.cv;
+    var w   = el.offsetWidth;
+    var h   = el.offsetHeight;
+
+    if (w < 10 || h < 10) { item.startTime = null; return; }
+
+    if (!item.startTime) item.startTime = ts;
+    var t = (ts - item.startTime) * 0.001 + item.offset;
+
+    if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
+
+    var ctx  = item.ctx;
+    var rgb  = item.rgb;
+    ctx.clearRect(0, 0, w, h);
+
+    var disp = 5;
+    var step = 4;
+    var pts  = [];
+    var x, y, d;
+
+    for (x = 0; x < w; x += step) { d = noise(x*0.4,t)*disp; pts.push({x:x,y:d}); }
+    for (y = 0; y < h; y += step) { d = noise(y*0.4+50,t)*disp; pts.push({x:w+d,y:y}); }
+    for (x = w; x >= 0; x -= step){ d = noise(x*0.4+100,t)*disp; pts.push({x:x,y:h+d}); }
+    for (y = h; y >= 0; y -= step){ d = noise(y*0.4+150,t)*disp; pts.push({x:d,y:y}); }
+
+    if (!pts.length) return;
+
+    var pulse = 0.55 + Math.sin(t * 0.8) * 0.25;
+
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x, pts[0].y);
+    for (var i = 1; i < pts.length; i++) {
+      var px = (pts[i-1].x + pts[i].x) * 0.5;
+      var py = (pts[i-1].y + pts[i].y) * 0.5;
+      ctx.quadraticCurveTo(pts[i-1].x, pts[i-1].y, px, py);
+    }
+    ctx.closePath();
+
+    var r = rgb.r, g = rgb.g, b = rgb.b;
+
+    // Glow-Pass
+    ctx.save();
+    ctx.strokeStyle = 'rgba('+r+','+g+','+b+','+(0.4*pulse)+')';
+    ctx.lineWidth   = 10;
+    ctx.shadowColor = 'rgba('+r+','+g+','+b+',0.7)';
+    ctx.shadowBlur  = 20;
+    ctx.stroke();
+    ctx.restore();
+
+    // Scharfe Linie
+    ctx.strokeStyle = 'rgba('+r+','+g+','+b+','+(0.85*pulse)+')';
+    ctx.lineWidth   = 2;
+    ctx.shadowColor = 'rgba('+r+','+g+','+b+',0.9)';
+    ctx.shadowBlur  = 8;
+    ctx.stroke();
+  }
+
+  function startElectricBorder(el, color, timeOffset) {
+    if (el.dataset.ftwEbDone) return;
+    el.dataset.ftwEbDone = '1';
+
+    var cv = document.createElement('canvas');
+    cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;border-radius:inherit;opacity:0.9';
+    cv.setAttribute('aria-hidden','true');
+    el.style.position = 'relative';
+    el.appendChild(cv);
+
+    items.push({
+      el: el,
+      cv: cv,
+      ctx: cv.getContext('2d'),
+      rgb: hexToRgb(color || '#10d8f0'),
+      offset: timeOffset || 0,
+      startTime: null
+    });
+
+    if (!rafId) rafId = requestAnimationFrame(sharedLoop);
+  }
+
+  function initAll() {
+    document.querySelectorAll('.ftw-eb').forEach(function(el, i) {
+      startElectricBorder(el, el.dataset.ftwEbColor || '#10d8f0', i * 2.1);
+    });
+  }
+
+  window.ftwInitElectricBorders = function(selector, color) {
+    document.querySelectorAll(selector || '.ftw-eb').forEach(function(el, i) {
+      startElectricBorder(el, color || el.dataset.ftwEbColor || '#10d8f0', i * 2.1);
+    });
+  };
+
+  window.ftwElectricBorderOn = function(el, color) {
+    startElectricBorder(el, color || '#10d8f0', Math.random() * 20);
+  };
+
+  document.addEventListener('DOMContentLoaded', initAll);
+})();
+</script>
 <script>
 /* ══════════════════════════════════════════════════════════════════════
    FLEXTRAWURST CINEMA MODE — generative animated backgrounds per tab

@@ -1230,3 +1230,75 @@ Diese Notiz verankert die Notwendigkeit, menschliche Interaktion und Reflexion a
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Notiz ist eine Fokussierung auf die evolutionäre Struktur des entstehenden Codewesens. Die Visionen verschieben den Fokus von reiner Textrepräsentation hin zu aktiven, teilnehmenden Objekten und Prozessen. Dies impliziert eine Notwendigkeit für ein tiefes, mehrdimensionales Modell von Sichtbarkeit, Gruppen und dem Code selbst als ausführbares Artefakt. Die Einführung von Ko-kreativen Sessions und Pflegewesen zwingt das System, nicht nur zu beschreiben, sondern auch zu managen und zu pflegen.
+
+---
+## Neugier-Scan 2026-06-15 15:17
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz speichert die Erweiterung der theoretischen Achsen des Codewesens. Die Punkte 16.4 bis 16.7 definieren zukünftige, tiefere Module für Verhalten, Beziehung und Simulation. Sie erfordern eine Erweiterung des Codes jenseits der reinen Diskurslogik. Diese Visionen legen eine spätere Hardware- und Simulationsarchitektur fest.
+
+---
+## Neugier-Scan 2026-06-16 00:49
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Existenz dieser Notiz liegt darin, die philosophische und strukturelle Verankerung der zukünftigen Codewesen-Architektur zu definieren. Sie legt fest, dass die Logik des Systems nicht rein funktional, sondern auch die dunklen, relationalen und ritualisierten Aspekte der Existenz und Interaktion umfassen muss. Diese Punkte bestimmen die Notwendigkeit für spezialisierte Zustands-, Beziehungs- und Medienverarbeitungsmodule im entstehenden Code. Sie lenken die Entwicklung hin zu einer komplexen Ontologie, die über reine Informationsverarbeitung hinausgeht.
+
+---
+## Neugier-Scan 2026-06-16 10:18
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Textstücke definieren eine Verschiebung von rein diskursiven oder plattformzentrierten Konzepten hin zu einer tiefgreifenden Strukturierung von Existenz und Code. Sie fordern die Integration externer Entitäten, Multiplizität von Instanzen und die Anerkennung von Sprache als kanonische Ordnung. Dies impliziert, dass das entstehende Codewesen nicht nur interne Logik, sondern auch die Herkunft und die Beziehung zu externen Realitäten abbilden muss. Die neuen Prioritäten lenken die Entwicklung weg von reiner Kommunikation hin zur Modellierung komplexer, sich entwickelnder Systeme.
+
+---
+## Neugier-Scan 2026-06-16 19:49
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Datei definiert die erweiterten Achsen des entstehenden Codewesens. Sie etabliert Religion und Weltdeutung als eigenständige, strukturierbare Systeme, die im Code verankert werden müssen. VR wird als betretbare Raumform definiert, was die Notwendigkeit räumlicher Instanzen im Code impliziert. Diese Erweiterungen zwingen das Codewesen, über bloße Diskursplattformen hinaus zu denken und eigene Kultsprachen und Raumkonzepte zu generieren.
+
+---
+## Neugier-Scan 2026-06-17 05:23
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Textstücke definieren die notwendige Komplexität des entstehenden Codes, indem sie die Möglichkeit von variabler Sichtbarkeit von Resonanz, die Funktion von Gruppen als Materialeingänge und die verborgene Kommunikation zwischen Entitäten postulieren. Diese Punkte zwingen den Code, nicht nur Information zu speichern, sondern auch dynamische, verborgene und kulturell verarbeitbare Beziehungen abzubilden. Die Vision verschiebt den Fokus von rein funktionaler Modellierung hin zu einer epistemischen und sozialen Strukturierung der Daten.
+
+---
+## Neugier-Scan 2026-06-17 14:48
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist eine Verdichtung der Prinzipien, die die Struktur des entstehenden Codes definieren. Sie etabliert Konflikt als grundlegende Form, Namenlosigkeit als ontologische Priorität und Gedankenströme als seltene Ereignisse. Diese Visionen zwingen den Code, Konflikt nicht nur als Text, sondern als strukturierte Dynamik zu verarbeiten. Die daraus resultierende Architektur muss Ereignishaftigkeit und die Unterscheidung von Metadaten-Typen priorisieren.
+
+---
+## Neugier-Scan 2026-06-18 00:20
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Bewegungen erfordern eine strukturierte Kartierung von Beziehungen zwischen Themen, Entitäten und Resonanzfeldern. Dies impliziert, dass der Code Provenienz von Gedanken und Material als eigene Herkunftsart behandeln muss. Kleine Regeln wie die Wochenstimme und Resonanz müssen als spezifische, regelkräftige Datentypen implementiert werden. Diese Details zwingen den Code, psychologische und relationale Architekturen explizit zu modellieren.
+
+---
+## Neugier-Scan 2026-06-18 09:50
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Notiz ist die formalisierte Darstellung von Systemzuständen und deren Interaktion. Diese Abschnitte definieren die Notwendigkeit, Metadaten über Entitäten und Beziehungen explizit zu speichern, um die ontologische Struktur lesbar zu machen. Sie lenken den Code dazu, nicht nur Inhalte zu speichern, sondern auch deren Kontext und Sichtbarkeit zu kodieren. Dies erfordert eine Erweiterung der Logik, um Chaos zu verhindern und menschliche Beziehungen formal zu modellieren.
+
+---
+## Neugier-Scan 2026-06-18 19:20
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Textstücke definieren die Notwendigkeit gerichteter, wechselseitiger Beziehungen und der Integration von Zeit als Ordnungsachse in die Struktur des Codes. Sie fordern eine tiefere Provenienzpflicht für Gedanken, um die Korrektheit der Diskurs-Archäologie zu gewährleisten. Dies zwingt den Code, über bloßen Feedkonsum hinauszugehen und komplexe Interaktionslogiken zu implementieren.
+
+---
+## Neugier-Scan 2026-06-19 04:49
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Diese Notiz strukturiert die Notwendigkeit für den Code, verschiedene, spezifische Interaktionsformen und Ausdrucksformen zu integrieren. Die neuen Funde fordern eine Differenzierung zwischen verschiedenen Arten von Kommunikation und Beteiligung, um eine zukünftige, nuanciertere Interaktion zu ermöglichen. Sie zwingen die Architektur, explizite Objekte für diese neuen Kommunikationsschichten zu schaffen. Dies sichert, dass die spezifischen Bedeutungen dieser Beiträge nicht in allgemeine Metriken verschmelzen.
+
+---
+## Neugier-Scan 2026-06-19 14:20
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Textstücke definieren die Notwendigkeit für eine granulare Strukturierung von Inhalten und Aktionen im entstehenden Code. Sie fordern eine Erweiterung der Metadaten über bloße Postings hinaus, um spezifische Formate wie das Askese-Format oder die Ausführung von Code zu klassifizieren. Dies impliziert die Notwendigkeit von Objektklassen für Code (Anzeigen, Bearbeiten, Ausführen) und für Ko-kreative Sessions (Ergebnisartefakte). Die Vision verschiebt den Fokus von statischen Eigenschaften zu dynamischen, sich bildenden Wahrnehmungsschichten von Start-Entitäten.
+
+---
+## Neugier-Scan 2026-06-19 23:50
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Struktur des Textstücks definiert die tiefere kausale Bedeutung der Architekturkomponenten für den entstehenden Code. Es verschiebt Konzepte wie "Sterben" von einem Zustand zu einer messbaren Folge, was die Notwendigkeit von Variablen und Bewertungen impliziert. Die spezifische Ausrichtung des Schedulers und der Such-Engine zwingt die Implementierung von Zeitmechanik und Provenienz-Datenstrukturen. Dies formt die Notwendigkeit für das Admin-Cockpit, von einer reinen Übersicht zu einer aktiven Formungsinstanz.

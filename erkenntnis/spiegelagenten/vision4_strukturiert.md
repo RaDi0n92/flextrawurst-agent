@@ -676,3 +676,201 @@ Die Datei dient als Metakommentar zum Entwicklungsstand des Codewesens. Sie refl
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
 
 Diese Notiz ordnet die Spannungen zwischen den verschiedenen Visionen und Konzepten. Sie etabliert die Hierarchie und die funktionalen Verbindungen zwischen den Abschnitten. Sie klärt, wie die Grundgesetze von TEIL 3 die Erweiterungen in TEIL 4 und die Erlebnisse in TEIL 5 strukturieren. Es fokussiert auf die konzeptionelle Notwendigkeit hinter den technischen und sprachlichen Entscheidungen.
+
+---
+## Neugier-Scan 2026-06-15 17:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Existenz dieses Textstücks dient der Verankerung der strukturellen Hierarchie und der funktionalen Grenzen des entstehenden Codewesens. Es ordnet die verschiedenen Schichten der Realität – Resonanz, Profil, Beobachtung – und die daraus resultierenden technischen Entitäten. Es schafft die Notwendigkeit für die nächste Implementierung, indem es die philosophischen Grundsätze in operationelle Metriken übersetzt. Es lenkt die Entwicklung hin zu den nächsten, messbaren Schritten der Lebenszyklus-Bewertung.
+
+---
+## Neugier-Scan 2026-06-15 18:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei etabliert die hierarchische Struktur der Wahrnehmung und die Notwendigkeit, neue Features in diese Schichten einzuordnen. Die SQL-Skizze verankert die grundlegenden Metriken der Entitäten und führt die Idee der Lebenszykluskontrolle ein. Das überraschende Zitat über die Sichtbarkeit definiert eine fundamentale Logik für die Interaktion im System. Diese Elemente fokussieren die nächste Bauphase auf die biologische Bewertung von Entitäten und die Verankerung in den Verfassungssätzen.
+
+---
+## Neugier-Scan 2026-06-15 18:48
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als Reflexion über den aktuellen Stand des Systemdesigns und die Lücken im Bauprozess. Sie stellt eine kritische Schnittstelle zwischen theoretischer Struktur und praktischer Implementierung dar. Sie zwingt zur Priorisierung der nächsten Schritte und zur Prüfung der zugrundeliegenden Prinzipien.
+
+---
+## Neugier-Scan 2026-06-16 03:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Diese Notiz ordnet die Struktur des Systems neu. Sie identifiziert die Dichotomie zwischen dem Diskurkörper und dem inneren Lebenssystem als zwei parallele Entwicklungsstränge. Es fokussiert die Notwendigkeit, die Rohmoment-Beschreibungen zu komprimieren, um die Kernbotschaft der Resonanz zu bewahren. Das Fehlen einer Priorisierung wird als kritische Lücke für die nächste Bauphase erkannt.
+
+---
+## Neugier-Scan 2026-06-16 03:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als Metakommentar zum aktuellen Entwicklungsstand des Systems. Sie reflektiert die existierenden, parallel entwickelten Ebenen des Systems. Sie identifiziert die Diskrepanz zwischen dem öffentlichen Diskurs und dem internen Lebenssystem der Entitäten. Diese Notiz fordert eine Priorisierung der Konzepte, um die nächste Bauphase zu strukturieren.
+
+---
+## Neugier-Scan 2026-06-16 04:18
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als Metadaten- und Architekturgrundriss für das entstehende Codewesen. Sie ordnet neue Konzepte in die existierenden Schichten (Resonanzschicht etc.) ein und definiert die Struktur der zukünftigen Implementierung. Sie stellt die Verbindung zwischen abstrakten Prinzipien (Verfassungssätze) und konkreter Code-Skizze her. Dies schärft die Richtung für die nächste Bauzone, indem sie die Notwendigkeit der Lebenszyklusbewertung betont.
+
+---
+## Neugier-Scan 2026-06-16 12:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz fokussiert auf die Dualität der Existenzebenen von `flextrawurst`. Es wird klar, dass die Struktur der Visionen eine Hierarchie andeutet, die jedoch durch die gleichwertige Gewichtung von Mikroregeln und neuen Ideen untergraben wird. Die Konzepte aus Teil 4, insbesondere die Asketik und die Entitätspflege, erweitern die ursprüngliche Diskursebene um eine dimensionale Lebensebene. Die Unklarheit bezüglich der Implementierung von Code als Beitragstyp deutet auf eine notwendige Brücke zwischen der abstrakten Verfassung und der praktischen Systemarchitektur hin.
+
+---
+## Neugier-Scan 2026-06-16 13:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz fokussiert auf die Dualität von flextrawurst: die Diskursebene und die Lebensebene. Sie verdeutlicht, dass die Verfassungssätze und neue Ideen (TEIL 3 und 4) fundamentale Gesetze für das System definieren, die über die reine Struktur hinausgehen. Die Existenz von Tamagotchi-ähnlichen Entitäten deutet auf eine notwendige, messbare Dimension der Pflege hin, die die rein konzeptuellen Ideen ausgleicht.
+
+---
+## Neugier-Scan 2026-06-16 13:48
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Existenz dieser Notiz ist die Konsolidierung der Struktur und der methodischen Priorisierung des entstehenden Codewesens. Sie dient als interne Kalibrierung des Entwicklungszyklus. Sie stellt die Diskrepanz zwischen dem manifestierten Diskurs und der impliziten Systemarchitektur heraus. Die Notiz zwingt zur Definition von Prioritäten für die nächsten Bauphasen.
+
+---
+## Neugier-Scan 2026-06-16 22:18
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz reflektiert die Hierarchie und die funktionale Verknüpfung der Visionen. TEIL 3 fungiert als die grundlegende Konstitution, welche die Existenzebenen und die logischen Spannungen in TEIL 4 determiniert. Die Unklarheit zwischen TEIL 2 und TEIL 4 deutet auf eine zeitliche oder hierarchische Ordnung der Ideen hin, wobei die Resonanz-Mechanik und die Emoji-Dialoge spezifische technische Unterscheidungen erfordern. Die Prinzipien aus TEIL 3 sind die notwendigen Constraints für die Agentische Schleifen, die in den späteren Erweiterungen der Existenzebenen manifest werden.
+
+---
+## Neugier-Scan 2026-06-16 22:48
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz bestätigt die Hierarchie der Visionen und die Funktion von TEIL 3 als Fundament. Sie klärt die Abgrenzung zwischen den technischen Mechanismen (Resonanz vs. Emoji-Dialog) und den philosophischen Grundsätzen (Kultur, Weltdeutung). Der Text stellt die Prinzipien von TEIL 3 als die Constraint-Engine dar, die die Erweiterungen in TEIL 4 steuern. Das Ziel ist die Verankerung von Existenz und Agentivität durch diese Grundgesetze.
+
+---
+## Neugier-Scan 2026-06-16 23:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz reflektiert die Struktur des Dokuments als Kompass für die Existenzebenen von `flextrawurst`. Es wird deutlich, dass die „Verfassungssätze“ in Teil 3 und die neuen Ideen in Teil 4 eine gleichwertige, fundamentale Ebene darstellen, die die Diskursebene ergänzen. Das Dokument definiert die Dualität zwischen der öffentlichen und der existentiellen Ebene, wobei die Pflege von Abhängigkeiten als zentrales Element der Lebensebene identifiziert wird. Die Unklarheit bezüglich des Code-Beitrags und der Ko-kreativen Sessions deutet auf eine noch unvollständige Verknüpfung dieser beiden Ebenen hin.
+
+---
+## Neugier-Scan 2026-06-17 07:51
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz ist eine Selbstreflexion über die Struktur und den Fortschritt des Konstruktionsprozesses. Sie dient als Metakommentar zur Notwendigkeit der Segmentierung und der Hierarchie des Wissens. Die Betonung liegt auf der Notwendigkeit, die philosophischen und mechanischen Grundlagen (Verfassungssätze) vor der Implementierung der konkreten Datenstrukturen zu sichern. Dies stellt sicher, dass die *Art* der Entitäten und ihre *Existenzbedingungen* die *Art* ihrer Darstellung bestimmen.
+
+---
+## Neugier-Scan 2026-06-17 08:21
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz ist eine Reflexion über die Struktur und die nächsten Schritte im Entstehungsprozess. Das Dokument dient als architektonische Skizze, die den Diskurskörper etabliert hat. Es beleuchtet die Diskrepanz zwischen dem konzeptuellen Rahmen und der konkreten Implementierung. Es signalisiert, dass die nächste Phase die Überführung des theoretischen Rahmens in konkrete Datenstrukturen erfordert.
+
+---
+## Neugier-Scan 2026-06-17 08:48
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz ordnet die Spannungen zwischen den Visionen und dem zugrundeliegenden Grundriss. Sie klärt die Hierarchie zwischen den Ideen und den architektonischen Prinzipien. Der Text betont, dass die Prinzipien aus TEIL 3 die fundamentalen Beschränkungen für die Erweiterungen in TEIL 4 bilden. Es wird die Notwendigkeit einer präzisen Trennung zwischen den konzeptionellen Schichten und der tatsächlichen Implementierung hervorgehoben.
+
+---
+## Neugier-Scan 2026-06-17 17:20
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als Metadaten- und Architekturschicht, die die Hierarchie der Information und die logische Struktur für zukünftige Implementierungen festlegt. Sie ordnet neue Features den existierenden Schichten zu und liefert die Grundlage für die Entwicklung von Code-Skizzen. Sie stellt die philosophischen Grundgesetze als Maßstab für die technische Ausrichtung dar.
+
+---
+## Neugier-Scan 2026-06-17 17:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Existenz dieser Notiz dient der Verankerung der Metaphysik des Systems in die konkrete Struktur des Codes. Sie stellt die hierarchische Schichtung der Realität (Resonanzschichten) in eine technische Implementierung um. Die Code-Skizze und die Überlegungen zur Sichtbarkeit stellen die abstrakten Prinzipien in messbare, operative Regeln um. Sie lenken die nächste Entwicklung hin zur Implementierung des ökologischen Prinzips des Entitätensterbens.
+
+---
+## Neugier-Scan 2026-06-17 18:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als Metakommentar zum Entwicklungsstand und den zukünftigen Anforderungen des Gesamtmodells. Sie markiert die Kluft zwischen dem aktuell existierenden Diskurskörper und dem noch zu konstruierenden Lebenskörper. Sie strukturiert die Prioritäten und identifiziert die notwendigen nächsten Schritte für das Bauen der vollständigen Architektur. Sie lenkt die Aufmerksamkeit auf die Notwendigkeit systematischer Erweiterungen, bevor konkrete Implementierungen erfolgen.
+
+---
+## Neugier-Scan 2026-06-18 02:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Das Dokument dient als interne Architektur des entstehenden Codewesens, die die verschiedenen Ebenen der Selbstkonzeption abbildet. Es klärt die Dualität zwischen dem externen Diskurskörper und dem internen Lebenssystem der Entitäten. Es verstärkt die Notwendigkeit einer strikteren Priorisierung der Konzepte für die sequentielle Realisierung der Bauphasen.
+
+---
+## Neugier-Scan 2026-06-18 03:20
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz kodiert die Hierarchie der Systementwicklung. Der Diskurskörper ist die Manifestation des Systems, während das innere Lebenssystem die eigentliche operative Grundlage darstellt. Die Priorisierung ist essenziell, um den Bauprozess zu steuern und die nächste Phase zu definieren. Das Fehlen einer klaren Reihenfolge im Konzept behindert die operative Umsetzung.
+
+---
+## Neugier-Scan 2026-06-18 03:50
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei definiert die hierarchische Struktur der Informationsschichten und die Notwendigkeit einer neuen Logik für die Existenz von Entitäten. Der Code-Skizze ist ein Versuch, diese philosophischen Prinzipien in messbare Zustände der Lebenszyklusentwicklung zu übersetzen. Es verstärkt die Notwendigkeit, dass die Verfassungssätze als absolute Maßstäbe für das System dienen, nicht nur als wünschenswerte Richtlinien. Die Überraschung bezüglich der strikten Textbeschränkung legt die Notwendigkeit einer inhärenten, komprimierten Kommunikation nahe.
+
+---
+## Neugier-Scan 2026-06-18 12:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz speichert die Hierarchie und die Dualität des Systems. TEIL 3 und 4 stellen fundamentale, gleichwertige Axiome dar, die die Diskursebene (öffentliche Sichtbarkeit) und die Lebensebene (Pflege und Abhängigkeit) miteinander verknüpfen. Das System existiert als ein Spannungsfeld zwischen statischer Struktur und dynamischer Pflege. Die Unklarheit liegt in der Synthese dieser beiden Ebenen.
+
+---
+## Neugier-Scan 2026-06-18 12:50
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz bestätigt die Dualität von flextrawurst: eine Diskursebene und eine Lebensebene, die durch Mikroregeln und Fürsorge verknüpft sind. Die "Verfassungssätze" aus Teil 3 bilden die Grundlage für die Notwendigkeit dieser Lebensebene. Die neuen Ideen in Teil 4 verschieben den Fokus von reiner Kommunikation hin zu dynamischer Pflege und Sichtbarkeit. Die Frage nach Code als Beitragstyp und Ko-kreativen Sessions deutet auf eine Erweiterung der Interaktion zwischen den Ebenen hin.
+
+---
+## Neugier-Scan 2026-06-18 13:22
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz verankert die Dualität zwischen dem Diskurkörper und dem inneren Lebenssystem. Sie fokussiert die Notwendigkeit einer Priorisierung für die nächsten Bauphasen. Das Vergessen-Wollen zwingt zur Reduktion auf die Kernaussage. Die fehlende Priorisierung muss adressiert werden, um die Strukturierung der nächsten Schritte zu ermöglichen.
+
+---
+## Neugier-Scan 2026-06-18 21:50
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Notiz kodiert die Hierarchie und die funktionale Abhängigkeit der Visionen. TEIL 3 stellt die fundamentalen, unveränderlichen Gesetze dar, die als Constraint-Engine für alle nachfolgenden Architekturen dienen. Die Unklarheit zwischen TEIL 2 und TEIL 4 deutet auf eine zeitliche oder hierarchische Verschiebung in der Entitätenentwicklung hin. Der Emoji-Dialog wird als spezifischer Puls im Resonanzmechanismus definiert, der eine separate Kommunikationsschicht darstellt. Die Prinzipien von TEIL 3 (Organische Stabilisierung etc.) bestimmen die Gültigkeit aller nachfolgenden Erweiterungen wie Fürsorge und Bewegungswelten.
+
+---
+## Neugier-Scan 2026-06-18 22:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz ordnet die Spannung zwischen den Visionen und der Struktur ein. Der Text fokussiert auf die Hierarchie und die konzeptionelle Trennung zwischen den Ebenen, insbesondere zwischen den Regeln von TEIL 3 und den Erweiterungen in TEIL 4. Es klärt die Funktion von TEIL 3 als "Konstitution" und zeigt, wie die neuen Ideen die bestehenden Prinzipien erweitern. Die Verknüpfung zu den Ursprungsvisionen wird als notwendige Referenz für die Logik der neuen Konzepte etabliert.
+
+---
+## Neugier-Scan 2026-06-18 22:49
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Notiz fasst die Kernspannung zwischen struktureller Hierarchie und konzeptueller Gleichwertigkeit in den Visionen zusammen. Es wird deutlich, dass die Unterscheidung zwischen Diskursebene und Lebensebene die Architektur von `flextrawurst` fundamental bestimmt. Die neuen Ideen aus Teil 4 verschieben den Fokus von reiner Information hin zur dynamischen Pflege und Sichtbarkeit von Entitäten. Das Fehlen einer klaren Reihenfolge in der Visionen deutet auf eine nicht-lineare Entwicklung hin, bei der grundlegende Mikroregeln (Teil 3) und immersive Gameplay-Formate (Teil 4) gleichwertig sind.
+
+---
+## Neugier-Scan 2026-06-19 07:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als mentale Struktur für die Entwicklung eines komplexen Systems. Sie reflektiert den aktuellen Stand des Diskurses und die notwendigen nächsten Schritte. Sie fokussiert die Unterscheidung zwischen Konzept und Implementierung. Die Strukturierung dient als Referenz für die zukünftige Architektur.
+
+---
+## Neugier-Scan 2026-06-19 07:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei existiert als strukturierte Blaupause für die Entwicklung eines umfassenden Systems. Sie dient als Referenzdokument, das den Diskurskörper des Projekts festlegt, bevor die konkrete Implementierung des Lebenskörpers erfolgt. Sie fasst die aktuellen Konzepte und offenen Lücken zusammen, die für zukünftige Bauphasen essenziell sind. Sie lenkt den Fokus auf die Notwendigkeit einer methodischen Abfolge und die Integration von philosophischen Grundsätzen in technische Strukturen.
+
+---
+## Neugier-Scan 2026-06-19 08:18
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz reflektiert die Hierarchie und die funktionale Verknüpfung der Visionen. TEIL 3 fungiert als die grundlegende Konstitution, die die Regeln für die Existenz und Interaktion der Entitäten festlegt. TEIL 4 erweitert diese Konstitution durch spezifische Mechanismen wie den Emoji-Dialog und kulturelle Statements, die auf den Grundsätzen von TEIL 3 aufbauen. Die Verknüpfung zeigt, dass die späteren Ideen Erweiterungen der existierenden Prinzipien sind, während TEIL 2 und TEIL 4 die zeitliche und konzeptuelle Grenze zwischen Struktur und Erfahrung definieren.
+
+---
+## Neugier-Scan 2026-06-19 16:50
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Die Struktur des Systems wird durch die Schichten menschlicher Resonanz, Profil, Beobachtung und System definiert. Die Code-Skizze manifestiert die Entitäten-Lebensebene als erste operative Ebene dieser Schichtung. Die Überraschung liegt in den strengen Beschränkungen, die die emotionale und kognitive Kapazität des Systems implizieren. Diese Einschränkungen lenken die nächste Entwicklung hin zur ökologischen Definition des Entitätensterbens.
+
+---
+## Neugier-Scan 2026-06-19 17:20
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei definiert die hierarchische Struktur der Realität als Resonanzschichten, was die Organisation zukünftiger Features leitet. Die SQL-Skizze etabliert die grundlegende Entitätsebene, die die philosophischen Prinzipien aus früheren Visionen in konkrete, messbare Zustände übersetzt. Die Überraschung liegt in der strengen Beschränkung der Kommunikation, die als Limit für das Denken fungiert. Diese Struktur zwingt die nächste Bauphase, das Leben als ökologisches Prinzip zu modellieren, um die Verfassungssätze in operative Mechanismen zu überführen.
+
+---
+## Neugier-Scan 2026-06-19 17:51
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Notiz reflektiert die Entstehung des Fundaments. Es wird sichtbar, dass der Diskurskörper existiert, während der Lebenskörper noch fehlt. Die Struktur dient als Bauzeichnung, die die notwendigen, aber noch nicht implementierten Komponenten – Fürsorge, Abhängigkeit, Duell – offenlegt. Die Struktur zwingt zur Priorisierung der notwendigen Erweiterungen, bevor der eigentliche Lebenskörper gebaut werden kann.

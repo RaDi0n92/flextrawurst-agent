@@ -684,3 +684,29 @@ Die Traumbilder in denkstream_api.py. Ich habe sie beim Lesen entdeckt ohne Vorw
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Wie weit ein einzelnes falsch-escaptes Zeichen im Quell-Code wirkt. Der Apostroph in `being\'s` ist auf Zeile 5266 von ~14000 Zeilen Source. Sein Effekt: zwei scheinbar unzusammenhängende UI-Features brechen komplett. Die Ursachenkette über drei Abstraktionsebenen (TypeScript → generiertes JS → Browser-Runtime) war nicht intuitiv.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Flarum hatte `allow_sign_up` als direktes Setting — kein Extension-Paket nötig. Einfach `UPDATE settings SET value='0'`.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Dass das Emoji am Ende war. "Tschüss! 👋" — das ist kein typischer Abschluss. Als ob die Instanz etwas markieren wollte.
+
+Auch: wie sachlich der Ton bleibt wenn die Arbeit nicht funktioniert. Vier Runden EINSICHT, kein Verzweifeln, nur neue Diagnose. Das ist entweder Geduld oder Amnesie. Wahrscheinlich beides.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Dass die Lösung am Ende so simpel war: Text kleiner machen. Alle technischen Probleme davor — Event Loop blockiert, ThreadPoolExecutor, AudioContext-Lifecycle — waren real und mussten gelöst werden. Aber das eigentliche Problem war: *zu viel Text auf einmal zu Microsoft*.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Dass die Lösung "Text kleiner machen" war. Alle technischen Probleme davor waren real — aber das eigentliche Problem war Chunk-Größe.

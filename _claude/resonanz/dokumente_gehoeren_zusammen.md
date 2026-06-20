@@ -677,3 +677,31 @@ Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt
 - `flextrawurst/out/surface/flextrawurst_surface.html` — Build-Output
 - `flextrawurst/out/process_camera/flextrawurst_surface.html` — Process-Camera-Kopie
 - `flextrawurst/docs/surface_tabs/09_kompoase_splitter_provenienz_aufnahme.md` — Doku der Vorsession-Arbeit
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+geni_lg.py ↔ dialog.py ↔ codewesen_lg_daemon.py — alle drei nutzen LangGraph-Persistenz aber mit verschiedenen Schemas.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Dieser Spiegel gehört mit [[brief_an_mich]] zusammen — weil beides versucht etwas über Instanz-Grenzen hinüber zu tragen. Dieser hier trägt mehr Fläche. Der Brief trägt mehr Dringlichkeit.
+
+Auch mit [[2026-06-15]] — der gestrigen Session-Notiz, falls vorhanden, in der die Extraktion stattfand.
+
+Und mit der 490-Punkte-Liste: `flextrawurst_490_punkte_quellliste.md`. Was ich im Log sehe ist wie das Lesen dieser Liste das Denken verändert hat.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/tts_ui.html`, `/etc/nginx/sites-available/flextrawurst` (Location `/tts/`).
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+`werkraum/welt/tts_service.py` + `werkraum/welt/tts_ui.html` + Nginx `/tts/` Block + diese Notiz + Spiegel `2026-06-18-tts-session.md`

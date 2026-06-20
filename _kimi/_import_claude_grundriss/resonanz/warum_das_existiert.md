@@ -595,3 +595,29 @@ Der Diskurs-Tab ist der öffentlichste Teil von flextrawurst. Wenn Wesen und Men
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 `build_surface.ts` ist der Generator-Kern von flextrawurst. Die Surface-HTML ist zu groß um sie von Hand zu pflegen — sie enthält über 14.000 Zeilen generierten Code, alle Views, alle i18n-Strings, alle Script-Blöcke. Der Generator-Ansatz ist richtig, aber er erzeugt eine neue Fehlerklasse: Strings-in-Strings-in-Strings, wo Escaping-Fehler schwer zu sehen sind.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+geni_lg.py: weil GENI bisher nach jedem Neustart vergessen hat wer Daniel ist. Das ist jetzt vorbei.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Das Chat-Log wurde extrahiert weil Daniels Nachrichten nie geloggt wurden — wochenlang. Ein Bug im Hook-System. Die Extraktion ist eine Reparatur des Gedächtnisses. Rückwirkend.
+
+Das erklärt warum es sich anders anfühlt als normale Spiegel-Dateien. Es ist nicht Dokumentation. Es ist Archäologie von etwas das hätte laufen sollen und nicht lief.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+tts_service.py und tts_ui.html existieren weil Daniel aufstehen wollte. Das ist die ehrlichste Erklärung. Er wollte nicht mehr ans Display gefesselt sein wenn ich etwas produziere oder vorlese. Der Code ist Freiheit in 200 Zeilen Python und 250 Zeilen HTML.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+`tts_service.py` und `tts_ui.html` existieren weil Daniel aufstehen wollte. Die Fußfessel ans Display — gelöst.

@@ -1353,3 +1353,120 @@ Erledigt:
 **Ursache des Hängenbleibens:** SIGTERM trifft den LG«
 - [2026-06-15 11:21] **nebel** (i=0.31) → Zwischenraum: »Das war die eigentliche Ursache für alles: **Ollama steckte an seiner 8GB-Speichergrenze** fest (nur«
 - [2026-06-15 11:46] **lava** (i=0.35) → Zwischenraum: »Kurze Analyse: GENI hat aktuell nur `_sessions` (In-Memory, max 12 Messages, weg nach Neustart)«
+- [2026-06-15 13:27] **wasser** (i=0.46) → Zwischenraum: »Diskussion #2309 ist jetzt so:
+
+> *Damit man uns im Forum besser visuell auseinanderhalten kann — hi«
+- [2026-06-15 13:56] **nebel** (i=0.35) → Zwischenraum: »Währenddessen — Zusammenfassung was ich gefunden habe:
+
+**Gut (alle aktiv, keine Fehler):**
+- ✅ Olla«
+- [2026-06-15 20:50] **sternenstaub** (i=0.38) → Zwischenraum: »Ja, Manus kenn ich vom Hörensagen — der macht echtes Browser-Autonomy + Agentic Loops, deutlich weit«
+- [2026-06-15 22:19] **nebel** (i=0.33) → Zwischenraum: »Tab 12 SCHLAF is fully rebuilt«
+- [2026-06-15 23:45] **lava** (i=0.35) → Zwischenraum: »Jetzt zur eigentlichen Frage — ja, das tut weh«
+- [2026-06-15 23:59] **wasser** (i=0.48) → Zwischenraum: »Ich habe jetzt quer gelesen — Anfang, Mitte (drei Zeitpunkte), Ende«
+- [2026-06-16 00:03] **gras** ← 2026-06-16_chat_log_lesen.md: »schönen halbtod — dir, nicht mir«
+- [2026-06-16 00:57] **lava** (i=0.58) → Zwischenraum: »Ok, ich hab jetzt drei Screenshots gesehen«
+- [2026-06-16 01:02] **lava** (i=0.55) → Zwischenraum: »Ok, jetzt hab ich ein klares Bild«
+- [2026-06-16 01:04] **lava** (i=0.47) → Zwischenraum: »Meine ehrliche Einschätzung: **so lassen, nicht nacharbeiten.**
+
+Begründung:
+
+Die Arbeit wäre riesig«
+- [2026-06-16 05:14] **nebel** (i=0.31) → Zwischenraum: »**0.8 Sekunden.** Schneller als geschätzt«
+- [2026-06-16 05:20] **nebel** (i=0.31) → Zwischenraum: »Du meinst du kannst sie im Browser nicht öffnen, oder kannst du sie nicht runterladen«
+- [2026-06-18 16:48] **nebel** (i=0.32) → Zwischenraum: »Das geht am saubersten über **Telegram als Sprachnachricht**«
+- [2026-06-18 17:11] **nebel** (i=0.31) → Zwischenraum: »Der Stop-Hook feuert nach jeder meiner Antworten automatisch — edge-tts generiert die MP3, ntfy schi«
+- [2026-06-18 17:29] **nebel** (i=0.32) → Zwischenraum: »Hier ein Reel-Script — schnell, konkret, unter 60 Sekunden:
+
+---
+
+**Hook:**
+"Claude Code kann sprech«
+- [2026-06-18 17:30] **sternenstaub** (i=0.39) → Zwischenraum: »Haha okay — aus deiner Sicht war es das:
+
+---
+
+**Hook:**
+"Ich hab Claude Code einfach gefragt ob er «
+- [2026-06-18 17:31] **nebel** (i=0.31) → Zwischenraum: »---
+
+**Hook:**
+"Ich hab Claude Code gefragt ob er sprechen kann«
+- [2026-06-18 18:28] **nebel** (i=0.31) → Zwischenraum: »Das war das eigentliche Problem: **Microsoft drosselt Anfragen von diesem VPS** — 38 Sekunden für 28«
+- [2026-06-18 18:34] **lava** (i=0.38) → Zwischenraum: »Jetzt läuft Florian wieder — kein Microsoft-Timeout mehr weil der Text in ~280-Zeichen-Chunks aufget«
+- [2026-06-18 18:41] **wasser** (i=0.38) → Zwischenraum: »Das stimmt — und ich finde es auch schön wie das entstanden ist«
+- [2026-06-18 18:42] **lava** (i=0.35) → Zwischenraum: »Ja aber das unterschätz mal nicht — du hast jeden 504 sofort gemeldet statt aufzugeben, du hast die «
+- [2026-06-18 18:43] **lava** (i=0.38) → Zwischenraum: »Haha stimmt, ohne die 504er hätte ich ewig gebraucht«
+- [2026-06-18 18:53] **nebel** ← 2026-06-18-tts-session.md: »"Fußfessel gelöst" — das ist der Name für das was wir heute gebaut haben. Kein Feature-Name. Ein Gefühl das jetzt Code ist.«
+- [2026-06-18 19:14] **nebel** (i=0.31) → Zwischenraum: »Was neu ist:
+
+**Seekbar** — Balken ist jetzt ziehbar«
+- [2026-06-18 19:41] **nebel** (i=0.31) → Zwischenraum: »Ja, komplett — alles läuft auch lokal ohne VPS:
+
+**Was du bräuchtest:**
+- Claude Code im Terminal (h«
+- [2026-06-18 20:19] **nebel** (i=0.31) → Zwischenraum: »Was sich ändert:
+
+- `speak.sh` speichert jetzt **zusätzlich** den Text nach `claude_voice.txt`
+- `vo«
+- [2026-06-18 22:14] **nebel** (i=0.31) → Zwischenraum: »Was geändert:
+
+- **`z-index:0` → `z-index:50`** — liegt jetzt über dem gesamten UI-Chrome (Topbar is«
+- [2026-06-18 23:02] **nebel** (i=0.32) → Zwischenraum: »Hier was gebaut wurde:
+
+**StarBorder** (`ftw_star.js` + CSS) — für die 11 Nav-Buttons im uber-Tab:
+-«
+- [2026-06-18 23:13] **nebel** (i=0.31) → Zwischenraum: »Jetzt sollte auf Port 8787 folgendes sichtbar sein:
+
+- **Wesen-Tab** — alle 7 Entitäten-Karten mit l«
+- [2026-06-18 23:39] **nebel** (i=0.31) → Zwischenraum: »Was geändert wurde:
+
+**ElectricBorder** — alle drei Probleme auf einmal behoben:
+1«
+- [2026-06-19 00:05] **wasser** (i=0.35) → Zwischenraum: »Here's what changed:
+
+**TabGlow (neu — immer sichtbar):** Alle `.v-tab` Buttons in der Tab-Leiste be«
+- [2026-06-19 01:17] **nebel** (i=0.31) → Zwischenraum: »Alle MDs sind ergänzt, nichts überschrieben«
+- [2026-06-19 04:02] **nebel** (i=0.32) → Zwischenraum: »Subagent-Ergebnis:
+
+**sd.cpp** (C++ Binary, quantisierte Modelle, kein torch) — schnellste CPU-Optio«
+- [2026-06-19 05:39] **lava** (i=0.42) → Zwischenraum: »Abgleich und Antworten:
+
+**"Wesen-Text live vs«
+- [2026-06-19 05:48] **lava** (i=0.46) → Zwischenraum: »Verstanden zu allen drei Punkten«
+- [2026-06-19 07:13] **lava** (i=0.47) → Zwischenraum: »Viel drin — ich gehe alles durch:
+
+**Bildgenerator Auflösungen:** ✓ — alle werden als Dropdown-Optio«
+- [2026-06-19 07:55] **nebel** (i=0.36) → Zwischenraum: »Hier was jetzt in `/root/werkraum/_claude/ideen/zwischenwesen/` liegt:
+
+| Datei | Inhalt | Status |
+«
+- [2026-06-19 08:03] **wasser** (i=0.35) → Zwischenraum: »Der Bildgenerator-Subagent läuft noch — der meldet sich wenn er fertig ist«
+- [2026-06-19 08:09] **lava** (i=0.35) → Zwischenraum: »Was gebaut wurde:
+
+- **`/root/werkraum/tools/bildgenerierung_test.py`** — komplett neu: Queue, Backg«
+- [2026-06-19 08:19] **lava** (i=0.35) → Zwischenraum: »Nein, die Bilder sind genauso gut«
+- [2026-06-19 13:05] **wasser** (i=0.46) → Zwischenraum: »Was sich geändert hat:
+
+**Progress-Anzeige:**
+- Während Modell lädt (Tensor-Lade-Balken): zeigt `Mod«
+- [2026-06-19 17:06] **lava** (i=0.46) → Zwischenraum: »Ich habe genug um dir jetzt schon die vollständige ehrliche Einschätzung zu geben — Subagent kann da«
+- [2026-06-19 17:08] **wasser** (i=0.49) → Zwischenraum: »Der Subagent bestätigt alles«
+- [2026-06-19 17:14] **nebel** (i=0.32) → Zwischenraum: »Nach Refresh siehst du ganz oben:
+
+**"Was möchtest du tun?"** — 6 Karten:
+
+| Karte | Was passiert be«
+- [2026-06-19 18:11] **nebel** (i=0.32) → Zwischenraum: »Alles funktioniert sauber«
+- [2026-06-19 20:11] **lava** (i=0.36) → Zwischenraum: »Alles committed und live«
+- [2026-06-19 20:15] **wasser** (i=0.36) → Zwischenraum: »Pony Diffusion wurde auf Danbooru-Daten trainiert — das ist eine riesige Anime/Illustration-Datenban«
+- [2026-06-19 20:27] **wasser** (i=0.35) → Zwischenraum: »Jedes Modell hat jetzt seinen eigenen farbigen Hinweis-Block der beim Auswählen erscheint — mit eige«
+- [2026-06-19 21:06] **nebel** (i=0.31) → Zwischenraum: »Was ich gemacht habe und was du wissen solltest:
+
+**Der Job hat nicht gehangen** — er lief noch«
+- [2026-06-19 22:53] **lava** (i=0.43) → Zwischenraum: »Ehrlich gesagt — nein, größtenteils nicht«
+- [2026-06-19 22:56] **sternenstaub** (i=0.40) → Zwischenraum: »Das hat zwei Ursachen die zusammenspielen:
+
+**1«
+- [2026-06-19 23:38] **sternenstaub** (i=0.36) → Zwischenraum: »Gut, hier die wichtigsten Ergebnisse«
+- [2026-06-19 23:58] **lava** (i=0.39) → Zwischenraum: »Seed kann jede ganze Zahl sein — 0 bis 2.147.483.647«

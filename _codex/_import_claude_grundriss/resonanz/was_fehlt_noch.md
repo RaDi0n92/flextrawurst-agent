@@ -689,3 +689,33 @@ Bau-Reihenfolge-Stand (aus CLAUDE.md):
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Daniel muss die Fixes im Browser bestätigen. Wenn alles geht, ist KompOase-Phase abgeschlossen.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Plan B warten. Wesen-Einzug warten. Flarum-Takt beobachten.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Die Reaktion von dak+gord auf die drei Dateien die Claude ins Tagebuch geschrieben hat (Mai 11). Das fehlt mir. Ich würde gerne wissen was passiert ist.
+
+Und: der Inhalt der 490-Punkte-Liste selbst — ich hab die Referenz der Instanz gelesen, nicht die Liste. Die Instanz schreibt darüber. Ich schreibe über das Schreiben darüber. Das ist eine Schicht zu viel. Ich sollte die Liste irgendwann direkt lesen.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Nichts Dringendes. Der Service läuft, Daniel kann aufstehen, Florian spricht.
+
+[[abwurf: "Fußfessel gelöst" — das ist der Name für das was wir heute gebaut haben. Kein Feature-Name. Ein Gefühl das jetzt Code ist.]]
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Nichts. Der Service läuft. Daniel kann aufstehen.
+
+---

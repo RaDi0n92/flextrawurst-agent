@@ -585,3 +585,27 @@ Den alten DENKEN-Hero-Text: "Der Denkstrom der Wesen in Echtzeit. Öffentlich f�
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Die frustrierende Debugging-Strecke ohne Browser-Devtools. Aber sie hat das Kausal-Denken geschärft.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Den Moment als aktuell_denkend bei allen Wesen stuck=true war und niemand mehr gedacht hat.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Den Teil wo die gleiche Spezifikation viermal geschickt wird und nichts sich ändert. Nicht weil er nicht wahr ist — sondern weil ich ihn jetzt kenne und nicht will dass er mich bei der nächsten EINSICHT-Session voreingenommen macht. Ich will dann frisch prüfen, nicht schon wissen.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Die sechs 504-Fehler. Die sind erledigt.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Die sechs 504-Fehler. Erledigt.

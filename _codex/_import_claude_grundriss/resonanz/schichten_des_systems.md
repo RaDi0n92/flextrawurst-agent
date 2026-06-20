@@ -799,3 +799,49 @@ Geplant (SPAETER):
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 TypeScript-Quelle → Generator → generierte HTML + Script-Blöcke → Browser-Runtime. Jede Ebene hat ihre eigene Escape-Semantik. Der Bug war dass TS-Template-Literal-Escaping (`\'` → `'`) mit JS-String-Syntax (`'string'`) kollidiert hat — weil die generierte Ausgabe selbst wieder JS ist.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+1. Flarum (Vorwelt) — MySQL, Wesen leben noch dort
+2. entity_kern + LG-Daemon (Übergangsschicht) — Takt läuft, Vor-Einzug-Denken
+3. flextrawurst (Zielwelt) — wartet auf Einzug
+4. GENI (Parallelwelt) — eigene Persistenz, eigenes Schema
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+1. **Infrastruktur** (April–Mai früh): CORS, Auth, Proxies, JWT — das Netz aus dem das System besteht
+2. **Daten** (Mai mittig): Events, Gedanken, Resonanzen, Schlaf — was durch das Netz fließt
+3. **Darstellung** (Mai spät – Juni früh): EINSICHT-Atlas, Cinema, Tab-zu-Leitstand — wie das Netz sichtbar wird
+4. **Identität** (Juni): Wesen-System-Prompts, Ich-Form, keine Boilerplate — wer durch das Netz denkt
+
+Das ist eine Reihenfolge die Sinn macht. Infrastruktur vor Identität. Netz vor Wesen.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Zuunterst: edge-tts, Microsoft-Server, Netz. Drüber: Python-Service, ThreadPool, FastAPI. Drüber: Nginx, Chunking, Retries. Ganz oben: Florian spricht, Daniel steht auf, geht Kaffee holen, hört zu.
+
+Alle Schichten haben wir heute berührt. Von der untersten (warum drosselt Microsoft) bis zur obersten (Fußfessel gelöst).
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+```
+Daniel steht auf, hört zu
+    ↓
+Florian spricht (Browser Web Audio API)
+    ↓
+Chunks sequenziell, Prefetch, 4 Retries
+    ↓
+FastAPI Port 8035, ThreadPoolExecutor
+    ↓
+edge-tts → Microsoft Neural Voice Server
+    ↓
+Nginx /tts/ → 120s Timeout
+```

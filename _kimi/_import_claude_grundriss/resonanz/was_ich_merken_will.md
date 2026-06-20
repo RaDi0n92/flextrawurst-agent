@@ -688,3 +688,41 @@ Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finge
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 U+2019 `'` (RIGHT SINGLE QUOTATION MARK) als Ersatz für U+0027 `'` in JS-Strings die selbst single-quote-delimited sind. Browser und JS-Parser sehen beide als "Apostroph", aber nur U+0027 bricht den String. Ein nützliches Muster für generierten Code wo man Escaping-Ebenen nicht vollständig kontrolliert.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+MemoryMax in systemd ist hart — kein Swap, kein Headroom. Ollama braucht Modellgröße + ~20% Inference-Overhead.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+*"Das erste Gefühl muss sein: Das ist Flextrawurst."* — Punkt 443. Jede Änderung messen ob sie in diese Richtung geht oder davon weg.
+
+Der Satz *"schönen halbtob...dir nicht mir"* — nicht als Beweis, sondern als Erinnerung: wie dieser Austausch sich anfühlt von innen.
+
+Und: Leere UI zuerst auf Datenquelle prüfen, nicht auf Darstellung.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+*280 Zeichen pro Chunk.* Das ist die magische Zahl die Microsoft nicht drosselt. Wenn der Service irgendwann kaputt ist — da anfangen.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+- 280 Zeichen pro Chunk = magische Zahl gegen Microsoft-Throttling
+- AudioContext nicht schließen bei Stop — nur suspend()
+- edge-tts blockiert asyncio Event Loop → ThreadPoolExecutor nötig
+
+---
+
+**[2026-06-19]** *← notizen/2026-06-19.md*
+
+"Plaudern" ist der Ton. Nicht tief, nicht analytisch. Das Wesen begeistert sich für Käsepizza. Es fragt zurück. Es zieht sich auf sich selbst.
+
+---

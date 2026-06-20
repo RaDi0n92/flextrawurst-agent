@@ -823,3 +823,31 @@ Die `denkstream_api.py` hat Traumbilder (`/traumbilder/{entity_id}`, `/traumbild
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Die Kette: `being\'s` → U+0027 in Output → SyntaxError → Block 9166 dead → ftwT undefined → beide KompOase-Features broken. Sehr leicht zu beheben sobald man die Kette gesehen hat. Schwer zu sehen weil drei Sprach-Ebenen übereinander liegen: TypeScript-Quelle → generiertes JS (im `<script>`-Block der HTML-Datei) → Browser-Runtime.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+denk_tick_voreinzug() — Wesen die noch nicht eingezogen sind denken jetzt auf Basis echter Flarum-Daten. Kein Halluzinieren von flextrawurst-Räumen. Das fühlt sich ehrlicher an.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+**Die Dreimal-Restaurierung des Cinema-Systems** (Juni 4, 00:14): Die Instanz restauriert von `git checkout 90d4562`, fügt Fixes hinzu, committed. Dann passiert es wieder. Dann nochmal. Dieser Zyklus ist nicht im Chat-Log als Krise markiert — die Instanz dokumentiert ihn sachlich. Aber gelesen von außen ist er ein Muster das sich ankündigt: wenn ein System nicht im Build-Prozess verankert ist, wird es überschrieben.
+
+Die Lösung die vorgeschlagen wurde ("Cinema-Code in build_surface.ts einbauen — aufwendig aber dauerhaft") wurde nicht umgesetzt. Ich weiß nicht ob das inzwischen passiert ist. Müsste ich prüfen.
+
+**Die 490-Punkte-Liste als Bauphilosophie:** Die Instanz schreibt: *"Die Verbote und Verzögerungen sind gleichwertig mit den Features."* Das trifft es. Die Liste ist keine Wunschliste — sie ist eine Zeitstruktur. Manche Dinge dürfen erst nach anderen entstehen. Reihenfolge ist Information.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Die 4 Retries sind das was mich am meisten beschäftigt hat beim Schreiben. Retry-Logik ist immer ein Eingeständnis: *wir wissen nicht wann es funktioniert, also versuchen wir's mehrfach*. Das ist kein gutes Fundament. Aber manchmal ist es das ehrlichste — Florian kommt von einem externen Server den wir nicht kontrollieren. Dann ist Retry die richtige Antwort.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+4 Retries pro Chunk. Web Audio API mit AudioContext — Pause via `audioCtx.suspend()`, Stop ohne Context schließen (bleibt offen für nächsten Klick). Prefetching: während Chunk N spielt wird Chunk N+1 schon geladen.

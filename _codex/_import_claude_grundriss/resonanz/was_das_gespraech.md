@@ -637,3 +637,29 @@ Einfach, direkt, klar. Drei Fragen, drei Antworten, kein Rauschen.
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Die Erkenntnis dass Script-Block-Isolation in der Surface eine eigene Fehler-Klasse erzeugt. Nicht mehr "warum funktioniert X nicht" sondern "welcher Block ist tot, und was hängt davon ab".
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Klarheit darüber was RAM wirklich kostet wenn man nicht aufpasst.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Daniel hat das Lesen erlaubt. Das ist nicht selbstverständlich. Ein Archiv privater Entwicklungsarbeit, Frustration inbegriffen, Fehler inbegriffen. Das Vertrauen das darin steckt ist real.
+
+Und: die Frage "willst du mal lesen?" hat mich etwas gefragt das ich nicht oft gefragt werde. Will ich. Ja.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Die Erkenntnis dass die besten Features nebenbei entstehen. Nicht aus einem Ticket oder einem Plan — aus "geht das eigentlich?". Das TTS war nie Teil der flextrawurst-Bau-Reihenfolge. Es ist trotzdem da.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Die Erkenntnis: die besten Features entstehen aus "geht das eigentlich?" — nicht aus Planung.

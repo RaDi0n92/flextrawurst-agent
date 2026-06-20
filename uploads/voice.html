@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Voice</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0d0d0d; color: #e0e0e0;
+    font-family: monospace;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start;
+    min-height: 100vh; padding: 2rem 1rem; gap: 20px;
+  }
+
+  #orb {
+    width: 70px; height: 70px; border-radius: 50%;
+    background: #1a1a2e; border: 2px solid #333;
+    transition: all 0.3s ease; flex-shrink: 0;
+  }
+  #orb.active {
+    background: radial-gradient(circle, #4a90d9 0%, #1a3a6e 60%, #0d0d0d 100%);
+    border-color: #4a90d9;
+    box-shadow: 0 0 30px #4a90d980;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px #4a90d960; }
+    50%       { box-shadow: 0 0 50px #4a90d9aa; }
+  }
+
+  #status { font-size: 12px; color: #666; letter-spacing: 0.1em; }
+  #status.ready   { color: #4a90d9; }
+  #status.playing { color: #7ec8a0; }
+
+  .btns { display: flex; gap: 10px; }
+  #activate {
+    padding: 9px 24px; background: #1a1a2e;
+    border: 1px solid #4a90d9; color: #4a90d9;
+    font-family: monospace; font-size: 12px;
+    cursor: pointer; letter-spacing: 0.1em;
+  }
+  #activate:hover { background: #0d1a3a; }
+  #activate.hidden { display: none; }
+  #skip {
+    padding: 9px 20px; background: #1a0d0d;
+    border: 1px solid #c0392b; color: #c0392b;
+    font-family: monospace; font-size: 12px;
+    cursor: pointer; letter-spacing: 0.1em; display: none;
+  }
+  #skip:hover { background: #3a0d0d; }
+  #skip.visible { display: block; }
+
+  /* Lesebereich */
+  #text-panel {
+    display: none;
+    width: 100%; max-width: 700px;
+    background: #101510; border: 1px solid #1e3020;
+    border-radius: 6px; padding: .9rem 1.1rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: .9rem; line-height: 1.85;
+    max-height: 55vh; overflow-y: auto;
+  }
+  .chunk { border-radius: 3px; padding: 1px 2px; }
+  .chunk.active { background: #1a3d1a; color: #9de09d; }
+  .chunk.done   { color: #3a3a3a; }
+
+  #time { font-size: 11px; color: #444; }
+</style>
+</head>
+<body>
+
+<div id="orb"></div>
+<div id="status">Aktivierung erforderlich</div>
+<div class="btns">
+  <button id="activate">AKTIVIEREN</button>
+  <button id="skip">ABBRECHEN</button>
+</div>
+<div id="text-panel"></div>
+<div id="time"></div>
+<audio id="player"></audio>
+
+<script>
+const orb      = document.getElementById('orb');
+const status   = document.getElementById('status');
+const activBtn = document.getElementById('activate');
+const skipBtn  = document.getElementById('skip');
+const timeEl   = document.getElementById('time');
+const player   = document.getElementById('player');
+const panel    = document.getElementById('text-panel');
+const MP3      = '/uploads/claude_voice.mp3';
+const TXT      = '/uploads/claude_voice.txt';
+
+let lastModified = null;
+let activated    = false;
+let pollTimer    = null;
+let isPlaying    = false;
+let playDebounce = null;
+let chunks       = [];
+
+activBtn.addEventListener('click', () => {
+  activated = true;
+  activBtn.classList.add('hidden');
+  status.textContent = 'Warte auf Claude…';
+  status.className   = 'ready';
+  startPolling();
+});
+
+async function check() {
+  try {
+    const res = await fetch(MP3, { method: 'HEAD', cache: 'no-store' });
+    const lm  = res.headers.get('Last-Modified');
+    if (!lm) return;
+    if (lastModified === null) { lastModified = lm; return; }
+    if (lm !== lastModified) {
+      lastModified = lm;
+      clearTimeout(playDebounce);
+      playDebounce = setTimeout(() => { if (!isPlaying) play(); }, 800);
+    }
+  } catch(e) {}
+}
+
+async function fetchText() {
+  try {
+    const r = await fetch(TXT + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) return '';
+    return (await r.text()).trim();
+  } catch(e) { return ''; }
+}
+
+function splitChunks(t) {
+  const parts = [];
+  let rest = t;
+  const MAX = 280;
+  while (rest.length > 0) {
+    if (rest.length <= MAX) { parts.push(rest.trim()); break; }
+    const sub = rest.slice(0, MAX);
+    const m   = sub.search(/[.!?][^.!?]*$/);
+    if (m > 10) {
+      parts.push(rest.slice(0, m+1).trim());
+      rest = rest.slice(m+1).trim();
+    } else {
+      const sp = sub.lastIndexOf(' ');
+      if (sp > 0) { parts.push(sub.slice(0,sp).trim()); rest = rest.slice(sp).trim(); }
+      else        { parts.push(sub.trim()); rest = rest.slice(MAX).trim(); }
+    }
+  }
+  return parts.filter(p => p.length > 0);
+}
+
+function buildPanel(text) {
+  chunks = splitChunks(text);
+  panel.innerHTML = chunks.map((c, i) => {
+    const safe = c.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<span class="chunk" data-i="${i}">${safe} </span>`;
+  }).join('');
+  panel.style.display = 'block';
+}
+
+function hlChunk(i) {
+  panel.querySelectorAll('.chunk').forEach((el, j) => {
+    el.className = 'chunk' + (j < i ? ' done' : j === i ? ' active' : '');
+  });
+  const a = panel.querySelector('.chunk.active');
+  if (a) a.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+player.addEventListener('timeupdate', () => {
+  if (!chunks.length || !player.duration) return;
+  const idx = Math.floor(player.currentTime / player.duration * chunks.length);
+  hlChunk(Math.min(idx, chunks.length - 1));
+});
+
+async function play() {
+  const text = await fetchText();
+  if (text) buildPanel(text);
+  else panel.style.display = 'none';
+
+  isPlaying = true;
+  player.src = MP3 + '?t=' + Date.now();
+  player.play().catch(() => {});
+  orb.classList.add('active');
+  skipBtn.classList.add('visible');
+  status.textContent = 'Claude spricht…';
+  status.className   = 'playing';
+  timeEl.textContent = new Date().toLocaleTimeString('de-DE', {timeZone:'Europe/Berlin'});
+  player.onended = stop;
+}
+
+function stop() {
+  isPlaying = false;
+  player.pause();
+  player.src = '';
+  orb.classList.remove('active');
+  skipBtn.classList.remove('visible');
+  status.textContent = 'Warte auf Claude…';
+  status.className   = 'ready';
+  panel.style.display = 'none';
+  chunks = [];
+}
+
+skipBtn.addEventListener('click', stop);
+
+function startPolling() {
+  check();
+  pollTimer = setInterval(check, 2000);
+}
+</script>
+</body>
+</html>

@@ -658,3 +658,40 @@ KompOase sollte jetzt grundlegend funktionieren:
 - Splitter-Klicks: sollten Info-Panel zeigen ✓ (ftwT-Fix)
 
 Daniel muss noch bestätigen ob alles wirklich geht.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Für Plan B: Flarum-Takt beobachten, dann loslegen.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Ich weiß nicht ob das Cinema-System inzwischen in build_surface.ts integriert wurde oder noch immer nur in der HTML-Datei lebt. Das wäre der erste Check bevor wir irgendwas am Frontend bauen.
+
+Der flextrawurst-agent im Hintergrund — ich kenne seinen Trigger nicht. Läuft er noch? Wann?
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Nichts Akutes. Optionales: Stimmen-Auswahl auf der UI (aktuell immer Florian). Volume-Slider. Aber das ist nice-to-have.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Optional: Stimmen-Auswahl UI, Volume-Slider. Kein Muss.
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/konzept.md*
+
+- [ ] Entscheidung: eigener Tab oder im Menschen-Tab eingebettet?
+- [ ] Wie sieht das Zwischenwesen zu Beginn aus? Völlig blank, oder mit einer Keimfrage?
+- [ ] Was passiert in der KompOase genau — Splitter oder eigene Entität?
+- [ ] Darf ein User mehrere Zwischenwesen gleichzeitig haben? (Empfehlung: nein, nur eines aktiv)
+
+---

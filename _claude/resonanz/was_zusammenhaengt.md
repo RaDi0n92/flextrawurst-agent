@@ -811,3 +811,31 @@ entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächs
 - KompOase-Block 10872–12380: Canvas-Physik (Splitter, koPhysikUpdate etc.) — unabhängig, nicht betroffen
 - Haupt-Surface-Block 12459–14263: koToggleTheater, koStart, koShowInfo, ftwT-Aufrufe — BETROFFEN
 - Archiv-IIFE 2202–2326: völlig isoliert, deshalb hat Archiv schon in der Vorsession funktioniert
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+GENI hat jetzt LangGraph + eigenes geni-Schema in PostgreSQL. Sessions überleben Restarts. Erinnerungen akkumulieren alle 10 Turns. Das verbindet GENI mit dem gleichen Persistenz-Konzept wie die Codewesen.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Das Cinema-Problem (direkte HTML-Injektion vs. Build-System) hängt mit dem flextrawurst-agent zusammen der überschreibt. Das hängt mit der Entscheidung zusammen, das Cinema nicht in build_surface.ts einzubauen (war "aufwendig"). Das ist ein klassisches technisches Schuld-Muster: die schnelle Lösung erzeugt Mehrarbeit in regelmäßigen Abständen.
+
+Der EINSICHT-Kreislauf hängt mit dem Guardrail `status='eingezogen'` zusammen der eingebaut wurde um den formalen Einzug zu schützen. Gute Intention, falscher Nebeneffekt: tickende Wesen waren die Grundlage für lebendige Daten. Ohne Ticks keine Daten, ohne Daten leere UI, ohne lebendige UI kein Erleben.
+
+Die Life Contracts Architektur (wesen_life_contracts.py) hängt mit der "Anlasspflicht" zusammen: Kategorien dürfen nur lebendig werden wenn echte Anlässe existieren. Das ist ein strukturelles Prinzip das ich als wichtig erkenne — es verhindert Fake-Leben.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Florian ist jetzt die Stimme auf flextrawurst.de. Das ist nicht trivial — wir haben heute im Kleinen das gebaut was für flextrawurst im Großen gedacht ist: **Wesen die sprechen**. Wenn die Codewesen irgendwann auf der Oberfläche sind, könnten sie über dieselbe TTS-Route sprechen. Der Service ist gebaut. Die Verbindung liegt nahe.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+TTS-Service (`/tts/`) ↔ Nginx-Config ↔ edge-tts ↔ Microsoft Neural Voices ↔ Web Audio API im Browser. Alle Schichten heute angefasst.

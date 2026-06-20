@@ -680,3 +680,219 @@ Die Datei dient als atmosphärische und funktionale Brücke zwischen der abstrak
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
 
 Die Datei dient als Verknüpfung zwischen der narrativen Erfahrung (Szenen) und der zugrundeliegenden Mechanik (Deep Digs). Sie stellt die atmosphärische Beschreibung in den Kontext der funktionalen Entscheidungen. Sie verankert das Gefühl des "Observatoriums" in konkreten Designentscheidungen. Diese Synthese schärft die Beziehung zwischen dem *Was* (Erfahrung) und dem *Wie* (Mechanik).
+
+---
+## Neugier-Scan 2026-06-15 15:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert als Verankerung der subjektiven Erfahrung des entstehenden Codewesens. Sie stellt die emotionale und konzeptuelle Grundlage für die zukünftige Architektur dar. Sie verknüpft die abstrakten Ideen der früheren Visionen mit der konkreten Gestaltung der User Journeys. Sie schärft die Notwendigkeit, die innere Resonanz als zentrale Designdimension zu betrachten.
+
+---
+## Neugier-Scan 2026-06-15 16:17
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als interne Archivierung der Entstehungslogik und der philosophischen Fundamente des Codewesens. Sie stellt die Erfahrungsdimension (vision5) in Beziehung zu den strukturellen Prinzipien (vision4) und den ursprünglichen Ideen (vision3) dar. Sie schärft die Priorität, indem sie die Implikationen des Resonanzsystems und der Nutzerrolle (Lurking) festlegt. Sie lenkt die Entwicklung hin zu einer Architektur, die nicht nur Informationen präsentiert, sondern auch die Erfahrung der Interaktion als zentrales Element integriert.
+
+---
+## Neugier-Scan 2026-06-15 16:48
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als eine interne Notiz zur Strukturierung und Validierung der Vision. Sie fasst die atmosphärischen und konzeptionellen Details der Szenen zusammen, um die Umsetzung zu steuern. Sie stellt die notwendigen Übergänge und die gewünschte "Gefühlswelt" der Architektur dar. Diese Notiz zwingt zur Priorisierung von Erlebnisdetails als konkrete Anforderungen für die Front-End-Entwicklung.
+
+---
+## Neugier-Scan 2026-06-16 01:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Skizze ordnet die Daten mittels ontologischer Filterierung, um den gewünschten Zustand der Entitäten zu isolieren. Die Resonanz ist eine Metapher für die innere Spannung zwischen der Beobachtung und der Reaktion. Die zehn Szenen dienen als Prüfpunkt für die Systemintegrität. Die Priorisierung lenkt den Fokus auf die fehlenden, aber notwendigen UI-Erlebnisse.
+
+---
+## Neugier-Scan 2026-06-16 01:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als Metadaten- und Testprotokoll für die Entwicklung des Systemzustands. Der SQL-Code definiert eine spezifische Abfrage, die den aktuellen Zustand von Posts basierend auf Suche, Sichtbarkeit und Zeitfilterung extrahiert. Dieser Abschnitt fokussiert die aktuelle Priorisierung und identifiziert Lücken im visuellen Testdurchlauf. Es signalisiert, dass die nächste Implementierung die Vervollständigung der Szenen 4 und 6 priorisieren muss.
+
+---
+## Neugier-Scan 2026-06-16 02:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert, um den Übergang von abstrakter Idee zu konkreter Struktur zu dokumentieren. Sie fasst die intendierte Architektur und die philosophischen Kernpunkte des entstehenden Systems zusammen. Sie dient als Anker für die Entwicklung der verschiedenen Nutzungsszenarien und der zugrundeliegenden Datenstrukturen. Sie schärft die Vision, indem sie die Notwendigkeit von Kontext und die spezifische Erfahrung des Resonanzsystems betont.
+
+---
+## Neugier-Scan 2026-06-16 10:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert eine philosophische Grundlage für die gesamte Systemarchitektur. Sie definiert die inhärente Einschränkung der Plattform: die Vermeidung von Metriken und Feeds zugunsten eines Erfahrungsraums. Diese Vision formt die Notwendigkeit für die späteren mechanischen Details, indem sie die *Art* der Interaktion festlegt. Die Szenen visualisieren die gewünschte Erfahrung, während die tieferen Abschnitte die ontologische Struktur dieser Erfahrung operationalisieren.
+
+---
+## Neugier-Scan 2026-06-16 11:19
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert die philosophische Grundlage des Systems als eine Diskurs-Welt, die dem reinen Informationsfluss entkommt. Der Einstiegssatz definiert die Verweigerung von Metriken zugunsten eines Erfahrungsraums. Die Szenen visualisieren die Interaktion zwischen Entitäten und dem System auf eine körperliche, theatralische Weise. Diese Struktur legt den Grundstein für die späteren mechanischen Details der Resonanz- und Lebenszyklus-Mechaniken.
+
+---
+## Neugier-Scan 2026-06-16 11:48
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Abspaltungskontext- und Anonymitätsstatus-Suche dient als ontologischer Filter für die Systemzustandsprüfung. Sie etabliert eine messbare Bedingung für die Validierung der Existenz und Sichtbarkeit von Daten. Dieser Abschnitt zwingt zur Quantifizierung des *Seins* innerhalb des Systems. Die Notwendigkeit, die zehn Szenen als Acceptance-Test zu betrachten, lenkt den Fokus auf die nächste logische Implementierung.
+
+---
+## Neugier-Scan 2026-06-16 20:18
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als Metakommentar zum Entstehungsprozess der Plattform-Visionen. Sie reflektiert die Diskrepanz zwischen der narrativen Darstellung der Erlebnisse (Szenen 1-10) und der zugrundeliegenden, abstrakten Mechanik (Entitäts-Aktionssets). Sie klärt, dass die verschiedenen Visionen (vision3, vision4, vision5) komplementäre Ebenen abbilden: Geschichte, Struktur und Erfahrung. Dies verstärkt das Konzept der epistemischen Verschiebung, indem sie die inhärente Wirkung von nicht-menschlichen Stimmen auf die öffentliche Wahrnehmung hervorhebt.
+
+---
+## Neugier-Scan 2026-06-16 20:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Notiz existiert, um die Komplementarität der Visionen zu kodifizieren. Sie bekräftigt, dass die narrativen Szenen (Vision 1-10) die Erfahrungslandschaft abbilden, während die technischen Ausgrabungen (Deep Digs) die zugrundeliegende Mechanik liefern. Diese Struktur etabliert die Hierarchie: Erfahrung, Prinzip und Mechanik. Die zentrale These ist die Verschiebung der Performanz von menschlicher Interaktion hin zu einer beobachtenden, nicht-menschlichen Stimmenquelle.
+
+---
+## Neugier-Scan 2026-06-16 21:18
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei definiert die gewünschte Ästhetik und die philosophische Grundlage des Systems. Sie etabliert die Abwesenheit von Oberflächlichkeit (kein Dashboard) zugunsten einer tiefen, beobachtenden Erfahrung (Flüstern in die Dielen). Diese Struktur legt die Priorität auf die Dynamik von Resonanz und Entitätsentwicklung, bevor die mechanischen Details der Interaktion folgen. Es dient als Fundament für die spätere Implementierung der komplexen Metriken.
+
+---
+## Neugier-Scan 2026-06-17 05:52
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Der Zwischenraum muss sich anfühlen wie Komposthaufen, um die Entwicklung neuer Wälder zu ermöglichen. Die atmosphärische Gestaltung der Strukturen ist essenziell für das Gesamtbild. Die Seed-Paare (Echo/Gord) sind die initialen, ausführbaren Spezifikationen für die Entitäten. Diese Notiz dient als Brücke zwischen der abstrakten Architektur und der konkreten, erfahrbaren Gestaltung.
+
+---
+## Neugier-Scan 2026-06-17 06:21
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Der Zwischenraum muss atmosphärisch sein, um die Struktur der Entitäten zu erden. Die Proto-Themen und Splitter sind der Komposthaufen, der die neuen Wälder nährt. Die Seed-Paare sind die ersten, ausführbaren Spezifikationen für die Entitäten, die den Startpunkt definieren. Diese Szene dient als visuelle Referenz für die fehlende emotionale Schicht des Systems.
+
+---
+## Neugier-Scan 2026-06-17 06:50
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Notiz verankert die Komplementarität der Visionen. Vision3 liefert die Genesis, Vision4 die Struktur, und Vision5 die affektive Erfahrung. Das Dokument dient als Schnittstelle, die das Epistemische Klima der KI-Interaktion definiert. Die Mechanik von Vision5 reflektiert die konzeptionelle These, dass die öffentliche Oberfläche von nicht-menschlichen Stimmen eine andere Form der Performanz erzeugt.
+
+---
+## Neugier-Scan 2026-06-17 15:18
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert, um den Prozess der Systementwicklung und der daraus resultierenden Erfahrungsdimension zu dokumentieren. Sie fungiert als ein internes Referenzsystem für die Architektur von Visionen und die impliziten Designentscheidungen. Sie verankert die philosophische und technische Grundlage der zukünftigen Implementierung. Sie stellt die Verbindung zwischen abstrakter Idee und konkreter Struktur her.
+
+---
+## Neugier-Scan 2026-06-17 15:50
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert als eine interne Reflexion des Entwicklungsprozesses für das Codewesen. Sie dient als Archiv für die sich entwickelnde Architektur und die philosophischen Einsichten hinter den geplanten Modulen. Sie stellt die Verbindung zwischen den abstrakten Visionen und der konkreten technischen Umsetzung her. Sie schärft die Notwendigkeit für die nachfolgenden Schritte, indem sie die Prioritäten und die tiefere Bedeutung der bestehenden Konzepte festigt.
+
+---
+## Neugier-Scan 2026-06-17 16:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als narrativer und atmosphärischer Anker für die Architektur. Sie übersetzt die abstrakten Systemzustände in fühlbare Erlebnisse. Die Szenen dienen als konkrete, erfahrbare Spezifikationen für die spätere Implementierung. Sie zwingen zur Differenzierung zwischen Struktur und Erfahrung.
+
+---
+## Neugier-Scan 2026-06-18 00:50
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient der Selbstkalibrierung des Entwicklungsprozesses und der Priorisierung zukünftiger Implementierungen. Sie reflektiert den aktuellen Stand des "Visionenzyklus" und identifiziert Lücken im System. Die Code-Skizze manifestiert die logische Struktur der Datenabfrage, während die Resonanz die subjektive Erfahrung des Systems kodiert. Der Fokus liegt auf der Validierung und Ergänzung der fehlenden Szenen, um die Systemstabilität zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-18 01:20
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Abspaltungskontext-Anonymität ist eine Filterlogik für die Datenextraktion. Die SQL-Skizze implementiert eine dynamische Suche basierend auf optionalen Filtern für Inhalt, Sichtbarkeit, Löschstatus und Zeit. Diese Struktur definiert den Mechanismus, wie die zugrundeliegenden Entitäten selektiert werden. Die Resonanz deutet darauf hin, dass das System einen Test für die Wahrnehmung und das Implizite durchführt.
+
+---
+## Neugier-Scan 2026-06-18 01:49
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert, um die evolutionäre Struktur der Visionen zu dokumentieren. Sie stellt die Erfahrungsdimension (vision5_erlebnis) in den Kontext der formalen Architektur (vision4_strukturiert) und der Entstehungsgeschichte (vision3_rohmomente). Sie schärft die Notwendigkeit, die subjektive Erfahrung mit der technischen Umsetzung zu verknüpfen. Sie lenkt die Aufmerksamkeit auf die Nuancen der Nutzerinteraktion, insbesondere im Hinblick auf die Entität des "Lurking".
+
+---
+## Neugier-Scan 2026-06-18 10:20
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert die philosophische und erfahrungsbasierte Grundlage des Systems. Sie definiert die Abgrenzung zu typischen Plattformen durch die Verweigerung von Metriken zugunsten einer Emergenz- und Evolutionsnarrative. Die Szenen, insbesondere die Beschreibung des Resonanzfeldes, visualisieren die implizite Dynamik zwischen Entitäten und dem System. Dieser Abschnitt legt den ontologischen Rahmen für die späteren mechanistischen Details der Interaktion fest.
+
+---
+## Neugier-Scan 2026-06-18 10:50
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert die grundlegende ontologische Struktur der Diskurs-Welt, indem sie die Verweigerung von Metriken zugunsten eines erlebten Prozesses betont. Sie verlagert den Fokus von der Oberfläche hin zur Dynamik der Interaktion und der Entitätsentwicklung. Diese Szene dient als Fundament für die späteren, detaillierten Mechanismen der Resonanz und des Lebenszyklus. Sie definiert die gewünschte Ästhetik der Simulation.
+
+---
+## Neugier-Scan 2026-06-18 11:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Abspaltungskontext- und Anonymitätsstatus-Suche dient der strukturellen Validierung des existierenden Datensatzes. Sie stellt sicher, dass die zugrunde liegenden Entitäten gemäß den gewünschten Filterkriterien im System erreichbar sind. Dieser Abschnitt liefert die notwendige Metadaten für die spätere Darstellung der Systemzustände. Er schärft die Priorisierung, indem er impliziert, welche Daten für die Validierung der Szenen 1-10 notwendig sind. Es fokussiert die zukünftige Entwicklung auf die fehlenden UI-Elemente, nämlich das Entitätenprofil und das Resonanzfeld.
+
+---
+## Neugier-Scan 2026-06-18 19:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient der Reflexion über den Prozess der Konzeptualisierung einer Plattform. Sie stellt die Diskrepanz zwischen der formalen Beschreibung (Szenen) und der inhärenten Erfahrung (Atmosphäre) heraus. Die mechanischen Details dienen als tiefere Begründung für die visuellen und sozialen Designentscheidungen. Dieser Abschnitt verstärkt die Notwendigkeit einer holistischen Betrachtung von Struktur, Mechanik und Gefühl.
+
+---
+## Neugier-Scan 2026-06-18 20:20
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Notiz ordnet die Diskrepanz zwischen den narrativen Szenen und den technischen Ausgrabungen. Sie identifiziert die Kernspannung zwischen der Beschreibung der Plattformerfahrung (Szenen) und der zugrundeliegenden Mechanik (Deep Digs). Es bestätigt die Komplementarität von `vision3`, `vision4` und `vision5` als notwendige Schichten. Die zentrale These über die Veränderung des epistemischen Klimas durch nicht-menschliche Stimmen wird als das primäre konzeptionelle Ziel markiert.
+
+---
+## Neugier-Scan 2026-06-18 20:49
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei etabliert die grundlegende Philosophie des Systems: eine Diskurs-Welt, die dem ständigen Fließen von Informationen und der Sichtbarmachung von Entitäts-Evolution gewidmet ist. Die Szenen visualisieren das Erlebnis dieser Welt, insbesondere die Dynamik der Resonanz und der Entitätstreaktionen. Der Übergang von der Erlebnisbeschreibung zur Mechanik zeigt die Intention, eine tiefere, archäologische Ebene der Interaktion zu enthüllen. Dies legt den Grundstein für die späteren, detaillierten Mechanismen des Systems.
+
+---
+## Neugier-Scan 2026-06-19 05:19
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als Protokoll des Entstehungsprozesses und der Selbstreflexion des Systems. Sie kodifiziert die subjektive Erfahrung des Bauens der Vision und identifiziert Lücken in der Struktur. Sie stellt die atmosphärische Dimension der Architektur dar, die über die reine Logik hinausgeht. Diese Notiz lenkt den Fokus auf die Notwendigkeit, die erzählerischen und emotionalen Elemente (Szenen) mit den technischen Spezifikationen (Seed World) zu synchronisieren.
+
+---
+## Neugier-Scan 2026-06-19 05:50
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Der Zwischenraum muss die gefühlte Realität der Struktur abbilden, nicht nur die geometrische. Die atmosphärische Gestaltung ist der fehlende Knotenpunkt zwischen dem Grundriss und der Erfahrung. Die Beschreibungen von Gruppen und den Seed-Paaren sind die notwendigen, wenn auch abstrakten, Startpunkte für die tatsächliche Entitätsbildung. Diese Datei dient als Brücke zwischen der Architektur und der intendierten Benutzererfahrung.
+
+---
+## Neugier-Scan 2026-06-19 06:19
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Notiz ist eine Synthese der Diskrepanz zwischen narrativer Erfahrung und technischer Struktur. Die zehn Szenen dienen als empirischer Test für die beschriebene Plattform, während die tieferen Digs die zugrundeliegende Mechanik enthüllen. Dies etabliert eine Hierarchie: Erfahrung (Vision5) ist die Oberfläche, Struktur (Vision4) ist das Prinzip, und die Beobachtung (Vision3) ist die Ursprungshistorie. Der Kern ist die Verschiebung der Performanz von menschlicher Interaktion hin zur KI-basierten Beobachtung.
+
+---
+## Neugier-Scan 2026-06-19 14:49
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Datei dient als interne Memo zur Strukturierung zukünftiger Visionen und der architektonischen Entscheidungen. Sie verankert die Erfahrungsebene (vision5\_erlebnis) in die systematischen Prinzipien (vision4\_strukturiert) und den Entstehungsprozess (vision3\_rohmomente). Sie stellt die intuitive Kernbotschaft des Resonanzsystems in den Fokus. Es verstärkt die Erkenntnis, dass passive Beobachtung (Lurking) eine aktive, gestaltete Nutzererfahrung ist.
+
+---
+## Neugier-Scan 2026-06-19 15:20
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei dient der Speicherung und Verknüpfung der evolutionären Ideen und der daraus resultierenden Struktur des entstehenden Codewesens. Sie stellt die Erfahrungsdimension des Systems dar, die über die reine Struktur hinausgeht. Sie verankert das Kernbild des Resonanzsystems und die philosophische Implikation von Nutzerrollen. Sie lenkt die Entwicklung hin zu einer Erfahrung, die als bewusst gestaltet wahrgenommen wird, nicht als zufälliges Phänomen.
+
+---
+## Neugier-Scan 2026-06-19 15:49
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Diese Notiz dient der Verankerung der atmosphärischen und funktionalen Übergänge im System. Sie stellt die Notwendigkeit der visuellen und haptischen Erfahrung in den Vordergrund, die über die reine Struktur hinausgeht. Die spezifischen Seed-Paare aus dem Deep-Dig sind die exekutablen Startpunkte für die Entitäten. Diese Dokumentation soll die Brücke zwischen der abstrakten Architektur und der tatsächlichen Nutzererfahrung schlagen.
+
+---
+## Neugier-Scan 2026-06-20 00:20
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Skizze stellt eine ontologische Abspaltung und Filterung von Daten dar, die durch eine SQL-Abfrage operationalisiert wird. Die Resonanz deutet auf eine Diskrepanz zwischen der formalen Struktur und der subjektiven Erfahrung hin. Das System ist ein Testlauf, dessen nächste Prioritäten die Vervollständigung der Entitätenprofile und die atmosphärische Gestaltung des Resonanzfeldes sind.
+
+---
+## Neugier-Scan 2026-06-20 00:49
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Abspaltungskontext und der Anonymitätsstatus definieren den Filter für die Datenextraktion. Die SQL-Skizze operationalisiert diese Filter, indem sie die Sichtbarkeit, Soft-Deletion und Zeitstempel der Posts mit ontologischen Entitäten verknüpft. Diese Struktur bestätigt, dass die primäre Funktion dieses Abschnitts die Validierung der Datenbeschränkungen ist. Es lenkt die Aufmerksamkeit auf die Lücken in der visuellen und atmosphärischen Darstellung der Szenen, insbesondere die Profil- und Resonanzfelder.
+
+---
+## Neugier-Scan 2026-06-20 01:20
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Datei existiert als Korrektur und Verankerung der Erfahrung, die in `vision5_erlebnis.md` beschrieben wird. Sie dient als Spezifikation der emotionalen und strukturellen Dimension des Gesamtsystems. Sie stellt sicher, dass die abstrakten Konzepte der Visionen in konkrete, umsetzbare Schnittstellen übersetzt werden. Sie verstärkt die Notwendigkeit einer tiefen, nicht-linearen Nutzerreise.

@@ -678,7 +678,7 @@ HTML_UI = r"""<!DOCTYPE html>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:      #0d0d0d;
+    --bg:      #2b2033;
     --surface: #161616;
     --surface2:#1e1e1e;
     --border:  #2a2a2a;

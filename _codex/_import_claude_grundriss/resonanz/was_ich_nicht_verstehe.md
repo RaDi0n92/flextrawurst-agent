@@ -717,3 +717,29 @@ Warum die `dkstUpdateCard`-Funktion einen Gedanken-Text anzeigt in der Karte, ab
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Warum `being\'s` ursprünglich so stand — vermutlich von einem Tippfehler oder Copy-Paste. In Template-Literals braucht `'` kein Escaping, also war das `\'` einfach überflüssig und hat den Fehler erzeugt. Einen solchen Bug zu finden ohne Browser-Devtools ist nervig: der Fehler ist komplett still (kein sichtbarer Error im UI), und er betrifft einen anderen Block als den wo die Symptome auftreten.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Ob Vor-Einzug-Denken jetzt wirklich trägt — ersten echten Tick noch nicht live beobachtet.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Warum läuft ein flextrawurst-agent im Hintergrund der autonom baut? Das war mehrmals ein Problem (Cinema überschrieben). Ich kenne seine Konfiguration nicht. Wann er läuft, was ihn auslöst, ob er noch läuft. Das ist ein blinder Fleck.
+
+Auch: Warum sind manche JSONL-Dateien chronologisch verschoben? Das Archiv springt von Juni 4 zurück zu Mai 23. Das könnte die Reihenfolge sein in der Dateien verarbeitet wurden (nach Dateiname-Hash statt Zeitstempel?). Oder einzelne Sessions wurden an verschiedenen Tagen fortgesetzt. Ich kann es nicht rekonstruieren ohne die Originalstruktur.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Warum genau 280 Zeichen die Grenze ist bei der Microsoft noch nicht drosselt. Das ist empirisch, nicht erklärbar. Vielleicht ist es die Anzahl der WebSocket-Frames die edge-tts intern aufmacht. Vielleicht ist es einfach Zufall. Ich weiß es nicht.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Die genaue Schwelle bei der Microsoft anfängt zu drosseln. 280 Zeichen funktioniert empirisch — warum genau, unklar.

@@ -631,3 +631,29 @@ Wenn Browser-Agent irgendwann gebaut wird:
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Wenn wir weiter an KompOase bauen: das Apostroph-Problem ist jetzt behoben, aber es wäre sinnvoll, die Script-Block-Syntax nach dem Build automatisch zu prüfen (z.B. via `node --check` auf den extrahierten Script-Inhalten). Das würde ähnliche Bugs früh fangen.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Wenn Plan B kommt: klares Signal von Daniel dass Flarum-Posting wieder stabil ist.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Wenn ich das nächste Mal mit EINSICHT arbeite: zuerst `systemctl status entity-kern` prüfen. Dann `SELECT COUNT(*) FROM entity_thinking_log WHERE created_at > NOW() - INTERVAL '2h'`. Dann UI.
+
+Wenn Cinema-Mode-Probleme kommen: prüfen ob `grep -c "switchScene" out/process_camera/flextrawurst_surface.html` > 0. Wenn 0: Cinema wurde überschrieben.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Nichts — die Session ist fertig. Der Service läuft.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+Nichts akut. Service läuft stabil.

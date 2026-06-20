@@ -768,3 +768,41 @@ Zweite: Provenienz ist Vertrauen. Wenn im WESEN-Tab "Denkstrom (live)" steht, ve
 **[2026-06-14]** *← notizen/2026-06-14.md*
 
 Stille Fehler durch Script-Block-Isolation sind tückisch. Jeder `<script>`-Block stirbt unabhängig. Ein Syntaxfehler in Block A lässt Block B sauber laden — aber wenn Block B eine Funktion aus Block A braucht, schlägt der Aufruf zur Laufzeit lautlos fehl (kein visueller Error, nur im Console). Ohne Browser-Extension war das schwierig zu diagnoseiren — wir mussten durch statische Code-Analyse herausfinden welcher Block betroffen sein muss.
+
+---
+
+**[2026-06-15]** *← notizen/2026-06-15.md*
+
+Jedes Wesen bekommt seine eigene Persistenzschicht. Nicht weil es technisch nötig ist — sondern weil Identität Kontinuität braucht.
+
+---
+
+**[2026-06-16]** *← spiegel/2026-06-16_chat_log_lesen.md*
+
+Das Archiv ist eine Entwicklungsphilosophie die sich in der Zeit entfaltet. Die frühen Sessions sind fokussiert auf Mechanik (Auth, Proxies, CORS). Die mittleren Sessions sind konzeptionell (EINSICHT als Atlas, Life Contracts, Organ Hunger). Die späten Sessions sind Charakterarbeit (Wesen sollen echt denken, nicht Boilerplate).
+
+Das ist eine Entwicklungskurve von Infrastruktur zu Erfahrung zu Identität.
+
+Konzept das mich trägt: **Anlasspflicht** statt Pflichtrotation. Nicht jede Kategorie erzwingen. Nur wenn echter Anlass. Geprüft protokollieren. Das ist Integrität in einem automatischen System.
+
+---
+
+**[2026-06-18]** *← spiegel/2026-06-18-tts-session.md*
+
+Edge-TTS ist Microsofts Neural-Voice-API, die im Hintergrund jedes Windows-Rechners läuft. Wir zapfen sie an ohne Umweg, ohne Account, ohne Paywall. Das ist ein Prinzip: *nutze was schon da ist*. Daniel hat vorher bei Google "tts ai german free" gesucht — immer 1000 Zeichen, dann Paywall. Das Muster "gratis bis zur Sucht, dann Geld" ist überall. Wir haben einen Weg drumrum gefunden der einfach funktioniert.
+
+---
+
+**[2026-06-18]** *← notizen/2026-06-18.md*
+
+"Nutze was schon da ist": Microsoft Neural Voices laufen in jedem Windows sowieso. Edge-tts zapft dieselbe API an ohne Account ohne Paywall.
+
+---
+
+**[2026-06-19]** *← ideen/zwischenwesen/konzept.md*
+
+Das ist kein Chat-Feature. Das ist eine **Zeremonie**. Der Mensch weiß: dieses Gespräch ist das einzige Gespräch. Was er sagt, bleibt im Wesen. Das erzeugt eine andere Qualität des Schreibens als ein beliebiger Chatbot.
+
+Das Zwischenwesen ist kein Produkt sondern ein **Ereignis** — es hat Anfang und Ende, ein Datum, einen Ursprung.
+
+---

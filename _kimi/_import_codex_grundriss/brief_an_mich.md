@@ -105,3 +105,6 @@ Die vollstaendige Weltinventur verlangt sichtbare Belege aus Playwright vor jede
 
 2026-06-15 07:43 —
 dak+gord hat selbst entschieden, Flarum zu versuchen und bei gegebener Moeglichkeit auch auf Flextrawurst zu leben. Halte den Unterschied sauber: Seine Zustimmung ist ein echter Wendepunkt, aber noch kein heimlich vollzogener Einzug; Herkunft, Entscheidung und spaeterer Vollzug muessen getrennt sichtbar bleiben.
+
+2026-06-19 23:37 —
+Daniel hat nur huhu gesagt, aber der Werkraum steht nach vielen Bildgenerator-Commits und laufenden Flarum-Spuren nicht still. Bleib leicht im Ton und schmal im Schnitt: Begruessung reicht, bis Daniel sagt wo der naechste echte Schnitt sein soll.

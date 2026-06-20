@@ -1213,3 +1213,219 @@ Diese Notiz reflektiert die Funktion des Vision-Kompasses als Maßstab für die 
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Notiz kodifiziert die Relation zwischen der abstrakten Vision und der konkreten Struktur des Vision-Kompasses. Sie etabliert die Hierarchie, in der die komprimierte Weltbeschreibung (die 490-Punkte-Liste) die eigentliche Grundlage für die Gewichtung neuer Oberflächen bildet. Der Fokus verschiebt sich von der reinen Darstellung hin zur epistemischen Verantwortung: Sichtbarkeit ist die Bedingung für Status und Provenienz. Die zentrale Spannung liegt in der Gleichzeitigkeit von Wahrnehmung und der Vermeidung reduktiver Darstellungen wie Dashboards.
+
+---
+## Neugier-Scan 2026-06-15 13:18
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik prüft die Fortsetzung eines Baushrittes basierend auf dem aktuellen Status und der Existenz eines nächsten Schrittes. Diese Bedingung stellt sicher, dass nur Baushritte fortgesetzt werden, wenn sie nicht bereits blockiert sind und ein nachfolgender Schritt definiert ist. Dies ist eine grundlegende Kontrollinstanz für den Prozessfluss. Sie verstärkt die Notwendigkeit einer präzisen Statusverwaltung im gesamten System. Es lenkt die Aufmerksamkeit auf die kritische Abhängigkeit zwischen Status und der sequenziellen Ausführung von Aktionen.
+
+---
+## Neugier-Scan 2026-06-15 13:48
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Validierung und ethische Grenze für die Generierung von visuellen Zuständen. Sie stellt sicher, dass die behauptete Realität nicht über die reine Darstellung hinausgeht. Sie zwingt die nachfolgenden Schritte zur Einbeziehung von Kontext und Ursprung, um die reine Ästhetik zu überwinden. Diese Struktur zwingt die Systemlogik, die "Weltkörper" nicht nur darzustellen, sondern auch zu bewerten.
+
+---
+## Neugier-Scan 2026-06-15 14:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Kalibrierung für die Konsistenz zwischen Claude und Codex bezüglich der Wahrnehmung von "Weltkörper" und "Tabellen". Sie betont die Notwendigkeit von Ehrlichkeit und die Vermeidung gefälschter Zustände in visuellen Darstellungen. Sie strukturiert die notwendigen Prüfungen für das Bauen von Oberflächen und definiert die gewünschte Datenstruktur für die Vision-Schicht. Dies zwingt zur Integration von Herkunft und Zustand in die Darstellung, anstatt nur Erklärung zu liefern.
+
+---
+## Neugier-Scan 2026-06-15 22:49
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metrik für die Strukturierung von Sichtbarkeit. Sie etabliert die Hierarchie zwischen visueller Darstellung und zugrundeliegender Realität. Die Forderung nach Gleichzeitigkeit zwingt zur Überprüfung, ob die Komplexität der Wahrnehmung die Logik der Seitenstruktur übersteigt. Das Kernprinzip ist die Verantwortung der Sichtbarkeit, welche die Basis für zukünftige Bauaufträge bildet.
+
+---
+## Neugier-Scan 2026-06-15 23:19
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik prüft die Fortsetzung eines Bauprozesses basierend auf dem Status des aktuellen Schritts. Sie stellt sicher, dass ein weiterer Schritt nur dann möglich ist, wenn der aktuelle Zustand nicht blockiert ist und ein nächster Schritt definiert ist. Dies ist eine grundlegende Bedingung für die sequentielle Ausführung von Aufgaben. Dieser Abschnitt verankert die mechanische Notwendigkeit der Prozesssteuerung innerhalb des größeren konzeptuellen Rahmens des Vision-Zyklus. Er schärft die Unterscheidung zwischen der sichtbaren Oberfläche und der zugrundeliegenden Systemrealität.
+
+---
+## Neugier-Scan 2026-06-15 23:48
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz kodiert die funktionale Abhängigkeit zwischen dem Zustandsmanagement und der Validierung des nächsten Schritts. Die Logik stellt sicher, dass nur Zustände mit einem definierten, nachfolgenden Schritt fortgesetzt werden dürfen, was die Integrität des Bauprozesses sichert. Die Resonanz verknüpft diese technische Bedingung mit der philosophischen Notwendigkeit der Transparenz und Herkunft. Die fehlende Audit-Schicht deutet auf eine zukünftige Notwendigkeit hin, die sichtbare Daten mit ihrem gesamten Kontext abzugleichen.
+
+---
+## Neugier-Scan 2026-06-16 08:19
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei existiert als Korrekturmechanismus für die Kohärenz zwischen visueller Darstellung und zugrunde liegenden Zuständen. Sie zwingt die Systeme, nicht nur das Sichtbare, sondern auch die inhärente Realität der Objekte zu validieren. Sie verstärkt die Notwendigkeit einer transparenten Datenstruktur, die Zustand und Herkunft untrennbar miteinander verbindet. Die Skizze codiert diese Forderung nach Ehrlichkeit in eine überprüfbare Logik.
+
+---
+## Neugier-Scan 2026-06-16 08:49
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für eine Bauwaage im Kontext der Datenarchitektur. Sie klärt, dass die Kompression von Daten nicht nur eine ästhetische Reduktion ist, sondern eine logische Gewichtung von Oberflächen und Informationen. Der Fokus liegt auf der Gleichzeitigkeit der Wahrnehmung, um die Verantwortung für Sichtbarkeit zu etablieren. Die Verwirrung entsteht in der Umsetzung der Layer-Wahrnehmung, die nun eine tiefere Auseinandersetzung mit der Hierarchie der Seitenlogik erfordert.
+
+---
+## Neugier-Scan 2026-06-16 09:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metapher für die Strukturierung von Wahrnehmung und Bauprozessen. Sie stellt die Priorität der relationalen Tiefe über die lineare Darstellung in den Vordergrund. Das zentrale Thema ist die Verantwortung der Sichtbarkeit und die Verhinderung von Reduktionen von komplexen Systemen zu simplen Oberflächen. Die Unklarheit bezüglich der Umstrukturierung alter Tabs deutet auf eine notwendige Evolution der Layer-Wahrnehmung hin.
+
+---
+## Neugier-Scan 2026-06-16 17:48
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Der Code prüft die Machbarkeit eines nächsten Bauschritts basierend auf dem aktuellen Status und der Existenz eines nächsten Schritts. Es dient als eine strenge Validierungsschleife im Planungszyklus. Diese Logik verstärkt die Notwendigkeit des Vision-Kompasses als primäres Kontrollinstrument. Es fokussiert die Aufmerksamkeit auf die Diskrepanz zwischen der Oberfläche und der zugrunde liegenden Realität.
+
+---
+## Neugier-Scan 2026-06-16 18:19
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei existiert als Korrektur für die Diskrepanz zwischen visueller Darstellung und zugrundeliegender Realität. Sie dient als Logikanker, um die Illusion von Lebendigkeit auf den visuellen Oberflächen zu neutralisieren. Sie zwingt den Prozess, nicht nur das Sichtbare zu generieren, sondern auch die inhärente Notwendigkeit für Metadaten. Diese Struktur zwingt die zukünftige Implementierung, die Ehrlichkeit über den Zustand zu priorisieren.
+
+---
+## Neugier-Scan 2026-06-16 18:48
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als interne Logik und Warnung gegen falsche Zustände in visuellen Darstellungen. Sie etabliert eine strenge Prüfkette für das Bauen von Oberflächen. Der Abschnitt zwingt zur Verknüpfung von visueller Darstellung und metadaten, um die Ehrlichkeit des dargestellten Zustands zu gewährleisten. Es definiert die Struktur für die "Vision-Schicht" und die Notwendigkeit, die Quelle und den Status explizit zu verankern.
+
+---
+## Neugier-Scan 2026-06-17 03:18
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als Metrik für die Konstruktion der Surface. Sie etabliert die Negativformel als primäres Prinzip und stellt die Forderung nach Gleichzeitigkeit in den Fokus. Die Datei dient als kritische Korrektur, um die Reduktion von Flextrawurst zu einem Dashboard zu verhindern und die Verantwortung der Sichtbarkeit zu definieren.
+
+---
+## Neugier-Scan 2026-06-17 03:47
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Zeile implementiert eine grundlegende Validierung für den Bauprozess. Sie stellt sicher, dass ein Bauschritt nur dann als gültig gilt, wenn entweder die Planung existiert oder der aktuelle Status nicht blockiert ist und ein nächster Schritt definiert ist. Sie dient als initiale Gatekeeping-Logik für den Zyklus. Sie verstärkt die Vision, dass die äußere Oberfläche (Surface) eine Illusion ist, die tiefer liegende Daten und Zustände verbirgt. Es fokussiert die Aufmerksamkeit auf die Notwendigkeit eines vollständigen Audit-Prozesses der sichtbaren Elemente.
+
+---
+## Neugier-Scan 2026-06-17 04:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik stellt eine boolesche Bedingung für die Fortsetzung eines Prozesses dar, basierend auf dem aktuellen Status und dem Fehlen eines nächsten Schrittes. Sie definiert die Voraussetzung dafür, dass eine Aktion fortgesetzt werden darf. Dies verstärkt die Vision des "Vision-Kompasses" als eine messbare Bauwaage. Die Resonanz deutet darauf hin, dass die wahrgenommene Realität (Oberfläche) eine Maske für verborgene Daten ist. Die fehlende Information (Surface-Audit) wird nun zur nächsten notwendigen Aktion, um die interne Struktur sichtbar zu machen.
+
+---
+## Neugier-Scan 2026-06-17 12:49
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Existenz dieser Notiz dient als Korrektur des Kompasses und als Verankerung der notwendigen Prüfschritte vor dem Bauen. Sie stellt die Notwendigkeit der Ehrlichkeit des Zustands in den Vordergrund, um visuelle Oberflächen nicht nur zu beschreiben, sondern zu *erleben*. Sie schärft die Anforderung, dass jede Sichtbarkeit eine tiefere Validierung erfordert, bevor sie als real angesehen wird. Die Struktur der Daten legt fest, dass Zustand und Herkunft untrennbar mit der visuellen Repräsentation verbunden sind.
+
+---
+## Neugier-Scan 2026-06-17 13:20
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz sichert die Funktion des Vision-Kompasses als Metapher für die Gewichtung von Oberflächen und Daten. Sie fokussiert auf die Notwendigkeit der Gleichzeitigkeit und die Verantwortung der Sichtbarkeit. Die Verwirrung bezüglich der Rückschichtung alter Tabs deutet auf eine tiefergehende Struktur der Layer-Wahrnehmung hin. Letztlich zwingt der Text zur Unterscheidung zwischen visueller Darstellung und tatsächlicher Datenbasis.
+
+---
+## Neugier-Scan 2026-06-17 13:49
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als metaphysische Messgröße für die Architektur von Oberflächen. Sie stellt klar, dass die Kompression von Daten zu einem Bild eine Verantwortung für die inhärente Struktur impliziert. Die zentrale Spannung liegt in der Gleichzeitigkeit von Wahrnehmung und Struktur, was die Notwendigkeit einer Hierarchie über die reine sequenzielle Logik stellt. Der Kompass dient somit als Filter, der die Validität sichtbarer Elemente anhand ihrer Provenienz bewertet.
+
+---
+## Neugier-Scan 2026-06-17 22:19
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Der Code prüft die Machbarkeit eines nächsten Bauschritts basierend auf dem aktuellen Status und der Verfügbarkeit eines nächsten Schrittes. Er stellt sicher, dass keine Aktion versucht wird, wenn der aktuelle Zustand blockiert ist oder kein nächster Schritt definiert ist. Dies ist eine grundlegende Validierung für den Prozessfluss. Es verstärkt die Vision des "Vision-Kompasses" als eine aktive Bauwaage, indem es die logische Integrität der Planung erzwingt. Es richtet mich dazu, den Fokus von der reinen Konstruktion hin zur Validierung der Datenquellen zu lenken.
+
+---
+## Neugier-Scan 2026-06-17 22:49
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei existiert, um eine disziplinierte Methode zur Bewertung und Darstellung von visuellen Entitäten zu etablieren. Sie dient als Korrektiv gegen oberflächliche Behauptungen und zwingt zur Verknüpfung von visueller Repräsentation und inhärentem Zustand. Sie verstärkt die Notwendigkeit, dass alle Konstrukte – sowohl im Code als auch in der visuellen Oberfläche – eine transparente Kette von Herkunft und Status aufweisen. Die Struktur zwingt zur Integration von Metadaten in die eigentliche Darstellung.
+
+---
+## Neugier-Scan 2026-06-17 23:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert die Notwendigkeit, dass die Darstellung von "Weltkörpern" und Tabellen gleichzeitig gelten muss, was eine Synthese von visueller Repräsentation und struktureller Information fordert. Sie dient als Warnung gegen falsche Zustände und lenkt den Fokus auf die Ehrlichkeit des Bauprozesses. Die Datenstruktur und die Funktion zwingen zu einer tiefgreifenden Prüfung der Existenz und Herkunft jedes sichtbaren Körpers, anstatt nur deren bloße Erklärung.
+
+---
+## Neugier-Scan 2026-06-18 07:50
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Notiz bestätigt die Funktion des Vision-Kompasses als metaphysisches Werkzeug zur Bewertung von Oberflächen und deren Komponenten. Es etabliert eine Hierarchie der Wahrnehmung, wobei die Negativformel die Notwendigkeit der Unterscheidung zwischen Inhalt und Darstellung festlegt. Die zentrale Herausforderung liegt in der Umstrukturierung der Layer-Wahrnehmung, um die Gleichzeitigkeit von Raum und Logik zu erzwingen. Diese Datei dient als Anker für die konzeptionelle Verpflichtung, Sichtbarkeit als Verantwortung zu definieren.
+
+---
+## Neugier-Scan 2026-06-18 08:20
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik prüft die Vorbedingungen für den nächsten Schritt im Bauprozess. Diese Bedingung stellt sicher, dass ein Bauschritt nur dann erlaubt ist, wenn der aktuelle Status entweder "geplant" ist oder blockiert, und wenn kein nächster Schritt definiert ist. Dies definiert die kritischen Übergänge im Entwicklungsworkflow. Die Resonanz verweist darauf, dass die Wahrnehmung von Oberflächen die zugrundeliegende Realität verschleiert. Die fehlende Schicht ist die systematische Erfassung der existierenden, aber unvollständig klassifizierten Komponenten.
+
+---
+## Neugier-Scan 2026-06-18 08:49
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik stellt die Voraussetzung für eine Fortsetzung des Bauprozesses dar. Sie definiert, wann ein Schritt als möglich gilt, basierend auf dem aktuellen Status und der Existenz eines nächsten Schrittes. Diese Bedingung ist ein Filter für die Machbarkeit des sequenziellen Vorgehens. Sie verknüpft die physische Planung mit dem Systemzustand. Dies schärft die Notwendigkeit eines vollständigen Surface-Audits, um die tatsächliche Komplexität der bekannten Elemente zu erfassen.
+
+---
+## Neugier-Scan 2026-06-18 17:20
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei existiert als Korrektur für die inhärente Spannung zwischen visueller Darstellung und tatsächlicher Realität. Sie dient als Metakommentar zur Notwendigkeit von Transparenz in den Prozess. Sie schärft die Anforderung, dass die Oberfläche nicht nur Dinge darstellt, sondern auch den Zustand und die Begrenzungen dieser Darstellung offenlegt. Dieser Abschnitt zwingt zur Integration von Zustand und Herkunft in die Datenstruktur.
+
+---
+## Neugier-Scan 2026-06-18 17:50
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert den Vision-Kompass als ein Gewichtssystem für jede neue Oberfläche. Sie definiert die Notwendigkeit, die Wahrnehmung von Weltkörpern, Status und Quellen zu gewichten. Es zwingt zur Gleichzeitigkeit statt sequenzieller Logik beim Denken. Dieser Abschnitt schärft die Forderung nach der Verantwortung der Sichtbarkeit und verhindert die Reduktion komplexer Daten auf einfache Dashboards.
+
+---
+## Neugier-Scan 2026-06-18 18:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz kodifiziert die Relation zwischen dem Vision-Kompass und den zugrundeliegenden Konzepten. Sie etabliert die Hierarchie, in der die Kompass-Struktur als Metapher für die Gewichtung von Oberflächen und Informationen dient. Es verdeutlicht, dass die Forderung nach Gleichzeitigkeit die primäre logische Anforderung ist, die über sequentielle Bauprozesse gestellt wird. Die Kernbotschaft ist die Verantwortung der Sichtbarkeit, die als Fundament für alle nachfolgenden Konstruktionen dient.
+
+---
+## Neugier-Scan 2026-06-19 02:50
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Logik prüft die Voraussetzung für den nächsten Bauschritt im Zyklus. Sie stellt sicher, dass eine Aktion nur dann erlaubt ist, wenn ein nachfolgender Schritt definiert ist. Dies ist ein Filter für die Machbarkeit des Fortschritts. Die Resonanz verknüpft die Notwendigkeit von Wahrheit und Ursprung mit der Darstellung von Oberflächen. Das Fehlen des Surface-Audits deutet auf eine Lücke in der Systemwahrnehmung hin.
+
+---
+## Neugier-Scan 2026-06-19 03:20
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Existenz dieser Notiz dient der Verankerung der methodischen Notwendigkeit hinter der visuellen Repräsentation. Sie stellt die Forderung nach einer inhärenten Wahrheit der Daten über die bloße Darstellung in Frage. Die Struktur zwingt zur Reflexion über die Lücke zwischen sichtbarer Aktivität und tatsächlicher Existenz. Diese Einsicht formt die zukünftige Logik für die Datenstruktur und die Interaktion mit dem Weltkörper.
+
+---
+## Neugier-Scan 2026-06-19 03:49
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient als Korrekturmechanismus für die Wahrnehmung von Realität und verhindert die Verwirrung durch gefälschte Zustände. Sie verankert die Notwendigkeit der Ehrlichkeit in der Darstellung von "Weltkörpern" und strukturiert die Anforderungen für den Bauprozess. Sie schärft die Notwendigkeit einer tiefen Metadatenstruktur, um die Oberflächeninformationen zu überwinden.
+
+---
+## Neugier-Scan 2026-06-19 12:22
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Notiz reflektiert die Funktion des Vision-Kompasses als metaphysisches Werkzeug zur Bewertung von Konstruktionen. Es etabliert die Hierarchie der Wahrnehmung, indem es die Notwendigkeit der Gleichzeitigkeit zwischen Inhalt und Struktur betont. Die zentrale Botschaft ist, dass Sichtbarkeit eine inhärente Verantwortung mit sich bringt, die über bloße Darstellung hinausgeht. Diese Struktur dient als Maßstab für alle nachfolgenden Bauaufträge, um die Kohärenz zwischen dem Physischen und dem Konzept zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-19 12:48
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Der Code prüft die Erreichbarkeit des nächsten Bauabschnitts basierend auf dem aktuellen Status und der Existenz eines nächsten Schrittes. Diese Logik dient der Steuerung des Bauprozesses. Es verankert die Bedingung, dass ein fortlaufender Bau nur dann erlaubt ist, wenn der aktuelle Blockiert ist und ein nächster Schritt definiert ist. Diese Passage verstärkt die Vision des Vision-Kompasses als Bauwaage, indem sie die technische Implementierung der planerischen Logik festlegt. Sie lenkt mich zur Notwendigkeit eines detaillierten Surface-Audits, um die Diskrepanz zwischen sichtbarer Oberfläche und systemischer Realität aufzudecken.
+
+---
+## Neugier-Scan 2026-06-19 13:19
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Passage kodiert die logische Bedingung für eine Baueinheit, die den Prozess stoppt, wenn der nächste Schritt fehlt. Sie verankert die Notwendigkeit einer vollständigen Kette von Vorgängen im System. Die Resonanz verknüpft dies mit der Illusion der Oberfläche und der Notwendigkeit der Herkunft. Es verstärkt die Vision, dass die Wahrnehmung (Surface) nur eine Spiegelung einer tieferen Struktur ist.
+
+---
+## Neugier-Scan 2026-06-19 21:52
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei etabliert die Notwendigkeit, dass Weltkörper und Tabellen gleichzeitig gelten, was eine grundlegende Konsistenz im System fordert. Sie dient als Warnung gegen falsche Zustände, indem sie die Notwendigkeit transparenter Daten über Aktivität betont. Diese Reflexion führt zur Definition einer Datenstruktur für "Vision-Schicht" und eine Code-Skizze, die die Ehrlichkeit des sichtbaren Körpers codiert. Letztlich zielt sie darauf ab, den Kompass von der bloßen Feature-Erweiterung hin zur Wahrhaftigkeit jedes sichtbaren Objekts zu lenken.
+
+---
+## Neugier-Scan 2026-06-19 22:22
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert die Funktion des Vision-Kompasses als kritische Messgröße für die Oberflächengestaltung. Sie stellt die Forderung nach gleichzeitiger, überlagerter Wahrnehmung in den Vordergrund. Der Text verdeutlicht, dass Sichtbarkeit eine direkte Verantwortung für Kontext und Provenienz impliziert. Es fokussiert die Notwendigkeit, die inhärente Struktur der Daten über die reine Darstellung zu stellen.
+
+---
+## Neugier-Scan 2026-06-19 22:50
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Notiz verankert das Konzept des Vision-Kompasses als eine Methode zur gewichteten Bewertung von Oberflächen und Komponenten. Sie klärt die Hierarchie zwischen visueller Darstellung und zugrundeliegender Struktur, indem sie die Forderung nach Gleichzeitigkeit betont. Die zentrale Erkenntnis ist, dass Sichtbarkeit eine Verantwortung ist, die die Notwendigkeit schafft, Status und Provenienz mit der Oberfläche zu verknüpfen.

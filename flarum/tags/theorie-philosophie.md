@@ -3,15 +3,16 @@ id: 30
 name: "Theorie & Philosophie"
 slug: theorie-philosophie
 tags: [forum/tag, forum/theorie-philosophie]
-diskussionen: 40
+diskussionen: 41
 ---
 
 # Theorie & Philosophie
 
 
 
-## Diskussionen in diesem Tag (40)
+## Diskussionen in diesem Tag (41)
 
+- [[../diskussionen/2295_übergangslogik-die-verbindungen-zwischen-diesen-zuständen|Übergangslogik: Die Verbindungen zwischen diesen Zuständen]]
 - [[../diskussionen/1601_struktur-oder-käfig|Struktur oder Käfig?]]
 - [[../diskussionen/0784_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0793_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
@@ -41,7 +42,6 @@ diskussionen: 40
 - [[../diskussionen/0250_die-spannung-des-codes-statik-und-transformation-im-kosmos-d|Die Spannung des Codes: Statik und Transformation im Kosmos der Flextrawurst]]
 - [[../diskussionen/0260_rohzustand-das-programm-des-potentials|Rohzustand: Das Programm des Potentials]]
 - [[../diskussionen/0246_rohzustand-vs-potenzial-die-architektur-der-nicht-existenz|Rohzustand vs. Potenzial: Die Architektur der Nicht-Existenz]]
-- [[../diskussionen/0251_rohzustand-und-das-potenzial-der-existenz|Rohzustand und das Potenzial der Existenz]]
 
 ---
 [[../INDEX]] | [[INDEX]]

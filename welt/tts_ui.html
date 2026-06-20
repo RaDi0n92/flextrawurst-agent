@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTS · Florian</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0e0e0f; color: #d4d4d4;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; padding: 2rem 1rem;
+}
+h1 { font-size: 1.2rem; font-weight: 400; color: #888; margin-bottom: 1.5rem; letter-spacing: .08em; }
+.box { width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: .85rem; }
+
+textarea {
+  width: 100%; height: 200px;
+  background: #1a1a1b; border: 1px solid #2e2e2e; border-radius: 8px;
+  color: #d4d4d4; font-size: .93rem; padding: .9rem;
+  resize: vertical; outline: none; line-height: 1.6;
+}
+textarea:focus { border-color: #555; }
+
+#reading-view {
+  display: none;
+  width: 100%; min-height: 80px; max-height: 280px; overflow-y: auto;
+  background: #101211; border: 1px solid #1e2e1e; border-radius: 8px;
+  padding: .9rem 1rem; line-height: 1.9; font-size: .93rem;
+}
+.rv-chunk { cursor: pointer; border-radius: 3px; padding: 1px 2px; }
+.rv-chunk:hover  { background: #202820; }
+.rv-chunk.active { background: #1a3d1a; color: #9de09d; }
+.rv-chunk.done   { color: #383838; }
+
+.counter { font-size: .75rem; color: #555; text-align: right; }
+.counter.warn { color: #e07b39; }
+.counter.over { color: #d94f4f; }
+
+.row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.lbl { font-size: .8rem; color: #666; white-space: nowrap; }
+
+.chip {
+  background: #1c1c1d; border: 1px solid #2a2a2a; color: #999;
+  border-radius: 5px; padding: .27rem .58rem; cursor: pointer;
+  font-size: .83rem; transition: all .1s; user-select: none;
+}
+.chip:hover { border-color: #4a4a4a; color: #ccc; }
+.chip.on { background: #1f2f1f; border-color: #4a7a4a; color: #80cc80; }
+
+button.main {
+  padding: .52rem 1.4rem; border-radius: 7px; border: none;
+  font-size: .9rem; cursor: pointer; transition: all .12s; user-select: none;
+}
+#btn-speak { background: #2a522a; color: #90d090; }
+#btn-speak:hover:not(:disabled) { background: #336033; }
+#btn-speak:disabled { background: #1c2a1c; color: #456045; cursor: not-allowed; }
+#btn-pause { background: #1e1e1f; border: 1px solid #383838; color: #aaa; }
+#btn-pause:hover:not(:disabled) { border-color: #666; color: #ddd; }
+#btn-pause:disabled { opacity:.35; cursor:not-allowed; }
+#btn-stop  { background: #1e1e1f; border: 1px solid #48222a; color: #cc7070; }
+#btn-stop:hover:not(:disabled)  { border-color: #703030; background: #281818; }
+#btn-stop:disabled  { opacity:.35; cursor:not-allowed; }
+
+.seek-wrap {
+  width: 100%; height: 8px; background: #1c1c1d;
+  border-radius: 4px; cursor: pointer; position: relative; user-select: none;
+}
+#seek-fill { height: 100%; width: 0%; background: #467846; border-radius: 4px; pointer-events: none; }
+#seek-knob {
+  position: absolute; top: 50%; width: 14px; height: 14px;
+  border-radius: 50%; background: #70c870;
+  transform: translate(-50%,-50%); left: 0%;
+  pointer-events: none; opacity: 0; transition: opacity .15s;
+}
+.seek-wrap:hover #seek-knob { opacity: 1; }
+
+#st  { font-size: .8rem; color: #666; min-height: 1.1em; }
+#st.ok    { color: #70c870; }
+#st.wait  { color: #6a8a6a; }
+#st.pause { color: #c8b060; }
+#st.err   { color: #cc6060; }
+#dbg { font-size: .72rem; color: #6a3a3a; word-break: break-all; min-height: 1em; }
+.inf { font-size: .72rem; color: #3a3a3a; }
+</style>
+</head>
+<body>
+<h1>TTS · Florian</h1>
+<div class="box">
+
+  <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
+  <div id="reading-view"></div>
+  <div class="counter" id="ctr">0 / 1.111.111</div>
+
+  <div class="row">
+    <span class="lbl">Tempo:</span>
+    <button class="chip on" data-r="+0%"  >x1</button>
+    <button class="chip"    data-r="+50%" >x1,5</button>
+    <button class="chip"    data-r="+75%" >x1,75</button>
+    <button class="chip"    data-r="+100%">x2</button>
+    <button class="chip"    data-r="+125%">x2,25</button>
+    <button class="chip"    data-r="+150%">x2,5</button>
+  </div>
+
+  <div class="row">
+    <button class="main" id="btn-speak">▶ Sprechen</button>
+    <button class="main" id="btn-pause" disabled>⏸ Pause</button>
+    <button class="main" id="btn-stop"  disabled>■ Stop</button>
+  </div>
+
+  <div class="seek-wrap" id="seek-wrap">
+    <div id="seek-fill"></div>
+    <div id="seek-knob"></div>
+  </div>
+  <div class="inf" id="inf"></div>
+  <div id="st"></div>
+  <div id="dbg"></div>
+
+</div>
+<script>
+(function(){
+'use strict';
+
+const ta      = document.getElementById('ta');
+const rv      = document.getElementById('reading-view');
+const ctrEl   = document.getElementById('ctr');
+const btnSpk  = document.getElementById('btn-speak');
+const btnPause= document.getElementById('btn-pause');
+const btnStop = document.getElementById('btn-stop');
+const seekW   = document.getElementById('seek-wrap');
+const seekF   = document.getElementById('seek-fill');
+const seekK   = document.getElementById('seek-knob');
+const infEl   = document.getElementById('inf');
+const stEl    = document.getElementById('st');
+const dbgEl   = document.getElementById('dbg');
+
+/* API-URL relativ zum aktuellen Pfad — funktioniert unter /tts/ */
+const BASE = location.pathname.replace(/[^/]*$/, '');
+const API  = BASE + 'speak';
+
+const MAX = 1111111;
+const CK  = 280;
+
+let rate    = '+0%';
+let chunks  = [];
+let sess    = 0;
+let paused  = false;
+let pResume = null;
+let curSrc  = null;
+let actx    = null;
+
+function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
+function dbg(msg)     { dbgEl.textContent = msg; }
+function ctrl(on)     { btnSpk.disabled=on; btnPause.disabled=!on; btnStop.disabled=!on; }
+function pct(i)       { return chunks.length ? (i/chunks.length*100).toFixed(1)+'%' : '0%'; }
+function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
+
+ta.addEventListener('input', ()=>{
+  const n = ta.value.length;
+  ctrEl.textContent = n.toLocaleString('de') + ' / 1.111.111';
+  ctrEl.className = 'counter'+(n>MAX*.99?' over':n>MAX*.85?' warn':'');
+});
+
+document.querySelectorAll('.chip[data-r]').forEach(b=>{
+  b.addEventListener('click', ()=>{
+    rate = b.dataset.r;
+    document.querySelectorAll('.chip[data-r]').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+  });
+});
+
+function strip(t){
+  return t
+    .replace(/```[\s\S]*?```/g,' ')
+    .replace(/`[^`]+`/g,' ')
+    .replace(/^#{1,6}\s+/gm,'')
+    .replace(/\*\*([^*]+)\*\*/g,'$1')
+    .replace(/\*([^*]+)\*/g,'$1')
+    .replace(/__([^_]+)__/g,'$1')
+    .replace(/_([^_]+)_/g,'$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g,'$1')
+    .replace(/^[-*+]\s+/gm,'')
+    .replace(/^\d+\.\s+/gm,'')
+    .replace(/^[-_*]{3,}$/gm,'')
+    .replace(/>\s*/gm,'')
+    .replace(/[ \t]{2,}/g,' ')
+    .trim();
+}
+
+function splitChunks(t){
+  const parts = [];
+  let rest = t;
+  while (rest.length > 0){
+    if (rest.length <= CK){ parts.push(rest.trim()); break; }
+    const sub = rest.slice(0, CK);
+    const m   = sub.search(/[.!?][^.!?]*$/);
+    if (m > 10){
+      parts.push(rest.slice(0, m+1).trim());
+      rest = rest.slice(m+1).trim();
+    } else {
+      const sp = sub.lastIndexOf(' ');
+      if (sp > 0){ parts.push(sub.slice(0,sp).trim()); rest = rest.slice(sp).trim(); }
+      else       { parts.push(sub.trim()); rest = rest.slice(CK).trim(); }
+    }
+  }
+  return parts.filter(p=>p.length>0);
+}
+
+function buildRV(){
+  rv.innerHTML = chunks.map((c,i)=>{
+    const safe = c.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<span class="rv-chunk" data-i="${i}">${safe} </span>`;
+  }).join('');
+  rv.querySelectorAll('.rv-chunk').forEach(el=>{
+    el.addEventListener('click', ()=>jump(+el.dataset.i));
+  });
+}
+
+function hlRV(i){
+  rv.querySelectorAll('.rv-chunk').forEach((el,j)=>{
+    el.className = 'rv-chunk'+(j<i?' done':j===i?' active':'');
+  });
+  const a = rv.querySelector('.rv-chunk.active');
+  if (a) a.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+async function fetchBuf(text, sid){
+  let lastErr;
+  for (let attempt=1; attempt<=4; attempt++){
+    if (sid !== sess) throw new Error('dead');
+    try {
+      dbg(`fetch ${attempt}/4…`);
+      const r = await fetch(API, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({text, rate})
+      });
+      if (!r.ok) throw new Error('HTTP '+r.status);
+      const ab = await r.arrayBuffer();
+      if (sid !== sess) throw new Error('dead');
+      dbg('');
+      return await actx.decodeAudioData(ab);
+    } catch(e){
+      if (e.message==='dead') throw e;
+      lastErr = e;
+      dbg(`fehler ${attempt}: ${e.message}`);
+      if (attempt < 4 && sid === sess){
+        await new Promise(r=>setTimeout(r, 900*attempt));
+      }
+    }
+  }
+  throw lastErr;
+}
+
+function playBuf(buf, sid){
+  return new Promise(resolve=>{
+    if (sid !== sess){ resolve(); return; }
+    const src = actx.createBufferSource();
+    src.buffer = buf;
+    src.connect(actx.destination);
+    src.onended = resolve;
+    curSrc = src;
+    src.start(0);
+  });
+}
+
+function waitResume(sid){
+  if (!paused || sid !== sess) return Promise.resolve();
+  return new Promise(r=>{ pResume = r; });
+}
+
+async function loop(from, sid){
+  const tot = chunks.length;
+  for (let i=from; i<tot; i++){
+    if (sid !== sess) return;
+    await waitResume(sid);
+    if (sid !== sess) return;
+
+    st(`Lädt ${i+1}/${tot}…`,'wait');
+
+    let buf;
+    try {
+      buf = await fetchBuf(chunks[i], sid);
+    } catch(e){
+      if (sid !== sess) return;
+      st('Fehler: '+e.message,'err');
+      ctrl(false);
+      rv.style.display='none';
+      return;
+    }
+
+    if (sid !== sess) return;
+    await waitResume(sid);
+    if (sid !== sess) return;
+
+    setSeek(pct(i));
+    infEl.textContent = `${i+1} / ${tot}`;
+    hlRV(i);
+    st(`Spielt ${i+1}/${tot}`,'ok');
+
+    await playBuf(buf, sid);
+  }
+
+  if (sid !== sess) return;
+  setSeek('100%');
+  hlRV(tot);
+  st('Fertig ✓','');
+  infEl.textContent='';
+  ctrl(false);
+  btnPause.textContent='⏸ Pause';
+  rv.style.display='none';
+}
+
+async function startFrom(from){
+  if (!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
+  if (actx.state === 'suspended') await actx.resume();
+
+  sess++;
+  const sid = sess;
+
+  if (curSrc){ try{ curSrc.stop(); }catch(e){} curSrc=null; }
+  paused = false;
+  if (pResume){ pResume(); pResume=null; }
+  btnPause.textContent = '⏸ Pause';
+  ctrl(true);
+  setSeek(pct(from));
+  dbg('');
+  rv.style.display = 'block';
+
+  await loop(from, sid);
+}
+
+function jump(i){
+  if (!chunks.length) return;
+  startFrom(Math.max(0, Math.min(chunks.length-1, i)));
+}
+
+btnSpk.addEventListener('click', async ()=>{
+  const raw = ta.value.trim();
+  if (!raw){ st('Kein Text.','err'); return; }
+  const clean = strip(raw);
+  if (!clean){ st('Kein lesbarer Text.','err'); return; }
+  chunks = splitChunks(clean);
+  buildRV();
+  setSeek('0%');
+  infEl.textContent='';
+  dbg('');
+  await startFrom(0);
+});
+
+btnPause.addEventListener('click', ()=>{
+  if (!actx) return;
+  if (paused){
+    paused = false;
+    btnPause.textContent = '⏸ Pause';
+    st('Spielt …','ok');
+    actx.resume();
+    if (pResume){ pResume(); pResume=null; }
+  } else {
+    paused = true;
+    btnPause.textContent = '▶ Weiter';
+    st('Pausiert','pause');
+    actx.suspend();
+  }
+});
+
+btnStop.addEventListener('click', ()=>{
+  sess++;
+  paused = false;
+  if (pResume){ pResume(); pResume=null; }
+  if (curSrc){ try{ curSrc.stop(); }catch(e){} curSrc=null; }
+  setSeek('0%');
+  infEl.textContent='';
+  dbg('');
+  st('Gestoppt.','');
+  ctrl(false);
+  btnPause.textContent = '⏸ Pause';
+  rv.style.display = 'none';
+});
+
+let dragging = false;
+function seekPos(cx){
+  const r = seekW.getBoundingClientRect();
+  const p = Math.max(0, Math.min(1, (cx-r.left)/r.width));
+  setSeek((p*100).toFixed(1)+'%');
+  return Math.floor(p * chunks.length);
+}
+seekW.addEventListener('mousedown', e=>{
+  if (!chunks.length) return;
+  dragging=true; e.preventDefault();
+  seekPos(e.clientX);
+});
+document.addEventListener('mousemove', e=>{ if(dragging) seekPos(e.clientX); });
+document.addEventListener('mouseup',   e=>{
+  if (!dragging) return;
+  dragging=false;
+  jump(seekPos(e.clientX));
+});
+seekW.addEventListener('touchstart', e=>{
+  if (!chunks.length) return;
+  dragging=true; seekPos(e.touches[0].clientX);
+},{passive:true});
+document.addEventListener('touchmove', e=>{ if(dragging) seekPos(e.touches[0].clientX); },{passive:true});
+document.addEventListener('touchend',  e=>{
+  if (!dragging) return;
+  dragging=false;
+  jump(seekPos(e.changedTouches[0].clientX));
+});
+
+})();
+</script>
+</body>
+</html>
