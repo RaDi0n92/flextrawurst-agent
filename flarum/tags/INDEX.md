@@ -56,7 +56,7 @@
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 41 |
 | [[tags/transition\|Transition]] | 0 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 0 |
-| [[tags/trigger\|Trigger]] | 822 |
+| [[tags/trigger\|Trigger]] | 823 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 2 |
 | [[tags/bermeta\|Übermeta]] | 3 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 67 |
