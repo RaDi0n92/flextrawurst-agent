@@ -184,7 +184,7 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
                 "model": MODEL,
                 "messages": [{"role": "user", "content": prompt}],
                 "stream": True,
-                "options": {"think": False, "num_ctx": 13337, "temperature": 0.9},
+                "options": {"num_ctx": 13337, "temperature": 0.85, "top_p": 0.92, "top_k": 50, "repeat_penalty": 1.1},
             }, timeout=LLM_TIMEOUT, stream=True)
 
             seq = 1

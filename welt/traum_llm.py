@@ -85,7 +85,7 @@ def rufe_ollama(prompt):
         "prompt": prompt,
         "stream": False,
         "think": False,
-        "options": {"num_ctx": 13337, "temperature": 0.85, "num_predict": 300},
+        "options": {"num_ctx": 13337, "temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.12, "num_predict": 300},
     }
     resp = requests.post(f"{OLLAMA}/api/generate", json=payload, timeout=300)
     resp.raise_for_status()

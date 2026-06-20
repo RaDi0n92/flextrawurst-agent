@@ -883,7 +883,7 @@ def denk_tick(entity_id: str):
                     "prompt": prompt,
                     "stream": True,
                     "think": False,
-                    "options": {"num_ctx": 13337, "temperature": 0.85, "num_predict": 200},
+                    "options": {"num_ctx": 13337, "temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 200},
                 },
                 stream=True,
                 timeout=180,

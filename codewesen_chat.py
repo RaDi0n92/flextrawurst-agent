@@ -386,7 +386,7 @@ Antworte NUR mit JSON, ohne Markdown-Wrapper:
         r = client.post(
             OLLAMA_URL,
             json={"model": OLLAMA_MOD, "prompt": prompt, "stream": False,
-                  "options": {"temperature": 0.82, "num_predict": 900}},
+                  "options": {"temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 900, "num_ctx": 13337}},
         )
     r.raise_for_status()
     raw = r.json().get("response", "").strip()
@@ -623,7 +623,7 @@ async def stream_ollama(
             "model": modell, "messages": messages, "stream": True,
             "think": False,
             "keep_alive": "15m",
-            "options": {"temperature": 0.82, "num_predict": 400,
+            "options": {"temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 400,
                         "num_ctx": 13337, "num_batch": 512},
         }
         timeout = httpx.Timeout(connect=30.0, read=600.0, write=30.0, pool=30.0)

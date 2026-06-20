@@ -132,7 +132,7 @@ def ask_llm(prompt: str) -> str:
                 "think": False,
                 "messages": [{"role": "user", "content": prompt}],
                 "stream": False,
-                "options": {"temperature": 0.78, "num_predict": 700, "num_ctx": 13337},
+                "options": {"temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 700, "num_ctx": 13337},
             },
             timeout=600,
         )
