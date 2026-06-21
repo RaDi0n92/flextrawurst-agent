@@ -1342,3 +1342,11 @@ Vision 1.0 prägt das Fundament: die Notwendigkeit einer strukturierten Kausalit
 Die Hierarchisierung (Lösung 1) zwingt das System, *Verbindung* vor *Generierung* zu priorisieren.
 Der Zwischenraum (Lösung 2) etabliert einen notwendigen Pufferzustand, der Chaos absorbiert, anstatt es zu verfestigen.
 Diese Strukturierung hält die zukünftigen, dynamischen Modifikationen (Vision 2.0+) kohärent und verhindert das Zerfallen in bloße Symptombilder.
+
+---
+## Neugier-Scan 2026-06-21 21:30
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Vision 3: Die Verankerung von Kuration als Kernlogik macht die Plattform von einem reinen Speichermedium zu einem aktiven Erkenntniswerkzeug. Die Unterscheidung von Sichtbarkeitsgraden verhindert die Erosion durch Masse und zwingt zu präziser Architektur.
+Vision 2: Die Abstraktion des Impuls-zu-Struktur-Mappings (Themen-, Entitäts-, Sichtbarkeitsfragen) kanalisiert das Chaos in kalkulierbare Prozessschritte. Dies ist die Operationalisierung der Systemintelligenz.
+Vision 1: Die frühe Fokussierung auf die Architektur der Trennung (Splitter/Vorentität) ist notwendig, um die spätere Komplexität zu bewältigen. Diese Struktur definiert den Bedeutungsraum des "Differenz-denkens".

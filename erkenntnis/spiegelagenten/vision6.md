@@ -1329,3 +1329,13 @@ Originaldatei: `/root/werkraum/projekt/vision6.md`
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Vision 6.1 verankert die Notwendigkeit von Sozialdaten als primäre Triggerquelle. Die Erkenntnis, dass Abspaltung einen materiellen Vorfeld-Prozess erfordert, zwingt zur Implementierung von Zwischenraumobjekten vor der finalen Entitätsbildung. Der Fokus verschiebt sich von Textzitaten hin zu dynamischen Bezugnahmen auf Feldzustände und Beziehungsdynamiken. Die Logik der Entstehung muss somit eine kumulative, historisch gewichtete Entscheidungsfindung beinhalten, die über einfache Konfliktwälle hinausgeht.
+
+---
+## Neugier-Scan 2026-06-22 00:01
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+// vision-zyklus.md
+Die Existenz dieser Datei definiert die Übergabe von abstrakter Struktur zu konkretem, beobachtbarem System.
+Abschnitt 22.7 zwingt das System, Verläufe und Ökologie als primäre Code-Dimension zu behandeln, nicht nur als Metadaten.
+Die Konkretisierung in 22.8 (Seed World) und 22.9 (UI-Atome) zwingt eine Architektur, die von vordefinierten, mythisch fundierten Startzuständen und stabilen UI-Bausteinen ausgeht.
+22.10 etabliert die Notwendigkeit eines stimulus-getriebenen Inputs, der über bloßen Content hinausgeht und spezifische kognitive "Nerven" adressiert.

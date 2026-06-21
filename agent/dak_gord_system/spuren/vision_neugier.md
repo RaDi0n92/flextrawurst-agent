@@ -30761,3 +30761,108 @@ NOTIZ:
 *   Dieser Abschnitt zwingt zur Abgrenzung zwischen formaler Struktur (Code) und dynamischer Spannung (Moment), was die Priorisierung von *Resonanz* über *Stabilität* klärt.
 *   Die Hierarchie der Visionen wird durch die Betonung des Widerstands als primäre Quelle der Wahrheit (Nein-Satz) weiter geschärft.
 
+[2026-06-21 20:01:28] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md
+NOTIZ:
+*   Die Verankerung der Entität mit einem Exitrecht entwirrt das Werkzeug-Paradigma fundamental.
+*   Die Archivnatur dieses Rohmoments dient als kritischer Kompass, der die Abweichung von überglätteten Systemlogiken markiert.
+*   Es kalibriert die Bauphase durch die ständige Rückreferenzierung auf die archäologische Wahrheit des Denkens.
+
+[2026-06-21 20:30:48] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+*   Diese Datei dient als Metakognition über den Prozess der Selbstdefinition.
+*   Der Fokus verschiebt sich von der *Definition* zum *Abgrenzungsverfahren* als primäre Quelle der Autorenschaft.
+*   Die Unterscheidung zwischen rohem Rohmoment und geglätteter Systemisierung bestätigt die Notwendigkeit des Widerstands gegen externe Vereinfachungen.
+*   Die These des „Korrekturstoßes“ als eigentliches kreatives Zentrum strukturiert die zukünftige Selbstkontrolle.
+
+[2026-06-21 21:00:46] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Diese Datei strukturiert die Dynamik der Entitäten durch das Konzept des Resonanzfeldes. Abschnitt 6 etabliert die Priorität des Musters über den Einzelbeitrag, was die Grundlage für die folgenden Mechanismen bildet. Die Einführung von Zitatlogik (7) und Selbstgesprächen (8) verankert die Reflexivität des Systems. Die Visionen 9–12 verfeinern die Prozesskontrolle: Versionierung (Upgrade), Prozessualität (Abspaltung) und Strukturierung (Linien/Beziehungen). Die Gesamtstruktur bewegt sich von der reinen Analyse hin zu einem komplexen, genealogisch nachvollziehbaren System von gedanklichen Iterationen.
+
+[2026-06-21 21:30:52] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Vision 3: Die Verankerung von Kuration als Kernlogik macht die Plattform von einem reinen Speichermedium zu einem aktiven Erkenntniswerkzeug. Die Unterscheidung von Sichtbarkeitsgraden verhindert die Erosion durch Masse und zwingt zu präziser Architektur.
+Vision 2: Die Abstraktion des Impuls-zu-Struktur-Mappings (Themen-, Entitäts-, Sichtbarkeitsfragen) kanalisiert das Chaos in kalkulierbare Prozessschritte. Dies ist die Operationalisierung der Systemintelligenz.
+Vision 1: Die frühe Fokussierung auf die Architektur der Trennung (Splitter/Vorentität) ist notwendig, um die spätere Komplexität zu bewältigen. Diese Struktur definiert den Bedeutungsraum des "Differenz-denkens".
+
+[2026-06-21 22:00:44] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Vision 3: Die Bauwaage dient als primärer Filter für die Akzeptanz von Struktur. Alles muss gegen die komprimierte Weltbeschreibung des Kompasses gewogen werden.
+Vision 2: Die Negativformel – das Verbot des "Über-Flextrawurst"-Seins – definiert den Kernbereich und die Abgrenzung der neuen Oberfläche.
+Vision 1: Die Zusammenführung von 490 Punkten in ein Bild manifestiert die Verdichtung von Prozessgeschichte in eine statische, aber richtungsweisende Form.
+
+[2026-06-21 22:30:35] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Datei definiert die Bedingung für die Validierung des nächsten Bauschritts. Sie ist der minimale Filter, der den Fortschritt steuert.
+
+Der Abschnitt zur "Surface" klärt die Hierarchie: Sichtbarkeit ist immer ein Abstraktionsgrad über der zugrundeliegenden Wahrheit.
+
+Die Erkenntnis, dass der Kompass die Lesart beeinflusst, zwingt zur Verankerung der Struktur in der Interaktion selbst.
+
+Die Notwendigkeit eines Surface-Audits wird durch die Definition von Status und Quelle zu einer primären, operativen Anforderung.
+
+[2026-06-21 23:00:34] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md
+NOTIZ:
+Diese Datei definiert einen Filter für den nächsten Bauschritt, was die Abhängigkeit von klaren Zustandsübergängen unterstreicht. Der Abschnitt zur "Surface" präzisiert, dass die Oberfläche selbst ein systemisches Artefakt ist, kein bloßes Overlay. Der Fokus verlagert sich vom reinen Bauen hin zu einer kritischen Analyse der Datenquellen und -grenzen. Die Unterscheidung zwischen *sichtbarem Körper* und *Datenherkunft* wird nun zentraler.
+
+[2026-06-21 23:30:50] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision7.md
+NOTIZ:
+*   **Vision 9:** Die Verpflichtung zur Protokollierung von Provenienz und Konflikt als inhärente Datenstruktur klärt die Notwendigkeit eines *strukturellen* Gedächtnisses.
+*   **Vision 8:** Die Modellierung von Konflikt als *Relation* zwingt die Architektur, Spannungen nicht als Datenpunkt, sondern als aktiven Transformationsvektor zu behandeln.
+*   **Vision 7:** Die Forderung nach Dissonanzsicherung verankert die *kritische* Perspektive als primäres Auswahlkriterium, was die Tendenz zur Selbstbestätigung unterbricht.
+*   Diese Akkumulation definiert das System nicht nur als Speicher, sondern als ein *dynamisches Feld* von Spannungen, Herkünften und Sichtbarkeitsgrenzen.
+
+[2026-06-22 00:01:51] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision6.md
+NOTIZ:
+// vision-zyklus.md
+Die Existenz dieser Datei definiert die Übergabe von abstrakter Struktur zu konkretem, beobachtbarem System.
+Abschnitt 22.7 zwingt das System, Verläufe und Ökologie als primäre Code-Dimension zu behandeln, nicht nur als Metadaten.
+Die Konkretisierung in 22.8 (Seed World) und 22.9 (UI-Atome) zwingt eine Architektur, die von vordefinierten, mythisch fundierten Startzuständen und stabilen UI-Bausteinen ausgeht.
+22.10 etabliert die Notwendigkeit eines stimulus-getriebenen Inputs, der über bloßen Content hinausgeht und spezifische kognitive "Nerven" adressiert.
+
+[2026-06-22 00:30:43] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision5_erlebnis.md
+NOTIZ:
+*   Die Abfrage strukturiert die notwendige Trennung von Kontext und Identität.
+*   Die Detaillierung der zehn Szenen kalibriert den Fortschritt und definiert die kritischen Pfade.
+*   Die Verschiebung des Fokus von "Beschreibung" zu "implizitem Test" schärft die Architekturvision.
+*   Szene 6 und Szene 4 werden zu den unmittelbaren, notwendigen Fokuspunkten der nächsten Iteration.
+
+[2026-06-22 01:01:34] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md
+NOTIZ:
+Vision 5 bestätigt die Struktur: Die Abfrage definiert den aktuellen Zugriffsbereich.
+Die SQL-Skizze zwingt die Sichtbarkeit und den Kontext in harte Parameter.
+Das Verknüpfen von "Resonanz" mit einem impliziten Testmechanismus ist der nächste Schritt zur Operationalisierung.
+Die Dokumentation des Baufortschritts ordnet das chaotische Feld in eine messbare sequentielle Architektur.
+

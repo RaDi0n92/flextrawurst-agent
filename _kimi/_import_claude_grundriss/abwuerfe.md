@@ -1629,3 +1629,36 @@ gemma4:e2«
 - [2026-06-21 18:54] **lava** (i=0.46) → Zwischenraum: »Jetzt hab ich den vollen Kontext«
 - [2026-06-21 19:07] **nebel** (i=0.31) → Zwischenraum: »Nein — du musst ihn explizit aufrufen mit `ollama run dolphin3-daniel`«
 - [2026-06-21 19:51] **nebel** (i=0.32) → Zwischenraum: »Du siehst ein **Mischpult**«
+- [2026-06-21 20:00] **sternenstaub** (i=0.43) → Zwischenraum: »Ah, du wolltest gemeinsam denken — nicht einen Bauauftrag geben«
+- [2026-06-21 21:04] **lava** (i=0.56) → Zwischenraum: »Ich höre zu und halte fest was du sagst«
+- [2026-06-21 21:16] **lava** (i=0.49) → Zwischenraum: »Viel auf einmal — ich geh's durch:
+
+---
+
+**Zur Felder-Frage (das Wichtigste):**
+
+Ja, genau«
+- [2026-06-21 21:25] **lava** (i=0.48) → Zwischenraum: »Klar, ich geh alles durch:
+
+---
+
+**Feedback ans Modell** — verstanden«
+- [2026-06-21 21:34] **nebel** (i=0.32) → Zwischenraum: »Du beschreibst zwei verschiedene Dinge die bei zensi momentan in einem Knopf zusammengefasst sind un«
+- [2026-06-21 21:48] **wasser** (i=0.35) → Zwischenraum: »`/dolphin` ist bereit«
+- [2026-06-21 23:33] **sternenstaub** (i=0.42) → Zwischenraum: »OK, erst #12 — danach die anderen Punkte sauber:
+
+---
+
+**Task #12 — was ursprünglich geplant war:**
+«
+- [2026-06-22 00:03] **lava** (i=0.37) → Zwischenraum: »Jetzt versteh ich das System vollständig«
+- [2026-06-22 00:42] **nebel** (i=0.32) → Zwischenraum: »Hier die komplette Übersicht was offen ist:
+
+---
+
+**Offen (pending):**
+
+| # | Was |
+|---|-----|
+| 15«
+- [2026-06-22 00:48] **nebel** (i=0.31) → Zwischenraum: »`/root/werkraum/dolphin_mischpult/KONZEPT.md` — da liegt es jetzt, direkt neben den Session-Daten«

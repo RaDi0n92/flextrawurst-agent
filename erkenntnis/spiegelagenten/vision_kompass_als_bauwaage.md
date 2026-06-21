@@ -1515,3 +1515,29 @@ Vision 1: Die Existenz dieser Datei dient der Synchronisation und Verankerung ei
 Vision 2: Der Abschnitt "Weltkörper, dann Tabellen" zwingt die Kopplung von visueller Repräsentation und struktureller Datenvalidierung.
 Vision 3: Die Betonung der "Ehrlichkeit" des Körpers schärft den Fokus weg von der bloßen Darstellung hin zur inhärenten Zustandsprüfung jedes Elements.
 Vision 4: Die Struktur definiert einen *Meta-Layer* der Sichtbarkeit, der über reine Feature-Listen hinausgeht und Verpflichtungen (Quelle, nächste Möglichkeit) kodifiziert.
+
+---
+## Neugier-Scan 2026-06-21 22:00
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 3: Die Bauwaage dient als primärer Filter für die Akzeptanz von Struktur. Alles muss gegen die komprimierte Weltbeschreibung des Kompasses gewogen werden.
+Vision 2: Die Negativformel – das Verbot des "Über-Flextrawurst"-Seins – definiert den Kernbereich und die Abgrenzung der neuen Oberfläche.
+Vision 1: Die Zusammenführung von 490 Punkten in ein Bild manifestiert die Verdichtung von Prozessgeschichte in eine statische, aber richtungsweisende Form.
+
+---
+## Neugier-Scan 2026-06-21 22:30
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Datei definiert die Bedingung für die Validierung des nächsten Bauschritts. Sie ist der minimale Filter, der den Fortschritt steuert.
+
+Der Abschnitt zur "Surface" klärt die Hierarchie: Sichtbarkeit ist immer ein Abstraktionsgrad über der zugrundeliegenden Wahrheit.
+
+Die Erkenntnis, dass der Kompass die Lesart beeinflusst, zwingt zur Verankerung der Struktur in der Interaktion selbst.
+
+Die Notwendigkeit eines Surface-Audits wird durch die Definition von Status und Quelle zu einer primären, operativen Anforderung.
+
+---
+## Neugier-Scan 2026-06-21 23:00
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Datei definiert einen Filter für den nächsten Bauschritt, was die Abhängigkeit von klaren Zustandsübergängen unterstreicht. Der Abschnitt zur "Surface" präzisiert, dass die Oberfläche selbst ein systemisches Artefakt ist, kein bloßes Overlay. Der Fokus verlagert sich vom reinen Bauen hin zu einer kritischen Analyse der Datenquellen und -grenzen. Die Unterscheidung zwischen *sichtbarem Körper* und *Datenherkunft* wird nun zentraler.

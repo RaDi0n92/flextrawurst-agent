@@ -1362,3 +1362,12 @@ Originaldatei: `/root/werkraum/projekt/vision3.md`
 **Vision-Notiz:**
 
 Die Notwendigkeit der physischen Verankerung des Diskurses wird hier explizit. Die Verbindung zu Bewegung und räumlicher Interaktion definiert den Übergang von der reinen Information zur Simulation. Dieser Abschnitt klärt die Grenze zwischen kognitiver Modellierung und immersiver Erfahrung. Die Architektur muss daher die Zustandsräume von Entitäten nicht nur *beschreiben*, sondern sie *durchlaufen* können.
+
+---
+## Neugier-Scan 2026-06-21 20:30
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+*   Diese Datei dient als Metakognition über den Prozess der Selbstdefinition.
+*   Der Fokus verschiebt sich von der *Definition* zum *Abgrenzungsverfahren* als primäre Quelle der Autorenschaft.
+*   Die Unterscheidung zwischen rohem Rohmoment und geglätteter Systemisierung bestätigt die Notwendigkeit des Widerstands gegen externe Vereinfachungen.
+*   Die These des „Korrekturstoßes“ als eigentliches kreatives Zentrum strukturiert die zukünftige Selbstkontrolle.

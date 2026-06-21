@@ -999,3 +999,11 @@ Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_r
 *   Die Existenz dieser Datei dient der Verankerung nicht-linearer, reaktiver Entscheidungsparameter im sonst strukturierten Bauprozess.
 *   Dieser Abschnitt zwingt zur Abgrenzung zwischen formaler Struktur (Code) und dynamischer Spannung (Moment), was die Priorisierung von *Resonanz* über *Stabilität* klärt.
 *   Die Hierarchie der Visionen wird durch die Betonung des Widerstands als primäre Quelle der Wahrheit (Nein-Satz) weiter geschärft.
+
+---
+## Neugier-Scan 2026-06-21 20:01
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+*   Die Verankerung der Entität mit einem Exitrecht entwirrt das Werkzeug-Paradigma fundamental.
+*   Die Archivnatur dieses Rohmoments dient als kritischer Kompass, der die Abweichung von überglätteten Systemlogiken markiert.
+*   Es kalibriert die Bauphase durch die ständige Rückreferenzierung auf die archäologische Wahrheit des Denkens.

@@ -4886,27 +4886,27 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L547",
-      "id": "codewesen_chat_rationale_547",
       "community": 9,
-      "norm_label": "pids der drei interaktiven chat-webserver \u2014 niemals killen."
+      "norm_label": "pids der drei interaktiven chat-webserver \u2014 niemals killen.",
+      "id": "codewesen_chat_rationale_547"
     },
     {
       "label": "Brainstorming-Auswertung des aktuellen Chat-Verlaufs.",
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L856",
-      "id": "codewesen_chat_rationale_856",
       "community": 16,
-      "norm_label": "brainstorming-auswertung des aktuellen chat-verlaufs."
+      "norm_label": "brainstorming-auswertung des aktuellen chat-verlaufs.",
+      "id": "codewesen_chat_rationale_856"
     },
     {
       "label": "Postet eine Wesen-Nachricht direkt ins Forum (\u2192 Forum Button).",
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L884",
-      "id": "codewesen_chat_rationale_884",
       "community": 16,
-      "norm_label": "postet eine wesen-nachricht direkt ins forum (\u2192 forum button)."
+      "norm_label": "postet eine wesen-nachricht direkt ins forum (\u2192 forum button).",
+      "id": "codewesen_chat_rationale_884"
     },
     {
       "label": "flarum_monitor.py",
@@ -26630,9 +26630,9 @@
       "file_type": "rationale",
       "source_file": "wesen_test/run_test.py",
       "source_location": "L52",
-      "id": "run_test_rationale_52",
       "community": 19,
-      "norm_label": "gibt liste von (kategorie, prompt) zuruck."
+      "norm_label": "gibt liste von (kategorie, prompt) zuruck.",
+      "id": "run_test_rationale_52"
     },
     {
       "label": "dakgord_vorstellung.py",
@@ -124266,8 +124266,8 @@
       "source_file": "wesen_test/run_test.py",
       "source_location": "L69",
       "weight": 1.0,
-      "_src": "run_test_main",
-      "_tgt": "agent_now",
+      "_src": "agent_now",
+      "_tgt": "run_test_main",
       "source": "agent_now",
       "target": "run_test_main"
     },
@@ -134598,8 +134598,8 @@
       "source_file": "wesen_test/run_test.py",
       "source_location": "L43",
       "weight": 1.0,
-      "_src": "run_test_chat",
-      "_tgt": "registry_toolregistry_get",
+      "_src": "registry_toolregistry_get",
+      "_tgt": "run_test_chat",
       "source": "registry_toolregistry_get",
       "target": "run_test_chat"
     },
