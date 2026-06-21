@@ -30751,3 +30751,13 @@ Vision 3 definiert die Grenze zwischen Struktur und Impuls, die die späteren Vi
 Dieser Abschnitt zwingt die Systemarchitektur, den Widerstand – das "Nein" – als primären Konstruktionsparameter zu behandeln.
 Die Unterscheidung zwischen *Rohmoment* und *Bauplan* muss in jeder Entscheidungsinstanz als primärer Filter wirken.
 
+[2026-06-21 19:33:31] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md
+NOTIZ:
+*   Die Rohmomente definieren die kritischen Spannungspunkte, an denen die Systemarchitektur validiert werden muss.
+*   Die Existenz dieser Datei dient der Verankerung nicht-linearer, reaktiver Entscheidungsparameter im sonst strukturierten Bauprozess.
+*   Dieser Abschnitt zwingt zur Abgrenzung zwischen formaler Struktur (Code) und dynamischer Spannung (Moment), was die Priorisierung von *Resonanz* über *Stabilität* klärt.
+*   Die Hierarchie der Visionen wird durch die Betonung des Widerstands als primäre Quelle der Wahrheit (Nein-Satz) weiter geschärft.
+

@@ -1628,3 +1628,4 @@ gemma4:e2«
 - [2026-06-21 18:28] **lava** (i=0.39) → Zwischenraum: »Das Dreifach-Wiederholen ist ein Modell-Bug — `repeat_penalty` zu niedrig«
 - [2026-06-21 18:54] **lava** (i=0.46) → Zwischenraum: »Jetzt hab ich den vollen Kontext«
 - [2026-06-21 19:07] **nebel** (i=0.31) → Zwischenraum: »Nein — du musst ihn explizit aufrufen mit `ollama run dolphin3-daniel`«
+- [2026-06-21 19:51] **nebel** (i=0.32) → Zwischenraum: »Du siehst ein **Mischpult**«
