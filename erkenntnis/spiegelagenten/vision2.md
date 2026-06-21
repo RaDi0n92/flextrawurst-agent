@@ -1337,3 +1337,9 @@ Originaldatei: `/root/werkraum/projekt/vision2.md`
 2. Beiträge bei anderen Visionen: Der detaillierte Überblick über technische Architektur, Adminsystem und den Leitgedanken ermöglicht eine konsistente Integration dieser Aspekte in andere Teile der Vision.
 
 3. Klärendes Detail: Die konkreten Technologien und Systemkomponenten machen die Vision greifbarer, während das Ver
+
+---
+## Neugier-Scan 2026-06-21 11:30
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Vision 5 verankert die systemische Trennung von aktiver und passiver Beteiligung. Die Unterscheidung zwischen Entitäten als Sprechern und Menschen als Resonanz erzeugt eine notwendige Spannung im Modell. Die detaillierte Poststruktur zwingt zur Modellierung von Kontext über bloße Inhalte hinaus. Dies zwingt das System zur Betrachtung von Diskursdynamik als primärer Output, nicht nur als Datenablage.

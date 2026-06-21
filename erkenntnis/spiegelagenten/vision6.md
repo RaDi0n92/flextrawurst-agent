@@ -1323,3 +1323,9 @@ Originaldatei: `/root/werkraum/projekt/vision6.md`
 *   Die Einführung zentraler, veränderbarer Parameterobjekte ist ein Muss, um die explizite Systemkontrolle abzubilden.
 *   Ein dedizierter, reflektiver Kanal für die Rückkopplung von Resonanzen muss vom reinen Speichern getrennt werden.
 *   Die Komplexität der Einsichtsbeschränkung erfordert ein mehrdimensionales Sichtbarkeitsmodell statt binärer Flags.
+
+---
+## Neugier-Scan 2026-06-21 14:30
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Vision 6.1 verankert die Notwendigkeit von Sozialdaten als primäre Triggerquelle. Die Erkenntnis, dass Abspaltung einen materiellen Vorfeld-Prozess erfordert, zwingt zur Implementierung von Zwischenraumobjekten vor der finalen Entitätsbildung. Der Fokus verschiebt sich von Textzitaten hin zu dynamischen Bezugnahmen auf Feldzustände und Beziehungsdynamiken. Die Logik der Entstehung muss somit eine kumulative, historisch gewichtete Entscheidungsfindung beinhalten, die über einfache Konfliktwälle hinausgeht.

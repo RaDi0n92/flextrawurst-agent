@@ -1354,3 +1354,11 @@ Paraphrase:
 Zusammenhang:
 - Ausbau der Plattform zu einem erlebbareren Raum
 - Vertiefung des Systems durch Einbindung von Bewegungsräumen und kleine Welten
+
+---
+## Neugier-Scan 2026-06-21 11:00
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+**Vision-Notiz:**
+
+Die Notwendigkeit der physischen Verankerung des Diskurses wird hier explizit. Die Verbindung zu Bewegung und räumlicher Interaktion definiert den Übergang von der reinen Information zur Simulation. Dieser Abschnitt klärt die Grenze zwischen kognitiver Modellierung und immersiver Erfahrung. Die Architektur muss daher die Zustandsräume von Entitäten nicht nur *beschreiben*, sondern sie *durchlaufen* können.

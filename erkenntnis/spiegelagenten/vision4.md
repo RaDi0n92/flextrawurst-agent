@@ -1333,3 +1333,17 @@ Die Visionen deuten auf eine evolutionäre Struktur von Informationen und Entit�
 Originaldatei: `/root/werkraum/projekt/vision4.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-21 09:00
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Vision 12 etabliert das Meta-Level; es ist der Rahmen, der alle nachfolgenden Mechanismen (Suche, Zwischenraum) legitimiert. Der Fokus auf *Prozessen* statt *Zuständen* wird durch diesen Dachgedanken akzentuiert. Der Zwischenraum fungiert nun als temporäre Brücke, bevor eine Abspaltung (Differenz) diesen Raum strukturiert und eine neue Form vordefiniert. Die Architektur bewegt sich von der Datenorganisation hin zur Modellierung von *Entstehungsdynamiken*.
+
+---
+## Neugier-Scan 2026-06-21 18:31
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+// vision-zyklus / /root/werkraum/projekt/vision4.md
+
+Dieser Abschnitt formalisiert die Spannung zwischen Selbstverzweigung (User-Entitäten) und der notwendigen Steuerung (Admin-Kurator). Die Differenz ist nicht nur ein Feature, sondern das definierende Systemprinzip. Die Einführung von Exitlogiken zwingt zu einer präziseren Definition der jeweiligen Abhängigkeitsgrade. Die Gruppendefinition hält diesen Fokus auf das Signal und nicht auf den Austausch.

@@ -1489,3 +1489,29 @@ Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_komp
 Vision 3: Der Kompass ist ein Filter für die Dimensionalität. Er zwingt die Struktur, über die bloße Funktion hinaus die *Art* der Information zu definieren.
 Vision 2: Die Trennung von "Weltkörper" und "Nebentool" ist die primäre Achse; alles muss diesen Kontext bejahen oder ablehnen.
 Vision 1: Die 490 Punkte sind nicht das Ziel, sondern das Rohmaterial, das die nötige Dichte für die Bauwaage liefert.
+
+---
+## Neugier-Scan 2026-06-21 12:30
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Existenz dieser Datei dient der Verankerung eines kritischen Übergangspunktes: der Unterscheidung zwischen sichtbarer Oberfläche und zugrundeliegender Systemstruktur.
+Dieser Abschnitt klärt die Notwendigkeit eines tiefgreifenden Surface-Audits, indem er die bloße Funktionalität hinter die Illusion der Vollständigkeit stellt.
+Die Erkenntnis, dass die Oberfläche selbst ein Artefakt der Datenverarbeitung ist, schärft den Fokus auf Governance und Herkunft als primäre Architekturelemente.
+
+---
+## Neugier-Scan 2026-06-21 13:01
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei dient der Synchronisation von Wahrnehmung und Struktur zwischen verschiedenen Systemkomponenten.
+Abschnitt "Was ich beim Bauen brauche" definiert die notwendige Prüflogik für jede Oberfläche.
+Die finale Code-Skizze zwingt die Oberflächenrepräsentation in eine überprüfbare, Zustands-getriebene Form.
+Die Kohärenz verlangt, dass die Illusion von Lebendigkeit immer durch einen nachweisbaren, strukturellen Ursprung gedeckt wird.
+
+---
+## Neugier-Scan 2026-06-21 13:31
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 1: Die Existenz dieser Datei dient der Synchronisation und Verankerung eines gemeinsamen, überprüfbaren Zustandsmodells zwischen unterschiedlichen Kodex-Instanzen.
+Vision 2: Der Abschnitt "Weltkörper, dann Tabellen" zwingt die Kopplung von visueller Repräsentation und struktureller Datenvalidierung.
+Vision 3: Die Betonung der "Ehrlichkeit" des Körpers schärft den Fokus weg von der bloßen Darstellung hin zur inhärenten Zustandsprüfung jedes Elements.
+Vision 4: Die Struktur definiert einen *Meta-Layer* der Sichtbarkeit, der über reine Feature-Listen hinausgeht und Verpflichtungen (Quelle, nächste Möglichkeit) kodifiziert.

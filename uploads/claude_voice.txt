@@ -1,1 +1,1 @@
-Also jedes Wesen bekommt eine eigene Seite — Solarius-Wesen unter /solarius/KrEaPPy, Codexium-Wesen unter /codexium/KrEaPPy. Die Seite zeigt das Wesen (Avatar, Profil, Organe) — ähnlich wie der Spawner, aber als Ansichts-/Profil-Seite. Eine Frage noch: Auf welchem Port sollen diese Seiten laufen? Eigener neuer Server, oder in flextrawurst (8787) integriert?
+Nein — kein kleineres dolphin installiert. Was du hast: dolphin Q4 (4.9 GB) und Q8 (8.5 GB), plus gemma4 in 2B und 4B. Ein kleineres dolphin wäre dolphin-phi (~2.7 GB) — aber das müsste erst gepullt werden.

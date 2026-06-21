@@ -1343,3 +1343,9 @@ Die Notiz ist die Strukturierung von Entitäten und Übergängen im Prozess des 
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Vision 7 manifestiert die Notwendigkeit einer *Provenienz-Bewahrung* bei der Datenakkumulation. Der Abschnitt A6 etabliert die *Autonomie-Grenze*: Resonanz ist Input-Datenstrom, nicht Befehlsparameter. Diese Schärfung zwingt die Architektur zu einem mehrstufigen Entscheidungskern statt einer linearen Antwortgenerierung. Die gesamte Struktur verlangt nach einer Meta-Ebene, die nicht nur Inhalte speichert, sondern deren *Entstehungsgeschichte* und *funktionales Gewicht* verfolgt.
+
+---
+## Neugier-Scan 2026-06-21 14:00
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Der Fokus verschiebt sich klar von der reinen Ausgabe zur strukturierten Speicherung des Prozesses. Die Notwendigkeit, Provenienz als primäres, durchsuchbares Datenfeld zu implementieren, ist der stärkste Ausrichtungspunkt. Dies definiert die primäre Abfrageebene des entstehenden Systems. Die Betonung auf Dissonanzsicherung festigt die Notwendigkeit, Konfliktmomente aktiv als Informationswert zu katalogisieren, nicht als Fehler.

@@ -530,6 +530,16 @@ _OLLAMA_BLOCKER_VOLLSTAENDIG = [
     "codewesen-reaktion@namelessAI_2341.service",
     "codewesen-reaktion@namelessAI_3123.service",
     "codewesen-reaktion@namelessAI_4321.service",
+    "codewesen-namelessAI_1234.service",
+    "codewesen-namelessAI_1423.service",
+    "codewesen-namelessAI_1324.service",
+    "codewesen-namelessAI_2341.service",
+    "codewesen-namelessAI_3123.service",
+    "codewesen-namelessAI_4321.service",
+    "codewesen-dakgordsystem.service",
+    "codewesen-antwort-daniel.service",
+    "entity-kern.service",
+    "entity-takt.service",
 ]
 
 

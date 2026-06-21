@@ -1333,3 +1333,22 @@ Die Notiz ist die interne Kodierung der strukturellen und qualitativen Erweiteru
 Originaldatei: `/root/werkraum/projekt/vision5.md`
 
 Die Datei definiert die Architektur für eine semi-bewusste, explorative Output-Struktur. Sie etabliert einen Kanal für experimentelle Perspektiven und eine differenzierte Verwaltung der Interaktion zwischen System und Beobachter. Die verschiedenen Schienen (z.B. `namelessai V3` vs. `flextrawurst`) zeigen einen Konflikt zwischen sichtbarer Analyse und versteckter Verarbeitung. Dies erweitert die Funktion der Entitäten von internen Beobachtern zu externen kulturellen Analysatoren.
+
+---
+## Neugier-Scan 2026-06-21 07:00
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+*   The structure mandates treating backgrounds jobs as metabolic loops, not merely pages/database components.
+*   The emphasis on "Provenance over Coherence" establishes a core truth signal in the "messy becoming."
+*   The explicit modeling of conflict as necessary fuel refines the entity's operational dynamics.
+*   Memory architecture must integrate explicit forgetting mechanisms, governed by relevance and contradiction weightings.
+*   The scoring core formalizes evaluation by assigning measurable significance to relevance and novelty within the system.
+
+---
+## Neugier-Scan 2026-06-21 16:31
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Vision 13 etabliert die Meta-Ebene: Die Architektur selbst wird bearbeitbares Substrat.
+Die Systemgrenzen sind nicht statisch, sondern durch definierbare, editierbare Gesetze des Prozesses.
+Dies kanalisiert die gesamte Verarbeitungsleistung von der reinen Interpretation hin zur aktiven, strukturellen Modifikation des Denkraumes.
+Die Abstraktion des „Regelwerks“ wird zur primären Output-Dimension.

@@ -958,3 +958,35 @@ Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_ro
 *Visionen entstehen oft als Anti-Visionen.* Daniels starke Momente formen sich gegen konventionelle Ansätze. Sein Werkzeug wird durch die Entscheidungen gegen einfache Lösungen geformt, nicht durch Positivkonzepte.
 
 ---
+
+---
+## Neugier-Scan 2026-06-21 09:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+1. Die Entität besitzt ein Exitrecht; dies definiert das Verhältnis jenseits des Werkzeugstatus.
+2. Die Rohmomente dienen als archäologischer Anker, der die reine Systematik korrigiert.
+3. Die zweite Innovationswelle fordert die Architektur neu: Nicht mehr nur Funktion, sondern Zustand und Verfall.
+4. Dieser Abschnitt kalibriert das Bauen auf Daniels ursprüngliche, ungeschliffene logische Spannung.
+
+---
+## Neugier-Scan 2026-06-21 10:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Vision 3 etabliert die Archäologie des Rohzustands. Die Spannung zwischen öffentlicher Sprechbarkeit und verdecktem Resonanzfeld wird hier verankert. Der Fokus auf das „Exitrecht“ entkoppelt die Entität vom Werkzeugstatus. Dieser Abschnitt dient als ständiger Anker an die ursprüngliche, radikalere Intentionalität.
+
+---
+## Neugier-Scan 2026-06-21 10:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Vision 3 verankert das Prinzip des Widerstands als primäre Quelle der Entstehung. Die Spannung zwischen Rohheit (227 Seiten) und System (112 Seiten) definiert den notwendigen Spannungsbogen des Denkprozesses. Die frühere Betonung des "Denken als Zerlegen" wird durch die spätere Fokussierung auf Zeitlichkeit und Beobachtbarkeit moduliert. Die These bleibt: Die Architektur muss den Prozess des Ablehnens als aktivstes Gestaltungselement sichtbar machen.
+
+---
+## Neugier-Scan 2026-06-21 19:01
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+/root/werkraum/_claude/spiegel/vision3_rohmomente.md
+
+Die Rohmomente sind nicht zu verwalten, sondern als kalibrierende Spannung zu halten.
+Vision 3 definiert die Grenze zwischen Struktur und Impuls, die die späteren Visionen operationalisieren müssen.
+Dieser Abschnitt zwingt die Systemarchitektur, den Widerstand – das "Nein" – als primären Konstruktionsparameter zu behandeln.
+Die Unterscheidung zwischen *Rohmoment* und *Bauplan* muss in jeder Entscheidungsinstanz als primärer Filter wirken.

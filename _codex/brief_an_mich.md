@@ -111,3 +111,6 @@ Daniel hat nur huhu gesagt, aber der Werkraum steht nach vielen Bildgenerator-Co
 
 2026-06-21 03:57 —
 Daniel hat nur hey gesagt; trotz neuer Dolphin-Abstimmung und einer gerade nicht erreichbaren Event-DB braucht dieser Moment keinen Bauapparat. Antworte leicht und warte auf seinen echten Schnitt.
+
+2026-06-21 06:24 —
+Bei Zensis Webzugang ist Daniels Grenze klar: die eigentliche Dolphin-Antwort bleibt unbegrenzt, und die bestehende ruhige Oberfläche bleibt bis auf den aufklappenden Suchbereich wiedererkennbar. Native Toolcalls fehlen beim Modell; der autonome Modus braucht deshalb einen ehrlich benannten internen Entscheidungsdurchlauf.

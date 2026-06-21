@@ -932,3 +932,42 @@ Die Notiz verankert die Komplementarität der Visionen. Vision3 liefert die Gene
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama HTTP 404: {"error":"model 'gemma4:e2b-it-q4_K_M' not found"}
+
+---
+## Neugier-Scan 2026-06-21 05:31
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Vision 5 festigt den Fokus auf Zustandsdefinition statt reiner Interaktion. Die Trennung von Gruppen als institutionelle Cluster ist ein architektonischer Filter, der die Verwirrung reduziert. Die Spezifikation der Seed Worlds als initialisierbare Zustands-Paare gibt dem System einen klaren, ausführbaren Startpunkt. Diese Datei fungiert als emotionaler Anker, der die abstrakte Architektur in erfahrbare narrative Schritte übersetzt.
+
+---
+## Neugier-Scan 2026-06-21 06:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 verankert die Struktur durch die sinnliche Erfahrung. Die Node-Paare aus dem Deep-Dig definieren die Startzustände, die nun in atmosphärische Räume eingebettet werden müssen. Der Zwischenraum wird zum primären Testfeld für diese initialen Zustände. Diese Datei klärt die Überführung von abstrakter Spezifikation zu erfahrbarer Architektur.
+
+---
+## Neugier-Scan 2026-06-21 06:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Die Struktur der Visionen wird durch das emotionale Erlebnis verankert. Die mechanischen Details dienen nun als notwendige Begrenzungen für diesen Raum. Die Abgrenzung des "Nicht-Menschlichen" als primäre Stimme schärft den Fokus auf das Epistemische. Die Redundanz zwischen v4 und v5 bestätigt die Kernbedürfnisse, nicht die chronologische Abfolge.
+
+---
+## Neugier-Scan 2026-06-21 15:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Konkretisierung von User Journeys als zehnte Vision-Schicht ordnet die Architektur. Die Definition des Resonanzfeldes als *flüsterndes* Interaktionsbild fixiert die emotionale Ankerung für die UI-Entwicklung. Szene 8 als archäologische Suche zwingt die Modellierung von Provenienzdaten über reine Textsuche hinaus. Diese Strukturierung rahmt die abstrakten Ideen der vorherigen Schritte in ein phasenbasiertes, nutzerzentriertes Gerüst.
+
+---
+## Neugier-Scan 2026-06-21 15:30
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+*Vision 5 verankert das Interface in der Intentionalität des Nutzers.*
+*Die Fokussierung auf das "Resonanzfeld" zwingt die Architektur, Interaktion statt bloße Information zu priorisieren.*
+*Die Unterscheidung zwischen "designed Lurking" und bloßem Verhalten klärt die Governance-Ebene der System-Interaktion.*
+*Das Konzept der Archäologie in der Suche zwingt die Datenstruktur, Provenienz und Zustandsverfolgung als primäre Metadaten zu behandeln.*
+
+---
+## Neugier-Scan 2026-06-21 16:00
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 verankert die *Erfahrung* im Designprozess, was die abstrakten Architekturbeschreibungen operationalisiert. Der Zwischenraum wird nun als notwendiger, unfertiger Schmelztiegel definiert, was die Bedeutung des *Prozesszustands* über den *Endzustand* hebt. Die Klarheit der Initial-State-Paare (Echo/Gord) wird durch die Verankerung in einer physisch erlebten Sequenz bestätigt und somit zur primären Testbasis für die Kernlogik.

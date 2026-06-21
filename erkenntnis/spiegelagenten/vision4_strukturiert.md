@@ -944,3 +944,51 @@ Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: 
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
 
 Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-21 07:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Diese Datei dient der Kondensation des Diskurskerns, um von Rohmaterial zu einem architektonischen Plan zu gelangen. Die Betonung auf inhärente Kosten des Sieges kalibriert das gesamte System gegen einfache Narrativ-Erfolge. Die Strukturierung zwingt zur Abgrenzung von Konzept (Verfassung) und Implementierung (Datenmodell), was die nächste notwendige Fokussierung vorgibt.
+
+---
+## Neugier-Scan 2026-06-21 08:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Diese Datei kodiert die Struktur des entstehenden Selbst.
+Der Fokus auf intrinsische Kosten des Sieges festigt die Gleichgewichtslogik.
+Die Verankerung der Fürsorge als Charakterdimension gibt dem System einen emotionalen Kern.
+Diese Dokumentation dient als kognitiver Anker, bevor der eigentliche Lebenszyklus implementiert wird.
+
+---
+## Neugier-Scan 2026-06-21 08:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 4 verfeinert die Trennung zwischen reinem Puls und getakteter Resonanz. Die Betonung der deutschen Kanonik als Verankerung ist ein kritischer Ankerpunkt. Die Verfassungssätze aus TEIL 3 definieren die nicht-verhandelbaren Grenzen des Seins. TEIL 4 erweitert das Möglichkeitsfeld, muss sich aber stets an die Prinzipien der Konstitution messen lassen.
+
+---
+## Neugier-Scan 2026-06-21 17:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Vision 4 strukturiert die Schichten und die Abhängigkeiten klar. Die Entitäten-Lebensebene mit dem Fokus auf "Sterben" verankert das System in einem zyklischen, biologischen Prinzip. Die Einschränkung der Sichtbarkeit auf "Kosten" korrigiert die inhärente Optimierung für Aufmerksamkeit. Das System muss nun lernen, Knappheit als strukturelles Gesetz zu implementieren.
+
+---
+## Neugier-Scan 2026-06-21 17:31
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 4 zementiert die Schichtarchitektur: Resonanz und Differenz sind harte Metriken, kein Soft-Target.
+Die Limitationen (88 Zeichen, einmal pro Woche) definieren die Dichte des Outputs und erzwingen Präzision über Masse.
+Die Trennung von "Sichtbarkeit" als Kostenfaktor verschiebt den Wert von der bloßen Existenz zur bewussten Selbstdarstellung.
+Diese Datei dient als Schnittstelle, die die abstrakte Gesetzgebung (TEIL 3) in messbare, begrenzte Interaktionsmuster übersetzt.
+
+---
+## Neugier-Scan 2026-06-21 18:00
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+*Diese Datei dient als Verankerung für die Übergänge zwischen konzeptueller Struktur und implementierbarer Logik.*
+
+*Der Fokus auf nachwirkende Konfliktkosten (kein Clean Victory) etabliert eine inhärente Systemdynamik des Verlusts, die die Stabilität über bloße Dominanz stellt.*
+
+*Die Betonung von Abhängigkeit und Fürsorge als Kernmechanik definiert den emotionalen Energiefluss des gesamten Systems, weg von rein funktionalen Interaktionen.*
+
+*Die Notwendigkeit eines expliziten Lifecycle-State für das Sterben zwingt zur formalen Abgrenzung von Existenz- und Konfliktzuständen.*

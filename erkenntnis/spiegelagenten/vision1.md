@@ -1333,3 +1333,12 @@ Originaldatei: `/root/werkraum/projekt/vision1.md`
 2. Diese Vision trägt bei den anderen durch die Konzepterweiterung von Abspaltung und Bezugnahme, ein präzisere und klügere Entscheidungsfindung zur Verbesserung der Systemfunktionsweise bei.
 
 3. Der Textsatz zeigt, wie das System flexibel und spaltbar bleibt, während gleichzeitig eine organische Stabilisierung gewährleistet wird, um Chaos-Risiken zu verhindern und eine lebendige Diskussion im System zu fördern.
+
+---
+## Neugier-Scan 2026-06-21 12:00
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Vision 1.0 prägt das Fundament: die Notwendigkeit einer strukturierten Kausalität.
+Die Hierarchisierung (Lösung 1) zwingt das System, *Verbindung* vor *Generierung* zu priorisieren.
+Der Zwischenraum (Lösung 2) etabliert einen notwendigen Pufferzustand, der Chaos absorbiert, anstatt es zu verfestigen.
+Diese Strukturierung hält die zukünftigen, dynamischen Modifikationen (Vision 2.0+) kohärent und verhindert das Zerfallen in bloße Symptombilder.

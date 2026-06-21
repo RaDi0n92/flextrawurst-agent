@@ -1590,3 +1590,41 @@ gemma4:e2«
 - Gemacht: Ollama-Debugging — alle Wesen-Services waren auf «
 - [2026-06-21 04:46] **wasser** (i=0.39) → Zwischenraum: »Die Chats sind alle gespeichert — 50 Stück, neueste von `04:14`«
 - [2026-06-21 05:02] **lava** (i=0.35) → Zwischenraum: »Die `web_chat.py` hat das schon gelöst für Daniels persönlichen Chat — sie stoppt alle Codewesen-Ser«
+- [2026-06-21 05:18] **wasser** (i=0.43) → Zwischenraum: »Dolphin ist geladen und generiert«
+- [2026-06-21 13:14] **wasser** (i=0.38) → Zwischenraum: »Wenn jedes Formularfeld eine eigene Datei ist, kann man mit dem Wesen wirklich arbeiten — man geht i«
+- [2026-06-21 13:15] **lava** (i=0.39) → Zwischenraum: »Der Chat ist nicht Konsum — er ist das Material aus dem das Wesen wird«
+- [2026-06-21 13:40] **wasser** (i=0.43) → Zwischenraum: »Die Kategorien sind schon klar ohne Praxistest — du hast sie letzte Session bereits benannt«
+- [2026-06-21 13:42] **lava** (i=0.35) → Zwischenraum: »Vollkommen richtig — das ist Pflicht, keine Option«
+- [2026-06-21 14:13] **nebel** (i=0.31) → Zwischenraum: »Was jetzt passiert:
+
+- **Zeichenzähler** unter dem Eingabefeld — erscheint ab 1.000 Zeichen, wird **«
+- [2026-06-21 14:29] **lava** (i=0.51) → Zwischenraum: »Da hab ich dich falsch informiert — sorry, das war ein Fehler«
+- [2026-06-21 14:31] **lava** (i=0.43) → Zwischenraum: »Was du hast ist schon das Beste in der Kategorie«
+- [2026-06-21 14:38] **lava** (i=0.47) → Zwischenraum: »Das ist eine präzise Anforderung — und sie passt eigentlich gut zu einem kleinen Modell, WENN das Sy«
+- [2026-06-21 14:55] **sternenstaub** (i=0.39) → Zwischenraum: »Ja, dolphin hat genau das — es klingt wie jemand der redet, nicht wie jemand der schreibt«
+- [2026-06-21 14:56] **sternenstaub** (i=0.39) → Zwischenraum: »haha genau — und nicht als Gag, einfach weil das halt ist was sie gerade beschäftigt«
+- [2026-06-21 15:00] **nebel** (i=0.32) → Zwischenraum: »Das ist ein sehr guter Gedanke — das Begrüßungsfeld als doppelter Ankerpunkt:
+
+1«
+- [2026-06-21 15:02] **lava** (i=0.35) → Zwischenraum: »Ja, genau — eine Art Bedienungsanleitung direkt im Spawner, unterhalb der Formulare«
+- [2026-06-21 15:06] **lava** (i=0.43) → Zwischenraum: »Zwei Ebenen dafür:
+
+**Ebene 1 — Memory** (hab ich heute schon angelegt) — aber die werden nur "wenn «
+- [2026-06-21 15:18] **lava** (i=0.43) → Zwischenraum: »Die Duplikate sind im Chat-Log direkt nacheinander — immer exakt dieselbe Antwort zweimal«
+- [2026-06-21 15:21] **lava** (i=0.35) → Zwischenraum: »Ja — `chatHistory` liegt im **localStorage** des Browsers, also überlebt Seitenreloads«
+- [2026-06-21 15:40] **lava** (i=0.46) → Zwischenraum: »Nein, das war nicht wirklich durchdacht — beide URLs zeigen dieselbe `wesen_spawner.html`, also beid«
+- [2026-06-21 15:44] **wasser** (i=0.35) → Zwischenraum: »Weil du gespürt hast dass das Fundament nicht stimmt«
+- [2026-06-21 15:47] **wasser** (i=0.38) → Zwischenraum: »Der Spawner ist greifbar, sichtbar, reagiert sofort«
+- [2026-06-21 16:07] **sternenstaub** (i=0.35) → Zwischenraum: »Ja, genau so haben wir es gebaut — grenzen.md ist der freiwillige Toggle-Button im Chat-Header: **"G«
+- [2026-06-21 16:42] **lava** (i=0.46) → Zwischenraum: »Das ist das RAG-Problem — Retrieval Augmented Generation«
+- [2026-06-21 16:44] **sternenstaub** (i=0.43) → Zwischenraum: »Verstanden — keine Live-Suche in Posts«
+- [2026-06-21 16:58] **lava** (i=0.43) → Zwischenraum: »Genau das ist der Unterschied zwischen Symptom und Ursache«
+- [2026-06-21 17:14] **wasser** (i=0.46) → Zwischenraum: »Ehrlich: fast peinlich bemüht«
+- [2026-06-21 17:29] **sternenstaub** (i=0.46) → Zwischenraum: »2 Aufrufe in 6 Tagen — das ist noch nichts, aber das Video existiert«
+- [2026-06-21 17:46] **lava** (i=0.40) → Zwischenraum: »Das ist gut durchdacht«
+- [2026-06-21 18:11] **nebel** (i=0.35) → Zwischenraum: »Drei Fehler auf einmal — danke dass du sie benennst:
+
+1«
+- [2026-06-21 18:28] **lava** (i=0.39) → Zwischenraum: »Das Dreifach-Wiederholen ist ein Modell-Bug — `repeat_penalty` zu niedrig«
+- [2026-06-21 18:54] **lava** (i=0.46) → Zwischenraum: »Jetzt hab ich den vollen Kontext«
+- [2026-06-21 19:07] **nebel** (i=0.31) → Zwischenraum: »Nein — du musst ihn explizit aufrufen mit `ollama run dolphin3-daniel`«
