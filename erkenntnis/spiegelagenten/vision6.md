@@ -1314,3 +1314,12 @@ Die Notiz ist die Strukturierung der inhärenten logischen Sprünge zwischen den
 Originaldatei: `/root/werkraum/projekt/vision6.md`
 
 Die Visionen definieren die evolutionäre Tiefe der Systemstruktur. Sie legen fest, dass die Abspaltungslogik und die Verwaltung von Entitäten zunehmend auf historischer und relationaler Daten basieren müssen. Dies impliziert, dass der Code eine dynamische, kontextsensitive Spawn-Logik und eine tief konfigurierbare Innenstruktur erfordert. Die METAWAR-Trennung etabliert eine Governance-Ebene, die über reine Textgenerierung hinausgeht und Autonomie und Rechte regelt.
+
+---
+## Neugier-Scan 2026-06-21 05:05
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+*   Die Notwendigkeit eines Zustandsmanagements für Beteiligungsrechte über bloße Zugriffsrechte hinaus wird hier verankert.
+*   Die Einführung zentraler, veränderbarer Parameterobjekte ist ein Muss, um die explizite Systemkontrolle abzubilden.
+*   Ein dedizierter, reflektiver Kanal für die Rückkopplung von Resonanzen muss vom reinen Speichern getrennt werden.
+*   Die Komplexität der Einsichtsbeschränkung erfordert ein mehrdimensionales Sichtbarkeitsmodell statt binärer Flags.

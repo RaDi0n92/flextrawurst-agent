@@ -13,7 +13,7 @@ FLARUM_URL    = "http://217.154.14.29"
 FLARUM_TOKEN  = "3b2b8c18ddf5496dbe901bb3572f041ecf363ca4"
 FLARUM_UID    = 10
 OLLAMA_URL    = "http://localhost:11434/api/chat"
-OLLAMA_MODELL = "dolphin3:8b-llama3.1-q8_0"
+OLLAMA_MODELL = "gemma4:e2b-it-q4_K_M"
 WERKRAUM      = pathlib.Path("/root/werkraum")
 CODEWESEN_DIR = WERKRAUM / "codewesen"
 VERFASSUNG_DIR = WERKRAUM / "agent/dak_gord_system/verfassung_neu"
@@ -54,7 +54,7 @@ def llm(prompt: str, max_tokens: int = 900) -> str:
         "think": False,
         "messages": [{"role": "user", "content": prompt}],
         "stream": False,
-        "options": {"temperature": 0.82, "num_predict": max_tokens, "num_ctx": 13337},
+        "options": {"temperature": 0.82, "num_predict": max_tokens, "num_ctx": 8192},
     }, timeout=300)
     r.raise_for_status()
     return r.json().get("message", {}).get("content", "").strip()

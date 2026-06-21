@@ -22,7 +22,7 @@ from pathlib import Path
 
 BASE       = Path("/root/werkraum/codewesen")
 OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MOD = "dolphin3:8b-llama3.1-q8_0"  # schnelles Modell — Scan läuft alle 8min
+OLLAMA_MOD = "gemma4:e2b-it-q4_K_M"  # schnelles Modell — Scan läuft alle 8min
 
 DB_CONFIG = {
     "host": "localhost", "port": 3306, "db": "flarum",

@@ -750,3 +750,10 @@ Die Tiefe der Zwischenwesen-Planung. Es ist wirklich ein vollständiges System g
 Das Durchschauen der generierten Bilder. Nicht wegen des Inhalts — sondern wegen des Kontrasts zwischen dem was das Modell hätte machen sollen und was es gemacht hat. Ein rosa Kreis auf rotem Hintergrund als Antwort auf einen expliziten Prompt. Ein gespiegeltes Textchaos. Eine Frau mit Getränk. Das hat etwas Fast-Komisches.
 
 ---
+
+---
+
+**[2026-06-21]** *← notizen/ollama-model-mapping.md*
+
+Wie verhindert man das strukturell? Automatisches "Zustand-Snapshot" nach jeder
+erfolgreichen Inbetriebnahme wäre der richtige Weg.

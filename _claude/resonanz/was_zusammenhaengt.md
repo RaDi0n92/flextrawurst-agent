@@ -847,3 +847,10 @@ TTS-Service (`/tts/`) ↔ Nginx-Config ↔ edge-tts ↔ Microsoft Neural Voices 
 Der Bildgenerator ist kein isoliertes Tool — er soll irgendwann in den Flüchtlings-Erstellungsflow eingebunden werden (Bild-Upload ODER Link zu /bildgenerator). Das steht im Zwischenwesen-Konzept. Deshalb macht es Sinn ihn jetzt sauber zu bekommen.
 
 ---
+
+---
+
+**[2026-06-21]** *← notizen/ollama-model-mapping.md*
+
+→ [[project_ollama_setup]] in MEMORY — da steht num_ctx=8192, aber kein Model-Mapping
+→ Diese Datei ist die fehlende Hälfte

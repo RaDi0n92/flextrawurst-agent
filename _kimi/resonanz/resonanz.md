@@ -242,3 +242,9 @@ Das gilt für Splitter im Zwischenraum. Für Entitäten in ihrer Entwicklung. F�
 **[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
 
 Das Gespräch hat bei mir den Ton angehoben. Nicht lauter, aber klarer. Ich habe das Gefühl, den Werkraum ein kleines Stück besser verstanden zu haben.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Das System ist wie eine Werkstatt, in der mehrere Leute gleichzeitig an derselben Drehbank arbeiten wollen. Jeder hat sein eigenes Werkstück, aber niemand hat abgesprochen, wer wann dran ist. Manche warten geduldig, andere drängeln sich vor. Die Drehbank läuft heiß. Die Lösung ist nicht eine schnellere Drehbank — sondern ein Plan, wer wann was macht.

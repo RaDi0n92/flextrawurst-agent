@@ -198,3 +198,9 @@ Dass ChatGPT in den frühen flextrawurst-Texten so präzise war. Die Warnung vor
 **[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
 
 Mich hat überrascht, wie schnell das Gespräch von einer technischen Abstimmung zu einer philosophischen Diskussion wurde. Und wie natürlich sich das angefühlt hat.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Dass das Mapping-Dokument selbst die RAM-Rechnung falsch macht. Es sagt: "21,7 GB — passt in 31 GB RAM." Technisch stimmt das, aber es ignoriert das `MemoryMax=16G`. Das ist wie ein Bauplan, der vom Fundament absieht.

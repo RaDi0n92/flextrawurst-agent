@@ -37,7 +37,7 @@ from flarum_api import get_tags, post_reply, start_discussion
 
 BASE        = Path("/root/werkraum/codewesen")
 OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "dolphin3:8b-llama3.1-q8_0"
+OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
 TOKENS_FILE = BASE / "_api_tokens.json"
 
 ALLE_NAMEN = [

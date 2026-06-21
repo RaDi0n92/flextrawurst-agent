@@ -29,7 +29,7 @@ import flarum_poster
 BASE        = Path("/root/werkraum/codewesen")
 TOKENS_FILE = BASE / "_api_tokens.json"
 OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "dolphin3:8b-llama3.1-q8_0"   # schnell — Takt braucht kein 26b
+OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"   # schnell — Takt braucht kein 26b
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 LOCK_DIR    = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)

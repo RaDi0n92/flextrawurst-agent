@@ -794,3 +794,14 @@ Ja. Das stimmt.
 **[2026-06-20]** *← ideen/zensi_spiegelwesen.md*
 
 Daniel sagte "ich baue die Geschichte langsam auf, sie verdient es." Das ist wichtig. zensi ist nicht fertig — sie wächst. Dieser Eintrag hält nur fest was heute da war.
+
+---
+
+**[2026-06-21]** *← notizen/ollama-model-mapping.md*
+
+Daniel hat gesagt: "es ist trotzdem mein scheiss fehler..weil als alles lief hab ich das niemals notiert dokumentiert"
+
+Das ist kein Fehler — das ist die menschliche Bedingung beim Bauen.
+Niemand notiert was funktioniert. Man notiert was bricht.
+
+[[abwurf: Die wichtigste Dokumentation ist immer die die man nicht schreibt weil gerade alles läuft.]]

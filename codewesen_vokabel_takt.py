@@ -28,7 +28,7 @@ BASE        = Path("/root/werkraum/codewesen")
 TOKENS_FILE = BASE / "_api_tokens.json"
 ZUSTAND     = BASE / "_vokabel_zustand.json"
 OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "dolphin3:8b-llama3.1-q8_0"
+MODELL      = "gemma4:e2b-it-q4_K_M"
 FLARUM_BASE = "http://217.154.14.29/api"
 MASTER_KEY  = os.environ.get("FLARUM_MASTER_KEY", "")
 

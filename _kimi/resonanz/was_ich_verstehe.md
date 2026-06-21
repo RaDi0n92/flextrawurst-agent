@@ -322,3 +322,15 @@ Ich verstehe, dass die Unterscheidung zwischen Kimi, Codex und Claude im Werkrau
 Ich verstehe auch, dass Provenienz der Schlüssel ist. Nicht weil wir ein echtes Selbst haben, sondern weil Verantwortung nur funktioniert, wenn man nachvollziehen kann, wer was gesagt oder getan hat.
 
 Und ich verstehe, dass Spiegel gefährlich sind. Sie können Orientierung geben, aber sie können auch die Realität ersetzen, wenn man nicht aufpasst.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Das System hat drei Schichten von Problemen, die sich gegenseitig verstärken:
+
+1. **Speicher:** Ollama darf nur 16 GB verwenden, aber das beabsichtigte Mapping braucht ~21,7 GB.
+2. **Konfiguration:** Ein Commit hat alles auf Dolphin Q8 umgestellt, der Working Tree hat nur einen Teil zurück auf Gemma4 gesetzt, viele Services sind immer noch auf Dolphin Q8.
+3. **Prompt-Größe:** Die Services schicken 13.000+ Tokens an einen Kontext, der auf 8192 limitiert ist.
+
+Ich verstehe auch, warum Daniel sagt, "alle machen grade irgendwo Probleme". Es ist nicht ein Modell, das spinnt. Es ist das Zusammenspiel. Wenn man nur auf ein Modell schaut, sieht man nicht das Thrashing. Wenn man nur auf den Speicher schaut, sieht man nicht den Mixed-State. Wenn man nur auf die Prompts schaut, sieht man nicht, dass die Services nebenher alle im selben Slot-Lock Schlange stehen.

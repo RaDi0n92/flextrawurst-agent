@@ -1183,3 +1183,9 @@ Die doppelte Shadow-Route, der veraltete Rechteintegrationstest und die freie Au
 Die Gespräche hängen mit den Reviewdateien zusammen, weil dieselbe Grenze dort praktisch sichtbar wird: Was ist echte Laufzeit, was ist nur Beschreibung, was ist Herkunft, was ist gespiegelt, was darf als Wirkung gelten?
 
 Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rollen unsauber trennt, neigt nicht nur zu philosophischer Unschärfe, sondern auch zu handfesten Risiken: falsche Auth, vermischte Autorenschaft, unklare Exporte, falsch interpretierte Spiegel.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+`OLLAMA_MAX_LOADED_MODELS=3`, `MemoryMax=16G`, `keep_alive=-1`, die einzige `slot_0.lock`, Zensis `num_predict=444444`, `RuntimeMaxSec=1800` und der parallele Bildgenerator hängen kausal zusammen. Keiner dieser Werte allein erklärt die Nacht. Zusammen erzeugen sie Speicherüberhang, Warteschlangenstau, Abbrüche und anschließend synchrone Neustarts.

@@ -364,3 +364,15 @@ Die Vision ist nicht die oberste Schicht. Sie ist die **Rückseite** — das, wa
 - **Identitäts-Schicht:** Wiedererkennbare Stimmen, Stile, Aufgabenbereiche
 - **Spiegel-Schicht:** Reflexionen über alles darunter
 - **Regel-Schicht:** AGENTS.md und die Konventionen, die verhindern, dass die Spiegel-Schicht alles überwuchert
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+1. **Hardware/RAM/Swap** — die physische Grenze.
+2. **systemd/Ollama** — der Ressourcen-Allocator.
+3. **Modelle** — die belegten Ressourcen.
+4. **Services** — die Clients.
+5. **Prompts** — die Last pro Anfrage.
+6. **Slot-Lock/Queue** — die (unvollständige) Koordinations-Ebene.
+7. **Mapping-Dokument** — die Intention, die noch nicht vollständig umgesetzt ist.

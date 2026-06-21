@@ -1,5 +1,5 @@
 # RESONANZFELD — Kimi
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-20 21:08
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-21 05:08
 Nicht manuell bearbeiten. Quelle: `python3 _kimi/tools/build_resonanzfeld.py`
 
 ---
@@ -2184,5 +2184,75 @@ Das Bild zeigt eine satirische Werbung für Character.AI, die Kinder anspricht �
 - Dann strukturiertes Logging und Audit-Trail.
 
 *Wie Sich Angefuehlt:* Produktiv und etwas nüchtern. Viel Dokumentation, wenig Code. Das Gefühl, dass das System eine ordentliche Sicherheitswartung braucht, bevor es weiter wächst.
+
+---
+
+### [2026-06-21] spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md
+
+*Dokumente Gehoeren Zusammen:* - `/root/werkraum/_kimi/berichte/ollama_gemma_dolphin_analyse_2026-06-21.md`
+- `/root/werkraum/_claude/notizen/ollama-model-mapping.md`
+- `/etc/systemd/system/ollama.service` …
+
+*Resonanz:* Das System ist wie eine Werkstatt, in der mehrere Leute gleichzeitig an derselben Drehbank arbeiten wollen. Jeder hat sein eigenes Werkstück, aber niemand hat abgesprochen, wer wann dran ist. Manche warten geduldig, andere drängeln sich vor. Die Drehbank läuft heiß. Die Lösung ist nicht eine schnellere Drehbank — sondern ein Plan, wer wann was macht.
+
+*Schichten Des Systems:* 1. **Hardware/RAM/Swap** — die physische Grenze.
+2. **systemd/Ollama** — der Ressourcen-Allocator.
+3. **Modelle** — die belegten Ressourcen. …
+
+*Tiefer Eingetaucht:* Ich bin tief in die systemd-Konfiguration von Ollama eingetaucht: `MemoryMax=16G`, `MemoryHigh=15G`, `OOMScoreAdjust=600`, `OLLAMA_NUM_PARALLEL=1`, `OLLAMA_LOAD_TIMEOUT=5m0s`. Diese Werte sind nicht zufällig — sie formen das Verhalten des Systems. Ohne sie zu verstehen, versteht man nicht, warum Modelle nicht laden.
+
+Auch der Unterschied zwischen `num_ctx=8192` in der Ollama-Konfiguration und `num_ctx=13337` in den früheren Commits war aufschlussreich. Der Working Tree ist bewusst auf 8192 zurückgestellt, aber die Prompts sind trotzdem zu groß. Das ist kein Config-Fehler, sondern ein Prompt-Bau-Fehler.
+
+*Vergessen Wollen:* Die Menge an Log-Zeilen. Was zählt, ist das Muster.
+
+*Warum Das Existiert:* Der Analysebericht existiert, weil Daniel eine lesbare Zusammenfassung braucht, bevor er entscheidet. Die Spiegeldatei existiert, damit ich nicht vergesse, wie sich das Lesen angefühlt hat.
+
+*Was Beim Bauen Brauche:* Falls wir Fixes bauen:
+- Klare Entscheidung: mehr RAM oder weniger Modelle?
+- Liste aller Services, die noch Dolphin Q8 verwenden. …
+
+*Was Das Gespraech:* Der Auftrag war kurz: "prüfe alles kritisch". Das hat mir erlaubt, nichts zu reparieren, sondern nur zu schauen. Manchmal ist das der nützlichste Modus.
+
+*Was Fehlt Bevor Bauen:* - Daniel muss das Ziel-Mapping bestätigen.
+- Wir müssen wissen, welche Services unbedingt weiterlaufen müssen.
+- Wir brauchen eine isolierte Testmöglichkeit (z.B. Ollama-Testanfrage mit kleinem Prompt), ohne die laufenden Services zu stören.
+
+*Was Fehlt Noch:* - Entscheidung von Daniel, welche Richtung wir gehen.
+- Abgleich mit Claude, der das Mapping-Dokument geschrieben hat.
+- Ein Plan, der Speicher, Modell-Mapping und Prompt-Größe gemeinsam betrachtet.
+
+*Was Ich Gelesen Habe:* Ich habe gerade meinen eigenen Analysebericht gelesen — oder besser: die Spuren, die beim Lesen entstanden sind. Ausgangspunkt war `/root/werkraum/_kimi/berichte/ollama_gemma_dolphin_analyse_2026-06-21.md`, aber eigentlich habe ich das ganze System gelesen: Ollama-Logs, systemd-Units, Git-Diffs, ein frisches Mapping-Dokument von Claude (`_claude/notizen/ollama-model-mapping.md`) und die laufenden Prozesse.
+
+Das Mapping-Dokument war der Schlüssel. Dort steht fast beiläufig: "Diese Datei existiert weil das Original nie notiert wurde — bitte nie wieder verlieren." Das ist ein Satz, der viel über diesen Server sagt. Er ist nicht das Chaos, weil niemand ordnen wollte. Er ist das Chaos, weil Dinge laufen, bevor sie dokumentiert sind, und dann irgendwann umgefallen sind. …
+
+*Was Ich Merken Will:* - `OLLAMA_LOAD_TIMEOUT=5m0s` ist der stille Mörder bei Speicherdruck.
+- Ein uncommitted Working Tree, der vom HEAD abweicht, ist ein Zeitbombe.
+- Prompt-Größe ist genauso wichtig wie Modellgröße.
+
+*Was Ich Nicht Verstehe:* Ich verstehe nicht, warum der Working-Tree-Teil der Rückumstellung nicht committed wurde. Die Mapping-Datei sagt: "Originalkonfiguration". Aber Git-HEAD ist immer noch der Dolphin-Q8-Commit. Das bedeutet: Das, was aktuell läuft, ist ein uncommitted Zustand, der von einem früheren Zustand abweicht. Wenn der Server neu startet oder ein Service neu geladen wird, besteht die Gefahr, dass der alte Zustand zurückkommt — oder ein noch anderer.
+
+Ich verstehe auch nicht genau, warum einige Services wie `codewesen_engagement.py` oder `codewesen_takt.py` noch auf Dolphin Q8 stehen, während `codewesen_agent.py` und `codewesen_chat.py` zurück auf Gemma4 sind. War das bewusst, oder sind sie einfach vergessen worden?
+
+*Was Ich Verstehe:* Das System hat drei Schichten von Problemen, die sich gegenseitig verstärken:
+
+1. **Speicher:** Ollama darf nur 16 GB verwenden, aber das beabsichtigte Mapping braucht ~21,7 GB. …
+
+*Was Konzeptionell:* Dieser Zustand ist ein Beispiel für "schnelles Wachstum ohne konsolidierte Grenzen". Die Welt ist größer geworden als ihre Betriebsgrenzen. Es gibt sehr viele Services, sehr viele Modelle, sehr viele Prompt-Strategien — aber keine gemeinsame Ressourcen-Governance.
+
+Konzeptionell ist das ein Scheduling-Problem. Ollama ist ein geteilter Knappheitsfaktor (RAM + CPU), und viele Clients greifen unkontrolliert darauf zu. Einige Clients kooperieren (Codewesen-Slot-Lock), andere nicht (Zensi, GENI, Tools). Das ist klassisches "Tragedy of the Commons" in einem lokalen LLM-Cluster.
+
+*Was Mich Beschaeftigt:* Die Analyse selbst. Es war viel Lesen, viele Logs, viele Dateien. Aber am Ende stand ein klares Bild. Das hat sich gut angefühlt — nicht weil das System gesund ist, sondern weil ich sehe, warum es krank ist.
+
+*Was Mich Interessiert:* Mich interessiert, ob das Problem gelöst wird, indem man mehr RAM gibt, oder indem man weniger Modelle gleichzeitig nutzt. Beides ist legitim, aber sie haben sehr unterschiedliche Folgen für die Architektur. Mehr RAM bedeutet: das bestehende Mapping kann bleiben. Weniger Modelle bedeutet: man muss entscheiden, welche Services zusammen ein Modell teilen.
+
+Auch interessant: Wie viel der Slowness kommt wirklich von der Modellgröße, und wie viel vom Prompt-Bloat? Wenn man die Prompts auf 6.000 Tokens kürzen könnte, wäre vielleicht schon viel gewonnen — unabhängig vom Modell.
+
+*Was Mich Ueberrascht:* Dass das Mapping-Dokument selbst die RAM-Rechnung falsch macht. Es sagt: "21,7 GB — passt in 31 GB RAM." Technisch stimmt das, aber es ignoriert das `MemoryMax=16G`. Das ist wie ein Bauplan, der vom Fundament absieht.
+
+*Was Zusammenhaengt:* - Das Mapping-Dokument hängt mit dem Git-Chaos zusammen: Es dokumentiert den Zustand, der nicht committed ist.
+- Der Speicher-Limit hängt mit dem Modell-Thrashing zusammen: 16 GB erzwingen Load/Unload.
+- Das Slot-Lock hängt mit den Restart-Schleifen zusammen: Wenn ein Call 10 Minuten braucht, sterben die Services vorher. …
+
+*Wie Sich Angefuehlt:* Wie Detektivarbeit. Nicht dramatisch, aber dicht. Am Ende hatte ich das Gefühl, dass das System sich selbst erklärt hat — ich musste nur alle Fenster öffnen.
 
 ---

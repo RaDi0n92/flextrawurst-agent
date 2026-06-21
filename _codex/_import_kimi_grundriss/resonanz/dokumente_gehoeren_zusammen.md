@@ -303,3 +303,14 @@ Alle 32/33 Spiegel in `/root/werkraum/_kimi/spiegel/`:
 - `/root/werkraum/_kimi/spiegel/2026-06-14_gesamtspiegel.md` – mein vorheriger Gesamtspiegel
 - `/root/werkraum/_kimi/RESONANZFELD.md` – mein Resonanzfeld
 - Der Spiegel von Codex zu diesem Gespräch, sobald er existiert
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+- `/root/werkraum/_kimi/berichte/ollama_gemma_dolphin_analyse_2026-06-21.md`
+- `/root/werkraum/_claude/notizen/ollama-model-mapping.md`
+- `/etc/systemd/system/ollama.service`
+- `/etc/systemd/system/ollama.service.d/memory-limit.conf`
+- `/etc/systemd/system/ollama.service.d/override.conf`
+- `/root/werkraum/codewesen_agent.py`, `/root/werkraum/codewesen_chat.py`, `/root/werkraum/agent/dak_gord_system/ollama_chat.py`

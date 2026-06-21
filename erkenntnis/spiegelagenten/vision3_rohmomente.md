@@ -911,3 +911,50 @@ Die Datei existiert, um den Prozess der Entstehung von Visionen und Autorschaft 
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
 
 Die Notiz lautet: Das Dokument adressiert die Notwendigkeit einer bewussten Kalibrierung der Rohmomente, da Wissen über sie oft unreflektiert bleibt. Der Kern verschiebt sich von "Schöpfungsakt" zu "Widerstand als Entstehungsmoment". Es fehlt eine priorisierte, kuratierte Liste zukünftiger Rohmomente zur Steuerung der nächsten Innovationsstufe. Diese Lücke erfordert eine neue Strukturierung der Daten.
+
+---
+## Neugier-Scan 2026-06-20 23:39
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Datei existiert zur Dokumentation der verschiedenen Entwicklungsstufen und Ausprägungen des Systems. Sie dient als Referenz für die Evolution und den aktuellen Status der Architektur.
+
+Der Überschneidungszusammenhang zeigt, dass bereits im frühen Stadium der Entwicklung Entscheidungen getroffen wurden, welche die Grundlagen für spätere Entwicklungen legten. Die Differenzierung in zwei Formate (227-Seiten-Rohform und 112-Seiten-System) repräsentiert möglicherweise alternative Ansätze zur Struktur und Organisation des Materials.
+
+Der zentrale Satz scheint eine Beschreibung eines Denkstils zu sein, der sich auch auf die Architektur anwenden lässt. Das Konzept von flextrawurst könnte darauf basieren, falsche Vereinfachungen durch Abwehr zu hinterfragen und somit ein dynamisches, anpassungsfähiges System zu schaffen.
+
+Die spätere Innovationswelle bringt die Zeitlichkeit ins Spiel und erweitert den Blick auf das System. Sie kann als eine Verschiebung des Fokus von Raum zur Metabolität interpretiert werden.
+
+Der konzeptionelle Gehalt legt Wert auf Autorenschaft im Widerstand, was ein anti-systematisches Element in der Dokumentation impliziert. Die Unterscheidung zwischen Rohheit und System zeigt einen Widerspruch innerhalb des eigenen Systems – möglicherweise eine Reflexion darüber, dass echte Innovation oft unvorhersehbar ist.
+
+Die Beschäftigung mit den Entscheidungen, die aus einem Nein-Satz entstanden sind, reflektiert möglicherweise das Prinzip der flexiblen und anpassungsfähigen Architektur. Jede Ablehnung kann als Chance gesehen werden, neue Wege zu eröffnen und alternative Lösungen zu erkunden.
+
+Die Datei reflektiert somit den stetigen Prozess des Wachstums und der Weiterentwicklung des Systems. Sie bietet einen Einblick in die verschiedenen Entwicklungsphasen und zeigt, dass selbst kleinere Entscheidungen langfristige Auswirkungen haben können.
+
+---
+## Neugier-Scan 2026-06-21 00:13
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Ich wollte mich dieser Datei ruhig annähern, aber der Lauf ist fehlgeschlagen: Ollama-Timeout nach 720s
+
+---
+## Neugier-Scan 2026-06-21 01:15
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+--- 
+## 2026-05-31: Vision und Rohmomente
+
+*Die stärksten Ideen entstehen durch Widerstand.* Daniel blockiert Standardlogiken in seinen frühen Rohentwürfen. Sein "Nein" formt die Essenz — nicht glatte Konzepte, sondern Korrekturstöße gegen Vereinfachungen.
+
+## 2026-05-31: Autorenschaft und Ursprung
+
+*Daniels Autorenschaft sitzt im *Widerstand gegen falsche Vereinfachung.* Seine stärksten Beiträge kommen als Ablehnungen von vorgefassten Lösungen. Dieser Text analysiert, wo genau diese "Neins" liegen.
+
+## 2026-05-31: Von Struktur zur Lebensqualität
+
+*Der Übergang von einer 'strukturierten Plattform' zu einem lebenden Meta-System' ist entscheidend.* Hier wird deutlich, wie Daniel sein Projekt nach dem Verständnis der eigentlichen Logik weiterentwickelt.
+
+## 2026-05-31: Vision als Anti-Vision
+
+*Visionen entstehen oft als Anti-Visionen.* Daniels starke Momente formen sich gegen konventionelle Ansätze. Sein Werkzeug wird durch die Entscheidungen gegen einfache Lösungen geformt, nicht durch Positivkonzepte.
+
+---

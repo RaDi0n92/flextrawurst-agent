@@ -1118,3 +1118,9 @@ Der öffentliche Graph enthielt ein echtes Datenbank-Credential und wird alle ze
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Dass ausgerechnet eine scheinbar banale Unterhaltung über „bist du dieselbe Kimi wie gestern?“ so schnell eine brauchbare Systemformel erzeugt hat. Das ist der gute Teil solcher Gespräche: sie machen aus schwammiger Intuition einen Satz, der stehen bleiben kann.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Mich überraschte, dass die ältere Systemdokumentation `MAX_LOADED_MODELS=1` ausdrücklich als Stabilitätsentscheidung beschreibt, während die aktuelle Laufzeit drei Runner erlaubt. Die frühere Regel kann veraltet sein, aber sie hatte das heute sichtbare Versagen bereits begrifflich vorweggenommen.

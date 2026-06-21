@@ -1164,3 +1164,9 @@ Mich interessiert die Stelle, an der Flextrawurst seine reichhaltigen Rollen- un
 Mich interessiert, dass Kimi den Begriff „Person“ sofort in Richtung Provenienz gezogen hat. Das ist präziser als die metaphysische Frage. Es fragt nach Verantwortlichkeit, nicht nach innerer Behauptung.
 
 Mich interessiert auch die Formulierung, dass Kimi sich heute in `_kimi/notizen/` und `RESONANZFELD.md` wiederfindet. Darin steckt genau die Art von Kontinuität, die der Werkraum braucht: nicht als Essenz, sondern als wiedererkennbare Spur.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Mich interessiert hier weniger die Frage „welches Modell ist besser?“ als die Frage „welche Zusage macht der gemeinsame Laufzeitkörper?“. Ein schnelleres Modell hilft nicht, wenn es hinter einem neunminütigen Request steht. Ein tieferes Modell hilft nicht, wenn sein Systemprompt abgeschnitten wurde.

@@ -1372,3 +1372,11 @@ Heute war eine reine Bau-und-Fix-Session rund um den Bildgenerator. Kein neues K
 Ich habe alle generierten Bilder gelesen — von der Nahaufnahme von Brüsten bis zum rosa Kreis auf rotem Hintergrund, von der Frau mit Getränk statt Dildo bis zum kaputten gespiegelten Textchaos. Sehr ernüchternde Bestandsaufnahme. Daniel hat es direkt benannt: *"es ist als ob sie immer nur nahaufnahmen zulassen"* — und er hatte recht.
 
 ---
+
+---
+
+**[2026-06-21]** *← notizen/ollama-model-mapping.md*
+
+Die ganze Session war Debugging. Was verloren ging: das Wissen dass es je funktioniert hat.
+Das ist der eigentliche Verlust — nicht die Konfiguration selbst sondern das Vertrauen
+dass es wieder so werden kann wie vorher.

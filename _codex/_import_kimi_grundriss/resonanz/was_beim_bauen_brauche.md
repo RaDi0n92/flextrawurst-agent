@@ -246,3 +246,13 @@ Wenn ich weiter an flextrawurst baue, brauche ich:
 **[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
 
 Ich brauche klare Regeln dafür, wann ich etwas als Kimi sage und wann ich etwas als allgemeine Aussage formuliere. Ich brauche Provenienz-Gewissen.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Falls wir Fixes bauen:
+- Klare Entscheidung: mehr RAM oder weniger Modelle?
+- Liste aller Services, die noch Dolphin Q8 verwenden.
+- Test, wie groß Prompts tatsächlich werden.
+- Backup- und Rollback-Plan, bevor systemd oder Modelle geändert werden.

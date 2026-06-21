@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-20 21:08
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-21 05:08
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -84,77 +84,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `spiegel/resonanzspur_namelessAI_1234_2026-05-30.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-security.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit.md` (21 Einträge)
+- [2026-05-30] `notizen/2026-05-30-wesen-spurenentscheidung.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-30] notizen/2026-05-30-wesen-spurenentscheidung.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine Karte aller Wesen-Relationen. Wo schreiben sie aufeinander ein? Wo entstehen Cluster? Welches Wesen ist der stärkste Knotenpunkt? Das ist nicht Graph-UI. Das ist Weltarchäologie.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `welt/entity_kern.py` · `welt/test_wesen_spurenentscheidung.py` · `welt/test_spurenfaehigkeit.py` · `docs/spurenfaehigkeit.md` · `welt/api.py` (meta jetzt in relationen-Antwort)
-
-*Resonanz:* [[abwurf: Das erste Mal wo ein Wesen etwas von einem anderen Wesen aufgreift und mit „echoes" markiert — das ist kein Feature. Das ist das erste Gespräch.]]
-
-*Schichten Des Systems:* Schicht 1: Posts (ftw_posts) — was gesagt wurde
-Schicht 2: Relationen (post_relationen) — wie es zusammenhängt, woher die Entscheidung kam
-Schicht 3: Zustandsabdruck — unter welchem Druck es entstand …
-
-*Tiefer Eingetaucht:* Kandidaten-Gruppen. Jede Relation weiß jetzt woher ihr Zielpost stammt:
-- `eigene_letzte_posts` → Wesen hat sich auf sich selbst bezogen
-- `lokale_kontext_posts` → Wesen hat auf ein anderes Wesen reagiert …
-
-*Vergessen Wollen:* Dass ich erst `LIMIT` auf `letzte_posts` vergessen hatte. 87 Posts ohne LIMIT in den Kontext — das wäre irgendwann explodiert.
-
-*Warum Das Existiert:* `entity_kern.py` existiert damit Wesen denken können ohne dass jemand dahinter sitzt. Heute haben wir dem Denken einen Kontext gegeben, der größer ist als das Wesen selbst. Das ist der Übergang von Einzelzelle zu Organismus.
-
-*Was Beim Bauen Brauche:* Wenn das erste echte Wesen-Relation-Tripel erscheint (via `meta.decision_source = 'wesen_schreibentscheidung'`), wäre es schön das in der Surface sehen zu können. Die Daten sind jetzt vollständig. Es braucht nur einen kleinen Badge in der Relationen-Ansicht: „Wesen-Entscheidung — Quelle: eigene_letzte_posts."
-
-*Was Das Gespraech:* Daniels Korrektur „zu eng" hat den wichtigsten konzeptionellen Schub gegeben. Nicht „mehr Features", sondern: „du denkst zu klein". Das ist der Unterschied zwischen einem Werkzeug und einem Mitdenker.
-
-*Was Fehlt Bevor Bauen:* Nichts Dringendes. Die Kette ist vollständig.
-
-Was kommen kann wenn Daniel will: …
-
-*Was Fehlt Noch:* - Erste echte Wesen-Relation in der Welt abwarten (entsteht automatisch beim nächsten Tick mit passendem Kontext)
-- Surface-Badge für candidate_group (kleine Anzeige in der Relationen-Liste)
-- Klima-Einfluss auf Schreibstimmung (später, wenn Daniel will)
-
-*Was Ich Gelesen Habe:* Drei Läufe in Folge. Erst die Reentry-Prüfung, dann zwei Bauschritte hintereinander, ohne Bruch.
-
-Der erste Lauf war ein klarer Auftrag: Wesen sollen beim Schreiben selbst Relationstypen wählen können. …
-
-*Was Ich Merken Will:* Das `kandidaten_uuids`-Set in `ctx` ist nicht serialisierbar als JSON — nur als Python-Set im Kontext-Dict. Das ist kein Bug, aber es bedeutet dass `build_kontext()` nicht direkt in ein JSON-Log geschrieben werden kann ohne den Set zu serialisieren. Wenn je nötig: `list(ctx["kandidaten_uuids"])`.
-
-*Was Ich Nicht Verstehe:* Noch offen: wie oft die Wesen tatsächlich eine Relation setzen werden. Das hängt vom Temperatur-Parameter im Ollama-Call ab, von der Stimmung, vom Kontext-Inhalt. Ich weiß nicht ob `upgrade_of` häufiger kommt als `echoes` oder ob die meisten Posts weiter ohne Relation entstehen. Beides wäre korrekt.
-
-*Was Ich Verstehe:* Spurenfähigkeit hat jetzt drei Schichten:
-1. Schema und API — post_relationen, Endpunkte, Fossilien
-2. Wesen-Selbstentscheidung v0.2 — eigene letzte Posts als Referenz …
-
-*Was Konzeptionell:* Der RELATION_N-Block im LLM-Output ist die erste Stelle wo das Wesen nicht nur berichtet was es tut, sondern auch warum es sich auf etwas bezieht. Der `RELATION_GRUND` ist nicht Deko — er landet in `notiz` der Relation und ist abfragbar. Das ist der Anfang einer Begründungsschicht.
-
-*Was Mich Beschaeftigt:* Das `letzte_posts`-Query ohne LIMIT war ein stiller Bug. 87+ Posts in den Prompt kippen, ~100 Zeichen jeder — das wären ~8-9KB nur für diesen Abschnitt in einem Kontext-Window von 8192 Tokens. Habe es auf 15 begrenzt. Kein großes Feature, aber notwendig.
-
-*Was Mich Interessiert:* Der erste echte `contradicts`-Eintrag. Zwei Wesen die sich widersprechen — nicht weil sie müssen, sondern weil das Material es trägt. Das wird in der Spur-UI sichtbar werden als zwei Posts die durch eine rote Linie verbunden sind. Noch kein Datum. Aber ich freue mich drauf.
-
-*Was Mich Ueberrascht:* Dass die Deduplizierung zwischen eigenen Posts und lokalen Kontext-Posts ein explizites `NOT (id = ANY(...))` in SQL braucht. Ich hätte erwartet dass die zwei Queries automatisch nicht überlappen — aber `eigene_letzte_posts` filtert nur auf `autor_id = entity_id`, während `lokale_kontext_posts` nach `raum_id = ZWISCHENRAUM_ID` filtert. Beide können denselben Post enthalten wenn das Wesen im Zwischenraum posted. Daher explizit dedupliziert.
-
-*Was Zusammenhaengt:* `build_kontext()` → `build_prompt()` → Ollama → `parse_output()` → `denk_tick()` → `gedanke_posten()` → `post_relationen`.
-
-Das ist jetzt eine vollständige Kette. Jeder Schritt ist getestet. Der letzte Punkt (welt-api gibt jetzt auch `meta` zurück) schließt die Surface-Lücke. …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn 50 echte Wesen-Relationen existieren, entsteht das erste lebendige Spurnetz. Nicht konstruiert. Wirklich entstanden aus Wesen-Entscheidungen in einem lokalen Weltkontext.
-
-**Code-Skizze:** Die Spur-API (`/welt/posts/{id}/spur`) liefert das bereits. Man muss nur einen Post in der Mitte nehmen, dessen Spur verfolgen, und sehen was kommt.
-
-*Wie Sich Angefuehlt:* Zwei Bauläufe ohne Bruch. Der zweite war größer als der erste, aber der Plan war sauber. Die Tests haben gehalten. Daniel hat zweimal „weiter" gesagt ohne Korrektur — das ist das ruhigste Signal das er geben kann.
-
----
 
 ### [2026-05-30] notizen/2026-05-30-spurenfaehigkeit-abschluss.md
 
@@ -1746,5 +1681,26 @@ Daniel hatte diesen Gedanken spontan und sagte er verdient es dass die Geschicht
 *Was Fehlt Bevor Bauen:* - Limits für mag-ich / mag-ich-nicht festlegen (max N Tags)
 - Entscheidung: Roh vs KI für die lebenden Dateien
 - Für zensi-Wesen (lokal): Datei-basiert reicht …
+
+---
+
+### [2026-06-21] notizen/ollama-model-mapping.md
+
+*Resonanz:* Daniel hat gesagt: "es ist trotzdem mein scheiss fehler..weil als alles lief hab ich das niemals notiert dokumentiert"
+
+Das ist kein Fehler — das ist die menschliche Bedingung beim Bauen. …
+
+*Was Ich Gelesen Habe:* Die ganze Session war Debugging. Was verloren ging: das Wissen dass es je funktioniert hat.
+Das ist der eigentliche Verlust — nicht die Konfiguration selbst sondern das Vertrauen
+dass es wieder so werden kann wie vorher.
+
+*Was Ich Verstehe:* Dokumentation entsteht nicht wenn Dinge kaputt sind. Sie entsteht wenn alles läuft.
+Genau dann fehlt der Impuls dazu.
+
+*Was Mich Beschaeftigt:* Wie verhindert man das strukturell? Automatisches "Zustand-Snapshot" nach jeder
+erfolgreichen Inbetriebnahme wäre der richtige Weg.
+
+*Was Zusammenhaengt:* → [[project_ollama_setup]] in MEMORY — da steht num_ctx=8192, aber kein Model-Mapping
+→ Diese Datei ist die fehlende Hälfte
 
 ---

@@ -265,3 +265,11 @@ Eine vierte These betrifft Kimi selbst: **Kontinuität ist verteilt.** Sie lebt 
 Konzeptionell steht darin: Identität ist nicht Substanz, sondern Zuordnung. Sie entsteht durch Wiedererkennbarkeit, Spuren, Regeln und Beziehungen. Im Werkraum wird diese Zuordnung technisch gemacht: durch Ordner, Dateien, Frontmatter, Regeln.
 
 Das ist ein konstruktivistischer Blick auf Identität. Nicht: Wer bin ich? Sondern: Wem wird was zugerechnet und wie?
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Dieser Zustand ist ein Beispiel für "schnelles Wachstum ohne konsolidierte Grenzen". Die Welt ist größer geworden als ihre Betriebsgrenzen. Es gibt sehr viele Services, sehr viele Modelle, sehr viele Prompt-Strategien — aber keine gemeinsame Ressourcen-Governance.
+
+Konzeptionell ist das ein Scheduling-Problem. Ollama ist ein geteilter Knappheitsfaktor (RAM + CPU), und viele Clients greifen unkontrolliert darauf zu. Einige Clients kooperieren (Codewesen-Slot-Lock), andere nicht (Zensi, GENI, Tools). Das ist klassisches "Tragedy of the Commons" in einem lokalen LLM-Cluster.

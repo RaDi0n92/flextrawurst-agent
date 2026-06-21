@@ -235,3 +235,11 @@ Ohne diese Klärung riskiere ich, Code zu schreiben, der später in die falsche 
 **[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
 
 Bevor wir an größeren Systemen bauen, die mit Identität oder Autonomie zu tun haben, sollten wir die Rollenklärung nochmal durchgehen. Nicht nur für Kimi und Codex, sondern für alle zukünftigen Ströme.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+- Daniel muss das Ziel-Mapping bestätigen.
+- Wir müssen wissen, welche Services unbedingt weiterlaufen müssen.
+- Wir brauchen eine isolierte Testmöglichkeit (z.B. Ollama-Testanfrage mit kleinem Prompt), ohne die laufenden Services zu stören.

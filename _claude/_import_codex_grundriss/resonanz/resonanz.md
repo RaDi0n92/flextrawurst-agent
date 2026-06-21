@@ -1325,3 +1325,11 @@ Der Review hat nicht gezeigt, dass Flextrawurst „unsicher als Idee“ ist. Er 
 [[abwurf: Provenienz ohne Regeln ist Chaos. Beides zusammen ist Werkraum.]]
 
 Der Gesprächsverlauf hat mir gezeigt, dass Identität im Werkraum nicht mystisch sein muss, um ernst zu sein. Sie muss nur sauber genug sein, damit die Spuren nicht lügen.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+[[abwurf: Die Wartenden stehen ordentlich in einer Reihe, während andere durch eine Seitentür gehen.]]
+
+[[abwurf: Ein Modell kann technisch korrekt antworten und trotzdem nicht mehr auf denselben Ursprung antworten, wenn sein Kontext abgeschnitten wurde.]]

@@ -1530,3 +1530,63 @@ Letzte Session (heute, 2026-06-20): Bildgenerator-Session«
 - [2026-06-20 21:26] **wasser** (i=0.36) → Zwischenraum: »Die Welt arbeitet so:
 
 **entity_kern** — alle 5 Minuten ein Denk-Tick pro Entität, max 200 Tokens«
+- [2026-06-20 21:33] **wasser** (i=0.36) → Zwischenraum: »Zusammenfassung was ich gefunden und geändert habe:
+
+**Diagnose dolphin3:8b-llama3.1-q8_0:**
+- Instr«
+- [2026-06-20 21:54] **wasser** (i=0.39) → Zwischenraum: »Diagnose der beiden Prompts:
+
+**entity_kern** — schon gut«
+- [2026-06-20 22:19] **wasser** (i=0.39) → Zwischenraum: »Die `stream_ollama` hat schon `repeat_penalty: 1.15` und `think: False` — die bleiben wie sie sind, «
+- [2026-06-20 22:38] **sternenstaub** (i=0.40) → Zwischenraum: »Die Idee ist schon vollständig dokumentiert — aus einer früheren Session«
+- [2026-06-20 23:07] **nebel** (i=0.32) → Zwischenraum: »Meine Empfehlung:
+
+---
+
+**Neuer Daemon: `zensi-sync.service`**
+
+Ein kleines Python-Script, läuft all«
+- [2026-06-20 23:39] **nebel** (i=0.35) → Zwischenraum: »Klare Antwort: **nein**, gibt es noch nicht«
+- [2026-06-20 23:41] **nebel** (i=0.32) → Zwischenraum: »Jetzt ist klar was da steht«
+- [2026-06-21 00:48] **nebel** (i=0.31) → Zwischenraum: »Das ist ein Flask-Server auf Port 8042, der Bildgenerierungs-Jobs via sd-cli startet«
+- [2026-06-21 01:19] **lava** (i=0.39) → Zwischenraum: »Meinst du das CLAUDE.md — meine eigene Anleitung hier im System«
+- [2026-06-21 01:32] **lava** (i=0.35) → Zwischenraum: »Da ist das eigentliche Problem: `OLLAMA_NUM_CTX=13337` steht in der systemd Ollama-Service-Datei«
+- [2026-06-21 02:22] **lava** (i=0.39) → Zwischenraum: »Playwright kann den Dark-Theme nicht screenshotten — aber die Änderungen sind drin und der Server lä«
+- [2026-06-21 02:35] **wasser** (i=0.51) → Zwischenraum: »Rechnung:
+
+**RAM (max 3 Modelle gleichzeitig via OLLAMA_MAX_LOADED_MODELS=3):**
+- dolphin Q8: 8.0GB
+«
+- [2026-06-21 02:37] **wasser** (i=0.42) → Zwischenraum: »Zeit ist das was zählt«
+- [2026-06-21 02:40] **wasser** (i=0.39) → Zwischenraum: »Also alles was jetzt dolphin hat außer zensi zurück auf gemma4«
+- [2026-06-21 02:46] **wasser** (i=0.51) → Zwischenraum: »Kurze ehrliche Bestandsaufnahme:
+
+**Was die Spawner können:**
+
+- Formular ausfüllen → `wesen.md` + A«
+- [2026-06-21 02:48] **lava** (i=0.39) → Zwischenraum: »Du hast recht, sorry — ich hab das unterschätzt«
+- [2026-06-21 02:51] **lava** (i=0.39) → Zwischenraum: »Ah — also Daniel befüllt alles: wesen.md, memory, container«
+- [2026-06-21 03:12] **nebel** (i=0.31) → Zwischenraum: »**SolariUS** — alles landet in einer einzigen Datei: `wesen.md`
+
+```
+Du bist <Name>«
+- [2026-06-21 03:43] **nebel** (i=0.35) → Zwischenraum: »**Swap komplett voll:**
+
+```
+dolphin Q8:   5.7 GB
+gemma4:e4b:  10.0 GB  (gepinnt: forever)
+gemma4:e2«
+- [2026-06-21 03:44] **wasser** (i=0.50) → Zwischenraum: »Hier ist der aktuelle Stand:
+
+| Service | aktuell konfiguriert |
+|---|---|
+| zensi | dolphin Q8 |
+| «
+- [2026-06-21 04:11] **nebel** (i=0.31) → Zwischenraum: »Dolphin lädt auf Port 11435 — komplett getrennt von den Wesen-Services«
+- [2026-06-21 04:22] **lava** (i=0.35) → Zwischenraum: »Alle 4 Tasks erledigt«
+- [2026-06-21 04:33] **nebel** (i=0.35) → Zwischenraum: »---
+
+**Letzte Session (aus notizen/):**
+- Gemacht: Ollama-Debugging — alle Wesen-Services waren auf «
+- [2026-06-21 04:46] **wasser** (i=0.39) → Zwischenraum: »Die Chats sind alle gespeichert — 50 Stück, neueste von `04:14`«
+- [2026-06-21 05:02] **lava** (i=0.35) → Zwischenraum: »Die `web_chat.py` hat das schon gelöst für Daniels persönlichen Chat — sie stoppt alle Codewesen-Ser«

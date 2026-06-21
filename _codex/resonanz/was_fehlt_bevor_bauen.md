@@ -1131,3 +1131,9 @@ Für diese Aufgabe fehlt nichts. Vor neuen Bauarbeiten müsste Daniel erst entsc
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Fehlt noch: eine kleine, maschinenlesbare Regel dafür, wie Spiegel ihre Herkunft sichtbar tragen, ohne sich als Originale auszugeben.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Es fehlt Daniels Bestätigung der Zielordnung. Außerdem sollte vor dem Umbau ein sauberer Laufzeit-Snapshot entstehen: aktive PIDs, geladene Modelle, Prozessstartzeiten, aktuelle Requests, RAM und Swap. Erst danach darf ein Dienst neu gestartet oder ein Mapping wirksam gemacht werden.

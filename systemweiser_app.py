@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 SystemWeiser — Standalone Web-App
-Laeuft auf Port 8080, nutzt Ollama lokal (dolphin3:8b-llama3.1-q8_0) und Bridge-API.
+Laeuft auf Port 8080, nutzt Ollama lokal (gemma4:e2b-it-q4_K_M) und Bridge-API.
 """
 
 import json
@@ -21,7 +21,7 @@ app = FastAPI(title="SystemWeiser", version="1.0.0")
 
 # ===== CONSTANTS =====
 OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "dolphin3:8b-llama3.1-q8_0"
+OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"
 
 SKILLS = {
     "mcp_tooling": "Werkzeugkasten (MCP Tooling) — Externe Tools als installierbare Superkraefte",

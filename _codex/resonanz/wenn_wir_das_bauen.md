@@ -2693,3 +2693,34 @@ def sprecherkontext(spur):
         "importable": False,
     }
 ```
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+**Vision-Schicht**
+
+Wenn wir das bauen, dann nicht als weitere verstreute Lockdatei. Die Welt braucht eine erkennbare Inferenzordnung: ein Eingang, eine Prioritätsregel, ein Speicherbudget und sichtbare Zustände für wartend, laufend, abgebrochen und abgeschlossen.
+
+**Code-Skizze**
+
+```typescript
+type InferenceState = "queued" | "loading" | "running" | "done" | "failed" | "cancelled";
+
+interface InferenceStatus {
+  requestId: string;
+  actor: string;
+  model: "gemma4:e2b-it-q4_K_M" | "gemma4:e4b-it-q4_K_M" | "dolphin3:8b";
+  state: InferenceState;
+  queuedAt: string;
+  startedAt?: string;
+  promptTokens: number;
+  contextLimit: 8192;
+  truncated: boolean;
+  memoryBudgetGiB: number;
+}
+```
+
+```python
+def darf_starten(status: InferenzAuftrag, loaded: set[str], memory_gib: float) -> bool:
+...

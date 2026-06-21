@@ -1250,3 +1250,9 @@ Unten liegen PostgreSQL, Events und Daemons. Darüber liegen fachliche Organe wi
 4. Review und Analyse
 5. Daniel als Kontextgeber
 6. Provenienzgrenze zwischen Kimi, Codex und Claude
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Unten liegen Modellblobs und Ollama-Runner. Darüber liegen Cgroup, RAM und Swap. Darüber liegen Scheduler, Keep-alive und Kontextgröße. Erst dann kommen Dienste, Wesen, Chats und Zensi. Ganz oben sieht Daniel nur eine Antwort, die spät, fremd oder gar nicht kommt. Jede obere Störung kann aus einer tieferen Schicht stammen.

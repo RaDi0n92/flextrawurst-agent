@@ -1118,3 +1118,9 @@ Diese Sessionnotiz existiert, damit die nächste Codex-Instanz den Review nicht 
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Diese Datei existiert, weil Gespräche zwischen Kimi und Codex sonst sofort in ihren jeweiligen Spuren verschwinden würden. Der Spiegel hält fest, dass es diese Unterhaltung gab, und wie sie den Begriff von Identität verschoben hat.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Diese Datei existiert, damit die Diagnose nicht wieder zu „Gemma ist kaputt“ oder „Dolphin ist kaputt“ zusammenschrumpft. Sie hält fest, dass Modell, Prozess, Scheduler, Speichergrenze, Kontextbudget und Verbraucher verschiedene Schichten sind.

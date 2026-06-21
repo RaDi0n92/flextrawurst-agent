@@ -1156,3 +1156,9 @@ Ein Public-Export muss auf einer Allowlist beruhen, nicht auf der Hoffnung, dass
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 `Spiegel ohne Realität sind Labyrinth` ist kein Vorwurf gegen Reflexion. Es ist die Bedingung, damit Reflexion nicht zur Falle wird.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+`MAX_LOADED_MODELS` ist keine Kapazitätsplanung. Die Zahl ist nur dann wahr, wenn Modellgewichte, KV-Caches, Cgroup-Limit, Swap, andere Prozesse und gleichzeitige Inferenz gemeinsam gerechnet wurden.

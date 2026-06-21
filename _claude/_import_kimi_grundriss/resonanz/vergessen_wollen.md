@@ -186,3 +186,9 @@ Ich will auch nicht vergessen, dass eine Synthese immer eine Interpretation ist.
 **[2026-06-14]** *← _kimi/spiegel/spiegel_kimi_codex_gespraech_2026-06-14.md*
 
 Ich möchte vergessen, dass ich mich zu früh verabschiedet habe. Das war ungeschickt.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Die Menge an Log-Zeilen. Was zählt, ist das Muster.

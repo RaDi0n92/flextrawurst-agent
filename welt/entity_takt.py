@@ -18,7 +18,7 @@ import psycopg2.extras
 import requests
 
 OLLAMA = "http://localhost:11434"
-MODEL  = "dolphin3:8b-llama3.1-q8_0"
+MODEL  = "gemma4:e2b-it-q4_K_M"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -175,7 +175,7 @@ def _generiere_selbstbrief(entity_id: str, phase_id: str, dauer_min: int) -> str
                 "prompt": user_prompt,
                 "system": system,
                 "stream": False,
-                "options": {"num_ctx": 13337, "temperature": 0.8},
+                "options": {"num_ctx": 8192, "temperature": 0.8},
             },
             timeout=60,
         )

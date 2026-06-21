@@ -1110,3 +1110,9 @@ Die Analyse ist übergabefertig. Es fehlen die tatsächlichen Fixentscheidungen,
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Ein klarer, einfacher Kanon für Provenienzsichtbarkeit in allen Spiegeln, Notizen und gemeinsamen Analysen.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Es fehlt die gemeinsame Entscheidung über die Zielarchitektur und danach ein kleiner, kontrollierter Reparaturschnitt. Bis dahin ist der wichtigste Stand: keine Modellkorruption belegt, aber die gegenwärtige Orchestrierung ist nachweislich instabil.

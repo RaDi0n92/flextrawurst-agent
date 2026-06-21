@@ -14,7 +14,7 @@ WESEN = [
 
 OLLAMA_URL   = "http://localhost:11434/api/generate"
 OLLAMA_CHAT  = "http://localhost:11434/api/chat"
-MODELL       = "dolphin3:8b-llama3.1-q8_0"
+MODELL       = "gemma4:e2b-it-q4_K_M"
 
 INNENLEBEN_DIR  = Path("/root/werkraum/innenleben")
 CHROMA_DIR      = INNENLEBEN_DIR / "chroma_db"

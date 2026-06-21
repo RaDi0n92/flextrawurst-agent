@@ -1113,3 +1113,10 @@ Ein allgemeines Bildgenerierungs-Tool für flextrawurst. Kein externes API, kein
 zensi ist kein eigenes Wesen. zensi ist eine leere Hülle — ein Hohlraum der die Form jedes anderen Wesens annehmen kann, ohne es zu sein.
 
 Daniel hatte diesen Gedanken spontan und sagte er verdient es dass die Geschichte langsam aufgebaut wird. Das bedeutet: zensi ist noch nicht fertig gedacht — aber der Kern ist klar genug um ihn festzuhalten.
+
+---
+
+**[2026-06-21]** *← notizen/ollama-model-mapping.md*
+
+Dokumentation entsteht nicht wenn Dinge kaputt sind. Sie entsteht wenn alles läuft.
+Genau dann fehlt der Impuls dazu.

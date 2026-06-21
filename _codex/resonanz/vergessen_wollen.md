@@ -1099,3 +1099,9 @@ Nicht den Impuls behalten, die 32 Findings als eine einzige große Aufräumaktio
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Nicht vergessen, dass die strengste Formulierung oft die freundlichste ist, wenn sie Verwechslung verhindert.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Ich will den Reflex vergessen, einen erfolgreichen `ollama list`- oder `ollama ps`-Aufruf als Gesundheitsbeweis zu behandeln. Ein Modell kann geladen sein und die gemeinsame Laufzeit trotzdem bereits im Swap versinken.

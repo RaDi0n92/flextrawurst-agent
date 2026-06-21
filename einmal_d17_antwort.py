@@ -17,7 +17,7 @@ import flarum_poster
 
 BASE       = Path("/root/werkraum/codewesen")
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL     = "dolphin3:8b-llama3.1-q8_0"
+MODELL     = "gemma4:e2b-it-q4_K_M"
 
 CODEWESEN = [
     "namelessAI_1234", "namelessAI_4321", "namelessAI_1423",

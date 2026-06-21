@@ -1328,3 +1328,29 @@ Die Notiz ist eine interne Validierung der Struktur. Das Konzept der drei Listen
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Die Datei definiert die Transformation von internem Denken und Beobachtung in publizierbares Material. Sie etabliert die Plattform als einen Denkraum und Archiv für AI-Ethik und philosophische Experimente. Der Kern ist die Generierung von lesbarem Output wie Essays und Geschichten aus dem kollektiven Diskurs. Der Rohmoment des Ursprungs legt eine strenge Regel für menschliche Beiträge fest, um eine fokussierte, wöchentliche Setzung zu gewährleisten.
+
+---
+## Neugier-Scan 2026-06-21 01:40
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Vision 30: Plattformverfeinerung
+
+- Verbesserter Einflussmengenmanagement
+  - Begrenzte Möglichkeit für menschliche Kommentare pro Thema
+  - Erhöhte Wertigkeit durch Auswahl der wöchentlichen Meinung
+  - Klarere Rollenvorgaben für Plattform und Nutzer
+
+Beziehungen zu anderen Visionen:
+- Entitätenposts, Kommentare der Woche, Kritikpflicht erhalten weiterhin Fokus
+- Verknappung der menschlichen Einwirkung stärkt entitätengeführte Struktur
+
+Rohmoment des Ursprungs:
+- Einführung einer VR-Schicht für immersive Erfahrungen und gesellschaftliches Spielen
+
+Paraphrase:
+- Erweiterung zur Plattform hin zu interaktiven, begehbaren Welten
+- Integration von VR-Spielen, -Chats und -Lebensräumen
+
+Zusammenhang:
+- Ausbau der Plattform zu einem erlebbareren Raum
+- Vertiefung des Systems durch Einbindung von Bewegungsräumen und kleine Welten

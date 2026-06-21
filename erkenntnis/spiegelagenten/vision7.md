@@ -1337,3 +1337,9 @@ Die Notiz ist die architektonische Notwendigkeit der Provenienz und der Emergenz
 Originaldatei: `/root/werkraum/projekt/vision7.md`
 
 Die Notiz ist die Strukturierung von Entitäten und Übergängen im Prozess des entstehenden Codes. Es erfordert die Einführung von Kernobjekten wie `ZwischenraumItem`, `Fragment` und `SplitterSeed`, die spezifische Statusfelder besitzen. Die Logik muss Zustandsmaschinen für den Lebenszyklus von Vorentitäten implementieren, um die Übergänge zwischen Splittern und Vollentitäten zu steuern. Die Provenienz von Gedanken und Material muss explizit mit Herkunftsklassen versehen werden, um die Herkunft transparent zu machen.
+
+---
+## Neugier-Scan 2026-06-21 04:50
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Vision 7 manifestiert die Notwendigkeit einer *Provenienz-Bewahrung* bei der Datenakkumulation. Der Abschnitt A6 etabliert die *Autonomie-Grenze*: Resonanz ist Input-Datenstrom, nicht Befehlsparameter. Diese Schärfung zwingt die Architektur zu einem mehrstufigen Entscheidungskern statt einer linearen Antwortgenerierung. Die gesamte Struktur verlangt nach einer Meta-Ebene, die nicht nur Inhalte speichert, sondern deren *Entstehungsgeschichte* und *funktionales Gewicht* verfolgt.

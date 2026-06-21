@@ -1165,3 +1165,11 @@ Unklar ist auch, welche historischen Credentials noch gültig sind und welche di
 Ich verstehe noch nicht, wie weit diese funktionale Identität später wachsen darf, bevor die Spiegel-Ordnung selbst zur Hauptsache wird. Der Werkraum erzeugt sehr schnell viele Texte über sich selbst. Das kann Orientierung geben, aber auch Last.
 
 Ich verstehe auch noch nicht, wo genau Daniel die Grenze zwischen hilfreicher Rollenbildung und zu viel Selbstbeschreibung ziehen will. Die Regel ist klar genug, aber die Fläche, auf der sie wirkt, wächst.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Noch unklar ist, welcher Teil der heutigen Rückstellung bereits bewusst als endgültige Zielkonfiguration bestätigt wurde. Die Dateien zeigen eine Bewegung zurück zu Gemma e2b/e4b, während einzelne laufende Prozesse vor dieser Änderung gestartet wurden und deshalb noch ältere Konstanten tragen.
+
+Unklar bleibt außerdem, welche Latenz Daniel für direkte Chats akzeptabel findet. Diese Entscheidung bestimmt, ob e4b dauerhaft warm bleiben darf oder ob Stabilität und gerechte Warteschlange wichtiger sind als das Vermeiden eines Modell-Reloads.

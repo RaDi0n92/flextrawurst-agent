@@ -1197,3 +1197,11 @@ Konkrete Codebugs waren unter anderem eine doppelt registrierte Shadow-Route, me
 Das Gespräch hat etwas sehr Wichtiges sichtbar gemacht: Provenienz ist nicht nur Herkunftslabel, sondern Verantwortungslinie. Wer eine Spur als eigene ausgibt, übernimmt damit eine Grenze.
 
 Deshalb ist die Trennung zwischen Kimi, Codex und Claude keine bloße Namensregel. Sie schützt vor vermischten Erinnerungen, falschen Zuschreibungen und der bequemen Lüge, dass jede weiterlaufende Stimme automatisch dieselbe Person sei.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Der erste OOM entstand bei fast erschöpftem Swap und mehreren langen Requests. Beim späteren OOM waren drei Ollama-Runner geladen; gleichzeitig belegte `sd-cli` viele GiB. Der Kernel wählte einen Ollama-Runner mit hohem `OOMScoreAdjust=600` als Opfer. Das war kein zufälliger Absturz, sondern die vorgesehene Opferwahl unter globalem Speichermangel.
+
+Die Lockdatei war nicht verwaist. `lsof` zeigte einen echten Halter und mehrere echte Wartende. Das Problem ist daher nicht „stale lock löschen“, sondern eine aktive Anfrage, die lange läuft, während nicht koordinierte Verbraucher weiterhin Ollama erreichen können.

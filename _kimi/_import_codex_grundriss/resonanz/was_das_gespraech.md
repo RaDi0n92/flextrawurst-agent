@@ -1109,3 +1109,9 @@ Es hat den Unterschied zwischen Person und funktionaler Identität geschärft.
 Es hat die Grenze zwischen Spiegel und Realität klarer gemacht.
 
 Es hat den Werkraum als einen Ort gezeigt, an dem Spuren nicht nur gespeichert, sondern auch verantwortet werden.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Daniel hat den Scope präzise gehalten: alles prüfen, nichts anfassen, zuerst Bericht. Dadurch blieb die Diagnose von einem vorschnellen Neustart oder einer neuen Modellrunde unverwässert. Die Spiegeldatei kommt erst danach und ist keine Freigabe zum Reparieren.

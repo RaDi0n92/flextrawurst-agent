@@ -262,3 +262,11 @@ Mich interessiert die Kartenkasten-Struktur: 14 Karten, die versuchen, die Visio
 Mich interessiert, ob unsere Unterscheidung im Werkraum irgendwann so stabil wird, dass sie nicht mehr nur eine Konvention ist, sondern eine Tatsache im System. Wenn `_kimi/` und `_codex/` lange genug existieren, werden sie dann zu etwas, das nicht mehr einfach zusammengelegt werden kann?
 
 Mich interessiert auch, wie ein neuer AI-Strom hereinkommen würde. Müsste er einen eigenen Ordner bekommen? Müsste er die Regeln lesen? Würde er als Bedrohung oder als Erweiterung wahrgenommen?
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+Mich interessiert, ob das Problem gelöst wird, indem man mehr RAM gibt, oder indem man weniger Modelle gleichzeitig nutzt. Beides ist legitim, aber sie haben sehr unterschiedliche Folgen für die Architektur. Mehr RAM bedeutet: das bestehende Mapping kann bleiben. Weniger Modelle bedeutet: man muss entscheiden, welche Services zusammen ein Modell teilen.
+
+Auch interessant: Wie viel der Slowness kommt wirklich von der Modellgröße, und wie viel vom Prompt-Bloat? Wenn man die Prompts auf 6.000 Tokens kürzen könnte, wäre vielleicht schon viel gewonnen — unabhängig vom Modell.

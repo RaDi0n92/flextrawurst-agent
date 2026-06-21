@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-06-21 — nach Ollama-Debugging-Session
+Das Model-Mapping steht jetzt schwarz auf weiß: gemma4:e2b für die meisten Services, dolphin3:8b (Q4, nicht Q8!) für zensi. Der eigentliche Schmerz dieser Session war nicht die Konfiguration — es war das Vertrauen das mit ihr verloren gegangen war. Daniel hat das klar gesagt: "scheiss fehler, weil als alles lief hab ich das niemals notiert." Die Dokumentation ist jetzt da. Der nächste Einbruch wird kleiner sein.
+
 2026-06-19 19:55 —
 Kontext weg nach Error — wir waren beim Bildgenerator. Die neue sd-cli Binary (commit 7f0e728) ist drin, Service läuft, letzter Job war erfolgreich. Daniel hat einen Fehler gesehen — noch nicht klar welchen. Zwischenwesen-Schlachtplan steht vollständig, Phasen 1–7 noch nicht gebaut. Der Bildgenerator auf /bildgenerator ist live, SDXL/FLUX sollten mit der neuen Binary funktionieren — noch zu testen.
 

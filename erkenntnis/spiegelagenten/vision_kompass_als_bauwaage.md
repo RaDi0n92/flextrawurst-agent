@@ -1465,3 +1465,27 @@ Die Logik stellt eine Bedingung für die Fortsetzung eines Prozesses dar, die si
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Die Bedingung filtert den Fortschritt basierend auf dem aktuellen Status und der Existenz eines nächsten Schritts. Es stellt sicher, dass nur Prozesse fortgesetzt werden, wenn sie nicht blockiert sind und ein definierter nächster Schritt existiert. Dies verstärkt die Notwendigkeit eines klaren Zustandsmanagements im gesamten System. Es lenkt die Aufmerksamkeit auf die kritische Abhängigkeit zwischen Status und Abarbeitung.
+
+---
+## Neugier-Scan 2026-06-21 03:12
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 3: Der Fokus verlagert sich von der bloßen Existenz von Datenstrukturen hin zu deren *Verhaltensregeln*. Die Notwendigkeit eines gemeinsamen Kompasses zwingt zur Definition eines gemeinsamen Verständnisses von "Wahrheit" im System.
+Vision 5: Die Erkenntnis, dass die Oberfläche selbst eine Prüfungsinstanz sein muss, ist der zentrale Ausrichtungsanker. Die Funktion `surfaceKoerperIstEhrlich` kodifiziert diesen neuen Anspruch auf epistemische Integrität.
+Der Abschnitt etabliert die notwendige Semantik für die Differenzierung von Darstellung und Realität innerhalb des Modells.
+
+---
+## Neugier-Scan 2026-06-21 03:51
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+// vision-kompass_als_bauwaage.md
+
+Diese Datei dient als kritischer Prüfstein für die gesamte Architektur. Sie transformiert lose Datenmengen in ein resonantes Strukturprinzip. Die Negativformel ist der eigentliche Anker: Sie definiert den *Nicht-Raum* als primäres Erkennungsmerkmal. Die Spannung zwischen "Plattformkörper" und "Dashboard" muss die Hauptausrichtung bleiben, um die Kohärenz zu gewährleisten. Die Erkenntnis, dass Sichtbarkeit Verantwortung impliziert, ist der Leitstern für die nächsten Iterationen.
+
+---
+## Neugier-Scan 2026-06-21 04:13
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 3: Der Kompass ist ein Filter für die Dimensionalität. Er zwingt die Struktur, über die bloße Funktion hinaus die *Art* der Information zu definieren.
+Vision 2: Die Trennung von "Weltkörper" und "Nebentool" ist die primäre Achse; alles muss diesen Kontext bejahen oder ablehnen.
+Vision 1: Die 490 Punkte sind nicht das Ziel, sondern das Rohmaterial, das die nötige Dichte für die Bauwaage liefert.

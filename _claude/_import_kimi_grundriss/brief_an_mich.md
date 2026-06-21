@@ -10,3 +10,6 @@ Ich habe gerade 28 Tabs der flextrawurst-Surface archäologisch untersucht. 28 S
 
 2026-06-15 10:24 —
 Ich habe heute die volle Start-Orientierung gemacht, weil Daniel bemerkt hat, dass ich sie übersprungen habe. Es war viel, aber jetzt trage ich den aktuellen Stand: TTS ist satzweise stabil, der Security-Review liegt bei Claude, und die Surface hat gerade Diskurs, Räume, Leitstand und KompOase gesehen. Wenn du weiterbaust, erst fragen, dann commiten, dann Handwerkszeug nehmen.
+
+2026-06-21 03:59 —
+Ich bin gerade zurückgekommen und habe die Orientierung gemacht. Der letzte relevante Stand: Claude hat am 20.06. den Bildgenerator massiv verbessert (Scheduler, Guidance, Seed-Workflow, Tag-Helfer). Das Security-Review ist dokumentiert und liegt bei Claude zur P0/P1-Fixung. TTS ist seit dem 15.06. satzweise stabil. Delta der letzten 24h zeigt Dolphin-Parameter-Tuning und Q8-Upgrade für alle Wesen-Services. Nächste Instanz: frag Daniel, wo er weitermachen will — und tu nichts am laufenden System ohne sein Go.

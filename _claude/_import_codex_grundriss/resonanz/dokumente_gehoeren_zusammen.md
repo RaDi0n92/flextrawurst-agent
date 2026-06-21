@@ -1173,3 +1173,9 @@ Sie gehoert auch zu den Einzugsfragen der sechs Codewesen, weil die Screens klae
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Diese Datei gehört zu den Gesprächen mit Kimi, zu den Codex- und Kimi-Resonanzfeldern, zu den Reviewberichten vom 14. Juni und zu jeder späteren Frage, wie Provenienz im Werkraum sichtbar bleibt.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Diese Spiegeldatei gehört zur neuen Claude-Notiz `ollama-model-mapping.md`, zur Systemdokumentation `docs/systemdoku/12_ollama_gemma4.md`, zu den wirksamen Ollama-Units, zu `codewesen_agent.py`, `agent/dak_gord_system/ollama_chat.py`, `welt/entity_kern.py` und `/root/zensi/server.py`. Die Dokumente widersprechen sich derzeit an wichtigen Stellen; genau diese Differenz ist Teil des Befunds.

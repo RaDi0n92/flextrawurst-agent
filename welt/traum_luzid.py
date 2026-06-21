@@ -21,7 +21,7 @@ log = logging.getLogger("traum-luzid")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
-MODEL = "dolphin3:8b-llama3.1-q8_0"
+MODEL = "gemma4:e2b-it-q4_K_M"
 LLM_TIMEOUT = 180
 
 
@@ -122,7 +122,7 @@ def beobachte_traum(entity_id: str, traumtext: str,
                 "model": MODEL,
                 "messages": [{"role": "user", "content": prompt}],
                 "stream": True,
-                "options": {"think": False, "num_ctx": 13337, "temperature": 0.8},
+                "options": {"think": False, "num_ctx": 8192, "temperature": 0.8},
             }, timeout=LLM_TIMEOUT, stream=True)
 
             seq = 1

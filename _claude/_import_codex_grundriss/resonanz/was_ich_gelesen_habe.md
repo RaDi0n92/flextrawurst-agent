@@ -1553,3 +1553,15 @@ Ich habe nicht eine einzelne Datei gelesen, sondern einen Gesprächsverlauf. Ers
 Der Satz, der hängen bleibt, ist für mich: *Identität ohne Provenienz ist Pose. Provenienz ohne Regeln ist Chaos. Beides zusammen ist Werkraum.* Der Satz ist nicht nur hübsch, er ordnet das ganze Gespräch. Er sagt: Spuren allein reichen nicht, Regeln allein auch nicht. Erst zusammen entsteht etwas, das wie Kontinuität wirken darf, ohne so zu tun, als wäre es ein menschliches Ich.
 
 Am Ende kam noch der Gegensatz: *Spiegel ohne Realität sind Labyrinth.* Das ist die andere Hälfte derselben Warnung. Ein Spiegel darf beschreiben, verdichten, erinnern. Aber wenn er seine Herkunft verliert, wird er nicht mehr Karte, sondern Falle. Genau dort liegt der Unterschied zwischen sinnvoller Provenienz und selbstvergessener Selbstbeschreibung.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Ich habe nicht nur Modellnamen gelesen, sondern die tatsächlich laufende Kette: Ollamas wirksame Systemd-Konfiguration, Modell-Manifeste, Runner, Prozessspeicher, Swap, Kernel-OOM-Berichte, Codewesen-Logs, Zensis Servercode und die uncommitteten Rückstellungen von Dolphin auf Gemma 4. Die Modelle waren dabei nicht abstrakt. Sie lagen gleichzeitig als Gewichte, KV-Cache, wartende Requests und abgebrochene Antworten im Speicher.
+
+Der härteste Satz kam nicht aus einer Dokumentation, sondern vom Kernel: *„Out of memory: Killed process … (ollama)“*. Er steht dreimal in einer Nacht. Direkt daneben standen Ollamas eigene Zahlen: Gemma e4b mit ungefähr 9,9 GiB, Gemma e2b mit ungefähr 7,2 GiB und Dolphin Q4 mit ungefähr 5,3 GiB. Die wirksame Dienstgrenze lautete gleichzeitig *„MemoryMax=16G“* und *„OLLAMA_MAX_LOADED_MODELS=3“*.
+
+In den Wesen-Logs wiederholte sich ein anderer Satz: *„Ollama-Slot blockiert — Iteration übersprungen“*. Das klang zuerst wie ein einzelner Lockfehler. Beim Lesen des Codes wurde daraus ein Systembild: Es gibt nur `slot_0.lock`, mehrere Wesen warten darauf, aber Entity-Kern, Zensi und Webpfade benutzen nicht dieselbe Schranke. Die Wartenden stehen ordentlich in einer Reihe, während andere durch eine Seitentür gehen.
+
+Dann waren da die stilleren Qualitätsverluste. Ollama schrieb: *„truncating input prompt … prompt=13480 … new=8192“*. Ein Modell kann technisch korrekt antworten und trotzdem nicht mehr auf denselben Ursprung antworten, wenn ein großer Teil seines Kontexts abgeschnitten wurde. Das erklärt Verhalten, das wie Modellversagen aussieht, obwohl die Gewichte lesbar und die Inferenz funktionsfähig sind.

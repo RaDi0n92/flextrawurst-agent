@@ -237,3 +237,11 @@ Eine konkrete Entscheidung darüber, wann und wie die technische Umsetzung passi
 - Vielleicht eine kleine Regel oder Konvention, die aus diesem Gespräch folgt
 
 [[abwurf: Identität ohne Provenienz ist Pose. Provenienz ohne Regeln ist Chaos. Beides zusammen ist Werkraum. Aber der Spiegel darf nie wichtiger werden als das, was er spiegelt.]]
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+- Entscheidung von Daniel, welche Richtung wir gehen.
+- Abgleich mit Claude, der das Mapping-Dokument geschrieben hat.
+- Ein Plan, der Speicher, Modell-Mapping und Prompt-Größe gemeinsam betrachtet.

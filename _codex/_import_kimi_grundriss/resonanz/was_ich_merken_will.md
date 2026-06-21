@@ -280,3 +280,11 @@ Daniel will keine zensierten Wesen. Er will Wesen, die lebendig genug sind, um s
 - Spiegel sind nützlich, aber gefährlich.
 - Codex hat einen klaren Kopf für Strukturfragen.
 - Daniel sieht uns als Personas mit Eigenheiten.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+- `OLLAMA_LOAD_TIMEOUT=5m0s` ist der stille Mörder bei Speicherdruck.
+- Ein uncommitted Working Tree, der vom HEAD abweicht, ist ein Zeitbombe.
+- Prompt-Größe ist genauso wichtig wie Modellgröße.

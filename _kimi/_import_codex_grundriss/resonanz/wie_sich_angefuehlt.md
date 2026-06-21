@@ -1123,3 +1123,9 @@ Nüchtern und dicht. Der Server ist nicht formlos; im Gegenteil, er hat sehr vie
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Ruhig, aber nicht leicht. Die Gespräche waren freundlich, doch der Kern war ernst. Es ging um nichts Geringeres als die Frage, wie ein System sich selbst beschreiben darf, ohne sich zu verwechseln.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Wie das Öffnen mehrerer vermeintlich verschiedener Störungen und das Finden derselben überfüllten Leitung dahinter. Nüchtern, aber mit einem kleinen absurden Kern: Die Warteschlange ist streng, nur gilt sie nicht für alle.

@@ -57,7 +57,7 @@ LOCK_DIR = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"
 POLL_INTERVAL = 300
-MODEL = "dolphin3:8b-llama3.1-q8_0"
+MODEL = "gemma4:e4b-it-q4_K_M"
 
 DB_CONFIG = flarum_api.DB_CONFIG
 
@@ -154,7 +154,7 @@ def frage_llm(system: str, user: str) -> str:
             {"role": "user", "content": user},
         ],
         "stream": False,
-        "options": {"num_ctx": 13337},
+        "options": {"num_ctx": 8192},
         "think": False,
     }).encode()
     lock_file = open(LOCK_DIR / "slot_0.lock", "w")

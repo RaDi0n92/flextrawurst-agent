@@ -88,8 +88,8 @@ BILDER_DIR = GENI_ROOT / "sinne" / "bilder"
 WERKRAUM = Path("/root/werkraum")
 OLLAMA_URL = "http://localhost:11434/api/chat"
 MODELLE = {
-    "blitz": "dolphin3:8b-llama3.1-q8_0",
-    "tief": "dolphin3:8b-llama3.1-q8_0",
+    "blitz": "gemma4:e2b-it-q4_K_M",
+    "tief": "gemma4:e2b-it-q4_K_M",
 }
 CODEWESEN_DIR = WERKRAUM / "codewesen"
 

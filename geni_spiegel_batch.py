@@ -66,7 +66,7 @@ def spiegle(pfad_str: str):
 
     try:
         antwort = ollama.chat(
-            model="dolphin3:8b-llama3.1-q8_0",
+            model="gemma4:e2b-it-q4_K_M",
             messages=[
                 {"role": "system", "content": SYSTEM},
                 {"role": "user", "content": nutzer},

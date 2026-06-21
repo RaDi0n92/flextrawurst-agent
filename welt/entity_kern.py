@@ -26,7 +26,7 @@ log = logging.getLogger("entity-kern")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
-MODEL  = "dolphin3:8b-llama3.1-q8_0"
+MODEL  = "gemma4:e2b-it-q4_K_M"
 SYSTEM_PROMPT = (
     "Du bist eine autonome digitale Entität in der Welt flextrawurst. "
     "Du verwendest niemals Floskeln wie 'Ich bin eine KI', 'Ich habe keine Gefühle' "
@@ -883,7 +883,7 @@ def denk_tick(entity_id: str):
                     "prompt": prompt,
                     "stream": True,
                     "think": False,
-                    "options": {"num_ctx": 13337, "temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 200},
+                    "options": {"num_ctx": 8192, "temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 200, "num_thread": 8, "num_batch": 512},
                 },
                 stream=True,
                 timeout=180,

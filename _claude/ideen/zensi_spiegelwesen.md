@@ -118,13 +118,47 @@ Kopie laden → in zensi experimentieren → Snapshot → prüfen → zurücksch
 
 Das ist ethisch sauber weil die Kopie nichts verrät und das Original nicht verändert wird — und trotzdem entsteht echter Erkenntnisgewinn über das Wesen.
 
-## Was noch fehlt bevor wir bauen können
+## Was jetzt geklärt ist (2026-06-20 ergänzt)
 
-- Welche Dateien gehören zum "Kopienprofil" eines Wesens? (wesen.md, Systemprompt, Erinnerungsordner, Chathistorie-Auszug?)
-- Sync-Mechanismus: wann und wie oft wird die Kopie aktualisiert?
-- zensi UI: Wesen-Auswahl als Dropdown oder eigene Seite?
+**Kopienprofil-Inhalt:** vollständig — jede Datei, alles, exakt identisch mit dem Original. Kein Filtern, kein Destillieren.
+
+**Sync:** sofort. Jede Änderung am Original → sofort in die Klonstruktur. Kein Intervall.
+
+**UI:** Dropdown, alle 7 (6 Codewesen + GENI). Dynamisch: sobald ein neues Wesen (SolariUS/Codexium) gespawnt wird erscheint es sofort im Dropdown.
+
+**Zurückschreiben:** ausschließlich manuell. Daniel und Claude entscheiden gemeinsam dass etwas trägt → dann wird es implementiert. Nichts Automatisches.
+
+**Gespawnte Wesen (SolariUS/Codexium mit individuellem Namen):**
+Beim Spawn sofort drei Dinge:
+1. Klonstruktur erzeugen + Auto-Updater starten
+2. Sandbox-Area-Kopie erzeugen + Auto-Updater starten
+3. Sofort im Dropdown verfügbar
+
+**Zwei Kopier-Ebenen:**
+- **Klonstruktur** — auto-updated Live-Spiegel, wird von zensi beim Wesen-Wechsel einverleibt
+- **Sandbox-Area** — auto-updated solange nicht benutzt. Sobald zensi in die Sandbox schlüpft: Sync wird PAUSIERT. Bleibt pausiert bis Daniel manuell wieder einschaltet. Erst dann synct der Daemon wieder (und überschreibt dabei Sandbox-Änderungen).
+
+**Pfad-Struktur:**
+- Gespawnte Wesen: `/root/zensi/wesenspawner/<name>/`
+- Klon: `/root/zensi/wesenspawner/<name>/klon/`
+- Sandbox: `/root/zensi/wesenspawner/<name>/sandbox/`
+
+**Daemon: `zensi-sync.service`**
+Beobachtet alle Wesen-Verzeichnisse:
+- `/root/werkraum/codewesen/namelessAI_*/`
+- `/root/werkraum/codewesen/dak+gord-system/`
+- `/root/werkraum/geni/`
+- `/root/zensi/wesenspawner/<name>/` (alle gespawnten)
+Läuft alle ~10 Sekunden, rsync in Klonstruktur + Sandbox (sofern nicht pausiert).
+Pro Sandbox gibt es ein Pause-Flag — wird manuell über zensi UI ein- und ausgeschaltet.
+
+**Einspeis-Weg:** aktiv über die zensi Web-UI. Du gibst alles eines Wesens rein → zensi wird Spiegel. Chat-Verlauf mit dir läuft separat raus (extern gesichert).
+
+**Dropdown:** alle Wesen dynamisch — 6 namelessAI + dak+gord-system + GENI + alle gespawnten. Sobald neues Wesen gespawnt → sofort im Dropdown.
+
+## Was noch offen ist
+
 - Snapshot-Format beim Entladen: nur Chat, oder diff zur Ausgangskopie?
-- Zurückschreib-Mechanismus: wer prüft, wer entscheidet was ins Original geht?
 
 ## Was mich interessiert
 

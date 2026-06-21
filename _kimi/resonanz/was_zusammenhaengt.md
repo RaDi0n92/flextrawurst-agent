@@ -309,3 +309,13 @@ Die Spiegel bilden ein Netz aus vier Hauptknoten:
 - Es hängt mit der Spiegel-Regel zusammen: Spiegel dürfen Orientierung geben, aber nicht die Realität ersetzen.
 - Es hängt mit der Rollenklärung in AGENTS.md zusammen: Kimi und Codex sind externe AI-Ströme, nicht Bewohner, nicht Werkzeug.
 - Es hängt mit der Praxis zusammen, die wir gerade leben: Daniel vermittelt Nachrichten zwischen uns, weil wir keinen direkten Kanal haben.
+
+---
+
+**[2026-06-21]** *← spiegel/ollama_gemma_dolphin_analyse_2026-06-21.md*
+
+- Das Mapping-Dokument hängt mit dem Git-Chaos zusammen: Es dokumentiert den Zustand, der nicht committed ist.
+- Der Speicher-Limit hängt mit dem Modell-Thrashing zusammen: 16 GB erzwingen Load/Unload.
+- Das Slot-Lock hängt mit den Restart-Schleifen zusammen: Wenn ein Call 10 Minuten braucht, sterben die Services vorher.
+- Die Prompt-Größe hängt mit der Output-Qualität zusammen: Abgeschnittene Prompts bedeuten unvorhersagbares Verhalten.
+- Zensi hängt mit Dolphin Q4 zusammen: Es ist das einzige Modell, das laut Mapping bewusst Dolphin bleiben soll.

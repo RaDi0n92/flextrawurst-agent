@@ -3326,3 +3326,34 @@ interface SpiegelReflexion {
   warnungen: string[];
 }
 ```
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+**Vision-Schicht**
+
+Die Inferenzmaschine ist ein gemeinsames Organ mit endlichem Atem. Jede Anfrage trägt Herkunft, Dringlichkeit, Modellwunsch und Budget. Kein Wesen muss die Existenz anderer erraten, und kein Chat darf durch eine unsichtbare Seitentür die ganze Welt blockieren.
+
+**Code-Skizze**
+
+```python
+from dataclasses import dataclass
+from enum import IntEnum
+
+class Prioritaet(IntEnum):
+    INTERAKTIV = 0
+    ANTWORTPFLICHT = 10
+    WELT_TICK = 20
+    BATCH = 30
+
+@dataclass(frozen=True)
+class InferenzAuftrag:
+    actor: str
+    model: str
+    prioritaet: Prioritaet
+    num_ctx: int
+    num_predict: int
+    timeout_s: int
+    provenance: dict[str, str]
+...

@@ -1,0 +1,68 @@
+{
+  "kategorien": [
+    {
+      "slug": "ueber_mich",
+      "label": "über mich",
+      "max": 15,
+      "eintraege": []
+    },
+    {
+      "slug": "unsere_themen",
+      "label": "unsere themen",
+      "max": 10,
+      "eintraege": []
+    },
+    {
+      "slug": "wichtige_momente",
+      "label": "wichtige momente",
+      "max": 10,
+      "eintraege": []
+    },
+    {
+      "slug": "meinungen",
+      "label": "meinungen",
+      "max": 10,
+      "eintraege": []
+    },
+    {
+      "slug": "offene_fragen",
+      "label": "offene fragen",
+      "max": 8,
+      "eintraege": []
+    },
+    {
+      "slug": "wesen_selbst",
+      "label": "wesen selbst",
+      "max": 10,
+      "eintraege": [
+        {
+          "text": "asdasdasdasd",
+          "gewicht": 1
+        },
+        {
+          "text": "dasdasdasd",
+          "gewicht": 1
+        }
+      ]
+    },
+    {
+      "slug": "custom_asdadasd",
+      "label": "asdadasd",
+      "max": 10,
+      "eintraege": [
+        {
+          "text": "asdasdasd",
+          "gewicht": 1
+        },
+        {
+          "text": "asdasdasd",
+          "gewicht": 1
+        },
+        {
+          "text": "asdasdasdasd",
+          "gewicht": 1
+        }
+      ]
+    }
+  ]
+}

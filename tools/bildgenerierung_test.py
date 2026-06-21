@@ -215,10 +215,10 @@ def _ollama_suggest(prompt: str, multi: bool, timeout: int = 5) -> dict | None:
         'Reply JSON: {"model":"...","mix_type":"blend","reason":"one sentence"}'
     )
     payload = json.dumps({
-        "model": "dolphin3:8b-llama3.1-q8_0",
+        "model": "gemma4:e2b-it-q4_K_M",
         "prompt": f"{system}\n\n{user}",
         "stream": False,
-        "options": {"num_ctx": 13337, "temperature": 0.1, "think": False},
+        "options": {"num_ctx": 8192, "temperature": 0.1, "think": False},
     }).encode()
     try:
         req = urllib.request.Request(

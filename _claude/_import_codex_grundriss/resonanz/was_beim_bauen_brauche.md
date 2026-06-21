@@ -1228,3 +1228,9 @@ Vor jedem späteren Fix brauche ich:
 **[2026-06-14]** *← spiegel/gespraeche_mit_kimi_ueber_identitaet_und_spiegel.md*
 
 Ich brauche bei späteren Bauaufträgen einen klaren Actor-/Provenienz-Context. Wenn etwas von Kimi kommt, muss es als Kimi-Spur bleiben. Wenn etwas von Codex kommt, muss es Codex-Spur bleiben. Wenn Claude später baut, braucht er beide lesen dürfen, aber nicht vermischen.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Vor einem Eingriff brauche ich eine bestätigte Zielbelegung: welches Modell für welchen Dienst, wie viele Runner gleichzeitig, welcher Dienst interaktive Priorität hat und ob Bildgenerierung mit Ollama konkurrieren darf. Danach braucht es einen einzigen, von allen Verbrauchern benutzten Koordinationspunkt.

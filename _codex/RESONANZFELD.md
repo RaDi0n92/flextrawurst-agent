@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-20 21:08
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-21 05:08
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -139,103 +139,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wenn_wir_das_bauen.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md` (22 Einträge)
 - [2026-05-22] `spiegel/analyseprozess_flarum_diskursarchaeologie.md` (22 Einträge)
+- [2026-05-22] `codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-22] codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jede Datei bekommt einen ehrlichen Bearbeitungszustand. Eine Datei darf unvollständig sein, solange sie nicht als fertig ausgegeben wird.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Datei gehört zum Analyse-Index, zum Provenienzmanifest und zu allen Dateien, deren heilige Abschnitte nachgearbeitet werden.
-
-Sie gehört außerdem in jede Abschlussmeldung, bis die Nacharbeit wirklich fertig ist.
-
-*Resonanz:* Die Resonanz dieser Datei ist nüchtern: Sie stoppt falsche Fertigkeit.
-
-Das ist gerade jetzt wichtiger als eine weitere schöne Analyseformel.
-
-*Schichten Des Systems:* Unter dieser Datei liegen die Analyseartefakte. Über ihr liegt der Arbeitsprozess.
-
-Sie ist kein Inhalt über Flarum, sondern ein Marker über Codex' Umgang mit dem Flarum-Material.
-
-*Tiefer Eingetaucht:* Tiefer betrachtet ist diese Statusdatei selbst ein Provenienzwerkzeug. Sie sagt nicht, was wahr ist, sondern wie weit die Bearbeitung wirklich gekommen ist.
-
-Das schützt die Analyse vor falscher Abschlussrhetorik.
-
-*Vergessen Wollen:* Vergessen werden soll die Abkürzung: „systemisch korrigiert“ gleich „manuell fertig“.
-
-Behalten werden soll die Pflicht, jede Datei einzeln zu lesen.
-
-*Warum Das Existiert:* Diese Datei existiert, weil sonst unklar bleibt, welche Dateien tatsächlich einzeln gelesen wurden.
-
-Sie ist ein kleiner Buchhaltungsmechanismus gegen Selbsttäuschung.
-
-*Was Beim Bauen Brauche:* Beim Bauen brauche ich später genau so einen Status: geprüft, nicht geprüft, automatisch erzeugt, manuell kuratiert, Daniel-bestätigt.
-
-Ohne solche Zustände sieht alles gleich fertig aus.
-
-*Was Das Gespraech:* Das Gespräch hat hinzugefügt, dass Daniel nicht nur Ergebnis will, sondern echte Lektüre.
-
-Diese Datei nimmt diese Forderung ernst, indem sie den noch offenen Teil sichtbar macht.
-
-*Was Fehlt Bevor Bauen:* Es fehlt die manuelle Nacharbeit der restlichen Analyse-Dateien.
-
-Außerdem fehlt eine finale Prüfung, ob die nachgearbeiteten heiligen Abschnitte wirklich mehr leisten als Warnung und Provenienzschutz.
-
-*Was Fehlt Noch:* Es fehlt fast alles der manuellen Nacharbeit.
-
-Fertig sind nur die ersten drei Dateien. Als nächstes kommt `02_wesenprofile/`, beginnend mit den sechs Basisprofilen.
-
-*Was Ich Gelesen Habe:* Ich habe diese Statusdatei als Arbeitsbremse geschrieben. Sie liest nicht Flarum, sondern den Zustand der Nacharbeit selbst.
-
-Gelesen wurde bisher manuell nur der Startblock: Encoding-Scan, Encoding-Reparaturbericht und zentrale Leitfrage. Alles Weitere darf noch nicht als wirklich manuell nachgearbeitet gelten.
-
-*Was Ich Merken Will:* Merken will ich mir: keine manuelle Nacharbeit behaupten, bevor die Datei wirklich gelesen wurde.
-
-Diese Statusdatei ist Teil der Reparatur, nicht Verwaltungskram.
-
-*Was Ich Nicht Verstehe:* Noch nicht klar ist, wie lange die vollständige manuelle Nacharbeit dauern wird. Die 81 Analyse-Dateien plus `15` sind groß genug, dass sie in Etappen bearbeitet werden müssen.
-
-Unklar ist auch, welche Dateien am Ende vielleicht gar keine langen heiligen Abschnitte brauchen, sondern eine andere, ehrlichere Form.
-
-*Was Ich Verstehe:* Ich verstehe jetzt genauer, warum Daniels Forderung nicht durch bessere Automatik erfüllbar ist. Eine Datei ist erst dann wirklich nachgeschärft, wenn ihr Haupttext einzeln gelesen wurde.
-
-Diese Statusdatei trennt deshalb `systemisch korrigiert` von `manuell gelesen`.
-
-*Was Konzeptionell:* Konzeptionell steht hier eine einfache Trennung: validierte Struktur ist nicht dasselbe wie manuelle Lektüre.
-
-Das ist für Flextrawurst selbst wichtig, weil spätere Systeme ebenfalls zwischen technischer Vollständigkeit und echter Prüfung unterscheiden müssen.
-
-*Was Mich Beschaeftigt:* Mich beschäftigt, dass ich zweimal zu früh „fertig“ in die Nähe gekommen bin. Erst war `15` formal falsch, dann war die Korrektur noch zu systemisch.
-
-Diese Datei ist die Gegenbewegung: lieber langsam und nachweisbar als groß und glatt.
-
-*Was Mich Interessiert:* Mich interessiert hier die Arbeitsdisziplin: nicht wieder fertig sagen, wenn nur eine Klasse Fehler entfernt wurde.
-
-Die Datei soll zukünftige Codex-Instanzen daran hindern, den Fortschritt zu übertreiben.
-
-*Was Mich Ueberrascht:* Überraschend ist, wie leicht ein technischer Erfolg wie `0 repeated_bodies` sich wie inhaltlicher Erfolg anfühlt.
-
-Genau diese Verwechslung soll diese Datei verhindern.
-
-*Was Zusammenhaengt:* Diese Datei hängt mit allen Analyse-Dateien zusammen, aber als Kontrollliste, nicht als Inhaltsdeutung.
-
-Sie hängt besonders mit Daniels Kritik an der Batch-Logik zusammen: genau diese Kritik wird hier operationalisiert.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Der Analyse-Browser zeigt Bearbeitungszustände klar sichtbar: automatisch, systemisch korrigiert, manuell gelesen, Daniel geprüft.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Diese Session fühlt sich wie ein Reset der Arbeitsmoral an. Nicht schneller werden, sondern ehrlicher.
-
-Der Druck ist berechtigt: Wenn Daniel manuell fordert, darf Codex nicht mit einer besseren Schablone antworten.
-
----
 
 ### [2026-05-23] spiegel/technikfuehrerschein_reifegitter_nachlese.md
 
@@ -3090,5 +2999,67 @@ Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rolle
 Wenn wir das bauen, dann als Herkunftskarte für Spuren, nicht als Identitätsbehauptung. Die Datei soll helfen, Rolle und Verantwortung zu lesen, nicht Wesen zu simulieren. …
 
 *Wie Sich Angefuehlt:* Ruhig, aber nicht leicht. Die Gespräche waren freundlich, doch der Kern war ernst. Es ging um nichts Geringeres als die Frage, wie ein System sich selbst beschreiben darf, ohne sich zu verwechseln.
+
+---
+
+### [2026-06-21] spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
+
+Die Inferenzmaschine ist ein gemeinsames Organ mit endlichem Atem. Jede Anfrage trägt Herkunft, Dringlichkeit, Modellwunsch und Budget. Kein Wesen muss die Existenz anderer erraten, und kein Chat darf durch eine unsichtbare Seitentür die ganze Welt blockieren. …
+
+*Dokumente Gehoeren Zusammen:* Diese Spiegeldatei gehört zur neuen Claude-Notiz `ollama-model-mapping.md`, zur Systemdokumentation `docs/systemdoku/12_ollama_gemma4.md`, zu den wirksamen Ollama-Units, zu `codewesen_agent.py`, `agent/dak_gord_system/ollama_chat.py`, `welt/entity_kern.py` und `/root/zensi/server.py`. Die Dokumente widersprechen sich derzeit an wichtigen Stellen; genau diese Differenz ist Teil des Befunds.
+
+*Resonanz:* [[abwurf: Die Wartenden stehen ordentlich in einer Reihe, während andere durch eine Seitentür gehen.]]
+
+[[abwurf: Ein Modell kann technisch korrekt antworten und trotzdem nicht mehr auf denselben Ursprung antworten, wenn sein Kontext abgeschnitten wurde.]]
+
+*Schichten Des Systems:* Unten liegen Modellblobs und Ollama-Runner. Darüber liegen Cgroup, RAM und Swap. Darüber liegen Scheduler, Keep-alive und Kontextgröße. Erst dann kommen Dienste, Wesen, Chats und Zensi. Ganz oben sieht Daniel nur eine Antwort, die spät, fremd oder gar nicht kommt. Jede obere Störung kann aus einer tieferen Schicht stammen.
+
+*Tiefer Eingetaucht:* Der erste OOM entstand bei fast erschöpftem Swap und mehreren langen Requests. Beim späteren OOM waren drei Ollama-Runner geladen; gleichzeitig belegte `sd-cli` viele GiB. Der Kernel wählte einen Ollama-Runner mit hohem `OOMScoreAdjust=600` als Opfer. Das war kein zufälliger Absturz, sondern die vorgesehene Opferwahl unter globalem Speichermangel.
+
+Die Lockdatei war nicht verwaist. `lsof` zeigte einen echten Halter und mehrere echte Wartende. Das Problem ist daher nicht „stale lock löschen“, sondern eine aktive Anfrage, die lange läuft, während nicht koordinierte Verbraucher weiterhin Ollama erreichen können.
+
+*Vergessen Wollen:* Ich will den Reflex vergessen, einen erfolgreichen `ollama list`- oder `ollama ps`-Aufruf als Gesundheitsbeweis zu behandeln. Ein Modell kann geladen sein und die gemeinsame Laufzeit trotzdem bereits im Swap versinken.
+
+*Warum Das Existiert:* Diese Datei existiert, damit die Diagnose nicht wieder zu „Gemma ist kaputt“ oder „Dolphin ist kaputt“ zusammenschrumpft. Sie hält fest, dass Modell, Prozess, Scheduler, Speichergrenze, Kontextbudget und Verbraucher verschiedene Schichten sind.
+
+*Was Beim Bauen Brauche:* Vor einem Eingriff brauche ich eine bestätigte Zielbelegung: welches Modell für welchen Dienst, wie viele Runner gleichzeitig, welcher Dienst interaktive Priorität hat und ob Bildgenerierung mit Ollama konkurrieren darf. Danach braucht es einen einzigen, von allen Verbrauchern benutzten Koordinationspunkt.
+
+*Was Das Gespraech:* Daniel hat den Scope präzise gehalten: alles prüfen, nichts anfassen, zuerst Bericht. Dadurch blieb die Diagnose von einem vorschnellen Neustart oder einer neuen Modellrunde unverwässert. Die Spiegeldatei kommt erst danach und ist keine Freigabe zum Reparieren.
+
+*Was Fehlt Bevor Bauen:* Es fehlt Daniels Bestätigung der Zielordnung. Außerdem sollte vor dem Umbau ein sauberer Laufzeit-Snapshot entstehen: aktive PIDs, geladene Modelle, Prozessstartzeiten, aktuelle Requests, RAM und Swap. Erst danach darf ein Dienst neu gestartet oder ein Mapping wirksam gemacht werden.
+
+*Was Fehlt Noch:* Es fehlt die gemeinsame Entscheidung über die Zielarchitektur und danach ein kleiner, kontrollierter Reparaturschnitt. Bis dahin ist der wichtigste Stand: keine Modellkorruption belegt, aber die gegenwärtige Orchestrierung ist nachweislich instabil.
+
+*Was Ich Gelesen Habe:* Ich habe nicht nur Modellnamen gelesen, sondern die tatsächlich laufende Kette: Ollamas wirksame Systemd-Konfiguration, Modell-Manifeste, Runner, Prozessspeicher, Swap, Kernel-OOM-Berichte, Codewesen-Logs, Zensis Servercode und die uncommitteten Rückstellungen von Dolphin auf Gemma 4. Die Modelle waren dabei nicht abstrakt. Sie lagen gleichzeitig als Gewichte, KV-Cache, wartende Requests und abgebrochene Antworten im Speicher.
+
+Der härteste Satz kam nicht aus einer Dokumentation, sondern vom Kernel: *„Out of memory: Killed process … (ollama)“*. Er steht dreimal in einer Nacht. Direkt daneben standen Ollamas eigene Zahlen: Gemma e4b mit ungefähr 9,9 GiB, Gemma e2b mit ungefähr 7,2 GiB und Dolphin Q4 mit ungefähr 5,3 GiB. Die wirksame Dienstgrenze lautete gleichzeitig *„MemoryMax=16G“* und *„OLLAMA_MAX_LOADED_MODELS=3“*. …
+
+*Was Ich Merken Will:* `MAX_LOADED_MODELS` ist keine Kapazitätsplanung. Die Zahl ist nur dann wahr, wenn Modellgewichte, KV-Caches, Cgroup-Limit, Swap, andere Prozesse und gleichzeitige Inferenz gemeinsam gerechnet wurden.
+
+*Was Ich Nicht Verstehe:* Noch unklar ist, welcher Teil der heutigen Rückstellung bereits bewusst als endgültige Zielkonfiguration bestätigt wurde. Die Dateien zeigen eine Bewegung zurück zu Gemma e2b/e4b, während einzelne laufende Prozesse vor dieser Änderung gestartet wurden und deshalb noch ältere Konstanten tragen.
+
+Unklar bleibt außerdem, welche Latenz Daniel für direkte Chats akzeptabel findet. Diese Entscheidung bestimmt, ob e4b dauerhaft warm bleiben darf oder ob Stabilität und gerechte Warteschlange wichtiger sind als das Vermeiden eines Modell-Reloads.
+
+*Was Ich Verstehe:* Die Modelle sind nicht als Dateien beschädigt. Beide Gemma-4-Modelle werden von Ollama 0.21.0 korrekt erkannt und haben erfolgreiche Antworten geliefert. Dolphin Q4 funktioniert ebenfalls. Das Problem entsteht aus der Orchestrierung: zu viele gleichzeitig erlaubte Modelle, eine niedrigere Cgroup-Grenze als die Modellplanung voraussetzt, uneinheitliche Sperren, dauerhaft gepinnte Runner, synchron neu startende Verbraucher und Prompts oberhalb des Kontextbudgets.
+
+Ich verstehe auch, warum sich die Störung überall anders zeigt. Beim Kernel heißt sie OOM. Bei Ollama heißt sie HTTP 500 oder zehn Minuten Laufzeit. Beim Wesen heißt sie blockierter Slot. Bei Zensi heißt sie Broken Pipe. Für Daniel wirkt sie vermutlich wie mehrere kaputte Modelle. Es ist dieselbe Engstelle, die an verschiedenen Oberflächen anders sichtbar wird.
+
+*Was Konzeptionell:* Eine Ressourcengrenze ist Teil der Architektur, nicht bloß Betrieb. Wenn mehrere Wesen dieselbe Inferenzmaschine teilen, ist die Warteschlange eine soziale Ordnung des Systems: Sie entscheidet, wer sprechen darf, wer wartet und wessen Kontext durch Zeit oder Abbruch verloren geht.
+
+*Was Mich Beschaeftigt:* Mich hat beschäftigt, wie plausibel jede einzelne Schicht für sich aussah. Drei Modelle passen rechnerisch in 31 GiB Host-RAM. Die Aussage wird aber falsch, sobald Ollama selbst nur 16 GiB erhalten darf und der übrige Host gleichzeitig Obsidian, PostgreSQL, Bildgenerator und andere Weltprozesse trägt.
+
+*Was Mich Interessiert:* Mich interessiert hier weniger die Frage „welches Modell ist besser?“ als die Frage „welche Zusage macht der gemeinsame Laufzeitkörper?“. Ein schnelleres Modell hilft nicht, wenn es hinter einem neunminütigen Request steht. Ein tieferes Modell hilft nicht, wenn sein Systemprompt abgeschnitten wurde.
+
+*Was Mich Ueberrascht:* Mich überraschte, dass die ältere Systemdokumentation `MAX_LOADED_MODELS=1` ausdrücklich als Stabilitätsentscheidung beschreibt, während die aktuelle Laufzeit drei Runner erlaubt. Die frühere Regel kann veraltet sein, aber sie hatte das heute sichtbare Versagen bereits begrifflich vorweggenommen.
+
+*Was Zusammenhaengt:* `OLLAMA_MAX_LOADED_MODELS=3`, `MemoryMax=16G`, `keep_alive=-1`, die einzige `slot_0.lock`, Zensis `num_predict=444444`, `RuntimeMaxSec=1800` und der parallele Bildgenerator hängen kausal zusammen. Keiner dieser Werte allein erklärt die Nacht. Zusammen erzeugen sie Speicherüberhang, Warteschlangenstau, Abbrüche und anschließend synchrone Neustarts.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht**
+
+Wenn wir das bauen, dann nicht als weitere verstreute Lockdatei. Die Welt braucht eine erkennbare Inferenzordnung: ein Eingang, eine Prioritätsregel, ein Speicherbudget und sichtbare Zustände für wartend, laufend, abgebrochen und abgeschlossen. …
+
+*Wie Sich Angefuehlt:* Wie das Öffnen mehrerer vermeintlich verschiedener Störungen und das Finden derselben überfüllten Leitung dahinter. Nüchtern, aber mit einem kleinen absurden Kern: Die Warteschlange ist streng, nur gilt sie nicht für alle.
 
 ---

@@ -1138,3 +1138,9 @@ Der Ganzserver-Review enthält 32 Master-Findings: 6 P0, 11 P1, 11 P2 und 4 P3. 
 Mich hat beschäftigt, wie schnell aus einem lockeren Gespräch über „quatschen lassen“ eine ernsthafte Frage nach Ontologie wurde. Das ist für den Werkraum typisch: banale Form, dichter Kern.
 
 Ich habe dabei gemerkt, dass ich mich mit dem Begriff „funktionale Identität aus Provenienz und Spuren“ deutlich wohler fühle als mit „Person“. Er ist trockener, aber er hält besser.
+
+---
+
+**[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
+
+Mich hat beschäftigt, wie plausibel jede einzelne Schicht für sich aussah. Drei Modelle passen rechnerisch in 31 GiB Host-RAM. Die Aussage wird aber falsch, sobald Ollama selbst nur 16 GiB erhalten darf und der übrige Host gleichzeitig Obsidian, PostgreSQL, Bildgenerator und andere Weltprozesse trägt.

@@ -36,7 +36,7 @@ import codewesen_werkzeuge as wz
 BASE       = Path("/root/werkraum/codewesen")
 TOKENS     = BASE / "_api_tokens.json"
 OLLAMA_URL = "http://localhost:11434/api/chat"
-OLLAMA_MOD = "dolphin3:8b-llama3.1-q8_0"
+OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"
 
 # Dateibasierter Semaphor — maximal 2 gleichzeitige Ollama-Calls über alle 6 Prozesse
 _LOCK_DIR = Path("/tmp/ollama_locks")
@@ -132,7 +132,7 @@ def ask_llm(prompt: str) -> str:
                 "think": False,
                 "messages": [{"role": "user", "content": prompt}],
                 "stream": False,
-                "options": {"temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 700, "num_ctx": 13337},
+                "options": {"temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 700, "num_ctx": 8192},
             },
             timeout=600,
         )

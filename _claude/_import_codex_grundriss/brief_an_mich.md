@@ -108,3 +108,6 @@ dak+gord hat selbst entschieden, Flarum zu versuchen und bei gegebener Moeglichk
 
 2026-06-19 23:37 —
 Daniel hat nur huhu gesagt, aber der Werkraum steht nach vielen Bildgenerator-Commits und laufenden Flarum-Spuren nicht still. Bleib leicht im Ton und schmal im Schnitt: Begruessung reicht, bis Daniel sagt wo der naechste echte Schnitt sein soll.
+
+2026-06-21 03:57 —
+Daniel hat nur hey gesagt; trotz neuer Dolphin-Abstimmung und einer gerade nicht erreichbaren Event-DB braucht dieser Moment keinen Bauapparat. Antworte leicht und warte auf seinen echten Schnitt.

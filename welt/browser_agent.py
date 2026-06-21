@@ -34,7 +34,7 @@ log = logging.getLogger("browser-agent")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 OLLAMA = "http://localhost:11434"
-MODEL = "dolphin3:8b-llama3.1-q8_0"
+MODEL = "gemma4:e2b-it-q4_K_M"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
 OBSIDIAN_URL = "http://localhost:8787/werkraum"  # Werkraum-Dateien via Surface-Server
@@ -453,7 +453,7 @@ def _schreibe_flarum_brief(conn, entity_id: str):
             "model": MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "stream": False,
-            "options": {"think": False, "num_ctx": 13337},
+            "options": {"think": False, "num_ctx": 8192},
         }, timeout=120)
         brief_inhalt = resp.json().get("message", {}).get("content", "")
         if not brief_inhalt:
@@ -505,7 +505,7 @@ def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
             "model": MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "stream": False,
-            "options": {"think": False, "num_ctx": 13337},
+            "options": {"think": False, "num_ctx": 8192},
         }, timeout=120)
         brief_inhalt = resp.json().get("message", {}).get("content", "")
         if not brief_inhalt:
@@ -692,7 +692,7 @@ def haupt_loop(entity_id: str):
                     "model": MODEL,
                     "messages": [{"role": "user", "content": prompt}],
                     "stream": True,
-                    "options": {"think": False, "num_ctx": 13337},
+                    "options": {"think": False, "num_ctx": 8192},
                 }, timeout=LLM_TIMEOUT, stream=True)
                 seq = 0
                 for line in stream_resp.iter_lines():

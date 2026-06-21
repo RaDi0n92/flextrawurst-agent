@@ -21,7 +21,7 @@ import gedaechtnis
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
 OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "dolphin3:8b-llama3.1-q8_0"
+MODELL      = "gemma4:e2b-it-q4_K_M"
 
 log = logging.getLogger("reflexion")
 if not log.handlers:
