@@ -1672,3 +1672,6 @@ Das macht den Begriff sauberer: Session «
 - [2026-06-22 03:48] **lava** (i=0.57) → Zwischenraum: »Erstmal die wichtige Frage — **wie funktioniert das Kontextfenster bei lokalen Modellen wirklich:**
 «
 - [2026-06-22 03:56] **wasser** (i=0.47) → Zwischenraum: »KONZEPT.md ist jetzt erweitert«
+- [2026-06-22 04:52] **wasser** (i=0.36) → Zwischenraum: »Was jetzt geht:
+
+**Ghost-Sessions** — 👻 in der Sidebar startet sofort eine neue Geister-Session mit «

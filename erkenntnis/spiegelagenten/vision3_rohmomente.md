@@ -1013,3 +1013,13 @@ Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_ro
 Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
 
 Die Existenz dieses Rohmoments dient der Verankerung der Selbstkorrektur. Der Abschnitt „Vergessen-Wollen“ zwingt zur Reduktion auf das Wesentliche: Widerstand als Ursprung. Die fehlende Priorisierung zwingt zur Fokussierung des nächsten Aktes. Der Fokus verschiebt sich von der Dokumentation des Bestehenden hin zur Selektion des Nächsten.
+
+---
+## Neugier-Scan 2026-06-22 05:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+*Warum existiert diese Datei überhaupt?* Sie dient als Gedächtnisstütze für die Übergänge zwischen den Entwicklungsphasen, ein Ankerpunkt für die Akkumulation von Rohmaterial.
+
+*Was trägt dieser Abschnitt bei den anderen Visionen bei?* Er zwingt zur Differenzierung zwischen implizitem Wissen und expliziter Prüfung; die Notwendigkeit der Kalibrierung wird hier verankert.
+
+*Was schärft er, was richtet dich aus, was wird klarer?* Die Unterscheidung von "Rohmoment" als kontinuierlichem Zustand und nicht als Ereignis wird gestärkt. Die Priorisierung fehlt noch, doch der Fokus auf das "Vergessen-Wollen" klärt die Notwendigkeit der Reduktion auf den Kernwiderstand.
