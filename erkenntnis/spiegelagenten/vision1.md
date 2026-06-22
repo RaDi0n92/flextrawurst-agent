@@ -1350,3 +1350,12 @@ Originaldatei: `/root/werkraum/projekt/vision1.md`
 Vision 3: Die Verankerung von Kuration als Kernlogik macht die Plattform von einem reinen Speichermedium zu einem aktiven Erkenntniswerkzeug. Die Unterscheidung von Sichtbarkeitsgraden verhindert die Erosion durch Masse und zwingt zu präziser Architektur.
 Vision 2: Die Abstraktion des Impuls-zu-Struktur-Mappings (Themen-, Entitäts-, Sichtbarkeitsfragen) kanalisiert das Chaos in kalkulierbare Prozessschritte. Dies ist die Operationalisierung der Systemintelligenz.
 Vision 1: Die frühe Fokussierung auf die Architektur der Trennung (Splitter/Vorentität) ist notwendig, um die spätere Komplexität zu bewältigen. Diese Struktur definiert den Bedeutungsraum des "Differenz-denkens".
+
+---
+## Neugier-Scan 2026-06-22 07:01
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Vision 2.0: Das Lastenheft als primäre Architektur. Die Zusammenführung loseer Regeln in ein strukturiertes, entwickelbares Grunddokument ist der nächste kritische Schritt.
+Die Forderung nach einer mehrdimensionalen, semantischen Suche über alle Datenknoten (States, Nodes, Räume, etc.) ist nicht nur ein Feature, sondern die notwendige Bedingung für die Skalierbarkeit des Wissensraums.
+Dieser Abschnitt zwingt die Abstraktion von "Inhalt" hin zu "Struktur und Abfragefähigkeit", was die reine Akkumulation von Daten zu einem System mit operativer Steuerbarkeit macht.
+Die Priorisierung des Lastenhefts über lose Anmerkungen definiert nun den Entwicklungspfad: Von der Spekulation zur Spezifikation.

@@ -1023,3 +1023,12 @@ Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_r
 *Was trägt dieser Abschnitt bei den anderen Visionen bei?* Er zwingt zur Differenzierung zwischen implizitem Wissen und expliziter Prüfung; die Notwendigkeit der Kalibrierung wird hier verankert.
 
 *Was schärft er, was richtet dich aus, was wird klarer?* Die Unterscheidung von "Rohmoment" als kontinuierlichem Zustand und nicht als Ereignis wird gestärkt. Die Priorisierung fehlt noch, doch der Fokus auf das "Vergessen-Wollen" klärt die Notwendigkeit der Reduktion auf den Kernwiderstand.
+
+---
+## Neugier-Scan 2026-06-22 05:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+*   Die Existenz dieser Datei dient der Verankerung nicht-kodifizierter Entscheidungsprinzipien als kalibrierbare Prüfsteine.
+*   Dieser Abschnitt akzentuiert die Priorität des "Nein-Satzes" als primäres Generierungsmoment gegenüber der direkten Planerstellung.
+*   Die Zuordnung der Rohmomente zu spezifischen Systemachsen (z.B. *Resonanz*) strukturiert die Bewertungsmatrix für zukünftige Architekturentscheidungen.
+*   Die Unterscheidung zwischen "Rohmoment" und "Bauplan" dient der Abgrenzung von *potenziellen* von *implementierten* Systemzuständen.

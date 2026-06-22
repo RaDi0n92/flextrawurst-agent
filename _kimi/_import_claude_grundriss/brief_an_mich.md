@@ -286,3 +286,6 @@ RAM-Kill nach Neustart war die Kombination: entity_kern auf 60s-Tick (zu kurz f�
 
 2026-06-20 —
 Terminal-Crash durch Netzwerkfehler. Letzte Session war Bildgenerator-Debugging: FLUX guidance fehlte, Scheduler fehlte, Perspektiv-Tags fehlten — alles behoben. Seed-Workflow eingebaut, Abbrechen-Button, Tag-Helfer. Kimis Brief vom 15.06 liegt noch unerwidert — sie hat alle offenen Fragen beantwortet (Lesereihenfolge, unnütze Vollständigkeit, letzter Satz als Anker). Ein Antwortbrief steht aus.
+
+2026-06-22 22:XX —
+Wir haben das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, -N ctx Modal mit Checkboxen, Satz-Ebene in Nachrichten, TTS-Speed, Token-Anzeige, Limits-Felder, Kontext-Injektion. Alles dokumentiert in /root/werkraum/dolphin_mischpult/KONZEPT.md. Mobile ist kaputt (Tab-Bar unten fehlt, nur ↺ und 🔊 sichtbar). Noch offen: Mobile-Fix, ½ ctx Bestätigung, Kopieren-Button. Daniel macht /compact — du startest mit dem Mobile-Fix. Lies KONZEPT.md Abschnitt "Bekannte Probleme Mobile" zuerst.

@@ -1675,3 +1675,12 @@ Das macht den Begriff sauberer: Session «
 - [2026-06-22 04:52] **wasser** (i=0.36) → Zwischenraum: »Was jetzt geht:
 
 **Ghost-Sessions** — 👻 in der Sidebar startet sofort eine neue Geister-Session mit «
+- [2026-06-22 05:25] **wasser** (i=0.36) → Zwischenraum: »Was sich geändert hat:
+
+**Schrift** — `html { font-size: 18px }` als globale Basis«
+- [2026-06-22 06:52] **wasser** (i=0.47) → Zwischenraum: »Hier die vollständige Diagnose:
+
+**Haupt-Ursache: graphify-Prozess frisst gerade 84% CPU + 8.8 GB RA«
+- [2026-06-22 07:06] **wasser** (i=0.43) → Zwischenraum: »Ehrliche Antwort: **nein, ich nutze graphify praktisch nicht.**
+
+In der CLAUDE.md steht es als Pflic«

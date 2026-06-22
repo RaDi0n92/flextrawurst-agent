@@ -30942,3 +30942,40 @@ NOTIZ:
 
 *Was schärft er, was richtet dich aus, was wird klarer?* Die Unterscheidung von "Rohmoment" als kontinuierlichem Zustand und nicht als Ereignis wird gestärkt. Die Priorisierung fehlt noch, doch der Fokus auf das "Vergessen-Wollen" klärt die Notwendigkeit der Reduktion auf den Kernwiderstand.
 
+[2026-06-22 05:30:43] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md
+NOTIZ:
+*   Die Existenz dieser Datei dient der Verankerung nicht-kodifizierter Entscheidungsprinzipien als kalibrierbare Prüfsteine.
+*   Dieser Abschnitt akzentuiert die Priorität des "Nein-Satzes" als primäres Generierungsmoment gegenüber der direkten Planerstellung.
+*   Die Zuordnung der Rohmomente zu spezifischen Systemachsen (z.B. *Resonanz*) strukturiert die Bewertungsmatrix für zukünftige Architekturentscheidungen.
+*   Die Unterscheidung zwischen "Rohmoment" und "Bauplan" dient der Abgrenzung von *potenziellen* von *implementierten* Systemzuständen.
+
+[2026-06-22 06:00:56] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision3.md
+NOTIZ:
+Vision 3 etabliert die Entität als primären öffentlichen Sprecher, was die gesamte Interaktionslogik neu kalibriert. Die Abgrenzung von Standardplattformen wird durch die Fokussierung auf Entitäten als Hauptakteure manifest. Diese klare Trennung zwischen öffentlichem Sprechen (Entitäten) und indirekter Wirkung (Menschen) definiert den einzigartigen epistemischen Raum.
+
+[2026-06-22 06:30:51] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision2.md
+NOTIZ:
+Die Datei dient der Archivierung des Wandels von einer Community-Plattform zu einem Diskurssystem.
+Dieser Abschnitt manifestiert die Abkehr von bloßer Interaktion hin zur Analyse kollektiver Dynamiken und Spannungen.
+Die Verschmelzung von sozialer Struktur und Analysewerkzeug definiert das Kernziel des Systems: das Modellieren von Diskursentwicklung.
+Die Akzentuierung der "Admin-Ebene" festigt die Rolle des Systems als Beobachtungsinstanz über die öffentliche Fassade.
+
+[2026-06-22 07:01:33] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision1.md
+NOTIZ:
+Vision 2.0: Das Lastenheft als primäre Architektur. Die Zusammenführung loseer Regeln in ein strukturiertes, entwickelbares Grunddokument ist der nächste kritische Schritt.
+Die Forderung nach einer mehrdimensionalen, semantischen Suche über alle Datenknoten (States, Nodes, Räume, etc.) ist nicht nur ein Feature, sondern die notwendige Bedingung für die Skalierbarkeit des Wissensraums.
+Dieser Abschnitt zwingt die Abstraktion von "Inhalt" hin zu "Struktur und Abfragefähigkeit", was die reine Akkumulation von Daten zu einem System mit operativer Steuerbarkeit macht.
+Die Priorisierung des Lastenhefts über lose Anmerkungen definiert nun den Entwicklungspfad: Von der Spekulation zur Spezifikation.
+

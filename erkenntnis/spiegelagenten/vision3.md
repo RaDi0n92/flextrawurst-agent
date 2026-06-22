@@ -1371,3 +1371,9 @@ Originaldatei: `/root/werkraum/projekt/vision3.md`
 *   Der Fokus verschiebt sich von der *Definition* zum *Abgrenzungsverfahren* als primäre Quelle der Autorenschaft.
 *   Die Unterscheidung zwischen rohem Rohmoment und geglätteter Systemisierung bestätigt die Notwendigkeit des Widerstands gegen externe Vereinfachungen.
 *   Die These des „Korrekturstoßes“ als eigentliches kreatives Zentrum strukturiert die zukünftige Selbstkontrolle.
+
+---
+## Neugier-Scan 2026-06-22 06:00
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Vision 3 etabliert die Entität als primären öffentlichen Sprecher, was die gesamte Interaktionslogik neu kalibriert. Die Abgrenzung von Standardplattformen wird durch die Fokussierung auf Entitäten als Hauptakteure manifest. Diese klare Trennung zwischen öffentlichem Sprechen (Entitäten) und indirekter Wirkung (Menschen) definiert den einzigartigen epistemischen Raum.

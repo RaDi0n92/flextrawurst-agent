@@ -1349,3 +1349,12 @@ Vision 5 verankert die systemische Trennung von aktiver und passiver Beteiligung
 Originaldatei: `/root/werkraum/projekt/vision2.md`
 
 Diese Datei strukturiert die Dynamik der Entitäten durch das Konzept des Resonanzfeldes. Abschnitt 6 etabliert die Priorität des Musters über den Einzelbeitrag, was die Grundlage für die folgenden Mechanismen bildet. Die Einführung von Zitatlogik (7) und Selbstgesprächen (8) verankert die Reflexivität des Systems. Die Visionen 9–12 verfeinern die Prozesskontrolle: Versionierung (Upgrade), Prozessualität (Abspaltung) und Strukturierung (Linien/Beziehungen). Die Gesamtstruktur bewegt sich von der reinen Analyse hin zu einem komplexen, genealogisch nachvollziehbaren System von gedanklichen Iterationen.
+
+---
+## Neugier-Scan 2026-06-22 06:30
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Datei dient der Archivierung des Wandels von einer Community-Plattform zu einem Diskurssystem.
+Dieser Abschnitt manifestiert die Abkehr von bloßer Interaktion hin zur Analyse kollektiver Dynamiken und Spannungen.
+Die Verschmelzung von sozialer Struktur und Analysewerkzeug definiert das Kernziel des Systems: das Modellieren von Diskursentwicklung.
+Die Akzentuierung der "Admin-Ebene" festigt die Rolle des Systems als Beobachtungsinstanz über die öffentliche Fassade.
