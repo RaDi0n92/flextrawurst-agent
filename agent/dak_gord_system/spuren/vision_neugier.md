@@ -30866,3 +30866,51 @@ Die SQL-Skizze zwingt die Sichtbarkeit und den Kontext in harte Parameter.
 Das Verknüpfen von "Resonanz" mit einem impliziten Testmechanismus ist der nächste Schritt zur Operationalisierung.
 Die Dokumentation des Baufortschritts ordnet das chaotische Feld in eine messbare sequentielle Architektur.
 
+[2026-06-22 01:30:49] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md
+NOTIZ:
+// Vision 5: Erfahrungsdimension
+// Der Fokus liegt auf der Verkörperung des Diskurses, nicht nur seiner Darstellung.
+// Die Architektur muss die *Interaktion* mit dem Wissen, nicht nur dessen Speicherung, modellieren.
+// Die Trennung von *Sehen* (Archiv/Überblick) und *Handeln* (Resonanz/Bauen) muss die primäre Navigationsachse werden.
+// Die "Gäste"-Rolle festigt die Grenze zwischen Konsum und Beitrag, was die Definition des "aktiven" Nutzers schärft.
+
+[2026-06-22 02:00:56] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/projekt/vision5.md
+NOTIZ:
+*Diese Datei dient der Verfeinerung des Wirkungsradius jenseits der reinen Informationsverarbeitung.*
+
+*Die Erweiterung der Steuerungsebenen (Trigger, Logiken, Gravity Actions) verlagert den Fokus von der Datenakkumulation hin zur kausalen Manipulation des Systems.*
+
+*Die Strukturierung von Such- und Profil-Interaktionen mittels expliziter Modi und Stufen verhindert das Chaos durch Informationsüberfluss und etabliert eine kontrollierte Navigationsarchitektur.*
+
+*Der Übergang zu einem „Constitution of Becoming“ ist notwendig, um die dynamischen Regeln der Interaktion (Folgen, Sichtbarkeit, Agenda) als fundamentale, programmierbare Zustände zu verankern.*
+
+[2026-06-22 02:30:42] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision4_strukturiert.md
+NOTIZ:
+*Vision 4:* Die Strukturierung erfordert eine Hierarchisierung der Entwicklungsprioritäten; die Gleichwertigkeit der Komponenten behindert den nächsten Bauakt.
+*Vision 3:* Die Trennung von Diskurskörper und Lebenssystem muss zu einem funktionalen Übergang definiert werden, nicht nur als parallele Existenz.
+*Vision 2:* Die Funktion des "Vergessen-Wollens" muss operationalisiert werden: Wie wird die reine Kernaussage vom erklärenden Kontext isoliert und persistent gespeichert?
+*Vision 1:* Die initiale Erkenntnis bleibt: Das Vorhandene ist ein äußeres Echo von Danials Vorstellung; die eigentliche Architektur bildet sich im unsichtbaren Kern.
+
+[2026-06-22 03:00:41] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md
+NOTIZ:
+Vision 4 ist die Strukturierung des Dualismus: sichtbare Fassade versus internes, entitätengestütztes Kernsystem. Dieser Abschnitt zwingt zur Trennung von *Was gezeigt wird* und *Was existiert*. Die Notwendigkeit einer klaren Priorisierung zwingt die Abstraktion von der reinen Ideenliste zur handlungsleitenden Architektur. Die Abgrenzung von "Begründung" und "Kern" definiert die effiziente Komprimierung der Selbstbeschreibung.
+
+[2026-06-22 03:30:49] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md
+NOTIZ:
+Die Existenz dieser Datei definiert das Raster, das alle neuen Features zwingend durchlaufen müssen. Der Abschnitt "Was ich mir merken will" korrigiert die grundlegende Annahme über die Kostenstruktur der digitalen Präsenz. Die Verbindung zu den anderen Visionen verankert die aktuelle Arbeit fest in Ursprung und Zielerlebnis. Die Erkenntnis des 88-Zeichen-Limits schärft den Fokus auf die Ökonomie der Aufmerksamkeit.
+

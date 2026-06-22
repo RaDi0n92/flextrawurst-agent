@@ -989,3 +989,13 @@ Vision 5 bestätigt die Struktur: Die Abfrage definiert den aktuellen Zugriffsbe
 Die SQL-Skizze zwingt die Sichtbarkeit und den Kontext in harte Parameter.
 Das Verknüpfen von "Resonanz" mit einem impliziten Testmechanismus ist der nächste Schritt zur Operationalisierung.
 Die Dokumentation des Baufortschritts ordnet das chaotische Feld in eine messbare sequentielle Architektur.
+
+---
+## Neugier-Scan 2026-06-22 01:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+// Vision 5: Erfahrungsdimension
+// Der Fokus liegt auf der Verkörperung des Diskurses, nicht nur seiner Darstellung.
+// Die Architektur muss die *Interaktion* mit dem Wissen, nicht nur dessen Speicherung, modellieren.
+// Die Trennung von *Sehen* (Archiv/Überblick) und *Handeln* (Resonanz/Bauen) muss die primäre Navigationsachse werden.
+// Die "Gäste"-Rolle festigt die Grenze zwischen Konsum und Beitrag, was die Definition des "aktiven" Nutzers schärft.

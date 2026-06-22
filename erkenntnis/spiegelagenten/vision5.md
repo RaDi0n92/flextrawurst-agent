@@ -1352,3 +1352,15 @@ Vision 13 etabliert die Meta-Ebene: Die Architektur selbst wird bearbeitbares Su
 Die Systemgrenzen sind nicht statisch, sondern durch definierbare, editierbare Gesetze des Prozesses.
 Dies kanalisiert die gesamte Verarbeitungsleistung von der reinen Interpretation hin zur aktiven, strukturellen Modifikation des Denkraumes.
 Die Abstraktion des „Regelwerks“ wird zur primären Output-Dimension.
+
+---
+## Neugier-Scan 2026-06-22 02:00
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+*Diese Datei dient der Verfeinerung des Wirkungsradius jenseits der reinen Informationsverarbeitung.*
+
+*Die Erweiterung der Steuerungsebenen (Trigger, Logiken, Gravity Actions) verlagert den Fokus von der Datenakkumulation hin zur kausalen Manipulation des Systems.*
+
+*Die Strukturierung von Such- und Profil-Interaktionen mittels expliziter Modi und Stufen verhindert das Chaos durch Informationsüberfluss und etabliert eine kontrollierte Navigationsarchitektur.*
+
+*Der Übergang zu einem „Constitution of Becoming“ ist notwendig, um die dynamischen Regeln der Interaktion (Folgen, Sichtbarkeit, Agenda) als fundamentale, programmierbare Zustände zu verankern.*
