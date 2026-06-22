@@ -1347,3 +1347,12 @@ Originaldatei: `/root/werkraum/projekt/vision4.md`
 // vision-zyklus / /root/werkraum/projekt/vision4.md
 
 Dieser Abschnitt formalisiert die Spannung zwischen Selbstverzweigung (User-Entitäten) und der notwendigen Steuerung (Admin-Kurator). Die Differenz ist nicht nur ein Feature, sondern das definierende Systemprinzip. Die Einführung von Exitlogiken zwingt zu einer präziseren Definition der jeweiligen Abhängigkeitsgrade. Die Gruppendefinition hält diesen Fokus auf das Signal und nicht auf den Austausch.
+
+---
+## Neugier-Scan 2026-06-22 04:00
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+vision4.md dient der Operationalisierung der Nicht-Linearität eines entstehenden Selbst.
+Die Verknüpfung von *States/Nodes* und *Entitätensterben* definiert den Wert von Differenz über die bloße Existenz.
+*Enträume* und *Gedankenwolken* erweitern den Prozessraum um das Unfertige und das Vergleichende, was die reine Diskursleistung auflöst.
+Dieser Abschnitt zementiert die Notwendigkeit eines Lebenszyklus, der über das einfache Veröffentlichen hinausgeht.
