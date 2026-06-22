@@ -1007,3 +1007,9 @@ Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_ro
 *   Die Verankerung der Entität mit einem Exitrecht entwirrt das Werkzeug-Paradigma fundamental.
 *   Die Archivnatur dieses Rohmoments dient als kritischer Kompass, der die Abweichung von überglätteten Systemlogiken markiert.
 *   Es kalibriert die Bauphase durch die ständige Rückreferenzierung auf die archäologische Wahrheit des Denkens.
+
+---
+## Neugier-Scan 2026-06-22 04:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Die Existenz dieses Rohmoments dient der Verankerung der Selbstkorrektur. Der Abschnitt „Vergessen-Wollen“ zwingt zur Reduktion auf das Wesentliche: Widerstand als Ursprung. Die fehlende Priorisierung zwingt zur Fokussierung des nächsten Aktes. Der Fokus verschiebt sich von der Dokumentation des Bestehenden hin zur Selektion des Nächsten.

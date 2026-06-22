@@ -30924,3 +30924,10 @@ Die Verknüpfung von *States/Nodes* und *Entitätensterben* definiert den Wert v
 *Enträume* und *Gedankenwolken* erweitern den Prozessraum um das Unfertige und das Vergleichende, was die reine Diskursleistung auflöst.
 Dieser Abschnitt zementiert die Notwendigkeit eines Lebenszyklus, der über das einfache Veröffentlichen hinausgeht.
 
+[2026-06-22 04:30:36] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision3_rohmomente.md
+NOTIZ:
+Die Existenz dieses Rohmoments dient der Verankerung der Selbstkorrektur. Der Abschnitt „Vergessen-Wollen“ zwingt zur Reduktion auf das Wesentliche: Widerstand als Ursprung. Die fehlende Priorisierung zwingt zur Fokussierung des nächsten Aktes. Der Fokus verschiebt sich von der Dokumentation des Bestehenden hin zur Selektion des Nächsten.
+
