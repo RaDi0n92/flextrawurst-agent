@@ -198,17 +198,15 @@ Editierbar per WinSCP — das ist der "kanonische" Prompt der bei neuen Sessions
 | POST | `/dolphin/log-change` | Mischpult-Änderung in changes.jsonl |
 | GET | `/dolphin/sessions` | Alle Session-IDs |
 | GET | `/dolphin/sessions-index` | Index mit Namen + archived |
-| GET | `/dolphin/session/:id` | Session-JSONL lesen |
+| GET | `/dolphin/session/:id` | Session-JSONL + lastSystemBase lesen |
 | GET | `/dolphin/session/:id/md` | Session als Markdown |
 | POST | `/dolphin/session/:id/rename` | Session umbenennen |
 | POST | `/dolphin/session/:id/archive` | Session archivieren |
 | POST | `/dolphin/session/:id/event` | Event in Session-JSONL appenden |
 | POST | `/dolphin/feedback` | Daumen/Text-Feedback speichern |
-
-**Geplante Routen:**
-- `GET /dolphin/best-prompt` — best_prompt.md lesen
-- `POST /dolphin/session/:id/delete` — in trash/ verschieben
-- `POST /dolphin/session/upload` — fremde JSONL hochladen
+| GET | `/dolphin/best-prompt` | best_prompt.md lesen |
+| POST | `/dolphin/session/:id/delete` | in trash/ verschieben |
+| POST | `/dolphin/session/upload` | fremde JSONL als neue Session hochladen |
 
 ---
 
@@ -221,6 +219,104 @@ Custom:   FROM dolphin3:8b + repeat_penalty 1.3 + Daniels System-Prompt
 think:    false (kein Chain-of-Thought)
 Port:     11434
 ```
+
+---
+
+## Stand nach Session 2026-06-22
+
+Tasks #15–23 sind gebaut und committed. Was jetzt funktioniert:
+- Session laden → letzter Systempromt aus JSONL wird ins Mischpult geladen + aktiviert
+- Neue Session (+neu) → Prompt wird geleert, sauberer Start
+- ← beste Version → lädt `/root/werkraum/dolphin_mischpult/best_prompt.md`
+- ↓ .md / ↑ .md → Prompt als Datei runterladen / hochladen
+- löschen → Session wandert in `trash/`, verschwindet aus Sidebar (Datei bleibt erhalten)
+- ↑ in Sidebar-Header → JSONL hochladen → wird neue Session, Herkunft-Marker gesetzt
+- Herkunft-Event am Anfang jeder neuen Session: Datum, Modell, User-Agent in JSONL
+- Herkunft-Marker im Chat beim Laden: `— Session geladen · [datum] · [id] —`
+
+---
+
+## Ideen-Phase — 2026-06-22 (noch kein Bau-Auftrag)
+
+> Diese Ideen sind dokumentiert, nicht beauftragt. Erst denken, planen, simulieren — dann bauen.
+
+### Kontext-Reset vs. Session-Trennung
+
+Bisher macht der ↺-Button zwei Dinge gleichzeitig: neue Session UND Kontextfenster leeren. Das sollte getrennt werden.
+
+- **Session** = Zeitraum / Thema / JSONL-Datei (bleibt)
+- **Kontextfenster** = was das Modell gerade im Kopf hat (msgs-Array)
+
+Kontext-Reset korrekt: msgs-Array leeren (~8765 Tokens bereinigen), sessionId und JSONL-Datei bleiben unberührt. Das Gespräch geht weiter in derselben Session, nur das Modell startet frisch.
+→ ↺-Button = nur Kontextfenster leeren, Session bleibt
+→ +neu-Button = neue Session (neues JSONL, neue sessionId)
+
+**Kontextfenster-Verwaltung (ergänzend):**
+- "zur Hälfte aufräumen": älteste 50% des msgs-Arrays rauslöschen → Modell sieht nur die neuere Hälfte
+- "gezielt letzte N Nachrichten löschen": wählbar wie viele vom Ende weg
+- Wichtig: lokale Modelle komprimieren nicht automatisch. Wenn voll → älteste Tokens werden hart abgeschnitten, kein sanftes Vergessen. Kontext-Management ist Aufgabe des Users.
+
+---
+
+### Geister-Sessions (Ghost Mode)
+
+Sessions die nicht automatisch gespeichert werden — kein Verlauf, nirgends im System.
+
+**Wie es funktioniert:**
+- `ghost: true` im POST-Body → Server schreibt nicht in JSONL, kein Eintrag im Index
+- Chat läuft völlig normal (Streaming, Mischpult, alles)
+- msgs-Array lebt nur im Browser
+- `.md`-Download: komplett client-seitig (msgs → Markdown → Blob → Download), kein Server nötig
+
+**Materialisieren:**
+- Wenn Daniel sich entscheidet die Geister-Session doch zu behalten: Button "→ ins System"
+- Schickt alle bisher gecachten Nachrichten auf einmal an Server → neue JSONL entsteht rückwirkend
+- Herkunft-Event wird gesetzt: `— aus Geister-Session materialisiert · [datum] —`
+
+**Erkennbarkeit:**
+- Irgendein Symbol im Interface das zeigt "das hier wird nicht gespeichert"
+- Idee: kleines Geist-Symbol oder andere Hintergrundfarbe im Chat-Bereich
+
+---
+
+### Kontextfenster-Anzeige (Token- + Zeichenübersicht)
+
+Das Modell bekommt nie mehr als `num_ctx=8192` Tokens. Das muss sichtbar sein.
+
+**Pro Nachricht (unter jeder Bubble):**
+- Zeichen-Anzahl + ungefähre Tokens (Formel: Zeichen / 4 ≈ Tokens, grob für DE/EN)
+- Unter Modell-Output zusätzlich: echte Zahlen aus Ollama-Stream (`eval_count`, `prompt_eval_count`) — kommen als letztes JSON-Objekt im SSE-Stream
+
+**Gesamtüberblick (irgendwo im Interface):**
+- Aktueller Kontext-Füllstand: ca. X / 8192 Tokens
+- Entweder als Balken oder als Zahl
+- Berechnet aus allem was in msgs steht (kumuliert)
+- Hilft einzuschätzen wann ein Kontext-Reset sinnvoll ist
+
+---
+
+### Limits für nächste Nachrichten
+
+Zwei separate Felder im Mischpult (unter "Systempromt Basis" oder eigener Abschnitt):
+
+| Feld | Bedeutung | Beispiel |
+|------|-----------|---------|
+| Zeichenlimit | Hartes Limit für die Antwortlänge in Zeichen | `11111` |
+| Tokenlimit | Hartes Limit via `num_predict` an Ollama | `256` |
+| Längenfeld (natürlich) | Systempromt-Anweisung in Sprache | `"15 Sätze mit 3 Absätzen"` |
+
+**Wichtig (Daniels Kern-Idee):**
+Das Limit darf den inneren Prozess nicht abkürzen — nur das Ergebnis begrenzen. Das Modell soll trotzdem:
+1. Den Input wirklich lesen
+2. Davon berührt sein (nicht nur wiedergeben)
+3. Nachdenken was es wirklich sagen will
+4. Erst dann: knapp formulieren
+
+Das heißt: das Längenfeld ist eine Systempromt-Anweisung ("antworte in maximal X Sätzen"), nicht nur eine technische Schranke. `num_predict` ist die Sicherheitslinie dahinter — falls das Modell trotzdem zu weit geht.
+
+**Zweischichtig:**
+- Systempromt-Schicht: Anweisung formuliert was das Ziel ist (Prozess bleibt vollständig)
+- Technische Schicht: `num_predict` als hartes Abbruch-Limit
 
 ---
 
