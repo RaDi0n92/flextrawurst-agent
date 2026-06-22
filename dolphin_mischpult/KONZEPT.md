@@ -320,6 +320,101 @@ Das heißt: das Längenfeld ist eine Systempromt-Anweisung ("antworte in maximal
 
 ---
 
+## Stand nach großer Bau-Phase (2026-06-22, Session 2)
+
+Alles aus der Ideen-Phase wurde gebaut und committed. Was jetzt funktioniert:
+
+| Feature | Status | Details |
+|---------|--------|---------|
+| Kontext-Reset getrennt von neuer Session | ✅ | ↺ leert nur msgs-Array, sessionId/JSONL bleiben |
+| ½ ctx Button | ✅ | Topbar (Desktop), entfernt älteste 50% |
+| -N ctx Modal | ✅ | Checkboxen, Slider auto-wählt älteste N, einzeln toggle-bar |
+| Nachrichten-Richtung fix | ✅ | Älteste werden markiert/gelöscht, nicht neueste |
+| Geister-Sessions | ✅ | 👻-Button = neue Ghost-Session mit Namens-Popup; Sidebar lila; materialisieren möglich |
+| Session-Rename mit Bestätigung | ✅ | Enter oder ✓-Button; kein stilles Debounce mehr |
+| Nachricht-Detail Popup | ✅ | Klick auf Nachrichtentext im -N ctx Modal → Popup mit Satz-Ebene; einzelne Sätze löschbar |
+| Token-Anzeige pro Bubble | ✅ | ~Zeichen + ~Tokens unter jeder Nachricht; echte Ollama-Zahlen nach Modell-Response |
+| Kontext-Füllstand | ✅ | `ctx ~X/8192` im Topbar (Desktop) |
+| Limits-Felder | ✅ | Zeichenlimit, Tokenlimit (num_predict), Länge in Sprache (→ Systempromt) |
+| Kontext einspeisen | ✅ | Mischpult-Abschnitt: Text + mehrere .md-Dateien; als [kontext]-Eintrag in msgs |
+| TTS-Geschwindigkeit | ✅ | rate-Slider neben 🔊-Button; `+0%` bis `+100%` und `-40%`; Azure TTS pitch-unabhängig |
+| Globale Schriftgröße | ✅ | `html { font-size: 18px }` als Basis; alle rem-Werte skalieren mit |
+| Ghost-Sessions: Banner | ✅ | Sticky-Banner zeigt "kein Verlauf gespeichert" wenn Ghost-Session aktiv |
+| Ghost-Sessions: vergessen | ✅ | "vergessen" entfernt aus Browser-Memory; auf Reload ohnehin weg |
+
+---
+
+## Bekannte Probleme — Mobile (offen)
+
+> Diese Bugs wurden gemeldet, noch nicht gefixt. Bau-Auftrag steht aus.
+
+### Tab-Navigation fehlt oder kaputt
+
+Daniel meldet: Auf dem Phone sind die Tab-Buttons unten (Sessions / Mischpult / Chat) nicht sichtbar oder nicht funktional. Nur ↺ kontext und 🔊 sind oben sichtbar, alle anderen Topbar-Elemente fehlen.
+
+**Was in CSS steht (absichtlich):**
+- `.tb-btn.ctx-half` und `.tb-btn.ctx-n` → `display:none` auf mobile (gewollt)
+- `.tts-rate-wrap` → `display:none` auf mobile (gewollt)
+
+**Was möglicherweise kaputt ist:**
+- Die mobile Tab-Bar unten (`<div class="mobile-tabs">`) war schon vor der letzten Bau-Phase da. Es ist unklar ob sie durch die neuen Änderungen (rename-row div, neue Mischpult-Abschnitte) kaputt gegangen ist oder ob es ein Layout-Problem ist das den Bereich überdeckt.
+- Auf mobile sollte die Tab-Bar unten stets sichtbar sein und zwischen Sessions / Chat / Mischpult wechseln.
+
+**Vor dem Fix zu prüfen:**
+1. Ist `.mobile-tabs` visible auf dem Phone?
+2. Wird sie von einem anderen Element (ctx-modal, msg-edit-modal, ghost-banner) überdeckt?
+3. Hat das hinzugefügte `html { font-size: 18px }` das Layout verändert?
+4. Ist die rename-row die Ursache für den Layout-Bruch?
+
+---
+
+## Neue Anforderungen — noch nicht gebaut
+
+> Dokumentiert, nicht beauftragt.
+
+### ½ ctx Bestätigungs-Popup
+
+Klick auf `½ ctx` soll ein Bestätigungs-Popup öffnen bevor die Hälfte gelöscht wird. Analog zum -N ctx Modal: kurze Anzeige wie viele Nachrichten wegfallen würden und wie viele Tokens das freimacht. Dann bestätigen.
+
+**Warum:** Der Button ist ein destruktiver Einzeiler der ohne Warnung die Hälfte des Kontexts löscht. Eine kurze Bestätigung verhindert versehentliches Klicken.
+
+**Design:** Kein vollwertiges Modal nötig — ein kleines Inline-Popup oder ein `confirm()`-Dialog reicht. Oder Erweiterung des bestehenden -N ctx Modals mit einem Preset "älteste Hälfte auswählen".
+
+---
+
+### Kopieren-Button unter jeder Nachricht
+
+Unter jeder Nachricht (User-Input UND Modell-Output) soll ein kleiner Kopieren-Button erscheinen. Kopiert den vollständigen Nachrichtentext in die Zwischenablage.
+
+**Design:**
+- Auf Desktop: beim Hover sichtbar (wie die anderen msg-actions Buttons)
+- Auf Mobile: immer sichtbar
+- Symbol: 📋 oder `copy` oder einfach `⧉`
+- Feedback: kurz "✓ kopiert" anzeigen, dann zurück zu Symbol
+
+**Technisch:**
+- `navigator.clipboard.writeText(content)` — kein Server nötig
+- Existiert bereits in der `msg-actions` Zeile (🔊 👍 👎 📝 ↩) → ein weiterer Button daneben
+
+---
+
+### Mobile: vollständiger Neuaufbau der Layout-Logik
+
+Der aktuelle Mobile-Fix patcht einzelne CSS-Regeln. Nach mehreren Bau-Runden ist das nicht mehr konsistent.
+
+**Was auf Mobile funktionieren muss:**
+- Tab-Bar unten: Sessions · Chat · Mischpult (immer sichtbar)
+- Topbar: nur ↺ kontext + 🔊 (keine ½ ctx, keine -N ctx, kein Slider)
+- Alle Modals (ctx-modal, msg-edit-modal) füllend den Bildschirm
+- Ghost-Banner sichtbar
+- Bubble-Text groß genug zum Lesen
+- msg-actions (🔊 👍 👎 📝 ↩ 📋) immer sichtbar (nicht hover-abhängig)
+
+**Ursache der aktuellen Probleme:**
+Vermutlich bricht `html { font-size: 18px }` zusammen mit der rename-row das Flexbox-Layout in der `inp-row`. Auf Mobile ist der verfügbare Platz knapp — wenn ein Element seinen Platz nicht findet, können andere Elemente (Tab-Bar) nach unten gedrückt oder überdeckt werden.
+
+---
+
 ## Als Blueprint: Übertragung auf andere Modelle
 
 Das Mischpult-System ist für dolphin3-daniel entwickelt, aber die Idee gilt für alle:
