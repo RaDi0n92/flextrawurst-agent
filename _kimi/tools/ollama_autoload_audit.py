@@ -132,20 +132,36 @@ def scan_systemd() -> list[dict]:
     return units
 
 
+def is_binary_file(path: Path) -> bool:
+    """Heuristik: ELF-Binaer oder enthaelt NUL-Bytes."""
+    try:
+        raw = path.read_bytes()
+    except Exception:
+        return True
+    if raw.startswith(b"\x7fELF") or raw.startswith(b"MZ"):
+        return True
+    if b"\x00" in raw:
+        return True
+    return False
+
+
+def read_text_file(path: Path) -> str | None:
+    """Liest eine Textdatei, ignoriert Binaerdateien."""
+    if is_binary_file(path):
+        return None
+    try:
+        return path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return None
+
+
 def scan_single_file(path: Path, root: Path) -> dict[str, list[tuple]] | None:
     if not path.is_file():
         return None
     if any(part in SKIP_DIRS for part in path.parts):
         return None
-    try:
-        raw = path.read_bytes()
-    except Exception:
-        return None
-    if b"\x00" in raw:
-        return None
-    try:
-        text = raw.decode("utf-8", errors="ignore")
-    except Exception:
+    text = read_text_file(path)
+    if text is None:
         return None
     hits = defaultdict(list)
     lines = text.splitlines()
@@ -180,17 +196,37 @@ def scan_code() -> dict[str, list[tuple]]:
     return hits
 
 
+INTERPRETER_NAMES = {
+    "python", "python3", "python2", "python3.12", "python3.11", "python3.10",
+    "bash", "sh", "node", "nodejs", "perl", "ruby", "env",
+}
+
+
+def is_interpreter(path: Path) -> bool:
+    return path.name in INTERPRETER_NAMES or str(path) == "/usr/bin/env"
+
+
 def resolve_path(raw: str, working_dir: str | None) -> Path | None:
-    """Versucht einen Pfad aus ExecStart oder EnvironmentFile aufzuloesen."""
-    # Entferne ggf. Praefixe wie /usr/bin/python3
+    """Versucht den ausfuehrbaren Script-Pfad aus ExecStart aufzuloesen.
+    Ueberspringt Interpreter wie python3, bash, node. Behandelt auch relative Pfade."""
     parts = raw.split()
     for p in parts:
+        if p.startswith("-"):
+            continue
         if p.startswith("/") or p.startswith("./") or p.startswith("../"):
             candidate = Path(p)
+            if is_interpreter(candidate):
+                continue
             if candidate.is_absolute():
                 return candidate
             if working_dir:
                 return Path(working_dir) / candidate
+        elif "/" in p or "." in p:
+            # Relativer Pfad ohne ./ (z.B. "scripts/serve.ts")
+            if working_dir:
+                candidate = Path(working_dir) / p
+                if candidate.exists():
+                    return candidate
     return None
 
 
@@ -237,8 +273,197 @@ def unit_status() -> str:
     return run(["systemctl", "list-unit-files", "--type=service,timer", "--no-pager"])
 
 
+def parse_unit_status(unit_status_str: str) -> dict[str, str]:
+    """Parst `systemctl list-unit-files` in ein Dict unit -> state."""
+    states = {}
+    for line in unit_status_str.splitlines():
+        parts = line.split()
+        if len(parts) >= 2 and parts[0].endswith((".service", ".timer")):
+            states[parts[0]] = parts[1]
+    return states
+
+
+def detect_background_loops(text: str, ext: str = "") -> list[str]:
+    """Sucht nach Hinweisen auf Endlosschleifen / regelmaessige Hintergrundaktivitaet.
+    Filtern nach Dateiendung, um String-Literals aus anderen Sprachen zu ignorieren."""
+    indicators = []
+    ext = ext.lower()
+
+    python_patterns = [
+        (r"while\s+(True|1)\s*:", "Python-Endlosschleife"),
+        (r"threading\.Timer", "Python-Threading-Timer"),
+        (r"sched\.scheduler", "Python-sched"),
+        (r"asyncio\.create_task", "Python-asyncio-Task"),
+        (r"schedule\.every", "Python-schedule"),
+    ]
+    js_patterns = [
+        (r"while\s*\(true\)", "JS-Endlosschleife"),
+        (r"setInterval\s*\(", "JS-setInterval"),
+        (r"setTimeout\s*\(", "JS-setTimeout"),
+    ]
+    generic_patterns = [
+        (r"@app\.cron|crontab", "Scheduling-Bibliothek"),
+    ]
+
+    patterns = []
+    if ext in (".py", ""):
+        patterns.extend(python_patterns)
+    if ext in (".js", ".ts", ""):
+        patterns.extend(js_patterns)
+    patterns.extend(generic_patterns)
+
+    for pat, label in patterns:
+        if re.search(pat, text, re.IGNORECASE):
+            indicators.append(label)
+    return indicators
+
+
+def check_cron() -> list[dict]:
+    """Liest root-Crontab und systemweite cron.d-Eintraege."""
+    entries = []
+    # root crontab
+    try:
+        out = subprocess.run(["crontab", "-l"], capture_output=True, text=True, timeout=10).stdout
+        for line in out.splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if re.match(r"^\*+\/\d+|\d+\s+\*", line):
+                entries.append({"source": "root crontab", "line": line})
+    except Exception:
+        pass
+    # cron.d
+    cron_d = Path("/etc/cron.d")
+    if cron_d.exists():
+        for f in cron_d.iterdir():
+            if f.name.startswith("."):
+                continue
+            try:
+                text = f.read_text(errors="ignore")
+                for line in text.splitlines():
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if re.match(r"^\*+\/\d+|\d+\s+\*", line):
+                        entries.append({"source": f"cron.d/{f.name}", "line": line})
+            except Exception:
+                pass
+    return entries
+
+
+def assess_risks(units: list[dict], states: dict[str, str], cron_entries: list[dict],
+                 code_hits: dict, ref_hits: dict) -> list[dict]:
+    """Erstellt eine priorisierte Risikoliste."""
+    risks = []
+
+    for u in units:
+        state = states.get(u["filename"], "unknown")
+        is_enabled = state in ("enabled", "enabled-runtime", "static")
+        is_timer = u["unit_type"] == "timer"
+        has_model = bool(u["model_hits"] or u["ollama_hits"])
+        ref_model_names = set()
+
+        # Wir brauchen den kompletten Unit-Text, um Restart zu pruefen
+        try:
+            raw = Path(u["path"]).read_bytes()
+            unit_text = raw.decode("utf-8", errors="ignore").lower()
+        except Exception:
+            unit_text = ""
+
+        restart_policy = "none"
+        for line in unit_text.splitlines():
+            if line.strip().startswith("restart="):
+                restart_policy = line.strip().split("=", 1)[1]
+
+        risk_level = None
+        reasons = []
+
+        if has_model and is_enabled:
+            if is_timer:
+                risk_level = "HOCH"
+                reasons.append(f"Timer ist {state} und triggert Service mit Modell-Verweisen")
+            elif restart_policy in ("always", "on-failure"):
+                risk_level = "HOCH"
+                reasons.append(f"Service ist {state} mit Restart={restart_policy} und Modell-Verweisen")
+            else:
+                risk_level = "MITTEL"
+                reasons.append(f"Service ist {state} und enthaelt Modell-Verweise (kein Autorestart)")
+
+        # Pruefe referenzierte Scripts auf Modell-Verweise und Hintergrundloops
+        for exec_start in u.get("exec_start", []):
+            script_path = resolve_path(exec_start, u.get("working_dir"))
+            if script_path and script_path.is_file():
+                text = read_text_file(script_path)
+                if text is None:
+                    continue
+                script_hits = find_model_hits(text)
+                for name, _ in script_hits:
+                    ref_model_names.add(name)
+                loops = detect_background_loops(text, script_path.suffix)
+                if loops and (has_model or ref_model_names):
+                    if risk_level not in ("HOCH", "MITTEL"):
+                        risk_level = "MITTEL"
+                    reasons.append(f"Script `{script_path.name}` enthaelt: {', '.join(loops)}")
+
+        # Auch EnvironmentFiles auf Modell-Verweise pruefen
+        for env_file in u.get("environment_files", []):
+            env_path = resolve_path(env_file, u.get("working_dir"))
+            if env_path and env_path.is_file():
+                text = read_text_file(env_path)
+                if text is None:
+                    continue
+                for name, _ in find_model_hits(text):
+                    ref_model_names.add(name)
+
+        # Falls die Unit selbst kein Modell nennt, aber referenzierte Dateien — Risiko bewerten
+        if ref_model_names and is_enabled and not risk_level:
+            if is_timer:
+                risk_level = "HOCH"
+                reasons.append(f"Timer ist {state} und referenziert Dateien mit Modell-Verweisen")
+            elif restart_policy in ("always", "on-failure"):
+                risk_level = "HOCH"
+                reasons.append(f"Service ist {state} mit Restart={restart_policy} und referenziert Dateien mit Modell-Verweisen")
+            else:
+                risk_level = "MITTEL"
+                reasons.append(f"Service ist {state} und referenziert Dateien mit Modell-Verweisen")
+
+        if risk_level:
+            all_models = {name for name, _ in u.get("model_hits", [])} | ref_model_names
+            risks.append({
+                "unit": u["filename"],
+                "state": state,
+                "risk": risk_level,
+                "reasons": reasons,
+                "model_hits": sorted(all_models),
+                "restart": restart_policy,
+                "type": u["unit_type"],
+            })
+
+    # Cron-Eintraege pruefen
+    for entry in cron_entries:
+        cmd = entry["line"]
+        # Pruefe, ob das Kommando auf einen Pfad verweist, der Modelle enthaelt
+        matches_model = any(pat.search(cmd) for pat in MODEL_PATTERNS.values())
+        if matches_model or "ollama" in cmd.lower():
+            risks.append({
+                "unit": entry["source"],
+                "state": "cron",
+                "risk": "MITTEL",
+                "reasons": [f"Cron-Eintrag enthaelt Modell/Ollama-Referenz: {cmd[:80]}"],
+                "model_hits": [],
+                "restart": "n/a",
+                "type": "cron",
+            })
+
+    # Sortiere: HOCH, MITTEL, NIEDRIG
+    order = {"HOCH": 0, "MITTEL": 1, "NIEDRIG": 2}
+    risks.sort(key=lambda x: order.get(x["risk"], 99))
+    return risks
+
+
 def build_report(units: list[dict], code_hits: dict, ref_hits: dict,
-                 ollama_ps: str, timers: str, services: str, unit_status_str: str) -> str:
+                 ollama_ps: str, timers: str, services: str, unit_status_str: str,
+                 risks: list[dict], cron_entries: list[dict]) -> str:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines = [
         "---",
@@ -265,6 +490,36 @@ def build_report(units: list[dict], code_hits: dict, ref_hits: dict,
     for name in sorted(MODEL_PATTERNS.keys()):
         count = len(code_hits.get(name, [])) + len(ref_hits.get(name, []))
         lines.append(f"  - `{name}`: {count} Treffer")
+    lines.append("")
+
+    lines.append("## Risiko-Einschaetzung: Was koennte ohne Erlaubnis ein Modell laden?")
+    lines.append("")
+    if not risks:
+        lines.append("Keine aktiven Autoload-Risiken identifiziert.")
+    else:
+        lines.append(f"**{len(risks)} Risiko-Eintraege gefunden.**")
+        lines.append("")
+        current_level = None
+        for r in risks:
+            if r["risk"] != current_level:
+                current_level = r["risk"]
+                lines.append(f"### Risiko {current_level}")
+                lines.append("")
+            lines.append(f"- **`{r['unit']}`** ({r['type']}, state={r['state']}, restart={r['restart']})")
+            for reason in r["reasons"]:
+                lines.append(f"  - {reason}")
+            if r["model_hits"]:
+                lines.append(f"  - Modelle: {', '.join(f'`{m}`' for m in r['model_hits'])}")
+            lines.append("")
+    lines.append("")
+
+    lines.append("### Cron-Jobs (alle, nicht nur Modell-bezogene)")
+    lines.append("")
+    if not cron_entries:
+        lines.append("Keine Cron-Jobs gefunden.")
+    else:
+        for entry in cron_entries:
+            lines.append(f"- **{entry['source']}**: `{entry['line']}`")
     lines.append("")
 
     lines.append("## Aktuell geladene Modelle (`ollama ps`)")
@@ -390,8 +645,14 @@ def main():
     timers = current_timers()
     services = active_services()
     unit_status_str = unit_status()
+    print("Analysiere Cron-Jobs ...")
+    cron_entries = check_cron()
+    print("Bewerte Risiken ...")
+    states = parse_unit_status(unit_status_str)
+    risks = assess_risks(units, states, cron_entries, code_hits, ref_hits)
 
-    report = build_report(units, code_hits, ref_hits, ollama_ps, timers, services, unit_status_str)
+    report = build_report(units, code_hits, ref_hits, ollama_ps, timers, services,
+                          unit_status_str, risks, cron_entries)
     out_path = REPORT_DIR / f"ollama_autoload_audit_{datetime.now(timezone.utc).strftime('%Y-%m-%d')}.md"
     out_path.write_text(report, encoding="utf-8")
     print(f"Bericht geschrieben: {out_path}")

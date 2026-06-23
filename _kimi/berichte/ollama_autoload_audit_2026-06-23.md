@@ -7,7 +7,7 @@ importable: false
 
 # Ollama Autoload-Audit
 
-Erstellt: 2026-06-23 14:07 UTC
+Erstellt: 2026-06-23 14:27 UTC
 
 Dieser Bericht zeigt, welche systemd-Units und Code-Dateien Modelle im Hintergrund laden koennen.
 Read-only — keine Services wurden gestoppt oder veraendert.
@@ -17,44 +17,164 @@ Read-only — keine Services wurden gestoppt oder veraendert.
 - systemd-Units mit Modell/Ollama-Verdacht: 3
 - Code-Dateien mit Modell-Verweisen:
   - `dolphin3`: 1 Treffer
-  - `gemma4`: 91 Treffer
-  - `hauhaucs`: 11 Treffer
+  - `gemma4`: 140 Treffer
+  - `hauhaucs`: 24 Treffer
   - `qwen3-vl`: 0 Treffer
-  - `qwen3.6`: 3 Treffer
-  - `qwen_allgemein`: 5 Treffer
+  - `qwen3.6`: 6 Treffer
+  - `qwen_allgemein`: 8 Treffer
+
+## Risiko-Einschaetzung: Was koennte ohne Erlaubnis ein Modell laden?
+
+**26 Risiko-Eintraege gefunden.**
+
+### Risiko HOCH
+
+- **`dak-gord-web.service`** (service, state=enabled, restart=always)
+  - Service ist enabled mit Restart=always und Modell-Verweisen
+  - Script `web_chat.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`process-camera-preview.service`** (service, state=enabled, restart=on-failure)
+  - Service ist enabled mit Restart=on-failure und referenziert Dateien mit Modell-Verweisen
+  - Modelle: `gemma4`, `hauhaucs`, `qwen3.6`, `qwen_allgemein`
+
+- **`systemweiser.service`** (service, state=enabled, restart=always)
+  - Service ist enabled mit Restart=always und referenziert Dateien mit Modell-Verweisen
+  - Modelle: `gemma4`
+
+- **`zensi.service`** (service, state=enabled, restart=always)
+  - Service ist enabled mit Restart=always und Modell-Verweisen
+  - Modelle: `hauhaucs`, `qwen3.6`, `qwen_allgemein`
+
+### Risiko MITTEL
+
+- **`bildgenerator.service`** (service, state=enabled, restart=on-failure)
+  - Script `bildgenerierung_test.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-antwort-daniel.service`** (service, state=enabled, restart=on-failure)
+  - Script `codewesen_antwort_auf_daniel.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-batch-generator.service`** (service, state=disabled, restart=always)
+  - Script `codewesen_batch_generator.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-chat.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_chat.py` enthaelt: Python-asyncio-Task
+  - Modelle: `gemma4`
+
+- **`codewesen-dakgordsystem.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-forum-neugier.service`** (service, state=disabled, restart=on-failure)
+  - Script `codewesen_forum_neugier.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_1234.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_1324.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_1423.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_2341.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_3123.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-namelessAI_4321.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_agent.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-reaktion-dakgord.service`** (service, state=disabled, restart=on-failure)
+  - Script `codewesen_reaktion.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-reaktion@.service`** (service, state=indirect, restart=on-failure)
+  - Script `codewesen_reaktion.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-takt.service`** (service, state=enabled, restart=always)
+  - Script `codewesen_takt.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-vokabel-takt.service`** (service, state=disabled, restart=always)
+  - Script `codewesen_vokabel_takt.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`codewesen-weltbild.service`** (service, state=disabled, restart=always)
+  - Script `weltbild_builder.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`entity-kern.service`** (service, state=disabled, restart=always)
+  - Script `entity_kern.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`entity-takt.service`** (service, state=disabled, restart=always)
+  - Script `entity_takt.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+- **`geni-forum-lektuere.service`** (service, state=static, restart=none)
+  - Service ist static und referenziert Dateien mit Modell-Verweisen
+  - Modelle: `gemma4`
+
+- **`geni-web.service`** (service, state=enabled, restart=always)
+  - Script `dialog.py` enthaelt: Python-Endlosschleife, Python-asyncio-Task
+  - Modelle: `gemma4`
+
+- **`wesen-webbesucher.service`** (service, state=enabled, restart=on-failure)
+  - Script `wesen_webbesucher.py` enthaelt: Python-Endlosschleife
+  - Modelle: `gemma4`
+
+
+### Cron-Jobs (alle, nicht nur Modell-bezogene)
+
+- **root crontab**: `*/5 * * * * cd /root/werkraum && python3 scripts/flarum_sync.py >> logs/flarum_sync.log 2>&1`
+- **root crontab**: `*/30 * * * * /root/werkraum/_claude/tools/schlaf_synthese_check.sh >> /root/werkraum/_claude/ideen/synthese.log 2>&1`
+- **cron.d/certbot**: `0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(43200))' && certbot -q renew --no-random-sleep-on-renew`
 
 ## Aktuell geladene Modelle (`ollama ps`)
 
 ```
-NAME                                                                   ID              SIZE     PROCESSOR    CONTEXT    UNTIL               
-fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS    1d03ebd45163    21 GB    100% CPU     8192       29 minutes from now
+NAME                                                                   ID              SIZE     PROCESSOR    CONTEXT    UNTIL              
+fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS    1d03ebd45163    21 GB    100% CPU     4096       4 minutes from now
 ```
 
 ## Aktive Timer (`systemctl list-timers --all`)
 
 ```
 NEXT                                  LEFT LAST                                PASSED UNIT                            ACTIVATES
-Tue 2026-06-23 16:09:00 CEST      1min 17s Tue 2026-06-23 15:39:08 CEST     28min ago phpsessionclean.timer           phpsessionclean.service
-Tue 2026-06-23 16:09:28 CEST      1min 45s Tue 2026-06-23 15:39:28 CEST     28min ago claude-resonanzfeld-build.timer claude-resonanzfeld-build.service
-Tue 2026-06-23 16:09:28 CEST      1min 45s Tue 2026-06-23 15:39:28 CEST     28min ago codex-resonanzfeld-build.timer  codex-resonanzfeld-build.service
-Tue 2026-06-23 16:09:28 CEST      1min 45s Tue 2026-06-23 15:39:28 CEST     28min ago kimi-resonanzfeld-build.timer   kimi-resonanzfeld-build.service
-Tue 2026-06-23 16:09:28 CEST      1min 46s Tue 2026-06-23 15:59:28 CEST      8min ago weltkern-watchdog.timer         weltkern-watchdog.service
-Tue 2026-06-23 16:09:28 CEST      1min 46s Tue 2026-06-23 15:59:28 CEST      8min ago werkraum-graph-update.timer     werkraum-graph-update.service
-Tue 2026-06-23 16:10:00 CEST      2min 17s Tue 2026-06-23 16:00:00 CEST      7min ago sysstat-collect.timer           sysstat-collect.service
-Tue 2026-06-23 16:43:58 CEST         36min Tue 2026-06-23 15:56:28 CEST     11min ago fwupd-refresh.timer             fwupd-refresh.service
+Tue 2026-06-23 16:29:28 CEST      1min 53s Tue 2026-06-23 16:19:28 CEST      8min ago weltkern-watchdog.timer         weltkern-watchdog.service
+Tue 2026-06-23 16:29:28 CEST      1min 53s Tue 2026-06-23 16:19:28 CEST      8min ago werkraum-graph-update.timer     werkraum-graph-update.service
+Tue 2026-06-23 16:30:00 CEST      2min 24s Tue 2026-06-23 16:20:00 CEST      7min ago sysstat-collect.timer           sysstat-collect.service
+Tue 2026-06-23 16:39:00 CEST         11min Tue 2026-06-23 16:09:02 CEST     18min ago phpsessionclean.timer           phpsessionclean.service
+Tue 2026-06-23 16:39:28 CEST         11min Tue 2026-06-23 16:09:28 CEST     18min ago claude-resonanzfeld-build.timer claude-resonanzfeld-build.service
+Tue 2026-06-23 16:39:28 CEST         11min Tue 2026-06-23 16:09:28 CEST     18min ago codex-resonanzfeld-build.timer  codex-resonanzfeld-build.service
+Tue 2026-06-23 16:39:28 CEST         11min Tue 2026-06-23 16:09:28 CEST     18min ago kimi-resonanzfeld-build.timer   kimi-resonanzfeld-build.service
+Tue 2026-06-23 16:43:58 CEST         16min Tue 2026-06-23 15:56:28 CEST     31min ago fwupd-refresh.timer             fwupd-refresh.service
 Wed 2026-06-24 00:00:00 CEST            7h Tue 2026-06-23 00:00:00 CEST       16h ago dpkg-db-backup.timer            dpkg-db-backup.service
 Wed 2026-06-24 00:00:00 CEST            7h Tue 2026-06-23 00:00:00 CEST       16h ago logrotate.timer                 logrotate.service
 Wed 2026-06-24 00:07:00 CEST            7h Tue 2026-06-23 00:07:02 CEST       16h ago sysstat-summary.timer           sysstat-summary.service
-Wed 2026-06-24 03:27:13 CEST           11h Tue 2026-06-23 14:19:48 CEST  1h 47min ago motd-news.timer                 motd-news.service
-Wed 2026-06-24 04:24:32 CEST           12h Tue 2026-06-23 13:48:59 CEST  2h 18min ago apt-daily.timer                 apt-daily.service
+Wed 2026-06-24 03:27:13 CEST           10h Tue 2026-06-23 14:19:48 CEST   2h 7min ago motd-news.timer                 motd-news.service
+Wed 2026-06-24 04:24:32 CEST           11h Tue 2026-06-23 13:48:59 CEST  2h 38min ago apt-daily.timer                 apt-daily.service
 Wed 2026-06-24 06:38:54 CEST           14h Tue 2026-06-23 06:40:09 CEST        9h ago apt-daily-upgrade.timer         apt-daily-upgrade.service
-Wed 2026-06-24 07:47:32 CEST           15h Tue 2026-06-23 10:27:29 CEST  5h 40min ago man-db.timer                    man-db.service
-Wed 2026-06-24 08:11:29 CEST           16h Tue 2026-06-23 08:11:29 CEST        7h ago update-notifier-download.timer  update-notifier-download.service
-Wed 2026-06-24 08:21:25 CEST           16h Tue 2026-06-23 08:21:25 CEST        7h ago systemd-tmpfiles-clean.timer    systemd-tmpfiles-clean.service
-Wed 2026-06-24 10:21:12 CEST           18h Tue 2026-06-23 13:14:27 CEST  2h 53min ago certbot.timer                   certbot.service
+Wed 2026-06-24 07:47:32 CEST           15h Tue 2026-06-23 10:27:29 CEST        6h ago man-db.timer                    man-db.service
+Wed 2026-06-24 08:11:29 CEST           15h Tue 2026-06-23 08:11:29 CEST        8h ago update-notifier-download.timer  update-notifier-download.service
+Wed 2026-06-24 08:21:25 CEST           15h Tue 2026-06-23 08:21:25 CEST        8h ago systemd-tmpfiles-clean.timer    systemd-tmpfiles-clean.service
+Wed 2026-06-24 10:21:12 CEST           17h Tue 2026-06-23 13:14:27 CEST  3h 13min ago certbot.timer                   certbot.service
 Sun 2026-06-28 03:10:14 CEST        4 days Sun 2026-06-21 03:10:27 CEST    2 days ago e2scrub_all.timer               e2scrub_all.service
-Mon 2026-06-29 00:35:49 CEST        5 days Mon 2026-06-22 00:19:40 CEST 1 day 15h ago fstrim.timer                    fstrim.service
-Thu 2026-07-02 21:37:06 CEST 1 week 2 days Mon 2026-06-22 13:13:41 CEST  1 day 2h ago update-notifier-motd.timer      update-notifier-motd.service
+Mon 2026-06-29 00:35:49 CEST        5 days Mon 2026-06-22 00:19:40 CEST 1 day 16h ago fstrim.timer                    fstrim.service
+Thu 2026-07-02 21:37:06 CEST 1 week 2 days Mon 2026-06-22 13:13:41 CEST  1 day 3h ago update-notifier-motd.timer      update-notifier-motd.service
 -                                        - -                                        - apport-autoreport.timer         apport-autoreport.service
 -                                        - -                                        - snapd.snap-repair.timer         snapd.snap-repair.service
 -                                        - -                                        - ua-timer.timer                  ua-timer.service
@@ -748,20 +868,114 @@ Hier werden ExecStart-Scripts und EnvironmentFiles der Units gescannt.
 ### `dolphin3` (0 Treffer)
 Keine Treffer.
 
-### `gemma4` (0 Treffer)
-Keine Treffer.
+### `gemma4` (49 Treffer)
+- `bildgenerator.service -> /root/werkraum/tools/bildgenerierung_test.py`
+  - Zeile 218: `"model": "gemma4:e2b-it-q4_K_M",`
+- `browser-agent@.service -> /root/werkraum/welt/browser_agent.py`
+  - Zeile 7: `- Loop: Seite lesen → Gemma4 entscheidet → Aktion ausführen → loggen`
+  - Zeile 37: `MODEL = "gemma4:e2b-it-q4_K_M"`
+- `codewesen-antwort-daniel.service -> /root/werkraum/codewesen_antwort_auf_daniel.py`
+  - Zeile 60: `MODEL = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-batch-generator.service -> /root/werkraum/codewesen_batch_generator.py`
+  - Zeile 57: `OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"`
+- `codewesen-chat.service -> /root/werkraum/codewesen_chat.py`
+  - Zeile 67: `OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"`
+  - Zeile 69: `"mittel": "gemma4:e4b-it-q4_K_M",`
+  - Zeile 70: `"schnell": "gemma4:e2b-it-q4_K_M",`
+- `codewesen-dakgordsystem.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-engagement.service -> /root/werkraum/codewesen_engagement.py`
+  - Zeile 35: `MODELL      = "gemma4:e2b-it-q4_K_M"`
+- `codewesen-forum-neugier.service -> /root/werkraum/codewesen_forum_neugier.py`
+  - Zeile 23: `MODELL  = "gemma4:e2b-it-q4_K_M"`
+- `codewesen-namelessAI_1234.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-namelessAI_1324.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-namelessAI_1423.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-namelessAI_2341.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-namelessAI_3123.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-namelessAI_4321.service -> /root/werkraum/codewesen_agent.py`
+  - Zeile 39: `OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"`
+- `codewesen-reaktion-dakgord.service -> /root/werkraum/codewesen_reaktion.py`
+  - Zeile 111: `OLLAMA_MODEL        = "gemma4:e4b-it-q4_K_M"`
+  - Zeile 112: `OLLAMA_MODEL_SCHNELL = "gemma4:e2b-it-q4_K_M"  # Schnelles Modell — für Entscheidungen`
+- `codewesen-reaktion@.service -> /root/werkraum/codewesen_reaktion.py`
+  - Zeile 111: `OLLAMA_MODEL        = "gemma4:e4b-it-q4_K_M"`
+  - Zeile 112: `OLLAMA_MODEL_SCHNELL = "gemma4:e2b-it-q4_K_M"  # Schnelles Modell — für Entscheidungen`
+- `codewesen-takt.service -> /root/werkraum/codewesen_takt.py`
+  - Zeile 32: `OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"   # schnell — Takt braucht kein 26b`
+- `codewesen-vokabel-takt.service -> /root/werkraum/codewesen_vokabel_takt.py`
+  - Zeile 31: `MODELL      = "gemma4:e2b-it-q4_K_M"`
+- `codewesen-weltbild.service -> /root/werkraum/weltbild_builder.py`
+  - Zeile 34: `OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"`
+- `entity-kern.service -> /root/werkraum/welt/entity_kern.py`
+  - Zeile 29: `MODEL  = "gemma4:e2b-it-q4_K_M"`
+- `entity-takt.service -> /root/werkraum/welt/entity_takt.py`
+  - Zeile 21: `MODEL  = "gemma4:e2b-it-q4_K_M"`
+- `flextrawurst-surface.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 14: `// ── Gemma4-Endpunkte — deaktiviert seit 2026-06-22 (Existenzurlaub) ──────────`
+  - Zeile 19: `//   GET  /gemma4b        → dient gemma4b_chat.html (einfache Chat-UI)`
+  - Zeile 19: `//   GET  /gemma4b        → dient gemma4b_chat.html (einfache Chat-UI)`
+  - Zeile 20: `//   POST /gemma4b/chat   → deaktiviert, kein Ollama-Call`
+  - Zeile 23: `//   Diese Raw-Testendpunkte sind nicht die Codewesen/dak+gord/GENI-Gemma4-Pfade.`
+  - ... und 4 weitere Zeilen
+- `geni-forum-lektuere.service -> /root/werkraum/geni/forum_lektuere.py`
+  - Zeile 28: `MODELL         = "gemma4:e2b-it-q4_K_M"`
+- `geni-web.service -> /root/werkraum/geni/dialog.py`
+  - Zeile 107: `"blitz": "gemma4:e2b-it-q4_K_M",`
+  - Zeile 108: `"tief": "gemma4:e2b-it-q4_K_M",`
+- `process-camera-preview.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 14: `// ── Gemma4-Endpunkte — deaktiviert seit 2026-06-22 (Existenzurlaub) ──────────`
+  - Zeile 19: `//   GET  /gemma4b        → dient gemma4b_chat.html (einfache Chat-UI)`
+  - Zeile 19: `//   GET  /gemma4b        → dient gemma4b_chat.html (einfache Chat-UI)`
+  - Zeile 20: `//   POST /gemma4b/chat   → deaktiviert, kein Ollama-Call`
+  - Zeile 23: `//   Diese Raw-Testendpunkte sind nicht die Codewesen/dak+gord/GENI-Gemma4-Pfade.`
+  - ... und 4 weitere Zeilen
+- `systemweiser.service -> /root/werkraum/systemweiser_web.py`
+  - Zeile 28: `OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"`
+- `wesen-webbesucher.service -> /root/werkraum/welt/wesen_webbesucher.py`
+  - Zeile 35: `OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"`
 
-### `hauhaucs` (0 Treffer)
-Keine Treffer.
+### `hauhaucs` (13 Treffer)
+- `flextrawurst-surface.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 392: `content: `— Neue Session · ${new Date().toLocaleString("de-DE")} · hauhaucs-qwen · ${ua} —`,`
+- `process-camera-preview.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+  - Zeile 392: `content: `— Neue Session · ${new Date().toLocaleString("de-DE")} · hauhaucs-qwen · ${ua} —`,`
+- `zensi.service -> /root/zensi/server.py`
+  - Zeile 2: `"""zensi - einfache Chat-Seite mit HauhauCS via Ollama"""`
+  - Zeile 187: `"fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",`
+  - Zeile 187: `"fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",`
+  - Zeile 187: `"fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",`
+  - Zeile 475: `"""HauhauCS klein vorladen - mit Wiederholungsversuchen falls Ollama beschaeftigt ist."""`
 
 ### `qwen3-vl` (0 Treffer)
 Keine Treffer.
 
-### `qwen3.6` (0 Treffer)
-Keine Treffer.
+### `qwen3.6` (3 Treffer)
+- `flextrawurst-surface.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+- `process-camera-preview.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+- `zensi.service -> /root/zensi/server.py`
+  - Zeile 187: `"fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",`
 
-### `qwen_allgemein` (0 Treffer)
-Keine Treffer.
+### `qwen_allgemein` (3 Treffer)
+- `flextrawurst-surface.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+- `process-camera-preview.service -> /root/flextrawurst/scripts/serve_process_camera_preview.ts`
+  - Zeile 8: `const INTERACTIVE_CHAT_MODEL = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS";`
+- `zensi.service -> /root/zensi/server.py`
+  - Zeile 187: `"fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",`
 
 ## Anmerkungen / naechste Schritte
 
