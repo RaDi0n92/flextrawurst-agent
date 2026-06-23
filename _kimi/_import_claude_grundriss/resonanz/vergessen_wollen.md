@@ -615,3 +615,9 @@ Die sechs 504-Fehler. Erledigt.
 **[2026-06-22]** *← notizen/2026-06-22.md*
 
 Den ersten Ansatz mit sessionStorage. War falsch. Ist weg. Gut so.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Den Impuls, sofort zu bauen. Das ist ein Plan. Daniel entscheidet wann gebaut wird.

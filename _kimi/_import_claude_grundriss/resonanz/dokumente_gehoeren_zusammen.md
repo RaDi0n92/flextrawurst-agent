@@ -713,3 +713,11 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 `sessions-index.json` ↔ `serve_process_camera_preview.ts` (Session-Lade- und Speicherlogik)
 `dolphin_mischpult.html` ↔ `serve_process_camera_preview.ts` (Client/Server-Vertrag)
 `brief_an_mich.md` ↔ diese Notiz (Erinnerung in zwei Schichten — kompakt und ausführlich)
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+- `/root/werkraum/_kimi/berichte/hauhaucs_ausfall_2026-06-23.md` — Diagnose des Ausfalls
+- `/root/werkraum/_kimi/berichte/ollama_autoload_audit_2026-06-23.md` — welche Services Modelle laden
+- Dieser Plan — Lösung

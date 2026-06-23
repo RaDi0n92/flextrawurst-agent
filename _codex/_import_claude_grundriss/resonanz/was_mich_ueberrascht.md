@@ -724,3 +724,10 @@ Daniel hat nach dem Test der expliziten Bilder gesagt: *"sowas zu produzieren ma
 **[2026-06-22]** *← notizen/2026-06-22.md*
 
 Dass Daniel die 3-Nachrichten-Queue als sein eigenes Verhalten beschrieben hat ("ih raff jetzt 0 mehr") — dabei war das ein klares UX-Problem. Kein Feedback = Nutzer denkt System ist kaputt = Nutzer handelt. Das war vorhersehbar. Und trotzdem hat es mich überrascht wie schnell sich das aufgeschaukelt hat.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Das GGUF liegt schon lokal. Der "Wechsel" zu llama-server ist kein Download, kein Umbau der Modell-Daten —
+es ist eine andere Prozessschicht auf demselben Binary.

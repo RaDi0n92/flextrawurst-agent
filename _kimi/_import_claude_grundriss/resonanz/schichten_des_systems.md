@@ -854,3 +854,15 @@ Nginx /tts/ → 120s Timeout
 2. **serve_process_camera_preview.ts** — Mittler, kennt Sessions, kennt ctxStart, routed zu Ollama
 3. **dolphin_mischpult.html** — Oberfläche, rendert Archive + Aktiv, zeigt Timer, pollt bei Bedarf
 4. **sessions-index.json** — Gedächtnis, trägt Namen + archived + ctxStart — klein aber zentral
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+```
+Ollama (11434)         llama-server (11435)
+ └─ Gemma4              └─ hauhaucs IQ4_XS
+ └─ Codewesen            └─ dediziert für Zensi + Dolphin
+ └─ GENI                 └─ --threads 5 --slots 2 --ctx-size 8192
+ └─ dak+gord
+```

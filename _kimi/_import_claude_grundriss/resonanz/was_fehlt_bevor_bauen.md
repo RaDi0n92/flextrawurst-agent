@@ -734,3 +734,11 @@ Nichts Kritisches. Der Generator ist funktionsfähig. Was noch kommen könnte:
 Zensi-Entscheidung (HauhauCS ja/nein) braucht ein klares Wort von Daniel.
 
 Mobile-Fix für das Mischpult (Tab-Bar unten fehlt) — stand schon im letzten Brief. Noch nicht angegangen in dieser Session.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+- Welche Installation-Methode (Release-Binary vs Build vs apt)
+- Ob `--chat-template qwen3` das richtige Template ist (aus Ollama-Modelfile ableitbar)
+- Verhalten von `--slots 2` auf CPU: ob es hilft oder RAM-Druck erhöht

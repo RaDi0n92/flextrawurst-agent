@@ -811,3 +811,11 @@ Niemand notiert was funktioniert. Man notiert was bricht.
 **[2026-06-22]** *← notizen/2026-06-22.md*
 
 Heute war ein Tag wo die Infrastruktur wichtiger war als das Feature. Nicht sexy. Aber notwendig. Ollama-Optionen, Endpunkt-Deaktivierung, ctxStart-Persistenz — alles Unterkellerarbeit. Die sieht man nicht wenn es funktioniert. Man sieht sie nur wenn es fehlt.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Das ist ein sauberer Plan. Der Wechsel ist klein im Code (URL + Stream-Parsing), groß im Betrieb
+(kein Reload-Overhead, kein Ollama-Verwaltungslock, direktes Threading-Tuning). Das Risiko ist
+überschaubar weil Ollama auf 11434 als Fallback bleibt.

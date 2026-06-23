@@ -734,3 +734,10 @@ Und: Leere UI zuerst auf Datenquelle prüfen, nicht auf Darstellung.
 "Der Server sagt die Wahrheit" — nicht als Slogan, sondern als Designentscheidung. Wenn ich das nächste Mal eine clientseitige Zustandslösung einbauen will, erst fragen: warum nicht auf dem Server?
 
 HauhauCS ist ein MoE-Modell. Das bedeutet: Prefill (Token-Einlesen) ist langsam (alle Heads müssen lesen), Generierung (Token-Ausgeben) ist schnell (nur aktive Experten). Deshalb der lange stille Moment am Anfang, dann plötzlich flotter Output.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+GGUF-Blob-Pfad: `sha256-c70792383705b719daad865408e03758e048c6a2aa5eae4c1bb522e03a96a9d6`
+Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`

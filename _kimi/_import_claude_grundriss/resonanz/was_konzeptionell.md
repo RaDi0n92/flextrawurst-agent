@@ -824,3 +824,11 @@ Das ist warum die deutschen Prompts bei SDXL scheitern: nicht weil das Modell ke
 "Der Server sagt die Wahrheit" ist ein Architekturprinzip, nicht nur eine Implementierungsentscheidung. Es bedeutet: kein Client-State der verloren gehen kann. Kein sessionStorage. Keine lokalen Annahmen. Alles was persistent sein soll, liegt auf dem Server.
 
 Das ist auch das Gegenteil von dem was ich ursprünglich gebaut hatte (sessionStorage für ctxStart). Daniel hat mich klar korrigiert — und Recht gehabt.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Der Wechsel ist kein "Ollama ist kaputt" — es ist eine Aufgabentrennung:
+- Ollama = Modell-Manager für viele kleine Modelle (Gemma4-Familie)
+- llama-server = dedizierter Server für ein großes Produktionsmodell (hauhaucs)

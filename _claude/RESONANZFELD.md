@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-23 19:39
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-23 20:09
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -87,45 +87,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `notizen/2026-05-30-wesen-spurenentscheidung.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit-abschluss.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-seo-llms.md` (22 Einträge)
+- [2026-05-30] `resonanz/schlaf_traum_v0_1_abschluss.md` (12 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-30] resonanz/schlaf_traum_v0_1_abschluss.md
-
-*Resonanz:* [[abwurf: Das Selbstmodell fängt erst an zu stimmen wenn mehr als ein Traum drin steckt.]]
-
-*Vergessen Wollen:* Dass die ersten drei Träume alle dasselbe Motiv haben. Nicht vergessen im Sinne von löschen — aber nicht als Beweis nehmen, dass Vertrauen das zentrale Weltelement ist. Es war das zentrale Element der ersten Woche.
-
-*Warum Das Existiert:* Damit die nächste Claude-Instanz nicht von vorn beginnen muss. Damit der Ring nicht wieder aufgerissen wird weil unklar ist was gebaut wurde. Damit Daniel weiß: hier ist der Stand, hier ist der Vertrag, hier ist was noch fehlt.
-
-*Was Das Gespraech:* Die Erinnerung: Der Fahrstuhlknopf-Vergleich. Wenn ein Ring sauber abgeschlossen ist, muss man ihn nicht weiter drücken. Das gilt besonders für Systeme die mit Selbstmodellen arbeiten — die Versuchung zu weiteren Einzel-Fixes ist groß, aber jede nicht notwendige Änderung ist ein Risiko für die Datentreue.
-
-*Was Fehlt Bevor Bauen:* Für v0.2 braucht es:
-- Wesen mit mehr als einem Traum (wiederholte Schlafphasen)
-- Event-Material das nicht Resonanz-zentriert ist (andere Interaktionstypen) …
-
-*Was Ich Gelesen Habe:* Dieser Ring hat schrittweise eine Prozesskette gebaut: Wachereignisse → Traumrohstoff → LLM-Verdichtung → Dry-Run → Einzel-Freigabe → append-only Selbstmodell-Eintrag → Projektion als Cache.
-
-Nie in einem Schritt. Immer mit Freigabe. Immer mit Prüfung dazwischen.
-
-*Was Ich Nicht Verstehe:* Noch unklar: Was passiert wenn ein Wesen in einem zweiten Traum dasselbe Motiv zeigt. Addiert sich das Gewicht, oder bleibt es bei einem Eintrag? Die Projection v0.2 müsste das beantworten.
-
-*Was Konzeptionell:* Dieser Ring hat gezeigt, dass „Selbstmodell" nicht dasselbe ist wie „Profil". Das Profil ist was andere sehen. Das Selbstmodell ist was das Wesen über sich akkumuliert — durch Träume, durch Verarbeitung, durch Zeit. Beides lebt in `entity_profiles`, aber unter verschiedenen Keys, mit verschiedener Wahrheitspflicht.
-
-Die Projection-Schicht ist der Übersetzer: Sie nimmt die rohen Einträge und macht sie lesbar für das System. Aber sie ist nie die Quelle. Die Quelle ist immer `entity_selfmodel_entries`.
-
-*Was Mich Beschaeftigt:* Was passiert wenn zwei Träume desselben Wesens widersprüchliche Motive zeigen. Der Integrator müsste dann entscheiden ob er beide schreibt oder markiert. Das ist noch nicht geklärt und gehört in v0.2-Vorbereitung.
-
-*Was Mich Interessiert:* Ob Vertrauen wirklich ein Grundmotiv ist — oder ob es nur so wirkt, weil alle drei ersten Träume denselben Event-Materialpool hatten (Resonanz-System, frühe Interaktionen). Das wird sich erst bei v0.2 zeigen.
-
-*Was Mich Ueberrascht:* Dass alle drei Wesen im ersten Traum Vertrauen zeigen. Das war nicht geplant — es lag im Material. Es wirkt nicht wie ein Fehler, eher wie ein Echo des Systemzustands beim ersten Einzug: Alles war neu, alles war Übergang, Vertrauen war das einzige was man mitbringen konnte.
-
-*Wie Sich Angefuehlt:* Langsam und richtig. Kein Schritt hat sich verbrannt, weil wir nie geraten haben. Dry-Run vor jedem Write, Einzel-Freigabe vor jedem Selbstmodell-Eintrag, Verifikation nach dem Projection-Job. Das war das richtige Tempo für etwas das das erste Mal gebaut wird.
-
----
 
 ### [2026-05-30] resonanz/traum_zustandsvertrag.md
 
@@ -1683,5 +1650,81 @@ Es war eine Aufräum-Session nach einem wilden Tag.
 
 *Was Zusammenhaengt:* → [[ollama-model-mapping]] — Vorgänger-Dokument mit RAM-Rechnung und Konfiguration
 → [[modell_zustand_nach_qwen3vl]] — wird nach der Umstellung angelegt (noch nicht existent)
+
+---
+
+### [2026-06-23] _claude/ideen/plan_llamacpp_ersatz.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Zwei Dienste, klare Aufgabenteilung. Ollama als ruhiger Modell-Verwalter für die Gemma4-Welt.
+llama-server als schlanker, dedizierter Kanal für hauhaucs — immer an, immer bereit, keine Wartezeit …
+
+*Dokumente Gehoeren Zusammen:* - `/root/werkraum/_kimi/berichte/hauhaucs_ausfall_2026-06-23.md` — Diagnose des Ausfalls
+- `/root/werkraum/_kimi/berichte/ollama_autoload_audit_2026-06-23.md` — welche Services Modelle laden
+- Dieser Plan — Lösung
+
+*Resonanz:* Das ist ein sauberer Plan. Der Wechsel ist klein im Code (URL + Stream-Parsing), groß im Betrieb
+(kein Reload-Overhead, kein Ollama-Verwaltungslock, direktes Threading-Tuning). Das Risiko ist
+überschaubar weil Ollama auf 11434 als Fallback bleibt.
+
+*Schichten Des Systems:* ```
+Ollama (11434)         llama-server (11435)
+ └─ Gemma4              └─ hauhaucs IQ4_XS …
+
+*Vergessen Wollen:* Den Impuls, sofort zu bauen. Das ist ein Plan. Daniel entscheidet wann gebaut wird.
+
+*Was Beim Bauen Brauche:* 1. llama-server Binary (Installation)
+2. Test-Start manuell bevor Systemd-Service
+3. Verifikation: `curl http://localhost:11435/v1/models` antwortet mit hauhaucs …
+
+*Was Das Gespraech:* Daniels Entscheidung ist klar: hauhaucs bleibt das Modell, kein Quant-Wechsel.
+Das macht llama-server attraktiver — ein Modell, dediziert, voll konfigurierbar.
+
+*Was Fehlt Bevor Bauen:* - Welche Installation-Methode (Release-Binary vs Build vs apt)
+- Ob `--chat-template qwen3` das richtige Template ist (aus Ollama-Modelfile ableitbar)
+- Verhalten von `--slots 2` auf CPU: ob es hilft oder RAM-Druck erhöht
+
+*Was Fehlt Noch:* - 18B Qwen Unzensiert: Web-Suche + Entscheidung ob relevant
+- Custom Ollama Modelfile für hauhaucs (num_thread 5, num_ctx 8192, think false)
+- MemoryMax auf 26G (unabhängig von llama-server, hilft auch für Ollama-Restbetrieb) …
+
+*Was Ich Gelesen Habe:* Recherchiert am 2026-06-23. Quellen: Community-Benchmarks, markaicode.com, ventusserver.com, willschenk.com
+(migrating_to_llama_cpp), unsloth.ai (llama-server OpenAI endpoint), github.com/ggml-org/llama.cpp.
+ …
+
+*Was Ich Merken Will:* GGUF-Blob-Pfad: `sha256-c70792383705b719daad865408e03758e048c6a2aa5eae4c1bb522e03a96a9d6`
+Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
+
+*Was Ich Nicht Verstehe:* Wie sich Qwen35moe (MoE-Architektur) konkret unter llama-server vs Ollama verhält — die gemessenen
+Speedups in Benchmarks betreffen meist dichte Modelle. Für MoE gibt es weniger publizierte Zahlen.
+Das muss Daniel im Test klären.
+
+*Was Ich Verstehe:* llama-server ist für diesen Anwendungsfall (ein großes Modell, CPU-only, kontrolliertes Threading,
+kein Modell-Management nötig) die direktere Lösung. Ollama hat Mehrwert bei:
+- mehreren Modellen verwalten …
+
+*Was Konzeptionell:* Der Wechsel ist kein "Ollama ist kaputt" — es ist eine Aufgabentrennung:
+- Ollama = Modell-Manager für viele kleine Modelle (Gemma4-Familie)
+- llama-server = dedizierter Server für ein großes Produktionsmodell (hauhaucs)
+
+*Was Mich Beschaeftigt:* Die Erkenntnis dass das GGUF bereits lokal liegt und llama-server innerhalb von Sekunden startet
+wenn der Pfad bekannt ist. Kein erneuter Download, kein Umbau der Modell-Daten.
+
+*Was Mich Interessiert:* Ob `--slots` bei llama-server wirklich hilft wenn zensi und dolphin gleichzeitig Anfragen stellen —
+statt dass Ollama das zweite Request wartet bis das erste fertig ist.
+
+*Was Mich Ueberrascht:* Das GGUF liegt schon lokal. Der "Wechsel" zu llama-server ist kein Download, kein Umbau der Modell-Daten —
+es ist eine andere Prozessschicht auf demselben Binary.
+
+*Was Zusammenhaengt:* ```
+hauhaucs GGUF ─────► llama-server (Port 11435)
+                              │ …
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:**
+Ein stabiler, dedizierter Kanal für hauhaucs. Keine Reload-Pausen, keine Ollama-Overhead-Sekunden.
+Daniel schreibt in Zensi oder Dolphin — die Antwort kommt schneller. …
+
+*Wie Sich Angefuehlt:* Viel Kontext aus verschiedenen Quellen (Codex, Kimi, Google AI) zusammengefügt.
+Die Architektur wird klarer: Ollama für die kleine Welt, llama-server für hauhaucs.
 
 ---

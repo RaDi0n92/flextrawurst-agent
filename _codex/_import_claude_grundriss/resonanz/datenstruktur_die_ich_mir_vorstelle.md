@@ -2071,3 +2071,15 @@ interface SessionMeta {
 }
 type SessionsIndex = Record<string, SessionMeta>;
 ```
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+**Vision-Schicht:**
+Zwei Dienste, klare Aufgabenteilung. Ollama als ruhiger Modell-Verwalter für die Gemma4-Welt.
+llama-server als schlanker, dedizierter Kanal für hauhaucs — immer an, immer bereit, keine Wartezeit
+durch Reload, kein Overhead durch Ollama-Verwaltungsschicht.
+
+**Code-Skizze (Backend-Anpassung):**
+```python

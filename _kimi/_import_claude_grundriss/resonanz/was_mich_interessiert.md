@@ -803,3 +803,10 @@ Ob qwen3-vl:30b-a3b mit 3.3B aktiven Parametern wirklich die Charakterkonsistenz
 Der Moment wo Daniel sagt "er war zu 80% in Charakter" — das ist keine technische Aussage, das ist eine Wahrnehmung. HauhauCS hat sich schnell und tief auf die Figur eingelassen. Das könnte etwas mit "Aggressive" im Modellnamen zu tun haben — oder mit der spezifischen Trainingsausrichtung von HauhauCS auf unzensiertes Rollenspiel.
 
 Ob Zensi jemals HauhauCS bekommt. Daniel hat es nicht bestätigt, nicht abgelehnt. Es hängt.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Ob `--slots` bei llama-server wirklich hilft wenn zensi und dolphin gleichzeitig Anfragen stellen —
+statt dass Ollama das zweite Request wartet bis das erste fertig ist.

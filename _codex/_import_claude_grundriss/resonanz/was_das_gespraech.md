@@ -671,3 +671,10 @@ Die Erkenntnis: die besten Features entstehen aus "geht das eigentlich?" — nic
 Die Erkenntnis dass "80% in Charakter" keine technische Metrik ist — sondern Daniels Wahrnehmung von HauhauCS' Tiefe. Das ist interessanter als jede Token-Zahl.
 
 Und: grillen ist wichtiger als reproduzieren. Richtig so.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Daniels Entscheidung ist klar: hauhaucs bleibt das Modell, kein Quant-Wechsel.
+Das macht llama-server attraktiver — ein Modell, dediziert, voll konfigurierbar.
