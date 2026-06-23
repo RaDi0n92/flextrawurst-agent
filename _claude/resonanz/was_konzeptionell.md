@@ -832,3 +832,10 @@ Das ist auch das Gegenteil von dem was ich ursprünglich gebaut hatte (sessionSt
 Der Wechsel ist kein "Ollama ist kaputt" — es ist eine Aufgabentrennung:
 - Ollama = Modell-Manager für viele kleine Modelle (Gemma4-Familie)
 - llama-server = dedizierter Server für ein großes Produktionsmodell (hauhaucs)
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Eine Architektur-Entscheidung die wie eine Modell-Frage aussieht.
+Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?

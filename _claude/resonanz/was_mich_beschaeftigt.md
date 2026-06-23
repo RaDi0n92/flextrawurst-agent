@@ -772,3 +772,10 @@ Der Unterschied zwischen "funktioniert" und "gibt Feedback dass es funktioniert"
 
 Die Erkenntnis dass das GGUF bereits lokal liegt und llama-server innerhalb von Sekunden startet
 wenn der Pfad bekannt ist. Kein erneuter Download, kein Umbau der Modell-Daten.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Dass die Antwort die ganze Zeit schon da war — hauhaucs IST das richtige Modell.
+Nur der falsche Behälter drum herum.

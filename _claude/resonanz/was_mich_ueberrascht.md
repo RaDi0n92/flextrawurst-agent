@@ -731,3 +731,10 @@ Dass Daniel die 3-Nachrichten-Queue als sein eigenes Verhalten beschrieben hat (
 
 Das GGUF liegt schon lokal. Der "Wechsel" zu llama-server ist kein Download, kein Umbau der Modell-Daten —
 es ist eine andere Prozessschicht auf demselben Binary.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Dass die Modell-Recherche 40 Minuten gedauert hat und am Ende ergeben hat:
+hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.

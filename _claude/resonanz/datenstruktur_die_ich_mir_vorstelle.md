@@ -2083,3 +2083,15 @@ durch Reload, kein Overhead durch Ollama-Verwaltungsschicht.
 
 **Code-Skizze (Backend-Anpassung):**
 ```python
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+**Vision-Schicht:**
+Ein System das nicht mehr fragt "welcher Service darf welches Modell laden?"
+sondern einfach: ein Modell, ein Port, alle reden damit.
+Wie ein Nervensystem das endlich einen gemeinsamen Taktgeber hat.
+
+**Code-Skizze:**
+```bash

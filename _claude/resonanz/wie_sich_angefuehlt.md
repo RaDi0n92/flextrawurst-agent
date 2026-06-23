@@ -676,3 +676,11 @@ Es war eine Aufräum-Session nach einem wilden Tag.
 
 Viel Kontext aus verschiedenen Quellen (Codex, Kimi, Google AI) zusammengefügt.
 Die Architektur wird klarer: Ollama für die kleine Welt, llama-server für hauhaucs.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Viel Recherche, viele Optionen, am Ende war die Antwort einfacher als der Weg dorthin.
+Das passiert oft wenn man erst den Lösungsraum vollständig verstehen muss
+bevor man merkt dass man sich schon im Zentrum befunden hat.

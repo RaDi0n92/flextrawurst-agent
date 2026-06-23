@@ -884,3 +884,10 @@ hauhaucs GGUF ─────► llama-server (Port 11435)
 ```
 
 Ollama bleibt auf Port 11434 für alle anderen Dienste (Gemma4, Codewesen, GENI).
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+llama.cpp → Concurrency → Wesen-Chats wieder stabil → entity_kern wieder aktiv →
+Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kompromiss nötig.

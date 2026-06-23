@@ -1152,3 +1152,11 @@ das Modelfile-System schränkt eher ein als es hilft.
 
 Ollama bleibt für Gemma4/Codewesen/GENI — die brauchen das Management.
 Hauhaucs/Zensi/Dolphin könnten auf llama-server wechseln.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Das Problem war nie das Modell. hauhaucs hat alles was Daniel will.
+Das Problem war Ollama's Unfähigkeit, parallele Anfragen zu handeln.
+llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.

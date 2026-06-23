@@ -682,3 +682,9 @@ Für künftige Mischpult-Arbeit: die drei Schichten immer im Kopf halten — (1)
 4. Einen Warmup-Request senden, TTFT messen
 5. Backends anpassen (zensi + dolphin)
 6. Daniel testet
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.

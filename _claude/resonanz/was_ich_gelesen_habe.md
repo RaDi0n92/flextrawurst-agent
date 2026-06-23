@@ -1413,3 +1413,9 @@ verarbeiten kann.
 
 Für unser Setup ist der entscheidende Punkt: das GGUF-Modell von hauhaucs liegt **bereits lokal** als
 SHA256-Blob in Ollamas Cache — kein erneuter Download nötig.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.

@@ -637,3 +637,10 @@ tts_service.py und tts_ui.html existieren weil Daniel aufstehen wollte. Das ist 
 `GEMMA_ENDPOINTS_ACTIVE = false` — weil man Endpunkte nicht löscht wenn man sie später vielleicht wieder braucht. Man schaltet sie ab. Mit Dokumentation. So dass jemand der in 6 Monaten reinschaut weiß: das war eine bewusste Entscheidung, kein vergessener Code.
 
 Das ctxStart in sessions-index.json — weil `dolphin_mischpult/sessions/` schon existiert, dort liegen die JSONL-Dateien, und sessions-index.json ist schon das richtige Format für Metadaten. Keine neue Abstraktion nötig. Das Nächstliegende war auch das Richtige.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Damit die nächste Claude-Instanz nicht nochmal 40 Minuten Recherche machen muss
+bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.

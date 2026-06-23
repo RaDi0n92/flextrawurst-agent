@@ -738,3 +738,10 @@ Nichts. Der Service läuft. Daniel kann aufstehen.
 - Custom Ollama Modelfile für hauhaucs (num_thread 5, num_ctx 8192, think false)
 - MemoryMax auf 26G (unabhängig von llama-server, hilft auch für Ollama-Restbetrieb)
 - Dropdown-Modellwahl in Zensi + Dolphin
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Nur noch: den ersten manuellen llama-server-Start mit hauhaucs.
+Alles andere ist Planung auf Papier bis dahin.

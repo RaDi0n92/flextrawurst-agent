@@ -810,3 +810,10 @@ Ob Zensi jemals HauhauCS bekommt. Daniel hat es nicht bestätigt, nicht abgelehn
 
 Ob `--slots` bei llama-server wirklich hilft wenn zensi und dolphin gleichzeitig Anfragen stellen —
 statt dass Ollama das zweite Request wartet bis das erste fertig ist.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Was passiert wenn hauhaucs plötzlich 2-3 Wesen gleichzeitig antwortet.
+Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, für die Wesen.

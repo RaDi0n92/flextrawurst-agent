@@ -819,3 +819,11 @@ Heute war ein Tag wo die Infrastruktur wichtiger war als das Feature. Nicht sexy
 Das ist ein sauberer Plan. Der Wechsel ist klein im Code (URL + Stream-Parsing), groß im Betrieb
 (kein Reload-Overhead, kein Ollama-Verwaltungslock, direktes Threading-Tuning). Das Risiko ist
 überschaubar weil Ollama auf 11434 als Fallback bleibt.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Die Qwen-Familie hat sich in sechs Monaten von "interessanter Alternative" zu
+"ernstzunehmender Infrastruktur" entwickelt. HauhauCS hat daraus eine
+Production-Ready uncensored Linie gemacht. Das ist nicht selbstverständlich.

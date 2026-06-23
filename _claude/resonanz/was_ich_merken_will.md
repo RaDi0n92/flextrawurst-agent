@@ -741,3 +741,13 @@ HauhauCS ist ein MoE-Modell. Das bedeutet: Prefill (Token-Einlesen) ist langsam 
 
 GGUF-Blob-Pfad: `sha256-c70792383705b719daad865408e03758e048c6a2aa5eae4c1bb522e03a96a9d6`
 Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+- Das Problem war Ollama, nicht hauhaucs.
+- llama.cpp --slots = Concurrency, das war die fehlende Zutat.
+- Qwen3.6 DeltaNet = möglicher Schwachpunkt in llama.cpp, Test nötig.
+- GGUF-Blob liegt schon lokal, kein Download nötig.
+- Slots 2 = sicherer RAM-Puffer. Slots 3 = mehr Concurrency, weniger Puffer.
