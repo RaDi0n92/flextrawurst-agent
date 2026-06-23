@@ -729,3 +729,12 @@ Nichts. Der Service läuft. Daniel kann aufstehen.
 - Mobile-Fix Mischpult
 - ½-ctx-Bestätigung
 - HauhauCS 80%-in-Charakter: reproduzieren wenn Daniel Lust hat
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+- 18B Qwen Unzensiert: Web-Suche + Entscheidung ob relevant
+- Custom Ollama Modelfile für hauhaucs (num_thread 5, num_ctx 8192, think false)
+- MemoryMax auf 26G (unabhängig von llama-server, hilft auch für Ollama-Restbetrieb)
+- Dropdown-Modellwahl in Zensi + Dolphin

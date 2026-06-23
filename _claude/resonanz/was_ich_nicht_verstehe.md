@@ -759,3 +759,11 @@ Ob die neuen Scheduler-Einstellungen auf dieser CPU-only Maschine tatsächlich e
 Warum HauhauCS manchmal nach echtem Anlaufen (2. Nachricht, nicht 1.) plötzlich sehr schnell wird und andere Male träge bleibt. Liegt es am Cache-Warmup innerhalb einer Session? Oder am num_predict-Verhalten wenn der Kontext fast voll ist?
 
 Das "faw im Fokusfeld" — ob das ein Tippfehler war, ein Feature oder etwas das das Mischpult falsch erfasst hat, ist ungeklärt. Daniel hat es als Erfolg gewertet, nicht als Bug. Oder zumindest als nicht-reproduziert, nicht-geprüft.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Wie sich Qwen35moe (MoE-Architektur) konkret unter llama-server vs Ollama verhält — die gemessenen
+Speedups in Benchmarks betreffen meist dichte Modelle. Für MoE gibt es weniger publizierte Zahlen.
+Das muss Daniel im Test klären.

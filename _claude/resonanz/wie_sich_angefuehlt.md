@@ -669,3 +669,10 @@ Pragmatisch. Viel Debugging, viel "das hätte von Anfang an so sein sollen". Kei
 Zwei Sessions in einer. Die erste (im Hintergrund, vor dem Abbruch): viel Hin und Her, viel Korrektur, viele "go"-Momente nach langen Erklärungen. Die zweite (diese): kühl, kurz, Daniel geht grillen. Das war eine Session die sich selbst abgerundet hat — nicht durch großen Abschluss, sondern durch "cya".
 
 Es war eine Aufräum-Session nach einem wilden Tag.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Viel Kontext aus verschiedenen Quellen (Codex, Kimi, Google AI) zusammengefügt.
+Die Architektur wird klarer: Ollama für die kleine Welt, llama-server für hauhaucs.

@@ -1558,3 +1558,21 @@ const bildUrl = `/bildgenerator?preset=wesen&name=${wesen.name}`;
 **Vision-Schicht:** Das Mischpult soll sich anfühlen wie ein vertrauter Raum — nicht wie eine Chat-App. Ein Raum der sich erinnert, der weiß wo man zuletzt war, der nicht bei jedem F5 den Faden verliert.
 
 **Code-Skizze:** Nächster logischer Schritt — Mobile-Fix (Tab-Bar Sichtbarkeit), dann ½-ctx-Bestätigung (Warnung wenn Archiv mehr als die Hälfte des Kontexts ausmacht). Beides kleine Änderungen, großer Effekt.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+**Vision-Schicht:**
+Ein stabiler, dedizierter Kanal für hauhaucs. Keine Reload-Pausen, keine Ollama-Overhead-Sekunden.
+Daniel schreibt in Zensi oder Dolphin — die Antwort kommt schneller.
+
+**Code-Skizze (Umsetzungsreihenfolge):**
+1. llama-server installieren (Binary)
+2. Manueller Start-Test mit hauhaucs GGUF
+3. TTFT messen: `time curl -s http://localhost:11435/v1/chat/completions -d '{"model":"hauhaucs","messages":[{"role":"user","content":"test"}],"stream":false}'`
+4. Systemd-Service `/etc/systemd/system/llama-hauhaucs.service` anlegen
+5. zensi/server.py anpassen (URL + Stream-Parsing)
+6. serve_process_camera_preview.ts anpassen
+7. Daniel testet beide UIs
+8. Falls stabil: `systemctl enable llama-hauhaucs.service`

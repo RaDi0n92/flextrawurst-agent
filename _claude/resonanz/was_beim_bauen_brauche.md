@@ -671,3 +671,14 @@ Beim nächsten Bau-Schritt: prüfen ob `--schedule-type` der korrekte Flag ist (
 **[2026-06-22]** *← notizen/2026-06-22.md*
 
 Für künftige Mischpult-Arbeit: die drei Schichten immer im Kopf halten — (1) was der Server weiß (sessions-index.json), (2) was der Browser hat (in-memory nach ladeSess()), (3) was der Nutzer sieht (rebuildBubbles()). Bugs entstehen wenn diese drei Schichten auseinanderlaufen.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+1. llama-server Binary (Installation)
+2. Test-Start manuell bevor Systemd-Service
+3. Verifikation: `curl http://localhost:11435/v1/models` antwortet mit hauhaucs
+4. Einen Warmup-Request senden, TTFT messen
+5. Backends anpassen (zensi + dolphin)
+6. Daniel testet

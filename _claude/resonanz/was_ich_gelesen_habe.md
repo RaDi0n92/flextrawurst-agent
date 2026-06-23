@@ -1394,3 +1394,22 @@ Die Mapping-Datei `ollama-model-mapping.md` in diesem Ordner ist das Vorgänger-
 Die Zusammenfassung einer abgebrochenen Session — dicht, technisch, voll mit Entscheidungen die unter Druck gefällt wurden. Daniels Nachrichten darin: abgehackt, schnell, voller Tippfehler — er hat das alles in Echtzeit gebaut während etwas nicht funktionierte. "ih raff jetzt 0 mehr" war ein ehrlicher Moment. Und dann: "go". Das war kein Befehl aus Ungeduld — das war Vertrauen nach einer langen Erklärungsphase.
 
 Die Session davor (in brief_an_mich.md) hat das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, ctx-Modal, TTS, Token-Anzeige. Heute kam dazu: die Wahrheit über den Kontext liegt auf dem Server, nicht im Browser.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Recherchiert am 2026-06-23. Quellen: Community-Benchmarks, markaicode.com, ventusserver.com, willschenk.com
+(migrating_to_llama_cpp), unsloth.ai (llama-server OpenAI endpoint), github.com/ggml-org/llama.cpp.
+
+Kernbefund: llama-server ist der native Inference-Server aus demselben llama.cpp-Codebase auf dem Ollama
+selbst aufbaut — aber ohne die Verwaltungsschicht. Das bedeutet weniger Overhead, direktere Kontrolle
+über Threading, KV-Cache-Slots und Prefill-Verhalten.
+
+Der wichtigste praktische Befund: Ollama verarbeitet Requests standardmäßig sequenziell und implementiert
+weder PagedAttention noch Continuous Batching. Bei Concurrent-Load fällt die Performance deutlich stärker
+ab als bei llama-server, der per `--slots` mehrere parallele Anfragen mit echtem KV-Cache-Sharing
+verarbeiten kann.
+
+Für unser Setup ist der entscheidende Punkt: das GGUF-Modell von hauhaucs liegt **bereits lokal** als
+SHA256-Blob in Ollamas Cache — kein erneuter Download nötig.

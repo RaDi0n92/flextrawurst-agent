@@ -869,3 +869,18 @@ Der Bildgenerator ist kein isoliertes Tool — er soll irgendwann in den Flücht
 `keep_alive: "1h"` per Request + `num_ctx: 8192` per Request → das löst zwei verschiedene Probleme (Modell-Kälte + falscher Kontext) durch denselben Mechanismus: explizit sagen was man will, statt auf Defaults zu hoffen.
 
 ctxStart + Archive-View + Pending-Poll + Live-Timer → vier Teile die zusammen das F5-Problem lösen. Das F5-Problem war: Nutzer sieht nichts während 60-90s Prefill, denkt es ist eingefroren, drückt F5, schickt neue Nachricht, bekommt 3 Antworten auf einmal. Jetzt: Timer zeigt Fortschritt, Poll erkennt hängende Anfrage, Send-Button gesperrt.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+```
+hauhaucs GGUF ─────► llama-server (Port 11435)
+                              │
+            ┌─────────────────┤─────────────────┐
+            ▼                                    ▼
+    zensi/server.py                serve_process_camera_preview.ts
+    (PORT 8043 → Zensi)            (PORT 8787 → Dolphin/Mischpult)
+```
+
+Ollama bleibt auf Port 11434 für alle anderen Dienste (Gemma4, Codewesen, GENI).

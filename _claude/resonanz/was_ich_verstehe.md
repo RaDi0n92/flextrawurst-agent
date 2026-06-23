@@ -1136,3 +1136,19 @@ HauhauCS (`fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS`)
 Das ctxStart-System ist die eigentliche Leistung dieser Session: Nachrichten vor einem bestimmten Index werden aus dem aktiven Kontext rausgehalten — aber sichtbar als gedimmtes Archiv mit Trennlinie. Der Server kennt den ctxStart, nicht der Browser. Wenn der Browser abstürzt oder F5 kommt, bleibt der Zustand erhalten. "Der Server sagt die Wahrheit."
 
 MoE macht HauhauCS schnell: 35B total, aber nur ~3.35B aktive Parameter pro Token. Das erklärt warum es nach dem langen Prefill dann zügig geht.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+llama-server ist für diesen Anwendungsfall (ein großes Modell, CPU-only, kontrolliertes Threading,
+kein Modell-Management nötig) die direktere Lösung. Ollama hat Mehrwert bei:
+- mehreren Modellen verwalten
+- bequemem Pull/Update per CLI
+- automatischem Modelfile-System
+
+Wir brauchen genau das für hauhaucs NICHT. Das Modell ist gepullt, die Parameter stehen fest,
+das Modelfile-System schränkt eher ein als es hilft.
+
+Ollama bleibt für Gemma4/Codewesen/GENI — die brauchen das Management.
+Hauhaucs/Zensi/Dolphin könnten auf llama-server wechseln.

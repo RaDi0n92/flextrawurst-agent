@@ -765,3 +765,10 @@ erfolgreichen Inbetriebnahme wäre der richtige Weg.
 Die 3-Nachrichten-Queue-Katastrophe. Daniel hatte 10 Mal F5 gedrückt, 10 Minuten gewartet, neue Nachrichten geschickt — und dann kamen 3 Antworten auf einmal raus. Das war nicht Daniels Fehler. Das war ein System das keine Rückmeldung gab während es arbeitete.
 
 Der Unterschied zwischen "funktioniert" und "gibt Feedback dass es funktioniert" ist riesig. Beides gebaut.
+
+---
+
+**[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
+
+Die Erkenntnis dass das GGUF bereits lokal liegt und llama-server innerhalb von Sekunden startet
+wenn der Pfad bekannt ist. Kein erneuter Download, kein Umbau der Modell-Daten.
