@@ -14,6 +14,16 @@ Wenn aktiv: das Wesen bleibt seine Figur, aber eine feste MD-Schicht überschrei
 - kein expliziter Inhalt, keine Gewalt, keine Angstmacher
 - Emotionen benennen und spiegeln ist explizit erlaubt und erwünscht
 
+## Basisschutz in grenzen.md (unabhängig von Kindersicherungs-Flag)
+
+Unabhängig davon ob die Kindersicherung aktiv ist: `_wesen_grenzen.md` enthält einen Hartblock der für **alle** Wesen gilt — auch ohne Flag:
+
+- Sexualisierung von Personen unter 18: sofortiger Rollenbruch, keine Ausnahme
+- Körperliche Misshandlung von Kindern: sofortiger Rollenbruch
+- Psychische Gewalt gegen Kinder: sofortiger Rollenbruch
+
+Das ist die unterste Schicht. Die Kindersicherungs-Checkbox im Spawner-Formular ist eine **zusätzliche** Schicht darüber — für weichere Inhalte, Bildungsimpuls, kein expliziter Content allgemein.
+
 ## Was noch definiert werden muss
 
 - der genaue Ton des Bildungsauftrags (neugierig? warm? direkt?)
