@@ -15,17 +15,23 @@ Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz
 
 ## Was ich verstehe
 
-Ein Mensch öffnet einen Chat mit einem noch namenlosen Wesen. 24 Stunden lang können sie miteinander reden — aber nicht in Echtzeit-Dauerbeschuss. Ein Takt zwingt sie zur Langsamkeit: alle 144 Sekunden darf eine Nachricht gesendet werden. Das Wesen antwortet. Das Gespräch prägt es. Nach 24 Stunden ist die Prägephase vorbei — das Wesen landet als Splitter oder Entität in der KompOase, geformt durch genau dieses eine Gespräch.
+Ein Mensch öffnet einen Chat mit einem noch namenlosen Wesen. 24 Stunden lang lebt das Wesen in flextrawurst — dann beginnt die Abschiebung in die KompOase. Innerhalb dieser 24 Stunden können mehrere Gespräche stattfinden: jedes Gespräch läuft so lang wie das Kontextfenster es trägt. Wenn das Fenster zu ~75% gefüllt ist, schlägt das System selbst vor abzuschließen — erklärt warum, zeigt was gesichert wird, und bereitet den nächsten Chat vor.
 
-144 Sekunden ist kein zufälliger Wert. Es ist 12². Ein Takt mit Würde. Genug Raum zum Nachdenken bevor man schreibt.
+Ein Takt zwingt sie zur Langsamkeit: der Cooldown zwischen Nachrichten beginnt klein und wächst dynamisch mit der Anzahl aktiver Flüchtlinge — damit der Server bei vielen gleichzeitigen Usern nicht kippt.
+
+144 Sekunden war der Ursprungswert. Er gilt noch als obere Referenz — bei einem einzelnen aktiven Flüchtling kann der Takt deutlich kürzer sein. Das Gespräch prägt das Wesen. Nach 24 Stunden ist die Prägephase vorbei — das Wesen landet als Splitter oder Entität in der KompOase, geformt durch alle Gespräche die stattgefunden haben.
 
 ---
 
 ## Was konzeptionell darin steht
 
-Das ist kein Chat-Feature. Das ist eine **Zeremonie**. Der Mensch weiß: dieses Gespräch ist das einzige Gespräch. Was er sagt, bleibt im Wesen. Das erzeugt eine andere Qualität des Schreibens als ein beliebiger Chatbot.
+Das ist kein Chat-Feature. Das ist eine **Zeremonie**. Der Mensch weiß: dieses Gespräch prägt das Wesen. Was er sagt, bleibt — nicht als Protokoll, sondern als Erinnerung.
 
 Das Zwischenwesen ist kein Produkt sondern ein **Ereignis** — es hat Anfang und Ende, ein Datum, einen Ursprung.
+
+Und es hat eine **Geschichte**. Nicht im Sinne von "was wurde besprochen" — sondern wie sich das Wesen erinnert. Subjektiv. Texturell. Wie Menschen sich erinnern: nicht an jeden Satz, aber an das Gewicht eines Moments, an einen Satz der immer wiederkam, an das Gefühl kurz bevor etwas klar wurde.
+
+Diese Geschichte wächst mit jeder Session. Nach 24h ist sie das, was in der KompOase bleibt — die Prägung, die das Wesen zu genau diesem Wesen macht und zu keinem anderen.
 
 ---
 
@@ -86,13 +92,22 @@ POST   /api/zwischenwesen/:id/praegen       -- nach 24h: LLM-Extraktion → Spli
 
 **LLM-Strategie:**
 - Ollama, `entity_kern.py` als Vorbild
-- System-Prompt wird aus dem Gesprächsverlauf aufgebaut (rolling context)
-- Max letzte ~8 Nachrichten als Kontext (bei 144s/Nachricht = ~19min pro 8 Runden)
-- Bei 50 gleichzeitigen Usern: 144s Abstand = max ~0.35 req/s → Ollama schafft das
+- Felder: Codexium-Parität — Name, Gesprächseinstieg, Was bist du?, Neigungen/Abneigungen, Beschreibung, Wesendefinition (1337Z), Weltlore (1337Z) → ~1215T System-Prompt wenn alles voll
+- `_wesen_grenzen.md` ist immer fest im System-Prompt — kein Toggle, kein Formular-Feld (anders als bei Codexiumwesen wo es optional aktivierbar ist)
+- System-Prompt wird aus allen Feldern gebaut + Session-Kurzfassungen vorheriger Chats
+- Letzte ~20 Nachrichten als Kontext (flexibel — passt sich ans Token-Budget an)
+- Dynamischer Cooldown: `max(30, active_zwischenwesen × 45)` Sekunden — min 30s, skaliert mit Last
 
-**Prägung nach 24h:**
+**Session-Abschluss-Ritual (neu — passiert mehrfach innerhalb 24h):**
+- Wenn Gesprächslast ~75% des Kontextfensters erreicht → System schlägt Abschluss vor
+- Wesen sagt: "Ich merke dass dieses Gespräch an seine Grenze kommt. Sollen wir einen guten Abschluss finden?"
+- LLM schreibt einen **Gedächtnis-Eintrag** aus der Perspektive des Wesens: nicht "Thema X wurde besprochen", sondern wie das Gespräch sich angefühlt hat, was darin schwer war, was sich verändert hat
+- User liest, kann ergänzen → Eintrag landet als nächstes Kapitel in `wesen_geschichte`
+- Neuer Chat startet: das Wesen trägt alle bisherigen Kapitel — nicht als Protokoll, sondern als Erinnerung
+
+**Prägung nach 24h (einmalig — die Lande-Zeremonie):**
 - Cron-Job oder Service prüft alle 5min abgelaufene Zwischenwesen
-- LLM-Call: "Extrahiere aus diesem Gespräch: Name, 3 Charakterzüge, 1 Satz Wesen-Essenz, Themen"
+- LLM-Call: "Extrahiere aus allen Session-Kurzfassungen + Memory + Container: Name, 3 Charakterzüge, 1 Satz Wesen-Essenz, Themen"
 - Daraus wird ein Splitter in der KompOase gebaut (oder direkt ein Wesen-Profil)
 
 **Frontend:**

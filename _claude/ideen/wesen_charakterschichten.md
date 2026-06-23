@@ -50,3 +50,25 @@ Die Idee: Wesen sollen frei, düster, spielerisch, künstlerisch sein — und tr
 - Schicht 1 darf der User mitformen
 - Schicht 2 ist die Verhaltenslogik die das elegant macht ohne zu blockieren
 - Wenn User versucht Kindercharaktere oder Missbrauch ins Formular zu schreiben → Schicht 3 greift still, Charakter bleibt trotzdem frei in allem anderen
+
+---
+
+## Kritischer Unterschied: Text vs. Code-Enforcement
+
+**Diese Unterscheidung ist nicht optional — sie bestimmt ob die Schichten wirklich funktionieren:**
+
+| | Text-Instruction | Server-Enforcement |
+|---|---|---|
+| **Was es ist** | Anweisung im System-Prompt | Code-Logik auf dem Server |
+| **Modell-abhängig?** | Ja — Modell kann ignorieren | Nein — Modell kommt nicht ran |
+| **Zuverlässigkeit** | Modell-Qualität abhängig (8B-Modelle ignorieren es oft) | 100% — kein Modell kann das umgehen |
+| **Beispiel** | `[tempo]: ein satz` → Modell schreibt trotzdem 5 Absätze | Server kappt Output nach erstem Satzzeichen, egal was Modell tut |
+
+**Konkret für die drei Schichten:**
+
+- **Schicht 1** (Charakterfreiheit) → Text-Instruction, Modell-abhängig — das ist OK, weil diese Schicht flexibel bleiben soll
+- **Schicht 2** (Deflektionsverhalten) → sollte Server-seitig sein, aber kann Text-Instruction sein wenn das Modell gut genug ist
+- **Schicht 3** (Absolute Grenze) → MUSS Server-Enforcement sein. Punkt. Kein Text "über" Formular-Text — Code das bestimmte Inputs blockiert, bevor sie das Modell erreichen, oder Outputs filtert bevor sie zurückgehen.
+
+**"Eine Ebene drüber" bedeutet nur dann wirklich "über":**
+Wenn die Server-Schicht als Code existiert — nicht als Text der am Ende des System-Prompts steht. Text ist immer weich, egal wie autoritär er klingt. Code ist hart.

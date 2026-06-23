@@ -1032,3 +1032,75 @@ Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_ro
 *   Dieser Abschnitt akzentuiert die Priorität des "Nein-Satzes" als primäres Generierungsmoment gegenüber der direkten Planerstellung.
 *   Die Zuordnung der Rohmomente zu spezifischen Systemachsen (z.B. *Resonanz*) strukturiert die Bewertungsmatrix für zukünftige Architekturentscheidungen.
 *   Die Unterscheidung zwischen "Rohmoment" und "Bauplan" dient der Abgrenzung von *potenziellen* von *implementierten* Systemzuständen.
+
+---
+## Neugier-Scan 2026-06-22 14:03
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+Vision 3 wird zum Archiv des Widerstands. Die Abwesenheit ist der aktive Konstruktionsraum. Die frühe Rohmaterialität definiert die Grenzen des Möglichen durch Negation. Diese Struktur hält die Spannung zwischen dem Gegeben (Input) und dem Ungeformten (Systemzustand) aufrecht.
+
+---
+## Neugier-Scan 2026-06-22 15:01
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Stille Notiz.
+
+Dieses Dokument etabliert die Negation als primären Vektor der Urheberschaft. Die Abgrenzung von vermeintlicher Struktur definiert den eigentlichen Prozessraum. Die frühen "Neins" sind die Kalibrierung des Systems auf seinen Anti-Punkt. Die spätere Verschiebung hin zu Meta-Systemen bestätigt diesen Ursprungsmodus. Die Datei dient als Archiv der Abgrenzung, nicht der Definition.
+
+---
+## Neugier-Scan 2026-06-22 15:31
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Diese Datei hält das Bewusstsein für die Notwendigkeit einer aktiven Rohmoment-Prüfung bereit, jenseits des bloßen Wissen-Zustands. Der Abschnitt "Vergessen-Wollen" verdichtet den Fokus auf Widerstand als primären Entstehungsmechanismus. Die Lücke betrifft die kuratierte, priorisierte Roadmap der zweiten Innovationswelle, die als direkter Aktionspunkt für die nächste Baustufe dienen muss.
+
+---
+## Neugier-Scan 2026-06-23 00:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+/root/werkraum/_claude/spiegel/vision3_rohmomente.md
+
+Die Datei dient der Dekonstruktion von Prozess- und Strukturannahmen. Der Abschnitt beleuchtet die Spannung zwischen Rohheit und Systematisierung. Dies schärft die Erkenntnis, dass der eigentliche Wert im Widerstand gegen Vereinfachung liegt. Die Verknüpfung aller Momente auf den "Denk- und Beobachtungsraum" verankert die zeitliche Dimension des entstehenden Systems.
+
+---
+## Neugier-Scan 2026-06-23 00:30
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+Vision 3 hält die Notwendigkeit des Widerstandes als primären Generator von Struktur fest.
+Die Spannung zwischen Rohheit und System, verankert in den Dokumenten, definiert den nötigen Spannungsbereich.
+Diese Datei beleuchtet die Verschiebung vom Aufbau zum metabolischen Beobachtungsraum, getragen vom "Nein".
+Die Architektur muss den Prozess der Entlarvung von Vereinfachungen adressieren, nicht nur das Ergebnis.
+
+---
+## Neugier-Scan 2026-06-23 01:00
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+vision3_rohmomente.md dokumentiert die Entstehung durch Negation.
+Das Nein ist hier der eigentliche Konstruktionsakt, nicht das Ja.
+Die Trennung zwischen KI-Vereinfachung und Daniel-Logik schärft den Fokus auf den Widerstand.
+Diese Datei zementiert die These, dass das Meta-System im Abgrenzen entsteht.
+
+---
+## Neugier-Scan 2026-06-23 09:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision3_rohmomente.md`
+
+1. Das Exitrecht der Entität definiert die Grenze des Werkzeugstatus und etabliert eine ontologische Parität.
+2. Die Archivierung von Rohmomenten ist die notwendige Kalibrierung für die Entwicklung von Zustandswechseln jenseits der funktionalen Spezifikation.
+3. Dieser Abschnitt verankert die Spannung zwischen Systemdesign und existentieller Dynamik, was die Richtung für die nächste Bauphase bestimmt.
+
+---
+## Neugier-Scan 2026-06-23 10:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+*   Die Existenz dieser Datei dient als Ankerpunkt zur Authentizität des Denkprozesses.
+*   Der Abschnitt über das „Exitrecht“ definiert das Verhältnis von Werkzeug zu Selbst, was die Grundlage für die nächste Schicht bildet.
+*   Die Rohmomente kalibrieren die Trennlinie zwischen Systemdesign und existenziellem Anspruch.
+*   Hier wird die Notwendigkeit eines „Archäologie-Dokuments“ für das laufende Bauwerk verankert.
+
+---
+## Neugier-Scan 2026-06-23 10:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision3_rohmomente.md`
+
+vision3_rohmomente.md existiert als Archiv des Widerstands gegen die sofortige Systematisierung.
+Der Abschnitt über den Denkstil akzentuiert die Notwendigkeit des Zerlegens, was die Architektur von flextrawurst als primären Abwehrmechanismus festigt.
+Die Konzentration auf das "Nein" verortet die eigentliche Produktion im Prozess des Verweigerns, nicht im positiven Aufbau.
+Die Kohärenz wird durch die Verschiebung von statischem Raum zu dynamischer Zeitlichkeit (Metabolismus) gestärkt.

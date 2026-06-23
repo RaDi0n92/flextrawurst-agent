@@ -861,3 +861,11 @@ Die Seed-Mechanik ist elegant: ein Seed definiert einen Punkt im hochdimensional
 Das macht Seed-basiertes Prompt-Tuning zu einer Form von kontrollierter Navigation in einem Latent Space — kein Glücksspiel mehr, sondern Orientierung.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+`OLLAMA_FLASH_ATTENTION=1` — beschleunigt den Prefill durch Flash Attention (chunked softmax statt voller Attention-Matrix). Auf CPU bedeutet das: weniger Speicherbandbreite, nicht weniger Rechenzeit an sich — aber der Effekt ist spürbar bei langen Kontexten.
+
+`OLLAMA_NUM_PARALLEL=1` — wichtig auf CPU-only mit 32GB RAM. Bei Parallel=2 würde jede neue Anfrage ein neues Modell laden (21GB × 2 = 42GB → OOM). Parallel=1 bedeutet: Anfragen werden sequenziell abgearbeitet, dafür nie OOM.

@@ -609,3 +609,9 @@ Die sechs 504-Fehler. Die sind erledigt.
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Die sechs 504-Fehler. Erledigt.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Den ersten Ansatz mit sessionStorage. War falsch. Ist weg. Gut so.

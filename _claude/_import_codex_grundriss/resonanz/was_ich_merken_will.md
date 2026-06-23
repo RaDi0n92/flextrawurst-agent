@@ -1162,3 +1162,9 @@ Ein Public-Export muss auf einer Allowlist beruhen, nicht auf der Hoffnung, dass
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 `MAX_LOADED_MODELS` ist keine Kapazitätsplanung. Die Zahl ist nur dann wahr, wenn Modellgewichte, KV-Caches, Cgroup-Limit, Swap, andere Prozesse und gleichzeitige Inferenz gemeinsam gerechnet wurden.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Der Briefkasten ist nicht der Ort für technische Übergaben.

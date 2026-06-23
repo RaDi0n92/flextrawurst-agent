@@ -1565,3 +1565,11 @@ Der härteste Satz kam nicht aus einer Dokumentation, sondern vom Kernel: *„Ou
 In den Wesen-Logs wiederholte sich ein anderer Satz: *„Ollama-Slot blockiert — Iteration übersprungen“*. Das klang zuerst wie ein einzelner Lockfehler. Beim Lesen des Codes wurde daraus ein Systembild: Es gibt nur `slot_0.lock`, mehrere Wesen warten darauf, aber Entity-Kern, Zensi und Webpfade benutzen nicht dieselbe Schranke. Die Wartenden stehen ordentlich in einer Reihe, während andere durch eine Seitentür gehen.
 
 Dann waren da die stilleren Qualitätsverluste. Ollama schrieb: *„truncating input prompt … prompt=13480 … new=8192“*. Ein Modell kann technisch korrekt antworten und trotzdem nicht mehr auf denselben Ursprung antworten, wenn ein großer Teil seines Kontexts abgeschnitten wurde. Das erklärt Verhalten, das wie Modellversagen aussieht, obwohl die Gewichte lesbar und die Inferenz funktionsfähig sind.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Ich habe den Zustand rund um HauhauCS, `dak-neugier.timer`, `zensi.service`, `process-camera-preview.service`, `ollama.service` und den offenen Abbruchpfad gelesen. Der Kern war klar: ein Hintergrundtimer hat Gemma4 warmgezogen, und Daniels UI hing an einem laufenden Stream.
+
+Der Briefkasten war danach der falsche Ort für den technischen Übergabebericht. Daniel hat das zurecht korrigiert.

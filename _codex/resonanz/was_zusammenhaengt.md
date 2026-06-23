@@ -1189,3 +1189,11 @@ Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rolle
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 `OLLAMA_MAX_LOADED_MODELS=3`, `MemoryMax=16G`, `keep_alive=-1`, die einzige `slot_0.lock`, Zensis `num_predict=444444`, `RuntimeMaxSec=1800` und der parallele Bildgenerator hängen kausal zusammen. Keiner dieser Werte allein erklärt die Nacht. Zusammen erzeugen sie Speicherüberhang, Warteschlangenstau, Abbrüche und anschließend synchrone Neustarts.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+`dak-neugier.timer` -> `dak-neugier.service` -> `agent.dak_gord_system.graph.run_background_cycle` -> Gemma4-Ladung.
+
+`zensi.service` und `process-camera-preview.service` können HauhauCS wieder warmziehen. Dadurch wird ein "warmer" Modelltest nur dann sauber, wenn diese Pfade vorher still sind.

@@ -663,3 +663,11 @@ Die Erkenntnis dass die besten Features nebenbei entstehen. Nicht aus einem Tick
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 Die Erkenntnis: die besten Features entstehen aus "geht das eigentlich?" — nicht aus Planung.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Die Erkenntnis dass "80% in Charakter" keine technische Metrik ist — sondern Daniels Wahrnehmung von HauhauCS' Tiefe. Das ist interessanter als jede Token-Zahl.
+
+Und: grillen ist wichtiger als reproduzieren. Richtig so.

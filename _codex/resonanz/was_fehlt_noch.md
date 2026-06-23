@@ -1116,3 +1116,9 @@ Ein klarer, einfacher Kanon für Provenienzsichtbarkeit in allen Spiegeln, Notiz
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Es fehlt die gemeinsame Entscheidung über die Zielarchitektur und danach ein kleiner, kontrollierter Reparaturschnitt. Bis dahin ist der wichtigste Stand: keine Modellkorruption belegt, aber die gegenwärtige Orchestrierung ist nachweislich instabil.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Ein sauber isolierter A/B-Test und eine Liste aller aktiven Autoload-Pfade, die Gemma4 wirklich ziehen können.

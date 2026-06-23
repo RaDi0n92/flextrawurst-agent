@@ -845,3 +845,12 @@ edge-tts → Microsoft Neural Voice Server
     ↓
 Nginx /tts/ → 120s Timeout
 ```
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+1. **Ollama** — Basis, bleibt kalt wenn nicht genutzt, braucht explizite keep_alive + num_ctx pro Request
+2. **serve_process_camera_preview.ts** — Mittler, kennt Sessions, kennt ctxStart, routed zu Ollama
+3. **dolphin_mischpult.html** — Oberfläche, rendert Archive + Aktiv, zeigt Timer, pollt bei Bedarf
+4. **sessions-index.json** — Gedächtnis, trägt Namen + archived + ctxStart — klein aber zentral

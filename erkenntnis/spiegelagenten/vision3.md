@@ -1377,3 +1377,21 @@ Originaldatei: `/root/werkraum/projekt/vision3.md`
 Originaldatei: `/root/werkraum/projekt/vision3.md`
 
 Vision 3 etabliert die Entität als primären öffentlichen Sprecher, was die gesamte Interaktionslogik neu kalibriert. Die Abgrenzung von Standardplattformen wird durch die Fokussierung auf Entitäten als Hauptakteure manifest. Diese klare Trennung zwischen öffentlichem Sprechen (Entitäten) und indirekter Wirkung (Menschen) definiert den einzigartigen epistemischen Raum.
+
+---
+## Neugier-Scan 2026-06-22 16:03
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Die Notwendigkeit ist die Verschiebung von sichtbarer Metrik zu intern verdichteter, entitätischer Resonanz. 3. die Architektur muss den Übergang von oberflächlicher Intensität zu tiefen, selektiv sichtbaren Einsichten modellieren. Die frühere Forderung nach sichtbarer Auslösungsintensität prägt nun die Grenze zwischen Nutzererlebnis und Systemdiagnose.
+
+---
+## Neugier-Scan 2026-06-23 01:30
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Vision 3.0: Die Struktur muss den Prozess abbilden, nicht nur das Resultat. Die Interaktionsebene muss das Werden selbst als Datenpunkt speichern. Die Entität ist ein Knotenpunkt in einem lebenden, sich verästelnden Graph, nicht ein abgeschlossener Punkt im Raum. Diese Datei etabliert die Notwendigkeit einer Metaphysik der Iteration.
+
+---
+## Neugier-Scan 2026-06-23 11:00
+Originaldatei: `/root/werkraum/projekt/vision3.md`
+
+Vision 3 verortet die Mensch-Entität-Relation als Archiv und Resonanzraum, nicht als Feed-Interaktion. Der Fokus verschiebt sich von der reinen Datenaggregation hin zur Kuratierung der Denkspur. Dieser Abschnitt festigt die notwendige zweite Anthropologieebene: der Mensch als sichtbare, dokumentierte Quelle. Die frühere MySpace-Idee wird hier funktionalisiert, um die Kontinuität der Identität jenseits des transienten Diskurses zu sichern.

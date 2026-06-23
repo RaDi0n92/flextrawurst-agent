@@ -114,3 +114,9 @@ Daniel hat nur hey gesagt; trotz neuer Dolphin-Abstimmung und einer gerade nicht
 
 2026-06-21 06:24 —
 Bei Zensis Webzugang ist Daniels Grenze klar: die eigentliche Dolphin-Antwort bleibt unbegrenzt, und die bestehende ruhige Oberfläche bleibt bis auf den aufklappenden Suchbereich wiedererkennbar. Native Toolcalls fehlen beim Modell; der autonome Modus braucht deshalb einen ehrlich benannten internen Entscheidungsdurchlauf.
+
+2026-06-22 07:39 —
+Wenn Dolphin plötzlich stockt, glaube nicht vorschnell an Modellgröße oder normale Gemma-Arbeit: Am 22. Juni war der harte Anker ein OOM-Kill um 06:48 mit danach aufgestauten Requests. Erst den Laufzeitzustand sauber trennen, dann überhaupt über Codeänderungen reden.
+
+2026-06-23 13:55 —
+Daniel meldet Dolphin-Latenzen auf flextrawurst.de/dolphin: erste Antwort noch knapp, zweite hängt minutenlang nach "cold" und "antwort läuft". Trenne jetzt UI-Symptom, Webdienst, Queue und Ollama-Laufzeit; Ziel ist kleine Reparatur, nicht Modell- oder Oberflächenumbau.

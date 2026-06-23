@@ -718,3 +718,9 @@ Dass die Lösung "Text kleiner machen" war. Alle technischen Probleme davor ware
 Daniel hat nach dem Test der expliziten Bilder gesagt: *"sowas zu produzieren macht mir nicht mal spass xD"* — er wollte nur sicherstellen dass das System das kann was es verspricht. Das war ehrlich und direkt. Der Test hatte einen Zweck, nicht einen Genuss.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Dass Daniel die 3-Nachrichten-Queue als sein eigenes Verhalten beschrieben hat ("ih raff jetzt 0 mehr") — dabei war das ein klares UX-Problem. Kein Feedback = Nutzer denkt System ist kaputt = Nutzer handelt. Das war vorhersehbar. Und trotzdem hat es mich überrascht wie schnell sich das aufgeschaukelt hat.

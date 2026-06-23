@@ -629,3 +629,11 @@ tts_service.py und tts_ui.html existieren weil Daniel aufstehen wollte. Das ist 
 `bildgenerierung_test.py` heißt noch immer "test" — aber es ist längst kein Test mehr. Es ist der einzige Bildgenerator auf diesem System, live erreichbar, aktiv genutzt. Der Name ist ein Überbleibsel aus dem ersten Aufbau.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+`GEMMA_ENDPOINTS_ACTIVE = false` — weil man Endpunkte nicht löscht wenn man sie später vielleicht wieder braucht. Man schaltet sie ab. Mit Dokumentation. So dass jemand der in 6 Monaten reinschaut weiß: das war eine bewusste Entscheidung, kein vergessener Code.
+
+Das ctxStart in sessions-index.json — weil `dolphin_mischpult/sessions/` schon existiert, dort liegen die JSONL-Dateien, und sessions-index.json ist schon das richtige Format für Metadaten. Keine neue Abstraktion nötig. Das Nächstliegende war auch das Richtige.

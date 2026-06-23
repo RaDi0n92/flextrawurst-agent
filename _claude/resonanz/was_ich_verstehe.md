@@ -1120,3 +1120,19 @@ Daniel hatte diesen Gedanken spontan und sagte er verdient es dass die Geschicht
 
 Dokumentation entsteht nicht wenn Dinge kaputt sind. Sie entsteht wenn alles läuft.
 Genau dann fehlt der Impuls dazu.
+
+---
+
+**[2026-06-22]** *← notizen/modell-zustand-vor-qwen3vl.md*
+
+Jedes Model-Mapping das existiert entstand weil irgendwann etwas schiefging oder ein bewusster Wechsel stattfand. Diese Datei existiert weil zum ersten Mal ein bewusster, geplanter Wechsel dokumentiert wird *bevor* er passiert. Das ist besser.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+HauhauCS (`fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS`) ist jetzt das primäre Modell für alle neuen Chat-Systeme: Dolphin Mischpult, Codexium-Wesen, Solarius-Wesen. Nicht für die alten (codewesen_chat.py, systemweiser etc.) — das war Daniels explizite Korrektur.
+
+Das ctxStart-System ist die eigentliche Leistung dieser Session: Nachrichten vor einem bestimmten Index werden aus dem aktiven Kontext rausgehalten — aber sichtbar als gedimmtes Archiv mit Trennlinie. Der Server kennt den ctxStart, nicht der Browser. Wenn der Browser abstürzt oder F5 kommt, bleibt der Zustand erhalten. "Der Server sagt die Wahrheit."
+
+MoE macht HauhauCS schnell: 35B total, aber nur ~3.35B aktive Parameter pro Token. Das erklärt warum es nach dem langen Prefill dann zügig geht.

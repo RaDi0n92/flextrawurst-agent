@@ -39,7 +39,7 @@ wesen/[name]/
   handlung.md       ← worum es in seiner Geschichte geht (es handelt von... nicht: es handelt)
   mag-ich.md        ← Zuneigungen (wächst/schrumpft, max N Einträge)
   mag-ich-nicht.md  ← Abneigungen (wächst/schrumpft, max N Einträge)
-  nicht-tun.md      ← was das Wesen nie tut, harte Grenzen
+  nicht-tun.md      ← was das Wesen nie tut — ACHTUNG: "harte Grenzen" hier sind nur Text-Instructions, kein Server-Enforcement (siehe unten)
   memory.md         ← kategorisiertes Langzeitgedächtnis (Kategorien wie bei Flüchtlingen)
   container.md      ← gepinnte Momente aus Chats (max 20)
   chats/
@@ -121,3 +121,18 @@ Quelle: mensch | wesen. Entfernbar per ×.
 - Für zensi-Wesen (lokal): Datei-basiert reicht
 - Für Flüchtlinge (flextrawurst): PostgreSQL-Tabellen (schema noch anzupassen)
 - Verdrängungslogik konkretisieren: FIFO? Gewichtung? User-Entscheidung?
+
+---
+
+## Wichtig: nicht-tun.md ist weich — Grenzen die zählen brauchen Server-Enforcement
+
+`nicht-tun.md` wird als Text in den System-Prompt injiziert. Das Modell liest ihn — und kann ihn ignorieren.
+
+Das ist kein Bug, das ist wie Sprachmodelle funktionieren: Text-Instructions sind Bitten, keine Gesetze. Ein gutes Modell (GPT-4-Klasse) folgt ihnen meistens. Ein schwaches Modell (8B lokal) oft nicht.
+
+**Zwei Klassen von Grenzen:**
+
+- **Charakter-Grenzen** (weich, okay wenn weich): "Ich rede nicht über Aktien", "Ich mag keine Äpfel", "Ich fange Romantik nie selbst an" → in nicht-tun.md als Text reicht, wenn das Modell gut genug ist
+- **Absolute Grenzen** (müssen hart sein): Kinderinhalte, Selbstverletzungsanleitungen, Missbrauch als Spiel → diese gehören NICHT in nicht-tun.md — sie müssen Server-seitig als Code erzwungen werden, unabhängig vom Modell
+
+Solange nicht-tun.md nur Text ist, gilt: das Wesen versucht diese Grenzen einzuhalten. Garantieren kann das nur der Server.

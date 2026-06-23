@@ -665,3 +665,9 @@ Nichts akut. Service läuft stabil.
 Beim nächsten Bau-Schritt: prüfen ob `--schedule-type` der korrekte Flag ist (oder ob er `--scheduler` heißt). Das vor dem ersten echten Test verifizieren.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Für künftige Mischpult-Arbeit: die drei Schichten immer im Kopf halten — (1) was der Server weiß (sessions-index.json), (2) was der Browser hat (in-memory nach ladeSess()), (3) was der Nutzer sieht (rebuildBubbles()). Bugs entstehen wenn diese drei Schichten auseinanderlaufen.

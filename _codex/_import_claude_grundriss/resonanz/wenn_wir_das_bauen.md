@@ -1550,3 +1550,11 @@ const bildUrl = `/bildgenerator?preset=wesen&name=${wesen.name}`;
 ```
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+**Vision-Schicht:** Das Mischpult soll sich anfühlen wie ein vertrauter Raum — nicht wie eine Chat-App. Ein Raum der sich erinnert, der weiß wo man zuletzt war, der nicht bei jedem F5 den Faden verliert.
+
+**Code-Skizze:** Nächster logischer Schritt — Mobile-Fix (Tab-Bar Sichtbarkeit), dann ½-ctx-Bestätigung (Warnung wenn Archiv mehr als die Hälfte des Kontexts ausmacht). Beides kleine Änderungen, großer Effekt.

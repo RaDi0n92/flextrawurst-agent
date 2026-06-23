@@ -19,17 +19,52 @@ Der User erschafft ein Zwischenwesen nicht durch einen einfachen Namen. Er schre
 
 ---
 
-## Bestätigte Felder (alle Entscheidungen getroffen)
+## Bestätigte Felder — Codexium-Parität (angepasst 2026-06-23)
 
-| Feld | UI-Label | Typ | Limit | Entschieden |
-|------|----------|-----|-------|-------------|
-| `wesen_name` | "Wie heißt dein Wesen?" | Text | 22 Zeichen | ✓ |
-| `wesen_typ` | "Was genau ist dein Wesen?" | Text | 22 Zeichen | ✓ |
-| `wesen_text` | "Erzähl von ihm… Was beschreibt das Wesen deines Flüchtlings." (zwei Sätze als Label vor dem Feld) | Textarea | 1337 Zeichen, Live-Counter | ✓ |
-| `neigungen` | "Was mag dein Wesen?" | Tag-Input | max 5 Tags | ✓ |
-| `abneigungen` | "Was mag dein Wesen nicht?" | Tag-Input | max 5 Tags | ✓ |
-| `farbe` | "Farbe deines Wesens" | HSB-Picker | — | ✓ |
-| `wesen_bild` | "Bild deines Wesens" | Upload ODER /bildgenerator | max 1,11 MB | ✓ |
+Die Flüchtlinge bekommen dieselbe Feldstruktur wie Codexiumwesen.
+
+| Feld | UI-Label | Typ | Limit | Tokens (voll) |
+|------|----------|-----|-------|--------------|
+| `wesen_name` | "Name" | Text | 22Z (optional) | ~6T |
+| `gespraechseinstieg` | "Gesprächseinstieg" | Textarea | 222Z | ~63T |
+| `was_bist_du` | "Was bist du?" | Text | 200Z | ~57T |
+| `neigungen` | "Was mag dein Wesen?" | Tag-Input | max 5 Tags | ~21T |
+| `abneigungen` | "Was mag dein Wesen nicht?" | Tag-Input | max 5 Tags | ~21T |
+| `beschreibung` | "Beschreibung" | Textarea | 444Z | ~127T |
+| `wesendefinition` | "Wesendefinition" | Textarea | 1337Z | ~382T |
+| `weltlore` | "Weltlore" | Textarea | 1337Z | ~382T |
+| `farbe` | "Farbe deines Wesens" | HSB-Picker | — | 0T |
+| `wesen_bild` | "Bild deines Wesens" | Upload ODER /bildgenerator | max 1,11 MB | 0T |
+| Boilerplate/Framing | — | — | — | ~150T |
+| **GESAMT System-Prompt** | | | **3712Z (wenn Name leer: +Selbstbenennungs-Instruktion ~20T)** | **~1215T** |
+
+**Name ist optional:** Leer lassen → das Wesen gibt sich in der ersten Antwort selbst einen Namen, basierend auf Wesendefinition und allen anderen Feldern. Intern wird ein Platzhalter-Schlüssel generiert bis das Wesen einen echten Namen wählt.
+
+### Token-Budget (alle Felder vollständig ausgefüllt)
+
+```
+SESSION-START (leer):
+  System-Prompt (alle Felder voll):   ~1215T
+  grenzen.md (fest, kein Toggle):       ~50T
+  Wesen-Geschichte (bisherige Kapitel): ~300T
+  Kern-Memory (nur Gewicht 3):          ~400T
+  Container (session-lokal, leer):         0T
+  ─────────────────────────────────────────
+  BASIS:                               ~1965T  → 24% des Fensters ✓
+
+SESSION-ENDE (voll geladen):
+  System-Prompt + grenzen.md:        ~1265T
+  Wesen-Geschichte:                    ~300T
+  Memory gesamt (3000Z):               ~857T
+  Container (max 10 Einträge):         ~400T
+  Letzte ~20 Nachrichten:            ~2000T
+  Antwort-Puffer:                    ~1500T
+  ─────────────────────────────────────────
+  GESAMT:                            ~6322T  ✓ unter 8192T
+
+75%-TRIGGER: bei ~4644T Input (Basis 1965T + Container 400T = 2365T gebunden)
+  → Raum für Nachrichten: ~2279T → ~23 Exchanges pro Session
+```
 
 ### Nicht-Felder (fest im System, kein User-Input)
 

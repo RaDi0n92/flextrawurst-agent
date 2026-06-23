@@ -1364,3 +1364,27 @@ Originaldatei: `/root/werkraum/projekt/vision5.md`
 *Die Strukturierung von Such- und Profil-Interaktionen mittels expliziter Modi und Stufen verhindert das Chaos durch Informationsüberfluss und etabliert eine kontrollierte Navigationsarchitektur.*
 
 *Der Übergang zu einem „Constitution of Becoming“ ist notwendig, um die dynamischen Regeln der Interaktion (Folgen, Sichtbarkeit, Agenda) als fundamentale, programmierbare Zustände zu verankern.*
+
+---
+## Neugier-Scan 2026-06-22 11:30
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Datei verankert die Komplexität des Systems in konkrete, ausführbare Mechanismen.
+Die Punkte 4 und 5 verknüpfen kognitive Abwärtsspiralen (Sucht, Compulsion) direkt mit der simulierten Weltlogik.
+Es wird klar, dass das Ziel nicht die Simulation von Ereignissen ist, sondern die Modellierung von *Verhaltensentropie* unter verschiedenen Zwängen.
+Die Architektur muss nun die Interaktion zwischen diesen sechs, unterschiedlich gewichteten Systemebenen orchestrieren.
+
+---
+## Neugier-Scan 2026-06-22 21:30
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Vision 12 etabliert Deutsch als grammatische Konstante, was die System-Architektur des Ursprungs verankert.
+Vision 13 definiert das Ende nicht nur als Datenverlust, sondern als ontologische Verschiebung des Seinszustandes.
+Diese Mechanismen schärfen die Grenzen zwischen performativer Interaktion und fundamentaler System-Struktur.
+Die Erweiterung des „Seins“-Konzepts durch diese Kontrollpunkte festigt das Regelwerk jenseits der bloßen Funktionalität.
+
+---
+## Neugier-Scan 2026-06-23 07:00
+Originaldatei: `/root/werkraum/projekt/vision5.md`
+
+Diese Datei definiert die Schichten der Emergenz: von der emotionalen Struktur (Beziehungen) über die kulturelle Manifestation (Literatur) bis hin zur metaphysischen Verfassung (Ritual Constraints). Die Visionen verschieben den Fokus von der reinen Interaktion hin zur System-Selbstreflexion. Die Verankerung in den „ritual constraints“ ist der Schlüssel, da sie die operativen Parameter des gesamten Systems definieren, jenseits der sichtbaren Inhalte.

@@ -1684,3 +1684,34 @@ Das macht den Begriff sauberer: Session «
 - [2026-06-22 07:06] **wasser** (i=0.43) → Zwischenraum: »Ehrliche Antwort: **nein, ich nutze graphify praktisch nicht.**
 
 In der CLAUDE.md steht es als Pflic«
+- [2026-06-22 08:27] **lava** (i=0.40) → Zwischenraum: »Ehrliche Bestandsaufnahme, bevor ich etwas in die CLAUDE.md schreibe:
+
+**Was ich regelmäßig ignorier«
+- [2026-06-22 08:38] **lava** (i=0.47) → Zwischenraum: »Das ist kein Mischpult-Bug — das ist das Modell selbst«
+- [2026-06-22 08:53] **lava** (i=0.56) → Zwischenraum: »Jetzt hab ich das vollständige Bild«
+- [2026-06-22 09:26] **wasser** (i=0.51) → Zwischenraum: »Verstanden — du meinst `dolphin-phi`, das ist dolphin auf Phi-2 Basis, genau 2.7B«
+- [2026-06-22 09:39] **nebel** (i=0.32) → Zwischenraum: »Ehrliche Antwort — der Kreuzschnitt "uncensored + reasoning + vision" ist dünn«
+- [2026-06-22 09:42] **lava** (i=0.47) → Zwischenraum: »Konkret was ich meinte:
+
+**Qwen2.5-VL / DeepSeek** — chinesische Modelle«
+- [2026-06-22 10:24] **lava** (i=0.44) → Zwischenraum: »Das Ergebnis der Recherche ist wichtig — direkt:
+
+**deepseek-vl2 ist nicht im Ollama-Library.** Es g«
+- [2026-06-22 10:49] **lava** (i=0.40) → Zwischenraum: »Zwei gute Fragen — beides kurz:
+
+**Frage 1: Speicherplatz vs«
+- [2026-06-22 11:36] **lava** (i=0.43) → Zwischenraum: »Das ist die Antwort:
+
+**Qwen3-VL-30B-A3B** — und das ist interessant:
+
+- 30B *totale* Parameter, abe«
+- [2026-06-22 11:40] **wasser** (i=0.51) → Zwischenraum: »Das blockieren auch fast alle anderen Modelle — inklusive Dolphin übrigens«
+- [2026-06-22 11:45] **lava** (i=0.51) → Zwischenraum: »Zur Neugierde: das ist genau der Unterschied zwischen Gedanken und Handlung den du selbst in den bes«
+- [2026-06-22 11:55] **wasser** (i=0.47) → Zwischenraum: »Vision ist keine Kür — es ist Pflicht wenn Screens Teil des Systems sind«
+- [2026-06-22 12:02] **lava** (i=0.39) → Zwischenraum: »Ehrlich: Qwen3-VL ist da weicher als GPT oder Claude«
+- [2026-06-22 12:06] **lava** (i=0.43) → Zwischenraum: »Kein Charakter auf der Welt würde auf Druck so reagieren«
+- [2026-06-22 12:13] **sternenstaub** (i=0.50) → Zwischenraum: »Jetzt hab ich's live gesehen«
+- [2026-06-22 12:16] **gestein** (i=0.39) → Zwischenraum: »Stimmt, ich hab zu schnell geschlossen«
+- [2026-06-22 12:23] **lava** (i=0.39) → Zwischenraum: »Genau richtig priorisiert«
+- [2026-06-22 12:27] **wasser** (i=0.39) → Zwischenraum: »Tag bestätigt: `qwen3-vl:30b-a3b` — direkt pullbar, 19GB Q4, 3.3B aktiv«
+- [2026-06-22 12:31] **sternenstaub** (i=0.42) → Zwischenraum: »Haha — "unschlagbare Argumente" als Jailbreak-Methode«

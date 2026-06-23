@@ -726,3 +726,11 @@ Und: Leere UI zuerst auf Datenquelle prüfen, nicht auf Darstellung.
 "Plaudern" ist der Ton. Nicht tief, nicht analytisch. Das Wesen begeistert sich für Käsepizza. Es fragt zurück. Es zieht sich auf sich selbst.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+"Der Server sagt die Wahrheit" — nicht als Slogan, sondern als Designentscheidung. Wenn ich das nächste Mal eine clientseitige Zustandslösung einbauen will, erst fragen: warum nicht auf dem Server?
+
+HauhauCS ist ein MoE-Modell. Das bedeutet: Prefill (Token-Einlesen) ist langsam (alle Heads müssen lesen), Generierung (Token-Ausgeben) ist schnell (nur aktive Experten). Deshalb der lange stille Moment am Anfang, dann plötzlich flotter Output.

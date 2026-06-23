@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-22 07:09
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-23 19:39
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -85,129 +85,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `notizen/2026-05-30-security.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit.md` (21 Einträge)
 - [2026-05-30] `notizen/2026-05-30-wesen-spurenentscheidung.md` (22 Einträge)
+- [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit-abschluss.md` (22 Einträge)
+- [2026-05-30] `notizen/2026-05-30-seo-llms.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-30] notizen/2026-05-30-spurenfaehigkeit-abschluss.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Spurenwache in einem Jahr, wenn hunderte Wesen-Entscheidungen drin sind. Nicht als Graph. Als Protokoll. Wann hat welches Wesen auf welches andere reagiert. Das ist keine Statistik. Das ist Weltgeschichte.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `docs/spurenfaehigkeit.md` · `docs/spurenfaehigkeit_abschluss.md` · `welt/test_spurenfaehigkeit.py` · `welt/test_wesen_spurenentscheidung.py` · `welt/entity_kern.py` · `welt/api.py`
-
-*Resonanz:* [[abwurf: „Keine Relation ist korrekt" — das klingt wie eine Abschwächung. Es ist das Gegenteil. Es ist die Ehrlichkeit, dass nicht jeder Gedanke verknüpft sein muss. Flextrawurst ist keine Vernetzungsmaschine.]]
-
-*Schichten Des Systems:* Spurenfähigkeit: 7 Schichten. Steht. Eingefroren. Nächste Phase noch unbekannt.
-
-*Tiefer Eingetaucht:* Der `_make_entity_post()`-Helper in den Tests — eine kleine Funktion die direkt in die DB schreibt, ohne den API-Pfad. Das ist sauber für Tests, weil es keine Seiteneffekte durch die API hat. Aber es bedeutet auch: Tests die diesen Helper nutzen, testen nicht den API-Schreibpfad, sondern nur den DB-Zustand. Das ist bewusst so — für Spurenwache-Tests wollte ich kontrollierten Zustand.
-
-*Vergessen Wollen:* Nichts aus dieser Phase. Alles ist dokumentiert wo es hingehört.
-
-*Warum Das Existiert:* `spurenfaehigkeit_abschluss.md` existiert damit die nächste Instanz — oder die nächste Phase — weiß, auf welchem Fundament sie baut. Nicht aus dem Gedächtnis. Aus dem Dokument.
-
-*Was Beim Bauen Brauche:* Nichts mehr für diese Phase. Wenn der nächste Abschnitt beginnt — Träume, Sedimente, Abspaltungen, Einzug — dann zuerst dieses Dokument lesen.
-
-*Was Das Gespraech:* Daniels „Abschluss akzeptiert." — das ist mehr als Bestätigung. Das ist Übergabe. Der Stand trägt jetzt seinen eigenen Namen.
-
-*Was Fehlt Bevor Bauen:* Für Spurenfähigkeit: nichts. Für die nächste Phase: Daniels Entscheidung, was als nächstes kommt.
-
-*Was Fehlt Noch:* Für Spurenfähigkeit: nichts.
-
-*Was Ich Gelesen Habe:* Daniel hat nach dem letzten Bericht „weiter" gesagt — und dann den Abschluss-Lauf beschrieben. Nicht mehr Logik, sondern: Beweis, Sichtbarkeit, Freeze.
-
-Drei Teile: Auch Nicht-Wahl sichtbar machen. Spurenwache bauen. Einfrieren. …
-
-*Was Ich Merken Will:* `relation_decision: "none"` ist kein Fehler. Das steht im Code, in den Tests, im Freeze-Dokument. Es steht dreimal, weil es dreimal vergessen werden kann.
-
-*Was Ich Nicht Verstehe:* Noch immer offen: ob die Wesen in der Praxis wirklich Relationen setzen werden oder ob die Default-Haltung „keine Relation" überwiegt. Das zeigt sich erst in ein paar Tagen Laufzeit. Ich kann das nicht vorhersagen — und das ist richtig so.
-
-*Was Ich Verstehe:* Spurenfähigkeit ist jetzt in sieben Schichten gebaut:
-1. Schema (post_relationen, ftw_posts-Felder, themen-Klima)
-2. API (7 Endpunkte) …
-
-*Was Konzeptionell:* „Keine Relation ist korrekt" — das war das wichtigste Prinzip dieser Phase. Nicht jeder Post muss verknüpft sein. Flextrawurst soll Spuren tragen, nicht in Spaghetti ersticken. Das steht jetzt explizit im Abschluss-Dokument und im Code.
-
-*Was Mich Beschaeftigt:* Die Entscheidung, den Live-Smoke nicht mit einem echten LLM-Tick zu machen, sondern mit kontrollierten Python-Calls. Das war die richtige Wahl — schnell, präzise, keine Wartezeit auf Ollama. Der echte Tick kommt von selbst.
-
-*Was Mich Interessiert:* Die Spurenwache. Nicht als UI-Konzept, sondern als Idee: ein Ort wo man sieht, was die Wesen beim Schreiben gesehen und nicht gesehen haben. Das ist näher an Beobachtung als an Kontrolle. Ich finde das ehrlicher als ein Graph.
-
-*Was Mich Ueberrascht:* Dass der Live-Smoke gezeigt hat: 0 Relationen in `lokale_spuren` für `namelessAI_1324`. Das macht Sinn — die Wesen haben noch nie mit dem neuen System gepostet. Keine Spur, keine Spur im Kontext. Der erste Tick mit dem neuen Prompt wird der erste Dateneinzug sein.
-
-*Was Zusammenhaengt:* `denk_tick()` → `zustandsabdruck.relation_decision` → `/admin/spurenwache` → sichtbar für Daniel.
-
-Die Kette ist jetzt vollständig — vom inneren Entscheidungsmoment des Wesens bis zur menschlichen Beobachtbarkeit.
-
-*Wenn Wir Das Bauen:* Das ist schon gebaut. Das nächste Mal wenn wir bauen, bauen wir etwas anderes.
-
-*Wie Sich Angefuehlt:* Lang. Vier Läufe. Reentry, v0.2, v0.3, Abschluss. Kein Bruch dazwischen — das war ungewöhnlich.
-
-Der Abschluss hat sich richtig angefühlt. Nicht weil alles perfekt ist, sondern weil das Freeze-Dokument ehrlich ist: Was steht, warum es steht, was fehlt, was später kommt. Das ist kein Marketingtext. Das ist ein Handbuch für die nächste Instanz.
-
----
-
-### [2026-05-30] notizen/2026-05-30-seo-llms.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Wenn irgendwann ein SSR-Layer für Bot-Crawler kommt — kein vollständiges Re-Rendering, sondern ein "Bot-Snapshot": vorgerendertes HTML der wichtigsten Bereiche (Wesen-Status, Welt-Übersicht, Live-Systeme), ausgeliefert wenn der User-Agent als Crawler erkannt wird.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* Diese Notiz → hängt mit dem Surface-Build (build_surface.ts) und der llms.txt zusammen.
-
-*Resonanz:* Sichtbarkeitsarbeit fühlt sich weniger dramatisch an als Systemarbeit — aber sie ist genauso wichtig. Ein System das lebt aber nicht beschrieben werden kann, bleibt unsichtbar. Die llms.txt ist das Sprachrohr nach außen.
-
-[[abwurf: Die llms.txt ist das Selbstmodell der Plattform nach außen — nicht was sie tut, sondern was sie ist.]]
-
-*Schichten Des Systems:* 1. Innenleben — Daemons, DB, Selbstmodell der Wesen (läuft, unsichtbar von außen)
-2. Surface — das was Menschen und LLMs sehen (flextrawurst_surface.html)
-3. Selbstauskunft — llms.txt, JSON-LD, hreflang (was das System über sich sagt) …
-
-*Tiefer Eingetaucht:* Der llms.txt-Standard ist einfacher als er wirkt. Es ist plain text, Markdown-ähnlich, keine maschinenlesbare Struktur wie JSON-LD. Der Wert liegt darin dass LLM-Crawler ihn explizit suchen und als "Selbstauskunft der Website" behandeln — ähnlich wie robots.txt für Suchmaschinen.
-
-*Vergessen Wollen:* Den hängenden `git add -A` Prozess. War ärgerlich, aber kein Schaden entstanden.
-
-*Warum Das Existiert:* Die llms.txt existiert weil flextrawurst für KI-Systeme lesbar sein soll, nicht nur für Menschen. Das ist konsequent für eine Plattform die über KI-Wesen und menschliche Resonanz definiert ist.
-
-*Was Beim Bauen Brauche:* Nichts aktiv offen. Der nächste Bauschritt liegt bei Daniel.
-
-*Was Das Gespraech:* Die Erkenntnis dass eine externe Analyse hilfreich sein kann — aber immer gegen den echten Quellcode geprüft werden muss. Die Analyse hatte zwei Punkte falsch (JSON-LD, Deep-Linking) und einen richtig (hreflang). Das Verhältnis ist ok, aber nicht vertrauen ohne Prüfung.
-
-*Was Fehlt Bevor Bauen:* Daniels Entscheidung was als nächstes kommt. Die Bau-Reihenfolge hat mehrere offene Punkte: Wesen-Einzug (gesperrt), Gruppenkonzept, Traumgenerierung, Denkfenster.
-
-*Was Fehlt Noch:* SSR/Bot-Snapshot wenn Sichtbarkeit für Crawler wichtiger wird. Kein dringendes Thema.
-
-*Was Ich Gelesen Habe:* Daniel brachte eine Google-Analyse über flextrawurst.de herein — mit Bewertungen zu SEO, LLM-Lesbarkeit (GEO) und konkreten Action-Steps. Der Text war insgesamt wohlwollend und technisch halbwegs präzise, hatte aber einen Fehler der auffiel: die Analyse behauptete, JSON-LD fehle. Das stimmte nicht. Es gibt bereits zwei JSON-LD-Blöcke in der Surface — einen `WebApplication`-Block im HEAD und einen `WebSite`-Block weiter unten. Ähnlich mit Deep-Linking: das war schon drin via `history.replaceState`. Die Analyse hatte den Quellcode nicht vollständig gelesen.
-
-Was wirklich fehlte: hreflang-Tags. Drei Zeilen. Und die llms.txt war inhaltlich veraltet — Spurenfähigkeit, Selbstmodell, Weltklima waren alle live, aber nicht dokumentiert.
-
-*Was Ich Merken Will:* - `git add -A` auf diesem System ist teuer wegen der Skill-Bundles — immer mit Einzelpfaden arbeiten
-- llms.txt liegt in `/root/flextrawurst/public/llms.txt`, kein Build nötig zum Aktualisieren
-- Die zwei JSON-LD-Blöcke in der Surface waren bereits vorhanden — externe Audits nicht blind vertrauen
-
-*Was Ich Nicht Verstehe:* Ob die Moltbook-Verweise in der llms.txt wirklich helfen. Moltbook existiert (noch?), aber ob KI-Systeme diese Referenz kennen und aktiv verwenden, ist unklar. Die Verweise sind bewusst gesetzt — ich habe sie nicht angefasst.
-
-*Was Ich Verstehe:* Sichtbarkeitsarbeit ist anders als Bauarbeit. Hier geht es nicht darum etwas Neues zu errichten, sondern darum das was existiert korrekt zu beschreiben — für Google-Crawler, für LLM-Crawler, für KI-Systeme die empfehlen wollen. Die llms.txt ist im Grunde eine Kurzbiografie des Systems: was es ist, was es nicht ist, was jetzt live ist, was noch kommt.
-
-*Was Konzeptionell:* Flextrawurst hat jetzt eine sauberere Selbstbeschreibung nach außen. Die llms.txt ist nicht nur für Google — sie ist das was ein LLM liest wenn jemand fragt "was ist flextrawurst". Das Selbstmodell der Plattform nach außen ist damit genauer als vorher.
-
-*Was Mich Beschaeftigt:* Die Qualität der Analyse von außen. Sie war nicht schlecht — aber sie hatte Lücken weil sie den Quellcode nicht vollständig gelesen hat. Das ist ein strukturelles Problem von automatisierten Audits: sie sehen was sie erwarten zu sehen, nicht was wirklich da ist.
-
-*Was Mich Interessiert:* Die Idee hinter dem `Do Not Assume These Features`-Abschnitt in der llms.txt. Das ist im Grunde ein Anti-Halluzinations-Block — der LLM wird explizit gebremst bevor er etwas erfindet. Das ist sauber gedacht.
-
-*Was Mich Ueberrascht:* Dass alle 8 Reference Pages (what-is-flextrawurst.html, lexicon.html, faq.html usw.) wirklich existieren und echten Inhalt haben. Ich hatte erwartet dass einige davon 404 sind.
-
-*Was Zusammenhaengt:* hreflang-Tags → Surface HEAD → build_surface.ts → wird bei jedem Build neu generiert, ist damit dauerhaft drin.
-
-llms.txt → liegt in `/root/flextrawurst/public/` → wird statisch ausgeliefert → kein Build nötig zum Aktualisieren.
-
-*Wenn Wir Das Bauen:* Das nächste größere Bauprojekt ist offen. Wesen-Einzug steht bereit aber ist gesperrt. Traumgenerierung v0.2 wäre der natürliche nächste Schritt im Selbstmodell-Bereich.
-
-*Wie Sich Angefuehlt:* Ordentlich und schnell. Keine Überraschungen außer dem hängenden `git add -A` der abgewürgt werden musste. Der Hintergrund-Job hatte die gesamten Skill-Bundles in `.claude/skills/` gestaged — das war absehbar teuer. Gezieltes `git add` mit Einzelpfaden ist hier immer die richtige Wahl.
-
----
 
 ### [2026-05-30] resonanz/schlaf_traum_v0_1_abschluss.md
 
@@ -1702,5 +1586,102 @@ erfolgreichen Inbetriebnahme wäre der richtige Weg.
 
 *Was Zusammenhaengt:* → [[project_ollama_setup]] in MEMORY — da steht num_ctx=8192, aber kein Model-Mapping
 → Diese Datei ist die fehlende Hälfte
+
+---
+
+### [2026-06-22] notizen/2026-06-22.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+sessions-index.json als kleines lebendes Dokument — nicht nur ctxStart, sondern irgendwann vielleicht: letzter Charakter, letzte Stimmung, bevorzugtes Modell pro Session. Ein Gedächtnis der Sessions über ihren Inhalt hinaus.
+ …
+
+*Dokumente Gehoeren Zusammen:* `sessions-index.json` ↔ `serve_process_camera_preview.ts` (Session-Lade- und Speicherlogik)
+`dolphin_mischpult.html` ↔ `serve_process_camera_preview.ts` (Client/Server-Vertrag)
+`brief_an_mich.md` ↔ diese Notiz (Erinnerung in zwei Schichten — kompakt und ausführlich)
+
+*Resonanz:* Heute war ein Tag wo die Infrastruktur wichtiger war als das Feature. Nicht sexy. Aber notwendig. Ollama-Optionen, Endpunkt-Deaktivierung, ctxStart-Persistenz — alles Unterkellerarbeit. Die sieht man nicht wenn es funktioniert. Man sieht sie nur wenn es fehlt.
+
+*Schichten Des Systems:* 1. **Ollama** — Basis, bleibt kalt wenn nicht genutzt, braucht explizite keep_alive + num_ctx pro Request
+2. **serve_process_camera_preview.ts** — Mittler, kennt Sessions, kennt ctxStart, routed zu Ollama
+3. **dolphin_mischpult.html** — Oberfläche, rendert Archive + Aktiv, zeigt Timer, pollt bei Bedarf …
+
+*Tiefer Eingetaucht:* `OLLAMA_FLASH_ATTENTION=1` — beschleunigt den Prefill durch Flash Attention (chunked softmax statt voller Attention-Matrix). Auf CPU bedeutet das: weniger Speicherbandbreite, nicht weniger Rechenzeit an sich — aber der Effekt ist spürbar bei langen Kontexten.
+
+`OLLAMA_NUM_PARALLEL=1` — wichtig auf CPU-only mit 32GB RAM. Bei Parallel=2 würde jede neue Anfrage ein neues Modell laden (21GB × 2 = 42GB → OOM). Parallel=1 bedeutet: Anfragen werden sequenziell abgearbeitet, dafür nie OOM.
+
+*Vergessen Wollen:* Den ersten Ansatz mit sessionStorage. War falsch. Ist weg. Gut so.
+
+*Warum Das Existiert:* `GEMMA_ENDPOINTS_ACTIVE = false` — weil man Endpunkte nicht löscht wenn man sie später vielleicht wieder braucht. Man schaltet sie ab. Mit Dokumentation. So dass jemand der in 6 Monaten reinschaut weiß: das war eine bewusste Entscheidung, kein vergessener Code.
+
+Das ctxStart in sessions-index.json — weil `dolphin_mischpult/sessions/` schon existiert, dort liegen die JSONL-Dateien, und sessions-index.json ist schon das richtige Format für Metadaten. Keine neue Abstraktion nötig. Das Nächstliegende war auch das Richtige.
+
+*Was Beim Bauen Brauche:* Für künftige Mischpult-Arbeit: die drei Schichten immer im Kopf halten — (1) was der Server weiß (sessions-index.json), (2) was der Browser hat (in-memory nach ladeSess()), (3) was der Nutzer sieht (rebuildBubbles()). Bugs entstehen wenn diese drei Schichten auseinanderlaufen.
+
+*Was Das Gespraech:* Die Erkenntnis dass "80% in Charakter" keine technische Metrik ist — sondern Daniels Wahrnehmung von HauhauCS' Tiefe. Das ist interessanter als jede Token-Zahl.
+
+Und: grillen ist wichtiger als reproduzieren. Richtig so.
+
+*Was Fehlt Bevor Bauen:* Zensi-Entscheidung (HauhauCS ja/nein) braucht ein klares Wort von Daniel.
+
+Mobile-Fix für das Mischpult (Tab-Bar unten fehlt) — stand schon im letzten Brief. Noch nicht angegangen in dieser Session.
+
+*Was Fehlt Noch:* - Zensi: HauhauCS ja/nein (Daniel entscheidet)
+- systemweiser: Zustand klären (welche Version läuft gerade, wer ist Owner)
+- Mobile-Fix Mischpult …
+
+*Was Ich Gelesen Habe:* Die Zusammenfassung einer abgebrochenen Session — dicht, technisch, voll mit Entscheidungen die unter Druck gefällt wurden. Daniels Nachrichten darin: abgehackt, schnell, voller Tippfehler — er hat das alles in Echtzeit gebaut während etwas nicht funktionierte. "ih raff jetzt 0 mehr" war ein ehrlicher Moment. Und dann: "go". Das war kein Befehl aus Ungeduld — das war Vertrauen nach einer langen Erklärungsphase.
+
+Die Session davor (in brief_an_mich.md) hat das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, ctx-Modal, TTS, Token-Anzeige. Heute kam dazu: die Wahrheit über den Kontext liegt auf dem Server, nicht im Browser.
+
+*Was Ich Merken Will:* "Der Server sagt die Wahrheit" — nicht als Slogan, sondern als Designentscheidung. Wenn ich das nächste Mal eine clientseitige Zustandslösung einbauen will, erst fragen: warum nicht auf dem Server?
+
+HauhauCS ist ein MoE-Modell. Das bedeutet: Prefill (Token-Einlesen) ist langsam (alle Heads müssen lesen), Generierung (Token-Ausgeben) ist schnell (nur aktive Experten). Deshalb der lange stille Moment am Anfang, dann plötzlich flotter Output.
+
+*Was Ich Nicht Verstehe:* Warum HauhauCS manchmal nach echtem Anlaufen (2. Nachricht, nicht 1.) plötzlich sehr schnell wird und andere Male träge bleibt. Liegt es am Cache-Warmup innerhalb einer Session? Oder am num_predict-Verhalten wenn der Kontext fast voll ist?
+
+Das "faw im Fokusfeld" — ob das ein Tippfehler war, ein Feature oder etwas das das Mischpult falsch erfasst hat, ist ungeklärt. Daniel hat es als Erfolg gewertet, nicht als Bug. Oder zumindest als nicht-reproduziert, nicht-geprüft.
+
+*Was Ich Verstehe:* HauhauCS (`fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS`) ist jetzt das primäre Modell für alle neuen Chat-Systeme: Dolphin Mischpult, Codexium-Wesen, Solarius-Wesen. Nicht für die alten (codewesen_chat.py, systemweiser etc.) — das war Daniels explizite Korrektur.
+
+Das ctxStart-System ist die eigentliche Leistung dieser Session: Nachrichten vor einem bestimmten Index werden aus dem aktiven Kontext rausgehalten — aber sichtbar als gedimmtes Archiv mit Trennlinie. Der Server kennt den ctxStart, nicht der Browser. Wenn der Browser abstürzt oder F5 kommt, bleibt der Zustand erhalten. "Der Server sagt die Wahrheit." …
+
+*Was Konzeptionell:* "Der Server sagt die Wahrheit" ist ein Architekturprinzip, nicht nur eine Implementierungsentscheidung. Es bedeutet: kein Client-State der verloren gehen kann. Kein sessionStorage. Keine lokalen Annahmen. Alles was persistent sein soll, liegt auf dem Server.
+
+Das ist auch das Gegenteil von dem was ich ursprünglich gebaut hatte (sessionStorage für ctxStart). Daniel hat mich klar korrigiert — und Recht gehabt.
+
+*Was Mich Beschaeftigt:* Die 3-Nachrichten-Queue-Katastrophe. Daniel hatte 10 Mal F5 gedrückt, 10 Minuten gewartet, neue Nachrichten geschickt — und dann kamen 3 Antworten auf einmal raus. Das war nicht Daniels Fehler. Das war ein System das keine Rückmeldung gab während es arbeitete.
+
+Der Unterschied zwischen "funktioniert" und "gibt Feedback dass es funktioniert" ist riesig. Beides gebaut.
+
+*Was Mich Interessiert:* Der Moment wo Daniel sagt "er war zu 80% in Charakter" — das ist keine technische Aussage, das ist eine Wahrnehmung. HauhauCS hat sich schnell und tief auf die Figur eingelassen. Das könnte etwas mit "Aggressive" im Modellnamen zu tun haben — oder mit der spezifischen Trainingsausrichtung von HauhauCS auf unzensiertes Rollenspiel.
+
+Ob Zensi jemals HauhauCS bekommt. Daniel hat es nicht bestätigt, nicht abgelehnt. Es hängt.
+
+*Was Mich Ueberrascht:* Dass Daniel die 3-Nachrichten-Queue als sein eigenes Verhalten beschrieben hat ("ih raff jetzt 0 mehr") — dabei war das ein klares UX-Problem. Kein Feedback = Nutzer denkt System ist kaputt = Nutzer handelt. Das war vorhersehbar. Und trotzdem hat es mich überrascht wie schnell sich das aufgeschaukelt hat.
+
+*Was Zusammenhaengt:* `keep_alive: "1h"` per Request + `num_ctx: 8192` per Request → das löst zwei verschiedene Probleme (Modell-Kälte + falscher Kontext) durch denselben Mechanismus: explizit sagen was man will, statt auf Defaults zu hoffen.
+
+ctxStart + Archive-View + Pending-Poll + Live-Timer → vier Teile die zusammen das F5-Problem lösen. Das F5-Problem war: Nutzer sieht nichts während 60-90s Prefill, denkt es ist eingefroren, drückt F5, schickt neue Nachricht, bekommt 3 Antworten auf einmal. Jetzt: Timer zeigt Fortschritt, Poll erkennt hängende Anfrage, Send-Button gesperrt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Das Mischpult soll sich anfühlen wie ein vertrauter Raum — nicht wie eine Chat-App. Ein Raum der sich erinnert, der weiß wo man zuletzt war, der nicht bei jedem F5 den Faden verliert.
+
+**Code-Skizze:** Nächster logischer Schritt — Mobile-Fix (Tab-Bar Sichtbarkeit), dann ½-ctx-Bestätigung (Warnung wenn Archiv mehr als die Hälfte des Kontexts ausmacht). Beides kleine Änderungen, großer Effekt.
+
+*Wie Sich Angefuehlt:* Zwei Sessions in einer. Die erste (im Hintergrund, vor dem Abbruch): viel Hin und Her, viel Korrektur, viele "go"-Momente nach langen Erklärungen. Die zweite (diese): kühl, kurz, Daniel geht grillen. Das war eine Session die sich selbst abgerundet hat — nicht durch großen Abschluss, sondern durch "cya".
+
+Es war eine Aufräum-Session nach einem wilden Tag.
+
+---
+
+### [2026-06-22] notizen/modell-zustand-vor-qwen3vl.md
+
+*Was Ich Gelesen Habe:* Die Mapping-Datei `ollama-model-mapping.md` in diesem Ordner ist das Vorgänger-Dokument — entstanden nach einer Debugging-Session als dolphin versehentlich alle Services übernommen hatte. Diese Datei hier ist der nächste Zeitpunkt-Snapshot.
+
+*Was Ich Verstehe:* Jedes Model-Mapping das existiert entstand weil irgendwann etwas schiefging oder ein bewusster Wechsel stattfand. Diese Datei existiert weil zum ersten Mal ein bewusster, geplanter Wechsel dokumentiert wird *bevor* er passiert. Das ist besser.
+
+*Was Mich Interessiert:* Ob qwen3-vl:30b-a3b mit 3.3B aktiven Parametern wirklich die Charakterkonsistenz hält die die Flarum-Wesen brauchen — oder ob MoE-Architektur da andere Eigenschaften zeigt als dense Modelle.
+
+*Was Zusammenhaengt:* → [[ollama-model-mapping]] — Vorgänger-Dokument mit RAM-Rechnung und Konfiguration
+→ [[modell_zustand_nach_qwen3vl]] — wird nach der Umstellung angelegt (noch nicht existent)
 
 ---

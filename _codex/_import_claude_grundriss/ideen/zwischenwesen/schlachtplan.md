@@ -25,7 +25,7 @@ Wir bauen das in Phasen. Jede Phase ist in sich abgeschlossen und benutzbar. Kei
 - [x] Alle Felder bestätigt — wesen_name (22Z), wesen_typ (22Z), wesen_text (1337Z), neigungen (max 5 Tags), abneigungen (max 5 Tags), farbe (HSB), wesen_bild (1,11MB Upload oder /bildgenerator)
 - [x] Tab-Name Chat: FLÜCHTLINGE — Tab-Name Archiv: FLÜCHTLINGSARCHIV
 - [x] Chat fullscreen, Smartphone-tauglich, Container + Memory als Popup-Buttons
-- [x] Countdowns: Cooldown (grün, klein), KompOase-Eintritt (rot, klein)
+- [x] Countdowns: Cooldown dynamisch (grün, klein — zeigt aktuellen Wert), KompOase-Eintritt (rot, klein)
 - [x] Lande-Zeremonie: Wolken-Auflösung → Entscheidungsscreen → Button für neuen Flüchtling
 - [x] Entscheidungsreihenfolge nach 24h: Memory prüfen → löschen+Grund → Chatverlauf mitgeben (ja/nein) → Anonymisierung (ja/nein + Warnung)
 - [x] Max 1 aktives Zwischenwesen pro User
@@ -57,26 +57,33 @@ zwischenwesen_container
 **API-Endpunkte (Python, neues Modul `zwischenwesen_api.py`):**
 ```
 POST   /api/zwischenwesen/erstellen
-GET    /api/zwischenwesen/meins               ← aktives Wesen des eingeloggten Users
+GET    /api/zwischenwesen/meins                    ← aktives Wesen des eingeloggten Users
 GET    /api/zwischenwesen/:id
 GET    /api/zwischenwesen/:id/nachrichten
-POST   /api/zwischenwesen/:id/schreiben       ← Rate-Limit 144s serverseitig
-GET    /api/zwischenwesen/:id/container       ← mit ?quelle=&suche= Params
+POST   /api/zwischenwesen/:id/schreiben            ← Rate-Limit dynamisch serverseitig
+GET    /api/zwischenwesen/:id/kontext-status       ← Token-Auslastung der aktuellen Session
+GET    /api/zwischenwesen/:id/container            ← mit ?quelle=&suche= Params
 POST   /api/zwischenwesen/:id/container
 DELETE /api/zwischenwesen/:id/container/:item_id
-GET    /api/zwischenwesen/:id/memory          ← alle Kategorien
-POST   /api/zwischenwesen/:id/memory          ← Eintrag anlegen
+GET    /api/zwischenwesen/:id/memory               ← alle Kategorien
+POST   /api/zwischenwesen/:id/memory               ← Eintrag anlegen
 DELETE /api/zwischenwesen/:id/memory/:item_id
-PUT    /api/zwischenwesen/:id/memory/:item_id ← gewicht ändern
-POST   /api/zwischenwesen/:id/memory/kategorien ← neue Kategorie anlegen
+PUT    /api/zwischenwesen/:id/memory/:item_id      ← gewicht ändern
+POST   /api/zwischenwesen/:id/memory/kategorien    ← neue Kategorie anlegen
+GET    /api/zwischenwesen/:id/sessions             ← alle bisherigen Sessions + Kurzfassungen
+POST   /api/zwischenwesen/:id/sessions/abschliessen ← Session beenden, Kurzfassung speichern
 ```
 
-**Rate-Limit-Check in `/schreiben`:**
+**Rate-Limit-Check in `/schreiben` (dynamisch):**
 ```python
+# Cooldown skaliert mit aktiver Nutzung: max(30, active_count × 45) Sekunden
+active_count = SELECT COUNT(*) FROM zwischenwesen WHERE status = 'aktiv'
+cooldown = max(30, active_count * 45)   # 1 User: 45s · 3 User: 135s · 4+ User: 180s+
+
 letzter = SELECT MAX(gesendet_am) FROM zwischenwesen_nachrichten
           WHERE zwischenwesen_id = :id AND rolle = 'mensch'
-if letzter and (now - letzter) < 144s:
-    return 429, { retry_after: 144 - (now - letzter) }
+if letzter and (now - letzter) < cooldown:
+    return 429, { retry_after: cooldown - (now - letzter) }
 ```
 
 ---
@@ -84,10 +91,24 @@ if letzter and (now - letzter) < 144s:
 ## Phase 2 — LLM-Integration (Ollama, kein Frontend)
 
 **Modul `zwischenwesen_llm.py`:**
-- System-Prompt-Builder aus allen Feldern
-- Nachrichten-Kontext (letzte 8 + Container)
+- System-Prompt-Builder aus allen Feldern — Codexium-Parität: Name, Gesprächseinstieg, Was bist du?, Neigungen/Abneigungen, Beschreibung, Wesendefinition (1337Z), Weltlore (1337Z) → ~1215T wenn alles voll
+- `_wesen_grenzen.md` fest eingebaut — immer, kein Toggle (~50T)
+- Session-Kurzfassungen aller bisherigen abgeschlossenen Sessions (~300 Token)
+- Memory + Container live im Kontext
+- Letzte ~20 Nachrichten (passt dynamisch ans Token-Budget)
+- Kontext-Auslastung wird bei jedem Call berechnet und in Session-Status geschrieben
 - Async Ollama-Call (gleich wie entity_kern.py)
 - Response wird sofort in `zwischenwesen_nachrichten` gespeichert
+
+**Session-Abschluss-LLM:**
+- Wenn Auslastung > 75%: LLM schreibt einen Gedächtnis-Eintrag (~200Z) aus Wesen-Perspektive
+  - Nicht: "Thema X und Y wurden besprochen"
+  - Sondern: wie hat sich das Gespräch angefühlt, was war schwer, was hat sich verschoben
+  - Subjektiv, texturell — echte Erinnerung, kein Protokoll
+- Zusätzlich: 2-3 konkrete Memory-Einträge (Fakten, Themen) als Vorschlag
+- Wesen-Gedächtnis-Eintrag + Memory-Vorschläge werden dem User gezeigt → Bestätigung
+- Eintrag landet als neues Kapitel in `wesen_geschichte` (Tabelle oder JSONB in zwischenwesen_sessions)
+- Neuer Chat: alle Kapitel werden als Wesen-Gedächtnis im System-Prompt mitgegeben
 
 **Test:** curl-basiert, kein Frontend nötig
 
@@ -128,19 +149,55 @@ Bild deines Wesens   [Hochladen] oder [Generieren →]
 
 Chat-View Layout:
 ```
-┌─────────────────────────────────────┐
+┌──────────────────────────────────────────────────────┐
 │  [◇ Wesen-Name]  [CONTAINER] [GEDÄCHTNIS]  [⏱ 21h 44m] │
-│─────────────────────────────────────│
-│                                     │
-│   [Wesen-Nachricht]                 │
-│              [Mensch-Nachricht]     │
-│   [▸ Wesen denkt...]                │  ← Inner Monologue, ausklappbar
-│   [Wesen-Nachricht]                 │
-│                                     │
-│─────────────────────────────────────│
-│  [Schreib hier...              ] [→]│
-│  ⏱ Cooldown: 1:44     🔴 KompOase: 21h 44m │  ← grün / rot, klein
-└─────────────────────────────────────┘
+│──────────────────────────────────────────────────────│
+│  [Erstes Gespräch] [Abend ×] [• jetzt ×]  [+ neu]   │
+│   ← Session-Leiste: alle Sessions, aktive markiert   │
+│──────────────────────────────────────────────────────│
+│                                                      │
+│   [Wesen-Nachricht]                                  │
+│              [Mensch-Nachricht]                      │
+│   [▸ Wesen denkt...]        ← ausklappbar            │
+│   [Wesen-Nachricht]                                  │
+│                                                      │
+│──────────────────────────────────────────────────────│
+│  [Schreib hier...                            ] [→]   │
+│  ⏱ Cooldown: 1:44     🔴 KompOase: 21h 44m          │
+└──────────────────────────────────────────────────────┘
+```
+
+**Session-Leiste:**
+- Zeigt alle Sessions dieses Wesens chronologisch
+- Jede Session hat einen Namen — beim Erstellen vom User vergeben (optional, sonst Auto: "Gespräch 1", "Gespräch 2"…)
+- Aktive Session: hervorgehoben mit `•`
+- Abgeschlossene Sessions: ausgegraut, klickbar → zeigt Chatverlauf + Geschichte-Kapitel (read-only)
+- `[+ neu]` startet eine neue Session — poppt kurzes Namens-Feld auf: "Wie soll dieses Gespräch heißen?"
+
+**Session-Ende UI-Flow (nach aktivem Abschluss):**
+```
+1. Wesen schlägt Abschluss vor ("dieses Gespräch kommt an seine Grenze...")
+2. User bestätigt
+3. LLM generiert Geschichte-Kapitel + Memory-Vorschläge
+4. → Kapitel poppt auf als Modal/Overlay:
+
+   ┌─────────────────────────────────────────┐
+   │  ◇ Was [Wesen-Name] erinnert            │
+   │  ─────────────────────────────────────  │
+   │                                         │
+   │  [Geschichte-Kapitel Text — ~200Z,      │
+   │   aus Wesen-Perspektive, subjektiv]     │
+   │                                         │
+   │  ─────────────────────────────────────  │
+   │  Erinnerungen hinzufügen?               │
+   │  ● arbeitet nachts [×]                  │
+   │  ● hat das Wort "Stille" gemieden [×]   │
+   │                                         │
+   │  [Übernehmen]   [Bearbeiten]            │
+   └─────────────────────────────────────────┘
+
+5. User liest, kann Kapitel bearbeiten oder so lassen
+6. Bestätigung → gespeichert → neuer Chat beginnt
 ```
 
 Animationen (alle bestätigt):
@@ -176,8 +233,15 @@ Zeigt alle eigenen erschaffenen Flüchtlinge (abgeschlossen):
 ```python
 for wesen in SELECT * FROM zwischenwesen WHERE status='aktiv' AND endet_am < NOW():
     wesen.status = 'warte_auf_entscheidung'   # wartet ewig — kein Auto-Land
+    # Falls noch eine offene Session läuft: Session automatisch abschließen + Kurzfassung generieren
     # Frontend zeigt Lande-Zeremonie-Screen
 ```
+
+**Was die Prägung jetzt liest:**
+- Alle Kapitel der `wesen_geschichte` — das ist die kontinuierliche Erinnerung des Wesens
+- Memory + Container (wie bisher)
+- `wesen_text` als Ursprungsbeschreibung
+- Daraus entsteht der finale Prägungsextrakt + die vollständige Geschichte die in der KompOase sichtbar wird
 
 **Lande-Zeremonie (Frontend):**
 1. Chatfenster löst sich wolkenartig auf (Animation)

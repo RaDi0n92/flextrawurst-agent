@@ -757,3 +757,11 @@ Das Durchschauen der generierten Bilder. Nicht wegen des Inhalts — sondern weg
 
 Wie verhindert man das strukturell? Automatisches "Zustand-Snapshot" nach jeder
 erfolgreichen Inbetriebnahme wäre der richtige Weg.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Die 3-Nachrichten-Queue-Katastrophe. Daniel hatte 10 Mal F5 gedrückt, 10 Minuten gewartet, neue Nachrichten geschickt — und dann kamen 3 Antworten auf einmal raus. Das war nicht Daniels Fehler. Das war ein System das keine Rückmeldung gab während es arbeitete.
+
+Der Unterschied zwischen "funktioniert" und "gibt Feedback dass es funktioniert" ist riesig. Beides gebaut.

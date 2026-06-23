@@ -1205,3 +1205,9 @@ Deshalb ist die Trennung zwischen Kimi, Codex und Claude keine bloße Namensrege
 Der erste OOM entstand bei fast erschöpftem Swap und mehreren langen Requests. Beim späteren OOM waren drei Ollama-Runner geladen; gleichzeitig belegte `sd-cli` viele GiB. Der Kernel wählte einen Ollama-Runner mit hohem `OOMScoreAdjust=600` als Opfer. Das war kein zufälliger Absturz, sondern die vorgesehene Opferwahl unter globalem Speichermangel.
 
 Die Lockdatei war nicht verwaist. `lsof` zeigte einen echten Halter und mehrere echte Wartende. Das Problem ist daher nicht „stale lock löschen“, sondern eine aktive Anfrage, die lange läuft, während nicht koordinierte Verbraucher weiterhin Ollama erreichen können.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Ich habe gesehen, dass `qwen3-vl:30b-a3b-instruct` und HauhauCS im Ollama-Log jeweils als eigener Runner mit rund 40 Sekunden Ladezeit auftauchen können. Der "warme" Vergleich war dadurch faktisch kein warmer Vergleich.

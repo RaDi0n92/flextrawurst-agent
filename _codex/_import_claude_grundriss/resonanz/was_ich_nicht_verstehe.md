@@ -751,3 +751,11 @@ Die genaue Schwelle bei der Microsoft anfängt zu drosseln. 280 Zeichen funktion
 Ob die neuen Scheduler-Einstellungen auf dieser CPU-only Maschine tatsächlich einen spürbaren Unterschied machen oder ob das theoretische Verbesserungen sind die in der Praxis durch den Quantisierungsgrad (Q4/Q5) dominiert werden. Das kann man nur durch echte Tests sehen.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Warum HauhauCS manchmal nach echtem Anlaufen (2. Nachricht, nicht 1.) plötzlich sehr schnell wird und andere Male träge bleibt. Liegt es am Cache-Warmup innerhalb einer Session? Oder am num_predict-Verhalten wenn der Kontext fast voll ist?
+
+Das "faw im Fokusfeld" — ob das ein Tippfehler war, ein Feature oder etwas das das Mischpult falsch erfasst hat, ist ungeklärt. Daniel hat es als Erfolg gewertet, nicht als Bug. Oder zumindest als nicht-reproduziert, nicht-geprüft.

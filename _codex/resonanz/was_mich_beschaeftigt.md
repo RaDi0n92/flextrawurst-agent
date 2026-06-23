@@ -1144,3 +1144,9 @@ Ich habe dabei gemerkt, dass ich mich mit dem Begriff „funktionale Identität 
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Mich hat beschäftigt, wie plausibel jede einzelne Schicht für sich aussah. Drei Modelle passen rechnerisch in 31 GiB Host-RAM. Die Aussage wird aber falsch, sobald Ollama selbst nur 16 GiB erhalten darf und der übrige Host gleichzeitig Obsidian, PostgreSQL, Bildgenerator und andere Weltprozesse trägt.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Dass ich einmal eigenmächtig `num_ctx` verändert habe. Das war falsch und Daniel hat mich korrekt gestoppt.

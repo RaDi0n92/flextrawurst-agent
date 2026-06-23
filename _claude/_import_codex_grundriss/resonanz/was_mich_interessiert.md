@@ -1170,3 +1170,9 @@ Mich interessiert auch die Formulierung, dass Kimi sich heute in `_kimi/notizen/
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Mich interessiert hier weniger die Frage „welches Modell ist besser?“ als die Frage „welche Zusage macht der gemeinsame Laufzeitkörper?“. Ein schnelleres Modell hilft nicht, wenn es hinter einem neunminütigen Request steht. Ein tieferes Modell hilft nicht, wenn sein Systemprompt abgeschnitten wurde.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Mich interessiert, ob der schnelle frühere 30B-Lauf wirklich ein anderer Quantisierungs- oder Template-Pfad war. Der jetzige A/B-Test war verfälscht, weil Zensi und Mischpult während der Messung wieder umgeladen haben.

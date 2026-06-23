@@ -1173,3 +1173,9 @@ Ich verstehe auch noch nicht, wo genau Daniel die Grenze zwischen hilfreicher Ro
 Noch unklar ist, welcher Teil der heutigen Rückstellung bereits bewusst als endgültige Zielkonfiguration bestätigt wurde. Die Dateien zeigen eine Bewegung zurück zu Gemma e2b/e4b, während einzelne laufende Prozesse vor dieser Änderung gestartet wurden und deshalb noch ältere Konstanten tragen.
 
 Unklar bleibt außerdem, welche Latenz Daniel für direkte Chats akzeptabel findet. Diese Entscheidung bestimmt, ob e4b dauerhaft warm bleiben darf oder ob Stabilität und gerechte Warteschlange wichtiger sind als das Vermeiden eines Modell-Reloads.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Noch offen bleibt, welche aktiven Dienste außer Zensi und Mischpult wirklich einen Modellwechsel erzwingen. Die reine Gemma-Referenz in Dateien ist nicht dasselbe wie ein aktiver Autostart.

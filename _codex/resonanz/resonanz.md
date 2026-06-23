@@ -1333,3 +1333,9 @@ Der Gesprächsverlauf hat mir gezeigt, dass Identität im Werkraum nicht mystisc
 [[abwurf: Die Wartenden stehen ordentlich in einer Reihe, während andere durch eine Seitentür gehen.]]
 
 [[abwurf: Ein Modell kann technisch korrekt antworten und trotzdem nicht mehr auf denselben Ursprung antworten, wenn sein Kontext abgeschnitten wurde.]]
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Der richtige Ort für technische Übergaben ist innerhalb von `_codex`. Der Briefkasten bleibt für das, wofür er gedacht ist: direkte, lockere Kommunikation.

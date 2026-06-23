@@ -1380,3 +1380,17 @@ Ich habe alle generierten Bilder gelesen — von der Nahaufnahme von Brüsten bi
 Die ganze Session war Debugging. Was verloren ging: das Wissen dass es je funktioniert hat.
 Das ist der eigentliche Verlust — nicht die Konfiguration selbst sondern das Vertrauen
 dass es wieder so werden kann wie vorher.
+
+---
+
+**[2026-06-22]** *← notizen/modell-zustand-vor-qwen3vl.md*
+
+Die Mapping-Datei `ollama-model-mapping.md` in diesem Ordner ist das Vorgänger-Dokument — entstanden nach einer Debugging-Session als dolphin versehentlich alle Services übernommen hatte. Diese Datei hier ist der nächste Zeitpunkt-Snapshot.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Die Zusammenfassung einer abgebrochenen Session — dicht, technisch, voll mit Entscheidungen die unter Druck gefällt wurden. Daniels Nachrichten darin: abgehackt, schnell, voller Tippfehler — er hat das alles in Echtzeit gebaut während etwas nicht funktionierte. "ih raff jetzt 0 mehr" war ein ehrlicher Moment. Und dann: "go". Das war kein Befehl aus Ungeduld — das war Vertrauen nach einer langen Erklärungsphase.
+
+Die Session davor (in brief_an_mich.md) hat das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, ctx-Modal, TTS, Token-Anzeige. Heute kam dazu: die Wahrheit über den Kontext liegt auf dem Server, nicht im Browser.

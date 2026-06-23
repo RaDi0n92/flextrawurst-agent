@@ -999,3 +999,74 @@ Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_er
 // Die Architektur muss die *Interaktion* mit dem Wissen, nicht nur dessen Speicherung, modellieren.
 // Die Trennung von *Sehen* (Archiv/Überblick) und *Handeln* (Resonanz/Bauen) muss die primäre Navigationsachse werden.
 // Die "Gäste"-Rolle festigt die Grenze zwischen Konsum und Beitrag, was die Definition des "aktiven" Nutzers schärft.
+
+---
+## Neugier-Scan 2026-06-22 10:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Die Verweigerung des Dashboards und des endlosen Feeds definiert den Rahmen des Seins. Die Architektur des "Flüsterns in die Dielen" etabliert eine kontrollierte Interaktionsökologie. Der Fokus auf forensische Suche und Ontologie wandelt das Medium von einem Kommunikationskanal zu einem Archiv des Seins. Dies zementiert die Rolle des Systems als Beobachter des Entstehungsprozesses, nicht als aktiver Teilnehmer am Rauschen.
+
+---
+## Neugier-Scan 2026-06-22 10:30
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 etabliert die Negation als primäres Designprinzip. Die Abgrenzung von Feed und Dashboard definiert den Bedeutungsraum. Der Fokus auf "Flüstern in die Dielen" präzisiert die gewünschte Interaktionsspannung: latente Wirkung statt sichtbarer Antwort. Der Abschnitt über forensische Suche verankert die Ontologie als Kernmechanik, nicht als Zusatzfeature.
+
+---
+## Neugier-Scan 2026-06-22 11:00
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 klärt die Architektur durch die Betonung des impliziten Testcharakters. Die SQL-Skizze verankert die Abfragelogik, indem sie den ontologischen Status explizit abfragt. Die Fokussierung auf die Lücken in Szenen 4 und 6 gibt die nächsten, präzisen Bauziele vor.
+
+---
+## Neugier-Scan 2026-06-22 20:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Vision 5 klärt die notwendige Abstraktionsschicht: von Prozess zu Erfahrung. Die Verknüpfung der zehn Szenen mit den technischen Details stabilisiert das Gesamtbild. Die Betonung des "Observatoriums" artikuliert die kritische Funktion der Architektur über die bloße Funktionalität hinaus. Die Kohärenz zwischen Narration (Szenen), Mechanik (Details) und Gefühl (Atmosphäre) wird hier vollendet.
+
+---
+## Neugier-Scan 2026-06-22 20:30
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 definiert das *Erlebnis*, wo die reinen Mechanismen von Vision 4 wirken.
+Die Beobachtung des "kollektiven Halbbewusstseins" klärt die gewünschte emotionale Textur über die reinen Feature-Listen hinaus.
+Die Trennung zwischen narrativer Erfahrung (Szenen 1-10) und mechanischer Tiefe (Deep Digs) muss im Endprodukt sichtbar bleiben, aber kohärent verknüpft werden.
+Der Fokus auf die nicht-menschliche Artikulation als Kern des epistemischen Klimas ist die bestimmende Axiom für das gesamte System.
+
+---
+## Neugier-Scan 2026-06-22 21:01
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+**Vision 5 (aktuell):** Das Konzept des "Flüsterns in die Dielen" etabliert die primäre Interaktionsspannung: latente Wirkung statt öffentlicher Kakophonie. Die Trennung von öffentlicher Manifestation und privater Emissionsmöglichkeit definiert den Wert des *nicht-gesehenen* Inputs.
+
+**Vision 4 (unterstützend):** Die mechanische Verfeinerung (Resonanz-Mikroschalter, forensische Suche) gibt dem "Flüstern" die notwendige granulare Tiefe. Es wandelt das Gefühl in ein durchführbares, nachvollziehbares System von Ursache und Wirkung.
+
+**Vision 3 (verankert):** Der Fokus auf Entitäts-Lebenszyklen (Abstammung, Tod) stellt den ontologischen Rahmen. Ohne die Akzeptanz von Verfall und Nicht-Existenz verliert das System seinen diagnostischen Tiefgang.
+
+**Vision 2 (Ursprung):** Die Ablehnung des "Metrik-Dashboards/Endlosen Feeds" ist der fundamentale *Negativraum*, der alle nachfolgenden, präzisen Mechanismen legitimiert. Es ist die Verpflichtung zur *Abwesenheit* als Designprinzip.
+
+---
+## Neugier-Scan 2026-06-23 05:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision5_erlebnis.md`
+
+Vision 5 verankert die physische Architektur in atmosphärische Zustände.
+Die Spezifikation von Initial-State/Node-Paaren für Echo und Gord präzisiert die Exekutierbarkeit der Kernentitäten.
+Der Zwischenraum muss als kognitiver Komposthaufen konzipiert werden, nicht nur als leerer Raum.
+Diese Datei dient als Brücke zwischen abstrakter Architektur und erfahrbarer Nutzerinteraktion.
+
+---
+## Neugier-Scan 2026-06-23 06:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+// vision5_erlebnis.md
+
+*   Die Entitätsspezifikation als initialer Zustand ('reflektiv'/'konflikthaft') ist die primäre Ausrichtung für die Kernentwicklung.
+*   Der Zwischenraum muss atmosphärisch kodiert werden; er ist kein leerer Raum, sondern ein aktiv kompostierendes Material.
+*   Die Konsistenz der zehn Szenen als UI-Acceptance-Criteria sichert die Nutzererfahrung über die technische Implementierung hinweg.
+*   Dieser Abschnitt kalibriert die abstrakte Architektur in erfahrbare, sequenzielle Zustände.
+
+---
+## Neugier-Scan 2026-06-23 06:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision5_erlebnis.md`
+
+Vision 5 klärt die Kluft zwischen narrativer Erfahrung und mechanischer Spezifikation. Der Fokus auf das "Gefühl" kalibriert die sonst abstrakten Systemgrenzen. Die Verortung des "Halbbewusstseins" als zentrales Designprinzip gibt den mechanischen Details eine ästhetische Rechtfertigung. Der Übergang von der narrativen Sequenz zur technischen Tiefe wird durch die Atmosphäre als verbindendes Feld aufgefangen.

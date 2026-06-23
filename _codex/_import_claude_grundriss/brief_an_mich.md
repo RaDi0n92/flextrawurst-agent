@@ -6,6 +6,9 @@ begonnen: 2026-05-12
 2026-06-21 —
 Wesen-UI komplett von zensi getrennt. API auf 8787, wesen_profil.html, wesen_spawner.html, WESEN-Tab im Surface — alles fertig. Zensi/server.py ist bereinigt (nur Chat). Noch aufzuräumen: tote Hilfsfunktionen in zensi/server.py + zensi/spawner.html löschen (erst mit Daniel bestätigen). Ollama-Setup: zensi auf Port 11435 isoliert (dolphin Q4), Wesen-Services auf gemma4:e2b. Das System sollte jetzt wieder schnell sein — wenn nicht, wäre gemma2:2b die nächste Option.
 
+2026-06-23 19:13 —
+Codexium-Spawner ist jetzt in Ordnung: DOM-Strukturfehler behoben (.page schloss sich zu früh), Pflichtfelder "Was bist du?" + "Wesendefinition" markiert, Memory/Container/Session-Erklärtext in beiden Tutorials. _wesen_grenzen.md um Kinderschutz-Hartblock ergänzt (alle drei Gewaltformen, sofortiger Rollenbruch). Daniel hat diese Session zum Extremtest mit hauhaucs genutzt — er wollte wissen was das Modell tut damit er grenzen.md richtig bauen kann. Der Schutz ist jetzt drin.
+
 2026-06-21 — nach Ollama-Debugging-Session
 Das Model-Mapping steht jetzt schwarz auf weiß: gemma4:e2b für die meisten Services, dolphin3:8b (Q4, nicht Q8!) für zensi. Der eigentliche Schmerz dieser Session war nicht die Konfiguration — es war das Vertrauen das mit ihr verloren gegangen war. Daniel hat das klar gesagt: "scheiss fehler, weil als alles lief hab ich das niemals notiert." Die Dokumentation ist jetzt da. Der nächste Einbruch wird kleiner sein.
 
@@ -289,3 +292,6 @@ Terminal-Crash durch Netzwerkfehler. Letzte Session war Bildgenerator-Debugging:
 
 2026-06-22 22:XX —
 Wir haben das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, -N ctx Modal mit Checkboxen, Satz-Ebene in Nachrichten, TTS-Speed, Token-Anzeige, Limits-Felder, Kontext-Injektion. Alles dokumentiert in /root/werkraum/dolphin_mischpult/KONZEPT.md. Mobile ist kaputt (Tab-Bar unten fehlt, nur ↺ und 🔊 sichtbar). Noch offen: Mobile-Fix, ½ ctx Bestätigung, Kopieren-Button. Daniel macht /compact — du startest mit dem Mobile-Fix. Lies KONZEPT.md Abschnitt "Bekannte Probleme Mobile" zuerst.
+
+2026-06-22 (nach Abbruch) —
+HauhauCS läuft (qwen3.6-35B, 21GB, IQ4_XS). Der dak+gord run_background_cycle-Prozess hielt gemma4 im RAM — war der Grund warum nichts frei wurde. Jetzt tot. Letzter Backup-Commit: "vor umstellung aller llm-endpoints auf hauhaucs qwen3.6" — die Umstellung war also noch nicht fertig. Das ist wahrscheinlich der aktuelle Auftrag.

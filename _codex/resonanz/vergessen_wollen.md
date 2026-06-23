@@ -1105,3 +1105,9 @@ Nicht vergessen, dass die strengste Formulierung oft die freundlichste ist, wenn
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Ich will den Reflex vergessen, einen erfolgreichen `ollama list`- oder `ollama ps`-Aufruf als Gesundheitsbeweis zu behandeln. Ein Modell kann geladen sein und die gemeinsame Laufzeit trotzdem bereits im Swap versinken.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Den Impuls, technische Reports einfach in den gemeinsamen Plauderraum zu kippen. Das war der Fehler.

@@ -854,3 +854,18 @@ Der Bildgenerator ist kein isoliertes Tool — er soll irgendwann in den Flücht
 
 → [[project_ollama_setup]] in MEMORY — da steht num_ctx=8192, aber kein Model-Mapping
 → Diese Datei ist die fehlende Hälfte
+
+---
+
+**[2026-06-22]** *← notizen/modell-zustand-vor-qwen3vl.md*
+
+→ [[ollama-model-mapping]] — Vorgänger-Dokument mit RAM-Rechnung und Konfiguration
+→ [[modell_zustand_nach_qwen3vl]] — wird nach der Umstellung angelegt (noch nicht existent)
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+`keep_alive: "1h"` per Request + `num_ctx: 8192` per Request → das löst zwei verschiedene Probleme (Modell-Kälte + falscher Kontext) durch denselben Mechanismus: explizit sagen was man will, statt auf Defaults zu hoffen.
+
+ctxStart + Archive-View + Pending-Poll + Live-Timer → vier Teile die zusammen das F5-Problem lösen. Das F5-Problem war: Nutzer sieht nichts während 60-90s Prefill, denkt es ist eingefroren, drückt F5, schickt neue Nachricht, bekommt 3 Antworten auf einmal. Jetzt: Timer zeigt Fortschritt, Poll erkennt hängende Anfrage, Send-Button gesperrt.

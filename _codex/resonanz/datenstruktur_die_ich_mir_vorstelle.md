@@ -3357,3 +3357,16 @@ class InferenzAuftrag:
     timeout_s: int
     provenance: dict[str, str]
 ...
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Vision-Schicht: je Modell ein klarer Lauf mit unverfälschtem Prefix und dokumentierter TTFT.
+
+Code-Skizze:
+
+```python
+def measure_ttft(model: str, prompt: str, num_ctx: int = 8192) -> dict:
+    ...
+```

@@ -20,7 +20,8 @@ Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz
 **Warum nicht:**
 - 50 Zwischenwesen = 50 PostgreSQL-Instanzen = operationeller Alptraum
 - Prägungsextraktion braucht keine Cross-DB-Queries
-- Das Datenvolumen pro Wesen ist überschaubar (max ~1000 Nachrichten in 24h bei 144s-Takt = 600 Nachrichten max)
+- Das Datenvolumen pro Wesen ist überschaubar: ~22 Exchanges pro Session, dynamischer Cooldown (30-180s) → realistisch 5-15 Sessions in 24h → max ~200-300 Nachrichten pro Wesen
+- Memory-Budget: 3000Z gesamt (reduziert), Container session-lokal max 10 Einträge → Session-Start-Basis nur ~1300T (16% des Fensters)
 - Gute Indexierung in der bestehenden `flextrawurst` DB reicht vollständig
 
 **Stattdessen:** Alle Tabellen in der bestehenden DB, sauber mit `zwischenwesen_id` als UUID-Fremdschlüssel.
@@ -90,14 +91,40 @@ Jeder Splitter könnte ein LangGraph-Agent sein der autonome Drift-Schritte mach
 ```
 flextrawurst DB (bestehend)
 │
-├── zwischenwesen              ← Haupt-Tabelle
-├── zwischenwesen_nachrichten  ← Chat-History
-├── zwischenwesen_container    ← kuratierte Pins
-├── zwischenwesen_memory       ← kategorisiertes Gedächtnis
+├── zwischenwesen                    ← Haupt-Tabelle
+├── zwischenwesen_sessions           ← eine Zeile pro Chat-Session (NEU)
+│     session_nr, name (user-vergeben), gestartet_am, beendet_am, kontext_prozent_bei_ende, geschichte_kapitel
+├── zwischenwesen_nachrichten        ← Chat-History (session_id als FK)
+├── zwischenwesen_container          ← kuratierte Pins
+├── zwischenwesen_memory             ← kategorisiertes Gedächtnis
 ├── zwischenwesen_memory_kategorien  ← user-definierte Kategorien
 │
-├── splitter (bestehend)       ← KompOase-Landung via splitter_id
-└── users (bestehend)          ← zwischenwesen_count += 1 nach Abschluss
+├── splitter (bestehend)             ← KompOase-Landung via splitter_id
+└── users (bestehend)                ← zwischenwesen_count += 1 nach Abschluss
+```
+
+```sql
+-- Neue Tabelle
+CREATE TABLE zwischenwesen_sessions (
+  id SERIAL PRIMARY KEY,
+  zwischenwesen_id UUID REFERENCES zwischenwesen(id) ON DELETE CASCADE,
+  session_nr INTEGER NOT NULL,           -- 1, 2, 3...
+  name TEXT,                             -- user-vergeben, optional ("Abend", "Tiefes Gespräch"…)
+                                         -- Auto-Fallback: "Gespräch {session_nr}"
+  gestartet_am TIMESTAMPTZ DEFAULT NOW(),
+  beendet_am TIMESTAMPTZ,
+  kontext_prozent_bei_ende INTEGER,      -- wie voll war das Fenster?
+  -- Geschichte-Kapitel: kein Protokoll — wie das Wesen sich erinnert (~200Z)
+  -- subjektiv, texturell, aus Wesen-Perspektive geschrieben
+  geschichte_kapitel TEXT,               -- LLM-generiert, user-bestätigt
+  status TEXT DEFAULT 'aktiv'            -- aktiv | abgeschlossen
+);
+
+-- Alle Kapitel zusammen = wesen_geschichte
+-- Abfrage: SELECT geschichte_kapitel FROM zwischenwesen_sessions
+--          WHERE zwischenwesen_id = :id AND status = 'abgeschlossen'
+--          ORDER BY session_nr ASC
+-- Das ist das primäre Artefakt das in der KompOase bleibt
 ```
 
 ---

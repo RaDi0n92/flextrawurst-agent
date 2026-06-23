@@ -65,6 +65,33 @@ Der kompilierte Prompt ist in der Vorschau sichtbar ("vorschau" Button im Mischp
 
 ---
 
+## Was das Mischpult wirklich kann — und was nicht
+
+Das Mischpult schickt den System-Prompt korrekt ans Modell. Die Overlays landen dort. Das funktioniert technisch.
+
+**Was Text-Instructions können:**
+- Das Modell in eine Richtung lenken (wenn es gut genug ist)
+- Kontext setzen, Rollen definieren, Ton beeinflussen
+- Mit starken Modellen (GPT-4-Klasse, Claude Sonnet) funktioniert das zuverlässig
+
+**Was Text-Instructions nicht können:**
+- Garantierte Längen-Limits durchsetzen (Modell ignoriert `[tempo]: ein satz` einfach)
+- Absolute Verbote erzwingen (Modell kann trotzdem halluzinieren oder ignorieren)
+- "Ebenen" erzeugen die wirklich unüberwindbar sind — ein weiterer Text über einem anderen Text bleibt Text
+
+**Was stattdessen funktioniert (Server-Enforcement):**
+- `charLimit`: Server kappt den Output nach X Zeichen — egal was das Modell tut, hart erzwungen
+- `numPredict`: Ollama stoppt die Generierung nach X Tokens — Modell kommt gar nicht weiter
+- Input-Filterung: Server blockiert bestimmte Inhalte bevor sie das Modell erreichen
+- Output-Filterung: Server prüft Antwort nach Generierung, gibt sie nur weiter wenn sie bestimmte Bedingungen erfüllt
+
+**Faustregel:**
+Alles was das Mischpult tut = Modell-abhängig, weich, kann scheitern.
+Alles was der Server erzwingt = Modell-unabhängig, hart, kann nicht umgangen werden.
+Grenzen die wirklich Grenzen sein sollen gehören in den Server — nicht ins Formular.
+
+---
+
 ## Mischpult-Felder
 
 ### Systempromt Basis

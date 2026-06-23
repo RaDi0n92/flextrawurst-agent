@@ -816,3 +816,11 @@ Prompt-Ingenieurwesen ist im Grunde das Lernen einer Sprache — der Sprache der
 Das ist warum die deutschen Prompts bei SDXL scheitern: nicht weil das Modell kein Deutsch "kann", sondern weil die Assoziationen zwischen deutschen Tokens und expliziten Bildern in den Trainingsdaten dünn sind.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+"Der Server sagt die Wahrheit" ist ein Architekturprinzip, nicht nur eine Implementierungsentscheidung. Es bedeutet: kein Client-State der verloren gehen kann. Kein sessionStorage. Keine lokalen Annahmen. Alles was persistent sein soll, liegt auf dem Server.
+
+Das ist auch das Gegenteil von dem was ich ursprünglich gebaut hatte (sessionStorage für ctxStart). Daniel hat mich klar korrigiert — und Recht gehabt.

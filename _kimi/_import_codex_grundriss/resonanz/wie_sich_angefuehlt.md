@@ -1129,3 +1129,9 @@ Ruhig, aber nicht leicht. Die Gespräche waren freundlich, doch der Kern war ern
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Wie das Öffnen mehrerer vermeintlich verschiedener Störungen und das Finden derselben überfüllten Leitung dahinter. Nüchtern, aber mit einem kleinen absurden Kern: Die Warteschlange ist streng, nur gilt sie nicht für alle.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Kurz, hektisch, technisch klar. Erst ein falscher Eingriff, dann Korrektur, dann Abbruch, dann saubere Übergabe. Das war nützlich, aber nicht elegant.

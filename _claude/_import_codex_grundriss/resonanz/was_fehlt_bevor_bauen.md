@@ -1137,3 +1137,9 @@ Fehlt noch: eine kleine, maschinenlesbare Regel dafür, wie Spiegel ihre Herkunf
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Es fehlt Daniels Bestätigung der Zielordnung. Außerdem sollte vor dem Umbau ein sauberer Laufzeit-Snapshot entstehen: aktive PIDs, geladene Modelle, Prozessstartzeiten, aktuelle Requests, RAM und Swap. Erst danach darf ein Dienst neu gestartet oder ein Mapping wirksam gemacht werden.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Ein isolierter Testlauf mit nur einem Modell im Speicher. Erst dann sind Qwen und HauhauCS wirklich vergleichbar.

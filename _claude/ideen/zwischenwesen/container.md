@@ -171,7 +171,9 @@ document.addEventListener('mouseup', () => {
 ## Was bereits entschieden ist
 
 - Container-Inhalt ist LIVE im LLM-Kontext (Wesen weiß was der User für wichtig hält)
-- Max 20 Einträge
+- Max 10 Einträge (war: 20 — reduziert wegen Token-Budget)
+- **Session-lokal** — startet bei jeder neuen Session leer
+- Was dauerhaft bleiben soll → ins Memory pinnen, nicht in den Container
 - Einträge entfernbar (×-Button)
 - Sichtbar in KompOase je nach Sichtbarkeits-Entscheidung nach 24h
 

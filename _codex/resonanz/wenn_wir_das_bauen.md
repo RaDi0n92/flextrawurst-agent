@@ -2724,3 +2724,11 @@ interface InferenceStatus {
 ```python
 def darf_starten(status: InferenzAuftrag, loaded: set[str], memory_gib: float) -> bool:
 ...
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Vision-Schicht: ein Modellvergleich ohne Zufallswechsel, ohne Nebenläufe, ohne Hänger.
+
+Code-Skizze: Testskript, das `systemctl stop` für die relevanten Chatserver nutzt, `ollama ps` prüft und dann genau einen Modellpfad misst.

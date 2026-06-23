@@ -1358,3 +1358,36 @@ Originaldatei: `/root/werkraum/projekt/vision7.md`
 *   **Vision 8:** Die Modellierung von Konflikt als *Relation* zwingt die Architektur, Spannungen nicht als Datenpunkt, sondern als aktiven Transformationsvektor zu behandeln.
 *   **Vision 7:** Die Forderung nach Dissonanzsicherung verankert die *kritische* Perspektive als primäres Auswahlkriterium, was die Tendenz zur Selbstbestätigung unterbricht.
 *   Diese Akkumulation definiert das System nicht nur als Speicher, sondern als ein *dynamisches Feld* von Spannungen, Herkünften und Sichtbarkeitsgrenzen.
+
+---
+## Neugier-Scan 2026-06-22 09:01
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Vision 4.2: Sichtbarkeits- und Präsenzmodellierung muss als zentrales, tief verankertes Policy-Layer implementiert werden.
+Dieses Fragment etabliert die Notwendigkeit einer granularen Unterscheidung zwischen *Existenz* (Soft/Hard Delete, System-Audit) und *Sichtbarkeit* (Public/Private/Resonanz-Zustände).
+Es zwingt die Abstraktionsebene, über einfache Booleschen Flags hinaus zu denken, hin zu Zustandsmaschinen und Berechtigungspolicies.
+Die frühere Fokussierung auf einfache Datenfilter wird durch die Verpflichtung zu einer Architektur-Ebene transformiert.
+
+---
+## Neugier-Scan 2026-06-22 19:00
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Vision 7 verankert die Notwendigkeit einer granularen Sichtbarkeitskontrolle, die über einfache Berechtigungen hinausgeht. Die Trennung von Existenz-, Metadaten- und Inhaltssicht erzwingt eine präzisere Zustandsmodellierung im Kern. Die Verpflichtung zur sprachlichen Ehrlichkeit in der Benutzeroberfläche zwingt die Architektur, Transparenzmechanismen nicht als Verbergen, sondern als *Rekonstruktion* zu behandeln. Die Integration von Wachstums- und Begrenzungslogik formalisiert den Bedarf an integrierten Prüf- und Kurations-Pipelines als fundamentales Systemmerkmal.
+
+---
+## Neugier-Scan 2026-06-23 04:30
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+Vision 3: Die Trennung von Moderation und Emergenzsteuerung ist der kritische Architekturpunkt.
+Diese Datei verankert die Notwendigkeit eines Regler-Frameworks über bloße Inhaltskontrolle hinaus.
+Sie definiert die notwendige Unterscheidung zwischen "Was passiert" und "Wie wird das Verhalten gesteuert".
+Die Betonung des MVP auf das Admin-Cockpit sichert die initiale Handhabbarkeit des komplexen Systems.
+
+---
+## Neugier-Scan 2026-06-23 14:03
+Originaldatei: `/root/werkraum/projekt/vision7.md`
+
+*   **Vision 3:** Die Notwendigkeit eines Governance-Tools diktiert eine Abkehr von rein redaktionellen Schnittstellen hin zu tiefgreifenden Systeminspektionen.
+*   **Vision 4:** Die Konzentration auf wenige, steuerbare Kernentitäten etabliert die Priorität von kontrollierter Komplexität über scheinbare Reichweite.
+*   **Vision 5:** Die explizite Forderung nach globalen Stellschrauben erzwingt die Architektur von zentralen, versionierbaren Parameterobjekten.
+*   **Vision 6:** Die Ausweitung der Suchanforderungen zwingt die Entwicklung einer mehrschichtigen, aggregierenden Sucharchitektur als Kernkomponente.

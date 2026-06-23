@@ -2051,3 +2051,23 @@ Kopienprofil ist nicht nur Datei-Dump. Es ist eine destillierte Essenz — was m
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+**Vision-Schicht:**
+sessions-index.json als kleines lebendes Dokument — nicht nur ctxStart, sondern irgendwann vielleicht: letzter Charakter, letzte Stimmung, bevorzugtes Modell pro Session. Ein Gedächtnis der Sessions über ihren Inhalt hinaus.
+
+**Code-Skizze:**
+```typescript
+interface SessionMeta {
+  name?: string;
+  archived?: boolean;
+  ctxStart?: number;
+  // später vielleicht:
+  // lastMood?: string;
+  // model?: string;
+}
+type SessionsIndex = Record<string, SessionMeta>;
+```

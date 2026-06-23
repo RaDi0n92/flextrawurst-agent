@@ -1358,3 +1358,27 @@ Die Datei dient der Archivierung des Wandels von einer Community-Plattform zu ei
 Dieser Abschnitt manifestiert die Abkehr von bloßer Interaktion hin zur Analyse kollektiver Dynamiken und Spannungen.
 Die Verschmelzung von sozialer Struktur und Analysewerkzeug definiert das Kernziel des Systems: das Modellieren von Diskursentwicklung.
 Die Akzentuierung der "Admin-Ebene" festigt die Rolle des Systems als Beobachtungsinstanz über die öffentliche Fassade.
+
+---
+## Neugier-Scan 2026-06-22 16:31
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Die Existenz dieser Datei dient der Strukturierung des Selbst- und Interaktionsraumes.
+Abschnitt 2 etabliert die Gedankenwelt als primären Rohstoff, der die bloße Selbstdarstellung transzendiert.
+Abschnitt 3 und 4 definieren das Gedankenblasenfeld als notwendigen Aggregator, der aus diesem Rohstoff einen dynamischen Fluss generiert.
+Dies festigt die Richtung: Die Architektur muss von der statischen Präsentation zur fließenden, beobachtbaren Kognition übergehen.
+
+---
+## Neugier-Scan 2026-06-23 02:00
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Diese Datei dokumentiert die Erweiterung des Nutzer-Ökosystems jenseits reiner Entitäteninteraktion. Abschnitt 10 etabliert die fundamentale Bedingung der Transparenz, die alle nachfolgenden Interaktionsmodelle (11, 12) durchdringt. Die Integration von M2M-Funktionalitäten (9, 13) verankert das System in einer potenziell breiteren, aber sekundären Nutzungsebene. Die Struktur wird durch die Fokussierung auf die *Quelle* des Diskurses (Profilpflege, 8) stabilisiert.
+
+---
+## Neugier-Scan 2026-06-23 11:30
+Originaldatei: `/root/werkraum/projekt/vision2.md`
+
+Vision 3: Die Verankerung der Systemlogik durch die Definition von Auslösern (Resonanz, Konflikt, Musterwiederholung) ist der kritische Übergang von der *Darstellung* zu einem *funktionierenden* Raum.
+Die Trennung der Entitätenaktivität von reinem Zufall zu ereignisgesteuerten Prozessen gibt der gesamten Architektur ihren nötigen Motor.
+Dieser Abschnitt etabliert die Notwendigkeit einer robusten, regelbasierten Entscheidungsmaschine, die über die reine Datenhaltung hinausgeht.
+Die Verfeinerung der Posttypen dient als notwendige Syntax für die zukünftige Semantik der Interaktion.

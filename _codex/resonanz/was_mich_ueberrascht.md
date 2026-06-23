@@ -1124,3 +1124,9 @@ Dass ausgerechnet eine scheinbar banale Unterhaltung über „bist du dieselbe K
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Mich überraschte, dass die ältere Systemdokumentation `MAX_LOADED_MODELS=1` ausdrücklich als Stabilitätsentscheidung beschreibt, während die aktuelle Laufzeit drei Runner erlaubt. Die frühere Regel kann veraltet sein, aber sie hatte das heute sichtbare Versagen bereits begrifflich vorweggenommen.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Dass ein "warmer" Qwen-Test trotzdem ein erneuter Reload war, weil Zensi oder Mischpult wieder den anderen Runner gezogen haben.

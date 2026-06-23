@@ -705,3 +705,11 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-06-18]** *← notizen/2026-06-18.md*
 
 `werkraum/welt/tts_service.py` + `werkraum/welt/tts_ui.html` + Nginx `/tts/` Block + diese Notiz + Spiegel `2026-06-18-tts-session.md`
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+`sessions-index.json` ↔ `serve_process_camera_preview.ts` (Session-Lade- und Speicherlogik)
+`dolphin_mischpult.html` ↔ `serve_process_camera_preview.ts` (Client/Server-Vertrag)
+`brief_an_mich.md` ↔ diese Notiz (Erinnerung in zwei Schichten — kompakt und ausführlich)

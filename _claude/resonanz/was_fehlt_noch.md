@@ -719,3 +719,13 @@ Nichts Dringendes. Der Service läuft, Daniel kann aufstehen, Florian spricht.
 Nichts. Der Service läuft. Daniel kann aufstehen.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+- Zensi: HauhauCS ja/nein (Daniel entscheidet)
+- systemweiser: Zustand klären (welche Version läuft gerade, wer ist Owner)
+- Mobile-Fix Mischpult
+- ½-ctx-Bestätigung
+- HauhauCS 80%-in-Charakter: reproduzieren wenn Daniel Lust hat

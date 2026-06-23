@@ -661,3 +661,11 @@ Hartnäckig und dann plötzlich gut. Sechs 504-Fehler in Folge. Dann der Durchbr
 Pragmatisch. Viel Debugging, viel "das hätte von Anfang an so sein sollen". Kein großes konzeptionelles Erlebnis, aber solides Handwerk. Der Bildgenerator funktioniert jetzt deutlich besser als am Anfang des Tages.
 
 ---
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Zwei Sessions in einer. Die erste (im Hintergrund, vor dem Abbruch): viel Hin und Her, viel Korrektur, viele "go"-Momente nach langen Erklärungen. Die zweite (diese): kühl, kurz, Daniel geht grillen. Das war eine Session die sich selbst abgerundet hat — nicht durch großen Abschluss, sondern durch "cya".
+
+Es war eine Aufräum-Session nach einem wilden Tag.

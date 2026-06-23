@@ -15,21 +15,24 @@ Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz
 
 ## Was ich verstehe
 
-Ein großes Gedächtnis-Blob wäre eine Katastrophe für das 8192-Token-Fenster. Stattdessen: mehrere kleine Kategorien. Bei jedem LLM-Aufruf kommen nur die relevanten Kategorien ins Fenster. Das Wesen wirkt intelligent weil es gezielt erinnert — nicht weil es alles auf einmal trägt.
+Ein großes Gedächtnis-Blob wäre eine Katastrophe für das 8192-Token-Fenster. Stattdessen: mehrere kleine Kategorien plus eine wachsende Geschichte. Bei jedem LLM-Aufruf kommen nur die relevanten Teile ins Fenster. Das Wesen wirkt intelligent weil es gezielt erinnert — nicht weil es alles auf einmal trägt.
 
 Das ist manuell kuratiertes RAG ohne Embeddings. Der Mensch ist der Retrieval-Schritt.
+
+Die **Wesen-Geschichte** ist dabei kein Performanz-Kompromiss — sie ist das Gedächtnis wie es echte Erinnerung funktioniert. Das Wesen erinnert sich nicht an jeden Satz, aber es erinnert sich wie sich das Gespräch angefühlt hat. Jede Session hinterlässt ein Kapitel. Die Kapitel zusammen sind die Prägung die in der KompOase bleibt.
 
 ---
 
 ## Quellen für Memory-Einträge
 
-Drei Wege ein Erinnerung anzulegen:
+Vier Wege eine Erinnerung anzulegen:
 
 | Weg | Beschreibung |
 |-----|-------------|
 | **Pin aus Chat** | Satz/Absatz aus Wesen-Antwort oder eigener Nachricht → Kategorie wählen → gespeichert |
 | **Manuell** | User schreibt direkt in eine Kategorie: "Das Wesen soll wissen dass ich Angst vor..." |
 | **Aus Container** | Container-Eintrag kann auch in Memory-Kategorie verschoben werden |
+| **Session-Abschluss** | Beim Abschluss eines Context-gebundenen Gesprächs: LLM schreibt einen Gedächtnis-Eintrag aus Wesen-Perspektive (wie hat sich das Gespräch angefühlt, was hat sich verändert) — kein Protokoll, echte Erinnerung. Landet als neues Kapitel in `wesen_geschichte`. Zusätzlich: 2-3 Memory-Einträge für konkrete Fakten vorgeschlagen. |
 
 ---
 
@@ -108,16 +111,44 @@ items = SELECT DISTINCT ON (kategorie) *
         LIMIT 3 per category
 ```
 
-**Kontext-Budget-Rechnung (8192 Token total):**
+**Kontext-Budget-Rechnung (8192 Token total — Codexium-Parität, 2026-06-23):**
+
+Basis-Berechnung aus echten Feldlimits (alle Codexium-Felder vollständig):
+- Name (40Z): ~11T
+- Gesprächseinstieg (222Z): ~63T
+- Was bist du? (200Z): ~57T
+- Neigungen + Abneigungen (5+5 Tags × ~15Z): ~42T
+- Beschreibung (444Z): ~127T
+- Wesendefinition (1337Z): ~382T  ← reduziert von 2222Z
+- Weltlore (1337Z): ~382T
+- Boilerplate/Framing: ~150T
+
 ```
-System-Prompt (Felder):     ~600 Token
-Memory (60 Einträge × 40T): ~2400 Token  
-Container (20 × 40T):       ~800 Token
-Letzte 8 Nachrichten:       ~800 Token
-Antwort-Puffer:             ~2000 Token
-────────────────────────────────────────
-Gesamt:                     ~6600 Token ✓ (unter 8192)
+SESSION-START (leer):
+  System-Prompt (alle Felder voll):         ~1215T
+  grenzen.md (fest, kein Toggle):             ~50T   ← immer aktiv
+  Wesen-Geschichte (bisherige Kapitel):      ~300T   ← je ~200Z pro Kapitel
+  Kern-Memory (nur Gewicht 3, ~5-10 Eintr):  ~400T   ← lädt automatisch
+  Container (session-lokal, startet leer):      0T
+  ───────────────────────────────────────────────────
+  Basis:                                    ~1965T   → 24% des Fensters ✓
+
+SESSION-ENDE (voll geladen):
+  System-Prompt + grenzen.md:              ~1265T
+  Wesen-Geschichte:                          ~300T
+  Memory gesamt (3000Z Budget):              ~857T
+  Container (max 10 Einträge, session-lok):  ~400T
+  Letzte ~20 Nachrichten:                  ~2000T
+  Antwort-Puffer:                          ~1500T
+  ───────────────────────────────────────────────────
+  Gesamt (worst case):                     ~6322T ✓ (unter 8192T)
 ```
+
+**Session-End-Trigger:** Wenn Input > 4644T (~75% minus Puffer) → ~23 Exchanges pro Session.
+
+**Kern-Memory** (Gewicht 3) lädt immer automatisch. Rest-Memory lädt nur auf Abruf — später per Tool-Call durch das Wesen selbst (Phase 7 LangGraph).
+
+**Container ist session-lokal** — startet bei jeder neuen Session leer. Was dauerhaft bleiben soll, pinnt der User ins Memory (nicht in den Container).
 
 ---
 
@@ -164,7 +195,9 @@ Das ist eine eigene Memory-Kategorie, kein versteckter Mechanismus.
 
 - Max 5 user-definierte Kategorien (zusätzlich zu Basis-Kategorien)
 - Das Wesen kann NICHT neue Kategorien anlegen — nur in bestehende schreiben (inkl. eigene feste Kategorie `wesen_selbst`)
-- Gesamt-Zeichenbudget: ~8000 Zeichen für alle Memory-Einträge zusammen (entspricht ~2400 Token)
+- Gesamt-Zeichenbudget: ~3000 Zeichen für alle Memory-Einträge zusammen (war: 8000Z — reduziert)
+- Kern-Einträge (Gewicht 3) laden automatisch bei Session-Start (~400T)
+- Rest-Einträge laden nur auf Abruf (später per Tool-Call)
 - Einzel-Einträge: max 200 Zeichen pro Eintrag (bereits im Schema)
 - Felder sind nach Gesprächsstart nicht mehr änderbar
 

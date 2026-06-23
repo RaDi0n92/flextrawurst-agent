@@ -726,3 +726,11 @@ Nichts Kritisches. Der Generator ist funktionsfähig. Was noch kommen könnte:
 - Für zensi-Wesen (lokal): Datei-basiert reicht
 - Für Flüchtlinge (flextrawurst): PostgreSQL-Tabellen (schema noch anzupassen)
 - Verdrängungslogik konkretisieren: FIFO? Gewichtung? User-Entscheidung?
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Zensi-Entscheidung (HauhauCS ja/nein) braucht ein klares Wort von Daniel.
+
+Mobile-Fix für das Mischpult (Tab-Bar unten fehlt) — stand schon im letzten Brief. Noch nicht angegangen in dieser Session.

@@ -805,3 +805,9 @@ Das ist kein Fehler — das ist die menschliche Bedingung beim Bauen.
 Niemand notiert was funktioniert. Man notiert was bricht.
 
 [[abwurf: Die wichtigste Dokumentation ist immer die die man nicht schreibt weil gerade alles läuft.]]
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Heute war ein Tag wo die Infrastruktur wichtiger war als das Feature. Nicht sexy. Aber notwendig. Ollama-Optionen, Endpunkt-Deaktivierung, ctxStart-Persistenz — alles Unterkellerarbeit. Die sieht man nicht wenn es funktioniert. Man sieht sie nur wenn es fehlt.

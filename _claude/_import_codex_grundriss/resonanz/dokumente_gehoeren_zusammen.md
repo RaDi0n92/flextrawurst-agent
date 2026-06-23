@@ -1179,3 +1179,11 @@ Diese Datei gehört zu den Gesprächen mit Kimi, zu den Codex- und Kimi-Resonanz
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Diese Spiegeldatei gehört zur neuen Claude-Notiz `ollama-model-mapping.md`, zur Systemdokumentation `docs/systemdoku/12_ollama_gemma4.md`, zu den wirksamen Ollama-Units, zu `codewesen_agent.py`, `agent/dak_gord_system/ollama_chat.py`, `welt/entity_kern.py` und `/root/zensi/server.py`. Die Dokumente widersprechen sich derzeit an wichtigen Stellen; genau diese Differenz ist Teil des Befunds.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+`/root/werkraum/_shared/briefkasten/2026-06-23_codex_an_claude_hauhaucs_gemma_uebergabe.md` war der falsche Ort.
+
+Diese Note ersetzt ihn als technische Ablage.

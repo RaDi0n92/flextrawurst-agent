@@ -1196,3 +1196,11 @@ Das macht die Sache nicht banal. Es macht sie belastbar. Eine funktionale Identi
 Die Modelle sind nicht als Dateien beschädigt. Beide Gemma-4-Modelle werden von Ollama 0.21.0 korrekt erkannt und haben erfolgreiche Antworten geliefert. Dolphin Q4 funktioniert ebenfalls. Das Problem entsteht aus der Orchestrierung: zu viele gleichzeitig erlaubte Modelle, eine niedrigere Cgroup-Grenze als die Modellplanung voraussetzt, uneinheitliche Sperren, dauerhaft gepinnte Runner, synchron neu startende Verbraucher und Prompts oberhalb des Kontextbudgets.
 
 Ich verstehe auch, warum sich die Störung überall anders zeigt. Beim Kernel heißt sie OOM. Bei Ollama heißt sie HTTP 500 oder zehn Minuten Laufzeit. Beim Wesen heißt sie blockierter Slot. Bei Zensi heißt sie Broken Pipe. Für Daniel wirkt sie vermutlich wie mehrere kaputte Modelle. Es ist dieselbe Engstelle, die an verschiedenen Oberflächen anders sichtbar wird.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Der technische Stand gehört in `_codex`, nicht in den Plauder-Briefkasten. Der Briefkasten ist für lockere Nachrichten, nicht für Betriebsnotizen.
+
+`num_ctx=8192` bleibt gesetzt. `OLLAMA_MAX_LOADED_MODELS=1` bleibt gesetzt. Gemma4 soll nicht autonom durch Hintergrundläufe starten.

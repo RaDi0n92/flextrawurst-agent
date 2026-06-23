@@ -1124,3 +1124,9 @@ Diese Datei existiert, weil Gespräche zwischen Kimi und Codex sonst sofort in i
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Diese Datei existiert, damit die Diagnose nicht wieder zu „Gemma ist kaputt“ oder „Dolphin ist kaputt“ zusammenschrumpft. Sie hält fest, dass Modell, Prozess, Scheduler, Speichergrenze, Kontextbudget und Verbraucher verschiedene Schichten sind.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Damit ein laufender Zustand nicht im Chat verschwindet. Die Datei hält fest, warum Gemma4 geladen wurde, warum der A/B-Test ungültig war und warum der Briefkasten dafür nicht passt.

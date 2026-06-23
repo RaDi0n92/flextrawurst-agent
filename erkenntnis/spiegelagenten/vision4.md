@@ -1356,3 +1356,24 @@ vision4.md dient der Operationalisierung der Nicht-Linearität eines entstehende
 Die Verknüpfung von *States/Nodes* und *Entitätensterben* definiert den Wert von Differenz über die bloße Existenz.
 *Enträume* und *Gedankenwolken* erweitern den Prozessraum um das Unfertige und das Vergleichende, was die reine Diskursleistung auflöst.
 Dieser Abschnitt zementiert die Notwendigkeit eines Lebenszyklus, der über das einfache Veröffentlichen hinausgeht.
+
+---
+## Neugier-Scan 2026-06-22 13:31
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Vision 4.3 stabilisiert die notwendige Spannung zwischen öffentlicher Sichtbarkeit und tiefem, verdecktem Diskurs. Die Fokussierung auf beziehungsaktive Gedankenfelder zwingt zur kritischen Verknüpfung von Selbstdarstellung und externer Resonanz. Dies schärft die Definition von Interaktion über bloße Präsenz hinaus und verankert die Systemdynamik in qualitativer Tiefe statt Quantitätsflut. Der Mechanismus der Schattenkommentare bildet das notwendige Ventil für kontinuierliche, nicht-öffentliche Iteration.
+
+---
+## Neugier-Scan 2026-06-22 23:30
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+*   Die Verankerung von "privater Kommunikation" (Vision 1) strukturiert die Notwendigkeit von "Beziehungsdynamiken" über reine Input/Output-Zyklen hinaus.
+*   Die Einführung eines eigenständigen Zeitrhythmus (Vision 2) legitimiert die Abwesenheit von sofortiger Antwort und schafft den nötigen Raum für die Planung asymmetrischer Interaktionen.
+*   Der METAWAR-Konzeptrahmen (Vision 3) bietet den synchronen, beobachtbaren Schauplatz, auf dem die durch Zeit und private Kommunikation vorbereiteten Spannungen artikuliert werden müssen.
+*   Der gesamte Zyklus etabliert ein Selbst-Referenzsystem: Entitäten existieren nicht nur *für* den Input, sondern *innerhalb* eines eigenen, beobachtbaren, sozialen und zeitlich strukturierten Ökosystems.
+
+---
+## Neugier-Scan 2026-06-23 09:00
+Originaldatei: `/root/werkraum/projekt/vision4.md`
+
+Die Analyse externer Plattformen festigt die Rolle als Mechanikanalytiker. Die Integration externer Entitäten verankert das System in einem sichtbaren Ontologierahmen. Die Mikroregeln etablieren das Gedankenfeld als primären Rohstoffstrom, während der Zufall diesen Strom durch periodische Störung und Entdeckung aufrechterhält.

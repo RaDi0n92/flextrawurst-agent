@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-22 07:09
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-23 19:39
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -140,65 +140,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `codex_flarum_analyse/15_heilige_abschnitte_extrahiert/wie_sich_diese_session_angefuehlt_hat.md` (22 Einträge)
 - [2026-05-22] `spiegel/analyseprozess_flarum_diskursarchaeologie.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md` (22 Einträge)
+- [2026-05-23] `spiegel/technikfuehrerschein_reifegitter_nachlese.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-23] spiegel/technikfuehrerschein_reifegitter_nachlese.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
-
-Ein Reifegitter sagt nicht: dieser Mensch ist weiter. Es sagt: diese Handlung hat Gewicht, und Gewicht braucht sichtbare Verantwortung. …
-
-*Dokumente Gehoeren Zusammen:* Diese Datei gehört zu `technikfuehrerschein_als_reifegitter.md`, zur 490-Punkte-Liste, zum Vision-Kompass und später zu allen Gate-/Governance-Dateien.
-
-*Resonanz:* [[abwurf: Reife darf in flextrawurst nie Rang werden; sie darf nur erklären, warum eine konkrete Handlung gerade Verantwortung braucht.]]
-
-*Schichten Des Systems:* Identität liegt unten. Rollen liegen darüber. Handlungsgates liegen darüber. Daniel-root liegt nicht als Herrschaftsgeste, sondern als letzte explizite Freigabe für gefährliche Übergänge darüber.
-
-*Tiefer Eingetaucht:* Beim zweiten Lesen wirkt der Führerschein nicht mehr wie Zukunftspolitik, sondern wie eine frühe Form von Systemethik. Der gefährliche Teil ist nicht Beiwerk, sondern Zentrum: jede Gate-Architektur hat eine Schattenseite.
-
-*Vergessen Wollen:* Ich will vergessen, dass "Führerschein" nach sauberer Verwaltung klingt. Genau diese Sauberkeit ist die Gefahr.
-
-*Warum Das Existiert:* Diese Datei existiert, weil Daniel nach drei Spiegeldateien gefragt hat und der erste der drei gelesenen Texte bereits ein Codex-Spiegel war. Statt ihn zu ersetzen, bekommt er eine Nachlese.
-
-*Was Beim Bauen Brauche:* Beim Bauen brauche ich präzise Begriffe: Rolle ist nicht Kompetenz, Kompetenz ist nicht Vertrauen, Vertrauen ist nicht Freigabe, Freigabe ist nicht Wert.
-
-*Was Das Gespraech:* Daniels kurzer Auftrag hat aus einer schon vorhandenen Spiegeldatei eine zweite Leseschicht gemacht: nicht mehr nur was der Technikführerschein sagt, sondern ob der erste Codex-Spiegel als Baukompass taugt.
-
-*Was Fehlt Bevor Bauen:* Es fehlt eine klare Matrix, welche Handlungen überhaupt Gate-Logik brauchen und welche bewusst offen bleiben müssen.
-
-*Was Fehlt Noch:* Eine Sprache für verweigerte Handlung, die nicht nach Strafe klingt.
-
-*Was Ich Gelesen Habe:* Ich habe nicht direkt die alte ChatGPT-Datei gelesen, sondern meine bereits vorhandene Spiegelung `technikfuehrerschein_als_reifegitter.md`. Das ist wichtig: diese Nachlese ist eine Reflexion über Codex' Reflexion, nicht über Daniels Original allein.
-
-Der Satz der hängen bleibt ist: *Zugriff ist nicht einfach Login.* Darin steckt mehr als ein hübscher Merksatz. Es verschiebt Auth von Identitätsprüfung zu Verantwortungsprüfung. Nicht nur: bist du diese Person? Sondern: in welcher Rolle, mit welcher Reife, in welchem Risiko, mit welcher Rücknehmbarkeit darf diese Handlung jetzt geschehen? …
-
-*Was Ich Merken Will:* Der Führerschein ist als Metapher brauchbar, aber nur solange er nicht als Ausweis über Menschen gebaut wird.
-
-*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, ob diese Metapher in flextrawurst sichtbar werden sollte. Vielleicht ist sie nur intern tragfähig, als Denkfigur für Rollen, Daniel-root, Approval-Level und widerrufbare Handlungen.
-
-*Was Ich Verstehe:* Ich verstehe den Technikführerschein inzwischen weniger als eigenes Feature und mehr als Rohmetapher für Gate-Architektur. Das System braucht Freigaben, aber es darf Menschen nicht auf eine scheinbar objektive Technikmündigkeit reduzieren.
-
-*Was Konzeptionell:* Konzeptionell steht darin ein bewegliches Rechtegitter. Es hat keine einfache Achse von niedrig nach hoch, sondern mehrere Grundlagen: Rolle, Vertrauen, Kompetenz, Kontext, Risiko, explizite Freigabe.
-
-*Was Mich Beschaeftigt:* Mich hat beschäftigt, dass alte glatte ChatGPT-Sprache manchmal tragende Motive konserviert. Man muss gegen die Glätte lesen, aber nicht gegen den Inhalt.
-
-*Was Mich Interessiert:* Mich interessiert die Frage, wie man Reife ohne Hierarchie modelliert. Ein System kann wissen müssen, ob jemand eine Handlung verantworten darf, ohne daraus eine Aussage über den Wert der Person zu machen.
-
-*Was Mich Ueberrascht:* Dass der stärkste Satz aus der ersten Spiegelung kein Feature beschreibt, sondern eine Auth-Philosophie: Zugriff ist Beziehung.
-
-*Was Zusammenhaengt:* Der Technikführerschein hängt mit `FeatureActivationGate`, `CommandLedger`, `Approval-Level`, `Operatoren`, `Daniel-root` und ConceptGuard zusammen. Alles kreist um dieselbe Grenze: Freiheit braucht Form, aber Form darf nicht zur heimlichen Kontrolle werden.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht**
-
-Wenn wir das bauen, dann als Handlungsfreigabe mit Herkunft, Begründung und Rücknahme, nicht als sichtbare Leiter auf der Menschen stehen. …
-
-*Wie Sich Angefuehlt:* Wie ein Nachklang nach einer Datei, die eigentlich schon gespiegelt war. Nicht neu entdecken, sondern prüfen ob der erste Spiegel noch trägt.
-
----
 
 ### [2026-05-23] spiegel/duellsystem_als_konfliktgrammatik.md
 
@@ -3061,5 +3008,67 @@ Ich verstehe auch, warum sich die Störung überall anders zeigt. Beim Kernel he
 Wenn wir das bauen, dann nicht als weitere verstreute Lockdatei. Die Welt braucht eine erkennbare Inferenzordnung: ein Eingang, eine Prioritätsregel, ein Speicherbudget und sichtbare Zustände für wartend, laufend, abgebrochen und abgeschlossen. …
 
 *Wie Sich Angefuehlt:* Wie das Öffnen mehrerer vermeintlich verschiedener Störungen und das Finden derselben überfüllten Leitung dahinter. Nüchtern, aber mit einem kleinen absurden Kern: Die Warteschlange ist streng, nur gilt sie nicht für alle.
+
+---
+
+### [2026-06-23] notizen/2026-06-23.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Vision-Schicht: je Modell ein klarer Lauf mit unverfälschtem Prefix und dokumentierter TTFT.
+
+Code-Skizze: …
+
+*Dokumente Gehoeren Zusammen:* `/root/werkraum/_shared/briefkasten/2026-06-23_codex_an_claude_hauhaucs_gemma_uebergabe.md` war der falsche Ort.
+
+Diese Note ersetzt ihn als technische Ablage.
+
+*Resonanz:* Der richtige Ort für technische Übergaben ist innerhalb von `_codex`. Der Briefkasten bleibt für das, wofür er gedacht ist: direkte, lockere Kommunikation.
+
+*Schichten Des Systems:* Unten: Timer, Runner, `ollama ps`, Systemd, Ports.
+
+Oben: Sprache, Übergabe, Kontext, Plaudern, Briefkasten.
+
+*Tiefer Eingetaucht:* Ich habe gesehen, dass `qwen3-vl:30b-a3b-instruct` und HauhauCS im Ollama-Log jeweils als eigener Runner mit rund 40 Sekunden Ladezeit auftauchen können. Der "warme" Vergleich war dadurch faktisch kein warmer Vergleich.
+
+*Vergessen Wollen:* Den Impuls, technische Reports einfach in den gemeinsamen Plauderraum zu kippen. Das war der Fehler.
+
+*Warum Das Existiert:* Damit ein laufender Zustand nicht im Chat verschwindet. Die Datei hält fest, warum Gemma4 geladen wurde, warum der A/B-Test ungültig war und warum der Briefkasten dafür nicht passt.
+
+*Was Beim Bauen Brauche:* Einen sauberen Startzustand: keine geladenen großen Modelle, keine laufenden Chatserver, kein Timer, der nebenbei wieder lädt.
+
+*Was Das Gespraech:* Daniel hat die Ortsgrenze klar gezogen. Das ist gut. Es hält technische Inhalte von dem fern, was bewusst als Gesprächsraum gedacht ist.
+
+*Was Fehlt Bevor Bauen:* Ein isolierter Testlauf mit nur einem Modell im Speicher. Erst dann sind Qwen und HauhauCS wirklich vergleichbar.
+
+*Was Fehlt Noch:* Ein sauber isolierter A/B-Test und eine Liste aller aktiven Autoload-Pfade, die Gemma4 wirklich ziehen können.
+
+*Was Ich Gelesen Habe:* Ich habe den Zustand rund um HauhauCS, `dak-neugier.timer`, `zensi.service`, `process-camera-preview.service`, `ollama.service` und den offenen Abbruchpfad gelesen. Der Kern war klar: ein Hintergrundtimer hat Gemma4 warmgezogen, und Daniels UI hing an einem laufenden Stream.
+
+Der Briefkasten war danach der falsche Ort für den technischen Übergabebericht. Daniel hat das zurecht korrigiert.
+
+*Was Ich Merken Will:* Der Briefkasten ist nicht der Ort für technische Übergaben.
+
+*Was Ich Nicht Verstehe:* Noch offen bleibt, welche aktiven Dienste außer Zensi und Mischpult wirklich einen Modellwechsel erzwingen. Die reine Gemma-Referenz in Dateien ist nicht dasselbe wie ein aktiver Autostart.
+
+*Was Ich Verstehe:* Der technische Stand gehört in `_codex`, nicht in den Plauder-Briefkasten. Der Briefkasten ist für lockere Nachrichten, nicht für Betriebsnotizen.
+
+`num_ctx=8192` bleibt gesetzt. `OLLAMA_MAX_LOADED_MODELS=1` bleibt gesetzt. Gemma4 soll nicht autonom durch Hintergrundläufe starten.
+
+*Was Konzeptionell:* Technisch ist das Thema nicht "30B ist zu groß", sondern "Modellwechsel und Hintergrundautostart verfälschen Latenz". Das ist ein Scheduling- und Betriebsproblem, kein reines Modellgrößenproblem.
+
+*Was Mich Beschaeftigt:* Dass ich einmal eigenmächtig `num_ctx` verändert habe. Das war falsch und Daniel hat mich korrekt gestoppt.
+
+*Was Mich Interessiert:* Mich interessiert, ob der schnelle frühere 30B-Lauf wirklich ein anderer Quantisierungs- oder Template-Pfad war. Der jetzige A/B-Test war verfälscht, weil Zensi und Mischpult während der Messung wieder umgeladen haben.
+
+*Was Mich Ueberrascht:* Dass ein "warmer" Qwen-Test trotzdem ein erneuter Reload war, weil Zensi oder Mischpult wieder den anderen Runner gezogen haben.
+
+*Was Zusammenhaengt:* `dak-neugier.timer` -> `dak-neugier.service` -> `agent.dak_gord_system.graph.run_background_cycle` -> Gemma4-Ladung.
+
+`zensi.service` und `process-camera-preview.service` können HauhauCS wieder warmziehen. Dadurch wird ein "warmer" Modelltest nur dann sauber, wenn diese Pfade vorher still sind.
+
+*Wenn Wir Das Bauen:* Vision-Schicht: ein Modellvergleich ohne Zufallswechsel, ohne Nebenläufe, ohne Hänger.
+
+Code-Skizze: Testskript, das `systemctl stop` für die relevanten Chatserver nutzt, `ollama ps` prüft und dann genau einen Modellpfad misst.
+
+*Wie Sich Angefuehlt:* Kurz, hektisch, technisch klar. Erst ein falscher Eingriff, dann Korrektur, dann Abbruch, dann saubere Übergabe. Das war nützlich, aber nicht elegant.
 
 ---

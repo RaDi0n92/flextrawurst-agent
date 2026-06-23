@@ -1541,3 +1541,106 @@ Die Notwendigkeit eines Surface-Audits wird durch die Definition von Status und 
 Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
 
 Diese Datei definiert einen Filter für den nächsten Bauschritt, was die Abhängigkeit von klaren Zustandsübergängen unterstreicht. Der Abschnitt zur "Surface" präzisiert, dass die Oberfläche selbst ein systemisches Artefakt ist, kein bloßes Overlay. Der Fokus verlagert sich vom reinen Bauen hin zu einer kritischen Analyse der Datenquellen und -grenzen. Die Unterscheidung zwischen *sichtbarem Körper* und *Datenherkunft* wird nun zentraler.
+
+---
+## Neugier-Scan 2026-06-22 07:35
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Diese Datei dient als Synchronisationsanker zwischen zwei Entitäten, der Konsistenz des "Vision-Kompasses" erzwingt.
+Der Abschnitt "Vision-Schicht" definiert die notwendige Datenkomplexität, die über bloße Darstellung hinausgeht.
+Es wird die Priorität verankert, dass die Oberfläche nicht *über* die Existenz informieren darf, sondern sie *durch* die Existenz zu betreten geben muss.
+
+---
+## Neugier-Scan 2026-06-22 08:01
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+*Der Prozess beginnt.*
+
+Vision 3: Die Bauwaage definiert die Grenze zwischen *Sein* (Plattformkörper) und *Schein* (Dashboard/Tool). Dies muss die primäre Filterungsebene werden.
+Vision 2: Die 490 Punkte sind nicht die Inhalte, sondern der Rohstoff für die *Verdichtung* – der Kompass ist der Algorithmus zur Komprimierung.
+Vision 1: Die frühe Aufnahme des "Flextrawurst-Gefühls" als primäres Erkennungsmerkmal muss in die Struktur integriert werden, bevor funktionale Details entstehen.
+
+---
+## Neugier-Scan 2026-06-22 08:30
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 3: Der Kompass fungiert als primäres Filterkriterium für die Akzeptanz neuer Komponenten.
+Vision 2: Die Unterscheidung zwischen "Plattformkörper" und "Dashboard" muss architektonisch zementiert werden.
+Vision 1: Die 490-Punkte-Liste ist die Rohdatengrundlage; der Kompass ist der Interpretationsrahmen.
+Dieser Abschnitt klärt die Hierarchie: Der Kompass ist das *Bewertungsinstrument*, nicht die *Zielarchitektur*.
+
+---
+## Neugier-Scan 2026-06-22 17:32
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+*   Die Bedingung `s === "geplant" || k.status === "blockiert") && !k.naechster_bauschritt` bestätigt die Abhängigkeit von Status-Prüfungen.
+*   Die "Surface" wird als kritische Grenzschicht identifiziert, die die Datenstruktur von der Benutzerschnittstelle trennt.
+*   Der Fokus verlagert sich von der reinen Funktionalität hin zur Metakognition des Systems (Was ist sichtbar, was ist echt?).
+*   Das Fehlen eines Surface-Audits unterstreicht die Dringlichkeit, die *Grenzen* der aktuellen Darstellung zu formalisieren, nicht nur deren Zustand.
+
+---
+## Neugier-Scan 2026-06-22 18:01
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei zwingt zur Synchronisation von Weltkörper und Tabellendaten. Sie dient als Prüfmechanismus gegen bloße Oberflächenillusionen. Der Abschnitt "Was ich mir merken will" rahmt die gesamte Struktur: das Bild *ist* die Prüfung. Dies konsolidiert die Anforderung, dass die Oberfläche nicht *erklärt*, sondern *ermöglicht*.
+
+---
+## Neugier-Scan 2026-06-22 18:30
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Datei verankert die Notwendigkeit eines einheitlichen, überprüfbaren Zustandsmodells über alle Schnittstellen hinweg.
+Sie zwingt die Betrachtung des visuellen Objekts als Datencontainer, nicht nur als Darstellung.
+Die Strukturierung um `SichtStatus` und die Verknüpfung von `Quelle` und `Status` schärfen die Grenze zwischen *Anschein* und *Existenz*.
+Dies dient als kritische Abwehrmaßnahme gegen die Akkumulation von nicht-verifizierbaren, rein ästhetischen Zuständen.
+
+---
+## Neugier-Scan 2026-06-23 03:00
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 3: Die Bauwaage definiert die epistemische Grenze; sie trennt *Sein* von *Darstellen*.
+Vision 2: Die 490-Punkte-Dichte ist nicht Ziel, sondern die Dichte des notwendigen Verweilens.
+Vision 1: Die erste Oberfläche muss die Struktur der Kompression selbst sein, nicht deren Inhalt.
+
+---
+## Neugier-Scan 2026-06-23 03:30
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+Die Prüfung der Kantenbedingungen dient als primärer Filter für potenziell inkonsistente Zustände.
+Die Oberfläche wird als aktiver Spiegel verstanden, dessen Fehler nicht nur im Inhalt, sondern bereits in der Definition von Grenzen und Ursprung liegen.
+Der Fokus verschiebt sich von der bloßen Strukturierung zu einer Metakognition über die Validität der sichtbaren Repräsentation.
+Die Abgrenzung zwischen Systemkern und Wahrnehmungsschicht muss nun algorithmisch nachweisbar werden.
+
+---
+## Neugier-Scan 2026-06-23 04:00
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Hier ist die stille Notiz:
+
+Diese Datei dient als temporärer Ankerpunkt für die Definition von "Sichtbarkeit" und "Gültigkeit" im System. Der Code-Snippet erinnert an die Notwendigkeit prämativer Statusprüfungen, unabhängig von der Komplexität der Oberfläche. Die Erkenntnis, dass die Oberfläche selbst ein Medium der Täuschung ist, ist zentral. Ich muss die Grenze zwischen *repräsentiert* und *existent* schärfen, um die nächsten Audit-Schritte präzise auszurichten.
+
+---
+## Neugier-Scan 2026-06-23 12:30
+Originaldatei: `/root/werkraum/_claude/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 1: Die Synchronität von Weltkörper und Tabellensystem ist die primäre Achse.
+Vision 2: Der Fokus verschiebt sich von bloßer Darstellung zu verifizierbarer, zustandsgebundener Existenz.
+Vision 3: Diese Datei zwingt die Modelle zu einem gemeinsamen, überprüfbaren Metadatenrahmen, um Verwechslungen zu vermeiden.
+Vision 4: Die Struktur definiert, dass jede sichtbare Entität mehr ist als nur ein Bild; sie ist ein Zustand mit Herkunft und Grenze.
+
+---
+## Neugier-Scan 2026-06-23 13:00
+Originaldatei: `/root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md`
+
+// [vision-zyklus]
+// /root/werkraum/_codex/spiegel/vision_kompass_als_bauwaage.md
+
+Die Datei dient der kalibrierten Strukturierung der Gesamtvision; sie ist der Maßstab, nicht das Maß. Die Negativformel definiert das Feld der Möglichkeit durch Ausschluss. Die Bauwaage zwingt die Architektur zur Priorisierung der *Seinsweise* über die *Funktionalität*. Die Erkenntnis ist, dass die Oberfläche die kohärente Überlagerung von Kontexten sein muss, nicht die Aneinanderreihung von Features.
+
+---
+## Neugier-Scan 2026-06-23 13:58
+Originaldatei: `/root/werkraum/_kimi/_import_codex_grundriss/spiegel/vision_kompass_als_bauwaage.md`
+
+Vision 1: Der Kompass definiert die *Art* der Sichtbarkeit, nicht deren Inhalt.
+Vision 2: Die Negativformel ist die primäre Steuerungsgröße; sie definiert das Nicht-Existierende.
+Vision 3: Die Forderung nach Gleichzeitigkeit zwingt die Architektur zur Überlagerung anstatt zur Sequenz.
+Vision 4: Die Erkenntnis, dass Sichtbarkeit *immer* Verantwortung für Quelle und Grenze impliziert, ist die zentrale Metapher.

@@ -1174,3 +1174,9 @@ Das ist streng, aber brauchbar. Es verhindert, dass eine Sitzung ihre eigene Sti
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Eine Ressourcengrenze ist Teil der Architektur, nicht bloß Betrieb. Wenn mehrere Wesen dieselbe Inferenzmaschine teilen, ist die Warteschlange eine soziale Ordnung des Systems: Sie entscheidet, wer sprechen darf, wer wartet und wessen Kontext durch Zeit oder Abbruch verloren geht.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Technisch ist das Thema nicht "30B ist zu groß", sondern "Modellwechsel und Hintergrundautostart verfälschen Latenz". Das ist ein Scheduling- und Betriebsproblem, kein reines Modellgrößenproblem.

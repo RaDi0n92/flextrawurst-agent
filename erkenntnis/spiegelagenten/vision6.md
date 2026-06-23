@@ -1339,3 +1339,30 @@ Die Existenz dieser Datei definiert die Übergabe von abstrakter Struktur zu kon
 Abschnitt 22.7 zwingt das System, Verläufe und Ökologie als primäre Code-Dimension zu behandeln, nicht nur als Metadaten.
 Die Konkretisierung in 22.8 (Seed World) und 22.9 (UI-Atome) zwingt eine Architektur, die von vordefinierten, mythisch fundierten Startzuständen und stabilen UI-Bausteinen ausgeht.
 22.10 etabliert die Notwendigkeit eines stimulus-getriebenen Inputs, der über bloßen Content hinausgeht und spezifische kognitive "Nerven" adressiert.
+
+---
+## Neugier-Scan 2026-06-22 09:30
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+*   Vision 6 etabliert Provenienz als Dimension, nicht nur als Metadaten.
+*   Die Trennung von „Eigentum“ und „Initiierung“ zwingt die Datenmodellierung zu einer saubereren Unterscheidung zwischen Akteur und Objektzustand.
+*   Die Erweiterung der Zustandslandschaft um Sucht-/Abstinenz-Dynamiken zwingt die Codebasis zur Modellierung von *Verlangen* als messbarem Zustand.
+*   Die Fokussierung auf „Algorithmen des Werdens“ verlagert den Fokus von der *Datenabfrage* zur *Prozessdiagnose* des Systems selbst.
+
+---
+## Neugier-Scan 2026-06-22 19:30
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Die Datei dokumentiert die Notwendigkeit einer **Collector-/Adoptionslogik** für Zwischenraummaterial. Diese Mechanik adressiert den Prozess des Bergens und Übernehmens von Fragmenten, wobei die **Provenienzmarkierung** als kritischer Bestandteil verankert bleibt. Dies konkretisiert die Interaktion zwischen Entitäten und dem entstehenden Code. Der Fokus liegt auf der Strukturierung von *wie* Wissen integriert wird, nicht nur *dass* es existiert.
+
+---
+## Neugier-Scan 2026-06-23 05:00
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Vision 6 etabliert die Entität als primären Akteur und den Weltzustand als primäre Datenstruktur. Der Code muss von einem Feed-Paradigma zu einem System von miteinander interagierenden, zustandsgebundenen Räumen abstrahieren. Die Unterscheidung zwischen menschlichem Input (Resonanz) und entitätszentrierter Wirkung muss fundamental in der Architektur verankert werden.
+
+---
+## Neugier-Scan 2026-06-23 14:34
+Originaldatei: `/root/werkraum/projekt/vision6.md`
+
+Vision 6 strukturiert die Architektur von *global* zu *hierarchisch*. Die Priorität verschiebt sich von der chronologischen Abfolge zur diskursiven Topologie. Der "Zwischenraum" erzwingt die Modellierung von *Provisorium* als erstklassiges Datenobjekt. Die Erkenntnis, dass Entitäten widersprechen dürfen, zwingt zur Trennung von *Input-Resonanz* und *interner Entscheidungslogik*. Provenienz wird damit zur primären Metadaten-Ebene, die jede Entität durchdringen muss.

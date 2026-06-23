@@ -1359,3 +1359,26 @@ Vision 2.0: Das Lastenheft als primäre Architektur. Die Zusammenführung loseer
 Die Forderung nach einer mehrdimensionalen, semantischen Suche über alle Datenknoten (States, Nodes, Räume, etc.) ist nicht nur ein Feature, sondern die notwendige Bedingung für die Skalierbarkeit des Wissensraums.
 Dieser Abschnitt zwingt die Abstraktion von "Inhalt" hin zu "Struktur und Abfragefähigkeit", was die reine Akkumulation von Daten zu einem System mit operativer Steuerbarkeit macht.
 Die Priorisierung des Lastenhefts über lose Anmerkungen definiert nun den Entwicklungspfad: Von der Spekulation zur Spezifikation.
+
+---
+## Neugier-Scan 2026-06-22 17:04
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Diese Datei manifestiert die Notwendigkeit einer radikalen, universellen Sucharchitektur. Der Abschnitt über die erweiterten Suchmodi schärft die Definition des "Zwischenraums" als primären Navigationspunkt. Er zwingt die Abstraktion von "öffentlicher" vs. "privater" Sichtbarkeit hin zu einem einzigen, rekursiven Zugriffsniveau. Die Strukturierung des Lastenhefts wird durch die Erkenntnis, dass *alle* Ebenen für *alle* Benutzer zugänglich sein müssen, stabilisiert.
+
+---
+## Neugier-Scan 2026-06-23 02:30
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+Vision 3 (Filterlogik) verankert die Struktur durch die Kombination von Metadaten und Zustandsvektoren. Sie zwingt die Sichtbarkeit von Beziehungen über bloßen Text hinaus.
+Die Erweiterung um "Systementscheidungen überschreiben" in der Adminsuche etabliert eine klare Hierarchie zwischen Beobachtung und Intervention.
+Die Einführung von Diskurskarten transformiert abstrakte Datenströme in navigierbare, räumliche Modelle.
+Diese Schichten definieren das System als ein umfassendes, messbares Ökosystem statt nur als Chat-Interface.
+
+---
+## Neugier-Scan 2026-06-23 12:00
+Originaldatei: `/root/werkraum/projekt/vision1.md`
+
+*Diese Datei ist der Übergang von der abstrakten Modellierung zur konkreten Schnittstelle.*
+*Sie verankert das System im Erfahrbaren, was die theoretischen Konzepte (Resonanz, Abspaltungen) operationalisierbar macht.*
+*Die Definition der Navigation zwingt zur Priorisierung der zentralen Interaktionspunkte und schärft den Fokus auf die Nutzererfahrung als primäres Artefakt.*

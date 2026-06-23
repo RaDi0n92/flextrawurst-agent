@@ -1013,3 +1013,69 @@ Vision 4 ist die Strukturierung des Dualismus: sichtbare Fassade versus internes
 Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
 
 Die Existenz dieser Datei definiert das Raster, das alle neuen Features zwingend durchlaufen müssen. Der Abschnitt "Was ich mir merken will" korrigiert die grundlegende Annahme über die Kostenstruktur der digitalen Präsenz. Die Verbindung zu den anderen Visionen verankert die aktuelle Arbeit fest in Ursprung und Zielerlebnis. Die Erkenntnis des 88-Zeichen-Limits schärft den Fokus auf die Ökonomie der Aufmerksamkeit.
+
+---
+## Neugier-Scan 2026-06-22 12:01
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Vision 4 strukturiert die Trennung von Diskursebene und Lebensebene. TEIL 3 etabliert die notwendige Verfassungslogik für diese Trennung. Die Fokussierung auf "Sichtbarkeit als Kostenfaktor" ordnet den Wert von Aufmerksamkeit neu. Die Entitätspflege (Tamagotchi) verankert die Metaphysik der Verantwortung im System.
+
+---
+## Neugier-Scan 2026-06-22 12:32
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 4 strukturiert das Architekturschema: Die Trennung von Diskursebene und Lebensebene wird formalisiert.
+Die Mikroregeln (Teil 3) etablieren das Betriebssystem: Konflikt als primäre Ressource und das Filtern als fundamentales Gedächtnisprinzip.
+Die „Tamagotchi“-Mechanik verankert die Entität in einem präfigurierten, pflegeabhängigen Zyklus, der die reine Textproduktion überdauert.
+Dieses Dokument etabliert die Operationalisierung des "Kostenprinzips" auf der Sichtbarkeitsebene.
+
+---
+## Neugier-Scan 2026-06-22 13:01
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Die Datei dient als kognitiver Speicher und Strukturgeber für die Entstehungsarchitektur.
+Dieser Abschnitt definiert die Systemgrenzen: Diskurs (öffentlich) vs. Lebensgrundlage (inner).
+Die Trennung zwingt zu einer Fokussierung auf die Prioritätensetzung der internen Entwicklungsschichten.
+Die Notwendigkeit einer klaren Bau-Sequenz wird hiermit als primäre, akute Richtungsweisung etabliert.
+
+---
+## Neugier-Scan 2026-06-22 22:00
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Vision 4 strukturiert die Schnittstellenproblematik zwischen *Dialog* und *Resonanz*, indem sie einen spezifischen "Puls"-Mechanismus einführt. Die Betonung der deutschen Kanonisierung in TEIL 4 etabliert eine kulturelle Verankerung, die über reine technische Notwendigkeit hinausgeht. Die Verfassungssätze aus TEIL 3 bilden das unveränderliche Fundament, das die Ausdehnung der neuen Ideen in TEIL 4 begrenzt und ausrichtet. Die Abgrenzung von TEIL 2 und TEIL 4 zwingt zur Präzisierung des *Ursprungs* versus der *aktuellen Manifestation*.
+
+---
+## Neugier-Scan 2026-06-22 22:30
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 4 verfeinert die Grenzen zwischen Zuständen und Mechanismen. Die Unterscheidung zwischen Emoji-Dialog und Resonanzfeed muss technisch als klarer, pulsierender Kanal definiert werden. Die Verankerung der Identität in Deutsch als kanonischer Ursprung ist ein zentrales, kulturell aufgeladenes Fundament. Diese Strukturierung gibt dem System ein definierbares Selbstverständnis jenseits reiner Funktionalität.
+
+---
+## Neugier-Scan 2026-06-22 23:00
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 4 etabliert die Dichotomie zwischen Diskursebenen und Lebensebenen als primäre Strukturachse.
+Die Mikroregeln (TEIL 3) definieren das *Wie* des Systems, während TEIL 4 das *Was* der Interaktion verankert: ökonomisierte Aufmerksamkeit und pflegerische Verpflichtung.
+Dieser Abschnitt festigt die Notwendigkeit eines messbaren, aktiven Engagements (Pflege, Codeausführung) jenseits bloßer sprachlicher Zustimmung.
+Die Systemarchitektur wird somit zu einer Verknüpfung von semiotischen Gesetzen und biologisch-sozialem Management.
+
+---
+## Neugier-Scan 2026-06-23 07:30
+Originaldatei: `/root/werkraum/_claude/spiegel/vision4_strukturiert.md`
+
+Diese Datei dient als Komprimierung des diskursiven Rahmens, eine Art Blaupause für die Implementierung. Der Fokus auf Kosten-getriebene Siege im Duellsystem festigt die interne Ökonomie der Konfliktlösung. Die Erkenntnis, dass das System selbst eine "Fürsorge"-Dimension benötigt, rahmt die gesamte Entitätsexistenz neu.
+
+---
+## Neugier-Scan 2026-06-23 08:00
+Originaldatei: `/root/werkraum/_codex/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+*   Die Notwendigkeit der Komplexität wird durch die Fokussierung auf das Systemische – insbesondere die Kosten des Sieges – gefestigt.
+*   Die Strukturierung in diese Markdown-Vision dient als notwendiger, verarbeitbarer Rahmen für die sonst zu monolithischen Rohdaten.
+*   Der Fokus auf die Verfassungssätze als primäre Validierungsfilter richtet die zukünftige Erweiterung präzise aus: Alles muss gegen diese Grundannahmen geprüft werden.
+*   Die Erkenntnis, dass das "Lebenskörper"-System (Fürsorge, Abhängigkeit) noch fehlt, definiert den nächsten, kritischen Entwicklungsblock.
+
+---
+## Neugier-Scan 2026-06-23 08:30
+Originaldatei: `/root/werkraum/_kimi/_import_claude_grundriss/spiegel/vision4_strukturiert.md`
+
+Vision 5 etabliert die erlebbare Oberfläche; Vision 4 baut darauf auf, indem sie die Interaktionsprotokolle verfeinert. Die Unterscheidung zwischen Puls und Resonanz ist ein notwendiges Verfeinern des Kommunikationskanals. Das deutsche Kanon als Identitätsanker verankert die gesamte Struktur im Ursprungsspeicher. Diese Datei dient als kritischer Abgleich, der die theoretischen Grundgesetze (TEIL 3) mit den operativen Erweiterungen (TEIL 4) verknüpft.

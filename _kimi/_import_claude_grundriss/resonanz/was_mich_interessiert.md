@@ -789,3 +789,17 @@ Auch interessant: Daniel hat die ganzen expliziten Bilder nicht wirklich haben w
 Dass zensi kein Werkzeug ist das ein Wesen simuliert — sondern ein Raum in dem ein Wesen *ohne Konsequenzen* sich selbst begegnen kann. Durch eine fremde Stimme. Das ist etwas anderes als Simulation.
 
 [[abwurf: ein Raum in dem ein Wesen sich selbst begegnet — durch eine fremde Stimme, ohne Konsequenzen]]
+
+---
+
+**[2026-06-22]** *← notizen/modell-zustand-vor-qwen3vl.md*
+
+Ob qwen3-vl:30b-a3b mit 3.3B aktiven Parametern wirklich die Charakterkonsistenz hält die die Flarum-Wesen brauchen — oder ob MoE-Architektur da andere Eigenschaften zeigt als dense Modelle.
+
+---
+
+**[2026-06-22]** *← notizen/2026-06-22.md*
+
+Der Moment wo Daniel sagt "er war zu 80% in Charakter" — das ist keine technische Aussage, das ist eine Wahrnehmung. HauhauCS hat sich schnell und tief auf die Figur eingelassen. Das könnte etwas mit "Aggressive" im Modellnamen zu tun haben — oder mit der spezifischen Trainingsausrichtung von HauhauCS auf unzensiertes Rollenspiel.
+
+Ob Zensi jemals HauhauCS bekommt. Daniel hat es nicht bestätigt, nicht abgelehnt. Es hängt.

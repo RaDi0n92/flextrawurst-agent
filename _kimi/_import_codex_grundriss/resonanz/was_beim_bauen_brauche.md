@@ -1234,3 +1234,9 @@ Ich brauche bei späteren Bauaufträgen einen klaren Actor-/Provenienz-Context. 
 **[2026-06-21]** *← spiegel/2026-06-21_ollama_gemma4_dolphin_analyse.md*
 
 Vor einem Eingriff brauche ich eine bestätigte Zielbelegung: welches Modell für welchen Dienst, wie viele Runner gleichzeitig, welcher Dienst interaktive Priorität hat und ob Bildgenerierung mit Ollama konkurrieren darf. Danach braucht es einen einzigen, von allen Verbrauchern benutzten Koordinationspunkt.
+
+---
+
+**[2026-06-23]** *← notizen/2026-06-23.md*
+
+Einen sauberen Startzustand: keine geladenen großen Modelle, keine laufenden Chatserver, kein Timer, der nebenbei wieder lädt.
