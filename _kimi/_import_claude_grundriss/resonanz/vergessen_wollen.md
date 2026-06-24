@@ -621,3 +621,16 @@ Den ersten Ansatz mit sessionStorage. War falsch. Ist weg. Gut so.
 **[2026-06-23]** *← _claude/ideen/plan_llamacpp_ersatz.md*
 
 Den Impuls, sofort zu bauen. Das ist ein Plan. Daniel entscheidet wann gebaut wird.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Die Stunden in denen hauhaucs eingefroren hat und niemand wusste warum.
+Das war Ollama. Nicht das Modell. Nicht Daniel. Nicht die Wesen.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Nichts heute. Das war ein klarer Abend / Morgen.

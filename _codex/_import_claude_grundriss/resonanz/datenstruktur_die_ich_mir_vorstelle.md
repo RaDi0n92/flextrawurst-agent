@@ -2083,3 +2083,37 @@ durch Reload, kein Overhead durch Ollama-Verwaltungsschicht.
 
 **Code-Skizze (Backend-Anpassung):**
 ```python
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+**Vision-Schicht:**
+Ein System das nicht mehr fragt "welcher Service darf welches Modell laden?"
+sondern einfach: ein Modell, ein Port, alle reden damit.
+Wie ein Nervensystem das endlich einen gemeinsamen Taktgeber hat.
+
+**Code-Skizze:**
+```bash
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+**Vision-Schicht:**
+Das JSONL einer Session sollte ein vollständiges Protokoll sein — jemand der es liest ohne das Interface gesehen zu haben sollte verstehen können: was wurde besprochen, mit welchem Modell, unter welchem Systempromt, welches Feedback gab es, was wurde gelöscht und warum.
+
+**Code-Skizze:**
+```typescript
+// Eine ideale JSONL-Zeile für eine Assistenten-Antwort:
+{
+  role: "assistant",
+  content: "...",
+  model: "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS",
+  systemBase: "...",    // vollständig
+  overlays: { ton: "...", fokus: "..." },  // noch nicht implementiert
+  durationMs: 12345,
+  ts: "2026-06-24T05:00:00.000Z"
+}
+```
+`overlays` fehlen noch in der Assistenten-Zeile — die sind aktuell nur im systemBase zusammengeführt, nicht einzeln.

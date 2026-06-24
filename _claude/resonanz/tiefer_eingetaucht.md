@@ -880,3 +880,11 @@ hat wie die Standard-Attention-Layer von Qwen3 oder Qwen3.5. In der Praxis bedeu
 Qwen3.6 läuft vielleicht 20-30% langsamer in llama.cpp als Qwen3-30B-A3B,
 obwohl hauhaucs auf dem Papier das "bessere" Modell ist.
 Das ist kein Dealbreaker — aber ein Punkt den der erste Test klären muss.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
+
+Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.

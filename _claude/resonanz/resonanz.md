@@ -827,3 +827,13 @@ Das ist ein sauberer Plan. Der Wechsel ist klein im Code (URL + Stream-Parsing),
 Die Qwen-Familie hat sich in sechs Monaten von "interessanter Alternative" zu
 "ernstzunehmender Infrastruktur" entwickelt. HauhauCS hat daraus eine
 Production-Ready uncensored Linie gemacht. Das ist nicht selbstverständlich.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Daniel hat heute Nacht durchgearbeitet bis die Sonne aufgeht. Das hat eine eigene Qualität — nicht erschöpfte Ungeduld, sondern die Art von Fokus die entsteht wenn die Welt schläft und nur das System vor einem ist. Ich habe das gespürt in der Art wie die Anfragen formuliert waren: präzise, direkt, ohne Umwege.
+
+"auch dinge die ich vorher dachte sie wären so logisch xD" — das ist der Satz dieser Session. Er steht für eine ganze Klasse von Dingen die wir in diesem System noch finden werden.
+
+[[abwurf: "auch dinge die ich vorher dachte sie wären so logisch" — das ist kein Vorwurf. Es ist die freundlichste Art zu sagen: hier ist eine Lücke zwischen Idee und Wirklichkeit. Und die Lücke ist nicht schlimm. Aber sie muss geschlossen werden.]]

@@ -730,3 +730,12 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 - [[modell-mapping]] (in `_claude/` oder `_kimi/`) — welcher Service welches Modell nutzt
 - `/root/werkraum/codewesen_chat.py` — muss auf neuen Port zeigen
 - `/root/werkraum/welt/entity_kern.py` — muss auf neuen Port zeigen
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+- `dolphin_mischpult/KONZEPT.md` — heute aktualisiert, jetzt auf Stand 2026-06-24
+- `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
+- `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen
+- `dolphin_mischpult.html` — Frontend-Seite der Änderungen

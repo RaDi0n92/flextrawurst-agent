@@ -644,3 +644,9 @@ Das ctxStart in sessions-index.json — weil `dolphin_mischpult/sessions/` schon
 
 Damit die nächste Claude-Instanz nicht nochmal 40 Minuten Recherche machen muss
 bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.

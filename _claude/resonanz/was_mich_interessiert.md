@@ -817,3 +817,9 @@ statt dass Ollama das zweite Request wartet bis das erste fertig ist.
 
 Was passiert wenn hauhaucs plötzlich 2-3 Wesen gleichzeitig antwortet.
 Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, für die Wesen.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.

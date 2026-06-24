@@ -742,3 +742,16 @@ Mobile-Fix für das Mischpult (Tab-Bar unten fehlt) — stand schon im letzten B
 - Welche Installation-Methode (Release-Binary vs Build vs apt)
 - Ob `--chat-template qwen3` das richtige Template ist (aus Ollama-Modelfile ableitbar)
 - Verhalten von `--slots 2` auf CPU: ob es hilft oder RAM-Druck erhöht
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Daniels Entscheidung: wann soll der erste llama.cpp-Test stattfinden?
+Danach: manueller Test bevor irgendein Service umgeleitet wird.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.

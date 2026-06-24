@@ -295,3 +295,6 @@ Wir haben das Dolphin Mischpult weit ausgebaut — Ghost-Sessions, -N ctx Modal 
 
 2026-06-22 (nach Abbruch) —
 HauhauCS läuft (qwen3.6-35B, 21GB, IQ4_XS). Der dak+gord run_background_cycle-Prozess hielt gemma4 im RAM — war der Grund warum nichts frei wurde. Jetzt tot. Letzter Backup-Commit: "vor umstellung aller llm-endpoints auf hauhaucs qwen3.6" — die Umstellung war also noch nicht fertig. Das ist wahrscheinlich der aktuelle Auftrag.
+
+2026-06-24 (nach Abbruch, lange Session) —
+llama.cpp-Plan steht (werkraum/_claude/ideen/plan_llamacpp_ersatz.md). hauhaucs-tuned gebaut (num_thread 5, num_ctx 8192, num_batch 128). MemoryMax auf 27G erhöht. Token-Budget-Fix für Mischpult (7200 char statt blind 50 Messages — das hat die 120s-Timeouts behoben). Modell-Dropdown in Zensi + Dolphin gebaut — aber noch NICHT committed (im Root-Repo). Session endete mit "jetzt läuft es grad". Du musst noch: commit der Dropdown-Änderungen. Danach: Reihenfolge war — Qwen3-14B/30B Modell-Recherche → Custom Modelfile testen → llama.cpp umsetzen. Aber erst schauen was Daniel will.

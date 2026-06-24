@@ -1419,3 +1419,11 @@ SHA256-Blob in Ollamas Cache — kein erneuter Download nötig.
 **[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
 
 Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
+
+Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.

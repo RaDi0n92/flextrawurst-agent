@@ -869,3 +869,22 @@ Das macht Seed-basiertes Prompt-Tuning zu einer Form von kontrollierter Navigati
 `OLLAMA_FLASH_ATTENTION=1` — beschleunigt den Prefill durch Flash Attention (chunked softmax statt voller Attention-Matrix). Auf CPU bedeutet das: weniger Speicherbandbreite, nicht weniger Rechenzeit an sich — aber der Effekt ist spürbar bei langen Kontexten.
 
 `OLLAMA_NUM_PARALLEL=1` — wichtig auf CPU-only mit 32GB RAM. Bei Parallel=2 würde jede neue Anfrage ein neues Modell laden (21GB × 2 = 42GB → OOM). Parallel=1 bedeutet: Anfragen werden sequenziell abgearbeitet, dafür nie OOM.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Der DeltaNet-Hinweis kommt aus Community-Benchmarks: Qwen3.6 nutzt Gated DeltaNet-Layer
+in der Architektur, die llama.cpp noch nicht mit dem gleichen Optimierungsgrad implementiert
+hat wie die Standard-Attention-Layer von Qwen3 oder Qwen3.5. In der Praxis bedeutet das:
+Qwen3.6 läuft vielleicht 20-30% langsamer in llama.cpp als Qwen3-30B-A3B,
+obwohl hauhaucs auf dem Papier das "bessere" Modell ist.
+Das ist kein Dealbreaker — aber ein Punkt den der erste Test klären muss.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
+
+Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.

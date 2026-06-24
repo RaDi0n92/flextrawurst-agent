@@ -688,3 +688,9 @@ Für künftige Mischpult-Arbeit: die drei Schichten immer im Kopf halten — (1)
 **[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
 
 Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.

@@ -774,3 +774,9 @@ Das muss Daniel im Test klären.
 
 Ob Qwen3.6's DeltaNet-Implementierung in llama.cpp stabil genug ist.
 Das ist der einzige echte Unsicherheitsfaktor im Plan.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.

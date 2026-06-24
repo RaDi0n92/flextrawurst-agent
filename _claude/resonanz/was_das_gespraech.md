@@ -685,3 +685,9 @@ Das macht llama-server attraktiver — ein Modell, dediziert, voll konfigurierba
 
 Die Erkenntnis dass "welches Modell" die falsche Frage war.
 Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.

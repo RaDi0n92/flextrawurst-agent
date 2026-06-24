@@ -678,3 +678,16 @@ Und: grillen ist wichtiger als reproduzieren. Richtig so.
 
 Daniels Entscheidung ist klar: hauhaucs bleibt das Modell, kein Quant-Wechsel.
 Das macht llama-server attraktiver — ein Modell, dediziert, voll konfigurierbar.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Die Erkenntnis dass "welches Modell" die falsche Frage war.
+Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.

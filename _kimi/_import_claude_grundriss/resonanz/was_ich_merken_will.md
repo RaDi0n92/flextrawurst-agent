@@ -741,3 +741,22 @@ HauhauCS ist ein MoE-Modell. Das bedeutet: Prefill (Token-Einlesen) ist langsam 
 
 GGUF-Blob-Pfad: `sha256-c70792383705b719daad865408e03758e048c6a2aa5eae4c1bb522e03a96a9d6`
 Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+- Das Problem war Ollama, nicht hauhaucs.
+- llama.cpp --slots = Concurrency, das war die fehlende Zutat.
+- Qwen3.6 DeltaNet = möglicher Schwachpunkt in llama.cpp, Test nötig.
+- GGUF-Blob liegt schon lokal, kein Download nötig.
+- Slots 2 = sicherer RAM-Puffer. Slots 3 = mehr Concurrency, weniger Puffer.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+- `sanitizeForFilename` macht ä→ae, ö→oe, ü→ue. Das war nötig für deutsche Erstnachrichten.
+- `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
+- Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname.
+- `think: false` muss PER REQUEST gesendet werden — nicht im Modelfile. Das war früher falsch.

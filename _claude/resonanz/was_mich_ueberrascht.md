@@ -738,3 +738,9 @@ es ist eine andere Prozessschicht auf demselben Binary.
 
 Dass die Modell-Recherche 40 Minuten gedauert hat und am Ende ergeben hat:
 hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.

@@ -767,3 +767,16 @@ Das "faw im Fokusfeld" — ob das ein Tippfehler war, ein Feature oder etwas das
 Wie sich Qwen35moe (MoE-Architektur) konkret unter llama-server vs Ollama verhält — die gemessenen
 Speedups in Benchmarks betreffen meist dichte Modelle. Für MoE gibt es weniger publizierte Zahlen.
 Das muss Daniel im Test klären.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Ob Qwen3.6's DeltaNet-Implementierung in llama.cpp stabil genug ist.
+Das ist der einzige echte Unsicherheitsfaktor im Plan.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.

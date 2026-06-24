@@ -832,3 +832,18 @@ Das ist auch das Gegenteil von dem was ich ursprünglich gebaut hatte (sessionSt
 Der Wechsel ist kein "Ollama ist kaputt" — es ist eine Aufgabentrennung:
 - Ollama = Modell-Manager für viele kleine Modelle (Gemma4-Familie)
 - llama-server = dedizierter Server für ein großes Produktionsmodell (hauhaucs)
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Eine Architektur-Entscheidung die wie eine Modell-Frage aussieht.
+Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
+
+Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.

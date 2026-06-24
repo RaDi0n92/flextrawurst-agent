@@ -884,3 +884,18 @@ hauhaucs GGUF ─────► llama-server (Port 11435)
 ```
 
 Ollama bleibt auf Port 11434 für alle anderen Dienste (Gemma4, Codewesen, GENI).
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+llama.cpp → Concurrency → Wesen-Chats wieder stabil → entity_kern wieder aktiv →
+Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kompromiss nötig.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
+
+Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.

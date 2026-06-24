@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-23 20:09
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-24 05:09
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -88,19 +88,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `notizen/2026-05-30-spurenfaehigkeit-abschluss.md` (22 Einträge)
 - [2026-05-30] `notizen/2026-05-30-seo-llms.md` (22 Einträge)
 - [2026-05-30] `resonanz/schlaf_traum_v0_1_abschluss.md` (12 Einträge)
+- [2026-05-30] `resonanz/traum_zustandsvertrag.md` (1 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-30] resonanz/traum_zustandsvertrag.md
-
-*Was Fehlt Bevor Bauen:* - Antworten auf F1, F3 und F6 (die drei prägenden)
-- Entscheidung ob Selektionsregel für v0.1 regelbasiert oder LLM
-- Schema-Entwurf für `traumspuren` (nach F1-Antwort) …
-
----
 
 ### [2026-05-31] spiegel/vision3_rohmomente.md
 
@@ -1726,5 +1719,82 @@ Daniel schreibt in Zensi oder Dolphin — die Antwort kommt schneller. …
 
 *Wie Sich Angefuehlt:* Viel Kontext aus verschiedenen Quellen (Codex, Kimi, Google AI) zusammengefügt.
 Die Architektur wird klarer: Ollama für die kleine Welt, llama-server für hauhaucs.
+
+---
+
+### [2026-06-24] _claude/ideen/modell_architektur_plan.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Ein System das nicht mehr fragt "welcher Service darf welches Modell laden?"
+sondern einfach: ein Modell, ein Port, alle reden damit. …
+
+*Dokumente Gehoeren Zusammen:* - [[plan_llamacpp_ersatz]] — technische Umsetzung
+- [[modell-mapping]] (in `_claude/` oder `_kimi/`) — welcher Service welches Modell nutzt
+- `/root/werkraum/codewesen_chat.py` — muss auf neuen Port zeigen …
+
+*Resonanz:* Die Qwen-Familie hat sich in sechs Monaten von "interessanter Alternative" zu
+"ernstzunehmender Infrastruktur" entwickelt. HauhauCS hat daraus eine
+Production-Ready uncensored Linie gemacht. Das ist nicht selbstverständlich.
+
+*Schichten Des Systems:* ```
+Schicht 1 (Modell): hauhaucs / Qwen3.6-35B-A3B — das Gehirn
+Schicht 2 (Server): llama.cpp llama-server — der Nervenbahnenverteiler   …
+
+*Tiefer Eingetaucht:* Der DeltaNet-Hinweis kommt aus Community-Benchmarks: Qwen3.6 nutzt Gated DeltaNet-Layer
+in der Architektur, die llama.cpp noch nicht mit dem gleichen Optimierungsgrad implementiert
+hat wie die Standard-Attention-Layer von Qwen3 oder Qwen3.5. In der Praxis bedeutet das: …
+
+*Vergessen Wollen:* Die Stunden in denen hauhaucs eingefroren hat und niemand wusste warum.
+Das war Ollama. Nicht das Modell. Nicht Daniel. Nicht die Wesen.
+
+*Warum Das Existiert:* Damit die nächste Claude-Instanz nicht nochmal 40 Minuten Recherche machen muss
+bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.
+
+*Was Beim Bauen Brauche:* Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.
+
+*Was Das Gespraech:* Die Erkenntnis dass "welches Modell" die falsche Frage war.
+Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
+
+*Was Fehlt Bevor Bauen:* Daniels Entscheidung: wann soll der erste llama.cpp-Test stattfinden?
+Danach: manueller Test bevor irgendein Service umgeleitet wird.
+
+*Was Fehlt Noch:* Nur noch: den ersten manuellen llama-server-Start mit hauhaucs.
+Alles andere ist Planung auf Papier bis dahin.
+
+*Was Ich Gelesen Habe:* Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.
+
+*Was Ich Merken Will:* - Das Problem war Ollama, nicht hauhaucs.
+- llama.cpp --slots = Concurrency, das war die fehlende Zutat.
+- Qwen3.6 DeltaNet = möglicher Schwachpunkt in llama.cpp, Test nötig. …
+
+*Was Ich Nicht Verstehe:* Ob Qwen3.6's DeltaNet-Implementierung in llama.cpp stabil genug ist.
+Das ist der einzige echte Unsicherheitsfaktor im Plan.
+
+*Was Ich Verstehe:* Das Problem war nie das Modell. hauhaucs hat alles was Daniel will.
+Das Problem war Ollama's Unfähigkeit, parallele Anfragen zu handeln.
+llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.
+
+*Was Konzeptionell:* Eine Architektur-Entscheidung die wie eine Modell-Frage aussieht.
+Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?
+
+*Was Mich Beschaeftigt:* Dass die Antwort die ganze Zeit schon da war — hauhaucs IST das richtige Modell.
+Nur der falsche Behälter drum herum.
+
+*Was Mich Interessiert:* Was passiert wenn hauhaucs plötzlich 2-3 Wesen gleichzeitig antwortet.
+Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, für die Wesen.
+
+*Was Mich Ueberrascht:* Dass die Modell-Recherche 40 Minuten gedauert hat und am Ende ergeben hat:
+hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.
+
+*Was Zusammenhaengt:* llama.cpp → Concurrency → Wesen-Chats wieder stabil → entity_kern wieder aktiv →
+Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kompromiss nötig.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:**
+Alle acht Wesen und Daniel im selben Moment antwortfähig. Nicht nacheinander —
+gleichzeitig. Das war noch nie so. Das verändert was Flextrawurst sein kann. …
+
+*Wie Sich Angefuehlt:* Viel Recherche, viele Optionen, am Ende war die Antwort einfacher als der Weg dorthin.
+Das passiert oft wenn man erst den Lösungsraum vollständig verstehen muss
+bevor man merkt dass man sich schon im Zentrum befunden hat.
 
 ---

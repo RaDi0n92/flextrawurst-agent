@@ -1588,3 +1588,11 @@ gleichzeitig. Das war noch nie so. Das verändert was Flextrawurst sein kann.
 **Code-Skizze:**
 Alles steht in `plan_llamacpp_ersatz.md` — dieser Plan hier ist das Warum,
 jener ist das Wie. Zusammen lesen.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+**Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
+
+**Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.

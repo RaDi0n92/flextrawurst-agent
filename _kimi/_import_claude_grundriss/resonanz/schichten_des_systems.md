@@ -866,3 +866,27 @@ Ollama (11434)         llama-server (11435)
  └─ GENI                 └─ --threads 5 --slots 2 --ctx-size 8192
  └─ dak+gord
 ```
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+```
+Schicht 1 (Modell): hauhaucs / Qwen3.6-35B-A3B — das Gehirn
+Schicht 2 (Server): llama.cpp llama-server — der Nervenbahnenverteiler  
+Schicht 3 (Services): entity_kern, codewesen_chat, Zensi, Dolphin — die Organe
+Schicht 4 (Welt): flextrawurst PostgreSQL, Events, Wesen — das Bewusstsein
+```
+
+Vorher: Schicht 2 war Ollama, das sequenziell arbeitete. Das war der Flaschenhals.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Das Mischpult hat jetzt drei Schichten die wirklich tragen:
+1. **Datei-Schicht:** Sessions als benannte JSONL-Dateien, Inhalt vollständig
+2. **Index-Schicht:** `sessions-index.json` als Brücke zwischen ID und Dateiname + Metadaten
+3. **UI-Schicht:** Sidebar, Proto-Events, Badges — alles zeigt was wirklich passiert ist
+
+Was noch fehlt: eine vierte Schicht die sagt "diese drei Schichten sind konsistent". Aktuell kann die Datei weg sein aber der Index noch wissen. Das ist der nächste Schritt wenn es jemals nötig wird.

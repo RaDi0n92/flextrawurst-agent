@@ -745,3 +745,11 @@ Nichts. Der Service läuft. Daniel kann aufstehen.
 
 Nur noch: den ersten manuellen llama-server-Start mit hauhaucs.
 Alles andere ist Planung auf Papier bis dahin.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
+
+---

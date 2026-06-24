@@ -721,3 +721,21 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 - `/root/werkraum/_kimi/berichte/hauhaucs_ausfall_2026-06-23.md` — Diagnose des Ausfalls
 - `/root/werkraum/_kimi/berichte/ollama_autoload_audit_2026-06-23.md` — welche Services Modelle laden
 - Dieser Plan — Lösung
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+- [[plan_llamacpp_ersatz]] — technische Umsetzung
+- [[modell-mapping]] (in `_claude/` oder `_kimi/`) — welcher Service welches Modell nutzt
+- `/root/werkraum/codewesen_chat.py` — muss auf neuen Port zeigen
+- `/root/werkraum/welt/entity_kern.py` — muss auf neuen Port zeigen
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+- `dolphin_mischpult/KONZEPT.md` — heute aktualisiert, jetzt auf Stand 2026-06-24
+- `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
+- `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen
+- `dolphin_mischpult.html` — Frontend-Seite der Änderungen

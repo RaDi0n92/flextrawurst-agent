@@ -1152,3 +1152,19 @@ das Modelfile-System schränkt eher ein als es hilft.
 
 Ollama bleibt für Gemma4/Codewesen/GENI — die brauchen das Management.
 Hauhaucs/Zensi/Dolphin könnten auf llama-server wechseln.
+
+---
+
+**[2026-06-24]** *← _claude/ideen/modell_architektur_plan.md*
+
+Das Problem war nie das Modell. hauhaucs hat alles was Daniel will.
+Das Problem war Ollama's Unfähigkeit, parallele Anfragen zu handeln.
+llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
+
+Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.

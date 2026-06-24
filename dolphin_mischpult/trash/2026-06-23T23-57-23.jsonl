@@ -1,0 +1,4 @@
+{"type": "event", "evtype": "herkunft", "content": "— Neue Session · 24.6.2026, 01:57:25 · hauhaucs-qwen · Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) —", "ts": "2026-06-23T23:57:25.749Z"}
+{"role": "user", "content": "hey", "ts": "2026-06-23T23:57:25.749Z"}
+{"role": "assistant", "content": "[abgebrochen]", "ts": "2026-06-23T23:58:32.545Z"}
+{"role": "user", "content": "hey", "ts": "2026-06-23T23:59:57.258Z"}

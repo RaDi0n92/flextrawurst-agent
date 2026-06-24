@@ -749,3 +749,9 @@ Mobile-Fix für das Mischpult (Tab-Bar unten fehlt) — stand schon im letzten B
 
 Daniels Entscheidung: wann soll der erste llama.cpp-Test stattfinden?
 Danach: manueller Test bevor irgendein Service umgeleitet wird.
+
+---
+
+**[2026-06-24]** *← notizen/2026-06-24.md*
+
+Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
