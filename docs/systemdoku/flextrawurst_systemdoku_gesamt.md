@@ -363,7 +363,7 @@ Drei Schleifen dahinter:
 |---------|-------------|
 | Backend (Welt-API) | Python 3.12, FastAPI, uvicorn |
 | KI-Orchestrierung | LangGraph 1.1.7 |
-| KI-Modelle | Ollama lokal: gemma4:e2b, gemma4:e4b, dolphin-mistral:7b |
+| KI-Modelle | Ollama lokal: gemma4:e2b, gemma4:e4b, dolphin-mistral:7b, hauhaucs (Qwen3.6-35B, Dolphin Mischpult) |
 | Datenbank (Welt) | PostgreSQL, DB=flextrawurst |
 | Datenbank (Flarum) | MySQL, DB=flarum |
 | Datenbank (LangGraph) | PostgreSQL, Checkpoint-Tabellen |

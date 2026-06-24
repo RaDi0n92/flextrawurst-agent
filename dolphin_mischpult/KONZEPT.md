@@ -1,15 +1,18 @@
 # Dolphin Mischpult — Konzept & Stand
 
-> Letztes Update: 2026-06-22  
+> Letztes Update: 2026-06-24  
 > Pfad: `/root/flextrawurst/out/process_camera/dolphin_mischpult.html`  
 > Erreichbar: `http://localhost:8787/dolphin`  
-> Server-Daten: `/root/werkraum/dolphin_mischpult/`
+> Server-Daten: `/root/werkraum/dolphin_mischpult/`  
+> Server-Code: `/root/flextrawurst/scripts/serve_process_camera_preview.ts`
 
 ---
 
 ## Was ist das
 
-Das Dolphin Mischpult ist ein live steuerbares Chat-Interface für `dolphin3-daniel` (lokal via Ollama). Kein statisches System-Prompt-Feld — stattdessen ein Mischpult: mehrere Felder die sich zu einem Gesamtpromt zusammensetzen, jederzeit anpassbar während ein Gespräch läuft.
+Das Dolphin Mischpult ist ein live steuerbares Chat-Interface für lokale LLMs via Ollama. Kein statisches System-Prompt-Feld — stattdessen ein Mischpult: mehrere Felder die sich zu einem Gesamtpromt zusammensetzen, jederzeit anpassbar während ein Gespräch läuft.
+
+Aktuelles Modell: **hauhaucs** (Qwen3.6-35B-A3B-Uncensored), auswählbar per Dropdown im Interface.
 
 Es ist der **Blueprint** — dieselbe Architektur soll später auf gemma2b, gemma4b und zensi übertragen werden.
 
@@ -21,8 +24,8 @@ Es ist der **Blueprint** — dieselbe Architektur soll später auf gemma2b, gemm
 Browser (dolphin_mischpult.html)
   → POST /dolphin/chat
     → buildSystemPrompt() kompiliert: base + overlay-tags + pendingFeedbackModel
-    → Ollama dolphin3-daniel (Port 11434, streaming, think:false)
-    → SSE-Stream zurück zum Browser
+    → Ollama hauhaucs (Port 11434, streaming, think:false per Request)
+    → SSE-Stream zurück zum Browser (inkl. durationMs im done-Event)
 
 Server-Daten (append-only):
   sessions/YYYY-MM-DD_HH-MM-SS.jsonl   ← ein File pro Session
@@ -36,11 +39,15 @@ Server-Daten (append-only):
 **Session-JSONL Format** (pro Zeile ein JSON-Objekt):
 ```json
 {"role":"user","content":"...","ts":"...","sessionId":"..."}
-{"role":"assistant","content":"...","ts":"...","systemBase":"...","overlays":{...},"feedbackModel":"..."}
-{"evtype":"field","content":"[ton] aktiviert: ...","ts":"..."}
+{"role":"assistant","content":"...","ts":"...","systemBase":"...","durationMs":12345}
+{"type":"event","evtype":"field","content":"Systempromt Basis aktiviert:\n\n[volltext]","ts":"..."}
+{"type":"event","evtype":"feedback","content":"👍 positiv bewertet:\n\nAntwort: \"[volltext der antwort]\"","ts":"..."}
+{"type":"event","evtype":"reset","content":"— Kontextfenster geleert · [zeit] · N Nachrichten entfernt —\n\n[1] user:\n[volltext]\n\n[2] assistant:\n[volltext]","ts":"..."}
 ```
 
-Jede Modell-Antwort trägt den `systemBase` + `overlays` die damals galten. Das ist die Wahrheit — nicht localStorage.
+Provenienz-Prinzip: **alles vollständig, keine Zeichenlimits.**  
+Jede Modell-Antwort trägt `systemBase` (vollständiger Text der damals galt) + `durationMs` (Serverzeit in ms).  
+Alle Ereignisse — Feedback, Kontextoperationen, Systempromt-Aktivierungen — sind vollständig ausgeschrieben, nie abgekürzt.
 
 ---
 
@@ -142,10 +149,18 @@ Jede Dolphin-Antwort hat Buttons (Desktop: bei Hover, Mobile: immer sichtbar):
 | Button | Funktion |
 |--------|----------|
 | 🔊 | TTS dieser einzelnen Nachricht (forciert, unabhängig vom globalen TTS-Status) |
-| 👍 | Thumb-Up → speichert in `feedback.jsonl` |
-| 👎 | Thumb-Down → speichert in `feedback.jsonl` |
-| 📝 | Feedback-Popup → Text wird als `pendingFeedbackModel` in NÄCHSTEN System-Prompt eingebaut |
-| ↩ | Rollback → entfernt alles nach diesem Punkt aus Chat + msgs-Array |
+| 👍 | Thumb-Up → vollständig geloggt: JSONL-Event + UI-Protokoll mit vollständigem Antworttext |
+| 👎 | Thumb-Down → ebenso vollständig geloggt |
+| 📝 | Feedback-Popup → Text + vollständiger Antworttext geloggt; Text als `pendingFeedbackModel` in NÄCHSTEN System-Prompt eingebaut |
+| ↩ | Rollback → entfernt alles nach diesem Punkt aus Chat + msgs-Array; entfernte Nachrichten vollständig im JSONL-Event protokolliert |
+| 📋 | Kopieren → vollständigen Nachrichtentext in Zwischenablage |
+
+**Wichtig: feedbackModel** — das 📝-Feedback landet beim nächsten Chat-Request als eigener Block im System-Prompt:
+```
+[feedback vom nutzer für diesen output]
+[text des feedbacks]
+```
+Das Modell bekommt es also tatsächlich zu sehen. Das war früher gebrochen (Server ignorierte das Feld) — seit 2026-06-24 korrekt.
 
 ---
 
@@ -239,13 +254,40 @@ Editierbar per WinSCP — das ist der "kanonische" Prompt der bei neuen Sessions
 
 ## Modell-Info
 
+### Aktive Modelle (per Dropdown wählbar)
+
 ```
-Name:     dolphin3-daniel
-Basis:    dolphin3:8b (Ollama)
-Custom:   FROM dolphin3:8b + repeat_penalty 1.3 + Daniels System-Prompt
-think:    false (kein Chain-of-Thought)
-Port:     11434
+Label:    hauhaucs original
+ID:       fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS
+Basis:    Qwen3.6 35B, IQ4_XS quantisiert
+Profil:   uncensored, aggressiv (HauhauCS Aggressive)
+
+Label:    hauhaucs-tuned (num_thread 5)
+ID:       hauhaucs-tuned:latest
+Basis:    FROM hauhaucs original + Modelfile-Overrides
+Overrides: num_thread=5, num_ctx=8192, num_batch=128
 ```
+
+### Server-Konstanten (serve_process_camera_preview.ts)
+
+```typescript
+INTERACTIVE_KEEP_ALIVE     = "30m"
+INTERACTIVE_NUM_CTX        = 8192
+DEFAULT_INTERACTIVE_NUM_PREDICT = -1   // unlimitiert (Modell entscheidet Ende)
+MAX_INTERACTIVE_NUM_PREDICT = 8192     // UI-Limit wenn User num_predict setzt
+MSG_CHAR_BUDGET            = 7200      // Zeichen-Budget für History-Trimming
+```
+
+### think:false
+
+`think: false` wird **per Request** als Ollama-Option gesendet — nicht im Modelfile.
+Grund: Modelfile-Optionen können nicht zur Laufzeit überschrieben werden; think:false muss in jedem API-Call explizit stehen.
+
+### num_predict
+
+Standard: `-1` = unbegrenzt. Das Modell endet wenn es will (`stop`-Token oder Ende der Antwort).
+Kein hartes Token-Limit mehr — das war eine frühere falsche Einstellung (`256`), die Antworten mittendrin abschnitt.
+User kann optional ein Tokenlimit per UI setzen (dann `numPredict` im POST-Body).
 
 ---
 
@@ -371,6 +413,54 @@ Alles aus der Ideen-Phase wurde gebaut und committed. Was jetzt funktioniert:
 
 ---
 
+## Stand nach Session 2026-06-24 — Provenienz + hauhaucs
+
+### Modell-Wechsel
+
+`dolphin3-daniel` (dolphin3:8b) wurde ersetzt durch **hauhaucs** (Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS).  
+Ein Dropdown-Menü im Interface ermöglicht die Wahl zwischen:
+- `hauhaucs original` (Standard)
+- `hauhaucs-tuned:latest` (Modelfile mit num_thread=5, num_ctx=8192, num_batch=128)
+
+### Bugs behoben
+
+| Bug | Symptom | Fix |
+|-----|---------|-----|
+| `budgetCutIdx` | Neue Sessions ohne Response (leere Nachrichtenliste an Ollama) | `budgetCutIdx` wurde falsch mit `allMsgs.length` initialisiert statt `0` |
+| 256-Token-Limit | Antworten wurden mittendrin abgeschnitten | `num_predict` jetzt `-1` (Standard unlimitiert) |
+| feedbackModel ignoriert | 📝-Feedback erreichte das Modell nie | Server las das Feld nicht; jetzt korrekt in systemPrompt eingebaut |
+| DEFAULT_BASE auto-fill | Systempromt-Feld war beim Laden vorausgefüllt | `f-base.value = ''` in allen drei Initialisierungsstellen |
+| thumbFb kein JSONL | 👍/👎 wurden nur in `feedback.jsonl` gespeichert, nicht im Session-JSONL | `saveEvent()` mit vollständigem Antworttext ergänzt |
+| addProtoEvent mehrzeilig | `textContent` kollabiert Zeilenumbrüche → unsichtbar im UI | Geändert auf `innerHTML` mit `escH()` + `\n→<br>` |
+
+### Provenienz — jetzt vollständig
+
+**Vorher:** Feedback, Kontextoperationen und Systempromt-Aktivierungen wurden teils gar nicht, teils nur als Zeichenanzahl geloggt.
+
+**Jetzt:** Alles vollständig, keine Limits:
+
+| Ereignis | Was geloggt wird |
+|---------|-----------------|
+| Systempromt aktiviert | Vollständiger Text |
+| Tag aktiviert/deaktiviert | Vollständiger Tag-Text |
+| 👍/👎 | Vollständiger Antworttext der bewerteten Nachricht |
+| 📝 Popup-Feedback | Vollständiger Feedback-Text + vollständiger Antworttext |
+| Kontext-Reset | Alle entfernten Nachrichten einzeln mit vollem Inhalt |
+| ½ ctx | Alle entfernten Nachrichten einzeln mit vollem Inhalt |
+| -N ctx | Alle archivierten Nachrichten einzeln mit vollem Inhalt |
+| Rollback | Alle entfernten Nachrichten einzeln mit vollem Inhalt |
+
+### Duration-Tracking
+
+Jede Modell-Antwort protokolliert wie lange die Generierung gedauert hat:
+- **Server:** `durationMs` (ms vom Start des Ollama-Requests bis vollständige Antwort)
+- **JSONL:** `{"role":"assistant","content":"...","durationMs":12345,...}`
+- **UI (Live):** Zeitanzeige in der Nachrichtenanzeige als Badge (z.B. `12.3s`)
+- **UI (Geladen):** Beim Laden alter Sessions wird `durationMs` aus JSONL als Badge angezeigt
+- **MD-Export:** `*(12.3s · Prompt 234 Zeichen)*` unter jeder Antwort
+
+---
+
 ## Bekannte Probleme — Mobile (offen)
 
 > Diese Bugs wurden gemeldet, noch nicht gefixt. Bau-Auftrag steht aus.
@@ -411,17 +501,7 @@ Klick auf `½ ctx` soll ein Bestätigungs-Popup öffnen bevor die Hälfte gelös
 
 ### Kopieren-Button unter jeder Nachricht
 
-Unter jeder Nachricht (User-Input UND Modell-Output) soll ein kleiner Kopieren-Button erscheinen. Kopiert den vollständigen Nachrichtentext in die Zwischenablage.
-
-**Design:**
-- Auf Desktop: beim Hover sichtbar (wie die anderen msg-actions Buttons)
-- Auf Mobile: immer sichtbar
-- Symbol: 📋 oder `copy` oder einfach `⧉`
-- Feedback: kurz "✓ kopiert" anzeigen, dann zurück zu Symbol
-
-**Technisch:**
-- `navigator.clipboard.writeText(content)` — kein Server nötig
-- Existiert bereits in der `msg-actions` Zeile (🔊 👍 👎 📝 ↩) → ein weiterer Button daneben
+**✅ Gebaut.** 📋 existiert in der `msg-actions` Zeile neben 🔊 👍 👎 📝 ↩.
 
 ---
 

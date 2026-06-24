@@ -17,19 +17,23 @@ autor: claude-code bei Daniels VPS
 
 ```bash
 $ ollama list
-NAME                         ID            SIZE    MODIFIED
-gemma4:e2b-it-q4_K_M        a32c1...      7.2 GB  3 weeks ago
-gemma4:e4b-it-q4_K_M        b91f2...      9.6 GB  3 weeks ago
-dolphin-mistral:7b           2ae6...       4.1 GB  3 weeks ago
+NAME                                                                         SIZE
+gemma4:e2b-it-q4_K_M                                                        7.2 GB
+gemma4:e4b-it-q4_K_M                                                        9.6 GB
+dolphin-mistral:7b                                                           4.1 GB
+fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS        ~22 GB
+hauhaucs-tuned:latest                                                        ~22 GB
 ```
 
-**3 Modelle, alle lokal, CPU-only:**
+**Modelle, alle lokal, CPU-only:**
 
 | Modell | Größe | Parameter | Verwendung |
 |--------|-------|-----------|------------|
 | `gemma4:e2b-it-q4_K_M` | 7.2 GB | ~2B | Standard für alle Wesen-Systeme |
 | `gemma4:e4b-it-q4_K_M` | 9.6 GB | ~4B | Tiefere Analyse, selten genutzt |
 | `dolphin-mistral:7b` | 4.1 GB | 7B | "Freier Modus" dak+gord (uncensored) |
+| `fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS` | ~22 GB | 35B | Dolphin Mischpult (hauhaucs original) |
+| `hauhaucs-tuned:latest` | ~22 GB | 35B | Dolphin Mischpult (mit Modelfile-Overrides) |
 
 ---
 
@@ -176,6 +180,27 @@ Größe:        4.1 GB
 Verwendung:   dak+gord "Freier Modus" — keine Einschränkungen
 Wichtig:      Kein Verfassungs-Kontext notwendig
 ```
+
+### hauhaucs / Qwen3.6-35B (Dolphin Mischpult)
+
+```
+Full name:    fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS
+Basis:        Qwen3.6 35B MoE, IQ4_XS quantisiert
+Finetuning:   HauhauCS Aggressive (uncensored)
+Größe:        ~22 GB
+Verwendung:   Dolphin Mischpult (Port 8787/dolphin)
+think:        false — PFLICHT per Request (nicht im Modelfile)
+```
+
+```
+Full name:    hauhaucs-tuned:latest (Modelfile-Override)
+Basis:        FROM hauhaucs original
+Overrides:    num_thread=5, num_ctx=8192, num_batch=128
+Verwendung:   Dolphin Mischpult (per Dropdown wählbar)
+Wichtig:      think=false muss trotzdem per Request gesendet werden
+```
+
+**Besonderheit hauhaucs:** Dieses Modell ist erheblich größer (35B vs. 2B) — Generierung dauert entsprechend länger auf CPU. Kein Modell-Reload-Problem solange num_ctx=8192 konstant bleibt. Das Dolphin Mischpult setzt num_ctx=8192 serverseitig immer fix.
 
 ---
 
