@@ -1467,3 +1467,9 @@ Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKon
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.

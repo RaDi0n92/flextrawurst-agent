@@ -733,3 +733,9 @@ Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Nichts Offenes. Feature ist vollständig, getestet.

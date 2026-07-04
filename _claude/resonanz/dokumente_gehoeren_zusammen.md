@@ -780,3 +780,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+`_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).

@@ -875,3 +875,9 @@ Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 [[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+[[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]

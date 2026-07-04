@@ -727,3 +727,9 @@ Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität üb
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.

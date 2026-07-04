@@ -928,3 +928,9 @@ Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.

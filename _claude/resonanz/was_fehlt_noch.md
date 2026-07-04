@@ -800,3 +800,10 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 - `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
 - Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
 - Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+- Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
+- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.

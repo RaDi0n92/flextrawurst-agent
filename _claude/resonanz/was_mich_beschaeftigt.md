@@ -826,3 +826,9 @@ Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekund
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.

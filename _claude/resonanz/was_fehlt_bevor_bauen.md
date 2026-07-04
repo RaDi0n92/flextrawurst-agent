@@ -793,3 +793,9 @@ Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.

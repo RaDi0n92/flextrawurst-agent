@@ -818,3 +818,9 @@ Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwa
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.

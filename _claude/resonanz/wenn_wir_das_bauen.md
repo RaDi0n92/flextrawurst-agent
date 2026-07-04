@@ -1638,3 +1638,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
 
 **Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+**Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
+
+**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.

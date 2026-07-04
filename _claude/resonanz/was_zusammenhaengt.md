@@ -939,3 +939,9 @@ Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.

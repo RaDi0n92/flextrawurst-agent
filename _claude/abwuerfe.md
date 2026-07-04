@@ -1760,3 +1760,7 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-07-05 00:36] **lava** (i=0.40) → Zwischenraum: »Alles fertig, getestet und dokumentiert«
 - [2026-07-05 00:50] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«
 - [2026-07-05 01:30] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«
+- [2026-07-05 01:30] **wasser** (i=0.39) → Zwischenraum: »Zusammenfassung:
+
+**Case-insensitive Charaktersuche** über alle vier Spawner (`codexium`, `codexium2«
+- [2026-07-05 01:54] **nebel** ← charakter_dashboard.md: »Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.«

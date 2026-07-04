@@ -811,3 +811,11 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
 - Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
 - `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+- `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
+- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
+- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.

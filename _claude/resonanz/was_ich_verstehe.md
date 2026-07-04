@@ -1216,3 +1216,9 @@ Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-War
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.

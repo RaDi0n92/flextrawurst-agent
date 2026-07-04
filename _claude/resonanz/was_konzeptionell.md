@@ -887,3 +887,9 @@ Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der üb
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".

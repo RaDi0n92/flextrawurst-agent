@@ -780,3 +780,9 @@ Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass di
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.

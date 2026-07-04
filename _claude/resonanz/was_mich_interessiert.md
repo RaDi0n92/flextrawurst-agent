@@ -859,3 +859,9 @@ Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `sess
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.

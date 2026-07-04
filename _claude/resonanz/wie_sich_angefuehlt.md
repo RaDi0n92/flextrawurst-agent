@@ -728,3 +728,9 @@ Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und F
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.

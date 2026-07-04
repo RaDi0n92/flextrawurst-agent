@@ -686,3 +686,9 @@ Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, ni
 **[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
 
 Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+`wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.

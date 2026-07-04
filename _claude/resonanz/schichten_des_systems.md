@@ -977,3 +977,16 @@ Neue-Session-Dialog
   → erinnert aktiv an Memory/Container/Abschluss VOR dem Beenden,
     statt sich nur auf den Wissensstand des Menschen zu verlassen
 ```
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+```
+Vier Spawner (codexium, codexium2, solarius, solarius2)
+  → bisher: nur einzeln ueber ihre eigene URL erreichbar
+  → jetzt: /charakterdashbord als gemeinsame Meta-Ebene daroberliegend
+    → pro Karte: Chat/Profil (Popup zu bestehenden Seiten),
+                 Memory/Container (Lese-Modal, gleiche Daten wie im Chat selbst),
+                 Feedback (neu: uebergreifend, zusaetzlich zum alten nachrichtengebundenen)
+```
