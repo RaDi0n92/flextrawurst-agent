@@ -1596,3 +1596,13 @@ jener ist das Wie. Zusammen lesen.
 **Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
 
 **Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+**Vision-Schicht:**
+Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), dann parallele Slots als architektonisches Fundament — danach erst die Backend-Migration der Dienste.
+
+**Code-Skizze:**
+```bash

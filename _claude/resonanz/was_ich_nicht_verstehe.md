@@ -780,3 +780,17 @@ Das ist der einzige echte Unsicherheitsfaktor im Plan.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- Welcher exakte llama.cpp-Commit das qwen35-Format von separaten Q/K/V auf kombiniertes QKV umgestellt hat.
+- Ob Ollama intern eine ältere oder gepatche Version des qwen35-Loaders nutzt (Ollama kann das Modell laden).
+- Ob die `ssm_dt.bias`-Umbenennung und die QKV-Fusion gleichzeitig eingeführt wurden, oder ob es ein zweistufiger Übergang war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Ob und wie die Session-Grenze (Marker in `chat_history.jsonl`) sich mit einem möglichen zukünftigen "Wesen-Einzug" (echte Codewesen ziehen in flextrawurst ein) vertragen wird — das ist noch komplett getrennte Welt (Grundgesetz 5: Flarum bleibt draußen). Auch offen: ob das Memory/Container-Konzept, das wir für codexium2/solarius2 gebaut haben, jemals rückwirkend auf Codexium/Solarius selbst übertragen werden soll, oder ob die Testbeds für immer getrennt bleiben.

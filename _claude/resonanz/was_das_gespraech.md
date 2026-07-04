@@ -691,3 +691,15 @@ Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkrete Optionen für wenn Daniel das wieder angeht. Nicht aufgegeben, aber geparkt mit Wegweiser.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die Erkenntnis, dass "Session" als Konzept nicht nur eine UI-Frage ist, sondern eine Antwort auf das Kontextfenster-Problem — Memory ist der Mechanismus der das Vergessen-Können erst sicher macht.

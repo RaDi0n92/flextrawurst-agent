@@ -739,3 +739,20 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 - `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
 - `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen
 - `dolphin_mischpult.html` — Frontend-Seite der Änderungen
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- Diese Notiz + `/root/werkraum/_claude/notizen/ollama-model-mapping.md` (Modell-Zuordnungen)
+- Option B/C: Erst prüfen bevor nächste llama.cpp-Session startet
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- `_claude/ideen/codexium2_solarius2/memory_container.md`
+- `_claude/ideen/codexium2_solarius2/chat_architektur.md`
+- `_claude/ideen/codexium2_solarius2/sessions_kontextmeter.md`
+- Claude-Memory `project_codexium2_testbed.md` (Scope-Regel)
+- Claude-Memory `feedback_sofort_committen_bei_konzeptentscheidungen.md`

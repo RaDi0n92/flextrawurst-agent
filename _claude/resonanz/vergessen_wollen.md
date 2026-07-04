@@ -634,3 +634,15 @@ Das war Ollama. Nicht das Modell. Nicht Daniel. Nicht die Wesen.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Nichts heute. Das war ein klarer Abend / Morgen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Handwerk, aber ich musste kurz durchatmen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Operationen ist richtig), aber sie hat sich größer angefühlt als sie war, bevor ich systematisch nachverfolgt habe.

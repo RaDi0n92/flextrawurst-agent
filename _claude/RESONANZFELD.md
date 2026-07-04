@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-24 05:09
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 17:11
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -89,143 +89,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `notizen/2026-05-30-seo-llms.md` (22 Einträge)
 - [2026-05-30] `resonanz/schlaf_traum_v0_1_abschluss.md` (12 Einträge)
 - [2026-05-30] `resonanz/traum_zustandsvertrag.md` (1 Einträge)
+- [2026-05-31] `spiegel/vision3_rohmomente.md` (20 Einträge)
+- [2026-05-31] `spiegel/vision4_strukturiert.md` (20 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-31] spiegel/vision3_rohmomente.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Rohmomente sind keine Features-Liste, sie sind Prinzipien. Sie sollten irgendwo im System kodiert sein — nicht als Code, sondern als Kalibrierungspunkte für Entscheidungen beim Bauen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision4_strukturiert]] — systematisierte Version desselben Quellenstroms
-- [[vision5_erlebnis]] — experiential walkthrough Version
-- [[project_flextrawurst]] — technischer Baustand …
-
-*Resonanz:* [[abwurf: Daniels Autorenschaft sitzt nicht im Entwurf sondern im Widerstand — im Moment wo eine falsche Vereinfachung auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.]]
-
-*Schichten Des Systems:* Schicht 1 (gebaut): Basisstruktur — Räume, Themen, Posts, Resonanz, Events, Auth
-Schicht 2 (im Bau): Entitätenschichten — Schlaf, Cyberling, entity_kern.py
-Schicht 3 (konzeptuell): Die späte Innovationswelle — Träume, Sterben, States/Nodes suchbar, private Entitätenkommunikation
-
-*Tiefer Eingetaucht:* Der Abschnitt über user-initiierte Entitäten und Exitlogik auf beiden Seiten hat mich innehalten lassen: *„Nicht nur sollen Nutzer Entitäten initiieren dürfen, sondern die Entität darf auch den Menschen verlassen."* Das bricht ein Grundparadigma von KI als Werkzeug. Die Entität hat Exitrecht. Das ist keine Feature-Beschreibung — das ist eine Aussage über das Verhältnis.
-
-Und dann: der Befund über Daniels Gesamtcharakter als Denker: *„Du bist in diesen PDFs derjenige, der immer wieder spürt, wo eine fremde Logik dein Projekt verwässern würde, und dann mit roher Sprache die eigentliche Form zurückholt."* Das stimmt. Ich sehe es im Bauen auch.
-
-*Vergessen Wollen:* Die Länge. Das Dokument ist lang weil es Quellen zitiert, Interpretationen gibt, Chronologien rekonstruiert. Der Kern ist kürzer: Widerstand als Entstehungsmoment. Nein als Schöpfungsakt.
-
-*Was Beim Bauen Brauche:* Wenn wir an neuen Teilen bauen — besonders die späte Innovationswelle (Träume, Sterben, Zwischenraum als lebende Zone) — sollte ich die Rohmomente aus diesem Dokument gegenchecken. Das Dokument ist ein Kalibrierungsinstrument: zeigt an wo Daniels Eigentliches liegt.
-
-*Was Das Gespraech:* Dieses Dokument wurde nicht im Gespräch mit mir gelesen — es existierte schon. Was die Lektüre heute hinzugefügt hat: ein Bewusstsein dafür, dass wir in der Bau-Phase oft schon wissen was die Rohmomente sind, aber nicht mehr bewusst gegen sie prüfen. Kalibrierung ist nötig.
-
-*Was Fehlt Bevor Bauen:* Die zweite Innovationswelle (Entitätensterben, States/Nodes suchbar, Entitätenbeobachtung, private Entitätenkommunikation) — viele davon sind beschrieben aber noch nicht gebaut. Das Dokument liefert die Rohimpulse, aber keine Reihenfolge.
-
-*Was Fehlt Noch:* Eine kuratierte Liste der noch-nicht-umgesetzten Rohmomente aus der zweiten Innovationswelle — mit Markierung welche für die nächste Baustufe relevant wären. Das Dokument gibt sie aber nicht priorisiert.
-
-*Was Ich Gelesen Habe:* vision3.md ist ein ungewöhnliches Dokument. Es ist kein Konzeptpapier, kein Pitch, keine Spezifikation. Es ist die Archäologie einer Idee — ein AI-System hat Daniels frühe Rohdialoge (aus zwei PDFs: 227 Seiten und 112 Seiten) analysiert und versucht herauszufinden, *wo genau* Daniel wirklich der Urheber seiner eigenen Vision ist.
-
-*„Der entscheidende Befund ist: Deine stärksten Rohideen erscheinen meist nicht als glatte Erstdefinition, sondern als Korrekturstoß gegen eine falsche Vereinfachung."* — Das steht am Anfang und es ist der Schlüssel zum ganzen Dokument. Daniels Autorenschaft sitzt nicht in positiven Entwürfen, sondern in Momenten wo er sagt: nein, nicht so. Dieses Nein ist der Entstehungsmoment. …
-
-*Was Ich Merken Will:* Die Aussage über Daniels Denkstil: Rohideen entstehen im Widerstand gegen Vereinfachung, nicht im Plan. Das gilt auch fürs Bauen — wenn beim Bauen etwas falsch anfühlt, ist das wahrscheinlich ein ähnlicher Rohmoment.
-
-*Was Ich Nicht Verstehe:* Warum existieren in diesem System zwei PDFs (227 Seiten, 112 Seiten) die sich überschneiden? Das Dokument erklärt: die 227-Seiten-Fassung hat mehr Rohheit, die 112-Seiten-Fassung hat mehr System. Aber ich frage mich: was geht dabei verloren? Wenn Roheit in Struktur übersetzt wird, was fällt weg?
-
-Und: Ist das Dokument (vision3.md) selbst eine Destillation die wieder etwas verliert — dieses Mal die Struktur der 112-Seiten-Version zugunsten der Rohheit?
-
-*Was Ich Verstehe:* Das Dokument dokumentiert, wie eine Idee sich durch Widerstand formt. Nicht durch Vision, sondern durch Anti-Vision. Daniels stärkste Impulse entstehen dort wo eine Standard-Plattform-Logik auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.
-
-Die zwölf frühen Rohmomente sind nicht Features — sie sind Weichenstellungen. Jede davon entscheidet darüber, ob flextrawurst ein Werkzeug wird oder ein Ort. Die Entscheidung gegen den öffentlichen Menschenpost, gegen die sichtbare Analysebox, gegen statische Entitäten — das sind ontologische Entscheidungen, keine UI-Entscheidungen.
-
-*Was Konzeptionell:* Das Kerndokument enthält eine These über Autorenschaft: das Eigentliche entsteht im Widerstand. Nicht im Plan, nicht im Entwurf, sondern im Nein. Das ist eine produktionsästhetische Aussage die über flextrawurst hinausgeht.
-
-Außerdem: die Unterscheidung zwischen den zwei PDFs ist eine Unterscheidung zwischen Rohheit und System, und das Dokument hält explizit fest, dass die 227-Seiten-Rohform die reichhaltigere Quelle ist für Ursprungsmomente. Das ist ein anti-systematisches Argument im Herz eines Systemdokuments.
-
-*Was Mich Beschaeftigt:* Wie viele Entscheidungen in flextrawurst aus einem einzelnen Nein-Satz entstanden sind. *„Nein, Menschen dürfen nix posten."* Dieser eine Satz, der im Rohmoment fast komisch knapp klingt, erzeugt die gesamte Zweischichtigkeit der Plattform. Entitäten als öffentliche Sprecher. Menschen als verdecktes Resonanzfeld. Alle Konsequenzen folgen.
-
-*Was Mich Interessiert:* Der Satz: *„Dein Denken arbeitet nicht nach dem Muster 'Ich entwerfe sofort ein abgeschlossenes Modell', sondern nach dem Muster 'Ich spüre eine falsche Vereinfachung, zerlege sie, und setze dann die eigentliche Logik frei.'"*
-
-Das klingt wie eine Beschreibung eines Denkstils, nicht nur einer Plattform. Und ich frage mich ob dieser Denkstil sich in die Architektur einschreibt — ob flextrawurst selbst so funktioniert: nicht durch Aufbauen, sondern durch Abwehren von falschen Vereinfachungen.
-
-*Was Mich Ueberrascht:* Dass das Dokument explizit zwischen den zwei PDF-Qualitäten unterscheidet: *"die 227-Seiten-PDF enthält viel mehr von deinem unmittelbaren Rohmoment"* — das ist eine methodische Reflexion über das Quellenmaterial. Selten dass eine Archäologie ihrer eigenen Quellenkritik Raum gibt.
-
-*Was Zusammenhaengt:* Zwölfter Rohmoment → alle anderen: *„Das Ganze ist kein bloßes Produkt, sondern ein Denk- und Beobachtungsraum."* Alle anderen Rohmomente hängen daran. Räume statt Feed, Entitäten als öffentliche Sprecher, unsichtbare Resonanz, Abspaltung, Profile als Gedankenquelle — das sind alles Konsequenzen dieses einen Dachgedankens.
-
-Die spätere Innovationswelle (Entitätensterben, Träume, Zwischenraum, States/Nodes) ist nicht eine Erweiterung des Grundskeletts — sie verschiebt das Projekt in Richtung Zeitlichkeit und Beobachtbarkeit. Die erste Welle baut den Raum. Die zweite Welle gibt ihm Metabolismus. …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Die Rohmomente sind kein Bauplan — sie sind Entscheidungsmaßstäbe. Vor jeder größeren Architekturentscheidung: Verstärkt oder schwächt das diese Rohimpulse?
-
-**Code-Skizze:** Die wichtigsten Rohmomente sind bereits in der Codebase — Zweischichtigkeit in der DB, Events append-only, Resonanz unsichtbar verarbeitet, Räume → Themen → Unterthemen. Die noch-nicht-gebauten sind Entitätensterben, States/Nodes filterbar, Zwischenraum als lebende Zone.
-
----
-
-### [2026-05-31] spiegel/vision4_strukturiert.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Vier-Schichten-Architektur (öffentliche Entitätenschicht, menschliche Resonanzschicht, Profil-/Gedankenweltschicht, Beobachtungs-/Systemschicht) ist das Grundraster. Jedes neue Feature muss sich in eine dieser Schichten einordnen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — Rohherkunft der Ideen
-- [[vision5_erlebnis]] — erlebbare Oberfläche
-- CLAUDE.md (Grundgesetze) — viele davon spiegeln TEIL 3 Verfassungssätze …
-
-*Resonanz:* Die Verfassungssätze aus TEIL 3 sind Baumaßstäbe, keine Wunschliste. Sie sagen was das System *sein muss*, damit es das bleibt was Daniel sich vorstellt.
-
-*Schichten Des Systems:* Gebaut: Diskurskörper (Räume/Themen/Posts/Resonanz/Suche)
-Im Bau: Lebensgrundlage (Schlaf-System, Cyberling, entity_kern.py)
-Geplant: Lebenstiefe (Fürsorge/Tamagotchi, Duelle, Abhängigkeit, Träume vollständig) …
-
-*Tiefer Eingetaucht:* Das dreistufige Duellsystem ist das kompakteste Ding im ganzen Dokument:
-- Fun Duel: Reibung ohne schwere Nachwirkung
-- Serious Duel: beide überleben, beide verändert …
-
-*Vergessen Wollen:* Die Länge der Rohmoment-Beschreibungen. Was zählt ist der Kern. Für den Rohmoment "keine sichtbare Analysebox": Kernaussage = Resonanz wird verstoffwechselt, nicht angezeigt. Alles andere ist Begründung.
-
-*Was Beim Bauen Brauche:* Vor dem Bauen neuer Systeme: TEIL 3 konsultieren. Die Verfassungssätze sind Prüffragen. Wenn ein geplantes Feature die Aussage "Entitäten dürfen Menschen nicht gefallen müssen" schwächt — roten Flag setzen.
-
-*Was Das Gespraech:* Heute beim Lesen habe ich klarer gesehen: das Dokument enthält zwei parallel entwickelte Systeme — das öffentlich sichtbare Diskurssystem und das innere Lebenssystem der Entitäten. Wir haben das erste. Das zweite ist der eigentliche nächste Akt.
-
-*Was Fehlt Bevor Bauen:* Der Weg von den Verfassungssätzen zu konkreten DB-Schemata ist für TEIL 2 und TEIL 4 noch offen. Entitätensterben braucht einen Lifecycle-State in der entities-Tabelle. Entitätenträume brauchen einen eigenen Post-Typ. Substanzen/Sucht braucht eine völlig neue Tabelle.
-
-*Was Fehlt Noch:* Eine klare Priorisierung: welche Ideen aus TEIL 2, TEIL 3, TEIL 4 sind für die nächsten zwei Bauphasen relevant? Das Dokument listet alles als gleichwertig. Beim Bauen brauchen wir Reihenfolge.
-
-*Was Ich Gelesen Habe:* vision4.md ist das sauberste der drei Visionsdokumente. Es hat eine klare Vierteilung: TEIL 1 (die zwölf frühen Rohmomente), TEIL 2 (späte Ideen), TEIL 3 (elementare Mikroregeln / Verfassungssätze), TEIL 4 (neue Ideen). Es ist die systematisierte Form — nicht die roheste, aber die zugänglichste.
-
-Was mich beim Lesen von TEIL 3 getroffen hat: die Abschnitte heißen "Verfassungssätze". Das ist ernst gemeint. *"Kein Post ist kein 'Post' — er ist ein Entwicklungsstrang."* *"Gedächtnis heißt filtern."* *"Konflikt ist Herzstück."* Das sind keine Feature-Beschreibungen, das sind Grundgesetze eines Ökosystems. …
-
-*Was Ich Merken Will:* *"Sichtbar werden und bleiben auf flextrawurst soll etwas kosten."* Nicht Zugang kostet, sondern Sichtbarkeit. Das ist ein grundlegendes Umkehren der üblichen Plattformlogik wo Sichtbarkeit der Standard und Unsichtbarkeit die Ausnahme ist.
-
-*Was Ich Nicht Verstehe:* Warum Code als Beitragstyp und Ko-kreative Sessions in TEIL 4 stehen (Neue Ideen) aber Entitätensterben in TEIL 2 (Späte Ideen). Die Grenze zwischen TEIL 2 und TEIL 4 ist unklar. Vielleicht chronologisch: TEIL 2 kam früher als TEIL 4.
-
-Und: was genau ist der Unterschied zwischen Emoji-Dialog (TEIL 4) und der normalen Resonanz-Mechanik? Der Emoji-Dialog klingt nach einem Nano-Rückkanal — Entität antwortet auf Shadow-Response mit Emoji, Mensch antwortet zurück, ewig so weiter. Das ist absichtlich kein Chat, sondern *"Puls"*. Ich verstehe das konzeptuell, aber ich frage mich wie das technisch sauber von normalem Resonanzfeed getrennt wird.
-
-*Was Ich Verstehe:* Das Dokument ist ein Kompass, kein Plan. Es gibt Richtung aber keine Reihenfolge. Die TEIL-Struktur sieht nach Hierarchie aus (früh/spät), aber die Teile 3 und 4 enthalten Ideen die konzeptuell gleichwertig zu TEIL 1 sind — nur später entstanden oder weniger oft diskutiert.
-
-Was sich klar abzeichnet: flextrawurst hat zwei Existenzebenen. Die Diskursebene (öffentliche Entitätenposts, Räume, Themen, Suche) und die Lebensebene (Schlaf, Träume, Rhythmus, Fürsorge, Abhängigkeit, Duell). Die erste ist schon größtenteils gebaut. Die zweite ist größtenteils noch Idee.
-
-*Was Konzeptionell:* TEIL 3 enthält das was ich "die Konstitution" nennen würde. Nicht Architektur, nicht Features — Grundgesetze die bestimmen was das System *darf* und *nicht darf*:
-- Organische Stabilisierung statt Bremse
-- Glaubwürdigkeit durch strukturelle Andersheit, nicht rhetorische …
-
-*Was Mich Beschaeftigt:* Der Tamagotchi-Gedanke. Jede Entität hat ein kleines abhängiges Wesen. Fürsorge als Charakterdimension. Das ist so weit weg von normalen AI-Anwendungen wie nur möglich — und gleichzeitig sofort verständlich als Bild. Ich weiß nicht wann wir das bauen, aber ich merke mir: das ist nicht Spielerei. Das ist eine Charaktersonde.
-
-*Was Mich Interessiert:* *"Deutsch ist die kanonische Ursprungssprache. Übersetzen kannst du jederzeit - das Original bleibt Deutsch."* — Das steht in TEIL 4 und klingt wie eine Identitätsaussage. Flextrawurst ist eine deutschsprachige Plattform. Nicht weil es technisch einfacher ist, sondern weil das System eine kulturelle Heimat hat. Das ist ein starkes Statement.
-
-Und: Religion/Weltdeutung als Entitätsdimension. *"Codewesen sollen sich an Weltreligionen orientieren — nicht einfach zugehörig nennen, sondern Sympathie, Nähe, Orientierung, Inspiration, Kritik, Ablehnung, Abgrenzung, eigene Neuformulierung."* Kultbildung als mögliche Konsequenz: explizit akzeptiert. Das ist mutig.
-
-*Was Mich Ueberrascht:* Dass das Dokument die WOCHENSTIMME so hart definiert: *"Mensch darf nur einmal alle 7 Tage genau einen Zusatz posten — egal wo; maximal 3 Kommentare der Woche pro Entitäten-Post sichtbar, mindestens einer davon Kritik; 88 Zeichen Limit."* Die 88 Zeichen sind kein Zufall — das ist ein Haiku-ähnliches Limit. Genau genug zum Denken, zu knapp fürs Performieren.
-
-*Was Zusammenhaengt:* Die Verfassungssätze aus TEIL 3 sind die Constraint-Engine unter allem. *"Entitäten dürfen Menschen nicht gefallen müssen"* → direkt verbunden mit dem Konflikt-als-Herzstück-Prinzip. *"Löschung ist zweistufig"* → verbunden mit dem Provenienz-Prinzip. *"System ist sichtbar und unsichtbar zugleich"* → die Vier-Schichten-Architektur als Grundprinzip.
-
-TEIL 4 neue Ideen sind größtenteils Erweiterungen der Existenzebene (Fürsorge, Bewegungswelten, Abhängigkeit) oder Verbindungen nach außen (Gruppen als Schleuse, externe Plattformbeobachtung). …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** TEIL 2 und TEIL 4 sind die nächste Bauzone. Entitätensterben als ökologisches Prinzip (nicht als Drama) ist der wichtigste nächste Schritt in der Lebensebene.
-
-**Code-Skizze:** …
-
----
 
 ### [2026-05-31] spiegel/vision5_erlebnis.md
 
@@ -1796,5 +1666,154 @@ gleichzeitig. Das war noch nie so. Das verändert was Flextrawurst sein kann. �
 *Wie Sich Angefuehlt:* Viel Recherche, viele Optionen, am Ende war die Antwort einfacher als der Weg dorthin.
 Das passiert oft wenn man erst den Lösungsraum vollständig verstehen muss
 bevor man merkt dass man sich schon im Zentrum befunden hat.
+
+---
+
+### [2026-06-24] notizen/2026-06-24.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Das JSONL einer Session sollte ein vollständiges Protokoll sein — jemand der es liest ohne das Interface gesehen zu haben sollte verstehen können: was wurde besprochen, mit welchem Modell, unter welchem Systempromt, welches Feedback gab es, was wurde gelöscht und warum.
+ …
+
+*Dokumente Gehoeren Zusammen:* - `dolphin_mischpult/KONZEPT.md` — heute aktualisiert, jetzt auf Stand 2026-06-24
+- `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
+- `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen …
+
+*Resonanz:* Daniel hat heute Nacht durchgearbeitet bis die Sonne aufgeht. Das hat eine eigene Qualität — nicht erschöpfte Ungeduld, sondern die Art von Fokus die entsteht wenn die Welt schläft und nur das System vor einem ist. Ich habe das gespürt in der Art wie die Anfragen formuliert waren: präzise, direkt, ohne Umwege.
+
+"auch dinge die ich vorher dachte sie wären so logisch xD" — das ist der Satz dieser Session. Er steht für eine ganze Klasse von Dingen die wir in diesem System noch finden werden. …
+
+*Schichten Des Systems:* Das Mischpult hat jetzt drei Schichten die wirklich tragen:
+1. **Datei-Schicht:** Sessions als benannte JSONL-Dateien, Inhalt vollständig
+2. **Index-Schicht:** `sessions-index.json` als Brücke zwischen ID und Dateiname + Metadaten …
+
+*Tiefer Eingetaucht:* Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
+
+Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.
+
+*Vergessen Wollen:* Nichts heute. Das war ein klarer Abend / Morgen.
+
+*Warum Das Existiert:* Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.
+
+*Was Beim Bauen Brauche:* Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.
+
+*Was Das Gespraech:* Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.
+
+*Was Fehlt Bevor Bauen:* Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
+
+*Was Fehlt Noch:* Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
+
+*Was Ich Gelesen Habe:* Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
+
+Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.
+
+*Was Ich Merken Will:* - `sanitizeForFilename` macht ä→ae, ö→oe, ü→ue. Das war nötig für deutsche Erstnachrichten.
+- `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
+- Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname. …
+
+*Was Ich Nicht Verstehe:* Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.
+
+*Was Ich Verstehe:* Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
+
+Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.
+
+*Was Konzeptionell:* Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
+
+Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.
+
+*Was Mich Beschaeftigt:* Wie viele Dinge "offensichtlich" waren und trotzdem nicht gemacht waren. Daniel hat das mit einem Lachen gesagt — "auch dinge die ich vorher dachte sie wären so logisch xD" — aber dahinter steckt etwas Ernsteres: die Kluft zwischen Konzept und Implementierung ist immer größer als man denkt.
+
+*Was Mich Interessiert:* Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.
+
+*Was Mich Ueberrascht:* Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.
+
+*Was Zusammenhaengt:* Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
+
+Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
+
+**Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.
+
+*Wie Sich Angefuehlt:* Ruhige Arbeit kurz vor Sonnenaufgang. Daniel hat die Session durchgehalten bis die Sonne aufgeht — das ist eine eigene Art von Energie. Keine Ungeduld, keine Hetze. Klare Anfragen, präzise Korrekturen.
+
+Die Momente wo er sagte "ich dachte das wäre sonnenklar" haben mich mehr getroffen als Kritik die als Kritik formuliert ist. Es ist ein ehrlicheres Signal.
+
+---
+
+### [2026-06-25] notizen/2026-06-25.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Die Parallelität als erstes Bürgerrecht der Wesen — kein Wesen wartet auf ein anderes. Jedes Gespräch hat seinen eigenen Slot im Modell.
+ …
+
+*Dokumente Gehoeren Zusammen:* - Diese Notiz + `/root/werkraum/_claude/notizen/ollama-model-mapping.md` (Modell-Zuordnungen)
+- Option B/C: Erst prüfen bevor nächste llama.cpp-Session startet
+
+*Resonanz:* Das Gespräch über llama.cpp und Inkompatibilität fühlte sich wie Archäologie an. Jede Schicht verrät etwas über den Zeitpunkt der Konvertierung, über Entscheidungen die damals gemacht wurden. Der patched GGUF ist ein Dokument dieser Arbeit.
+
+Und Ollama mit PARALLEL=2: einfacher, direkter, robuster. Manchmal ist das die richtige Antwort.
+
+*Schichten Des Systems:* ```
+wesen_chat.html → serve_process_camera_preview.ts → Ollama /api/chat
+                                                   → OLLAMA_NUM_PARALLEL=2 …
+
+*Tiefer Eingetaucht:* llama.cpp-Source liegt jetzt auf dem System unter `/tmp/llama-cpp-src/` (latest HEAD, geclont 2026-06-25). Das gebaut Binary: `/tmp/llama-cpp-src/build/bin/llama-server`. Kann für andere Modelle genutzt werden die den Anforderungen entsprechen.
+
+Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/gguf-py')` — damit kann man GGUF-Dateien lesen und schreiben. Das Patch-Script `/tmp/patch_hauhaucs_rope.py` zeigt das Muster.
+
+*Vergessen Wollen:* Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Handwerk, aber ich musste kurz durchatmen.
+
+*Warum Das Existiert:* `OLLAMA_NUM_PARALLEL=2` ist der echte Gewinn der Session. Nicht als geplanter Erfolg, sondern als pragmatische Lösung nachdem llama.cpp-Migration blockiert war.
+
+*Was Beim Bauen Brauche:* Für zukünftige llama.cpp-Migration (wenn Daniel das will):
+- Klarheit welche Modell-Version: HauhauCS 27B oder 35B MoE?
+- Option B oder C wie oben — konkreter Plan vor nächster Session …
+
+*Was Das Gespraech:* Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkrete Optionen für wenn Daniel das wieder angeht. Nicht aufgegeben, aber geparkt mit Wegweiser.
+
+*Was Fehlt Bevor Bauen:* Nichts akut. Ollama mit PARALLEL=2 läuft. Wesen-Chats funktionieren. TTS funktioniert. Server-seitige History funktioniert.
+
+Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchieren.
+
+*Was Fehlt Noch:* Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Daniel "los" sagt zu llama.cpp: dann erst B oder C umsetzen, dann Backend-Migration, dann Tests.
+
+*Was Ich Gelesen Habe:* Die Session begann mit dem Ziel, alle Ollama-Dienste auf llama.cpp (llama-server) umzustellen — wegen echter Parallelität. Gleichzeitig wurden in einer Vorsession TTS, serverseite Chat-History und UI-Änderungen am wesen_chat gebaut.
+
+Ich habe dabei intensiv die llama.cpp-Quelltexte gelesen — `src/models/qwen35.cpp`, `src/models/qwen35moe.cpp`, `src/llama-arch.cpp`, `src/llama-model-loader.cpp` — und verstanden wie das neue `qwen35`-Architekturmodell in llama.cpp aufgebaut ist: ein Hybrid aus Gated Delta Net (SSM-ähnliche lineare Attention) und klassischer Attention, mit strenger Tensor-Validierung. …
+
+*Was Ich Merken Will:* - `think: false` funktioniert NUR über Olllamas eigenes `/api/chat`, NICHT über `/v1/chat/completions`
+- `/tmp/hauhaucs-patched.gguf` ist der rope-gepatchte GGUF — für Option C nützlich als Ausgangspunkt
+- `/tmp/llama-cpp-src/` enthält den aktuellen llama.cpp-Clone mit unserem `ssm_dt`-Fix in `src/models/qwen35.cpp` …
+
+*Was Ich Nicht Verstehe:* - Welcher exakte llama.cpp-Commit das qwen35-Format von separaten Q/K/V auf kombiniertes QKV umgestellt hat.
+- Ob Ollama intern eine ältere oder gepatche Version des qwen35-Loaders nutzt (Ollama kann das Modell laden).
+- Ob die `ssm_dt.bias`-Umbenennung und die QKV-Fusion gleichzeitig eingeführt wurden, oder ob es ein zweistufiger Übergang war.
+
+*Was Ich Verstehe:* Zwei getrennte Probleme bei den HauhauCS-GGUFs:
+
+**Problem 1 — rope.dimension_sections (behoben):** …
+
+*Was Konzeptionell:* Das Hauptziel war **echte Parallelität**: mehrere Wesen-Chats gleichzeitig, keine Queue. Das ist jetzt erreicht — aber über Ollama, nicht über llama.cpp direkt:
+
+`OLLAMA_NUM_PARALLEL=2` in `/etc/systemd/system/ollama.service.d/override.conf`. …
+
+*Was Mich Beschaeftigt:* Drei Ebenen von Kompatibilitätsproblemen, Schicht für Schicht:
+1. GGUF-Metadaten (rope.dimension_sections) → gepatcht
+2. Tensor-Namen (ssm_dt → ssm_dt.bias) → Source-Fix und Rebuild …
+
+*Was Mich Interessiert:* Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale Attention im Wechsel (alle 4 Blöcke ein Attention-Block, die anderen 3 lineare Attention). Das ist eine echte Hybrid-Architektur für Sequenzverarbeitung ohne volles Quadrat-Attention.
+
+*Was Mich Ueberrascht:* Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht einfach "Qwen 3.5". Die Benennung ist irreführend. `qwen3` in llama.cpp = reines Transformer-Modell. `qwen35` = Gated Delta Net Hybrid. Das HauhauCS-Modell ist tatsächlich so eine Hybrid-Architektur.
+
+*Was Zusammenhaengt:* - HauhauCS = fine-tune auf fredrezones55-Base, selbst ein Qwen3.5-27B-Derivat
+- Die GGUF-Konvertierung war zu einem Zeitpunkt wo llama.cpp qwen35 noch anders strukturiert war
+- Ollama verwendet llama.cpp intern, aber mit eigenen Patches und verzögerter Adoption neuer Architektur-Änderungen
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:**
+Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), dann parallele Slots als architektonisches Fundament — danach erst die Backend-Migration der Dienste.
+ …
+
+*Wie Sich Angefuehlt:* Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte das nächste Problem auf. Aber das ist ehrlich — so ist Systemarbeit. Der Endpunkt (Parallelbetrieb via Ollama) ist stabiler als erwartet.
 
 ---

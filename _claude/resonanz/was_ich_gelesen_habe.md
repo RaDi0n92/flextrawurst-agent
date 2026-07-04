@@ -1427,3 +1427,19 @@ Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.
 Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
 
 Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die Session begann mit dem Ziel, alle Ollama-Dienste auf llama.cpp (llama-server) umzustellen — wegen echter Parallelität. Gleichzeitig wurden in einer Vorsession TTS, serverseite Chat-History und UI-Änderungen am wesen_chat gebaut.
+
+Ich habe dabei intensiv die llama.cpp-Quelltexte gelesen — `src/models/qwen35.cpp`, `src/models/qwen35moe.cpp`, `src/llama-arch.cpp`, `src/llama-model-loader.cpp` — und verstanden wie das neue `qwen35`-Architekturmodell in llama.cpp aufgebaut ist: ein Hybrid aus Gated Delta Net (SSM-ähnliche lineare Attention) und klassischer Attention, mit strenger Tensor-Validierung.
+
+Die HauhauCS-GGUF-Dateien (`sha256-9ce3...` und `sha256-c707...`) waren für eine ältere Konvertierungsversion gedacht und sind mit dem aktuellen llama.cpp-HEAD unkompatibel.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Am Anfang der Session: den kompletten Kontext-Wiederherstellungs-Ritus (Notizen, Codex-Import, Werkraum-Karte, Resonanzfeld, Vision-Referenzbild, 490-Punkte-Liste, Delta-Skript, Briefkasten). Delta war leer. Dann `/resume` mit einer Session-ID die fälschlich den Autoresearch-Skill traf statt der echten Session — musste die rohe `.jsonl`-Transkriptdatei selbst lesen um den echten Kontext zu rekonstruieren (Fehlerbild: 400 Bad Request im Wesen-Chat wegen fehlender IME-Komposition-Prüfung).

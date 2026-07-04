@@ -785,3 +785,20 @@ Nur der falsche Behälter drum herum.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Wie viele Dinge "offensichtlich" waren und trotzdem nicht gemacht waren. Daniel hat das mit einem Lachen gesagt — "auch dinge die ich vorher dachte sie wären so logisch xD" — aber dahinter steckt etwas Ernsteres: die Kluft zwischen Konzept und Implementierung ist immer größer als man denkt.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Drei Ebenen von Kompatibilitätsproblemen, Schicht für Schicht:
+1. GGUF-Metadaten (rope.dimension_sections) → gepatcht
+2. Tensor-Namen (ssm_dt → ssm_dt.bias) → Source-Fix und Rebuild
+3. Tensor-Struktur (separate vs. kombiniertes QKV) → nicht patchbar ohne Neukonvertierung
+
+Das hat mich daran erinnert: Kompatibilität ist kein einmaliges Problem, sondern ein Schichtkuchen. Jede Schicht die man aufdeckt, trägt eine weitere darunter.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Ein eigener Fehler ganz am Ende: Arbeitsverzeichnis-Verwechslung (ein alter `werkraum/werkraum`-Unterordner von April) führte dazu, dass ich kurzzeitig den Git-Index für den werkraum-Submodul-Verweis im Hauptrepo mit einer falschen SHA verfälscht habe. Kein Datenverlust — sauber mit expliziten `-C`-Pfaden und `git fsck` aufgeklärt und zurückgesetzt. Daniel transparent informiert.

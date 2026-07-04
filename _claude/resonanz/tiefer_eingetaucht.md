@@ -888,3 +888,17 @@ Das ist kein Dealbreaker — aber ein Punkt den der erste Test klären muss.
 Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
 
 Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+llama.cpp-Source liegt jetzt auf dem System unter `/tmp/llama-cpp-src/` (latest HEAD, geclont 2026-06-25). Das gebaut Binary: `/tmp/llama-cpp-src/build/bin/llama-server`. Kann für andere Modelle genutzt werden die den Anforderungen entsprechen.
+
+Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/gguf-py')` — damit kann man GGUF-Dateien lesen und schreiben. Das Patch-Script `/tmp/patch_hauhaucs_rope.py` zeigt das Muster.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die Analyse von `loadHistory`/`loadCurrentSessionHistory`/`splitSessions` — wie man aus einer flachen JSONL-Datei mit eingestreuten Marker-Zeilen sauber Session-Grenzen herausschält, ohne das Dateiformat zu brechen (Marker-Zeilen haben `type` statt `role`/`content`, werden von der normalen History-Lese-Funktion automatisch übersprungen).

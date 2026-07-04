@@ -2117,3 +2117,18 @@ Das JSONL einer Session sollte ein vollständiges Protokoll sein — jemand der 
 }
 ```
 `overlays` fehlen noch in der Assistenten-Zeile — die sind aktuell nur im systemBase zusammengeführt, nicht einzeln.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+**Vision-Schicht:**
+Die Parallelität als erstes Bürgerrecht der Wesen — kein Wesen wartet auf ein anderes. Jedes Gespräch hat seinen eigenen Slot im Modell.
+
+**Code-Skizze:**
+```
+Ollama: OLLAMA_NUM_PARALLEL=2
+→ Zwei simultane KV-Cache-Slots
+→ /api/chat Requests laufen echt gleichzeitig
+→ Wesen A antwortet während Wesen B denkt
+```

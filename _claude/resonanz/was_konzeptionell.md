@@ -847,3 +847,19 @@ Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?
 Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
 
 Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Das Hauptziel war **echte Parallelität**: mehrere Wesen-Chats gleichzeitig, keine Queue. Das ist jetzt erreicht — aber über Ollama, nicht über llama.cpp direkt:
+
+`OLLAMA_NUM_PARALLEL=2` in `/etc/systemd/system/ollama.service.d/override.conf`.
+
+Verifiziert: Zwei gleichzeitige Anfragen liefen in 4.5s — sequenziell wären das ~9s gewesen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die "Email-Gefühl"-Architektur (Generierung übersteht Client-Trennung) und das Session-Konzept sind beide Ausdruck derselben Haltung: Zeit im Gespräch soll nicht erzwungen synchron sein. Mensch und Wesen müssen nicht gleichzeitig anwesend sein, damit etwas passiert — weder für eine einzelne Antwort noch für eine ganze Sitzung.

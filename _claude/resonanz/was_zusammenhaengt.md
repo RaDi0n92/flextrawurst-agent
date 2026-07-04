@@ -899,3 +899,17 @@ Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kom
 Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
 
 Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- HauhauCS = fine-tune auf fredrezones55-Base, selbst ein Qwen3.5-27B-Derivat
+- Die GGUF-Konvertierung war zu einem Zeitpunkt wo llama.cpp qwen35 noch anders strukturiert war
+- Ollama verwendet llama.cpp intern, aber mit eigenen Patches und verzögerter Adoption neuer Architektur-Änderungen
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Container (session-lokal, Budget-basiert) → Memory-Extraktion (async, human-getriggert) → Session-Ende (Marker + Extraktion + Container-Leerung) → Session-Browser (alte Sessions read-only) sind vier Teile eines einzigen Kreislaufs: das Akute wird gepinnt, beim Sessionende in Dauerhaftes verdichtet, die rohe History bleibt lesbares Archiv aber nicht mehr aktiver Kontext. Das Kontextfenster-Meter macht sichtbar warum das nötig ist (8192 Token sind schnell voll).

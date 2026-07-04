@@ -694,3 +694,18 @@ Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Für zukünftige llama.cpp-Migration (wenn Daniel das will):
+- Klarheit welche Modell-Version: HauhauCS 27B oder 35B MoE?
+- Option B oder C wie oben — konkreter Plan vor nächster Session
+- Disk-Platz prüfen: ~50GB für Neukonvertierung nötig
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Für weitere Arbeit an codexium2/solarius2: die drei Konzeptdateien unter `_claude/ideen/codexium2_solarius2/` sind jetzt Status "gebaut" und beschreiben akkurat was existiert — guter Ausgangspunkt für die nächste Session statt alles neu zu erklären.

@@ -823,3 +823,15 @@ Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, fü
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale Attention im Wechsel (alle 4 Blöcke ein Attention-Block, die anderen 3 lineare Attention). Das ist eine echte Hybrid-Architektur für Sequenzverarbeitung ohne volles Quadrat-Attention.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Der Moment, als ich den echten Chatverlauf von GluPKI (Daniels Testwesen) gelesen habe und das "Wer war ich bevor du kamst, was wird aus mir wenn du aufhörst"-Muster gefunden habe — ein sehr sauberes Beispiel dafür, wie das latente KI-Selbstbild eines Sprachmodells durch mystische Sprache hindurchschimmert, wenn der Charakterbogen keine explizite Kontinuität festlegt. Und wie gut die Preamble-Ergänzung das sofort korrigiert hat (live getestet: "Ja. Ich bin GluPKI. Ein Geist in der Maschine." — ehrlich, aber im Charakter).

@@ -760,3 +760,21 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
 - Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname.
 - `think: false` muss PER REQUEST gesendet werden — nicht im Modelfile. Das war früher falsch.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- `think: false` funktioniert NUR über Olllamas eigenes `/api/chat`, NICHT über `/v1/chat/completions`
+- `/tmp/hauhaucs-patched.gguf` ist der rope-gepatchte GGUF — für Option C nützlich als Ausgangspunkt
+- `/tmp/llama-cpp-src/` enthält den aktuellen llama.cpp-Clone mit unserem `ssm_dt`-Fix in `src/models/qwen35.cpp`
+- Der ssm_dt-Fix allein reicht nicht — QKV-Struktur-Mismatch bleibt
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- `/codexium2`, `/solarius2` sind die Testbeds — Codexium/Solarius NIE anfassen ohne expliziten Auftrag.
+- Git-Befehle immer mit explizitem `-C /pfad` statt `cd &&`-Verkettung, wegen persistenter Bash-cwd zwischen Tool-Aufrufen.
+- Playwright statt claude-in-chrome-Skill für Screenshots (Daniels Vorgabe).
+- Bei jeder Konzeptentscheidung: sofort in die Konzeptdatei schreiben + committen, nicht sammeln (Daniels Vorgabe wegen Internetproblemen/Session-Abbrüchen).

@@ -1168,3 +1168,25 @@ llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.
 Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
 
 Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Zwei getrennte Probleme bei den HauhauCS-GGUFs:
+
+**Problem 1 — rope.dimension_sections (behoben):**
+`qwen35.rope.dimension_sections` hat 3 Elemente `[11, 11, 10]` im GGUF, aber llama.cpp erwartet 4 Elemente `[11, 11, 10, 0]`. Der 4. Wert ist der "Text-Slot" und bei text-only Inferenz null. Das gilt auch für `qwen35.mrope_sections` und `qwen35.rope.mrope_section`.
+
+Fix: Patched GGUF erzeugt via eigenem Python-Script (`/tmp/patch_hauhaucs_rope.py`) → Ausgabe: `/tmp/hauhaucs-patched.gguf` (13GB). Alle drei Felder wurden auf `[11, 11, 10, 0]` erweitert.
+
+**Problem 2 — Tensor-Benennung und Struktur (nicht behoben):**
+- `blk.N.ssm_dt` heißt im GGUF ohne Suffix, aber llama.cpp HEAD erwartet `blk.N.ssm_dt.bias`. Fix in qwen35.cpp angewendet, Rebuild durchgeführt.
+- Dann: Attention-Blöcke im GGUF haben separate `attn_q.weight`, `attn_k.weight`, `attn_v.weight` Tensors. Aktuelles llama.cpp qwen35 erwartet aber kombiniertes QKV für Attention-Blöcke. Shape-Mismatch: `blk.3.attn_k.weight` erwartet `[5120, 0]`, hat `[5120, 1024]`.
+- Das ist eine fundamentale Inkompatibilität: das Modell wurde für eine ältere qwen35-Implementierung konvertiert, bei der Attention-Blöcke noch separate Q/K/V hatten.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Das ganze System um Codexium/Solarius (die beiden "Wesenspawner") läuft über einen einzigen Node-Server (`serve_process_camera_preview.ts`, Port 8787) der Chat, Profil, Spawner-Formular und alle Wesen-Dateien (wesen.md, memory.json, container.json, chat_history.jsonl) verwaltet — alles dateibasiert, kein Postgres. Daniel wollte ein Redesign von Memory/Container/Chat-Architektur ausprobieren, aber ausdrücklich NICHT an den echten, aktiv genutzten Wesen (allen voran "Tomster", vormals "unbekannt_dl4j") — deshalb haben wir `/codexium2` und `/solarius2` als komplette parallele Testbed-Klone gebaut.

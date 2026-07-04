@@ -650,3 +650,15 @@ bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+`OLLAMA_NUM_PARALLEL=2` ist der echte Gewinn der Session. Nicht als geplanter Erfolg, sondern als pragmatische Lösung nachdem llama.cpp-Migration blockiert war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+`serve_process_camera_preview.ts` ist ursprünglich ein reiner Preview-Server für die Prozesskamera gewesen (Ring 22) und hat sich zum zentralen Wesen-Chat-Server ausgewachsen — daher der Name, der nichts mehr mit seiner heutigen Hauptaufgabe zu tun hat.

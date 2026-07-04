@@ -753,3 +753,18 @@ Alles andere ist Planung auf Papier bis dahin.
 Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
 
 ---
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Daniel "los" sagt zu llama.cpp: dann erst B oder C umsetzen, dann Backend-Migration, dann Tests.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- Warteschlange für parallele Nachrichten (codexium2/solarius2)
+- Client-Benachrichtigung bei fertiger Hintergrund-Antwort ohne manuelles Neuladen
+- Exaktes Nachmessen der Zeichenbudgets an echten Feldgrößen
+- Offene Frage von vorhin noch unbeantwortet: soll `wesen.md` von Tomster den Namen fest reinschreiben? (Daniel: nein, Tomster weiß es aus dem Gespräch — erledigt, keine Aktion nötig)

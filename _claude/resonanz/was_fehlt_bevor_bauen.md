@@ -755,3 +755,17 @@ Danach: manueller Test bevor irgendein Service umgeleitet wird.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Nichts akut. Ollama mit PARALLEL=2 läuft. Wesen-Chats funktionieren. TTS funktioniert. Server-seitige History funktioniert.
+
+Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchieren.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Nichts akut blockierendes. Offen für später: Warteschlange bei mehreren Nachrichten hintereinander vor Antwort, Client-Benachrichtigung wenn eine Antwort fertig ist ohne manuelles Neuladen, exaktes Nachmessen der Zeichenbudgets (2500/1200 sind Schätzwerte).

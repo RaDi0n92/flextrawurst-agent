@@ -890,3 +890,29 @@ Das Mischpult hat jetzt drei Schichten die wirklich tragen:
 3. **UI-Schicht:** Sidebar, Proto-Events, Badges — alles zeigt was wirklich passiert ist
 
 Was noch fehlt: eine vierte Schicht die sagt "diese drei Schichten sind konsistent". Aktuell kann die Datei weg sein aber der Index noch wissen. Das ist der nächste Schritt wenn es jemals nötig wird.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+```
+wesen_chat.html → serve_process_camera_preview.ts → Ollama /api/chat
+                                                   → OLLAMA_NUM_PARALLEL=2
+                                                   → hauhaucs-tuned:latest
+```
+
+Die TTS-Schicht liegt parallel dazu — `/tts/speak` → edge-tts → Katja-Stimme.
+Server-seitige History: JSONL per Wesen, kein localStorage mehr.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+```
+wesen_chat.html (Pin/Container/Memory/Sessions-UI, nur codexium2/solarius2)
+  → serve_process_camera_preview.ts (Routing, Budget-Checks, Session-Splitting)
+    → chat_history.jsonl (rohe Wahrheit, mit session_start-Markern durchsetzt)
+    → memory.json / container.json (verdichtete/aktuelle Erinnerung)
+    → _wesen_preamble.md (global, immer zuerst — jetzt mit Kontinuität+Anti-KI-Simulation+Meta-Ehrlichkeit)
+    → Ollama /api/chat (Generierung, async vom Client entkoppelt bei Testbed-Spawnern)
+```

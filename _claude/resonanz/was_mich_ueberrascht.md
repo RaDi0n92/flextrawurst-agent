@@ -744,3 +744,15 @@ hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht einfach "Qwen 3.5". Die Benennung ist irreführend. `qwen3` in llama.cpp = reines Transformer-Modell. `qwen35` = Gated Delta Net Hybrid. Das HauhauCS-Modell ist tatsächlich so eine Hybrid-Architektur.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Wie sauber und schnell die Extraktion tatsächlich funktioniert hat, sobald sie lief — "Der Nutzer heißt Daniel und mag Zwiebelkuchen sehr" wurde korrekt in zwei Kategorien aufgeteilt (`Name: Daniel` unter über_mich, `Mag Zwiebelkuchen sehr.` unter meinungen), ganz ohne Nacharbeit.
