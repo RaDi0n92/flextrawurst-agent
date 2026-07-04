@@ -114,3 +114,11 @@ interface Memory {
 - Pin-Button + Modal, Container-Popup, Memory-Popup: `wesen_chat.html`
 - Human-getriggerte async Memory-Extraktion: `POST .../memory/extrahieren` + `GET .../memory/extraktion-status`
 - Die vorläufigen Budgetwerte (2500/1200 Zeichen) sind live und wurden noch nicht mit echten langen wesen.md-Feldern gegengemessen — falls das Kontextfenster im echten Betrieb eng wird, hier nachjustieren.
+
+### Nachtrag 2026-07-04 (Abend) — Satzauswahl per Checkbox statt Text-Selektion
+
+Der ursprüngliche Plan ("Ganze Nachricht ODER markierte Sätze markieren") war als Browser-Text-Selektion umgesetzt — funktionierte am Desktop, aber auf dem Handy nicht: Text per Finger markieren und danach einen Button daneben antippen lässt die Selektion auf OS-Ebene kollabieren, bevor das Pinnen überhaupt greift. Kein JS-Fix möglich (siehe `feedback_stimme_diktat.md` für den vorherigen, nicht ausreichenden Anlauf mit `mousedown.preventDefault()` — der half nur bei Maus-Klicks).
+
+Neuer Ansatz: Pin-Button zerlegt die Nachricht per Satzgrenzen-Regex in einzelne Sätze und zeigt sie als Checkbox-Liste im Modal. Jeder angehakte Satz wird als eigener Container-Eintrag gepinnt (gleicher Kommentar für alle in einem Durchgang gewählten). Kein Markieren mehr nötig, funktioniert gleich auf Touch und Maus.
+
+Zusätzlich neuer Button „🧠+" (Sätze direkt einer Memory-Kategorie zuordnen, ohne den Umweg über die LLM-Extraktion) — selbe Checkbox-Liste, dazu ein Kategorie-Dropdown (`ueber_mich`/`wichtige_momente`/`offene_fragen`/`meinungen` — `wesen_selbst` bleibt dem Wesen vorbehalten, wie schon bei der Extraktion).
