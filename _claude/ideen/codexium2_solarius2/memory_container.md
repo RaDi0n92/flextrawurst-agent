@@ -23,7 +23,15 @@ Das alte Zwischenwesen-Konzept (`_claude/ideen/zwischenwesen/container.md`, `mem
 
 ## Was ich verstehe
 
-**Container** = was gerade akut in diesem einen Gespräch zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt (max. ~8 Einträge) — wenn voll, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+**Container** = was gerade akut in diesem einen Gespräch zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+
+### Pin-Mechanismus (entschieden 2026-07-04)
+
+Ein Button an jeder Nachricht im Chat. Klick öffnet die Auswahl:
+1. Ganze Nachricht pinnen, ODER einzelne Sätze innerhalb der Nachricht markieren und nur die pinnen.
+2. Darunter ein optionales Kommentarfeld, **max. 88 Zeichen** — kurze Begründung warum das gespeichert werden soll ("warum wichtig").
+
+Der Kommentar hängt am Pin-Eintrag dran (Container). Er ist auch die Grundlage für die spätere Memory-Extraktion — der Mensch sagt in einem Satz warum es zählt, das hilft der KI später (asynchron, siehe `chat_architektur.md`) einzuordnen in welche Memory-Kategorie es gehört.
 
 **Memory** = was das Wesen wirklich dauerhaft trägt, über das einzelne Gespräch hinaus. 5 Kategorien (bewusst kleiner als die 7 vom Zwischenwesen-Konzept, das war für die 24h-Flüchtlinge gedacht):
 
@@ -47,6 +55,18 @@ Explizit KEINE DB — bleibt bei Dateien (memory.json/container.json pro Wesen),
 
 ---
 
+## Budget statt Max-pro-Kategorie (entschieden 2026-07-04)
+
+Kein fixer Max-Wert pro Memory-Kategorie. Stattdessen ein **Gesamt-Zeichenbudget**, hergeleitet aus dem Kontextfenster (HauhauCS läuft mit `num_ctx=8192`, siehe Claude-Memory `project_ollama_setup`). Das Budget muss neben System-Prompt (alle wesen.md-Dateien, teils bis 1337 Zeichen pro Feld), Chat-History und Ollama-Antwort-Reservierung (`num_predict:400`) noch Platz lassen.
+
+Vorläufiger Vorschlag als Startwert (nicht in Stein gemeißelt, wird beim Bauen anhand echter Feldgrößen nachgemessen):
+- Memory gesamt: ~2500 Zeichen (über alle 5 Kategorien verteilt, keine Kategorie einzeln gedeckelt)
+- Container gesamt: ~1200 Zeichen (inkl. der 88-Zeichen-Kommentare)
+
+Wenn ein neuer Eintrag das Budget sprengen würde: UI verweigert das Speichern, Mensch muss erst etwas entfernen. Kein automatisches Kürzen/Verdrängen.
+
+---
+
 ## Datenstruktur die ich mir vorstelle
 
 ### Vision-Schicht
@@ -54,15 +74,21 @@ Container ist der Ort für das Akute — was gerade zwischen Mensch und Wesen br
 
 ### Code-Skizze
 ```typescript
+const CONTAINER_BUDGET_ZEICHEN = 1200; // vorlaeufig, siehe "Budget statt Max-pro-Kategorie"
+const MEMORY_BUDGET_ZEICHEN = 2500;    // vorlaeufig
+const PIN_KOMMENTAR_MAX = 88;
+
 // container.json (pro Wesen, /root/werkraum/codexium2/<name>/container.json)
 interface Container {
   eintraege: Array<{
     id: string;
-    text: string;
+    text: string;               // ganze Nachricht ODER markierte Saetze
+    kommentar?: string;         // max PIN_KOMMENTAR_MAX Zeichen, "warum wichtig"
     quelle: "mensch" | "wesen";
-    hinzugefuegt_am: string; // ISO
+    hinzugefuegt_am: string;    // ISO
   }>;
-  // max 8 — UI verweigert neue Eintraege wenn voll, bis manuell entfernt wird
+  // Summe aller text+kommentar Laengen <= CONTAINER_BUDGET_ZEICHEN
+  // UI verweigert neuen Pin wenn Budget ueberschritten wuerde, bis manuell entfernt wird
 }
 
 // memory.json (pro Wesen)
@@ -74,6 +100,8 @@ interface Memory {
     wesen_selbst: string[]; // vom Wesen selbst geschrieben
     meinungen: string[];
   };
+  // Summe aller Zeichen ueber alle Kategorien <= MEMORY_BUDGET_ZEICHEN
+  // keine einzelne Kategorie hat einen eigenen Max-Wert
 }
 ```
 
@@ -82,5 +110,4 @@ interface Memory {
 ## Was noch fehlt bevor wir bauen können
 
 - Genaue UI der Popups (Layout, wo im Chat-Header die Buttons sitzen)
-- Wie genau der Mensch die Memory-Extraktion "triggert" (Button? Slash-Befehl im Chat?)
-- Ob es einen Max-Wert pro Memory-Kategorie gibt (alte Konzept hatte z.B. max. 10-15 pro Kategorie) — noch nicht mit Daniel besprochen
+- Exaktes Zeichenbudget nachmessen (echte Feldgroessen aus wesen.md-Dateien + History-Anteil einrechnen, bevor die vorlaeufigen 2500/1200 fix werden)
