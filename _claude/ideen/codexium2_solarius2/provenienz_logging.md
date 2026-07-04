@@ -64,3 +64,21 @@ Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen k
 ## Was fehlt noch
 
 Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+---
+
+## Nachtrag 2026-07-04 (Abend) — Nachrichten ganz/satzweise aus dem Kontextfenster nehmen
+
+Direkte Folgeanfrage: "wie im Mischpult" sollte man jede Nachricht aus dem Kontextfenster entfernen können — "noch krasser": beim Antippen einer Nachricht auch satzweise. Wichtiger Unterschied zum Mischpult-Vorbild: dort gibt es nur einen einzigen Cutoff-Index (`ctxStart`, alles davor pauschal archiviert). Hier wollte Daniel gezieltes Ein-/Ausschließen einzelner Nachrichten und sogar einzelner Sätze darin — eine feinere Granularität.
+
+**Bewusste Entscheidung: nichts löschen.** Das stünde im Widerspruch zum gerade gebauten Provenienz-Prinzip (siehe oben). Stattdessen: ein neuer Event-Typ `kontext_toggle` (`msgId`, `ganz`, `saetze: number[]`) — die Nachricht bleibt vollständig und für immer in `chat_history.jsonl`, nur ob sie beim nächsten Prompt an Ollama mitgeschickt wird, ändert sich. Mehrfaches Toggeln erzeugt mehrere Events, letzter gewinnt — auch das Umschalten selbst ist Provenienz (wer hat wann was wieder reingenommen).
+
+**Satz-Zählung serverseitig neu implementiert** (`splitSentencesServer`) statt der Chat-History-Zeile direkt zu vertrauen — muss exakt dieselbe Regex sein wie `splitSentences()` im Client, sonst zeigt das Modal andere Satzgrenzen als das was der Server tatsächlich rausfiltert. Beide Stellen kommentiert aufeinander verwiesen, falls die Regex mal geändert wird.
+
+**Verifikation ohne Ollama abzuwarten:** statt auf eine echte (oft minutenlange) Modellantwort zu warten um zu sehen was ankam, kurz eine Debug-Log-Zeile eingebaut (`DEBUG_KTX`-Env-Var), Server manuell mit der Variable gestartet, echten Request geschickt, im Log exakt gesehen was an Ollama gegangen wäre (ganze Nachricht fehlte, ein Satz aus einer anderen fehlte, Rest intakt), Debug-Zeile wieder entfernt. Schneller und eindeutiger als auf eine Modellantwort zu warten und daraus zu raten ob sie das Ausgeschlossene "gewusst" hat.
+
+### Umsetzung
+
+- Backend: `splitSentencesServer`, `ladeKontextAusschluesse` (scannt alle `kontext_toggle`-Events, letzter pro msgId gewinnt), `wendeKontextAusschlussAn` (Filterlogik), neuer Endpunkt `POST .../kontext-ausschluss`, `GET .../history` liefert `ausschluesse`-Map mit.
+- Frontend: neuer "✂️"-Button pro Nachricht, Modal mit "ganze Nachricht"-Checkbox + Satz-Checkliste (wiederverwendet `renderSentenceList`/`getCheckedSentences` aus dem Pin-Feature), visuelle Markierung (durchgestrichen bei Vollausschluss, Badge bei Teilausschluss), ctx-Meter zieht Ausgeschlossenes ab.
+- Getestet: Backend-Filterlogik direkt am tatsächlich gesendeten Payload verifiziert, UI-Fluss (Button → Modal → Satz abwählen → Badge erscheint) per Playwright — beide an Wegwerf-Testcharakteren, danach gelöscht.
