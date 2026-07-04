@@ -126,3 +126,19 @@ Nichts.
 - `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
 - Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
 - Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
+
+## Nachtrag (später, gleiche Nacht) — "Verbindungsfehler" bei KrEaPPy, zweimal falsch geraten bevor ich's hatte
+
+Daniel wollte KrEaPPy testen ("codexium kreappy") und bekam nur "Verbindungsfehler". Betrifft NICHT nur codexium2/solarius2, sondern den gemeinsamen Chat-Code aller vier Spawner — deshalb hier in der allgemeinen Notiz statt in einer der codexium2_solarius2-Konzeptdateien.
+
+**Erste Diagnose (falsch geraten, nicht verifiziert ausgesprochen):** ich vermutete zunächst dieselbe Server-Restart-Timing-Kollision wie beim früheren KreFsUzi-Fall. Auf Nachfrage direkt nachgeprüft statt bei der Vermutung zu bleiben — die letzte Server-Restart lag zu diesem Zeitpunkt schon 35 Minuten zurück, passte also nicht.
+
+**Zweite Diagnose (halb richtig):** `codexium/KrEaPPy` existiert tatsächlich nicht — der Charakter liegt nur unter `solarius/KrEaPPy`. Beim genauen Nachverfolgen mit einer kurzen, sofort wieder entfernten Debug-Log-Zeile (statt zu raten) gefunden: der fehlende Ordner ließ `appendHistory()` beim Schreibversuch werfen, ein generisches `.catch()` weiter unten schluckte das zu einem leeren, nichtssagenden 400. Gefixt: früher Existenz-Check gibt jetzt sofort `{"fehler":"charakter_nicht_gefunden"}` zurück, Frontend zeigt eine verständliche Meldung statt "[Verbindungsfehler]".
+
+**Dritte Runde — Daniel probierte danach `solarius/KrEaPPy` (korrekter Spawner) und bekam denselben Fehler.** Das war der eigentliche Kern: der tatsächliche Ordner heißt `KrEaPPy` (gemischte Groß-/Kleinschreibung), Daniels URL (`flextrawurst.de/solarius/kreappy`) war komplett klein — Linux-Dateisysteme sind case-sensitiv, meine erste Fix-Version hat exakte Schreibweise vorausgesetzt. Daniel bestätigte: "groß und kleinschreibung muss quasi egal sein" — und selbst sein manueller Versuch mit vermeintlich korrekter Groß-/Kleinschreibung ("großes E und PP") traf die tatsächliche Schreibweise nicht exakt, was die Notwendigkeit einer robusten Lösung nur bestätigt hat.
+
+**Eigentlicher Fix:** neue `resolveCharName(spawner, rawName)` — sucht bei jedem Charakter-Zugriff case-insensitiv im Ordner des Spawners und gibt die tatsächliche Schreibweise zurück, fällt beim Neuanlegen (kein Treffer) auf den eingegebenen Namen zurück. Ersetzt an 24 Stellen im Routing die bisherige reine `sanName()`-Sanitierung — auch beim Speichern (`/wesen/save`), damit ein Resave mit abweichender Schreibweise keinen doppelten Ordner anlegt, sondern den bestehenden trifft.
+
+**Was ich daraus mitnehme:** zwei Ratefehler hintereinander (Restart-Timing, dann "nur" Spawner-Verwechslung) bevor die eigentliche, tiefere Ursache (Case-Sensitivität) sichtbar wurde. Jedes Mal war die Verifikation (Timestamps prüfen, Debug-Log, direkter Test mit expliziten Case-Varianten) das, was die falsche Spur beendet hat — nicht das Nachdenken allein. "Ich habe eine Idee" ist nicht dasselbe wie "ich habe es geprüft".
+
+Getestet: mehrere Case-Varianten (`kreappy`, `KREAPPY`, `kReAppY`) unter dem richtigen Spawner akzeptiert, falscher Spawner weiterhin klar `charakter_nicht_gefunden`, bestehender Charakter (Tomster) unter beiden Schreibweisen erreichbar, Neuanlegen behält gegebene Schreibweise, Resave mit anderer Schreibweise trifft bestehenden Ordner statt Duplikat. Alles an Wegwerf-Charakteren (`CaseTest`) verifiziert und wieder gelöscht.

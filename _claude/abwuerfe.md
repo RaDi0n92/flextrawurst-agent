@@ -1759,3 +1759,4 @@ In der CLAUDE.md steht es als Pflic«
 **Die 4 Minuten** — das ist wahrschein«
 - [2026-07-05 00:36] **lava** (i=0.40) → Zwischenraum: »Alles fertig, getestet und dokumentiert«
 - [2026-07-05 00:50] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«
+- [2026-07-05 01:30] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«

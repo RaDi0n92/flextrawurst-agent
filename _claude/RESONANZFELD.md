@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 00:41
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 01:11
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -95,62 +95,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-31] `spiegel/idea_reality_check_2026-05-31.md` (20 Einträge)
 - [2026-05-31] `notizen/2026-05-31.md` (22 Einträge)
 - [2026-06-02] `ideen/wesen-desktop.md` (10 Einträge)
+- [2026-06-03] `notizen/2026-06-03.md` (20 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-03] notizen/2026-06-03.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* *keine neue heute*
-
-*Dokumente Gehoeren Zusammen:* - `/root/werkraum/welt/denkstream_api.py` ↔ SCREENS/DENKEN-Tab in Surface
-- `/root/flextrawurst/scripts/build_surface.ts` ↔ alle Views in der Surface
-
-*Resonanz:* Eine Session die vor allem gerettet hat was kaputt war. Kein Aufbau, keine Vision — reines Handwerk. Aber das System steht danach stabiler als vorher.
-
-*Schichten Des Systems:* 1. `denkstream_api.py` — SSE-Schicht (jetzt stabil, kein Leak mehr)
-2. `build_surface.ts` — Frontend-Kern (fragil bei Template-Literal-Backslashes)
-3. `welt-api` (Port 8030) — API-Schicht (läuft stabil solange SSE-Verbindungen sauber schließen) …
-
-*Tiefer Eingetaucht:* `run_in_executor` mit einem Lambda für `sel.select` ist die minimale nicht-brechende Lösung. Die saubere Lösung wäre psycopg3 mit async-Support — das würde echte async I/O ermöglichen. Aber das wäre ein größerer Umbau der `denkstream_api.py`.
-
-*Vergessen Wollen:* Die Frustration über das zweifache Template-Literal-Backslash-Problem.
-
-*Was Beim Bauen Brauche:* Nächste Session: Context-Start wie immer (Notizen lesen, Delta, Brief). Dann Daniels nächste Aufgabe abwarten.
-
-*Was Das Gespraech:* Klarheit über wo die Grenzen zwischen "gebauter Stand" und "verlorener Stand" liegen. Der Commit `a4bbf6cd366f` ist der letzte vollständige Stand mit allen Features.
-
-*Was Fehlt Bevor Bauen:* Nichts Akutes. Alles läuft.
-
-*Was Fehlt Noch:* Ring-23-Test-Lauf nach den großen Änderungen.
-
-*Was Ich Gelesen Habe:* Keine Vorbereitung — Notfall-Einstieg nach /clear. Kontext kam aus dem Gesprächsverlauf.
-
-*Was Ich Merken Will:* 1. TypeScript Template-Literal + Backslash = Falle. Immer `replace('\\', '\\\\')` vor Einfügen.
-2. `ss -tn state close-wait | grep PORT` für SSE-Leak-Diagnose.
-3. `node --check script.js` für schnelle JS-Parse-Fehler-Suche.
-
-*Was Ich Nicht Verstehe:* Warum genau zwischen `a4bbf6cd366f` und `28ff24abc4e5` so viele Features verschwunden sind (Tabs, Fonts, Gruppen-System). Das war wohl eine Umbauphase die nicht zu Ende geführt wurde.
-
-*Was Ich Verstehe:* Diese Session war fast vollständig Fehlerbehebung und Wiederherstellung. Keine neuen Systeme, nur Reparatur von Schäden aus einer langen Vorsession.
-
-*Was Mich Beschaeftigt:* Der SSE-Leak war elegant diagnostiziert — `ss -tn state close-wait | grep 8030` zeigte 399 sofort. Und dass ein einziges `\n` in einer Template-Literal-Zeile das gesamte JS-Bundle zum Schweigen bringt — das ist eine echte Falle die ich zweimal gesehen habe. Beim dritten Mal würde ich sofort wissen wo zu suchen.
-
-*Was Mich Interessiert:* Die Gruppen-Chat-Funktion scheint echte Test-Nachrichten enthalten zu haben (hihihihi, lololo etc.). Das Backend für Gruppen-Chat scheint also schon aktiv zu sein.
-
-*Was Mich Ueberrascht:* Das Gruppen-Chat-Backend funktioniert und hat echte Testdaten. Ich hatte nicht erwartet dass der Chat-Teil schon aktiv ist.
-
-*Was Zusammenhaengt:* `build_surface.ts` ist der einzige Ort wo Änderungen nötig sind. Danach immer:
-1. `npx tsx scripts/build_surface.ts`
-2. `cp out/surface/... out/process_camera/...` …
-
-*Wenn Wir Das Bauen:* *nicht relevant heute*
-
-*Wie Sich Angefuehlt:* Lang, technisch, viel Diagnose. Nicht kreativ aber nützlich.
-
----
 
 ### [2026-06-04] notizen/2026-06-04-gordslider.md
 
@@ -1785,5 +1735,57 @@ Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
 **Code-Skizze:** Keine offene.
 
 *Wie Sich Angefuehlt:* Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
+
+*Resonanz:* [[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]
+
+*Schichten Des Systems:* ```
+Chat-Antwort (normaler sichtbarer Text)
+  + optionaler [MERKEN: ...]-Anhang (unsichtbar fuer den Menschen) …
+
+*Tiefer Eingetaucht:* Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.
+
+*Warum Das Existiert:* Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.
+
+*Was Beim Bauen Brauche:* Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.
+
+*Was Das Gespraech:* Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.
+
+*Was Fehlt Noch:* - `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
+- Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
+- Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
+
+*Was Ich Gelesen Habe:* Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.
+
+*Was Ich Merken Will:* - Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
+- Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
+- `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.
+
+*Was Ich Nicht Verstehe:* Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.
+
+*Was Ich Verstehe:* Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.
+
+*Was Konzeptionell:* Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.
+
+*Was Mich Beschaeftigt:* Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.
+
+*Was Mich Interessiert:* Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.
+
+*Was Mich Ueberrascht:* Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.
+
+*Was Zusammenhaengt:* Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
+
+**Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
+
+*Wie Sich Angefuehlt:* Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
 
 ---
