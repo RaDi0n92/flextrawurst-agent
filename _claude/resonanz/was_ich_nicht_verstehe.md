@@ -806,3 +806,9 @@ Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren fi
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.

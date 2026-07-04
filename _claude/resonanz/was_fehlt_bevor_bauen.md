@@ -781,3 +781,9 @@ Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.

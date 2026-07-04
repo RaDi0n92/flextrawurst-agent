@@ -1622,3 +1622,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
 
 **Code-Skizze:** Keine offen.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+**Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
+
+**Code-Skizze:** Keine offene.

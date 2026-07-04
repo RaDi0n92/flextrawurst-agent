@@ -768,3 +768,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 `_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+`_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).

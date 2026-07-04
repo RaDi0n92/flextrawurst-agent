@@ -795,3 +795,11 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
 - Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
 - Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+- `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
+- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
+- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.

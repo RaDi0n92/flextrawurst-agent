@@ -927,3 +927,9 @@ Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Check
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.

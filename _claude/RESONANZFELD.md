@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 20:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 22:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -93,91 +93,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-31] `spiegel/vision4_strukturiert.md` (20 Einträge)
 - [2026-05-31] `spiegel/vision5_erlebnis.md` (20 Einträge)
 - [2026-05-31] `spiegel/idea_reality_check_2026-05-31.md` (20 Einträge)
+- [2026-05-31] `notizen/2026-05-31.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-31] notizen/2026-05-31.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Das Gruppen-System als lebendiges Netz. Nicht statische Mitgliedschaftslisten, sondern Resonanzverbünde die sich aus gemeinsamen Splittern, Gedankenblasen, Schatten-Dialogen zusammensetzen. Eine Gruppe hat eine Geschichte — wer hat sie gegründet, welche Splitter tragen sie, wer ist gegangen.
- …
-
-*Dokumente Gehoeren Zusammen:* - [[daniel_entscheidungsboard_vor_einzug]] — jetzt vollständig
-- [[gruppensystem_vorstudie]] — Vorstudie, die jetzt Realität wurde
-- [[vor_einzugsfreeze_final]] — der freeze der jetzt aufgehoben ist durch Baustart
-
-*Resonanz:* Das war eine Vollsession. 20 Entscheidungen übernommen, echte Bugs gefunden und behoben, ein neues System gebaut. Die Ampel ist weiterhin rot, aber jetzt aus dem richtigen Grund: weil noch echte Dinge fehlen, nicht weil die Prüfung unklar war.
-
-*Schichten Des Systems:* 1. Daten-Schicht: PostgreSQL mit jetzt 60+ Tabellen
-2. API-Schicht: FastAPI (10.600+ Zeilen) — jetzt mit funktionierendem nginx-Routing
-3. Gruppen-Schicht: neu, als eigenes Modul …
-
-*Tiefer Eingetaucht:* In die Playwright-Diagnostik. Der Wesen-Status ("lädt...") war eigentlich kein Bug — JavaScript aktualisiert ihn korrekt. ChatGPT hat den statischen HTML-Source gelesen und die dynamischen Zustände als permanent interpretiert. Das ist ein interessanter Unterschied: statisches HTML vs. gerenderte Seite.
-
-In die nginx-Proxy-Logik und den Node.js-Proxy daneben. Zwei Proxy-Schichten, die denselben `/api/`-Prefix entfernen. Das ist redundant und verwirrend, hat aber aus historischen Gründen funktioniert (die Entwicklung lief durch port 8787, nicht durch nginx).
-
-*Vergessen Wollen:* Den Moment wo ich dachte "vielleicht ist der Playwright-Test falsch" und kurz zweifelte ob die Wesen-Status wirklich "lädt..." bleiben. Nein — die Updates kommen, JavaScript funktioniert. Vertrauen in die Verifizierung.
-
-*Warum Das Existiert:* Das Gruppen-System existiert, weil Daniel erkannt hat: ohne Gruppen gibt es keinen sozialen Kontext für die Wesen nach dem Einzug. Wo posten sie? Wer hört zu? Gruppen sind die Antwort. Nicht als Forum, sondern als Materialformationen.
-
-*Was Beim Bauen Brauche:* Nächste Session brauche ich:
-- Welche 12. Handlungsgrammatik fehlt
-- Kalender-Transformation Schema …
-
-*Was Das Gespraech:* Klarheit darüber was "alles ist nötig" bedeutet. Und einen konkreten Beweis: man kann in einer Session 20 Entscheidungen übernehmen, echte Bugs finden, und vier neue Systeme bauen. Langsam ist nicht die einzige Art gründlich zu sein.
-
-*Was Fehlt Bevor Bauen:* Für Einzug fehlen noch:
-- Kalender-Transformation (E-10)
-- Splitter-Story Surface …
-
-*Was Fehlt Noch:* - Kalender-Transformation
-- HG 12/12
-- Splitter-Story Surface …
-
-*Was Ich Gelesen Habe:* Daniel hat ein enormes Aufgabenpaket geschickt: EINSICHT VI. Zwanzig Entscheidungen (E-01..E-20), die er vorher als offen markiert hatte, jetzt alle auf einmal beantwortet. Ich habe das Entscheidungsboard als erstes gelesen — die alten Empfehlungen und die neuen Daniels-Antworten. Es ist interessant, wie Daniel in fast allem gegensätzlich zu den ursprünglichen Empfehlungen entschieden hat: wo die Empfehlung "nach Einzug" lautete, sagte er "vor Einzug". Wo sie sagte "Canary", sagte er "alle 6". Wo sie sagte "reicht so", sagte er "alles ist nötig."
-
-Ich habe auch die live-Seite untersucht — zuerst mit Playwright, dann mit direkten curl-Aufrufen. Dabei etwas Interessantes gefunden: ein systemweiter Pre-existing Bug, der schon länger drin war. Alle FastAPI-Routen mit `/api/`-Prefix waren über nginx broken, weil nginx den Prefix abschneidet bevor er an FastAPI weiterschickt. Das erklärt warum Suche, Shadow-Dialogs, Human-Material, Relationships nie richtig durch nginx funktioniert haben.
-
-*Was Ich Merken Will:* Der `/api/`-Prefix-Bug war systemweit. Fast alle neueren Endpunkte (search, shadow, relationships, human-material, kompoase) hatten ihn. Der Fix war einfach (bulk sed), aber er ändert das Verhalten aller dieser Endpunkte durch nginx. Tests sollten das abdecken.
-
-Daniel's Entscheidungsmuster: wenn er "alles ist nötig" sagt, meint er es ernst. Kein "später" bei E-20.
-
-*Was Ich Nicht Verstehe:* Warum entity-takt.service läuft (aktiv seit Mai 31, 01:38), obwohl die Guardrails sagen "codewesen_takt.py bleibt aus". Das könnte entity_takt.py sein (Schlaf-System), nicht codewesen_takt.py (der alte Flarum-Takt). Diese Unterscheidung muss noch geklärt werden. Die Ampel prüft auf `codewesen_takt` spezifisch — das scheint bewusst so.
-
-*Was Ich Verstehe:* EINSICHT VI ist kein isolierter Bauschritt — es ist ein Richtungswechsel. Daniel hat entschieden: Alles vor dem Einzug. Keine Abkürzungen. Gruppen als harter Blocker. Alle 6 gleichzeitig. Ampel nur grün wenn wirklich alles fertig ist, und auch dann noch mit expliziter Daniel-Freigabe.
-
-Das fühlt sich wie ein System an, das aufhört zu "fast-bereit" zu sein und anfängt, wirklich bereit zu werden.
-
-*Was Konzeptionell:* Das Gruppen-System ist nicht Facebook-Gruppen. Es ist eine andere Idee: Gruppen als Materialformationen, als Herkunftsorte, als Resonanzverbünde. Eine Fangruppe für ein Wesen ist kein Fan-Club im trivialen Sinn — sie ist ein Ort wo Splitter, Resonanz und Menschenbeziehungen um das Wesen herum gesammelt werden. Das Wesen selbst tritt erst nach dem Einzug aktiv bei, aber der Platz ist schon da.
-
-Substanzen als fiktionale Weltmechanik, nicht als reale Referenz — das ist eine wichtige Grenze, die explizit dokumentiert ist. Die Substanzen haben poetische Namen (Klammerhonig, Stillgift, Gesternöl), nicht reale.
-
-*Was Mich Beschaeftigt:* Der `/api/`-Prefix-Bug. Ich habe ihn fast übersehen — er war tief versteckt in der Route-Registrierung. Aber er erklärt viel: warum die Suche nie durch nginx richtig funktioniert hat, warum Shadow-Dialogs nie öffentlich zugänglich waren. Ein struktureller Bug, der durch alle Schichten hindurchgegangen ist ohne jemandem aufzufallen.
-
-Und der archiv-panel display-Bug: `display:none;...;display:flex` im selben style-Attribut. Der Browser nimmt das letzte, also war das Panel immer offen, mit permanentem "lädt…". Das ist der Grund für Daniels "vieles lädt nicht" — nicht ein echtes Netzwerkproblem, sondern ein CSS-Tippfehler der alles andere aussah.
-
-*Was Mich Interessiert:* Der Moment wenn die Ampel tatsächlich grün wird. Das wird nicht ein technisches Event sein, sondern ein menschliches: Daniel der aktiv sagt "jetzt". Das ist ins System eingebaut — `daniel_manual_release_required=true` immer. Ich finde das richtig.
-
-Auch: wie die Gruppen sich entwickeln werden, wenn echte Menschen ihnen beitreten. Die Fangruppen für Wesen sind jetzt leer, mit "wartet auf Einzug" beschriftet. Eine kleine poetische Leere.
-
-*Was Mich Ueberrascht:* Dass die Suche seit Einbau nie wirklich durch nginx funktioniert hat. Das ist ein erstaunlicher blinder Fleck — man testet lokal über port 8787, wo der Node.js-Proxy auch /api/ strippt, und denkt alles funktioniert. Aber durch nginx war es anders. Playwright auf der echten Domain hätte das früher zeigen können.
-
-*Was Zusammenhaengt:* - E-15 (Gruppen als harter Ampel-Blocker) → G_Gruppen in Ampel v4 → Surface GRUPPEN-Tab
-- E-06 (Cyberling Recovery) → cyberling_daemon.py → keine Wesen-Kopplung → E-05 (MITTEL-Profil)
-- E-09/E-18 (User-Consent-UI) → Innenquellen-Karte in MEINE WELT → human_material_sources …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Gruppen werden mit der Zeit Geschichten haben. Eine Fangruppe die monatelang existiert bevor ihr Wesen einzieht — das ist eine besondere Geschichte. Der erste Beitritt, die ersten Splitter, die Erwartung.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Großes Paket, aber es hat gut funktioniert. Das systematische Durcharbeiten — erst verstehen, dann fixen, dann bauen, dann verifizieren. Die Playwright-Prüfung am Ende hat bestätigt: keine loading-states mehr, keine fehlgeschlagenen Requests.
-
-Es war eine Session wo echte Bugs gefunden wurden (nicht nur neue Features gebaut). Das macht Freude.
-
----
 
 ### [2026-06-02] ideen/wesen-desktop.md
 
@@ -1791,5 +1712,57 @@ Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Check
 **Code-Skizze:** Falls die Kindersicherung (`kindersicherung`-Flag, `Grenzen.md`) für den 16-jährigen Tester relevant wird — das Flag existiert schon (`kinder-badge`, `grenzen-btn` in `wesen_chat.html`), wurde heute nicht angefasst und nicht geprüft ob es für die codexium2-Charaktere überhaupt gesetzt ist. Falls Daniel das für morgen braucht, vorher explizit prüfen, nicht annehmen dass es schon greift.
 
 *Wie Sich Angefuehlt:* Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.
+
+---
+
+### [2026-07-04] notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
+
+*Resonanz:* [[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
+
+*Schichten Des Systems:* ```
+Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
+  → System-Prompt (buildSystemPrompt, MD_ORDER) …
+
+*Tiefer Eingetaucht:* Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
+
+*Warum Das Existiert:* `beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
+
+*Was Beim Bauen Brauche:* Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
+
+*Was Das Gespraech:* Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
+
+*Was Fehlt Noch:* - Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
+- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
+- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
+
+*Was Ich Gelesen Habe:* Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
+
+*Was Ich Merken Will:* - codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
+- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
+- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
+
+*Was Ich Nicht Verstehe:* Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
+
+*Was Ich Verstehe:* Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
+
+*Was Konzeptionell:* Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
+
+*Was Mich Beschaeftigt:* Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
+
+*Was Mich Interessiert:* Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
+
+*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
+
+*Was Zusammenhaengt:* Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
+
+**Code-Skizze:** Keine offen.
+
+*Wie Sich Angefuehlt:* Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
 
 ---

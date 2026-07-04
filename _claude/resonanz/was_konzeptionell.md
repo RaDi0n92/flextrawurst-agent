@@ -875,3 +875,9 @@ Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahm
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.

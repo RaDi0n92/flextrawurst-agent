@@ -715,3 +715,9 @@ Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.

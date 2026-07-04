@@ -674,3 +674,9 @@ Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, ni
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 `beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+`letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.

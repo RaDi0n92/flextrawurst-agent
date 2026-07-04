@@ -847,3 +847,9 @@ Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.

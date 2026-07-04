@@ -916,3 +916,9 @@ Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Co
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).

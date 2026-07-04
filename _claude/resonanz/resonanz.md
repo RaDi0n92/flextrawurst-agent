@@ -863,3 +863,9 @@ Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist 
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 [[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+[[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]

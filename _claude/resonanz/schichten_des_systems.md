@@ -949,3 +949,15 @@ Memory/Container (jetzt groesser + dauerhaft)
     nicht was dem Charakter von Anfang an fehlt
 ```
 Zwei verschiedene Probleme, heute beide angefasst, nicht miteinander verwechseln: Charaktertiefe kommt aus den Feldern, Gesprächskontinuität aus Memory/Container.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+```
+Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
+  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht)
+    → ctx-Meter + 77%-Warnung (sichtbar machen was verloren geht)
+      → Abschluss-Geschichte (bewusst destillierter Ersatz, ueberlebt Sessiongrenzen)
+```
+Vier Schichten, jede baut auf der vorherigen auf, keine ersetzt eine andere.

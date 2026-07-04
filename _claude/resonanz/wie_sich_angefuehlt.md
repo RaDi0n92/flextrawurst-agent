@@ -716,3 +716,9 @@ Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.

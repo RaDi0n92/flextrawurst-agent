@@ -784,3 +784,11 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 - Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
 - Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
 - Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+- Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
+- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
+- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).

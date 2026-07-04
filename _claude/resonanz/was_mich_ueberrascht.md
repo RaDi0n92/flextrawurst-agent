@@ -768,3 +768,9 @@ Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat �
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.

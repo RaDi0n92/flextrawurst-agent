@@ -814,3 +814,9 @@ Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt,
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".

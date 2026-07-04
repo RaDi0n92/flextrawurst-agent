@@ -1455,3 +1455,9 @@ Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komp
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).

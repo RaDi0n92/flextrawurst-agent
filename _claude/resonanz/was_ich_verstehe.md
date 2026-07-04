@@ -1204,3 +1204,9 @@ Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wi
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.

@@ -721,3 +721,9 @@ Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Foku
 **[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
 
 Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
