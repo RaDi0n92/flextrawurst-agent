@@ -126,3 +126,15 @@ Der ursprüngliche Plan ("Ganze Nachricht ODER markierte Sätze markieren") war 
 Neuer Ansatz: Pin-Button zerlegt die Nachricht per Satzgrenzen-Regex in einzelne Sätze und zeigt sie als Checkbox-Liste im Modal. Jeder angehakte Satz wird als eigener Container-Eintrag gepinnt (gleicher Kommentar für alle in einem Durchgang gewählten). Kein Markieren mehr nötig, funktioniert gleich auf Touch und Maus.
 
 Zusätzlich neuer Button „🧠+" (Sätze direkt einer Memory-Kategorie zuordnen, ohne den Umweg über die LLM-Extraktion) — selbe Checkbox-Liste, dazu ein Kategorie-Dropdown (`ueber_mich`/`wichtige_momente`/`offene_fragen`/`meinungen` — `wesen_selbst` bleibt dem Wesen vorbehalten, wie schon bei der Extraktion).
+
+### Nachtrag 2026-07-04 (später Abend) — neues Feld "Beispiel-Dialoge"
+
+Ausgangspunkt war eine ganz andere Frage: Daniel wollte wissen ob seine Charaktere schon mit Character.AI mithalten können. Befund beim Durchlesen aller codexium2/codexium/solarius-Charaktere: die Technik (Preamble, Ehrlichkeits-Handling, Kontinuität) ist eher voraus, aber die Charakter-*Felder* selbst sind fast überall nur 1-2 Sätze dünn (`wesen.md` oft wörtlich nur "Du bist X."). Ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage "AI-Sprache" zurück (bei GluPKI beobachtet: "Ich spüre... ein Pulsieren..."). Charaktere mit konkreteren Eigenheiten (KrEaPPy, KreFsUzi) wirken beim Lesen deutlich weniger generisch.
+
+Direkte Konsequenz: neues Feld `beispieldialoge.md` — 1-3 Beispiel-Antworten ("So klingt X"), im codexium2-Spawner-Formular nach Weltlore einsortiert, im Profil für alle Spawner nachträglich befüllbar (generische Feldliste in `wesen_profil.html`). Im System-Prompt bewusst spät platziert (kurz vor `anleitung.md`, nah an der eigentlichen Konversation) — Beispiel-Turns wirken einem LLM gegenüber stärker je näher am Ende des Prompts.
+
+Nicht für solarius2 im Spawner-Formular ergänzt: das Formular dort ist ein einziges Freitextfeld (`anleitung.md`), Beispieldialoge lassen sich dort schon jetzt einfach mit reinschreiben — keine strukturelle Änderung nötig.
+
+### Nachtrag 2026-07-04 (später Abend) — Budgets erhöht, Container nicht mehr session-lokal
+
+Siehe oben im Abschnitt "Budget statt Max-pro-Kategorie" und "Was ich verstehe" für die aktuellen Werte (Memory 3333, Container 2222 Zeichen) und die Umkehr der Session-Lokalität — beides von Daniel direkt angeordnet, keine Herleitung dahinter außer "mehr Luft" bzw. "Pins sollen bleiben".
