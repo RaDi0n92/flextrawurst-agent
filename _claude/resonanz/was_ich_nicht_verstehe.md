@@ -812,3 +812,9 @@ Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe ko
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.

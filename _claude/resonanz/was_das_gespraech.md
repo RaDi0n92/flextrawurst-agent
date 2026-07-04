@@ -721,3 +721,9 @@ Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich 
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.

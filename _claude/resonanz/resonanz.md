@@ -869,3 +869,9 @@ Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist 
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 [[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+[[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]

@@ -787,3 +787,9 @@ Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion,
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.

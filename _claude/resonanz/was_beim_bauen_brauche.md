@@ -727,3 +727,9 @@ Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich d
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.

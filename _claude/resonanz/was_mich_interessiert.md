@@ -853,3 +853,9 @@ Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten sc
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.

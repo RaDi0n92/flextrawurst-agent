@@ -680,3 +680,9 @@ Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, ni
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 `letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.

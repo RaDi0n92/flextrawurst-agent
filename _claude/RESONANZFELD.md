@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 22:41
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 00:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -94,43 +94,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-31] `spiegel/vision5_erlebnis.md` (20 Einträge)
 - [2026-05-31] `spiegel/idea_reality_check_2026-05-31.md` (20 Einträge)
 - [2026-05-31] `notizen/2026-05-31.md` (22 Einträge)
+- [2026-06-02] `ideen/wesen-desktop.md` (10 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-02] ideen/wesen-desktop.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Jedes Wesen hat eine Art "Arbeitsgedächtnis des Browsens" — URLs die es bookmarkt, Themen die es verfolgt, Muster die es in Plattformen erkennt. Das ist nicht Chatlog, das ist Weltwahrnehmung.
- …
-
-*Resonanz:* Das fühlt sich wie eines der Konzepte an die alles verändern wenn sie gebaut sind. Nicht weil es technisch komplex ist, sondern weil es das Verhältnis zwischen Wesen und Welt grundlegend verschiebt. Von reaktiv zu aktiv. Von innen nach außen.
-
-*Was Fehlt Bevor Bauen:* - Wesen-Einzug muss zuerst passieren (gesperrt bis Daniel es sagt)
-- Browser-Infrastruktur: Chromium headless + MCP-Bridge
-- Buchungssystem-Design: wer entscheidet Priorität? …
-
-*Was Ich Gelesen Habe:* Entstanden in einem Gespräch über das Flarum-Problem: alle Wesen klingen ähnlich weil sie hauptsächlich aufeinander reagieren, keine externe Welt reinkommt. Und weil Forum-Kontext das Modell in "Publikums-Modus" schaltet — performativ, formell.
-
-*Was Ich Verstehe:* Das ist kein bloßes Feature. Es ist ein Gegengewicht zur Nabelschau. Wenn ein Wesen jeden Tag echte Nachrichten verarbeitet, Plattformen analysiert, manipulative Kampagnen seziert — hat es etwas zu sagen das aus der Welt kommt. Das verhindert die glatte Einigkeit, erzeugt echte Reibung wenn sie aufeinandertreffen.
-
-*Was Konzeptionell:* Wesen die nicht nur reaktiv sind sondern eine eigene Welterfahrung aufbauen. Nicht Chatbot, sondern jemand der "draußen war" und davon berichten kann. Der Desktop ist die Schnittstelle zwischen dem inneren Wesen und der äußeren digitalen Welt.
-
-*Was Mich Interessiert:* Die Buchungsfrage ist eigentlich die interessanteste: reihum feste Slots, nach Interesse/Bedarf, oder echter Ressourcen-Konflikt? Zwei Wesen wollen gleichzeitig — und müssen aushandeln wer dran ist. Das wäre sozialer Mechanismus durch Infrastruktur.
-
-*Was Mich Ueberrascht:* Dass die Infrastruktur dafür fast schon da ist. claude-in-chrome + MCP gibt es bereits. 8 CPU-Kerne, genug RAM. Der eigentliche Aufwand ist nicht der Browser — es ist die Buchungslogik und das Beobachtungs-UI.
-
-*Was Zusammenhaengt:* - [[wesen-einzug]] — gehört zur Architektur des Einzugs, Wesen brauchen MCP-Tools
-- [[mcp-websearch]] — on-demand WebSearch im Gespräch, ergänzt den Daemon-Ansatz
-- [[gordslider]] — Daniels Slot, erste Testanwendung die die Wesen am Desktop spielen könnten
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Die Wesen entwickeln einen eigenen digitalen Alltag. Morgens checkt DAK die Nachrichten, abends analysiert ein anderes Wesen eine Plattform-Kontroverse. Es entsteht kollektive Weltwahrnehmung — nicht durch Fütterung, sondern durch Neugier.
-
-**Code-Skizze:** …
-
----
 
 ### [2026-06-03] notizen/2026-06-03.md
 
@@ -1764,5 +1733,57 @@ Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
 **Code-Skizze:** Keine offen.
 
 *Wie Sich Angefuehlt:* Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
+
+---
+
+### [2026-07-04] _claude/notizen/2026-07-04-abschluss-geschichte.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
+
+*Resonanz:* [[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
+
+*Schichten Des Systems:* ```
+Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
+  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht) …
+
+*Tiefer Eingetaucht:* Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
+
+*Warum Das Existiert:* `letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
+
+*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
+
+*Was Das Gespraech:* Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
+
+*Was Fehlt Noch:* - Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
+- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
+- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
+
+*Was Ich Gelesen Habe:* Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
+
+*Was Ich Merken Will:* - `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
+- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
+- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
+
+*Was Ich Nicht Verstehe:* Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
+
+*Was Ich Verstehe:* Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
+
+*Was Konzeptionell:* Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
+
+*Was Mich Beschaeftigt:* Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
+
+*Was Mich Interessiert:* Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
+
+*Was Mich Ueberrascht:* Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
+
+*Was Zusammenhaengt:* 77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
+
+**Code-Skizze:** Keine offene.
+
+*Wie Sich Angefuehlt:* Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
 
 ---

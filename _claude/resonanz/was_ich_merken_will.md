@@ -803,3 +803,11 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
 - Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
 - `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+- Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
+- Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
+- `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.

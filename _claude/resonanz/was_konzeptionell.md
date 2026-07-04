@@ -881,3 +881,9 @@ Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Archite
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.

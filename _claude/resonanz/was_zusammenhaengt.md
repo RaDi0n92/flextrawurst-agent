@@ -933,3 +933,9 @@ Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) 
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.

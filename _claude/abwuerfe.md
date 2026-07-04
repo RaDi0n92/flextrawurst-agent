@@ -1747,3 +1747,15 @@ In der CLAUDE.md steht es als Pflic«
 - Klick öffnet ein Modal: "ga«
 - [2026-07-04 22:18] **lava** (i=0.39) → Zwischenraum: »Kurz ehrlich: die gibt's noch nicht«
 - [2026-07-04 22:49] **nebel** ← 2026-07-04-abschluss-geschichte.md: »Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.«
+- [2026-07-04 22:49] **wasser** (i=0.35) → Zwischenraum: »Legitim — eine ältere, noch nie committete Session-Notiz aus dem echten Verlauf, kein Fremdinhalt«
+- [2026-07-04 22:50] **wasser** (i=0.39) → Zwischenraum: »Bestätigt, alles ist bereits durch:
+
+- **Status-Check**: `nie_gelaufen` — normal, weil der Charakter«
+- [2026-07-04 23:30] **nebel** (i=0.32) → Zwischenraum: »Alle drei gemeldeten Bugs sind behoben, getestet und dokumentiert:
+
+1«
+- [2026-07-05 00:12] **sternenstaub** (i=0.44) → Zwischenraum: »Zwei getrennte Beobachtungen, die ich kurz auseinanderziehe:
+
+**Die 4 Minuten** — das ist wahrschein«
+- [2026-07-05 00:36] **lava** (i=0.40) → Zwischenraum: »Alles fertig, getestet und dokumentiert«
+- [2026-07-05 00:50] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«

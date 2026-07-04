@@ -820,3 +820,9 @@ Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt �
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.

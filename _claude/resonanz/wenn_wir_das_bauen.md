@@ -1630,3 +1630,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
 
 **Code-Skizze:** Keine offene.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+**Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
+
+**Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.

@@ -1461,3 +1461,9 @@ Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir z
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.

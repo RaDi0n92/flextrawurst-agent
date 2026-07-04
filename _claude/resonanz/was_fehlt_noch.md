@@ -792,3 +792,11 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 - Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
 - Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
 - Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+- `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
+- Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
+- Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.

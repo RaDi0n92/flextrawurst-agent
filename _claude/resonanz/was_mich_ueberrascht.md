@@ -774,3 +774,9 @@ Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen L
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.

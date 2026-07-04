@@ -774,3 +774,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+`_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.

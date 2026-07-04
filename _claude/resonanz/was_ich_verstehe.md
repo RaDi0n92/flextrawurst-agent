@@ -1210,3 +1210,9 @@ Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — 
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.

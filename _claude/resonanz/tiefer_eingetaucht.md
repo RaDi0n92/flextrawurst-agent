@@ -922,3 +922,9 @@ Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexiu
 **[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
 
 Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.

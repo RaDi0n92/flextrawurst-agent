@@ -961,3 +961,19 @@ Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
       → Abschluss-Geschichte (bewusst destillierter Ersatz, ueberlebt Sessiongrenzen)
 ```
 Vier Schichten, jede baut auf der vorherigen auf, keine ersetzt eine andere.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+```
+Chat-Antwort (normaler sichtbarer Text)
+  + optionaler [MERKEN: ...]-Anhang (unsichtbar fuer den Menschen)
+    → Server trennt: sichtbarer Text → chat_history.jsonl
+                       gemerkter Text → memory.json/wesen_selbst (+ Provenienz)
+Memory-Extraktion (Batch, niedrige Frequenz)
+  → befuellt jetzt zusaetzlich wesen_selbst als "bewusste Rueckschau"
+Neue-Session-Dialog
+  → erinnert aktiv an Memory/Container/Abschluss VOR dem Beenden,
+    statt sich nur auf den Wissensstand des Menschen zu verlassen
+```
