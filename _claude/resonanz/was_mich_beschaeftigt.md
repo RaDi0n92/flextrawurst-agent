@@ -802,3 +802,9 @@ Das hat mich daran erinnert: Kompatibilität ist kein einmaliges Problem, sonder
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Ein eigener Fehler ganz am Ende: Arbeitsverzeichnis-Verwechslung (ein alter `werkraum/werkraum`-Unterordner von April) führte dazu, dass ich kurzzeitig den Git-Index für den werkraum-Submodul-Verweis im Hauptrepo mit einer falschen SHA verfälscht habe. Kein Datenverlust — sauber mit expliziten `-C`-Pfaden und `git fsck` aufgeklärt und zurückgesetzt. Daniel transparent informiert.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt, ohne Umschweife, aber mit einem "bitte such im web" hinterher. Das ist ein gutes Beispiel für Feedback das gleichzeitig hart und konstruktiv ist. Ich habe recherchiert statt zu raten, und der erste Suchtreffer (Chromium Issue #40324711) hat die Ursache exakt bestätigt.

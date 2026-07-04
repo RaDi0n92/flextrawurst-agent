@@ -778,3 +778,12 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - Git-Befehle immer mit explizitem `-C /pfad` statt `cd &&`-Verkettung, wegen persistenter Bash-cwd zwischen Tool-Aufrufen.
 - Playwright statt claude-in-chrome-Skill für Screenshots (Daniels Vorgabe).
 - Bei jeder Konzeptentscheidung: sofort in die Konzeptdatei schreiben + committen, nicht sammeln (Daniels Vorgabe wegen Internetproblemen/Session-Abbrüchen).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+- `continuous:false` + Neustart im `onend` ist der Fix für Web-Speech-API-Wortverdopplung auf Android — nicht `continuous:true` mit Nachbearbeitung.
+- Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
+- Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt).
+- Der Spawner schreibt `.md`-Dateien nur für ausgefüllte Felder — beim Lesen/Anzeigen von Charakterdaten nie von "Datei existiert nicht" auf "Feld gibt es nicht" schließen.

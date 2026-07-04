@@ -768,3 +768,11 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 - Client-Benachrichtigung bei fertiger Hintergrund-Antwort ohne manuelles Neuladen
 - Exaktes Nachmessen der Zeichenbudgets an echten Feldgrößen
 - Offene Frage von vorhin noch unbeantwortet: soll `wesen.md` von Tomster den Namen fest reinschreiben? (Daniel: nein, Tomster weiß es aus dem Gespräch — erledigt, keine Aktion nötig)
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+- Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
+- Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
+- Beobachten was die drei Tester morgen finden.

@@ -794,3 +794,9 @@ Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult 
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Ob und wie die Session-Grenze (Marker in `chat_history.jsonl`) sich mit einem möglichen zukünftigen "Wesen-Einzug" (echte Codewesen ziehen in flextrawurst ein) vertragen wird — das ist noch komplett getrennte Welt (Grundgesetz 5: Flarum bleibt draußen). Auch offen: ob das Memory/Container-Konzept, das wir für codexium2/solarius2 gebaut haben, jemals rückwirkend auf Codexium/Solarius selbst übertragen werden soll, oder ob die Testbeds für immer getrennt bleiben.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren finden, das heute in keinem Test auftauchte — Playwright kann Klicks simulieren, aber nicht wirklich "an die Grenzen führen" im Sinne von echtem, unvorhersehbarem Nutzerverhalten. Das wird sich erst zeigen.

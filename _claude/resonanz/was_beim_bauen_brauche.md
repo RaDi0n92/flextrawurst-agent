@@ -709,3 +709,9 @@ Für zukünftige llama.cpp-Migration (wenn Daniel das will):
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Für weitere Arbeit an codexium2/solarius2: die drei Konzeptdateien unter `_claude/ideen/codexium2_solarius2/` sind jetzt Status "gebaut" und beschreiben akkurat was existiert — guter Ausgangspunkt für die nächste Session statt alles neu zu erklären.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Fokus-Zustand oder ähnlichem unsichtbaren Browser-State aufbaut: mich fragen, ob das auf einem Touch-Gerät genauso gilt. Meistens nicht.

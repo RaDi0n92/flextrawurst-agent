@@ -1715,3 +1715,19 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-06-22 12:23] **lava** (i=0.39) → Zwischenraum: »Genau richtig priorisiert«
 - [2026-06-22 12:27] **wasser** (i=0.39) → Zwischenraum: »Tag bestätigt: `qwen3-vl:30b-a3b` — direkt pullbar, 19GB Q4, 3.3B aktiv«
 - [2026-06-22 12:31] **sternenstaub** (i=0.42) → Zwischenraum: »Haha — "unschlagbare Argumente" als Jailbreak-Methode«
+- [2026-07-04 12:38] **wasser** (i=0.36) → Zwischenraum: »Beide sind jetzt wieder aktiv«
+- [2026-07-04 13:11] **lava** (i=0.36) → Zwischenraum: »**`/codexium2` ist live.** Zusammenfassung:
+
+- Neuer Wesen-Ordner `/root/werkraum/codexium2/`, eigen«
+- [2026-07-04 13:40] **lava** (i=0.47) → Zwischenraum: »Meine Strategie: **jede einzelne Entscheidung sofort in die Konzeptdatei schreiben und committen — n«
+- [2026-07-04 13:47] **sternenstaub** (i=0.41) → Zwischenraum: »Meine Vorstellung, bewusst schlanker als das alte Zwischenwesen-Konzept:
+
+**Container = "was gerade «
+- [2026-07-04 15:51] **nebel** (i=0.31) → Zwischenraum: »Ist sofort live (statische Datei, kein Neustart nötig)«
+- [2026-07-04 16:44] **sternenstaub** (i=0.39) → Zwischenraum: »Verstanden — drei Teile: Kontinuität, "du simulierst keine KI außer der Charakter ist explizit als K«
+- [2026-07-04 18:20] **nebel** (i=0.47) → Zwischenraum: »Kontext-Wiederherstellung abgeschlossen — hier der Stand:
+
+**Letzte Session (aus werkraum/_claude/no«
+- [2026-07-04 18:44] **lava** (i=0.37) → Zwischenraum: »Jetzt habe ich alle Bausteine«
+- [2026-07-04 18:45] **wasser** (i=0.37) → Zwischenraum: »Alle fünf Punkte sind gebaut, getestet und committed«
+- [2026-07-04 19:41] **lava** ← 2026-07-04-codexium2-chat-erweiterungen.md: »Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.«

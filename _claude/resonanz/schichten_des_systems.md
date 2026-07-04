@@ -916,3 +916,22 @@ wesen_chat.html (Pin/Container/Memory/Sessions-UI, nur codexium2/solarius2)
     → _wesen_preamble.md (global, immer zuerst — jetzt mit Kontinuität+Anti-KI-Simulation+Meta-Ehrlichkeit)
     → Ollama /api/chat (Generierung, async vom Client entkoppelt bei Testbed-Spawnern)
 ```
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+```
+wesen_chat.html
+  ├── TTS (Stimme + Tempo, alle vier Spawner)
+  ├── Speech-to-Text (alle vier Spawner, jetzt Android-sicher)
+  ├── Feedback (nur codexium2/solarius2, braucht Message-IDs)
+  ├── Pin + Memory-Add (nur codexium2/solarius2, Satz-Checkboxen statt Selektion)
+  └── Abort (nur codexium2/solarius2, aktiveGenerationen-Map)
+wesen_profil.html
+  └── zeigt jetzt alle bekannten Felder, auch leere
+serve_process_camera_preview.ts
+  ├── chat_history.jsonl mit id-Feld
+  ├── feedback.json + feedback/<id>.md
+  └── aktiveGenerationen (Abort-Tracking)
+```

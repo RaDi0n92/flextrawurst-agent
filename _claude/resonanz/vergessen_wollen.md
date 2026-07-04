@@ -646,3 +646,9 @@ Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Han
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Operationen ist richtig), aber sie hat sich größer angefühlt als sie war, bevor ich systematisch nachverfolgt habe.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.

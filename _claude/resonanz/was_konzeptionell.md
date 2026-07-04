@@ -863,3 +863,9 @@ Verifiziert: Zwei gleichzeitige Anfragen liefen in 4.5s — sequenziell wären d
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Die "Email-Gefühl"-Architektur (Generierung übersteht Client-Trennung) und das Session-Konzept sind beide Ausdruck derselben Haltung: Zeit im Gespräch soll nicht erzwungen synchron sein. Mensch und Wesen müssen nicht gleichzeitig anwesend sein, damit etwas passiert — weder für eine einzelne Antwort noch für eine ganze Sitzung.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahme: dass Browser-Text-Selektion ein brauchbares Interaktionsmuster für mobile Geräte ist. Ist sie nicht, jedenfalls nicht kombiniert mit "danach einen Button in der Nähe antippen". Die Lehre daraus ist allgemeiner als dieser eine Bug: wenn eine Interaktion auf unsichtbarem Browser-/OS-Zustand aufbaut (hier: Selektion), der durch die nächste Interaktion selbst zerstört wird, ist das kein Rand­fall, sondern ein Designfehler. Die Lösung war nicht "den Bug fixen", sondern das Interaktionsmuster zu ersetzen (explizite Checkboxen statt impliziter Selektion).

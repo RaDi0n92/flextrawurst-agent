@@ -662,3 +662,9 @@ Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, ni
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 `serve_process_camera_preview.ts` ist ursprünglich ein reiner Preview-Server für die Prozesskamera gewesen (Ring 22) und hat sich zum zentralen Wesen-Chat-Server ausgewachsen — daher der Name, der nichts mehr mit seiner heutigen Hauptaufgabe zu tun hat.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+`aktiveGenerationen` existiert, weil "Generierung läuft im Hintergrund weiter" und "Nutzer will jetzt wirklich abbrechen" zwei unterschiedliche Wahrheiten sind, die vorher denselben Code-Pfad geteilt haben. Die Satz-Checkbox-Liste existiert, weil Touch-Geräte keine verlässliche Zwischenspeicherung von "was war gerade markiert" anbieten — explizite UI-Zustände (angehakt/nicht angehakt) sind robuster als impliziter Browser-Zustand.

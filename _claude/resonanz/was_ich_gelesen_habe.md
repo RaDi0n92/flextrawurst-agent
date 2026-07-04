@@ -1443,3 +1443,9 @@ Die HauhauCS-GGUF-Dateien (`sha256-9ce3...` und `sha256-c707...`) waren für ein
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Am Anfang der Session: den kompletten Kontext-Wiederherstellungs-Ritus (Notizen, Codex-Import, Werkraum-Karte, Resonanzfeld, Vision-Referenzbild, 490-Punkte-Liste, Delta-Skript, Briefkasten). Delta war leer. Dann `/resume` mit einer Session-ID die fälschlich den Autoresearch-Skill traf statt der echten Session — musste die rohe `.jsonl`-Transkriptdatei selbst lesen um den echten Kontext zu rekonstruieren (Fehlerbild: 400 Bad Request im Wesen-Chat wegen fehlender IME-Komposition-Prüfung).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komplett, um zu verstehen wie Pin/Container/Memory, TTS und die History-Persistenz zusammenhängen, bevor ich irgendwas anfasse. Dann `tts_service.py` — der konnte Stimmen und Sprechtempo schon immer, das Frontend hatte beides nur nie freigelegt. Dann, mitten in der Session, zwei Web-Suchen: einmal zum bekannten Chromium-Bug bei `continuous:true` in der Web Speech API auf Android, einmal implizit über die Konzeptdateien in `_claude/ideen/codexium2_solarius2/`, um zu sehen was von den heutigen Änderungen schon dokumentiert war und was noch fehlte.

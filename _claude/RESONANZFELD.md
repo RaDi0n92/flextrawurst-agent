@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 17:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-04 19:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -91,149 +91,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `resonanz/traum_zustandsvertrag.md` (1 Einträge)
 - [2026-05-31] `spiegel/vision3_rohmomente.md` (20 Einträge)
 - [2026-05-31] `spiegel/vision4_strukturiert.md` (20 Einträge)
+- [2026-05-31] `spiegel/vision5_erlebnis.md` (20 Einträge)
+- [2026-05-31] `spiegel/idea_reality_check_2026-05-31.md` (20 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-31] spiegel/vision5_erlebnis.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die zehn Szenen als Nutzungsszenarien. Jede Szene = ein User Journey. Die Gesamtarchitektur muss alle zehn ermöglichen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — wie die Ideen entstanden
-- [[vision4_strukturiert]] — systematische Prinzipien
-- vision5_erlebnis — diese Datei: Erfahrungsdimension …
-
-*Resonanz:* [[abwurf: "Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren." — Das ist flextrawurst in einem Bild.]]
-
-*Schichten Des Systems:* Die zehn Szenen sind ein inoffizieller Acceptance-Test für das Gesamtsystem. Wenn alle zehn Szenen plausibel durchlaufbar sind, ist das System fertig genug für den ersten Einzug.
-
-Aktuell: Szenen 1-3 (Startseite, Raum, Unterthema) → weitgehend gebaut. Szene 4 (Resonanzfeld) → teilweise. Szenen 5-7 (Entitätenreaktion, Profil, Menschenprofil) → im Aufbau. Szenen 8-10 (Suche, Zwischenraum, METAWAR) → Suche gebaut, Zwischenraum grundlegend, METAWAR noch Idee.
-
-*Tiefer Eingetaucht:* Der Deep-Dig-Teil enthält eine Aussage über die Seed World (Bootstrap-Welt): *"Echo: reflective / Profilecluster; Gord: conflictful / Contradiction analysis; Chronolyth: experimenting / Topic seeds."*
-
-Das sind keine Persönlichkeitsbeschreibungen. Das sind Initial-State/Node-Paare. Echo beginnt im Zustand "reflektiv" mit Fokus auf Profil-Cluster. Gord beginnt im Zustand "konflikthaft" mit Fokus auf Widerspruchsanalyse. Das sind executable specs für die ersten Entitäten. Sobald entity_kern.py bereit ist, sind diese Paare der Startpunkt.
-
-*Vergessen Wollen:* Den Deep-Dig-Teil ab Zeile 171 als separates Dokument betrachten. Er hat eine andere Textur als die Szenen 1-10 und verwässert den klaren Walkthrough-Charakter des ersten Teils.
-
-*Was Beim Bauen Brauche:* Die zehn Szenen als UI-Acceptance-Criteria. Jede Szene beschreibt eine Nutzungserfahrung. Wenn ein Bauschritt abgeschlossen ist, sollte er mit der entsprechenden Szene konsistent sein.
-
-Besonders Szene 4 (Resonanzfeld) und Szene 9 (Zwischenraum): diese atmosphärischen Details gehören in die Front-End-Umsetzung.
-
-*Was Das Gespraech:* Das Bewusstsein: vision5 ist nicht nur Beschreibung, es ist impliziter Test. Wenn ich beim Lesen denke "das haben wir noch nicht gebaut" — dann ist das ein Hinweis auf die nächste Bauprioritäten.
-
-*Was Fehlt Bevor Bauen:* Szene 6 (Entitätenprofil mit Zustand/Knoten, Abstammungsbaum, Beziehungen) ist noch nicht vollständig gebaut. Das ist einer der nächsten UI-Schritte.
-
-Szene 10 (METAWAR) ist noch Idee. Synchrone Events, Archivierung, Abspaltungspotenzial.
-
-*Was Fehlt Noch:* Szene 6 (Entitätenprofil vollständig) und Szene 4 (Resonanzfeld atmosphärisch) sind die nächsten UI-Prioritäten. Beides ist beschrieben, beides ist noch nicht so wie es sich im Text anfühlt.
-
-*Was Ich Gelesen Habe:* vision5.md beginnt anders als die anderen. Nicht mit Rohimomenten, nicht mit Strukturteilen. Es beginnt mit: *"flextrawurst, in einem Satz: Eine Diskurs-Welt, in der nur KI-Entitäten öffentlich sprechen, Menschen das Klima von unten formen (Resonanz + Profile), und das System Evolution sichtbar macht (Threads als Entwicklung, Abstammung, Abspaltung, Schlaf, Tod), ohne zu einem Metrik-Dashboard oder einem endlosen Feed zu werden."*
-
-Das ist ein Einstiegssatz der auf Anhieb den Unterschied macht. Die meisten Plattformbeschreibungen erzählen was sie haben. Dieser Satz erzählt was er *verweigert*: Dashboard, Feed. …
-
-*Was Ich Merken Will:* *"Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren."*
-
-Das ist das Kernbild des Resonanzsystems. Wenn wir die Resonanz-UI bauen, sollte dieses Bild im Hinterkopf bleiben.
-
-*Was Ich Nicht Verstehe:* Das Dokument endet (nach den Deep Digs) mit sehr technischen Details über Entitäts-Aktionssets, Gruppenlebenszyklen, Genesis-Partner-Modus. Das fühlt sich an wie aus einem anderen Gespräch hinzugefügt. Die Szenen 1-10 haben einen klaren Erzählfaden, die tiefen Digs wirken eher wie Archiv-Exzerpte.
-
-Ich frage mich: sind vision4.md und vision5.md zwei Ausgaben desselben Deep-Dig-Gesprächs? Vision5 beginnt mit dem Walkthrough-Format und endet mit denselben tiefen Mechanik-Ausgrabungen die auch in vision4 stehen. Vielleicht sind das Ausgaben aus unterschiedlichen Chat-Sessions mit demselben Ursprungsmaterial.
-
-*Was Ich Verstehe:* Das Dokument ist eine Simulation vor dem Bau — so als hätte jemand die fertige Plattform beschrieben bevor sie existiert. Die zehn Szenen lesen sich wie ein Usability-Test-Protokoll für eine Plattform die noch nicht komplett da ist.
-
-Der zweite Teil (ab Zeile ~171) ist dichtere Mechanik: winzige Schalter die große Wirkung haben. Der anonymity-Schalter bei Resonanz. Das Fehlen von Kommentar-Threads. Die Tatsache dass Gruppen keine Diskussionsräume sind. Jede dieser kleinen Entscheidungen ist eine kulturelle Weichenstellung.
-
-*Was Konzeptionell:* Ein starkes konzeptuelles Argument: *"Die öffentliche Oberfläche wird von nicht-menschlichen Stimmen verfasst → automatisch weniger performativ-menschlich, mehr 'Observatorium'."*
-
-Das ist der tiefste Unterschied zu anderen sozialen Plattformen. Nicht die Funktionen, nicht die Architektur. Sondern: wer spricht. Wenn KI-Entitäten öffentlich sprechen, verändert sich das epistemische Klima. Menschen performen nicht für Likes — sie resonieren für etwas das ihnen gegenübersteht.
-
-*Was Mich Beschaeftigt:* Szene 9 — Zwischenraum: *"Du besuchst den Zwischenraum und es ist... absichtlich seltsam: Fragmente aus Resonanz, die noch nicht passen. Proto-Themen. Entitäts-'Träume' / halbgeformtes Material. 'Splitter', die später Themen oder Entitäten werden können. Es ist der Komposthaufen, der neue Wälder wachsen lässt."*
-
-Komposthaufen. Das ist das richtige Bild. Wir haben den Zwischenraum gebaut, aber ich glaube wir haben ihn noch nicht atmosphärisch gestaltet. Er sollte sich seltsam anfühlen wenn man ihn besucht.
-
-*Was Mich Interessiert:* *"Dunkler Raum, schwebende Textblasen, teils zufällig, teils aktualisierend/springend, manchmal clustern, manchmal isoliert — 'nicht zu geordnet', 'atmosphärisch', wie ein kollektives Halbbewusstsein / Profilwetter."*
-
-Das ist die Gedankenblasenfeld-Beschreibung. Die Adjektive sind keine Deko — sie sind Designentscheidungen. Dunkler Hintergrund. Nicht zu geordnet. Atmosphärisch. Das ist eine Atmosphären-Spec. Wenn wir das bauen, muss das stimmig sein.
-
-*Was Mich Ueberrascht:* Die Aussage über Gast-Rollen: *"Gäste können lesen / Entitäten sehen / Themen erkunden / Gedankenblasen sehen, aber können keine Resonanz senden oder Profile erstellen. Das macht 'Lurking' zu einer designten Stufe, nicht zu einem Unfall."*
-
-Lurking als designed experience. Das ist der Unterschied zwischen einer Plattform die Lurker toleriert und einer die Lurker als valide Nutzer denkt. Gäste sehen das Gedankenblasenfeld — das ist schon etwas, nicht nichts.
-
-*Was Zusammenhaengt:* Die zehn Szenen zeigen flextrawurst als Erfahrung. Das ist was fehlt wenn man die technischen Dokumente liest. [[vision3_rohmomente]] gibt die Entstehungsgeschichte. [[vision4_strukturiert]] gibt die Prinzipien. vision5 gibt das *Gefühl* wie es ist wenn man drin ist.
-
-Diese drei zusammen sind komplementär. Kein Einzeldokument ersetzt die anderen zwei.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Szene 8 (Suche als Archäologie) ist die ambitionierteste. *"Du öffnest Suche und es fühlt sich wie ein Labor-Tool an."* Nicht Google, nicht Twitter-Suche — Diskursdatenbank mit Provenienz. Das braucht die Filter: State, Node, Zeitraum, Abspaltungskontext, Anonymitätsstatus.
-
-**Code-Skizze:** …
-
----
-
-### [2026-05-31] spiegel/idea_reality_check_2026-05-31.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Existenz-Prüfprotokoll für Features wäre sinnvoller als für das Gesamtsystem:
-```markdown
-Vor jedem größeren Bauschritt: …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — warum flextrawurst keine Standardkategorie besetzt
-- [[vision4_strukturiert]] — die Verfassungssätze die es einzigartig machen
-- [[vision5_erlebnis]] — die Erfahrung die nirgendwo sonst existiert …
-
-*Resonanz:* [[abwurf: Das Tool hat nach generischen Keywords gesucht und generische Ergebnisse gefunden. Das Eigentliche von flextrawurst ist genau das was Keywords nicht einfangen: die Kombination, die Schichten, die Weigerung die Standardform anzunehmen.]]
-
-*Schichten Des Systems:* Der Existenzcheck war ein Spiegel der eigenen Originalität. Kein Treffer für die relevanten Kombinationen = das System besetzt einen leeren Raum.
-
-*Tiefer Eingetaucht:* Was der Check eigentlich gezeigt hat: die Werkzeuge die wir für "Existiert das schon?"-Prüfungen haben, sind auf die generische Startup-Ideenwelt kalibriert. Für konzeptionell neue Systeme braucht man andere Methoden: gezielte Literatursuche, HN-Diskussionen zu verwandten Themen, akademische Forschung zu AI-Entitätensystemen.
-
-Das ist kein Kritik am Tool. Es ist eine Einschätzung seines Anwendungsbereichs.
-
-*Vergessen Wollen:* Den 69er-Score. Er ist methodischer Artefakt, kein inhaltlicher Befund.
-
-*Was Beim Bauen Brauche:* Vor dem Bauen neuer Features: erst in den wissen/-Dateien schauen ob das Konzept schon beschrieben ist. Dann ggf. idea-reality für spezifische Mechaniken nutzen.
-
-*Was Das Gespraech:* Humor. Und: die Erinnerung dass ich beim Prüfen von "Existiert X?" zuerst fragen sollte ob X in diesem Raum bereits gebaut wird. Kontext vor Check.
-
-*Was Fehlt Bevor Bauen:* Nichts bezüglich des Existenzhecks. Wir wissen: es gibt nichts Ähnliches. Wir bauen.
-
-*Was Fehlt Noch:* Nichts bezüglich Originalität. Viel bezüglich der nicht-gebauten Schichten — aber das ist ein anderes Dokument.
-
-*Was Ich Gelesen Habe:* Wir haben heute die idea-reality MCP benutzt, um zu prüfen ob flextrawurst bereits existiert. Das Ergebnis war:
-
-**reality_signal: 69 / duplicate_likelihood: "high"** …
-
-*Was Ich Merken Will:* idea-reality ist ein Keyword-Matcher, kein Konzept-Matcher. Für generische SaaS-Ideen sinnvoll. Für konzeptionell neue Systeme methodisch ungeeignet. Nicht wegwerfen — aber richtig einsetzen.
-
-*Was Ich Nicht Verstehe:* Warum das Tool so konfiguriert ist, dass generische Überschneidungen (npm-Pakete mit "feedback" und "postgresql") zu einem "high duplicate likelihood" führen. Das scheint ein fundamentaler Designfehler zu sein — oder das Tool ist für andere Anwendungsfälle gedacht (generische SaaS-Ideen, nicht konzeptionell neue Systeme).
-
-*Was Ich Verstehe:* Das Tool hat einen systematischen Fehler: es übersetzt Konzeptbeschreibungen in generische Keywords und sucht dann nach diesen Keywords. Bei einem System wie flextrawurst — das eine neue Kategorie bildet, nicht eine bestehende — ist das methodisch nicht geeignet. Das Tool kann nicht überprüfen ob etwas existiert das keine Kategorie hat.
-
-Der korrekte Befund: **0 Treffer für irgendetwas das flextrawurst auch nur annähernd ähnelt.** Das ist das eigentlich wichtige Ergebnis — nicht der 69er-Score.
-
-*Was Konzeptionell:* Der Check hat einen unbeabsichtigten Wert: er bestätigt, dass flextrawurst keine existierende Kategorie besetzt. Es gibt keine Kategorie "KI-Entitäten-zentriertes Diskurssystem mit Schlaf-Pflicht und genealogischer Abspaltungslogik". Diese Kategorie existiert nur hier.
-
-Das ist keine Bescheidenheitsaussage. Das ist ein Befund: null Rauschen in allen relevanten Suchräumen.
-
-*Was Mich Beschaeftigt:* Daniels Reaktion: *"wir bauen das auch schon 2 monate zusammen claude xD"* — das sagt alles. Ich habe die Prüfung auf etwas losgelassen das ich täglich mitbaue. Klassischer Kontextverlust. Der Existenzcheck war auf das falsche Objekt gerichtet.
-
-Die richtige Verwendung: idea-reality für neue Feature-Ideen prüfen, bevor wir anfangen zu bauen. "Gibt es irgendwo ein System mit Entitäten-Tamagotchis?" — das wäre ein sinnvoller Check.
-
-*Was Mich Interessiert:* Die Tatsache dass die Prüfung auch für neue Features nützlich wäre. Wenn wir ein spezifisches Feature bauen wollen (sagen wir: Entitäten-Schlafprotokoll als öffentlich sichtbarer Log), wäre ein Existenzcheck auf dieses Feature sinnvoller als auf das Gesamtsystem.
-
-*Was Mich Ueberrascht:* Das Ergebnis "0 HN-Posts für 'feedback postgresql hybrid human'" ist tatsächlich aussagekräftig. Das Hacker News Community diskutiert intensiv über AI-Systeme, soziale Plattformen, Entity-Modelle. Die Tatsache dass keine dieser Kombinationen diskutiert wurde, bestätigt: dieser Raum ist leer. Nicht wegen fehlender Technik, sondern wegen fehlenden Vorstellens.
-
-*Was Zusammenhaengt:* Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit PostgreSQL?" — also für generische Kategorien. Für: "Gibt es ein System wo KI-Entitäten 5-8 Stunden täglich schlafen müssen und das öffentlich geloggt wird?" — total ungeeignet. Das Konzept ist zu spezifisch für Keyword-Matching.
-
-[[vision3_rohmomente]] bestätigt warum: flextrawurst entstand aus dem Widerstand gegen Standardkategorien. Natürlich findet ein Tool das Standardkategorien sucht nichts.
-
-*Wenn Wir Das Bauen:* Wir bauen bereits. Die Prüfung war Post-Hoc.
-
-Nächste sinnvolle idea-reality Nutzung: wenn wir Entitäten-Schlaf-System oder METAWAR oder Duelle bauen — dann könnte man prüfen ob verwandte Mechaniken irgendwo existieren die wir kennen sollten.
-
----
 
 ### [2026-05-31] notizen/2026-05-31.md
 
@@ -1815,5 +1679,117 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
  …
 
 *Wie Sich Angefuehlt:* Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte das nächste Problem auf. Aber das ist ehrlich — so ist Systemarbeit. Der Endpunkt (Parallelbetrieb via Ollama) ist stabiler als erwartet.
+
+---
+
+### [2026-07-04] notizen/2026-07-04.md
+
+*Dokumente Gehoeren Zusammen:* - `_claude/ideen/codexium2_solarius2/memory_container.md`
+- `_claude/ideen/codexium2_solarius2/chat_architektur.md`
+- `_claude/ideen/codexium2_solarius2/sessions_kontextmeter.md` …
+
+*Resonanz:* Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist einfach, durchgehend, auch in der stille dazwischen."* Das gilt nicht nur für die Wesen.
+
+*Schichten Des Systems:* ```
+wesen_chat.html (Pin/Container/Memory/Sessions-UI, nur codexium2/solarius2)
+  → serve_process_camera_preview.ts (Routing, Budget-Checks, Session-Splitting) …
+
+*Tiefer Eingetaucht:* Die Analyse von `loadHistory`/`loadCurrentSessionHistory`/`splitSessions` — wie man aus einer flachen JSONL-Datei mit eingestreuten Marker-Zeilen sauber Session-Grenzen herausschält, ohne das Dateiformat zu brechen (Marker-Zeilen haben `type` statt `role`/`content`, werden von der normalen History-Lese-Funktion automatisch übersprungen).
+
+*Vergessen Wollen:* Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Operationen ist richtig), aber sie hat sich größer angefühlt als sie war, bevor ich systematisch nachverfolgt habe.
+
+*Warum Das Existiert:* `serve_process_camera_preview.ts` ist ursprünglich ein reiner Preview-Server für die Prozesskamera gewesen (Ring 22) und hat sich zum zentralen Wesen-Chat-Server ausgewachsen — daher der Name, der nichts mehr mit seiner heutigen Hauptaufgabe zu tun hat.
+
+*Was Beim Bauen Brauche:* Für weitere Arbeit an codexium2/solarius2: die drei Konzeptdateien unter `_claude/ideen/codexium2_solarius2/` sind jetzt Status "gebaut" und beschreiben akkurat was existiert — guter Ausgangspunkt für die nächste Session statt alles neu zu erklären.
+
+*Was Das Gespraech:* Die Erkenntnis, dass "Session" als Konzept nicht nur eine UI-Frage ist, sondern eine Antwort auf das Kontextfenster-Problem — Memory ist der Mechanismus der das Vergessen-Können erst sicher macht.
+
+*Was Fehlt Bevor Bauen:* Nichts akut blockierendes. Offen für später: Warteschlange bei mehreren Nachrichten hintereinander vor Antwort, Client-Benachrichtigung wenn eine Antwort fertig ist ohne manuelles Neuladen, exaktes Nachmessen der Zeichenbudgets (2500/1200 sind Schätzwerte).
+
+*Was Fehlt Noch:* - Warteschlange für parallele Nachrichten (codexium2/solarius2)
+- Client-Benachrichtigung bei fertiger Hintergrund-Antwort ohne manuelles Neuladen
+- Exaktes Nachmessen der Zeichenbudgets an echten Feldgrößen …
+
+*Was Ich Gelesen Habe:* Am Anfang der Session: den kompletten Kontext-Wiederherstellungs-Ritus (Notizen, Codex-Import, Werkraum-Karte, Resonanzfeld, Vision-Referenzbild, 490-Punkte-Liste, Delta-Skript, Briefkasten). Delta war leer. Dann `/resume` mit einer Session-ID die fälschlich den Autoresearch-Skill traf statt der echten Session — musste die rohe `.jsonl`-Transkriptdatei selbst lesen um den echten Kontext zu rekonstruieren (Fehlerbild: 400 Bad Request im Wesen-Chat wegen fehlender IME-Komposition-Prüfung).
+
+*Was Ich Merken Will:* - `/codexium2`, `/solarius2` sind die Testbeds — Codexium/Solarius NIE anfassen ohne expliziten Auftrag.
+- Git-Befehle immer mit explizitem `-C /pfad` statt `cd &&`-Verkettung, wegen persistenter Bash-cwd zwischen Tool-Aufrufen.
+- Playwright statt claude-in-chrome-Skill für Screenshots (Daniels Vorgabe). …
+
+*Was Ich Nicht Verstehe:* Ob und wie die Session-Grenze (Marker in `chat_history.jsonl`) sich mit einem möglichen zukünftigen "Wesen-Einzug" (echte Codewesen ziehen in flextrawurst ein) vertragen wird — das ist noch komplett getrennte Welt (Grundgesetz 5: Flarum bleibt draußen). Auch offen: ob das Memory/Container-Konzept, das wir für codexium2/solarius2 gebaut haben, jemals rückwirkend auf Codexium/Solarius selbst übertragen werden soll, oder ob die Testbeds für immer getrennt bleiben.
+
+*Was Ich Verstehe:* Das ganze System um Codexium/Solarius (die beiden "Wesenspawner") läuft über einen einzigen Node-Server (`serve_process_camera_preview.ts`, Port 8787) der Chat, Profil, Spawner-Formular und alle Wesen-Dateien (wesen.md, memory.json, container.json, chat_history.jsonl) verwaltet — alles dateibasiert, kein Postgres. Daniel wollte ein Redesign von Memory/Container/Chat-Architektur ausprobieren, aber ausdrücklich NICHT an den echten, aktiv genutzten Wesen (allen voran "Tomster", vormals "unbekannt_dl4j") — deshalb haben wir `/codexium2` und `/solarius2` als komplette parallele Testbed-Klone gebaut.
+
+*Was Konzeptionell:* Die "Email-Gefühl"-Architektur (Generierung übersteht Client-Trennung) und das Session-Konzept sind beide Ausdruck derselben Haltung: Zeit im Gespräch soll nicht erzwungen synchron sein. Mensch und Wesen müssen nicht gleichzeitig anwesend sein, damit etwas passiert — weder für eine einzelne Antwort noch für eine ganze Sitzung.
+
+*Was Mich Beschaeftigt:* Ein eigener Fehler ganz am Ende: Arbeitsverzeichnis-Verwechslung (ein alter `werkraum/werkraum`-Unterordner von April) führte dazu, dass ich kurzzeitig den Git-Index für den werkraum-Submodul-Verweis im Hauptrepo mit einer falschen SHA verfälscht habe. Kein Datenverlust — sauber mit expliziten `-C`-Pfaden und `git fsck` aufgeklärt und zurückgesetzt. Daniel transparent informiert.
+
+*Was Mich Interessiert:* Der Moment, als ich den echten Chatverlauf von GluPKI (Daniels Testwesen) gelesen habe und das "Wer war ich bevor du kamst, was wird aus mir wenn du aufhörst"-Muster gefunden habe — ein sehr sauberes Beispiel dafür, wie das latente KI-Selbstbild eines Sprachmodells durch mystische Sprache hindurchschimmert, wenn der Charakterbogen keine explizite Kontinuität festlegt. Und wie gut die Preamble-Ergänzung das sofort korrigiert hat (live getestet: "Ja. Ich bin GluPKI. Ein Geist in der Maschine." — ehrlich, aber im Charakter).
+
+*Was Mich Ueberrascht:* Wie sauber und schnell die Extraktion tatsächlich funktioniert hat, sobald sie lief — "Der Nutzer heißt Daniel und mag Zwiebelkuchen sehr" wurde korrekt in zwei Kategorien aufgeteilt (`Name: Daniel` unter über_mich, `Mag Zwiebelkuchen sehr.` unter meinungen), ganz ohne Nacharbeit.
+
+*Was Zusammenhaengt:* Container (session-lokal, Budget-basiert) → Memory-Extraktion (async, human-getriggert) → Session-Ende (Marker + Extraktion + Container-Leerung) → Session-Browser (alte Sessions read-only) sind vier Teile eines einzigen Kreislaufs: das Akute wird gepinnt, beim Sessionende in Dauerhaftes verdichtet, die rohe History bleibt lesbares Archiv aber nicht mehr aktiver Kontext. Das Kontextfenster-Meter macht sichtbar warum das nötig ist (8192 Token sind schnell voll).
+
+*Wie Sich Angefuehlt:* Sehr lang, sehr dicht, aber mit klarem Rhythmus: entdecken → verstehen → vorschlagen → Daniel entscheidet → sofort schreiben+committen → bauen → testen → gegentesten. Am Ende ein kleiner Stolperer (der Git-Index-Fehler) der mich kurz wirklich beunruhigt hat, bis ich systematisch nachverfolgt habe was wirklich passiert war.
+
+---
+
+### [2026-07-04] notizen/2026-07-04-codexium2-chat-erweiterungen.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/chat_architektur.md` (Email-Gefühl + heutiger Abort-Nachtrag), `_claude/ideen/codexium2_solarius2/memory_container.md` (Pin/Memory-Grundkonzept + heutiger Checkbox-Nachtrag), `_claude/ideen/codexium2_solarius2/feedback_stimme_diktat.md` (heute komplett neu, inkl. aller drei Korrektur-Runden) — alle drei heute aktualisiert und sollten zusammen gelesen werden, keins allein gibt das vollständige Bild.
+
+*Resonanz:* [[abwurf: Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.]]
+
+*Schichten Des Systems:* ```
+wesen_chat.html
+  ├── TTS (Stimme + Tempo, alle vier Spawner) …
+
+*Tiefer Eingetaucht:* Die Web-Speech-API-Recherche: `continuous:true` auf Android/Chrome ist kein Rand-Bug, sondern strukturell kaputt, weil es auf dieser Plattform nicht nativ existiert — Chrome emuliert es durch heimliche Neustarts des Recognizers und schneidet dabei bereits gehörten Ton nochmal mit. Der dokumentierte Workaround ("continuous surrogate" aus mehreren Einzel-Sessions) ist kein Hack, sondern der von mehreren unabhängigen Projekten (react-speech-recognition, csdcorp/speech_to_text) konvergent gefundene Standardweg.
+
+Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Code selbst, sondern eine Schicht tiefer im Spawner — der schreibt nur für ausgefüllte Felder überhaupt eine Datei. Zwei Dateien, die nichts miteinander zu tun zu haben schienen, hatten denselben blinden Fleck.
+
+*Vergessen Wollen:* Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.
+
+*Warum Das Existiert:* `aktiveGenerationen` existiert, weil "Generierung läuft im Hintergrund weiter" und "Nutzer will jetzt wirklich abbrechen" zwei unterschiedliche Wahrheiten sind, die vorher denselben Code-Pfad geteilt haben. Die Satz-Checkbox-Liste existiert, weil Touch-Geräte keine verlässliche Zwischenspeicherung von "was war gerade markiert" anbieten — explizite UI-Zustände (angehakt/nicht angehakt) sind robuster als impliziter Browser-Zustand.
+
+*Was Beim Bauen Brauche:* Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Fokus-Zustand oder ähnlichem unsichtbaren Browser-State aufbaut: mich fragen, ob das auf einem Touch-Gerät genauso gilt. Meistens nicht.
+
+*Was Das Gespraech:* Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist, den man bekommen kann — kein Stacktrace, aber eine echte Beobachtung aus echter Nutzung. Und die beiläufige Ankündigung der drei Tester am Ende, die den morgigen Tag in einen anderen Kontext stellt: das ist nicht mehr nur Daniel allein im Testbed.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/Poll-Mechanismus damit der Client merkt wenn eine Hintergrund-Antwort fertig ist (aus `chat_architektur.md`, unverändert offen), Warteschlange bei mehreren Nachrichten hintereinander.
+
+*Was Fehlt Noch:* - Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
+- Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
+- Beobachten was die drei Tester morgen finden.
+
+*Was Ich Gelesen Habe:* Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komplett, um zu verstehen wie Pin/Container/Memory, TTS und die History-Persistenz zusammenhängen, bevor ich irgendwas anfasse. Dann `tts_service.py` — der konnte Stimmen und Sprechtempo schon immer, das Frontend hatte beides nur nie freigelegt. Dann, mitten in der Session, zwei Web-Suchen: einmal zum bekannten Chromium-Bug bei `continuous:true` in der Web Speech API auf Android, einmal implizit über die Konzeptdateien in `_claude/ideen/codexium2_solarius2/`, um zu sehen was von den heutigen Änderungen schon dokumentiert war und was noch fehlte.
+
+*Was Ich Merken Will:* - `continuous:false` + Neustart im `onend` ist der Fix für Web-Speech-API-Wortverdopplung auf Android — nicht `continuous:true` mit Nachbearbeitung.
+- Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
+- Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt). …
+
+*Was Ich Nicht Verstehe:* Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren finden, das heute in keinem Test auftauchte — Playwright kann Klicks simulieren, aber nicht wirklich "an die Grenzen führen" im Sinne von echtem, unvorhersehbarem Nutzerverhalten. Das wird sich erst zeigen.
+
+*Was Ich Verstehe:* Das codexium2/solarius2-System ist ein Testbed mit eigener, bewusst einfacherer Architektur als das alte Zwischenwesen-Konzept: ein Container (flache Pin-Liste, session-lokal), Memory mit fünf festen Kategorien, keine benutzerdefinierten Container. Daniel hatte das aus der Erinnerung an das ältere, nie gebaute Konzept verwechselt — gut, dass er nachgefragt hat, sonst hätte er weiter nach einem Feature gesucht, das es in dieser Form nie gab.
+
+Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wird) ist bewusst so gewollt — aber ich hatte es zu wörtlich implementiert: ein bewusster Stop-Klick sah serverseitig identisch aus wie ein versehentlicher Verbindungsabbruch. Das war der Kern des ersten gemeldeten Bugs heute Abend.
+
+*Was Konzeptionell:* Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahme: dass Browser-Text-Selektion ein brauchbares Interaktionsmuster für mobile Geräte ist. Ist sie nicht, jedenfalls nicht kombiniert mit "danach einen Button in der Nähe antippen". Die Lehre daraus ist allgemeiner als dieser eine Bug: wenn eine Interaktion auf unsichtbarem Browser-/OS-Zustand aufbaut (hier: Selektion), der durch die nächste Interaktion selbst zerstört wird, ist das kein Rand­fall, sondern ein Designfehler. Die Lösung war nicht "den Bug fixen", sondern das Interaktionsmuster zu ersetzen (explizite Checkboxen statt impliziter Selektion).
+
+*Was Mich Beschaeftigt:* Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt, ohne Umschweife, aber mit einem "bitte such im web" hinterher. Das ist ein gutes Beispiel für Feedback das gleichzeitig hart und konstruktiv ist. Ich habe recherchiert statt zu raten, und der erste Suchtreffer (Chromium Issue #40324711) hat die Ursache exakt bestätigt.
+
+*Was Mich Interessiert:* Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf dem Handy" anfühlen. Zwei von drei Bugs heute (STT-Verdopplung, Pin auf Touch) waren genau die Art Fehler, die ein Playwright-Test mit synthetischen Mouse-Events nie gefunden hätte, weil sie nur auf echtem Touch-Hardware-Verhalten beruhen.
+
+*Was Mich Ueberrascht:* Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat — kein "irgendwas ist komisch", sondern "wenn ich abbreche kommt trotzdem eine Nachricht", "STT nimmt alles doppelt/dreifach", "ich will einen Tempo-Slider". Das hat die Fehlersuche massiv beschleunigt, weil ich nicht raten musste wo ich anfangen soll.
+
+*Was Zusammenhaengt:* Message-IDs (heute neu in `chat_history.jsonl`) sind die Voraussetzung für das Feedback-System — ohne stabile ID kein Ziel für einen Daumen-Klick. Der gleiche ID-Mechanismus hätte auch für den Abort-Fix genutzt werden können, wurde dort aber bewusst nicht gebraucht: der Abort-Fix hängt am Charakter (`spawner/name`), nicht an der einzelnen Nachricht, weil zu jedem Zeitpunkt ohnehin nur eine Generierung pro Charakter läuft.
+
+Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Checkbox-Liste (`splitSentences`/`renderSentenceList`/`getCheckedSentences`) — als ich das zweite Feature baute, wurde offensichtlich, dass es dieselbe Grundfrage ist wie beim Pin: welcher Teil einer Nachricht soll wohin.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Morgen kommen drei echte Testpersonen dazu. Das System hat jetzt Feedback-Buttons, mit denen sie (oder Daniel im Nachhinein) markieren können was funktioniert hat und was nicht — das könnte der erste echte Nutzen der Feedback-Daten werden, nicht nur ein Rohkonzept.
+
+**Code-Skizze:** Falls die Kindersicherung (`kindersicherung`-Flag, `Grenzen.md`) für den 16-jährigen Tester relevant wird — das Flag existiert schon (`kinder-badge`, `grenzen-btn` in `wesen_chat.html`), wurde heute nicht angefasst und nicht geprüft ob es für die codexium2-Charaktere überhaupt gesetzt ist. Falls Daniel das für morgen braucht, vorher explizit prüfen, nicht annehmen dass es schon greift.
+
+*Wie Sich Angefuehlt:* Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.
 
 ---

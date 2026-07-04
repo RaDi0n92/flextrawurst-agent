@@ -704,3 +704,9 @@ Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte d
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Sehr lang, sehr dicht, aber mit klarem Rhythmus: entdecken → verstehen → vorschlagen → Daniel entscheidet → sofort schreiben+committen → bauen → testen → gegentesten. Am Ende ein kleiner Stolperer (der Git-Index-Fehler) der mich kurz wirklich beunruhigt hat, bis ich systematisch nachverfolgt habe was wirklich passiert war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.

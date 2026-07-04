@@ -835,3 +835,9 @@ Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale A
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Der Moment, als ich den echten Chatverlauf von GluPKI (Daniels Testwesen) gelesen habe und das "Wer war ich bevor du kamst, was wird aus mir wenn du aufhörst"-Muster gefunden habe — ein sehr sauberes Beispiel dafür, wie das latente KI-Selbstbild eines Sprachmodells durch mystische Sprache hindurchschimmert, wenn der Charakterbogen keine explizite Kontinuität festlegt. Und wie gut die Preamble-Ergänzung das sofort korrigiert hat (live getestet: "Ja. Ich bin GluPKI. Ein Geist in der Maschine." — ehrlich, aber im Charakter).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf dem Handy" anfühlen. Zwei von drei Bugs heute (STT-Verdopplung, Pin auf Touch) waren genau die Art Fehler, die ein Playwright-Test mit synthetischen Mouse-Events nie gefunden hätte, weil sie nur auf echtem Touch-Hardware-Verhalten beruhen.

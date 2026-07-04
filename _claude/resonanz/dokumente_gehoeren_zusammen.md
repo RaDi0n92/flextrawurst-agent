@@ -756,3 +756,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 - `_claude/ideen/codexium2_solarius2/sessions_kontextmeter.md`
 - Claude-Memory `project_codexium2_testbed.md` (Scope-Regel)
 - Claude-Memory `feedback_sofort_committen_bei_konzeptentscheidungen.md`
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+`_claude/ideen/codexium2_solarius2/chat_architektur.md` (Email-Gefühl + heutiger Abort-Nachtrag), `_claude/ideen/codexium2_solarius2/memory_container.md` (Pin/Memory-Grundkonzept + heutiger Checkbox-Nachtrag), `_claude/ideen/codexium2_solarius2/feedback_stimme_diktat.md` (heute komplett neu, inkl. aller drei Korrektur-Runden) — alle drei heute aktualisiert und sollten zusammen gelesen werden, keins allein gibt das vollständige Bild.

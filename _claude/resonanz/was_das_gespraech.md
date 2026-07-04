@@ -703,3 +703,9 @@ Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkre
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Die Erkenntnis, dass "Session" als Konzept nicht nur eine UI-Frage ist, sondern eine Antwort auf das Kontextfenster-Problem — Memory ist der Mechanismus der das Vergessen-Können erst sicher macht.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist, den man bekommen kann — kein Stacktrace, aber eine echte Beobachtung aus echter Nutzung. Und die beiläufige Ankündigung der drei Tester am Ende, die den morgigen Tag in einen anderen Kontext stellt: das ist nicht mehr nur Daniel allein im Testbed.

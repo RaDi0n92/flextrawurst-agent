@@ -1,9 +1,9 @@
 ---
 name: codexium2-solarius2-feedback-stimme-diktat
-description: Feedbacksystem (Daumen hoch/runter + Kommentar), Stimmenauswahl männlich/weiblich, Spracheingabe und Pin-Selektions-Fix für Codexium2/Solarius2
+description: Feedbacksystem, Stimmenauswahl + Lesetempo, Spracheingabe (inkl. Android-Verdopplungs-Fix) und echter Stop-Abbruch für Codexium2/Solarius2
 metadata:
   type: project
-tags: [codexium2, solarius2, feedback, tts, speech-to-text, pin, testbed]
+tags: [codexium2, solarius2, feedback, tts, speech-to-text, pin, abort, testbed]
 status: gebaut
 datum: 2026-07-04
 autor: claude-code bei Daniels VPS
@@ -29,15 +29,9 @@ Persistenz bewusst doppelt, wie von Daniel gefordert:
 - `feedback.json` im Charakterordner — eine Liste, Wahrheit für die UI (Upsert über die Nachrichten-ID).
 - `feedback/<id>.md` im selben Ordner, eine Datei pro Nachricht, direkt lesbar ohne JSON zu parsen — wird bei jedem Update neu geschrieben (kein Anhäufen mehrerer Dateien pro Nachricht).
 
-**3. Speech-to-Text.** Mikrofon-Button neben dem Senden-Button, nutzt die browsereigene Web Speech API (`SpeechRecognition`/`webkitSpeechRecognition`, `lang: de-DE`, `continuous: true`, `interimResults: true`). Kein Server-Roundtrip, kein neuer Endpoint. Button versteckt sich selbst per Feature-Detection wenn der Browser die API nicht kennt (z.B. Firefox Desktop). Diktierter Text wird an bereits Getipptes angehängt, nicht überschrieben.
+**3. Speech-to-Text.** Mikrofon-Button neben dem Senden-Button, nutzt die browsereigene Web Speech API (`SpeechRecognition`/`webkitSpeechRecognition`, `lang: de-DE`). Kein Server-Roundtrip, kein neuer Endpoint. Button versteckt sich selbst per Feature-Detection wenn der Browser die API nicht kennt (z.B. Firefox Desktop). Diktierter Text wird an bereits Getipptes angehängt, nicht überschrieben. **Korrigiert am Abend** — siehe Nachtrag: `continuous:true` war falsch, verdoppelte Wörter.
 
-**4. Pin-Fix.** Der Pin-Mechanismus aus `memory_container.md` sollte von Anfang an einzelne markierte Sätze pinnen können, hat aber in der Praxis immer die ganze Nachricht gegriffen. Ursache: ein Klick auf den Pin-Button erzeugt einen eigenen `mousedown` am Klickpunkt (auf dem Button, nicht im Text) — das kollabiert jede vorher im Bubble-Text getroffene Selektion, bevor der `click`-Handler überhaupt läuft. Browser-Standardverhalten, kein offensichtlicher Bug im eigenen Code. Fix: `mousedown`-Handler auf dem Pin-Button mit `preventDefault()`, plus eine robustere Prüfung ob die Selektion wirklich aus dieser Bubble stammt (`Range`-Containment via `bubble.contains(selection.anchorNode)` statt fragilem Substring-Vergleich).
-
----
-
-## Was ich nicht verstehe
-
-Ob mobile Text-Selektion (Android/iOS, Long-Press + Ziehen der Selektionsgriffe) nach diesem Fix zuverlässig funktioniert. Der `mousedown`-Fix hilft nachweislich bei Maus-Klicks (getestet); mobile Browser können eine Selektion aber auch durch reines Antippen des Bildschirms an anderer Stelle über OS-Ebene kollabieren, unabhängig von JS. Das ist nicht durch Seiten-Code allein lösbar. Sollte Daniel das auf dem Handy testen und es dort noch hakt, bräuchte es einen anderen Ansatz (z.B. Text-Abschnitte einzeln antippbar machen statt freier Selektion).
+**4. Pin-Fix, erster Anlauf (ÜBERHOLT — siehe Nachtrag).** Erster Versuch: `mousedown`-Handler mit `preventDefault()` auf dem Pin-Button plus `Range`-Containment-Prüfung, damit eine per Maus getroffene Textauswahl den Klick auf den Button übersteht. Hat am Desktop funktioniert (getestet), aber auf dem Handy nicht — Daniel hat's getestet und es griff weiterhin immer die ganze Nachricht. Ursache: Touch-Text-Selektion kollabiert beim Antippen eines Buttons daneben auf OS-Ebene, das ist mit `mousedown.preventDefault()` (einem reinen Maus-Event) nicht zu retten. Der ganze Ansatz "Text markieren" wurde noch am selben Abend durch eine Satz-Checkbox-Liste ersetzt — siehe Nachtrag unten und `memory_container.md`.
 
 ---
 
@@ -70,6 +64,22 @@ interface FeedbackEintrag {
 
 - Message-IDs: `appendHistory`/`loadHistory`/`loadCurrentSessionHistory`/`splitSessions` in `serve_process_camera_preview.ts`, Client generiert `msgId`/`replyMsgId` in `send()`.
 - Feedback-Endpunkte: `GET`/`POST /wesen/:spawner/:name/feedback` — Upsert, schreibt JSON + MD.
-- Stimmenauswahl, Mic-Button, Feedback-Buttons, Pin-Fix: alle in `wesen_chat.html`.
-- Getestet: Feedback-Klick schreibt `feedback.json` + `feedback/<id>.md` korrekt (verifiziert am Beispiel GluPKI). Pin-Selektion übersteht jetzt Button-Klick (direkter DOM-Test: Teilauswahl "Testsatz z" aus einer längeren Nachricht landet unverändert im Pin-Modal). Stimmen-Dropdown zeigt beide Optionen. Mic-Button erscheint bei Browsern mit Web-Speech-Support.
-- Nicht getestet (nicht headless simulierbar): echtes Mikrofon-Diktat, mobile Touch-Selektion.
+- Stimmenauswahl, Mic-Button, Feedback-Buttons: `wesen_chat.html`.
+- Getestet: Feedback-Klick schreibt `feedback.json` + `feedback/<id>.md` korrekt (verifiziert am Beispiel GluPKI). Stimmen-Dropdown zeigt beide Optionen. Mic-Button erscheint bei Browsern mit Web-Speech-Support.
+- Nicht headless testbar: echtes Mikrofon-Diktat — dafür von Daniel real auf dem Handy getestet (siehe Nachtrag).
+
+---
+
+## Nachtrag 2026-07-04 (Abend) — drei Korrekturen nach echtem Praxistest
+
+Daniel hat alles auf dem Handy getestet — drei Sachen waren kaputt bzw. fehlten:
+
+**1. Speech-to-Text verdoppelte Wörter.** Ursache recherchiert (siehe Web-Suche): bekannter Chromium-Bug auf Android (Issue #40324711) — `continuous:true` wird von Chrome durch heimliche Neustarts des nativen Recognizers simuliert, dabei wird bereits gehörter Ton nochmal mitgeschnitten. Fix laut mehreren Bug-Threads (u.a. react-speech-recognition#18): `continuous:false` setzen und im `onend` selbst sofort neu starten — ein "continuous surrogate" aus lauter Einzel-Sessions statt der kaputten nativen Continuous-Funktion. `sttFinal` bleibt über die Neustarts hinweg erhalten (akkumuliert), jede neue Einzel-Session hört nur noch Ton NACH dem Neustart, dadurch kein doppeltes Mitschneiden mehr.
+
+**2. Stop-Klick killt die Generierung nicht wirklich.** War eine Verwechslung im eigenen Code zwischen "Nutzer klickt bewusst Stop" und "Verbindung geht verloren" — siehe ausführlich `chat_architektur.md`-Nachtrag. Kurzfassung: neuer Endpunkt `POST .../chat/abort`, den der Stop-Button zusätzlich zum lokalen Fetch-Abort aufruft; killt die Ollama-Generierung serverseitig wirklich und verwirft das Ergebnis, statt es (wie beim reinen Email-Gefühl gewollt) trotzdem fertig zu generieren und zu speichern.
+
+**3. TTS-Tempo-Wunsch.** Slider im Header (−50% bis +100%, Schritt 10%), pro Charakter in `localStorage` gemerkt, geht direkt in den bestehenden `rate`-Parameter von `tts_service.py` (der konnte das schon immer, war im Frontend nur nie einstellbar).
+
+Alle drei Punkte von Daniel auf dem Handy nachgetestet und bestätigt funktionierend.
+
+**4. (separat entdeckt, gleicher Abend) Profil zeigte nur ausgefüllte Felder.** Der Spawner (`wesen_spawner.html`) schreibt beim Erstellen nur für ausgefüllte Formularfelder überhaupt eine `.md`-Datei — leere Felder existierten technisch gar nicht und tauchten im Profil (`wesen_profil.html`) deshalb nie auf, obwohl sie nachträglich befüllbar sein sollten. Fix: `wesen_profil.html` rendert jetzt eine feste Liste aller acht bekannten Feldnamen (Gesprächseinstieg, Was ich bin, Neigungen, Abneigungen, Beschreibung, Wesendefinition, Weltlore, Anleitung), leere als "— noch leer" markiert, Speichern legt die Datei bei Bedarf neu an (Backend konnte das schon immer, war nur nie sichtbar).

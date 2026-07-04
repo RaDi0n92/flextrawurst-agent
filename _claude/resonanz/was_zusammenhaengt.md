@@ -913,3 +913,11 @@ Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Container (session-lokal, Budget-basiert) → Memory-Extraktion (async, human-getriggert) → Session-Ende (Marker + Extraktion + Container-Leerung) → Session-Browser (alte Sessions read-only) sind vier Teile eines einzigen Kreislaufs: das Akute wird gepinnt, beim Sessionende in Dauerhaftes verdichtet, die rohe History bleibt lesbares Archiv aber nicht mehr aktiver Kontext. Das Kontextfenster-Meter macht sichtbar warum das nötig ist (8192 Token sind schnell voll).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Message-IDs (heute neu in `chat_history.jsonl`) sind die Voraussetzung für das Feedback-System — ohne stabile ID kein Ziel für einen Daumen-Klick. Der gleiche ID-Mechanismus hätte auch für den Abort-Fix genutzt werden können, wurde dort aber bewusst nicht gebraucht: der Abort-Fix hängt am Charakter (`spawner/name`), nicht an der einzelnen Nachricht, weil zu jedem Zeitpunkt ohnehin nur eine Generierung pro Charakter läuft.
+
+Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Checkbox-Liste (`splitSentences`/`renderSentenceList`/`getCheckedSentences`) — als ich das zweite Feature baute, wurde offensichtlich, dass es dieselbe Grundfrage ist wie beim Pin: welcher Teil einer Nachricht soll wohin.

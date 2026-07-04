@@ -756,3 +756,9 @@ Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht ein
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Wie sauber und schnell die Extraktion tatsächlich funktioniert hat, sobald sie lief — "Der Nutzer heißt Daniel und mag Zwiebelkuchen sehr" wurde korrekt in zwei Kategorien aufgeteilt (`Name: Daniel` unter über_mich, `Mag Zwiebelkuchen sehr.` unter meinungen), ganz ohne Nacharbeit.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat — kein "irgendwas ist komisch", sondern "wenn ich abbreche kommt trotzdem eine Nachricht", "STT nimmt alles doppelt/dreifach", "ich will einen Tempo-Slider". Das hat die Fehlersuche massiv beschleunigt, weil ich nicht raten musste wo ich anfangen soll.

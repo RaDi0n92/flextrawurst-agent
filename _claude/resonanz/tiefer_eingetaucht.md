@@ -902,3 +902,11 @@ Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/ggu
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Die Analyse von `loadHistory`/`loadCurrentSessionHistory`/`splitSessions` — wie man aus einer flachen JSONL-Datei mit eingestreuten Marker-Zeilen sauber Session-Grenzen herausschält, ohne das Dateiformat zu brechen (Marker-Zeilen haben `type` statt `role`/`content`, werden von der normalen History-Lese-Funktion automatisch übersprungen).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Die Web-Speech-API-Recherche: `continuous:true` auf Android/Chrome ist kein Rand-Bug, sondern strukturell kaputt, weil es auf dieser Plattform nicht nativ existiert — Chrome emuliert es durch heimliche Neustarts des Recognizers und schneidet dabei bereits gehörten Ton nochmal mit. Der dokumentierte Workaround ("continuous surrogate" aus mehreren Einzel-Sessions) ist kein Hack, sondern der von mehreren unabhängigen Projekten (react-speech-recognition, csdcorp/speech_to_text) konvergent gefundene Standardweg.
+
+Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Code selbst, sondern eine Schicht tiefer im Spawner — der schreibt nur für ausgefüllte Felder überhaupt eine Datei. Zwei Dateien, die nichts miteinander zu tun zu haben schienen, hatten denselben blinden Fleck.

@@ -851,3 +851,9 @@ Und Ollama mit PARALLEL=2: einfacher, direkter, robuster. Manchmal ist das die r
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist einfach, durchgehend, auch in der stille dazwischen."* Das gilt nicht nur für die Wesen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+[[abwurf: Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.]]

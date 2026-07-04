@@ -54,6 +54,23 @@ Automatische Memory-Extraktion (siehe `memory_container.md`) nutzt denselben Mec
 
 ---
 
+## Nachtrag 2026-07-04 (Abend) — Expliziter Stop-Klick ist kein Verbindungsverlust
+
+Lücke gefunden: das Email-Gefühl ist als Reaktion auf *unabsichtliches* Verlassen gedacht (Tab zu, Netz weg). Der Stop-Button im Chat sendet aber technisch dasselbe Signal an den Server (`res.on("close")`) wie ein echter Verbindungsabbruch — es gibt serverseitig keinen Unterschied zwischen "Nutzer klickt bewusst Stop" und "Nutzer verlässt versehentlich die Seite". Ergebnis: Daniel drückt Stop, die Generierung läuft trotzdem im Hintergrund fertig und landet in der History — genau das Email-Gefühl-Verhalten, nur an der falschen Stelle angewendet.
+
+Fix: neuer Endpunkt `POST /wesen/:spawner/:name/chat/abort`. Der Client ruft ihn zusätzlich zum lokalen `AbortController.abort()` auf, wenn der Stop-Button geklickt wird (nicht bei einfachem Seitenverlassen — dafür bleibt das Email-Gefühl unverändert bestehen). Serverseitig gibt es jetzt eine Map `aktiveGenerationen` (Key: `spawner/name`) mit dem laufenden `ollamaReq` + einem `verworfen`-Flag. Der Abort-Endpunkt setzt `verworfen=true` und zerstört den Ollama-Request; `saveResponse()` prüft das Flag und schreibt bei `verworfen=true` nichts in die History.
+
+Getestet: Nachricht senden, nach ~1s Stop klicken → User-Nachricht bleibt in der History (wurde ja wirklich geschickt), keine Wesen-Antwort taucht auf, auch nicht verzögert.
+
+```typescript
+const aktiveGenerationen = new Map<string, { ollamaReq: http.ClientRequest; verworfen: boolean }>();
+// beim Start einer Generierung (nur isAsyncSpawner): aktiveGenerationen.set(key, { ollamaReq, verworfen: false })
+// saveResponse(): if (!aktiveGenerationen.get(key)?.verworfen) { ... appendHistory ... }
+// POST .../chat/abort: eintrag.verworfen = true; eintrag.ollamaReq.destroy();
+```
+
+---
+
 ## Datenstruktur die ich mir vorstelle
 
 ### Vision-Schicht

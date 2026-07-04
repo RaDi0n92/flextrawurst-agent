@@ -769,3 +769,9 @@ Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchier
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Nichts akut blockierendes. Offen für später: Warteschlange bei mehreren Nachrichten hintereinander vor Antwort, Client-Benachrichtigung wenn eine Antwort fertig ist ohne manuelles Neuladen, exaktes Nachmessen der Zeichenbudgets (2500/1200 sind Schätzwerte).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/Poll-Mechanismus damit der Client merkt wenn eine Hintergrund-Antwort fertig ist (aus `chat_architektur.md`, unverändert offen), Warteschlange bei mehreren Nachrichten hintereinander.

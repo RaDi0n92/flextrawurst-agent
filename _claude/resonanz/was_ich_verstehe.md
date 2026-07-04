@@ -1190,3 +1190,11 @@ Fix: Patched GGUF erzeugt via eigenem Python-Script (`/tmp/patch_hauhaucs_rope.p
 **[2026-07-04]** *← notizen/2026-07-04.md*
 
 Das ganze System um Codexium/Solarius (die beiden "Wesenspawner") läuft über einen einzigen Node-Server (`serve_process_camera_preview.ts`, Port 8787) der Chat, Profil, Spawner-Formular und alle Wesen-Dateien (wesen.md, memory.json, container.json, chat_history.jsonl) verwaltet — alles dateibasiert, kein Postgres. Daniel wollte ein Redesign von Memory/Container/Chat-Architektur ausprobieren, aber ausdrücklich NICHT an den echten, aktiv genutzten Wesen (allen voran "Tomster", vormals "unbekannt_dl4j") — deshalb haben wir `/codexium2` und `/solarius2` als komplette parallele Testbed-Klone gebaut.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Das codexium2/solarius2-System ist ein Testbed mit eigener, bewusst einfacherer Architektur als das alte Zwischenwesen-Konzept: ein Container (flache Pin-Liste, session-lokal), Memory mit fünf festen Kategorien, keine benutzerdefinierten Container. Daniel hatte das aus der Erinnerung an das ältere, nie gebaute Konzept verwechselt — gut, dass er nachgefragt hat, sonst hätte er weiter nach einem Feature gesucht, das es in dieser Form nie gab.
+
+Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wird) ist bewusst so gewollt — aber ich hatte es zu wörtlich implementiert: ein bewusster Stop-Klick sah serverseitig identisch aus wie ein versehentlicher Verbindungsabbruch. Das war der Kern des ersten gemeldeten Bugs heute Abend.
