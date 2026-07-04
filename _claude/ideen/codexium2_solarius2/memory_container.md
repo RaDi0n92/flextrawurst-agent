@@ -23,7 +23,9 @@ Das alte Zwischenwesen-Konzept (`_claude/ideen/zwischenwesen/container.md`, `mem
 
 ## Was ich verstehe
 
-**Container** = was gerade akut in diesem einen Gespräch zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+**Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+
+**Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
 
 ### Pin-Mechanismus (entschieden 2026-07-04)
 
@@ -62,6 +64,8 @@ Kein fixer Max-Wert pro Memory-Kategorie. Stattdessen ein **Gesamt-Zeichenbudget
 Vorläufiger Vorschlag als Startwert (nicht in Stein gemeißelt, wird beim Bauen anhand echter Feldgrößen nachgemessen):
 - Memory gesamt: ~2500 Zeichen (über alle 5 Kategorien verteilt, keine Kategorie einzeln gedeckelt)
 - Container gesamt: ~1200 Zeichen (inkl. der 88-Zeichen-Kommentare)
+
+**Update 2026-07-04 Abend — von Daniel angehoben:** Memory 2500 → **3333** Zeichen, Container 1200 → **2222** Zeichen. Beide Werte bleiben weiterhin vorläufig/nachjustierbar, kein neues Herleitungsprinzip, einfach mehr Luft.
 
 Wenn ein neuer Eintrag das Budget sprengen würde: UI verweigert das Speichern, Mensch muss erst etwas entfernen. Kein automatisches Kürzen/Verdrängen.
 
