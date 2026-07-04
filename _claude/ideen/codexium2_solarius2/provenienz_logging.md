@@ -82,3 +82,7 @@ Direkte Folgeanfrage: "wie im Mischpult" sollte man jede Nachricht aus dem Konte
 - Backend: `splitSentencesServer`, `ladeKontextAusschluesse` (scannt alle `kontext_toggle`-Events, letzter pro msgId gewinnt), `wendeKontextAusschlussAn` (Filterlogik), neuer Endpunkt `POST .../kontext-ausschluss`, `GET .../history` liefert `ausschluesse`-Map mit.
 - Frontend: neuer "✂️"-Button pro Nachricht, Modal mit "ganze Nachricht"-Checkbox + Satz-Checkliste (wiederverwendet `renderSentenceList`/`getCheckedSentences` aus dem Pin-Feature), visuelle Markierung (durchgestrichen bei Vollausschluss, Badge bei Teilausschluss), ctx-Meter zieht Ausgeschlossenes ab.
 - Getestet: Backend-Filterlogik direkt am tatsächlich gesendeten Payload verifiziert, UI-Fluss (Button → Modal → Satz abwählen → Badge erscheint) per Playwright — beide an Wegwerf-Testcharakteren, danach gelöscht.
+
+### Nachtrag — Listen-Zugang (wie ursprünglich gemeint)
+
+Der ✂️-Button pro Bubble war meine erste Interpretation. Daniel meinte es näher am Mischpult-Vorbild: eine eigene Übersicht (wie Container/Memory/Sessions), die alle Nachrichten der Session als **111-Zeichen-Vorschau** in einer Liste zeigt, antippen öffnet dann die Satzauswahl. Neuer Header-Button "🗒️ Kontext" macht genau das — ruft für die angeklickte Zeile dieselbe `openKtxModal()` auf wie der Bubble-Button, keine doppelte Logik. Beide Zugänge bleiben nebeneinander bestehen (Bubble-Button für "gerade diese eine Nachricht", Liste für "ganze Session auf einen Blick durchgehen").
