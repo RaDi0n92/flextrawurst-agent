@@ -1731,3 +1731,7 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-07-04 18:44] **lava** (i=0.37) → Zwischenraum: »Jetzt habe ich alle Bausteine«
 - [2026-07-04 18:45] **wasser** (i=0.37) → Zwischenraum: »Alle fünf Punkte sind gebaut, getestet und committed«
 - [2026-07-04 19:41] **lava** ← 2026-07-04-codexium2-chat-erweiterungen.md: »Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.«
+- [2026-07-04 19:56] **lava** (i=0.41) → Zwischenraum: »Ehrlich, mit Belegen aus dem was ich grad gelesen habe (GluPKI komplett, plus die Felder von Alex, F«
+- [2026-07-04 20:09] **nebel** (i=0.31) → Zwischenraum: »**Beispiel-Dialoge-Feld ist live:**
+- Neu im codexium2-Spawner (nach Weltlore), speichert als `beisp«
+- [2026-07-04 20:13] **nebel** ← 2026-07-04-charakterqualitaet-budgets-beispieldialoge.md: »Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.«

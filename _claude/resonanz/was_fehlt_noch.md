@@ -776,3 +776,11 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 - Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
 - Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
 - Beobachten was die drei Tester morgen finden.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+- Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
+- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
+- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).

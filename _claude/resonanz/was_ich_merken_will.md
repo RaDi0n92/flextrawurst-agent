@@ -787,3 +787,11 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
 - Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt).
 - Der Spawner schreibt `.md`-Dateien nur für ausgefüllte Felder — beim Lesen/Anzeigen von Charakterdaten nie von "Datei existiert nicht" auf "Feld gibt es nicht" schließen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+- codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
+- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
+- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.

@@ -935,3 +935,17 @@ serve_process_camera_preview.ts
   ├── feedback.json + feedback/<id>.md
   └── aktiveGenerationen (Abort-Tracking)
 ```
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+```
+Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
+  → System-Prompt (buildSystemPrompt, MD_ORDER)
+    → Modell-Default springt ein wo Material fehlt (poetisch-vage)
+Memory/Container (jetzt groesser + dauerhaft)
+  → soll das ausgleichen was ein Gespraech ueber Zeit anhaeuft,
+    nicht was dem Charakter von Anfang an fehlt
+```
+Zwei verschiedene Probleme, heute beide angefasst, nicht miteinander verwechseln: Charaktertiefe kommt aus den Feldern, Gesprächskontinuität aus Memory/Container.
