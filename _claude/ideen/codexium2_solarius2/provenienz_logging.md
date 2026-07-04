@@ -40,6 +40,8 @@ Referenz ist die Dolphin-Mischpult-Provenienz-Session vom 24.06. (`_claude/notiz
 | `profil_feld_geaendert` | `.md`-Datei gespeichert (Profil oder wesen.md) | `datei`, `vorher` (voller Inhalt), `nachher` (voller Inhalt) |
 | `profil_feld_geloescht` | `.md`-Datei gelöscht | `datei`, `vorher` |
 | `generierung_abgebrochen` | Stop-Klick killt eine laufende Generierung wirklich | `msgId` (= die verworfene Antwort) |
+| `kontext_toggle` | Nachricht/Satz aus dem Kontextfenster genommen/wieder reingenommen | `msgId`, `ganz` (bool), `saetze` (number[]) |
+| `abschluss_uebernommen` | Entwurf der Abschluss-Geschichte übernommen | `vorher` (voller alter Inhalt von `letzter_abschluss.md`, meist leer), `nachher` (voller neuer Text) |
 | `session_start` | bereits vorher bestehend | `ts` |
 
 ---
@@ -90,3 +92,27 @@ Der ✂️-Button pro Bubble war meine erste Interpretation. Daniel meinte es n�
 ### Nachtrag — Checkbox-Richtung umgedreht + Live-Vorschau
 
 Zwei Korrekturen nach dem ersten Test: (1) die Checkboxen waren mit "angehakt = bleibt drin" vorbelegt — Daniel wollte das Gegenteil, "angehakt = wird rausgeworfen", Default also überall unangehakt. Eigene Optik (roter Rahmen, durchgestrichener Text) nur im Kontext-Modal, damit die Umkehrung gegenüber Pin/Memory-Add (dort bleibt "angehakt = ausgewählt") nicht verwechselt wird. (2) Wie im Mischpult sollte man sofort sehen, wie viel Kontext eine Auswahl freigibt — nicht erst nach dem Speichern. Löst das über einen `preview`-Parameter in `updateCtxMeter()`: solange das Modal offen ist, rechnet der ganz normale Header-Zähler den gerade angehakten (noch ungespeicherten) Stand für die eine offene Nachricht sofort mit ein, zusätzlich eine eigene Zeile im Modal mit der Zeichen-Differenz in Klartext.
+
+### Nachtrag — 77%-Kontext-Warnung
+
+Direkter Folgeauftrag beim Durchgehen des ctx-Meters: "mach es ab 77% und nur als hinweis auf qualitätsverlust durch rausfallen kompletter nachrichten usw" — explizit kein Vorschlag was zu tun ist (keine "Neue Session jetzt!"-Aufforderung), nur eine reine Information. Umgesetzt in `updateCtxMeter()`: ab `geschaetzeTokens/8192 >= 0.77` bekommt `#ctx-meter` die Klasse `.ctx-warn` (gelb, fett) plus ein `⚠️ wird knapp` im Text und einen erklärenden `title`-Tooltip. Keine Ampelfarben darunter (rot/grün) — das war im ursprünglichen Konzept bewusst gegen das Mischpult-Vorbild entschieden, hier bewusst beibehalten: nur ein einziger Schwellwert, eine einzige Warnfarbe.
+
+## Nachtrag 2026-07-04 (spät) — Abschluss-Geschichte (erzählerischer Rückblick, sessionübergreifend)
+
+Direkter Folgeauftrag, im selben Atemzug wie die 77%-Warnung: "ich will immer die möglichkeit diese 'geschichte'... auch immer zwischendurch generieren zu lassen und dann zu lesen und sie entwerder wider zu verwerfen oder dann als schönen abschluss zu wählen der dann mitrüber genommen wird in neue [Session]". Auf Nachfrage (AskUserQuestion) zum genauen Übertragungsmechanismus hat Daniel sich für "eigenes Feld im System-Prompt" entschieden — keine Vermischung mit Memory/Container, ein eigenständiges, jederzeit ersetzbares Feld.
+
+### Was ich verstehe
+
+Das ist konzeptionell etwas anderes als Memory/Container (die sammeln einzelne Fakten/Sätze) — die Abschluss-Geschichte ist ein einziger zusammenhängender, erzählerischer Text, geschrieben aus der Perspektive/im Ton des Wesens selbst, der bewusst nicht kategorisch ist. Sie ersetzt sich selbst komplett bei jeder neuen Übernahme (keine Historie mehrerer alter Abschlüsse im Prompt — nur der jeweils letzte zählt), aber die alte Version geht nicht verloren: sie steht vollständig im `abschluss_uebernommen`-Provenienz-Event (`vorher`).
+
+### Umsetzung
+
+- Backend: `ABSCHLUSS_MAX_ZEICHEN = 1337`. `runAbschlussJob()` lädt den aktuellen Session-Verlauf (`loadCurrentSessionHistory`), baut daraus (plus dem bisherigen `letzter_abschluss.md`, falls vorhanden, für thematische Kontinuität) einen Prompt an Ollama, schreibt das Ergebnis in einen Status-File `abschluss_entwurf.json` (`laeuft`/`fertig`/`fehler`) — exakt dasselbe Async-Job-Muster wie `runMemoryExtraktionJob`, damit kein Doppelstart möglich ist.
+- Drei Endpunkte: `GET .../abschluss/status` (liefert Job-Status plus den aktuell *übernommenen* Abschluss separat als `aktueller_abschluss`), `POST .../abschluss/generieren` (startet Job, 409 wenn schon läuft), `POST .../abschluss/uebernehmen` (schreibt `letzter_abschluss.md`, loggt Provenienz mit vollem vorher/nachher).
+- `letzter_abschluss.md` in `MD_ORDER` ganz ans Ende gesetzt (nach `anleitung.md`) — von allen System-Prompt-Feldern das mit der stärksten Aktualität, soll zuletzt gelesen werden.
+- Frontend: neuer Header-Button "📖 Abschluss" (jederzeit verfügbar, nicht ans Sessionende gebunden — genau wie gewünscht: "auch immer zwischendurch"). Modal zeigt den aktuell übernommenen Abschluss (falls vorhanden) plus einen Bereich für einen neuen Entwurf. "Geschichte generieren" startet den Job und pollt den Status alle 3 Sekunden nach, solange `laeuft` — ist das Modal geschlossen, wird der Timer gestoppt (kein Hintergrund-Polling ohne sichtbares Modal). Ist der Entwurf fertig: "Verwerfen" (löscht ihn nur aus der Anzeige, nichts wird serverseitig persistiert) oder "Als Abschluss übernehmen" (schreibt ihn dauerhaft).
+- Getestet End-to-End an einem Wegwerf-Charakter (`AbschlussTest`, codexium2): echtes Gespräch geführt, Geschichte generiert (dauerte ca. 45s auf dem CPU-only-VPS mit dem 35B-Modell), übernommen, `letzter_abschluss.md` und Provenienz-Event geprüft, dann `POST .../session/beenden` ausgelöst und eine neue Nachricht geschickt — das Wesen hat sich korrekt auf das vorherige Gespräch bezogen ("Wir sprachen über Stille... Wanderungen im Wald..."), obwohl die eigentliche Chat-History der alten Session nicht mehr im aktiven Kontext war. Charakter danach komplett gelöscht, kein Testdaten-Rückstand.
+
+### Was fehlt noch
+
+Nichts Blockierendes. Offen, kein Auftrag: was passiert bei sehr langen Sessions, wenn `loadCurrentSessionHistory` selbst schon so groß ist, dass sie das 8192-Kontextfenster für den Abschluss-Prompt sprengt (aktuell keine Kürzung eingebaut, nur der *Output* ist auf 1337 Zeichen begrenzt) — bisher in der Praxis nicht aufgetreten, da Sessions meist deutlich kürzer sind.
