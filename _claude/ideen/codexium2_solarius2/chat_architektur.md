@@ -4,7 +4,7 @@ description: Das "Email-Gefühl" — Chat-Antworten laufen asynchron, unabhängi
 metadata:
   type: project
 tags: [codexium2, solarius2, architektur, async, testbed]
-status: in-diskussion
+status: gebaut
 datum: 2026-07-04
 autor: claude-code bei Daniels VPS
 ---
@@ -43,10 +43,14 @@ Automatische Memory-Extraktion (siehe `memory_container.md`) nutzt denselben Mec
 
 ---
 
-## Was noch fehlt bevor wir bauen können
+## Umsetzung (2026-07-04, gebaut + getestet)
 
-- Wie erfährt der Client dass eine neue Antwort da ist, ohne dass er ständig pollen muss? (Einfaches Polling beim Öffnen reicht evtl. erstmal — kein Push nötig für den Anfang)
-- Was passiert bei mehreren Nachrichten hintereinander bevor die erste Antwort fertig ist? Warteschlange pro Wesen?
+`res.on("close")` killt `ollamaReq` nicht mehr für codexium2/solarius2 (per `isAsyncSpawner`-Flag), `saveResponse()` läuft trotzdem über `or.on("end")`. Getestet: Client trennt nach 2s, Antwort landet trotzdem ~44s später in der History. Codexium/Solarius gegengetestet: brechen weiterhin korrekt ab.
+
+## Noch offen (kein Blocker, kann später nachgezogen werden)
+
+- Wie erfährt der Client dass eine neue Antwort da ist, ohne dass er ständig pollen muss? (Aktuell: History wird beim Öffnen/Neuladen der Seite neu geholt — kein Push, kein Auto-Poll während die Seite offen bleibt)
+- Was passiert bei mehreren Nachrichten hintereinander bevor die erste Antwort fertig ist? Warteschlange pro Wesen? (Noch nicht behandelt — aktuell könnten parallele Anfragen an dasselbe Wesen sich die History-Reihenfolge durcheinanderbringen)
 
 ---
 

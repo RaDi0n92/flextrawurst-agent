@@ -4,7 +4,7 @@ description: Entschiedenes Memory/Container-Konzept für Codexium2/Solarius2 —
 metadata:
   type: project
 tags: [codexium2, solarius2, memory, container, testbed]
-status: in-diskussion
+status: gebaut
 datum: 2026-07-04
 autor: claude-code bei Daniels VPS
 ---
@@ -107,7 +107,10 @@ interface Memory {
 
 ---
 
-## Was noch fehlt bevor wir bauen können
+## Umsetzung (2026-07-04, alle Punkte gebaut + getestet)
 
-- Genaue UI der Popups (Layout, wo im Chat-Header die Buttons sitzen)
-- Exaktes Zeichenbudget nachmessen (echte Feldgroessen aus wesen.md-Dateien + History-Anteil einrechnen, bevor die vorlaeufigen 2500/1200 fix werden)
+- Pin-Endpoint + Budget-Check: `serve_process_camera_preview.ts` (`POST/DELETE .../container/pin`)
+- Memory-Budget-Check beim PUT: gleiche Datei (`memMatch`-Handler)
+- Pin-Button + Modal, Container-Popup, Memory-Popup: `wesen_chat.html`
+- Human-getriggerte async Memory-Extraktion: `POST .../memory/extrahieren` + `GET .../memory/extraktion-status`
+- Die vorläufigen Budgetwerte (2500/1200 Zeichen) sind live und wurden noch nicht mit echten langen wesen.md-Feldern gegengemessen — falls das Kontextfenster im echten Betrieb eng wird, hier nachjustieren.
