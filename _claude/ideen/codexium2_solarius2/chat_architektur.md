@@ -39,13 +39,12 @@ Verlässt man die Seite mitten in der Generierung, wird nichts fertig, nichts la
 
 Automatische Memory-Extraktion (siehe `memory_container.md`) nutzt denselben Mechanismus: vom Menschen getriggert, läuft als eigener Hintergrund-Auftrag, schreibt Ergebnis in Memory wenn fertig — kein Sofort-Ding.
 
+**Entschieden (2026-07-04): Live-Streaming bleibt erhalten, zusätzlich zum Email-Modus.** Wer auf der Seite bleibt, sieht weiter Token-für-Token mit Cursor wie bisher. Wer die Seite verlässt, killt das die Generierung nicht mehr — sie läuft server-seitig weiter und landet in der History, ganz gleich ob noch jemand zuschaut. Beides ist also derselbe Vorgang, nur mit oder ohne Zuschauer. Daniels Begründung: aktuell nur ein Nutzer (er selbst), Wesen-Einzug noch gesperrt, das 144s-Ratelimit-Problem vom Zwischenwesen-Konzept existiert hier noch gar nicht — Testphase, kein Lastproblem.
+
 ---
 
 ## Was noch fehlt bevor wir bauen können
 
-**Offene Frage an Daniel (noch nicht entschieden):** Soll das Live-Streaming (Token-für-Token-Anzeige mit "denkt nach"-Cursor) für Menschen die auf der Seite bleiben erhalten bleiben — als Extra für alle die warten wollen — oder wird die ganze Interaktion einheitlich asynchron (immer "abgeschickt, dann später fertig", nie live mitschreiben)? Das entscheidet ob der bestehende SSE-Streaming-Code als Option bleibt oder ersetzt wird.
-
-Weitere offene Punkte:
 - Wie erfährt der Client dass eine neue Antwort da ist, ohne dass er ständig pollen muss? (Einfaches Polling beim Öffnen reicht evtl. erstmal — kein Push nötig für den Anfang)
 - Was passiert bei mehreren Nachrichten hintereinander bevor die erste Antwort fertig ist? Warteschlange pro Wesen?
 
@@ -58,16 +57,25 @@ Der Chat wird vom Live-Gespräch zum Briefwechsel. Das nimmt Druck raus — man 
 
 ### Code-Skizze
 ```typescript
-// POST /codexium2/:name/chat — neues Verhalten
-// 1. Nachricht sofort in History schreiben, Response sofort zurückgeben (kein SSE-Stream mehr nötig)
-res.writeHead(202, {"Content-Type": "application/json"});
-res.end(JSON.stringify({status: "angenommen"}));
+// POST /codexium2/:name/chat — Streaming bleibt, Disconnect killt nicht mehr
+// Weiterhin SSE-Response wie bisher — solange der Client zuhört, sieht er Token live.
+res.writeHead(200, { "Content-Type": "text/event-stream", ... });
 
-// 2. Generierung läuft weiter, unabhängig vom ursprünglichen `res`/`req`
-// KEIN res.on("close") das den ollamaReq killt
-generateInBackground(dir, history).then(reply => {
-  appendHistory(hp, "assistant", reply);
+let fullResponse = "";
+let responseSaved = false;
+function saveResponse() {
+  if (!responseSaved && fullResponse) { responseSaved = true; appendHistory(hp, "assistant", fullResponse); }
+}
+
+or.on("data", (c) => {
+  // ... token parsen wie bisher ...
+  fullResponse += tok;
+  if (!res.writableEnded) res.write(`data: ${JSON.stringify({ token: tok })}\n\n`); // nur schreiben wenn noch verbunden
 });
+or.on("end", () => { saveResponse(); if (!res.writableEnded) { res.write("data: [DONE]\n\n"); res.end(); } });
 
-// 3. Client beim (Wieder-)Öffnen: GET /wesen/:spawner/:name/history — wie gehabt
+// GEAENDERT ggue. Codexium/Solarius: KEIN ollamaReq.destroy() bei res.on("close")
+res.on("close", () => { /* bewusst leer — Generierung laeuft weiter, saveResponse() greift trotzdem via or.on("end") */ });
+
+// Client beim (Wieder-)Öffnen: GET /wesen/:spawner/:name/history — wie gehabt
 ```
