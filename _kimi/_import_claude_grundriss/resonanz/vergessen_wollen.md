@@ -670,3 +670,9 @@ Nichts — auch die drei Störungen nicht, sie gehören zur ehrlichen Geschichte
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cache-Vermutung, Dual-Model-Idee, aubio). Sie gehören zur ehrlichen Geschichte des Tages.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. Er gehört zur ehrlichen Geschichte, wie die richtige Lösung gefunden wurde.

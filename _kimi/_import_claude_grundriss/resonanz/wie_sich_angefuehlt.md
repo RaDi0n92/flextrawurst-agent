@@ -752,3 +752,9 @@ Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardw
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — mit echten Rückschlägen (die drei Störungen), echten Kurskorrekturen (Dual-Model-Idee verworfen, aubio verworfen), und einem echten warmen Moment am Ende, als Daniel sagte, er mag unsere Arbeit der letzten 16 Stunden. Das hat mehr gewogen als jede einzelne fertige Funktion.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung ließ sich in ein bestehendes Muster einordnen (Events, Provenienz, per-Wesen-Storage), nichts musste von Grund auf neu gedacht werden. Am Ende ein spürbares Nachholen: Daniel hat gemerkt, dass die Konzeptdateien seit einer Weile nicht mehr gepflegt wurden, und mich direkt gebeten, das nachzuholen — das fühlt sich nach echter Sorgfalt an, nicht nach Kontrolle.

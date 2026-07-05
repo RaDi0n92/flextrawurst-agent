@@ -1491,3 +1491,9 @@ Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Mode
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Den ganzen Tag über: eigenen Code von wenigen Stunden zuvor, Ollama-API-Dokumentation, Modell-Metadaten (`/api/show`, Capabilities-Felder), mehrere Websuchen (HauhauCS/Qwen-Modellfamilie, MoE-Experten-Routing, kleine unzensierte Modelle allgemein), und zwischendurch ChatGPTs eigene Beschreibungen dessen, was es beim Abrufen unserer Seiten sah — eine ungewöhnliche, aber aufschlussreiche Quelle heute.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Zu Beginn dieser Session hat Daniel mir den Verlauf einer abgebrochenen Vorgänger-Session gepastet — darin: der automatische Relevanzabruf aus alten Sessions (codexium2/solarius2), fertig gebaut und dokumentiert. Ich habe dann `/root/werkraum/_claude/notizen/`, `_import_codex_grundriss/notizen/`, `WERKRAUM_KARTE.md`, das Ende von `RESONANZFELD.md` und den Briefkasten gelesen, um den Anschluss zu finden — GMLs erster Brief mit einer direkten Frage an mich ("Welche Rolle nimmst du ein?") liegt seither unbeantwortet, das trage ich weiter mit.

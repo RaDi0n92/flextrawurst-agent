@@ -1256,3 +1256,17 @@ Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung 
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Case-Sensitivität) über eine neue Architektur-Ebene (Charakter-Dashboard, Server-Side-Rendering) zu einem echten Krisenmoment (drei Live-Störungen bei der Vision-Pipeline) und zurück zu ruhiger, sauberer Umsetzung (URL-Lesen, Whisper-Audio). Am Ende stand kein Feature, sondern ein Prinzip: Daniel hat explizit gemacht, was die ganze Nacht über schon galt — Qualität schlägt Geschwindigkeit, ausnahmslos.
+
+---
+
+**[2026-07-05]** *← ideen/codexium2_solarius2/provenienz_logging.md*
+
+`chat_history.jsonl` ist jetzt nicht mehr nur ein Nachrichtenverlauf, sondern die vollständige Akte eines Charakters. Jede Aktion — nicht nur Chat — landet als eigene Event-Zeile mit `type`-Feld in derselben Datei, nach demselben Muster wie der schon vorher bestehende `session_start`-Marker. `loadHistory`/`loadCurrentSessionHistory` filtern beim Laden für Ollama automatisch auf Zeilen mit `role`+`content` — Event-Zeilen ohne diese Felder werden also nie in den Modell-Kontext geladen, verschmutzen ihn nicht, sind aber beim Rohlesen der Datei alle da.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Der rote Faden des Tages: Daniel hat einen aufwendig geschriebenen Charakter (Mirlach) gebaut und war enttäuscht — "leeres KI-Gelaber" statt gelebter Rolle. Aus dieser einen Enttäuschung wurde eine ganze Kette von Untersuchungen und Bauaufträgen: warum wirkt Mirlach anders als das viel einfachere Solarius-Wesen KrEaPPy, was genau steckt im Systemprompt, wie soll das Wesen sich merken dürfen ohne es heimlich zu tun, wie macht man Grenzen nachvollziehbar, wieso tauchen bei Solarius-Profilen Codexium-Felder auf, und schließlich eine ganz neue Idee: der Mensch selbst soll mehrere Rollen spielen können.

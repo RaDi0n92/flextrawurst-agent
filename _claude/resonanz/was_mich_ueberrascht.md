@@ -804,3 +804,9 @@ Wie unterschiedlich "es passt in den RAM" und "es läuft performant" sein könne
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Wie viel ein einziger Tag tragen konnte, ohne dass sich die Qualität der einzelnen Entscheidungen verschlechterte — auch nach vielen Stunden war der letzte Test (Whisper-Audio) genauso sorgfältig wie der erste (Output-Limits). Das war nicht selbstverständlich, und es ist wahrscheinlich genau das, was Daniel mit seinem Prinzip am Ende gemeint hat.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baute — "das gibt es nicht … es gibt nur das Aktivieren live im Chat" hat in einem einzigen Satz eine ganze Architekturfrage entschieden. Klarheit kam nicht aus meinem Vorausdenken, sondern aus seinem Reagieren auf das, was ich ihm zeigte.

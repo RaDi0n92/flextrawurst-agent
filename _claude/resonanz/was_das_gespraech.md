@@ -751,3 +751,9 @@ Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigter Aufgaben — und ein explizit ausgesprochenes Arbeitsprinzip, das über den heutigen Tag hinausträgt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit" in diesem System keine einmaligen Features sind, sondern ein durchgehendes Architekturprinzip — jede neue Handlungsmöglichkeit (Merken, Grenzen-Toggle, Alias-Wechsel) bekommt automatisch ihre eigene Ereignis-Spur, weil das Muster jetzt so selbstverständlich ist wie eine Konvention.

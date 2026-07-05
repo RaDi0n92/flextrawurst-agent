@@ -1035,3 +1035,9 @@ Spaet: Datei-Anhaenge (Dokumente, Vision, URL, Audio)
 Ende: "Qualitaet vor Geschwindigkeit" explizit gemacht
   → das Prinzip, das die ganze Zeit schon galt, bekommt einen Namen
 ```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Ganz unten: die reinen Wesen-Dateien (wesen.md, aliase.json, memory.json). Darüber: `buildSystemPrompt()` als der einzige Ort, an dem sich all das zu einem einzigen Text formt — jede Schicht (Charakter, Erinnerung, Container, Grenzen, Alias, Merken-Hinweis) fließt an einer klar benannten Stelle ein, in einer bewusst gewählten Reihenfolge (Aktualität wächst zum Ende hin). Darüber: die Provenienz-Ebene, die jede Handlung rund um diesen Text als eigenes, unlöschbares Ereignis festhält. Ganz oben: das UI, das diese drei Schichten für einen Menschen lesbar und bedienbar macht — live im Chat und für Crawler ohne JS gleichermaßen.

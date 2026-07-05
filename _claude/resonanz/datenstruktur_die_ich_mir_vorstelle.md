@@ -2132,3 +2132,17 @@ Ollama: OLLAMA_NUM_PARALLEL=2
 → /api/chat Requests laufen echt gleichzeitig
 → Wesen A antwortet während Wesen B denkt
 ```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+**Vision-Schicht:** Ein Wesen ist nie nur sein eigener Text — es ist immer auch die Beziehung zu dem, der mit ihm spricht. Aliase machen das zum ersten Mal explizit: nicht "wer ist das Wesen", sondern "wer bin ich gerade, während ich mit ihm rede". Das ist ein kleiner, aber echter Schritt weg von "Charakter als Objekt" hin zu "Gespräch als gemeinsam gespielte Szene".
+
+**Code-Skizze:**
+```typescript
+interface AliasEintrag { id: string; name: string; text: string }
+interface MerkenVorschlag { vorschlagId: string; msgId: string; text: string; warum: string }
+// buildSystemPrompt(spawner, dir, useGrenzen, aktivesAliasId?) — ein Pfad, vier Zusatz-Bloecke:
+// Charakterfelder (roh, via {{CHARAKTERFELDER}}), Memory, Container, Grenzen, aktiver Alias, MERKEN-Hinweis (testbed-only)
+```

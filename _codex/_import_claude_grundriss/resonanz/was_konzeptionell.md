@@ -911,3 +911,9 @@ Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewu
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Limit fast immer ein Verdachtsmoment ist (Zeichen-Slices, Token-Deckel, Platzhalter-Texte, die auch bei vollem Verlauf noch sichtbar blieben) — fast jedes Mal, wenn ich eins fand, war es entweder unbegründet oder sogar fehlerhaft. Zweitens, dass zwei rechenintensive Systeme (zwei Ollama-Modelle) sich auf begrenzter Hardware gegenseitig schwächen können, selbst wenn beide einzeln passen würden — eine Lektion, die die Architektur der Audio-Pipeline direkt geprägt hat (separates System statt zweites Modell).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Dass Formverbote (keine Listen, keine Kopfzeilen, keine Meta-Analyse-Sprache) etwas fundamental anderes sind als Charakterbeschreibung — ein Charakter kann noch so tief und literarisch beschrieben sein, wenn niemand dem Modell explizit verbietet, wie ein Assistent zu antworten, fällt es dorthin zurück, sobald der Kontext lang und abstrakt wird. Und dass Sichtbarkeit nie eine einzelne Sache ist — bei Grenzen gab es drei verschiedene Facetten (Handlung, Referenztext, Ereignisinhalt), die nacheinander sichtbar wurden, weil Daniel das System tatsächlich benutzt hat, nicht weil er es im Voraus zu Ende gedacht hätte.

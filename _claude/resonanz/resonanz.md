@@ -899,3 +899,9 @@ Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist 
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 [[abwurf: Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.]]
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines Lehrstück im Zeitraffer an: erst falsch verstanden, dann korrigiert, dann noch zweimal präzisiert — und jedes Mal wurde die Lösung einfacher statt komplizierter.

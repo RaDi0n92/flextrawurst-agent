@@ -856,3 +856,15 @@ Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es so
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Die drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Vision-Tests. Jedes Mal derselbe Reflex: sofort zugeben, an den echten Daten nachschauen (nicht raten), die Ursache wirklich finden, dann erst weitermachen. Das hat sich wichtiger angefühlt als jedes einzelne Feature.
+
+---
+
+**[2026-07-05]** *← ideen/codexium2_solarius2/provenienz_logging.md*
+
+Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Logging in `saveResponse()` bzw. im `ollamaReq.on("error")`-Handler eingebaut — beides Stellen die beim Abbrechen *während* des Streamens laut meiner Einschätzung eventuell nie feuern (`ollamaReq.destroy()` ohne Error-Argument löst wahrscheinlich weder ein `error`-Event auf dem Request noch ein sauberes `end` auf der Response aus). Korrektur: das Logging passiert jetzt ausschließlich direkt im `/chat/abort`-Handler selbst, an der einzigen Stelle die garantiert erreicht wird, sobald der Nutzer wirklich klickt — nicht abhängig von unsicheren Node-Stream-Events danach.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Wie oft eine Korrektur ("das gibt es nicht") schneller zur richtigen Architektur führt als noch mehr Nachfragen vorher. Ich hatte beim Grenzen-Badge ein plausibles, aber falsches Modell gebaut — Daniels knappe Korrektur hat sofort klargemacht, dass die Handlung selbst das Ereignis ist, nicht eine Eigenschaft der Antwort. Revert, neu gebaut, fertig — kein langes Zerdenken nötig gewesen.

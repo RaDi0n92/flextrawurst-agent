@@ -850,3 +850,17 @@ Ob die Bildbeschreibung durchs kleine 4,5B-Modell inhaltlich "flacher" ist als e
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Ob die Bildbeschreibungsqualität des kleinen Vision-Modells bei echten, komplexeren Fotos (nicht nur meinem synthetischen Testbild) genauso gut trägt. Ungetestet, weil kein echtes Beispiel zur Hand.
+
+---
+
+**[2026-07-05]** *← ideen/codexium2_solarius2/provenienz_logging.md*
+
+Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen kleinen Edits (z.B. jemand tippt und speichert oft) die Datei unnötig aufbläht. Aktuell kein Problem (Felder sind kurz, max. 1337 Zeichen), aber falls `chat_history.jsonl` mal sehr groß wird, wäre das eine Stelle zum Nachschauen.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch mit Alias-Feldern ausgestattet haben will, oder ob ihm der Profil-Weg reicht — er hatte beides als gleichwertig genannt, ich habe mich für "erstmal nur Profil" entschieden, um die Session nicht ausufern zu lassen. Auch offen: ob die drei schon bestehenden `wesen_selbst`-Einträge bei Mirlach (der eigentliche Auslöser des Feedback-Loops) irgendwann doch noch bereinigt werden sollen — er wollte sie erstmal unangetastet lassen.

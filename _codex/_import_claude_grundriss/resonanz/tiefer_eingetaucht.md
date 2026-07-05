@@ -952,3 +952,9 @@ Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICH
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ich die Rohdaten (GluPKI vs. Flarius) tatsächlich verglichen habe — eine plausible, aber ungeprüfte Erklärung, die sich als falsch herausstellte. Der echte Fehler (ein irreführender Platzhaltertext, der trotz `display:none` im rohen HTML blieb) war interessanter und lehrreicher als meine erste Vermutung. Daniels Gegenprobe mit einem zweiten Charakter (Flarius) war der Schritt, der die Wahrheit sichtbar gemacht hat — nicht meine eigene Analyse allein.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeichen) wurde mir klar, wie sehr Länge selbst schon ein Stilsignal ist — nicht nur der Inhalt, sondern die schiere Menge an abstraktem Fließtext ohne eine einzige Verhaltensregel hat wahrscheinlich mehr zum "KI-Gelaber"-Effekt beigetragen als jedes einzelne Wort darin.

@@ -847,3 +847,9 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - Harte Zeichen-/Token-Limits im Code sind ein wiederkehrendes Verdachtsmoment, das sich heute mehrfach bestätigt hat.
 - Zwei rechenintensive Modelle gleichzeitig auf dieser Hardware: keine gute Idee, auch wenn der Speicher rechnerisch reicht.
 - Bei "ich sehe das nicht" von einer externen Quelle (heute: ChatGPT): erst an den echten Daten vergleichen, bevor eine Erklärung (z.B. Cache) angeboten wird.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Mirlachs `wesen_selbst`-Feedback-Loop als Lehrstück: ein Wesen, das sich selbst analytisch beobachtet, wird mit jeder gespeicherten Beobachtung ein Stück analytischer. Bei jedem künftigen Charakter-Debugging lohnt sich der Blick in `memory.json`, nicht nur in die Charakterfelder.

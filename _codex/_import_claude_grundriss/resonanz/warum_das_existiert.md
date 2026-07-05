@@ -710,3 +710,9 @@ Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mus
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehlern, Kurskorrekturen, einem ausgesprochenen Prinzip — mehr verdient als nur die Summe seiner Commits. Die einzelnen technischen Notizen sagen "was", diese hier versucht "wie es war" zu sagen.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+`_wesen_preamble.md` existiert, weil ein einzelner Text alle Wesen gleichermaßen prägt — das macht sie zur mit Abstand einflussreichsten Datei im ganzen System, obwohl sie nur wenige KB groß ist. Genau deshalb wollte Daniel sie selbst schreiben, nicht mich sie für ihn formulieren lassen.

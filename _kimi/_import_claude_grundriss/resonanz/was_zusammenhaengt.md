@@ -963,3 +963,9 @@ Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entschei
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger zusammen, als es zuerst aussah: beide handeln davon, dem Wesen mehr zu erlauben — mehr sagen dürfen (Zeichen-Limits weg), mehr wahrnehmen dürfen (Bilder, Audio, Dokumente, Web-Seiten). Ein gemeinsamer Zug durch den ganzen Tag: die Charaktere bekommen mehr Raum, in jede Richtung.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarchitektur: eine Handlung (Marker im Text, Klick auf einen Button, Wechsel im Dropdown) wird als eigenes, unveränderliches Ereignis geloggt, nie als nachträgliche Eigenschaft an etwas anderem befestigt. Das ist derselbe Provenienz-Gedanke, der schon für Feedback/Pins/Kontext-Ausschluss galt — ich musste ihn nur konsequent weitertragen, nicht neu erfinden. Und die Rollenspiel-Systemprompt-Neufassung hängt technisch direkt mit dem Profil-Feld-Fix zusammen: beide drehen sich um dieselbe Frage, was "Solarius" von "Codexium" strukturell unterscheidet und wie ernst diese Trennung gemeint ist.

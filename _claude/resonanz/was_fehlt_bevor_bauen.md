@@ -818,3 +818,9 @@ Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität be
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel selbst als unrealistisch auf dieser Hardware eingeschätzt), bessere Bildbeschreibung bei komplexeren Motiven, eine mögliche kompaktere Profilvorschau im Dashboard statt Popup, Tempo-/Tonart-Erkennung für Audio mit einem genaueren Werkzeug als aubio.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder im Erstellungsformular, Mirlachs Bestandseinträge, Grenzen in den Erstellungsformularen falls gewünscht, Daniels eigener Preamble-Feinschliff) liegen alle als benannte, nicht vergessene Enden da.

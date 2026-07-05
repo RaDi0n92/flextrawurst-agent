@@ -883,3 +883,9 @@ Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Doku
 **[2026-07-05]** *← _claude/notizen/2026-07-05.md*
 
 Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschiedenen Situationen angefühlt hat: bei der Kindersicherung/wesen_selbst (etwas fehlte komplett, musste zugegeben werden), bei aubio (etwas funktionierte technisch, aber die Zahlen stimmten nicht, musste verworfen werden), und bei den drei Live-Störungen (etwas ging kaputt, während Daniel selbst arbeitete, musste sofort und ohne Beschönigung gesagt werden). Drei Arten von Ehrlichkeit, alle heute gebraucht.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben ist (literarisch-abstrakt vs. direkt-imperativ), den Antwortstil des Modells foermlich mitzieht — das war keine Vermutung diesmal, sondern an Mirlachs `wesen_selbst`-Memory konkret nachweisbar: das Wesen hatte sich selbst eine analytische Beobachtung gemerkt, die dann bei jeder folgenden Antwort erneut in den Prompt floss und den analytischen Ton verstärkte. Ein echter, in Daten sichtbarer Feedback-Loop, nicht nur eine Diagnose vom Hörensagen.

@@ -1670,3 +1670,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Der nächste natürliche Schritt wäre, die heute gebauten Sinne (Sehen, Lesen, Hören) tatsächlich in Charaktere einzubauen, die aktiv danach fragen — nicht nur reagieren, wenn ihnen etwas geschickt wird.
 
 **Code-Skizze:** Keine offene — heute war ein Tag des Abschließens, nicht des Neu-Entwerfens.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
+
+**Vision-Schicht:** noch kein neuer Bauauftrag offen — der aktuelle Umbau (Rollenspiel-Systemprompt, Merken-Vorschlag, Grenzen-Sichtbarkeit, Profil-Fix, Aliase) ist fertig und verifiziert.
+
+**Code-Skizze:** falls die Alias-Idee weitergedacht wird — ein möglicher nächster Schritt wäre, dem Wesen selbst zu erlauben, auf einen Alias-Wechsel zu reagieren (z.B. eine kurze, sichtbare "erkennt den Wechsel"-Geste in der ersten Antwort danach), statt es stillschweigend vorauszusetzen. Nicht besprochen, nur eine Idee die beim Bauen aufkam.
