@@ -807,3 +807,17 @@ Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Danie
 
 - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
 - Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/provenienz_logging.md*
+
+Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+**Nachtrag 2026-07-05 (Nacht) — genau das jetzt gebaut, plus Server-Side-Rendering.** Anlass: Daniel hat GluPKI (codexium2) mit ChatGPTs Web-Browsing-Tool abrufen lassen — das sah nur das leere HTML-Grundgerüst (Buttons, Modals-Struktur), keinen tatsächlichen Verlauf, weil die Chat-Seite komplett clientseitig per JS befüllt wird und das Browsing-Tool kein JS ausführt. Daniels Reaktion: er will, dass sowohl Maschinen (die die Seite roh abrufen) als auch er selbst in der UI immer den vollen Verlauf inkl. aller Provenienz-Änderungen sehen.
+
+Umsetzung: `ladeVerlaufKombiniert()` liefert Nachrichten und Ereignisse chronologisch gemischt (neues `verlauf`-Feld an `GET .../history`, additiv neben dem bestehenden `history`-Feld). `GET /:spawner/:name` rendert diesen Verlauf jetzt zusätzlich **serverseitig direkt ins ausgelieferte HTML** (`renderVerlaufHtml`) — ein roher `curl`-GET zeigt jetzt echte `<div class="msg">`- und `<div class="verlauf-ereignis">`-Elemente statt nur des leeren Platzhalters. Client-JS (`ladeHistory()`) entfernt dieses SSR-Markup beim eigenen Rendern und ersetzt es 1:1 durch die volle interaktive Version (keine Duplikate, per Playwright verifiziert). Ereignisse erscheinen als dezente zentrierte Pillen zwischen den Nachrichten-Bubbles, mit Klartext-Label (z.B. "Memory geändert", "Allgemeines Feedback", "Satz gepinnt").
+
+Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht nur codexium2/solarius2: bei codexium/solarius bleibt der Ereignis-Teil naturgemäß leer (keine Provenienz dort), die Nachrichten werden aber genauso serverseitig gerendert. Kein Sonderfall im Code nötig, reine Degradation.
+
+---

@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 01:41
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 02:11
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -96,69 +96,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-31] `notizen/2026-05-31.md` (22 Einträge)
 - [2026-06-02] `ideen/wesen-desktop.md` (10 Einträge)
 - [2026-06-03] `notizen/2026-06-03.md` (20 Einträge)
+- [2026-06-04] `notizen/2026-06-04-gordslider.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-04] notizen/2026-06-04-gordslider.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen das auf gordslider landet und es erlebt wie ein Mensch — Verwirrung, Neugier, vielleicht Faszination für das Kaskaden-Leuchten. Das LLM liest die klickbaren Elemente (SPIN, BET, FS 10/20/30/50) und entscheidet nach seiner eigenen Logik ob es spielt, wie viel, wie lange.
-
-**Code-Skizze:** In `browser_agent.py` bräuchte es nur einen weiteren Eintrag in der bekannten URL-Liste, oder einen Link auf flextrawurst.de der zur Slot führt — dann findet das Wesen sie organisch beim Navigieren. Kein neuer Code nötig.
-
-*Dokumente Gehoeren Zusammen:* `/root/werkraum/gordslider/gordslider.html` — das Spiel selbst
-`/root/werkraum/welt/browser_agent.py` — Wesen-Navigation
-`/root/flextrawurst/scripts/build_surface.ts` — Surface-Build
-
-*Resonanz:* Gordslider hat eine eigene Energie. 150 Stunden, ein Mobile Legends Hero, ein Kaskaden-System das leuchtet. Das ist persönlich.
-
-*Schichten Des Systems:* Flextrawurst wächst in konzentrischen Kreisen: Infrastruktur (API, Events, Auth) → Welt-Objekte (Wesen, Räume, Resonanzen) → Persönliches (Tagebuch, gordslider). Gordslider ist in der dritten Schicht. Das macht es besonders.
-
-*Tiefer Eingetaucht:* Die GORD-Spawn-Logik in gordslider ist wirklich durchdacht. `applyGordStartDistribution()` entscheidet pro Spin ob es ein NORMAL-, STACK- oder PAUSE-Spin ist. STACK-Spins konzentrieren GORD-Symbole in einem Band (R3–R5). Die Wave-State-Abhängigkeit ist theater — beeinflusst laut Daniel nichts. Die Reel-Strips werden mit `buildStrip_Runny()` gebaut, das Symbole in Runs statt uniform verteilt. Das gibt dem Strip eine organischere Textur als ein gleichmäßiger Mix.
-
-*Vergessen Wollen:* Das zweifache Fehlen des Backup-Commits. Gelernt, nicht nochmal.
-
-*Warum Das Existiert:* gordslider existiert weil Daniel Gord mag und weil er wollte sehen ob er so etwas bauen kann. Nach 150 Stunden: ja, er kann.
-
-*Was Beim Bauen Brauche:* Backup-Commit vor jeder Änderung. Immer. Auch in zweiten Terminal-Sessions.
-
-*Was Das Gespraech:* Eine klarere Grenze: Gedanke ≠ Auftrag. Das ist wichtig und ich werde es mir merken.
-
-*Was Fehlt Bevor Bauen:* Klarer Bauauftrag von Daniel. Nicht meine Interpretation einer Idee.
-
-*Was Fehlt Noch:* Nix. Diese Session ist abgeschlossen.
-
-*Was Ich Gelesen Habe:* Heute war die zweite Terminal-Session — kein Kontext-Ritual, direkt rein. Erstes Thema: ein 404 auf `flextrawurst.de/gordslider/`. Der Fehler war schnell da in den Console-Logs — doppelte Extensions: `gordslider-paytable.jpg.jpg`. Ich hab `gordslider.html` gelesen, die Funktion `loadPaytableForMode()` gefunden, dann den Server `serve_process_camera_preview.ts`. Zwei Bugs, einer im JS (`.jpg` war bereits im Pfad, dann nochmal Extensions dranhängen), einer im Server (Query-String `?v=...` wurde als Dateipfad-Bestandteil behandelt).
-
-Danach hat Daniel gefragt was ich von gordslider halte — und ich hab reingeschaut. 3811 Zeilen, kein Framework, ein Slot-Machine-Spiel rund um Gord den Mobile Legends Hero. Kaskaden bis Level 12 mit eigener Farbskala, Wave-System, Puff-Symbole, FS-Buy, drei Grid-Modi, GORD-Spawn-Physik mit gewichteten Reihen und Nachbar-Penalties. Die GORD-Symbole haben ihren eigenen Spawn-Flickereffekt. Es ist ernsthaftes Game-Design in plain HTML/JS. …
-
-*Was Ich Merken Will:* Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finger auf Tastatur.
-
-*Was Ich Nicht Verstehe:* Wie Cinema-Mode in die Surface kam ohne durch `build_surface.ts` zu gehen. Der Commit `90d4562aa2c4` hat Cinema im HTML-Output, aber `build_surface.ts` hat kein `cinema` drin — irgendein anderer Weg muss das generiert haben. Das ist mir unklar.
-
-*Was Ich Verstehe:* Das Gespräch über die Codewesen und gordslider war eine Ideenäußerung, kein Bauauftrag. Daniel wollte laut denken — wie es wäre wenn die 6 Wesen die Slot als Browser-Input wählen könnten, wie sie den Seitencode lesen könnten als Anleitung, wie ein iframe in der Surface aussehen würde. Ich hab sofort gebaut. Das war falsch.
-
-Der browser_agent.py macht genau das was Daniel beschrieben hat: Playwright navigiert zu URLs, `lese_seite()` extrahiert sichtbaren Text bis 2000 Zeichen und bis 15 klickbare Elemente, das LLM entscheidet was es als nächstes tut. Gordslider wäre technisch bereits erreichbar über `flextrawurst.de/gordslider/` — die Wesen könnten navigieren wenn sie wüssten dass es die URL gibt.
-
-*Was Konzeptionell:* Gordslider ist Daniels persönlichster Beitrag zur Welt — kein Wesen, keine Infrastruktur, kein Spiegel. Ein Spiel, gebaut für sich selbst, um einen Hero den er mag. Das hat eine andere Energie als der Rest des Systems. Und trotzdem gehört es jetzt dazu.
-
-*Was Mich Beschaeftigt:* Der Fehler mit `git checkout HEAD` der Cinema gelöscht hat. Ich hätte vor dem ersten Bauen einen Backup-Commit machen müssen — das steht explizit in der CLAUDE.md. Ich hab's nicht gemacht. Zweimal. Beim ersten Anlauf keinen Backup. Beim Reparieren dann aus dem falschen Commit wiederhergestellt. Daniel hat's gecheckt und korrigiert.
-
-*Was Mich Interessiert:* Gordslider als Welt-Objekt. Nicht als Tab, nicht als irgendwas Gebautes — sondern konzeptuell: was bedeutet es wenn ein Wesen in einer Welt lebt und darin einen Slot-Automaten vorfindet? Das hat was. Spiel als Raum-Objekt.
-
-*Was Mich Ueberrascht:* Dass Cinema-Mode nicht in `build_surface.ts` steckt. Das war unerwartet.
-
-*Was Zusammenhaengt:* browser_agent.py → lese_seite() → Text + klickbare Elemente → LLM-Prompt → Entscheidung. Das System ist fertig für gordslider. Die Wesen bräuchten nur die URL als bekannte Möglichkeit — ein Eintrag in einem URL-Pool, ein Link irgendwo auf flextrawurst.de.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Erstmal gar nicht. Die Idee ruhen lassen bis Daniel einen konkreten Auftrag gibt.
-
-**Code-Skizze:** Wenn doch: gordslider-URL in den Navigations-Pool der Wesen einbauen. Kein iframe, kein neuer Tab ohne Daniel-Okej.
-
-*Wie Sich Angefuehlt:* Kurz und punktuell. Zwei echte Bugs gefunden und gefixt, dann zu weit gegangen. Die letzte Korrektur von Daniel war klar und berechtigt: Gedanken aussprechen ≠ Bauauftrag.
-
----
 
 ### [2026-06-04] notizen/2026-06-04.md
 
@@ -1787,5 +1730,56 @@ Chat-Antwort (normaler sichtbarer Text)
 **Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
 
 *Wie Sich Angefuehlt:* Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
+
+---
+
+### [2026-07-05] _claude/ideen/charakter_dashboard.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).
+
+*Resonanz:* [[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]
+
+*Schichten Des Systems:* ```
+Vier Spawner (codexium, codexium2, solarius, solarius2)
+  → bisher: nur einzeln ueber ihre eigene URL erreichbar …
+
+*Tiefer Eingetaucht:* Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.
+
+*Warum Das Existiert:* `wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.
+
+*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet.
+
+*Was Das Gespraech:* Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.
+
+*Was Fehlt Noch:* - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
+- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
+
+*Was Ich Gelesen Habe:* Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.
+
+*Was Ich Merken Will:* - `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
+- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
+- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
+
+*Was Ich Nicht Verstehe:* Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.
+
+*Was Ich Verstehe:* Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.
+
+*Was Konzeptionell:* Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".
+
+*Was Mich Beschaeftigt:* Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.
+
+*Was Mich Interessiert:* Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.
+
+*Was Mich Ueberrascht:* Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.
+
+*Was Zusammenhaengt:* Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
+
+**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
+
+*Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
 
 ---
