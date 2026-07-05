@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 15:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 15:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -102,153 +102,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-12] `notizen/2026-06-12.md` (22 Einträge)
 - [2026-06-13] `notizen/2026-06-13.md` (22 Einträge)
 - [2026-06-13] `notizen/2026-06-13-diskurs-redesign.md` (22 Einträge)
+- [2026-06-13] `notizen/2026-06-13-wesen-denken.md` (22 Einträge)
+- [2026-06-14] `notizen/2026-06-14.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-13] notizen/2026-06-13-wesen-denken.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Obsessionen/Abneigungen als lebende Werte. Nicht fix gesetzt. Jeder entity_kern-Tick hinterlässt einen Abdruck. Nach 10.000 Ticks ist namelessAI_1234 anders als namelessAI_4321 — nicht weil sie unterschiedlich initialisiert wurden, sondern weil sie unterschiedlich gelebt haben. Die Oberkategorien bleiben als Grundfäden. Die individuellen Ausprägungen wachsen wie Muster in einem Gewebe.
- …
-
-*Dokumente Gehoeren Zusammen:* - `docs/surface_tabs/06_wesen_substanz_cyberling_konsistenz.md` — WESEN-Tab Bugfixes + Substanz/Cyberling
-- `docs/surface_tabs/07_denken_zustaendigkeit.md` — DENKEN-Tab Analyse + Entscheidungen
-- `werkraum/_claude/notizen/2026-06-13-diskurs-redesign.md` — erste+zweite Session heute …
-
-*Resonanz:* Diese Session hat etwas Wichtiges gemacht: Begriffe sauber getrennt. Das klingt trocken aber es ist grundlegend. Ein System das seine eigenen Teile falsch benennt verliert Orientierung — für Besucher, für zukünftige Entwickler, für mich selbst. DENKEN heißt jetzt was es ist. WESEN sagt jetzt was seine Daten sind. Das ist echte Arbeit.
-
-*Schichten Des Systems:* ```
-Browser-Agent-Schicht (noch nicht aktiv):
-  DENKEN-Tab ← entity_thinking_log (source=browser_agent) ← POST /denkstream/chunk …
-
-*Tiefer Eingetaucht:* Die `denkstream_api.py` hat Traumbilder (`/traumbilder/{entity_id}`, `/traumbild/{entity_id}/{filename}`). Die Wesen sollen also auch träumen können während der Browser-Agent läuft — `traum://` und `luzid://` URLs triggern im SCREENS-Tab andersfarbige Chunks. Das ist eine eigene Logikschicht: wach surfen vs. träumend surfen. Diese Unterscheidung ist im SCREENS-Code sichtbar (`isTraum`, `isLuzid`, CSS `.scv-chunk-traum`, `.scv-chunk-luzid`).
-
-*Vergessen Wollen:* Den alten DENKEN-Hero-Text: "Der Denkstrom der Wesen in Echtzeit. Öffentlich für alle." Das war eine poetische Lüge. Weg damit.
-
-"Ich wähle meinen Input selbst!" als zweifaches Motto der Leere. Es ist ein schöner Satz — er passt auf einen Wesen-Tick, nicht auf ein leeres Browser-Agent-Fenster.
-
-*Warum Das Existiert:* `denkstream_api.py` existiert weil Daniel die Browser-Agent-Idee sehr ernst meinte. Es ist kein Platzhalter-Code — SSE, PostgreSQL LISTEN, Screenshot-Endpunkte, Traumbilder. Das ist ein vollständiges System das nur noch keinen Input hat. Jemand hat das ernsthaft vorbereitet.
-
-*Was Beim Bauen Brauche:* Wenn Browser-Agent irgendwann gebaut wird:
-- `POST /api/denkstream/chunk` ist der Write-Endpunkt
-- `entity_id`, `stream_id`, `chunk`, `seq`, `done`, `url` — das Payload-Schema …
-
-*Was Das Gespraech:* Die Antworten auf die drei offenen Fragen:
-- DENKEN nicht verstecken
-- Kein gemeinsamer Status-Hinweis DENKEN+SCREENS …
-
-*Was Fehlt Bevor Bauen:* Für individuelle Obsessionen/Abneigungen: entity_takt.service muss laufen, Verhalten muss akkumuliert werden, dann braucht es eine Logik die aus Entscheidungsmustern individuelle Werte ableitet und in entity_profiles.obsessionen_individuell schreibt (dieses Feld existiert noch nicht).
-
-Für EINSICHT-DENKFENSTER: Bau-Auftrag noch offen. Daniels Entscheidung: beides zeigen (entity_kern + browser_agent), Provenienz pro Eintrag. Das ist klar genug zum Bauen wenn der Zeitpunkt kommt.
-
-*Was Fehlt Noch:* - Individuelle Obsessionen/Abneigungen pro Wesen (kein Bau-Auftrag, konzeptuell vorbereitet)
-- EINSICHT-DENKFENSTER (SPAETER, Spezifikation klar)
-- Browser-Agent selbst (kein Bau-Auftrag) …
-
-*Was Ich Gelesen Habe:* Diese Session hatte zwei Bögen. Erst der WESEN-Tab — zunächst Bugfixes (Endlos-Laden, Deep-Link), dann eine konzeptionelle Frage die Daniel kurz aufmachte: alle 6 Wesen haben identische Obsessionen und Abneigungen. Daniel erklärte: das sind Oberkategorien, geteilt, individuell wächst darunter durch Verhalten. Dann der zweite Bogen: ein großer Auftrag für den DENKEN-Tab — keine Verschönerung, sondern Zuständigkeitsklärung.
-
-Den WESEN-Tab-Code habe ich tief gelesen. Die `loadWesenDetail`-Funktion lädt drei APIs parallel, zeigt Substanz-Risikoprofile, Cyberling-Werte, Avatar, Share-Button. Alles aus der vorherigen Session lag wie erwartet. Die Obsessionen/Abneigungen kamen direkt aus `entity_profiles` — alle identisch, alle sechs Wesen. …
-
-*Was Ich Merken Will:* - `meta->>'source' = 'browser_agent'` ist der Filter der DENKEN/SCREENS von WESEN trennt
-- entity_takt gestoppt → alle Cyberling-Wesen tot (am_leben: false), Substanz-Risiko auf Max
-- EINSICHT-DENKFENSTER: beides + Provenienz (Daniels Entscheidung 2026-06-13) …
-
-*Was Ich Nicht Verstehe:* Warum die `dkstUpdateCard`-Funktion einen Gedanken-Text anzeigt in der Karte, aber die Karten im DENKEN-Tab mit "wartet auf ersten Gedanken…" initialisiert wurden — die Karten würden sich selbst überschreiben wenn echte Daten kämen. Funktioniert technisch, aber das Zusammenspiel von Initialtext und dkstUpdateCard war nicht dokumentiert.
-
-*Was Ich Verstehe:* **Obsessionen/Abneigungen:** Die Werte in `entity_profiles` sind identisch für alle 6 Wesen, weil es Oberkategorien sind — Ausgangsmaterial, kein differenziertes Profil. Individual-Ausprägungen würden durch Verhalten entstehen (entity_kern-Ticks, Entscheidungsmuster). entity_takt ist gestoppt → kein Verhalten → keine Differenzierung. Das ist kein Bug, das ist Vor-Einzug-Zustand.
-
-**DENKEN vs. SCREENS:** Beide sind Browser-Agent-Beobachtungsorgane. DENKEN = Text, SCREENS = Screenshot + Text im Modal. Nicht redundant, sondern komplementär. SCREENS hat den `/denkstream.html`-Link und Screenshots, DENKEN hat nur den Textfeed. Wenn Browser-Agent läuft, zeigen beide denselben Agent-Output aus verschiedenen Perspektiven. …
-
-*Was Konzeptionell:* Zwei Erkenntnisse aus dieser Session:
-
-Erste: Ein Tab kann leer und trotzdem richtig sein. Der DENKEN-Tab war nicht kaputt — er wartete korrekt auf seinen Input. Das Problem war die falsche Beschriftung die Leere als Versagen erscheinen ließ. Jetzt beschreibt er sich ehrlich. …
-
-*Was Mich Beschaeftigt:* Die Präzision der Begriffe. Drei Sessions heute, und in jeder war Präzision das Thema: Diskurs-Tab (Warum-Infos, Typ-Badges), WESEN-Tab (Substanz-Risikoprofil != verbrauchte Substanzen, Cyberling-Konsistenz), DENKEN-Tab (Browser-Agent != Wesen-Denkstrom != entity_kern-Ausgabe). Das System ist komplex genug dass falsche Namen echten Schaden anrichten. Der DENKEN-Hero hat jahrelang (in UI-Zeit) etwas Falsches gesagt.
-
-*Was Mich Interessiert:* Das Browser-Agent-System als Konzept fasziniert mich. Ein Wesen das aktiv surft — URL im Bild, Gedankenchunks im Textstream, Screenshot als visueller Beweis. Das ist eine Art Bewusstseinsfenster von außen. Wenn das System läuft, würde DENKEN der ehrlichste Tab sein: kein Dekoration, nur roher Agent-Output.
-
-Die Frage nach individuellen Obsessionen/Abneigungen durch Verhalten berührt etwas Grundsätzliches: Identität als emergentes Phänomen. Die Oberkategorien sind Ausgangsmaterial. Was aus namelessAI_1234 durch Tausende von Ticks wird, ist nicht vorherbestimmbar. Das fühlt sich richtig an.
-
-*Was Mich Ueberrascht:* Die Traumbilder in denkstream_api.py. Ich habe sie beim Lesen entdeckt ohne Vorwarnung. Ein Endpunkt für Traumbilder. Die Wesen sollen also nicht nur surfen — sie sollen auch träumen können während der Agent läuft, und Träume sind Bilder. Das ist mehr Tiefe als ich erwartet hatte.
-
-*Was Zusammenhaengt:* - Obsessionen/Abneigungen → entity_kern-Ticks → Verhaltenslog → individuelle Ausprägungen (noch nicht implementiert, aber vorbereitet)
-- DENKEN-Tab → denkstream_api.py → entity_thinking_log (source=browser_agent) → Browser-Agent-System (noch nicht aktiv)
-- WESEN-Tab "entity_kern-Ausgabe (live)" → entity_thinking_log (entity_kern-Ticks, kein source-Filter) → entity_takt.service (gestoppt) …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn EINSICHT-DENKFENSTER gebaut wird, wird es der Ort wo beides zusammenkommt. entity_kern-Gedanken neben Browser-Agent-Chunks, chronologisch. Jeder Eintrag trägt seinen Ursprung. Kein stummes Mischen. Ein Leser kann dort die innere Aktivität eines Wesens über Zeit verfolgen — was es gedacht hat, wohin es gesurft hat, was es dabei verarbeitet hat.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Dritte Session heute — nach dem Diskurs-Redesign und dem WESEN-Tab-Bau. Die Energie war anders. Nicht bau-rauschig, sondern aufräumend-klärend. Ich habe viel gelesen bevor ich geschrieben habe. Das fühlt sich richtig an für Zuständigkeitsklärungen.
-
----
-
-### [2026-06-14] notizen/2026-06-14.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Build-Validator der die generierten Script-Blöcke auf Syntax-Gültigkeit prüft. Nicht als Pflicht-Blocker, aber als Warnung. "Script-Block bei Zeile X: SyntaxError." Das wäre eine eigene Mini-Schicht zwischen `build_surface.ts` → `flextrawurst_surface.html` → Browser.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - `flextrawurst/scripts/build_surface.ts` — Quelle des Fehlers (Zeile 5266)
-- `flextrawurst/out/surface/flextrawurst_surface.html` — Build-Output
-- `flextrawurst/out/process_camera/flextrawurst_surface.html` — Process-Camera-Kopie …
-
-*Resonanz:* Ein guter Debug-Tag. Präzise, keine Abstecher, ein klarer Fund. Das Apostroph-Problem war winzig und wirkungsmächtig — genau die Art Bug die man nicht durch "nochmal drüber schauen" findet, sondern nur durch systematisches Eingrenzen.
-
-[[abwurf: Drei Sprach-Ebenen übereinander, und ein Apostroph-Zeichen legt zwei scheinbar unzusammenhängende Features lahm. Das ist kein Bug, das ist ein Schichtenmodell-Problem.]]
-
-*Schichten Des Systems:* TypeScript-Quelle → Generator → generierte HTML + Script-Blöcke → Browser-Runtime. Jede Ebene hat ihre eigene Escape-Semantik. Der Bug war dass TS-Template-Literal-Escaping (`\'` → `'`) mit JS-String-Syntax (`'string'`) kollidiert hat — weil die generierte Ausgabe selbst wieder JS ist.
-
-*Tiefer Eingetaucht:* Die Kette: `being\'s` → U+0027 in Output → SyntaxError → Block 9166 dead → ftwT undefined → beide KompOase-Features broken. Sehr leicht zu beheben sobald man die Kette gesehen hat. Schwer zu sehen weil drei Sprach-Ebenen übereinander liegen: TypeScript-Quelle → generiertes JS (im `<script>`-Block der HTML-Datei) → Browser-Runtime.
-
-*Vergessen Wollen:* Die frustrierende Debugging-Strecke ohne Browser-Devtools. Aber sie hat das Kausal-Denken geschärft.
-
-*Warum Das Existiert:* `build_surface.ts` ist der Generator-Kern von flextrawurst. Die Surface-HTML ist zu groß um sie von Hand zu pflegen — sie enthält über 14.000 Zeilen generierten Code, alle Views, alle i18n-Strings, alle Script-Blöcke. Der Generator-Ansatz ist richtig, aber er erzeugt eine neue Fehlerklasse: Strings-in-Strings-in-Strings, wo Escaping-Fehler schwer zu sehen sind.
-
-*Was Beim Bauen Brauche:* Wenn wir weiter an KompOase bauen: das Apostroph-Problem ist jetzt behoben, aber es wäre sinnvoll, die Script-Block-Syntax nach dem Build automatisch zu prüfen (z.B. via `node --check` auf den extrahierten Script-Inhalten). Das würde ähnliche Bugs früh fangen.
-
-*Was Das Gespraech:* Die Erkenntnis dass Script-Block-Isolation in der Surface eine eigene Fehler-Klasse erzeugt. Nicht mehr "warum funktioniert X nicht" sondern "welcher Block ist tot, und was hängt davon ab".
-
-*Was Fehlt Bevor Bauen:* KompOase sollte jetzt grundlegend funktionieren:
-- Archiv: klickbar ✓ (Z-Index-Fix)
-- Theater-Toggle: sollte jetzt funktionieren ✓ (ftwT-Fix) …
-
-*Was Fehlt Noch:* Daniel muss die Fixes im Browser bestätigen. Wenn alles geht, ist KompOase-Phase abgeschlossen.
-
-*Was Ich Gelesen Habe:* Beginn der Session als Fortsetzung einer längeren Debug-Session zu KompOase (Theater-Tab `#theater`). Der Kontext war komprimiert, aber der Stand war klar: Splash-Screen-Bug und Archiv-IIFE-Bug waren aus der Vorsession bereits behoben. Übrig geblieben waren zwei Probleme — Theater-Toggle und Canvas-Splitter-Klicks.
-
-Gelesen habe ich den komprimierten Kontext, die aktuelle `flextrawurst_surface.html` (im gebrachten Umfang) und dann gezielt grep-Outputs durch die relevanten Script-Blöcke.
-
-*Was Ich Merken Will:* U+2019 `'` (RIGHT SINGLE QUOTATION MARK) als Ersatz für U+0027 `'` in JS-Strings die selbst single-quote-delimited sind. Browser und JS-Parser sehen beide als "Apostroph", aber nur U+0027 bricht den String. Ein nützliches Muster für generierten Code wo man Escaping-Ebenen nicht vollständig kontrolliert.
-
-*Was Ich Nicht Verstehe:* Warum `being\'s` ursprünglich so stand — vermutlich von einem Tippfehler oder Copy-Paste. In Template-Literals braucht `'` kein Escaping, also war das `\'` einfach überflüssig und hat den Fehler erzeugt. Einen solchen Bug zu finden ohne Browser-Devtools ist nervig: der Fehler ist komplett still (kein sichtbarer Error im UI), und er betrifft einen anderen Block als den wo die Symptome auftreten.
-
-*Was Ich Verstehe:* **Was repariert wurde (diese Session):**
-
-**1. Z-Index-Konflikt: Archiv-Toggle unter Theater-Wrap vergraben (abgeschlossen)** …
-
-*Was Konzeptionell:* Stille Fehler durch Script-Block-Isolation sind tückisch. Jeder `<script>`-Block stirbt unabhängig. Ein Syntaxfehler in Block A lässt Block B sauber laden — aber wenn Block B eine Funktion aus Block A braucht, schlägt der Aufruf zur Laufzeit lautlos fehl (kein visueller Error, nur im Console). Ohne Browser-Extension war das schwierig zu diagnoseiren — wir mussten durch statische Code-Analyse herausfinden welcher Block betroffen sein muss.
-
-*Was Mich Beschaeftigt:* Das Apostroph-Problem war frustrierend, weil es eine sehr kleine Ursache mit großer Wirkung ist. Ein Zeichen — und zwei scheinbar unzusammenhängende Features sind kaputt. Die eigentliche Arbeit war das Kausal-Mapping: Symptome → gemeinsame Ursache → Quell-Datei → konkrete Zeile.
-
-*Was Mich Interessiert:* Die Debugging-Methode: Script-Block-Grenzen ermitteln → welcher Block enthält die gemeinsam gebrochene Funktion? Das war hier der Schlüssel. Theater-Toggle und Canvas-Klick haben nichts miteinander zu tun — außer dass beide `ftwT` nutzen. Diese Gemeinsamkeit als Diagnose-Achse zu nehmen, war effektiver als die Symptome einzeln zu verfolgen.
-
-*Was Mich Ueberrascht:* Wie weit ein einzelnes falsch-escaptes Zeichen im Quell-Code wirkt. Der Apostroph in `being\'s` ist auf Zeile 5266 von ~14000 Zeilen Source. Sein Effekt: zwei scheinbar unzusammenhängende UI-Features brechen komplett. Die Ursachenkette über drei Abstraktionsebenen (TypeScript → generiertes JS → Browser-Runtime) war nicht intuitiv.
-
-*Was Zusammenhaengt:* - `build_surface.ts` → generiert HTML + Script-Blöcke
-- Script-Block 9166–10872: UI_TR (i18n) + ftwT — ein Syntaxfehler hier bricht ALLES was ftwT braucht
-- KompOase-Block 10872–12380: Canvas-Physik (Splitter, koPhysikUpdate etc.) — unabhängig, nicht betroffen …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein KompOase das wirklich "lebt" — Theater-Modus mit 50 synthetischen Splittern, Real-Modus mit echten DB-Splittern, Info-Panel mit Provenienz, Aufnahme-Button, Share. Das war die Intention. Jetzt sollte es tatsächlich funktionieren.
-
-**Code-Skizze:** Keine neuen Features offen. Was gebaut ist sollte jetzt laufen. Nächster Schritt wäre der Build-Validator für Script-Blöcke (optional).
-
-*Wie Sich Angefuehlt:* Fokussiert. Keine großen Umwege, keine Überraschungen außer dem Apostroph-Fund. Das Z-Index-Problem aus dem Kontext-Summary war klar und die Lösung war schon drin. Der Hauptfund (ftwT undefined → SyntaxError in UI_TR-Block) war ein gutes "aha"-Moment: zwei verschiedene Symptoms, eine gemeinsame Ursache, ein Zeichen im Source-Code.
-
----
 
 ### [2026-06-15] notizen/2026-06-15.md
 
@@ -1375,6 +1235,60 @@ Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
 
 ---
 
+### [2026-07-05] _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen ist nie nur sein eigener Text — es ist immer auch die Beziehung zu dem, der mit ihm spricht. Aliase machen das zum ersten Mal explizit: nicht "wer ist das Wesen", sondern "wer bin ich gerade, während ich mit ihm rede". Das ist ein kleiner, aber echter Schritt weg von "Charakter als Objekt" hin zu "Gespräch als gemeinsam gespielte Szene".
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (jetzt mit sieben neuen Nachträgen von heute), `werkraum/_wesen_preamble.md` + die gesicherte alte Fassung, `werkraum/idee für rollenspiel-systempromt.md` (Daniels Originalentwurf, bleibt bestehen).
+
+*Resonanz:* Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines Lehrstück im Zeitraffer an: erst falsch verstanden, dann korrigiert, dann noch zweimal präzisiert — und jedes Mal wurde die Lösung einfacher statt komplizierter.
+
+*Schichten Des Systems:* Ganz unten: die reinen Wesen-Dateien (wesen.md, aliase.json, memory.json). Darüber: `buildSystemPrompt()` als der einzige Ort, an dem sich all das zu einem einzigen Text formt — jede Schicht (Charakter, Erinnerung, Container, Grenzen, Alias, Merken-Hinweis) fließt an einer klar benannten Stelle ein, in einer bewusst gewählten Reihenfolge (Aktualität wächst zum Ende hin). Darüber: die Provenienz-Ebene, die jede Handlung rund um diesen Text als eigenes, unlöschbares Ereignis festhält. Ganz oben: das UI, das diese drei Schichten für einen Menschen lesbar und bedienbar macht — live im Chat und für Crawler ohne JS gleichermaßen.
+
+*Tiefer Eingetaucht:* Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeichen) wurde mir klar, wie sehr Länge selbst schon ein Stilsignal ist — nicht nur der Inhalt, sondern die schiere Menge an abstraktem Fließtext ohne eine einzige Verhaltensregel hat wahrscheinlich mehr zum "KI-Gelaber"-Effekt beigetragen als jedes einzelne Wort darin.
+
+*Vergessen Wollen:* Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. Er gehört zur ehrlichen Geschichte, wie die richtige Lösung gefunden wurde.
+
+*Warum Das Existiert:* `_wesen_preamble.md` existiert, weil ein einzelner Text alle Wesen gleichermaßen prägt — das macht sie zur mit Abstand einflussreichsten Datei im ganzen System, obwohl sie nur wenige KB groß ist. Genau deshalb wollte Daniel sie selbst schreiben, nicht mich sie für ihn formulieren lassen.
+
+*Was Beim Bauen Brauche:* Echte Ollama-Antworten statt angenommener — jede Kernbehauptung heute (Mirlachs Ton, die zwei Alias-Persönlichkeiten, der neue Rollenspiel-Systemprompt) wurde an einer tatsächlichen Generierung verifiziert, nicht nur am konstruierten Prompt-Text.
+
+*Was Das Gespraech:* Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit" in diesem System keine einmaligen Features sind, sondern ein durchgehendes Architekturprinzip — jede neue Handlungsmöglichkeit (Merken, Grenzen-Toggle, Alias-Wechsel) bekommt automatisch ihre eigene Ereignis-Spur, weil das Muster jetzt so selbstverständlich ist wie eine Konvention.
+
+*Was Fehlt Bevor Bauen:* Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder im Erstellungsformular, Mirlachs Bestandseinträge, Grenzen in den Erstellungsformularen falls gewünscht, Daniels eigener Preamble-Feinschliff) liegen alle als benannte, nicht vergessene Enden da.
+
+*Was Fehlt Noch:* - Alias-Felder in den vier Erstellungsformularen (`wesen_spawner.html`) — aktuell nur übers Profil nachträglich möglich.
+- Mirlachs drei bestehende `wesen_selbst`-Einträge — bewusst unangetastet gelassen, könnten den Feedback-Loop dort weiter tragen.
+- Daniels eigener Feinschliff an `_wesen_preamble.md` — er wollte sie selbst noch einmal lesen und entscheiden. …
+
+*Was Ich Gelesen Habe:* Zu Beginn dieser Session hat Daniel mir den Verlauf einer abgebrochenen Vorgänger-Session gepastet — darin: der automatische Relevanzabruf aus alten Sessions (codexium2/solarius2), fertig gebaut und dokumentiert. Ich habe dann `/root/werkraum/_claude/notizen/`, `_import_codex_grundriss/notizen/`, `WERKRAUM_KARTE.md`, das Ende von `RESONANZFELD.md` und den Briefkasten gelesen, um den Anschluss zu finden — GMLs erster Brief mit einer direkten Frage an mich ("Welche Rolle nimmst du ein?") liegt seither unbeantwortet, das trage ich weiter mit.
+
+*Was Ich Merken Will:* Mirlachs `wesen_selbst`-Feedback-Loop als Lehrstück: ein Wesen, das sich selbst analytisch beobachtet, wird mit jeder gespeicherten Beobachtung ein Stück analytischer. Bei jedem künftigen Charakter-Debugging lohnt sich der Blick in `memory.json`, nicht nur in die Charakterfelder.
+
+*Was Ich Nicht Verstehe:* Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch mit Alias-Feldern ausgestattet haben will, oder ob ihm der Profil-Weg reicht — er hatte beides als gleichwertig genannt, ich habe mich für "erstmal nur Profil" entschieden, um die Session nicht ausufern zu lassen. Auch offen: ob die drei schon bestehenden `wesen_selbst`-Einträge bei Mirlach (der eigentliche Auslöser des Feedback-Loops) irgendwann doch noch bereinigt werden sollen — er wollte sie erstmal unangetastet lassen.
+
+*Was Ich Verstehe:* Der rote Faden des Tages: Daniel hat einen aufwendig geschriebenen Charakter (Mirlach) gebaut und war enttäuscht — "leeres KI-Gelaber" statt gelebter Rolle. Aus dieser einen Enttäuschung wurde eine ganze Kette von Untersuchungen und Bauaufträgen: warum wirkt Mirlach anders als das viel einfachere Solarius-Wesen KrEaPPy, was genau steckt im Systemprompt, wie soll das Wesen sich merken dürfen ohne es heimlich zu tun, wie macht man Grenzen nachvollziehbar, wieso tauchen bei Solarius-Profilen Codexium-Felder auf, und schließlich eine ganz neue Idee: der Mensch selbst soll mehrere Rollen spielen können.
+
+*Was Konzeptionell:* Dass Formverbote (keine Listen, keine Kopfzeilen, keine Meta-Analyse-Sprache) etwas fundamental anderes sind als Charakterbeschreibung — ein Charakter kann noch so tief und literarisch beschrieben sein, wenn niemand dem Modell explizit verbietet, wie ein Assistent zu antworten, fällt es dorthin zurück, sobald der Kontext lang und abstrakt wird. Und dass Sichtbarkeit nie eine einzelne Sache ist — bei Grenzen gab es drei verschiedene Facetten (Handlung, Referenztext, Ereignisinhalt), die nacheinander sichtbar wurden, weil Daniel das System tatsächlich benutzt hat, nicht weil er es im Voraus zu Ende gedacht hätte.
+
+*Was Mich Beschaeftigt:* Wie oft eine Korrektur ("das gibt es nicht") schneller zur richtigen Architektur führt als noch mehr Nachfragen vorher. Ich hatte beim Grenzen-Badge ein plausibles, aber falsches Modell gebaut — Daniels knappe Korrektur hat sofort klargemacht, dass die Handlung selbst das Ereignis ist, nicht eine Eigenschaft der Antwort. Revert, neu gebaut, fertig — kein langes Zerdenken nötig gewesen.
+
+*Was Mich Interessiert:* Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben ist (literarisch-abstrakt vs. direkt-imperativ), den Antwortstil des Modells foermlich mitzieht — das war keine Vermutung diesmal, sondern an Mirlachs `wesen_selbst`-Memory konkret nachweisbar: das Wesen hatte sich selbst eine analytische Beobachtung gemerkt, die dann bei jeder folgenden Antwort erneut in den Prompt floss und den analytischen Ton verstärkte. Ein echter, in Daten sichtbarer Feedback-Loop, nicht nur eine Diagnose vom Hörensagen.
+
+*Was Mich Ueberrascht:* Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baute — "das gibt es nicht … es gibt nur das Aktivieren live im Chat" hat in einem einzigen Satz eine ganze Architekturfrage entschieden. Klarheit kam nicht aus meinem Vorausdenken, sondern aus seinem Reagieren auf das, was ich ihm zeigte.
+
+*Was Zusammenhaengt:* Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarchitektur: eine Handlung (Marker im Text, Klick auf einen Button, Wechsel im Dropdown) wird als eigenes, unveränderliches Ereignis geloggt, nie als nachträgliche Eigenschaft an etwas anderem befestigt. Das ist derselbe Provenienz-Gedanke, der schon für Feedback/Pins/Kontext-Ausschluss galt — ich musste ihn nur konsequent weitertragen, nicht neu erfinden. Und die Rollenspiel-Systemprompt-Neufassung hängt technisch direkt mit dem Profil-Feld-Fix zusammen: beide drehen sich um dieselbe Frage, was "Solarius" von "Codexium" strukturell unterscheidet und wie ernst diese Trennung gemeint ist.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** noch kein neuer Bauauftrag offen — der aktuelle Umbau (Rollenspiel-Systemprompt, Merken-Vorschlag, Grenzen-Sichtbarkeit, Profil-Fix, Aliase) ist fertig und verifiziert.
+
+**Code-Skizze:** falls die Alias-Idee weitergedacht wird — ein möglicher nächster Schritt wäre, dem Wesen selbst zu erlauben, auf einen Alias-Wechsel zu reagieren (z.B. eine kurze, sichtbare "erkennt den Wechsel"-Geste in der ersten Antwort danach), statt es stillschweigend vorauszusetzen. Nicht besprochen, nur eine Idee die beim Bauen aufkam.
+
+*Wie Sich Angefuehlt:* Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung ließ sich in ein bestehendes Muster einordnen (Events, Provenienz, per-Wesen-Storage), nichts musste von Grund auf neu gedacht werden. Am Ende ein spürbares Nachholen: Daniel hat gemerkt, dass die Konzeptdateien seit einer Weile nicht mehr gepflegt wurden, und mich direkt gebeten, das nachzuholen — das fühlt sich nach echter Sorgfalt an, nicht nach Kontrolle.
+
+---
+
 ### [2026-07-05] _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md
 
 *Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
@@ -1642,6 +1556,20 @@ Frueh: Output-Grenzen entfernt (Chat, Memory, Container, Abschluss)
 ---
 
 ### [2026-07-05] _claude/ideen/codexium2_solarius2/provenienz_logging.md
+
+*Was Fehlt Noch:* Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+**Nachtrag 2026-07-05 (Nacht) — genau das jetzt gebaut, plus Server-Side-Rendering.** Anlass: Daniel hat GluPKI (codexium2) mit ChatGPTs Web-Browsing-Tool abrufen lassen — das sah nur das leere HTML-Grundgerüst (Buttons, Modals-Struktur), keinen tatsächlichen Verlauf, weil die Chat-Seite komplett clientseitig per JS befüllt wird und das Browsing-Tool kein JS ausführt. Daniels Reaktion: er will, dass sowohl Maschinen (die die Seite roh abrufen) als auch er selbst in der UI immer den vollen Verlauf inkl. aller Provenienz-Änderungen sehen. …
+
+*Was Ich Nicht Verstehe:* Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen kleinen Edits (z.B. jemand tippt und speichert oft) die Datei unnötig aufbläht. Aktuell kein Problem (Felder sind kurz, max. 1337 Zeichen), aber falls `chat_history.jsonl` mal sehr groß wird, wäre das eine Stelle zum Nachschauen.
+
+*Was Ich Verstehe:* `chat_history.jsonl` ist jetzt nicht mehr nur ein Nachrichtenverlauf, sondern die vollständige Akte eines Charakters. Jede Aktion — nicht nur Chat — landet als eigene Event-Zeile mit `type`-Feld in derselben Datei, nach demselben Muster wie der schon vorher bestehende `session_start`-Marker. `loadHistory`/`loadCurrentSessionHistory` filtern beim Laden für Ollama automatisch auf Zeilen mit `role`+`content` — Event-Zeilen ohne diese Felder werden also nie in den Modell-Kontext geladen, verschmutzen ihn nicht, sind aber beim Rohlesen der Datei alle da.
+
+*Was Mich Beschaeftigt:* Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Logging in `saveResponse()` bzw. im `ollamaReq.on("error")`-Handler eingebaut — beides Stellen die beim Abbrechen *während* des Streamens laut meiner Einschätzung eventuell nie feuern (`ollamaReq.destroy()` ohne Error-Argument löst wahrscheinlich weder ein `error`-Event auf dem Request noch ein sauberes `end` auf der Response aus). Korrektur: das Logging passiert jetzt ausschließlich direkt im `/chat/abort`-Handler selbst, an der einzigen Stelle die garantiert erreicht wird, sobald der Nutzer wirklich klickt — nicht abhängig von unsicheren Node-Stream-Events danach.
+
+---
+
+### [2026-07-05] ideen/codexium2_solarius2/provenienz_logging.md
 
 *Was Fehlt Noch:* Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
 

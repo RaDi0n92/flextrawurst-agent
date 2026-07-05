@@ -905,3 +905,34 @@ Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines Lehrstück im Zeitraffer an: erst falsch verstanden, dann korrigiert, dann noch zweimal präzisiert — und jedes Mal wurde die Lösung einfacher statt komplizierter.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/memory_system.md*
+
+[[zwischenwesen-chat-konzept]]
+[[zwischenwesen-container]]
+[[zwischenwesen-architektur]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/container.md*
+
+[[zwischenwesen-chat-konzept]]
+[[zwischenwesen-felder]]
+[[zwischenwesen-schlachtplan]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/felder.md*
+
+[[zwischenwesen-chat-konzept]]
+[[zwischenwesen-container]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+[[wesen-einzug-konzept]] — Einzug ist anders (bestehende Wesen kommen rein), aber verwandt
+[[kompoase]] — Zielort der Zwischenwesen nach 24h
+[[entity_kern]] — LLM-Infrastruktur die wir wiederverwenden

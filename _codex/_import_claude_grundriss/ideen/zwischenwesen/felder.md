@@ -109,6 +109,17 @@ In der KompOase: Bild ist klickbar im Wesen-Lesefenster → Vollansicht.
 
 ---
 
+## Entscheidung nachgetragen (2026-07-05, aus dem Codexium2-Bau)
+
+Die "Codexium-Parität" oben bezieht sich auf den Stand vor dem 05.07. — Codexium(2) hat sich seitdem in zwei Punkten geändert, die hier mitgelten sollten, wenn Flüchtlinge wirklich Parität halten wollen:
+
+1. **Keine `[Label]`-Kopfzeilen mehr zwischen den Feldern im System-Prompt.** Gesprächseinstieg/Was-bist-du/Neigungen/Beschreibung/Wesendefinition/Weltlore fließen roh, mit Leerzeile getrennt, hintereinander — nicht mehr als `[Wesendefinition]\n...`, `[Weltlore]\n...` usw. Grund: an einem konkreten Fall (Mirlach) nachgewiesen, dass viele separat gelabelte, literarisch-abstrakte Felder das Modell in einen dokumentierenden/analysierenden Ton ziehen ("KI-Gelaber"), statt es die Rolle spielen zu lassen.
+2. **Expliziter Formverbots-Absatz im Rollenspiel-Systemprompt** (nicht in den einzelnen Feldern, sondern in der gemeinsamen Präambel davor): keine Kopfzeilen, keine Aufzählungen, kein Fettdruck-Gliedern, keine Meta-Analyse-Sprache ("Das ist ein klassisches Beispiel für..."). Das war der eigentliche Hebel gegen den beobachteten Effekt — reine Charakterbeschreibung allein reicht nicht, es braucht eine harte Form-Regel dazu.
+
+Beide Punkte gehören mit in die Felder-/Prompt-Architektur der Flüchtlinge, sobald die tatsächlich gebaut wird. Details: `werkraum/_wesen_preamble.md` (aktive Fassung) und Nachtrag "Rollenspiel-Systemprompt" in `_claude/ideen/codexium2_solarius2/provenienz_logging.md`.
+
+---
+
 ## Resonanz
 
 [[zwischenwesen-chat-konzept]]

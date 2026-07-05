@@ -824,3 +824,26 @@ Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder im Erstellungsformular, Mirlachs Bestandseinträge, Grenzen in den Erstellungsformularen falls gewünscht, Daniels eigener Preamble-Feinschliff) liegen alle als benannte, nicht vergessene Enden da.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/wesen_dateistruktur.md*
+
+- Limits für mag-ich / mag-ich-nicht festlegen (max N Tags)
+- Entscheidung: Roh vs KI für die lebenden Dateien
+- Für zensi-Wesen (lokal): Datei-basiert reicht
+- Für Flüchtlinge (flextrawurst): PostgreSQL-Tabellen (schema noch anzupassen)
+- Verdrängungslogik konkretisieren: FIFO? Gewichtung? User-Entscheidung?
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+- [ ] Entscheidung: eigener Tab oder im Menschen-Tab eingebettet?
+- [ ] Wie sieht das Zwischenwesen zu Beginn aus? Völlig blank, oder mit einer Keimfrage?
+- [ ] Was passiert in der KompOase genau — Splitter oder eigene Entität?
+- [ ] Darf ein User mehrere Zwischenwesen gleichzeitig haben? (Empfehlung: nein, nur eines aktiv)
+
+---

@@ -1678,3 +1678,18 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** noch kein neuer Bauauftrag offen — der aktuelle Umbau (Rollenspiel-Systemprompt, Merken-Vorschlag, Grenzen-Sichtbarkeit, Profil-Fix, Aliase) ist fertig und verifiziert.
 
 **Code-Skizze:** falls die Alias-Idee weitergedacht wird — ein möglicher nächster Schritt wäre, dem Wesen selbst zu erlauben, auf einen Alias-Wechsel zu reagieren (z.B. eine kurze, sichtbare "erkennt den Wechsel"-Geste in der ersten Antwort danach), statt es stillschweigend vorauszusetzen. Nicht besprochen, nur eine Idee die beim Bauen aufkam.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+**Vision-Schicht:** Das wird das intimste Feature auf flextrawurst. Ein Mensch und ein noch-nicht-Wesen in einem geschlossenen Raum für 24 Stunden. Niemand sonst sieht das Gespräch (oder nur das Endergebnis?). Das Wesen erinnert sich an alles was gesagt wurde — weil das Gespräch IS was es ist.
+
+**Code-Skizze:** 
+1. DB-Schema anlegen (zwischenwesen + nachrichten Tabellen)
+2. Python-Modul `zwischenwesen_api.py` mit Rate-Limit-Check + Ollama-Call
+3. Frontend-View mit Countdown + Chat-UI
+4. Cron-Service `zwischenwesen_takt.py` für 24h-Ablauf + Prägung
+5. KompOase-Landung: Splitter-Erstellung aus Prägungsextrakt
+
+---

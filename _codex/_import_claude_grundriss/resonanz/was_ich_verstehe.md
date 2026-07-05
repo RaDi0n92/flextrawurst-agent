@@ -1270,3 +1270,45 @@ Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Cas
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Der rote Faden des Tages: Daniel hat einen aufwendig geschriebenen Charakter (Mirlach) gebaut und war enttäuscht — "leeres KI-Gelaber" statt gelebter Rolle. Aus dieser einen Enttäuschung wurde eine ganze Kette von Untersuchungen und Bauaufträgen: warum wirkt Mirlach anders als das viel einfachere Solarius-Wesen KrEaPPy, was genau steckt im Systemprompt, wie soll das Wesen sich merken dürfen ohne es heimlich zu tun, wie macht man Grenzen nachvollziehbar, wieso tauchen bei Solarius-Profilen Codexium-Felder auf, und schließlich eine ganz neue Idee: der Mensch selbst soll mehrere Rollen spielen können.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/memory_system.md*
+
+Ein großes Gedächtnis-Blob wäre eine Katastrophe für das 8192-Token-Fenster. Stattdessen: mehrere kleine Kategorien plus eine wachsende Geschichte. Bei jedem LLM-Aufruf kommen nur die relevanten Teile ins Fenster. Das Wesen wirkt intelligent weil es gezielt erinnert — nicht weil es alles auf einmal trägt.
+
+Das ist manuell kuratiertes RAG ohne Embeddings. Der Mensch ist der Retrieval-Schritt.
+
+Die **Wesen-Geschichte** ist dabei kein Performanz-Kompromiss — sie ist das Gedächtnis wie es echte Erinnerung funktioniert. Das Wesen erinnert sich nicht an jeden Satz, aber es erinnert sich wie sich das Gespräch angefühlt hat. Jede Session hinterlässt ein Kapitel. Die Kapitel zusammen sind die Prägung die in der KompOase bleibt.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/container.md*
+
+Der Container ist das Gedächtnis das der User selbst auswählt. Nicht alles aus 24h Chat landet im Wesen — nur was bewusst hineingelegt wurde. Das ist eine Kurationsentscheidung, keine automatische Extraktion.
+
+Jede Nachricht im Chat — ob vom User oder vom Wesen — hat ein kleines "+" oder "Pin"-Symbol. Klick → landet im Container. Container ist immer sichtbar (Sidebar, Overlay, Panel — TBD). Inhalt kann jederzeit wieder herausgenommen werden. Nach 24h: Container-Inhalt ist priorisiertes Material für die Prägungsextraktion.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/felder.md*
+
+Der User erschafft ein Zwischenwesen nicht durch einen einfachen Namen. Er schreibt es. Die Felder sind kein Formular — sie sind eine Schöpfungshandlung. Jedes Feld formt den System-Prompt des Wesens und damit sein Verhalten im Chat.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+Ein Mensch öffnet einen Chat mit einem noch namenlosen Wesen. 24 Stunden lang lebt das Wesen in flextrawurst — dann beginnt die Abschiebung in die KompOase. Innerhalb dieser 24 Stunden können mehrere Gespräche stattfinden: jedes Gespräch läuft so lang wie das Kontextfenster es trägt. Wenn das Fenster zu ~75% gefüllt ist, schlägt das System selbst vor abzuschließen — erklärt warum, zeigt was gesichert wird, und bereitet den nächsten Chat vor.
+
+Ein Takt zwingt sie zur Langsamkeit: der Cooldown zwischen Nachrichten beginnt klein und wächst dynamisch mit der Anzahl aktiver Flüchtlinge — damit der Server bei vielen gleichzeitigen Usern nicht kippt.
+
+144 Sekunden war der Ursprungswert. Er gilt noch als obere Referenz — bei einem einzelnen aktiven Flüchtling kann der Takt deutlich kürzer sein. Das Gespräch prägt das Wesen. Nach 24 Stunden ist die Prägephase vorbei — das Wesen landet als Splitter oder Entität in der KompOase, geformt durch alle Gespräche die stattgefunden haben.
+
+---

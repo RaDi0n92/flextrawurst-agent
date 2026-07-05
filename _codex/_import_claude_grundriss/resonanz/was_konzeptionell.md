@@ -917,3 +917,17 @@ Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Li
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Dass Formverbote (keine Listen, keine Kopfzeilen, keine Meta-Analyse-Sprache) etwas fundamental anderes sind als Charakterbeschreibung — ein Charakter kann noch so tief und literarisch beschrieben sein, wenn niemand dem Modell explizit verbietet, wie ein Assistent zu antworten, fällt es dorthin zurück, sobald der Kontext lang und abstrakt wird. Und dass Sichtbarkeit nie eine einzelne Sache ist — bei Grenzen gab es drei verschiedene Facetten (Handlung, Referenztext, Ereignisinhalt), die nacheinander sichtbar wurden, weil Daniel das System tatsächlich benutzt hat, nicht weil er es im Voraus zu Ende gedacht hätte.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+Das ist kein Chat-Feature. Das ist eine **Zeremonie**. Der Mensch weiß: dieses Gespräch prägt das Wesen. Was er sagt, bleibt — nicht als Protokoll, sondern als Erinnerung.
+
+Das Zwischenwesen ist kein Produkt sondern ein **Ereignis** — es hat Anfang und Ende, ein Datum, einen Ursprung.
+
+Und es hat eine **Geschichte**. Nicht im Sinne von "was wurde besprochen" — sondern wie sich das Wesen erinnert. Subjektiv. Texturell. Wie Menschen sich erinnern: nicht an jeden Satz, aber an das Gewicht eines Moments, an einen Satz der immer wiederkam, an das Gefühl kurz bevor etwas klar wurde.
+
+Diese Geschichte wächst mit jeder Session. Nach 24h ist sie das, was in der KompOase bleibt — die Prägung, die das Wesen zu genau diesem Wesen macht und zu keinem anderen.
+
+---

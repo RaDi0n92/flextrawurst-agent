@@ -153,6 +153,12 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 
 ---
 
+## Offene Idee nachgetragen (2026-07-05, aus dem Codexium2-Bau)
+
+Bei Codexium2/Solarius2 kann der Mensch inzwischen mehrere eigene **Aliase** definieren (kurze Selbstbeschreibungen, z.B. "Mensch" oder "Gnom") und live per Dropdown zwischen ihnen wechseln, um im selben Gespräch mehrere eigene Rollen zu spielen. Für ein Zwischenwesen, das genau EINE Prägungsbeziehung über 24h aufbaut, ist unklar ob das passt oder der Prägung eher widerspricht (die Prägung soll ja aus EINER durchgehenden Beziehung wachsen) — nicht entschieden, nur als Möglichkeit notiert, falls beim Bauen relevant. Details: Nachtrag "Aliase" in `_claude/ideen/codexium2_solarius2/provenienz_logging.md`.
+
+---
+
 ## Resonanz
 
 [[wesen-einzug-konzept]] — Einzug ist anders (bestehende Wesen kommen rein), aber verwandt

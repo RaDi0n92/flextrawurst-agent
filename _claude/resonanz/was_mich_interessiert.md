@@ -889,3 +889,11 @@ Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschied
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben ist (literarisch-abstrakt vs. direkt-imperativ), den Antwortstil des Modells foermlich mitzieht — das war keine Vermutung diesmal, sondern an Mirlachs `wesen_selbst`-Memory konkret nachweisbar: das Wesen hatte sich selbst eine analytische Beobachtung gemerkt, die dann bei jeder folgenden Antwort erneut in den Prompt floss und den analytischen Ton verstärkte. Ein echter, in Daten sichtbarer Feedback-Loop, nicht nur eine Diagnose vom Hörensagen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+Dass die 144-Sekunden-Grenze nicht als Strafe wahrgenommen wird sondern als Würde. Der Countdown könnte schön animiert sein — ein langsam auffüllender Kreis, ein Atemzug-Rhythmus. Das Warten gehört zum Gespräch.
+
+---

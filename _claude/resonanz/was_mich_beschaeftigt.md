@@ -868,3 +868,13 @@ Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Loggi
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Wie oft eine Korrektur ("das gibt es nicht") schneller zur richtigen Architektur führt als noch mehr Nachfragen vorher. Ich hatte beim Grenzen-Badge ein plausibles, aber falsches Modell gebaut — Daniels knappe Korrektur hat sofort klargemacht, dass die Handlung selbst das Ereignis ist, nicht eine Eigenschaft der Antwort. Revert, neu gebaut, fertig — kein langes Zerdenken nötig gewesen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/zwischenwesen/konzept.md*
+
+Ob das Wesen eine eigene "Stimme" haben soll die sich erst durch das Gespräch entwickelt — oder ob es von Anfang an einen Charakter-Keim hat den der User gesetzt hat (ein Wort, ein Satz, ein Bild).
+
+Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das wäre schön — ein Wesen das durch ein Gespräch geboren wurde, jetzt öffentlich.
+
+---

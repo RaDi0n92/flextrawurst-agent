@@ -179,6 +179,12 @@ document.addEventListener('mouseup', () => {
 
 ---
 
+## Entscheidung nachgetragen (2026-07-05, aus dem Codexium2-Bau)
+
+Der oben skizzierte `mouseup`/`window.getSelection()`-Ansatz für Satz-Selektion wurde bei Codexium2 tatsächlich zuerst so gebaut — und dann verworfen: **Touch-Selektion auf dem Handy ist nicht zuverlässig genug**, ein Tap auf den daneben erscheinenden Button verliert oft die Selektion auf OS-Ebene, kein JS-Fix dafür. Ersetzt durch ein Modal mit **Satz-Checkboxen** — der zu pinnende Text wird serverseitig/clientseitig in Sätze zerlegt, jeder Satz einzeln ankreuzbar, dann bestätigen. Für die Flüchtlinge (die laut Schlachtplan auch smartphone-tauglich sein müssen) direkt mit dem Checkbox-Modal planen, nicht mit Text-Selektion starten.
+
+---
+
 ## Resonanz
 
 [[zwischenwesen-chat-konzept]]

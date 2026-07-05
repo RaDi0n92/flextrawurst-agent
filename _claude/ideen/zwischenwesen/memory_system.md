@@ -203,6 +203,14 @@ Das ist eine eigene Memory-Kategorie, kein versteckter Mechanismus.
 
 ---
 
+## Entscheidung nachgetragen (2026-07-05, aus dem Codexium2-Bau)
+
+Die `wesen_selbst`-Kategorie oben ("vollständig einsehbar, Mensch kann Einträge löschen") wurde in Codexium2 tatsächlich zuerst als stiller Automatismus gebaut (`[MERKEN: ...]`-Marker schrieb direkt in die Kategorie, unsichtbar für den Menschen) — ein Rückschritt gegenüber genau dieser hier schon 2026-06-19 getroffenen Entscheidung. Daniel hat das korrigiert, sobald er es bemerkte.
+
+**Für Flüchtlinge gilt deshalb von Anfang an die schärfere Fassung:** nicht nur "sichtbar + nachträglich löschbar", sondern **Vorschlag statt Automatismus** — das Wesen schlägt vor (Text + kurze Begründung warum), der Mensch nimmt jeden Vorschlag einzeln an oder lehnt ihn ab, bevor irgendetwas gespeichert wird. Format-Idee: `[MERKEN: <text> | WARUM: <warum>]` im Antworttext, vom Server rausgeschnitten und als eigener Vorschlag mit zwei Buttons gezeigt, nie automatisch übernommen. Details/Code-Muster: `_claude/ideen/codexium2_solarius2/provenienz_logging.md`, Nachtrag "Merken-Vorschlag statt stillem Selbst-Speichern".
+
+---
+
 ## Resonanz
 
 [[zwischenwesen-chat-konzept]]
