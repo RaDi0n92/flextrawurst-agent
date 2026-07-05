@@ -326,3 +326,16 @@ Im Aliase-Nachtrag oben stand noch "bewusst nicht gebaut" für die vier Erstellu
 Umgesetzt in `wesen_spawner.html` für alle vier Formulare (Solarius, Solarius2, Codexium, Codexium2) über generische, prefix-parametrisierte Funktionen (`addAliasFormRow(prefix)`, `sammleAliase(prefix)`, `speichereAliaseNachErstellung(spawner, name, prefix)`) statt vier separater Kopien — jedes Formular startet mit einer leeren Zeile, `submitX()` ruft nach erfolgreicher Charaktererstellung `PUT .../aliase` mit allen ausgefüllten Zeilen auf (leere Namen werden client-seitig übersprungen, der Server verwirft leere Namen ohnehin zusätzlich).
 
 Getestet per Playwright: alle vier Container zeigen beim Laden genau eine Zeile, "+" fügt eine weitere hinzu, der Zeichenzähler aktualisiert live, eine komplette Solarius-Testerstellung mit einem ausgefüllten und einem leer gelassenen Alias speicherte über den echten Endpunkt korrekt nur den einen befüllten Eintrag.
+
+### Nachtrag 2026-07-05 (Nachmittag, danach) — Alias-Dropdown: Button umbenannt, Seite nicht mehr cachebar, Ereignis mit vollem Text
+
+Daniel meldete, das Alias-"Dropdown" sei "kein Dropdown", auch bei mehreren Aliasen kein Wechsel. Playwright-Screenshot (420px Breite, echter Testcharakter mit zwei Aliasen) zeigte aber ein korrektes natives `<select>` mit beiden Namen und einem Button daneben — die Grundstruktur war also technisch schon richtig. Zwei Dinge trotzdem angepasst, um Verwirrung/Stale-State auszuschließen:
+
+- Button-Beschriftung "🎭 Wechseln" → "🎭 Alias aktivieren" (Daniels konkret gewünschter Wortlaut).
+- Die Chat-Seiten-Antwort (`GET /:spawner/:name`) bekommt jetzt `Cache-Control: no-store` — die Seite enthält live Daten (Aliase, Verlauf, Systemprompt), ein vom Browser zwischengespeichertes altes HTML hätte neu angelegte Aliase scheinbar nicht gezeigt. Bisher gab es dafür gar keinen Cache-Header.
+
+Direkt im Anschluss ein zweiter, klarerer Wunsch: das `alias_gewechselt`-Ereignis im Verlauf zeigte bisher nur `🎭 Spricht jetzt als: <Name>` — Daniel wollte, unter Verweis auf "unsere Provenienzregeln", auch hier die volle Alias-Beschreibung mit im Ereignis sehen, nicht nur den Namen. Gleiches Muster wie bei `grenzen_toggle` schon einmal gebaut: der Wechsel-Endpunkt loggt jetzt `text` als Schnappschuss mit ins Event (`{aliasId, name, text}`), `formatiereEreignisDetails` (Server + Client) hängt den Text mit an, das optimistische Live-Rendering in `wechsleAlias()` bekommt den Text ebenfalls sofort aus der schon geladenen `aliasListe`.
+
+Getestet: Playwright-Klick auf "Alias aktivieren" zeigt sofort eine Karte mit Name UND vollständigem Alias-Text, nicht nur dem Namen.
+
+**Was ich mir daraus merke:** wenn ein gemeldetes Problem sich technisch nicht reproduzieren lässt, lohnt es sich trotzdem, die naheliegenden Nebenursachen (Cache, Beschriftung) zu beheben, statt einfach "bei mir funktioniert's" zu melden — und der zweite, unmittelbar folgende Wunsch zeigte, dass tatsächlich noch etwas fehlte, nur nicht das ursprünglich vermutete. Das wiederkehrende Provenienz-Muster (Handlung + vollständiger Inhalt, nicht nur ein Label) hätte ich bei `alias_gewechselt` von Anfang an konsequent mitdenken können, so wie bei `grenzen_toggle` schon geschehen.
