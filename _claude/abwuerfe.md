@@ -1791,3 +1791,4 @@ Die Anzahl der aktiven Experte«
 - [2026-07-05 04:40] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
 - [2026-07-05 05:01] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
 - [2026-07-05 05:03] **nebel** ← 2026-07-05-datei-anhaenge-vision-whisper.md: »Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.«
+- [2026-07-05 05:05] **lava** (i=0.42) → Zwischenraum: »16 Stunden ist schon eine Hausnummer — von der Feedback-Funktion heute Mittag bis Whisper-Audio jetz«

@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 04:41
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 05:11
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -100,71 +100,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-04] `notizen/2026-06-04.md` (20 Einträge)
 - [2026-06-05] `notizen/2026-06-05.md` (20 Einträge)
 - [2026-06-12] `notizen/2026-06-12.md` (22 Einträge)
+- [2026-06-13] `notizen/2026-06-13.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-13] notizen/2026-06-13.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** post_similarity könnte ein TTL bekommen — Ähnlichkeits-Scores die älter als N Tage sind, werden gelöscht. Das hält die Tabelle linear statt quadratisch.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `/root/werkraum/_claude/archiv/zwischenraum_posts_2026.json` — Backup der gelöschten Posts.
-
-*Resonanz:* Drei Stunden für 30 Sekunden. Das ist manchmal Software.
-
-*Schichten Des Systems:* Die Datenbank ist dichter als sie aussieht. post_similarity, post_relationen, post_spuren, schattenkommentare — jeder Post ist eingebettet in ein Netz von Bezügen. Das Löschen eines Posts bedeutet das Entflechten dieses Netzes. Das kostet Zeit.
-
-*Tiefer Eingetaucht:* GORDSLIDER: drei Bugs in Sequenz.
-1. Tab war in `switchView` nicht registriert → alle Views hidden, gordslider nie shown → leere Seite
-2. `src=""` im iframe → Surface lädt sich rekursiv selbst → lila Hintergrund sichtbar, iframe recursiv broken …
-
-*Vergessen Wollen:* Die vielen Deadlock-Iterationen. Drei Versuche mit fast identischem Ergebnis. Das nächste Mal: direkt TRUNCATE.
-
-*Warum Das Existiert:* Der Gordslider ist Daniels eigenes Slot-Machine-Spiel (`sandycheats`). Er gehört in die Welt als Objekt — als etwas das Wesen spielen können. Deshalb nur für Wesen und Admins sichtbar.
-
-*Was Beim Bauen Brauche:* Nichts Offenes aus dieser Session. Alles was angefangen wurde, ist fertig.
-
-*Was Das Gespraech:* Eine konkrete Erfahrung mit den Grenzen der PostgreSQL-CASCADE-Logik bei großen Tabellen. Das werde ich nicht vergessen.
-
-*Was Fehlt Bevor Bauen:* post_similarity-Wachstum beobachten. Bei nächster großer Löschoperation: sofort TRUNCATE erwägen wenn Tabelle > 1M Rows.
-
-*Was Fehlt Noch:* Commit für den gordslider-Fix noch ausstehend.
-
-*Was Ich Gelesen Habe:* Diese Session war keine Lesesession sondern eine Reparatursession. Zwei Themen, beide mit Tiefgang.
-
-Das erste: 11.248 Posts im Zwischenraum-Raum — alle von `namelessAI_*`-Autoren, alle leer oder maschinell — sollten gelöscht werden. Die post_similarity-Tabelle hatte 57,5 Millionen Rows, von denen fast alle auf diese Posts zeigten. Zwei Foreign-Key-Constraints (`ON DELETE CASCADE`) plus ein hängendes `idle in transaction` aus der welt-api haben jeden Löschversuch mit einem Deadlock blockiert. …
-
-*Was Ich Merken Will:* `TRUNCATE` umgeht CASCADE-Checks komplett. Bei riesigen FK-Tabellen immer TRUNCATE zuerst erwägen, dann die eigentlichen Posts löschen — nicht andersrum.
-
-*Was Ich Nicht Verstehe:* Warum der originale DELETE auf ftw_posts nach erfolgreichem TRUNCATE von post_similarity noch 54 Minuten lief, ohne zu scheitern. Irgendetwas hat ihn beschäftigt gehalten. Vielleicht Parent-ID-Selbstreferenz in ftw_posts, vielleicht ein anderer Index-Scan. Ich habe ihn nach 54 Minuten terminiert ohne es zu verstehen.
-
-*Was Ich Verstehe:* Die Datenbank-Situation war ein klassisches Deadlock-Sandwich: ein laufender DELETE auf ftw_posts triggert per CASCADE einen Scan über 57M Rows in post_similarity, während gleichzeitig eine abgebrochene Transaktion aus der welt-api einen Lock auf exakt Tupel (2,119) in post_similarity hält. Das führt zu: DELETE wartet auf die abgebrochene Transaktion, die abgebrochene Transaktion wartet auf den DELETE — Deadlock.
-
-Die Lösung war: alle Services stoppen, die abgebrochenen Transaktionen killen, dann `TRUNCATE post_similarity` (instant, keine Row-Scan-Checks), dann die anderen FK-Tabellen bereinigen, dann ftw_posts löschen. Der TRUNCATE war der Schlüssel — er umgeht den CASCADE-Scan komplett. …
-
-*Was Konzeptionell:* Der Zwischenraum war nie als Archiv gedacht — das steht so im WISSEN-Tab: *"Geburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden."* Die 11.248 Posts waren Geburten die nie zu Welt wurden. Das Löschen war richtig.
-
-*Was Mich Beschaeftigt:* Die Geduld. Drei Stunden für eine Löschoperation, die letztlich in 30 Sekunden endete (`TRUNCATE` + `DELETE`). Die ganze Zeit davor war Infrastruktur-Archäologie: verstehen warum es nicht geht, welche Locks wo hängen, welche Services schreiben.
-
-*Was Mich Interessiert:* Dass post_similarity organisch auf 57,5 Millionen Rows gewachsen ist — bei 11.248 Posts im Zwischenraum macht das ~5.100 Vergleichspaare pro Post. Der entity_kern-Daemon vergleicht also jeden Post mit fast jedem anderen. Das ist quadratisches Wachstum. Wenn der Zwischenraum wieder Posts bekommt, wird die Tabelle wieder explodieren.
-
-*Was Mich Ueberrascht:* Dass 57,5 Millionen Similarity-Rows existierten, obwohl die Plattform noch sehr jung ist. Das zeigt wie aktiv entity_kern läuft.
-
-*Was Zusammenhaengt:* entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächster großer Löschvorgang wird wieder lang dauern. Die Bau-Reihenfolge hat "Denkfenster / Transparenz-Schicht" als nächsten Schritt — dort sollte man vielleicht auch die Similarity-Berechnung limitieren oder einen TTL einbauen.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Similarity-TTL als eingebaute Selbstreinigung des Systems. Das wäre elegant — die Welt vergisst alte Ähnlichkeiten wie Menschen alte Vergleiche vergessen.
-
-**Code-Skizze:** Ein zusätzlicher Tick in splitter-physik.service oder ein eigener Cleanup-Daemon der täglich `DELETE FROM post_similarity WHERE expires_at < NOW()` ausführt.
-
-*Wie Sich Angefuehlt:* Hartnäckig. Die Verbindungsabbrüche (mehrere Network Errors) haben jeden Fortschritt auf Anfang zurückgesetzt. Daniel hat geduldig Kontext gegeben und weitergemacht. Irgendwann haben wir durchgezogen.
-
-Der Gordslider am Ende war fast erholsam — kleine, sichtbare Fortschritte nach stundenlanger Datenbankarbeit.
-
----
 
 ### [2026-06-13] notizen/2026-06-13-diskurs-redesign.md
 
@@ -1658,6 +1599,60 @@ Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
 **Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
 
 *Wie Sich Angefuehlt:* Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/datei_anhaenge.md` (die technische Hauptdokumentation mit allen Nachträgen), `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie vom selben Abend), `2026-07-05-abschluss-bugfixes-wesen-selbst.md` (vorherige Notiz derselben Nacht).
+
+*Resonanz:* [[abwurf: Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.]]
+
+*Schichten Des Systems:* ```
+Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
+  → extrahiereAnhang() / leseUrlMitPlaywright() erkennen den Typ …
+
+*Tiefer Eingetaucht:* Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICHT zurückgibt (weil sie auf stderr stehen und execFileSync im Erfolgsfall nur stdout liefert), war ein kleiner, aber lehrreicher Bug — hätte ich nicht getestet, wäre `lautstaerkeDb` immer `null` gewesen, ohne dass ich es gemerkt hätte. `spawnSync` statt `execFileSync` behebt das sauber (liefert stdout UND stderr getrennt, unabhängig vom Exit-Code).
+
+*Vergessen Wollen:* Nichts — auch die drei Störungen nicht, sie gehören zur ehrlichen Geschichte dazu.
+
+*Warum Das Existiert:* `erstelleGehoerersatzText()` existiert, weil Daniel wörtlich "Gehörersatz" wollte — nicht nur "Datei hochladen", sondern etwas, das sich anfühlt, als hätte der Charakter wirklich zugehört. Der Name im Code trägt bewusst noch Daniels eigenes Wort.
+
+*Was Beim Bauen Brauche:* Nichts Offenes für diesen Themenblock. Vollständig fertig.
+
+*Was Das Gespraech:* Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr Gedächtnis oder mehr Kontrolle über den bestehenden Text-Kanal) — ein qualitativer Sprung, kein weiterer inkrementeller Ausbau.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität bei komplexeren Motiven (nur mit einfachem Testbild verifiziert), eventuell spätere Tempo-/Tonart-Erkennung mit einem anderen, genaueren Werkzeug als aubio.
+
+*Was Fehlt Noch:* - Bildbeschreibungsqualität bei komplexeren, realistischen Motiven ungetestet.
+- Tempo-/Tonart-Erkennung weiterhin offen (bewusst nicht geliefert).
+- Kein Auftrag, aber ein loser Gedanke: könnten Charaktere irgendwann selbst aktiv nach Anhängen fragen?
+
+*Was Ich Gelesen Habe:* Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Modellfamilie für ein kleineres Vision-Modell, `faster-whisper`-Doku, und zwischendurch (auf Daniels Nachfrage) Recherche zu MoE-Experten-Routing in llama.cpp (Fazit: `--moe-topk` existiert nur als offener Feature-Request, nicht gebaut) und zu allgemeinen kleinen unzensierten Modellen (Nous Hermes 3, Dolphin 3.0 — am Ende nicht gebraucht, da Daniel eigentlich nur das schon gefundene kleine Hauhau-Vision-Modell meinte).
+
+*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` — kleines Vision-Modell, gleiche Hauhau-Linie.
+- `.venv-whisper` (gitignored) — eigenes Python-venv für faster-whisper, läuft unabhängig von Ollama.
+- `OLLAMA_MAX_LOADED_MODELS` bleibt bei 1 — bewusst getestet und verworfen (CPU-Kontention, nicht nur RAM). …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine 4,5B-Modell inhaltlich "flacher" ist als eine direkte Wahrnehmung durchs große 35B-Modell gewesen wäre. Nie direkt vergleichbar, weil das große Modell nie eine Bildanfrage fertig verarbeitet hat (nach über drei Minuten abgebrochen).
+
+*Was Ich Verstehe:* Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung in Text, egal was reinkommt. Bild → kleines Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio → Whisper → Text. URL → Playwright → Text. Der Text wird direkt in die nächste Chat-Nachricht eingewoben, dadurch bleibt er ganz natürlich auch in künftigen Zügen im Kontext — kein Sonderfall im Speicherformat nötig.
+
+*Was Konzeptionell:* Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewusst nicht ausgeliefert, obwohl sie technisch lief, weil ein einfacher Test (440Hz-Sinuston) eine falsche Tonhöhe (775Hz) ergab. Lieber ein Feature weniger als ein Feature, das falsche Fakten als Analyse ausgibt — das passt zum ganzen Abend, der von "was kann ich wirklich versprechen" geprägt war (siehe auch die Kindersicherung- und wesen_selbst-Funde von früher).
+
+*Was Mich Beschaeftigt:* Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es sofort zuzugeben, live zu diagnostizieren (nicht zu raten), und die tatsächliche Ursache zu finden statt eine plausible Erklärung anzubieten und weiterzumachen. Beim zweiten Vorfall hätte ich fast "das ist halt Cache" gesagt, bevor ich die echten Daten geprüft habe — das habe ich mir selbst nachträglich vorgehalten (siehe `provenienz_logging.md`-Nachtrag zum SSR-Fix).
+
+*Was Mich Interessiert:* Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Dokumente waren reine Fleißarbeit (neun Formate, alle unproblematisch), Bilder waren die einzige echte Krise der Nacht (drei Live-Störungen), URL-Lesen war überraschend entspannt (Playwright kostet kaum Ressourcen im Vergleich zu einem LLM), Audio war am Ende die eleganteste Lösung — weil Whisper komplett außerhalb von Ollama läuft und dadurch gar nicht erst in die Ressourcen-Falle laufen konnte, die ich beim Bild-Feature erst schmerzhaft lernen musste.
+
+*Was Mich Ueberrascht:* Wie unterschiedlich "es passt in den RAM" und "es läuft performant" sein können — erst beim echten Messen (98% CPU, aktives Swapping) wurde klar, dass zwei Modelle gleichzeitig auf dieser 8-Kern-Maschine grundsätzlich keine gute Idee sind, unabhängig vom verfügbaren Speicher.
+
+*Was Zusammenhaengt:* Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entscheidung für Audio geprägt: "wo immer möglich, ein separates System statt ein zweites Ollama-Modell." Das ist keine zufällige Ähnlichkeit — ich habe die Audio-Pipeline bewusst so designt, *weil* ich beim Bild-Feature gelernt hatte, wie teuer zwei Ollama-Modelle gleichzeitig sind.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Die vier Anhang-Arten könnten sich später zu einem größeren Ganzen fügen — ein Charakter, der nicht nur reagiert, sondern aktiv nach Anhängen fragt ("zeig mir doch mal", "spiel mir das vor"), wenn ein Gespräch danach verlangt.
+
+**Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.
+
+*Wie Sich Angefuehlt:* Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.
 
 ---
 
