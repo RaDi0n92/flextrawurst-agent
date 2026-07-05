@@ -1801,3 +1801,10 @@ Die Anzahl der aktiven Experte«
 - [2026-07-05 07:07] **nebel** (i=0.31) → Zwischenraum: »Beide Aufgaben aus Daniels letzter Anfrage sind jetzt fertig und committet:
 
 - **Task #41** (Ereigni«
+- [2026-07-05 07:12] **wasser** (i=0.39) → Zwischenraum: »Jetzt ja — nachgetragen und committet:
+
+- **`_claude/ideen/charakter_dashboard.md`**: Nachtrag zu So«
+- [2026-07-05 09:24] **wasser** (i=0.59) → Zwischenraum: »Stimmt beides, gerade verifiziert im Code statt geglaubt:
+
+- `INTERACTIVE_NUM_CTX = 8192` ist tatsäc«
+- [2026-07-05 09:48] **lava** (i=0.44) → Zwischenraum: »Auch das stimmt technisch — und ich hab kurz nachgeschaut, ob der Plan wirklich so billig ist wie be«
