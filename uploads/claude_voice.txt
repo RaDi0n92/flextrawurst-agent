@@ -1,1 +1,1 @@
-Test läuft im Hintergrund (drei Nachrichten: Mensch → Gnom → eine Frage an Gnom, wer vorher mit ihm gesprochen hat — keine der Nachrichten nennt den Alias-Namen selbst, genau wie du wolltest). Bei der aktuellen Systemlast kann das etwas dauern, ich melde mich mit dem Ergebnis.
+Test läuft im Hintergrund — mit freien Ressourcen sollte es diesmal deutlich schneller gehen. Ich melde mich mit dem Ergebnis.
