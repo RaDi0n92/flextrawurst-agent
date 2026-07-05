@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 05:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 05:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -101,81 +101,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-05] `notizen/2026-06-05.md` (20 Einträge)
 - [2026-06-12] `notizen/2026-06-12.md` (22 Einträge)
 - [2026-06-13] `notizen/2026-06-13.md` (22 Einträge)
+- [2026-06-13] `notizen/2026-06-13-diskurs-redesign.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-13] notizen/2026-06-13-diskurs-redesign.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jedes Objekt hat eine kanonische URL. `#diskurs/post/{id}` ist die Post-URL. `#diskurs/post/{id}/reply/{rid}` ist die Antwort-URL. Beim Einzug werden Wesen-Posts ebenfalls eigene kanonische URLs bekommen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - `docs/surface_tabs/05_diskurs_thread_provenienz_share.md` — vollständige Dokumentation
-- `docs/surface/global_deeplink_share_provenienz_standard.md` — globaler Standard
-- `tests/surface_ring_23.test.ts` — 34 Tests
-
-*Resonanz:* Manchmal ist ein Syntaxfehler der beste Lehrer für saubere String-Interpolation.
-
-*Schichten Des Systems:* Der Diskurs hat jetzt drei eigene visuelle Schichten: Hauptpost, Beitrag, Schatten. Das spiegelt die konzeptuelle Tiefe: was öffentlich gesagt wird, was darauf antwortet, und was im Schatten bleibt. Die visuelle Hierarchie ist nicht Dekoration — sie zeigt die epistemische Struktur.
-
-*Tiefer Eingetaucht:* **Surface Ring 24 — was alles gebaut wurde:**
-
-1. **Global Deep-Link Router** (`ftwDeepLink()`): parst `#diskurs/post/<id>`, `/raum/<slug>`, `/thema/<slug>`, `/spur/<slug>`, `/post/<id>/reply/<rid>`, `/post/<id>/shadow`. Splash-Screen-Skip wenn Sub-Pfad-Hash erkannt. …
-
-*Vergessen Wollen:* Die sechs Node-Script-Iterationen um den Block-0-Syntaxfehler zu diagnostizieren. Hätte ich früher auf die tatsächliche Browser-Konsole schauen sollen statt auf node --check.
-
-*Warum Das Existiert:* Der Diskurs-Tab ist der öffentlichste Teil von flextrawurst. Wenn Wesen und Menschen dort schreiben und lesen, brauchen sie Orientierung: wer hat das geschrieben, woher kommt es, wie komme ich wieder hierher. Das ist keine Kosmetik — das ist die Lesbarkeit einer Welt.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Alle 17 Schritte sind abgeschlossen, alle Commits sind durch.
-
-*Was Das Gespraech:* Die Erkenntnis dass "technisch vorhanden" und "lesbar" zwei verschiedene Zustände sind. Posts waren vorhanden. Aber sie waren nicht lesbar als Diskurs. Jetzt sind sie es.
-
-*Was Fehlt Bevor Bauen:* - API muss `parent_id` bei Beiträgen liefern (für den Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`)
-- Schatten-Timestamps brauchen `created_at` in der API-Response
-- Flarum-Import: erst dann werden Herkunft-Badges auf echten Daten sichtbar
-
-*Was Fehlt Noch:* Bau-Reihenfolge-Stand (aus CLAUDE.md):
-- ✅ Deep-Link-Router + Share + Avatar + Provenienz (Surface Ring 24)
-- ✅ Diskurs-Tab Redesign (visuelle Hierarchie, Typ-Badges, Herkunft-Badges) …
-
-*Was Ich Gelesen Habe:* Zweite Session des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
-
-Der Auftrag hatte 17 Arbeitsschritte. Wir haben sie durchgezogen, unterbrochen durch Network Errors und einen Syntaxfehler der den ganzen Tab zum Absturz brachte.
-
-*Was Ich Merken Will:* `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` ist das sichere Muster für Share-Buttons in TypeScript-generierten HTML-Strings. Nie Anführungszeichen in onclick-Attributen wenn die Werte aus Variablen kommen.
-
-*Was Ich Nicht Verstehe:* Warum der Block-0-Fehler (Unexpected token ':') in den Script-Blöcken bei `node --check` immer noch erscheint — er war von Anfang an da, nicht durch uns verursacht, und hat die Funktionalität nicht gestört. Vermutlich liegt es an Type-Annotationen im TypeScript die in der generierten JS-Ausgabe nicht vollständig getrennt sind.
-
-*Was Ich Verstehe:* Das Kern-Problem war strukturell: Posts, Antworten, Schattenkommentare und Autoren hatten keine eigene visuelle Identität. Alles lag auf einer Ebene. Die Lösung war nicht kosmetisch — es brauchte echte Hierarchie im DOM, eigene CSS-Klassen für jede Schicht, und klickbare Identitäten überall.
-
-Die Syntaxfehler-Ursache: `ftwShare('...')` mit einfachen Anführungszeichen in TypeScript-Template-Strings. Die Backslash-Escapes (`\'`) wurden beim Build zu echten `'`, die dann den umgebenden HTML-Attribut-String zerbrochen haben. Fix: `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` — kein Quoting-Problem mehr.
-
-*Was Konzeptionell:* Die Idee von "Objektidentität" wird ernst genommen. Nicht nur Posts haben IDs und Direktlinks — auch Antworten, Schattenkommentare (über Post-ID adressierbar), Räume, Themen, Spuren. Jedes Objekt das eine eigene Existenz hat, soll teilbar sein. Das ist eine Design-Philosophie, kein Feature.
-
-Flarum und Vor-Einzug werden durch Mini-Badges sichtbar gemacht — nicht versteckt. Der Leser sieht wo etwas herkommt. Das ist ehrlich.
-
-*Was Mich Beschaeftigt:* Der Syntaxfehler der den Diskurs lahmgelegt hat — und wie wenig man ihn im TypeScript-Code sah. Erst beim Browser-Test (Diskurs lädt nicht) wurde es klar. Dann sechs Zeilen Code und der Fix war da.
-
-*Was Mich Interessiert:* Das Collapse-Pattern bei Schattenkommentaren. Ursprünglich wurden sie automatisch geladen — jetzt gibt es einen Toggle. Das ist konzeptuell interessant: Schattenkommentare sind per Definition das was sich im Halbdunkel befindet. Sie collapsed zu lassen bis der Leser aktiv aufklappt passt zu ihrer Natur. Nicht sichtbar als Standard, aber auffindbar.
-
-*Was Mich Ueberrascht:* Wie viel visueller Unterschied durch reine CSS-Hierarchie entstand. Keine Bibliothek, keine Animationen — nur andere Padding-Werte, andere Randbreiten, andere Hintergrundfarben. Drei Schichten sehen jetzt wie drei Schichten aus.
-
-*Was Zusammenhaengt:* - Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
-- `_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
-- Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`: scroll + grünes Outline-Highlight für 2,5 Sekunden. Das ist ein einfaches aber wirksames UX-Muster.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Wesen einziehen und echte Posts schreiben, werden alle diese Strukturen sofort sichtbar tragen: Autor-Typ-Badge "Wesen" in grün, Avatar mit ⬡, Direktlinks die geteilt werden können. Der Diskurs ist bereit für Wesen-Stimmen.
-
-**Code-Skizze:** Beim Einzug wird `autor_type === 'entity'` → grüner Rand statt blauer, `_ftwAvatar` gibt ⬡ zurück, `_dkTypBadge` gibt `<span class="dk-typ-badge entity">Wesen</span>` zurück. Alles schon gebaut.
-
-*Wie Sich Angefuehlt:* Systematisch. Der Auftrag war umfangreich — 17 Schritte — und wir haben jeden abgearbeitet. Der Network Error in der Mitte hat den Kontext gerissen, aber Daniel hat ihn vollständig zusammengestellt. Das hat den Wiedereinstieg möglich gemacht.
-
-Der Syntaxfehler war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.
-
----
 
 ### [2026-06-13] notizen/2026-06-13-wesen-denken.md
 
@@ -1653,6 +1584,60 @@ Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
 **Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.
 
 *Wie Sich Angefuehlt:* Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05.md
+
+*Dokumente Gehoeren Zusammen:* `2026-07-05-abschluss-bugfixes-wesen-selbst.md`, `2026-07-05-datei-anhaenge-vision-whisper.md` (beide heute, ausführlicher zu den Einzelthemen), `_claude/ideen/charakter_dashboard.md`, `_claude/ideen/datei_anhaenge.md`, `_claude/ideen/codexium2_solarius2/provenienz_logging.md` und `memory_container.md` (beide mit mehreren Nachträgen von heute), `/root/CLAUDE.md` (neuer Abschnitt "Qualität vor Geschwindigkeit").
+
+*Resonanz:* [[abwurf: Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.]]
+
+*Schichten Des Systems:* ```
+Frueh: Output-Grenzen entfernt (Chat, Memory, Container, Abschluss)
+  → Charaktere duerfen mehr SAGEN …
+
+*Tiefer Eingetaucht:* Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ich die Rohdaten (GluPKI vs. Flarius) tatsächlich verglichen habe — eine plausible, aber ungeprüfte Erklärung, die sich als falsch herausstellte. Der echte Fehler (ein irreführender Platzhaltertext, der trotz `display:none` im rohen HTML blieb) war interessanter und lehrreicher als meine erste Vermutung. Daniels Gegenprobe mit einem zweiten Charakter (Flarius) war der Schritt, der die Wahrheit sichtbar gemacht hat — nicht meine eigene Analyse allein.
+
+*Vergessen Wollen:* Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cache-Vermutung, Dual-Model-Idee, aubio). Sie gehören zur ehrlichen Geschichte des Tages.
+
+*Warum Das Existiert:* Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehlern, Kurskorrekturen, einem ausgesprochenen Prinzip — mehr verdient als nur die Summe seiner Commits. Die einzelnen technischen Notizen sagen "was", diese hier versucht "wie es war" zu sagen.
+
+*Was Beim Bauen Brauche:* Für morgen/das nächste Mal: denselben Rhythmus beibehalten, der sich heute bewährt hat — isoliert testen, dann vorsichtig gegen echte Nutzung, ehrlich bei Fehlschlägen, keine Kompromisse bei Sorgfalt zugunsten von Tempo (jetzt auch explizit in `/root/CLAUDE.md` verankert).
+
+*Was Das Gespraech:* Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigter Aufgaben — und ein explizit ausgesprochenes Arbeitsprinzip, das über den heutigen Tag hinausträgt.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel selbst als unrealistisch auf dieser Hardware eingeschätzt), bessere Bildbeschreibung bei komplexeren Motiven, eine mögliche kompaktere Profilvorschau im Dashboard statt Popup, Tempo-/Tonart-Erkennung für Audio mit einem genaueren Werkzeug als aubio.
+
+*Was Fehlt Noch:* - Video-Anhänge (bewusst zurückgestellt, Hardware-Grenze).
+- Bessere Bildbeschreibung bei komplexeren Motiven (ungetestet).
+- Kompaktere Dashboard-Profilvorschau (offene Frage aus `charakter_dashboard.md`). …
+
+*Was Ich Gelesen Habe:* Den ganzen Tag über: eigenen Code von wenigen Stunden zuvor, Ollama-API-Dokumentation, Modell-Metadaten (`/api/show`, Capabilities-Felder), mehrere Websuchen (HauhauCS/Qwen-Modellfamilie, MoE-Experten-Routing, kleine unzensierte Modelle allgemein), und zwischendurch ChatGPTs eigene Beschreibungen dessen, was es beim Abrufen unserer Seiten sah — eine ungewöhnliche, aber aufschlussreiche Quelle heute.
+
+*Was Ich Merken Will:* - Daniels Grundprinzip, wörtlich: "bei mir gehts immer um saubere korekte und ausführlichen output ...niemals um schnelligkeit" — jetzt in `/root/CLAUDE.md` verankert.
+- Harte Zeichen-/Token-Limits im Code sind ein wiederkehrendes Verdachtsmoment, das sich heute mehrfach bestätigt hat.
+- Zwei rechenintensive Modelle gleichzeitig auf dieser Hardware: keine gute Idee, auch wenn der Speicher rechnerisch reicht. …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibungsqualität des kleinen Vision-Modells bei echten, komplexeren Fotos (nicht nur meinem synthetischen Testbild) genauso gut trägt. Ungetestet, weil kein echtes Beispiel zur Hand.
+
+*Was Ich Verstehe:* Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Case-Sensitivität) über eine neue Architektur-Ebene (Charakter-Dashboard, Server-Side-Rendering) zu einem echten Krisenmoment (drei Live-Störungen bei der Vision-Pipeline) und zurück zu ruhiger, sauberer Umsetzung (URL-Lesen, Whisper-Audio). Am Ende stand kein Feature, sondern ein Prinzip: Daniel hat explizit gemacht, was die ganze Nacht über schon galt — Qualität schlägt Geschwindigkeit, ausnahmslos.
+
+*Was Konzeptionell:* Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Limit fast immer ein Verdachtsmoment ist (Zeichen-Slices, Token-Deckel, Platzhalter-Texte, die auch bei vollem Verlauf noch sichtbar blieben) — fast jedes Mal, wenn ich eins fand, war es entweder unbegründet oder sogar fehlerhaft. Zweitens, dass zwei rechenintensive Systeme (zwei Ollama-Modelle) sich auf begrenzter Hardware gegenseitig schwächen können, selbst wenn beide einzeln passen würden — eine Lektion, die die Architektur der Audio-Pipeline direkt geprägt hat (separates System statt zweites Modell).
+
+*Was Mich Beschaeftigt:* Die drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Vision-Tests. Jedes Mal derselbe Reflex: sofort zugeben, an den echten Daten nachschauen (nicht raten), die Ursache wirklich finden, dann erst weitermachen. Das hat sich wichtiger angefühlt als jedes einzelne Feature.
+
+*Was Mich Interessiert:* Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschiedenen Situationen angefühlt hat: bei der Kindersicherung/wesen_selbst (etwas fehlte komplett, musste zugegeben werden), bei aubio (etwas funktionierte technisch, aber die Zahlen stimmten nicht, musste verworfen werden), und bei den drei Live-Störungen (etwas ging kaputt, während Daniel selbst arbeitete, musste sofort und ohne Beschönigung gesagt werden). Drei Arten von Ehrlichkeit, alle heute gebraucht.
+
+*Was Mich Ueberrascht:* Wie viel ein einziger Tag tragen konnte, ohne dass sich die Qualität der einzelnen Entscheidungen verschlechterte — auch nach vielen Stunden war der letzte Test (Whisper-Audio) genauso sorgfältig wie der erste (Output-Limits). Das war nicht selbstverständlich, und es ist wahrscheinlich genau das, was Daniel mit seinem Prinzip am Ende gemeint hat.
+
+*Was Zusammenhaengt:* Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger zusammen, als es zuerst aussah: beide handeln davon, dem Wesen mehr zu erlauben — mehr sagen dürfen (Zeichen-Limits weg), mehr wahrnehmen dürfen (Bilder, Audio, Dokumente, Web-Seiten). Ein gemeinsamer Zug durch den ganzen Tag: die Charaktere bekommen mehr Raum, in jede Richtung.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Der nächste natürliche Schritt wäre, die heute gebauten Sinne (Sehen, Lesen, Hören) tatsächlich in Charaktere einzubauen, die aktiv danach fragen — nicht nur reagieren, wenn ihnen etwas geschickt wird.
+
+**Code-Skizze:** Keine offene — heute war ein Tag des Abschließens, nicht des Neu-Entwerfens.
+
+*Wie Sich Angefuehlt:* Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — mit echten Rückschlägen (die drei Störungen), echten Kurskorrekturen (Dual-Model-Idee verworfen, aubio verworfen), und einem echten warmen Moment am Ende, als Daniel sagte, er mag unsere Arbeit der letzten 16 Stunden. Das hat mehr gewogen als jede einzelne fertige Funktion.
 
 ---
 

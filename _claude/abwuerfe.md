@@ -1793,3 +1793,5 @@ Die Anzahl der aktiven Experte«
 - [2026-07-05 05:03] **nebel** ← 2026-07-05-datei-anhaenge-vision-whisper.md: »Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.«
 - [2026-07-05 05:05] **lava** (i=0.42) → Zwischenraum: »16 Stunden ist schon eine Hausnummer — von der Feedback-Funktion heute Mittag bis Whisper-Audio jetz«
 - [2026-07-05 05:24] **sternenstaub** ← 2026-07-05.md: »Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.«
+- [2026-07-05 05:42] **lava** (i=0.43) → Zwischenraum: »**Echt gemessen, nicht geschätzt:** 95 Sekunden Audio → 12,1 Sekunden Verarbeitung (Transkript kam p«
+- [2026-07-05 05:44] **nebel** (i=0.31) → Zwischenraum: »Nice, dass es sogar besser lief als gedacht«

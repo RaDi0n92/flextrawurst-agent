@@ -158,3 +158,11 @@ Task #36 fertig, damit ist der ganze Anhang-Themenblock (Dokumente, Bilder, URL,
 **Modellwahl:** `faster-whisper` mit dem "small"-Modell, int8-quantisiert — 4,5s Ladezeit, ~1,4s Transkription für einen 6-Sekunden-Testsatz, praktisch perfekte Erkennung (eine einzige Abweichung: "Whisper" wurde als "WISPA" transkribiert, phonetisch nachvollziehbar bei deutscher Aussprache des englischen Worts).
 
 **Damit sind alle vier Anhang-Arten (Dokumente, Bilder, URL, Audio) fertig, getestet, dokumentiert.** Der ganze Themenblock lief über eine lange Nacht mit drei echten Live-Störungen bei Daniels eigener Nutzung (alle durch meine eigenen Vision-Tests, alle live diagnostiziert und behoben) — die Lehre daraus (CPU-Kontention bei zwei gleichzeitig geladenen Modellen) hat direkt die Architektur-Entscheidung für die Audio-Pipeline geprägt: ein separates System (Whisper/Python) statt ein zweites Ollama-Modell, wo immer möglich.
+
+### Nachtrag 2026-07-05 (Nacht, vierte Live-Störung) — nginx-Timeout fehlte für /upload und /url-lesen
+
+Daniel hat ein fast 4-minütiges Lied hochgeladen — nach 2 Minuten kam "Upload fehlgeschlagen". Ursache gefunden statt geraten: `/etc/nginx/sites-available/flextrawurst` hatte für den `/chat`-Endpunkt schon lange ein grosszügiges `proxy_read_timeout 600s`, aber die neuen `/upload`- und `/url-lesen`-Endpunkte (beide erst heute Nacht entstanden) fielen mangels eigener Regel in den allgemeinen Catch-All mit nur 120 Sekunden. Bei genug Rechenlast (Whisper + evtl. gleichzeitige andere Anfragen) reicht das nicht.
+
+Fix: neue `location`-Regel nach demselben Muster wie `/chat`, `proxy_read_timeout 600s` für `^/wesen/.../(upload|url-lesen)$`. Dabei auch bemerkt: das serverweite `client_max_body_size 10m` war ohnehin schon kleiner als das eigene Backend-Limit `ANHANG_MAX_BYTES` (25MB) — für die neue Location extra auf `30m` gesetzt. Mit Daniels Erlaubnis geändert (nginx-Config ist gemeinsame Infrastruktur für die ganze Domain, nicht nur für dieses Feature), `nginx -t` + `systemctl reload nginx` (kein Neustart, keine Downtime für andere Dienste auf derselben Domain).
+
+Vierte Live-Störung der Nacht — anders als die ersten drei aber kein Ressourcen-/Architektur-Problem, sondern schlicht eine Konfigurationslücke, die entstand, weil die neuen Endpunkte nach der letzten nginx-Anpassung dazugekommen sind.
