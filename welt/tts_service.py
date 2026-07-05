@@ -44,8 +44,15 @@ async def speak(req: TTSRequest):
 @app.get("/voices")
 async def voices():
     v = await edge_tts.list_voices()
-    de = [x for x in v if x["Locale"].startswith("de-DE")]
-    return [{"name": x["ShortName"], "gender": x["Gender"]} for x in de]
+    return [
+        {
+            "name": x["ShortName"],
+            "gender": x["Gender"],
+            "locale": x["Locale"],
+            "display": x.get("FriendlyName") or x["ShortName"],
+        }
+        for x in v
+    ]
 
 @app.get("/", response_class=HTMLResponse)
 async def ui():

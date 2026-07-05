@@ -15,6 +15,16 @@ body {
 h1 { font-size: 1.2rem; font-weight: 400; color: #888; margin-bottom: 1.5rem; letter-spacing: .08em; }
 .box { width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: .85rem; }
 
+.panel {
+  width: 100%; background: #141415; border: 1px solid #272727; border-radius: 8px;
+  padding: .78rem; display: flex; flex-direction: column; gap: .65rem;
+}
+.panel-title {
+  font-size: .72rem; color: #666; letter-spacing: .08em; text-transform: uppercase;
+}
+.grid2 { display: grid; grid-template-columns: 1fr; gap: .55rem; }
+@media (min-width: 720px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+
 textarea {
   width: 100%; height: 200px;
   background: #1a1a1b; border: 1px solid #2e2e2e; border-radius: 8px;
@@ -41,6 +51,15 @@ textarea:focus { border-color: #555; }
 .row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
 .lbl { font-size: .8rem; color: #666; white-space: nowrap; }
 
+select, input[type="text"] {
+  min-height: 38px; background: #1a1a1b; border: 1px solid #2e2e2e;
+  border-radius: 7px; color: #d4d4d4; font-size: .88rem; padding: .46rem .58rem;
+  outline: none;
+}
+select:focus, input[type="text"]:focus { border-color: #555; }
+select { min-width: 0; flex: 1; }
+input[type="text"] { width: 100%; }
+
 .chip {
   background: #1c1c1d; border: 1px solid #2a2a2a; color: #999;
   border-radius: 5px; padding: .27rem .58rem; cursor: pointer;
@@ -53,6 +72,15 @@ button.main {
   padding: .52rem 1.4rem; border-radius: 7px; border: none;
   font-size: .9rem; cursor: pointer; transition: all .12s; user-select: none;
 }
+button.small {
+  min-height: 38px; padding: .43rem .7rem; border-radius: 7px;
+  border: 1px solid #383838; background: #1d1d1e; color: #aaa;
+  font-size: .82rem; cursor: pointer; transition: all .12s; white-space: nowrap;
+}
+button.small:hover:not(:disabled) { border-color: #666; color: #ddd; }
+button.small.primary { background: #223f22; border-color: #396239; color: #8fd28f; }
+button.small.danger { border-color: #48222a; color: #cc7070; }
+button.small:disabled { opacity: .42; cursor: not-allowed; }
 #btn-speak { background: #2a522a; color: #90d090; }
 #btn-speak:hover:not(:disabled) { background: #336033; }
 #btn-speak:disabled { background: #1c2a1c; color: #456045; cursor: not-allowed; }
@@ -83,6 +111,19 @@ button.main {
 #st.err   { color: #cc6060; }
 #dbg { font-size: .72rem; color: #6a3a3a; word-break: break-all; min-height: 1em; }
 .inf { font-size: .72rem; color: #3a3a3a; }
+.voice-active { font-size: .76rem; color: #777; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.library-head { justify-content: space-between; align-items: center; }
+.library-list { display: flex; flex-direction: column; gap: .5rem; max-height: 320px; overflow-y: auto; }
+.clip {
+  border: 1px solid #272727; border-radius: 8px; background: #111112;
+  padding: .62rem; display: grid; grid-template-columns: 1fr; gap: .5rem;
+}
+@media (min-width: 720px) { .clip { grid-template-columns: minmax(0,1fr) auto; align-items: center; } }
+.clip-title { color: #d2d2d2; font-size: .9rem; margin-bottom: .18rem; }
+.clip-text { color: #777; font-size: .78rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; }
+.clip-meta { color: #4c4c4c; font-size: .7rem; margin-top: .24rem; }
+.clip-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.empty { color: #555; font-size: .82rem; border: 1px dashed #2b2b2b; border-radius: 8px; padding: .8rem; }
 </style>
 </head>
 <body>
@@ -93,6 +134,15 @@ button.main {
   <div id="reading-view"></div>
   <div class="counter" id="ctr">0 / 1.111.111</div>
 
+  <div class="panel">
+    <div class="panel-title">Stimme</div>
+    <div class="row">
+      <select id="voice-select" aria-label="Stimme auswählen"></select>
+      <button class="small primary" id="btn-voice">Aktivieren</button>
+    </div>
+    <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
+  </div>
+
   <div class="row">
     <span class="lbl">Tempo:</span>
     <button class="chip on" data-r="+0%"  >x1</button>
@@ -101,6 +151,27 @@ button.main {
     <button class="chip"    data-r="+100%">x2</button>
     <button class="chip"    data-r="+125%">x2,25</button>
     <button class="chip"    data-r="+150%">x2,5</button>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Speichern</div>
+    <div class="grid2">
+      <input id="clip-title" type="text" placeholder="Titel der Eingabe">
+      <select id="save-category" aria-label="Kategorie fürs Speichern"></select>
+    </div>
+    <div class="row">
+      <button class="small primary" id="btn-save">Eingabe speichern</button>
+      <input id="new-category" type="text" placeholder="Neue Kategorie">
+      <button class="small" id="btn-category">Kategorie erstellen</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="row library-head">
+      <div class="panel-title">Soundboard</div>
+      <select id="filter-category" aria-label="Kategorie anzeigen"></select>
+    </div>
+    <div class="library-list" id="library-list"></div>
   </div>
 
   <div class="row">
@@ -128,6 +199,16 @@ const ctrEl   = document.getElementById('ctr');
 const btnSpk  = document.getElementById('btn-speak');
 const btnPause= document.getElementById('btn-pause');
 const btnStop = document.getElementById('btn-stop');
+const voiceSel= document.getElementById('voice-select');
+const btnVoice= document.getElementById('btn-voice');
+const activeVoiceEl = document.getElementById('active-voice');
+const clipTitle = document.getElementById('clip-title');
+const saveCat = document.getElementById('save-category');
+const filterCat = document.getElementById('filter-category');
+const newCat = document.getElementById('new-category');
+const btnCat = document.getElementById('btn-category');
+const btnSave = document.getElementById('btn-save');
+const libraryList = document.getElementById('library-list');
 const seekW   = document.getElementById('seek-wrap');
 const seekF   = document.getElementById('seek-fill');
 const seekK   = document.getElementById('seek-knob');
@@ -138,11 +219,17 @@ const dbgEl   = document.getElementById('dbg');
 /* API-URL relativ zum aktuellen Pfad — funktioniert unter /tts/ */
 const BASE = location.pathname.replace(/[^/]*$/, '');
 const API  = BASE + 'speak';
+const VOICES_API = BASE + 'voices';
 
 const MAX = 1111111;
 const CK  = 280;
+const STORE_KEY = 'flextrawurst.tts.soundboard.v1';
+const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
+const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
+let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
+let store = loadStore();
 let chunks  = [];
 let sess    = 0;
 let paused  = false;
@@ -155,6 +242,68 @@ function dbg(msg)     { dbgEl.textContent = msg; }
 function ctrl(on)     { btnSpk.disabled=on; btnPause.disabled=!on; btnStop.disabled=!on; }
 function pct(i)       { return chunks.length ? (i/chunks.length*100).toFixed(1)+'%' : '0%'; }
 function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
+function uid()         { return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
+function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
+
+function loadStore(){
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+    const categories = Array.isArray(parsed.categories) && parsed.categories.length
+      ? parsed.categories.filter(Boolean)
+      : [DEFAULT_CAT];
+    const clips = Array.isArray(parsed.clips) ? parsed.clips : [];
+    return { categories: Array.from(new Set([DEFAULT_CAT, ...categories])), clips };
+  } catch(e) {
+    return { categories: [DEFAULT_CAT], clips: [] };
+  }
+}
+
+function saveStore(){
+  localStorage.setItem(STORE_KEY, JSON.stringify(store));
+}
+
+function setActiveVoice(v){
+  activeVoice = v || DEFAULT_VOICE;
+  localStorage.setItem('tts.activeVoice', activeVoice);
+  activeVoiceEl.textContent = 'Aktiv: '+activeVoice;
+}
+
+function renderCategories(){
+  const filterCurrent = filterCat.value || 'Alle';
+  const saveCurrent = saveCat.value || DEFAULT_CAT;
+  saveCat.innerHTML = store.categories.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  filterCat.innerHTML = '<option value="Alle">Alle Kategorien</option>' +
+    store.categories.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  saveCat.value = store.categories.includes(saveCurrent) ? saveCurrent : DEFAULT_CAT;
+  filterCat.value = filterCurrent === 'Alle' || store.categories.includes(filterCurrent) ? filterCurrent : 'Alle';
+}
+
+function renderLibrary(){
+  renderCategories();
+  const cat = filterCat.value || 'Alle';
+  const clips = store.clips
+    .filter(c=>cat === 'Alle' || c.category === cat)
+    .sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+  if (!clips.length){
+    libraryList.innerHTML = '<div class="empty">Noch keine gespeicherten Eingaben in dieser Kategorie.</div>';
+    return;
+  }
+  libraryList.innerHTML = clips.map(c=>`
+    <div class="clip" data-id="${esc(c.id)}">
+      <div>
+        <div class="clip-title">${esc(c.title)}</div>
+        <div class="clip-text">${esc(shortText(c.text.replace(/\s+/g,' '), 180))}</div>
+        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')}</div>
+      </div>
+      <div class="clip-actions">
+        <button class="small" data-act="load">Laden</button>
+        <button class="small primary" data-act="play">▶</button>
+        <button class="small danger" data-act="delete">Löschen</button>
+      </div>
+    </div>
+  `).join('');
+}
 
 ta.addEventListener('input', ()=>{
   const n = ta.value.length;
@@ -169,6 +318,105 @@ document.querySelectorAll('.chip[data-r]').forEach(b=>{
     b.classList.add('on');
   });
 });
+
+function setRate(nextRate){
+  const btn = Array.from(document.querySelectorAll('.chip[data-r]'))
+    .find(x=>x.dataset.r === (nextRate || '+0%'));
+  if (!btn) return;
+  rate = btn.dataset.r;
+  document.querySelectorAll('.chip[data-r]').forEach(x=>x.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+async function loadVoices(){
+  voiceSel.innerHTML = '<option>Lädt Stimmen…</option>';
+  try {
+    const res = await fetch(VOICES_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const voices = await res.json();
+    voices.sort((a,b)=>{
+      const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
+      const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
+      return ade - bde || String(a.locale).localeCompare(String(b.locale)) || String(a.name).localeCompare(String(b.name));
+    });
+    voiceSel.innerHTML = voices.map(v=>{
+      const label = `${v.locale || '??'} · ${v.name} · ${v.gender || '?'}`;
+      return `<option value="${esc(v.name)}">${esc(label)}</option>`;
+    }).join('');
+    voiceSel.value = activeVoice;
+    if (voiceSel.value !== activeVoice){
+      const fallback = Array.from(voiceSel.options).find(o=>o.value === DEFAULT_VOICE) || voiceSel.options[0];
+      if (fallback) voiceSel.value = fallback.value;
+      setActiveVoice(voiceSel.value);
+    }
+  } catch(e) {
+    voiceSel.innerHTML = `<option value="${esc(activeVoice)}">${esc(activeVoice)}</option>`;
+    dbg('Stimmenliste nicht geladen: '+e.message);
+  }
+  setActiveVoice(activeVoice);
+}
+
+function addCategory(){
+  const name = newCat.value.trim();
+  if (!name) return;
+  if (!store.categories.includes(name)) store.categories.push(name);
+  newCat.value = '';
+  saveStore();
+  renderCategories();
+  saveCat.value = name;
+  filterCat.value = name;
+  renderLibrary();
+}
+
+function saveClip(){
+  const text = ta.value.trim();
+  if (!text){ st('Kein Text zum Speichern.','err'); return; }
+  const category = saveCat.value || DEFAULT_CAT;
+  if (!store.categories.includes(category)) store.categories.push(category);
+  const title = clipTitle.value.trim() || shortText(strip(text).replace(/\s+/g,' '), 48) || 'Ohne Titel';
+  store.clips.push({
+    id: uid(),
+    title,
+    text,
+    category,
+    voice: activeVoice,
+    rate,
+    createdAt: new Date().toISOString()
+  });
+  clipTitle.value = '';
+  saveStore();
+  filterCat.value = category;
+  renderLibrary();
+  st('Gespeichert.','ok');
+}
+
+async function speakCurrent(){
+  const raw = ta.value.trim();
+  if (!raw){ st('Kein Text.','err'); return; }
+  const clean = strip(raw);
+  if (!clean){ st('Kein lesbarer Text.','err'); return; }
+  chunks = splitChunks(clean);
+  buildRV();
+  setSeek('0%');
+  infEl.textContent='';
+  dbg('');
+  await startFrom(0);
+}
+
+function loadClip(id, play){
+  const clip = store.clips.find(c=>c.id === id);
+  if (!clip) return;
+  ta.value = clip.text;
+  ta.dispatchEvent(new Event('input'));
+  saveCat.value = clip.category || DEFAULT_CAT;
+  if (clip.voice){
+    voiceSel.value = clip.voice;
+    setActiveVoice(clip.voice);
+  }
+  setRate(clip.rate || '+0%');
+  st('Geladen: '+clip.title,'');
+  if (play) speakCurrent();
+}
 
 function strip(t){
   return t
@@ -234,7 +482,7 @@ async function fetchBuf(text, sid){
       const r = await fetch(API, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({text, rate})
+        body: JSON.stringify({text, rate, voice: activeVoice})
       });
       if (!r.ok) throw new Error('HTTP '+r.status);
       const ab = await r.arrayBuffer();
@@ -336,17 +584,34 @@ function jump(i){
   startFrom(Math.max(0, Math.min(chunks.length-1, i)));
 }
 
-btnSpk.addEventListener('click', async ()=>{
-  const raw = ta.value.trim();
-  if (!raw){ st('Kein Text.','err'); return; }
-  const clean = strip(raw);
-  if (!clean){ st('Kein lesbarer Text.','err'); return; }
-  chunks = splitChunks(clean);
-  buildRV();
-  setSeek('0%');
-  infEl.textContent='';
-  dbg('');
-  await startFrom(0);
+btnSpk.addEventListener('click', speakCurrent);
+
+btnVoice.addEventListener('click', ()=>{
+  setActiveVoice(voiceSel.value || DEFAULT_VOICE);
+  st('Stimme aktiviert.','ok');
+});
+
+btnCat.addEventListener('click', addCategory);
+newCat.addEventListener('keydown', e=>{
+  if (e.key === 'Enter') addCategory();
+});
+
+btnSave.addEventListener('click', saveClip);
+filterCat.addEventListener('change', renderLibrary);
+
+libraryList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act]');
+  const clipEl = e.target.closest('.clip');
+  if (!btn || !clipEl) return;
+  const id = clipEl.dataset.id;
+  if (btn.dataset.act === 'load') loadClip(id, false);
+  if (btn.dataset.act === 'play') loadClip(id, true);
+  if (btn.dataset.act === 'delete'){
+    store.clips = store.clips.filter(c=>c.id !== id);
+    saveStore();
+    renderLibrary();
+    st('Gelöscht.','');
+  }
 });
 
 btnPause.addEventListener('click', ()=>{
@@ -407,6 +672,10 @@ document.addEventListener('touchend',  e=>{
   dragging=false;
   jump(seekPos(e.changedTouches[0].clientX));
 });
+
+renderLibrary();
+loadVoices();
+ta.dispatchEvent(new Event('input'));
 
 })();
 </script>
