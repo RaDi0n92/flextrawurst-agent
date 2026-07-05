@@ -441,3 +441,15 @@ Naechste Antwort auf eine neutrale Folgefrage: 1042 Zeichen — knapp die Haelft
 Nebenbefund, nicht Teil dieser Aufgabe: in der ersten (unbeeinflussten) Antwort tauchte mitten im deutschen Satz ein chinesisches Schriftzeichen-Fragment auf ("kein普通es Eisen" statt "kein gewöhnliches Eisen") — ein Tokenizer-/Generierungs-Glitch des Modells, nicht mit dem Feedback-System zusammenhaengend. Nur notiert, nicht weiter verfolgt.
 
 **Was ich mir daraus merke:** die kombinierte Wirkung beider Kanaele war hier deutlicher messbar als bei den vorherigen Einzeltests (432-Token-Grenze allein, oder Feedback ans Modell allein) — zwei uebereinstimmende Signale (allgemeine Regel + konkrete Kritik an einer echten Antwort) scheinen staerker zu wirken als eines allein. Das ist nur eine einzelne Beobachtung, keine verlaessliche Regel, aber es passt zur schon dokumentierten Erfahrung dass Textinstruktionen bei widerspruechlichen oder schwachen Signalen unzuverlaessig sind, bei uebereinstimmenden, konkreten Signalen aber besser greifen.
+
+### Nachtrag 2026-07-05 (Abend, danach) — Eingeklapptes Hilfe-Panel unter der Chateingabe
+
+Nach dem heutigen Zuwachs (Aliase, zwei Feedback-Kanaele, Grenzen-Sichtbarkeit, MERKEN-Vorschlaege) hatte die Chat-Oberflaeche mehr Buttons/Systeme angesammelt als sich noch allein ueber Tooltip-Titel erschliessen liessen. Daniel wollte eine richtige Erklaerung, wie die Systeme wirklich funktionieren und wie man sie effektiv nutzt.
+
+Neues `<details>`-Element direkt unter dem Eingabefeld, gleiche eingeklappte/crawlbare Bauweise wie die schon bestehenden Systemprompt- und Grenzen-Dropdowns — acht Abschnitte (Grenzen, Aliase, Feedback, Pin/Erinnern, Kontext, MERKEN-Vorschlaege, Sessions/Abschluss, Vorlesen), jeweils mit praktischer Anleitung statt nur Funktionsbeschreibung (z.B. beim Feedback: "am wirksamsten kombiniert", nicht nur "das gibt es").
+
+Vier der acht Abschnitte (Pin/Erinnern, Kontext, MERKEN, Sessions/Abschluss) gibt es nur bei Codexium2/Solarius2 — in einem `.hilfe-testbed`-Container gebuendelt und fuer Solarius/Codexium (alt) per JS ausgeblendet (gleiches Muster wie die schon bestehende Ein-/Ausblendung von Container-/Memory-/Sessions-Buttons fuer Nicht-Testbed).
+
+Getestet per Playwright: eingeklappt beim ersten Laden, alle acht Abschnitte vorhanden, Testbed-only-Container bei einem echten Testbed-Charakter (Alex) sichtbar, bei einem echten Legacy-Charakter (KrEaPPy) korrekt ausgeblendet. Per curl bestaetigt: der Text steht bereits im rohen SSR-HTML, also auch ohne JS lesbar/crawlbar.
+
+**Was ich mir daraus merke:** eine wachsende Zahl kleiner, fuer sich genommen gut dokumentierter Features (jedes mit eigenem Nachtrag hier) kann trotzdem in der Summe unuebersichtlich werden, wenn niemand sie an EINEM Ort zusammenfuehrt — die Provenienz-Nachtraege sind fuer mich/Daniel gedacht, das Hilfe-Panel ist dieselbe Zusammenfuehrung, nur fuer den tatsaechlichen Nutzer im Moment des Chattens.
