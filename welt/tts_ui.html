@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TTS · Florian</title>
+<title>TTS</title>
 <style>
 :root {
   --bg: #1a0b21;
@@ -155,7 +155,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 </style>
 </head>
 <body>
-<h1>TTS · Florian</h1>
+<h1>TTS</h1>
 <div class="box">
 
   <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
@@ -281,6 +281,13 @@ function fileSafe(s){
     .replace(/^-|-$/g,'')
     .slice(0,80) || 'tts';
 }
+function textStats(s){
+  const chars = String(s || '').length;
+  return {
+    chars,
+    tokens: Math.max(1, Math.ceil(chars / 4))
+  };
+}
 
 function loadStore(){
   try {
@@ -328,12 +335,14 @@ function renderLibrary(){
     libraryList.innerHTML = '<div class="empty">Noch keine gespeicherten Eingaben in dieser Kategorie.</div>';
     return;
   }
-  libraryList.innerHTML = clips.map(c=>`
+  libraryList.innerHTML = clips.map(c=>{
+    const stats = textStats(c.text);
+    return `
     <div class="clip" data-id="${esc(c.id)}">
       <div>
         <div class="clip-title">${esc(c.title)}</div>
         <div class="clip-text">${esc(shortText(c.text.replace(/\s+/g,' '), 180))}</div>
-        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')}</div>
+        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')} · ${stats.chars.toLocaleString('de')} Zeichen · ca. ${stats.tokens.toLocaleString('de')} Tokens</div>
         <div class="clip-move">
           <span class="lbl">Kategorie:</span>
           <select class="clip-category" data-act="move">${categoryOptions(c.category || DEFAULT_CAT)}</select>
@@ -347,7 +356,8 @@ function renderLibrary(){
         <button class="small danger" data-act="delete">Löschen</button>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 ta.addEventListener('input', ()=>{
