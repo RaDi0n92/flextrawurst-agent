@@ -1197,3 +1197,9 @@ Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rolle
 `dak-neugier.timer` -> `dak-neugier.service` -> `agent.dak_gord_system.graph.run_background_cycle` -> Gemma4-Ladung.
 
 `zensi.service` und `process-camera-preview.service` können HauhauCS wieder warmziehen. Dadurch wird ein "warmer" Modelltest nur dann sauber, wenn diese Pfade vorher still sind.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+`tts_service.py` hängt an `edge_tts`, die UI hängt an `/tts/speak` und `/tts/voices`, Nginx hängt davor. Das Soundboard hängt im Browser an `localStorage`, damit keine neue Server-Schreibfläche entsteht.

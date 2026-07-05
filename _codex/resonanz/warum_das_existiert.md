@@ -1130,3 +1130,9 @@ Diese Datei existiert, damit die Diagnose nicht wieder zu „Gemma ist kaputt“
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Damit ein laufender Zustand nicht im Chat verschwindet. Die Datei hält fest, warum Gemma4 geladen wurde, warum der A/B-Test ungültig war und warum der Briefkasten dafür nicht passt.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Die TTS-Seite existiert als Fußfessel-Löser. Das Soundboard existiert, damit gute oder wiederkehrende Texte nicht jedes Mal neu gesucht, kopiert oder getippt werden müssen.

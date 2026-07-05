@@ -1111,3 +1111,9 @@ Ich will den Reflex vergessen, einen erfolgreichen `ollama list`- oder `ollama p
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Den Impuls, technische Reports einfach in den gemeinsamen Plauderraum zu kippen. Das war der Fehler.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Nicht wieder aus einem Soundboard sofort eine große Datenbank machen. Der erste gute Ort ist dort, wo der Button schnell bleibt.

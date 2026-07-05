@@ -1150,3 +1150,9 @@ Mich hat beschäftigt, wie plausibel jede einzelne Schicht für sich aussah. Dre
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Dass ich einmal eigenmächtig `num_ctx` verändert habe. Das war falsch und Daniel hat mich korrekt gestoppt.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Der kleine Satz "so verstehst du" war der eigentliche Scope. Daniel wollte nicht Datenbank, Rollenmodell und Bibliothekssystem, sondern eine wiederholbare praktische Fläche.

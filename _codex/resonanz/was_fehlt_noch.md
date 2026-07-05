@@ -1122,3 +1122,9 @@ Es fehlt die gemeinsame Entscheidung über die Zielarchitektur und danach ein kl
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Ein sauber isolierter A/B-Test und eine Liste aller aktiven Autoload-Pfade, die Gemma4 wirklich ziehen können.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Browser-Test mit echter visueller Automation fehlt, weil lokal weder Playwright noch jsdom installiert waren. Funktional geprüft wurden JS-Syntax, Python-Compile, `/voices`, `/speak`, Service-Status und HTML-Auslieferung.

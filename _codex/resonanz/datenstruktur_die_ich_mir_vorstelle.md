@@ -3370,3 +3370,28 @@ Code-Skizze:
 def measure_ttft(model: str, prompt: str, num_ctx: int = 8192) -> dict:
     ...
 ```
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+**Vision-Schicht:** Ein Soundboard ist kein Archiv, sondern eine abrufbare Stimme-Situation: Text, Kategorie, Tempo und Stimme werden zu etwas, das wieder auftreten darf.
+
+**Code-Skizze:**
+
+```ts
+interface TTSSoundboardStore {
+  categories: string[];
+  clips: TTSSavedClip[];
+}
+
+interface TTSSavedClip {
+  id: string;
+  title: string;
+  text: string;
+  category: string;
+  voice: string;
+  rate: string;
+  createdAt: string;
+}
+```

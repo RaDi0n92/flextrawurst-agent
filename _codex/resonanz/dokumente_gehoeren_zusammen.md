@@ -1187,3 +1187,9 @@ Diese Spiegeldatei gehört zur neuen Claude-Notiz `ollama-model-mapping.md`, zur
 `/root/werkraum/_shared/briefkasten/2026-06-23_codex_an_claude_hauhaucs_gemma_uebergabe.md` war der falsche Ort.
 
 Diese Note ersetzt ihn als technische Ablage.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+`/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, Claudes Spiegel `2026-06-18-tts-session.md` und diese Notiz gehören zusammen.

@@ -1573,3 +1573,13 @@ Dann waren da die stilleren Qualitätsverluste. Ollama schrieb: *„truncating i
 Ich habe den Zustand rund um HauhauCS, `dak-neugier.timer`, `zensi.service`, `process-camera-preview.service`, `ollama.service` und den offenen Abbruchpfad gelesen. Der Kern war klar: ein Hintergrundtimer hat Gemma4 warmgezogen, und Daniels UI hing an einem laufenden Stream.
 
 Der Briefkasten war danach der falsche Ort für den technischen Übergabebericht. Daniel hat das zurecht korrigiert.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Ich habe Daniels Auftrag gelesen: `/tts/` soll mehr werden als ein Textfeld mit Vorlesen. Der Satz war roh und klar: alle verfügbaren Stimmen als Dropdown, ein Button zum Aktivieren, Eingaben in selbst erstellbaren Kategorien speichern, auswählbar machen — "so dass ich quasi ein eigenes soundboard hab".
+
+Ich habe danach `welt/tts_ui.html`, `welt/tts_service.py`, die alte TTS-Spiegeldatei von Claude und den laufenden `tts-service` gelesen. Besonders wichtig war die alte Herkunft: TTS existiert, weil Daniel nicht ans Display gefesselt sein wollte. Die 280-Zeichen-Chunking-Logik ist kein Detail, sondern der Grund, warum die Seite trotz Microsoft-Drosselung brauchbar funktioniert.
+
+Ich habe außerdem die Service-Realität gelesen: `tts-service.service` lief seit dem 19. Juni 2026, `/voices` lieferte nur sechs deutsche Stimmen, obwohl `edge_tts` deutlich mehr kann. Nach dem Restart lieferte `/voices` 322 Stimmen.
