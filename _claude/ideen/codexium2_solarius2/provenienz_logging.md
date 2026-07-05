@@ -142,3 +142,12 @@ Zusätzlich zwei neue, permanente Hinweise im "Neue Session starten?"-Dialog (de
 - Bedingt sichtbar (nur wenn `aktueller_abschluss` leer ist): Hinweis, dass man vor dem Beenden noch eine Abschluss-Geschichte generieren lassen könnte, inklusive der Zeit-Erwartung ("bis zu 7 Minuten oder länger").
 
 Beide Hinweise per Playwright getestet: der bedingte Hinweis erscheint bei einem frischen Charakter ohne Abschluss und verschwindet, sobald einer übernommen wurde.
+
+### Nachtrag 2026-07-05 (Nacht) — Output-Limits entfernt/erhöht
+
+Daniel wollte wissen, ob es noch irgendwelche Output-Limits (Zeichen/Token) für die Charaktere gibt — "wenn ja weg damit". Nachgeschaut statt geraten:
+
+- **Chat-Antwort** (alle vier Spawner, das eigentliche Gespräch): `num_predict: 400` bei der Live-Generierung war ein echtes, bisher nie besprochenes Token-Limit für jede einzelne Antwort. Auf `-1` (unlimitiert) gesetzt — einzige verbleibende Grenze ist jetzt der Kontextraum selbst (`num_ctx`, unangetastet, siehe Provenienz-Prinzip: der Wert war explizit begründet gesetzt, das Antwort-Limit war es nicht).
+- **Abschluss-Geschichte**: erste Rückfrage ergab "nur die KI-Antworten uncappen", zweite Nachricht direkt danach erweiterte das auf "auch Memory/Container uncappen UND die Abschluss-Geschichte darf 2345 Zeichen haben" (statt 1337). `ABSCHLUSS_MAX_ZEICHEN` entsprechend geändert, `num_predict` für den Job von 500 auf `-1` — sonst hätte der alte Token-Deckel das Erreichen der neuen, größeren Zeichengrenze verhindert, bevor `kuerzenAufSatzgrenze()` überhaupt zum Zug kommt. Der Zeichen-Deckel selbst (jetzt 2345 statt 1337) bleibt bestehen — das ist kein "Uncapping" hier, sondern eine neue, größere, weiterhin endliche Zielgröße, die Daniel explizit genannt hat.
+
+Memory-Extraktion und Container-Pin-Kommentar-Limit siehe `memory_container.md`-Nachtrag vom selben Abend.

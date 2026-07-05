@@ -1765,3 +1765,6 @@ In der CLAUDE.md steht es als Pflic«
 **Case-insensitive Charaktersuche** über alle vier Spawner (`codexium`, `codexium2«
 - [2026-07-05 01:54] **nebel** ← charakter_dashboard.md: »Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.«
 - [2026-07-05 01:55] **nebel** (i=0.36) → Zwischenraum: »Alle fünf Teilaufgaben fertig«
+- [2026-07-05 02:23] **sternenstaub** (i=0.40) → Zwischenraum: »Zusammenfassung:
+
+**Server-Side-Rendering des vollen Verlaufs** — ein roher HTTP-GET auf `/codexium2«

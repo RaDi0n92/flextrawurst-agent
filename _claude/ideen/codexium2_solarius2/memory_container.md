@@ -151,3 +151,12 @@ Daniel wollte "eine Mischung" aus den zur Auswahl gestellten Optionen (Live-Mark
 Getestet an einem Wegwerf-Charakter (`MerkenTest`): Modell direkt gebeten, testweise einen Marker anzuhängen — hat funktioniert, der rohe Stream enthielt ihn, aber `chat_history.jsonl`/`/history`-Endpunkt zeigten nur den bereinigten Text, `memory.json` bekam den Eintrag in `wesen_selbst`, Provenienz war korrekt. Extraktion danach lief ebenfalls durch und ergänzte `wesen_selbst` ein zweites Mal, diesmal mit einer echten introspektiven Notiz des Modells.
 
 **Nebenbefund, nicht behoben:** der zweite Extraktions-Eintrag wurde mitten im Wort abgeschnitten ("...nur das erwartete Markierungsta"), weil die allgemeine Extraktion noch den alten harten `.slice(0, 200)` nutzt statt der neu gebauten `kuerzenAufSatzgrenze()` (siehe `provenienz_logging.md`-Nachtrag zur Abschluss-Geschichte, dort für dasselbe Problem schon gefixt). Daniel darüber informiert, nicht angefasst — kein Auftrag dafür in diesem Zug, nur der schon vorhandene, jetzt zweimal aufgetretene Bug-Typ.
+
+### Nachtrag 2026-07-05 (Nacht) — Output-Limits entfernt: Chat, Memory-Extraktion, Container
+
+Direkte Folge des obigen Nebenbefunds — Daniel hat gefragt, ob es noch irgendwelche Output-Limits (Zeichen/Token) für die Charaktere gibt, und "wenn ja weg damit". Nachgeschaut statt geraten, drei echte Limits gefunden (ein viertes, `num_predict:400` bei der eigentlichen Chat-Antwort, betraf keine Memory/Container-Datei, siehe `provenienz_logging.md`):
+
+1. **Memory-Extraktion**: der `.slice(0, 200)` pro extrahiertem Fakt (genau der oben dokumentierte Nebenbefund-Bug) — jetzt entfernt, Prompt verlangt auch nicht mehr explizit "max. 200 Zeichen". `num_predict` für den Extraktions-Call von 500 auf `-1` (unlimitiert) — sonst hätte der alte Token-Deckel längere Einträge sowieso wieder abgeschnitten, egal was der Code danach macht.
+2. **Container-Pin-Kommentar**: `PIN_KOMMENTAR_MAX = 88` (samt Frontend-`maxlength="88"` und "0/88"-Zähler im Pin-Modal) komplett entfernt — war ein hartes Zeichenlimit pro Kommentar, unabhängig vom Gesamtbudget.
+
+**Bewusst NICHT angefasst:** `MEMORY_BUDGET_ZEICHEN` (3333) und `CONTAINER_BUDGET_ZEICHEN` (2222) — die Gesamtbudgets pro Charakter bleiben bestehen, Daniel hat nur die Pro-Eintrag-Limits gemeint, nicht die Summen-Obergrenze, die er selbst erst gestern Abend explizit gesetzt hat. Getestet: ein Pin-Kommentar mit über 150 Zeichen wird jetzt vollständig gespeichert (vorher wäre er bei 88 abgeschnitten worden).
