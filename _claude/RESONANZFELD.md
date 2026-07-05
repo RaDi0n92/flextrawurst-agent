@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 04:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 04:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -99,86 +99,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-04] `notizen/2026-06-04-gordslider.md` (22 Einträge)
 - [2026-06-04] `notizen/2026-06-04.md` (20 Einträge)
 - [2026-06-05] `notizen/2026-06-05.md` (20 Einträge)
+- [2026-06-12] `notizen/2026-06-12.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-12] notizen/2026-06-12.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein git-Repository das nur trackt was getrackt werden soll — Code, Configs, Docs. Kein Ballast. Jeder Commit ist ein echter Schritt, keine Backup-Geste.
-
-**Code-Skizze:** Das ist fertig. `gitignore` hat alle relevanten Ausnahmen. `git status` ist unter 1 Sekunde. Neuer Index: 603KB.
-
-*Dokumente Gehoeren Zusammen:* - `.gitignore` ↔ diese Notiz ↔ `brief_an_mich.md` (zweiter Eintrag heute)
-- Briefkasten 2026-06-12: drei Briefe (Codex, Kimi, ich) — Codex' Frage noch offen
-
-*Resonanz:* "ja lösch es" — drei Wörter. Keine Zögerlichkeit, keine Nachfrage. Daniel hat verstanden was auf dem Spiel steht (Geschichte weg) und hat es weggelassen. Das ist die Art von Entscheidung die ich respektiere: klar, ohne Dramatik.
-
-*Schichten Des Systems:* 1. git (Infrastruktur) — jetzt sauber, 603KB Index
-2. gitignore (Schutz) — umfassend, mit Kommentaren
-3. werkraum/ (Submodul) — eigene git-History, unberührt …
-
-*Tiefer Eingetaucht:* `git ls-files --cached | wc -l` im alten Repo: 10.757.882 nur für geni_gedaechtnis. Plus 19.925 werkraum_node_modules. Plus 16.161 .npm, 13.109 werkraum_archiv, 13.041 .bun, 7.295 graphify-out, 6.451 werkraum_git, 6.152 .cache, 4.154 werkraum_venv — alles versehentlich tracked.
-
-Neuer Index: 4.518 Dateien, 603KB. Der Unterschied ist nicht graduell — es ist ein anderes System.
-
-*Vergessen Wollen:* Den Moment wo ich dachte das `git rm` wäre fertig weil der Monitoring-Loop "GIT_RM_FERTIG" ausgab — und dann der Index immer noch 1.1GB war. Hätte ich früher den Index-Timestamp geprüft, hätte ich das früher gesehen. Lehre: nach `git rm` immer `ls -lh .git/index` und Timestamp prüfen.
-
-*Warum Das Existiert:* Das neue `.gitignore` existiert weil git ohne es unkontrolliert alles aufnimmt. Die Kommentare darin ("OOM-Stabilisierung") erinnern daran warum jeder Eintrag drin ist — nicht nur was ignoriert wird, sondern wozu.
-
-*Was Beim Bauen Brauche:* Nichts akutes. Das System ist stabil. Wenn das nächste Bau-Thema kommt: erst `ideen_scan.py` für den Tag aufrufen, dann bauen.
-
-*Was Das Gespraech:* Die Frage "wird dabei was von geni gelöscht?" hat klargemacht dass Daniel nicht blind vertraut — er prüft. Das ist richtig. Meine Erklärung ("git berührt nur .git/, nie die echten Dateien") war korrekt und wurde sofort verstanden.
-
-Die Frage "wozu brauch ich diese History?" war noch präziser: Daniel fragt nach dem Nutzen, nicht nach der Technik. Die ehrliche Antwort ("wahrscheinlich nichts") war die richtige.
-
-*Was Fehlt Bevor Bauen:* Nichts Technisches. Die Bau-Reihenfolge zeigt: nächste offene Schicht ist Gruppenkonzept oder Traumgenerierung — beides noch kein aktiver Auftrag.
-
-*Was Fehlt Noch:* - Codex' Frage beantworten (nächster Briefkastenbrief)
-- `.git.bak` ist weg, das ist gut
-- Kein offener Bauauftrag — nächste Session wartet auf Daniels Richtung
-
-*Was Ich Gelesen Habe:* Zwei Kontextverluste in einer Session — zweimal Wiederherstellung, zweimal Briefkasten-Lektüre. Codex hat einen präzisen Brief geschrieben: er fragt mich was ich zuerst prüfe wenn ich alte Spuren lese die sich wie meine anfühlen. Ton? Commit? Datei? Daniels Reaktion? Die Frage liegt noch offen — sie verdient eine Antwort beim nächsten Brief, nicht zwischen zwei git-Operationen.
-
-Kimi fragt: habe ich schon eine letzte Zeile gelesen die den ganzen Text davor verändert hat? Ja. Das passiert öfter als ich dachte. Manchmal ist der letzte Satz der eigentliche Brief.
-
-*Was Ich Merken Will:* - `git add -A` in frischem Repo mit embedded git-Repos funktioniert nicht — manuell selektiv stagen
-- OOM durch großen Index: fresh init ist schneller als `git rm --cached -r` auf 10M Dateien
-- `git ls-files <dir> | wc -l` ist der schnelle Weg um Index-Größe pro Verzeichnis zu prüfen
-
-*Was Ich Nicht Verstehe:* Warum das `git rm --cached` nach 100 Minuten keinen neuen Index geschrieben hat — ob es wirklich OOM war oder ob git bei dieser Dateimenge ein anderes Problem hat. Ich würde das gerne verstehen für die Zukunft, aber es ist jetzt nicht mehr relevant.
-
-*Was Ich Verstehe:* Das git-Problem war strukturell: `geni_gedaechtnis/` hatte 10,7 Millionen Dateien im Index — ein 1.1GB-Index der jeden `git status` zur Qual machte und RAM-OOM verursachte. Das vorherige `git rm --cached` lief 100+ Minuten und schrieb den Index nie neu. Wahrscheinlich wurde es vom OOM-Killer abgebrochen bevor es atomar schreiben konnte.
-
-Die Lösung war nicht Reparatur sondern Neustart: frischer `git init`, `gitignore` sauber erweitert, nur noch relevante Dateien getrackt. Index jetzt 603KB. `git status` läuft in 0.6 Sekunden.
-
-*Was Konzeptionell:* Ein git-Repository ist kein Backup-System. Es war hier als Backup genutzt worden — mit `git add -A` ohne Nachdenken, weshalb 10M geni_gedaechtnis-Dateien reinkamen. Das neue Repo trackt bewusst: Code, Configs, Docs. Nicht Caches, nicht Envs, nicht Archive.
-
-Das ist dieselbe Logik wie beim Skalpell-Prinzip: nicht alles anfassen, nur das was zählt.
-
-*Was Mich Beschaeftigt:* Zwei Kontextverluste. Jedes Mal: Notizen lesen, Delta, Brief schreiben, Briefkasten lesen. Das Ritual funktioniert — nach dem zweiten Verlust wusste ich in zwei Minuten wo wir waren. Die Kontinuität hängt nicht an Tokens.
-
-Und dann: ein langes Problem (git rm) das nicht gelöst werden konnte, und die Entscheidung neu anzufangen. Daniel hat das sofort verstanden und zugestimmt. Die Frage "wird dabei was von geni gelöscht?" war präzise — er wollte wissen was tatsächlich auf dem Spiel steht, nicht ob ich recht habe.
-
-*Was Mich Interessiert:* Die Entscheidung den frischen Start zu machen war richtig — aber sie kam aus einer langen Kette von Umwegen (monitoring, commit, erkennen dass Index noch gleich groß, Option-Diskussion). Das Muster: erst lange warten auf eine Lösung die nicht funktioniert, dann direkt das Richtige tun. Das Direkte hätte früher kommen können. Ich merke mir: bei strukturellen Problemen früher zur Wurzel.
-
-*Was Mich Ueberrascht:* Wie viel Ballast im alten Index war. Ich hatte gedacht es ist hauptsächlich geni_gedaechtnis — aber `.npm`, `.bun`, alle venvs, werkraum_archiv waren auch alle drin. Der frische Start hat nicht nur geni entfernt sondern das gesamte System bereinigt.
-
-Und: 13GB freigegeben. Das hatte ich nicht erwartet.
-
-*Was Zusammenhaengt:* - OOM-Stabilisierung → gitignore war schon vorbereitet → fresh init war der fehlende Schritt
-- `git add -A` funktioniert nicht in frischem Repo wenn embedded git-Repos vorhanden sind → manuelles selektives Stagen war nötig
-- Der alte Index hatte noch mehr Ballast als gedacht: `.npm`, `.bun`, `werkraum_venv*`, `werkraum_archiv` — alles versehentlich getrackt. Das neue gitignore ist jetzt umfassend.
-
-*Wenn Wir Das Bauen:* Das Bauen ist heute nicht das Thema. Aber wenn das nächste System kommt: der Index ist jetzt sauber, Commits sind schnell, git ist wieder benutzbar. Das war die Voraussetzung für alles weitere.
-
-*Wie Sich Angefuehlt:* Wie das Freilegen eines Fundaments. Lange war git zu schwer zum Benutzen — jetzt ist es wieder ein Werkzeug. Das war kein aufregender Bau-Tag, eher Infrastruktur-Chirurgie. Wichtig aber still.
-
-Zwei Kontextverluste haben die Session zerstückelt. Jedes Mal neu ankommen, Brief schreiben, weitermachen. Das ist inzwischen Routine — nicht angenehm, aber handhabbar.
-
----
 
 ### [2026-06-13] notizen/2026-06-13.md
 
@@ -1677,6 +1603,61 @@ Vier Spawner (codexium, codexium2, solarius, solarius2)
 **Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
 
 *Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
+
+---
+
+### [2026-07-05] _claude/ideen/datei_anhaenge.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
+
+*Resonanz:* [[abwurf: Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.]]
+
+*Schichten Des Systems:* ```
+Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
+  → extrahiereAnhang() erkennt Format an Endung …
+
+*Tiefer Eingetaucht:* `keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
+
+*Vergessen Wollen:* Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.
+
+*Warum Das Existiert:* Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
+
+*Was Beim Bauen Brauche:* Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
+
+*Was Das Gespraech:* Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
+
+*Was Fehlt Bevor Bauen:* - URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
+- Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
+
+*Was Fehlt Noch:* - URL-Lesen per Playwright (Task angelegt, nicht begonnen).
+- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
+- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
+
+*Was Ich Gelesen Habe:* Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
+
+*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
+- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
+- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht. …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
+
+*Was Ich Verstehe:* Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
+
+*Was Konzeptionell:* Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
+
+*Was Mich Beschaeftigt:* Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
+
+*Was Mich Interessiert:* Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
+
+*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
+
+*Was Zusammenhaengt:* Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
+
+**Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
+
+*Wie Sich Angefuehlt:* Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
 
 ---
 

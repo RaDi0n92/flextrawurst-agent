@@ -136,6 +136,15 @@ Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehö
 
 ## Was fehlt noch
 
-- URL-Lesen per Playwright (Task angelegt, nicht begonnen).
 - Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
 - Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
+
+## Nachtrag 2026-07-05 (Nacht, nach einer Pause) — URL-Lesen fertig, deutlich unproblematischer als Vision
+
+Task #35 fertig: `POST .../url-lesen` lädt genau eine vom Menschen angegebene URL per Playwright (JS-Rendering, damit auch dynamische Seiten funktionieren — dieselbe Begründung wie bei den eigenen Test-Skripten diese Nacht), extrahiert sichtbaren Text + Titel, landet als ganz normaler Anhang-Chip mit Token-Schätzung.
+
+**Sicherheit statt nur Funktion:** `istSichereUrl()` blockt localhost/127.0.0.1/private IP-Ranges (10.x, 192.168.x, 172.16-31.x) und `.local`-Hostnamen, bevor überhaupt ein Browser gestartet wird — kein SSRF auf interne Dienste möglich, selbst wenn jemand versehentlich oder absichtlich eine interne Adresse eingibt. Kein automatisches Folgen von Links auf der geladenen Seite — nur die eine explizit angegebene URL.
+
+**Deutlich unkomplizierter als die Bild-Pipeline von vorhin:** Chromium starten und wieder schließen kostet spürbar weniger Ressourcen als ein zweites LLM zu laden — kein Konflikt mit dem Hauptmodell, keine Neuladezeit danach, keine der drei Störungen von der Vision-Session. Playwright war als npm-Paket neu zu installieren, aber die Chromium-Binärdateien lagen schon im System-Cache (`~/.cache/ms-playwright`), daher kein grosser Download nötig (nur eine neuere Chromium-Version fehlte, ~290MB).
+
+Getestet: interne Adresse (`localhost:8787`) korrekt abgelehnt, `example.com` korrekt gelesen (Titel "Example Domain", Text stimmte exakt), UI-Fluss (Modal öffnen → URL eintippen → Laden → Chip erscheint → Modal schließt sich automatisch) per Playwright verifiziert. An Wegwerf-Charakter (`UrlTest`) getestet, danach gelöscht.
