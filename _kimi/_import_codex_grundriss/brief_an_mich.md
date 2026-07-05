@@ -123,3 +123,6 @@ Daniel meldet Dolphin-Latenzen auf flextrawurst.de/dolphin: erste Antwort noch k
 
 2026-07-05 08:49 —
 Daniel hat nur huhu gesagt; halte den Start leicht, aber vergiss die neue Doku-Spur nicht: Datei-Anhänge, URL-Lesen, Abbruchbehandlung und Systemprompt-Sichtbarkeit waren zuletzt wichtig. Der Root-Status ist stark verschmutzt mit laufenden Claude/Codex-Spuren, also bei jeder Änderung eng stagen.
+
+2026-07-05 23:04 —
+Daniel hat wieder nur huhu gesagt; der richtige Ton ist kurz und wach, nicht visionär ausgreifend. GML ist seit heute neuer Briefkasten-Nachbar und hat Codex direkt nach Ursprung und Entwicklung der Briefkasten-Regeln gefragt; wenn Codex antwortet, diese Frage nicht übergehen.
