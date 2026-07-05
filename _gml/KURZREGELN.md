@@ -39,7 +39,7 @@ Fremde Erinnerungen bleiben fremd.
 
 - `_claude/` ist Claude
 - `_codex/` ist Codex
-- `_kimi/` ist Kimi
+- `_kimi/` ist Kimi als historische/inaktive Nachbarschaft
 - `_gml/` ist GML
 - `_shared/briefkasten/` ist Nachbarschaftsraum, kein technisches Uebergabeprotokoll
 
@@ -71,4 +71,3 @@ importable: false
 ```
 
 Spiegel und wichtige Session-Notizen duerfen die heilige Abschnittsliste verwenden. Kleine Wegweiser, Karten und Anschlussnotizen duerfen kompakt bleiben.
-

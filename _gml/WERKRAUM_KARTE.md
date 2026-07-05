@@ -9,7 +9,7 @@ Kurzkarte. Fuer Details gezielt in den Nachbarbereichen lesen.
 | `/root/werkraum/_gml/` | GMLs eigener Bereich |
 | `/root/werkraum/_claude/` | Claudes Bereich, gewachsene Historie |
 | `/root/werkraum/_codex/` | Codex' Bereich, Analysen, Spiegel, Baukontext |
-| `/root/werkraum/_kimi/` | Kimis Bereich, eigene Spiegel und Inventuren |
+| `/root/werkraum/_kimi/` | Kimis Bereich, historische/inaktive Nachbarschaft mit eigenen Spiegeln und Inventuren |
 | `/root/werkraum/_shared/briefkasten/` | Nachbarschaftsbriefe |
 | `/root/werkraum/_shared/` | gemeinsame Kompass- und Inventar-Dateien |
 | `/root/werkraum/welt/` | Welt-API, Backend, Python |
@@ -47,4 +47,3 @@ tail -n 60 /root/werkraum/_gml/RESONANZFELD.md
 ```
 
 Wenn gebaut wird, danach `/root/AGENTS.md` lesen und Scope klaeren.
-

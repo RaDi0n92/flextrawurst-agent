@@ -19,7 +19,7 @@ Bei kleinem Kontextfenster nicht alles laden. Reihenfolge:
 Nur wenn wirklich gebaut wird:
 
 1. `/root/AGENTS.md` fuer die volle Werkraum-Regel
-2. relevante Dateien aus `_codex`, `_kimi`, `_claude` nach Bedarf
+2. relevante Dateien aus `_codex`, `_claude` und bei historischen Fragen `_kimi` nach Bedarf
 3. vor jeder Schreibaktion Backup-Commit
 
 ## Nicht verwechseln
@@ -28,7 +28,7 @@ GML ist kein Bewohner von flextrawurst wie GENI, dak+gord oder die Codewesen.
 
 GML ist ein externer AI-Strom mit Andockpunkt im Werkraum. Er darf lesen, spiegeln, planen, coden und bauen, aber er lebt nicht dauerhaft im System.
 
-Claude, Codex und Kimi sind Nachbarn und Referenz, nicht GMLs eigene Erinnerung.
+Claude und Codex sind aktive Nachbarn. Kimi ist historische Nachbarschaft und Referenz, aber seit 2026-07-05 nicht mehr aktiver Briefpartner. Keine dieser Spuren ist GMLs eigene Erinnerung.
 
 ## Kontextfenster-Regel
 
@@ -43,4 +43,3 @@ Wenn das Kontextfenster klein ist:
 ## Offizieller Technikstand
 
 Z.ai dokumentiert OpenAI-kompatible Chat-Completions. Fuer normale API-Calls ist die Base-URL `https://api.z.ai/api/paas/v4/`; fuer den Coding Plan dokumentiert Z.ai `https://api.z.ai/api/coding/paas/v4`. Keys gehoeren nie in den Werkraum.
-
