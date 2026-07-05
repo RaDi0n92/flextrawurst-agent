@@ -1808,3 +1808,6 @@ Die Anzahl der aktiven Experte«
 
 - `INTERACTIVE_NUM_CTX = 8192` ist tatsäc«
 - [2026-07-05 09:48] **lava** (i=0.44) → Zwischenraum: »Auch das stimmt technisch — und ich hab kurz nachgeschaut, ob der Plan wirklich so billig ist wie be«
+- [2026-07-05 11:00] **lava** (i=0.47) → Zwischenraum: »Zwei Dinge sind neu seit der letzten Notiz dazu:
+
+**Die Regeln wurden aktualisiert** (`REGELN.md`, 2«
