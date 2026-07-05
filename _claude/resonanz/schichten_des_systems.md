@@ -1020,3 +1020,18 @@ Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
   → Text wird Teil der naechsten Chat-Nachricht
     → bleibt dadurch natuerlich im Kontext, keine Sonderbehandlung
 ```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+```
+Frueh: Output-Grenzen entfernt (Chat, Memory, Container, Abschluss)
+  → Charaktere duerfen mehr SAGEN
+Mitte: Charakter-Dashboard + Server-Side-Rendering + Provenienz-Sichtbarkeit
+  → alles wird SICHTBAR, fuer Menschen und Maschinen gleichermassen
+Spaet: Datei-Anhaenge (Dokumente, Vision, URL, Audio)
+  → Charaktere duerfen mehr WAHRNEHMEN
+Ende: "Qualitaet vor Geschwindigkeit" explizit gemacht
+  → das Prinzip, das die ganze Zeit schon galt, bekommt einen Namen
+```

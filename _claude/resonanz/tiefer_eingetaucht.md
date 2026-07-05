@@ -946,3 +946,9 @@ Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sonde
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICHT zurückgibt (weil sie auf stderr stehen und execFileSync im Erfolgsfall nur stdout liefert), war ein kleiner, aber lehrreicher Bug — hätte ich nicht getestet, wäre `lautstaerkeDb` immer `null` gewesen, ohne dass ich es gemerkt hätte. `spawnSync` statt `execFileSync` behebt das sauber (liefert stdout UND stderr getrennt, unabhängig vom Exit-Code).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ich die Rohdaten (GluPKI vs. Flarius) tatsächlich verglichen habe — eine plausible, aber ungeprüfte Erklärung, die sich als falsch herausstellte. Der echte Fehler (ein irreführender Platzhaltertext, der trotz `display:none` im rohen HTML blieb) war interessanter und lehrreicher als meine erste Vermutung. Daniels Gegenprobe mit einem zweiten Charakter (Flarius) war der Schritt, der die Wahrheit sichtbar gemacht hat — nicht meine eigene Analyse allein.

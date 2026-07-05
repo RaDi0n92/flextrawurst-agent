@@ -664,3 +664,9 @@ Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehö
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Nichts — auch die drei Störungen nicht, sie gehören zur ehrlichen Geschichte dazu.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cache-Vermutung, Dual-Model-Idee, aubio). Sie gehören zur ehrlichen Geschichte des Tages.

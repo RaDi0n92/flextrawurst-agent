@@ -877,3 +877,9 @@ Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RA
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Dokumente waren reine Fleißarbeit (neun Formate, alle unproblematisch), Bilder waren die einzige echte Krise der Nacht (drei Live-Störungen), URL-Lesen war überraschend entspannt (Playwright kostet kaum Ressourcen im Vergleich zu einem LLM), Audio war am Ende die eleganteste Lösung — weil Whisper komplett außerhalb von Ollama läuft und dadurch gar nicht erst in die Ressourcen-Falle laufen konnte, die ich beim Bild-Feature erst schmerzhaft lernen musste.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschiedenen Situationen angefühlt hat: bei der Kindersicherung/wesen_selbst (etwas fehlte komplett, musste zugegeben werden), bei aubio (etwas funktionierte technisch, aber die Zahlen stimmten nicht, musste verworfen werden), und bei den drei Live-Störungen (etwas ging kaputt, während Daniel selbst arbeitete, musste sofort und ohne Beschönigung gesagt werden). Drei Arten von Ehrlichkeit, alle heute gebraucht.

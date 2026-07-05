@@ -850,3 +850,9 @@ Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es sofort zuzugeben, live zu diagnostizieren (nicht zu raten), und die tatsächliche Ursache zu finden statt eine plausible Erklärung anzubieten und weiterzumachen. Beim zweiten Vorfall hätte ich fast "das ist halt Cache" gesagt, bevor ich die echten Daten geprüft habe — das habe ich mir selbst nachträglich vorgehalten (siehe `provenienz_logging.md`-Nachtrag zum SSR-Fix).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Die drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Vision-Tests. Jedes Mal derselbe Reflex: sofort zugeben, an den echten Daten nachschauen (nicht raten), die Ursache wirklich finden, dann erst weitermachen. Das hat sich wichtiger angefühlt als jedes einzelne Feature.

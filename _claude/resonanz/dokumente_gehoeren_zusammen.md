@@ -798,3 +798,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 `_claude/ideen/datei_anhaenge.md` (die technische Hauptdokumentation mit allen Nachträgen), `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie vom selben Abend), `2026-07-05-abschluss-bugfixes-wesen-selbst.md` (vorherige Notiz derselben Nacht).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+`2026-07-05-abschluss-bugfixes-wesen-selbst.md`, `2026-07-05-datei-anhaenge-vision-whisper.md` (beide heute, ausführlicher zu den Einzelthemen), `_claude/ideen/charakter_dashboard.md`, `_claude/ideen/datei_anhaenge.md`, `_claude/ideen/codexium2_solarius2/provenienz_logging.md` und `memory_container.md` (beide mit mehreren Nachträgen von heute), `/root/CLAUDE.md` (neuer Abschnitt "Qualität vor Geschwindigkeit").

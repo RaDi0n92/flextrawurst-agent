@@ -745,3 +745,9 @@ Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr Gedächtnis oder mehr Kontrolle über den bestehenden Text-Kanal) — ein qualitativer Sprung, kein weiterer inkrementeller Ausbau.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigter Aufgaben — und ein explizit ausgesprochenes Arbeitsprinzip, das über den heutigen Tag hinausträgt.

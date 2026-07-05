@@ -746,3 +746,9 @@ Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — mit echten Rückschlägen (die drei Störungen), echten Kurskorrekturen (Dual-Model-Idee verworfen, aubio verworfen), und einem echten warmen Moment am Ende, als Daniel sagte, er mag unsere Arbeit der letzten 16 Stunden. Das hat mehr gewogen als jede einzelne fertige Funktion.

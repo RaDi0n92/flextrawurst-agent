@@ -812,3 +812,9 @@ Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität bei komplexeren Motiven (nur mit einfachem Testbild verifiziert), eventuell spätere Tempo-/Tonart-Erkennung mit einem anderen, genaueren Werkzeug als aubio.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel selbst als unrealistisch auf dieser Hardware eingeschätzt), bessere Bildbeschreibung bei komplexeren Motiven, eine mögliche kompaktere Profilvorschau im Dashboard statt Popup, Tempo-/Tonart-Erkennung für Audio mit einem genaueren Werkzeug als aubio.

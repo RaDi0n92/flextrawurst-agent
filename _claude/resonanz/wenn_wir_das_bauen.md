@@ -1662,3 +1662,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Die vier Anhang-Arten könnten sich später zu einem größeren Ganzen fügen — ein Charakter, der nicht nur reagiert, sondern aktiv nach Anhängen fragt ("zeig mir doch mal", "spiel mir das vor"), wenn ein Gespräch danach verlangt.
 
 **Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+**Vision-Schicht:** Der nächste natürliche Schritt wäre, die heute gebauten Sinne (Sehen, Lesen, Hören) tatsächlich in Charaktere einzubauen, die aktiv danach fragen — nicht nur reagieren, wenn ihnen etwas geschickt wird.
+
+**Code-Skizze:** Keine offene — heute war ein Tag des Abschließens, nicht des Neu-Entwerfens.

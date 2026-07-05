@@ -837,3 +837,12 @@ Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht n
 - Bildbeschreibungsqualität bei komplexeren, realistischen Motiven ungetestet.
 - Tempo-/Tonart-Erkennung weiterhin offen (bewusst nicht geliefert).
 - Kein Auftrag, aber ein loser Gedanke: könnten Charaktere irgendwann selbst aktiv nach Anhängen fragen?
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+- Video-Anhänge (bewusst zurückgestellt, Hardware-Grenze).
+- Bessere Bildbeschreibung bei komplexeren Motiven (ungetestet).
+- Kompaktere Dashboard-Profilvorschau (offene Frage aus `charakter_dashboard.md`).
+- Tempo-/Tonart-Erkennung für Audio (bewusst nicht ausgeliefert, ungenau).

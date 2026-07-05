@@ -1485,3 +1485,9 @@ Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabil
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Modellfamilie für ein kleineres Vision-Modell, `faster-whisper`-Doku, und zwischendurch (auf Daniels Nachfrage) Recherche zu MoE-Experten-Routing in llama.cpp (Fazit: `--moe-topk` existiert nur als offener Feature-Request, nicht gebaut) und zu allgemeinen kleinen unzensierten Modellen (Nous Hermes 3, Dolphin 3.0 — am Ende nicht gebraucht, da Daniel eigentlich nur das schon gefundene kleine Hauhau-Vision-Modell meinte).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Den ganzen Tag über: eigenen Code von wenigen Stunden zuvor, Ollama-API-Dokumentation, Modell-Metadaten (`/api/show`, Capabilities-Felder), mehrere Websuchen (HauhauCS/Qwen-Modellfamilie, MoE-Experten-Routing, kleine unzensierte Modelle allgemein), und zwischendurch ChatGPTs eigene Beschreibungen dessen, was es beim Abrufen unserer Seiten sah — eine ungewöhnliche, aber aufschlussreiche Quelle heute.

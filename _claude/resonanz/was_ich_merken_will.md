@@ -838,3 +838,12 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `OLLAMA_MAX_LOADED_MODELS` bleibt bei 1 — bewusst getestet und verworfen (CPU-Kontention, nicht nur RAM).
 - `spawnSync` statt `execFileSync`, wenn stderr auch im Erfolgsfall gebraucht wird.
 - Tempo-/Tonart-Erkennung bewusst nicht ausgeliefert — Genauigkeit ungenügend.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+- Daniels Grundprinzip, wörtlich: "bei mir gehts immer um saubere korekte und ausführlichen output ...niemals um schnelligkeit" — jetzt in `/root/CLAUDE.md` verankert.
+- Harte Zeichen-/Token-Limits im Code sind ein wiederkehrendes Verdachtsmoment, das sich heute mehrfach bestätigt hat.
+- Zwei rechenintensive Modelle gleichzeitig auf dieser Hardware: keine gute Idee, auch wenn der Speicher rechnerisch reicht.
+- Bei "ich sehe das nicht" von einer externen Quelle (heute: ChatGPT): erst an den echten Daten vergleichen, bevor eine Erklärung (z.B. Cache) angeboten wird.

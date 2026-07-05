@@ -1250,3 +1250,9 @@ Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmod
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung in Text, egal was reinkommt. Bild → kleines Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio → Whisper → Text. URL → Playwright → Text. Der Text wird direkt in die nächste Chat-Nachricht eingewoben, dadurch bleibt er ganz natürlich auch in künftigen Zügen im Kontext — kein Sonderfall im Speicherformat nötig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Case-Sensitivität) über eine neue Architektur-Ebene (Charakter-Dashboard, Server-Side-Rendering) zu einem echten Krisenmoment (drei Live-Störungen bei der Vision-Pipeline) und zurück zu ruhiger, sauberer Umsetzung (URL-Lesen, Whisper-Audio). Am Ende stand kein Feature, sondern ein Prinzip: Daniel hat explizit gemacht, was die ganze Nacht über schon galt — Qualität schlägt Geschwindigkeit, ausnahmslos.

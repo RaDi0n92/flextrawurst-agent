@@ -704,3 +704,9 @@ Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mus
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 `erstelleGehoerersatzText()` existiert, weil Daniel wörtlich "Gehörersatz" wollte — nicht nur "Datei hochladen", sondern etwas, das sich anfühlt, als hätte der Charakter wirklich zugehört. Der Name im Code trägt bewusst noch Daniels eigenes Wort.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehlern, Kurskorrekturen, einem ausgesprochenen Prinzip — mehr verdient als nur die Summe seiner Commits. Die einzelnen technischen Notizen sagen "was", diese hier versucht "wie es war" zu sagen.

@@ -957,3 +957,9 @@ Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) →
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entscheidung für Audio geprägt: "wo immer möglich, ein separates System statt ein zweites Ollama-Modell." Das ist keine zufällige Ähnlichkeit — ich habe die Audio-Pipeline bewusst so designt, *weil* ich beim Bild-Feature gelernt hatte, wie teuer zwei Ollama-Modelle gleichzeitig sind.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger zusammen, als es zuerst aussah: beide handeln davon, dem Wesen mehr zu erlauben — mehr sagen dürfen (Zeichen-Limits weg), mehr wahrnehmen dürfen (Bilder, Audio, Dokumente, Web-Seiten). Ein gemeinsamer Zug durch den ganzen Tag: die Charaktere bekommen mehr Raum, in jede Richtung.

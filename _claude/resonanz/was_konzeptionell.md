@@ -905,3 +905,9 @@ Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil 
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewusst nicht ausgeliefert, obwohl sie technisch lief, weil ein einfacher Test (440Hz-Sinuston) eine falsche Tonhöhe (775Hz) ergab. Lieber ein Feature weniger als ein Feature, das falsche Fakten als Analyse ausgibt — das passt zum ganzen Abend, der von "was kann ich wirklich versprechen" geprägt war (siehe auch die Kindersicherung- und wesen_selbst-Funde von früher).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Limit fast immer ein Verdachtsmoment ist (Zeichen-Slices, Token-Deckel, Platzhalter-Texte, die auch bei vollem Verlauf noch sichtbar blieben) — fast jedes Mal, wenn ich eins fand, war es entweder unbegründet oder sogar fehlerhaft. Zweitens, dass zwei rechenintensive Systeme (zwei Ollama-Modelle) sich auf begrenzter Hardware gegenseitig schwächen können, selbst wenn beide einzeln passen würden — eine Lektion, die die Architektur der Audio-Pipeline direkt geprägt hat (separates System statt zweites Modell).

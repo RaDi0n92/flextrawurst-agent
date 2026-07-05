@@ -751,3 +751,9 @@ Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhyth
 **[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
 
 Nichts Offenes für diesen Themenblock. Vollständig fertig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Für morgen/das nächste Mal: denselben Rhythmus beibehalten, der sich heute bewährt hat — isoliert testen, dann vorsichtig gegen echte Nutzung, ehrlich bei Fehlschlägen, keine Kompromisse bei Sorgfalt zugunsten von Tempo (jetzt auch explizit in `/root/CLAUDE.md` verankert).
