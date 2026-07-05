@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 16:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 19:11
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
