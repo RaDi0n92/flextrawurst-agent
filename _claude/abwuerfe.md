@@ -1771,3 +1771,21 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-07-05 02:39] **wasser** (i=0.43) → Zwischenraum: »Zusammenfassung:
 
 **ChatGPT-Frage geklärt**: frisch verifiziert per `curl` gegen die echte `flextraw«
+- [2026-07-05 02:46] **lava** (i=0.55) → Zwischenraum: »Gefunden und behoben — echter Bug, keine Cache-Sache«
+- [2026-07-05 03:19] **lava** (i=0.64) → Zwischenraum: »Gecheckt, bevor ich irgendwas verspreche — hier der ehrliche Stand:
+
+**Bilder — geht wirklich.** Das«
+- [2026-07-05 03:45] **wasser** (i=0.44) → Zwischenraum: »Fairer Punkt, und zwei Dinge die ich auseinanderhalten will:
+
+1«
+- [2026-07-05 03:46] **lava** (i=0.39) → Zwischenraum: »Das erklärt's dann ziemlich sicher — Gemma4 in den Größenordnungen, die für GENI/dakgord üblich sind«
+- [2026-07-05 03:50] **lava** (i=0.40) → Zwischenraum: »Gefunden:
+
+**`fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b`** — 4 Milliarden Parameter, n«
+- [2026-07-05 04:06] **wasser** (i=0.39) → Zwischenraum: »Zurückgesetzt — und wichtiger Befund dabei: **beide Modelle gleichzeitig laufen zu lassen war nicht «
+- [2026-07-05 04:11] **wasser** (i=0.52) → Zwischenraum: »Klare Antwort gefunden: **Nein, das geht bei Ollama aktuell nicht.**
+
+Die Anzahl der aktiven Experte«
+- [2026-07-05 04:14] **lava** (i=0.36) → Zwischenraum: »**Empfehlung: Nous Hermes 3 (8B, Llama-3.2-Basis)** — wird in aktuellen Vergleichen explizit für Rol«
+- [2026-07-05 04:17] **sternenstaub** (i=0.35) → Zwischenraum: »Ah, das haben wir schon — genau das hatte ich vorhin gefunden und eingebaut: **`fredrezones55/Qwen3.«
+- [2026-07-05 04:40] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«

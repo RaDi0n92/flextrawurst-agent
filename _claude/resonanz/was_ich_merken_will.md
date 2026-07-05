@@ -819,3 +819,12 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
 - Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
 - Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+- `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
+- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
+- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht.
+- Anhänge werden IMMER als Text in die Nachricht eingewoben, nie als Sonderfall im Speicherformat behandelt.

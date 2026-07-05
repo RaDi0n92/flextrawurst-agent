@@ -652,3 +652,9 @@ Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Ope
 **[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
 
 Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.

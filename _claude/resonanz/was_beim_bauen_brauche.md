@@ -739,3 +739,9 @@ Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokume
 **[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
 
 Nichts Offenes. Feature ist vollständig, getestet.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.

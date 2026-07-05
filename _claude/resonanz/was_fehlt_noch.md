@@ -821,3 +821,11 @@ Umsetzung: `ladeVerlaufKombiniert()` liefert Nachrichten und Ereignisse chronolo
 Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht nur codexium2/solarius2: bei codexium/solarius bleibt der Ereignis-Teil naturgemäß leer (keine Provenienz dort), die Nachrichten werden aber genauso serverseitig gerendert. Kein Sonderfall im Code nötig, reine Degradation.
 
 ---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+- URL-Lesen per Playwright (Task angelegt, nicht begonnen).
+- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
+- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).

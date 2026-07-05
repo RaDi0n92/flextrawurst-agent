@@ -990,3 +990,18 @@ Vier Spawner (codexium, codexium2, solarius, solarius2)
                  Memory/Container (Lese-Modal, gleiche Daten wie im Chat selbst),
                  Feedback (neu: uebergreifend, zusaetzlich zum alten nachrichtengebundenen)
 ```
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+```
+Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
+  → extrahiereAnhang() erkennt Format an Endung
+    → Text-Formate: direkt/pdf-parse/mammoth/ZIP+XML
+    → Bilder: kleines Vision-Modell (eigener Ollama-Call, kurzes keep_alive)
+    → (geplant) Audio: Whisper + ffmpeg
+  → IMMER Text als Ergebnis
+    → wird in die naechste Chat-Nachricht eingewoben
+      → bleibt dadurch natuerlich Teil der Geschichte, keine Sonderbehandlung noetig
+```

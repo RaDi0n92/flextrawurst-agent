@@ -1238,3 +1238,9 @@ Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als d
 **Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
 
 **Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
