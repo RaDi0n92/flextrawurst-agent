@@ -295,7 +295,7 @@ const DEFAULT_VOICE = 'de-DE-ConradNeural';
 const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
-let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
+let activeVoice = cleanVoice(localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE);
 let store = loadStore();
 let chunks  = [];
 let sess    = 0;
@@ -321,6 +321,12 @@ function fileSafe(s){
     .replace(/-+/g,'-')
     .replace(/^-|-$/g,'')
     .slice(0,80) || 'tts';
+}
+function isBadGermanMultilingualVoice(v){
+  return /^de-DE-/.test(String(v || '')) && String(v || '').includes('Multilingual');
+}
+function cleanVoice(v){
+  return isBadGermanMultilingualVoice(v) ? DEFAULT_VOICE : (v || DEFAULT_VOICE);
 }
 function textStats(s){
   const chars = String(s || '').length;
@@ -350,7 +356,9 @@ function durationText(text, r){
 function normalizeStore(raw){
   const categories = Array.isArray(raw && raw.categories) ? raw.categories.filter(Boolean) : [DEFAULT_CAT];
   const clips = Array.isArray(raw && raw.clips) ? raw.clips : [];
-  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [];
+  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites)
+    ? raw.voiceFavorites.filter(v=>v && !isBadGermanMultilingualVoice(v))
+    : [];
   return {
     categories: Array.from(new Set([DEFAULT_CAT, ...categories])),
     clips: clips.map(c=>({
@@ -358,7 +366,7 @@ function normalizeStore(raw){
       title: c.title || 'Ohne Titel',
       text: c.text || '',
       category: c.category || DEFAULT_CAT,
-      voice: c.voice || DEFAULT_VOICE,
+      voice: cleanVoice(c.voice || DEFAULT_VOICE),
       rate: c.rate || '+0%',
       createdAt: c.createdAt || new Date().toISOString(),
       favorite: !!c.favorite,
@@ -422,7 +430,7 @@ async function loadServerStore(){
 }
 
 function setActiveVoice(v){
-  activeVoice = v || DEFAULT_VOICE;
+  activeVoice = cleanVoice(v);
   localStorage.setItem('tts.activeVoice', activeVoice);
   activeVoiceEl.textContent = 'Aktiv: '+activeVoice;
   renderVoiceFavorites();
@@ -430,7 +438,7 @@ function setActiveVoice(v){
 
 function renderVoiceFavorites(){
   if (!voiceFavSel) return;
-  store.voiceFavorites = Array.from(new Set((store.voiceFavorites || []).filter(Boolean)));
+  store.voiceFavorites = Array.from(new Set((store.voiceFavorites || []).filter(v=>v && !isBadGermanMultilingualVoice(v))));
   if (!store.voiceFavorites.length){
     voiceFavSel.innerHTML = '<option value="">Keine Stimmen-Favoriten</option>';
     btnVoiceFavRemove.disabled = true;
@@ -535,7 +543,7 @@ async function loadVoices(){
   try {
     const res = await fetch(VOICES_API, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
-    const voices = await res.json();
+    const voices = (await res.json()).filter(v=>!(v.locale === 'de-DE' && String(v.name || '').includes('Multilingual')));
     voices.sort((a,b)=>{
       const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
       const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
@@ -555,6 +563,7 @@ async function loadVoices(){
       setActiveVoice(voiceSel.value);
     }
   } catch(e) {
+    setActiveVoice(activeVoice);
     voiceSel.innerHTML = `<option value="${esc(activeVoice)}">${esc(activeVoice)}</option>`;
     dbg('Stimmenliste nicht geladen: '+e.message);
   }
@@ -620,7 +629,7 @@ function loadClip(id, play){
   ta.dispatchEvent(new Event('input'));
   saveCat.value = clip.category || DEFAULT_CAT;
   if (clip.voice){
-    voiceSel.value = clip.voice;
+    voiceSel.value = cleanVoice(clip.voice);
     setActiveVoice(clip.voice);
   }
   setRate(clip.rate || '+0%');
@@ -721,7 +730,7 @@ async function downloadClip(id, format){
   const clean = strip(clip.text);
   if (!clean){ st('Kein lesbarer Text für Download.','err'); return; }
   const parts = splitChunks(clean);
-  const voice = clip.voice || DEFAULT_VOICE;
+  const voice = cleanVoice(clip.voice || DEFAULT_VOICE);
   const rateValue = clip.rate || '+0%';
   const baseName = fileSafe(clip.title);
   st(`Download ${format.toUpperCase()} 1/${parts.length}…`,'wait');

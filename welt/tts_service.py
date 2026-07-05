@@ -16,6 +16,12 @@ LIBRARY_PATH = Path("/root/werkraum/welt/tts_library.json")
 _pool = ThreadPoolExecutor(max_workers=4)
 _library_lock = threading.Lock()
 
+def _is_bad_german_multilingual_voice(voice: str) -> bool:
+    return str(voice or "").startswith("de-DE-") and "Multilingual" in str(voice or "")
+
+def _clean_voice(voice: str) -> str:
+    return VOICE if _is_bad_german_multilingual_voice(voice) else str(voice or VOICE)
+
 class TTSRequest(BaseModel):
     text: str
     voice: str = VOICE
@@ -41,7 +47,14 @@ def _normalize_library(data: dict) -> dict:
     if not isinstance(voice_favorites, list):
         voice_favorites = []
     categories = [str(x).strip() for x in categories if str(x).strip()]
-    voice_favorites = [str(x).strip() for x in voice_favorites if str(x).strip()]
+    voice_favorites = [
+        str(x).strip()
+        for x in voice_favorites
+        if str(x).strip() and not _is_bad_german_multilingual_voice(str(x).strip())
+    ]
+    for clip in clips:
+        if isinstance(clip, dict):
+            clip["voice"] = _clean_voice(clip.get("voice"))
     return {
         "categories": list(dict.fromkeys(["Allgemein", *categories])),
         "clips": clips,
@@ -99,6 +112,7 @@ async def voices():
             "display": x.get("FriendlyName") or x["ShortName"],
         }
         for x in v
+        if not (x["Locale"] == "de-DE" and "Multilingual" in x["ShortName"])
     ]
 
 @app.get("/library")
