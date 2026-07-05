@@ -130,3 +130,19 @@ Nichts.
 
 - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
 - Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
+
+### Nachtrag 2026-07-05 (Nacht) — Soft-Delete + Hard-Delete, statt nur hartem Löschen
+
+Daniel fragte direkt nach, wie Löschen eines Charakters heute tatsächlich funktioniert — nachgeschaut statt vermutet: der bestehende `DELETE /wesen/:spawner/:name`-Endpunkt war ein echtes, endgültiges `rmSync(recursive, force)`. Das widersprach "Grundgesetz 3: nichts wird gelöscht, nur deaktiviert" aus `/root/CLAUDE.md`, war aber vorher nie explizit als Bug erkannt worden.
+
+Daniels Auftrag war klar gescopt: auf der **Profilseite** nur Soft-Delete (alles bleibt, nur verschoben), auf dem **Dashboard** beide Optionen nebeneinander, deutlich unterschieden.
+
+Umsetzung:
+- Neuer Endpunkt `POST /wesen/:spawner/:name/soft-delete` — verschiebt den ganzen Charakterordner nach `<spawner-root>/_geloescht/<name>__<zeitstempel>` (`renameSync`, kein Datenverlust). `GET /wesen/alle` und `GET /wesen/list` filtern `_geloescht` jetzt explizit raus, damit verschobene Charaktere nirgendwo mehr auftauchen, ohne dass ihre Dateien wirklich weg sind.
+- `wesen_profil.html`: Lösch-Button ruft jetzt `soft-delete` statt `DELETE`, mit angepasstem Hinweistext ("wird in den Papierkorb verschoben, nichts geht verloren").
+- Dashboard-Karten: zwei getrennte Buttons — 🗑️ Löschen (orange, ein `confirm()`, ruft Soft-Delete) und ⚠️ Endgültig löschen (rot, zwei `confirm()`-Dialoge hintereinander mit expliziter Warnung "kann NICHT rückgängig gemacht werden", ruft weiterhin den alten harten `DELETE`-Endpunkt).
+- Der harte Endpunkt selbst blieb unverändert bestehen — Claude nutzt ihn seither auch bewusst weiter, um eigene Wegwerf-Testcharaktere nach dem Verifizieren wieder restlos zu entfernen, statt den Papierkorb mit Testmüll zu füllen.
+
+Getestet per Playwright: Karte verschwindet nach Soft-Delete-Klick aus der Dashboard-Liste (Ordner bleibt aber unter `_geloescht/` real erhalten), zweiter Test bestätigte den Doppel-`confirm()`-Ablauf beim Hard-Delete.
+
+**Was ich mir daraus merke:** eine als selbstverständlich behandelte Funktion (Löschen) kann trotzdem im Widerspruch zu einem längst aufgeschriebenen Grundgesetz stehen, wenn sie zu einem Zeitpunkt gebaut wurde, bevor das Grundgesetz explizit galt oder geprüft wurde. Nachfragen statt annehmen war hier genau richtig.

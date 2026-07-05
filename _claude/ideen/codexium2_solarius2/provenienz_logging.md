@@ -163,3 +163,29 @@ Daniel hat den SSR-Fix mit ChatGPTs Web-Browsing-Tool direkt gegengetestet: bei 
 **Tatsächlicher Fix:** `#empty` bleibt im DOM (JS-Referenzen bleiben sicher), aber bei vorhandenem Verlauf wird zusätzlich zu `display:none` auch der `<p id="empty-desc">`-Text selbst geleert. Damit gibt es für einen Crawler nichts Irreführendes mehr zu lesen, während echte Browser (mit JS) unverändert funktionieren.
 
 **Was ich mir daraus merke:** "das könnte an Caching liegen" ist eine Hypothese, keine Diagnose — ich hätte gleich die Rohdaten (GluPKI vs. Flarius) vergleichen sollen, statt eine plausible, aber ungeprüfte Erklärung anzubieten. Daniels Gegenprobe mit einem zweiten Charakter war der Schritt, der die echte Ursache sichtbar gemacht hat.
+
+### Nachtrag 2026-07-05 (Nacht, danach) — Ereignisse mit vollständigen Details statt nur Label
+
+Bisher zeigte der Verlauf bei einem Provenienz-Ereignis nur die generische Beschriftung (z.B. "Feedback gegeben", "Erinnerung geändert") — die eigentlichen Inhalte (welcher Kommentar, welcher Diff, welcher Text vorher/nachher) waren zwar schon vollständig in `chat_history.jsonl` geloggt, aber nicht sichtbar. Daniel wollte explizit "vollständige Angabe was genau wozu geändert wurde" — nicht nur dass etwas passiert ist.
+
+Neue Funktion `formatiereEreignisDetails(typ, daten)`, bewusst doppelt gehalten (Server-TS für SSR + Client-JS für die interaktive Ansicht, gleiches Muster wie `EREIGNIS_LABEL` schon vorher) — ein `switch` pro Ereignistyp, das die schon vorhandenen geloggten Felder zu lesbarem Text zusammensetzt:
+- `feedback`/`feedback_allgemein`: der tatsächliche Kommentartext
+- `memory_geaendert`: die Diff-Zeilen (`+`/`-` pro Eintrag)
+- `profil_feld_geaendert`: vorher- und nachher-Text vollständig, bewusst ohne Kürzung
+- `pin_hinzugefuegt`/`pin_entfernt`, `kontext_toggle`, `abschluss_uebernommen` usw. entsprechend ihrer eigenen Datenform
+
+Rendering zweigeteilt: `.verlauf-ereignis-kopf` (Zeitstempel + Label, wie vorher) und darunter `.verlauf-ereignis-details` (der neue Volltext). Verifiziert per curl (rohes SSR-HTML) und Playwright (client-seitig identisches Ergebnis nach vollem Seitenaufbau) an einem Wegwerf-Testcharakter mit je einem `feedback_allgemein`- und einem `memory_geaendert`-Ereignis — Text stimmte in beiden Rendering-Pfaden exakt überein, keine JS-Fehler.
+
+### Nachtrag 2026-07-05 (Nacht, direkt danach) — Systemprompt immer sichtbar/crawlbar, auch vor der ersten Nachricht
+
+Daniel wollte, dass der komplette Systemprompt eines Charakters "auch vor der ersten Nachricht immer ... sichtbar lesbar ... crawlbar" ist — dieselbe Grundidee wie die SSR-Verlaufsanzeige weiter oben, nur für den Systemprompt statt für den Chatverlauf.
+
+Problem dabei: `buildSystemPrompt()` existierte bisher nur als Closure innerhalb des `POST /chat`-Handlers, mit Zugriff auf dessen lokale Variablen (`dir`, `wesenChatPost[1]` als Spawner). Der `GET /:spawner/:name`-Seitenaufruf-Handler, der die HTML-Seite ausliefert, konnte diese Closure nicht mitbenutzen.
+
+Fix: `buildSystemPrompt(spawner, dir, useGrenzen)` als eigenständige Top-Level-Funktion mit expliziten Parametern extrahiert (samt `MD_ORDER`/`MD_LABEL`, die vorher ebenfalls in der Closure steckten). Beide Aufrufer nutzen jetzt dieselbe Funktion: der `/chat`-Handler beim tatsächlichen Ollama-Aufruf, und der `GET`-Seiten-Handler beim reinen Seitenaufruf.
+
+Im HTML (`wesen_chat.html`) ein neuer, immer vorhandener `<details id="systemprompt-details"><summary>...</summary><pre id="systemprompt-pre"></pre></details>`-Block, direkt vor dem Verlauf. Der Server ersetzt den leeren `<pre>`-Platzhalter beim Seitenaufruf mit dem escapten, vollständigen Systemprompt-Text. Bewusst `<details>` statt `display:none`-Trick (siehe Nachtrag direkt oberhalb dieser Zeile zum selben Thema bei der Verlaufsanzeige) — der Inhalt eines `<details>`-Elements ist immer echter DOM-Inhalt, unabhängig vom Auf-/Zugeklappt-Zustand, also für einen Crawler ohne CSS-Auswertung ganz normal lesbar, während er für menschliche Nutzer visuell eingeklappt bleibt (Standardzustand, per Klick auf die Summary zu öffnen).
+
+`useGrenzen=false` als fester Default bei diesem Seitenaufruf — das entspricht dem normalen Chat-Standardzustand (Grenzen.md wird nur bewusst per Button dazugeschaltet). Ohne dieses Detail wäre der Inhalt der globalen Grenzen-Testdatei standardmäßig für jeden Crawler öffentlich sichtbar gewesen, was nicht der Auftrag war.
+
+Verifiziert: an einem Wegwerf-Testcharakter per curl (rohes SSR-HTML enthält `wesen.md`- und `neigungen.md`-Inhalt vollständig, noch bevor irgendeine Nachricht existiert) und Playwright (Details-Block existiert, ist standardmäßig zugeklappt, lässt sich per Klick öffnen, keine JS-Fehler außer einem erwarteten 404 für das fehlende Avatarbild des Testcharakters). Zusätzlich an einem echten bestehenden Charakter (`Alex`) gegengeprüft, dass der volle, mehrzeilige Systemprompt unverändert korrekt rendert.
