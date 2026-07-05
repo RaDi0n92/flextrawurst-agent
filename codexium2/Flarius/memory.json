@@ -28,7 +28,9 @@
     {
       "key": "wesen_selbst",
       "label": "Wesen selbst",
-      "eintraege": []
+      "eintraege": [
+        "Der Chatpartner hat eine aggressive, stilisierte Kampftechnik (Kung Fu Flipper/Jokeslam)"
+      ]
     },
     {
       "key": "meinungen",
