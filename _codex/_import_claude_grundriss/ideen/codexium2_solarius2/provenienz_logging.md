@@ -469,3 +469,13 @@ Daniel fragte, ob ein Kontextfenster von 12345 fuer die Chat-Wesen machbar waere
 Getestet: echter `/chat`-Aufruf an einem Wegwerf-Testcharakter zeigt in `ollama ps` tatsaechlich `CONTEXT: 12345`, Antwort kommt normal an.
 
 **Was ich mir daraus merke:** bevor ich eine Konfigurationsaenderung committe, lohnt sich ein kurzer Blick ob die betroffene Konstante wirklich nur dort verwendet wird wo der Auftrag sie hinsetzen wollte — hier haette ich sonst stillschweigend ein zweites System (Mischpult) mitgeaendert, ohne dass Daniel das explizit so wollte (auch wenn es sich am Ende so herausstellte). Skalpell-Prinzip: Scope-Abweichungen benennen, nicht annehmen.
+
+### Nachtrag 2026-07-05 (Nacht, direkt danach) — Kontext-Meter-Anzeige im Client vergessen, nachgezogen
+
+Daniel meldete: auf der echten Mirlach-Seite stand weiterhin "~3478/8192" trotz der eben gebauten Server-Aenderung. Grund: die Anzeige "ctx ~X/8192" ist client-seitig hartkodiert, unabhaengig von `INTERACTIVE_NUM_CTX` im Server (der Client hat keinen Zugriff auf Server-Konstanten) — drei Stellen in `wesen_chat.html` (Platzhalter-Text, Prozent-Berechnung fuer die "wird knapp"-Warnung, Anzeige-Text) und zwei weitere in `dolphin_mischpult.html` (da `INTERACTIVE_NUM_CTX` ja fuer beide Systeme gilt).
+
+Alle fuenf auf `12345` nachgezogen (neue `NUM_CTX`-Konstante in `wesen_chat.html` mit Kommentar, dass sie von Hand synchron zur Server-Konstante gehalten werden muss). Bewusst NICHT angefasst: `MAX_INTERACTIVE_NUM_PREDICT = 8192` (ein anderes Konzept — maximale Antwortlaenge, nicht Kontextfenster) und die `max="8192"`-Grenze am Mischpult-eigenen "Antwort-Laengenlimit"-Eingabefeld, sowie eine unabhaengige `num_ctx=8192`-Anzeige in `system_heute.html` fuer ein komplett anderes Modell (gemma4) — keines davon war Teil des Auftrags.
+
+Getestet per Playwright auf der echten Mirlach-Seite: zeigt jetzt korrekt "ctx ~3478/12345".
+
+**Was ich mir daraus merke:** eine Konstante, die client- UND serverseitig gebraucht wird, aber nicht geteilt werden kann (kein gemeinsames Modul zwischen Server-TS und eingebettetem Client-JS in diesem Setup), hinterlaesst leicht vergessene Kopien — ich haette nach der ersten Aenderung direkt nach "8192" im ganzen Projekt suchen sollen, statt erst zu committen und dann durch Daniels Beobachtung draufzukommen.
