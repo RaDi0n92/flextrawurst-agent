@@ -698,3 +698,9 @@ Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar ver
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+`erstelleGehoerersatzText()` existiert, weil Daniel wörtlich "Gehörersatz" wollte — nicht nur "Datei hochladen", sondern etwas, das sich anfühlt, als hätte der Charakter wirklich zugehört. Der Name im Code trägt bewusst noch Daniels eigenes Wort.

@@ -844,3 +844,9 @@ Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Loggi
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es sofort zuzugeben, live zu diagnostizieren (nicht zu raten), und die tatsächliche Ursache zu finden statt eine plausible Erklärung anzubieten und weiterzumachen. Beim zweiten Vorfall hätte ich fast "das ist halt Cache" gesagt, bevor ich die echten Daten geprüft habe — das habe ich mir selbst nachträglich vorgehalten (siehe `provenienz_logging.md`-Nachtrag zum SSR-Fix).

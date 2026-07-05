@@ -792,3 +792,9 @@ Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharN
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Wie unterschiedlich "es passt in den RAM" und "es läuft performant" sein können — erst beim echten Messen (98% CPU, aktives Swapping) wurde klar, dass zwei Modelle gleichzeitig auf dieser 8-Kern-Maschine grundsätzlich keine gute Idee sind, unabhängig vom verfügbaren Speicher.

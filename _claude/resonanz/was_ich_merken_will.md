@@ -828,3 +828,13 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
 - ODT braucht kein LibreOffice — ZIP + `content.xml` reicht.
 - Anhänge werden IMMER als Text in die Nachricht eingewoben, nie als Sonderfall im Speicherformat behandelt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+- `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` — kleines Vision-Modell, gleiche Hauhau-Linie.
+- `.venv-whisper` (gitignored) — eigenes Python-venv für faster-whisper, läuft unabhängig von Ollama.
+- `OLLAMA_MAX_LOADED_MODELS` bleibt bei 1 — bewusst getestet und verworfen (CPU-Kontention, nicht nur RAM).
+- `spawnSync` statt `execFileSync`, wenn stderr auch im Erfolgsfall gebraucht wird.
+- Tempo-/Tonart-Erkennung bewusst nicht ausgeliefert — Genauigkeit ungenügend.

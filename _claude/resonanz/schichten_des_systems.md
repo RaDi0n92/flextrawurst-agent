@@ -1005,3 +1005,18 @@ Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
     → wird in die naechste Chat-Nachricht eingewoben
       → bleibt dadurch natuerlich Teil der Geschichte, keine Sonderbehandlung noetig
 ```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+```
+Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
+  → extrahiereAnhang() / leseUrlMitPlaywright() erkennen den Typ
+    → art-spezifische Verarbeitung, aber IMMER dasselbe Ziel: Text
+      → Bilder: eigenes kleines Ollama-Modell (im Ollama-Slot, kurzes keep_alive)
+      → Audio: eigener Python-Prozess (ausserhalb von Ollama, kein Konflikt)
+      → Dokumente/URL: reine Text-Extraktion, kein Modell noetig
+  → Text wird Teil der naechsten Chat-Nachricht
+    → bleibt dadurch natuerlich im Kontext, keine Sonderbehandlung
+```

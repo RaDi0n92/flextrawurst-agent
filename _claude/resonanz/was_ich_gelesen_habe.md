@@ -1479,3 +1479,9 @@ Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Modellfamilie für ein kleineres Vision-Modell, `faster-whisper`-Doku, und zwischendurch (auf Daniels Nachfrage) Recherche zu MoE-Experten-Routing in llama.cpp (Fazit: `--moe-topk` existiert nur als offener Feature-Request, nicht gebaut) und zu allgemeinen kleinen unzensierten Modellen (Nous Hermes 3, Dolphin 3.0 — am Ende nicht gebraucht, da Daniel eigentlich nur das schon gefundene kleine Hauhau-Vision-Modell meinte).

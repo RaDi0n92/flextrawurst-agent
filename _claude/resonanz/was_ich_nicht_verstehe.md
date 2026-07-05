@@ -838,3 +838,9 @@ Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen k
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ob die Bildbeschreibung durchs kleine 4,5B-Modell inhaltlich "flacher" ist als eine direkte Wahrnehmung durchs große 35B-Modell gewesen wäre. Nie direkt vergleichbar, weil das große Modell nie eine Bildanfrage fertig verarbeitet hat (nach über drei Minuten abgebrochen).

@@ -1654,3 +1654,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 **Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
 
 **Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+**Vision-Schicht:** Die vier Anhang-Arten könnten sich später zu einem größeren Ganzen fügen — ein Charakter, der nicht nur reagiert, sondern aktiv nach Anhängen fragt ("zeig mir doch mal", "spiel mir das vor"), wenn ein Gespräch danach verlangt.
+
+**Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.

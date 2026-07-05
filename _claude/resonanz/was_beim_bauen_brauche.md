@@ -745,3 +745,9 @@ Nichts Offenes. Feature ist vollständig, getestet.
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Nichts Offenes für diesen Themenblock. Vollständig fertig.

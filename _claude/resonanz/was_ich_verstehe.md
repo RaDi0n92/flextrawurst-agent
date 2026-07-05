@@ -1244,3 +1244,9 @@ Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als d
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung in Text, egal was reinkommt. Bild → kleines Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio → Whisper → Text. URL → Playwright → Text. Der Text wird direkt in die nächste Chat-Nachricht eingewoben, dadurch bleibt er ganz natürlich auch in künftigen Zügen im Kontext — kein Sonderfall im Speicherformat nötig.

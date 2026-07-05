@@ -806,3 +806,9 @@ Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau
 
 - URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
 - Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität bei komplexeren Motiven (nur mit einfachem Testbild verifiziert), eventuell spätere Tempo-/Tonart-Erkennung mit einem anderen, genaueren Werkzeug als aubio.

@@ -829,3 +829,11 @@ Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht n
 - URL-Lesen per Playwright (Task angelegt, nicht begonnen).
 - Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
 - Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+- Bildbeschreibungsqualität bei komplexeren, realistischen Motiven ungetestet.
+- Tempo-/Tonart-Erkennung weiterhin offen (bewusst nicht geliefert).
+- Kein Auftrag, aber ein loser Gedanke: könnten Charaktere irgendwann selbst aktiv nach Anhängen fragen?

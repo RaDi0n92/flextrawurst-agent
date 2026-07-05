@@ -740,3 +740,9 @@ Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Se
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.

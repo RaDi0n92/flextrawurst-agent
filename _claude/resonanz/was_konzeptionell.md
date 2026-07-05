@@ -899,3 +899,9 @@ Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das a
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewusst nicht ausgeliefert, obwohl sie technisch lief, weil ein einfacher Test (440Hz-Sinuston) eine falsche Tonhöhe (775Hz) ergab. Lieber ein Feature weniger als ein Feature, das falsche Fakten als Analyse ausgibt — das passt zum ganzen Abend, der von "was kann ich wirklich versprechen" geprägt war (siehe auch die Kindersicherung- und wesen_selbst-Funde von früher).

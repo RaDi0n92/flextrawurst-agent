@@ -792,3 +792,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+`_claude/ideen/datei_anhaenge.md` (die technische Hauptdokumentation mit allen Nachträgen), `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie vom selben Abend), `2026-07-05-abschluss-bugfixes-wesen-selbst.md` (vorherige Notiz derselben Nacht).

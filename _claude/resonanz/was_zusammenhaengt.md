@@ -951,3 +951,9 @@ Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solari
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entscheidung für Audio geprägt: "wo immer möglich, ein separates System statt ein zweites Ollama-Modell." Das ist keine zufällige Ähnlichkeit — ich habe die Audio-Pipeline bewusst so designt, *weil* ich beim Bild-Feature gelernt hatte, wie teuer zwei Ollama-Modelle gleichzeitig sind.

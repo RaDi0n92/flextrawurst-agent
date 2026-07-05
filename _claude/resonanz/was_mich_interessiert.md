@@ -871,3 +871,9 @@ Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (ak
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Dokumente waren reine Fleißarbeit (neun Formate, alle unproblematisch), Bilder waren die einzige echte Krise der Nacht (drei Live-Störungen), URL-Lesen war überraschend entspannt (Playwright kostet kaum Ressourcen im Vergleich zu einem LLM), Audio war am Ende die eleganteste Lösung — weil Whisper komplett außerhalb von Ollama läuft und dadurch gar nicht erst in die Ressourcen-Falle laufen konnte, die ich beim Bild-Feature erst schmerzhaft lernen musste.

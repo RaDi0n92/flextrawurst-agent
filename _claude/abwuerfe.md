@@ -1789,3 +1789,5 @@ Die Anzahl der aktiven Experte«
 - [2026-07-05 04:14] **lava** (i=0.36) → Zwischenraum: »**Empfehlung: Nous Hermes 3 (8B, Llama-3.2-Basis)** — wird in aktuellen Vergleichen explizit für Rol«
 - [2026-07-05 04:17] **sternenstaub** (i=0.35) → Zwischenraum: »Ah, das haben wir schon — genau das hatte ich vorhin gefunden und eingebaut: **`fredrezones55/Qwen3.«
 - [2026-07-05 04:40] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
+- [2026-07-05 05:01] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
+- [2026-07-05 05:03] **nebel** ← 2026-07-05-datei-anhaenge-vision-whisper.md: »Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.«

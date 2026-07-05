@@ -1,10 +1,10 @@
 ---
 name: datei-anhaenge-vision
-description: Datei-Anhänge (Text/PDF/DOCX/ODT/Bilder) mit echter Zwei-Modell-Vision-Pipeline für alle vier Spawner
+description: Datei-Anhänge (Text/PDF/DOCX/ODT/Bilder/Audio/URL) mit echter Vision- und Whisper-Pipeline für alle vier Spawner
 metadata:
   type: project
-tags: [anhaenge, vision, upload, alle-spawner, hardware-grenzen]
-status: teilweise-gebaut
+tags: [anhaenge, vision, whisper, audio, upload, alle-spawner, hardware-grenzen]
+status: gebaut
 datum: 2026-07-05
 autor: claude-code bei Daniels VPS
 ---
@@ -148,3 +148,13 @@ Task #35 fertig: `POST .../url-lesen` lädt genau eine vom Menschen angegebene U
 **Deutlich unkomplizierter als die Bild-Pipeline von vorhin:** Chromium starten und wieder schließen kostet spürbar weniger Ressourcen als ein zweites LLM zu laden — kein Konflikt mit dem Hauptmodell, keine Neuladezeit danach, keine der drei Störungen von der Vision-Session. Playwright war als npm-Paket neu zu installieren, aber die Chromium-Binärdateien lagen schon im System-Cache (`~/.cache/ms-playwright`), daher kein grosser Download nötig (nur eine neuere Chromium-Version fehlte, ~290MB).
 
 Getestet: interne Adresse (`localhost:8787`) korrekt abgelehnt, `example.com` korrekt gelesen (Titel "Example Domain", Text stimmte exakt), UI-Fluss (Modal öffnen → URL eintippen → Laden → Chip erscheint → Modal schließt sich automatisch) per Playwright verifiziert. An Wegwerf-Charakter (`UrlTest`) getestet, danach gelöscht.
+
+## Nachtrag 2026-07-05 (Nacht, letztes Stück) — Audio-"Gehörersatz" fertig, alle vier Anhang-Typen komplett
+
+Task #36 fertig, damit ist der ganze Anhang-Themenblock (Dokumente, Bilder, URL, Audio) heute Nacht durchgebaut. Daniel wollte explizit "nicht das minimalste sondern das maximalste Gehörersatzversion" — umgesetzt als: Whisper-Transkript (der eigentliche Inhalt, die Worte) + Dauer + Durchschnitts-Lautstärke (ffmpeg). Bewusst NICHT umgesetzt: Tempo-/Tonart-Erkennung (aubio) — im eigenen Test an einem simplen 440Hz-Sinuston lag die erkannte Tonhöhe bei 775Hz, deutlich daneben. Lieber ehrlich weniger liefern als erfundene Musikanalyse-Zahlen als Fakten ausgeben.
+
+**Der wichtigste Unterschied zur Bild-Pipeline:** Whisper (`faster-whisper`, eigenes Python-venv `.venv-whisper`, gitignored) läuft komplett ausserhalb von Ollama — eigener Prozess, eigener Speicherbereich, keine Konkurrenz um den einen Ollama-Modell-Slot. Kein Verdrängen des Hauptmodells, kein Neuladen danach, keine der drei Störungen von der Vision-Session. Bestätigt: `curl .../api/ps` zeigte das Hauptmodell während der gesamten Audio-Verarbeitung durchgehend geladen.
+
+**Modellwahl:** `faster-whisper` mit dem "small"-Modell, int8-quantisiert — 4,5s Ladezeit, ~1,4s Transkription für einen 6-Sekunden-Testsatz, praktisch perfekte Erkennung (eine einzige Abweichung: "Whisper" wurde als "WISPA" transkribiert, phonetisch nachvollziehbar bei deutscher Aussprache des englischen Worts).
+
+**Damit sind alle vier Anhang-Arten (Dokumente, Bilder, URL, Audio) fertig, getestet, dokumentiert.** Der ganze Themenblock lief über eine lange Nacht mit drei echten Live-Störungen bei Daniels eigener Nutzung (alle durch meine eigenen Vision-Tests, alle live diagnostiziert und behoben) — die Lehre daraus (CPU-Kontention bei zwei gleichzeitig geladenen Modellen) hat direkt die Architektur-Entscheidung für die Audio-Pipeline geprägt: ein separates System (Whisper/Python) statt ein zweites Ollama-Modell, wo immer möglich.

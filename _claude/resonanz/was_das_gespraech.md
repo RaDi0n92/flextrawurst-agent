@@ -739,3 +739,9 @@ Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, 
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr Gedächtnis oder mehr Kontrolle über den bestehenden Text-Kanal) — ein qualitativer Sprung, kein weiterer inkrementeller Ausbau.

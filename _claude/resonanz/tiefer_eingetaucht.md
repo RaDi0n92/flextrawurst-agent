@@ -940,3 +940,9 @@ Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sonde
 **[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
 
 `keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICHT zurückgibt (weil sie auf stderr stehen und execFileSync im Erfolgsfall nur stdout liefert), war ein kleiner, aber lehrreicher Bug — hätte ich nicht getestet, wäre `lautstaerkeDb` immer `null` gewesen, ohne dass ich es gemerkt hätte. `spawnSync` statt `execFileSync` behebt das sauber (liefert stdout UND stderr getrennt, unabhängig vom Exit-Code).
