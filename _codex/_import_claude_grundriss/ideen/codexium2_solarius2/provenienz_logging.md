@@ -318,3 +318,11 @@ Der Entwurf kam mit mehreren mojibake-verstümmelten Zeichen (falsche Kodierung 
 Live getestet an einem neuen Wegwerf-Testcharakter (wieder Grumo, Zwerg-Schmied) — Antwort blieb weiterhin durchgehender Fließtext ohne Liste/Kopfzeile, und endete mit genau einer Rückfrage an den Menschen statt mehrerer, wie neu verlangt.
 
 **Was ich mir daraus merke:** eine Korrektur, die eine frühere eigene Diagnose teilweise zurücknimmt ("Kopfzeilen waren nicht das Hauptproblem"), ist kein Widerspruch, wenn zwei verschiedene Mechanismen sauber auseinandergehalten werden — Daniel hat hier explizit *nur* die Struktur-Entscheidung revidiert, nicht das explizite Formverbot, das aus derselben Untersuchung hervorging. Auch ich sollte "verworfene Hypothese" und "verworfener Fix" nicht automatisch gleichsetzen: Mirlachs Problem hatte mehrere Ursachen, nicht jede Korrektur an einer Ursache hebt die anderen auf.
+
+### Nachtrag 2026-07-05 (Nachmittag, danach) — Alias-Felder doch in allen vier Erstellungsformularen
+
+Im Aliase-Nachtrag oben stand noch "bewusst nicht gebaut" für die vier Erstellungsformulare — Daniel hat beim Durchklicken gemerkt, dass er das eben doch will: pro Formular ein Zeilenpaar Alias-Name + 333-Zeichen-Alias-Beschreibung nebeneinander, mit "+" für weitere Zeilen.
+
+Umgesetzt in `wesen_spawner.html` für alle vier Formulare (Solarius, Solarius2, Codexium, Codexium2) über generische, prefix-parametrisierte Funktionen (`addAliasFormRow(prefix)`, `sammleAliase(prefix)`, `speichereAliaseNachErstellung(spawner, name, prefix)`) statt vier separater Kopien — jedes Formular startet mit einer leeren Zeile, `submitX()` ruft nach erfolgreicher Charaktererstellung `PUT .../aliase` mit allen ausgefüllten Zeilen auf (leere Namen werden client-seitig übersprungen, der Server verwirft leere Namen ohnehin zusätzlich).
+
+Getestet per Playwright: alle vier Container zeigen beim Laden genau eine Zeile, "+" fügt eine weitere hinzu, der Zeichenzähler aktualisiert live, eine komplette Solarius-Testerstellung mit einem ausgefüllten und einem leer gelassenen Alias speicherte über den echten Endpunkt korrekt nur den einen befüllten Eintrag.
