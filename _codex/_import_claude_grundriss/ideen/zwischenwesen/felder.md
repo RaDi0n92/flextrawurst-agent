@@ -109,14 +109,15 @@ In der KompOase: Bild ist klickbar im Wesen-Lesefenster → Vollansicht.
 
 ---
 
-## Entscheidung nachgetragen (2026-07-05, aus dem Codexium2-Bau)
+## Entscheidung nachgetragen (2026-07-05, aus dem Codexium2-Bau — Stand am selben Tag korrigiert)
 
-Die "Codexium-Parität" oben bezieht sich auf den Stand vor dem 05.07. — Codexium(2) hat sich seitdem in zwei Punkten geändert, die hier mitgelten sollten, wenn Flüchtlinge wirklich Parität halten wollen:
+Die "Codexium-Parität" oben bezieht sich auf den Stand vor dem 05.07. Codexium(2) hat sich seitdem geändert — aber in einem Punkt noch am selben Tag wieder zurückgenommen, deshalb hier der aktuelle Stand statt des ursprünglichen Zwischenstands:
 
-1. **Keine `[Label]`-Kopfzeilen mehr zwischen den Feldern im System-Prompt.** Gesprächseinstieg/Was-bist-du/Neigungen/Beschreibung/Wesendefinition/Weltlore fließen roh, mit Leerzeile getrennt, hintereinander — nicht mehr als `[Wesendefinition]\n...`, `[Weltlore]\n...` usw. Grund: an einem konkreten Fall (Mirlach) nachgewiesen, dass viele separat gelabelte, literarisch-abstrakte Felder das Modell in einen dokumentierenden/analysierenden Ton ziehen ("KI-Gelaber"), statt es die Rolle spielen zu lassen.
-2. **Expliziter Formverbots-Absatz im Rollenspiel-Systemprompt** (nicht in den einzelnen Feldern, sondern in der gemeinsamen Präambel davor): keine Kopfzeilen, keine Aufzählungen, kein Fettdruck-Gliedern, keine Meta-Analyse-Sprache ("Das ist ein klassisches Beispiel für..."). Das war der eigentliche Hebel gegen den beobachteten Effekt — reine Charakterbeschreibung allein reicht nicht, es braucht eine harte Form-Regel dazu.
+1. **`[Label]`-Kopfzeilen zwischen den Feldern bleiben** (Gesprächseinstieg/Was-bist-du/Neigungen/Beschreibung/Wesendefinition/Weltlore als `[Wesendefinition]\n...`, `[Weltlore]\n...` usw.) — nur `wesen.md`/die Kernidentität bleibt ohne eigenes Label. Ein erster Versuch OHNE Kopfzeilen (roh hintereinander, mit der Begründung: viele separat gelabelte, abstrakte Felder ziehen das Modell in einen dokumentierenden/analysierenden Ton) wurde noch am selben Tag von Daniel wieder rückgängig gemacht — er will die Struktur behalten und verlässt sich stattdessen bewusst auf Punkt 2.
+2. **Expliziter Formverbots-Absatz im Rollenspiel-Systemprompt** (nicht in den einzelnen Feldern, sondern in der gemeinsamen Präambel davor): keine Kopfzeilen, keine Aufzählungen, kein Fettdruck-Gliedern, keine Meta-Analyse-Sprache ("Das ist ein klassisches Beispiel für..."). Das ist der Teil, der tatsächlich als Hebel gegen den beobachteten Effekt gedacht ist — reine Charakterbeschreibung allein reicht nicht, es braucht eine harte Form-Regel für die *Antwort*, unabhängig davon ob die *Eingabefelder* selbst Kopfzeilen haben.
+3. **Zusätzlich ein kurzer Rahmensatz direkt vor den Feldern**, der erklärt wie sie wirken sollen: nicht als Zusatzinfo über den Charakter, sondern als unmittelbar prägender Teil von ihm selbst.
 
-Beide Punkte gehören mit in die Felder-/Prompt-Architektur der Flüchtlinge, sobald die tatsächlich gebaut wird. Details: `werkraum/_wesen_preamble.md` (aktive Fassung) und Nachtrag "Rollenspiel-Systemprompt" in `_claude/ideen/codexium2_solarius2/provenienz_logging.md`.
+Für Flüchtlinge heißt das konkret: Kopfzeilen pro Feld ruhig übernehmen (das war nie das eigentliche Problem), aber Punkt 2 und 3 nicht vergessen — die tragen den größten Teil der Wirkung. Details: `werkraum/_wesen_preamble.md` (aktive Fassung) und die beiden Nachträge "Rollenspiel-Systemprompt" in `_claude/ideen/codexium2_solarius2/provenienz_logging.md`.
 
 ---
 
