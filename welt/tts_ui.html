@@ -193,8 +193,11 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <button class="small primary" id="btn-voice">Aktivieren</button>
       <button class="small" id="btn-voice-fav">★ Stimme</button>
     </div>
-    <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
-    <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
+    <div class="row">
+      <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
+      <button class="small danger" id="btn-voice-fav-remove">Favorit entfernen</button>
+    </div>
+    <div class="voice-active" id="active-voice">Aktiv: de-DE-ConradNeural</div>
   </div>
 
   <div class="row">
@@ -252,6 +255,7 @@ const btnStop = document.getElementById('btn-stop');
 const voiceSel= document.getElementById('voice-select');
 const btnVoice= document.getElementById('btn-voice');
 const btnVoiceFav = document.getElementById('btn-voice-fav');
+const btnVoiceFavRemove = document.getElementById('btn-voice-fav-remove');
 const voiceFavSel = document.getElementById('voice-favorites');
 const activeVoiceEl = document.getElementById('active-voice');
 const clipTitle = document.getElementById('clip-title');
@@ -287,7 +291,7 @@ const AUDIO_ZIP_API = BASE + 'export-audio';
 const MAX = 1111111;
 const CK  = 280;
 const STORE_KEY = 'flextrawurst.tts.soundboard.v1';
-const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
+const DEFAULT_VOICE = 'de-DE-ConradNeural';
 const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
@@ -346,7 +350,7 @@ function durationText(text, r){
 function normalizeStore(raw){
   const categories = Array.isArray(raw && raw.categories) ? raw.categories.filter(Boolean) : [DEFAULT_CAT];
   const clips = Array.isArray(raw && raw.clips) ? raw.clips : [];
-  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [DEFAULT_VOICE];
+  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [];
   return {
     categories: Array.from(new Set([DEFAULT_CAT, ...categories])),
     clips: clips.map(c=>({
@@ -361,7 +365,7 @@ function normalizeStore(raw){
       tags: Array.isArray(c.tags) ? c.tags.filter(Boolean) : parseTags(c.tags),
       note: c.note || ''
     })),
-    voiceFavorites: Array.from(new Set([DEFAULT_VOICE, ...voiceFavorites]))
+    voiceFavorites: Array.from(new Set(voiceFavorites))
   };
 }
 function mergeStores(a,b){
@@ -426,11 +430,17 @@ function setActiveVoice(v){
 
 function renderVoiceFavorites(){
   if (!voiceFavSel) return;
-  store.voiceFavorites = Array.from(new Set([DEFAULT_VOICE, ...(store.voiceFavorites || [])]));
+  store.voiceFavorites = Array.from(new Set((store.voiceFavorites || []).filter(Boolean)));
+  if (!store.voiceFavorites.length){
+    voiceFavSel.innerHTML = '<option value="">Keine Stimmen-Favoriten</option>';
+    btnVoiceFavRemove.disabled = true;
+    return;
+  }
+  btnVoiceFavRemove.disabled = false;
   voiceFavSel.innerHTML = store.voiceFavorites
     .map(v=>`<option value="${esc(v)}">${esc(v)}</option>`)
     .join('');
-  voiceFavSel.value = store.voiceFavorites.includes(activeVoice) ? activeVoice : DEFAULT_VOICE;
+  voiceFavSel.value = store.voiceFavorites.includes(activeVoice) ? activeVoice : store.voiceFavorites[0];
 }
 
 function renderCategories(){
@@ -529,10 +539,13 @@ async function loadVoices(){
     voices.sort((a,b)=>{
       const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
       const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
-      return ade - bde || String(a.locale).localeCompare(String(b.locale)) || String(a.name).localeCompare(String(b.name));
+      const am = String(a.name || '').includes('Multilingual') ? 1 : 0;
+      const bm = String(b.name || '').includes('Multilingual') ? 1 : 0;
+      return ade - bde || String(a.locale).localeCompare(String(b.locale)) || am - bm || String(a.name).localeCompare(String(b.name));
     });
     voiceSel.innerHTML = voices.map(v=>{
-      const label = `${v.locale || '??'} · ${v.name} · ${v.gender || '?'}`;
+      const multi = String(v.name || '').includes('Multilingual') ? ' · Multilingual' : '';
+      const label = `${v.locale || '??'} · ${v.name}${multi} · ${v.gender || '?'}`;
       return `<option value="${esc(v.name)}">${esc(label)}</option>`;
     }).join('');
     voiceSel.value = activeVoice;
@@ -984,6 +997,15 @@ btnVoiceFav.addEventListener('click', ()=>{
   saveStore();
   renderVoiceFavorites();
   st('Stimme gemerkt.','ok');
+});
+
+btnVoiceFavRemove.addEventListener('click', ()=>{
+  const v = voiceFavSel.value;
+  if (!v) return;
+  store.voiceFavorites = (store.voiceFavorites || []).filter(x=>x !== v);
+  saveStore();
+  renderVoiceFavorites();
+  st('Stimmen-Favorit entfernt.','ok');
 });
 
 voiceFavSel.addEventListener('change', ()=>{

@@ -10,7 +10,7 @@ import edge_tts
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-VOICE = "de-DE-FlorianMultilingualNeural"
+VOICE = "de-DE-ConradNeural"
 MAX_CHARS = 1111111
 LIBRARY_PATH = Path("/root/werkraum/welt/tts_library.json")
 _pool = ThreadPoolExecutor(max_workers=4)
@@ -24,7 +24,7 @@ class TTSRequest(BaseModel):
 class LibraryPayload(BaseModel):
     categories: list[str] = ["Allgemein"]
     clips: list[dict] = []
-    voiceFavorites: list[str] = [VOICE]
+    voiceFavorites: list[str] = []
 
 class AudioExportRequest(BaseModel):
     ids: list[str]
@@ -39,13 +39,13 @@ def _normalize_library(data: dict) -> dict:
     if not isinstance(clips, list):
         clips = []
     if not isinstance(voice_favorites, list):
-        voice_favorites = [VOICE]
+        voice_favorites = []
     categories = [str(x).strip() for x in categories if str(x).strip()]
     voice_favorites = [str(x).strip() for x in voice_favorites if str(x).strip()]
     return {
         "categories": list(dict.fromkeys(["Allgemein", *categories])),
         "clips": clips,
-        "voiceFavorites": list(dict.fromkeys([VOICE, *voice_favorites])),
+        "voiceFavorites": list(dict.fromkeys(voice_favorites)),
     }
 
 def _read_library() -> dict:
