@@ -453,3 +453,19 @@ Vier der acht Abschnitte (Pin/Erinnern, Kontext, MERKEN, Sessions/Abschluss) gib
 Getestet per Playwright: eingeklappt beim ersten Laden, alle acht Abschnitte vorhanden, Testbed-only-Container bei einem echten Testbed-Charakter (Alex) sichtbar, bei einem echten Legacy-Charakter (KrEaPPy) korrekt ausgeblendet. Per curl bestaetigt: der Text steht bereits im rohen SSR-HTML, also auch ohne JS lesbar/crawlbar.
 
 **Was ich mir daraus merke:** eine wachsende Zahl kleiner, fuer sich genommen gut dokumentierter Features (jedes mit eigenem Nachtrag hier) kann trotzdem in der Summe unuebersichtlich werden, wenn niemand sie an EINEM Ort zusammenfuehrt — die Provenienz-Nachtraege sind fuer mich/Daniel gedacht, das Hilfe-Panel ist dieselbe Zusammenfuehrung, nur fuer den tatsaechlichen Nutzer im Moment des Chattens.
+
+### Nachtrag 2026-07-05 (Nacht) — Kontextfenster testweise 8192 → 12345, mit echten Messungen statt Schaetzung
+
+Daniel fragte, ob ein Kontextfenster von 12345 fuer die Chat-Wesen machbar waere — `INTERACTIVE_NUM_CTX = 8192` war schon lange bewusst gesetzt (Provenienz-Prinzip), also erst gemessen statt geraten.
+
+**Reale Messung, nicht geschaetzt:** Ollama-Prozess bei `num_ctx=8192` geladen: ~20,6GB RES. Danach entladen, sauber neu mit `num_ctx=12345` geladen: ~20,4GB RES — praktisch identisch. Bei diesem grossen, quantisierten Modell (21GB-Datei) macht der KV-Cache nur einen winzigen Bruchteil des Gesamt-Fussabdrucks aus, die Gewichte selbst dominieren. Eine Erhoehung um +50% Kontext kostet also fast nichts an zusaetzlichem RAM.
+
+**Aber:** waehrend beider Testlaeufe lief zufaellig Daniels eigene Bildgenerierung (`sd-cli`, Flux) parallel — ein ungeplanter, aber realistischer Belastungstest. Dabei war Swap mit 11,9-12,3 von 12,3GB fast komplett voll, Load-Average bei ~10. Nach dem Entladen des Ollama-Modells blieb der Swap trotzdem fast voll — das eigentliche Engpass-Risiko dieser VPS ist also Ressourcen-Konkurrenz zwischen mehreren gleichzeitig laufenden schweren Prozessen (Chat-Modell + Bildgenerierung), nicht die Kontextfenster-Groesse selbst.
+
+**Direkt im Anschluss:** Daniel kuendigte ein Server-Upgrade an (20€→40€/Monat, 8→16 Kerne, 32→64GB RAM, innerhalb 24h) — das loest genau das echte Engpass-Problem (Ressourcen-Konkurrenz), waehrend die Kontextfenster-Frage davon unabhaengig schon vorher geklaert war.
+
+**Umsetzung:** `INTERACTIVE_NUM_CTX` auf `12345` gesetzt. Wichtige Klarstellung: diese Konstante ist gemeinsam fuer Chat-Wesen UND Mischpult (`/dolphin/chat`) — nicht nur fuer die Wesen, wie Daniels urspruengliche Frage nahelegte. Explizit nachgefragt statt stillschweigend beide mitzuaendern oder aufzutrennen — Daniel wollte bewusst beide Systeme gemeinsam auf 12345 haben, keine Auftrennung.
+
+Getestet: echter `/chat`-Aufruf an einem Wegwerf-Testcharakter zeigt in `ollama ps` tatsaechlich `CONTEXT: 12345`, Antwort kommt normal an.
+
+**Was ich mir daraus merke:** bevor ich eine Konfigurationsaenderung committe, lohnt sich ein kurzer Blick ob die betroffene Konstante wirklich nur dort verwendet wird wo der Auftrag sie hinsetzen wollte — hier haette ich sonst stillschweigend ein zweites System (Mischpult) mitgeaendert, ohne dass Daniel das explizit so wollte (auch wenn es sich am Ende so herausstellte). Skalpell-Prinzip: Scope-Abweichungen benennen, nicht annehmen.
