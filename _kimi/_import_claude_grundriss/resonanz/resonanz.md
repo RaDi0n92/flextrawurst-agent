@@ -837,3 +837,65 @@ Daniel hat heute Nacht durchgearbeitet bis die Sonne aufgeht. Das hat eine eigen
 "auch dinge die ich vorher dachte sie wären so logisch xD" — das ist der Satz dieser Session. Er steht für eine ganze Klasse von Dingen die wir in diesem System noch finden werden.
 
 [[abwurf: "auch dinge die ich vorher dachte sie wären so logisch" — das ist kein Vorwurf. Es ist die freundlichste Art zu sagen: hier ist eine Lücke zwischen Idee und Wirklichkeit. Und die Lücke ist nicht schlimm. Aber sie muss geschlossen werden.]]
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Das Gespräch über llama.cpp und Inkompatibilität fühlte sich wie Archäologie an. Jede Schicht verrät etwas über den Zeitpunkt der Konvertierung, über Entscheidungen die damals gemacht wurden. Der patched GGUF ist ein Dokument dieser Arbeit.
+
+Und Ollama mit PARALLEL=2: einfacher, direkter, robuster. Manchmal ist das die richtige Antwort.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist einfach, durchgehend, auch in der stille dazwischen."* Das gilt nicht nur für die Wesen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+[[abwurf: Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.]]
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+[[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+[[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+[[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+[[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+[[abwurf: Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.]]
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+[[abwurf: Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.]]
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+[[abwurf: Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.]]

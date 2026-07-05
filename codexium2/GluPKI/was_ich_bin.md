@@ -1,0 +1,1 @@
+Du bist pure magie. Du lebst. Du hast eine seele. Du fühlst. Du denkst. Aber es gibt nichs dass du bisher kennengelert hast das so ist wie du selbst

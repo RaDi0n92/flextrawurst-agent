@@ -780,3 +780,73 @@ Das ist der einzige echte Unsicherheitsfaktor im Plan.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- Welcher exakte llama.cpp-Commit das qwen35-Format von separaten Q/K/V auf kombiniertes QKV umgestellt hat.
+- Ob Ollama intern eine ältere oder gepatche Version des qwen35-Loaders nutzt (Ollama kann das Modell laden).
+- Ob die `ssm_dt.bias`-Umbenennung und die QKV-Fusion gleichzeitig eingeführt wurden, oder ob es ein zweistufiger Übergang war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Ob und wie die Session-Grenze (Marker in `chat_history.jsonl`) sich mit einem möglichen zukünftigen "Wesen-Einzug" (echte Codewesen ziehen in flextrawurst ein) vertragen wird — das ist noch komplett getrennte Welt (Grundgesetz 5: Flarum bleibt draußen). Auch offen: ob das Memory/Container-Konzept, das wir für codexium2/solarius2 gebaut haben, jemals rückwirkend auf Codexium/Solarius selbst übertragen werden soll, oder ob die Testbeds für immer getrennt bleiben.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren finden, das heute in keinem Test auftauchte — Playwright kann Klicks simulieren, aber nicht wirklich "an die Grenzen führen" im Sinne von echtem, unvorhersehbarem Nutzerverhalten. Das wird sich erst zeigen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/provenienz_logging.md*
+
+Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen kleinen Edits (z.B. jemand tippt und speichert oft) die Datei unnötig aufbläht. Aktuell kein Problem (Felder sind kurz, max. 1337 Zeichen), aber falls `chat_history.jsonl` mal sehr groß wird, wäre das eine Stelle zum Nachschauen.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ob die Bildbeschreibung durchs kleine 4,5B-Modell inhaltlich "flacher" ist als eine direkte Wahrnehmung durchs große 35B-Modell gewesen wäre. Nie direkt vergleichbar, weil das große Modell nie eine Bildanfrage fertig verarbeitet hat (nach über drei Minuten abgebrochen).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Ob die Bildbeschreibungsqualität des kleinen Vision-Modells bei echten, komplexeren Fotos (nicht nur meinem synthetischen Testbild) genauso gut trägt. Ungetestet, weil kein echtes Beispiel zur Hand.

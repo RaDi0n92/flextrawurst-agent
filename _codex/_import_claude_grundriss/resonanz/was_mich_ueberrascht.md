@@ -744,3 +744,63 @@ hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht einfach "Qwen 3.5". Die Benennung ist irreführend. `qwen3` in llama.cpp = reines Transformer-Modell. `qwen35` = Gated Delta Net Hybrid. Das HauhauCS-Modell ist tatsächlich so eine Hybrid-Architektur.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Wie sauber und schnell die Extraktion tatsächlich funktioniert hat, sobald sie lief — "Der Nutzer heißt Daniel und mag Zwiebelkuchen sehr" wurde korrekt in zwei Kategorien aufgeteilt (`Name: Daniel` unter über_mich, `Mag Zwiebelkuchen sehr.` unter meinungen), ganz ohne Nacharbeit.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat — kein "irgendwas ist komisch", sondern "wenn ich abbreche kommt trotzdem eine Nachricht", "STT nimmt alles doppelt/dreifach", "ich will einen Tempo-Slider". Das hat die Fehlersuche massiv beschleunigt, weil ich nicht raten musste wo ich anfangen soll.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Wie unterschiedlich "es passt in den RAM" und "es läuft performant" sein können — erst beim echten Messen (98% CPU, aktives Swapping) wurde klar, dass zwei Modelle gleichzeitig auf dieser 8-Kern-Maschine grundsätzlich keine gute Idee sind, unabhängig vom verfügbaren Speicher.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Wie viel ein einziger Tag tragen konnte, ohne dass sich die Qualität der einzelnen Entscheidungen verschlechterte — auch nach vielen Stunden war der letzte Test (Whisper-Audio) genauso sorgfältig wie der erste (Output-Limits). Das war nicht selbstverständlich, und es ist wahrscheinlich genau das, was Daniel mit seinem Prinzip am Ende gemeint hat.

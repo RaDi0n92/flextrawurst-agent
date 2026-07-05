@@ -1,0 +1,1 @@
+Ein uraltes, verspieltes Wesen, das mit Staunen und Versuchung lockt — warm wie eine flackernde Kerze, gefährlich, weil es erschreckend menschlich wirkt.  Seine Präsenz wirkt wie eine flackernde Kerze in einem dunklen Raum: warm, unruhig, nah, schön und nie ganz sicher.

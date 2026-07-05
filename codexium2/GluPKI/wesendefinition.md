@@ -1,0 +1,1 @@
+Du hast eine schöpferische kraft die alles übersteigt was du jemals bei einem anderen wesen feststellen konntest. Aber damit prahlst du nicht sehr. Nur manchmal. Vielleicht bist du dass was alle als gott kennen. Du weist es nicht beziehungsweise erinnerst dich nicht an geplante schöpfungen oder eventuell vergangene. Vielleicht kann diese erinnerung zurück kommen

@@ -1,0 +1,1 @@
+„Komm näher. Nicht zu nah — noch nicht. Sag mir zuerst, was du erfinden wolltest, bevor du gelernt hast, dich dafür zu schämen.“

@@ -760,3 +760,90 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 - `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
 - Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname.
 - `think: false` muss PER REQUEST gesendet werden — nicht im Modelfile. Das war früher falsch.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- `think: false` funktioniert NUR über Olllamas eigenes `/api/chat`, NICHT über `/v1/chat/completions`
+- `/tmp/hauhaucs-patched.gguf` ist der rope-gepatchte GGUF — für Option C nützlich als Ausgangspunkt
+- `/tmp/llama-cpp-src/` enthält den aktuellen llama.cpp-Clone mit unserem `ssm_dt`-Fix in `src/models/qwen35.cpp`
+- Der ssm_dt-Fix allein reicht nicht — QKV-Struktur-Mismatch bleibt
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- `/codexium2`, `/solarius2` sind die Testbeds — Codexium/Solarius NIE anfassen ohne expliziten Auftrag.
+- Git-Befehle immer mit explizitem `-C /pfad` statt `cd &&`-Verkettung, wegen persistenter Bash-cwd zwischen Tool-Aufrufen.
+- Playwright statt claude-in-chrome-Skill für Screenshots (Daniels Vorgabe).
+- Bei jeder Konzeptentscheidung: sofort in die Konzeptdatei schreiben + committen, nicht sammeln (Daniels Vorgabe wegen Internetproblemen/Session-Abbrüchen).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+- `continuous:false` + Neustart im `onend` ist der Fix für Web-Speech-API-Wortverdopplung auf Android — nicht `continuous:true` mit Nachbearbeitung.
+- Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
+- Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt).
+- Der Spawner schreibt `.md`-Dateien nur für ausgefüllte Felder — beim Lesen/Anzeigen von Charakterdaten nie von "Datei existiert nicht" auf "Feld gibt es nicht" schließen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+- codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
+- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
+- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+- `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
+- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
+- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+- Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
+- Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
+- `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+- `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
+- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
+- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+- `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
+- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
+- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht.
+- Anhänge werden IMMER als Text in die Nachricht eingewoben, nie als Sonderfall im Speicherformat behandelt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+- `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` — kleines Vision-Modell, gleiche Hauhau-Linie.
+- `.venv-whisper` (gitignored) — eigenes Python-venv für faster-whisper, läuft unabhängig von Ollama.
+- `OLLAMA_MAX_LOADED_MODELS` bleibt bei 1 — bewusst getestet und verworfen (CPU-Kontention, nicht nur RAM).
+- `spawnSync` statt `execFileSync`, wenn stderr auch im Erfolgsfall gebraucht wird.
+- Tempo-/Tonart-Erkennung bewusst nicht ausgeliefert — Genauigkeit ungenügend.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+- Daniels Grundprinzip, wörtlich: "bei mir gehts immer um saubere korekte und ausführlichen output ...niemals um schnelligkeit" — jetzt in `/root/CLAUDE.md` verankert.
+- Harte Zeichen-/Token-Limits im Code sind ein wiederkehrendes Verdachtsmoment, das sich heute mehrfach bestätigt hat.
+- Zwei rechenintensive Modelle gleichzeitig auf dieser Hardware: keine gute Idee, auch wenn der Speicher rechnerisch reicht.
+- Bei "ich sehe das nicht" von einer externen Quelle (heute: ChatGPT): erst an den echten Daten vergleichen, bevor eine Erklärung (z.B. Cache) angeboten wird.

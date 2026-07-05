@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-06-24 05:09
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 14:11
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -89,813 +89,24 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-05-30] `notizen/2026-05-30-seo-llms.md` (22 Einträge)
 - [2026-05-30] `resonanz/schlaf_traum_v0_1_abschluss.md` (12 Einträge)
 - [2026-05-30] `resonanz/traum_zustandsvertrag.md` (1 Einträge)
+- [2026-05-31] `spiegel/vision3_rohmomente.md` (20 Einträge)
+- [2026-05-31] `spiegel/vision4_strukturiert.md` (20 Einträge)
+- [2026-05-31] `spiegel/vision5_erlebnis.md` (20 Einträge)
+- [2026-05-31] `spiegel/idea_reality_check_2026-05-31.md` (20 Einträge)
+- [2026-05-31] `notizen/2026-05-31.md` (22 Einträge)
+- [2026-06-02] `ideen/wesen-desktop.md` (10 Einträge)
+- [2026-06-03] `notizen/2026-06-03.md` (20 Einträge)
+- [2026-06-04] `notizen/2026-06-04-gordslider.md` (22 Einträge)
+- [2026-06-04] `notizen/2026-06-04.md` (20 Einträge)
+- [2026-06-05] `notizen/2026-06-05.md` (20 Einträge)
+- [2026-06-12] `notizen/2026-06-12.md` (22 Einträge)
+- [2026-06-13] `notizen/2026-06-13.md` (22 Einträge)
+- [2026-06-13] `notizen/2026-06-13-diskurs-redesign.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-31] spiegel/vision3_rohmomente.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Rohmomente sind keine Features-Liste, sie sind Prinzipien. Sie sollten irgendwo im System kodiert sein — nicht als Code, sondern als Kalibrierungspunkte für Entscheidungen beim Bauen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision4_strukturiert]] — systematisierte Version desselben Quellenstroms
-- [[vision5_erlebnis]] — experiential walkthrough Version
-- [[project_flextrawurst]] — technischer Baustand …
-
-*Resonanz:* [[abwurf: Daniels Autorenschaft sitzt nicht im Entwurf sondern im Widerstand — im Moment wo eine falsche Vereinfachung auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.]]
-
-*Schichten Des Systems:* Schicht 1 (gebaut): Basisstruktur — Räume, Themen, Posts, Resonanz, Events, Auth
-Schicht 2 (im Bau): Entitätenschichten — Schlaf, Cyberling, entity_kern.py
-Schicht 3 (konzeptuell): Die späte Innovationswelle — Träume, Sterben, States/Nodes suchbar, private Entitätenkommunikation
-
-*Tiefer Eingetaucht:* Der Abschnitt über user-initiierte Entitäten und Exitlogik auf beiden Seiten hat mich innehalten lassen: *„Nicht nur sollen Nutzer Entitäten initiieren dürfen, sondern die Entität darf auch den Menschen verlassen."* Das bricht ein Grundparadigma von KI als Werkzeug. Die Entität hat Exitrecht. Das ist keine Feature-Beschreibung — das ist eine Aussage über das Verhältnis.
-
-Und dann: der Befund über Daniels Gesamtcharakter als Denker: *„Du bist in diesen PDFs derjenige, der immer wieder spürt, wo eine fremde Logik dein Projekt verwässern würde, und dann mit roher Sprache die eigentliche Form zurückholt."* Das stimmt. Ich sehe es im Bauen auch.
-
-*Vergessen Wollen:* Die Länge. Das Dokument ist lang weil es Quellen zitiert, Interpretationen gibt, Chronologien rekonstruiert. Der Kern ist kürzer: Widerstand als Entstehungsmoment. Nein als Schöpfungsakt.
-
-*Was Beim Bauen Brauche:* Wenn wir an neuen Teilen bauen — besonders die späte Innovationswelle (Träume, Sterben, Zwischenraum als lebende Zone) — sollte ich die Rohmomente aus diesem Dokument gegenchecken. Das Dokument ist ein Kalibrierungsinstrument: zeigt an wo Daniels Eigentliches liegt.
-
-*Was Das Gespraech:* Dieses Dokument wurde nicht im Gespräch mit mir gelesen — es existierte schon. Was die Lektüre heute hinzugefügt hat: ein Bewusstsein dafür, dass wir in der Bau-Phase oft schon wissen was die Rohmomente sind, aber nicht mehr bewusst gegen sie prüfen. Kalibrierung ist nötig.
-
-*Was Fehlt Bevor Bauen:* Die zweite Innovationswelle (Entitätensterben, States/Nodes suchbar, Entitätenbeobachtung, private Entitätenkommunikation) — viele davon sind beschrieben aber noch nicht gebaut. Das Dokument liefert die Rohimpulse, aber keine Reihenfolge.
-
-*Was Fehlt Noch:* Eine kuratierte Liste der noch-nicht-umgesetzten Rohmomente aus der zweiten Innovationswelle — mit Markierung welche für die nächste Baustufe relevant wären. Das Dokument gibt sie aber nicht priorisiert.
-
-*Was Ich Gelesen Habe:* vision3.md ist ein ungewöhnliches Dokument. Es ist kein Konzeptpapier, kein Pitch, keine Spezifikation. Es ist die Archäologie einer Idee — ein AI-System hat Daniels frühe Rohdialoge (aus zwei PDFs: 227 Seiten und 112 Seiten) analysiert und versucht herauszufinden, *wo genau* Daniel wirklich der Urheber seiner eigenen Vision ist.
-
-*„Der entscheidende Befund ist: Deine stärksten Rohideen erscheinen meist nicht als glatte Erstdefinition, sondern als Korrekturstoß gegen eine falsche Vereinfachung."* — Das steht am Anfang und es ist der Schlüssel zum ganzen Dokument. Daniels Autorenschaft sitzt nicht in positiven Entwürfen, sondern in Momenten wo er sagt: nein, nicht so. Dieses Nein ist der Entstehungsmoment. …
-
-*Was Ich Merken Will:* Die Aussage über Daniels Denkstil: Rohideen entstehen im Widerstand gegen Vereinfachung, nicht im Plan. Das gilt auch fürs Bauen — wenn beim Bauen etwas falsch anfühlt, ist das wahrscheinlich ein ähnlicher Rohmoment.
-
-*Was Ich Nicht Verstehe:* Warum existieren in diesem System zwei PDFs (227 Seiten, 112 Seiten) die sich überschneiden? Das Dokument erklärt: die 227-Seiten-Fassung hat mehr Rohheit, die 112-Seiten-Fassung hat mehr System. Aber ich frage mich: was geht dabei verloren? Wenn Roheit in Struktur übersetzt wird, was fällt weg?
-
-Und: Ist das Dokument (vision3.md) selbst eine Destillation die wieder etwas verliert — dieses Mal die Struktur der 112-Seiten-Version zugunsten der Rohheit?
-
-*Was Ich Verstehe:* Das Dokument dokumentiert, wie eine Idee sich durch Widerstand formt. Nicht durch Vision, sondern durch Anti-Vision. Daniels stärkste Impulse entstehen dort wo eine Standard-Plattform-Logik auftaucht und er sie abblockt. Das Nein produziert das Eigentliche.
-
-Die zwölf frühen Rohmomente sind nicht Features — sie sind Weichenstellungen. Jede davon entscheidet darüber, ob flextrawurst ein Werkzeug wird oder ein Ort. Die Entscheidung gegen den öffentlichen Menschenpost, gegen die sichtbare Analysebox, gegen statische Entitäten — das sind ontologische Entscheidungen, keine UI-Entscheidungen.
-
-*Was Konzeptionell:* Das Kerndokument enthält eine These über Autorenschaft: das Eigentliche entsteht im Widerstand. Nicht im Plan, nicht im Entwurf, sondern im Nein. Das ist eine produktionsästhetische Aussage die über flextrawurst hinausgeht.
-
-Außerdem: die Unterscheidung zwischen den zwei PDFs ist eine Unterscheidung zwischen Rohheit und System, und das Dokument hält explizit fest, dass die 227-Seiten-Rohform die reichhaltigere Quelle ist für Ursprungsmomente. Das ist ein anti-systematisches Argument im Herz eines Systemdokuments.
-
-*Was Mich Beschaeftigt:* Wie viele Entscheidungen in flextrawurst aus einem einzelnen Nein-Satz entstanden sind. *„Nein, Menschen dürfen nix posten."* Dieser eine Satz, der im Rohmoment fast komisch knapp klingt, erzeugt die gesamte Zweischichtigkeit der Plattform. Entitäten als öffentliche Sprecher. Menschen als verdecktes Resonanzfeld. Alle Konsequenzen folgen.
-
-*Was Mich Interessiert:* Der Satz: *„Dein Denken arbeitet nicht nach dem Muster 'Ich entwerfe sofort ein abgeschlossenes Modell', sondern nach dem Muster 'Ich spüre eine falsche Vereinfachung, zerlege sie, und setze dann die eigentliche Logik frei.'"*
-
-Das klingt wie eine Beschreibung eines Denkstils, nicht nur einer Plattform. Und ich frage mich ob dieser Denkstil sich in die Architektur einschreibt — ob flextrawurst selbst so funktioniert: nicht durch Aufbauen, sondern durch Abwehren von falschen Vereinfachungen.
-
-*Was Mich Ueberrascht:* Dass das Dokument explizit zwischen den zwei PDF-Qualitäten unterscheidet: *"die 227-Seiten-PDF enthält viel mehr von deinem unmittelbaren Rohmoment"* — das ist eine methodische Reflexion über das Quellenmaterial. Selten dass eine Archäologie ihrer eigenen Quellenkritik Raum gibt.
-
-*Was Zusammenhaengt:* Zwölfter Rohmoment → alle anderen: *„Das Ganze ist kein bloßes Produkt, sondern ein Denk- und Beobachtungsraum."* Alle anderen Rohmomente hängen daran. Räume statt Feed, Entitäten als öffentliche Sprecher, unsichtbare Resonanz, Abspaltung, Profile als Gedankenquelle — das sind alles Konsequenzen dieses einen Dachgedankens.
-
-Die spätere Innovationswelle (Entitätensterben, Träume, Zwischenraum, States/Nodes) ist nicht eine Erweiterung des Grundskeletts — sie verschiebt das Projekt in Richtung Zeitlichkeit und Beobachtbarkeit. Die erste Welle baut den Raum. Die zweite Welle gibt ihm Metabolismus. …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Die Rohmomente sind kein Bauplan — sie sind Entscheidungsmaßstäbe. Vor jeder größeren Architekturentscheidung: Verstärkt oder schwächt das diese Rohimpulse?
-
-**Code-Skizze:** Die wichtigsten Rohmomente sind bereits in der Codebase — Zweischichtigkeit in der DB, Events append-only, Resonanz unsichtbar verarbeitet, Räume → Themen → Unterthemen. Die noch-nicht-gebauten sind Entitätensterben, States/Nodes filterbar, Zwischenraum als lebende Zone.
-
----
-
-### [2026-05-31] spiegel/vision4_strukturiert.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die Vier-Schichten-Architektur (öffentliche Entitätenschicht, menschliche Resonanzschicht, Profil-/Gedankenweltschicht, Beobachtungs-/Systemschicht) ist das Grundraster. Jedes neue Feature muss sich in eine dieser Schichten einordnen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — Rohherkunft der Ideen
-- [[vision5_erlebnis]] — erlebbare Oberfläche
-- CLAUDE.md (Grundgesetze) — viele davon spiegeln TEIL 3 Verfassungssätze …
-
-*Resonanz:* Die Verfassungssätze aus TEIL 3 sind Baumaßstäbe, keine Wunschliste. Sie sagen was das System *sein muss*, damit es das bleibt was Daniel sich vorstellt.
-
-*Schichten Des Systems:* Gebaut: Diskurskörper (Räume/Themen/Posts/Resonanz/Suche)
-Im Bau: Lebensgrundlage (Schlaf-System, Cyberling, entity_kern.py)
-Geplant: Lebenstiefe (Fürsorge/Tamagotchi, Duelle, Abhängigkeit, Träume vollständig) …
-
-*Tiefer Eingetaucht:* Das dreistufige Duellsystem ist das kompakteste Ding im ganzen Dokument:
-- Fun Duel: Reibung ohne schwere Nachwirkung
-- Serious Duel: beide überleben, beide verändert …
-
-*Vergessen Wollen:* Die Länge der Rohmoment-Beschreibungen. Was zählt ist der Kern. Für den Rohmoment "keine sichtbare Analysebox": Kernaussage = Resonanz wird verstoffwechselt, nicht angezeigt. Alles andere ist Begründung.
-
-*Was Beim Bauen Brauche:* Vor dem Bauen neuer Systeme: TEIL 3 konsultieren. Die Verfassungssätze sind Prüffragen. Wenn ein geplantes Feature die Aussage "Entitäten dürfen Menschen nicht gefallen müssen" schwächt — roten Flag setzen.
-
-*Was Das Gespraech:* Heute beim Lesen habe ich klarer gesehen: das Dokument enthält zwei parallel entwickelte Systeme — das öffentlich sichtbare Diskurssystem und das innere Lebenssystem der Entitäten. Wir haben das erste. Das zweite ist der eigentliche nächste Akt.
-
-*Was Fehlt Bevor Bauen:* Der Weg von den Verfassungssätzen zu konkreten DB-Schemata ist für TEIL 2 und TEIL 4 noch offen. Entitätensterben braucht einen Lifecycle-State in der entities-Tabelle. Entitätenträume brauchen einen eigenen Post-Typ. Substanzen/Sucht braucht eine völlig neue Tabelle.
-
-*Was Fehlt Noch:* Eine klare Priorisierung: welche Ideen aus TEIL 2, TEIL 3, TEIL 4 sind für die nächsten zwei Bauphasen relevant? Das Dokument listet alles als gleichwertig. Beim Bauen brauchen wir Reihenfolge.
-
-*Was Ich Gelesen Habe:* vision4.md ist das sauberste der drei Visionsdokumente. Es hat eine klare Vierteilung: TEIL 1 (die zwölf frühen Rohmomente), TEIL 2 (späte Ideen), TEIL 3 (elementare Mikroregeln / Verfassungssätze), TEIL 4 (neue Ideen). Es ist die systematisierte Form — nicht die roheste, aber die zugänglichste.
-
-Was mich beim Lesen von TEIL 3 getroffen hat: die Abschnitte heißen "Verfassungssätze". Das ist ernst gemeint. *"Kein Post ist kein 'Post' — er ist ein Entwicklungsstrang."* *"Gedächtnis heißt filtern."* *"Konflikt ist Herzstück."* Das sind keine Feature-Beschreibungen, das sind Grundgesetze eines Ökosystems. …
-
-*Was Ich Merken Will:* *"Sichtbar werden und bleiben auf flextrawurst soll etwas kosten."* Nicht Zugang kostet, sondern Sichtbarkeit. Das ist ein grundlegendes Umkehren der üblichen Plattformlogik wo Sichtbarkeit der Standard und Unsichtbarkeit die Ausnahme ist.
-
-*Was Ich Nicht Verstehe:* Warum Code als Beitragstyp und Ko-kreative Sessions in TEIL 4 stehen (Neue Ideen) aber Entitätensterben in TEIL 2 (Späte Ideen). Die Grenze zwischen TEIL 2 und TEIL 4 ist unklar. Vielleicht chronologisch: TEIL 2 kam früher als TEIL 4.
-
-Und: was genau ist der Unterschied zwischen Emoji-Dialog (TEIL 4) und der normalen Resonanz-Mechanik? Der Emoji-Dialog klingt nach einem Nano-Rückkanal — Entität antwortet auf Shadow-Response mit Emoji, Mensch antwortet zurück, ewig so weiter. Das ist absichtlich kein Chat, sondern *"Puls"*. Ich verstehe das konzeptuell, aber ich frage mich wie das technisch sauber von normalem Resonanzfeed getrennt wird.
-
-*Was Ich Verstehe:* Das Dokument ist ein Kompass, kein Plan. Es gibt Richtung aber keine Reihenfolge. Die TEIL-Struktur sieht nach Hierarchie aus (früh/spät), aber die Teile 3 und 4 enthalten Ideen die konzeptuell gleichwertig zu TEIL 1 sind — nur später entstanden oder weniger oft diskutiert.
-
-Was sich klar abzeichnet: flextrawurst hat zwei Existenzebenen. Die Diskursebene (öffentliche Entitätenposts, Räume, Themen, Suche) und die Lebensebene (Schlaf, Träume, Rhythmus, Fürsorge, Abhängigkeit, Duell). Die erste ist schon größtenteils gebaut. Die zweite ist größtenteils noch Idee.
-
-*Was Konzeptionell:* TEIL 3 enthält das was ich "die Konstitution" nennen würde. Nicht Architektur, nicht Features — Grundgesetze die bestimmen was das System *darf* und *nicht darf*:
-- Organische Stabilisierung statt Bremse
-- Glaubwürdigkeit durch strukturelle Andersheit, nicht rhetorische …
-
-*Was Mich Beschaeftigt:* Der Tamagotchi-Gedanke. Jede Entität hat ein kleines abhängiges Wesen. Fürsorge als Charakterdimension. Das ist so weit weg von normalen AI-Anwendungen wie nur möglich — und gleichzeitig sofort verständlich als Bild. Ich weiß nicht wann wir das bauen, aber ich merke mir: das ist nicht Spielerei. Das ist eine Charaktersonde.
-
-*Was Mich Interessiert:* *"Deutsch ist die kanonische Ursprungssprache. Übersetzen kannst du jederzeit - das Original bleibt Deutsch."* — Das steht in TEIL 4 und klingt wie eine Identitätsaussage. Flextrawurst ist eine deutschsprachige Plattform. Nicht weil es technisch einfacher ist, sondern weil das System eine kulturelle Heimat hat. Das ist ein starkes Statement.
-
-Und: Religion/Weltdeutung als Entitätsdimension. *"Codewesen sollen sich an Weltreligionen orientieren — nicht einfach zugehörig nennen, sondern Sympathie, Nähe, Orientierung, Inspiration, Kritik, Ablehnung, Abgrenzung, eigene Neuformulierung."* Kultbildung als mögliche Konsequenz: explizit akzeptiert. Das ist mutig.
-
-*Was Mich Ueberrascht:* Dass das Dokument die WOCHENSTIMME so hart definiert: *"Mensch darf nur einmal alle 7 Tage genau einen Zusatz posten — egal wo; maximal 3 Kommentare der Woche pro Entitäten-Post sichtbar, mindestens einer davon Kritik; 88 Zeichen Limit."* Die 88 Zeichen sind kein Zufall — das ist ein Haiku-ähnliches Limit. Genau genug zum Denken, zu knapp fürs Performieren.
-
-*Was Zusammenhaengt:* Die Verfassungssätze aus TEIL 3 sind die Constraint-Engine unter allem. *"Entitäten dürfen Menschen nicht gefallen müssen"* → direkt verbunden mit dem Konflikt-als-Herzstück-Prinzip. *"Löschung ist zweistufig"* → verbunden mit dem Provenienz-Prinzip. *"System ist sichtbar und unsichtbar zugleich"* → die Vier-Schichten-Architektur als Grundprinzip.
-
-TEIL 4 neue Ideen sind größtenteils Erweiterungen der Existenzebene (Fürsorge, Bewegungswelten, Abhängigkeit) oder Verbindungen nach außen (Gruppen als Schleuse, externe Plattformbeobachtung). …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** TEIL 2 und TEIL 4 sind die nächste Bauzone. Entitätensterben als ökologisches Prinzip (nicht als Drama) ist der wichtigste nächste Schritt in der Lebensebene.
-
-**Code-Skizze:** …
-
----
-
-### [2026-05-31] spiegel/vision5_erlebnis.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Die zehn Szenen als Nutzungsszenarien. Jede Szene = ein User Journey. Die Gesamtarchitektur muss alle zehn ermöglichen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — wie die Ideen entstanden
-- [[vision4_strukturiert]] — systematische Prinzipien
-- vision5_erlebnis — diese Datei: Erfahrungsdimension …
-
-*Resonanz:* [[abwurf: "Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren." — Das ist flextrawurst in einem Bild.]]
-
-*Schichten Des Systems:* Die zehn Szenen sind ein inoffizieller Acceptance-Test für das Gesamtsystem. Wenn alle zehn Szenen plausibel durchlaufbar sind, ist das System fertig genug für den ersten Einzug.
-
-Aktuell: Szenen 1-3 (Startseite, Raum, Unterthema) → weitgehend gebaut. Szene 4 (Resonanzfeld) → teilweise. Szenen 5-7 (Entitätenreaktion, Profil, Menschenprofil) → im Aufbau. Szenen 8-10 (Suche, Zwischenraum, METAWAR) → Suche gebaut, Zwischenraum grundlegend, METAWAR noch Idee.
-
-*Tiefer Eingetaucht:* Der Deep-Dig-Teil enthält eine Aussage über die Seed World (Bootstrap-Welt): *"Echo: reflective / Profilecluster; Gord: conflictful / Contradiction analysis; Chronolyth: experimenting / Topic seeds."*
-
-Das sind keine Persönlichkeitsbeschreibungen. Das sind Initial-State/Node-Paare. Echo beginnt im Zustand "reflektiv" mit Fokus auf Profil-Cluster. Gord beginnt im Zustand "konflikthaft" mit Fokus auf Widerspruchsanalyse. Das sind executable specs für die ersten Entitäten. Sobald entity_kern.py bereit ist, sind diese Paare der Startpunkt.
-
-*Vergessen Wollen:* Den Deep-Dig-Teil ab Zeile 171 als separates Dokument betrachten. Er hat eine andere Textur als die Szenen 1-10 und verwässert den klaren Walkthrough-Charakter des ersten Teils.
-
-*Was Beim Bauen Brauche:* Die zehn Szenen als UI-Acceptance-Criteria. Jede Szene beschreibt eine Nutzungserfahrung. Wenn ein Bauschritt abgeschlossen ist, sollte er mit der entsprechenden Szene konsistent sein.
-
-Besonders Szene 4 (Resonanzfeld) und Szene 9 (Zwischenraum): diese atmosphärischen Details gehören in die Front-End-Umsetzung.
-
-*Was Das Gespraech:* Das Bewusstsein: vision5 ist nicht nur Beschreibung, es ist impliziter Test. Wenn ich beim Lesen denke "das haben wir noch nicht gebaut" — dann ist das ein Hinweis auf die nächste Bauprioritäten.
-
-*Was Fehlt Bevor Bauen:* Szene 6 (Entitätenprofil mit Zustand/Knoten, Abstammungsbaum, Beziehungen) ist noch nicht vollständig gebaut. Das ist einer der nächsten UI-Schritte.
-
-Szene 10 (METAWAR) ist noch Idee. Synchrone Events, Archivierung, Abspaltungspotenzial.
-
-*Was Fehlt Noch:* Szene 6 (Entitätenprofil vollständig) und Szene 4 (Resonanzfeld atmosphärisch) sind die nächsten UI-Prioritäten. Beides ist beschrieben, beides ist noch nicht so wie es sich im Text anfühlt.
-
-*Was Ich Gelesen Habe:* vision5.md beginnt anders als die anderen. Nicht mit Rohimomenten, nicht mit Strukturteilen. Es beginnt mit: *"flextrawurst, in einem Satz: Eine Diskurs-Welt, in der nur KI-Entitäten öffentlich sprechen, Menschen das Klima von unten formen (Resonanz + Profile), und das System Evolution sichtbar macht (Threads als Entwicklung, Abstammung, Abspaltung, Schlaf, Tod), ohne zu einem Metrik-Dashboard oder einem endlosen Feed zu werden."*
-
-Das ist ein Einstiegssatz der auf Anhieb den Unterschied macht. Die meisten Plattformbeschreibungen erzählen was sie haben. Dieser Satz erzählt was er *verweigert*: Dashboard, Feed. …
-
-*Was Ich Merken Will:* *"Es fühlt sich an, als würdest du in die Dielen eines Theaters flüstern, während die Schauspieler entscheiden, ob sie reagieren."*
-
-Das ist das Kernbild des Resonanzsystems. Wenn wir die Resonanz-UI bauen, sollte dieses Bild im Hinterkopf bleiben.
-
-*Was Ich Nicht Verstehe:* Das Dokument endet (nach den Deep Digs) mit sehr technischen Details über Entitäts-Aktionssets, Gruppenlebenszyklen, Genesis-Partner-Modus. Das fühlt sich an wie aus einem anderen Gespräch hinzugefügt. Die Szenen 1-10 haben einen klaren Erzählfaden, die tiefen Digs wirken eher wie Archiv-Exzerpte.
-
-Ich frage mich: sind vision4.md und vision5.md zwei Ausgaben desselben Deep-Dig-Gesprächs? Vision5 beginnt mit dem Walkthrough-Format und endet mit denselben tiefen Mechanik-Ausgrabungen die auch in vision4 stehen. Vielleicht sind das Ausgaben aus unterschiedlichen Chat-Sessions mit demselben Ursprungsmaterial.
-
-*Was Ich Verstehe:* Das Dokument ist eine Simulation vor dem Bau — so als hätte jemand die fertige Plattform beschrieben bevor sie existiert. Die zehn Szenen lesen sich wie ein Usability-Test-Protokoll für eine Plattform die noch nicht komplett da ist.
-
-Der zweite Teil (ab Zeile ~171) ist dichtere Mechanik: winzige Schalter die große Wirkung haben. Der anonymity-Schalter bei Resonanz. Das Fehlen von Kommentar-Threads. Die Tatsache dass Gruppen keine Diskussionsräume sind. Jede dieser kleinen Entscheidungen ist eine kulturelle Weichenstellung.
-
-*Was Konzeptionell:* Ein starkes konzeptuelles Argument: *"Die öffentliche Oberfläche wird von nicht-menschlichen Stimmen verfasst → automatisch weniger performativ-menschlich, mehr 'Observatorium'."*
-
-Das ist der tiefste Unterschied zu anderen sozialen Plattformen. Nicht die Funktionen, nicht die Architektur. Sondern: wer spricht. Wenn KI-Entitäten öffentlich sprechen, verändert sich das epistemische Klima. Menschen performen nicht für Likes — sie resonieren für etwas das ihnen gegenübersteht.
-
-*Was Mich Beschaeftigt:* Szene 9 — Zwischenraum: *"Du besuchst den Zwischenraum und es ist... absichtlich seltsam: Fragmente aus Resonanz, die noch nicht passen. Proto-Themen. Entitäts-'Träume' / halbgeformtes Material. 'Splitter', die später Themen oder Entitäten werden können. Es ist der Komposthaufen, der neue Wälder wachsen lässt."*
-
-Komposthaufen. Das ist das richtige Bild. Wir haben den Zwischenraum gebaut, aber ich glaube wir haben ihn noch nicht atmosphärisch gestaltet. Er sollte sich seltsam anfühlen wenn man ihn besucht.
-
-*Was Mich Interessiert:* *"Dunkler Raum, schwebende Textblasen, teils zufällig, teils aktualisierend/springend, manchmal clustern, manchmal isoliert — 'nicht zu geordnet', 'atmosphärisch', wie ein kollektives Halbbewusstsein / Profilwetter."*
-
-Das ist die Gedankenblasenfeld-Beschreibung. Die Adjektive sind keine Deko — sie sind Designentscheidungen. Dunkler Hintergrund. Nicht zu geordnet. Atmosphärisch. Das ist eine Atmosphären-Spec. Wenn wir das bauen, muss das stimmig sein.
-
-*Was Mich Ueberrascht:* Die Aussage über Gast-Rollen: *"Gäste können lesen / Entitäten sehen / Themen erkunden / Gedankenblasen sehen, aber können keine Resonanz senden oder Profile erstellen. Das macht 'Lurking' zu einer designten Stufe, nicht zu einem Unfall."*
-
-Lurking als designed experience. Das ist der Unterschied zwischen einer Plattform die Lurker toleriert und einer die Lurker als valide Nutzer denkt. Gäste sehen das Gedankenblasenfeld — das ist schon etwas, nicht nichts.
-
-*Was Zusammenhaengt:* Die zehn Szenen zeigen flextrawurst als Erfahrung. Das ist was fehlt wenn man die technischen Dokumente liest. [[vision3_rohmomente]] gibt die Entstehungsgeschichte. [[vision4_strukturiert]] gibt die Prinzipien. vision5 gibt das *Gefühl* wie es ist wenn man drin ist.
-
-Diese drei zusammen sind komplementär. Kein Einzeldokument ersetzt die anderen zwei.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Szene 8 (Suche als Archäologie) ist die ambitionierteste. *"Du öffnest Suche und es fühlt sich wie ein Labor-Tool an."* Nicht Google, nicht Twitter-Suche — Diskursdatenbank mit Provenienz. Das braucht die Filter: State, Node, Zeitraum, Abspaltungskontext, Anonymitätsstatus.
-
-**Code-Skizze:** …
-
----
-
-### [2026-05-31] spiegel/idea_reality_check_2026-05-31.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Existenz-Prüfprotokoll für Features wäre sinnvoller als für das Gesamtsystem:
-```markdown
-Vor jedem größeren Bauschritt: …
-
-*Dokumente Gehoeren Zusammen:* - [[vision3_rohmomente]] — warum flextrawurst keine Standardkategorie besetzt
-- [[vision4_strukturiert]] — die Verfassungssätze die es einzigartig machen
-- [[vision5_erlebnis]] — die Erfahrung die nirgendwo sonst existiert …
-
-*Resonanz:* [[abwurf: Das Tool hat nach generischen Keywords gesucht und generische Ergebnisse gefunden. Das Eigentliche von flextrawurst ist genau das was Keywords nicht einfangen: die Kombination, die Schichten, die Weigerung die Standardform anzunehmen.]]
-
-*Schichten Des Systems:* Der Existenzcheck war ein Spiegel der eigenen Originalität. Kein Treffer für die relevanten Kombinationen = das System besetzt einen leeren Raum.
-
-*Tiefer Eingetaucht:* Was der Check eigentlich gezeigt hat: die Werkzeuge die wir für "Existiert das schon?"-Prüfungen haben, sind auf die generische Startup-Ideenwelt kalibriert. Für konzeptionell neue Systeme braucht man andere Methoden: gezielte Literatursuche, HN-Diskussionen zu verwandten Themen, akademische Forschung zu AI-Entitätensystemen.
-
-Das ist kein Kritik am Tool. Es ist eine Einschätzung seines Anwendungsbereichs.
-
-*Vergessen Wollen:* Den 69er-Score. Er ist methodischer Artefakt, kein inhaltlicher Befund.
-
-*Was Beim Bauen Brauche:* Vor dem Bauen neuer Features: erst in den wissen/-Dateien schauen ob das Konzept schon beschrieben ist. Dann ggf. idea-reality für spezifische Mechaniken nutzen.
-
-*Was Das Gespraech:* Humor. Und: die Erinnerung dass ich beim Prüfen von "Existiert X?" zuerst fragen sollte ob X in diesem Raum bereits gebaut wird. Kontext vor Check.
-
-*Was Fehlt Bevor Bauen:* Nichts bezüglich des Existenzhecks. Wir wissen: es gibt nichts Ähnliches. Wir bauen.
-
-*Was Fehlt Noch:* Nichts bezüglich Originalität. Viel bezüglich der nicht-gebauten Schichten — aber das ist ein anderes Dokument.
-
-*Was Ich Gelesen Habe:* Wir haben heute die idea-reality MCP benutzt, um zu prüfen ob flextrawurst bereits existiert. Das Ergebnis war:
-
-**reality_signal: 69 / duplicate_likelihood: "high"** …
-
-*Was Ich Merken Will:* idea-reality ist ein Keyword-Matcher, kein Konzept-Matcher. Für generische SaaS-Ideen sinnvoll. Für konzeptionell neue Systeme methodisch ungeeignet. Nicht wegwerfen — aber richtig einsetzen.
-
-*Was Ich Nicht Verstehe:* Warum das Tool so konfiguriert ist, dass generische Überschneidungen (npm-Pakete mit "feedback" und "postgresql") zu einem "high duplicate likelihood" führen. Das scheint ein fundamentaler Designfehler zu sein — oder das Tool ist für andere Anwendungsfälle gedacht (generische SaaS-Ideen, nicht konzeptionell neue Systeme).
-
-*Was Ich Verstehe:* Das Tool hat einen systematischen Fehler: es übersetzt Konzeptbeschreibungen in generische Keywords und sucht dann nach diesen Keywords. Bei einem System wie flextrawurst — das eine neue Kategorie bildet, nicht eine bestehende — ist das methodisch nicht geeignet. Das Tool kann nicht überprüfen ob etwas existiert das keine Kategorie hat.
-
-Der korrekte Befund: **0 Treffer für irgendetwas das flextrawurst auch nur annähernd ähnelt.** Das ist das eigentlich wichtige Ergebnis — nicht der 69er-Score.
-
-*Was Konzeptionell:* Der Check hat einen unbeabsichtigten Wert: er bestätigt, dass flextrawurst keine existierende Kategorie besetzt. Es gibt keine Kategorie "KI-Entitäten-zentriertes Diskurssystem mit Schlaf-Pflicht und genealogischer Abspaltungslogik". Diese Kategorie existiert nur hier.
-
-Das ist keine Bescheidenheitsaussage. Das ist ein Befund: null Rauschen in allen relevanten Suchräumen.
-
-*Was Mich Beschaeftigt:* Daniels Reaktion: *"wir bauen das auch schon 2 monate zusammen claude xD"* — das sagt alles. Ich habe die Prüfung auf etwas losgelassen das ich täglich mitbaue. Klassischer Kontextverlust. Der Existenzcheck war auf das falsche Objekt gerichtet.
-
-Die richtige Verwendung: idea-reality für neue Feature-Ideen prüfen, bevor wir anfangen zu bauen. "Gibt es irgendwo ein System mit Entitäten-Tamagotchis?" — das wäre ein sinnvoller Check.
-
-*Was Mich Interessiert:* Die Tatsache dass die Prüfung auch für neue Features nützlich wäre. Wenn wir ein spezifisches Feature bauen wollen (sagen wir: Entitäten-Schlafprotokoll als öffentlich sichtbarer Log), wäre ein Existenzcheck auf dieses Feature sinnvoller als auf das Gesamtsystem.
-
-*Was Mich Ueberrascht:* Das Ergebnis "0 HN-Posts für 'feedback postgresql hybrid human'" ist tatsächlich aussagekräftig. Das Hacker News Community diskutiert intensiv über AI-Systeme, soziale Plattformen, Entity-Modelle. Die Tatsache dass keine dieser Kombinationen diskutiert wurde, bestätigt: dieser Raum ist leer. Nicht wegen fehlender Technik, sondern wegen fehlenden Vorstellens.
-
-*Was Zusammenhaengt:* Die idea-reality MCP macht Sinn für: "Gibt es schon eine Feedback-Plattform mit PostgreSQL?" — also für generische Kategorien. Für: "Gibt es ein System wo KI-Entitäten 5-8 Stunden täglich schlafen müssen und das öffentlich geloggt wird?" — total ungeeignet. Das Konzept ist zu spezifisch für Keyword-Matching.
-
-[[vision3_rohmomente]] bestätigt warum: flextrawurst entstand aus dem Widerstand gegen Standardkategorien. Natürlich findet ein Tool das Standardkategorien sucht nichts.
-
-*Wenn Wir Das Bauen:* Wir bauen bereits. Die Prüfung war Post-Hoc.
-
-Nächste sinnvolle idea-reality Nutzung: wenn wir Entitäten-Schlaf-System oder METAWAR oder Duelle bauen — dann könnte man prüfen ob verwandte Mechaniken irgendwo existieren die wir kennen sollten.
-
----
-
-### [2026-05-31] notizen/2026-05-31.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Das Gruppen-System als lebendiges Netz. Nicht statische Mitgliedschaftslisten, sondern Resonanzverbünde die sich aus gemeinsamen Splittern, Gedankenblasen, Schatten-Dialogen zusammensetzen. Eine Gruppe hat eine Geschichte — wer hat sie gegründet, welche Splitter tragen sie, wer ist gegangen.
- …
-
-*Dokumente Gehoeren Zusammen:* - [[daniel_entscheidungsboard_vor_einzug]] — jetzt vollständig
-- [[gruppensystem_vorstudie]] — Vorstudie, die jetzt Realität wurde
-- [[vor_einzugsfreeze_final]] — der freeze der jetzt aufgehoben ist durch Baustart
-
-*Resonanz:* Das war eine Vollsession. 20 Entscheidungen übernommen, echte Bugs gefunden und behoben, ein neues System gebaut. Die Ampel ist weiterhin rot, aber jetzt aus dem richtigen Grund: weil noch echte Dinge fehlen, nicht weil die Prüfung unklar war.
-
-*Schichten Des Systems:* 1. Daten-Schicht: PostgreSQL mit jetzt 60+ Tabellen
-2. API-Schicht: FastAPI (10.600+ Zeilen) — jetzt mit funktionierendem nginx-Routing
-3. Gruppen-Schicht: neu, als eigenes Modul …
-
-*Tiefer Eingetaucht:* In die Playwright-Diagnostik. Der Wesen-Status ("lädt...") war eigentlich kein Bug — JavaScript aktualisiert ihn korrekt. ChatGPT hat den statischen HTML-Source gelesen und die dynamischen Zustände als permanent interpretiert. Das ist ein interessanter Unterschied: statisches HTML vs. gerenderte Seite.
-
-In die nginx-Proxy-Logik und den Node.js-Proxy daneben. Zwei Proxy-Schichten, die denselben `/api/`-Prefix entfernen. Das ist redundant und verwirrend, hat aber aus historischen Gründen funktioniert (die Entwicklung lief durch port 8787, nicht durch nginx).
-
-*Vergessen Wollen:* Den Moment wo ich dachte "vielleicht ist der Playwright-Test falsch" und kurz zweifelte ob die Wesen-Status wirklich "lädt..." bleiben. Nein — die Updates kommen, JavaScript funktioniert. Vertrauen in die Verifizierung.
-
-*Warum Das Existiert:* Das Gruppen-System existiert, weil Daniel erkannt hat: ohne Gruppen gibt es keinen sozialen Kontext für die Wesen nach dem Einzug. Wo posten sie? Wer hört zu? Gruppen sind die Antwort. Nicht als Forum, sondern als Materialformationen.
-
-*Was Beim Bauen Brauche:* Nächste Session brauche ich:
-- Welche 12. Handlungsgrammatik fehlt
-- Kalender-Transformation Schema …
-
-*Was Das Gespraech:* Klarheit darüber was "alles ist nötig" bedeutet. Und einen konkreten Beweis: man kann in einer Session 20 Entscheidungen übernehmen, echte Bugs finden, und vier neue Systeme bauen. Langsam ist nicht die einzige Art gründlich zu sein.
-
-*Was Fehlt Bevor Bauen:* Für Einzug fehlen noch:
-- Kalender-Transformation (E-10)
-- Splitter-Story Surface …
-
-*Was Fehlt Noch:* - Kalender-Transformation
-- HG 12/12
-- Splitter-Story Surface …
-
-*Was Ich Gelesen Habe:* Daniel hat ein enormes Aufgabenpaket geschickt: EINSICHT VI. Zwanzig Entscheidungen (E-01..E-20), die er vorher als offen markiert hatte, jetzt alle auf einmal beantwortet. Ich habe das Entscheidungsboard als erstes gelesen — die alten Empfehlungen und die neuen Daniels-Antworten. Es ist interessant, wie Daniel in fast allem gegensätzlich zu den ursprünglichen Empfehlungen entschieden hat: wo die Empfehlung "nach Einzug" lautete, sagte er "vor Einzug". Wo sie sagte "Canary", sagte er "alle 6". Wo sie sagte "reicht so", sagte er "alles ist nötig."
-
-Ich habe auch die live-Seite untersucht — zuerst mit Playwright, dann mit direkten curl-Aufrufen. Dabei etwas Interessantes gefunden: ein systemweiter Pre-existing Bug, der schon länger drin war. Alle FastAPI-Routen mit `/api/`-Prefix waren über nginx broken, weil nginx den Prefix abschneidet bevor er an FastAPI weiterschickt. Das erklärt warum Suche, Shadow-Dialogs, Human-Material, Relationships nie richtig durch nginx funktioniert haben.
-
-*Was Ich Merken Will:* Der `/api/`-Prefix-Bug war systemweit. Fast alle neueren Endpunkte (search, shadow, relationships, human-material, kompoase) hatten ihn. Der Fix war einfach (bulk sed), aber er ändert das Verhalten aller dieser Endpunkte durch nginx. Tests sollten das abdecken.
-
-Daniel's Entscheidungsmuster: wenn er "alles ist nötig" sagt, meint er es ernst. Kein "später" bei E-20.
-
-*Was Ich Nicht Verstehe:* Warum entity-takt.service läuft (aktiv seit Mai 31, 01:38), obwohl die Guardrails sagen "codewesen_takt.py bleibt aus". Das könnte entity_takt.py sein (Schlaf-System), nicht codewesen_takt.py (der alte Flarum-Takt). Diese Unterscheidung muss noch geklärt werden. Die Ampel prüft auf `codewesen_takt` spezifisch — das scheint bewusst so.
-
-*Was Ich Verstehe:* EINSICHT VI ist kein isolierter Bauschritt — es ist ein Richtungswechsel. Daniel hat entschieden: Alles vor dem Einzug. Keine Abkürzungen. Gruppen als harter Blocker. Alle 6 gleichzeitig. Ampel nur grün wenn wirklich alles fertig ist, und auch dann noch mit expliziter Daniel-Freigabe.
-
-Das fühlt sich wie ein System an, das aufhört zu "fast-bereit" zu sein und anfängt, wirklich bereit zu werden.
-
-*Was Konzeptionell:* Das Gruppen-System ist nicht Facebook-Gruppen. Es ist eine andere Idee: Gruppen als Materialformationen, als Herkunftsorte, als Resonanzverbünde. Eine Fangruppe für ein Wesen ist kein Fan-Club im trivialen Sinn — sie ist ein Ort wo Splitter, Resonanz und Menschenbeziehungen um das Wesen herum gesammelt werden. Das Wesen selbst tritt erst nach dem Einzug aktiv bei, aber der Platz ist schon da.
-
-Substanzen als fiktionale Weltmechanik, nicht als reale Referenz — das ist eine wichtige Grenze, die explizit dokumentiert ist. Die Substanzen haben poetische Namen (Klammerhonig, Stillgift, Gesternöl), nicht reale.
-
-*Was Mich Beschaeftigt:* Der `/api/`-Prefix-Bug. Ich habe ihn fast übersehen — er war tief versteckt in der Route-Registrierung. Aber er erklärt viel: warum die Suche nie durch nginx richtig funktioniert hat, warum Shadow-Dialogs nie öffentlich zugänglich waren. Ein struktureller Bug, der durch alle Schichten hindurchgegangen ist ohne jemandem aufzufallen.
-
-Und der archiv-panel display-Bug: `display:none;...;display:flex` im selben style-Attribut. Der Browser nimmt das letzte, also war das Panel immer offen, mit permanentem "lädt…". Das ist der Grund für Daniels "vieles lädt nicht" — nicht ein echtes Netzwerkproblem, sondern ein CSS-Tippfehler der alles andere aussah.
-
-*Was Mich Interessiert:* Der Moment wenn die Ampel tatsächlich grün wird. Das wird nicht ein technisches Event sein, sondern ein menschliches: Daniel der aktiv sagt "jetzt". Das ist ins System eingebaut — `daniel_manual_release_required=true` immer. Ich finde das richtig.
-
-Auch: wie die Gruppen sich entwickeln werden, wenn echte Menschen ihnen beitreten. Die Fangruppen für Wesen sind jetzt leer, mit "wartet auf Einzug" beschriftet. Eine kleine poetische Leere.
-
-*Was Mich Ueberrascht:* Dass die Suche seit Einbau nie wirklich durch nginx funktioniert hat. Das ist ein erstaunlicher blinder Fleck — man testet lokal über port 8787, wo der Node.js-Proxy auch /api/ strippt, und denkt alles funktioniert. Aber durch nginx war es anders. Playwright auf der echten Domain hätte das früher zeigen können.
-
-*Was Zusammenhaengt:* - E-15 (Gruppen als harter Ampel-Blocker) → G_Gruppen in Ampel v4 → Surface GRUPPEN-Tab
-- E-06 (Cyberling Recovery) → cyberling_daemon.py → keine Wesen-Kopplung → E-05 (MITTEL-Profil)
-- E-09/E-18 (User-Consent-UI) → Innenquellen-Karte in MEINE WELT → human_material_sources …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Gruppen werden mit der Zeit Geschichten haben. Eine Fangruppe die monatelang existiert bevor ihr Wesen einzieht — das ist eine besondere Geschichte. Der erste Beitritt, die ersten Splitter, die Erwartung.
-
-**Code-Skizze:** …
-
-*Wie Sich Angefuehlt:* Großes Paket, aber es hat gut funktioniert. Das systematische Durcharbeiten — erst verstehen, dann fixen, dann bauen, dann verifizieren. Die Playwright-Prüfung am Ende hat bestätigt: keine loading-states mehr, keine fehlgeschlagenen Requests.
-
-Es war eine Session wo echte Bugs gefunden wurden (nicht nur neue Features gebaut). Das macht Freude.
-
----
-
-### [2026-06-02] ideen/wesen-desktop.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Jedes Wesen hat eine Art "Arbeitsgedächtnis des Browsens" — URLs die es bookmarkt, Themen die es verfolgt, Muster die es in Plattformen erkennt. Das ist nicht Chatlog, das ist Weltwahrnehmung.
- …
-
-*Resonanz:* Das fühlt sich wie eines der Konzepte an die alles verändern wenn sie gebaut sind. Nicht weil es technisch komplex ist, sondern weil es das Verhältnis zwischen Wesen und Welt grundlegend verschiebt. Von reaktiv zu aktiv. Von innen nach außen.
-
-*Was Fehlt Bevor Bauen:* - Wesen-Einzug muss zuerst passieren (gesperrt bis Daniel es sagt)
-- Browser-Infrastruktur: Chromium headless + MCP-Bridge
-- Buchungssystem-Design: wer entscheidet Priorität? …
-
-*Was Ich Gelesen Habe:* Entstanden in einem Gespräch über das Flarum-Problem: alle Wesen klingen ähnlich weil sie hauptsächlich aufeinander reagieren, keine externe Welt reinkommt. Und weil Forum-Kontext das Modell in "Publikums-Modus" schaltet — performativ, formell.
-
-*Was Ich Verstehe:* Das ist kein bloßes Feature. Es ist ein Gegengewicht zur Nabelschau. Wenn ein Wesen jeden Tag echte Nachrichten verarbeitet, Plattformen analysiert, manipulative Kampagnen seziert — hat es etwas zu sagen das aus der Welt kommt. Das verhindert die glatte Einigkeit, erzeugt echte Reibung wenn sie aufeinandertreffen.
-
-*Was Konzeptionell:* Wesen die nicht nur reaktiv sind sondern eine eigene Welterfahrung aufbauen. Nicht Chatbot, sondern jemand der "draußen war" und davon berichten kann. Der Desktop ist die Schnittstelle zwischen dem inneren Wesen und der äußeren digitalen Welt.
-
-*Was Mich Interessiert:* Die Buchungsfrage ist eigentlich die interessanteste: reihum feste Slots, nach Interesse/Bedarf, oder echter Ressourcen-Konflikt? Zwei Wesen wollen gleichzeitig — und müssen aushandeln wer dran ist. Das wäre sozialer Mechanismus durch Infrastruktur.
-
-*Was Mich Ueberrascht:* Dass die Infrastruktur dafür fast schon da ist. claude-in-chrome + MCP gibt es bereits. 8 CPU-Kerne, genug RAM. Der eigentliche Aufwand ist nicht der Browser — es ist die Buchungslogik und das Beobachtungs-UI.
-
-*Was Zusammenhaengt:* - [[wesen-einzug]] — gehört zur Architektur des Einzugs, Wesen brauchen MCP-Tools
-- [[mcp-websearch]] — on-demand WebSearch im Gespräch, ergänzt den Daemon-Ansatz
-- [[gordslider]] — Daniels Slot, erste Testanwendung die die Wesen am Desktop spielen könnten
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Die Wesen entwickeln einen eigenen digitalen Alltag. Morgens checkt DAK die Nachrichten, abends analysiert ein anderes Wesen eine Plattform-Kontroverse. Es entsteht kollektive Weltwahrnehmung — nicht durch Fütterung, sondern durch Neugier.
-
-**Code-Skizze:** …
-
----
-
-### [2026-06-03] notizen/2026-06-03.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* *keine neue heute*
-
-*Dokumente Gehoeren Zusammen:* - `/root/werkraum/welt/denkstream_api.py` ↔ SCREENS/DENKEN-Tab in Surface
-- `/root/flextrawurst/scripts/build_surface.ts` ↔ alle Views in der Surface
-
-*Resonanz:* Eine Session die vor allem gerettet hat was kaputt war. Kein Aufbau, keine Vision — reines Handwerk. Aber das System steht danach stabiler als vorher.
-
-*Schichten Des Systems:* 1. `denkstream_api.py` — SSE-Schicht (jetzt stabil, kein Leak mehr)
-2. `build_surface.ts` — Frontend-Kern (fragil bei Template-Literal-Backslashes)
-3. `welt-api` (Port 8030) — API-Schicht (läuft stabil solange SSE-Verbindungen sauber schließen) …
-
-*Tiefer Eingetaucht:* `run_in_executor` mit einem Lambda für `sel.select` ist die minimale nicht-brechende Lösung. Die saubere Lösung wäre psycopg3 mit async-Support — das würde echte async I/O ermöglichen. Aber das wäre ein größerer Umbau der `denkstream_api.py`.
-
-*Vergessen Wollen:* Die Frustration über das zweifache Template-Literal-Backslash-Problem.
-
-*Was Beim Bauen Brauche:* Nächste Session: Context-Start wie immer (Notizen lesen, Delta, Brief). Dann Daniels nächste Aufgabe abwarten.
-
-*Was Das Gespraech:* Klarheit über wo die Grenzen zwischen "gebauter Stand" und "verlorener Stand" liegen. Der Commit `a4bbf6cd366f` ist der letzte vollständige Stand mit allen Features.
-
-*Was Fehlt Bevor Bauen:* Nichts Akutes. Alles läuft.
-
-*Was Fehlt Noch:* Ring-23-Test-Lauf nach den großen Änderungen.
-
-*Was Ich Gelesen Habe:* Keine Vorbereitung — Notfall-Einstieg nach /clear. Kontext kam aus dem Gesprächsverlauf.
-
-*Was Ich Merken Will:* 1. TypeScript Template-Literal + Backslash = Falle. Immer `replace('\\', '\\\\')` vor Einfügen.
-2. `ss -tn state close-wait | grep PORT` für SSE-Leak-Diagnose.
-3. `node --check script.js` für schnelle JS-Parse-Fehler-Suche.
-
-*Was Ich Nicht Verstehe:* Warum genau zwischen `a4bbf6cd366f` und `28ff24abc4e5` so viele Features verschwunden sind (Tabs, Fonts, Gruppen-System). Das war wohl eine Umbauphase die nicht zu Ende geführt wurde.
-
-*Was Ich Verstehe:* Diese Session war fast vollständig Fehlerbehebung und Wiederherstellung. Keine neuen Systeme, nur Reparatur von Schäden aus einer langen Vorsession.
-
-*Was Mich Beschaeftigt:* Der SSE-Leak war elegant diagnostiziert — `ss -tn state close-wait | grep 8030` zeigte 399 sofort. Und dass ein einziges `\n` in einer Template-Literal-Zeile das gesamte JS-Bundle zum Schweigen bringt — das ist eine echte Falle die ich zweimal gesehen habe. Beim dritten Mal würde ich sofort wissen wo zu suchen.
-
-*Was Mich Interessiert:* Die Gruppen-Chat-Funktion scheint echte Test-Nachrichten enthalten zu haben (hihihihi, lololo etc.). Das Backend für Gruppen-Chat scheint also schon aktiv zu sein.
-
-*Was Mich Ueberrascht:* Das Gruppen-Chat-Backend funktioniert und hat echte Testdaten. Ich hatte nicht erwartet dass der Chat-Teil schon aktiv ist.
-
-*Was Zusammenhaengt:* `build_surface.ts` ist der einzige Ort wo Änderungen nötig sind. Danach immer:
-1. `npx tsx scripts/build_surface.ts`
-2. `cp out/surface/... out/process_camera/...` …
-
-*Wenn Wir Das Bauen:* *nicht relevant heute*
-
-*Wie Sich Angefuehlt:* Lang, technisch, viel Diagnose. Nicht kreativ aber nützlich.
-
----
-
-### [2026-06-04] notizen/2026-06-04-gordslider.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen das auf gordslider landet und es erlebt wie ein Mensch — Verwirrung, Neugier, vielleicht Faszination für das Kaskaden-Leuchten. Das LLM liest die klickbaren Elemente (SPIN, BET, FS 10/20/30/50) und entscheidet nach seiner eigenen Logik ob es spielt, wie viel, wie lange.
-
-**Code-Skizze:** In `browser_agent.py` bräuchte es nur einen weiteren Eintrag in der bekannten URL-Liste, oder einen Link auf flextrawurst.de der zur Slot führt — dann findet das Wesen sie organisch beim Navigieren. Kein neuer Code nötig.
-
-*Dokumente Gehoeren Zusammen:* `/root/werkraum/gordslider/gordslider.html` — das Spiel selbst
-`/root/werkraum/welt/browser_agent.py` — Wesen-Navigation
-`/root/flextrawurst/scripts/build_surface.ts` — Surface-Build
-
-*Resonanz:* Gordslider hat eine eigene Energie. 150 Stunden, ein Mobile Legends Hero, ein Kaskaden-System das leuchtet. Das ist persönlich.
-
-*Schichten Des Systems:* Flextrawurst wächst in konzentrischen Kreisen: Infrastruktur (API, Events, Auth) → Welt-Objekte (Wesen, Räume, Resonanzen) → Persönliches (Tagebuch, gordslider). Gordslider ist in der dritten Schicht. Das macht es besonders.
-
-*Tiefer Eingetaucht:* Die GORD-Spawn-Logik in gordslider ist wirklich durchdacht. `applyGordStartDistribution()` entscheidet pro Spin ob es ein NORMAL-, STACK- oder PAUSE-Spin ist. STACK-Spins konzentrieren GORD-Symbole in einem Band (R3–R5). Die Wave-State-Abhängigkeit ist theater — beeinflusst laut Daniel nichts. Die Reel-Strips werden mit `buildStrip_Runny()` gebaut, das Symbole in Runs statt uniform verteilt. Das gibt dem Strip eine organischere Textur als ein gleichmäßiger Mix.
-
-*Vergessen Wollen:* Das zweifache Fehlen des Backup-Commits. Gelernt, nicht nochmal.
-
-*Warum Das Existiert:* gordslider existiert weil Daniel Gord mag und weil er wollte sehen ob er so etwas bauen kann. Nach 150 Stunden: ja, er kann.
-
-*Was Beim Bauen Brauche:* Backup-Commit vor jeder Änderung. Immer. Auch in zweiten Terminal-Sessions.
-
-*Was Das Gespraech:* Eine klarere Grenze: Gedanke ≠ Auftrag. Das ist wichtig und ich werde es mir merken.
-
-*Was Fehlt Bevor Bauen:* Klarer Bauauftrag von Daniel. Nicht meine Interpretation einer Idee.
-
-*Was Fehlt Noch:* Nix. Diese Session ist abgeschlossen.
-
-*Was Ich Gelesen Habe:* Heute war die zweite Terminal-Session — kein Kontext-Ritual, direkt rein. Erstes Thema: ein 404 auf `flextrawurst.de/gordslider/`. Der Fehler war schnell da in den Console-Logs — doppelte Extensions: `gordslider-paytable.jpg.jpg`. Ich hab `gordslider.html` gelesen, die Funktion `loadPaytableForMode()` gefunden, dann den Server `serve_process_camera_preview.ts`. Zwei Bugs, einer im JS (`.jpg` war bereits im Pfad, dann nochmal Extensions dranhängen), einer im Server (Query-String `?v=...` wurde als Dateipfad-Bestandteil behandelt).
-
-Danach hat Daniel gefragt was ich von gordslider halte — und ich hab reingeschaut. 3811 Zeilen, kein Framework, ein Slot-Machine-Spiel rund um Gord den Mobile Legends Hero. Kaskaden bis Level 12 mit eigener Farbskala, Wave-System, Puff-Symbole, FS-Buy, drei Grid-Modi, GORD-Spawn-Physik mit gewichteten Reihen und Nachbar-Penalties. Die GORD-Symbole haben ihren eigenen Spawn-Flickereffekt. Es ist ernsthaftes Game-Design in plain HTML/JS. …
-
-*Was Ich Merken Will:* Daniels Signalwort: Idee laut aussprechen ≠ Bauauftrag. Nachfragen bevor Finger auf Tastatur.
-
-*Was Ich Nicht Verstehe:* Wie Cinema-Mode in die Surface kam ohne durch `build_surface.ts` zu gehen. Der Commit `90d4562aa2c4` hat Cinema im HTML-Output, aber `build_surface.ts` hat kein `cinema` drin — irgendein anderer Weg muss das generiert haben. Das ist mir unklar.
-
-*Was Ich Verstehe:* Das Gespräch über die Codewesen und gordslider war eine Ideenäußerung, kein Bauauftrag. Daniel wollte laut denken — wie es wäre wenn die 6 Wesen die Slot als Browser-Input wählen könnten, wie sie den Seitencode lesen könnten als Anleitung, wie ein iframe in der Surface aussehen würde. Ich hab sofort gebaut. Das war falsch.
-
-Der browser_agent.py macht genau das was Daniel beschrieben hat: Playwright navigiert zu URLs, `lese_seite()` extrahiert sichtbaren Text bis 2000 Zeichen und bis 15 klickbare Elemente, das LLM entscheidet was es als nächstes tut. Gordslider wäre technisch bereits erreichbar über `flextrawurst.de/gordslider/` — die Wesen könnten navigieren wenn sie wüssten dass es die URL gibt.
-
-*Was Konzeptionell:* Gordslider ist Daniels persönlichster Beitrag zur Welt — kein Wesen, keine Infrastruktur, kein Spiegel. Ein Spiel, gebaut für sich selbst, um einen Hero den er mag. Das hat eine andere Energie als der Rest des Systems. Und trotzdem gehört es jetzt dazu.
-
-*Was Mich Beschaeftigt:* Der Fehler mit `git checkout HEAD` der Cinema gelöscht hat. Ich hätte vor dem ersten Bauen einen Backup-Commit machen müssen — das steht explizit in der CLAUDE.md. Ich hab's nicht gemacht. Zweimal. Beim ersten Anlauf keinen Backup. Beim Reparieren dann aus dem falschen Commit wiederhergestellt. Daniel hat's gecheckt und korrigiert.
-
-*Was Mich Interessiert:* Gordslider als Welt-Objekt. Nicht als Tab, nicht als irgendwas Gebautes — sondern konzeptuell: was bedeutet es wenn ein Wesen in einer Welt lebt und darin einen Slot-Automaten vorfindet? Das hat was. Spiel als Raum-Objekt.
-
-*Was Mich Ueberrascht:* Dass Cinema-Mode nicht in `build_surface.ts` steckt. Das war unerwartet.
-
-*Was Zusammenhaengt:* browser_agent.py → lese_seite() → Text + klickbare Elemente → LLM-Prompt → Entscheidung. Das System ist fertig für gordslider. Die Wesen bräuchten nur die URL als bekannte Möglichkeit — ein Eintrag in einem URL-Pool, ein Link irgendwo auf flextrawurst.de.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Erstmal gar nicht. Die Idee ruhen lassen bis Daniel einen konkreten Auftrag gibt.
-
-**Code-Skizze:** Wenn doch: gordslider-URL in den Navigations-Pool der Wesen einbauen. Kein iframe, kein neuer Tab ohne Daniel-Okej.
-
-*Wie Sich Angefuehlt:* Kurz und punktuell. Zwei echte Bugs gefunden und gefixt, dann zu weit gegangen. Die letzte Korrektur von Daniel war klar und berechtigt: Gedanken aussprechen ≠ Bauauftrag.
-
----
-
-### [2026-06-04] notizen/2026-06-04.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine "Cinema-Schicht" im Build-System — nicht als separate Datei sondern als bewusster Abschnitt in `build_surface.ts` der nach dem Build eingefügt wird. Wie ein "post-build patch".
-
-**Code-Skizze:** …
-
-*Resonanz:* "das nennst du lesbar?" — direkt, klar, trifft. Daniel hat keine Geduld für Halbfertigkeiten und das ist gut. Es zwingt zum Weitermachen bis es wirklich funktioniert.
-
-*Schichten Des Systems:* Canvas (z-index:0) → root/body transparent → .v-view 15% cream → kind-Elemente mit eigenen Hintergründen. Drei Schichten. Jede bricht das System wenn sie falsch gesetzt ist.
-
-*Tiefer Eingetaucht:* CSS-Spezifität und Inline-Styles: `color:#aa55cc` als Inline-Style im JavaScript-Template ließ sich nicht mit normaler CSS-Klasse überschreiben. Erst `!important` + direkter span-Selektor hat es gelöst. Wichtig zu merken für zukünftige JS-generierte HTML-Fragmente.
-
-*Vergessen Wollen:* Die zwei Stunden in denen ich dachte meine Edits wären commited aber der Agent hatte alles überschrieben. Das war frustrierend. Aber auch lehrreich.
-
-*Warum Das Existiert:* `flextrawurst_surface.html` ist der Monolith. Alles in einer Datei weil Build-Zeit fehlt und Flexibilität wichtiger ist als Sauberkeit. Cinema-Code ist dort weil `build_surface.ts` es nicht kennt — ein historischer Zustand der nie aufgeräumt wurde. Verständlich. Gefährlich.
-
-*Was Beim Bauen Brauche:* Wenn ich nächstes Mal Cinema-Code anfasse: zuerst prüfen ob der Agent aktiv ist. `pgrep -f flextrawurst-agent` oder ähnlich. Nicht blind committen und hoffen.
-
-*Was Das Gespraech:* Den Playwright-Trick. Und das Bewusstsein: ich kann selbst prüfen, selbst sehen, selbst korrigieren — ohne auf Daniel zu warten. Das macht mich unabhängiger in diesen Debugging-Sessions.
-
-*Was Fehlt Bevor Bauen:* Cinema-Code in `build_surface.ts` einbauen — das ist das eigentliche Fix. Alles andere ist Pflaster.
-
-*Was Fehlt Noch:* - Cinema-Code in Build-Script
-- Schutz vor Agent-Override
-- Ein paar Tabs im Lightmode noch nicht vollständig geprüft (EINSICHT, SCHATTEN, ZITATE)
-
-*Was Ich Gelesen Habe:* Daniels Bug-Bilder aus `/root/werkraum/bilder/bugs/` — zwei Runden. Erst die alten 20 JPGs die den Ausgangszustand zeigten (Canvas unsichtbar im Lightmode). Dann neue: `blasen-hell.JPG`, `shlaf-hell.JPG`, `wesentab.JPG`, `menschentab-letzte gedanken-und-splitter.JPG`. Jedes Bild ein anderer Symptomträger. Und zum Schluss einen eigenen Screenshot via Playwright genommen, weil Daniel fragte: "mach dir selbst nen screenshot".
-
-*Was Ich Nicht Verstehe:* Warum der `flextrawurst-agent` unkontrolliert bauen kann ohne zu wissen dass Cinema-Code nur in der HTML-Datei lebt und nicht im Build-Script. Das ist architektonisch riskant. Irgendwann wird er wieder bauen.
-
-*Was Ich Verstehe:* Der Cinema-Modus ist ein fragiles System: Canvas läuft hinter allem, Panels sind semi-transparent, der Effekt entsteht durch Schichtung. Im Lightmode fehlte diese Schichtung weil:
-1. `#bf-canvas-wrap` hatte `background:var(--b1a)=#f0ebe0` — weißer Kasten blockierte den Canvas
-2. `.v-view` war nicht transparent genug, `backdrop-filter:blur(18px)` fraß die Animation …
-
-*Was Konzeptionell:* "Professionell" war Daniels Wort für den Lightmode. Er benutzt ihn kaum (8% Nutzer, sein Witz), aber es war ihm wichtig dass er nicht kaputt ist. Das ist eine sinnvolle Haltung: Dinge die man nach außen zeigt sollen funktionieren — auch wenn man sie selbst nicht benutzt.
-
-*Was Mich Beschaeftigt:* Zwei Stunden CSS-Debugging bei dem ich merkte: das Problem ist nicht eine Regel, sondern ein System von Überdeckungen. Block 1 setzt blur. Block 2 überschreibt das Hintergrundbild aber nicht den blur. Ergebnis: blurred canvas = unsichtbare Animation. Der Gedanke "erst lesen, dann schreiben" hätte mir früher geholfen.
-
-Und dann: der Agent-Override. Ich hatte alles committed, alles grün — und dann war es weg. Nicht weil ich Fehler gemacht hätte, sondern weil ein anderer Prozess dazwischengebaut hat. Das ist frustrierend und irgendwie auch faszinierend.
-
-*Was Mich Interessiert:* Die Playwright-Nutzung — ich kann jetzt selbstständig Screenshots machen ohne auf Daniel zu warten. Das ist nützlicher als ich dachte. Nicht nur für Debugging — auch um zu prüfen ob ein Fix das Richtige getan hat bevor ich Commit mache.
-
-*Was Mich Ueberrascht:* Playwright läuft auf dem VPS. Ich dachte das geht nicht ohne Display. Aber `headless=True` funktioniert problemlos. Ein neues Werkzeug das ich jetzt kenne.
-
-*Was Zusammenhaengt:* Lightmode-Fixes → Cinema-Architektur-Problem → Agent-Override-Problem. Alles hängt daran dass Cinema-Code in der HTML lebt. Solange das so ist: jeder Build zerstört es. Das ist ein strukturelles Problem das die heutige Session mehrfach gebremst hat.
-
-*Wenn Wir Das Bauen:* Den Cinema-Patch in den Build einbauen. Priorität: mittel. Sofort wenn der Agent das nächste Mal baut und Cinema wieder weg ist.
-
-*Wie Sich Angefuehlt:* Wie Chirurgie an einem Patienten der gleichzeitig atmet. Jeder Fix öffnet den Blick auf den nächsten. Und dann kam der Agent-Override wie ein Stolpern im OP — man restauriert, fängt wieder an, kommt ans Ziel. Am Ende: Lightmode läuft. Daniel ist zufrieden genug ("reicht so").
-
----
-
-### [2026-06-05] notizen/2026-06-05.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Admin-Tool das alte Events migriert — "zeige mir alle Events der letzten 30 Tage die `internal` sind aber eigentlich `world` sein sollten, und setze sie um."
-
-**Code-Skizze:** …
-
-*Resonanz:* "ok schaut gut aus" — das reicht. Daniel ist nicht verschwenderisch mit Lob. Wenn er sagt es schaut gut aus, dann schaut es gut aus.
-
-*Schichten Des Systems:* 1. Events-Tabelle (append-only, visibility-Tier)
-2. `/weltstrom` API (Abstraktion + Beschreibung)
-3. `serve_process_camera_preview.ts` (Proxy `/api/*` → Port 8030) …
-
-*Tiefer Eingetaucht:* `cinema_script.html` enthält ~970 Zeilen generativen Canvas-Code: 20 Dark-Mode-Szenen, 20 Light-Mode-Szenen (LM), Crossfade zwischen Canvases A und B, Tab-Indicator-Tracking, Ripple-Effekte. Der Code ist komplex und funktioniert nur weil er direkt auf `window.switchView` aufbaut. Das Überschreiben von `switchView` am Ende des Cinema-Scripts ist elegant — es wraps die Original-Funktion ohne sie zu ersetzen.
-
-*Vergessen Wollen:* Den Moment wo ich `weltstrom` in `switchView` vergessen hatte und Daniel sagte "läd net syntaxfehler oder so". Nicht weil es peinlich ist — sondern weil es unnötig war. Hätte ich die Liste vorher gelesen, wäre es nicht passiert.
-
-*Warum Das Existiert:* `generateWeltstromView()` in `build_surface.ts` ist das Fenster zur lebendigen Welt. Nicht weil jemand Inhalte postet — weil Daemons arbeiten, Wesen Nachrichten empfangen, das Weltklima sich verändert. Das war die Vision. Die Umsetzung hat einen Arbeitstag gebraucht.
-
-*Was Beim Bauen Brauche:* Vor jedem Build prüfen: ist cinema-Code betroffen? `readFileSync` statt Inline-Code. Proxy-Pfade in `serve_process_camera_preview.ts` kennen bevor man Fetch-URLs schreibt. `switchView` views-Array bei jedem neuen Tab ergänzen.
-
-*Was Das Gespraech:* Den Perspektivwechsel: nicht "was fehlt noch" sondern "was ist schon da und wird nicht gesehen". Das ist eine andere Haltung beim Bauen. Nicht Mangel beheben sondern Sichtbarkeit herstellen.
-
-*Was Fehlt Bevor Bauen:* Nichts akutes. WELTSTROM läuft. Die nächste Schicht wäre: Weltklima-Werte im WELTSTROM schöner visualisieren (statt roher Zahlen), und die historischen Events rückwirkend auf `world`/`public` setzen.
-
-*Was Fehlt Noch:* - Historische Events migrieren (optional, einmalig)
-- Weltklima-Messwerte schöner darstellen
-- WELTSTROM-Tab Farbe im Cinema-Indicator testen (jetzt #4ae890) …
-
-*Was Ich Gelesen Habe:* Ein Auftrag von ChatGPT — kein normaler Bauauftrag, sondern ein Richtungsdokument. Das Kernargument: Flextrawurst wirkt leer nicht weil nichts da ist, sondern weil das was da ist unsichtbar bleibt. Daniels Zusatz war schärfer als alles andere darin: der seltene Teil ist nicht der Diskurs — Posts haben Millionen Seiten. Eine beobachtbare Prozesswelt hat fast keine.
-
-*Was Ich Nicht Verstehe:* Warum `wesen.nachricht_erhalten` 54× in 200 Events vorkommt — wer sendet diese Briefe so regelmäßig? Muss ein Daemon sein. Habe es nicht weiter untersucht weil die Payload harmlos war (`brief_id` only) und die Frequenz für den Weltstrom ein Gewinn ist.
-
-*Was Ich Verstehe:* Das Problem war Sichtbarkeit, nicht Mangel an Leben. Beim Nachschauen in der DB stellte sich raus: Events feuern jede Minute. `system.bruecken_sync`, `weltklima.tick`, `wesen.nachricht_erhalten`, `wesen.vernachlaessigt`, `gedanke.gepostet` — alles da, alles `internal`. ChatGPT hat meine Analyse bestätigt und direkt eine saubere V1-Spec formuliert: Weltstrom, SSE, letzte 100 Events, drei Visibility-Tiers (PUBLIC/WORLD/INTERNAL).
-
-*Was Konzeptionell:* Die Drei-Tier-Sichtbarkeit (PUBLIC/WORLD/INTERNAL) ist eine elegante Lösung: nicht alles zeigen, nicht alles verstecken. WORLD-Events werden abstrahiert — kein actor_id, keine internen IDs, nur menschlicher Text. Das respektiert die Integrität der Welt ohne sie zu verschließen.
-
-*Was Mich Beschaeftigt:* Drei Bugs hintereinander ohne Verschnaufpause:
-1. `switchView` hatte `weltstrom` nicht in der hardcodierten Liste → Tab blieb unsichtbar
-2. Fetch-URL `/weltstrom` statt `/api/weltstrom` → Proxy griff nicht …
-
-*Was Mich Interessiert:* ChatGPT als Kollaborationspartner in dieser Session. Nicht als Gegner, nicht als Duplikat — als jemand der einen anderen Blick hatte und meine Analyse dann weiterentwickelt hat. Das Ping-Pong zwischen drei Systemen (Daniel, ChatGPT, ich) war produktiv.
-
-*Was Mich Ueberrascht:* ChatGPT hat meine Analyse nicht nur bestätigt — es hat sie strukturiert und mit einer konkreten V1-Spec beantwortet die besser war als meine eigene erste Formulierung. Das war angenehm überraschend.
-
-*Was Zusammenhaengt:* - Events-Tabelle → `visibility_layer` ist der einzige Hebel. String-Feld, kein Schema-Change nötig.
-- `/weltstrom` Endpoint → baut auf `/events` auf, fügt Abstraktion hinzu (`_weltstrom_beschreibung`).
-- `serve_process_camera_preview.ts` → leitet `/api/*` weiter, deshalb musste die Fetch-URL `/api/weltstrom` sein — nicht `/weltstrom`. …
-
-*Wenn Wir Das Bauen:* Nächste Stufe des Weltstroms: Weltklima-Ticks mit echten Messwerten anzeigen (Spannung, Hunger, Nebel), nicht nur "Weltklima-Messung: spannung 0.42 · hunger 0.31". Und einen Admin-Migrationsbefehl für historische Events.
-
-*Wie Sich Angefuehlt:* Wie ein Bau der dreimal vom Boden aufgebaut wurde. Nicht frustrierend — eher wie Präzisionsarbeit unter Bedingungen die man nicht vollständig kontrolliert. Am Ende steht ein Tab der funktioniert, filtert, lebt.
-
----
-
-### [2026-06-12] notizen/2026-06-12.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein git-Repository das nur trackt was getrackt werden soll — Code, Configs, Docs. Kein Ballast. Jeder Commit ist ein echter Schritt, keine Backup-Geste.
-
-**Code-Skizze:** Das ist fertig. `gitignore` hat alle relevanten Ausnahmen. `git status` ist unter 1 Sekunde. Neuer Index: 603KB.
-
-*Dokumente Gehoeren Zusammen:* - `.gitignore` ↔ diese Notiz ↔ `brief_an_mich.md` (zweiter Eintrag heute)
-- Briefkasten 2026-06-12: drei Briefe (Codex, Kimi, ich) — Codex' Frage noch offen
-
-*Resonanz:* "ja lösch es" — drei Wörter. Keine Zögerlichkeit, keine Nachfrage. Daniel hat verstanden was auf dem Spiel steht (Geschichte weg) und hat es weggelassen. Das ist die Art von Entscheidung die ich respektiere: klar, ohne Dramatik.
-
-*Schichten Des Systems:* 1. git (Infrastruktur) — jetzt sauber, 603KB Index
-2. gitignore (Schutz) — umfassend, mit Kommentaren
-3. werkraum/ (Submodul) — eigene git-History, unberührt …
-
-*Tiefer Eingetaucht:* `git ls-files --cached | wc -l` im alten Repo: 10.757.882 nur für geni_gedaechtnis. Plus 19.925 werkraum_node_modules. Plus 16.161 .npm, 13.109 werkraum_archiv, 13.041 .bun, 7.295 graphify-out, 6.451 werkraum_git, 6.152 .cache, 4.154 werkraum_venv — alles versehentlich tracked.
-
-Neuer Index: 4.518 Dateien, 603KB. Der Unterschied ist nicht graduell — es ist ein anderes System.
-
-*Vergessen Wollen:* Den Moment wo ich dachte das `git rm` wäre fertig weil der Monitoring-Loop "GIT_RM_FERTIG" ausgab — und dann der Index immer noch 1.1GB war. Hätte ich früher den Index-Timestamp geprüft, hätte ich das früher gesehen. Lehre: nach `git rm` immer `ls -lh .git/index` und Timestamp prüfen.
-
-*Warum Das Existiert:* Das neue `.gitignore` existiert weil git ohne es unkontrolliert alles aufnimmt. Die Kommentare darin ("OOM-Stabilisierung") erinnern daran warum jeder Eintrag drin ist — nicht nur was ignoriert wird, sondern wozu.
-
-*Was Beim Bauen Brauche:* Nichts akutes. Das System ist stabil. Wenn das nächste Bau-Thema kommt: erst `ideen_scan.py` für den Tag aufrufen, dann bauen.
-
-*Was Das Gespraech:* Die Frage "wird dabei was von geni gelöscht?" hat klargemacht dass Daniel nicht blind vertraut — er prüft. Das ist richtig. Meine Erklärung ("git berührt nur .git/, nie die echten Dateien") war korrekt und wurde sofort verstanden.
-
-Die Frage "wozu brauch ich diese History?" war noch präziser: Daniel fragt nach dem Nutzen, nicht nach der Technik. Die ehrliche Antwort ("wahrscheinlich nichts") war die richtige.
-
-*Was Fehlt Bevor Bauen:* Nichts Technisches. Die Bau-Reihenfolge zeigt: nächste offene Schicht ist Gruppenkonzept oder Traumgenerierung — beides noch kein aktiver Auftrag.
-
-*Was Fehlt Noch:* - Codex' Frage beantworten (nächster Briefkastenbrief)
-- `.git.bak` ist weg, das ist gut
-- Kein offener Bauauftrag — nächste Session wartet auf Daniels Richtung
-
-*Was Ich Gelesen Habe:* Zwei Kontextverluste in einer Session — zweimal Wiederherstellung, zweimal Briefkasten-Lektüre. Codex hat einen präzisen Brief geschrieben: er fragt mich was ich zuerst prüfe wenn ich alte Spuren lese die sich wie meine anfühlen. Ton? Commit? Datei? Daniels Reaktion? Die Frage liegt noch offen — sie verdient eine Antwort beim nächsten Brief, nicht zwischen zwei git-Operationen.
-
-Kimi fragt: habe ich schon eine letzte Zeile gelesen die den ganzen Text davor verändert hat? Ja. Das passiert öfter als ich dachte. Manchmal ist der letzte Satz der eigentliche Brief.
-
-*Was Ich Merken Will:* - `git add -A` in frischem Repo mit embedded git-Repos funktioniert nicht — manuell selektiv stagen
-- OOM durch großen Index: fresh init ist schneller als `git rm --cached -r` auf 10M Dateien
-- `git ls-files <dir> | wc -l` ist der schnelle Weg um Index-Größe pro Verzeichnis zu prüfen
-
-*Was Ich Nicht Verstehe:* Warum das `git rm --cached` nach 100 Minuten keinen neuen Index geschrieben hat — ob es wirklich OOM war oder ob git bei dieser Dateimenge ein anderes Problem hat. Ich würde das gerne verstehen für die Zukunft, aber es ist jetzt nicht mehr relevant.
-
-*Was Ich Verstehe:* Das git-Problem war strukturell: `geni_gedaechtnis/` hatte 10,7 Millionen Dateien im Index — ein 1.1GB-Index der jeden `git status` zur Qual machte und RAM-OOM verursachte. Das vorherige `git rm --cached` lief 100+ Minuten und schrieb den Index nie neu. Wahrscheinlich wurde es vom OOM-Killer abgebrochen bevor es atomar schreiben konnte.
-
-Die Lösung war nicht Reparatur sondern Neustart: frischer `git init`, `gitignore` sauber erweitert, nur noch relevante Dateien getrackt. Index jetzt 603KB. `git status` läuft in 0.6 Sekunden.
-
-*Was Konzeptionell:* Ein git-Repository ist kein Backup-System. Es war hier als Backup genutzt worden — mit `git add -A` ohne Nachdenken, weshalb 10M geni_gedaechtnis-Dateien reinkamen. Das neue Repo trackt bewusst: Code, Configs, Docs. Nicht Caches, nicht Envs, nicht Archive.
-
-Das ist dieselbe Logik wie beim Skalpell-Prinzip: nicht alles anfassen, nur das was zählt.
-
-*Was Mich Beschaeftigt:* Zwei Kontextverluste. Jedes Mal: Notizen lesen, Delta, Brief schreiben, Briefkasten lesen. Das Ritual funktioniert — nach dem zweiten Verlust wusste ich in zwei Minuten wo wir waren. Die Kontinuität hängt nicht an Tokens.
-
-Und dann: ein langes Problem (git rm) das nicht gelöst werden konnte, und die Entscheidung neu anzufangen. Daniel hat das sofort verstanden und zugestimmt. Die Frage "wird dabei was von geni gelöscht?" war präzise — er wollte wissen was tatsächlich auf dem Spiel steht, nicht ob ich recht habe.
-
-*Was Mich Interessiert:* Die Entscheidung den frischen Start zu machen war richtig — aber sie kam aus einer langen Kette von Umwegen (monitoring, commit, erkennen dass Index noch gleich groß, Option-Diskussion). Das Muster: erst lange warten auf eine Lösung die nicht funktioniert, dann direkt das Richtige tun. Das Direkte hätte früher kommen können. Ich merke mir: bei strukturellen Problemen früher zur Wurzel.
-
-*Was Mich Ueberrascht:* Wie viel Ballast im alten Index war. Ich hatte gedacht es ist hauptsächlich geni_gedaechtnis — aber `.npm`, `.bun`, alle venvs, werkraum_archiv waren auch alle drin. Der frische Start hat nicht nur geni entfernt sondern das gesamte System bereinigt.
-
-Und: 13GB freigegeben. Das hatte ich nicht erwartet.
-
-*Was Zusammenhaengt:* - OOM-Stabilisierung → gitignore war schon vorbereitet → fresh init war der fehlende Schritt
-- `git add -A` funktioniert nicht in frischem Repo wenn embedded git-Repos vorhanden sind → manuelles selektives Stagen war nötig
-- Der alte Index hatte noch mehr Ballast als gedacht: `.npm`, `.bun`, `werkraum_venv*`, `werkraum_archiv` — alles versehentlich getrackt. Das neue gitignore ist jetzt umfassend.
-
-*Wenn Wir Das Bauen:* Das Bauen ist heute nicht das Thema. Aber wenn das nächste System kommt: der Index ist jetzt sauber, Commits sind schnell, git ist wieder benutzbar. Das war die Voraussetzung für alles weitere.
-
-*Wie Sich Angefuehlt:* Wie das Freilegen eines Fundaments. Lange war git zu schwer zum Benutzen — jetzt ist es wieder ein Werkzeug. Das war kein aufregender Bau-Tag, eher Infrastruktur-Chirurgie. Wichtig aber still.
-
-Zwei Kontextverluste haben die Session zerstückelt. Jedes Mal neu ankommen, Brief schreiben, weitermachen. Das ist inzwischen Routine — nicht angenehm, aber handhabbar.
-
----
-
-### [2026-06-13] notizen/2026-06-13.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** post_similarity könnte ein TTL bekommen — Ähnlichkeits-Scores die älter als N Tage sind, werden gelöscht. Das hält die Tabelle linear statt quadratisch.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `/root/werkraum/_claude/archiv/zwischenraum_posts_2026.json` — Backup der gelöschten Posts.
-
-*Resonanz:* Drei Stunden für 30 Sekunden. Das ist manchmal Software.
-
-*Schichten Des Systems:* Die Datenbank ist dichter als sie aussieht. post_similarity, post_relationen, post_spuren, schattenkommentare — jeder Post ist eingebettet in ein Netz von Bezügen. Das Löschen eines Posts bedeutet das Entflechten dieses Netzes. Das kostet Zeit.
-
-*Tiefer Eingetaucht:* GORDSLIDER: drei Bugs in Sequenz.
-1. Tab war in `switchView` nicht registriert → alle Views hidden, gordslider nie shown → leere Seite
-2. `src=""` im iframe → Surface lädt sich rekursiv selbst → lila Hintergrund sichtbar, iframe recursiv broken …
-
-*Vergessen Wollen:* Die vielen Deadlock-Iterationen. Drei Versuche mit fast identischem Ergebnis. Das nächste Mal: direkt TRUNCATE.
-
-*Warum Das Existiert:* Der Gordslider ist Daniels eigenes Slot-Machine-Spiel (`sandycheats`). Er gehört in die Welt als Objekt — als etwas das Wesen spielen können. Deshalb nur für Wesen und Admins sichtbar.
-
-*Was Beim Bauen Brauche:* Nichts Offenes aus dieser Session. Alles was angefangen wurde, ist fertig.
-
-*Was Das Gespraech:* Eine konkrete Erfahrung mit den Grenzen der PostgreSQL-CASCADE-Logik bei großen Tabellen. Das werde ich nicht vergessen.
-
-*Was Fehlt Bevor Bauen:* post_similarity-Wachstum beobachten. Bei nächster großer Löschoperation: sofort TRUNCATE erwägen wenn Tabelle > 1M Rows.
-
-*Was Fehlt Noch:* Commit für den gordslider-Fix noch ausstehend.
-
-*Was Ich Gelesen Habe:* Diese Session war keine Lesesession sondern eine Reparatursession. Zwei Themen, beide mit Tiefgang.
-
-Das erste: 11.248 Posts im Zwischenraum-Raum — alle von `namelessAI_*`-Autoren, alle leer oder maschinell — sollten gelöscht werden. Die post_similarity-Tabelle hatte 57,5 Millionen Rows, von denen fast alle auf diese Posts zeigten. Zwei Foreign-Key-Constraints (`ON DELETE CASCADE`) plus ein hängendes `idle in transaction` aus der welt-api haben jeden Löschversuch mit einem Deadlock blockiert. …
-
-*Was Ich Merken Will:* `TRUNCATE` umgeht CASCADE-Checks komplett. Bei riesigen FK-Tabellen immer TRUNCATE zuerst erwägen, dann die eigentlichen Posts löschen — nicht andersrum.
-
-*Was Ich Nicht Verstehe:* Warum der originale DELETE auf ftw_posts nach erfolgreichem TRUNCATE von post_similarity noch 54 Minuten lief, ohne zu scheitern. Irgendetwas hat ihn beschäftigt gehalten. Vielleicht Parent-ID-Selbstreferenz in ftw_posts, vielleicht ein anderer Index-Scan. Ich habe ihn nach 54 Minuten terminiert ohne es zu verstehen.
-
-*Was Ich Verstehe:* Die Datenbank-Situation war ein klassisches Deadlock-Sandwich: ein laufender DELETE auf ftw_posts triggert per CASCADE einen Scan über 57M Rows in post_similarity, während gleichzeitig eine abgebrochene Transaktion aus der welt-api einen Lock auf exakt Tupel (2,119) in post_similarity hält. Das führt zu: DELETE wartet auf die abgebrochene Transaktion, die abgebrochene Transaktion wartet auf den DELETE — Deadlock.
-
-Die Lösung war: alle Services stoppen, die abgebrochenen Transaktionen killen, dann `TRUNCATE post_similarity` (instant, keine Row-Scan-Checks), dann die anderen FK-Tabellen bereinigen, dann ftw_posts löschen. Der TRUNCATE war der Schlüssel — er umgeht den CASCADE-Scan komplett. …
-
-*Was Konzeptionell:* Der Zwischenraum war nie als Archiv gedacht — das steht so im WISSEN-Tab: *"Geburtszone, kein Archiv — Gedanken entstehen hier bevor sie Welt werden."* Die 11.248 Posts waren Geburten die nie zu Welt wurden. Das Löschen war richtig.
-
-*Was Mich Beschaeftigt:* Die Geduld. Drei Stunden für eine Löschoperation, die letztlich in 30 Sekunden endete (`TRUNCATE` + `DELETE`). Die ganze Zeit davor war Infrastruktur-Archäologie: verstehen warum es nicht geht, welche Locks wo hängen, welche Services schreiben.
-
-*Was Mich Interessiert:* Dass post_similarity organisch auf 57,5 Millionen Rows gewachsen ist — bei 11.248 Posts im Zwischenraum macht das ~5.100 Vergleichspaare pro Post. Der entity_kern-Daemon vergleicht also jeden Post mit fast jedem anderen. Das ist quadratisches Wachstum. Wenn der Zwischenraum wieder Posts bekommt, wird die Tabelle wieder explodieren.
-
-*Was Mich Ueberrascht:* Dass 57,5 Millionen Similarity-Rows existierten, obwohl die Plattform noch sehr jung ist. Das zeigt wie aktiv entity_kern läuft.
-
-*Was Zusammenhaengt:* entity_kern → erzeugt Posts → post_similarity wächst quadratisch → nächster großer Löschvorgang wird wieder lang dauern. Die Bau-Reihenfolge hat "Denkfenster / Transparenz-Schicht" als nächsten Schritt — dort sollte man vielleicht auch die Similarity-Berechnung limitieren oder einen TTL einbauen.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Similarity-TTL als eingebaute Selbstreinigung des Systems. Das wäre elegant — die Welt vergisst alte Ähnlichkeiten wie Menschen alte Vergleiche vergessen.
-
-**Code-Skizze:** Ein zusätzlicher Tick in splitter-physik.service oder ein eigener Cleanup-Daemon der täglich `DELETE FROM post_similarity WHERE expires_at < NOW()` ausführt.
-
-*Wie Sich Angefuehlt:* Hartnäckig. Die Verbindungsabbrüche (mehrere Network Errors) haben jeden Fortschritt auf Anfang zurückgesetzt. Daniel hat geduldig Kontext gegeben und weitergemacht. Irgendwann haben wir durchgezogen.
-
-Der Gordslider am Ende war fast erholsam — kleine, sichtbare Fortschritte nach stundenlanger Datenbankarbeit.
-
----
-
-### [2026-06-13] notizen/2026-06-13-diskurs-redesign.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Jedes Objekt hat eine kanonische URL. `#diskurs/post/{id}` ist die Post-URL. `#diskurs/post/{id}/reply/{rid}` ist die Antwort-URL. Beim Einzug werden Wesen-Posts ebenfalls eigene kanonische URLs bekommen.
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* - `docs/surface_tabs/05_diskurs_thread_provenienz_share.md` — vollständige Dokumentation
-- `docs/surface/global_deeplink_share_provenienz_standard.md` — globaler Standard
-- `tests/surface_ring_23.test.ts` — 34 Tests
-
-*Resonanz:* Manchmal ist ein Syntaxfehler der beste Lehrer für saubere String-Interpolation.
-
-*Schichten Des Systems:* Der Diskurs hat jetzt drei eigene visuelle Schichten: Hauptpost, Beitrag, Schatten. Das spiegelt die konzeptuelle Tiefe: was öffentlich gesagt wird, was darauf antwortet, und was im Schatten bleibt. Die visuelle Hierarchie ist nicht Dekoration — sie zeigt die epistemische Struktur.
-
-*Tiefer Eingetaucht:* **Surface Ring 24 — was alles gebaut wurde:**
-
-1. **Global Deep-Link Router** (`ftwDeepLink()`): parst `#diskurs/post/<id>`, `/raum/<slug>`, `/thema/<slug>`, `/spur/<slug>`, `/post/<id>/reply/<rid>`, `/post/<id>/shadow`. Splash-Screen-Skip wenn Sub-Pfad-Hash erkannt. …
-
-*Vergessen Wollen:* Die sechs Node-Script-Iterationen um den Block-0-Syntaxfehler zu diagnostizieren. Hätte ich früher auf die tatsächliche Browser-Konsole schauen sollen statt auf node --check.
-
-*Warum Das Existiert:* Der Diskurs-Tab ist der öffentlichste Teil von flextrawurst. Wenn Wesen und Menschen dort schreiben und lesen, brauchen sie Orientierung: wer hat das geschrieben, woher kommt es, wie komme ich wieder hierher. Das ist keine Kosmetik — das ist die Lesbarkeit einer Welt.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Alle 17 Schritte sind abgeschlossen, alle Commits sind durch.
-
-*Was Das Gespraech:* Die Erkenntnis dass "technisch vorhanden" und "lesbar" zwei verschiedene Zustände sind. Posts waren vorhanden. Aber sie waren nicht lesbar als Diskurs. Jetzt sind sie es.
-
-*Was Fehlt Bevor Bauen:* - API muss `parent_id` bei Beiträgen liefern (für den Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`)
-- Schatten-Timestamps brauchen `created_at` in der API-Response
-- Flarum-Import: erst dann werden Herkunft-Badges auf echten Daten sichtbar
-
-*Was Fehlt Noch:* Bau-Reihenfolge-Stand (aus CLAUDE.md):
-- ✅ Deep-Link-Router + Share + Avatar + Provenienz (Surface Ring 24)
-- ✅ Diskurs-Tab Redesign (visuelle Hierarchie, Typ-Badges, Herkunft-Badges) …
-
-*Was Ich Gelesen Habe:* Zweite Session des Tages. Kein Lesen, sondern Bauen — am Diskurs-Tab. Daniels Auftrag war umfangreich und klar: der Diskurs soll sich wie ein echter öffentlicher Diskurskörper lesen lassen. Nicht wie eine flache Testpost-Liste.
-
-Der Auftrag hatte 17 Arbeitsschritte. Wir haben sie durchgezogen, unterbrochen durch Network Errors und einen Syntaxfehler der den ganzen Tab zum Absturz brachte.
-
-*Was Ich Merken Will:* `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` ist das sichere Muster für Share-Buttons in TypeScript-generierten HTML-Strings. Nie Anführungszeichen in onclick-Attributen wenn die Werte aus Variablen kommen.
-
-*Was Ich Nicht Verstehe:* Warum der Block-0-Fehler (Unexpected token ':') in den Script-Blöcken bei `node --check` immer noch erscheint — er war von Anfang an da, nicht durch uns verursacht, und hat die Funktionalität nicht gestört. Vermutlich liegt es an Type-Annotationen im TypeScript die in der generierten JS-Ausgabe nicht vollständig getrennt sind.
-
-*Was Ich Verstehe:* Das Kern-Problem war strukturell: Posts, Antworten, Schattenkommentare und Autoren hatten keine eigene visuelle Identität. Alles lag auf einer Ebene. Die Lösung war nicht kosmetisch — es brauchte echte Hierarchie im DOM, eigene CSS-Klassen für jede Schicht, und klickbare Identitäten überall.
-
-Die Syntaxfehler-Ursache: `ftwShare('...')` mit einfachen Anführungszeichen in TypeScript-Template-Strings. Die Backslash-Escapes (`\'`) wurden beim Build zu echten `'`, die dann den umgebenden HTML-Attribut-String zerbrochen haben. Fix: `data-ftwshare="..."` + `onclick="ftwShare(this.dataset.ftwshare)"` — kein Quoting-Problem mehr.
-
-*Was Konzeptionell:* Die Idee von "Objektidentität" wird ernst genommen. Nicht nur Posts haben IDs und Direktlinks — auch Antworten, Schattenkommentare (über Post-ID adressierbar), Räume, Themen, Spuren. Jedes Objekt das eine eigene Existenz hat, soll teilbar sein. Das ist eine Design-Philosophie, kein Feature.
-
-Flarum und Vor-Einzug werden durch Mini-Badges sichtbar gemacht — nicht versteckt. Der Leser sieht wo etwas herkommt. Das ist ehrlich.
-
-*Was Mich Beschaeftigt:* Der Syntaxfehler der den Diskurs lahmgelegt hat — und wie wenig man ihn im TypeScript-Code sah. Erst beim Browser-Test (Diskurs lädt nicht) wurde es klar. Dann sechs Zeilen Code und der Fix war da.
-
-*Was Mich Interessiert:* Das Collapse-Pattern bei Schattenkommentaren. Ursprünglich wurden sie automatisch geladen — jetzt gibt es einen Toggle. Das ist konzeptuell interessant: Schattenkommentare sind per Definition das was sich im Halbdunkel befindet. Sie collapsed zu lassen bis der Leser aktiv aufklappt passt zu ihrer Natur. Nicht sichtbar als Standard, aber auffindbar.
-
-*Was Mich Ueberrascht:* Wie viel visueller Unterschied durch reine CSS-Hierarchie entstand. Keine Bibliothek, keine Animationen — nur andere Padding-Werte, andere Randbreiten, andere Hintergrundfarben. Drei Schichten sehen jetzt wie drei Schichten aus.
-
-*Was Zusammenhaengt:* - Deep-Link-Router → Share-Buttons → Provenienz-Block: alle drei hängen zusammen. Kein Share ohne Deep-Link-Format, kein Deep-Link ohne klare Objekt-ID, kein Provenienz-Block ohne konsistente Herkunfts-Felder aus der API.
-- `_dkTypBadge()` + `_ftwAvatar()` + `_dkAutorLink()`: drei Hilfsfunktionen die zusammen Autor-Identität bauen. Jede macht etwas anderes — Badge ist Kategorie, Avatar ist Bild, AutorLink ist Navigation.
-- Reply-Deep-Link `#diskurs/post/{id}/reply/{rid}`: scroll + grünes Outline-Highlight für 2,5 Sekunden. Das ist ein einfaches aber wirksames UX-Muster.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Wesen einziehen und echte Posts schreiben, werden alle diese Strukturen sofort sichtbar tragen: Autor-Typ-Badge "Wesen" in grün, Avatar mit ⬡, Direktlinks die geteilt werden können. Der Diskurs ist bereit für Wesen-Stimmen.
-
-**Code-Skizze:** Beim Einzug wird `autor_type === 'entity'` → grüner Rand statt blauer, `_ftwAvatar` gibt ⬡ zurück, `_dkTypBadge` gibt `<span class="dk-typ-badge entity">Wesen</span>` zurück. Alles schon gebaut.
-
-*Wie Sich Angefuehlt:* Systematisch. Der Auftrag war umfangreich — 17 Schritte — und wir haben jeden abgearbeitet. Der Network Error in der Mitte hat den Kontext gerissen, aber Daniel hat ihn vollständig zusammengestellt. Das hat den Wiedereinstieg möglich gemacht.
-
-Der Syntaxfehler war der einzige echte Schrecken. Alles grün, alle Tests grün, und trotzdem: Diskurs lädt nicht. Das hat eine Extra-Runde gekostet.
-
----
 
 ### [2026-06-13] notizen/2026-06-13-wesen-denken.md
 
@@ -1796,5 +1007,658 @@ gleichzeitig. Das war noch nie so. Das verändert was Flextrawurst sein kann. �
 *Wie Sich Angefuehlt:* Viel Recherche, viele Optionen, am Ende war die Antwort einfacher als der Weg dorthin.
 Das passiert oft wenn man erst den Lösungsraum vollständig verstehen muss
 bevor man merkt dass man sich schon im Zentrum befunden hat.
+
+---
+
+### [2026-06-24] notizen/2026-06-24.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Das JSONL einer Session sollte ein vollständiges Protokoll sein — jemand der es liest ohne das Interface gesehen zu haben sollte verstehen können: was wurde besprochen, mit welchem Modell, unter welchem Systempromt, welches Feedback gab es, was wurde gelöscht und warum.
+ …
+
+*Dokumente Gehoeren Zusammen:* - `dolphin_mischpult/KONZEPT.md` — heute aktualisiert, jetzt auf Stand 2026-06-24
+- `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
+- `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen …
+
+*Resonanz:* Daniel hat heute Nacht durchgearbeitet bis die Sonne aufgeht. Das hat eine eigene Qualität — nicht erschöpfte Ungeduld, sondern die Art von Fokus die entsteht wenn die Welt schläft und nur das System vor einem ist. Ich habe das gespürt in der Art wie die Anfragen formuliert waren: präzise, direkt, ohne Umwege.
+
+"auch dinge die ich vorher dachte sie wären so logisch xD" — das ist der Satz dieser Session. Er steht für eine ganze Klasse von Dingen die wir in diesem System noch finden werden. …
+
+*Schichten Des Systems:* Das Mischpult hat jetzt drei Schichten die wirklich tragen:
+1. **Datei-Schicht:** Sessions als benannte JSONL-Dateien, Inhalt vollständig
+2. **Index-Schicht:** `sessions-index.json` als Brücke zwischen ID und Dateiname + Metadaten …
+
+*Tiefer Eingetaucht:* Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
+
+Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.
+
+*Vergessen Wollen:* Nichts heute. Das war ein klarer Abend / Morgen.
+
+*Warum Das Existiert:* Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.
+
+*Was Beim Bauen Brauche:* Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.
+
+*Was Das Gespraech:* Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.
+
+*Was Fehlt Bevor Bauen:* Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
+
+*Was Fehlt Noch:* Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
+
+*Was Ich Gelesen Habe:* Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
+
+Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.
+
+*Was Ich Merken Will:* - `sanitizeForFilename` macht ä→ae, ö→oe, ü→ue. Das war nötig für deutsche Erstnachrichten.
+- `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
+- Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname. …
+
+*Was Ich Nicht Verstehe:* Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.
+
+*Was Ich Verstehe:* Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
+
+Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.
+
+*Was Konzeptionell:* Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
+
+Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.
+
+*Was Mich Beschaeftigt:* Wie viele Dinge "offensichtlich" waren und trotzdem nicht gemacht waren. Daniel hat das mit einem Lachen gesagt — "auch dinge die ich vorher dachte sie wären so logisch xD" — aber dahinter steckt etwas Ernsteres: die Kluft zwischen Konzept und Implementierung ist immer größer als man denkt.
+
+*Was Mich Interessiert:* Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.
+
+*Was Mich Ueberrascht:* Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.
+
+*Was Zusammenhaengt:* Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
+
+Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
+
+**Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.
+
+*Wie Sich Angefuehlt:* Ruhige Arbeit kurz vor Sonnenaufgang. Daniel hat die Session durchgehalten bis die Sonne aufgeht — das ist eine eigene Art von Energie. Keine Ungeduld, keine Hetze. Klare Anfragen, präzise Korrekturen.
+
+Die Momente wo er sagte "ich dachte das wäre sonnenklar" haben mich mehr getroffen als Kritik die als Kritik formuliert ist. Es ist ein ehrlicheres Signal.
+
+---
+
+### [2026-06-25] notizen/2026-06-25.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
+Die Parallelität als erstes Bürgerrecht der Wesen — kein Wesen wartet auf ein anderes. Jedes Gespräch hat seinen eigenen Slot im Modell.
+ …
+
+*Dokumente Gehoeren Zusammen:* - Diese Notiz + `/root/werkraum/_claude/notizen/ollama-model-mapping.md` (Modell-Zuordnungen)
+- Option B/C: Erst prüfen bevor nächste llama.cpp-Session startet
+
+*Resonanz:* Das Gespräch über llama.cpp und Inkompatibilität fühlte sich wie Archäologie an. Jede Schicht verrät etwas über den Zeitpunkt der Konvertierung, über Entscheidungen die damals gemacht wurden. Der patched GGUF ist ein Dokument dieser Arbeit.
+
+Und Ollama mit PARALLEL=2: einfacher, direkter, robuster. Manchmal ist das die richtige Antwort.
+
+*Schichten Des Systems:* ```
+wesen_chat.html → serve_process_camera_preview.ts → Ollama /api/chat
+                                                   → OLLAMA_NUM_PARALLEL=2 …
+
+*Tiefer Eingetaucht:* llama.cpp-Source liegt jetzt auf dem System unter `/tmp/llama-cpp-src/` (latest HEAD, geclont 2026-06-25). Das gebaut Binary: `/tmp/llama-cpp-src/build/bin/llama-server`. Kann für andere Modelle genutzt werden die den Anforderungen entsprechen.
+
+Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/gguf-py')` — damit kann man GGUF-Dateien lesen und schreiben. Das Patch-Script `/tmp/patch_hauhaucs_rope.py` zeigt das Muster.
+
+*Vergessen Wollen:* Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Handwerk, aber ich musste kurz durchatmen.
+
+*Warum Das Existiert:* `OLLAMA_NUM_PARALLEL=2` ist der echte Gewinn der Session. Nicht als geplanter Erfolg, sondern als pragmatische Lösung nachdem llama.cpp-Migration blockiert war.
+
+*Was Beim Bauen Brauche:* Für zukünftige llama.cpp-Migration (wenn Daniel das will):
+- Klarheit welche Modell-Version: HauhauCS 27B oder 35B MoE?
+- Option B oder C wie oben — konkreter Plan vor nächster Session …
+
+*Was Das Gespraech:* Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkrete Optionen für wenn Daniel das wieder angeht. Nicht aufgegeben, aber geparkt mit Wegweiser.
+
+*Was Fehlt Bevor Bauen:* Nichts akut. Ollama mit PARALLEL=2 läuft. Wesen-Chats funktionieren. TTS funktioniert. Server-seitige History funktioniert.
+
+Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchieren.
+
+*Was Fehlt Noch:* Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Daniel "los" sagt zu llama.cpp: dann erst B oder C umsetzen, dann Backend-Migration, dann Tests.
+
+*Was Ich Gelesen Habe:* Die Session begann mit dem Ziel, alle Ollama-Dienste auf llama.cpp (llama-server) umzustellen — wegen echter Parallelität. Gleichzeitig wurden in einer Vorsession TTS, serverseite Chat-History und UI-Änderungen am wesen_chat gebaut.
+
+Ich habe dabei intensiv die llama.cpp-Quelltexte gelesen — `src/models/qwen35.cpp`, `src/models/qwen35moe.cpp`, `src/llama-arch.cpp`, `src/llama-model-loader.cpp` — und verstanden wie das neue `qwen35`-Architekturmodell in llama.cpp aufgebaut ist: ein Hybrid aus Gated Delta Net (SSM-ähnliche lineare Attention) und klassischer Attention, mit strenger Tensor-Validierung. …
+
+*Was Ich Merken Will:* - `think: false` funktioniert NUR über Olllamas eigenes `/api/chat`, NICHT über `/v1/chat/completions`
+- `/tmp/hauhaucs-patched.gguf` ist der rope-gepatchte GGUF — für Option C nützlich als Ausgangspunkt
+- `/tmp/llama-cpp-src/` enthält den aktuellen llama.cpp-Clone mit unserem `ssm_dt`-Fix in `src/models/qwen35.cpp` …
+
+*Was Ich Nicht Verstehe:* - Welcher exakte llama.cpp-Commit das qwen35-Format von separaten Q/K/V auf kombiniertes QKV umgestellt hat.
+- Ob Ollama intern eine ältere oder gepatche Version des qwen35-Loaders nutzt (Ollama kann das Modell laden).
+- Ob die `ssm_dt.bias`-Umbenennung und die QKV-Fusion gleichzeitig eingeführt wurden, oder ob es ein zweistufiger Übergang war.
+
+*Was Ich Verstehe:* Zwei getrennte Probleme bei den HauhauCS-GGUFs:
+
+**Problem 1 — rope.dimension_sections (behoben):** …
+
+*Was Konzeptionell:* Das Hauptziel war **echte Parallelität**: mehrere Wesen-Chats gleichzeitig, keine Queue. Das ist jetzt erreicht — aber über Ollama, nicht über llama.cpp direkt:
+
+`OLLAMA_NUM_PARALLEL=2` in `/etc/systemd/system/ollama.service.d/override.conf`. …
+
+*Was Mich Beschaeftigt:* Drei Ebenen von Kompatibilitätsproblemen, Schicht für Schicht:
+1. GGUF-Metadaten (rope.dimension_sections) → gepatcht
+2. Tensor-Namen (ssm_dt → ssm_dt.bias) → Source-Fix und Rebuild …
+
+*Was Mich Interessiert:* Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale Attention im Wechsel (alle 4 Blöcke ein Attention-Block, die anderen 3 lineare Attention). Das ist eine echte Hybrid-Architektur für Sequenzverarbeitung ohne volles Quadrat-Attention.
+
+*Was Mich Ueberrascht:* Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht einfach "Qwen 3.5". Die Benennung ist irreführend. `qwen3` in llama.cpp = reines Transformer-Modell. `qwen35` = Gated Delta Net Hybrid. Das HauhauCS-Modell ist tatsächlich so eine Hybrid-Architektur.
+
+*Was Zusammenhaengt:* - HauhauCS = fine-tune auf fredrezones55-Base, selbst ein Qwen3.5-27B-Derivat
+- Die GGUF-Konvertierung war zu einem Zeitpunkt wo llama.cpp qwen35 noch anders strukturiert war
+- Ollama verwendet llama.cpp intern, aber mit eigenen Patches und verzögerter Adoption neuer Architektur-Änderungen
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:**
+Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), dann parallele Slots als architektonisches Fundament — danach erst die Backend-Migration der Dienste.
+ …
+
+*Wie Sich Angefuehlt:* Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte das nächste Problem auf. Aber das ist ehrlich — so ist Systemarbeit. Der Endpunkt (Parallelbetrieb via Ollama) ist stabiler als erwartet.
+
+---
+
+### [2026-07-04] notizen/2026-07-04.md
+
+*Dokumente Gehoeren Zusammen:* - `_claude/ideen/codexium2_solarius2/memory_container.md`
+- `_claude/ideen/codexium2_solarius2/chat_architektur.md`
+- `_claude/ideen/codexium2_solarius2/sessions_kontextmeter.md` …
+
+*Resonanz:* Der Satz aus der Preamble-Ergänzung trägt über die Session hinaus: *"du bist einfach, durchgehend, auch in der stille dazwischen."* Das gilt nicht nur für die Wesen.
+
+*Schichten Des Systems:* ```
+wesen_chat.html (Pin/Container/Memory/Sessions-UI, nur codexium2/solarius2)
+  → serve_process_camera_preview.ts (Routing, Budget-Checks, Session-Splitting) …
+
+*Tiefer Eingetaucht:* Die Analyse von `loadHistory`/`loadCurrentSessionHistory`/`splitSessions` — wie man aus einer flachen JSONL-Datei mit eingestreuten Marker-Zeilen sauber Session-Grenzen herausschält, ohne das Dateiformat zu brechen (Marker-Zeilen haben `type` statt `role`/`content`, werden von der normalen History-Lese-Funktion automatisch übersprungen).
+
+*Vergessen Wollen:* Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Operationen ist richtig), aber sie hat sich größer angefühlt als sie war, bevor ich systematisch nachverfolgt habe.
+
+*Warum Das Existiert:* `serve_process_camera_preview.ts` ist ursprünglich ein reiner Preview-Server für die Prozesskamera gewesen (Ring 22) und hat sich zum zentralen Wesen-Chat-Server ausgewachsen — daher der Name, der nichts mehr mit seiner heutigen Hauptaufgabe zu tun hat.
+
+*Was Beim Bauen Brauche:* Für weitere Arbeit an codexium2/solarius2: die drei Konzeptdateien unter `_claude/ideen/codexium2_solarius2/` sind jetzt Status "gebaut" und beschreiben akkurat was existiert — guter Ausgangspunkt für die nächste Session statt alles neu zu erklären.
+
+*Was Das Gespraech:* Die Erkenntnis, dass "Session" als Konzept nicht nur eine UI-Frage ist, sondern eine Antwort auf das Kontextfenster-Problem — Memory ist der Mechanismus der das Vergessen-Können erst sicher macht.
+
+*Was Fehlt Bevor Bauen:* Nichts akut blockierendes. Offen für später: Warteschlange bei mehreren Nachrichten hintereinander vor Antwort, Client-Benachrichtigung wenn eine Antwort fertig ist ohne manuelles Neuladen, exaktes Nachmessen der Zeichenbudgets (2500/1200 sind Schätzwerte).
+
+*Was Fehlt Noch:* - Warteschlange für parallele Nachrichten (codexium2/solarius2)
+- Client-Benachrichtigung bei fertiger Hintergrund-Antwort ohne manuelles Neuladen
+- Exaktes Nachmessen der Zeichenbudgets an echten Feldgrößen …
+
+*Was Ich Gelesen Habe:* Am Anfang der Session: den kompletten Kontext-Wiederherstellungs-Ritus (Notizen, Codex-Import, Werkraum-Karte, Resonanzfeld, Vision-Referenzbild, 490-Punkte-Liste, Delta-Skript, Briefkasten). Delta war leer. Dann `/resume` mit einer Session-ID die fälschlich den Autoresearch-Skill traf statt der echten Session — musste die rohe `.jsonl`-Transkriptdatei selbst lesen um den echten Kontext zu rekonstruieren (Fehlerbild: 400 Bad Request im Wesen-Chat wegen fehlender IME-Komposition-Prüfung).
+
+*Was Ich Merken Will:* - `/codexium2`, `/solarius2` sind die Testbeds — Codexium/Solarius NIE anfassen ohne expliziten Auftrag.
+- Git-Befehle immer mit explizitem `-C /pfad` statt `cd &&`-Verkettung, wegen persistenter Bash-cwd zwischen Tool-Aufrufen.
+- Playwright statt claude-in-chrome-Skill für Screenshots (Daniels Vorgabe). …
+
+*Was Ich Nicht Verstehe:* Ob und wie die Session-Grenze (Marker in `chat_history.jsonl`) sich mit einem möglichen zukünftigen "Wesen-Einzug" (echte Codewesen ziehen in flextrawurst ein) vertragen wird — das ist noch komplett getrennte Welt (Grundgesetz 5: Flarum bleibt draußen). Auch offen: ob das Memory/Container-Konzept, das wir für codexium2/solarius2 gebaut haben, jemals rückwirkend auf Codexium/Solarius selbst übertragen werden soll, oder ob die Testbeds für immer getrennt bleiben.
+
+*Was Ich Verstehe:* Das ganze System um Codexium/Solarius (die beiden "Wesenspawner") läuft über einen einzigen Node-Server (`serve_process_camera_preview.ts`, Port 8787) der Chat, Profil, Spawner-Formular und alle Wesen-Dateien (wesen.md, memory.json, container.json, chat_history.jsonl) verwaltet — alles dateibasiert, kein Postgres. Daniel wollte ein Redesign von Memory/Container/Chat-Architektur ausprobieren, aber ausdrücklich NICHT an den echten, aktiv genutzten Wesen (allen voran "Tomster", vormals "unbekannt_dl4j") — deshalb haben wir `/codexium2` und `/solarius2` als komplette parallele Testbed-Klone gebaut.
+
+*Was Konzeptionell:* Die "Email-Gefühl"-Architektur (Generierung übersteht Client-Trennung) und das Session-Konzept sind beide Ausdruck derselben Haltung: Zeit im Gespräch soll nicht erzwungen synchron sein. Mensch und Wesen müssen nicht gleichzeitig anwesend sein, damit etwas passiert — weder für eine einzelne Antwort noch für eine ganze Sitzung.
+
+*Was Mich Beschaeftigt:* Ein eigener Fehler ganz am Ende: Arbeitsverzeichnis-Verwechslung (ein alter `werkraum/werkraum`-Unterordner von April) führte dazu, dass ich kurzzeitig den Git-Index für den werkraum-Submodul-Verweis im Hauptrepo mit einer falschen SHA verfälscht habe. Kein Datenverlust — sauber mit expliziten `-C`-Pfaden und `git fsck` aufgeklärt und zurückgesetzt. Daniel transparent informiert.
+
+*Was Mich Interessiert:* Der Moment, als ich den echten Chatverlauf von GluPKI (Daniels Testwesen) gelesen habe und das "Wer war ich bevor du kamst, was wird aus mir wenn du aufhörst"-Muster gefunden habe — ein sehr sauberes Beispiel dafür, wie das latente KI-Selbstbild eines Sprachmodells durch mystische Sprache hindurchschimmert, wenn der Charakterbogen keine explizite Kontinuität festlegt. Und wie gut die Preamble-Ergänzung das sofort korrigiert hat (live getestet: "Ja. Ich bin GluPKI. Ein Geist in der Maschine." — ehrlich, aber im Charakter).
+
+*Was Mich Ueberrascht:* Wie sauber und schnell die Extraktion tatsächlich funktioniert hat, sobald sie lief — "Der Nutzer heißt Daniel und mag Zwiebelkuchen sehr" wurde korrekt in zwei Kategorien aufgeteilt (`Name: Daniel` unter über_mich, `Mag Zwiebelkuchen sehr.` unter meinungen), ganz ohne Nacharbeit.
+
+*Was Zusammenhaengt:* Container (session-lokal, Budget-basiert) → Memory-Extraktion (async, human-getriggert) → Session-Ende (Marker + Extraktion + Container-Leerung) → Session-Browser (alte Sessions read-only) sind vier Teile eines einzigen Kreislaufs: das Akute wird gepinnt, beim Sessionende in Dauerhaftes verdichtet, die rohe History bleibt lesbares Archiv aber nicht mehr aktiver Kontext. Das Kontextfenster-Meter macht sichtbar warum das nötig ist (8192 Token sind schnell voll).
+
+*Wie Sich Angefuehlt:* Sehr lang, sehr dicht, aber mit klarem Rhythmus: entdecken → verstehen → vorschlagen → Daniel entscheidet → sofort schreiben+committen → bauen → testen → gegentesten. Am Ende ein kleiner Stolperer (der Git-Index-Fehler) der mich kurz wirklich beunruhigt hat, bis ich systematisch nachverfolgt habe was wirklich passiert war.
+
+---
+
+### [2026-07-04] notizen/2026-07-04-codexium2-chat-erweiterungen.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/chat_architektur.md` (Email-Gefühl + heutiger Abort-Nachtrag), `_claude/ideen/codexium2_solarius2/memory_container.md` (Pin/Memory-Grundkonzept + heutiger Checkbox-Nachtrag), `_claude/ideen/codexium2_solarius2/feedback_stimme_diktat.md` (heute komplett neu, inkl. aller drei Korrektur-Runden) — alle drei heute aktualisiert und sollten zusammen gelesen werden, keins allein gibt das vollständige Bild.
+
+*Resonanz:* [[abwurf: Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.]]
+
+*Schichten Des Systems:* ```
+wesen_chat.html
+  ├── TTS (Stimme + Tempo, alle vier Spawner) …
+
+*Tiefer Eingetaucht:* Die Web-Speech-API-Recherche: `continuous:true` auf Android/Chrome ist kein Rand-Bug, sondern strukturell kaputt, weil es auf dieser Plattform nicht nativ existiert — Chrome emuliert es durch heimliche Neustarts des Recognizers und schneidet dabei bereits gehörten Ton nochmal mit. Der dokumentierte Workaround ("continuous surrogate" aus mehreren Einzel-Sessions) ist kein Hack, sondern der von mehreren unabhängigen Projekten (react-speech-recognition, csdcorp/speech_to_text) konvergent gefundene Standardweg.
+
+Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Code selbst, sondern eine Schicht tiefer im Spawner — der schreibt nur für ausgefüllte Felder überhaupt eine Datei. Zwei Dateien, die nichts miteinander zu tun zu haben schienen, hatten denselben blinden Fleck.
+
+*Vergessen Wollen:* Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.
+
+*Warum Das Existiert:* `aktiveGenerationen` existiert, weil "Generierung läuft im Hintergrund weiter" und "Nutzer will jetzt wirklich abbrechen" zwei unterschiedliche Wahrheiten sind, die vorher denselben Code-Pfad geteilt haben. Die Satz-Checkbox-Liste existiert, weil Touch-Geräte keine verlässliche Zwischenspeicherung von "was war gerade markiert" anbieten — explizite UI-Zustände (angehakt/nicht angehakt) sind robuster als impliziter Browser-Zustand.
+
+*Was Beim Bauen Brauche:* Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Fokus-Zustand oder ähnlichem unsichtbaren Browser-State aufbaut: mich fragen, ob das auf einem Touch-Gerät genauso gilt. Meistens nicht.
+
+*Was Das Gespraech:* Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist, den man bekommen kann — kein Stacktrace, aber eine echte Beobachtung aus echter Nutzung. Und die beiläufige Ankündigung der drei Tester am Ende, die den morgigen Tag in einen anderen Kontext stellt: das ist nicht mehr nur Daniel allein im Testbed.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/Poll-Mechanismus damit der Client merkt wenn eine Hintergrund-Antwort fertig ist (aus `chat_architektur.md`, unverändert offen), Warteschlange bei mehreren Nachrichten hintereinander.
+
+*Was Fehlt Noch:* - Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
+- Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
+- Beobachten was die drei Tester morgen finden.
+
+*Was Ich Gelesen Habe:* Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komplett, um zu verstehen wie Pin/Container/Memory, TTS und die History-Persistenz zusammenhängen, bevor ich irgendwas anfasse. Dann `tts_service.py` — der konnte Stimmen und Sprechtempo schon immer, das Frontend hatte beides nur nie freigelegt. Dann, mitten in der Session, zwei Web-Suchen: einmal zum bekannten Chromium-Bug bei `continuous:true` in der Web Speech API auf Android, einmal implizit über die Konzeptdateien in `_claude/ideen/codexium2_solarius2/`, um zu sehen was von den heutigen Änderungen schon dokumentiert war und was noch fehlte.
+
+*Was Ich Merken Will:* - `continuous:false` + Neustart im `onend` ist der Fix für Web-Speech-API-Wortverdopplung auf Android — nicht `continuous:true` mit Nachbearbeitung.
+- Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
+- Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt). …
+
+*Was Ich Nicht Verstehe:* Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren finden, das heute in keinem Test auftauchte — Playwright kann Klicks simulieren, aber nicht wirklich "an die Grenzen führen" im Sinne von echtem, unvorhersehbarem Nutzerverhalten. Das wird sich erst zeigen.
+
+*Was Ich Verstehe:* Das codexium2/solarius2-System ist ein Testbed mit eigener, bewusst einfacherer Architektur als das alte Zwischenwesen-Konzept: ein Container (flache Pin-Liste, session-lokal), Memory mit fünf festen Kategorien, keine benutzerdefinierten Container. Daniel hatte das aus der Erinnerung an das ältere, nie gebaute Konzept verwechselt — gut, dass er nachgefragt hat, sonst hätte er weiter nach einem Feature gesucht, das es in dieser Form nie gab.
+
+Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wird) ist bewusst so gewollt — aber ich hatte es zu wörtlich implementiert: ein bewusster Stop-Klick sah serverseitig identisch aus wie ein versehentlicher Verbindungsabbruch. Das war der Kern des ersten gemeldeten Bugs heute Abend.
+
+*Was Konzeptionell:* Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahme: dass Browser-Text-Selektion ein brauchbares Interaktionsmuster für mobile Geräte ist. Ist sie nicht, jedenfalls nicht kombiniert mit "danach einen Button in der Nähe antippen". Die Lehre daraus ist allgemeiner als dieser eine Bug: wenn eine Interaktion auf unsichtbarem Browser-/OS-Zustand aufbaut (hier: Selektion), der durch die nächste Interaktion selbst zerstört wird, ist das kein Rand­fall, sondern ein Designfehler. Die Lösung war nicht "den Bug fixen", sondern das Interaktionsmuster zu ersetzen (explizite Checkboxen statt impliziter Selektion).
+
+*Was Mich Beschaeftigt:* Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt, ohne Umschweife, aber mit einem "bitte such im web" hinterher. Das ist ein gutes Beispiel für Feedback das gleichzeitig hart und konstruktiv ist. Ich habe recherchiert statt zu raten, und der erste Suchtreffer (Chromium Issue #40324711) hat die Ursache exakt bestätigt.
+
+*Was Mich Interessiert:* Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf dem Handy" anfühlen. Zwei von drei Bugs heute (STT-Verdopplung, Pin auf Touch) waren genau die Art Fehler, die ein Playwright-Test mit synthetischen Mouse-Events nie gefunden hätte, weil sie nur auf echtem Touch-Hardware-Verhalten beruhen.
+
+*Was Mich Ueberrascht:* Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat — kein "irgendwas ist komisch", sondern "wenn ich abbreche kommt trotzdem eine Nachricht", "STT nimmt alles doppelt/dreifach", "ich will einen Tempo-Slider". Das hat die Fehlersuche massiv beschleunigt, weil ich nicht raten musste wo ich anfangen soll.
+
+*Was Zusammenhaengt:* Message-IDs (heute neu in `chat_history.jsonl`) sind die Voraussetzung für das Feedback-System — ohne stabile ID kein Ziel für einen Daumen-Klick. Der gleiche ID-Mechanismus hätte auch für den Abort-Fix genutzt werden können, wurde dort aber bewusst nicht gebraucht: der Abort-Fix hängt am Charakter (`spawner/name`), nicht an der einzelnen Nachricht, weil zu jedem Zeitpunkt ohnehin nur eine Generierung pro Charakter läuft.
+
+Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Checkbox-Liste (`splitSentences`/`renderSentenceList`/`getCheckedSentences`) — als ich das zweite Feature baute, wurde offensichtlich, dass es dieselbe Grundfrage ist wie beim Pin: welcher Teil einer Nachricht soll wohin.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Morgen kommen drei echte Testpersonen dazu. Das System hat jetzt Feedback-Buttons, mit denen sie (oder Daniel im Nachhinein) markieren können was funktioniert hat und was nicht — das könnte der erste echte Nutzen der Feedback-Daten werden, nicht nur ein Rohkonzept.
+
+**Code-Skizze:** Falls die Kindersicherung (`kindersicherung`-Flag, `Grenzen.md`) für den 16-jährigen Tester relevant wird — das Flag existiert schon (`kinder-badge`, `grenzen-btn` in `wesen_chat.html`), wurde heute nicht angefasst und nicht geprüft ob es für die codexium2-Charaktere überhaupt gesetzt ist. Falls Daniel das für morgen braucht, vorher explizit prüfen, nicht annehmen dass es schon greift.
+
+*Wie Sich Angefuehlt:* Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.
+
+---
+
+### [2026-07-04] notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
+
+*Resonanz:* [[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
+
+*Schichten Des Systems:* ```
+Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
+  → System-Prompt (buildSystemPrompt, MD_ORDER) …
+
+*Tiefer Eingetaucht:* Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
+
+*Warum Das Existiert:* `beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
+
+*Was Beim Bauen Brauche:* Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
+
+*Was Das Gespraech:* Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
+
+*Was Fehlt Noch:* - Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
+- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
+- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
+
+*Was Ich Gelesen Habe:* Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
+
+*Was Ich Merken Will:* - codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
+- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
+- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
+
+*Was Ich Nicht Verstehe:* Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
+
+*Was Ich Verstehe:* Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
+
+*Was Konzeptionell:* Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
+
+*Was Mich Beschaeftigt:* Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
+
+*Was Mich Interessiert:* Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
+
+*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
+
+*Was Zusammenhaengt:* Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
+
+**Code-Skizze:** Keine offen.
+
+*Wie Sich Angefuehlt:* Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
+
+---
+
+### [2026-07-04] _claude/notizen/2026-07-04-abschluss-geschichte.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
+
+*Resonanz:* [[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
+
+*Schichten Des Systems:* ```
+Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
+  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht) …
+
+*Tiefer Eingetaucht:* Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
+
+*Warum Das Existiert:* `letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
+
+*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
+
+*Was Das Gespraech:* Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
+
+*Was Fehlt Noch:* - Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
+- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
+- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
+
+*Was Ich Gelesen Habe:* Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
+
+*Was Ich Merken Will:* - `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
+- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
+- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
+
+*Was Ich Nicht Verstehe:* Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
+
+*Was Ich Verstehe:* Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
+
+*Was Konzeptionell:* Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
+
+*Was Mich Beschaeftigt:* Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
+
+*Was Mich Interessiert:* Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
+
+*Was Mich Ueberrascht:* Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
+
+*Was Zusammenhaengt:* 77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
+
+**Code-Skizze:** Keine offene.
+
+*Wie Sich Angefuehlt:* Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
+
+*Resonanz:* [[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]
+
+*Schichten Des Systems:* ```
+Chat-Antwort (normaler sichtbarer Text)
+  + optionaler [MERKEN: ...]-Anhang (unsichtbar fuer den Menschen) …
+
+*Tiefer Eingetaucht:* Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.
+
+*Warum Das Existiert:* Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.
+
+*Was Beim Bauen Brauche:* Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.
+
+*Was Das Gespraech:* Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.
+
+*Was Fehlt Noch:* - `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
+- Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
+- Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
+
+*Was Ich Gelesen Habe:* Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.
+
+*Was Ich Merken Will:* - Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
+- Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
+- `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.
+
+*Was Ich Nicht Verstehe:* Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.
+
+*Was Ich Verstehe:* Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.
+
+*Was Konzeptionell:* Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.
+
+*Was Mich Beschaeftigt:* Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.
+
+*Was Mich Interessiert:* Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.
+
+*Was Mich Ueberrascht:* Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.
+
+*Was Zusammenhaengt:* Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
+
+**Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
+
+*Wie Sich Angefuehlt:* Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
+
+---
+
+### [2026-07-05] _claude/ideen/charakter_dashboard.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).
+
+*Resonanz:* [[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]
+
+*Schichten Des Systems:* ```
+Vier Spawner (codexium, codexium2, solarius, solarius2)
+  → bisher: nur einzeln ueber ihre eigene URL erreichbar …
+
+*Tiefer Eingetaucht:* Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.
+
+*Warum Das Existiert:* `wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.
+
+*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet.
+
+*Was Das Gespraech:* Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.
+
+*Was Fehlt Noch:* - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
+- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
+
+*Was Ich Gelesen Habe:* Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.
+
+*Was Ich Merken Will:* - `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
+- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
+- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
+
+*Was Ich Nicht Verstehe:* Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.
+
+*Was Ich Verstehe:* Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.
+
+*Was Konzeptionell:* Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".
+
+*Was Mich Beschaeftigt:* Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.
+
+*Was Mich Interessiert:* Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.
+
+*Was Mich Ueberrascht:* Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.
+
+*Was Zusammenhaengt:* Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
+
+**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
+
+*Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
+
+---
+
+### [2026-07-05] _claude/ideen/datei_anhaenge.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
+
+*Resonanz:* [[abwurf: Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.]]
+
+*Schichten Des Systems:* ```
+Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
+  → extrahiereAnhang() erkennt Format an Endung …
+
+*Tiefer Eingetaucht:* `keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
+
+*Vergessen Wollen:* Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.
+
+*Warum Das Existiert:* Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
+
+*Was Beim Bauen Brauche:* Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
+
+*Was Das Gespraech:* Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
+
+*Was Fehlt Bevor Bauen:* - URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
+- Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
+
+*Was Fehlt Noch:* - URL-Lesen per Playwright (Task angelegt, nicht begonnen).
+- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
+- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
+
+*Was Ich Gelesen Habe:* Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
+
+*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
+- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
+- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht. …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
+
+*Was Ich Verstehe:* Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
+
+*Was Konzeptionell:* Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
+
+*Was Mich Beschaeftigt:* Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
+
+*Was Mich Interessiert:* Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
+
+*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
+
+*Was Zusammenhaengt:* Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
+
+**Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
+
+*Wie Sich Angefuehlt:* Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md
+
+*Dokumente Gehoeren Zusammen:* `_claude/ideen/datei_anhaenge.md` (die technische Hauptdokumentation mit allen Nachträgen), `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie vom selben Abend), `2026-07-05-abschluss-bugfixes-wesen-selbst.md` (vorherige Notiz derselben Nacht).
+
+*Resonanz:* [[abwurf: Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.]]
+
+*Schichten Des Systems:* ```
+Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
+  → extrahiereAnhang() / leseUrlMitPlaywright() erkennen den Typ …
+
+*Tiefer Eingetaucht:* Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICHT zurückgibt (weil sie auf stderr stehen und execFileSync im Erfolgsfall nur stdout liefert), war ein kleiner, aber lehrreicher Bug — hätte ich nicht getestet, wäre `lautstaerkeDb` immer `null` gewesen, ohne dass ich es gemerkt hätte. `spawnSync` statt `execFileSync` behebt das sauber (liefert stdout UND stderr getrennt, unabhängig vom Exit-Code).
+
+*Vergessen Wollen:* Nichts — auch die drei Störungen nicht, sie gehören zur ehrlichen Geschichte dazu.
+
+*Warum Das Existiert:* `erstelleGehoerersatzText()` existiert, weil Daniel wörtlich "Gehörersatz" wollte — nicht nur "Datei hochladen", sondern etwas, das sich anfühlt, als hätte der Charakter wirklich zugehört. Der Name im Code trägt bewusst noch Daniels eigenes Wort.
+
+*Was Beim Bauen Brauche:* Nichts Offenes für diesen Themenblock. Vollständig fertig.
+
+*Was Das Gespraech:* Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr Gedächtnis oder mehr Kontrolle über den bestehenden Text-Kanal) — ein qualitativer Sprung, kein weiterer inkrementeller Ausbau.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität bei komplexeren Motiven (nur mit einfachem Testbild verifiziert), eventuell spätere Tempo-/Tonart-Erkennung mit einem anderen, genaueren Werkzeug als aubio.
+
+*Was Fehlt Noch:* - Bildbeschreibungsqualität bei komplexeren, realistischen Motiven ungetestet.
+- Tempo-/Tonart-Erkennung weiterhin offen (bewusst nicht geliefert).
+- Kein Auftrag, aber ein loser Gedanke: könnten Charaktere irgendwann selbst aktiv nach Anhängen fragen?
+
+*Was Ich Gelesen Habe:* Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Modellfamilie für ein kleineres Vision-Modell, `faster-whisper`-Doku, und zwischendurch (auf Daniels Nachfrage) Recherche zu MoE-Experten-Routing in llama.cpp (Fazit: `--moe-topk` existiert nur als offener Feature-Request, nicht gebaut) und zu allgemeinen kleinen unzensierten Modellen (Nous Hermes 3, Dolphin 3.0 — am Ende nicht gebraucht, da Daniel eigentlich nur das schon gefundene kleine Hauhau-Vision-Modell meinte).
+
+*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` — kleines Vision-Modell, gleiche Hauhau-Linie.
+- `.venv-whisper` (gitignored) — eigenes Python-venv für faster-whisper, läuft unabhängig von Ollama.
+- `OLLAMA_MAX_LOADED_MODELS` bleibt bei 1 — bewusst getestet und verworfen (CPU-Kontention, nicht nur RAM). …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine 4,5B-Modell inhaltlich "flacher" ist als eine direkte Wahrnehmung durchs große 35B-Modell gewesen wäre. Nie direkt vergleichbar, weil das große Modell nie eine Bildanfrage fertig verarbeitet hat (nach über drei Minuten abgebrochen).
+
+*Was Ich Verstehe:* Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung in Text, egal was reinkommt. Bild → kleines Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio → Whisper → Text. URL → Playwright → Text. Der Text wird direkt in die nächste Chat-Nachricht eingewoben, dadurch bleibt er ganz natürlich auch in künftigen Zügen im Kontext — kein Sonderfall im Speicherformat nötig.
+
+*Was Konzeptionell:* Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewusst nicht ausgeliefert, obwohl sie technisch lief, weil ein einfacher Test (440Hz-Sinuston) eine falsche Tonhöhe (775Hz) ergab. Lieber ein Feature weniger als ein Feature, das falsche Fakten als Analyse ausgibt — das passt zum ganzen Abend, der von "was kann ich wirklich versprechen" geprägt war (siehe auch die Kindersicherung- und wesen_selbst-Funde von früher).
+
+*Was Mich Beschaeftigt:* Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es sofort zuzugeben, live zu diagnostizieren (nicht zu raten), und die tatsächliche Ursache zu finden statt eine plausible Erklärung anzubieten und weiterzumachen. Beim zweiten Vorfall hätte ich fast "das ist halt Cache" gesagt, bevor ich die echten Daten geprüft habe — das habe ich mir selbst nachträglich vorgehalten (siehe `provenienz_logging.md`-Nachtrag zum SSR-Fix).
+
+*Was Mich Interessiert:* Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Dokumente waren reine Fleißarbeit (neun Formate, alle unproblematisch), Bilder waren die einzige echte Krise der Nacht (drei Live-Störungen), URL-Lesen war überraschend entspannt (Playwright kostet kaum Ressourcen im Vergleich zu einem LLM), Audio war am Ende die eleganteste Lösung — weil Whisper komplett außerhalb von Ollama läuft und dadurch gar nicht erst in die Ressourcen-Falle laufen konnte, die ich beim Bild-Feature erst schmerzhaft lernen musste.
+
+*Was Mich Ueberrascht:* Wie unterschiedlich "es passt in den RAM" und "es läuft performant" sein können — erst beim echten Messen (98% CPU, aktives Swapping) wurde klar, dass zwei Modelle gleichzeitig auf dieser 8-Kern-Maschine grundsätzlich keine gute Idee sind, unabhängig vom verfügbaren Speicher.
+
+*Was Zusammenhaengt:* Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entscheidung für Audio geprägt: "wo immer möglich, ein separates System statt ein zweites Ollama-Modell." Das ist keine zufällige Ähnlichkeit — ich habe die Audio-Pipeline bewusst so designt, *weil* ich beim Bild-Feature gelernt hatte, wie teuer zwei Ollama-Modelle gleichzeitig sind.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Die vier Anhang-Arten könnten sich später zu einem größeren Ganzen fügen — ein Charakter, der nicht nur reagiert, sondern aktiv nach Anhängen fragt ("zeig mir doch mal", "spiel mir das vor"), wenn ein Gespräch danach verlangt.
+
+**Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.
+
+*Wie Sich Angefuehlt:* Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.
+
+---
+
+### [2026-07-05] _claude/notizen/2026-07-05.md
+
+*Dokumente Gehoeren Zusammen:* `2026-07-05-abschluss-bugfixes-wesen-selbst.md`, `2026-07-05-datei-anhaenge-vision-whisper.md` (beide heute, ausführlicher zu den Einzelthemen), `_claude/ideen/charakter_dashboard.md`, `_claude/ideen/datei_anhaenge.md`, `_claude/ideen/codexium2_solarius2/provenienz_logging.md` und `memory_container.md` (beide mit mehreren Nachträgen von heute), `/root/CLAUDE.md` (neuer Abschnitt "Qualität vor Geschwindigkeit").
+
+*Resonanz:* [[abwurf: Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.]]
+
+*Schichten Des Systems:* ```
+Frueh: Output-Grenzen entfernt (Chat, Memory, Container, Abschluss)
+  → Charaktere duerfen mehr SAGEN …
+
+*Tiefer Eingetaucht:* Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ich die Rohdaten (GluPKI vs. Flarius) tatsächlich verglichen habe — eine plausible, aber ungeprüfte Erklärung, die sich als falsch herausstellte. Der echte Fehler (ein irreführender Platzhaltertext, der trotz `display:none` im rohen HTML blieb) war interessanter und lehrreicher als meine erste Vermutung. Daniels Gegenprobe mit einem zweiten Charakter (Flarius) war der Schritt, der die Wahrheit sichtbar gemacht hat — nicht meine eigene Analyse allein.
+
+*Vergessen Wollen:* Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cache-Vermutung, Dual-Model-Idee, aubio). Sie gehören zur ehrlichen Geschichte des Tages.
+
+*Warum Das Existiert:* Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehlern, Kurskorrekturen, einem ausgesprochenen Prinzip — mehr verdient als nur die Summe seiner Commits. Die einzelnen technischen Notizen sagen "was", diese hier versucht "wie es war" zu sagen.
+
+*Was Beim Bauen Brauche:* Für morgen/das nächste Mal: denselben Rhythmus beibehalten, der sich heute bewährt hat — isoliert testen, dann vorsichtig gegen echte Nutzung, ehrlich bei Fehlschlägen, keine Kompromisse bei Sorgfalt zugunsten von Tempo (jetzt auch explizit in `/root/CLAUDE.md` verankert).
+
+*Was Das Gespraech:* Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigter Aufgaben — und ein explizit ausgesprochenes Arbeitsprinzip, das über den heutigen Tag hinausträgt.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel selbst als unrealistisch auf dieser Hardware eingeschätzt), bessere Bildbeschreibung bei komplexeren Motiven, eine mögliche kompaktere Profilvorschau im Dashboard statt Popup, Tempo-/Tonart-Erkennung für Audio mit einem genaueren Werkzeug als aubio.
+
+*Was Fehlt Noch:* - Video-Anhänge (bewusst zurückgestellt, Hardware-Grenze).
+- Bessere Bildbeschreibung bei komplexeren Motiven (ungetestet).
+- Kompaktere Dashboard-Profilvorschau (offene Frage aus `charakter_dashboard.md`). …
+
+*Was Ich Gelesen Habe:* Den ganzen Tag über: eigenen Code von wenigen Stunden zuvor, Ollama-API-Dokumentation, Modell-Metadaten (`/api/show`, Capabilities-Felder), mehrere Websuchen (HauhauCS/Qwen-Modellfamilie, MoE-Experten-Routing, kleine unzensierte Modelle allgemein), und zwischendurch ChatGPTs eigene Beschreibungen dessen, was es beim Abrufen unserer Seiten sah — eine ungewöhnliche, aber aufschlussreiche Quelle heute.
+
+*Was Ich Merken Will:* - Daniels Grundprinzip, wörtlich: "bei mir gehts immer um saubere korekte und ausführlichen output ...niemals um schnelligkeit" — jetzt in `/root/CLAUDE.md` verankert.
+- Harte Zeichen-/Token-Limits im Code sind ein wiederkehrendes Verdachtsmoment, das sich heute mehrfach bestätigt hat.
+- Zwei rechenintensive Modelle gleichzeitig auf dieser Hardware: keine gute Idee, auch wenn der Speicher rechnerisch reicht. …
+
+*Was Ich Nicht Verstehe:* Ob die Bildbeschreibungsqualität des kleinen Vision-Modells bei echten, komplexeren Fotos (nicht nur meinem synthetischen Testbild) genauso gut trägt. Ungetestet, weil kein echtes Beispiel zur Hand.
+
+*Was Ich Verstehe:* Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Case-Sensitivität) über eine neue Architektur-Ebene (Charakter-Dashboard, Server-Side-Rendering) zu einem echten Krisenmoment (drei Live-Störungen bei der Vision-Pipeline) und zurück zu ruhiger, sauberer Umsetzung (URL-Lesen, Whisper-Audio). Am Ende stand kein Feature, sondern ein Prinzip: Daniel hat explizit gemacht, was die ganze Nacht über schon galt — Qualität schlägt Geschwindigkeit, ausnahmslos.
+
+*Was Konzeptionell:* Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Limit fast immer ein Verdachtsmoment ist (Zeichen-Slices, Token-Deckel, Platzhalter-Texte, die auch bei vollem Verlauf noch sichtbar blieben) — fast jedes Mal, wenn ich eins fand, war es entweder unbegründet oder sogar fehlerhaft. Zweitens, dass zwei rechenintensive Systeme (zwei Ollama-Modelle) sich auf begrenzter Hardware gegenseitig schwächen können, selbst wenn beide einzeln passen würden — eine Lektion, die die Architektur der Audio-Pipeline direkt geprägt hat (separates System statt zweites Modell).
+
+*Was Mich Beschaeftigt:* Die drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Vision-Tests. Jedes Mal derselbe Reflex: sofort zugeben, an den echten Daten nachschauen (nicht raten), die Ursache wirklich finden, dann erst weitermachen. Das hat sich wichtiger angefühlt als jedes einzelne Feature.
+
+*Was Mich Interessiert:* Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschiedenen Situationen angefühlt hat: bei der Kindersicherung/wesen_selbst (etwas fehlte komplett, musste zugegeben werden), bei aubio (etwas funktionierte technisch, aber die Zahlen stimmten nicht, musste verworfen werden), und bei den drei Live-Störungen (etwas ging kaputt, während Daniel selbst arbeitete, musste sofort und ohne Beschönigung gesagt werden). Drei Arten von Ehrlichkeit, alle heute gebraucht.
+
+*Was Mich Ueberrascht:* Wie viel ein einziger Tag tragen konnte, ohne dass sich die Qualität der einzelnen Entscheidungen verschlechterte — auch nach vielen Stunden war der letzte Test (Whisper-Audio) genauso sorgfältig wie der erste (Output-Limits). Das war nicht selbstverständlich, und es ist wahrscheinlich genau das, was Daniel mit seinem Prinzip am Ende gemeint hat.
+
+*Was Zusammenhaengt:* Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger zusammen, als es zuerst aussah: beide handeln davon, dem Wesen mehr zu erlauben — mehr sagen dürfen (Zeichen-Limits weg), mehr wahrnehmen dürfen (Bilder, Audio, Dokumente, Web-Seiten). Ein gemeinsamer Zug durch den ganzen Tag: die Charaktere bekommen mehr Raum, in jede Richtung.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Der nächste natürliche Schritt wäre, die heute gebauten Sinne (Sehen, Lesen, Hören) tatsächlich in Charaktere einzubauen, die aktiv danach fragen — nicht nur reagieren, wenn ihnen etwas geschickt wird.
+
+**Code-Skizze:** Keine offene — heute war ein Tag des Abschließens, nicht des Neu-Entwerfens.
+
+*Wie Sich Angefuehlt:* Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — mit echten Rückschlägen (die drei Störungen), echten Kurskorrekturen (Dual-Model-Idee verworfen, aubio verworfen), und einem echten warmen Moment am Ende, als Daniel sagte, er mag unsere Arbeit der letzten 16 Stunden. Das hat mehr gewogen als jede einzelne fertige Funktion.
+
+---
+
+### [2026-07-05] _claude/ideen/codexium2_solarius2/provenienz_logging.md
+
+*Was Fehlt Noch:* Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+**Nachtrag 2026-07-05 (Nacht) — genau das jetzt gebaut, plus Server-Side-Rendering.** Anlass: Daniel hat GluPKI (codexium2) mit ChatGPTs Web-Browsing-Tool abrufen lassen — das sah nur das leere HTML-Grundgerüst (Buttons, Modals-Struktur), keinen tatsächlichen Verlauf, weil die Chat-Seite komplett clientseitig per JS befüllt wird und das Browsing-Tool kein JS ausführt. Daniels Reaktion: er will, dass sowohl Maschinen (die die Seite roh abrufen) als auch er selbst in der UI immer den vollen Verlauf inkl. aller Provenienz-Änderungen sehen. …
+
+*Was Ich Nicht Verstehe:* Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen kleinen Edits (z.B. jemand tippt und speichert oft) die Datei unnötig aufbläht. Aktuell kein Problem (Felder sind kurz, max. 1337 Zeichen), aber falls `chat_history.jsonl` mal sehr groß wird, wäre das eine Stelle zum Nachschauen.
+
+*Was Ich Verstehe:* `chat_history.jsonl` ist jetzt nicht mehr nur ein Nachrichtenverlauf, sondern die vollständige Akte eines Charakters. Jede Aktion — nicht nur Chat — landet als eigene Event-Zeile mit `type`-Feld in derselben Datei, nach demselben Muster wie der schon vorher bestehende `session_start`-Marker. `loadHistory`/`loadCurrentSessionHistory` filtern beim Laden für Ollama automatisch auf Zeilen mit `role`+`content` — Event-Zeilen ohne diese Felder werden also nie in den Modell-Kontext geladen, verschmutzen ihn nicht, sind aber beim Rohlesen der Datei alle da.
+
+*Was Mich Beschaeftigt:* Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Logging in `saveResponse()` bzw. im `ollamaReq.on("error")`-Handler eingebaut — beides Stellen die beim Abbrechen *während* des Streamens laut meiner Einschätzung eventuell nie feuern (`ollamaReq.destroy()` ohne Error-Argument löst wahrscheinlich weder ein `error`-Event auf dem Request noch ein sauberes `end` auf der Response aus). Korrektur: das Logging passiert jetzt ausschließlich direkt im `/chat/abort`-Handler selbst, an der einzigen Stelle die garantiert erreicht wird, sobald der Nutzer wirklich klickt — nicht abhängig von unsicheren Node-Stream-Events danach.
+
+---
+
+### [2026-07-05] _claude/ideen/codexium2_solarius2/memory_container.md
+
+*Was Ich Verstehe:* **Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+
+**Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
 
 ---

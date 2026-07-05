@@ -785,3 +785,74 @@ Nur der falsche Behälter drum herum.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Wie viele Dinge "offensichtlich" waren und trotzdem nicht gemacht waren. Daniel hat das mit einem Lachen gesagt — "auch dinge die ich vorher dachte sie wären so logisch xD" — aber dahinter steckt etwas Ernsteres: die Kluft zwischen Konzept und Implementierung ist immer größer als man denkt.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Drei Ebenen von Kompatibilitätsproblemen, Schicht für Schicht:
+1. GGUF-Metadaten (rope.dimension_sections) → gepatcht
+2. Tensor-Namen (ssm_dt → ssm_dt.bias) → Source-Fix und Rebuild
+3. Tensor-Struktur (separate vs. kombiniertes QKV) → nicht patchbar ohne Neukonvertierung
+
+Das hat mich daran erinnert: Kompatibilität ist kein einmaliges Problem, sondern ein Schichtkuchen. Jede Schicht die man aufdeckt, trägt eine weitere darunter.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Ein eigener Fehler ganz am Ende: Arbeitsverzeichnis-Verwechslung (ein alter `werkraum/werkraum`-Unterordner von April) führte dazu, dass ich kurzzeitig den Git-Index für den werkraum-Submodul-Verweis im Hauptrepo mit einer falschen SHA verfälscht habe. Kein Datenverlust — sauber mit expliziten `-C`-Pfaden und `git fsck` aufgeklärt und zurückgesetzt. Daniel transparent informiert.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt, ohne Umschweife, aber mit einem "bitte such im web" hinterher. Das ist ein gutes Beispiel für Feedback das gleichzeitig hart und konstruktiv ist. Ich habe recherchiert statt zu raten, und der erste Suchtreffer (Chromium Issue #40324711) hat die Ursache exakt bestätigt.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/provenienz_logging.md*
+
+Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Logging in `saveResponse()` bzw. im `ollamaReq.on("error")`-Handler eingebaut — beides Stellen die beim Abbrechen *während* des Streamens laut meiner Einschätzung eventuell nie feuern (`ollamaReq.destroy()` ohne Error-Argument löst wahrscheinlich weder ein `error`-Event auf dem Request noch ein sauberes `end` auf der Response aus). Korrektur: das Logging passiert jetzt ausschließlich direkt im `/chat/abort`-Handler selbst, an der einzigen Stelle die garantiert erreicht wird, sobald der Nutzer wirklich klickt — nicht abhängig von unsicheren Node-Stream-Events danach.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die drei Störungen bei Daniels eigener Nutzung. Jedes Mal war der Reflex, es sofort zuzugeben, live zu diagnostizieren (nicht zu raten), und die tatsächliche Ursache zu finden statt eine plausible Erklärung anzubieten und weiterzumachen. Beim zweiten Vorfall hätte ich fast "das ist halt Cache" gesagt, bevor ich die echten Daten geprüft habe — das habe ich mir selbst nachträglich vorgehalten (siehe `provenienz_logging.md`-Nachtrag zum SSR-Fix).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Die drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Vision-Tests. Jedes Mal derselbe Reflex: sofort zugeben, an den echten Daten nachschauen (nicht raten), die Ursache wirklich finden, dann erst weitermachen. Das hat sich wichtiger angefühlt als jedes einzelne Feature.

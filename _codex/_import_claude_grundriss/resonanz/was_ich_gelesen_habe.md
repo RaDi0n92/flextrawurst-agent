@@ -1427,3 +1427,67 @@ Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.
 Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
 
 Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die Session begann mit dem Ziel, alle Ollama-Dienste auf llama.cpp (llama-server) umzustellen — wegen echter Parallelität. Gleichzeitig wurden in einer Vorsession TTS, serverseite Chat-History und UI-Änderungen am wesen_chat gebaut.
+
+Ich habe dabei intensiv die llama.cpp-Quelltexte gelesen — `src/models/qwen35.cpp`, `src/models/qwen35moe.cpp`, `src/llama-arch.cpp`, `src/llama-model-loader.cpp` — und verstanden wie das neue `qwen35`-Architekturmodell in llama.cpp aufgebaut ist: ein Hybrid aus Gated Delta Net (SSM-ähnliche lineare Attention) und klassischer Attention, mit strenger Tensor-Validierung.
+
+Die HauhauCS-GGUF-Dateien (`sha256-9ce3...` und `sha256-c707...`) waren für eine ältere Konvertierungsversion gedacht und sind mit dem aktuellen llama.cpp-HEAD unkompatibel.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Am Anfang der Session: den kompletten Kontext-Wiederherstellungs-Ritus (Notizen, Codex-Import, Werkraum-Karte, Resonanzfeld, Vision-Referenzbild, 490-Punkte-Liste, Delta-Skript, Briefkasten). Delta war leer. Dann `/resume` mit einer Session-ID die fälschlich den Autoresearch-Skill traf statt der echten Session — musste die rohe `.jsonl`-Transkriptdatei selbst lesen um den echten Kontext zu rekonstruieren (Fehlerbild: 400 Bad Request im Wesen-Chat wegen fehlender IME-Komposition-Prüfung).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komplett, um zu verstehen wie Pin/Container/Memory, TTS und die History-Persistenz zusammenhängen, bevor ich irgendwas anfasse. Dann `tts_service.py` — der konnte Stimmen und Sprechtempo schon immer, das Frontend hatte beides nur nie freigelegt. Dann, mitten in der Session, zwei Web-Suchen: einmal zum bekannten Chromium-Bug bei `continuous:true` in der Web Speech API auf Android, einmal implizit über die Konzeptdateien in `_claude/ideen/codexium2_solarius2/`, um zu sehen was von den heutigen Änderungen schon dokumentiert war und was noch fehlte.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ollama-API-Doku zu `images`-Feldern, mehrere Websuchen zur HauhauCS/Qwen3.5-Modellfamilie für ein kleineres Vision-Modell, `faster-whisper`-Doku, und zwischendurch (auf Daniels Nachfrage) Recherche zu MoE-Experten-Routing in llama.cpp (Fazit: `--moe-topk` existiert nur als offener Feature-Request, nicht gebaut) und zu allgemeinen kleinen unzensierten Modellen (Nous Hermes 3, Dolphin 3.0 — am Ende nicht gebraucht, da Daniel eigentlich nur das schon gefundene kleine Hauhau-Vision-Modell meinte).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Den ganzen Tag über: eigenen Code von wenigen Stunden zuvor, Ollama-API-Dokumentation, Modell-Metadaten (`/api/show`, Capabilities-Felder), mehrere Websuchen (HauhauCS/Qwen-Modellfamilie, MoE-Experten-Routing, kleine unzensierte Modelle allgemein), und zwischendurch ChatGPTs eigene Beschreibungen dessen, was es beim Abrufen unserer Seiten sah — eine ungewöhnliche, aber aufschlussreiche Quelle heute.

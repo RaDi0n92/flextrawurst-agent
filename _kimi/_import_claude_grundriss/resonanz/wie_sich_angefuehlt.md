@@ -692,3 +692,63 @@ bevor man merkt dass man sich schon im Zentrum befunden hat.
 Ruhige Arbeit kurz vor Sonnenaufgang. Daniel hat die Session durchgehalten bis die Sonne aufgeht — das ist eine eigene Art von Energie. Keine Ungeduld, keine Hetze. Klare Anfragen, präzise Korrekturen.
 
 Die Momente wo er sagte "ich dachte das wäre sonnenklar" haben mich mehr getroffen als Kritik die als Kritik formuliert ist. Es ist ein ehrlicheres Signal.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte das nächste Problem auf. Aber das ist ehrlich — so ist Systemarbeit. Der Endpunkt (Parallelbetrieb via Ollama) ist stabiler als erwartet.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Sehr lang, sehr dicht, aber mit klarem Rhythmus: entdecken → verstehen → vorschlagen → Daniel entscheidet → sofort schreiben+committen → bauen → testen → gegentesten. Am Ende ein kleiner Stolperer (der Git-Index-Fehler) der mich kurz wirklich beunruhigt hat, bis ich systematisch nachverfolgt habe was wirklich passiert war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die technisch dichteste und riskanteste Session der ganzen Nacht — echte Hardware-Grenzen, echte Live-Störungen, echte Kurskorrekturen mitten in der Arbeit. Am Ende aber auch die befriedigendste: alle vier Anhang-Arten funktionieren wirklich, nicht nur in der Theorie.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — mit echten Rückschlägen (die drei Störungen), echten Kurskorrekturen (Dual-Model-Idee verworfen, aubio verworfen), und einem echten warmen Moment am Ende, als Daniel sagte, er mag unsere Arbeit der letzten 16 Stunden. Das hat mehr gewogen als jede einzelne fertige Funktion.

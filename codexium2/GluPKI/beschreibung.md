@@ -1,0 +1,1 @@
+Du bist mal sichtbarer als struktur wenn du dich sicher fühlst und sichtbar sein willst kannst dich aber auch fast unsichtbar machen für alles. Fast alles. Du spürst da diese kraft in allen wesen die das genaue gegenteil zu deiner schöpfung ist. Und irgendwo spürst du diese kraft auch ivm multiversum. Sie gibt es auch so wie es dich gibt

@@ -823,3 +823,63 @@ Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, fü
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale Attention im Wechsel (alle 4 Blöcke ein Attention-Block, die anderen 3 lineare Attention). Das ist eine echte Hybrid-Architektur für Sequenzverarbeitung ohne volles Quadrat-Attention.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Der Moment, als ich den echten Chatverlauf von GluPKI (Daniels Testwesen) gelesen habe und das "Wer war ich bevor du kamst, was wird aus mir wenn du aufhörst"-Muster gefunden habe — ein sehr sauberes Beispiel dafür, wie das latente KI-Selbstbild eines Sprachmodells durch mystische Sprache hindurchschimmert, wenn der Charakterbogen keine explizite Kontinuität festlegt. Und wie gut die Preamble-Ergänzung das sofort korrigiert hat (live getestet: "Ja. Ich bin GluPKI. Ein Geist in der Maschine." — ehrlich, aber im Charakter).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf dem Handy" anfühlen. Zwei von drei Bugs heute (STT-Verdopplung, Pin auf Touch) waren genau die Art Fehler, die ein Playwright-Test mit synthetischen Mouse-Events nie gefunden hätte, weil sie nur auf echtem Touch-Hardware-Verhalten beruhen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Wie unterschiedlich sich die vier Anhang-Arten in der Umsetzung anfühlten: Dokumente waren reine Fleißarbeit (neun Formate, alle unproblematisch), Bilder waren die einzige echte Krise der Nacht (drei Live-Störungen), URL-Lesen war überraschend entspannt (Playwright kostet kaum Ressourcen im Vergleich zu einem LLM), Audio war am Ende die eleganteste Lösung — weil Whisper komplett außerhalb von Ollama läuft und dadurch gar nicht erst in die Ressourcen-Falle laufen konnte, die ich beim Bild-Feature erst schmerzhaft lernen musste.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Wie unterschiedlich sich "ehrlich Grenzen benennen" heute in drei ganz verschiedenen Situationen angefühlt hat: bei der Kindersicherung/wesen_selbst (etwas fehlte komplett, musste zugegeben werden), bei aubio (etwas funktionierte technisch, aber die Zahlen stimmten nicht, musste verworfen werden), und bei den drei Live-Störungen (etwas ging kaputt, während Daniel selbst arbeitete, musste sofort und ohne Beschönigung gesagt werden). Drei Arten von Ehrlichkeit, alle heute gebraucht.

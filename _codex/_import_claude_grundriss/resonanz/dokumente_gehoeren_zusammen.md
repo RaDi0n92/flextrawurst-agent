@@ -739,3 +739,68 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 - `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
 - `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen
 - `dolphin_mischpult.html` — Frontend-Seite der Änderungen
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- Diese Notiz + `/root/werkraum/_claude/notizen/ollama-model-mapping.md` (Modell-Zuordnungen)
+- Option B/C: Erst prüfen bevor nächste llama.cpp-Session startet
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- `_claude/ideen/codexium2_solarius2/memory_container.md`
+- `_claude/ideen/codexium2_solarius2/chat_architektur.md`
+- `_claude/ideen/codexium2_solarius2/sessions_kontextmeter.md`
+- Claude-Memory `project_codexium2_testbed.md` (Scope-Regel)
+- Claude-Memory `feedback_sofort_committen_bei_konzeptentscheidungen.md`
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+`_claude/ideen/codexium2_solarius2/chat_architektur.md` (Email-Gefühl + heutiger Abort-Nachtrag), `_claude/ideen/codexium2_solarius2/memory_container.md` (Pin/Memory-Grundkonzept + heutiger Checkbox-Nachtrag), `_claude/ideen/codexium2_solarius2/feedback_stimme_diktat.md` (heute komplett neu, inkl. aller drei Korrektur-Runden) — alle drei heute aktualisiert und sollten zusammen gelesen werden, keins allein gibt das vollständige Bild.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+`_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+`_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+`_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+`_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+`_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+`_claude/ideen/datei_anhaenge.md` (die technische Hauptdokumentation mit allen Nachträgen), `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie vom selben Abend), `2026-07-05-abschluss-bugfixes-wesen-selbst.md` (vorherige Notiz derselben Nacht).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+`2026-07-05-abschluss-bugfixes-wesen-selbst.md`, `2026-07-05-datei-anhaenge-vision-whisper.md` (beide heute, ausführlicher zu den Einzelthemen), `_claude/ideen/charakter_dashboard.md`, `_claude/ideen/datei_anhaenge.md`, `_claude/ideen/codexium2_solarius2/provenienz_logging.md` und `memory_container.md` (beide mit mehreren Nachträgen von heute), `/root/CLAUDE.md` (neuer Abschnitt "Qualität vor Geschwindigkeit").

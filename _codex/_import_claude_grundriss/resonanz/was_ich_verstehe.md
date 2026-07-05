@@ -1168,3 +1168,91 @@ llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.
 Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
 
 Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Zwei getrennte Probleme bei den HauhauCS-GGUFs:
+
+**Problem 1 — rope.dimension_sections (behoben):**
+`qwen35.rope.dimension_sections` hat 3 Elemente `[11, 11, 10]` im GGUF, aber llama.cpp erwartet 4 Elemente `[11, 11, 10, 0]`. Der 4. Wert ist der "Text-Slot" und bei text-only Inferenz null. Das gilt auch für `qwen35.mrope_sections` und `qwen35.rope.mrope_section`.
+
+Fix: Patched GGUF erzeugt via eigenem Python-Script (`/tmp/patch_hauhaucs_rope.py`) → Ausgabe: `/tmp/hauhaucs-patched.gguf` (13GB). Alle drei Felder wurden auf `[11, 11, 10, 0]` erweitert.
+
+**Problem 2 — Tensor-Benennung und Struktur (nicht behoben):**
+- `blk.N.ssm_dt` heißt im GGUF ohne Suffix, aber llama.cpp HEAD erwartet `blk.N.ssm_dt.bias`. Fix in qwen35.cpp angewendet, Rebuild durchgeführt.
+- Dann: Attention-Blöcke im GGUF haben separate `attn_q.weight`, `attn_k.weight`, `attn_v.weight` Tensors. Aktuelles llama.cpp qwen35 erwartet aber kombiniertes QKV für Attention-Blöcke. Shape-Mismatch: `blk.3.attn_k.weight` erwartet `[5120, 0]`, hat `[5120, 1024]`.
+- Das ist eine fundamentale Inkompatibilität: das Modell wurde für eine ältere qwen35-Implementierung konvertiert, bei der Attention-Blöcke noch separate Q/K/V hatten.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Das ganze System um Codexium/Solarius (die beiden "Wesenspawner") läuft über einen einzigen Node-Server (`serve_process_camera_preview.ts`, Port 8787) der Chat, Profil, Spawner-Formular und alle Wesen-Dateien (wesen.md, memory.json, container.json, chat_history.jsonl) verwaltet — alles dateibasiert, kein Postgres. Daniel wollte ein Redesign von Memory/Container/Chat-Architektur ausprobieren, aber ausdrücklich NICHT an den echten, aktiv genutzten Wesen (allen voran "Tomster", vormals "unbekannt_dl4j") — deshalb haben wir `/codexium2` und `/solarius2` als komplette parallele Testbed-Klone gebaut.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Das codexium2/solarius2-System ist ein Testbed mit eigener, bewusst einfacherer Architektur als das alte Zwischenwesen-Konzept: ein Container (flache Pin-Liste, session-lokal), Memory mit fünf festen Kategorien, keine benutzerdefinierten Container. Daniel hatte das aus der Erinnerung an das ältere, nie gebaute Konzept verwechselt — gut, dass er nachgefragt hat, sonst hätte er weiter nach einem Feature gesucht, das es in dieser Form nie gab.
+
+Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wird) ist bewusst so gewollt — aber ich hatte es zu wörtlich implementiert: ein bewusster Stop-Klick sah serverseitig identisch aus wie ein versehentlicher Verbindungsabbruch. Das war der Kern des ersten gemeldeten Bugs heute Abend.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/provenienz_logging.md*
+
+`chat_history.jsonl` ist jetzt nicht mehr nur ein Nachrichtenverlauf, sondern die vollständige Akte eines Charakters. Jede Aktion — nicht nur Chat — landet als eigene Event-Zeile mit `type`-Feld in derselben Datei, nach demselben Muster wie der schon vorher bestehende `session_start`-Marker. `loadHistory`/`loadCurrentSessionHistory` filtern beim Laden für Ollama automatisch auf Zeilen mit `role`+`content` — Event-Zeilen ohne diese Felder werden also nie in den Modell-Kontext geladen, verschmutzen ihn nicht, sind aber beim Rohlesen der Datei alle da.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/memory_container.md*
+
+**Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+
+**Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der zentrale Design-Entscheid der Nacht: ein Anhang ist immer eine Übersetzung in Text, egal was reinkommt. Bild → kleines Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio → Whisper → Text. URL → Playwright → Text. Der Text wird direkt in die nächste Chat-Nachricht eingewoben, dadurch bleibt er ganz natürlich auch in künftigen Zügen im Kontext — kein Sonderfall im Speicherformat nötig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Der Tag hatte eine klare Kurve: von kleinen, gezielten Fixes (Output-Limits, Case-Sensitivität) über eine neue Architektur-Ebene (Charakter-Dashboard, Server-Side-Rendering) zu einem echten Krisenmoment (drei Live-Störungen bei der Vision-Pipeline) und zurück zu ruhiger, sauberer Umsetzung (URL-Lesen, Whisper-Audio). Am Ende stand kein Feature, sondern ein Prinzip: Daniel hat explizit gemacht, was die ganze Nacht über schon galt — Qualität schlägt Geschwindigkeit, ausnahmslos.

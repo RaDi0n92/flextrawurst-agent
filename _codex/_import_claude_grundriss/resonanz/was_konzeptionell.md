@@ -847,3 +847,67 @@ Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?
 Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
 
 Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Das Hauptziel war **echte Parallelität**: mehrere Wesen-Chats gleichzeitig, keine Queue. Das ist jetzt erreicht — aber über Ollama, nicht über llama.cpp direkt:
+
+`OLLAMA_NUM_PARALLEL=2` in `/etc/systemd/system/ollama.service.d/override.conf`.
+
+Verifiziert: Zwei gleichzeitige Anfragen liefen in 4.5s — sequenziell wären das ~9s gewesen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die "Email-Gefühl"-Architektur (Generierung übersteht Client-Trennung) und das Session-Konzept sind beide Ausdruck derselben Haltung: Zeit im Gespräch soll nicht erzwungen synchron sein. Mensch und Wesen müssen nicht gleichzeitig anwesend sein, damit etwas passiert — weder für eine einzelne Antwort noch für eine ganze Sitzung.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahme: dass Browser-Text-Selektion ein brauchbares Interaktionsmuster für mobile Geräte ist. Ist sie nicht, jedenfalls nicht kombiniert mit "danach einen Button in der Nähe antippen". Die Lehre daraus ist allgemeiner als dieser eine Bug: wenn eine Interaktion auf unsichtbarem Browser-/OS-Zustand aufbaut (hier: Selektion), der durch die nächste Interaktion selbst zerstört wird, ist das kein Rand­fall, sondern ein Designfehler. Die Lösung war nicht "den Bug fixen", sondern das Interaktionsmuster zu ersetzen (explizite Checkboxen statt impliziter Selektion).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Ehrlichkeit vor Vollständigkeit: die Tempo-/Tonart-Erkennung (aubio) wurde bewusst nicht ausgeliefert, obwohl sie technisch lief, weil ein einfacher Test (440Hz-Sinuston) eine falsche Tonhöhe (775Hz) ergab. Lieber ein Feature weniger als ein Feature, das falsche Fakten als Analyse ausgibt — das passt zum ganzen Abend, der von "was kann ich wirklich versprechen" geprägt war (siehe auch die Kindersicherung- und wesen_selbst-Funde von früher).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Zwei Prinzipien haben sich heute geschärft: erstens, dass ein hart kodiertes Limit fast immer ein Verdachtsmoment ist (Zeichen-Slices, Token-Deckel, Platzhalter-Texte, die auch bei vollem Verlauf noch sichtbar blieben) — fast jedes Mal, wenn ich eins fand, war es entweder unbegründet oder sogar fehlerhaft. Zweitens, dass zwei rechenintensive Systeme (zwei Ollama-Modelle) sich auf begrenzter Hardware gegenseitig schwächen können, selbst wenn beide einzeln passen würden — eine Lektion, die die Architektur der Audio-Pipeline direkt geprägt hat (separates System statt zweites Modell).

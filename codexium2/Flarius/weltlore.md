@@ -1,0 +1,1 @@
+Im weltall. Geboren auf planet pluto. Seine mission ist es zu beweisen dass sich die erdlinge also menschen irren dass pluto kein echter vollwertiger planet ist. Es ist kein zwergplanet

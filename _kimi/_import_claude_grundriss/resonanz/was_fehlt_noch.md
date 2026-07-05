@@ -753,3 +753,96 @@ Alles andere ist Planung auf Papier bis dahin.
 Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
 
 ---
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Daniel "los" sagt zu llama.cpp: dann erst B oder C umsetzen, dann Backend-Migration, dann Tests.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+- Warteschlange für parallele Nachrichten (codexium2/solarius2)
+- Client-Benachrichtigung bei fertiger Hintergrund-Antwort ohne manuelles Neuladen
+- Exaktes Nachmessen der Zeichenbudgets an echten Feldgrößen
+- Offene Frage von vorhin noch unbeantwortet: soll `wesen.md` von Tomster den Namen fest reinschreiben? (Daniel: nein, Tomster weiß es aus dem Gespräch — erledigt, keine Aktion nötig)
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+- Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
+- Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
+- Beobachten was die drei Tester morgen finden.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+- Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
+- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
+- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+- Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
+- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
+- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+- `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
+- Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
+- Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+- Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
+- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/codexium2_solarius2/provenienz_logging.md*
+
+Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+**Nachtrag 2026-07-05 (Nacht) — genau das jetzt gebaut, plus Server-Side-Rendering.** Anlass: Daniel hat GluPKI (codexium2) mit ChatGPTs Web-Browsing-Tool abrufen lassen — das sah nur das leere HTML-Grundgerüst (Buttons, Modals-Struktur), keinen tatsächlichen Verlauf, weil die Chat-Seite komplett clientseitig per JS befüllt wird und das Browsing-Tool kein JS ausführt. Daniels Reaktion: er will, dass sowohl Maschinen (die die Seite roh abrufen) als auch er selbst in der UI immer den vollen Verlauf inkl. aller Provenienz-Änderungen sehen.
+
+Umsetzung: `ladeVerlaufKombiniert()` liefert Nachrichten und Ereignisse chronologisch gemischt (neues `verlauf`-Feld an `GET .../history`, additiv neben dem bestehenden `history`-Feld). `GET /:spawner/:name` rendert diesen Verlauf jetzt zusätzlich **serverseitig direkt ins ausgelieferte HTML** (`renderVerlaufHtml`) — ein roher `curl`-GET zeigt jetzt echte `<div class="msg">`- und `<div class="verlauf-ereignis">`-Elemente statt nur des leeren Platzhalters. Client-JS (`ladeHistory()`) entfernt dieses SSR-Markup beim eigenen Rendern und ersetzt es 1:1 durch die volle interaktive Version (keine Duplikate, per Playwright verifiziert). Ereignisse erscheinen als dezente zentrierte Pillen zwischen den Nachrichten-Bubbles, mit Klartext-Label (z.B. "Memory geändert", "Allgemeines Feedback", "Satz gepinnt").
+
+Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht nur codexium2/solarius2: bei codexium/solarius bleibt der Ereignis-Teil naturgemäß leer (keine Provenienz dort), die Nachrichten werden aber genauso serverseitig gerendert. Kein Sonderfall im Code nötig, reine Degradation.
+
+---
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+- URL-Lesen per Playwright (Task angelegt, nicht begonnen).
+- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
+- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+- Bildbeschreibungsqualität bei komplexeren, realistischen Motiven ungetestet.
+- Tempo-/Tonart-Erkennung weiterhin offen (bewusst nicht geliefert).
+- Kein Auftrag, aber ein loser Gedanke: könnten Charaktere irgendwann selbst aktiv nach Anhängen fragen?
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+- Video-Anhänge (bewusst zurückgestellt, Hardware-Grenze).
+- Bessere Bildbeschreibung bei komplexeren Motiven (ungetestet).
+- Kompaktere Dashboard-Profilvorschau (offene Frage aus `charakter_dashboard.md`).
+- Tempo-/Tonart-Erkennung für Audio (bewusst nicht ausgeliefert, ungenau).

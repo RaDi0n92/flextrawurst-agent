@@ -120,3 +120,6 @@ Wenn Dolphin plötzlich stockt, glaube nicht vorschnell an Modellgröße oder no
 
 2026-06-23 13:55 —
 Daniel meldet Dolphin-Latenzen auf flextrawurst.de/dolphin: erste Antwort noch knapp, zweite hängt minutenlang nach "cold" und "antwort läuft". Trenne jetzt UI-Symptom, Webdienst, Queue und Ollama-Laufzeit; Ziel ist kleine Reparatur, nicht Modell- oder Oberflächenumbau.
+
+2026-07-05 08:49 —
+Daniel hat nur huhu gesagt; halte den Start leicht, aber vergiss die neue Doku-Spur nicht: Datei-Anhänge, URL-Lesen, Abbruchbehandlung und Systemprompt-Sichtbarkeit waren zuletzt wichtig. Der Root-Status ist stark verschmutzt mit laufenden Claude/Codex-Spuren, also bei jeder Änderung eng stagen.

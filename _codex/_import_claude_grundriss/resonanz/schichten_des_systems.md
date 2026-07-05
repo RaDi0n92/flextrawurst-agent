@@ -890,3 +890,148 @@ Das Mischpult hat jetzt drei Schichten die wirklich tragen:
 3. **UI-Schicht:** Sidebar, Proto-Events, Badges — alles zeigt was wirklich passiert ist
 
 Was noch fehlt: eine vierte Schicht die sagt "diese drei Schichten sind konsistent". Aktuell kann die Datei weg sein aber der Index noch wissen. Das ist der nächste Schritt wenn es jemals nötig wird.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+```
+wesen_chat.html → serve_process_camera_preview.ts → Ollama /api/chat
+                                                   → OLLAMA_NUM_PARALLEL=2
+                                                   → hauhaucs-tuned:latest
+```
+
+Die TTS-Schicht liegt parallel dazu — `/tts/speak` → edge-tts → Katja-Stimme.
+Server-seitige History: JSONL per Wesen, kein localStorage mehr.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+```
+wesen_chat.html (Pin/Container/Memory/Sessions-UI, nur codexium2/solarius2)
+  → serve_process_camera_preview.ts (Routing, Budget-Checks, Session-Splitting)
+    → chat_history.jsonl (rohe Wahrheit, mit session_start-Markern durchsetzt)
+    → memory.json / container.json (verdichtete/aktuelle Erinnerung)
+    → _wesen_preamble.md (global, immer zuerst — jetzt mit Kontinuität+Anti-KI-Simulation+Meta-Ehrlichkeit)
+    → Ollama /api/chat (Generierung, async vom Client entkoppelt bei Testbed-Spawnern)
+```
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+```
+wesen_chat.html
+  ├── TTS (Stimme + Tempo, alle vier Spawner)
+  ├── Speech-to-Text (alle vier Spawner, jetzt Android-sicher)
+  ├── Feedback (nur codexium2/solarius2, braucht Message-IDs)
+  ├── Pin + Memory-Add (nur codexium2/solarius2, Satz-Checkboxen statt Selektion)
+  └── Abort (nur codexium2/solarius2, aktiveGenerationen-Map)
+wesen_profil.html
+  └── zeigt jetzt alle bekannten Felder, auch leere
+serve_process_camera_preview.ts
+  ├── chat_history.jsonl mit id-Feld
+  ├── feedback.json + feedback/<id>.md
+  └── aktiveGenerationen (Abort-Tracking)
+```
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+```
+Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
+  → System-Prompt (buildSystemPrompt, MD_ORDER)
+    → Modell-Default springt ein wo Material fehlt (poetisch-vage)
+Memory/Container (jetzt groesser + dauerhaft)
+  → soll das ausgleichen was ein Gespraech ueber Zeit anhaeuft,
+    nicht was dem Charakter von Anfang an fehlt
+```
+Zwei verschiedene Probleme, heute beide angefasst, nicht miteinander verwechseln: Charaktertiefe kommt aus den Feldern, Gesprächskontinuität aus Memory/Container.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+```
+Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
+  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht)
+    → ctx-Meter + 77%-Warnung (sichtbar machen was verloren geht)
+      → Abschluss-Geschichte (bewusst destillierter Ersatz, ueberlebt Sessiongrenzen)
+```
+Vier Schichten, jede baut auf der vorherigen auf, keine ersetzt eine andere.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+```
+Chat-Antwort (normaler sichtbarer Text)
+  + optionaler [MERKEN: ...]-Anhang (unsichtbar fuer den Menschen)
+    → Server trennt: sichtbarer Text → chat_history.jsonl
+                       gemerkter Text → memory.json/wesen_selbst (+ Provenienz)
+Memory-Extraktion (Batch, niedrige Frequenz)
+  → befuellt jetzt zusaetzlich wesen_selbst als "bewusste Rueckschau"
+Neue-Session-Dialog
+  → erinnert aktiv an Memory/Container/Abschluss VOR dem Beenden,
+    statt sich nur auf den Wissensstand des Menschen zu verlassen
+```
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+```
+Vier Spawner (codexium, codexium2, solarius, solarius2)
+  → bisher: nur einzeln ueber ihre eigene URL erreichbar
+  → jetzt: /charakterdashbord als gemeinsame Meta-Ebene daroberliegend
+    → pro Karte: Chat/Profil (Popup zu bestehenden Seiten),
+                 Memory/Container (Lese-Modal, gleiche Daten wie im Chat selbst),
+                 Feedback (neu: uebergreifend, zusaetzlich zum alten nachrichtengebundenen)
+```
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+```
+Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
+  → extrahiereAnhang() erkennt Format an Endung
+    → Text-Formate: direkt/pdf-parse/mammoth/ZIP+XML
+    → Bilder: kleines Vision-Modell (eigener Ollama-Call, kurzes keep_alive)
+    → (geplant) Audio: Whisper + ffmpeg
+  → IMMER Text als Ergebnis
+    → wird in die naechste Chat-Nachricht eingewoben
+      → bleibt dadurch natuerlich Teil der Geschichte, keine Sonderbehandlung noetig
+```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+```
+Vier Eingabewege (Datei-Upload, URL, spaeter vielleicht mehr)
+  → extrahiereAnhang() / leseUrlMitPlaywright() erkennen den Typ
+    → art-spezifische Verarbeitung, aber IMMER dasselbe Ziel: Text
+      → Bilder: eigenes kleines Ollama-Modell (im Ollama-Slot, kurzes keep_alive)
+      → Audio: eigener Python-Prozess (ausserhalb von Ollama, kein Konflikt)
+      → Dokumente/URL: reine Text-Extraktion, kein Modell noetig
+  → Text wird Teil der naechsten Chat-Nachricht
+    → bleibt dadurch natuerlich im Kontext, keine Sonderbehandlung
+```
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+```
+Frueh: Output-Grenzen entfernt (Chat, Memory, Container, Abschluss)
+  → Charaktere duerfen mehr SAGEN
+Mitte: Charakter-Dashboard + Server-Side-Rendering + Provenienz-Sichtbarkeit
+  → alles wird SICHTBAR, fuer Menschen und Maschinen gleichermassen
+Spaet: Datei-Anhaenge (Dokumente, Vision, URL, Audio)
+  → Charaktere duerfen mehr WAHRNEHMEN
+Ende: "Qualitaet vor Geschwindigkeit" explizit gemacht
+  → das Prinzip, das die ganze Zeit schon galt, bekommt einen Namen
+```

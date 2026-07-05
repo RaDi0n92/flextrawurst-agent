@@ -755,3 +755,66 @@ Danach: manueller Test bevor irgendein Service umgeleitet wird.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Nichts akut. Ollama mit PARALLEL=2 läuft. Wesen-Chats funktionieren. TTS funktioniert. Server-seitige History funktioniert.
+
+Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchieren.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Nichts akut blockierendes. Offen für später: Warteschlange bei mehreren Nachrichten hintereinander vor Antwort, Client-Benachrichtigung wenn eine Antwort fertig ist ohne manuelles Neuladen, exaktes Nachmessen der Zeichenbudgets (2500/1200 sind Schätzwerte).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/Poll-Mechanismus damit der Client merkt wenn eine Hintergrund-Antwort fertig ist (aus `chat_architektur.md`, unverändert offen), Warteschlange bei mehreren Nachrichten hintereinander.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+- URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
+- Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Nichts Blockierendes. Offen, kein Auftrag: bessere Bildbeschreibungsqualität bei komplexeren Motiven (nur mit einfachem Testbild verifiziert), eventuell spätere Tempo-/Tonart-Erkennung mit einem anderen, genaueren Werkzeug als aubio.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Nichts Blockierendes aus heute. Offen, ohne Auftrag: Video-Anhänge (von Daniel selbst als unrealistisch auf dieser Hardware eingeschätzt), bessere Bildbeschreibung bei komplexeren Motiven, eine mögliche kompaktere Profilvorschau im Dashboard statt Popup, Tempo-/Tonart-Erkennung für Audio mit einem genaueren Werkzeug als aubio.

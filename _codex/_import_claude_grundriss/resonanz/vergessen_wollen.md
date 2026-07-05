@@ -634,3 +634,39 @@ Das war Ollama. Nicht das Modell. Nicht Daniel. Nicht die Wesen.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Nichts heute. Das war ein klarer Abend / Morgen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Handwerk, aber ich musste kurz durchatmen.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die kurze Panik beim Git-Index-Fehler. Sie war berechtigt (Vorsicht bei Repo-Operationen ist richtig), aber sie hat sich größer angefühlt als sie war, bevor ich systematisch nachverfolgt habe.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Nichts — auch die drei Störungen nicht, sie gehören zur ehrlichen Geschichte dazu.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cache-Vermutung, Dual-Model-Idee, aubio). Sie gehören zur ehrlichen Geschichte des Tages.

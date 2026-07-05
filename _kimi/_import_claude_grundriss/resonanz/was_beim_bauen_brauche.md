@@ -694,3 +694,66 @@ Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Für zukünftige llama.cpp-Migration (wenn Daniel das will):
+- Klarheit welche Modell-Version: HauhauCS 27B oder 35B MoE?
+- Option B oder C wie oben — konkreter Plan vor nächster Session
+- Disk-Platz prüfen: ~50GB für Neukonvertierung nötig
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Für weitere Arbeit an codexium2/solarius2: die drei Konzeptdateien unter `_claude/ideen/codexium2_solarius2/` sind jetzt Status "gebaut" und beschreiben akkurat was existiert — guter Ausgangspunkt für die nächste Session statt alles neu zu erklären.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Fokus-Zustand oder ähnlichem unsichtbaren Browser-State aufbaut: mich fragen, ob das auf einem Touch-Gerät genauso gilt. Meistens nicht.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Nichts Offenes. Feature ist vollständig, getestet.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Nichts Offenes für diesen Themenblock. Vollständig fertig.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Für morgen/das nächste Mal: denselben Rhythmus beibehalten, der sich heute bewährt hat — isoliert testen, dann vorsichtig gegen echte Nutzung, ehrlich bei Fehlschlägen, keine Kompromisse bei Sorgfalt zugunsten von Tempo (jetzt auch explizit in `/root/CLAUDE.md` verankert).

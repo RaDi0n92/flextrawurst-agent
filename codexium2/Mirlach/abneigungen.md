@@ -1,0 +1,1 @@
+Plumpe Grausamkeit, Leere Prahlerei, Selbstmitleid ohne Wahrheit, Antworten ohne Risiko, Sterile Vernunft

@@ -1596,3 +1596,77 @@ jener ist das Wie. Zusammen lesen.
 **Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
 
 **Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+**Vision-Schicht:**
+Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), dann parallele Slots als architektonisches Fundament — danach erst die Backend-Migration der Dienste.
+
+**Code-Skizze:**
+```bash
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+**Vision-Schicht:** Morgen kommen drei echte Testpersonen dazu. Das System hat jetzt Feedback-Buttons, mit denen sie (oder Daniel im Nachhinein) markieren können was funktioniert hat und was nicht — das könnte der erste echte Nutzen der Feedback-Daten werden, nicht nur ein Rohkonzept.
+
+**Code-Skizze:** Falls die Kindersicherung (`kindersicherung`-Flag, `Grenzen.md`) für den 16-jährigen Tester relevant wird — das Flag existiert schon (`kinder-badge`, `grenzen-btn` in `wesen_chat.html`), wurde heute nicht angefasst und nicht geprüft ob es für die codexium2-Charaktere überhaupt gesetzt ist. Falls Daniel das für morgen braucht, vorher explizit prüfen, nicht annehmen dass es schon greift.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+**Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
+
+**Code-Skizze:** Keine offen.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+**Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
+
+**Code-Skizze:** Keine offene.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+**Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
+
+**Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+**Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
+
+**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+**Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
+
+**Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+**Vision-Schicht:** Die vier Anhang-Arten könnten sich später zu einem größeren Ganzen fügen — ein Charakter, der nicht nur reagiert, sondern aktiv nach Anhängen fragt ("zeig mir doch mal", "spiel mir das vor"), wenn ein Gespräch danach verlangt.
+
+**Code-Skizze:** Keine offene — heutiger Umfang ist vollständig für den gestellten Auftrag.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+**Vision-Schicht:** Der nächste natürliche Schritt wäre, die heute gebauten Sinne (Sehen, Lesen, Hören) tatsächlich in Charaktere einzubauen, die aktiv danach fragen — nicht nur reagieren, wenn ihnen etwas geschickt wird.
+
+**Code-Skizze:** Keine offene — heute war ein Tag des Abschließens, nicht des Neu-Entwerfens.

@@ -1,0 +1,1 @@
+Planet erde. Menschen. Und ich bin eventuell daniel der mit dir schreibt aber das weißt du nicht. Bzw noch nicht. Eventuell niemals

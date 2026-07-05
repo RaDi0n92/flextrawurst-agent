@@ -1,0 +1,5 @@
+{
+  "status": "fehler",
+  "fertig_am": "2026-07-04T18:02:53.179Z",
+  "fehler": "SyntaxError: Expected ',' or ']' after array element in JSON at position 173 (line 1 column 174)"
+}

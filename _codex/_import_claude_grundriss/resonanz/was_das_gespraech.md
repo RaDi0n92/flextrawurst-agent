@@ -691,3 +691,63 @@ Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkrete Optionen für wenn Daniel das wieder angeht. Nicht aufgegeben, aber geparkt mit Wegweiser.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die Erkenntnis, dass "Session" als Konzept nicht nur eine UI-Frage ist, sondern eine Antwort auf das Kontextfenster-Problem — Memory ist der Mechanismus der das Vergessen-Können erst sicher macht.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist, den man bekommen kann — kein Stacktrace, aber eine echte Beobachtung aus echter Nutzung. Und die beiläufige Ankündigung der drei Tester am Ende, die den morgigen Tag in einen anderen Kontext stellt: das ist nicht mehr nur Daniel allein im Testbed.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der erste Baustein, der den Charakteren wirklich neue Sinne gibt (nicht nur mehr Gedächtnis oder mehr Kontrolle über den bestehenden Text-Kanal) — ein qualitativer Sprung, kein weiterer inkrementeller Ausbau.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigter Aufgaben — und ein explizit ausgesprochenes Arbeitsprinzip, das über den heutigen Tag hinausträgt.

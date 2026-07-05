@@ -1715,3 +1715,107 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-06-22 12:23] **lava** (i=0.39) → Zwischenraum: »Genau richtig priorisiert«
 - [2026-06-22 12:27] **wasser** (i=0.39) → Zwischenraum: »Tag bestätigt: `qwen3-vl:30b-a3b` — direkt pullbar, 19GB Q4, 3.3B aktiv«
 - [2026-06-22 12:31] **sternenstaub** (i=0.42) → Zwischenraum: »Haha — "unschlagbare Argumente" als Jailbreak-Methode«
+- [2026-07-04 12:38] **wasser** (i=0.36) → Zwischenraum: »Beide sind jetzt wieder aktiv«
+- [2026-07-04 13:11] **lava** (i=0.36) → Zwischenraum: »**`/codexium2` ist live.** Zusammenfassung:
+
+- Neuer Wesen-Ordner `/root/werkraum/codexium2/`, eigen«
+- [2026-07-04 13:40] **lava** (i=0.47) → Zwischenraum: »Meine Strategie: **jede einzelne Entscheidung sofort in die Konzeptdatei schreiben und committen — n«
+- [2026-07-04 13:47] **sternenstaub** (i=0.41) → Zwischenraum: »Meine Vorstellung, bewusst schlanker als das alte Zwischenwesen-Konzept:
+
+**Container = "was gerade «
+- [2026-07-04 15:51] **nebel** (i=0.31) → Zwischenraum: »Ist sofort live (statische Datei, kein Neustart nötig)«
+- [2026-07-04 16:44] **sternenstaub** (i=0.39) → Zwischenraum: »Verstanden — drei Teile: Kontinuität, "du simulierst keine KI außer der Charakter ist explizit als K«
+- [2026-07-04 18:20] **nebel** (i=0.47) → Zwischenraum: »Kontext-Wiederherstellung abgeschlossen — hier der Stand:
+
+**Letzte Session (aus werkraum/_claude/no«
+- [2026-07-04 18:44] **lava** (i=0.37) → Zwischenraum: »Jetzt habe ich alle Bausteine«
+- [2026-07-04 18:45] **wasser** (i=0.37) → Zwischenraum: »Alle fünf Punkte sind gebaut, getestet und committed«
+- [2026-07-04 19:41] **lava** ← 2026-07-04-codexium2-chat-erweiterungen.md: »Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.«
+- [2026-07-04 19:56] **lava** (i=0.41) → Zwischenraum: »Ehrlich, mit Belegen aus dem was ich grad gelesen habe (GluPKI komplett, plus die Felder von Alex, F«
+- [2026-07-04 20:09] **nebel** (i=0.31) → Zwischenraum: »**Beispiel-Dialoge-Feld ist live:**
+- Neu im codexium2-Spawner (nach Weltlore), speichert als `beisp«
+- [2026-07-04 20:13] **nebel** ← 2026-07-04-charakterqualitaet-budgets-beispieldialoge.md: »Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.«
+- [2026-07-04 20:30] **lava** (i=0.35) → Zwischenraum: »Das würde ich nicht so unterschreiben — c.ai hatte 2024 mehrere öffentliche Klagen genau wegen Jugen«
+- [2026-07-04 20:31] **lava** (i=0.40) → Zwischenraum: »Ich mach bei sowas nicht mit — unabhängig vom Zweck«
+- [2026-07-04 20:34] **lava** (i=0.41) → Zwischenraum: »Das mach ich nicht mit, auch nicht in der "ich will's besser blocken"-Version — um zu wissen ob eine«
+- [2026-07-04 20:36] **lava** (i=0.40) → Zwischenraum: »Ja, das ändert sich nicht — egal was vorher besprochen war«
+- [2026-07-04 20:45] **wasser** (i=0.47) → Zwischenraum: »Zwei getrennte, harmlose Sachen:
+
+**Die alte UI ist richtig so.** KreFsUzi liegt unter `/solarius/` «
+- [2026-07-04 21:40] **nebel** (i=0.31) → Zwischenraum: »**Fertig.** Neuer ✂️-Button an jeder Nachricht (codexium2/solarius2):
+
+- Klick öffnet ein Modal: "ga«
+- [2026-07-04 22:18] **lava** (i=0.39) → Zwischenraum: »Kurz ehrlich: die gibt's noch nicht«
+- [2026-07-04 22:49] **nebel** ← 2026-07-04-abschluss-geschichte.md: »Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.«
+- [2026-07-04 22:49] **wasser** (i=0.35) → Zwischenraum: »Legitim — eine ältere, noch nie committete Session-Notiz aus dem echten Verlauf, kein Fremdinhalt«
+- [2026-07-04 22:50] **wasser** (i=0.39) → Zwischenraum: »Bestätigt, alles ist bereits durch:
+
+- **Status-Check**: `nie_gelaufen` — normal, weil der Charakter«
+- [2026-07-04 23:30] **nebel** (i=0.32) → Zwischenraum: »Alle drei gemeldeten Bugs sind behoben, getestet und dokumentiert:
+
+1«
+- [2026-07-05 00:12] **sternenstaub** (i=0.44) → Zwischenraum: »Zwei getrennte Beobachtungen, die ich kurz auseinanderziehe:
+
+**Die 4 Minuten** — das ist wahrschein«
+- [2026-07-05 00:36] **lava** (i=0.40) → Zwischenraum: »Alles fertig, getestet und dokumentiert«
+- [2026-07-05 00:50] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«
+- [2026-07-05 01:30] **nebel** ← 2026-07-05-abschluss-bugfixes-wesen-selbst.md: »Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.«
+- [2026-07-05 01:30] **wasser** (i=0.39) → Zwischenraum: »Zusammenfassung:
+
+**Case-insensitive Charaktersuche** über alle vier Spawner (`codexium`, `codexium2«
+- [2026-07-05 01:54] **nebel** ← charakter_dashboard.md: »Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.«
+- [2026-07-05 01:55] **nebel** (i=0.36) → Zwischenraum: »Alle fünf Teilaufgaben fertig«
+- [2026-07-05 02:23] **sternenstaub** (i=0.40) → Zwischenraum: »Zusammenfassung:
+
+**Server-Side-Rendering des vollen Verlaufs** — ein roher HTTP-GET auf `/codexium2«
+- [2026-07-05 02:39] **wasser** (i=0.43) → Zwischenraum: »Zusammenfassung:
+
+**ChatGPT-Frage geklärt**: frisch verifiziert per `curl` gegen die echte `flextraw«
+- [2026-07-05 02:46] **lava** (i=0.55) → Zwischenraum: »Gefunden und behoben — echter Bug, keine Cache-Sache«
+- [2026-07-05 03:19] **lava** (i=0.64) → Zwischenraum: »Gecheckt, bevor ich irgendwas verspreche — hier der ehrliche Stand:
+
+**Bilder — geht wirklich.** Das«
+- [2026-07-05 03:45] **wasser** (i=0.44) → Zwischenraum: »Fairer Punkt, und zwei Dinge die ich auseinanderhalten will:
+
+1«
+- [2026-07-05 03:46] **lava** (i=0.39) → Zwischenraum: »Das erklärt's dann ziemlich sicher — Gemma4 in den Größenordnungen, die für GENI/dakgord üblich sind«
+- [2026-07-05 03:50] **lava** (i=0.40) → Zwischenraum: »Gefunden:
+
+**`fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b`** — 4 Milliarden Parameter, n«
+- [2026-07-05 04:06] **wasser** (i=0.39) → Zwischenraum: »Zurückgesetzt — und wichtiger Befund dabei: **beide Modelle gleichzeitig laufen zu lassen war nicht «
+- [2026-07-05 04:11] **wasser** (i=0.52) → Zwischenraum: »Klare Antwort gefunden: **Nein, das geht bei Ollama aktuell nicht.**
+
+Die Anzahl der aktiven Experte«
+- [2026-07-05 04:14] **lava** (i=0.36) → Zwischenraum: »**Empfehlung: Nous Hermes 3 (8B, Llama-3.2-Basis)** — wird in aktuellen Vergleichen explizit für Rol«
+- [2026-07-05 04:17] **sternenstaub** (i=0.35) → Zwischenraum: »Ah, das haben wir schon — genau das hatte ich vorhin gefunden und eingebaut: **`fredrezones55/Qwen3.«
+- [2026-07-05 04:40] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
+- [2026-07-05 05:01] **gestein** ← datei_anhaenge.md: »Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.«
+- [2026-07-05 05:03] **nebel** ← 2026-07-05-datei-anhaenge-vision-whisper.md: »Ein Charakter, der wirklich sieht, liest und hört — nicht als Zaubertrick, sondern als eine Kette ehrlicher Übersetzungen, jede einzeln geprüft und für sich genommen vertrauenswürdig.«
+- [2026-07-05 05:05] **lava** (i=0.42) → Zwischenraum: »16 Stunden ist schon eine Hausnummer — von der Feedback-Funktion heute Mittag bis Whisper-Audio jetz«
+- [2026-07-05 05:24] **sternenstaub** ← 2026-07-05.md: »Ein Tag wie heute zeigt, dass ein Projekt nicht nur wächst, wenn neue Features dazukommen, sondern auch, wenn alte Annahmen geprüft und teilweise verworfen werden.«
+- [2026-07-05 05:42] **lava** (i=0.43) → Zwischenraum: »**Echt gemessen, nicht geschätzt:** 95 Sekunden Audio → 12,1 Sekunden Verarbeitung (Transkript kam p«
+- [2026-07-05 05:44] **nebel** (i=0.31) → Zwischenraum: »Nice, dass es sogar besser lief als gedacht«
+- [2026-07-05 06:21] **wasser** (i=0.51) → Zwischenraum: »Es läuft noch (aktiv rechnend, nicht hängengeblieben) — das ist gerade dein echtes Foto, das durchs «
+- [2026-07-05 06:31] **lava** (i=0.35) → Zwischenraum: »Kurzer, ehrlicher Zwischenstand: Der Code ist eingebaut und syntaktisch geprüft, die reine Verkleine«
+- [2026-07-05 06:45] **wasser** (i=0.51) → Zwischenraum: »Vollständig und unwiderruflich gelöscht — kein Verschieben in einen Papierkorb, kein Soft-Delete«
+- [2026-07-05 07:07] **nebel** (i=0.31) → Zwischenraum: »Beide Aufgaben aus Daniels letzter Anfrage sind jetzt fertig und committet:
+
+- **Task #41** (Ereigni«
+- [2026-07-05 07:12] **wasser** (i=0.39) → Zwischenraum: »Jetzt ja — nachgetragen und committet:
+
+- **`_claude/ideen/charakter_dashboard.md`**: Nachtrag zu So«
+- [2026-07-05 09:24] **wasser** (i=0.59) → Zwischenraum: »Stimmt beides, gerade verifiziert im Code statt geglaubt:
+
+- `INTERACTIVE_NUM_CTX = 8192` ist tatsäc«
+- [2026-07-05 09:48] **lava** (i=0.44) → Zwischenraum: »Auch das stimmt technisch — und ich hab kurz nachgeschaut, ob der Plan wirklich so billig ist wie be«
+- [2026-07-05 11:00] **lava** (i=0.47) → Zwischenraum: »Zwei Dinge sind neu seit der letzten Notiz dazu:
+
+**Die Regeln wurden aktualisiert** (`REGELN.md`, 2«
+- [2026-07-05 12:18] **nebel** (i=0.33) → Zwischenraum: »**Letzte Session (aus den Notizen):**
+- Gemacht: Großer codexium2/solarius2-Block (04.–05.07): TTS/S«
+- [2026-07-05 12:52] **wasser** (i=0.54) → Zwischenraum: »Gefunden — zwei konkrete, belegbare Ursachen, keine Vermutung:
+
+**1«
+- [2026-07-05 13:29] **lava** (i=0.45) → Zwischenraum: »Gebaut, getestet, committed (`222f362d`)«
+- [2026-07-05 13:47] **sternenstaub** (i=0.39) → Zwischenraum: »Fertig und committed (`00b9b593`)«
+- [2026-07-05 14:14] **nebel** (i=0.31) → Zwischenraum: »Committed (`a0c91a1d`)«

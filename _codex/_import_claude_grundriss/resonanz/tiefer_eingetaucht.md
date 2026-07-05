@@ -888,3 +888,67 @@ Das ist kein Dealbreaker — aber ein Punkt den der erste Test klären muss.
 Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
 
 Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+llama.cpp-Source liegt jetzt auf dem System unter `/tmp/llama-cpp-src/` (latest HEAD, geclont 2026-06-25). Das gebaut Binary: `/tmp/llama-cpp-src/build/bin/llama-server`. Kann für andere Modelle genutzt werden die den Anforderungen entsprechen.
+
+Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/gguf-py')` — damit kann man GGUF-Dateien lesen und schreiben. Das Patch-Script `/tmp/patch_hauhaucs_rope.py` zeigt das Muster.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Die Analyse von `loadHistory`/`loadCurrentSessionHistory`/`splitSessions` — wie man aus einer flachen JSONL-Datei mit eingestreuten Marker-Zeilen sauber Session-Grenzen herausschält, ohne das Dateiformat zu brechen (Marker-Zeilen haben `type` statt `role`/`content`, werden von der normalen History-Lese-Funktion automatisch übersprungen).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Die Web-Speech-API-Recherche: `continuous:true` auf Android/Chrome ist kein Rand-Bug, sondern strukturell kaputt, weil es auf dieser Plattform nicht nativ existiert — Chrome emuliert es durch heimliche Neustarts des Recognizers und schneidet dabei bereits gehörten Ton nochmal mit. Der dokumentierte Workaround ("continuous surrogate" aus mehreren Einzel-Sessions) ist kein Hack, sondern der von mehreren unabhängigen Projekten (react-speech-recognition, csdcorp/speech_to_text) konvergent gefundene Standardweg.
+
+Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Code selbst, sondern eine Schicht tiefer im Spawner — der schreibt nur für ausgefüllte Felder überhaupt eine Datei. Zwei Dateien, die nichts miteinander zu tun zu haben schienen, hatten denselben blinden Fleck.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+`keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Der Fund, dass `execFileSync` bei `ffmpeg -f null -` die volumedetect-Werte NICHT zurückgibt (weil sie auf stderr stehen und execFileSync im Erfolgsfall nur stdout liefert), war ein kleiner, aber lehrreicher Bug — hätte ich nicht getestet, wäre `lautstaerkeDb` immer `null` gewesen, ohne dass ich es gemerkt hätte. `spawnSync` statt `execFileSync` behebt das sauber (liefert stdout UND stderr getrennt, unabhängig vom Exit-Code).
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ich die Rohdaten (GluPKI vs. Flarius) tatsächlich verglichen habe — eine plausible, aber ungeprüfte Erklärung, die sich als falsch herausstellte. Der echte Fehler (ein irreführender Platzhaltertext, der trotz `display:none` im rohen HTML blieb) war interessanter und lehrreicher als meine erste Vermutung. Daniels Gegenprobe mit einem zweiten Charakter (Flarius) war der Schritt, der die Wahrheit sichtbar gemacht hat — nicht meine eigene Analyse allein.

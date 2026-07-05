@@ -1,8 +1,0 @@
-{
-  "kategorien": [
-    { "label": "Wissen", "max": 20, "eintraege": [] },
-    { "label": "Erlebnisse", "max": 10, "eintraege": [] },
-    { "label": "Beziehungen", "max": 10, "eintraege": [] },
-    { "label": "Vorlieben", "max": 10, "eintraege": [] }
-  ]
-}

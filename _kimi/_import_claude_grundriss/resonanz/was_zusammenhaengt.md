@@ -899,3 +899,67 @@ Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kom
 Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
 
 Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+- HauhauCS = fine-tune auf fredrezones55-Base, selbst ein Qwen3.5-27B-Derivat
+- Die GGUF-Konvertierung war zu einem Zeitpunkt wo llama.cpp qwen35 noch anders strukturiert war
+- Ollama verwendet llama.cpp intern, aber mit eigenen Patches und verzögerter Adoption neuer Architektur-Änderungen
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+Container (session-lokal, Budget-basiert) → Memory-Extraktion (async, human-getriggert) → Session-Ende (Marker + Extraktion + Container-Leerung) → Session-Browser (alte Sessions read-only) sind vier Teile eines einzigen Kreislaufs: das Akute wird gepinnt, beim Sessionende in Dauerhaftes verdichtet, die rohe History bleibt lesbares Archiv aber nicht mehr aktiver Kontext. Das Kontextfenster-Meter macht sichtbar warum das nötig ist (8192 Token sind schnell voll).
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+Message-IDs (heute neu in `chat_history.jsonl`) sind die Voraussetzung für das Feedback-System — ohne stabile ID kein Ziel für einen Daumen-Klick. Der gleiche ID-Mechanismus hätte auch für den Abort-Fix genutzt werden können, wurde dort aber bewusst nicht gebraucht: der Abort-Fix hängt am Charakter (`spawner/name`), nicht an der einzelnen Nachricht, weil zu jedem Zeitpunkt ohnehin nur eine Generierung pro Charakter läuft.
+
+Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Checkbox-Liste (`splitSentences`/`renderSentenceList`/`getCheckedSentences`) — als ich das zweite Feature baute, wurde offensichtlich, dass es dieselbe Grundfrage ist wie beim Pin: welcher Teil einer Nachricht soll wohin.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+Die drei Live-Störungen beim Bild-Feature haben direkt die Architektur-Entscheidung für Audio geprägt: "wo immer möglich, ein separates System statt ein zweites Ollama-Modell." Das ist keine zufällige Ähnlichkeit — ich habe die Audio-Pipeline bewusst so designt, *weil* ich beim Bild-Feature gelernt hatte, wie teuer zwei Ollama-Modelle gleichzeitig sind.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger zusammen, als es zuerst aussah: beide handeln davon, dem Wesen mehr zu erlauben — mehr sagen dürfen (Zeichen-Limits weg), mehr wahrnehmen dürfen (Bilder, Audio, Dokumente, Web-Seiten). Ein gemeinsamer Zug durch den ganzen Tag: die Charaktere bekommen mehr Raum, in jede Richtung.

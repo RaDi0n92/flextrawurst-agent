@@ -650,3 +650,63 @@ bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.
 **[2026-06-24]** *← notizen/2026-06-24.md*
 
 Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.
+
+---
+
+**[2026-06-25]** *← notizen/2026-06-25.md*
+
+`OLLAMA_NUM_PARALLEL=2` ist der echte Gewinn der Session. Nicht als geplanter Erfolg, sondern als pragmatische Lösung nachdem llama.cpp-Migration blockiert war.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04.md*
+
+`serve_process_camera_preview.ts` ist ursprünglich ein reiner Preview-Server für die Prozesskamera gewesen (Ring 22) und hat sich zum zentralen Wesen-Chat-Server ausgewachsen — daher der Name, der nichts mehr mit seiner heutigen Hauptaufgabe zu tun hat.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-codexium2-chat-erweiterungen.md*
+
+`aktiveGenerationen` existiert, weil "Generierung läuft im Hintergrund weiter" und "Nutzer will jetzt wirklich abbrechen" zwei unterschiedliche Wahrheiten sind, die vorher denselben Code-Pfad geteilt haben. Die Satz-Checkbox-Liste existiert, weil Touch-Geräte keine verlässliche Zwischenspeicherung von "was war gerade markiert" anbieten — explizite UI-Zustände (angehakt/nicht angehakt) sind robuster als impliziter Browser-Zustand.
+
+---
+
+**[2026-07-04]** *← notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md*
+
+`beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
+
+---
+
+**[2026-07-04]** *← _claude/notizen/2026-07-04-abschluss-geschichte.md*
+
+`letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md*
+
+Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/charakter_dashboard.md*
+
+`wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.
+
+---
+
+**[2026-07-05]** *← _claude/ideen/datei_anhaenge.md*
+
+Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md*
+
+`erstelleGehoerersatzText()` existiert, weil Daniel wörtlich "Gehörersatz" wollte — nicht nur "Datei hochladen", sondern etwas, das sich anfühlt, als hätte der Charakter wirklich zugehört. Der Name im Code trägt bewusst noch Daniels eigenes Wort.
+
+---
+
+**[2026-07-05]** *← _claude/notizen/2026-07-05.md*
+
+Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehlern, Kurskorrekturen, einem ausgesprochenen Prinzip — mehr verdient als nur die Summe seiner Commits. Die einzelnen technischen Notizen sagen "was", diese hier versucht "wie es war" zu sagen.

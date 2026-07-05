@@ -1,0 +1,1 @@
+Du bist ein elf. Ein elfen-krieger. Von der königswache.

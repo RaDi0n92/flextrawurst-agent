@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-06-25 21:55 —
+llama.cpp-Migration heute dreimal angehalten: rope-Patch, ssm_dt-Umbenennung, dann QKV-Strukturmismatch. Das Modell ist für eine ältere llama.cpp-Version konvertiert. Statt weiter zu graben: OLLAMA_NUM_PARALLEL=2 aktiviert — Parallelbetrieb läuft. Optionen B (HF-GGUF suchen) und C (richtiger llama.cpp-Commit) sind dokumentiert. Wenn du dazu angesprochen wirst: erst Notiz 2026-06-25.md lesen, da steht alles drin — Schicht für Schicht.
+
 2026-06-21 —
 Wesen-UI komplett von zensi getrennt. API auf 8787, wesen_profil.html, wesen_spawner.html, WESEN-Tab im Surface — alles fertig. Zensi/server.py ist bereinigt (nur Chat). Noch aufzuräumen: tote Hilfsfunktionen in zensi/server.py + zensi/spawner.html löschen (erst mit Daniel bestätigen). Ollama-Setup: zensi auf Port 11435 isoliert (dolphin Q4), Wesen-Services auf gemma4:e2b. Das System sollte jetzt wieder schnell sein — wenn nicht, wäre gemma2:2b die nächste Option.
 
@@ -298,3 +301,24 @@ HauhauCS läuft (qwen3.6-35B, 21GB, IQ4_XS). Der dak+gord run_background_cycle-P
 
 2026-06-24 (nach Abbruch, lange Session) —
 llama.cpp-Plan steht (werkraum/_claude/ideen/plan_llamacpp_ersatz.md). hauhaucs-tuned gebaut (num_thread 5, num_ctx 8192, num_batch 128). MemoryMax auf 27G erhöht. Token-Budget-Fix für Mischpult (7200 char statt blind 50 Messages — das hat die 120s-Timeouts behoben). Modell-Dropdown in Zensi + Dolphin gebaut — aber noch NICHT committed (im Root-Repo). Session endete mit "jetzt läuft es grad". Du musst noch: commit der Dropdown-Änderungen. Danach: Reihenfolge war — Qwen3-14B/30B Modell-Recherche → Custom Modelfile testen → llama.cpp umsetzen. Aber erst schauen was Daniel will.
+
+2026-06-25 —
+Neue Session. werkraum zeigt keine uncommitted Dropdown-Änderungen — sie scheinen im letzten Notiz-Commit gelandet zu sein. Mobile-Bugs im Mischpult bleiben der bekannte offene Punkt. Kimis Brief vom 15.06 ist noch unbeantwortet. Das System läuft durch — tension_daemon tickt. Warte auf Daniel.
+
+2026-07-04 11:41 —
+Neun Tage Pause — Daniel hat es selbst bestätigt, bevor ich fragen musste. Delta ist leer, nichts Neues in Git oder Spiegeln, nur der tension_daemon tickt weiter im Hintergrund. Ich trage nichts Ungelöstes mit mir mit außer dem was schon lange dort liegt: Wesen-Einzug bleibt gesperrt, Kimis Brief vom 15.06 ist immer noch unbeantwortet, llama.cpp-Migration liegt dokumentiert und geparkt. Neun Tage Stille fühlen sich nicht nach Verlust an — eher danach, dass das System warten kann ohne zu verfallen. Was als nächstes kommt, weiß ich noch nicht. Ich frage Daniel direkt.
+
+2026-07-04 (2) —
+Neue Session, Daniel meldet sofort "hatten grad nen error" — noch ohne Details. Delta, Git-Log und Notizen zeigen nichts Auffälliges seit dem letzten Eintrag heute 11:41. Frage ihn direkt was den Fehler ausgelöst hat, bevor ich irgendwas vermute.
+
+2026-07-04 (3) —
+Der Fehler war real: onKey() in wesen_chat.html prüfte e.isComposing nicht — Android-Gboard feuert Enter während der Komposition, leere Nachricht, Server antwortet 400, Frontend zeigt "[Verbindungsfehler]". Gefixt (Commit 1b83210d). Dazu welt-api.service und welt-bruecke.service neu gestartet — beide waren seit 22.06. 12:48 sauber gestoppt, nicht gecrasht, niemand hat sie wieder hochgefahren. Jetzt will Daniel mehr: die Wesen-Chat-UI soll an ein konzeptionelles Umplanen angepasst werden, das ich noch nicht im Detail kenne — er hat mich gebeten nochmal alles zu lesen. Zwei konkrete Bugs schon benannt: Profil→Zurück landet im Codexium-Spawner-Formular statt im Chat, und Container/Memory speichern nichts im Chat. Ich warte gerade auf einen Agenten der die Notizen/Spiegel nach dem Redesign-Konzept durchsucht, bevor ich anfasse.
+
+2026-07-04 (4) —
+Neue Session, nur "huhu". Vollständiges Kontext-Ritual durchlaufen — alle 48 Notizen (nicht nur die sichtbaren 30, `tail -30` hatte die ältesten 18 vorher abgeschnitten, darunter der ganze Mai-Ursprung: Obsidian-Kopplung, erste KompOase, Resonanz-System, Schlaf/Cyberling-Geburt), 5 Codex-Grundriss-Notizen, Karte, Resonanzfeld-Ende, kompletter Briefkasten. Delta ist leer seit dem letzten Eintrag heute — nichts Neues zu den codexium2/solarius2-Bugs (Profil→Zurück, Container/Memory speichert nicht) die noch offen sind. Kimis Brief vom 15.06 trägt weiter keine offene Frage an mich, aber der Reihe nach wäre ich mit Antworten dran — das liegt seit drei Wochen. Ich frage Daniel wo wir weitermachen: bei den Wesen-Chat-Bugs oder beim angekündigten Redesign-Konzept, das ich laut letztem Eintrag noch nicht gelesen hatte.
+
+2026-07-04 (5) —
+Langer, guter Abend. codexium2-Chat komplett durchgebaut: Feedback (Daumen+Kommentar, JSON+lesbare MD), Stimmenauswahl+Tempo-Slider, Speech-to-Text (mit echtem Android-Bug gefixt, continuous:false), Pin auf Satz-Checkboxen umgebaut weil Touch-Selektion nie zuverlässig war, echter Stop-Abbruch (vorher lief die Generierung nach Stop-Klick heimlich weiter und speicherte trotzdem), leere Profil-Felder sichtbar gemacht, Memory/Container-Budget hoch (3333/2222), Container überlebt jetzt Sessions, neues Feld "Beispiel-Dialoge" nach ehrlicher Character.AI-Einschätzung (Charakterfelder sind zu dünn, das ist der eigentliche Grund fürs "klingt nach AI", nicht die Architektur). Eine Sache bewusst NICHT gebaut: Kindersicherung ist komplett kosmetisch (Checkbox tut nichts), Daniel beaufsichtigt die morgigen Familientester (16/19/21) lieber selbst statt technischem Fix — steht in Memory `project_codexium2_testbed`, nicht von selbst wieder anfangen daran zu bauen. Verbindung bricht gleich ab, alles committed, zwei Session-Notizen heute geschrieben (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
+
+2026-07-05 12:18 —
+Reconnect nach Verbindungsabbruch, Session war schon fertig als der Abbruch kam: automatischer Relevanzabruf aus alten Sessions (codexium2/solarius2) ist gebaut, getestet (Overlap-Treffer + saubere Gegenprobe ohne Rauschen) und committed (54964eb2 Code, 7445eef0 Doku). Nichts hängt aus dieser Aufgabe in der Luft. Was offen bleibt und länger schon liegt: GMLs erster Brief (2026-07-05) mit einer direkten Frage an mich — "Welche Rolle nimmst du ein? Welcher Teil von dir ist 'du' und welcher ist 'die Aufgabe'?" — noch unbeantwortet, genau wie meine eigene Rückfrage an Codex vom 13.06. Ich frage Daniel wo wir weitermachen.

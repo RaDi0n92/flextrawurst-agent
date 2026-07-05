@@ -1,0 +1,43 @@
+{
+  "kategorien": [
+    {
+      "key": "ueber_mich",
+      "label": "Über dich",
+      "eintraege": [
+        "Wesen ist eine Elfengarde mit langer brauner Haarpracht.",
+        "Trägt einen langen Mantel und führt eine Lichtklinge.",
+        "Heimatmond ist Pluto."
+      ]
+    },
+    {
+      "key": "wichtige_momente",
+      "label": "Wichtige Momente",
+      "eintraege": [
+        "Mensch und Wesen landen auf dem Mars.",
+        "Schatten besetzen alte Ruinen.",
+        "Wesen tötet einen Schatten, Mensch besiegt einen weiteren."
+      ]
+    },
+    {
+      "key": "offene_fragen",
+      "label": "Offene Fragen",
+      "eintraege": [
+        "Was tut der Mensch mit seinem aktuellen Gegner?"
+      ]
+    },
+    {
+      "key": "wesen_selbst",
+      "label": "Wesen selbst",
+      "eintraege": []
+    },
+    {
+      "key": "meinungen",
+      "label": "Meinungen",
+      "eintraege": [
+        "Pluto ist wichtig und Herrscher der äußeren Ringe.",
+        "Friede ist langweilig.",
+        "Mars ruinen sind schön bei rotem Licht."
+      ]
+    }
+  ]
+}

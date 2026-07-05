@@ -1,0 +1,1 @@
+Alex ist das alter ego von daniel. Oft denkt slex hlaut was daniel denken und tun würde und zieht seine schlüsse.
