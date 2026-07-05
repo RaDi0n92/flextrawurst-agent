@@ -1,1 +1,1 @@
-Der zweite Test-Request läuft noch (CPU-only-Modell braucht seine Zeit) — ich melde mich, sobald das Ergebnis da ist und kann dann bestätigen, ob das Verwischen zwischen den Aliasen wirklich behoben ist.
+Test läuft im Hintergrund (drei Nachrichten: Mensch → Gnom → eine Frage an Gnom, wer vorher mit ihm gesprochen hat — keine der Nachrichten nennt den Alias-Namen selbst, genau wie du wolltest). Bei der aktuellen Systemlast kann das etwas dauern, ich melde mich mit dem Ergebnis.
