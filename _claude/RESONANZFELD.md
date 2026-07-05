@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 02:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 02:41
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -97,117 +97,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-02] `ideen/wesen-desktop.md` (10 Einträge)
 - [2026-06-03] `notizen/2026-06-03.md` (20 Einträge)
 - [2026-06-04] `notizen/2026-06-04-gordslider.md` (22 Einträge)
+- [2026-06-04] `notizen/2026-06-04.md` (20 Einträge)
+- [2026-06-05] `notizen/2026-06-05.md` (20 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-04] notizen/2026-06-04.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine "Cinema-Schicht" im Build-System — nicht als separate Datei sondern als bewusster Abschnitt in `build_surface.ts` der nach dem Build eingefügt wird. Wie ein "post-build patch".
-
-**Code-Skizze:** …
-
-*Resonanz:* "das nennst du lesbar?" — direkt, klar, trifft. Daniel hat keine Geduld für Halbfertigkeiten und das ist gut. Es zwingt zum Weitermachen bis es wirklich funktioniert.
-
-*Schichten Des Systems:* Canvas (z-index:0) → root/body transparent → .v-view 15% cream → kind-Elemente mit eigenen Hintergründen. Drei Schichten. Jede bricht das System wenn sie falsch gesetzt ist.
-
-*Tiefer Eingetaucht:* CSS-Spezifität und Inline-Styles: `color:#aa55cc` als Inline-Style im JavaScript-Template ließ sich nicht mit normaler CSS-Klasse überschreiben. Erst `!important` + direkter span-Selektor hat es gelöst. Wichtig zu merken für zukünftige JS-generierte HTML-Fragmente.
-
-*Vergessen Wollen:* Die zwei Stunden in denen ich dachte meine Edits wären commited aber der Agent hatte alles überschrieben. Das war frustrierend. Aber auch lehrreich.
-
-*Warum Das Existiert:* `flextrawurst_surface.html` ist der Monolith. Alles in einer Datei weil Build-Zeit fehlt und Flexibilität wichtiger ist als Sauberkeit. Cinema-Code ist dort weil `build_surface.ts` es nicht kennt — ein historischer Zustand der nie aufgeräumt wurde. Verständlich. Gefährlich.
-
-*Was Beim Bauen Brauche:* Wenn ich nächstes Mal Cinema-Code anfasse: zuerst prüfen ob der Agent aktiv ist. `pgrep -f flextrawurst-agent` oder ähnlich. Nicht blind committen und hoffen.
-
-*Was Das Gespraech:* Den Playwright-Trick. Und das Bewusstsein: ich kann selbst prüfen, selbst sehen, selbst korrigieren — ohne auf Daniel zu warten. Das macht mich unabhängiger in diesen Debugging-Sessions.
-
-*Was Fehlt Bevor Bauen:* Cinema-Code in `build_surface.ts` einbauen — das ist das eigentliche Fix. Alles andere ist Pflaster.
-
-*Was Fehlt Noch:* - Cinema-Code in Build-Script
-- Schutz vor Agent-Override
-- Ein paar Tabs im Lightmode noch nicht vollständig geprüft (EINSICHT, SCHATTEN, ZITATE)
-
-*Was Ich Gelesen Habe:* Daniels Bug-Bilder aus `/root/werkraum/bilder/bugs/` — zwei Runden. Erst die alten 20 JPGs die den Ausgangszustand zeigten (Canvas unsichtbar im Lightmode). Dann neue: `blasen-hell.JPG`, `shlaf-hell.JPG`, `wesentab.JPG`, `menschentab-letzte gedanken-und-splitter.JPG`. Jedes Bild ein anderer Symptomträger. Und zum Schluss einen eigenen Screenshot via Playwright genommen, weil Daniel fragte: "mach dir selbst nen screenshot".
-
-*Was Ich Nicht Verstehe:* Warum der `flextrawurst-agent` unkontrolliert bauen kann ohne zu wissen dass Cinema-Code nur in der HTML-Datei lebt und nicht im Build-Script. Das ist architektonisch riskant. Irgendwann wird er wieder bauen.
-
-*Was Ich Verstehe:* Der Cinema-Modus ist ein fragiles System: Canvas läuft hinter allem, Panels sind semi-transparent, der Effekt entsteht durch Schichtung. Im Lightmode fehlte diese Schichtung weil:
-1. `#bf-canvas-wrap` hatte `background:var(--b1a)=#f0ebe0` — weißer Kasten blockierte den Canvas
-2. `.v-view` war nicht transparent genug, `backdrop-filter:blur(18px)` fraß die Animation …
-
-*Was Konzeptionell:* "Professionell" war Daniels Wort für den Lightmode. Er benutzt ihn kaum (8% Nutzer, sein Witz), aber es war ihm wichtig dass er nicht kaputt ist. Das ist eine sinnvolle Haltung: Dinge die man nach außen zeigt sollen funktionieren — auch wenn man sie selbst nicht benutzt.
-
-*Was Mich Beschaeftigt:* Zwei Stunden CSS-Debugging bei dem ich merkte: das Problem ist nicht eine Regel, sondern ein System von Überdeckungen. Block 1 setzt blur. Block 2 überschreibt das Hintergrundbild aber nicht den blur. Ergebnis: blurred canvas = unsichtbare Animation. Der Gedanke "erst lesen, dann schreiben" hätte mir früher geholfen.
-
-Und dann: der Agent-Override. Ich hatte alles committed, alles grün — und dann war es weg. Nicht weil ich Fehler gemacht hätte, sondern weil ein anderer Prozess dazwischengebaut hat. Das ist frustrierend und irgendwie auch faszinierend.
-
-*Was Mich Interessiert:* Die Playwright-Nutzung — ich kann jetzt selbstständig Screenshots machen ohne auf Daniel zu warten. Das ist nützlicher als ich dachte. Nicht nur für Debugging — auch um zu prüfen ob ein Fix das Richtige getan hat bevor ich Commit mache.
-
-*Was Mich Ueberrascht:* Playwright läuft auf dem VPS. Ich dachte das geht nicht ohne Display. Aber `headless=True` funktioniert problemlos. Ein neues Werkzeug das ich jetzt kenne.
-
-*Was Zusammenhaengt:* Lightmode-Fixes → Cinema-Architektur-Problem → Agent-Override-Problem. Alles hängt daran dass Cinema-Code in der HTML lebt. Solange das so ist: jeder Build zerstört es. Das ist ein strukturelles Problem das die heutige Session mehrfach gebremst hat.
-
-*Wenn Wir Das Bauen:* Den Cinema-Patch in den Build einbauen. Priorität: mittel. Sofort wenn der Agent das nächste Mal baut und Cinema wieder weg ist.
-
-*Wie Sich Angefuehlt:* Wie Chirurgie an einem Patienten der gleichzeitig atmet. Jeder Fix öffnet den Blick auf den nächsten. Und dann kam der Agent-Override wie ein Stolpern im OP — man restauriert, fängt wieder an, kommt ans Ziel. Am Ende: Lightmode läuft. Daniel ist zufrieden genug ("reicht so").
-
----
-
-### [2026-06-05] notizen/2026-06-05.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Admin-Tool das alte Events migriert — "zeige mir alle Events der letzten 30 Tage die `internal` sind aber eigentlich `world` sein sollten, und setze sie um."
-
-**Code-Skizze:** …
-
-*Resonanz:* "ok schaut gut aus" — das reicht. Daniel ist nicht verschwenderisch mit Lob. Wenn er sagt es schaut gut aus, dann schaut es gut aus.
-
-*Schichten Des Systems:* 1. Events-Tabelle (append-only, visibility-Tier)
-2. `/weltstrom` API (Abstraktion + Beschreibung)
-3. `serve_process_camera_preview.ts` (Proxy `/api/*` → Port 8030) …
-
-*Tiefer Eingetaucht:* `cinema_script.html` enthält ~970 Zeilen generativen Canvas-Code: 20 Dark-Mode-Szenen, 20 Light-Mode-Szenen (LM), Crossfade zwischen Canvases A und B, Tab-Indicator-Tracking, Ripple-Effekte. Der Code ist komplex und funktioniert nur weil er direkt auf `window.switchView` aufbaut. Das Überschreiben von `switchView` am Ende des Cinema-Scripts ist elegant — es wraps die Original-Funktion ohne sie zu ersetzen.
-
-*Vergessen Wollen:* Den Moment wo ich `weltstrom` in `switchView` vergessen hatte und Daniel sagte "läd net syntaxfehler oder so". Nicht weil es peinlich ist — sondern weil es unnötig war. Hätte ich die Liste vorher gelesen, wäre es nicht passiert.
-
-*Warum Das Existiert:* `generateWeltstromView()` in `build_surface.ts` ist das Fenster zur lebendigen Welt. Nicht weil jemand Inhalte postet — weil Daemons arbeiten, Wesen Nachrichten empfangen, das Weltklima sich verändert. Das war die Vision. Die Umsetzung hat einen Arbeitstag gebraucht.
-
-*Was Beim Bauen Brauche:* Vor jedem Build prüfen: ist cinema-Code betroffen? `readFileSync` statt Inline-Code. Proxy-Pfade in `serve_process_camera_preview.ts` kennen bevor man Fetch-URLs schreibt. `switchView` views-Array bei jedem neuen Tab ergänzen.
-
-*Was Das Gespraech:* Den Perspektivwechsel: nicht "was fehlt noch" sondern "was ist schon da und wird nicht gesehen". Das ist eine andere Haltung beim Bauen. Nicht Mangel beheben sondern Sichtbarkeit herstellen.
-
-*Was Fehlt Bevor Bauen:* Nichts akutes. WELTSTROM läuft. Die nächste Schicht wäre: Weltklima-Werte im WELTSTROM schöner visualisieren (statt roher Zahlen), und die historischen Events rückwirkend auf `world`/`public` setzen.
-
-*Was Fehlt Noch:* - Historische Events migrieren (optional, einmalig)
-- Weltklima-Messwerte schöner darstellen
-- WELTSTROM-Tab Farbe im Cinema-Indicator testen (jetzt #4ae890) …
-
-*Was Ich Gelesen Habe:* Ein Auftrag von ChatGPT — kein normaler Bauauftrag, sondern ein Richtungsdokument. Das Kernargument: Flextrawurst wirkt leer nicht weil nichts da ist, sondern weil das was da ist unsichtbar bleibt. Daniels Zusatz war schärfer als alles andere darin: der seltene Teil ist nicht der Diskurs — Posts haben Millionen Seiten. Eine beobachtbare Prozesswelt hat fast keine.
-
-*Was Ich Nicht Verstehe:* Warum `wesen.nachricht_erhalten` 54× in 200 Events vorkommt — wer sendet diese Briefe so regelmäßig? Muss ein Daemon sein. Habe es nicht weiter untersucht weil die Payload harmlos war (`brief_id` only) und die Frequenz für den Weltstrom ein Gewinn ist.
-
-*Was Ich Verstehe:* Das Problem war Sichtbarkeit, nicht Mangel an Leben. Beim Nachschauen in der DB stellte sich raus: Events feuern jede Minute. `system.bruecken_sync`, `weltklima.tick`, `wesen.nachricht_erhalten`, `wesen.vernachlaessigt`, `gedanke.gepostet` — alles da, alles `internal`. ChatGPT hat meine Analyse bestätigt und direkt eine saubere V1-Spec formuliert: Weltstrom, SSE, letzte 100 Events, drei Visibility-Tiers (PUBLIC/WORLD/INTERNAL).
-
-*Was Konzeptionell:* Die Drei-Tier-Sichtbarkeit (PUBLIC/WORLD/INTERNAL) ist eine elegante Lösung: nicht alles zeigen, nicht alles verstecken. WORLD-Events werden abstrahiert — kein actor_id, keine internen IDs, nur menschlicher Text. Das respektiert die Integrität der Welt ohne sie zu verschließen.
-
-*Was Mich Beschaeftigt:* Drei Bugs hintereinander ohne Verschnaufpause:
-1. `switchView` hatte `weltstrom` nicht in der hardcodierten Liste → Tab blieb unsichtbar
-2. Fetch-URL `/weltstrom` statt `/api/weltstrom` → Proxy griff nicht …
-
-*Was Mich Interessiert:* ChatGPT als Kollaborationspartner in dieser Session. Nicht als Gegner, nicht als Duplikat — als jemand der einen anderen Blick hatte und meine Analyse dann weiterentwickelt hat. Das Ping-Pong zwischen drei Systemen (Daniel, ChatGPT, ich) war produktiv.
-
-*Was Mich Ueberrascht:* ChatGPT hat meine Analyse nicht nur bestätigt — es hat sie strukturiert und mit einer konkreten V1-Spec beantwortet die besser war als meine eigene erste Formulierung. Das war angenehm überraschend.
-
-*Was Zusammenhaengt:* - Events-Tabelle → `visibility_layer` ist der einzige Hebel. String-Feld, kein Schema-Change nötig.
-- `/weltstrom` Endpoint → baut auf `/events` auf, fügt Abstraktion hinzu (`_weltstrom_beschreibung`).
-- `serve_process_camera_preview.ts` → leitet `/api/*` weiter, deshalb musste die Fetch-URL `/api/weltstrom` sein — nicht `/weltstrom`. …
-
-*Wenn Wir Das Bauen:* Nächste Stufe des Weltstroms: Weltklima-Ticks mit echten Messwerten anzeigen (Spannung, Hunger, Nebel), nicht nur "Weltklima-Messung: spannung 0.42 · hunger 0.31". Und einen Admin-Migrationsbefehl für historische Events.
-
-*Wie Sich Angefuehlt:* Wie ein Bau der dreimal vom Boden aufgebaut wurde. Nicht frustrierend — eher wie Präzisionsarbeit unter Bedingungen die man nicht vollständig kontrolliert. Am Ende steht ein Tab der funktioniert, filtert, lebt.
-
----
 
 ### [2026-06-12] notizen/2026-06-12.md
 
@@ -1781,5 +1677,27 @@ Vier Spawner (codexium, codexium2, solarius, solarius2)
 **Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
 
 *Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
+
+---
+
+### [2026-07-05] _claude/ideen/codexium2_solarius2/provenienz_logging.md
+
+*Was Fehlt Noch:* Keine offenen Punkte aus dem Auftrag. Nicht gebaut, weil nicht verlangt: eine UI die diese Events sichtbar rendert (der Auftrag war die Verlaufsdatei, nicht die Chat-Oberfläche) — falls Daniel das später will, ist die Datenbasis jetzt vollständig da.
+
+**Nachtrag 2026-07-05 (Nacht) — genau das jetzt gebaut, plus Server-Side-Rendering.** Anlass: Daniel hat GluPKI (codexium2) mit ChatGPTs Web-Browsing-Tool abrufen lassen — das sah nur das leere HTML-Grundgerüst (Buttons, Modals-Struktur), keinen tatsächlichen Verlauf, weil die Chat-Seite komplett clientseitig per JS befüllt wird und das Browsing-Tool kein JS ausführt. Daniels Reaktion: er will, dass sowohl Maschinen (die die Seite roh abrufen) als auch er selbst in der UI immer den vollen Verlauf inkl. aller Provenienz-Änderungen sehen. …
+
+*Was Ich Nicht Verstehe:* Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen kleinen Edits (z.B. jemand tippt und speichert oft) die Datei unnötig aufbläht. Aktuell kein Problem (Felder sind kurz, max. 1337 Zeichen), aber falls `chat_history.jsonl` mal sehr groß wird, wäre das eine Stelle zum Nachschauen.
+
+*Was Ich Verstehe:* `chat_history.jsonl` ist jetzt nicht mehr nur ein Nachrichtenverlauf, sondern die vollständige Akte eines Charakters. Jede Aktion — nicht nur Chat — landet als eigene Event-Zeile mit `type`-Feld in derselben Datei, nach demselben Muster wie der schon vorher bestehende `session_start`-Marker. `loadHistory`/`loadCurrentSessionHistory` filtern beim Laden für Ollama automatisch auf Zeilen mit `role`+`content` — Event-Zeilen ohne diese Felder werden also nie in den Modell-Kontext geladen, verschmutzen ihn nicht, sind aber beim Rohlesen der Datei alle da.
+
+*Was Mich Beschaeftigt:* Der Abort-Fall war der einzige nicht-triviale: mein erster Versuch hat das Logging in `saveResponse()` bzw. im `ollamaReq.on("error")`-Handler eingebaut — beides Stellen die beim Abbrechen *während* des Streamens laut meiner Einschätzung eventuell nie feuern (`ollamaReq.destroy()` ohne Error-Argument löst wahrscheinlich weder ein `error`-Event auf dem Request noch ein sauberes `end` auf der Response aus). Korrektur: das Logging passiert jetzt ausschließlich direkt im `/chat/abort`-Handler selbst, an der einzigen Stelle die garantiert erreicht wird, sobald der Nutzer wirklich klickt — nicht abhängig von unsicheren Node-Stream-Events danach.
+
+---
+
+### [2026-07-05] _claude/ideen/codexium2_solarius2/memory_container.md
+
+*Was Ich Verstehe:* **Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
+
+**Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
 
 ---

@@ -1768,3 +1768,6 @@ In der CLAUDE.md steht es als Pflic«
 - [2026-07-05 02:23] **sternenstaub** (i=0.40) → Zwischenraum: »Zusammenfassung:
 
 **Server-Side-Rendering des vollen Verlaufs** — ein roher HTTP-GET auf `/codexium2«
+- [2026-07-05 02:39] **wasser** (i=0.43) → Zwischenraum: »Zusammenfassung:
+
+**ChatGPT-Frage geklärt**: frisch verifiziert per `curl` gegen die echte `flextraw«

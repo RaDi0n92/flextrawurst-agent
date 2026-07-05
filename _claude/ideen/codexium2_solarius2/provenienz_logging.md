@@ -151,3 +151,15 @@ Daniel wollte wissen, ob es noch irgendwelche Output-Limits (Zeichen/Token) für
 - **Abschluss-Geschichte**: erste Rückfrage ergab "nur die KI-Antworten uncappen", zweite Nachricht direkt danach erweiterte das auf "auch Memory/Container uncappen UND die Abschluss-Geschichte darf 2345 Zeichen haben" (statt 1337). `ABSCHLUSS_MAX_ZEICHEN` entsprechend geändert, `num_predict` für den Job von 500 auf `-1` — sonst hätte der alte Token-Deckel das Erreichen der neuen, größeren Zeichengrenze verhindert, bevor `kuerzenAufSatzgrenze()` überhaupt zum Zug kommt. Der Zeichen-Deckel selbst (jetzt 2345 statt 1337) bleibt bestehen — das ist kein "Uncapping" hier, sondern eine neue, größere, weiterhin endliche Zielgröße, die Daniel explizit genannt hat.
 
 Memory-Extraktion und Container-Pin-Kommentar-Limit siehe `memory_container.md`-Nachtrag vom selben Abend.
+
+### Nachtrag 2026-07-05 (Nacht, direkt danach) — SSR-Fix: CSS "display:none" reicht nicht für Crawler
+
+Daniel hat den SSR-Fix mit ChatGPTs Web-Browsing-Tool direkt gegengetestet: bei `Flarius` sah ChatGPT den Verlauf korrekt, bei `GluPKI` weiterhin nur den leeren Zustand — obwohl `curl` bei beiden denselben echten Verlauf im HTML zeigte. Kein Cache-Problem, wie ich zuerst vermutet hatte (und einmal zu schnell als Erklärung angeboten habe, ohne es an den Rohdaten zu prüfen) — ein echter Bug.
+
+**Ursache:** der Platzhalter-Text "Schreib etwas, um das Gespräch zu beginnen." wurde nur per `style="display:none"` versteckt, blieb aber als Text im rohen HTML stehen — direkt neben dem echten Verlauf. Ein Crawler, der CSS nicht auswertet (wie ChatGPTs Browsing-Tool), liest also BEIDES: die echten Nachrichten UND den irreführenden "ist doch leer"-Text, und offenbar hat es sich für Letzteres entschieden.
+
+**Erster Reparaturversuch wäre ein neuer Bug gewesen:** das ganze `#empty`-Div aus dem SSR-HTML zu entfernen schien die naheliegende Lösung — hätte aber Client-JS gebrochen, das beim Laden ungeprüft `document.getElementById('empty-avatar').src = ...` und `document.getElementById('empty-name').textContent = ...` setzt. Ohne die Elemente im DOM: `TypeError`, der das gesamte restliche Skript der Seite stoppt (unguarded, kein Null-Check). Per Playwright-Fehler-Listener (`page.on('pageerror', ...)`) vor dem Deploy erwischt statt live kaputtzugehen.
+
+**Tatsächlicher Fix:** `#empty` bleibt im DOM (JS-Referenzen bleiben sicher), aber bei vorhandenem Verlauf wird zusätzlich zu `display:none` auch der `<p id="empty-desc">`-Text selbst geleert. Damit gibt es für einen Crawler nichts Irreführendes mehr zu lesen, während echte Browser (mit JS) unverändert funktionieren.
+
+**Was ich mir daraus merke:** "das könnte an Caching liegen" ist eine Hypothese, keine Diagnose — ich hätte gleich die Rohdaten (GluPKI vs. Flarius) vergleichen sollen, statt eine plausible, aber ungeprüfte Erklärung anzubieten. Daniels Gegenprobe mit einem zweiten Charakter war der Schritt, der die echte Ursache sichtbar gemacht hat.
