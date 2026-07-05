@@ -479,3 +479,11 @@ Alle fuenf auf `12345` nachgezogen (neue `NUM_CTX`-Konstante in `wesen_chat.html
 Getestet per Playwright auf der echten Mirlach-Seite: zeigt jetzt korrekt "ctx ~3478/12345".
 
 **Was ich mir daraus merke:** eine Konstante, die client- UND serverseitig gebraucht wird, aber nicht geteilt werden kann (kein gemeinsames Modul zwischen Server-TS und eingebettetem Client-JS in diesem Setup), hinterlaesst leicht vergessene Kopien — ich haette nach der ersten Aenderung direkt nach "8192" im ganzen Projekt suchen sollen, statt erst zu committen und dann durch Daniels Beobachtung draufzukommen.
+
+### Nachtrag 2026-07-05 (Nacht, danach) — Antwortlaengen-Weichgrenze von 432 auf 333 Tokens gesenkt
+
+Daniel wollte die Zahl weiter senken und die Betonung verstaerken ("das ist mir wirklich wichtig"). Absatz in `_wesen_preamble.md` (und Daniels Entwurfsdatei) angepasst: 432 → 333, Einleitungssatz mit "und das ist mir wirklich wichtig" ergaenzt. Bewusst kein zusaetzliches "WICHTIG!!!" in Grossbuchstaben — das bleibt den zwei schon etablierten Stellen (Rollenbruch, Grenzen) vorbehalten, siehe fruehere Reduktion von vier auf zwei Schrei-Stellen.
+
+Live getestet an einem frischen Testcharakter (Grumo): Antwort auf eine offene Frage ("erzähl mir von deinem Tag") kam auf ~1471 Zeichen, grob ~420 Tokens geschaetzt — spuerbar ueber dem 333er-Ziel, aber in aehnlicher relativer Groessenordnung wie beim vorherigen 432er-Test bei einer aehnlich offenen Frage (~380-390T bei neutraler Nachricht, deutlich mehr bei explizit fordernder Nachricht). Kein Wunder, keine perfekte Punktlandung, aber auch keine Verschlechterung.
+
+**Was ich mir daraus merke:** eine Zahl im Systemprompt zu senken senkt tendenziell auch die tatsaechliche Antwortlaenge mit, aber nicht proportional 1:1 — die schon dokumentierte Erkenntnis (Textinstruktionen sind weich, kein harter Wert) bleibt bei jeder neuen Zielzahl gueltig, nicht nur beim ersten Test.

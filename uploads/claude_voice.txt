@@ -1,1 +1,1 @@
-Alles klar 👍 Bin da, wenn's weitergehen soll.
+Behoben (0175888c Code, 6bfeda2c Doku). War client-seitig fünfmal hartkodiert (3× wesenchat.html, 2× dolphinmischpult.html) und hatte keinen Zugriff auf die Server-Konstante — alle auf 12345 nachgezogen. Auf der echten Mirlach-Seite bestätigt: zeigt jetzt ctx ~3478/12345. Mein Fehler, dass ich nach der ersten Änderung nicht gleich projektweit nach „8192" gesucht habe — hab ich mir notiert.
