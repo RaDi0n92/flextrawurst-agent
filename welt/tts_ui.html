@@ -122,6 +122,8 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .clip-title { color: #d2d2d2; font-size: .9rem; margin-bottom: .18rem; }
 .clip-text { color: #777; font-size: .78rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; }
 .clip-meta { color: #4c4c4c; font-size: .7rem; margin-top: .24rem; }
+.clip-move { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; margin-top: .45rem; }
+.clip-move select { min-height: 34px; font-size: .78rem; max-width: 260px; }
 .clip-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
 .empty { color: #555; font-size: .82rem; border: 1px dashed #2b2b2b; border-radius: 8px; padding: .8rem; }
 </style>
@@ -245,6 +247,14 @@ function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
 function uid()         { return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
 function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
+function fileSafe(s){
+  return (s || 'tts')
+    .toLowerCase()
+    .replace(/[^a-z0-9äöüß_-]+/gi,'-')
+    .replace(/-+/g,'-')
+    .replace(/^-|-$/g,'')
+    .slice(0,80) || 'tts';
+}
 
 function loadStore(){
   try {
@@ -282,6 +292,9 @@ function renderCategories(){
 function renderLibrary(){
   renderCategories();
   const cat = filterCat.value || 'Alle';
+  const categoryOptions = current => store.categories
+    .map(c=>`<option value="${esc(c)}"${c === current ? ' selected' : ''}>${esc(c)}</option>`)
+    .join('');
   const clips = store.clips
     .filter(c=>cat === 'Alle' || c.category === cat)
     .sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
@@ -295,10 +308,16 @@ function renderLibrary(){
         <div class="clip-title">${esc(c.title)}</div>
         <div class="clip-text">${esc(shortText(c.text.replace(/\s+/g,' '), 180))}</div>
         <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')}</div>
+        <div class="clip-move">
+          <span class="lbl">Kategorie:</span>
+          <select class="clip-category" data-act="move">${categoryOptions(c.category || DEFAULT_CAT)}</select>
+        </div>
       </div>
       <div class="clip-actions">
         <button class="small" data-act="load">Laden</button>
         <button class="small primary" data-act="play">▶</button>
+        <button class="small" data-act="mp3">MP3</button>
+        <button class="small" data-act="wav">WAV</button>
         <button class="small danger" data-act="delete">Löschen</button>
       </div>
     </div>
@@ -416,6 +435,125 @@ function loadClip(id, play){
   setRate(clip.rate || '+0%');
   st('Geladen: '+clip.title,'');
   if (play) speakCurrent();
+}
+
+async function fetchAudioPart(text, voice, rateValue){
+  let lastErr;
+  for (let attempt=1; attempt<=4; attempt++){
+    try {
+      dbg(`download fetch ${attempt}/4…`);
+      const r = await fetch(API, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({text, rate: rateValue || '+0%', voice: voice || DEFAULT_VOICE})
+      });
+      if (!r.ok) throw new Error('HTTP '+r.status);
+      const ab = await r.arrayBuffer();
+      dbg('');
+      return ab;
+    } catch(e){
+      lastErr = e;
+      dbg(`download fehler ${attempt}: ${e.message}`);
+      if (attempt < 4) await new Promise(r=>setTimeout(r, 900*attempt));
+    }
+  }
+  throw lastErr;
+}
+
+function downloadBlob(blob, filename){
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url), 30000);
+}
+
+function encodeWav(audioBuffer){
+  const channels = audioBuffer.numberOfChannels;
+  const sampleRate = audioBuffer.sampleRate;
+  const samples = audioBuffer.length;
+  const blockAlign = channels * 2;
+  const dataSize = samples * blockAlign;
+  const buffer = new ArrayBuffer(44 + dataSize);
+  const view = new DataView(buffer);
+  let offset = 0;
+  const writeString = s => {
+    for (let i=0; i<s.length; i++) view.setUint8(offset++, s.charCodeAt(i));
+  };
+  writeString('RIFF');
+  view.setUint32(offset, 36 + dataSize, true); offset += 4;
+  writeString('WAVE');
+  writeString('fmt ');
+  view.setUint32(offset, 16, true); offset += 4;
+  view.setUint16(offset, 1, true); offset += 2;
+  view.setUint16(offset, channels, true); offset += 2;
+  view.setUint32(offset, sampleRate, true); offset += 4;
+  view.setUint32(offset, sampleRate * blockAlign, true); offset += 4;
+  view.setUint16(offset, blockAlign, true); offset += 2;
+  view.setUint16(offset, 16, true); offset += 2;
+  writeString('data');
+  view.setUint32(offset, dataSize, true); offset += 4;
+  const channelData = [];
+  for (let ch=0; ch<channels; ch++) channelData.push(audioBuffer.getChannelData(ch));
+  for (let i=0; i<samples; i++){
+    for (let ch=0; ch<channels; ch++){
+      const s = Math.max(-1, Math.min(1, channelData[ch][i]));
+      view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+      offset += 2;
+    }
+  }
+  return new Blob([buffer], {type:'audio/wav'});
+}
+
+function joinAudioBuffers(buffers){
+  if (!buffers.length) throw new Error('Keine Audio-Daten.');
+  const sampleRate = buffers[0].sampleRate;
+  const channels = buffers[0].numberOfChannels;
+  const total = buffers.reduce((sum,b)=>sum+b.length, 0);
+  const merged = actx.createBuffer(channels, total, sampleRate);
+  let offset = 0;
+  buffers.forEach(buf=>{
+    for (let ch=0; ch<channels; ch++){
+      merged.getChannelData(ch).set(buf.getChannelData(Math.min(ch, buf.numberOfChannels-1)), offset);
+    }
+    offset += buf.length;
+  });
+  return merged;
+}
+
+async function downloadClip(id, format){
+  const clip = store.clips.find(c=>c.id === id);
+  if (!clip) return;
+  const clean = strip(clip.text);
+  if (!clean){ st('Kein lesbarer Text für Download.','err'); return; }
+  const parts = splitChunks(clean);
+  const voice = clip.voice || DEFAULT_VOICE;
+  const rateValue = clip.rate || '+0%';
+  const baseName = fileSafe(clip.title);
+  st(`Download ${format.toUpperCase()} 1/${parts.length}…`,'wait');
+  try {
+    const audioParts = [];
+    for (let i=0; i<parts.length; i++){
+      st(`Download ${format.toUpperCase()} ${i+1}/${parts.length}…`,'wait');
+      audioParts.push(await fetchAudioPart(parts[i], voice, rateValue));
+    }
+    if (format === 'mp3'){
+      downloadBlob(new Blob(audioParts, {type:'audio/mpeg'}), `${baseName}.mp3`);
+    } else {
+      if (!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
+      const decoded = [];
+      for (const part of audioParts) decoded.push(await actx.decodeAudioData(part.slice(0)));
+      downloadBlob(encodeWav(joinAudioBuffers(decoded)), `${baseName}.wav`);
+    }
+    st(`Download ${format.toUpperCase()} fertig.`,'ok');
+  } catch(e){
+    st(`Download fehlgeschlagen: ${e.message}`,'err');
+  } finally {
+    dbg('');
+  }
 }
 
 function strip(t){
@@ -606,12 +744,26 @@ libraryList.addEventListener('click', e=>{
   const id = clipEl.dataset.id;
   if (btn.dataset.act === 'load') loadClip(id, false);
   if (btn.dataset.act === 'play') loadClip(id, true);
+  if (btn.dataset.act === 'mp3') downloadClip(id, 'mp3');
+  if (btn.dataset.act === 'wav') downloadClip(id, 'wav');
   if (btn.dataset.act === 'delete'){
     store.clips = store.clips.filter(c=>c.id !== id);
     saveStore();
     renderLibrary();
     st('Gelöscht.','');
   }
+});
+
+libraryList.addEventListener('change', e=>{
+  const sel = e.target.closest('select[data-act="move"]');
+  const clipEl = e.target.closest('.clip');
+  if (!sel || !clipEl) return;
+  const clip = store.clips.find(c=>c.id === clipEl.dataset.id);
+  if (!clip) return;
+  clip.category = sel.value || DEFAULT_CAT;
+  saveStore();
+  renderLibrary();
+  st('Verschoben nach: '+clip.category,'ok');
 });
 
 btnPause.addEventListener('click', ()=>{
