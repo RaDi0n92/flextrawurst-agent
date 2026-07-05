@@ -97,12 +97,13 @@ button.main {
   padding: .52rem 1.4rem; border-radius: 7px; border: none;
   font-size: .9rem; cursor: pointer; transition: all .12s; user-select: none;
 }
-button.small {
+button.small, .file-btn {
+  display: inline-flex; align-items: center; justify-content: center;
   min-height: 38px; padding: .43rem .7rem; border-radius: 7px;
   border: 1px solid var(--border-soft); background: var(--panel-2); color: var(--muted);
   font-size: .82rem; cursor: pointer; transition: all .12s; white-space: nowrap;
 }
-button.small:hover:not(:disabled) { border-color: var(--pink); color: var(--text); background: var(--field-hi); }
+button.small:hover:not(:disabled), .file-btn:hover { border-color: var(--pink); color: var(--text); background: var(--field-hi); }
 button.small.primary { background: var(--pink-hot); border-color: var(--pink-soft); color: #28041b; }
 button.small.danger { border-color: var(--danger); color: var(--pink-soft); }
 button.small:disabled { opacity: .42; cursor: not-allowed; }
@@ -139,18 +140,27 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .inf { font-size: .72rem; color: var(--faint); }
 .voice-active { font-size: .76rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .library-head { justify-content: space-between; align-items: center; }
+.toolbar { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.toolbar input[type="text"] { flex: 1 1 220px; }
 .library-list { display: flex; flex-direction: column; gap: .5rem; max-height: 320px; overflow-y: auto; }
 .clip {
   border: 1px solid var(--border-soft); border-radius: 8px; background: var(--bg-soft);
   padding: .62rem; display: grid; grid-template-columns: 1fr; gap: .5rem;
 }
 @media (min-width: 720px) { .clip { grid-template-columns: minmax(0,1fr) auto; align-items: center; } }
+.clip.pick { border-color: var(--pink); box-shadow: inset 0 0 0 1px rgba(255, 122, 200, .18); }
 .clip-title { color: var(--text); font-size: .9rem; margin-bottom: .18rem; }
 .clip-text { color: var(--muted); font-size: .78rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; }
 .clip-meta { color: var(--quiet); font-size: .7rem; margin-top: .24rem; }
+.clip-extra { color: var(--muted); font-size: .74rem; margin-top: .28rem; line-height: 1.35; }
+.clip-extra input { vertical-align: middle; margin-right: .3rem; accent-color: var(--pink); }
 .clip-move { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; margin-top: .45rem; }
 .clip-move select { min-height: 34px; font-size: .78rem; max-width: 260px; }
 .clip-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.star { color: var(--pink-soft); border-color: var(--pink); }
+.clip-note { flex: 1 1 180px; min-height: 34px !important; font-size: .78rem !important; }
+.file-btn { position: relative; overflow: hidden; }
+.file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .empty { color: var(--quiet); font-size: .82rem; border: 1px dashed var(--border-soft); border-radius: 8px; padding: .8rem; }
 </style>
 </head>
@@ -181,7 +191,9 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <div class="row">
       <select id="voice-select" aria-label="Stimme auswählen"></select>
       <button class="small primary" id="btn-voice">Aktivieren</button>
+      <button class="small" id="btn-voice-fav">★ Stimme</button>
     </div>
+    <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
     <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
   </div>
 
@@ -200,6 +212,8 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <div class="grid2">
       <input id="clip-title" type="text" placeholder="Titel der Eingabe">
       <select id="save-category" aria-label="Kategorie fürs Speichern"></select>
+      <input id="clip-tags" type="text" placeholder="Tags, durch Komma getrennt">
+      <input id="clip-note" type="text" placeholder="Notiz">
     </div>
     <div class="row">
       <button class="small primary" id="btn-save">Eingabe speichern</button>
@@ -212,6 +226,14 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <div class="row library-head">
       <div class="panel-title">Soundboard</div>
       <select id="filter-category" aria-label="Kategorie anzeigen"></select>
+    </div>
+    <div class="toolbar">
+      <input id="library-search" type="text" placeholder="Suchen in Titel, Text, Tags, Notizen">
+      <button class="small" id="btn-play-selected">Auswahl spielen</button>
+      <button class="small" id="btn-batch-mp3">Batch MP3</button>
+      <button class="small" id="btn-export-json">JSON</button>
+      <label class="small file-btn">Import<input id="import-json" type="file" accept="application/json"></label>
+      <button class="small" id="btn-offline-html">Offline HTML</button>
     </div>
     <div class="library-list" id="library-list"></div>
   </div>
@@ -229,14 +251,24 @@ const btnPause= document.getElementById('btn-pause');
 const btnStop = document.getElementById('btn-stop');
 const voiceSel= document.getElementById('voice-select');
 const btnVoice= document.getElementById('btn-voice');
+const btnVoiceFav = document.getElementById('btn-voice-fav');
+const voiceFavSel = document.getElementById('voice-favorites');
 const activeVoiceEl = document.getElementById('active-voice');
 const clipTitle = document.getElementById('clip-title');
+const clipTags = document.getElementById('clip-tags');
+const clipNote = document.getElementById('clip-note');
 const saveCat = document.getElementById('save-category');
 const filterCat = document.getElementById('filter-category');
 const newCat = document.getElementById('new-category');
 const btnCat = document.getElementById('btn-category');
 const btnSave = document.getElementById('btn-save');
 const libraryList = document.getElementById('library-list');
+const librarySearch = document.getElementById('library-search');
+const btnPlaySelected = document.getElementById('btn-play-selected');
+const btnBatchMp3 = document.getElementById('btn-batch-mp3');
+const btnExportJson = document.getElementById('btn-export-json');
+const importJson = document.getElementById('import-json');
+const btnOfflineHtml = document.getElementById('btn-offline-html');
 const seekW   = document.getElementById('seek-wrap');
 const seekF   = document.getElementById('seek-fill');
 const seekK   = document.getElementById('seek-knob');
@@ -248,6 +280,9 @@ const dbgEl   = document.getElementById('dbg');
 const BASE = location.pathname.replace(/[^/]*$/, '');
 const API  = BASE + 'speak';
 const VOICES_API = BASE + 'voices';
+const LIBRARY_API = BASE + 'library';
+const OFFLINE_API = BASE + 'offline.html';
+const AUDIO_ZIP_API = BASE + 'export-audio';
 
 const MAX = 1111111;
 const CK  = 280;
@@ -264,6 +299,8 @@ let paused  = false;
 let pResume = null;
 let curSrc  = null;
 let actx    = null;
+let selectedClips = new Set();
+let serverReady = false;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -288,28 +325,112 @@ function textStats(s){
     tokens: Math.max(1, Math.ceil(chars / 4))
   };
 }
+function parseTags(s){
+  return String(s || '')
+    .split(',')
+    .map(x=>x.trim())
+    .filter(Boolean)
+    .filter((x,i,a)=>a.indexOf(x) === i);
+}
+function rateFactor(r){
+  const n = parseInt(String(r || '+0%').replace('%',''), 10);
+  return 1 + (Number.isFinite(n) ? n : 0) / 100;
+}
+function durationText(text, r){
+  const chars = String(text || '').length;
+  const seconds = Math.max(1, Math.round(chars / (13 * Math.max(.25, rateFactor(r)))));
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${String(s).padStart(2,'0')} min`;
+}
+function normalizeStore(raw){
+  const categories = Array.isArray(raw && raw.categories) ? raw.categories.filter(Boolean) : [DEFAULT_CAT];
+  const clips = Array.isArray(raw && raw.clips) ? raw.clips : [];
+  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [DEFAULT_VOICE];
+  return {
+    categories: Array.from(new Set([DEFAULT_CAT, ...categories])),
+    clips: clips.map(c=>({
+      id: c.id || uid(),
+      title: c.title || 'Ohne Titel',
+      text: c.text || '',
+      category: c.category || DEFAULT_CAT,
+      voice: c.voice || DEFAULT_VOICE,
+      rate: c.rate || '+0%',
+      createdAt: c.createdAt || new Date().toISOString(),
+      favorite: !!c.favorite,
+      tags: Array.isArray(c.tags) ? c.tags.filter(Boolean) : parseTags(c.tags),
+      note: c.note || ''
+    })),
+    voiceFavorites: Array.from(new Set([DEFAULT_VOICE, ...voiceFavorites]))
+  };
+}
+function mergeStores(a,b){
+  const left = normalizeStore(a || {});
+  const right = normalizeStore(b || {});
+  const byId = new Map();
+  [...left.clips, ...right.clips].forEach(c=>byId.set(c.id, c));
+  return normalizeStore({
+    categories: [...left.categories, ...right.categories],
+    clips: Array.from(byId.values()),
+    voiceFavorites: [...left.voiceFavorites, ...right.voiceFavorites]
+  });
+}
 
 function loadStore(){
   try {
-    const parsed = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
-    const categories = Array.isArray(parsed.categories) && parsed.categories.length
-      ? parsed.categories.filter(Boolean)
-      : [DEFAULT_CAT];
-    const clips = Array.isArray(parsed.clips) ? parsed.clips : [];
-    return { categories: Array.from(new Set([DEFAULT_CAT, ...categories])), clips };
+    return normalizeStore(JSON.parse(localStorage.getItem(STORE_KEY) || '{}'));
   } catch(e) {
-    return { categories: [DEFAULT_CAT], clips: [] };
+    return normalizeStore({});
   }
 }
 
 function saveStore(){
   localStorage.setItem(STORE_KEY, JSON.stringify(store));
+  if (serverReady) persistStore();
+}
+
+async function persistStore(){
+  try {
+    await fetch(LIBRARY_API, {
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(store)
+    });
+  } catch(e){
+    dbg('Server-Speichern fehlgeschlagen: '+e.message);
+  }
+}
+
+async function loadServerStore(){
+  try {
+    const res = await fetch(LIBRARY_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const serverStore = await res.json();
+    store = mergeStores(serverStore, store);
+    serverReady = true;
+    saveStore();
+    st('Bibliothek vom VPS geladen.','ok');
+  } catch(e){
+    serverReady = false;
+    dbg('VPS-Bibliothek nicht geladen, lokal weiter: '+e.message);
+  }
+  renderLibrary();
 }
 
 function setActiveVoice(v){
   activeVoice = v || DEFAULT_VOICE;
   localStorage.setItem('tts.activeVoice', activeVoice);
   activeVoiceEl.textContent = 'Aktiv: '+activeVoice;
+  renderVoiceFavorites();
+}
+
+function renderVoiceFavorites(){
+  if (!voiceFavSel) return;
+  store.voiceFavorites = Array.from(new Set([DEFAULT_VOICE, ...(store.voiceFavorites || [])]));
+  voiceFavSel.innerHTML = store.voiceFavorites
+    .map(v=>`<option value="${esc(v)}">${esc(v)}</option>`)
+    .join('');
+  voiceFavSel.value = store.voiceFavorites.includes(activeVoice) ? activeVoice : DEFAULT_VOICE;
 }
 
 function renderCategories(){
@@ -324,33 +445,49 @@ function renderCategories(){
 
 function renderLibrary(){
   renderCategories();
+  renderVoiceFavorites();
   const cat = filterCat.value || 'Alle';
+  const q = librarySearch.value.trim().toLowerCase();
   const categoryOptions = current => store.categories
     .map(c=>`<option value="${esc(c)}"${c === current ? ' selected' : ''}>${esc(c)}</option>`)
     .join('');
   const clips = store.clips
     .filter(c=>cat === 'Alle' || c.category === cat)
-    .sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)));
+    .filter(c=>{
+      if (!q) return true;
+      return [c.title, c.text, c.category, c.voice, c.rate, c.note, ...(c.tags || [])]
+        .join(' ')
+        .toLowerCase()
+        .includes(q);
+    })
+    .sort((a,b)=>(b.favorite === a.favorite ? 0 : b.favorite ? 1 : -1) || String(b.createdAt).localeCompare(String(a.createdAt)));
   if (!clips.length){
     libraryList.innerHTML = '<div class="empty">Noch keine gespeicherten Eingaben in dieser Kategorie.</div>';
     return;
   }
   libraryList.innerHTML = clips.map(c=>{
     const stats = textStats(c.text);
+    const tags = (c.tags || []).join(', ');
+    const picked = selectedClips.has(c.id);
     return `
-    <div class="clip" data-id="${esc(c.id)}">
+    <div class="clip${picked ? ' pick' : ''}" data-id="${esc(c.id)}">
       <div>
         <div class="clip-title">${esc(c.title)}</div>
         <div class="clip-text">${esc(shortText(c.text.replace(/\s+/g,' '), 180))}</div>
-        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')} · ${stats.chars.toLocaleString('de')} Zeichen · ca. ${stats.tokens.toLocaleString('de')} Tokens</div>
+        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')} · ${stats.chars.toLocaleString('de')} Zeichen · ca. ${stats.tokens.toLocaleString('de')} Tokens · ca. ${durationText(c.text, c.rate)}</div>
+        <div class="clip-extra">${tags ? 'Tags: '+esc(tags) : 'Keine Tags'}${c.note ? ' · Notiz: '+esc(c.note) : ''}</div>
         <div class="clip-move">
+          <label class="lbl"><input type="checkbox" data-act="pick"${picked ? ' checked' : ''}> Auswahl</label>
           <span class="lbl">Kategorie:</span>
           <select class="clip-category" data-act="move">${categoryOptions(c.category || DEFAULT_CAT)}</select>
+          <input class="clip-note" data-act="note" type="text" value="${esc(c.note || '')}" placeholder="Notiz">
         </div>
       </div>
       <div class="clip-actions">
+        <button class="small${c.favorite ? ' star' : ''}" data-act="favorite">${c.favorite ? '★' : '☆'}</button>
         <button class="small" data-act="load">Laden</button>
         <button class="small primary" data-act="play">▶</button>
+        <button class="small" data-act="duplicate">Duplizieren</button>
         <button class="small" data-act="mp3">MP3</button>
         <button class="small" data-act="wav">WAV</button>
         <button class="small danger" data-act="delete">Löschen</button>
@@ -436,9 +573,14 @@ function saveClip(){
     category,
     voice: activeVoice,
     rate,
+    favorite: false,
+    tags: parseTags(clipTags.value),
+    note: clipNote.value.trim(),
     createdAt: new Date().toISOString()
   });
   clipTitle.value = '';
+  clipTags.value = '';
+  clipNote.value = '';
   saveStore();
   filterCat.value = category;
   renderLibrary();
@@ -589,6 +731,77 @@ async function downloadClip(id, format){
     st(`Download fehlgeschlagen: ${e.message}`,'err');
   } finally {
     dbg('');
+  }
+}
+
+function selectedIds(){
+  return Array.from(selectedClips).filter(id=>store.clips.some(c=>c.id === id));
+}
+
+async function playSelected(){
+  const ids = selectedIds();
+  if (!ids.length){ st('Keine Clips ausgewählt.','err'); return; }
+  for (const id of ids){
+    const clip = store.clips.find(c=>c.id === id);
+    if (!clip) continue;
+    ta.value = clip.text;
+    ta.dispatchEvent(new Event('input'));
+    if (clip.voice) setActiveVoice(clip.voice);
+    setRate(clip.rate || '+0%');
+    chunks = splitChunks(strip(clip.text));
+    buildRV();
+    st('Sequenz: '+clip.title,'wait');
+    await startFrom(0);
+  }
+}
+
+async function exportSelectedMp3(){
+  const ids = selectedIds();
+  if (!ids.length){ st('Keine Clips ausgewählt.','err'); return; }
+  st('Batch-MP3 wird gebaut…','wait');
+  try {
+    const r = await fetch(AUDIO_ZIP_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ids, format:'mp3'})
+    });
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    downloadBlob(await r.blob(), 'tts-clips-mp3.zip');
+    st('Batch-MP3 fertig.','ok');
+  } catch(e){
+    st('Batch-MP3 fehlgeschlagen: '+e.message,'err');
+  }
+}
+
+function exportJson(){
+  downloadBlob(
+    new Blob([JSON.stringify(store, null, 2)], {type:'application/json'}),
+    'tts-soundboard.json'
+  );
+}
+
+async function importJsonFile(file){
+  if (!file) return;
+  try {
+    const incoming = normalizeStore(JSON.parse(await file.text()));
+    store = mergeStores(store, incoming);
+    saveStore();
+    renderLibrary();
+    st('JSON importiert.','ok');
+  } catch(e){
+    st('Import fehlgeschlagen: '+e.message,'err');
+  } finally {
+    importJson.value = '';
+  }
+}
+
+async function downloadOfflineHtml(){
+  try {
+    const r = await fetch(OFFLINE_API, {cache:'no-store'});
+    if (!r.ok) throw new Error('HTTP '+r.status);
+    downloadBlob(await r.blob(), 'tts-soundboard-offline.html');
+  } catch(e){
+    downloadBlob(new Blob([document.documentElement.outerHTML], {type:'text/html'}), 'tts-soundboard-offline.html');
   }
 }
 
@@ -765,6 +978,22 @@ btnVoice.addEventListener('click', ()=>{
   st('Stimme aktiviert.','ok');
 });
 
+btnVoiceFav.addEventListener('click', ()=>{
+  const v = voiceSel.value || activeVoice || DEFAULT_VOICE;
+  store.voiceFavorites = Array.from(new Set([...(store.voiceFavorites || []), v]));
+  saveStore();
+  renderVoiceFavorites();
+  st('Stimme gemerkt.','ok');
+});
+
+voiceFavSel.addEventListener('change', ()=>{
+  const v = voiceFavSel.value;
+  if (!v) return;
+  voiceSel.value = v;
+  setActiveVoice(v);
+  st('Favoriten-Stimme aktiviert.','ok');
+});
+
 btnCat.addEventListener('click', addCategory);
 newCat.addEventListener('keydown', e=>{
   if (e.key === 'Enter') addCategory();
@@ -772,18 +1001,37 @@ newCat.addEventListener('keydown', e=>{
 
 btnSave.addEventListener('click', saveClip);
 filterCat.addEventListener('change', renderLibrary);
+librarySearch.addEventListener('input', renderLibrary);
+btnPlaySelected.addEventListener('click', playSelected);
+btnBatchMp3.addEventListener('click', exportSelectedMp3);
+btnExportJson.addEventListener('click', exportJson);
+importJson.addEventListener('change', ()=>importJsonFile(importJson.files[0]));
+btnOfflineHtml.addEventListener('click', downloadOfflineHtml);
 
 libraryList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
   const clipEl = e.target.closest('.clip');
   if (!btn || !clipEl) return;
   const id = clipEl.dataset.id;
+  const clip = store.clips.find(c=>c.id === id);
   if (btn.dataset.act === 'load') loadClip(id, false);
   if (btn.dataset.act === 'play') loadClip(id, true);
   if (btn.dataset.act === 'mp3') downloadClip(id, 'mp3');
   if (btn.dataset.act === 'wav') downloadClip(id, 'wav');
+  if (btn.dataset.act === 'favorite' && clip){
+    clip.favorite = !clip.favorite;
+    saveStore();
+    renderLibrary();
+  }
+  if (btn.dataset.act === 'duplicate' && clip){
+    store.clips.push({...clip, id: uid(), title: clip.title+' Kopie', createdAt: new Date().toISOString()});
+    saveStore();
+    renderLibrary();
+    st('Dupliziert.','ok');
+  }
   if (btn.dataset.act === 'delete'){
     store.clips = store.clips.filter(c=>c.id !== id);
+    selectedClips.delete(id);
     saveStore();
     renderLibrary();
     st('Gelöscht.','');
@@ -791,15 +1039,33 @@ libraryList.addEventListener('click', e=>{
 });
 
 libraryList.addEventListener('change', e=>{
+  const pick = e.target.closest('input[data-act="pick"]');
   const sel = e.target.closest('select[data-act="move"]');
   const clipEl = e.target.closest('.clip');
-  if (!sel || !clipEl) return;
+  if (!clipEl) return;
+  if (pick){
+    if (pick.checked) selectedClips.add(clipEl.dataset.id);
+    else selectedClips.delete(clipEl.dataset.id);
+    renderLibrary();
+    return;
+  }
+  if (!sel) return;
   const clip = store.clips.find(c=>c.id === clipEl.dataset.id);
   if (!clip) return;
   clip.category = sel.value || DEFAULT_CAT;
   saveStore();
   renderLibrary();
   st('Verschoben nach: '+clip.category,'ok');
+});
+
+libraryList.addEventListener('input', e=>{
+  const note = e.target.closest('input[data-act="note"]');
+  const clipEl = e.target.closest('.clip');
+  if (!note || !clipEl) return;
+  const clip = store.clips.find(c=>c.id === clipEl.dataset.id);
+  if (!clip) return;
+  clip.note = note.value;
+  saveStore();
 });
 
 btnPause.addEventListener('click', ()=>{
@@ -862,6 +1128,7 @@ document.addEventListener('touchend',  e=>{
 });
 
 renderLibrary();
+loadServerStore();
 loadVoices();
 ta.dispatchEvent(new Event('input'));
 
