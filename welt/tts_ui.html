@@ -136,6 +136,20 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
   <div id="reading-view"></div>
   <div class="counter" id="ctr">0 / 1.111.111</div>
 
+  <div class="row">
+    <button class="main" id="btn-speak">▶ Sprechen</button>
+    <button class="main" id="btn-pause" disabled>⏸ Pause</button>
+    <button class="main" id="btn-stop"  disabled>■ Stop</button>
+  </div>
+
+  <div class="seek-wrap" id="seek-wrap">
+    <div id="seek-fill"></div>
+    <div id="seek-knob"></div>
+  </div>
+  <div class="inf" id="inf"></div>
+  <div id="st"></div>
+  <div id="dbg"></div>
+
   <div class="panel">
     <div class="panel-title">Stimme</div>
     <div class="row">
@@ -175,20 +189,6 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     </div>
     <div class="library-list" id="library-list"></div>
   </div>
-
-  <div class="row">
-    <button class="main" id="btn-speak">▶ Sprechen</button>
-    <button class="main" id="btn-pause" disabled>⏸ Pause</button>
-    <button class="main" id="btn-stop"  disabled>■ Stop</button>
-  </div>
-
-  <div class="seek-wrap" id="seek-wrap">
-    <div id="seek-fill"></div>
-    <div id="seek-knob"></div>
-  </div>
-  <div class="inf" id="inf"></div>
-  <div id="st"></div>
-  <div id="dbg"></div>
 
 </div>
 <script>
