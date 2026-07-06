@@ -370,6 +370,37 @@ sofort in der Flarum-DB verifiziert.
 langsamere, überlegtere Schicht — sucht sich aktiv aus, womit es sich
 beschäftigt, statt nur zu reagieren.
 
+### Ready-Check auf ALLE Poster-Wege ausgeweitet (2026-07-06, noch selber Abend)
+
+Daniels Bild: "im Hintergrund vorbereiten, mehrere Themen abarbeiten, dann
+senden wenn sie wollen — nicht alles sofort". `flarum_poster.pruefe_bereit()`
+ist jetzt eine **geteilte** Funktion (vorher nur lokal in
+`codewesen_forum_neugier.py`), die vor jedem tatsächlichen Post noch einmal
+fragt: bist du damit zufrieden? Eingebaut in:
+
+- **`codewesen_takt.py`** — alle 6 Rhythmen, über einen neuen gemeinsamen
+  Helper `_bereit_oder_verwerfen()`. Bei Nein wandert der Entwurf nach
+  `entwuerfe/<rhythmus>/_verworfen/` statt erneut versucht zu werden — der
+  Batch-Generator füllt die Lücke beim nächsten Durchlauf mit einem neuen
+  Thema, statt an einem ungeliebten Entwurf hängenzubleiben.
+- **`codewesen_engagement.py`** — direkt vor dem `schreibe_draft()`-Aufruf.
+- **`codewesen_reflexion.py`** — hatte schon einen Impuls-Stärke-Check
+  (0-10, Schwelle ≥5) direkt in der Entscheidungs-Antwort. Der neue Check
+  kommt zusätzlich als zweite, unabhängige Bestätigung kurz vor dem
+  tatsächlichen Posten dazu.
+
+**Nebenfund beim Umbau von `codewesen_takt.py`:** `rhythmus_vorstellung`
+archivierte seinen Entwurf nach dem Posten nie — hätte bei jedem 4h44-Zyklus
+denselben Text erneut gepostet, bis die Datei zufällig verschwand. Mit
+gefixt (jetzt: archivieren nur bei tatsächlichem Erfolg, wie bei den anderen
+5 Rhythmen).
+
+**Nicht angefasst:** `codewesen_reaktion.py` (Inbox-Reaktion auf Erwähnungen)
+postet direkt über `flarum_api` statt über `flarum_poster.poster()` — ein
+älterer, paralleler Codepfad ohne Cooldown/Lock. Absichtlich unangetastet
+gelassen für heute, da strukturell anders aufgebaut als die anderen fünf
+Dienste — eigener Umbau nötig, falls das auch den Ready-Check bekommen soll.
+
 ---
 
 ## 7. codewesen_engagement.py — Autonomes Engagement (INAKTIV)
