@@ -337,6 +337,13 @@ PAUSE_ZWISCHEN_ZYKLEN = 2700   # 45min — schwerer als vorher, deshalb seltener
    - **alle_einzeln**: für jede eine eigene Antwort
    Antwortformat ist strikt vorgegeben (`ENTSCHEIDUNG:`/`BEZUG:`/`---`) und
    wird deterministisch geparst — kein JSON-Tool-Call nötig.
+   **Fallback ergänzt (2026-07-06, direkt nach dem ersten Live-Test):** bei
+   `temperature=5.5` ignoriert das Modell das Format gelegentlich und liefert
+   freies JSON (`{"antwort": "..."}`) oder Freitext. `_parse_entscheidung_fallback()`
+   extrahiert den Text trotzdem und wertet ihn als `einzel` auf die erste
+   vorgeschlagene Diskussion, statt den ganzen Durchlauf zu verwerfen — live
+   beobachtet: ohne Fallback wurden 2 von 6 Wesen im ersten Durchlauf
+   komplett übersprungen.
 4. `_speichere_entwurf_md()`: Entwurf landet **immer** als lesbare MD-Datei
    in `codewesen/<wesen>/entwuerfe/neugier/` (Obsidian-sichtbar), unabhängig
    davon ob er am Ende gepostet wird.
