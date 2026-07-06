@@ -197,7 +197,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
       <button class="small danger" id="btn-voice-fav-remove">Favorit entfernen</button>
     </div>
-    <div class="voice-active" id="active-voice">Aktiv: de-DE-Florian:DragonHDLatestNeural</div>
+    <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
   </div>
 
   <div class="row">
@@ -291,7 +291,7 @@ const AUDIO_ZIP_API = BASE + 'export-audio';
 const MAX = 1111111;
 const CK  = 280;
 const STORE_KEY = 'flextrawurst.tts.soundboard.v1';
-const DEFAULT_VOICE = 'de-DE-Florian:DragonHDLatestNeural';
+const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
 const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
@@ -323,7 +323,7 @@ function fileSafe(s){
     .slice(0,80) || 'tts';
 }
 function isNeutralGermanVoice(v){
-  return v === 'de-DE-Florian:DragonHDLatestNeural' || v === 'de-DE-Seraphina:DragonHDLatestNeural';
+  return v === 'de-DE-FlorianMultilingualNeural' || v === 'de-DE-SeraphinaMultilingualNeural';
 }
 function textStats(s){
   const chars = String(s || '').length;
@@ -542,18 +542,15 @@ async function loadVoices(){
     voices.sort((a,b)=>{
       const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
       const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
-      const ahd = String(a.name || '').includes(':DragonHD') ? 0 : 1;
-      const bhd = String(b.name || '').includes(':DragonHD') ? 0 : 1;
       const am = String(a.name || '').includes('Multilingual') ? 1 : 0;
       const bm = String(b.name || '').includes('Multilingual') ? 1 : 0;
-      return ade - bde || String(a.locale).localeCompare(String(b.locale)) || ahd - bhd || am - bm || String(a.name).localeCompare(String(b.name));
+      return ade - bde || String(a.locale).localeCompare(String(b.locale)) || am - bm || String(a.name).localeCompare(String(b.name));
     });
     voiceSel.innerHTML = voices.map(v=>{
-      const hd = String(v.name || '').includes(':DragonHD') ? ' · Azure HD' : '';
-      const multi = !hd && String(v.name || '').includes('Multilingual')
+      const multi = String(v.name || '').includes('Multilingual')
         ? (isNeutralGermanVoice(v.name) ? ' · Neutral' : ' · Multilingual')
         : '';
-      const label = `${v.locale || '??'} · ${v.name}${hd}${multi} · ${v.gender || '?'}`;
+      const label = `${v.locale || '??'} · ${v.name}${multi} · ${v.gender || '?'}`;
       return `<option value="${esc(v.name)}">${esc(label)}</option>`;
     }).join('');
     voiceSel.value = activeVoice;
@@ -647,11 +644,7 @@ async function fetchAudioPart(text, voice, rateValue){
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({text, rate: rateValue || '+0%', voice: voice || DEFAULT_VOICE})
       });
-      if (!r.ok){
-        let detail = 'HTTP '+r.status;
-        try { detail = (await r.json()).detail || detail; } catch(e){}
-        throw new Error(detail);
-      }
+      if (!r.ok) throw new Error('HTTP '+r.status);
       const ab = await r.arrayBuffer();
       dbg('');
       return ab;
@@ -897,11 +890,7 @@ async function fetchBuf(text, sid){
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({text, rate, voice: activeVoice})
       });
-      if (!r.ok){
-        let detail = 'HTTP '+r.status;
-        try { detail = (await r.json()).detail || detail; } catch(e){}
-        throw new Error(detail);
-      }
+      if (!r.ok) throw new Error('HTTP '+r.status);
       const ab = await r.arrayBuffer();
       if (sid !== sess) throw new Error('dead');
       dbg('');

@@ -1,4 +1,4 @@
-import os, tempfile, asyncio, json, threading, zipfile, html, urllib.request, urllib.error
+import os, tempfile, asyncio, json, threading, zipfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
@@ -10,35 +10,11 @@ import edge_tts
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-VOICE = "de-DE-Florian:DragonHDLatestNeural"
+VOICE = "de-DE-FlorianMultilingualNeural"
 MAX_CHARS = 1111111
 LIBRARY_PATH = Path("/root/werkraum/welt/tts_library.json")
 _pool = ThreadPoolExecutor(max_workers=4)
 _library_lock = threading.Lock()
-AZURE_HD_VOICES = [
-    {
-        "name": "de-DE-Florian:DragonHDLatestNeural",
-        "gender": "Male",
-        "locale": "de-DE",
-        "display": "Microsoft Florian DragonHDLatest (Azure HD) - German (Germany)",
-        "provider": "azure",
-    },
-    {
-        "name": "de-DE-Seraphina:DragonHDLatestNeural",
-        "gender": "Female",
-        "locale": "de-DE",
-        "display": "Microsoft Seraphina DragonHDLatest (Azure HD) - German (Germany)",
-        "provider": "azure",
-    },
-]
-
-def _azure_speech_config() -> tuple[str, str]:
-    key = os.environ.get("AZURE_SPEECH_KEY", "").strip()
-    region = os.environ.get("AZURE_SPEECH_REGION", "").strip()
-    return key, region
-
-def _is_azure_voice(voice: str) -> bool:
-    return voice in {v["name"] for v in AZURE_HD_VOICES}
 
 class TTSRequest(BaseModel):
     text: str
@@ -89,7 +65,7 @@ def _write_library(data: dict) -> dict:
         os.replace(tmp, LIBRARY_PATH)
     return library
 
-def _sync_generate_edge(text: str, voice: str, rate: str) -> str:
+def _sync_generate(text: str, voice: str, rate: str) -> str:
     """Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockiert."""
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
@@ -102,77 +78,28 @@ def _sync_generate_edge(text: str, voice: str, rate: str) -> str:
     finally:
         loop.close()
 
-def _sync_generate_azure(text: str, voice: str, rate: str) -> str:
-    key, region = _azure_speech_config()
-    if not key or not region:
-        raise RuntimeError("Azure Speech fehlt: AZURE_SPEECH_KEY und AZURE_SPEECH_REGION setzen.")
-    endpoint = f"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1"
-    tmp = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False, dir="/tmp")
-    tmp.close()
-    pct = str(rate or "+0%")
-    escaped_text = html.escape(text, quote=False)
-    escaped_voice = html.escape(voice, quote=True)
-    ssml = (
-        "<speak version='1.0' xml:lang='de-DE' "
-        "xmlns='http://www.w3.org/2001/10/synthesis'>"
-        f"<voice name='{escaped_voice}'><prosody rate='{html.escape(pct, quote=True)}'>"
-        f"{escaped_text}</prosody></voice></speak>"
-    ).encode("utf-8")
-    req = urllib.request.Request(
-        endpoint,
-        data=ssml,
-        headers={
-            "Ocp-Apim-Subscription-Key": key,
-            "Content-Type": "application/ssml+xml",
-            "X-Microsoft-OutputFormat": "audio-24khz-48kbitrate-mono-mp3",
-            "User-Agent": "flextrawurst-tts",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as res:
-            Path(tmp.name).write_bytes(res.read())
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode("utf-8", errors="replace")[:500]
-        raise RuntimeError(f"Azure Speech HTTP {e.code}: {detail}") from e
-    except urllib.error.URLError as e:
-        raise RuntimeError(f"Azure Speech Netzwerkfehler: {e.reason}") from e
-    return tmp.name
-
-def _sync_generate(text: str, voice: str, rate: str) -> str:
-    if _is_azure_voice(voice):
-        return _sync_generate_azure(text, voice, rate)
-    return _sync_generate_edge(text, voice, rate)
-
 @app.post("/speak")
 async def speak(req: TTSRequest):
     text = req.text[:MAX_CHARS].strip()
     if not text:
         return {"error": "kein text"}
     loop = asyncio.get_event_loop()
-    try:
-        path = await loop.run_in_executor(_pool, _sync_generate, text, req.voice, req.rate)
-    except RuntimeError as e:
-        raise HTTPException(status_code=503, detail=str(e)) from e
+    path = await loop.run_in_executor(_pool, _sync_generate, text, req.voice, req.rate)
     return FileResponse(path, media_type="audio/mpeg", filename="tts.mp3",
                         background=None)
 
 @app.get("/voices")
 async def voices():
     v = await edge_tts.list_voices()
-    edge_voices = [
+    return [
         {
             "name": x["ShortName"],
             "gender": x["Gender"],
             "locale": x["Locale"],
             "display": x.get("FriendlyName") or x["ShortName"],
-            "provider": "edge",
         }
         for x in v
     ]
-    existing = {x["name"] for x in edge_voices}
-    hd = [x for x in AZURE_HD_VOICES if x["name"] not in existing]
-    return hd + edge_voices
 
 @app.get("/library")
 async def get_library():
@@ -209,10 +136,7 @@ async def export_audio(req: AudioExportRequest):
                 continue
             voice = str(clip.get("voice") or VOICE)
             rate = str(clip.get("rate") or "+0%")
-            try:
-                path = await asyncio.get_event_loop().run_in_executor(_pool, _sync_generate, text, voice, rate)
-            except RuntimeError as e:
-                raise HTTPException(status_code=503, detail=str(e)) from e
+            path = await asyncio.get_event_loop().run_in_executor(_pool, _sync_generate, text, voice, rate)
             title = str(clip.get("title") or f"clip-{i}")
             safe = "".join(ch if ch.isalnum() or ch in "._-" else "-" for ch in title).strip("-") or f"clip-{i}"
             zf.write(path, f"{i:03d}-{safe[:80]}.mp3")
