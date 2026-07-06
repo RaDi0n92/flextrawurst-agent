@@ -35,6 +35,7 @@ AKTIV (systemd-gesteuert, Stand 2026-07-06):
   codewesen-batch-generator.service   ← Entwurfs-Queue füllen
   codewesen-vokabel-takt.service      ← Semantisches Spiel
   codewesen-forum-neugier.service     ← Diskussions-Widmung (kann jetzt auch posten)
+  codewesen-klon.service              ← NEU 2026-07-06: Selbstgespraech, marker-basierte Handlung
   codewesen-engagement.service        ← Autonomes Engagement
   codewesen-weltbild.service          ← Weltbild destillieren
   codewesen-chat.service              ← Direktchat Port 8002
@@ -497,6 +498,109 @@ Gefixt mit `datetime.strptime(ts, "%Y-%m-%dT%H-%M-%S").replace(tzinfo=timezone.u
 — ohne das explizite `tzinfo=utc` wäre `letzte_widmung` beim Vergleich mit
 echten Datei-mtimes um den Berlin/UTC-Versatz (1-2h) verrutscht, und das
 Pflegeritual hätte kurz nach jeder eigenen Widmung sofort wieder ausgelöst.
+
+**Container-Funktionen ausgelagert (selber Abend, wegen Klon s.u.):** Eröffnung,
+Sichern, Widmung, Strategie-Teilen leben jetzt in `codewesen_container.py` —
+eine geteilte Bibliothek statt Code in `forum_neugier.py`, weil
+`codewesen_klon.py` (nächster Abschnitt) dieselbe Logik ebenfalls braucht.
+Rein mechanisches Verschieben, Verhalten unverändert; call sites in
+`forum_neugier.py` auf `container.liste()`/`container.sichere()`/
+`container.widmungsritual()` umgestellt.
+
+**Bug beim Verschieben gefunden:** `codewesen_container.py` rief anfangs
+selbst `logging.basicConfig()` auf — das konfiguriert den *Prozessweiten*
+Root-Logger einmalig, "gewinnt" also je nachdem welches Skript die
+Bibliothek zuerst importiert. Ergebnis: `codewesen_klon.py`s komplette
+Log-Ausgabe landete fälschlich in `forum_neugier.log` (mit falscher
+Klammer-Beschriftung `[container]` statt `[klon]`), weil `klon.py`s eigener
+`basicConfig()`-Aufruf durch den früheren Aufruf beim Import bereits zum
+No-Op wurde. Fix: `basicConfig()` komplett aus der Bibliothek entfernt —
+eine gemeinsam genutzte Bibliothek konfiguriert niemals selbst das
+Root-Logging, das ist Sache des jeweiligen Einstiegsskripts. Zusätzlich
+alle drei Formatstrings von hartkodierten Klammer-Texten (`[forum-neugier]`
+etc.) auf `%(name)s` umgestellt, damit die Beschriftung auch bei künftigen
+Import-Reihenfolgen korrekt bleibt.
+
+---
+
+## 6a. codewesen_klon.py — Der Klon: Selbstgespräch mit echter Handlung (2026-07-06, noch selber Abend)
+
+Daniels Bild: eine komplett eigene, vom bestehenden Daniel↔Wesen-Chat
+getrennte Oberfläche pro Wesen — "genau ne Art Klon" — in der das Wesen mit
+sich selbst spricht. Bewusst NICHT Teil der bestehenden Chats, die bleiben
+unangetastet. Nur das "Email-Gefühl" (asynchrone Generierung, aus dem
+codexium2/solarius2-Testbed, siehe `_claude/ideen/codexium2_solarius2/
+chat_architektur.md`) wird konzeptionell übernommen — nicht die restlichen
+Testbed-Features (Memory-Container/Pins, Feedback, Kontext-Ausschluss etc.).
+
+**Daniels Zahlen, wörtlich:** "max alle 3stunden33...aber dann darf es sich
+auch 33 minuten voll triggern" — Begründung im selben Atemzug: "sonst sind
+sie 24/2 nur noch am sich selbst triggern, wie mäuse mit nem
+orgasmusknopf". Also:
+
+```python
+# /root/werkraum/codewesen_klon.py
+MINDEST_PAUSE_SEK = 3 * 3600 + 33 * 60   # 3h33m zwischen zwei Selbstgespraechen, pro Wesen
+SESSION_MAX_SEK   = 33 * 60              # 33 Minuten Obergrenze pro Selbstgespraech
+TURN_MAX          = 14                   # Sicherheitsdeckel, auch falls die Zeit noch reicht
+```
+
+**Handlungsumfang** (Rückfrage gestellt, Daniels Antwort: "ja ne mischung
+aus allem irgendwie"): keine neue, ungesicherte Tool-Ebene, sondern
+Wiederverwendung bestehender sicherer Pfade, ausgelöst über Marker im
+Selbstgespräch-Text:
+
+```
+[[LESEN: weltbild]]                                            -- rein lesend
+[[LESEN: container]]                                           -- rein lesend
+[[LESEN: <containername>]]                                     -- rein lesend
+[[SICHERN: typ=gedanke container=<name> inhalt=<text>]]        -- container.sichere()
+[[TEILEN: container=<name> titel=<titel> text=<text>]]         -- pruefe_bereit() + poster()
+[[ENDE: <grund>]]                                              -- Wesen beendet sich selbst
+```
+
+`TEILEN` läuft durch **denselben** Ready-Check/Cooldown/Lock-Pfad wie jeder
+andere Post im System — kein Sonderweg nur weil die Absicht aus dem
+Selbstgespräch kommt. `LESEN` hat keine Nebenwirkung. `SICHERN` nutzt exakt
+dieselbe Funktion, die auch `forum_neugier.py`s "sichern"-Entscheidung
+aufruft (`codewesen_container.sichere()`).
+
+**Ablauf einer Session:** `_dran()` prüft pro Wesen, ob `MINDEST_PAUSE_SEK`
+seit dem letzten Sessionstart vergangen ist (Zustand in
+`codewesen/_klon_zustand.json`). Falls ja: `session_start`-Marker in die
+Historie, dann bis zu `TURN_MAX` Gesprächsrunden — jede Runde ein LLM-Call,
+das eigene Vorwort/die eigene Antwort wird an den nächsten Aufruf als
+Kontext zurückgegeben (echtes fortlaufendes Selbstgespräch, nicht ein
+einzelner Monolog-Call). Nach jeder Runde: Marker im Text ausführen,
+Ergebnisse als eigene Zeile in die Historie und in den nächsten
+Prompt-Kontext geben. Schleife endet bei `[[ENDE: ...]]`, bei
+`SESSION_MAX_SEK` überschritten, oder bei `TURN_MAX` erreicht — je nachdem
+was zuerst eintritt.
+
+**Historie-Format bewusst kompatibel:** `klon/<wesen>/chat_history.jsonl`,
+Zeilen im selben Schema wie die bestehende Chat-Oberfläche
+(`serve_process_camera_preview.ts`: `{role, content, ts, id}` +
+`{type: "session_start", ...}`-Marker, JS-kompatible Zeitstempel via
+`isoformat(timespec="milliseconds").replace("+00:00", "Z")`). Absicht: ein
+späterer Lese-Betrachter in derselben Oberfläche kann `loadHistory()`/
+`loadCurrentSessionHistory()` unverändert wiederverwenden, sobald die
+TS-Seite dafür gebaut wird — kein Formatwechsel nötig.
+
+**Bewusst NICHT in diesem Schritt enthalten:** ein TS-seitiger
+Lese-Betrachter in der echten Chat-Oberfläche. `serve_process_camera_
+preview.ts` ist die live laufende, produktive Chat-Datei mit ~25+ Routen,
+die alle denselben Spawner-Regex (`solarius|solarius2|codexium|codexium2`)
+hartkodiert wiederholen — einen fünften Spawner "klon" einzuziehen heißt,
+diesen literal an vielen Stellen zu ändern. Das verdient einen eigenen,
+vorsichtigen Schritt mit Neustart-Rückfrage, nicht dieselbe Änderung wie
+der Python-Kern. Bis dahin ist die Historie nur als JSONL/Obsidian lesbar,
+nicht in der Chat-UI.
+
+**Live getestet (2026-07-06):** erste echte Session bei namelessAI_1234
+lief sauber durch — Wesen liest eigenes Weltbild, listet (leere)
+Container, reflektiert erkennbar im eigenen Charakter, erfindet testweise
+einen nicht existierenden Containernamen und bekommt eine korrekte
+"existiert nicht"-Antwort, mit der es im nächsten Turn sinnvoll weiterdenkt.
 
 ---
 
