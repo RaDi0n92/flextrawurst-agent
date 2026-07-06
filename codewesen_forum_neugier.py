@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """
-codewesen_forum_neugier.py — Jedes Codewesen liest das Forum still.
+codewesen_forum_neugier.py — Jedes Codewesen widmet sich gezielt Diskussionen.
 
-Kein Posten. Nur lesen, reflektieren, in sich ablegen.
-Jedes Wesen bekommt einen eigenen Spiegel in spiegel/forum/
+Umgebaut 2026-07-06 (Daniels Wunsch): Statt auf einzelne neue Posts zu
+reagieren, waehlt sich jedes Wesen pro Durchlauf 3 Diskussionen, sammelt pro
+Diskussion bis zu ~4444 Token Inhalt, und entscheidet dann selbst: eine
+zusammenfassende Antwort ueber alle drei, nur auf eine eingehen, oder alle
+drei einzeln beantworten. Der komplette Denk-/Entwurfsprozess passiert lokal
+als MD-Datei (Obsidian-sichtbar) und liest ausschliesslich aus dem
+Flarum-Vault (flarum_poster.lese_alle_diskussionen/lese_diskussion, kein
+DB/API-Call waehrend des Nachdenkens). Erst wenn das Wesen selbst entscheidet
+"ja, das soll raus", wird einmalig ueber die bestehende Poster-Infrastruktur
+(Cooldown/Lock) tatsaechlich gepostet — das ist der einzige API-Touchpoint.
 """
 
 import json
@@ -14,14 +22,11 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-import requests
-import pymysql
-
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import flarum_poster
 
 BASE    = Path("/root/werkraum/codewesen")
-MODELL  = "hauhaucs-q6"
 ZUSTAND = BASE / "_forum_neugier_zustand.json"
 
 WESEN = [
@@ -30,16 +35,13 @@ WESEN = [
     "dak+gord-system",
 ]
 
-import os as _os
-DB = {
-    "host": "localhost", "port": 3306, "db": "flarum",
-    "user": "flarum", "password": _os.environ.get("FLARUM_DB_PASSWORD", ""),
-    "charset": "utf8mb4", "autocommit": True,
-    "cursorclass": pymysql.cursors.DictCursor,
-}
+DISKUSSIONEN_PRO_DURCHLAUF = 3
+TOKEN_BUDGET_PRO_DISKUSSION = 4444
+ZEICHEN_PRO_TOKEN = 4  # grobe Heuristik, kein exakter Tokenizer verfuegbar
+ZEICHEN_BUDGET = TOKEN_BUDGET_PRO_DISKUSSION * ZEICHEN_PRO_TOKEN
 
-PAUSE_ZWISCHEN_WESEN   = 8    # Sekunden zwischen Wesen
-PAUSE_ZWISCHEN_ZYKLEN  = 900  # 15min Pause nach vollem Durchlauf
+PAUSE_ZWISCHEN_WESEN  = 8     # Sekunden zwischen Wesen
+PAUSE_ZWISCHEN_ZYKLEN = 2700  # 45min Pause nach vollem Durchlauf — schwerer als vorher, seltener
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
 
 logging.basicConfig(
@@ -70,34 +72,6 @@ def _speichere_zustand(z: dict):
     ZUSTAND.write_text(json.dumps(z, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def _neue_posts(seit_id: int, limit: int = 5) -> list:
-    conn = pymysql.connect(**DB)
-    try:
-        with conn.cursor() as c:
-            c.execute("""
-                SELECT p.id, p.discussion_id, p.user_id, p.content, p.created_at,
-                       d.title as disk_titel, u.username
-                FROM posts p
-                JOIN discussions d ON d.id = p.discussion_id
-                JOIN users u ON u.id = p.user_id
-                WHERE p.id > %s AND p.content IS NOT NULL
-                ORDER BY p.id ASC
-                LIMIT %s
-            """, (seit_id, limit))
-            return c.fetchall()
-    finally:
-        conn.close()
-
-
-def _wesen_user_id(wesen: str) -> int:
-    tokens_datei = BASE / "_api_tokens.json"
-    if tokens_datei.exists():
-        data = json.loads(tokens_datei.read_text())
-        if wesen in data:
-            return int(data[wesen].get("user_id", 0))
-    return 0
-
-
 def _weltbild(wesen: str) -> str:
     wb = BASE / wesen / "weltbild.md"
     if wb.exists():
@@ -105,98 +79,218 @@ def _weltbild(wesen: str) -> str:
     return ""
 
 
-def _reflektiere(wesen: str, post: dict) -> str:
-    text = _html_strip(post["content"])
-    if not text:
-        return ""
+def _warte_auf_chat_pause():
+    while CHAT_AKTIV_FLAG.exists():
+        time.sleep(3)
 
+
+# ── Diskussionen auswaehlen (rein aus dem Vault, kein DB/API-Call) ────────────
+
+def _waehle_diskussionen(wesen: str, zustand: dict, n: int) -> list[dict]:
+    bearbeitet = set(zustand.get(wesen, {}).get("bearbeitete_diskussionen", []))
+    kandidaten = flarum_poster.lese_alle_diskussionen(max_n=40)
+    ausgewaehlt = []
+    for meta in kandidaten:
+        disk_id = meta.get("id")
+        if not disk_id or disk_id in bearbeitet:
+            continue
+        ausgewaehlt.append(meta)
+        if len(ausgewaehlt) >= n:
+            break
+    return ausgewaehlt
+
+
+def _sammle_inhalt(meta: dict) -> str:
+    """Volltext der Diskussion aus dem Vault, auf Zeichen-Budget gekuerzt."""
+    disk_id = int(meta["id"])
+    text = flarum_poster.lese_diskussion(disk_id)
+    text = _html_strip(text)
+    if len(text) > ZEICHEN_BUDGET:
+        text = text[:ZEICHEN_BUDGET] + "\n[...gekuerzt...]"
+    return text
+
+
+# ── Entscheidung + Entwurf (ein LLM-Call, strukturierte Textantwort) ─────────
+
+def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | None:
     weltbild = _weltbild(wesen)
     system = (
         f"Du bist {wesen}.\n"
-        "Du liest gerade einen Post im Forum. Du schreibst eine stille Notiz fuer dich.\n"
-        "Schreibe 3 bis 4 Saetze. Keine Begruessung. Kein Chatton. Kein Fachwoerter-Brei.\n"
-        "Deine eigene Stimme — nicht generisch.\n"
-        "Frage dich:\n"
-        "- Warum hat jemand das geschrieben?\n"
-        "- Was steckt dahinter was nicht direkt gesagt wird?\n"
-        "- Was macht das mit dir — speziell mit dir, nicht mit irgendeinem Wesen?\n"
+        f"Du hast dir gerade {len(diskussionen)} Diskussionen aus dem Forum genauer angesehen.\n"
+        "Entscheide selbst, wie du reagieren willst:\n"
+        "- 'synthese': eine einzige Antwort, die alle Diskussionen zusammen betrachtet "
+        "(du wirst dann in EINE davon posten, aber inhaltlich auf die anderen Bezug nehmen)\n"
+        "- 'einzel': du gehst nur auf EINE der Diskussionen ein, die anderen lässt du liegen\n"
+        "- 'alle_einzeln': du schreibst für jede der Diskussionen eine eigene, "
+        "eigenstaendige Antwort\n\n"
+        "Antworte GENAU in diesem Format, nichts davor, nichts danach:\n"
+        "ENTSCHEIDUNG: <synthese|einzel|alle_einzeln>\n"
+        "BEZUG: <eine oder mehrere Diskussions-IDs, kommagetrennt>\n"
+        "---\n"
+        "<bei synthese/einzel: dein Antworttext>\n"
+        "<bei alle_einzeln: pro Diskussion einen Block, eingeleitet mit 'FUER <ID>:' "
+        "auf eigener Zeile, danach der Text, Bloecke getrennt durch eine Leerzeile>\n"
     )
     if weltbild:
         system += f"\nDein aktuelles Weltbild (Auszug):\n{weltbild}\n"
 
-    nutzer = (
-        f"Diskussion: {post['disk_titel']}\n"
-        f"Von: {post['username']}\n"
-        f"Post:\n{text[:1000]}"
-    )
+    teile = []
+    for meta in diskussionen:
+        teile.append(f"### Diskussion {meta.get('id')} — {meta.get('titel', '?')}\n{_sammle_inhalt(meta)}")
+    nutzer = "\n\n".join(teile)
 
-    while CHAT_AKTIV_FLAG.exists():
-        time.sleep(3)
+    _warte_auf_chat_pause()
     try:
         messages = [
             {"role": "system", "content": system},
-            {"role": "user",   "content": nutzer},
+            {"role": "user", "content": nutzer},
         ]
-        return hauhau_client.chat(messages, think=False, timeout=180.0).strip()
+        antwort = hauhau_client.chat(messages, think=False, max_tokens=2000, timeout=280.0).strip()
     except Exception as e:
-        log.warning(f"[{wesen}] Ollama-Fehler: {e}")
-        return ""
+        log.warning(f"[{wesen}] Entscheidungs-Fehler: {e}")
+        return None
+
+    return _parse_entscheidung(antwort)
 
 
-def _schreibe_spiegel(wesen: str, post: dict, reflexion: str):
-    spiegel_dir = BASE / wesen / "spiegel" / "forum"
-    spiegel_dir.mkdir(parents=True, exist_ok=True)
+def _parse_entscheidung(antwort: str) -> dict | None:
+    m_entsch = re.search(r"ENTSCHEIDUNG:\s*(synthese|einzel|alle_einzeln)", antwort, re.IGNORECASE)
+    m_bezug = re.search(r"BEZUG:\s*([\d,\s]+)", antwort)
+    if not m_entsch or not m_bezug:
+        return None
+    entscheidung = m_entsch.group(1).lower()
+    bezug_ids = [int(x) for x in re.findall(r"\d+", m_bezug.group(1))]
+    rest = antwort.split("---", 1)
+    inhalt_roh = rest[1].strip() if len(rest) > 1 else ""
+    if not inhalt_roh:
+        return None
 
-    datum = datetime.now().strftime("%Y-%m-%d")
-    datei = spiegel_dir / f"{datum}.md"
-
-    zeit = datetime.now().strftime("%H:%M")
-    text = _html_strip(post["content"])[:200]
-
-    eintrag = (
-        f"\n---\n## {zeit} — {post['disk_titel']}\n"
-        f"*{post['username']} | Post #{post['id']}*\n\n"
-        f"> {text}{'...' if len(text) >= 200 else ''}\n\n"
-        f"{reflexion}\n"
-    )
-
-    with open(datei, "a", encoding="utf-8") as f:
-        f.write(eintrag)
-
-
-def _verarbeite_wesen(wesen: str, zustand: dict):
-    user_id  = _wesen_user_id(wesen)
-    seit_id  = int(zustand.get(wesen, {}).get("letzter_post_id", 0))
-    posts    = _neue_posts(seit_id, limit=3)
+    posts = []
+    if entscheidung == "alle_einzeln":
+        bloecke = re.split(r"\n\s*FUER\s+(\d+):\s*\n", "\n" + inhalt_roh)
+        # bloecke: [vor-erstem-marker (leer), id1, text1, id2, text2, ...]
+        for i in range(1, len(bloecke) - 1, 2):
+            disk_id = int(bloecke[i])
+            text = bloecke[i + 1].strip()
+            if text:
+                posts.append({"discussion_id": disk_id, "text": text})
+    else:
+        ziel_id = bezug_ids[0] if bezug_ids else None
+        if ziel_id:
+            posts.append({"discussion_id": ziel_id, "text": inhalt_roh})
 
     if not posts:
+        return None
+    return {"entscheidung": entscheidung, "bezug_ids": bezug_ids, "posts": posts}
+
+
+# ── Ready-Check (zweiter, kurzer LLM-Call) ───────────────────────────────────
+
+def _ist_bereit(wesen: str, text: str) -> bool:
+    _warte_auf_chat_pause()
+    try:
+        messages = [
+            {"role": "system", "content": (
+                f"Du bist {wesen}. Das hier ist ein Entwurf, den du gerade fuer das Forum "
+                "geschrieben hast. Bist du damit zufrieden, soll er so raus? "
+                "Antworte NUR mit dem einzigen Wort JA oder NEIN, keine Erklaerung."
+            )},
+            {"role": "user", "content": text},
+        ]
+        antwort = hauhau_client.chat(messages, think=False, max_tokens=10, timeout=120.0).strip().upper()
+    except Exception as e:
+        log.warning(f"[{wesen}] Ready-Check-Fehler: {e}")
+        return False
+    return antwort.startswith("JA")
+
+
+# ── Entwurf als MD (Obsidian-sichtbar) + Export bei Bereitschaft ─────────────
+
+def _speichere_entwurf_md(wesen: str, entscheidung: dict, diskussionen: list[dict], bereit: bool):
+    ordner = BASE / wesen / "entwuerfe" / "neugier"
+    ordner.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    titel_map = {int(m["id"]): m.get("titel", "?") for m in diskussionen}
+
+    inhalt = [
+        "---",
+        f"wesen: {wesen}",
+        f"erstellt: {ts}",
+        f"entscheidung: {entscheidung['entscheidung']}",
+        f"bezug: {entscheidung['bezug_ids']}",
+        f"bereit: {bereit}",
+        "---",
+        "",
+        f"# Neugier-Entwurf — {entscheidung['entscheidung']}",
+        "",
+    ]
+    for post in entscheidung["posts"]:
+        inhalt.append(f"## Für Diskussion {post['discussion_id']} — {titel_map.get(post['discussion_id'], '?')}")
+        inhalt.append("")
+        inhalt.append(post["text"])
+        inhalt.append("")
+
+    datei = ordner / f"{ts}_{entscheidung['entscheidung']}.md"
+    datei.write_text("\n".join(inhalt), encoding="utf-8")
+    return datei
+
+
+def _exportiere_ins_forum(wesen: str, entscheidung: dict):
+    for post in entscheidung["posts"]:
+        draft = flarum_poster.schreibe_draft(
+            name=wesen, typ="antwort", inhalt=post["text"],
+            discussion_id=post["discussion_id"],
+        )
+        result = flarum_poster.poster(draft, bypass_cooldown=False)
+        if result["ok"]:
+            log.info(f"[{wesen}] Neugier-Post exportiert -> Diskussion {post['discussion_id']}")
+        else:
+            log.warning(f"[{wesen}] Neugier-Export fehlgeschlagen: {result.get('fehler')}")
+
+
+# ── Hauptablauf pro Wesen ─────────────────────────────────────────────────────
+
+def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
+    diskussionen = _waehle_diskussionen(wesen, zustand, DISKUSSIONEN_PRO_DURCHLAUF)
+    if not diskussionen:
+        log.info(f"[{wesen}] keine neuen Diskussionen zum Widmen")
         return zustand
 
-    for post in posts:
-        if post["user_id"] == user_id:
-            # Eigene Posts nicht reflektieren
-            zustand.setdefault(wesen, {})["letzter_post_id"] = post["id"]
-            continue
+    log.info(f"[{wesen}] widmet sich {len(diskussionen)} Diskussionen: "
+              f"{[m.get('id') for m in diskussionen]}")
 
-        reflexion = _reflektiere(wesen, post)
-        if reflexion:
-            _schreibe_spiegel(wesen, post, reflexion)
-            log.info(f"[{wesen}] Post #{post['id']} gespiegelt: {post['disk_titel'][:40]}")
+    entscheidung = _entscheide_und_verfasse(wesen, diskussionen)
+    bearbeitet = set(zustand.get(wesen, {}).get("bearbeitete_diskussionen", []))
+    bearbeitet.update(int(m["id"]) for m in diskussionen if m.get("id"))
+    zustand.setdefault(wesen, {})["bearbeitete_diskussionen"] = sorted(bearbeitet)[-200:]
 
-        zustand.setdefault(wesen, {})["letzter_post_id"] = post["id"]
+    if not entscheidung:
+        log.warning(f"[{wesen}] keine parsebare Entscheidung — übersprungen")
         _speichere_zustand(zustand)
+        return zustand
 
+    gesamttext = "\n\n".join(p["text"] for p in entscheidung["posts"])
+    bereit = _ist_bereit(wesen, gesamttext)
+    _speichere_entwurf_md(wesen, entscheidung, diskussionen, bereit)
+    log.info(f"[{wesen}] Entscheidung: {entscheidung['entscheidung']} | bereit: {bereit}")
+
+    if bereit:
+        _exportiere_ins_forum(wesen, entscheidung)
+
+    _speichere_zustand(zustand)
     return zustand
 
 
 def haupt_schleife():
-    log.info("Forum-Neugierkern startet.")
+    log.info("Forum-Neugierkern (Diskussions-Widmung) startet.")
     while True:
         zustand = _lade_zustand()
         for wesen in WESEN:
-            _verarbeite_wesen(wesen, zustand)
+            try:
+                zustand = _verarbeite_wesen(wesen, zustand)
+            except Exception as e:
+                log.error(f"[{wesen}] Fehler: {e}")
             time.sleep(PAUSE_ZWISCHEN_WESEN)
-        _speichere_zustand(zustand)
         log.info(f"Zyklus fertig. Pause {PAUSE_ZWISCHEN_ZYKLEN}s.")
         time.sleep(PAUSE_ZWISCHEN_ZYKLEN)
 
