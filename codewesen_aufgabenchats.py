@@ -150,6 +150,92 @@ def _anhaengen(hp: Path, zeile: dict) -> None:
         f.write(json.dumps(zeile, ensure_ascii=False) + "\n")
 
 
+# ── Pin-Container — NICHT zu verwechseln mit codewesen_container.py
+# (Themen-Container, rein organisatorisch). Dasselbe Format wie bei
+# codexium2/solarius2 in serve_process_camera_preview.ts (ContainerBox/
+# ContainerEintrag: container.json), damit die dortige UI/Routen unveraendert
+# wiederverwendet werden koennen. Nur AKTIVE Pin-Container fliessen in den
+# System-Prompt ein -- das ist der Kontinuitaets-Mechanismus, den Daniel
+# wollte: was das Wesen (oder Daniel selbst) hier pinnt, taucht in JEDER
+# kuenftigen Aufgabenchat-Session wieder auf.
+
+PIN_CONTAINER_BUDGET_ZEICHEN = 11111
+
+
+def _pin_container_pfad(wesen: str) -> Path:
+    return _wesen_ordner(wesen) / "container.json"
+
+
+def _lade_pin_container(wesen: str) -> dict:
+    pfad = _pin_container_pfad(wesen)
+    if not pfad.exists():
+        return {"container": []}
+    try:
+        daten = json.loads(pfad.read_text(encoding="utf-8"))
+    except Exception:
+        return {"container": []}
+    if not isinstance(daten.get("container"), list):
+        return {"container": []}
+    return daten
+
+
+def _speichere_pin_container(wesen: str, sammlung: dict) -> None:
+    _pin_container_pfad(wesen).write_text(json.dumps(sammlung, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _pin_container_zeichen_summe(sammlung: dict) -> int:
+    return sum(
+        len(e.get("text", "")) + len(e.get("kommentar", "") or "")
+        for box in sammlung["container"] for e in box.get("eintraege", [])
+    )
+
+
+def _pin_container_text_fuer_prompt(wesen: str) -> str:
+    sammlung = _lade_pin_container(wesen)
+    bloecke = []
+    for box in sammlung["container"]:
+        if not box.get("aktiv", True) or not box.get("eintraege"):
+            continue
+        zeilen = [
+            e["text"] + (f" ({e['kommentar']})" if e.get("kommentar") else "")
+            for e in box["eintraege"]
+        ]
+        bloecke.append(f"[Container: {box.get('name', '?')}]\n" + "\n".join(zeilen))
+    return "\n\n".join(bloecke)
+
+
+def _marker_pinnen(wesen: str, arg: str) -> str:
+    """Pinnt Text in einen benannten Pin-Container -- der Container wird bei
+    Bedarf neu angelegt (aktiv=True). Aktive Pin-Container fliessen in JEDE
+    kuenftige Session-System-Prompt ein: das ist die Kontinuitaet, die das
+    Wesen sich selbst damit gibt."""
+    felder = _parse_feld_arg(arg)
+    boxname = felder.get("container", "Kontinuität").strip() or "Kontinuität"
+    text = felder.get("text") or felder.get("inhalt") or ""
+    text = text.strip() or arg.strip()
+    kommentar = felder.get("kommentar", "").strip()
+    if not text:
+        return "[Pinnen fehlgeschlagen: kein Text]"
+
+    sammlung = _lade_pin_container(wesen)
+    box = next((b for b in sammlung["container"] if b.get("name") == boxname), None)
+    if not box:
+        box = {"id": uuid.uuid4().hex, "name": boxname, "aktiv": True,
+               "erstellt_am": _js_ts(), "eintraege": []}
+        sammlung["container"].append(box)
+
+    eintrag = {"id": uuid.uuid4().hex, "text": text, "quelle": "wesen", "hinzugefuegt_am": _js_ts()}
+    if kommentar:
+        eintrag["kommentar"] = kommentar
+    summe_mit_neuem = _pin_container_zeichen_summe(sammlung) + len(text) + len(kommentar)
+    if summe_mit_neuem > PIN_CONTAINER_BUDGET_ZEICHEN:
+        return f"[Pinnen verworfen: Budget voll ({PIN_CONTAINER_BUDGET_ZEICHEN} Zeichen über alle Container)]"
+
+    box["eintraege"].append(eintrag)
+    _speichere_pin_container(wesen, sammlung)
+    return f"[Gepinnt in '{boxname}': {text[:80]}{'…' if len(text) > 80 else ''}]"
+
+
 def _weltbild(wesen: str) -> str:
     wb = BASE / wesen / "weltbild.md"
     if wb.exists():
@@ -159,14 +245,14 @@ def _weltbild(wesen: str) -> str:
 
 # ── Marker-Aktionen: echte Handlung, ausgeloest aus dem Selbstgespraech ──────
 
-MARKER_RE = re.compile(r"\[\[(LESEN|SICHERN|TEILEN|ENDE):\s*(.*?)\]\]", re.IGNORECASE | re.DOTALL)
+MARKER_RE = re.compile(r"\[\[(LESEN|SICHERN|PINNEN|TEILEN|ENDE):\s*(.*?)\]\]", re.IGNORECASE | re.DOTALL)
 
 
 def _parse_feld_arg(arg: str) -> dict:
     """Parst 'key=wert key2=wert mit leerzeichen' — ein Feld darf
     Leerzeichen/Doppelpunkte enthalten, das naechste bekannte 'key='
     beendet es."""
-    bekannte_keys = ("typ", "container", "titel", "inhalt", "text")
+    bekannte_keys = ("typ", "container", "titel", "inhalt", "text", "kommentar")
     felder = {}
     for key in bekannte_keys:
         m = re.search(rf"\b{key}=", arg)
@@ -236,6 +322,8 @@ def _fuehre_marker_aus(wesen: str, text: str) -> tuple[list[str], bool]:
                 ergebnisse.append(_marker_lesen(wesen, arg))
             elif art == "SICHERN":
                 ergebnisse.append(_marker_sichern(wesen, arg))
+            elif art == "PINNEN":
+                ergebnisse.append(_marker_pinnen(wesen, arg))
             elif art == "TEILEN":
                 ergebnisse.append(_marker_teilen(wesen, arg))
             elif art == "ENDE":
@@ -263,13 +351,16 @@ Du hast hier echte Handlungsmoeglichkeiten, ueber Marker im Text:
 [[LESEN: <containername>]] — liest die letzten Eintraege eines Containers
 [[SICHERN: typ=gedanke container=<name> inhalt=<text>]] — sichert einen Gedanken/eine Meinung/Aufgabe/ \
 Frage (typ=gedanke|meinung|aufgabe|frage) in einem Container, rein privat
+[[PINNEN: container=<name> text=<text> kommentar=<optional>]] — pinnt etwas Wichtiges in einen \
+Container, der in JEDER kuenftigen Session wieder in deinem Systemprompt auftaucht — das ist deine \
+eigene Kontinuitaet ueber Sessions hinweg, nutz es fuer das, was du dir wirklich merken willst
 [[TEILEN: container=<name> titel=<titel> text=<text>]] — versucht, das im Forum zu teilen (geht durch \
 denselben Ready-Check wie alles andere — kein Freifahrtschein)
 [[ENDE: ...]] — wenn du merkst, dass es fuer jetzt genug ist, beendest du das Selbstgespraech selbst
 
 Dein aktuelles Weltbild (Auszug):
 {weltbild}
-"""
+{pin_container}"""
 
 
 def _fuehre_selbstgespraech(wesen: str) -> None:
@@ -281,8 +372,10 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
     _anhaengen(hp, {"type": "session_start", "ts": _js_ts(), "session_id": session_id})
     log.info(f"[{wesen}] Selbstgespraech beginnt (Session {session_id}, manuell gestartet)")
 
+    pin_text = _pin_container_text_fuer_prompt(wesen)
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
-        wesen=wesen, weltbild=_weltbild(wesen) or "(kein Weltbild hinterlegt)"
+        wesen=wesen, weltbild=_weltbild(wesen) or "(kein Weltbild hinterlegt)",
+        pin_container=f"\n{pin_text}\n" if pin_text else "",
     )
     start_impuls = _lies_impuls(wesen)
     if start_impuls:
