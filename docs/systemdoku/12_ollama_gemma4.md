@@ -56,7 +56,7 @@ ExecStart=/usr/local/bin/llama-server \
   --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
   --mmproj .../mmproj-f16.gguf \
   --alias hauhaucs-q6 \
-  --ctx-size 12345 \
+  --ctx-size 36663 \
   --threads 10 \
   --host 127.0.0.1 --port 11435 \
   --parallel 2 \
@@ -81,12 +81,28 @@ Ollama/Wesen-Prozesse/System. Trade-off bewusst gewählt: garantierte,
 niedrigere Geschwindigkeit (~4 tok/s stabil) statt schwankender höherer
 Spitzenwerte ohne Isolierung.
 
-**`--ctx-size 12345 --parallel 2`**: ⚠️ **Wichtige Einschränkung** — llama-server
-teilt die Kontextgröße durch die Parallel-Slots: jeder der 2 Slots bekommt nur
-~6400 Token, nicht die vollen 12345. Ein Gesprächsverlauf über ~6400 Token
-schlägt fehl (`exceed_context_size_error`). **Stand 2026-07-06 noch nicht
-gelöst** — Entscheidung zwischen höherem `--ctx-size` (mehr RAM) oder
-`--parallel 1` (volle Kontextgröße, keine Gleichzeitigkeit) steht noch aus.
+**`--ctx-size 36663 --parallel 2`** (Stand 2026-07-06, aktualisiert): jeder der
+2 Slots bekommt **18432 Token** effektiv (vorher 6400 bei `--ctx-size 12345`).
+Ursprüngliches Problem: llama-server teilt die Kontextgröße durch die
+Parallel-Slots, ein Gesprächsverlauf über ~6400 Token schlug fehl
+(`exceed_context_size_error`).
+
+RAM-Kosten der Erhöhung: minimal. Das Modell hat nur 2 KV-Heads (GQA), Head-Dim
+256, 40 Layer → KV-Cache kostet nur ~80 KB/Token. Bei 36663 Gesamt-Context sind
+das nur ~3 GB KV-Cache zusätzlich zu den ~28 GB Modellgewichten — bestätigt
+durch llama-servers eigene Preflight-Schätzung (`projected to use ... MiB`):
+12345→29672 MiB, 36663→30154 MiB.
+
+**Was NICHT günstig ist: Geschwindigkeit.** Größerer Context kostet reale
+Rechenzeit/Bandbreite, nicht nur RAM — das wurde beim ersten Testlauf
+(88888) übersehen und dann durch Tests widerlegt. Allerdings: die
+Vergleichsmessungen waren durch gleichzeitige Wesen-Hintergrundlast (13958-Token-
+Anfrage in Slot 1 während eines Tests) verfälscht — das System ist durch die
+8 durchgehend aktiven Wesen-Daemons nie wirklich idle, ein sauberer isolierter
+Vergleich war nicht ohne Traffic-Pause möglich. 36663 wurde als Kompromiss
+gewählt: deutlich mehr Puffer als die ursprünglichen 6400/Slot, ohne die
+Extremwerte (88888) auszureizen. Reale Performance wird im laufenden Betrieb
+weiterbeobachtet.
 
 **`--threads 10`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
