@@ -62,7 +62,8 @@ def _normalize_messages(prompt_or_messages, system, images=None):
     return messages
 
 
-def _build_payload(messages, stream, think, max_tokens, temperature, top_p, top_k, extra):
+def _build_payload(messages, stream, think, max_tokens, temperature, top_p, top_k, min_p,
+                    presence_penalty, dry_multiplier, extra):
     payload = {
         "model": MODEL,
         "messages": messages,
@@ -70,6 +71,9 @@ def _build_payload(messages, stream, think, max_tokens, temperature, top_p, top_
         "temperature": temperature,
         "top_p": top_p,
         "top_k": top_k,
+        "min_p": min_p,
+        "presence_penalty": presence_penalty,
+        "dry_multiplier": dry_multiplier,
         "chat_template_kwargs": {"enable_thinking": think},
     }
     if max_tokens is not None:
@@ -90,11 +94,13 @@ def _parse_sse_line(line):
 
 
 def chat_raw(prompt_or_messages, *, system=None, images=None, think=False, max_tokens=None,
-             temperature=1.0, top_p=0.95, top_k=20, timeout=300.0, **extra) -> dict:
+             temperature=5.5, top_p=0.8, top_k=20, min_p=0.0, presence_penalty=1.5,
+             dry_multiplier=0.8, timeout=300.0, **extra) -> dict:
     """Synchroner, nicht-streamender Aufruf, gibt die volle Response als dict zurueck
     (fuer Tool-Calls / choices[0].message.tool_calls o.ae., wo mehr als content gebraucht wird)."""
     messages = _normalize_messages(prompt_or_messages, system, images)
-    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k, extra)
+    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k,
+                              min_p, presence_penalty, dry_multiplier, extra)
     with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=timeout, write=30.0, pool=30.0)) as client:
         r = client.post(LLAMA_URL, json=payload)
         r.raise_for_status()
@@ -102,10 +108,12 @@ def chat_raw(prompt_or_messages, *, system=None, images=None, think=False, max_t
 
 
 def chat(prompt_or_messages, *, system=None, images=None, think=False, max_tokens=None,
-         temperature=1.0, top_p=0.95, top_k=20, timeout=300.0, **extra) -> str:
+         temperature=5.5, top_p=0.8, top_k=20, min_p=0.0, presence_penalty=1.5,
+         dry_multiplier=0.8, timeout=300.0, **extra) -> str:
     """Synchroner, nicht-streamender Aufruf. Nimmt einen Prompt-String oder eine messages-Liste."""
     messages = _normalize_messages(prompt_or_messages, system, images)
-    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k, extra)
+    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k,
+                              min_p, presence_penalty, dry_multiplier, extra)
     with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=timeout, write=30.0, pool=30.0)) as client:
         r = client.post(LLAMA_URL, json=payload)
         r.raise_for_status()
@@ -113,10 +121,12 @@ def chat(prompt_or_messages, *, system=None, images=None, think=False, max_token
 
 
 def chat_stream(prompt_or_messages, *, system=None, images=None, think=False, max_tokens=None,
-                temperature=1.0, top_p=0.95, top_k=20, timeout=300.0, **extra):
+                temperature=5.5, top_p=0.8, top_k=20, min_p=0.0, presence_penalty=1.5,
+                dry_multiplier=0.8, timeout=300.0, **extra):
     """Synchroner Generator, liefert Text-Chunks."""
     messages = _normalize_messages(prompt_or_messages, system, images)
-    payload = _build_payload(messages, True, think, max_tokens, temperature, top_p, top_k, extra)
+    payload = _build_payload(messages, True, think, max_tokens, temperature, top_p, top_k,
+                              min_p, presence_penalty, dry_multiplier, extra)
     with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=timeout, write=30.0, pool=30.0)) as client:
         with client.stream("POST", LLAMA_URL, json=payload) as r:
             r.raise_for_status()
@@ -127,10 +137,12 @@ def chat_stream(prompt_or_messages, *, system=None, images=None, think=False, ma
 
 
 async def achat(prompt_or_messages, *, system=None, images=None, think=False, max_tokens=None,
-                 temperature=1.0, top_p=0.95, top_k=20, timeout=300.0, **extra) -> str:
+                 temperature=5.5, top_p=0.8, top_k=20, min_p=0.0, presence_penalty=1.5,
+                 dry_multiplier=0.8, timeout=300.0, **extra) -> str:
     """Asynchroner, nicht-streamender Aufruf."""
     messages = _normalize_messages(prompt_or_messages, system, images)
-    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k, extra)
+    payload = _build_payload(messages, False, think, max_tokens, temperature, top_p, top_k,
+                              min_p, presence_penalty, dry_multiplier, extra)
     async with httpx.AsyncClient(timeout=httpx.Timeout(connect=30.0, read=timeout, write=30.0, pool=30.0)) as client:
         r = await client.post(LLAMA_URL, json=payload)
         r.raise_for_status()
@@ -138,10 +150,12 @@ async def achat(prompt_or_messages, *, system=None, images=None, think=False, ma
 
 
 async def achat_stream(prompt_or_messages, *, system=None, images=None, think=False, max_tokens=None,
-                        temperature=1.0, top_p=0.95, top_k=20, timeout=300.0, **extra):
+                        temperature=5.5, top_p=0.8, top_k=20, min_p=0.0, presence_penalty=1.5,
+                        dry_multiplier=0.8, timeout=300.0, **extra):
     """Asynchroner Generator, liefert Text-Chunks."""
     messages = _normalize_messages(prompt_or_messages, system, images)
-    payload = _build_payload(messages, True, think, max_tokens, temperature, top_p, top_k, extra)
+    payload = _build_payload(messages, True, think, max_tokens, temperature, top_p, top_k,
+                              min_p, presence_penalty, dry_multiplier, extra)
     async with httpx.AsyncClient(timeout=httpx.Timeout(connect=30.0, read=timeout, write=30.0, pool=30.0)) as client:
         async with client.stream("POST", LLAMA_URL, json=payload) as r:
             r.raise_for_status()
