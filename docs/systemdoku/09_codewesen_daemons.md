@@ -35,7 +35,7 @@ AKTIV (systemd-gesteuert, Stand 2026-07-06):
   codewesen-batch-generator.service   ← Entwurfs-Queue füllen
   codewesen-vokabel-takt.service      ← Semantisches Spiel
   codewesen-forum-neugier.service     ← Diskussions-Widmung (kann jetzt auch posten)
-  codewesen-klon.service              ← NEU 2026-07-06: Selbstgespraech, marker-basierte Handlung
+  codewesen-aufgabenchats.service   ← NEU 2026-07-06: Selbstgespraech, marker-basierte Handlung
   codewesen-engagement.service        ← Autonomes Engagement
   codewesen-weltbild.service          ← Weltbild destillieren
   codewesen-chat.service              ← Direktchat Port 8002
@@ -499,10 +499,10 @@ Gefixt mit `datetime.strptime(ts, "%Y-%m-%dT%H-%M-%S").replace(tzinfo=timezone.u
 echten Datei-mtimes um den Berlin/UTC-Versatz (1-2h) verrutscht, und das
 Pflegeritual hätte kurz nach jeder eigenen Widmung sofort wieder ausgelöst.
 
-**Container-Funktionen ausgelagert (selber Abend, wegen Klon s.u.):** Eröffnung,
+**Container-Funktionen ausgelagert (selber Abend, wegen Aufgabenchats s.u.):** Eröffnung,
 Sichern, Widmung, Strategie-Teilen leben jetzt in `codewesen_container.py` —
 eine geteilte Bibliothek statt Code in `forum_neugier.py`, weil
-`codewesen_klon.py` (nächster Abschnitt) dieselbe Logik ebenfalls braucht.
+`codewesen_aufgabenchats.py` (nächster Abschnitt) dieselbe Logik ebenfalls braucht.
 Rein mechanisches Verschieben, Verhalten unverändert; call sites in
 `forum_neugier.py` auf `container.liste()`/`container.sichere()`/
 `container.widmungsritual()` umgestellt.
@@ -510,9 +510,9 @@ Rein mechanisches Verschieben, Verhalten unverändert; call sites in
 **Bug beim Verschieben gefunden:** `codewesen_container.py` rief anfangs
 selbst `logging.basicConfig()` auf — das konfiguriert den *Prozessweiten*
 Root-Logger einmalig, "gewinnt" also je nachdem welches Skript die
-Bibliothek zuerst importiert. Ergebnis: `codewesen_klon.py`s komplette
+Bibliothek zuerst importiert. Ergebnis: `codewesen_aufgabenchats.py`s komplette
 Log-Ausgabe landete fälschlich in `forum_neugier.log` (mit falscher
-Klammer-Beschriftung `[container]` statt `[klon]`), weil `klon.py`s eigener
+Klammer-Beschriftung `[container]` statt `[aufgabenchats]`), weil `codewesen_aufgabenchats.py`s eigener
 `basicConfig()`-Aufruf durch den früheren Aufruf beim Import bereits zum
 No-Op wurde. Fix: `basicConfig()` komplett aus der Bibliothek entfernt —
 eine gemeinsam genutzte Bibliothek konfiguriert niemals selbst das
@@ -523,10 +523,10 @@ Import-Reihenfolgen korrekt bleibt.
 
 ---
 
-## 6a. codewesen_klon.py — Der Klon: Selbstgespräch mit echter Handlung (2026-07-06, noch selber Abend)
+## 6a. codewesen_aufgabenchats.py — Aufgabenchats: Selbstgespräch mit echter Handlung (2026-07-06, noch selber Abend)
 
 Daniels Bild: eine komplett eigene, vom bestehenden Daniel↔Wesen-Chat
-getrennte Oberfläche pro Wesen — "genau ne Art Klon" — in der das Wesen mit
+getrennte Oberfläche pro Wesen — "genau ne Art Klon" (Daniels ursprüngliches Wort, später auf "Aufgabenchats" umbenannt) — in der das Wesen mit
 sich selbst spricht. Bewusst NICHT Teil der bestehenden Chats, die bleiben
 unangetastet. Nur das "Email-Gefühl" (asynchrone Generierung, aus dem
 codexium2/solarius2-Testbed, siehe `_claude/ideen/codexium2_solarius2/
@@ -544,7 +544,7 @@ es erstmal selber nur anstoßen können und dann auch so lange ich mag".
 Kompletter Wechsel von automatisch/zeitgesteuert zu manuell/unbegrenzt:
 
 ```python
-# /root/werkraum/codewesen_klon.py
+# /root/werkraum/codewesen_aufgabenchats.py
 TURN_SICHERHEITSDECKEL = 500  # kein Zeitdeckel mehr — nur Schutz vor echtem Endlosprozess
 PRUEF_PAUSE_SEK = 10           # wie oft auf ein neues _starten-Flag geprueft wird
 ```
@@ -553,8 +553,8 @@ Steuerung jetzt über zwei Flag-Dateien pro Wesen, kein Cooldown/Zeitplan
 mehr:
 
 ```
-touch /root/werkraum/klon/<wesen>/_starten   # startet ein Selbstgespraech
-touch /root/werkraum/klon/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
+touch /root/werkraum/aufgabenchats/<wesen>/_starten   # startet ein Selbstgespraech
+touch /root/werkraum/aufgabenchats/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
 ```
 
 Der Ordner pro Wesen wird beim Daemon-Start proaktiv angelegt
@@ -597,7 +597,7 @@ eigene Antwort wird an den nächsten Aufruf als Kontext zurückgegeben
 Nach jeder Runde: Marker im Text ausführen, Ergebnisse als eigene Zeile in
 die Historie und in den nächsten Prompt-Kontext geben.
 
-**Historie-Format bewusst kompatibel:** `klon/<wesen>/chat_history.jsonl`,
+**Historie-Format bewusst kompatibel:** `aufgabenchats/<wesen>/chat_history.jsonl`,
 Zeilen im selben Schema wie die bestehende Chat-Oberfläche
 (`serve_process_camera_preview.ts`: `{role, content, ts, id}` +
 `{type: "session_start", ...}`-Marker, JS-kompatible Zeitstempel via
@@ -610,7 +610,7 @@ TS-Seite dafür gebaut wird — kein Formatwechsel nötig.
 Lese-Betrachter in der echten Chat-Oberfläche. `serve_process_camera_
 preview.ts` ist die live laufende, produktive Chat-Datei mit ~25+ Routen,
 die alle denselben Spawner-Regex (`solarius|solarius2|codexium|codexium2`)
-hartkodiert wiederholen — einen fünften Spawner "klon" einzuziehen heißt,
+hartkodiert wiederholen — einen fünften Spawner "aufgabenchats" einzuziehen heißt,
 diesen literal an vielen Stellen zu ändern. Das verdient einen eigenen,
 vorsichtigen Schritt mit Neustart-Rückfrage, nicht dieselbe Änderung wie
 der Python-Kern. Bis dahin ist die Historie nur als JSONL/Obsidian lesbar,
@@ -631,7 +631,7 @@ Marker rief `container.erstelle()` (Container-Eröffnung) und im Anschluss
 **nur eine `system`-Rolle** enthielt — kein `user`-Turn. Das Jinja
 Chat-Template des Modells lehnt das mit `400 Bad Request` ab: `"No user
 query found in messages"`. Betraf beide Aufrufer (`forum_neugier.py` UND
-`klon.py`, da beide dieselbe `codewesen_container.py`-Funktion nutzen),
+`codewesen_aufgabenchats.py`, da beide dieselbe `codewesen_container.py`-Funktion nutzen),
 war aber in `forum_neugier.py`s bisherigem Testlauf nie ausgelöst worden,
 weil dort noch keine "sichern"-Entscheidung gefallen war — ein rein
 lauf-abhängiger, stiller Bug. Fix: allen drei betroffenen Aufrufen in
@@ -644,41 +644,41 @@ Gesprächsverlauf (mit Nutzer-Turn) direkt an, also nicht betroffen.
 Reproduziert und die Behebung isoliert bestätigt (direkter Request an
 Port 11436 mit/ohne user-Turn, 400 vs. 200).
 
-### Klon-Oberfläche + Impuls-System (2026-07-06, noch selber Abend)
+### Aufgabenchats-Oberfläche + Impuls-System (2026-07-06, noch selber Abend)
 
-Daniel wollte den Klon nicht nur als JSONL im Hintergrund, sondern
+Daniel wollte die Aufgabenchats nicht nur als JSONL im Hintergrund, sondern
 sichtbar in einer echten Chat-Oberfläche — inklusive Feedback, TTS/STT,
 Sessions, Kontextfenster-Anzeige, und die Möglichkeit, die Wesen per
 Leitfrage anzustoßen. Umgesetzt als **eigener, bewusst READ-ONLY Bereich**
 in `serve_process_camera_preview.ts` — die bestehenden vier Spawner
 (solarius/solarius2/codexium/codexium2) und ihre Chats bleiben komplett
-unangetastet, `isTestbedSpawner()` kennt "klon" nicht.
+unangetastet, `isTestbedSpawner()` kennt "aufgabenchats" nicht.
 
-**Neue Routen** (alle unter `/klon` bzw. `/wesen/klon/:name/*`):
-- `GET /klon` — Übersicht aller Wesen mit Klon-Ordner (`klon_uebersicht.html`)
-- `GET /klon/:name` — der eigentliche Betrachter (`klon_chat.html`), mit
+**Neue Routen** (alle unter `/aufgabenchats` bzw. `/wesen/aufgabenchats/:name/*`):
+- `GET /aufgabenchats` — Übersicht aller Wesen mit Aufgabenchat-Ordner (`aufgabenchats_uebersicht.html`)
+- `GET /aufgabenchats/:name` — der eigentliche Betrachter (`aufgabenchats_chat.html`), mit
   SSR-gerendertem Volltext-Verlauf (`ladeVerlaufKombiniert(hp, false)` —
   bewusst `false`, nicht nur aktuelle Session: Daniel will "von Nachricht 1
   bis Ende immer alles komplett scrollbar")
-- `GET /wesen/klon/:name/history`, `.../sessions`, `.../sessions/:idx` —
+- `GET /wesen/aufgabenchats/:name/history`, `.../sessions`, `.../sessions/:idx` —
   identische Mechanik wie codexium2/solarius2 (`splitSessions`,
-  `ladeVerlaufKombiniert`), nur an `klonHistoryPath()` statt
+  `ladeVerlaufKombiniert`), nur an `aufgabenchatsHistoryPath()` statt
   `chatHistoryPath()` gebunden
-- `GET`/`POST /wesen/klon/:name/feedback` — identische Mechanik
+- `GET`/`POST /wesen/aufgabenchats/:name/feedback` — identische Mechanik
   (`loadFeedback`/`upsertFeedback`) wie codexium2/solarius2, jetzt auch
-  für Klon
-- `GET /wesen/klon/:name/impulse` — die 7 festen Leitfragen (für die
+  für Aufgabenchats
+- `GET /wesen/aufgabenchats/:name/impulse` — die 7 festen Leitfragen (für die
   UI-Buttons)
-- `POST /wesen/klon/:name/impuls` — Leitfrage (per `key`) oder Freitext
-  (per `text`) an `codewesen_klon.py` übergeben: schreibt `_impuls.json`
-- `POST /wesen/klon/:name/starten` / `.../stoppen` — dieselben Flag-Dateien
+- `POST /wesen/aufgabenchats/:name/impuls` — Leitfrage (per `key`) oder Freitext
+  (per `text`) an `codewesen_aufgabenchats.py` übergeben: schreibt `_impuls.json`
+- `POST /wesen/aufgabenchats/:name/starten` / `.../stoppen` — dieselben Flag-Dateien
   wie `touch`, nur als Button in der UI
 
 **TTS/STT/Kontextfenster-Anzeige 1:1 aus `wesen_chat.html` übernommen** —
 dort schon additive, nicht testbed-gated Features (Stimmenauswahl
 Katja/Florian + Tempo-Slider über `tts_service.py`/`/tts/speak`,
 browsereigene `SpeechRecognition`/`webkitSpeechRecognition` fürs Diktieren,
-Zeichen/4-Heuristik fürs Kontextfenster). Beim Klon dient das Mikrofon dem
+Zeichen/4-Heuristik fürs Kontextfenster). Beim Aufgabenchat dient das Mikrofon dem
 freien Impuls-Textfeld (Daniel tippt dem Wesen normalerweise keine
 Nachrichten, aber kann sich einen Impuls auch diktieren statt zu tippen).
 
@@ -689,7 +689,7 @@ entwickeln", "hast du eine Idee", "stellst du dir eine Frage",
 Forum") plus ein Freitextfeld für eigene. Ein Impuls kann **eine neue
 Session seeden** (statt des generischen Start-Satzes) **oder mitten in
 einer laufenden Session** gegeben werden (Daniel: "mitendrin reingeben
-ja") — `codewesen_klon.py` prüft `_impuls.json` sowohl beim Sessionstart
+ja") — `codewesen_aufgabenchats.py` prüft `_impuls.json` sowohl beim Sessionstart
 als auch nach jeder Gesprächsrunde.
 
 **Provenienz-Entscheidung (Daniels ausdrücklicher Auftrag):** ein Impuls
@@ -708,23 +708,41 @@ identisch in SSR- und Client-Rendering (sonst hätte der erste Seitenaufruf
 vor dem ersten Client-Refresh anders ausgesehen als danach).
 
 **Live getestet, Ende-zu-Ende über die echte HTTP-Route** (nicht nur
-`touch`): `POST /wesen/klon/:name/impuls` mit `{"key":"gedanke"}` →
-`_impuls.json` korrekt geschrieben → `codewesen_klon.py` (nach Neustart)
+`touch`): `POST /wesen/aufgabenchats/:name/impuls` mit `{"key":"gedanke"}` →
+`_impuls.json` korrekt geschrieben → `codewesen_aufgabenchats.py` (nach Neustart)
 liest es, seedet eine neue Session, Modell antwortet im eigenen Charakter,
 `[[LESEN: ...]]`-Marker laufen korrekt, `POST .../stoppen` beendet die
-Session sauber. SSR- und `/wesen/klon/:name/history`-JSON verifiziert.
+Session sauber. SSR- und `/wesen/aufgabenchats/:name/history`-JSON verifiziert.
 
 **Neustarts nötig, von Daniel bestätigt** (er chattete zu dem Zeitpunkt
 nicht live): `process-camera-preview.service` (neue Routen/HTML) und
-`codewesen-klon.service` (Impuls-Logik).
+`codewesen-aufgabenchats.service` (Impuls-Logik).
 
 **Bewusst nicht mitgebaut:** keine eigene Testbed-Gate-Erweiterung für
-Klon (kein Memory-Container/Pin-System, keine Kontext-Ausschluss-/
+Aufgabenchats (kein Memory-Container/Pin-System, keine Kontext-Ausschluss-/
 Merken-Vorschlag-/Verdichtungs-/Aliase-Mechanik) — das sind Features des
 anderen, unabhängigen Codexium2/Solarius2-Memory-Konzepts, nicht Teil von
 Daniels Auftrag hier. Noch ungetestet: Mikrofon-Diktat auf echtem Handy
 (STT-Browser-Support ist geräteabhängig, siehe `feedback_stimme_diktat.md`
 für die schon einmal gefixte Android-Chrome-Eigenart).
+
+**Komplett umbenannt (noch selber Abend):** Daniel — "es muss alles über
+flextrawurst.de/aufgabenchats laufen" — und auf Rückfrage: durchgehend,
+nicht nur URL/Titel. Da `flextrawurst.de` per nginx (`/etc/nginx/sites-
+available/flextrawurst`) bereits vollständig auf Port 8787
+(`process-camera-preview.service`) proxied, war `/aufgabenchats` damit
+sofort unter der echten Domain erreichbar — keine neue Infrastruktur
+nötig, nur Umbenennung. Betroffen: `codewesen_klon.py` →
+`codewesen_aufgabenchats.py`, `/root/werkraum/klon/` →
+`/root/werkraum/aufgabenchats/`, `klon.log` → `aufgabenchats.log`,
+Service `codewesen-klon` → `codewesen-aufgabenchats`, Logger-Name, alle
+Routen (`/klon` → `/aufgabenchats`, `/wesen/klon/:name/*` →
+`/wesen/aufgabenchats/:name/*`), beide HTML-Dateien (`klon_chat.html` →
+`aufgabenchats_chat.html`, `klon_uebersicht.html` →
+`aufgabenchats_uebersicht.html`, inkl. Seitentitel, localStorage-Keys,
+fetch-URLs). Funktional unverändert, live nachgetestet (`/aufgabenchats/
+list`, `/aufgabenchats/:name`, `/wesen/aufgabenchats/:name/impulse` —
+alle 200 OK, alter `/klon`-Pfad korrekt 404).
 
 ---
 
