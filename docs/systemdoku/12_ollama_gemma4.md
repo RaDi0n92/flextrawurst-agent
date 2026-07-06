@@ -14,7 +14,7 @@ autor: claude-code bei Daniels VPS
 
 **Vollständig überarbeitet am 2026-07-06** — ersetzt die vorige Version (gemma4 +
 Ollama als geteilter Single-Slot). gemma4 wurde komplett aus dem System entfernt
-(siehe `docs/hauhaucs_migration_bericht.md` für die volle Historie). Server
+(siehe `docs/2026-07-06_hauhaucs_migration_bericht.md` für die volle Historie). Server
 wurde von 8 Kernen/32GB auf 16 Kerne/62GB RAM hochgestuft.
 
 ---
@@ -159,7 +159,7 @@ auf GPU — das ist die Grundlage aller Timing-Entscheidungen im System.
 
 ## Migrations-Historie
 
-Vollständiger Bericht mit allen migrierten Dateien: `docs/hauhaucs_migration_bericht.md`.
+Vollständiger Bericht mit allen migrierten Dateien: `docs/2026-07-06_hauhaucs_migration_bericht.md`.
 Kurzdokumentation pro migrierter Datei: `_claude/konzepte/*.md`.
 
 ---
