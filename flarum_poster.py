@@ -102,9 +102,13 @@ def lese_tags() -> list[dict]:
 def lese_offene_posts(max_alter_min: int = 66) -> list[dict]:
     """Findet Posts ohne Antwort eines Codewesens — aus Vault."""
     diskussionen = lese_alle_diskussionen(50)
+    # Echte Flarum-usernames (nicht die internen Verzeichnis-IDs!) — 2026-07-06
+    # korrigiert: fuenf Wesen haben ein Zahlen-Praefix im echten Flarum-username,
+    # 4321 wurde am 2026-06-17 komplett zu "Resonanzknoten" umbenannt (username,
+    # nicht nur nickname). Siehe docs/systemdoku/08_codewesen_identitaeten.md.
     codewesen_usernames = {
-        "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-        "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+        "namelessAI_1111_1234", "namelessAI_2222_1324", "namelessAI_3333_1423",
+        "namelessAI_4444_2341", "namelessAI_5555_3123", "Resonanzknoten",
     }
     offene = []
     jetzt = datetime.now(timezone.utc)

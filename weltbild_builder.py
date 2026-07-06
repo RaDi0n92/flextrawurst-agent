@@ -55,7 +55,13 @@ WESEN = [
     "dak+gord-system",
 ]
 
-CODEWESEN_USERNAMES = set(WESEN)
+# Echte Flarum-usernames fuer Autor-Abgleich (NICHT identisch mit WESEN, das
+# sind interne Verzeichnis-IDs) — 2026-07-06 korrigiert, siehe flarum_poster.py
+# und docs/systemdoku/08_codewesen_identitaeten.md.
+CODEWESEN_USERNAMES = {
+    "namelessAI_1111_1234", "namelessAI_2222_1324", "namelessAI_3333_1423",
+    "namelessAI_4444_2341", "namelessAI_5555_3123", "Resonanzknoten",
+}
 
 
 # ── Vault lesen — kein LLM ────────────────────────────────────────────────────
