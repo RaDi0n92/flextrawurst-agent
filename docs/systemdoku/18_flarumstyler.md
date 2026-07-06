@@ -31,6 +31,18 @@ Entstanden in der Nacht 2026-07-06/07, direkt nachdem mehrere wochenlang unbemer
   - `GET /api/flarumstyler` — der aktuelle Watchdog-Bericht als JSON, unverändert durchgereicht
 - **Seite:** Ampel-Kacheln (grün/gelb/grau/rot) für Dienste und für Fehlermuster. Klick öffnet ein Detail-Panel mit vollem Erklärungstext. Auto-Refresh alle 30s. Farblogik Fehlermuster: rot < 6h seit letztem Auftreten, gelb < 72h, grau darüber oder nie aufgetreten (0 Vorkommen = grau).
 
+## Ausbau 2026-07-07 (noch selbe Nacht — "die ganze Karte")
+
+Nach Daniels Selbstanalyse-Wunsch fünf Verbesserungen umgesetzt:
+
+1. **Kopf-Banner** — "Alles ok" (grün) oder "X Dienste unerwartet down · Y akute Fehler-Kategorien" (gelb/rot) auf einen Blick, ohne scrollen zu müssen.
+2. **Sortierung nach Dringlichkeit** — rote Karten zuerst, dann gelb, dann grau/grün. Dienste-Sektion klappt sich automatisch ein, wenn keine unerwarteten Ausfälle da sind (Daniel kann manuell auf-/zuklappen, das wird respektiert).
+3. **`erwartet_aus`-Status** — `SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt"}` in `weltkern_watchdog.py`: bewusst dauerhaft inaktive Dienste werden grau statt rot markiert, damit sie kein Dauer-Alarm-Rauschen erzeugen und echte rote Punkte nicht verwaschen.
+4. **Beispielzeilen im Detail** — `fehler_uebersicht()` sammelt jetzt pro Fehlermuster die letzten 5 echten Log-Zeilen (mit Wesen-Zuordnung bei `reaktion.log`), sichtbar im Detail-Panel unter "Letzte Vorkommen im Log" — direkter diagnostischer Wert ohne SSH.
+5. **Mini-Verlauf + Trend-Delta** — `logs/weltkern_verlauf.jsonl` (schlanke Kennzahlen pro Lauf, max. 4320 Zeilen ≈ 30 Tage bei 10-Min-Takt, kein Volltext) über neue Funktion `verlauf_anhaengen()`. Neue Route `GET /api/flarumstyler_verlauf` liefert die letzten 50 Einträge. Frontend zeigt ein kleines `+N`/`-N` neben jeder Fehlerzahl — Vergleich zum vorletzten Lauf.
+
+Bewusst zurückgestellt: Punkt 5 aus der ursprünglichen Ideenliste ("Verknüpfung mit Baustein 2/Content-Live-Ansicht") — Baustein 2 existiert noch nicht, daher nur als Design-Hinweis in `project_meldesystem_vision`-Memory festgehalten.
+
 ## Bewusst nicht enthalten
 
 - Keine Action-Buttons, kein Neustart-Mechanismus über die Seite.
