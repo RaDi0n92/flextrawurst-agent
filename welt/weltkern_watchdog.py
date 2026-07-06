@@ -56,7 +56,7 @@ CHAT_FLAG_MAX_AGE_MINUTES = 60
 WELTKERN_SERVICES = {
     "welt-api":             {"port": 8030, "health": "http://localhost:8030/health"},
     "welt-bruecke":         {"port": None, "health": None},
-    "flextrawurst-surface": {"port": 8787, "health": None},
+    "process-camera-preview": {"port": 8787, "health": None},  # frueher "flextrawurst-surface" genannt, Dienst wurde umbenannt
     "flextrawurst-gateway": {"port": 8010, "health": "http://localhost:8010/health"},
     "obsidian-api":         {"port": 8060, "health": None},
     "geni-hoerer":          {"port": None, "health": None},
@@ -73,17 +73,13 @@ WELTKERN_SERVICES = {
     "themen-cluster":       {"port": None, "health": None},
 }
 
-# Services die NICHT gestartet werden dürfen (Flarum-Vorphase)
-FLARUM_SERVICES_FROZEN = {
-    "flarum-monitor",
-    "codewesen-takt",
-    "codewesen-batch-generator",
-    "codewesen-vokabel-takt",
-    "codewesen-forum-neugier",
-    "codewesen-engagement",
-    "codewesen-weltbild",
-    "geni-forum-lektuere",
-}
+# Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
+# absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,
+# alle hier genannten Dienste laufen inzwischen bewusst dauerhaft. Das Guardrail unten hat
+# deshalb bei jedem 10-Minuten-Lauf eine falsche ERROR-Warnung erzeugt. Liste bewusst leer
+# gelassen statt geloescht, falls es je wieder eine echte "diese Dienste duerfen nicht laufen"
+# Situation geben sollte.
+FLARUM_SERVICES_FROZEN = set()
 
 # ── Hilfsfunktionen ────────────────────────────────────────────────────────────
 
