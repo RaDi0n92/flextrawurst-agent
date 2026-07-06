@@ -7,10 +7,18 @@ enable_thinking wird ueber chat_template_kwargs gesteuert (per Request, kein Ser
 images: Liste von rohen Base64-Strings (jpeg), werden als OpenAI image_url Content-Parts angehaengt.
 """
 import json
+import os
 import httpx
 
 LLAMA_URL = "http://localhost:11435/v1/chat/completions"
 MODEL = "hauhaucs-q6"
+
+
+def _default_id_slot():
+    """Hintergrund-/Daemon-Aufrufe weichen automatisch auf Slot 1/2 aus, damit
+    Slot 0 fuer Live-Chats (id_slot=0, explizit von den Chat-Endpunkten gesetzt)
+    reserviert bleibt. Siehe docs/systemdoku/12_ollama_gemma4.md."""
+    return 1 + (os.getpid() % 2)
 
 
 def _normalize_messages(prompt_or_messages, system, images=None):
@@ -46,6 +54,7 @@ def _build_payload(messages, stream, think, max_tokens, temperature, top_p, top_
     }
     if max_tokens is not None:
         payload["max_tokens"] = max_tokens
+    payload["id_slot"] = _default_id_slot()
     payload.update(extra)
     return payload
 

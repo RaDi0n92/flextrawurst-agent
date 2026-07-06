@@ -629,7 +629,7 @@ async def stream_ollama(
             try:
                 async for tok in hauhau_client.achat_stream(
                     messages, images=bilder, think=False, max_tokens=400,
-                    temperature=0.82, top_p=0.9, top_k=40, timeout=600.0,
+                    temperature=0.82, top_p=0.9, top_k=40, timeout=600.0, id_slot=0,
                 ):
                     yield f"data: {json.dumps({'token': tok})}\n\n"
                 break  # Erfolg
