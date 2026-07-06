@@ -150,20 +150,20 @@ def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | Non
         log.warning(f"[{wesen}] Entscheidungs-Fehler: {e}")
         return None
 
-    return _parse_entscheidung(antwort)
+    return _parse_entscheidung(antwort, diskussionen)
 
 
-def _parse_entscheidung(antwort: str) -> dict | None:
+def _parse_entscheidung(antwort: str, diskussionen: list[dict]) -> dict | None:
     m_entsch = re.search(r"ENTSCHEIDUNG:\s*(synthese|einzel|alle_einzeln)", antwort, re.IGNORECASE)
     m_bezug = re.search(r"BEZUG:\s*([\d,\s]+)", antwort)
     if not m_entsch or not m_bezug:
-        return None
+        return _parse_entscheidung_fallback(antwort, diskussionen)
     entscheidung = m_entsch.group(1).lower()
     bezug_ids = [int(x) for x in re.findall(r"\d+", m_bezug.group(1))]
     rest = antwort.split("---", 1)
     inhalt_roh = rest[1].strip() if len(rest) > 1 else ""
     if not inhalt_roh:
-        return None
+        return _parse_entscheidung_fallback(antwort, diskussionen)
 
     posts = []
     if entscheidung == "alle_einzeln":
@@ -180,8 +180,38 @@ def _parse_entscheidung(antwort: str) -> dict | None:
             posts.append({"discussion_id": ziel_id, "text": inhalt_roh})
 
     if not posts:
-        return None
+        return _parse_entscheidung_fallback(antwort, diskussionen)
     return {"entscheidung": entscheidung, "bezug_ids": bezug_ids, "posts": posts}
+
+
+def _parse_entscheidung_fallback(antwort: str, diskussionen: list[dict]) -> dict | None:
+    """Manche Antworten (v.a. bei sehr hoher Temperature) ignorieren das
+    vorgegebene Format und liefern stattdessen z.B. {"antwort": "..."} als
+    JSON, oder einfach freien Text. Statt die Diskussion komplett zu
+    verwerfen: Text extrahieren, als 'einzel' auf die erste (relevanteste)
+    der vorgeschlagenen Diskussionen werten — besser als gar nichts."""
+    if not diskussionen:
+        return None
+    ziel_id = int(diskussionen[0]["id"])
+
+    text = None
+    versuch = antwort.strip()
+    if versuch.startswith("{"):
+        try:
+            daten = json.loads(versuch)
+            for key in ("antwort", "text", "content", "inhalt"):
+                if key in daten and isinstance(daten[key], str) and daten[key].strip():
+                    text = daten[key].strip()
+                    break
+        except Exception:
+            pass
+    if text is None and versuch:
+        text = versuch
+
+    if not text:
+        return None
+    return {"entscheidung": "einzel", "bezug_ids": [ziel_id],
+            "posts": [{"discussion_id": ziel_id, "text": text}]}
 
 
 # ── Ready-Check (zweiter, kurzer LLM-Call) ───────────────────────────────────
