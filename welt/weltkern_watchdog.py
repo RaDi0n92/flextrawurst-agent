@@ -89,6 +89,12 @@ WELTKERN_SERVICES = {
     "codewesen-Resonanzknoten":  {"port": None, "health": None},
 }
 
+# Dienste die bewusst/dauerhaft inaktiv sind (2026-07-07, flarumstyler) — werden im
+# Bericht als "erwartet_aus" statt "down" markiert, damit sie in der Ampel-Uebersicht
+# nicht wie ein echtes Problem aussehen und rote Punkte nicht "verwaschen". Bei Bedarf
+# ergaenzen, wenn sich herausstellt dass ein weiterer Dienst bewusst dauerhaft aus ist.
+SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt"}
+
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
 # absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,
 # alle hier genannten Dienste laufen inzwischen bewusst dauerhaft. Das Guardrail unten hat
@@ -162,11 +168,16 @@ FEHLER_MUSTER = {
 }
 
 
+BEISPIELZEILEN_MAX = 5  # pro Fehlermuster, fuer die Detailansicht (nicht nur Zaehlung)
+
+
 def fehler_uebersicht() -> dict:
     """Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster
-    dauerhaft (seit Logbeginn) und merkt den Zeitpunkt des letzten Auftretens."""
+    dauerhaft (seit Logbeginn), merkt den Zeitpunkt des letzten Auftretens und
+    behaelt die letzten paar echten Log-Zeilen fuer die Detailansicht."""
     zaehler = {k: 0 for k in FEHLER_MUSTER}
     letzte = {k: None for k in FEHLER_MUSTER}
+    beispiele: dict[str, list[str]] = {k: [] for k in FEHLER_MUSTER}
 
     for logdatei in LOG_DATEIEN:
         if not logdatei.exists():
@@ -182,6 +193,14 @@ def fehler_uebersicht() -> dict:
                                 zt = ts_match.group(1)
                                 if letzte[schluessel] is None or zt > letzte[schluessel]:
                                     letzte[schluessel] = zt
+                            gekuerzt = zeile.strip()
+                            if len(gekuerzt) > 300:
+                                gekuerzt = gekuerzt[:300] + "…"
+                            beispiel_liste = beispiele[schluessel]
+                            quelle = f"{logdatei.parent.name}/{logdatei.name}" if logdatei.name == "reaktion.log" else logdatei.name
+                            beispiel_liste.append(f"{quelle}: {gekuerzt}")
+                            if len(beispiel_liste) > BEISPIELZEILEN_MAX:
+                                beispiel_liste.pop(0)
         except Exception:
             continue
 
@@ -189,6 +208,7 @@ def fehler_uebersicht() -> dict:
         schluessel: {
             "gesamt_anzahl": zaehler[schluessel],
             "zuletzt_aufgetreten": letzte[schluessel],
+            "beispielzeilen": beispiele[schluessel],
             "was_ist_los": cfg["was_ist_los"],
             "empfehlung": cfg["empfehlung"],
             "bringt_das": cfg["bringt_das"],
@@ -324,6 +344,8 @@ def run_check() -> dict:
             status = "port_dead"
         if active and health is False:
             status = "api_dead"
+        if status == "down" and name in SERVICES_ERWARTET_AUS:
+            status = "erwartet_aus"
 
         report["services"][name] = {
             "active": active,
@@ -394,6 +416,32 @@ def run_check() -> dict:
     return report
 
 
+VERLAUF_DATEI = LOG_DIR / "weltkern_verlauf.jsonl"
+VERLAUF_MAX_ZEILEN = 4320  # 30 Tage bei 10-Minuten-Takt — alter Verlauf wird abgeschnitten, nicht endlos gross
+
+
+def verlauf_anhaengen(report: dict) -> None:
+    """Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+    vollen Logs, damit spaeter sichtbar wird ob ein Fehler zu- oder abnimmt statt
+    nur den letzten Stand zu ueberschreiben."""
+    eintrag = {
+        "timestamp": report["timestamp"],
+        "services_ok": sum(1 for s in report["services"].values() if s["status"] == "ok"),
+        "services_gesamt": len(report["services"]),
+        "warnings_anzahl": len(report["warnings"]),
+        "log_fehler_gesamt": {k: v["gesamt_anzahl"] for k, v in report.get("log_fehler", {}).items()},
+    }
+    zeilen = []
+    if VERLAUF_DATEI.exists():
+        try:
+            zeilen = VERLAUF_DATEI.read_text(encoding="utf-8").splitlines()
+        except Exception:
+            zeilen = []
+    zeilen.append(json.dumps(eintrag, ensure_ascii=False, default=str))
+    zeilen = zeilen[-VERLAUF_MAX_ZEILEN:]
+    VERLAUF_DATEI.write_text("\n".join(zeilen) + "\n", encoding="utf-8")
+
+
 def main():
     log.info("Weltkern-Watchdog startet")
     report = run_check()
@@ -401,6 +449,7 @@ def main():
     # Bericht als JSON speichern
     report_file = LOG_DIR / "weltkern_letzter_bericht.json"
     report_file.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
+    verlauf_anhaengen(report)
 
     if report["warnings"]:
         log.warning(f"{len(report['warnings'])} Warnungen: {'; '.join(report['warnings'])}")
