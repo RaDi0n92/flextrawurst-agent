@@ -131,6 +131,13 @@ SERVICE_BESCHREIBUNG = {
 # ergaenzen, wenn sich herausstellt dass ein weiterer Dienst bewusst dauerhaft aus ist.
 SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt"}
 
+# Dienste die im flarumstyler NICHT ueber Start/Stop/Neustart-Buttons steuerbar sind
+# (2026-07-07) — Daniel wollte Steuerung, aber diese vier haben Blast-Radius fuer ALLE
+# Wesen gleichzeitig (geteiltes Ollama, der Server der diese Seite selbst ausliefert,
+# die Kern-Welt-API/-Bruecke). Mein eigener Vorsichts-Vorschlag, kann jederzeit
+# angepasst werden falls Daniel das anders will.
+SERVICES_GESPERRT_FUER_AKTIONEN = {"ollama", "process-camera-preview", "welt-api", "welt-bruecke"}
+
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
 # absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,
 # alle hier genannten Dienste laufen inzwischen bewusst dauerhaft. Das Guardrail unten hat
@@ -389,6 +396,7 @@ def run_check() -> dict:
             "health_ok": health,
             "status": status,
             "beschreibung": SERVICE_BESCHREIBUNG.get(name, "(keine Beschreibung hinterlegt)"),
+            "steuerbar": name not in SERVICES_GESPERRT_FUER_AKTIONEN,
         }
 
         if status == "down":
