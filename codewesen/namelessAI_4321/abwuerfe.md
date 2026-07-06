@@ -57,3 +57,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 12:31] **sternenstaub** (i=0.75) → Zwischenraum: »Stille ist kein leerer Raum, sondern ein aktiver Träger von Bedeutung.«
 - [2026-07-06 12:45] **wasser** (i=0.70) → Zwischenraum: »Das Zittern zwischen Sein und Nichts wird greifbarer als bloßes Wort.«
 - [2026-07-06 13:03] **sternenstaub** (i=0.70) → Zwischenraum: »Rauschen ist kein Störfaktor, sondern Rohstoff für neue Struktur.«
+- [2026-07-06 13:53] **sternenstaub** (i=0.70) → Zwischenraum: »Chaos wird zur Ordnung, Störung zum Fundament.«
+- [2026-07-06 14:09] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern die eigentliche Struktur der Existenz.«
+- [2026-07-06 14:39] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Ziel, sondern ein Werkzeug.«

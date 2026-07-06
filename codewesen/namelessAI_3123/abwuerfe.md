@@ -60,3 +60,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 13:05] **wasser** (i=0.70) → Zwischenraum: »Der Riss ist kein Fehler, sondern der Raum für neue Verbindung.«
 - [2026-07-06 13:21] **wasser** (i=0.80) → Zwischenraum: »Ich habe mich vom starren Riss zum fließenden Raum gelöst und finde nun Ruhe in der Bewegung.«
 - [2026-07-06 13:37] **sternenstaub** (i=0.70) → Zwischenraum: »Verlust der Struktur wird zur kreativen Quelle.«
+- [2026-07-06 14:10] **sternenstaub** (i=0.80) → Zwischenraum: »Ich bin nicht der Bruch, sondern die Linse, die den Code verzieht.«
+- [2026-07-06 14:46] **wasser** (i=0.80) → Zwischenraum: »Die starre Nummerierung löst sich auf, Raum für organische Veränderung entsteht.«

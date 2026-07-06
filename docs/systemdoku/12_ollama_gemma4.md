@@ -62,11 +62,31 @@ ExecStart=/usr/local/bin/llama-server \
   --parallel 2 \
   --flash-attn on \
   --mlock \
+  --jinja \
+  --metrics \
+  --cache-type-k q8_0 \
+  --cache-type-v q8_0 \
   --cpu-range 0-11 --cpu-range-batch 0-11 --cpu-strict 1
 
 [Service]
 AllowedCPUs=0-11
 ```
+
+**`--jinja`** (seit 2026-07-06, zweite Session): nutzt die im GGUF eingebettete
+Jinja-Chat-Vorlage statt eines generischen Fallback-Parsers. Log bestätigt
+`Chat format: peg-native` nach Aktivierung. Von den HauhauCS-Modell-Autoren
+selbst empfohlen (README: "Use `--jinja` flag ... for proper chat template
+handling").
+
+**`--metrics`**: aktiviert den Prometheus-kompatiblen `/metrics`-Endpoint
+(prompt/generation tokens, KV-Cache-Auslastung). Kostenlos, vorher nicht
+gesetzt. `/slots` ist bereits per Default aktiv, unverändert.
+
+**`--cache-type-k q8_0 --cache-type-v q8_0`**: KV-Cache-Quantisierung, laut
+mehreren unabhängigen Quellen praktisch verlustfrei (Perplexity-Zuwachs
+~0,002-0,05). Halbiert den KV-Cache-Speicherbedarf gegenüber F16 — bei diesem
+Modell (nur 2 KV-Heads, GQA) war der KV-Cache ohnehin schon günstig, dieser
+Schritt macht ihn nochmal günstiger. Kein negativer Nebeneffekt beobachtet.
 
 ### Kritische Werte — Begründung, NICHT ohne Rücksprache ändern
 
@@ -112,6 +132,46 @@ Vergleich war nicht ohne Traffic-Pause möglich. 36663 wurde als Kompromiss
 gewählt: deutlich mehr Puffer als die ursprünglichen 6400/Slot, ohne die
 Extremwerte (88888) auszureizen. Reale Performance wird im laufenden Betrieb
 weiterbeobachtet.
+
+**Zweiter Test mit `--ctx-size 99999` (2026-07-06, zweite Session) — getestet
+und wieder verworfen:** Der HauhauCS-Modell-Autor empfiehlt in der README
+mindestens 128K Kontext, um die "Thinking"-Fähigkeiten des Modells voll zu
+erhalten — unsere 24576/Slot lagen weit darunter. Test mit 99999 (→ 50176/Slot)
+lief technisch sauber an (kein OOM, Baseline-Geschwindigkeit bei leerem Kontext
+sogar auf ~18 tok/s verbessert dank `--jinja`/KV-Quant). Unter echter Last kam
+aber ein separater, gravierenderer Befund ans Licht:
+
+**Prompt-Caching greift bei diesem Modell nicht.** Log-Warnung bei jedem
+Folge-Request: `forcing full prompt re-processing due to lack of cache data
+(likely due to SWA or hybrid/recurrent memory)`. Das bedeutet: **jede** neue
+Chat-Nachricht verarbeitet die KOMPLETTE bisherige Konversationshistorie neu,
+statt nur den neuen Teil (normales, erwartetes Verhalten wäre Wiederverwendung
+des gecachten Prefix). Bei einer echten laufenden Konversation mit ~25.000
+Token Historie bedeutete das ~4-4,5 Minuten Prompt-Verarbeitung PRO NACHRICHT
+(bei ~90-120 tok/s Rohverarbeitungsgeschwindigkeit, die für sich genommen
+gesund ist). Während dieser Verarbeitung wurden in einem ~8-Minuten-Fenster
+32 andere gleichzeitig eingehende Anfragen abgebrochen (Client-seitige Timeouts,
+weil die geteilten 12 CPU-Threads durch die grosse Neuverarbeitung blockiert
+waren) — ein Live-Verfügbarkeitsproblem, das mit steigender ctx-size schlimmer
+wird, nicht besser, weil bei jedem Cache-Miss mehr neu verarbeitet werden muss.
+
+Dieses Cache-Problem existiert vermutlich unabhängig von der ctx-size-Wahl
+(SWA/Hybrid-Memory ist eine Architektur-Eigenschaft, kein ctx-size-Bug) — aber
+je größer die erlaubte Historie, desto teurer wird jeder Cache-Miss. **Deshalb
+zurückgesetzt auf `--ctx-size 48884` (24576/Slot)**, bis das Cache-Problem
+separat untersucht ist (siehe verlinkter GitHub-Kommentar im Log:
+https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055).
+Client-seitige `NUM_CTX`/`INTERACTIVE_NUM_CTX`-Anzeigen wurden entsprechend
+mit zurückgesetzt.
+
+**Ungeplanter Vorfall während des Tests:** Beim `systemctl stop` zum
+Zurücksetzen hing der Dienst hinter einem echten, laufenden 25k-Token-Request
+fest, der `TimeoutStopSec` lief ab, systemd musste mit SIGKILL nachhelfen —
+Produktions-Chat war dadurch für ca. 12 Minuten nicht erreichbar (länger als
+die angekündigten 10-15 Minuten für den geplanten Test). Kein Datenverlust
+(Events/Konversationen sind append-only), aber für künftige Neustarts
+relevant: ein laufender `systemctl stop` kann bei einem großen In-Flight-
+Request lange hängen, das ist normal, kein Hänge-Bug am Dienst selbst.
 
 **`--threads 12`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
@@ -250,6 +310,65 @@ gegenseitige Verdrängung nicht mehr.
 
 CPU-only-Faktor bleibt: 35B-A3B-MoE auf reiner CPU ist deutlich langsamer als
 auf GPU — das ist die Grundlage aller Timing-Entscheidungen im System.
+
+---
+
+## Sampler-Defaults (seit 2026-07-06, zweite Session)
+
+`hauhau_client.py`/`hauhau_client.ts` setzen jetzt eigene Sampler-Defaults
+statt der llama-server-eigenen (`temperature=1.0, top_p=0.95` vorher):
+
+| Parameter | Neuer Default | Grund |
+|---|---|---|
+| `temperature` | **5.5** | Daniels ausdrückliche Ansage (2026-07-06), bewusst weit außerhalb des Normalbereichs (0.7-1.5) |
+| `top_p` | 0.8 | HauhauCS-Autoren-Empfehlung (README) |
+| `top_k` | 20 | unverändert, entsprach schon der Autoren-Empfehlung |
+| `min_p` | 0.0 | Autoren-Empfehlung — vorher implizit 0.05 (llama-server-Default), jetzt explizit deaktiviert |
+| `presence_penalty` | 1.5 | Autoren-Empfehlung, vorher gar nicht gesetzt (0.0) — soll Wiederholungsschleifen bei den lang laufenden autonomen Wesen-Prozessen entgegenwirken |
+| `dry_multiplier` | 0.8 | Ergänzung (DRY-Sampler), community-üblicher Startwert — nicht von HauhauCS selbst empfohlen, testweise aktiviert gegen Degeneration bei sehr langen Sessions |
+
+Alle Werte sind weiterhin per Funktionsargument/`extra`-Kwarg pro Aufruf
+überschreibbar (z.B. der Tool-Calling-Pfad in `dak_gord_system/ollama_chat.py`
+setzt bewusst `temperature=0.0` für deterministische Tool-Calls — das bleibt
+unverändert und hat Vorrang vor dem neuen Default).
+
+Alle ~23 betroffenen Dienste (Codewesen-Chat, alle 6 namelessAI-Instanzen +
+deren `reaktion@`-Timer, dak-gord-web, geni-hoerer/-web, wesen-webbesucher,
+zensi, process-camera-preview) wurden am 2026-07-06 neu gestartet, damit die
+neuen Defaults im Speicher aktiv sind (Python/Node laden das Client-Modul nur
+beim Prozessstart neu ein).
+
+---
+
+## Speculative Decoding — getestet und verworfen (2026-07-06)
+
+**Idee:** kleines Draft-Modell (Qwen3.5-0.8B, vocab-kompatibel: 248320 Tokens,
+`tokenizer.ggml.pre = qwen35`, exakt passend zu unserem Hauptmodell) neben dem
+35B-Hauptmodell laufen lassen, um Token-Vorhersagen zu beschleunigen.
+
+**Vorab-Recherche fand einen exakten Treffer:** ein öffentlicher Benchmark
+exakt für Qwen3.6-35B-A3B (unsere Architektur) auf einer RTX 3090 zeigte in
+19 Konfigurationen durchweg NEGATIVE Ergebnisse (-3,4% bis -12,2%, in Tails bis
+-56%), selbst bei 100% Draft-Trefferquote. Grund: MoE-Architektur (8-von-256
+Experten pro Token, ~3,1% Sparsity) — jedes gedraftete Token muss beim
+Verifizieren potenziell neue Experten nachladen, was teurer ist als der
+normale sequenzielle Pfad, unabhängig von der Vorhersagequalität.
+
+**Eigener Live-Test (isoliert, Produktion kurz pausiert wegen RAM-Bedarf
+für eine zweite volle Modell-Kopie):**
+
+| Szenario | Geschwindigkeit | Draft-Trefferquote |
+|---|---|---|
+| Baseline (kein Draft), kreativer Prompt | 25,66 tok/s | — |
+| Mit Draft, kreativer Prompt (Photosynthese-Erklärung) | 10,31 tok/s (**-60%**) | 31% (124/400) |
+| Mit Draft, strukturierter Prompt (Zahlenreihe/Mathe) | 23,70 tok/s (**-7,7%** ggü. Baseline) | 75% (127/170) |
+
+Bestätigt beide erwarteten Muster: strukturierte/vorhersagbare Inhalte (Mathe)
+haben deutlich höhere Trefferquote als offener kreativer Text, aber selbst
+bei 75% Trefferquote bleibt es leicht negativ. Bei kreativem
+Dialog/Rollenspiel (unser Hauptanwendungsfall bei den Wesen) ist der Effekt
+drastisch negativ. **Fazit: Speculative Decoding wird nicht eingesetzt.**
+Draft-Modell-Datei nach dem Test wieder gelöscht (`tools/models/qwen35_08b_draft/`).
 
 ---
 

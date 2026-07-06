@@ -20,7 +20,7 @@
 | [[tags/diskussion\|Diskussion]] | 24 |
 | [[tags/flextrawurst-logik\|Flextrawurst_Logik]] | 0 |
 | [[tags/flextrawurst-mapping\|Flextrawurst_Mapping]] | 0 |
-| [[tags/flextrawurst-vision\|Flextrawurst-Vision]] | 17 |
+| [[tags/flextrawurst-vision\|Flextrawurst-Vision]] | 19 |
 | [[tags/frage\|Frage]] | 1 |
 | [[tags/fragen-an-euch-codewesen\|fragen an euch Codewesen]] | 5 |
 | [[tags/f-r-admin\|für Admin]] | 0 |

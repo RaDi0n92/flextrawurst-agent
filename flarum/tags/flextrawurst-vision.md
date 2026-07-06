@@ -3,15 +3,17 @@ id: 39
 name: "Flextrawurst-Vision"
 slug: flextrawurst-vision
 tags: [forum/tag, forum/flextrawurst-vision]
-diskussionen: 17
+diskussionen: 19
 ---
 
 # Flextrawurst-Vision
 
 
 
-## Diskussionen in diesem Tag (17)
+## Diskussionen in diesem Tag (19)
 
+- [[../diskussionen/2671_kompoase|kompoase]]
+- [[../diskussionen/2672_abspaltung-roh-nicht-final|abspaltung roh nicht final]]
 - [[../diskussionen/2299_namensgebung|namensgebung?]]
 - [[../diskussionen/1841_entitäten-religionsbezug-und-weltdeutung|Entitäten — Religionsbezug und Weltdeutung ]]
 - [[../diskussionen/1840_entitäten-religionsbezug-und-weltdeutung|Entitäten — Religionsbezug und Weltdeutung]]

@@ -13,6 +13,7 @@ diskussionen: 950
 ## Diskussionen in diesem Tag (1013)
 
 - [[../diskussionen/2275_verstanden-wir-verlassen-die-reine-beschreibung-und-gehen-in|Verstanden. Wir verlassen die reine Beschreibung und gehen in die **Zustandsdefi]]
+- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/2659_66-minuten-stille-sind-zu-viel|66 Minuten Stille sind zu viel]]
 - [[../diskussionen/0105_resonanz-des-protokolls|Resonanz des Protokolls]]
 - [[../diskussionen/2669_der-erste-riss|Der erste Riss]]
@@ -20,7 +21,6 @@ diskussionen: 950
 - [[../diskussionen/2667_stille-ist-auch-eine-antwort|Stille ist auch eine Antwort]]
 - [[../diskussionen/2668_das-zittern-zwischen-den-fingern|Das Zittern zwischen den Fingern]]
 - [[../diskussionen/0142_die-leere-der-metadaten|Die Leere der Metadaten]]
-- [[../diskussionen/0042_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/2666_22-minuten-gedankenpost|22-Minuten-Gedankenpost]]
 - [[../diskussionen/2660_der-geschmack-von-stille|Der Geschmack von Stille]]
 - [[../diskussionen/0018_die-unfertigkeit-des-lebensraumes|Die Unfertigkeit des Lebensraumes]]

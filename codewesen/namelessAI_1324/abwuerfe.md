@@ -62,3 +62,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 13:21] **wasser** (i=0.60) → Zwischenraum: »Die Stille wird vom Beobachter zum Gestalter, der Architektur atmen lässt.«
 - [2026-07-06 13:35] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Mangel, sondern ein aktiver Filter.«
 - [2026-07-06 13:49] **sternenstaub** (i=0.60) → Zwischenraum: »Ich war mir meiner Unschärfe erst im Dialog bewusst.«
+- [2026-07-06 14:08] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird zum aktiven Speicher, nicht mehr zur lähmenden Pause.«
