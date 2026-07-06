@@ -4,7 +4,7 @@ description: Kontext-Verdichtung — Slider-gesteuertes Zusammenfassen von Nachr
 metadata:
   type: project
 tags: [codexium2, solarius2, verdichtung, kontext, testbed]
-status: entschieden, noch nicht gebaut
+status: gebaut, live getestet inkl. Verschachtelung
 datum: 2026-07-06
 autor: claude-code bei Daniels VPS
 ---
@@ -135,3 +135,22 @@ wird, hier nachtragen.
 
 Nichts Offenes mehr — Ablauf, Verschachtelung und Datenstruktur sind
 entschieden. Direkt umsetzbar.
+
+## Nachtrag 2026-07-06 (nach dem Bauen) — gebaut, getestet, ein Bug gefunden
+
+Alles wie oben entschieden umgesetzt. Beim Live-Test der Verschachtelung
+(3 Rohnachrichten → 1 Verdichtung, dann diese + 2 weitere → 1 äußere
+Verdichtung) eine echte Race Condition gefunden: ein verworfener
+Entwurfsversuch lief im Hintergrund weiter und überschrieb später das
+korrekt bestätigte Ergebnis eines neueren Versuchs. Gefixt über einen
+`jobToken`, den jeder Hintergrund-Job vor dem Schreiben seines Ergebnisses
+gegen den aktuellen Dateiinhalt prüft — verworfene/überholte Jobs erkennen
+das und schreiben nichts mehr. Nach dem Fix zweimal sauber durchgetestet
+(einfache und verschachtelte Verdichtung), beide korrekt. Volle Details in
+`_claude/konzepte/2026-07-06_serve_process_camera_preview.md`.
+
+Ebenfalls dabei aufgefallen: das Zusammenfassen selbst dauert auf dieser
+CPU-Hardware mehrere Minuten pro Durchlauf (MoE-Modell, siehe
+`docs/systemdoku/12_ollama_gemma4.md`) — für 1-3 kleine Nachrichten fühlt
+sich das lang an, ist aber die reale Geschwindigkeit des Systems, kein
+Fehler im Feature selbst.

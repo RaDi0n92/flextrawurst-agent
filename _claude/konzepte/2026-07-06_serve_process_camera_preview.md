@@ -149,3 +149,59 @@ Job stand seit ~15 Stunden auf "läuft". Fix: ein "läuft"-Status älter als
 `EXTRAKTION_STALE_MS` (30 Minuten) gilt jetzt als hinfällig, nicht mehr als
 blockierend. Mirlachs `memory_extraktion.json` manuell zurückgesetzt (Datei
 gelöscht, Endpunkt behandelt fehlende Datei korrekt als `nie_gelaufen`).
+
+## Nachtrag 2026-07-06 (noch später) — Verdichtungs-Feature gebaut
+
+Auslöser: MoE-Speedprobleme + Daniels Wunsch, "quasi endlos" chatten zu können
+durch echte Verdichtung statt nur Kontext-Ausschluss. Volle Herleitung in
+`_claude/ideen/codexium2_solarius2/verdichtung.md`.
+
+**Datenmodell** (`verdichtungen.json` pro Charakter, testbed-exklusiv):
+```typescript
+interface Verdichtung {
+  id: string;
+  ersetztIds: string[]; // Nachrichten-IDs UND/ODER IDs anderer Verdichtungen
+  zusammenfassung: string;
+  kommentare: Array<{ text: string; ts: string }>;
+  bestaetigt: boolean;
+  erstellt_am: string; aktualisiert_am: string;
+}
+```
+
+**`aktiveZeitachse()`**: baut die Nachrichtenliste, aber jede von einer
+bestätigten Verdichtung abgedeckte Spanne erscheint als EINE Einheit.
+`findeAeusserstenTraeger()` löst beliebig tiefe Verschachtelung rekursiv auf —
+eine Verdichtung kann selbst wieder Teil einer neueren Verdichtung werden,
+transitiv, ohne explizites Tracking der Tiefe. Live getestet: 18 Rohnachrichten
+→ 3 davon zu 1 Verdichtung (16 Einheiten) → diese + 2 weitere zu 1 äußerer
+Verdichtung (14 Einheiten) — korrekt kollabiert.
+
+**Ablauf** (Button 🗜️ unter jeder Nachricht, testbed-exklusiv wie Memory/Kontext):
+Slider (0-11) wählt Einheiten ab der geklickten Nachricht rückwärts → Entwurf
+(Hintergrund-Job, gleiches Email-Prinzip wie Abschluss/Memory-Extraktion) →
+Mensch kann kommentieren (löst Neugenerierung aus, wiederholbar) → erst nach
+aktivem "Übernehmen" wird die Verdichtung bestätigt.
+
+**Prompt-Integration wie Container/Erinnerungen**: bestätigte (nicht selbst
+absorbierte) Verdichtungen erscheinen als `[Verdichtete Gesprächsabschnitte]`-
+Block im System-Prompt (`buildSystemPrompt`), die abgedeckten Rohnachrichten
+werden aus der `messages`-Liste gefiltert statt doppelt gesendet. Bewusst NICHT
+als synthetische Chat-Nachricht in die messages-Liste gespleisst — konsistent
+mit dem bestehenden Muster (Container, Erinnerungen, `kontext_automatisch_gefunden`
+landen alle im System-Prompt, nicht in der Nachrichtenliste).
+
+**Race-Condition gefunden + gefixt beim Live-Test**: Ein verworfener
+Entwurfsversuch (falsche IDs) lief im Hintergrund weiter, obwohl der Mensch ihn
+per "Verwerfen" abgebrochen hatte — `verwerfen` löscht nur die Statusdatei,
+bricht den async-Job selbst nicht ab. Als der alte Job Minuten später fertig
+wurde, überschrieb er das inzwischen korrekt bestätigte Ergebnis eines neueren
+Versuchs mit seinem (falschen) Stand. Fix: jeder Job bekommt einen zufälligen
+`jobToken`, der in der Statusdatei mitgeführt wird — vor dem Schreiben des
+Ergebnisses prüft der Job, ob sein Token noch mit dem aktuellen Dateiinhalt
+übereinstimmt. Verworfene/überholte Jobs erkennen das und schreiben ihr
+Ergebnis nicht mehr. Nach dem Fix im Live-Test bestätigt: kein erneutes
+Überschreiben mehr aufgetreten.
+
+Neue Endpunkte: `GET .../verdichtung/zeitachse`, `GET/POST
+.../verdichtung/entwurf/{status,generieren,kommentar,verwerfen,uebernehmen}`.
+Neues Provenienz-Event `verdichtung_uebernommen` (Server+Client synchron).

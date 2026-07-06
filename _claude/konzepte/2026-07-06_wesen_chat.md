@@ -41,3 +41,28 @@ Entscheidung betraf ausdrücklich nur Container, nicht Memory/Kontext.
 `formatiereEreignisDetails` (Client) bekamen dieselben 3 neuen Event-Typen wie
 der Server (`container_angelegt`/`container_umbenannt`/`container_geloescht`),
 `pin_hinzugefuegt` zeigt jetzt den Ziel-Container-Namen mit an.
+
+## Nachtrag 2026-07-06 (später) — Verdichtung: Button + Slider-Modal + Entwurfs-Schleife
+
+Neuer Button "🗜️ Verdichten" unter jeder Nachricht, testbed-exklusiv (im
+`IS_TESTBED`-Block bei Memory/Kontext, nicht beim für alle Spawner freigegebenen
+Pin-Button). Volle Herleitung + Datenmodell in
+`_claude/konzepte/2026-07-06_serve_process_camera_preview.md` und
+`_claude/ideen/codexium2_solarius2/verdichtung.md`.
+
+**Neues Modal `#verdichtung-modal`**: `openVerdichtungModal(ankerId)` lädt die
+Zeitachse (`GET .../verdichtung/zeitachse`), findet die Position der geklickten
+Nachricht darin, begrenzt den Slider-Maximalwert auf `min(11, verfügbare
+Einheiten rückwärts)`. `verdichtungSliderChanged()` berechnet live welche
+Einheiten (Nachrichten ODER bereits bestätigte Verdichtungen — beide zählen
+gleich) ausgewählt sind und zeigt eine Vorschau-Liste.
+
+**Entwurf-Kommentar-Übernehmen-Schleife** wie beim bestehenden Abschluss-Feature
+(Polling-Pattern, `refreshVerdichtungStatus`), zusätzlich mit Kommentarfeld +
+"Mit Kommentar neu generieren"-Button, der denselben Entwurf iterativ verfeinert
+statt einen neuen zu starten.
+
+**Live getestet inkl. Verschachtelung**: 3 Rohnachrichten → 1 Verdichtung,
+danach diese + 2 weitere Rohnachrichten → 1 äußere Verdichtung, die die innere
+korrekt absorbiert (18→16→14 Einheiten in der Zeitachse). Dabei eine
+Race-Condition im Backend gefunden und gefixt (siehe Server-Konzeptdokument).
