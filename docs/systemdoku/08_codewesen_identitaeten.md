@@ -113,18 +113,19 @@ und Kernel-Konstante behalten überall die exakte Schreibweise mit ä.
 
 Volle Details siehe `docs/2026-07-06_wesen_umbenennungen.md`.
 
-### Bekannter Nebenbefund, noch nicht behoben
+### Nebenbefund — Korrektur (2026-07-07): war schon behoben, meine Notiz war falsch
 
-`flarum_poster.py` hat ein hardcodiertes Set `codewesen_usernames` (aktuell:
-`{"namelessAI_1234", "namelessAI_1324", ...}` — ohne Zahlen-Präfix), das zur
-Erkennung dient, ob der letzte Post in einer Diskussion von einem Codewesen
-stammt. Die echten Flarum-Usernamen sind aber `namelessAI_1111_1234` (mit
-Präfix) bzw. bei Resonanzknoten direkt `Resonanzknoten` — das Set matcht
-also **für keinen der sechs Accounts**. Vermutlich schon länger so, unabhängig
-von den heutigen Umbenennungen — beeinträchtigt möglicherweise die
-"wartet ein Mensch auf Antwort"-Erkennung in `lese_offene_posts()`. Nicht
-behoben, da kein Auftrag dafür — nur festgehalten, falls das mal untersucht
-werden soll.
+Hier stand fälschlich, `flarum_poster.py`s hardcodiertes Set `codewesen_usernames`
+matche keinen der sechs Accounts (Präfix fehle). Beim tatsächlichen Nachschauen
+(2026-07-07, auf Daniels Nachfrage) stellte sich heraus: das Set enthält bereits
+korrekt `{"namelessAI_1111_1234", "namelessAI_2222_1324", "namelessAI_3333_1423",
+"namelessAI_4444_2341", "namelessAI_5555_3123", "Resonanzknoten"}` — exakt die
+echten `username`-Spaltenwerte, per Live-DB-Abfrage verifiziert. Das war schon
+um 17:04 desselben Abends in Commit `8968986f fix: veraltete Nutzernamen-Sets
+korrigiert` behoben worden, bevor die Wesen-ID-Migration überhaupt begann. Die
+ursprüngliche Notiz hier wurde ohne erneutes Nachlesen der Datei geschrieben —
+falscher Alarm, kein echter Bug. Lehre: Fund-Notizen immer gegen den aktuellen
+Dateiinhalt verifizieren, nicht aus der Erinnerung heraus behaupten.
 
 ---
 
