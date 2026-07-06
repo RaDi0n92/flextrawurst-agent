@@ -56,7 +56,7 @@ ExecStart=/usr/local/bin/llama-server \
   --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
   --mmproj .../mmproj-f16.gguf \
   --alias hauhaucs-q6 \
-  --ctx-size 36663 \
+  --ctx-size 48884 \
   --threads 12 \
   --host 127.0.0.1 --port 11435 \
   --parallel 2 \
@@ -82,17 +82,25 @@ die Wesen-Daemons sind selbst leichtgewichtig (I/O-wartend, kein harter
 CPU-Verbrauch), 4 Kerne reichen ihnen aus. Trade-off bewusst gewählt:
 garantierte, niedrigere Geschwindigkeit als unisoliert, aber vorhersehbar.
 
-**`--ctx-size 36663 --parallel 2`** (Stand 2026-07-06, aktualisiert): jeder der
-2 Slots bekommt **18432 Token** effektiv (vorher 6400 bei `--ctx-size 12345`).
-Ursprüngliches Problem: llama-server teilt die Kontextgröße durch die
-Parallel-Slots, ein Gesprächsverlauf über ~6400 Token schlug fehl
-(`exceed_context_size_error`).
+**`--ctx-size 48884 --parallel 2`** (Stand 2026-07-06, zweite Aktualisierung):
+jeder der 2 Slots bekommt **24576 Token** effektiv (Weg dahin: 6400 →
+18432 (36663) → 24576 (48884)). Ursprüngliches Problem: llama-server teilt die
+Kontextgröße durch die Parallel-Slots, ein Gesprächsverlauf über ~6400 Token
+schlug fehl (`exceed_context_size_error`).
 
 RAM-Kosten der Erhöhung: minimal. Das Modell hat nur 2 KV-Heads (GQA), Head-Dim
-256, 40 Layer → KV-Cache kostet nur ~80 KB/Token. Bei 36663 Gesamt-Context sind
-das nur ~3 GB KV-Cache zusätzlich zu den ~28 GB Modellgewichten — bestätigt
+256, 40 Layer → KV-Cache kostet nur ~80 KB/Token. Bei 48884 Gesamt-Context sind
+das nur ~3,9 GB KV-Cache zusätzlich zu den ~28 GB Modellgewichten — bestätigt
 durch llama-servers eigene Preflight-Schätzung (`projected to use ... MiB`):
-12345→29672 MiB, 36663→30154 MiB.
+12345→29672 MiB, 36663→30154 MiB, 48884→30400 MiB.
+
+**Hardcodierte Client-Anzeigen synchron gehalten** (2026-07-06): `NUM_CTX`/
+`INTERACTIVE_NUM_CTX`-Konstanten in `serve_process_camera_preview.ts`,
+`wesen_chat.html`, `dolphin_mischpult.html` und `zensi/server.py` zeigen den
+Nutzern den realen Pro-Slot-Wert (24576), nicht den rohen `--ctx-size`-Wert.
+Kein automatischer Sync zum Server möglich (Kommentar in `wesen_chat.html`:
+"von Hand synchron halten") — bei jeder künftigen `--ctx-size`-Änderung müssen
+diese 4 Stellen von Hand mitgezogen werden.
 
 **Was NICHT günstig ist: Geschwindigkeit.** Größerer Context kostet reale
 Rechenzeit/Bandbreite, nicht nur RAM — das wurde beim ersten Testlauf
