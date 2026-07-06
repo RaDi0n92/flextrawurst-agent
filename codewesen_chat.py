@@ -622,11 +622,13 @@ async def stream_ollama(
     messages: list[dict],
     modell: str = OLLAMA_MOD,
     bilder: list[str] | None = None,
+    quelle: str = "codewesen_chat:unbekannt",
 ) -> AsyncGenerator[str, None]:
     import asyncio as _asyncio
     try:
         for versuch in range(4):
             try:
+                hauhau_client.trace_prioritaet(quelle, sum(len(m.get("content", "")) for m in messages))
                 async for tok in hauhau_client.achat_stream(
                     messages, images=bilder, think=False, max_tokens=400,
                     temperature=0.82, top_p=0.9, top_k=40, timeout=600.0, id_slot=0,
@@ -713,7 +715,7 @@ async def chat_endpoint(name: str, anfrage: ChatAnfrage):
     gesammelt: list[str] = []
 
     async def generator():
-        async for chunk in stream_ollama(messages, modell, bilder=bilder):
+        async for chunk in stream_ollama(messages, modell, bilder=bilder, quelle=f"codewesen_chat:{name}"):
             if chunk.startswith("data: [DONE]"):
                 antwort_roh = "".join(gesammelt).strip()
                 if antwort_roh:
@@ -772,7 +774,7 @@ async def chat_endpoint(name: str, anfrage: ChatAnfrage):
                         ]
                         folge_tokens: list[str] = []
                         yield f"data: {json.dumps({'token': '\n\n'}, ensure_ascii=False)}\n\n"
-                        async for fc in stream_ollama(folge_msgs, modell):
+                        async for fc in stream_ollama(folge_msgs, modell, quelle=f"codewesen_chat:{name}:tool-folge"):
                             if fc.startswith("data: [DONE]"):
                                 folge_antwort = "".join(folge_tokens).strip()
                                 if folge_antwort:

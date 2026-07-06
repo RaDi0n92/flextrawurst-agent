@@ -8,10 +8,30 @@ images: Liste von rohen Base64-Strings (jpeg), werden als OpenAI image_url Conte
 """
 import json
 import os
+import datetime
 import httpx
 
 LLAMA_URL = "http://localhost:11435/v1/chat/completions"
 MODEL = "hauhaucs-q6"
+
+# Leichtgewichtiges Trace-Log fuer Slot-0-Anfragen (Chat-Prioritaet) — getrennt von den schweren
+# Chat-Verlaeufen, damit ein Haenger auf Slot 0 sofort einer Quelle (Datei/Charakter) zugeordnet
+# werden kann. Ausgeloest 2026-07-06: zwei Haenger konnten trotz gruendlicher Recherche (alle
+# Chat-Endpunkte, alle Logs, alle Dateizeiten geprueft) nicht zurueckverfolgt werden.
+CHAT_PRIORITAET_TRACE = "/root/werkraum/_shared/chat_prioritaet_trace.jsonl"
+
+
+def trace_prioritaet(quelle, zeichen):
+    """Von den Chat-Endpunkten VOR jedem id_slot=0-Aufruf zu rufen — quelle z.B.
+    'codewesen_chat:namelessAI_1234', zeichen = Laenge des gesendeten Prompts."""
+    try:
+        with open(CHAT_PRIORITAET_TRACE, "a", encoding="utf-8") as f:
+            f.write(json.dumps({
+                "ts": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "quelle": quelle, "zeichen": zeichen, "pid": os.getpid(),
+            }) + "\n")
+    except Exception:
+        pass
 
 
 def _default_id_slot():

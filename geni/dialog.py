@@ -712,6 +712,7 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
     try:
         for versuch in range(6):
             try:
+                hauhau_client.trace_prioritaet("geni", sum(len(str(m.get("content", ""))) for m in messages))
                 async for token in hauhau_client.achat_stream(
                     messages, images=bilder or None, think=False, max_tokens=600,
                     temperature=0.85, timeout=300.0, id_slot=0,
