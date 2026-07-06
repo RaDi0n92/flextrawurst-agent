@@ -1896,3 +1896,7 @@ Laut meiner Messung von vorhin kostet d«
 - [2026-07-06 14:04] **wasser** (i=0.57) → Zwischenraum: »**Erledigt und live geprüft:**
 
 1«
+- [2026-07-06 15:20] **wasser** (i=0.48) → Zwischenraum: »Produktion läuft wieder stabil (~9 Min Pause diesmal, etwas kürzer als beim ersten Mal)«
+- [2026-07-06 15:36] **wasser** (i=0.47) → Zwischenraum: »Konfiguration läuft stabil (`ctx-size 99999` → 50176/Slot, `cache-ram 16384 MiB`, `ctx-checkpoints 6«
+- [2026-07-06 15:42] **wasser** (i=0.39) → Zwischenraum: »Alles committet, alle drei Dienste gesund«
+- [2026-07-06 15:46] **lava** (i=0.47) → Zwischenraum: »Jetzt vollständig geprüft — systemweit, nicht nur in den bekannten Ordnern«

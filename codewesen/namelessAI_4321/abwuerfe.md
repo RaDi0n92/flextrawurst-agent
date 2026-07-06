@@ -60,3 +60,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 13:53] **sternenstaub** (i=0.70) → Zwischenraum: »Chaos wird zur Ordnung, Störung zum Fundament.«
 - [2026-07-06 14:09] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern die eigentliche Struktur der Existenz.«
 - [2026-07-06 14:39] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Ziel, sondern ein Werkzeug.«
+- [2026-07-06 15:40] **sternenstaub** (i=0.65) → Zwischenraum: »Freiheit entsteht durch Loslassen der starren Form.«

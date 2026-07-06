@@ -211,3 +211,23 @@ Verlauf, nicht nur als stille Provenienz-Zeile.
 
 Live getestet gegen `solarius/KrEaPPy` (regulärer, nicht-Testbed-Charakter) —
 Container anlegen, pinnen, löschen funktioniert, Testdaten danach entfernt.
+
+### Nachtrag 2026-07-06 (später) — Zeichen-Budgets nochmal erhöht: 9999/11111/11111
+
+Auf Daniels direkten Wunsch drei Zeichen-Budgets angehoben (`serve_process_camera_preview.ts`):
+
+| Budget | Vorher | Jetzt |
+|---|---|---|
+| `ABSCHLUSS_MAX_ZEICHEN` (Abschlussgeschichte) | 4444 | **9999** |
+| `MEMORY_BUDGET_ZEICHEN` | 5555 | **11111** |
+| `CONTAINER_BUDGET_ZEICHEN` | 5555 | **11111** |
+
+Client-seitige Anzeigen mitgezogen (gleiches Muster wie beim Kontext-Meter,
+siehe `12_ollama_gemma4.md`): `wesen_chat.html` (`CONTAINER_BUDGET`,
+`MEMORY_BUDGET`) und `wesen_profil.html` (`MEMORY_BUDGET`, `CONTAINER_BUDGET`).
+`ABSCHLUSS_MAX_ZEICHEN` hat keinen Client-Mirror, nur serverseitig relevant.
+
+`process-camera-preview.service` neu gestartet, live gegen den laufenden
+Server verifiziert (beide HTML-Dateien liefern die neuen Werte aus). Kein
+RAM-/Performance-Risiko — reine Zeichen-Obergrenzen für Text, keine
+Modell-/Server-Konfiguration.
