@@ -292,6 +292,8 @@ const MAX = 1111111;
 const CK  = 280;
 const STORE_KEY = 'flextrawurst.tts.soundboard.v1';
 const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
+const DEFAULT_VOICE_FAVORITES = ['de-DE-FlorianMultilingualNeural', 'de-DE-KillianNeural', 'de-DE-KatjaNeural'];
+const AUDIO_CACHE_LIMIT = 80;
 const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
@@ -305,6 +307,7 @@ let curSrc  = null;
 let actx    = null;
 let selectedClips = new Set();
 let serverReady = false;
+let audioCache = new Map();
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -353,7 +356,8 @@ function durationText(text, r){
 function normalizeStore(raw){
   const categories = Array.isArray(raw && raw.categories) ? raw.categories.filter(Boolean) : [DEFAULT_CAT];
   const clips = Array.isArray(raw && raw.clips) ? raw.clips : [];
-  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [];
+  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : DEFAULT_VOICE_FAVORITES;
+  const cleanVoiceFavorites = voiceFavorites.filter(v=>!String(v).includes(':DragonHD'));
   return {
     categories: Array.from(new Set([DEFAULT_CAT, ...categories])),
     clips: clips.map(c=>({
@@ -368,7 +372,7 @@ function normalizeStore(raw){
       tags: Array.isArray(c.tags) ? c.tags.filter(Boolean) : parseTags(c.tags),
       note: c.note || ''
     })),
-    voiceFavorites: Array.from(new Set(voiceFavorites))
+    voiceFavorites: Array.from(new Set(cleanVoiceFavorites.length ? cleanVoiceFavorites : DEFAULT_VOICE_FAVORITES))
   };
 }
 function mergeStores(a,b){
@@ -388,6 +392,18 @@ function loadStore(){
     return normalizeStore(JSON.parse(localStorage.getItem(STORE_KEY) || '{}'));
   } catch(e) {
     return normalizeStore({});
+  }
+}
+
+function audioCacheKey(text, voice, rateValue){
+  return JSON.stringify([voice || DEFAULT_VOICE, rateValue || '+0%', text || '']);
+}
+
+function rememberAudio(key, buf){
+  if (audioCache.has(key)) audioCache.delete(key);
+  audioCache.set(key, buf);
+  while (audioCache.size > AUDIO_CACHE_LIMIT){
+    audioCache.delete(audioCache.keys().next().value);
   }
 }
 
@@ -880,6 +896,12 @@ function hlRV(i){
 }
 
 async function fetchBuf(text, sid){
+  const key = audioCacheKey(text, activeVoice, rate);
+  const cached = audioCache.get(key);
+  if (cached){
+    dbg('cache');
+    return cached;
+  }
   let lastErr;
   for (let attempt=1; attempt<=4; attempt++){
     if (sid !== sess) throw new Error('dead');
@@ -894,7 +916,9 @@ async function fetchBuf(text, sid){
       const ab = await r.arrayBuffer();
       if (sid !== sess) throw new Error('dead');
       dbg('');
-      return await actx.decodeAudioData(ab);
+      const decoded = await actx.decodeAudioData(ab);
+      rememberAudio(key, decoded);
+      return decoded;
     } catch(e){
       if (e.message==='dead') throw e;
       lastErr = e;
