@@ -36,11 +36,20 @@ ein spaeterer LESE-Betrachter in derselben Oberflaeche ohne Formatwechsel
 gebaut werden kann. Kompletter eigener Root, komplett getrennt von den
 echten Chats — die duerfen dadurch nicht angefasst werden.
 
-Der TS-seitige Lese-Betrachter (damit Daniel das in der echten Oberflaeche
-sehen kann) ist bewusst NICHT Teil dieses Commits — serve_process_camera_
-preview.ts ist die live laufende, produktive Chat-Datei; das verdient einen
-eigenen, vorsichtigen Schritt mit Neustart-Rueckfrage statt in derselben
-Aenderung mitgezogen zu werden.
+Erweitert 2026-07-06, noch selber Abend (Impuls-System): Daniel will die
+Wesen mit Leitfragen anstossen koennen ("was schwebt dir im Kopf rum?",
+"was koenntest du dir vorstellen zu planen?", etc.) — sieben feste plus
+freier Text fuer eigene. Ein Impuls geht NICHT als normale Chat-Nachricht
+in die Historie (Provenienz-Regel: sichtbar, aber klar als Anstoss von
+aussen erkennbar, kein echtes Selbstgespraechs-Wort) — er landet als
+eigenes {type: "impuls", ...}-Ereignis, genau wie Marker-Ergebnisse jetzt
+als {type: "marker_ergebnis", ...} statt als {role: "user"} geloggt
+werden. Dem Modell wird der Impuls-Text trotzdem als naechster User-Turn
+mitgegeben (rein im Arbeitsspeicher, nicht in der persistierten Form) —
+er muss ja tatsaechlich wirken. Ein Impuls kann sowohl eine neue Session
+seeden als auch mitten in einer laufenden nachtraeglich reingegeben
+werden (`touch .../_impuls.json` via POST /wesen/klon/:name/impuls in
+serve_process_camera_preview.ts).
 """
 
 import json
@@ -110,6 +119,30 @@ def _start_flag(wesen: str) -> Path:
 
 def _stop_flag(wesen: str) -> Path:
     return _wesen_ordner(wesen) / "_stoppen"
+
+
+def _impuls_datei(wesen: str) -> Path:
+    return _wesen_ordner(wesen) / "_impuls.json"
+
+
+def _lies_impuls(wesen: str) -> dict | None:
+    """Liest+loescht eine wartende Leitfrage (von serve_process_camera_preview.ts
+    per POST /wesen/klon/:name/impuls geschrieben). None wenn keine wartet."""
+    pfad = _impuls_datei(wesen)
+    if not pfad.exists():
+        return None
+    try:
+        daten = json.loads(pfad.read_text(encoding="utf-8"))
+    except Exception:
+        daten = None
+    pfad.unlink(missing_ok=True)
+    if not daten or not daten.get("text"):
+        return None
+    return daten
+
+
+def _wartet_impuls_oder_start(wesen: str) -> bool:
+    return _start_flag(wesen).exists() or _impuls_datei(wesen).exists()
 
 
 def _anhaengen(hp: Path, zeile: dict) -> None:
@@ -251,9 +284,15 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
         wesen=wesen, weltbild=_weltbild(wesen) or "(kein Weltbild hinterlegt)"
     )
+    start_impuls = _lies_impuls(wesen)
+    if start_impuls:
+        _anhaengen(hp, {"type": "impuls", "text": start_impuls["text"], "key": start_impuls.get("key"), "ts": _js_ts()})
+        erster_inhalt = start_impuls["text"]
+    else:
+        erster_inhalt = "(Selbstgespraech beginnt jetzt. Sprich mit dir selbst.)"
     verlauf = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": "(Selbstgespraech beginnt jetzt. Sprich mit dir selbst.)"},
+        {"role": "user", "content": erster_inhalt},
     ]
 
     for runde in range(TURN_SICHERHEITSDECKEL):
@@ -277,12 +316,23 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
         ergebnisse, ende = _fuehre_marker_aus(wesen, antwort)
         if ergebnisse:
             hinweis = "\n".join(ergebnisse)
-            _anhaengen(hp, {"role": "user", "content": hinweis, "ts": _js_ts(), "id": uuid.uuid4().hex[:10]})
+            # Marker-Ergebnisse sind keine echten Selbstgespraechs-Worte -- als eigenes
+            # Ereignis geloggt (nicht role:user), aber trotzdem als naechster User-Turn
+            # ans Modell gegeben, damit es die Wirkung seiner eigenen Marker sieht.
+            _anhaengen(hp, {"type": "marker_ergebnis", "text": hinweis, "ts": _js_ts(), "id": uuid.uuid4().hex[:10]})
             verlauf.append({"role": "user", "content": hinweis})
         if ende:
             log.info(f"[{wesen}] Selbstgespraech beendet sich selbst (Runde {runde}) — Session {session_id}")
             break
-        verlauf.append({"role": "user", "content": "(sprich weiter mit dir selbst, oder [[ENDE: ...]] wenn genug ist)"})
+
+        naechster_impuls = _lies_impuls(wesen)
+        if naechster_impuls:
+            _anhaengen(hp, {"type": "impuls", "text": naechster_impuls["text"],
+                             "key": naechster_impuls.get("key"), "ts": _js_ts()})
+            verlauf.append({"role": "user", "content": naechster_impuls["text"]})
+            log.info(f"[{wesen}] Impuls '{naechster_impuls.get('key') or 'frei'}' mitten in Session {session_id} gegeben")
+        else:
+            verlauf.append({"role": "user", "content": "(sprich weiter mit dir selbst, oder [[ENDE: ...]] wenn genug ist)"})
     else:
         log.warning(f"[{wesen}] Sicherheitsdeckel ({TURN_SICHERHEITSDECKEL} Runden) erreicht — "
                     f"Session {session_id} zwangsbeendet")
@@ -296,9 +346,8 @@ def haupt_schleife():
         _wesen_ordner(wesen)  # Ordner+Flag-Pfade schon vorbereiten, damit 'touch' sofort funktioniert
     while True:
         for wesen in WESEN:
-            flag = _start_flag(wesen)
-            if flag.exists():
-                flag.unlink(missing_ok=True)
+            if _wartet_impuls_oder_start(wesen):
+                _start_flag(wesen).unlink(missing_ok=True)
                 try:
                     _fuehre_selbstgespraech(wesen)
                 except Exception as e:
