@@ -23,3 +23,17 @@ sauber `onError`/eine Promise-Rejection ausgelöst.
 — llama-server liefert dann im letzten SSE-Chunk `usage.completion_tokens`/
 `prompt_tokens`, was die bisherige Ollama-Token-Zähler-Anzeige (`eval_count`/
 `prompt_eval_count`) im Frontend unverändert weiterleben lässt.
+
+---
+
+## Nachtrag 2026-07-06 (später) — id_slot-Priorisierung + Trace-Log
+
+**`defaultIdSlot()`**: TS-Pendant zu `_default_id_slot()` in hauhau_client.py —
+`1 + process.pid % 2` als Default für Hintergrund-/unpinned Aufrufe, Slot 0
+bleibt für explizite `extra: {id_slot: 0}`-Aufrufe (Dolphin-Chat, Spawncharakter-Chat
+in `serve_process_camera_preview.ts`) reserviert. Selbe Begründung wie beim
+Python-Pendant: Chat soll nie hinter Automatikbetrieb in der Warteschlange stehen.
+
+**`tracePrioritaet(quelle, zeichen)`**: schreibt (wie die Python-Version) einen
+Trace-Eintrag nach `_shared/chat_prioritaet_trace.jsonl` vor jedem Slot-0-Call —
+Reaktion auf zwei nicht zurückverfolgbare Chat-Hänger am 2026-07-06.

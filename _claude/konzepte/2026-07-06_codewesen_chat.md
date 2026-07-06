@@ -25,3 +25,14 @@ Selbstreflexion (via `codewesen_reflexion.py`).
 
 **Zusammenhang**: `codewesen-chat.service` (systemd). Getestet: echter Chat gegen
 `namelessAI_1234` lief Ende-zu-Ende durch Streaming.
+
+---
+
+## Nachtrag 2026-07-06 (später) — id_slot=0 + Trace-Log
+
+`stream_ollama()` bekam einen neuen `quelle`-Parameter (Default
+`"codewesen_chat:unbekannt"`), von beiden Aufrufstellen mit `codewesen_chat:{name}`
+befüllt. Vor jedem `achat_stream()`-Call: `id_slot=0` (Chat bekommt garantiert
+Priorität vor Automatikbetrieb) und `hauhau_client.trace_prioritaet(quelle, ...)`
+(Reaktion auf zwei nicht zurückverfolgbare Chat-Hänger — siehe Nachtrag in
+`hauhau_client.md`).

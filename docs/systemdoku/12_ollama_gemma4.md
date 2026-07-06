@@ -202,6 +202,16 @@ Parameter konvertiert rohe Base64-Strings automatisch ins OpenAI
 (`/tmp/dak_gord_chat_aktiv`) — die regeln weiterhin wer zuerst dran ist, nur
 der eigentliche HTTP-Call dahinter wurde ausgetauscht.
 
+**Trace-Log für Slot-0-Anfragen** (seit 2026-07-06): `hauhau_client.py`
+(`trace_prioritaet()`) und `hauhau_client.ts` (`tracePrioritaet()`) schreiben vor
+jedem `id_slot=0`-Call einen Eintrag nach `_shared/chat_prioritaet_trace.jsonl`
+(Quelle, Zeitpunkt, Zeichenlänge, PID) — getrennt von den schweren
+Chat-Verlaufsdateien. Grund: zwei Chat-Hänger am 2026-07-06 ließen sich trotz
+gründlicher Recherche (alle Chat-Logs, alle Dateizeiten geprüft) keiner Quelle
+zuordnen, weil llama-server selbst keine Client-Herkunft loggt. Bei künftigen
+Hängern zuerst diese Datei prüfen, bevor der Dienst neu gestartet wird — ein
+Neustart löscht den laufenden Zustand, der für die Diagnose gebraucht wird.
+
 ---
 
 ## Was weiterhin auf Ollama (Port 11434) läuft — bewusst, kein Aufräumfall

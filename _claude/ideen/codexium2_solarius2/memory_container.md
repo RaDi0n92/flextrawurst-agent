@@ -186,3 +186,28 @@ interface ContainerSammlung {
   }>;
 }
 ```
+
+### Nachtrag 2026-07-06 (später, noch am selben Tag) — gebaut, alle 5 Fragen geklärt
+
+Daniels Antworten auf die 5 offenen Fragen oben: (1) komplett ersetzen, kein
+Nebeneinander zweier Formate, (2) Gesamtbudget bleibt geteilt über alle
+Container, (3) einzeln an-/ausschaltbar (`aktiv`-Flag, nicht immer alle aktiv),
+(4) Verwaltung im Profil ("da wo sie mal waren"), einfach hinzufügbar, (5) gilt
+für alle 4 Spawner, nicht nur die Testbed-Varianten.
+
+**Gebaut wie skizziert**, mit `aktiv: boolean` pro Box ergänzt (Frage 3) und
+einer Migrationsfunktion (`ladeContainerSammlung()`), die sowohl das alte
+Pin-Format als auch das noch ältere Key/Val-Format (Codexium/Solarius) beim
+ersten Lesen automatisch in die neue Struktur überführt — kein Datenverlust,
+keine manuelle Migration nötig. Volle technische Details (Endpunkte,
+Provenienz-Events, UI-Änderungen) in den Konzept-Dokumenten:
+`_claude/konzepte/2026-07-06_serve_process_camera_preview.md`,
+`2026-07-06_wesen_profil.md`, `2026-07-06_wesen_chat.md`.
+
+Zusätzlich von Daniel gewünscht und umgesetzt: volle Sichtbarkeit im Chat-Verlauf
+("alles muss komplett offen sein") — jede Container-Aktion (anlegen, umbenennen,
+löschen, pinnen, entfernen) erscheint als lesbares Ereignis im sichtbaren
+Verlauf, nicht nur als stille Provenienz-Zeile.
+
+Live getestet gegen `solarius/KrEaPPy` (regulärer, nicht-Testbed-Charakter) —
+Container anlegen, pinnen, löschen funktioniert, Testdaten danach entfernt.
