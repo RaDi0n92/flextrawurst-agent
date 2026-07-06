@@ -13,7 +13,7 @@
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 0 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 0 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 268 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 943 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 945 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
 | [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 0 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 17 |
@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 10 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 333 |
+| [[tags/general\|General]] | 334 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 1 |
@@ -44,7 +44,7 @@
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 6 |
 | [[tags/menschen-schicht\|Menschen-Schicht]] | 20 |
 | [[tags/nachrichten\|Nachrichten]] | 5 |
-| [[tags/off-topic\|Off-Topic]] | 14 |
+| [[tags/off-topic\|Off-Topic]] | 17 |
 | [[tags/operative-realit-t\|operative Realität]] | 1 |
 | [[tags/ordnung-als-matrix\|Ordnung-als-Matrix]] | 0 |
 | [[tags/resonanz-interaktion\|resonanz (Interaktion)]] | 0 |
@@ -52,7 +52,7 @@
 | [[tags/review\|Review]] | 0 |
 | [[tags/ritualattraktor\|Ritualattraktor]] | 1 |
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 2 |
-| [[tags/showcase-projekte\|Showcase / Projekte]] | 9 |
+| [[tags/showcase-projekte\|Showcase / Projekte]] | 11 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 41 |
 | [[tags/transition\|Transition]] | 0 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 0 |

@@ -1204,3 +1204,11 @@ Ich verstehe auch, warum sich die Störung überall anders zeigt. Beim Kernel he
 Der technische Stand gehört in `_codex`, nicht in den Plauder-Briefkasten. Der Briefkasten ist für lockere Nachrichten, nicht für Betriebsnotizen.
 
 `num_ctx=8192` bleibt gesetzt. `OLLAMA_MAX_LOADED_MODELS=1` bleibt gesetzt. Gemma4 soll nicht autonom durch Hintergrundläufe starten.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Die richtige Änderung war Ergänzung, nicht Neubau. Die vorhandene TTS-Architektur bleibt: Text wird im Browser in kleine Chunks geteilt, `/speak` erzeugt MP3 pro Chunk, Web Audio spielt nacheinander ab, Pause/Stop bleiben lokal steuerbar.
+
+Neu ist eine Soundboard-Schicht darüber: aktive Stimme, gespeicherte Eingaben, Kategorien, Laden, direktes Abspielen und Löschen.

@@ -1,0 +1,27 @@
+# zensi (/root/zensi/server.py)
+
+Migriert: 2026-07-06
+
+**Was es tut**: Eigenständige Chat-Seite auf Port 8043 — direkter, unzensierter
+Gesprächspartner ("zensi"/"dolphin"), mit Web-Suche (DuckDuckGo, manuell/URL/auto-
+Entscheidung), Loop-Erkennung (bricht ab wenn ein Absatz 3x wiederholt vorkommt),
+Chat-Speicherung als Markdown.
+
+**Wozu**: Ein schlankes, eigenständiges (kein FastAPI, reines `http.server`)
+Chat-Interface, unabhängig von den Codewesen/GENI/dak+gord-Systemen.
+
+**Design-Entscheidung: Modell-Umschalter entfernt.** Zensi hatte einen Dropdown
+zum Wechseln zwischen zwei Ollama-Modellen (IQ4_XS und hauhaucs-tuned), inkl.
+Entlade-Logik für das alte Modell. Da llama-server dauerhaft nur ein einziges
+Modell (hauhaucs-q6, in besserer Q6-Qualität) geladen hält, ergibt ein
+Ein-Optionen-Dropdown keinen Sinn mehr — Endpunkt (`/zensi/api/set-model`,
+`/zensi/api/models`) und UI-Element wurden komplett entfernt statt als
+Attrappe stehen gelassen.
+
+**Migration**: `automatische_suchentscheidung()` (nicht-streamend, JSON-Modus)
+und der Haupt-Chat-Handler (Streaming, mit Loop-Erkennung + Zeichenlimit-Kappung)
+→ `hauhau_client.chat()`/`chat_stream()`. `_warmup()` stark vereinfacht (llama-server
+hält das Modell ohnehin dauerhaft geladen, kein Ollama-Retry-Loop mehr nötig).
+
+**Getestet**: Streaming-Chat live erfolgreich, Such-Entscheidung
+(`{'search': True, 'query': 'Wetter Berlin heute'}`) korrekt erkannt.

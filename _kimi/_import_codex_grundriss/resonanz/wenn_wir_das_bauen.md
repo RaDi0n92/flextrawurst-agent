@@ -2732,3 +2732,23 @@ def darf_starten(status: InferenzAuftrag, loaded: set[str], memory_gib: float) -
 Vision-Schicht: ein Modellvergleich ohne Zufallswechsel, ohne Nebenläufe, ohne Hänger.
 
 Code-Skizze: Testskript, das `systemctl stop` für die relevanten Chatserver nutzt, `ollama ps` prüft und dann genau einen Modellpfad misst.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+**Vision-Schicht:** Falls das Soundboard weiter wächst, sollte es eine kleine Bibliothek werden: Kategorien, Suche, vielleicht Export/Import, aber immer so, dass die schnelle Sprechfläche nicht unter Verwaltung verschwindet.
+
+**Code-Skizze:**
+
+```python
+class TTSServerClip(BaseModel):
+    id: str
+    owner: str
+    title: str
+    text: str
+    category: str
+    voice: str
+    rate: str
+    meta: dict = {}
+```

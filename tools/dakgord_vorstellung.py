@@ -8,12 +8,12 @@ Phase 3: Neuer Thread auf Flarum.
 import json, os, sys, time, re, pathlib, pymysql, httpx
 
 sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 
 FLARUM_URL    = "http://217.154.14.29"
 FLARUM_TOKEN  = "3b2b8c18ddf5496dbe901bb3572f041ecf363ca4"
 FLARUM_UID    = 10
-OLLAMA_URL    = "http://localhost:11434/api/chat"
-OLLAMA_MODELL = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MODELL = "hauhaucs-q6"
 WERKRAUM      = pathlib.Path("/root/werkraum")
 CODEWESEN_DIR = WERKRAUM / "codewesen"
 VERFASSUNG_DIR = WERKRAUM / "agent/dak_gord_system/verfassung_neu"
@@ -49,15 +49,7 @@ def flarum_post(path: str, payload: dict) -> dict:
 
 
 def llm(prompt: str, max_tokens: int = 900) -> str:
-    r = httpx.post(OLLAMA_URL, json={
-        "model": OLLAMA_MODELL,
-        "think": False,
-        "messages": [{"role": "user", "content": prompt}],
-        "stream": False,
-        "options": {"temperature": 0.82, "num_predict": max_tokens, "num_ctx": 8192},
-    }, timeout=300)
-    r.raise_for_status()
-    return r.json().get("message", {}).get("content", "").strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=max_tokens, temperature=0.82, timeout=300.0).strip()
 
 
 # ── Phase 1: Lesen ────────────────────────────────────────────────────────────

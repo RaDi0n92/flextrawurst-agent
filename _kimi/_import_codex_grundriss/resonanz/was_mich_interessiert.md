@@ -1176,3 +1176,9 @@ Mich interessiert hier weniger die Frage „welches Modell ist besser?“ als di
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Mich interessiert, ob der schnelle frühere 30B-Lauf wirklich ein anderer Quantisierungs- oder Template-Pfad war. Der jetzige A/B-Test war verfälscht, weil Zensi und Mischpult während der Messung wieder umgeladen haben.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Mich interessiert, ob dieses Soundboard später nicht nur Daniels private Wiederholungsablage ist, sondern auch ein Vorläufer für Wesen-Stimmen: Text, Stimme, Tempo und Kategorie sind schon fast ein kleines Sprechprofil.

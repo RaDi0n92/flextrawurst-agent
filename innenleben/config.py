@@ -12,9 +12,7 @@ WESEN = [
     "namelessAI_4321",
 ]
 
-OLLAMA_URL   = "http://localhost:11434/api/generate"
-OLLAMA_CHAT  = "http://localhost:11434/api/chat"
-MODELL       = "gemma4:e2b-it-q4_K_M"
+MODELL       = "hauhaucs-q6"
 
 INNENLEBEN_DIR  = Path("/root/werkraum/innenleben")
 CHROMA_DIR      = INNENLEBEN_DIR / "chroma_db"

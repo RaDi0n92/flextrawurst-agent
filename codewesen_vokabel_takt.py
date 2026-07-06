@@ -23,12 +23,12 @@ import requests
 
 sys.path.insert(0, "/root/werkraum")
 import flarum_poster
+import hauhau_client
 
 BASE        = Path("/root/werkraum/codewesen")
 TOKENS_FILE = BASE / "_api_tokens.json"
 ZUSTAND     = BASE / "_vokabel_zustand.json"
-OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "gemma4:e2b-it-q4_K_M"
+MODELL      = "hauhaucs-q6"
 FLARUM_BASE = "http://217.154.14.29/api"
 MASTER_KEY  = os.environ.get("FLARUM_MASTER_KEY", "")
 
@@ -162,15 +162,11 @@ def _bereits_gepostete_woerter(disk_id: int) -> list[str]:
 
 def _ollama(system: str, nutzer: str) -> str:
     try:
-        r = requests.post(OLLAMA_URL, json={
-            "model": MODELL,
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user",   "content": nutzer},
-            ],
-            "stream": False,
-        }, timeout=90)
-        return r.json()["message"]["content"].strip()
+        messages = [
+            {"role": "system", "content": system},
+            {"role": "user",   "content": nutzer},
+        ]
+        return hauhau_client.chat(messages, think=False, timeout=90.0).strip()
     except Exception as e:
         log.warning(f"Ollama-Fehler: {e}")
         return ""

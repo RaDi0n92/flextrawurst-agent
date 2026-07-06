@@ -11,15 +11,18 @@ import re
 from typing import Optional
 from datetime import datetime, timezone
 
+import sys
 import chromadb
 import httpx
+
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 
 import emotion_bewerter
 import selbstmodell
 from config import (
     CHROMA_DIR,
     MODELL,
-    OLLAMA_URL,
     LOGS_DIR,
 )
 from reflection_score import berechne as score_berechne
@@ -48,19 +51,7 @@ def _collection(entity_id: str):
 
 def _llm(prompt: str, num_predict: int = 600) -> str:
     try:
-        with httpx.Client(timeout=httpx.Timeout(connect=10.0, read=120.0, write=10.0, pool=10.0)) as c:
-            r = c.post(
-                OLLAMA_URL,
-                json={
-                    "model": MODELL,
-                    "prompt": prompt,
-                    "stream": False,
-                    "think": False,
-                    "options": {"temperature": 0.7, "num_predict": num_predict},
-                },
-            )
-        r.raise_for_status()
-        return r.json().get("response", "").strip()
+        return hauhau_client.chat(prompt, think=False, max_tokens=num_predict, temperature=0.7, timeout=120.0).strip()
     except Exception as e:
         log.warning(f"LLM-Fehler: {e}")
         return ""

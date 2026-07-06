@@ -33,10 +33,12 @@ import requests
 import gedaechtnis
 import codewesen_werkzeuge as wz
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 BASE       = Path("/root/werkraum/codewesen")
 TOKENS     = BASE / "_api_tokens.json"
-OLLAMA_URL = "http://localhost:11434/api/chat"
-OLLAMA_MOD = "gemma4:e4b-it-q4_K_M"
+OLLAMA_MOD = "hauhaucs-q6"
 
 # Dateibasierter Semaphor — maximal 2 gleichzeitige Ollama-Calls über alle 6 Prozesse
 _LOCK_DIR = Path("/tmp/ollama_locks")
@@ -125,19 +127,10 @@ def setup_log(name: str) -> logging.Logger:
 
 def ask_llm(prompt: str) -> str:
     with OllamaSlot():
-        r = requests.post(
-            OLLAMA_URL,
-            json={
-                "model": OLLAMA_MOD,
-                "think": False,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": False,
-                "options": {"temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 700, "num_ctx": 8192},
-            },
-            timeout=600,
-        )
-        r.raise_for_status()
-        return r.json().get("message", {}).get("content", "").strip()
+        return hauhau_client.chat(
+            prompt, think=False, max_tokens=700,
+            temperature=0.78, top_p=0.9, top_k=40, timeout=600.0,
+        ).strip()
 
 
 def extrahiere_json(text: str) -> dict | None:

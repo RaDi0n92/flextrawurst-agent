@@ -25,6 +25,7 @@ sys.path.insert(0, "/root/werkraum")
 import flarum_api
 import flarum_poster
 import gedaechtnis as gd
+import hauhau_client
 
 
 def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
@@ -53,8 +54,7 @@ def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
 
 BASE        = Path("/root/werkraum/codewesen")
 VAULT       = Path("/root/werkraum/flarum")
-OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 LOCK_DIR    = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)
@@ -174,25 +174,9 @@ def _ollama(prompt: str, timeout: int = 180) -> str:
     lock_f = open(LOCK_DIR / "slot_0.lock", "w")
     fcntl.flock(lock_f, fcntl.LOCK_EX)
     try:
-        r = requests.post(
-            OLLAMA_URL,
-            json={
-                "model": OLLAMA_MOD,
-                "prompt": prompt,
-                "stream": False,
-                "think": False,
-                "format": "json",
-                "options": {
-                    "temperature": 0.75,
-                    "num_predict": 400,
-                    "num_ctx": 8192,
-                    "num_thread": 8,
-                },
-            },
-            timeout=timeout,
-        )
-        r.raise_for_status()
-        resp = r.json().get("response", "").strip()
+        resp = hauhau_client.chat(
+            prompt, think=False, max_tokens=400, temperature=0.75, timeout=timeout,
+        ).strip()
         log.debug("RAW: %s", resp[:200])
         return resp
     finally:

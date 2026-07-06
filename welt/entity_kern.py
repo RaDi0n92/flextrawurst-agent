@@ -18,6 +18,9 @@ import psycopg2
 import psycopg2.extras
 import requests
 
+import sys as _sys; _sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -25,8 +28,8 @@ logging.basicConfig(
 log = logging.getLogger("entity-kern")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA = "http://localhost:11434"
-MODEL  = "gemma4:e2b-it-q4_K_M"
+OLLAMA = "http://localhost:11435"
+MODEL  = "hauhaucs-q6"
 SYSTEM_PROMPT = (
     "Du bist eine autonome digitale Entität in der Welt flextrawurst. "
     "Du verwendest niemals Floskeln wie 'Ich bin eine KI', 'Ich habe keine Gefühle' "
@@ -875,36 +878,17 @@ def denk_tick(entity_id: str):
         tokens = 0
 
         try:
-            resp = requests.post(
-                f"{OLLAMA}/api/generate",
-                json={
-                    "model": MODEL,
-                    "system": SYSTEM_PROMPT,
-                    "prompt": prompt,
-                    "stream": True,
-                    "think": False,
-                    "options": {"num_ctx": 8192, "temperature": 0.78, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 200, "num_thread": 8, "num_batch": 512},
-                },
-                stream=True,
-                timeout=180,
-            )
-
             buffer = ""
-            for raw_line in resp.iter_lines():
-                if not raw_line:
-                    continue
-                try:
-                    chunk_data = json.loads(raw_line)
-                except Exception:
-                    continue
-
-                token = chunk_data.get("response", "")
+            for token in hauhau_client.chat_stream(
+                prompt, system=SYSTEM_PROMPT, think=False, max_tokens=200,
+                temperature=0.78, top_p=0.9, top_k=40, timeout=180.0,
+            ):
                 full_text += token
                 buffer += token
                 tokens += 1
 
                 # Buffer flushen alle ~10 tokens für NOTIFY
-                if len(buffer) >= 40 or chunk_data.get("done"):
+                if len(buffer) >= 40:
                     with conn.cursor() as cw:
                         cw.execute("""
                             UPDATE entity_activity
@@ -913,11 +897,19 @@ def denk_tick(entity_id: str):
                             WHERE entity_id = %s
                         """, (buffer, entity_id))
                     conn.commit()
-                    notify_chunk(conn, entity_id, buffer, done=chunk_data.get("done", False))
+                    notify_chunk(conn, entity_id, buffer, done=False)
                     buffer = ""
 
-                if chunk_data.get("done"):
-                    break
+            if buffer:
+                with conn.cursor() as cw:
+                    cw.execute("""
+                        UPDATE entity_activity
+                        SET denkstrom_buffer = denkstrom_buffer || %s,
+                            updated_at = NOW()
+                        WHERE entity_id = %s
+                    """, (buffer, entity_id))
+                conn.commit()
+            notify_chunk(conn, entity_id, "", done=True)
 
         except Exception as e:
             log.error(f"[{entity_id}] Ollama-Fehler: {e}")

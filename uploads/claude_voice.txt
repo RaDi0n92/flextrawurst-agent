@@ -1,1 +1,1 @@
-Beide Ebenen jetzt getestet und dokumentiert: Struktur bestätigt (nur noch 1x "333 Tokens" im Prompt), und Live-Generierung bestätigt (~382 Tokens, niedrigster von vier Messwerten, aber weiterhin im bekannten 380-500-Token-Streubereich statt einer harten Grenze). Doku ergänzt, Resonanzfeld aktualisiert, committet. Die Test-Diskrepanz (150 rote Ring-Tests wegen 6-vs-7-Entitäten) ist notiert und liegt wie gewünscht liegen.
+Erledigt — datum: 2026-07-06 steht jetzt im Frontmatter der drei Memory-Dateien. Alles andere (Konzept-MDs, Bericht, Systemdoku) hatte das Datum schon.

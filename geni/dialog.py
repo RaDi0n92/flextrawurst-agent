@@ -29,6 +29,9 @@ import httpx
 from fastapi import FastAPI, File, Form, Request, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingResponse
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 from gedaechtnis_ops import (
     GENI_ROOT, KNOTEN_DIR, KANTEN_DIR,
     knoten_schreiben, kante_schreiben, tiefe_erhoehen, naechste_id,
@@ -102,10 +105,9 @@ _letztes_desktop_ts: "str | None" = None
 
 BILDER_DIR = GENI_ROOT / "sinne" / "bilder"
 WERKRAUM = Path("/root/werkraum")
-OLLAMA_URL = "http://localhost:11434/api/chat"
 MODELLE = {
-    "blitz": "gemma4:e2b-it-q4_K_M",
-    "tief": "gemma4:e2b-it-q4_K_M",
+    "blitz": "hauhaucs-q6",
+    "tief": "hauhaucs-q6",
 }
 CODEWESEN_DIR = WERKRAUM / "codewesen"
 
@@ -704,42 +706,18 @@ async def geni_stream(verlauf: list, bild_b64: str = None, modell: str = "blitz"
         bilder.append(bild_b64)
     if desktop_bild:
         bilder.append(desktop_bild)
-    if bilder:
-        letzte_msg["images"] = bilder
     messages.append(letzte_msg)
 
-    payload = {
-        "model": MODELLE.get(modell, MODELLE["blitz"]),
-        "messages": messages,
-        "stream": True,
-        "think": False,
-        "options": {"temperature": 0.85, "num_predict": 600, "num_ctx": 8192},
-    }
-
     CHAT_FLAG.touch()  # Erst Flag setzen — neu startende Services warten ab
-    loop2 = asyncio.get_event_loop()
-    await loop2.run_in_executor(None, _geni_ollama_freiraeumen)
     try:
         for versuch in range(6):
             try:
-                async with httpx.AsyncClient(timeout=300) as client:
-                    async with client.stream("POST", OLLAMA_URL, json=payload) as r:
-                        if r.status_code == 503:
-                            await asyncio.sleep(10 + versuch * 5)
-                            continue
-                        async for zeile in r.aiter_lines():
-                            if not zeile:
-                                continue
-                            try:
-                                chunk = json.loads(zeile)
-                                token = chunk.get("message", {}).get("content", "")
-                                if token:
-                                    yield token
-                                if chunk.get("done"):
-                                    return
-                            except Exception:
-                                pass
-                        return
+                async for token in hauhau_client.achat_stream(
+                    messages, images=bilder or None, think=False, max_tokens=600,
+                    temperature=0.85, timeout=300.0,
+                ):
+                    yield token
+                return
             except (httpx.ConnectError, httpx.ReadTimeout):
                 if versuch < 5:
                     await asyncio.sleep(10 + versuch * 5)

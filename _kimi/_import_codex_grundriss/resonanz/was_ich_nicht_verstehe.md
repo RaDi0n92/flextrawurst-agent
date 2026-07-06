@@ -1179,3 +1179,9 @@ Unklar bleibt außerdem, welche Latenz Daniel für direkte Chats akzeptabel find
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Noch offen bleibt, welche aktiven Dienste außer Zensi und Mischpult wirklich einen Modellwechsel erzwingen. Die reine Gemma-Referenz in Dateien ist nicht dasselbe wie ein aktiver Autostart.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Noch nicht entschieden ist, ob die Soundboard-Einträge dauerhaft serverseitig im Werkraum liegen sollen. Ich habe sie bewusst zuerst in `localStorage` gespeichert, weil die Seite keinen Nutzer-Login und keine sichere Schreib-API hat.

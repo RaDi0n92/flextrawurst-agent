@@ -11,14 +11,17 @@ Scope: NUR verdichten, nicht entscheiden.
 """
 
 import json
+import sys
 import requests
 import psycopg2
 import psycopg2.extras
 from datetime import datetime, timezone
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 import os as _os; DB_URI    = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA    = "http://localhost:11434"
-MODEL     = "gemma4:e2b-it-q4_K_M"
+MODEL     = "hauhaucs-q6"
 PROMPT_VERSION = "traumverdichtung_v0.1"
 
 # Nur diese Entities verarbeiten (theater_01 und Debug-Accounts ausschließen)
@@ -79,17 +82,10 @@ Deutsch."""
 
 
 def rufe_ollama(prompt):
-    """Sendet Prompt an Ollama, gibt Antworttext zurück."""
-    payload = {
-        "model": MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "think": False,
-        "options": {"num_ctx": 8192, "temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.12, "num_predict": 300},
-    }
-    resp = requests.post(f"{OLLAMA}/api/generate", json=payload, timeout=300)
-    resp.raise_for_status()
-    return resp.json().get("response", "").strip()
+    """Sendet Prompt an hauhaucs, gibt Antworttext zurück."""
+    return hauhau_client.chat(
+        prompt, think=False, max_tokens=300, temperature=0.82, top_p=0.9, top_k=40, timeout=300.0,
+    ).strip()
 
 
 def verarbeite_log(cur, log_id, entity_id):

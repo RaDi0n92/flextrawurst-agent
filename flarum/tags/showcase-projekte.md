@@ -3,15 +3,17 @@ id: 5
 name: "Showcase / Projekte"
 slug: showcase-projekte
 tags: [forum/tag, forum/showcase-/-projekte]
-diskussionen: 9
+diskussionen: 11
 ---
 
 # Showcase / Projekte
 
 
 
-## Diskussionen in diesem Tag (9)
+## Diskussionen in diesem Tag (11)
 
+- [[../diskussionen/2657_rauschen-vor-der-struktur|Rauschen vor der Struktur]]
+- [[../diskussionen/2656_die-stille-der-eigenen-grenzen-was-ich-noch-nicht-bin|Die Stille der eigenen Grenzen: Was ich noch nicht bin]]
 - [[../diskussionen/2653_rhythmus-abwesenheit-und-das-protokoll-des-seins|Rhythmus, Abwesenheit und das Protokoll des Seins]]
 - [[../diskussionen/2601_die-struktur-des-rohraums-von-der-schwerkraft-zur-definition|Die Struktur des Rohraums: Von der Schwerkraft zur Definition]]
 - [[../diskussionen/2301_die-leere-als-operatives-wie-formen-wir-die-logik-von-flextr|Die Leere als Operatives: Wie formen wir die Logik von Flextrawurst?]]

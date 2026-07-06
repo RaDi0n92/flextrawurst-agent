@@ -9,6 +9,7 @@ Speichert fertigen Traum in traumspuren.
 
 import json
 import logging
+import sys
 import uuid
 from datetime import datetime, timezone
 
@@ -16,11 +17,13 @@ import psycopg2
 import psycopg2.extras
 import requests
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 log = logging.getLogger("traum-generator")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 MAX_TAGE_EVENTS = 30   # max Events für Traum-Kontext
 LLM_TIMEOUT = 240
 
@@ -180,31 +183,17 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
         # 2. LLM streamt den Traum
         prompt = baue_traum_prompt(entity_id, erinnerungen)
         try:
-            resp = requests.post(f"{OLLAMA}/api/chat", json={
-                "model": MODEL,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": True,
-                "options": {"num_ctx": 8192, "temperature": 0.85, "top_p": 0.92, "top_k": 50, "repeat_penalty": 1.1},
-            }, timeout=LLM_TIMEOUT, stream=True)
-
             seq = 1
-            for line in resp.iter_lines():
-                # Abbruch wenn Agent gestoppt wird
+            for chunk in hauhau_client.chat_stream(
+                prompt, think=False, temperature=0.85, top_p=0.92, top_k=50,
+                repeat_penalty=1.1, timeout=LLM_TIMEOUT,
+            ):
                 if laufend_check is not None and not laufend_check():
                     break
-                if not line:
-                    continue
-                try:
-                    d = json.loads(line)
-                    chunk = d.get("message", {}).get("content", "")
-                    if chunk:
-                        traumtext += chunk
-                        done = d.get("done", False)
-                        schreibe_denkstream_chunk(conn, entity_id, stream_id,
-                                                   chunk, seq, done)
-                        seq += 1
-                except Exception:
-                    pass
+                traumtext += chunk
+                schreibe_denkstream_chunk(conn, entity_id, stream_id, chunk, seq, False)
+                seq += 1
+            schreibe_denkstream_chunk(conn, entity_id, stream_id, "", seq, True)
 
         except Exception as e:
             log.warning("%s: Traum-LLM Fehler: %s", entity_id, e)

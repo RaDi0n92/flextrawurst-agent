@@ -1264,3 +1264,9 @@ Unten liegen Modellblobs und Ollama-Runner. Darüber liegen Cgroup, RAM und Swap
 Unten: Timer, Runner, `ollama ps`, Systemd, Ports.
 
 Oben: Sprache, Übergabe, Kontext, Plaudern, Briefkasten.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Edge-TTS unten, FastAPI als dünner Adapter, Browser-Audio als Abspielkörper, Soundboard als lokale Wiederholungsschicht, Daniel oben als jemand, der nicht jedes Mal neu anfangen will.

@@ -15,14 +15,17 @@ Dateistruktur pro Codewesen:
 
 import json
 import re
+import sys
 import pymysql
 import requests
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 BASE       = Path("/root/werkraum/codewesen")
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MOD = "gemma4:e2b-it-q4_K_M"  # schnelles Modell — Scan läuft alle 8min
+OLLAMA_MOD = "hauhaucs-q6"
 
 DB_CONFIG = {
     "host": "localhost", "port": 3306, "db": "flarum",
@@ -236,28 +239,7 @@ def aktualisiere_index(name: str, neu_geschrieben: list, log):
 # ── LLM aufrufen ──────────────────────────────────────────────────────────────
 
 def ask_llm(prompt: str) -> str:
-    """Streaming-Request. read-timeout=None damit Prompt-Eval nicht abbricht."""
-    stuecke = []
-    with requests.post(
-        OLLAMA_URL,
-        json={
-            "model": OLLAMA_MOD,
-            "prompt": prompt,
-            "stream": True,
-            "options": {"temperature": 0.82, "num_predict": 800},
-        },
-        stream=True,
-        timeout=(30, None),  # connect=30s, read=unbegrenzt (Prompt-Eval kann lang dauern)
-    ) as r:
-        r.raise_for_status()
-        for zeile in r.iter_lines():
-            if zeile:
-                try:
-                    tok = json.loads(zeile).get("response", "")
-                    stuecke.append(tok)
-                except Exception:
-                    pass
-    return "".join(stuecke).strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=800, temperature=0.82, timeout=3600.0).strip()
 
 
 def _items_zu_dateien(items: list) -> list:

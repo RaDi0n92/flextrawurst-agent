@@ -19,13 +19,15 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse
 import uvicorn
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 WERKRAUM   = Path("/root/werkraum")
 INNENLEBEN = WERKRAUM / "innenleben"
 CODEWESEN  = WERKRAUM / "codewesen"
 LOGS       = WERKRAUM / "logs"
 
-OLLAMA_URL   = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MODEL = "hauhaucs-q6"
 
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
@@ -420,15 +422,8 @@ FRAGE: {frage}
 Antworte kurz, klar, auf Deutsch. Nur beobachten und empfehlen — nicht handeln."""
 
     try:
-        resp = requests.post(OLLAMA_URL, json={
-            "model": OLLAMA_MODEL,
-            "prompt": prompt,
-            "stream": False,
-            "options": {"temperature": 0.4, "num_predict": 400},
-        }, timeout=60)
-        if resp.status_code == 200:
-            return {"antwort": resp.json().get("response", "").strip()}
-        return JSONResponse({"error": f"Ollama: {resp.status_code}"}, status_code=500)
+        antwort = hauhau_client.chat(prompt, think=False, max_tokens=400, temperature=0.4, timeout=60.0).strip()
+        return {"antwort": antwort}
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=500)
 

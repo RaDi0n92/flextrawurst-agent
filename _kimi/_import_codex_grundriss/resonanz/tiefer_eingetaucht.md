@@ -1211,3 +1211,9 @@ Die Lockdatei war nicht verwaist. `lsof` zeigte einen echten Halter und mehrere 
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Ich habe gesehen, dass `qwen3-vl:30b-a3b-instruct` und HauhauCS im Ollama-Log jeweils als eigener Runner mit rund 40 Sekunden Ladezeit auftauchen können. Der "warme" Vergleich war dadurch faktisch kein warmer Vergleich.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Ich habe den vorhandenen Dienst nicht umgebaut. Nur `/voices` wurde von `de-DE` auf alle `edge_tts`-Stimmen erweitert. `/speak` konnte `voice` bereits im Request annehmen; die UI hatte es nur nicht freigelegt.

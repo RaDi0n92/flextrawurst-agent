@@ -25,6 +25,9 @@ import requests
 import psycopg2
 import psycopg2.extras
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 import gedaechtnis
 import flarum_api as _fapi
 from codewesen_abwurf import verarbeite_abwurf, zwischenraum_scan
@@ -107,9 +110,8 @@ def _lade_wesen_identitaet(name: str) -> str:
         except Exception:
             pass
     return "\n\n".join(teile) if teile else "(Keine Identitätsdatei gefunden.)"
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL        = "gemma4:e4b-it-q4_K_M"
-OLLAMA_MODEL_SCHNELL = "gemma4:e2b-it-q4_K_M"  # Schnelles Modell — für Entscheidungen
+OLLAMA_MODEL        = "hauhaucs-q6"
+OLLAMA_MODEL_SCHNELL = "hauhaucs-q6"
 TOKENS_FILE = BASE / "_api_tokens.json"
 CHECK_INTERVAL = 600       # Sekunden zwischen Inbox-Checks
 REFLEXIONS_INTERVAL = 300  # Sekunden zwischen Selbstreflexions-Checks
@@ -216,20 +218,11 @@ def _ist_vollstaendig(text: str) -> bool:
 
 def _llm_call(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
               schnell: bool = False) -> str:
-    model = OLLAMA_MODEL_SCHNELL if schnell else OLLAMA_MODEL
-    payload = {
-        "model": model,
-        "prompt": prompt,
-        "stream": False,
-        "think": False,
-        "options": {"temperature": temperature, "num_predict": num_predict,
-                    "num_ctx": 8192, "num_thread": 8, "num_batch": 512,
-                    "top_p": 0.9, "top_k": 40},
-    }
     with OllamaSlot():
-        r = requests.post(OLLAMA_URL, json=payload, timeout=600)
-    r.raise_for_status()
-    return r.json().get("response", "").strip()
+        return hauhau_client.chat(
+            prompt, think=False, max_tokens=num_predict, temperature=temperature,
+            top_p=0.9, top_k=40, timeout=600.0,
+        ).strip()
 
 
 def ask_llm(prompt: str, num_predict: int = 1200, temperature: float = 0.7,

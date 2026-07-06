@@ -17,11 +17,11 @@ import httpx
 sys.path.insert(0, "/root/werkraum")
 import flarum_poster
 import gedaechtnis
+import hauhau_client
 
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
-OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "gemma4:e2b-it-q4_K_M"
+MODELL      = "hauhaucs-q6"
 
 log = logging.getLogger("reflexion")
 if not log.handlers:
@@ -60,14 +60,7 @@ def _lade_fremde_diskussionen(name: str, max_n: int = 10) -> str:
 
 
 def _llm(prompt: str, max_tokens: int = 600) -> str:
-    with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=300.0, write=30.0, pool=30.0)) as c:
-        r = c.post(
-            OLLAMA_URL,
-            json={"model": MODELL, "messages": [{"role": "user", "content": prompt}],
-                  "stream": False, "options": {"temperature": 0.9, "num_predict": max_tokens}},
-        )
-    r.raise_for_status()
-    return r.json().get("message", {}).get("content", "").strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=max_tokens, temperature=0.9).strip()
 
 
 def _parse_json(text: str) -> dict:

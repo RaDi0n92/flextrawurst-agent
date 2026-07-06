@@ -1240,3 +1240,9 @@ Vor einem Eingriff brauche ich eine bestätigte Zielbelegung: welches Modell fü
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Einen sauberen Startzustand: keine geladenen großen Modelle, keine laufenden Chatserver, kein Timer, der nebenbei wieder lädt.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Beim nächsten TTS-Schritt brauche ich zuerst die Entscheidung: Browser-lokal lassen oder serverseitig speichern. Ohne Auth wäre serverseitiges Speichern eine öffentliche Schreibfläche.

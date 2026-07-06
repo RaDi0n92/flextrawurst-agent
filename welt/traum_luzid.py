@@ -11,17 +11,20 @@ Streamt Beobachtungstext in entity_denkstream (mit url='luzid://beobachtung').
 
 import json
 import logging
+import sys
 import uuid
 
 import psycopg2
 import psycopg2.extras
 import requests
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 log = logging.getLogger("traum-luzid")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 LLM_TIMEOUT = 180
 
 
@@ -118,29 +121,16 @@ def beobachte_traum(entity_id: str, traumtext: str,
 
         prompt = baue_beobachter_prompt(entity_id, traumtext)
         try:
-            resp = requests.post(f"{OLLAMA}/api/chat", json={
-                "model": MODEL,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": True,
-                "options": {"think": False, "num_ctx": 8192, "temperature": 0.8},
-            }, timeout=LLM_TIMEOUT, stream=True)
-
             seq = 1
-            for line in resp.iter_lines():
+            for chunk in hauhau_client.chat_stream(
+                prompt, think=False, temperature=0.8, timeout=LLM_TIMEOUT,
+            ):
                 if laufend_check is not None and not laufend_check():
                     break
-                if not line:
-                    continue
-                try:
-                    d = json.loads(line)
-                    chunk = d.get("message", {}).get("content", "")
-                    if chunk:
-                        beobachtung += chunk
-                        schreibe_chunk(conn, entity_id, stream_id,
-                                       chunk, seq, d.get("done", False))
-                        seq += 1
-                except Exception:
-                    pass
+                beobachtung += chunk
+                schreibe_chunk(conn, entity_id, stream_id, chunk, seq, False)
+                seq += 1
+            schreibe_chunk(conn, entity_id, stream_id, "", seq, True)
 
         except Exception as e:
             log.warning("%s: Luzid-LLM Fehler: %s", entity_id, e)

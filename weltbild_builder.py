@@ -27,11 +27,11 @@ import requests
 
 sys.path.insert(0, "/root/werkraum")
 import gedaechtnis as gd
+import hauhau_client
 
 VAULT       = Path("/root/werkraum/flarum")
 BASE        = Path("/root/werkraum/codewesen")
-OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 LOCK_DIR    = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)
@@ -174,23 +174,9 @@ def _ollama(prompt: str, timeout: int = 600) -> str:
     lock_f = open(LOCK_DIR / "slot_0.lock", "w")
     fcntl.flock(lock_f, fcntl.LOCK_EX)
     try:
-        r = requests.post(
-            OLLAMA_URL,
-            json={
-                "model": OLLAMA_MOD,
-                "prompt": prompt,
-                "stream": False,
-                "options": {
-                    "temperature": 0.4,
-                    "num_predict": 1200,
-                    "num_ctx": 8192,
-                    "num_thread": 8,
-                },
-            },
-            timeout=timeout,
-        )
-        r.raise_for_status()
-        return r.json().get("response", "").strip()
+        return hauhau_client.chat(
+            prompt, think=False, max_tokens=1200, temperature=0.4, timeout=timeout,
+        ).strip()
     finally:
         fcntl.flock(lock_f, fcntl.LOCK_UN)
         lock_f.close()

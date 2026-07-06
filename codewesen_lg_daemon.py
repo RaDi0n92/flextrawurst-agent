@@ -262,33 +262,15 @@ def denk_tick_voreinzug(wesen_name: str) -> None:
         tokens = 0
 
         try:
-            resp = _req.post(
-                f"{ek.OLLAMA}/api/generate",
-                json={
-                    "model": ek.MODEL,
-                    "system": ek.SYSTEM_PROMPT,
-                    "prompt": prompt,
-                    "stream": True,
-                    "think": False,
-                    "options": {"num_ctx": 8192, "temperature": 0.85, "num_predict": 300},
-                },
-                stream=True,
-                timeout=600,
-            )
-
             buffer = ""
-            for raw_line in resp.iter_lines():
-                if not raw_line:
-                    continue
-                try:
-                    chunk_data = json.loads(raw_line)
-                except Exception:
-                    continue
-                token = chunk_data.get("response", "")
+            for token in ek.hauhau_client.chat_stream(
+                prompt, system=ek.SYSTEM_PROMPT, think=False, max_tokens=300,
+                temperature=0.85, timeout=600.0,
+            ):
                 full_text += token
                 buffer += token
                 tokens += 1
-                if len(buffer) >= 40 or chunk_data.get("done"):
+                if len(buffer) >= 40:
                     with conn.cursor() as cw:
                         cw.execute("""
                             UPDATE entity_activity
@@ -296,10 +278,18 @@ def denk_tick_voreinzug(wesen_name: str) -> None:
                             WHERE entity_id = %s
                         """, (buffer, wesen_name))
                     conn.commit()
-                    ek.notify_chunk(conn, wesen_name, buffer, done=chunk_data.get("done", False))
+                    ek.notify_chunk(conn, wesen_name, buffer, done=False)
                     buffer = ""
-                if chunk_data.get("done"):
-                    break
+
+            if buffer:
+                with conn.cursor() as cw:
+                    cw.execute("""
+                        UPDATE entity_activity
+                        SET denkstrom_buffer = denkstrom_buffer || %s, updated_at = NOW()
+                        WHERE entity_id = %s
+                    """, (buffer, wesen_name))
+                conn.commit()
+            ek.notify_chunk(conn, wesen_name, "", done=True)
 
         except Exception as e:
             log.error(f"[{wesen_name}] Ollama-Fehler (voreinzug): {e}")
@@ -424,33 +414,20 @@ def zusammenfassen_node(zustand: WesensZustand) -> dict:
     wesen_text = wesen_md.read_text(encoding="utf-8")[:400] if wesen_md.exists() else ""
 
     alle_gedanken = "\n".join(gedanken[-15:])
-    payload = json.dumps({
-        "model": ek.MODEL,
-        "messages": [
-            {"role": "system", "content": f"Du bist {name}. {wesen_text}"},
-            {"role": "user", "content": (
-                f"Deine letzten Gedanken:\n{alle_gedanken}\n\n"
-                f"Destilliere in maximal {MAX_ERINNERUNGEN} kurzen Stichpunkten "
-                "was du dir für die Zukunft merken willst. Jeder Punkt eine Zeile, kein Präfix."
-            )},
-        ],
-        "stream": False,
-        "options": {"num_ctx": 8192},
-        "think": False,
-    }).encode()
+    messages = [
+        {"role": "system", "content": f"Du bist {name}. {wesen_text}"},
+        {"role": "user", "content": (
+            f"Deine letzten Gedanken:\n{alle_gedanken}\n\n"
+            f"Destilliere in maximal {MAX_ERINNERUNGEN} kurzen Stichpunkten "
+            "was du dir für die Zukunft merken willst. Jeder Punkt eine Zeile, kein Präfix."
+        )},
+    ]
 
     log.info(f"[{name}] Zusammenfassen nach {denk_ticks} Denk-Ticks")
     lock_file = open(_LOCK_DIR / "slot_0.lock", "w")
     fcntl.flock(lock_file, fcntl.LOCK_EX)
     try:
-        req = urllib.request.Request(
-            "http://localhost:11434/api/chat",
-            data=payload,
-            headers={"Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read())
-            text = data.get("message", {}).get("content", "").strip()
+        text = ek.hauhau_client.chat(messages, think=False, timeout=120.0).strip()
         erinnerungen = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
     except Exception as e:
         log.warning(f"[{name}] Zusammenfassen fehlgeschlagen: {e}")

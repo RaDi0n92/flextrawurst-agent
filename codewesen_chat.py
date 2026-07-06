@@ -36,6 +36,9 @@ except Exception:
 
 import httpx
 import psycopg2
+
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -49,7 +52,6 @@ import codewesen_reflexion as _reflexion
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
 TOKENS      = BASE / "_api_tokens.json"
-OLLAMA_URL  = "http://localhost:11434/api/chat"
 
 _DB_URI = None
 def _get_db_uri() -> str:
@@ -64,10 +66,10 @@ def _get_db_uri() -> str:
     return _DB_URI or ""
 
 ROLLE_DB_MAP = {"mensch": "user", "codewesen": "assistant", "system": "system"}
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "hauhaucs-q6"
 MODELLE = {
-    "mittel": "gemma4:e4b-it-q4_K_M",
-    "schnell": "gemma4:e2b-it-q4_K_M",
+    "mittel": "hauhaucs-q6",
+    "schnell": "hauhaucs-q6",
 }
 
 CODEWESEN_NAMEN = [
@@ -382,14 +384,10 @@ Antworte NUR mit JSON, ohne Markdown-Wrapper:
   "naechste_schritte": ["..."]
 }}"""
 
-    with httpx.Client(timeout=httpx.Timeout(connect=120.0, read=600.0, write=30.0, pool=120.0)) as client:
-        r = client.post(
-            OLLAMA_URL,
-            json={"model": OLLAMA_MOD, "prompt": prompt, "stream": False,
-                  "options": {"temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 900, "num_ctx": 8192}},
-        )
-    r.raise_for_status()
-    raw = r.json().get("response", "").strip()
+    raw = hauhau_client.chat(
+        prompt, think=False, max_tokens=900,
+        temperature=0.82, top_p=0.9, top_k=40, timeout=600.0,
+    ).strip()
 
     bereinigt = re.sub(r"```(?:json)?\s*", "", raw).strip()
     start = bereinigt.find("{")
@@ -627,30 +625,14 @@ async def stream_ollama(
 ) -> AsyncGenerator[str, None]:
     import asyncio as _asyncio
     try:
-        if bilder:
-            messages[-1]["images"] = bilder
-        payload: dict = {
-            "model": modell, "messages": messages, "stream": True,
-            "think": False,
-            "keep_alive": "15m",
-            "options": {"temperature": 0.82, "top_p": 0.9, "top_k": 40, "repeat_penalty": 1.15, "num_predict": 400,
-                        "num_ctx": 8192, "num_batch": 512, "num_thread": 8},
-        }
-        timeout = httpx.Timeout(connect=30.0, read=600.0, write=30.0, pool=30.0)
         for versuch in range(4):
             try:
-                async with httpx.AsyncClient(timeout=timeout) as client:
-                    async with client.stream("POST", OLLAMA_URL, json=payload) as r:
-                        r.raise_for_status()
-                        async for line in r.aiter_lines():
-                            if line:
-                                try:
-                                    tok = json.loads(line).get("message", {}).get("content", "")
-                                    if tok:
-                                        yield f"data: {json.dumps({'token': tok})}\n\n"
-                                except Exception:
-                                    pass
-                        break  # Erfolg
+                async for tok in hauhau_client.achat_stream(
+                    messages, images=bilder, think=False, max_tokens=400,
+                    temperature=0.82, top_p=0.9, top_k=40, timeout=600.0,
+                ):
+                    yield f"data: {json.dumps({'token': tok})}\n\n"
+                break  # Erfolg
             except (httpx.RemoteProtocolError, httpx.ConnectError) as e:
                 if versuch < 3:
                     await _asyncio.sleep(5 * (versuch + 1))
@@ -726,9 +708,7 @@ async def chat_endpoint(name: str, anfrage: ChatAnfrage):
     modell   = MODELLE.get(anfrage.modus, OLLAMA_MOD)
     messages = baue_messages(name, verlauf, nachricht)
 
-    # Ollama für Chat freiräumen (in Thread, damit async nicht blockiert)
-    loop = asyncio.get_event_loop()
-    await loop.run_in_executor(None, _ollama_fuer_chat_freiraumen)
+    CHAT_AKTIV_FLAG.touch()
 
     gesammelt: list[str] = []
 

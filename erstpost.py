@@ -29,15 +29,17 @@ from pathlib import Path
 
 import requests
 
-# Ollama hat NUM_PARALLEL=2 — nie mehr als 2 gleichzeitige LLM-Calls
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
+# llama-server hat --parallel 2 — nie mehr als 2 gleichzeitige LLM-Calls
 _ollama_sem = threading.Semaphore(2)
 
 import gedaechtnis
 from flarum_api import get_tags, post_reply, start_discussion
 
 BASE        = Path("/root/werkraum/codewesen")
-OLLAMA_URL  = "http://localhost:11434/api/generate"
-OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MOD  = "hauhaucs-q6"
 TOKENS_FILE = BASE / "_api_tokens.json"
 
 ALLE_NAMEN = [
@@ -60,15 +62,9 @@ def load_wesen_md(name: str) -> str:
 
 def _llm_call(prompt: str, temperature: float, num_predict: int) -> str:
     with _ollama_sem:
-        r = requests.post(
-            OLLAMA_URL,
-            json={"model": OLLAMA_MOD, "prompt": prompt, "stream": False,
-                  "options": {"temperature": temperature, "num_predict": num_predict,
-                              "num_thread": 8}},
-            timeout=600,
-        )
-    r.raise_for_status()
-    return r.json().get("response", "").strip()
+        return hauhau_client.chat(
+            prompt, think=False, max_tokens=num_predict, temperature=temperature, timeout=600.0,
+        ).strip()
 
 
 def _ist_vollstaendig(text: str) -> bool:

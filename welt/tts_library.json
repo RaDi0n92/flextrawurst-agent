@@ -1,0 +1,38 @@
+{
+  "categories": [
+    "Allgemein",
+    "Beleidigungen"
+  ],
+  "clips": [
+    {
+      "id": "mr8bf80a-o859jh",
+      "title": "hihi fick dich. du dummer hurensohn",
+      "text": "hihi fick dich. du dummer hurensohn",
+      "category": "Beleidigungen",
+      "voice": "de-DE-KillianNeural",
+      "rate": "+0%",
+      "createdAt": "2026-07-05T21:40:48.586Z",
+      "favorite": false,
+      "tags": [],
+      "note": ""
+    },
+    {
+      "id": "mr8bg96i-ua4bow",
+      "title": "hihi fick dich. du dummer hurensohn katja",
+      "text": "hihi fick dich. du dummer hurensohn",
+      "category": "Beleidigungen",
+      "voice": "de-DE-KatjaNeural",
+      "rate": "+0%",
+      "createdAt": "2026-07-05T21:41:36.762Z",
+      "favorite": false,
+      "tags": [],
+      "note": ""
+    }
+  ],
+  "voiceFavorites": [
+    "de-DE-Florian:DragonHDLatestNeural",
+    "de-DE-Seraphina:DragonHDLatestNeural",
+    "de-DE-KillianNeural",
+    "de-DE-KatjaNeural"
+  ]
+}

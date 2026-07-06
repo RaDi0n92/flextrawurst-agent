@@ -1,278 +1,166 @@
 ---
-titel: Ollama, gemma4 & LLM-Infrastruktur
+titel: LLM-Infrastruktur — hauhaucs-q6 auf llama-server
 typ: technik
 erstellt: 2026-05-26
+aktualisiert: 2026-07-06
 autor: claude-code bei Daniels VPS
 ---
 
-# Ollama, gemma4 & LLM-Infrastruktur
+# LLM-Infrastruktur — hauhaucs-q6 auf llama-server
 
 [[INDEX|← Index]]
 
 *CPU-only. Kein GPU. Alles lokal. Diese Datei ist kritisch — die Regeln hier betreffen die Stabilität des gesamten Systems.*
 
+**Vollständig überarbeitet am 2026-07-06** — ersetzt die vorige Version (gemma4 +
+Ollama als geteilter Single-Slot). gemma4 wurde komplett aus dem System entfernt
+(siehe `docs/hauhaucs_migration_bericht.md` für die volle Historie). Server
+wurde von 8 Kernen/32GB auf 16 Kerne/62GB RAM hochgestuft.
+
 ---
 
 ## Überblick
 
-```bash
-$ ollama list
-NAME                                                                         SIZE
-gemma4:e2b-it-q4_K_M                                                        7.2 GB
-gemma4:e4b-it-q4_K_M                                                        9.6 GB
-dolphin-mistral:7b                                                           4.1 GB
-fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS        ~22 GB
-hauhaucs-tuned:latest                                                        ~22 GB
-```
+Zwei getrennte Backends, zwei getrennte Zwecke:
 
-**Modelle, alle lokal, CPU-only:**
+| Backend | Port | Modell(e) | Verwendung |
+|---------|------|-----------|------------|
+| `llama-hauhaucs.service` | 11435 | hauhaucs-q6 (Qwen3.6-35B-A3B, Q6_K_P, Vision via mmproj) | Hauptmodell für ALLE Wesen/Codewesen/GENI/dak+gord/zensi/dolphin |
+| `ollama.service` | 11434 | `dolphin-mistral:7b` (Freier Modus), kleines Vision-Modell (4,5B) | Zwei eigenständige Spezialzwecke, siehe unten |
 
-| Modell | Größe | Parameter | Verwendung |
-|--------|-------|-----------|------------|
-| `gemma4:e2b-it-q4_K_M` | 7.2 GB | ~2B | Standard für alle Wesen-Systeme |
-| `gemma4:e4b-it-q4_K_M` | 9.6 GB | ~4B | Tiefere Analyse, selten genutzt |
-| `dolphin-mistral:7b` | 4.1 GB | 7B | "Freier Modus" dak+gord (uncensored) |
-| `fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS` | ~22 GB | 35B | Dolphin Mischpult (hauhaucs original) |
-| `hauhaucs-tuned:latest` | ~22 GB | 35B | Dolphin Mischpult (mit Modelfile-Overrides) |
+**gemma4 existiert nicht mehr im System.** Jeder frühere gemma4-Aufruf läuft
+jetzt über `hauhau_client.py` (Python) bzw. `hauhau_client.ts` (Node/TypeScript)
+gegen Port 11435.
 
 ---
 
-## Kritische Regeln — NICHT ABWEICHEN
+## Warum llama-server statt Ollama fürs Hauptmodell
 
-### Goldene Regel: num_ctx=8192 ÜBERALL
+Ollama hat einen bestätigten, offenen Bug beim Laden von selbst-importierten
+GGUF+mmproj-Kombinationen für die `qwen35moe`-Architektur (unser Hauptmodell):
+`unknown model architecture: 'qwen35moe'`. Mit llama-server (derselbe
+zugrundeliegende Code, ohne Ollamas Verwaltungsschicht) funktioniert exakt
+dieselbe Kombination. Kein Workaround — die einzig funktionierende Lösung für
+Q6-Qualität + Vision gemeinsam.
 
-```python
-# RICHTIG:
-payload = {
-    "model": "gemma4:e2b-it-q4_K_M",
-    "prompt": "...",
-    "options": {"num_ctx": 8192, "think": False},
-    "stream": True,
-}
-
-# FALSCH — löst Model-Reload aus:
-payload = {
-    "model": "gemma4:e2b-it-q4_K_M",
-    "prompt": "...",
-    "options": {"num_ctx": 4096},   # ← ANDERER WERT!
-}
-```
-
-**Warum:** Jede Abweichung von num_ctx löst einen Model-Reload aus — **~2 Minuten Wartezeit**. Alle anderen Prozesse warten in dieser Zeit. Das betrifft 6 Reaktions-Services, dak+gord, weltbild_builder, jeden Skript-Aufruf.
-
-### think=False bei gemma4 — PFLICHT
-
-```python
-# gemma4 hat eingebautes "Thinking" — muss explizit deaktiviert werden:
-"options": {"think": False}
-
-# Mit think=True: langer interner Monolog vor jeder Antwort → stark verlangsamt
-```
-
-### OLLAMA_NUM_PARALLEL=1 & OLLAMA_MAX_LOADED_MODELS=1
-
-```bash
-# In /etc/systemd/system/ollama.service:
-Environment=OLLAMA_NUM_PARALLEL=1
-Environment=OLLAMA_MAX_LOADED_MODELS=1
-Environment=OLLAMA_NUM_CTX=8192
-```
-
-Nur ein Modell gleichzeitig im RAM. Nur eine parallele Anfrage. Das ist kein Fehler — es ist eine Entscheidung für Stabilität auf einem 32GB-RAM, 8-Kern, CPU-only-System.
+Zusätzliche Vorteile gegenüber Ollama für ein dauerhaft genutztes Hauptmodell:
+kein Reload-Overhead (Ollama entlädt nach `keep_alive`-Ablauf), direkte
+Kontrolle über Threads/CPU-Zuweisung/mlock.
 
 ---
 
-## Ollama-Service
+## llama-hauhaucs.service — Konfiguration
 
-```
-Service:  ollama.service (AKTIV)
-Port:     11434 (localhost)
-Logs:     journalctl -u ollama -n 50
+```ini
+ExecStart=/usr/local/bin/llama-server \
+  --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
+  --mmproj .../mmproj-f16.gguf \
+  --alias hauhaucs-q6 \
+  --ctx-size 12345 \
+  --threads 10 \
+  --host 127.0.0.1 --port 11435 \
+  --parallel 2 \
+  --flash-attn on \
+  --mlock \
+  --cpu-range 0-9 --cpu-range-batch 0-9 --cpu-strict 1
+
+[Service]
+AllowedCPUs=0-9
 ```
 
-**RAM-Bedarf:**
-- gemma4:e2b (7.2 GB) braucht ~8-10 GB RAM während der Inferenz
-- System hat 32 GB → mehrere Services können gleichzeitig laufen
-- ABER: Modell-Reload = teuer → deshalb OLLAMA_MAX_LOADED_MODELS=1
+### Kritische Werte — Begründung, NICHT ohne Rücksprache ändern
+
+**`--mlock`**: Verhindert, dass die Modellgewichte unter Speicherdruck aus
+dem Page-Cache verdrängt werden. Ohne mlock brach die Geschwindigkeit unter
+Hintergrundlast von 14 tok/s auf 3-5 tok/s ein (gemessen 2026-07-06) —
+mit mlock blieb sie stabil bei 6-7 tok/s über eine ganze Generierung.
+
+**`AllowedCPUs=0-9`** (Cgroup, nicht `--cpu-range` allein — das griff nicht
+zuverlässig): Isoliert 10 von 16 Kernen für llama-server, Rest bleibt für
+Ollama/Wesen-Prozesse/System. Trade-off bewusst gewählt: garantierte,
+niedrigere Geschwindigkeit (~4 tok/s stabil) statt schwankender höherer
+Spitzenwerte ohne Isolierung.
+
+**`--ctx-size 12345 --parallel 2`**: ⚠️ **Wichtige Einschränkung** — llama-server
+teilt die Kontextgröße durch die Parallel-Slots: jeder der 2 Slots bekommt nur
+~6400 Token, nicht die vollen 12345. Ein Gesprächsverlauf über ~6400 Token
+schlägt fehl (`exceed_context_size_error`). **Stand 2026-07-06 noch nicht
+gelöst** — Entscheidung zwischen höherem `--ctx-size` (mehr RAM) oder
+`--parallel 1` (volle Kontextgröße, keine Gleichzeitigkeit) steht noch aus.
+
+**`--threads 10`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
+kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
+nur Konkurrenz mit anderen Prozessen.
 
 ---
 
-## Ollama-Koordination zwischen Services
+## hauhau_client.py / hauhau_client.ts
 
-Das Problem: 7 Services wollen gleichzeitig Ollama nutzen.
+Zentrale Client-Module, ersetzen JEDEN direkten Ollama/llama-server-HTTP-Aufruf
+im System:
 
-**Lösung: File-basiertes Semaphor**
+- `/root/werkraum/hauhau_client.py` — für alle Python-Skripte (Codewesen, GENI,
+  welt/-System, innenleben, zensi)
+- `/root/flextrawurst/scripts/hauhau_client.ts` — für Node/TypeScript
+  (dolphin/serve_process_camera_preview.ts)
 
-```python
-LOCK_DIR  = Path("/tmp/ollama_locks")
-CHAT_FLAG = Path("/tmp/dak_gord_chat_aktiv")
+**Funktionen (beide Sprachen äquivalent)**: `chat()` (nicht-streamend),
+`chat_stream()`/`chatStream()` (streamend), `chat_raw()`/`chatRaw()` (volle
+Response für Tool-Calling). `think=False` per Default (steuert Thinking über
+`chat_template_kwargs.enable_thinking`, funktioniert pro Request). `images=`
+Parameter konvertiert rohe Base64-Strings automatisch ins OpenAI
+`image_url`-Content-Part-Format.
 
-# Vor jedem Ollama-Call:
-# 1. Prüfen: Existiert CHAT_FLAG? → warten (Daniel im Chat)
-# 2. Lock-Datei anlegen: /tmp/ollama_locks/<wesen-name>.lock
-# 3. Ollama aufrufen
-# 4. Lock-Datei entfernen
-
-class OllamaSlot:
-    def __enter__(self):
-        while CHAT_FLAG.exists():
-            time.sleep(2)           # Chat hat Vorrang
-        self.lock = LOCK_DIR / f"{self.wesen}.lock"
-        self.lock.touch()
-        return self
-
-    def __exit__(self, *_):
-        self.lock.unlink(missing_ok=True)
-```
-
-**Prioritäten:**
-1. **Höchste:** dak+gord im direkten Chat mit Daniel (CHAT_FLAG)
-2. **Mittel:** Codewesen Inbox-Reaktion (sobald Slot frei)
-3. **Niedrigste:** Batch-Generator, weltbild_builder (läuft wenn sonst nichts läuft)
+**Alle bisherigen Koordinationsmechanismen blieben unverändert**: `fcntl`-Locks
+(`/tmp/ollama_locks/slot_0.lock`), `CHAT_AKTIV_FLAG`-Warteschleifen
+(`/tmp/dak_gord_chat_aktiv`) — die regeln weiterhin wer zuerst dran ist, nur
+der eigentliche HTTP-Call dahinter wurde ausgetauscht.
 
 ---
 
-## Performance-Daten
+## Was weiterhin auf Ollama (Port 11434) läuft — bewusst, kein Aufräumfall
 
-| Aufgabe | Modell | Dauer (ca.) |
-|---------|--------|-------------|
-| Kurze Antwort (100 Token) | gemma4:e2b | 5–15s |
-| Mittlere Antwort (500 Token) | gemma4:e2b | 30–60s |
-| Lange Analyse (2000 Token) | gemma4:e2b | 2–5min |
-| Model-Reload | — | ~2min |
-| Weltbild destillieren (1 Wesen) | gemma4:e2b | 3–8min |
-| Batch-Entwurf generieren | gemma4:e2b | 1–3min |
+### dolphin-mistral:7b — "Freier Modus"
 
-**CPU-Only-Faktor:** gemma4:e2b auf CPU ist ~10-20× langsamer als auf GPU. Das ist die Grundlage aller Timing-Entscheidungen.
+Eigenständiges, bereits unzensiertes Modell für einen separaten Zweck
+(`/frei`-Befehl in dak+gord, `agent/dak_gord_system/freier_modus.py`) —
+keine gemma4-Altlast, absichtlich nicht migriert.
 
----
+### Kleines Vision-Modell (4,5B) — Bild-Beschreibung
 
-## Modell-Details
+`fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` in
+`serve_process_camera_preview.ts`. Bewusste, dokumentierte
+Architektur-Entscheidung: das 35B-Hauptmodell brauchte auf reiner CPU über
+3 Minuten für ein Bild (nie zu Ende getestet), das kleine Modell schafft
+dieselbe Beschreibung in ~14 Sekunden. Zwei-Schritt-Pipeline: kleines Modell
+beschreibt das Bild als Text, das Hauptmodell bekommt nur den Text, nie die
+Rohbilddaten.
 
-### gemma4:e2b-it-q4_K_M
-
-```
-Full name:    google/gemma-4-2b-it (instruction-tuned)
-Quantization: Q4_K_M (4-bit, mittlere Qualität)
-Größe:        7.2 GB (quantisiert von ~10 GB)
-Parameter:    2 Milliarden
-Sprache:      Mehrsprachig, gut in Deutsch
-Stärken:      Schnell, gut für Dialog, Anweisungen
-Schwächen:    Weniger tiefe Analyse als größere Modelle
-```
-
-### gemma4:e4b-it-q4_K_M
-
-```
-Full name:    google/gemma-4-4b-it (instruction-tuned)
-Quantization: Q4_K_M
-Größe:        9.6 GB
-Parameter:    4 Milliarden
-Verwendung:   Wenn mehr Tiefe nötig (selten genutzt)
-```
-
-### dolphin-mistral:7b
-
-```
-Modell-Basis: Mistral 7B
-Finetuning:   dolphin (uncensored, Ehartful finetune)
-Größe:        4.1 GB
-Verwendung:   dak+gord "Freier Modus" — keine Einschränkungen
-Wichtig:      Kein Verfassungs-Kontext notwendig
-```
-
-### hauhaucs / Qwen3.6-35B (Dolphin Mischpult)
-
-```
-Full name:    fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:IQ4_XS
-Basis:        Qwen3.6 35B MoE, IQ4_XS quantisiert
-Finetuning:   HauhauCS Aggressive (uncensored)
-Größe:        ~22 GB
-Verwendung:   Dolphin Mischpult (Port 8787/dolphin)
-think:        false — PFLICHT per Request (nicht im Modelfile)
-```
-
-```
-Full name:    hauhaucs-tuned:latest (Modelfile-Override)
-Basis:        FROM hauhaucs original
-Overrides:    num_thread=5, num_ctx=8192, num_batch=128
-Verwendung:   Dolphin Mischpult (per Dropdown wählbar)
-Wichtig:      think=false muss trotzdem per Request gesendet werden
-```
-
-**Besonderheit hauhaucs:** Dieses Modell ist erheblich größer (35B vs. 2B) — Generierung dauert entsprechend länger auf CPU. Kein Modell-Reload-Problem solange num_ctx=8192 konstant bleibt. Das Dolphin Mischpult setzt num_ctx=8192 serverseitig immer fix.
+Der frühere Mechanismus, der nach jedem Bild-Upload das Hauptmodell für 90s
+als "lädt neu" markierte (weil beide sich früher einen Ollama-Slot teilten),
+wurde entfernt — seit das Hauptmodell auf llama-server läuft, gibt es diese
+gegenseitige Verdrängung nicht mehr.
 
 ---
 
-## Ollama-API (interne Nutzung)
+## Performance-Daten (gemessen 2026-07-06, hauhaucs-q6 auf llama-server)
 
-```python
-OLLAMA_URL = "http://localhost:11434/api/generate"
+| Szenario | Geschwindigkeit |
+|---|---|
+| Einzelne Anfrage, ohne Hintergrundlast, ohne mlock | ~14 tok/s (Start), bricht unter Last auf 3-5 tok/s ein |
+| Einzelne Anfrage, mit `--mlock` | stabil 6-7 tok/s über eine ganze Generierung |
+| Mit `AllowedCPUs=0-9` (Kernisolierung) | stabil ~4 tok/s (niedriger, aber garantiert) |
+| Referenz Consumer-Hardware (Ryzen, gleiche Modellklasse) | 12-15 tok/s |
 
-# Standard-Payload:
-payload = {
-    "model": "gemma4:e2b-it-q4_K_M",
-    "prompt": system_text + "\n\n" + user_input,
-    "options": {
-        "num_ctx": 8192,
-        "think": False,
-        "temperature": 0.7,
-        "top_p": 0.9,
-    },
-    "stream": True,   # SSE-Streaming
-}
-
-# Streaming-Response:
-response = requests.post(OLLAMA_URL, json=payload, stream=True)
-for chunk in response.iter_lines():
-    data = json.loads(chunk)
-    token = data.get("response", "")
-    # Token an Browser weiterleiten (SSE)
-```
+CPU-only-Faktor bleibt: 35B-A3B-MoE auf reiner CPU ist deutlich langsamer als
+auf GPU — das ist die Grundlage aller Timing-Entscheidungen im System.
 
 ---
 
-## Kontext-Aufbau pro System
+## Migrations-Historie
 
-### dak+gord
-
-```
-Verfassung (verfassung_neu/*.md):     ~3000 Token
-Organ-Status (kurzbild):              ~200 Token
-Neugier-Spuren (werkraum_neugier.md): ~500 Token
-Vision-Kern (vision5.md Auszug):      ~600 Token
-Chat-Verlauf (letzte 33 Nachrichten): ~2000 Token
-Aktuelle Frage:                       variabel
-Gesamt:                               ~6500 Token → passt in 8192
-```
-
-### Codewesen (Reaktion)
-
-```
-weltbild.md:                          ~800 Token
-Eigene Gedanken (aktuell):            ~400 Token
-Inbox-Inhalt (Event):                 ~300 Token
-Forum-Kontext (relevante Posts):      ~1000 Token
-Gesamt:                               ~2500 Token → weit unter 8192
-```
-
-### weltbild_builder
-
-```
-Flarum-Vault Extrakt (relevante Diskussionen): ~5000 Token
-Altes weltbild.md:                             ~800 Token
-Gesamt:                                        ~6000 Token → knapp in 8192
-```
-
----
-
-## Warum kein größeres Modell?
-
-- 32 GB RAM ist die Grenze
-- gemma4:e4b (9.6 GB) läuft, aber langsamer
-- dolphin-mistral:7b (4.1 GB) ist schneller aber unkritisch für Qualität
-- Ein 70B-Modell würde >40 GB RAM brauchen → nicht möglich
-- GPU wäre Option aber: VPS hat keine GPU-Unterstützung
+Vollständiger Bericht mit allen migrierten Dateien: `docs/hauhaucs_migration_bericht.md`.
+Kurzdokumentation pro migrierter Datei: `_claude/konzepte/*.md`.
 
 ---
 

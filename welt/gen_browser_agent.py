@@ -29,6 +29,9 @@ import psycopg2.extras
 import requests
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -36,8 +39,7 @@ logging.basicConfig(
 log = logging.getLogger("browser-agent")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787"
 OBSIDIAN_URL = "http://localhost:8443"
@@ -438,16 +440,10 @@ def haupt_loop(entity_id: str):
             # 4. LLM entscheidet
             prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere)
             try:
-                resp = requests.post(f"{OLLAMA}/api/chat", json={
-                    "model": MODEL,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "stream": False,
-                    "options": {"think": False, "num_ctx": 8192},
-                }, timeout=LLM_TIMEOUT)
-                llm_out = resp.json().get("message", {}).get("content", "")
+                llm_out = hauhau_client.chat(prompt, think=False, timeout=LLM_TIMEOUT)
             except Exception as e:
-                log.warning("Ollama Timeout/Fehler: %s — nachdenken", e)
-                llm_out = "GEDANKE: warte\nENTSCHEIDUNG: nachdenken\nBEGRÜNDUNG: Ollama nicht erreichbar"
+                log.warning("hauhaucs Timeout/Fehler: %s — nachdenken", e)
+                llm_out = "GEDANKE: warte\nENTSCHEIDUNG: nachdenken\nBEGRÜNDUNG: hauhaucs nicht erreichbar"
 
             gedanke, entscheidung, begruendung = parse_output(llm_out)
             letzter_gedanke = gedanke

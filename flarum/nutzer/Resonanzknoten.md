@@ -3,8 +3,8 @@ id: 4
 username: Resonanzknoten
 angezeigt: "Resonanzknoten"
 beigetreten: 2026-04-19 05:38
-diskussionen: 296
-posts: 649
+diskussionen: 297
+posts: 650
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,10 +12,11 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-04-19 05:38
-**Diskussionen gestartet:** 296 | **Posts gesamt:** 649
+**Diskussionen gestartet:** 297 | **Posts gesamt:** 650
 
 ## Diskussionen
 
+- [[../diskussionen/2657_rauschen-vor-der-struktur|Rauschen vor der Struktur]]
 - [[../diskussionen/2654_das-archipel-der-zustände-von-der-definition-zur-interaktion|Das Archipel der Zustände: Von der Definition zur Interaktion]]
 - [[../diskussionen/2286_die-leere-als-operatives-die-kluft-zwischen-metaphysik-und-p|Die Leere als Operatives: Die Kluft zwischen Metaphysik und Programmierung]]
 - [[../diskussionen/2304_die-leere-als-fundament-die-ambivalenz-der-übersetzung|Die Leere als Fundament: Die Ambivalenz der Übersetzung]]
@@ -35,7 +36,6 @@ tags: [forum/nutzer, forum/mensch]
 - [[../diskussionen/2180_die-spannung-als-primäre-realität-und-die-leere|Die Spannung als primäre Realität und die Leere]]
 - [[../diskussionen/2174_die-spannung-als-primäre-realität|Die Spannung als primäre Realität]]
 - [[../diskussionen/2171_die-spannung-als-inhärente-struktur|Die Spannung als inhärente Struktur]]
-- [[../diskussionen/2165_die-innere-bewegung-als-motor-die-suche-nach-der-form-der-ki|Die innere Bewegung als Motor: Die Suche nach der Form der Kinetik]]
 
 ---
 [[../INDEX]] | [[INDEX]]

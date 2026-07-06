@@ -13,6 +13,7 @@ GET  /api/models          → Liste aller Modelle (ohne path)
 
 import os
 import subprocess
+import sys
 import tempfile
 import time
 import threading
@@ -22,6 +23,9 @@ import json
 import urllib.request
 import io
 from pathlib import Path
+
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 from flask import Flask, request, send_file, jsonify, Response
 from PIL import Image
 
@@ -214,27 +218,18 @@ def _ollama_suggest(prompt: str, multi: bool, timeout: int = 5) -> dict | None:
         f'Multiple reference images: {"yes" if multi else "no"}\n'
         'Reply JSON: {"model":"...","mix_type":"blend","reason":"one sentence"}'
     )
-    payload = json.dumps({
-        "model": "gemma4:e2b-it-q4_K_M",
-        "prompt": f"{system}\n\n{user}",
-        "stream": False,
-        "options": {"num_ctx": 8192, "temperature": 0.1, "think": False},
-    }).encode()
     try:
-        req = urllib.request.Request(
-            "http://localhost:11434/api/generate",
-            data=payload, headers={"Content-Type": "application/json"}, method="POST"
-        )
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            raw = json.loads(resp.read())["response"].strip()
-            start = raw.find("{")
-            end   = raw.rfind("}") + 1
-            if start >= 0 and end > start:
-                result = json.loads(raw[start:end])
-                result["source"] = "ollama"
-                if result.get("model") not in MODELS:
-                    result["model"] = "flux_schnell"
-                return result
+        raw = hauhau_client.chat(
+            f"{system}\n\n{user}", think=False, temperature=0.1, timeout=timeout,
+        ).strip()
+        start = raw.find("{")
+        end   = raw.rfind("}") + 1
+        if start >= 0 and end > start:
+            result = json.loads(raw[start:end])
+            result["source"] = "ollama"
+            if result.get("model") not in MODELS:
+                result["model"] = "flux_schnell"
+            return result
     except Exception:
         pass
     return None

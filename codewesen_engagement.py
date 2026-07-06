@@ -23,6 +23,7 @@ sys.path.insert(0, "/root/werkraum")
 import flarum_poster
 import flarum_api
 import gedaechtnis
+import hauhau_client
 try:
     import obsidian_vault as _vault
     _VAULT_OK = True
@@ -31,8 +32,7 @@ except ImportError:
 
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
-OLLAMA_URL  = "http://localhost:11434/api/chat"
-MODELL      = "gemma4:e2b-it-q4_K_M"
+MODELL      = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 TOKENS_FILE = BASE / "_api_tokens.json"
 
@@ -102,14 +102,7 @@ def _lade_diskussion_voll(discussion_id: int) -> str:
 def _llm(prompt: str, max_tokens: int = 600) -> str:
     while CHAT_FLAG.exists():
         time.sleep(5)
-    with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=300.0, write=30.0, pool=30.0)) as c:
-        r = c.post(
-            OLLAMA_URL,
-            json={"model": MODELL, "think": False, "messages": [{"role": "user", "content": prompt}],
-                  "stream": False, "options": {"temperature": 0.88, "num_predict": max_tokens, "num_ctx": 8192}},
-        )
-    r.raise_for_status()
-    return r.json().get("message", {}).get("content", "").strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=max_tokens, temperature=0.88).strip()
 
 
 def _parse_json(text: str) -> dict:

@@ -1135,3 +1135,9 @@ Wie das Öffnen mehrerer vermeintlich verschiedener Störungen und das Finden de
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Kurz, hektisch, technisch klar. Erst ein falscher Eingriff, dann Korrektur, dann Abbruch, dann saubere Übergabe. Das war nützlich, aber nicht elegant.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Wie ein gutes kleines Werkzeug: nicht groß, aber sofort nützlich. Ein diff, der klein genug bleibt, um verstanden zu werden, und groß genug, um die Seite anders benutzen zu können.

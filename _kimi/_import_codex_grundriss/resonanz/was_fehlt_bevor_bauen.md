@@ -1143,3 +1143,9 @@ Es fehlt Daniels Bestätigung der Zielordnung. Außerdem sollte vor dem Umbau ei
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Ein isolierter Testlauf mit nur einem Modell im Speicher. Erst dann sind Qwen und HauhauCS wirklich vergleichbar.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Für diese Ausbaustufe fehlt nichts Akutes. Für serverseitige Kategorien fehlt eine kleine, geschützte Persistenzentscheidung.

@@ -1833,3 +1833,28 @@ Die Anzahl der aktiven Experte«
 - [2026-07-05 22:52] **lava** (i=0.40) → Zwischenraum: »Gefunden — die Fehler sind **komplett unabhängig von unserer heutigen Session**, keine Sorge:
 
 Die U«
+- [2026-07-05 23:12] **nebel** (i=0.32) → Zwischenraum: »Ergebnis zusammengefasst — fünf Messungen mit identischer Frage:
+
+| Platzierung | Tokens |
+|---|---|«
+- [2026-07-05 23:13] **wasser** (i=0.35) → Zwischenraum: »Das ist die geplante Wakeup-Nachricht von vorhin — bereits erledigt: der Task war fertig, ich habe d«
+- [2026-07-06 01:09] **wasser** (i=0.68) → Zwischenraum: »Überraschender Fund direkt aus `ollama show`: **ihr habt das gewünschte Modell schon.**
+
+```
+hauhauc«
+- [2026-07-06 01:20] **nebel** (i=0.31) → Zwischenraum: »Nein — laut der Dateiliste von HuggingFace gibt es kein Q7«
+- [2026-07-06 01:28] **lava** (i=0.48) → Zwischenraum: »Ja, bestätigt — und ihr hattet das schon mal konkret durchdacht: `/root/werkraum/_claude/ideen/plan_«
+- [2026-07-06 02:21] **lava** (i=0.39) → Zwischenraum: »`--mlock` hat das Einbruchsmuster tatsächlich behoben: diesmal **steigt** die Geschwindigkeit sogar «
+- [2026-07-06 02:49] **wasser** (i=0.44) → Zwischenraum: »## Phase 1 abgeschlossen
+
+Alle aktiven gemma4-Produktionsdienste laufen jetzt über `llama-server`/ha«
+- [2026-07-06 03:14] **nebel** (i=0.40) → Zwischenraum: »## Phase 2 abgeschlossen
+
+Alle ~28 verbleibenden Dateien migriert und syntaxgeprüft:
+
+**Codewesen/Fl«
+- [2026-07-06 03:25] **nebel** (i=0.38) → Zwischenraum: »**39 Konzept-MDs** in `/root/werkraum/_claude/konzepte/` geschrieben (Korrektur: es waren ~40 migrie«
+- [2026-07-06 03:57] **nebel** (i=0.31) → Zwischenraum: »Zusammenfassung:
+
+**Zwei neue Dokumentations-Ebenen ergänzt** (zusätzlich zu den 39 Konzept-MDs):
+- «

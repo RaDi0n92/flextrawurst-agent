@@ -26,6 +26,9 @@ import psycopg2.extras
 import requests
 from playwright.sync_api import sync_playwright
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -33,8 +36,7 @@ logging.basicConfig(
 log = logging.getLogger("browser-agent")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e2b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
 OBSIDIAN_URL = "http://localhost:8787/werkraum"  # Werkraum-Dateien via Surface-Server
@@ -449,13 +451,7 @@ def _schreibe_flarum_brief(conn, entity_id: str):
             f"Was nimmst du mit? Was lässt du zurück? Was war wirklich?\n"
             f"Direkt. Persönlich. Nicht schön. Ehrlich."
         )
-        resp = requests.post(f"{OLLAMA}/api/chat", json={
-            "model": MODEL,
-            "messages": [{"role": "user", "content": prompt}],
-            "stream": False,
-            "options": {"think": False, "num_ctx": 8192},
-        }, timeout=120)
-        brief_inhalt = resp.json().get("message", {}).get("content", "")
+        brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
 
@@ -501,13 +497,7 @@ def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
             f"Was trägst du aus diesem Schlaf mit? Was soll die nächste Version von dir wissen? "
             f"Direkt, persönlich, kein Ratgeber-Ton."
         )
-        resp = requests.post(f"{OLLAMA}/api/chat", json={
-            "model": MODEL,
-            "messages": [{"role": "user", "content": prompt}],
-            "stream": False,
-            "options": {"think": False, "num_ctx": 8192},
-        }, timeout=120)
-        brief_inhalt = resp.json().get("message", {}).get("content", "")
+        brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
         with conn.cursor() as cur:
@@ -688,36 +678,33 @@ def haupt_loop(entity_id: str):
             stream_id = str(_uuid.uuid4())
             llm_out = ""
             try:
-                stream_resp = requests.post(f"{OLLAMA}/api/chat", json={
-                    "model": MODEL,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "stream": True,
-                    "options": {"think": False, "num_ctx": 8192},
-                }, timeout=LLM_TIMEOUT, stream=True)
                 seq = 0
-                for line in stream_resp.iter_lines():
-                    if not line or not _laufend:
+                for chunk in hauhau_client.chat_stream(prompt, think=False, timeout=LLM_TIMEOUT):
+                    if not _laufend:
                         break
+                    llm_out += chunk
+                    # Live-Chunk in DB schreiben → NOTIFY → SSE
                     try:
-                        d = json.loads(line)
-                        chunk = d.get("message", {}).get("content", "")
-                        if chunk:
-                            llm_out += chunk
-                            done = d.get("done", False)
-                            # Live-Chunk in DB schreiben → NOTIFY → SSE
-                            try:
-                                with conn.cursor() as _c:
-                                    _c.execute("""
-                                        INSERT INTO entity_denkstream
-                                            (entity_id, stream_id, chunk, seq, done, url)
-                                        VALUES (%s, %s, %s, %s, %s, %s)
-                                    """, (entity_id, stream_id, chunk, seq, done, seite["url"]))
-                                conn.commit()
-                            except Exception:
-                                pass
-                            seq += 1
+                        with conn.cursor() as _c:
+                            _c.execute("""
+                                INSERT INTO entity_denkstream
+                                    (entity_id, stream_id, chunk, seq, done, url)
+                                VALUES (%s, %s, %s, %s, %s, %s)
+                            """, (entity_id, stream_id, chunk, seq, False, seite["url"]))
+                        conn.commit()
                     except Exception:
                         pass
+                    seq += 1
+                try:
+                    with conn.cursor() as _c:
+                        _c.execute("""
+                            INSERT INTO entity_denkstream
+                                (entity_id, stream_id, chunk, seq, done, url)
+                            VALUES (%s, %s, %s, %s, %s, %s)
+                        """, (entity_id, stream_id, "", seq, True, seite["url"]))
+                    conn.commit()
+                except Exception:
+                    pass
             except Exception as e:
                 log.warning("Ollama Streaming-Fehler: %s — nachdenken", e)
                 llm_out = "GEDANKE: warte\nENTSCHEIDUNG: nachdenken\nBEGRÜNDUNG: Ollama nicht erreichbar"

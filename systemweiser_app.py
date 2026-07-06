@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
 SystemWeiser — Standalone Web-App
-Laeuft auf Port 8080, nutzt Ollama lokal (gemma4:e2b-it-q4_K_M) und Bridge-API.
+Laeuft auf Port 8080, nutzt hauhaucs-q6 (llama-server) und Bridge-API.
 """
 
 import json
 import re
+import sys
 import time
 import base64
 import os
@@ -17,11 +18,13 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 import uvicorn
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 app = FastAPI(title="SystemWeiser", version="1.0.0")
 
 # ===== CONSTANTS =====
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"
+OLLAMA_MODEL = "hauhaucs-q6"
 
 SKILLS = {
     "mcp_tooling": "Werkzeugkasten (MCP Tooling) — Externe Tools als installierbare Superkraefte",
@@ -118,21 +121,10 @@ def _auth_headers(api_key: str) -> dict:
 
 # ===== OLLAMA =====
 def ollama_generate(prompt: str, temperature: float = 0.3, json_format: bool = False) -> str:
-    payload = {
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "options": {"temperature": temperature},
-    }
-    if json_format:
-        payload["format"] = "json"
     try:
-        resp = requests.post(OLLAMA_URL, json=payload, timeout=120)
-        if resp.status_code == 200:
-            return resp.json().get("response", "")
-        return f"Ollama-Fehler: {resp.status_code}"
+        return hauhau_client.chat(prompt, think=False, temperature=temperature, timeout=120.0)
     except Exception as e:
-        return f"Ollama nicht erreichbar: {e}"
+        return f"hauhaucs nicht erreichbar: {e}"
 
 
 # ===== KONTEXT LADEN =====

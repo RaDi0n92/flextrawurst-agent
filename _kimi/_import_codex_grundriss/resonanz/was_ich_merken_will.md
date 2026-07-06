@@ -1168,3 +1168,9 @@ Ein Public-Export muss auf einer Allowlist beruhen, nicht auf der Hoffnung, dass
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Der Briefkasten ist nicht der Ort für technische Übergaben.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+`/voices` liefert jetzt alle Stimmen. Deutsch wird in der UI nur nach oben sortiert, nicht mehr als einzige Welt behauptet.

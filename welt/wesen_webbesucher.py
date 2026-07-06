@@ -19,6 +19,9 @@ import psycopg2
 import psycopg2.extras
 import requests
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [webbesucher] %(levelname)s %(message)s",
@@ -31,8 +34,6 @@ log = logging.getLogger("webbesucher")
 
 _env_file = Path("/root/werkraum/.agent/flextrawurst-db.env")
 DB_URI = ""
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "gemma4:e2b-it-q4_K_M"
 POLL_INTERVAL = 30
 
 
@@ -97,15 +98,10 @@ Was du auf der Seite gesehen hast (Auszug):
 
 Schreibe deine ehrliche Reaktion auf das Gesehene. 2-4 Sätze. Ich-Form. Keine Zusammenfassung — deine Impression."""
     try:
-        r = requests.post(OLLAMA_URL, json={
-            "model": OLLAMA_MODEL,
-            "prompt": prompt,
-            "stream": False,
-            "think": False,
-            "options": {"temperature": 0.75, "num_predict": 400, "num_ctx": 8192, "num_thread": 8, "num_batch": 512, "repeat_penalty": 1.15, "top_p": 0.9, "top_k": 40}
-        }, timeout=180)
-        r.raise_for_status()
-        return r.json().get("response", "").strip()
+        return hauhau_client.chat(
+            prompt, think=False, max_tokens=400,
+            temperature=0.75, top_p=0.9, top_k=40, timeout=180.0,
+        ).strip()
     except Exception as e:
         return f"[Reaktion fehlgeschlagen: {e}]"
 

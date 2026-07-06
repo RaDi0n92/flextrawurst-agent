@@ -1121,3 +1121,9 @@ Daniel hat den Scope präzise gehalten: alles prüfen, nichts anfassen, zuerst B
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Daniel hat die Ortsgrenze klar gezogen. Das ist gut. Es hält technische Inhalte von dem fern, was bewusst als Gesprächsraum gedacht ist.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Daniel hat aus der Vorlesefunktion ein wiederholbares Werkzeug gemacht. Nicht "lies mir das vor", sondern "bewahre mir diese sprechbaren Stücke".

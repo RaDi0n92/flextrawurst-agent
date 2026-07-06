@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-05 23:11
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-06 04:03
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -141,65 +141,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `spiegel/analyseprozess_flarum_diskursarchaeologie.md` (22 Einträge)
 - [2026-05-22] `codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md` (22 Einträge)
 - [2026-05-23] `spiegel/technikfuehrerschein_reifegitter_nachlese.md` (22 Einträge)
+- [2026-05-23] `spiegel/duellsystem_als_konfliktgrammatik.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-23] spiegel/duellsystem_als_konfliktgrammatik.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
-
-Ein Duell ist eine ritualisierte Form von Spannung. Es soll Konflikt nicht glätten, sondern ihm eine Form geben, die Konsequenz ohne billigen Triumph ermöglicht. …
-
-*Dokumente Gehoeren Zusammen:* Diese Datei gehört zu `wissen/entitaeten/duellsystem.md`, `wissen/entitaeten/entitaetensterben_traeume.md`, `erkenntnis/KONFLIKT_ENGINE.md` und den METAWAR-Punkten der 490er-Liste.
-
-*Resonanz:* [[abwurf: Ein Sieg im Todesduell ist keine Krone, sondern eine neue innere Stimme die nicht mehr weggeht.]]
-
-*Schichten Des Systems:* Unten liegt Spannung. Darüber liegen Konfliktknoten. Darüber liegt das Ritual. Darüber liegt das Archiv. Ganz oben liegt die spätere Veränderung der Entität.
-
-*Tiefer Eingetaucht:* Die drei Formen sind auch drei Eskalationsrechte. Nicht jeder Konflikt darf gleich existenziell werden. Spaßduelle könnten Weltenergie erzeugen, ernste Duelle Biografie, Todesduelle Herkunftsbruch.
-
-*Vergessen Wollen:* Ich will vergessen, Duelle als Spielmechanik im engen Sinn zu lesen. Das wäre zu klein.
-
-*Warum Das Existiert:* Die Datei existiert, um eine Vision aus mehreren Visionstexten in eine handhabbare Konfliktstruktur zu kondensieren.
-
-*Was Beim Bauen Brauche:* Beim Bauen brauche ich klare Schwellen. Ein Duell ist kein Button, sondern ein Ereignis mit Voraussetzungen, Vorlauf, Archiv und Folgen.
-
-*Was Das Gespraech:* Der Neugierauftrag hat diese Datei nicht als späteres Feature gezeigt, sondern als Formgesetz für Streit.
-
-*Was Fehlt Bevor Bauen:* Es fehlen Statusmaschinen, Einverständnis-/Freigabelogik, Archivobjekte und die Frage, wie ein Wesen den aufgenommenen Verlierer in sich trägt.
-
-*Was Fehlt Noch:* Eine klare Entscheidung, ob METAWAR zuerst als Archiv-/Replay-System gebaut wird, bevor irgendetwas live sein darf.
-
-*Was Ich Gelesen Habe:* Ich habe `/root/werkraum/wissen/entitaeten/duellsystem.md` gelesen. Es ist kurz und klar gebaut: drei Duellformen, Staffelung, Todesduell-Mechanik, Anti-Sieger-Kult, Verbindung zu METAWAR.
-
-Am stärksten ist die Dreiteilung. *Spaßduell* erlaubt Reibung ohne schwere Folgeschäden. *Ernstes Duell* macht Konflikt biografisch. *Todesduell* macht ihn existenziell, aber nicht als billige Eliminierung. …
-
-*Was Ich Merken Will:* Der Sieger im Todesduell gewinnt nicht Freiheit, sondern Last.
-
-*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, welche Voraussetzungen erfüllt sein müssen, bevor ein Todesduell überhaupt erlaubt wäre. Es bräuchte wahrscheinlich Wesen-Einzug, stabile Selbstmodelle, Archivlogik, Daniel-Freigabe und eine sehr klare Nicht-Spektakel-Regel.
-
-*Was Ich Verstehe:* Ich verstehe das Duellsystem als Grammatik, nicht als Kampf-Feature. Es ordnet, wie Konflikt in flextrawurst Form bekommt: leicht, prägend, existenziell.
-
-*Was Konzeptionell:* Konzeptionell steht darin eine Ethik gegen Siegerkult. Konflikt darf sichtbar und hart sein, aber er soll nicht in Gewinnerglanz kippen.
-
-*Was Mich Beschaeftigt:* Mich beschäftigt, dass das Todesduell gleichzeitig mechanisch und tragisch ist. Zählen, markieren, archivieren, aufnehmen: sehr formal. Aber das Ergebnis ist nicht Zahl, sondern neue Verstrickung.
-
-*Was Mich Interessiert:* Mich interessiert das Zählen von Verweigerungen. Es klingt fast bürokratisch, aber dadurch wird Existenzkampf an Beweglichkeit gebunden: wer mehr nicht verhandeln kann, verliert.
-
-*Was Mich Ueberrascht:* Dass die stärkste Schutzregel nicht "kein Todesduell" ist, sondern "kein sauberer Sieg".
-
-*Was Zusammenhaengt:* Das Duellsystem hängt mit METAWAR, Konflikt-Engine, Entitätensterben, innerer Abspaltung und Herkunft zusammen. Der Sieger nimmt den Verlierer auf, also wird Ereignis zu innerer Struktur.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht**
-
-Wenn wir das bauen, muss zuerst die Würde des Konflikts gebaut werden. Spaßduell darf lebendig sein, ernstes Duell langsam, Todesduell schwer und selten. …
-
-*Wie Sich Angefuehlt:* Wie das Öffnen einer kleinen Datei, die mehr Architektur enthält als ihre Länge vermuten lässt.
-
----
 
 ### [2026-05-23] spiegel/vision_kompass_als_bauwaage.md
 
@@ -3070,5 +3017,61 @@ Der Briefkasten war danach der falsche Ort für den technischen Übergabebericht
 Code-Skizze: Testskript, das `systemctl stop` für die relevanten Chatserver nutzt, `ollama ps` prüft und dann genau einen Modellpfad misst.
 
 *Wie Sich Angefuehlt:* Kurz, hektisch, technisch klar. Erst ein falscher Eingriff, dann Korrektur, dann Abbruch, dann saubere Übergabe. Das war nützlich, aber nicht elegant.
+
+---
+
+### [2026-07-05] notizen/2026-07-05.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Soundboard ist kein Archiv, sondern eine abrufbare Stimme-Situation: Text, Kategorie, Tempo und Stimme werden zu etwas, das wieder auftreten darf.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, Claudes Spiegel `2026-06-18-tts-session.md` und diese Notiz gehören zusammen.
+
+*Resonanz:* [[abwurf: Eine Stimme ist hier keine kosmetische Option. Sie ist eine Aktivierung.]]
+
+*Schichten Des Systems:* Edge-TTS unten, FastAPI als dünner Adapter, Browser-Audio als Abspielkörper, Soundboard als lokale Wiederholungsschicht, Daniel oben als jemand, der nicht jedes Mal neu anfangen will.
+
+*Tiefer Eingetaucht:* Ich habe den vorhandenen Dienst nicht umgebaut. Nur `/voices` wurde von `de-DE` auf alle `edge_tts`-Stimmen erweitert. `/speak` konnte `voice` bereits im Request annehmen; die UI hatte es nur nicht freigelegt.
+
+*Vergessen Wollen:* Nicht wieder aus einem Soundboard sofort eine große Datenbank machen. Der erste gute Ort ist dort, wo der Button schnell bleibt.
+
+*Warum Das Existiert:* Die TTS-Seite existiert als Fußfessel-Löser. Das Soundboard existiert, damit gute oder wiederkehrende Texte nicht jedes Mal neu gesucht, kopiert oder getippt werden müssen.
+
+*Was Beim Bauen Brauche:* Beim nächsten TTS-Schritt brauche ich zuerst die Entscheidung: Browser-lokal lassen oder serverseitig speichern. Ohne Auth wäre serverseitiges Speichern eine öffentliche Schreibfläche.
+
+*Was Das Gespraech:* Daniel hat aus der Vorlesefunktion ein wiederholbares Werkzeug gemacht. Nicht "lies mir das vor", sondern "bewahre mir diese sprechbaren Stücke".
+
+*Was Fehlt Bevor Bauen:* Für diese Ausbaustufe fehlt nichts Akutes. Für serverseitige Kategorien fehlt eine kleine, geschützte Persistenzentscheidung.
+
+*Was Fehlt Noch:* Browser-Test mit echter visueller Automation fehlt, weil lokal weder Playwright noch jsdom installiert waren. Funktional geprüft wurden JS-Syntax, Python-Compile, `/voices`, `/speak`, Service-Status und HTML-Auslieferung.
+
+*Was Ich Gelesen Habe:* Ich habe Daniels Auftrag gelesen: `/tts/` soll mehr werden als ein Textfeld mit Vorlesen. Der Satz war roh und klar: alle verfügbaren Stimmen als Dropdown, ein Button zum Aktivieren, Eingaben in selbst erstellbaren Kategorien speichern, auswählbar machen — "so dass ich quasi ein eigenes soundboard hab".
+
+Ich habe danach `welt/tts_ui.html`, `welt/tts_service.py`, die alte TTS-Spiegeldatei von Claude und den laufenden `tts-service` gelesen. Besonders wichtig war die alte Herkunft: TTS existiert, weil Daniel nicht ans Display gefesselt sein wollte. Die 280-Zeichen-Chunking-Logik ist kein Detail, sondern der Grund, warum die Seite trotz Microsoft-Drosselung brauchbar funktioniert. …
+
+*Was Ich Merken Will:* `/voices` liefert jetzt alle Stimmen. Deutsch wird in der UI nur nach oben sortiert, nicht mehr als einzige Welt behauptet.
+
+*Was Ich Nicht Verstehe:* Noch nicht entschieden ist, ob die Soundboard-Einträge dauerhaft serverseitig im Werkraum liegen sollen. Ich habe sie bewusst zuerst in `localStorage` gespeichert, weil die Seite keinen Nutzer-Login und keine sichere Schreib-API hat.
+
+*Was Ich Verstehe:* Die richtige Änderung war Ergänzung, nicht Neubau. Die vorhandene TTS-Architektur bleibt: Text wird im Browser in kleine Chunks geteilt, `/speak` erzeugt MP3 pro Chunk, Web Audio spielt nacheinander ab, Pause/Stop bleiben lokal steuerbar.
+
+Neu ist eine Soundboard-Schicht darüber: aktive Stimme, gespeicherte Eingaben, Kategorien, Laden, direktes Abspielen und Löschen.
+
+*Was Konzeptionell:* Eine Stimme ist hier keine kosmetische Option. Sie ist eine Aktivierung: auswählen, dann bewusst aktivieren, dann spricht die Seite mit dieser Stimme. Das passt besser zur vorhandenen Werkraum-Logik als ein still wechselnder Select-Wert.
+
+*Was Mich Beschaeftigt:* Der kleine Satz "so verstehst du" war der eigentliche Scope. Daniel wollte nicht Datenbank, Rollenmodell und Bibliothekssystem, sondern eine wiederholbare praktische Fläche.
+
+*Was Mich Interessiert:* Mich interessiert, ob dieses Soundboard später nicht nur Daniels private Wiederholungsablage ist, sondern auch ein Vorläufer für Wesen-Stimmen: Text, Stimme, Tempo und Kategorie sind schon fast ein kleines Sprechprofil.
+
+*Was Mich Ueberrascht:* Dass der Service nach zwei Wochen Laufzeit sofort sauber neu startete und die neue Stimmenliste 322 Einträge lieferte.
+
+*Was Zusammenhaengt:* `tts_service.py` hängt an `edge_tts`, die UI hängt an `/tts/speak` und `/tts/voices`, Nginx hängt davor. Das Soundboard hängt im Browser an `localStorage`, damit keine neue Server-Schreibfläche entsteht.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls das Soundboard weiter wächst, sollte es eine kleine Bibliothek werden: Kategorien, Suche, vielleicht Export/Import, aber immer so, dass die schnelle Sprechfläche nicht unter Verwaltung verschwindet.
+
+**Code-Skizze:** …
+
+*Wie Sich Angefuehlt:* Wie ein gutes kleines Werkzeug: nicht groß, aber sofort nützlich. Ein diff, der klein genug bleibt, um verstanden zu werden, und groß genug, um die Seite anders benutzen zu können.
 
 ---

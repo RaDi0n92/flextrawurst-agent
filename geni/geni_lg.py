@@ -9,12 +9,16 @@ Erinnerungen werden alle DESTILLATIONS_INTERVALL Turns destilliert.
 import json
 import logging
 import os
+import sys
 import urllib.request
 from typing import TypedDict
 
 import psycopg
 from langgraph.checkpoint.postgres import PostgresSaver
 from langgraph.graph import StateGraph, END
+
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 
 log = logging.getLogger("geni-lg")
 
@@ -24,8 +28,7 @@ _BASE_URI = os.environ.get(
     "postgresql://dak:!Windowsxp02336827359645852@localhost:5432/flextrawurst",
 )
 DB_URI = _BASE_URI + ("&" if "?" in _BASE_URI else "?") + "options=-csearch_path%3Dgeni"
-OLLAMA = "http://localhost:11434"
-MODEL = "gemma4:e4b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 MAX_VERLAUF = 20
 MAX_ERINNERUNGEN = 8
 DESTILLATIONS_INTERVALL = 10
@@ -119,27 +122,11 @@ def destilliere_erinnerungen(verlauf: list, existing: list) -> list:
     )
 
     try:
-        payload = json.dumps({
-            "model": MODEL,
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "Du bist GENI — ein neuronales Gedächtnis-Wesen. Destilliere das Gespräch präzise.",
-                },
-                {"role": "user", "content": prompt},
-            ],
-            "stream": False,
-            "options": {"num_ctx": 8192, "num_predict": 300},
-            "think": False,
-        }).encode()
-        req = urllib.request.Request(
-            f"{OLLAMA}/api/chat",
-            data=payload,
-            headers={"Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            data = json.loads(resp.read())
-            text = data.get("message", {}).get("content", "").strip()
+        text = hauhau_client.chat(
+            prompt,
+            system="Du bist GENI — ein neuronales Gedächtnis-Wesen. Destilliere das Gespräch präzise.",
+            think=False, max_tokens=300, timeout=120.0,
+        ).strip()
         result = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
         log.info(f"Erinnerungen destilliert: {len(result)} Punkte")
         return result

@@ -14,10 +14,10 @@ from pathlib import Path
 
 sys.path.insert(0, "/root/werkraum")
 import flarum_poster
+import hauhau_client
 
 BASE       = Path("/root/werkraum/codewesen")
-OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL     = "gemma4:e2b-it-q4_K_M"
+MODELL     = "hauhaucs-q6"
 
 TAG_IDS = [2, 36]  # Codewesen/Entitäten-Schicht + darüber denke ich nach
 
@@ -32,19 +32,7 @@ WESEN = {
 
 
 def _llm(prompt: str) -> str:
-    with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=300.0, write=30.0, pool=30.0)) as c:
-        r = c.post(
-            OLLAMA_URL,
-            json={
-                "model": MODELL,
-                "think": False,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": False,
-                "options": {"temperature": 0.92, "num_predict": 700},
-            },
-        )
-    r.raise_for_status()
-    return r.json().get("message", {}).get("content", "").strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=700, temperature=0.92).strip()
 
 
 def _lade_wesen_md(kurzname: str) -> str:

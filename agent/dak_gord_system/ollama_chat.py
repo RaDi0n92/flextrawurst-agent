@@ -5,13 +5,17 @@ import os
 import time
 from typing import Callable
 
+import httpx
 import requests
 
+import sys as _sys; _sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL_TIEF    = os.getenv("DAK_GORD_OLLAMA_MODELL",         "gemma4:e4b-it-q4_K_M")
-MODELL_MITTEL  = os.getenv("DAK_GORD_OLLAMA_MODELL_MITTEL",  "gemma4:e4b-it-q4_K_M")
-MODELL_SCHNELL = os.getenv("DAK_GORD_OLLAMA_MODELL_SCHNELL", "gemma4:e4b-it-q4_K_M")
-MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "gemma4:e4b-it-q4_K_M")
+MODELL_TIEF    = os.getenv("DAK_GORD_OLLAMA_MODELL",         "hauhaucs-q6")
+MODELL_MITTEL  = os.getenv("DAK_GORD_OLLAMA_MODELL_MITTEL",  "hauhaucs-q6")
+MODELL_SCHNELL = os.getenv("DAK_GORD_OLLAMA_MODELL_SCHNELL", "hauhaucs-q6")
+MODELL_QWEN    = os.getenv("DAK_GORD_OLLAMA_MODELL_QWEN",    "hauhaucs-q6")
 MODELL_FREI    = os.getenv("DAK_GORD_OLLAMA_MODELL_FREI",    "dolphin-mistral:7b")
 STANDARD_TIMEOUT = int(os.getenv("DAK_GORD_OLLAMA_TIMEOUT", "720"))
 
@@ -209,6 +213,34 @@ OLLAMA_TOOLS = [
 ]
 
 
+def _tool_calls_zu_marker(text_inhalt: str, tool_calls: list[dict]) -> str:
+    marker_teile = []
+    if text_inhalt:
+        marker_teile.append(text_inhalt)
+
+    for tc in tool_calls:
+        fn = tc.get("function", {})
+        name = fn.get("name", "")
+        args = fn.get("arguments", {})
+        if isinstance(args, str):
+            args = json.loads(args) if args else {}
+        if name == "datei_lesen":
+            pfad = args.get("pfad", "")
+            if pfad:
+                marker_teile.append(f"##LESEN: {pfad}##")
+        elif name == "datei_schreiben":
+            pfad = args.get("pfad", "")
+            inhalt = args.get("inhalt", "")
+            if pfad:
+                marker_teile.append(f"##SCHREIBEN: {pfad}##\n{inhalt}\n##SCHREIBEN_ENDE##")
+        elif name == "python_code_ausfuehren":
+            code = args.get("code", "")
+            if code:
+                marker_teile.append(f"##CODE_START##\n{code}\n##CODE_ENDE##")
+
+    return "\n".join(marker_teile)
+
+
 def ollama_chat(
     verlauf: list[str],
     token_callback: Callable[[str], None] | None = None,
@@ -219,102 +251,107 @@ def ollama_chat(
     verwendetes_modell = modell or MODELL_MITTEL
     nachrichten = _baue_nachrichten(verlauf)
 
-    if bild_b64:
-        for i in range(len(nachrichten) - 1, -1, -1):
-            if nachrichten[i]["role"] == "user":
-                nachrichten[i] = dict(nachrichten[i], images=[bild_b64])
-                break
+    # Freier Modus (dolphin-mistral) bleibt bewusst auf Ollama — eigenes, separates Modell
+    if verwendetes_modell == MODELL_FREI:
+        if bild_b64:
+            for i in range(len(nachrichten) - 1, -1, -1):
+                if nachrichten[i]["role"] == "user":
+                    nachrichten[i] = dict(nachrichten[i], images=[bild_b64])
+                    break
 
-    # temperature=0.0 für Tool-Entscheidung (deterministisch), 0.7 für Sprache
-    temperature = 0.0 if mit_tools else 0.7
+        temperature = 0.0 if mit_tools else 0.7
+        num_predict = 400 if mit_tools else 700
 
-    num_predict = 400 if mit_tools else 700
+        payload: dict = {
+            "model": verwendetes_modell,
+            "stream": True,
+            "messages": nachrichten,
+            "keep_alive": -1,
+            "think": False,
+            "options": {
+                "num_ctx": 8192,
+                "num_predict": num_predict,
+                "temperature": temperature,
+                "top_k": 64,
+                "top_p": 0.95,
+                "repeat_penalty": 1.1,
+            },
+        }
+        if mit_tools:
+            payload["tools"] = OLLAMA_TOOLS
+            payload["stream"] = False
 
-    payload: dict = {
-        "model": verwendetes_modell,
-        "stream": True,
-        "messages": nachrichten,
-        "keep_alive": -1,
-        "think": False,
-        "options": {
-            "num_ctx": 8192,
-            "num_predict": num_predict,
-            "temperature": temperature,
-            "top_k": 64,
-            "top_p": 0.95,
-            "repeat_penalty": 1.1,
-        },
-    }
+        resp = _anfrage_mit_retry(payload, streaming=not mit_tools)
+
+        if mit_tools:
+            daten = resp.json()
+            nachricht = daten.get("message", {})
+            ergebnis = _tool_calls_zu_marker(nachricht.get("content", ""), nachricht.get("tool_calls", []))
+            if token_callback and ergebnis:
+                if nachricht.get("tool_calls"):
+                    token_callback(ergebnis)
+                else:
+                    woerter = ergebnis.split(" ")
+                    for i, wort in enumerate(woerter):
+                        token_callback(wort + ("" if i == len(woerter) - 1 else " "))
+            return ergebnis
+
+        teile: list[str] = []
+        try:
+            for rohe_zeile in resp.iter_lines():
+                if not rohe_zeile:
+                    continue
+                try:
+                    chunk = json.loads(rohe_zeile)
+                except json.JSONDecodeError:
+                    continue
+                token = chunk.get("message", {}).get("content", "")
+                if token:
+                    teile.append(token)
+                    if token_callback is not None:
+                        token_callback(token)
+                if chunk.get("done"):
+                    break
+        except requests.RequestException as fehler:
+            if teile:
+                return "".join(teile).strip()
+            raise RuntimeError(f"Ollama-Stream unterbrochen: {fehler}") from fehler
+        return "".join(teile).strip()
+
+    # Alles andere → hauhaucs-q6 via llama-server
+    bilder = [bild_b64] if bild_b64 else None
+
     if mit_tools:
-        payload["tools"] = OLLAMA_TOOLS
-        payload["stream"] = False  # tool-calls funktionieren nicht mit streaming
-
-    resp = _anfrage_mit_retry(payload, streaming=not mit_tools)
-
-    # Tool-Call Modus: nicht-streaming, tool_calls parsen und als Marker zurückgeben
-    if mit_tools:
-        daten = resp.json()
-        nachricht = daten.get("message", {})
-        tool_calls = nachricht.get("tool_calls", [])
-        text_inhalt = nachricht.get("content", "")
-
-        marker_teile = []
-        if text_inhalt:
-            marker_teile.append(text_inhalt)
-
-        for tc in tool_calls:
-            fn = tc.get("function", {})
-            name = fn.get("name", "")
-            args = fn.get("arguments", {})
-            if name == "datei_lesen":
-                pfad = args.get("pfad", "")
-                if pfad:
-                    marker_teile.append(f"##LESEN: {pfad}##")
-            elif name == "datei_schreiben":
-                pfad = args.get("pfad", "")
-                inhalt = args.get("inhalt", "")
-                if pfad:
-                    marker_teile.append(f"##SCHREIBEN: {pfad}##\n{inhalt}\n##SCHREIBEN_ENDE##")
-            elif name == "python_code_ausfuehren":
-                code = args.get("code", "")
-                if code:
-                    marker_teile.append(f"##CODE_START##\n{code}\n##CODE_ENDE##")
-
-        ergebnis = "\n".join(marker_teile)
+        daten = hauhau_client.chat_raw(
+            nachrichten, images=bilder, think=False, max_tokens=400,
+            temperature=0.0, top_p=0.95, top_k=64, repeat_penalty=1.1,
+            tools=OLLAMA_TOOLS, timeout=STANDARD_TIMEOUT,
+        )
+        nachricht = daten["choices"][0]["message"]
+        ergebnis = _tool_calls_zu_marker(nachricht.get("content") or "", nachricht.get("tool_calls") or [])
         if token_callback and ergebnis:
-            if tool_calls:
-                # Tool-Calls gefunden → alles auf einmal ausgeben, Folge-Call streamt
+            if nachricht.get("tool_calls"):
                 token_callback(ergebnis)
             else:
-                # Kein Tool-Call → Wort für Wort ausgeben für Streaming-Gefühl
                 woerter = ergebnis.split(" ")
                 for i, wort in enumerate(woerter):
                     token_callback(wort + ("" if i == len(woerter) - 1 else " "))
         return ergebnis
 
-    # Normaler Streaming-Modus
     teile: list[str] = []
     try:
-        for rohe_zeile in resp.iter_lines():
-            if not rohe_zeile:
-                continue
-            try:
-                chunk = json.loads(rohe_zeile)
-            except json.JSONDecodeError:
-                continue
-
-            token = chunk.get("message", {}).get("content", "")
-            if token:
-                teile.append(token)
-                if token_callback is not None:
-                    token_callback(token)
-
-            if chunk.get("done"):
-                break
-    except requests.RequestException as fehler:
+        for token in hauhau_client.chat_stream(
+            nachrichten, images=bilder, think=False, max_tokens=700,
+            temperature=0.7, top_p=0.95, top_k=64, repeat_penalty=1.1,
+            timeout=STANDARD_TIMEOUT,
+        ):
+            teile.append(token)
+            if token_callback is not None:
+                token_callback(token)
+    except httpx.HTTPError as fehler:
         if teile:
             return "".join(teile).strip()
-        raise RuntimeError(f"Ollama-Stream unterbrochen: {fehler}") from fehler
+        raise RuntimeError(f"hauhaucs-Stream unterbrochen: {fehler}") from fehler
 
     return "".join(teile).strip()
 

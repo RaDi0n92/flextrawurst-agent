@@ -1180,3 +1180,9 @@ Eine Ressourcengrenze ist Teil der Architektur, nicht bloß Betrieb. Wenn mehrer
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Technisch ist das Thema nicht "30B ist zu groß", sondern "Modellwechsel und Hintergrundautostart verfälschen Latenz". Das ist ein Scheduling- und Betriebsproblem, kein reines Modellgrößenproblem.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Eine Stimme ist hier keine kosmetische Option. Sie ist eine Aktivierung: auswählen, dann bewusst aktivieren, dann spricht die Seite mit dieser Stimme. Das passt besser zur vorhandenen Werkraum-Logik als ein still wechselnder Select-Wert.

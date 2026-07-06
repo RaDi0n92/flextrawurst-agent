@@ -17,10 +17,11 @@ from pathlib import Path
 import requests
 import pymysql
 
-OLLAMA_URL = "http://localhost:11434/api/chat"
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 
 BASE    = Path("/root/werkraum/codewesen")
-MODELL  = "gemma4:e2b-it-q4_K_M"
+MODELL  = "hauhaucs-q6"
 ZUSTAND = BASE / "_forum_neugier_zustand.json"
 
 WESEN = [
@@ -132,16 +133,11 @@ def _reflektiere(wesen: str, post: dict) -> str:
     while CHAT_AKTIV_FLAG.exists():
         time.sleep(3)
     try:
-        r = requests.post(OLLAMA_URL, json={
-            "model": MODELL,
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user",   "content": nutzer},
-            ],
-            "stream": False,
-            "keep_alive": "5m",
-        }, timeout=180)
-        return r.json()["message"]["content"].strip()
+        messages = [
+            {"role": "system", "content": system},
+            {"role": "user",   "content": nutzer},
+        ]
+        return hauhau_client.chat(messages, think=False, timeout=180.0).strip()
     except Exception as e:
         log.warning(f"[{wesen}] Ollama-Fehler: {e}")
         return ""

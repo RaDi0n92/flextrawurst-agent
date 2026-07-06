@@ -26,6 +26,9 @@ import pymysql
 import pymysql.cursors
 import flarum_api
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [daniel-reaktion] %(message)s",
@@ -57,7 +60,7 @@ LOCK_DIR = Path("/tmp/ollama_locks")
 LOCK_DIR.mkdir(exist_ok=True)
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"
 POLL_INTERVAL = 300
-MODEL = "gemma4:e4b-it-q4_K_M"
+MODEL = "hauhaucs-q6"
 
 DB_CONFIG = flarum_api.DB_CONFIG
 
@@ -147,27 +150,14 @@ def lade_diskussion_kontext(discussion_id: int, bis_post_number: int) -> str:
 
 
 def frage_llm(system: str, user: str) -> str:
-    payload = json.dumps({
-        "model": MODEL,
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        "stream": False,
-        "options": {"num_ctx": 8192},
-        "think": False,
-    }).encode()
+    messages = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
     lock_file = open(LOCK_DIR / "slot_0.lock", "w")
     fcntl.flock(lock_file, fcntl.LOCK_EX)
     try:
-        req = urllib.request.Request(
-            "http://localhost:11434/api/chat",
-            data=payload,
-            headers={"Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=600) as resp:
-            data = json.loads(resp.read())
-            return data.get("message", {}).get("content", "").strip()
+        return hauhau_client.chat(messages, think=False, timeout=600.0).strip()
     finally:
         fcntl.flock(lock_file, fcntl.LOCK_UN)
         lock_file.close()

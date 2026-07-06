@@ -6,7 +6,7 @@ sys.path.insert(0, "/root/werkraum")
 
 from pathlib import Path
 from datetime import datetime
-import ollama
+import hauhau_client
 
 SPIEGELAGENTEN = Path("/root/werkraum/erkenntnis/spiegelagenten")
 SPIEGELAGENTEN.mkdir(parents=True, exist_ok=True)
@@ -65,14 +65,7 @@ def spiegle(pfad_str: str):
     nutzer = f"DATEI: {pfad}\n\nINHALT:\n{inhalt}"
 
     try:
-        antwort = ollama.chat(
-            model="gemma4:e2b-it-q4_K_M",
-            messages=[
-                {"role": "system", "content": SYSTEM},
-                {"role": "user", "content": nutzer},
-            ]
-        )
-        notiz = antwort["message"]["content"].strip()
+        notiz = hauhau_client.chat(nutzer, system=SYSTEM, think=False).strip()
     except Exception as e:
         print(f"  OLLAMA-FEHLER: {pfad_str} — {e}")
         return

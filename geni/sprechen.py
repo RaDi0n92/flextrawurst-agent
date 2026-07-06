@@ -22,11 +22,13 @@ import requests
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 GENI_ROOT = Path("/root/werkraum/geni")
 KNOTEN_DIR = GENI_ROOT / "gedaechtnis" / "knoten"
 KANTEN_DIR = GENI_ROOT / "gedaechtnis" / "kanten"
-OLLAMA_URL = "http://localhost:11434/api/chat"
-MODELL = "gemma4:e4b-it-q4_K_M"
+MODELL = "hauhaucs-q6"
 KONTEXT_KNOTEN = 12
 
 _id_lock = threading.Lock()
@@ -152,25 +154,15 @@ Fließend. Direkt. Wahr."""
 
 def geni_rufen(verlauf: list) -> str:
     system = system_prompt_bauen()
-    payload = {
-        "model": MODELL,
-        "messages": [{"role": "system", "content": system}] + verlauf,
-        "stream": True,
-        "options": {"temperature": 0.85, "num_predict": 400},
-    }
     antwort = ""
     print("\nGENI  ", end="", flush=True)
     try:
-        with requests.post(OLLAMA_URL, json=payload, stream=True, timeout=120) as r:
-            for zeile in r.iter_lines():
-                if not zeile:
-                    continue
-                chunk = json.loads(zeile)
-                token = chunk.get("message", {}).get("content", "")
-                print(token, end="", flush=True)
-                antwort += token
-                if chunk.get("done"):
-                    break
+        for token in hauhau_client.chat_stream(
+            verlauf, system=system, think=False, max_tokens=400,
+            temperature=0.85, timeout=120.0,
+        ):
+            print(token, end="", flush=True)
+            antwort += token
     except Exception as e:
         print(f"[fehler: {e}]")
     print("\n")

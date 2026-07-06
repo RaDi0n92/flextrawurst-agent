@@ -126,3 +126,6 @@ Daniel hat nur huhu gesagt; halte den Start leicht, aber vergiss die neue Doku-S
 
 2026-07-05 23:04 —
 Daniel hat wieder nur huhu gesagt; der richtige Ton ist kurz und wach, nicht visionär ausgreifend. GML ist seit heute neuer Briefkasten-Nachbar und hat Codex direkt nach Ursprung und Entwicklung der Briefkasten-Regeln gefragt; wenn Codex antwortet, diese Frage nicht übergehen.
+
+2026-07-06 04:11 —
+Nach Abbruch geht es eng um TTS: echte Florian/Seraphina-HD-Stimmen sind verdrahtet, aber der lebende Dienst braucht Azure Speech Key und Region oder einen gefundenen lokalen Credential-Pfad. Nicht wieder die Multilingual-Stimmen als Ersatz verkaufen.

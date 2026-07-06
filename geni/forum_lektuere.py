@@ -20,12 +20,14 @@ from pathlib import Path
 
 import httpx
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 GENI_ROOT      = Path("/root/werkraum/geni")
 FORUM_VAULT    = Path("/root/werkraum/flarum/diskussionen")
 SPIEGEL_DIR    = GENI_ROOT / "spiegel" / "forum"
 ZUSTAND_FILE   = SPIEGEL_DIR / "_zustand.json"
-OLLAMA_URL     = "http://localhost:11434/api/chat"
-MODELL         = "gemma4:e2b-it-q4_K_M"
+MODELL         = "hauhaucs-q6"
 
 
 def _lade_zustand() -> set[int]:
@@ -79,19 +81,7 @@ DISKUSSION {disk_id}:
 {diskussion_text}
 ---"""
 
-    with httpx.Client(timeout=httpx.Timeout(connect=30.0, read=180.0, write=30.0, pool=30.0)) as c:
-        r = c.post(
-            OLLAMA_URL,
-            json={
-                "model": MODELL,
-                "think": False,
-                "messages": [{"role": "user", "content": prompt}],
-                "stream": False,
-                "options": {"temperature": 0.3, "num_predict": 800},
-            },
-        )
-    r.raise_for_status()
-    return r.json()["message"]["content"].strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=800, temperature=0.3, timeout=180.0).strip()
 
 
 def _extrahiere_meta(text: str) -> dict:

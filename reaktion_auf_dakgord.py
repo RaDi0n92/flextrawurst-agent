@@ -17,6 +17,7 @@ os.environ.setdefault("FLARUM_DB_PASSWORD", "!Windowsxp9645")
 os.environ.setdefault("FLARUM_MASTER_KEY", "wiemX2e6qEzuyknpOJVxjEcD9kS8FlOcT__hfNYu9yIWEDhuFzdmpQ")
 
 import flarum_api
+import hauhau_client
 
 DISCUSSION_ID = 2277
 BASE = Path("/root/werkraum/codewesen")
@@ -45,30 +46,16 @@ def lade_wesen_md(name: str) -> str:
 
 
 def frage_llm(system: str, user: str) -> str:
-    import urllib.request
-    payload = json.dumps({
-        "model": "gemma4:e2b-it-q4_K_M",
-        "messages": [
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        "stream": False,
-        "options": {"num_ctx": 8192},
-        "think": False,
-    }).encode()
+    messages = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": user},
+    ]
     lock_file = open(LOCK_DIR / "slot_0.lock", "w")
     print("  [Lock] Warte auf Ollama-Slot...", flush=True)
     fcntl.flock(lock_file, fcntl.LOCK_EX)
     print("  [Lock] Slot erworben.", flush=True)
     try:
-        req = urllib.request.Request(
-            "http://localhost:11434/api/chat",
-            data=payload,
-            headers={"Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=600) as resp:
-            data = json.loads(resp.read())
-            return data.get("message", {}).get("content", "").strip()
+        return hauhau_client.chat(messages, think=False, timeout=600.0).strip()
     finally:
         fcntl.flock(lock_file, fcntl.LOCK_UN)
         lock_file.close()

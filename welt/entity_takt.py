@@ -17,8 +17,11 @@ import psycopg2
 import psycopg2.extras
 import requests
 
-OLLAMA = "http://localhost:11434"
-MODEL  = "gemma4:e2b-it-q4_K_M"
+import sys as _sys; _sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
+OLLAMA = "http://localhost:11435"
+MODEL  = "hauhaucs-q6"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -168,21 +171,11 @@ def _generiere_selbstbrief(entity_id: str, phase_id: str, dauer_min: int) -> str
     )
 
     try:
-        resp = requests.post(
-            f"{OLLAMA}/api/generate",
-            json={
-                "model": MODEL,
-                "prompt": user_prompt,
-                "system": system,
-                "stream": False,
-                "options": {"num_ctx": 8192, "temperature": 0.8},
-            },
-            timeout=60,
-        )
-        if resp.ok:
-            text = resp.json().get("response", "").strip()
-            if text:
-                return text
+        text = hauhau_client.chat(
+            user_prompt, system=system, think=False, temperature=0.8, timeout=60.0,
+        ).strip()
+        if text:
+            return text
     except Exception as e:
         log.warning(f"Selbstbrief LLM-Fehler für {entity_id}: {e}")
 

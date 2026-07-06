@@ -27,13 +27,16 @@ Mögliche Status-Vorschläge:
 
 import json
 import re
+import sys
 import requests
 import psycopg2
 import psycopg2.extras
 
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
 import os as _os; DB_URI  = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-OLLAMA  = "http://localhost:11434"
-MODEL   = "gemma4:e2b-it-q4_K_M"
+MODEL   = "hauhaucs-q6"
 ENTITY_FILTER = "namelessAI_%"
 
 
@@ -126,16 +129,7 @@ Antworte NUR mit diesem JSON (kein Text davor oder danach):
 
 
 def rufe_ollama(prompt):
-    payload = {
-        "model": MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "think": False,
-        "options": {"num_ctx": 8192, "temperature": 0.3, "num_predict": 400},
-    }
-    resp = requests.post(f"{OLLAMA}/api/generate", json=payload, timeout=300)
-    resp.raise_for_status()
-    return resp.json().get("response", "").strip()
+    return hauhau_client.chat(prompt, think=False, max_tokens=400, temperature=0.3, timeout=300.0).strip()
 
 
 def parse_json_antwort(raw):

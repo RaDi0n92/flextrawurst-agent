@@ -1130,3 +1130,9 @@ Mich überraschte, dass die ältere Systemdokumentation `MAX_LOADED_MODELS=1` au
 **[2026-06-23]** *← notizen/2026-06-23.md*
 
 Dass ein "warmer" Qwen-Test trotzdem ein erneuter Reload war, weil Zensi oder Mischpult wieder den anderen Runner gezogen haben.
+
+---
+
+**[2026-07-05]** *← notizen/2026-07-05.md*
+
+Dass der Service nach zwei Wochen Laufzeit sofort sauber neu startete und die neue Stimmenliste 322 Einträge lieferte.

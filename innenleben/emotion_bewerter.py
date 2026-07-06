@@ -6,11 +6,14 @@ Bewertet ein Ereignis auf drei Dimensionen: Valenz, Arousal, Dominanz.
 
 import json
 import re
+import sys
 
 import httpx
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-MODELL     = "gemma4:e2b-it-q4_K_M"
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
+
+MODELL     = "hauhaucs-q6"
 
 _PROMPT_TEMPLATE = """Du bist ein Emotionsbewertungssystem. Antworte NUR mit JSON, kein anderer Text.
 Valenz: 0=extrem negativ, 5=neutral, 10=extrem positiv
@@ -41,19 +44,7 @@ def _parse_emotion(response: str) -> dict:
 def bewerte(event_text: str, timeout: int = 90) -> dict:
     prompt = _PROMPT_TEMPLATE.format(event_text=event_text[:1500])
     try:
-        with httpx.Client(timeout=httpx.Timeout(connect=10.0, read=float(timeout), write=10.0, pool=10.0)) as c:
-            r = c.post(
-                OLLAMA_URL,
-                json={
-                    "model": MODELL,
-                    "prompt": prompt,
-                    "stream": False,
-                    "think": False,
-                    "options": {"temperature": 0.1, "num_predict": 100},
-                },
-            )
-        r.raise_for_status()
-        raw = r.json().get("response", "")
+        raw = hauhau_client.chat(prompt, think=False, max_tokens=100, temperature=0.1, timeout=float(timeout))
         return _parse_emotion(raw)
     except Exception as e:
         return {**_FALLBACK, "reason": f"error:{e}"}
