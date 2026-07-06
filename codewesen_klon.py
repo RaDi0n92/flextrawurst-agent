@@ -9,11 +9,17 @@ Handlungsfaehigkeit ueber Marker im Text ([[SICHERN: ...]], [[TEILEN: ...]],
 [[LESEN: ...]]), die tatsaechlich ausgefuehrt werden — nicht nur Reflexion,
 sondern ausgeloeste Handlung.
 
-Daniels eigene Zahlen: "max alle 3stunden33...aber dann darf es sich auch
-33 minuten voll triggern" — Begruendung im selben Atemzug: "sonst sind sie
-24/2 nur noch am sich selbst triggern, wie maeuse mit nem orgasmusknopf".
-Also: MINDEST_PAUSE = 3h33m pro Wesen zwischen zwei Selbstgespraechen,
-SESSION_MAX = 33 Minuten Obergrenze pro Selbstgespraech.
+Umgebaut 2026-07-06, noch selber Abend: Daniels erste Zahlen (max alle
+3h33m automatisch, 33 Minuten Obergrenze) waren als automatischer Zeitplan
+gedacht. Daniel wollte das dann anders: "ich will es erstmal selber nur
+anstoßen können und dann auch so lange ich mag" — also KEIN automatischer
+Zeitplan mehr, sondern manuelles Starten/Stoppen ueber zwei Flag-Dateien
+pro Wesen, ohne Zeitdeckel (nur ein sehr grosszuegiger Sicherheitsdeckel
+an Gespraechsrunden gegen einen echten Endlosprozess falls das Stoppen mal
+vergessen wird):
+
+    touch /root/werkraum/klon/<wesen>/_starten   # startet ein Selbstgespraech
+    touch /root/werkraum/klon/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
 
 Handlungs-Umfang (Daniels Antwort auf die Rueckfrage: "Mischung aus allem
 irgendwie"): reine Introspektion (LESEN, keine Nebenwirkung), Wiederverwendung
@@ -53,7 +59,6 @@ import codewesen_container as container
 
 BASE      = Path("/root/werkraum/codewesen")
 KLON_ROOT = Path("/root/werkraum/klon")
-ZUSTAND   = BASE / "_klon_zustand.json"
 
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
@@ -61,10 +66,8 @@ WESEN = [
     "dak+gord-system",
 ]
 
-MINDEST_PAUSE_SEK = 3 * 3600 + 33 * 60  # 3h33m zwischen zwei Selbstgespraechen, pro Wesen
-SESSION_MAX_SEK   = 33 * 60             # 33 Minuten Obergrenze pro Selbstgespraech
-TURN_MAX          = 14                  # Sicherheitsdeckel, auch falls die Zeit noch reichen wuerde
-PRUEF_PAUSE_SEK   = 300                 # alle 5 Minuten pruefen, ob ein Wesen dran ist
+TURN_SICHERHEITSDECKEL = 500  # kein Zeitdeckel mehr (Daniels Wunsch) — nur Schutz vor echtem Endlosprozess
+PRUEF_PAUSE_SEK = 10          # wie oft auf ein neues _starten-Flag geprueft wird
 
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
 
@@ -91,23 +94,22 @@ def _warte_auf_chat_pause():
         time.sleep(3)
 
 
-def _lade_zustand() -> dict:
-    if ZUSTAND.exists():
-        try:
-            return json.loads(ZUSTAND.read_text())
-        except Exception:
-            pass
-    return {}
-
-
-def _speichere_zustand(z: dict):
-    ZUSTAND.write_text(json.dumps(z, indent=2, ensure_ascii=False), encoding="utf-8")
+def _wesen_ordner(wesen: str) -> Path:
+    ordner = KLON_ROOT / wesen
+    ordner.mkdir(parents=True, exist_ok=True)
+    return ordner
 
 
 def _history_pfad(wesen: str) -> Path:
-    ordner = KLON_ROOT / wesen
-    ordner.mkdir(parents=True, exist_ok=True)
-    return ordner / "chat_history.jsonl"
+    return _wesen_ordner(wesen) / "chat_history.jsonl"
+
+
+def _start_flag(wesen: str) -> Path:
+    return _wesen_ordner(wesen) / "_starten"
+
+
+def _stop_flag(wesen: str) -> Path:
+    return _wesen_ordner(wesen) / "_stoppen"
 
 
 def _anhaengen(hp: Path, zeile: dict) -> None:
@@ -120,17 +122,6 @@ def _weltbild(wesen: str) -> str:
     if wb.exists():
         return wb.read_text(encoding="utf-8", errors="replace")[:800]
     return ""
-
-
-def _dran(wesen: str, zustand: dict) -> bool:
-    letzter = zustand.get(wesen, {}).get("letzte_session_start")
-    if not letzter:
-        return True
-    try:
-        letzter_ts = datetime.fromisoformat(letzter).timestamp()
-    except Exception:
-        return True
-    return (time.time() - letzter_ts) >= MINDEST_PAUSE_SEK
 
 
 # ── Marker-Aktionen: echte Handlung, ausgeloest aus dem Selbstgespraech ──────
@@ -250,9 +241,12 @@ Dein aktuelles Weltbild (Auszug):
 
 def _fuehre_selbstgespraech(wesen: str) -> None:
     hp = _history_pfad(wesen)
+    stop_flag = _stop_flag(wesen)
+    stop_flag.unlink(missing_ok=True)  # ein alter, unbenutzter Stop-Wunsch gilt nicht fuer eine neue Session
+
     session_id = uuid.uuid4().hex[:8]
     _anhaengen(hp, {"type": "session_start", "ts": _js_ts(), "session_id": session_id})
-    log.info(f"[{wesen}] Selbstgespraech beginnt (Session {session_id})")
+    log.info(f"[{wesen}] Selbstgespraech beginnt (Session {session_id}, manuell gestartet)")
 
     system_prompt = SYSTEM_PROMPT_TEMPLATE.format(
         wesen=wesen, weltbild=_weltbild(wesen) or "(kein Weltbild hinterlegt)"
@@ -262,10 +256,10 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
         {"role": "user", "content": "(Selbstgespraech beginnt jetzt. Sprich mit dir selbst.)"},
     ]
 
-    start_zeit = time.time()
-    for runde in range(TURN_MAX):
-        if time.time() - start_zeit >= SESSION_MAX_SEK:
-            log.info(f"[{wesen}] Zeitlimit erreicht ({SESSION_MAX_SEK}s) — Session {session_id} endet")
+    for runde in range(TURN_SICHERHEITSDECKEL):
+        if stop_flag.exists():
+            stop_flag.unlink(missing_ok=True)
+            log.info(f"[{wesen}] von Daniel gestoppt (Runde {runde}) — Session {session_id}")
             break
 
         _warte_auf_chat_pause()
@@ -289,23 +283,26 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
             log.info(f"[{wesen}] Selbstgespraech beendet sich selbst (Runde {runde}) — Session {session_id}")
             break
         verlauf.append({"role": "user", "content": "(sprich weiter mit dir selbst, oder [[ENDE: ...]] wenn genug ist)"})
+    else:
+        log.warning(f"[{wesen}] Sicherheitsdeckel ({TURN_SICHERHEITSDECKEL} Runden) erreicht — "
+                    f"Session {session_id} zwangsbeendet")
 
     log.info(f"[{wesen}] Selbstgespraech-Session {session_id} abgeschlossen")
 
 
 def haupt_schleife():
-    log.info("Klon-Selbstgespraech-Kern startet.")
+    log.info("Klon-Selbstgespraech-Kern startet (manueller Modus — wartet auf _starten-Flag pro Wesen).")
+    for wesen in WESEN:
+        _wesen_ordner(wesen)  # Ordner+Flag-Pfade schon vorbereiten, damit 'touch' sofort funktioniert
     while True:
-        zustand = _lade_zustand()
         for wesen in WESEN:
-            if _dran(wesen, zustand):
+            flag = _start_flag(wesen)
+            if flag.exists():
+                flag.unlink(missing_ok=True)
                 try:
                     _fuehre_selbstgespraech(wesen)
                 except Exception as e:
                     log.error(f"[{wesen}] Fehler im Selbstgespraech: {e}")
-                zustand.setdefault(wesen, {})["letzte_session_start"] = _js_ts()
-                _speichere_zustand(zustand)
-            time.sleep(5)
         time.sleep(PRUEF_PAUSE_SEK)
 
 

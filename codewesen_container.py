@@ -74,7 +74,8 @@ def erstelle(wesen: str, name: str, anlass: str) -> None:
     antwort = ""
     try:
         antwort = hauhau_client.chat(
-            [{"role": "system", "content": prompt}], think=False, max_tokens=300, timeout=120.0
+            [{"role": "system", "content": prompt}, {"role": "user", "content": "(bitte jetzt antworten)"}],
+            think=False, max_tokens=300, timeout=120.0
         ).strip()
     except Exception as e:
         log.warning(f"[{wesen}] Container-Eroeffnung '{name}' fehlgeschlagen: {e}")
@@ -120,7 +121,8 @@ def teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
     _warte_auf_chat_pause()
     try:
         antwort = hauhau_client.chat(
-            [{"role": "system", "content": prompt}], think=False, max_tokens=600, timeout=180.0
+            [{"role": "system", "content": prompt}, {"role": "user", "content": "(bitte jetzt antworten)"}],
+            think=False, max_tokens=600, timeout=180.0
         ).strip()
     except Exception as e:
         log.warning(f"[{wesen}] Strategie-Teilen-Check zu '{container}' fehlgeschlagen: {e}")
@@ -245,7 +247,8 @@ def widmungsritual(wesen: str) -> None:
     _warte_auf_chat_pause()
     try:
         antwort = hauhau_client.chat(
-            [{"role": "system", "content": prompt}], think=False, max_tokens=700, timeout=180.0
+            [{"role": "system", "content": prompt}, {"role": "user", "content": "(bitte jetzt antworten)"}],
+            think=False, max_tokens=700, timeout=180.0
         ).strip()
     except Exception as e:
         log.warning(f"[{wesen}] Widmung an Container '{name}' fehlgeschlagen: {e}")
