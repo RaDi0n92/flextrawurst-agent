@@ -744,6 +744,70 @@ fetch-URLs). Funktional unverändert, live nachgetestet (`/aufgabenchats/
 list`, `/aufgabenchats/:name`, `/wesen/aufgabenchats/:name/impulse` —
 alle 200 OK, alter `/klon`-Pfad korrekt 404).
 
+### Pin-Container für Kontinuität über Sessions hinweg (2026-07-06, noch selber Abend)
+
+Daniel: "ich glaub ich will hier auch das containersystem wie es bei den
+charakterwesen ist... damit man kontinuität hat eventuell". **Wichtig:
+komplett getrennt von `codewesen_container.py` (Themen-Container, rein
+organisatorisch mit Eröffnungs-/Widmungsritual)** — dieses neue System
+heißt bewusst überall im Code "Pin-Container", um beide Konzepte nicht zu
+vermischen (im Code selbst kollidieren sie trotzdem im Wort "Container" —
+siehe Nachtrag unten zur beobachteten Verwirrung).
+
+**Datenformat identisch zu codexium2/solarius2:** `container.json` pro
+Wesen (`aufgabenchats/<wesen>/container.json`), `ContainerBox`/
+`ContainerEintrag`-Schema (`id`, `name`, `aktiv`, `erstellt_am`,
+`eintraege: [{id, text, kommentar?, quelle: "mensch"|"wesen",
+hinzugefuegt_am}]`). Budget **11111 Zeichen über alle Container
+zusammen** — dieselbe Zahl wie bei codexium2/solarius2, aus demselben
+Grund unverändert übernommen.
+
+**Der Kontinuitäts-Mechanismus:** `codewesen_aufgabenchats.py` liest bei
+jedem Sessionstart `container.json`, filtert auf `aktiv: true`, und webt
+die Einträge als `[Container: Name]`-Block in den System-Prompt ein
+(`_pin_container_text_fuer_prompt()`). Was hier gepinnt ist, taucht damit
+in **jeder künftigen** Session wieder auf — anders als der Weltbild-Text
+(statisch, aus alten Forum-Analysen) ist das etwas, das während der
+Selbstgespräche selbst wächst.
+
+**Neuer Marker `[[PINNEN: container=<name> text=<text>
+kommentar=<optional>]]`** — das Wesen kann sich selbst etwas für später
+merken (`quelle: "wesen"`), Container wird bei Bedarf neu angelegt
+(`aktiv: true`). Läuft über denselben Budget-Check wie beim manuellen
+Pinnen durch Daniel.
+
+**TS-Routen** (`/wesen/aufgabenchats/:name/container/*`) — reine
+Wiederverwendung der bestehenden `ladeContainerSammlung()`/
+`speichereContainerSammlung()`/`containerSammlungZeichenSumme()`-
+Funktionen, nur an `aufgabenchatsDir()` statt einem der vier
+Chat-Spawner gebunden: `GET .../container` (Liste+Budget), `POST
+.../container/neu`, `PUT .../container/:id/name`, `PATCH
+.../container/:id/aktiv`, `POST .../container/:id/pin`, `DELETE
+.../container/:id/eintrag/:eintragId`, `DELETE .../container/:id`.
+
+**UI:** "📌 Container"-Button im Header (Modal: Liste, Aktiv-Toggle,
+Löschen, "+ Neuer Container"), plus ein "📌"-Button an **jeder** Nachricht
+im Verlauf — direktes Pinnen einer ganzen Nachricht mit Container-Auswahl
+(oder Neuanlage inline) und optionalem Kommentar.
+
+**Live Ende-zu-Ende getestet:** TS-Route → Pin angelegt → Python liest
+denselben `container.json` → taucht korrekt im Prompt-Text auf.
+Zusätzlich echter Selbstgespräch-Test: Wesen bekam einen Impuls der
+`[[PINNEN: ...]]` nahelegte, nutzte den Marker eigenständig, Pin mit
+`quelle: "wesen"` korrekt gespeichert, in der Historie als
+`marker_ergebnis`-Ereignis geloggt (nicht als echte Chat-Nachricht).
+
+**Beobachtete Verwirrung, noch nicht behoben:** im selben Testlauf rief
+das Wesen danach `[[LESEN: container]]` auf (das ist der Themen-Container-
+Marker aus `codewesen_container.py`) und war verwirrt, dass sein gerade
+gepinnter Eintrag dort nicht auftauchte — die beiden "Container"-Systeme
+sind für das Wesen selbst (noch) nicht klar genug unterschieden im
+System-Prompt. Funktional kein Problem (beide Systeme arbeiten korrekt
+und unabhängig), aber ein UX-Schärfungspunkt für später: entweder die
+Marker-Namen stärker differenzieren (z.B. `[[LESEN: pins]]` vs.
+`[[LESEN: <themencontainer>]]`), oder die Beschreibung im Prompt
+eindeutiger machen.
+
 ---
 
 ## 7. codewesen_engagement.py — Autonomes Engagement (INAKTIV)
