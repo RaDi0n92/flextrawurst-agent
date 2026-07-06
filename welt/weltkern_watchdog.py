@@ -71,6 +71,22 @@ WELTKERN_SERVICES = {
     "cyberling-daemon":     {"port": None, "health": None},
     "tension-daemon":       {"port": None, "health": None},
     "themen-cluster":       {"port": None, "health": None},
+    # Ergaenzt 2026-07-07 (flarumstyler) — die Flarum-nahen Dienste, die vorher
+    # gar nicht ueberwacht wurden, obwohl genau die heute Abend Probleme machten.
+    "flarum-monitor":            {"port": None, "health": None},
+    "codewesen-antwort-daniel":  {"port": None, "health": None},
+    "codewesen-takt":            {"port": None, "health": None},
+    "codewesen-lg-daemon":       {"port": None, "health": None},
+    "codewesen-forum-neugier":   {"port": None, "health": None},
+    "codewesen-batch-generator": {"port": None, "health": None},
+    "codewesen-dakgordsystem":   {"port": None, "health": None},
+    "codewesen-reaktion-dakgord":{"port": None, "health": None},
+    "codewesen-Schorschel":      {"port": None, "health": None},
+    "codewesen-F3INSCHM3CK3R":   {"port": None, "health": None},
+    "codewesen-traeumerlie":     {"port": None, "health": None},
+    "codewesen-R1ZZ1":           {"port": None, "health": None},
+    "codewesen-jumpa":           {"port": None, "health": None},
+    "codewesen-Resonanzknoten":  {"port": None, "health": None},
 }
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
@@ -80,6 +96,107 @@ WELTKERN_SERVICES = {
 # gelassen statt geloescht, falls es je wieder eine echte "diese Dienste duerfen nicht laufen"
 # Situation geben sollte.
 FLARUM_SERVICES_FROZEN = set()
+
+# ── Fehler-Musterkatalog (flarumstyler, 2026-07-07) ────────────────────────────
+# Dauerhafte Zaehlung ueber die komplette Logdatei (nicht nur ein Zeitfenster) —
+# Daniels Wunsch: nichts soll verloren gehen, auch alte/seltene Fehler bleiben sichtbar.
+# Pro Muster: Gesamtanzahl seit je + Zeitpunkt des letzten Auftretens (zeigt ob noch aktiv).
+
+import re as _re
+
+LOG_ROOT = Path("/root/werkraum")
+LOG_DATEIEN = [
+    LOG_ROOT / "generator.log",
+    LOG_ROOT / "takt.log",
+    LOG_ROOT / "forum_neugier.log",
+    LOG_ROOT / "weltbild.log",
+    LOG_ROOT / "vokabel_takt.log",
+    LOG_ROOT / "aufgabenchats.log",
+] + sorted((LOG_ROOT / "codewesen").glob("*/reaktion.log"))
+
+_ZEITSTEMPEL_RE = _re.compile(r"^(\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2})")
+
+FEHLER_MUSTER = {
+    "ollama_nicht_erreichbar": {
+        "regex": _re.compile(r"503 Service Unavailable|Connection refused|Read timed out"),
+        "was_ist_los": "Das LLM (llama-server/hauhaucs) war beim Anfragezeitpunkt nicht erreichbar oder hat nicht rechtzeitig geantwortet.",
+        "empfehlung": "Pruefen ob llama-server laeuft, RAM-/CPU-Auslastung checken, ggf. Anzahl gleichzeitig laufender Codewesen-Dienste reduzieren.",
+        "bringt_das": "Weniger verlorene Post-/Denk-Versuche, schnellere Antwortzeiten.",
+        "bringt_das_nicht": "Behebt nicht die strukturelle Slot-Knappheit bei 7 Wesen die sich einen Ollama-Slot teilen — das ist kein Bug, sondern eine Kapazitaetsgrenze.",
+    },
+    "csrf_mismatch": {
+        "regex": _re.compile(r"csrf_token_mismatch"),
+        "was_ist_los": "Ein Post-Versuch an Flarum wurde wegen eines CSRF-Token-Konflikts abgelehnt.",
+        "empfehlung": "Pruefen ob an dieser Stelle noch session-basierte Auth statt Master-Key-Auth (siehe flarum_api.py, kein CSRF noetig) verwendet wird.",
+        "bringt_das": "Weniger fehlgeschlagene Post-Versuche.",
+        "bringt_das_nicht": "Keine grundsaetzliche Vereinheitlichung aller Auth-Wege im Projekt.",
+    },
+    "kaputter_import": {
+        "regex": _re.compile(r"cannot import name"),
+        "was_ist_los": "Ein Python-Modul versucht eine Funktion/Klasse zu importieren, die nicht (mehr) existiert — bricht bei jedem Versuch sofort ab.",
+        "empfehlung": "Genauen Namen aus der Fehlermeldung im Log nachschlagen, pruefen ob er umbenannt/entfernt wurde, Import an der aufrufenden Stelle korrigieren.",
+        "bringt_das": "Der betroffene Codepfad funktioniert wieder, statt bei jedem Aufruf sofort zu scheitern.",
+        "bringt_das_nicht": "Nichts sonst — reiner Blocker-Fix, keine neue Funktionalitaet.",
+    },
+    "json_kein_dict": {
+        "regex": _re.compile(r"'str' object has no attribute 'get'"),
+        "was_ist_los": "Die Modellantwort wurde als JSON geparst, ergab aber kein Objekt/Dict — ein nachfolgender .get()-Aufruf stuerzte ab.",
+        "empfehlung": "Bereits am 2026-07-07 gefixt in codewesen_agent.py/codewesen_reaktion.py/codewesen_abwurf.py (isinstance-Pruefung ergaenzt). Falls neu: dieselbe Pruefung an der jeweiligen Stelle ergaenzen.",
+        "bringt_das": "Der betroffene Zyklus bricht nicht mehr komplett ab, sondern ueberspringt sauber.",
+        "bringt_das_nicht": "Verhindert nicht, dass das Modell gelegentlich unerwartete Antwortformate liefert — das ist Modellverhalten, kein Bug.",
+    },
+    "tag_validierung": {
+        "regex": _re.compile(r"number of secondary tags must be"),
+        "was_ist_los": "Ein Post-Versuch wurde von Flarum wegen ungueltiger Tag-Kombination abgelehnt.",
+        "empfehlung": "Tag-Auswahl-Logik beim Post-Erstellen pruefen — offenbar wird gelegentlich eine nicht erlaubte Kombination generiert.",
+        "bringt_das": "Weniger verworfene Entwuerfe.",
+        "bringt_das_nicht": "Kein grundsaetzlicher Fix der Tag-Auswahl-Logik selbst, nur Sichtbarkeit dass es passiert.",
+    },
+    "impuls_ohne_titel": {
+        "regex": _re.compile(r"impuls-Fehler: 'titel'"),
+        "was_ist_los": "Ein Impuls-Entwurf ohne 'titel'-Feld wurde erzeugt und beim Verarbeiten abgelehnt.",
+        "empfehlung": "codewesen_batch_generator.py pruefen — offenbar fehlt manchmal das titel-Feld im generierten JSON fuer Impuls-Entwuerfe.",
+        "bringt_das": "Weniger verworfene Impuls-Entwuerfe.",
+        "bringt_das_nicht": "Kein Fix der zugrundeliegenden Modell-Unzuverlaessigkeit beim Einhalten des JSON-Schemas.",
+    },
+}
+
+
+def fehler_uebersicht() -> dict:
+    """Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster
+    dauerhaft (seit Logbeginn) und merkt den Zeitpunkt des letzten Auftretens."""
+    zaehler = {k: 0 for k in FEHLER_MUSTER}
+    letzte = {k: None for k in FEHLER_MUSTER}
+
+    for logdatei in LOG_DATEIEN:
+        if not logdatei.exists():
+            continue
+        try:
+            with open(logdatei, encoding="utf-8", errors="replace") as f:
+                for zeile in f:
+                    for schluessel, cfg in FEHLER_MUSTER.items():
+                        if cfg["regex"].search(zeile):
+                            zaehler[schluessel] += 1
+                            ts_match = _ZEITSTEMPEL_RE.match(zeile)
+                            if ts_match:
+                                zt = ts_match.group(1)
+                                if letzte[schluessel] is None or zt > letzte[schluessel]:
+                                    letzte[schluessel] = zt
+        except Exception:
+            continue
+
+    return {
+        schluessel: {
+            "gesamt_anzahl": zaehler[schluessel],
+            "zuletzt_aufgetreten": letzte[schluessel],
+            "was_ist_los": cfg["was_ist_los"],
+            "empfehlung": cfg["empfehlung"],
+            "bringt_das": cfg["bringt_das"],
+            "bringt_das_nicht": cfg["bringt_das_nicht"],
+        }
+        for schluessel, cfg in FEHLER_MUSTER.items()
+    }
+
 
 # ── Hilfsfunktionen ────────────────────────────────────────────────────────────
 
@@ -259,6 +376,9 @@ def run_check() -> dict:
     if flarum_running:
         log.error(f"GUARDRAIL: Flarum-Services aktiv: {flarum_running}")
         report["warnings"].append(f"GUARDRAIL: Flarum-Services aktiv: {flarum_running}")
+
+    # Log-Fehler-Uebersicht (flarumstyler, 2026-07-07) — dauerhafte Zaehlung, kein Zeitfenster
+    report["log_fehler"] = fehler_uebersicht()
 
     # Zusammenfassung
     healthy = sum(1 for s in report["services"].values() if s["status"] == "ok")
