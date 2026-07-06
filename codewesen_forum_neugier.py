@@ -33,7 +33,7 @@ WESEN = [
 import os as _os
 DB = {
     "host": "localhost", "port": 3306, "db": "flarum",
-    "user": "flarum", "password": _os.environ.get("FLARUM_DB_PASSWORD", "!Windowsxp9645"),
+    "user": "flarum", "password": _os.environ.get("FLARUM_DB_PASSWORD", ""),
     "charset": "utf8mb4", "autocommit": True,
     "cursorclass": pymysql.cursors.DictCursor,
 }

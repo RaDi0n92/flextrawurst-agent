@@ -14,6 +14,7 @@ Aufruf:
 
 import html as H
 import json
+import os
 import re
 import sys
 import pymysql
@@ -22,7 +23,7 @@ from pathlib import Path
 
 DB = dict(
     host="localhost", port=3306,
-    user="flarum", password="!Windowsxp9645",
+    user="flarum", password=os.environ.get("FLARUM_DB_PASSWORD", ""),
     database="flarum", charset="utf8mb4",
 )
 DEFAULT_OUT = "/root/werkraum/flarum-export/flarum.html"

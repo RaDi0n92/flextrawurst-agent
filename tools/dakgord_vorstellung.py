@@ -19,7 +19,7 @@ CODEWESEN_DIR = WERKRAUM / "codewesen"
 VERFASSUNG_DIR = WERKRAUM / "agent/dak_gord_system/verfassung_neu"
 
 DB = dict(host="localhost", port=3306, db="flarum", user="flarum",
-          password=os.environ.get("FLARUM_DB_PASSWORD", "!Windowsxp9645"),
+          password=os.environ.get("FLARUM_DB_PASSWORD", ""),
           charset="utf8mb4", cursorclass=pymysql.cursors.DictCursor)
 
 TAG_VORSTELLUNG = 31  # "Vorstellung" Tag-ID — prüfen

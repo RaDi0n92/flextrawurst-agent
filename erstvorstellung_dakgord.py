@@ -10,8 +10,6 @@ from pathlib import Path
 
 sys.path.insert(0, "/root/werkraum")
 
-os.environ.setdefault("FLARUM_DB_PASSWORD", "!Windowsxp9645")
-
 import flarum_api
 
 BASE = Path("/root/werkraum/codewesen")

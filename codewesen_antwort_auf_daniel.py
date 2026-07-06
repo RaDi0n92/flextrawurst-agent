@@ -19,9 +19,6 @@ from pathlib import Path
 
 sys.path.insert(0, "/root/werkraum")
 
-os.environ.setdefault("FLARUM_DB_PASSWORD", "!Windowsxp9645")
-os.environ.setdefault("FLARUM_MASTER_KEY", "wiemX2e6qEzuyknpOJVxjEcD9kS8FlOcT__hfNYu9yIWEDhuFzdmpQ")
-
 import pymysql
 import pymysql.cursors
 import flarum_api
