@@ -220,6 +220,8 @@ def verarbeite_abwurf(wesen_name: str, begruendung: str, dauer_minuten: float,
         start = raw.find("{")
         end   = raw.rfind("}") + 1
         data  = _json.loads(raw[start:end])
+        if not isinstance(data, dict):
+            raise ValueError(f"erwartet dict, bekommen {type(data).__name__}")
     except Exception:
         if log:
             log.debug("[Abwurf] JSON-Parse fehlgeschlagen: %s", raw[:80])

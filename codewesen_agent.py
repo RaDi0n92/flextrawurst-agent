@@ -139,9 +139,10 @@ def extrahiere_json(text: str) -> dict | None:
     if start == -1 or end == 0:
         return None
     try:
-        return json.loads(text[start:end])
+        result = json.loads(text[start:end])
     except Exception:
         return None
+    return result if isinstance(result, dict) else None
 
 
 # ── System-Prompt ─────────────────────────────────────────────────────────────

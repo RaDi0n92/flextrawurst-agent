@@ -484,9 +484,10 @@ def _parse_json(raw: str) -> dict | None:
     if start == -1 or end == 0:
         return None
     try:
-        return json.loads(raw[start:end])
+        result = json.loads(raw[start:end])
     except Exception:
         return None
+    return result if isinstance(result, dict) else None
 
 
 def process_inbox(name: str, token: str, log: logging.Logger):
