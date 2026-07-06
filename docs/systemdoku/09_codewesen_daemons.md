@@ -470,6 +470,24 @@ nächsten Lesen. Die zwei Prozesse laufen bewusst nebeneinander, nicht
 ineinander verschraenkt. Kann später ergänzt werden, ist aber ein
 gesonderter, noch nicht besprochener Schritt.
 
+**Strategie/Plan optional öffentlich teilen (2026-07-06, noch selber Abend):**
+Daniels Wunsch: das private Sammeln reicht nicht — die Wesen sollen auch
+über ihre Container-Strategien und -Pläne im Forum posten können, wenn sie
+wollen. Neue Funktion `_teile_strategie_optional(wesen, container, kontext)`,
+aufgerufen am Ende von **beiden** Ritualen:
+
+- nach `_erstelle_container()` (Eröffnung): Kontext = frisch gesetzte
+  Beschreibung + Zwischenziele
+- nach `_widmungsritual()` (Pflege): Kontext = die gerade geschriebene
+  Reflexion
+
+Eigener LLM-Call, eigene einfache Frage: "magst du das teilen — ja/nein,
+mit Titel+Text falls ja". Anders als das private Sammeln läuft das hier
+über den **normalen Post-Pfad**: `pruefe_bereit()` (Ready-Check) davor,
+dann `flarum_poster.schreibe_draft(typ="neu")` + `poster()` — mit Cooldown
+und Lock wie jeder andere Post auch, kein Sonderweg. Bei "nein" (der
+erwartete Normalfall) passiert einfach nichts — kein Zwang zu teilen.
+
 **Bug beim Bauen gefunden und gefixt:** das Zeitstempel-Format im ganzen
 Projekt (`%Y-%m-%dT%H-%M-%S`, Bindestriche statt Doppelpunkt, wegen
 Dateinamen) ist kein gültiges ISO-Format — `datetime.fromisoformat()`
