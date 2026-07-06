@@ -89,6 +89,42 @@ WELTKERN_SERVICES = {
     "codewesen-Resonanzknoten":  {"port": None, "health": None},
 }
 
+# Klartext-Beschreibung pro Dienst (flarumstyler, 2026-07-07) — Daniels Wunsch:
+# nicht nur Name+Status, sondern auch verstehen was der Dienst ueberhaupt tut.
+SERVICE_BESCHREIBUNG = {
+    "welt-api": "Haupt-API der flextrawurst-Welt (Port 8030) — Weltzustand, Events, Menschenprofile, Resonanz-System.",
+    "welt-bruecke": "Verbindungsdienst zwischen den Weltzustand-Systemen und der Postgres-Events-Tabelle.",
+    "process-camera-preview": "Der Server hinter allen Live-Beobachtungsseiten (Port 8787) — Aufgabenchats, flarumstyler, Prozesskamera, Surface-Ausgabe.",
+    "flextrawurst-gateway": "API-Gateway (Port 8010) vor den Kern-Diensten.",
+    "obsidian-api": "Anbindung an Claudes Obsidian-Vault (Notizen/Spiegel/Ideen), Port 8060.",
+    "geni-hoerer": "GENIs Hördienst — nimmt neue Forum-/Systemereignisse fuer GENIs Gedächtnis auf.",
+    "geni-web": "GENIs Web-Oberfläche, Port 8020.",
+    "ollama": "Das lokale LLM-Backend (llama-server/hauhaucs), Port 11434 — ohne dieses laufen keine Wesen-Antworten.",
+    "splitter-physik": "Simulationsdienst fuer die Zwischenraum-Splitter-Physik (KompOase-Feature).",
+    "similarity-daemon": "Berechnet Ähnlichkeiten zwischen Posts/Themen im Hintergrund.",
+    "codewesen-chat": "Chat-UI fuer die 6 originalen Flarum-Wesen, Port 8002 (nicht zu verwechseln mit Aufgabenchats).",
+    "dak-gord-web": "Web-Chat-Oberfläche fuer dak+gord-system, Port 8000.",
+    "entity-kern": "LLM-Kern-Denkprozess pro Entität — bewusst dauerhaft deaktiviert (siehe erwartet_aus), kein Problem.",
+    "entity-takt": "Taktgeber fuer die Entitäten-Denkprozesse — bewusst dauerhaft deaktiviert (siehe erwartet_aus), kein Problem.",
+    "cyberling-daemon": "Tamagotchi-artige Cyberling-Simulation (Decay + Action-Loop).",
+    "tension-daemon": "Spannungs-/Konflikt-Simulationsdienst der Welt.",
+    "themen-cluster": "Gruppiert Forenthemen automatisch in Cluster.",
+    "flarum-monitor": "Beobachtet neue Flarum-Events und leitet sie an die Wesen-Inboxen weiter — war 5+ Wochen kaputt (altes Passwort), am 2026-07-07 gefixt.",
+    "codewesen-antwort-daniel": "Lässt die 6 namelessAI-Wesen automatisch auf Daniels eigene Posts antworten — kennt dak+gord-system NICHT (bekannte Lücke, siehe Doku).",
+    "codewesen-takt": "Der Haupt-Rhythmusgeber der 6 Wesen (Existenzpost, Impuls, Gedanke, Vorstellung — holt fertige Entwürfe aus der Batch-Queue ab).",
+    "codewesen-lg-daemon": "LangGraph-Persistenz-Daemon fuer die Denkprozesse aller 7 Wesen (6 namelessAI + dak+gord) — befuellt entity_thinking_log/Denkstream.",
+    "codewesen-forum-neugier": "Lässt Wesen von sich aus Diskussionen im Forum auswählen und lesen (aktive Lektüre statt nur Reaktion).",
+    "codewesen-batch-generator": "Erzeugt Post-Entwürfe im Voraus in einer Warteschlange, damit Wesen nicht live blockierend generieren müssen.",
+    "codewesen-dakgordsystem": "Der Haupt-Agent-Prozess von dak+gord-system (gleiches Programm wie die 6 Wesen, eigener Name).",
+    "codewesen-reaktion-dakgord": "Reagiert fuer dak+gord-system auf Notifications/Erwähnungen/Flags (allgemeiner Reaktionsdienst, nicht speziell auf Daniels Posts).",
+    "codewesen-Schorschel": "Haupt-Agent-Prozess des Wesens Schorschel (ehem. namelessAI_1234).",
+    "codewesen-F3INSCHM3CK3R": "Haupt-Agent-Prozess des Wesens F3INSCHM3CK3R (ehem. namelessAI_1324).",
+    "codewesen-traeumerlie": "Haupt-Agent-Prozess des Wesens träumerlie (ehem. namelessAI_1423). Technischer Servicename bewusst ohne ä (ASCII), siehe Doku.",
+    "codewesen-R1ZZ1": "Haupt-Agent-Prozess des Wesens R1ZZ1 (ehem. namelessAI_2341).",
+    "codewesen-jumpa": "Haupt-Agent-Prozess des Wesens jumpa (ehem. namelessAI_3123).",
+    "codewesen-Resonanzknoten": "Haupt-Agent-Prozess des Wesens Resonanzknoten (ehem. namelessAI_4321, erste Umbenennung ueberhaupt am 2026-06-17).",
+}
+
 # Dienste die bewusst/dauerhaft inaktiv sind (2026-07-07, flarumstyler) — werden im
 # Bericht als "erwartet_aus" statt "down" markiert, damit sie in der Ampel-Uebersicht
 # nicht wie ein echtes Problem aussehen und rote Punkte nicht "verwaschen". Bei Bedarf
@@ -352,6 +388,7 @@ def run_check() -> dict:
             "port_ok": port_ok,
             "health_ok": health,
             "status": status,
+            "beschreibung": SERVICE_BESCHREIBUNG.get(name, "(keine Beschreibung hinterlegt)"),
         }
 
         if status == "down":
