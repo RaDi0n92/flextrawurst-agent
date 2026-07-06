@@ -57,15 +57,15 @@ ExecStart=/usr/local/bin/llama-server \
   --mmproj .../mmproj-f16.gguf \
   --alias hauhaucs-q6 \
   --ctx-size 36663 \
-  --threads 10 \
+  --threads 12 \
   --host 127.0.0.1 --port 11435 \
   --parallel 2 \
   --flash-attn on \
   --mlock \
-  --cpu-range 0-9 --cpu-range-batch 0-9 --cpu-strict 1
+  --cpu-range 0-11 --cpu-range-batch 0-11 --cpu-strict 1
 
 [Service]
-AllowedCPUs=0-9
+AllowedCPUs=0-11
 ```
 
 ### Kritische Werte — Begründung, NICHT ohne Rücksprache ändern
@@ -75,11 +75,12 @@ dem Page-Cache verdrängt werden. Ohne mlock brach die Geschwindigkeit unter
 Hintergrundlast von 14 tok/s auf 3-5 tok/s ein (gemessen 2026-07-06) —
 mit mlock blieb sie stabil bei 6-7 tok/s über eine ganze Generierung.
 
-**`AllowedCPUs=0-9`** (Cgroup, nicht `--cpu-range` allein — das griff nicht
-zuverlässig): Isoliert 10 von 16 Kernen für llama-server, Rest bleibt für
-Ollama/Wesen-Prozesse/System. Trade-off bewusst gewählt: garantierte,
-niedrigere Geschwindigkeit (~4 tok/s stabil) statt schwankender höherer
-Spitzenwerte ohne Isolierung.
+**`AllowedCPUs=0-11`** (Cgroup, nicht `--cpu-range` allein — das griff nicht
+zuverlässig): Isoliert 12 von 16 Kernen für llama-server (erhöht von 10 am
+2026-07-06, Daniels Wunsch), Rest bleibt für Ollama/Wesen-Prozesse/System —
+die Wesen-Daemons sind selbst leichtgewichtig (I/O-wartend, kein harter
+CPU-Verbrauch), 4 Kerne reichen ihnen aus. Trade-off bewusst gewählt:
+garantierte, niedrigere Geschwindigkeit als unisoliert, aber vorhersehbar.
 
 **`--ctx-size 36663 --parallel 2`** (Stand 2026-07-06, aktualisiert): jeder der
 2 Slots bekommt **18432 Token** effektiv (vorher 6400 bei `--ctx-size 12345`).
@@ -104,9 +105,70 @@ gewählt: deutlich mehr Puffer als die ursprünglichen 6400/Slot, ohne die
 Extremwerte (88888) auszureizen. Reale Performance wird im laufenden Betrieb
 weiterbeobachtet.
 
-**`--threads 10`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
+**`--threads 12`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
-nur Konkurrenz mit anderen Prozessen.
+nur Konkurrenz mit anderen Prozessen. Erhöht von 10→12 am 2026-07-06 (mit
+`--cpu-range`/`AllowedCPUs` im Gleichschritt), Ergebnis positiv, keine
+Verdrängung anderer Dienste beobachtet.
+
+**`--parallel 2` (NICHT 3)** — bewusst getestet und verworfen: `--parallel 3`
+wurde am 2026-07-06 kurz live getestet, Ergebnis war eine drastische
+Verlangsamung sobald 3 verschiedene Gespräche gleichzeitig aktiv waren
+(Prompt-Verarbeitung brach von ~90-115 tok/s auf ~2,5 tok/s ein, ein einzelner
+Task erzeugte binnen 10 Minuten 143.481 Log-Zeilen). Ursache: MoE-Architektur
+(Qwen3.6-35B-A3B, nur 3B aktive Parameter pro Token). Läuft nur 1 Sequenz,
+werden nur die für sie relevanten Experten aus dem RAM gelesen (~3B-Fussabdruck).
+Sobald llama-server mehrere UNTERSCHIEDLICHE Sequenzen in einem Batch
+zusammenfasst (Continuous Batching, das was `--parallel` ermöglicht), braucht
+jede Sequenz potenziell andere Experten — der Speicherbandbreiten-Bedarf pro
+Batch-Schritt wandert Richtung des vollen 35B-Modells statt bei 3B zu bleiben.
+Mit 2 gleichzeitigen Sequenzen ist das schon spürbar, mit 3 wird es auf dieser
+Hardware praktisch unbrauchbar. **Mehr Slots helfen bei diesem Modell nicht —
+sie schaden, sobald wirklich mehrere verschiedene Gespräche gleichzeitig aktiv
+sind.** Nicht ohne erneuten Test hochsetzen.
+
+---
+
+## id_slot-Priorisierung — Live-Chat vs. Automatikbetrieb (seit 2026-07-06)
+
+**Ausgangsproblem**: Bei echter Gleichzeitigkeit (Volllasttest, alle 8 Wesen +
+Spawncharakter gleichzeitig angefragt) landeten Chat-Antworten in einer reinen
+FIFO-Warteschlange über beide Slots — Antwortzeiten schwankten zwischen 1,8s
+(Losglück) und 253s (Warteschlangenende). Für einen Menschen, der mit einem
+Wesen/GENI/Spawncharakter chattet, ist das nicht akzeptabel, wenn zufällig
+gerade mehrere Automatik-Ticks laufen.
+
+**Lösung**: `id_slot` ist ein llama.cpp-Request-Feld (live getestet und
+bestätigt — eine Anfrage mit explizitem `id_slot=1` wartete nachweislich auf
+genau diesen Slot, statt auf einen früher freien Slot zu wechseln, obwohl der
+andere Slot 0 und ein späterer Slot 2 schon frei waren). Darauf aufbauend:
+
+- `hauhau_client.py`/`hauhau_client.ts`: **Default**, wenn kein `id_slot`
+  explizit übergeben wird → automatisch Slot 1 oder 2 (`1 + pid % 2`), damit
+  Hintergrund-/Automatik-Traffic (Wesen-Ticks, `lg_daemon`, GENI-Hintergrund,
+  Phase-2-Tools) NIE Slot 0 belegt. Kein Code an diesen ~35 Aufrufstellen
+  geändert — der sichere Default greift automatisch.
+- **Explizit `id_slot=0`** an den 4 echten Live-Chat-Einstiegspunkten gesetzt:
+  `codewesen_chat.py` (`stream_ollama`), `zensi/server.py` (Chat-Handler),
+  `geni/dialog.py` (`/chat`-Endpoint), `serve_process_camera_preview.ts`
+  (Dolphin-Mischpult UND Spawncharakter-Chat).
+
+**Kein permanent reservierter Leerlauf-Slot** (das wollte Daniel ausdrücklich
+nicht — ein Slot der immer für Chat reserviert ist, auch wenn niemand chattet,
+verschwendet Kapazität). Stattdessen: mit nur 2 Slots insgesamt bekommt Chat
+IMMER einen der beiden Plätze, Automatikbetrieb teilt sich effektiv nur noch 1
+Slot, sobald ein Mensch aktiv chattet — das ist der akzeptierte Kompromiss
+(mehr Slots würden wegen des MoE-Effekts oben ohnehin schaden, nicht helfen).
+
+**Getestet (2026-07-06, warmer Service)**: Ein kurzer Chat-Request (18 Token
+Prompt, 10 Token Antwort) mit `id_slot=0` brauchte 19,3s bei parallel
+laufendem Hintergrund-Task auf Slot 1 — spürbar langsamer als die reine
+Idle-Baseline (~14-15 tok/s), aber KEIN Wartezeit-Problem mehr: die Anfrage
+musste nicht mehr hinter mehreren Automatik-Tasks in einer Schlange warten,
+sondern bekam sofort einen Slot. Die verbleibende Verlangsamung ist normaler
+Mehrbenutzer-Overhead (2 echte gleichzeitige Sequenzen teilen sich
+Speicherbandbreite) — kein Bug, nicht weiter reduzierbar ohne auf Slot 0 ganz
+zu verzichten.
 
 ---
 
