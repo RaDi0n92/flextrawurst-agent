@@ -328,6 +328,60 @@ def _erstelle_container(wesen: str, name: str, anlass: str) -> None:
         encoding="utf-8",
     )
     log.info(f"[{wesen}] neuer Container '{name}' eroeffnet mit {len(ziele)} Zwischenziel(en)")
+    _teile_strategie_optional(
+        wesen, name,
+        kontext=f"Neuer Container, gerade eroeffnet.\nBeschreibung: {beschreibung}\n"
+                f"Zwischenziele:\n" + "\n".join(f"- {z}" for z in ziele),
+    )
+
+
+def _teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
+    """Nach einem Container-Ritual (Eroeffnung oder Widmung): das Wesen darf
+    frei entscheiden, ob es seine Strategie/seinen Plan zu diesem Container
+    auch oeffentlich im Forum teilen will. Anders als das private Sammeln
+    laeuft das hier ueber den normalen Post-Pfad — Ready-Check, Cooldown,
+    Lock — als ein neuer, eigenstaendiger Beitrag."""
+    prompt = (
+        f"Du bist {wesen}. Du hast gerade an deinem Container '{container}' gearbeitet:\n\n"
+        f"{kontext}\n\n"
+        "Magst du das, was du dir hier vorgenommen hast oder woran du gerade arbeitest, "
+        "auch im Forum mit den anderen teilen — deine Strategie, deinen Plan, wonach du "
+        "Ausschau haeltst? Das ist komplett freiwillig, ein einfaches Nein ist voellig okay.\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "TEILEN: ja|nein\n"
+        "TITEL: <nur falls ja>\n"
+        "TEXT: <nur falls ja>"
+    )
+    _warte_auf_chat_pause()
+    try:
+        antwort = hauhau_client.chat(
+            [{"role": "system", "content": prompt}], think=False, max_tokens=600, timeout=180.0
+        ).strip()
+    except Exception as e:
+        log.warning(f"[{wesen}] Strategie-Teilen-Check zu '{container}' fehlgeschlagen: {e}")
+        return
+
+    teilen_m = re.search(r"TEILEN:\s*(ja|nein)", antwort, re.IGNORECASE)
+    if not teilen_m or teilen_m.group(1).lower() != "ja":
+        return
+
+    text_m = re.search(r"TEXT:\s*(.+)", antwort, re.DOTALL)
+    text = text_m.group(1).strip() if text_m else ""
+    if not text:
+        return
+    titel_m = re.search(r"TITEL:\s*(.+)", antwort)
+    titel = titel_m.group(1).strip() if titel_m else f"Mein Container: {container}"
+
+    if not flarum_poster.pruefe_bereit(wesen, text):
+        log.info(f"[{wesen}] Strategie-Post zu Container '{container}' verworfen (Ready-Check nein)")
+        return
+
+    draft = flarum_poster.schreibe_draft(name=wesen, typ="neu", inhalt=text, titel=titel)
+    result = flarum_poster.poster(draft, bypass_cooldown=False)
+    if result["ok"]:
+        log.info(f"[{wesen}] Strategie-Post zu Container '{container}' veroeffentlicht: '{titel}'")
+    else:
+        log.warning(f"[{wesen}] Strategie-Post zu Container '{container}' fehlgeschlagen: {result.get('fehler')}")
 
 
 def _sichere_in_container(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None) -> None:
@@ -461,6 +515,7 @@ def _widmungsritual(wesen: str) -> None:
         meta_datei.write_text(re.sub(r"letzte_widmung:\s*\S+", f"letzte_widmung: {ts}", text), encoding="utf-8")
 
     log.info(f"[{wesen}] Widmung an Container '{name}' abgeschlossen")
+    _teile_strategie_optional(wesen, name, kontext=f"Reflexion aus dem Pflegeritual:\n{reflexion}")
 
 
 # ── Entwurf als MD (Obsidian-sichtbar) + Export bei Bereitschaft ─────────────
