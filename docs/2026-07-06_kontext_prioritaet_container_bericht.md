@@ -1,6 +1,6 @@
-# KONTEXTGRÖSSE, CHAT-PRIORITÄT, CONTAINER-UMBAU — Bericht
+# KONTEXTGRÖSSE, CHAT-PRIORITÄT, CONTAINER-UMBAU, VERDICHTUNG — Bericht
 **Datum:** 2026-07-06 (zweiter Arbeitsblock, direkt im Anschluss an die HauhauCS-Migration)
-**Stand:** Alle vier Themen abgeschlossen und live getestet
+**Stand:** Alle vier Themen abgeschlossen und live getestet (inkl. nachtraeglich ergaenztem Verdichtungs-Feature)
 
 ---
 
@@ -10,9 +10,11 @@ Direkter Anschluss an `docs/2026-07-06_hauhaucs_migration_bericht.md` — dort
 blieben zwei Dinge offen: die Kontextgrößen-Frage (`--ctx-size`/`--parallel`)
 und der eigentliche Volllasttest. Aus diesen zwei offenen Punkten wurde ein
 deutlich größerer Themenblock: Kontextgröße final entschieden, eine
-Chat-Prioritäts-Architektur gebaut, dabei zwei echte Bugs gefunden und
-behoben, und — ausgelöst durch eine Rückfrage zu einem ganz anderen Feature —
-das komplette Container-Konzept neu gebaut.
+Chat-Prioritäts-Architektur gebaut, dabei drei echte Bugs gefunden und
+behoben (Stale-Locks, verlorene Nutzer-Nachrichten bei Hängern, eine
+Race Condition), das komplette Container-Konzept neu gebaut (ausgelöst durch
+eine Rückfrage zu einem ganz anderen Feature), und darauf aufbauend ein
+Verdichtungs-Feature gegen unbegrenztes Kontextwachstum.
 
 ---
 
@@ -173,17 +175,63 @@ Container anlegen, pinnen, löschen durchgespielt, Testdaten danach entfernt.
 
 ---
 
+## TEIL 4 — Verdichtungs-Feature (Slider-gesteuertes Zusammenfassen)
+
+Direkter Anschluss an den Container-Umbau: Daniel wollte wissen, warum Chats
+wieder hängen — Antwort war auch die MoE-Realität (je länger ein
+Gesprächsverlauf, desto langsamer/anfälliger für Hänger). Der bestehende
+Kontext-Ausschluss (✂️-Button) entfernt zwar wirklich Token, aber nur manuell,
+Nachricht für Nachricht. Daniels eigentliches Ziel: "quasi endlos gut weiter
+chatten können" durch echte Verdichtung statt nur Ausblenden.
+
+**Ablauf** (Button 🗜️ unter jeder Nachricht, testbed-exklusiv): Slider (0-11)
+wählt Ein-/Ausgabe-Einheiten ab dieser Nachricht rückwärts → Hintergrund-Job
+erstellt einen Zusammenfassungs-Entwurf → Kommentar-Verfeinerung möglich
+(wiederholbar) → erst nach aktivem "Übernehmen" ersetzt die Verdichtung die
+Rohtexte im an das Modell gesendeten Kontext. Original bleibt vollständig im
+sichtbaren Verlauf stehen.
+
+**Beliebig tief verschachtelbar** (Daniels ausdrücklicher Wunsch): eine
+Verdichtung ist selbst wieder eine auswählbare, erneut verdichtbare Einheit.
+`aktiveZeitachse()`/`findeAeusserstenTraeger()` lösen das rekursiv/transitiv
+auf — sobald eine neue Verdichtung eine ältere absorbiert, verschwindet die
+ältere automatisch aus der aktiven Zeitachse, ohne explizites Tiefen-Tracking.
+
+**Race Condition beim Live-Test gefunden + gefixt**: ein verworfener
+Entwurfsversuch (aus einem eigenen Tippfehler bei den Test-IDs) lief im
+Hintergrund weiter, obwohl er per "Verwerfen" abgebrochen wurde — Verwerfen
+löscht nur die Statusdatei, der async-Job selbst läuft weiter. Als der alte
+Job Minuten später fertig wurde, überschrieb er das inzwischen korrekt
+bestätigte Ergebnis eines neueren Versuchs. Fix: jeder Job bekommt einen
+zufälligen `jobToken`, prüft vor dem Schreiben ob er noch aktuell ist —
+verworfene/überholte Jobs erkennen das und schreiben nichts mehr.
+
+**Live getestet inkl. Verschachtelung** gegen den Test-Charakter
+`codexium2/KontextStressTest666`: 18 Rohnachrichten → 3 davon zu 1 Verdichtung
+(16 Einheiten) → diese + 2 weitere Rohnachrichten zu 1 äußerer Verdichtung
+(14 Einheiten) — korrekt kollabiert, nach dem Race-Condition-Fix zweimal
+sauber wiederholt. Testdaten danach entfernt.
+
+**Nebenbefund**: selbst ein kleiner Verdichtungs-Durchlauf (1-3 Nachrichten)
+brauchte unter realer Systemlast mehrere Minuten — keine Eigenheit des
+Features, sondern die reale Geschwindigkeit dieses CPU-only-MoE-Setups. Dabei
+erneut (viertes Mal insgesamt) der progress>1.0-Hänger aufgetreten, diesmal
+in unter einer Minute über das Trace-Log zugeordnet (`namelessAI_1324`,
+29 Minuten in der Warteschlange gewartet, dann hängengeblieben) — bestätigt,
+dass das Trace-Log die Diagnose wie gewünscht beschleunigt.
+
+---
+
 ## Was noch offen ist
 
-- Das neue, separat besprochene Slider-Feature (letzte N Ein-/Ausgaben auf
-  Wunsch zusammenfassen lassen, gegen unbegrenztes Kontextwachstum) ist erst
-  besprochen, noch nicht gebaut — auf Daniels Wunsch wurde zuerst der
-  Container-Umbau fertiggestellt
 - Die genaue Ursache des progress>1.0-Bugs selbst (vermutlich llama-servers
   Prompt-Cache/Checkpoint-Mechanismus) bleibt ungeklärt — die QUELLE lässt sich
-  dank Trace-Log jetzt aber sofort zuordnen (beim dritten Hänger bestätigt,
-  Quelle in unter einer Minute gefunden statt gar nicht)
+  dank Trace-Log jetzt aber zuverlässig und schnell zuordnen (dreimal bestätigt)
 - Der ursprünglich angefragte volle 8-Wesen-Volllasttest (aus dem allerersten
   Auftrag der Session) wurde durch die Chat-Prioritäts-Arbeit funktional
   ersetzt (echte Latenzmessungen unter Last liegen vor), aber nie als
   eigenständiger, isolierter Test wiederholt seit dem `id_slot`-Rollout
+- RAM-Lage beobachtet (7,5 GB "available" statt der ~16 GB vom Sessionanfang) —
+  laut Rechnung nicht durch die Ctx-Size-Erhöhung verursacht (nur ~250 MB
+  Differenz 36663→48884), eher normale Ansammlung durch Stunden Dauerbetrieb.
+  Kein akuter Handlungsbedarf, aber im Blick behalten
