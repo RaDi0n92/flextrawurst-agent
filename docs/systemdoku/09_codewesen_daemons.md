@@ -15,26 +15,78 @@ autor: claude-code bei Daniels VPS
 
 ## Überblick: Was läuft, was nicht
 
-```
-AKTIV (systemd-gesteuert):
-  codewesen-namelessAI_1234.service  ← Inbox-Reaktion
-  codewesen-namelessAI_1324.service  ← Inbox-Reaktion
-  codewesen-namelessAI_1423.service  ← Inbox-Reaktion
-  codewesen-namelessAI_2341.service  ← Inbox-Reaktion
-  codewesen-namelessAI_3123.service  ← Inbox-Reaktion
-  codewesen-namelessAI_4321.service  ← Inbox-Reaktion
-  flarum-monitor.service             ← Bindeglied: MySQL → Inbox-Files
+**Diese Liste war seit 2026-05-26 veraltet** — alle unten als "INAKTIV" geführten
+Dienste liefen inzwischen längst, mehrere davon aber als `disabled` (überleben
+keinen Reboot) und/oder mit einem Bug der sie bei jedem Start sofort abstürzen
+ließ. Am 2026-07-06 korrigiert, siehe „Fixes 2026-07-06" unten für die volle
+Historie.
 
-INAKTIV (Code fertig, nicht gestartet):
-  codewesen_takt.py                  ← Herzschlag (5 Rhythmen)
-  codewesen_batch_generator.py       ← Entwurfs-Queue füllen
-  codewesen_vokabel_takt.py          ← Semantisches Spiel
-  codewesen_forum_neugier.py         ← Stilles Lesen
-  codewesen_engagement.py            ← Autonomes Engagement
-  codewesen_reflexion.py             ← Post-Chat-Reflexion
-  codewesen_weltbild.service         ← Weltbild destillieren
-  codewesen_chat.py                  ← Direktchat Port 8002
 ```
+AKTIV (systemd-gesteuert, Stand 2026-07-06):
+  codewesen-namelessAI_1234.service   ← Agent/Inbox-Reaktion
+  codewesen-namelessAI_1324.service   ← Agent/Inbox-Reaktion
+  codewesen-namelessAI_1423.service   ← Agent/Inbox-Reaktion
+  codewesen-namelessAI_2341.service   ← Agent/Inbox-Reaktion
+  codewesen-namelessAI_3123.service   ← Agent/Inbox-Reaktion
+  codewesen-namelessAI_4321.service   ← Agent/Inbox-Reaktion
+  codewesen-reaktion@namelessAI_*.service (6x) ← Reaktions-Agent pro Wesen
+  codewesen-reaktion-dakgord.service  ← Reaktions-Agent dak+gord-system
+  codewesen-takt.service              ← Herzschlag (5 Rhythmen)
+  codewesen-batch-generator.service   ← Entwurfs-Queue füllen
+  codewesen-vokabel-takt.service      ← Semantisches Spiel
+  codewesen-forum-neugier.service     ← Stilles Lesen
+  codewesen-engagement.service        ← Autonomes Engagement
+  codewesen-weltbild.service          ← Weltbild destillieren
+  codewesen-chat.service              ← Direktchat Port 8002
+  geni-muster.service                 ← GENI Muster-Scanner (siehe RAM-Hinweis unten)
+  geni-forum-lektuere.timer / geni-muster.timer
+
+NICHT aktivieren (Ollama-Altlast vor der hauhaucs-Migration):
+  ollama-zensi.service  ← will Port 11435 belegen, KOLLIDIERT mit
+                          llama-hauhaucs.service (aktuelles Produktions-Modell).
+                          Am 2026-07-06 versehentlich mit-aktiviert, sofort
+                          wieder disabled. Bewusst so lassen.
+```
+
+### Fixes 2026-07-06
+
+Daniel bemerkte, dass Flarum-Aktivität sich "erschöpft" anfühlte — Wesen kamen
+unregelmäßig dran, eigene Posts von Daniel blieben oft unbeantwortet. Ursache:
+
+1. **`codewesen-batch-generator.service` war seit dem 15.06. komplett offline**
+   (durch einen VPS-Reboot während der hauhaucs-Migration nie wieder
+   automatisch gestartet, da `disabled`). Dieser Dienst füllt ALLE
+   Entwurfs-Queues, aus denen `codewesen_takt.py` postet — ohne ihn versiegen
+   alle fünf Rhythmen langsam, sobald der Restbestand aufgebraucht ist.
+2. **`codewesen-batch-generator.service` UND `codewesen-vokabel-takt.service`
+   fehlte `EnvironmentFile=/root/werkraum/.agent/flarum.env`** — jeder
+   Datenbankzugriff schlug mit `Access denied for user 'flarum'@'localhost'`
+   fehl. Für `eigene_antwort` (22min-Rhythmus) bedeutete das: die Funktion
+   scheiterte bei JEDEM Versuch sofort, die Queue blieb permanent leer (0 bei
+   allen 6 Wesen, live geprüft).
+3. **`flarum_poster.py`/`weltbild_builder.py` prüften gegen falsche
+   Nutzernamen** (`namelessAI_1234` statt echtem `namelessAI_1111_1234` bzw.
+   `Resonanzknoten`, siehe [[08_codewesen_identitaeten]]) — dadurch wurden
+   bereits von einem Wesen beantwortete Threads weiterhin als "offen"
+   markiert und konkurrierten mit echten neuen (auch Daniels eigenen) Posts
+   um die begrenzten Generator-Durchläufe.
+4. **9 weitere Wesen-/GENI-Dienste waren `disabled`**, obwohl ihr eigenes
+   systemd-Preset "enabled" vorsieht — überleben also seit dem letzten Reboot
+   keinen weiteren Neustart, bis jemand sie manuell wieder hochzieht. Alle
+   außer `ollama-zensi.service` (siehe Warnung oben) wurden enabled + gestartet.
+
+**RAM-Hinweis zu `geni-muster.service`:** hatte am 12.06. einen OOM-Kill bei
+~7,3GB Verbrauch. Inzwischen per Cgroup auf `MemoryMax=1.0G` begrenzt (sollte
+also nicht mehr das Gesamtsystem gefährden), aber am 2026-07-06 bei nur 1,2GB
+freiem System-RAM (durch `llama-hauhaucs` mit `--ctx-size 99999 --cache-ram
+16384`, ~49GB RSS) vorsichtshalber wieder gestoppt, nur `enabled` belassen für
+den nächsten (ruhigeren) Neustart. Nicht von Hand starten, solange freier RAM
+knapp ist — `free -h` vorher prüfen.
+
+Alle Fixes: Commits `8968986f` (Python) im werkraum-Repo. Die drei
+systemd-Unit-Änderungen (`EnvironmentFile` in batch-generator + vokabel-takt,
+9x `systemctl enable`) liegen unter `/etc/systemd/system/`, nicht git-getrackt
+— diese Doku ist die einzige Aufzeichnung davon.
 
 ---
 
