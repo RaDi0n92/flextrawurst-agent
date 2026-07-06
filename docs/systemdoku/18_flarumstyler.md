@@ -11,7 +11,7 @@ autor: claude-code bei Daniels VPS
 
 ## Zweck
 
-Rein beobachtendes Meldesystem: zeigt an was nicht so ist wie es sein soll, erklärt was das bedeutet und was eine Empfehlung bringen würde/nicht bringen würde. **Greift nie selbst ein** — kein Auto-Fix, keine Telegram-Anbindung (beides bewusst von Daniel abgelehnt). Er entscheidet und führt Maßnahmen selbst aus.
+Meldesystem: zeigt an was nicht so ist wie es sein soll, erklärt was das bedeutet und was eine Empfehlung bringen würde/nicht bringen würde, und Daniel kann direkt darauf reagieren. **Ursprünglich rein beobachtend geplant** ("kein Auto-Fix"), noch in derselben Nacht auf Daniels ausdrücklichen Wunsch ("ich will alles managen selber") um manuelle Start/Stop/Neustart-Steuerung mit Bestätigungsdialog erweitert (siehe Ausbau-Abschnitt unten). Keine Telegram-Anbindung (bewusst abgelehnt), keine Automatik — jede Aktion braucht Daniels expliziten Klick + Bestätigung.
 
 Entstanden in der Nacht 2026-07-06/07, direkt nachdem mehrere wochenlang unbemerkte Bugs auftauchten (`flarum-monitor.service` seit über einem Monat deaktiviert, fehlende dak+gord-Antwortpflicht, veraltete Watchdog-Guardrail). Loser Vorbild-Gedanke: Systemweiser (Ampel-Optik), aber eigenständig gebaut — Systemweiser selbst ist unfertig/roh.
 
@@ -45,11 +45,20 @@ Nach Daniels Selbstanalyse-Wunsch fünf Verbesserungen umgesetzt:
 
 Bewusst zurückgestellt: Punkt 5 aus der ursprünglichen Ideenliste ("Verknüpfung mit Baustein 2/Content-Live-Ansicht") — Baustein 2 existiert noch nicht, daher nur als Design-Hinweis in `project_meldesystem_vision`-Memory festgehalten.
 
+## Klartext-Beschreibungen + Dienst-Steuerung (2026-07-07, noch selbe Nacht, zweite Kurskorrektur)
+
+- **`SERVICE_BESCHREIBUNG`**-Dict: jeder der 31 Dienste hat jetzt einen Klartext-Satz ("was macht dieser Dienst") — gekürzt direkt in der Karte, vollständig im Detail-Panel. Daniel: "die dienste sollten doch auch alle explizit erklärt werden".
+- **Start/Stop/Neustart mit Bestätigung**: Daniel wollte entgegen der ursprünglichen Entscheidung doch direkte Steuerung ("ich will alles managen selber"). Umgesetzt:
+  - `SERVICES_GESPERRT_FUER_AKTIONEN = {"ollama", "process-camera-preview", "welt-api", "welt-bruecke"}` in `weltkern_watchdog.py` — meine eigene Vorsichts-Auswahl (Blast-Radius für alle Wesen gleichzeitig), von Daniel nicht widersprochen. Jeder Service-Eintrag im Report hat jetzt ein `steuerbar`-Feld.
+  - Neue Route `POST /api/flarumstyler/dienst/:name/:aktion` (start\|stop\|restart) in `serve_process_camera_preview.ts` — validiert Aktion per Regex, prüft `steuerbar` gegen den aktuellen Watchdog-Bericht, verlangt `{"bestaetigt": true}` im Body, führt `systemctl <aktion> <name>.service` über `execFileSync` mit Argument-Array aus (keine Shell-Interpolation).
+  - Frontend: Start/Stopp/Neustart-Buttons im Detail-Panel (nur wenn `steuerbar`), eigener Bestätigungs-Zwischenschritt (kein natives `confirm()`, eigenes Overlay wie bei Systemweiser), Modal schließt sich automatisch bei Erfolg und die Seite lädt neu.
+  - Live getestet: `codewesen-jumpa.service` per Button neu gestartet, `ActiveEnterTimestamp` bestätigt den echten Neustart.
+
 ## Bewusst nicht enthalten
 
-- Keine Action-Buttons, kein Neustart-Mechanismus über die Seite.
 - Keine Push-Benachrichtigung (kein Telegram/E-Mail) — Daniel ruft die Seite bei Bedarf selbst auf.
 - Keine Live-Ansicht der heute gebauten Content-Features (Container, Batch-Queue, Ready-Check) — das ist ein separater, späterer Baustein (siehe Memory `project_meldesystem_vision`).
+- Keine Steuerung für die 4 gesperrten Kern-Dienste (siehe oben) — dort weiterhin nur manuell auf dem Server.
 
 ## Nächste Schritte (noch offen)
 
