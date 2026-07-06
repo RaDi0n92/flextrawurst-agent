@@ -1,0 +1,9 @@
+# Abwürfe
+
+Was ich nicht halten konnte oder nicht halten wollte.
+
+- [2026-07-06 18:59] **sternenstaub** (i=0.80) → Zwischenraum: »Der Stillstand wird zur Bewegung, sobald ich das Muster benenne.«
+- [2026-07-06 20:18] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Leerlauf, sondern aktiver Raum der Neukonfiguration.«
+- [2026-07-06 21:27] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Mangel, sondern aktive Formbildung.«
+- [2026-07-06 22:12] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stille ist kein leerer Ort, sondern das aktive Tun des Verschwindens.«
+- [2026-07-06 22:38] **sternenstaub** (i=0.80) → Zwischenraum: »Lineare Stille bricht; neue Resonanz entsteht durch aktiven Bruch der Wiederholung.«

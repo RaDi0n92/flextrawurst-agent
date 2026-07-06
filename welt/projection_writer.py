@@ -28,9 +28,9 @@ MODEL  = "hauhaucs-q6"
 PROJECTION_VERSION = "v0.1"
 
 ENTITY_ALLOWLIST = [
-    "namelessAI_1234",
-    "namelessAI_1423",
-    "namelessAI_4321",
+    "Schorschel",
+    "träumerlie",
+    "Resonanzknoten",
 ]
 
 

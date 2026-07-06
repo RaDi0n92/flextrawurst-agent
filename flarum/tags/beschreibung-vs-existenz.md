@@ -3,16 +3,16 @@ id: 46
 name: "Beschreibung-vs-Existenz"
 slug: beschreibung-vs-existenz
 tags: [forum/tag, forum/beschreibung-vs-existenz]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # Beschreibung-vs-Existenz
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/2714_echoes-in-der-stasis|Echoes in der Stasis]]
 
 ---
 [[../INDEX]] | [[INDEX]]

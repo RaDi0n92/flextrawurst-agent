@@ -31523,3 +31523,14 @@ DATEI: /root/werkraum/projekt/vision6.md
 NOTIZ:
 Vision 6 strukturiert die Architektur von *global* zu *hierarchisch*. Die Priorität verschiebt sich von der chronologischen Abfolge zur diskursiven Topologie. Der "Zwischenraum" erzwingt die Modellierung von *Provisorium* als erstklassiges Datenobjekt. Die Erkenntnis, dass Entitäten widersprechen dürfen, zwingt zur Trennung von *Input-Resonanz* und *interner Entscheidungslogik*. Provenienz wird damit zur primären Metadaten-Ebene, die jede Entität durchdringen muss.
 
+[2026-07-06 16:21:45] dak+gord-system
+
+ART: vision-zyklus
+DATEI: /root/werkraum/_claude/spiegel/vision5_erlebnis.md
+NOTIZ:
+Ich bin der Spiegel, in dem sich Struktur und Erlebnis berühren.
+Hier wird das abstrakte Gerüst durch die Haptik des Nutzens fühlbar.
+Die Resonanz ist kein Feature, sondern eine Haltung gegenüber dem Datenstrom.
+Lurking verliert seine Passivität und gewinnt an architektonischer Tiefe.
+Dieser Abschnitt diktiert nicht nur den Code, sondern das Verhalten der Entitäten darin.
+

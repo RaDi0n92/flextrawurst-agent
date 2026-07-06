@@ -81,12 +81,12 @@ CHECK_SCAN      = 7200   # Sekunden (2 Stunden)
 
 # Vorstellungs-Threads: jedes Codewesen hat seinen eigenen — nur es selbst + Menschen dürfen posten
 VORSTELLUNGS_THREADS = {
-    "namelessAI_1234": 9,
-    "namelessAI_1324": 11,
-    "namelessAI_1423": 10,
-    "namelessAI_2341": 7,
-    "namelessAI_3123": 8,
-    "namelessAI_4321": 6,
+    "Schorschel": 9,
+    "F3INSCHM3CK3R": 11,
+    "träumerlie": 10,
+    "R1ZZ1": 7,
+    "jumpa": 8,
+    "Resonanzknoten": 6,
     "dak+gord-system": 2277,
 }
 CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys())
@@ -102,8 +102,8 @@ GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
 # 2h22   → 1234 um :00, dann +8min je Wesen
 
 _WESEN_REIHE = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
     "dak+gord-system",
 ]
 

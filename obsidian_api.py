@@ -5,7 +5,7 @@ Obsidian-Wesen-Bridge — Port 8060 (HTTPS)
 A → Obsidian schreibt an Wesen:
   POST /wesen/dakgord/chat       {"nachricht": "..."}          → {"antwort": "..."}
   POST /wesen/geni/chat          {"nachricht": "..."}          → {"antwort": "..."}
-  POST /wesen/codewesen/chat     {"nachricht": "...", "name": "namelessAI_1234"}  → {"antwort": "..."}
+  POST /wesen/codewesen/chat     {"nachricht": "...", "name": "Schorschel"}  → {"antwort": "..."}
 
 B → Wesen schreibt in Obsidian (direkt als Markdown + Queue-Fallback):
   GET    /notizen                → [{id, wesen, titel, inhalt, zeit}, ...]
@@ -132,7 +132,7 @@ def geni_chat(anfrage: ChatAnfrage):
 @app.post("/wesen/codewesen/chat")
 def codewesen_chat(anfrage: ChatAnfrage):
     if not anfrage.name:
-        raise HTTPException(status_code=400, detail="name ist pflicht (z.B. namelessAI_1234)")
+        raise HTTPException(status_code=400, detail="name ist pflicht (z.B. Schorschel)")
     with httpx.Client(timeout=300) as client:
         antwort = _sammle_sse(
             client,

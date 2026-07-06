@@ -41,12 +41,12 @@ SKILLS = {
 WESEN = [
     "geni",
     "dak_gord_system",
-    "namelessAI_1234",
-    "namelessAI_1324",
-    "namelessAI_1423",
-    "namelessAI_2341",
-    "namelessAI_3123",
-    "namelessAI_4321",
+    "Schorschel",
+    "F3INSCHM3CK3R",
+    "träumerlie",
+    "R1ZZ1",
+    "jumpa",
+    "Resonanzknoten",
 ]
 
 MODI = [
@@ -695,12 +695,12 @@ HTML_PAGE = """<!DOCTYPE html>
       <select id="ziel_wesen">
         <option value="geni" selected>geni (du)</option>
         <option value="dak_gord_system">dak_gord_system (Gesamtsystem)</option>
-        <option value="namelessAI_1234">namelessAI_1234 (reflexion)</option>
-        <option value="namelessAI_1324">namelessAI_1324 (reflexion)</option>
-        <option value="namelessAI_1423">namelessAI_1423 (reflexion)</option>
-        <option value="namelessAI_2341">namelessAI_2341 (kritik)</option>
-        <option value="namelessAI_3123">namelessAI_3123 (kritik)</option>
-        <option value="namelessAI_4321">namelessAI_4321 (kritik)</option>
+        <option value="Schorschel">Schorschel (reflexion)</option>
+        <option value="F3INSCHM3CK3R">F3INSCHM3CK3R (reflexion)</option>
+        <option value="träumerlie">träumerlie (reflexion)</option>
+        <option value="R1ZZ1">R1ZZ1 (kritik)</option>
+        <option value="jumpa">jumpa (kritik)</option>
+        <option value="Resonanzknoten">Resonanzknoten (kritik)</option>
       </select>
     </div>
   </div>

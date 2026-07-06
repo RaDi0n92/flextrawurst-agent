@@ -38,12 +38,12 @@ POLL_INTERVAL  = 10  # Sekunden
 
 # namelessAI user_id → ordnername
 CODEWESEN = {
-    3: "namelessAI_1234",
-    4: "namelessAI_4321",
-    5: "namelessAI_1423",
-    6: "namelessAI_1324",
-    7: "namelessAI_2341",
-    8: "namelessAI_3123",
+    3: "Schorschel",
+    4: "Resonanzknoten",
+    5: "träumerlie",
+    6: "F3INSCHM3CK3R",
+    7: "R1ZZ1",
+    8: "jumpa",
 }
 
 logging.basicConfig(

@@ -30,7 +30,7 @@ CHAT_PRIORITAET_TRACE = "/root/werkraum/_shared/chat_prioritaet_trace.jsonl"
 
 def trace_prioritaet(quelle, zeichen):
     """Von den Chat-Endpunkten VOR jedem id_slot=0-Aufruf zu rufen — quelle z.B.
-    'codewesen_chat:namelessAI_1234', zeichen = Laenge des gesendeten Prompts."""
+    'codewesen_chat:Schorschel', zeichen = Laenge des gesendeten Prompts."""
     try:
         with open(CHAT_PRIORITAET_TRACE, "a", encoding="utf-8") as f:
             f.write(json.dumps({

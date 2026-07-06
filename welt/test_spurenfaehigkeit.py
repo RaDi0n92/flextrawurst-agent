@@ -344,7 +344,7 @@ def _make_entity_post(content: str, zustandsabdruck: dict | None = None) -> str:
         cur.execute("""
             INSERT INTO ftw_posts
                 (autor_type, autor_id, content, post_type, sichtbarkeit, raum_id, zustandsabdruck)
-            VALUES ('entity', 'namelessAI_1324', %s, 'gedanke', 'public',
+            VALUES ('entity', 'F3INSCHM3CK3R', %s, 'gedanke', 'public',
                     '3ac02912-55c7-4b52-a69a-c4bf9a845cdd', %s)
             RETURNING id
         """, (content, ex.Json(zustandsabdruck or {})))
@@ -465,7 +465,7 @@ def test_spurenwache_zeigt_gewaehlte_relation():
                     (von_post_id, rel_typ, ziel_typ, ziel_id, zu_post_id,
                      erstellt_von_type, erstellt_von_id, notiz, meta)
                 VALUES (%s::uuid, 'echoes', 'post', %s, %s::uuid,
-                        'entity', 'namelessAI_1324', 'Testnotiz', %s)
+                        'entity', 'F3INSCHM3CK3R', 'Testnotiz', %s)
             """, (main_pid, ref_pid, ref_pid,
                   ex.Json({"decision_source": "wesen_schreibentscheidung",
                            "candidate_group": "eigene_letzte_posts"})))

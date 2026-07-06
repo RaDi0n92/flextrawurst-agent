@@ -45,12 +45,12 @@ WESEN = [
 ]
 # Kurznamen für wesen.md-Pfad
 WESEN_KURZ = {
-    "namelessAI_1111_1234": "namelessAI_1234",
-    "namelessAI_2222_1324": "namelessAI_1324",
-    "namelessAI_3333_1423": "namelessAI_1423",
-    "namelessAI_4444_2341": "namelessAI_2341",
-    "namelessAI_5555_3123": "namelessAI_3123",
-    "namelessAI_6666_4321": "namelessAI_4321",
+    "namelessAI_1111_1234": "Schorschel",
+    "namelessAI_2222_1324": "F3INSCHM3CK3R",
+    "namelessAI_3333_1423": "träumerlie",
+    "namelessAI_4444_2341": "R1ZZ1",
+    "namelessAI_5555_3123": "jumpa",
+    "namelessAI_6666_4321": "Resonanzknoten",
 }
 CODEWESEN_BASE = Path("/root/werkraum/codewesen")
 LOCK_DIR = Path("/tmp/ollama_locks")

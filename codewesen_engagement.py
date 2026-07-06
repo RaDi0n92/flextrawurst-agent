@@ -59,8 +59,8 @@ logging.basicConfig(
 log = logging.getLogger("engagement")
 
 CODEWESEN = [
-    "namelessAI_1234", "namelessAI_4321", "namelessAI_1423",
-    "namelessAI_1324", "namelessAI_2341", "namelessAI_3123",
+    "Schorschel", "Resonanzknoten", "träumerlie",
+    "F3INSCHM3CK3R", "R1ZZ1", "jumpa",
     "dak+gord-system",
 ]
 

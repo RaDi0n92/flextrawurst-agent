@@ -16,8 +16,8 @@ LOG_PATH = Path("/root/werkraum/logs/tension_daemon.log")
 INTERVAL = 600  # 10 Minuten
 
 ALLE_WESEN = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
 ]
 
 SUBSTANZEN = ["blitz", "nebel", "hunger", "krone", "asche", "glaettung", "echo"]

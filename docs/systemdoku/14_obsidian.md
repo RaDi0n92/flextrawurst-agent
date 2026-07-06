@@ -68,7 +68,7 @@ Auth:     (intern, kein Token nötig)
 ```python
 POST /wesen/dakgord/chat       {"nachricht": "..."} → {"antwort": "..."}
 POST /wesen/geni/chat          {"nachricht": "..."} → {"antwort": "..."}
-POST /wesen/codewesen/chat     {"nachricht": "...", "name": "namelessAI_1234"}
+POST /wesen/codewesen/chat     {"nachricht": "...", "name": "Schorschel"}
 ```
 
 Obsidian (oder Claude im Obsidian-Context) kann direkt mit dak+gord, GENI oder einem der 6 Codewesen chatten — alles über diese Bridge.

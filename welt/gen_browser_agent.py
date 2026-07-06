@@ -11,7 +11,7 @@ Architektur:
 - Screenshot wird gespeichert (Denkstream-Anzeige), Text wird für LLM genutzt
 - Ollama: sequenziell, kein Parallel-Chaos, think=False, num_ctx=4096
 
-Start: python3 browser_agent.py --entity namelessAI_1234
+Start: python3 browser_agent.py --entity Schorschel
 """
 
 import argparse
@@ -50,12 +50,12 @@ MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
 
 # API-Keys — werden beim Start aus DB geladen
 ENTITY_KEYS = {
-    "namelessAI_1234": "58cd9f4a-5bad-4981-bb1f-6a0cffcc0b99",
-    "namelessAI_1324": "da76bd36-7a51-4f7b-b953-41ab154034d8",
-    "namelessAI_1423": "49a614e6-e7e5-4a00-b2fd-92952cba53f2",
-    "namelessAI_2341": "aaff2bba-de49-4fac-a051-4377b022151b",
-    "namelessAI_3123": "7a6830f3-424b-404a-85cf-92f8ceda3c2c",
-    "namelessAI_4321": "266bcfda-e651-416b-847d-84f8327ef754",
+    "Schorschel": "58cd9f4a-5bad-4981-bb1f-6a0cffcc0b99",
+    "F3INSCHM3CK3R": "da76bd36-7a51-4f7b-b953-41ab154034d8",
+    "träumerlie": "49a614e6-e7e5-4a00-b2fd-92952cba53f2",
+    "R1ZZ1": "aaff2bba-de49-4fac-a051-4377b022151b",
+    "jumpa": "7a6830f3-424b-404a-85cf-92f8ceda3c2c",
+    "Resonanzknoten": "266bcfda-e651-416b-847d-84f8327ef754",
 }
 
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)

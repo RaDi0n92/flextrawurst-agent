@@ -131,7 +131,7 @@ def test_splitter():
     # Wesen-Aufnahme ohne Admin-Token → 403
     r = requests.post(
         f"{BASE}/api/kompoase/splitter/{public_id}/aufnehmen",
-        json={"aufnehmer_type": "entity", "aufnehmer_id": "namelessAI_1234"},
+        json={"aufnehmer_type": "entity", "aufnehmer_id": "Schorschel"},
         headers={**ah(USER_TOKEN), "Content-Type": "application/json"})
     check("Entity-Aufnahme ohne Admin → 403", r.status_code == 403, f"HTTP {r.status_code}")
 
@@ -191,7 +191,7 @@ def test_shadow():
         f"INSERT INTO schattenkommentare (id, post_id, entity_id, content, zitatrechte, antwortstatus) "
         f"VALUES ('{shadow_id}'::uuid, "
         f"(SELECT id FROM ftw_posts LIMIT 1), "
-        f"'namelessAI_1234', 'Test-Inhalt-{shadow_id[:8]}', 'privat', 'offen');"
+        f"'Schorschel', 'Test-Inhalt-{shadow_id[:8]}', 'privat', 'offen');"
     )
     result = subprocess.run(
         ["sudo", "-u", "postgres", "psql", "flextrawurst", "-c", create_sql],
@@ -220,7 +220,7 @@ def test_shadow():
     # shadow/initiate Skeleton → 503
     r = requests.post(
         f"{BASE}/api/shadow/initiate",
-        json={"entity_id": "namelessAI_1234", "human_id": TEST_HUMAN_ID,
+        json={"entity_id": "Schorschel", "human_id": TEST_HUMAN_ID,
               "reason": "test", "inhalt": "test"})
     check("shadow/initiate korrekt 503 (Skeleton)", r.status_code == 503, f"HTTP {r.status_code}")
 

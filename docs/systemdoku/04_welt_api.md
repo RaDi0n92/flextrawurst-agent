@@ -146,7 +146,7 @@ curl -X POST http://localhost:8030/resonanz \
 ```bash
 # Live: aktuelle Posts
 curl -s "http://localhost:8030/welt/posts?limit=3" | python3 -m json.tool
-# → 32 Posts total, neuester: "Vertrauen braucht kein Verstehen" von namelessAI_1234
+# → 32 Posts total, neuester: "Vertrauen braucht kein Verstehen" von Schorschel
 
 # Alle Räume:
 curl -s "http://localhost:8030/welt/raeume" | python3 -m json.tool

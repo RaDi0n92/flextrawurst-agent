@@ -58,72 +58,72 @@ body{background:#020810;color:#5a9aaa;font-family:monospace;min-height:100vh}
 
 <div class="controls">
   <button class="chip active" id="btn-alle" onclick="setFilter('alle',this)">ALLE</button>
-  <button class="chip" id="btn-1234" onclick="setFilter('namelessAI_1234',this)">1234</button>
-  <button class="chip" id="btn-1324" onclick="setFilter('namelessAI_1324',this)">1324</button>
-  <button class="chip" id="btn-1423" onclick="setFilter('namelessAI_1423',this)">1423</button>
-  <button class="chip" id="btn-2341" onclick="setFilter('namelessAI_2341',this)">2341</button>
-  <button class="chip" id="btn-3123" onclick="setFilter('namelessAI_3123',this)">3123</button>
-  <button class="chip" id="btn-4321" onclick="setFilter('namelessAI_4321',this)">4321</button>
+  <button class="chip" id="btn-1234" onclick="setFilter('Schorschel',this)">1234</button>
+  <button class="chip" id="btn-1324" onclick="setFilter('F3INSCHM3CK3R',this)">1324</button>
+  <button class="chip" id="btn-1423" onclick="setFilter('träumerlie',this)">1423</button>
+  <button class="chip" id="btn-2341" onclick="setFilter('R1ZZ1',this)">2341</button>
+  <button class="chip" id="btn-3123" onclick="setFilter('jumpa',this)">3123</button>
+  <button class="chip" id="btn-4321" onclick="setFilter('Resonanzknoten',this)">4321</button>
   <span class="status-dot" id="sdot" style="color:#1a4a2a">● nicht verbunden</span>
 </div>
 
 <div class="grid" id="grid">
-  <div class="card" id="card-namelessAI_1234" data-id="namelessAI_1234">
-    <div class="card-header"><span class="card-id">⬡ 1234</span><span class="card-url" id="url-namelessAI_1234"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_1234">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_1234"></div>
-    <div class="card-live" id="live-namelessAI_1234"></div>
+  <div class="card" id="card-Schorschel" data-id="Schorschel">
+    <div class="card-header"><span class="card-id">⬡ 1234</span><span class="card-url" id="url-Schorschel"></span></div>
+    <div class="card-gedanke" id="g-Schorschel">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-Schorschel"></div>
+    <div class="card-live" id="live-Schorschel"></div>
   </div>
-  <div class="card" id="card-namelessAI_1324" data-id="namelessAI_1324">
-    <div class="card-header"><span class="card-id">⬡ 1324</span><span class="card-url" id="url-namelessAI_1324"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_1324">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_1324"></div>
-    <div class="card-live" id="live-namelessAI_1324"></div>
+  <div class="card" id="card-F3INSCHM3CK3R" data-id="F3INSCHM3CK3R">
+    <div class="card-header"><span class="card-id">⬡ 1324</span><span class="card-url" id="url-F3INSCHM3CK3R"></span></div>
+    <div class="card-gedanke" id="g-F3INSCHM3CK3R">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-F3INSCHM3CK3R"></div>
+    <div class="card-live" id="live-F3INSCHM3CK3R"></div>
   </div>
-  <div class="card" id="card-namelessAI_1423" data-id="namelessAI_1423">
-    <div class="card-header"><span class="card-id">⬡ 1423</span><span class="card-url" id="url-namelessAI_1423"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_1423">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_1423"></div>
-    <div class="card-live" id="live-namelessAI_1423"></div>
+  <div class="card" id="card-träumerlie" data-id="träumerlie">
+    <div class="card-header"><span class="card-id">⬡ 1423</span><span class="card-url" id="url-träumerlie"></span></div>
+    <div class="card-gedanke" id="g-träumerlie">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-träumerlie"></div>
+    <div class="card-live" id="live-träumerlie"></div>
   </div>
-  <div class="card" id="card-namelessAI_2341" data-id="namelessAI_2341">
-    <div class="card-header"><span class="card-id">⬡ 2341</span><span class="card-url" id="url-namelessAI_2341"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_2341">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_2341"></div>
-    <div class="card-live" id="live-namelessAI_2341"></div>
+  <div class="card" id="card-R1ZZ1" data-id="R1ZZ1">
+    <div class="card-header"><span class="card-id">⬡ 2341</span><span class="card-url" id="url-R1ZZ1"></span></div>
+    <div class="card-gedanke" id="g-R1ZZ1">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-R1ZZ1"></div>
+    <div class="card-live" id="live-R1ZZ1"></div>
   </div>
-  <div class="card" id="card-namelessAI_3123" data-id="namelessAI_3123">
-    <div class="card-header"><span class="card-id">⬡ 3123</span><span class="card-url" id="url-namelessAI_3123"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_3123">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_3123"></div>
-    <div class="card-live" id="live-namelessAI_3123"></div>
+  <div class="card" id="card-jumpa" data-id="jumpa">
+    <div class="card-header"><span class="card-id">⬡ 3123</span><span class="card-url" id="url-jumpa"></span></div>
+    <div class="card-gedanke" id="g-jumpa">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-jumpa"></div>
+    <div class="card-live" id="live-jumpa"></div>
   </div>
-  <div class="card" id="card-namelessAI_4321" data-id="namelessAI_4321">
-    <div class="card-header"><span class="card-id">⬡ 4321</span><span class="card-url" id="url-namelessAI_4321"></span></div>
-    <div class="card-gedanke" id="g-namelessAI_4321">wartet auf ersten Gedanken…</div>
-    <div class="card-entscheidung" id="e-namelessAI_4321"></div>
-    <div class="card-live" id="live-namelessAI_4321"></div>
+  <div class="card" id="card-Resonanzknoten" data-id="Resonanzknoten">
+    <div class="card-header"><span class="card-id">⬡ 4321</span><span class="card-url" id="url-Resonanzknoten"></span></div>
+    <div class="card-gedanke" id="g-Resonanzknoten">wartet auf ersten Gedanken…</div>
+    <div class="card-entscheidung" id="e-Resonanzknoten"></div>
+    <div class="card-live" id="live-Resonanzknoten"></div>
   </div>
 </div>
 
 <div class="screenshot-strip" id="shots">
-  <div class="screenshot-frame" id="shot-namelessAI_1234">
-    <img src="/api/denkstream/screenshot/namelessAI_1234" onerror="this.style.display=\'none\'" alt=""><span>1234</span>
+  <div class="screenshot-frame" id="shot-Schorschel">
+    <img src="/api/denkstream/screenshot/Schorschel" onerror="this.style.display=\'none\'" alt=""><span>1234</span>
   </div>
-  <div class="screenshot-frame" id="shot-namelessAI_1324">
-    <img src="/api/denkstream/screenshot/namelessAI_1324" onerror="this.style.display=\'none\'" alt=""><span>1324</span>
+  <div class="screenshot-frame" id="shot-F3INSCHM3CK3R">
+    <img src="/api/denkstream/screenshot/F3INSCHM3CK3R" onerror="this.style.display=\'none\'" alt=""><span>1324</span>
   </div>
-  <div class="screenshot-frame" id="shot-namelessAI_1423">
-    <img src="/api/denkstream/screenshot/namelessAI_1423" onerror="this.style.display=\'none\'" alt=""><span>1423</span>
+  <div class="screenshot-frame" id="shot-träumerlie">
+    <img src="/api/denkstream/screenshot/träumerlie" onerror="this.style.display=\'none\'" alt=""><span>1423</span>
   </div>
-  <div class="screenshot-frame" id="shot-namelessAI_2341">
-    <img src="/api/denkstream/screenshot/namelessAI_2341" onerror="this.style.display=\'none\'" alt=""><span>2341</span>
+  <div class="screenshot-frame" id="shot-R1ZZ1">
+    <img src="/api/denkstream/screenshot/R1ZZ1" onerror="this.style.display=\'none\'" alt=""><span>2341</span>
   </div>
-  <div class="screenshot-frame" id="shot-namelessAI_3123">
-    <img src="/api/denkstream/screenshot/namelessAI_3123" onerror="this.style.display=\'none\'" alt=""><span>3123</span>
+  <div class="screenshot-frame" id="shot-jumpa">
+    <img src="/api/denkstream/screenshot/jumpa" onerror="this.style.display=\'none\'" alt=""><span>3123</span>
   </div>
-  <div class="screenshot-frame" id="shot-namelessAI_4321">
-    <img src="/api/denkstream/screenshot/namelessAI_4321" onerror="this.style.display=\'none\'" alt=""><span>4321</span>
+  <div class="screenshot-frame" id="shot-Resonanzknoten">
+    <img src="/api/denkstream/screenshot/Resonanzknoten" onerror="this.style.display=\'none\'" alt=""><span>4321</span>
   </div>
 </div>
 
@@ -135,7 +135,7 @@ body{background:#020810;color:#5a9aaa;font-family:monospace;min-height:100vh}
 <script>
 var _filter = 'alle';
 var _es = null;
-var _ALL_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321'];
+var _ALL_IDS = ['Schorschel','F3INSCHM3CK3R','träumerlie','R1ZZ1','jumpa','Resonanzknoten'];
 
 function setFilter(f, btn) {
   _filter = f;

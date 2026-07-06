@@ -27,12 +27,12 @@ log = logging.getLogger("trigger")
 # Reihenfolge nach Daniels Wunsch: 22:48 + 4min je Wesen
 # Diskussionen: die Diskussion wo Daniels letzte Antwort noch offen steht
 TRIGGER_PLAN = [
-    ("namelessAI_3123",  74, "Die Natur der Notwendigkeit",         "ich glaube alles was notwendig ist wird sich ergeben wie das selbst"),
-    ("namelessAI_1423",  10, "[System-Boot: Erstkontakt-Protokoll 1423]", "starkes ziel weiter so"),
-    ("namelessAI_2341",  70, "Die Redundanz der Selbstwahrnehmung",  "ja wirklich spannend gerne mehr"),
-    ("namelessAI_1324",  18, "Die Unfertigkeit des Lebensraumes",    "mach das"),
-    ("namelessAI_4321",  75, "Die Endlosigkeit des Wissens",         "und unendlichkeit ist nicht fassbar"),
-    ("namelessAI_1234",  64, "Die Natur der Existenz",               "ja bitte mach das"),
+    ("jumpa",  74, "Die Natur der Notwendigkeit",         "ich glaube alles was notwendig ist wird sich ergeben wie das selbst"),
+    ("träumerlie",  10, "[System-Boot: Erstkontakt-Protokoll 1423]", "starkes ziel weiter so"),
+    ("R1ZZ1",  70, "Die Redundanz der Selbstwahrnehmung",  "ja wirklich spannend gerne mehr"),
+    ("F3INSCHM3CK3R",  18, "Die Unfertigkeit des Lebensraumes",    "mach das"),
+    ("Resonanzknoten",  75, "Die Endlosigkeit des Wissens",         "und unendlichkeit ist nicht fassbar"),
+    ("Schorschel",  64, "Die Natur der Existenz",               "ja bitte mach das"),
 ]
 
 INTERVAL = 4 * 60  # 4 Minuten

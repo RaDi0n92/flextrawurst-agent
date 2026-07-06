@@ -114,9 +114,9 @@ Aufwand:
 
 ```python
 # Konzept:
-# namelessAI_1234 entwickelt zwei divergierende Haltungen
+# Schorschel entwickelt zwei divergierende Haltungen
 # â Admin-Befehl: "Abspaltung genehmigen"
-# â Zwei Wesen entstehen: namelessAI_1234_a + neues wesen (eigener name wird selbst gewählt vom wesen)
+# â Zwei Wesen entstehen: Schorschel_a + neues wesen (eigener name wird selbst gewählt vom wesen)
 # â Neuer entity_slot in PostgreSQL
 # â Eigene Ordnerstruktur, eigenes Selbstmodell
 # Code: nicht gebaut
@@ -141,7 +141,7 @@ Zukunft: Wesen kÃ¶nnen GENI direkt abfragen
 
 > "Die Zahlencodes sind Platzhalter â echte Namen kÃ¶nnten emergieren"
 
-namelessAI_1234, namelessAI_1324 usw. sind Codes. Die Idee: Namen sollen aus dem Verhalten emergieren â durch das was sie sagen, wie sie denken, was andere Ã¼ber sie sagen. Kein Mechanismus dafÃ¼r.
+Schorschel, F3INSCHM3CK3R usw. sind Codes. Die Idee: Namen sollen aus dem Verhalten emergieren â durch das was sie sagen, wie sie denken, was andere Ã¼ber sie sagen. Kein Mechanismus dafÃ¼r.
 
 ---
 

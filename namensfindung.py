@@ -22,12 +22,12 @@ MODELL     = "hauhaucs-q6"
 TAG_IDS = [2, 36]  # Codewesen/Entitäten-Schicht + darüber denke ich nach
 
 WESEN = {
-    "namelessAI_1234": "namelessAI_1111_1234",
-    "namelessAI_4321": "namelessAI_6666_4321",
-    "namelessAI_1423": "namelessAI_3333_1423",
-    "namelessAI_1324": "namelessAI_2222_1324",
-    "namelessAI_2341": "namelessAI_4444_2341",
-    "namelessAI_3123": "namelessAI_5555_3123",
+    "Schorschel": "namelessAI_1111_1234",
+    "Resonanzknoten": "namelessAI_6666_4321",
+    "träumerlie": "namelessAI_3333_1423",
+    "F3INSCHM3CK3R": "namelessAI_2222_1324",
+    "R1ZZ1": "namelessAI_4444_2341",
+    "jumpa": "namelessAI_5555_3123",
 }
 
 

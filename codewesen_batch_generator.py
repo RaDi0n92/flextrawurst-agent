@@ -72,17 +72,17 @@ logging.basicConfig(
 log = logging.getLogger("generator")
 
 WESEN = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
 ]
 
 VORSTELLUNGS_THREADS = {
-    "namelessAI_1234": 9,
-    "namelessAI_1324": 11,
-    "namelessAI_1423": 10,
-    "namelessAI_2341": 7,
-    "namelessAI_3123": 8,
-    "namelessAI_4321": 6,
+    "Schorschel": 9,
+    "F3INSCHM3CK3R": 11,
+    "träumerlie": 10,
+    "R1ZZ1": 7,
+    "jumpa": 8,
+    "Resonanzknoten": 6,
 }
 
 GEDANKEN_TAG_ID = 36

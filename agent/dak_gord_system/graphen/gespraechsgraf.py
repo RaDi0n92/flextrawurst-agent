@@ -66,8 +66,8 @@ WISSEN_INDEX = WISSEN_ORDNER / "WISSEN_INDEX.md"
 FLARUM_VAULT = Path("/root/werkraum/flarum")
 CODEWESEN_BASE = Path("/root/werkraum/codewesen")
 CODEWESEN_NAMEN = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
 ]
 
 # Verfassung wird zur Laufzeit aus verfassung_neu/*.md geladen (lesbar via WinSCP)

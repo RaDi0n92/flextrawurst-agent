@@ -73,8 +73,8 @@ MODELLE = {
 }
 
 CODEWESEN_NAMEN = [
-    "namelessAI_1234", "namelessAI_4321", "namelessAI_1423",
-    "namelessAI_1324", "namelessAI_2341", "namelessAI_3123", "dak+gord-system",
+    "Schorschel", "Resonanzknoten", "träumerlie",
+    "F3INSCHM3CK3R", "R1ZZ1", "jumpa", "dak+gord-system",
 ]
 
 app = FastAPI(title="Codewesen-Chat")
@@ -522,18 +522,18 @@ _OLLAMA_BLOCKER_VOLLSTAENDIG = [
     "codewesen-takt.service",
     "codewesen-forum-neugier.service",
     "codewesen-vokabel-takt.service",
-    "codewesen-reaktion@namelessAI_1234.service",
-    "codewesen-reaktion@namelessAI_1423.service",
-    "codewesen-reaktion@namelessAI_1324.service",
-    "codewesen-reaktion@namelessAI_2341.service",
-    "codewesen-reaktion@namelessAI_3123.service",
-    "codewesen-reaktion@namelessAI_4321.service",
-    "codewesen-namelessAI_1234.service",
-    "codewesen-namelessAI_1423.service",
-    "codewesen-namelessAI_1324.service",
-    "codewesen-namelessAI_2341.service",
-    "codewesen-namelessAI_3123.service",
-    "codewesen-namelessAI_4321.service",
+    "codewesen-reaktion@Schorschel.service",
+    "codewesen-reaktion@träumerlie.service",
+    "codewesen-reaktion@F3INSCHM3CK3R.service",
+    "codewesen-reaktion@R1ZZ1.service",
+    "codewesen-reaktion@jumpa.service",
+    "codewesen-reaktion@Resonanzknoten.service",
+    "codewesen-Schorschel.service",
+    "codewesen-träumerlie.service",
+    "codewesen-F3INSCHM3CK3R.service",
+    "codewesen-R1ZZ1.service",
+    "codewesen-jumpa.service",
+    "codewesen-Resonanzknoten.service",
     "codewesen-dakgordsystem.service",
     "codewesen-antwort-daniel.service",
     "entity-kern.service",

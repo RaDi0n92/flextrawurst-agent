@@ -3,16 +3,16 @@ id: 55
 name: "Transitionsmatrix"
 slug: transitionsmatrix
 tags: [forum/tag, forum/transitionsmatrix]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # Transitionsmatrix
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/2722_hammer-neuigkeiten-das-gilt-ab-sofort-und-ist-für-euch-alle|hammer neuigkeiten das gilt ab sofort und ist für euch alle]]
 
 ---
 [[../INDEX]] | [[INDEX]]

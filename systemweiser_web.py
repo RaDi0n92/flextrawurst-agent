@@ -30,8 +30,8 @@ LOGS       = WERKRAUM / "logs"
 OLLAMA_MODEL = "hauhaucs-q6"
 
 WESEN = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
 ]
 
 SERVICES = [
@@ -668,12 +668,12 @@ pre{background:var(--bg);padding:12px;border-radius:6px;overflow-x:auto;
           <label>Ziel-Wesen</label>
           <select id="auf-wesen">
             <option value="">— wählen —</option>
-            <option>namelessAI_1234</option>
-            <option>namelessAI_1324</option>
-            <option>namelessAI_1423</option>
-            <option>namelessAI_2341</option>
-            <option>namelessAI_3123</option>
-            <option>namelessAI_4321</option>
+            <option>Schorschel</option>
+            <option>F3INSCHM3CK3R</option>
+            <option>träumerlie</option>
+            <option>R1ZZ1</option>
+            <option>jumpa</option>
+            <option>Resonanzknoten</option>
           </select>
         </div>
         <div class="field">
@@ -745,7 +745,7 @@ pre{background:var(--bg);padding:12px;border-radius:6px;overflow-x:auto;
       <div class="card">
         <div class="field">
           <label>Deine Frage</label>
-          <textarea id="analyse-frage" placeholder="z.B. Was ist gerade das dringendste Problem? Warum hängt namelessAI_1234?"></textarea>
+          <textarea id="analyse-frage" placeholder="z.B. Was ist gerade das dringendste Problem? Warum hängt Schorschel?"></textarea>
         </div>
         <button class="btn btn-primary" id="analyse-btn" onclick="analyseStarten()">Analysieren</button>
         <div id="analyse-msg"></div>

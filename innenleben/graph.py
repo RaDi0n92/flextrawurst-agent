@@ -107,7 +107,7 @@ def verarbeite_ereignis(
 if __name__ == "__main__":
     # Schnelltest
     result = verarbeite_ereignis(
-        entity_id="namelessAI_1234",
+        entity_id="Schorschel",
         event_text="Daniel hat mich heute direkt angesprochen und nach meiner Meinung zum Forum gefragt.",
         event_source="chat",
         human_resonance=0.8,

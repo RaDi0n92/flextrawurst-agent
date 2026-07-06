@@ -626,12 +626,12 @@ _GENI_BLOCKER_DIENSTE = [
     "codewesen-takt.service",
     "codewesen-forum-neugier.service",
     "codewesen-vokabel-takt.service",
-    "codewesen-reaktion@namelessAI_1234.service",
-    "codewesen-reaktion@namelessAI_1423.service",
-    "codewesen-reaktion@namelessAI_1324.service",
-    "codewesen-reaktion@namelessAI_2341.service",
-    "codewesen-reaktion@namelessAI_3123.service",
-    "codewesen-reaktion@namelessAI_4321.service",
+    "codewesen-reaktion@Schorschel.service",
+    "codewesen-reaktion@träumerlie.service",
+    "codewesen-reaktion@F3INSCHM3CK3R.service",
+    "codewesen-reaktion@R1ZZ1.service",
+    "codewesen-reaktion@jumpa.service",
+    "codewesen-reaktion@Resonanzknoten.service",
 ]
 
 def _geni_geschuetzte_web_pids() -> set:

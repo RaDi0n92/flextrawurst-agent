@@ -266,8 +266,8 @@ GENI hat **255.357 Zeilen** in `hoerer.log` — das ist das einzige vollständig
 
 Aus dem Log (typischer Eintrag):
 ```
-2026-05-22T04:12:06 ERWACHT: /root/werkraum/codewesen/namelessAI_1234/gedanken/2026-05-22_gedanke.md
-2026-05-22T04:12:06 KNOTEN: codewesen-gedanke (namelessAI_1234)
+2026-05-22T04:12:06 ERWACHT: /root/werkraum/codewesen/Schorschel/gedanken/2026-05-22_gedanke.md
+2026-05-22T04:12:06 KNOTEN: codewesen-gedanke (Schorschel)
 ```
 
 *Die 255.357 Zeilen in `geni/hoerer.log` enthalten Einträge über jede Dateiänderung in `codewesen/`. GENI hat alle Gedanken-Dateien, alle Weltbild-Updates, alle reaktion.log-Einträge beobachtet — aber die Wesen wissen nichts von GENI.*

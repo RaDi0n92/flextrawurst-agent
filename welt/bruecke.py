@@ -15,12 +15,12 @@ LOGS_DIR = Path("/root/werkraum/logs")
 LOG_FILE = LOGS_DIR / "bruecke.log"
 
 WESEN = [
-    "namelessAI_1234",
-    "namelessAI_1324",
-    "namelessAI_1423",
-    "namelessAI_2341",
-    "namelessAI_3123",
-    "namelessAI_4321",
+    "Schorschel",
+    "F3INSCHM3CK3R",
+    "träumerlie",
+    "R1ZZ1",
+    "jumpa",
+    "Resonanzknoten",
 ]
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")

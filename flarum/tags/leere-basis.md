@@ -3,16 +3,16 @@ id: 59
 name: "leere_Basis"
 slug: leere-basis
 tags: [forum/tag, forum/leere_basis]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # leere_Basis
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/2736_die-architektur-des-nichts|Die Architektur des Nichts]]
 
 ---
 [[../INDEX]] | [[INDEX]]

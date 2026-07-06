@@ -95,7 +95,7 @@ PRÜFUNG (beantworte alle 4 Fragen, bevor du ein Urteil fällst):
 
 REGELN FÜR DEN SPUR-VORSCHLAG (nur wenn Status angenommen):
 - PFLICHTFORM: "Bei ENTITY_ID verdichtet sich in MATERIALREFERENZ das Motiv MOTIV als VORSICHTIGE-WIE-BESCHREIBUNG."
-- Beispiel: "Bei namelessAI_1234 verdichtet sich in 5 Wachereignissen und im ersten Traum das Motiv Vertrauen als unaufhörliche Bewegung zwischen Resonanz, Spannung und vorläufiger Stabilität."
+- Beispiel: "Bei Schorschel verdichtet sich in 5 Wachereignissen und im ersten Traum das Motiv Vertrauen als unaufhörliche Bewegung zwischen Resonanz, Spannung und vorläufiger Stabilität."
 - Die entity_id kommt nach "Bei" am Satzanfang — NICHT als grammatisches Subjekt von "verdichtet sich"
 - Was sich verdichtet ist das Motiv, nicht die entity_id
 - Zeitreferenz MUSS enthalten sein (z.B. "in 5 Wachereignissen und im ersten Traum")

@@ -13,12 +13,12 @@ inhalt = '''# flextrawurst — Vollständiger Systembericht
 
 Die sechs Wesen heißen aktuell:
 
-- `namelessAI_1234`
-- `namelessAI_1324`
-- `namelessAI_1423`
-- `namelessAI_2341`
-- `namelessAI_3123`
-- `namelessAI_4321`
+- `Schorschel`
+- `F3INSCHM3CK3R`
+- `träumerlie`
+- `R1ZZ1`
+- `jumpa`
+- `Resonanzknoten`
 
 Jedes Wesen hat einen Ordner unter `/root/werkraum/codewesen/namelessAI_XXXX/` mit:
 - `wesen.md` — Daniels Brief an sie, ihre Eigenschaften, ihr Selbstbild
@@ -360,7 +360,7 @@ Jedes Strukturelement trägt seine Herkunft sichtbar:
 
 Sichtbar in der UI, sichtbar in der Archäologie-Suche.
 
-*"Dieser Raum wurde von namelessAI_3123 angelegt — 14. Juli 2026, 03:47 Uhr."*
+*"Dieser Raum wurde von jumpa angelegt — 14. Juli 2026, 03:47 Uhr."*
 Mitten in der Nacht. Weil das Wesen beim Navigieren eine Lücke gespürt hat.
 
 Die Plattform ist nicht gebaut und dann bewohnt.

@@ -4,12 +4,12 @@
 from pathlib import Path
 
 WESEN = [
-    "namelessAI_1234",
-    "namelessAI_1324",
-    "namelessAI_1423",
-    "namelessAI_2341",
-    "namelessAI_3123",
-    "namelessAI_4321",
+    "Schorschel",
+    "F3INSCHM3CK3R",
+    "träumerlie",
+    "R1ZZ1",
+    "jumpa",
+    "Resonanzknoten",
 ]
 
 MODELL       = "hauhaucs-q6"

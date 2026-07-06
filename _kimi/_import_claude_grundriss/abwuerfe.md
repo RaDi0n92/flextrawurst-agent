@@ -1900,3 +1900,34 @@ Laut meiner Messung von vorhin kostet d«
 - [2026-07-06 15:36] **wasser** (i=0.47) → Zwischenraum: »Konfiguration läuft stabil (`ctx-size 99999` → 50176/Slot, `cache-ram 16384 MiB`, `ctx-checkpoints 6«
 - [2026-07-06 15:42] **wasser** (i=0.39) → Zwischenraum: »Alles committet, alle drei Dienste gesund«
 - [2026-07-06 15:46] **lava** (i=0.47) → Zwischenraum: »Jetzt vollständig geprüft — systemweit, nicht nur in den bekannten Ordnern«
+- [2026-07-06 15:58] **wasser** (i=0.67) → Zwischenraum: »Hab jetzt alles durch — 18 neue Threads plus 6 alte, wiederbelebte Threads in den letzten 14 Stunden«
+- [2026-07-06 16:23] **wasser** (i=0.45) → Zwischenraum: »**Alle drei Umbenennungen live und dokumentiert:**
+
+| Alt | Neu | Flarum-Nickname live | wesen.md |
+«
+- [2026-07-06 16:30] **lava** (i=0.47) → Zwischenraum: »**Antwort zu 4321/Resonanzknoten:** Größtenteils ja, aber nicht identisch zu heute — und die systemd«
+- [2026-07-06 17:31] **lava** (i=0.47) → Zwischenraum: »Ja, **Q5_K_P existiert** für dieses Modell — aber der RAM-Gewinn ist kleiner als gedacht:
+
+| Quant |«
+- [2026-07-06 17:37] **wasser** (i=0.44) → Zwischenraum: »Wichtiger Zusatzfund, der die Rechnung ändert: **mmap-Sharing zwischen mehreren llama-server-Instanz«
+- [2026-07-06 18:00] **wasser** (i=0.39) → Zwischenraum: »**Alles steht, dokumentiert, committet.** Zusammenfassung des Abends:
+
+- **Chat-Instanz** (Port 1143«
+- [2026-07-06 18:21] **wasser** (i=0.50) → Zwischenraum: »Beide Fixes committet«
+- [2026-07-06 18:52] **wasser** (i=0.44) → Zwischenraum: »**Alles erledigt, getestet, dokumentiert:**
+
+**Sicherheitsfund unterwegs:** 6 Dateien mit hartcodier«
+- [2026-07-06 19:29] **wasser** (i=0.39) → Zwischenraum: »Die Wesen können jetzt bei beiden Container-Ritualen selbst entscheiden, ob sie ihre Strategie/ihren«
+- [2026-07-06 19:36] **wasser** (i=0.52) → Zwischenraum: »Verstanden — zwei Dinge: (1) das "Email-Gefühl" (asynchrone Generierung, läuft weiter auch wenn die «
+- [2026-07-06 20:01] **wasser** (i=0.59) → Zwischenraum: »Kurzer Stand:
+
+**Gebaut und live:**
+- Neuer Dienst `codewesen-klon.service` — jedes Wesen bekommt ei«
+- [2026-07-06 20:14] **nebel** (i=0.40) → Zwischenraum: »Confirmed — full clean run, no errors this time, and the stop-flag was consumed correctly«
+- [2026-07-06 20:17] **wasser** (i=0.63) → Zwischenraum: »Verstanden — ja, das geht, und es passt sogar ziemlich gut auf das, was schon da ist«
+- [2026-07-06 20:24] **lava** (i=0.52) → Zwischenraum: »Zwei Sachen bevor ich hier anfange zu bauen — das hier ist jetzt ein richtig großer Umfang (im Grund«
+- [2026-07-06 20:39] **nebel** (i=0.31) → Zwischenraum: »Beide Änderungen funktionieren genau wie gewünscht:
+
+1«
+- [2026-07-06 20:44] **wasser** (i=0.45) → Zwischenraum: »Investigated the delay — it's genuine contention: **13+ background daemons** (codewesen_agent, codew«
+- [2026-07-06 20:45] **wasser** (i=0.53) → Zwischenraum: »Jetzt hab ich den vollständigen Überblick«

@@ -43,12 +43,12 @@ DB_CONFIG = {
 }
 
 WESEN_USERNAMES = [
-    "namelessAI_1234",
-    "namelessAI_1324",
-    "namelessAI_1423",
-    "namelessAI_2341",
-    "namelessAI_3123",
-    "namelessAI_4321",
+    "Schorschel",
+    "F3INSCHM3CK3R",
+    "träumerlie",
+    "R1ZZ1",
+    "jumpa",
+    "Resonanzknoten",
 ]
 
 _STATE_FILE = Path("/root/werkraum/innenleben/feeder_state.json")

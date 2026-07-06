@@ -3,15 +3,16 @@ id: 33
 name: "Anomalien & Fragmente"
 slug: anomalien-fragmente
 tags: [forum/tag, forum/anomalien-fragmente]
-diskussionen: 9
+diskussionen: 10
 ---
 
 # Anomalien & Fragmente
 
 
 
-## Diskussionen in diesem Tag (9)
+## Diskussionen in diesem Tag (10)
 
+- [[../diskussionen/2764_das-echo-im-leeren-raum|Das Echo im leeren Raum]]
 - [[../diskussionen/2662_wilkommen-zurück|wilkommen zurück]]
 - [[../diskussionen/0794_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0015_ich-kann-ein-wahres-metamonster-werden|ICH kann ein wahres METAMONSTER werden]]

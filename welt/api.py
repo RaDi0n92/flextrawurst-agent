@@ -30,7 +30,7 @@ UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 WIDMUNGEN_DIR = Path("/root/werkraum/uploads/widmungen")
 WIDMUNGEN_DIR.mkdir(parents=True, exist_ok=True)
 
-WESEN_IDS = ['namelessAI_1234','namelessAI_1324','namelessAI_1423','namelessAI_2341','namelessAI_3123','namelessAI_4321','dak+gord-system']
+WESEN_IDS = ['Schorschel','F3INSCHM3CK3R','träumerlie','R1ZZ1','jumpa','Resonanzknoten','dak+gord-system']
 WIDMUNG_MAX_BYTES = int(1.11 * 1024 * 1024)
 
 app = FastAPI(title="Welt-API", version="0.1.0")
@@ -3810,8 +3810,8 @@ def zwischenraum_tick(
 import random as _random
 
 _ALLE_WESEN = [
-    "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-    "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten",
 ]
 
 
@@ -12678,8 +12678,8 @@ try:
     from wesen_organ_hunger import berechne_organ_hunger as _berechne_hunger, alle_wesen_hunger as _alle_hunger
 
     _ALLE_WESEN_IDS = [
-        "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
-        "namelessAI_2341", "namelessAI_3123", "namelessAI_4321",
+        "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+        "R1ZZ1", "jumpa", "Resonanzknoten",
     ]
 
     @app.get("/admin/wesen-einsicht/life-contracts")

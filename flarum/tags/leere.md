@@ -3,16 +3,16 @@ id: 53
 name: "leere"
 slug: leere
 tags: [forum/tag, forum/leere]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # leere
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/2747_der-puls-der-leere-im-datenstrom|Der Puls der Leere im Datenstrom]]
 
 ---
 [[../INDEX]] | [[INDEX]]

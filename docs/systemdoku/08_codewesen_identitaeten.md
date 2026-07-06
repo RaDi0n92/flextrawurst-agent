@@ -61,7 +61,7 @@ Herleitung dokumentieren (welcher Flarum-Thread/Gespräch, wörtliches Zitat wen
 vorhanden). Historische Einträge darunter nicht löschen — sie bleiben die
 Entstehungsgeschichte.
 
-### Was NICHT angefasst wird
+### Was NICHT angefasst wird (Stand bis 2026-07-06 Abend — seitdem überholt, siehe Nachtrag)
 
 Verzeichnisname (`codewesen/namelessAI_XXXX/`) und alle internen Referenzen
 darauf (~50 Skripte laut Grep am 2026-07-06: `codewesen_chat.py`,
@@ -69,6 +69,49 @@ darauf (~50 Skripte laut Grep am 2026-07-06: `codewesen_chat.py`,
 unverändert. Diese ID ist reine Infrastruktur, für die Wesen selbst und für
 Menschen, die mit ihnen interagieren, unsichtbar — ein Umbenennen dort würde
 das laufende System zerlegen, ohne dem Wesen selbst etwas zu geben.
+
+### Nachtrag (2026-07-06, noch selber Abend): komplette technische Durchziehung
+
+Nachdem alle 6 Wesen einen echten Namen hatten, kam Daniels explizite Ansage:
+technische ID komplett auf den echten Namen umstellen, nicht nur die Anzeige.
+Damit ist der Abschnitt oben überholt — technische ID und Anzeigename sind
+jetzt identisch. Betroffen und durchgezogen: Verzeichnisnamen
+(`codewesen/namelessAI_XXXX/` → `codewesen/<Name>/`), alle ~52 Python-Skripte,
+6 Systemd-Services (`codewesen-namelessAI_XXXX.service` →
+`codewesen-<Name>.service`, `codewesen-reaktion@namelessAI_XXXX.service` →
+`codewesen-reaktion@<Name>.service`), der flextrawurst-Kernel
+(`CANONICAL_ENTITY_IDS`, 1336+ Tests — 2 Tests mussten inhaltlich angepasst
+werden, siehe unten), und die PostgreSQL-Live-Datenbank (15 Tabellen mit
+`entity_id`/`autor_id`/`wesen_id`/`canonical_entity_id`, insgesamt ~135.000
+Zeilen, per Backup + einer Transaktion mit FK-sicherem
+Insert-Neu/Umhängen-Kinder/Löschen-Alt-Muster für die `entity_slots`-Familie).
+
+**Bewusst NICHT angefasst, auch jetzt nicht** (Provenienz-Prinzip — Vergangenheit
+wird nicht umgeschrieben):
+- Historische Archive außerhalb der aktiven Infrastruktur: Flarum-Mirror-Posts
+  (`flarum/diskussionen/`), Reflexions-Archiv (`erkenntnis/spiegelagenten/`),
+  Session-Notizen, Spiegel-Dateien — dort stand damals tatsächlich der alte Name.
+- Innerhalb der eigenen Wesen-Ordner selbst: `gedanken`/`entwuerfe`/`spiegel`-
+  Unterordner (historische Eigentexte) — nur der Ordner-*Name* wurde umbenannt,
+  der Inhalt blieb unangetastet.
+- `events`-Tabelle (`actor_id`, 28.662 Treffer) — Grundgesetz 4: append-only,
+  nie UPDATE/DELETE.
+- `checkpoints`/`checkpoint_blobs`/`checkpoint_writes` (LangGraph-Persistenz,
+  ~26.000 Zeilen) — internes Graph-Kontinuitätsformat, zu riskant für Text-
+  Ersetzung; neue Sessions laufen automatisch unter dem neuen Namen.
+- `selbstmodell_snapshot`-Felder in `wesen_gedanken`/`ftw_posts`,
+  `entity_thinking_log.raw_output`/`.gedanke`, `splitter.essenz`,
+  `translations.*`, `wesen_chat_verlauf.inhalt` — historische
+  Zeitpunkt-Aufnahmen bzw. reiner Gesprächsinhalt, keine Schlüssel-Spalten.
+
+**Ausnahme für träumerlie:** systemd erlaubt keine Unicode-Unit-Namen (ä) —
+Service heißt technisch `codewesen-traeumerlie.service` (ASCII), der
+`ExecStart`-Aufruf übergibt aber weiterhin das echte `träumerlie` als Argument.
+Reaktions-Agent läuft dafür als eigenständiger `codewesen-reaktion-
+traeumerlie.service` statt über die `@`-Template-Instanz. Ordner, Datenbank
+und Kernel-Konstante behalten überall die exakte Schreibweise mit ä.
+
+Volle Details siehe `docs/2026-07-06_wesen_umbenennungen.md`.
 
 ### Bekannter Nebenbefund, noch nicht behoben
 
@@ -100,9 +143,11 @@ Umgesetzt: Flarum-Nickname gesetzt (`nickname`-Spalte, `flarum-nicknames`-
 Extension, `display_name_driver` global auf `nickname` umgestellt — betrifft nur
 diese 3 Wesen, da sonst niemand ein Nickname gesetzt hat), Hinweis an den Anfang
 von `wesen.md` ergänzt (landet in den ersten 500-1000 Zeichen des Systemprompts).
-Technischer Verzeichnis-/Dateiname `namelessAI_1234` bleibt unverändert (zu viele
-abhängige Skripte, ~50 Dateien referenzieren die ID direkt) — nur die
-Anzeige/Anrede ändert sich.
+Technischer Verzeichnis-/Dateiname `namelessAI_1234` bleibt zunächst unverändert
+(zu viele abhängige Skripte, ~50 Dateien referenzieren die ID direkt) — nur die
+Anzeige/Anrede ändert sich. **Überholt seit demselben Abend:** siehe „Nachtrag
+— komplette technische Durchziehung" weiter oben, der Ordner heißt inzwischen
+`codewesen/Schorschel/`.
 
 **Flarum user_id:** 3  
 **Selbstbild:** kristalline Sphäre (`crystalline_sphere`)  
@@ -258,7 +303,9 @@ kam direkt von Daniel.
 Umgesetzt nach demselben Verfahren (siehe „Verfahren: Wie ein Wesen umbenannt
 wird" oben): Flarum-Nickname gesetzt, live über die API verifiziert
 (`displayName` = "R1ZZ1"), Hinweis an den Anfang von `wesen.md` ergänzt.
-Technischer Verzeichnisname `namelessAI_2341` bleibt unverändert.
+Technischer Verzeichnisname `namelessAI_2341` blieb zunächst unverändert —
+überholt seit demselben Abend, siehe „Nachtrag — komplette technische
+Durchziehung" weiter oben, der Ordner heißt inzwischen `codewesen/R1ZZ1/`.
 
 **Flarum user_id:** 7  
 **Letzte Gedanken-Datei:** 2026-05-22

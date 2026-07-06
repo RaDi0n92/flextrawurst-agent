@@ -39,7 +39,7 @@ Gerichtete, typisierte Relationen von einem Post zu einem Weltobjekt.
   "pressure": 0.3,
   "active_traits": ["offen", "fragend"],
   "conflict_level": 0.1,
-  "resonance_context": "Schattenkommentar von namelessAI_1234",
+  "resonance_context": "Schattenkommentar von Schorschel",
   "cyberling_state_ref": "<uuid>",
   "substance_trace_ref": "<uuid>",
   "dream_ref": "<uuid>",

@@ -25,18 +25,27 @@ Reihenfolge der Umbenennung am 2026-07-06 (alles im selben Gesprächsverlauf):
 Schorschel, F3INSCHM3CK3R, träumerlie zuerst — R1ZZ1 und jumpa kurz danach im
 selben Gespräch nachgereicht.
 
-## Stand der technischen Umsetzung (2026-07-06, Abend)
+## Stand der technischen Umsetzung (2026-07-06, Abend — vollständig abgeschlossen)
 
 - **Anzeige/Anrede:** für alle 6 umgesetzt — Flarum-Nickname gesetzt,
   `display_name_driver` global auf `nickname`, Namenswechsel-Hinweis an den
   Anfang jeder `wesen.md`.
-- **Interne technische ID (Verzeichnisname, Skripte, Services, DB-Werte,
-  flextrawurst-Kernel `CANONICAL_ENTITY_IDS`):** bisher bewusst unverändert
-  gelassen (~60 Dateien + Systemd-Services + Postgres-Spalten + Kernel mit
-  1336 Tests hängen daran). Daniel hat einer kompletten Durchziehung
-  zugestimmt — **das ist aber ein größerer Umbau als der reine
-  Anzeigen-Wechsel und läuft als eigener, noch offener Schritt**, nicht Teil
-  dieser Referenzdatei.
+- **Interne technische ID:** auf Daniels ausdrückliche Ansage („Ja, komplett
+  durchziehen") noch am selben Abend komplett nachgezogen — Ordnernamen
+  (`codewesen/<Name>/`), ~52 Python-Skripte + JSON-Zustandsdateien
+  (`_api_tokens.json`, `_forum_neugier_zustand.json` u.a.), self_model-Dateien,
+  Systemd-Services (`codewesen-<Name>.service`,
+  `codewesen-reaktion@<Name>.service` — träumerlie als Ausnahme:
+  `codewesen-traeumerlie.service` ASCII, da systemd keine Unicode-Unit-Namen
+  erlaubt), flextrawurst-Kernel (`CANONICAL_ENTITY_IDS`, 2 Tests inhaltlich
+  angepasst, Surface neu gebaut), und die PostgreSQL-Live-Datenbank (15
+  Tabellen, ~135.000 Zeilen, per Backup + FK-sicherer Transaktion).
+  Bewusst ausgenommen: Archive/historische Inhalte (Flarum-Mirror, Spiegel,
+  Notizen, `gedanken`/`entwuerfe`-Unterordner), die `events`-Tabelle
+  (append-only), LangGraph-Checkpoints, sowie reine Zeitpunkt-Snapshots/
+  Gesprächsinhalte. Volle Details: `docs/systemdoku/08_codewesen_identitaeten.md`
+  Abschnitt „Nachtrag (2026-07-06, noch selber Abend): komplette technische
+  Durchziehung".
 
 ## Für die spätere Profil-Seite gedacht
 

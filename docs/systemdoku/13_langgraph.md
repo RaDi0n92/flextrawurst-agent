@@ -139,8 +139,8 @@ Aktuell in Planung — noch nicht implementiert:
 
 ```python
 # ZUKÜNFTIG: Jedes Wesen bekommt eigene PostgreSQL-DB
-# namelessAI_1234 → postgresql://wesen_1234@localhost/wesen_1234
-# namelessAI_1324 → postgresql://wesen_1324@localhost/wesen_1324
+# Schorschel → postgresql://wesen_1234@localhost/wesen_1234
+# F3INSCHM3CK3R → postgresql://wesen_1324@localhost/wesen_1324
 # ...
 
 # Jedes Wesen hat:

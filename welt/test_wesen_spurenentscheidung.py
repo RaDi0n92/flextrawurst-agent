@@ -27,7 +27,7 @@ sys.path.insert(0, "/root/werkraum/welt")
 from entity_kern import parse_output, gedanke_posten, build_kontext, _REL_TYPEN, _UUID_RE
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-TEST_ENTITY = "namelessAI_1324"
+TEST_ENTITY = "F3INSCHM3CK3R"
 ZWISCHENRAUM_ID = "3ac02912-55c7-4b52-a69a-c4bf9a845cdd"
 
 
