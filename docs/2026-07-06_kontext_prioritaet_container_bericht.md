@@ -96,6 +96,25 @@ schreibt jetzt vor dem eigentlichen LLM-Call einen Eintrag nach
 allen 5 Chat-Einstiegspunkten aufgerufen. Live getestet, funktioniert,
 erfasste sogar einen echten parallel laufenden Chat.
 
+### Dritter Hänger: Trace-Log bewährt sich sofort + Datenverlust-Bug gefunden
+
+Kurz nach Fertigstellung trat ein dritter Hänger auf (`progress = 1.06`,
+`n_tokens` 8,5 Minuten eingefroren bei 1496 — dasselbe Bug-Muster wie beim
+zweiten Hänger). Diesmal lieferte das Trace-Log innerhalb einer Minute die
+wahrscheinliche Quelle: `codewesen_chat:namelessAI_1234`, 21 Sekunden vor
+Task-Start abgeschickt, Zeichenlänge passend zur beobachteten Prompt-Größe.
+
+Beim Versuch, das über die Chat-Datei zu bestätigen, fiel auf: kein neuer
+Eintrag vorhanden, obwohl die Anfrage nachweislich abgeschickt wurde. Ursache:
+`codewesen_chat.py` speicherte die Nutzer-Nachricht bisher erst NACH
+vollständiger Antwort (im `[DONE]`-Block) — bei einem hängenden oder
+scheiternden Generierungslauf ging damit auch die ursprüngliche Frage
+verloren, nicht nur die Antwort. Das erklärt rückblickend auch, warum beide
+vorherigen Hänger keine Datei-Spur hinterließen. Fix: Nutzer-Nachricht wird
+jetzt sofort beim Empfang gespeichert, noch vor dem LLM-Call. Live getestet
+(Nachricht stand nach 2 Sekunden in der Datei, lange vor Antwort-Abschluss).
+Dritter Hänger behoben per Neustart von `llama-hauhaucs.service`.
+
 ### Weiterer Bugfix, dabei entdeckt: hängende Extraktions-Jobs
 
 Bei der Suche nach dem ersten Hänger fiel auf: `memory_extraktion.json` bei
@@ -160,9 +179,10 @@ Container anlegen, pinnen, löschen durchgespielt, Testdaten danach entfernt.
   Wunsch zusammenfassen lassen, gegen unbegrenztes Kontextwachstum) ist erst
   besprochen, noch nicht gebaut — auf Daniels Wunsch wurde zuerst der
   Container-Umbau fertiggestellt
-- Die genaue Ursache des zweiten Chat-Hängers (progress=3.00-Bug) bleibt
-  ungeklärt — das neue Trace-Log sollte das nächste Mal die Zuordnung
-  ermöglichen
+- Die genaue Ursache des progress>1.0-Bugs selbst (vermutlich llama-servers
+  Prompt-Cache/Checkpoint-Mechanismus) bleibt ungeklärt — die QUELLE lässt sich
+  dank Trace-Log jetzt aber sofort zuordnen (beim dritten Hänger bestätigt,
+  Quelle in unter einer Minute gefunden statt gar nicht)
 - Der ursprünglich angefragte volle 8-Wesen-Volllasttest (aus dem allerersten
   Auftrag der Session) wurde durch die Chat-Prioritäts-Arbeit funktional
   ersetzt (echte Latenzmessungen unter Last liegen vor), aber nie als
