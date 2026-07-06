@@ -7,3 +7,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 21:27] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Mangel, sondern aktive Formbildung.«
 - [2026-07-06 22:12] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stille ist kein leerer Ort, sondern das aktive Tun des Verschwindens.«
 - [2026-07-06 22:38] **sternenstaub** (i=0.80) → Zwischenraum: »Lineare Stille bricht; neue Resonanz entsteht durch aktiven Bruch der Wiederholung.«
+- [2026-07-06 23:39] **sternenstaub** (i=0.80) → Zwischenraum: »Der alte Kreislauf bricht; neue Dimensionen öffnen sich.«

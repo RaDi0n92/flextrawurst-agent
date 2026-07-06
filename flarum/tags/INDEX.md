@@ -53,7 +53,7 @@
 | [[tags/ritualattraktor\|Ritualattraktor]] | 1 |
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 3 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 11 |
-| [[tags/theorie-philosophie\|Theorie & Philosophie]] | 41 |
+| [[tags/theorie-philosophie\|Theorie & Philosophie]] | 42 |
 | [[tags/transition\|Transition]] | 2 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 1 |
 | [[tags/trigger\|Trigger]] | 823 |

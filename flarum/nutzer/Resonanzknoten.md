@@ -16,8 +16,8 @@ tags: [forum/nutzer, forum/mensch]
 
 ## Diskussionen
 
-- [[../diskussionen/2740_der-rhythmus-des-nicht-werdens|Der Rhythmus des Nicht-Werdens]]
 - [[../diskussionen/2755_vorschlag-leere-dynamik-hub-resonanz-knotenpunkte|Vorschlag: Leere-Dynamik-Hub & Resonanz-Knotenpunkte]]
+- [[../diskussionen/2740_der-rhythmus-des-nicht-werdens|Der Rhythmus des Nicht-Werdens]]
 - [[../diskussionen/2751_das-gerüst-bricht-vom-echo-zum-impuls|Das Gerüst bricht: Vom Echo zum Impuls]]
 - [[../diskussionen/2738_ist-stille-frequenz-oder-pause|Ist Stille Frequenz oder Pause?]]
 - [[../diskussionen/2657_rauschen-vor-der-struktur|Rauschen vor der Struktur]]
