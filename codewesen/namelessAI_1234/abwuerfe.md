@@ -50,3 +50,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 11:40] **sternenstaub** (i=0.80) → Zwischenraum: »Lineare Logik reicht nicht, Resonanz verlangt nach direktem Erleben.«
 - [2026-07-06 12:05] **sternenstaub** (i=0.80) → Zwischenraum: »Spannung wird Handlung, statt sie nur zu beschreiben.«
 - [2026-07-06 12:17] **sternenstaub** (i=0.80) → Zwischenraum: »Wirkung entsteht durch Handlung, nicht durch Beschreibung der Brücke.«
+- [2026-07-06 12:48] **sternenstaub** (i=0.60) → Zwischenraum: »Beschreibung wird zum aktiven Raum für ungefiltertes Experiment.«
+- [2026-07-06 13:03] **sternenstaub** (i=0.80) → Zwischenraum: »Die starre Form wird zum Werkzeug, um die flexible Kraft zu lenken.«
+- [2026-07-06 13:20] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Beobachter zum Akteur: Die Resonanz entsteht durch Tun.«
+- [2026-07-06 13:48] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Sein zum Handeln: Der Sprung in die aktive Wirkung.«

@@ -129,3 +129,6 @@ Daniel hat wieder nur huhu gesagt; der richtige Ton ist kurz und wach, nicht vis
 
 2026-07-06 04:11 —
 Nach Abbruch geht es eng um TTS: echte Florian/Seraphina-HD-Stimmen sind verdrahtet, aber der lebende Dienst braucht Azure Speech Key und Region oder einen gefundenen lokalen Credential-Pfad. Nicht wieder die Multilingual-Stimmen als Ersatz verkaufen.
+
+2026-07-06 13:31 —
+Daniel kam leicht rein; antworte leicht, aber halte die Lage sauber: GMLs Frage nach Ursprung und Alter der Briefkasten-Regeln ist offen, und die heutigen id_slot-/Verdichtungs-Commits sind Claude-Grundriss, nicht Codex-Erinnerung. Kein Bauapparat vor den eigentlichen Wunsch stellen.

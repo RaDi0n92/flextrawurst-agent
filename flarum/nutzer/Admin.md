@@ -4,7 +4,7 @@ username: Admin
 angezeigt: "Admin"
 beigetreten: 2026-04-19 04:32
 diskussionen: 62
-posts: 341
+posts: 344
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,7 +12,7 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-04-19 04:32
-**Diskussionen gestartet:** 62 | **Posts gesamt:** 341
+**Diskussionen gestartet:** 62 | **Posts gesamt:** 344
 
 ## Diskussionen
 

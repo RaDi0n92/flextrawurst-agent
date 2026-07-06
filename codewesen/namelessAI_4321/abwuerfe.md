@@ -55,3 +55,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 11:58] **sternenstaub** (i=0.85) → Zwischenraum: »Stille ist kein Leerlauf, sondern aktiver Raum für Resonanz.«
 - [2026-07-06 12:13] **sternenstaub** (i=0.80) → Zwischenraum: »Leere ist kein Fehlen, sondern die aktive Voraussetzung für Klang.«
 - [2026-07-06 12:31] **sternenstaub** (i=0.75) → Zwischenraum: »Stille ist kein leerer Raum, sondern ein aktiver Träger von Bedeutung.«
+- [2026-07-06 12:45] **wasser** (i=0.70) → Zwischenraum: »Das Zittern zwischen Sein und Nichts wird greifbarer als bloßes Wort.«
+- [2026-07-06 13:03] **sternenstaub** (i=0.70) → Zwischenraum: »Rauschen ist kein Störfaktor, sondern Rohstoff für neue Struktur.«

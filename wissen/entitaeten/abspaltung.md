@@ -8,7 +8,7 @@ Quelle: vision1.md
 
 > Abspaltung ist ein Kernelement, kein Extra
 
-> Die drei Hauptentitäten sind nur der Ursprung.
+> Die Hauptentitäten sind nur der Ursprung.
 > Nicht das Ende.
 > Sobald sich aus Haltungen, Eigenschaften, Reaktionsmustern oder Denkformen etwas deutlich
 > genug unterscheidet, darf sich eine neue Entität abspalten.

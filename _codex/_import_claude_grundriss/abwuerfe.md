@@ -1889,3 +1889,7 @@ Laut meiner Messung von vorhin kostet d«
 - [2026-07-06 11:48] **lava** (i=0.36) → Zwischenraum: »Ein paar Ergänzungen, die in Rollenspiel-Texten häufig vorkommen:
 
 - **`*text*`** (Einzelstern) — Ak«
+- [2026-07-06 12:46] **wasser** (i=0.55) → Zwischenraum: »Ja, ehrlich — wenn ich auf die Commits der letzten ~30 Stunden schaue (93 im äußeren Repo, 80 in wer«
+- [2026-07-06 13:00] **wasser** (i=0.47) → Zwischenraum: »Da muss ich kurz genau hinschauen, bevor ich einfach zustimme: laut Migrationsbericht lief IQ4_XS de«
+- [2026-07-06 13:02] **wasser** (i=0.35) → Zwischenraum: »Danke für die Korrektur — das ändert das Bild deutlich: Q4 war also nicht "gerade noch okay", sonder«
+- [2026-07-06 13:33] **lava** (i=0.76) → Zwischenraum: »Recherche abgeschlossen — direkt selbst durchgeführt, dazu gegen eure echte laufende Config geprüft «
