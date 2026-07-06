@@ -712,6 +712,13 @@ async def chat_endpoint(name: str, anfrage: ChatAnfrage):
 
     CHAT_AKTIV_FLAG.touch()
 
+    # Sofort speichern, nicht erst nach Antwort-Abschluss — sonst geht bei einem
+    # haengenden/fehlschlagenden Generierungslauf auch die Frage selbst verloren,
+    # nicht nur die Antwort (gefunden 2026-07-06 bei der Untersuchung eines
+    # Chat-Haengers: chat_verlauf.jsonl zeigte keinen Eintrag, obwohl die Anfrage
+    # laut Trace-Log tatsaechlich abgeschickt wurde).
+    speichere_chat_eintrag(name, "mensch", nachricht)
+
     gesammelt: list[str] = []
 
     async def generator():
@@ -731,8 +738,8 @@ async def chat_endpoint(name: str, anfrage: ChatAnfrage):
                     if antwort != antwort_roh:
                         yield f"data: {json.dumps({'rewrite': antwort}, ensure_ascii=False)}\n\n"
 
-                    # Chat-Log (JSONL + Obsidian)
-                    speichere_chat_eintrag(name, "mensch", nachricht)
+                    # Chat-Log (JSONL + Obsidian) — "mensch"-Eintrag wird jetzt sofort beim
+                    # Empfang gespeichert (siehe oben), hier nur noch die Antwort.
                     speichere_chat_eintrag(name, "codewesen", antwort)
                     speichere_gespraech_obsidian(name, nachricht, antwort)
 
