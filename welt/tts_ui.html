@@ -197,7 +197,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
       <button class="small danger" id="btn-voice-fav-remove">Favorit entfernen</button>
     </div>
-    <div class="voice-active" id="active-voice">Aktiv: de-DE-ConradNeural</div>
+    <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
   </div>
 
   <div class="row">
@@ -291,11 +291,11 @@ const AUDIO_ZIP_API = BASE + 'export-audio';
 const MAX = 1111111;
 const CK  = 280;
 const STORE_KEY = 'flextrawurst.tts.soundboard.v1';
-const DEFAULT_VOICE = 'de-DE-ConradNeural';
+const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
 const DEFAULT_CAT = 'Allgemein';
 
 let rate    = '+0%';
-let activeVoice = cleanVoice(localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE);
+let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
 let store = loadStore();
 let chunks  = [];
 let sess    = 0;
@@ -322,11 +322,8 @@ function fileSafe(s){
     .replace(/^-|-$/g,'')
     .slice(0,80) || 'tts';
 }
-function isBadGermanMultilingualVoice(v){
-  return /^de-DE-/.test(String(v || '')) && String(v || '').includes('Multilingual');
-}
-function cleanVoice(v){
-  return isBadGermanMultilingualVoice(v) ? DEFAULT_VOICE : (v || DEFAULT_VOICE);
+function isRecommendedGermanVoice(v){
+  return v === 'de-DE-FlorianMultilingualNeural' || v === 'de-DE-SeraphinaMultilingualNeural';
 }
 function textStats(s){
   const chars = String(s || '').length;
@@ -356,9 +353,7 @@ function durationText(text, r){
 function normalizeStore(raw){
   const categories = Array.isArray(raw && raw.categories) ? raw.categories.filter(Boolean) : [DEFAULT_CAT];
   const clips = Array.isArray(raw && raw.clips) ? raw.clips : [];
-  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites)
-    ? raw.voiceFavorites.filter(v=>v && !isBadGermanMultilingualVoice(v))
-    : [];
+  const voiceFavorites = Array.isArray(raw && raw.voiceFavorites) ? raw.voiceFavorites.filter(Boolean) : [];
   return {
     categories: Array.from(new Set([DEFAULT_CAT, ...categories])),
     clips: clips.map(c=>({
@@ -366,7 +361,7 @@ function normalizeStore(raw){
       title: c.title || 'Ohne Titel',
       text: c.text || '',
       category: c.category || DEFAULT_CAT,
-      voice: cleanVoice(c.voice || DEFAULT_VOICE),
+      voice: c.voice || DEFAULT_VOICE,
       rate: c.rate || '+0%',
       createdAt: c.createdAt || new Date().toISOString(),
       favorite: !!c.favorite,
@@ -430,7 +425,7 @@ async function loadServerStore(){
 }
 
 function setActiveVoice(v){
-  activeVoice = cleanVoice(v);
+  activeVoice = v || DEFAULT_VOICE;
   localStorage.setItem('tts.activeVoice', activeVoice);
   activeVoiceEl.textContent = 'Aktiv: '+activeVoice;
   renderVoiceFavorites();
@@ -438,7 +433,7 @@ function setActiveVoice(v){
 
 function renderVoiceFavorites(){
   if (!voiceFavSel) return;
-  store.voiceFavorites = Array.from(new Set((store.voiceFavorites || []).filter(v=>v && !isBadGermanMultilingualVoice(v))));
+  store.voiceFavorites = Array.from(new Set((store.voiceFavorites || []).filter(Boolean)));
   if (!store.voiceFavorites.length){
     voiceFavSel.innerHTML = '<option value="">Keine Stimmen-Favoriten</option>';
     btnVoiceFavRemove.disabled = true;
@@ -543,7 +538,7 @@ async function loadVoices(){
   try {
     const res = await fetch(VOICES_API, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
-    const voices = (await res.json()).filter(v=>!(v.locale === 'de-DE' && String(v.name || '').includes('Multilingual')));
+    const voices = await res.json();
     voices.sort((a,b)=>{
       const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
       const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
@@ -552,7 +547,9 @@ async function loadVoices(){
       return ade - bde || String(a.locale).localeCompare(String(b.locale)) || am - bm || String(a.name).localeCompare(String(b.name));
     });
     voiceSel.innerHTML = voices.map(v=>{
-      const multi = String(v.name || '').includes('Multilingual') ? ' · Multilingual' : '';
+      const multi = String(v.name || '').includes('Multilingual')
+        ? (isRecommendedGermanVoice(v.name) ? ' · Empfohlen' : ' · Multilingual')
+        : '';
       const label = `${v.locale || '??'} · ${v.name}${multi} · ${v.gender || '?'}`;
       return `<option value="${esc(v.name)}">${esc(label)}</option>`;
     }).join('');
@@ -629,7 +626,7 @@ function loadClip(id, play){
   ta.dispatchEvent(new Event('input'));
   saveCat.value = clip.category || DEFAULT_CAT;
   if (clip.voice){
-    voiceSel.value = cleanVoice(clip.voice);
+    voiceSel.value = clip.voice;
     setActiveVoice(clip.voice);
   }
   setRate(clip.rate || '+0%');
@@ -730,7 +727,7 @@ async function downloadClip(id, format){
   const clean = strip(clip.text);
   if (!clean){ st('Kein lesbarer Text für Download.','err'); return; }
   const parts = splitChunks(clean);
-  const voice = cleanVoice(clip.voice || DEFAULT_VOICE);
+  const voice = clip.voice || DEFAULT_VOICE;
   const rateValue = clip.rate || '+0%';
   const baseName = fileSafe(clip.title);
   st(`Download ${format.toUpperCase()} 1/${parts.length}…`,'wait');
