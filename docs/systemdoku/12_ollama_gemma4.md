@@ -17,20 +17,105 @@ Ollama als geteilter Single-Slot). gemma4 wurde komplett aus dem System entfernt
 (siehe `docs/2026-07-06_hauhaucs_migration_bericht.md` für die volle Historie). Server
 wurde von 8 Kernen/32GB auf 16 Kerne/62GB RAM hochgestuft.
 
+**Zweite grundlegende Änderung, selber Tag, abends:** Von EINER geteilten
+llama-server-Instanz (Chat + Hintergrund im selben Prozess, per `id_slot`
+priorisiert) auf ZWEI komplett getrennte Prozesse umgestellt — siehe
+"Zwei-Instanzen-Architektur" weiter unten. Auslöser: Daniel wollte nach langer
+Zeit wieder chatten, seine Anfragen brachen wiederholt ab, weil ein sehr
+großer Hintergrund-Post (16.000+ Token, einer der frisch nachgefüllten
+Warteschlangen-Einträge) denselben Prozess/dieselben Kerne blockierte.
+
 ---
 
 ## Überblick
 
-Zwei getrennte Backends, zwei getrennte Zwecke:
+Drei getrennte Backends, drei getrennte Zwecke:
 
-| Backend | Port | Modell(e) | Verwendung |
-|---------|------|-----------|------------|
-| `llama-hauhaucs.service` | 11435 | hauhaucs-q6 (Qwen3.6-35B-A3B, Q6_K_P, Vision via mmproj) | Hauptmodell für ALLE Wesen/Codewesen/GENI/dak+gord/zensi/dolphin |
-| `ollama.service` | 11434 | `dolphin-mistral:7b` (Freier Modus), kleines Vision-Modell (4,5B) | Zwei eigenständige Spezialzwecke, siehe unten |
+| Backend | Port | Kerne | Modell(e) | Verwendung |
+|---------|------|-------|-----------|------------|
+| `llama-hauhaucs.service` | 11435 | 0-7 (8) | hauhaucs-q6 (Qwen3.6-35B-A3B, Q6_K_P, Vision via mmproj) | **Nur Live-Chat** (`id_slot=0`) — Wesen-Chat, Dolphin-Mischpult, dak+gord-Direktchat |
+| `llama-hauhaucs-hintergrund.service` | 11436 | 8-13 (6) | dieselbe Q6_K_P-Datei, kein mmproj | **Alles andere** — Takt (5 Rhythmen), Batch-Generator, Reaktions-Agenten, Vokabel-Takt, Weltbild-Builder |
+| `ollama.service` | 11434 | — | `dolphin-mistral:7b` (Freier Modus), kleines Vision-Modell (4,5B) | Zwei eigenständige Spezialzwecke, siehe unten |
+
+Kerne 14-15 bleiben frei für System/übrige Dienste.
 
 **gemma4 existiert nicht mehr im System.** Jeder frühere gemma4-Aufruf läuft
-jetzt über `hauhau_client.py` (Python) bzw. `hauhau_client.ts` (Node/TypeScript)
-gegen Port 11435.
+jetzt über `hauhau_client.py` (Python) bzw. `hauhau_client.ts` (Node/TypeScript),
+die automatisch zwischen den beiden hauhaucs-Ports wählen (siehe unten).
+
+---
+
+## Zwei-Instanzen-Architektur (seit 2026-07-06, abends)
+
+**Problem vorher:** Eine einzige llama-server-Instanz bediente sowohl Live-Chat
+(`id_slot=0`) als auch den kompletten Hintergrund-Betrieb (`id_slot=1/2`) im
+selben Prozess. Die `id_slot`-Priorisierung reservierte zwar einen Slot für
+Chat, aber auf CPU teilen sich ALLE Slots dieselben Threads — ein sehr großer
+Hintergrund-Prompt (z.B. 16.000+ Token, ein lange überfälliger Antwortpflicht-
+Post aus der frisch reparierten Warteschlange) verlangsamte den Chat-Slot
+trotzdem drastisch, bis Anfragen client-seitig timeouten.
+
+**Lösung:** Zwei komplett getrennte `llama-server`-Prozesse, verschiedene
+Ports, verschiedene CPU-Kerne (Cgroup-isoliert, keine Überschneidung) — echte
+Prozess-Isolation, kein gemeinsames Scheduling mehr zwischen Chat und
+Hintergrund.
+
+**Der RAM-Trick, der das bezahlbar macht — mmap-Sharing:** Beide Instanzen
+laden **dieselbe** GGUF-Datei
+(`Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf`). Linux' mmap
+teilt die zugrundeliegenden Speicherseiten zwischen Prozessen, die dieselbe
+Datei read-only mappen — auch mit `--mlock` auf beiden Seiten, live getestet
+und bestätigt (2026-07-06): Systemweiter RAM-Verbrauch stieg beim Start der
+zweiten Instanz nur um **~1GB**, nicht um die vollen ~30GB Modellgewichte.
+`ps aux`/`RSS` zeigt pro Prozess trotzdem die volle Größe (~30GB) — das ist
+normales Linux-Verhalten (RSS zählt pro Prozess, nicht abzüglich geteilter
+Seiten), die Wahrheit steht in `free -h`s "used"-Spalte, nicht in `ps`.
+
+**Wichtig, falls das nochmal jemand ausprobiert:** Das Sharing gilt NUR bei
+identischer Datei. Ein Gemisch aus Q6 (Chat) + Q5 (Hintergrund) — ursprünglich
+erwogen um RAM zu sparen — hätte KEIN Sharing gebracht (zwei verschiedene
+Dateien, verschiedene Inodes) und wäre teurer gewesen als die jetzige Lösung
+(gleiches Modell, geteilt). Deshalb: **beide Instanzen Q6, volle Qualität,
+kein Kompromiss.**
+
+### Routing in `hauhau_client.py`/`hauhau_client.ts`
+
+`_build_payload()` (Python) / `zielPort()` (TS) entscheiden anhand des
+`extra`/`opts.extra`-Dicts: **`id_slot=0` explizit gesetzt → Chat-Instanz
+(11435)**, sonst → Hintergrund-Instanz (11436). Die expliziten `id_slot=0`-
+Aufrufstellen (4 echte Live-Chat-Einstiegspunkte: `codewesen_chat.py`,
+`zensi/server.py`, `geni/dialog.py`, `serve_process_camera_preview.ts`)
+bleiben unverändert — sie haben `id_slot=0` schon immer gesetzt, jetzt bewirkt
+das zusätzlich die Instanz-Wahl. `_default_id_slot()`/`defaultIdSlot()` sind
+vereinfacht (einfacher Round-Robin zwischen den 2 eigenen Slots der
+Hintergrund-Instanz, kein Prioritätsgrund mehr nötig, da komplett getrennte
+Prozesse).
+
+### Konfiguration Hintergrund-Instanz
+
+```ini
+ExecStart=/usr/local/bin/llama-server \
+  --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
+  --alias hauhaucs-q6 \
+  --ctx-size 66666 \
+  --threads 6 \
+  --host 127.0.0.1 --port 11436 \
+  --parallel 2 \
+  --flash-attn on --mlock --jinja --metrics \
+  --cache-type-k q8_0 --cache-type-v q8_0 \
+  --cache-ram 12288 \
+  --ctx-checkpoints 64 \
+  --cpu-range 8-13 --cpu-range-batch 8-13 --cpu-strict 1
+
+[Service]
+AllowedCPUs=8-13
+```
+
+Kein `--mmproj` — Hintergrund-Posts sind reiner Text, kein Vision-Bedarf.
+`--cache-ram 12288` (12GB, mehr als die Chat-Instanz braucht) bewusst höher
+gewählt: die Hintergrund-Instanz bedient jetzt ALLE gleichzeitig laufenden
+Wesen-Konversationen (6 Wesen + dak+gord), genau das Szenario das vorher zur
+Checkpoint-Pool-Erschöpfung geführt hatte (siehe Abschnitt weiter unten).
 
 ---
 
@@ -49,15 +134,20 @@ Kontrolle über Threads/CPU-Zuweisung/mlock.
 
 ---
 
-## llama-hauhaucs.service — Konfiguration
+## llama-hauhaucs.service — Konfiguration (Chat-Instanz, Port 11435)
+
+**Seit 2026-07-06 abends nur noch Live-Chat** (`id_slot=0`) — der Hintergrund-
+Betrieb läuft auf einer zweiten, getrennten Instanz
+(`llama-hauhaucs-hintergrund.service`, Port 11436), siehe
+"Zwei-Instanzen-Architektur" oben.
 
 ```ini
 ExecStart=/usr/local/bin/llama-server \
   --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
   --mmproj .../mmproj-f16.gguf \
   --alias hauhaucs-q6 \
-  --ctx-size 99999 \
-  --threads 12 \
+  --ctx-size 66666 \
+  --threads 8 \
   --host 127.0.0.1 --port 11435 \
   --parallel 2 \
   --flash-attn on \
@@ -68,10 +158,10 @@ ExecStart=/usr/local/bin/llama-server \
   --cache-type-v q8_0 \
   --cache-ram 16384 \
   --ctx-checkpoints 64 \
-  --cpu-range 0-11 --cpu-range-batch 0-11 --cpu-strict 1
+  --cpu-range 0-7 --cpu-range-batch 0-7 --cpu-strict 1
 
 [Service]
-AllowedCPUs=0-11
+AllowedCPUs=0-7
 ```
 
 **`--jinja`** (seit 2026-07-06, zweite Session): nutzt die im GGUF eingebettete
@@ -97,20 +187,36 @@ dem Page-Cache verdrängt werden. Ohne mlock brach die Geschwindigkeit unter
 Hintergrundlast von 14 tok/s auf 3-5 tok/s ein (gemessen 2026-07-06) —
 mit mlock blieb sie stabil bei 6-7 tok/s über eine ganze Generierung.
 
-**`AllowedCPUs=0-11`** (Cgroup, nicht `--cpu-range` allein — das griff nicht
-zuverlässig): Isoliert 12 von 16 Kernen für llama-server (erhöht von 10 am
-2026-07-06, Daniels Wunsch), Rest bleibt für Ollama/Wesen-Prozesse/System —
-die Wesen-Daemons sind selbst leichtgewichtig (I/O-wartend, kein harter
-CPU-Verbrauch), 4 Kerne reichen ihnen aus. Trade-off bewusst gewählt:
-garantierte, niedrigere Geschwindigkeit als unisoliert, aber vorhersehbar.
+**`AllowedCPUs=0-7`** (Cgroup, nicht `--cpu-range` allein — das griff nicht
+zuverlässig): 8 von 16 Kernen exklusiv für die Chat-Instanz. Bewegte Geschichte
+am 2026-07-06, alles am selben Abend: 10 → 12 (Daniels erster Wunsch, mittags)
+→ 9 (CPU-Tuning-Recherche: "50-75% der logischen Kerne" als Community-Richtwert,
+SMT schadet eher als es hilft) → **sofort auf 12 zurück**, weil Daniel just in
+diesem Moment versuchte zu chatten und seine Anfragen wegen eines parallel
+laufenden riesigen Hintergrund-Posts timeouteten (die 9-Kern-Reduktion machte
+die Kern-Konkurrenz zwischen Chat und Hintergrund im selben Prozess spürbar
+schlimmer, nicht besser) → 15 (Daniels Nachfrage "warum nicht mehr Kerne") →
+**final 8**, als klar wurde: die eigentliche Lösung ist nicht mehr/weniger
+Kerne für EINEN geteilten Prozess, sondern zwei komplett getrennte Prozesse
+(siehe "Zwei-Instanzen-Architektur" oben) — mit getrennten Prozessen braucht
+die Chat-Instanz nicht mehr Kerne als für 1-2 gleichzeitige Live-Gespräche
+nötig. Kein isolierter Vorher/Nachher-Geschwindigkeitstest zu den einzelnen
+Zwischenschritten möglich — der Server stand die ganze Zeit unter echter Last.
+Rest der Kerne (8-13) gehört der Hintergrund-Instanz, 14-15 bleiben für
+Ollama/Wesen-Prozesse/System.
 
-**`--ctx-size 99999 --parallel 2`** (Stand 2026-07-06, finaler Wert nach drei
-Anläufen am selben Tag — volle Herleitung weiter unten): jeder der 2 Slots
-bekommt **50176 Token** effektiv (Weg dahin: 6400 → 18432 (36663) → 24576
-(48884) → kurzzeitig zurück auf 24576 wegen eines Cache-Fehlbefunds → final
-50176 (99999) mit `--cache-ram 16384`/`--ctx-checkpoints 64`). Ursprüngliches
-Problem: llama-server teilt die Kontextgröße durch die Parallel-Slots, ein
-Gesprächsverlauf über ~6400 Token schlug fehl (`exceed_context_size_error`).
+**`--ctx-size 66666 --parallel 2`** (Chat-Instanz, Stand 2026-07-06 abends —
+volle Herleitung des Wegs zu 99999 weiter unten, danach hier verkürzt auf
+66666): jeder der 2 Slots bekommt **33536 Token** effektiv. Weg dahin: 6400 →
+18432 (36663) → 24576 (48884) → kurzzeitig zurück auf 24576 wegen eines
+Cache-Fehlbefunds → 50176 (99999, mit `--cache-ram`/`--ctx-checkpoints`-Fix) →
+**final 33536 (66666)**, auf Daniels Wunsch: "reicht mir locker weil es eh
+unter den 130000 ist für thinking" — die vom Modell-Autor empfohlenen ≥128K
+für volles Thinking waren mit 99999 schon unerreicht, ein Absenken auf 66666
+verliert also nichts zusätzlich, spart aber KV-Cache/Checkpoint-Speicher für
+die neue Zwei-Instanzen-Architektur. Ursprüngliches Problem, das zur ersten
+Erhöhung führte: llama-server teilt die Kontextgröße durch die Parallel-Slots,
+ein Gesprächsverlauf über ~6400 Token schlug fehl (`exceed_context_size_error`).
 
 RAM-Kosten: minimal. Das Modell hat nur 2 KV-Heads (GQA), Head-Dim 256, 40
 Layer → KV-Cache kostet nur ~80 KB/Token. Bestätigt durch llama-servers eigene
@@ -219,11 +325,12 @@ beim nächsten Mehrfach-Spawner-Test von Daniel in
 `journalctl -u llama-hauhaucs.service | grep checkpoint` nachsehen, ob
 mehrere Charaktere jetzt sauber nebeneinander im Cache bleiben.
 
-**`--threads 12`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
+**`--threads 8`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
-nur Konkurrenz mit anderen Prozessen. Erhöht von 10→12 am 2026-07-06 (mit
-`--cpu-range`/`AllowedCPUs` im Gleichschritt), Ergebnis positiv, keine
-Verdrängung anderer Dienste beobachtet.
+nur Konkurrenz mit anderen Prozessen. Volle Geschichte (10→12→9→12→15→8) bei
+`AllowedCPUs` oben — der finale Wert 8 ist keine reine Tuning-Entscheidung
+mehr, sondern die Kern-Hälfte der Zwei-Instanzen-Aufteilung (8 Chat + 6
+Hintergrund + 2 frei).
 
 **`--parallel 2` (NICHT 3)** — bewusst getestet und verworfen: `--parallel 3`
 wurde am 2026-07-06 kurz live getestet, Ergebnis war eine drastische
@@ -243,7 +350,19 @@ sind.** Nicht ohne erneuten Test hochsetzen.
 
 ---
 
-## id_slot-Priorisierung — Live-Chat vs. Automatikbetrieb (seit 2026-07-06)
+## id_slot-Priorisierung — Live-Chat vs. Automatikbetrieb (2026-07-06, VORGÄNGER-Ansatz, durch Zwei-Instanzen-Architektur abgelöst)
+
+**Historisch, nicht mehr die aktuelle Lösung** — dieser gesamte Abschnitt
+beschreibt den Ansatz VOR der Zwei-Instanzen-Architektur (siehe ganz oben).
+Grund für die Ablösung, selber Tag: selbst mit `id_slot=0`-Priorisierung
+innerhalb EINER geteilten Instanz blockierte ein großer Hintergrund-Task
+(16.000+ Token) den Chat-Slot spürbar — auf CPU teilen sich alle Slots
+IMMER dieselben Threads, egal welcher Slot "Priorität" hat. Die
+`id_slot`-Priorisierung bleibt als Konzept innerhalb JEDER Instanz bestehen
+(die Hintergrund-Instanz hat weiterhin 2 Slots, round-robin verteilt), aber
+das eigentliche Trennungsproblem (Chat vs. Hintergrund) löst jetzt die
+Prozess-Trennung, nicht mehr `id_slot` allein. Abschnitt bleibt hier stehen
+als Herleitung/Vorgeschichte, nicht als aktuelle Anleitung.
 
 **Ausgangsproblem**: Bei echter Gleichzeitigkeit (Volllasttest, alle 8 Wesen +
 Spawncharakter gleichzeitig angefragt) landeten Chat-Antworten in einer reinen
