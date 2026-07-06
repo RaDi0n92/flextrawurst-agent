@@ -322,7 +322,7 @@ function fileSafe(s){
     .replace(/^-|-$/g,'')
     .slice(0,80) || 'tts';
 }
-function isRecommendedGermanVoice(v){
+function isNeutralGermanVoice(v){
   return v === 'de-DE-FlorianMultilingualNeural' || v === 'de-DE-SeraphinaMultilingualNeural';
 }
 function textStats(s){
@@ -548,7 +548,7 @@ async function loadVoices(){
     });
     voiceSel.innerHTML = voices.map(v=>{
       const multi = String(v.name || '').includes('Multilingual')
-        ? (isRecommendedGermanVoice(v.name) ? ' · Empfohlen' : ' · Multilingual')
+        ? (isNeutralGermanVoice(v.name) ? ' · Neutral' : ' · Multilingual')
         : '';
       const label = `${v.locale || '??'} · ${v.name}${multi} · ${v.gender || '?'}`;
       return `<option value="${esc(v.name)}">${esc(label)}</option>`;
