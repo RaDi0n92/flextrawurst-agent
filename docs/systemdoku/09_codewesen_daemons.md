@@ -644,6 +644,88 @@ Gesprächsverlauf (mit Nutzer-Turn) direkt an, also nicht betroffen.
 Reproduziert und die Behebung isoliert bestätigt (direkter Request an
 Port 11436 mit/ohne user-Turn, 400 vs. 200).
 
+### Klon-Oberfläche + Impuls-System (2026-07-06, noch selber Abend)
+
+Daniel wollte den Klon nicht nur als JSONL im Hintergrund, sondern
+sichtbar in einer echten Chat-Oberfläche — inklusive Feedback, TTS/STT,
+Sessions, Kontextfenster-Anzeige, und die Möglichkeit, die Wesen per
+Leitfrage anzustoßen. Umgesetzt als **eigener, bewusst READ-ONLY Bereich**
+in `serve_process_camera_preview.ts` — die bestehenden vier Spawner
+(solarius/solarius2/codexium/codexium2) und ihre Chats bleiben komplett
+unangetastet, `isTestbedSpawner()` kennt "klon" nicht.
+
+**Neue Routen** (alle unter `/klon` bzw. `/wesen/klon/:name/*`):
+- `GET /klon` — Übersicht aller Wesen mit Klon-Ordner (`klon_uebersicht.html`)
+- `GET /klon/:name` — der eigentliche Betrachter (`klon_chat.html`), mit
+  SSR-gerendertem Volltext-Verlauf (`ladeVerlaufKombiniert(hp, false)` —
+  bewusst `false`, nicht nur aktuelle Session: Daniel will "von Nachricht 1
+  bis Ende immer alles komplett scrollbar")
+- `GET /wesen/klon/:name/history`, `.../sessions`, `.../sessions/:idx` —
+  identische Mechanik wie codexium2/solarius2 (`splitSessions`,
+  `ladeVerlaufKombiniert`), nur an `klonHistoryPath()` statt
+  `chatHistoryPath()` gebunden
+- `GET`/`POST /wesen/klon/:name/feedback` — identische Mechanik
+  (`loadFeedback`/`upsertFeedback`) wie codexium2/solarius2, jetzt auch
+  für Klon
+- `GET /wesen/klon/:name/impulse` — die 7 festen Leitfragen (für die
+  UI-Buttons)
+- `POST /wesen/klon/:name/impuls` — Leitfrage (per `key`) oder Freitext
+  (per `text`) an `codewesen_klon.py` übergeben: schreibt `_impuls.json`
+- `POST /wesen/klon/:name/starten` / `.../stoppen` — dieselben Flag-Dateien
+  wie `touch`, nur als Button in der UI
+
+**TTS/STT/Kontextfenster-Anzeige 1:1 aus `wesen_chat.html` übernommen** —
+dort schon additive, nicht testbed-gated Features (Stimmenauswahl
+Katja/Florian + Tempo-Slider über `tts_service.py`/`/tts/speak`,
+browsereigene `SpeechRecognition`/`webkitSpeechRecognition` fürs Diktieren,
+Zeichen/4-Heuristik fürs Kontextfenster). Beim Klon dient das Mikrofon dem
+freien Impuls-Textfeld (Daniel tippt dem Wesen normalerweise keine
+Nachrichten, aber kann sich einen Impuls auch diktieren statt zu tippen).
+
+**Impuls-System:** 7 feste Leitfragen (Daniels Wortlaut übernommen: "was
+schwebt dir im Kopf rum", "was könntest du planen", "was könntest du
+entwickeln", "hast du eine Idee", "stellst du dir eine Frage",
+"verwirklichen — was brauchst/fehlt dir", "was interessiert dich im
+Forum") plus ein Freitextfeld für eigene. Ein Impuls kann **eine neue
+Session seeden** (statt des generischen Start-Satzes) **oder mitten in
+einer laufenden Session** gegeben werden (Daniel: "mitendrin reingeben
+ja") — `codewesen_klon.py` prüft `_impuls.json` sowohl beim Sessionstart
+als auch nach jeder Gesprächsrunde.
+
+**Provenienz-Entscheidung (Daniels ausdrücklicher Auftrag):** ein Impuls
+ist keine echte Selbstgespräch-Nachricht — er landet nicht als
+`{role: "user"}`, sondern als eigenes `{type: "impuls", text, key, ts}`-
+Ereignis in der Historie (sichtbar, crawlbar, aber klar als Anstoß von
+außen erkennbar statt als Chat-Bubble). Aus demselben Grund wurden auch
+die Marker-Ergebnisse (`[[LESEN: ...]]` etc.) von `{role: "user"}` auf
+`{type: "marker_ergebnis", text, ts}` umgestellt — beide Ereignistypen
+fließen weiterhin als `user`-Turn ins Modell-Gedächtnis (nur im
+Arbeitsspeicher, nicht in der persistierten Form), damit sie tatsächlich
+wirken. Server- UND clientseitiges Rendering (`EREIGNIS_LABEL`,
+`formatiereEreignisDetails`) um beide Typen ergänzt — die Impuls-Zeile
+bekommt zusätzlich eine gelbe Hervorhebung (`.verlauf-ereignis.impuls`),
+identisch in SSR- und Client-Rendering (sonst hätte der erste Seitenaufruf
+vor dem ersten Client-Refresh anders ausgesehen als danach).
+
+**Live getestet, Ende-zu-Ende über die echte HTTP-Route** (nicht nur
+`touch`): `POST /wesen/klon/:name/impuls` mit `{"key":"gedanke"}` →
+`_impuls.json` korrekt geschrieben → `codewesen_klon.py` (nach Neustart)
+liest es, seedet eine neue Session, Modell antwortet im eigenen Charakter,
+`[[LESEN: ...]]`-Marker laufen korrekt, `POST .../stoppen` beendet die
+Session sauber. SSR- und `/wesen/klon/:name/history`-JSON verifiziert.
+
+**Neustarts nötig, von Daniel bestätigt** (er chattete zu dem Zeitpunkt
+nicht live): `process-camera-preview.service` (neue Routen/HTML) und
+`codewesen-klon.service` (Impuls-Logik).
+
+**Bewusst nicht mitgebaut:** keine eigene Testbed-Gate-Erweiterung für
+Klon (kein Memory-Container/Pin-System, keine Kontext-Ausschluss-/
+Merken-Vorschlag-/Verdichtungs-/Aliase-Mechanik) — das sind Features des
+anderen, unabhängigen Codexium2/Solarius2-Memory-Konzepts, nicht Teil von
+Daniels Auftrag hier. Noch ungetestet: Mikrofon-Diktat auf echtem Handy
+(STT-Browser-Support ist geräteabhängig, siehe `feedback_stimme_diktat.md`
+für die schon einmal gefixte Android-Chrome-Eigenart).
+
 ---
 
 ## 7. codewesen_engagement.py — Autonomes Engagement (INAKTIV)
