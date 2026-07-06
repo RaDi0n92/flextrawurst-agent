@@ -56,7 +56,7 @@ ExecStart=/usr/local/bin/llama-server \
   --model .../Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
   --mmproj .../mmproj-f16.gguf \
   --alias hauhaucs-q6 \
-  --ctx-size 48884 \
+  --ctx-size 99999 \
   --threads 12 \
   --host 127.0.0.1 --port 11435 \
   --parallel 2 \
@@ -66,6 +66,8 @@ ExecStart=/usr/local/bin/llama-server \
   --metrics \
   --cache-type-k q8_0 \
   --cache-type-v q8_0 \
+  --cache-ram 16384 \
+  --ctx-checkpoints 64 \
   --cpu-range 0-11 --cpu-range-batch 0-11 --cpu-strict 1
 
 [Service]
@@ -102,25 +104,28 @@ die Wesen-Daemons sind selbst leichtgewichtig (I/O-wartend, kein harter
 CPU-Verbrauch), 4 Kerne reichen ihnen aus. Trade-off bewusst gewählt:
 garantierte, niedrigere Geschwindigkeit als unisoliert, aber vorhersehbar.
 
-**`--ctx-size 48884 --parallel 2`** (Stand 2026-07-06, zweite Aktualisierung):
-jeder der 2 Slots bekommt **24576 Token** effektiv (Weg dahin: 6400 →
-18432 (36663) → 24576 (48884)). Ursprüngliches Problem: llama-server teilt die
-Kontextgröße durch die Parallel-Slots, ein Gesprächsverlauf über ~6400 Token
-schlug fehl (`exceed_context_size_error`).
+**`--ctx-size 99999 --parallel 2`** (Stand 2026-07-06, finaler Wert nach drei
+Anläufen am selben Tag — volle Herleitung weiter unten): jeder der 2 Slots
+bekommt **50176 Token** effektiv (Weg dahin: 6400 → 18432 (36663) → 24576
+(48884) → kurzzeitig zurück auf 24576 wegen eines Cache-Fehlbefunds → final
+50176 (99999) mit `--cache-ram 16384`/`--ctx-checkpoints 64`). Ursprüngliches
+Problem: llama-server teilt die Kontextgröße durch die Parallel-Slots, ein
+Gesprächsverlauf über ~6400 Token schlug fehl (`exceed_context_size_error`).
 
-RAM-Kosten der Erhöhung: minimal. Das Modell hat nur 2 KV-Heads (GQA), Head-Dim
-256, 40 Layer → KV-Cache kostet nur ~80 KB/Token. Bei 48884 Gesamt-Context sind
-das nur ~3,9 GB KV-Cache zusätzlich zu den ~28 GB Modellgewichten — bestätigt
-durch llama-servers eigene Preflight-Schätzung (`projected to use ... MiB`):
-12345→29672 MiB, 36663→30154 MiB, 48884→30400 MiB.
+RAM-Kosten: minimal. Das Modell hat nur 2 KV-Heads (GQA), Head-Dim 256, 40
+Layer → KV-Cache kostet nur ~80 KB/Token. Bestätigt durch llama-servers eigene
+Preflight-Schätzung (`projected to use ... MiB`): 12345→29672 MiB,
+36663→30154 MiB, 48884→30400 MiB.
 
 **Hardcodierte Client-Anzeigen synchron gehalten** (2026-07-06): `NUM_CTX`/
 `INTERACTIVE_NUM_CTX`-Konstanten in `serve_process_camera_preview.ts`,
-`wesen_chat.html`, `dolphin_mischpult.html` und `zensi/server.py` zeigen den
-Nutzern den realen Pro-Slot-Wert (24576), nicht den rohen `--ctx-size`-Wert.
-Kein automatischer Sync zum Server möglich (Kommentar in `wesen_chat.html`:
-"von Hand synchron halten") — bei jeder künftigen `--ctx-size`-Änderung müssen
-diese 4 Stellen von Hand mitgezogen werden.
+`wesen_chat.html`, `dolphin_mischpult.html` und `zensi/server.py` (dieser vierte
+Ort liegt unter `/root/zensi/`, nicht unter werkraum/flextrawurst — beim ersten
+Sync-Durchgang übersehen, beim finalen Wert nachgezogen) zeigen den Nutzern den
+realen Pro-Slot-Wert (50176), nicht den rohen `--ctx-size`-Wert. Kein
+automatischer Sync zum Server möglich (Kommentar in `wesen_chat.html`: "von
+Hand synchron halten") — bei jeder künftigen `--ctx-size`-Änderung müssen diese
+4 Stellen von Hand mitgezogen werden.
 
 **Was NICHT günstig ist: Geschwindigkeit.** Größerer Context kostet reale
 Rechenzeit/Bandbreite, nicht nur RAM — das wurde beim ersten Testlauf
@@ -172,6 +177,47 @@ die angekündigten 10-15 Minuten für den geplanten Test). Kein Datenverlust
 (Events/Konversationen sind append-only), aber für künftige Neustarts
 relevant: ein laufender `systemctl stop` kann bei einem großen In-Flight-
 Request lange hängen, das ist normal, kein Hänge-Bug am Dienst selbst.
+
+**Dritter Anlauf (2026-07-06, gleicher Tag) — Ursache gefunden, `--ctx-size 99999`
+final aktiv:** Daniel vermutete zurecht, dass die `--cache-type-k/v q8_0`-KV-
+Cache-Quantisierung (die im selben Zeitfenster aktiviert wurde) die eigentliche
+Ursache sein könnte — ein Variablenwechsel gleichzeitig mit dem ctx-size-Test
+war methodisch unsauber. Nachgeprüft:
+
+1. **q8_0 exoneriert.** Ein isolierter, sauberer 2-Turn-Test (eine einzelne
+   Konversation, moderate ~13.000 Token, KEIN pathologisch repetitiver
+   Fülltext wie beim ersten missglückten Test) zeigte mit `--cache-type-k/v
+   q8_0` aktiv einwandfreies Cache-Reuse: `restored context checkpoint`, nur
+   569 von 13.385 Token wurden bei Turn 2 neu verarbeitet. Bestätigt auch durch
+   eine externe llama.cpp-Diskussion (PR #13194): ein Entwickler testete
+   explizit Q8-Cache gegen unquantisierten Cache, kein Unterschied im
+   Cache-Verhalten — "Quantization is NOT the cause."
+2. **Echte Ursache:** `--cache-ram` (Default 8192 MiB) und `--ctx-checkpoints`
+   (Default 32 pro Slot) sind knapp bemessene Pools. Bei mehreren gleichzeitig
+   aktiven, unterschiedlichen Konversationen (z.B. Daniel testet mehrere
+   Charakterspawner parallel) konkurrieren alle um denselben kleinen Pool —
+   größerer ctx-size lässt jeden Checkpoint mehr MiB brauchen, wodurch weniger
+   gleichzeitig hineinpassen und Verdrängung/Neuverarbeitung häufiger wird.
+   Kein SWA-Bug speziell für unser Modell (GGUF-Metadaten enthalten keinen
+   `sliding_window`-Key — unsere Architektur nutzt kein SWA), sondern
+   schlicht Pool-Kapazität.
+3. **Daniels Einordnung der Realsituation:** Mehrere gleichzeitige, größere
+   Wesen-Chats entstehen in der Praxis fast ausschließlich durch Daniels
+   eigene Charakterspawner-Tests — organischer Wesen-Betrieb erzeugt selten
+   mehr als ein einzelnes Gespräch gleichzeitig ("oder weil ich mal eben was
+   mit den wesen kläre aber einzelnd").
+
+**Fix:** `--cache-ram 16384` (statt 8192) und `--ctx-checkpoints 64` (statt 32)
+zusammen mit `--ctx-size 99999` gesetzt. Live bestätigt (Startup-Log): `prompt
+cache is enabled, size limit: 16384 MiB` / `context checkpoints enabled, max =
+64`. Kein OOM, Dienst gesund. Echte Validierung unter Mehrfach-Charakteren
+bewusst NICHT durch weitere eigene synthetische Testlast erzwungen — zwei
+eigene überdimensionierte Testanfragen verursachten an diesem Tag bereits
+selbst Kollateral-Abbrüche echter Anfragen (Lektion: eigene Diagnose-Tests
+können das Problem werden, das man untersucht). Nächste reale Bestätigung:
+beim nächsten Mehrfach-Spawner-Test von Daniel in
+`journalctl -u llama-hauhaucs.service | grep checkpoint` nachsehen, ob
+mehrere Charaktere jetzt sauber nebeneinander im Cache bleiben.
 
 **`--threads 12`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
