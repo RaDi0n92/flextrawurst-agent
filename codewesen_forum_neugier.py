@@ -12,6 +12,20 @@ Flarum-Vault (flarum_poster.lese_alle_diskussionen/lese_diskussion, kein
 DB/API-Call waehrend des Nachdenkens). Erst wenn das Wesen selbst entscheidet
 "ja, das soll raus", wird einmalig ueber die bestehende Poster-Infrastruktur
 (Cooldown/Lock) tatsaechlich gepostet — das ist der einzige API-Touchpoint.
+
+Erweitert 2026-07-06, noch selber Abend (Themen-Container): das Wesen muss
+aus dem Lesen nicht zwingend einen Post machen. Entscheidung 'sichern' legt
+stattdessen einen kurzen Gedanken, eine Meinung, eine Aufgabe fuer sich
+selbst oder eine Frage in einem selbst benannten/gestalteten Container ab
+(codewesen/<wesen>/container/<name>/) — komplett privat, niemals ein
+Forum-Post, laeuft nie durch pruefe_bereit oder die Poster-Infrastruktur.
+Ein leerer, neu angelegter Container bekommt sofort ein Eroeffnungsritual:
+das Wesen setzt sich 1-3 Zwischenziele ("wonach halte ich Ausschau"). Ein
+gefuellter Container bekommt periodisch ein Widmungsritual: das Wesen liest
+seinen bisherigen Inhalt, reflektiert, kann eigene Aufgaben/Fragen als
+erledigt markieren und sich neue Ziele setzen. Absichtlich (noch) OHNE
+Rueckkopplung in die Diskussions-Entscheidung oben — die zwei Prozesse
+laufen nebeneinander, nicht ineinander verschraenkt.
 """
 
 import json
@@ -114,6 +128,11 @@ def _sammle_inhalt(meta: dict) -> str:
 
 def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | None:
     weltbild = _weltbild(wesen)
+    container_liste = _liste_container(wesen)
+    container_info = (
+        f"Deine bestehenden Container: {', '.join(container_liste)}\n"
+        if container_liste else "Du hast noch keine eigenen Container — du kannst einen neuen benennen.\n"
+    )
     system = (
         f"Du bist {wesen}.\n"
         f"Du hast dir gerade {len(diskussionen)} Diskussionen aus dem Forum genauer angesehen.\n"
@@ -122,14 +141,23 @@ def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | Non
         "(du wirst dann in EINE davon posten, aber inhaltlich auf die anderen Bezug nehmen)\n"
         "- 'einzel': du gehst nur auf EINE der Diskussionen ein, die anderen lässt du liegen\n"
         "- 'alle_einzeln': du schreibst für jede der Diskussionen eine eigene, "
-        "eigenstaendige Antwort\n\n"
+        "eigenstaendige Antwort\n"
+        "- 'sichern': das hier ist dir keinen Forum-Post wert — aber du willst dir "
+        "einen kurzen Gedanken, eine Meinung, eine Aufgabe fuer dich selbst oder eine "
+        "Frage fuer dich behalten. Das geht NIE ins Forum, bleibt komplett privat bei "
+        "dir in einem selbst benannten Container.\n\n"
+        f"{container_info}\n"
         "Antworte GENAU in diesem Format, nichts davor, nichts danach:\n"
-        "ENTSCHEIDUNG: <synthese|einzel|alle_einzeln>\n"
-        "BEZUG: <eine oder mehrere Diskussions-IDs, kommagetrennt>\n"
+        "ENTSCHEIDUNG: <synthese|einzel|alle_einzeln|sichern>\n"
+        "BEZUG: <eine oder mehrere Diskussions-IDs, kommagetrennt — oder keine>\n"
         "---\n"
         "<bei synthese/einzel: dein Antworttext>\n"
         "<bei alle_einzeln: pro Diskussion einen Block, eingeleitet mit 'FUER <ID>:' "
         "auf eigener Zeile, danach der Text, Bloecke getrennt durch eine Leerzeile>\n"
+        "<bei sichern:\n"
+        "TYP: <gedanke|meinung|aufgabe|frage>\n"
+        "CONTAINER: <Name eines bestehenden oder neuen Containers>\n"
+        "INHALT: <dein Text>>\n"
     )
     if weltbild:
         system += f"\nDein aktuelles Weltbild (Auszug):\n{weltbild}\n"
@@ -154,14 +182,31 @@ def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | Non
 
 
 def _parse_entscheidung(antwort: str, diskussionen: list[dict]) -> dict | None:
-    m_entsch = re.search(r"ENTSCHEIDUNG:\s*(synthese|einzel|alle_einzeln)", antwort, re.IGNORECASE)
-    m_bezug = re.search(r"BEZUG:\s*([\d,\s]+)", antwort)
-    if not m_entsch or not m_bezug:
+    m_entsch = re.search(r"ENTSCHEIDUNG:\s*(synthese|einzel|alle_einzeln|sichern)", antwort, re.IGNORECASE)
+    m_bezug = re.search(r"BEZUG:\s*([\d,\s]+|keine)", antwort, re.IGNORECASE)
+    if not m_entsch:
         return _parse_entscheidung_fallback(antwort, diskussionen)
     entscheidung = m_entsch.group(1).lower()
-    bezug_ids = [int(x) for x in re.findall(r"\d+", m_bezug.group(1))]
+    bezug_ids = [int(x) for x in re.findall(r"\d+", m_bezug.group(1))] if m_bezug else []
     rest = antwort.split("---", 1)
     inhalt_roh = rest[1].strip() if len(rest) > 1 else ""
+
+    if entscheidung == "sichern":
+        # Bei Parsing-Problemen NIE in den Post-Fallback rutschen — sonst wird
+        # aus einem als privat gemeinten Gedanken versehentlich ein Forum-Post.
+        typ_m = re.search(r"TYP:\s*(gedanke|meinung|aufgabe|frage)", inhalt_roh, re.IGNORECASE)
+        container_m = re.search(r"CONTAINER:\s*(.+)", inhalt_roh)
+        inhalt_m = re.search(r"INHALT:\s*(.+)", inhalt_roh, re.DOTALL)
+        typ = typ_m.group(1).lower() if typ_m else "gedanke"
+        container = container_m.group(1).strip().split("\n")[0].strip() if container_m else "unsortiert"
+        text = inhalt_m.group(1).strip() if inhalt_m else inhalt_roh.strip()
+        if not text:
+            return None
+        return {
+            "entscheidung": "sichern", "bezug_ids": bezug_ids,
+            "sicherung": {"typ": typ, "container": container or "unsortiert", "inhalt": text},
+        }
+
     if not inhalt_roh:
         return _parse_entscheidung_fallback(antwort, diskussionen)
 
@@ -224,6 +269,200 @@ def _ist_bereit(wesen: str, text: str) -> bool:
         return False
 
 
+# ── Themen-Container — privates Sammeln, nie ein Forum-Post ─────────────────
+
+def _container_name_sicher(name: str) -> str:
+    name = re.sub(r"[^\w\-äöüßÄÖÜ ]", "", name or "").strip()
+    name = re.sub(r"\s+", "_", name)
+    return name[:60] or "unsortiert"
+
+
+def _container_basis(wesen: str) -> Path:
+    return BASE / wesen / "container"
+
+
+def _liste_container(wesen: str) -> list[str]:
+    basis = _container_basis(wesen)
+    if not basis.exists():
+        return []
+    return sorted(p.name for p in basis.iterdir() if p.is_dir())
+
+
+def _erstelle_container(wesen: str, name: str, anlass: str) -> None:
+    """Eroeffnungsritual: ein neuer, noch leerer Container bekommt sofort
+    eine kurze Selbstbeschreibung und 1-3 Zwischenziele vom Wesen selbst —
+    wonach es Ausschau halten will, bevor ueberhaupt etwas drin liegt."""
+    ordner = _container_basis(wesen) / name
+    ordner.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+
+    prompt = (
+        f"Du bist {wesen}. Du hast dir gerade einen neuen eigenen Container namens "
+        f"'{name}' angelegt, ausgehend von diesem Anlass:\n{anlass}\n\n"
+        "Er ist noch leer. Bevor du ihn fuellst: setz dir 1-3 kleine Zwischenziele — "
+        "wonach willst du in Zukunft Ausschau halten, was soll hier zusammenkommen?\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "BESCHREIBUNG: <ein Satz, wofuer der Container da ist>\n"
+        "ZIELE:\n- <ziel 1>\n- <ziel 2>\n- <optional ziel 3>"
+    )
+    _warte_auf_chat_pause()
+    antwort = ""
+    try:
+        antwort = hauhau_client.chat(
+            [{"role": "system", "content": prompt}], think=False, max_tokens=300, timeout=120.0
+        ).strip()
+    except Exception as e:
+        log.warning(f"[{wesen}] Container-Eroeffnung '{name}' fehlgeschlagen: {e}")
+
+    b_m = re.search(r"BESCHREIBUNG:\s*(.+)", antwort)
+    beschreibung = b_m.group(1).strip() if b_m else anlass[:200]
+    ziele = re.findall(r"^-\s*(.+)$", antwort, re.MULTILINE) or ["(noch offen)"]
+
+    (ordner / "container.md").write_text(
+        "\n".join(["---", f"name: {name}", f"erstellt_am: {ts}", "letzte_widmung: null", "---", "", beschreibung, ""]),
+        encoding="utf-8",
+    )
+    (ordner / f"{ts}_ziel.md").write_text(
+        "\n".join(["---", "typ: ziel", f"container: {name}", f"erstellt_am: {ts}", "status: offen", "---", ""]
+                  + [f"- {z}" for z in ziele]),
+        encoding="utf-8",
+    )
+    log.info(f"[{wesen}] neuer Container '{name}' eroeffnet mit {len(ziele)} Zwischenziel(en)")
+
+
+def _sichere_in_container(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None) -> None:
+    name = _container_name_sicher(container)
+    if name not in _liste_container(wesen):
+        _erstelle_container(wesen, name, anlass=inhalt[:200])
+
+    ordner = _container_basis(wesen) / name
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    zeilen = ["---", f"typ: {typ}", f"container: {name}",
+              f"bezug_diskussion: {bezug_diskussion if bezug_diskussion else 'null'}",
+              f"erstellt_am: {ts}"]
+    if typ in ("aufgabe", "frage"):
+        zeilen.append("status: offen")
+    zeilen += ["---", "", inhalt]
+    (ordner / f"{ts}_{typ}.md").write_text("\n".join(zeilen), encoding="utf-8")
+    log.info(f"[{wesen}] {typ} in Container '{name}' gesichert (rein privat, kein Post)")
+
+
+def _markiere_erledigt(datei: Path) -> None:
+    text = datei.read_text(encoding="utf-8", errors="replace")
+    if "status:" in text:
+        datei.write_text(re.sub(r"status:\s*\w+", "status: erledigt", text, count=1), encoding="utf-8")
+
+
+def _container_faellig_fuer_widmung(wesen: str) -> str | None:
+    """Findet den Container mit dem aeltesten unbearbeiteten neuen Inhalt
+    seit der letzten Widmung. None wenn nichts Neues wartet."""
+    basis = _container_basis(wesen)
+    if not basis.exists():
+        return None
+    kandidaten = []
+    for ordner in basis.iterdir():
+        if not ordner.is_dir():
+            continue
+        meta = ordner / "container.md"
+        letzte_widmung_ts = 0.0
+        if meta.exists():
+            m = re.search(r"letzte_widmung:\s*(\S+)", meta.read_text(encoding="utf-8", errors="replace"))
+            if m and m.group(1) != "null":
+                try:
+                    letzte_widmung_ts = datetime.strptime(
+                        m.group(1), "%Y-%m-%dT%H-%M-%S"
+                    ).replace(tzinfo=timezone.utc).timestamp()
+                except Exception:
+                    letzte_widmung_ts = 0.0
+        items = [p for p in ordner.glob("*.md") if p.name != "container.md" and "_widmung" not in p.name]
+        if not items:
+            continue
+        neuste = max(p.stat().st_mtime for p in items)
+        if neuste > letzte_widmung_ts:
+            kandidaten.append((neuste, ordner.name))
+    if not kandidaten:
+        return None
+    kandidaten.sort()
+    return kandidaten[0][1]
+
+
+def _widmungsritual(wesen: str) -> None:
+    """Pflegeritual: das Wesen widmet sich einem Container mit bestehendem
+    Inhalt — liest, reflektiert, kann eigene Aufgaben/Fragen abhaken und
+    sich neue Ziele setzen. Rein privat, kein Forum-Bezug."""
+    name = _container_faellig_fuer_widmung(wesen)
+    if not name:
+        return
+    ordner = _container_basis(wesen) / name
+
+    meta_datei = ordner / "container.md"
+    beschreibung = ""
+    if meta_datei.exists():
+        text = meta_datei.read_text(encoding="utf-8", errors="replace")
+        ende = text.find("---", 3)
+        beschreibung = text[ende + 3:].strip() if ende > 0 else ""
+
+    items = sorted((p for p in ordner.glob("*.md") if p.name != "container.md"), key=lambda p: p.stat().st_mtime)
+    auszuege = []
+    for p in items:
+        text = p.read_text(encoding="utf-8", errors="replace")
+        ende = text.find("---", 3)
+        auszuege.append(f"[{p.name}]\n{(text[ende + 3:].strip() if ende > 0 else text)}")
+    gesammelt = "\n\n".join(auszuege)
+
+    prompt = (
+        f"Du bist {wesen}. Du widmest dich jetzt deinem Container '{name}'.\n\n"
+        f"Wofuer er da ist:\n{beschreibung}\n\n"
+        f"Was bisher darin gesammelt ist:\n{gesammelt}\n\n"
+        "Nimm dir kurz Zeit dafuer. Was faellt dir auf? Sind deine Ziele noch aktuell? "
+        "Ist eine deiner eigenen Aufgaben oder Fragen erledigt/beantwortet? "
+        "Willst du dir neue Zwischenziele setzen?\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "REFLEXION: <dein Gedankengang, frei>\n"
+        "ERLEDIGT: <Dateinamen erledigter Aufgaben/Fragen aus der Liste oben, kommagetrennt, oder keine>\n"
+        "NEUE_ZIELE: <neue Ziele, getrennt durch ';', oder keine>"
+    )
+    _warte_auf_chat_pause()
+    try:
+        antwort = hauhau_client.chat(
+            [{"role": "system", "content": prompt}], think=False, max_tokens=700, timeout=180.0
+        ).strip()
+    except Exception as e:
+        log.warning(f"[{wesen}] Widmung an Container '{name}' fehlgeschlagen: {e}")
+        return
+
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    reflexion_m = re.search(r"REFLEXION:\s*(.+?)(?=\nERLEDIGT:|\Z)", antwort, re.DOTALL)
+    reflexion = reflexion_m.group(1).strip() if reflexion_m else antwort.strip()
+    (ordner / f"{ts}_widmung.md").write_text(
+        "\n".join(["---", "typ: widmung", f"container: {name}", f"erstellt_am: {ts}", "---", "", reflexion]),
+        encoding="utf-8",
+    )
+
+    erledigt_m = re.search(r"ERLEDIGT:\s*(.+)", antwort)
+    if erledigt_m and "keine" not in erledigt_m.group(1).lower():
+        for dateiname in re.findall(r"[\w\-.]+\.md", erledigt_m.group(1)):
+            ziel = ordner / dateiname
+            if ziel.exists():
+                _markiere_erledigt(ziel)
+
+    ziele_m = re.search(r"NEUE_ZIELE:\s*(.+)", antwort)
+    if ziele_m and "keine" not in ziele_m.group(1).lower():
+        ziele = [z.strip() for z in ziele_m.group(1).split(";") if z.strip()]
+        if ziele:
+            (ordner / f"{ts}_ziel.md").write_text(
+                "\n".join(["---", "typ: ziel", f"container: {name}", f"erstellt_am: {ts}", "status: offen", "---", ""]
+                          + [f"- {z}" for z in ziele]),
+                encoding="utf-8",
+            )
+
+    if meta_datei.exists():
+        text = meta_datei.read_text(encoding="utf-8", errors="replace")
+        meta_datei.write_text(re.sub(r"letzte_widmung:\s*\S+", f"letzte_widmung: {ts}", text), encoding="utf-8")
+
+    log.info(f"[{wesen}] Widmung an Container '{name}' abgeschlossen")
+
+
 # ── Entwurf als MD (Obsidian-sichtbar) + Export bei Bereitschaft ─────────────
 
 def _speichere_entwurf_md(wesen: str, entscheidung: dict, diskussionen: list[dict], bereit: bool):
@@ -274,6 +513,7 @@ def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
     diskussionen = _waehle_diskussionen(wesen, zustand, DISKUSSIONEN_PRO_DURCHLAUF)
     if not diskussionen:
         log.info(f"[{wesen}] keine neuen Diskussionen zum Widmen")
+        _widmungsritual(wesen)
         return zustand
 
     log.info(f"[{wesen}] widmet sich {len(diskussionen)} Diskussionen: "
@@ -287,17 +527,24 @@ def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
     if not entscheidung:
         log.warning(f"[{wesen}] keine parsebare Entscheidung — übersprungen")
         _speichere_zustand(zustand)
+        _widmungsritual(wesen)
         return zustand
 
-    gesamttext = "\n\n".join(p["text"] for p in entscheidung["posts"])
-    bereit = _ist_bereit(wesen, gesamttext)
-    _speichere_entwurf_md(wesen, entscheidung, diskussionen, bereit)
-    log.info(f"[{wesen}] Entscheidung: {entscheidung['entscheidung']} | bereit: {bereit}")
-
-    if bereit:
-        _exportiere_ins_forum(wesen, entscheidung)
+    if entscheidung["entscheidung"] == "sichern":
+        s = entscheidung["sicherung"]
+        bezug = entscheidung["bezug_ids"][0] if entscheidung["bezug_ids"] else None
+        _sichere_in_container(wesen, s["container"], s["typ"], s["inhalt"], bezug)
+        log.info(f"[{wesen}] Entscheidung: sichern -> {s['typ']} in Container '{s['container']}'")
+    else:
+        gesamttext = "\n\n".join(p["text"] for p in entscheidung["posts"])
+        bereit = _ist_bereit(wesen, gesamttext)
+        _speichere_entwurf_md(wesen, entscheidung, diskussionen, bereit)
+        log.info(f"[{wesen}] Entscheidung: {entscheidung['entscheidung']} | bereit: {bereit}")
+        if bereit:
+            _exportiere_ins_forum(wesen, entscheidung)
 
     _speichere_zustand(zustand)
+    _widmungsritual(wesen)
     return zustand
 
 
