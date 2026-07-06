@@ -153,6 +153,10 @@ Antworte NUR mit JSON:
         if not inhalt:
             return
 
+        if not flarum_poster.pruefe_bereit(name, inhalt):
+            log.info(f"{name} Reflexion: beim zweiten Nachdenken doch nicht — verworfen")
+            return
+
         if entscheidung.get("typ") == "antwort" and entscheidung.get("discussion_id"):
             disk_id = int(entscheidung["discussion_id"])
             draft = flarum_poster.schreibe_draft(name, "antwort", inhalt, discussion_id=disk_id)

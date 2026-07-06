@@ -14,11 +14,15 @@ Schreiben: einmalig via REST API, max 1 gleichzeitig über alle Wesen
 
 import fcntl
 import json
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import flarum_api as api
+
+sys.path.insert(0, "/root/werkraum")
+import hauhau_client
 
 VAULT_FLARUM      = Path("/root/werkraum/flarum")
 CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
@@ -26,6 +30,7 @@ LOCK_FILE         = Path("/tmp/flarum_write.lock")
 DRAFT_TIMEOUT     = 120  # Sekunden — Draft älter als 2min gilt als veraltet
 TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
 COOLDOWN_SEKUNDEN = 0    # deaktiviert
+CHAT_AKTIV_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 
 
 def _letzter_post_file(name: str) -> Path:
@@ -161,6 +166,35 @@ def _letzter_post_info(text: str) -> dict | None:
         return {"autor": m.group(1), "ts": ts}
     except Exception:
         return None
+
+
+# ── Ready-Check — geteilt von allen Poster-Wegen (seit 2026-07-06) ───────────
+#
+# Daniels Wunsch: bevor irgendetwas tatsaechlich ins Forum geht, soll das
+# Wesen selbst noch einmal gefragt werden ob es damit zufrieden ist — "nicht
+# alles immer sofort", stattdessen im Hintergrund vorbereiten und erst bei
+# eigener Zustimmung absenden. Urspruenglich nur in codewesen_forum_neugier.py
+# gebaut, hierher verschoben damit ALLE Poster-Wege (Takt, Reaktion,
+# Engagement, Reflexion, Neugier) dieselbe eine Funktion nutzen.
+
+def pruefe_bereit(wesen: str, text: str) -> bool:
+    """Fragt das Wesen selbst: bist du mit diesem Entwurf zufrieden, soll er
+    raus? Antwort NUR JA/NEIN. Bei Fehlern konservativ False (nicht posten)."""
+    while CHAT_AKTIV_FLAG.exists():
+        time.sleep(3)
+    try:
+        messages = [
+            {"role": "system", "content": (
+                f"Du bist {wesen}. Das hier ist ein Entwurf, den du gerade fuer das Forum "
+                "geschrieben hast. Bist du damit zufrieden, soll er so raus? "
+                "Antworte NUR mit dem einzigen Wort JA oder NEIN, keine Erklaerung."
+            )},
+            {"role": "user", "content": text},
+        ]
+        antwort = hauhau_client.chat(messages, think=False, max_tokens=10, timeout=120.0).strip().upper()
+    except Exception:
+        return False
+    return antwort.startswith("JA")
 
 
 # ── Draft-System ──────────────────────────────────────────────────────────────

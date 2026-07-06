@@ -101,8 +101,8 @@ def _naechsten_entwurf_holen(wesen: str, rhythmus: str) -> tuple[dict, Path] | N
     except Exception:
         return None
 
-def _entwurf_archivieren(datei: Path):
-    archiv = datei.parent.parent / "_posted"
+def _entwurf_archivieren(datei: Path, status: str = "_posted"):
+    archiv = datei.parent.parent / status
     archiv.mkdir(exist_ok=True)
     datei.rename(archiv / datei.name)
 
@@ -149,6 +149,21 @@ def _poste_antwort(wesen: str, discussion_id: int, inhalt: str) -> bool:
     return False
 
 
+# ── Ready-Check vor jedem Posten (seit 2026-07-06, Daniels Wunsch) ───────────
+# Nicht mehr alles sofort raus, sobald ein Entwurf fertig ist — das Wesen wird
+# noch einmal gefragt, ob es dabei bleibt. Bei Nein: Entwurf wird verworfen
+# (nicht wieder versucht), Queue-Platz wird beim naechsten Batch-Generator-
+# Durchlauf neu gefuellt — passt zu "mehrere Themen abarbeiten" statt an
+# einem ungeliebten Entwurf haengenzubleiben.
+
+def _bereit_oder_verwerfen(wesen: str, datei: Path, inhalt: str) -> bool:
+    if flarum_poster.pruefe_bereit(wesen, inhalt):
+        return True
+    log.info("[%s] Entwurf nicht mehr gewollt — verworfen: %s", wesen, datei.name)
+    _entwurf_archivieren(datei, "_verworfen")
+    return False
+
+
 # ── Die sechs Rhythmen ────────────────────────────────────────────────────────
 
 def rhythmus_eigene_antwort(wesen: str):
@@ -158,6 +173,8 @@ def rhythmus_eigene_antwort(wesen: str):
         log.warning("[%s] eigene_antwort: Queue leer", wesen)
         return
     daten, datei = result
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
     if _poste_antwort(wesen, daten["discussion_id"], daten["inhalt"]):
         _entwurf_archivieren(datei)
 
@@ -169,6 +186,8 @@ def rhythmus_gedanke(wesen: str):
         log.warning("[%s] gedanke: Queue leer", wesen)
         return
     daten, datei = result
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
     _poste_neu(wesen, daten["titel"], daten["inhalt"], daten["tag_ids"])
     _entwurf_archivieren(datei)
     gedanken_dir = BASE / wesen / "gedanken"
@@ -187,6 +206,8 @@ def rhythmus_antwortpflicht(wesen: str):
         log.warning("[%s] antwortpflicht: Queue leer", wesen)
         return
     daten, datei = result
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
     if _poste_antwort(wesen, daten["discussion_id"], daten["inhalt"]):
         _entwurf_archivieren(datei)
 
@@ -198,6 +219,8 @@ def rhythmus_pflicht(wesen: str):
         log.warning("[%s] pflicht: Queue leer", wesen)
         return
     daten, datei = result
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
     if _poste_neu(wesen, daten["titel"], daten["inhalt"], daten["tag_ids"]):
         _entwurf_archivieren(datei)
 
@@ -213,6 +236,8 @@ def rhythmus_impuls(wesen: str):
         log.warning("[%s] impuls-Entwurf ohne titel/inhalt — überspringe: %s", wesen, datei.name)
         _entwurf_archivieren(datei)
         return
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
     if _poste_neu(wesen, daten["titel"], daten["inhalt"], daten["tag_ids"]):
         _entwurf_archivieren(datei)
 
@@ -224,7 +249,10 @@ def rhythmus_vorstellung(wesen: str):
         log.warning("[%s] vorstellung: Queue leer", wesen)
         return
     daten, datei = result
-    _poste_antwort(wesen, daten["discussion_id"], daten["inhalt"])
+    if not _bereit_oder_verwerfen(wesen, datei, daten["inhalt"]):
+        return
+    if _poste_antwort(wesen, daten["discussion_id"], daten["inhalt"]):
+        _entwurf_archivieren(datei)
     _entwurf_archivieren(datei)
 
     vault = BASE / wesen / "selbstgespraeche"

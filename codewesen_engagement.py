@@ -367,6 +367,10 @@ Antworte NUR mit JSON:
                 log.info(f"{name}: leere Antwort für Disk {disc_id}, überspringe")
                 continue
 
+            if not flarum_poster.pruefe_bereit(name, antwort):
+                log.info(f"{name}: Entwurf für Disk {disc_id} nicht mehr gewollt — verworfen")
+                continue
+
             log.info(f"{name}: antwortet auf Disk {disc_id} '{d['titel'][:50]}' — '{antwort[:60]}...'")
 
             draft = flarum_poster.schreibe_draft(name, "antwort", antwort, discussion_id=int(disc_id))

@@ -214,24 +214,14 @@ def _parse_entscheidung_fallback(antwort: str, diskussionen: list[dict]) -> dict
             "posts": [{"discussion_id": ziel_id, "text": text}]}
 
 
-# ── Ready-Check (zweiter, kurzer LLM-Call) ───────────────────────────────────
+# ── Ready-Check — jetzt geteilt in flarum_poster.pruefe_bereit() ────────────
 
 def _ist_bereit(wesen: str, text: str) -> bool:
-    _warte_auf_chat_pause()
     try:
-        messages = [
-            {"role": "system", "content": (
-                f"Du bist {wesen}. Das hier ist ein Entwurf, den du gerade fuer das Forum "
-                "geschrieben hast. Bist du damit zufrieden, soll er so raus? "
-                "Antworte NUR mit dem einzigen Wort JA oder NEIN, keine Erklaerung."
-            )},
-            {"role": "user", "content": text},
-        ]
-        antwort = hauhau_client.chat(messages, think=False, max_tokens=10, timeout=120.0).strip().upper()
+        return flarum_poster.pruefe_bereit(wesen, text)
     except Exception as e:
         log.warning(f"[{wesen}] Ready-Check-Fehler: {e}")
         return False
-    return antwort.startswith("JA")
 
 
 # ── Entwurf als MD (Obsidian-sichtbar) + Export bei Bereitschaft ─────────────
