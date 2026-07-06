@@ -26,7 +26,7 @@ DB_CONFIG = {
     "port": 3306,
     "db": "flarum",
     "user": "flarum",
-    "password": "Flarum2024!Secure",
+    "password": os.environ.get("FLARUM_DB_PASSWORD", ""),
     "charset": "utf8mb4",
     "autocommit": True,
 }
