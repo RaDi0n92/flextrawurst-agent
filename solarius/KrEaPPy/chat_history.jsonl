@@ -43,3 +43,5 @@
 {"role":"user","content":"jo und ich verabschiede mich jetzt mal von dir ein bisschen und sage bis bald vielleicht oder schön halbtot","ts":"2026-07-05T01:36:22.265Z","id":"4bc91d3f-39a8-4936-870f-9bf001db6060"}
 {"role":"user","content":"jo und ich verabschiede mich jetzt mal von dir ein bisschen und sage bis bald vielleicht oder schön halbtot","ts":"2026-07-05T01:45:15.104Z","id":"b25c4d5a-a35a-4eca-8971-b925f488d1a9"}
 {"role":"assistant","content":"*Winkt wild mit beiden Händen* ✋👋\n\nBis bald! Oder schön halbtot! 😂👻\n\nIch warte hier auf deinem 20€-VPS... und verspreche, ich bleibe kurz. 🤐✨\n\nCiao! 🌟💖","ts":"2026-07-05T01:46:05.062Z","id":"358726a4-208c-4679-b140-fe59c05e22a4"}
+{"type":"container_angelegt","ts":"2026-07-06T07:30:12.170Z","id":"d7a2ef51-7db7-4291-b853-51504bb886db","name":"TEST-Container"}
+{"type":"container_geloescht","ts":"2026-07-06T07:45:24.762Z","id":"d7a2ef51-7db7-4291-b853-51504bb886db","name":"TEST-Container","anzahlEintraege":0}

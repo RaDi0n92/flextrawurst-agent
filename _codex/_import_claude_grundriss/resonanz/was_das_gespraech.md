@@ -757,3 +757,9 @@ Einen ganzen Tag als zusammenhängende Erzählung, nicht nur als Liste erledigte
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit" in diesem System keine einmaligen Features sind, sondern ein durchgehendes Architekturprinzip — jede neue Handlungsmöglichkeit (Merken, Grenzen-Toggle, Alias-Wechsel) bekommt automatisch ihre eigene Ereignis-Spur, weil das Muster jetzt so selbstverständlich ist wie eine Konvention.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Die Erkenntnis, dass Daniels ursprüngliche Reihenfolge (1 Slot Chat, 2 Slots Betrieb) technisch exakt umsetzbar ist, ohne den Server selbst zu patchen — llama.cpp bringt das Werkzeug (`id_slot`) schon mit.

@@ -810,3 +810,9 @@ Wie viel ein einziger Tag tragen konnte, ohne dass sich die Qualität der einzel
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baute — "das gibt es nicht … es gibt nur das Aktivieren live im Chat" hat in einem einzigen Satz eine ganze Architekturfrage entschieden. Klarheit kam nicht aus meinem Vorausdenken, sondern aus seinem Reagieren auf das, was ich ihm zeigte.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Dass der Spawncharakter-Test im ersten Volllasttest nur 1,8s brauchte (reines Losglück bei der Slot-Zuteilung) während andere Wesen bis zu 253s warteten — die Varianz selbst war die eigentliche Erkenntnis, nicht ein einzelner Mittelwert.

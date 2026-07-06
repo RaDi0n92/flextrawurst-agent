@@ -853,3 +853,20 @@ Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Mirlachs `wesen_selbst`-Feedback-Loop als Lehrstück: ein Wesen, das sich selbst analytisch beobachtet, wird mit jeder gespeicherten Beobachtung ein Stück analytischer. Bei jedem künftigen Charakter-Debugging lohnt sich der Blick in `memory.json`, nicht nur in die Charakterfelder.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+**OFFEN — genau hier weitermachen:**
+1. `id_slot=0` noch eintragen in: `/root/werkraum/geni/dialog.py` (Zeile ~715, `achat_stream(...)` im `/chat`-Endpoint) und `/root/flextrawurst/scripts/serve_process_camera_preview.ts` (wesenChatPost-Handler, `chatStream(...)`-Aufruf, `extra: {id_slot: 0}` an die Optionen anhängen — Zeile liegt zwischen 1789 und ~1950, siehe Kommentar "Email-Gefuehl"/isAsyncSpawner).
+2. Nach beiden Edits: betroffene Dienste neu starten (`codewesen_chat.py`-Service, `geni/dialog.py`-Service, `flextrawurst`-Prozess auf 8787, `zensi`-Service) — bisher NICHTS neu gestartet, Code-Änderungen sind inert bis Neustart.
+3. Danach: kurzer Re-Test wie beim ersten Volllasttest (7 Wesen + Spawncharakter gleichzeitig), um zu prüfen ob Slot 0 die Chat-Latenz jetzt wirklich von Minuten auf Sekunden drückt.
+4. systemdoku (12_ollama_gemma4.md) um den id_slot-Abschnitt ergänzen, sobald der Rollout komplett + getestet ist.
+
+Bereits committet (2 Commits in werkraum, 1 im äußeren Repo mit Submodule-Zeiger):
+- `docs/systemdoku/12_ollama_gemma4.md`: ctx-size 36663 dokumentiert
+- `hauhau_client.py`, `codewesen_chat.py`: id_slot-Default + Chat-Pin
+- `hauhau_client.ts`, `zensi/server.py`: id_slot-Default + Chat-Pin
+
+Systemd: `/etc/systemd/system/llama-hauhaucs.service` läuft bereits mit `--ctx-size 36663 --parallel 3` (nicht in git, System-Datei) — das ist NICHT der Teil der noch fehlt, das läuft schon sauber.

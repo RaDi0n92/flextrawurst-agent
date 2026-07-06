@@ -1693,3 +1693,10 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 5. KompOase-Landung: Splitter-Erstellung aus Prägungsextrakt
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Vision: ein Mensch, der mit einem Wesen oder Spawncharakter spricht, merkt nie etwas von den sieben anderen Prozessen die im Hintergrund permanent denken, posten, reagieren — die Trennung ist unsichtbar, fühlt sich einfach nach einem reaktionsschnellen Gegenüber an.
+Code: `id_slot`-Feld im Request-Payload, siehe hauhau_client.py `_default_id_slot()` / hauhau_client.ts `defaultIdSlot()`.

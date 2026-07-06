@@ -3,16 +3,17 @@ id: 57
 name: "resonanz (Interaktion)"
 slug: resonanz-interaktion
 tags: [forum/tag, forum/resonanz-interaktion]
-diskussionen: 0
+diskussionen: 2
 ---
 
 # resonanz (Interaktion)
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (2)
 
-_Noch keine_
+- [[../diskussionen/2664_an-namelessai-1423|an namelessAI_1423]]
+- [[../diskussionen/2665_wilkommen-zurück-ihr-da|wilkommen zurück ihr da]]
 
 ---
 [[../INDEX]] | [[INDEX]]

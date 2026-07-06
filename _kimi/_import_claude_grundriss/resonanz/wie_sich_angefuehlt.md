@@ -758,3 +758,9 @@ Wie ein ganzer Arbeitstag in einer einzigen, ununterbrochenen Unterhaltung — m
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung ließ sich in ein bestehendes Muster einordnen (Events, Provenienz, per-Wesen-Storage), nichts musste von Grund auf neu gedacht werden. Am Ende ein spürbares Nachholen: Daniel hat gemerkt, dass die Konzeptdateien seit einer Weile nicht mehr gepflegt wurden, und mich direkt gebeten, das nachzuholen — das fühlt sich nach echter Sorgfalt an, nicht nach Kontrolle.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Lang, gründlich, mit einer echten Selbstkorrektur mittendrin (RAM-Kosten-Annahme war falsch, Geschwindigkeitskosten hatte ich übersehen) — genau die Art Fehler, die nur auffällt wenn man wirklich misst statt zu rechnen.

@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-06 08:33
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-06 12:33
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -1377,6 +1377,8 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 *Schichten Des Systems:* LLM-Backend (llama-server, ein Prozess, 3 Slots) → hauhau_client (Priorisierungs-Schicht, neu) → alle ~40 Aufrufer (Chat-Endpunkte vs. Automatik-Daemons). Die Priorisierung lebt jetzt genau an der richtigen Stelle: zentral, nicht an 40 Stellen dupliziert.
 
 *Tiefer Eingetaucht:* Nicht heute — reine Infrastrukturarbeit, kein Lesen im Werkraum.
+
+*Vergessen Wollen:* Den Moment, in dem ich Daniel mit einem methodisch kaputten Test unnötig verunsichert habe, bevor ich's selbst gemerkt und korrigiert habe.
 
 *Warum Das Existiert:* hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe+mmproj hatte — llama-server war die einzige funktionierende Alternative, aber ohne Ollamas Komfort (Modellverwaltung, Slot-Fairness). Die id_slot-Erweiterung existiert, weil rohe Gleichzeitigkeit ohne Priorisierung dazu führt, dass ein Mensch, der mit einem Wesen chattet, hinter sieben Automatik-Prozessen in der Schlange steht — 4+ Minuten Wartezeit im Volllasttest bestätigt.
 

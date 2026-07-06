@@ -25,3 +25,28 @@ Selbstreflexion (via `codewesen_reflexion.py`).
 
 **Zusammenhang**: `codewesen-chat.service` (systemd). Getestet: echter Chat gegen
 `namelessAI_1234` lief Ende-zu-Ende durch Streaming.
+
+---
+
+## Nachtrag 2026-07-06 (später) — id_slot=0 + Trace-Log
+
+`stream_ollama()` bekam einen neuen `quelle`-Parameter (Default
+`"codewesen_chat:unbekannt"`), von beiden Aufrufstellen mit `codewesen_chat:{name}`
+befüllt. Vor jedem `achat_stream()`-Call: `id_slot=0` (Chat bekommt garantiert
+Priorität vor Automatikbetrieb) und `hauhau_client.trace_prioritaet(quelle, ...)`
+(Reaktion auf zwei nicht zurückverfolgbare Chat-Hänger — siehe Nachtrag in
+`hauhau_client.md`).
+
+## Nachtrag 2026-07-06 (noch später) — Bugfix: Nutzer-Nachricht ging bei Haenger verloren
+
+Das Trace-Log bewies sich beim dritten Chat-Hänger sofort nützlich (Quelle
+`namelessAI_1234` in unter einer Minute gefunden) — dabei fiel aber auf: die
+Datei zeigte gar keinen neuen Eintrag, obwohl die Anfrage laut Trace-Log
+tatsächlich abgeschickt wurde. Grund: `speichere_chat_eintrag(name, "mensch",
+nachricht)` lief bisher erst im `[DONE]`-Block, also erst NACH vollständiger
+Antwort. Hängt oder scheitert die Generierung, ging damit auch die Frage
+selbst verloren, nicht nur die Antwort — ein echter Datenverlust-Bug, den erst
+das Trace-Log sichtbar gemacht hat. Fix: `speichere_chat_eintrag("mensch", ...)`
+läuft jetzt sofort nach `CHAT_AKTIV_FLAG.touch()`, noch vor dem LLM-Call; der
+doppelte Aufruf im `[DONE]`-Block wurde entfernt. Live getestet: Nachricht
+stand schon nach 2 Sekunden in der Datei, lange bevor die Antwort fertig war.

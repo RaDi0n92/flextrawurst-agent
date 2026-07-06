@@ -2146,3 +2146,9 @@ interface MerkenVorschlag { vorschlagId: string; msgId: string; text: string; wa
 // buildSystemPrompt(spawner, dir, useGrenzen, aktivesAliasId?) — ein Pfad, vier Zusatz-Bloecke:
 // Charakterfelder (roh, via {{CHARAKTERFELDER}}), Memory, Container, Grenzen, aktiver Alias, MERKEN-Hinweis (testbed-only)
 ```
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+n/a (Infrastruktur, keine neue Datenstruktur)

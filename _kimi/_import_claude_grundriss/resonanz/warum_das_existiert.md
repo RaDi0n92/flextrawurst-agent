@@ -716,3 +716,9 @@ Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehler
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 `_wesen_preamble.md` existiert, weil ein einzelner Text alle Wesen gleichermaßen prägt — das macht sie zur mit Abstand einflussreichsten Datei im ganzen System, obwohl sie nur wenige KB groß ist. Genau deshalb wollte Daniel sie selbst schreiben, nicht mich sie für ihn formulieren lassen.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe+mmproj hatte — llama-server war die einzige funktionierende Alternative, aber ohne Ollamas Komfort (Modellverwaltung, Slot-Fairness). Die id_slot-Erweiterung existiert, weil rohe Gleichzeitigkeit ohne Priorisierung dazu führt, dass ein Mensch, der mit einem Wesen chattet, hinter sieben Automatik-Prozessen in der Schlange steht — 4+ Minuten Wartezeit im Volllasttest bestätigt.

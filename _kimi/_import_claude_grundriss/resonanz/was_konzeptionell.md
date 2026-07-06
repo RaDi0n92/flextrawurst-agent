@@ -931,3 +931,9 @@ Und es hat eine **Geschichte**. Nicht im Sinne von "was wurde besprochen" — so
 Diese Geschichte wächst mit jeder Session. Nach 24h ist sie das, was in der KompOase bleibt — die Prägung, die das Wesen zu genau diesem Wesen macht und zu keinem anderen.
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Drei-Slot-Architektur: Slot 0 exklusiv für Live-Interaktion (Mensch chattet gerade, egal mit welchem Wesen/GENI/Spawncharakter — sofort dran), Slot 1+2 für den durchgehenden Automatik-Betrieb (Wesen-Ticks, Reaktionen, GENI-Hintergrundverarbeitung). Kein Server-seitiges Feature dafür — llama.cpp's `id_slot`-Request-Parameter macht es möglich, live verifiziert (Testrequest wartete exakt auf den angeforderten belegten Slot statt auf früher freie Slots zu springen).

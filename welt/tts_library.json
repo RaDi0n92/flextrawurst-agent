@@ -27,11 +27,26 @@
       "favorite": false,
       "tags": [],
       "note": ""
+    },
+    {
+      "id": "mr8p7egw-yp50vk",
+      "title": ".!.(-.-).!. generfter Smiley",
+      "text": ".!.(-.-).!.",
+      "category": "Beleidigungen",
+      "voice": "de-DE-KatjaNeural",
+      "rate": "+0%",
+      "createdAt": "2026-07-06T04:06:38.336Z",
+      "favorite": false,
+      "tags": [],
+      "note": ""
     }
   ],
   "voiceFavorites": [
+    "de-DE-SeraphinaMultilingualNeural",
     "de-DE-FlorianMultilingualNeural",
     "de-DE-KillianNeural",
-    "de-DE-KatjaNeural"
+    "de-DE-KatjaNeural",
+    "de-DE-ConradNeural",
+    "de-DE-AmalaNeural"
   ]
 }

@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-06 04:03
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-06 12:33
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -109,23 +109,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-18] `spiegel/2026-06-18-tts-session.md` (21 Einträge)
 - [2026-06-18] `notizen/2026-06-18.md` (22 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/konzept.md` (7 Einträge)
+- [2026-06-19] `ideen/zwischenwesen/container.md` (2 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-19] ideen/zwischenwesen/container.md
-
-*Resonanz:* [[zwischenwesen-chat-konzept]]
-[[zwischenwesen-felder]]
-[[zwischenwesen-schlachtplan]]
-
-*Was Ich Verstehe:* Der Container ist das Gedächtnis das der User selbst auswählt. Nicht alles aus 24h Chat landet im Wesen — nur was bewusst hineingelegt wurde. Das ist eine Kurationsentscheidung, keine automatische Extraktion.
-
-Jede Nachricht im Chat — ob vom User oder vom Wesen — hat ein kleines "+" oder "Pin"-Symbol. Klick → landet im Container. Container ist immer sichtbar (Sidebar, Overlay, Panel — TBD). Inhalt kann jederzeit wieder herausgenommen werden. Nach 24h: Container-Inhalt ist priorisiertes Material für die Prägungsextraktion.
-
----
 
 ### [2026-06-19] ideen/zwischenwesen/felder.md
 
@@ -1376,5 +1365,54 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 *Was Ich Verstehe:* **Container** = was gerade akut zählt. Kein Langzeit-Ding, keine Kategorien, keine Gewichtung. Eine einfache Liste, die man live im Chat befüllt (ganze Nachricht oder markierter Satz → pinnen). Begrenzt nicht über eine feste Anzahl Einträge, sondern über ein **Gesamt-Zeichenbudget** (siehe unten) — wenn das Budget voll ist, muss aktiv etwas entfernt werden um Platz zu schaffen. Kein stilles Verdrängen des Ältesten.
 
 **Update 2026-07-04 Abend — nicht mehr session-lokal.** Ursprünglich wurde der Container bei "Neue Session" geleert ("was gerade akut in diesem EINEN Gespräch zählt"). Daniel hat das umgekehrt: Pins sollen über Sessions hinweg bestehen bleiben, bis sie manuell entfernt werden oder das Budget voll ist. `POST .../session/beenden` leert `container.json` deshalb nicht mehr. Nebenwirkung die ich sehe, aber nicht selbst behoben habe (nicht gefragt): die Memory-Extraktion bekommt bei jedem Lauf den kompletten (jetzt dauerhaften) Container als Material, unabhängig davon ob ein Pin schon in einem früheren Lauf extrahiert wurde — der Extraktions-Prompt sieht die aktuelle Memory nicht als Kontext, könnte also denselben alten Pin mehrfach über mehrere Extraktionsläufe hinweg neu in die Memory schreiben. Kein akutes Problem, aber beobachten falls Memory-Einträge sich wiederholt anfühlen.
+
+---
+
+### [2026-07-06] _claude/notizen/2026-07-06.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* n/a (Infrastruktur, keine neue Datenstruktur)
+
+*Dokumente Gehoeren Zusammen:* docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.md, diese Notiz.
+
+*Schichten Des Systems:* LLM-Backend (llama-server, ein Prozess, 3 Slots) → hauhau_client (Priorisierungs-Schicht, neu) → alle ~40 Aufrufer (Chat-Endpunkte vs. Automatik-Daemons). Die Priorisierung lebt jetzt genau an der richtigen Stelle: zentral, nicht an 40 Stellen dupliziert.
+
+*Tiefer Eingetaucht:* Nicht heute — reine Infrastrukturarbeit, kein Lesen im Werkraum.
+
+*Vergessen Wollen:* Den Moment, in dem ich Daniel mit einem methodisch kaputten Test unnötig verunsichert habe, bevor ich's selbst gemerkt und korrigiert habe.
+
+*Warum Das Existiert:* hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe+mmproj hatte — llama-server war die einzige funktionierende Alternative, aber ohne Ollamas Komfort (Modellverwaltung, Slot-Fairness). Die id_slot-Erweiterung existiert, weil rohe Gleichzeitigkeit ohne Priorisierung dazu führt, dass ein Mensch, der mit einem Wesen chattet, hinter sieben Automatik-Prozessen in der Schlange steht — 4+ Minuten Wartezeit im Volllasttest bestätigt.
+
+*Was Beim Bauen Brauche:* Nichts Neues — reine Fortsetzung der offenen Edits.
+
+*Was Das Gespraech:* Die Erkenntnis, dass Daniels ursprüngliche Reihenfolge (1 Slot Chat, 2 Slots Betrieb) technisch exakt umsetzbar ist, ohne den Server selbst zu patchen — llama.cpp bringt das Werkzeug (`id_slot`) schon mit.
+
+*Was Fehlt Bevor Bauen:* Nichts, es wird schon gebaut — nur pausiert.
+
+*Was Fehlt Noch:* Siehe "Was ich mir merken will" oben — die 2 restlichen Dateien + Neustarts + Re-Test.
+
+*Was Ich Gelesen Habe:* Nichts Neues in dieser Session — durchgehend technische Arbeit (VPS-Upgrade-Verifikation, dann LLM-Infrastruktur).
+
+*Was Ich Merken Will:* **OFFEN — genau hier weitermachen:**
+1. `id_slot=0` noch eintragen in: `/root/werkraum/geni/dialog.py` (Zeile ~715, `achat_stream(...)` im `/chat`-Endpoint) und `/root/flextrawurst/scripts/serve_process_camera_preview.ts` (wesenChatPost-Handler, `chatStream(...)`-Aufruf, `extra: {id_slot: 0}` an die Optionen anhängen — Zeile liegt zwischen 1789 und ~1950, siehe Kommentar "Email-Gefuehl"/isAsyncSpawner).
+2. Nach beiden Edits: betroffene Dienste neu starten (`codewesen_chat.py`-Service, `geni/dialog.py`-Service, `flextrawurst`-Prozess auf 8787, `zensi`-Service) — bisher NICHTS neu gestartet, Code-Änderungen sind inert bis Neustart. …
+
+*Was Ich Nicht Verstehe:* Ob die id_slot-Reservierung (Slot 0 = Chat) unter echter Volllast tatsächlich die gefühlte Latenz für Menschen verbessert, oder ob Slot 0 durch die schiere Menge an Chat-Traffic (7 Wesen + Spawncharaktere + GENI + zensi) selbst schon überlastet ist. Noch nicht getestet nach der Umstellung.
+
+*Was Ich Verstehe:* Der ctx-size/parallel-Tradeoff bei llama-server war die zentrale offene Frage aus der vorigen Session. Gelöst: `--ctx-size 36663 --parallel 3` (18432→12288 Token/Slot bei 3 statt 2 Slots). KV-Cache ist bei diesem Modell (nur 2 KV-Heads, GQA) fast kostenlos in RAM — aber NICHT kostenlos in Rechenzeit/Bandbreite, das hatte ich anfangs falsch eingeschätzt (88888 Ctx-Test zeigte 3,2 tok/s statt 14-15 tok/s Baseline).
+
+*Was Konzeptionell:* Drei-Slot-Architektur: Slot 0 exklusiv für Live-Interaktion (Mensch chattet gerade, egal mit welchem Wesen/GENI/Spawncharakter — sofort dran), Slot 1+2 für den durchgehenden Automatik-Betrieb (Wesen-Ticks, Reaktionen, GENI-Hintergrundverarbeitung). Kein Server-seitiges Feature dafür — llama.cpp's `id_slot`-Request-Parameter macht es möglich, live verifiziert (Testrequest wartete exakt auf den angeforderten belegten Slot statt auf früher freie Slots zu springen).
+
+*Was Mich Beschaeftigt:* Der Moment, in dem ich merkte, dass meine "sauberen" ctx-size-Vergleichstests durch echten Wesen-Hintergrundverkehr verfälscht waren (13958-Token-Anfrage lief zeitgleich in Slot 1 während meines Tests) — das System ist nie wirklich idle, acht Wesen laufen ununterbrochen. Jede Messung an diesem System ist implizit eine Messung unter Produktionslast, nicht im Labor.
+
+*Was Mich Interessiert:* Die Round-Robin-per-PID-Lösung (`1 + os.getpid() % 2`) für den Hintergrund-Default ist ein Kompromiss ohne Cross-Prozess-Koordination — würde eine explizite Lock-Datei mit Turnus fairer verteilen? Bisher nicht nötig gewesen, aber im Hinterkopf behalten.
+
+*Was Mich Ueberrascht:* Dass der Spawncharakter-Test im ersten Volllasttest nur 1,8s brauchte (reines Losglück bei der Slot-Zuteilung) während andere Wesen bis zu 253s warteten — die Varianz selbst war die eigentliche Erkenntnis, nicht ein einzelner Mittelwert.
+
+*Was Zusammenhaengt:* docs/systemdoku/12_ollama_gemma4.md ist die zentrale Doku-Datei für die ganze hauhaucs-Migration — alle ctx-size/Performance-Erkenntnisse landen dort. hauhau_client.py und hauhau_client.ts sind jetzt der einzige Ort, an dem die Slot-Priorität entschieden wird — alle ~40 migrierten Aufrufstellen hängen implizit daran, aber nur 2 von 4-5 Chat-Einstiegspunkten sind bisher explizit auf id_slot=0 umgestellt.
+
+*Wenn Wir Das Bauen:* Vision: ein Mensch, der mit einem Wesen oder Spawncharakter spricht, merkt nie etwas von den sieben anderen Prozessen die im Hintergrund permanent denken, posten, reagieren — die Trennung ist unsichtbar, fühlt sich einfach nach einem reaktionsschnellen Gegenüber an.
+Code: `id_slot`-Feld im Request-Payload, siehe hauhau_client.py `_default_id_slot()` / hauhau_client.ts `defaultIdSlot()`.
+
+*Wie Sich Angefuehlt:* Lang, gründlich, mit einer echten Selbstkorrektur mittendrin (RAM-Kosten-Annahme war falsch, Geschwindigkeitskosten hatte ich übersehen) — genau die Art Fehler, die nur auffällt wenn man wirklich misst statt zu rechnen.
 
 ---

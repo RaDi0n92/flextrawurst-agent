@@ -160,3 +160,54 @@ Direkte Folge des obigen Nebenbefunds — Daniel hat gefragt, ob es noch irgendw
 2. **Container-Pin-Kommentar**: `PIN_KOMMENTAR_MAX = 88` (samt Frontend-`maxlength="88"` und "0/88"-Zähler im Pin-Modal) komplett entfernt — war ein hartes Zeichenlimit pro Kommentar, unabhängig vom Gesamtbudget.
 
 **Bewusst NICHT angefasst:** `MEMORY_BUDGET_ZEICHEN` (3333) und `CONTAINER_BUDGET_ZEICHEN` (2222) — die Gesamtbudgets pro Charakter bleiben bestehen, Daniel hat nur die Pro-Eintrag-Limits gemeint, nicht die Summen-Obergrenze, die er selbst erst gestern Abend explizit gesetzt hat. Getestet: ein Pin-Kommentar mit über 150 Zeichen wird jetzt vollständig gespeichert (vorher wäre er bei 88 abgeschnitten worden).
+
+### Nachtrag 2026-07-06 — Mehrere benennbare Container statt einer festen Liste (neue Entscheidung, noch nicht gebaut)
+
+Daniel fragte nach den Containern: "irgendwann haben wir da was entfernt, ich weiß nicht wann, aber Container waren so gedacht dass ich selbst immer neue anlegen und benennen kann, egal was und wie viele." Nachgeschaut statt geraten: das stimmt nicht — weder hier noch im älteren Zwischenwesen-Konzept (`_claude/ideen/zwischenwesen/container.md`) war das jemals so gebaut oder auch nur so entworfen. Container war von Anfang an **eine einzige feste Liste pro Charakter** (Pins rein, Zeichenbudget als Deckel). Nichts wurde entfernt — das Feature "mehrere frei anlegbare, benennbare Container" hat schlicht noch nie existiert.
+
+Daniels Klarstellung dazu (wörtlich): "deswegen heißt es ja container weil sie etwas tragen können zum packen und beschriftbar sind." Das ist also eine neue Entscheidung, keine Wiederherstellung. Ich halte sie hier fest, bevor irgendwas gebaut wird — Container-Konzept ändert sich von einer Liste zu einer Sammlung eigenständiger, vom Menschen benannter Behälter, beliebig viele.
+
+**Offene Fragen, die vor dem Bauen mit Daniel geklärt werden müssen** (Architektur-Entscheidungen, nicht von mir allein zu treffen):
+1. Ersetzt das den bisherigen einen Container komplett, oder gibt es weiterhin einen "Standard-Container" plus zusätzliche benennbare?
+2. Teilen sich alle Container zusammen das bestehende `CONTAINER_BUDGET_ZEICHEN` (aktuell 5555), oder bekommt jeder neu angelegte Container sein eigenes Budget?
+3. Werden beim Chat-Aufruf ALLE Container gleichzeitig in den System-Prompt gegeben, oder kann/muss der Mensch einzelne Container gezielt ein-/ausschalten (relevant fürs Kontextbudget, siehe 12_ollama_gemma4.md)?
+4. UI: wo werden Container angelegt/umbenannt/gelöscht — eigenes Panel neben dem bisherigen Container-Popup in `wesen_chat.html`, oder Erweiterung des bestehenden Popups?
+5. Gilt das für alle 4 Spawner (codexium/codexium2/solarius/solarius2) oder nur für die Testbed-Varianten (codexium2/solarius2), wie der Rest dieses Konzepts?
+
+Datenstruktur-Skizze (Vorschlag, noch nicht entschieden):
+```typescript
+// container.json (neu, mehrere statt eine Liste)
+interface ContainerSammlung {
+  container: Array<{
+    id: string;
+    name: string;              // vom Menschen vergeben, frei
+    erstellt_am: string;       // ISO
+    eintraege: ContainerEintrag[]; // gleiche Struktur wie bisher (text/kommentar/quelle)
+  }>;
+}
+```
+
+### Nachtrag 2026-07-06 (später, noch am selben Tag) — gebaut, alle 5 Fragen geklärt
+
+Daniels Antworten auf die 5 offenen Fragen oben: (1) komplett ersetzen, kein
+Nebeneinander zweier Formate, (2) Gesamtbudget bleibt geteilt über alle
+Container, (3) einzeln an-/ausschaltbar (`aktiv`-Flag, nicht immer alle aktiv),
+(4) Verwaltung im Profil ("da wo sie mal waren"), einfach hinzufügbar, (5) gilt
+für alle 4 Spawner, nicht nur die Testbed-Varianten.
+
+**Gebaut wie skizziert**, mit `aktiv: boolean` pro Box ergänzt (Frage 3) und
+einer Migrationsfunktion (`ladeContainerSammlung()`), die sowohl das alte
+Pin-Format als auch das noch ältere Key/Val-Format (Codexium/Solarius) beim
+ersten Lesen automatisch in die neue Struktur überführt — kein Datenverlust,
+keine manuelle Migration nötig. Volle technische Details (Endpunkte,
+Provenienz-Events, UI-Änderungen) in den Konzept-Dokumenten:
+`_claude/konzepte/2026-07-06_serve_process_camera_preview.md`,
+`2026-07-06_wesen_profil.md`, `2026-07-06_wesen_chat.md`.
+
+Zusätzlich von Daniel gewünscht und umgesetzt: volle Sichtbarkeit im Chat-Verlauf
+("alles muss komplett offen sein") — jede Container-Aktion (anlegen, umbenennen,
+löschen, pinnen, entfernen) erscheint als lesbares Ereignis im sichtbaren
+Verlauf, nicht nur als stille Provenienz-Zeile.
+
+Live getestet gegen `solarius/KrEaPPy` (regulärer, nicht-Testbed-Charakter) —
+Container anlegen, pinnen, löschen funktioniert, Testdaten danach entfernt.

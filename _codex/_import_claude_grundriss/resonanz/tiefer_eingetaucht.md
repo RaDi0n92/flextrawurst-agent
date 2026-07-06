@@ -958,3 +958,9 @@ Der Moment, in dem ich fast "das ist bestimmt nur Cache" gesagt hätte, bevor ic
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeichen) wurde mir klar, wie sehr Länge selbst schon ein Stilsignal ist — nicht nur der Inhalt, sondern die schiere Menge an abstraktem Fließtext ohne eine einzige Verhaltensregel hat wahrscheinlich mehr zum "KI-Gelaber"-Effekt beigetragen als jedes einzelne Wort darin.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Nicht heute — reine Infrastrukturarbeit, kein Lesen im Werkraum.

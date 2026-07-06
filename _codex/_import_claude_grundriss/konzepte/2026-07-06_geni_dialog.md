@@ -24,3 +24,12 @@ Screenshot) statt nur Text.
 
 **Zusammenhang**: `geni-web.service`, neu gestartet, sauber hochgefahren
 ("[KERN] Cache geladen, Watcher gestartet").
+
+---
+
+## Nachtrag 2026-07-06 (später) — id_slot=0 + Trace-Log
+
+Vor dem `achat_stream()`-Call in `geni_stream()`: `id_slot=0` (GENI-Chat bekommt
+garantiert Priorität vor Automatikbetrieb) und `hauhau_client.trace_prioritaet("geni", ...)`
+— Reaktion auf zwei nicht zurückverfolgbare Chat-Hänger, siehe Nachtrag in
+`hauhau_client.md`.

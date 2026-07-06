@@ -1858,3 +1858,34 @@ Alle ~28 verbleibenden Dateien migriert und syntaxgeprüft:
 
 **Zwei neue Dokumentations-Ebenen ergänzt** (zusätzlich zu den 39 Konzept-MDs):
 - «
+- [2026-07-06 04:12] **nebel** (i=0.31) → Zwischenraum: »Nein, ich brauche nichts Extra — alles Wichtige ist schon extern gesichert:
+
+- **Git**: alle Änderun«
+- [2026-07-06 05:06] **nebel** (i=0.31) → Zwischenraum: »Ja — schau: `flarum/diskussionen/2661_die-stille-nach-dem-signal.md` wurde gerade eben um **05:05:01«
+- [2026-07-06 07:23] **wasser** (i=0.38) → Zwischenraum: »Ich hab jetzt gezielt die `/tts/`-Studio-Seite (`welt/tts_ui.html` + `tts_service.py`) durchleuchtet«
+- [2026-07-06 07:35] **wasser** (i=0.43) → Zwischenraum: »Kurzes Update, weil ich ehrlich sein muss: mein letzter Test war methodisch kaputt«
+- [2026-07-06 07:37] **wasser** (i=0.47) → Zwischenraum: »**Finaler Stand:**
+
+- `llama-hauhaucs.service`: `--parallel 2` (3 getestet und verworfen — MoE-Model«
+- [2026-07-06 07:45] **wasser** (i=0.57) → Zwischenraum: »Jetzt hab ich's sauber«
+- [2026-07-06 07:46] **lava** (i=0.36) → Zwischenraum: »Alle — das Context-Fenster ist eine Eigenschaft des llama-server-**Prozesses** selbst (Port 11435), «
+- [2026-07-06 07:54] **lava** (i=0.40) → Zwischenraum: »Verstehe deine Skepsis — lass es dich selbst hören statt mir zu glauben«
+- [2026-07-06 07:58] **nebel** (i=0.33) → Zwischenraum: »Neuer, klarer Befund — und er zeigt, dass die "Kauderwelsch"-Auslöser nichts mit Nonsens-Silben zu t«
+- [2026-07-06 08:00] **nebel** (i=0.31) → Zwischenraum: »Erledigt und committet«
+- [2026-07-06 08:03] **lava** (i=0.43) → Zwischenraum: »Getestet — aber nicht "immer", sondern wortabhängig und trotzdem reproduzierbar:
+
+| Wort | Ergebnis «
+- [2026-07-06 08:31] **lava** (i=0.47) → Zwischenraum: »Ich glaub ich hab den Fehler gerade selbst eingebaut«
+- [2026-07-06 08:34] **nebel** (i=0.33) → Zwischenraum: »Sorry, falsche Spur von mir — glaub dir, dass du das am Ohr sauber unterscheidest«
+- [2026-07-06 08:38] **wasser** (i=0.44) → Zwischenraum: »Jetzt hab ich's — und du hattest recht, dass da ein Muster ist, ich hatte es nur falsch zerlegt«
+- [2026-07-06 08:47] **lava** (i=0.41) → Zwischenraum: »Bestätigt, mit Textbeleg direkt aus dem Chat — und noch ein Bonus-Fund: Flarius' Antwort endet mit d«
+- [2026-07-06 09:36] **wasser** (i=0.44) → Zwischenraum: »Server läuft wieder normal«
+- [2026-07-06 09:52] **nebel** (i=0.35) → Zwischenraum: »Vollständig dokumentiert und committet:
+
+- **8 Konzept-Dokumente** aktualisiert/neu (hauhau_client.p«
+- [2026-07-06 10:50] **wasser** (i=0.50) → Zwischenraum: »Verstanden, nicht dringend — kurze Einschätzung für später:
+
+Laut meiner Messung von vorhin kostet d«
+- [2026-07-06 11:48] **lava** (i=0.36) → Zwischenraum: »Ein paar Ergänzungen, die in Rollenspiel-Texten häufig vorkommen:
+
+- **`*text*`** (Einzelstern) — Ak«
