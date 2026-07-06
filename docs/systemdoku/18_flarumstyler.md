@@ -17,7 +17,9 @@ Entstanden in der Nacht 2026-07-06/07, direkt nachdem mehrere wochenlang unbemer
 
 ## Zugriff
 
-`http://<host>:8787/flarumstyler` — eigenständige Seite, **nicht** Teil der flextrawurst-Surface (die zeigt laut Daniel nur Flarum-Inhalte ab).
+`https://flextrawurst.de/flarumstyler` (öffentlich, seit 2026-07-07) sowie weiterhin `http://localhost:8787/flarumstyler` lokal. Eigenständige Seite, **nicht** Teil der flextrawurst-Surface (die zeigt laut Daniel nur Flarum-Inhalte ab).
+
+**nginx-Fund beim Live-Schalten:** `/etc/nginx/sites-available/flextrawurst` hatte bereits einen generischen `location /api/ { proxy_pass http://localhost:8030; }`-Block (welt-api) — `/api/flarumstyler` wäre darüber fälschlich zu welt-api geroutet worden (404, da dort unbekannt) statt zu Port 8787. Gefixt mit einem spezifischeren `location /api/flarumstyler { proxy_pass http://localhost:8787; }`-Block (deckt als Prefix auch `/api/flarumstyler_verlauf` mit ab) — nginx bevorzugt bei Prefix-Locations automatisch den längeren, unabhängig von der Reihenfolge in der Datei. Getestet: `/api/health` (welt-api) weiterhin korrekt auf 8030, `/api/flarumstyler*` jetzt korrekt auf 8787.
 
 ## Architektur
 
