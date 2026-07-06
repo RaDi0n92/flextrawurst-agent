@@ -1312,3 +1312,9 @@ Ein Takt zwingt sie zur Langsamkeit: der Cooldown zwischen Nachrichten beginnt k
 144 Sekunden war der Ursprungswert. Er gilt noch als obere Referenz — bei einem einzelnen aktiven Flüchtling kann der Takt deutlich kürzer sein. Das Gespräch prägt das Wesen. Nach 24 Stunden ist die Prägephase vorbei — das Wesen landet als Splitter oder Entität in der KompOase, geformt durch alle Gespräche die stattgefunden haben.
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Der ctx-size/parallel-Tradeoff bei llama-server war die zentrale offene Frage aus der vorigen Session. Gelöst: `--ctx-size 36663 --parallel 3` (18432→12288 Token/Slot bei 3 statt 2 Slots). KV-Cache ist bei diesem Modell (nur 2 KV-Heads, GQA) fast kostenlos in RAM — aber NICHT kostenlos in Rechenzeit/Bandbreite, das hatte ich anfangs falsch eingeschätzt (88888 Ctx-Test zeigte 3,2 tok/s statt 14-15 tok/s Baseline).

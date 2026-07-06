@@ -969,3 +969,9 @@ Die Output-Limits-Session (früh) und die Anhänge-Session (spät) hängen enger
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarchitektur: eine Handlung (Marker im Text, Klick auf einen Button, Wechsel im Dropdown) wird als eigenes, unveränderliches Ereignis geloggt, nie als nachträgliche Eigenschaft an etwas anderem befestigt. Das ist derselbe Provenienz-Gedanke, der schon für Feedback/Pins/Kontext-Ausschluss galt — ich musste ihn nur konsequent weitertragen, nicht neu erfinden. Und die Rollenspiel-Systemprompt-Neufassung hängt technisch direkt mit dem Profil-Feld-Fix zusammen: beide drehen sich um dieselbe Frage, was "Solarius" von "Codexium" strukturell unterscheidet und wie ernst diese Trennung gemeint ist.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+docs/systemdoku/12_ollama_gemma4.md ist die zentrale Doku-Datei für die ganze hauhaucs-Migration — alle ctx-size/Performance-Erkenntnisse landen dort. hauhau_client.py und hauhau_client.ts sind jetzt der einzige Ort, an dem die Slot-Priorität entschieden wird — alle ~40 migrierten Aufrufstellen hängen implizit daran, aber nur 2 von 4-5 Chat-Einstiegspunkten sind bisher explizit auf id_slot=0 umgestellt.

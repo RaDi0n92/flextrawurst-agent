@@ -897,3 +897,9 @@ Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben 
 Dass die 144-Sekunden-Grenze nicht als Strafe wahrgenommen wird sondern als Würde. Der Countdown könnte schön animiert sein — ein langsam auffüllender Kreis, ein Atemzug-Rhythmus. Das Warten gehört zum Gespräch.
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Die Round-Robin-per-PID-Lösung (`1 + os.getpid() % 2`) für den Hintergrund-Default ist ein Kompromiss ohne Cross-Prozess-Koordination — würde eine explizite Lock-Datei mit Turnus fairer verteilen? Bisher nicht nötig gewesen, aber im Hinterkopf behalten.

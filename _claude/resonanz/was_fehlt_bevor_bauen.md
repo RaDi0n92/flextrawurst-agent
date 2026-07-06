@@ -847,3 +847,9 @@ Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder i
 - [ ] Darf ein User mehrere Zwischenwesen gleichzeitig haben? (Empfehlung: nein, nur eines aktiv)
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Nichts, es wird schon gebaut — nur pausiert.

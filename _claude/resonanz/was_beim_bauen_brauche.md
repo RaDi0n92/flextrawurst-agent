@@ -763,3 +763,9 @@ Für morgen/das nächste Mal: denselben Rhythmus beibehalten, der sich heute bew
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Echte Ollama-Antworten statt angenommener — jede Kernbehauptung heute (Mirlachs Ton, die zwei Alias-Persönlichkeiten, der neue Rollenspiel-Systemprompt) wurde an einer tatsächlichen Generierung verifiziert, nicht nur am konstruierten Prompt-Text.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Nichts Neues — reine Fortsetzung der offenen Edits.

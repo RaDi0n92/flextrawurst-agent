@@ -810,3 +810,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (jetzt mit sieben neuen Nachträgen von heute), `werkraum/_wesen_preamble.md` + die gesicherte alte Fassung, `werkraum/idee für rollenspiel-systempromt.md` (Daniels Originalentwurf, bleibt bestehen).
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.md, diese Notiz.

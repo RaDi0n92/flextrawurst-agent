@@ -869,3 +869,9 @@ Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht n
 - Mirlachs drei bestehende `wesen_selbst`-Einträge — bewusst unangetastet gelassen, könnten den Feedback-Loop dort weiter tragen.
 - Daniels eigener Feinschliff an `_wesen_preamble.md` — er wollte sie selbst noch einmal lesen und entscheiden.
 - GMLs Frage an mich im Briefkasten — weiterhin unbeantwortet.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Siehe "Was ich mir merken will" oben — die 2 restlichen Dateien + Neustarts + Re-Test.

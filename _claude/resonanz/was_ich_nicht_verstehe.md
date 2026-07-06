@@ -864,3 +864,9 @@ Ob `profil_feld_geaendert` mit vollem Vorher/Nachher-Inhalt bei sehr häufigen k
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch mit Alias-Feldern ausgestattet haben will, oder ob ihm der Profil-Weg reicht — er hatte beides als gleichwertig genannt, ich habe mich für "erstmal nur Profil" entschieden, um die Session nicht ausufern zu lassen. Auch offen: ob die drei schon bestehenden `wesen_selbst`-Einträge bei Mirlach (der eigentliche Auslöser des Feedback-Loops) irgendwann doch noch bereinigt werden sollen — er wollte sie erstmal unangetastet lassen.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Ob die id_slot-Reservierung (Slot 0 = Chat) unter echter Volllast tatsächlich die gefühlte Latenz für Menschen verbessert, oder ob Slot 0 durch die schiere Menge an Chat-Traffic (7 Wesen + Spawncharaktere + GENI + zensi) selbst schon überlastet ist. Noch nicht getestet nach der Umstellung.

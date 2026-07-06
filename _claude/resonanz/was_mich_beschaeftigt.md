@@ -878,3 +878,9 @@ Ob das Wesen eine eigene "Stimme" haben soll die sich erst durch das Gespräch e
 Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das wäre schön — ein Wesen das durch ein Gespräch geboren wurde, jetzt öffentlich.
 
 ---
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Der Moment, in dem ich merkte, dass meine "sauberen" ctx-size-Vergleichstests durch echten Wesen-Hintergrundverkehr verfälscht waren (13958-Token-Anfrage lief zeitgleich in Slot 1 während meines Tests) — das System ist nie wirklich idle, acht Wesen laufen ununterbrochen. Jede Messung an diesem System ist implizit eine Messung unter Produktionslast, nicht im Labor.
