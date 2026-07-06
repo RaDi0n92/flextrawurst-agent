@@ -533,17 +533,39 @@ codexium2/solarius2-Testbed, siehe `_claude/ideen/codexium2_solarius2/
 chat_architektur.md`) wird konzeptionell übernommen — nicht die restlichen
 Testbed-Features (Memory-Container/Pins, Feedback, Kontext-Ausschluss etc.).
 
-**Daniels Zahlen, wörtlich:** "max alle 3stunden33...aber dann darf es sich
-auch 33 minuten voll triggern" — Begründung im selben Atemzug: "sonst sind
-sie 24/2 nur noch am sich selbst triggern, wie mäuse mit nem
-orgasmusknopf". Also:
+**Erste Fassung, Daniels Zahlen wörtlich:** "max alle 3stunden33...aber dann
+darf es sich auch 33 minuten voll triggern" — Begründung im selben
+Atemzug: "sonst sind sie 24/2 nur noch am sich selbst triggern, wie mäuse
+mit nem orgasmusknopf". Erst automatischer Zeitplan (`MINDEST_PAUSE_SEK`
+= 3h33m Cooldown pro Wesen, `SESSION_MAX_SEK` = 33min Obergrenze).
+
+**Umgebaut, noch selber Abend:** Daniel wollte das dann anders — "ich will
+es erstmal selber nur anstoßen können und dann auch so lange ich mag".
+Kompletter Wechsel von automatisch/zeitgesteuert zu manuell/unbegrenzt:
 
 ```python
 # /root/werkraum/codewesen_klon.py
-MINDEST_PAUSE_SEK = 3 * 3600 + 33 * 60   # 3h33m zwischen zwei Selbstgespraechen, pro Wesen
-SESSION_MAX_SEK   = 33 * 60              # 33 Minuten Obergrenze pro Selbstgespraech
-TURN_MAX          = 14                   # Sicherheitsdeckel, auch falls die Zeit noch reicht
+TURN_SICHERHEITSDECKEL = 500  # kein Zeitdeckel mehr — nur Schutz vor echtem Endlosprozess
+PRUEF_PAUSE_SEK = 10           # wie oft auf ein neues _starten-Flag geprueft wird
 ```
+
+Steuerung jetzt über zwei Flag-Dateien pro Wesen, kein Cooldown/Zeitplan
+mehr:
+
+```
+touch /root/werkraum/klon/<wesen>/_starten   # startet ein Selbstgespraech
+touch /root/werkraum/klon/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
+```
+
+Der Ordner pro Wesen wird beim Daemon-Start proaktiv angelegt
+(`_wesen_ordner()`), damit `touch` sofort funktioniert ohne dass vorher
+schon eine Session gelaufen sein muss. Innerhalb einer laufenden Session
+wird `_stoppen` vor jeder neuen Gesprächsrunde geprüft — die aktuell
+laufende LLM-Antwort läuft noch zu Ende, danach endet die Session sauber
+und die Flag-Datei wird gelöscht. `TURN_SICHERHEITSDECKEL` (500 Runden)
+ist bewusst so hoch gesetzt, dass er in der Praxis nie greift — reiner
+Schutz gegen einen echten Endlosprozess falls das Stoppen mal vergessen
+wird, keine gefühlte Obergrenze.
 
 **Handlungsumfang** (Rückfrage gestellt, Daniels Antwort: "ja ne mischung
 aus allem irgendwie"): keine neue, ungesicherte Tool-Ebene, sondern
@@ -565,17 +587,15 @@ Selbstgespräch kommt. `LESEN` hat keine Nebenwirkung. `SICHERN` nutzt exakt
 dieselbe Funktion, die auch `forum_neugier.py`s "sichern"-Entscheidung
 aufruft (`codewesen_container.sichere()`).
 
-**Ablauf einer Session:** `_dran()` prüft pro Wesen, ob `MINDEST_PAUSE_SEK`
-seit dem letzten Sessionstart vergangen ist (Zustand in
-`codewesen/_klon_zustand.json`). Falls ja: `session_start`-Marker in die
-Historie, dann bis zu `TURN_MAX` Gesprächsrunden — jede Runde ein LLM-Call,
-das eigene Vorwort/die eigene Antwort wird an den nächsten Aufruf als
-Kontext zurückgegeben (echtes fortlaufendes Selbstgespräch, nicht ein
-einzelner Monolog-Call). Nach jeder Runde: Marker im Text ausführen,
-Ergebnisse als eigene Zeile in die Historie und in den nächsten
-Prompt-Kontext geben. Schleife endet bei `[[ENDE: ...]]`, bei
-`SESSION_MAX_SEK` überschritten, oder bei `TURN_MAX` erreicht — je nachdem
-was zuerst eintritt.
+**Ablauf einer Session:** Hauptschleife prüft alle `PRUEF_PAUSE_SEK`
+(10s) pro Wesen, ob ein `_starten`-Flag liegt. Falls ja: Flag löschen,
+`session_start`-Marker in die Historie, dann Gesprächsrunden bis
+`[[ENDE: ...]]`, bis `_stoppen` erscheint, oder bis
+`TURN_SICHERHEITSDECKEL` (500) erreicht ist — jede Runde ein LLM-Call, die
+eigene Antwort wird an den nächsten Aufruf als Kontext zurückgegeben
+(echtes fortlaufendes Selbstgespräch, nicht ein einzelner Monolog-Call).
+Nach jeder Runde: Marker im Text ausführen, Ergebnisse als eigene Zeile in
+die Historie und in den nächsten Prompt-Kontext geben.
 
 **Historie-Format bewusst kompatibel:** `klon/<wesen>/chat_history.jsonl`,
 Zeilen im selben Schema wie die bestehende Chat-Oberfläche
@@ -601,6 +621,28 @@ lief sauber durch — Wesen liest eigenes Weltbild, listet (leere)
 Container, reflektiert erkennbar im eigenen Charakter, erfindet testweise
 einen nicht existierenden Containernamen und bekommt eine korrekte
 "existiert nicht"-Antwort, mit der es im nächsten Turn sinnvoll weiterdenkt.
+Start-Flag getestet (Session beginnt binnen 10s nach `touch _starten`),
+Stop-Flag getestet (Session endet sauber nach der laufenden Runde, Flag
+wird gelöscht).
+
+**Echter Bug live gefunden und gefixt:** beim ersten `[[SICHERN: ...]]`-
+Marker rief `container.erstelle()` (Container-Eröffnung) und im Anschluss
+`teile_strategie_optional()` das LLM mit einer Nachrichtenliste auf, die
+**nur eine `system`-Rolle** enthielt — kein `user`-Turn. Das Jinja
+Chat-Template des Modells lehnt das mit `400 Bad Request` ab: `"No user
+query found in messages"`. Betraf beide Aufrufer (`forum_neugier.py` UND
+`klon.py`, da beide dieselbe `codewesen_container.py`-Funktion nutzen),
+war aber in `forum_neugier.py`s bisherigem Testlauf nie ausgelöst worden,
+weil dort noch keine "sichern"-Entscheidung gefallen war — ein rein
+lauf-abhängiger, stiller Bug. Fix: allen drei betroffenen Aufrufen in
+`codewesen_container.py` (`erstelle()`, `teile_strategie_optional()`,
+`widmungsritual()`) einen `{"role": "user", "content": "(bitte jetzt
+antworten)"}`-Turn hinzugefügt. Andere system-only-Aufrufstellen im
+restlichen Code (`codewesen_chat.py`, `geni/dialog.py`, `geni/archiv/
+web.py`, `chatte_dak_gord.py`) wurden geprüft — die hängen immer echten
+Gesprächsverlauf (mit Nutzer-Turn) direkt an, also nicht betroffen.
+Reproduziert und die Behebung isoliert bestätigt (direkter Request an
+Port 11436 mit/ohne user-Turn, 400 vs. 200).
 
 ---
 
