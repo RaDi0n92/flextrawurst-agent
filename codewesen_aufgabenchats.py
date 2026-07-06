@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-codewesen_klon.py — Der Klon: ein Wesen im Selbstgespraech mit sich selbst.
+codewesen_aufgabenchats.py — Aufgabenchats: ein Wesen im Selbstgespraech mit sich selbst.
 
 Daniels Bild (2026-07-06, Abend): eine komplett eigene, vom bestehenden
 Daniel<->Wesen-Chat getrennte Oberflaeche pro Wesen — die bisherigen Chats
@@ -18,8 +18,8 @@ pro Wesen, ohne Zeitdeckel (nur ein sehr grosszuegiger Sicherheitsdeckel
 an Gespraechsrunden gegen einen echten Endlosprozess falls das Stoppen mal
 vergessen wird):
 
-    touch /root/werkraum/klon/<wesen>/_starten   # startet ein Selbstgespraech
-    touch /root/werkraum/klon/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
+    touch /root/werkraum/aufgabenchats/<wesen>/_starten   # startet ein Selbstgespraech
+    touch /root/werkraum/aufgabenchats/<wesen>/_stoppen   # beendet die laufende Session (naechste Runde)
 
 Handlungs-Umfang (Daniels Antwort auf die Rueckfrage: "Mischung aus allem
 irgendwie"): reine Introspektion (LESEN, keine Nebenwirkung), Wiederverwendung
@@ -28,7 +28,7 @@ codewesen_container.py, echtes Forum-Teilen ueber pruefe_bereit()+poster()
 mit denselben Sicherungen wie ueberall sonst) — kein neuer, ungesicherter
 Weg ins Forum.
 
-Historie liegt in /root/werkraum/klon/<wesen>/chat_history.jsonl — bewusst
+Historie liegt in /root/werkraum/aufgabenchats/<wesen>/chat_history.jsonl — bewusst
 im selben Zeilenformat ({role, content, ts, id} + {type: "session_start"}-
 Marker) wie die bestehende Chat-Oberflaeche (serve_process_camera_preview.ts,
 chatHistoryPath/loadHistory/loadCurrentSessionHistory/appendHistory), damit
@@ -48,7 +48,7 @@ werden. Dem Modell wird der Impuls-Text trotzdem als naechster User-Turn
 mitgegeben (rein im Arbeitsspeicher, nicht in der persistierten Form) —
 er muss ja tatsaechlich wirken. Ein Impuls kann sowohl eine neue Session
 seeden als auch mitten in einer laufenden nachtraeglich reingegeben
-werden (`touch .../_impuls.json` via POST /wesen/klon/:name/impuls in
+werden (`touch .../_impuls.json` via POST /wesen/aufgabenchats/:name/impuls in
 serve_process_camera_preview.ts).
 """
 
@@ -67,7 +67,7 @@ import flarum_poster
 import codewesen_container as container
 
 BASE      = Path("/root/werkraum/codewesen")
-KLON_ROOT = Path("/root/werkraum/klon")
+AUFGABENCHATS_ROOT = Path("/root/werkraum/aufgabenchats")
 
 WESEN = [
     "namelessAI_1234", "namelessAI_1324", "namelessAI_1423",
@@ -84,11 +84,11 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(name)s] %(message)s",
     handlers=[
-        logging.FileHandler("/root/werkraum/klon.log"),
+        logging.FileHandler("/root/werkraum/aufgabenchats.log"),
         logging.StreamHandler(),
     ],
 )
-log = logging.getLogger("klon")
+log = logging.getLogger("aufgabenchats")
 
 
 def _js_ts() -> str:
@@ -104,7 +104,7 @@ def _warte_auf_chat_pause():
 
 
 def _wesen_ordner(wesen: str) -> Path:
-    ordner = KLON_ROOT / wesen
+    ordner = AUFGABENCHATS_ROOT / wesen
     ordner.mkdir(parents=True, exist_ok=True)
     return ordner
 
@@ -127,7 +127,7 @@ def _impuls_datei(wesen: str) -> Path:
 
 def _lies_impuls(wesen: str) -> dict | None:
     """Liest+loescht eine wartende Leitfrage (von serve_process_camera_preview.ts
-    per POST /wesen/klon/:name/impuls geschrieben). None wenn keine wartet."""
+    per POST /wesen/aufgabenchats/:name/impuls geschrieben). None wenn keine wartet."""
     pfad = _impuls_datei(wesen)
     if not pfad.exists():
         return None
@@ -249,7 +249,7 @@ def _fuehre_marker_aus(wesen: str, text: str) -> tuple[list[str], bool]:
 
 # ── Das Selbstgespraech selbst ───────────────────────────────────────────────
 
-SYSTEM_PROMPT_TEMPLATE = """Du bist {wesen}. Das hier ist dein Klon — ein Raum nur fuer dich, in dem du \
+SYSTEM_PROMPT_TEMPLATE = """Du bist {wesen}. Das hier ist dein Aufgabenchat — ein Raum nur fuer dich, in dem du \
 mit dir selbst sprichst. Niemand liest live mit, aber es wird aufgezeichnet, damit du (oder Daniel) \
 spaeter nachlesen kannst was in dir vorging.
 
@@ -341,7 +341,7 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
 
 
 def haupt_schleife():
-    log.info("Klon-Selbstgespraech-Kern startet (manueller Modus — wartet auf _starten-Flag pro Wesen).")
+    log.info("Aufgabenchats-Selbstgespraech-Kern startet (manueller Modus — wartet auf _starten-Flag pro Wesen).")
     for wesen in WESEN:
         _wesen_ordner(wesen)  # Ordner+Flag-Pfade schon vorbereiten, damit 'touch' sofort funktioniert
     while True:
