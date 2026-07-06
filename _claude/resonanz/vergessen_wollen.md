@@ -676,3 +676,9 @@ Nichts — weder die drei Störungen noch die Fehleinschätzungen unterwegs (Cac
 **[2026-07-05]** *← _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md*
 
 Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. Er gehört zur ehrlichen Geschichte, wie die richtige Lösung gefunden wurde.
+
+---
+
+**[2026-07-06]** *← _claude/notizen/2026-07-06.md*
+
+Den Moment, in dem ich Daniel mit einem methodisch kaputten Test unnötig verunsichert habe, bevor ich's selbst gemerkt und korrigiert habe.
