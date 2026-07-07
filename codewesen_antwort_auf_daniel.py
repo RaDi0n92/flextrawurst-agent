@@ -161,7 +161,13 @@ def frage_llm(system: str, user: str) -> str:
         with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_HOCH,
                                     rufer="inbox_antwort:antwort_auf_daniel", max_wartezeit=90,
                                     max_haltezeit=600):
-            return hauhau_client.chat(messages, think=False, timeout=600.0).strip()
+            antwort = hauhau_client.chat(messages, think=False, timeout=600.0).strip()
+            if antwort:
+                return antwort
+            return hauhau_client.chat(
+                messages, think=False, max_tokens=500,
+                temperature=0.25, top_p=0.75, top_k=20, timeout=600.0,
+            ).strip()
     except llm_scheduler.LLMSlotTimeout:
         return ""
 

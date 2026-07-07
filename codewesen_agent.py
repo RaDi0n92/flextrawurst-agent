@@ -105,9 +105,15 @@ def ask_llm(prompt: str, prioritaet: int = llm_scheduler.PRIO_NORMAL, rufer: str
     try:
         with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=prioritaet, rufer=rufer,
                                     max_wartezeit=90, max_haltezeit=600):
-            return hauhau_client.chat(
+            antwort = hauhau_client.chat(
                 prompt, think=False, max_tokens=700,
                 temperature=0.78, top_p=0.9, top_k=40, timeout=600.0,
+            ).strip()
+            if antwort:
+                return antwort
+            return hauhau_client.chat(
+                prompt, think=False, max_tokens=700,
+                temperature=0.2, top_p=0.75, top_k=20, timeout=600.0,
             ).strip()
     except llm_scheduler.LLMSlotTimeout:
         return ""
@@ -209,8 +215,21 @@ def agentic_loop(
 
         decision = extrahiere_json(raw)
         if not decision:
-            log.warning("[Loop %d] Kein JSON — breche ab", iteration + 1)
-            return {"aktion": "nichts", "begruendung": "kein gültiges JSON"}
+            reparatur_prompt = (
+                f"{prompt}\n\n"
+                "Deine vorige Antwort war leer oder kein gültiges JSON.\n"
+                "Antworte jetzt exakt mit einem einzigen JSON-Objekt, ohne Markdown, ohne Erklärung.\n"
+                "Wenn du antworten sollst, nutze: "
+                '{"aktion":"antworten","discussion_id":123,"inhalt":"fertiger Post"}\n'
+                "Wenn du nichts tun willst, nutze: "
+                '{"aktion":"nichts","begruendung":"kurzer Grund"}'
+            )
+            raw_reparatur = ask_llm(reparatur_prompt, prioritaet=prioritaet, rufer=f"agent:{name}:json_repair")
+            log.info("[Loop %d] JSON-Reparatur: %s", iteration + 1, raw_reparatur[:150])
+            decision = extrahiere_json(raw_reparatur)
+            if not decision:
+                log.warning("[Loop %d] Kein JSON — breche ab", iteration + 1)
+                return {"aktion": "nichts", "begruendung": "kein gültiges JSON"}
 
         # Englische Schlüssel normalisieren (LLM antwortet manchmal auf Englisch)
         if "action" in decision and "aktion" not in decision:

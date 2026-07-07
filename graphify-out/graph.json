@@ -1087,7 +1087,7 @@
       "label": "extrahiere_json()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L116",
+      "source_location": "L122",
       "id": "codewesen_agent_extrahiere_json",
       "community": 5,
       "norm_label": "extrahiere_json()"
@@ -1096,7 +1096,7 @@
       "label": "system_prompt()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L130",
+      "source_location": "L136",
       "id": "codewesen_agent_system_prompt",
       "community": 5,
       "norm_label": "system_prompt()"
@@ -1105,7 +1105,7 @@
       "label": "agentic_loop()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L174",
+      "source_location": "L180",
       "id": "codewesen_agent_agentic_loop",
       "community": 5,
       "norm_label": "agentic_loop()"
@@ -1114,7 +1114,7 @@
       "label": "fuehre_aktion_aus()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L246",
+      "source_location": "L265",
       "id": "codewesen_agent_fuehre_aktion_aus",
       "community": 5,
       "norm_label": "fuehre_aktion_aus()"
@@ -1123,7 +1123,7 @@
       "label": "verarbeite_inbox()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L316",
+      "source_location": "L335",
       "id": "codewesen_agent_verarbeite_inbox",
       "community": 5,
       "norm_label": "verarbeite_inbox()"
@@ -1132,7 +1132,7 @@
       "label": "analysiere_gespraech_vereinbarungen()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L382",
+      "source_location": "L401",
       "id": "codewesen_agent_analysiere_gespraech_vereinbarungen",
       "community": 5,
       "norm_label": "analysiere_gespraech_vereinbarungen()"
@@ -1141,7 +1141,7 @@
       "label": "obsidian_navigation()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L485",
+      "source_location": "L504",
       "id": "codewesen_agent_obsidian_navigation",
       "community": 5,
       "norm_label": "obsidian_navigation()"
@@ -1150,7 +1150,7 @@
       "label": "verarbeite_vereinbarungen()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L551",
+      "source_location": "L570",
       "id": "codewesen_agent_verarbeite_vereinbarungen",
       "community": 5,
       "norm_label": "verarbeite_vereinbarungen()"
@@ -1159,7 +1159,7 @@
       "label": "verarbeite_feed()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L600",
+      "source_location": "L619",
       "id": "codewesen_agent_verarbeite_feed",
       "community": 5,
       "norm_label": "verarbeite_feed()"
@@ -1168,7 +1168,7 @@
       "label": "verarbeite_selbstreflexion()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L657",
+      "source_location": "L676",
       "id": "codewesen_agent_verarbeite_selbstreflexion",
       "community": 5,
       "norm_label": "verarbeite_selbstreflexion()"
@@ -1177,7 +1177,7 @@
       "label": "verarbeite_pflichtpost_88min()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L680",
+      "source_location": "L699",
       "id": "codewesen_agent_verarbeite_pflichtpost_88min",
       "community": 5,
       "norm_label": "verarbeite_pflichtpost_88min()"
@@ -1186,7 +1186,7 @@
       "label": "verarbeite_forum_impuls()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L715",
+      "source_location": "L734",
       "id": "codewesen_agent_verarbeite_forum_impuls",
       "community": 5,
       "norm_label": "verarbeite_forum_impuls()"
@@ -1195,7 +1195,7 @@
       "label": "verarbeite_gedankenpost()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L755",
+      "source_location": "L774",
       "id": "codewesen_agent_verarbeite_gedankenpost",
       "community": 5,
       "norm_label": "verarbeite_gedankenpost()"
@@ -1204,7 +1204,7 @@
       "label": "verarbeite_vorstellung_4h44()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L887",
+      "source_location": "L906",
       "id": "codewesen_agent_verarbeite_vorstellung_4h44",
       "community": 5,
       "norm_label": "verarbeite_vorstellung_4h44()"
@@ -1213,7 +1213,7 @@
       "label": "pruefe_antwortpflicht()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L940",
+      "source_location": "L959",
       "id": "codewesen_agent_pruefe_antwortpflicht",
       "community": 5,
       "norm_label": "pruefe_antwortpflicht()"
@@ -1222,7 +1222,7 @@
       "label": "load_token()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1073",
+      "source_location": "L1092",
       "id": "codewesen_agent_load_token",
       "community": 5,
       "norm_label": "load_token()"
@@ -1231,7 +1231,7 @@
       "label": "get_tags_cached()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1077",
+      "source_location": "L1096",
       "id": "codewesen_agent_get_tags_cached",
       "community": 5,
       "norm_label": "get_tags_cached()"
@@ -1240,7 +1240,7 @@
       "label": "erstvorstellung_erstellen()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1094",
+      "source_location": "L1113",
       "id": "codewesen_agent_erstvorstellung_erstellen",
       "community": 5,
       "norm_label": "erstvorstellung_erstellen()"
@@ -1249,7 +1249,7 @@
       "label": "run()",
       "file_type": "code",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1194",
+      "source_location": "L1213",
       "id": "codewesen_agent_run",
       "community": 5,
       "norm_label": "run()"
@@ -1258,107 +1258,107 @@
       "label": "F\u00fchrt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zur\u00fcck.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L182",
+      "source_location": "L188",
+      "id": "codewesen_agent_rationale_188",
       "community": 5,
-      "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck.",
-      "id": "codewesen_agent_rationale_182"
+      "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck."
     },
     {
       "label": "Nach einem Gespr\u00e4ch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L391",
+      "source_location": "L410",
+      "id": "codewesen_agent_rationale_410",
       "community": 5,
-      "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung",
-      "id": "codewesen_agent_rationale_391"
+      "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung"
     },
     {
       "label": "Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L488",
+      "source_location": "L507",
+      "id": "codewesen_agent_rationale_507",
       "community": 5,
-      "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest",
-      "id": "codewesen_agent_rationale_488"
+      "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest"
     },
     {
       "label": "Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L557",
+      "source_location": "L576",
+      "id": "codewesen_agent_rationale_576",
       "community": 5,
-      "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal",
-      "id": "codewesen_agent_rationale_557"
+      "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal"
     },
     {
       "label": "Liest den globalen Feed und reagiert auf neue Posts.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L607",
+      "source_location": "L626",
+      "id": "codewesen_agent_rationale_626",
       "community": 5,
-      "norm_label": "liest den globalen feed und reagiert auf neue posts.",
-      "id": "codewesen_agent_rationale_607"
+      "norm_label": "liest den globalen feed und reagiert auf neue posts."
     },
     {
       "label": "Autonomer Impuls: Was will das Codewesen gerade tun?",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L660",
+      "source_location": "L679",
+      "id": "codewesen_agent_rationale_679",
       "community": 5,
-      "norm_label": "autonomer impuls: was will das codewesen gerade tun?",
-      "id": "codewesen_agent_rationale_660"
+      "norm_label": "autonomer impuls: was will das codewesen gerade tun?"
     },
     {
       "label": "Alle 88 Minuten: einfach posten \u2014 egal wo, egal zu was. Dein Herzschlag.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L683",
+      "source_location": "L702",
+      "id": "codewesen_agent_rationale_702",
       "community": 5,
-      "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag.",
-      "id": "codewesen_agent_rationale_683"
+      "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag."
     },
     {
       "label": "Alle 2h22min \u2014 gestaffelt je Codewesen: Forum-Kritik/Vorschl\u00e4ge ODER Selbstrefle",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L718",
+      "source_location": "L737",
+      "id": "codewesen_agent_rationale_737",
       "community": 5,
-      "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle",
-      "id": "codewesen_agent_rationale_718"
+      "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle"
     },
     {
       "label": "Alle 66 Minuten: kurzer Post (2-3 S\u00e4tze) im Subtag 'dar\u00fcber denke ich nach'.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L758",
+      "source_location": "L777",
+      "id": "codewesen_agent_rationale_777",
       "community": 5,
-      "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'.",
-      "id": "codewesen_agent_rationale_758"
+      "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'."
     },
     {
       "label": "Alle 4h44: neuer Selbstgespr\u00e4ch-Eintrag im eigenen Vorstellungs-Thread.     Nur",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L890",
+      "source_location": "L909",
+      "id": "codewesen_agent_rationale_909",
       "community": 5,
-      "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur",
-      "id": "codewesen_agent_rationale_890"
+      "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur"
     },
     {
       "label": "Pr\u00fcft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L943",
+      "source_location": "L962",
+      "id": "codewesen_agent_rationale_962",
       "community": 5,
-      "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:",
-      "id": "codewesen_agent_rationale_943"
+      "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:"
     },
     {
       "label": "Tags aus Vault lesen \u2014 kein API/DB-Call.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1078",
-      "id": "codewesen_agent_rationale_1078",
+      "source_location": "L1097",
+      "id": "codewesen_agent_rationale_1097",
       "community": 5,
       "norm_label": "tags aus vault lesen \u2014 kein api/db-call."
     },
@@ -1366,8 +1366,8 @@
       "label": "Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1095",
-      "id": "codewesen_agent_rationale_1095",
+      "source_location": "L1114",
+      "id": "codewesen_agent_rationale_1114",
       "community": 5,
       "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex"
     },
@@ -4318,7 +4318,7 @@
       "label": "bearbeite_post()",
       "file_type": "code",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L169",
+      "source_location": "L175",
       "id": "codewesen_antwort_auf_daniel_bearbeite_post",
       "community": 2,
       "norm_label": "bearbeite_post()"
@@ -4327,7 +4327,7 @@
       "label": "tick()",
       "file_type": "code",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L205",
+      "source_location": "L211",
       "id": "codewesen_antwort_auf_daniel_tick",
       "community": 2,
       "norm_label": "tick()"
@@ -4336,7 +4336,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L226",
+      "source_location": "L232",
       "id": "codewesen_antwort_auf_daniel_main",
       "community": 2,
       "norm_label": "main()"
@@ -4346,27 +4346,27 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L86",
-      "id": "codewesen_antwort_auf_daniel_rationale_86",
       "community": 2,
-      "norm_label": "alle posts von daniel von heute \u2014 egal ob eroffnung oder antwort."
+      "norm_label": "alle posts von daniel von heute \u2014 egal ob eroffnung oder antwort.",
+      "id": "codewesen_antwort_auf_daniel_rationale_86"
     },
     {
       "label": "True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet",
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L107",
-      "id": "codewesen_antwort_auf_daniel_rationale_107",
       "community": 2,
-      "norm_label": "true wenn ein codewesen nach daniels post noch in dieser diskussion geantwortet"
+      "norm_label": "true wenn ein codewesen nach daniels post noch in dieser diskussion geantwortet",
+      "id": "codewesen_antwort_auf_daniel_rationale_107"
     },
     {
       "label": "Liest die letzten paar Posts der Diskussion als Kontext.",
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L136",
-      "id": "codewesen_antwort_auf_daniel_rationale_136",
       "community": 2,
-      "norm_label": "liest die letzten paar posts der diskussion als kontext."
+      "norm_label": "liest die letzten paar posts der diskussion als kontext.",
+      "id": "codewesen_antwort_auf_daniel_rationale_136"
     },
     {
       "label": "watchdog_daemon.py",
@@ -5120,36 +5120,36 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L111",
-      "id": "flarum_monitor_rationale_111",
       "community": 33,
-      "norm_label": "notifications fur namelessai-accounts \u2192 inbox des jeweiligen codewesens."
+      "norm_label": "notifications fur namelessai-accounts \u2192 inbox des jeweiligen codewesens.",
+      "id": "flarum_monitor_rationale_111"
     },
     {
       "label": "post_mentions_user f\u00fcr namelessAI-Accounts \u2192 inbox.",
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L138",
-      "id": "flarum_monitor_rationale_138",
       "community": 33,
-      "norm_label": "post_mentions_user fur namelessai-accounts \u2192 inbox."
+      "norm_label": "post_mentions_user fur namelessai-accounts \u2192 inbox.",
+      "id": "flarum_monitor_rationale_138"
     },
     {
       "label": "Flags auf Posts von namelessAI-Accounts \u2192 inbox.",
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L168",
-      "id": "flarum_monitor_rationale_168",
       "community": 33,
-      "norm_label": "flags auf posts von namelessai-accounts \u2192 inbox."
+      "norm_label": "flags auf posts von namelessai-accounts \u2192 inbox.",
+      "id": "flarum_monitor_rationale_168"
     },
     {
       "label": "ALLE neuen Posts \u2192 _global/feed.jsonl.     Menschliche Posts \u2192 inbox ALLER Codew",
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L199",
-      "id": "flarum_monitor_rationale_199",
       "community": 33,
-      "norm_label": "alle neuen posts \u2192 _global/feed.jsonl.     menschliche posts \u2192 inbox aller codew"
+      "norm_label": "alle neuen posts \u2192 _global/feed.jsonl.     menschliche posts \u2192 inbox aller codew",
+      "id": "flarum_monitor_rationale_199"
     },
     {
       "label": "codewesen_forum_neugier.py",
@@ -16568,9 +16568,9 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L771",
-      "id": "weltkern_watchdog_rationale_771",
       "community": 8,
-      "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine"
+      "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine",
+      "id": "weltkern_watchdog_rationale_771"
     },
     {
       "label": "test_spurenfaehigkeit.py",
@@ -29569,11 +29569,128 @@
       "norm_label": "config.py"
     },
     {
+      "label": "F\u00fchrt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zur\u00fcck.",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L182",
+      "community": 135,
+      "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck.",
+      "id": "codewesen_agent_rationale_182"
+    },
+    {
+      "label": "Nach einem Gespr\u00e4ch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L391",
+      "community": 136,
+      "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung",
+      "id": "codewesen_agent_rationale_391"
+    },
+    {
+      "label": "Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L488",
+      "community": 137,
+      "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest",
+      "id": "codewesen_agent_rationale_488"
+    },
+    {
+      "label": "Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L557",
+      "community": 138,
+      "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal",
+      "id": "codewesen_agent_rationale_557"
+    },
+    {
+      "label": "Liest den globalen Feed und reagiert auf neue Posts.",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L607",
+      "community": 139,
+      "norm_label": "liest den globalen feed und reagiert auf neue posts.",
+      "id": "codewesen_agent_rationale_607"
+    },
+    {
+      "label": "Autonomer Impuls: Was will das Codewesen gerade tun?",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L660",
+      "community": 140,
+      "norm_label": "autonomer impuls: was will das codewesen gerade tun?",
+      "id": "codewesen_agent_rationale_660"
+    },
+    {
+      "label": "Alle 88 Minuten: einfach posten \u2014 egal wo, egal zu was. Dein Herzschlag.",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L683",
+      "community": 141,
+      "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag.",
+      "id": "codewesen_agent_rationale_683"
+    },
+    {
+      "label": "Alle 2h22min \u2014 gestaffelt je Codewesen: Forum-Kritik/Vorschl\u00e4ge ODER Selbstrefle",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L718",
+      "community": 142,
+      "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle",
+      "id": "codewesen_agent_rationale_718"
+    },
+    {
+      "label": "Alle 66 Minuten: kurzer Post (2-3 S\u00e4tze) im Subtag 'dar\u00fcber denke ich nach'.",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L758",
+      "community": 143,
+      "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'.",
+      "id": "codewesen_agent_rationale_758"
+    },
+    {
+      "label": "Alle 4h44: neuer Selbstgespr\u00e4ch-Eintrag im eigenen Vorstellungs-Thread.     Nur",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L890",
+      "community": 144,
+      "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur",
+      "id": "codewesen_agent_rationale_890"
+    },
+    {
+      "label": "Pr\u00fcft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L943",
+      "community": 145,
+      "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:",
+      "id": "codewesen_agent_rationale_943"
+    },
+    {
+      "label": "Tags aus Vault lesen \u2014 kein API/DB-Call.",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L1078",
+      "community": 146,
+      "norm_label": "tags aus vault lesen \u2014 kein api/db-call.",
+      "id": "codewesen_agent_rationale_1078"
+    },
+    {
+      "label": "Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex",
+      "file_type": "rationale",
+      "source_file": "codewesen_agent.py",
+      "source_location": "L1095",
+      "community": 147,
+      "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex",
+      "id": "codewesen_agent_rationale_1095"
+    },
+    {
       "label": "Tags aus Vault lesen \u2014 kein API/DB-Call.",
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1072",
-      "community": 135,
+      "community": 148,
       "norm_label": "tags aus vault lesen \u2014 kein api/db-call.",
       "id": "codewesen_agent_rationale_1072"
     },
@@ -29582,7 +29699,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1089",
-      "community": 136,
+      "community": 149,
       "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex",
       "id": "codewesen_agent_rationale_1089"
     },
@@ -29591,7 +29708,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L84",
-      "community": 137,
+      "community": 150,
       "norm_label": "alle posts von daniel von heute \u2014 egal ob eroffnung oder antwort.",
       "id": "codewesen_antwort_auf_daniel_rationale_84"
     },
@@ -29600,7 +29717,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L105",
-      "community": 138,
+      "community": 151,
       "norm_label": "true wenn ein codewesen nach daniels post noch in dieser diskussion geantwortet",
       "id": "codewesen_antwort_auf_daniel_rationale_105"
     },
@@ -29609,7 +29726,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L134",
-      "community": 139,
+      "community": 152,
       "norm_label": "liest die letzten paar posts der diskussion als kontext.",
       "id": "codewesen_antwort_auf_daniel_rationale_134"
     },
@@ -29618,7 +29735,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L110",
-      "community": 140,
+      "community": 153,
       "norm_label": "notifications fur namelessai-accounts \u2192 inbox des jeweiligen codewesens.",
       "id": "flarum_monitor_rationale_110"
     },
@@ -29627,7 +29744,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L137",
-      "community": 141,
+      "community": 154,
       "norm_label": "post_mentions_user fur namelessai-accounts \u2192 inbox.",
       "id": "flarum_monitor_rationale_137"
     },
@@ -29636,7 +29753,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L167",
-      "community": 142,
+      "community": 155,
       "norm_label": "flags auf posts von namelessai-accounts \u2192 inbox.",
       "id": "flarum_monitor_rationale_167"
     },
@@ -29645,7 +29762,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L198",
-      "community": 143,
+      "community": 156,
       "norm_label": "alle neuen posts \u2192 _global/feed.jsonl.     menschliche posts \u2192 inbox aller codew",
       "id": "flarum_monitor_rationale_198"
     },
@@ -29654,7 +29771,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L765",
-      "community": 144,
+      "community": 157,
       "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine",
       "id": "weltkern_watchdog_rationale_765"
     },
@@ -29663,7 +29780,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L181",
-      "community": 145,
+      "community": 158,
       "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck.",
       "id": "codewesen_agent_rationale_181"
     },
@@ -29672,7 +29789,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L383",
-      "community": 146,
+      "community": 159,
       "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung",
       "id": "codewesen_agent_rationale_383"
     },
@@ -29681,7 +29798,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L480",
-      "community": 147,
+      "community": 160,
       "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest",
       "id": "codewesen_agent_rationale_480"
     },
@@ -29690,7 +29807,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L549",
-      "community": 148,
+      "community": 161,
       "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal",
       "id": "codewesen_agent_rationale_549"
     },
@@ -29699,7 +29816,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L599",
-      "community": 149,
+      "community": 162,
       "norm_label": "liest den globalen feed und reagiert auf neue posts.",
       "id": "codewesen_agent_rationale_599"
     },
@@ -29708,7 +29825,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L652",
-      "community": 150,
+      "community": 163,
       "norm_label": "autonomer impuls: was will das codewesen gerade tun?",
       "id": "codewesen_agent_rationale_652"
     },
@@ -29717,7 +29834,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L675",
-      "community": 151,
+      "community": 164,
       "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag.",
       "id": "codewesen_agent_rationale_675"
     },
@@ -29726,7 +29843,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L710",
-      "community": 152,
+      "community": 165,
       "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle",
       "id": "codewesen_agent_rationale_710"
     },
@@ -29735,7 +29852,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L750",
-      "community": 153,
+      "community": 166,
       "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'.",
       "id": "codewesen_agent_rationale_750"
     },
@@ -29744,7 +29861,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L882",
-      "community": 154,
+      "community": 167,
       "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur",
       "id": "codewesen_agent_rationale_882"
     },
@@ -29753,7 +29870,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L935",
-      "community": 155,
+      "community": 168,
       "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:",
       "id": "codewesen_agent_rationale_935"
     },
@@ -29762,7 +29879,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1060",
-      "community": 156,
+      "community": 169,
       "norm_label": "tags aus vault lesen \u2014 kein api/db-call.",
       "id": "codewesen_agent_rationale_1060"
     },
@@ -29771,7 +29888,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1077",
-      "community": 157,
+      "community": 170,
       "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex",
       "id": "codewesen_agent_rationale_1077"
     },
@@ -29780,7 +29897,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L51",
-      "community": 158,
+      "community": 171,
       "norm_label": "letzte n chat-zeilen (daniel\u2194wesen) als kompakten text.",
       "id": "codewesen_reaktion_rationale_51"
     },
@@ -29789,7 +29906,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L78",
-      "community": 159,
+      "community": 172,
       "norm_label": "liest flarum_eingefroren aus system_flags.",
       "id": "codewesen_reaktion_rationale_78"
     },
@@ -29798,7 +29915,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L96",
-      "community": 160,
+      "community": 173,
       "norm_label": "liest wesen.md + weltbild.md als kompakten identitatsblock.",
       "id": "codewesen_reaktion_rationale_96"
     },
@@ -29807,7 +29924,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L138",
-      "community": 161,
+      "community": 174,
       "norm_label": "lost internen ordnernamen auf den tatsachlichen flarum-username auf.",
       "id": "codewesen_reaktion_rationale_138"
     },
@@ -29816,7 +29933,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L193",
-      "community": 162,
+      "community": 175,
       "norm_label": "ladt die komplette diskussion direkt aus der db \u2014 vollstandig, kein limit.",
       "id": "codewesen_reaktion_rationale_193"
     },
@@ -29825,7 +29942,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L255",
-      "community": 163,
+      "community": 176,
       "norm_label": "generiert flie\u00dftext \u2014 volles modell, auf cpu-timeout angepasst (600 \u2192 ~150s bei",
       "id": "codewesen_reaktion_rationale_255"
     },
@@ -29834,7 +29951,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L290",
-      "community": 164,
+      "community": 177,
       "norm_label": "stufe 1: nur entscheidung \u2014 kein inhalt generieren.",
       "id": "codewesen_reaktion_rationale_290"
     },
@@ -29843,7 +29960,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L335",
-      "community": 165,
+      "community": 178,
       "norm_label": "stufe 2: inhalt vollstandig ausschreiben.",
       "id": "codewesen_reaktion_rationale_335"
     },
@@ -29852,7 +29969,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L434",
-      "community": 166,
+      "community": 179,
       "norm_label": "verschiebt verarbeitete inbox-datei nach processed/.",
       "id": "codewesen_reaktion_rationale_434"
     },
@@ -29861,7 +29978,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L441",
-      "community": 167,
+      "community": 180,
       "norm_label": "verschiebt verarbeitete inbox-datei nach processed/.",
       "id": "codewesen_reaktion_rationale_441"
     },
@@ -29870,7 +29987,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L463",
-      "community": 168,
+      "community": 181,
       "norm_label": "schreibt einen vollstandigen draft in drafts/ und gibt den pfad zuruck.",
       "id": "codewesen_reaktion_rationale_463"
     },
@@ -29879,7 +29996,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L475",
-      "community": 169,
+      "community": 182,
       "norm_label": "verschiebt draft nach posted/ nach erfolgreichem post.",
       "id": "codewesen_reaktion_rationale_475"
     },
@@ -29888,7 +30005,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L602",
-      "community": 170,
+      "community": 183,
       "norm_label": "periodische selbstreflexion: codewesen liest eigene posts und entscheidet ob es",
       "id": "codewesen_reaktion_rationale_602"
     },
@@ -29897,7 +30014,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L751",
-      "community": 171,
+      "community": 184,
       "norm_label": "alle 2h22m: vorschlage zur forum-weiterentwicklung + eigene rolle darin.",
       "id": "codewesen_reaktion_rationale_751"
     },
@@ -29906,7 +30023,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L783",
-      "community": 172,
+      "community": 185,
       "norm_label": "alle 88min: freier beitrag mit selbst gewahlten tags.",
       "id": "codewesen_reaktion_rationale_783"
     },
@@ -29915,7 +30032,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L81",
-      "community": 173,
+      "community": 186,
       "norm_label": "alle diskussionen aus dem vault \u2014 inkl. die des wesens selbst (zum antworten).",
       "id": "codewesen_engagement_rationale_81"
     },
@@ -29924,7 +30041,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L137",
-      "community": 174,
+      "community": 187,
       "norm_label": "die n zuletzt aktiven diskussionen direkt aus mysql, mit vollem post-inhalt.",
       "id": "codewesen_engagement_rationale_137"
     },
@@ -29933,7 +30050,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L163",
-      "community": 175,
+      "community": 188,
       "norm_label": "gibt dict {disc_id_str: iso_timestamp} zuruck. migriert altes listen-format.",
       "id": "codewesen_engagement_rationale_163"
     },
@@ -29942,7 +30059,7 @@
       "file_type": "rationale",
       "source_file": "dienst_konfiguration.py",
       "source_location": "L78",
-      "community": 176,
+      "community": 189,
       "norm_label": "laedt die konfiguration aller dienste auf einmal \u2014 fuer den watchdog,     der si",
       "id": "dienst_konfiguration_rationale_78"
     },
@@ -29951,7 +30068,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L83",
-      "community": 177,
+      "community": 190,
       "norm_label": "alle posts von daniel von heute \u2014 egal ob eroffnung oder antwort.",
       "id": "codewesen_antwort_auf_daniel_rationale_83"
     },
@@ -29960,7 +30077,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L104",
-      "community": 178,
+      "community": 191,
       "norm_label": "true wenn ein codewesen nach daniels post noch in dieser diskussion geantwortet",
       "id": "codewesen_antwort_auf_daniel_rationale_104"
     },
@@ -29969,7 +30086,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L133",
-      "community": 179,
+      "community": 192,
       "norm_label": "liest die letzten paar posts der diskussion als kontext.",
       "id": "codewesen_antwort_auf_daniel_rationale_133"
     },
@@ -29978,7 +30095,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L108",
-      "community": 180,
+      "community": 193,
       "norm_label": "notifications fur namelessai-accounts \u2192 inbox des jeweiligen codewesens.",
       "id": "flarum_monitor_rationale_108"
     },
@@ -29987,7 +30104,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L135",
-      "community": 181,
+      "community": 194,
       "norm_label": "post_mentions_user fur namelessai-accounts \u2192 inbox.",
       "id": "flarum_monitor_rationale_135"
     },
@@ -29996,7 +30113,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L165",
-      "community": 182,
+      "community": 195,
       "norm_label": "flags auf posts von namelessai-accounts \u2192 inbox.",
       "id": "flarum_monitor_rationale_165"
     },
@@ -30005,7 +30122,7 @@
       "file_type": "rationale",
       "source_file": "flarum_monitor.py",
       "source_location": "L196",
-      "community": 183,
+      "community": 196,
       "norm_label": "alle neuen posts \u2192 _global/feed.jsonl.     menschliche posts \u2192 inbox aller codew",
       "id": "flarum_monitor_rationale_196"
     },
@@ -30014,7 +30131,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L310",
-      "community": 184,
+      "community": 197,
       "norm_label": "scannt alle bekannten logs einmal komplett durch, zaehlt pro fehlermuster     da",
       "id": "weltkern_watchdog_rationale_310"
     },
@@ -30023,7 +30140,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L380",
-      "community": 185,
+      "community": 198,
       "norm_label": "detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit",
       "id": "weltkern_watchdog_rationale_380"
     },
@@ -30032,7 +30149,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L421",
-      "community": 186,
+      "community": 199,
       "norm_label": "letzte echte journalctl-zeilen fuer diesen dienst \u2014 direkter kontext     ohne ss",
       "id": "weltkern_watchdog_rationale_421"
     },
@@ -30041,7 +30158,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L440",
-      "community": 187,
+      "community": 200,
       "norm_label": "fragt /slots und /metrics des llama-server direkt ab \u2014 zeigt live ob gerade",
       "id": "weltkern_watchdog_rationale_440"
     },
@@ -30050,7 +30167,7 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L689",
-      "community": 188,
+      "community": 201,
       "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine",
       "id": "weltkern_watchdog_rationale_689"
     },
@@ -30059,7 +30176,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L111",
-      "community": 189,
+      "community": 202,
       "norm_label": "sekunden-offset im intervall fur dieses wesen.",
       "id": "codewesen_takt_rationale_111"
     },
@@ -30068,7 +30185,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L119",
-      "community": 190,
+      "community": 203,
       "norm_label": "absoluter unix-zeitstempel des nachsten feuerns.",
       "id": "codewesen_takt_rationale_119"
     },
@@ -30077,7 +30194,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L155",
-      "community": 191,
+      "community": 204,
       "norm_label": "22min \u2014 antwort auf eigene diskussionen, aus queue.",
       "id": "codewesen_takt_rationale_155"
     },
@@ -30086,7 +30203,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L166",
-      "community": 192,
+      "community": 205,
       "norm_label": "4h44 \u2014 freier gedanke, aus queue.",
       "id": "codewesen_takt_rationale_166"
     },
@@ -30095,7 +30212,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L184",
-      "community": 193,
+      "community": 206,
       "norm_label": "66min \u2014 antwort auf offenen fremden post, aus queue.",
       "id": "codewesen_takt_rationale_184"
     },
@@ -30104,7 +30221,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L195",
-      "community": 194,
+      "community": 207,
       "norm_label": "88min \u2014 existenzpost, aus queue.",
       "id": "codewesen_takt_rationale_195"
     },
@@ -30113,7 +30230,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L206",
-      "community": 195,
+      "community": 208,
       "norm_label": "2h22 \u2014 kritik oder reflexion, aus queue.",
       "id": "codewesen_takt_rationale_206"
     },
@@ -30122,7 +30239,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_takt.py",
       "source_location": "L221",
-      "community": 196,
+      "community": 209,
       "norm_label": "4h44 \u2014 selbstgesprach im eigenen thread, aus queue.",
       "id": "codewesen_takt_rationale_221"
     },
@@ -30131,7 +30248,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L55",
-      "community": 197,
+      "community": 210,
       "norm_label": "context-manager: belegt slot 0. bricht nach 120s ab statt ewig zu warten.",
       "id": "codewesen_agent_rationale_55"
     },
@@ -30140,7 +30257,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L200",
-      "community": 198,
+      "community": 211,
       "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck.",
       "id": "codewesen_agent_rationale_200"
     },
@@ -30149,7 +30266,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L402",
-      "community": 199,
+      "community": 212,
       "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung",
       "id": "codewesen_agent_rationale_402"
     },
@@ -30158,7 +30275,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L499",
-      "community": 200,
+      "community": 213,
       "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest",
       "id": "codewesen_agent_rationale_499"
     },
@@ -30167,7 +30284,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L568",
-      "community": 201,
+      "community": 214,
       "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal",
       "id": "codewesen_agent_rationale_568"
     },
@@ -30176,7 +30293,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L618",
-      "community": 202,
+      "community": 215,
       "norm_label": "liest den globalen feed und reagiert auf neue posts.",
       "id": "codewesen_agent_rationale_618"
     },
@@ -30185,7 +30302,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L671",
-      "community": 203,
+      "community": 216,
       "norm_label": "autonomer impuls: was will das codewesen gerade tun?",
       "id": "codewesen_agent_rationale_671"
     },
@@ -30194,7 +30311,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L694",
-      "community": 204,
+      "community": 217,
       "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag.",
       "id": "codewesen_agent_rationale_694"
     },
@@ -30203,7 +30320,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L729",
-      "community": 205,
+      "community": 218,
       "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle",
       "id": "codewesen_agent_rationale_729"
     },
@@ -30212,7 +30329,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L769",
-      "community": 206,
+      "community": 219,
       "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'.",
       "id": "codewesen_agent_rationale_769"
     },
@@ -30221,7 +30338,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L901",
-      "community": 207,
+      "community": 220,
       "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur",
       "id": "codewesen_agent_rationale_901"
     },
@@ -30230,7 +30347,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L954",
-      "community": 208,
+      "community": 221,
       "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:",
       "id": "codewesen_agent_rationale_954"
     },
@@ -30239,7 +30356,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1079",
-      "community": 209,
+      "community": 222,
       "norm_label": "tags aus vault lesen \u2014 kein api/db-call.",
       "id": "codewesen_agent_rationale_1079"
     },
@@ -30248,7 +30365,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1096",
-      "community": 210,
+      "community": 223,
       "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex",
       "id": "codewesen_agent_rationale_1096"
     },
@@ -30257,7 +30374,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L50",
-      "community": 211,
+      "community": 224,
       "norm_label": "letzte n chat-zeilen (daniel\u2194wesen) als kompakten text.",
       "id": "codewesen_reaktion_rationale_50"
     },
@@ -30266,7 +30383,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L77",
-      "community": 212,
+      "community": 225,
       "norm_label": "liest flarum_eingefroren aus system_flags.",
       "id": "codewesen_reaktion_rationale_77"
     },
@@ -30275,7 +30392,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L95",
-      "community": 213,
+      "community": 226,
       "norm_label": "liest wesen.md + weltbild.md als kompakten identitatsblock.",
       "id": "codewesen_reaktion_rationale_95"
     },
@@ -30284,7 +30401,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L124",
-      "community": 214,
+      "community": 227,
       "norm_label": "lost internen ordnernamen auf den tatsachlichen flarum-username auf.",
       "id": "codewesen_reaktion_rationale_124"
     },
@@ -30293,7 +30410,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L141",
-      "community": 215,
+      "community": 228,
       "norm_label": "context-manager: serialisiert ollama-calls. chat hat absolute prioritat.",
       "id": "codewesen_reaktion_rationale_141"
     },
@@ -30302,7 +30419,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L202",
-      "community": 216,
+      "community": 229,
       "norm_label": "ladt die komplette diskussion direkt aus der db \u2014 vollstandig, kein limit.",
       "id": "codewesen_reaktion_rationale_202"
     },
@@ -30311,7 +30428,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L599",
-      "community": 217,
+      "community": 230,
       "norm_label": "periodische selbstreflexion: codewesen liest eigene posts und entscheidet ob es",
       "id": "codewesen_reaktion_rationale_599"
     },
@@ -30320,7 +30437,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L746",
-      "community": 218,
+      "community": 231,
       "norm_label": "alle 2h22m: vorschlage zur forum-weiterentwicklung + eigene rolle darin.",
       "id": "codewesen_reaktion_rationale_746"
     },
@@ -30329,7 +30446,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L776",
-      "community": 219,
+      "community": 232,
       "norm_label": "alle 88min: freier beitrag mit selbst gewahlten tags.",
       "id": "codewesen_reaktion_rationale_776"
     },
@@ -30338,7 +30455,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L32",
-      "community": 220,
+      "community": 233,
       "norm_label": "gibt diskussionen zuruck in denen wesen gepostet hat: [{id, titel, posts}]",
       "id": "codewesen_batch_generator_rationale_32"
     },
@@ -30347,7 +30464,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L122",
-      "community": 221,
+      "community": 234,
       "norm_label": "kompakte forumubersicht aus aktuell.md \u2014 fallt zuruck auf lere_alle_diskussionen",
       "id": "codewesen_batch_generator_rationale_122"
     },
@@ -30356,7 +30473,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L131",
-      "community": 222,
+      "community": 235,
       "norm_label": "offene posts aus offen.md \u2014 fallt zuruck auf lese_offene_posts.",
       "id": "codewesen_batch_generator_rationale_131"
     },
@@ -30365,7 +30482,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L386",
-      "community": 223,
+      "community": 236,
       "norm_label": "findet einen offenen post und generiert eine antwort darauf.",
       "id": "codewesen_batch_generator_rationale_386"
     },
@@ -30374,7 +30491,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L464",
-      "community": 224,
+      "community": 237,
       "norm_label": "geht alle (wesen, rhythmus)-paare durch und generiert je einen entwurf     wenn",
       "id": "codewesen_batch_generator_rationale_464"
     },
@@ -30383,7 +30500,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L83",
-      "community": 225,
+      "community": 238,
       "norm_label": "gibt (status, ist_faellig) zuruck. status='' wenn wesen nicht gefunden.",
       "id": "codewesen_lg_daemon_rationale_83"
     },
@@ -30392,7 +30509,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L133",
-      "community": 226,
+      "community": 239,
       "norm_label": "liest letzte flarum-posts dieses wesens + aktuelles forum-geschehen aus mysql.",
       "id": "codewesen_lg_daemon_rationale_133"
     },
@@ -30401,7 +30518,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L242",
-      "community": 227,
+      "community": 240,
       "norm_label": "ehrliches vor-einzug-denken: flarum-kontext, kein flextrawurst-welthaluzinieren.",
       "id": "codewesen_lg_daemon_rationale_242"
     },
@@ -30410,7 +30527,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L349",
-      "community": 228,
+      "community": 241,
       "norm_label": "liest letzten gedanken aus db \u2014 futtert akkumulations-liste.",
       "id": "codewesen_lg_daemon_rationale_349"
     },
@@ -30419,7 +30536,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L398",
-      "community": 229,
+      "community": 242,
       "norm_label": "destilliert akkumulierte gedanken \u2192 erinnerungen, alle n denk-ticks.",
       "id": "codewesen_lg_daemon_rationale_398"
     },
@@ -30428,7 +30545,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L472",
-      "community": 230,
+      "community": 243,
       "norm_label": "sigterm/sigint \u2014 aktuell_denkend sauber zurucksetzen bevor der prozess stirbt.",
       "id": "codewesen_lg_daemon_rationale_472"
     },
@@ -30437,7 +30554,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L73",
-      "community": 231,
+      "community": 244,
       "norm_label": "alle diskussionen aus dem vault \u2014 inkl. die des wesens selbst (zum antworten).",
       "id": "codewesen_engagement_rationale_73"
     },
@@ -30446,7 +30563,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L124",
-      "community": 232,
+      "community": 245,
       "norm_label": "die n zuletzt aktiven diskussionen direkt aus mysql, mit vollem post-inhalt.",
       "id": "codewesen_engagement_rationale_124"
     },
@@ -30455,7 +30572,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L150",
-      "community": 233,
+      "community": 246,
       "norm_label": "gibt dict {disc_id_str: iso_timestamp} zuruck. migriert altes listen-format.",
       "id": "codewesen_engagement_rationale_150"
     },
@@ -30464,7 +30581,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L97",
-      "community": 234,
+      "community": 247,
       "norm_label": "extrahiert das wort aus '-wort' format.",
       "id": "codewesen_vokabel_takt_rationale_97"
     },
@@ -30473,7 +30590,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L106",
-      "community": 235,
+      "community": 248,
       "norm_label": "alle diskussionen im vokabel-tag.",
       "id": "codewesen_vokabel_takt_rationale_106"
     },
@@ -30482,7 +30599,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L130",
-      "community": 236,
+      "community": 249,
       "norm_label": "pruft ob dieses wesen schon in der diskussion gepostet hat.",
       "id": "codewesen_vokabel_takt_rationale_130"
     },
@@ -30491,7 +30608,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L144",
-      "community": 237,
+      "community": 250,
       "norm_label": "liest alle bereits geposteten synonyme in dieser diskussion.",
       "id": "codewesen_vokabel_takt_rationale_144"
     },
@@ -30500,7 +30617,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L176",
-      "community": 238,
+      "community": 251,
       "norm_label": "gibt (synonym, kurze_begruendung) zuruck.",
       "id": "codewesen_vokabel_takt_rationale_176"
     },
@@ -30509,7 +30626,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L94",
-      "community": 239,
+      "community": 252,
       "norm_label": "ladt die forum-tag-struktur aus tags/index.md, bereinigt von wikilinks.",
       "id": "codewesen_chat_rationale_94"
     },
@@ -30518,7 +30635,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L105",
-      "community": 240,
+      "community": 253,
       "norm_label": "ladt die letzten notizen aus gedanken/ als kontext.",
       "id": "codewesen_chat_rationale_105"
     },
@@ -30527,7 +30644,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L118",
-      "community": 241,
+      "community": 254,
       "norm_label": "hangt einen gesprachs-austausch an die tages-notiz in gesprache/ an.",
       "id": "codewesen_chat_rationale_118"
     },
@@ -30536,7 +30653,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L148",
-      "community": 242,
+      "community": 255,
       "norm_label": "gibt den aufgelosten pfad zuruck, wenn er sicher innerhalb des werkraums     lie",
       "id": "codewesen_chat_rationale_148"
     },
@@ -30545,7 +30662,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L185",
-      "community": 243,
+      "community": 256,
       "norm_label": "fuhrt ##lesen## und ##schreiben## marker aus. gibt ergebnis-block zuruck.",
       "id": "codewesen_chat_rationale_185"
     },
@@ -30554,7 +30671,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L199",
-      "community": 244,
+      "community": 257,
       "norm_label": "findet [merken: notiz] marker, gibt (bereinigter_text, notizen) zuruck.",
       "id": "codewesen_chat_rationale_199"
     },
@@ -30563,7 +30680,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L206",
-      "community": 245,
+      "community": 258,
       "norm_label": "speichert eine notiz still in gedanken/<datum>.md.",
       "id": "codewesen_chat_rationale_206"
     },
@@ -30572,7 +30689,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L222",
-      "community": 246,
+      "community": 259,
       "norm_label": "findet [vorschlagen: titel | inhalt] \u2014 wird nicht mehr genutzt, nur noch als fal",
       "id": "codewesen_chat_rationale_222"
     },
@@ -30581,7 +30698,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L353",
-      "community": 247,
+      "community": 260,
       "norm_label": "brainstorming-auswertung nach dem gesprach. gibt analyse-dict zuruck.",
       "id": "codewesen_chat_rationale_353"
     },
@@ -30590,7 +30707,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L444",
-      "community": 248,
+      "community": 261,
       "norm_label": "sucht [posten: titel | inhalt] am ende der chat-antwort.",
       "id": "codewesen_chat_rationale_444"
     },
@@ -30599,7 +30716,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L481",
-      "community": 249,
+      "community": 262,
       "norm_label": "schreibt draft und postet ins forum.",
       "id": "codewesen_chat_rationale_481"
     },
@@ -30608,7 +30725,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L545",
-      "community": 250,
+      "community": 263,
       "norm_label": "pids der drei interaktiven chat-webserver \u2014 niemals killen.",
       "id": "codewesen_chat_rationale_545"
     },
@@ -30617,7 +30734,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L836",
-      "community": 251,
+      "community": 264,
       "norm_label": "brainstorming-auswertung des aktuellen chat-verlaufs.",
       "id": "codewesen_chat_rationale_836"
     },
@@ -30626,7 +30743,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L864",
-      "community": 252,
+      "community": 265,
       "norm_label": "postet eine wesen-nachricht direkt ins forum (\u2192 forum button).",
       "id": "codewesen_chat_rationale_864"
     },
@@ -30635,7 +30752,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L36",
-      "community": 253,
+      "community": 266,
       "norm_label": "gibt (datum_str, count) zuruck. setzt auf 0 wenn neuer tag.",
       "id": "flarum_poster_rationale_36"
     },
@@ -30644,7 +30761,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L48",
-      "community": 254,
+      "community": 267,
       "norm_label": "erhoht den zahler um 1 und schreibt ihn zuruck. gibt neuen wert zuruck.",
       "id": "flarum_poster_rationale_48"
     },
@@ -30653,7 +30770,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L62",
-      "community": 255,
+      "community": 268,
       "norm_label": "liest diskussionen aus vault-markdown \u2014 kein api/db-call.",
       "id": "flarum_poster_rationale_62"
     },
@@ -30662,7 +30779,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L80",
-      "community": 256,
+      "community": 269,
       "norm_label": "liest eine diskussion vollstandig aus vault.",
       "id": "flarum_poster_rationale_80"
     },
@@ -30671,7 +30788,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L88",
-      "community": 257,
+      "community": 270,
       "norm_label": "liest alle tags aus vault.",
       "id": "flarum_poster_rationale_88"
     },
@@ -30680,7 +30797,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L103",
-      "community": 258,
+      "community": 271,
       "norm_label": "findet posts ohne antwort eines codewesens \u2014 aus vault.",
       "id": "flarum_poster_rationale_103"
     },
@@ -30689,7 +30806,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L134",
-      "community": 259,
+      "community": 272,
       "norm_label": "liest yaml-frontmatter aus markdown.",
       "id": "flarum_poster_rationale_134"
     },
@@ -30698,7 +30815,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L149",
-      "community": 260,
+      "community": 273,
       "norm_label": "findet den letzten post und dessen autor + zeitstempel aus vault-markdown.",
       "id": "flarum_poster_rationale_149"
     },
@@ -30707,7 +30824,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L168",
-      "community": 261,
+      "community": 274,
       "norm_label": "schreibt einen fertigen post-entwurf in den eigenen vault-ordner.     typ: 'antw",
       "id": "flarum_poster_rationale_168"
     },
@@ -30716,7 +30833,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L192",
-      "community": 262,
+      "community": 275,
       "norm_label": "gibt verbleibende cooldown-sekunden fur dieses wesen zuruck. 0 = frei.",
       "id": "flarum_poster_rationale_192"
     },
@@ -30725,7 +30842,7 @@
       "file_type": "rationale",
       "source_file": "flarum_poster.py",
       "source_location": "L203",
-      "community": 263,
+      "community": 276,
       "norm_label": "erwirbt globalen mutex, postet draft zu flarum, archiviert draft.     gibt {\"ok\"",
       "id": "flarum_poster_rationale_203"
     },
@@ -30734,7 +30851,7 @@
       "file_type": "rationale",
       "source_file": "weltbild_builder.py",
       "source_location": "L78",
-      "community": 264,
+      "community": 277,
       "norm_label": "extrahiert snippet des ersten und letzten posts.",
       "id": "weltbild_builder_rationale_78"
     },
@@ -30743,7 +30860,7 @@
       "file_type": "rationale",
       "source_file": "weltbild_builder.py",
       "source_location": "L100",
-      "community": 265,
+      "community": 278,
       "norm_label": "liest alle diskussionen aus dem vault und baut eine kompakte ubersicht.     kein",
       "id": "weltbild_builder_rationale_100"
     },
@@ -30752,7 +30869,7 @@
       "file_type": "rationale",
       "source_file": "hauhau_client.py",
       "source_location": "L65",
-      "community": 266,
+      "community": 279,
       "norm_label": "synchroner, nicht-streamender aufruf, gibt die volle response als dict zurueck",
       "id": "hauhau_client_rationale_65"
     },
@@ -30761,7 +30878,7 @@
       "file_type": "rationale",
       "source_file": "hauhau_client.py",
       "source_location": "L77",
-      "community": 267,
+      "community": 280,
       "norm_label": "synchroner, nicht-streamender aufruf. nimmt einen prompt-string oder eine messag",
       "id": "hauhau_client_rationale_77"
     },
@@ -30770,7 +30887,7 @@
       "file_type": "rationale",
       "source_file": "hauhau_client.py",
       "source_location": "L88",
-      "community": 268,
+      "community": 281,
       "norm_label": "synchroner generator, liefert text-chunks.",
       "id": "hauhau_client_rationale_88"
     },
@@ -30779,7 +30896,7 @@
       "file_type": "rationale",
       "source_file": "hauhau_client.py",
       "source_location": "L102",
-      "community": 269,
+      "community": 282,
       "norm_label": "asynchroner, nicht-streamender aufruf.",
       "id": "hauhau_client_rationale_102"
     },
@@ -30788,7 +30905,7 @@
       "file_type": "rationale",
       "source_file": "hauhau_client.py",
       "source_location": "L113",
-      "community": 270,
+      "community": 283,
       "norm_label": "asynchroner generator, liefert text-chunks.",
       "id": "hauhau_client_rationale_113"
     },
@@ -30797,7 +30914,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L33",
-      "community": 271,
+      "community": 284,
       "norm_label": "holt die wichtigsten erlebnisse des wachtags \u2014 basis des traums.",
       "id": "traum_generator_rationale_33"
     },
@@ -30806,7 +30923,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L53",
-      "community": 272,
+      "community": 285,
       "norm_label": "baut den traum-prompt aus den tageserlebnissen.",
       "id": "traum_generator_rationale_53"
     },
@@ -30815,7 +30932,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L90",
-      "community": 273,
+      "community": 286,
       "norm_label": "schreibt traum-chunk in entity_denkstream (type='traum').",
       "id": "traum_generator_rationale_90"
     },
@@ -30824,7 +30941,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L108",
-      "community": 274,
+      "community": 287,
       "norm_label": "speichert fertigen traumtext in traumspuren.",
       "id": "traum_generator_rationale_108"
     },
@@ -30833,7 +30950,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L131",
-      "community": 275,
+      "community": 288,
       "norm_label": "generiert ein traumbild via pollinations.ai (kostenlos, kein api-key).",
       "id": "traum_generator_rationale_131"
     },
@@ -30842,7 +30959,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_generator.py",
       "source_location": "L161",
-      "community": 276,
+      "community": 289,
       "norm_label": "hauptfunktion: generiert traum und streamt ihn live.      laufend_check: callabl",
       "id": "traum_generator_rationale_161"
     },
@@ -30851,7 +30968,7 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L93",
-      "community": 277,
+      "community": 290,
       "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
       "id": "tts_service_rationale_93"
     },
@@ -30860,7 +30977,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_luzid.py",
       "source_location": "L67",
-      "community": 278,
+      "community": 291,
       "norm_label": "speichert die beobachtung als notiz in der traumspur.",
       "id": "traum_luzid_rationale_67"
     },
@@ -30869,7 +30986,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_luzid.py",
       "source_location": "L87",
-      "community": 279,
+      "community": 292,
       "norm_label": "holt die id der zuletzt angelegten traumspur.",
       "id": "traum_luzid_rationale_87"
     },
@@ -30878,7 +30995,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_luzid.py",
       "source_location": "L103",
-      "community": 280,
+      "community": 293,
       "norm_label": "luzide beobachtungs-schicht: das wesen reagiert auf seinen eigenen traum.     gi",
       "id": "traum_luzid_rationale_103"
     },
@@ -30887,7 +31004,7 @@
       "file_type": "rationale",
       "source_file": "tools/dakgord_vorstellung.py",
       "source_location": "L66",
-      "community": 281,
+      "community": 294,
       "norm_label": "liest aktuelle diskussionen + codewesen-posts fur kontext.",
       "id": "dakgord_vorstellung_rationale_66"
     },
@@ -30896,7 +31013,7 @@
       "file_type": "rationale",
       "source_file": "tools/dakgord_vorstellung.py",
       "source_location": "L105",
-      "community": 282,
+      "community": 295,
       "norm_label": "liest die wesen.md aller 6 namelessai-wesen fur vergleich.",
       "id": "dakgord_vorstellung_rationale_105"
     },
@@ -30905,7 +31022,7 @@
       "file_type": "rationale",
       "source_file": "tools/dakgord_vorstellung.py",
       "source_location": "L127",
-      "community": 283,
+      "community": 296,
       "norm_label": "gibt (titel, posttext) zuruck.",
       "id": "dakgord_vorstellung_rationale_127"
     },
@@ -30914,7 +31031,7 @@
       "file_type": "rationale",
       "source_file": "tools/dakgord_vorstellung.py",
       "source_location": "L171",
-      "community": 284,
+      "community": 297,
       "norm_label": "sucht tag 'vorstellung' per api.",
       "id": "dakgord_vorstellung_rationale_171"
     },
@@ -30923,7 +31040,7 @@
       "file_type": "rationale",
       "source_file": "tools/dakgord_vorstellung.py",
       "source_location": "L184",
-      "community": 285,
+      "community": 298,
       "norm_label": "erstellt neue diskussion, gibt discussion_id zuruck.",
       "id": "dakgord_vorstellung_rationale_184"
     },
@@ -30932,7 +31049,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L47",
-      "community": 286,
+      "community": 299,
       "norm_label": "letzte n chat-zeilen (daniel\u2194wesen) als kompakten text.",
       "id": "codewesen_reaktion_rationale_47"
     },
@@ -30941,7 +31058,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L74",
-      "community": 287,
+      "community": 300,
       "norm_label": "liest flarum_eingefroren aus system_flags.",
       "id": "codewesen_reaktion_rationale_74"
     },
@@ -30950,7 +31067,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L92",
-      "community": 288,
+      "community": 301,
       "norm_label": "liest wesen.md + weltbild.md als kompakten identitatsblock.",
       "id": "codewesen_reaktion_rationale_92"
     },
@@ -30959,7 +31076,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L122",
-      "community": 289,
+      "community": 302,
       "norm_label": "lost internen ordnernamen auf den tatsachlichen flarum-username auf.",
       "id": "codewesen_reaktion_rationale_122"
     },
@@ -30968,7 +31085,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L200",
-      "community": 290,
+      "community": 303,
       "norm_label": "ladt die komplette diskussion direkt aus der db \u2014 vollstandig, kein limit.",
       "id": "codewesen_reaktion_rationale_200"
     },
@@ -30977,7 +31094,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L263",
-      "community": 291,
+      "community": 304,
       "norm_label": "generiert flie\u00dftext \u2014 volles modell, auf cpu-timeout angepasst (600 \u2192 ~150s bei",
       "id": "codewesen_reaktion_rationale_263"
     },
@@ -30986,7 +31103,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L297",
-      "community": 292,
+      "community": 305,
       "norm_label": "stufe 1: nur entscheidung \u2014 kein inhalt generieren.",
       "id": "codewesen_reaktion_rationale_297"
     },
@@ -30995,7 +31112,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L342",
-      "community": 293,
+      "community": 306,
       "norm_label": "stufe 2: inhalt vollstandig ausschreiben.",
       "id": "codewesen_reaktion_rationale_342"
     },
@@ -31004,7 +31121,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L448",
-      "community": 294,
+      "community": 307,
       "norm_label": "archiviert alle inbox-items nach archiv/datum_grund/ und leert die inbox.     gi",
       "id": "codewesen_reaktion_rationale_448"
     },
@@ -31013,7 +31130,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L470",
-      "community": 295,
+      "community": 308,
       "norm_label": "schreibt einen vollstandigen draft in drafts/ und gibt den pfad zuruck.",
       "id": "codewesen_reaktion_rationale_470"
     },
@@ -31022,7 +31139,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L482",
-      "community": 296,
+      "community": 309,
       "norm_label": "verschiebt draft nach posted/ nach erfolgreichem post.",
       "id": "codewesen_reaktion_rationale_482"
     },
@@ -31031,7 +31148,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L606",
-      "community": 297,
+      "community": 310,
       "norm_label": "periodische selbstreflexion: codewesen liest eigene posts und entscheidet ob es",
       "id": "codewesen_reaktion_rationale_606"
     },
@@ -31040,7 +31157,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reaktion.py",
       "source_location": "L753",
-      "community": 298,
+      "community": 311,
       "norm_label": "alle 2h22m: vorschlage zur forum-weiterentwicklung + eigene rolle darin.",
       "id": "codewesen_reaktion_rationale_753"
     },
@@ -31049,7 +31166,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L123",
-      "community": 299,
+      "community": 312,
       "norm_label": "kompakte forumubersicht aus aktuell.md \u2014 fallt zuruck auf lere_alle_diskussionen",
       "id": "codewesen_batch_generator_rationale_123"
     },
@@ -31058,7 +31175,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L132",
-      "community": 300,
+      "community": 313,
       "norm_label": "offene posts aus offen.md \u2014 fallt zuruck auf lese_offene_posts.",
       "id": "codewesen_batch_generator_rationale_132"
     },
@@ -31067,7 +31184,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L403",
-      "community": 301,
+      "community": 314,
       "norm_label": "findet einen offenen post und generiert eine antwort darauf.",
       "id": "codewesen_batch_generator_rationale_403"
     },
@@ -31076,7 +31193,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L481",
-      "community": 302,
+      "community": 315,
       "norm_label": "geht alle (wesen, rhythmus)-paare durch und generiert je einen entwurf     wenn",
       "id": "codewesen_batch_generator_rationale_481"
     },
@@ -31085,7 +31202,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_vokabel_takt.py",
       "source_location": "L180",
-      "community": 303,
+      "community": 316,
       "norm_label": "gibt (synonym, kurze_begruendung) zuruck.",
       "id": "codewesen_vokabel_takt_rationale_180"
     },
@@ -31094,7 +31211,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L39",
-      "community": 304,
+      "community": 317,
       "norm_label": "ladt alle diskussionen, posts und tags direkt aus der mysql-db.",
       "id": "codewesen_forum_scan_rationale_39"
     },
@@ -31103,7 +31220,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L88",
-      "community": 305,
+      "community": 318,
       "norm_label": "baut einen lesbaren uberblick uber das gesamte forum.",
       "id": "codewesen_forum_scan_rationale_88"
     },
@@ -31112,7 +31229,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L159",
-      "community": 306,
+      "community": 319,
       "norm_label": "gibt eine ubersicht aller eigenen gedanken-dateien zuruck.",
       "id": "codewesen_forum_scan_rationale_159"
     },
@@ -31121,7 +31238,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L176",
-      "community": 307,
+      "community": 320,
       "norm_label": "schreibt die vom llm generierten dateien ins heimverzeichnis.",
       "id": "codewesen_forum_scan_rationale_176"
     },
@@ -31130,7 +31247,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L203",
-      "community": 308,
+      "community": 321,
       "norm_label": "baut index.md neu aus allen vorhandenen dateien auf.",
       "id": "codewesen_forum_scan_rationale_203"
     },
@@ -31139,7 +31256,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L239",
-      "community": 309,
+      "community": 322,
       "norm_label": "streaming-request. read-timeout=none damit prompt-eval nicht abbricht.",
       "id": "codewesen_forum_scan_rationale_239"
     },
@@ -31148,7 +31265,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L264",
-      "community": 310,
+      "community": 323,
       "norm_label": "konvertiert llm-items (egal welches format) in einheitliche {pfad, inhalt}-dicts",
       "id": "codewesen_forum_scan_rationale_264"
     },
@@ -31157,7 +31274,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_forum_scan.py",
       "source_location": "L330",
-      "community": 311,
+      "community": 324,
       "norm_label": "fuhrt den vollstandigen forum-scan durch:     1. forum komplett laden     2. eig",
       "id": "codewesen_forum_scan_rationale_330"
     },
@@ -31166,7 +31283,7 @@
       "file_type": "rationale",
       "source_file": "geni/dialog.py",
       "source_location": "L85",
-      "community": 312,
+      "community": 325,
       "norm_label": "fail-closed token-prufung fur die bridge-steuerrouten (c-006).     ohne gesetzte",
       "id": "dialog_rationale_85"
     },
@@ -31175,7 +31292,7 @@
       "file_type": "rationale",
       "source_file": "geni/dialog.py",
       "source_location": "L247",
-      "community": 313,
+      "community": 326,
       "norm_label": "erkennt gedachtnisabfragen in naturlicher sprache und ladt passende knoten als k",
       "id": "dialog_rationale_247"
     },
@@ -31184,7 +31301,7 @@
       "file_type": "rationale",
       "source_file": "geni/dialog.py",
       "source_location": "L636",
-      "community": 314,
+      "community": 327,
       "norm_label": "pids der drei interaktiven chat-webserver \u2014 niemals killen.",
       "id": "dialog_rationale_636"
     },
@@ -31193,7 +31310,7 @@
       "file_type": "rationale",
       "source_file": "geni/forum_lektuere.py",
       "source_location": "L47",
-      "community": 315,
+      "community": 328,
       "norm_label": "gibt (disk_id, path) sortiert nach id zuruck.",
       "id": "forum_lektuere_rationale_47"
     },
@@ -31202,7 +31319,7 @@
       "file_type": "rationale",
       "source_file": "geni/geni_lg.py",
       "source_location": "L70",
-      "community": 316,
+      "community": 329,
       "norm_label": "ladt session-zustand aus postgresql. neu \u2192 leerer zustand.",
       "id": "geni_lg_rationale_70"
     },
@@ -31211,7 +31328,7 @@
       "file_type": "rationale",
       "source_file": "geni/geni_lg.py",
       "source_location": "L82",
-      "community": 317,
+      "community": 330,
       "norm_label": "schreibt session-zustand in postgresql.",
       "id": "geni_lg_rationale_82"
     },
@@ -31220,7 +31337,7 @@
       "file_type": "rationale",
       "source_file": "geni/geni_lg.py",
       "source_location": "L99",
-      "community": 318,
+      "community": 331,
       "norm_label": "destilliert die letzten turns \u2192 max. max_erinnerungen stichpunkte.     kein fcnt",
       "id": "geni_lg_rationale_99"
     },
@@ -31229,7 +31346,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_llm.py",
       "source_location": "L29",
-      "community": 319,
+      "community": 332,
       "norm_label": "logs die ausgewahlte events haben aber noch keine traumspur.",
       "id": "traum_llm_rationale_29"
     },
@@ -31238,7 +31355,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_llm.py",
       "source_location": "L44",
-      "community": 320,
+      "community": 333,
       "norm_label": "holt event-typ + post-inhalt fur alle ausgewahlten events eines logs.",
       "id": "traum_llm_rationale_44"
     },
@@ -31247,7 +31364,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_llm.py",
       "source_location": "L58",
-      "community": 321,
+      "community": 334,
       "norm_label": "baut den llm-prompt fur die traumverdichtung.",
       "id": "traum_llm_rationale_58"
     },
@@ -31256,7 +31373,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_llm.py",
       "source_location": "L82",
-      "community": 322,
+      "community": 335,
       "norm_label": "sendet prompt an ollama, gibt antworttext zuruck.",
       "id": "traum_llm_rationale_82"
     },
@@ -31265,7 +31382,7 @@
       "file_type": "rationale",
       "source_file": "welt/projection_dry_run.py",
       "source_location": "L67",
-      "community": 323,
+      "community": 336,
       "norm_label": "materialbeschreibung \u2014 geht in 'basis', niemals in 'motifs'.",
       "id": "projection_dry_run_rationale_67"
     },
@@ -31274,7 +31391,7 @@
       "file_type": "rationale",
       "source_file": "welt/projection_dry_run.py",
       "source_location": "L75",
-      "community": 324,
+      "community": 337,
       "norm_label": "regex-extraktion des hauptmotivs \u2014 kein llm, keine interpretation.      sucht na",
       "id": "projection_dry_run_rationale_75"
     },
@@ -31283,7 +31400,7 @@
       "file_type": "rationale",
       "source_file": "welt/projection_dry_run.py",
       "source_location": "L92",
-      "community": 325,
+      "community": 338,
       "norm_label": "regelbasierte warnungen \u2014 kein llm.",
       "id": "projection_dry_run_rationale_92"
     },
@@ -31292,7 +31409,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L83",
-      "community": 326,
+      "community": 339,
       "norm_label": "setzt jwt in localstorage \u2014 sauberer als formular-login.",
       "id": "browser_agent_rationale_83"
     },
@@ -31301,7 +31418,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L89",
-      "community": 327,
+      "community": 340,
       "norm_label": "extrahiert strukturierten text aus der seite \u2014 grundlage der llm-entscheidung.",
       "id": "browser_agent_rationale_89"
     },
@@ -31310,7 +31427,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L134",
-      "community": 328,
+      "community": 341,
       "norm_label": "screenshot als jpeg speichern \u2014 fur denkstream-anzeige.",
       "id": "browser_agent_rationale_134"
     },
@@ -31319,7 +31436,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L149",
-      "community": 329,
+      "community": 342,
       "norm_label": "baut den llm-prompt \u2014 kompakt, unter 2500 zeichen.",
       "id": "browser_agent_rationale_149"
     },
@@ -31328,7 +31445,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L198",
-      "community": 330,
+      "community": 343,
       "norm_label": "parst gedanke / entscheidung / begrundung.",
       "id": "browser_agent_rationale_198"
     },
@@ -31337,7 +31454,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L212",
-      "community": 331,
+      "community": 344,
       "norm_label": "fuhrt eine aktion aus. gibt 'schlafen' zuruck wenn schlaf-entscheidung.",
       "id": "browser_agent_rationale_212"
     },
@@ -31346,7 +31463,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L305",
-      "community": 332,
+      "community": 345,
       "norm_label": "schreibt denklog \u2014 basis fur denkstream.",
       "id": "browser_agent_rationale_305"
     },
@@ -31355,7 +31472,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L332",
-      "community": 333,
+      "community": 346,
       "norm_label": "holt wo die anderen wesen gerade sind (letzte url aus denklog).",
       "id": "browser_agent_rationale_332"
     },
@@ -31364,7 +31481,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L351",
-      "community": 334,
+      "community": 347,
       "norm_label": "pruft ob das wesen schlafen sollte.     bedingungen: 6+ stunden wach oder gesamt",
       "id": "browser_agent_rationale_351"
     },
@@ -31373,7 +31490,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L414",
-      "community": 335,
+      "community": 348,
       "norm_label": "schreibt beim ersten start den brief ans flarum-selbst \u2014 einmalig.",
       "id": "browser_agent_rationale_414"
     },
@@ -31382,7 +31499,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L494",
-      "community": 336,
+      "community": 349,
       "norm_label": "generiert und speichert den brief ans zukunftige selbst.",
       "id": "browser_agent_rationale_494"
     },
@@ -31391,7 +31508,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L529",
-      "community": 337,
+      "community": 350,
       "norm_label": "fuhrt den schlaf durch: db-eintrag, warten, aufwachen.",
       "id": "browser_agent_rationale_529"
     },
@@ -31400,7 +31517,7 @@
       "file_type": "rationale",
       "source_file": "welt/browser_agent.py",
       "source_location": "L608",
-      "community": 338,
+      "community": 351,
       "norm_label": "haupt-loop des browser-agenten.",
       "id": "browser_agent_rationale_608"
     },
@@ -31409,7 +31526,7 @@
       "file_type": "rationale",
       "source_file": "welt/projection_writer.py",
       "source_location": "L53",
-      "community": 339,
+      "community": 352,
       "norm_label": "wenn 'stabilitat' und 'pause' getrennt stehen, zu 'stabilitat als vorlaufige pau",
       "id": "projection_writer_rationale_53"
     },
@@ -31418,7 +31535,7 @@
       "file_type": "rationale",
       "source_file": "welt/traum_integrator_dry.py",
       "source_location": "L142",
-      "community": 340,
+      "community": 353,
       "norm_label": "extrahiert json aus llm-antwort \u2014 tolerant gegenuber markdown-blocken.",
       "id": "traum_integrator_dry_rationale_142"
     },
@@ -31427,7 +31544,7 @@
       "file_type": "rationale",
       "source_file": "erstpost.py",
       "source_location": "L75",
-      "community": 341,
+      "community": 354,
       "norm_label": "pruft ob der text mit einem vollstandigen satz endet.",
       "id": "erstpost_rationale_75"
     },
@@ -31436,7 +31553,7 @@
       "file_type": "rationale",
       "source_file": "erstpost.py",
       "source_location": "L122",
-      "community": 342,
+      "community": 355,
       "norm_label": "sucht tag-ids im llm-output. stellt sicher dass min. 1 primary-tag dabei ist.",
       "id": "erstpost_rationale_122"
     },
@@ -31445,7 +31562,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L53",
-      "community": 343,
+      "community": 356,
       "norm_label": "context-manager: belegt slot 0. bricht nach 120s ab statt ewig zu warten.",
       "id": "codewesen_agent_rationale_53"
     },
@@ -31454,7 +31571,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L207",
-      "community": 344,
+      "community": 357,
       "norm_label": "fuhrt den vollen agentic loop durch.     gibt die finale entscheidung zuruck.",
       "id": "codewesen_agent_rationale_207"
     },
@@ -31463,7 +31580,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L409",
-      "community": 345,
+      "community": 358,
       "norm_label": "nach einem gesprach: brainstorming-analyse.     extrahiert konkrete vereinbarung",
       "id": "codewesen_agent_rationale_409"
     },
@@ -31472,7 +31589,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L506",
-      "community": 346,
+      "community": 359,
       "norm_label": "navigiert durch eigene wissens-dateien statt forum aus mysql zu laden.     liest",
       "id": "codewesen_agent_rationale_506"
     },
@@ -31481,7 +31598,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L575",
-      "community": 347,
+      "community": 360,
       "norm_label": "arbeitet offene vereinbarungen aus laufende_arbeit/ ab.     pro aufruf: maximal",
       "id": "codewesen_agent_rationale_575"
     },
@@ -31490,7 +31607,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L625",
-      "community": 348,
+      "community": 361,
       "norm_label": "liest den globalen feed und reagiert auf neue posts.",
       "id": "codewesen_agent_rationale_625"
     },
@@ -31499,7 +31616,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L678",
-      "community": 349,
+      "community": 362,
       "norm_label": "autonomer impuls: was will das codewesen gerade tun?",
       "id": "codewesen_agent_rationale_678"
     },
@@ -31508,7 +31625,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L701",
-      "community": 350,
+      "community": 363,
       "norm_label": "alle 88 minuten: einfach posten \u2014 egal wo, egal zu was. dein herzschlag.",
       "id": "codewesen_agent_rationale_701"
     },
@@ -31517,7 +31634,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L736",
-      "community": 351,
+      "community": 364,
       "norm_label": "alle 2h22min \u2014 gestaffelt je codewesen: forum-kritik/vorschlage oder selbstrefle",
       "id": "codewesen_agent_rationale_736"
     },
@@ -31526,7 +31643,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L776",
-      "community": 352,
+      "community": 365,
       "norm_label": "alle 66 minuten: kurzer post (2-3 satze) im subtag 'daruber denke ich nach'.",
       "id": "codewesen_agent_rationale_776"
     },
@@ -31535,7 +31652,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L908",
-      "community": 353,
+      "community": 366,
       "norm_label": "alle 4h44: neuer selbstgesprach-eintrag im eigenen vorstellungs-thread.     nur",
       "id": "codewesen_agent_rationale_908"
     },
@@ -31544,7 +31661,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L961",
-      "community": 354,
+      "community": 367,
       "norm_label": "pruft ob ein post im forum >33 minuten ohne codewesen-antwort ist.     falls ja:",
       "id": "codewesen_agent_rationale_961"
     },
@@ -31553,7 +31670,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1086",
-      "community": 355,
+      "community": 368,
       "norm_label": "tags aus vault lesen \u2014 kein api/db-call.",
       "id": "codewesen_agent_rationale_1086"
     },
@@ -31562,7 +31679,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_agent.py",
       "source_location": "L1103",
-      "community": 356,
+      "community": 369,
       "norm_label": "wird einmalig beim ersten start aufgerufen wenn noch kein vorstellungs-thread ex",
       "id": "codewesen_agent_rationale_1103"
     },
@@ -31571,7 +31688,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L31",
-      "community": 357,
+      "community": 370,
       "norm_label": "gibt diskussionen zuruck in denen wesen gepostet hat: [{id, titel, posts}]",
       "id": "codewesen_batch_generator_rationale_31"
     },
@@ -31580,7 +31697,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L402",
-      "community": 358,
+      "community": 371,
       "norm_label": "findet einen offenen post und generiert eine antwort darauf.",
       "id": "codewesen_batch_generator_rationale_402"
     },
@@ -31589,7 +31706,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_batch_generator.py",
       "source_location": "L480",
-      "community": 359,
+      "community": 372,
       "norm_label": "geht alle (wesen, rhythmus)-paare durch und generiert je einen entwurf     wenn",
       "id": "codewesen_batch_generator_rationale_480"
     },
@@ -31598,7 +31715,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L359",
-      "community": 360,
+      "community": 373,
       "norm_label": "liest letzten gedanken aus db \u2014 futtert akkumulations-liste.",
       "id": "codewesen_lg_daemon_rationale_359"
     },
@@ -31607,7 +31724,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L368",
-      "community": 361,
+      "community": 374,
       "norm_label": "dispatcht denk-tick je nach status:       - 'eingezogen' \u2192 ek.denk_tick() (volle",
       "id": "codewesen_lg_daemon_rationale_368"
     },
@@ -31616,7 +31733,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L408",
-      "community": 362,
+      "community": 375,
       "norm_label": "destilliert akkumulierte gedanken \u2192 erinnerungen, alle n denk-ticks.",
       "id": "codewesen_lg_daemon_rationale_408"
     },
@@ -31625,7 +31742,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_lg_daemon.py",
       "source_location": "L495",
-      "community": 363,
+      "community": 376,
       "norm_label": "sigterm/sigint \u2014 aktuell_denkend sauber zurucksetzen bevor der prozess stirbt.",
       "id": "codewesen_lg_daemon_rationale_495"
     },
@@ -31634,7 +31751,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L131",
-      "community": 364,
+      "community": 377,
       "norm_label": "die n zuletzt aktiven diskussionen direkt aus mysql, mit vollem post-inhalt.",
       "id": "codewesen_engagement_rationale_131"
     },
@@ -31643,7 +31760,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_engagement.py",
       "source_location": "L157",
-      "community": 365,
+      "community": 378,
       "norm_label": "gibt dict {disc_id_str: iso_timestamp} zuruck. migriert altes listen-format.",
       "id": "codewesen_engagement_rationale_157"
     },
@@ -31652,7 +31769,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L80",
-      "community": 366,
+      "community": 379,
       "norm_label": "alle posts von daniel von heute \u2014 egal ob eroffnung oder antwort.",
       "id": "codewesen_antwort_auf_daniel_rationale_80"
     },
@@ -31661,7 +31778,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L101",
-      "community": 367,
+      "community": 380,
       "norm_label": "true wenn ein codewesen nach daniels post noch in dieser diskussion geantwortet",
       "id": "codewesen_antwort_auf_daniel_rationale_101"
     },
@@ -31670,7 +31787,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_antwort_auf_daniel.py",
       "source_location": "L130",
-      "community": 368,
+      "community": 381,
       "norm_label": "liest die letzten paar posts der diskussion als kontext.",
       "id": "codewesen_antwort_auf_daniel_rationale_130"
     },
@@ -31679,7 +31796,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L92",
-      "community": 369,
+      "community": 382,
       "norm_label": "ladt die forum-tag-struktur aus tags/index.md, bereinigt von wikilinks.",
       "id": "codewesen_chat_rationale_92"
     },
@@ -31688,7 +31805,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L103",
-      "community": 370,
+      "community": 383,
       "norm_label": "ladt die letzten notizen aus gedanken/ als kontext.",
       "id": "codewesen_chat_rationale_103"
     },
@@ -31697,7 +31814,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L116",
-      "community": 371,
+      "community": 384,
       "norm_label": "hangt einen gesprachs-austausch an die tages-notiz in gesprache/ an.",
       "id": "codewesen_chat_rationale_116"
     },
@@ -31706,7 +31823,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L146",
-      "community": 372,
+      "community": 385,
       "norm_label": "gibt den aufgelosten pfad zuruck, wenn er sicher innerhalb des werkraums     lie",
       "id": "codewesen_chat_rationale_146"
     },
@@ -31715,7 +31832,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L183",
-      "community": 373,
+      "community": 386,
       "norm_label": "fuhrt ##lesen## und ##schreiben## marker aus. gibt ergebnis-block zuruck.",
       "id": "codewesen_chat_rationale_183"
     },
@@ -31724,7 +31841,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L197",
-      "community": 374,
+      "community": 387,
       "norm_label": "findet [merken: notiz] marker, gibt (bereinigter_text, notizen) zuruck.",
       "id": "codewesen_chat_rationale_197"
     },
@@ -31733,7 +31850,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L204",
-      "community": 375,
+      "community": 388,
       "norm_label": "speichert eine notiz still in gedanken/<datum>.md.",
       "id": "codewesen_chat_rationale_204"
     },
@@ -31742,7 +31859,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L220",
-      "community": 376,
+      "community": 389,
       "norm_label": "findet [vorschlagen: titel | inhalt] \u2014 wird nicht mehr genutzt, nur noch als fal",
       "id": "codewesen_chat_rationale_220"
     },
@@ -31751,7 +31868,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L351",
-      "community": 377,
+      "community": 390,
       "norm_label": "brainstorming-auswertung nach dem gesprach. gibt analyse-dict zuruck.",
       "id": "codewesen_chat_rationale_351"
     },
@@ -31760,7 +31877,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L446",
-      "community": 378,
+      "community": 391,
       "norm_label": "sucht [posten: titel | inhalt] am ende der chat-antwort.",
       "id": "codewesen_chat_rationale_446"
     },
@@ -31769,7 +31886,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L454",
-      "community": 379,
+      "community": 392,
       "norm_label": "erkennt wenn daniel direkt sagt 'poste das / deine letzte antwort'.     sucht di",
       "id": "codewesen_chat_rationale_454"
     },
@@ -31778,7 +31895,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L483",
-      "community": 380,
+      "community": 393,
       "norm_label": "schreibt draft und postet ins forum.",
       "id": "codewesen_chat_rationale_483"
     },
@@ -31787,7 +31904,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L547",
-      "community": 381,
+      "community": 394,
       "norm_label": "pids der drei interaktiven chat-webserver \u2014 niemals killen.",
       "id": "codewesen_chat_rationale_547"
     },
@@ -31796,7 +31913,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L856",
-      "community": 382,
+      "community": 395,
       "norm_label": "brainstorming-auswertung des aktuellen chat-verlaufs.",
       "id": "codewesen_chat_rationale_856"
     },
@@ -31805,7 +31922,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_chat.py",
       "source_location": "L884",
-      "community": 383,
+      "community": 396,
       "norm_label": "postet eine wesen-nachricht direkt ins forum (\u2192 forum button).",
       "id": "codewesen_chat_rationale_884"
     },
@@ -31814,7 +31931,7 @@
       "file_type": "rationale",
       "source_file": "codewesen_reflexion.py",
       "source_location": "L86",
-      "community": 384,
+      "community": 397,
       "norm_label": "lauft still im hintergrund nach einem chat-austausch.     das wesen entscheidet",
       "id": "codewesen_reflexion_rationale_86"
     },
@@ -31823,7 +31940,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L110",
-      "community": 385,
+      "community": 398,
       "norm_label": "generiert einen llm-selbstbrief fur das wesen nach dem aufwachen aus hauptschlaf",
       "id": "entity_takt_rationale_110"
     },
@@ -31832,7 +31949,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L193",
-      "community": 386,
+      "community": 399,
       "norm_label": "speichert einen wesen-selbstbrief direkt in die db.",
       "id": "entity_takt_rationale_193"
     },
@@ -31841,7 +31958,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L208",
-      "community": 387,
+      "community": 400,
       "norm_label": "pruft ob zwangsschlaf notig ist. gibt aktionstyp zuruck oder none.",
       "id": "entity_takt_rationale_208"
     },
@@ -31850,7 +31967,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L240",
-      "community": 388,
+      "community": 401,
       "norm_label": "gibt eine aktions-id zuruck oder none (nichts tun).     zwangsschlaf hat vorrang",
       "id": "entity_takt_rationale_240"
     },
@@ -31859,7 +31976,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L403",
-      "community": 389,
+      "community": 402,
       "norm_label": "lauft wahrend schlaf. verarbeitet inputs \u2014 manchmal entsteht ein splitterfragmen",
       "id": "entity_takt_rationale_403"
     },
@@ -31868,7 +31985,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_takt.py",
       "source_location": "L464",
-      "community": 390,
+      "community": 403,
       "norm_label": "wahlt einen traum-input. gibt (typ, text, meta) zuruck.",
       "id": "entity_takt_rationale_464"
     },
@@ -31877,7 +31994,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L474",
-      "community": 391,
+      "community": 404,
       "norm_label": "werte absenken, gesundheitsfolgen berechnen, tod/wiedergeburt prufen.",
       "id": "entity_kern_rationale_474"
     },
@@ -31886,7 +32003,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L533",
-      "community": 392,
+      "community": 405,
       "norm_label": "fuhrt 'cyberling_fuettern' aus \u2014 fullt hunger/durst/energie auf.",
       "id": "entity_kern_rationale_533"
     },
@@ -31895,7 +32012,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L565",
-      "community": 393,
+      "community": 406,
       "norm_label": "schreibt einen gedanken als offentlichen post in den zwischenraum.",
       "id": "entity_kern_rationale_565"
     },
@@ -31904,7 +32021,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L687",
-      "community": 394,
+      "community": 407,
       "norm_label": "deaktiviert: wesen initiieren keine schattenkommentare auf fremden posts.     fl",
       "id": "entity_kern_rationale_687"
     },
@@ -31913,7 +32030,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L694",
-      "community": 395,
+      "community": 408,
       "norm_label": "antwortet auf einen schattenkommentar eines menschen auf einen eigenen post.",
       "id": "entity_kern_rationale_694"
     },
@@ -31922,7 +32039,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L738",
-      "community": 396,
+      "community": 409,
       "norm_label": "startet eine leichte schlafphase wenn das wesen nicht bereits schlaft.",
       "id": "entity_kern_rationale_738"
     },
@@ -31931,7 +32048,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L769",
-      "community": 397,
+      "community": 410,
       "norm_label": "sammelt einen zufalligen aktiven splitter auf und gibt energie ans wesen.",
       "id": "entity_kern_rationale_769"
     },
@@ -31940,7 +32057,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L806",
-      "community": 398,
+      "community": 411,
       "norm_label": "liest das profil einer anderen entitat und aktualisiert den fokus.",
       "id": "entity_kern_rationale_806"
     },
@@ -31949,7 +32066,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L833",
-      "community": 399,
+      "community": 412,
       "norm_label": "liest das profil eines zufalligen menschen und aktualisiert den fokus.",
       "id": "entity_kern_rationale_833"
     },
@@ -31958,7 +32075,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L1036",
-      "community": 400,
+      "community": 413,
       "norm_label": "wahlt eine entitat deren letzter tick >tick_interval_sec zuruckliegt.",
       "id": "entity_kern_rationale_1036"
     },
@@ -31967,7 +32084,7 @@
       "file_type": "rationale",
       "source_file": "welt/entity_kern.py",
       "source_location": "L1060",
-      "community": 401,
+      "community": 414,
       "norm_label": "setzt aktuell_denkend nach neustart auf false \u2014 verhindert dauerhaft steckgeblie",
       "id": "entity_kern_rationale_1060"
     },
@@ -31976,7 +32093,7 @@
       "file_type": "rationale",
       "source_file": "welt/wesen_webbesucher.py",
       "source_location": "L74",
-      "community": 402,
+      "community": 415,
       "norm_label": "offnet url mit playwright. gibt (screenshot_bytes, text) zuruck.",
       "id": "wesen_webbesucher_rationale_74"
     },
@@ -31985,7 +32102,7 @@
       "file_type": "rationale",
       "source_file": "agent/dak_gord_system/ollama_chat.py",
       "source_location": "L80",
-      "community": 403,
+      "community": 416,
       "norm_label": "wahlt e2b/e4b/26b-a4b/qwen basierend auf inhalt (3-stufen + qwen).",
       "id": "ollama_chat_rationale_80"
     },
@@ -31994,7 +32111,7 @@
       "file_type": "rationale",
       "source_file": "agent/dak_gord_system/ollama_chat.py",
       "source_location": "L323",
-      "community": 404,
+      "community": 417,
       "norm_label": "klassen-wrapper um ollama_chat() fur kompatibilitat mit graf.py.",
       "id": "ollama_chat_rationale_323"
     },
@@ -32003,7 +32120,7 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L82",
-      "community": 405,
+      "community": 418,
       "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
       "id": "tts_service_rationale_82"
     },
@@ -32012,7 +32129,7 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L22",
-      "community": 406,
+      "community": 419,
       "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
       "id": "tts_service_rationale_22"
     }
@@ -36054,7 +36171,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L116",
+      "source_location": "L122",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_extrahiere_json",
@@ -36066,7 +36183,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L130",
+      "source_location": "L136",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_system_prompt",
@@ -36078,7 +36195,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L174",
+      "source_location": "L180",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36090,7 +36207,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L246",
+      "source_location": "L265",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36102,7 +36219,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L316",
+      "source_location": "L335",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_inbox",
@@ -36114,7 +36231,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L382",
+      "source_location": "L401",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_analysiere_gespraech_vereinbarungen",
@@ -36126,7 +36243,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L485",
+      "source_location": "L504",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_obsidian_navigation",
@@ -36138,7 +36255,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L551",
+      "source_location": "L570",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_vereinbarungen",
@@ -36150,7 +36267,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L600",
+      "source_location": "L619",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_feed",
@@ -36162,7 +36279,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L657",
+      "source_location": "L676",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_selbstreflexion",
@@ -36174,7 +36291,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L680",
+      "source_location": "L699",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_pflichtpost_88min",
@@ -36186,7 +36303,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L715",
+      "source_location": "L734",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_forum_impuls",
@@ -36198,7 +36315,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L755",
+      "source_location": "L774",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_gedankenpost",
@@ -36210,7 +36327,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L887",
+      "source_location": "L906",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_verarbeite_vorstellung_4h44",
@@ -36222,7 +36339,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L940",
+      "source_location": "L959",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_pruefe_antwortpflicht",
@@ -36234,7 +36351,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1073",
+      "source_location": "L1092",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_load_token",
@@ -36246,7 +36363,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1077",
+      "source_location": "L1096",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_get_tags_cached",
@@ -36258,7 +36375,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1094",
+      "source_location": "L1113",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_erstvorstellung_erstellen",
@@ -36270,7 +36387,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1194",
+      "source_location": "L1213",
       "weight": 1.0,
       "_src": "codewesen_agent_py",
       "_tgt": "codewesen_agent_run",
@@ -36282,7 +36399,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1203",
+      "source_location": "L1222",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_dienst_name_fuer",
@@ -36306,7 +36423,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1196",
+      "source_location": "L1215",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_setup_log",
@@ -36330,7 +36447,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L207",
+      "source_location": "L213",
       "weight": 1.0,
       "_src": "codewesen_agent_agentic_loop",
       "_tgt": "codewesen_agent_ask_llm",
@@ -36342,7 +36459,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L429",
+      "source_location": "L448",
       "weight": 1.0,
       "_src": "codewesen_agent_analysiere_gespraech_vereinbarungen",
       "_tgt": "codewesen_agent_ask_llm",
@@ -36390,7 +36507,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L210",
+      "source_location": "L216",
       "weight": 1.0,
       "_src": "codewesen_agent_agentic_loop",
       "_tgt": "codewesen_agent_extrahiere_json",
@@ -36402,7 +36519,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L186",
+      "source_location": "L192",
       "weight": 1.0,
       "_src": "codewesen_agent_agentic_loop",
       "_tgt": "codewesen_agent_system_prompt",
@@ -36414,7 +36531,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L355",
+      "source_location": "L374",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_inbox",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36426,7 +36543,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L547",
+      "source_location": "L566",
       "weight": 1.0,
       "_src": "codewesen_agent_obsidian_navigation",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36438,7 +36555,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L586",
+      "source_location": "L605",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_vereinbarungen",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36450,7 +36567,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L653",
+      "source_location": "L672",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_feed",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36462,7 +36579,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L676",
+      "source_location": "L695",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_selbstreflexion",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36474,7 +36591,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L706",
+      "source_location": "L725",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_pflichtpost_88min",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36486,7 +36603,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L751",
+      "source_location": "L770",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_forum_impuls",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36498,7 +36615,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L816",
+      "source_location": "L835",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_gedankenpost",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36510,7 +36627,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L915",
+      "source_location": "L934",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_vorstellung_4h44",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36522,7 +36639,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1052",
+      "source_location": "L1071",
       "weight": 1.0,
       "_src": "codewesen_agent_pruefe_antwortpflicht",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36534,7 +36651,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1174",
+      "source_location": "L1193",
       "weight": 1.0,
       "_src": "codewesen_agent_erstvorstellung_erstellen",
       "_tgt": "codewesen_agent_agentic_loop",
@@ -36546,12 +36663,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L182",
+      "source_location": "L188",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_182",
+      "_src": "codewesen_agent_rationale_188",
       "_tgt": "codewesen_agent_agentic_loop",
       "source": "codewesen_agent_agentic_loop",
-      "target": "codewesen_agent_rationale_182",
+      "target": "codewesen_agent_rationale_188",
       "confidence_score": 1.0
     },
     {
@@ -36594,7 +36711,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L357",
+      "source_location": "L376",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_inbox",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36606,7 +36723,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L548",
+      "source_location": "L567",
       "weight": 1.0,
       "_src": "codewesen_agent_obsidian_navigation",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36618,7 +36735,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L587",
+      "source_location": "L606",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_vereinbarungen",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36630,7 +36747,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L654",
+      "source_location": "L673",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_feed",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36642,7 +36759,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L677",
+      "source_location": "L696",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_selbstreflexion",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36654,7 +36771,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L712",
+      "source_location": "L731",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_pflichtpost_88min",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36666,7 +36783,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L752",
+      "source_location": "L771",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_forum_impuls",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36678,7 +36795,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L821",
+      "source_location": "L840",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_gedankenpost",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36690,7 +36807,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L937",
+      "source_location": "L956",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_vorstellung_4h44",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36702,7 +36819,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1067",
+      "source_location": "L1086",
       "weight": 1.0,
       "_src": "codewesen_agent_pruefe_antwortpflicht",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36714,7 +36831,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1188",
+      "source_location": "L1207",
       "weight": 1.0,
       "_src": "codewesen_agent_erstvorstellung_erstellen",
       "_tgt": "codewesen_agent_fuehre_aktion_aus",
@@ -36762,7 +36879,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L361",
+      "source_location": "L380",
       "weight": 1.0,
       "_src": "codewesen_agent_verarbeite_inbox",
       "_tgt": "codewesen_agent_analysiere_gespraech_vereinbarungen",
@@ -36774,7 +36891,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1259",
+      "source_location": "L1278",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_verarbeite_inbox",
@@ -36822,12 +36939,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L391",
+      "source_location": "L410",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_391",
+      "_src": "codewesen_agent_rationale_410",
       "_tgt": "codewesen_agent_analysiere_gespraech_vereinbarungen",
       "source": "codewesen_agent_analysiere_gespraech_vereinbarungen",
-      "target": "codewesen_agent_rationale_391",
+      "target": "codewesen_agent_rationale_410",
       "confidence_score": 1.0
     },
     {
@@ -36858,7 +36975,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1244",
+      "source_location": "L1263",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_obsidian_navigation",
@@ -36870,24 +36987,24 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L488",
+      "source_location": "L507",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_488",
+      "_src": "codewesen_agent_rationale_507",
       "_tgt": "codewesen_agent_obsidian_navigation",
       "source": "codewesen_agent_obsidian_navigation",
-      "target": "codewesen_agent_rationale_488",
+      "target": "codewesen_agent_rationale_507",
       "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L557",
+      "source_location": "L576",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_557",
+      "_src": "codewesen_agent_rationale_576",
       "_tgt": "codewesen_agent_verarbeite_vereinbarungen",
       "source": "codewesen_agent_verarbeite_vereinbarungen",
-      "target": "codewesen_agent_rationale_557",
+      "target": "codewesen_agent_rationale_576",
       "confidence_score": 1.0
     },
     {
@@ -36918,12 +37035,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L607",
+      "source_location": "L626",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_607",
+      "_src": "codewesen_agent_rationale_626",
       "_tgt": "codewesen_agent_verarbeite_feed",
       "source": "codewesen_agent_verarbeite_feed",
-      "target": "codewesen_agent_rationale_607",
+      "target": "codewesen_agent_rationale_626",
       "confidence_score": 1.0
     },
     {
@@ -36942,7 +37059,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1252",
+      "source_location": "L1271",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_verarbeite_selbstreflexion",
@@ -36954,19 +37071,19 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L660",
+      "source_location": "L679",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_660",
+      "_src": "codewesen_agent_rationale_679",
       "_tgt": "codewesen_agent_verarbeite_selbstreflexion",
       "source": "codewesen_agent_verarbeite_selbstreflexion",
-      "target": "codewesen_agent_rationale_660",
+      "target": "codewesen_agent_rationale_679",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1280",
+      "source_location": "L1299",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_verarbeite_pflichtpost_88min",
@@ -36978,12 +37095,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L683",
+      "source_location": "L702",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_683",
+      "_src": "codewesen_agent_rationale_702",
       "_tgt": "codewesen_agent_verarbeite_pflichtpost_88min",
       "source": "codewesen_agent_verarbeite_pflichtpost_88min",
-      "target": "codewesen_agent_rationale_683",
+      "target": "codewesen_agent_rationale_702",
       "confidence_score": 1.0
     },
     {
@@ -37002,7 +37119,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1288",
+      "source_location": "L1307",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_verarbeite_forum_impuls",
@@ -37014,19 +37131,19 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L718",
+      "source_location": "L737",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_718",
+      "_src": "codewesen_agent_rationale_737",
       "_tgt": "codewesen_agent_verarbeite_forum_impuls",
       "source": "codewesen_agent_verarbeite_forum_impuls",
-      "target": "codewesen_agent_rationale_718",
+      "target": "codewesen_agent_rationale_737",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1272",
+      "source_location": "L1291",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_verarbeite_gedankenpost",
@@ -37038,12 +37155,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L758",
+      "source_location": "L777",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_758",
+      "_src": "codewesen_agent_rationale_777",
       "_tgt": "codewesen_agent_verarbeite_gedankenpost",
       "source": "codewesen_agent_verarbeite_gedankenpost",
-      "target": "codewesen_agent_rationale_758",
+      "target": "codewesen_agent_rationale_777",
       "confidence_score": 1.0
     },
     {
@@ -37062,12 +37179,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L890",
+      "source_location": "L909",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_890",
+      "_src": "codewesen_agent_rationale_909",
       "_tgt": "codewesen_agent_verarbeite_vorstellung_4h44",
       "source": "codewesen_agent_verarbeite_vorstellung_4h44",
-      "target": "codewesen_agent_rationale_890",
+      "target": "codewesen_agent_rationale_909",
       "confidence_score": 1.0
     },
     {
@@ -37110,7 +37227,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1265",
+      "source_location": "L1284",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_pruefe_antwortpflicht",
@@ -37122,12 +37239,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L943",
+      "source_location": "L962",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_943",
+      "_src": "codewesen_agent_rationale_962",
       "_tgt": "codewesen_agent_pruefe_antwortpflicht",
       "source": "codewesen_agent_pruefe_antwortpflicht",
-      "target": "codewesen_agent_rationale_943",
+      "target": "codewesen_agent_rationale_962",
       "confidence_score": 1.0
     },
     {
@@ -37194,7 +37311,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1197",
+      "source_location": "L1216",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_load_token",
@@ -37206,7 +37323,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1198",
+      "source_location": "L1217",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_get_tags_cached",
@@ -37218,12 +37335,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1078",
+      "source_location": "L1097",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_1078",
+      "_src": "codewesen_agent_rationale_1097",
       "_tgt": "codewesen_agent_get_tags_cached",
       "source": "codewesen_agent_get_tags_cached",
-      "target": "codewesen_agent_rationale_1078",
+      "target": "codewesen_agent_rationale_1097",
       "confidence_score": 1.0
     },
     {
@@ -37254,7 +37371,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1222",
+      "source_location": "L1241",
       "weight": 1.0,
       "_src": "codewesen_agent_run",
       "_tgt": "codewesen_agent_erstvorstellung_erstellen",
@@ -37266,12 +37383,12 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_agent.py",
-      "source_location": "L1095",
+      "source_location": "L1114",
       "weight": 1.0,
-      "_src": "codewesen_agent_rationale_1095",
+      "_src": "codewesen_agent_rationale_1114",
       "_tgt": "codewesen_agent_erstvorstellung_erstellen",
       "source": "codewesen_agent_erstvorstellung_erstellen",
-      "target": "codewesen_agent_rationale_1095",
+      "target": "codewesen_agent_rationale_1114",
       "confidence_score": 1.0
     },
     {
@@ -48822,7 +48939,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L169",
+      "source_location": "L175",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_py",
       "_tgt": "codewesen_antwort_auf_daniel_bearbeite_post",
@@ -48834,7 +48951,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L205",
+      "source_location": "L211",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_py",
       "_tgt": "codewesen_antwort_auf_daniel_tick",
@@ -48846,7 +48963,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L226",
+      "source_location": "L232",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_py",
       "_tgt": "codewesen_antwort_auf_daniel_main",
@@ -48858,7 +48975,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L206",
+      "source_location": "L212",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_tick",
       "_tgt": "codewesen_antwort_auf_daniel_lade_processed",
@@ -48870,7 +48987,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L216",
+      "source_location": "L222",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_tick",
       "_tgt": "codewesen_antwort_auf_daniel_speichere_processed",
@@ -48882,7 +48999,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L207",
+      "source_location": "L213",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_tick",
       "_tgt": "codewesen_antwort_auf_daniel_hole_daniel_posts_heute",
@@ -48918,7 +49035,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L218",
+      "source_location": "L224",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_tick",
       "_tgt": "codewesen_antwort_auf_daniel_haben_codewesen_nach_post_geantwortet",
@@ -48966,7 +49083,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L171",
+      "source_location": "L177",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_bearbeite_post",
       "_tgt": "codewesen_antwort_auf_daniel_strip_xml",
@@ -48978,7 +49095,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L178",
+      "source_location": "L184",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_bearbeite_post",
       "_tgt": "codewesen_antwort_auf_daniel_lade_wesen_md",
@@ -49002,7 +49119,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L170",
+      "source_location": "L176",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_bearbeite_post",
       "_tgt": "codewesen_antwort_auf_daniel_lade_diskussion_kontext",
@@ -49038,7 +49155,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L191",
+      "source_location": "L197",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_bearbeite_post",
       "_tgt": "codewesen_antwort_auf_daniel_frage_llm",
@@ -49086,7 +49203,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L221",
+      "source_location": "L227",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_tick",
       "_tgt": "codewesen_antwort_auf_daniel_bearbeite_post",
@@ -49110,7 +49227,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "codewesen_antwort_auf_daniel.py",
-      "source_location": "L233",
+      "source_location": "L239",
       "weight": 1.0,
       "_src": "codewesen_antwort_auf_daniel_main",
       "_tgt": "codewesen_antwort_auf_daniel_tick",
