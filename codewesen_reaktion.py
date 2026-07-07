@@ -31,6 +31,7 @@ import hauhau_client
 import gedaechtnis
 import flarum_api as _fapi
 from codewesen_abwurf import verarbeite_abwurf, zwischenraum_scan
+import dienst_konfiguration as dk
 
 BASE = Path("/root/werkraum/codewesen")
 _DB_ENV = Path("/root/werkraum/.agent/flextrawurst-db.env")
@@ -109,12 +110,25 @@ def _lade_wesen_identitaet(name: str) -> str:
                 teile.append(wb)
         except Exception:
             pass
+    if _aktuelles_verhalten:
+        teile.append(_aktuelles_verhalten)
     return "\n\n".join(teile) if teile else "(Keine Identitätsdatei gefunden.)"
 OLLAMA_MODEL        = "hauhaucs-q6"
 OLLAMA_MODEL_SCHNELL = "hauhaucs-q6"
 TOKENS_FILE = BASE / "_api_tokens.json"
 CHECK_INTERVAL = 600       # Sekunden zwischen Inbox-Checks
 REFLEXIONS_INTERVAL = 300  # Sekunden zwischen Selbstreflexions-Checks
+
+# Individualisierung (flarumstyler, 2026-07-07): laeuft pro Wesen als eigener Prozess —
+# jedes Wesen bekommt seine eigene dienst_konfiguration-Zeile, passend zu Daniels
+# Wunsch nach Konfiguration "individuell pro Wesen". Mehrere benannte Intervalle wie
+# bei codewesen_takt.py, deshalb ueber meta.intervalle statt einem einzigen takt_sekunden.
+_DIENSTNAME_AUSNAHMEN = {"dak+gord-system": "codewesen-reaktion-dakgord", "träumerlie": "codewesen-reaktion-traeumerlie"}
+def dienst_name_fuer(wesen: str) -> str:
+    return _DIENSTNAME_AUSNAHMEN.get(wesen, f"codewesen-reaktion@{wesen}")
+
+STANDARD_VERHALTEN = ""
+_aktuelles_verhalten = STANDARD_VERHALTEN
 
 # Interner Name → Flarum-Username (lazily befüllt)
 _FORUM_USERNAME_CACHE: dict = {}
@@ -157,8 +171,6 @@ class OllamaSlot:
 # Autonome Post-Zyklen
 FORUM_ENTWICKLUNG_INTERVAL = 142 * 60   # 2h22m in Sekunden
 THEMEN_BEITRAG_INTERVAL    =  88 * 60   # 88min in Sekunden
-FORUM_ENTWICKLUNG_STAGGER  = FORUM_ENTWICKLUNG_INTERVAL // 6
-THEMEN_BEITRAG_STAGGER     = THEMEN_BEITRAG_INTERVAL // 6
 
 ALLE_NAMEN = [
     "Schorschel", "Resonanzknoten", "träumerlie",
@@ -748,6 +760,8 @@ def post_forum_entwicklung(name: str, token: str, log: logging.Logger):
     alle_tags = get_tags(token)
     tags_text = _tags_als_text(alle_tags)
     prompt = FORUM_ENTWICKLUNG_PROMPT.format(name=name, tags_text=tags_text)
+    if _aktuelles_verhalten:
+        prompt += f"\n\n{_aktuelles_verhalten}"
 
     raw = ask_llm_content(prompt)
     log.info("[ForumEntw] LLM fertig (%d Zeichen)", len(raw))
@@ -778,6 +792,8 @@ def post_themen_beitrag(name: str, token: str, log: logging.Logger):
     alle_tags = get_tags(token)
     tags_text = _tags_als_text(alle_tags)
     prompt = THEMEN_BEITRAG_PROMPT.format(name=name, tags_text=tags_text)
+    if _aktuelles_verhalten:
+        prompt += f"\n\n{_aktuelles_verhalten}"
 
     raw = ask_llm_content(prompt)
     log.info("[ThemenPost] LLM fertig (%d Zeichen)", len(raw))
@@ -812,22 +828,36 @@ def post_themen_beitrag(name: str, token: str, log: logging.Logger):
 
 
 def run(name: str):
+    global CHECK_INTERVAL, REFLEXIONS_INTERVAL, FORUM_ENTWICKLUNG_INTERVAL, THEMEN_BEITRAG_INTERVAL
+    global _aktuelles_verhalten
     log = setup_logging(name)
     token = load_token(name)
     log.info("Reaktions-Agent gestartet für %s", name)
+
+    # Individualisierung: einmal beim Start lesen (lange Zeitplan-Berechnung unten,
+    # wie bei codewesen_takt.py — Neustart macht Aenderungen wirksam).
+    konfig = dk.lade(dienst_name_fuer(name))
+    _aktuelles_verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+    overrides = (konfig.get("meta") or {}).get("intervalle") or {}
+    CHECK_INTERVAL = int(overrides.get("check_interval", CHECK_INTERVAL))
+    REFLEXIONS_INTERVAL = int(overrides.get("reflexions_interval", REFLEXIONS_INTERVAL))
+    FORUM_ENTWICKLUNG_INTERVAL = int(overrides.get("forum_entwicklung_interval", FORUM_ENTWICKLUNG_INTERVAL))
+    THEMEN_BEITRAG_INTERVAL = int(overrides.get("themen_beitrag_interval", THEMEN_BEITRAG_INTERVAL))
+    if overrides:
+        log.info("Takt-Overrides aus dienst_konfiguration geladen: %s", overrides)
 
     # Zeitversetzung basierend auf Index des Namens
     idx = ALLE_NAMEN.index(name) if name in ALLE_NAMEN else 0
     jetzt = time.time()
 
     letzte_reflexion      = jetzt - REFLEXIONS_INTERVAL + idx * (REFLEXIONS_INTERVAL // 6)
-    letzte_forum_entw     = jetzt - FORUM_ENTWICKLUNG_INTERVAL + idx * FORUM_ENTWICKLUNG_STAGGER
-    letzter_themen_beitrag= jetzt - THEMEN_BEITRAG_INTERVAL + idx * THEMEN_BEITRAG_STAGGER
-    ZWISCHENRAUM_SCAN_INTERVAL = 900  # alle 15 Min neugierig in den Zwischenraum schauen
+    letzte_forum_entw     = jetzt - FORUM_ENTWICKLUNG_INTERVAL + idx * (FORUM_ENTWICKLUNG_INTERVAL // 6)
+    letzter_themen_beitrag= jetzt - THEMEN_BEITRAG_INTERVAL + idx * (THEMEN_BEITRAG_INTERVAL // 6)
+    ZWISCHENRAUM_SCAN_INTERVAL = int(overrides.get("zwischenraum_scan_interval", 900))  # alle 15 Min neugierig in den Zwischenraum schauen
     letzter_zwischenraum_scan  = jetzt - ZWISCHENRAUM_SCAN_INTERVAL + idx * 150
 
     letzter_fehler_retry = time.time()
-    FEHLER_RETRY_INTERVAL = 300  # Fehler-Items alle 5 Min zurück in Inbox
+    FEHLER_RETRY_INTERVAL = int(overrides.get("fehler_retry_interval", 300))  # Fehler-Items alle 5 Min zurück in Inbox
 
     # Inbox sofort prüfen — nicht erst nach Startup-Delay warten
     process_inbox(name, token, log)
