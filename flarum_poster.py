@@ -23,6 +23,7 @@ import flarum_api as api
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler
 
 VAULT_FLARUM      = Path("/root/werkraum/flarum")
 CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
@@ -179,7 +180,12 @@ def _letzter_post_info(text: str) -> dict | None:
 
 def pruefe_bereit(wesen: str, text: str) -> bool:
     """Fragt das Wesen selbst: bist du mit diesem Entwurf zufrieden, soll er
-    raus? Antwort NUR JA/NEIN. Bei Fehlern konservativ False (nicht posten)."""
+    raus? Antwort NUR JA/NEIN. Bei Fehlern konservativ False (nicht posten).
+
+    HOCH-Prioritaet im LLM-Scheduler (2026-07-07): rettet bereits fertig
+    generierte Inhalte vorm Wegwerfen — verdient Vorrang vor regulaeren
+    Hintergrund-Rhythmen. Vorher komplett unkoordiniert (kein Lock ueberhaupt),
+    obwohl dies der zeitkritischste Aufruf im ganzen System ist."""
     while CHAT_AKTIV_FLAG.exists():
         time.sleep(3)
     try:
@@ -191,7 +197,11 @@ def pruefe_bereit(wesen: str, text: str) -> bool:
             )},
             {"role": "user", "content": text},
         ]
-        antwort = hauhau_client.chat(messages, think=False, max_tokens=10, timeout=120.0).strip().upper()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_HOCH,
+                                    rufer=f"ready_check:{wesen}", max_wartezeit=90, max_haltezeit=120):
+            antwort = hauhau_client.chat(messages, think=False, max_tokens=10, timeout=120.0).strip().upper()
+    except llm_scheduler.LLMSlotTimeout:
+        return False
     except Exception:
         return False
     return antwort.startswith("JA")

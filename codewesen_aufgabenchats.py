@@ -66,6 +66,7 @@ import hauhau_client
 import flarum_poster
 import codewesen_container as container
 import dienst_konfiguration as dk
+import llm_scheduler
 
 # Individualisierung (flarumstyler, 2026-07-07): kein Zeittakt (Flag-Datei-gesteuert),
 # nur Verhalten ueberschreibbar — wird an den System-Prompt angehaengt, NACH der
@@ -406,7 +407,12 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
 
         _warte_auf_chat_pause()
         try:
-            antwort = hauhau_client.chat(verlauf, think=False, max_tokens=900, timeout=200.0).strip()
+            with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                        rufer=f"aufgabenchats:{wesen}", max_wartezeit=90, max_haltezeit=200):
+                antwort = hauhau_client.chat(verlauf, think=False, max_tokens=900, timeout=200.0).strip()
+        except llm_scheduler.LLMSlotTimeout as e:
+            log.warning(f"[{wesen}] {e}")
+            break
         except Exception as e:
             log.warning(f"[{wesen}] Selbstgespraech-Fehler in Runde {runde}: {e}")
             break

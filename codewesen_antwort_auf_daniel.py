@@ -6,7 +6,6 @@ Alle 5 Minuten: Alle Posts von Admin (user_id=1) von heute suchen.
 Für jeden Post der noch keine Codewesen-Antwort hat: 51% Chance pro Wesen.
 Gilt für Eröffnungsposts UND Antwortposts.
 """
-import fcntl
 import json
 import logging
 import os
@@ -26,6 +25,7 @@ import flarum_api
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import dienst_konfiguration as dk
+import llm_scheduler
 
 logging.basicConfig(
     level=logging.INFO,
@@ -54,8 +54,6 @@ WESEN_KURZ = {
     "namelessAI_6666_4321": "Resonanzknoten",
 }
 CODEWESEN_BASE = Path("/root/werkraum/codewesen")
-LOCK_DIR = Path("/tmp/ollama_locks")
-LOCK_DIR.mkdir(exist_ok=True)
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"
 POLL_INTERVAL = 300
 MODEL = "hauhaucs-q6"
@@ -156,13 +154,13 @@ def frage_llm(system: str, user: str) -> str:
         {"role": "system", "content": system},
         {"role": "user", "content": user},
     ]
-    lock_file = open(LOCK_DIR / "slot_0.lock", "w")
-    fcntl.flock(lock_file, fcntl.LOCK_EX)
     try:
-        return hauhau_client.chat(messages, think=False, timeout=600.0).strip()
-    finally:
-        fcntl.flock(lock_file, fcntl.LOCK_UN)
-        lock_file.close()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_HOCH,
+                                    rufer="inbox_antwort:antwort_auf_daniel", max_wartezeit=90,
+                                    max_haltezeit=600):
+            return hauhau_client.chat(messages, think=False, timeout=600.0).strip()
+    except llm_scheduler.LLMSlotTimeout:
+        return ""
 
 
 def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: str, content: str, verhalten: str = "") -> None:

@@ -30,6 +30,7 @@ try:
 except ImportError:
     _VAULT_OK = False
 import dienst_konfiguration as dk
+import llm_scheduler
 
 # Individualisierung (flarumstyler, 2026-07-07): nur Verhalten ueberschreibbar —
 # der Takt kommt bei diesem Dienst aus systemd RestartSec (kein eigener Sleep-Loop),
@@ -109,7 +110,12 @@ def _lade_diskussion_voll(discussion_id: int) -> str:
 def _llm(prompt: str, max_tokens: int = 600) -> str:
     while CHAT_FLAG.exists():
         time.sleep(5)
-    return hauhau_client.chat(prompt, think=False, max_tokens=max_tokens, temperature=0.88).strip()
+    try:
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer="engagement", max_wartezeit=90, max_haltezeit=300):
+            return hauhau_client.chat(prompt, think=False, max_tokens=max_tokens, temperature=0.88).strip()
+    except llm_scheduler.LLMSlotTimeout:
+        return ""
 
 
 def _parse_json(text: str) -> dict:

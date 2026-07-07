@@ -14,7 +14,6 @@ Schreibt nach:
   /root/werkraum/codewesen/<wesen>/weltbild.md
 """
 
-import fcntl
 import json
 import logging
 import re
@@ -29,13 +28,12 @@ sys.path.insert(0, "/root/werkraum")
 import gedaechtnis as gd
 import hauhau_client
 import dienst_konfiguration as dk
+import llm_scheduler
 
 VAULT       = Path("/root/werkraum/flarum")
 BASE        = Path("/root/werkraum/codewesen")
 OLLAMA_MOD  = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
-LOCK_DIR    = Path("/tmp/ollama_locks")
-LOCK_DIR.mkdir(exist_ok=True)
 
 INTERVALL   = 60 * 60      # alle 60 Minuten
 PAUSE_WESEN = 10           # Sekunden zwischen Wesen-Calls
@@ -182,15 +180,14 @@ def _ollama(prompt: str, timeout: int = 600) -> str:
         log.debug("Chat aktiv — warte...")
         time.sleep(15)
 
-    lock_f = open(LOCK_DIR / "slot_0.lock", "w")
-    fcntl.flock(lock_f, fcntl.LOCK_EX)
     try:
-        return hauhau_client.chat(
-            prompt, think=False, max_tokens=1200, temperature=0.4, timeout=timeout,
-        ).strip()
-    finally:
-        fcntl.flock(lock_f, fcntl.LOCK_UN)
-        lock_f.close()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer="weltbild", max_wartezeit=90, max_haltezeit=timeout):
+            return hauhau_client.chat(
+                prompt, think=False, max_tokens=1200, temperature=0.4, timeout=timeout,
+            ).strip()
+    except llm_scheduler.LLMSlotTimeout:
+        return ""
 
 
 # ── Weltbild generieren ───────────────────────────────────────────────────────

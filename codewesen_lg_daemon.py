@@ -18,8 +18,8 @@ sys.path.insert(0, "/root/werkraum")
 
 import entity_kern as ek  # denk_tick, build_kontext, Aktionen, get_conn, ...
 import dienst_konfiguration as dk
+import llm_scheduler
 
-import fcntl
 import json
 import logging
 import operator
@@ -64,8 +64,6 @@ MAX_ERINNERUNGEN = 10
 DIENST_NAME = "codewesen-lg-daemon"
 STANDARD_VERHALTEN = ""
 _aktuelles_verhalten = STANDARD_VERHALTEN
-_LOCK_DIR = Path("/tmp/ollama_locks")
-_LOCK_DIR.mkdir(exist_ok=True)
 
 WESEN_NAMEN = [
     "Schorschel",
@@ -383,20 +381,19 @@ def denken_handeln_node(zustand: WesensZustand) -> dict:
         log.debug(f"[{name}] Status '{status}' — kein Denk-Tick")
         return {}
 
-    log.info(f"[{name}] Denk-Tick (status={status}) — warte auf Ollama-Slot")
-    lock_file = open(_LOCK_DIR / "slot_0.lock", "w")
-    fcntl.flock(lock_file, fcntl.LOCK_EX)
-    log.info(f"[{name}] Ollama-Slot erworben")
+    log.info(f"[{name}] Denk-Tick (status={status}) — warte auf LLM-Slot")
     try:
-        if status == "eingezogen":
-            ek.denk_tick(name)
-        else:
-            denk_tick_voreinzug(name)
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer=f"lg_daemon:{name}", max_wartezeit=90, max_haltezeit=600):
+            log.info(f"[{name}] LLM-Slot erworben")
+            if status == "eingezogen":
+                ek.denk_tick(name)
+            else:
+                denk_tick_voreinzug(name)
+    except llm_scheduler.LLMSlotTimeout as e:
+        log.warning(f"[{name}] {e}")
     except Exception as e:
         log.error(f"[{name}] Denk-Tick fehlgeschlagen: {e}")
-    finally:
-        fcntl.flock(lock_file, fcntl.LOCK_UN)
-        lock_file.close()
 
     gedanke = _letzten_gedanken_aus_db(name)
     updates: dict = {"denk_ticks": zustand.get("denk_ticks", 0) + 1}
@@ -435,17 +432,17 @@ def zusammenfassen_node(zustand: WesensZustand) -> dict:
     ]
 
     log.info(f"[{name}] Zusammenfassen nach {denk_ticks} Denk-Ticks")
-    lock_file = open(_LOCK_DIR / "slot_0.lock", "w")
-    fcntl.flock(lock_file, fcntl.LOCK_EX)
     try:
-        text = ek.hauhau_client.chat(messages, think=False, timeout=120.0).strip()
-        erinnerungen = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer=f"lg_daemon_zusammenfassen:{name}", max_wartezeit=90, max_haltezeit=120):
+            text = ek.hauhau_client.chat(messages, think=False, timeout=120.0).strip()
+            erinnerungen = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
+    except llm_scheduler.LLMSlotTimeout as e:
+        log.warning(f"[{name}] {e}")
+        return tick_update
     except Exception as e:
         log.warning(f"[{name}] Zusammenfassen fehlgeschlagen: {e}")
         return tick_update
-    finally:
-        fcntl.flock(lock_file, fcntl.LOCK_UN)
-        lock_file.close()
 
     if erinnerungen:
         try:

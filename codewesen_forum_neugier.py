@@ -46,6 +46,7 @@ import hauhau_client
 import flarum_poster
 import codewesen_container as container
 import dienst_konfiguration as dk
+import llm_scheduler
 
 BASE    = Path("/root/werkraum/codewesen")
 ZUSTAND = BASE / "_forum_neugier_zustand.json"
@@ -186,7 +187,12 @@ def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict], verhalten: st
             {"role": "system", "content": system},
             {"role": "user", "content": nutzer},
         ]
-        antwort = hauhau_client.chat(messages, think=False, max_tokens=2000, timeout=280.0).strip()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer=f"forum_neugier:{wesen}", max_wartezeit=90, max_haltezeit=280):
+            antwort = hauhau_client.chat(messages, think=False, max_tokens=2000, timeout=280.0).strip()
+    except llm_scheduler.LLMSlotTimeout as e:
+        log.warning(f"[{wesen}] {e}")
+        return None
     except Exception as e:
         log.warning(f"[{wesen}] Entscheidungs-Fehler: {e}")
         return None

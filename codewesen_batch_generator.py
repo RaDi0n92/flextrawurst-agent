@@ -11,7 +11,6 @@ Queue-Struktur:
   codewesen/<wesen>/entwuerfe/_posted/<ts>_<rhythmus>.json   (archiv)
 """
 
-import fcntl
 import json
 import logging
 import sys
@@ -27,6 +26,7 @@ import flarum_poster
 import gedaechtnis as gd
 import hauhau_client
 import dienst_konfiguration as dk
+import llm_scheduler
 
 
 def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
@@ -57,8 +57,6 @@ BASE        = Path("/root/werkraum/codewesen")
 VAULT       = Path("/root/werkraum/flarum")
 OLLAMA_MOD  = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
-LOCK_DIR    = Path("/tmp/ollama_locks")
-LOCK_DIR.mkdir(exist_ok=True)
 
 STATE_FILE = BASE / "_generator_state.json"
 
@@ -180,17 +178,17 @@ def _ollama(prompt: str, timeout: int = 180) -> str:
         log.debug("Chat aktiv — warte...")
         time.sleep(PAUSE_CHAT_AKTIV)
 
-    lock_f = open(LOCK_DIR / "slot_0.lock", "w")
-    fcntl.flock(lock_f, fcntl.LOCK_EX)
     try:
-        resp = hauhau_client.chat(
-            prompt, think=False, max_tokens=400, temperature=0.75, timeout=timeout,
-        ).strip()
-        log.debug("RAW: %s", resp[:200])
-        return resp
-    finally:
-        fcntl.flock(lock_f, fcntl.LOCK_UN)
-        lock_f.close()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NORMAL,
+                                    rufer="batch_generator", max_wartezeit=90, max_haltezeit=timeout):
+            resp = hauhau_client.chat(
+                prompt, think=False, max_tokens=400, temperature=0.75, timeout=timeout,
+            ).strip()
+            log.debug("RAW: %s", resp[:200])
+            return resp
+    except llm_scheduler.LLMSlotTimeout:
+        log.warning("LLM-Slot blockiert — Generierung uebersprungen")
+        return ""
 
 def _extrahiere_post(text: str) -> dict | None:
     start = text.find("{")

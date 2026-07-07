@@ -25,6 +25,7 @@ sys.path.insert(0, "/root/werkraum")
 import dienst_konfiguration as dk
 import flarum_poster
 import hauhau_client
+import llm_scheduler
 
 BASE        = Path("/root/werkraum/codewesen")
 TOKENS_FILE = BASE / "_api_tokens.json"
@@ -173,7 +174,12 @@ def _ollama(system: str, nutzer: str) -> str:
             {"role": "system", "content": system},
             {"role": "user",   "content": nutzer},
         ]
-        return hauhau_client.chat(messages, think=False, timeout=90.0).strip()
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+                                    rufer="vokabel_takt", max_wartezeit=90, max_haltezeit=90):
+            return hauhau_client.chat(messages, think=False, timeout=90.0).strip()
+    except llm_scheduler.LLMSlotTimeout as e:
+        log.warning(f"Ollama-Slot blockiert: {e}")
+        return ""
     except Exception as e:
         log.warning(f"Ollama-Fehler: {e}")
         return ""

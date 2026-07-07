@@ -32,8 +32,6 @@ TOKENS_FILE = BASE / "_api_tokens.json"
 OLLAMA_URL  = "http://localhost:11434/api/generate"
 OLLAMA_MOD  = "gemma4:e2b-it-q4_K_M"   # schnell — Takt braucht kein 26b
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
-LOCK_DIR    = Path("/tmp/ollama_locks")
-LOCK_DIR.mkdir(exist_ok=True)
 
 logging.basicConfig(
     level=logging.DEBUG,

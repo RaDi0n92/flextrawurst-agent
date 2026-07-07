@@ -19,7 +19,6 @@ Für alle Trigger läuft der Agentic Loop:
   Max. 6 Iterationen pro Trigger.
 """
 
-import fcntl
 import json
 import logging
 import random
@@ -36,6 +35,7 @@ import codewesen_werkzeuge as wz
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import dienst_konfiguration as dk
+import llm_scheduler
 
 # Individualisierung (flarumstyler, 2026-07-07): laeuft pro Wesen als eigener
 # Prozess (7 Units) — jedes Wesen bekommt seine eigene dienst_konfiguration-Zeile.
@@ -50,42 +50,6 @@ _aktuelles_verhalten = STANDARD_VERHALTEN
 BASE       = Path("/root/werkraum/codewesen")
 TOKENS     = BASE / "_api_tokens.json"
 OLLAMA_MOD = "hauhaucs-q6"
-
-# Dateibasierter Semaphor — maximal 2 gleichzeitige Ollama-Calls über alle 6 Prozesse
-_LOCK_DIR = Path("/tmp/ollama_locks")
-_LOCK_DIR.mkdir(exist_ok=True)
-
-
-CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
-
-
-class OllamaSlotTimeout(Exception):
-    pass
-
-class OllamaSlot:
-    """Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten."""
-    MAX_WAIT = 120
-
-    def __enter__(self):
-        deadline = time.time() + self.MAX_WAIT
-        while CHAT_AKTIV_FLAG.exists():
-            if time.time() > deadline:
-                raise OllamaSlotTimeout("Ollama-Slot blockiert — Iteration übersprungen")
-            time.sleep(2)
-        self._f = open(_LOCK_DIR / "slot_0.lock", "w")
-        while True:
-            try:
-                fcntl.flock(self._f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                return self
-            except BlockingIOError:
-                if time.time() > deadline:
-                    self._f.close()
-                    raise OllamaSlotTimeout("Ollama-Slot blockiert — Iteration übersprungen")
-                time.sleep(5)
-
-    def __exit__(self, *_):
-        fcntl.flock(self._f, fcntl.LOCK_UN)
-        self._f.close()
 
 CHECK_REFLEXION = 28800  # 8 Stunden
 CHECK_SCAN      = 7200   # Sekunden (2 Stunden)
@@ -136,12 +100,16 @@ def setup_log(name: str) -> logging.Logger:
 
 # ── LLM ───────────────────────────────────────────────────────────────────────
 
-def ask_llm(prompt: str) -> str:
-    with OllamaSlot():
-        return hauhau_client.chat(
-            prompt, think=False, max_tokens=700,
-            temperature=0.78, top_p=0.9, top_k=40, timeout=600.0,
-        ).strip()
+def ask_llm(prompt: str, prioritaet: int = llm_scheduler.PRIO_NORMAL, rufer: str = "agent") -> str:
+    try:
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=prioritaet, rufer=rufer,
+                                    max_wartezeit=90, max_haltezeit=600):
+            return hauhau_client.chat(
+                prompt, think=False, max_tokens=700,
+                temperature=0.78, top_p=0.9, top_k=40, timeout=600.0,
+            ).strip()
+    except llm_scheduler.LLMSlotTimeout:
+        return ""
 
 
 def extrahiere_json(text: str) -> dict | None:
@@ -208,6 +176,7 @@ def agentic_loop(
     trigger_kontext: str,
     log: logging.Logger,
     all_tags: list,
+    prioritaet: int = llm_scheduler.PRIO_NORMAL,
 ) -> dict:
     """
     Führt den vollen Agentic Loop durch.
@@ -234,7 +203,7 @@ def agentic_loop(
 
         prompt = prompt_basis + verlauf_text + f"\n\n{anweisung}"
 
-        raw = ask_llm(prompt)
+        raw = ask_llm(prompt, prioritaet=prioritaet, rufer=f"agent:{name}")
         log.info("[Loop %d] Antwort: %s", iteration + 1, raw[:150])
 
         decision = extrahiere_json(raw)
@@ -375,7 +344,7 @@ def verarbeite_inbox(name: str, token: str, all_tags: list, log: logging.Logger)
                 f"Du musst nicht auf alles antworten — aber du entscheidest aktiv was du hervorhebst."
             )
 
-            decision = agentic_loop(name, token, kontext, log, all_tags)
+            decision = agentic_loop(name, token, kontext, log, all_tags, prioritaet=llm_scheduler.PRIO_HOCH)
             decision["diskussion_titel"] = disk_titel
             fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
 
@@ -1062,7 +1031,7 @@ def pruefe_antwortpflicht(
 
         log.info("[Antwortpflicht] Diskussion %d — letzter Post %dmin alt, kein Codewesen hat geantwortet",
                  disk_id, int(alter // 60))
-        decision = agentic_loop(name, token, kontext, log, all_tags)
+        decision = agentic_loop(name, token, kontext, log, all_tags, prioritaet=llm_scheduler.PRIO_HOCH)
         decision["diskussion_titel"] = disk_titel
 
         # Erzwinge Antwort — neue_diskussion und nichts sind hier nicht erlaubt

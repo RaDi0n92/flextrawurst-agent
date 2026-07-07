@@ -12,7 +12,6 @@ Ablauf für jeden menschlichen Post in der Inbox:
   4. Inbox-Datei als verarbeitet markieren (→ processed/)
 """
 
-import fcntl
 import json
 import logging
 import os
@@ -27,6 +26,7 @@ import psycopg2.extras
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler
 
 import gedaechtnis
 import flarum_api as _fapi
@@ -145,28 +145,7 @@ def _forum_username(internal_name: str) -> str:
             _FORUM_USERNAME_CACHE[internal_name] = internal_name
     return _FORUM_USERNAME_CACHE[internal_name]
 
-# Dateibasierter Semaphor — maximal 2 gleichzeitige Ollama-Calls über alle Prozesse
-_LOCK_DIR = Path("/tmp/ollama_locks")
-_LOCK_DIR.mkdir(exist_ok=True)
-_CHAT_FLAG = Path("/tmp/dak_gord_chat_aktiv")
 
-
-class OllamaSlot:
-    """Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität."""
-    def __enter__(self):
-        # Chat läuft → warten bis er fertig ist (max 5 min)
-        for _ in range(150):
-            if not _CHAT_FLAG.exists():
-                break
-            time.sleep(2)
-
-        self._f = open(_LOCK_DIR / "slot_0.lock", "w")
-        fcntl.flock(self._f, fcntl.LOCK_EX)
-        return self
-
-    def __exit__(self, *_):
-        fcntl.flock(self._f, fcntl.LOCK_UN)
-        self._f.close()
 
 # Autonome Post-Zyklen
 FORUM_ENTWICKLUNG_INTERVAL = 142 * 60   # 2h22m in Sekunden
@@ -229,20 +208,27 @@ def _ist_vollstaendig(text: str) -> bool:
 
 
 def _llm_call(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
-              schnell: bool = False) -> str:
-    with OllamaSlot():
-        return hauhau_client.chat(
-            prompt, think=False, max_tokens=num_predict, temperature=temperature,
-            top_p=0.9, top_k=40, timeout=600.0,
-        ).strip()
+              schnell: bool = False, prioritaet: int = llm_scheduler.PRIO_NORMAL,
+              rufer: str = "reaktion") -> str:
+    try:
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=prioritaet, rufer=rufer,
+                                    max_wartezeit=90, max_haltezeit=600):
+            return hauhau_client.chat(
+                prompt, think=False, max_tokens=num_predict, temperature=temperature,
+                top_p=0.9, top_k=40, timeout=600.0,
+            ).strip()
+    except llm_scheduler.LLMSlotTimeout:
+        return ""
 
 
 def ask_llm(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
-            schnell: bool = False) -> str:
+            schnell: bool = False, prioritaet: int = llm_scheduler.PRIO_NORMAL,
+            rufer: str = "reaktion") -> str:
     # Bis zu 3 Versuche bei leerer Antwort
     text = ""
     for versuch in range(3):
-        text = _llm_call(prompt, num_predict, temperature, schnell=schnell)
+        text = _llm_call(prompt, num_predict, temperature, schnell=schnell,
+                          prioritaet=prioritaet, rufer=rufer)
         if text:
             break
         time.sleep(5)
@@ -257,16 +243,18 @@ def ask_llm(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
             "[Schreibe NUR die Fortsetzung bis der Gedanke abgeschlossen ist. Max 2 Sätze.]"
         )
         fortsetzung = _llm_call(fortsetzung_prompt, num_predict=300, temperature=temperature,
-                                schnell=schnell)
+                                schnell=schnell, prioritaet=prioritaet, rufer=rufer)
         if fortsetzung:
             text = text.rstrip() + " " + fortsetzung.lstrip()
 
     return text
 
 
-def ask_llm_content(prompt: str) -> str:
+def ask_llm_content(prompt: str, prioritaet: int = llm_scheduler.PRIO_NORMAL,
+                     rufer: str = "reaktion") -> str:
     """Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei 600tok)."""
-    return ask_llm(prompt, num_predict=600, temperature=0.82, schnell=False)
+    return ask_llm(prompt, num_predict=600, temperature=0.82, schnell=False,
+                   prioritaet=prioritaet, rufer=rufer)
 
 
 def _zeitabstand(ts_str: str) -> str:
@@ -534,7 +522,8 @@ def process_inbox(name: str, token: str, log: logging.Logger):
 
             # ── Stufe 1: Entscheidung (kleines JSON, wenig Tokens) ──
             entsch_prompt = build_entscheidungs_prompt(name, disc, trigger_post, post_typ)
-            raw1 = ask_llm(entsch_prompt, num_predict=300, schnell=True)
+            raw1 = ask_llm(entsch_prompt, num_predict=300, schnell=True,
+                            prioritaet=llm_scheduler.PRIO_HOCH, rufer=f"inbox_antwort:{name}")
             log.info("Entscheidung-LLM: %s", raw1[:200])
 
             decision = _parse_json(raw1)
@@ -556,7 +545,8 @@ def process_inbox(name: str, token: str, log: logging.Logger):
             inhalt_prompt = build_inhalt_prompt(
                 name, disc, trigger_post, begruendung, aktion, titel
             )
-            inhalt = ask_llm_content(inhalt_prompt)
+            inhalt = ask_llm_content(inhalt_prompt, prioritaet=llm_scheduler.PRIO_HOCH,
+                                      rufer=f"inbox_antwort:{name}")
             log.info("Inhalt generiert: %d Zeichen", len(inhalt))
 
             if not inhalt.strip():
