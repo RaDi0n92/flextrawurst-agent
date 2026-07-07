@@ -1700,3 +1700,11 @@ Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), 
 
 Vision: ein Mensch, der mit einem Wesen oder Spawncharakter spricht, merkt nie etwas von den sieben anderen Prozessen die im Hintergrund permanent denken, posten, reagieren — die Trennung ist unsichtbar, fühlt sich einfach nach einem reaktionsschnellen Gegenüber an.
 Code: `id_slot`-Feld im Request-Payload, siehe hauhau_client.py `_default_id_slot()` / hauhau_client.ts `defaultIdSlot()`.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Vision-Schicht: Ein System, in dem Daniel nie wieder fragen muss "warum kannst du mir das hier erklären, aber die UI zeigt es nicht" — weil UI und Erklärung dieselbe Quelle haben.
+
+Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinweis()` auf weitere Subsysteme ausweiten (KompOase, Splitter-Physik, Cyberling) — überall wo Docstring-Qualität heute schon die UI-Qualität direkt bestimmt.

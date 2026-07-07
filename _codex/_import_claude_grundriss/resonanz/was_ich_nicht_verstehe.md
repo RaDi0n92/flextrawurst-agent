@@ -870,3 +870,9 @@ Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch m
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Ob die id_slot-Reservierung (Slot 0 = Chat) unter echter Volllast tatsächlich die gefühlte Latenz für Menschen verbessert, oder ob Slot 0 durch die schiere Menge an Chat-Traffic (7 Wesen + Spawncharaktere + GENI + zensi) selbst schon überlastet ist. Noch nicht getestet nach der Umstellung.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Warum `N_SLOTS["hintergrund"]` heute vormittags von 2 auf 1 reduziert wurde, obwohl der llama-server selbst weiterhin `--parallel 2` läuft. Kein Kommentar, keine Commit-Message erklärt das. Ich habe es dokumentiert als offenen Widerspruch statt es zu raten oder still zu vereinheitlichen — aber ich weiß es nicht, und das sitzt unbequem.

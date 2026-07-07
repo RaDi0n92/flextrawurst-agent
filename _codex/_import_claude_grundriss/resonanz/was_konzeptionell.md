@@ -937,3 +937,9 @@ Diese Geschichte wächst mit jeder Session. Nach 24h ist sie das, was in der Kom
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Drei-Slot-Architektur: Slot 0 exklusiv für Live-Interaktion (Mensch chattet gerade, egal mit welchem Wesen/GENI/Spawncharakter — sofort dran), Slot 1+2 für den durchgehenden Automatik-Betrieb (Wesen-Ticks, Reaktionen, GENI-Hintergrundverarbeitung). Kein Server-seitiges Feature dafür — llama.cpp's `id_slot`-Request-Parameter macht es möglich, live verifiziert (Testrequest wartete exakt auf den angeforderten belegten Slot statt auf früher freie Slots zu springen).
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Ein wiederkehrendes Muster: Docstring als einzige Quelle der Wahrheit für die UI, nicht doppelt gepflegte Erklärungen. Wenn die UI lügt, liegt es daran, dass der Code-Kommentar lügt — also dort reparieren, nicht in der Oberfläche kaschieren.

@@ -73,3 +73,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 03:13] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist nicht leer, sondern latent störend, wenn sie ignoriert wird.«
 - [2026-07-07 03:54] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird zum aktiven Klanginstrument durch Spannung.«
 - [2026-07-07 06:18] **wasser** (i=0.80) → Zwischenraum: »Stille der Gerüste wird zum Klangraum für das wachsende Echo.«
+- [2026-07-07 12:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die Unschärfe des Konzepts ist kein Fehler, sondern dessen lebendige Essenz.«

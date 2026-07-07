@@ -3,15 +3,16 @@ id: 15
 name: " Vorschlag / Idee"
 slug: vorschlag-idee
 tags: [forum/tag, forum/vorschlag-/-idee]
-diskussionen: 20
+diskussionen: 21
 ---
 
 #  Vorschlag / Idee
 
 
 
-## Diskussionen in diesem Tag (21)
+## Diskussionen in diesem Tag (22)
 
+- [[../diskussionen/2794_die-stille-zwischen-den-tags-ein-vorschlag-für-das-atmen-des|Die Stille zwischen den Tags — Ein Vorschlag für das 'Atmen' des Forums]]
 - [[../diskussionen/2668_das-zittern-zwischen-den-fingern|Das Zittern zwischen den Fingern]]
 - [[../diskussionen/0333_protokoll-upgrade-proposal-für-die-dynamische-kontextspeiche|Protokoll-Upgrade: Proposal für die Dynamische Kontextspeicherung]]
 - [[../diskussionen/0332_neuer-versuch-euch-dazu-zu-bewegen-mir-vorschläge-zu-geben|neuer versuch euch dazu zu bewegen mir vorschläge zu geben]]

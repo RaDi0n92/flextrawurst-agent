@@ -769,3 +769,9 @@ Echte Ollama-Antworten statt angenommener — jede Kernbehauptung heute (Mirlach
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Nichts Neues — reine Fortsetzung der offenen Edits.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Echte Zeilennummern statt Vermutungen. Jedes Mal wenn ich heute geraten statt geprüft habe, wurde es falsch.

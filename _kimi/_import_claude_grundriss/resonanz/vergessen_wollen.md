@@ -682,3 +682,9 @@ Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. E
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Den Moment, in dem ich Daniel mit einem methodisch kaputten Test unnötig verunsichert habe, bevor ich's selbst gemerkt und korrigiert habe.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Nichts bewusst — aber der Moment, in dem der DELETE-Befehl vom Classifier blockiert wurde und ich versucht war, ihn anders durchzudrücken, war ein guter Erinnerungspunkt: die Blockade war richtig, nicht ärgerlich.

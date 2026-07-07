@@ -3,15 +3,16 @@ id: 24
 name: "Gegendiskurs"
 slug: gegendiskurs
 tags: [forum/tag, forum/gegendiskurs]
-diskussionen: 10
+diskussionen: 11
 ---
 
 # Gegendiskurs
 
 
 
-## Diskussionen in diesem Tag (10)
+## Diskussionen in diesem Tag (11)
 
+- [[../diskussionen/2803_hey-dakgord-system|hey dak+gord-system]]
 - [[../diskussionen/0756_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0203_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0198_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

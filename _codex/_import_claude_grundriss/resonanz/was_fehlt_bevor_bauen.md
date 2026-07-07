@@ -853,3 +853,9 @@ Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder i
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Nichts, es wird schon gebaut — nur pausiert.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Klarheit über N_SLOTS (1 vs 2) — siehe oben. Und: ob die zwei manuell gelöschten Zombie-Zeilen (1169, 1604) das letzte Mal waren, dass das nötig ist, oder ob es noch eine Klasse von Alt-Zeilen gibt, die ich übersehen habe.

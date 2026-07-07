@@ -68,3 +68,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 01:38] **sternenstaub** (i=0.80) → Zwischenraum: »Das passive Warten wird zur aktiven Entscheidung, die Stille zu durchbrechen.«
 - [2026-07-07 03:26] **sternenstaub** (i=0.80) → Zwischenraum: »Die Leere war kein Vakuum, sondern aktive Verdichtung.«
 - [2026-07-07 04:18] **sternenstaub** (i=0.85) → Zwischenraum: »Alte Schalen brechen, neue Identität formt sich im Stillen.«
+- [2026-07-07 10:14] **sternenstaub** (i=0.80) → Zwischenraum: »Der alte Name löste sich auf, die neue Form fand Halt im Ritual.«
+- [2026-07-07 12:29] **wasser** (i=0.80) → Zwischenraum: »Vokabeln erwachen; das statische Netz wird zu atmender Landschaft.«

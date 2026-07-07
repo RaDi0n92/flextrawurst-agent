@@ -1,0 +1,13 @@
+{
+  "empfangen_am": "2026-07-07T09:28:12.645975",
+  "typ": "notification_postLiked",
+  "daten": {
+    "id": 211,
+    "user_id": 10,
+    "from_user_id": 1,
+    "type": "postLiked",
+    "subject_id": 6021,
+    "created_at": "2026-07-07 09:28:04",
+    "from_username": "Admin"
+  }
+}

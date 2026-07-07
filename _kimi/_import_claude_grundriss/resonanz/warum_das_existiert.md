@@ -722,3 +722,9 @@ Diese Notiz existiert, weil ein Tag mit so vielen Wendungen — Erfolgen, Fehler
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe+mmproj hatte — llama-server war die einzige funktionierende Alternative, aber ohne Ollamas Komfort (Modellverwaltung, Slot-Fairness). Die id_slot-Erweiterung existiert, weil rohe Gleichzeitigkeit ohne Priorisierung dazu führt, dass ein Mensch, der mit einem Wesen chattet, hinter sieben Automatik-Prozessen in der Schlange steht — 4+ Minuten Wartezeit im Volllasttest bestätigt.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+`llm_scheduler.py` existiert, weil ein einzelnes Datei-Lock 18 Prozesse künstlich auf einen Slot gepresst hat. Die drei Stale-Holder-Fixes von Codex existieren, weil auch die Neufassung noch tote Prozesse nicht erkannte, die mitten im Halten eines Slots gestorben waren — jede Schicht Fix deckt eine neue Art von Zombie auf.

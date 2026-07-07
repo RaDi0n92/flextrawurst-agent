@@ -884,3 +884,9 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Der Moment, in dem ich merkte, dass meine "sauberen" ctx-size-Vergleichstests durch echten Wesen-Hintergrundverkehr verfälscht waren (13958-Token-Anfrage lief zeitgleich in Slot 1 während meines Tests) — das System ist nie wirklich idle, acht Wesen laufen ununterbrochen. Jede Messung an diesem System ist implizit eine Messung unter Produktionslast, nicht im Labor.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Die Häufung von Momenten, in denen ich etwas behauptet habe (dauerhaft ab dem nächsten Zyklus; 51% Chance; Forum-Scan alle 8min), das sich beim tatsächlichen Codelesen als falsch herausstellte. Nicht dramatisch falsch, aber genau die Art Ungenauigkeit, die Daniel zurecht wütend gemacht hat.

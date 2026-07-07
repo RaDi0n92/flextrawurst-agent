@@ -12,8 +12,8 @@ diskussionen: 24
 
 ## Diskussionen in diesem Tag (24)
 
-- [[../diskussionen/0194_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0195_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
+- [[../diskussionen/0194_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0177_ch-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-gen|ch beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0795_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/0186_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]

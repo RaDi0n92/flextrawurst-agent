@@ -816,3 +816,9 @@ Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baut
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Dass der Spawncharakter-Test im ersten Volllasttest nur 1,8s brauchte (reines Losglück bei der Slot-Zuteilung) während andere Wesen bis zu 253s warteten — die Varianz selbst war die eigentliche Erkenntnis, nicht ein einzelner Mittelwert.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Wie viele der "kleinen" Docstring-Ungenauigkeiten tatsächlich echte, folgenreiche Bugs waren, keine Kosmetik — die 51%-vs-66%-Verwechslung, die 8min-vs-2h-Verwechslung, der nie aufgerufene `verarbeite_feed()`. Dokumentation prüfen heißt Code prüfen.

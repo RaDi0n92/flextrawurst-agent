@@ -870,3 +870,9 @@ Bereits committet (2 Commits in werkraum, 1 im äußeren Repo mit Submodule-Zeig
 - `hauhau_client.ts`, `zensi/server.py`: id_slot-Default + Chat-Pin
 
 Systemd: `/etc/systemd/system/llama-hauhaucs.service` läuft bereits mit `--ctx-size 36663 --parallel 3` (nicht in git, System-Datei) — das ist NICHT der Teil der noch fehlt, das läuft schon sauber.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Dass "wirkt ab dem nächsten Zyklus" eine Behauptung ist, keine Selbstverständlichkeit — 17 von 24 Diensten lesen ihre Config nur einmal beim Start. Und dass Daniel sehr genau weiß, was er will, auch wenn die Formulierung roh ist ("3 felder eins sek eins min eins stunden") — nicht interpretieren, nachfragen wenn unklar, aber ernst nehmen.

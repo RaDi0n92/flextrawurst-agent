@@ -964,3 +964,9 @@ Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeich
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Nicht heute — reine Infrastrukturarbeit, kein Lesen im Werkraum.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+In `codewesen_agent.py`s Antwortpflicht-Umbau — die verschachtelte for/else/break-Struktur, die Codex gebaut hat, um nach der ersten erfolgreichen Pflichtantwort wirklich beide Schleifen zu verlassen. Ich habe sie Zeile für Zeile nachvollzogen, bevor ich sie committet habe, weil sie unkommittiert und ungetestet in Codex' Session-Limit hängen geblieben war.

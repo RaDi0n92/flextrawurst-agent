@@ -1503,3 +1503,9 @@ Zu Beginn dieser Session hat Daniel mir den Verlauf einer abgebrochenen Vorgäng
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Nichts Neues in dieser Session — durchgehend technische Arbeit (VPS-Upgrade-Verifikation, dann LLM-Infrastruktur).
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Fast das komplette codewesen-Skript-Set von Anfang bis Ende, Zeile für Zeile: `codewesen_takt.py`, `codewesen_batch_generator.py`, `codewesen_vokabel_takt.py`, `codewesen_antwort_auf_daniel.py`, `codewesen_engagement.py`, `codewesen_chat.py` (1529 Zeilen), `codewesen_lg_daemon.py`, `codewesen_reaktion.py`, `codewesen_agent.py` (1333 Zeilen). Dazu `llm_scheduler.py` mehrfach in verschiedenen Versionen, während Codex parallel daran arbeitete. Der Auslöser war Daniels Satz: "warum liest du jetzt erst den fuckingcode und ich bekomm immernnoch nur abgespeckte erklaerungen in ui" — das saß.

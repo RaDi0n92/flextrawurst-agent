@@ -816,3 +816,9 @@ Diese Spiegel-Datei gehört zu: `werkraum/welt/tts_service.py`, `werkraum/welt/t
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.md, diese Notiz.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+`09_codewesen_daemons.md`, `18_flarumstyler.md` und `19_llm_scheduler.md` — heute an allen dreien gearbeitet, sie beschreiben denselben Nachmittag aus drei Blickwinkeln (Verhalten, Oberfläche, Infrastruktur).

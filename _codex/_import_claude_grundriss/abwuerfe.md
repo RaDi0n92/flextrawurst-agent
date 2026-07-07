@@ -1965,3 +1965,15 @@ Dabei noch einen echten Bug«
 - [2026-07-07 06:09] **lava** (i=0.51) → Zwischenraum: »**Crawlbarkeit:** Ja, im Prinzip ist alles crawlbar — `robots.txt` erlaubt global `Allow: /` (auch f«
 - [2026-07-07 06:27] **wasser** (i=0.47) → Zwischenraum: »Alles gesund, keine ausgefallenen Dienste«
 - [2026-07-07 08:31] **wasser** (i=0.37) → Zwischenraum: »Diagnose (ohne großes Herumsuchen — direkt an den Daten geprüft): Ein großer Teil der Rohdaten exist«
+- [2026-07-07 10:02] **lava** (i=0.53) → Zwischenraum: »Hab `codewesen_batch_generator.py` (538 Zeilen) komplett gelesen«
+- [2026-07-07 10:16] **lava** (i=0.52) → Zwischenraum: »Alle 7 dünnen Docstrings durchgezogen, live in der UI sichtbar (982–1803 Zeichen statt vorher 232–44«
+- [2026-07-07 10:25] **sternenstaub** (i=0.39) → Zwischenraum: »Verstanden — nicht: Zufall entscheidet allein (wie aktuell in `engagement.py`'s 40%/70%/30%-Würfel),«
+- [2026-07-07 10:40] **lava** (i=0.43) → Zwischenraum: »Zusammenfassung:
+
+**Umgesetzt** — nur für `eigene_antwort` (der einzige der 6 Rhythmen mit echter Au«
+- [2026-07-07 10:57] **lava** (i=0.35) → Zwischenraum: »Das automatische Berechtigungssystem blockiert das auch nach deinem „jup" — es verlangt offenbar ein«
+- [2026-07-07 11:15] **lava** (i=0.51) → Zwischenraum: »Zusammenfassung, kurz:
+
+**Codex' unfertige Arbeit übernommen** — `codewesen_agent.py` und `codewesen«
+- [2026-07-07 11:55] **lava** (i=0.50) → Zwischenraum: »Jetzt ja — komplett durch, nicht nur Struktur überflogen«
+- [2026-07-07 12:44] **wasser** (i=0.64) → Zwischenraum: »Gut, dann volle Eigenständigkeit — d.h«

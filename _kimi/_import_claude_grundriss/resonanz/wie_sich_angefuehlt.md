@@ -764,3 +764,9 @@ Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung 
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Lang, gründlich, mit einer echten Selbstkorrektur mittendrin (RAM-Kosten-Annahme war falsch, Geschwindigkeitskosten hatte ich übersehen) — genau die Art Fehler, die nur auffällt wenn man wirklich misst statt zu rechnen.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Lang, und zunehmend ehrlich. Der Wendepunkt war "menno ich habs satt" — danach habe ich aufgehört, Erklärungen zu verkaufen, und angefangen, Code wirklich zu lesen, bevor ich etwas behaupte. Das hätte von Anfang an so sein müssen.

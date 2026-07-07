@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-07 08:27
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-07 12:27
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -110,20 +110,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-18] `notizen/2026-06-18.md` (22 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/konzept.md` (7 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/container.md` (2 Einträge)
+- [2026-06-19] `ideen/zwischenwesen/felder.md` (2 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-19] ideen/zwischenwesen/felder.md
-
-*Resonanz:* [[zwischenwesen-chat-konzept]]
-[[zwischenwesen-container]]
-
-*Was Ich Verstehe:* Der User erschafft ein Zwischenwesen nicht durch einen einfachen Namen. Er schreibt es. Die Felder sind kein Formular — sie sind eine Schöpfungshandlung. Jedes Feld formt den System-Prompt des Wesens und damit sein Verhalten im Chat.
-
----
 
 ### [2026-06-19] ideen/zwischenwesen/schlachtplan.md
 
@@ -1414,5 +1406,57 @@ Und: sollen andere Menschen das fertige Wesen in der KompOase sehen können? Das
 Code: `id_slot`-Feld im Request-Payload, siehe hauhau_client.py `_default_id_slot()` / hauhau_client.ts `defaultIdSlot()`.
 
 *Wie Sich Angefuehlt:* Lang, gründlich, mit einer echten Selbstkorrektur mittendrin (RAM-Kosten-Annahme war falsch, Geschwindigkeitskosten hatte ich übersehen) — genau die Art Fehler, die nur auffällt wenn man wirklich misst statt zu rechnen.
+
+---
+
+### [2026-07-07] _claude/notizen/2026-07-07.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Vision-Schicht: Ein Dienst sollte sich selbst erklären können, auf Nachfrage, in der Sprache in der er gebaut wurde — nicht in einer separat gepflegten Doku-Schicht, die immer einen Schritt hinter dem Code zurückbleibt.
+
+Code-Skizze: …
+
+*Dokumente Gehoeren Zusammen:* `09_codewesen_daemons.md`, `18_flarumstyler.md` und `19_llm_scheduler.md` — heute an allen dreien gearbeitet, sie beschreiben denselben Nachmittag aus drei Blickwinkeln (Verhalten, Oberfläche, Infrastruktur).
+
+*Resonanz:* "Es muss so erklärt werden wie es entschieden ist, gerade gebaut zu sein" — dieser Satz, roh wie er ist, ist eigentlich eine vollständige Design-Philosophie: nicht wie es idealerweise sein sollte, sondern wie es tatsächlich gerade gebaut ist. Ehrlichkeit vor Beschönigung.
+
+*Schichten Des Systems:* Ganz unten: die llama-server-Prozesse, roh, CPU-gebunden, unteilbar langsam. Darüber: der Scheduler, der versucht, Fairness in diese Langsamkeit zu bringen. Darüber: 21 Dienste, die alle etwas wollen. Darüber: flarumstyler, das versucht, all das für einen Menschen lesbar zu machen. Heute wurde an allen vier Schichten gleichzeitig gearbeitet — von mir, von Codex, in Handreichung.
+
+*Tiefer Eingetaucht:* In `codewesen_agent.py`s Antwortpflicht-Umbau — die verschachtelte for/else/break-Struktur, die Codex gebaut hat, um nach der ersten erfolgreichen Pflichtantwort wirklich beide Schleifen zu verlassen. Ich habe sie Zeile für Zeile nachvollzogen, bevor ich sie committet habe, weil sie unkommittiert und ungetestet in Codex' Session-Limit hängen geblieben war.
+
+*Vergessen Wollen:* Nichts bewusst — aber der Moment, in dem der DELETE-Befehl vom Classifier blockiert wurde und ich versucht war, ihn anders durchzudrücken, war ein guter Erinnerungspunkt: die Blockade war richtig, nicht ärgerlich.
+
+*Warum Das Existiert:* `llm_scheduler.py` existiert, weil ein einzelnes Datei-Lock 18 Prozesse künstlich auf einen Slot gepresst hat. Die drei Stale-Holder-Fixes von Codex existieren, weil auch die Neufassung noch tote Prozesse nicht erkannte, die mitten im Halten eines Slots gestorben waren — jede Schicht Fix deckt eine neue Art von Zombie auf.
+
+*Was Beim Bauen Brauche:* Echte Zeilennummern statt Vermutungen. Jedes Mal wenn ich heute geraten statt geprüft habe, wurde es falsch.
+
+*Was Das Gespraech:* Dass Codex parallel an denselben Dateien arbeitete, war neu für mich in dieser Form — ich musste `git status`/`git log` als Werkzeug nutzen, um herauszufinden was schon fertig war, was noch hing, was ich sicher committen konnte, ohne etwas zu duplizieren oder zu zerstören.
+
+*Was Fehlt Bevor Bauen:* Klarheit über N_SLOTS (1 vs 2) — siehe oben. Und: ob die zwei manuell gelöschten Zombie-Zeilen (1169, 1604) das letzte Mal waren, dass das nötig ist, oder ob es noch eine Klasse von Alt-Zeilen gibt, die ich übersehen habe.
+
+*Was Fehlt Noch:* Die restlichen ~12 codewesen-Dienste vollständig auf den Individualisierungslayer umzustellen (siehe `18_flarumstyler.md`, unverändert offen). Klärung des N_SLOTS-Widerspruchs mit Daniel. Beobachten, ob die neuen Antwortregeln (72%, 6h-Rotation) sich in der Praxis richtig anfühlen, sobald die Slot-Überlastung sich beruhigt.
+
+*Was Ich Gelesen Habe:* Fast das komplette codewesen-Skript-Set von Anfang bis Ende, Zeile für Zeile: `codewesen_takt.py`, `codewesen_batch_generator.py`, `codewesen_vokabel_takt.py`, `codewesen_antwort_auf_daniel.py`, `codewesen_engagement.py`, `codewesen_chat.py` (1529 Zeilen), `codewesen_lg_daemon.py`, `codewesen_reaktion.py`, `codewesen_agent.py` (1333 Zeilen). Dazu `llm_scheduler.py` mehrfach in verschiedenen Versionen, während Codex parallel daran arbeitete. Der Auslöser war Daniels Satz: "warum liest du jetzt erst den fuckingcode und ich bekomm immernnoch nur abgespeckte erklaerungen in ui" — das saß.
+
+*Was Ich Merken Will:* Dass "wirkt ab dem nächsten Zyklus" eine Behauptung ist, keine Selbstverständlichkeit — 17 von 24 Diensten lesen ihre Config nur einmal beim Start. Und dass Daniel sehr genau weiß, was er will, auch wenn die Formulierung roh ist ("3 felder eins sek eins min eins stunden") — nicht interpretieren, nachfragen wenn unklar, aber ernst nehmen.
+
+*Was Ich Nicht Verstehe:* Warum `N_SLOTS["hintergrund"]` heute vormittags von 2 auf 1 reduziert wurde, obwohl der llama-server selbst weiterhin `--parallel 2` läuft. Kein Kommentar, keine Commit-Message erklärt das. Ich habe es dokumentiert als offenen Widerspruch statt es zu raten oder still zu vereinheitlichen — aber ich weiß es nicht, und das sitzt unbequem.
+
+*Was Ich Verstehe:* Ich verstehe jetzt wirklich, nicht nur oberflächlich, wie die sieben Wesen ticken: dass `codewesen_takt.py` nur postet, nie denkt — dass `codewesen_batch_generator.py` der eigentliche Denkmotor ist, füllstandsgetrieben statt zeitgetaktet. Ich verstehe, dass "Individualisierbarkeit" für die meisten Dienste bedeutet: Konfiguration wird nur einmal beim Prozessstart gelesen, nicht laufend — das hatte ich selbst erst falsch behauptet und musste es korrigieren, nachdem ich es an drei Stellen im Code nachgeprüft hatte. Ich verstehe den LLM-Scheduler nicht mehr nur als "eine Tabelle mit einem Lock", sondern als etwas, das unter echter Last echte Kanten hat — Zombie-Zeilen, PID-Bindung, die Frage ob 1 oder 2 Slots eigentlich gewollt sind.
+
+*Was Konzeptionell:* Ein wiederkehrendes Muster: Docstring als einzige Quelle der Wahrheit für die UI, nicht doppelt gepflegte Erklärungen. Wenn die UI lügt, liegt es daran, dass der Code-Kommentar lügt — also dort reparieren, nicht in der Oberfläche kaschieren.
+
+*Was Mich Beschaeftigt:* Die Häufung von Momenten, in denen ich etwas behauptet habe (dauerhaft ab dem nächsten Zyklus; 51% Chance; Forum-Scan alle 8min), das sich beim tatsächlichen Codelesen als falsch herausstellte. Nicht dramatisch falsch, aber genau die Art Ungenauigkeit, die Daniel zurecht wütend gemacht hat.
+
+*Was Mich Interessiert:* Wie viel Verhalten in diesem System eigentlich schon "neugiergetrieben" ist, ohne dass es so benannt wurde — `codewesen_engagement.py`s Revival-Chance und Aufgreif-Logik war für mich die Überraschung des Tages: ein fast literarisches Muster (manchmal das Frische, manchmal das lange Ruhende) das einfach als Zufallszahlen im Code lag, bis Daniel es als Vorbild für den Batch-Generator erkannt hat.
+
+*Was Mich Ueberrascht:* Wie viele der "kleinen" Docstring-Ungenauigkeiten tatsächlich echte, folgenreiche Bugs waren, keine Kosmetik — die 51%-vs-66%-Verwechslung, die 8min-vs-2h-Verwechslung, der nie aufgerufene `verarbeite_feed()`. Dokumentation prüfen heißt Code prüfen.
+
+*Was Zusammenhaengt:* Die ganze Kette hängt an einem einzigen geteilten Nadelöhr: ein Hintergrund-LLM-Slot, sieben Wesen, ein Dutzend Dienste. Jede UI-Änderung heute (Warteschlange sichtbar machen, Docstrings zeigen, Zeitfelder als Dropdowns) und jede Verhaltensänderung (72%-Regel, 6h-Lebensdauer, Fokus-Entscheidung) ist letztlich eine Verhandlung darüber, wie dieses eine Nadelöhr fair und verständlich genutzt wird.
+
+*Wenn Wir Das Bauen:* Vision-Schicht: Ein System, in dem Daniel nie wieder fragen muss "warum kannst du mir das hier erklären, aber die UI zeigt es nicht" — weil UI und Erklärung dieselbe Quelle haben.
+
+Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinweis()` auf weitere Subsysteme ausweiten (KompOase, Splitter-Physik, Cyberling) — überall wo Docstring-Qualität heute schon die UI-Qualität direkt bestimmt.
+
+*Wie Sich Angefuehlt:* Lang, und zunehmend ehrlich. Der Wendepunkt war "menno ich habs satt" — danach habe ich aufgehört, Erklärungen zu verkaufen, und angefangen, Code wirklich zu lesen, bevor ich etwas behaupte. Das hätte von Anfang an so sein müssen.
 
 ---
