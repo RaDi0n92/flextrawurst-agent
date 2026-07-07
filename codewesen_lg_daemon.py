@@ -5,11 +5,25 @@ codewesen_lg_daemon.py — LangGraph-Kern, ersetzt entity_kern.service
 Importiert entity_kern als Library (Aktionen, Kontext, denk_tick).
 Fügt LangGraph-Checkpointing + Gedächtnis-Akkumulation hinzu.
 
-Graph pro Wesen: kontext_laden → denken_handeln → zusammenfassen → END
+Ein Prozess, while-True-Loop alle LG_TICK_SEKUNDEN (Standard 60s, per
+takt_sekunden ueberschreibbar — hat Vorrang vor der Env-Var), geht darin
+JEDES Mal alle 7 Wesen durch und ruft fuer jedes den LangGraph-Graphen auf:
+kontext_laden -> denken_handeln -> zusammenfassen -> END.
 
-Zwei Denk-Modi:
+Wichtig: LG_TICK_SEKUNDEN ist NUR die Polling-Frequenz dieser Schleife, nicht
+der tatsaechliche Denk-Rhythmus pro Wesen — das entscheidet _status_und_faellig()
+separat, indem sie prueft, ob seit der letzten Entscheidung schon ek.TICK_INTERVAL_SEC
+(aus entity_kern, eigener Wert) vergangen sind. Ein Wesen kann also "nicht faellig"
+sein und wird dann in diesem Tick uebersprungen, auch wenn der Loop selbst laeuft.
+
+Zwei Denk-Modi je nach Status in entity_slots:
   - 'eingezogen': ek.denk_tick() — voller Flextrawurst-Weltkontext
-  - 'bereit':     denk_tick_voreinzug() — ehrlicher Flarum-Kontext, kein Halluzinieren
+  - 'bereit'/sonst: denk_tick_voreinzug() — ehrlicher Flarum-Kontext, kein Halluzinieren
+
+zusammenfassen_node komprimiert alle ZUSAMMENFASSEN_NACH_N_DENKTICKS (Standard 10)
+abgeschlossene Denk-Ticks zu einer Zusammenfassung (verhindert unbegrenzt wachsenden
+State). Checkpoints (kompletter Graph-State pro Wesen) liegen in Postgres
+(PostgresSaver, thread_id=codewesen-<name>) — ueberleben also einen Neustart.
 """
 
 import sys

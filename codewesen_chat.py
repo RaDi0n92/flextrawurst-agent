@@ -1,13 +1,33 @@
 #!/usr/bin/env python3
 """
-Codewesen Chat-UI  —  Port 8002
+Codewesen Chat-UI (FastAPI) — Port 8002, request-getrieben, kein eigener Takt.
 
-/             → Auswahl aller 6 Codewesen
-/chat/<name>  → Direktchat mit diesem Codewesen
+/             -> Auswahl aller Codewesen
+/chat/<name>  -> Direktchat mit diesem Codewesen
+/api/chat/<name> -> Streaming-Antwort (SSE) via hauhau_client.achat_stream
 
-Der Chat nutzt das Gedächtnis (eigene Forum-Posts) als Kontext
-und speichert den Gesprächsverlauf dauerhaft in
-  codewesen/<name>/gedaechtnis/chat_verlauf.jsonl
+Kontext pro Nachricht: wesen.md + Gedaechtnis (eigene Forum-Posts) + Tags +
+letzte Notizen + Verhalten-Override (dk.lade(), live pro Nachricht neu gelesen,
+kein Neustart noetig). Verlauf wird doppelt persistiert: JSONL
+(codewesen/<name>/gedaechtnis/chat_verlauf.jsonl) UND Postgres-Tabelle
+wesen_chat_verlauf.
+
+Die KI-Antwort kann Marker enthalten, die dieser Server ausfuehrt, bevor der
+Text den Menschen erreicht:
+  ##LESEN:pfad##/##SCHREIBEN:pfad##   — Datei im Werkraum lesen/schreiben
+  [MERKEN: notiz]                     — still in gedanken/<datum>.md ablegen
+  Direktes-Posting-Erkennung (erkenne_direktes_posting) — schlaegt einen
+    Forumspost vor, den der Mensch per /api/direkt-posten bestaetigen muss
+Bild-Uploads werden unter codewesen/<name>/sinne/bilder/ gespeichert UND
+erzeugen zusaetzlich einen "impuls"-Entwurf (wie ein spontaner Eindruck).
+
+Fund beim Lesen (nicht mehr aktiv): _ollama_fuer_chat_freiraumen() und die
+zugehoerigen Helfer (_stoppe_blocker_und_kill_fremde, _geschuetzte_web_pids)
+sind definiert, werden aber nirgends mehr aufgerufen — vermutlich ein Rest
+aus der Vor-hauhaucs-Architektur, als der alte Ollama-Port 11434 fuer Live-Chat
+zwangsweise freigeraeumt werden musste. Heute laeuft Live-Chat ueber
+llama-hauhaucs (Port 11435) + hauhau_client.trace_prioritaet(), nicht mehr
+ueber diesen Kill-Mechanismus.
 """
 
 from __future__ import annotations

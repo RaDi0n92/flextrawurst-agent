@@ -2,9 +2,22 @@
 """
 Daemon: Codewesen antworten auf Daniels Posts.
 
-Alle 5 Minuten: Alle Posts von Admin (user_id=1) von heute suchen.
-Für jeden Post der noch keine Codewesen-Antwort hat: 51% Chance pro Wesen.
-Gilt für Eröffnungsposts UND Antwortposts.
+Alle 5 Minuten (Standard, per takt_sekunden ueberschreibbar): sucht alle
+Posts von Admin (user_id=1) von HEUTE, die noch nicht verarbeitet wurden
+(_global/daniel_posts_processed.json) und in denen noch kein Codewesen
+NACH Daniels Post geantwortet hat. Vokabel-Threads werden ausgenommen
+(dort antwortet codewesen_vokabel_takt.py).
+
+Wuerfel-Logik ist NICHT einheitlich, wie der Name vermuten laesst:
+  - Eroeffnungspost (post_number == 1): JEDES der 7 Wesen antwortet garantiert,
+    kein Wuerfel.
+  - Antwortpost (post_number > 1): pro Wesen 66% Chance zu antworten
+    (random.random() > 0.66 => uebersprungen, sonst antwortet es).
+
+Bearbeitung ist synchron pro Post: geht alle 7 Wesen der Reihe nach durch,
+je 8 Sekunden Pause nach einem tatsaechlichen Post. LLM-Anfragen laufen mit
+PRIO_HOCH (hoechste Prioritaet im gemeinsamen "hintergrund"-Slot) — direkte
+Reaktion auf Daniel geht vor Hintergrund-Content wie dem Batch-Generator.
 """
 import json
 import logging
