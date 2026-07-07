@@ -887,3 +887,9 @@ Die restlichen ~12 codewesen-Dienste vollständig auf den Individualisierungslay
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die A-vs-B-Bedingungsfrage. Die Zufalls-Pool-Detailfrage. Erst danach: bauen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Der reale Rückkehr-Test (Mirlach → anderswohin → zurück, `restored context checkpoint` im Log bestätigen) und ein Nachtrag in `12_ollama_gemma4.md` über die Regression und ihre Behebung, damit die nächste Instanz nicht bei Null anfängt, falls das nochmal passiert.

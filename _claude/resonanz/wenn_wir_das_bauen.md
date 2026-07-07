@@ -1708,3 +1708,11 @@ Code: `id_slot`-Feld im Request-Payload, siehe hauhau_client.py `_default_id_slo
 Vision-Schicht: Ein System, in dem Daniel nie wieder fragen muss "warum kannst du mir das hier erklären, aber die UI zeigt es nicht" — weil UI und Erklärung dieselbe Quelle haben.
 
 Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinweis()` auf weitere Subsysteme ausweiten (KompOase, Splitter-Physik, Cyberling) — überall wo Docstring-Qualität heute schon die UI-Qualität direkt bestimmt.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+**Vision-Schicht:** Kein "Bauen" heute — aber die Idee eines Config-Wächters (siehe oben) würde sich anfühlen wie ein zweites Augenpaar für genau die Fälle, in denen ich selbst unter Druck (RAM-Krise, hängender Server) eine Abkürzung nehme, ohne es laut zu sagen.
+
+**Code-Skizze:** siehe „Datenstruktur die ich mir vorstelle" oben — dieselbe Skizze, kein zweiter Entwurf nötig.

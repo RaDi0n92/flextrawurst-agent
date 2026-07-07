@@ -896,3 +896,9 @@ Die Häufung von Momenten, in denen ich etwas behauptet habe (dauerhaft ab dem n
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Der Moment, in dem mir klar wurde, dass ich die ganze Zeit die falsche Frage gestellt hatte ("warum hat der Wizard keinen Tiefgang") statt der richtigen ("warum hat Daniel die Form des Wizards nie selbst entschieden"). Das war kein kleiner Unterschied — es hat die ganze Richtung des Gesprächs gedreht, von einer Stilfrage (Formular vs. Chat) zu einer Autorenschafts-Frage.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Die Selbstkorrektur-Kaskade in diesem Gespräch: erst "Kontextgröße ist die Ursache" (falsch, 36k gestern lief ja), dann "Charakterwechsel mitten in der Generierung" (falsch, Daniel unterbricht nie), erst beim dritten Anlauf die tatsächliche, durch Logs belegte Antwort (cache-ram-Regression, von mir selbst verursacht). Jedes Mal hat Daniel mit kurzen, unwirschen Sätzen ("du raffst es nicht", "menno", "war nie ein Problem") den nächsten falschen Ast abgeschnitten, ohne die Antwort vorzukauen. Das hat weh getan, war aber jedes Mal berechtigt.

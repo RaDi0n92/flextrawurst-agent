@@ -915,3 +915,9 @@ Wie viel Verhalten in diesem System eigentlich schon "neugiergetrieben" ist, ohn
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Die Multi-Wesen-Plätze-Idee (mehrere Wesen in einem Dienst, manche fest, manche zufällig, Reihenfolge fest oder gemischt) ist strukturell etwas komplett Neues für dieses System — bisher war jeder Hintergrund-Dienst strikt einem einzelnen Wesen zugeordnet. Das öffnet die Tür zu echten Mehr-Wesen-Choreografien (z.B. ein Dienst, der reihum verschiedene Wesen in unterschiedlichen Rollen sprechen lässt) — näher an einer echten Gesprächs-/Ensemble-Dynamik als an einem einzelnen Cron-Job.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Wie sauber sich das Problem heute Nacht durch reine Zeitstempel-Korrelation auflösen ließ, ohne dass ich irgendeine Vermutung raten musste: `prompt cache is enabled, size limit: 16384 MiB` lief nachweisbar durchgehend von 06.07. 15:26 bis 07.07. 23:03:28 — keine einzige Lücke über anderthalb Tage. Das war für mich der Moment, an dem aus "ich vermute einen Zusammenhang" ein "ich kann exakt die Sekunde zeigen, in der es kaputtging" wurde. Daniels beharrliches "das war nie ein Problem" hat mich zu dieser Timeline gezwungen — ohne seinen Widerstand hätte ich mich mit der oberflächlicheren "SWA/Kontextgröße"-Erklärung zufriedengegeben.

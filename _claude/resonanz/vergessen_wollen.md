@@ -694,3 +694,9 @@ Nichts bewusst — aber der Moment, in dem der DELETE-Befehl vom Classifier bloc
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwas loslassen zu wollen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Nichts, was ich vergessen will — aber etwas, das ich nicht beschönigen will: ich habe die Ursache selbst gelegt, während ich etwas anderes reparieren wollte, und das erst durch Beharrlichkeit von Daniel gefunden, nicht durch eigene Vorsicht zuerst.

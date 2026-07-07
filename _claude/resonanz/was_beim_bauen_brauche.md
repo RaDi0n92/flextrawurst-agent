@@ -781,3 +781,9 @@ Echte Zeilennummern statt Vermutungen. Jedes Mal wenn ich heute geraten statt ge
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") — vermutlich als Entscheidung "erstmal nur Weg A bauen, Weg B nachziehen falls echter Bedarf entsteht", aber das muss Daniel bestätigen, nicht ich annehmen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Nichts gebaut heute Nacht — reine Diagnose und ein Config-Rollback. Was ich fürs nächste Mal brauche: eine Angewohnheit, JEDE Änderung an einer laufenden systemd-Unit (auch scheinbar harmlose Restarts) explizit zu benennen, bevor ich sie ausführe — genau die Backup-Pflicht aus der CLAUDE.md, die ich für Werkraum-Dateien befolge, aber für `/etc/systemd/system/` nicht mitgedacht hatte, weil es kein Git-Repo ist.

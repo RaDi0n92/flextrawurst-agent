@@ -868,3 +868,9 @@ Klarheit über N_SLOTS (1 vs 2) — siehe oben. Und: ob die zwei manuell gelösc
 - Entscheidung: alles auf einmal neu bauen, oder in Phasen (z.B. erst Grundfelder + Ziel-Varianten + Custom-Felder-Weg-A, dann Multi-Wesen-Plätze und Rollen als zweite Phase)?
 - Technische Detailfrage noch offen: wie genau wird "Zufalls-Wesen pro Platz" bei jedem Lauf neu gewürfelt — komplett zufällig aus allen 7, oder aus einer von Daniel eingegrenzten Teilmenge?
 - Storage-Frage für `DienstLauf`-Verlauf noch nicht mit Daniel abgestimmt (Drei-Stopp-Fragen-Pflicht: wo lebt der State) — Vorschlag JSONL pro Dienst ist nur meine Annahme, keine getroffene Entscheidung.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Ein Test mit echtem Charakterwechsel (Mirlach → anderes Wesen → zurück), um `restored context checkpoint` im Log zu bestätigen, statt nur die Startup-Zeile zu sehen. Daniel ist schlafen gegangen, ohne das noch zu testen — offen für die nächste Session.
