@@ -58,25 +58,93 @@ TAG_FILTER = frozenset([
 
 # ── Lade-Funktionen ───────────────────────────────────────────────────────────
 
+# Frueher stat()'te lade_alle_knoten() JEDE Datei im Verzeichnis (Kommentar ging
+# noch von "~10M Dateien" aus -- inzwischen 18.9 Mio), nur um die paar Tausend der
+# letzten 30 Tage zu finden. Genau das war der Grund fuer den 5h-Haenger vom
+# 2026-07-07 (Prozess steckte im 'D'-Status/disk-sleep exakt in dieser Funktion
+# fest, System swappte massiv). Eine Knoten-Datei wird nach dem Schreiben nie
+# wieder veraendert -- ist ihr mtime einmal bekannt, muss sie nie wieder gestat't
+# werden. _SCAN_CACHE_FILE merkt sich das dauerhaft: "ausgeschlossen" fuer Dateien
+# die sicher aelter als das 30-Tage-Fenster sind (nur die ID, kein Inhalt -- haelt
+# die Cache-Datei klein), "aktuell" fuer die wenigen, die gerade im Fenster liegen.
+# Jeder folgende Lauf muss dann nur noch Dateien stat'en, die seit dem letzten Lauf
+# neu dazugekommen sind, nicht mehr alle.
+_SCAN_CACHE_FILE = MUSTER_DIR / "_scan_cache.json"
+
+
+def _lade_scan_cache() -> dict:
+    try:
+        daten = json.loads(_SCAN_CACHE_FILE.read_text())
+        return {
+            "ausgeschlossen": set(daten.get("ausgeschlossen", [])),
+            "aktuell": daten.get("aktuell", {}),
+        }
+    except Exception:
+        return {"ausgeschlossen": set(), "aktuell": {}}
+
+
+def _speichere_scan_cache(cache: dict) -> None:
+    try:
+        MUSTER_DIR.mkdir(parents=True, exist_ok=True)
+        tmp = _SCAN_CACHE_FILE.with_suffix(".tmp")
+        tmp.write_text(json.dumps({
+            "ausgeschlossen": sorted(cache["ausgeschlossen"]),
+            "aktuell": cache["aktuell"],
+        }), encoding="utf-8")
+        tmp.replace(_SCAN_CACHE_FILE)
+    except Exception:
+        pass
+
+
 def lade_alle_knoten() -> list[dict]:
     # Lädt nur Knoten die in den letzten 30 Tagen geändert wurden.
-    # Verhindert das Einlesen aller ~10M Dateien: scandir() ist ein Generator,
-    # mtime-Filter reduziert tatsächliche JSON-Reads auf wenige Tausend.
     cutoff = (datetime.now(timezone.utc) - timedelta(days=30)).timestamp()
+    cache = _lade_scan_cache()
+    ausgeschlossen = cache["ausgeschlossen"]
+    aktuell = cache["aktuell"]
+
+    # Aus dem Fenster gefallene Eintraege endgueltig ausschliessen -- mtime
+    # aendert sich nie, der Ausschluss gilt damit ab jetzt fuer immer.
+    veraendert = False
+    for kid, eintrag in list(aktuell.items()):
+        if eintrag["mtime"] < cutoff:
+            del aktuell[kid]
+            ausgeschlossen.add(kid)
+            veraendert = True  # sonst wird die Verkleinerung von "aktuell" nie gespeichert
+
     knoten = []
     try:
         with os.scandir(KNOTEN_DIR) as it:
             for entry in it:
                 if not entry.name.endswith(".json") or entry.name == "schema.json":
                     continue
+                kid = entry.name[:-5]
+                if kid in ausgeschlossen:
+                    continue
+                bekannt = aktuell.get(kid)
+                if bekannt is not None:
+                    knoten.append(bekannt["knoten"])
+                    continue
+                # Neue oder noch nie gesehene Datei -- einmalig stat'en.
                 try:
-                    if entry.stat().st_mtime < cutoff:
-                        continue
-                    knoten.append(json.loads(Path(entry.path).read_text()))
+                    mtime = entry.stat().st_mtime
                 except Exception:
-                    pass
+                    continue
+                veraendert = True
+                if mtime < cutoff:
+                    ausgeschlossen.add(kid)
+                    continue
+                try:
+                    inhalt = json.loads(Path(entry.path).read_text())
+                except Exception:
+                    continue  # evtl. noch im Schreibvorgang -- naechstes Mal erneut versuchen
+                aktuell[kid] = {"mtime": mtime, "knoten": inhalt}
+                knoten.append(inhalt)
     except Exception:
         pass
+
+    if veraendert:
+        _speichere_scan_cache({"ausgeschlossen": ausgeschlossen, "aktuell": aktuell})
     return knoten
 
 
