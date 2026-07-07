@@ -52,6 +52,7 @@ agent/dak_gord_system/spuren/wochenlog/
 .gstack/
 .agent/
 welt/.jwt_secret
+welt/tts_translation_cache.json
 
 # LLM-Modelldateien (mehrere GB, gehoeren nicht ins Git-Repo)
 tools/models/

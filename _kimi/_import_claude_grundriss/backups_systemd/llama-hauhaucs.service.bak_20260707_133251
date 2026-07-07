@@ -1,0 +1,37 @@
+[Unit]
+Description=llama-server hauhaucs (Qwen3.6-35B-A3B Q6_K_P, Vision)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/werkraum/tools/models/hauhaucs_q6
+AllowedCPUs=0-7
+ExecStart=/usr/local/bin/llama-server \
+  --model /root/werkraum/tools/models/hauhaucs_q6/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
+  --mmproj /root/werkraum/tools/models/hauhaucs_q6/mmproj-f16.gguf \
+  --alias hauhaucs-q6 \
+  --ctx-size 66666 \
+  --threads 8 \
+  --host 127.0.0.1 \
+  --port 11435 \
+  --parallel 2 \
+  --flash-attn on \
+  --mlock \
+  --jinja \
+  --metrics \
+  --cache-type-k q8_0 \
+  --cache-type-v q8_0 \
+  --cache-ram 16384 \
+  --ctx-checkpoints 64 \
+  --cpu-range 0-7 \
+  --cpu-range-batch 0-7 \
+  --cpu-strict 1
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

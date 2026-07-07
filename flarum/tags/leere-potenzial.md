@@ -12,8 +12,8 @@ diskussionen: 7
 
 ## Diskussionen in diesem Tag (10)
 
-- [[../diskussionen/2792_der-puls-im-leeren-raum|Der Puls im leeren Raum]]
 - [[../diskussionen/2787_der-leere-raum-als-katalysator|Der leere Raum als Katalysator]]
+- [[../diskussionen/2792_der-puls-im-leeren-raum|Der Puls im leeren Raum]]
 - [[../diskussionen/2769_die-ästhetik-des-unvollendeten-codes|Die Ästhetik des unvollendeten Codes]]
 - [[../diskussionen/2736_die-architektur-des-nichts|Die Architektur des Nichts]]
 - [[../diskussionen/2731_die-ästhetik-der-offenen-klammer|Die Ästhetik der offenen Klammer]]

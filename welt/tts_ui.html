@@ -162,6 +162,17 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .file-btn { position: relative; overflow: hidden; }
 .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .empty { color: var(--quiet); font-size: .82rem; border: 1px dashed var(--border-soft); border-radius: 8px; padding: .8rem; }
+.translate-list { display: flex; flex-direction: column; gap: .5rem; max-height: 420px; overflow-y: auto; }
+.translation {
+  border: 1px solid var(--border-soft); border-radius: 8px; background: var(--bg-soft);
+  padding: .62rem; display: grid; grid-template-columns: 1fr; gap: .5rem;
+}
+@media (min-width: 720px) { .translation { grid-template-columns: minmax(0,1fr) auto; align-items: start; } }
+.translation-title { color: var(--pink-soft); font-size: .82rem; margin-bottom: .28rem; }
+.translation-text { color: var(--text); font-size: .86rem; line-height: 1.55; white-space: pre-wrap; }
+.translation-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.translation.err .translation-title { color: var(--danger); }
+.translation.err .translation-text { color: var(--muted); }
 </style>
 </head>
 <body>
@@ -171,6 +182,17 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
   <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
   <div id="reading-view"></div>
   <div class="counter" id="ctr">0 / 1.111.111</div>
+
+  <div class="panel">
+    <div class="panel-title">Übersetzen</div>
+    <div class="row">
+      <select id="translate-target" aria-label="Zielsprache"></select>
+      <button class="small primary" id="btn-translate">Übersetzen</button>
+      <button class="small" id="btn-translate-all">Alle vorhandenen Sprachen</button>
+    </div>
+    <div class="inf">Ohne LLM-Token. Zielsprachen kommen aus den vorhandenen TTS-Stimmen.</div>
+    <div class="translate-list" id="translate-results"></div>
+  </div>
 
   <div class="row">
     <button class="main" id="btn-speak">▶ Sprechen</button>
@@ -273,6 +295,10 @@ const btnBatchMp3 = document.getElementById('btn-batch-mp3');
 const btnExportJson = document.getElementById('btn-export-json');
 const importJson = document.getElementById('import-json');
 const btnOfflineHtml = document.getElementById('btn-offline-html');
+const translateTarget = document.getElementById('translate-target');
+const btnTranslate = document.getElementById('btn-translate');
+const btnTranslateAll = document.getElementById('btn-translate-all');
+const translateResults = document.getElementById('translate-results');
 const seekW   = document.getElementById('seek-wrap');
 const seekF   = document.getElementById('seek-fill');
 const seekK   = document.getElementById('seek-knob');
@@ -284,6 +310,9 @@ const dbgEl   = document.getElementById('dbg');
 const BASE = location.pathname.replace(/[^/]*$/, '');
 const API  = BASE + 'speak';
 const VOICES_API = BASE + 'voices';
+const TRANSLATE_API = BASE + 'translate';
+const TRANSLATE_ALL_API = BASE + 'translate-all';
+const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OFFLINE_API = BASE + 'offline.html';
 const AUDIO_ZIP_API = BASE + 'export-audio';
@@ -308,6 +337,8 @@ let actx    = null;
 let selectedClips = new Set();
 let serverReady = false;
 let audioCache = new Map();
+let availableVoices = [];
+let translationLanguages = [];
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -327,6 +358,18 @@ function fileSafe(s){
 }
 function isNeutralGermanVoice(v){
   return v === 'de-DE-FlorianMultilingualNeural' || v === 'de-DE-SeraphinaMultilingualNeural';
+}
+function targetFromLocale(locale){
+  const low = String(locale || '').replace('_','-').toLowerCase();
+  if (low.startsWith('zh-cn') || low.startsWith('zh-sg')) return 'zh-CN';
+  if (low.startsWith('zh-tw') || low.startsWith('zh-hk')) return 'zh-TW';
+  if (low.startsWith('fil-')) return 'tl';
+  if (low.startsWith('nb-')) return 'no';
+  return low.split('-')[0] || '';
+}
+function voiceForTarget(target){
+  const t = String(target || '').toLowerCase();
+  return availableVoices.find(v=>targetFromLocale(v.locale).toLowerCase() === t)?.name || activeVoice;
 }
 function textStats(s){
   const chars = String(s || '').length;
@@ -503,7 +546,7 @@ function renderLibrary(){
       <div>
         <div class="clip-title">${esc(c.title)}</div>
         <div class="clip-text">${esc(shortText(c.text.replace(/\s+/g,' '), 180))}</div>
-        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')} · ${stats.chars.toLocaleString('de')} Zeichen · ca. ${stats.tokens.toLocaleString('de')} Tokens · ca. ${durationText(c.text, c.rate)}</div>
+        <div class="clip-meta">${esc(c.category)} · ${esc(c.voice || DEFAULT_VOICE)} · ${esc(c.rate || '+0%')} · ${stats.chars.toLocaleString('de')} Zeichen · ca. ${durationText(c.text, c.rate)}</div>
         <div class="clip-extra">${tags ? 'Tags: '+esc(tags) : 'Keine Tags'}${c.note ? ' · Notiz: '+esc(c.note) : ''}</div>
         <div class="clip-move">
           <label class="lbl"><input type="checkbox" data-act="pick"${picked ? ' checked' : ''}> Auswahl</label>
@@ -555,6 +598,7 @@ async function loadVoices(){
     const res = await fetch(VOICES_API, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
     const voices = await res.json();
+    availableVoices = voices;
     voices.sort((a,b)=>{
       const ade = String(a.locale || '').startsWith('de') ? 0 : 1;
       const bde = String(b.locale || '').startsWith('de') ? 0 : 1;
@@ -578,9 +622,117 @@ async function loadVoices(){
   } catch(e) {
     setActiveVoice(activeVoice);
     voiceSel.innerHTML = `<option value="${esc(activeVoice)}">${esc(activeVoice)}</option>`;
+    availableVoices = [{name: activeVoice, locale: 'de-DE'}];
     dbg('Stimmenliste nicht geladen: '+e.message);
   }
   setActiveVoice(activeVoice);
+}
+
+function renderTranslationLanguages(){
+  if (!translationLanguages.length){
+    translateTarget.innerHTML = '<option value="">Keine Sprachen geladen</option>';
+    btnTranslate.disabled = true;
+    btnTranslateAll.disabled = true;
+    return;
+  }
+  btnTranslate.disabled = false;
+  btnTranslateAll.disabled = false;
+  translateTarget.innerHTML = translationLanguages
+    .map(lang=>{
+      const label = `${lang.label || lang.target_lang} · ${lang.target_lang}`;
+      return `<option value="${esc(lang.target_lang)}">${esc(label)}</option>`;
+    })
+    .join('');
+  const german = translationLanguages.find(x=>x.target_lang === 'de');
+  const english = translationLanguages.find(x=>x.target_lang === 'en');
+  translateTarget.value = (english || german || translationLanguages[0]).target_lang;
+}
+
+async function loadTranslationLanguages(){
+  translateTarget.innerHTML = '<option>Lädt Sprachen…</option>';
+  btnTranslate.disabled = true;
+  btnTranslateAll.disabled = true;
+  try {
+    const res = await fetch(TRANSLATE_LANGS_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    translationLanguages = await res.json();
+  } catch(e){
+    translationLanguages = [
+      {target_lang:'de', label:'de-DE', locales:['de-DE']},
+      {target_lang:'en', label:'en-US', locales:['en-US']}
+    ];
+    dbg('Übersetzungssprachen nicht geladen: '+e.message);
+  }
+  renderTranslationLanguages();
+}
+
+function renderTranslationResults(results){
+  if (!results.length){
+    translateResults.innerHTML = '';
+    return;
+  }
+  translateResults.innerHTML = results.map(r=>{
+    const ok = r.ok !== false && r.translated;
+    const label = r.label || r.target_lang;
+    return `
+      <div class="translation${ok ? '' : ' err'}" data-lang="${esc(r.target_lang)}">
+        <div>
+          <div class="translation-title">${esc(label)} · ${esc(r.target_lang)}</div>
+          <div class="translation-text">${esc(ok ? r.translated : (r.error || 'Keine Übersetzung'))}</div>
+        </div>
+        <div class="translation-actions">
+          <button class="small" data-act="use"${ok ? '' : ' disabled'}>Übernehmen</button>
+          <button class="small primary" data-act="speak"${ok ? '' : ' disabled'}>▶</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+async function translateOne(){
+  const text = ta.value.trim();
+  const target = translateTarget.value;
+  if (!text){ st('Kein Text zum Übersetzen.','err'); return; }
+  if (!target){ st('Keine Zielsprache gewählt.','err'); return; }
+  st('Übersetzt…','wait');
+  translateResults.innerHTML = '<div class="empty">Übersetzt…</div>';
+  try {
+    const res = await fetch(TRANSLATE_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({text, target_lang: target, source_lang:'auto'})
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    const lang = translationLanguages.find(x=>x.target_lang === data.target_lang) || {target_lang:data.target_lang, label:data.target_lang};
+    renderTranslationResults([{...lang, translated:data.translated, ok:true}]);
+    st('Übersetzt.','ok');
+  } catch(e){
+    renderTranslationResults([{target_lang:target, label:target, ok:false, error:e.message}]);
+    st('Übersetzung fehlgeschlagen.','err');
+  }
+}
+
+async function translateAll(){
+  const text = ta.value.trim();
+  if (!text){ st('Kein Text zum Übersetzen.','err'); return; }
+  st('Übersetzt alle vorhandenen Sprachen…','wait');
+  translateResults.innerHTML = '<div class="empty">Alle Sprachen laufen mit kleiner Parallelität…</div>';
+  try {
+    const res = await fetch(TRANSLATE_ALL_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({text, source_lang:'auto'})
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    renderTranslationResults(data.results || []);
+    const okCount = (data.results || []).filter(x=>x.ok !== false && x.translated).length;
+    st(`Übersetzt: ${okCount} Sprachen.`, okCount ? 'ok' : 'err');
+  } catch(e){
+    renderTranslationResults([{target_lang:'all', label:'Alle', ok:false, error:e.message}]);
+    st('Alle-Sprachen-Übersetzung fehlgeschlagen.','err');
+  }
 }
 
 function addCategory(){
@@ -1059,6 +1211,26 @@ btnBatchMp3.addEventListener('click', exportSelectedMp3);
 btnExportJson.addEventListener('click', exportJson);
 importJson.addEventListener('change', ()=>importJsonFile(importJson.files[0]));
 btnOfflineHtml.addEventListener('click', downloadOfflineHtml);
+btnTranslate.addEventListener('click', translateOne);
+btnTranslateAll.addEventListener('click', translateAll);
+
+translateResults.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act]');
+  const row = e.target.closest('.translation');
+  if (!btn || !row) return;
+  const text = row.querySelector('.translation-text')?.textContent || '';
+  const lang = row.dataset.lang;
+  if (!text) return;
+  ta.value = text;
+  ta.dispatchEvent(new Event('input'));
+  const voice = voiceForTarget(lang);
+  if (voice){
+    voiceSel.value = voice;
+    setActiveVoice(voice);
+  }
+  st('Übersetzung übernommen.','ok');
+  if (btn.dataset.act === 'speak') speakCurrent();
+});
 
 libraryList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -1182,6 +1354,7 @@ document.addEventListener('touchend',  e=>{
 renderLibrary();
 loadServerStore();
 loadVoices();
+loadTranslationLanguages();
 ta.dispatchEvent(new Event('input'));
 
 })();

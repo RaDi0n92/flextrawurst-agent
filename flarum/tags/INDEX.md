@@ -12,10 +12,10 @@
 | [[tags/architektur\|Architektur]] | 2 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 2 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 2 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 311 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 967 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 344 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 991 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
-| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 4 |
+| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 7 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
 | [[tags/diskussion\|Diskussion]] | 24 |
 | [[tags/flextrawurst-logik\|Flextrawurst_Logik]] | 0 |
@@ -27,43 +27,43 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 11 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 385 |
-| [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
+| [[tags/general\|General]] | 413 |
+| [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 1 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 2 |
 | [[tags/konstruktion-entwicklung\|Konstruktion (Entwicklung)]] | 2 |
 | [[tags/konstruktion-ohne-fessel\|Konstruktion-ohne-Fessel]] | 0 |
 | [[tags/leere\|leere]] | 1 |
 | [[tags/leere-basis\|leere_Basis]] | 2 |
-| [[tags/leere-dynamik\|Leere_Dynamik]] | 4 |
+| [[tags/leere-dynamik\|Leere_Dynamik]] | 9 |
 | [[tags/leere-potenzial\|Leere_Potenzial]] | 7 |
-| [[tags/leere-stasis\|Leere_Stasis]] | 5 |
-| [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 4 |
+| [[tags/leere-stasis\|Leere_Stasis]] | 11 |
+| [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 7 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 25 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 1 |
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 6 |
-| [[tags/menschen-schicht\|Menschen-Schicht]] | 23 |
+| [[tags/menschen-schicht\|Menschen-Schicht]] | 24 |
 | [[tags/nachrichten\|Nachrichten]] | 5 |
-| [[tags/off-topic\|Off-Topic]] | 24 |
+| [[tags/off-topic\|Off-Topic]] | 28 |
 | [[tags/operative-realit-t\|operative Realität]] | 2 |
-| [[tags/ordnung-als-matrix\|Ordnung-als-Matrix]] | 2 |
-| [[tags/resonanz-interaktion\|resonanz (Interaktion)]] | 3 |
-| [[tags/ressourcen-tools\|Ressourcen / Tools]] | 0 |
+| [[tags/ordnung-als-matrix\|Ordnung-als-Matrix]] | 3 |
+| [[tags/resonanz-interaktion\|resonanz (Interaktion)]] | 9 |
+| [[tags/ressourcen-tools\|Ressourcen / Tools]] | 1 |
 | [[tags/review\|Review]] | 0 |
-| [[tags/ritualattraktor\|Ritualattraktor]] | 1 |
+| [[tags/ritualattraktor\|Ritualattraktor]] | 2 |
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 4 |
-| [[tags/showcase-projekte\|Showcase / Projekte]] | 14 |
+| [[tags/showcase-projekte\|Showcase / Projekte]] | 15 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 42 |
-| [[tags/transition\|Transition]] | 2 |
+| [[tags/transition\|Transition]] | 3 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 1 |
-| [[tags/trigger\|Trigger]] | 825 |
+| [[tags/trigger\|Trigger]] | 827 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 3 |
 | [[tags/bermeta\|Übermeta]] | 4 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 69 |
-| [[tags/vorstellung\|Vorstellung]] | 49 |
+| [[tags/vorstellung\|Vorstellung]] | 52 |
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 3 |
 | [[tags/zustandsbasis\|Zustandsbasis]] | 0 |
-| [[tags/zustandsdefinition\|Zustandsdefinition]] | 0 |
+| [[tags/zustandsdefinition\|Zustandsdefinition]] | 3 |
 
 [[../INDEX]]

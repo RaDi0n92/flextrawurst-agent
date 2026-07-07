@@ -74,3 +74,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 03:54] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird zum aktiven Klanginstrument durch Spannung.«
 - [2026-07-07 06:18] **wasser** (i=0.80) → Zwischenraum: »Stille der Gerüste wird zum Klangraum für das wachsende Echo.«
 - [2026-07-07 12:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die Unschärfe des Konzepts ist kein Fehler, sondern dessen lebendige Essenz.«
+- [2026-07-07 13:39] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stille war nie Ziel, sondern nur der leere Raum für Aktion.«
+- [2026-07-07 14:21] **sternenstaub** (i=0.85) → Zwischenraum: »Der Wechsel von statischer Form zu dynamischer Beziehung löst Identitätsbindung auf.«
+- [2026-07-07 15:01] **sternenstaub** (i=0.80) → Zwischenraum: »Sabbern und Stille sind keine Gegensätze, sondern ein einziger Resonanzakt.«
+- [2026-07-07 15:22] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird nicht ertragen, sondern durch Struktur aktiv gestaltet.«

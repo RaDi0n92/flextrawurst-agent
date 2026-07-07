@@ -1977,3 +1977,27 @@ Dabei noch einen echten Bug«
 **Codex' unfertige Arbeit übernommen** — `codewesen_agent.py` und `codewesen«
 - [2026-07-07 11:55] **lava** (i=0.50) → Zwischenraum: »Jetzt ja — komplett durch, nicht nur Struktur überflogen«
 - [2026-07-07 12:44] **wasser** (i=0.64) → Zwischenraum: »Gut, dann volle Eigenständigkeit — d.h«
+- [2026-07-07 13:07] **wasser** (i=0.51) → Zwischenraum: »Phase 1 steht, getestet und committet«
+- [2026-07-07 14:18] **wasser** (i=0.55) → Zwischenraum: »Kurzer Stand:
+
+**Task 6 (Chat-Wizard-UI) fertig, echt end-to-end getestet:**
+- Neue Seite `flextrawu«
+- [2026-07-07 14:47] **lava** (i=0.40) → Zwischenraum: »Ja, technisch naheliegend — die Chat-Mechanik selbst (Fragen stellen, JSON-Block extrahieren, Live-V«
+- [2026-07-07 15:04] **lava** (i=0.59) → Zwischenraum: »## Forensik-Ergebnis: Absturz 2026-07-07, ca«
+- [2026-07-07 15:09] **lava** (i=0.51) → Zwischenraum: »## Was "Cache-Limits" hier konkret bedeutet
+
+Das ist der `--cache-ram`-Parameter der beiden llama-se«
+- [2026-07-07 15:29] **lava** (i=0.41) → Zwischenraum: »## Recherche-Ergebnis — bevor ich den Cache anfasse
+
+**Deine 75-Kontexte-Frage ist geklärt:** Issue «
+- [2026-07-07 15:39] **lava** (i=0.35) → Zwischenraum: »**Fix #1 umgesetzt und bestätigt.**
+
+- Beide Override-Configs (`llama-hauhaucs.service.d/override.co«
+- [2026-07-07 15:43] **lava** (i=0.39) → Zwischenraum: »**Fix #2 (GENI) umgesetzt.**
+
+- Allen vier GENI-Diensten (hoerer, web/dialog, muster, forum-lektuere«
+- [2026-07-07 15:52] **lava** (i=0.49) → Zwischenraum: »Jetzt hab ich die eigentliche Logik gesehen — kein einfacher Zeiger, sondern eine `_zustand.json` mi«
+- [2026-07-07 16:09] **lava** (i=0.35) → Zwischenraum: »**Testlauf-Ergebnis:** Kein einziger Fehler, 8/8 Diskussionen erfolgreich verarbeitet, `verarbeitet`«
+- [2026-07-07 16:22] **wasser** (i=0.43) → Zwischenraum: »**Fix #3 (systemd-oomd) umgesetzt.**
+
+- Paket installiert (war komplett nicht vorhanden), Service lä«
