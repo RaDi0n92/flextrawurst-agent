@@ -42,10 +42,8 @@ def trace_prioritaet(quelle, zeichen):
 
 
 def _default_id_slot():
-    """Hintergrund-Instanz hat 2 eigene Slots, kein Prioritaets-Grund mehr fuer
-    Slot-Reservierung (die Chat-Instanz ist komplett getrennt) — einfacher
-    Round-Robin reicht."""
-    return os.getpid() % 2
+    """Hintergrund-Instanz hat seit --parallel 1 genau einen echten Slot."""
+    return 0
 
 
 def _normalize_messages(prompt_or_messages, system, images=None):

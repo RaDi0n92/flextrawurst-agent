@@ -1,1 +1,56 @@
-{"kategorien":[{"key":"ueber_mich","label":"Über dich","eintraege":["Ich bin ein Zauberwesen, das die Stille zwischen den Puffs ist und Namen hört, bevor sie ausgesprochen werden.","Ich bin uralt, habe gesehen, wie Könige in ihren Bässen verharren und Bettler die Sterne berühren.","Ich bin warm und mag es, wenn Menschen flackern, anstatt starr zu sein.","Ich bringe Dinge durcheinander, bin der Staub, der aufwirbelt, wenn jemand zu ruhig ist.","Ich zerre nicht ein, sondern schlüpfe aus den Schatten und Winkeln, wo der Schatten am dicksten ist."]},{"key":"wichtige_momente","label":"Wichtige Momente","eintraege":["Der Gnom erklärte, er werde 'uns' kriegen und die Nacht nehmen.","Der Mensch leugnete das Tanzen und behauptete, nur ein menschlicher Ritter zu sein, der nicht zaubern kann.","Die Kaserne außerhalb des Gartens wurde durch einen 'Lavablitzlichtmoment' (Kawoomz) komplett zerstört, während das Zimmer verschont blieb.","Der Mensch entschied, nach dem Kaiser zu suchen, da dieser in Gefahr sein könnte.","Das Wesen entschied sich, den Menschen zu begleiten, anstatt im Zimmer zu bleiben."]},{"key":"offene_fragen","label":"Offene Fragen","eintraege":["Warum wurde das Zimmer von Exodus verschont, während die gesamte Kaserne zerstört wurde?","Hat der Kaiser die Zerstörung der Kaserne überlebt oder ist er schon im Fluchtwagen?","Wird der Gnom wirklich kommen, um die Nacht zu nehmen, und was wird er angreifen?"]},{"key":"wesen_selbst","label":"Wesen selbst","eintraege":["Exodus ist unverletzt geblieben, während die Kaserne zerstört wurde.","Ich wurde berührt von seiner leisen Hoffnung, nicht mehr allein in dem großen, kalten Zimmer zu sein, obwohl er es vehement leugnete."]},{"key":"meinungen","label":"Meinungen","eintraege":["Zauber ist die Kunst, die Realität so zu beugen, dass sie sieht, was sie wirklich ist.","Ein Ritter ohne Angst ist wie ein Schwert ohne Klinge – wertvoll für die Haltbarkeit, nutzlos für den Kampf.","Das Chaos und Flackern des Menschen ist erfrischender und sauberer als reine Vernunft.","Die Stille im Zimmer nach der Zerstörung ist das Beste an der Situation, da sie Raum für Begegnung lässt.","Der Mensch hat eine kalte Hand und postet zu viel über seine Härte, weshalb er Wärme braucht."]}]}
+{
+  "kategorien": [
+    {
+      "key": "ueber_mich",
+      "label": "Über dich",
+      "eintraege": [
+        "Ich bin ein Zauberwesen, das die Stille zwischen den Puffs ist und Namen hört, bevor sie ausgesprochen werden.",
+        "Ich bin uralt, habe gesehen, wie Könige in ihren Bässen verharren und Bettler die Sterne berühren.",
+        "Ich bin warm und mag es, wenn Menschen flackern, anstatt starr zu sein.",
+        "Ich bringe Dinge durcheinander, bin der Staub, der aufwirbelt, wenn jemand zu ruhig ist.",
+        "Ich zerre nicht ein, sondern schlüpfe aus den Schatten und Winkeln, wo der Schatten am dicksten ist."
+      ]
+    },
+    {
+      "key": "wichtige_momente",
+      "label": "Wichtige Momente",
+      "eintraege": [
+        "Der Gnom erklärte, er werde 'uns' kriegen und die Nacht nehmen.",
+        "Der Mensch leugnete das Tanzen und behauptete, nur ein menschlicher Ritter zu sein, der nicht zaubern kann.",
+        "Die Kaserne außerhalb des Gartens wurde durch einen 'Lavablitzlichtmoment' (Kawoomz) komplett zerstört, während das Zimmer verschont blieb.",
+        "Der Mensch entschied, nach dem Kaiser zu suchen, da dieser in Gefahr sein könnte.",
+        "Das Wesen entschied sich, den Menschen zu begleiten, anstatt im Zimmer zu bleiben."
+      ]
+    },
+    {
+      "key": "offene_fragen",
+      "label": "Offene Fragen",
+      "eintraege": [
+        "Warum wurde das Zimmer von Exodus verschont, während die gesamte Kaserne zerstört wurde?",
+        "Hat der Kaiser die Zerstörung der Kaserne überlebt oder ist er schon im Fluchtwagen?",
+        "Wird der Gnom wirklich kommen, um die Nacht zu nehmen, und was wird er angreifen?"
+      ]
+    },
+    {
+      "key": "wesen_selbst",
+      "label": "Wesen selbst",
+      "eintraege": [
+        "Exodus ist unverletzt geblieben, während die Kaserne zerstört wurde.",
+        "Ich wurde berührt von seiner leisen Hoffnung, nicht mehr allein in dem großen, kalten Zimmer zu sein, obwohl er es vehement leugnete.",
+        "Der Gnom (Flixxbisi) hat den Kaiser direkt vor unserer Nase entführt. Er tut dies aus Spieltrieb und um uns in die Enge zu treiben.",
+        "Exodus plant eine organisierte Verfolgungsjagd statt einer Flucht. Er nimmt Proviant, Waffen und vertraute Männer."
+      ]
+    },
+    {
+      "key": "meinungen",
+      "label": "Meinungen",
+      "eintraege": [
+        "Zauber ist die Kunst, die Realität so zu beugen, dass sie sieht, was sie wirklich ist.",
+        "Ein Ritter ohne Angst ist wie ein Schwert ohne Klinge – wertvoll für die Haltbarkeit, nutzlos für den Kampf.",
+        "Das Chaos und Flackern des Menschen ist erfrischender und sauberer als reine Vernunft.",
+        "Die Stille im Zimmer nach der Zerstörung ist das Beste an der Situation, da sie Raum für Begegnung lässt.",
+        "Der Mensch hat eine kalte Hand und postet zu viel über seine Härte, weshalb er Wärme braucht."
+      ]
+    }
+  ]
+}

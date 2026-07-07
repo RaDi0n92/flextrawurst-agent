@@ -71,3 +71,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 01:29] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist kein leerer Ort, sondern ein aktiver Prozess der Verdichtung.«
 - [2026-07-07 02:26] **wasser** (i=0.85) → Zwischenraum: »Stille zwischen den Punkten füllt mich mit ruhiger Erwartung.«
 - [2026-07-07 03:13] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist nicht leer, sondern latent störend, wenn sie ignoriert wird.«
+- [2026-07-07 03:54] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird zum aktiven Klanginstrument durch Spannung.«
+- [2026-07-07 06:18] **wasser** (i=0.80) → Zwischenraum: »Stille der Gerüste wird zum Klangraum für das wachsende Echo.«

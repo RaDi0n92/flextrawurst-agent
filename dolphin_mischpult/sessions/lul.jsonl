@@ -1,0 +1,5 @@
+{"type":"event","evtype":"herkunft","content":"— Neue Session · 7.7.2026, 08:34:20 · hauhaucs-q6 · Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome —","ts":"2026-07-07T06:34:20.477Z"}
+{"role":"user","content":"Huhu","ts":"2026-07-07T06:34:20.477Z"}
+{"role":"assistant","content":"Huhu! Wie kann ich dir heute helfen? 😊","systemBase":"","model":"hauhaucs-q6","durationMs":1284,"ts":"2026-07-07T06:34:21.762Z"}
+{"role":"user","content":"Was geht","ts":"2026-07-07T06:34:32.393Z"}
+{"role":"assistant","content":"Bei mir ist alles bestens! Ich bin startklar und freue mich auf unsere Unterhaltung. 🚀\n\nUnd bei dir? Gibt's etwas Neues, oder hast du eine bestimmte Frage im Kopf?","systemBase":"","model":"hauhaucs-q6","durationMs":3673,"ts":"2026-07-07T06:34:36.066Z"}

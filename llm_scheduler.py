@@ -37,10 +37,25 @@ import zlib
 import psycopg2
 import psycopg2.extras
 
-DB_URI = os.environ.get(
-    "FLEXTRAWURST_DB_URI",
-    "postgresql://dak:dakpass@localhost:5432/flextrawurst",
-)
+def _load_db_uri() -> str:
+    env = os.environ.get("FLEXTRAWURST_DB_URI")
+    if env:
+        return env
+
+    env_path = "/root/werkraum/.agent/flextrawurst-db.env"
+    try:
+        with open(env_path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("FLEXTRAWURST_DB_URI="):
+                    return line.split("=", 1)[1].strip().strip('"').strip("'")
+    except FileNotFoundError:
+        pass
+
+    raise RuntimeError(f"FLEXTRAWURST_DB_URI fehlt und {env_path} ist nicht lesbar")
+
+
+DB_URI = _load_db_uri()
 
 PRIO_HOCH, PRIO_NORMAL, PRIO_NIEDRIG = 0, 1, 2
 

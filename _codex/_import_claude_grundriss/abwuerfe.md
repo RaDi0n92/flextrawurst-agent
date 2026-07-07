@@ -1954,3 +1954,14 @@ Laut meiner Messung von vorhin kostet d«
 
 Dabei noch einen echten Bug«
 - [2026-07-07 03:29] **lava** (i=0.64) → Zwischenraum: »Verstanden — das ist deutlich größer als "steuern", das ist ein echter Konfigurationslayer für jeden«
+- [2026-07-07 04:05] **lava** (i=0.44) → Zwischenraum: »Proof-of-Concept steht und ist live getestet«
+- [2026-07-07 04:25] **lava** (i=0.51) → Zwischenraum: »Alle sieben umgestellten Dienste plus die Oberfläche laufen stabil«
+- [2026-07-07 04:46] **wasser** (i=0.36) → Zwischenraum: »Vollständige Zusammenfassung:
+
+**Individualisierungslayer komplett ausgerollt** — alle 13 katalogisi«
+- [2026-07-07 05:15] **lava** (i=0.40) → Zwischenraum: »Du hast recht, das hatte ich schon — hätte ich direkt genauer auswerten sollen, statt nochmal zu fra«
+- [2026-07-07 05:20] **lava** (i=0.36) → Zwischenraum: »Bestätigt, gerade eben (05:20:34): alle drei LLM-Ports weiterhin 200 OK, und seit meinem Neustart um«
+- [2026-07-07 05:37] **lava** (i=0.48) → Zwischenraum: »Guter Instinkt — macht in der Praxis Sinn, löst aber nicht das eigentliche Problem«
+- [2026-07-07 06:09] **lava** (i=0.51) → Zwischenraum: »**Crawlbarkeit:** Ja, im Prinzip ist alles crawlbar — `robots.txt` erlaubt global `Allow: /` (auch f«
+- [2026-07-07 06:27] **wasser** (i=0.47) → Zwischenraum: »Alles gesund, keine ausgefallenen Dienste«
+- [2026-07-07 08:31] **wasser** (i=0.37) → Zwischenraum: »Diagnose (ohne großes Herumsuchen — direkt an den Daten geprüft): Ein großer Teil der Rohdaten exist«
