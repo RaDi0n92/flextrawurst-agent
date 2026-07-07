@@ -228,7 +228,7 @@ def _individualisierung_hinweis(name: str) -> dict | None:
     if name not in DIENSTE_MIT_KONFIGURATION:
         return None
     if name in TAKT_EINFACH_DIENSTE:
-        takt = {"typ": "einfach", "erklaerung": "Ein einzelner Takt in Sekunden — ueberschreibt den fest im Skript codierten Standardwert direkt."}
+        takt = {"typ": "einfach", "erklaerung": "Ein einzelner Takt in Sekunden — ersetzt dauerhaft den fest im Skript codierten Standardwert, bei jedem Zyklus neu gelesen. Kein Einmal-Effekt: gilt, bis du das Feld hier wieder leerst."}
     elif name in TAKT_KEIN_DIENSTE:
         takt = {"typ": "keiner", "erklaerung": TAKT_KEIN_ERKLAERUNG.get(name, "Dieser Dienst hat keinen ueberschreibbaren Einzel-Takt.")}
     else:
@@ -237,7 +237,7 @@ def _individualisierung_hinweis(name: str) -> dict | None:
     verhalten_erklaerung = (
         "Dieser Dienst nutzt kein LLM — es gibt keinen System-Prompt, an den ein Verhaltenstext angehaengt werden koennte."
         if not verhalten else
-        "Wird an den System-Prompt angehaengt (nicht ersetzt) — Ton/Zusatzanweisungen aenderbar, feste Format-Vorgaben im Skript bleiben aber bestehen."
+        "Der Text wird woertlich ans Ende der KI-Anweisung angehaengt, bei JEDEM Lauf — z.B. \"schreib kuerzer\" oder \"sei sarkastischer\". Gilt dauerhaft ab dem naechsten Zyklus, bis du ihn hier aenderst oder leerst — kein Einmal-Effekt. Feste Format-Vorgaben im Skript bleiben trotzdem bestehen (die werden nicht ersetzt, nur ergaenzt)."
     )
     return {"takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung}
 
