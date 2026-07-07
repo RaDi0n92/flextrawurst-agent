@@ -14,8 +14,10 @@ Zwei Denk-Modi:
 
 import sys
 sys.path.insert(0, "/root/werkraum/welt")
+sys.path.insert(0, "/root/werkraum")
 
 import entity_kern as ek  # denk_tick, build_kontext, Aktionen, get_conn, ...
+import dienst_konfiguration as dk
 
 import fcntl
 import json
@@ -54,6 +56,14 @@ _TOKENS_FILE = CODEWESEN_BASE / "_api_tokens.json"
 LG_TICK_SEKUNDEN = int(os.environ.get("LG_TICK_SEKUNDEN", "60"))
 ZUSAMMENFASSEN_NACH_N_DENKTICKS = int(os.environ.get("LG_ZUSAMMENFASSEN_N", "10"))
 MAX_ERINNERUNGEN = 10
+
+# Individualisierung (flarumstyler, 2026-07-07): war bisher nur ueber systemd
+# Environment=LG_TICK_SEKUNDEN=... konfigurierbar (Daniel muesste die Unit-Datei
+# editieren) — jetzt zusaetzlich per dienst_konfiguration ueberschreibbar, wie alle
+# anderen Dienste. takt_sekunden hat Vorrang vor der Env-Var, wenn gesetzt.
+DIENST_NAME = "codewesen-lg-daemon"
+STANDARD_VERHALTEN = ""
+_aktuelles_verhalten = STANDARD_VERHALTEN
 _LOCK_DIR = Path("/tmp/ollama_locks")
 _LOCK_DIR.mkdir(exist_ok=True)
 
@@ -263,8 +273,9 @@ def denk_tick_voreinzug(wesen_name: str) -> None:
 
         try:
             buffer = ""
+            system_prompt = ek.SYSTEM_PROMPT + (f"\n\n{_aktuelles_verhalten}" if _aktuelles_verhalten else "")
             for token in ek.hauhau_client.chat_stream(
-                prompt, system=ek.SYSTEM_PROMPT, think=False, max_tokens=300,
+                prompt, system=system_prompt, think=False, max_tokens=300,
                 temperature=0.85, timeout=600.0,
             ):
                 full_text += token
@@ -486,6 +497,12 @@ def _shutdown_handler(signum, frame):
 
 
 def main() -> None:
+    global LG_TICK_SEKUNDEN, _aktuelles_verhalten
+    konfig = dk.lade(DIENST_NAME)
+    if konfig.get("takt_sekunden"):
+        LG_TICK_SEKUNDEN = int(konfig["takt_sekunden"])
+    _aktuelles_verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+
     log.info(f"LangGraph-Kern startet · {len(WESEN_NAMEN)} Wesen · Loop alle {LG_TICK_SEKUNDEN}s")
     log.info(f"Zusammenfassen alle {ZUSAMMENFASSEN_NACH_N_DENKTICKS} Denk-Ticks")
 

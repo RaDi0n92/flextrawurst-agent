@@ -193,6 +193,7 @@ DIENSTE_MIT_KONFIGURATION = {
     "codewesen-reaktion-traeumerlie", "codewesen-reaktion@R1ZZ1",
     "codewesen-reaktion@jumpa", "codewesen-reaktion@Resonanzknoten",
     "codewesen-reaktion-dakgord", "codewesen-aufgabenchats", "codewesen-chat",
+    "codewesen-lg-daemon",
 }
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
