@@ -434,6 +434,38 @@ def service_letzte_logs(name: str, anzahl: int = 3) -> list[str]:
 # Ports der zwei echten llama-server-Instanzen (flarumstyler, 2026-07-07) — Daniel:
 # "ich will genau sehen was gerade drin arbeitet, wie lange schon, wie viel RAM".
 LLAMA_SERVER_PORTS = {"llama-hauhaucs": 11435, "llama-hauhaucs-hintergrund": 11436}
+LLAMA_SCHEDULER_SERVER = {"llama-hauhaucs": "chat", "llama-hauhaucs-hintergrund": "hintergrund"}
+
+
+def llm_warteschlange_status(server: str) -> dict | None:
+    """Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:
+    wer haelt gerade den Slot (seit wann), wer wartet dahinter (wie lange schon).
+    Daniel: 'sehen ob andere auch mit rein wollen'."""
+    try:
+        conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT rufer, prioritaet, angefragt_um, slot_bis,
+                       (slot_bis IS NOT NULL AND slot_bis > NOW()) AS aktiv,
+                       EXTRACT(EPOCH FROM (NOW() - angefragt_um))::int AS wartet_sek
+                FROM llm_warteschlange
+                WHERE server = %s
+                ORDER BY aktiv DESC, prioritaet, angefragt_um
+                """,
+                (server,),
+            )
+            zeilen = cur.fetchall()
+        conn.close()
+    except Exception:
+        return None
+
+    aktiv = next((z for z in zeilen if z["aktiv"]), None)
+    wartend = [z for z in zeilen if not z["aktiv"]]
+    return {
+        "aktiv": {"rufer": aktiv["rufer"], "wartet_sek": aktiv["wartet_sek"]} if aktiv else None,
+        "wartend": [{"rufer": w["rufer"], "wartet_sek": w["wartet_sek"]} for w in wartend],
+    }
 
 
 def llama_status(port: int) -> dict | None:
@@ -614,6 +646,7 @@ def run_check() -> dict:
             "letzte_logs": service_letzte_logs(name),
             "gruppe": "flarum" if name in SERVICES_GRUPPE_FLARUM else "welt",
             "llm_status": llama_status(LLAMA_SERVER_PORTS[name]) if name in LLAMA_SERVER_PORTS else None,
+            "llm_warteschlange": llm_warteschlange_status(LLAMA_SCHEDULER_SERVER[name]) if name in LLAMA_SCHEDULER_SERVER else None,
             "eigene_fehler": log_fehler_pro_dienst.get(name, {}),
             "konfiguration": alle_konfigurationen.get(name, {}),
             "konfigurierbar": name in DIENSTE_MIT_KONFIGURATION,
