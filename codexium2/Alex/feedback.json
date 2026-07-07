@@ -9,6 +9,16 @@
       "erstellt_am": "2026-07-04T19:27:19.992Z",
       "aktualisiert_am": "2026-07-04T19:27:30.713Z",
       "anModellGeliefert": true
+    },
+    {
+      "id": "8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605",
+      "rolle": "wesen",
+      "nachricht": "**Hallo.**",
+      "rating": null,
+      "kommentar": null,
+      "erstellt_am": "2026-07-07T00:25:33.382Z",
+      "aktualisiert_am": "2026-07-07T00:25:37.102Z",
+      "anModellGeliefert": false
     }
   ]
 }

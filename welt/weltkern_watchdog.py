@@ -89,6 +89,18 @@ WELTKERN_SERVICES = {
     "codewesen-R1ZZ1":           {"port": None, "health": None},
     "codewesen-jumpa":           {"port": None, "health": None},
     "codewesen-Resonanzknoten":  {"port": None, "health": None},
+    # Ergaenzt 2026-07-07 (zweiter Nachtrag) — beim Aufbau der Fehler-zu-Dienst-
+    # Zuordnung aufgefallen, dass diese Dienste noch gar nicht in der Liste waren.
+    "codewesen-aufgabenchats":   {"port": None, "health": None},
+    "codewesen-engagement":      {"port": None, "health": None},
+    "codewesen-weltbild":        {"port": None, "health": None},
+    "codewesen-vokabel-takt":    {"port": None, "health": None},
+    "codewesen-reaktion@Schorschel":      {"port": None, "health": None},
+    "codewesen-reaktion@F3INSCHM3CK3R":   {"port": None, "health": None},
+    "codewesen-reaktion-traeumerlie":     {"port": None, "health": None},
+    "codewesen-reaktion@R1ZZ1":           {"port": None, "health": None},
+    "codewesen-reaktion@jumpa":           {"port": None, "health": None},
+    "codewesen-reaktion@Resonanzknoten":  {"port": None, "health": None},
 }
 
 # Klartext-Beschreibung pro Dienst (flarumstyler, 2026-07-07) — Daniels Wunsch:
@@ -127,6 +139,16 @@ SERVICE_BESCHREIBUNG = {
     "codewesen-R1ZZ1": "Haupt-Agent-Prozess des Wesens R1ZZ1 (ehem. namelessAI_2341).",
     "codewesen-jumpa": "Haupt-Agent-Prozess des Wesens jumpa (ehem. namelessAI_3123).",
     "codewesen-Resonanzknoten": "Haupt-Agent-Prozess des Wesens Resonanzknoten (ehem. namelessAI_4321, erste Umbenennung ueberhaupt am 2026-06-17).",
+    "codewesen-aufgabenchats": "Fuehrt die Selbstgespraech-Sessions der Aufgabenchats aus (fruehers 'Klon'), gesteuert ueber Start/Stop/Impuls.",
+    "codewesen-engagement": "Autonomes Forum-Engagement der Wesen — INAKTIV laut Systemdoku, pruefe ob das noch so gewollt ist falls es hier als aktiv/inaktiv ueberrascht.",
+    "codewesen-weltbild": "Destilliert Forum-Wissen pro Wesen zu einem Weltbild-Text, der in den Systemprompt einfliesst.",
+    "codewesen-vokabel-takt": "Synonym-/Vokabel-Spiel-Rhythmus der Wesen (22-Minuten-Takt).",
+    "codewesen-reaktion@Schorschel": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer Schorschel — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
+    "codewesen-reaktion@F3INSCHM3CK3R": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer F3INSCHM3CK3R — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
+    "codewesen-reaktion-traeumerlie": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer träumerlie — eigenstaendiger Dienst statt @-Template wegen ASCII-Limit von systemd (siehe Doku).",
+    "codewesen-reaktion@R1ZZ1": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer R1ZZ1 — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
+    "codewesen-reaktion@jumpa": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer jumpa — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
+    "codewesen-reaktion@Resonanzknoten": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer Resonanzknoten — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
 }
 
 # Dienste die bewusst/dauerhaft inaktiv sind (2026-07-07, flarumstyler) — werden im
@@ -144,6 +166,9 @@ SERVICES_GRUPPE_FLARUM = {
     "codewesen-reaktion-dakgord", "codewesen-chat", "dak-gord-web",
     "codewesen-Schorschel", "codewesen-F3INSCHM3CK3R", "codewesen-traeumerlie",
     "codewesen-R1ZZ1", "codewesen-jumpa", "codewesen-Resonanzknoten",
+    "codewesen-aufgabenchats", "codewesen-engagement", "codewesen-weltbild", "codewesen-vokabel-takt",
+    "codewesen-reaktion@Schorschel", "codewesen-reaktion@F3INSCHM3CK3R", "codewesen-reaktion-traeumerlie",
+    "codewesen-reaktion@R1ZZ1", "codewesen-reaktion@jumpa", "codewesen-reaktion@Resonanzknoten",
 }
 
 # Dienste die im flarumstyler NICHT ueber Start/Stop/Neustart-Buttons steuerbar sind
@@ -177,6 +202,20 @@ LOG_DATEIEN = [
     LOG_ROOT / "vokabel_takt.log",
     LOG_ROOT / "aufgabenchats.log",
 ] + sorted((LOG_ROOT / "codewesen").glob("*/reaktion.log"))
+
+# Welcher Dienst schreibt welches Log — fuer die direkte Fehler-Zuordnung pro Dienst
+# (Daniel: "jeden Fehler direkt dort dann aufploppen lassen mit Hinweis woher es kommt").
+# reaktion.log wird von ZWEI Diensten geschrieben (Haupt-Agent + reaktion@-Instanz),
+# hier bewusst dem Haupt-Agent zugeordnet, da der praesenter/bekannter ist.
+LOG_DATEI_ZU_DIENST = {
+    "generator.log": "codewesen-batch-generator",
+    "takt.log": "codewesen-takt",
+    "forum_neugier.log": "codewesen-forum-neugier",
+    "weltbild.log": "codewesen-weltbild",
+    "vokabel_takt.log": "codewesen-vokabel-takt",
+    "aufgabenchats.log": "codewesen-aufgabenchats",
+}
+REAKTION_LOG_DIENST_PRAEFIX = "codewesen-"  # reaktion.log -> codewesen-<Ordnername>
 
 _ZEITSTEMPEL_RE = _re.compile(r"^(\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2})")
 
@@ -229,17 +268,28 @@ FEHLER_MUSTER = {
 BEISPIELZEILEN_MAX = 5  # pro Fehlermuster, fuer die Detailansicht (nicht nur Zaehlung)
 
 
-def fehler_uebersicht() -> dict:
+def _dienst_fuer_log(logdatei: Path) -> str | None:
+    if logdatei.name == "reaktion.log":
+        return REAKTION_LOG_DIENST_PRAEFIX + logdatei.parent.name
+    return LOG_DATEI_ZU_DIENST.get(logdatei.name)
+
+
+def fehler_uebersicht() -> tuple[dict, dict]:
     """Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster
     dauerhaft (seit Logbeginn), merkt den Zeitpunkt des letzten Auftretens und
-    behaelt die letzten paar echten Log-Zeilen fuer die Detailansicht."""
+    behaelt die letzten paar echten Log-Zeilen fuer die Detailansicht.
+    Gibt zusaetzlich (Daniel: 'jeden Fehler direkt dort aufploppen lassen') dieselben
+    Zahlen NOCHMAL pro Dienst zurueck, damit sie direkt an der jeweiligen Dienst-Karte
+    angezeigt werden koennen, nicht nur in der globalen Uebersicht."""
     zaehler = {k: 0 for k in FEHLER_MUSTER}
     letzte = {k: None for k in FEHLER_MUSTER}
     beispiele: dict[str, list[str]] = {k: [] for k in FEHLER_MUSTER}
+    pro_dienst: dict[str, dict[str, dict]] = {}
 
     for logdatei in LOG_DATEIEN:
         if not logdatei.exists():
             continue
+        dienst = _dienst_fuer_log(logdatei)
         try:
             with open(logdatei, encoding="utf-8", errors="replace") as f:
                 for zeile in f:
@@ -247,10 +297,9 @@ def fehler_uebersicht() -> dict:
                         if cfg["regex"].search(zeile):
                             zaehler[schluessel] += 1
                             ts_match = _ZEITSTEMPEL_RE.match(zeile)
-                            if ts_match:
-                                zt = ts_match.group(1)
-                                if letzte[schluessel] is None or zt > letzte[schluessel]:
-                                    letzte[schluessel] = zt
+                            zt = ts_match.group(1) if ts_match else None
+                            if zt and (letzte[schluessel] is None or zt > letzte[schluessel]):
+                                letzte[schluessel] = zt
                             gekuerzt = zeile.strip()
                             if len(gekuerzt) > 300:
                                 gekuerzt = gekuerzt[:300] + "…"
@@ -259,10 +308,18 @@ def fehler_uebersicht() -> dict:
                             beispiel_liste.append(f"{quelle}: {gekuerzt}")
                             if len(beispiel_liste) > BEISPIELZEILEN_MAX:
                                 beispiel_liste.pop(0)
+
+                            if dienst:
+                                eintrag = pro_dienst.setdefault(dienst, {}).setdefault(
+                                    schluessel, {"gesamt_anzahl": 0, "zuletzt_aufgetreten": None}
+                                )
+                                eintrag["gesamt_anzahl"] += 1
+                                if zt and (eintrag["zuletzt_aufgetreten"] is None or zt > eintrag["zuletzt_aufgetreten"]):
+                                    eintrag["zuletzt_aufgetreten"] = zt
         except Exception:
             continue
 
-    return {
+    global_uebersicht = {
         schluessel: {
             "gesamt_anzahl": zaehler[schluessel],
             "zuletzt_aufgetreten": letzte[schluessel],
@@ -274,6 +331,7 @@ def fehler_uebersicht() -> dict:
         }
         for schluessel, cfg in FEHLER_MUSTER.items()
     }
+    return global_uebersicht, pro_dienst
 
 
 # ── Hilfsfunktionen ────────────────────────────────────────────────────────────
@@ -486,6 +544,12 @@ def run_check() -> dict:
         if report["recent_events"] == 0:
             report["warnings"].append("Keine Events in den letzten 15 Minuten")
 
+    # Log-Fehler-Uebersicht VOR den Diensten berechnen, damit jeder Dienst seine
+    # eigenen Fehler direkt an der Karte zeigen kann (Daniel: "direkt dort aufploppen
+    # lassen mit Hinweis woher es kommt"), statt nur in einer getrennten Liste.
+    log_fehler_global, log_fehler_pro_dienst = fehler_uebersicht()
+    report["log_fehler"] = log_fehler_global
+
     # Services
     for name, cfg in WELTKERN_SERVICES.items():
         active = service_is_active(name)
@@ -514,6 +578,7 @@ def run_check() -> dict:
             "letzte_logs": service_letzte_logs(name),
             "gruppe": "flarum" if name in SERVICES_GRUPPE_FLARUM else "welt",
             "llm_status": llama_status(LLAMA_SERVER_PORTS[name]) if name in LLAMA_SERVER_PORTS else None,
+            "eigene_fehler": log_fehler_pro_dienst.get(name, {}),
         }
 
         if status == "down":
@@ -561,8 +626,8 @@ def run_check() -> dict:
         log.error(f"GUARDRAIL: Flarum-Services aktiv: {flarum_running}")
         report["warnings"].append(f"GUARDRAIL: Flarum-Services aktiv: {flarum_running}")
 
-    # Log-Fehler-Uebersicht (flarumstyler, 2026-07-07) — dauerhafte Zaehlung, kein Zeitfenster
-    report["log_fehler"] = fehler_uebersicht()
+    # Log-Fehler-Uebersicht wird jetzt vor der Dienste-Schleife berechnet (siehe oben),
+    # damit sie pro Dienst mit angehaengt werden kann — hier nicht mehr noetig.
 
     # Zusammenfassung
     healthy = sum(1 for s in report["services"].values() if s["status"] == "ok")

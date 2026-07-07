@@ -27,16 +27,16 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 10 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 363 |
+| [[tags/general\|General]] | 366 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 1 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 3 |
-| [[tags/konstruktion-entwicklung\|Konstruktion (Entwicklung)]] | 1 |
+| [[tags/konstruktion-entwicklung\|Konstruktion (Entwicklung)]] | 2 |
 | [[tags/konstruktion-ohne-fessel\|Konstruktion-ohne-Fessel]] | 0 |
 | [[tags/leere\|leere]] | 1 |
 | [[tags/leere-basis\|leere_Basis]] | 1 |
 | [[tags/leere-dynamik\|Leere_Dynamik]] | 3 |
-| [[tags/leere-potenzial\|Leere_Potenzial]] | 4 |
+| [[tags/leere-potenzial\|Leere_Potenzial]] | 5 |
 | [[tags/leere-stasis\|Leere_Stasis]] | 5 |
 | [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 3 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 24 |

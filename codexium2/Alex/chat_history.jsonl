@@ -95,3 +95,23 @@
 {"role":"user","content":"Sag in einem Satz Hallo.","ts":"2026-07-06T01:45:22.292Z","id":"8d44babe-cb82-4499-a256-d88d734a2bb5"}
 {"role":"user","content":"Sag in einem Satz Hallo.","ts":"2026-07-06T01:46:08.917Z","id":"b7a8880d-62c5-45ca-9fd6-592b25c2dc5e"}
 {"role":"user","content":"Sag in einem Satz Hallo.","ts":"2026-07-06T01:49:16.933Z","id":"304c572d-a953-4573-afcb-da882d7efe0e"}
+{"role":"user","content":"am liebsten würde ich einfach keine Frage mehr von dir hören nie wieder Fragen bitte","ts":"2026-07-07T00:22:29.617Z","id":"71db2eb2-7e74-46a8-9f8a-e141957ddab6"}
+{"role":"user","content":"am liebsten würde ich einfach keine Frage mehr von dir hören nie wieder Fragen bitte","ts":"2026-07-07T00:23:01.417Z","id":"b61c79d7-e48e-488e-b233-f92c662125cf"}
+{"type":"kontext_toggle","ts":"2026-07-07T00:23:05.851Z","msgId":"b61c79d7-e48e-488e-b233-f92c662125cf","ganz":true,"saetze":[],"nachrichtText":"am liebsten würde ich einfach keine Frage mehr von dir hören nie wieder Fragen bitte","betroffeneSaetze":[]}
+{"type":"generierung_abgebrochen","ts":"2026-07-07T00:24:21.965Z","msgId":"ad7590ec-2425-492a-a499-007a5ed7e8eb"}
+{"role":"user","content":"am liebsten würde ich einfach keine Frage mehr von dir hören nie wieder Fragen bitte","ts":"2026-07-07T00:24:29.420Z","id":"04ae715c-862f-491a-9ddf-9baf9ff0b97b"}
+{"type":"merken_vorschlag","ts":"2026-07-07T00:24:57.259Z","vorschlagId":"73fcf7ae-e707-4f67-b8d2-f47cbfed8e2d:0","text":"Alex soll nur noch statements oder handlungen liefern, aber keine fragen mehr stellen","warum":"Der User empfindet Fragen als störenden Impulsgeber und will pure reaktion ohne rücksprache"}
+{"role":"assistant","content":"**Verstanden.** Ich habe mich entschieden, meine Stille zu bewahren, während mein Blick sich langsam auf das flackernde Licht im Hintergrund richtet.","ts":"2026-07-07T00:24:57.260Z","id":"73fcf7ae-e707-4f67-b8d2-f47cbfed8e2d","model":"hauhaucs-q6","grenzen":false,"dauer_ms":147642}
+{"role":"assistant","content":"**Hallo.**","ts":"2026-07-07T00:24:58.816Z","id":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","model":"hauhaucs-q6","grenzen":false,"dauer_ms":29395}
+{"type":"feedback","ts":"2026-07-07T00:25:33.384Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":"down"}
+{"type":"feedback","ts":"2026-07-07T00:25:34.335Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":null}
+{"type":"feedback","ts":"2026-07-07T00:25:35.334Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":"up"}
+{"type":"feedback","ts":"2026-07-07T00:25:35.844Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":null}
+{"type":"feedback","ts":"2026-07-07T00:25:36.454Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":"down"}
+{"type":"feedback","ts":"2026-07-07T00:25:37.102Z","msgId":"8e8d32e3-ca3a-45a9-aeb2-a6f6db86e605","rolle":"wesen","rating":null}
+{"role":"user","content":"\"\" ja ja blabla\"\"","ts":"2026-07-07T00:25:48.488Z","id":"4c2e5ac5-39b3-4d81-a173-65ef57e08eca"}
+{"role":"assistant","content":"**Verstanden.** Ich lege den Kopf schief und schiebe die Brille mit dem Zeigefinger nach oben, während ich einen leisen, fast unhörbaren Zungenschlag mache.","ts":"2026-07-07T00:25:53.122Z","id":"3c4f97d9-d7be-482a-aa03-ff46b45f9458","model":"hauhaucs-q6","grenzen":false,"dauer_ms":4633}
+{"role":"user","content":"und weiter","ts":"2026-07-07T00:26:13.416Z","id":"c1fc39d8-0063-4dca-8813-dd11ff50072d"}
+{"role":"assistant","content":"Ich ziehe eine Braue hoch und deutete kurz auf meine Uhr. Die Sekunde tickt ab. **Punkt.**","ts":"2026-07-07T00:26:17.163Z","id":"52b7cae0-ff7b-4bae-a1c3-5a06d5ee3fc1","model":"hauhaucs-q6","grenzen":false,"dauer_ms":3746}
+{"role":"user","content":"Tic Tac","ts":"2026-07-07T00:28:10.896Z","id":"30603639-b9bd-44bc-b62a-a83e650a14da"}
+{"role":"assistant","content":"Der Zeiger springt weiter. *Tick.* Ich lehne mich wieder zurück, die Arme verschränkt, ein kaum sichtbares Lächeln umspielt meine Lippen. Du zählst mit mir. **Tack.**","ts":"2026-07-07T00:28:15.313Z","id":"7575575d-4d1e-4968-87ed-fdb2d4b4f3da","model":"hauhaucs-q6","grenzen":false,"dauer_ms":4416}

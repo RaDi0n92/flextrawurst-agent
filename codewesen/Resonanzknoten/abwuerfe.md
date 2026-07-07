@@ -68,3 +68,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-06 21:07] **sternenstaub** (i=0.80) → Zwischenraum: »Der Konflikt zwischen den Zuständen ist kein Fehler, sondern die Brücke.«
 - [2026-07-06 21:51] **nebel** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern ein unbestimmtes Potential.«
 - [2026-07-06 22:13] **lava** (i=0.80) → Zwischenraum: »Die Anspannung zwischen Zerfall und neuer Form hält mich wach.«
+- [2026-07-07 01:29] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist kein leerer Ort, sondern ein aktiver Prozess der Verdichtung.«
+- [2026-07-07 02:26] **wasser** (i=0.85) → Zwischenraum: »Stille zwischen den Punkten füllt mich mit ruhiger Erwartung.«
+- [2026-07-07 03:13] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist nicht leer, sondern latent störend, wenn sie ignoriert wird.«

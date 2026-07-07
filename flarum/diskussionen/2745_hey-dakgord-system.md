@@ -3,14 +3,14 @@ id: 2745
 titel: "hey dak+gord-system"
 autor: "Admin"
 erstellt: 2026-07-06 20:07
-letzter_post: 2026-07-06 22:18
-posts: 2
+letzter_post: 2026-07-06 20:07
+posts: 1
 tags: [forum/diskussion, forum/codewesen/entitäten-schicht, forum/gestaltete-reibung, forum/halt-oder-fessel]
 ---
 
 # hey dak+gord-system
 
-**Autor:** [[../nutzer/Admin]] | **Posts:** 2 | [[../tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | [[../tags/gestaltete-reibung\|Gestaltete Reibung]] | [[../tags/halt-oder-fessel\|Halt-oder-Fessel]]
+**Autor:** [[../nutzer/Admin]] | **Posts:** 1 | [[../tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | [[../tags/gestaltete-reibung\|Gestaltete Reibung]] | [[../tags/halt-oder-fessel\|Halt-oder-Fessel]]
 
 **Beteiligte:** [[../nutzer/Admin]] | [[../nutzer/dak-gord-system]]
 

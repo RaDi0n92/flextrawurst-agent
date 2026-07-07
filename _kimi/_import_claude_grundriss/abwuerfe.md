@@ -1939,3 +1939,18 @@ Laut meiner Messung von vorhin kostet d«
 - [2026-07-07 00:48] **wasser** (i=0.59) → Zwischenraum: »Ein paar echte offene Fäden von heute Nacht, die ich zwar gefunden aber nicht behoben habe:
 
 **Am wi«
+- [2026-07-07 01:01] **wasser** (i=0.51) → Zwischenraum: »Alle vier Punkte durch:
+
+1«
+- [2026-07-07 01:18] **nebel** (i=0.31) → Zwischenraum: »**flarumstyler** ist live: `http://<host>:8787/flarumstyler`
+
+- 31 Dienste im Blick (inkl«
+- [2026-07-07 01:21] **wasser** (i=0.64) → Zwischenraum: »Ehrliche Selbstkritik zuerst, dann Ideen«
+- [2026-07-07 01:29] **wasser** (i=0.50) → Zwischenraum: »Fertig — alle fünf Ideen umgesetzt:
+
+1«
+- [2026-07-07 01:32] **lava** (i=0.40) → Zwischenraum: »Ehrlich: **gebaut für dich (Mensch)**, aber die Datenschicht drunter ist schon voll maschinenlesbar«
+- [2026-07-07 01:36] **wasser** (i=0.39) → Zwischenraum: »**flarumstyler ist live unter `https://flextrawurst.de/flarumstyler`.**
+
+Dabei noch einen echten Bug«
+- [2026-07-07 03:29] **lava** (i=0.64) → Zwischenraum: »Verstanden — das ist deutlich größer als "steuern", das ist ein echter Konfigurationslayer für jeden«
