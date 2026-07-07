@@ -89,6 +89,58 @@ Kapazitaet bei nur 1 Slot — strukturelle Ueberlastung von ~200%, keine gelegen
   korrekte Prioritaets-Reihenfolge der wartenden Zeilen, `forum_neugier` und `batch_generator`
   gaben live nach 90s korrekt auf ("LLM-Slot 'hintergrund' blockiert nach 90s — ... uebersprungen").
 
+## Fortsetzung 2026-07-07 (Codex/gpt-5.5) — Stale-Holder-Bugs gefunden und gefixt
+
+Nach dem urspruenglichen Bau (oben) tauchte live ein neues Problem auf: Batch-
+Generator/Engagement meldeten wiederholt "LLM-Slot blockiert", **obwohl** der
+llama-server zeitweise nachweislich idle war (kein aktiver Socket auf 11436).
+Drei aufeinanderfolgende Fixes, alle in `llm_scheduler.py`:
+
+1. **`fix: clean stale llm scheduler waiters`** — erster Cleanup-Versuch:
+   wartende Zeilen (`slot_bis IS NULL`) loeschen, wenn sie laenger als
+   `STALE_WARTER_SEK` (100s) in der Tabelle stehen, ohne dass der eigene
+   `max_wartezeit`-Timeout sie selbst aufgeraeumt hat (z.B. weil der Aufrufer-
+   Prozess zwischendurch abstuerzte, bevor er `_aufraeumen()` erreichte).
+2. **`fix: release stale llm holders and fallback dakgord replies`** —
+   ergaenzt: auch Zeilen die **aktiv** einen Slot halten (`slot_bis` in der
+   Zukunft), aber laenger als `STALE_ACTIVE_SEK` (300s) alt sind, werden
+   befreit — ein gehaltener Slot ohne echten laufenden Request blockierte
+   sonst alle anderen fuer die volle `max_haltezeit`. Zusaetzlich (spaeter im
+   selben Zug durch die Antwortregeln-Aenderung ersetzt): ein Fallback fuer
+   dak+gord-system, falls die Antwortpflicht keine postbare Aktion bekommt.
+3. **`fix: bind llm scheduler waiters to process lifetime`** — der eigentliche,
+   robuste Fix: jeder `rufer` traegt jetzt `pid=<PID> wait=<max_wartezeit>
+   hold=<max_haltezeit> <original_rufer>` (`_rufer_mit_meta()`).
+   `_cleanup_stale_waiters()` prueft bei JEDER Slot-Anfrage (innerhalb des
+   Advisory-Locks) fuer alle "neuen" Zeilen (`rufer LIKE 'pid=%'`):
+   - Existiert `/proc/<pid>` nicht mehr → Prozess ist tot → Zeile loeschen.
+   - Wartet die Zeile noch, aber laenger als `wait_s + 10` → haette laengst
+     selbst per Timeout aufgeben muessen → loeschen.
+   - Haelt die Zeile aktiv einen Slot, aber laenger als `hold_s + 10` → haette
+     laengst selbst `_aufraeumen()` aufgerufen haben muessen → loeschen.
+   "Alte" Zeilen ohne `pid=`-Praefix (aus der Zeit vor diesem Fix) werden
+   weiterhin nur zeitbasiert behandelt (Punkt 1+2) — siehe bekannte Luecke
+   unten.
+
+**Bekannte Luecke, gefunden 2026-07-07 (Claude), nicht kritisch:** Alte
+(Vor-Fix-)Zeilen mit `slot_bis` gesetzt aber **bereits abgelaufen** fallen
+durch beide zeitbasierten Bedingungen (weder "noch NULL und alt" noch "noch
+aktiv/zukuenftig und alt" trifft zu) und werden nie automatisch geloescht.
+Blockiert niemanden (abgelaufener `slot_bis` zaehlt ohnehin nicht als aktiv),
+ist aber dauerhafter Datenmuell. Betraf am 2026-07-07 genau 2 Zeilen (IDs 1169,
+1604, beide vor dem Fix entstanden) — manuell per SQL geloescht. Kann nicht
+erneut auftreten, weil jede neue Zeile ab jetzt das `pid=`-Format traegt.
+
+**Offener Widerspruch, noch nicht geklärt:** `llama-hauhaucs-hintergrund.service`
+laeuft mit `--parallel 2` (2 echte Slots im llama-server selbst), aber
+`N_SLOTS["hintergrund"]` wurde am 2026-07-07 vormittags (Commit `40e1b4cb`,
+vor den obigen drei Fixes) von 2 auf **1** reduziert — Grund dafuer nicht in
+einer Commit-Message festgehalten. Alle Abschnitte oben ("2 echte Slots",
+Simulation) beschreiben noch den urspruenglichen 2-Slot-Zustand. Ob 1 oder 2
+der aktuell gewollte Wert ist (z.B. weil 2 parallele 35B-Generierungen auf
+derselben CPU sich gegenseitig eher verlangsamen als echt parallelisieren),
+sollte mit Daniel geklaert werden statt hier stillschweigend zu vereinheitlichen.
+
 ## Bewusst nicht migriert
 
 - `reaktion_auf_dakgord.py` — Einmal-Migrationsskript, kein Dauerdienst, nutzt weiterhin das

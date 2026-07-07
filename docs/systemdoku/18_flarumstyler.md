@@ -112,6 +112,43 @@ Nach dem Proof-of-Concept auf Daniels "gogogo" hin alle verbleibenden Dienste du
 
 **Noch offen (Task, nicht vergessen):** Die übrigen ~12 codewesen-Skripte sind noch nicht umgestellt (siehe Recherche-Katalog vom 2026-07-07: `codewesen_takt.py` braucht explizite Ausnahme von Grundgesetz 6, `codewesen_batch_generator.py` ist der architektonisch wichtigste weil er die eigentlichen Post-Inhalte generiert, mehrere haben unterschiedliche `wesen.md`/`weltbild.md`-Zeichenlimits und drei parallele, unabhängige Marker-Sprachen für Verhaltenssteuerung die vereinheitlicht werden könnten). Nach Bestätigung einzeln weitermachen, Ergebnis je zeigen bevor der nächste beginnt (Skalpell-Prinzip).
 
+## Fünfte Kurskorrektur (2026-07-07, Claude) — "raffst nix", vom Chat in die UI
+
+Daniel, direkt: "ich raff nicht was anders sein sollte" / "warum kannst du hier
+fast ne dina4seite erklaeren und warum ist das nicht genau so wenn ich das in
+ui anklicke?" — die bisherige Individualisierung zeigte nur ein-Satz-
+Beschreibungen und ein generisches JSON-Feld fuer `meta.intervalle`, ohne die
+tatsaechliche Tiefe aus den Skripten selbst.
+
+- **`beschreibung_override`** (neue Spalte `dienst_konfiguration`): jede der
+  43 Dienstbeschreibungen ist jetzt direkt im Modal editierbar (Textarea +
+  eigener Speichern-Button), **unabhaengig** von `konfigurierbar` — reine
+  Doku, keine Laufzeitwirkung, deshalb fuer alle Dienste freigegeben.
+- **`technische_doku`**: liest den Modul-Docstring des jeweiligen Skripts
+  direkt per `ast.get_docstring()` und zeigt ihn aufgeklappt im Modal. Alle
+  7 zuvor duennen Docstrings (200-450 Zeichen) wurden dabei gegen den
+  tatsaechlichen Code geprueft und auf 900-1800 Zeichen gebracht — dabei
+  3 echte Bugs/tote Codepfade gefunden (siehe 09_codewesen_daemons.md und
+  Commit `feb0eedd`): falsche Prozentangabe bei `antwort_auf_daniel.py`,
+  falsche Zeitangaben + toter Trigger bei `agent.py`, toter Kill-Mechanismus
+  bei `chat.py`.
+- **`individualisierung_hinweis`** pro Dienst: welches Feld (Takt einfach /
+  ueber `meta.intervalle` / gar keins, Verhalten moeglich oder nicht) mit
+  Klartext-Erklaerung — und **`braucht_neustart`**: 17 von 24 konfigurierbaren
+  Diensten lesen ihre Config nur einmal beim Prozessstart (nicht "ab dem
+  naechsten Zyklus", wie zuerst faelschlich ueberall behauptet) — jetzt
+  korrekt pro Dienst unterschieden, inkl. eigenem "Jetzt neu starten"-Button
+  direkt im Formular wenn noetig.
+- **Zeitfelder als 3 Dropdowns** (Std/Min/Sek, je 0-60) statt Sekundeneingabe
+  oder Zahl+Einheiten-Auswahl — Daniel wollte explizit "3 felder eins sek eins
+  min eins stunden ... dropdown von 1 bis 60". Checkbox "eigener Wert (sonst
+  Standard)" pro Feld, weil Dropdowns immer einen Wert zeigen und "kein
+  Override" sonst nicht von "Override = Standardwert" unterscheidbar waere.
+- **LLM-Warteschlange sichtbar**: neue Funktion `llm_warteschlange_status()`
+  zeigt im LLM-Detail-Modal wer gerade den Slot haelt (seit wann) und wer
+  dahinter wartet (wie lange) — direkte Antwort auf "sehen ob andere auch mit
+  rein wollen".
+
 ## Bewusst nicht enthalten
 
 - Keine Push-Benachrichtigung (kein Telegram/E-Mail) — Daniel ruft die Seite bei Bedarf selbst auf.
