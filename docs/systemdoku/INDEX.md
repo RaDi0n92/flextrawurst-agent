@@ -61,6 +61,8 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 
 | Datei | Inhalt |
 |-------|--------|
+| [[19_llm_scheduler]] | Prioritaets-Warteschlange fuer die gemeinsamen llama-server — ersetzt das alte slot_0.lock |
+| [[18_flarumstyler]] | Meldesystem — Dienst-Status, Log-Fehler, Individualisierungslayer |
 | [[17_live_daten]] | Live-Terminalausgaben — was gerade wirklich läuft |
 | [[16_was_fehlt_und_was_koennte_sein]] | Offene Bauschritte, Ideen, was noch gebaut werden könnte |
 
