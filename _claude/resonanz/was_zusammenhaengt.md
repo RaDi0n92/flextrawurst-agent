@@ -975,3 +975,9 @@ Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarch
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 docs/systemdoku/12_ollama_gemma4.md ist die zentrale Doku-Datei für die ganze hauhaucs-Migration — alle ctx-size/Performance-Erkenntnisse landen dort. hauhau_client.py und hauhau_client.ts sind jetzt der einzige Ort, an dem die Slot-Priorität entschieden wird — alle ~40 migrierten Aufrufstellen hängen implizit daran, aber nur 2 von 4-5 Chat-Einstiegspunkten sind bisher explizit auf id_slot=0 umgestellt.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Die ganze Kette hängt an einem einzigen geteilten Nadelöhr: ein Hintergrund-LLM-Slot, sieben Wesen, ein Dutzend Dienste. Jede UI-Änderung heute (Warteschlange sichtbar machen, Docstrings zeigen, Zeitfelder als Dropdowns) und jede Verhaltensänderung (72%-Regel, 6h-Lebensdauer, Fokus-Entscheidung) ist letztlich eine Verhandlung darüber, wie dieses eine Nadelöhr fair und verständlich genutzt wird.

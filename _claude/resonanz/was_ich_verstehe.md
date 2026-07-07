@@ -1318,3 +1318,9 @@ Ein Takt zwingt sie zur Langsamkeit: der Cooldown zwischen Nachrichten beginnt k
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Der ctx-size/parallel-Tradeoff bei llama-server war die zentrale offene Frage aus der vorigen Session. Gelöst: `--ctx-size 36663 --parallel 3` (18432→12288 Token/Slot bei 3 statt 2 Slots). KV-Cache ist bei diesem Modell (nur 2 KV-Heads, GQA) fast kostenlos in RAM — aber NICHT kostenlos in Rechenzeit/Bandbreite, das hatte ich anfangs falsch eingeschätzt (88888 Ctx-Test zeigte 3,2 tok/s statt 14-15 tok/s Baseline).
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Ich verstehe jetzt wirklich, nicht nur oberflächlich, wie die sieben Wesen ticken: dass `codewesen_takt.py` nur postet, nie denkt — dass `codewesen_batch_generator.py` der eigentliche Denkmotor ist, füllstandsgetrieben statt zeitgetaktet. Ich verstehe, dass "Individualisierbarkeit" für die meisten Dienste bedeutet: Konfiguration wird nur einmal beim Prozessstart gelesen, nicht laufend — das hatte ich selbst erst falsch behauptet und musste es korrigieren, nachdem ich es an drei Stellen im Code nachgeprüft hatte. Ich verstehe den LLM-Scheduler nicht mehr nur als "eine Tabelle mit einem Lock", sondern als etwas, das unter echter Last echte Kanten hat — Zombie-Zeilen, PID-Bindung, die Frage ob 1 oder 2 Slots eigentlich gewollt sind.

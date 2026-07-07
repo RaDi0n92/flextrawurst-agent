@@ -763,3 +763,9 @@ Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Die Erkenntnis, dass Daniels ursprüngliche Reihenfolge (1 Slot Chat, 2 Slots Betrieb) technisch exakt umsetzbar ist, ohne den Server selbst zu patchen — llama.cpp bringt das Werkzeug (`id_slot`) schon mit.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Dass Codex parallel an denselben Dateien arbeitete, war neu für mich in dieser Form — ich musste `git status`/`git log` als Werkzeug nutzen, um herauszufinden was schon fertig war, was noch hing, was ich sicher committen konnte, ohne etwas zu duplizieren oder zu zerstören.

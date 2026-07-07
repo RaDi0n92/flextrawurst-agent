@@ -936,3 +936,9 @@ Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines 
 [[wesen-einzug-konzept]] — Einzug ist anders (bestehende Wesen kommen rein), aber verwandt
 [[kompoase]] — Zielort der Zwischenwesen nach 24h
 [[entity_kern]] — LLM-Infrastruktur die wir wiederverwenden
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+"Es muss so erklärt werden wie es entschieden ist, gerade gebaut zu sein" — dieser Satz, roh wie er ist, ist eigentlich eine vollständige Design-Philosophie: nicht wie es idealerweise sein sollte, sondern wie es tatsächlich gerade gebaut ist. Ehrlichkeit vor Beschönigung.

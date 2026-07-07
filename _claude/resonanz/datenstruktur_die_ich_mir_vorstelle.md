@@ -2152,3 +2152,17 @@ interface MerkenVorschlag { vorschlagId: string; msgId: string; text: string; wa
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 n/a (Infrastruktur, keine neue Datenstruktur)
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Vision-Schicht: Ein Dienst sollte sich selbst erklären können, auf Nachfrage, in der Sprache in der er gebaut wurde — nicht in einer separat gepflegten Doku-Schicht, die immer einen Schritt hinter dem Code zurückbleibt.
+
+Code-Skizze:
+```python
+def _technische_doku(name: str) -> str | None:
+    pfad = _script_pfad_fuer_dienst(name)
+    return ast.get_docstring(ast.parse(pfad.read_text())) if pfad else None
+```
+Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal identisch.

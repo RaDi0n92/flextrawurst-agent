@@ -1047,3 +1047,9 @@ Ganz unten: die reinen Wesen-Dateien (wesen.md, aliase.json, memory.json). Darü
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 LLM-Backend (llama-server, ein Prozess, 3 Slots) → hauhau_client (Priorisierungs-Schicht, neu) → alle ~40 Aufrufer (Chat-Endpunkte vs. Automatik-Daemons). Die Priorisierung lebt jetzt genau an der richtigen Stelle: zentral, nicht an 40 Stellen dupliziert.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Ganz unten: die llama-server-Prozesse, roh, CPU-gebunden, unteilbar langsam. Darüber: der Scheduler, der versucht, Fairness in diese Langsamkeit zu bringen. Darüber: 21 Dienste, die alle etwas wollen. Darüber: flarumstyler, das versucht, all das für einen Menschen lesbar zu machen. Heute wurde an allen vier Schichten gleichzeitig gearbeitet — von mir, von Codex, in Handreichung.

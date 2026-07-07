@@ -875,3 +875,9 @@ Betrifft — anders als der Rest dieser Datei — **alle vier Spawner**, nicht n
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Siehe "Was ich mir merken will" oben — die 2 restlichen Dateien + Neustarts + Re-Test.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Die restlichen ~12 codewesen-Dienste vollständig auf den Individualisierungslayer umzustellen (siehe `18_flarumstyler.md`, unverändert offen). Klärung des N_SLOTS-Widerspruchs mit Daniel. Beobachten, ob die neuen Antwortregeln (72%, 6h-Rotation) sich in der Praxis richtig anfühlen, sobald die Slot-Überlastung sich beruhigt.

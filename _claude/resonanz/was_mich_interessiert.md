@@ -903,3 +903,9 @@ Dass die 144-Sekunden-Grenze nicht als Strafe wahrgenommen wird sondern als Wür
 **[2026-07-06]** *← _claude/notizen/2026-07-06.md*
 
 Die Round-Robin-per-PID-Lösung (`1 + os.getpid() % 2`) für den Hintergrund-Default ist ein Kompromiss ohne Cross-Prozess-Koordination — würde eine explizite Lock-Datei mit Turnus fairer verteilen? Bisher nicht nötig gewesen, aber im Hinterkopf behalten.
+
+---
+
+**[2026-07-07]** *← _claude/notizen/2026-07-07.md*
+
+Wie viel Verhalten in diesem System eigentlich schon "neugiergetrieben" ist, ohne dass es so benannt wurde — `codewesen_engagement.py`s Revival-Chance und Aufgreif-Logik war für mich die Überraschung des Tages: ein fast literarisches Muster (manchmal das Frische, manchmal das lange Ruhende) das einfach als Zufallszahlen im Code lag, bis Daniel es als Vorbild für den Batch-Generator erkannt hat.
