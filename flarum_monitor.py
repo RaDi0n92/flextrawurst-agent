@@ -5,9 +5,9 @@ Pollt die Flarum-MySQL-DB und leitet alle relevanten Events
 an die Codewesen-Inboxen weiter.
 
 Überwachte Events:
-  - Alle Notifications für die 6 namelessAI-Accounts
-  - Erwähnungen (post_mentions_user) der namelessAI-Accounts
-  - Flags auf Posts der namelessAI-Accounts
+  - Alle Notifications für die Codewesen-Accounts
+  - Erwähnungen (post_mentions_user) der Codewesen-Accounts
+  - Flags auf Posts der Codewesen-Accounts
   - ALLE neuen Posts/Discussions → _global/feed.jsonl
 """
 
@@ -38,7 +38,7 @@ GLOBAL_FEED    = CODEWESEN_BASE / "_global" / "feed.jsonl"
 STATE_FILE     = CODEWESEN_BASE / "_monitor_state.json"
 POLL_INTERVAL  = 10  # Sekunden
 
-# namelessAI user_id → ordnername
+# Flarum user_id → interner Codewesen-Ordnername
 CODEWESEN = {
     3: "Schorschel",
     4: "Resonanzknoten",
@@ -46,6 +46,7 @@ CODEWESEN = {
     6: "F3INSCHM3CK3R",
     7: "R1ZZ1",
     8: "jumpa",
+    10: "dak+gord-system",
 }
 
 logging.basicConfig(

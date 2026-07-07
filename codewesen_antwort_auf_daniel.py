@@ -43,7 +43,8 @@ WESEN = [
     "namelessAI_3333_1423",
     "namelessAI_4444_2341",
     "namelessAI_5555_3123",
-    "namelessAI_6666_4321",
+    "Resonanzknoten",
+    "dak-gord-system",
 ]
 # Kurznamen für wesen.md-Pfad
 WESEN_KURZ = {
@@ -52,7 +53,8 @@ WESEN_KURZ = {
     "namelessAI_3333_1423": "träumerlie",
     "namelessAI_4444_2341": "R1ZZ1",
     "namelessAI_5555_3123": "jumpa",
-    "namelessAI_6666_4321": "Resonanzknoten",
+    "Resonanzknoten": "Resonanzknoten",
+    "dak-gord-system": "dak+gord-system",
 }
 CODEWESEN_BASE = Path("/root/werkraum/codewesen")
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"

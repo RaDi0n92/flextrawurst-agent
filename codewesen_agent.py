@@ -957,7 +957,13 @@ def pruefe_antwortpflicht(
     jetzt_str = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
     jetzt_dt  = datetime.now()
 
-    codewesen_namen = list(json.loads(TOKENS.read_text(encoding="utf-8")).keys())
+    tokens_data = json.loads(TOKENS.read_text(encoding="utf-8"))
+    codewesen_namen = set(tokens_data.keys())
+    codewesen_user_ids = {
+        str(d.get("user_id"))
+        for d in tokens_data.values()
+        if isinstance(d, dict) and d.get("user_id") is not None
+    }
 
     # Alle Posts nach Diskussion gruppieren
     posts_nach_disk: dict[int, list] = {}
@@ -981,13 +987,13 @@ def pruefe_antwortpflicht(
         # Letzten Post der Diskussion prüfen
         letzter = posts[-1]
         ts_str  = letzter.get("ts", "")
-        autor   = letzter.get("daten", {}).get("username", "")
+        daten = letzter.get("daten", {})
+        autor   = daten.get("username", "")
 
         # Nur menschliche Posts als Antwortpflicht-Trigger — kein Codewesen-Pile-On
-        if any(cw in autor for cw in codewesen_namen):
+        if str(daten.get("user_id")) in codewesen_user_ids or any(cw in autor for cw in codewesen_namen):
             continue
 
-        daten = letzter.get("daten", {})
         if ist_vokabel_thread(daten.get("discussion_title", ""), daten.get("tags", "")):
             continue
 
