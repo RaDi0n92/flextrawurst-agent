@@ -21,7 +21,7 @@ DB_URI = os.environ.get(
 
 _FELDER = (
     "id, dienst_name, wesen, anzeige_name, takt_sekunden, start_offset_sekunden, "
-    "verhalten_prompt, ziel_typ, ziel_discussion_id, ziel_tag_ids, status, "
+    "verhalten_prompt, ziel_typ, ziel_discussion_id, eigene_diskussion_id, ziel_tag_ids, status, "
     "script_pfad, unit_name, meta, created_at, updated_at"
 )
 
@@ -90,9 +90,29 @@ def anlegen(
     ziel_tag_ids: list = None,
     start_offset_sekunden: int = 0,
     meta: dict = None,
+    eigene_felder: list = None,
+    takte: list = None,
+    feste_uhrzeiten: list = None,
+    zeitplan_modus: str = "intervall",
+    pausenzeiten: list = None,
 ) -> dict:
     """Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name
-    ist eindeutig und wird vom Aufrufer/Generator einmalig vergeben)."""
+    ist eindeutig und wird vom Aufrufer/Generator einmalig vergeben).
+
+    Baukasten-v2-Erweiterungen (2026-07-07, siehe
+    _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md) landen bewusst in `meta`
+    statt als eigene Spalten (Grundgesetz 1: meta JSONB fuer neue Faehigkeiten, kein
+    Umbau des Kerns) -- ausser eigene_diskussion_id, die als eigene Spalte direkt neben
+    ihrem Geschwister ziel_discussion_id lebt, weil sie denselben einfachen Skalar-Typ
+    und dieselbe Rolle (Post-Ziel) hat, nur mit anderem Setz-Zeitpunkt."""
+    if zeitplan_modus not in ("intervall", "feste_uhrzeiten", "passiv"):
+        raise ValueError(f"Ungueltiger zeitplan_modus: {zeitplan_modus!r}")
+    meta_voll = dict(meta or {})
+    meta_voll["eigene_felder"] = eigene_felder or []
+    meta_voll["takte"] = takte or []
+    meta_voll["feste_uhrzeiten"] = feste_uhrzeiten or []
+    meta_voll["zeitplan_modus"] = zeitplan_modus
+    meta_voll["pausenzeiten"] = pausenzeiten or []
     conn = _verbinden()
     try:
         with conn.cursor() as cur:
@@ -107,11 +127,28 @@ def anlegen(
                 (
                     dienst_name, wesen, anzeige_name, takt_sekunden, start_offset_sekunden,
                     verhalten_prompt, ziel_typ, ziel_discussion_id, ziel_tag_ids,
-                    psycopg2.extras.Json(meta or {}),
+                    psycopg2.extras.Json(meta_voll),
                 ),
             )
             conn.commit()
             return dict(cur.fetchone())
+    finally:
+        conn.close()
+
+
+def setze_eigene_diskussion_id(dienst_name: str, discussion_id: int) -> None:
+    """Fuer ziel_typ='eigene_diskussion_einmalig': wird vom generierten Skript genau
+    einmal aufgerufen, beim allerersten erfolgreichen Anlegen der eigenen Diskussion.
+    Danach liest jeder weitere Zyklus diese id und postet dorthin -- fuer immer."""
+    conn = _verbinden()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE wesen_eigene_dienste SET eigene_diskussion_id = %s, updated_at = NOW() "
+                "WHERE dienst_name = %s",
+                (discussion_id, dienst_name),
+            )
+            conn.commit()
     finally:
         conn.close()
 

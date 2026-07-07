@@ -15,8 +15,14 @@ CREATE TABLE IF NOT EXISTS wesen_eigene_dienste (
     start_offset_sekunden  INTEGER NOT NULL DEFAULT 0,  -- vom Kollisions-Scheduler vergeben, siehe kollisions_scheduler.py
     verhalten_prompt       TEXT NOT NULL,                -- fliesst als Trigger-Kontext in agentic_loop() ein
     ziel_typ               VARCHAR(30) NOT NULL DEFAULT 'neue_diskussion'
-                               CHECK (ziel_typ IN ('fester_thread', 'neue_diskussion', 'vault_only')),
+                               CHECK (ziel_typ IN ('fester_thread', 'neue_diskussion', 'vault_only',
+                                   'eigene_diskussion_einmalig', 'wesen_entscheidet_selbst')),
+                               -- die letzten beiden Werte kamen mit Baukasten v2 (2026-07-07) dazu,
+                               -- per ALTER CONSTRAINT additiv erweitert -- siehe Konzept
+                               -- _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md
     ziel_discussion_id     INTEGER,   -- Pflicht wenn ziel_typ = fester_thread
+    eigene_diskussion_id   INTEGER,   -- wird beim ersten echten Lauf einmalig gesetzt, wenn
+                               -- ziel_typ = eigene_diskussion_einmalig (danach fuer immer Ziel)
     ziel_tag_ids           INTEGER[], -- Vorschlag fuer ziel_typ = neue_diskussion, LLM darf abweichen
     status                 VARCHAR(20) NOT NULL DEFAULT 'aktiv'
                                CHECK (status IN ('aktiv', 'deaktiviert')),  -- Grundgesetz 4: nie hart loeschen
