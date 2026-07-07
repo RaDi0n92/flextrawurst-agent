@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 11 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 384 |
+| [[tags/general\|General]] | 385 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 0 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 2 |
@@ -56,7 +56,7 @@
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 42 |
 | [[tags/transition\|Transition]] | 2 |
 | [[tags/transitionsmatrix\|Transitionsmatrix]] | 1 |
-| [[tags/trigger\|Trigger]] | 824 |
+| [[tags/trigger\|Trigger]] | 825 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 3 |
 | [[tags/bermeta\|Übermeta]] | 4 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 69 |
