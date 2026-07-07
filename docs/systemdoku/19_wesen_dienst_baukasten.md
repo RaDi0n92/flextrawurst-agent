@@ -82,16 +82,58 @@ bestehender JSON-Reparatur-Fallback griff korrekt, das Ergebnis (`"kein gueltige
 JSON"`) wurde sauber als Vault-Eintrag gespeichert, kein Crash. Testartefakte
 (Skript, Unit, Vault-Ordner, DB-Zeile) danach vollstaendig entfernt.
 
+## Phase 2 — Chat-Wizard-UI (2026-07-07, fertig)
+
+Wichtiger Architektur-Fund beim Start von Phase 2: die tatsaechlich laufende
+flarumstyler-Serverdatei ist **nicht** `/root/werkraum/...` wie in fruehreren Notizen
+vermutet, sondern `/root/flextrawurst/scripts/serve_process_camera_preview.ts`
+(WorkingDirectory laut `process-camera-preview.service`) — ein eigenstaendiges
+Verzeichnis im Top-Level-Repo (`/root`), keine werkraum-Submodul-Datei. Dort existiert
+bereits ein TS-Pendant zu `hauhau_client.py` (`scripts/hauhau_client.ts`, inkl.
+`chatStream()` mit SSE + Abbruch-Tracking) — der Wizard-Chat laeuft deshalb direkt in
+Node, kein zusaetzlicher Python-Webserver noetig.
+
+- **`GET /wesen-dienst-wizard`** (Seite, `out/process_camera/wesen_dienst_wizard.html`):
+  Chat-Panel + Live-Vorschau-Formular nebeneinander. Jedes Vorschau-Feld ist direkt
+  editierbar; ein einmal von Daniel angefasstes Feld (`beruehrteFelder`-Set im
+  Frontend) wird von keiner spaeteren LLM-Antwort mehr ueberschrieben.
+- **`POST /api/wesen-dienst-wizard/chat`** (SSE, Port 11435 wie Wesen-Chats): System-
+  Prompt weist das Modell an, gezielt nacheinander zu fragen (Wesen, Anzeige-Name,
+  Verhalten, Takt, Ziel) und JEDE Antwort mit einem ```` ```definition ```` -JSON-Block
+  zu beenden. Frontend parst den Block per Regex heraus, zeigt den restlichen Text als
+  Chat-Bubble, uebernimmt den JSON-Stand in die Live-Vorschau (nur unberuehrte Felder).
+- **Echter Fund beim Testen:** das Modell haelt sich NICHT zuverlaessig an die
+  "immer den Block liefern"-Anweisung — in einem von drei Testzuegen fehlte der Block
+  komplett. Gefixt mit einem serverseitigen Reparatur-Fallback (analog zu
+  `agentic_loop()`s JSON-Reparatur in `codewesen_agent.py`): fehlt der Block in der
+  vollstaendigen Antwort, fragt der Server per zusaetzlichem, nicht gestreamtem
+  `hauhauClient.chat()`-Aufruf gezielt nach nur dem JSON-Stand und schickt ihn als
+  eigenes `definition_repariert`-SSE-Event nach. Frontend nutzt ihn nur als Fallback,
+  wenn der reguläre Block fehlte.
+- **`POST /api/wesen-dienst-wizard/erzeugen`**: validiert Pflichtfelder, leitet
+  `dienst_name` aus Wesen+Anzeige-Name ab (`slugifyWesenDienst`, Umlaute transliteriert),
+  ruft `welt/wesen_dienst_erzeugen.py` (neues Python-CLI, Muster wie
+  `dienst_konfiguration_setzen.py` — dieser Node-Prozess hat keine Postgres-Anbindung)
+  per `execFileSync` (Argument-Array). Das CLI vergibt den Kollisions-Offset, legt die
+  DB-Zeile an und generiert Skript+Unit. Startet NICHT.
+- **`POST /api/wesen-dienst-wizard/starten`**: bestaetigungspflichtig (`{"bestaetigt":true}`),
+  ruft `systemctl start` direkt (kein DB-Zugriff noetig, analog zum bestehenden
+  Flarumstyler-Start/Stop/Neustart).
+- **End-to-End getestet:** volle Chat-Runde (3 echte LLM-Zuege) bis zu einer
+  vollstaendigen Definition (Wesen jumpa, `vault_only`), `/erzeugen` → echtes Skript+Unit,
+  `/starten` → Dienst lief, echter Zyklus feuerte, Vault-Eintrag mit echtem,
+  in-character LLM-Text gespeichert. Testartefakte danach vollstaendig entfernt.
+
 ## Noch offen
 
-- **Phase 2 — Chat-Wizard-UI**: Seite mit `hauhau_client.chat_stream()` (Port 11435,
-  dasselbe Backend wie `codewesen_chat.py`), LLM stellt gezielt Fragen, Live-Vorschau
-  der entstehenden Definition, jederzeit von Daniel direkt ueberschreibbar,
-  Bestaetigungs-Button ruft `wesen_dienst_generator.erzeuge()` + `starten()` auf.
 - **Phase 3 — Sichtbarkeit**: neu erzeugte Dienste automatisch in
   `WELTKERN_SERVICES`/`SERVICE_BESCHREIBUNG`/Individualisierung registrieren (aktuell
   tauchen Wesen-eigene Dienste noch NICHT in flarumstyler auf), Deaktivieren-Button
-  im UI (`wesen_dienst_generator.deaktivieren()` existiert bereits serverseitig).
+  im UI (`wesen_dienst_generator.deaktivieren()` existiert bereits serverseitig, nur
+  noch keine Node-Route + UI dafuer).
 - `ziel_typ=fester_thread`/`neue_diskussion` sind implementiert, aber noch nicht
   end-to-end mit echtem Forum-Posting getestet (bewusst nur `vault_only` getestet,
   um keinen echten Forum-Post durch einen Testlauf zu riskieren).
+- Der Wizard fragt aktuell keine Flarum-Tag-Liste fuer `neue_diskussion` ab — leere
+  `ziel_tag_ids` fallen beim Posten auf den bestehenden Fallback in
+  `fuehre_aktion_aus()` zurueck (erstes verfuegbares Tag).
