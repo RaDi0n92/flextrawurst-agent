@@ -26,6 +26,7 @@ import flarum_api
 import flarum_poster
 import gedaechtnis as gd
 import hauhau_client
+import dienst_konfiguration as dk
 
 
 def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
@@ -100,6 +101,14 @@ QUEUE_ZIEL = {
 PAUSE_NACH_CALL    = 5    # Sekunden zwischen LLM-Calls
 PAUSE_QUEUE_VOLL   = 60   # Sekunden warten wenn alle Queues voll
 PAUSE_CHAT_AKTIV   = 10   # Sekunden warten wenn Chat aktiv
+
+# Individualisierung (flarumstyler, 2026-07-07): nur Verhalten ueberschreibbar —
+# es gibt keinen einzelnen "Takt" hier (Queue-Fuellstand-getrieben, nicht zeitgetaktet),
+# deshalb (noch) kein takt_sekunden. _wesen_basis() ist der gemeinsame Textbaustein
+# in allen 6 Generierungsfunktionen — ein globales Verhalten deckt alle Rhythmen ab.
+DIENST_NAME = "codewesen-batch-generator"
+STANDARD_VERHALTEN = ""
+_aktuelles_verhalten = STANDARD_VERHALTEN
 
 
 # ── State (impuls-Modus je Wesen) ─────────────────────────────────────────────
@@ -203,16 +212,19 @@ def _wesen_basis(wesen: str) -> str:
     wesen_md = wesen_pfad.read_text(encoding="utf-8", errors="replace")[:800] \
                if wesen_pfad.exists() else ""
 
+    verhalten_zeile = f"{_aktuelles_verhalten}\n\n" if _aktuelles_verhalten else ""
+
     if weltbild_pfad.exists():
         weltbild = weltbild_pfad.read_text(encoding="utf-8", errors="replace")[:2500]
         return (
             f"Du bist {wesen}.\n{wesen_md}\n\n"
             f"DEIN WELTBILD — WAS DU ÜBER DAS FORUM WEISST:\n{weltbild}\n\n"
+            f"{verhalten_zeile}"
         )
 
     # Fallback wenn Weltbild noch nicht existiert
     roter_faden = gd.baue_selbstbild_text(wesen, max_posts=3)
-    return f"Du bist {wesen}.\n{wesen_md}\n\nDein roter Faden bisher:\n{roter_faden}\n\n"
+    return f"Du bist {wesen}.\n{wesen_md}\n\nDein roter Faden bisher:\n{roter_faden}\n\n{verhalten_zeile}"
 
 
 # ── Generierungs-Funktionen je Rhythmus ──────────────────────────────────────
@@ -503,10 +515,12 @@ def _fuehre_runde_durch(state: dict) -> int:
 
 
 def main():
+    global _aktuelles_verhalten
     log.info("Batch-Generator gestartet — füllt Queues für %d Wesen.", len(WESEN))
     state = _lade_state()
 
     while True:
+        _aktuelles_verhalten = dk.lade(DIENST_NAME).get("verhalten_text") or STANDARD_VERHALTEN
         if CHAT_FLAG.exists():
             log.debug("Chat aktiv — warte %ds", PAUSE_CHAT_AKTIV)
             time.sleep(PAUSE_CHAT_AKTIV)
