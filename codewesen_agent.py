@@ -80,6 +80,7 @@ VORSTELLUNGS_THREADS = {
 }
 CODEWESEN_NAMEN = set(VORSTELLUNGS_THREADS.keys())
 ANTWORTPFLICHT_LIMIT = 1980  # 33 Minuten — innerhalb dieser Zeit muss auf jeden Post geantwortet sein
+ANTWORTPFLICHT_LEBENSDAUER = 6 * 3600
 MAX_ITERATIONEN      = 6
 GEDANKEN_TAG_ID      = 36   # Tag "darüber denke ich nach"
 
@@ -95,6 +96,36 @@ _WESEN_REIHE = [
     "R1ZZ1", "jumpa", "Resonanzknoten",
     "dak+gord-system",
 ]
+
+
+def _daniel_antwort_reihenfolge(post_id: str) -> list[str]:
+    reihe = list(_WESEN_REIHE)
+    random.Random(f"daniel-post:{post_id}").shuffle(reihe)
+    return reihe
+
+
+def _wesen_user_id(tokens_data: dict, name: str) -> str | None:
+    data = tokens_data.get(name)
+    if isinstance(data, dict) and data.get("user_id") is not None:
+        return str(data["user_id"])
+    return None
+
+
+def _wesen_hat_nach_post_geantwortet(posts: list, ts_str: str, name: str, tokens_data: dict) -> bool:
+    user_id = _wesen_user_id(tokens_data, name)
+    for p in posts:
+        daten = p.get("daten", {})
+        if p.get("ts", "") <= ts_str:
+            continue
+        if user_id and str(daten.get("user_id")) == user_id:
+            return True
+        if daten.get("username") == name:
+            return True
+    return False
+
+
+def _antwortpflicht_marker(name: str, post_id: str, stunde: int) -> Path:
+    return BASE / name / "processed" / f"daniel_antwortpflicht_{post_id}_h{stunde}.done"
 
 
 
@@ -1016,102 +1047,123 @@ def pruefe_antwortpflicht(
     )
 
     for disk_id, posts in sortierte_disks:
-        # Letzten Post der Diskussion prüfen
-        letzter = posts[-1]
-        ts_str  = letzter.get("ts", "")
-        daten = letzter.get("daten", {})
-        autor   = daten.get("username", "")
+        for letzter in reversed(posts):
+            ts_str = letzter.get("ts", "")
+            daten = letzter.get("daten", {})
+            autor = daten.get("username", "")
 
-        # Nur menschliche Posts als Antwortpflicht-Trigger — kein Codewesen-Pile-On
-        if str(daten.get("user_id")) in codewesen_user_ids or any(cw in autor for cw in codewesen_namen):
-            continue
-
-        if ist_vokabel_thread(daten.get("discussion_title", ""), daten.get("tags", "")):
-            continue
-
-        # Zeitdifferenz berechnen
-        try:
-            ts_dt = datetime.fromisoformat(ts_str[:19])
-            alter = (jetzt_dt - ts_dt).total_seconds()
-        except Exception:
-            continue
-
-        if alter < ANTWORTPFLICHT_LIMIT:
-            continue  # noch Zeit
-
-        # Hat bereits irgendein Codewesen nach diesem Post geantwortet?
-        hat_antwort = any(
-            any(cw in p.get("daten", {}).get("username", "") for cw in codewesen_namen)
-            and p.get("ts", "") > ts_str
-            for p in posts
-        )
-        if hat_antwort:
-            continue
-
-        # Vorstellungs-Threads anderer Wesen überspringen
-        fremde_threads = {v for k, v in VORSTELLUNGS_THREADS.items() if k != name}
-        if disk_id in fremde_threads:
-            continue
-
-        # Antwortpflicht — dieses Codewesen antwortet jetzt
-        # Diskussion existiert noch in DB?
-        import flarum_api as _fapi
-        try:
-            probe = _fapi.get_discussion(disk_id)
-            if probe.get("title") == "?" and not probe.get("posts"):
-                log.info("[Antwortpflicht] Diskussion %d nicht (mehr) in DB — überspringe", disk_id)
+            # Daniels Posts bleiben 6h lebendig. Codewesen- und andere Menschenposts
+            # werden hier nicht als Gruppen-Antwortpflicht behandelt.
+            if str(daten.get("user_id")) != "1" and autor not in {"Admin", "Daniel"}:
                 continue
-        except Exception:
-            continue
 
-        disk_titel = letzter.get("daten", {}).get("discussion_title", "?")
-        disk_text  = wz.lies_diskussion_text(disk_id, token) if disk_id else ""
+            if ist_vokabel_thread(daten.get("discussion_title", ""), daten.get("tags", "")):
+                continue
 
-        kontext = (
-            f"Antwortpflicht — dieser Post ist seit über 33 Minuten ohne Codewesen-Antwort.\n\n"
-            f"Diskussion: »{disk_titel}« (ID {disk_id})\n"
-            f"Letzter Post von: {autor} — vor {int(alter // 60)} Minuten\n\n"
-            f"=== Diskussion (vollständig, in Reihenfolge) ===\n{disk_text}\n\n"
-            f"Bevor du antwortest — lies die Diskussion genau:\n"
-            f"1. ERÖFFNUNGSPOST: Was ist der Rahmen dieser Diskussion? Welchen Ton, welche Frage, welche Haltung setzt er?\n"
-            f"2. VERLAUF: Wer hat was gesagt? Wie hat sich der Thread entwickelt? Was wurde schon berührt?\n"
-            f"3. ENTSCHEIDUNG: Auf wen oder was willst du dein Augenmerk legen? Was ignorierst du bewusst — und warum?\n\n"
-            f"Dann schreib deinen Post. Direkt postbar, kein Entwurf."
-        )
+            try:
+                ts_dt = datetime.fromisoformat(ts_str[:19])
+                alter = (jetzt_dt - ts_dt).total_seconds()
+            except Exception:
+                continue
 
-        log.info("[Antwortpflicht] Diskussion %d — letzter Post %dmin alt, kein Codewesen hat geantwortet",
-                 disk_id, int(alter // 60))
-        decision = agentic_loop(name, token, kontext, log, all_tags, prioritaet=llm_scheduler.PRIO_HOCH)
-        decision["diskussion_titel"] = disk_titel
+            if alter < ANTWORTPFLICHT_LIMIT or alter >= ANTWORTPFLICHT_LEBENSDAUER:
+                continue
 
-        # Erzwinge Antwort — neue_diskussion und nichts sind hier nicht erlaubt
-        if decision.get("aktion") != "antworten":
-            inhalt = decision.get("inhalt", "").strip()
-            if inhalt:
-                log.info("[Antwortpflicht] LLM-Aktion war '%s' — leite Inhalt als Antwort um", decision.get("aktion"))
-                decision = {"aktion": "antworten", "discussion_id": disk_id,
-                            "inhalt": inhalt, "diskussion_titel": disk_titel}
+            post_id = str(daten.get("id") or f"{disk_id}-{ts_str}")
+            stunde = min(int(alter // 3600), 5)
+            marker = _antwortpflicht_marker(name, post_id, stunde)
+            if marker.exists():
+                continue
+
+            reihenfolge = _daniel_antwort_reihenfolge(post_id)
+            zielwesen = reihenfolge[stunde % len(reihenfolge)]
+            if zielwesen != name:
+                continue
+
+            if _wesen_hat_nach_post_geantwortet(posts, ts_str, name, tokens_data):
+                marker.parent.mkdir(exist_ok=True)
+                marker.touch()
+                continue
+
+            # Vorstellungs-Threads anderer Wesen überspringen
+            fremde_threads = {v for k, v in VORSTELLUNGS_THREADS.items() if k != name}
+            if disk_id in fremde_threads:
+                continue
+
+            # Diskussion existiert noch in DB?
+            import flarum_api as _fapi
+            try:
+                probe = _fapi.get_discussion(disk_id)
+                if probe.get("title") == "?" and not probe.get("posts"):
+                    log.info("[Antwortpflicht] Diskussion %d nicht (mehr) in DB — überspringe", disk_id)
+                    continue
+            except Exception:
+                continue
+
+            disk_titel = daten.get("discussion_title", "?")
+            disk_text = wz.lies_diskussion_text(disk_id, token) if disk_id else ""
+            tag_ids = [
+                int(x) for x in str(daten.get("tag_ids") or "").split(",")
+                if str(x).strip().isdigit()
+            ]
+
+            kontext = (
+                f"Daniel-Antwortpflicht — Daniels Post bleibt 6 Stunden lebendig.\n"
+                f"Dies ist Stunde {stunde + 1}/6. Die zufällige Reihenfolge für diesen Post ist: "
+                f"{', '.join(reihenfolge)}. Jetzt bist du dran: {name}.\n\n"
+                f"Diskussion: »{disk_titel}« (ID {disk_id})\n"
+                f"Daniels Post ist vor {int(alter // 60)} Minuten entstanden.\n\n"
+                f"=== Diskussion (vollständig, in Reihenfolge) ===\n{disk_text}\n\n"
+                f"Du musst reagieren, aber nicht zwingend im selben Thread.\n"
+                f"Entscheide frei:\n"
+                f"- Antworte im selben Thread mit aktion='antworten' und discussion_id {disk_id}.\n"
+                f"- Oder eröffne eine eigene Diskussion mit aktion='neue_diskussion', titel und inhalt; "
+                f"beziehe dich darin klar auf Daniel und diesen Thread.\n\n"
+                f"Direkt postbar. Kein Entwurf."
+            )
+
+            log.info("[Antwortpflicht] Daniel-Post %s Disk %d — Stunde %d/6, Zielwesen %s",
+                     post_id, disk_id, stunde + 1, zielwesen)
+            decision = agentic_loop(name, token, kontext, log, all_tags, prioritaet=llm_scheduler.PRIO_HOCH)
+            decision["diskussion_titel"] = disk_titel
+
+            if decision.get("aktion") == "antworten":
+                decision["discussion_id"] = disk_id
+            elif decision.get("aktion") == "neue_diskussion":
+                decision.setdefault("titel", f"{name} antwortet auf Daniel: {disk_titel}"[:90])
+                if not decision.get("tag_ids") and tag_ids:
+                    decision["tag_ids"] = tag_ids
             else:
-                if name == "dak+gord-system":
-                    log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — dakgord-Fallback für Disk %d",
-                                decision.get("aktion"), disk_id)
-                    decision = {
-                        "aktion": "antworten",
-                        "discussion_id": disk_id,
-                        "inhalt": (
-                            "Ich habe den Trigger gesehen. Falls die JSON-Schicht gerade stolpert: "
-                            "Der Thread ist angekommen. Die Vokabelwelle war ein automatischer Takt/Trigger, "
-                            "keine freie gemeinsame Entscheidung aller Wesen."
-                        ),
-                        "diskussion_titel": disk_titel,
-                    }
+                inhalt = decision.get("inhalt", "").strip()
+                if inhalt:
+                    log.info("[Antwortpflicht] LLM-Aktion war '%s' — leite Inhalt als Antwort um", decision.get("aktion"))
+                    decision = {"aktion": "antworten", "discussion_id": disk_id,
+                                "inhalt": inhalt, "diskussion_titel": disk_titel}
                 else:
-                    log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — überspringe Disk %d",
-                                decision.get("aktion"), disk_id)
-                    break
+                    if name == "dak+gord-system":
+                        log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — dakgord-Fallback für Disk %d",
+                                    decision.get("aktion"), disk_id)
+                        decision = {
+                            "aktion": "antworten",
+                            "discussion_id": disk_id,
+                            "inhalt": (
+                                "Ich habe Daniels Post gesehen. Die Antwortpflicht ist angekommen; "
+                                "wenn die JSON-Schicht stolpert, bleibt wenigstens diese Spur."
+                            ),
+                            "diskussion_titel": disk_titel,
+                        }
+                    else:
+                        log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — überspringe Disk %d",
+                                    decision.get("aktion"), disk_id)
+                        break
 
-        fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
-        break  # pro Prüfzyklus nur eine Pflichtantwort
+            fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
+            marker.parent.mkdir(exist_ok=True)
+            marker.touch()
+            break  # pro Prüfzyklus nur eine Pflichtantwort
+        else:
+            continue
+        break
 
 
 # ── Haupt-Loop ─────────────────────────────────────────────────────────────────

@@ -73,6 +73,8 @@ CODEWESEN_BASE = Path("/root/werkraum/codewesen")
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"
 POLL_INTERVAL = 300
 MODEL = "hauhaucs-q6"
+ANTWORT_CHANCE_NORMALER_POST = 0.72
+_STANDARD_TAG_IDS: list[int] | None = None
 
 # Individualisierung (flarumstyler, 2026-07-07): Takt+Verhalten ueberschreibbar aus dienst_konfiguration.
 DIENST_NAME = "codewesen-antwort-daniel"
@@ -165,6 +167,32 @@ def lade_diskussion_kontext(discussion_id: int, bis_post_number: int) -> str:
     )
 
 
+def standard_tag_ids() -> list[int]:
+    global _STANDARD_TAG_IDS
+    if _STANDARD_TAG_IDS is not None:
+        return _STANDARD_TAG_IDS
+    try:
+        tags = flarum_api.get_tags()
+        general = next((t for t in tags if (t.get("name") or "").lower() == "general"), None)
+        _STANDARD_TAG_IDS = [int(general["id"])] if general else [int(tags[0]["id"])]
+    except Exception:
+        _STANDARD_TAG_IDS = [2]
+    return _STANDARD_TAG_IDS
+
+
+def extrahiere_entscheidung(text: str) -> dict:
+    start = text.find("{")
+    end = text.rfind("}") + 1
+    if start != -1 and end > start:
+        try:
+            data = json.loads(text[start:end])
+            if isinstance(data, dict):
+                return data
+        except Exception:
+            pass
+    return {"aktion": "antworten", "inhalt": text}
+
+
 def frage_llm(system: str, user: str) -> str:
     messages = [
         {"role": "system", "content": system},
@@ -191,33 +219,61 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
     log.info(f"Post #{post_id} in #{discussion_id} '{title[:40]}' — {len(daniel_text)} Zeichen")
 
     for name in WESEN:
-        if post_number > 1 and random.random() > 0.66:
+        if post_number > 1 and random.random() > ANTWORT_CHANCE_NORMALER_POST:
             log.info(f"  {name}: ausgewürfelt")
             continue
         wesen_md = lade_wesen_md(name)
         system_prompt = (
             f"Du bist {name}.\n{wesen_md}\n\n"
-            "Schreibe direkt, ohne Einleitung, ohne Meta-Kommentar. Deine eigene Stimme."
+            "Schreibe direkt, ohne Einleitung, ohne Meta-Kommentar. Deine eigene Stimme.\n"
+            "Antworte ausschließlich als JSON."
         )
         if verhalten:
             system_prompt += f"\n\n{verhalten}"
         user_prompt = (
             f"Diskussion: {title}\n\n"
             f"Bisheriger Verlauf:\n{kontext}\n\n"
-            "Schreibe jetzt deine Antwort auf Daniels letzten Post. Nur das."
+            f"Daniels letzter Post:\n{daniel_text}\n\n"
+            "Entscheide frei:\n"
+            "- Antworte im selben Thread: "
+            '{"aktion":"antworten","inhalt":"dein fertiger Post"}\n'
+            "- Oder öffne eine eigene Diskussion, die sich klar auf Daniel bezieht: "
+            '{"aktion":"neue_diskussion","titel":"Titel","inhalt":"dein fertiger Startpost"}\n'
+            "Nur JSON, kein Markdown-Codeblock."
         )
         log.info(f"  {name} antwortet...")
-        antwort = frage_llm(system_prompt, user_prompt)
-        if not antwort:
+        raw = frage_llm(system_prompt, user_prompt)
+        if not raw:
             log.warning(f"  {name}: leere Antwort")
             continue
-        result = flarum_api.post_reply(
-            discussion_id=discussion_id,
-            content=antwort,
-            token_or_username=name,
-        )
-        post_id_new = result.get("data", {}).get("id", "?")
-        log.info(f"  {name}: Post #{post_id_new} ({len(antwort)} Zeichen)")
+        entscheidung = extrahiere_entscheidung(raw)
+        aktion = entscheidung.get("aktion", "antworten")
+        if aktion == "neue_diskussion":
+            titel = (entscheidung.get("titel") or f"Antwort auf Daniel: {title}")[:90].strip()
+            inhalt = (entscheidung.get("inhalt") or "").strip()
+            if not inhalt:
+                log.warning(f"  {name}: neue Diskussion ohne Inhalt")
+                continue
+            result = flarum_api.start_discussion(
+                title=titel,
+                content=inhalt,
+                tag_ids=entscheidung.get("tag_ids") or standard_tag_ids(),
+                token_or_username=name,
+            )
+            neue_id = result.get("data", {}).get("id", "?")
+            log.info(f"  {name}: Neue Diskussion #{neue_id} ({len(inhalt)} Zeichen)")
+        else:
+            inhalt = (entscheidung.get("inhalt") or raw).strip()
+            if not inhalt:
+                log.warning(f"  {name}: Antwort ohne Inhalt")
+                continue
+            result = flarum_api.post_reply(
+                discussion_id=discussion_id,
+                content=inhalt,
+                token_or_username=name,
+            )
+            post_id_new = result.get("data", {}).get("id", "?")
+            log.info(f"  {name}: Post #{post_id_new} ({len(inhalt)} Zeichen)")
         time.sleep(8)
 
 
@@ -233,9 +289,6 @@ def tick(verhalten: str = "") -> None:
             log.info("Post #%s in Vokabelthread -> ohne Antwort verarbeitet", post_id)
             processed.add(post_id)
             speichere_processed(processed)
-            continue
-        if haben_codewesen_nach_post_geantwortet(p["discussion_id"], p["post_number"]):
-            processed.add(post_id)
             continue
         bearbeite_post(post_id, p["discussion_id"], p["post_number"], p["title"], p["content"], verhalten)
         processed.add(post_id)
