@@ -13,13 +13,26 @@ kein Neustart noetig). Verlauf wird doppelt persistiert: JSONL
 wesen_chat_verlauf.
 
 Die KI-Antwort kann Marker enthalten, die dieser Server ausfuehrt, bevor der
-Text den Menschen erreicht:
+Text den Menschen erreicht (komplett gegengelesen 2026-07-07):
   ##LESEN:pfad##/##SCHREIBEN:pfad##   — Datei im Werkraum lesen/schreiben
   [MERKEN: notiz]                     — still in gedanken/<datum>.md ablegen
-  Direktes-Posting-Erkennung (erkenne_direktes_posting) — schlaegt einen
-    Forumspost vor, den der Mensch per /api/direkt-posten bestaetigen muss
+  [POSTEN: Titel | Inhalt]            — postet SOFORT ins Forum, kein Bestaetigungs-
+    schritt (nur wenn das Wesen selbst entscheidet zu posten, z.B. nach "ja, mach das")
+Zusaetzlich, VOR jedem LLM-Aufruf per Regex geprueft: erkenne_direktes_posting()
+— erkennt Saetze wie "poste das"/"ins forum damit" und postet dann direkt die
+LETZTE Wesen-Nachricht aus dem Verlauf erneut, komplett OHNE LLM-Aufruf.
+/api/direkt-posten ist ein unabhaengiger dritter Weg (der "→ Forum"-Button in
+der UI, freie Text-Eingabe durch Daniel, nicht an einen Marker gekoppelt).
 Bild-Uploads werden unter codewesen/<name>/sinne/bilder/ gespeichert UND
 erzeugen zusaetzlich einen "impuls"-Entwurf (wie ein spontaner Eindruck).
+
+Nach jeder Chat-Antwort: 40% Chance, dass im Hintergrund (asyncio-Task, nicht
+blockierend) codewesen_reflexion.reflektiere_nach_chat() angestossen wird —
+das Wesen liest den Chatverlauf und entscheidet selbst, ob es das Gespraech
+ins Forum weiterdenken will. Wichtig: die Systemdoku (09_codewesen_daemons.md,
+Stand 2026-05-26) fuehrt codewesen_reflexion.py noch als "INAKTIV" — das ist
+veraltet, es wird hier aktiv importiert und pro Chat-Nachricht potenziell
+aufgerufen.
 
 Fund beim Lesen (nicht mehr aktiv): _ollama_fuer_chat_freiraumen() und die
 zugehoerigen Helfer (_stoppe_blocker_und_kill_fremde, _geschuetzte_web_pids)

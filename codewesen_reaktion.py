@@ -30,6 +30,12 @@ laenger laufenden Intervall (siehe meta.intervalle-Keys):
 
 Vokabel-Threads werden komplett ausgenommen (dafuer ist codewesen_vokabel_takt.py
 zustaendig).
+
+Kleine Details, komplett gegengelesen (2026-07-07): `ask_llm()` prueft ob eine
+Antwort mit vollstaendiger Satzzeichensetzung endet (`_ist_vollstaendig`) und
+fordert bei Bedarf eine kurze Fortsetzung nach statt einen abgeschnittenen Text
+zu posten. `post_forum_entwicklung`/`post_themen_beitrag` starten beide eine
+NEUE Diskussion (nicht nur Antworten) mit vom LLM selbst gewaehlten Tags.
 """
 
 import json

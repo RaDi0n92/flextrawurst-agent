@@ -879,12 +879,16 @@ wartezeit = random.randint(WARTE_MIN, WARTE_MAX)
 
 ---
 
-## 8. codewesen_reflexion.py — Post-Chat-Reflexion (INAKTIV)
+## 8. codewesen_reflexion.py — Post-Chat-Reflexion (AKTIV — Korrektur 2026-07-07)
+
+**Stand 2026-05-26 sagte hier "INAKTIV" — das ist veraltet.** Beim vollstaendigen
+Gegenlesen von `codewesen_chat.py` (2026-07-07) bestaetigt: wird aktiv importiert
+und nach JEDER Chat-Antwort mit 40% Wahrscheinlichkeit als asyncio-Hintergrund-
+task angestossen (`reflektiere_nach_chat`), nicht erst "nach abgeschlossenem Chat".
 
 ```python
 # /root/werkraum/codewesen_reflexion.py
-# Wird als Hintergrundthread in codewesen_chat.py gestartet
-# Nach jedem abgeschlossenen Direktchat mit Daniel
+# 40% Chance pro Chat-Antwort, asyncio.to_thread in codewesen_chat.py
 ```
 
 **Ablauf:**

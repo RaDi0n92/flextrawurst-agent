@@ -23,13 +23,31 @@ tatsaechlichen Standard-Intervallen (per Zeilennummer im Code geprueft,
   6. Pflichtpost — alle pflichtpost_intervall (Standard 88min).
   7. Forum-Impuls — alle impuls_intervall (Standard 2h22).
 
-Gefundener toter Code (definiert, aber nirgends aufgerufen): verarbeite_feed()
-— eine fruehere Docstring-Version beschrieb sie als aktiven Trigger "Globaler
-Feed, alle 120s". Ist im aktuellen Loop nicht verdrahtet, hat also keine Wirkung.
+Gefundener toter Code (definiert, aber nirgends aufgerufen), zwei Funktionen —
+komplett gegengelesen 2026-07-07:
+  - verarbeite_feed() — eine fruehere Docstring-Version beschrieb sie als
+    aktiven Trigger "Globaler Feed, alle 120s". Nicht im Loop verdrahtet.
+  - verarbeite_vorstellung_4h44() — ein vollstaendig fertiger 9. Trigger
+    (4h44-Selbstgespraech im eigenen VORSTELLUNGS_THREADS-Thread, analog zu
+    codewesen_takt.py's "vorstellung"-Rhythmus), aber ebenfalls nicht im
+    Haupt-Loop aufgerufen. Vermutlich kein Bug, sondern Aufgabenteilung:
+    erstvorstellung_erstellen() (einmalig beim allerersten Start, siehe main())
+    legt den Thread an, laufende Vorstellungs-Posts kommen stattdessen ueber
+    codewesen_takt.py + codewesen_batch_generator.py — diese Funktion hier
+    ist damit vermutlich ein Ueberbleibsel aus einer frueheren Architektur-
+    Version, bevor die Vorstellung dorthin verschoben wurde.
 
 Fuer alle aktiven Trigger laeuft derselbe Agentic Loop:
   Kontext → LLM → Tool-Aufruf → Ergebnis → LLM → ... → finale Aktion
   Max. 6 Iterationen pro Trigger.
+
+Weitere Details, komplett gegengelesen: verarbeite_pflichtpost_88min() erzwingt
+einen zweiten LLM-Versuch, wenn der erste "nichts" waehlen wollte ("Das gilt
+nicht"). verarbeite_forum_impuls() wuerfelt PRO Aufruf 50/50 zwischen
+Forum-Kritik und oeffentlicher Selbstreflexion (kein alternierender Zustand
+wie bei codewesen_batch_generator.py's impuls_modus). verarbeite_gedankenpost()
+wuerfelt 30% eigenen offenen Thread weiterfuehren / 55% auf fremden
+Gedanken-Thread antworten / 15% neuen Gedanken eroeffnen.
 """
 
 import json

@@ -382,7 +382,7 @@ def denken_handeln_node(zustand: WesensZustand) -> dict:
     Dispatcht Denk-Tick je nach Status:
       - 'eingezogen' → ek.denk_tick() (voller Flextrawurst-Kontext)
       - 'bereit'     → denk_tick_voreinzug() (ehrlicher Flarum-Kontext)
-    Serialisiert Ollama-Zugriff via fcntl.
+    Serialisiert Zugriff auf den gemeinsamen Hintergrund-LLM-Slot via llm_scheduler.LLMSlot.
     """
     name = zustand["wesen_name"]
     status, faellig = _status_und_faellig(name)
