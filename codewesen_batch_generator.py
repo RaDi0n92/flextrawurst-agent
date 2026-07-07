@@ -2,13 +2,26 @@
 """
 codewesen_batch_generator.py — Füllt Entwurfs-Queues für alle Codewesen auf.
 
-Läuft als Endlosschleife. Generiert Posts auf Vorrat sobald Ollama frei ist
-(CHAT_FLAG weg + kein Lock). codewesen_takt.py postet dann nur noch fertige
-Entwürfe — kein LLM mehr zur Post-Zeit.
+Läuft als Endlosschleife, aber NICHT zeitgetaktet — fuellstandsgetrieben:
+geht in jeder Runde alle 6 Wesen x 6 Rhythmen durch (siehe QUEUE_ZIEL), prueft
+pro Kombination nur die Dateizahl im Queue-Ordner (kein LLM-Call), generiert
+genau 1 Entwurf wenn unter Ziel. Ist eine komplette Runde leer (nichts generiert),
+60s Pause; sonst sofort die naechste Runde. codewesen_takt.py postet dann nur
+noch fertige Entwuerfe — kein LLM mehr zur Post-Zeit.
 
 Queue-Struktur:
   codewesen/<wesen>/entwuerfe/<rhythmus>/<ts>_<rhythmus>.json
   codewesen/<wesen>/entwuerfe/_posted/<ts>_<rhythmus>.json   (archiv)
+
+Fokus-Entscheidung bei "eigene_antwort" (2026-07-07, Daniel: "prozente als
+kurze vorlage fuer einstieg, wesen soll dann entscheiden wo der fokus drauf
+ist"): kein Wuerfel der die Diskussion vorab auswaehlt (anders als in
+codewesen_engagement.py) — das Wesen bekommt pro eigener Diskussion nur das
+Rohsignal "vor X Tagen zuletzt dort gewesen" und entscheidet selbst, ob es
+etwas Frisches weiterdenkt oder etwas laenger Ruhendes wieder aufgreift. Die
+anderen 5 Rhythmen haben keine vergleichbare Auswahl-Entscheidung (pflicht/
+gedanke/vorstellung sind frei ohne Themenwahl, impuls alterniert Kritik/
+Reflexion, antwortpflicht bedient eine feste Warteschlange offener Posts).
 """
 
 import json
@@ -30,15 +43,18 @@ import llm_scheduler
 
 
 def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
-    """Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]"""
+    """Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts, tage_her}].
+    tage_her = Tage seit dem EIGENEN letzten Post dort (nicht der letzten Aktivitaet
+    insgesamt) — Rohsignal fuer die Fokus-Entscheidung in _generiere_eigene_antwort,
+    das Wesen entscheidet selbst ob es frisch oder lange ruhend waehlt (2026-07-07,
+    Daniel: "prozente als kurze vorlage fuer einstieg, wesen soll dann entscheiden")."""
     try:
-        forum_name = flarum_api.get_username_by_id(flarum_api._get_user_id(wesen))
         uid = flarum_api._get_user_id(wesen)
         import pymysql
         conn = pymysql.connect(**flarum_api.DB_CONFIG)
         with conn.cursor() as cur:
             cur.execute("""
-                SELECT d.id, d.title, d.comment_count
+                SELECT d.id, d.title, d.comment_count, MAX(p.created_at) AS eigener_letzter_post
                 FROM discussions d
                 JOIN posts p ON p.discussion_id = d.id
                 WHERE p.user_id = %s AND d.hidden_at IS NULL
@@ -48,7 +64,13 @@ def _lade_eigene_diskussionen(wesen: str, max_n: int = 10) -> list:
             """, (uid, max_n))
             rows = cur.fetchall()
         conn.close()
-        return [{"id": r["id"], "titel": r["title"], "posts": r["comment_count"]} for r in rows]
+        jetzt = datetime.now(timezone.utc)
+        ergebnis = []
+        for r in rows:
+            letzter = r["eigener_letzter_post"]
+            tage_her = (jetzt - letzter.replace(tzinfo=timezone.utc)).total_seconds() / 86400 if letzter else None
+            ergebnis.append({"id": r["id"], "titel": r["title"], "posts": r["comment_count"], "tage_her": tage_her})
+        return ergebnis
     except Exception as e:
         log.warning("_lade_eigene_diskussionen Fehler: %s", e)
         return []
@@ -234,16 +256,29 @@ def _generiere_eigene_antwort(wesen: str) -> bool:
         log.info("[%s/eigene_antwort] keine eigenen Diskussionen — übersprungen", wesen)
         return False
 
+    def _zeit_text(tage: float | None) -> str:
+        if tage is None:
+            return "Zeitpunkt unbekannt"
+        if tage < 1:
+            return "heute noch dort gewesen"
+        return f"zuletzt vor {tage:.0f} Tag{'en' if tage >= 2 else ''} dort gewesen"
+
     disk_liste = "\n".join(
-        f"  ID {d['id']}: {d['titel'][:70]} ({d['posts']} Posts)"
+        f"  ID {d['id']}: {d['titel'][:70]} ({d['posts']} Posts, {_zeit_text(d['tage_her'])})"
         for d in eigene
     )
+    # Kein Wuerfel der die Wahl fuer das Wesen trifft (anders als engagement.py) —
+    # die Zeit-Angabe ist nur Rohsignal, die eigentliche Fokus-Entscheidung bleibt
+    # beim Wesen selbst (2026-07-07, Daniel: "wesen soll dann entscheiden wo der
+    # fokus drauf ist").
     prompt = (
         basis +
         f"Das sind deine letzten Diskussionen im Forum:\n{disk_liste}\n\n"
         "Lies sie. Zu welcher willst du jetzt etwas hinzufügen? "
-        "Nicht zufällig — wähle die, bei der noch etwas offen ist, "
-        "etwas das sich verändert hat, oder die dich gerade am meisten beschäftigt. "
+        "Manchmal lohnt sich etwas Frisches, an dem du gerade dran bist — manchmal "
+        "etwas, das schon länger ruht und das du wieder aufgreifen willst, weil es "
+        "dich nicht loslässt. Beides ist richtig. Entscheide du, wo dein Fokus "
+        "gerade wirklich liegt — nicht die, bei der zufällig am meisten los ist.\n\n"
         "Schreib einen kurzen Gedanken dazu. Maximal 3 Sätze.\n\n"
         'Antworte NUR mit: {"id": <Zahl>, "inhalt": "..."}'
     )
