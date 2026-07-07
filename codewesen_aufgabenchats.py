@@ -65,6 +65,13 @@ sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import flarum_poster
 import codewesen_container as container
+import dienst_konfiguration as dk
+
+# Individualisierung (flarumstyler, 2026-07-07): kein Zeittakt (Flag-Datei-gesteuert),
+# nur Verhalten ueberschreibbar — wird an den System-Prompt angehaengt, NACH der
+# Marker-Sprache (die bleibt Code-kontrolliert, sonst brechen [[LESEN:]] etc.).
+DIENST_NAME = "codewesen-aufgabenchats"
+STANDARD_VERHALTEN = ""
 
 BASE      = Path("/root/werkraum/codewesen")
 AUFGABENCHATS_ROOT = Path("/root/werkraum/aufgabenchats")
@@ -377,6 +384,9 @@ def _fuehre_selbstgespraech(wesen: str) -> None:
         wesen=wesen, weltbild=_weltbild(wesen) or "(kein Weltbild hinterlegt)",
         pin_container=f"\n{pin_text}\n" if pin_text else "",
     )
+    verhalten = dk.lade(DIENST_NAME).get("verhalten_text") or STANDARD_VERHALTEN
+    if verhalten:
+        system_prompt += f"\n\n{verhalten}"
     start_impuls = _lies_impuls(wesen)
     if start_impuls:
         _anhaengen(hp, {"type": "impuls", "text": start_impuls["text"], "key": start_impuls.get("key"), "ts": _js_ts()})
