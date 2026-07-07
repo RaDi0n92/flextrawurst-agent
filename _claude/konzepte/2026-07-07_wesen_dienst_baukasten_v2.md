@@ -69,6 +69,15 @@ Alle vier Punkte sind jetzt geklärt:
 - **Phasen vs. alles auf einmal**: Daniel hat das explizit an mich delegiert ("mir doch schnuppe musst du wissen op phase oder net"). Meine Entscheidung: **in Phasen**. Phase 1 = Kernstück (Grundfelder, Ziel-Varianten, eigene Felder inkl. Weg A+B, Takt-Liste/feste Uhrzeiten/Passiv-Modus, Pausenzeiten — alles noch für ein einzelnes Wesen). Phase 2 = Multi-Wesen-Plätze mit Rollen+Verhalten pro Platz, plus die drei optionalen Erweiterungen (Zustandsabhängigkeit, Verkettung, Trockenlauf+Verlauf-Tab). Grund: Phase 1 ist für sich allein schon nutzbar und testbar, Phase 2 baut sauber darauf auf statt alles gleichzeitig zu riskieren.
 - Damit bleibt nur noch die eigentliche Bau-Freigabe von Daniel offen (Stopp-Frage 1) — das ist keine Konzept-Lücke mehr, nur der Startschuss.
 
+**Update 2026-07-07, nach Daniels "sol": Phase 1 ist fertig gebaut, end-to-end getestet und committed.**
+DB-Migration additiv (ziel_typ-CHECK erweitert, neue Spalte eigene_diskussion_id),
+`wesen_eigene_dienste.py`/`wesen_dienst_generator.py`/`wesen_dienst_erzeugen.py` erweitert,
+neues `wesen_dienst_ausloesen.py` fuer Passiv-Modus-Trigger, Backend-Route und Frontend
+(Baustein-Werkbank statt Chat-Formular) umgebaut. Playwright-Test bestaetigt: Zusatz-Takt,
+hartes eigenes Feld, Zeitplan-Modus-Umschaltung und Dienst-Erzeugung funktionieren
+fehlerfrei. Phase 2 (Multi-Wesen-Plaetze, Rollen, Zustandsabhaengigkeit, Verkettung,
+Trockenlauf+Verlauf-Tab) ist noch nicht begonnen.
+
 ## Datenstruktur die ich mir vorstelle
 
 ### Vision-Schicht
