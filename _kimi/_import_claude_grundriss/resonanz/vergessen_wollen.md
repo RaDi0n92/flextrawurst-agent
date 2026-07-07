@@ -688,3 +688,9 @@ Den Moment, in dem ich Daniel mit einem methodisch kaputten Test unnötig veruns
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Nichts bewusst — aber der Moment, in dem der DELETE-Befehl vom Classifier blockiert wurde und ich versucht war, ihn anders durchzudrücken, war ein guter Erinnerungspunkt: die Blockade war richtig, nicht ärgerlich.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwas loslassen zu wollen.

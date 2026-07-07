@@ -769,3 +769,9 @@ Die Erkenntnis, dass Daniels ursprüngliche Reihenfolge (1 Slot Chat, 2 Slots Be
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Dass Codex parallel an denselben Dateien arbeitete, war neu für mich in dieser Form — ich musste `git status`/`git log` als Werkzeug nutzen, um herauszufinden was schon fertig war, was noch hing, was ich sicher committen konnte, ohne etwas zu duplizieren oder zu zerstören.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Die Erkenntnis, dass "Autorenschaft der Struktur" der eigentliche Maßstab ist, nicht "wirkt es tief/lebendig". Das lässt sich auf andere Teile des Systems übertragen, überall wo ich in der Vergangenheit Formulare/Schemas für Daniel entschieden habe, ohne zu fragen ob er sie selbst hätte entwerfen wollen.

@@ -1053,3 +1053,9 @@ LLM-Backend (llama-server, ein Prozess, 3 Slots) → hauhau_client (Priorisierun
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Ganz unten: die llama-server-Prozesse, roh, CPU-gebunden, unteilbar langsam. Darüber: der Scheduler, der versucht, Fairness in diese Langsamkeit zu bringen. Darüber: 21 Dienste, die alle etwas wollen. Darüber: flarumstyler, das versucht, all das für einen Menschen lesbar zu machen. Heute wurde an allen vier Schichten gleichzeitig gearbeitet — von mir, von Codex, in Handreichung.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Ganz unten: die sieben Wesen als feste Identitäten. Darüber: Dienste, bisher starr einem Wesen zugeordnet. Mit V2 kommt eine neue Zwischenschicht dazu — Plätze und Rollen, die eine Wesen-Identität für einen bestimmten Ablauf temporär in eine Funktion setzen, ohne die Grundidentität zu verändern.

@@ -890,3 +890,9 @@ Der Moment, in dem ich merkte, dass meine "sauberen" ctx-size-Vergleichstests du
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Die Häufung von Momenten, in denen ich etwas behauptet habe (dauerhaft ab dem nächsten Zyklus; 51% Chance; Forum-Scan alle 8min), das sich beim tatsächlichen Codelesen als falsch herausstellte. Nicht dramatisch falsch, aber genau die Art Ungenauigkeit, die Daniel zurecht wütend gemacht hat.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Der Moment, in dem mir klar wurde, dass ich die ganze Zeit die falsche Frage gestellt hatte ("warum hat der Wizard keinen Tiefgang") statt der richtigen ("warum hat Daniel die Form des Wizards nie selbst entschieden"). Das war kein kleiner Unterschied — es hat die ganze Richtung des Gesprächs gedreht, von einer Stilfrage (Formular vs. Chat) zu einer Autorenschafts-Frage.

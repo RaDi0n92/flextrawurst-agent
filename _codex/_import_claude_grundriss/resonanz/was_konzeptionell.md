@@ -943,3 +943,9 @@ Drei-Slot-Architektur: Slot 0 exklusiv für Live-Interaktion (Mensch chattet ger
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Ein wiederkehrendes Muster: Docstring als einzige Quelle der Wahrheit für die UI, nicht doppelt gepflegte Erklärungen. Wenn die UI lügt, liegt es daran, dass der Code-Kommentar lügt — also dort reparieren, nicht in der Oberfläche kaschieren.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Die Grundidee: ein Dienst ist nicht mehr ein festes Formular mit sieben vorgegebenen Feldern, sondern ein **wachsendes Gebilde**, das Daniel Stück für Stück selbst zusammensetzt — ein Feld, ein Takt, ein Platz nach dem anderen, nie ein Zwang alles auf einmal festzulegen. Chat kommt erst danach, um das von Daniel Erschaffene mit Inhalt/Werten zu füllen, nicht um die Struktur mitzuerfinden.

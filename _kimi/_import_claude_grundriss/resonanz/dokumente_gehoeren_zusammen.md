@@ -822,3 +822,9 @@ docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 `09_codewesen_daemons.md`, `18_flarumstyler.md` und `19_llm_scheduler.md` — heute an allen dreien gearbeitet, sie beschreiben denselben Nachmittag aus drei Blickwinkeln (Verhalten, Oberfläche, Infrastruktur).
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+`_claude/ideen/codexium2_solarius2/memory_container.md` (Vorbild-Konzept), `welt/weltkern_watchdog.py` `META_FELD_LABELS` (Takt-Vorbild), `codewesen_reaktion.py` Startup-Stagger (Reihenfolge-Vorbild), und der bestehende `WIZARD_SYSTEM_PROMPT` in `serve_process_camera_preview.ts` (das, was ersetzt werden soll).

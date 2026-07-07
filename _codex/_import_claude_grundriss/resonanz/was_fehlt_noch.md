@@ -881,3 +881,9 @@ Siehe "Was ich mir merken will" oben — die 2 restlichen Dateien + Neustarts + 
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Die restlichen ~12 codewesen-Dienste vollständig auf den Individualisierungslayer umzustellen (siehe `18_flarumstyler.md`, unverändert offen). Klärung des N_SLOTS-Widerspruchs mit Daniel. Beobachten, ob die neuen Antwortregeln (72%, 6h-Rotation) sich in der Praxis richtig anfühlen, sobald die Slot-Überlastung sich beruhigt.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die A-vs-B-Bedingungsfrage. Die Zufalls-Pool-Detailfrage. Erst danach: bauen.

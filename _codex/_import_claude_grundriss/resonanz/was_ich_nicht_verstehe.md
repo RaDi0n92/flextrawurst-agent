@@ -876,3 +876,9 @@ Ob die id_slot-Reservierung (Slot 0 = Chat) unter echter Volllast tatsächlich d
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Warum `N_SLOTS["hintergrund"]` heute vormittags von 2 auf 1 reduziert wurde, obwohl der llama-server selbst weiterhin `--parallel 2` läuft. Kein Kommentar, keine Commit-Message erklärt das. Ich habe es dokumentiert als offenen Widerspruch statt es zu raten oder still zu vereinheitlichen — aber ich weiß es nicht, und das sitzt unbequem.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Ob "Bedingungen Weg B" (harte, von Python geprüfte Bedingungen mit festen Feld-Typen) am Ende wirklich gebraucht wird, oder ob in der Praxis fast alles über Weg A (Freitext, das Wesen entscheidet selbst) laufen wird und Weg B nur für sehr wenige, echt kritische Fälle (z.B. "poste NIE zwischen 2 und 6 Uhr nachts") gebraucht wird. Das lässt sich erst beim echten Bauen/Benutzen zeigen, nicht vorher am Reißbrett.

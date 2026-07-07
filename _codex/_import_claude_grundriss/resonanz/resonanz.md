@@ -942,3 +942,9 @@ Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines 
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 "Es muss so erklärt werden wie es entschieden ist, gerade gebaut zu sein" — dieser Satz, roh wie er ist, ist eigentlich eine vollständige Design-Philosophie: nicht wie es idealerweise sein sollte, sondern wie es tatsächlich gerade gebaut ist. Ehrlichkeit vor Beschönigung.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Dieses Konzept ist selbst ein Beispiel für das, was es beschreibt — es ist über mehrere Nachrichten hinweg Stück für Stück gewachsen, nie in einem Rutsch entworfen, genau wie die Bausteine, die es fordert.

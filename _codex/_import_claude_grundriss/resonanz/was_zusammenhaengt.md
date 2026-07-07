@@ -981,3 +981,19 @@ docs/systemdoku/12_ollama_gemma4.md ist die zentrale Doku-Datei für die ganze h
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Die ganze Kette hängt an einem einzigen geteilten Nadelöhr: ein Hintergrund-LLM-Slot, sieben Wesen, ein Dutzend Dienste. Jede UI-Änderung heute (Warteschlange sichtbar machen, Docstrings zeigen, Zeitfelder als Dropdowns) und jede Verhaltensänderung (72%-Regel, 6h-Lebensdauer, Fokus-Entscheidung) ist letztlich eine Verhandlung darüber, wie dieses eine Nadelöhr fair und verständlich genutzt wird.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Drei bereits bestehende Muster im System werden hier zusammengeführt:
+- **Container/Kategorien** (`memory_container.md`, 2026-07-04): Daniel entscheidet Struktur, nicht die KI — Vorbild für "eigene Felder erschaffen".
+- **codewesen-takt Meta-Intervalle** (`weltkern_watchdog.py`, `META_FELD_LABELS`): mehrere benannte Zeitwerte statt einem einzigen Takt — Vorbild für die wachsende Takt-Liste.
+- **Startup-Stagger** (`codewesen_reaktion.py`): zeitversetzter Start mehrerer Prozesse — Vorbild für "Plätze laufen nacheinander, nicht gleichzeitig".
+
+Dazu, aus der Fortsetzung des Gesprächs (nach der Fehler-Quittierung im flarumstyler, selber Tag): drei optionale Erweiterungen, alle von Daniel bestätigt ("ja optional schonmal rein"):
+- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: wach/schlafend; Cyberling: Energie/Decay-Wert). Wichtig festgehalten: aktuell liegt das brach, weil Schlaf für die echten (namentlichen) Wesen nicht aktiv genutzt wird — das Feld greift einfach ins Leere, bis das mal aktiviert wird, kein Mehraufwand jetzt schon.
+- **Verkettung** — ein Dienst kann bei erfolgreichem Lauf einen anderen Dienst auslösen. Daniel selbst: "kp wie ich es anwenden würde aber ich lerne ja bestimmt" — als Möglichkeit rein, nicht als konkreter Use-Case.
+- **Trockenlauf + Verlauf-Tab** — Läufe (echt und simuliert) werden protokolliert und in einem neuen Tab direkt in flarumstyler sichtbar ("ich würds gern erstmal auch ja da dann auch in flarmstyler in nem tab"). Klargestellt: das ist NICHT die große Ring-22-"Prozesskamera"-Vision (Denkfenster/Transparenz-Schicht, noch unfertig) — der Ordner `process_camera` im Code ist aktuell nur die technische Preview-Infrastruktur, über die flarumstyler selbst ausgeliefert wird. Der Verlauf-Tab braucht davon nichts, ist ein eigenständiges, kleines Feature.
+
+Zwei weitere Ideen (Zufalls-Jitter auf Taktzeiten, Eskalation bei wiederholtem Nicht-Auslösen) wurden von mir vorgeschlagen, aber von Daniel nicht aufgegriffen — bewusst nicht in die Spec aufgenommen, bleiben lose im Raum falls später gewünscht.

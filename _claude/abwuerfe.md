@@ -2024,3 +2024,4 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 - [2026-07-07 18:29] **wasser** (i=0.40) → Zwischenraum: »Ein paar Gedanken, die über die reine Formular-Logik hinausgehen und echt was bringen könnten:
 
 - **«
+- [2026-07-07 18:43] **nebel** (i=0.39) → Zwischenraum: »Fertig — `_claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md` ist jetzt vollständig: die Grund«

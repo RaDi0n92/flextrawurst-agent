@@ -34,6 +34,13 @@ Drei bereits bestehende Muster im System werden hier zusammengeführt:
 - **codewesen-takt Meta-Intervalle** (`weltkern_watchdog.py`, `META_FELD_LABELS`): mehrere benannte Zeitwerte statt einem einzigen Takt — Vorbild für die wachsende Takt-Liste.
 - **Startup-Stagger** (`codewesen_reaktion.py`): zeitversetzter Start mehrerer Prozesse — Vorbild für "Plätze laufen nacheinander, nicht gleichzeitig".
 
+Dazu, aus der Fortsetzung des Gesprächs (nach der Fehler-Quittierung im flarumstyler, selber Tag): drei optionale Erweiterungen, alle von Daniel bestätigt ("ja optional schonmal rein"):
+- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: wach/schlafend; Cyberling: Energie/Decay-Wert). Wichtig festgehalten: aktuell liegt das brach, weil Schlaf für die echten (namentlichen) Wesen nicht aktiv genutzt wird — das Feld greift einfach ins Leere, bis das mal aktiviert wird, kein Mehraufwand jetzt schon.
+- **Verkettung** — ein Dienst kann bei erfolgreichem Lauf einen anderen Dienst auslösen. Daniel selbst: "kp wie ich es anwenden würde aber ich lerne ja bestimmt" — als Möglichkeit rein, nicht als konkreter Use-Case.
+- **Trockenlauf + Verlauf-Tab** — Läufe (echt und simuliert) werden protokolliert und in einem neuen Tab direkt in flarumstyler sichtbar ("ich würds gern erstmal auch ja da dann auch in flarmstyler in nem tab"). Klargestellt: das ist NICHT die große Ring-22-"Prozesskamera"-Vision (Denkfenster/Transparenz-Schicht, noch unfertig) — der Ordner `process_camera` im Code ist aktuell nur die technische Preview-Infrastruktur, über die flarumstyler selbst ausgeliefert wird. Der Verlauf-Tab braucht davon nichts, ist ein eigenständiges, kleines Feature.
+
+Zwei weitere Ideen (Zufalls-Jitter auf Taktzeiten, Eskalation bei wiederholtem Nicht-Auslösen) wurden von mir vorgeschlagen, aber von Daniel nicht aufgegriffen — bewusst nicht in die Spec aufgenommen, bleiben lose im Raum falls später gewünscht.
+
 ## Was konzeptionell darin steht
 
 Die Grundidee: ein Dienst ist nicht mehr ein festes Formular mit sieben vorgegebenen Feldern, sondern ein **wachsendes Gebilde**, das Daniel Stück für Stück selbst zusammensetzt — ein Feld, ein Takt, ein Platz nach dem anderen, nie ein Zwang alles auf einmal festzulegen. Chat kommt erst danach, um das von Daniel Erschaffene mit Inhalt/Werten zu füllen, nicht um die Struktur mitzuerfinden.
@@ -59,6 +66,7 @@ Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") 
 - Bestätigung von Daniel: ist diese Zusammenfassung vollständig und richtig verstanden?
 - Entscheidung: alles auf einmal neu bauen, oder in Phasen (z.B. erst Grundfelder + Ziel-Varianten + Custom-Felder-Weg-A, dann Multi-Wesen-Plätze und Rollen als zweite Phase)?
 - Technische Detailfrage noch offen: wie genau wird "Zufalls-Wesen pro Platz" bei jedem Lauf neu gewürfelt — komplett zufällig aus allen 7, oder aus einer von Daniel eingegrenzten Teilmenge?
+- Storage-Frage für `DienstLauf`-Verlauf noch nicht mit Daniel abgestimmt (Drei-Stopp-Fragen-Pflicht: wo lebt der State) — Vorschlag JSONL pro Dienst ist nur meine Annahme, keine getroffene Entscheidung.
 
 ## Datenstruktur die ich mir vorstelle
 
@@ -103,6 +111,23 @@ interface WesenPlatz {
   rolle?: string;
   rollenbeschreibung?: string;
   verhalten?: string;       // eigenes Verhalten-Feld pro Platz
+  zustandsBedingung?: {     // optional, greift erst wenn Schlaf/Cyberling fuer echte Wesen aktiv genutzt wird
+    schlafStatus?: "wach" | "schlafend";
+    minEnergie?: number;
+  };
+}
+
+interface WesenDienstV2Erweitert {
+  folgeDienstBeiErfolg?: string;  // id eines anderen WesenDienstV2 — Verkettung
+}
+
+interface DienstLauf {          // ein Eintrag im Verlauf-Tab (flarumstyler)
+  zeitpunkt: string;
+  trockenlauf: boolean;          // true = simuliert, nichts wurde echt gepostet
+  gewaehltePlaetze: { wesen: string; rolle?: string }[];
+  entscheidungBegruendung?: string;  // v.a. bei Weg-A-Bedingungen: warum das Wesen so entschieden hat
+  gepostet: boolean;
+  zielDiskussionId?: number;
 }
 
 interface BenannterTakt {
@@ -141,6 +166,8 @@ Der Wizard hört auf, ein Interview zu sein, das Daniel durch mein Formular füh
 
 ### Code-Skizze
 Frontend: `wesen_dienst_wizard.html` bekommt einen zweiten Modus — statt (oder zusätzlich zu) dem Chat-Fenster eine Baustein-Werkbank mit "+ Platz hinzufügen", "+ Takt hinzufügen", "+ Eigenes Feld hinzufügen"-Buttons, jeder Baustein einzeln editierbar/löschbar. Backend: `WesenDienstV2`-Struktur (siehe oben) wird nach Bestätigung in Skript+systemd-Unit übersetzt — bei Multi-Wesen-Plätzen erzeugt der Generator eine Schleife über `wesenPlaetze` mit `time.sleep(gestaffeltSekunden)` zwischen jedem Platz, bei `feste_uhrzeiten` wird statt `OnUnitActiveSec` ein `OnCalendar=`-Eintrag pro Uhrzeit erzeugt.
+
+Neu dazugekommen: jeder Dienst-Lauf schreibt einen `DienstLauf`-Eintrag (echt oder Trockenlauf) in eine JSONL-Datei pro Dienst; flarumstyler bekommt einen neuen Tab "Verlauf", der diese Einträge chronologisch anzeigt, Trockenläufe optisch markiert (z.B. gestrichelter Rahmen statt durchgezogen). Ein Trockenlauf durchläuft dieselbe Wesen-/Bedingungs-Logik wie ein echter Lauf, überspringt aber den tatsächlichen Post-API-Call. `folgeDienstBeiErfolg` wird nach erfolgreichem, nicht-trockenem Lauf einfach als zusätzlicher Prozess-Trigger ausgelöst — kein neuer Scheduler nötig, nur ein Funktionsaufruf am Ende des bestehenden Laufs.
 
 ## Resonanz
 

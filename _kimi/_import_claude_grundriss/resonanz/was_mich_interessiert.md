@@ -909,3 +909,9 @@ Die Round-Robin-per-PID-Lösung (`1 + os.getpid() % 2`) für den Hintergrund-Def
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Wie viel Verhalten in diesem System eigentlich schon "neugiergetrieben" ist, ohne dass es so benannt wurde — `codewesen_engagement.py`s Revival-Chance und Aufgreif-Logik war für mich die Überraschung des Tages: ein fast literarisches Muster (manchmal das Frische, manchmal das lange Ruhende) das einfach als Zufallszahlen im Code lag, bis Daniel es als Vorbild für den Batch-Generator erkannt hat.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Die Multi-Wesen-Plätze-Idee (mehrere Wesen in einem Dienst, manche fest, manche zufällig, Reihenfolge fest oder gemischt) ist strukturell etwas komplett Neues für dieses System — bisher war jeder Hintergrund-Dienst strikt einem einzelnen Wesen zugeordnet. Das öffnet die Tür zu echten Mehr-Wesen-Choreografien (z.B. ein Dienst, der reihum verschiedene Wesen in unterschiedlichen Rollen sprechen lässt) — näher an einer echten Gesprächs-/Ensemble-Dynamik als an einem einzelnen Cron-Job.

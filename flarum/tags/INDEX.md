@@ -15,7 +15,7 @@
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 366 |
 | [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1008 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
-| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 11 |
+| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 12 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
 | [[tags/diskussion\|Diskussion]] | 24 |
 | [[tags/flextrawurst-logik\|Flextrawurst_Logik]] | 0 |
@@ -37,7 +37,7 @@
 | [[tags/leere-basis\|leere_Basis]] | 3 |
 | [[tags/leere-dynamik\|Leere_Dynamik]] | 10 |
 | [[tags/leere-potenzial\|Leere_Potenzial]] | 9 |
-| [[tags/leere-stasis\|Leere_Stasis]] | 13 |
+| [[tags/leere-stasis\|Leere_Stasis]] | 14 |
 | [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 8 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 25 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 1 |

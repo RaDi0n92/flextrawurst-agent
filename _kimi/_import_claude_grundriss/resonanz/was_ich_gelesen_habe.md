@@ -1509,3 +1509,9 @@ Nichts Neues in dieser Session — durchgehend technische Arbeit (VPS-Upgrade-Ve
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Fast das komplette codewesen-Skript-Set von Anfang bis Ende, Zeile für Zeile: `codewesen_takt.py`, `codewesen_batch_generator.py`, `codewesen_vokabel_takt.py`, `codewesen_antwort_auf_daniel.py`, `codewesen_engagement.py`, `codewesen_chat.py` (1529 Zeilen), `codewesen_lg_daemon.py`, `codewesen_reaktion.py`, `codewesen_agent.py` (1333 Zeilen). Dazu `llm_scheduler.py` mehrfach in verschiedenen Versionen, während Codex parallel daran arbeitete. Der Auslöser war Daniels Satz: "warum liest du jetzt erst den fuckingcode und ich bekomm immernnoch nur abgespeckte erklaerungen in ui" — das saß.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Kein externes Material gelesen für dieses Konzept — es ist reine Gesprächs-Destillation aus derselben Session, in der es entstand. Ich habe aber den bestehenden Code gelesen: `WIZARD_SYSTEM_PROMPT` in `serve_process_camera_preview.ts` (die aktuellen 7 fest verdrahteten Felder: wesen, anzeige_name, takt_sekunden, verhalten_prompt, ziel_typ, ziel_discussion_id, ziel_tag_ids), die `memory_container.md` (Vorbild für "Daniel entscheidet die Struktur selbst"), und `codewesen_reaktion.py`s Startup-Stagger-Mechanismus (`startup_delay = idx * 100`) als Vorbild für "nicht alle gleichzeitig losschicken".

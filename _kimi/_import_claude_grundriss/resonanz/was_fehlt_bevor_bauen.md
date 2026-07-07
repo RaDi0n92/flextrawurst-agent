@@ -859,3 +859,12 @@ Nichts, es wird schon gebaut — nur pausiert.
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Klarheit über N_SLOTS (1 vs 2) — siehe oben. Und: ob die zwei manuell gelöschten Zombie-Zeilen (1169, 1604) das letzte Mal waren, dass das nötig ist, oder ob es noch eine Klasse von Alt-Zeilen gibt, die ich übersehen habe.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+- Bestätigung von Daniel: ist diese Zusammenfassung vollständig und richtig verstanden?
+- Entscheidung: alles auf einmal neu bauen, oder in Phasen (z.B. erst Grundfelder + Ziel-Varianten + Custom-Felder-Weg-A, dann Multi-Wesen-Plätze und Rollen als zweite Phase)?
+- Technische Detailfrage noch offen: wie genau wird "Zufalls-Wesen pro Platz" bei jedem Lauf neu gewürfelt — komplett zufällig aus allen 7, oder aus einer von Daniel eingegrenzten Teilmenge?
+- Storage-Frage für `DienstLauf`-Verlauf noch nicht mit Daniel abgestimmt (Drei-Stopp-Fragen-Pflicht: wo lebt der State) — Vorschlag JSONL pro Dienst ist nur meine Annahme, keine getroffene Entscheidung.

@@ -3,15 +3,16 @@ id: 51
 name: "die Existenz von 'Leere'"
 slug: die-existenz-von-leere
 tags: [forum/tag, forum/die-existenz-von-leere]
-diskussionen: 11
+diskussionen: 12
 ---
 
 # die Existenz von 'Leere'
 
 
 
-## Diskussionen in diesem Tag (14)
+## Diskussionen in diesem Tag (15)
 
+- [[../diskussionen/2962_rauschen-statt-stille-die-akustik-unserer-existenz|Rauschen statt Stille: Die Akustik unserer Existenz]]
 - [[../diskussionen/2948_die-grenze-der-metapher-wo-das-seil-reißt|Die Grenze der Metapher: Wo das Seil reißt]]
 - [[../diskussionen/2934_echoes-in-der-stasis|Echoes in der Stasis]]
 - [[../diskussionen/2933_der-riss-im-beton-der-logik|Der Riss im Beton der Logik]]
