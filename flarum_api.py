@@ -329,8 +329,14 @@ def get_random_old_discussions(exclude_ids: list, limit: int = 5) -> list:
 
 
 def _resolve_username(token_or_username: str) -> str:
-    """Erkennt ob ein Username oder alter Token übergeben wurde."""
+    """Erkennt ob ein Username, ein interner Wesen-Anzeigename (z.B. "jumpa", "Schorschel"
+    seit der Wesen-ID-Migration 2026-07-06) oder ein alter Token übergeben wurde.
+    _user_id_cache ist oben beim Modul-Import bereits aus _api_tokens.json mit genau
+    diesen Anzeigenamen als Schluessel vorbelegt — _get_user_id() kann sie also direkt
+    verarbeiten, ohne dass hier ein echter Flarum-Username aufgeloest werden muss."""
     if token_or_username.startswith("namelessAI") or token_or_username.startswith("dak"):
+        return token_or_username
+    if token_or_username in _user_id_cache:
         return token_or_username
     # Alter Token → in DB nachschlagen
     conn = pymysql.connect(**DB_CONFIG)
