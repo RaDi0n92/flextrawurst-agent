@@ -62,6 +62,7 @@ PRIO_HOCH, PRIO_NORMAL, PRIO_NIEDRIG = 0, 1, 2
 N_SLOTS = {"hintergrund": 1, "chat": 1}
 
 POLL_INTERVALL_SEK = 1.0
+STALE_WARTER_SEK = 180
 
 
 class LLMSlotTimeout(Exception):
@@ -78,6 +79,18 @@ def _advisory_key(server: str) -> int:
     # Stabiler kleiner Hash fuer pg_advisory_lock — Pythons eingebautes hash()
     # ist pro Prozess randomisiert und taugt hier nicht als gemeinsamer Lock-Key.
     return zlib.crc32(f"llm_warteschlange:{server}".encode("utf-8")) & 0x7fffffff
+
+
+def _cleanup_stale_waiters(cur, server: str):
+    cur.execute(
+        """
+        DELETE FROM llm_warteschlange
+        WHERE server = %s
+          AND slot_bis IS NULL
+          AND angefragt_um < NOW() - (%s || ' seconds')::interval
+        """,
+        (server, STALE_WARTER_SEK),
+    )
 
 
 class LLMSlot:
@@ -116,6 +129,7 @@ class LLMSlot:
             with self._conn.cursor() as cur:
                 cur.execute("SELECT pg_advisory_lock(%s)", (key,))
                 try:
+                    _cleanup_stale_waiters(cur, self.server)
                     cur.execute(
                         """
                         UPDATE llm_warteschlange
