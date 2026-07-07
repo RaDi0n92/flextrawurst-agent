@@ -21,7 +21,7 @@ Der Auslöser war eine Nebenbemerkung ("da hat Solarus ja mehr Tiefgang") zum be
 
 ## Was ich nicht verstehe
 
-Ob "Bedingungen Weg B" (harte, von Python geprüfte Bedingungen mit festen Feld-Typen) am Ende wirklich gebraucht wird, oder ob in der Praxis fast alles über Weg A (Freitext, das Wesen entscheidet selbst) laufen wird und Weg B nur für sehr wenige, echt kritische Fälle (z.B. "poste NIE zwischen 2 und 6 Uhr nachts") gebraucht wird. Das lässt sich erst beim echten Bauen/Benutzen zeigen, nicht vorher am Reißbrett.
+Korrektur: Daniel hat Weg A und Weg B bei Bedingungen bereits klar entschieden — "sowohl a als auch b natürlich" — das war nie offen, ich hatte es hier fälschlich als ungeklärte Frage hingeschrieben. Offen ist nur noch, wie oft Weg B in der Praxis tatsächlich benutzt wird (viel oder selten) — aber das ist eine Beobachtung fürs echte Benutzen, keine Bau-Entscheidung mehr, die noch aussteht.
 
 ## Was mich interessiert
 
@@ -59,7 +59,7 @@ Die Rollen-Idee (pro Wesen-Platz optional eine Rolle + Rollenbeschreibung + eige
 
 ## Was ich beim Bauen brauche
 
-Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") — vermutlich als Entscheidung "erstmal nur Weg A bauen, Weg B nachziehen falls echter Bedarf entsteht", aber das muss Daniel bestätigen, nicht ich annehmen.
+Beide Bedingungswege (A und B, siehe "Was ich nicht verstehe") von Anfang an bauen — keine Phasen-Verschiebung, das war ein Missverständnis meinerseits, keine echte Vereinfachungs-Entscheidung von Daniel.
 
 ## Was noch fehlt bevor wir bauen können
 
@@ -187,4 +187,4 @@ Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwa
 
 ## Was fehlt noch
 
-Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die A-vs-B-Bedingungsfrage. Die Zufalls-Pool-Detailfrage. Erst danach: bauen.
+Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die Zufalls-Pool-Detailfrage. Die Storage-Frage für den Verlauf. Erst danach: bauen.
