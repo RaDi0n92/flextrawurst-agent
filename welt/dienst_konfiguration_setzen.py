@@ -19,18 +19,29 @@ import dienst_konfiguration as dk
 
 
 def main():
-    # Beide Felder sind Pflicht (das UI-Formular schickt immer den vollstaendigen
-    # gewuenschten Zustand) — leerer String bedeutet "kein Override, Skript-Default gilt".
+    # takt-sekunden/verhalten-text sind Pflicht (das UI-Formular schickt immer den
+    # vollstaendigen gewuenschten Zustand fuer diese zwei) — leerer String bedeutet
+    # "kein Override, Skript-Default gilt". --meta ist optional: nicht angegeben =
+    # bestehendes meta bleibt unangetastet (fuer Dienste wie codewesen-takt, die
+    # mehrere benannte Werte statt einem einzigen Takt brauchen, siehe meta.intervalle).
     p = argparse.ArgumentParser()
     p.add_argument("dienst_name")
     p.add_argument("--takt-sekunden", required=True)
     p.add_argument("--verhalten-text", required=True)
+    p.add_argument("--meta", default=None)
     args = p.parse_args()
 
     takt = int(args.takt_sekunden) if args.takt_sekunden.strip() else None
     verhalten = args.verhalten_text if args.verhalten_text.strip() else None
+    meta = None
+    if args.meta is not None and args.meta.strip():
+        try:
+            meta = json.loads(args.meta)
+        except Exception as e:
+            print(json.dumps({"ok": False, "fehler": f"meta ist kein gueltiges JSON: {e}"}, ensure_ascii=False))
+            sys.exit(1)
 
-    ergebnis = dk.speichere(args.dienst_name, takt_sekunden=takt, verhalten_text=verhalten)
+    ergebnis = dk.speichere(args.dienst_name, takt_sekunden=takt, verhalten_text=verhalten, meta=meta)
     print(json.dumps(ergebnis, default=str, ensure_ascii=False))
 
 

@@ -25,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, "/root/werkraum")
 import flarum_api
 import flarum_poster
+import dienst_konfiguration as dk
 
 BASE        = Path("/root/werkraum/codewesen")
 TOKENS_FILE = BASE / "_api_tokens.json"
@@ -80,6 +81,16 @@ _INTERVALLE = {
     "gedanke":    (4 * 60 + 44) * 60,
     "vorstellung": (4 * 60 + 44) * 60,
 }
+
+# Individualisierung (flarumstyler, 2026-07-07, Ausnahme von Grundgesetz 6 auf
+# Daniels Wunsch): 6 benannte Takte statt einem einzigen Wert — kein einzelnes
+# takt_sekunden, sondern ueberschreibbar ueber meta.intervalle (JSONB) in
+# dienst_konfiguration, z.B. {"intervalle": {"eigene_antwort": 1200}}.
+# Wird EINMAL beim Start gelesen (nicht pro Sleep-Zyklus wie bei den anderen
+# Diensten), weil daraus eine langlebige Zeitplan-Tabelle berechnet wird — ein
+# Neustart macht Aenderungen wirksam. Kein LLM in dieser Datei, daher kein
+# verhalten_text.
+DIENST_NAME = "codewesen-takt"
 
 
 def _tokens() -> dict:
@@ -269,6 +280,11 @@ def rhythmus_vorstellung(wesen: str):
 def main():
     log.info("Takt gestartet — 6 Rhythmen, 6 Wesen. Kein LLM zur Post-Zeit.")
     _tokens()
+
+    overrides = (dk.lade(DIENST_NAME).get("meta") or {}).get("intervalle") or {}
+    if overrides:
+        _INTERVALLE.update({k: int(v) for k, v in overrides.items() if k in _INTERVALLE})
+        log.info("Takt-Overrides aus dienst_konfiguration geladen: %s", overrides)
 
     jetzt = time.time()
 

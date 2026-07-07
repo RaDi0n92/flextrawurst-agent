@@ -188,6 +188,7 @@ SERVICES_GESPERRT_FUER_AKTIONEN = {"ollama", "process-camera-preview", "welt-api
 DIENSTE_MIT_KONFIGURATION = {
     "codewesen-vokabel-takt", "codewesen-antwort-daniel", "codewesen-weltbild",
     "codewesen-forum-neugier", "codewesen-engagement", "codewesen-batch-generator",
+    "codewesen-takt",
 }
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
