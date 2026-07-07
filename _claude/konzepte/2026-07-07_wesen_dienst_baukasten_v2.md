@@ -35,7 +35,7 @@ Drei bereits bestehende Muster im System werden hier zusammengeführt:
 - **Startup-Stagger** (`codewesen_reaktion.py`): zeitversetzter Start mehrerer Prozesse — Vorbild für "Plätze laufen nacheinander, nicht gleichzeitig".
 
 Dazu, aus der Fortsetzung des Gesprächs (nach der Fehler-Quittierung im flarumstyler, selber Tag): drei optionale Erweiterungen, alle von Daniel bestätigt ("ja optional schonmal rein"):
-- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: wach/schlafend; Cyberling: Energie/Decay-Wert). Wichtig festgehalten: aktuell liegt das brach, weil Schlaf für die echten (namentlichen) Wesen nicht aktiv genutzt wird — das Feld greift einfach ins Leere, bis das mal aktiviert wird, kein Mehraufwand jetzt schon.
+- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: `entity_slots.status`; Cyberling: `cyberlinge.energie`). Korrektur beim Bauen (Phase 2): entgegen meiner ursprünglichen Annahme hier läuft für alle 7 Wesen echte, live Schlaf/Energie-Daten in der DB — die Bedingung greift also nicht ins Leere, sondern gegen echten aktuellen Zustand (aktuell z.B. sind fast alle Cyberlinge "tot"/energie=0.0, nur `dak+gord-system` u.a. "bereit").
 - **Verkettung** — ein Dienst kann bei erfolgreichem Lauf einen anderen Dienst auslösen. Daniel selbst: "kp wie ich es anwenden würde aber ich lerne ja bestimmt" — als Möglichkeit rein, nicht als konkreter Use-Case.
 - **Trockenlauf + Verlauf-Tab** — Läufe (echt und simuliert) werden protokolliert und in einem neuen Tab direkt in flarumstyler sichtbar ("ich würds gern erstmal auch ja da dann auch in flarmstyler in nem tab"). Klargestellt: das ist NICHT die große Ring-22-"Prozesskamera"-Vision (Denkfenster/Transparenz-Schicht, noch unfertig) — der Ordner `process_camera` im Code ist aktuell nur die technische Preview-Infrastruktur, über die flarumstyler selbst ausgeliefert wird. Der Verlauf-Tab braucht davon nichts, ist ein eigenständiges, kleines Feature.
 
@@ -75,8 +75,23 @@ DB-Migration additiv (ziel_typ-CHECK erweitert, neue Spalte eigene_diskussion_id
 neues `wesen_dienst_ausloesen.py` fuer Passiv-Modus-Trigger, Backend-Route und Frontend
 (Baustein-Werkbank statt Chat-Formular) umgebaut. Playwright-Test bestaetigt: Zusatz-Takt,
 hartes eigenes Feld, Zeitplan-Modus-Umschaltung und Dienst-Erzeugung funktionieren
-fehlerfrei. Phase 2 (Multi-Wesen-Plaetze, Rollen, Zustandsabhaengigkeit, Verkettung,
-Trockenlauf+Verlauf-Tab) ist noch nicht begonnen.
+fehlerfrei.
+
+**Update 2026-07-07, nach Daniels "go": Phase 2 ist ebenfalls fertig gebaut, end-to-end
+getestet und committed.** Multi-Wesen-Plaetze (1-7, fest/zufall je Platz, Reihenfolge
+fest/zufaellig, gestaffelt), Rollen/Rollenbeschreibung/Verhalten pro Platz, Zustands-
+abhaengigkeit (real gegen `entity_slots.status` + `cyberlinge.energie` geprueft --
+diese Systeme laufen entgegen meiner urspruenglichen Annahme im Konzept sehr wohl live,
+das war ein Fehler meinerseits, den ich beim Bauen korrigiert habe), Verkettung (ueber
+dieselbe ausloesen.flag wie manuelles Ausloesen, jetzt bei ALLEN Zeitplan-Modi aktiv,
+nicht nur Passiv), Trockenlauf (Flag traegt jetzt JSON-Inhalt statt nur Existenz), und
+ein Verlauf-Tab in flarumstyler (nach dem bestehenden Toggle-Sektionen-Muster, nicht
+als neues Tab-Leisten-System -- Daniels "Tab" war eher im Sinne von "eigener Bereich"
+gemeint als eine woertliche neue UI-Komponente). Ein echter Bug wurde durch den
+Playwright-Screenshot-Test gefunden und gefixt (Trockenlauf-Eintraege erschienen wegen
+falscher Bedingungs-Prioritaet faelschlich als "uebersprungen").
+
+Damit ist der komplette im Konzept beschriebene Baukasten (Phase 1 + Phase 2) gebaut.
 
 ## Datenstruktur die ich mir vorstelle
 
