@@ -19,6 +19,7 @@ Flarum-Takte werden NICHT gestartet.
 import json
 import logging
 import subprocess
+import sys
 import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -26,6 +27,9 @@ from pathlib import Path
 import psycopg2
 import psycopg2.extras
 import requests
+
+sys.path.insert(0, "/root/werkraum")
+import dienst_konfiguration as dk
 
 LOG_DIR = Path("/root/werkraum/logs")
 LOG_DIR.mkdir(exist_ok=True)
@@ -177,6 +181,11 @@ SERVICES_GRUPPE_FLARUM = {
 # die Kern-Welt-API/-Bruecke). Mein eigener Vorsichts-Vorschlag, kann jederzeit
 # angepasst werden falls Daniel das anders will.
 SERVICES_GESPERRT_FUER_AKTIONEN = {"ollama", "process-camera-preview", "welt-api", "welt-bruecke"}
+
+# Dienste die bereits auf dienst_konfiguration (Takt+Verhalten aus der DB) umgestellt sind
+# (2026-07-07, Individualisierungs-Ausbau) — Proof-of-Concept startet mit genau einem Dienst,
+# weitere kommen nach Bestaetigung dazu (siehe Systemdoku 18_flarumstyler.md).
+DIENSTE_MIT_KONFIGURATION = {"codewesen-vokabel-takt"}
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
 # absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,
@@ -550,6 +559,10 @@ def run_check() -> dict:
     log_fehler_global, log_fehler_pro_dienst = fehler_uebersicht()
     report["log_fehler"] = log_fehler_global
 
+    # Individualisierbare Konfiguration (flarumstyler, 2026-07-07) — einmal fuer alle
+    # Dienste auf einmal laden statt pro Dienst neu zu verbinden.
+    alle_konfigurationen = dk.alle()
+
     # Services
     for name, cfg in WELTKERN_SERVICES.items():
         active = service_is_active(name)
@@ -579,6 +592,8 @@ def run_check() -> dict:
             "gruppe": "flarum" if name in SERVICES_GRUPPE_FLARUM else "welt",
             "llm_status": llama_status(LLAMA_SERVER_PORTS[name]) if name in LLAMA_SERVER_PORTS else None,
             "eigene_fehler": log_fehler_pro_dienst.get(name, {}),
+            "konfiguration": alle_konfigurationen.get(name, {}),
+            "konfigurierbar": name in DIENSTE_MIT_KONFIGURATION,
         }
 
         if status == "down":

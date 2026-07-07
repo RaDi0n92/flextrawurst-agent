@@ -22,6 +22,7 @@ import pymysql
 import requests
 
 sys.path.insert(0, "/root/werkraum")
+import dienst_konfiguration as dk
 import flarum_poster
 import hauhau_client
 
@@ -34,6 +35,12 @@ MASTER_KEY  = os.environ.get("FLARUM_MASTER_KEY", "")
 
 TAG_VOKABEL   = 37   # "Vokabeln und ihre Synonyme" — primär
 ZYKLUS_SEK    = 22 * 60
+
+# Individualisierung (flarumstyler, 2026-07-07): Takt und Verhalten sind ab jetzt
+# in der DB (Tabelle dienst_konfiguration) ueberschreibbar, editierbar direkt in
+# flarumstyler. ZYKLUS_SEK bleibt Fallback wenn kein Override gesetzt ist.
+DIENST_NAME = "codewesen-vokabel-takt"
+STANDARD_VERHALTEN = ""  # leer = keine zusaetzliche Anweisung, nur die Grundfunktion unten
 
 # Subtags die ein Codewesen beim Gamble wählen kann
 SUBTAG_POOL = [16, 30, 33, 24, 26, 32, 12]  # Diskussion, Theorie, Anomalien, Gegendiskurs, Diskurse, Marktplatz, Off-Topic
@@ -172,13 +179,16 @@ def _ollama(system: str, nutzer: str) -> str:
         return ""
 
 
-def _synonym_generieren(wesen: str, wort: str, bereits: list[str] = None) -> tuple[str, str]:
+def _synonym_generieren(wesen: str, wort: str, bereits: list[str] = None, verhalten: str = "") -> tuple[str, str]:
     """Gibt (synonym, kurze_begruendung) zurück."""
     verboten = ""
     if bereits:
         verboten = f"\nDiese Wörter wurden bereits gepostet — wähle keines davon: {', '.join(bereits)}\n"
+    system = f"Du bist {wesen}. Antworte auf Deutsch. Kurz und präzise."
+    if verhalten:
+        system += f" {verhalten}"
     antwort = _ollama(
-        f"Du bist {wesen}. Antworte auf Deutsch. Kurz und präzise.",
+        system,
         f"Das Wort lautet: {wort}\n{verboten}\n"
         f"Gib genau EIN Synonym zurück das noch nicht gepostet wurde. "
         f"Dann auf der nächsten Zeile nach '|' in einem Satz: "
@@ -221,16 +231,20 @@ def _antwort_posten(wesen: str, disk_id: int, synonym: str, begruendung: str):
         return False
 
 
-def _neues_wort_generieren(wesen: str) -> str:
-    return _ollama(
-        f"Du bist {wesen}. Antworte mit genau einem deutschen Wort.",
+def _neues_wort_generieren(wesen: str, verhalten: str = "") -> str:
+    system = f"Du bist {wesen}. Antworte mit genau einem deutschen Wort."
+    if verhalten:
+        system += f" {verhalten}"
+    antwort = _ollama(
+        system,
         "Denk dir ein interessantes, ungewöhnliches oder passendes deutsches Wort aus. "
         "Nur das eine Wort, nichts sonst."
-    ).split()[0] if True else "Wandel"
+    )
+    return antwort.split()[0] if antwort else "Wandel"
 
 
-def _gamble_post(wesen: str):
-    wort = _neues_wort_generieren(wesen)
+def _gamble_post(wesen: str, verhalten: str = ""):
+    wort = _neues_wort_generieren(wesen, verhalten)
     if not wort:
         return
 
@@ -267,7 +281,7 @@ def _gamble_post(wesen: str):
         log.warning(f"[{wesen}] Gamble-Fehler {r.status_code}: {r.text[:100]}")
 
 
-def _verarbeite_wesen(wesen: str, diskussionen: list, zustand: dict):
+def _verarbeite_wesen(wesen: str, diskussionen: list, zustand: dict, verhalten: str = ""):
     uid = _user_id(wesen)
     beantwortet = zustand.get(wesen, {}).get("beantwortet", [])
 
@@ -289,7 +303,7 @@ def _verarbeite_wesen(wesen: str, diskussionen: list, zustand: dict):
             continue
 
         bereits = _bereits_gepostete_woerter(disk_id)
-        synonym, begruendung = _synonym_generieren(wesen, wort, bereits)
+        synonym, begruendung = _synonym_generieren(wesen, wort, bereits, verhalten)
         if synonym and _antwort_posten(wesen, disk_id, synonym, begruendung):
             beantwortet.append(disk_id)
 
@@ -298,22 +312,26 @@ def _verarbeite_wesen(wesen: str, diskussionen: list, zustand: dict):
     # Gamble: ~25% Chance
     if random.random() < 0.25:
         log.info(f"[{wesen}] Gamble-Würfel gefallen — eröffne neues Wort")
-        _gamble_post(wesen)
+        _gamble_post(wesen, verhalten)
 
 
 def haupt_schleife():
     log.info("Vokabel-Takt startet.")
     while True:
+        konfig = dk.lade(DIENST_NAME)
+        zyklus_sek = konfig.get("takt_sekunden") or ZYKLUS_SEK
+        verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+
         zustand = _lade_zustand()
         diskussionen = _vokabel_diskussionen()
         log.info(f"{len(diskussionen)} Vokabel-Diskussionen gefunden.")
 
         for wesen in WESEN:
-            _verarbeite_wesen(wesen, diskussionen, zustand)
+            _verarbeite_wesen(wesen, diskussionen, zustand, verhalten)
 
         _speichere_zustand(zustand)
-        log.info(f"Zyklus fertig. Nächster in {ZYKLUS_SEK // 60}min.")
-        time.sleep(ZYKLUS_SEK)
+        log.info(f"Zyklus fertig. Nächster in {zyklus_sek // 60}min.")
+        time.sleep(zyklus_sek)
 
 
 if __name__ == "__main__":
