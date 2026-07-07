@@ -241,12 +241,16 @@ REAKTION_LOG_DIENST_PRAEFIX = "codewesen-"  # reaktion.log -> codewesen-<Ordnern
 _ZEITSTEMPEL_RE = _re.compile(r"^(\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2}:\d{2})")
 
 FEHLER_MUSTER = {
-    "ollama_nicht_erreichbar": {
+    "llama_server_nicht_erreichbar": {
+        # Umbenannt von "ollama_nicht_erreichbar" (2026-07-07, Daniel: "ollama ist wohl
+        # nicht erreichbar" — verwechselt mit dem Ollama-Dienst, der seit der hauhaucs-
+        # Migration nur noch Freier-Modus+Vision ist). Dieses Muster erfasst NUR die
+        # llama-server-Instanzen (Port 11435/11436), nie den echten Ollama-Dienst.
         "regex": _re.compile(r"503 Service Unavailable|Connection refused|Read timed out"),
-        "was_ist_los": "Das LLM (llama-server/hauhaucs) war beim Anfragezeitpunkt nicht erreichbar oder hat nicht rechtzeitig geantwortet.",
-        "empfehlung": "Pruefen ob llama-server laeuft, RAM-/CPU-Auslastung checken, ggf. Anzahl gleichzeitig laufender Codewesen-Dienste reduzieren.",
+        "was_ist_los": "Der llama-server (Live-Chat oder Hintergrund-Instanz — NICHT der Ollama-Dienst) war beim Anfragezeitpunkt nicht erreichbar oder hat nicht rechtzeitig geantwortet.",
+        "empfehlung": "Pruefen ob llama-hauhaucs.service / llama-hauhaucs-hintergrund.service laufen, RAM-/CPU-Auslastung checken, ggf. Anzahl gleichzeitig laufender Codewesen-Dienste reduzieren. Seit 2026-07-07 entschaerft durch llm_scheduler.py (siehe 19_llm_scheduler.md) — pruefen ob das Problem seither noch neu auftritt oder nur historisch nachwirkt.",
         "bringt_das": "Weniger verlorene Post-/Denk-Versuche, schnellere Antwortzeiten.",
-        "bringt_das_nicht": "Behebt nicht die strukturelle Slot-Knappheit bei 7 Wesen die sich einen Ollama-Slot teilen — das ist kein Bug, sondern eine Kapazitaetsgrenze.",
+        "bringt_das_nicht": "Behebt nicht die strukturelle Slot-Knappheit bei 7 Wesen die sich einen Server-Slot teilen — das ist kein Bug, sondern eine Kapazitaetsgrenze.",
     },
     "csrf_mismatch": {
         "regex": _re.compile(r"csrf_token_mismatch"),
