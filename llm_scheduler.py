@@ -85,6 +85,11 @@ def _advisory_key(server: str) -> int:
 
 
 def _cleanup_stale_waiters(cur, server: str):
+    # Drei Faelle fuer das alte (Nicht-PID-)Rufer-Format: wartet noch und zu alt,
+    # haelt gerade aktiv und zu alt, oder hielt einen Slot dessen slot_bis laengst
+    # abgelaufen ist -- Prozess ist vor __exit__() gestorben, Zeile blieb liegen
+    # (Fund 2026-07-07: ids 1169/1604, Stunden alt, blockierten nichts mehr, waren
+    # aber nie geloescht worden, weil genau dieser dritte Fall fehlte).
     cur.execute(
         """
         DELETE FROM llm_warteschlange
@@ -94,6 +99,8 @@ def _cleanup_stale_waiters(cur, server: str):
             (slot_bis IS NULL AND angefragt_um < NOW() - (%s || ' seconds')::interval)
             OR
             (slot_bis IS NOT NULL AND slot_bis > NOW() AND angefragt_um < NOW() - (%s || ' seconds')::interval)
+            OR
+            (slot_bis IS NOT NULL AND slot_bis <= NOW())
           )
         """,
         (server, STALE_WARTER_SEK, STALE_ACTIVE_SEK),
