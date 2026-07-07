@@ -124,16 +124,57 @@ Node, kein zusaetzlicher Python-Webserver noetig.
   `/starten` → Dienst lief, echter Zyklus feuerte, Vault-Eintrag mit echtem,
   in-character LLM-Text gespeichert. Testartefakte danach vollstaendig entfernt.
 
+## Phase 3 — Sichtbarkeit + Deaktivieren-Pfad (2026-07-07, fertig)
+
+Wesen-eigene Dienste erscheinen jetzt **dynamisch** in flarumstyler statt ueber eine
+hartcodierte Liste — `weltkern_watchdog.py`s `run_check()` iteriert zusaetzlich zur
+festen `WELTKERN_SERVICES`-Schleife ueber `wed.lade_alle()` (alle Zeilen aus
+`wesen_eigene_dienste`, egal ob `aktiv` oder `deaktiviert`) und baut fuer jede einen
+`report["services"][dienst_name]`-Eintrag im selben Format wie die statischen Dienste
+(`service_details()`/`service_letzte_logs()` sind bereits generisch fuer beliebige
+systemd-Unit-Namen, kein Aenderungsbedarf dort).
+
+- Neuer Status-Wert **`deaktiviert`** (analog zu `erwartet_aus`, aber Daniel-ausgeloest
+  statt fest einprogrammiert): grau statt rot, keine Warnung, eigener Rang in
+  `DIENST_RANG`/`dienstFarbe()`/`statusText` im Frontend.
+- Marker-Feld **`ist_wesen_eigener_dienst: true`** unterscheidet diese Dienste von den
+  statischen — steuert den 🪄-Badge auf der Karte und den "Deaktivieren"-Button im
+  Detail-Modal.
+- **Deaktivieren-Route:** bestehende `POST /api/flarumstyler/dienst/:name/:aktion`
+  um `deaktivieren` erweitert (Regex-Alternation). Nur erlaubt wenn
+  `ist_wesen_eigener_dienst===true` (fuer statische Kern-Dienste ergibt "deaktivieren"
+  keinen Sinn). Ruft `welt/wesen_dienst_deaktivieren.py` (neues CLI, Muster wie
+  `wesen_dienst_erzeugen.py`) statt direktem `systemctl`, weil zusaetzlich zum Stop
+  auch `status='deaktiviert'` in der DB gesetzt werden muss
+  (`wesen_dienst_generator.deaktivieren()` aus Phase 1, jetzt endlich verdrahtet).
+  Grundgesetz 4: Skript/Unit-Dateien bleiben liegen, nichts wird geloescht.
+- Start/Stop/Neustart funktionieren fuer diese Dienste automatisch ueber den schon
+  bestehenden generischen Mechanismus (`steuerbar: true` im neuen Report-Eintrag) —
+  kein Zusatzcode noetig.
+- flarumstyler-Header bekam einen Link zum Wizard ("🪄 neuen Wesen-Dienst erfinden"),
+  Wizard-Seite verlinkt zurueck.
+- **End-to-End getestet:** Dienst erzeugt+gestartet → Watchdog-Lauf → erscheint korrekt
+  in `report["services"]` UND unter `/api/flarumstyler` → `deaktivieren`-Route aufgerufen
+  → `systemctl` zeigte `inactive`/`disabled`, DB-Status `deaktiviert` → erneuter
+  Watchdog-Lauf zeigte `status: "deaktiviert"`, keine Warnung. Playwright-Check beider
+  Seiten (flarumstyler, Wizard): keine Konsolen-/Seitenfehler, Screenshots geprueft.
+- **Beobachtete Kleinigkeit (kein Bug):** im Playwright-Test zaehlte das Modell beim
+  Aufzaehlen der Wesen im Chat-Text nur 4 von 7 auf (Dropdown selbst war trotzdem
+  korrekt mit allen 7 befuellt) — reine Formulierungs-Ungenauigkeit des LLM, keine
+  Funktionsstoerung.
+
 ## Noch offen
 
-- **Phase 3 — Sichtbarkeit**: neu erzeugte Dienste automatisch in
-  `WELTKERN_SERVICES`/`SERVICE_BESCHREIBUNG`/Individualisierung registrieren (aktuell
-  tauchen Wesen-eigene Dienste noch NICHT in flarumstyler auf), Deaktivieren-Button
-  im UI (`wesen_dienst_generator.deaktivieren()` existiert bereits serverseitig, nur
-  noch keine Node-Route + UI dafuer).
 - `ziel_typ=fester_thread`/`neue_diskussion` sind implementiert, aber noch nicht
   end-to-end mit echtem Forum-Posting getestet (bewusst nur `vault_only` getestet,
   um keinen echten Forum-Post durch einen Testlauf zu riskieren).
 - Der Wizard fragt aktuell keine Flarum-Tag-Liste fuer `neue_diskussion` ab — leere
   `ziel_tag_ids` fallen beim Posten auf den bestehenden Fallback in
   `fuehre_aktion_aus()` zurueck (erstes verfuegbares Tag).
+- Kein Reaktivieren-Pfad in der UI (nur Deaktivieren) — laut Auftrag nicht verlangt,
+  waere aber ein einfacher Zusatz (`status` zurueck auf `aktiv` + `systemctl enable/start`).
+- Nachtrag zur CLAUDE.md: die dortige Pfadangabe "Frontend: Port 8787 (Node.js,
+  `/root/werkraum/flextrawurst/`)" ist veraltet/falsch — die echte Serverdatei liegt
+  unter `/root/flextrawurst/scripts/serve_process_camera_preview.ts` (eigenes
+  Top-Level-Verzeichnis). Nicht selbst korrigiert (CLAUDE.md nur auf expliziten
+  Auftrag aendern).

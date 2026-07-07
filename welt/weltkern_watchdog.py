@@ -30,6 +30,7 @@ import requests
 
 sys.path.insert(0, "/root/werkraum")
 import dienst_konfiguration as dk
+import wesen_eigene_dienste as wed
 
 LOG_DIR = Path("/root/werkraum/logs")
 LOG_DIR.mkdir(exist_ok=True)
@@ -835,6 +836,47 @@ def run_check() -> dict:
         elif status == "api_dead":
             report["warnings"].append(f"{name}: aktiv aber API antwortet nicht")
             log.warning(f"API DEAD: {name}")
+
+    # Wesen-eigene Dienste (Baustein 4, Chat-Wizard, 2026-07-07) — dynamisch aus
+    # wesen_eigene_dienste statt aus einer hartcodierten Liste, weil Daniel jederzeit
+    # neue per Chat erzeugen kann. status='deaktiviert' zeigt bewusst NICHT als "down"
+    # (analog zu erwartet_aus) -- das war Daniels eigene Entscheidung, kein Problem.
+    for row in wed.lade_alle():
+        name = row["dienst_name"]
+        active = service_is_active(name)
+        if row["status"] == "deaktiviert":
+            status = "deaktiviert"
+        else:
+            status = "ok" if active else "down"
+        details = service_details(name)
+        auftrag_kurz = (row["verhalten_prompt"] or "")[:400]
+        report["services"][name] = {
+            "active": active,
+            "port_ok": None,
+            "health_ok": None,
+            "status": status,
+            "beschreibung": f"{row['anzeige_name']} — Wesen-eigener Dienst fuer {row['wesen']}, "
+                            f"Takt {row['takt_sekunden']}s, Ziel: {row['ziel_typ']}.",
+            "beschreibung_standard": f"{row['anzeige_name']} — Wesen-eigener Dienst fuer {row['wesen']}.",
+            "beschreibung_eigene_fassung": False,
+            "steuerbar": True,
+            "seit_wann": details["seit_wann"],
+            "neustarts": details["neustarts"],
+            "speicher_mb": details["speicher_mb"],
+            "letzte_logs": service_letzte_logs(name),
+            "gruppe": "flarum",
+            "llm_status": None,
+            "llm_warteschlange": None,
+            "eigene_fehler": log_fehler_pro_dienst.get(name, {}),
+            "konfiguration": {k: row[k] for k in ("wesen", "anzeige_name", "takt_sekunden", "ziel_typ", "ziel_discussion_id") if row.get(k) is not None},
+            "konfigurierbar": False,
+            "individualisierung_hinweis": None,
+            "technische_doku": f"Auftrag (Verhalten-Prompt): {auftrag_kurz}",
+            "ist_wesen_eigener_dienst": True,
+        }
+        if status == "down":
+            report["warnings"].append(f"{name}: inaktiv (Wesen-eigener Dienst, erzeugt aber nicht/nicht mehr gestartet)")
+            log.warning(f"WESEN-EIGENER DIENST DOWN: {name}")
 
     # Locks
     stale = stale_locks()
