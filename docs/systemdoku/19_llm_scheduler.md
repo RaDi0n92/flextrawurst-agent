@@ -131,15 +131,23 @@ ist aber dauerhafter Datenmuell. Betraf am 2026-07-07 genau 2 Zeilen (IDs 1169,
 1604, beide vor dem Fix entstanden) — manuell per SQL geloescht. Kann nicht
 erneut auftreten, weil jede neue Zeile ab jetzt das `pid=`-Format traegt.
 
-**Offener Widerspruch, noch nicht geklärt:** `llama-hauhaucs-hintergrund.service`
-laeuft mit `--parallel 2` (2 echte Slots im llama-server selbst), aber
-`N_SLOTS["hintergrund"]` wurde am 2026-07-07 vormittags (Commit `40e1b4cb`,
-vor den obigen drei Fixes) von 2 auf **1** reduziert — Grund dafuer nicht in
-einer Commit-Message festgehalten. Alle Abschnitte oben ("2 echte Slots",
-Simulation) beschreiben noch den urspruenglichen 2-Slot-Zustand. Ob 1 oder 2
-der aktuell gewollte Wert ist (z.B. weil 2 parallele 35B-Generierungen auf
-derselben CPU sich gegenseitig eher verlangsamen als echt parallelisieren),
-sollte mit Daniel geklaert werden statt hier stillschweigend zu vereinheitlichen.
+**Geklärt (2026-07-07, Daniel):** `llama-hauhaucs-hintergrund.service` laeuft
+zwar mit `--parallel 2` (2 echte Slots im llama-server selbst), aber
+`N_SLOTS["hintergrund"]` wurde bewusst auf **1** reduziert (Commit `40e1b4cb`,
+vor den obigen drei Fixes) — nicht versehentlich. Grund: kurz vorher hatte
+der Server einen Overkill, Daniel musste ~20 Minuten auf einen Neustart
+warten. Codex fand danach: bei 2 echten parallelen Generierungen blieb nur
+noch **1,1 GB RAM** frei, mehrere parallele Anfragen blockierten sich
+minutenlang gegenseitig statt echt parallel zu laufen. Deckt sich mit der
+alten Erfahrung aus der Ollama-Vorphase: dort war `parallel` ebenfalls nur 1,
+weil 2 fast immer zum Absturz fuehrte. Der llama-server selbst darf also
+technisch 2, aber der Scheduler laesst bewusst nur 1 zu, bis das RAM-Problem
+anders geloest ist (z.B. kleineres Modell, mehr RAM, oder Kontextfenster
+begrenzen). Alle Abschnitte oben ("2 echte Slots", Simulation) beschreiben
+noch den urspruenglichen 2-Slot-Zustand — die Simulationszahlen (97.7%
+Erfolgsquote etc.) beruhen also auf einer Annahme, die inzwischen nicht mehr
+gilt; eine neue Simulation mit N_SLOTS=1 waere noetig, um die reale
+Erfolgsquote/Wartezeit unter der jetzigen Deckelung einzuschaetzen.
 
 ## Bewusst nicht migriert
 
