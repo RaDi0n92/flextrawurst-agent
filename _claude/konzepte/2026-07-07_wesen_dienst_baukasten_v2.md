@@ -63,10 +63,11 @@ Beide Bedingungswege (A und B, siehe "Was ich nicht verstehe") von Anfang an bau
 
 ## Was noch fehlt bevor wir bauen können
 
-- Bestätigung von Daniel: ist diese Zusammenfassung vollständig und richtig verstanden?
-- Entscheidung: alles auf einmal neu bauen, oder in Phasen (z.B. erst Grundfelder + Ziel-Varianten + Custom-Felder-Weg-A, dann Multi-Wesen-Plätze und Rollen als zweite Phase)?
-- Technische Detailfrage noch offen: wie genau wird "Zufalls-Wesen pro Platz" bei jedem Lauf neu gewürfelt — komplett zufällig aus allen 7, oder aus einer von Daniel eingegrenzten Teilmenge?
-- Storage-Frage für `DienstLauf`-Verlauf noch nicht mit Daniel abgestimmt (Drei-Stopp-Fragen-Pflicht: wo lebt der State) — Vorschlag JSONL pro Dienst ist nur meine Annahme, keine getroffene Entscheidung.
+Alle vier Punkte sind jetzt geklärt:
+- **Zufalls-Pool**: schon durch die Datenstruktur beantwortet — `zufallsPool` optional, leer = alle 7, keine offene Frage.
+- **Storage für `DienstLauf`-Verlauf**: JSONL pro Dienst, folgt derselben Konvention wie `gedaechtnis/eigene_posts.jsonl` pro Wesen — kein neuer Storage-Typ.
+- **Phasen vs. alles auf einmal**: Daniel hat das explizit an mich delegiert ("mir doch schnuppe musst du wissen op phase oder net"). Meine Entscheidung: **in Phasen**. Phase 1 = Kernstück (Grundfelder, Ziel-Varianten, eigene Felder inkl. Weg A+B, Takt-Liste/feste Uhrzeiten/Passiv-Modus, Pausenzeiten — alles noch für ein einzelnes Wesen). Phase 2 = Multi-Wesen-Plätze mit Rollen+Verhalten pro Platz, plus die drei optionalen Erweiterungen (Zustandsabhängigkeit, Verkettung, Trockenlauf+Verlauf-Tab). Grund: Phase 1 ist für sich allein schon nutzbar und testbar, Phase 2 baut sauber darauf auf statt alles gleichzeitig zu riskieren.
+- Damit bleibt nur noch die eigentliche Bau-Freigabe von Daniel offen (Stopp-Frage 1) — das ist keine Konzept-Lücke mehr, nur der Startschuss.
 
 ## Datenstruktur die ich mir vorstelle
 
@@ -187,4 +188,4 @@ Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwa
 
 ## Was fehlt noch
 
-Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die Zufalls-Pool-Detailfrage. Die Storage-Frage für den Verlauf. Erst danach: bauen.
+Nur noch Daniels Bau-Freigabe ("los, mach, bau") — alle inhaltlichen Fragen (Phasen, Zufalls-Pool, Storage, A-vs-B) sind geklärt.
