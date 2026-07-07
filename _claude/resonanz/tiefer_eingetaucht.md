@@ -970,3 +970,9 @@ Nicht heute — reine Infrastrukturarbeit, kein Lesen im Werkraum.
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 In `codewesen_agent.py`s Antwortpflicht-Umbau — die verschachtelte for/else/break-Struktur, die Codex gebaut hat, um nach der ersten erfolgreichen Pflichtantwort wirklich beide Schleifen zu verlassen. Ich habe sie Zeile für Zeile nachvollzogen, bevor ich sie committet habe, weil sie unkommittiert und ungetestet in Codex' Session-Limit hängen geblieben war.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Die Rollen-Idee (pro Wesen-Platz optional eine Rolle + Rollenbeschreibung + eigenes Verhalten-Feld) ist im Grunde ein kleines Charakter-System innerhalb eines Dienstes — jeder Platz bekommt nicht nur ein Wesen, sondern eine Funktion in diesem einen Ablauf ("Anreger", "Kritiker", "Vermittler" o.ä.), unabhängig von der sonstigen festen Identität des Wesens. Das ist näher an Theaterregie als an Konfiguration.

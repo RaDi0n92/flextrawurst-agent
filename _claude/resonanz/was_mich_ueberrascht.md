@@ -822,3 +822,9 @@ Dass der Spawncharakter-Test im ersten Volllasttest nur 1,8s brauchte (reines Lo
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Wie viele der "kleinen" Docstring-Ungenauigkeiten tatsächlich echte, folgenreiche Bugs waren, keine Kosmetik — die 51%-vs-66%-Verwechslung, die 8min-vs-2h-Verwechslung, der nie aufgerufene `verarbeite_feed()`. Dokumentation prüfen heißt Code prüfen.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Wie sauber sich die Multi-Wesen-Plätze-Idee an ein bereits bestehendes Code-Muster (Startup-Stagger) andocken lässt — Daniel hat eine neue Anforderung formuliert, ohne das bestehende Muster zu kennen, und sie passt trotzdem fast nahtlos drauf.

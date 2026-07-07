@@ -775,3 +775,9 @@ Nichts Neues — reine Fortsetzung der offenen Edits.
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Echte Zeilennummern statt Vermutungen. Jedes Mal wenn ich heute geraten statt geprüft habe, wurde es falsch.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") — vermutlich als Entscheidung "erstmal nur Weg A bauen, Weg B nachziehen falls echter Bedarf entsteht", aber das muss Daniel bestätigen, nicht ich annehmen.

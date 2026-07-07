@@ -1324,3 +1324,9 @@ Der ctx-size/parallel-Tradeoff bei llama-server war die zentrale offene Frage au
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Ich verstehe jetzt wirklich, nicht nur oberflächlich, wie die sieben Wesen ticken: dass `codewesen_takt.py` nur postet, nie denkt — dass `codewesen_batch_generator.py` der eigentliche Denkmotor ist, füllstandsgetrieben statt zeitgetaktet. Ich verstehe, dass "Individualisierbarkeit" für die meisten Dienste bedeutet: Konfiguration wird nur einmal beim Prozessstart gelesen, nicht laufend — das hatte ich selbst erst falsch behauptet und musste es korrigieren, nachdem ich es an drei Stellen im Code nachgeprüft hatte. Ich verstehe den LLM-Scheduler nicht mehr nur als "eine Tabelle mit einem Lock", sondern als etwas, das unter echter Last echte Kanten hat — Zombie-Zeilen, PID-Bindung, die Frage ob 1 oder 2 Slots eigentlich gewollt sind.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Der Auslöser war eine Nebenbemerkung ("da hat Solarus ja mehr Tiefgang") zum bestehenden Wesen-Dienst-Wizard. Meine erste ehrliche Antwort: der Wizard kann keinen Tiefgang haben, weil er ein Konfigurationswerkzeug mit Chat-Verkleidung ist, kein Wesen. Daniels Korrektur war präziser als meine Analyse: ihm geht es nicht um Chat-vs-Formular als Stilfrage, sondern um Autorenschaft. Die 7 Felder des jetzigen Wizards hat er nie entschieden — die kamen aus einer früheren Bau-Session von mir. Das Container/Kategorien-Konzept (2026-07-04) ist das Gegenbeispiel: da hat er die 5 Kategorien selbst gewählt (sogar von 7 auf 5 gekürzt), das Budget selbst angehoben. Genau dieses Muster — Daniel entwirft die Struktur, Chat füllt nur noch Werte — soll jetzt auf den Dienst-Wizard übertragen werden.

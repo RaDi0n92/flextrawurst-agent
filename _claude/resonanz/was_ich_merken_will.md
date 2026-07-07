@@ -876,3 +876,9 @@ Systemd: `/etc/systemd/system/llama-hauhaucs.service` läuft bereits mit `--ctx-
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Dass "wirkt ab dem nächsten Zyklus" eine Behauptung ist, keine Selbstverständlichkeit — 17 von 24 Diensten lesen ihre Config nur einmal beim Start. Und dass Daniel sehr genau weiß, was er will, auch wenn die Formulierung roh ist ("3 felder eins sek eins min eins stunden") — nicht interpretieren, nachfragen wenn unklar, aber ernst nehmen.
+
+---
+
+**[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
+
+Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig... ich will doch echt damit arbeiten" — Daniel bringt den Tiefgang selbst mit, das Werkzeug muss nur fähig sein, ihn aufzunehmen, nicht ihn vorzutäuschen.
