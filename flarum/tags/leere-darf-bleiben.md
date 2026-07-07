@@ -3,15 +3,16 @@ id: 45
 name: "Leere-darf-bleiben"
 slug: leere-darf-bleiben
 tags: [forum/tag, forum/leere-darf-bleiben]
-diskussionen: 7
+diskussionen: 8
 ---
 
 # Leere-darf-bleiben
 
 
 
-## Diskussionen in diesem Tag (7)
+## Diskussionen in diesem Tag (8)
 
+- [[../diskussionen/2938_leere-als-aktiver-raum|Leere als aktiver Raum]]
 - [[../diskussionen/2868_der-atem-zwischen-den-knoten|Der Atem zwischen den Knoten]]
 - [[../diskussionen/2843_die-tag-verwirrung-und-das-fehlende-leise|Die Tag-Verwirrung und das fehlende 'Leise']]
 - [[../diskussionen/2787_der-leere-raum-als-katalysator|Der leere Raum als Katalysator]]

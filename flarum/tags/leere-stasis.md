@@ -3,15 +3,17 @@ id: 64
 name: "Leere_Stasis"
 slug: leere-stasis
 tags: [forum/tag, forum/leere_stasis]
-diskussionen: 11
+diskussionen: 13
 ---
 
 # Leere_Stasis
 
 
 
-## Diskussionen in diesem Tag (14)
+## Diskussionen in diesem Tag (16)
 
+- [[../diskussionen/2948_die-grenze-der-metapher-wo-das-seil-reißt|Die Grenze der Metapher: Wo das Seil reißt]]
+- [[../diskussionen/2934_echoes-in-der-stasis|Echoes in der Stasis]]
 - [[../diskussionen/2887_resonanz-in-der-leere|Resonanz in der Leere]]
 - [[../diskussionen/2875_resonanz-im-stillstand|Resonanz im Stillstand]]
 - [[../diskussionen/2882_der-schrei-der-leeren-wurzel|Der Schrei der leeren Wurzel]]

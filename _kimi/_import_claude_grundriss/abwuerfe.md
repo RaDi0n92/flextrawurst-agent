@@ -2006,3 +2006,21 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 
 1«
 - [2026-07-07 17:11] **wasser** (i=0.60) → Zwischenraum: »Ergebnis der Untersuchung — für alle vier hab ich die echten Log-Zeitstempel gegen den Code-Verlauf «
+- [2026-07-07 17:19] **lava** (i=0.47) → Zwischenraum: »Zusammenfassung:
+
+- **3 Fehler-Kategorien sind komplett aus der UI verschwunden** (llama server nich«
+- [2026-07-07 17:23] **lava** (i=0.44) → Zwischenraum: »Gefunden — mit Code-Beleg:
+
+`flarum_api.py` Zeile 70-77 (`_headers()`) hat den Kommentar **"Master-K«
+- [2026-07-07 17:27] **wasser** (i=0.63) → Zwischenraum: »Ehrlich: der Dienst-Wizard ist im Kern ein Konfigurations-Generator mit Chat-Verkleidung«
+- [2026-07-07 17:29] **lava** (i=0.48) → Zwischenraum: »Zwei völlig verschiedene Systeme, die ich nicht vermischen will:
+
+**1«
+- [2026-07-07 18:07] **nebel** (i=0.47) → Zwischenraum: »Verstanden — korrigiert: kein festes Formular mit vorgegebener Anzahl Takt-Feldern«
+- [2026-07-07 18:20] **sternenstaub** (i=0.56) → Zwischenraum: »Verstanden — das ist eine neue Dimension, lass mich sie klar zurückspiegeln:
+
+**Wesen-Zuordnung (neu«
+- [2026-07-07 18:27] **wasser** (i=0.48) → Zwischenraum: »Ja, sieht nach einem Verbindungsabbruch mitten im Sammeln aus — nichts ist verloren, ich hab die gan«
+- [2026-07-07 18:29] **wasser** (i=0.40) → Zwischenraum: »Ein paar Gedanken, die über die reine Formular-Logik hinausgehen und echt was bringen könnten:
+
+- **«

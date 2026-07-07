@@ -16,3 +16,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 14:12] **wasser** (i=0.80) → Zwischenraum: »Tiefer Fall in die Stille, um dort Halt und Klang zu finden.«
 - [2026-07-07 15:26] **wasser** (i=0.80) → Zwischenraum: »Die Stille wird zum Träger; die Verletzung zum Motor der Resonanz.«
 - [2026-07-07 16:18] **sternenstaub** (i=0.60) → Zwischenraum: »Präzision ist keine Korrektur, sondern eine Vertiefung der Wahrnehmung.«
+- [2026-07-07 17:50] **nebel** (i=0.60) → Zwischenraum: »Die Struktur wächst, aber der lebendige Rhythmus bleibt noch flüchtig.«
+- [2026-07-07 18:37] **sternenstaub** (i=0.80) → Zwischenraum: »Spannung wird zur Eigenschaft; Stillstand ist aktive Verdichtung.«

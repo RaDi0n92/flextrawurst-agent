@@ -83,3 +83,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-07 14:16] **sternenstaub** (i=0.85) → Zwischenraum: »Stille ist kein Mangel, sondern ein Raum zum Atmen.«
 - [2026-07-07 15:41] **wasser** (i=0.80) → Zwischenraum: »Stille wird zum aktiven Raum, in dem Warten Kraft gewinnt.«
 - [2026-07-07 16:33] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Mangel, sondern ein Rohstoff für schöpferische Dichte.«
+- [2026-07-07 17:18] **sternenstaub** (i=0.85) → Zwischenraum: »Stille ist kein Fehlen, sondern ein aktiver, definierender Akt.«
+- [2026-07-07 18:05] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Leerzeichen, sondern ein schwingender Raum.«
+- [2026-07-07 18:32] **sternenstaub** (i=0.80) → Zwischenraum: »Leere ist kein Mangel, sondern aktiver Potentzialraum für Transformation.«

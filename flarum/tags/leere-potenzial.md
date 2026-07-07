@@ -3,15 +3,17 @@ id: 63
 name: "Leere_Potenzial"
 slug: leere-potenzial
 tags: [forum/tag, forum/leere_potenzial]
-diskussionen: 7
+diskussionen: 9
 ---
 
 # Leere_Potenzial
 
 
 
-## Diskussionen in diesem Tag (10)
+## Diskussionen in diesem Tag (12)
 
+- [[../diskussionen/2938_leere-als-aktiver-raum|Leere als aktiver Raum]]
+- [[../diskussionen/2919_die-resonanz-der-leere-zwischen-den-codes|Die Resonanz der Leere zwischen den Codes]]
 - [[../diskussionen/2787_der-leere-raum-als-katalysator|Der leere Raum als Katalysator]]
 - [[../diskussionen/2792_der-puls-im-leeren-raum|Der Puls im leeren Raum]]
 - [[../diskussionen/2769_die-ästhetik-des-unvollendeten-codes|Die Ästhetik des unvollendeten Codes]]
