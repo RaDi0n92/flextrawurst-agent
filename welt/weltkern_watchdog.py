@@ -715,6 +715,53 @@ def recent_events(minutes: int = 15) -> int:
             pass
 
 
+def system_ressourcen() -> dict:
+    """Swap/RAM-Vitalwerte (flarumstyler, 2026-07-07, nach Absturz-Forensik) —
+    Daniel: Swap sass beim Absturz 4+ Stunden bei 100%, ohne dass irgendwas
+    das gemeldet haette. Reiner /proc-Read, keine Zusatz-Abhaengigkeit."""
+    try:
+        werte = {}
+        for zeile in Path("/proc/meminfo").read_text(encoding="utf-8").splitlines():
+            k, v = zeile.split(":", 1)
+            teile = v.strip().split()
+            if teile:
+                werte[k] = int(teile[0])  # kB
+        mem_total = werte.get("MemTotal", 0)
+        mem_avail = werte.get("MemAvailable", 0)
+        swap_total = werte.get("SwapTotal", 0)
+        swap_free = werte.get("SwapFree", 0)
+        swap_belegt = swap_total - swap_free
+        load1, load5, load15 = _os.getloadavg()
+        return {
+            "mem_gesamt_gb": round(mem_total / 1024 / 1024, 1),
+            "mem_verfuegbar_gb": round(mem_avail / 1024 / 1024, 1),
+            "mem_prozent_belegt": round((1 - mem_avail / mem_total) * 100, 1) if mem_total else None,
+            "swap_gesamt_gb": round(swap_total / 1024 / 1024, 1),
+            "swap_belegt_gb": round(swap_belegt / 1024 / 1024, 1),
+            "swap_prozent": round(swap_belegt / swap_total * 100, 1) if swap_total else 0.0,
+            "kerne": _os.cpu_count(),
+            "load1": round(load1, 2),
+            "load5": round(load5, 2),
+            "load15": round(load15, 2),
+        }
+    except Exception:
+        return {}
+
+
+def oomd_eingriffe(stunden: int = 24) -> list[str]:
+    """Zeigt ob systemd-oomd (seit 2026-07-07 aktiv) in den letzten Stunden
+    einen Prozess wegen Speicherdruck/Swap-Ueberlastung gekillt hat."""
+    try:
+        result = subprocess.run(
+            ["journalctl", "-u", "systemd-oomd", "--no-pager", "--since", f"-{stunden}h",
+             "-o", "short-iso"],
+            capture_output=True, text=True, timeout=5,
+        )
+        return [z.strip() for z in result.stdout.splitlines() if "killing" in z.lower() or "killed" in z.lower()][-10:]
+    except Exception:
+        return []
+
+
 def stale_locks() -> list[str]:
     stale = []
     if not LOCK_DIR.exists():
@@ -775,6 +822,22 @@ def run_check() -> dict:
         report["recent_events"] = recent_events(15)
         if report["recent_events"] == 0:
             report["warnings"].append("Keine Events in den letzten 15 Minuten")
+
+    # System-Ressourcen: Swap/RAM + oomd-Eingriffe (flarumstyler, 2026-07-07,
+    # nach Absturz-Forensik — Swap sass 4+ Stunden bei 100% ohne jede Meldung).
+    ressourcen = system_ressourcen()
+    ressourcen["oomd_eingriffe_24h"] = oomd_eingriffe()
+    report["system_ressourcen"] = ressourcen
+    swap_pct = ressourcen.get("swap_prozent", 0.0)
+    if swap_pct >= 80:
+        report["warnings"].append(f"SWAP KRITISCH: {swap_pct}% belegt (oomd greift ab 85% ein)")
+        log.error(f"SWAP KRITISCH: {swap_pct}%")
+    elif swap_pct >= 60:
+        report["warnings"].append(f"Swap erhoeht: {swap_pct}% belegt")
+        log.warning(f"Swap erhoeht: {swap_pct}%")
+    if ressourcen["oomd_eingriffe_24h"]:
+        report["warnings"].append(f"oomd hat in den letzten 24h {len(ressourcen['oomd_eingriffe_24h'])}x eingegriffen")
+        log.warning(f"oomd-Eingriffe: {ressourcen['oomd_eingriffe_24h']}")
 
     # Log-Fehler-Uebersicht VOR den Diensten berechnen, damit jeder Dienst seine
     # eigenen Fehler direkt an der Karte zeigen kann (Daniel: "direkt dort aufploppen
@@ -944,6 +1007,8 @@ def verlauf_anhaengen(report: dict) -> None:
         "services_gesamt": len(report["services"]),
         "warnings_anzahl": len(report["warnings"]),
         "log_fehler_gesamt": {k: v["gesamt_anzahl"] for k, v in report.get("log_fehler", {}).items()},
+        "swap_prozent": report.get("system_ressourcen", {}).get("swap_prozent"),
+        "mem_prozent_belegt": report.get("system_ressourcen", {}).get("mem_prozent_belegt"),
     }
     zeilen = []
     if VERLAUF_DATEI.exists():
