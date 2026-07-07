@@ -95,6 +95,12 @@ def anlegen(
     feste_uhrzeiten: list = None,
     zeitplan_modus: str = "intervall",
     pausenzeiten: list = None,
+    beschreibung: str = None,
+    hinweise: str = None,
+    wesen_plaetze: list = None,
+    reihenfolge_modus: str = "fest",
+    gestaffelt_sekunden: int = 20,
+    folge_dienst_bei_erfolg: str = None,
 ) -> dict:
     """Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name
     ist eindeutig und wird vom Aufrufer/Generator einmalig vergeben).
@@ -107,12 +113,28 @@ def anlegen(
     und dieselbe Rolle (Post-Ziel) hat, nur mit anderem Setz-Zeitpunkt."""
     if zeitplan_modus not in ("intervall", "feste_uhrzeiten", "passiv"):
         raise ValueError(f"Ungueltiger zeitplan_modus: {zeitplan_modus!r}")
+    if reihenfolge_modus not in ("fest", "zufaellig"):
+        raise ValueError(f"Ungueltiger reihenfolge_modus: {reihenfolge_modus!r}")
     meta_voll = dict(meta or {})
     meta_voll["eigene_felder"] = eigene_felder or []
     meta_voll["takte"] = takte or []
     meta_voll["feste_uhrzeiten"] = feste_uhrzeiten or []
     meta_voll["zeitplan_modus"] = zeitplan_modus
     meta_voll["pausenzeiten"] = pausenzeiten or []
+    # beschreibung/hinweise: reiner Grunddaten-Text ohne Funktionswirkung (im Unterschied
+    # zu anzeige_name, das in Dateinamen einfliesst, oder verhalten_prompt, das den
+    # Zyklus steuert) -- deshalb bewusst auch in meta statt eigene Spalten.
+    if beschreibung is not None:
+        meta_voll["beschreibung"] = beschreibung
+    if hinweise is not None:
+        meta_voll["hinweise"] = hinweise
+    # Phase 2 (Multi-Wesen-Plaetze, siehe Konzept): leere wesen_plaetze = exakt
+    # Phase-1-Verhalten -- ein einzelnes Wesen (die wesen-Spalte), kein Platz-Loop.
+    meta_voll["wesen_plaetze"] = wesen_plaetze or []
+    meta_voll["reihenfolge_modus"] = reihenfolge_modus
+    meta_voll["gestaffelt_sekunden"] = gestaffelt_sekunden
+    if folge_dienst_bei_erfolg is not None:
+        meta_voll["folge_dienst_bei_erfolg"] = folge_dienst_bei_erfolg
     conn = _verbinden()
     try:
         with conn.cursor() as cur:

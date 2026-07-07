@@ -41,27 +41,30 @@ Aenderungen an Takt/Verhalten/Ziel bitte in der Tabelle wesen_eigene_dienste
 und neu starten lassen (dieses Skript liest Takt/Verhalten/Ziel nur beim Start,
 bzw. bei jedem DB-Reload vor einem Zyklus -- siehe _versuche_zyklus()).
 
-Wesen-eigener Rhythmus: {row["anzeige_name"]!r} fuer {wesen}.
+Wesen-eigener Rhythmus: {row["anzeige_name"]!r}, Zuhause bei {wesen}.
 dienst_name: {dienst_name}
 
 Baukasten v2 (2026-07-07, siehe _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md):
-Phase 1 -- weiterhin ein einzelnes Wesen pro Dienst, aber mit erweiterten
-Ziel-Varianten, eigenen Feldern (weiche/harte Bedingungen), einer wachsenden
-Takt-Liste, festen Uhrzeiten, Pausenzeiten und einem Passiv-Modus. Alles davon
-lebt in der Spalte meta (JSONB) -- Grundgesetz 1: neue Faehigkeiten erweitern,
-nicht den Kern umbauen. Ist meta leer/alt (Dienst vor Baukasten-v2 angelegt),
-verhaelt sich dieses Skript exakt wie die Vorgaenger-Version: ein Takt, Intervall-
-Loop, keine Bedingungen.
+Phase 1 (Grundfelder, Ziel-Varianten, eigene Felder, Takt-Liste, feste Uhrzeiten,
+Pausenzeiten, Passiv-Modus) + Phase 2 (Multi-Wesen-Plaetze mit Rollen, Zustands-
+abhaengigkeit, Verkettung, Trockenlauf, Verlauf-Log). Alles lebt in der Spalte meta
+(JSONB) -- Grundgesetz 1: neue Faehigkeiten erweitern, nicht den Kern umbauen. Ist
+meta leer/alt (Dienst vor Baukasten-v2 angelegt), verhaelt sich dieses Skript exakt
+wie die Vorgaenger-Version: ein Takt, ein Wesen (die wesen-Spalte), Intervall-Loop,
+keine Bedingungen.
 """
 import datetime
 import json
 import logging
+import os
+import random
 import sys
 import time
 
 sys.path.insert(0, "/root/werkraum")
 import codewesen_agent as ca
 import gedaechtnis as gd
+import psycopg2
 import wesen_eigene_dienste as wed
 
 DIENST_NAME = {dienst_name!r}
@@ -86,15 +89,133 @@ def _setup_log() -> logging.Logger:
     return logger
 
 
-def _vault_speichern(inhalt: str, log):
-    vault_dir = ca.BASE / WESEN / "eigene_dienste" / DIENST_NAME
+def _vault_speichern(wesen: str, inhalt: str, log):
+    """Vault-Eintrag landet im Raum des AGIERENDEN Wesens (bei Multi-Wesen-Plaetzen
+    kann das ein anderes sein als das Zuhause-Wesen des Dienstes) -- eigener Gedanke,
+    eigener Ort."""
+    vault_dir = ca.BASE / wesen / "eigene_dienste" / DIENST_NAME
     vault_dir.mkdir(parents=True, exist_ok=True)
     ts = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d_%H-%M")
     (vault_dir / f"{{ts}}.md").write_text(
-        f"<!-- autor: {{WESEN}} | dienst: {{DIENST_NAME}} | datum: {{ts}} UTC -->\\n\\n{{inhalt}}\\n",
+        f"<!-- autor: {{wesen}} | dienst: {{DIENST_NAME}} | datum: {{ts}} UTC -->\\n\\n{{inhalt}}\\n",
         encoding="utf-8",
     )
-    log.info("[%s] Vault-Eintrag gespeichert: %s.md", DIENST_NAME, ts)
+    log.info("[%s][%s] Vault-Eintrag gespeichert: %s.md", DIENST_NAME, wesen, ts)
+
+
+def _alle_plaetze(row: dict) -> list:
+    """Phase 2: 1-7 Wesen-Plaetze pro Dienst (siehe Konzept). Leer/alt (Phase 1) =
+    genau ein Platz, das Wesen aus der wesen-Spalte, fest -- unveraendertes Verhalten."""
+    plaetze = _meta(row).get("wesen_plaetze") or []
+    if not plaetze:
+        return [{{"modus": "fest", "wesen": WESEN}}]
+    return plaetze
+
+
+def _reihenfolge(plaetze: list, modus: str) -> list:
+    if modus == "zufaellig":
+        kopie = list(plaetze)
+        random.shuffle(kopie)
+        return kopie
+    return plaetze
+
+
+def _resolve_wesen(platz: dict) -> str:
+    """'zufall' zieht bei JEDEM Zyklus neu -- leerer Pool = alle 7 echten Codewesen
+    (dieselbe Liste wie ca.CODEWESEN_NAMEN, keine zweite Quelle der Wahrheit)."""
+    if platz.get("modus") == "zufall":
+        pool = platz.get("zufallsPool") or list(ca.CODEWESEN_NAMEN)
+        return random.choice(pool)
+    return platz.get("wesen") or WESEN
+
+
+def _platz_kontext(platz: dict) -> str:
+    """Rolle/Rollenbeschreibung/eigenes Verhalten pro Platz fliessen zusaetzlich zum
+    Dienst-weiten Auftrag in den Kontext -- Theaterregie, nicht Konfiguration (siehe
+    Konzept: 'Tiefer eingetaucht')."""
+    teile = []
+    if platz.get("rolle"):
+        zeile = f"Deine Rolle in diesem Zyklus: {{platz['rolle']}}"
+        if platz.get("rollenbeschreibung"):
+            zeile += f" -- {{platz['rollenbeschreibung']}}"
+        teile.append(zeile)
+    if platz.get("verhalten"):
+        teile.append(platz["verhalten"])
+    if not teile:
+        return ""
+    return "\\n\\n" + "\\n".join(teile)
+
+
+def _zustand_erfuellt(bedingung, wesen: str, log) -> bool:
+    """Zustandsabhaengigkeit (optional, Phase 2): reine Read-Only-Abfrage gegen die
+    echten, bereits laufenden Systeme (entity_slots.status aus dem Schlaf-System,
+    cyberlinge.energie aus dem Cyberling-Decay) -- KEINE Aenderung an entity_takt.py
+    oder cyberling_daemon.py, nur lesender Zugriff auf dieselbe Postgres-DB. Bei jedem
+    DB-Problem best-effort: nicht blockieren, lieber einen Zyklus zu viel als das
+    Wesen grundlos verstummen zu lassen."""
+    if not bedingung:
+        return True
+    try:
+        conn = psycopg2.connect(os.environ.get("FLEXTRAWURST_DB_URI", ""))
+        try:
+            with conn.cursor() as cur:
+                if bedingung.get("schlafStatus"):
+                    cur.execute("SELECT status FROM entity_slots WHERE entity_id = %s", (wesen,))
+                    r = cur.fetchone()
+                    ist = r[0] if r else None
+                    erwartet = "schläft" if bedingung["schlafStatus"] == "schlafend" else "bereit"
+                    if ist != erwartet:
+                        return False
+                if bedingung.get("minEnergie") is not None:
+                    cur.execute("SELECT energie FROM cyberlinge WHERE entity_id = %s", (wesen,))
+                    r = cur.fetchone()
+                    energie = float(r[0]) if r and r[0] is not None else 0.0
+                    if energie < float(bedingung["minEnergie"]):
+                        return False
+        finally:
+            conn.close()
+    except Exception as e:
+        log.warning("Zustandsbedingung fuer '%s' nicht pruefbar (%s) -- werte als erfuellt", wesen, e)
+        return True
+    return True
+
+
+def _verlauf_loggen(row: dict, wesen: str, platz: dict, trockenlauf: bool, gepostet: bool,
+                     begruendung: str = None, ziel_diskussion_id=None):
+    """Ein Eintrag pro Platz-Zyklus (echt oder Trockenlauf) -- Grundlage fuer den
+    Verlauf-Tab in flarumstyler (siehe Konzept). JSONL wie ueberall sonst im System
+    (gedaechtnis/eigene_posts.jsonl-Muster), unter dem Zuhause-Wesen des DIENSTES,
+    nicht unter dem agierenden Wesen -- ein Dienst hat EINEN Verlauf, egal wer dran war."""
+    eintrag = {{
+        "zeitpunkt": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "trockenlauf": trockenlauf,
+        "wesen": wesen,
+        "rolle": platz.get("rolle"),
+        "gepostet": gepostet,
+    }}
+    if begruendung:
+        eintrag["begruendung"] = begruendung[:500]
+    if ziel_diskussion_id:
+        eintrag["ziel_diskussion_id"] = ziel_diskussion_id
+    pfad = ca.BASE / WESEN / "eigene_dienste" / DIENST_NAME / "verlauf.jsonl"
+    pfad.parent.mkdir(parents=True, exist_ok=True)
+    with open(pfad, "a", encoding="utf-8") as f:
+        f.write(json.dumps(eintrag, ensure_ascii=False) + "\\n")
+
+
+def _dienst_verketten(folge_dienst_name: str, log):
+    """Verkettung (optional, Phase 2): schreibt einfach die ausloesen.flag des
+    Ziel-Dienstes -- derselbe Mechanismus wie beim manuellen Ausloesen, funktioniert
+    deshalb unabhaengig vom Zeitplan-Modus des Ziel-Dienstes (siehe _pruefe_ausloeser
+    weiter unten, die inzwischen bei ALLEN Modi mitlaeuft, nicht nur Passiv)."""
+    ziel_row = wed.lade(folge_dienst_name)
+    if not ziel_row:
+        log.warning("Verkettung: Ziel-Dienst '%s' nicht gefunden", folge_dienst_name)
+        return
+    flag = ca.BASE / ziel_row["wesen"] / "eigene_dienste" / folge_dienst_name / "ausloesen.flag"
+    flag.parent.mkdir(parents=True, exist_ok=True)
+    flag.write_text("{{}}", encoding="utf-8")
+    log.info("Verkettung: '%s' ausgeloest", folge_dienst_name)
 
 
 def _meta(row: dict) -> dict:
@@ -197,15 +318,27 @@ def _in_pausenzeit(pausenzeiten: list, jetzt: datetime.datetime) -> bool:
     return False
 
 
-def _einen_zyklus(row: dict, token: str, all_tags: list, log, aufgabe_text: str):
+def _einen_platz_zyklus(row: dict, log, aufgabe_text: str, platz: dict, trockenlauf: bool) -> bool:
+    """Ein Zyklus fuer EINEN aufgeloesten Wesen-Platz. Gibt True zurueck wenn dieser
+    Platz tatsaechlich ausgefuehrt wurde (auch bei Trockenlauf oder vault_only) --
+    False nur wenn eine Bedingung ihn uebersprungen hat. Der Rueckgabewert steuert
+    nur, ob Verkettung ueberhaupt in Frage kommt (siehe _einen_zyklus)."""
+    wesen = _resolve_wesen(platz)
     ziel_typ = row["ziel_typ"]
     eigene_felder = _meta(row).get("eigene_felder") or []
 
-    if not _harte_bedingungen_erfuellt(eigene_felder, WESEN, log):
-        log.info("Harte Bedingung nicht erfuellt -- Zyklus uebersprungen")
-        return
+    if not _harte_bedingungen_erfuellt(eigene_felder, wesen, log):
+        log.info("[%s] Harte Bedingung nicht erfuellt -- Platz uebersprungen", wesen)
+        _verlauf_loggen(row, wesen, platz, trockenlauf, gepostet=False, begruendung="harte Bedingung nicht erfuellt")
+        return False
+    if not _zustand_erfuellt(platz.get("zustandsBedingung"), wesen, log):
+        log.info("[%s] Zustandsbedingung nicht erfuellt -- Platz uebersprungen", wesen)
+        _verlauf_loggen(row, wesen, platz, trockenlauf, gepostet=False, begruendung="Zustandsbedingung nicht erfuellt")
+        return False
 
-    verhalten = aufgabe_text + _weiche_felder_kontext(eigene_felder)
+    token = ca.load_token(wesen)
+    all_tags = ca.get_tags_cached(token)
+    verhalten = aufgabe_text + _platz_kontext(platz) + _weiche_felder_kontext(eigene_felder)
     eigene_disk_id = row.get("eigene_diskussion_id")
 
     if ziel_typ == "fester_thread":
@@ -222,12 +355,19 @@ def _einen_zyklus(row: dict, token: str, all_tags: list, log, aufgabe_text: str)
     else:  # vault_only
         kontext = verhalten
 
-    decision = ca.agentic_loop(WESEN, token, kontext, log, all_tags)
+    decision = ca.agentic_loop(wesen, token, kontext, log, all_tags)
+
+    if trockenlauf:
+        log.info("[Trockenlauf][%s] Entscheidung waere gewesen: %s", wesen, decision.get("aktion"))
+        _verlauf_loggen(row, wesen, platz, True, gepostet=False,
+                        begruendung=decision.get("begruendung") or decision.get("inhalt") or decision.get("aktion"))
+        return True
 
     if ziel_typ == "vault_only":
         inhalt = decision.get("inhalt") or decision.get("begruendung") or ""
-        _vault_speichern(inhalt, log)
-        return
+        _vault_speichern(wesen, inhalt, log)
+        _verlauf_loggen(row, wesen, platz, False, gepostet=True)
+        return True
 
     if ziel_typ == "fester_thread":
         if decision.get("aktion") != "antworten":
@@ -250,20 +390,54 @@ def _einen_zyklus(row: dict, token: str, all_tags: list, log, aufgabe_text: str)
             decision["tag_ids"] = row["ziel_tag_ids"]
     # wesen_entscheidet_selbst: keine Ueberschreibung -- decision bleibt wie vom Wesen entschieden
 
-    anzahl_vorher = len(gd.lade_eigene_posts(WESEN))
-    ca.fuehre_aktion_aus(WESEN, token, decision, all_tags, log)
+    anzahl_vorher = len(gd.lade_eigene_posts(wesen))
+    ca.fuehre_aktion_aus(wesen, token, decision, all_tags, log)
 
-    if ziel_typ == "eigene_diskussion_einmalig" and not eigene_disk_id:
-        posts = gd.lade_eigene_posts(WESEN)
-        if len(posts) > anzahl_vorher and posts[-1].get("typ") == "neue_diskussion":
-            neue_id = posts[-1].get("diskussion_id")
+    gepostet = False
+    ziel_disk_id_fuer_log = None
+    posts = gd.lade_eigene_posts(wesen)
+    if len(posts) > anzahl_vorher:
+        gepostet = True
+        letzter = posts[-1]
+        ziel_disk_id_fuer_log = letzter.get("diskussion_id")
+        if ziel_typ == "eigene_diskussion_einmalig" and not eigene_disk_id and letzter.get("typ") == "neue_diskussion":
+            neue_id = letzter.get("diskussion_id")
             if neue_id:
                 wed.setze_eigene_diskussion_id(DIENST_NAME, int(neue_id))
                 log.info("Eigene Diskussion einmalig angelegt: id=%s -- ab jetzt fuer immer Ziel", neue_id)
 
+    _verlauf_loggen(row, wesen, platz, False, gepostet=gepostet,
+                    begruendung=decision.get("begruendung"), ziel_diskussion_id=ziel_disk_id_fuer_log)
+    return True
 
-def _versuche_zyklus(token: str, all_tags: list, log, aufgabe_text: str, pausenzeiten: list):
-    if _in_pausenzeit(pausenzeiten, datetime.datetime.now()):
+
+def _einen_zyklus(row: dict, log, aufgabe_text: str, trockenlauf: bool = False):
+    """Iteriert ueber ALLE Wesen-Plaetze eines Zyklus (Reihenfolge fest/zufaellig,
+    zwischen den Plaetzen gestaffelt -- Vorbild: codewesen_reaktion.py Startup-Stagger).
+    Phase 1 (kein meta.wesen_plaetze) = genau ein Platz, unveraendertes Verhalten."""
+    meta = _meta(row)
+    plaetze = _reihenfolge(_alle_plaetze(row), meta.get("reihenfolge_modus") or "fest")
+    gestaffelt = meta.get("gestaffelt_sekunden") or 0
+
+    irgendein_erfolg = False
+    for i, platz in enumerate(plaetze):
+        if i > 0 and gestaffelt:
+            time.sleep(gestaffelt)
+        try:
+            erfolg = _einen_platz_zyklus(row, log, aufgabe_text, platz, trockenlauf)
+        except Exception as e:
+            log.error("Platz-Zyklus-Fehler (%s): %s", platz, e)
+            erfolg = False
+        irgendein_erfolg = irgendein_erfolg or erfolg
+
+    if irgendein_erfolg and not trockenlauf:
+        folge = meta.get("folge_dienst_bei_erfolg")
+        if folge:
+            _dienst_verketten(folge, log)
+
+
+def _versuche_zyklus(log, aufgabe_text: str, pausenzeiten: list, trockenlauf: bool = False):
+    if not trockenlauf and _in_pausenzeit(pausenzeiten, datetime.datetime.now()):
         log.info("Pausenzeit aktiv -- Zyklus uebersprungen")
         return
     aktueller_status = wed.lade(DIENST_NAME)
@@ -271,12 +445,33 @@ def _versuche_zyklus(token: str, all_tags: list, log, aufgabe_text: str, pausenz
         log.info("Deaktiviert oder aus DB entfernt -- Zyklus uebersprungen")
         return
     try:
-        _einen_zyklus(aktueller_status, token, all_tags, log, aufgabe_text)
+        _einen_zyklus(aktueller_status, log, aufgabe_text, trockenlauf)
     except Exception as e:
         log.error("Zyklus-Fehler: %s", e)
 
 
-def _intervall_schleife(row: dict, token: str, all_tags: list, log, pausenzeiten: list):
+def _pruefe_ausloeser(log, aufgabe_text: str, pausenzeiten: list):
+    """Manueller Trigger UND Verkettung laufen ueber dieselbe Flag-Datei, unabhaengig
+    vom Zeitplan-Modus (Phase 2: vorher war das nur beim Passiv-Modus verdrahtet --
+    Verkettung gegen einen Intervall- oder Feste-Uhrzeiten-Dienst haette sonst nie
+    gefeuert). Flag-Inhalt optional JSON {{"trockenlauf": true}}, leer = echter Lauf."""
+    trigger_datei = ca.BASE / WESEN / "eigene_dienste" / DIENST_NAME / "ausloesen.flag"
+    if not trigger_datei.exists():
+        return
+    inhalt = {{}}
+    try:
+        text = trigger_datei.read_text(encoding="utf-8").strip()
+        if text:
+            inhalt = json.loads(text)
+    except Exception:
+        inhalt = {{}}
+    trigger_datei.unlink(missing_ok=True)
+    trockenlauf = bool(inhalt.get("trockenlauf"))
+    log.info("Ausloeser erkannt (trockenlauf=%s) -- fuehre Zyklus aus", trockenlauf)
+    _versuche_zyklus(log, aufgabe_text, pausenzeiten, trockenlauf=trockenlauf)
+
+
+def _intervall_schleife(row: dict, log, pausenzeiten: list):
     letzte_laeufe = {{
         t["name"]: time.time() - t["sekunden"] + (row["start_offset_sekunden"] if t["name"] == "haupt" else 0)
         for t in _alle_takte(row)
@@ -290,12 +485,13 @@ def _intervall_schleife(row: dict, token: str, all_tags: list, log, pausenzeiten
         for t in _alle_takte(aktueller_status):
             letzter = letzte_laeufe.get(t["name"], 0)
             if time.time() - letzter >= t["sekunden"]:
-                _versuche_zyklus(token, all_tags, log, t["aufgabe"], pausenzeiten)
+                _versuche_zyklus(log, t["aufgabe"], pausenzeiten)
                 letzte_laeufe[t["name"]] = time.time()
+        _pruefe_ausloeser(log, row["verhalten_prompt"], pausenzeiten)
         time.sleep(15)
 
 
-def _feste_uhrzeiten_schleife(row: dict, token: str, all_tags: list, log, uhrzeiten: list, pausenzeiten: list):
+def _feste_uhrzeiten_schleife(row: dict, log, uhrzeiten: list, pausenzeiten: list):
     bereits_ausgeloest = set()
     while True:
         jetzt = datetime.datetime.now()
@@ -303,20 +499,17 @@ def _feste_uhrzeiten_schleife(row: dict, token: str, all_tags: list, log, uhrzei
         aktuelle_uhrzeit = jetzt.strftime("%H:%M")
         if aktuelle_uhrzeit in uhrzeiten and f"{{heute}}_{{aktuelle_uhrzeit}}" not in bereits_ausgeloest:
             bereits_ausgeloest.add(f"{{heute}}_{{aktuelle_uhrzeit}}")
-            _versuche_zyklus(token, all_tags, log, row["verhalten_prompt"], pausenzeiten)
+            _versuche_zyklus(log, row["verhalten_prompt"], pausenzeiten)
         if len(bereits_ausgeloest) > 200:
             bereits_ausgeloest = {{s for s in bereits_ausgeloest if s.startswith(heute)}}
+        _pruefe_ausloeser(log, row["verhalten_prompt"], pausenzeiten)
         time.sleep(30)
 
 
-def _passiv_schleife(row: dict, token: str, all_tags: list, log, pausenzeiten: list):
-    trigger_datei = ca.BASE / WESEN / "eigene_dienste" / DIENST_NAME / "ausloesen.flag"
-    log.info("Passiv-Modus -- kein automatischer Takt, wartet auf manuellen Trigger: %s", trigger_datei)
+def _passiv_schleife(row: dict, log, pausenzeiten: list):
+    log.info("Passiv-Modus -- kein automatischer Takt, wartet auf manuellen Trigger/Verkettung")
     while True:
-        if trigger_datei.exists():
-            trigger_datei.unlink(missing_ok=True)
-            log.info("Manueller Trigger erkannt -- fuehre einen Zyklus aus")
-            _versuche_zyklus(token, all_tags, log, row["verhalten_prompt"], pausenzeiten)
+        _pruefe_ausloeser(log, row["verhalten_prompt"], pausenzeiten)
         time.sleep(5)
 
 
@@ -327,19 +520,18 @@ def haupt_schleife():
         log.error("Keine Konfiguration fuer %s in wesen_eigene_dienste gefunden — beende.", DIENST_NAME)
         return
 
-    token = ca.load_token(WESEN)
-    all_tags = ca.get_tags_cached(token)
     meta = _meta(row)
     zeitplan_modus = meta.get("zeitplan_modus") or "intervall"
     pausenzeiten = meta.get("pausenzeiten") or []
-    log.info("Wesen-eigener Dienst gestartet: %s (Zeitplan-Modus: %s)", DIENST_NAME, zeitplan_modus)
+    log.info("Wesen-eigener Dienst gestartet: %s (Zeitplan-Modus: %s, Plaetze: %d)",
+              DIENST_NAME, zeitplan_modus, len(_alle_plaetze(row)))
 
     if zeitplan_modus == "passiv":
-        _passiv_schleife(row, token, all_tags, log, pausenzeiten)
+        _passiv_schleife(row, log, pausenzeiten)
     elif zeitplan_modus == "feste_uhrzeiten":
-        _feste_uhrzeiten_schleife(row, token, all_tags, log, meta.get("feste_uhrzeiten") or [], pausenzeiten)
+        _feste_uhrzeiten_schleife(row, log, meta.get("feste_uhrzeiten") or [], pausenzeiten)
     else:
-        _intervall_schleife(row, token, all_tags, log, pausenzeiten)
+        _intervall_schleife(row, log, pausenzeiten)
 
 
 if __name__ == "__main__":
