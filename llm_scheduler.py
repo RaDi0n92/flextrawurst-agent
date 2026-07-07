@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 llm_scheduler.py — Prioritaets-Warteschlange fuer die gemeinsam genutzten
-llama-server-Instanzen (2 echte Slots je Server, --parallel 2 in den systemd-Units).
+llama-server-Instanzen (1 echter Slot je Server, --parallel 1 in den systemd-Units).
 
 Ersetzt das alte /tmp/ollama_locks/slot_0.lock-Semaphor: dort teilten sich alle
 ~18 Hintergrund-Prozesse EIN Lock (nur 1 effektiver Slot statt 2), die meisten
@@ -10,7 +10,7 @@ zu 10 Minuten einfrieren — unabhaengig von dessen eigener Dringlichkeit.
 Analyse + Simulation dazu: 2026-07-07, siehe docs/systemdoku.
 
 Neues Modell:
-  - 2 echte Slots pro Server werden auch als 2 nutzbare Slots behandelt.
+  - 1 echter Slot pro Server wird auch als 1 nutzbarer Slot behandelt.
   - Prioritaetsstufen (PRIO_HOCH/NORMAL/NIEDRIG) — hoehere Prioritaet UND
     frueherer Zeitpunkt gewinnt, nie umgekehrt.
   - JEDER Aufrufer wartet hoechstens max_wartezeit Sekunden, dann gibt er sauber
@@ -32,6 +32,7 @@ Verwendung (ersetzt fcntl.flock(slot_0.lock, LOCK_EX)):
 
 import os
 import time
+import zlib
 
 import psycopg2
 import psycopg2.extras
@@ -43,7 +44,7 @@ DB_URI = os.environ.get(
 
 PRIO_HOCH, PRIO_NORMAL, PRIO_NIEDRIG = 0, 1, 2
 
-N_SLOTS = {"hintergrund": 2, "chat": 2}
+N_SLOTS = {"hintergrund": 1, "chat": 1}
 
 POLL_INTERVALL_SEK = 1.0
 
@@ -59,8 +60,9 @@ def _conn():
 
 
 def _advisory_key(server: str) -> int:
-    # Stabiler kleiner Hash fuer pg_advisory_lock — muss in bigint passen.
-    return abs(hash(("llm_warteschlange", server))) % (2**31)
+    # Stabiler kleiner Hash fuer pg_advisory_lock — Pythons eingebautes hash()
+    # ist pro Prozess randomisiert und taugt hier nicht als gemeinsamer Lock-Key.
+    return zlib.crc32(f"llm_warteschlange:{server}".encode("utf-8")) & 0x7fffffff
 
 
 class LLMSlot:
