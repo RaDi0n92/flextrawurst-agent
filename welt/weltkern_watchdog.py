@@ -62,6 +62,8 @@ WELTKERN_SERVICES = {
     "geni-hoerer":          {"port": None, "health": None},
     "geni-web":             {"port": 8020, "health": None},
     "ollama":               {"port": 11434, "health": "http://localhost:11434/api/tags"},
+    "llama-hauhaucs":              {"port": 11435, "health": None},
+    "llama-hauhaucs-hintergrund":  {"port": 11436, "health": None},
     "splitter-physik":      {"port": None, "health": None},
     "similarity-daemon":    {"port": None, "health": None},
     "codewesen-chat":       {"port": 8002, "health": None},
@@ -99,7 +101,9 @@ SERVICE_BESCHREIBUNG = {
     "obsidian-api": "Anbindung an Claudes Obsidian-Vault (Notizen/Spiegel/Ideen), Port 8060.",
     "geni-hoerer": "GENIs Hördienst — nimmt neue Forum-/Systemereignisse fuer GENIs Gedächtnis auf.",
     "geni-web": "GENIs Web-Oberfläche, Port 8020.",
-    "ollama": "Das lokale LLM-Backend (llama-server/hauhaucs), Port 11434 — ohne dieses laufen keine Wesen-Antworten.",
+    "ollama": "Korrigiert 2026-07-06: NICHT mehr das Haupt-Backend — nur noch Freier-Modus + Vision-Modell, Port 11434. Das eigentliche Wesen-LLM laeuft ueber llama-hauhaucs/-hintergrund (siehe dort).",
+    "llama-hauhaucs": "Das eigentliche LLM-Backend fuer LIVE-Chat (hauhaucs-q6, Qwen3.6-35B), Port 11435 — hier laufen Aufgabenchats/Chat-UI-Antworten durch, wenn ein Mensch live zuschaut.",
+    "llama-hauhaucs-hintergrund": "Das LLM-Backend fuer ALLE Hintergrund-Denkprozesse (Batch-Generator, Takt, Reaktionen, Reflexion), Port 11436 — der gemeinsame, oft ueberlastete Slot den sich alle 7 Wesen teilen (siehe slot_0.lock-Kontention).",
     "splitter-physik": "Simulationsdienst fuer die Zwischenraum-Splitter-Physik (KompOase-Feature).",
     "similarity-daemon": "Berechnet Ähnlichkeiten zwischen Posts/Themen im Hintergrund.",
     "codewesen-chat": "Chat-UI fuer die 6 originalen Flarum-Wesen, Port 8002 (nicht zu verwechseln mit Aufgabenchats).",
@@ -130,6 +134,17 @@ SERVICE_BESCHREIBUNG = {
 # nicht wie ein echtes Problem aussehen und rote Punkte nicht "verwaschen". Bei Bedarf
 # ergaenzen, wenn sich herausstellt dass ein weiterer Dienst bewusst dauerhaft aus ist.
 SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt"}
+
+# Gruppierung fuer die flarumstyler-Ansicht (2026-07-07) — Daniel: "gruperungen, ganz
+# oben die in flarum und andere darunter". Alles was mit den Wesen/Flarum direkt zu tun
+# hat kommt in "flarum", der Rest (Welt-Infrastruktur, GENI, Simulation) in "welt".
+SERVICES_GRUPPE_FLARUM = {
+    "flarum-monitor", "codewesen-antwort-daniel", "codewesen-takt", "codewesen-lg-daemon",
+    "codewesen-forum-neugier", "codewesen-batch-generator", "codewesen-dakgordsystem",
+    "codewesen-reaktion-dakgord", "codewesen-chat", "dak-gord-web",
+    "codewesen-Schorschel", "codewesen-F3INSCHM3CK3R", "codewesen-traeumerlie",
+    "codewesen-R1ZZ1", "codewesen-jumpa", "codewesen-Resonanzknoten",
+}
 
 # Dienste die im flarumstyler NICHT ueber Start/Stop/Neustart-Buttons steuerbar sind
 # (2026-07-07) — Daniel wollte Steuerung, aber diese vier haben Blast-Radius fuer ALLE
@@ -271,6 +286,101 @@ def service_is_active(name: str) -> bool:
     return result.stdout.strip() == "active"
 
 
+def service_details(name: str) -> dict:
+    """Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):
+    seit wann laeuft es, wie oft neugestartet (zeigt Crash-Loops), wie viel
+    RAM. Daniel: 'man versteht nix' bei nur einem Statuswort — das hier soll
+    genug Kontext geben ohne selbst auf den Server zu muessen."""
+    try:
+        result = subprocess.run(
+            ["systemctl", "show", f"{name}.service",
+             "--property=ActiveEnterTimestamp,NRestarts,MemoryCurrent,ExecMainStatus,SubState"],
+            capture_output=True, text=True, timeout=5,
+        )
+        werte = {}
+        for zeile in result.stdout.splitlines():
+            if "=" in zeile:
+                k, v = zeile.split("=", 1)
+                werte[k] = v
+    except Exception:
+        werte = {}
+
+    speicher_mb = None
+    try:
+        roh = werte.get("MemoryCurrent", "")
+        if roh and roh != "[not set]":
+            speicher_mb = round(int(roh) / 1024 / 1024, 1)
+    except Exception:
+        pass
+
+    neustarts = None
+    try:
+        neustarts = int(werte.get("NRestarts", ""))
+    except Exception:
+        pass
+
+    return {
+        "seit_wann": werte.get("ActiveEnterTimestamp") or None,
+        "neustarts": neustarts,
+        "speicher_mb": speicher_mb,
+        "sub_state": werte.get("SubState"),
+    }
+
+
+def service_letzte_logs(name: str, anzahl: int = 3) -> list[str]:
+    """Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext
+    ohne SSH, analog zu den Beispielzeilen bei den Fehlermustern."""
+    try:
+        result = subprocess.run(
+            ["journalctl", "-u", f"{name}.service", "-n", str(anzahl), "--no-pager", "-o", "short-iso"],
+            capture_output=True, text=True, timeout=5,
+        )
+        zeilen = [z.strip() for z in result.stdout.splitlines() if z.strip()]
+        return zeilen[-anzahl:]
+    except Exception:
+        return []
+
+
+# Ports der zwei echten llama-server-Instanzen (flarumstyler, 2026-07-07) — Daniel:
+# "ich will genau sehen was gerade drin arbeitet, wie lange schon, wie viel RAM".
+LLAMA_SERVER_PORTS = {"llama-hauhaucs": 11435, "llama-hauhaucs-hintergrund": 11436}
+
+
+def llama_status(port: int) -> dict | None:
+    """Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
+    generiert wird, wie viele Anfragen warten, und die Tokens/Sekunde-Rate."""
+    try:
+        slots = requests.get(f"http://localhost:{port}/slots", timeout=3).json()
+        metrics_roh = requests.get(f"http://localhost:{port}/metrics", timeout=3).text
+    except Exception:
+        return None
+
+    metrics = {}
+    for zeile in metrics_roh.splitlines():
+        if zeile.startswith("#") or " " not in zeile:
+            continue
+        name, _, wert = zeile.rpartition(" ")
+        try:
+            metrics[name.replace("llamacpp:", "")] = float(wert)
+        except ValueError:
+            continue
+
+    return {
+        "slots": [
+            {
+                "id": s.get("id"),
+                "beschaeftigt": s.get("is_processing", False),
+                "prompt_tokens": s.get("n_prompt_tokens"),
+            }
+            for s in slots
+        ],
+        "warteschlange": int(metrics.get("requests_deferred", 0)),
+        "gerade_aktiv": any(s.get("is_processing") for s in slots),
+        "tokens_pro_sekunde": round(metrics.get("predicted_tokens_seconds", 0), 1),
+        "tokens_gesamt_erzeugt": int(metrics.get("tokens_predicted_total", 0)),
+    }
+
+
 def port_open(port: int) -> bool:
     import socket
     try:
@@ -390,6 +500,7 @@ def run_check() -> dict:
         if status == "down" and name in SERVICES_ERWARTET_AUS:
             status = "erwartet_aus"
 
+        details = service_details(name)
         report["services"][name] = {
             "active": active,
             "port_ok": port_ok,
@@ -397,6 +508,12 @@ def run_check() -> dict:
             "status": status,
             "beschreibung": SERVICE_BESCHREIBUNG.get(name, "(keine Beschreibung hinterlegt)"),
             "steuerbar": name not in SERVICES_GESPERRT_FUER_AKTIONEN,
+            "seit_wann": details["seit_wann"],
+            "neustarts": details["neustarts"],
+            "speicher_mb": details["speicher_mb"],
+            "letzte_logs": service_letzte_logs(name),
+            "gruppe": "flarum" if name in SERVICES_GRUPPE_FLARUM else "welt",
+            "llm_status": llama_status(LLAMA_SERVER_PORTS[name]) if name in LLAMA_SERVER_PORTS else None,
         }
 
         if status == "down":
