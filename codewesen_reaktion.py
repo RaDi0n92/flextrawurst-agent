@@ -675,8 +675,10 @@ def selbstreflexion(name: str, token: str, log: logging.Logger):
         })
         if not tag_ids:
             tag_ids = [all_tags[0]["id"]] if all_tags else []
-        result = start_discussion(titel, inhalt, tag_ids, token)
-        neue_disk_id = result.get("data", {}).get("id")
+        # start_discussion() (Wrapper oben) gibt bereits nur die ID zurueck, nicht das
+        # volle API-Dict — result hier direkt als ID verwenden, nicht nochmal entpacken
+        # (das war der Bug: doppeltes .get("data",{}).get("id") auf einer bereits fertigen ID).
+        neue_disk_id = start_discussion(titel, inhalt, tag_ids, token)
         log.info("[Reflexion] ✓ Neue Diskussion: '%s'", titel)
         gedaechtnis.speichere_post(name, {
             "typ": "neue_diskussion",

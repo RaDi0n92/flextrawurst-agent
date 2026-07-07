@@ -265,7 +265,7 @@ FEHLER_MUSTER = {
     "json_kein_dict": {
         "regex": _re.compile(r"'str' object has no attribute 'get'"),
         "was_ist_los": "Die Modellantwort wurde als JSON geparst, ergab aber kein Objekt/Dict — ein nachfolgender .get()-Aufruf stuerzte ab.",
-        "empfehlung": "Bereits am 2026-07-07 gefixt in codewesen_agent.py/codewesen_reaktion.py/codewesen_abwurf.py (isinstance-Pruefung ergaenzt). Falls neu: dieselbe Pruefung an der jeweiligen Stelle ergaenzen.",
+        "empfehlung": "Bereits am 2026-07-07 gefixt in codewesen_agent.py/codewesen_reaktion.py/codewesen_abwurf.py (isinstance-Pruefung ergaenzt). Zweite, verwandte Ursache selbes Datum: selbstreflexion()s neue_diskussion-Zweig entpackte die schon fertige ID von start_discussion() ein zweites Mal (result.get('data',{}).get('id') auf einem bereits extrahierten String) — trat erst nach dem LLM-Scheduler-Fix haeufiger auf, weil seitdem mehr Reflexions-Zyklen ueberhaupt bis zu diesem Codepfad kommen. Falls neu: dieselbe Pruefung an der jeweiligen Stelle ergaenzen.",
         "bringt_das": "Der betroffene Zyklus bricht nicht mehr komplett ab, sondern ueberspringt sauber.",
         "bringt_das_nicht": "Verhindert nicht, dass das Modell gelegentlich unerwartete Antwortformate liefert — das ist Modellverhalten, kein Bug.",
     },
