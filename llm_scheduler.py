@@ -31,6 +31,7 @@ Verwendung (ersetzt fcntl.flock(slot_0.lock, LOCK_EX)):
 """
 
 import os
+import re
 import time
 import zlib
 
@@ -62,8 +63,9 @@ PRIO_HOCH, PRIO_NORMAL, PRIO_NIEDRIG = 0, 1, 2
 N_SLOTS = {"hintergrund": 1, "chat": 1}
 
 POLL_INTERVALL_SEK = 1.0
-STALE_WARTER_SEK = 180
+STALE_WARTER_SEK = 100
 STALE_ACTIVE_SEK = 300
+RUFER_META_RE = re.compile(r"^pid=(?P<pid>\d+) wait=(?P<wait>\d+) hold=(?P<hold>\d+) ")
 
 
 class LLMSlotTimeout(Exception):
@@ -87,6 +89,7 @@ def _cleanup_stale_waiters(cur, server: str):
         """
         DELETE FROM llm_warteschlange
         WHERE server = %s
+          AND rufer NOT LIKE 'pid=%%'
           AND (
             (slot_bis IS NULL AND angefragt_um < NOW() - (%s || ' seconds')::interval)
             OR
@@ -95,6 +98,39 @@ def _cleanup_stale_waiters(cur, server: str):
         """,
         (server, STALE_WARTER_SEK, STALE_ACTIVE_SEK),
     )
+    cur.execute(
+        """
+        SELECT id, rufer,
+               slot_bis IS NOT NULL AND slot_bis > NOW() AS active,
+               EXTRACT(EPOCH FROM (NOW() - angefragt_um)) AS age_s
+        FROM llm_warteschlange
+        WHERE server = %s
+          AND rufer LIKE 'pid=%%'
+        """,
+        (server,),
+    )
+    stale_ids = []
+    for row in cur.fetchall():
+        match = RUFER_META_RE.match(row["rufer"] or "")
+        if not match:
+            continue
+        pid = int(match.group("pid"))
+        wait_s = int(match.group("wait"))
+        hold_s = int(match.group("hold"))
+        age_s = float(row["age_s"] or 0)
+        if not os.path.exists(f"/proc/{pid}"):
+            stale_ids.append(row["id"])
+        elif not row["active"] and age_s > wait_s + 10:
+            stale_ids.append(row["id"])
+        elif row["active"] and age_s > hold_s + 10:
+            stale_ids.append(row["id"])
+
+    if stale_ids:
+        cur.execute("DELETE FROM llm_warteschlange WHERE id = ANY(%s)", (stale_ids,))
+
+
+def _rufer_mit_meta(rufer: str, max_wartezeit: float, max_haltezeit: float) -> str:
+    return f"pid={os.getpid()} wait={int(max_wartezeit)} hold={int(max_haltezeit)} {rufer}"
 
 
 class LLMSlot:
@@ -121,7 +157,7 @@ class LLMSlot:
             cur.execute(
                 "INSERT INTO llm_warteschlange (server, prioritaet, rufer) "
                 "VALUES (%s, %s, %s) RETURNING id, angefragt_um",
-                (self.server, self.prioritaet, self.rufer),
+                (self.server, self.prioritaet, _rufer_mit_meta(self.rufer, self.max_wartezeit, self.max_haltezeit)),
             )
             row = cur.fetchone()
             self._id = row["id"]
