@@ -185,7 +185,10 @@ SERVICES_GESPERRT_FUER_AKTIONEN = {"ollama", "process-camera-preview", "welt-api
 # Dienste die bereits auf dienst_konfiguration (Takt+Verhalten aus der DB) umgestellt sind
 # (2026-07-07, Individualisierungs-Ausbau) — Proof-of-Concept startet mit genau einem Dienst,
 # weitere kommen nach Bestaetigung dazu (siehe Systemdoku 18_flarumstyler.md).
-DIENSTE_MIT_KONFIGURATION = {"codewesen-vokabel-takt"}
+DIENSTE_MIT_KONFIGURATION = {
+    "codewesen-vokabel-takt", "codewesen-antwort-daniel", "codewesen-weltbild",
+    "codewesen-forum-neugier", "codewesen-engagement",
+}
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
 # absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,

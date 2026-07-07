@@ -45,6 +45,7 @@ sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import flarum_poster
 import codewesen_container as container
+import dienst_konfiguration as dk
 
 BASE    = Path("/root/werkraum/codewesen")
 ZUSTAND = BASE / "_forum_neugier_zustand.json"
@@ -63,6 +64,10 @@ ZEICHEN_BUDGET = TOKEN_BUDGET_PRO_DISKUSSION * ZEICHEN_PRO_TOKEN
 PAUSE_ZWISCHEN_WESEN  = 8     # Sekunden zwischen Wesen
 PAUSE_ZWISCHEN_ZYKLEN = 2700  # 45min Pause nach vollem Durchlauf — schwerer als vorher, seltener
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
+
+# Individualisierung (flarumstyler, 2026-07-07): Takt+Verhalten ueberschreibbar aus dienst_konfiguration.
+DIENST_NAME = "codewesen-forum-neugier"
+STANDARD_VERHALTEN = ""
 
 logging.basicConfig(
     level=logging.INFO,
@@ -132,7 +137,7 @@ def _sammle_inhalt(meta: dict) -> str:
 
 # ── Entscheidung + Entwurf (ein LLM-Call, strukturierte Textantwort) ─────────
 
-def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | None:
+def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict], verhalten: str = "") -> dict | None:
     weltbild = _weltbild(wesen)
     container_liste = container.liste(wesen)
     container_info = (
@@ -167,6 +172,8 @@ def _entscheide_und_verfasse(wesen: str, diskussionen: list[dict]) -> dict | Non
     )
     if weltbild:
         system += f"\nDein aktuelles Weltbild (Auszug):\n{weltbild}\n"
+    if verhalten:
+        system += f"\n{verhalten}\n"
 
     teile = []
     for meta in diskussionen:
@@ -323,7 +330,7 @@ def _exportiere_ins_forum(wesen: str, entscheidung: dict):
 
 # ── Hauptablauf pro Wesen ─────────────────────────────────────────────────────
 
-def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
+def _verarbeite_wesen(wesen: str, zustand: dict, verhalten: str = "") -> dict:
     diskussionen = _waehle_diskussionen(wesen, zustand, DISKUSSIONEN_PRO_DURCHLAUF)
     if not diskussionen:
         log.info(f"[{wesen}] keine neuen Diskussionen zum Widmen")
@@ -333,7 +340,7 @@ def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
     log.info(f"[{wesen}] widmet sich {len(diskussionen)} Diskussionen: "
               f"{[m.get('id') for m in diskussionen]}")
 
-    entscheidung = _entscheide_und_verfasse(wesen, diskussionen)
+    entscheidung = _entscheide_und_verfasse(wesen, diskussionen, verhalten)
     bearbeitet = set(zustand.get(wesen, {}).get("bearbeitete_diskussionen", []))
     bearbeitet.update(int(m["id"]) for m in diskussionen if m.get("id"))
     zustand.setdefault(wesen, {})["bearbeitete_diskussionen"] = sorted(bearbeitet)[-200:]
@@ -365,15 +372,19 @@ def _verarbeite_wesen(wesen: str, zustand: dict) -> dict:
 def haupt_schleife():
     log.info("Forum-Neugierkern (Diskussions-Widmung) startet.")
     while True:
+        konfig = dk.lade(DIENST_NAME)
+        pause_zyklen = konfig.get("takt_sekunden") or PAUSE_ZWISCHEN_ZYKLEN
+        verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+
         zustand = _lade_zustand()
         for wesen in WESEN:
             try:
-                zustand = _verarbeite_wesen(wesen, zustand)
+                zustand = _verarbeite_wesen(wesen, zustand, verhalten)
             except Exception as e:
                 log.error(f"[{wesen}] Fehler: {e}")
             time.sleep(PAUSE_ZWISCHEN_WESEN)
-        log.info(f"Zyklus fertig. Pause {PAUSE_ZWISCHEN_ZYKLEN}s.")
-        time.sleep(PAUSE_ZWISCHEN_ZYKLEN)
+        log.info(f"Zyklus fertig. Pause {pause_zyklen}s.")
+        time.sleep(pause_zyklen)
 
 
 if __name__ == "__main__":

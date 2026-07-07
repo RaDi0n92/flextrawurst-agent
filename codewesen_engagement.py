@@ -29,6 +29,13 @@ try:
     _VAULT_OK = True
 except ImportError:
     _VAULT_OK = False
+import dienst_konfiguration as dk
+
+# Individualisierung (flarumstyler, 2026-07-07): nur Verhalten ueberschreibbar —
+# der Takt kommt bei diesem Dienst aus systemd RestartSec (kein eigener Sleep-Loop),
+# nicht aus Python, deshalb hier (noch) nicht via takt_sekunden steuerbar.
+DIENST_NAME = "codewesen-engagement"
+STANDARD_VERHALTEN = ""
 
 BASE        = Path("/root/werkraum/codewesen")
 FLARUM_BASE = Path("/root/werkraum/flarum")
@@ -166,7 +173,7 @@ def _speichere_geantwortet(name: str, geantwortet: dict):
     f.write_text(json.dumps(geantwortet, ensure_ascii=False), encoding="utf-8")
 
 
-def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: set) -> None:
+def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: set, verhalten: str = "") -> None:
     import datetime
     log.info(f"{name}: liest Forum")
 
@@ -352,6 +359,8 @@ Antworte NUR mit JSON:
 {{
   "antwort": "<deine Antwort — direkt, persönlich, mit echtem Widerspruch oder Differenz>"
 }}"""
+        if verhalten:
+            antwort_prompt += f"\n\n{verhalten}"
 
         try:
             # Cooldown prüfen BEVOR LLM aufgerufen wird
@@ -416,6 +425,7 @@ Antworte NUR mit JSON:
 
 def main():
     log.info("Engagement-Lauf gestartet — einmalig, kein Loop")
+    verhalten = dk.lade(DIENST_NAME).get("verhalten_text") or STANDARD_VERHALTEN
     wesen_forum_namen = {_forum_username(w) for w in CODEWESEN}
     log.info(f"Bekannte Codewesen-Forennamen: {wesen_forum_namen}")
     bereits_beantwortet: set = set()
@@ -423,7 +433,7 @@ def main():
     random.shuffle(reihenfolge)
     log.info(f"Reihenfolge dieses Laufs: {reihenfolge}")
     for name in reihenfolge:
-        _pruefe_wesen(name, wesen_forum_namen, bereits_beantwortet)
+        _pruefe_wesen(name, wesen_forum_namen, bereits_beantwortet, verhalten)
     log.info("Engagement-Lauf abgeschlossen")
 
 

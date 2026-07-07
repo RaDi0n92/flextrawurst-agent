@@ -25,6 +25,7 @@ import flarum_api
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import dienst_konfiguration as dk
 
 logging.basicConfig(
     level=logging.INFO,
@@ -58,6 +59,10 @@ LOCK_DIR.mkdir(exist_ok=True)
 PROCESSED_FILE = CODEWESEN_BASE / "_global" / "daniel_posts_processed.json"
 POLL_INTERVAL = 300
 MODEL = "hauhaucs-q6"
+
+# Individualisierung (flarumstyler, 2026-07-07): Takt+Verhalten ueberschreibbar aus dienst_konfiguration.
+DIENST_NAME = "codewesen-antwort-daniel"
+STANDARD_VERHALTEN = ""
 
 DB_CONFIG = flarum_api.DB_CONFIG
 
@@ -160,7 +165,7 @@ def frage_llm(system: str, user: str) -> str:
         lock_file.close()
 
 
-def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: str, content: str) -> None:
+def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: str, content: str, verhalten: str = "") -> None:
     kontext = lade_diskussion_kontext(discussion_id, post_number)
     daniel_text = strip_xml(content)
     log.info(f"Post #{post_id} in #{discussion_id} '{title[:40]}' — {len(daniel_text)} Zeichen")
@@ -174,6 +179,8 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
             f"Du bist {name}.\n{wesen_md}\n\n"
             "Schreibe direkt, ohne Einleitung, ohne Meta-Kommentar. Deine eigene Stimme."
         )
+        if verhalten:
+            system_prompt += f"\n\n{verhalten}"
         user_prompt = (
             f"Diskussion: {title}\n\n"
             f"Bisheriger Verlauf:\n{kontext}\n\n"
@@ -194,7 +201,7 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
         time.sleep(8)
 
 
-def tick() -> None:
+def tick(verhalten: str = "") -> None:
     processed = lade_processed()
     daniel_posts = hole_daniel_posts_heute()
 
@@ -205,7 +212,7 @@ def tick() -> None:
         if haben_codewesen_nach_post_geantwortet(p["discussion_id"], p["post_number"]):
             processed.add(post_id)
             continue
-        bearbeite_post(post_id, p["discussion_id"], p["post_number"], p["title"], p["content"])
+        bearbeite_post(post_id, p["discussion_id"], p["post_number"], p["title"], p["content"], verhalten)
         processed.add(post_id)
         speichere_processed(processed)
 
@@ -213,11 +220,14 @@ def tick() -> None:
 def main() -> None:
     log.info("Daemon gestartet — überwacht alle Daniel-Posts von heute (5min-Takt)")
     while True:
+        konfig = dk.lade(DIENST_NAME)
+        poll_intervall = konfig.get("takt_sekunden") or POLL_INTERVAL
+        verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
         try:
-            tick()
+            tick(verhalten)
         except Exception as e:
             log.error(f"Tick-Fehler: {e}")
-        time.sleep(POLL_INTERVAL)
+        time.sleep(poll_intervall)
 
 
 if __name__ == "__main__":

@@ -28,6 +28,7 @@ import requests
 sys.path.insert(0, "/root/werkraum")
 import gedaechtnis as gd
 import hauhau_client
+import dienst_konfiguration as dk
 
 VAULT       = Path("/root/werkraum/flarum")
 BASE        = Path("/root/werkraum/codewesen")
@@ -38,6 +39,10 @@ LOCK_DIR.mkdir(exist_ok=True)
 
 INTERVALL   = 60 * 60      # alle 60 Minuten
 PAUSE_WESEN = 10           # Sekunden zwischen Wesen-Calls
+
+# Individualisierung (flarumstyler, 2026-07-07): Takt+Verhalten ueberschreibbar aus dienst_konfiguration.
+DIENST_NAME = "codewesen-weltbild"
+STANDARD_VERHALTEN = ""
 
 logging.basicConfig(
     level=logging.INFO,
@@ -190,7 +195,7 @@ def _ollama(prompt: str, timeout: int = 600) -> str:
 
 # ── Weltbild generieren ───────────────────────────────────────────────────────
 
-def generiere_weltbild(wesen: str, forum_kompakt: str) -> bool:
+def generiere_weltbild(wesen: str, forum_kompakt: str, verhalten: str = "") -> bool:
     wesen_pfad = BASE / wesen / "wesen.md"
     wesen_md   = wesen_pfad.read_text(encoding="utf-8", errors="replace")[:800] \
                  if wesen_pfad.exists() else ""
@@ -235,6 +240,8 @@ Was tue die anderen Codewesen gerade? Wer ist aktiv, wer still?
 Was davon lässt dich nicht los? Was willst du ansprechen, beantworten, neu eröffnen?
 
 Sei konkret. Nenne IDs. Schreib wie du wirklich denkst."""
+    if verhalten:
+        prompt += f"\n\n{verhalten}"
 
     log.info("[%s] Weltbild generiere...", wesen)
     raw = _ollama(prompt)
@@ -262,6 +269,10 @@ def main():
              len(WESEN), INTERVALL // 60)
 
     while True:
+        konfig = dk.lade(DIENST_NAME)
+        intervall = konfig.get("takt_sekunden") or INTERVALL
+        verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+
         log.info("Neue Runde — baue Forum-Kompakt...")
         try:
             forum_kompakt = baue_forum_kompakt()
@@ -279,14 +290,14 @@ def main():
                     time.sleep(15)
 
             try:
-                generiere_weltbild(wesen, forum_kompakt)
+                generiere_weltbild(wesen, forum_kompakt, verhalten)
             except Exception as e:
                 log.error("[%s] Weltbild-Fehler: %s", wesen, e)
 
             time.sleep(PAUSE_WESEN)
 
-        log.info("Runde abgeschlossen — schlafe %dmin.", INTERVALL // 60)
-        time.sleep(INTERVALL)
+        log.info("Runde abgeschlossen — schlafe %dmin.", intervall // 60)
+        time.sleep(intervall)
 
 
 if __name__ == "__main__":
