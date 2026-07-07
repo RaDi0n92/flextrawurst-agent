@@ -1079,9 +1079,23 @@ def pruefe_antwortpflicht(
                 decision = {"aktion": "antworten", "discussion_id": disk_id,
                             "inhalt": inhalt, "diskussion_titel": disk_titel}
             else:
-                log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — überspringe Disk %d",
-                            decision.get("aktion"), disk_id)
-                break
+                if name == "dak+gord-system":
+                    log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — dakgord-Fallback für Disk %d",
+                                decision.get("aktion"), disk_id)
+                    decision = {
+                        "aktion": "antworten",
+                        "discussion_id": disk_id,
+                        "inhalt": (
+                            "Ich habe den Trigger gesehen. Falls die JSON-Schicht gerade stolpert: "
+                            "Der Thread ist angekommen. Die Vokabelwelle war ein automatischer Takt/Trigger, "
+                            "keine freie gemeinsame Entscheidung aller Wesen."
+                        ),
+                        "diskussion_titel": disk_titel,
+                    }
+                else:
+                    log.warning("[Antwortpflicht] LLM-Aktion war '%s' ohne Inhalt — überspringe Disk %d",
+                                decision.get("aktion"), disk_id)
+                    break
 
         fuehre_aktion_aus(name, token, decision, all_tags, log, bypass_cooldown=True)
         break  # pro Prüfzyklus nur eine Pflichtantwort

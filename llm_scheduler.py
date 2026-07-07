@@ -63,6 +63,7 @@ N_SLOTS = {"hintergrund": 1, "chat": 1}
 
 POLL_INTERVALL_SEK = 1.0
 STALE_WARTER_SEK = 180
+STALE_ACTIVE_SEK = 300
 
 
 class LLMSlotTimeout(Exception):
@@ -86,10 +87,13 @@ def _cleanup_stale_waiters(cur, server: str):
         """
         DELETE FROM llm_warteschlange
         WHERE server = %s
-          AND slot_bis IS NULL
-          AND angefragt_um < NOW() - (%s || ' seconds')::interval
+          AND (
+            (slot_bis IS NULL AND angefragt_um < NOW() - (%s || ' seconds')::interval)
+            OR
+            (slot_bis IS NOT NULL AND slot_bis > NOW() AND angefragt_um < NOW() - (%s || ' seconds')::interval)
+          )
         """,
-        (server, STALE_WARTER_SEK),
+        (server, STALE_WARTER_SEK, STALE_ACTIVE_SEK),
     )
 
 
