@@ -90,16 +90,15 @@ def signifikante_worte(text: str) -> list[str]:
 # ── Schreib-Funktionen ────────────────────────────────────────────────────────
 
 def schreibe_muster_knoten(inhalt: str, tags: list[str]) -> str:
+    # War frueher ein KNOTEN_DIR.glob("*.json") + max(int(...)) ueber alle Dateien --
+    # bei 18.9 Mio Dateien einer der beiden Gruende fuer den 5h-Haenger vom 2026-07-07
+    # (der andere war lade_alle_knoten()). gedaechtnis_ops.naechste_id() haelt denselben
+    # Counter bereits O(1) via _counter.json (wird von hoerer.py/dialog.py/aktion.py
+    # aktiv gepflegt) -- muster.py nutzte das bisher nur fuer knoten_max_id(), nicht
+    # fuer die eigene ID-Vergabe.
+    from gedaechtnis_ops import naechste_id as _naechste_id
     with _id_lock:
-        alle_ids = []
-        for f in KNOTEN_DIR.glob("*.json"):
-            if f.stem == "schema":
-                continue
-            try:
-                alle_ids.append(int(f.stem))
-            except ValueError:
-                pass
-        naechste = str((max(alle_ids) + 1) if alle_ids else 1).zfill(4)
+        naechste = _naechste_id(KNOTEN_DIR)
         k = {
             "id": naechste,
             "typ": "muster",
