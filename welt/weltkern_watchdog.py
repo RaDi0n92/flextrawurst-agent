@@ -467,6 +467,21 @@ FEHLER_MUSTER = {
 
 BEISPIELZEILEN_MAX = 5  # pro Fehlermuster, fuer die Detailansicht (nicht nur Zaehlung)
 
+# Quittierung (flarumstyler, 2026-07-07, Daniel: "nicht nur ausgrauen...weg damit") —
+# Ein quittiertes Fehlermuster verschwindet komplett aus dem Fehler-Grid, SOLANGE kein
+# neues Vorkommen nach dem Quittierungs-Zeitpunkt dazukommt. Kommt ein neues Vorkommen
+# dazu, taucht die Karte automatisch wieder auf (kein dauerhaftes Stummschalten eines
+# echten wiederkehrenden Problems). Nichts wird geloescht (Grundgesetz 4) - nur die
+# Anzeige gefiltert, die Log-Zeilen/Zaehlung bleiben unberuehrt.
+QUITTIERUNG_FILE = LOG_DIR / "flarumstyler_quittierungen.json"
+
+
+def _lade_quittierungen() -> dict[str, str]:
+    try:
+        return json.loads(QUITTIERUNG_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
 
 def _dienst_fuer_log(logdatei: Path) -> str | None:
     if logdatei.name == "reaktion.log":
@@ -519,6 +534,7 @@ def fehler_uebersicht() -> tuple[dict, dict]:
         except Exception:
             continue
 
+    quittierungen = _lade_quittierungen()
     global_uebersicht = {
         schluessel: {
             "gesamt_anzahl": zaehler[schluessel],
@@ -528,6 +544,11 @@ def fehler_uebersicht() -> tuple[dict, dict]:
             "empfehlung": cfg["empfehlung"],
             "bringt_das": cfg["bringt_das"],
             "bringt_das_nicht": cfg["bringt_das_nicht"],
+            "quittiert": bool(
+                quittierungen.get(schluessel)
+                and (letzte[schluessel] is None or letzte[schluessel] <= quittierungen[schluessel])
+            ),
+            "quittiert_am": quittierungen.get(schluessel),
         }
         for schluessel, cfg in FEHLER_MUSTER.items()
     }
