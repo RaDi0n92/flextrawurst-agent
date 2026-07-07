@@ -36,6 +36,7 @@ sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import dienst_konfiguration as dk
 import llm_scheduler
+from flarum_vokabel_filter import ist_vokabel_thread
 
 # Individualisierung (flarumstyler, 2026-07-07): laeuft pro Wesen als eigener
 # Prozess (7 Units) — jedes Wesen bekommt seine eigene dienst_konfiguration-Zeile.
@@ -327,6 +328,13 @@ def verarbeite_inbox(name: str, token: str, all_tags: list, log: logging.Logger)
             disk_titel = d.get("discussion_title", "?")
             autor = d.get("username", "?")
             inhalt = d.get("content", "")
+
+            if ist_vokabel_thread(disk_titel, d.get("tags", "")):
+                log.info("Vokabelthread in Inbox -> ohne Reaktion verarbeitet: %s", disk_titel)
+                processed = f.parent.parent / "processed"
+                processed.mkdir(exist_ok=True)
+                f.rename(processed / f.name)
+                continue
 
             # Diskussion vollständig laden
             disk_text = wz.lies_diskussion_text(disk_id, token) if disk_id else ""
@@ -977,6 +985,10 @@ def pruefe_antwortpflicht(
 
         # Nur menschliche Posts als Antwortpflicht-Trigger — kein Codewesen-Pile-On
         if any(cw in autor for cw in codewesen_namen):
+            continue
+
+        daten = letzter.get("daten", {})
+        if ist_vokabel_thread(daten.get("discussion_title", ""), daten.get("tags", "")):
             continue
 
         # Zeitdifferenz berechnen

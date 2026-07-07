@@ -32,6 +32,7 @@ import gedaechtnis
 import flarum_api as _fapi
 from codewesen_abwurf import verarbeite_abwurf, zwischenraum_scan
 import dienst_konfiguration as dk
+from flarum_vokabel_filter import ist_vokabel_thread
 
 BASE = Path("/root/werkraum/codewesen")
 _DB_ENV = Path("/root/werkraum/.agent/flextrawurst-db.env")
@@ -517,8 +518,20 @@ def process_inbox(name: str, token: str, log: logging.Logger):
                 trigger_post.get("username", "?"),
             )
 
+            if ist_vokabel_thread(
+                trigger_post.get("discussion_title", ""),
+                trigger_post.get("tags", ""),
+            ):
+                log.info("Vokabelthread -> Inbox-Event ohne Reaktion verarbeitet.")
+                mark_processed(f)
+                continue
+
             # Vollständige Diskussion laden
             disc = get_full_discussion(discussion_id, token)
+            if ist_vokabel_thread(disc.get("title", ""), disc.get("tags", [])):
+                log.info("Vokabelthread -> Diskussion ohne Reaktion verarbeitet.")
+                mark_processed(f)
+                continue
 
             # ── Stufe 1: Entscheidung (kleines JSON, wenig Tokens) ──
             entsch_prompt = build_entscheidungs_prompt(name, disc, trigger_post, post_typ)

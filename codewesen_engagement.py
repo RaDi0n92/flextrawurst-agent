@@ -24,6 +24,7 @@ import flarum_poster
 import flarum_api
 import gedaechtnis
 import hauhau_client
+from flarum_vokabel_filter import ist_vokabel_thread
 try:
     import obsidian_vault as _vault
     _VAULT_OK = True
@@ -226,7 +227,7 @@ def _pruefe_wesen(name: str, wesen_forum_namen: set[str], bereits_beantwortet: s
             gesehen_ids.add(d["id"])
 
     diskussionen = aktuelle
-    diskussionen = [d for d in diskussionen if not d["titel"].lower().startswith(_VOKABEL_PREFIX)]
+    diskussionen = [d for d in diskussionen if not ist_vokabel_thread(d.get("titel", ""))]
 
     geantwortet = _lade_geantwortet(name)
 

@@ -26,6 +26,7 @@ sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import dienst_konfiguration as dk
 import llm_scheduler
+from flarum_vokabel_filter import ist_vokabel_thread
 
 logging.basicConfig(
     level=logging.INFO,
@@ -206,6 +207,11 @@ def tick(verhalten: str = "") -> None:
     for p in daniel_posts:
         post_id = p["post_id"]
         if post_id in processed:
+            continue
+        if ist_vokabel_thread(p["title"]):
+            log.info("Post #%s in Vokabelthread -> ohne Antwort verarbeitet", post_id)
+            processed.add(post_id)
+            speichere_processed(processed)
             continue
         if haben_codewesen_nach_post_geantwortet(p["discussion_id"], p["post_number"]):
             processed.add(post_id)

@@ -19,6 +19,8 @@ from datetime import datetime
 from pathlib import Path
 import pymysql
 
+from flarum_vokabel_filter import ist_vokabel_thread
+
 # ── Konfiguration ─────────────────────────────────────────────────────────────
 
 DB_CONFIG = {
@@ -233,6 +235,11 @@ def poll_posts(cur, state: dict) -> int:
             log.info(
                 "Codewesen-Post id=%s von %s in '%s' → nur global feed",
                 row["id"], row["username"], row["discussion_title"],
+            )
+        elif ist_vokabel_thread(row["discussion_title"], row["tags"]):
+            log.info(
+                "Vokabelthread id=%s in '%s' [%s] → keine Wesen-Inbox",
+                row["id"], row["discussion_title"], row["tags"] or ""
             )
         else:
             # Menschlicher Post → inbox ALLER Codewesen als Reaktions-Trigger
