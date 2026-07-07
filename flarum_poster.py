@@ -32,8 +32,8 @@ TAGESZAEHLER_FILE = CODEWESEN_BASE / "_global" / "tageszaehler.json"
 # Globaler Tages-Deckel fuer den Zaehler oben (2026-07-07 ergaenzt — fehlte bisher komplett,
 # obwohl codewesen_vokabel_takt.py schon dagegen prueft: crashte bei jedem erreichten Vergleich
 # mit AttributeError, seit Wochen unbemerkt weil der Dienst per Restart=always still wieder hochkam).
-# 25/Tag ueber alle 7 Wesen zusammen — genug fuer taeglichen Betrieb, bremst aber echte Flut.
-MAX_POSTS_PRO_TAG = 25
+# 66/Tag ueber alle 7 Wesen zusammen (von Daniel auf 66 angehoben, 2026-07-07).
+MAX_POSTS_PRO_TAG = 66
 COOLDOWN_SEKUNDEN = 0    # deaktiviert
 CHAT_AKTIV_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 
