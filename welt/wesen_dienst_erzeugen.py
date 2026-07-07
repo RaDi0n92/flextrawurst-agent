@@ -42,6 +42,13 @@ def main():
     p.add_argument("--feste-uhrzeiten-json", default=None, help='JSON-Liste z.B. ["08:00","20:00"], optional')
     p.add_argument("--pausenzeiten-json", default=None, help="JSON-Liste, optional")
     p.add_argument("--zeitplan-modus", default="intervall", choices=["intervall", "feste_uhrzeiten", "passiv"])
+    p.add_argument("--beschreibung", default=None)
+    p.add_argument("--hinweise", default=None)
+    # Phase 2 (Multi-Wesen-Plaetze, Verkettung): siehe Konzept
+    p.add_argument("--wesen-plaetze-json", default=None, help="JSON-Liste 1-7 Plaetze, optional")
+    p.add_argument("--reihenfolge-modus", default="fest", choices=["fest", "zufaellig"])
+    p.add_argument("--gestaffelt-sekunden", type=int, default=20)
+    p.add_argument("--folge-dienst-bei-erfolg", default=None, help="dienst_name eines anderen Dienstes")
     args = p.parse_args()
 
     if args.ziel_typ == "fester_thread" and not args.ziel_discussion_id:
@@ -68,6 +75,7 @@ def main():
         takte = _json_liste(args.takte_json, "--takte-json")
         feste_uhrzeiten = _json_liste(args.feste_uhrzeiten_json, "--feste-uhrzeiten-json")
         pausenzeiten = _json_liste(args.pausenzeiten_json, "--pausenzeiten-json")
+        wesen_plaetze = _json_liste(args.wesen_plaetze_json, "--wesen-plaetze-json")
 
         offset = ks.naechster_freier_offset(args.wesen, args.takt_sekunden)
         wed.anlegen(
@@ -85,6 +93,12 @@ def main():
             feste_uhrzeiten=feste_uhrzeiten,
             zeitplan_modus=args.zeitplan_modus,
             pausenzeiten=pausenzeiten,
+            beschreibung=args.beschreibung,
+            hinweise=args.hinweise,
+            wesen_plaetze=wesen_plaetze,
+            reihenfolge_modus=args.reihenfolge_modus,
+            gestaffelt_sekunden=args.gestaffelt_sekunden,
+            folge_dienst_bei_erfolg=args.folge_dienst_bei_erfolg,
         )
         ergebnis = gen.erzeuge(args.dienst_name)
     except Exception as e:
