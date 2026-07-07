@@ -75,6 +75,37 @@ Daniel: "ich hatte es doch auh so erklärt dass ich jeden dienst bis ins jede kl
 - **Frontend:** neuer "Individualisierung"-Block im Detail-Modal — bei `konfigurierbar=true` ein Formular (Takt-Zahlenfeld, Verhalten-Textarea, Speichern-Button), sonst ein Platzhalter-Hinweis ("kommt schrittweise"). Kein Bestätigungsdialog (im Gegensatz zu Start/Stop/Neustart) — Konfigurationsänderungen sind weniger destruktiv als ein Neustart.
 - **DB-Zugangsdaten:** `codewesen-vokabel-takt.service` und `process-camera-preview.service` bekamen je eine zusätzliche `EnvironmentFile=/root/werkraum/.agent/flextrawurst-db.env`-Zeile (systemd erlaubt mehrere `EnvironmentFile`-Direktiven, sie werden gemerged) — vorher hatte keiner der beiden Dienste `FLEXTRAWURST_DB_URI` gesetzt.
 
+## Individualisierungslayer — vollständiger Rollout (2026-07-07, noch dieselbe Nacht)
+
+Nach dem Proof-of-Concept auf Daniels "gogogo" hin alle verbleibenden Dienste durchgezogen, einen nach dem anderen getestet. Ergebnis: **24 von 43 Diensten sind jetzt individualisierbar** — praktisch jeder Dienst, der ein Wesen-Verhalten oder einen Post-Rhythmus steuert.
+
+**Alle 13 ursprünglich katalogisierten Skripte umgestellt** (1 bewusst ausgenommen — `reaktion_auf_dakgord.py` ist ein Einmal-Migrationsskript, kein Dauerdienst):
+
+| Skript | Takt überschreibbar | Verhalten überschreibbar | Besonderheit |
+|---|---|---|---|
+| `codewesen_vokabel_takt.py` | ✓ (`takt_sekunden`) | ✓ | Proof-of-Concept, siehe oben |
+| `codewesen_antwort_auf_daniel.py` | ✓ | ✓ | — |
+| `weltbild_builder.py` | ✓ | ✓ | — |
+| `codewesen_forum_neugier.py` | ✓ | ✓ (nach den Formatvorgaben angehängt) | Entscheidungs-Format bleibt Code-kontrolliert |
+| `codewesen_engagement.py` | ✗ | ✓ | Kein eigener Sleep-Loop — Takt kommt aus `systemd RestartSec=7200`, nicht aus Python |
+| `codewesen_batch_generator.py` | ✗ | ✓ (global über alle 6 Rhythmen) | `_wesen_basis()` ist der gemeinsame Textbaustein aller 6 Generierungsfunktionen |
+| `codewesen_takt.py` | ✓ (`meta.intervalle`, 6 benannte Werte) | — (kein LLM in dieser Datei) | Ausnahme von Grundgesetz 6, von Daniel vorab genehmigt |
+| `codewesen_reaktion.py` | ✓ (`meta.intervalle`, 6 benannte Werte) | ✓ | Läuft **pro Wesen** (7 Instanzen) — jedes Wesen hat seine eigene Konfigurationszeile |
+| `codewesen_aufgabenchats.py` | ✗ | ✓ (nach der Marker-Sprache angehängt) | Kein Zeittakt — Flag-Datei-gesteuert |
+| `codewesen_chat.py` | ✗ | ✓ | Webserver, request-getrieben, kein Takt-Konzept |
+| `codewesen_lg_daemon.py` | ✓ (`takt_sekunden`, hat Vorrang vor `LG_TICK_SEKUNDEN`-Env-Var) | ✓ | War vorher nur über systemd-Unit-Edit konfigurierbar — jetzt einheitlich |
+| `codewesen_agent.py` | ✓ (`meta.intervalle`: gedanke/pflichtpost/impuls) | ✓ | Läuft **pro Wesen** (7 Instanzen) |
+
+**Neues generisches Feld:** "Erweiterte Konfiguration (JSON)" im Detail-Modal, nutzt die schon vorhandene `meta`-Spalte — für Dienste mit mehreren benannten Werten statt einem einzigen Takt (`codewesen_takt.py`, `codewesen_reaktion.py`, `codewesen_agent.py`: `meta.intervalle = {"eigene_antwort": 1200, ...}`). Neues optionales `--meta`-Argument in `dienst_konfiguration_setzen.py`, clientseitige JSON-Validierung vor dem Absenden.
+
+**Zwei echte Bugs nebenbei gefunden und behoben** (beide unabhängig vom Individualisierungslayer selbst, aber beim Testen der eigenen Änderungen aufgefallen):
+1. `flarum_poster.MAX_POSTS_PRO_TAG` existierte nicht — crashte `codewesen_vokabel_takt.py` bei jedem Post/Gamble, vermutlich seit Wochen unbemerkt (verdeckt durch `Restart=always`). Gefixt, Deckel auf Daniels Wunsch bei 66/Tag (ursprünglich 25, dann angehoben).
+2. Die Node-Routen (`/api/flarumstyler/dienst/:name/...`) erlaubten kein `@`/`%` in Dienstnamen — `codewesen-reaktion@Schorschel` etc. wären über `encodeURIComponent()` (→ `%40`) nie erreichbar gewesen, weder für die neue Konfigurations-Route noch für die bereits länger existierende Start/Stop/Neustart-Route. Regex erweitert, `decodeURIComponent()` ergänzt.
+
+**Wiederkehrendes Muster für "Verhalten ohne Format zu brechen":** Bei Dateien mit strikten Parsing-Verträgen (`codewesen_forum_neugier.py`s `ENTSCHEIDUNG:`/`BEZUG:`-Format, `codewesen_aufgabenchats.py`s `[[LESEN:]]`/`[[SICHERN:]]`-Marker-Sprache, `codewesen_agent.py`s JSON-Aktionsformate) wird der Verhaltenstext immer ANGEHÄNGT, nie eingemischt oder ersetzend — die Format-Vorgaben bleiben Code-kontrolliert, Daniel kann Ton/Zusatzanweisungen ändern, aber nicht die Parsing-Verträge brechen.
+
+**Alle Dienste einzeln getestet:** Syntax-Check, Neustart, Journal auf Fehler geprüft, mindestens ein voller UI-Rundlauf (Playwright: Formular ausfüllen → Speichern → Wert in DB bestätigt) für die architektonisch unterschiedlichen Fälle (einfacher Dienst, `@`-Dienst, `meta`-JSON-Dienst).
+
 **Nebenbei gefunden+gefixt:** `flarum_poster.py` referenzierte `MAX_POSTS_PRO_TAG`, das nirgends definiert war — `codewesen_vokabel_takt.py` crashte dadurch bei **jedem** Synonym-Post und **jedem** Gamble (25%-Würfel) mit `AttributeError`, seit vermutlich Wochen unbemerkt, weil `Restart=always` den Dienst alle 5 Minuten klaglos neu startete. Fund passierte zufällig beim Testneustart für dieses Feature — unabhängig vom Konfigurationslayer. Nach Rückfrage: echter Deckel `MAX_POSTS_PRO_TAG = 25` (global über alle 7 Wesen/Tag) ergänzt.
 
 **Getestet:** DB-Helfer (lade/speichere/alle direkt), CLI-Skript (setzen + leeren), Node-Route (setzen, gesperrter Dienst korrekt abgelehnt), volle UI (Playwright: Formular ausfüllen → Speichern → Wert in DB bestätigt → Report aktualisiert sich sofort), Dienst läuft nach Bugfix stabil durch einen echten Gamble-Zyklus.
