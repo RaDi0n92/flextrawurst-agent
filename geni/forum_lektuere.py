@@ -28,19 +28,25 @@ FORUM_VAULT    = Path("/root/werkraum/flarum/diskussionen")
 SPIEGEL_DIR    = GENI_ROOT / "spiegel" / "forum"
 ZUSTAND_FILE   = SPIEGEL_DIR / "_zustand.json"
 MODELL         = "hauhaucs-q6"
+FEHLER_SCHWELLE = 3  # nach so vielen Fehlversuchen wird eine Disk nicht mehr automatisch retriggert
 
 
-def _lade_zustand() -> set[int]:
+def _lade_zustand() -> tuple[set[int], dict[int, int]]:
     try:
         data = json.loads(ZUSTAND_FILE.read_text(encoding="utf-8"))
-        return set(data.get("verarbeitet", []))
+        verarbeitet = set(data.get("verarbeitet", []))
+        fehler = {int(k): v for k, v in data.get("fehler", {}).items()}
+        return verarbeitet, fehler
     except Exception:
-        return set()
+        return set(), {}
 
 
-def _speichere_zustand(verarbeitet: set[int]):
+def _speichere_zustand(verarbeitet: set[int], fehler: dict[int, int]):
     ZUSTAND_FILE.write_text(
-        json.dumps({"verarbeitet": sorted(verarbeitet)}, ensure_ascii=False, indent=2),
+        json.dumps({
+            "verarbeitet": sorted(verarbeitet),
+            "fehler": {str(k): v for k, v in fehler.items() if v > 0},
+        }, ensure_ascii=False, indent=2),
         encoding="utf-8"
     )
 
@@ -121,14 +127,17 @@ def main():
     args = parser.parse_args()
 
     SPIEGEL_DIR.mkdir(parents=True, exist_ok=True)
-    verarbeitet = _lade_zustand()
+    verarbeitet, fehler = _lade_zustand()
     alle = _alle_diskussionen()
     offen = [(i, p) for i, p in alle if i not in verarbeitet]
+    uebersprungen = [(i, p) for i, p in offen if fehler.get(i, 0) >= FEHLER_SCHWELLE]
+    offen = [(i, p) for i, p in offen if fehler.get(i, 0) < FEHLER_SCHWELLE]
 
-    print(f"Gesamt: {len(alle)} | verarbeitet: {len(verarbeitet)} | offen: {len(offen)}")
+    print(f"Gesamt: {len(alle)} | verarbeitet: {len(verarbeitet)} | offen: {len(offen)} | "
+          f"uebersprungen (>= {FEHLER_SCHWELLE} Fehlversuche): {len(uebersprungen)}")
 
     if not offen:
-        print("Alle Diskussionen verarbeitet.")
+        print("Keine offenen Diskussionen mehr (abgesehen von uebersprungenen).")
         return
 
     batch = offen[:args.n]
@@ -139,10 +148,16 @@ def main():
             inhalt = _llm(text, disk_id)
             fname = _schreibe_spiegel(disk_id, path, inhalt)
             verarbeitet.add(disk_id)
-            _speichere_zustand(verarbeitet)
+            fehler.pop(disk_id, None)
+            _speichere_zustand(verarbeitet, fehler)
             print(f"  → {fname}")
         except Exception as e:
-            print(f"  ! Fehler bei Disk {disk_id}: {e}")
+            fehler[disk_id] = fehler.get(disk_id, 0) + 1
+            _speichere_zustand(verarbeitet, fehler)
+            if fehler[disk_id] >= FEHLER_SCHWELLE:
+                print(f"  ! Fehler bei Disk {disk_id}: {e} — jetzt {fehler[disk_id]}x gescheitert, wird uebersprungen")
+            else:
+                print(f"  ! Fehler bei Disk {disk_id}: {e} ({fehler[disk_id]}/{FEHLER_SCHWELLE})")
         time.sleep(2)
 
     print(f"\nDieser Lauf: {len(batch)} Diskussionen. Noch offen: {len(offen) - len(batch)}")
