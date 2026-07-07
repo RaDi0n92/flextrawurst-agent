@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS dienst_konfiguration (
     dienst_name    VARCHAR(100) UNIQUE NOT NULL,
     takt_sekunden  INTEGER,
     verhalten_text TEXT,
+    beschreibung_override TEXT,  -- ergaenzt 2026-07-07: ueberschreibt SERVICE_BESCHREIBUNG (weltkern_watchdog.py), editierbar in flarumstyler fuer ALLE Dienste (nicht nur konfigurierbare)
     meta           JSONB NOT NULL DEFAULT '{}',
     created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()

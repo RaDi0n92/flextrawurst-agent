@@ -28,11 +28,13 @@ def main():
     p.add_argument("dienst_name")
     p.add_argument("--takt-sekunden", required=True)
     p.add_argument("--verhalten-text", required=True)
+    p.add_argument("--beschreibung", required=True)
     p.add_argument("--meta", default=None)
     args = p.parse_args()
 
     takt = int(args.takt_sekunden) if args.takt_sekunden.strip() else None
     verhalten = args.verhalten_text if args.verhalten_text.strip() else None
+    beschreibung = args.beschreibung if args.beschreibung.strip() else None
     meta = None
     if args.meta is not None and args.meta.strip():
         try:
@@ -41,7 +43,7 @@ def main():
             print(json.dumps({"ok": False, "fehler": f"meta ist kein gueltiges JSON: {e}"}, ensure_ascii=False))
             sys.exit(1)
 
-    ergebnis = dk.speichere(args.dienst_name, takt_sekunden=takt, verhalten_text=verhalten, meta=meta)
+    ergebnis = dk.speichere(args.dienst_name, takt_sekunden=takt, verhalten_text=verhalten, meta=meta, beschreibung_override=beschreibung)
     print(json.dumps(ergebnis, default=str, ensure_ascii=False))
 
 

@@ -199,6 +199,49 @@ DIENSTE_MIT_KONFIGURATION = {
     "codewesen-dakgordsystem",
 }
 
+
+# ── Individualisierungs-Erklaerung pro Dienst (2026-07-07, Daniel: "sie sind alle
+# immernoch auf diese 3 kaestchenweise individualisierbar und nix wird erklaert") ──
+# Nicht jeder konfigurierbare Dienst nutzt Takt/Verhalten gleich — z.B. hat
+# codewesen-engagement gar keinen eigenen Sleep-Loop (Takt kommt aus systemd
+# RestartSec), codewesen-takt nutzt statt einem einzigen Takt sechs benannte Werte
+# in meta.intervalle. Das Frontend soll nur die Felder zeigen, die fuer den
+# jeweiligen Dienst wirklich etwas bewirken — mit Erklaerung wieso.
+TAKT_EINFACH_DIENSTE = {
+    "codewesen-vokabel-takt", "codewesen-antwort-daniel", "codewesen-weltbild",
+    "codewesen-forum-neugier", "codewesen-lg-daemon",
+}
+TAKT_KEIN_DIENSTE = {
+    "codewesen-engagement", "codewesen-batch-generator",
+    "codewesen-aufgabenchats", "codewesen-chat",
+}
+VERHALTEN_KEIN_DIENSTE = {"codewesen-takt"}
+
+TAKT_KEIN_ERKLAERUNG = {
+    "codewesen-engagement": "Kein eigener Sleep-Loop — der Rhythmus kommt aus systemd (RestartSec=7200), nicht aus Python. Takt hier aendern: direkt am systemd-Unit.",
+    "codewesen-batch-generator": "Erzeugt Post-Entwuerfe auf Vorrat in einer Warteschlange, nicht auf eigenem Zeittakt — laeuft, sobald die Queue leer wird.",
+    "codewesen-aufgabenchats": "Kein Zeittakt — startet, wenn eine Flag-Datei gesetzt wird (Aufgabenchat-Session angestossen), nicht periodisch.",
+    "codewesen-chat": "Webserver, request-getrieben — reagiert auf ankommende Chat-Anfragen, hat keinen eigenen Rhythmus.",
+}
+
+def _individualisierung_hinweis(name: str) -> dict | None:
+    if name not in DIENSTE_MIT_KONFIGURATION:
+        return None
+    if name in TAKT_EINFACH_DIENSTE:
+        takt = {"typ": "einfach", "erklaerung": "Ein einzelner Takt in Sekunden — ueberschreibt den fest im Skript codierten Standardwert direkt."}
+    elif name in TAKT_KEIN_DIENSTE:
+        takt = {"typ": "keiner", "erklaerung": TAKT_KEIN_ERKLAERUNG.get(name, "Dieser Dienst hat keinen ueberschreibbaren Einzel-Takt.")}
+    else:
+        takt = {"typ": "meta", "erklaerung": "Kein einzelner Takt — dieser Dienst braucht mehrere benannte Zeitwerte gleichzeitig (z.B. verschiedene Post-Arten). Dafuer unten das Feld 'Erweiterte Konfiguration (JSON)' nutzen, Schluessel meta.intervalle."}
+    verhalten = name not in VERHALTEN_KEIN_DIENSTE
+    verhalten_erklaerung = (
+        "Dieser Dienst nutzt kein LLM — es gibt keinen System-Prompt, an den ein Verhaltenstext angehaengt werden koennte."
+        if not verhalten else
+        "Wird an den System-Prompt angehaengt (nicht ersetzt) — Ton/Zusatzanweisungen aenderbar, feste Format-Vorgaben im Skript bleiben aber bestehen."
+    )
+    return {"takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung}
+
+
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
 # absichtlich ausgeschaltet bleiben sollten. Die Flarum-Integration ist seit Wochen live,
 # alle hier genannten Dienste laufen inzwischen bewusst dauerhaft. Das Guardrail unten hat
@@ -633,12 +676,17 @@ def run_check() -> dict:
             status = "erwartet_aus"
 
         details = service_details(name)
+        konfig = alle_konfigurationen.get(name, {})
+        beschreibung_standard = SERVICE_BESCHREIBUNG.get(name, "(keine Beschreibung hinterlegt)")
+        beschreibung_override = konfig.get("beschreibung_override")
         report["services"][name] = {
             "active": active,
             "port_ok": port_ok,
             "health_ok": health,
             "status": status,
-            "beschreibung": SERVICE_BESCHREIBUNG.get(name, "(keine Beschreibung hinterlegt)"),
+            "beschreibung": beschreibung_override or beschreibung_standard,
+            "beschreibung_standard": beschreibung_standard,
+            "beschreibung_eigene_fassung": bool(beschreibung_override),
             "steuerbar": name not in SERVICES_GESPERRT_FUER_AKTIONEN,
             "seit_wann": details["seit_wann"],
             "neustarts": details["neustarts"],
@@ -648,8 +696,9 @@ def run_check() -> dict:
             "llm_status": llama_status(LLAMA_SERVER_PORTS[name]) if name in LLAMA_SERVER_PORTS else None,
             "llm_warteschlange": llm_warteschlange_status(LLAMA_SCHEDULER_SERVER[name]) if name in LLAMA_SCHEDULER_SERVER else None,
             "eigene_fehler": log_fehler_pro_dienst.get(name, {}),
-            "konfiguration": alle_konfigurationen.get(name, {}),
+            "konfiguration": konfig,
             "konfigurierbar": name in DIENSTE_MIT_KONFIGURATION,
+            "individualisierung_hinweis": _individualisierung_hinweis(name),
         }
 
         if status == "down":
