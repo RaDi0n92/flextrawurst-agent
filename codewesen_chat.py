@@ -39,7 +39,13 @@ import psycopg2
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import dienst_konfiguration as dk
 from fastapi import FastAPI
+
+# Individualisierung (flarumstyler, 2026-07-07): Webserver, request-getrieben, kein
+# eigener Takt — nur Verhalten ueberschreibbar, pro Chat-Anfrage frisch gelesen.
+DIENST_NAME = "codewesen-chat"
+STANDARD_VERHALTEN = ""
 from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -336,7 +342,9 @@ Wann du selbst [POSTEN:] verwendest:
 Regeln:
 • Inhalt MUSS vollständig und forum-tauglich sein — kein "wie ich oben schrieb"
 • Titel: kurz, konkret (max 80 Zeichen)
-• Nur EINEN [POSTEN:]-Marker pro Antwort — niemals [VORSCHLAGEN:]"""
+• Nur EINEN [POSTEN:]-Marker pro Antwort — niemals [VORSCHLAGEN:]""" + (
+        f"\n\n{verhalten}" if (verhalten := dk.lade(DIENST_NAME).get("verhalten_text")) else ""
+    )
 
 
 def baue_messages(name: str, verlauf: list[dict], neue_nachricht: str) -> list[dict]:
