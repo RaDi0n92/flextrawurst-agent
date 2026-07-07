@@ -217,6 +217,27 @@ TAKT_KEIN_DIENSTE = {
 }
 VERHALTEN_KEIN_DIENSTE = {"codewesen-takt"}
 
+# Braucht Neustart, damit ein Override wirkt (Code liest dk.lade() nur EINMAL beim
+# Prozessstart, nicht pro Zyklus) — geprueft 2026-07-07 nach Daniels "raffst nix"-
+# Kritik, per Zeilennummer im jeweiligen Skript nachgesehen, nicht geraten:
+# codewesen_takt.py Z.282+302, codewesen_reaktion.py Z.844+876 (Kommentar dort
+# nennt es explizit), codewesen_lg_daemon.py Z.498+518, codewesen_agent.py Z.1222+1257.
+# Alle anderen konfigurierbaren Dienste lesen dk.lade() INNERHALB ihrer while-True-
+# Schleife (vokabel-takt, antwort-daniel, weltbild, forum-neugier, batch-generator)
+# oder pro Aufruf/Session (engagement: kompletter Prozess pro RestartSec-Zyklus neu,
+# aufgabenchats: pro neuer Session, chat: pro HTTP-Request) — dort gilt ein
+# gespeicherter Override wirklich ohne Neustart.
+BRAUCHT_NEUSTART_DIENSTE = {
+    "codewesen-takt", "codewesen-lg-daemon",
+    "codewesen-reaktion@Schorschel", "codewesen-reaktion@F3INSCHM3CK3R",
+    "codewesen-reaktion-traeumerlie", "codewesen-reaktion@R1ZZ1",
+    "codewesen-reaktion@jumpa", "codewesen-reaktion@Resonanzknoten",
+    "codewesen-reaktion-dakgord",
+    "codewesen-Schorschel", "codewesen-F3INSCHM3CK3R", "codewesen-traeumerlie",
+    "codewesen-R1ZZ1", "codewesen-jumpa", "codewesen-Resonanzknoten",
+    "codewesen-dakgordsystem",
+}
+
 TAKT_KEIN_ERKLAERUNG = {
     "codewesen-engagement": "Kein eigener Sleep-Loop — der Rhythmus kommt aus systemd (RestartSec=7200), nicht aus Python. Takt hier aendern: direkt am systemd-Unit.",
     "codewesen-batch-generator": "Erzeugt Post-Entwuerfe auf Vorrat in einer Warteschlange, nicht auf eigenem Zeittakt — laeuft, sobald die Queue leer wird.",
@@ -224,22 +245,125 @@ TAKT_KEIN_ERKLAERUNG = {
     "codewesen-chat": "Webserver, request-getrieben — reagiert auf ankommende Chat-Anfragen, hat keinen eigenen Rhythmus.",
 }
 
+# ── Ausfuehrliche Doku direkt aus dem Skript (2026-07-07, Daniel: "warum kannst
+# du hier fast ne dina4seite erklaeren und warum ist das nicht genau so in der
+# UI?") — der Modul-Docstring jedes Skripts ist bereits die Quelle, aus der diese
+# Erklaerungen stammen. Statt es nochmal von Hand zu schreiben (doppelte Wahrheit,
+# veraltet zwei Sekunden nach der naechsten Codeaenderung): direkt auslesen.
+SCRIPT_FUER_DIENST = {
+    "codewesen-vokabel-takt": "codewesen_vokabel_takt.py",
+    "codewesen-antwort-daniel": "codewesen_antwort_auf_daniel.py",
+    "codewesen-weltbild": "weltbild_builder.py",
+    "codewesen-forum-neugier": "codewesen_forum_neugier.py",
+    "codewesen-engagement": "codewesen_engagement.py",
+    "codewesen-batch-generator": "codewesen_batch_generator.py",
+    "codewesen-takt": "codewesen_takt.py",
+    "codewesen-aufgabenchats": "codewesen_aufgabenchats.py",
+    "codewesen-chat": "codewesen_chat.py",
+    "codewesen-lg-daemon": "codewesen_lg_daemon.py",
+}
+REAKTION_DIENSTE = {
+    "codewesen-reaktion@Schorschel", "codewesen-reaktion@F3INSCHM3CK3R",
+    "codewesen-reaktion-traeumerlie", "codewesen-reaktion@R1ZZ1",
+    "codewesen-reaktion@jumpa", "codewesen-reaktion@Resonanzknoten",
+    "codewesen-reaktion-dakgord",
+}
+AGENT_DIENSTE = {
+    "codewesen-Schorschel", "codewesen-F3INSCHM3CK3R", "codewesen-traeumerlie",
+    "codewesen-R1ZZ1", "codewesen-jumpa", "codewesen-Resonanzknoten",
+    "codewesen-dakgordsystem",
+}
+
+import ast as _ast
+
+def _technische_doku(name: str) -> str | None:
+    pfad = None
+    if name in SCRIPT_FUER_DIENST:
+        pfad = Path("/root/werkraum") / SCRIPT_FUER_DIENST[name]
+    elif name in REAKTION_DIENSTE:
+        pfad = Path("/root/werkraum/codewesen_reaktion.py")
+    elif name in AGENT_DIENSTE:
+        pfad = Path("/root/werkraum/codewesen_agent.py")
+    if not pfad or not pfad.exists():
+        return None
+    try:
+        baum = _ast.parse(pfad.read_text(encoding="utf-8"))
+        return _ast.get_docstring(baum)
+    except Exception:
+        return None
+
+
+# Einzelne benannte Zeitwerte statt einem JSON-Blob, damit Daniel jeden Wert
+# einzeln anklicken/aendern kann (nicht per Hand JSON tippen). Key = wie im
+# jeweiligen Skript in meta.intervalle verwendet, Wert = (Label, Standard-Sekunden).
+META_FELD_LABELS = {
+    "codewesen-takt": {
+        "eigene_antwort": ("Eigene Antwort — auf eigene Diskussionen", 22 * 60),
+        "antwort": ("Antwortpflicht — rotierend, ein Wesen pro Durchlauf", 66 * 60),
+        "pflicht": ("Pflichtpost — neuer Existenz-Thread", 88 * 60),
+        "impuls": ("Forum-Impuls — Kritik/Reflexion abwechselnd", (2 * 60 + 22) * 60),
+        "gedanke": ("Freier Gedanke — neuer Thread + Markdown-Ablage", (4 * 60 + 44) * 60),
+        "vorstellung": ("Vorstellung — Selbstgespraech im Fest-Thread", (4 * 60 + 44) * 60),
+    },
+    "_reaktion": {
+        "check_interval": ("Inbox-Check — wie oft auf neue Notifications schauen", 600),
+        "reflexions_interval": ("Selbstreflexions-Check", 300),
+        "forum_entwicklung_interval": ("Forum-Entwicklung beobachten", 142 * 60),
+        "themen_beitrag_interval": ("Themen-Beitrag", 88 * 60),
+        "zwischenraum_scan_interval": ("Zwischenraum-Scan — neugierig reinschauen", 900),
+        "fehler_retry_interval": ("Fehler-Items zurueck in Inbox versuchen", 300),
+    },
+    "_agent": {
+        "check_reflexion": ("Selbstreflexions-Check", 28800),
+        "check_scan": ("Forum-Scan-Check", 7200),
+        "gedanke": ("Freier Gedanke", 66 * 60),
+        "pflichtpost": ("Pflichtpost — Existenz-Thread", 88 * 60),
+        "impuls": ("Forum-Impuls", 142 * 60),
+    },
+}
+
+
+def _meta_felder(name: str) -> dict | None:
+    if name in META_FELD_LABELS:
+        return META_FELD_LABELS[name]
+    if name in REAKTION_DIENSTE:
+        return META_FELD_LABELS["_reaktion"]
+    if name in AGENT_DIENSTE:
+        return META_FELD_LABELS["_agent"]
+    return None
+
+
 def _individualisierung_hinweis(name: str) -> dict | None:
     if name not in DIENSTE_MIT_KONFIGURATION:
         return None
+    braucht_neustart = name in BRAUCHT_NEUSTART_DIENSTE
+    wirkt_wann = (
+        "Wird erst nach einem NEUSTART dieses Dienstes wirksam — der Prozess liest die Konfiguration nur einmal beim Start, nicht laufend. Speichern allein reicht hier nicht."
+        if braucht_neustart else
+        "Gilt dauerhaft ab dem naechsten Zyklus, ohne Neustart — der Prozess liest die Konfiguration laufend neu. Kein Einmal-Effekt: bleibt so, bis du das Feld hier wieder aenderst oder leerst."
+    )
     if name in TAKT_EINFACH_DIENSTE:
-        takt = {"typ": "einfach", "erklaerung": "Ein einzelner Takt in Sekunden — ersetzt dauerhaft den fest im Skript codierten Standardwert, bei jedem Zyklus neu gelesen. Kein Einmal-Effekt: gilt, bis du das Feld hier wieder leerst."}
+        takt = {"typ": "einfach", "erklaerung": f"Ein einzelner Takt in Sekunden — ersetzt den fest im Skript codierten Standardwert. {wirkt_wann}"}
     elif name in TAKT_KEIN_DIENSTE:
         takt = {"typ": "keiner", "erklaerung": TAKT_KEIN_ERKLAERUNG.get(name, "Dieser Dienst hat keinen ueberschreibbaren Einzel-Takt.")}
     else:
-        takt = {"typ": "meta", "erklaerung": "Kein einzelner Takt — dieser Dienst braucht mehrere benannte Zeitwerte gleichzeitig (z.B. verschiedene Post-Arten). Dafuer unten das Feld 'Erweiterte Konfiguration (JSON)' nutzen, Schluessel meta.intervalle."}
+        felder = _meta_felder(name) or {}
+        meta_felder_liste = [
+            {"key": k, "label": lbl, "standard_sek": std}
+            for k, (lbl, std) in felder.items()
+        ]
+        takt = {
+            "typ": "meta",
+            "erklaerung": f"Kein einzelner Takt — dieser Dienst braucht mehrere benannte Zeitwerte gleichzeitig (z.B. verschiedene Post-Arten). Jeder Wert unten einzeln aenderbar. {wirkt_wann}",
+            "meta_felder": meta_felder_liste,
+        }
     verhalten = name not in VERHALTEN_KEIN_DIENSTE
     verhalten_erklaerung = (
         "Dieser Dienst nutzt kein LLM — es gibt keinen System-Prompt, an den ein Verhaltenstext angehaengt werden koennte."
         if not verhalten else
-        "Der Text wird woertlich ans Ende der KI-Anweisung angehaengt, bei JEDEM Lauf — z.B. \"schreib kuerzer\" oder \"sei sarkastischer\". Gilt dauerhaft ab dem naechsten Zyklus, bis du ihn hier aenderst oder leerst — kein Einmal-Effekt. Feste Format-Vorgaben im Skript bleiben trotzdem bestehen (die werden nicht ersetzt, nur ergaenzt)."
+        f"Der Text wird woertlich ans Ende der KI-Anweisung angehaengt — z.B. \"schreib kuerzer\" oder \"sei sarkastischer\". Feste Format-Vorgaben im Skript bleiben trotzdem bestehen (die werden nicht ersetzt, nur ergaenzt). {wirkt_wann}"
     )
-    return {"takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung}
+    return {"takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung, "braucht_neustart": braucht_neustart}
 
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
@@ -699,6 +823,7 @@ def run_check() -> dict:
             "konfiguration": konfig,
             "konfigurierbar": name in DIENSTE_MIT_KONFIGURATION,
             "individualisierung_hinweis": _individualisierung_hinweis(name),
+            "technische_doku": _technische_doku(name),
         }
 
         if status == "down":
