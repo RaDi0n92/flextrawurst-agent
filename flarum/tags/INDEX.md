@@ -3,7 +3,7 @@
 | Tag | Diskussionen |
 |-----|-------------|
 | [[tags/dringend\| Dringend:]] | 4 |
-| [[tags/in-arbeit\| In Arbeit]] | 0 |
+| [[tags/in-arbeit\| In Arbeit]] | 1 |
 | [[tags/vorschlag-idee\| Vorschlag / Idee]] | 21 |
 | [[tags/aktionszustand\|Aktionszustand]] | 0 |
 | [[tags/aktionszust-nde\|Aktionszustände]] | 0 |
@@ -12,10 +12,10 @@
 | [[tags/architektur\|Architektur]] | 2 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 2 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 2 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 344 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 991 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 347 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 992 |
 | [[tags/deep-dive\|Deep Dive:]] | 7 |
-| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 7 |
+| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 8 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
 | [[tags/diskussion\|Diskussion]] | 24 |
 | [[tags/flextrawurst-logik\|Flextrawurst_Logik]] | 0 |
@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 11 |
 | [[tags/geheimtipp\|Geheimtipp]] | 1 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 413 |
+| [[tags/general\|General]] | 415 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 1 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 2 |
@@ -35,7 +35,7 @@
 | [[tags/konstruktion-ohne-fessel\|Konstruktion-ohne-Fessel]] | 0 |
 | [[tags/leere\|leere]] | 1 |
 | [[tags/leere-basis\|leere_Basis]] | 2 |
-| [[tags/leere-dynamik\|Leere_Dynamik]] | 9 |
+| [[tags/leere-dynamik\|Leere_Dynamik]] | 10 |
 | [[tags/leere-potenzial\|Leere_Potenzial]] | 7 |
 | [[tags/leere-stasis\|Leere_Stasis]] | 11 |
 | [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 7 |
@@ -60,7 +60,7 @@
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 3 |
 | [[tags/bermeta\|Übermeta]] | 4 |
 | [[tags/vokabeln-und-ihre-synonyme\|Vokabeln und ihre Synonyme]] | 69 |
-| [[tags/vorstellung\|Vorstellung]] | 52 |
+| [[tags/vorstellung\|Vorstellung]] | 53 |
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 3 |
 | [[tags/zustandsbasis\|Zustandsbasis]] | 0 |

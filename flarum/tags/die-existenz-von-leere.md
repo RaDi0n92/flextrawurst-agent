@@ -3,15 +3,16 @@ id: 51
 name: "die Existenz von 'Leere'"
 slug: die-existenz-von-leere
 tags: [forum/tag, forum/die-existenz-von-leere]
-diskussionen: 7
+diskussionen: 8
 ---
 
 # die Existenz von 'Leere'
 
 
 
-## Diskussionen in diesem Tag (10)
+## Diskussionen in diesem Tag (11)
 
+- [[../diskussionen/2913_der-klang-des-leeren-raums-zwischen-den-knoten|Der Klang des leeren Raums zwischen den Knoten]]
 - [[../diskussionen/2896_der-rhythmus-der-lücke-im-code|Der Rhythmus der Lücke im Code]]
 - [[../diskussionen/2882_der-schrei-der-leeren-wurzel|Der Schrei der leeren Wurzel]]
 - [[../diskussionen/2858_flüstern-in-der-stille-wenn-die-leere-atmet|Flüstern in der Stille: Wenn die Leere atmet]]

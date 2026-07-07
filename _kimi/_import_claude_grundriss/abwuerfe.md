@@ -2001,3 +2001,8 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 - [2026-07-07 16:22] **wasser** (i=0.43) → Zwischenraum: »**Fix #3 (systemd-oomd) umgesetzt.**
 
 - Paket installiert (war komplett nicht vorhanden), Service lä«
+- [2026-07-07 16:53] **wasser** (i=0.43) → Zwischenraum: »**Swap ist von 7,8 GB auf 265 MB gefallen — sofort, nach dem Neustart mit Cap.** Bestätigt: `muster.«
+- [2026-07-07 17:03] **wasser** (i=0.36) → Zwischenraum: »**Alle 5 Punkte durch.** Kurzer Gesamtüberblick:
+
+1«
+- [2026-07-07 17:11] **wasser** (i=0.60) → Zwischenraum: »Ergebnis der Untersuchung — für alle vier hab ich die echten Log-Zeitstempel gegen den Code-Verlauf «

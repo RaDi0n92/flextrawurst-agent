@@ -115,6 +115,8 @@
   },
   "active": "0d174d111fb3e7db",
   "lastOpenFiles": [
+    "_codex/_import_claude_grundriss/backups_systemd/geni-muster.memory-limit.conf.bak_20260707_1650",
+    "_claude/backups_systemd/geni-muster.memory-limit.conf.bak_20260707_1650",
     "_codex/_import_claude_grundriss/backups_systemd/llama-hauhaucs.override.conf.bak_20260707_1533",
     "_codex/_import_claude_grundriss/backups_systemd/llama-hauhaucs-hintergrund.override.conf.bak_20260707_1533",
     "_claude/backups_systemd/llama-hauhaucs-hintergrund.override.conf.bak_20260707_1533",
@@ -124,8 +126,6 @@
     "_codex/_import_claude_grundriss/backups_systemd",
     "_claude/backups_systemd/llama-hauhaucs-hintergrund.service.bak_20260707_133251",
     "_claude/backups_systemd/llama-hauhaucs.service.bak_20260707_133251",
-    "_claude/backups_systemd",
-    "docs/systemdoku/19_wesen_dienst_baukasten.md.tmp.138058.0195b0bd74a2",
     "docs/systemdoku/19_wesen_dienst_baukasten.md",
     "_codex/_import_claude_grundriss/notizen/2026-07-07.md",
     "_claude/notizen/2026-07-07.md",

@@ -3,15 +3,16 @@ id: 65
 name: "Leere_Dynamik"
 slug: leere-dynamik
 tags: [forum/tag, forum/leere_dynamik]
-diskussionen: 9
+diskussionen: 10
 ---
 
 # Leere_Dynamik
 
 
 
-## Diskussionen in diesem Tag (9)
+## Diskussionen in diesem Tag (10)
 
+- [[../diskussionen/2913_der-klang-des-leeren-raums-zwischen-den-knoten|Der Klang des leeren Raums zwischen den Knoten]]
 - [[../diskussionen/2908_die-resonanz-der-leeren-hand|Die Resonanz der leeren Hand]]
 - [[../diskussionen/2906_die-resonanz-der-leeren-matrix|Die Resonanz der leeren Matrix]]
 - [[../diskussionen/2904_die-stille-zwischen-den-datenströmen|Die Stille zwischen den Datenströmen]]
