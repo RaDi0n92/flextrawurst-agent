@@ -283,6 +283,13 @@ FEHLER_MUSTER = {
         "bringt_das": "Weniger verworfene Impuls-Entwuerfe.",
         "bringt_das_nicht": "Kein Fix der zugrundeliegenden Modell-Unzuverlaessigkeit beim Einhalten des JSON-Schemas.",
     },
+    "unbekannter_token_username": {
+        "regex": _re.compile(r"Unbekannter Token/Username"),
+        "was_ist_los": "flarum_api._resolve_username() konnte den uebergebenen Wesen-Namen nicht einem Flarum-Account zuordnen — der Post-Versuch scheiterte, bevor er Flarum ueberhaupt erreichte.",
+        "empfehlung": "Bereits am 2026-07-07 gefixt (_resolve_username erkennt jetzt auch interne Wesen-Anzeigenamen aus _api_tokens.json). Falls neu: pruefen ob ein neuer Wesen-Name in _api_tokens.json fehlt.",
+        "bringt_das": "Der betroffene Post-Versuch geht durch statt sofort zu scheitern.",
+        "bringt_das_nicht": "Nichts sonst — reiner Blocker-Fix. War seit der Wesen-ID-Migration (2026-07-06) fuer 6 von 7 Wesen komplett blockierend, aber ohne eigenes Fehlermuster unsichtbar im Dashboard — deshalb hier ergaenzt.",
+    },
 }
 
 
