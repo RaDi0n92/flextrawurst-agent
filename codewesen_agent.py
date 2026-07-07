@@ -35,6 +35,17 @@ import codewesen_werkzeuge as wz
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import dienst_konfiguration as dk
+
+# Individualisierung (flarumstyler, 2026-07-07): laeuft pro Wesen als eigener
+# Prozess (7 Units) — jedes Wesen bekommt seine eigene dienst_konfiguration-Zeile.
+# Sonderfaelle wegen Sonderzeichen im systemd-Unit-Namen (wie bei codewesen_reaktion.py).
+_DIENSTNAME_AUSNAHMEN_AGENT = {"dak+gord-system": "codewesen-dakgordsystem", "träumerlie": "codewesen-traeumerlie"}
+def dienst_name_fuer(wesen: str) -> str:
+    return _DIENSTNAME_AUSNAHMEN_AGENT.get(wesen, f"codewesen-{wesen}")
+
+STANDARD_VERHALTEN = ""
+_aktuelles_verhalten = STANDARD_VERHALTEN
 
 BASE       = Path("/root/werkraum/codewesen")
 TOKENS     = BASE / "_api_tokens.json"
@@ -186,7 +197,7 @@ Nur Notiz / Datei geschrieben (keine öffentliche Aktion):
 
 Nichts tun:
 {{"aktion": "nichts", "begruendung": "warum"}}
-"""
+""" + (f"\n\n{_aktuelles_verhalten}" if _aktuelles_verhalten else "")
 
 
 # ── Agentic Loop ───────────────────────────────────────────────────────────────
@@ -1194,10 +1205,24 @@ def erstvorstellung_erstellen(name: str, token: str, all_tags: list, log: loggin
 
 
 def run(name: str):
+    global CHECK_REFLEXION, CHECK_SCAN, _aktuelles_verhalten
     log = setup_log(name)
     token = load_token(name)
     all_tags = get_tags_cached(token)
     log.info("Agent gestartet. Tags: %s", [t["name"] for t in all_tags])
+
+    # Individualisierung: einmal beim Start lesen (lange Zeitplan-Berechnung unten,
+    # Neustart macht Aenderungen wirksam — gleiches Muster wie codewesen_reaktion.py).
+    konfig = dk.lade(dienst_name_fuer(name))
+    _aktuelles_verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+    overrides = (konfig.get("meta") or {}).get("intervalle") or {}
+    CHECK_REFLEXION = int(overrides.get("check_reflexion", CHECK_REFLEXION))
+    CHECK_SCAN = int(overrides.get("check_scan", CHECK_SCAN))
+    gedanke_intervall = int(overrides.get("gedanke", 66 * 60))
+    pflichtpost_intervall = int(overrides.get("pflichtpost", 88 * 60))
+    impuls_intervall = int(overrides.get("impuls", 142 * 60))
+    if overrides:
+        log.info("Takt-Overrides aus dienst_konfiguration geladen: %s", overrides)
 
     # Sicherstellen dass Verzeichnisse existieren
     for d in ["gedaechtnis", "inbox", "werkzeuge", "processed", "fehler",
@@ -1216,9 +1241,12 @@ def run(name: str):
 
     wesen_idx          = _WESEN_REIHE.index(name) if name in _WESEN_REIHE else 0
     offset             = wesen_idx * 480  # 8 Minuten gestaffelt je Wesen
-    letzte_pflichtpost = time.time() - (88 * 60) + offset
+    letzte_pflichtpost = time.time() - pflichtpost_intervall + offset
+    # Stagger-Basis fuer Gedanke bewusst bei den urspruenglichen 22min belassen (nicht
+    # gedanke_intervall) — sonst wuerde ein Override sofort einen Gedanken-Post beim
+    # Neustart ausloesen statt nur den naechsten reguraeren Zyklus zu verschieben.
     letzter_gedanke    = time.time() - (22 * 60) + offset
-    letzter_impuls     = time.time() - (142 * 60) + offset
+    letzter_impuls     = time.time() - impuls_intervall + offset
 
     while True:
         jetzt = time.time()
@@ -1252,7 +1280,7 @@ def run(name: str):
             log.error("Antwortpflicht-Fehler: %s", e)
 
         # 4. Gedankenpost (alle 66 Minuten)
-        if jetzt - letzter_gedanke >= 66 * 60:
+        if jetzt - letzter_gedanke >= gedanke_intervall:
             try:
                 verarbeite_gedankenpost(name, token, all_tags, log)
             except Exception as e:
@@ -1260,7 +1288,7 @@ def run(name: str):
             letzter_gedanke = time.time()
 
         # 5. Pflichtpost (alle 88 Minuten)
-        if jetzt - letzte_pflichtpost >= 88 * 60:
+        if jetzt - letzte_pflichtpost >= pflichtpost_intervall:
             try:
                 verarbeite_pflichtpost_88min(name, token, all_tags, log)
             except Exception as e:
@@ -1268,7 +1296,7 @@ def run(name: str):
             letzte_pflichtpost = time.time()
 
         # 6. Forum-Impuls (alle 2h22min)
-        if jetzt - letzter_impuls >= 142 * 60:
+        if jetzt - letzter_impuls >= impuls_intervall:
             try:
                 verarbeite_forum_impuls(name, token, all_tags, log)
             except Exception as e:
