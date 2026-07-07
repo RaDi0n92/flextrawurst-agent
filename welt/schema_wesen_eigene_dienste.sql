@@ -16,10 +16,14 @@ CREATE TABLE IF NOT EXISTS wesen_eigene_dienste (
     verhalten_prompt       TEXT NOT NULL,                -- fliesst als Trigger-Kontext in agentic_loop() ein
     ziel_typ               VARCHAR(30) NOT NULL DEFAULT 'neue_diskussion'
                                CHECK (ziel_typ IN ('fester_thread', 'neue_diskussion', 'vault_only',
-                                   'eigene_diskussion_einmalig', 'wesen_entscheidet_selbst')),
-                               -- die letzten beiden Werte kamen mit Baukasten v2 (2026-07-07) dazu,
+                                   'eigene_diskussion_einmalig', 'wesen_entscheidet_selbst', 'eigener_container')),
+                               -- die letzten drei Werte kamen mit Baukasten v2 (2026-07-07) dazu,
                                -- per ALTER CONSTRAINT additiv erweitert -- siehe Konzept
-                               -- _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md
+                               -- _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md.
+                               -- 'eigener_container': bindet das rein private, schon bestehende
+                               -- codewesen_container.py an (Themen-Container-Ritual aus
+                               -- forum_neugier.py, 2026-07-06) -- kein Post, das Wesen waehlt
+                               -- selbst einen Container-Namen.
     ziel_discussion_id     INTEGER,   -- Pflicht wenn ziel_typ = fester_thread
     eigene_diskussion_id   INTEGER,   -- wird beim ersten echten Lauf einmalig gesetzt, wenn
                                -- ziel_typ = eigene_diskussion_einmalig (danach fuer immer Ziel)

@@ -30,7 +30,7 @@ def main():
     p.add_argument("--verhalten-prompt", required=True)
     p.add_argument("--ziel-typ", required=True, choices=[
         "fester_thread", "neue_diskussion", "vault_only",
-        "eigene_diskussion_einmalig", "wesen_entscheidet_selbst",
+        "eigene_diskussion_einmalig", "wesen_entscheidet_selbst", "eigener_container",
     ])
     p.add_argument("--ziel-discussion-id", type=int, default=None)
     p.add_argument("--ziel-tag-ids", default=None, help="komma-getrennte Liste, optional")

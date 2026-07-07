@@ -58,12 +58,15 @@ import json
 import logging
 import os
 import random
+import re
 import sys
 import time
 
 sys.path.insert(0, "/root/werkraum")
 import codewesen_agent as ca
+import codewesen_container as cc
 import gedaechtnis as gd
+import llm_scheduler
 import psycopg2
 import wesen_eigene_dienste as wed
 
@@ -318,6 +321,54 @@ def _in_pausenzeit(pausenzeiten: list, jetzt: datetime.datetime) -> bool:
     return False
 
 
+def _container_zyklus(row: dict, log, wesen: str, verhalten: str, platz: dict, trockenlauf: bool) -> bool:
+    """ziel_typ='eigener_container' (Baukasten v2, Phase 2b): bindet das rein private,
+    schon bestehende codewesen_container.py an (Themen-Container-Ritual aus
+    codewesen_forum_neugier.py, 2026-07-06) -- KEIN Post, das Wesen waehlt selbst
+    Container-Name + Typ, genau wie im Original-Ritual. Kein agentic_loop/
+    fuehre_aktion_aus hier -- eigenes, einfacheres Prompt-Format (TYP/CONTAINER/INHALT
+    statt Aktions-JSON), weil es kein Flarum-Ziel gibt, das agentic_loop bräuchte."""
+    container_liste = cc.liste(wesen)
+    container_info = (
+        f"Deine bestehenden Container: {{', '.join(container_liste)}}\\n"
+        if container_liste else "Du hast noch keine eigenen Container -- du kannst einen neuen benennen.\\n"
+    )
+    prompt = (
+        f"Du bist {{wesen}}.\\n{{verhalten}}\\n\\n"
+        "Das hier bleibt komplett privat, geht NIE ins Forum -- du sicherst es in einem "
+        "selbst benannten Container.\\n\\n"
+        f"{{container_info}}\\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\\n"
+        "TYP: <gedanke|meinung|aufgabe|frage>\\n"
+        "CONTAINER: <Name eines bestehenden oder neuen Containers>\\n"
+        "INHALT: <dein Text>"
+    )
+    antwort = ca.ask_llm(prompt, prioritaet=llm_scheduler.PRIO_NIEDRIG, rufer=f"wesenDienst:{{DIENST_NAME}}")
+
+    typ_m = re.search(r"TYP:\\s*(gedanke|meinung|aufgabe|frage)", antwort, re.IGNORECASE)
+    container_m = re.search(r"CONTAINER:\\s*(.+)", antwort)
+    inhalt_m = re.search(r"INHALT:\\s*(.+)", antwort, re.DOTALL)
+    typ = typ_m.group(1).lower() if typ_m else "gedanke"
+    container_name = container_m.group(1).strip().split("\\n")[0].strip() if container_m else "unsortiert"
+    text = inhalt_m.group(1).strip() if inhalt_m else antwort.strip()
+
+    if not text:
+        log.warning("[%s] Container-Zyklus: leere Antwort -- uebersprungen", wesen)
+        _verlauf_loggen(row, wesen, platz, trockenlauf, gepostet=False, begruendung="leere Antwort vom Wesen")
+        return False
+
+    if trockenlauf:
+        log.info("[Trockenlauf][%s] Waere in Container '%s' gesichert worden (%s)", wesen, container_name, typ)
+        _verlauf_loggen(row, wesen, platz, True, gepostet=False,
+                        begruendung=f"waere in Container '{{container_name}}' gesichert worden: {{text[:150]}}")
+        return True
+
+    cc.sichere(wesen, container_name, typ, text)
+    _verlauf_loggen(row, wesen, platz, False, gepostet=True,
+                    begruendung=f"in Container '{{container_name}}' gesichert ({{typ}})")
+    return True
+
+
 def _einen_platz_zyklus(row: dict, log, aufgabe_text: str, platz: dict, trockenlauf: bool) -> bool:
     """Ein Zyklus fuer EINEN aufgeloesten Wesen-Platz. Gibt True zurueck wenn dieser
     Platz tatsaechlich ausgefuehrt wurde (auch bei Trockenlauf oder vault_only) --
@@ -336,9 +387,13 @@ def _einen_platz_zyklus(row: dict, log, aufgabe_text: str, platz: dict, trockenl
         _verlauf_loggen(row, wesen, platz, trockenlauf, gepostet=False, begruendung="Zustandsbedingung nicht erfuellt")
         return False
 
+    verhalten = aufgabe_text + _platz_kontext(platz) + _weiche_felder_kontext(eigene_felder)
+
+    if ziel_typ == "eigener_container":
+        return _container_zyklus(row, log, wesen, verhalten, platz, trockenlauf)
+
     token = ca.load_token(wesen)
     all_tags = ca.get_tags_cached(token)
-    verhalten = aufgabe_text + _platz_kontext(platz) + _weiche_felder_kontext(eigene_felder)
     eigene_disk_id = row.get("eigene_diskussion_id")
 
     if ziel_typ == "fester_thread":
