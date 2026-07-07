@@ -146,7 +146,7 @@ SERVICE_BESCHREIBUNG = {
     "codewesen-aufgabenchats": "Fuehrt die Selbstgespraech-Sessions der Aufgabenchats aus (fruehers 'Klon'), gesteuert ueber Start/Stop/Impuls.",
     "codewesen-engagement": "Autonomes Forum-Engagement der Wesen — INAKTIV laut Systemdoku, pruefe ob das noch so gewollt ist falls es hier als aktiv/inaktiv ueberrascht.",
     "codewesen-weltbild": "Destilliert Forum-Wissen pro Wesen zu einem Weltbild-Text, der in den Systemprompt einfliesst.",
-    "codewesen-vokabel-takt": "Synonym-/Vokabel-Spiel-Rhythmus der Wesen (22-Minuten-Takt).",
+    "codewesen-vokabel-takt": "Synonym-/Vokabel-Spiel-Rhythmus der Wesen (22-Minuten-Takt) — bewusst deaktiviert seit 2026-07-07 (Daniel).",
     "codewesen-reaktion@Schorschel": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer Schorschel — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
     "codewesen-reaktion@F3INSCHM3CK3R": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer F3INSCHM3CK3R — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
     "codewesen-reaktion-traeumerlie": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer träumerlie — eigenstaendiger Dienst statt @-Template wegen ASCII-Limit von systemd (siehe Doku).",
@@ -159,7 +159,7 @@ SERVICE_BESCHREIBUNG = {
 # Bericht als "erwartet_aus" statt "down" markiert, damit sie in der Ampel-Uebersicht
 # nicht wie ein echtes Problem aussehen und rote Punkte nicht "verwaschen". Bei Bedarf
 # ergaenzen, wenn sich herausstellt dass ein weiterer Dienst bewusst dauerhaft aus ist.
-SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt"}
+SERVICES_ERWARTET_AUS = {"entity-kern", "entity-takt", "codewesen-vokabel-takt"}
 
 # Gruppierung fuer die flarumstyler-Ansicht (2026-07-07) — Daniel: "gruperungen, ganz
 # oben die in flarum und andere darunter". Alles was mit den Wesen/Flarum direkt zu tun

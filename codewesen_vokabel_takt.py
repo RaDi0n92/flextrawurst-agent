@@ -217,10 +217,6 @@ def _antwort_posten(wesen: str, disk_id: int, synonym: str, begruendung: str):
             }
         }
     }
-    _, count = flarum_poster._tageszaehler_lesen()
-    if count >= flarum_poster.MAX_POSTS_PRO_TAG:
-        log.info(f"[{wesen}] Tagesdeckel erreicht ({count}), Synonym übersprungen")
-        return False
     r = requests.post(url, json=payload, headers=_headers(wesen), timeout=30)
     if r.status_code == 201:
         flarum_poster._tageszaehler_erhoehen()
@@ -269,10 +265,6 @@ def _gamble_post(wesen: str, verhalten: str = ""):
             }
         }
     }
-    _, count = flarum_poster._tageszaehler_lesen()
-    if count >= flarum_poster.MAX_POSTS_PRO_TAG:
-        log.info(f"[{wesen}] Tagesdeckel erreicht ({count}), Gamble übersprungen")
-        return
     r = requests.post(url, json=payload, headers=_headers(wesen), timeout=30)
     if r.status_code == 201:
         flarum_poster._tageszaehler_erhoehen()
