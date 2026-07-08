@@ -1,4 +1,4 @@
-import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, urllib.error, shutil, subprocess, re, html
+import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, urllib.error, shutil, subprocess, re, html, difflib
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
@@ -110,6 +110,10 @@ class LogExplainRequest(BaseModel):
 class WebarchiveSearchRequest(BaseModel):
     query: str = ""
     limit: int = 12
+
+class WebarchiveCompareRequest(BaseModel):
+    snapshot_a: str
+    snapshot_b: str
 
 def _now_iso() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -465,6 +469,53 @@ def _websnapshot_versions(item: dict, items: list[dict]) -> list[dict]:
         })
     versions.sort(key=lambda entry: str(entry.get("fetched_at") or ""), reverse=True)
     return versions[:20]
+
+def _websnapshot_text(item: dict) -> str:
+    text_path = item.get("text_path")
+    if text_path and Path(text_path).exists():
+        try:
+            return Path(text_path).read_text(encoding="utf-8", errors="ignore")[:WEBARCHIVE_TEXT_LIMIT]
+        except Exception:
+            return ""
+    return ""
+
+def _compare_websnapshots(item_a: dict, item_b: dict) -> dict:
+    text_a = _websnapshot_text(item_a)
+    text_b = _websnapshot_text(item_b)
+    lines_a = [line.strip() for line in text_a.splitlines() if line.strip()]
+    lines_b = [line.strip() for line in text_b.splitlines() if line.strip()]
+    added = [line for line in lines_b if line not in lines_a]
+    removed = [line for line in lines_a if line not in lines_b]
+    diff_lines = list(difflib.unified_diff(
+        lines_a[:400],
+        lines_b[:400],
+        fromfile=str(item_a.get("id") or "a"),
+        tofile=str(item_b.get("id") or "b"),
+        lineterm=""
+    ))
+    return {
+        "snapshot_a": {
+            "id": item_a.get("id"),
+            "title": item_a.get("title") or item_a.get("resolved_url") or item_a.get("url") or "",
+            "fetched_at": item_a.get("fetched_at") or "",
+        },
+        "snapshot_b": {
+            "id": item_b.get("id"),
+            "title": item_b.get("title") or item_b.get("resolved_url") or item_b.get("url") or "",
+            "fetched_at": item_b.get("fetched_at") or "",
+        },
+        "summary": {
+            "chars_a": len(text_a),
+            "chars_b": len(text_b),
+            "lines_a": len(lines_a),
+            "lines_b": len(lines_b),
+            "added_count": len(added),
+            "removed_count": len(removed),
+        },
+        "added": added[:20],
+        "removed": removed[:20],
+        "diff": "\n".join(diff_lines[:240]),
+    }
 
 def _normalize_form_profile(item: dict) -> dict:
     extra_fields = item.get("extra_fields") if isinstance(item.get("extra_fields"), dict) else {}
@@ -1071,6 +1122,15 @@ async def get_websnapshots():
 async def search_websnapshots(req: WebarchiveSearchRequest):
     hits = _search_websnapshots(req.query, _read_websnapshots(), req.limit or 12)
     return {"hits": hits, "count": len(hits)}
+
+@app.post("/webarchive/compare")
+async def compare_websnapshots(req: WebarchiveCompareRequest):
+    items = _read_websnapshots()
+    item_a = next((entry for entry in items if entry["id"] == req.snapshot_a.strip()), None)
+    item_b = next((entry for entry in items if entry["id"] == req.snapshot_b.strip()), None)
+    if not item_a or not item_b:
+        raise HTTPException(status_code=404, detail="Ein oder beide Snapshots nicht gefunden.")
+    return _compare_websnapshots(item_a, item_b)
 
 @app.get("/webarchive/snapshots/{snapshot_id}")
 async def get_websnapshot(snapshot_id: str):

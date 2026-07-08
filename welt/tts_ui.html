@@ -517,6 +517,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-webarchive-clear">Leeren</button>
       </div>
       <textarea id="webarchive-output" placeholder="Gespeicherte Snapshots oder Notizen"></textarea>
+      <div class="sentence-list" id="webarchive-versions"></div>
       <div class="sentence-list" id="webarchive-list"></div>
     </section>
 
@@ -658,6 +659,7 @@ const webarchiveSearch = document.getElementById('webarchive-search');
 const btnWebarchiveSave = document.getElementById('btn-webarchive-save');
 const btnWebarchiveClear = document.getElementById('btn-webarchive-clear');
 const webarchiveOutput = document.getElementById('webarchive-output');
+const webarchiveVersions = document.getElementById('webarchive-versions');
 const webarchiveList = document.getElementById('webarchive-list');
 const formsProfile = document.getElementById('forms-profile');
 const formsName = document.getElementById('forms-name');
@@ -709,6 +711,7 @@ const DOCUMENTS_CHAT_API = BASE + 'documents/chat';
 const DOCUMENTS_MODELS_API = BASE + 'documents/models';
 const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
 const WEBARCHIVE_SEARCH_API = BASE + 'webarchive/search';
+const WEBARCHIVE_COMPARE_API = BASE + 'webarchive/compare';
 const FORMS_API = BASE + 'forms/profiles';
 const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
 const LOGS_API = BASE + 'logs/analyses';
@@ -773,6 +776,7 @@ let currentDocumentDetail = null;
 let currentDocumentChunkIndex = -1;
 let currentDocumentSources = [];
 let currentFormId = '';
+let currentWebarchiveSnapshot = null;
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -1199,6 +1203,31 @@ function renderWebarchive(){
       </div>
       <div class="sentence-actions">
         <button class="small" type="button" data-act="load-snapshot">Laden</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderWebarchiveVersions(){
+  const versions = currentWebarchiveSnapshot && Array.isArray(currentWebarchiveSnapshot.versions)
+    ? currentWebarchiveSnapshot.versions
+    : [];
+  if (!versions.length){
+    webarchiveVersions.innerHTML = '<div class="empty">Noch keine Snapshot-Versionen geladen.</div>';
+    return;
+  }
+  const currentId = currentWebarchiveSnapshot.id;
+  const latestOther = versions.find(version=>version.id !== currentId);
+  webarchiveVersions.innerHTML = versions.map((version, index)=>`
+    <div class="sentence-row" data-version-id="${esc(version.id)}">
+      <div>
+        <div class="sentence-text">${esc(version.title || version.id)}</div>
+        <div class="clip-meta">${esc(version.fetched_at || '')} · ${esc(version.status || '')}</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-version">${esc(version.id === currentId ? 'Aktiv' : 'Laden')}</button>
+        ${version.id !== currentId ? '<button class="small" type="button" data-act="compare-version">Vergleich</button>' : ''}
+        ${index === 0 && latestOther ? `<button class="small" type="button" data-act="compare-latest">Mit vorheriger</button>` : ''}
       </div>
     </div>
   `).join('');
@@ -1675,6 +1704,7 @@ async function loadServerWebarchive(){
   } catch(e){
     webarchiveServerReady = false;
   }
+  renderWebarchiveVersions();
   renderWebarchive();
 }
 
@@ -1734,6 +1764,7 @@ async function loadWebsnapshot(snapshotId){
     const res = await fetch(`${WEBARCHIVE_API}/${encodeURIComponent(snapshotId)}`, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
+    currentWebarchiveSnapshot = item;
     const versions = Array.isArray(item.versions) ? item.versions : [];
     webarchiveOutput.value = [
       item.title || item.resolved_url || item.url,
@@ -1746,9 +1777,56 @@ async function loadWebsnapshot(snapshotId){
       versions.length ? '' : '',
       ...versions.map((version, index)=>`${index + 1}. ${version.fetched_at || ''} · ${version.status || ''} · ${version.id}`)
     ].join('\n');
+    renderWebarchiveVersions();
     st(`Snapshot geladen: ${item.title || item.url}`,'ok');
   } catch(e){
+    currentWebarchiveSnapshot = null;
+    renderWebarchiveVersions();
     st('Snapshot konnte nicht geladen werden.','err');
+    dbg(e.message);
+  }
+}
+
+async function compareWebarchiveSnapshots(snapshotA, snapshotB){
+  if (!snapshotA || !snapshotB){
+    st('Für den Vergleich fehlen Snapshot-IDs.','err');
+    return;
+  }
+  st('Snapshot-Vergleich läuft…','wait');
+  try {
+    const res = await fetch(WEBARCHIVE_COMPARE_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({snapshot_a: snapshotA, snapshot_b: snapshotB})
+    });
+    if (!res.ok){
+      let detail = 'Vergleich fehlgeschlagen.';
+      try {
+        const err = await res.json();
+        detail = err.detail || detail;
+      } catch(_) {}
+      throw new Error(detail);
+    }
+    const payload = await res.json();
+    webarchiveOutput.value = [
+      `Vergleich: ${payload.snapshot_a.title} -> ${payload.snapshot_b.title}`,
+      `${payload.snapshot_a.fetched_at} -> ${payload.snapshot_b.fetched_at}`,
+      '',
+      `Zeichen: ${payload.summary.chars_a} -> ${payload.summary.chars_b}`,
+      `Zeilen: ${payload.summary.lines_a} -> ${payload.summary.lines_b}`,
+      `Neu: ${payload.summary.added_count} · Entfernt: ${payload.summary.removed_count}`,
+      '',
+      'Neu hinzugekommen:',
+      ...(payload.added || []).slice(0, 10).map(line=>`+ ${line}`),
+      '',
+      'Entfallen:',
+      ...(payload.removed || []).slice(0, 10).map(line=>`- ${line}`),
+      '',
+      payload.diff || 'Kein Diff verfügbar.'
+    ].join('\n');
+    st('Snapshot-Vergleich fertig.','ok');
+  } catch(e){
+    st('Snapshot-Vergleich fehlgeschlagen.','err');
     dbg(e.message);
   }
 }
@@ -3173,6 +3251,8 @@ btnWebarchiveClear.addEventListener('click', ()=>{
   webarchiveSearch.value = '';
   webarchiveHits = [];
   webarchiveOutput.value = '';
+  currentWebarchiveSnapshot = null;
+  renderWebarchiveVersions();
   renderWebarchive();
   st('Webarchiv-Felder geleert.','ok');
 });
@@ -3181,6 +3261,23 @@ webarchiveList.addEventListener('click', e=>{
   const row = e.target.closest('[data-snapshot-id]');
   if (!btn || !row) return;
   loadWebsnapshot(row.dataset.snapshotId);
+});
+webarchiveVersions.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act]');
+  const row = e.target.closest('[data-version-id]');
+  if (!btn || !row || !currentWebarchiveSnapshot) return;
+  const versionId = row.dataset.versionId;
+  if (btn.dataset.act === 'load-version'){
+    loadWebsnapshot(versionId);
+    return;
+  }
+  if (btn.dataset.act === 'compare-version'){
+    compareWebarchiveSnapshots(versionId, currentWebarchiveSnapshot.id);
+    return;
+  }
+  if (btn.dataset.act === 'compare-latest'){
+    compareWebarchiveSnapshots(versionId, currentWebarchiveSnapshot.id);
+  }
 });
 btnFormsPreview.addEventListener('click', ()=>{
   buildFormPreview();
@@ -3391,6 +3488,7 @@ renderDocumentScope();
 renderDocumentSources();
 renderDocumentChunks();
 renderDocuments();
+renderWebarchiveVersions();
 renderWebarchive();
 renderForms();
 renderLogs();
