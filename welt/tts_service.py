@@ -97,6 +97,15 @@ class LogAnalyzeRequest(BaseModel):
     profile: str = ""
     filename: str = ""
 
+class LogExplainRequest(BaseModel):
+    text: str
+    question: str = ""
+    model: str = ""
+
+class WebarchiveSearchRequest(BaseModel):
+    query: str = ""
+    limit: int = 12
+
 def _now_iso() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
@@ -404,6 +413,36 @@ def _sync_fetch_snapshot(url: str) -> dict:
     text = _html_to_text(html_text)[:WEBARCHIVE_TEXT_LIMIT]
     return {"html": html_text, "text": text, "resolved_url": final_url, "title": title}
 
+def _search_websnapshots(query: str, items: list[dict], limit: int = 12) -> list[dict]:
+    query = str(query or "").strip().lower()
+    if not query:
+        return []
+    tokens = [tok for tok in re.findall(r"[a-z0-9äöüß]{2,}", query) if tok]
+    hits = []
+    for item in items:
+        haystacks = [
+            str(item.get("title") or ""),
+            str(item.get("url") or ""),
+            str(item.get("resolved_url") or ""),
+            str(item.get("text_preview") or ""),
+        ]
+        text_path = item.get("text_path")
+        if text_path and Path(text_path).exists():
+            try:
+                haystacks.append(Path(text_path).read_text(encoding="utf-8", errors="ignore")[:WEBARCHIVE_TEXT_LIMIT])
+            except Exception:
+                pass
+        joined = "\n".join(haystacks).lower()
+        score = joined.count(query) * 8 + sum(joined.count(tok) for tok in tokens)
+        if score <= 0:
+            continue
+        hits.append({
+            **item,
+            "score": score,
+        })
+    hits.sort(key=lambda item: (-item["score"], str(item.get("title") or ""), str(item.get("resolved_url") or "")))
+    return hits[:max(1, min(limit, 30))]
+
 def _normalize_form_profile(item: dict) -> dict:
     return {
         "id": str(item.get("id") or ""),
@@ -522,6 +561,22 @@ def _sync_analyze_log(text: str, profile: str, filename: str) -> dict:
         "text_preview": text[:1200],
         "created_at": _now_iso(),
     }
+
+def _sync_explain_log(text: str, question: str, model: str) -> dict:
+    models = _ollama_models()
+    chosen = model.strip() or (models[0] if models else "")
+    if not chosen:
+        raise RuntimeError("Kein Chat-Modell gefunden.")
+    prompt = (
+        "Erkläre diesen Logblock knapp und technisch sauber. "
+        "Nenne wahrscheinliche Ursache, was sicher belegt ist, was nur Vermutung ist, "
+        "und zwei nächste Prüfungen. Erfinde nichts außerhalb des Blocks.\n\n"
+        f"Frage:\n{question.strip() or 'Was ist hier los?'}\n\n"
+        f"Logblock:\n{text.strip()[:6000]}\n\n"
+        "Antwort:"
+    )
+    answer = _ollama_generate(chosen, prompt)
+    return {"answer": answer, "model": chosen}
 
 def _normalize_library(data: dict) -> dict:
     categories = data.get("categories")
@@ -916,6 +971,11 @@ async def get_document(document_id: str):
 async def get_websnapshots():
     return _read_websnapshots()
 
+@app.post("/webarchive/search")
+async def search_websnapshots(req: WebarchiveSearchRequest):
+    hits = _search_websnapshots(req.query, _read_websnapshots(), req.limit or 12)
+    return {"hits": hits, "count": len(hits)}
+
 @app.get("/webarchive/snapshots/{snapshot_id}")
 async def get_websnapshot(snapshot_id: str):
     item = next((entry for entry in _read_websnapshots() if entry["id"] == snapshot_id), None)
@@ -1002,6 +1062,19 @@ async def analyze_log(req: LogAnalyzeRequest):
     items.append(entry)
     _write_logs(items)
     return _normalize_log_entry(entry)
+
+@app.post("/logs/explain")
+async def explain_log(req: LogExplainRequest):
+    text = req.text.strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Kein Logblock zum Erklären erhalten.")
+    try:
+        result = await asyncio.get_event_loop().run_in_executor(
+            _pool, _sync_explain_log, text, req.question, req.model
+        )
+        return result
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Log-Erklärung fehlgeschlagen: {exc}")
 
 @app.post("/translate")
 async def translate(req: TranslateRequest):

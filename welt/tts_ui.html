@@ -506,6 +506,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <input id="webarchive-url" type="text" placeholder="URL">
         <input id="webarchive-title" type="text" placeholder="Titel">
       </div>
+      <input id="webarchive-search" type="text" placeholder="Suche in Snapshots">
       <div class="row">
         <button class="small primary" id="btn-webarchive-save">Snapshot merken</button>
         <button class="small" id="btn-webarchive-clear">Leeren</button>
@@ -545,9 +546,16 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <option value="docker">Docker</option>
         </select>
       </div>
+      <div class="grid2">
+        <input id="logs-question" type="text" placeholder="Was soll erklärt werden?">
+        <select id="logs-model">
+          <option value="">Chat-Modell automatisch wählen</option>
+        </select>
+      </div>
       <textarea id="logs-input" placeholder="Logtext hier hinein oder Datei laden"></textarea>
       <div class="row">
         <button class="small primary" id="btn-logs-analyze">Fehler extrahieren</button>
+        <button class="small" id="btn-logs-explain">Block erklären</button>
         <button class="small" id="btn-logs-clear">Leeren</button>
       </div>
       <textarea id="logs-output" readonly placeholder="Gefundene Fehler und Gruppen"></textarea>
@@ -631,6 +639,7 @@ const documentsOutput = document.getElementById('documents-output');
 const documentsList = document.getElementById('documents-list');
 const webarchiveUrl = document.getElementById('webarchive-url');
 const webarchiveTitle = document.getElementById('webarchive-title');
+const webarchiveSearch = document.getElementById('webarchive-search');
 const btnWebarchiveSave = document.getElementById('btn-webarchive-save');
 const btnWebarchiveClear = document.getElementById('btn-webarchive-clear');
 const webarchiveOutput = document.getElementById('webarchive-output');
@@ -646,8 +655,11 @@ const formsPreview = document.getElementById('forms-preview');
 const formsList = document.getElementById('forms-list');
 const logsUpload = document.getElementById('logs-upload');
 const logsProfile = document.getElementById('logs-profile');
+const logsQuestion = document.getElementById('logs-question');
+const logsModel = document.getElementById('logs-model');
 const logsInput = document.getElementById('logs-input');
 const btnLogsAnalyze = document.getElementById('btn-logs-analyze');
+const btnLogsExplain = document.getElementById('btn-logs-explain');
 const btnLogsClear = document.getElementById('btn-logs-clear');
 const logsOutput = document.getElementById('logs-output');
 const logsList = document.getElementById('logs-list');
@@ -675,9 +687,11 @@ const DOCUMENTS_SEARCH_API = BASE + 'documents/search';
 const DOCUMENTS_CHAT_API = BASE + 'documents/chat';
 const DOCUMENTS_MODELS_API = BASE + 'documents/models';
 const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
+const WEBARCHIVE_SEARCH_API = BASE + 'webarchive/search';
 const FORMS_API = BASE + 'forms/profiles';
 const LOGS_API = BASE + 'logs/analyses';
 const LOGS_ANALYZE_API = BASE + 'logs/analyze';
+const LOGS_EXPLAIN_API = BASE + 'logs/explain';
 const OFFLINE_API = BASE + 'offline.html';
 const AUDIO_ZIP_API = BASE + 'export-audio';
 
@@ -723,12 +737,15 @@ let logEntries = loadJsonLocal(LOGS_KEY, []);
 let documentHits = [];
 let documentActiveIds = [];
 let documentSearchTimer = null;
+let webarchiveHits = [];
+let webarchiveSearchTimer = null;
 let ocrServerReady = false;
 let documentsServerReady = false;
 let webarchiveServerReady = false;
 let formsServerReady = false;
 let logsServerReady = false;
 let currentLogFilename = '';
+let currentLogEntry = null;
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -1069,16 +1086,19 @@ function renderDocuments(){
 }
 
 function renderWebarchive(){
-  const items = webarchiveEntries.slice().sort((a,b)=>String(b.fetched_at || '').localeCompare(String(a.fetched_at || '')));
+  const query = webarchiveSearch.value.trim();
+  const items = (query && webarchiveHits.length ? webarchiveHits : webarchiveEntries)
+    .slice()
+    .sort((a,b)=>String(b.fetched_at || '').localeCompare(String(a.fetched_at || '')));
   if (!items.length){
-    webarchiveList.innerHTML = '<div class="empty">Noch keine Webarchiv-Einträge gespeichert.</div>';
+    webarchiveList.innerHTML = `<div class="empty">${esc(query ? 'Keine Snapshot-Treffer.' : 'Noch keine Webarchiv-Einträge gespeichert.')}</div>`;
     return;
   }
   webarchiveList.innerHTML = items.map(item=>`
     <div class="sentence-row" data-snapshot-id="${esc(item.id)}">
       <div>
         <div class="sentence-text">${esc(item.title || item.resolved_url || item.url || 'Snapshot')}</div>
-        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.resolved_url || item.url || '')}</div>
+        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.resolved_url || item.url || '')}${item.score ? ` · Score ${esc(item.score)}` : ''}</div>
         <div class="clip-extra">${esc(shortText(item.error || item.text_preview || 'Noch keine Vorschau.', 220))}</div>
       </div>
       <div class="sentence-actions">
@@ -1384,6 +1404,28 @@ async function loadServerWebarchive(){
   renderWebarchive();
 }
 
+async function runWebarchiveSearch(){
+  const query = webarchiveSearch.value.trim();
+  if (!query){
+    webarchiveHits = [];
+    renderWebarchive();
+    return;
+  }
+  try {
+    const res = await fetch(WEBARCHIVE_SEARCH_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({query, limit: 16})
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const payload = await res.json();
+    webarchiveHits = Array.isArray(payload.hits) ? payload.hits : [];
+    renderWebarchive();
+  } catch(e){
+    dbg(e.message);
+  }
+}
+
 async function saveWebarchiveEntry(){
   const url = webarchiveUrl.value.trim();
   const title = webarchiveTitle.value.trim();
@@ -1493,6 +1535,18 @@ async function loadServerLogs(){
     logEntries = Array.isArray(items) ? items : [];
     logsServerReady = true;
     saveJsonLocal(LOGS_KEY, logEntries);
+    try {
+      const modelsRes = await fetch(DOCUMENTS_MODELS_API, {cache:'no-store'});
+      if (modelsRes.ok){
+        const payload = await modelsRes.json();
+        const models = Array.isArray(payload.models) ? payload.models : [];
+        if (models.length){
+          logsModel.innerHTML = ['<option value="">Chat-Modell automatisch wählen</option>']
+            .concat(models.map(name=>`<option value="${esc(name)}">${esc(name)}</option>`))
+            .join('');
+        }
+      }
+    } catch(e) {}
   } catch(e){
     logsServerReady = false;
   }
@@ -1517,6 +1571,7 @@ async function analyzeLogs(){
     const item = await res.json();
     logEntries = [item, ...logEntries.filter(x=>x.id !== item.id)];
     saveJsonLocal(LOGS_KEY, logEntries);
+    currentLogEntry = item;
     logsOutput.value = [
       ...(Array.isArray(item.summary) ? item.summary : []),
       '',
@@ -1533,12 +1588,63 @@ async function analyzeLogs(){
 function loadLogEntry(logId){
   const item = logEntries.find(x=>x.id === logId);
   if (!item) return;
+  currentLogEntry = item;
   logsOutput.value = [
     ...(Array.isArray(item.summary) ? item.summary : []),
     '',
     ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
   ].join('\n');
   st(`Loganalyse geladen: ${item.filename || item.id}`,'ok');
+}
+
+function selectedLogExplainText(){
+  const start = logsOutput.selectionStart || 0;
+  const end = logsOutput.selectionEnd || 0;
+  const selected = logsOutput.value.slice(start, end).trim();
+  if (selected) return selected;
+  if (currentLogEntry && Array.isArray(currentLogEntry.groups) && currentLogEntry.groups.length){
+    return `${currentLogEntry.groups[0].signature}\n${currentLogEntry.groups[0].preview}`;
+  }
+  return logsOutput.value.trim() || logsInput.value.trim();
+}
+
+async function explainLogBlock(){
+  const text = selectedLogExplainText();
+  if (!text){
+    st('Kein Logblock zum Erklären vorhanden.','err');
+    return;
+  }
+  st('Logblock wird erklärt…','wait');
+  try {
+    const res = await fetch(LOGS_EXPLAIN_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        text,
+        question: logsQuestion.value.trim(),
+        model: logsModel.value
+      })
+    });
+    if (!res.ok){
+      let detail = 'Log-Erklärung fehlgeschlagen.';
+      try {
+        const err = await res.json();
+        detail = err.detail || detail;
+      } catch(_) {}
+      throw new Error(detail);
+    }
+    const payload = await res.json();
+    logsOutput.value = [
+      logsOutput.value.trim(),
+      '',
+      `Erklärung (${payload.model || logsModel.value || 'unbekannt'}):`,
+      payload.answer || 'Keine Antwort.'
+    ].filter(Boolean).join('\n');
+    st('Log-Erklärung fertig.','ok');
+  } catch(e){
+    st('Log-Erklärung fehlgeschlagen.','err');
+    dbg(e.message);
+  }
 }
 
 function renderTranslationVoices(){
@@ -2708,10 +2814,17 @@ documentsList.addEventListener('click', e=>{
   loadDocumentDetail(row.dataset.documentId, row.dataset.documentChunk || '');
 });
 btnWebarchiveSave.addEventListener('click', saveWebarchiveEntry);
+webarchiveSearch.addEventListener('input', ()=>{
+  clearTimeout(webarchiveSearchTimer);
+  webarchiveSearchTimer = setTimeout(runWebarchiveSearch, 180);
+});
 btnWebarchiveClear.addEventListener('click', ()=>{
   webarchiveUrl.value = '';
   webarchiveTitle.value = '';
+  webarchiveSearch.value = '';
+  webarchiveHits = [];
   webarchiveOutput.value = '';
+  renderWebarchive();
   st('Webarchiv-Felder geleert.','ok');
 });
 webarchiveList.addEventListener('click', e=>{
@@ -2732,10 +2845,13 @@ formsList.addEventListener('click', e=>{
   loadFormEntry(row.dataset.formId);
 });
 btnLogsAnalyze.addEventListener('click', analyzeLogs);
+btnLogsExplain.addEventListener('click', explainLogBlock);
 btnLogsClear.addEventListener('click', ()=>{
   logsInput.value = '';
+  logsQuestion.value = '';
   logsOutput.value = '';
   currentLogFilename = '';
+  currentLogEntry = null;
   st('Logs geleert.','ok');
 });
 logsList.addEventListener('click', e=>{
