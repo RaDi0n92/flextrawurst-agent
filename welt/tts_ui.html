@@ -249,7 +249,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="translator-controls">
         <select id="translate-target" aria-label="Ausgabesprache"></select>
         <button class="small primary" id="btn-translate">Übersetzen</button>
-        <button class="small" id="btn-translate-speak" disabled>Übersetzung sprechen</button>
+        <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
       </div>
     </div>
     <div class="translator-fields">
@@ -386,6 +386,9 @@ function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
   ? new Intl.DisplayNames(['de'], {type:'language'})
   : null;
+const regionNames = typeof Intl !== 'undefined' && Intl.DisplayNames
+  ? new Intl.DisplayNames(['de'], {type:'region'})
+  : null;
 const languageNameFallbacks = {
   auto: 'Automatisch erkennen',
   de: 'Deutsch',
@@ -422,12 +425,54 @@ function languageDisplay(lang){
   return `${code} (${code})`;
 }
 
+function languageNameOnly(lang){
+  return languageDisplay(lang).replace(/\s*\([^)]*\)$/, '');
+}
+
+function regionDisplay(region){
+  const code = String(region || '').trim().toUpperCase();
+  if (!code) return '';
+  try {
+    const name = regionNames?.of(code);
+    if (name && name !== code) return name;
+  } catch(e) {}
+  return code;
+}
+
+function localeDisplay(locale){
+  const loc = String(locale || '').trim().replace('_','-');
+  if (!loc) return 'Sprache unbekannt';
+  const parts = loc.split('-');
+  const lang = targetFromLocale(loc);
+  const region = parts.length > 1 ? regionDisplay(parts[1]) : '';
+  const name = languageNameOnly(lang);
+  return region ? `${name} - ${region} (${loc})` : `${name} (${loc})`;
+}
+
+function genderDisplay(gender){
+  const value = String(gender || '').toLowerCase();
+  if (value === 'male') return 'maennlich';
+  if (value === 'female') return 'weiblich';
+  if (value === 'neutral') return 'neutral';
+  return gender || '?';
+}
+
 function langByTarget(target){
   return translationLanguages.find(x=>x.target_lang === target);
 }
 
 function translationVoice(){
   return voiceForTarget(translateTarget.value);
+}
+
+function voiceByName(name){
+  return availableVoices.find(v=>(v.name || v.ShortName) === name);
+}
+
+function voiceDisplay(name){
+  const voice = voiceByName(name);
+  if (!voice) return name || 'keine Stimme';
+  return `${localeDisplay(voice.locale || voice.Locale)} · ${name}`;
 }
 
 function updateTranslateSpeakState(){
@@ -441,7 +486,7 @@ function updateTargetLanguageLabel(){
     return;
   }
   const voice = translationVoice();
-  targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)} · Stimme: ${voice}`;
+  targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)} · Stimme: ${voiceDisplay(voice)}`;
 }
 function fileSafe(s){
   return (s || 'tts')
@@ -582,7 +627,7 @@ async function loadServerStore(){
 function setActiveVoice(v){
   activeVoice = v || DEFAULT_VOICE;
   localStorage.setItem('tts.activeVoice', activeVoice);
-  activeVoiceEl.textContent = 'Aktiv: '+activeVoice;
+  activeVoiceEl.textContent = 'Aktiv: '+voiceDisplay(activeVoice);
   renderVoiceFavorites();
 }
 
@@ -596,7 +641,7 @@ function renderVoiceFavorites(){
   }
   btnVoiceFavRemove.disabled = false;
   voiceFavSel.innerHTML = store.voiceFavorites
-    .map(v=>`<option value="${esc(v)}">${esc(v)}</option>`)
+    .map(v=>`<option value="${esc(v)}">${esc(voiceDisplay(v))}</option>`)
     .join('');
   voiceFavSel.value = store.voiceFavorites.includes(activeVoice) ? activeVoice : store.voiceFavorites[0];
 }
@@ -710,7 +755,7 @@ async function loadVoices(){
       const multi = String(v.name || '').includes('Multilingual')
         ? (isNeutralGermanVoice(v.name) ? ' · Neutral' : ' · Multilingual')
         : '';
-      const label = `${v.locale || '??'} · ${v.name}${multi} · ${v.gender || '?'}`;
+      const label = `${localeDisplay(v.locale)} · ${v.name}${multi} · ${genderDisplay(v.gender)}`;
       return `<option value="${esc(v.name)}">${esc(label)}</option>`;
     }).join('');
     voiceSel.value = activeVoice;
