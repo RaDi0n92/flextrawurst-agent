@@ -440,9 +440,8 @@ function updateTargetLanguageLabel(){
     targetLanguageLabel.textContent = 'Ausgabe: Sprache wählen';
     return;
   }
-  const locales = Array.isArray(lang.locales) && lang.locales.length ? ` · Stimmen: ${lang.locales.join(', ')}` : '';
   const voice = translationVoice();
-  targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)}${locales} · Stimme: ${voice}`;
+  targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)} · Stimme: ${voice}`;
 }
 function fileSafe(s){
   return (s || 'tts')
@@ -727,6 +726,7 @@ async function loadVoices(){
     dbg('Stimmenliste nicht geladen: '+e.message);
   }
   setActiveVoice(activeVoice);
+  updateTargetLanguageLabel();
 }
 
 function renderTranslationLanguages(){
@@ -740,8 +740,7 @@ function renderTranslationLanguages(){
   btnTranslate.disabled = false;
   translateTarget.innerHTML = translationLanguages
     .map(lang=>{
-      const locales = Array.isArray(lang.locales) && lang.locales.length ? ` · ${lang.locales.join(', ')}` : '';
-      const label = `${languageDisplay(lang.target_lang)}${locales}`;
+      const label = languageDisplay(lang.target_lang);
       return `<option value="${esc(lang.target_lang)}">${esc(label)}</option>`;
     })
     .join('');
