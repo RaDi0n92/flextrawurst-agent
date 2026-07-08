@@ -1376,6 +1376,7 @@ function formatServerLogComparison(data){
   const otherCounts = counts.other || {};
   const groupCounts = data.group_counts || {};
   const changed = Array.isArray(data.changed) ? data.changed : [];
+  const previewDiff = Array.isArray(data.preview_diff) ? data.preview_diff : [];
   const changedPreview = changed.slice(0, 8).map(item=>{
     if (!item || typeof item !== 'object') return '';
     const signature = String(item.signature || '').trim();
@@ -1401,6 +1402,8 @@ function formatServerLogComparison(data){
     Array.isArray(data.added) && data.added.length ? `Neu: ${data.added.slice(0, 8).join(' | ')}` : 'Neu: keine',
     Array.isArray(data.removed) && data.removed.length ? `Entfallen: ${data.removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
     changedPreview.length ? `Geaendert: ${changedPreview.join(' | ')}` : 'Geaendert: keine',
+    '',
+    previewDiff.length ? `Textdiff:\n${previewDiff.slice(0, 40).join('\n')}` : 'Textdiff: keine',
   ].join('\n');
 }
 

@@ -15,6 +15,8 @@ import requests
 from pathlib import Path
 from typing import Optional
 
+import flarum_post_sperre
+
 FLARUM_BASE = "http://217.154.14.29/api"
 
 MASTER_KEY = os.environ.get("FLARUM_MASTER_KEY", "")
@@ -248,8 +250,10 @@ def get_unanswered_discussions(codewesen_usernames: list[str], limit: int = 100)
 
 # ── Schreiben via REST API ─────────────────────────────────────────────────────
 
-def post_reply(discussion_id: int, content: str, token_or_username: str) -> dict:
+def post_reply(discussion_id: int, content: str, token_or_username: str,
+                erlaubt_trotz_sperre: bool = False) -> dict:
     """Postet eine Antwort. Akzeptiert Username oder (ignoriert) alten Token."""
+    flarum_post_sperre.pruefe(erlaubt_trotz_sperre)
     username = _resolve_username(token_or_username)
     payload = {
         "data": {
@@ -272,8 +276,9 @@ def post_reply(discussion_id: int, content: str, token_or_username: str) -> dict
 
 
 def start_discussion(title: str, content: str, tag_ids: list,
-                     token_or_username: str) -> dict:
+                     token_or_username: str, erlaubt_trotz_sperre: bool = False) -> dict:
     """Startet eine neue Diskussion."""
+    flarum_post_sperre.pruefe(erlaubt_trotz_sperre)
     username = _resolve_username(token_or_username)
     payload = {
         "data": {

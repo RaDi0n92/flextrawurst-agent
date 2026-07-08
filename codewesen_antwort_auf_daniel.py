@@ -259,6 +259,7 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
                 content=inhalt,
                 tag_ids=entscheidung.get("tag_ids") or standard_tag_ids(),
                 token_or_username=name,
+                erlaubt_trotz_sperre=True,
             )
             neue_id = result.get("data", {}).get("id", "?")
             log.info(f"  {name}: Neue Diskussion #{neue_id} ({len(inhalt)} Zeichen)")
@@ -271,6 +272,7 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
                 discussion_id=discussion_id,
                 content=inhalt,
                 token_or_username=name,
+                erlaubt_trotz_sperre=True,
             )
             post_id_new = result.get("data", {}).get("id", "?")
             log.info(f"  {name}: Post #{post_id_new} ({len(inhalt)} Zeichen)")

@@ -700,11 +700,19 @@ def _log_group_signatures(item: dict) -> dict[str, dict]:
         }
     return mapped
 
+def _log_preview_lines(item: dict) -> list[str]:
+    text = str(item.get("text_preview") or "").strip()
+    if not text:
+        return []
+    return [line.rstrip() for line in text.splitlines() if line.strip()]
+
 def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     base_counts = item_a.get("counts") if isinstance(item_a.get("counts"), dict) else {}
     other_counts = item_b.get("counts") if isinstance(item_b.get("counts"), dict) else {}
     base_groups = _log_group_signatures(item_a)
     other_groups = _log_group_signatures(item_b)
+    base_preview_lines = _log_preview_lines(item_a)
+    other_preview_lines = _log_preview_lines(item_b)
     added = [signature for signature in other_groups.keys() if signature not in base_groups]
     removed = [signature for signature in base_groups.keys() if signature not in other_groups]
     changed: list[dict] = []
@@ -758,6 +766,15 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
             "removed": len(removed),
             "changed": len(changed),
         },
+        "preview_diff": list(
+            difflib.unified_diff(
+                base_preview_lines[:80],
+                other_preview_lines[:80],
+                fromfile=item_a.get("filename") or item_a.get("id") or "base",
+                tofile=item_b.get("filename") or item_b.get("id") or "other",
+                lineterm="",
+            )
+        )[:80],
         "added": added[:20],
         "removed": removed[:20],
         "changed": changed[:20],
