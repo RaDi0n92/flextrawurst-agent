@@ -18,6 +18,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
+import flarum_stopp_protokoll
+
 _ZUSTAND_DATEI = Path("/root/werkraum/codewesen/_flarum_post_sperre.json")
 
 
@@ -56,6 +58,10 @@ def sperren(grund: str, von: str = "Daniel") -> dict:
         "von": von,
     }
     _schreibe(zustand)
+    flarum_stopp_protokoll.schreibe(
+        typ="sperre_aktiviert",
+        text=f"{von} hat die Flarum-Post-Sperre aktiviert. Grund: {grund}",
+    )
     return zustand
 
 
@@ -69,6 +75,18 @@ def entsperren(von: str = "Daniel") -> dict:
         "von": von,
     }
     _schreibe(zustand)
+    dauer = None
+    seit_str = zustand.get("vorherige_sperre_seit")
+    if seit_str:
+        try:
+            dauer = (datetime.now(timezone.utc) - datetime.fromisoformat(seit_str)).total_seconds()
+        except Exception:
+            dauer = None
+    flarum_stopp_protokoll.schreibe(
+        typ="sperre_aufgehoben",
+        text=f"{von} hat die Flarum-Post-Sperre aufgehoben, aktiv seit {seit_str or '?'}.",
+        dauer_sekunden=dauer,
+    )
     return zustand
 
 

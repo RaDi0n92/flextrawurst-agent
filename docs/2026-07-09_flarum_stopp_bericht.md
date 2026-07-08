@@ -72,11 +72,20 @@ Sagt dem Wesen explizit: kein Perfektionsanspruch, kein Erwartungsdruck,
 Scheitern ist normal und gewollt, Ziel ist eine eigene Container-Routine zu
 erproben.
 
-### Baustein 4 — Deterministisches Protokoll (OFFEN)
+### Baustein 4 — Deterministisches Protokoll (FERTIG)
 
-Menschensprachliche Dateien (wer/was/wann/wie lange), ohne LLM-Call fürs
-Loggen selbst — für Post-Sperre-Ereignisse, Container-Verschiebungen und
-Neugier-Dienst-Sessions.
+- **`flarum_stopp_protokoll.py`** (neu) — `schreibe(typ, text, wesen=None,
+  dauer_sekunden=None, meta=None)` und `lies(wesen=None, limit=200)`.
+  Append-only JSONL, kein LLM-Call fürs Loggen selbst.
+- Zwei Ablagen pro Eintrag: `flarum_stopp_protokoll_global.jsonl` (Admin-/
+  flarumstyler-Übersicht) und `codewesen/<wesen>/flarum_stopp_protokoll.jsonl`
+  (nur die eigenen Ereignisse — Provenienz auch für das Wesen selbst).
+- Eingebunden in `flarum_post_sperre.sperren()`/`entsperren()` (inkl.
+  Sperrdauer bei Aufhebung) und in `codewesen_container.verschiebe()`/`kopiere()`.
+- Retroaktiver Eintrag nachgetragen für die Sperr-Aktivierung, die vor
+  Existenz dieses Moduls passiert war (Baustein 1) — mit `meta.retroaktiv: True`
+  und dem tatsächlichen ursprünglichen Zeitstempel.
+- Getestet: Eintrag schreiben, lesen, Reihenfolge stimmt.
 
 ### Baustein 5 — Postgres-Spiegel (OFFEN)
 
@@ -109,7 +118,7 @@ Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
   ● Baustein 1  Post-Sperre               FERTIG, AKTIV
   ● Baustein 2  Container-Upgrade         FERTIG
   ○ Baustein 3  Umgedrehter Neugier-Dienst offen
-  ○ Baustein 4  Deterministisches Protokoll offen
+  ● Baustein 4  Deterministisches Protokoll FERTIG
   ○ Baustein 5  Postgres-Spiegel          offen
   ○ Baustein 6  flarumstyler-Tabs         offen
 ```

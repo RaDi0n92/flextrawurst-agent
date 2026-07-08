@@ -23,6 +23,7 @@ from pathlib import Path
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import flarum_poster
+import flarum_stopp_protokoll
 
 BASE = Path("/root/werkraum/codewesen")
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
@@ -332,6 +333,11 @@ def verschiebe(wesen: str, von_container: str, dateiname: str, nach_container: s
     ziel_datei.write_text(text, encoding="utf-8")
     quelle.unlink()
     log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' verschoben")
+    flarum_stopp_protokoll.schreibe(
+        typ="container_verschoben", wesen=wesen,
+        text=f"{wesen} hat '{dateiname}' von Container '{von}' nach '{nach}' verschoben.",
+        meta={"von_container": von, "nach_container": nach, "dateiname": dateiname},
+    )
     return True
 
 
@@ -351,4 +357,9 @@ def kopiere(wesen: str, von_container: str, dateiname: str, nach_container: str)
         ziel_datei = ziel_ordner / f"{quelle.stem}_kopie-{datetime.now(timezone.utc).strftime('%H-%M-%S')}{quelle.suffix}"
     ziel_datei.write_text(text, encoding="utf-8")
     log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' kopiert")
+    flarum_stopp_protokoll.schreibe(
+        typ="container_kopiert", wesen=wesen,
+        text=f"{wesen} hat '{dateiname}' von Container '{von}' nach '{nach}' kopiert.",
+        meta={"von_container": von, "nach_container": nach, "dateiname": dateiname},
+    )
     return True
