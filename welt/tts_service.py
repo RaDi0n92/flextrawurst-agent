@@ -1,7 +1,7 @@
-import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request
+import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, shutil, subprocess
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -14,14 +14,18 @@ VOICE = "de-DE-FlorianMultilingualNeural"
 MAX_CHARS = 1111111
 LIBRARY_PATH = Path("/root/werkraum/welt/tts_library.json")
 TRANSLATION_CACHE_PATH = Path("/root/werkraum/welt/tts_translation_cache.json")
+OCR_JOBS_PATH = Path("/root/werkraum/welt/tts_ocr_jobs.json")
+OCR_UPLOAD_DIR = Path("/root/werkraum/welt/tts_ocr_uploads")
 _pool = ThreadPoolExecutor(max_workers=4)
 _library_lock = threading.Lock()
 _translation_lock = threading.Lock()
+_ocr_lock = threading.Lock()
 _translation_languages_cache = {"ts": 0.0, "items": []}
 MAX_TRANSLATE_CHARS = 8000
 MAX_TRANSLATE_ALL_CHARS = 1800
 TRANSLATE_CACHE_LIMIT = 3000
 TRANSLATE_ALL_CONCURRENCY = 3
+OCR_TEXT_LIMIT = 200000
 
 class TTSRequest(BaseModel):
     text: str
@@ -45,6 +49,97 @@ class TranslateRequest(BaseModel):
 class TranslateAllRequest(BaseModel):
     text: str
     source_lang: str = "auto"
+
+def _now_iso() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+def _safe_name(name: str) -> str:
+    clean = "".join(ch if ch.isalnum() or ch in "._-" else "-" for ch in str(name or "upload"))
+    clean = clean.strip(".-") or "upload"
+    return clean[:120]
+
+def _normalize_ocr_job(job: dict) -> dict:
+    return {
+        "id": str(job.get("id") or ""),
+        "filename": str(job.get("filename") or "upload"),
+        "stored_name": str(job.get("stored_name") or ""),
+        "mime_type": str(job.get("mime_type") or "application/octet-stream"),
+        "language": str(job.get("language") or "auto"),
+        "engine": str(job.get("engine") or ""),
+        "status": str(job.get("status") or "pending"),
+        "text": str(job.get("text") or "")[:OCR_TEXT_LIMIT],
+        "error": str(job.get("error") or ""),
+        "size": int(job.get("size") or 0),
+        "created_at": str(job.get("created_at") or _now_iso()),
+    }
+
+def _read_ocr_jobs() -> list[dict]:
+    with _ocr_lock:
+        if not OCR_JOBS_PATH.exists():
+            return []
+        try:
+            data = json.loads(OCR_JOBS_PATH.read_text(encoding="utf-8"))
+            return [_normalize_ocr_job(x) for x in data] if isinstance(data, list) else []
+        except Exception:
+            return []
+
+def _write_ocr_jobs(jobs: list[dict]) -> list[dict]:
+    cleaned = [_normalize_ocr_job(x) for x in jobs]
+    with _ocr_lock:
+        OCR_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+        tmp = OCR_JOBS_PATH.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(cleaned, ensure_ascii=False, indent=2), encoding="utf-8")
+        os.replace(tmp, OCR_JOBS_PATH)
+    return cleaned
+
+def _ocr_lang_code(language: str) -> str:
+    lang = str(language or "auto").strip().lower()
+    if lang in ("", "auto"):
+        return "deu+eng"
+    if lang == "deu":
+        return "deu"
+    if lang == "eng":
+        return "eng"
+    return "deu+eng"
+
+def _extract_text_pdf(path: Path) -> tuple[str, str]:
+    proc = subprocess.run(
+        ["pdftotext", str(path), "-"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    text = (proc.stdout or "").strip()
+    if text:
+        return text[:OCR_TEXT_LIMIT], "pdftotext"
+    return "", ""
+
+def _extract_text_image(path: Path, language: str) -> tuple[str, str]:
+    tesseract = shutil.which("tesseract")
+    if not tesseract:
+        raise RuntimeError("Bild-OCR braucht tesseract-ocr auf dem Server.")
+    proc = subprocess.run(
+        [tesseract, str(path), "stdout", "-l", _ocr_lang_code(language)],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    text = (proc.stdout or "").strip()
+    if proc.returncode != 0 and not text:
+        raise RuntimeError((proc.stderr or "tesseract fehlgeschlagen").strip())
+    return text[:OCR_TEXT_LIMIT], "tesseract"
+
+def _sync_ocr_extract(path: Path, mime_type: str, language: str) -> tuple[str, str]:
+    mime = str(mime_type or "").lower()
+    suffix = path.suffix.lower()
+    if mime == "application/pdf" or suffix == ".pdf":
+        text, engine = _extract_text_pdf(path)
+        if text:
+            return text, engine
+        if shutil.which("tesseract"):
+            raise RuntimeError("PDF enthält keinen eingebetteten Text. Scan-OCR für PDFs ist noch nicht verdrahtet.")
+        raise RuntimeError("PDF enthält keinen eingebetteten Text und tesseract-ocr fehlt.")
+    return _extract_text_image(path, language)
 
 def _normalize_library(data: dict) -> dict:
     categories = data.get("categories")
@@ -263,6 +358,59 @@ async def voices():
 @app.get("/translation-languages")
 async def translation_languages():
     return await _translation_languages()
+
+@app.get("/ocr/jobs")
+async def get_ocr_jobs():
+    return _read_ocr_jobs()
+
+@app.post("/ocr/jobs")
+async def create_ocr_job(
+    file: UploadFile = File(...),
+    language: str = Form("auto"),
+):
+    filename = _safe_name(file.filename or "upload")
+    job_id = f"ocr-{int(time.time() * 1000)}-{hashlib.sha1(filename.encode('utf-8')).hexdigest()[:8]}"
+    stored_name = f"{job_id}-{filename}"
+    OCR_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    stored_path = OCR_UPLOAD_DIR / stored_name
+    payload = await file.read()
+    stored_path.write_bytes(payload)
+    job = {
+        "id": job_id,
+        "filename": filename,
+        "stored_name": stored_name,
+        "mime_type": file.content_type or "application/octet-stream",
+        "language": language or "auto",
+        "engine": "",
+        "status": "processing",
+        "text": "",
+        "error": "",
+        "size": len(payload),
+        "created_at": _now_iso(),
+    }
+    jobs = _read_ocr_jobs()
+    jobs.append(job)
+    _write_ocr_jobs(jobs)
+    try:
+        loop = asyncio.get_event_loop()
+        text, engine = await loop.run_in_executor(
+            _pool,
+            _sync_ocr_extract,
+            stored_path,
+            file.content_type or "application/octet-stream",
+            language or "auto",
+        )
+        job["text"] = text
+        job["engine"] = engine
+        job["status"] = "done" if text else "empty"
+        if not text:
+            job["error"] = "Kein Text erkannt."
+    except Exception as exc:
+        job["status"] = "error"
+        job["error"] = str(exc)
+    jobs = [job if x.get("id") == job_id else x for x in jobs]
+    _write_ocr_jobs(jobs)
+    return _normalize_ocr_job(job)
 
 @app.post("/translate")
 async def translate(req: TranslateRequest):

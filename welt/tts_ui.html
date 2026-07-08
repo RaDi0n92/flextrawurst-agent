@@ -472,7 +472,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       </div>
       <textarea id="ocr-input" placeholder="OCR-Text, Ergebnis oder Notizen"></textarea>
       <div class="row">
-        <button class="small primary" id="btn-ocr-save">OCR-Job merken</button>
+        <button class="small primary" id="btn-ocr-save">OCR starten</button>
         <button class="small" id="btn-ocr-clear">Leeren</button>
       </div>
       <div class="sentence-list" id="ocr-list"></div>
@@ -670,6 +670,7 @@ const VOICES_API = BASE + 'voices';
 const TRANSLATE_API = BASE + 'translate';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
+const OCR_API = BASE + 'ocr/jobs';
 const OFFLINE_API = BASE + 'offline.html';
 const AUDIO_ZIP_API = BASE + 'export-audio';
 
@@ -713,6 +714,7 @@ let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
 let formEntries = loadJsonLocal(FORMS_KEY, []);
 let logEntries = loadJsonLocal(LOGS_KEY, []);
 let autoTranslateTimer = null;
+let ocrServerReady = false;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -990,7 +992,33 @@ function renderSimpleList(target, items, emptyText){
 }
 
 function renderOcrJobs(){
-  renderSimpleList(ocrList, ocrJobs.slice().reverse(), 'Noch keine OCR-Jobs gespeichert.');
+  const jobs = ocrJobs.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!jobs.length){
+    ocrList.innerHTML = '<div class="empty">Noch keine OCR-Jobs gespeichert.</div>';
+    return;
+  }
+  ocrList.innerHTML = jobs.map(job=>{
+    const meta = [
+      job.language || 'auto',
+      job.engine || 'kein Engine-Hinweis',
+      job.status || 'unbekannt'
+    ].join(' · ');
+    const note = job.error
+      ? `Fehler: ${job.error}`
+      : (job.text ? shortText(job.text.replace(/\s+/g,' '), 180) : 'Noch kein erkannter Text.');
+    return `
+      <div class="sentence-row" data-ocr-id="${esc(job.id)}">
+        <div>
+          <div class="sentence-text">${esc(job.filename || job.title || 'OCR-Job')}</div>
+          <div class="clip-meta">${esc(meta)}</div>
+          <div class="clip-extra">${esc(note)}</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="small" type="button" data-act="load-ocr">Laden</button>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderDocuments(){
@@ -1014,17 +1042,63 @@ function renderLogs(){
   renderSimpleList(logsList, logEntries.slice().reverse(), 'Noch keine Log-Auswertung gespeichert.');
 }
 
-function saveOcrJob(){
-  const job = {
-    title: ocrSource.files && ocrSource.files[0] ? ocrSource.files[0].name : `OCR ${ocrJobs.length + 1}`,
-    language: ocrLanguage.value,
-    text: ocrInput.value.trim(),
-    at: new Date().toISOString()
-  };
-  ocrJobs.push(job);
-  saveJsonLocal(OCR_KEY, ocrJobs);
+async function loadServerOcrJobs(){
+  try {
+    const res = await fetch(OCR_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const jobs = await res.json();
+    ocrJobs = Array.isArray(jobs) ? jobs : [];
+    ocrServerReady = true;
+    saveJsonLocal(OCR_KEY, ocrJobs);
+  } catch(e){
+    ocrServerReady = false;
+  }
   renderOcrJobs();
-  st('OCR-Job gemerkt.','ok');
+}
+
+async function saveOcrJob(){
+  const file = ocrSource.files && ocrSource.files[0];
+  if (!file){
+    st('Keine OCR-Quelle gewählt.','err');
+    return;
+  }
+  st('OCR läuft…','wait');
+  if (!ocrServerReady){
+    await loadServerOcrJobs();
+  }
+  try {
+    const data = new FormData();
+    data.append('file', file);
+    data.append('language', ocrLanguage.value || 'auto');
+    const res = await fetch(OCR_API, {
+      method: 'POST',
+      body: data
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const job = await res.json();
+    ocrJobs = [job, ...ocrJobs.filter(x=>x.id !== job.id)];
+    saveJsonLocal(OCR_KEY, ocrJobs);
+    ocrInput.value = job.text || '';
+    renderOcrJobs();
+    st(job.status === 'done' ? 'OCR fertig.' : `OCR-Status: ${job.status}`,'ok');
+    if (job.error) dbg(job.error);
+  } catch(e){
+    const fallback = {
+      id: uid(),
+      filename: file.name,
+      language: ocrLanguage.value,
+      engine: '',
+      status: 'offline',
+      text: ocrInput.value.trim(),
+      error: 'OCR-Endpunkt noch nicht aktiv auf dem laufenden Dienst.',
+      created_at: new Date().toISOString()
+    };
+    ocrJobs = [fallback, ...ocrJobs.filter(x=>x.id !== fallback.id)];
+    saveJsonLocal(OCR_KEY, ocrJobs);
+    renderOcrJobs();
+    st('OCR-Route auf dem Dienst noch nicht aktiv. Lokal vorgemerkt.','err');
+    dbg(e.message);
+  }
 }
 
 function saveDocumentEntry(){
@@ -2239,7 +2313,18 @@ window.addEventListener('popstate', ()=>renderTabState(currentTab()));
 btnOcrSave.addEventListener('click', saveOcrJob);
 btnOcrClear.addEventListener('click', ()=>{
   ocrInput.value = '';
+  ocrSource.value = '';
   st('OCR-Text geleert.','ok');
+});
+ocrList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-ocr"]');
+  const row = e.target.closest('[data-ocr-id]');
+  if (!btn || !row) return;
+  const job = ocrJobs.find(x=>x.id === row.dataset.ocrId);
+  if (!job) return;
+  ocrInput.value = job.text || '';
+  dbg(job.error || '');
+  st(`OCR-Job geladen: ${job.filename || job.id}`,'ok');
 });
 documentsSearch.addEventListener('input', renderDocuments);
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
@@ -2268,7 +2353,10 @@ btnLogsClear.addEventListener('click', ()=>{
   st('Logs geleert.','ok');
 });
 ocrSource.addEventListener('change', ()=>{
-  if (ocrSource.files && ocrSource.files[0]) st(`OCR-Quelle gewählt: ${ocrSource.files[0].name}`,'ok');
+  if (ocrSource.files && ocrSource.files[0]) {
+    st(`OCR-Quelle gewählt: ${ocrSource.files[0].name}`,'ok');
+    dbg('');
+  }
 });
 documentsUpload.addEventListener('change', ()=>{
   if (documentsUpload.files && documentsUpload.files.length){
@@ -2429,6 +2517,7 @@ renderForms();
 renderLogs();
 setTab(currentTab(), false);
 loadServerStore();
+loadServerOcrJobs();
 loadVoices();
 loadTranslationLanguages();
 ta.dispatchEvent(new Event('input'));
