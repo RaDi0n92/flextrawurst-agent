@@ -488,8 +488,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="grid2">
         <input id="documents-chat" type="text" placeholder="Frage an die Dokumente">
         <select id="documents-model">
-          <option value="manual">Chat-Modell manuell wählen</option>
-          <option value="llama-chat">LLaMA-Chat</option>
+          <option value="">Chat-Modell automatisch wählen</option>
         </select>
       </div>
       <div class="row">
@@ -671,6 +670,14 @@ const TRANSLATE_API = BASE + 'translate';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OCR_API = BASE + 'ocr/jobs';
+const DOCUMENTS_API = BASE + 'documents';
+const DOCUMENTS_SEARCH_API = BASE + 'documents/search';
+const DOCUMENTS_CHAT_API = BASE + 'documents/chat';
+const DOCUMENTS_MODELS_API = BASE + 'documents/models';
+const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
+const FORMS_API = BASE + 'forms/profiles';
+const LOGS_API = BASE + 'logs/analyses';
+const LOGS_ANALYZE_API = BASE + 'logs/analyze';
 const OFFLINE_API = BASE + 'offline.html';
 const AUDIO_ZIP_API = BASE + 'export-audio';
 
@@ -713,8 +720,16 @@ let documentEntries = loadJsonLocal(DOCUMENTS_KEY, []);
 let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
 let formEntries = loadJsonLocal(FORMS_KEY, []);
 let logEntries = loadJsonLocal(LOGS_KEY, []);
-let autoTranslateTimer = null;
+let documentHits = [];
+let documentActiveIds = [];
+let documentSearchTimer = null;
 let ocrServerReady = false;
+let documentsServerReady = false;
+let webarchiveServerReady = false;
+let formsServerReady = false;
+let logsServerReady = false;
+let currentLogFilename = '';
+let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -1022,24 +1037,106 @@ function renderOcrJobs(){
 }
 
 function renderDocuments(){
-  const query = documentsSearch.value.trim().toLowerCase();
-  const items = documentEntries.filter(item=>{
-    if (!query) return true;
-    return [item.name, item.note, item.type].some(v=>String(v || '').toLowerCase().includes(query));
-  });
-  renderSimpleList(documentsList, items.slice().reverse(), 'Noch keine Dokumente gespeichert.');
+  const query = documentsSearch.value.trim();
+  const list = query && documentHits.length ? documentHits : documentEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!list.length){
+    documentsList.innerHTML = `<div class="empty">${esc(query ? 'Keine Treffer.' : 'Noch keine Dokumente gespeichert.')}</div>`;
+    return;
+  }
+  documentsList.innerHTML = list.map(item=>{
+    const isHit = !!item.document_id;
+    const id = isHit ? item.document_id : item.id;
+    const title = isHit ? item.filename : item.filename;
+    const meta = isHit
+      ? `Treffer · Chunk ${item.chunk_index || '?'} · Score ${item.score || 0}`
+      : `${item.mime_type || 'Datei'} · ${item.extractor || 'kein Extraktor'} · ${item.status || 'unbekannt'}`;
+    const note = isHit
+      ? (item.preview || item.chunk_text || 'Treffer ohne Vorschau')
+      : (item.error || item.preview || 'Noch keine Vorschau.');
+    return `
+      <div class="sentence-row" data-document-id="${esc(id)}" ${isHit ? `data-document-chunk="${esc(item.chunk_index || '')}"` : ''}>
+        <div>
+          <div class="sentence-text">${esc(title || 'Dokument')}</div>
+          <div class="clip-meta">${esc(meta)}</div>
+          <div class="clip-extra">${esc(shortText(String(note || '').replace(/\s+/g,' '), 220))}</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="small" type="button" data-act="load-document">${esc(isHit ? 'Treffer' : 'Laden')}</button>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 
 function renderWebarchive(){
-  renderSimpleList(webarchiveList, webarchiveEntries.slice().reverse(), 'Noch keine Webarchiv-Einträge gespeichert.');
+  const items = webarchiveEntries.slice().sort((a,b)=>String(b.fetched_at || '').localeCompare(String(a.fetched_at || '')));
+  if (!items.length){
+    webarchiveList.innerHTML = '<div class="empty">Noch keine Webarchiv-Einträge gespeichert.</div>';
+    return;
+  }
+  webarchiveList.innerHTML = items.map(item=>`
+    <div class="sentence-row" data-snapshot-id="${esc(item.id)}">
+      <div>
+        <div class="sentence-text">${esc(item.title || item.resolved_url || item.url || 'Snapshot')}</div>
+        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.resolved_url || item.url || '')}</div>
+        <div class="clip-extra">${esc(shortText(item.error || item.text_preview || 'Noch keine Vorschau.', 220))}</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-snapshot">Laden</button>
+      </div>
+    </div>
+  `).join('');
 }
 
 function renderForms(){
-  renderSimpleList(formsList, formEntries.slice().reverse(), 'Noch keine Formulare gespeichert.');
+  const items = formEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!items.length){
+    formsList.innerHTML = '<div class="empty">Noch keine Formulare gespeichert.</div>';
+    return;
+  }
+  formsList.innerHTML = items.map(item=>`
+    <div class="sentence-row" data-form-id="${esc(item.id)}">
+      <div>
+        <div class="sentence-text">${esc(item.profile || 'Profil')}</div>
+        <div class="clip-meta">${esc(item.name || 'ohne Name')} · ${esc(item.email || 'ohne Mail')}</div>
+        <div class="clip-extra">${esc(shortText(item.preview || item.address || 'Noch keine Vorschau.', 220))}</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-form">Laden</button>
+      </div>
+    </div>
+  `).join('');
 }
 
 function renderLogs(){
-  renderSimpleList(logsList, logEntries.slice().reverse(), 'Noch keine Log-Auswertung gespeichert.');
+  const items = logEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!items.length){
+    logsList.innerHTML = '<div class="empty">Noch keine Log-Auswertung gespeichert.</div>';
+    return;
+  }
+  logsList.innerHTML = items.map(item=>{
+    const counts = item.counts || {};
+    const meta = [
+      item.profile || 'allgemein',
+      counts.errors != null ? `${counts.errors} Fehler` : null,
+      counts.warnings != null ? `${counts.warnings} Warnungen` : null
+    ].filter(Boolean).join(' · ');
+    const note = Array.isArray(item.summary) && item.summary.length
+      ? item.summary.join(' | ')
+      : (item.text_preview || 'Keine Zusammenfassung.');
+    return `
+      <div class="sentence-row" data-log-id="${esc(item.id)}">
+        <div>
+          <div class="sentence-text">${esc(item.filename || 'Loganalyse')}</div>
+          <div class="clip-meta">${esc(meta)}</div>
+          <div class="clip-extra">${esc(shortText(note, 220))}</div>
+        </div>
+        <div class="sentence-actions">
+          <button class="small" type="button" data-act="load-log">Laden</button>
+        </div>
+      </div>
+    `;
+  }).join('');
 }
 
 async function loadServerOcrJobs(){
@@ -1101,32 +1198,59 @@ async function saveOcrJob(){
   }
 }
 
-function saveDocumentEntry(){
-  const entry = {
-    name: documentsUpload.files && documentsUpload.files.length ? `${documentsUpload.files.length} Datei(en)` : `Dokument ${documentEntries.length + 1}`,
-    note: documentsChat.value.trim() || documentsSearch.value.trim(),
-    type: documentsModel.value,
-    at: new Date().toISOString()
-  };
-  documentEntries.push(entry);
-  saveJsonLocal(DOCUMENTS_KEY, documentEntries);
-  documentsOutput.value = entry.note ? `Gemerkte Frage: ${entry.note}\nModus: ${entry.type}` : `Gemerktes Dokument: ${entry.name}`;
+async function loadServerDocuments(){
+  try {
+    const docsRes = await fetch(DOCUMENTS_API, {cache:'no-store'});
+    if (!docsRes.ok) throw new Error('HTTP '+docsRes.status);
+    const docs = await docsRes.json();
+    documentEntries = Array.isArray(docs) ? docs : [];
+    saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+    documentsServerReady = true;
+    try {
+      const modelsRes = await fetch(DOCUMENTS_MODELS_API, {cache:'no-store'});
+      if (modelsRes.ok){
+      const payload = await modelsRes.json();
+      const models = Array.isArray(payload.models) ? payload.models : [];
+      if (models.length){
+        documentsModel.innerHTML = models.map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('');
+      }
+      if (payload.error) dbg(payload.error);
+    }
+    } catch(e) {}
+  } catch(e){
+    documentsServerReady = false;
+  }
   renderDocuments();
-  st('Dokumenteintrag gemerkt.','ok');
 }
 
-function saveWebarchiveEntry(){
-  const entry = {
-    url: webarchiveUrl.value.trim(),
-    title: webarchiveTitle.value.trim(),
-    at: new Date().toISOString()
-  };
-  if (!entry.url){ st('URL fehlt.','err'); return; }
-  webarchiveEntries.push(entry);
-  saveJsonLocal(WEBARCHIVE_KEY, webarchiveEntries);
-  webarchiveOutput.value = `${entry.title || entry.url}\n${entry.url}`;
-  renderWebarchive();
-  st('Webarchiv-Eintrag gemerkt.','ok');
+async function saveDocumentEntry(){
+  const files = documentsUpload.files ? Array.from(documentsUpload.files) : [];
+  if (!files.length){
+    st('Keine Dokumente gewählt.','err');
+    return;
+  }
+  st('Dokumente werden importiert…','wait');
+  try {
+    const data = new FormData();
+    files.forEach(file=>data.append('files', file));
+    const res = await fetch(DOCUMENTS_API, {method:'POST', body:data});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const created = await res.json();
+    const byId = new Map(documentEntries.map(item=>[item.id, item]));
+    (Array.isArray(created) ? created : []).forEach(item=>byId.set(item.id, item));
+    documentEntries = Array.from(byId.values());
+    documentActiveIds = (Array.isArray(created) ? created : []).map(item=>item.id).filter(Boolean);
+    saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+    documentsOutput.value = (Array.isArray(created) ? created : []).map(item=>{
+      return `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`;
+    }).join('\n');
+    renderDocuments();
+    st(`${files.length} Dokument(e) importiert.`,'ok');
+    if (documentsSearch.value.trim()) await runDocumentSearch();
+  } catch(e){
+    st('Dokumenten-Import fehlgeschlagen.','err');
+    dbg(e.message);
+  }
 }
 
 function buildFormPreview(){
@@ -1139,37 +1263,282 @@ function buildFormPreview(){
   return preview;
 }
 
-function saveFormProfile(){
-  const entry = {
+async function runDocumentSearch(){
+  const query = documentsSearch.value.trim();
+  if (!query){
+    documentHits = [];
+    renderDocuments();
+    return;
+  }
+  try {
+    const res = await fetch(DOCUMENTS_SEARCH_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        query,
+        limit: 16,
+        document_ids: documentActiveIds
+      })
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const payload = await res.json();
+    documentHits = Array.isArray(payload.hits) ? payload.hits : [];
+    renderDocuments();
+  } catch(e){
+    dbg(e.message);
+    renderDocuments();
+  }
+}
+
+async function chatDocuments(){
+  const question = documentsChat.value.trim();
+  if (!question){
+    st('Keine Dokumentenfrage eingegeben.','err');
+    return;
+  }
+  st('Dokumenten-Chat läuft…','wait');
+  try {
+    const res = await fetch(DOCUMENTS_CHAT_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        question,
+        model: documentsModel.value,
+        document_ids: documentActiveIds,
+        limit: 6
+      })
+    });
+    if (!res.ok){
+      let detail = 'Chat fehlgeschlagen.';
+      try {
+        const err = await res.json();
+        detail = err.detail || detail;
+      } catch(_) {}
+      throw new Error(detail);
+    }
+    const payload = await res.json();
+    const sources = Array.isArray(payload.sources) ? payload.sources : [];
+    documentsOutput.value = [
+      payload.answer || payload.note || 'Keine Antwort.',
+      '',
+      `Modell: ${payload.model || documentsModel.value || 'unbekannt'}`,
+      ...sources.map((src, i)=>`[${i + 1}] ${src.filename} · Chunk ${src.chunk_index}\n${src.chunk_text}`)
+    ].join('\n');
+    documentHits = sources;
+    documentActiveIds = Array.from(new Set(sources.map(src=>src.document_id).filter(Boolean)));
+    renderDocuments();
+    st(payload.answer ? 'Dokumenten-Chat fertig.' : (payload.note || 'Keine Treffer.'),'ok');
+  } catch(e){
+    st('Dokumenten-Chat fehlgeschlagen.','err');
+    dbg(e.message);
+  }
+}
+
+async function loadDocumentDetail(documentId, chunkIndex){
+  const doc = documentEntries.find(item=>item.id === documentId);
+  if (!doc){
+    st('Dokument nicht gefunden.','err');
+    return;
+  }
+  documentActiveIds = [documentId];
+  try {
+    const res = await fetch(`${DOCUMENTS_API}/${encodeURIComponent(documentId)}`, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const item = await res.json();
+    const hit = chunkIndex
+      ? documentHits.find(entry=>entry.document_id === documentId && String(entry.chunk_index) === String(chunkIndex))
+      : null;
+    documentsOutput.value = [
+      `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`,
+      hit ? `Treffer Chunk ${hit.chunk_index}\n${hit.chunk_text}` : '',
+      '',
+      item.text || item.preview || 'Keine Vorschau gespeichert.',
+      '',
+      `Extractor: ${item.extractor || 'unbekannt'}`,
+      `Zeichen: ${item.text_chars || 0}`,
+      `Chunks: ${item.chunk_count || 0}`
+    ].join('\n').trim();
+    st(`Dokument geladen: ${item.filename}`,'ok');
+  } catch(e){
+    documentsOutput.value = [
+      `${doc.filename} · ${doc.status}${doc.error ? ` · ${doc.error}` : ''}`,
+      doc.preview || 'Keine Vorschau gespeichert.'
+    ].join('\n');
+    st('Dokumentdetail nicht vollständig ladbar.','err');
+    dbg(e.message);
+  }
+  renderDocuments();
+}
+
+async function loadServerWebarchive(){
+  try {
+    const res = await fetch(WEBARCHIVE_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const items = await res.json();
+    webarchiveEntries = Array.isArray(items) ? items : [];
+    webarchiveServerReady = true;
+    saveJsonLocal(WEBARCHIVE_KEY, webarchiveEntries);
+  } catch(e){
+    webarchiveServerReady = false;
+  }
+  renderWebarchive();
+}
+
+async function saveWebarchiveEntry(){
+  const url = webarchiveUrl.value.trim();
+  const title = webarchiveTitle.value.trim();
+  if (!url){ st('URL fehlt.','err'); return; }
+  st('Websnapshot wird geholt…','wait');
+  try {
+    const res = await fetch(WEBARCHIVE_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({url, title})
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const item = await res.json();
+    webarchiveEntries = [item, ...webarchiveEntries.filter(x=>x.id !== item.id)];
+    saveJsonLocal(WEBARCHIVE_KEY, webarchiveEntries);
+    webarchiveOutput.value = [
+      item.title || item.resolved_url || item.url,
+      item.resolved_url || item.url,
+      '',
+      item.error || item.text_preview || 'Kein Text gespeichert.'
+    ].join('\n');
+    renderWebarchive();
+    st(item.status === 'done' ? 'Websnapshot gespeichert.' : `Websnapshot-Status: ${item.status}`,'ok');
+  } catch(e){
+    st('Webarchiv fehlgeschlagen.','err');
+    dbg(e.message);
+  }
+}
+
+async function loadWebsnapshot(snapshotId){
+  try {
+    const res = await fetch(`${WEBARCHIVE_API}/${encodeURIComponent(snapshotId)}`, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const item = await res.json();
+    webarchiveOutput.value = [
+      item.title || item.resolved_url || item.url,
+      item.resolved_url || item.url,
+      '',
+      item.text || item.error || 'Keine gespeicherten Inhalte.'
+    ].join('\n');
+    st(`Snapshot geladen: ${item.title || item.url}`,'ok');
+  } catch(e){
+    st('Snapshot konnte nicht geladen werden.','err');
+    dbg(e.message);
+  }
+}
+
+async function loadServerForms(){
+  try {
+    const res = await fetch(FORMS_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const items = await res.json();
+    formEntries = Array.isArray(items) ? items : [];
+    formsServerReady = true;
+    saveJsonLocal(FORMS_KEY, formEntries);
+  } catch(e){
+    formsServerReady = false;
+  }
+  renderForms();
+}
+
+async function saveFormProfile(){
+  const preview = buildFormPreview();
+  const payload = {
     profile: formsProfile.value.trim() || `Profil ${formEntries.length + 1}`,
     name: formsName.value.trim(),
     email: formsEmail.value.trim(),
     address: formsAddress.value.trim(),
     template: formsTemplate.value.trim(),
-    at: new Date().toISOString()
+    preview
   };
-  formEntries.push(entry);
-  saveJsonLocal(FORMS_KEY, formEntries);
-  buildFormPreview();
-  renderForms();
-  st('Formularprofil gemerkt.','ok');
+  try {
+    const res = await fetch(FORMS_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const item = await res.json();
+    formEntries = [item, ...formEntries.filter(x=>x.id !== item.id)];
+    saveJsonLocal(FORMS_KEY, formEntries);
+    renderForms();
+    st('Formularprofil gespeichert.','ok');
+  } catch(e){
+    st('Formularprofil konnte nicht gespeichert werden.','err');
+    dbg(e.message);
+  }
 }
 
-function analyzeLogs(){
+function loadFormEntry(formId){
+  const item = formEntries.find(x=>x.id === formId);
+  if (!item) return;
+  formsProfile.value = item.profile || '';
+  formsName.value = item.name || '';
+  formsEmail.value = item.email || '';
+  formsAddress.value = item.address || '';
+  formsTemplate.value = item.template || '';
+  formsPreview.value = item.preview || '';
+  st(`Formularprofil geladen: ${item.profile || formId}`,'ok');
+}
+
+async function loadServerLogs(){
+  try {
+    const res = await fetch(LOGS_API, {cache:'no-store'});
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const items = await res.json();
+    logEntries = Array.isArray(items) ? items : [];
+    logsServerReady = true;
+    saveJsonLocal(LOGS_KEY, logEntries);
+  } catch(e){
+    logsServerReady = false;
+  }
+  renderLogs();
+}
+
+async function analyzeLogs(){
   const text = logsInput.value.trim();
   if (!text){ st('Kein Logtext vorhanden.','err'); return; }
-  const lines = text.split(/\r?\n/).filter(Boolean);
-  const hits = lines.filter(line => /error|fail|traceback|exception|warn|fatal|panic|denied|timeout/i.test(line));
-  logsOutput.value = hits.join('\n');
-  logEntries.push({
-    profile: logsProfile.value,
-    title: `Loganalyse ${logEntries.length + 1}`,
-    text: hits.join('\n'),
-    at: new Date().toISOString()
-  });
-  saveJsonLocal(LOGS_KEY, logEntries);
-  renderLogs();
-  st(hits.length ? `${hits.length} verdächtige Zeilen gefunden.` : 'Keine auffälligen Zeilen gefunden.','ok');
+  st('Loganalyse läuft…','wait');
+  try {
+    const res = await fetch(LOGS_ANALYZE_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        text,
+        profile: logsProfile.value.trim(),
+        filename: currentLogFilename
+      })
+    });
+    if (!res.ok) throw new Error('HTTP '+res.status);
+    const item = await res.json();
+    logEntries = [item, ...logEntries.filter(x=>x.id !== item.id)];
+    saveJsonLocal(LOGS_KEY, logEntries);
+    logsOutput.value = [
+      ...(Array.isArray(item.summary) ? item.summary : []),
+      '',
+      ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
+    ].join('\n');
+    renderLogs();
+    st('Loganalyse fertig.','ok');
+  } catch(e){
+    st('Loganalyse fehlgeschlagen.','err');
+    dbg(e.message);
+  }
+}
+
+function loadLogEntry(logId){
+  const item = logEntries.find(x=>x.id === logId);
+  if (!item) return;
+  logsOutput.value = [
+    ...(Array.isArray(item.summary) ? item.summary : []),
+    '',
+    ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
+  ].join('\n');
+  st(`Loganalyse geladen: ${item.filename || item.id}`,'ok');
 }
 
 function renderTranslationVoices(){
@@ -2326,13 +2695,17 @@ ocrList.addEventListener('click', e=>{
   dbg(job.error || '');
   st(`OCR-Job geladen: ${job.filename || job.id}`,'ok');
 });
-documentsSearch.addEventListener('input', renderDocuments);
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
-btnDocumentsChat.addEventListener('click', ()=>{
-  documentsOutput.value = documentsChat.value.trim()
-    ? `Frage: ${documentsChat.value.trim()}\nModell: ${documentsModel.value}\nAntwort: manuelle Chat-Anbindung folgt hier später.`
-    : 'Keine Frage eingegeben.';
-  st('Dokumenten-Chat vorbereitet.','ok');
+documentsSearch.addEventListener('input', ()=>{
+  clearTimeout(documentSearchTimer);
+  documentSearchTimer = setTimeout(runDocumentSearch, 180);
+});
+btnDocumentsChat.addEventListener('click', chatDocuments);
+documentsList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-document"]');
+  const row = e.target.closest('[data-document-id]');
+  if (!btn || !row) return;
+  loadDocumentDetail(row.dataset.documentId, row.dataset.documentChunk || '');
 });
 btnWebarchiveSave.addEventListener('click', saveWebarchiveEntry);
 btnWebarchiveClear.addEventListener('click', ()=>{
@@ -2341,16 +2714,35 @@ btnWebarchiveClear.addEventListener('click', ()=>{
   webarchiveOutput.value = '';
   st('Webarchiv-Felder geleert.','ok');
 });
+webarchiveList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-snapshot"]');
+  const row = e.target.closest('[data-snapshot-id]');
+  if (!btn || !row) return;
+  loadWebsnapshot(row.dataset.snapshotId);
+});
 btnFormsPreview.addEventListener('click', ()=>{
   buildFormPreview();
   st('Vorschau gebaut.','ok');
 });
 btnFormsSave.addEventListener('click', saveFormProfile);
+formsList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-form"]');
+  const row = e.target.closest('[data-form-id]');
+  if (!btn || !row) return;
+  loadFormEntry(row.dataset.formId);
+});
 btnLogsAnalyze.addEventListener('click', analyzeLogs);
 btnLogsClear.addEventListener('click', ()=>{
   logsInput.value = '';
   logsOutput.value = '';
+  currentLogFilename = '';
   st('Logs geleert.','ok');
+});
+logsList.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-log"]');
+  const row = e.target.closest('[data-log-id]');
+  if (!btn || !row) return;
+  loadLogEntry(row.dataset.logId);
 });
 ocrSource.addEventListener('change', ()=>{
   if (ocrSource.files && ocrSource.files[0]) {
@@ -2367,6 +2759,7 @@ documentsUpload.addEventListener('change', ()=>{
 logsUpload.addEventListener('change', async ()=>{
   const file = logsUpload.files && logsUpload.files[0];
   if (!file) return;
+  currentLogFilename = file.name;
   logsInput.value = await file.text();
   st(`Log geladen: ${file.name}`,'ok');
 });
@@ -2518,6 +2911,10 @@ renderLogs();
 setTab(currentTab(), false);
 loadServerStore();
 loadServerOcrJobs();
+loadServerDocuments();
+loadServerWebarchive();
+loadServerForms();
+loadServerLogs();
 loadVoices();
 loadTranslationLanguages();
 ta.dispatchEvent(new Event('input'));

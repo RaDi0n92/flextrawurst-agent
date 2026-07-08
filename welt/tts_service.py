@@ -1,4 +1,4 @@
-import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, shutil, subprocess
+import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, urllib.error, shutil, subprocess, re, html
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
@@ -16,16 +16,35 @@ LIBRARY_PATH = Path("/root/werkraum/welt/tts_library.json")
 TRANSLATION_CACHE_PATH = Path("/root/werkraum/welt/tts_translation_cache.json")
 OCR_JOBS_PATH = Path("/root/werkraum/welt/tts_ocr_jobs.json")
 OCR_UPLOAD_DIR = Path("/root/werkraum/welt/tts_ocr_uploads")
+DOCUMENTS_PATH = Path("/root/werkraum/welt/tts_documents.json")
+DOCUMENTS_UPLOAD_DIR = Path("/root/werkraum/welt/tts_documents_uploads")
+DOCUMENTS_TEXT_DIR = Path("/root/werkraum/welt/tts_documents_text")
+WEBARCHIVE_PATH = Path("/root/werkraum/welt/tts_webarchive.json")
+WEBARCHIVE_HTML_DIR = Path("/root/werkraum/welt/tts_webarchive_html")
+WEBARCHIVE_TEXT_DIR = Path("/root/werkraum/welt/tts_webarchive_text")
+FORMS_PATH = Path("/root/werkraum/welt/tts_forms.json")
+LOGS_PATH = Path("/root/werkraum/welt/tts_logs.json")
+LOGS_UPLOAD_DIR = Path("/root/werkraum/welt/tts_logs_uploads")
 _pool = ThreadPoolExecutor(max_workers=4)
 _library_lock = threading.Lock()
 _translation_lock = threading.Lock()
 _ocr_lock = threading.Lock()
+_documents_lock = threading.Lock()
+_webarchive_lock = threading.Lock()
+_forms_lock = threading.Lock()
+_logs_lock = threading.Lock()
 _translation_languages_cache = {"ts": 0.0, "items": []}
 MAX_TRANSLATE_CHARS = 8000
 MAX_TRANSLATE_ALL_CHARS = 1800
 TRANSLATE_CACHE_LIMIT = 3000
 TRANSLATE_ALL_CONCURRENCY = 3
 OCR_TEXT_LIMIT = 200000
+DOCUMENT_TEXT_LIMIT = 400000
+DOCUMENT_CHUNK_LIMIT = 120
+DOCUMENT_RESULT_LIMIT = 20
+WEBARCHIVE_TEXT_LIMIT = 250000
+LOG_TEXT_LIMIT = 250000
+OLLAMA_BASE = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
 
 class TTSRequest(BaseModel):
     text: str
@@ -49,6 +68,34 @@ class TranslateRequest(BaseModel):
 class TranslateAllRequest(BaseModel):
     text: str
     source_lang: str = "auto"
+
+class DocumentSearchRequest(BaseModel):
+    query: str = ""
+    limit: int = 12
+    document_ids: list[str] = []
+
+class DocumentChatRequest(BaseModel):
+    question: str
+    model: str = ""
+    document_ids: list[str] = []
+    limit: int = 6
+
+class WebSnapshotPayload(BaseModel):
+    url: str
+    title: str = ""
+
+class FormProfilePayload(BaseModel):
+    profile: str
+    name: str = ""
+    email: str = ""
+    address: str = ""
+    template: str = ""
+    preview: str = ""
+
+class LogAnalyzeRequest(BaseModel):
+    text: str
+    profile: str = ""
+    filename: str = ""
 
 def _now_iso() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -140,6 +187,341 @@ def _sync_ocr_extract(path: Path, mime_type: str, language: str) -> tuple[str, s
             raise RuntimeError("PDF enthält keinen eingebetteten Text. Scan-OCR für PDFs ist noch nicht verdrahtet.")
         raise RuntimeError("PDF enthält keinen eingebetteten Text und tesseract-ocr fehlt.")
     return _extract_text_image(path, language)
+
+def _read_json_list(path: Path, lock: threading.Lock, normalize) -> list[dict]:
+    with lock:
+        if not path.exists():
+            return []
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            return [normalize(x) for x in data] if isinstance(data, list) else []
+        except Exception:
+            return []
+
+def _write_json_list(path: Path, lock: threading.Lock, items: list[dict], normalize, parent: Path | None = None) -> list[dict]:
+    cleaned = [normalize(x) for x in items]
+    with lock:
+        if parent:
+            parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        tmp.write_text(json.dumps(cleaned, ensure_ascii=False, indent=2), encoding="utf-8")
+        os.replace(tmp, path)
+    return cleaned
+
+def _html_to_text(raw: str) -> str:
+    text = re.sub(r"(?is)<(script|style).*?>.*?</\1>", " ", raw or "")
+    text = re.sub(r"(?is)<br\s*/?>", "\n", text)
+    text = re.sub(r"(?is)</(p|div|section|article|h[1-6]|li|tr)>", "\n", text)
+    text = re.sub(r"(?is)<[^>]+>", " ", text)
+    text = html.unescape(text)
+    text = text.replace("\xa0", " ")
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+def _document_chunks(text: str, limit: int = 900, max_chunks: int = DOCUMENT_CHUNK_LIMIT) -> list[dict]:
+    parts: list[str] = []
+    for block in re.split(r"\n\s*\n", text or ""):
+        block = re.sub(r"\s+", " ", block).strip()
+        if not block:
+            continue
+        while len(block) > limit:
+            cut = block.rfind(" ", 0, limit)
+            if cut < 200:
+                cut = limit
+            parts.append(block[:cut].strip())
+            block = block[cut:].strip()
+        if block:
+            parts.append(block)
+        if len(parts) >= max_chunks:
+            break
+    if not parts and text.strip():
+        parts = [short for short in (text.strip()[:limit],) if short]
+    return [{"index": idx, "text": chunk} for idx, chunk in enumerate(parts[:max_chunks], 1)]
+
+def _extract_text_docx(path: Path) -> tuple[str, str]:
+    with zipfile.ZipFile(path) as zf:
+        xml = zf.read("word/document.xml").decode("utf-8", "ignore")
+    xml = re.sub(r"</w:p>", "\n", xml)
+    xml = re.sub(r"<[^>]+>", " ", xml)
+    text = html.unescape(xml)
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    return text[:DOCUMENT_TEXT_LIMIT], "docx-xml"
+
+def _extract_text_plain(path: Path) -> tuple[str, str]:
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    return text[:DOCUMENT_TEXT_LIMIT], "plain-text"
+
+def _extract_text_html(path: Path) -> tuple[str, str]:
+    raw = path.read_text(encoding="utf-8", errors="ignore")
+    return _html_to_text(raw)[:DOCUMENT_TEXT_LIMIT], "html-text"
+
+def _sync_document_extract(path: Path, mime_type: str) -> tuple[str, str]:
+    mime = str(mime_type or "").lower()
+    suffix = path.suffix.lower()
+    if mime == "application/pdf" or suffix == ".pdf":
+        text, engine = _extract_text_pdf(path)
+        if text:
+            return text[:DOCUMENT_TEXT_LIMIT], engine
+        raise RuntimeError("PDF enthält keinen eingebetteten Text.")
+    if suffix == ".docx" or "wordprocessingml.document" in mime:
+        return _extract_text_docx(path)
+    if suffix in {".html", ".htm"} or "text/html" in mime:
+        return _extract_text_html(path)
+    if suffix in {".txt", ".md", ".json", ".csv", ".log", ".py", ".js", ".ts", ".yaml", ".yml", ".ini"} or mime.startswith("text/") or mime in {"application/json", "application/xml"}:
+        return _extract_text_plain(path)
+    raise RuntimeError(f"Dateityp aktuell nicht unterstützt: {suffix or mime or 'unbekannt'}")
+
+def _normalize_document(doc: dict) -> dict:
+    chunks = doc.get("chunks") if isinstance(doc.get("chunks"), list) else []
+    clean_chunks = []
+    for chunk in chunks[:DOCUMENT_CHUNK_LIMIT]:
+        if not isinstance(chunk, dict):
+            continue
+        clean_chunks.append({
+            "index": int(chunk.get("index") or len(clean_chunks) + 1),
+            "text": str(chunk.get("text") or "")[:1200],
+        })
+    return {
+        "id": str(doc.get("id") or ""),
+        "filename": str(doc.get("filename") or "upload"),
+        "stored_name": str(doc.get("stored_name") or ""),
+        "mime_type": str(doc.get("mime_type") or "application/octet-stream"),
+        "extractor": str(doc.get("extractor") or ""),
+        "status": str(doc.get("status") or "pending"),
+        "size": int(doc.get("size") or 0),
+        "preview": str(doc.get("preview") or "")[:1200],
+        "text_path": str(doc.get("text_path") or ""),
+        "text_chars": int(doc.get("text_chars") or 0),
+        "chunk_count": int(doc.get("chunk_count") or len(clean_chunks)),
+        "chunks": clean_chunks,
+        "error": str(doc.get("error") or ""),
+        "created_at": str(doc.get("created_at") or _now_iso()),
+    }
+
+def _read_documents() -> list[dict]:
+    return _read_json_list(DOCUMENTS_PATH, _documents_lock, _normalize_document)
+
+def _write_documents(items: list[dict]) -> list[dict]:
+    return _write_json_list(DOCUMENTS_PATH, _documents_lock, items, _normalize_document, DOCUMENTS_UPLOAD_DIR)
+
+def _document_tokens(text: str) -> list[str]:
+    return [tok for tok in re.findall(r"[a-z0-9äöüß]{2,}", (text or "").lower()) if tok]
+
+def _search_document_hits(query: str, documents: list[dict], limit: int = 12, document_ids: list[str] | None = None) -> list[dict]:
+    query = str(query or "").strip()
+    if not query:
+        return []
+    selected = set(document_ids or [])
+    tokens = _document_tokens(query)
+    full = query.lower()
+    hits = []
+    for doc in documents:
+        if selected and doc["id"] not in selected:
+            continue
+        fn = doc["filename"].lower()
+        for chunk in doc.get("chunks", []):
+            text = str(chunk.get("text") or "")
+            low = text.lower()
+            score = low.count(full) * 8 + fn.count(full) * 5
+            score += sum(low.count(tok) for tok in tokens)
+            score += sum(fn.count(tok) for tok in tokens) * 2
+            if score <= 0:
+                continue
+            hits.append({
+                "document_id": doc["id"],
+                "filename": doc["filename"],
+                "created_at": doc["created_at"],
+                "chunk_index": int(chunk.get("index") or 0),
+                "chunk_text": text,
+                "preview": short if (short := text[:220].strip()) else doc["preview"],
+                "score": score,
+            })
+    hits.sort(key=lambda item: (-item["score"], item["filename"], item["chunk_index"]))
+    return hits[:max(1, min(limit, DOCUMENT_RESULT_LIMIT))]
+
+def _ollama_request(path: str, payload: dict | None = None) -> dict:
+    url = f"{OLLAMA_BASE}{path}"
+    data = None
+    headers = {"Content-Type": "application/json"}
+    if payload is not None:
+        data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    req = urllib.request.Request(url, data=data, headers=headers)
+    with urllib.request.urlopen(req, timeout=90) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+def _ollama_models() -> list[str]:
+    data = _ollama_request("/api/tags")
+    models = data.get("models") if isinstance(data, dict) else []
+    if not isinstance(models, list):
+        return []
+    return [str(item.get("name") or "").strip() for item in models if str(item.get("name") or "").strip()]
+
+def _ollama_generate(model: str, prompt: str) -> str:
+    data = _ollama_request("/api/generate", {
+        "model": model,
+        "prompt": prompt,
+        "stream": False,
+        "options": {"temperature": 0.2},
+    })
+    return str(data.get("response") or "").strip()
+
+def _normalize_websnapshot(item: dict) -> dict:
+    return {
+        "id": str(item.get("id") or ""),
+        "url": str(item.get("url") or ""),
+        "resolved_url": str(item.get("resolved_url") or item.get("url") or ""),
+        "title": str(item.get("title") or ""),
+        "html_path": str(item.get("html_path") or ""),
+        "text_path": str(item.get("text_path") or ""),
+        "text_preview": str(item.get("text_preview") or "")[:1200],
+        "status": str(item.get("status") or "pending"),
+        "error": str(item.get("error") or ""),
+        "fetched_at": str(item.get("fetched_at") or _now_iso()),
+    }
+
+def _read_websnapshots() -> list[dict]:
+    return _read_json_list(WEBARCHIVE_PATH, _webarchive_lock, _normalize_websnapshot)
+
+def _write_websnapshots(items: list[dict]) -> list[dict]:
+    return _write_json_list(WEBARCHIVE_PATH, _webarchive_lock, items, _normalize_websnapshot, WEBARCHIVE_HTML_DIR)
+
+def _sync_fetch_snapshot(url: str) -> dict:
+    parsed = urllib.parse.urlparse(url)
+    if parsed.scheme not in {"http", "https"}:
+        raise RuntimeError("Nur http/https-URLs sind erlaubt.")
+    req = urllib.request.Request(url, headers={"User-Agent": "flextrawurst-webarchiv/1.0"})
+    with urllib.request.urlopen(req, timeout=25) as resp:
+        raw = resp.read()
+        final_url = resp.geturl()
+        content_type = resp.headers.get("Content-Type", "")
+    encoding_match = re.search(r"charset=([a-zA-Z0-9._-]+)", content_type)
+    encoding = encoding_match.group(1) if encoding_match else "utf-8"
+    html_text = raw.decode(encoding, errors="ignore")
+    title_match = re.search(r"(?is)<title[^>]*>(.*?)</title>", html_text)
+    title = html.unescape(title_match.group(1).strip()) if title_match else ""
+    text = _html_to_text(html_text)[:WEBARCHIVE_TEXT_LIMIT]
+    return {"html": html_text, "text": text, "resolved_url": final_url, "title": title}
+
+def _normalize_form_profile(item: dict) -> dict:
+    return {
+        "id": str(item.get("id") or ""),
+        "profile": str(item.get("profile") or "Profil"),
+        "name": str(item.get("name") or ""),
+        "email": str(item.get("email") or ""),
+        "address": str(item.get("address") or ""),
+        "template": str(item.get("template") or "")[:20000],
+        "preview": str(item.get("preview") or "")[:20000],
+        "created_at": str(item.get("created_at") or _now_iso()),
+    }
+
+def _read_forms() -> list[dict]:
+    return _read_json_list(FORMS_PATH, _forms_lock, _normalize_form_profile)
+
+def _write_forms(items: list[dict]) -> list[dict]:
+    return _write_json_list(FORMS_PATH, _forms_lock, items, _normalize_form_profile, FORMS_PATH.parent)
+
+def _normalize_log_entry(item: dict) -> dict:
+    groups = item.get("groups") if isinstance(item.get("groups"), list) else []
+    clean_groups = []
+    for group in groups[:40]:
+        if not isinstance(group, dict):
+            continue
+        clean_groups.append({
+            "signature": str(group.get("signature") or "")[:300],
+            "count": int(group.get("count") or 0),
+            "level": str(group.get("level") or ""),
+            "preview": str(group.get("preview") or "")[:500],
+        })
+    return {
+        "id": str(item.get("id") or ""),
+        "profile": str(item.get("profile") or ""),
+        "filename": str(item.get("filename") or ""),
+        "status": str(item.get("status") or "done"),
+        "counts": item.get("counts") if isinstance(item.get("counts"), dict) else {},
+        "summary": item.get("summary") if isinstance(item.get("summary"), list) else [],
+        "groups": clean_groups,
+        "text_preview": str(item.get("text_preview") or "")[:1200],
+        "created_at": str(item.get("created_at") or _now_iso()),
+    }
+
+def _read_logs() -> list[dict]:
+    return _read_json_list(LOGS_PATH, _logs_lock, _normalize_log_entry)
+
+def _write_logs(items: list[dict]) -> list[dict]:
+    return _write_json_list(LOGS_PATH, _logs_lock, items, _normalize_log_entry, LOGS_UPLOAD_DIR)
+
+def _normalize_log_signature(line: str) -> str:
+    line = re.sub(r"\b\d{4}-\d{2}-\d{2}[T ][0-9:.+-Z]+\b", "<time>", line)
+    line = re.sub(r"\b0x[0-9a-f]+\b", "<hex>", line, flags=re.I)
+    line = re.sub(r"\b\d+\b", "<n>", line)
+    return line[:240]
+
+def _sync_analyze_log(text: str, profile: str, filename: str) -> dict:
+    lines = text.splitlines()
+    counts = {"lines": len(lines), "errors": 0, "warnings": 0, "tracebacks": 0, "http_5xx": 0}
+    groups: dict[str, dict] = {}
+    idx = 0
+    while idx < len(lines):
+        raw = lines[idx]
+        line = raw.strip()
+        low = line.lower()
+        block = [line] if line else []
+        if line.startswith("Traceback (most recent call last):"):
+            counts["tracebacks"] += 1
+            idx += 1
+            while idx < len(lines):
+                nxt = lines[idx].rstrip()
+                if not nxt.strip():
+                    break
+                block.append(nxt.strip())
+                idx += 1
+            line = " | ".join(block)
+            low = line.lower()
+        level = ""
+        if any(tag in low for tag in [" error", "error ", "exception", "fatal", "critical", "traceback"]):
+            level = "error"
+            counts["errors"] += 1
+        elif any(tag in low for tag in [" warn", "warning", "[warn]"]):
+            level = "warning"
+            counts["warnings"] += 1
+        status_match = re.search(r"\b([45]\d{2})\b", line)
+        if status_match and status_match.group(1).startswith("5"):
+            level = level or "error"
+            counts["http_5xx"] += 1
+        if level:
+            signature = _normalize_log_signature(line)
+            group = groups.setdefault(signature, {
+                "signature": signature,
+                "count": 0,
+                "level": level,
+                "preview": line[:500],
+            })
+            group["count"] += 1
+        idx += 1
+    ordered_groups = sorted(groups.values(), key=lambda item: (-item["count"], item["signature"]))[:30]
+    summary = [
+        f"Zeilen: {counts['lines']}",
+        f"Fehler: {counts['errors']}",
+        f"Warnungen: {counts['warnings']}",
+        f"Tracebacks: {counts['tracebacks']}",
+        f"HTTP-5xx: {counts['http_5xx']}",
+    ]
+    if ordered_groups:
+        top = ordered_groups[0]
+        summary.append(f"Häufigster Block: {top['signature']} ({top['count']}x)")
+    return {
+        "id": f"log-{int(time.time() * 1000)}",
+        "profile": profile,
+        "filename": filename,
+        "status": "done",
+        "counts": counts,
+        "summary": summary,
+        "groups": ordered_groups,
+        "text_preview": text[:1200],
+        "created_at": _now_iso(),
+    }
 
 def _normalize_library(data: dict) -> dict:
     categories = data.get("categories")
@@ -411,6 +793,215 @@ async def create_ocr_job(
     jobs = [job if x.get("id") == job_id else x for x in jobs]
     _write_ocr_jobs(jobs)
     return _normalize_ocr_job(job)
+
+@app.get("/documents")
+async def get_documents():
+    return _read_documents()
+
+@app.get("/documents/models")
+async def get_document_models():
+    try:
+        return {"models": _ollama_models()}
+    except Exception as exc:
+        return {"models": [], "error": str(exc)}
+
+@app.post("/documents")
+async def create_documents(files: list[UploadFile] = File(...)):
+    if not files:
+        raise HTTPException(status_code=400, detail="Keine Dateien erhalten.")
+    documents = _read_documents()
+    created = []
+    for file in files[:50]:
+        filename = _safe_name(file.filename or "upload")
+        doc_id = f"doc-{int(time.time() * 1000)}-{hashlib.sha1((filename + str(time.time())).encode('utf-8')).hexdigest()[:8]}"
+        stored_name = f"{doc_id}-{filename}"
+        DOCUMENTS_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+        DOCUMENTS_TEXT_DIR.mkdir(parents=True, exist_ok=True)
+        stored_path = DOCUMENTS_UPLOAD_DIR / stored_name
+        payload = await file.read()
+        stored_path.write_bytes(payload)
+        doc = {
+            "id": doc_id,
+            "filename": filename,
+            "stored_name": stored_name,
+            "mime_type": file.content_type or "application/octet-stream",
+            "extractor": "",
+            "status": "processing",
+            "size": len(payload),
+            "preview": "",
+            "text_path": str(DOCUMENTS_TEXT_DIR / f"{doc_id}.txt"),
+            "text_chars": 0,
+            "chunk_count": 0,
+            "chunks": [],
+            "error": "",
+            "created_at": _now_iso(),
+        }
+        documents.append(doc)
+        _write_documents(documents)
+        try:
+            loop = asyncio.get_event_loop()
+            text, extractor = await loop.run_in_executor(
+                _pool, _sync_document_extract, stored_path, file.content_type or "application/octet-stream"
+            )
+            text = text[:DOCUMENT_TEXT_LIMIT].strip()
+            Path(doc["text_path"]).write_text(text, encoding="utf-8")
+            chunks = _document_chunks(text)
+            doc["extractor"] = extractor
+            doc["status"] = "done" if text else "empty"
+            doc["preview"] = text[:600]
+            doc["text_chars"] = len(text)
+            doc["chunk_count"] = len(chunks)
+            doc["chunks"] = chunks
+            if not text:
+                doc["error"] = "Kein Text extrahiert."
+        except Exception as exc:
+            doc["status"] = "error"
+            doc["error"] = str(exc)
+        documents = [doc if item.get("id") == doc_id else item for item in documents]
+        _write_documents(documents)
+        created.append(_normalize_document(doc))
+    return created
+
+@app.post("/documents/search")
+async def search_documents(req: DocumentSearchRequest):
+    documents = _read_documents()
+    hits = _search_document_hits(req.query, documents, req.limit, req.document_ids)
+    return {"hits": hits, "count": len(hits)}
+
+@app.post("/documents/chat")
+async def chat_documents(req: DocumentChatRequest):
+    question = req.question.strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="Frage fehlt.")
+    documents = _read_documents()
+    hits = _search_document_hits(question, documents, req.limit or 6, req.document_ids)
+    if not hits:
+        return {"answer": "", "sources": [], "model": req.model, "note": "Keine passenden Textstellen gefunden."}
+    try:
+        models = _ollama_models()
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Ollama nicht erreichbar: {exc}")
+    model = req.model.strip() or (models[0] if models else "")
+    if not model:
+        raise HTTPException(status_code=503, detail="Kein Chat-Modell gefunden.")
+    context = "\n\n".join(
+        f"[Quelle {idx}] Datei: {hit['filename']} | Chunk {hit['chunk_index']}\n{hit['chunk_text']}"
+        for idx, hit in enumerate(hits, 1)
+    )
+    prompt = (
+        "Beantworte die Frage nur aus den gelieferten Dokumentauszügen. "
+        "Wenn etwas nicht belegt ist, sag es klar. Antworte knapp und nenne die Quellen in Klammern.\n\n"
+        f"Frage:\n{question}\n\n"
+        f"Dokumentauszüge:\n{context}\n\n"
+        "Antwort:"
+    )
+    try:
+        answer = await asyncio.get_event_loop().run_in_executor(_pool, _ollama_generate, model, prompt)
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Chat fehlgeschlagen: {exc}")
+    return {"answer": answer, "sources": hits, "model": model}
+
+@app.get("/documents/{document_id}")
+async def get_document(document_id: str):
+    item = next((entry for entry in _read_documents() if entry["id"] == document_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Dokument nicht gefunden.")
+    text = ""
+    text_path = item.get("text_path")
+    if text_path and Path(text_path).exists():
+        text = Path(text_path).read_text(encoding="utf-8", errors="ignore")
+    return {**item, "text": text[:DOCUMENT_TEXT_LIMIT]}
+
+@app.get("/webarchive/snapshots")
+async def get_websnapshots():
+    return _read_websnapshots()
+
+@app.get("/webarchive/snapshots/{snapshot_id}")
+async def get_websnapshot(snapshot_id: str):
+    item = next((entry for entry in _read_websnapshots() if entry["id"] == snapshot_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Snapshot nicht gefunden.")
+    text = ""
+    text_path = item.get("text_path")
+    if text_path and Path(text_path).exists():
+        text = Path(text_path).read_text(encoding="utf-8", errors="ignore")
+    return {**item, "text": text[:WEBARCHIVE_TEXT_LIMIT]}
+
+@app.post("/webarchive/snapshots")
+async def create_websnapshot(payload: WebSnapshotPayload):
+    url = payload.url.strip()
+    if not url:
+        raise HTTPException(status_code=400, detail="URL fehlt.")
+    snapshot_id = f"snap-{int(time.time() * 1000)}"
+    item = {
+        "id": snapshot_id,
+        "url": url,
+        "resolved_url": url,
+        "title": payload.title.strip(),
+        "html_path": str(WEBARCHIVE_HTML_DIR / f"{snapshot_id}.html"),
+        "text_path": str(WEBARCHIVE_TEXT_DIR / f"{snapshot_id}.txt"),
+        "text_preview": "",
+        "status": "processing",
+        "error": "",
+        "fetched_at": _now_iso(),
+    }
+    items = _read_websnapshots()
+    items.append(item)
+    _write_websnapshots(items)
+    try:
+        WEBARCHIVE_HTML_DIR.mkdir(parents=True, exist_ok=True)
+        WEBARCHIVE_TEXT_DIR.mkdir(parents=True, exist_ok=True)
+        data = await asyncio.get_event_loop().run_in_executor(_pool, _sync_fetch_snapshot, url)
+        Path(item["html_path"]).write_text(data["html"], encoding="utf-8")
+        Path(item["text_path"]).write_text(data["text"], encoding="utf-8")
+        item["resolved_url"] = data["resolved_url"]
+        item["title"] = item["title"] or data["title"] or data["resolved_url"]
+        item["text_preview"] = data["text"][:600]
+        item["status"] = "done"
+    except Exception as exc:
+        item["status"] = "error"
+        item["error"] = str(exc)
+    items = [item if entry.get("id") == snapshot_id else entry for entry in items]
+    _write_websnapshots(items)
+    return _normalize_websnapshot(item)
+
+@app.get("/forms/profiles")
+async def get_form_profiles():
+    return _read_forms()
+
+@app.post("/forms/profiles")
+async def create_form_profile(payload: FormProfilePayload):
+    entry = {
+        "id": f"form-{int(time.time() * 1000)}",
+        "profile": payload.profile.strip() or "Profil",
+        "name": payload.name.strip(),
+        "email": payload.email.strip(),
+        "address": payload.address.strip(),
+        "template": payload.template,
+        "preview": payload.preview,
+        "created_at": _now_iso(),
+    }
+    items = _read_forms()
+    items.append(entry)
+    _write_forms(items)
+    return _normalize_form_profile(entry)
+
+@app.get("/logs/analyses")
+async def get_log_analyses():
+    return _read_logs()
+
+@app.post("/logs/analyze")
+async def analyze_log(req: LogAnalyzeRequest):
+    text = req.text[:LOG_TEXT_LIMIT].strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Logtext fehlt.")
+    entry = await asyncio.get_event_loop().run_in_executor(
+        _pool, _sync_analyze_log, text, req.profile.strip(), req.filename.strip()
+    )
+    items = _read_logs()
+    items.append(entry)
+    _write_logs(items)
+    return _normalize_log_entry(entry)
 
 @app.post("/translate")
 async def translate(req: TranslateRequest):
