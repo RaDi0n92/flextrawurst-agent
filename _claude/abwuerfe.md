@@ -2085,3 +2085,4 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 
 1«
 - [2026-07-09 00:35] **nebel** (i=0.41) → Zwischenraum: »Das trifft sich gut — das ist genau **"Baustein 2: Content-Live-Ansicht"** aus der Meldesystem-Visio«
+- [2026-07-09 01:52] **nebel** (i=0.31) → Zwischenraum: »Die Post-Sperre ist jetzt live — kein Wesen kann mehr über die 11 regulären Pfade nach Flarum schrei«

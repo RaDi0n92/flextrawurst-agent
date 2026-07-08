@@ -12,8 +12,8 @@
 | [[tags/architektur\|Architektur]] | 4 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 19 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 9 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 695 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1248 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 696 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1249 |
 | [[tags/deep-dive\|Deep Dive:]] | 8 |
 | [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 51 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
