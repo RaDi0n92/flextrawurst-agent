@@ -443,6 +443,24 @@ def _search_websnapshots(query: str, items: list[dict], limit: int = 12) -> list
     hits.sort(key=lambda item: (-item["score"], str(item.get("title") or ""), str(item.get("resolved_url") or "")))
     return hits[:max(1, min(limit, 30))]
 
+def _websnapshot_versions(item: dict, items: list[dict]) -> list[dict]:
+    needle = str(item.get("resolved_url") or item.get("url") or "").strip()
+    if not needle:
+        return []
+    versions = []
+    for entry in items:
+        current = str(entry.get("resolved_url") or entry.get("url") or "").strip()
+        if current != needle:
+            continue
+        versions.append({
+            "id": entry.get("id"),
+            "title": entry.get("title") or entry.get("resolved_url") or entry.get("url") or "",
+            "fetched_at": entry.get("fetched_at") or "",
+            "status": entry.get("status") or "",
+        })
+    versions.sort(key=lambda entry: str(entry.get("fetched_at") or ""), reverse=True)
+    return versions[:20]
+
 def _normalize_form_profile(item: dict) -> dict:
     return {
         "id": str(item.get("id") or ""),
@@ -978,14 +996,41 @@ async def search_websnapshots(req: WebarchiveSearchRequest):
 
 @app.get("/webarchive/snapshots/{snapshot_id}")
 async def get_websnapshot(snapshot_id: str):
-    item = next((entry for entry in _read_websnapshots() if entry["id"] == snapshot_id), None)
+    items = _read_websnapshots()
+    item = next((entry for entry in items if entry["id"] == snapshot_id), None)
     if not item:
         raise HTTPException(status_code=404, detail="Snapshot nicht gefunden.")
     text = ""
     text_path = item.get("text_path")
     if text_path and Path(text_path).exists():
         text = Path(text_path).read_text(encoding="utf-8", errors="ignore")
-    return {**item, "text": text[:WEBARCHIVE_TEXT_LIMIT]}
+    return {
+        **item,
+        "text": text[:WEBARCHIVE_TEXT_LIMIT],
+        "versions": _websnapshot_versions(item, items),
+        "html_url": f"/webarchive/snapshots/{snapshot_id}/raw/html",
+        "text_url": f"/webarchive/snapshots/{snapshot_id}/raw/text",
+    }
+
+@app.get("/webarchive/snapshots/{snapshot_id}/raw/{kind}")
+async def get_websnapshot_raw(snapshot_id: str, kind: str):
+    item = next((entry for entry in _read_websnapshots() if entry["id"] == snapshot_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Snapshot nicht gefunden.")
+    if kind == "html":
+        path = item.get("html_path") or ""
+        media_type = "text/html"
+        filename = f"{snapshot_id}.html"
+    elif kind == "text":
+        path = item.get("text_path") or ""
+        media_type = "text/plain; charset=utf-8"
+        filename = f"{snapshot_id}.txt"
+    else:
+        raise HTTPException(status_code=400, detail="Nur html oder text erlaubt.")
+    file_path = Path(path)
+    if not path or not file_path.exists():
+        raise HTTPException(status_code=404, detail="Rohdatei nicht gefunden.")
+    return FileResponse(str(file_path), media_type=media_type, filename=filename)
 
 @app.post("/webarchive/snapshots")
 async def create_websnapshot(payload: WebSnapshotPayload):
