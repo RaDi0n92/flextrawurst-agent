@@ -1,12 +1,12 @@
 # Graph Report - werkraum  (2026-07-09)
 
 ## Corpus Check
-- 410 files · ~33,980,317 words
+- 410 files · ~33,981,762 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3823 nodes · 8234 edges · 446 communities detected
-- Extraction: 73% EXTRACTED · 27% INFERRED · 0% AMBIGUOUS · INFERRED: 2187 edges (avg confidence: 0.78)
+- 3824 nodes · 8239 edges · 446 communities detected
+- Extraction: 73% EXTRACTED · 27% INFERRED · 0% AMBIGUOUS · INFERRED: 2189 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -53,7 +53,7 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 45|Community 45]]
+- [[_COMMUNITY_Community 43|Community 43]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 51|Community 51]]
@@ -478,74 +478,74 @@
   codewesen_chat.py → tts_utils.py
 - `codewesen_benachrichtigen()` --calls--> `now()`  [INFERRED]
   geni/dialog.py → agent/agent.js
-- `_geni_dienste_starten()` --calls--> `run()`  [INFERRED]
-  geni/dialog.py → app/main.py
+- `snapshot_daten()` --calls--> `run()`  [INFERRED]
+  geni/geni_bridge_windows.py → app/main.py
 
 ## Communities
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
-Nodes (553): admin_bild_ablehnen(), admin_bild_genehmigen(), admin_bild_moderation_liste(), admin_create_user(), admin_deactivate_or_delete_user(), admin_delete_gedankenblase(), admin_delete_post(), admin_delete_splitter() (+545 more)
+Nodes (560): admin_bild_ablehnen(), admin_bild_genehmigen(), admin_bild_moderation_liste(), admin_create_user(), admin_deactivate_or_delete_user(), admin_delete_gedankenblase(), admin_delete_post(), admin_delete_splitter() (+552 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.02
-Nodes (140): Beziehungsorgan, Beziehungszustand, Liest Nutzereingabe und aktualisiert Beziehungszustand., Feedback-Loop: Liest LLM-Antwort und aktualisiert Zustand.          Signale: Mar, Abwaegung, Entscheidungsorgan, Erinnerung, Erinnerungsgedaechtnis (+132 more)
+Nodes (138): Beziehungsorgan, Beziehungszustand, Liest Nutzereingabe und aktualisiert Beziehungszustand., Feedback-Loop: Liest LLM-Antwort und aktualisiert Zustand.          Signale: Mar, Abwaegung, Entscheidungsorgan, Erinnerung, Erinnerungsgedaechtnis (+130 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.02
-Nodes (137): appendText(), applyDeterministicMemory(), chunkText(), ensureArchitecture(), ensureDir(), ensureFile(), ensureJson(), extractJson() (+129 more)
+Nodes (155): appendText(), applyDeterministicMemory(), chunkText(), ensureArchitecture(), ensureDir(), ensureFile(), ensureJson(), extractJson() (+147 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.02
-Nodes (138): hole_aktuellen_zustand(), lade_selbstmodell(), main(), schreibe_event(), setup_logging(), sync_zyklus(), upsert_entity_state(), bearbeite_post() (+130 more)
+Nodes (165): index(), agentic_loop(), analysiere_gespraech_vereinbarungen(), _antwortpflicht_marker(), ask_llm(), _daniel_antwort_reihenfolge(), dienst_name_fuer(), erstvorstellung_erstellen() (+157 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.02
-Nodes (150): Post, baue_prompt(), fuehre_aktion_aus(), get_conn(), haupt_loop(), hole_andere_wesen_status(), hole_jwt(), injiziere_jwt() (+142 more)
+Cohesion: 0.03
+Nodes (147): _anhaengen(), _fuehre_marker_aus(), _fuehre_selbstgespraech(), haupt_schleife(), _history_pfad(), _impuls_datei(), _js_ts(), _lade_pin_container() (+139 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.02
-Nodes (125): _check_key(), exec_command(), ExecRequest, FileListRequest, FileReadRequest, FileWriteRequest, list_files(), read_file() (+117 more)
+Nodes (129): BaseHTTPMiddleware, hole_aktuellen_zustand(), lade_selbstmodell(), main(), schreibe_event(), setup_logging(), sync_zyklus(), upsert_entity_state() (+121 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.03
-Nodes (92): create_token(), hash_password(), _load_secret(), Auth-Utilities: bcrypt + JWT für das Menschenprofil-System., verify_password(), BaseHTTPRequestHandler, _abwurf_wahrscheinlichkeit(), _admin_token() (+84 more)
+Cohesion: 0.02
+Nodes (133): Post, baue_prompt(), fuehre_aktion_aus(), get_conn(), haupt_loop(), hole_andere_wesen_status(), hole_jwt(), injiziere_jwt() (+125 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.03
-Nodes (126): index(), agentic_loop(), analysiere_gespraech_vereinbarungen(), _antwortpflicht_marker(), ask_llm(), _daniel_antwort_reihenfolge(), dienst_name_fuer(), erstvorstellung_erstellen() (+118 more)
+Nodes (93): create_token(), hash_password(), _load_secret(), Auth-Utilities: bcrypt + JWT für das Menschenprofil-System., verify_password(), BaseHTTPRequestHandler, _abwurf_wahrscheinlichkeit(), _admin_token() (+85 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.03
-Nodes (121): _anhaengen(), _fuehre_marker_aus(), _fuehre_selbstgespraech(), haupt_schleife(), _history_pfad(), _impuls_datei(), _js_ts(), _lade_pin_container() (+113 more)
+Cohesion: 0.05
+Nodes (95): aktualisiere_anschlusskontext(), aktualisiere_fokuskontext(), AnschlussKontext, FokusKontext, formatiere_schreibblock(), hole_anschlusskontext(), hole_fokuskontext(), _lade_rohdaten() (+87 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.03
-Nodes (97): aktualisiere_index(), ask_llm(), baue_scan_prompt(), extrahiere_json(), formatiere_forum(), forum_scan(), _items_zu_dateien(), lade_eigene_dateien_uebersicht() (+89 more)
+Cohesion: 0.04
+Nodes (60): bild_proxy(), lade_text(), ChunkBody, denkstream_all_last(), denkstream_all_sse(), denkstream_chunk(), denkstream_last(), denkstream_screenshot() (+52 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.05
-Nodes (84): aktualisiere_anschlusskontext(), aktualisiere_fokuskontext(), AnschlussKontext, FokusKontext, formatiere_schreibblock(), hole_anschlusskontext(), hole_fokuskontext(), _lade_rohdaten() (+76 more)
+Cohesion: 0.03
+Nodes (90): aktualisiere_index(), ask_llm(), baue_scan_prompt(), extrahiere_json(), formatiere_forum(), forum_scan(), _items_zu_dateien(), lade_eigene_dateien_uebersicht() (+82 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.05
-Nodes (79): _baue_graph(), _build_prompt_voreinzug(), denk_tick_voreinzug(), denken_handeln_node(), _flarum_user_id(), kontext_laden_node(), _lade_flarum_kontext(), _lade_profil_und_cyberling() (+71 more)
+Nodes (77): _baue_graph(), _build_prompt_voreinzug(), denk_tick_voreinzug(), denken_handeln_node(), _flarum_user_id(), kontext_laden_node(), _lade_flarum_kontext(), _lade_profil_und_cyberling() (+69 more)
 
 ### Community 12 - "Community 12"
 Cohesion: 0.04
-Nodes (62): importieren_endpoint(), shell_ausfuehren(), shell_erlaubt(), system_endpoint(), verarbeite_datei_marker(), verarbeite_shell_marker(), bridge_websocket(), lese() (+54 more)
+Nodes (71): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks., zusammenfassen_node(), _antwort_posten(), _bereits_gepostete_woerter(), _extrahiere_wort(), _gamble_post(), _hat_bereits_geantwortet(), haupt_schleife() (+63 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.04
-Nodes (45): bild_proxy(), lade_text(), ChunkBody, denkstream_all_last(), denkstream_all_sse(), denkstream_chunk(), denkstream_last(), denkstream_screenshot() (+37 more)
+Nodes (57): importieren_endpoint(), shell_ausfuehren(), shell_erlaubt(), verarbeite_datei_marker(), verarbeite_shell_marker(), bridge_websocket(), upload(), FileSystemEventHandler (+49 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.06
-Nodes (43): resume_approval(), check_tool_approval_node(), approval_path(), load_state_for_approval(), overwrite_state(), save_state_for_approval(), ToolContext, ToolDefinition (+35 more)
+Cohesion: 0.04
+Nodes (66): system_endpoint(), antwort_node(), baue_dialog_graf(), DialogZustand, eingabe_node(), lese(), routen(), setup() (+58 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.06
-Nodes (55): cmd_info(), cmd_mirror(), cmd_nav(), cmd_note(), cmd_read(), cmd_search(), cmd_write(), main() (+47 more)
+Nodes (51): draw(), handleKey(), resize(), triggerConfetti(), api_auto_suggest(), api_models(), auto_suggest(), _build_cmd() (+43 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.05
@@ -557,23 +557,23 @@ Nodes (44): build_file_tree(), build_html(), build_markdown(), cleanup_upload_se
 
 ### Community 18 - "Community 18"
 Cohesion: 0.06
-Nodes (51): _antwort_posten(), _bereits_gepostete_woerter(), _extrahiere_wort(), _gamble_post(), _hat_bereits_geantwortet(), haupt_schleife(), _headers(), _html_strip() (+43 more)
+Nodes (46): _bridge_auth_ok(), bridge_befehl(), bridge_kontrolle_endpoint(), bridge_screenshot_endpoint(), bridge_screenshot_jetzt(), chat(), codewesen_benachrichtigen(), gedaechtnis_absicht_laden() (+38 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.06
-Nodes (46): analyse_endpoint(), analysiere_chat_verlauf(), baue_messages(), baue_system_prompt(), chat_endpoint(), chat_verlauf_datei(), ChatAnfrage, _datei_lesen() (+38 more)
+Nodes (42): analyse_endpoint(), analysiere_chat_verlauf(), baue_messages(), baue_system_prompt(), chat_endpoint(), chat_verlauf_datei(), ChatAnfrage, _datei_lesen() (+34 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.07
-Nodes (37): _bridge_auth_ok(), bridge_befehl(), bridge_kontrolle_endpoint(), bridge_screenshot_endpoint(), bridge_screenshot_jetzt(), codewesen_benachrichtigen(), gedaechtnis_absicht_laden(), _geni_dienste_starten() (+29 more)
-
-### Community 21 - "Community 21"
-Cohesion: 0.1
-Nodes (43): aktualisiere_agentdatei(), _anschlussblock(), _baue_dossierkopf(), _block_herkunft(), _enthaelt_eines(), _extract_between(), _format_herkunft_liste(), _format_liste() (+35 more)
-
-### Community 22 - "Community 22"
 Cohesion: 0.08
 Nodes (37): admin_human_material(), entities_dreams(), entities_overview(), entities_relationships(), entities_selfletters(), entities_thinking(), entity_lifejournal(), get_conn() (+29 more)
+
+### Community 21 - "Community 21"
+Cohesion: 0.11
+Nodes (24): ToolContext, ToolDefinition, ToolResult, _ts(), _authorship_header(), _diff_text_file(), _list_files(), _read_text_file() (+16 more)
+
+### Community 22 - "Community 22"
+Cohesion: 0.13
+Nodes (34): aktualisiere_agentdatei(), _anschlussblock(), _baue_dossierkopf(), _block_herkunft(), _enthaelt_eines(), _extract_between(), _format_herkunft_liste(), _format_liste() (+26 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.25
@@ -588,32 +588,32 @@ Cohesion: 0.11
 Nodes (33): _cleanup(), _first_public_post_id(), _first_public_thema_id(), get_conn(), _make_entity_post(), Tests für Spurenfähigkeit v0.1 — Post-Relationen, Zustandsabdruck, Themen-Klima., Legt eine echte Relation in DB an und liest sie zurück., gedanke_posten via denk_tick-Metadaten: relation_decision='none' ist im zustands (+25 more)
 
 ### Community 26 - "Community 26"
-Cohesion: 0.14
-Nodes (23): api_auto_suggest(), api_models(), auto_suggest(), _build_model_options(), _build_model_table_rows(), _build_resolution_options(), _build_style_options(), _estimate_secs() (+15 more)
+Cohesion: 0.11
+Nodes (25): refresh_focus_node(), _ts(), read_file_node(), resolve_file_node(), _ts(), build_summary_node(), _ts(), _ts() (+17 more)
 
 ### Community 27 - "Community 27"
 Cohesion: 0.12
 Nodes (25): berechne_risk_vector(), erkenne_sedimente(), get_conn(), messe_cyberling_stress(), messe_erinnerungslast(), messe_konfliktspannung(), messe_resonanzmangel(), messe_resonanzueberdruck() (+17 more)
 
 ### Community 28 - "Community 28"
-Cohesion: 0.15
-Nodes (19): files(), git_commit_endpoint(), git_diff_endpoint(), git_status_endpoint(), workspace_info(), CommandRequest, GitCommitRequest, WriteFileRequest (+11 more)
-
-### Community 29 - "Community 29"
 Cohesion: 0.27
 Nodes (17): BalanceConfig, can_feed(), can_water(), clamp(), evaluate(), main(), recommendation(), Scenario (+9 more)
 
+### Community 29 - "Community 29"
+Cohesion: 0.17
+Nodes (21): ausfuehren(), _authorship_header(), fuehre_code_aus(), fuehre_skript_aus(), _home(), lese_datei(), lies_forum_feed(), liste_dateien() (+13 more)
+
 ### Community 30 - "Community 30"
-Cohesion: 0.18
-Nodes (18): build_summary_node(), _ts(), formatiere_verdichtungsblock(), _kernwortmenge(), _normalisiere_nummernbloecke(), _parse_nummernliste(), _parse_verdichtungsantwort(), _prompt_fuer_kernsatz_nachzug() (+10 more)
+Cohesion: 0.2
+Nodes (19): _aktuelle_phase_typ(), ausfuehren(), entscheide(), _generiere_selbstbrief(), get_admin_token(), get_conn(), _laufende_phase_id(), main() (+11 more)
 
 ### Community 31 - "Community 31"
-Cohesion: 0.21
-Nodes (16): _anhaengen(), _auto_dateiname_aus_inhalt(), _block_vor_trigger(), _enthaelt_dak_bezug(), _enthaelt_merk_dir_das(), _enthaelt_wichtig(), _namenskonflikt_auflosen(), _neue_datei_angefordert() (+8 more)
-
-### Community 32 - "Community 32"
 Cohesion: 0.3
 Nodes (14): _block_vor_trigger(), _enthaelt_dak_bezug(), _erkenne_fadenwechsel(), _erkenne_tool(), _erkenne_trigger_art(), _ist_identitaetsfrage(), _ist_meta(), _ist_reiner_triggertext() (+6 more)
+
+### Community 32 - "Community 32"
+Cohesion: 0.6
+Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
 
 ### Community 33 - "Community 33"
 Cohesion: 0.25
@@ -628,34 +628,34 @@ Cohesion: 0.6
 Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
 
 ### Community 36 - "Community 36"
-Cohesion: 0.6
-Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
-
-### Community 37 - "Community 37"
 Cohesion: 0.23
 Nodes (14): _auto_merge(), get_conn(), propose_and_auto_cluster(), _propose_cluster(), Similarity-Daemon: berechnet Post- und Thema-Ähnlichkeit via tsvector, schlägt C, Schreibt Vorschlag in thema_cluster_vorschlaege, falls noch nicht vorhanden., Berechnet ts_rank zwischen allen Post-Paaren, schreibt post_similarity., Berechnet Ähnlichkeit zwischen Themen. (+6 more)
 
-### Community 38 - "Community 38"
+### Community 37 - "Community 37"
 Cohesion: 0.26
 Nodes (14): bewerte(), clamp(), empfehlung(), kann_futter(), kann_wasser(), main(), pflege_intervall(), print_tabelle() (+6 more)
 
-### Community 39 - "Community 39"
-Cohesion: 0.44
-Nodes (5): erkenne_dateiname(), extrahiere(), main(), Returns list of (heading, content, dateiname)., schreibe_in_dimension()
+### Community 38 - "Community 38"
+Cohesion: 0.54
+Nodes (5): admin_token(), erkenne_materialitaet(), erstelle_splitter(), main(), notiere()
 
-### Community 40 - "Community 40"
+### Community 39 - "Community 39"
 Cohesion: 0.18
 Nodes (8): Enum, as_dict(), Domain, EinsichtStatus, get_contract(), LifeContract, Wesen Life Contracts — Zentrale Taxonomie der Wesen-Erfahrungsräume.  Jede Kateg, Serialisierbar für API.
+
+### Community 40 - "Community 40"
+Cohesion: 0.3
+Nodes (3): main(), parse_dimension(), Liest alle Einträge aus einer resonanz/-Dimensionsdatei.
 
 ### Community 41 - "Community 41"
 Cohesion: 0.39
 Nodes (11): build_html(), clean_text(), Doc, inline_md(), is_table(), load_docs(), main(), render_markdown() (+3 more)
 
 ### Community 42 - "Community 42"
-Cohesion: 0.33
-Nodes (10): baue_prompt(), code_warnungen(), extrahiere_primaermotiv(), hole_eintraege(), main(), merge_stabilitaet_pause(), parse_json(), Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau (+2 more)
+Cohesion: 0.27
+Nodes (10): _check_key(), exec_command(), ExecRequest, FileListRequest, FileReadRequest, FileWriteRequest, list_files(), read_file() (+2 more)
 
-### Community 45 - "Community 45"
+### Community 43 - "Community 43"
 Cohesion: 0.6
 Nodes (7): _einsammeln(), main(), _moechte_einsammeln(), _notiere(), _scan_wahrscheinlichkeit(), _token(), _zeit_seit_letztem_scan()
 
@@ -3072,14 +3072,14 @@ Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `now()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 24`, `Community 27`, `Community 30`, `Community 31`, `Community 39`, `Community 42`, `Community 45`?**
-  _High betweenness centrality (0.085) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 10` to `Community 0`, `Community 1`, `Community 2`, `Community 9`, `Community 16`, `Community 21`, `Community 31`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
-- **Why does `get_conn()` connect `Community 0` to `Community 3`?**
+- **Why does `now()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 24`, `Community 26`, `Community 27`, `Community 30`, `Community 38`, `Community 40`, `Community 43`?**
+  _High betweenness centrality (0.103) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 8` to `Community 0`, `Community 1`, `Community 2`, `Community 14`, `Community 16`, `Community 22`?**
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+- **Why does `get_conn()` connect `Community 0` to `Community 5`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Are the 379 inferred relationships involving `str` (e.g. with `_schicht_label()` and `get_discussion()`) actually correct?**
-  _`str` has 379 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 380 inferred relationships involving `str` (e.g. with `_schicht_label()` and `get_discussion()`) actually correct?**
+  _`str` has 380 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 168 inferred relationships involving `now()` (e.g. with `rhythmus_gedanke()` and `rhythmus_vorstellung()`) actually correct?**
   _`now()` has 168 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Formatiert eigene Posts als lesbaren Block für den LLM-Prompt.`, `Extrahiert Diskussions-Slugs aus [[../diskussionen/slug|...]] Wikilinks.`, `Lädt den vollen Text einer Diskussion per Slug.` to the rest of the system?**
