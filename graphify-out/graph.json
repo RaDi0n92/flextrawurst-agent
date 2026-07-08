@@ -989,9 +989,9 @@
       "file_type": "rationale",
       "source_file": "llm_scheduler.py",
       "source_location": "L144",
-      "id": "llm_scheduler_rationale_144",
       "community": 3,
-      "norm_label": "context-manager: reiht sich in die prioritaets-warteschlange fuer `server`     e"
+      "norm_label": "context-manager: reiht sich in die prioritaets-warteschlange fuer `server`     e",
+      "id": "llm_scheduler_rationale_144"
     },
     {
       "label": "fix_mojibake_md.py",
@@ -4076,18 +4076,18 @@
       "file_type": "rationale",
       "source_file": "wesen_dienst_generator.py",
       "source_location": "L620",
-      "id": "wesen_dienst_generator_rationale_620",
       "community": 18,
-      "norm_label": "liest die definition aus der db, schreibt skript + unit, macht daemon-reload,"
+      "norm_label": "liest die definition aus der db, schreibt skript + unit, macht daemon-reload,",
+      "id": "wesen_dienst_generator_rationale_620"
     },
     {
       "label": "Grundgesetz 4: nie hart loeschen. Stoppt + disabled den systemd-Dienst und     s",
       "file_type": "rationale",
       "source_file": "wesen_dienst_generator.py",
       "source_location": "L664",
-      "id": "wesen_dienst_generator_rationale_664",
       "community": 18,
-      "norm_label": "grundgesetz 4: nie hart loeschen. stoppt + disabled den systemd-dienst und     s"
+      "norm_label": "grundgesetz 4: nie hart loeschen. stoppt + disabled den systemd-dienst und     s",
+      "id": "wesen_dienst_generator_rationale_664"
     },
     {
       "label": "web_chat.py",
@@ -5327,27 +5327,27 @@
       "file_type": "rationale",
       "source_file": "wesen_eigene_dienste.py",
       "source_location": "L105",
-      "id": "wesen_eigene_dienste_rationale_105",
       "community": 18,
-      "norm_label": "legt eine neue wesen-dienst-definition an (insert, kein upsert -- dienst_name"
+      "norm_label": "legt eine neue wesen-dienst-definition an (insert, kein upsert -- dienst_name",
+      "id": "wesen_eigene_dienste_rationale_105"
     },
     {
       "label": "Fuer ziel_typ='eigene_diskussion_einmalig': wird vom generierten Skript genau",
       "file_type": "rationale",
       "source_file": "wesen_eigene_dienste.py",
       "source_location": "L162",
-      "id": "wesen_eigene_dienste_rationale_162",
       "community": 18,
-      "norm_label": "fuer ziel_typ='eigene_diskussion_einmalig': wird vom generierten skript genau"
+      "norm_label": "fuer ziel_typ='eigene_diskussion_einmalig': wird vom generierten skript genau",
+      "id": "wesen_eigene_dienste_rationale_162"
     },
     {
       "label": "status in ('aktiv', 'deaktiviert') -- Grundgesetz 4: nie hart loeschen, nur deak",
       "file_type": "rationale",
       "source_file": "wesen_eigene_dienste.py",
       "source_location": "L193",
-      "id": "wesen_eigene_dienste_rationale_193",
       "community": 18,
-      "norm_label": "status in ('aktiv', 'deaktiviert') -- grundgesetz 4: nie hart loeschen, nur deak"
+      "norm_label": "status in ('aktiv', 'deaktiviert') -- grundgesetz 4: nie hart loeschen, nur deak",
+      "id": "wesen_eigene_dienste_rationale_193"
     },
     {
       "label": "flarum_monitor.py",
@@ -8450,9 +8450,9 @@
       "file_type": "rationale",
       "source_file": "geni/forum_lektuere.py",
       "source_location": "L55",
-      "id": "forum_lektuere_rationale_55",
       "community": 2,
-      "norm_label": "gibt (disk_id, path) sortiert nach id zuruck."
+      "norm_label": "gibt (disk_id, path) sortiert nach id zuruck.",
+      "id": "forum_lektuere_rationale_55"
     },
     {
       "label": "geni_lg.py",
@@ -8963,54 +8963,54 @@
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L193",
-      "id": "muster_rationale_193",
       "community": 6,
-      "norm_label": "analysiert knoten der letzten 48h auf dominante themen."
+      "norm_label": "analysiert knoten der letzten 48h auf dominante themen.",
+      "id": "muster_rationale_193"
     },
     {
       "label": "Findet tiefe\u22652 Knoten die seit >7 Tagen keine Resonanz hatten.",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L238",
-      "id": "muster_rationale_238",
       "community": 6,
-      "norm_label": "findet tiefe\u22652 knoten die seit >7 tagen keine resonanz hatten."
+      "norm_label": "findet tiefe\u22652 knoten die seit >7 tagen keine resonanz hatten.",
+      "id": "muster_rationale_238"
     },
     {
       "label": "Schaut auf alle Muster-Knoten der letzten 4 Wochen.     W\u00f6rter die in \u22653 Muster-",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L276",
-      "id": "muster_rationale_276",
       "community": 6,
-      "norm_label": "schaut auf alle muster-knoten der letzten 4 wochen.     worter die in \u22653 muster-"
+      "norm_label": "schaut auf alle muster-knoten der letzten 4 wochen.     worter die in \u22653 muster-",
+      "id": "muster_rationale_276"
     },
     {
       "label": "Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L301",
-      "id": "muster_rationale_301",
       "community": 6,
-      "norm_label": "erkennt temporale muster: zu welchen tageszeiten ist daniel aktiv?"
+      "norm_label": "erkennt temporale muster: zu welchen tageszeiten ist daniel aktiv?",
+      "id": "muster_rationale_301"
     },
     {
       "label": "Liest die h\u00f6chste Knoten-ID \u2014 ohne alle Dateien zu laden.",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L464",
-      "id": "muster_rationale_464",
       "community": 6,
-      "norm_label": "liest die hochste knoten-id \u2014 ohne alle dateien zu laden."
+      "norm_label": "liest die hochste knoten-id \u2014 ohne alle dateien zu laden.",
+      "id": "muster_rationale_464"
     },
     {
       "label": "Gibt den Text des neuesten Muster-Knotens zur\u00fcck (Cache, 30min TTL).",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L470",
-      "id": "muster_rationale_470",
       "community": 6,
-      "norm_label": "gibt den text des neuesten muster-knotens zuruck (cache, 30min ttl)."
+      "norm_label": "gibt den text des neuesten muster-knotens zuruck (cache, 30min ttl).",
+      "id": "muster_rationale_470"
     },
     {
       "label": "web.py",
@@ -16937,72 +16937,72 @@
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L493",
-      "id": "weltkern_watchdog_rationale_493",
       "community": 3,
-      "norm_label": "scannt alle bekannten logs einmal komplett durch, zaehlt pro fehlermuster     da"
+      "norm_label": "scannt alle bekannten logs einmal komplett durch, zaehlt pro fehlermuster     da",
+      "id": "weltkern_watchdog_rationale_493"
     },
     {
       "label": "Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L569",
-      "id": "weltkern_watchdog_rationale_569",
       "community": 3,
-      "norm_label": "detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit"
+      "norm_label": "detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit",
+      "id": "weltkern_watchdog_rationale_569"
     },
     {
       "label": "Letzte echte journalctl-Zeilen fuer diesen Dienst \u2014 direkter Kontext     ohne SS",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L610",
-      "id": "weltkern_watchdog_rationale_610",
       "community": 3,
-      "norm_label": "letzte echte journalctl-zeilen fuer diesen dienst \u2014 direkter kontext     ohne ss"
+      "norm_label": "letzte echte journalctl-zeilen fuer diesen dienst \u2014 direkter kontext     ohne ss",
+      "id": "weltkern_watchdog_rationale_610"
     },
     {
       "label": "Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L630",
-      "id": "weltkern_watchdog_rationale_630",
       "community": 3,
-      "norm_label": "liest llm_warteschlange (llm_scheduler.py) fuer einen server-schluessel:     wer"
+      "norm_label": "liest llm_warteschlange (llm_scheduler.py) fuer einen server-schluessel:     wer",
+      "id": "weltkern_watchdog_rationale_630"
     },
     {
       "label": "Fragt /slots und /metrics des llama-server direkt ab \u2014 zeigt live ob gerade",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L661",
-      "id": "weltkern_watchdog_rationale_661",
       "community": 3,
-      "norm_label": "fragt /slots und /metrics des llama-server direkt ab \u2014 zeigt live ob gerade"
+      "norm_label": "fragt /slots und /metrics des llama-server direkt ab \u2014 zeigt live ob gerade",
+      "id": "weltkern_watchdog_rationale_661"
     },
     {
       "label": "Swap/RAM-Vitalwerte (flarumstyler, 2026-07-07, nach Absturz-Forensik) \u2014     Dani",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L740",
-      "id": "weltkern_watchdog_rationale_740",
       "community": 3,
-      "norm_label": "swap/ram-vitalwerte (flarumstyler, 2026-07-07, nach absturz-forensik) \u2014     dani"
+      "norm_label": "swap/ram-vitalwerte (flarumstyler, 2026-07-07, nach absturz-forensik) \u2014     dani",
+      "id": "weltkern_watchdog_rationale_740"
     },
     {
       "label": "Zeigt ob systemd-oomd (seit 2026-07-07 aktiv) in den letzten Stunden     einen P",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L773",
-      "id": "weltkern_watchdog_rationale_773",
       "community": 3,
-      "norm_label": "zeigt ob systemd-oomd (seit 2026-07-07 aktiv) in den letzten stunden     einen p"
+      "norm_label": "zeigt ob systemd-oomd (seit 2026-07-07 aktiv) in den letzten stunden     einen p",
+      "id": "weltkern_watchdog_rationale_773"
     },
     {
       "label": "Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) \u2014 nur Zahlen, keine",
       "file_type": "rationale",
       "source_file": "welt/weltkern_watchdog.py",
       "source_location": "L1022",
-      "id": "weltkern_watchdog_rationale_1022",
       "community": 3,
-      "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine"
+      "norm_label": "schlanke kennzahlen-historie (flarumstyler, 2026-07-07) \u2014 nur zahlen, keine",
+      "id": "weltkern_watchdog_rationale_1022"
     },
     {
       "label": "test_spurenfaehigkeit.py",
@@ -22859,9 +22859,9 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L228",
-      "id": "tts_service_rationale_228",
       "community": 29,
-      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier"
+      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
+      "id": "tts_service_rationale_228"
     },
     {
       "label": "gen_screens_html.py",
@@ -53577,8 +53577,8 @@
       "source_file": "welt/wesen_dienst_ausloesen.py",
       "source_location": "L31",
       "weight": 1.0,
-      "_src": "wesen_dienst_ausloesen_main",
-      "_tgt": "wesen_eigene_dienste_lade",
+      "_src": "wesen_eigene_dienste_lade",
+      "_tgt": "wesen_dienst_ausloesen_main",
       "source": "wesen_eigene_dienste_lade",
       "target": "wesen_dienst_ausloesen_main"
     },
@@ -53601,8 +53601,8 @@
       "source_file": "welt/wesen_dienst_liste.py",
       "source_location": "L17",
       "weight": 1.0,
-      "_src": "wesen_dienst_liste_main",
-      "_tgt": "wesen_eigene_dienste_lade_alle",
+      "_src": "wesen_eigene_dienste_lade_alle",
+      "_tgt": "wesen_dienst_liste_main",
       "source": "wesen_eigene_dienste_lade_alle",
       "target": "wesen_dienst_liste_main"
     },
@@ -94965,8 +94965,8 @@
       "source_file": "welt/wesen_dienst_liste.py",
       "source_location": "L21",
       "weight": 1.0,
-      "_src": "wesen_dienst_liste_main",
-      "_tgt": "str",
+      "_src": "str",
+      "_tgt": "wesen_dienst_liste_main",
       "source": "str",
       "target": "wesen_dienst_liste_main"
     },
