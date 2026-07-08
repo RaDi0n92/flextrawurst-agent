@@ -248,6 +248,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       </div>
       <div class="translator-controls">
         <select id="translate-target" aria-label="Ausgabesprache"></select>
+        <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
         <button class="small primary" id="btn-translate">Übersetzen</button>
         <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
       </div>
@@ -328,6 +329,7 @@ const btnExportJson = document.getElementById('btn-export-json');
 const importJson = document.getElementById('import-json');
 const btnOfflineHtml = document.getElementById('btn-offline-html');
 const translateTarget = document.getElementById('translate-target');
+const translateVoiceSel = document.getElementById('translate-voice');
 const btnTranslate = document.getElementById('btn-translate');
 const btnTranslateSpeak = document.getElementById('btn-translate-speak');
 const translateInput = document.getElementById('translate-input');
@@ -358,6 +360,7 @@ const DEFAULT_VOICE = 'de-DE-FlorianMultilingualNeural';
 const DEFAULT_VOICE_FAVORITES = ['de-DE-FlorianMultilingualNeural', 'de-DE-KillianNeural', 'de-DE-KatjaNeural'];
 const AUDIO_CACHE_LIMIT = 80;
 const DEFAULT_CAT = 'Allgemein';
+const TRANSLATE_VOICE_KEY = 'flextrawurst.tts.translateVoices.v1';
 
 let rate    = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
@@ -373,6 +376,7 @@ let serverReady = false;
 let audioCache = new Map();
 let availableVoices = [];
 let translationLanguages = [];
+let translateVoicePrefs = loadTranslateVoicePrefs();
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -382,6 +386,19 @@ function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
 function uid()         { return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
 function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
+
+function loadTranslateVoicePrefs(){
+  try {
+    const data = JSON.parse(localStorage.getItem(TRANSLATE_VOICE_KEY) || '{}');
+    return data && typeof data === 'object' ? data : {};
+  } catch(e) {
+    return {};
+  }
+}
+
+function saveTranslateVoicePrefs(){
+  localStorage.setItem(TRANSLATE_VOICE_KEY, JSON.stringify(translateVoicePrefs));
+}
 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
   ? new Intl.DisplayNames(['de'], {type:'language'})
@@ -462,7 +479,7 @@ function langByTarget(target){
 }
 
 function translationVoice(){
-  return voiceForTarget(translateTarget.value);
+  return translateVoiceSel.value || voiceForTarget(translateTarget.value);
 }
 
 function voiceByName(name){
@@ -487,6 +504,34 @@ function updateTargetLanguageLabel(){
   }
   const voice = translationVoice();
   targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)} · Stimme: ${voiceDisplay(voice)}`;
+}
+
+function voicesForTarget(target){
+  const t = String(target || '').toLowerCase();
+  return availableVoices.filter(v=>targetFromLocale(v.locale || v.Locale).toLowerCase() === t);
+}
+
+function renderTranslationVoices(){
+  const target = translateTarget.value;
+  const voices = voicesForTarget(target);
+  if (!voices.length){
+    const fallback = voiceForTarget(target);
+    translateVoiceSel.innerHTML = `<option value="${esc(fallback)}">${esc(voiceDisplay(fallback))}</option>`;
+    translateVoiceSel.value = fallback;
+    updateTargetLanguageLabel();
+    return;
+  }
+  translateVoiceSel.innerHTML = voices.map(v=>{
+    const name = v.name || v.ShortName;
+    const label = `${voiceDisplay(name)} · ${genderDisplay(v.gender || v.Gender)}`;
+    return `<option value="${esc(name)}">${esc(label)}</option>`;
+  }).join('');
+  const saved = translateVoicePrefs[target];
+  const preferred = saved && voices.some(v=>(v.name || v.ShortName) === saved)
+    ? saved
+    : (voices[0].name || voices[0].ShortName);
+  translateVoiceSel.value = preferred;
+  updateTargetLanguageLabel();
 }
 function fileSafe(s){
   return (s || 'tts')
@@ -771,7 +816,7 @@ async function loadVoices(){
     dbg('Stimmenliste nicht geladen: '+e.message);
   }
   setActiveVoice(activeVoice);
-  updateTargetLanguageLabel();
+  renderTranslationVoices();
 }
 
 function renderTranslationLanguages(){
@@ -792,7 +837,7 @@ function renderTranslationLanguages(){
   const german = translationLanguages.find(x=>x.target_lang === 'de');
   const english = translationLanguages.find(x=>x.target_lang === 'en');
   translateTarget.value = (english || german || translationLanguages[0]).target_lang;
-  updateTargetLanguageLabel();
+  renderTranslationVoices();
   updateTranslateSpeakState();
 }
 
@@ -1365,7 +1410,16 @@ btnBatchMp3.addEventListener('click', exportSelectedMp3);
 btnExportJson.addEventListener('click', exportJson);
 importJson.addEventListener('change', ()=>importJsonFile(importJson.files[0]));
 btnOfflineHtml.addEventListener('click', downloadOfflineHtml);
-translateTarget.addEventListener('change', updateTargetLanguageLabel);
+translateTarget.addEventListener('change', ()=>{
+  renderTranslationVoices();
+});
+translateVoiceSel.addEventListener('change', ()=>{
+  if (translateTarget.value && translateVoiceSel.value){
+    translateVoicePrefs[translateTarget.value] = translateVoiceSel.value;
+    saveTranslateVoicePrefs();
+  }
+  updateTargetLanguageLabel();
+});
 btnTranslate.addEventListener('click', translateOne);
 btnTranslateSpeak.addEventListener('click', speakTranslation);
 
