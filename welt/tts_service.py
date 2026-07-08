@@ -95,6 +95,7 @@ class FormProfilePayload(BaseModel):
     address: str = ""
     template: str = ""
     preview: str = ""
+    extra_fields: dict[str, str] = {}
 
 class LogAnalyzeRequest(BaseModel):
     text: str
@@ -466,6 +467,13 @@ def _websnapshot_versions(item: dict, items: list[dict]) -> list[dict]:
     return versions[:20]
 
 def _normalize_form_profile(item: dict) -> dict:
+    extra_fields = item.get("extra_fields") if isinstance(item.get("extra_fields"), dict) else {}
+    clean_fields = {}
+    for key, value in extra_fields.items():
+        k = str(key or "").strip()[:80]
+        if not k:
+            continue
+        clean_fields[k] = str(value or "")[:5000]
     return {
         "id": str(item.get("id") or ""),
         "profile": str(item.get("profile") or "Profil"),
@@ -474,6 +482,7 @@ def _normalize_form_profile(item: dict) -> dict:
         "address": str(item.get("address") or ""),
         "template": str(item.get("template") or "")[:20000],
         "preview": str(item.get("preview") or "")[:20000],
+        "extra_fields": clean_fields,
         "created_at": str(item.get("created_at") or _now_iso()),
     }
 
@@ -482,6 +491,27 @@ def _read_forms() -> list[dict]:
 
 def _write_forms(items: list[dict]) -> list[dict]:
     return _write_json_list(FORMS_PATH, _forms_lock, items, _normalize_form_profile, FORMS_PATH.parent)
+
+def _form_export_html(item: dict) -> str:
+    profile = html.escape(str(item.get("profile") or "Profil"))
+    preview = html.escape(str(item.get("preview") or ""))
+    extras = item.get("extra_fields") if isinstance(item.get("extra_fields"), dict) else {}
+    extras_html = ""
+    if extras:
+        extras_html = "<ul>" + "".join(
+            f"<li><strong>{html.escape(str(key))}</strong>: {html.escape(str(value))}</li>"
+            for key, value in extras.items()
+        ) + "</ul>"
+    return (
+        "<!DOCTYPE html><html lang=\"de\"><head><meta charset=\"utf-8\">"
+        f"<title>{profile}</title>"
+        "<style>body{font-family:system-ui,sans-serif;max-width:920px;margin:32px auto;padding:0 20px;line-height:1.55;color:#1f1f1f}"
+        "pre{white-space:pre-wrap;background:#f6f6f6;padding:16px;border-radius:8px;border:1px solid #ddd}"
+        "h1{font-size:1.4rem}h2{font-size:1rem;margin-top:1.5rem}</style></head><body>"
+        f"<h1>{profile}</h1><pre>{preview}</pre>"
+        f"{('<h2>Zusatzfelder</h2>' + extras_html) if extras_html else ''}"
+        "</body></html>"
+    )
 
 def _normalize_log_entry(item: dict) -> dict:
     groups = item.get("groups") if isinstance(item.get("groups"), list) else []
@@ -1132,12 +1162,31 @@ async def create_form_profile(payload: FormProfilePayload):
         "address": payload.address.strip(),
         "template": payload.template,
         "preview": payload.preview,
+        "extra_fields": payload.extra_fields,
         "created_at": _now_iso(),
     }
     items = _read_forms()
     items.append(entry)
     _write_forms(items)
     return _normalize_form_profile(entry)
+
+@app.get("/forms/profiles/{form_id}/export/{fmt}")
+async def export_form_profile(form_id: str, fmt: str):
+    item = next((entry for entry in _read_forms() if entry["id"] == form_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Formularprofil nicht gefunden.")
+    safe_name = _safe_name(item.get("profile") or "formular")
+    if fmt == "txt":
+        tmp = tempfile.NamedTemporaryFile(suffix=".txt", delete=False, dir="/tmp")
+        tmp.write((str(item.get("preview") or "") + "\n").encode("utf-8"))
+        tmp.close()
+        return FileResponse(tmp.name, media_type="text/plain; charset=utf-8", filename=f"{safe_name}.txt")
+    if fmt == "html":
+        tmp = tempfile.NamedTemporaryFile(suffix=".html", delete=False, dir="/tmp")
+        tmp.write(_form_export_html(item).encode("utf-8"))
+        tmp.close()
+        return FileResponse(tmp.name, media_type="text/html; charset=utf-8", filename=f"{safe_name}.html")
+    raise HTTPException(status_code=400, detail="Nur txt oder html erlaubt.")
 
 @app.get("/logs/analyses")
 async def get_log_analyses():

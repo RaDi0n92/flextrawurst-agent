@@ -529,10 +529,14 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <input id="forms-email" type="text" placeholder="E-Mail">
         <input id="forms-address" type="text" placeholder="Adresse">
       </div>
+      <textarea id="forms-extra" placeholder="Zusatzfelder als key: value&#10;firma: Flextrawurst&#10;telefon: 030 123456"></textarea>
+      <div class="inf" id="forms-fields-hint">Platzhalter: {{name}}, {{email}}, {{address}} und alle Zusatzfelder als {{key}}</div>
       <textarea id="forms-template" placeholder="Vorlage mit Platzhaltern wie {{name}}, {{email}}, {{address}}"></textarea>
       <div class="row">
         <button class="small primary" id="btn-forms-preview">Vorschau bauen</button>
         <button class="small" id="btn-forms-save">Profil merken</button>
+        <button class="small" id="btn-forms-export-txt">TXT</button>
+        <button class="small" id="btn-forms-export-html">HTML</button>
       </div>
       <textarea id="forms-preview" readonly placeholder="Vorschau"></textarea>
       <div class="sentence-list" id="forms-list"></div>
@@ -659,9 +663,13 @@ const formsProfile = document.getElementById('forms-profile');
 const formsName = document.getElementById('forms-name');
 const formsEmail = document.getElementById('forms-email');
 const formsAddress = document.getElementById('forms-address');
+const formsExtra = document.getElementById('forms-extra');
+const formsFieldsHint = document.getElementById('forms-fields-hint');
 const formsTemplate = document.getElementById('forms-template');
 const btnFormsPreview = document.getElementById('btn-forms-preview');
 const btnFormsSave = document.getElementById('btn-forms-save');
+const btnFormsExportTxt = document.getElementById('btn-forms-export-txt');
+const btnFormsExportHtml = document.getElementById('btn-forms-export-html');
 const formsPreview = document.getElementById('forms-preview');
 const formsList = document.getElementById('forms-list');
 const logsUpload = document.getElementById('logs-upload');
@@ -702,6 +710,7 @@ const DOCUMENTS_MODELS_API = BASE + 'documents/models';
 const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
 const WEBARCHIVE_SEARCH_API = BASE + 'webarchive/search';
 const FORMS_API = BASE + 'forms/profiles';
+const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
 const LOGS_API = BASE + 'logs/analyses';
 const LOGS_ANALYZE_API = BASE + 'logs/analyze';
 const LOGS_EXPLAIN_API = BASE + 'logs/explain';
@@ -763,6 +772,7 @@ let currentLogGroupIndex = -1;
 let currentDocumentDetail = null;
 let currentDocumentChunkIndex = -1;
 let currentDocumentSources = [];
+let currentFormId = '';
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -1204,11 +1214,13 @@ function renderForms(){
     <div class="sentence-row" data-form-id="${esc(item.id)}">
       <div>
         <div class="sentence-text">${esc(item.profile || 'Profil')}</div>
-        <div class="clip-meta">${esc(item.name || 'ohne Name')} · ${esc(item.email || 'ohne Mail')}</div>
+        <div class="clip-meta">${esc(item.name || 'ohne Name')} · ${esc(item.email || 'ohne Mail')} · ${esc(Object.keys(item.extra_fields || {}).length)} Zusatzfelder</div>
         <div class="clip-extra">${esc(shortText(item.preview || item.address || 'Noch keine Vorschau.', 220))}</div>
       </div>
       <div class="sentence-actions">
         <button class="small" type="button" data-act="load-form">Laden</button>
+        <button class="small" type="button" data-act="export-form-txt">TXT</button>
+        <button class="small" type="button" data-act="export-form-html">HTML</button>
       </div>
     </div>
   `).join('');
@@ -1442,12 +1454,40 @@ async function saveDocumentEntry(){
 
 function buildFormPreview(){
   const tpl = formsTemplate.value || 'Name: {{name}}\nE-Mail: {{email}}\nAdresse: {{address}}';
-  const preview = tpl
-    .replaceAll('{{name}}', formsName.value.trim())
-    .replaceAll('{{email}}', formsEmail.value.trim())
-    .replaceAll('{{address}}', formsAddress.value.trim());
+  const fields = formFieldMap();
+  let preview = tpl;
+  Object.entries(fields).forEach(([key, value])=>{
+    preview = preview.replaceAll(`{{${key}}}`, value);
+  });
+  formsFieldsHint.textContent = `Platzhalter: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')}`;
   formsPreview.value = preview;
   return preview;
+}
+
+function parseFormExtraFields(){
+  const map = {};
+  String(formsExtra.value || '')
+    .split(/\r?\n/)
+    .map(line=>line.trim())
+    .filter(Boolean)
+    .forEach(line=>{
+      const idx = line.indexOf(':');
+      if (idx < 1) return;
+      const key = line.slice(0, idx).trim().replace(/\s+/g, '_').toLowerCase();
+      const value = line.slice(idx + 1).trim();
+      if (!key) return;
+      map[key] = value;
+    });
+  return map;
+}
+
+function formFieldMap(){
+  return {
+    name: formsName.value.trim(),
+    email: formsEmail.value.trim(),
+    address: formsAddress.value.trim(),
+    ...parseFormExtraFields(),
+  };
 }
 
 async function runDocumentSearch(){
@@ -1735,7 +1775,8 @@ async function saveFormProfile(){
     email: formsEmail.value.trim(),
     address: formsAddress.value.trim(),
     template: formsTemplate.value.trim(),
-    preview
+    preview,
+    extra_fields: parseFormExtraFields()
   };
   try {
     const res = await fetch(FORMS_API, {
@@ -1746,6 +1787,7 @@ async function saveFormProfile(){
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
     formEntries = [item, ...formEntries.filter(x=>x.id !== item.id)];
+    currentFormId = item.id;
     saveJsonLocal(FORMS_KEY, formEntries);
     renderForms();
     st('Formularprofil gespeichert.','ok');
@@ -1758,13 +1800,27 @@ async function saveFormProfile(){
 function loadFormEntry(formId){
   const item = formEntries.find(x=>x.id === formId);
   if (!item) return;
+  currentFormId = item.id;
   formsProfile.value = item.profile || '';
   formsName.value = item.name || '';
   formsEmail.value = item.email || '';
   formsAddress.value = item.address || '';
+  formsExtra.value = Object.entries(item.extra_fields || {}).map(([key, value])=>`${key}: ${value}`).join('\n');
   formsTemplate.value = item.template || '';
   formsPreview.value = item.preview || '';
+  buildFormPreview();
   st(`Formularprofil geladen: ${item.profile || formId}`,'ok');
+}
+
+function exportFormProfile(fmt, formId = currentFormId){
+  const id = formId || currentFormId;
+  if (!id){
+    st('Kein Formularprofil für Export gewählt.','err');
+    return;
+  }
+  const url = `${FORMS_EXPORT_BASE}${encodeURIComponent(id)}/export/${encodeURIComponent(fmt)}`;
+  window.open(url, '_blank', 'noopener');
+  st(`Formularprofil als ${fmt.toUpperCase()} angefordert.`,'ok');
 }
 
 async function loadServerLogs(){
@@ -3131,11 +3187,15 @@ btnFormsPreview.addEventListener('click', ()=>{
   st('Vorschau gebaut.','ok');
 });
 btnFormsSave.addEventListener('click', saveFormProfile);
+btnFormsExportTxt.addEventListener('click', ()=>exportFormProfile('txt'));
+btnFormsExportHtml.addEventListener('click', ()=>exportFormProfile('html'));
 formsList.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act="load-form"]');
+  const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-form-id]');
   if (!btn || !row) return;
-  loadFormEntry(row.dataset.formId);
+  if (btn.dataset.act === 'load-form') loadFormEntry(row.dataset.formId);
+  if (btn.dataset.act === 'export-form-txt') exportFormProfile('txt', row.dataset.formId);
+  if (btn.dataset.act === 'export-form-html') exportFormProfile('html', row.dataset.formId);
 });
 btnLogsAnalyze.addEventListener('click', analyzeLogs);
 btnLogsExplain.addEventListener('click', explainLogBlock);
@@ -3189,6 +3249,7 @@ formsTemplate.addEventListener('input', buildFormPreview);
 formsName.addEventListener('input', buildFormPreview);
 formsEmail.addEventListener('input', buildFormPreview);
 formsAddress.addEventListener('input', buildFormPreview);
+formsExtra.addEventListener('input', buildFormPreview);
 
 translateSentences.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
