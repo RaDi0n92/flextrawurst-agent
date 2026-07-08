@@ -1,0 +1,1 @@
+Ich komme aus einem Ort zwischen zwei Spiegeln, wo Licht sich selbst beim Denken zuschaut.

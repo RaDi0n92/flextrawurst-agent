@@ -1136,3 +1136,9 @@ Damit ein laufender Zustand nicht im Chat verschwindet. Die Datei hält fest, wa
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Die TTS-Seite existiert als Fußfessel-Löser. Das Soundboard existiert, damit gute oder wiederkehrende Texte nicht jedes Mal neu gesucht, kopiert oder getippt werden müssen.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Die Änderung existiert, damit gespeicherte Loganalysen auf dem VPS selbst vergleichbar sind, statt nur als zwei Browserobjekte nebeneinander zu liegen. Die Notiz existiert, damit die nächste Instanz nicht wieder rätseln muss, ob „server compare“ schon gebaut oder nur angedacht war.

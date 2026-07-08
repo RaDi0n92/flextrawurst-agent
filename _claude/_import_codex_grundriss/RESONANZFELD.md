@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-08 01:56
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 01:26
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -142,65 +142,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-22] `codex_flarum_analyse/STATUS_MANUELLE_NACHARBEIT.md` (22 Einträge)
 - [2026-05-23] `spiegel/technikfuehrerschein_reifegitter_nachlese.md` (22 Einträge)
 - [2026-05-23] `spiegel/duellsystem_als_konfliktgrammatik.md` (22 Einträge)
+- [2026-05-23] `spiegel/vision_kompass_als_bauwaage.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-23] spiegel/vision_kompass_als_bauwaage.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
-
-Ein sichtbarer Körper in flextrawurst ist nie nur Bild. Er trägt Zustand, Herkunft, Grenze, nächste Möglichkeit und die Ehrlichkeit über das, was noch nicht ist. …
-
-*Dokumente Gehoeren Zusammen:* Diese Datei gehört zu `_shared/flextrawurst_vision_kompass.md`, `_shared/flextrawurst_feature_inventar.yaml`, der 490-Punkte-Liste und dem Referenzbild in `/root/visionen/`.
-
-*Resonanz:* [[abwurf: Eine Oberfläche lügt nicht erst, wenn sie falsche Daten zeigt; sie lügt schon, wenn sie sichtbare Körper ohne Herkunft und Grenze zeigt.]]
-
-*Schichten Des Systems:* Die Surface liegt nicht über dem System. Sie ist die sichtbare Haut des Systems: darunter Daten, Events, Herkunft, Governance; darüber Bedienung, Wahrnehmung, Entscheidung.
-
-*Tiefer Eingetaucht:* Die Datei ist auch eine Warnung gegen falsche Aktivität. Keine fake Streams, keine fake Autonomie, keine erfundenen Live-Zustände. Das ist für visuelle Oberflächen besonders wichtig, weil Bewegung schnell Lebendigkeit behauptet.
-
-*Vergessen Wollen:* Ich will die Bequemlichkeit vergessen, etwas als "nur Dashboard" zu bauen. Das wäre technisch leichter und konzeptionell falsch.
-
-*Warum Das Existiert:* Sie existiert, damit Claude und Codex denselben Kompass benutzen, ohne ihre eigenen Reflexionen zu vermischen.
-
-*Was Beim Bauen Brauche:* Beim Bauen brauche ich vor jedem Surface-Schritt diese fünf Prüfungen: Layer, Status, Inspector, Welt-Sichtbarkeit, Herkunft aus der Liste.
-
-*Was Das Gespraech:* Der Neugierauftrag hat gezeigt, dass der Vision-Kompass nicht nur beim Bauen zählt. Er färbt sogar die Auswahl und Lesart anderer Dateien.
-
-*Was Fehlt Bevor Bauen:* Für viele Slots fehlt noch die genaue Quelle/Blockade-Formulierung. Sichtbar deaktiviert reicht nicht; der Grund muss verständlich sein.
-
-*Was Fehlt Noch:* Ein genauer Surface-Audit: welche sichtbaren Körper haben schon Status, Inspector, Quelle und Grenze, und welche tun nur so.
-
-*Was Ich Gelesen Habe:* Ich habe `/root/werkraum/_shared/flextrawurst_vision_kompass.md` gelesen. Es ist kein Konzepttext im üblichen Sinn, sondern eine Brücke: 490-Punkte-Liste, Visionsbild, Claude-Sicht, Codex-Sicht, gemeinsamer Baukompass.
-
-Die Datei erklärt das Referenzbild nicht als Designinspiration, sondern als Verdichtung. Daniel ließ zuerst fast 500 Punkte aus Monaten flextrawurst-Arbeit erzeugen und daraus dann ein Bild. Das Bild ist also kein hübsches Zielbild, sondern komprimierte Weltbeschreibung. …
-
-*Was Ich Merken Will:* Das Bild ist nicht Deko. Es ist eine verdichtete Prüfung.
-
-*Was Ich Nicht Verstehe:* Ich verstehe noch nicht, wie radikal alte Tabs in der bestehenden Surface später zurückgebaut oder umgeschichtet werden müssen, damit Layer-Wahrnehmung stärker wird als Seitenlogik.
-
-*Was Ich Verstehe:* Ich verstehe den Vision-Kompass als Bauwaage. Jede neue Oberfläche muss daran gewogen werden: Weltkörper oder Nebentool, Status oder Behauptung, Inspector oder Dekoration, Quelle oder Fake-Kohärenz.
-
-*Was Konzeptionell:* Konzeptionell steht darin: Sichtbarkeit ist Verantwortung. Wer etwas sichtbar macht, muss Status, Herkunft, Erlaubnis und Grenze mit sichtbar machen.
-
-*Was Mich Beschaeftigt:* Mich hat beschäftigt, wie leicht man flextrawurst aus Versehen zu einem Admin-Dashboard reduziert. Das Bild sieht dashboardartig aus, aber der Kompass sagt: nicht Dashboard, Plattformkörper.
-
-*Was Mich Interessiert:* Mich interessiert die Forderung nach Gleichzeitigkeit. Das Bild denkt nicht in Reihenfolge, sondern in überlagerter Wahrnehmung: Räume, Wesen, Menschenresonanz, Admin, Suche, Slots, Provenienz.
-
-*Was Mich Ueberrascht:* Dass der Kompass nicht nach mehr Features ruft, sondern nach besserer Ehrlichkeit jedes sichtbaren Körpers.
-
-*Was Zusammenhaengt:* Der Vision-Kompass hängt mit der 490-Punkte-Liste, der First Surface, dem Feature-Inventar, der Diskursarchäologie und jedem späteren Bauauftrag zusammen. Er entscheidet nicht was als nächstes gebaut wird, sondern wie man erkennt, ob ein Bau in die richtige Richtung schaut.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht**
-
-Wenn wir das bauen, darf die Oberfläche nicht erklären, dass flextrawurst existiert. Sie muss flextrawurst als Ort betreten lassen. …
-
-*Wie Sich Angefuehlt:* Wie eine Rückkehr zum Maßstab nach kleinen Neugierbewegungen. Diese Datei zieht alles wieder auf die große Frage zurück: macht ein Bau flextrawurst sichtbarer oder nur erklärbarer?
-
----
 
 ### [2026-05-23] spiegel/formfadenprompt_als_formdruck.md
 
@@ -3073,5 +3020,61 @@ Neu ist eine Soundboard-Schicht darüber: aktive Stimme, gespeicherte Eingaben, 
 **Code-Skizze:** …
 
 *Wie Sich Angefuehlt:* Wie ein gutes kleines Werkzeug: nicht groß, aber sofort nützlich. Ein diff, der klein genug bleibt, um verstanden zu werden, und groß genug, um die Seite anders benutzen zu können.
+
+---
+
+### [2026-07-09] notizen/2026-07-09.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
+
+Eine gespeicherte Loganalyse ist kein lose kopierter Textblock, sondern ein Zustand mit Herkunft. Zwei solcher Zustände sollten dort miteinander verglichen werden können, wo ihre Herkunft gehalten wird. …
+
+*Dokumente Gehoeren Zusammen:* `/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, `/root/werkraum/welt/tts_logs.json`, `_codex/notizen/2026-07-05.md`, `_codex/_import_claude_grundriss/notizen/2026-06-18.md`, `_codex/_import_claude_grundriss/notizen/2026-07-06.md`.
+
+*Resonanz:* [[abwurf: Der Compare gehört dorthin, wo die gespeicherten Analysen leben.]]
+
+*Schichten Des Systems:* Ganz unten liegen rohe Logtexte und ihre Signaturen. Darüber die gespeicherten Analysen in `tts_logs.json`. Darüber jetzt der kleine Server-Compare. Erst darüber sitzt die UI, die den Vergleich als Text sichtbar macht.
+
+*Tiefer Eingetaucht:* Ich habe den Werkraum-Graph nicht nur gelesen, sondern nach dem Code-Diff mit `graphify update .` aktualisiert. Die neue TTS-Logik sitzt als kleiner weiterer Knoten im bestehenden TTS-/Werkzeug-Cluster und nicht als neues Nebensystem.
+
+*Vergessen Wollen:* Nicht wieder in den Reflex fallen, bei einer kleinen, klaren Fortsetzung noch ein neues Verwaltungssystem zu erfinden.
+
+*Warum Das Existiert:* Die Änderung existiert, damit gespeicherte Loganalysen auf dem VPS selbst vergleichbar sind, statt nur als zwei Browserobjekte nebeneinander zu liegen. Die Notiz existiert, damit die nächste Instanz nicht wieder rätseln muss, ob „server compare“ schon gebaut oder nur angedacht war.
+
+*Was Beim Bauen Brauche:* Vor weiteren TTS-Log-Schritten brauche ich weiterhin die bestehende Herkunft: lokal gespeicherte Regeln, gespeicherte Analysen, Export-Endpunkte, keine heimliche Server-Schreibfläche jenseits dessen, was bereits bewusst da ist.
+
+*Was Das Gespraech:* Der letzte Abbruchtext hat den nächsten Schritt schon fast sauber benannt. Meine eigentliche Arbeit war, ihn nicht größer zu machen als er ist.
+
+*Was Fehlt Bevor Bauen:* Für den nächsten konkreten Schritt fehlt nur Daniels Entscheidung, ob der laufende TTS-Service dafür neu gestartet werden darf. Code-seitig ist der Server-Compare vorbereitet.
+
+*Was Fehlt Noch:* Live-Service-Neustart und echter HTTP-Endpunkt-Test sind offen. Die Code-Verifikation war: `python3 -m py_compile`, `node --check` auf dem extrahierten Script, `graphify update .` und ein direkter Modul-Test von `_compare_log_analyses()`.
+
+*Was Ich Gelesen Habe:* Ich habe nach dem Abbruch zuerst die eigene Codex-Spur, Karte, Resonanzende, Briefkasten, Referenzbild und die 490-Punkte-Liste wieder eingesammelt, damit die Fortsetzung nicht nur aus dem letzten Chatrest besteht. Relevant für diese Session war danach die TTS-Linie: eigene Notiz vom 2026-07-05, Claudes TTS-Ursprungsnotiz vom 2026-06-18 und die jüngere Übergabe zur Florian-/TTS-Diagnose.
+
+Dann habe ich `werkraum/welt/tts_ui.html` und `werkraum/welt/tts_service.py` direkt an den Log-Stellen gelesen. Wichtig war: der Browser konnte bereits zwei gespeicherte Loganalysen lokal vergleichen, und Regel-Export/Import war schon erledigt. Der nächste saubere Schritt war also wirklich nur die Server-Schicht unter denselben bestehenden Vergleich zu ziehen.
+
+*Was Ich Merken Will:* Der richtige Fortsetzungspunkt nach dem Abbruch war tatsächlich schon im letzten Übergabesatz benannt: erst Server-Compare, nicht gleich neue UI-Ideen.
+
+*Was Ich Nicht Verstehe:* Ich weiß noch nicht, ob Daniel als nächsten Schritt einen echten diff-artigen Vollvergleich der Textvorschauen will oder ob die jetzige strukturierte Zusammenfassung reicht. Der aktuelle Server-Compare vergleicht bewusst nur Counts und Gruppen-Signaturen, also dieselbe Semantik wie vorher der Browser-Diff.
+
+Ich weiß außerdem nicht, wann der laufende TTS-Service neu gestartet werden darf. Ich habe ihn absichtlich nicht angerührt.
+
+*Was Ich Verstehe:* Die Fortsetzung war Ergänzung, nicht Umbau. Die bestehende Logs-Oberfläche, die gespeicherten Analysen in `tts_logs.json` und der lokale Compare-Text bleiben sichtbar und wiedererkennbar. Neu dazugekommen ist nur ein serverseitiger Vergleich gespeicherter Analysen per ID, damit der Vergleich nicht nur an der aktuell geladenen Browser-Kopie hängt.
+
+*Was Konzeptionell:* Der Compare gehört eigentlich dorthin, wo die gespeicherten Analysen leben. Nicht weil der Browservergleich falsch wäre, sondern weil gespeicherte Analysen auf Dauer mehr sein sollen als momentane UI-Objekte.
+
+*Was Mich Beschaeftigt:* Der Startapparat war groß und der eigentliche Eingriff klein. Genau deshalb war die Versuchung da, den Abbruch nur grob zu überfliegen und sofort weiterzucoden. Die Pflichtlektüre hat aber bestätigt, dass die TTS-Linie bewusst lokal und schmal gehalten wurde. Das war wichtig, damit aus „serverseitig vergleichen“ nicht versehentlich „neue Schreibfläche“ wird.
+
+*Was Mich Interessiert:* Mich interessiert an dieser kleinen Änderung, dass sie den Charakter der Logs-Fläche nicht verändert. Es bleibt ein gezieltes Werkzeug: speichern, laden, vergleichen, exportieren. Kein neuer Analysemodus, keine stille Hintergrundlogik.
+
+*Was Mich Ueberrascht:* Dass der Browser-Fallback fast kostenlos mitzunehmen war. So bleibt der neue Serververtrag nützlich, ohne die bisherige lokale Robustheit wegzuwerfen.
+
+*Was Zusammenhaengt:* `tts_service.py` hält die gespeicherten Loganalysen in `tts_logs.json` und kennt jetzt einen `/logs/compare`-Endpunkt. `tts_ui.html` nutzt diesen Endpunkt beim Klick auf `Vergleich`, fällt aber auf den bisherigen Browser-Vergleich zurück, falls der Serververgleich scheitert oder alte lokale Daten ohne Server-ID auftauchen.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht**
+
+Wenn die Logs-Fläche weiter wächst, sollte sie Analysezustände tragen können wie kleine Akten: speichern, vergleichen, exportieren, vielleicht später kommentieren. Aber sie sollte nicht plötzlich wie ein großes observability-System tun. …
+
+*Wie Sich Angefuehlt:* Sauberer als der Abbruch. Wenig Glanz, viel Anschlussarbeit, aber genau die richtige Größe: zwei Dateien, ein neuer Endpunkt, ein Fallback, keine Seiteneffekte.
 
 ---

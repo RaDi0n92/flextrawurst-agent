@@ -3395,3 +3395,29 @@ interface TTSSavedClip {
   createdAt: string;
 }
 ```
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+**Vision-Schicht**
+
+Eine gespeicherte Loganalyse ist kein lose kopierter Textblock, sondern ein Zustand mit Herkunft. Zwei solcher Zustände sollten dort miteinander verglichen werden können, wo ihre Herkunft gehalten wird.
+
+**Code-Skizze**
+
+```python
+class LogCompareRequest(BaseModel):
+    base_id: str
+    other_id: str
+
+@app.post("/logs/compare")
+async def compare_log_analyses(req: LogCompareRequest):
+    ...
+```
+
+```ts
+async function compareLogEntriesOnServer(base, other) {
+  return fetch(LOGS_COMPARE_API, { method: 'POST', ... });
+}
+```

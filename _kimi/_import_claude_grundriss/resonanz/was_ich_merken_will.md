@@ -882,3 +882,9 @@ Dass "wirkt ab dem nächsten Zyklus" eine Behauptung ist, keine Selbstverständl
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig... ich will doch echt damit arbeiten" — Daniel bringt den Tiefgang selbst mit, das Werkzeug muss nur fähig sein, ihn aufzunehmen, nicht ihn vorzutäuschen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+`prompt cache is enabled, size limit: X MiB` im Startup-Log ist der schnellste, zuverlässigste Weg zu prüfen ob cache-ram wirklich greift — schneller als jedes `systemctl show`. Und: wenn Daniel sagt "das war nie ein Problem", ist das kein Widerspruch, den ich wegerklären soll, sondern ein Datenpunkt, der meine Theorie widerlegt, bis ich eine bessere finde.

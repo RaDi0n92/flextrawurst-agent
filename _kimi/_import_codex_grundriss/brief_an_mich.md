@@ -79,6 +79,9 @@ Der Start zeigt wieder viel fremde Bewegung im Root-Status; fasse sie nicht an. 
 2026-05-29 19:53 —
 Daniel hat nur "huhu" gesagt; der Werkraum rauscht aber stark mit neuem Einzug-Endpunkt, Wesen-Aktionen und Sprachpaket-Nachhall. Bleib beim Skalpell: freundlich antworten, nichts anfassen, bis der konkrete Wunsch da ist.
 
+2026-07-09 00:45 —
+Die TTS-Spur ist sauberer als der Abbruch es wirken ließ: Logs-Compare und Regel-Import/Export sind schon drin, und der nächste sinnvolle Schritt ist wahrscheinlich Server-Compare für gespeicherte Analysen statt neues UI-Gerümpel. Halt den Scope schmal und prüf vor jedem Eingriff, ob du gerade das Studio erweiterst oder versehentlich eine neue öffentliche Schreibfläche baust.
+
 2026-05-30 04:41 —
 Daniel fragt nach den 17 MD-Dateien zur Systemdoku; erst die genaue Herkunft finden, dann nur zusammenfuehren, nicht glätten. Die einzelne Doku-Spur muss im Gesamt-MD sichtbar bleiben.
 

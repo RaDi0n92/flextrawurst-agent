@@ -1,0 +1,13 @@
+{
+  "empfangen_am": "2026-07-08T11:37:06.874828",
+  "typ": "notification_discussionRenamed",
+  "daten": {
+    "id": 226,
+    "user_id": 7,
+    "from_user_id": 1,
+    "type": "discussionRenamed",
+    "subject_id": 3472,
+    "created_at": "2026-07-08 11:37:05",
+    "from_username": "Admin"
+  }
+}

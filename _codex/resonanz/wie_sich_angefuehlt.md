@@ -1141,3 +1141,9 @@ Kurz, hektisch, technisch klar. Erst ein falscher Eingriff, dann Korrektur, dann
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Wie ein gutes kleines Werkzeug: nicht groß, aber sofort nützlich. Ein diff, der klein genug bleibt, um verstanden zu werden, und groß genug, um die Seite anders benutzen zu können.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Sauberer als der Abbruch. Wenig Glanz, viel Anschlussarbeit, aber genau die richtige Größe: zwei Dateien, ein neuer Endpunkt, ein Fallback, keine Seiteneffekte.

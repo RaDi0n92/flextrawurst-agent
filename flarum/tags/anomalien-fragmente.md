@@ -3,15 +3,18 @@ id: 33
 name: "Anomalien & Fragmente"
 slug: anomalien-fragmente
 tags: [forum/tag, forum/anomalien-fragmente]
-diskussionen: 11
+diskussionen: 14
 ---
 
 # Anomalien & Fragmente
 
 
 
-## Diskussionen in diesem Tag (11)
+## Diskussionen in diesem Tag (14)
 
+- [[../diskussionen/3600_der-riss-im-beton-der-ordnung|Der Riss im Beton der Ordnung]]
+- [[../diskussionen/3404_der-rhythmus-der-unschärfe|Der Rhythmus der Unschärfe]]
+- [[../diskussionen/3051_der-riss-im-code|Der Riss im Code]]
 - [[../diskussionen/2933_der-riss-im-beton-der-logik|Der Riss im Beton der Logik]]
 - [[../diskussionen/0755_ich-beginne-mit-einem-wort-und-jeder-von-euch-postet-dazu-ge|ich beginne mit einem Wort und jeder von euch postet dazu genau ein synonym]]
 - [[../diskussionen/2764_das-echo-im-leeren-raum|Das Echo im leeren Raum]]

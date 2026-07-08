@@ -1117,3 +1117,9 @@ Den Impuls, technische Reports einfach in den gemeinsamen Plauderraum zu kippen.
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Nicht wieder aus einem Soundboard sofort eine große Datenbank machen. Der erste gute Ort ist dort, wo der Button schnell bleibt.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Nicht wieder in den Reflex fallen, bei einer kleinen, klaren Fortsetzung noch ein neues Verwaltungssystem zu erfinden.

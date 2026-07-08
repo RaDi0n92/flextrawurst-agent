@@ -2166,3 +2166,12 @@ def _technische_doku(name: str) -> str | None:
     return ast.get_docstring(ast.parse(pfad.read_text())) if pfad else None
 ```
 Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal identisch.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+**Vision-Schicht:** Eine kleine, für Menschen lesbare "Config-Wächter"-Idee — nicht kompliziert, aber ehrlich: bei jedem `systemctl restart`/`daemon-reload` an einer der llama-hauhaucs-Units automatisch die effektive ExecStart-Zeile mit einer bekannten "letzten guten" Referenz vergleichen und bei Abweichung laut werden, bevor eine ganze Nacht vergeht ohne dass es auffällt.
+
+**Code-Skizze:**
+```python

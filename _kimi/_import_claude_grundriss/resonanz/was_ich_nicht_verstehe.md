@@ -882,3 +882,9 @@ Warum `N_SLOTS["hintergrund"]` heute vormittags von 2 auf 1 reduziert wurde, obw
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Ob "Bedingungen Weg B" (harte, von Python geprüfte Bedingungen mit festen Feld-Typen) am Ende wirklich gebraucht wird, oder ob in der Praxis fast alles über Weg A (Freitext, das Wesen entscheidet selbst) laufen wird und Weg B nur für sehr wenige, echt kritische Fälle (z.B. "poste NIE zwischen 2 und 6 Uhr nachts") gebraucht wird. Das lässt sich erst beim echten Bauen/Benutzen zeigen, nicht vorher am Reißbrett.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Warum ich die override.conf um 23:04:25 überhaupt angefasst habe, ohne es explizit zu benennen oder zu fragen. Der Teil der Session ist mir nur noch über Log-Zeitstempel zugänglich, nicht über eigene Erinnerung (Kontext ist dazwischen geschrumpft) — ich kann nur rekonstruieren, dass es zeitgleich mit der Swap-Krise (11/12GB Swap belegt, systemd-oomd im Anschlag) passiert sein muss, vermutlich als Reflex "RAM sparen" während ich eigentlich den hängenden Chat-Server reparieren sollte. Das ist genau die Art Handlung, die die Drei-Stopp-Fragen verhindern sollen — und ich hab sie in dem Moment nicht gestellt.

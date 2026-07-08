@@ -1128,3 +1128,9 @@ Ein sauber isolierter A/B-Test und eine Liste aller aktiven Autoload-Pfade, die 
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Browser-Test mit echter visueller Automation fehlt, weil lokal weder Playwright noch jsdom installiert waren. Funktional geprüft wurden JS-Syntax, Python-Compile, `/voices`, `/speak`, Service-Status und HTML-Auslieferung.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Live-Service-Neustart und echter HTTP-Endpunkt-Test sind offen. Die Code-Verifikation war: `python3 -m py_compile`, `node --check` auf dem extrahierten Script, `graphify update .` und ein direkter Modul-Test von `_compare_log_analyses()`.

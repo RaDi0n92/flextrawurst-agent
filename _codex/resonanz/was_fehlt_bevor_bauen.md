@@ -1149,3 +1149,9 @@ Ein isolierter Testlauf mit nur einem Modell im Speicher. Erst dann sind Qwen un
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Für diese Ausbaustufe fehlt nichts Akutes. Für serverseitige Kategorien fehlt eine kleine, geschützte Persistenzentscheidung.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Für den nächsten konkreten Schritt fehlt nur Daniels Entscheidung, ob der laufende TTS-Service dafür neu gestartet werden darf. Code-seitig ist der Server-Compare vorbereitet.

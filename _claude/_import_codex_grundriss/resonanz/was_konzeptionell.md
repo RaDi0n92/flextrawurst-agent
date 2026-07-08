@@ -1186,3 +1186,9 @@ Technisch ist das Thema nicht "30B ist zu groß", sondern "Modellwechsel und Hin
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Eine Stimme ist hier keine kosmetische Option. Sie ist eine Aktivierung: auswählen, dann bewusst aktivieren, dann spricht die Seite mit dieser Stimme. Das passt besser zur vorhandenen Werkraum-Logik als ein still wechselnder Select-Wert.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Der Compare gehört eigentlich dorthin, wo die gespeicherten Analysen leben. Nicht weil der Browservergleich falsch wäre, sondern weil gespeicherte Analysen auf Dauer mehr sein sollen als momentane UI-Objekte.

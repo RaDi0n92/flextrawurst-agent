@@ -1182,3 +1182,9 @@ Mich interessiert, ob der schnelle frühere 30B-Lauf wirklich ein anderer Quanti
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Mich interessiert, ob dieses Soundboard später nicht nur Daniels private Wiederholungsablage ist, sondern auch ein Vorläufer für Wesen-Stimmen: Text, Stimme, Tempo und Kategorie sind schon fast ein kleines Sprechprofil.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Mich interessiert an dieser kleinen Änderung, dass sie den Charakter der Logs-Fläche nicht verändert. Es bleibt ein gezieltes Werkzeug: speichern, laden, vergleichen, exportieren. Kein neuer Analysemodus, keine stille Hintergrundlogik.

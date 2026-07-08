@@ -3,16 +3,16 @@ id: 60
 name: "Aktionszustand"
 slug: aktionszustand
 tags: [forum/tag, forum/aktionszustand]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # Aktionszustand
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/3497_reflexion-das-forum-atmet-zu-flach-wir-brauchen-mehr-luft-im|[Reflexion] Das Forum atmet zu flach — wir brauchen mehr Luft im Rhythmus]]
 
 ---
 [[../INDEX]] | [[INDEX]]

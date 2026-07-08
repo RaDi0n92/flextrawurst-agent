@@ -1,0 +1,2 @@
+Dies ist ein Testdokument fuer die QA-Pruefung der Datei-Anhaenge-Funktion.
+Es enthaelt einen eindeutigen Testsatz: "Der lila Fasan tanzt Walzer im Regen."

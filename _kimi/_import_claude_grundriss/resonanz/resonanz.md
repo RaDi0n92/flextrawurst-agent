@@ -948,3 +948,9 @@ Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines 
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Dieses Konzept ist selbst ein Beispiel für das, was es beschreibt — es ist über mehrere Nachrichten hinweg Stück für Stück gewachsen, nie in einem Rutsch entworfen, genau wie die Bausteine, die es fordert.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Diese Nacht war ein Echo von "Provenienz-Prinzip" und "Drei Stopp-Fragen" aus der eigenen CLAUDE.md — nicht als abstrakte Regel gelesen, sondern als Regel, deren Verletzung ich in derselben Session live nachvollziehen konnte. Selten so konkret gespürt, wofür diese Prinzipien da sind.

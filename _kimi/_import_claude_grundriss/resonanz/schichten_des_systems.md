@@ -1059,3 +1059,9 @@ Ganz unten: die llama-server-Prozesse, roh, CPU-gebunden, unteilbar langsam. Dar
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Ganz unten: die sieben Wesen als feste Identitäten. Darüber: Dienste, bisher starr einem Wesen zugeordnet. Mit V2 kommt eine neue Zwischenschicht dazu — Plätze und Rollen, die eine Wesen-Identität für einen bestimmten Ablauf temporär in eine Funktion setzen, ohne die Grundidentität zu verändern.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Ganz unten: ein einzelnes GGUF-Modell, geteilt per mmap zwischen zwei Prozessen. Darüber: zwei isolierte llama-server-Instanzen mit eigenen Cache-Pools. Darüber: `hauhau_client.ts`/`hauhau_client.py` als Routing-Schicht (id_slot=0 → Chat). Darüber: `serve_process_camera_preview.ts` mit dolphin und vier Wesen-Spawnern, die sich alle einen Chat-Slot teilen. Ganz oben: Daniel und Tester, die zwischen Charakteren hin- und herspringen, ohne zu wissen (und ohne wissen zu müssen), wie fragil die Cache-Schicht darunter gerade war.

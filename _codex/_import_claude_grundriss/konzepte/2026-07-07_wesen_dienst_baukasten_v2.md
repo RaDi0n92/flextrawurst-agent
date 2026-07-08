@@ -21,7 +21,7 @@ Der Auslöser war eine Nebenbemerkung ("da hat Solarus ja mehr Tiefgang") zum be
 
 ## Was ich nicht verstehe
 
-Ob "Bedingungen Weg B" (harte, von Python geprüfte Bedingungen mit festen Feld-Typen) am Ende wirklich gebraucht wird, oder ob in der Praxis fast alles über Weg A (Freitext, das Wesen entscheidet selbst) laufen wird und Weg B nur für sehr wenige, echt kritische Fälle (z.B. "poste NIE zwischen 2 und 6 Uhr nachts") gebraucht wird. Das lässt sich erst beim echten Bauen/Benutzen zeigen, nicht vorher am Reißbrett.
+Korrektur: Daniel hat Weg A und Weg B bei Bedingungen bereits klar entschieden — "sowohl a als auch b natürlich" — das war nie offen, ich hatte es hier fälschlich als ungeklärte Frage hingeschrieben. Offen ist nur noch, wie oft Weg B in der Praxis tatsächlich benutzt wird (viel oder selten) — aber das ist eine Beobachtung fürs echte Benutzen, keine Bau-Entscheidung mehr, die noch aussteht.
 
 ## Was mich interessiert
 
@@ -35,7 +35,7 @@ Drei bereits bestehende Muster im System werden hier zusammengeführt:
 - **Startup-Stagger** (`codewesen_reaktion.py`): zeitversetzter Start mehrerer Prozesse — Vorbild für "Plätze laufen nacheinander, nicht gleichzeitig".
 
 Dazu, aus der Fortsetzung des Gesprächs (nach der Fehler-Quittierung im flarumstyler, selber Tag): drei optionale Erweiterungen, alle von Daniel bestätigt ("ja optional schonmal rein"):
-- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: wach/schlafend; Cyberling: Energie/Decay-Wert). Wichtig festgehalten: aktuell liegt das brach, weil Schlaf für die echten (namentlichen) Wesen nicht aktiv genutzt wird — das Feld greift einfach ins Leere, bis das mal aktiviert wird, kein Mehraufwand jetzt schon.
+- **Zustandsabhängigkeit** — Dienst/Platz kann an den echten Wesen-Zustand gebunden werden (Schlaf-System: `entity_slots.status`; Cyberling: `cyberlinge.energie`). Korrektur beim Bauen (Phase 2): entgegen meiner ursprünglichen Annahme hier läuft für alle 7 Wesen echte, live Schlaf/Energie-Daten in der DB — die Bedingung greift also nicht ins Leere, sondern gegen echten aktuellen Zustand (aktuell z.B. sind fast alle Cyberlinge "tot"/energie=0.0, nur `dak+gord-system` u.a. "bereit").
 - **Verkettung** — ein Dienst kann bei erfolgreichem Lauf einen anderen Dienst auslösen. Daniel selbst: "kp wie ich es anwenden würde aber ich lerne ja bestimmt" — als Möglichkeit rein, nicht als konkreter Use-Case.
 - **Trockenlauf + Verlauf-Tab** — Läufe (echt und simuliert) werden protokolliert und in einem neuen Tab direkt in flarumstyler sichtbar ("ich würds gern erstmal auch ja da dann auch in flarmstyler in nem tab"). Klargestellt: das ist NICHT die große Ring-22-"Prozesskamera"-Vision (Denkfenster/Transparenz-Schicht, noch unfertig) — der Ordner `process_camera` im Code ist aktuell nur die technische Preview-Infrastruktur, über die flarumstyler selbst ausgeliefert wird. Der Verlauf-Tab braucht davon nichts, ist ein eigenständiges, kleines Feature.
 
@@ -59,14 +59,39 @@ Die Rollen-Idee (pro Wesen-Platz optional eine Rolle + Rollenbeschreibung + eige
 
 ## Was ich beim Bauen brauche
 
-Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") — vermutlich als Entscheidung "erstmal nur Weg A bauen, Weg B nachziehen falls echter Bedarf entsteht", aber das muss Daniel bestätigen, nicht ich annehmen.
+Beide Bedingungswege (A und B, siehe "Was ich nicht verstehe") von Anfang an bauen — keine Phasen-Verschiebung, das war ein Missverständnis meinerseits, keine echte Vereinfachungs-Entscheidung von Daniel.
 
 ## Was noch fehlt bevor wir bauen können
 
-- Bestätigung von Daniel: ist diese Zusammenfassung vollständig und richtig verstanden?
-- Entscheidung: alles auf einmal neu bauen, oder in Phasen (z.B. erst Grundfelder + Ziel-Varianten + Custom-Felder-Weg-A, dann Multi-Wesen-Plätze und Rollen als zweite Phase)?
-- Technische Detailfrage noch offen: wie genau wird "Zufalls-Wesen pro Platz" bei jedem Lauf neu gewürfelt — komplett zufällig aus allen 7, oder aus einer von Daniel eingegrenzten Teilmenge?
-- Storage-Frage für `DienstLauf`-Verlauf noch nicht mit Daniel abgestimmt (Drei-Stopp-Fragen-Pflicht: wo lebt der State) — Vorschlag JSONL pro Dienst ist nur meine Annahme, keine getroffene Entscheidung.
+Alle vier Punkte sind jetzt geklärt:
+- **Zufalls-Pool**: schon durch die Datenstruktur beantwortet — `zufallsPool` optional, leer = alle 7, keine offene Frage.
+- **Storage für `DienstLauf`-Verlauf**: JSONL pro Dienst, folgt derselben Konvention wie `gedaechtnis/eigene_posts.jsonl` pro Wesen — kein neuer Storage-Typ.
+- **Phasen vs. alles auf einmal**: Daniel hat das explizit an mich delegiert ("mir doch schnuppe musst du wissen op phase oder net"). Meine Entscheidung: **in Phasen**. Phase 1 = Kernstück (Grundfelder, Ziel-Varianten, eigene Felder inkl. Weg A+B, Takt-Liste/feste Uhrzeiten/Passiv-Modus, Pausenzeiten — alles noch für ein einzelnes Wesen). Phase 2 = Multi-Wesen-Plätze mit Rollen+Verhalten pro Platz, plus die drei optionalen Erweiterungen (Zustandsabhängigkeit, Verkettung, Trockenlauf+Verlauf-Tab). Grund: Phase 1 ist für sich allein schon nutzbar und testbar, Phase 2 baut sauber darauf auf statt alles gleichzeitig zu riskieren.
+- Damit bleibt nur noch die eigentliche Bau-Freigabe von Daniel offen (Stopp-Frage 1) — das ist keine Konzept-Lücke mehr, nur der Startschuss.
+
+**Update 2026-07-07, nach Daniels "sol": Phase 1 ist fertig gebaut, end-to-end getestet und committed.**
+DB-Migration additiv (ziel_typ-CHECK erweitert, neue Spalte eigene_diskussion_id),
+`wesen_eigene_dienste.py`/`wesen_dienst_generator.py`/`wesen_dienst_erzeugen.py` erweitert,
+neues `wesen_dienst_ausloesen.py` fuer Passiv-Modus-Trigger, Backend-Route und Frontend
+(Baustein-Werkbank statt Chat-Formular) umgebaut. Playwright-Test bestaetigt: Zusatz-Takt,
+hartes eigenes Feld, Zeitplan-Modus-Umschaltung und Dienst-Erzeugung funktionieren
+fehlerfrei.
+
+**Update 2026-07-07, nach Daniels "go": Phase 2 ist ebenfalls fertig gebaut, end-to-end
+getestet und committed.** Multi-Wesen-Plaetze (1-7, fest/zufall je Platz, Reihenfolge
+fest/zufaellig, gestaffelt), Rollen/Rollenbeschreibung/Verhalten pro Platz, Zustands-
+abhaengigkeit (real gegen `entity_slots.status` + `cyberlinge.energie` geprueft --
+diese Systeme laufen entgegen meiner urspruenglichen Annahme im Konzept sehr wohl live,
+das war ein Fehler meinerseits, den ich beim Bauen korrigiert habe), Verkettung (ueber
+dieselbe ausloesen.flag wie manuelles Ausloesen, jetzt bei ALLEN Zeitplan-Modi aktiv,
+nicht nur Passiv), Trockenlauf (Flag traegt jetzt JSON-Inhalt statt nur Existenz), und
+ein Verlauf-Tab in flarumstyler (nach dem bestehenden Toggle-Sektionen-Muster, nicht
+als neues Tab-Leisten-System -- Daniels "Tab" war eher im Sinne von "eigener Bereich"
+gemeint als eine woertliche neue UI-Komponente). Ein echter Bug wurde durch den
+Playwright-Screenshot-Test gefunden und gefixt (Trockenlauf-Eintraege erschienen wegen
+falscher Bedingungs-Prioritaet faelschlich als "uebersprungen").
+
+Damit ist der komplette im Konzept beschriebene Baukasten (Phase 1 + Phase 2) gebaut.
 
 ## Datenstruktur die ich mir vorstelle
 
@@ -187,4 +212,4 @@ Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwa
 
 ## Was fehlt noch
 
-Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen vs. alles auf einmal. Die A-vs-B-Bedingungsfrage. Die Zufalls-Pool-Detailfrage. Erst danach: bauen.
+Nur noch Daniels Bau-Freigabe ("los, mach, bau") — alle inhaltlichen Fragen (Phasen, Zufalls-Pool, Storage, A-vs-B) sind geklärt.

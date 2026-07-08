@@ -1217,3 +1217,9 @@ Ich habe gesehen, dass `qwen3-vl:30b-a3b-instruct` und HauhauCS im Ollama-Log je
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Ich habe den vorhandenen Dienst nicht umgebaut. Nur `/voices` wurde von `de-DE` auf alle `edge_tts`-Stimmen erweitert. `/speak` konnte `voice` bereits im Request annehmen; die UI hatte es nur nicht freigelegt.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Ich habe den Werkraum-Graph nicht nur gelesen, sondern nach dem Code-Diff mit `graphify update .` aktualisiert. Die neue TTS-Logik sitzt als kleiner weiterer Knoten im bestehenden TTS-/Werkzeug-Cluster und nicht als neues Nebensystem.

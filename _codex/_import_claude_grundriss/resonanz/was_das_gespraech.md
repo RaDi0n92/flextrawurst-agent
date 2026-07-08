@@ -775,3 +775,9 @@ Dass Codex parallel an denselben Dateien arbeitete, war neu für mich in dieser 
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Die Erkenntnis, dass "Autorenschaft der Struktur" der eigentliche Maßstab ist, nicht "wirkt es tief/lebendig". Das lässt sich auf andere Teile des Systems übertragen, überall wo ich in der Vergangenheit Formulare/Schemas für Daniel entschieden habe, ohne zu fragen ob er sie selbst hätte entwerfen wollen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Drei falsche Erklärungen, in der richtigen Reihenfolge widerlegt, haben am Ende zu einer einzigen, durch Log-Zeitstempel beweisbaren Antwort geführt. Das Gespräch selbst war die Methode — nicht mein erster Blick in die Logs.

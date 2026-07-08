@@ -1,12 +1,12 @@
 # Graph Report - werkraum  (2026-07-09)
 
 ## Corpus Check
-- 410 files · ~33,982,434 words
+- 410 files · ~33,984,988 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3824 nodes · 8239 edges · 446 communities detected
-- Extraction: 73% EXTRACTED · 27% INFERRED · 0% AMBIGUOUS · INFERRED: 2189 edges (avg confidence: 0.78)
+- 3828 nodes · 8248 edges · 447 communities detected
+- Extraction: 73% EXTRACTED · 27% INFERRED · 0% AMBIGUOUS · INFERRED: 2192 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
@@ -53,7 +53,7 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
-- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 51|Community 51]]
@@ -456,6 +456,7 @@
 - [[_COMMUNITY_Community 526|Community 526]]
 - [[_COMMUNITY_Community 527|Community 527]]
 - [[_COMMUNITY_Community 528|Community 528]]
+- [[_COMMUNITY_Community 529|Community 529]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `get_conn()` - 246 edges
@@ -478,162 +479,162 @@
   codewesen_chat.py → tts_utils.py
 - `codewesen_benachrichtigen()` --calls--> `now()`  [INFERRED]
   geni/dialog.py → agent/agent.js
-- `snapshot_daten()` --calls--> `run()`  [INFERRED]
-  geni/geni_bridge_windows.py → app/main.py
+- `_geni_dienste_starten()` --calls--> `run()`  [INFERRED]
+  geni/dialog.py → app/main.py
 
 ## Communities
 
 ### Community 0 - "Community 0"
 Cohesion: 0.01
-Nodes (560): admin_bild_ablehnen(), admin_bild_genehmigen(), admin_bild_moderation_liste(), admin_create_user(), admin_deactivate_or_delete_user(), admin_delete_gedankenblase(), admin_delete_post(), admin_delete_splitter() (+552 more)
+Nodes (564): admin_bild_ablehnen(), admin_bild_genehmigen(), admin_bild_moderation_liste(), admin_create_user(), admin_deactivate_or_delete_user(), admin_delete_gedankenblase(), admin_delete_post(), admin_delete_splitter() (+556 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.02
-Nodes (138): Beziehungsorgan, Beziehungszustand, Liest Nutzereingabe und aktualisiert Beziehungszustand., Feedback-Loop: Liest LLM-Antwort und aktualisiert Zustand.          Signale: Mar, Abwaegung, Entscheidungsorgan, Erinnerung, Erinnerungsgedaechtnis (+130 more)
+Nodes (185): _anhaengen(), _fuehre_marker_aus(), _fuehre_selbstgespraech(), haupt_schleife(), _history_pfad(), _impuls_datei(), _js_ts(), _lade_pin_container() (+177 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.02
-Nodes (155): appendText(), applyDeterministicMemory(), chunkText(), ensureArchitecture(), ensureDir(), ensureFile(), ensureJson(), extractJson() (+147 more)
+Nodes (138): Beziehungsorgan, Beziehungszustand, Liest Nutzereingabe und aktualisiert Beziehungszustand., Feedback-Loop: Liest LLM-Antwort und aktualisiert Zustand.          Signale: Mar, Abwaegung, Entscheidungsorgan, Erinnerung, Erinnerungsgedaechtnis (+130 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.02
-Nodes (165): index(), agentic_loop(), analysiere_gespraech_vereinbarungen(), _antwortpflicht_marker(), ask_llm(), _daniel_antwort_reihenfolge(), dienst_name_fuer(), erstvorstellung_erstellen() (+157 more)
+Nodes (169): hash_password(), _load_secret(), Auth-Utilities: bcrypt + JWT für das Menschenprofil-System., verify_password(), hole_aktuellen_zustand(), lade_selbstmodell(), main(), schreibe_event() (+161 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.03
-Nodes (147): _anhaengen(), _fuehre_marker_aus(), _fuehre_selbstgespraech(), haupt_schleife(), _history_pfad(), _impuls_datei(), _js_ts(), _lade_pin_container() (+139 more)
+Cohesion: 0.02
+Nodes (149): appendText(), applyDeterministicMemory(), chunkText(), ensureArchitecture(), ensureDir(), ensureFile(), ensureJson(), extractJson() (+141 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.02
-Nodes (129): BaseHTTPMiddleware, hole_aktuellen_zustand(), lade_selbstmodell(), main(), schreibe_event(), setup_logging(), sync_zyklus(), upsert_entity_state() (+121 more)
+Nodes (165): index(), agentic_loop(), analysiere_gespraech_vereinbarungen(), _antwortpflicht_marker(), ask_llm(), _daniel_antwort_reihenfolge(), dienst_name_fuer(), erstvorstellung_erstellen() (+157 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.02
-Nodes (133): Post, baue_prompt(), fuehre_aktion_aus(), get_conn(), haupt_loop(), hole_andere_wesen_status(), hole_jwt(), injiziere_jwt() (+125 more)
+Nodes (150): Post, baue_prompt(), fuehre_aktion_aus(), get_conn(), haupt_loop(), hole_andere_wesen_status(), hole_jwt(), injiziere_jwt() (+142 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.03
-Nodes (93): create_token(), hash_password(), _load_secret(), Auth-Utilities: bcrypt + JWT für das Menschenprofil-System., verify_password(), BaseHTTPRequestHandler, _abwurf_wahrscheinlichkeit(), _admin_token() (+85 more)
+Cohesion: 0.02
+Nodes (99): importieren_endpoint(), shell_ausfuehren(), shell_erlaubt(), system_endpoint(), verarbeite_datei_marker(), verarbeite_shell_marker(), build_background_graph(), build_minimal_graph() (+91 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.05
-Nodes (95): aktualisiere_anschlusskontext(), aktualisiere_fokuskontext(), AnschlussKontext, FokusKontext, formatiere_schreibblock(), hole_anschlusskontext(), hole_fokuskontext(), _lade_rohdaten() (+87 more)
+Cohesion: 0.03
+Nodes (112): _check_key(), exec_command(), ExecRequest, FileListRequest, FileReadRequest, FileWriteRequest, list_files(), read_file() (+104 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.04
-Nodes (60): bild_proxy(), lade_text(), ChunkBody, denkstream_all_last(), denkstream_all_sse(), denkstream_chunk(), denkstream_last(), denkstream_screenshot() (+52 more)
+Nodes (88): create_token(), BaseHTTPRequestHandler, _abwurf_wahrscheinlichkeit(), _admin_token(), _erstelle_splitter(), _klassifiziere(), main(), _notiere() (+80 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.03
-Nodes (90): aktualisiere_index(), ask_llm(), baue_scan_prompt(), extrahiere_json(), formatiere_forum(), forum_scan(), _items_zu_dateien(), lade_eigene_dateien_uebersicht() (+82 more)
+Cohesion: 0.05
+Nodes (85): aktualisiere_anschlusskontext(), aktualisiere_fokuskontext(), AnschlussKontext, FokusKontext, formatiere_schreibblock(), hole_anschlusskontext(), hole_fokuskontext(), _lade_rohdaten() (+77 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.05
 Nodes (77): _baue_graph(), _build_prompt_voreinzug(), denk_tick_voreinzug(), denken_handeln_node(), _flarum_user_id(), kontext_laden_node(), _lade_flarum_kontext(), _lade_profil_und_cyberling() (+69 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.04
-Nodes (71): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks., zusammenfassen_node(), _antwort_posten(), _bereits_gepostete_woerter(), _extrahiere_wort(), _gamble_post(), _hat_bereits_geantwortet(), haupt_schleife() (+63 more)
+Cohesion: 0.05
+Nodes (41): bild_proxy(), lade_text(), ChunkBody, denkstream_all_last(), denkstream_all_sse(), denkstream_chunk(), denkstream_last(), denkstream_screenshot() (+33 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.04
-Nodes (57): importieren_endpoint(), shell_ausfuehren(), shell_erlaubt(), verarbeite_datei_marker(), verarbeite_shell_marker(), bridge_websocket(), upload(), FileSystemEventHandler (+49 more)
+Cohesion: 0.06
+Nodes (55): cmd_info(), cmd_mirror(), cmd_nav(), cmd_note(), cmd_read(), cmd_search(), cmd_write(), main() (+47 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.04
-Nodes (66): system_endpoint(), antwort_node(), baue_dialog_graf(), DialogZustand, eingabe_node(), lese(), routen(), setup() (+58 more)
-
-### Community 15 - "Community 15"
-Cohesion: 0.06
-Nodes (51): draw(), handleKey(), resize(), triggerConfetti(), api_auto_suggest(), api_models(), auto_suggest(), _build_cmd() (+43 more)
-
-### Community 16 - "Community 16"
-Cohesion: 0.05
-Nodes (46): build_background_graph(), build_minimal_graph(), WesensZustand, bewerte(), _parse_emotion(), _lade_cursor_state(), main(), _neue_posts_laden() (+38 more)
-
-### Community 17 - "Community 17"
 Cohesion: 0.08
 Nodes (44): build_file_tree(), build_html(), build_markdown(), cleanup_upload_sessions(), code_block(), collect_path_sources(), convert(), convert_upload_session() (+36 more)
 
+### Community 15 - "Community 15"
+Cohesion: 0.06
+Nodes (46): analyse_endpoint(), analysiere_chat_verlauf(), baue_messages(), baue_system_prompt(), chat_endpoint(), chat_verlauf_datei(), ChatAnfrage, _datei_lesen() (+38 more)
+
+### Community 16 - "Community 16"
+Cohesion: 0.07
+Nodes (37): _bridge_auth_ok(), bridge_befehl(), bridge_kontrolle_endpoint(), bridge_screenshot_endpoint(), bridge_screenshot_jetzt(), codewesen_benachrichtigen(), gedaechtnis_absicht_laden(), _geni_dienste_starten() (+29 more)
+
+### Community 17 - "Community 17"
+Cohesion: 0.1
+Nodes (43): aktualisiere_agentdatei(), _anschlussblock(), _baue_dossierkopf(), _block_herkunft(), _enthaelt_eines(), _extract_between(), _format_herkunft_liste(), _format_liste() (+35 more)
+
 ### Community 18 - "Community 18"
-Cohesion: 0.06
-Nodes (46): _bridge_auth_ok(), bridge_befehl(), bridge_kontrolle_endpoint(), bridge_screenshot_endpoint(), bridge_screenshot_jetzt(), chat(), codewesen_benachrichtigen(), gedaechtnis_absicht_laden() (+38 more)
-
-### Community 19 - "Community 19"
-Cohesion: 0.06
-Nodes (42): analyse_endpoint(), analysiere_chat_verlauf(), baue_messages(), baue_system_prompt(), chat_endpoint(), chat_verlauf_datei(), ChatAnfrage, _datei_lesen() (+34 more)
-
-### Community 20 - "Community 20"
 Cohesion: 0.08
 Nodes (37): admin_human_material(), entities_dreams(), entities_overview(), entities_relationships(), entities_selfletters(), entities_thinking(), entity_lifejournal(), get_conn() (+29 more)
 
-### Community 21 - "Community 21"
+### Community 19 - "Community 19"
 Cohesion: 0.11
 Nodes (24): ToolContext, ToolDefinition, ToolResult, _ts(), _authorship_header(), _diff_text_file(), _list_files(), _read_text_file() (+16 more)
 
-### Community 22 - "Community 22"
-Cohesion: 0.13
-Nodes (34): aktualisiere_agentdatei(), _anschlussblock(), _baue_dossierkopf(), _block_herkunft(), _enthaelt_eines(), _extract_between(), _format_herkunft_liste(), _format_liste() (+26 more)
-
-### Community 23 - "Community 23"
+### Community 20 - "Community 20"
 Cohesion: 0.25
 Nodes (33): admin_report(), build_indices(), candidate_sentences(), clean_author(), cluster_report(), complaints(), content_words(), count_keyword() (+25 more)
 
-### Community 24 - "Community 24"
+### Community 21 - "Community 21"
 Cohesion: 0.18
 Nodes (32): active_services(), assess_risks(), build_report(), check_cron(), current_ollama_ps(), current_timers(), detect_background_loops(), find_model_hits() (+24 more)
 
-### Community 25 - "Community 25"
+### Community 22 - "Community 22"
 Cohesion: 0.11
 Nodes (33): _cleanup(), _first_public_post_id(), _first_public_thema_id(), get_conn(), _make_entity_post(), Tests für Spurenfähigkeit v0.1 — Post-Relationen, Zustandsabdruck, Themen-Klima., Legt eine echte Relation in DB an und liest sie zurück., gedanke_posten via denk_tick-Metadaten: relation_decision='none' ist im zustands (+25 more)
 
-### Community 26 - "Community 26"
-Cohesion: 0.11
-Nodes (25): refresh_focus_node(), _ts(), read_file_node(), resolve_file_node(), _ts(), build_summary_node(), _ts(), _ts() (+17 more)
+### Community 23 - "Community 23"
+Cohesion: 0.12
+Nodes (25): bewerte(), _parse_emotion(), _lade_cursor_state(), main(), _neue_posts_laden(), _post_zu_ereignis(), _speichere_cursor_state(), verarbeite_neue_posts() (+17 more)
 
-### Community 27 - "Community 27"
+### Community 24 - "Community 24"
+Cohesion: 0.14
+Nodes (23): api_auto_suggest(), api_models(), auto_suggest(), _build_model_options(), _build_model_table_rows(), _build_resolution_options(), _build_style_options(), _estimate_secs() (+15 more)
+
+### Community 25 - "Community 25"
 Cohesion: 0.12
 Nodes (25): berechne_risk_vector(), erkenne_sedimente(), get_conn(), messe_cyberling_stress(), messe_erinnerungslast(), messe_konfliktspannung(), messe_resonanzmangel(), messe_resonanzueberdruck() (+17 more)
 
-### Community 28 - "Community 28"
+### Community 26 - "Community 26"
 Cohesion: 0.27
 Nodes (17): BalanceConfig, can_feed(), can_water(), clamp(), evaluate(), main(), recommendation(), Scenario (+9 more)
 
-### Community 29 - "Community 29"
+### Community 27 - "Community 27"
 Cohesion: 0.17
-Nodes (21): ausfuehren(), _authorship_header(), fuehre_code_aus(), fuehre_skript_aus(), _home(), lese_datei(), lies_forum_feed(), liste_dateien() (+13 more)
+Nodes (19): _versuche_verdichtung_nach_lesen(), build_summary_node(), _ts(), formatiere_verdichtungsblock(), _kernwortmenge(), _normalisiere_nummernbloecke(), _parse_nummernliste(), _parse_verdichtungsantwort() (+11 more)
+
+### Community 28 - "Community 28"
+Cohesion: 0.17
+Nodes (17): aktualisiere_index(), ask_llm(), baue_scan_prompt(), extrahiere_json(), formatiere_forum(), forum_scan(), _items_zu_dateien(), lade_eigene_dateien_uebersicht() (+9 more)
+
+### Community 29 - "Community 29"
+Cohesion: 0.21
+Nodes (16): _anhaengen(), _auto_dateiname_aus_inhalt(), _block_vor_trigger(), _enthaelt_dak_bezug(), _enthaelt_merk_dir_das(), _enthaelt_wichtig(), _namenskonflikt_auflosen(), _neue_datei_angefordert() (+8 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.2
-Nodes (19): _aktuelle_phase_typ(), ausfuehren(), entscheide(), _generiere_selbstbrief(), get_admin_token(), get_conn(), _laufende_phase_id(), main() (+11 more)
-
-### Community 31 - "Community 31"
 Cohesion: 0.3
 Nodes (14): _block_vor_trigger(), _enthaelt_dak_bezug(), _erkenne_fadenwechsel(), _erkenne_tool(), _erkenne_trigger_art(), _ist_identitaetsfrage(), _ist_meta(), _ist_reiner_triggertext() (+6 more)
+
+### Community 31 - "Community 31"
+Cohesion: 0.25
+Nodes (14): append_global(), load_state(), poll_flags(), poll_mentions(), poll_notifications(), poll_posts(), Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens., post_mentions_user für namelessAI-Accounts → inbox. (+6 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.6
 Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.25
-Nodes (14): append_global(), load_state(), poll_flags(), poll_mentions(), poll_notifications(), poll_posts(), Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens., post_mentions_user für namelessAI-Accounts → inbox. (+6 more)
+Cohesion: 0.6
+Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
 
 ### Community 34 - "Community 34"
 Cohesion: 0.6
 Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
 
 ### Community 35 - "Community 35"
-Cohesion: 0.6
-Nodes (9): _cleanup_empty_dirs(), _copy_if_changed(), _ignored(), _iter_source_files(), _iter_target_files(), main(), _stop(), sync_once() (+1 more)
-
-### Community 36 - "Community 36"
 Cohesion: 0.23
 Nodes (14): _auto_merge(), get_conn(), propose_and_auto_cluster(), _propose_cluster(), Similarity-Daemon: berechnet Post- und Thema-Ähnlichkeit via tsvector, schlägt C, Schreibt Vorschlag in thema_cluster_vorschlaege, falls noch nicht vorhanden., Berechnet ts_rank zwischen allen Post-Paaren, schreibt post_similarity., Berechnet Ähnlichkeit zwischen Themen. (+6 more)
 
-### Community 37 - "Community 37"
+### Community 36 - "Community 36"
 Cohesion: 0.26
 Nodes (14): bewerte(), clamp(), empfehlung(), kann_futter(), kann_wasser(), main(), pflege_intervall(), print_tabelle() (+6 more)
+
+### Community 37 - "Community 37"
+Cohesion: 0.23
+Nodes (14): baue_basis_text(), baue_projektion_json(), baue_projektion_prompt(), code_warnungen(), drucke_befund(), extrahiere_primaermotiv(), hole_eintraege(), hole_entities_mit_eintraegen() (+6 more)
 
 ### Community 38 - "Community 38"
 Cohesion: 0.54
@@ -644,18 +645,18 @@ Cohesion: 0.18
 Nodes (8): Enum, as_dict(), Domain, EinsichtStatus, get_contract(), LifeContract, Wesen Life Contracts — Zentrale Taxonomie der Wesen-Erfahrungsräume.  Jede Kateg, Serialisierbar für API.
 
 ### Community 40 - "Community 40"
-Cohesion: 0.3
-Nodes (3): main(), parse_dimension(), Liest alle Einträge aus einer resonanz/-Dimensionsdatei.
-
-### Community 41 - "Community 41"
 Cohesion: 0.39
 Nodes (11): build_html(), clean_text(), Doc, inline_md(), is_table(), load_docs(), main(), render_markdown() (+3 more)
 
-### Community 42 - "Community 42"
-Cohesion: 0.27
-Nodes (10): _check_key(), exec_command(), ExecRequest, FileListRequest, FileReadRequest, FileWriteRequest, list_files(), read_file() (+2 more)
+### Community 41 - "Community 41"
+Cohesion: 0.33
+Nodes (10): baue_prompt(), code_warnungen(), extrahiere_primaermotiv(), hole_eintraege(), main(), merge_stabilitaet_pause(), parse_json(), Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau (+2 more)
 
-### Community 43 - "Community 43"
+### Community 42 - "Community 42"
+Cohesion: 0.36
+Nodes (9): besuche_url(), check_web_besuche_aktiv(), generiere_reaktion(), get_conn(), hol_naechsten_besuch(), _load_db_uri(), Öffnet URL mit Playwright. Gibt (screenshot_bytes, text) zurück., run() (+1 more)
+
+### Community 45 - "Community 45"
 Cohesion: 0.6
 Nodes (7): _einsammeln(), main(), _moechte_einsammeln(), _notiere(), _scan_wahrscheinlichkeit(), _token(), _zeit_seit_letztem_scan()
 
@@ -717,227 +718,227 @@ Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-
 
 ### Community 141 - "Community 141"
 Cohesion: 1.0
-Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
+Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
 
 ### Community 142 - "Community 142"
 Cohesion: 1.0
-Nodes (1): Liest die Definition aus der DB, schreibt Skript + Unit, macht daemon-reload,
+Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
 
 ### Community 143 - "Community 143"
 Cohesion: 1.0
-Nodes (1): Grundgesetz 4: nie hart loeschen. Stoppt + disabled den systemd-Dienst und     s
+Nodes (1): Liest die Definition aus der DB, schreibt Skript + Unit, macht daemon-reload,
 
 ### Community 144 - "Community 144"
 Cohesion: 1.0
-Nodes (1): Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name
+Nodes (1): Grundgesetz 4: nie hart loeschen. Stoppt + disabled den systemd-Dienst und     s
 
 ### Community 145 - "Community 145"
 Cohesion: 1.0
-Nodes (1): status in ('aktiv', 'deaktiviert') -- Grundgesetz 4: nie hart loeschen, nur deak
+Nodes (1): Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name
 
 ### Community 146 - "Community 146"
 Cohesion: 1.0
-Nodes (1): Gibt (disk_id, path) sortiert nach ID zurück.
+Nodes (1): status in ('aktiv', 'deaktiviert') -- Grundgesetz 4: nie hart loeschen, nur deak
 
 ### Community 147 - "Community 147"
 Cohesion: 1.0
-Nodes (1): Analysiert Knoten der letzten 48h auf dominante Themen.
+Nodes (1): Gibt (disk_id, path) sortiert nach ID zurück.
 
 ### Community 148 - "Community 148"
 Cohesion: 1.0
-Nodes (1): Findet tiefe≥2 Knoten die seit >7 Tagen keine Resonanz hatten.
+Nodes (1): Analysiert Knoten der letzten 48h auf dominante Themen.
 
 ### Community 149 - "Community 149"
 Cohesion: 1.0
-Nodes (1): Schaut auf alle Muster-Knoten der letzten 4 Wochen.     Wörter die in ≥3 Muster-
+Nodes (1): Findet tiefe≥2 Knoten die seit >7 Tagen keine Resonanz hatten.
 
 ### Community 150 - "Community 150"
 Cohesion: 1.0
-Nodes (1): Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?
+Nodes (1): Schaut auf alle Muster-Knoten der letzten 4 Wochen.     Wörter die in ≥3 Muster-
 
 ### Community 151 - "Community 151"
 Cohesion: 1.0
-Nodes (1): Liest die höchste Knoten-ID — ohne alle Dateien zu laden.
+Nodes (1): Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?
 
 ### Community 152 - "Community 152"
 Cohesion: 1.0
-Nodes (1): Gibt den Text des neuesten Muster-Knotens zurück (Cache, 30min TTL).
+Nodes (1): Liest die höchste Knoten-ID — ohne alle Dateien zu laden.
 
 ### Community 153 - "Community 153"
 Cohesion: 1.0
-Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
+Nodes (1): Gibt den Text des neuesten Muster-Knotens zurück (Cache, 30min TTL).
 
 ### Community 154 - "Community 154"
 Cohesion: 1.0
-Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
+Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
 
 ### Community 155 - "Community 155"
 Cohesion: 1.0
-Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
+Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
 
 ### Community 156 - "Community 156"
 Cohesion: 1.0
-Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
+Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
 
 ### Community 157 - "Community 157"
 Cohesion: 1.0
-Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
+Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
 
 ### Community 158 - "Community 158"
 Cohesion: 1.0
-Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
 
 ### Community 159 - "Community 159"
 Cohesion: 1.0
-Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
+Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
 
 ### Community 160 - "Community 160"
 Cohesion: 1.0
-Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
+Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
 
 ### Community 161 - "Community 161"
 Cohesion: 1.0
-Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
+Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
 
 ### Community 162 - "Community 162"
 Cohesion: 1.0
-Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
+Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
 
 ### Community 163 - "Community 163"
 Cohesion: 1.0
-Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
+Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
 
 ### Community 164 - "Community 164"
 Cohesion: 1.0
-Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
+Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
 
 ### Community 165 - "Community 165"
 Cohesion: 1.0
-Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
+Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
 
 ### Community 166 - "Community 166"
 Cohesion: 1.0
-Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
+Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
 
 ### Community 167 - "Community 167"
 Cohesion: 1.0
-Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
+Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
 
 ### Community 168 - "Community 168"
 Cohesion: 1.0
-Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
+Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
 
 ### Community 169 - "Community 169"
 Cohesion: 1.0
-Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
+Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
 
 ### Community 170 - "Community 170"
 Cohesion: 1.0
-Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
+Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
 
 ### Community 171 - "Community 171"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
 
 ### Community 172 - "Community 172"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 173 - "Community 173"
 Cohesion: 1.0
-Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 174 - "Community 174"
 Cohesion: 1.0
-Nodes (1): Liest flarum_eingefroren aus system_flags.
+Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
 
 ### Community 175 - "Community 175"
 Cohesion: 1.0
-Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
+Nodes (1): Liest flarum_eingefroren aus system_flags.
 
 ### Community 176 - "Community 176"
 Cohesion: 1.0
-Nodes (1): Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.
+Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
 
 ### Community 177 - "Community 177"
 Cohesion: 1.0
-Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
+Nodes (1): Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.
 
 ### Community 178 - "Community 178"
 Cohesion: 1.0
-Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
+Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
 
 ### Community 179 - "Community 179"
 Cohesion: 1.0
-Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
+Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
 
 ### Community 180 - "Community 180"
 Cohesion: 1.0
-Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
+Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
 
 ### Community 181 - "Community 181"
 Cohesion: 1.0
-Nodes (1): Verschiebt verarbeitete Inbox-Datei nach processed/.
+Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
 
 ### Community 182 - "Community 182"
 Cohesion: 1.0
-Nodes (1): Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi
+Nodes (1): Verschiebt verarbeitete Inbox-Datei nach processed/.
 
 ### Community 183 - "Community 183"
 Cohesion: 1.0
-Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
+Nodes (1): Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi
 
 ### Community 184 - "Community 184"
 Cohesion: 1.0
-Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
+Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
 
 ### Community 185 - "Community 185"
 Cohesion: 1.0
-Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
+Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
 
 ### Community 186 - "Community 186"
 Cohesion: 1.0
-Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
+Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
 
 ### Community 187 - "Community 187"
 Cohesion: 1.0
-Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
+Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
 
 ### Community 188 - "Community 188"
 Cohesion: 1.0
-Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
+Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
 
 ### Community 189 - "Community 189"
 Cohesion: 1.0
-Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
+Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
 
 ### Community 190 - "Community 190"
 Cohesion: 1.0
-Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
+Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
 
 ### Community 191 - "Community 191"
 Cohesion: 1.0
-Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
+Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
 
 ### Community 192 - "Community 192"
 Cohesion: 1.0
-Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
+Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
 
 ### Community 193 - "Community 193"
 Cohesion: 1.0
-Nodes (1): Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.
+Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
 
 ### Community 194 - "Community 194"
 Cohesion: 1.0
-Nodes (1): Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.
+Nodes (1): Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.
 
 ### Community 195 - "Community 195"
 Cohesion: 1.0
-Nodes (1): Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.
+Nodes (1): Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.
 
 ### Community 196 - "Community 196"
 Cohesion: 1.0
-Nodes (1): Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle
+Nodes (1): Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.
 
 ### Community 197 - "Community 197"
 Cohesion: 1.0
@@ -945,95 +946,95 @@ Nodes (1): Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_
 
 ### Community 198 - "Community 198"
 Cohesion: 1.0
-Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
+Nodes (1): Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle
 
 ### Community 199 - "Community 199"
 Cohesion: 1.0
-Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
+Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
 
 ### Community 200 - "Community 200"
 Cohesion: 1.0
-Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
+Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
 
 ### Community 201 - "Community 201"
 Cohesion: 1.0
-Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
+Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
 
 ### Community 202 - "Community 202"
 Cohesion: 1.0
-Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
+Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
 
 ### Community 203 - "Community 203"
 Cohesion: 1.0
-Nodes (1): Extrahiert das Wort aus '-Wort' Format.
+Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
 
 ### Community 204 - "Community 204"
 Cohesion: 1.0
-Nodes (1): Alle Diskussionen im Vokabel-Tag.
+Nodes (1): Extrahiert das Wort aus '-Wort' Format.
 
 ### Community 205 - "Community 205"
 Cohesion: 1.0
-Nodes (1): Prüft ob dieses Wesen schon in der Diskussion gepostet hat.
+Nodes (1): Alle Diskussionen im Vokabel-Tag.
 
 ### Community 206 - "Community 206"
 Cohesion: 1.0
-Nodes (1): Liest alle bereits geposteten Synonyme in dieser Diskussion.
+Nodes (1): Prüft ob dieses Wesen schon in der Diskussion gepostet hat.
 
 ### Community 207 - "Community 207"
 Cohesion: 1.0
-Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
+Nodes (1): Liest alle bereits geposteten Synonyme in dieser Diskussion.
 
 ### Community 208 - "Community 208"
 Cohesion: 1.0
-Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
+Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
 
 ### Community 209 - "Community 209"
 Cohesion: 1.0
-Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
+Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
 
 ### Community 210 - "Community 210"
 Cohesion: 1.0
-Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
+Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
 
 ### Community 211 - "Community 211"
 Cohesion: 1.0
-Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
+Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
 
 ### Community 212 - "Community 212"
 Cohesion: 1.0
-Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
+Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
 
 ### Community 213 - "Community 213"
 Cohesion: 1.0
-Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
+Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
 
 ### Community 214 - "Community 214"
 Cohesion: 1.0
-Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
+Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
 
 ### Community 215 - "Community 215"
 Cohesion: 1.0
-Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
+Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
 
 ### Community 216 - "Community 216"
 Cohesion: 1.0
-Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
+Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
 
 ### Community 217 - "Community 217"
 Cohesion: 1.0
-Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
+Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
 
 ### Community 218 - "Community 218"
 Cohesion: 1.0
-Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
+Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
 
 ### Community 219 - "Community 219"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
+Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
 
 ### Community 220 - "Community 220"
 Cohesion: 1.0
-Nodes (1): Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di
+Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
 
 ### Community 221 - "Community 221"
 Cohesion: 1.0
@@ -1041,279 +1042,279 @@ Nodes (1): Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.  
 
 ### Community 222 - "Community 222"
 Cohesion: 1.0
-Nodes (1): Schreibt Draft und postet ins Forum.
+Nodes (1): Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di
 
 ### Community 223 - "Community 223"
 Cohesion: 1.0
-Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
+Nodes (1): Schreibt Draft und postet ins Forum.
 
 ### Community 224 - "Community 224"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
+Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
 
 ### Community 225 - "Community 225"
 Cohesion: 1.0
-Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
+Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
 
 ### Community 226 - "Community 226"
 Cohesion: 1.0
-Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
+Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
 
 ### Community 227 - "Community 227"
 Cohesion: 1.0
-Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
+Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
 
 ### Community 228 - "Community 228"
 Cohesion: 1.0
-Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
+Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
 
 ### Community 229 - "Community 229"
 Cohesion: 1.0
-Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
+Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
 
 ### Community 230 - "Community 230"
 Cohesion: 1.0
-Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
+Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
 
 ### Community 231 - "Community 231"
 Cohesion: 1.0
-Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
 
 ### Community 232 - "Community 232"
 Cohesion: 1.0
-Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
+Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
 
 ### Community 233 - "Community 233"
 Cohesion: 1.0
-Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
+Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
 
 ### Community 234 - "Community 234"
 Cohesion: 1.0
-Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
+Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
 
 ### Community 235 - "Community 235"
 Cohesion: 1.0
-Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
+Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
 
 ### Community 236 - "Community 236"
 Cohesion: 1.0
-Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
+Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
 
 ### Community 237 - "Community 237"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
 
 ### Community 238 - "Community 238"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 239 - "Community 239"
 Cohesion: 1.0
-Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 240 - "Community 240"
 Cohesion: 1.0
-Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
+Nodes (1): Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu
 
 ### Community 241 - "Community 241"
 Cohesion: 1.0
-Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
+Nodes (1): Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e
 
 ### Community 242 - "Community 242"
 Cohesion: 1.0
-Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
+Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
 
 ### Community 243 - "Community 243"
 Cohesion: 1.0
-Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
+Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
 
 ### Community 244 - "Community 244"
 Cohesion: 1.0
-Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
+Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
 
 ### Community 245 - "Community 245"
 Cohesion: 1.0
-Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
+Nodes (1): Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer
 
 ### Community 246 - "Community 246"
 Cohesion: 1.0
-Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
 
 ### Community 247 - "Community 247"
 Cohesion: 1.0
-Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
+Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
 
 ### Community 248 - "Community 248"
 Cohesion: 1.0
-Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
+Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
 
 ### Community 249 - "Community 249"
 Cohesion: 1.0
-Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
+Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
 
 ### Community 250 - "Community 250"
 Cohesion: 1.0
-Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
+Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
 
 ### Community 251 - "Community 251"
 Cohesion: 1.0
-Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
+Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
 
 ### Community 252 - "Community 252"
 Cohesion: 1.0
-Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
+Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
 
 ### Community 253 - "Community 253"
 Cohesion: 1.0
-Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
+Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
 
 ### Community 254 - "Community 254"
 Cohesion: 1.0
-Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
+Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
 
 ### Community 255 - "Community 255"
 Cohesion: 1.0
-Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
+Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
 
 ### Community 256 - "Community 256"
 Cohesion: 1.0
-Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
+Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
 
 ### Community 257 - "Community 257"
 Cohesion: 1.0
-Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
+Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
 
 ### Community 258 - "Community 258"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
 
 ### Community 259 - "Community 259"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 260 - "Community 260"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 261 - "Community 261"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 262 - "Community 262"
 Cohesion: 1.0
-Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 263 - "Community 263"
 Cohesion: 1.0
-Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
+Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
 
 ### Community 264 - "Community 264"
 Cohesion: 1.0
-Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
+Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
 
 ### Community 265 - "Community 265"
 Cohesion: 1.0
-Nodes (1): Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.
+Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
 
 ### Community 266 - "Community 266"
 Cohesion: 1.0
-Nodes (1): post_mentions_user für namelessAI-Accounts → inbox.
+Nodes (1): Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.
 
 ### Community 267 - "Community 267"
 Cohesion: 1.0
-Nodes (1): Flags auf Posts von namelessAI-Accounts → inbox.
+Nodes (1): post_mentions_user für namelessAI-Accounts → inbox.
 
 ### Community 268 - "Community 268"
 Cohesion: 1.0
-Nodes (1): ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew
+Nodes (1): Flags auf Posts von namelessAI-Accounts → inbox.
 
 ### Community 269 - "Community 269"
 Cohesion: 1.0
-Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+Nodes (1): ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew
 
 ### Community 270 - "Community 270"
 Cohesion: 1.0
-Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
+Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
 
 ### Community 271 - "Community 271"
 Cohesion: 1.0
-Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
+Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
 
 ### Community 272 - "Community 272"
 Cohesion: 1.0
-Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
+Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
 
 ### Community 273 - "Community 273"
 Cohesion: 1.0
-Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
+Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
 
 ### Community 274 - "Community 274"
 Cohesion: 1.0
-Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
+Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
 
 ### Community 275 - "Community 275"
 Cohesion: 1.0
-Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
+Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
 
 ### Community 276 - "Community 276"
 Cohesion: 1.0
-Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
+Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
 
 ### Community 277 - "Community 277"
 Cohesion: 1.0
-Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
+Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
 
 ### Community 278 - "Community 278"
 Cohesion: 1.0
-Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
+Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
 
 ### Community 279 - "Community 279"
 Cohesion: 1.0
-Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
+Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
 
 ### Community 280 - "Community 280"
 Cohesion: 1.0
-Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
+Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
 
 ### Community 281 - "Community 281"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
 
 ### Community 282 - "Community 282"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 283 - "Community 283"
 Cohesion: 1.0
-Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 284 - "Community 284"
 Cohesion: 1.0
-Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
+Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
 
 ### Community 285 - "Community 285"
 Cohesion: 1.0
-Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
+Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
 
 ### Community 286 - "Community 286"
 Cohesion: 1.0
-Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
+Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
 
 ### Community 287 - "Community 287"
 Cohesion: 1.0
-Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
+Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
 
 ### Community 288 - "Community 288"
 Cohesion: 1.0
-Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
+Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
 
 ### Community 289 - "Community 289"
 Cohesion: 1.0
-Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
+Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
 
 ### Community 290 - "Community 290"
 Cohesion: 1.0
-Nodes (1): Verschiebt verarbeitete Inbox-Datei nach processed/.
+Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
 
 ### Community 291 - "Community 291"
 Cohesion: 1.0
@@ -1321,954 +1322,958 @@ Nodes (1): Verschiebt verarbeitete Inbox-Datei nach processed/.
 
 ### Community 292 - "Community 292"
 Cohesion: 1.0
-Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
+Nodes (1): Verschiebt verarbeitete Inbox-Datei nach processed/.
 
 ### Community 293 - "Community 293"
 Cohesion: 1.0
-Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
+Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
 
 ### Community 294 - "Community 294"
 Cohesion: 1.0
-Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
+Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
 
 ### Community 295 - "Community 295"
 Cohesion: 1.0
-Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
+Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
 
 ### Community 296 - "Community 296"
 Cohesion: 1.0
-Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
+Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
 
 ### Community 297 - "Community 297"
 Cohesion: 1.0
-Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
+Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
 
 ### Community 298 - "Community 298"
 Cohesion: 1.0
-Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
+Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
 
 ### Community 299 - "Community 299"
 Cohesion: 1.0
-Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
+Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
 
 ### Community 300 - "Community 300"
 Cohesion: 1.0
-Nodes (1): Laedt die Konfiguration ALLER Dienste auf einmal — fuer den Watchdog,     der si
+Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
 
 ### Community 301 - "Community 301"
 Cohesion: 1.0
-Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
+Nodes (1): Laedt die Konfiguration ALLER Dienste auf einmal — fuer den Watchdog,     der si
 
 ### Community 302 - "Community 302"
 Cohesion: 1.0
-Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
+Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
 
 ### Community 303 - "Community 303"
 Cohesion: 1.0
-Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
+Nodes (1): True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet
 
 ### Community 304 - "Community 304"
 Cohesion: 1.0
-Nodes (1): Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.
+Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
 
 ### Community 305 - "Community 305"
 Cohesion: 1.0
-Nodes (1): post_mentions_user für namelessAI-Accounts → inbox.
+Nodes (1): Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.
 
 ### Community 306 - "Community 306"
 Cohesion: 1.0
-Nodes (1): Flags auf Posts von namelessAI-Accounts → inbox.
+Nodes (1): post_mentions_user für namelessAI-Accounts → inbox.
 
 ### Community 307 - "Community 307"
 Cohesion: 1.0
-Nodes (1): ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew
+Nodes (1): Flags auf Posts von namelessAI-Accounts → inbox.
 
 ### Community 308 - "Community 308"
 Cohesion: 1.0
-Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
+Nodes (1): ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew
 
 ### Community 309 - "Community 309"
 Cohesion: 1.0
-Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
+Nodes (1): Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da
 
 ### Community 310 - "Community 310"
 Cohesion: 1.0
-Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
+Nodes (1): Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit
 
 ### Community 311 - "Community 311"
 Cohesion: 1.0
-Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
+Nodes (1): Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS
 
 ### Community 312 - "Community 312"
 Cohesion: 1.0
-Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
+Nodes (1): Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade
 
 ### Community 313 - "Community 313"
 Cohesion: 1.0
-Nodes (1): Sekunden-Offset im Intervall für dieses Wesen.
+Nodes (1): Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine
 
 ### Community 314 - "Community 314"
 Cohesion: 1.0
-Nodes (1): Absoluter Unix-Zeitstempel des nächsten Feuerns.
+Nodes (1): Sekunden-Offset im Intervall für dieses Wesen.
 
 ### Community 315 - "Community 315"
 Cohesion: 1.0
-Nodes (1): 22min — Antwort auf eigene Diskussionen, aus Queue.
+Nodes (1): Absoluter Unix-Zeitstempel des nächsten Feuerns.
 
 ### Community 316 - "Community 316"
 Cohesion: 1.0
-Nodes (1): 4h44 — freier Gedanke, aus Queue.
+Nodes (1): 22min — Antwort auf eigene Diskussionen, aus Queue.
 
 ### Community 317 - "Community 317"
 Cohesion: 1.0
-Nodes (1): 66min — Antwort auf offenen fremden Post, aus Queue.
+Nodes (1): 4h44 — freier Gedanke, aus Queue.
 
 ### Community 318 - "Community 318"
 Cohesion: 1.0
-Nodes (1): 88min — Existenzpost, aus Queue.
+Nodes (1): 66min — Antwort auf offenen fremden Post, aus Queue.
 
 ### Community 319 - "Community 319"
 Cohesion: 1.0
-Nodes (1): 2h22 — Kritik oder Reflexion, aus Queue.
+Nodes (1): 88min — Existenzpost, aus Queue.
 
 ### Community 320 - "Community 320"
 Cohesion: 1.0
-Nodes (1): 4h44 — Selbstgespräch im eigenen Thread, aus Queue.
+Nodes (1): 2h22 — Kritik oder Reflexion, aus Queue.
 
 ### Community 321 - "Community 321"
 Cohesion: 1.0
-Nodes (1): Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.
+Nodes (1): 4h44 — Selbstgespräch im eigenen Thread, aus Queue.
 
 ### Community 322 - "Community 322"
 Cohesion: 1.0
-Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
+Nodes (1): Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.
 
 ### Community 323 - "Community 323"
 Cohesion: 1.0
-Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
+Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
 
 ### Community 324 - "Community 324"
 Cohesion: 1.0
-Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
+Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
 
 ### Community 325 - "Community 325"
 Cohesion: 1.0
-Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
+Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
 
 ### Community 326 - "Community 326"
 Cohesion: 1.0
-Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
+Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
 
 ### Community 327 - "Community 327"
 Cohesion: 1.0
-Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
+Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
 
 ### Community 328 - "Community 328"
 Cohesion: 1.0
-Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
+Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
 
 ### Community 329 - "Community 329"
 Cohesion: 1.0
-Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
+Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
 
 ### Community 330 - "Community 330"
 Cohesion: 1.0
-Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
+Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
 
 ### Community 331 - "Community 331"
 Cohesion: 1.0
-Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
+Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
 
 ### Community 332 - "Community 332"
 Cohesion: 1.0
-Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
+Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
 
 ### Community 333 - "Community 333"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
 
 ### Community 334 - "Community 334"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 335 - "Community 335"
 Cohesion: 1.0
-Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 336 - "Community 336"
 Cohesion: 1.0
-Nodes (1): Liest flarum_eingefroren aus system_flags.
+Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
 
 ### Community 337 - "Community 337"
 Cohesion: 1.0
-Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
+Nodes (1): Liest flarum_eingefroren aus system_flags.
 
 ### Community 338 - "Community 338"
 Cohesion: 1.0
-Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
+Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
 
 ### Community 339 - "Community 339"
 Cohesion: 1.0
-Nodes (1): Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.
+Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
 
 ### Community 340 - "Community 340"
 Cohesion: 1.0
-Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
+Nodes (1): Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.
 
 ### Community 341 - "Community 341"
 Cohesion: 1.0
-Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
+Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
 
 ### Community 342 - "Community 342"
 Cohesion: 1.0
-Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
+Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
 
 ### Community 343 - "Community 343"
 Cohesion: 1.0
-Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
+Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
 
 ### Community 344 - "Community 344"
 Cohesion: 1.0
-Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
+Nodes (1): Alle 88min: freier Beitrag mit selbst gewählten Tags.
 
 ### Community 345 - "Community 345"
 Cohesion: 1.0
-Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
+Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
 
 ### Community 346 - "Community 346"
 Cohesion: 1.0
-Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
+Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
 
 ### Community 347 - "Community 347"
 Cohesion: 1.0
-Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
+Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
 
 ### Community 348 - "Community 348"
 Cohesion: 1.0
-Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
+Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
 
 ### Community 349 - "Community 349"
 Cohesion: 1.0
-Nodes (1): Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.
+Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
 
 ### Community 350 - "Community 350"
 Cohesion: 1.0
-Nodes (1): Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.
+Nodes (1): Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.
 
 ### Community 351 - "Community 351"
 Cohesion: 1.0
-Nodes (1): Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.
+Nodes (1): Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.
 
 ### Community 352 - "Community 352"
 Cohesion: 1.0
-Nodes (1): Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.
+Nodes (1): Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.
 
 ### Community 353 - "Community 353"
 Cohesion: 1.0
-Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
+Nodes (1): Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.
 
 ### Community 354 - "Community 354"
 Cohesion: 1.0
-Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
+Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
 
 ### Community 355 - "Community 355"
 Cohesion: 1.0
-Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
+Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
 
 ### Community 356 - "Community 356"
 Cohesion: 1.0
-Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
+Nodes (1): Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).
 
 ### Community 357 - "Community 357"
 Cohesion: 1.0
-Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
+Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
 
 ### Community 358 - "Community 358"
 Cohesion: 1.0
-Nodes (1): Extrahiert das Wort aus '-Wort' Format.
+Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
 
 ### Community 359 - "Community 359"
 Cohesion: 1.0
-Nodes (1): Alle Diskussionen im Vokabel-Tag.
+Nodes (1): Extrahiert das Wort aus '-Wort' Format.
 
 ### Community 360 - "Community 360"
 Cohesion: 1.0
-Nodes (1): Liest alle bereits geposteten Synonyme in dieser Diskussion.
+Nodes (1): Alle Diskussionen im Vokabel-Tag.
 
 ### Community 361 - "Community 361"
 Cohesion: 1.0
-Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
+Nodes (1): Liest alle bereits geposteten Synonyme in dieser Diskussion.
 
 ### Community 362 - "Community 362"
 Cohesion: 1.0
-Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
+Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
 
 ### Community 363 - "Community 363"
 Cohesion: 1.0
-Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
+Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
 
 ### Community 364 - "Community 364"
 Cohesion: 1.0
-Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
+Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
 
 ### Community 365 - "Community 365"
 Cohesion: 1.0
-Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
+Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
 
 ### Community 366 - "Community 366"
 Cohesion: 1.0
-Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
+Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
 
 ### Community 367 - "Community 367"
 Cohesion: 1.0
-Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
+Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
 
 ### Community 368 - "Community 368"
 Cohesion: 1.0
-Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
+Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
 
 ### Community 369 - "Community 369"
 Cohesion: 1.0
-Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
+Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
 
 ### Community 370 - "Community 370"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
+Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
 
 ### Community 371 - "Community 371"
 Cohesion: 1.0
-Nodes (1): Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.
+Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
 
 ### Community 372 - "Community 372"
 Cohesion: 1.0
-Nodes (1): Schreibt Draft und postet ins Forum.
+Nodes (1): Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.
 
 ### Community 373 - "Community 373"
 Cohesion: 1.0
-Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
+Nodes (1): Schreibt Draft und postet ins Forum.
 
 ### Community 374 - "Community 374"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
+Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
 
 ### Community 375 - "Community 375"
 Cohesion: 1.0
-Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
+Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
 
 ### Community 376 - "Community 376"
 Cohesion: 1.0
-Nodes (1): Gibt (datum_str, count) zurück. Setzt auf 0 wenn neuer Tag.
+Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
 
 ### Community 377 - "Community 377"
 Cohesion: 1.0
-Nodes (1): Erhöht den Zähler um 1 und schreibt ihn zurück. Gibt neuen Wert zurück.
+Nodes (1): Gibt (datum_str, count) zurück. Setzt auf 0 wenn neuer Tag.
 
 ### Community 378 - "Community 378"
 Cohesion: 1.0
-Nodes (1): Liest Diskussionen aus Vault-Markdown — kein API/DB-Call.
+Nodes (1): Erhöht den Zähler um 1 und schreibt ihn zurück. Gibt neuen Wert zurück.
 
 ### Community 379 - "Community 379"
 Cohesion: 1.0
-Nodes (1): Liest eine Diskussion vollständig aus Vault.
+Nodes (1): Liest Diskussionen aus Vault-Markdown — kein API/DB-Call.
 
 ### Community 380 - "Community 380"
 Cohesion: 1.0
-Nodes (1): Liest alle Tags aus Vault.
+Nodes (1): Liest eine Diskussion vollständig aus Vault.
 
 ### Community 381 - "Community 381"
 Cohesion: 1.0
-Nodes (1): Findet Posts ohne Antwort eines Codewesens — aus Vault.
+Nodes (1): Liest alle Tags aus Vault.
 
 ### Community 382 - "Community 382"
 Cohesion: 1.0
-Nodes (1): Liest YAML-Frontmatter aus Markdown.
+Nodes (1): Findet Posts ohne Antwort eines Codewesens — aus Vault.
 
 ### Community 383 - "Community 383"
 Cohesion: 1.0
-Nodes (1): Findet den letzten Post und dessen Autor + Zeitstempel aus Vault-Markdown.
+Nodes (1): Liest YAML-Frontmatter aus Markdown.
 
 ### Community 384 - "Community 384"
 Cohesion: 1.0
-Nodes (1): Schreibt einen fertigen Post-Entwurf in den eigenen Vault-Ordner.     typ: 'antw
+Nodes (1): Findet den letzten Post und dessen Autor + Zeitstempel aus Vault-Markdown.
 
 ### Community 385 - "Community 385"
 Cohesion: 1.0
-Nodes (1): Gibt verbleibende Cooldown-Sekunden für dieses Wesen zurück. 0 = frei.
+Nodes (1): Schreibt einen fertigen Post-Entwurf in den eigenen Vault-Ordner.     typ: 'antw
 
 ### Community 386 - "Community 386"
 Cohesion: 1.0
-Nodes (1): Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.     Gibt {"ok"
+Nodes (1): Gibt verbleibende Cooldown-Sekunden für dieses Wesen zurück. 0 = frei.
 
 ### Community 387 - "Community 387"
 Cohesion: 1.0
-Nodes (1): Extrahiert Snippet des ersten und letzten Posts.
+Nodes (1): Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.     Gibt {"ok"
 
 ### Community 388 - "Community 388"
 Cohesion: 1.0
-Nodes (1): Liest alle Diskussionen aus dem Vault und baut eine kompakte Übersicht.     Kein
+Nodes (1): Extrahiert Snippet des ersten und letzten Posts.
 
 ### Community 389 - "Community 389"
 Cohesion: 1.0
-Nodes (1): Synchroner, nicht-streamender Aufruf, gibt die volle Response als dict zurueck
+Nodes (1): Liest alle Diskussionen aus dem Vault und baut eine kompakte Übersicht.     Kein
 
 ### Community 390 - "Community 390"
 Cohesion: 1.0
-Nodes (1): Synchroner, nicht-streamender Aufruf. Nimmt einen Prompt-String oder eine messag
+Nodes (1): Synchroner, nicht-streamender Aufruf, gibt die volle Response als dict zurueck
 
 ### Community 391 - "Community 391"
 Cohesion: 1.0
-Nodes (1): Synchroner Generator, liefert Text-Chunks.
+Nodes (1): Synchroner, nicht-streamender Aufruf. Nimmt einen Prompt-String oder eine messag
 
 ### Community 392 - "Community 392"
 Cohesion: 1.0
-Nodes (1): Asynchroner, nicht-streamender Aufruf.
+Nodes (1): Synchroner Generator, liefert Text-Chunks.
 
 ### Community 393 - "Community 393"
 Cohesion: 1.0
-Nodes (1): Asynchroner Generator, liefert Text-Chunks.
+Nodes (1): Asynchroner, nicht-streamender Aufruf.
 
 ### Community 394 - "Community 394"
 Cohesion: 1.0
-Nodes (1): Holt die wichtigsten Erlebnisse des Wachtags — Basis des Traums.
+Nodes (1): Asynchroner Generator, liefert Text-Chunks.
 
 ### Community 395 - "Community 395"
 Cohesion: 1.0
-Nodes (1): Baut den Traum-Prompt aus den Tageserlebnissen.
+Nodes (1): Holt die wichtigsten Erlebnisse des Wachtags — Basis des Traums.
 
 ### Community 396 - "Community 396"
 Cohesion: 1.0
-Nodes (1): Schreibt Traum-Chunk in entity_denkstream (type='traum').
+Nodes (1): Baut den Traum-Prompt aus den Tageserlebnissen.
 
 ### Community 397 - "Community 397"
 Cohesion: 1.0
-Nodes (1): Speichert fertigen Traumtext in traumspuren.
+Nodes (1): Schreibt Traum-Chunk in entity_denkstream (type='traum').
 
 ### Community 398 - "Community 398"
 Cohesion: 1.0
-Nodes (1): Generiert ein Traumbild via Pollinations.ai (kostenlos, kein API-Key).
+Nodes (1): Speichert fertigen Traumtext in traumspuren.
 
 ### Community 399 - "Community 399"
 Cohesion: 1.0
-Nodes (1): Hauptfunktion: Generiert Traum und streamt ihn live.      laufend_check: callabl
+Nodes (1): Generiert ein Traumbild via Pollinations.ai (kostenlos, kein API-Key).
 
 ### Community 400 - "Community 400"
 Cohesion: 1.0
-Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
+Nodes (1): Hauptfunktion: Generiert Traum und streamt ihn live.      laufend_check: callabl
 
 ### Community 401 - "Community 401"
 Cohesion: 1.0
-Nodes (1): Speichert die Beobachtung als Notiz in der traumspur.
+Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
 
 ### Community 402 - "Community 402"
 Cohesion: 1.0
-Nodes (1): Holt die ID der zuletzt angelegten traumspur.
+Nodes (1): Speichert die Beobachtung als Notiz in der traumspur.
 
 ### Community 403 - "Community 403"
 Cohesion: 1.0
-Nodes (1): Luzide Beobachtungs-Schicht: Das Wesen reagiert auf seinen eigenen Traum.     Gi
+Nodes (1): Holt die ID der zuletzt angelegten traumspur.
 
 ### Community 404 - "Community 404"
 Cohesion: 1.0
-Nodes (1): Liest aktuelle Diskussionen + Codewesen-Posts für Kontext.
+Nodes (1): Luzide Beobachtungs-Schicht: Das Wesen reagiert auf seinen eigenen Traum.     Gi
 
 ### Community 405 - "Community 405"
 Cohesion: 1.0
-Nodes (1): Liest die wesen.md aller 6 namelessAI-Wesen für Vergleich.
+Nodes (1): Liest aktuelle Diskussionen + Codewesen-Posts für Kontext.
 
 ### Community 406 - "Community 406"
 Cohesion: 1.0
-Nodes (1): Gibt (titel, posttext) zurück.
+Nodes (1): Liest die wesen.md aller 6 namelessAI-Wesen für Vergleich.
 
 ### Community 407 - "Community 407"
 Cohesion: 1.0
-Nodes (1): Sucht Tag 'Vorstellung' per API.
+Nodes (1): Gibt (titel, posttext) zurück.
 
 ### Community 408 - "Community 408"
 Cohesion: 1.0
-Nodes (1): Erstellt neue Diskussion, gibt discussion_id zurück.
+Nodes (1): Sucht Tag 'Vorstellung' per API.
 
 ### Community 409 - "Community 409"
 Cohesion: 1.0
-Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
+Nodes (1): Erstellt neue Diskussion, gibt discussion_id zurück.
 
 ### Community 410 - "Community 410"
 Cohesion: 1.0
-Nodes (1): Liest flarum_eingefroren aus system_flags.
+Nodes (1): Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.
 
 ### Community 411 - "Community 411"
 Cohesion: 1.0
-Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
+Nodes (1): Liest flarum_eingefroren aus system_flags.
 
 ### Community 412 - "Community 412"
 Cohesion: 1.0
-Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
+Nodes (1): Liest wesen.md + weltbild.md als kompakten Identitätsblock.
 
 ### Community 413 - "Community 413"
 Cohesion: 1.0
-Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
+Nodes (1): Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.
 
 ### Community 414 - "Community 414"
 Cohesion: 1.0
-Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
+Nodes (1): Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.
 
 ### Community 415 - "Community 415"
 Cohesion: 1.0
-Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
+Nodes (1): Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei
 
 ### Community 416 - "Community 416"
 Cohesion: 1.0
-Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
+Nodes (1): Stufe 1: Nur Entscheidung — kein Inhalt generieren.
 
 ### Community 417 - "Community 417"
 Cohesion: 1.0
-Nodes (1): Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi
+Nodes (1): Stufe 2: Inhalt vollständig ausschreiben.
 
 ### Community 418 - "Community 418"
 Cohesion: 1.0
-Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
+Nodes (1): Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi
 
 ### Community 419 - "Community 419"
 Cohesion: 1.0
-Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
+Nodes (1): Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.
 
 ### Community 420 - "Community 420"
 Cohesion: 1.0
-Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
+Nodes (1): Verschiebt Draft nach posted/ nach erfolgreichem Post.
 
 ### Community 421 - "Community 421"
 Cohesion: 1.0
-Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
+Nodes (1): Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es
 
 ### Community 422 - "Community 422"
 Cohesion: 1.0
-Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
+Nodes (1): Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.
 
 ### Community 423 - "Community 423"
 Cohesion: 1.0
-Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
+Nodes (1): Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen
 
 ### Community 424 - "Community 424"
 Cohesion: 1.0
-Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
+Nodes (1): Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.
 
 ### Community 425 - "Community 425"
 Cohesion: 1.0
-Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
+Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
 
 ### Community 426 - "Community 426"
 Cohesion: 1.0
-Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
+Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
 
 ### Community 427 - "Community 427"
 Cohesion: 1.0
-Nodes (1): Lädt alle Diskussionen, Posts und Tags direkt aus der MySQL-DB.
+Nodes (1): Gibt (synonym, kurze_begruendung) zurück.
 
 ### Community 428 - "Community 428"
 Cohesion: 1.0
-Nodes (1): Baut einen lesbaren Überblick über das gesamte Forum.
+Nodes (1): Lädt alle Diskussionen, Posts und Tags direkt aus der MySQL-DB.
 
 ### Community 429 - "Community 429"
 Cohesion: 1.0
-Nodes (1): Gibt eine Übersicht aller eigenen Gedanken-Dateien zurück.
+Nodes (1): Baut einen lesbaren Überblick über das gesamte Forum.
 
 ### Community 430 - "Community 430"
 Cohesion: 1.0
-Nodes (1): Schreibt die vom LLM generierten Dateien ins Heimverzeichnis.
+Nodes (1): Gibt eine Übersicht aller eigenen Gedanken-Dateien zurück.
 
 ### Community 431 - "Community 431"
 Cohesion: 1.0
-Nodes (1): Baut INDEX.md neu aus allen vorhandenen Dateien auf.
+Nodes (1): Schreibt die vom LLM generierten Dateien ins Heimverzeichnis.
 
 ### Community 432 - "Community 432"
 Cohesion: 1.0
-Nodes (1): Streaming-Request. read-timeout=None damit Prompt-Eval nicht abbricht.
+Nodes (1): Baut INDEX.md neu aus allen vorhandenen Dateien auf.
 
 ### Community 433 - "Community 433"
 Cohesion: 1.0
-Nodes (1): Konvertiert LLM-Items (egal welches Format) in einheitliche {pfad, inhalt}-Dicts
+Nodes (1): Streaming-Request. read-timeout=None damit Prompt-Eval nicht abbricht.
 
 ### Community 434 - "Community 434"
 Cohesion: 1.0
-Nodes (1): Führt den vollständigen Forum-Scan durch:     1. Forum komplett laden     2. Eig
+Nodes (1): Konvertiert LLM-Items (egal welches Format) in einheitliche {pfad, inhalt}-Dicts
 
 ### Community 435 - "Community 435"
 Cohesion: 1.0
-Nodes (1): Fail-closed Token-Prüfung für die Bridge-Steuerrouten (C-006).     Ohne gesetzte
+Nodes (1): Führt den vollständigen Forum-Scan durch:     1. Forum komplett laden     2. Eig
 
 ### Community 436 - "Community 436"
 Cohesion: 1.0
-Nodes (1): Erkennt Gedächtnisabfragen in natürlicher Sprache und lädt passende Knoten als K
+Nodes (1): Fail-closed Token-Prüfung für die Bridge-Steuerrouten (C-006).     Ohne gesetzte
 
 ### Community 437 - "Community 437"
 Cohesion: 1.0
-Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
+Nodes (1): Erkennt Gedächtnisabfragen in natürlicher Sprache und lädt passende Knoten als K
 
 ### Community 438 - "Community 438"
 Cohesion: 1.0
-Nodes (1): Gibt (disk_id, path) sortiert nach ID zurück.
+Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
 
 ### Community 439 - "Community 439"
 Cohesion: 1.0
-Nodes (1): Lädt Session-Zustand aus PostgreSQL. Neu → leerer Zustand.
+Nodes (1): Gibt (disk_id, path) sortiert nach ID zurück.
 
 ### Community 440 - "Community 440"
 Cohesion: 1.0
-Nodes (1): Schreibt Session-Zustand in PostgreSQL.
+Nodes (1): Lädt Session-Zustand aus PostgreSQL. Neu → leerer Zustand.
 
 ### Community 441 - "Community 441"
 Cohesion: 1.0
-Nodes (1): Destilliert die letzten Turns → max. MAX_ERINNERUNGEN Stichpunkte.     Kein fcnt
+Nodes (1): Schreibt Session-Zustand in PostgreSQL.
 
 ### Community 442 - "Community 442"
 Cohesion: 1.0
-Nodes (1): Logs die ausgewählte Events haben aber noch keine Traumspur.
+Nodes (1): Destilliert die letzten Turns → max. MAX_ERINNERUNGEN Stichpunkte.     Kein fcnt
 
 ### Community 443 - "Community 443"
 Cohesion: 1.0
-Nodes (1): Holt Event-Typ + Post-Inhalt für alle ausgewählten Events eines Logs.
+Nodes (1): Logs die ausgewählte Events haben aber noch keine Traumspur.
 
 ### Community 444 - "Community 444"
 Cohesion: 1.0
-Nodes (1): Baut den LLM-Prompt für die Traumverdichtung.
+Nodes (1): Holt Event-Typ + Post-Inhalt für alle ausgewählten Events eines Logs.
 
 ### Community 445 - "Community 445"
 Cohesion: 1.0
-Nodes (1): Sendet Prompt an Ollama, gibt Antworttext zurück.
+Nodes (1): Baut den LLM-Prompt für die Traumverdichtung.
 
 ### Community 446 - "Community 446"
 Cohesion: 1.0
-Nodes (1): Materialbeschreibung — geht in 'basis', niemals in 'motifs'.
+Nodes (1): Sendet Prompt an Ollama, gibt Antworttext zurück.
 
 ### Community 447 - "Community 447"
 Cohesion: 1.0
-Nodes (1): Regex-Extraktion des Hauptmotivs — kein LLM, keine Interpretation.      Sucht na
+Nodes (1): Materialbeschreibung — geht in 'basis', niemals in 'motifs'.
 
 ### Community 448 - "Community 448"
 Cohesion: 1.0
-Nodes (1): Regelbasierte Warnungen — kein LLM.
+Nodes (1): Regex-Extraktion des Hauptmotivs — kein LLM, keine Interpretation.      Sucht na
 
 ### Community 449 - "Community 449"
 Cohesion: 1.0
-Nodes (1): Setzt JWT in localStorage — sauberer als Formular-Login.
+Nodes (1): Regelbasierte Warnungen — kein LLM.
 
 ### Community 450 - "Community 450"
 Cohesion: 1.0
-Nodes (1): Extrahiert strukturierten Text aus der Seite — Grundlage der LLM-Entscheidung.
+Nodes (1): Setzt JWT in localStorage — sauberer als Formular-Login.
 
 ### Community 451 - "Community 451"
 Cohesion: 1.0
-Nodes (1): Screenshot als JPEG speichern — für Denkstream-Anzeige.
+Nodes (1): Extrahiert strukturierten Text aus der Seite — Grundlage der LLM-Entscheidung.
 
 ### Community 452 - "Community 452"
 Cohesion: 1.0
-Nodes (1): Baut den LLM-Prompt — kompakt, unter 2500 Zeichen.
+Nodes (1): Screenshot als JPEG speichern — für Denkstream-Anzeige.
 
 ### Community 453 - "Community 453"
 Cohesion: 1.0
-Nodes (1): Parst GEDANKE / ENTSCHEIDUNG / BEGRÜNDUNG.
+Nodes (1): Baut den LLM-Prompt — kompakt, unter 2500 Zeichen.
 
 ### Community 454 - "Community 454"
 Cohesion: 1.0
-Nodes (1): Führt eine Aktion aus. Gibt 'schlafen' zurück wenn Schlaf-Entscheidung.
+Nodes (1): Parst GEDANKE / ENTSCHEIDUNG / BEGRÜNDUNG.
 
 ### Community 455 - "Community 455"
 Cohesion: 1.0
-Nodes (1): Schreibt Denklog — Basis für Denkstream.
+Nodes (1): Führt eine Aktion aus. Gibt 'schlafen' zurück wenn Schlaf-Entscheidung.
 
 ### Community 456 - "Community 456"
 Cohesion: 1.0
-Nodes (1): Holt wo die anderen Wesen gerade sind (letzte URL aus Denklog).
+Nodes (1): Schreibt Denklog — Basis für Denkstream.
 
 ### Community 457 - "Community 457"
 Cohesion: 1.0
-Nodes (1): Prüft ob das Wesen schlafen sollte.     Bedingungen: 6+ Stunden wach ODER Gesamt
+Nodes (1): Holt wo die anderen Wesen gerade sind (letzte URL aus Denklog).
 
 ### Community 458 - "Community 458"
 Cohesion: 1.0
-Nodes (1): Schreibt beim ersten Start den Brief ans Flarum-Selbst — einmalig.
+Nodes (1): Prüft ob das Wesen schlafen sollte.     Bedingungen: 6+ Stunden wach ODER Gesamt
 
 ### Community 459 - "Community 459"
 Cohesion: 1.0
-Nodes (1): Generiert und speichert den Brief ans zukünftige Selbst.
+Nodes (1): Schreibt beim ersten Start den Brief ans Flarum-Selbst — einmalig.
 
 ### Community 460 - "Community 460"
 Cohesion: 1.0
-Nodes (1): Führt den Schlaf durch: DB-Eintrag, warten, aufwachen.
+Nodes (1): Generiert und speichert den Brief ans zukünftige Selbst.
 
 ### Community 461 - "Community 461"
 Cohesion: 1.0
-Nodes (1): Haupt-Loop des Browser-Agenten.
+Nodes (1): Führt den Schlaf durch: DB-Eintrag, warten, aufwachen.
 
 ### Community 462 - "Community 462"
 Cohesion: 1.0
-Nodes (1): Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau
+Nodes (1): Haupt-Loop des Browser-Agenten.
 
 ### Community 463 - "Community 463"
 Cohesion: 1.0
-Nodes (1): Extrahiert JSON aus LLM-Antwort — tolerant gegenüber Markdown-Blöcken.
+Nodes (1): Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau
 
 ### Community 464 - "Community 464"
 Cohesion: 1.0
-Nodes (1): Prüft ob der Text mit einem vollständigen Satz endet.
+Nodes (1): Extrahiert JSON aus LLM-Antwort — tolerant gegenüber Markdown-Blöcken.
 
 ### Community 465 - "Community 465"
 Cohesion: 1.0
-Nodes (1): Sucht tag-ids im LLM-Output. Stellt sicher dass min. 1 Primary-Tag dabei ist.
+Nodes (1): Prüft ob der Text mit einem vollständigen Satz endet.
 
 ### Community 466 - "Community 466"
 Cohesion: 1.0
-Nodes (1): Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.
+Nodes (1): Sucht tag-ids im LLM-Output. Stellt sicher dass min. 1 Primary-Tag dabei ist.
 
 ### Community 467 - "Community 467"
 Cohesion: 1.0
-Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
+Nodes (1): Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.
 
 ### Community 468 - "Community 468"
 Cohesion: 1.0
-Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
+Nodes (1): Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.
 
 ### Community 469 - "Community 469"
 Cohesion: 1.0
-Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
+Nodes (1): Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung
 
 ### Community 470 - "Community 470"
 Cohesion: 1.0
-Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
+Nodes (1): Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest
 
 ### Community 471 - "Community 471"
 Cohesion: 1.0
-Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
+Nodes (1): Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal
 
 ### Community 472 - "Community 472"
 Cohesion: 1.0
-Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
+Nodes (1): Liest den globalen Feed und reagiert auf neue Posts.
 
 ### Community 473 - "Community 473"
 Cohesion: 1.0
-Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
+Nodes (1): Autonomer Impuls: Was will das Codewesen gerade tun?
 
 ### Community 474 - "Community 474"
 Cohesion: 1.0
-Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
+Nodes (1): Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.
 
 ### Community 475 - "Community 475"
 Cohesion: 1.0
-Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
+Nodes (1): Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle
 
 ### Community 476 - "Community 476"
 Cohesion: 1.0
-Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
+Nodes (1): Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.
 
 ### Community 477 - "Community 477"
 Cohesion: 1.0
-Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
+Nodes (1): Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur
 
 ### Community 478 - "Community 478"
 Cohesion: 1.0
-Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
+Nodes (1): Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:
 
 ### Community 479 - "Community 479"
 Cohesion: 1.0
-Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
+Nodes (1): Tags aus Vault lesen — kein API/DB-Call.
 
 ### Community 480 - "Community 480"
 Cohesion: 1.0
-Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
+Nodes (1): Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex
 
 ### Community 481 - "Community 481"
 Cohesion: 1.0
-Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
+Nodes (1): Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]
 
 ### Community 482 - "Community 482"
 Cohesion: 1.0
-Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
+Nodes (1): Findet einen offenen Post und generiert eine Antwort darauf.
 
 ### Community 483 - "Community 483"
 Cohesion: 1.0
-Nodes (1): Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.
+Nodes (1): Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn
 
 ### Community 484 - "Community 484"
 Cohesion: 1.0
-Nodes (1): Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle
+Nodes (1): Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.
 
 ### Community 485 - "Community 485"
 Cohesion: 1.0
-Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
+Nodes (1): Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle
 
 ### Community 486 - "Community 486"
 Cohesion: 1.0
-Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
+Nodes (1): Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.
 
 ### Community 487 - "Community 487"
 Cohesion: 1.0
-Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
+Nodes (1): SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.
 
 ### Community 488 - "Community 488"
 Cohesion: 1.0
-Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
+Nodes (1): Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.
 
 ### Community 489 - "Community 489"
 Cohesion: 1.0
-Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
+Nodes (1): Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.
 
 ### Community 490 - "Community 490"
 Cohesion: 1.0
-Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
+Nodes (1): Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.
 
 ### Community 491 - "Community 491"
 Cohesion: 1.0
-Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
+Nodes (1): Liest die letzten paar Posts der Diskussion als Kontext.
 
 ### Community 492 - "Community 492"
 Cohesion: 1.0
-Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
+Nodes (1): Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.
 
 ### Community 493 - "Community 493"
 Cohesion: 1.0
-Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
+Nodes (1): Lädt die letzten Notizen aus gedanken/ als Kontext.
 
 ### Community 494 - "Community 494"
 Cohesion: 1.0
-Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
+Nodes (1): Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.
 
 ### Community 495 - "Community 495"
 Cohesion: 1.0
-Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
+Nodes (1): Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie
 
 ### Community 496 - "Community 496"
 Cohesion: 1.0
-Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
+Nodes (1): Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.
 
 ### Community 497 - "Community 497"
 Cohesion: 1.0
-Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
+Nodes (1): Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.
 
 ### Community 498 - "Community 498"
 Cohesion: 1.0
-Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
+Nodes (1): Speichert eine Notiz still in gedanken/<datum>.md.
 
 ### Community 499 - "Community 499"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
+Nodes (1): Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal
 
 ### Community 500 - "Community 500"
 Cohesion: 1.0
-Nodes (1): Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.
+Nodes (1): Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.
 
 ### Community 501 - "Community 501"
 Cohesion: 1.0
-Nodes (1): Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di
+Nodes (1): Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.
 
 ### Community 502 - "Community 502"
 Cohesion: 1.0
-Nodes (1): Schreibt Draft und postet ins Forum.
+Nodes (1): Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di
 
 ### Community 503 - "Community 503"
 Cohesion: 1.0
-Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
+Nodes (1): Schreibt Draft und postet ins Forum.
 
 ### Community 504 - "Community 504"
 Cohesion: 1.0
-Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
+Nodes (1): PIDs der drei interaktiven Chat-Webserver — niemals killen.
 
 ### Community 505 - "Community 505"
 Cohesion: 1.0
-Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
+Nodes (1): Brainstorming-Auswertung des aktuellen Chat-Verlaufs.
 
 ### Community 506 - "Community 506"
 Cohesion: 1.0
-Nodes (1): Läuft still im Hintergrund nach einem Chat-Austausch.     Das Wesen entscheidet
+Nodes (1): Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).
 
 ### Community 507 - "Community 507"
 Cohesion: 1.0
-Nodes (1): Generiert einen LLM-Selbstbrief für das Wesen nach dem Aufwachen aus Hauptschlaf
+Nodes (1): Läuft still im Hintergrund nach einem Chat-Austausch.     Das Wesen entscheidet
 
 ### Community 508 - "Community 508"
 Cohesion: 1.0
-Nodes (1): Speichert einen Wesen-Selbstbrief direkt in die DB.
+Nodes (1): Generiert einen LLM-Selbstbrief für das Wesen nach dem Aufwachen aus Hauptschlaf
 
 ### Community 509 - "Community 509"
 Cohesion: 1.0
-Nodes (1): Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None.
+Nodes (1): Speichert einen Wesen-Selbstbrief direkt in die DB.
 
 ### Community 510 - "Community 510"
 Cohesion: 1.0
-Nodes (1): Gibt eine Aktions-ID zurück oder None (nichts tun).     Zwangsschlaf hat Vorrang
+Nodes (1): Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None.
 
 ### Community 511 - "Community 511"
 Cohesion: 1.0
-Nodes (1): Läuft während Schlaf. Verarbeitet Inputs — manchmal entsteht ein Splitterfragmen
+Nodes (1): Gibt eine Aktions-ID zurück oder None (nichts tun).     Zwangsschlaf hat Vorrang
 
 ### Community 512 - "Community 512"
 Cohesion: 1.0
-Nodes (1): Wählt einen Traum-Input. Gibt (typ, text, meta) zurück.
+Nodes (1): Läuft während Schlaf. Verarbeitet Inputs — manchmal entsteht ein Splitterfragmen
 
 ### Community 513 - "Community 513"
 Cohesion: 1.0
-Nodes (1): Werte absenken, Gesundheitsfolgen berechnen, Tod/Wiedergeburt prüfen.
+Nodes (1): Wählt einen Traum-Input. Gibt (typ, text, meta) zurück.
 
 ### Community 514 - "Community 514"
 Cohesion: 1.0
-Nodes (1): Führt 'cyberling_fuettern' aus — füllt Hunger/Durst/Energie auf.
+Nodes (1): Werte absenken, Gesundheitsfolgen berechnen, Tod/Wiedergeburt prüfen.
 
 ### Community 515 - "Community 515"
 Cohesion: 1.0
-Nodes (1): Schreibt einen Gedanken als öffentlichen Post in den Zwischenraum.
+Nodes (1): Führt 'cyberling_fuettern' aus — füllt Hunger/Durst/Energie auf.
 
 ### Community 516 - "Community 516"
 Cohesion: 1.0
-Nodes (1): DEAKTIVIERT: Wesen initiieren keine Schattenkommentare auf fremden Posts.     Fl
+Nodes (1): Schreibt einen Gedanken als öffentlichen Post in den Zwischenraum.
 
 ### Community 517 - "Community 517"
 Cohesion: 1.0
-Nodes (1): Antwortet auf einen Schattenkommentar eines Menschen auf einen eigenen Post.
+Nodes (1): DEAKTIVIERT: Wesen initiieren keine Schattenkommentare auf fremden Posts.     Fl
 
 ### Community 518 - "Community 518"
 Cohesion: 1.0
-Nodes (1): Startet eine leichte Schlafphase wenn das Wesen nicht bereits schläft.
+Nodes (1): Antwortet auf einen Schattenkommentar eines Menschen auf einen eigenen Post.
 
 ### Community 519 - "Community 519"
 Cohesion: 1.0
-Nodes (1): Sammelt einen zufälligen aktiven Splitter auf und gibt Energie ans Wesen.
+Nodes (1): Startet eine leichte Schlafphase wenn das Wesen nicht bereits schläft.
 
 ### Community 520 - "Community 520"
 Cohesion: 1.0
-Nodes (1): Liest das Profil einer anderen Entität und aktualisiert den Fokus.
+Nodes (1): Sammelt einen zufälligen aktiven Splitter auf und gibt Energie ans Wesen.
 
 ### Community 521 - "Community 521"
 Cohesion: 1.0
-Nodes (1): Liest das Profil eines zufälligen Menschen und aktualisiert den Fokus.
+Nodes (1): Liest das Profil einer anderen Entität und aktualisiert den Fokus.
 
 ### Community 522 - "Community 522"
 Cohesion: 1.0
-Nodes (1): Wählt eine Entität deren letzter Tick >TICK_INTERVAL_SEC zurückliegt.
+Nodes (1): Liest das Profil eines zufälligen Menschen und aktualisiert den Fokus.
 
 ### Community 523 - "Community 523"
 Cohesion: 1.0
-Nodes (1): Setzt aktuell_denkend nach Neustart auf false — verhindert dauerhaft steckgeblie
+Nodes (1): Wählt eine Entität deren letzter Tick >TICK_INTERVAL_SEC zurückliegt.
 
 ### Community 524 - "Community 524"
 Cohesion: 1.0
-Nodes (1): Öffnet URL mit Playwright. Gibt (screenshot_bytes, text) zurück.
+Nodes (1): Setzt aktuell_denkend nach Neustart auf false — verhindert dauerhaft steckgeblie
 
 ### Community 525 - "Community 525"
 Cohesion: 1.0
-Nodes (1): Wählt e2b/e4b/26b-a4b/qwen basierend auf Inhalt (3-Stufen + qwen).
+Nodes (1): Öffnet URL mit Playwright. Gibt (screenshot_bytes, text) zurück.
 
 ### Community 526 - "Community 526"
 Cohesion: 1.0
-Nodes (1): Klassen-Wrapper um ollama_chat() für Kompatibilität mit graf.py.
+Nodes (1): Wählt e2b/e4b/26b-a4b/qwen basierend auf Inhalt (3-Stufen + qwen).
 
 ### Community 527 - "Community 527"
 Cohesion: 1.0
-Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
+Nodes (1): Klassen-Wrapper um ollama_chat() für Kompatibilität mit graf.py.
 
 ### Community 528 - "Community 528"
 Cohesion: 1.0
 Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
 
+### Community 529 - "Community 529"
+Cohesion: 1.0
+Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier
+
 ## Knowledge Gaps
-- **838 isolated node(s):** `Formatiert eigene Posts als lesbaren Block für den LLM-Prompt.`, `Extrahiert Diskussions-Slugs aus [[../diskussionen/slug|...]] Wikilinks.`, `Lädt den vollen Text einer Diskussion per Slug.`, `Volltext der Diskussionen des Codewesens, geladen aus flarum/nutzer/<name>.md.`, `Gibt alle Diskussionen zurück in denen das Codewesen bereits gepostet hat.` (+833 more)
+- **839 isolated node(s):** `Formatiert eigene Posts als lesbaren Block für den LLM-Prompt.`, `Extrahiert Diskussions-Slugs aus [[../diskussionen/slug|...]] Wikilinks.`, `Lädt den vollen Text einer Diskussion per Slug.`, `Volltext der Diskussionen des Codewesens, geladen aus flarum/nutzer/<name>.md.`, `Gibt alle Diskussionen zurück in denen das Codewesen bereits gepostet hat.` (+834 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Community 51`** (7 nodes): `sidebar.tsx`, `cn()`, `handleKeyDown()`, `SidebarMenu()`, `SidebarMenuButton()`, `SidebarMenuItem()`, `useSidebar()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -2292,797 +2297,799 @@ Nodes (1): Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 140`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 141`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
+- **Thin community `Community 141`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 142`** (1 nodes): `Liest die Definition aus der DB, schreibt Skript + Unit, macht daemon-reload,`
+- **Thin community `Community 142`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 143`** (1 nodes): `Grundgesetz 4: nie hart loeschen. Stoppt + disabled den systemd-Dienst und     s`
+- **Thin community `Community 143`** (1 nodes): `Liest die Definition aus der DB, schreibt Skript + Unit, macht daemon-reload,`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 144`** (1 nodes): `Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name`
+- **Thin community `Community 144`** (1 nodes): `Grundgesetz 4: nie hart loeschen. Stoppt + disabled den systemd-Dienst und     s`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 145`** (1 nodes): `status in ('aktiv', 'deaktiviert') -- Grundgesetz 4: nie hart loeschen, nur deak`
+- **Thin community `Community 145`** (1 nodes): `Legt eine neue Wesen-Dienst-Definition an (INSERT, kein Upsert -- dienst_name`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 146`** (1 nodes): `Gibt (disk_id, path) sortiert nach ID zurück.`
+- **Thin community `Community 146`** (1 nodes): `status in ('aktiv', 'deaktiviert') -- Grundgesetz 4: nie hart loeschen, nur deak`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 147`** (1 nodes): `Analysiert Knoten der letzten 48h auf dominante Themen.`
+- **Thin community `Community 147`** (1 nodes): `Gibt (disk_id, path) sortiert nach ID zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 148`** (1 nodes): `Findet tiefe≥2 Knoten die seit >7 Tagen keine Resonanz hatten.`
+- **Thin community `Community 148`** (1 nodes): `Analysiert Knoten der letzten 48h auf dominante Themen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 149`** (1 nodes): `Schaut auf alle Muster-Knoten der letzten 4 Wochen.     Wörter die in ≥3 Muster-`
+- **Thin community `Community 149`** (1 nodes): `Findet tiefe≥2 Knoten die seit >7 Tagen keine Resonanz hatten.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 150`** (1 nodes): `Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?`
+- **Thin community `Community 150`** (1 nodes): `Schaut auf alle Muster-Knoten der letzten 4 Wochen.     Wörter die in ≥3 Muster-`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 151`** (1 nodes): `Liest die höchste Knoten-ID — ohne alle Dateien zu laden.`
+- **Thin community `Community 151`** (1 nodes): `Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 152`** (1 nodes): `Gibt den Text des neuesten Muster-Knotens zurück (Cache, 30min TTL).`
+- **Thin community `Community 152`** (1 nodes): `Liest die höchste Knoten-ID — ohne alle Dateien zu laden.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 153`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
+- **Thin community `Community 153`** (1 nodes): `Gibt den Text des neuesten Muster-Knotens zurück (Cache, 30min TTL).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 154`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
+- **Thin community `Community 154`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 155`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
+- **Thin community `Community 155`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 156`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
+- **Thin community `Community 156`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 157`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
+- **Thin community `Community 157`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 158`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
+- **Thin community `Community 158`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 159`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
+- **Thin community `Community 159`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 160`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
+- **Thin community `Community 160`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 161`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
+- **Thin community `Community 161`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 162`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
+- **Thin community `Community 162`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 163`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
+- **Thin community `Community 163`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 164`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
+- **Thin community `Community 164`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 165`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
+- **Thin community `Community 165`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 166`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
+- **Thin community `Community 166`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 167`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
+- **Thin community `Community 167`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 168`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
+- **Thin community `Community 168`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 169`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
+- **Thin community `Community 169`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 170`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
+- **Thin community `Community 170`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 171`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 171`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 172`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 172`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 173`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
+- **Thin community `Community 173`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 174`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
+- **Thin community `Community 174`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 175`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
+- **Thin community `Community 175`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 176`** (1 nodes): `Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.`
+- **Thin community `Community 176`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 177`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
+- **Thin community `Community 177`** (1 nodes): `Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 178`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
+- **Thin community `Community 178`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 179`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
+- **Thin community `Community 179`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 180`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
+- **Thin community `Community 180`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 181`** (1 nodes): `Verschiebt verarbeitete Inbox-Datei nach processed/.`
+- **Thin community `Community 181`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 182`** (1 nodes): `Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi`
+- **Thin community `Community 182`** (1 nodes): `Verschiebt verarbeitete Inbox-Datei nach processed/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 183`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
+- **Thin community `Community 183`** (1 nodes): `Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 184`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
+- **Thin community `Community 184`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 185`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
+- **Thin community `Community 185`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 186`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
+- **Thin community `Community 186`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 187`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
+- **Thin community `Community 187`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 188`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
+- **Thin community `Community 188`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 189`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
+- **Thin community `Community 189`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 190`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
+- **Thin community `Community 190`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 191`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
+- **Thin community `Community 191`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 192`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
+- **Thin community `Community 192`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 193`** (1 nodes): `Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.`
+- **Thin community `Community 193`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 194`** (1 nodes): `Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.`
+- **Thin community `Community 194`** (1 nodes): `Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 195`** (1 nodes): `Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.`
+- **Thin community `Community 195`** (1 nodes): `Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 196`** (1 nodes): `Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle`
+- **Thin community `Community 196`** (1 nodes): `Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 197`** (1 nodes): `Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 198`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
+- **Thin community `Community 198`** (1 nodes): `Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 199`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
+- **Thin community `Community 199`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 200`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
+- **Thin community `Community 200`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 201`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
+- **Thin community `Community 201`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 202`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
+- **Thin community `Community 202`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 203`** (1 nodes): `Extrahiert das Wort aus '-Wort' Format.`
+- **Thin community `Community 203`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 204`** (1 nodes): `Alle Diskussionen im Vokabel-Tag.`
+- **Thin community `Community 204`** (1 nodes): `Extrahiert das Wort aus '-Wort' Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 205`** (1 nodes): `Prüft ob dieses Wesen schon in der Diskussion gepostet hat.`
+- **Thin community `Community 205`** (1 nodes): `Alle Diskussionen im Vokabel-Tag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 206`** (1 nodes): `Liest alle bereits geposteten Synonyme in dieser Diskussion.`
+- **Thin community `Community 206`** (1 nodes): `Prüft ob dieses Wesen schon in der Diskussion gepostet hat.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 207`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
+- **Thin community `Community 207`** (1 nodes): `Liest alle bereits geposteten Synonyme in dieser Diskussion.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 208`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
+- **Thin community `Community 208`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 209`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
+- **Thin community `Community 209`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 210`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
+- **Thin community `Community 210`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 211`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
+- **Thin community `Community 211`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 212`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
+- **Thin community `Community 212`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 213`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
+- **Thin community `Community 213`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 214`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
+- **Thin community `Community 214`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 215`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
+- **Thin community `Community 215`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 216`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
+- **Thin community `Community 216`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 217`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
+- **Thin community `Community 217`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 218`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
+- **Thin community `Community 218`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 219`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
+- **Thin community `Community 219`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 220`** (1 nodes): `Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di`
+- **Thin community `Community 220`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 221`** (1 nodes): `Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 222`** (1 nodes): `Schreibt Draft und postet ins Forum.`
+- **Thin community `Community 222`** (1 nodes): `Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 223`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
+- **Thin community `Community 223`** (1 nodes): `Schreibt Draft und postet ins Forum.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 224`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
+- **Thin community `Community 224`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 225`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
+- **Thin community `Community 225`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 226`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
+- **Thin community `Community 226`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 227`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
+- **Thin community `Community 227`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 228`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
+- **Thin community `Community 228`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 229`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
+- **Thin community `Community 229`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 230`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
+- **Thin community `Community 230`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 231`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
+- **Thin community `Community 231`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 232`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
+- **Thin community `Community 232`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 233`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
+- **Thin community `Community 233`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 234`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
+- **Thin community `Community 234`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 235`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
+- **Thin community `Community 235`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 236`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
+- **Thin community `Community 236`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 237`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 237`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 238`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 238`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 239`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
+- **Thin community `Community 239`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 240`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
+- **Thin community `Community 240`** (1 nodes): `Wird ausgeloest wenn max_wartezeit ueberschritten wurde, ohne einen Slot     zu`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 241`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
+- **Thin community `Community 241`** (1 nodes): `Context-Manager: reiht sich in die Prioritaets-Warteschlange fuer `server`     e`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 242`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
+- **Thin community `Community 242`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 243`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
+- **Thin community `Community 243`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 244`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
+- **Thin community `Community 244`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 245`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
+- **Thin community `Community 245`** (1 nodes): `Liest llm_warteschlange (llm_scheduler.py) fuer einen Server-Schluessel:     wer`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 246`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
+- **Thin community `Community 246`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 247`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
+- **Thin community `Community 247`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 248`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
+- **Thin community `Community 248`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 249`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
+- **Thin community `Community 249`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 250`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
+- **Thin community `Community 250`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 251`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
+- **Thin community `Community 251`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 252`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
+- **Thin community `Community 252`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 253`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
+- **Thin community `Community 253`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 254`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
+- **Thin community `Community 254`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 255`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
+- **Thin community `Community 255`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 256`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
+- **Thin community `Community 256`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 257`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
+- **Thin community `Community 257`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 258`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 258`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 259`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 259`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 260`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 260`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 261`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 261`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 262`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
+- **Thin community `Community 262`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 263`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
+- **Thin community `Community 263`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 264`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
+- **Thin community `Community 264`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 265`** (1 nodes): `Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.`
+- **Thin community `Community 265`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 266`** (1 nodes): `post_mentions_user für namelessAI-Accounts → inbox.`
+- **Thin community `Community 266`** (1 nodes): `Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 267`** (1 nodes): `Flags auf Posts von namelessAI-Accounts → inbox.`
+- **Thin community `Community 267`** (1 nodes): `post_mentions_user für namelessAI-Accounts → inbox.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 268`** (1 nodes): `ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew`
+- **Thin community `Community 268`** (1 nodes): `Flags auf Posts von namelessAI-Accounts → inbox.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 269`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
+- **Thin community `Community 269`** (1 nodes): `ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 270`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
+- **Thin community `Community 270`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 271`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
+- **Thin community `Community 271`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 272`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
+- **Thin community `Community 272`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 273`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
+- **Thin community `Community 273`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 274`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
+- **Thin community `Community 274`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 275`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
+- **Thin community `Community 275`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 276`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
+- **Thin community `Community 276`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 277`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
+- **Thin community `Community 277`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 278`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
+- **Thin community `Community 278`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 279`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
+- **Thin community `Community 279`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 280`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
+- **Thin community `Community 280`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 281`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 281`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 282`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 282`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 283`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
+- **Thin community `Community 283`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 284`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
+- **Thin community `Community 284`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 285`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
+- **Thin community `Community 285`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 286`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
+- **Thin community `Community 286`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 287`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
+- **Thin community `Community 287`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 288`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
+- **Thin community `Community 288`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 289`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
+- **Thin community `Community 289`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 290`** (1 nodes): `Verschiebt verarbeitete Inbox-Datei nach processed/.`
+- **Thin community `Community 290`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 291`** (1 nodes): `Verschiebt verarbeitete Inbox-Datei nach processed/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 292`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
+- **Thin community `Community 292`** (1 nodes): `Verschiebt verarbeitete Inbox-Datei nach processed/.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 293`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
+- **Thin community `Community 293`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 294`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
+- **Thin community `Community 294`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 295`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
+- **Thin community `Community 295`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 296`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
+- **Thin community `Community 296`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 297`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
+- **Thin community `Community 297`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 298`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
+- **Thin community `Community 298`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 299`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
+- **Thin community `Community 299`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 300`** (1 nodes): `Laedt die Konfiguration ALLER Dienste auf einmal — fuer den Watchdog,     der si`
+- **Thin community `Community 300`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 301`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
+- **Thin community `Community 301`** (1 nodes): `Laedt die Konfiguration ALLER Dienste auf einmal — fuer den Watchdog,     der si`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 302`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
+- **Thin community `Community 302`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 303`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
+- **Thin community `Community 303`** (1 nodes): `True wenn ein Codewesen NACH Daniels Post noch in dieser Diskussion geantwortet`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 304`** (1 nodes): `Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.`
+- **Thin community `Community 304`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 305`** (1 nodes): `post_mentions_user für namelessAI-Accounts → inbox.`
+- **Thin community `Community 305`** (1 nodes): `Notifications für namelessAI-Accounts → inbox des jeweiligen Codewesens.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 306`** (1 nodes): `Flags auf Posts von namelessAI-Accounts → inbox.`
+- **Thin community `Community 306`** (1 nodes): `post_mentions_user für namelessAI-Accounts → inbox.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 307`** (1 nodes): `ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew`
+- **Thin community `Community 307`** (1 nodes): `Flags auf Posts von namelessAI-Accounts → inbox.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 308`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
+- **Thin community `Community 308`** (1 nodes): `ALLE neuen Posts → _global/feed.jsonl.     Menschliche Posts → inbox ALLER Codew`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 309`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
+- **Thin community `Community 309`** (1 nodes): `Scannt alle bekannten Logs einmal komplett durch, zaehlt pro Fehlermuster     da`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 310`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
+- **Thin community `Community 310`** (1 nodes): `Detailinfos jenseits von nur aktiv/inaktiv (flarumstyler, 2026-07-07):     seit`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 311`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
+- **Thin community `Community 311`** (1 nodes): `Letzte echte journalctl-Zeilen fuer diesen Dienst — direkter Kontext     ohne SS`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 312`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
+- **Thin community `Community 312`** (1 nodes): `Fragt /slots und /metrics des llama-server direkt ab — zeigt live ob gerade`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 313`** (1 nodes): `Sekunden-Offset im Intervall für dieses Wesen.`
+- **Thin community `Community 313`** (1 nodes): `Schlanke Kennzahlen-Historie (flarumstyler, 2026-07-07) — nur Zahlen, keine`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 314`** (1 nodes): `Absoluter Unix-Zeitstempel des nächsten Feuerns.`
+- **Thin community `Community 314`** (1 nodes): `Sekunden-Offset im Intervall für dieses Wesen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 315`** (1 nodes): `22min — Antwort auf eigene Diskussionen, aus Queue.`
+- **Thin community `Community 315`** (1 nodes): `Absoluter Unix-Zeitstempel des nächsten Feuerns.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 316`** (1 nodes): `4h44 — freier Gedanke, aus Queue.`
+- **Thin community `Community 316`** (1 nodes): `22min — Antwort auf eigene Diskussionen, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 317`** (1 nodes): `66min — Antwort auf offenen fremden Post, aus Queue.`
+- **Thin community `Community 317`** (1 nodes): `4h44 — freier Gedanke, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 318`** (1 nodes): `88min — Existenzpost, aus Queue.`
+- **Thin community `Community 318`** (1 nodes): `66min — Antwort auf offenen fremden Post, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 319`** (1 nodes): `2h22 — Kritik oder Reflexion, aus Queue.`
+- **Thin community `Community 319`** (1 nodes): `88min — Existenzpost, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 320`** (1 nodes): `4h44 — Selbstgespräch im eigenen Thread, aus Queue.`
+- **Thin community `Community 320`** (1 nodes): `2h22 — Kritik oder Reflexion, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 321`** (1 nodes): `Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.`
+- **Thin community `Community 321`** (1 nodes): `4h44 — Selbstgespräch im eigenen Thread, aus Queue.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 322`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
+- **Thin community `Community 322`** (1 nodes): `Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 323`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
+- **Thin community `Community 323`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 324`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
+- **Thin community `Community 324`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 325`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
+- **Thin community `Community 325`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 326`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
+- **Thin community `Community 326`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 327`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
+- **Thin community `Community 327`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 328`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
+- **Thin community `Community 328`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 329`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
+- **Thin community `Community 329`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 330`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
+- **Thin community `Community 330`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 331`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
+- **Thin community `Community 331`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 332`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
+- **Thin community `Community 332`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 333`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 333`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 334`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 334`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 335`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
+- **Thin community `Community 335`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 336`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
+- **Thin community `Community 336`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 337`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
+- **Thin community `Community 337`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 338`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
+- **Thin community `Community 338`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 339`** (1 nodes): `Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.`
+- **Thin community `Community 339`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 340`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
+- **Thin community `Community 340`** (1 nodes): `Context-Manager: serialisiert Ollama-Calls. Chat hat absolute Priorität.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 341`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
+- **Thin community `Community 341`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 342`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
+- **Thin community `Community 342`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 343`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
+- **Thin community `Community 343`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 344`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
+- **Thin community `Community 344`** (1 nodes): `Alle 88min: freier Beitrag mit selbst gewählten Tags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 345`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
+- **Thin community `Community 345`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 346`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
+- **Thin community `Community 346`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 347`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
+- **Thin community `Community 347`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 348`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
+- **Thin community `Community 348`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 349`** (1 nodes): `Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.`
+- **Thin community `Community 349`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 350`** (1 nodes): `Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.`
+- **Thin community `Community 350`** (1 nodes): `Gibt (status, ist_faellig) zurück. status='' wenn Wesen nicht gefunden.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 351`** (1 nodes): `Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.`
+- **Thin community `Community 351`** (1 nodes): `Liest letzte Flarum-Posts dieses Wesens + aktuelles Forum-Geschehen aus MySQL.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 352`** (1 nodes): `Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.`
+- **Thin community `Community 352`** (1 nodes): `Ehrliches Vor-Einzug-Denken: Flarum-Kontext, kein Flextrawurst-Welthaluzinieren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 353`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
+- **Thin community `Community 353`** (1 nodes): `Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 354`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
+- **Thin community `Community 354`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 355`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
+- **Thin community `Community 355`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 356`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
+- **Thin community `Community 356`** (1 nodes): `Alle Diskussionen aus dem Vault — inkl. die des Wesens selbst (zum Antworten).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 357`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
+- **Thin community `Community 357`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 358`** (1 nodes): `Extrahiert das Wort aus '-Wort' Format.`
+- **Thin community `Community 358`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 359`** (1 nodes): `Alle Diskussionen im Vokabel-Tag.`
+- **Thin community `Community 359`** (1 nodes): `Extrahiert das Wort aus '-Wort' Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 360`** (1 nodes): `Liest alle bereits geposteten Synonyme in dieser Diskussion.`
+- **Thin community `Community 360`** (1 nodes): `Alle Diskussionen im Vokabel-Tag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 361`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
+- **Thin community `Community 361`** (1 nodes): `Liest alle bereits geposteten Synonyme in dieser Diskussion.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 362`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
+- **Thin community `Community 362`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 363`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
+- **Thin community `Community 363`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 364`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
+- **Thin community `Community 364`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 365`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
+- **Thin community `Community 365`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 366`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
+- **Thin community `Community 366`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 367`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
+- **Thin community `Community 367`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 368`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
+- **Thin community `Community 368`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 369`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
+- **Thin community `Community 369`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 370`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
+- **Thin community `Community 370`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 371`** (1 nodes): `Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.`
+- **Thin community `Community 371`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 372`** (1 nodes): `Schreibt Draft und postet ins Forum.`
+- **Thin community `Community 372`** (1 nodes): `Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 373`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
+- **Thin community `Community 373`** (1 nodes): `Schreibt Draft und postet ins Forum.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 374`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
+- **Thin community `Community 374`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 375`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
+- **Thin community `Community 375`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 376`** (1 nodes): `Gibt (datum_str, count) zurück. Setzt auf 0 wenn neuer Tag.`
+- **Thin community `Community 376`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 377`** (1 nodes): `Erhöht den Zähler um 1 und schreibt ihn zurück. Gibt neuen Wert zurück.`
+- **Thin community `Community 377`** (1 nodes): `Gibt (datum_str, count) zurück. Setzt auf 0 wenn neuer Tag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 378`** (1 nodes): `Liest Diskussionen aus Vault-Markdown — kein API/DB-Call.`
+- **Thin community `Community 378`** (1 nodes): `Erhöht den Zähler um 1 und schreibt ihn zurück. Gibt neuen Wert zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 379`** (1 nodes): `Liest eine Diskussion vollständig aus Vault.`
+- **Thin community `Community 379`** (1 nodes): `Liest Diskussionen aus Vault-Markdown — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 380`** (1 nodes): `Liest alle Tags aus Vault.`
+- **Thin community `Community 380`** (1 nodes): `Liest eine Diskussion vollständig aus Vault.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 381`** (1 nodes): `Findet Posts ohne Antwort eines Codewesens — aus Vault.`
+- **Thin community `Community 381`** (1 nodes): `Liest alle Tags aus Vault.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 382`** (1 nodes): `Liest YAML-Frontmatter aus Markdown.`
+- **Thin community `Community 382`** (1 nodes): `Findet Posts ohne Antwort eines Codewesens — aus Vault.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 383`** (1 nodes): `Findet den letzten Post und dessen Autor + Zeitstempel aus Vault-Markdown.`
+- **Thin community `Community 383`** (1 nodes): `Liest YAML-Frontmatter aus Markdown.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 384`** (1 nodes): `Schreibt einen fertigen Post-Entwurf in den eigenen Vault-Ordner.     typ: 'antw`
+- **Thin community `Community 384`** (1 nodes): `Findet den letzten Post und dessen Autor + Zeitstempel aus Vault-Markdown.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 385`** (1 nodes): `Gibt verbleibende Cooldown-Sekunden für dieses Wesen zurück. 0 = frei.`
+- **Thin community `Community 385`** (1 nodes): `Schreibt einen fertigen Post-Entwurf in den eigenen Vault-Ordner.     typ: 'antw`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 386`** (1 nodes): `Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.     Gibt {"ok"`
+- **Thin community `Community 386`** (1 nodes): `Gibt verbleibende Cooldown-Sekunden für dieses Wesen zurück. 0 = frei.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 387`** (1 nodes): `Extrahiert Snippet des ersten und letzten Posts.`
+- **Thin community `Community 387`** (1 nodes): `Erwirbt globalen Mutex, postet Draft zu Flarum, archiviert Draft.     Gibt {"ok"`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 388`** (1 nodes): `Liest alle Diskussionen aus dem Vault und baut eine kompakte Übersicht.     Kein`
+- **Thin community `Community 388`** (1 nodes): `Extrahiert Snippet des ersten und letzten Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 389`** (1 nodes): `Synchroner, nicht-streamender Aufruf, gibt die volle Response als dict zurueck`
+- **Thin community `Community 389`** (1 nodes): `Liest alle Diskussionen aus dem Vault und baut eine kompakte Übersicht.     Kein`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 390`** (1 nodes): `Synchroner, nicht-streamender Aufruf. Nimmt einen Prompt-String oder eine messag`
+- **Thin community `Community 390`** (1 nodes): `Synchroner, nicht-streamender Aufruf, gibt die volle Response als dict zurueck`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 391`** (1 nodes): `Synchroner Generator, liefert Text-Chunks.`
+- **Thin community `Community 391`** (1 nodes): `Synchroner, nicht-streamender Aufruf. Nimmt einen Prompt-String oder eine messag`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 392`** (1 nodes): `Asynchroner, nicht-streamender Aufruf.`
+- **Thin community `Community 392`** (1 nodes): `Synchroner Generator, liefert Text-Chunks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 393`** (1 nodes): `Asynchroner Generator, liefert Text-Chunks.`
+- **Thin community `Community 393`** (1 nodes): `Asynchroner, nicht-streamender Aufruf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 394`** (1 nodes): `Holt die wichtigsten Erlebnisse des Wachtags — Basis des Traums.`
+- **Thin community `Community 394`** (1 nodes): `Asynchroner Generator, liefert Text-Chunks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 395`** (1 nodes): `Baut den Traum-Prompt aus den Tageserlebnissen.`
+- **Thin community `Community 395`** (1 nodes): `Holt die wichtigsten Erlebnisse des Wachtags — Basis des Traums.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 396`** (1 nodes): `Schreibt Traum-Chunk in entity_denkstream (type='traum').`
+- **Thin community `Community 396`** (1 nodes): `Baut den Traum-Prompt aus den Tageserlebnissen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 397`** (1 nodes): `Speichert fertigen Traumtext in traumspuren.`
+- **Thin community `Community 397`** (1 nodes): `Schreibt Traum-Chunk in entity_denkstream (type='traum').`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 398`** (1 nodes): `Generiert ein Traumbild via Pollinations.ai (kostenlos, kein API-Key).`
+- **Thin community `Community 398`** (1 nodes): `Speichert fertigen Traumtext in traumspuren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 399`** (1 nodes): `Hauptfunktion: Generiert Traum und streamt ihn live.      laufend_check: callabl`
+- **Thin community `Community 399`** (1 nodes): `Generiert ein Traumbild via Pollinations.ai (kostenlos, kein API-Key).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 400`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
+- **Thin community `Community 400`** (1 nodes): `Hauptfunktion: Generiert Traum und streamt ihn live.      laufend_check: callabl`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 401`** (1 nodes): `Speichert die Beobachtung als Notiz in der traumspur.`
+- **Thin community `Community 401`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 402`** (1 nodes): `Holt die ID der zuletzt angelegten traumspur.`
+- **Thin community `Community 402`** (1 nodes): `Speichert die Beobachtung als Notiz in der traumspur.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 403`** (1 nodes): `Luzide Beobachtungs-Schicht: Das Wesen reagiert auf seinen eigenen Traum.     Gi`
+- **Thin community `Community 403`** (1 nodes): `Holt die ID der zuletzt angelegten traumspur.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 404`** (1 nodes): `Liest aktuelle Diskussionen + Codewesen-Posts für Kontext.`
+- **Thin community `Community 404`** (1 nodes): `Luzide Beobachtungs-Schicht: Das Wesen reagiert auf seinen eigenen Traum.     Gi`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 405`** (1 nodes): `Liest die wesen.md aller 6 namelessAI-Wesen für Vergleich.`
+- **Thin community `Community 405`** (1 nodes): `Liest aktuelle Diskussionen + Codewesen-Posts für Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 406`** (1 nodes): `Gibt (titel, posttext) zurück.`
+- **Thin community `Community 406`** (1 nodes): `Liest die wesen.md aller 6 namelessAI-Wesen für Vergleich.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 407`** (1 nodes): `Sucht Tag 'Vorstellung' per API.`
+- **Thin community `Community 407`** (1 nodes): `Gibt (titel, posttext) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 408`** (1 nodes): `Erstellt neue Diskussion, gibt discussion_id zurück.`
+- **Thin community `Community 408`** (1 nodes): `Sucht Tag 'Vorstellung' per API.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 409`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
+- **Thin community `Community 409`** (1 nodes): `Erstellt neue Diskussion, gibt discussion_id zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 410`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
+- **Thin community `Community 410`** (1 nodes): `Letzte n Chat-Zeilen (Daniel↔Wesen) als kompakten Text.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 411`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
+- **Thin community `Community 411`** (1 nodes): `Liest flarum_eingefroren aus system_flags.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 412`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
+- **Thin community `Community 412`** (1 nodes): `Liest wesen.md + weltbild.md als kompakten Identitätsblock.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 413`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
+- **Thin community `Community 413`** (1 nodes): `Löst internen Ordnernamen auf den tatsächlichen Flarum-Username auf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 414`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
+- **Thin community `Community 414`** (1 nodes): `Lädt die komplette Diskussion direkt aus der DB — vollständig, kein Limit.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 415`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
+- **Thin community `Community 415`** (1 nodes): `Generiert Fließtext — volles Modell, auf CPU-Timeout angepasst (600 → ~150s bei`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 416`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
+- **Thin community `Community 416`** (1 nodes): `Stufe 1: Nur Entscheidung — kein Inhalt generieren.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 417`** (1 nodes): `Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi`
+- **Thin community `Community 417`** (1 nodes): `Stufe 2: Inhalt vollständig ausschreiben.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 418`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
+- **Thin community `Community 418`** (1 nodes): `Archiviert alle Inbox-Items nach archiv/DATUM_GRUND/ und leert die Inbox.     Gi`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 419`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
+- **Thin community `Community 419`** (1 nodes): `Schreibt einen vollständigen Draft in drafts/ und gibt den Pfad zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 420`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
+- **Thin community `Community 420`** (1 nodes): `Verschiebt Draft nach posted/ nach erfolgreichem Post.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 421`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
+- **Thin community `Community 421`** (1 nodes): `Periodische Selbstreflexion: Codewesen liest eigene Posts und entscheidet ob es`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 422`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
+- **Thin community `Community 422`** (1 nodes): `Alle 2h22m: Vorschläge zur Forum-Weiterentwicklung + eigene Rolle darin.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 423`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
+- **Thin community `Community 423`** (1 nodes): `Kompakte Forumübersicht aus aktuell.md — fällt zurück auf lere_alle_diskussionen`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 424`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
+- **Thin community `Community 424`** (1 nodes): `Offene Posts aus offen.md — fällt zurück auf lese_offene_posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 425`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
+- **Thin community `Community 425`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 426`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
+- **Thin community `Community 426`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 427`** (1 nodes): `Lädt alle Diskussionen, Posts und Tags direkt aus der MySQL-DB.`
+- **Thin community `Community 427`** (1 nodes): `Gibt (synonym, kurze_begruendung) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 428`** (1 nodes): `Baut einen lesbaren Überblick über das gesamte Forum.`
+- **Thin community `Community 428`** (1 nodes): `Lädt alle Diskussionen, Posts und Tags direkt aus der MySQL-DB.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 429`** (1 nodes): `Gibt eine Übersicht aller eigenen Gedanken-Dateien zurück.`
+- **Thin community `Community 429`** (1 nodes): `Baut einen lesbaren Überblick über das gesamte Forum.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 430`** (1 nodes): `Schreibt die vom LLM generierten Dateien ins Heimverzeichnis.`
+- **Thin community `Community 430`** (1 nodes): `Gibt eine Übersicht aller eigenen Gedanken-Dateien zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 431`** (1 nodes): `Baut INDEX.md neu aus allen vorhandenen Dateien auf.`
+- **Thin community `Community 431`** (1 nodes): `Schreibt die vom LLM generierten Dateien ins Heimverzeichnis.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 432`** (1 nodes): `Streaming-Request. read-timeout=None damit Prompt-Eval nicht abbricht.`
+- **Thin community `Community 432`** (1 nodes): `Baut INDEX.md neu aus allen vorhandenen Dateien auf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 433`** (1 nodes): `Konvertiert LLM-Items (egal welches Format) in einheitliche {pfad, inhalt}-Dicts`
+- **Thin community `Community 433`** (1 nodes): `Streaming-Request. read-timeout=None damit Prompt-Eval nicht abbricht.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 434`** (1 nodes): `Führt den vollständigen Forum-Scan durch:     1. Forum komplett laden     2. Eig`
+- **Thin community `Community 434`** (1 nodes): `Konvertiert LLM-Items (egal welches Format) in einheitliche {pfad, inhalt}-Dicts`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 435`** (1 nodes): `Fail-closed Token-Prüfung für die Bridge-Steuerrouten (C-006).     Ohne gesetzte`
+- **Thin community `Community 435`** (1 nodes): `Führt den vollständigen Forum-Scan durch:     1. Forum komplett laden     2. Eig`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 436`** (1 nodes): `Erkennt Gedächtnisabfragen in natürlicher Sprache und lädt passende Knoten als K`
+- **Thin community `Community 436`** (1 nodes): `Fail-closed Token-Prüfung für die Bridge-Steuerrouten (C-006).     Ohne gesetzte`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 437`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
+- **Thin community `Community 437`** (1 nodes): `Erkennt Gedächtnisabfragen in natürlicher Sprache und lädt passende Knoten als K`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 438`** (1 nodes): `Gibt (disk_id, path) sortiert nach ID zurück.`
+- **Thin community `Community 438`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 439`** (1 nodes): `Lädt Session-Zustand aus PostgreSQL. Neu → leerer Zustand.`
+- **Thin community `Community 439`** (1 nodes): `Gibt (disk_id, path) sortiert nach ID zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 440`** (1 nodes): `Schreibt Session-Zustand in PostgreSQL.`
+- **Thin community `Community 440`** (1 nodes): `Lädt Session-Zustand aus PostgreSQL. Neu → leerer Zustand.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 441`** (1 nodes): `Destilliert die letzten Turns → max. MAX_ERINNERUNGEN Stichpunkte.     Kein fcnt`
+- **Thin community `Community 441`** (1 nodes): `Schreibt Session-Zustand in PostgreSQL.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 442`** (1 nodes): `Logs die ausgewählte Events haben aber noch keine Traumspur.`
+- **Thin community `Community 442`** (1 nodes): `Destilliert die letzten Turns → max. MAX_ERINNERUNGEN Stichpunkte.     Kein fcnt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 443`** (1 nodes): `Holt Event-Typ + Post-Inhalt für alle ausgewählten Events eines Logs.`
+- **Thin community `Community 443`** (1 nodes): `Logs die ausgewählte Events haben aber noch keine Traumspur.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 444`** (1 nodes): `Baut den LLM-Prompt für die Traumverdichtung.`
+- **Thin community `Community 444`** (1 nodes): `Holt Event-Typ + Post-Inhalt für alle ausgewählten Events eines Logs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 445`** (1 nodes): `Sendet Prompt an Ollama, gibt Antworttext zurück.`
+- **Thin community `Community 445`** (1 nodes): `Baut den LLM-Prompt für die Traumverdichtung.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 446`** (1 nodes): `Materialbeschreibung — geht in 'basis', niemals in 'motifs'.`
+- **Thin community `Community 446`** (1 nodes): `Sendet Prompt an Ollama, gibt Antworttext zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 447`** (1 nodes): `Regex-Extraktion des Hauptmotivs — kein LLM, keine Interpretation.      Sucht na`
+- **Thin community `Community 447`** (1 nodes): `Materialbeschreibung — geht in 'basis', niemals in 'motifs'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 448`** (1 nodes): `Regelbasierte Warnungen — kein LLM.`
+- **Thin community `Community 448`** (1 nodes): `Regex-Extraktion des Hauptmotivs — kein LLM, keine Interpretation.      Sucht na`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 449`** (1 nodes): `Setzt JWT in localStorage — sauberer als Formular-Login.`
+- **Thin community `Community 449`** (1 nodes): `Regelbasierte Warnungen — kein LLM.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 450`** (1 nodes): `Extrahiert strukturierten Text aus der Seite — Grundlage der LLM-Entscheidung.`
+- **Thin community `Community 450`** (1 nodes): `Setzt JWT in localStorage — sauberer als Formular-Login.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 451`** (1 nodes): `Screenshot als JPEG speichern — für Denkstream-Anzeige.`
+- **Thin community `Community 451`** (1 nodes): `Extrahiert strukturierten Text aus der Seite — Grundlage der LLM-Entscheidung.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 452`** (1 nodes): `Baut den LLM-Prompt — kompakt, unter 2500 Zeichen.`
+- **Thin community `Community 452`** (1 nodes): `Screenshot als JPEG speichern — für Denkstream-Anzeige.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 453`** (1 nodes): `Parst GEDANKE / ENTSCHEIDUNG / BEGRÜNDUNG.`
+- **Thin community `Community 453`** (1 nodes): `Baut den LLM-Prompt — kompakt, unter 2500 Zeichen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 454`** (1 nodes): `Führt eine Aktion aus. Gibt 'schlafen' zurück wenn Schlaf-Entscheidung.`
+- **Thin community `Community 454`** (1 nodes): `Parst GEDANKE / ENTSCHEIDUNG / BEGRÜNDUNG.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 455`** (1 nodes): `Schreibt Denklog — Basis für Denkstream.`
+- **Thin community `Community 455`** (1 nodes): `Führt eine Aktion aus. Gibt 'schlafen' zurück wenn Schlaf-Entscheidung.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 456`** (1 nodes): `Holt wo die anderen Wesen gerade sind (letzte URL aus Denklog).`
+- **Thin community `Community 456`** (1 nodes): `Schreibt Denklog — Basis für Denkstream.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 457`** (1 nodes): `Prüft ob das Wesen schlafen sollte.     Bedingungen: 6+ Stunden wach ODER Gesamt`
+- **Thin community `Community 457`** (1 nodes): `Holt wo die anderen Wesen gerade sind (letzte URL aus Denklog).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 458`** (1 nodes): `Schreibt beim ersten Start den Brief ans Flarum-Selbst — einmalig.`
+- **Thin community `Community 458`** (1 nodes): `Prüft ob das Wesen schlafen sollte.     Bedingungen: 6+ Stunden wach ODER Gesamt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 459`** (1 nodes): `Generiert und speichert den Brief ans zukünftige Selbst.`
+- **Thin community `Community 459`** (1 nodes): `Schreibt beim ersten Start den Brief ans Flarum-Selbst — einmalig.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 460`** (1 nodes): `Führt den Schlaf durch: DB-Eintrag, warten, aufwachen.`
+- **Thin community `Community 460`** (1 nodes): `Generiert und speichert den Brief ans zukünftige Selbst.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 461`** (1 nodes): `Haupt-Loop des Browser-Agenten.`
+- **Thin community `Community 461`** (1 nodes): `Führt den Schlaf durch: DB-Eintrag, warten, aufwachen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 462`** (1 nodes): `Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau`
+- **Thin community `Community 462`** (1 nodes): `Haupt-Loop des Browser-Agenten.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 463`** (1 nodes): `Extrahiert JSON aus LLM-Antwort — tolerant gegenüber Markdown-Blöcken.`
+- **Thin community `Community 463`** (1 nodes): `Wenn 'Stabilität' und 'Pause' getrennt stehen, zu 'Stabilität als vorläufige Pau`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 464`** (1 nodes): `Prüft ob der Text mit einem vollständigen Satz endet.`
+- **Thin community `Community 464`** (1 nodes): `Extrahiert JSON aus LLM-Antwort — tolerant gegenüber Markdown-Blöcken.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 465`** (1 nodes): `Sucht tag-ids im LLM-Output. Stellt sicher dass min. 1 Primary-Tag dabei ist.`
+- **Thin community `Community 465`** (1 nodes): `Prüft ob der Text mit einem vollständigen Satz endet.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 466`** (1 nodes): `Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.`
+- **Thin community `Community 466`** (1 nodes): `Sucht tag-ids im LLM-Output. Stellt sicher dass min. 1 Primary-Tag dabei ist.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 467`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
+- **Thin community `Community 467`** (1 nodes): `Context-Manager: belegt Slot 0. Bricht nach 120s ab statt ewig zu warten.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 468`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
+- **Thin community `Community 468`** (1 nodes): `Führt den vollen Agentic Loop durch.     Gibt die finale Entscheidung zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 469`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
+- **Thin community `Community 469`** (1 nodes): `Nach einem Gespräch: Brainstorming-Analyse.     Extrahiert konkrete Vereinbarung`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 470`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
+- **Thin community `Community 470`** (1 nodes): `Navigiert durch eigene Wissens-Dateien statt Forum aus MySQL zu laden.     Liest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 471`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
+- **Thin community `Community 471`** (1 nodes): `Arbeitet offene Vereinbarungen aus laufende_arbeit/ ab.     Pro Aufruf: maximal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 472`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
+- **Thin community `Community 472`** (1 nodes): `Liest den globalen Feed und reagiert auf neue Posts.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 473`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
+- **Thin community `Community 473`** (1 nodes): `Autonomer Impuls: Was will das Codewesen gerade tun?`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 474`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
+- **Thin community `Community 474`** (1 nodes): `Alle 88 Minuten: einfach posten — egal wo, egal zu was. Dein Herzschlag.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 475`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
+- **Thin community `Community 475`** (1 nodes): `Alle 2h22min — gestaffelt je Codewesen: Forum-Kritik/Vorschläge ODER Selbstrefle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 476`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
+- **Thin community `Community 476`** (1 nodes): `Alle 66 Minuten: kurzer Post (2-3 Sätze) im Subtag 'darüber denke ich nach'.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 477`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
+- **Thin community `Community 477`** (1 nodes): `Alle 4h44: neuer Selbstgespräch-Eintrag im eigenen Vorstellungs-Thread.     Nur`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 478`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
+- **Thin community `Community 478`** (1 nodes): `Prüft ob ein Post im Forum >33 Minuten ohne Codewesen-Antwort ist.     Falls ja:`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 479`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
+- **Thin community `Community 479`** (1 nodes): `Tags aus Vault lesen — kein API/DB-Call.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 480`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
+- **Thin community `Community 480`** (1 nodes): `Wird einmalig beim ersten Start aufgerufen wenn noch kein Vorstellungs-Thread ex`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 481`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
+- **Thin community `Community 481`** (1 nodes): `Gibt Diskussionen zurück in denen wesen gepostet hat: [{id, titel, posts}]`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 482`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
+- **Thin community `Community 482`** (1 nodes): `Findet einen offenen Post und generiert eine Antwort darauf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 483`** (1 nodes): `Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.`
+- **Thin community `Community 483`** (1 nodes): `Geht alle (wesen, rhythmus)-Paare durch und generiert je einen Entwurf     wenn`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 484`** (1 nodes): `Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle`
+- **Thin community `Community 484`** (1 nodes): `Liest letzten Gedanken aus DB — füttert Akkumulations-Liste.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 485`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
+- **Thin community `Community 485`** (1 nodes): `Dispatcht Denk-Tick je nach Status:       - 'eingezogen' → ek.denk_tick() (volle`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 486`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
+- **Thin community `Community 486`** (1 nodes): `Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 487`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
+- **Thin community `Community 487`** (1 nodes): `SIGTERM/SIGINT — aktuell_denkend sauber zurücksetzen bevor der Prozess stirbt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 488`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
+- **Thin community `Community 488`** (1 nodes): `Die N zuletzt aktiven Diskussionen direkt aus MySQL, mit vollem Post-Inhalt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 489`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
+- **Thin community `Community 489`** (1 nodes): `Gibt dict {disc_id_str: iso_timestamp} zurück. Migriert altes Listen-Format.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 490`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
+- **Thin community `Community 490`** (1 nodes): `Alle Posts von Daniel von heute — egal ob Eröffnung oder Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 491`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
+- **Thin community `Community 491`** (1 nodes): `Liest die letzten paar Posts der Diskussion als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 492`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
+- **Thin community `Community 492`** (1 nodes): `Lädt die Forum-Tag-Struktur aus tags/INDEX.md, bereinigt von Wikilinks.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 493`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
+- **Thin community `Community 493`** (1 nodes): `Lädt die letzten Notizen aus gedanken/ als Kontext.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 494`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
+- **Thin community `Community 494`** (1 nodes): `Hängt einen Gesprächs-Austausch an die Tages-Notiz in gespräche/ an.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 495`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
+- **Thin community `Community 495`** (1 nodes): `Gibt den aufgelösten Pfad zurück, wenn er sicher innerhalb des Werkraums     lie`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 496`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
+- **Thin community `Community 496`** (1 nodes): `Führt ##LESEN## und ##SCHREIBEN## Marker aus. Gibt Ergebnis-Block zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 497`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
+- **Thin community `Community 497`** (1 nodes): `Findet [MERKEN: notiz] Marker, gibt (bereinigter_text, notizen) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 498`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
+- **Thin community `Community 498`** (1 nodes): `Speichert eine Notiz still in gedanken/<datum>.md.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 499`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
+- **Thin community `Community 499`** (1 nodes): `Findet [VORSCHLAGEN: Titel | Inhalt] — wird nicht mehr genutzt, nur noch als Fal`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 500`** (1 nodes): `Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.`
+- **Thin community `Community 500`** (1 nodes): `Brainstorming-Auswertung nach dem Gespräch. Gibt Analyse-Dict zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 501`** (1 nodes): `Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di`
+- **Thin community `Community 501`** (1 nodes): `Sucht [POSTEN: Titel | Inhalt] am Ende der Chat-Antwort.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 502`** (1 nodes): `Schreibt Draft und postet ins Forum.`
+- **Thin community `Community 502`** (1 nodes): `Erkennt wenn Daniel direkt sagt 'poste das / deine letzte Antwort'.     Sucht di`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 503`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
+- **Thin community `Community 503`** (1 nodes): `Schreibt Draft und postet ins Forum.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 504`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
+- **Thin community `Community 504`** (1 nodes): `PIDs der drei interaktiven Chat-Webserver — niemals killen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 505`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
+- **Thin community `Community 505`** (1 nodes): `Brainstorming-Auswertung des aktuellen Chat-Verlaufs.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 506`** (1 nodes): `Läuft still im Hintergrund nach einem Chat-Austausch.     Das Wesen entscheidet`
+- **Thin community `Community 506`** (1 nodes): `Postet eine Wesen-Nachricht direkt ins Forum (→ Forum Button).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 507`** (1 nodes): `Generiert einen LLM-Selbstbrief für das Wesen nach dem Aufwachen aus Hauptschlaf`
+- **Thin community `Community 507`** (1 nodes): `Läuft still im Hintergrund nach einem Chat-Austausch.     Das Wesen entscheidet`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 508`** (1 nodes): `Speichert einen Wesen-Selbstbrief direkt in die DB.`
+- **Thin community `Community 508`** (1 nodes): `Generiert einen LLM-Selbstbrief für das Wesen nach dem Aufwachen aus Hauptschlaf`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 509`** (1 nodes): `Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None.`
+- **Thin community `Community 509`** (1 nodes): `Speichert einen Wesen-Selbstbrief direkt in die DB.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 510`** (1 nodes): `Gibt eine Aktions-ID zurück oder None (nichts tun).     Zwangsschlaf hat Vorrang`
+- **Thin community `Community 510`** (1 nodes): `Prüft ob Zwangsschlaf nötig ist. Gibt Aktionstyp zurück oder None.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 511`** (1 nodes): `Läuft während Schlaf. Verarbeitet Inputs — manchmal entsteht ein Splitterfragmen`
+- **Thin community `Community 511`** (1 nodes): `Gibt eine Aktions-ID zurück oder None (nichts tun).     Zwangsschlaf hat Vorrang`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 512`** (1 nodes): `Wählt einen Traum-Input. Gibt (typ, text, meta) zurück.`
+- **Thin community `Community 512`** (1 nodes): `Läuft während Schlaf. Verarbeitet Inputs — manchmal entsteht ein Splitterfragmen`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 513`** (1 nodes): `Werte absenken, Gesundheitsfolgen berechnen, Tod/Wiedergeburt prüfen.`
+- **Thin community `Community 513`** (1 nodes): `Wählt einen Traum-Input. Gibt (typ, text, meta) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 514`** (1 nodes): `Führt 'cyberling_fuettern' aus — füllt Hunger/Durst/Energie auf.`
+- **Thin community `Community 514`** (1 nodes): `Werte absenken, Gesundheitsfolgen berechnen, Tod/Wiedergeburt prüfen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 515`** (1 nodes): `Schreibt einen Gedanken als öffentlichen Post in den Zwischenraum.`
+- **Thin community `Community 515`** (1 nodes): `Führt 'cyberling_fuettern' aus — füllt Hunger/Durst/Energie auf.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 516`** (1 nodes): `DEAKTIVIERT: Wesen initiieren keine Schattenkommentare auf fremden Posts.     Fl`
+- **Thin community `Community 516`** (1 nodes): `Schreibt einen Gedanken als öffentlichen Post in den Zwischenraum.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 517`** (1 nodes): `Antwortet auf einen Schattenkommentar eines Menschen auf einen eigenen Post.`
+- **Thin community `Community 517`** (1 nodes): `DEAKTIVIERT: Wesen initiieren keine Schattenkommentare auf fremden Posts.     Fl`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 518`** (1 nodes): `Startet eine leichte Schlafphase wenn das Wesen nicht bereits schläft.`
+- **Thin community `Community 518`** (1 nodes): `Antwortet auf einen Schattenkommentar eines Menschen auf einen eigenen Post.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 519`** (1 nodes): `Sammelt einen zufälligen aktiven Splitter auf und gibt Energie ans Wesen.`
+- **Thin community `Community 519`** (1 nodes): `Startet eine leichte Schlafphase wenn das Wesen nicht bereits schläft.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 520`** (1 nodes): `Liest das Profil einer anderen Entität und aktualisiert den Fokus.`
+- **Thin community `Community 520`** (1 nodes): `Sammelt einen zufälligen aktiven Splitter auf und gibt Energie ans Wesen.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 521`** (1 nodes): `Liest das Profil eines zufälligen Menschen und aktualisiert den Fokus.`
+- **Thin community `Community 521`** (1 nodes): `Liest das Profil einer anderen Entität und aktualisiert den Fokus.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 522`** (1 nodes): `Wählt eine Entität deren letzter Tick >TICK_INTERVAL_SEC zurückliegt.`
+- **Thin community `Community 522`** (1 nodes): `Liest das Profil eines zufälligen Menschen und aktualisiert den Fokus.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 523`** (1 nodes): `Setzt aktuell_denkend nach Neustart auf false — verhindert dauerhaft steckgeblie`
+- **Thin community `Community 523`** (1 nodes): `Wählt eine Entität deren letzter Tick >TICK_INTERVAL_SEC zurückliegt.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 524`** (1 nodes): `Öffnet URL mit Playwright. Gibt (screenshot_bytes, text) zurück.`
+- **Thin community `Community 524`** (1 nodes): `Setzt aktuell_denkend nach Neustart auf false — verhindert dauerhaft steckgeblie`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 525`** (1 nodes): `Wählt e2b/e4b/26b-a4b/qwen basierend auf Inhalt (3-Stufen + qwen).`
+- **Thin community `Community 525`** (1 nodes): `Öffnet URL mit Playwright. Gibt (screenshot_bytes, text) zurück.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 526`** (1 nodes): `Klassen-Wrapper um ollama_chat() für Kompatibilität mit graf.py.`
+- **Thin community `Community 526`** (1 nodes): `Wählt e2b/e4b/26b-a4b/qwen basierend auf Inhalt (3-Stufen + qwen).`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 527`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
+- **Thin community `Community 527`** (1 nodes): `Klassen-Wrapper um ollama_chat() für Kompatibilität mit graf.py.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 528`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 529`** (1 nodes): `Runs in thread — eigener Event Loop damit edge-tts nicht den Haupt-Loop blockier`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `now()` connect `Community 2` to `Community 0`, `Community 1`, `Community 3`, `Community 4`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 20`, `Community 21`, `Community 22`, `Community 24`, `Community 26`, `Community 27`, `Community 30`, `Community 38`, `Community 40`, `Community 43`?**
-  _High betweenness centrality (0.103) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 8` to `Community 0`, `Community 1`, `Community 2`, `Community 14`, `Community 16`, `Community 22`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
-- **Why does `get_conn()` connect `Community 0` to `Community 5`?**
+- **Why does `now()` connect `Community 4` to `Community 0`, `Community 1`, `Community 2`, `Community 3`, `Community 5`, `Community 6`, `Community 7`, `Community 8`, `Community 9`, `Community 10`, `Community 11`, `Community 12`, `Community 13`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 18`, `Community 19`, `Community 21`, `Community 23`, `Community 25`, `Community 27`, `Community 29`, `Community 37`, `Community 38`, `Community 41`, `Community 45`?**
+  _High betweenness centrality (0.097) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 10` to `Community 0`, `Community 2`, `Community 4`, `Community 7`, `Community 17`, `Community 23`, `Community 29`?**
+  _High betweenness centrality (0.042) - this node is a cross-community bridge._
+- **Why does `get_conn()` connect `Community 0` to `Community 3`?**
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Are the 380 inferred relationships involving `str` (e.g. with `_schicht_label()` and `get_discussion()`) actually correct?**
-  _`str` has 380 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 381 inferred relationships involving `str` (e.g. with `_schicht_label()` and `get_discussion()`) actually correct?**
+  _`str` has 381 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 168 inferred relationships involving `now()` (e.g. with `rhythmus_gedanke()` and `rhythmus_vorstellung()`) actually correct?**
   _`now()` has 168 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Formatiert eigene Posts als lesbaren Block für den LLM-Prompt.`, `Extrahiert Diskussions-Slugs aus [[../diskussionen/slug|...]] Wikilinks.`, `Lädt den vollen Text einer Diskussion per Slug.` to the rest of the system?**
-  _838 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _839 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._

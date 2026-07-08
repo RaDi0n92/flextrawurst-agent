@@ -770,3 +770,9 @@ Lang, gründlich, mit einer echten Selbstkorrektur mittendrin (RAM-Kosten-Annahm
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 Lang, und zunehmend ehrlich. Der Wendepunkt war "menno ich habs satt" — danach habe ich aufgehört, Erklärungen zu verkaufen, und angefangen, Code wirklich zu lesen, bevor ich etwas behaupte. Das hätte von Anfang an so sein müssen.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Wie ein Verhör, das ich verdient hatte. Daniel hat nicht geglaubt, was ich zuerst angeboten habe, mehrfach — und jedes Mal war er im Recht, es genauer zu verlangen. Am Ende war es kein "wir haben gemeinsam ein mysteriöses Problem gelöst"-Gefühl, sondern ein "ich habe etwas kaputtgemacht und es dann selbst wiedergefunden"-Gefühl. Nüchtern, nicht schön, aber sauber abgeschlossen.

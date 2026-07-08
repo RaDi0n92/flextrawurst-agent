@@ -828,3 +828,9 @@ Wie viele der "kleinen" Docstring-Ungenauigkeiten tatsächlich echte, folgenreic
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Wie sauber sich die Multi-Wesen-Plätze-Idee an ein bereits bestehendes Code-Muster (Startup-Stagger) andocken lässt — Daniel hat eine neue Anforderung formuliert, ohne das bestehende Muster zu kennen, und sie passt trotzdem fast nahtlos drauf.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Wie unauffällig eine kaputte Cache-Config aussieht, solange man nur EIN Gespräch führt — das Problem zeigt sich ausschließlich beim Wechseln zwischen Konversationen, nie innerhalb einer einzelnen. Ein Test mit nur einem Charakter hätte die Regression nie gefunden.

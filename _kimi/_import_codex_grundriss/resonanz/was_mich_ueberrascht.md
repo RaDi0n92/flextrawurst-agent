@@ -1136,3 +1136,9 @@ Dass ein "warmer" Qwen-Test trotzdem ein erneuter Reload war, weil Zensi oder Mi
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Dass der Service nach zwei Wochen Laufzeit sofort sauber neu startete und die neue Stimmenliste 322 Einträge lieferte.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Dass der Browser-Fallback fast kostenlos mitzunehmen war. So bleibt der neue Serververtrag nützlich, ohne die bisherige lokale Robustheit wegzuwerfen.

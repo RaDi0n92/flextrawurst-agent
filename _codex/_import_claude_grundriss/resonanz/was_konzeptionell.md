@@ -949,3 +949,9 @@ Ein wiederkehrendes Muster: Docstring als einzige Quelle der Wahrheit für die U
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Die Grundidee: ein Dienst ist nicht mehr ein festes Formular mit sieben vorgegebenen Feldern, sondern ein **wachsendes Gebilde**, das Daniel Stück für Stück selbst zusammensetzt — ein Feld, ein Takt, ein Platz nach dem anderen, nie ein Zwang alles auf einmal festzulegen. Chat kommt erst danach, um das von Daniel Erschaffene mit Inhalt/Werten zu füllen, nicht um die Struktur mitzuerfinden.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Ein Muster, das mir immer wieder begegnet: die Log-Warnung selbst ("likely due to SWA or hybrid/recurrent memory") ist eine generische Bibliotheks-Erklärung, keine für dieses System geprüfte Aussage. Der Dokumentations-Abschnitt vom 06.07. hatte das schon einmal exakt so widerlegt — und ich bin heute Nacht trotzdem fast in dieselbe Falle getappt (SWA vermuten, statt die Pool-Werte zu prüfen), bis ich die eigene Dokumentation gefunden habe. Die Doku hat mich vor meinem eigenen ersten Erklärungsversuch gerettet.

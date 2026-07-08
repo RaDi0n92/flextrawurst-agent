@@ -107,6 +107,10 @@ class LogExplainRequest(BaseModel):
     question: str = ""
     model: str = ""
 
+class LogCompareRequest(BaseModel):
+    base_id: str
+    other_id: str
+
 class WebarchiveSearchRequest(BaseModel):
     query: str = ""
     limit: int = 12
@@ -681,6 +685,84 @@ def _sync_explain_log(text: str, question: str, model: str) -> dict:
     answer = _ollama_generate(chosen, prompt)
     return {"answer": answer, "model": chosen}
 
+def _log_group_signatures(item: dict) -> dict[str, dict]:
+    groups = item.get("groups") if isinstance(item.get("groups"), list) else []
+    mapped: dict[str, dict] = {}
+    for group in groups:
+        if not isinstance(group, dict):
+            continue
+        signature = str(group.get("signature") or "").strip()
+        if not signature:
+            continue
+        mapped[signature] = {
+            "count": int(group.get("count") or 0),
+            "level": str(group.get("level") or ""),
+        }
+    return mapped
+
+def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
+    base_counts = item_a.get("counts") if isinstance(item_a.get("counts"), dict) else {}
+    other_counts = item_b.get("counts") if isinstance(item_b.get("counts"), dict) else {}
+    base_groups = _log_group_signatures(item_a)
+    other_groups = _log_group_signatures(item_b)
+    added = [signature for signature in other_groups.keys() if signature not in base_groups]
+    removed = [signature for signature in base_groups.keys() if signature not in other_groups]
+    changed: list[dict] = []
+    for signature in other_groups.keys():
+        if signature not in base_groups:
+            continue
+        base_group = base_groups[signature]
+        other_group = other_groups[signature]
+        if base_group["count"] == other_group["count"] and base_group["level"] == other_group["level"]:
+            continue
+        changed.append({
+            "signature": signature,
+            "base_count": base_group["count"],
+            "other_count": other_group["count"],
+            "base_level": base_group["level"],
+            "other_level": other_group["level"],
+        })
+    return {
+        "base": {
+            "id": item_a.get("id") or "",
+            "filename": item_a.get("filename") or "",
+            "profile": item_a.get("profile") or "",
+            "created_at": item_a.get("created_at") or "",
+        },
+        "other": {
+            "id": item_b.get("id") or "",
+            "filename": item_b.get("filename") or "",
+            "profile": item_b.get("profile") or "",
+            "created_at": item_b.get("created_at") or "",
+        },
+        "counts": {
+            "base": {
+                "lines": int(base_counts.get("lines", 0) or 0),
+                "errors": int(base_counts.get("errors", 0) or 0),
+                "warnings": int(base_counts.get("warnings", 0) or 0),
+                "tracebacks": int(base_counts.get("tracebacks", 0) or 0),
+                "http_5xx": int(base_counts.get("http_5xx", 0) or 0),
+            },
+            "other": {
+                "lines": int(other_counts.get("lines", 0) or 0),
+                "errors": int(other_counts.get("errors", 0) or 0),
+                "warnings": int(other_counts.get("warnings", 0) or 0),
+                "tracebacks": int(other_counts.get("tracebacks", 0) or 0),
+                "http_5xx": int(other_counts.get("http_5xx", 0) or 0),
+            },
+        },
+        "group_counts": {
+            "base": len(base_groups),
+            "other": len(other_groups),
+            "added": len(added),
+            "removed": len(removed),
+            "changed": len(changed),
+        },
+        "added": added[:20],
+        "removed": removed[:20],
+        "changed": changed[:20],
+    }
+
 def _normalize_library(data: dict) -> dict:
     categories = data.get("categories")
     clips = data.get("clips")
@@ -1251,6 +1333,15 @@ async def export_form_profile(form_id: str, fmt: str):
 @app.get("/logs/analyses")
 async def get_log_analyses():
     return _read_logs()
+
+@app.post("/logs/compare")
+async def compare_log_analyses(req: LogCompareRequest):
+    items = _read_logs()
+    item_a = next((entry for entry in items if entry["id"] == req.base_id), None)
+    item_b = next((entry for entry in items if entry["id"] == req.other_id), None)
+    if not item_a or not item_b:
+        raise HTTPException(status_code=404, detail="Mindestens eine Loganalyse wurde nicht gefunden.")
+    return _compare_log_analyses(item_a, item_b)
 
 @app.get("/logs/analyses/{log_id}/export/{fmt}")
 async def export_log_analysis(log_id: str, fmt: str):

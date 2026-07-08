@@ -976,3 +976,9 @@ In `codewesen_agent.py`s Antwortpflicht-Umbau — die verschachtelte for/else/br
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 Die Rollen-Idee (pro Wesen-Platz optional eine Rolle + Rollenbeschreibung + eigenes Verhalten-Feld) ist im Grunde ein kleines Charakter-System innerhalb eines Dienstes — jeder Platz bekommt nicht nur ein Wesen, sondern eine Funktion in diesem einen Ablauf ("Anreger", "Kritiker", "Vermittler" o.ä.), unabhängig von der sonstigen festen Identität des Wesens. Das ist näher an Theaterregie als an Konfiguration.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Die Journal-Timeline (`prompt cache is enabled, size limit: X MiB` über alle Neustarts seit 06.07. 02:13) war der Moment, an dem ich am tiefsten eingetaucht bin — nicht in Code, sondern in reine Zeitreihen-Rekonstruktion. Erst 8192 MiB (Default, frühe Testphase), dann ab 15:26 auf 16384/64 hochgesetzt (der validierte Fix), dann durchgehend stabil über 06.07. und 07.07., bis zur Lücke um 23:03/23:04 heute Nacht.

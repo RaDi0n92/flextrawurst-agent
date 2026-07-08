@@ -2752,3 +2752,21 @@ class TTSServerClip(BaseModel):
     rate: str
     meta: dict = {}
 ```
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+**Vision-Schicht**
+
+Wenn die Logs-Fläche weiter wächst, sollte sie Analysezustände tragen können wie kleine Akten: speichern, vergleichen, exportieren, vielleicht später kommentieren. Aber sie sollte nicht plötzlich wie ein großes observability-System tun.
+
+**Code-Skizze**
+
+```json
+{
+  "base": {"id": "...", "filename": "..."},
+  "other": {"id": "...", "filename": "..."},
+  "group_counts": {"added": 1, "removed": 0, "changed": 2}
+}
+```

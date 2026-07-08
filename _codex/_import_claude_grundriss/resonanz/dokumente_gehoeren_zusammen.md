@@ -828,3 +828,9 @@ docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.
 **[2026-07-07]** *← _claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md*
 
 `_claude/ideen/codexium2_solarius2/memory_container.md` (Vorbild-Konzept), `welt/weltkern_watchdog.py` `META_FELD_LABELS` (Takt-Vorbild), `codewesen_reaktion.py` Startup-Stagger (Reihenfolge-Vorbild), und der bestehende `WIZARD_SYSTEM_PROMPT` in `serve_process_camera_preview.ts` (das, was ersetzt werden soll).
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+`docs/systemdoku/12_ollama_gemma4.md` und die heutige Nacht-Diagnose gehören untrennbar zusammen — im Grunde ist das, was ich heute Nacht gemacht habe, nur eine Bestätigung + ein Wiederherstellen des dort schon beschriebenen Zustands, keine neue Erkenntnis. Sollte in dieser Doku als Nachtrag ergänzt werden (noch nicht getan): "Regression am 07.07. abends durch Claude-Instanz, behoben 08.07. 01:40."

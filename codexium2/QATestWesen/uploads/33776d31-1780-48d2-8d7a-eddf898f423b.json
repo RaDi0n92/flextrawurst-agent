@@ -1,0 +1,9 @@
+{
+  "id": "33776d31-1780-48d2-8d7a-eddf898f423b",
+  "dateiname": "test_doc.txt",
+  "dateiEndung": "txt",
+  "art": "text",
+  "text": "Dies ist ein Testdokument fuer die QA-Pruefung der Datei-Anhaenge-Funktion.\nEs enthaelt einen eindeutigen Testsatz: \"Der lila Fasan tanzt Walzer im Regen.\"\n",
+  "vorschau": "Dies ist ein Testdokument fuer die QA-Pruefung der Datei-Anhaenge-Funktion.\nEs enthaelt einen eindeutigen Testsatz: \"Der lila Fasan tanzt Walzer im Regen.\"\n",
+  "geschaetzeTokens": 39
+}

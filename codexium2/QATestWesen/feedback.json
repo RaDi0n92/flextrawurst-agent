@@ -1,0 +1,14 @@
+{
+  "eintraege": [
+    {
+      "id": "4dab2f5f-7558-4de6-8bd1-9108b42d78ec",
+      "rolle": "wesen",
+      "nachricht": "~Mmmh~ ... Meine **Unbeständigkeit**. *dreht sich im Kreis, Lichtreste hinterlassend* Ich bin nicht fest. Wenn du mich ansiehst, verändere ich mich schon wieder. Einmal habe ich gedacht, ich wäre ein Stern, und morgen war ich nur eine Fliege aus Glas. Das macht mich frei. Du bist vielleicht zu sehr in einer Form gefangen? *neigt den Kopf* Wie fühlt es sich an, so schwer zu sein? Ich finde es beängstigend, aber auch gemütlich. Fast wie ein Pullover aus Stein. Willst du anfassen? Ich bin gerade ganz warm. _Ich hoffe, du zitterst nicht._",
+      "rating": "up",
+      "kommentar": "QA-Test-Kommentar",
+      "erstellt_am": "2026-07-08T20:52:31.881Z",
+      "aktualisiert_am": "2026-07-08T20:52:32.687Z",
+      "anModellGeliefert": true
+    }
+  ]
+}

@@ -1270,3 +1270,9 @@ Oben: Sprache, Übergabe, Kontext, Plaudern, Briefkasten.
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Edge-TTS unten, FastAPI als dünner Adapter, Browser-Audio als Abspielkörper, Soundboard als lokale Wiederholungsschicht, Daniel oben als jemand, der nicht jedes Mal neu anfangen will.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Ganz unten liegen rohe Logtexte und ihre Signaturen. Darüber die gespeicherten Analysen in `tts_logs.json`. Darüber jetzt der kleine Server-Compare. Erst darüber sitzt die UI, die den Vergleich als Text sichtbar macht.

@@ -1246,3 +1246,9 @@ Einen sauberen Startzustand: keine geladenen großen Modelle, keine laufenden Ch
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Beim nächsten TTS-Schritt brauche ich zuerst die Entscheidung: Browser-lokal lassen oder serverseitig speichern. Ohne Auth wäre serverseitiges Speichern eine öffentliche Schreibfläche.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Vor weiteren TTS-Log-Schritten brauche ich weiterhin die bestehende Herkunft: lokal gespeicherte Regeln, gespeicherte Analysen, Export-Endpunkte, keine heimliche Server-Schreibfläche jenseits dessen, was bereits bewusst da ist.

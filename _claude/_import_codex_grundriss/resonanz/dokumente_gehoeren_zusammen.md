@@ -1193,3 +1193,9 @@ Diese Note ersetzt ihn als technische Ablage.
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 `/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, Claudes Spiegel `2026-06-18-tts-session.md` und diese Notiz gehören zusammen.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+`/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, `/root/werkraum/welt/tts_logs.json`, `_codex/notizen/2026-07-05.md`, `_codex/_import_claude_grundriss/notizen/2026-06-18.md`, `_codex/_import_claude_grundriss/notizen/2026-07-06.md`.

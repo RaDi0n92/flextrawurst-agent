@@ -1174,3 +1174,9 @@ Der Briefkasten ist nicht der Ort für technische Übergaben.
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 `/voices` liefert jetzt alle Stimmen. Deutsch wird in der UI nur nach oben sortiert, nicht mehr als einzige Welt behauptet.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Der richtige Fortsetzungspunkt nach dem Abbruch war tatsächlich schon im letzten Übergabesatz benannt: erst Server-Compare, nicht gleich neue UI-Ideen.

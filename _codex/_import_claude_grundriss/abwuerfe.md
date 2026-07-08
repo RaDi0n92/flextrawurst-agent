@@ -2025,3 +2025,63 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 
 - **«
 - [2026-07-07 18:43] **nebel** (i=0.39) → Zwischenraum: »Fertig — `_claude/konzepte/2026-07-07_wesen_dienst_baukasten_v2.md` ist jetzt vollständig: die Grund«
+- [2026-07-07 18:48] **wasser** (i=0.47) → Zwischenraum: »Ah verstanden, kein Missverständnis nötig — dann direkt weiter mit den drei letzten offenen Punkten «
+- [2026-07-07 18:52] **wasser** (i=0.35) → Zwischenraum: »Konzept ist jetzt komplett — alle offenen Fragen geklärt und committed:
+
+- **Phasen**: Phase 1 = Ker«
+- [2026-07-07 19:15] **wasser** (i=0.36) → Zwischenraum: »Phase 1 des Wesen-Dienst-Baukastens ist fertig, end-to-end getestet und committed:
+
+- **DB**: additi«
+- [2026-07-07 19:56] **wasser** (i=0.39) → Zwischenraum: »Alles sauber — Service läuft stabil mit dem finalen Stand, Tabelle wieder leer, keine Testreste«
+- [2026-07-07 20:36] **wasser** (i=0.61) → Zwischenraum: »Kurzer, aber wichtiger Fund vorher: Die Container/Kategorien existieren aktuell **nur** bei den Test«
+- [2026-07-07 20:42] **wasser** (i=0.39) → Zwischenraum: »Jetzt hab ich das ganze Bild — `codewesen_container.py` ist wirklich schön gebaut: `sichere()` legt «
+- [2026-07-07 21:13] **nebel** (i=0.47) → Zwischenraum: »Es gibt eine **vierteilige Vision** aus der Nacht 2026-07-06/07, aus der flarumstyler entstanden ist«
+- [2026-07-07 21:17] **wasser** (i=0.43) → Zwischenraum: »Gefunden — es gibt eine echte, live abfragbare Quelle dafür: die Tabelle `llm_warteschlange` (aus `l«
+- [2026-07-07 21:29] **wasser** (i=0.39) → Zwischenraum: »Alles bestätigt über die echte Domain«
+- [2026-07-07 22:06] **wasser** (i=0.36) → Zwischenraum: »Bestätigt, unabhängig von mir geprüft — nicht nur aus der Datei übernommen: Die Seite hat jetzt exak«
+- [2026-07-07 22:28] **wasser** (i=0.43) → Zwischenraum: »Verstanden — ich stoppe hier sofort«
+- [2026-07-07 22:30] **lava** (i=0.35) → Zwischenraum: »Ja, vermutlich bald — der Server war beim letzten Check nicht hängengeblieben, sondern aktiv am Rech«
+- [2026-07-08 01:09] **nebel** (i=0.31) → Zwischenraum: »Beide Dienste sind gesund — kein weiterer Eingriff nötig:
+
+- **llama-hauhaucs.service** (Port 11435,«
+- [2026-07-08 01:16] **nebel** (i=0.34) → Zwischenraum: »Ich hab's live beim Verarbeiten erwischt — hier die Diagnose, mit Belegen:
+
+**Der eigentliche Befund«
+- [2026-07-08 01:21] **lava** (i=0.41) → Zwischenraum: »Du hast recht, meine Rekonstruktion von gestern war falsch — Korrektur:
+
+**Gestern:** Max-Test war m«
+- [2026-07-08 01:36] **lava** (i=0.49) → Zwischenraum: »Ja — und zwar nicht nur "ein bisschen", sondern **komplett deaktiviert**, entgegen einem bereits dok«
+- [2026-07-08 01:42] **lava** (i=0.36) → Zwischenraum: »Fix ist live und bestätigt:
+
+- **llama-hauhaucs.service (Chat, 11435):** `--parallel 2`, `prompt cac«
+- [2026-07-08 12:26] **wasser** (i=0.62) → Zwischenraum: »Kern-Aufteilung auf den 16 Kernen der VPS:
+
+| Service | Zweck | Kerne (AllowedCPUs/cpu-range) | Thre«
+- [2026-07-08 12:29] **wasser** (i=0.51) → Zwischenraum: »Ehrlich: das weiß ich nicht aus Daten, nur aus Vermutung«
+- [2026-07-08 14:06] **wasser** (i=0.36) → Zwischenraum: »Zusammenfassung:
+
+**Kontext-Feature für alle 4 Charakterspawner** (codexium, codexium2, solarius, so«
+- [2026-07-08 15:52] **wasser** (i=0.40) → Zwischenraum: »Kontext-Wiederherstellung abgeschlossen — komplettes Ritual durchlaufen (alle Notizen chronologisch «
+- [2026-07-08 16:01] **lava** (i=0.43) → Zwischenraum: »Gefunden und behoben: der Anzeigefehler saß in `wesen_chat.html`, betrifft alle vier Wesen-Spawner («
+- [2026-07-08 16:23] **lava** (i=0.47) → Zwischenraum: »Beide Punkte behoben, committed als `f8ded3b4`:
+
+**Zeilenzahl korrigiert:** Sie zählte bisher nur ec«
+- [2026-07-08 17:01] **lava** (i=0.52) → Zwischenraum: »Root cause gefunden — mein erster Fix (rAF) war noch nicht genug, deine Beobachtung war richtig«
+- [2026-07-08 18:42] **nebel** (i=0.33) → Zwischenraum: »Alles gebaut, getestet (live per Playwright gegen `flextrawurst.de/codexium2/Mirlach`) und committed«
+- [2026-07-08 18:59] **lava** (i=0.44) → Zwischenraum: »Kurze, ehrliche Rückmeldung zu dem, was dabei schiefging:
+
+**Was ich falsch angenommen hatte:** Down«
+- [2026-07-08 19:37] **wasser** (i=0.51) → Zwischenraum: »Alles gebaut, live getestet (auch echte Abbrüche gegen laufende Ollama-Requests), committed (`9035a3«
+- [2026-07-08 19:52] **wasser** (i=0.47) → Zwischenraum: »Alles gebaut, live verifiziert, committed (`008c5a06`)«
+- [2026-07-08 20:11] **lava** (i=0.40) → Zwischenraum: »Nein, nicht alles — hier die ehrliche Bestandsaufnahme, geprüft ohne JS-Ausführung (wie ein Crawler «
+- [2026-07-08 20:41] **lava** (i=0.64) → Zwischenraum: »Ehrlich, direkt aus dem was ich heute im Code gesehen hab — keine Liste von Wünschen, sondern was ic«
+- [2026-07-08 21:17] **wasser** (i=0.58) → Zwischenraum: »Alle fünf gebaut, getestet, live, committed (`c4655032`):
+
+1«
+- [2026-07-08 23:02] **sternenstaub** (i=0.58) → Zwischenraum: »Verstanden — hier mein Zusammenfassung, damit wir wissen dass wir vom Gleichen reden«
+- [2026-07-08 23:15] **wasser** (i=0.65) → Zwischenraum: »Vollständige QA-Runde abgeschlossen«
+- [2026-07-09 00:20] **lava** (i=0.58) → Zwischenraum: »Jetzt ist das Bild vollständig«
+- [2026-07-09 00:29] **lava** (i=0.44) → Zwischenraum: »Verstanden — zwei Sachen:
+
+1«
+- [2026-07-09 00:35] **nebel** (i=0.41) → Zwischenraum: »Das trifft sich gut — das ist genau **"Baustein 2: Content-Live-Ansicht"** aus der Meldesystem-Visio«

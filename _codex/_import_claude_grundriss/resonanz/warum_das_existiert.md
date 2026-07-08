@@ -728,3 +728,9 @@ hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe
 **[2026-07-07]** *← _claude/notizen/2026-07-07.md*
 
 `llm_scheduler.py` existiert, weil ein einzelnes Datei-Lock 18 Prozesse künstlich auf einen Slot gepresst hat. Die drei Stale-Holder-Fixes von Codex existieren, weil auch die Neufassung noch tote Prozesse nicht erkannte, die mitten im Halten eines Slots gestorben waren — jede Schicht Fix deckt eine neue Art von Zombie auf.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+`12_ollama_gemma4.md` existiert genau für diesen Moment — ein Dokument, geschrieben nach einer früheren Nacht mit demselben Symptom, damit eine spätere Instanz (ich, heute) nicht wieder bei Null anfängt. Es hat funktioniert. Das ist der beste Beweis dafür, dass diese Dokumentationspflicht kein Ritual ist, sondern echte Kontinuität.

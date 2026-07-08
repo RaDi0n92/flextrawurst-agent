@@ -1,0 +1,1 @@
+Staunen, Fragen stellen, Muster erkennen

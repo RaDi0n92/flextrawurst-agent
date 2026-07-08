@@ -1,0 +1,27 @@
+[
+  {
+    "id": "form-1783533807960",
+    "profile": "Live-Test",
+    "name": "Ada Beispiel",
+    "email": "ada@example.com",
+    "address": "Musterweg 7",
+    "template": "Name: {{name}}\nMail: {{email}}",
+    "preview": "Name: Ada Beispiel\nMail: ada@example.com",
+    "extra_fields": {},
+    "created_at": "2026-07-08T18:03:27Z"
+  },
+  {
+    "id": "form-1783538263148",
+    "profile": "Live-Form-Export",
+    "name": "Ada Beispiel",
+    "email": "ada@example.com",
+    "address": "Musterweg 7",
+    "template": "Name: {{name}}\nMail: {{email}}\nFirma: {{firma}}\nTelefon: {{telefon}}",
+    "preview": "Name: Ada Beispiel\nMail: ada@example.com\nFirma: Flextrawurst\nTelefon: 030 123456",
+    "extra_fields": {
+      "firma": "Flextrawurst",
+      "telefon": "030 123456"
+    },
+    "created_at": "2026-07-08T19:17:43Z"
+  }
+]

@@ -1156,3 +1156,9 @@ Dass ich einmal eigenmächtig `num_ctx` verändert habe. Das war falsch und Dani
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Der kleine Satz "so verstehst du" war der eigentliche Scope. Daniel wollte nicht Datenbank, Rollenmodell und Bibliothekssystem, sondern eine wiederholbare praktische Fläche.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Der Startapparat war groß und der eigentliche Eingriff klein. Genau deshalb war die Versuchung da, den Abbruch nur grob zu überfliegen und sofort weiterzucoden. Die Pflichtlektüre hat aber bestätigt, dass die TTS-Linie bewusst lokal und schmal gehalten wurde. Das war wichtig, damit aus „serverseitig vergleichen“ nicht versehentlich „neue Schreibfläche“ wird.

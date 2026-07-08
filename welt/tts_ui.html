@@ -739,6 +739,7 @@ const WEBARCHIVE_COMPARE_API = BASE + 'webarchive/compare';
 const FORMS_API = BASE + 'forms/profiles';
 const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
 const LOGS_API = BASE + 'logs/analyses';
+const LOGS_COMPARE_API = BASE + 'logs/compare';
 const LOGS_EXPORT_BASE = BASE + 'logs/analyses/';
 const LOGS_ANALYZE_API = BASE + 'logs/analyze';
 const LOGS_EXPLAIN_API = BASE + 'logs/explain';
@@ -1364,6 +1365,57 @@ function compareLogEntries(base, other){
     removed.length ? `Entfallen: ${removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
     changed.length ? `Geaendert: ${changed.slice(0, 8).join(' | ')}` : 'Geaendert: keine',
   ].join('\n');
+}
+
+function formatServerLogComparison(data){
+  if (!data || typeof data !== 'object') return '';
+  const base = data.base || {};
+  const other = data.other || {};
+  const counts = data.counts || {};
+  const baseCounts = counts.base || {};
+  const otherCounts = counts.other || {};
+  const groupCounts = data.group_counts || {};
+  const changed = Array.isArray(data.changed) ? data.changed : [];
+  const changedPreview = changed.slice(0, 8).map(item=>{
+    if (!item || typeof item !== 'object') return '';
+    const signature = String(item.signature || '').trim();
+    const baseLevel = String(item.base_level || '');
+    const otherLevel = String(item.other_level || '');
+    return `${signature} (${baseLevel || '-'} ${item.base_count ?? 0}x -> ${otherLevel || '-'} ${item.other_count ?? 0}x)`;
+  }).filter(Boolean);
+  return [
+    `Basis: ${base.filename || base.id || 'unbekannt'}`,
+    `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
+    '',
+    `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
+    `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,
+    `Warnungen: ${baseCounts.warnings ?? 0} -> ${otherCounts.warnings ?? 0}`,
+    `Tracebacks: ${baseCounts.tracebacks ?? 0} -> ${otherCounts.tracebacks ?? 0}`,
+    `HTTP-5xx: ${baseCounts.http_5xx ?? 0} -> ${otherCounts.http_5xx ?? 0}`,
+    '',
+    `Gruppen: ${groupCounts.base ?? 0} -> ${groupCounts.other ?? 0}`,
+    `Neu in Vergleich: ${groupCounts.added ?? 0}`,
+    `Entfallen: ${groupCounts.removed ?? 0}`,
+    `Geaendert: ${groupCounts.changed ?? 0}`,
+    '',
+    Array.isArray(data.added) && data.added.length ? `Neu: ${data.added.slice(0, 8).join(' | ')}` : 'Neu: keine',
+    Array.isArray(data.removed) && data.removed.length ? `Entfallen: ${data.removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
+    changedPreview.length ? `Geaendert: ${changedPreview.join(' | ')}` : 'Geaendert: keine',
+  ].join('\n');
+}
+
+async function compareLogEntriesOnServer(base, other){
+  const res = await fetch(LOGS_COMPARE_API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      base_id: base.id,
+      other_id: other.id
+    })
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  return formatServerLogComparison(data);
 }
 
 function normalizeLogRule(item){
@@ -3529,7 +3581,7 @@ logsRules.addEventListener('change', ()=>{
 });
 btnLogsExportTxt.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'txt'));
 btnLogsExportJson.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'json'));
-logsList.addEventListener('click', e=>{
+logsList.addEventListener('click', async e=>{
   const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-log-id]');
   if (!btn || !row) return;
@@ -3547,7 +3599,16 @@ logsList.addEventListener('click', e=>{
       st('Gleiche Analyse gewählt.','ok');
       return;
     }
-    logsCompare.value = compareLogEntries(currentLogEntry, item);
+    try {
+      if (currentLogEntry.id && item.id){
+        logsCompare.value = await compareLogEntriesOnServer(currentLogEntry, item);
+      } else {
+        logsCompare.value = compareLogEntries(currentLogEntry, item);
+      }
+    } catch(e){
+      logsCompare.value = compareLogEntries(currentLogEntry, item);
+      dbg(`Server-Vergleich fehlgeschlagen, lokaler Fallback: ${e.message}`);
+    }
     st(`Loganalyse verglichen: ${item.filename || item.id}`,'ok');
   }
   if (btn.dataset.act === 'export-log-txt') exportLogEntry(item, 'txt');

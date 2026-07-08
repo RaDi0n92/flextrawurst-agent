@@ -1,0 +1,26 @@
+[
+  {
+    "id": "snap-1783533807993",
+    "url": "https://example.com",
+    "resolved_url": "https://example.com",
+    "title": "Example Test",
+    "html_path": "/root/werkraum/welt/tts_webarchive_html/snap-1783533807993.html",
+    "text_path": "/root/werkraum/welt/tts_webarchive_text/snap-1783533807993.txt",
+    "text_preview": "Example Domain Example Domain\n This domain is for use in documentation examples without needing permission. Avoid use in operations.\n Learn more",
+    "status": "done",
+    "error": "",
+    "fetched_at": "2026-07-08T18:03:27Z"
+  },
+  {
+    "id": "snap-1783535371430",
+    "url": "https://example.com",
+    "resolved_url": "https://example.com",
+    "title": "Example Test v2",
+    "html_path": "/root/werkraum/welt/tts_webarchive_html/snap-1783535371430.html",
+    "text_path": "/root/werkraum/welt/tts_webarchive_text/snap-1783535371430.txt",
+    "text_preview": "Example Domain Example Domain\n This domain is for use in documentation examples without needing permission. Avoid use in operations.\n Learn more",
+    "status": "done",
+    "error": "",
+    "fetched_at": "2026-07-08T18:29:31Z"
+  }
+]

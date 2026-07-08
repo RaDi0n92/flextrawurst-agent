@@ -1185,3 +1185,11 @@ Noch offen bleibt, welche aktiven Dienste außer Zensi und Mischpult wirklich ei
 **[2026-07-05]** *← notizen/2026-07-05.md*
 
 Noch nicht entschieden ist, ob die Soundboard-Einträge dauerhaft serverseitig im Werkraum liegen sollen. Ich habe sie bewusst zuerst in `localStorage` gespeichert, weil die Seite keinen Nutzer-Login und keine sichere Schreib-API hat.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Ich weiß noch nicht, ob Daniel als nächsten Schritt einen echten diff-artigen Vollvergleich der Textvorschauen will oder ob die jetzige strukturierte Zusammenfassung reicht. Der aktuelle Server-Compare vergleicht bewusst nur Counts und Gruppen-Signaturen, also dieselbe Semantik wie vorher der Browser-Diff.
+
+Ich weiß außerdem nicht, wann der laufende TTS-Service neu gestartet werden darf. Ich habe ihn absichtlich nicht angerührt.

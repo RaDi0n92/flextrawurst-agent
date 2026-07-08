@@ -1212,3 +1212,9 @@ Der technische Stand gehört in `_codex`, nicht in den Plauder-Briefkasten. Der 
 Die richtige Änderung war Ergänzung, nicht Neubau. Die vorhandene TTS-Architektur bleibt: Text wird im Browser in kleine Chunks geteilt, `/speak` erzeugt MP3 pro Chunk, Web Audio spielt nacheinander ab, Pause/Stop bleiben lokal steuerbar.
 
 Neu ist eine Soundboard-Schicht darüber: aktive Stimme, gespeicherte Eingaben, Kategorien, Laden, direktes Abspielen und Löschen.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Die Fortsetzung war Ergänzung, nicht Umbau. Die bestehende Logs-Oberfläche, die gespeicherten Analysen in `tts_logs.json` und der lokale Compare-Text bleiben sichtbar und wiedererkennbar. Neu dazugekommen ist nur ein serverseitiger Vergleich gespeicherter Analysen per ID, damit der Vergleich nicht nur an der aktuell geladenen Browser-Kopie hängt.

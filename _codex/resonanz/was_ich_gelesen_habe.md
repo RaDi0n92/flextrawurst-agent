@@ -1583,3 +1583,11 @@ Ich habe Daniels Auftrag gelesen: `/tts/` soll mehr werden als ein Textfeld mit 
 Ich habe danach `welt/tts_ui.html`, `welt/tts_service.py`, die alte TTS-Spiegeldatei von Claude und den laufenden `tts-service` gelesen. Besonders wichtig war die alte Herkunft: TTS existiert, weil Daniel nicht ans Display gefesselt sein wollte. Die 280-Zeichen-Chunking-Logik ist kein Detail, sondern der Grund, warum die Seite trotz Microsoft-Drosselung brauchbar funktioniert.
 
 Ich habe außerdem die Service-Realität gelesen: `tts-service.service` lief seit dem 19. Juni 2026, `/voices` lieferte nur sechs deutsche Stimmen, obwohl `edge_tts` deutlich mehr kann. Nach dem Restart lieferte `/voices` 322 Stimmen.
+
+---
+
+**[2026-07-09]** *← notizen/2026-07-09.md*
+
+Ich habe nach dem Abbruch zuerst die eigene Codex-Spur, Karte, Resonanzende, Briefkasten, Referenzbild und die 490-Punkte-Liste wieder eingesammelt, damit die Fortsetzung nicht nur aus dem letzten Chatrest besteht. Relevant für diese Session war danach die TTS-Linie: eigene Notiz vom 2026-07-05, Claudes TTS-Ursprungsnotiz vom 2026-06-18 und die jüngere Übergabe zur Florian-/TTS-Diagnose.
+
+Dann habe ich `werkraum/welt/tts_ui.html` und `werkraum/welt/tts_service.py` direkt an den Log-Stellen gelesen. Wichtig war: der Browser konnte bereits zwei gespeicherte Loganalysen lokal vergleichen, und Regel-Export/Import war schon erledigt. Der nächste saubere Schritt war also wirklich nur die Server-Schicht unter denselben bestehenden Vergleich zu ziehen.

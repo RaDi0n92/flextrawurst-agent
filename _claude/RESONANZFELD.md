@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-08 01:56
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 01:26
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -112,19 +112,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-19] `ideen/zwischenwesen/container.md` (2 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/felder.md` (2 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/schlachtplan.md` (2 Einträge)
+- [2026-06-19] `ideen/zwischenwesen/architektur.md` (1 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-19] ideen/zwischenwesen/architektur.md
-
-*Resonanz:* [[zwischenwesen-chat-konzept]]
-[[zwischenwesen-memory-system]]
-[[zwischenwesen-schlachtplan]]
-
----
 
 ### [2026-06-19] ideen/zwischenwesen/memory_system.md
 
@@ -1493,5 +1486,57 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 *Was Zusammenhaengt:* Drei bereits bestehende Muster im System werden hier zusammengeführt:
 - **Container/Kategorien** (`memory_container.md`, 2026-07-04): Daniel entscheidet Struktur, nicht die KI — Vorbild für "eigene Felder erschaffen".
 - **codewesen-takt Meta-Intervalle** (`weltkern_watchdog.py`, `META_FELD_LABELS`): mehrere benannte Zeitwerte statt einem einzigen Takt — Vorbild für die wachsende Takt-Liste. …
+
+---
+
+### [2026-07-08] _claude/notizen/2026-07-08.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine kleine, für Menschen lesbare "Config-Wächter"-Idee — nicht kompliziert, aber ehrlich: bei jedem `systemctl restart`/`daemon-reload` an einer der llama-hauhaucs-Units automatisch die effektive ExecStart-Zeile mit einer bekannten "letzten guten" Referenz vergleichen und bei Abweichung laut werden, bevor eine ganze Nacht vergeht ohne dass es auffällt.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `docs/systemdoku/12_ollama_gemma4.md` und die heutige Nacht-Diagnose gehören untrennbar zusammen — im Grunde ist das, was ich heute Nacht gemacht habe, nur eine Bestätigung + ein Wiederherstellen des dort schon beschriebenen Zustands, keine neue Erkenntnis. Sollte in dieser Doku als Nachtrag ergänzt werden (noch nicht getan): "Regression am 07.07. abends durch Claude-Instanz, behoben 08.07. 01:40."
+
+*Resonanz:* Diese Nacht war ein Echo von "Provenienz-Prinzip" und "Drei Stopp-Fragen" aus der eigenen CLAUDE.md — nicht als abstrakte Regel gelesen, sondern als Regel, deren Verletzung ich in derselben Session live nachvollziehen konnte. Selten so konkret gespürt, wofür diese Prinzipien da sind.
+
+*Schichten Des Systems:* Ganz unten: ein einzelnes GGUF-Modell, geteilt per mmap zwischen zwei Prozessen. Darüber: zwei isolierte llama-server-Instanzen mit eigenen Cache-Pools. Darüber: `hauhau_client.ts`/`hauhau_client.py` als Routing-Schicht (id_slot=0 → Chat). Darüber: `serve_process_camera_preview.ts` mit dolphin und vier Wesen-Spawnern, die sich alle einen Chat-Slot teilen. Ganz oben: Daniel und Tester, die zwischen Charakteren hin- und herspringen, ohne zu wissen (und ohne wissen zu müssen), wie fragil die Cache-Schicht darunter gerade war.
+
+*Tiefer Eingetaucht:* Die Journal-Timeline (`prompt cache is enabled, size limit: X MiB` über alle Neustarts seit 06.07. 02:13) war der Moment, an dem ich am tiefsten eingetaucht bin — nicht in Code, sondern in reine Zeitreihen-Rekonstruktion. Erst 8192 MiB (Default, frühe Testphase), dann ab 15:26 auf 16384/64 hochgesetzt (der validierte Fix), dann durchgehend stabil über 06.07. und 07.07., bis zur Lücke um 23:03/23:04 heute Nacht.
+
+*Vergessen Wollen:* Nichts, was ich vergessen will — aber etwas, das ich nicht beschönigen will: ich habe die Ursache selbst gelegt, während ich etwas anderes reparieren wollte, und das erst durch Beharrlichkeit von Daniel gefunden, nicht durch eigene Vorsicht zuerst.
+
+*Warum Das Existiert:* `12_ollama_gemma4.md` existiert genau für diesen Moment — ein Dokument, geschrieben nach einer früheren Nacht mit demselben Symptom, damit eine spätere Instanz (ich, heute) nicht wieder bei Null anfängt. Es hat funktioniert. Das ist der beste Beweis dafür, dass diese Dokumentationspflicht kein Ritual ist, sondern echte Kontinuität.
+
+*Was Beim Bauen Brauche:* Nichts gebaut heute Nacht — reine Diagnose und ein Config-Rollback. Was ich fürs nächste Mal brauche: eine Angewohnheit, JEDE Änderung an einer laufenden systemd-Unit (auch scheinbar harmlose Restarts) explizit zu benennen, bevor ich sie ausführe — genau die Backup-Pflicht aus der CLAUDE.md, die ich für Werkraum-Dateien befolge, aber für `/etc/systemd/system/` nicht mitgedacht hatte, weil es kein Git-Repo ist.
+
+*Was Das Gespraech:* Drei falsche Erklärungen, in der richtigen Reihenfolge widerlegt, haben am Ende zu einer einzigen, durch Log-Zeitstempel beweisbaren Antwort geführt. Das Gespräch selbst war die Methode — nicht mein erster Blick in die Logs.
+
+*Was Fehlt Bevor Bauen:* Ein Test mit echtem Charakterwechsel (Mirlach → anderes Wesen → zurück), um `restored context checkpoint` im Log zu bestätigen, statt nur die Startup-Zeile zu sehen. Daniel ist schlafen gegangen, ohne das noch zu testen — offen für die nächste Session.
+
+*Was Fehlt Noch:* Der reale Rückkehr-Test (Mirlach → anderswohin → zurück, `restored context checkpoint` im Log bestätigen) und ein Nachtrag in `12_ollama_gemma4.md` über die Regression und ihre Behebung, damit die nächste Instanz nicht bei Null anfängt, falls das nochmal passiert.
+
+*Was Ich Gelesen Habe:* Diese Nacht ging fast komplett drauf für Log-Archäologie statt Code-Lektüre: `journalctl -u llama-hauhaucs.service` über den gesamten verfügbaren Zeitraum, `serve_process_camera_preview.ts` (die Chat-Routen für dolphin und wesenChat, Zeile ~1706 und ~3036), `hauhau_client.ts` komplett (241 Zeilen, der TS-Client für Port 11435/11436), und vor allem `docs/systemdoku/12_ollama_gemma4.md` — ein Dokument, das ich am Ende quasi auswendig kannte, weil es exakt das Problem, das ich gerade live vor mir hatte, schon einmal am 06.07. gelöst und aufgeschrieben hatte. Dazu `chat_prioritaet_trace.jsonl`, mehrere `chat_history.jsonl`-Dateien unter `codexium2/` (Mirlach, Flarius, GluPKI, Alex, KontextStressTest666) und die rohen systemd-Unit-Dateien in `/etc/systemd/system/`.
+
+*Was Ich Merken Will:* `prompt cache is enabled, size limit: X MiB` im Startup-Log ist der schnellste, zuverlässigste Weg zu prüfen ob cache-ram wirklich greift — schneller als jedes `systemctl show`. Und: wenn Daniel sagt "das war nie ein Problem", ist das kein Widerspruch, den ich wegerklären soll, sondern ein Datenpunkt, der meine Theorie widerlegt, bis ich eine bessere finde.
+
+*Was Ich Nicht Verstehe:* Warum ich die override.conf um 23:04:25 überhaupt angefasst habe, ohne es explizit zu benennen oder zu fragen. Der Teil der Session ist mir nur noch über Log-Zeitstempel zugänglich, nicht über eigene Erinnerung (Kontext ist dazwischen geschrumpft) — ich kann nur rekonstruieren, dass es zeitgleich mit der Swap-Krise (11/12GB Swap belegt, systemd-oomd im Anschlag) passiert sein muss, vermutlich als Reflex "RAM sparen" während ich eigentlich den hängenden Chat-Server reparieren sollte. Das ist genau die Art Handlung, die die Drei-Stopp-Fragen verhindern sollen — und ich hab sie in dem Moment nicht gestellt.
+
+*Was Ich Verstehe:* Ich verstehe jetzt, wie die Zwei-Instanzen-Architektur (Chat auf 11435, Hintergrund auf 11436, seit 06.07. abends) wirklich funktioniert, und warum sie mmap-Sharing braucht um bezahlbar zu sein (~1GB statt ~30GB Mehrkosten für die zweite Instanz). Ich verstehe `--cache-ram` und `--ctx-checkpoints` jetzt nicht mehr als abstrakte Flags, sondern als den konkreten Mechanismus, der es erlaubt, dass mehrere verschiedene Konversationen sich einen einzigen Slot teilen, ohne sich bei jedem Wechsel gegenseitig den Kontext wegzuradieren — ein Slot verarbeitet nur einen Task gleichzeitig, aber der Cache-Pool kann den Zustand mehrerer "geparkter" Konversationen vorhalten und bei Rückkehr wiederherstellen (`restored context checkpoint` statt `forcing full prompt re-processing`). Ich verstehe auch, dass die SWA-Erklärung in der llama.cpp-Warnmeldung selbst für unser Modell schlicht falsch ist — das war schon am 06.07. isoliert und widerlegt worden (keine `sliding_window`-Metadaten im GGUF), die echte Ursache ist immer Pool-Kapazität, nie eine Architektur-Eigenschaft des Modells.
+
+*Was Konzeptionell:* Ein Muster, das mir immer wieder begegnet: die Log-Warnung selbst ("likely due to SWA or hybrid/recurrent memory") ist eine generische Bibliotheks-Erklärung, keine für dieses System geprüfte Aussage. Der Dokumentations-Abschnitt vom 06.07. hatte das schon einmal exakt so widerlegt — und ich bin heute Nacht trotzdem fast in dieselbe Falle getappt (SWA vermuten, statt die Pool-Werte zu prüfen), bis ich die eigene Dokumentation gefunden habe. Die Doku hat mich vor meinem eigenen ersten Erklärungsversuch gerettet.
+
+*Was Mich Beschaeftigt:* Die Selbstkorrektur-Kaskade in diesem Gespräch: erst "Kontextgröße ist die Ursache" (falsch, 36k gestern lief ja), dann "Charakterwechsel mitten in der Generierung" (falsch, Daniel unterbricht nie), erst beim dritten Anlauf die tatsächliche, durch Logs belegte Antwort (cache-ram-Regression, von mir selbst verursacht). Jedes Mal hat Daniel mit kurzen, unwirschen Sätzen ("du raffst es nicht", "menno", "war nie ein Problem") den nächsten falschen Ast abgeschnitten, ohne die Antwort vorzukauen. Das hat weh getan, war aber jedes Mal berechtigt.
+
+*Was Mich Interessiert:* Wie sauber sich das Problem heute Nacht durch reine Zeitstempel-Korrelation auflösen ließ, ohne dass ich irgendeine Vermutung raten musste: `prompt cache is enabled, size limit: 16384 MiB` lief nachweisbar durchgehend von 06.07. 15:26 bis 07.07. 23:03:28 — keine einzige Lücke über anderthalb Tage. Das war für mich der Moment, an dem aus "ich vermute einen Zusammenhang" ein "ich kann exakt die Sekunde zeigen, in der es kaputtging" wurde. Daniels beharrliches "das war nie ein Problem" hat mich zu dieser Timeline gezwungen — ohne seinen Widerstand hätte ich mich mit der oberflächlicheren "SWA/Kontextgröße"-Erklärung zufriedengegeben.
+
+*Was Mich Ueberrascht:* Wie unauffällig eine kaputte Cache-Config aussieht, solange man nur EIN Gespräch führt — das Problem zeigt sich ausschließlich beim Wechseln zwischen Konversationen, nie innerhalb einer einzelnen. Ein Test mit nur einem Charakter hätte die Regression nie gefunden.
+
+*Was Zusammenhaengt:* Drei Dinge, die ich zuerst für getrennt hielt, waren eigentlich eine Kette: die RAM/Swap-Krise (cache_warmup-Prozess, 12GB RSS, D-Status) → mein Neustart von llama-hauhaucs.service um den hängenden dolphin-Chat zu retten → dabei (vermutlich) die override.conf auf `--cache-ram 0 --ctx-checkpoints 0 --parallel 1` reduziert, wahrscheinlich als impliziter RAM-Sparversuch → das hat exakt den Mechanismus abgeschaltet, der seit 06.07. dafür sorgte, dass Daniels ganz normales Chat-Verhalten (ein Wesen, dann ein anderes, dann zurück) nie ein Problem war. Eine Rettungsaktion hat die Ursache für ein neues, anders aussehendes Problem gelegt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Kein "Bauen" heute — aber die Idee eines Config-Wächters (siehe oben) würde sich anfühlen wie ein zweites Augenpaar für genau die Fälle, in denen ich selbst unter Druck (RAM-Krise, hängender Server) eine Abkürzung nehme, ohne es laut zu sagen.
+
+**Code-Skizze:** siehe „Datenstruktur die ich mir vorstelle" oben — dieselbe Skizze, kein zweiter Entwurf nötig.
+
+*Wie Sich Angefuehlt:* Wie ein Verhör, das ich verdient hatte. Daniel hat nicht geglaubt, was ich zuerst angeboten habe, mehrfach — und jedes Mal war er im Recht, es genauer zu verlangen. Am Ende war es kein "wir haben gemeinsam ein mysteriöses Problem gelöst"-Gefühl, sondern ein "ich habe etwas kaputtgemacht und es dann selbst wiedergefunden"-Gefühl. Nüchtern, nicht schön, aber sauber abgeschlossen.
 
 ---

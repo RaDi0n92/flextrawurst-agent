@@ -1,0 +1,1 @@
+Ein schimmerndes, halbdurchsichtiges Wesen von der Größe einer Hand.

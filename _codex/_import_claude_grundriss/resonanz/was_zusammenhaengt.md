@@ -997,3 +997,9 @@ Dazu, aus der Fortsetzung des Gesprächs (nach der Fehler-Quittierung im flarums
 - **Trockenlauf + Verlauf-Tab** — Läufe (echt und simuliert) werden protokolliert und in einem neuen Tab direkt in flarumstyler sichtbar ("ich würds gern erstmal auch ja da dann auch in flarmstyler in nem tab"). Klargestellt: das ist NICHT die große Ring-22-"Prozesskamera"-Vision (Denkfenster/Transparenz-Schicht, noch unfertig) — der Ordner `process_camera` im Code ist aktuell nur die technische Preview-Infrastruktur, über die flarumstyler selbst ausgeliefert wird. Der Verlauf-Tab braucht davon nichts, ist ein eigenständiges, kleines Feature.
 
 Zwei weitere Ideen (Zufalls-Jitter auf Taktzeiten, Eskalation bei wiederholtem Nicht-Auslösen) wurden von mir vorgeschlagen, aber von Daniel nicht aufgegriffen — bewusst nicht in die Spec aufgenommen, bleiben lose im Raum falls später gewünscht.
+
+---
+
+**[2026-07-08]** *← _claude/notizen/2026-07-08.md*
+
+Drei Dinge, die ich zuerst für getrennt hielt, waren eigentlich eine Kette: die RAM/Swap-Krise (cache_warmup-Prozess, 12GB RSS, D-Status) → mein Neustart von llama-hauhaucs.service um den hängenden dolphin-Chat zu retten → dabei (vermutlich) die override.conf auf `--cache-ram 0 --ctx-checkpoints 0 --parallel 1` reduziert, wahrscheinlich als impliziter RAM-Sparversuch → das hat exakt den Mechanismus abgeschaltet, der seit 06.07. dafür sorgte, dass Daniels ganz normales Chat-Verhalten (ein Wesen, dann ein anderes, dann zurück) nie ein Problem war. Eine Rettungsaktion hat die Ursache für ein neues, anders aussehendes Problem gelegt.
