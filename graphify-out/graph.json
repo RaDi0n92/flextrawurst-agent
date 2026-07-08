@@ -23498,9 +23498,9 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L863",
-      "id": "tts_service_rationale_863",
       "community": 0,
-      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier"
+      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
+      "id": "tts_service_rationale_863"
     },
     {
       "label": "gen_screens_html.py",
@@ -95967,8 +95967,8 @@
       "source_file": "welt/tts_service.py",
       "source_location": "L492",
       "weight": 1.0,
-      "_src": "tts_service_compare_websnapshots",
-      "_tgt": "str",
+      "_src": "str",
+      "_tgt": "tts_service_compare_websnapshots",
       "source": "str",
       "target": "tts_service_compare_websnapshots"
     },

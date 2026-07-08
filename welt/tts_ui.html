@@ -562,11 +562,21 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <option value="">Chat-Modell automatisch wählen</option>
         </select>
       </div>
+      <div class="grid2">
+        <input id="logs-rule-name" type="text" placeholder="Log-Regelname">
+        <select id="logs-rules">
+          <option value="">Keine gespeicherten Regeln</option>
+        </select>
+      </div>
       <textarea id="logs-input" placeholder="Logtext hier hinein oder Datei laden"></textarea>
       <div class="row">
         <button class="small primary" id="btn-logs-analyze">Fehler extrahieren</button>
         <button class="small" id="btn-logs-explain">Block erklären</button>
         <button class="small" id="btn-logs-clear">Leeren</button>
+        <button class="small" id="btn-logs-profile-save">Regel merken</button>
+        <button class="small" id="btn-logs-profile-load">Regel laden</button>
+        <button class="small" id="btn-logs-export-txt">TXT</button>
+        <button class="small" id="btn-logs-export-json">JSON</button>
       </div>
       <textarea id="logs-output" readonly placeholder="Gefundene Fehler und Gruppen"></textarea>
       <div class="sentence-list" id="logs-groups"></div>
@@ -678,10 +688,16 @@ const logsUpload = document.getElementById('logs-upload');
 const logsProfile = document.getElementById('logs-profile');
 const logsQuestion = document.getElementById('logs-question');
 const logsModel = document.getElementById('logs-model');
+const logsRuleName = document.getElementById('logs-rule-name');
+const logsRules = document.getElementById('logs-rules');
 const logsInput = document.getElementById('logs-input');
 const btnLogsAnalyze = document.getElementById('btn-logs-analyze');
 const btnLogsExplain = document.getElementById('btn-logs-explain');
 const btnLogsClear = document.getElementById('btn-logs-clear');
+const btnLogsProfileSave = document.getElementById('btn-logs-profile-save');
+const btnLogsProfileLoad = document.getElementById('btn-logs-profile-load');
+const btnLogsExportTxt = document.getElementById('btn-logs-export-txt');
+const btnLogsExportJson = document.getElementById('btn-logs-export-json');
 const logsOutput = document.getElementById('logs-output');
 const logsGroups = document.getElementById('logs-groups');
 const logsList = document.getElementById('logs-list');
@@ -736,6 +752,7 @@ const DOCUMENTS_KEY = 'flextrawurst.tts.documents.v1';
 const WEBARCHIVE_KEY = 'flextrawurst.tts.webarchive.v1';
 const FORMS_KEY = 'flextrawurst.tts.forms.v1';
 const LOGS_KEY = 'flextrawurst.tts.logs.v1';
+const LOG_RULES_KEY = 'flextrawurst.tts.logRules.v1';
 
 let rate    = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
@@ -759,6 +776,7 @@ let documentEntries = loadJsonLocal(DOCUMENTS_KEY, []);
 let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
 let formEntries = loadJsonLocal(FORMS_KEY, []);
 let logEntries = loadJsonLocal(LOGS_KEY, []);
+let logRules = loadJsonLocal(LOG_RULES_KEY, []);
 let documentHits = [];
 let documentActiveIds = [];
 let documentSearchTimer = null;
@@ -772,6 +790,7 @@ let logsServerReady = false;
 let currentLogFilename = '';
 let currentLogEntry = null;
 let currentLogGroupIndex = -1;
+let currentLogRuleName = '';
 let currentDocumentDetail = null;
 let currentDocumentChunkIndex = -1;
 let currentDocumentSources = [];
@@ -1280,10 +1299,120 @@ function renderLogs(){
         </div>
         <div class="sentence-actions">
           <button class="small" type="button" data-act="load-log">Laden</button>
+          <button class="small" type="button" data-act="export-log-txt">TXT</button>
+          <button class="small" type="button" data-act="export-log-json">JSON</button>
         </div>
       </div>
     `;
   }).join('');
+}
+
+function normalizeLogRule(item){
+  return {
+    name: String(item?.name || '').trim(),
+    profile: String(item?.profile || '').trim(),
+    question: String(item?.question || '').trim(),
+    model: String(item?.model || '').trim(),
+    created_at: String(item?.created_at || new Date().toISOString()),
+  };
+}
+
+function saveLogRules(){
+  saveJsonLocal(LOG_RULES_KEY, logRules);
+}
+
+function renderLogRules(){
+  const items = logRules.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!items.length){
+    logsRules.innerHTML = '<option value="">Keine gespeicherten Regeln</option>';
+    btnLogsProfileLoad.disabled = true;
+    return;
+  }
+  logsRules.innerHTML = ['<option value="">Regel wählen</option>']
+    .concat(items.map(item=>`<option value="${esc(item.name)}">${esc(item.name)} · ${esc(item.profile || 'auto')} · ${esc(item.model || 'auto')}</option>`))
+    .join('');
+  btnLogsProfileLoad.disabled = false;
+}
+
+function applyLogRule(rule){
+  if (!rule) return;
+  logsProfile.value = rule.profile || '';
+  logsQuestion.value = rule.question || '';
+  logsModel.value = rule.model || '';
+  currentLogRuleName = rule.name || '';
+  logsRuleName.value = currentLogRuleName;
+  st(`Log-Regel geladen: ${currentLogRuleName || 'unbenannt'}`,'ok');
+}
+
+function saveCurrentLogRule(){
+  const name = logsRuleName.value.trim() || `Regel ${logRules.length + 1}`;
+  const rule = normalizeLogRule({
+    name,
+    profile: logsProfile.value.trim(),
+    question: logsQuestion.value.trim(),
+    model: logsModel.value
+  });
+  logRules = [rule, ...logRules.filter(item=>item.name !== name)];
+  saveLogRules();
+  renderLogRules();
+  logsRules.value = name;
+  currentLogRuleName = name;
+  st(`Log-Regel gespeichert: ${name}`,'ok');
+}
+
+function exportLogEntry(item, fmt){
+  if (!item){
+    st('Keine Loganalyse zum Exportieren gewählt.','err');
+    return;
+  }
+  const base = String(item.filename || item.profile || item.id || 'loganalyse').replace(/[^\w.-]+/g, '_');
+  if (fmt === 'json'){
+    downloadBlob(
+      new Blob([JSON.stringify(item, null, 2)], {type:'application/json'}),
+      `${base}.json`
+    );
+    st('Loganalyse als JSON exportiert.','ok');
+    return;
+  }
+  const counts = item.counts || {};
+  const lines = [
+    `Loganalyse: ${item.filename || item.id || 'unbekannt'}`,
+    `Profil: ${item.profile || 'allgemein'}`,
+    `Status: ${item.status || 'done'}`,
+    `Erstellt: ${item.created_at || ''}`,
+    '',
+    `Zeilen: ${counts.lines ?? 0}`,
+    `Fehler: ${counts.errors ?? 0}`,
+    `Warnungen: ${counts.warnings ?? 0}`,
+    `Tracebacks: ${counts.tracebacks ?? 0}`,
+    `HTTP-5xx: ${counts.http_5xx ?? 0}`,
+    ''
+  ];
+  if (Array.isArray(item.summary) && item.summary.length){
+    lines.push('Zusammenfassung:', ...item.summary, '');
+  }
+  if (Array.isArray(item.groups) && item.groups.length){
+    lines.push('Gruppen:');
+    item.groups.forEach((group, index)=>{
+      lines.push(`[${index + 1}] ${group.level || 'hinweis'} · ${group.count || 0}x · ${group.signature || ''}`);
+      if (group.preview) lines.push(group.preview);
+      lines.push('');
+    });
+  }
+  if (item.text_preview){
+    lines.push('Textauszug:', item.text_preview);
+  }
+  downloadBlob(
+    new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'}),
+    `${base}.txt`
+  );
+  st('Loganalyse als TXT exportiert.','ok');
+}
+
+function updateLogExportState(){
+  const on = !!currentLogEntry;
+  btnLogsExportTxt.disabled = !on;
+  btnLogsExportJson.disabled = !on;
 }
 
 function renderLogGroups(){
@@ -1943,18 +2072,19 @@ async function analyzeLogs(){
     });
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
-    logEntries = [item, ...logEntries.filter(x=>x.id !== item.id)];
-    saveJsonLocal(LOGS_KEY, logEntries);
-    currentLogEntry = item;
-    currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
-    logsOutput.value = [
-      ...(Array.isArray(item.summary) ? item.summary : []),
-      '',
-      ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
-    ].join('\n');
-    renderLogGroups();
-    renderLogs();
-    st('Loganalyse fertig.','ok');
+  logEntries = [item, ...logEntries.filter(x=>x.id !== item.id)];
+  saveJsonLocal(LOGS_KEY, logEntries);
+  currentLogEntry = item;
+  currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
+  updateLogExportState();
+  logsOutput.value = [
+    ...(Array.isArray(item.summary) ? item.summary : []),
+    '',
+    ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
+  ].join('\n');
+  renderLogGroups();
+  renderLogs();
+  st('Loganalyse fertig.','ok');
   } catch(e){
     st('Loganalyse fehlgeschlagen.','err');
     dbg(e.message);
@@ -1966,6 +2096,7 @@ function loadLogEntry(logId){
   if (!item) return;
   currentLogEntry = item;
   currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
+  updateLogExportState();
   logsOutput.value = [
     ...(Array.isArray(item.summary) ? item.summary : []),
     '',
@@ -3303,14 +3434,34 @@ btnLogsClear.addEventListener('click', ()=>{
   currentLogFilename = '';
   currentLogEntry = null;
   currentLogGroupIndex = -1;
+  updateLogExportState();
   renderLogGroups();
   st('Logs geleert.','ok');
 });
+btnLogsProfileSave.addEventListener('click', saveCurrentLogRule);
+btnLogsProfileLoad.addEventListener('click', ()=>{
+  const rule = logRules.find(item=>item.name === logsRules.value);
+  if (!rule){
+    st('Keine Log-Regel gewählt.','err');
+    return;
+  }
+  applyLogRule(rule);
+});
+logsRules.addEventListener('change', ()=>{
+  const rule = logRules.find(item=>item.name === logsRules.value);
+  if (rule) applyLogRule(rule);
+});
+btnLogsExportTxt.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'txt'));
+btnLogsExportJson.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'json'));
 logsList.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act="load-log"]');
+  const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-log-id]');
   if (!btn || !row) return;
-  loadLogEntry(row.dataset.logId);
+  const item = logEntries.find(x=>x.id === row.dataset.logId);
+  if (!item) return;
+  if (btn.dataset.act === 'load-log') loadLogEntry(row.dataset.logId);
+  if (btn.dataset.act === 'export-log-txt') exportLogEntry(item, 'txt');
+  if (btn.dataset.act === 'export-log-json') exportLogEntry(item, 'json');
 });
 logsGroups.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -3488,6 +3639,8 @@ renderDocumentScope();
 renderDocumentSources();
 renderDocumentChunks();
 renderDocuments();
+renderLogRules();
+updateLogExportState();
 renderWebarchiveVersions();
 renderWebarchive();
 renderForms();
