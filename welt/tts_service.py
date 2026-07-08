@@ -80,6 +80,10 @@ class DocumentChatRequest(BaseModel):
     document_ids: list[str] = []
     limit: int = 6
 
+class OcrToDocumentRequest(BaseModel):
+    ocr_job_id: str
+    filename: str = ""
+
 class WebSnapshotPayload(BaseModel):
     url: str
     title: str = ""
@@ -866,6 +870,50 @@ async def create_ocr_job(
     jobs = [job if x.get("id") == job_id else x for x in jobs]
     _write_ocr_jobs(jobs)
     return _normalize_ocr_job(job)
+
+@app.post("/ocr/jobs/to-document")
+async def create_document_from_ocr(req: OcrToDocumentRequest):
+    ocr_job_id = req.ocr_job_id.strip()
+    if not ocr_job_id:
+        raise HTTPException(status_code=400, detail="ocr_job_id fehlt.")
+    job = next((item for item in _read_ocr_jobs() if item.get("id") == ocr_job_id), None)
+    if not job:
+        raise HTTPException(status_code=404, detail="OCR-Job nicht gefunden.")
+    text = str(job.get("text") or "").strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="OCR-Job enthält keinen Text.")
+    base_name = _safe_name(req.filename.strip() or job.get("filename") or f"{ocr_job_id}.txt")
+    if "." not in base_name:
+        base_name = f"{base_name}.txt"
+    doc_id = f"doc-{int(time.time() * 1000)}-{hashlib.sha1((ocr_job_id + base_name).encode('utf-8')).hexdigest()[:8]}"
+    stored_name = f"{doc_id}-{base_name}"
+    DOCUMENTS_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+    DOCUMENTS_TEXT_DIR.mkdir(parents=True, exist_ok=True)
+    stored_path = DOCUMENTS_UPLOAD_DIR / stored_name
+    text_path = DOCUMENTS_TEXT_DIR / f"{doc_id}.txt"
+    stored_path.write_text(text, encoding="utf-8")
+    text_path.write_text(text[:DOCUMENT_TEXT_LIMIT], encoding="utf-8")
+    chunks = _document_chunks(text[:DOCUMENT_TEXT_LIMIT])
+    doc = {
+        "id": doc_id,
+        "filename": base_name,
+        "stored_name": stored_name,
+        "mime_type": "text/plain",
+        "extractor": f"ocr:{job.get('engine') or 'text'}",
+        "status": "done",
+        "size": len(text.encode("utf-8")),
+        "preview": text[:600],
+        "text_path": str(text_path),
+        "text_chars": len(text[:DOCUMENT_TEXT_LIMIT]),
+        "chunk_count": len(chunks),
+        "chunks": chunks,
+        "error": "",
+        "created_at": _now_iso(),
+    }
+    documents = _read_documents()
+    documents.append(doc)
+    _write_documents(documents)
+    return _normalize_document(doc)
 
 @app.get("/documents")
 async def get_documents():

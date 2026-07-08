@@ -694,6 +694,7 @@ const TRANSLATE_API = BASE + 'translate';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OCR_API = BASE + 'ocr/jobs';
+const OCR_TO_DOCUMENT_API = BASE + 'ocr/jobs/to-document';
 const DOCUMENTS_API = BASE + 'documents';
 const DOCUMENTS_SEARCH_API = BASE + 'documents/search';
 const DOCUMENTS_CHAT_API = BASE + 'documents/chat';
@@ -1063,6 +1064,7 @@ function renderOcrJobs(){
         </div>
         <div class="sentence-actions">
           <button class="small" type="button" data-act="load-ocr">Laden</button>
+          <button class="small" type="button" data-act="ocr-to-document"${job.text ? '' : ' disabled'}>Zu Dokumente</button>
         </div>
       </div>
     `;
@@ -1319,6 +1321,60 @@ async function saveOcrJob(){
     saveJsonLocal(OCR_KEY, ocrJobs);
     renderOcrJobs();
     st('OCR-Route auf dem Dienst noch nicht aktiv. Lokal vorgemerkt.','err');
+    dbg(e.message);
+  }
+}
+
+async function ocrJobToDocument(jobId){
+  const job = ocrJobs.find(x=>x.id === jobId);
+  if (!job){
+    st('OCR-Job nicht gefunden.','err');
+    return;
+  }
+  if (!job.text){
+    st('OCR-Job hat keinen Text zum Uebernehmen.','err');
+    return;
+  }
+  st('OCR-Text wird als Dokument uebernommen…','wait');
+  try {
+    const res = await fetch(OCR_TO_DOCUMENT_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        ocr_job_id: jobId,
+        filename: `${(job.filename || 'ocr-text').replace(/\.[^.]+$/, '') || 'ocr-text'}-ocr.txt`
+      })
+    });
+    if (!res.ok){
+      let detail = 'OCR-Import fehlgeschlagen.';
+      try {
+        const err = await res.json();
+        detail = err.detail || detail;
+      } catch(_) {}
+      throw new Error(detail);
+    }
+    const doc = await res.json();
+    const byId = new Map(documentEntries.map(item=>[item.id, item]));
+    byId.set(doc.id, doc);
+    documentEntries = Array.from(byId.values());
+    documentActiveIds = [doc.id];
+    currentDocumentSources = [];
+    saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+    renderDocumentScope();
+    renderDocumentSources();
+    renderDocuments();
+    setTab('documents');
+    documentsSearch.value = '';
+    documentHits = [];
+    documentsOutput.value = [
+      `Aus OCR uebernommen: ${doc.filename}`,
+      '',
+      job.text
+    ].join('\n');
+    await loadDocumentDetail(doc.id, '');
+    st('OCR-Job in Dokumente uebernommen.','ok');
+  } catch(e){
+    st('OCR-Text konnte nicht in Dokumente uebernommen werden.','err');
     dbg(e.message);
   }
 }
@@ -2998,14 +3054,20 @@ btnOcrClear.addEventListener('click', ()=>{
   st('OCR-Text geleert.','ok');
 });
 ocrList.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act="load-ocr"]');
+  const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-ocr-id]');
   if (!btn || !row) return;
   const job = ocrJobs.find(x=>x.id === row.dataset.ocrId);
   if (!job) return;
-  ocrInput.value = job.text || '';
-  dbg(job.error || '');
-  st(`OCR-Job geladen: ${job.filename || job.id}`,'ok');
+  if (btn.dataset.act === 'load-ocr'){
+    ocrInput.value = job.text || '';
+    dbg(job.error || '');
+    st(`OCR-Job geladen: ${job.filename || job.id}`,'ok');
+    return;
+  }
+  if (btn.dataset.act === 'ocr-to-document'){
+    ocrJobToDocument(job.id);
+  }
 });
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
 btnDocumentsScopeClear.addEventListener('click', clearDocumentScope);
