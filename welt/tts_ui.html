@@ -37,6 +37,28 @@ body {
 }
 h1 { font-size: 1.2rem; font-weight: 500; color: var(--pink-soft); margin-bottom: 1.5rem; letter-spacing: .08em; text-shadow: 0 0 22px var(--shadow); }
 .box { width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: .85rem; }
+.tabs {
+  width: 100%;
+  display: flex;
+  gap: .45rem;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  min-height: 38px;
+  padding: .45rem .72rem;
+  border-radius: 7px;
+  border: 1px solid var(--border-soft);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: .82rem;
+  cursor: pointer;
+}
+.tab-btn:hover { border-color: var(--pink); color: var(--text); background: var(--field-hi); }
+.tab-btn.on { background: var(--pink-hot); border-color: var(--pink-soft); color: #28041b; }
+.tab-panels { width: 100%; display: flex; flex-direction: column; gap: .85rem; }
+.tab-panel { display: none; width: 100%; }
+.tab-panel.on { display: flex; flex-direction: column; gap: .85rem; }
+.tab-hint { color: var(--faint); font-size: .74rem; line-height: 1.45; }
 
 .panel {
   width: 100%; background: var(--panel); border: 1px solid var(--border-soft); border-radius: 8px;
@@ -259,164 +281,279 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 <body>
 <h1>TTS</h1>
 <div class="box">
-
-  <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
-  <div id="reading-view"></div>
-  <div class="counter" id="ctr">0 / 1.111.111</div>
-
-  <div class="row">
-    <button class="main" id="btn-speak">▶ Sprechen</button>
-    <button class="main" id="btn-pause" disabled>⏸ Pause</button>
-    <button class="main" id="btn-stop"  disabled>■ Stop</button>
+  <div class="tabs" role="tablist" aria-label="Werkzeuge in TTS">
+    <button class="tab-btn on" type="button" role="tab" aria-selected="true" data-tab-target="tts">TTS</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="translate">Übersetzen</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="ocr">OCR</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="documents">Dokumente</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="webarchive">Webarchiv</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="forms">Formulare</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="logs">Logs</button>
   </div>
 
-  <div class="seek-wrap" id="seek-wrap">
-    <div id="seek-fill"></div>
-    <div id="seek-knob"></div>
-  </div>
-  <div class="inf" id="inf"></div>
-  <div id="st"></div>
-  <div id="dbg"></div>
+  <div class="tab-panels">
+    <section class="tab-panel on" data-tab-panel="tts">
+      <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
+      <div id="reading-view"></div>
+      <div class="counter" id="ctr">0 / 1.111.111</div>
 
-  <div class="panel">
-    <div class="panel-title">Stimme</div>
-    <div class="row">
-      <select id="voice-select" aria-label="Stimme auswählen"></select>
-      <button class="small primary" id="btn-voice">Aktivieren</button>
-      <button class="small" id="btn-voice-test">▶ Test</button>
-      <button class="small" id="btn-voice-fav">★ Stimme</button>
-    </div>
-    <div class="row">
-      <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
-      <button class="small danger" id="btn-voice-fav-remove">Favorit entfernen</button>
-    </div>
-    <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
-  </div>
-
-  <div class="row">
-    <span class="lbl">Tempo:</span>
-    <button class="chip on" data-r="+0%"  >x1</button>
-    <button class="chip"    data-r="+50%" >x1,5</button>
-    <button class="chip"    data-r="+75%" >x1,75</button>
-    <button class="chip"    data-r="+100%">x2</button>
-    <button class="chip"    data-r="+125%">x2,25</button>
-    <button class="chip"    data-r="+150%">x2,5</button>
-  </div>
-
-  <div class="panel translator">
-    <div class="translator-head">
-      <div>
-        <div class="panel-title">Übersetzen</div>
-        <div class="inf">Eigener Textbereich nur für Übersetzung. Die Hauptstimme oben bleibt unverändert.</div>
+      <div class="row">
+        <button class="main" id="btn-speak">▶ Sprechen</button>
+        <button class="main" id="btn-pause" disabled>⏸ Pause</button>
+        <button class="main" id="btn-stop"  disabled>■ Stop</button>
       </div>
-      <div class="translator-controls">
-        <label class="translator-control">
-          <span class="lbl">Ausgabesprache</span>
-          <select id="translate-target" aria-label="Ausgabesprache"></select>
+
+      <div class="seek-wrap" id="seek-wrap">
+        <div id="seek-fill"></div>
+        <div id="seek-knob"></div>
+      </div>
+      <div class="inf" id="inf"></div>
+      <div id="st"></div>
+      <div id="dbg"></div>
+
+      <div class="panel">
+        <div class="panel-title">Stimme</div>
+        <div class="row">
+          <select id="voice-select" aria-label="Stimme auswählen"></select>
+          <button class="small primary" id="btn-voice">Aktivieren</button>
+          <button class="small" id="btn-voice-test">▶ Test</button>
+          <button class="small" id="btn-voice-fav">★ Stimme</button>
+        </div>
+        <div class="row">
+          <select id="voice-favorites" aria-label="Stimmen-Favoriten"></select>
+          <button class="small danger" id="btn-voice-fav-remove">Favorit entfernen</button>
+        </div>
+        <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
+      </div>
+
+      <div class="row">
+        <span class="lbl">Tempo:</span>
+        <button class="chip on" data-r="+0%"  >x1</button>
+        <button class="chip"    data-r="+50%" >x1,5</button>
+        <button class="chip"    data-r="+75%" >x1,75</button>
+        <button class="chip"    data-r="+100%">x2</button>
+        <button class="chip"    data-r="+125%">x2,25</button>
+        <button class="chip"    data-r="+150%">x2,5</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Speichern</div>
+        <div class="grid2">
+          <input id="clip-title" type="text" placeholder="Titel der Eingabe">
+          <select id="save-category" aria-label="Kategorie fürs Speichern"></select>
+          <input id="clip-tags" type="text" placeholder="Tags, durch Komma getrennt">
+          <input id="clip-note" type="text" placeholder="Notiz">
+        </div>
+        <div class="row">
+          <button class="small primary" id="btn-save">Eingabe speichern</button>
+          <input id="new-category" type="text" placeholder="Neue Kategorie">
+          <button class="small" id="btn-category">Kategorie erstellen</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row library-head">
+          <div class="panel-title">Soundboard</div>
+          <select id="filter-category" aria-label="Kategorie anzeigen"></select>
+        </div>
+        <div class="toolbar">
+          <input id="library-search" type="text" placeholder="Suchen in Titel, Text, Tags, Notizen">
+          <button class="small" id="btn-play-selected">Auswahl spielen</button>
+          <button class="small" id="btn-batch-mp3">Batch MP3</button>
+          <button class="small" id="btn-export-json">JSON</button>
+          <label class="small file-btn">Import<input id="import-json" type="file" accept="application/json"></label>
+          <button class="small" id="btn-offline-html">Offline HTML</button>
+        </div>
+        <div class="library-list" id="library-list"></div>
+      </div>
+    </section>
+
+    <section class="panel translator tab-panel" data-tab-panel="translate">
+      <div class="translator-head">
+        <div>
+          <div class="panel-title">Übersetzen</div>
+          <div class="inf">Eigener Textbereich nur für Übersetzung. Die Hauptstimme oben bleibt unverändert.</div>
+        </div>
+        <div class="translator-controls">
+          <label class="translator-control">
+            <span class="lbl">Ausgabesprache</span>
+            <select id="translate-target" aria-label="Ausgabesprache"></select>
+          </label>
+          <div class="translator-voice-card">
+            <div>
+              <div class="translator-voice-title">Übersetzerstimme wählen</div>
+              <div class="translator-voice-count" id="translate-voice-count">Stimmen werden geladen.</div>
+              <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
+            </div>
+            <div class="translator-voice-actions">
+              <button class="small" id="btn-translate-voice-fav">★ Merken</button>
+            </div>
+          </div>
+          <button class="small primary" id="btn-translate">Übersetzen</button>
+          <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
+        </div>
+      </div>
+      <div class="translator-memory">
+        <div>
+          <div class="translator-voice-title">Gemerkte Stimmen dieser Ausgabesprache</div>
+          <div class="translator-voice-count">Hier landen Stimmen aus „★ Merken“. Gespeichert wird lokal im Browser, getrennt nach Sprache.</div>
+        </div>
+        <select id="translate-voice-favorites" aria-label="Gemerkte Übersetzerstimmen"></select>
+        <div class="translator-tool-row">
+          <button class="small" id="btn-use-translate-voice-fav">Favorit wählen</button>
+          <button class="small danger" id="btn-remove-translate-voice-fav">Favorit entfernen</button>
+        </div>
+      </div>
+      <div class="translator-tools">
+        <div class="translator-tool-row">
+          <button class="small" id="btn-copy-source">Quelle kopieren</button>
+          <button class="small" id="btn-copy-translation">Übersetzung kopieren</button>
+          <button class="small" id="btn-translation-to-tts">↙ ins TTS-Feld</button>
+          <button class="small" id="btn-translate-voice-test">▶ Stimme testen</button>
+          <button class="small" id="btn-translate-compare">3 Stimmen vergleichen</button>
+          <label class="chip translator-toggle"><input id="auto-translate" type="checkbox"> Auto-Übersetzen</label>
+        </div>
+        <div>
+          <div class="translator-voice-title">Stimmenvergleich markieren</div>
+          <div class="compare-grid">
+            <label class="compare-pick">
+              <span class="lbl">Vergleich 1</span>
+              <select id="compare-voice-1" aria-label="Vergleichsstimme 1"></select>
+            </label>
+            <label class="compare-pick">
+              <span class="lbl">Vergleich 2</span>
+              <select id="compare-voice-2" aria-label="Vergleichsstimme 2"></select>
+            </label>
+            <label class="compare-pick">
+              <span class="lbl">Vergleich 3</span>
+              <select id="compare-voice-3" aria-label="Vergleichsstimme 3"></select>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="translator-fields">
+        <label class="lang-box">
+          <span class="lang-label" id="source-language-label">Eingabe: Sprache wird beim Übersetzen erkannt</span>
+          <textarea id="translate-input" placeholder="Text zum Übersetzen eingeben"></textarea>
         </label>
-        <div class="translator-voice-card">
-          <div>
-            <div class="translator-voice-title">Übersetzerstimme wählen</div>
-            <div class="translator-voice-count" id="translate-voice-count">Stimmen werden geladen.</div>
-            <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
-          </div>
-          <div class="translator-voice-actions">
-            <button class="small" id="btn-translate-voice-fav">★ Merken</button>
-          </div>
-        </div>
-        <button class="small primary" id="btn-translate">Übersetzen</button>
-        <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
+        <label class="lang-box">
+          <span class="lang-label" id="target-language-label">Ausgabe: Sprache wählen</span>
+          <textarea id="translate-output" readonly placeholder="Hier erscheint die Übersetzung als Text."></textarea>
+        </label>
       </div>
-    </div>
-    <div class="translator-memory">
-      <div>
-        <div class="translator-voice-title">Gemerkte Stimmen dieser Ausgabesprache</div>
-        <div class="translator-voice-count">Hier landen Stimmen aus „★ Merken“. Gespeichert wird lokal im Browser, getrennt nach Sprache.</div>
-      </div>
-      <select id="translate-voice-favorites" aria-label="Gemerkte Übersetzerstimmen"></select>
-      <div class="translator-tool-row">
-        <button class="small" id="btn-use-translate-voice-fav">Favorit wählen</button>
-        <button class="small danger" id="btn-remove-translate-voice-fav">Favorit entfernen</button>
-      </div>
-    </div>
-    <div class="translator-tools">
-      <div class="translator-tool-row">
-        <button class="small" id="btn-copy-source">Quelle kopieren</button>
-        <button class="small" id="btn-copy-translation">Übersetzung kopieren</button>
-        <button class="small" id="btn-translation-to-tts">↙ ins TTS-Feld</button>
-        <button class="small" id="btn-translate-voice-test">▶ Stimme testen</button>
-        <button class="small" id="btn-translate-compare">3 Stimmen vergleichen</button>
-        <label class="chip translator-toggle"><input id="auto-translate" type="checkbox"> Auto-Übersetzen</label>
-      </div>
-      <div>
-        <div class="translator-voice-title">Stimmenvergleich markieren</div>
-        <div class="compare-grid">
-          <label class="compare-pick">
-            <span class="lbl">Vergleich 1</span>
-            <select id="compare-voice-1" aria-label="Vergleichsstimme 1"></select>
-          </label>
-          <label class="compare-pick">
-            <span class="lbl">Vergleich 2</span>
-            <select id="compare-voice-2" aria-label="Vergleichsstimme 2"></select>
-          </label>
-          <label class="compare-pick">
-            <span class="lbl">Vergleich 3</span>
-            <select id="compare-voice-3" aria-label="Vergleichsstimme 3"></select>
-          </label>
+      <div class="sentence-list" id="translate-sentences"></div>
+      <div class="profile-tools">
+        <div class="panel-title">Stimmprofile</div>
+        <div class="profile-row">
+          <input id="profile-name" type="text" placeholder="Profilname">
+          <select id="voice-profile-select" aria-label="Stimmprofil auswählen"></select>
+          <button class="small" id="btn-profile-save">Profil speichern</button>
+          <button class="small" id="btn-profile-load">Profil laden</button>
         </div>
       </div>
-    </div>
-    <div class="translator-fields">
-      <label class="lang-box">
-        <span class="lang-label" id="source-language-label">Eingabe: Sprache wird beim Übersetzen erkannt</span>
-        <textarea id="translate-input" placeholder="Text zum Übersetzen eingeben"></textarea>
-      </label>
-      <label class="lang-box">
-        <span class="lang-label" id="target-language-label">Ausgabe: Sprache wählen</span>
-        <textarea id="translate-output" readonly placeholder="Hier erscheint die Übersetzung als Text."></textarea>
-      </label>
-    </div>
-    <div class="sentence-list" id="translate-sentences"></div>
-    <div class="profile-tools">
-      <div class="panel-title">Stimmprofile</div>
-      <div class="profile-row">
-        <input id="profile-name" type="text" placeholder="Profilname">
-        <select id="voice-profile-select" aria-label="Stimmprofil auswählen"></select>
-        <button class="small" id="btn-profile-save">Profil speichern</button>
-        <button class="small" id="btn-profile-load">Profil laden</button>
+    </section>
+
+    <section class="panel tab-panel" data-tab-panel="ocr">
+      <div class="panel-title">OCR</div>
+      <div class="inf">Vorbereitet für Bild- und PDF-Textauslese. Der Tab ist direkt verlinkbar und trennt sich vom Rest der Oberfläche.</div>
+      <div class="grid2">
+        <label class="lang-box">
+          <span class="lang-label">Quelle</span>
+          <input id="ocr-source" type="file" accept="image/*,application/pdf">
+        </label>
+        <label class="lang-box">
+          <span class="lang-label">Sprache</span>
+          <select id="ocr-language">
+            <option value="auto">Auto</option>
+            <option value="deu">Deutsch</option>
+            <option value="eng">Englisch</option>
+          </select>
+        </label>
       </div>
-    </div>
-  </div>
+      <textarea id="ocr-input" placeholder="OCR-Text, Ergebnis oder Notizen"></textarea>
+      <div class="row">
+        <button class="small primary" id="btn-ocr-save">OCR-Job merken</button>
+        <button class="small" id="btn-ocr-clear">Leeren</button>
+      </div>
+      <div class="sentence-list" id="ocr-list"></div>
+    </section>
 
-  <div class="panel">
-    <div class="panel-title">Speichern</div>
-    <div class="grid2">
-      <input id="clip-title" type="text" placeholder="Titel der Eingabe">
-      <select id="save-category" aria-label="Kategorie fürs Speichern"></select>
-      <input id="clip-tags" type="text" placeholder="Tags, durch Komma getrennt">
-      <input id="clip-note" type="text" placeholder="Notiz">
-    </div>
-    <div class="row">
-      <button class="small primary" id="btn-save">Eingabe speichern</button>
-      <input id="new-category" type="text" placeholder="Neue Kategorie">
-      <button class="small" id="btn-category">Kategorie erstellen</button>
-    </div>
-  </div>
+    <section class="panel tab-panel" data-tab-panel="documents">
+      <div class="panel-title">Dokumente</div>
+      <div class="inf">Eigener Bereich für Dateien, Volltext und manuelles Chatten auf ausgewählte Treffer. Hintergrund-Index und LLaMA kommen separat, nicht beim Import.</div>
+      <div class="grid2">
+        <input id="documents-upload" type="file" multiple>
+        <input id="documents-search" type="text" placeholder="Suche in Dokumenten">
+      </div>
+      <div class="grid2">
+        <input id="documents-chat" type="text" placeholder="Frage an die Dokumente">
+        <select id="documents-model">
+          <option value="manual">Chat-Modell manuell wählen</option>
+          <option value="llama-chat">LLaMA-Chat</option>
+        </select>
+      </div>
+      <div class="row">
+        <button class="small primary" id="btn-documents-add">Dokument merken</button>
+        <button class="small" id="btn-documents-chat">Chat starten</button>
+      </div>
+      <textarea id="documents-output" placeholder="Treffer, Chunks oder Chat-Antworten erscheinen hier"></textarea>
+      <div class="sentence-list" id="documents-list"></div>
+    </section>
 
-  <div class="panel">
-    <div class="row library-head">
-      <div class="panel-title">Soundboard</div>
-      <select id="filter-category" aria-label="Kategorie anzeigen"></select>
-    </div>
-    <div class="toolbar">
-      <input id="library-search" type="text" placeholder="Suchen in Titel, Text, Tags, Notizen">
-      <button class="small" id="btn-play-selected">Auswahl spielen</button>
-      <button class="small" id="btn-batch-mp3">Batch MP3</button>
-      <button class="small" id="btn-export-json">JSON</button>
-      <label class="small file-btn">Import<input id="import-json" type="file" accept="application/json"></label>
-      <button class="small" id="btn-offline-html">Offline HTML</button>
-    </div>
-    <div class="library-list" id="library-list"></div>
+    <section class="panel tab-panel" data-tab-panel="webarchive">
+      <div class="panel-title">Webarchiv</div>
+      <div class="inf">URLs speichern, Versionen halten, später wiederfinden. Crawlbar über stabile Einträge und den Tab selbst.</div>
+      <div class="grid2">
+        <input id="webarchive-url" type="text" placeholder="URL">
+        <input id="webarchive-title" type="text" placeholder="Titel">
+      </div>
+      <div class="row">
+        <button class="small primary" id="btn-webarchive-save">Snapshot merken</button>
+        <button class="small" id="btn-webarchive-clear">Leeren</button>
+      </div>
+      <textarea id="webarchive-output" placeholder="Gespeicherte Snapshots oder Notizen"></textarea>
+      <div class="sentence-list" id="webarchive-list"></div>
+    </section>
+
+    <section class="panel tab-panel" data-tab-panel="forms">
+      <div class="panel-title">Formulare</div>
+      <div class="inf">Profil- und Vorlagenbereich für Platzhalter ohne LLM im Hintergrund. Das ist die kleine Abo-Alternative, sauber getrennt.</div>
+      <div class="grid2">
+        <input id="forms-profile" type="text" placeholder="Profilname">
+        <input id="forms-name" type="text" placeholder="Name">
+        <input id="forms-email" type="text" placeholder="E-Mail">
+        <input id="forms-address" type="text" placeholder="Adresse">
+      </div>
+      <textarea id="forms-template" placeholder="Vorlage mit Platzhaltern wie {{name}}, {{email}}, {{address}}"></textarea>
+      <div class="row">
+        <button class="small primary" id="btn-forms-preview">Vorschau bauen</button>
+        <button class="small" id="btn-forms-save">Profil merken</button>
+      </div>
+      <textarea id="forms-preview" readonly placeholder="Vorschau"></textarea>
+      <div class="sentence-list" id="forms-list"></div>
+    </section>
+
+    <section class="panel tab-panel" data-tab-panel="logs">
+      <div class="panel-title">Logs</div>
+      <div class="inf">Logdateien zum Sichten, Gruppieren und späteren manuellen Erklären. Kein Hintergrund-LLM, nur gezielte Analyse auf Knopfdruck.</div>
+      <div class="grid2">
+        <input id="logs-upload" type="file" accept=".log,.txt,text/plain">
+        <select id="logs-profile">
+          <option value="auto">Auto-Erkennung</option>
+          <option value="python">Python</option>
+          <option value="nginx">Nginx</option>
+          <option value="systemd">Systemd</option>
+          <option value="docker">Docker</option>
+        </select>
+      </div>
+      <textarea id="logs-input" placeholder="Logtext hier hinein oder Datei laden"></textarea>
+      <div class="row">
+        <button class="small primary" id="btn-logs-analyze">Fehler extrahieren</button>
+        <button class="small" id="btn-logs-clear">Leeren</button>
+      </div>
+      <textarea id="logs-output" readonly placeholder="Gefundene Fehler und Gruppen"></textarea>
+      <div class="sentence-list" id="logs-list"></div>
+    </section>
   </div>
 
 </div>
@@ -477,6 +614,44 @@ const translateOutput = document.getElementById('translate-output');
 const translateSentences = document.getElementById('translate-sentences');
 const sourceLanguageLabel = document.getElementById('source-language-label');
 const targetLanguageLabel = document.getElementById('target-language-label');
+const tabButtons = Array.from(document.querySelectorAll('[data-tab-target]'));
+const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+const ocrSource = document.getElementById('ocr-source');
+const ocrLanguage = document.getElementById('ocr-language');
+const ocrInput = document.getElementById('ocr-input');
+const btnOcrSave = document.getElementById('btn-ocr-save');
+const btnOcrClear = document.getElementById('btn-ocr-clear');
+const ocrList = document.getElementById('ocr-list');
+const documentsUpload = document.getElementById('documents-upload');
+const documentsSearch = document.getElementById('documents-search');
+const documentsChat = document.getElementById('documents-chat');
+const documentsModel = document.getElementById('documents-model');
+const btnDocumentsAdd = document.getElementById('btn-documents-add');
+const btnDocumentsChat = document.getElementById('btn-documents-chat');
+const documentsOutput = document.getElementById('documents-output');
+const documentsList = document.getElementById('documents-list');
+const webarchiveUrl = document.getElementById('webarchive-url');
+const webarchiveTitle = document.getElementById('webarchive-title');
+const btnWebarchiveSave = document.getElementById('btn-webarchive-save');
+const btnWebarchiveClear = document.getElementById('btn-webarchive-clear');
+const webarchiveOutput = document.getElementById('webarchive-output');
+const webarchiveList = document.getElementById('webarchive-list');
+const formsProfile = document.getElementById('forms-profile');
+const formsName = document.getElementById('forms-name');
+const formsEmail = document.getElementById('forms-email');
+const formsAddress = document.getElementById('forms-address');
+const formsTemplate = document.getElementById('forms-template');
+const btnFormsPreview = document.getElementById('btn-forms-preview');
+const btnFormsSave = document.getElementById('btn-forms-save');
+const formsPreview = document.getElementById('forms-preview');
+const formsList = document.getElementById('forms-list');
+const logsUpload = document.getElementById('logs-upload');
+const logsProfile = document.getElementById('logs-profile');
+const logsInput = document.getElementById('logs-input');
+const btnLogsAnalyze = document.getElementById('btn-logs-analyze');
+const btnLogsClear = document.getElementById('btn-logs-clear');
+const logsOutput = document.getElementById('logs-output');
+const logsList = document.getElementById('logs-list');
 const profileName = document.getElementById('profile-name');
 const voiceProfileSel = document.getElementById('voice-profile-select');
 const btnProfileSave = document.getElementById('btn-profile-save');
@@ -508,6 +683,12 @@ const DEFAULT_CAT = 'Allgemein';
 const TRANSLATE_VOICE_KEY = 'flextrawurst.tts.translateVoices.v1';
 const TRANSLATE_VOICE_FAV_KEY = 'flextrawurst.tts.translateVoiceFavorites.v1';
 const VOICE_PROFILE_KEY = 'flextrawurst.tts.voiceProfiles.v1';
+const ACTIVE_TAB_KEY = 'flextrawurst.tts.activeTab.v1';
+const OCR_KEY = 'flextrawurst.tts.ocrJobs.v1';
+const DOCUMENTS_KEY = 'flextrawurst.tts.documents.v1';
+const WEBARCHIVE_KEY = 'flextrawurst.tts.webarchive.v1';
+const FORMS_KEY = 'flextrawurst.tts.forms.v1';
+const LOGS_KEY = 'flextrawurst.tts.logs.v1';
 
 let rate    = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
@@ -526,6 +707,11 @@ let translationLanguages = [];
 let translateVoicePrefs = loadTranslateVoicePrefs();
 let translateVoiceFavorites = loadTranslateVoiceFavorites();
 let voiceProfiles = loadVoiceProfiles();
+let ocrJobs = loadJsonLocal(OCR_KEY, []);
+let documentEntries = loadJsonLocal(DOCUMENTS_KEY, []);
+let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
+let formEntries = loadJsonLocal(FORMS_KEY, []);
+let logEntries = loadJsonLocal(LOGS_KEY, []);
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -574,6 +760,21 @@ function loadVoiceProfiles(){
 
 function saveVoiceProfiles(){
   localStorage.setItem(VOICE_PROFILE_KEY, JSON.stringify(voiceProfiles));
+}
+
+function loadJsonLocal(key, fallback){
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return Array.isArray(fallback) ? [...fallback] : fallback;
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : (Array.isArray(fallback) ? [...fallback] : fallback);
+  } catch(e){
+    return Array.isArray(fallback) ? [...fallback] : fallback;
+  }
+}
+
+function saveJsonLocal(key, value){
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
@@ -742,6 +943,159 @@ function renderCompareVoiceSelects(){
       .join('');
     sel.value = before && options.includes(before) ? before : (defaults[i] || fallback);
   });
+}
+
+function renderTabState(tab){
+  const current = ['tts','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  tabButtons.forEach(btn=>{
+    const on = btn.dataset.tabTarget === current;
+    btn.classList.toggle('on', on);
+    btn.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  tabPanels.forEach(panel=>{
+    panel.classList.toggle('on', panel.dataset.tabPanel === current);
+  });
+  localStorage.setItem(ACTIVE_TAB_KEY, current);
+}
+
+function setTab(tab, push){
+  const current = ['tts','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  const url = new URL(location.href);
+  url.searchParams.set('tab', current);
+  if (push === false) history.replaceState({tab: current}, '', url);
+  else history.pushState({tab: current}, '', url);
+  renderTabState(current);
+}
+
+function currentTab(){
+  const urlTab = new URL(location.href).searchParams.get('tab');
+  if (['tts','translate','ocr','documents','webarchive','forms','logs'].includes(urlTab)) return urlTab;
+  return localStorage.getItem(ACTIVE_TAB_KEY) || 'tts';
+}
+
+function renderSimpleList(target, items, emptyText){
+  if (!target) return;
+  if (!items.length){
+    target.innerHTML = `<div class="empty">${esc(emptyText)}</div>`;
+    return;
+  }
+  target.innerHTML = items.map(item=>`
+    <div class="sentence-row">
+      <div class="sentence-text">${esc(item.title || item.name || item.url || item.profile || item.text || 'Eintrag')}</div>
+      <div class="sentence-actions">
+        <button class="small" type="button">${esc(item.actionLabel || 'Wählen')}</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderOcrJobs(){
+  renderSimpleList(ocrList, ocrJobs.slice().reverse(), 'Noch keine OCR-Jobs gespeichert.');
+}
+
+function renderDocuments(){
+  const query = documentsSearch.value.trim().toLowerCase();
+  const items = documentEntries.filter(item=>{
+    if (!query) return true;
+    return [item.name, item.note, item.type].some(v=>String(v || '').toLowerCase().includes(query));
+  });
+  renderSimpleList(documentsList, items.slice().reverse(), 'Noch keine Dokumente gespeichert.');
+}
+
+function renderWebarchive(){
+  renderSimpleList(webarchiveList, webarchiveEntries.slice().reverse(), 'Noch keine Webarchiv-Einträge gespeichert.');
+}
+
+function renderForms(){
+  renderSimpleList(formsList, formEntries.slice().reverse(), 'Noch keine Formulare gespeichert.');
+}
+
+function renderLogs(){
+  renderSimpleList(logsList, logEntries.slice().reverse(), 'Noch keine Log-Auswertung gespeichert.');
+}
+
+function saveOcrJob(){
+  const job = {
+    title: ocrSource.files && ocrSource.files[0] ? ocrSource.files[0].name : `OCR ${ocrJobs.length + 1}`,
+    language: ocrLanguage.value,
+    text: ocrInput.value.trim(),
+    at: new Date().toISOString()
+  };
+  ocrJobs.push(job);
+  saveJsonLocal(OCR_KEY, ocrJobs);
+  renderOcrJobs();
+  st('OCR-Job gemerkt.','ok');
+}
+
+function saveDocumentEntry(){
+  const entry = {
+    name: documentsUpload.files && documentsUpload.files.length ? `${documentsUpload.files.length} Datei(en)` : `Dokument ${documentEntries.length + 1}`,
+    note: documentsChat.value.trim() || documentsSearch.value.trim(),
+    type: documentsModel.value,
+    at: new Date().toISOString()
+  };
+  documentEntries.push(entry);
+  saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+  documentsOutput.value = entry.note ? `Gemerkte Frage: ${entry.note}\nModus: ${entry.type}` : `Gemerktes Dokument: ${entry.name}`;
+  renderDocuments();
+  st('Dokumenteintrag gemerkt.','ok');
+}
+
+function saveWebarchiveEntry(){
+  const entry = {
+    url: webarchiveUrl.value.trim(),
+    title: webarchiveTitle.value.trim(),
+    at: new Date().toISOString()
+  };
+  if (!entry.url){ st('URL fehlt.','err'); return; }
+  webarchiveEntries.push(entry);
+  saveJsonLocal(WEBARCHIVE_KEY, webarchiveEntries);
+  webarchiveOutput.value = `${entry.title || entry.url}\n${entry.url}`;
+  renderWebarchive();
+  st('Webarchiv-Eintrag gemerkt.','ok');
+}
+
+function buildFormPreview(){
+  const tpl = formsTemplate.value || 'Name: {{name}}\nE-Mail: {{email}}\nAdresse: {{address}}';
+  const preview = tpl
+    .replaceAll('{{name}}', formsName.value.trim())
+    .replaceAll('{{email}}', formsEmail.value.trim())
+    .replaceAll('{{address}}', formsAddress.value.trim());
+  formsPreview.value = preview;
+  return preview;
+}
+
+function saveFormProfile(){
+  const entry = {
+    profile: formsProfile.value.trim() || `Profil ${formEntries.length + 1}`,
+    name: formsName.value.trim(),
+    email: formsEmail.value.trim(),
+    address: formsAddress.value.trim(),
+    template: formsTemplate.value.trim(),
+    at: new Date().toISOString()
+  };
+  formEntries.push(entry);
+  saveJsonLocal(FORMS_KEY, formEntries);
+  buildFormPreview();
+  renderForms();
+  st('Formularprofil gemerkt.','ok');
+}
+
+function analyzeLogs(){
+  const text = logsInput.value.trim();
+  if (!text){ st('Kein Logtext vorhanden.','err'); return; }
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  const hits = lines.filter(line => /error|fail|traceback|exception|warn|fatal|panic|denied|timeout/i.test(line));
+  logsOutput.value = hits.join('\n');
+  logEntries.push({
+    profile: logsProfile.value,
+    title: `Loganalyse ${logEntries.length + 1}`,
+    text: hits.join('\n'),
+    at: new Date().toISOString()
+  });
+  saveJsonLocal(LOGS_KEY, logEntries);
+  renderLogs();
+  st(hits.length ? `${hits.length} verdächtige Zeilen gefunden.` : 'Keine auffälligen Zeilen gefunden.','ok');
 }
 
 function renderTranslationVoices(){
@@ -1878,6 +2232,60 @@ btnTranslateCompare.addEventListener('click', compareTranslationVoices);
 autoTranslate.addEventListener('change', scheduleAutoTranslate);
 btnProfileSave.addEventListener('click', saveVoiceProfile);
 btnProfileLoad.addEventListener('click', loadVoiceProfile);
+tabButtons.forEach(btn=>{
+  btn.addEventListener('click', ()=>setTab(btn.dataset.tabTarget));
+});
+window.addEventListener('popstate', ()=>renderTabState(currentTab()));
+btnOcrSave.addEventListener('click', saveOcrJob);
+btnOcrClear.addEventListener('click', ()=>{
+  ocrInput.value = '';
+  st('OCR-Text geleert.','ok');
+});
+documentsSearch.addEventListener('input', renderDocuments);
+btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
+btnDocumentsChat.addEventListener('click', ()=>{
+  documentsOutput.value = documentsChat.value.trim()
+    ? `Frage: ${documentsChat.value.trim()}\nModell: ${documentsModel.value}\nAntwort: manuelle Chat-Anbindung folgt hier später.`
+    : 'Keine Frage eingegeben.';
+  st('Dokumenten-Chat vorbereitet.','ok');
+});
+btnWebarchiveSave.addEventListener('click', saveWebarchiveEntry);
+btnWebarchiveClear.addEventListener('click', ()=>{
+  webarchiveUrl.value = '';
+  webarchiveTitle.value = '';
+  webarchiveOutput.value = '';
+  st('Webarchiv-Felder geleert.','ok');
+});
+btnFormsPreview.addEventListener('click', ()=>{
+  buildFormPreview();
+  st('Vorschau gebaut.','ok');
+});
+btnFormsSave.addEventListener('click', saveFormProfile);
+btnLogsAnalyze.addEventListener('click', analyzeLogs);
+btnLogsClear.addEventListener('click', ()=>{
+  logsInput.value = '';
+  logsOutput.value = '';
+  st('Logs geleert.','ok');
+});
+ocrSource.addEventListener('change', ()=>{
+  if (ocrSource.files && ocrSource.files[0]) st(`OCR-Quelle gewählt: ${ocrSource.files[0].name}`,'ok');
+});
+documentsUpload.addEventListener('change', ()=>{
+  if (documentsUpload.files && documentsUpload.files.length){
+    documentsOutput.value = Array.from(documentsUpload.files).map(f=>f.name).join('\n');
+    st(`${documentsUpload.files.length} Dokument(e) gewählt.`, 'ok');
+  }
+});
+logsUpload.addEventListener('change', async ()=>{
+  const file = logsUpload.files && logsUpload.files[0];
+  if (!file) return;
+  logsInput.value = await file.text();
+  st(`Log geladen: ${file.name}`,'ok');
+});
+formsTemplate.addEventListener('input', buildFormPreview);
+formsName.addEventListener('input', buildFormPreview);
+formsEmail.addEventListener('input', buildFormPreview);
+formsAddress.addEventListener('input', buildFormPreview);
 
 translateSentences.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -2014,6 +2422,12 @@ document.addEventListener('touchend',  e=>{
 renderLibrary();
 renderVoiceProfiles();
 renderTranslationSentences();
+renderOcrJobs();
+renderDocuments();
+renderWebarchive();
+renderForms();
+renderLogs();
+setTab(currentTab(), false);
 loadServerStore();
 loadVoices();
 loadTranslationLanguages();
