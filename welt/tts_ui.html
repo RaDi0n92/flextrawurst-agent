@@ -168,6 +168,12 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 }
 .translator-controls { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; min-width: 0; }
 .translator-controls select { flex: 1 1 260px; }
+.translator-control {
+  display: flex; flex-direction: column; gap: .24rem;
+  flex: 1 1 260px; min-width: 0;
+}
+.translator-control .lbl { color: var(--pink-soft); font-size: .72rem; }
+.translator-control select { width: 100%; flex: none; }
 .translator-fields { display: grid; grid-template-columns: 1fr; gap: .65rem; }
 @media (min-width: 720px) { .translator-fields { grid-template-columns: 1fr 1fr; } }
 .lang-box { display: flex; flex-direction: column; gap: .38rem; min-width: 0; }
@@ -247,8 +253,14 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <div class="inf">Eigener Textbereich nur für Übersetzung. Die Hauptstimme oben bleibt unverändert.</div>
       </div>
       <div class="translator-controls">
-        <select id="translate-target" aria-label="Ausgabesprache"></select>
-        <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
+        <label class="translator-control">
+          <span class="lbl">Ausgabesprache</span>
+          <select id="translate-target" aria-label="Ausgabesprache"></select>
+        </label>
+        <label class="translator-control">
+          <span class="lbl">Übersetzerstimme</span>
+          <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
+        </label>
         <button class="small primary" id="btn-translate">Übersetzen</button>
         <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
       </div>
