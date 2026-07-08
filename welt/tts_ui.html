@@ -174,6 +174,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 }
 .translator-control .lbl { color: var(--pink-soft); font-size: .72rem; }
 .translator-control select { width: 100%; flex: none; }
+.translator-voice-card {
+  flex: 1 1 100%;
+  display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .5rem; align-items: end;
+  border: 1px solid var(--pink); background: rgba(255, 122, 200, .08);
+  border-radius: 8px; padding: .62rem;
+}
+.translator-voice-title {
+  color: var(--pink-soft); font-size: .76rem; letter-spacing: .04em;
+  text-transform: uppercase; margin-bottom: .26rem;
+}
+.translator-voice-count { color: var(--muted); font-size: .72rem; line-height: 1.35; }
+.translator-voice-card select { width: 100%; margin-top: .4rem; }
 .translator-fields { display: grid; grid-template-columns: 1fr; gap: .65rem; }
 @media (min-width: 720px) { .translator-fields { grid-template-columns: 1fr 1fr; } }
 .lang-box { display: flex; flex-direction: column; gap: .38rem; min-width: 0; }
@@ -193,6 +205,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
   .panel { padding: .68rem; }
   .row, .toolbar, .translator-controls { align-items: stretch; }
   .row > *, .toolbar > *, .translator-controls > * { flex: 1 1 100%; }
+  .translator-voice-card { grid-template-columns: 1fr; }
   button.main, button.small, .file-btn { width: 100%; }
   select, input[type="text"] { width: 100%; }
   .voice-active { white-space: normal; line-height: 1.35; }
@@ -257,10 +270,13 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <span class="lbl">Ausgabesprache</span>
           <select id="translate-target" aria-label="Ausgabesprache"></select>
         </label>
-        <label class="translator-control">
-          <span class="lbl">Übersetzerstimme</span>
-          <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
-        </label>
+        <div class="translator-voice-card">
+          <div>
+            <div class="translator-voice-title">Übersetzerstimme wählen</div>
+            <div class="translator-voice-count" id="translate-voice-count">Stimmen werden geladen.</div>
+            <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
+          </div>
+        </div>
         <button class="small primary" id="btn-translate">Übersetzen</button>
         <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
       </div>
@@ -342,6 +358,7 @@ const importJson = document.getElementById('import-json');
 const btnOfflineHtml = document.getElementById('btn-offline-html');
 const translateTarget = document.getElementById('translate-target');
 const translateVoiceSel = document.getElementById('translate-voice');
+const translateVoiceCount = document.getElementById('translate-voice-count');
 const btnTranslate = document.getElementById('btn-translate');
 const btnTranslateSpeak = document.getElementById('btn-translate-speak');
 const translateInput = document.getElementById('translate-input');
@@ -530,6 +547,7 @@ function renderTranslationVoices(){
     const fallback = voiceForTarget(target);
     translateVoiceSel.innerHTML = `<option value="${esc(fallback)}">${esc(voiceDisplay(fallback))}</option>`;
     translateVoiceSel.value = fallback;
+    translateVoiceCount.textContent = `Keine eigene Stimmenliste für ${languageDisplay(target)} geladen. Fallback wird benutzt.`;
     updateTargetLanguageLabel();
     return;
   }
@@ -543,6 +561,7 @@ function renderTranslationVoices(){
     ? saved
     : (voices[0].name || voices[0].ShortName);
   translateVoiceSel.value = preferred;
+  translateVoiceCount.textContent = `${voices.length} Stimmen für ${languageDisplay(target)} verfügbar.`;
   updateTargetLanguageLabel();
 }
 function fileSafe(s){
