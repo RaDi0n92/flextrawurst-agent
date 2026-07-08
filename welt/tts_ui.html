@@ -186,12 +186,42 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 }
 .translator-voice-count { color: var(--muted); font-size: .72rem; line-height: 1.35; }
 .translator-voice-card select { width: 100%; margin-top: .4rem; }
+.translator-voice-actions { display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; }
+.translator-tools, .profile-tools {
+  display: grid; grid-template-columns: 1fr; gap: .48rem;
+  border: 1px solid var(--border-soft); background: rgba(36, 16, 45, .58);
+  border-radius: 8px; padding: .58rem;
+}
+.translator-tool-row, .profile-row {
+  display: flex; gap: .44rem; align-items: center; flex-wrap: wrap; min-width: 0;
+}
+.translator-tool-row > button.small { flex: 0 0 auto; }
+.translator-toggle {
+  min-height: 38px; display: inline-flex; align-items: center; gap: .42rem;
+  white-space: nowrap;
+}
+.translator-toggle input { accent-color: var(--pink); }
+.profile-row input[type="text"] { flex: 1 1 180px; }
+.profile-row select { flex: 1 1 220px; }
 .translator-fields { display: grid; grid-template-columns: 1fr; gap: .65rem; }
 @media (min-width: 720px) { .translator-fields { grid-template-columns: 1fr 1fr; } }
 .lang-box { display: flex; flex-direction: column; gap: .38rem; min-width: 0; }
 .lang-label {
   color: var(--pink-soft); font-size: .78rem; line-height: 1.35;
   min-height: 2.1em;
+}
+.sentence-list {
+  display: flex; flex-direction: column; gap: .42rem;
+}
+.sentence-row {
+  display: grid; grid-template-columns: minmax(0,1fr); gap: .42rem;
+  border: 1px solid var(--border-soft); border-radius: 8px;
+  background: var(--bg-soft); padding: .52rem;
+}
+.sentence-text { color: var(--muted); font-size: .82rem; line-height: 1.45; }
+.sentence-actions { display: flex; gap: .38rem; flex-wrap: wrap; }
+@media (min-width: 720px) {
+  .sentence-row { grid-template-columns: minmax(0,1fr) auto; align-items: center; }
 }
 #translate-input, #translate-output { min-height: 190px; height: 190px; }
 #translate-output { background: var(--bg-soft); }
@@ -206,6 +236,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
   .row, .toolbar, .translator-controls { align-items: stretch; }
   .row > *, .toolbar > *, .translator-controls > * { flex: 1 1 100%; }
   .translator-voice-card { grid-template-columns: 1fr; }
+  .translator-tool-row > *, .profile-row > *, .sentence-actions > * { flex: 1 1 100%; }
   button.main, button.small, .file-btn { width: 100%; }
   select, input[type="text"] { width: 100%; }
   .voice-active { white-space: normal; line-height: 1.35; }
@@ -240,6 +271,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <div class="row">
       <select id="voice-select" aria-label="Stimme auswählen"></select>
       <button class="small primary" id="btn-voice">Aktivieren</button>
+      <button class="small" id="btn-voice-test">▶ Test</button>
       <button class="small" id="btn-voice-fav">★ Stimme</button>
     </div>
     <div class="row">
@@ -276,9 +308,22 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
             <div class="translator-voice-count" id="translate-voice-count">Stimmen werden geladen.</div>
             <select id="translate-voice" aria-label="Übersetzungsstimme"></select>
           </div>
+          <div class="translator-voice-actions">
+            <button class="small" id="btn-translate-voice-fav">★ Merken</button>
+          </div>
         </div>
         <button class="small primary" id="btn-translate">Übersetzen</button>
         <button class="small primary" id="btn-translate-speak" disabled title="Übersetzung mit der Zielsprachen-Stimme abspielen">▶ Übersetzung</button>
+      </div>
+    </div>
+    <div class="translator-tools">
+      <div class="translator-tool-row">
+        <button class="small" id="btn-copy-source">Quelle kopieren</button>
+        <button class="small" id="btn-copy-translation">Übersetzung kopieren</button>
+        <button class="small" id="btn-translation-to-tts">↙ ins TTS-Feld</button>
+        <button class="small" id="btn-translate-voice-test">▶ Stimme testen</button>
+        <button class="small" id="btn-translate-compare">3 Stimmen vergleichen</button>
+        <label class="chip translator-toggle"><input id="auto-translate" type="checkbox"> Auto-Übersetzen</label>
       </div>
     </div>
     <div class="translator-fields">
@@ -290,6 +335,16 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <span class="lang-label" id="target-language-label">Ausgabe: Sprache wählen</span>
         <textarea id="translate-output" readonly placeholder="Hier erscheint die Übersetzung als Text."></textarea>
       </label>
+    </div>
+    <div class="sentence-list" id="translate-sentences"></div>
+    <div class="profile-tools">
+      <div class="panel-title">Stimmprofile</div>
+      <div class="profile-row">
+        <input id="profile-name" type="text" placeholder="Profilname">
+        <select id="voice-profile-select" aria-label="Stimmprofil auswählen"></select>
+        <button class="small" id="btn-profile-save">Profil speichern</button>
+        <button class="small" id="btn-profile-load">Profil laden</button>
+      </div>
     </div>
   </div>
 
@@ -337,6 +392,7 @@ const btnPause= document.getElementById('btn-pause');
 const btnStop = document.getElementById('btn-stop');
 const voiceSel= document.getElementById('voice-select');
 const btnVoice= document.getElementById('btn-voice');
+const btnVoiceTest = document.getElementById('btn-voice-test');
 const btnVoiceFav = document.getElementById('btn-voice-fav');
 const btnVoiceFavRemove = document.getElementById('btn-voice-fav-remove');
 const voiceFavSel = document.getElementById('voice-favorites');
@@ -361,10 +417,22 @@ const translateVoiceSel = document.getElementById('translate-voice');
 const translateVoiceCount = document.getElementById('translate-voice-count');
 const btnTranslate = document.getElementById('btn-translate');
 const btnTranslateSpeak = document.getElementById('btn-translate-speak');
+const btnTranslateVoiceFav = document.getElementById('btn-translate-voice-fav');
+const btnCopySource = document.getElementById('btn-copy-source');
+const btnCopyTranslation = document.getElementById('btn-copy-translation');
+const btnTranslationToTts = document.getElementById('btn-translation-to-tts');
+const btnTranslateVoiceTest = document.getElementById('btn-translate-voice-test');
+const btnTranslateCompare = document.getElementById('btn-translate-compare');
+const autoTranslate = document.getElementById('auto-translate');
 const translateInput = document.getElementById('translate-input');
 const translateOutput = document.getElementById('translate-output');
+const translateSentences = document.getElementById('translate-sentences');
 const sourceLanguageLabel = document.getElementById('source-language-label');
 const targetLanguageLabel = document.getElementById('target-language-label');
+const profileName = document.getElementById('profile-name');
+const voiceProfileSel = document.getElementById('voice-profile-select');
+const btnProfileSave = document.getElementById('btn-profile-save');
+const btnProfileLoad = document.getElementById('btn-profile-load');
 const seekW   = document.getElementById('seek-wrap');
 const seekF   = document.getElementById('seek-fill');
 const seekK   = document.getElementById('seek-knob');
@@ -390,6 +458,8 @@ const DEFAULT_VOICE_FAVORITES = ['de-DE-FlorianMultilingualNeural', 'de-DE-Killi
 const AUDIO_CACHE_LIMIT = 80;
 const DEFAULT_CAT = 'Allgemein';
 const TRANSLATE_VOICE_KEY = 'flextrawurst.tts.translateVoices.v1';
+const TRANSLATE_VOICE_FAV_KEY = 'flextrawurst.tts.translateVoiceFavorites.v1';
+const VOICE_PROFILE_KEY = 'flextrawurst.tts.voiceProfiles.v1';
 
 let rate    = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
@@ -406,6 +476,9 @@ let audioCache = new Map();
 let availableVoices = [];
 let translationLanguages = [];
 let translateVoicePrefs = loadTranslateVoicePrefs();
+let translateVoiceFavorites = loadTranslateVoiceFavorites();
+let voiceProfiles = loadVoiceProfiles();
+let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
 function dbg(msg)     { dbgEl.textContent = msg; }
@@ -427,6 +500,32 @@ function loadTranslateVoicePrefs(){
 
 function saveTranslateVoicePrefs(){
   localStorage.setItem(TRANSLATE_VOICE_KEY, JSON.stringify(translateVoicePrefs));
+}
+
+function loadTranslateVoiceFavorites(){
+  try {
+    const data = JSON.parse(localStorage.getItem(TRANSLATE_VOICE_FAV_KEY) || '{}');
+    return data && typeof data === 'object' ? data : {};
+  } catch(e) {
+    return {};
+  }
+}
+
+function saveTranslateVoiceFavorites(){
+  localStorage.setItem(TRANSLATE_VOICE_FAV_KEY, JSON.stringify(translateVoiceFavorites));
+}
+
+function loadVoiceProfiles(){
+  try {
+    const data = JSON.parse(localStorage.getItem(VOICE_PROFILE_KEY) || '[]');
+    return Array.isArray(data) ? data.filter(p=>p && p.name) : [];
+  } catch(e) {
+    return [];
+  }
+}
+
+function saveVoiceProfiles(){
+  localStorage.setItem(VOICE_PROFILE_KEY, JSON.stringify(voiceProfiles));
 }
 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
@@ -542,7 +641,14 @@ function voicesForTarget(target){
 
 function renderTranslationVoices(){
   const target = translateTarget.value;
-  const voices = voicesForTarget(target);
+  const favorites = translateVoiceFavorites[target] || [];
+  const voices = voicesForTarget(target).sort((a,b)=>{
+    const an = a.name || a.ShortName;
+    const bn = b.name || b.ShortName;
+    const af = favorites.includes(an) ? 0 : 1;
+    const bf = favorites.includes(bn) ? 0 : 1;
+    return af - bf || String(an).localeCompare(String(bn));
+  });
   if (!voices.length){
     const fallback = voiceForTarget(target);
     translateVoiceSel.innerHTML = `<option value="${esc(fallback)}">${esc(voiceDisplay(fallback))}</option>`;
@@ -553,7 +659,8 @@ function renderTranslationVoices(){
   }
   translateVoiceSel.innerHTML = voices.map(v=>{
     const name = v.name || v.ShortName;
-    const label = `${voiceDisplay(name)} · ${genderDisplay(v.gender || v.Gender)}`;
+    const star = favorites.includes(name) ? '★ ' : '';
+    const label = `${star}${voiceDisplay(name)} · ${genderDisplay(v.gender || v.Gender)}`;
     return `<option value="${esc(name)}">${esc(label)}</option>`;
   }).join('');
   const saved = translateVoicePrefs[target];
@@ -561,7 +668,7 @@ function renderTranslationVoices(){
     ? saved
     : (voices[0].name || voices[0].ShortName);
   translateVoiceSel.value = preferred;
-  translateVoiceCount.textContent = `${voices.length} Stimmen für ${languageDisplay(target)} verfügbar.`;
+  translateVoiceCount.textContent = `${voices.length} Stimmen für ${languageDisplay(target)} verfügbar${favorites.length ? ` · ${favorites.length} gemerkt` : ''}.`;
   updateTargetLanguageLabel();
 }
 function fileSafe(s){
@@ -794,6 +901,7 @@ ta.addEventListener('input', ()=>{
 
 translateInput.addEventListener('input', ()=>{
   sourceLanguageLabel.textContent = 'Eingabe: Sprache wird beim Übersetzen erkannt';
+  scheduleAutoTranslate();
 });
 
 document.querySelectorAll('.chip[data-r]').forEach(b=>{
@@ -896,6 +1004,7 @@ async function translateOne(){
   if (!target){ st('Keine Zielsprache gewählt.','err'); return; }
   st('Übersetzt…','wait');
   translateOutput.value = 'Übersetzt...';
+  renderTranslationSentences();
   updateTranslateSpeakState();
   try {
     const res = await fetch(TRANSLATE_API, {
@@ -910,21 +1019,21 @@ async function translateOne(){
     if (data.target_lang) translateTarget.value = data.target_lang;
     updateTargetLanguageLabel();
     updateTranslateSpeakState();
+    renderTranslationSentences();
     st('Übersetzt.','ok');
   } catch(e){
     translateOutput.value = '';
     updateTranslateSpeakState();
+    renderTranslationSentences();
     st('Übersetzung fehlgeschlagen.','err');
   }
 }
 
-async function speakTranslation(){
-  const raw = translateOutput.value.trim();
-  if (!raw){ st('Keine Übersetzung zum Sprechen.','err'); return; }
+async function playTextAsAudio(raw, voice, label){
   const clean = strip(raw);
-  if (!clean){ st('Keine lesbare Übersetzung.','err'); return; }
+  if (!clean){ st(`Kein lesbarer Text für ${label || 'Audio'}.`,'err'); return; }
   const parts = splitChunks(clean);
-  const voice = translationVoice();
+  const usedVoice = voice || activeVoice || DEFAULT_VOICE;
   if (!actx) actx = new (window.AudioContext||window.webkitAudioContext)();
   if (actx.state === 'suspended') await actx.resume();
   sess++;
@@ -940,20 +1049,20 @@ async function speakTranslation(){
   try {
     for (let i=0; i<parts.length; i++){
       if (sid !== sess) return;
-      st(`Übersetzung lädt ${i+1}/${parts.length}…`,'wait');
-      const ab = await fetchAudioPart(parts[i], voice, rate);
+      st(`${label || 'Audio'} lädt ${i+1}/${parts.length}…`,'wait');
+      const ab = await fetchAudioPart(parts[i], usedVoice, rate);
       if (sid !== sess) return;
       const buf = await actx.decodeAudioData(ab.slice(0));
       setSeek((i / parts.length * 100).toFixed(1)+'%');
-      infEl.textContent = `${i+1} / ${parts.length} · ${voice}`;
-      st(`Übersetzung spricht ${i+1}/${parts.length}`,'ok');
+      infEl.textContent = `${i+1} / ${parts.length} · ${usedVoice}`;
+      st(`${label || 'Audio'} spricht ${i+1}/${parts.length}`,'ok');
       await playBuf(buf, sid);
     }
     if (sid !== sess) return;
     setSeek('100%');
-    st('Übersetzung fertig.','');
+    st(`${label || 'Audio'} fertig.`,'');
   } catch(e){
-    if (sid === sess) st('Übersetzungsstimme fehlgeschlagen: '+e.message,'err');
+    if (sid === sess) st(`${label || 'Audio'} fehlgeschlagen: ${e.message}`,'err');
   } finally {
     if (sid === sess){
       infEl.textContent = '';
@@ -963,6 +1072,181 @@ async function speakTranslation(){
       dbg('');
     }
   }
+}
+
+async function speakTranslation(){
+  const raw = translateOutput.value.trim();
+  if (!raw){ st('Keine Übersetzung zum Sprechen.','err'); return; }
+  await playTextAsAudio(raw, translationVoice(), 'Übersetzung');
+}
+
+function sampleForLang(target){
+  const lang = String(target || '').toLowerCase();
+  const samples = {
+    de: 'Das ist ein kurzer Stimmtest fuer die gewaehlte deutsche Stimme.',
+    en: 'This is a short voice test for the selected English voice.',
+    fr: 'Ceci est un court test de voix pour la voix francaise choisie.',
+    es: 'Esta es una prueba corta de la voz espanola seleccionada.',
+    it: 'Questa e una breve prova della voce italiana selezionata.',
+    pt: 'Este e um breve teste da voz portuguesa selecionada.',
+    nl: 'Dit is een korte stemtest voor de gekozen Nederlandse stem.',
+    pl: 'To jest krotki test wybranego polskiego glosu.',
+    tr: 'Bu, secilen Turkce ses icin kisa bir ses testidir.',
+    ja: 'これは選択した日本語音声の短いテストです。',
+    ko: '선택한 한국어 음성을 위한 짧은 테스트입니다.',
+    ru: 'Это короткая проверка выбранного русского голоса.'
+  };
+  return samples[lang] || 'This is a short voice test for the selected voice.';
+}
+
+async function testMainVoice(){
+  const locale = voiceByName(activeVoice)?.locale || voiceByName(activeVoice)?.Locale || 'de-DE';
+  await playTextAsAudio(sampleForLang(targetFromLocale(locale)), activeVoice, 'Stimmtest');
+}
+
+async function testTranslationVoice(){
+  await playTextAsAudio(sampleForLang(translateTarget.value), translationVoice(), 'Übersetzer-Stimmtest');
+}
+
+async function compareTranslationVoices(){
+  const target = translateTarget.value;
+  const voices = voicesForTarget(target);
+  if (!voices.length){ st('Keine Stimmen zum Vergleichen geladen.','err'); return; }
+  const selected = translationVoice();
+  const start = Math.max(0, voices.findIndex(v=>(v.name || v.ShortName) === selected));
+  const picked = voices.slice(start, start + 3);
+  while (picked.length < 3 && picked.length < voices.length) picked.push(voices[picked.length - voices.length + start]);
+  const text = translateOutput.value.trim() || sampleForLang(target);
+  for (const voice of picked.slice(0, 3)){
+    const name = voice.name || voice.ShortName;
+    await playTextAsAudio(text, name, `Vergleich: ${name}`);
+  }
+}
+
+function splitSentences(text){
+  return (String(text || '').match(/[^.!?。！？]+[.!?。！？]+|[^.!?。！？]+$/g) || [])
+    .map(s=>s.trim())
+    .filter(Boolean);
+}
+
+function renderTranslationSentences(){
+  const sentences = splitSentences(translateOutput.value);
+  if (!sentences.length){
+    translateSentences.innerHTML = '';
+    return;
+  }
+  translateSentences.innerHTML = sentences.map((sentence, i)=>`
+    <div class="sentence-row" data-i="${i}">
+      <div class="sentence-text">${esc(sentence)}</div>
+      <div class="sentence-actions">
+        <button class="small" data-act="play-sentence">▶ Satz</button>
+        <button class="small" data-act="tts-sentence">↙ Satz ins TTS</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function copyText(text, okMsg){
+  const value = String(text || '').trim();
+  if (!value){ st('Nichts zum Kopieren.','err'); return; }
+  try {
+    await navigator.clipboard.writeText(value);
+  } catch(e){
+    const tmp = document.createElement('textarea');
+    tmp.value = value;
+    tmp.style.position = 'fixed';
+    tmp.style.left = '-9999px';
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    tmp.remove();
+  }
+  st(okMsg || 'Kopiert.','ok');
+}
+
+function translationToTts(){
+  const text = translateOutput.value.trim();
+  if (!text){ st('Keine Übersetzung zum Übernehmen.','err'); return; }
+  ta.value = text;
+  ta.dispatchEvent(new Event('input'));
+  st('Übersetzung ins TTS-Feld übernommen.','ok');
+}
+
+function scheduleAutoTranslate(){
+  clearTimeout(autoTranslateTimer);
+  if (!autoTranslate.checked) return;
+  if (!translateInput.value.trim()) return;
+  autoTranslateTimer = setTimeout(()=>translateOne(), 700);
+}
+
+function renderVoiceProfiles(){
+  if (!voiceProfiles.length){
+    voiceProfileSel.innerHTML = '<option value="">Keine Profile gespeichert</option>';
+    btnProfileLoad.disabled = true;
+    return;
+  }
+  btnProfileLoad.disabled = false;
+  voiceProfileSel.innerHTML = voiceProfiles
+    .map(p=>`<option value="${esc(p.name)}">${esc(p.name)}</option>`)
+    .join('');
+}
+
+function saveVoiceProfile(){
+  const name = profileName.value.trim() || `Profil ${voiceProfiles.length + 1}`;
+  const profile = {
+    name,
+    mainVoice: activeVoice,
+    rate,
+    targetLang: translateTarget.value,
+    translateVoice: translationVoice()
+  };
+  voiceProfiles = voiceProfiles.filter(p=>p.name !== name);
+  voiceProfiles.push(profile);
+  saveVoiceProfiles();
+  renderVoiceProfiles();
+  voiceProfileSel.value = name;
+  profileName.value = '';
+  st('Stimmprofil gespeichert.','ok');
+}
+
+function loadVoiceProfile(){
+  const profile = voiceProfiles.find(p=>p.name === voiceProfileSel.value);
+  if (!profile){ st('Kein Profil gewählt.','err'); return; }
+  if (profile.mainVoice){
+    voiceSel.value = profile.mainVoice;
+    setActiveVoice(profile.mainVoice);
+  }
+  setRate(profile.rate || '+0%');
+  if (profile.targetLang){
+    translateTarget.value = profile.targetLang;
+    renderTranslationVoices();
+  }
+  if (profile.translateVoice){
+    translateVoiceSel.value = profile.translateVoice;
+    translateVoicePrefs[translateTarget.value] = profile.translateVoice;
+    saveTranslateVoicePrefs();
+    updateTargetLanguageLabel();
+  }
+  st('Stimmprofil geladen.','ok');
+}
+
+function toggleTranslateVoiceFavorite(){
+  const target = translateTarget.value;
+  const voice = translationVoice();
+  if (!target || !voice) return;
+  const list = new Set(translateVoiceFavorites[target] || []);
+  if (list.has(voice)){
+    list.delete(voice);
+    st('Übersetzerstimme aus Favoriten entfernt.','ok');
+  } else {
+    list.add(voice);
+    st('Übersetzerstimme gemerkt.','ok');
+  }
+  translateVoiceFavorites[target] = Array.from(list);
+  saveTranslateVoiceFavorites();
+  renderTranslationVoices();
+  translateVoiceSel.value = voice;
+  updateTargetLanguageLabel();
 }
 
 function addCategory(){
@@ -1403,6 +1687,8 @@ btnVoice.addEventListener('click', ()=>{
   st('Stimme aktiviert.','ok');
 });
 
+btnVoiceTest.addEventListener('click', testMainVoice);
+
 btnVoiceFav.addEventListener('click', ()=>{
   const v = voiceSel.value || activeVoice || DEFAULT_VOICE;
   store.voiceFavorites = Array.from(new Set([...(store.voiceFavorites || []), v]));
@@ -1443,6 +1729,7 @@ importJson.addEventListener('change', ()=>importJsonFile(importJson.files[0]));
 btnOfflineHtml.addEventListener('click', downloadOfflineHtml);
 translateTarget.addEventListener('change', ()=>{
   renderTranslationVoices();
+  scheduleAutoTranslate();
 });
 translateVoiceSel.addEventListener('change', ()=>{
   if (translateTarget.value && translateVoiceSel.value){
@@ -1453,6 +1740,28 @@ translateVoiceSel.addEventListener('change', ()=>{
 });
 btnTranslate.addEventListener('click', translateOne);
 btnTranslateSpeak.addEventListener('click', speakTranslation);
+btnTranslateVoiceFav.addEventListener('click', toggleTranslateVoiceFavorite);
+btnCopySource.addEventListener('click', ()=>copyText(translateInput.value, 'Quelle kopiert.'));
+btnCopyTranslation.addEventListener('click', ()=>copyText(translateOutput.value, 'Übersetzung kopiert.'));
+btnTranslationToTts.addEventListener('click', translationToTts);
+btnTranslateVoiceTest.addEventListener('click', testTranslationVoice);
+btnTranslateCompare.addEventListener('click', compareTranslationVoices);
+autoTranslate.addEventListener('change', scheduleAutoTranslate);
+btnProfileSave.addEventListener('click', saveVoiceProfile);
+btnProfileLoad.addEventListener('click', loadVoiceProfile);
+
+translateSentences.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act]');
+  const row = e.target.closest('.sentence-row');
+  if (!btn || !row) return;
+  const sentence = splitSentences(translateOutput.value)[Number(row.dataset.i)] || '';
+  if (btn.dataset.act === 'play-sentence') playTextAsAudio(sentence, translationVoice(), 'Satz');
+  if (btn.dataset.act === 'tts-sentence'){
+    ta.value = sentence;
+    ta.dispatchEvent(new Event('input'));
+    st('Satz ins TTS-Feld übernommen.','ok');
+  }
+});
 
 libraryList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -1574,6 +1883,8 @@ document.addEventListener('touchend',  e=>{
 });
 
 renderLibrary();
+renderVoiceProfiles();
+renderTranslationSentences();
 loadServerStore();
 loadVoices();
 loadTranslationLanguages();
