@@ -96168,8 +96168,8 @@
       "source_file": "welt/tts_service.py",
       "source_location": "L1285",
       "weight": 1.0,
-      "_src": "tts_service_export_log_analysis",
-      "_tgt": "str",
+      "_src": "str",
+      "_tgt": "tts_service_export_log_analysis",
       "source": "str",
       "target": "tts_service_export_log_analysis"
     },
