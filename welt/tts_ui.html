@@ -579,6 +579,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-logs-export-json">JSON</button>
       </div>
       <textarea id="logs-output" readonly placeholder="Gefundene Fehler und Gruppen"></textarea>
+      <textarea id="logs-compare" readonly placeholder="Vergleich zweier Loganalysen"></textarea>
       <div class="sentence-list" id="logs-groups"></div>
       <div class="sentence-list" id="logs-list"></div>
     </section>
@@ -699,6 +700,7 @@ const btnLogsProfileLoad = document.getElementById('btn-logs-profile-load');
 const btnLogsExportTxt = document.getElementById('btn-logs-export-txt');
 const btnLogsExportJson = document.getElementById('btn-logs-export-json');
 const logsOutput = document.getElementById('logs-output');
+const logsCompare = document.getElementById('logs-compare');
 const logsGroups = document.getElementById('logs-groups');
 const logsList = document.getElementById('logs-list');
 const profileName = document.getElementById('profile-name');
@@ -1300,12 +1302,62 @@ function renderLogs(){
         </div>
         <div class="sentence-actions">
           <button class="small" type="button" data-act="load-log">Laden</button>
+          <button class="small" type="button" data-act="compare-log">Vergleich</button>
           <button class="small" type="button" data-act="export-log-txt">TXT</button>
           <button class="small" type="button" data-act="export-log-json">JSON</button>
         </div>
       </div>
     `;
   }).join('');
+}
+
+function logGroupSignatures(item){
+  const groups = Array.isArray(item?.groups) ? item.groups : [];
+  const map = new Map();
+  groups.forEach(group=>{
+    const signature = String(group?.signature || '').trim();
+    if (!signature) return;
+    map.set(signature, {
+      count: Number(group?.count || 0),
+      level: String(group?.level || ''),
+    });
+  });
+  return map;
+}
+
+function compareLogEntries(base, other){
+  if (!base || !other) return '';
+  const baseCounts = base.counts || {};
+  const otherCounts = other.counts || {};
+  const baseGroups = logGroupSignatures(base);
+  const otherGroups = logGroupSignatures(other);
+  const added = [...otherGroups.keys()].filter(signature=>!baseGroups.has(signature));
+  const removed = [...baseGroups.keys()].filter(signature=>!otherGroups.has(signature));
+  const changed = [...otherGroups.keys()].filter(signature=>{
+    if (!baseGroups.has(signature)) return false;
+    const a = baseGroups.get(signature);
+    const b = otherGroups.get(signature);
+    return a.count !== b.count || a.level !== b.level;
+  });
+  return [
+    `Basis: ${base.filename || base.id || 'unbekannt'}`,
+    `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
+    '',
+    `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
+    `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,
+    `Warnungen: ${baseCounts.warnings ?? 0} -> ${otherCounts.warnings ?? 0}`,
+    `Tracebacks: ${baseCounts.tracebacks ?? 0} -> ${otherCounts.tracebacks ?? 0}`,
+    `HTTP-5xx: ${baseCounts.http_5xx ?? 0} -> ${otherCounts.http_5xx ?? 0}`,
+    '',
+    `Gruppen: ${baseGroups.size} -> ${otherGroups.size}`,
+    `Neu in Vergleich: ${added.length}`,
+    `Entfallen: ${removed.length}`,
+    `Geaendert: ${changed.length}`,
+    '',
+    added.length ? `Neu: ${added.slice(0, 8).join(' | ')}` : 'Neu: keine',
+    removed.length ? `Entfallen: ${removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
+    changed.length ? `Geaendert: ${changed.slice(0, 8).join(' | ')}` : 'Geaendert: keine',
+  ].join('\n');
 }
 
 function normalizeLogRule(item){
@@ -2051,6 +2103,7 @@ async function analyzeLogs(){
   currentLogEntry = item;
   currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
   updateLogExportState();
+  logsCompare.value = '';
   logsOutput.value = [
     ...(Array.isArray(item.summary) ? item.summary : []),
     '',
@@ -2071,6 +2124,7 @@ function loadLogEntry(logId){
   currentLogEntry = item;
   currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
   updateLogExportState();
+  logsCompare.value = '';
   logsOutput.value = [
     ...(Array.isArray(item.summary) ? item.summary : []),
     '',
@@ -3405,6 +3459,7 @@ btnLogsClear.addEventListener('click', ()=>{
   logsInput.value = '';
   logsQuestion.value = '';
   logsOutput.value = '';
+  logsCompare.value = '';
   currentLogFilename = '';
   currentLogEntry = null;
   currentLogGroupIndex = -1;
@@ -3434,6 +3489,20 @@ logsList.addEventListener('click', e=>{
   const item = logEntries.find(x=>x.id === row.dataset.logId);
   if (!item) return;
   if (btn.dataset.act === 'load-log') loadLogEntry(row.dataset.logId);
+  if (btn.dataset.act === 'compare-log'){
+    if (!currentLogEntry){
+      loadLogEntry(row.dataset.logId);
+      st('Erst eine Loganalyse laden, dann vergleichen.','err');
+      return;
+    }
+    if (currentLogEntry.id === item.id){
+      logsCompare.value = 'Gleiche Loganalyse verglichen: kein Unterschied.';
+      st('Gleiche Analyse gewählt.','ok');
+      return;
+    }
+    logsCompare.value = compareLogEntries(currentLogEntry, item);
+    st(`Loganalyse verglichen: ${item.filename || item.id}`,'ok');
+  }
   if (btn.dataset.act === 'export-log-txt') exportLogEntry(item, 'txt');
   if (btn.dataset.act === 'export-log-json') exportLogEntry(item, 'json');
 });
