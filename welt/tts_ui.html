@@ -499,6 +499,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
       <div class="sentence-list" id="documents-scope"></div>
       <textarea id="documents-output" placeholder="Treffer, Chunks oder Chat-Antworten erscheinen hier"></textarea>
+      <div class="sentence-list" id="documents-sources"></div>
       <div class="sentence-list" id="documents-chunks"></div>
       <div class="sentence-list" id="documents-list"></div>
     </section>
@@ -644,6 +645,7 @@ const btnDocumentsScopeClear = document.getElementById('btn-documents-scope-clea
 const documentsScopeInfo = document.getElementById('documents-scope-info');
 const documentsScope = document.getElementById('documents-scope');
 const documentsOutput = document.getElementById('documents-output');
+const documentsSources = document.getElementById('documents-sources');
 const documentsChunks = document.getElementById('documents-chunks');
 const documentsList = document.getElementById('documents-list');
 const webarchiveUrl = document.getElementById('webarchive-url');
@@ -759,6 +761,7 @@ let currentLogEntry = null;
 let currentLogGroupIndex = -1;
 let currentDocumentDetail = null;
 let currentDocumentChunkIndex = -1;
+let currentDocumentSources = [];
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -1146,6 +1149,26 @@ function renderDocumentChunks(){
   `).join('');
 }
 
+function renderDocumentSources(){
+  const sources = Array.isArray(currentDocumentSources) ? currentDocumentSources : [];
+  if (!sources.length){
+    documentsSources.innerHTML = '<div class="empty">Noch keine Chat-Quellen geladen.</div>';
+    return;
+  }
+  documentsSources.innerHTML = sources.map((src, index)=>`
+    <div class="sentence-row" data-source-document-id="${esc(src.document_id)}" data-source-chunk-index="${esc(src.chunk_index || '')}">
+      <div>
+        <div class="sentence-text">Quelle ${esc(index + 1)} · ${esc(src.filename || src.document_id || 'Dokument')}</div>
+        <div class="clip-meta">Chunk ${esc(src.chunk_index || '?')} · Score ${esc(src.score || 0)}</div>
+        <div class="clip-extra">${esc(shortText(String(src.chunk_text || src.preview || '').replace(/\s+/g,' '), 260))}</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-document-source">Zum Chunk</button>
+      </div>
+    </div>
+  `).join('');
+}
+
 function renderWebarchive(){
   const query = webarchiveSearch.value.trim();
   const items = (query && webarchiveHits.length ? webarchiveHits : webarchiveEntries)
@@ -1323,6 +1346,7 @@ async function loadServerDocuments(){
     documentsServerReady = false;
   }
   renderDocumentScope();
+  renderDocumentSources();
   renderDocumentChunks();
   renderDocuments();
 }
@@ -1345,10 +1369,12 @@ async function saveDocumentEntry(){
     documentEntries = Array.from(byId.values());
     documentActiveIds = (Array.isArray(created) ? created : []).map(item=>item.id).filter(Boolean);
     saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+    currentDocumentSources = [];
     documentsOutput.value = (Array.isArray(created) ? created : []).map(item=>{
       return `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`;
     }).join('\n');
     renderDocumentScope();
+    renderDocumentSources();
     renderDocuments();
     st(`${files.length} Dokument(e) importiert.`,'ok');
     if (documentsSearch.value.trim()) await runDocumentSearch();
@@ -1372,6 +1398,8 @@ async function runDocumentSearch(){
   const query = documentsSearch.value.trim();
   if (!query){
     documentHits = [];
+    currentDocumentSources = [];
+    renderDocumentSources();
     renderDocuments();
     return;
   }
@@ -1427,11 +1455,13 @@ async function chatDocuments(){
       payload.answer || payload.note || 'Keine Antwort.',
       '',
       `Modell: ${payload.model || documentsModel.value || 'unbekannt'}`,
-      ...sources.map((src, i)=>`[${i + 1}] ${src.filename} · Chunk ${src.chunk_index}\n${src.chunk_text}`)
+      `Quellen: ${sources.length}`
     ].join('\n');
+    currentDocumentSources = sources;
     documentHits = sources;
     documentActiveIds = Array.from(new Set(sources.map(src=>src.document_id).filter(Boolean)));
     renderDocumentScope();
+    renderDocumentSources();
     renderDocuments();
     st(payload.answer ? 'Dokumenten-Chat fertig.' : (payload.note || 'Keine Treffer.'),'ok');
   } catch(e){
@@ -1455,6 +1485,7 @@ async function loadDocumentDetail(documentId, chunkIndex){
     const hit = chunkIndex
       ? documentHits.find(entry=>entry.document_id === documentId && String(entry.chunk_index) === String(chunkIndex))
       : null;
+    if (hit) currentDocumentSources = [hit];
     currentDocumentChunkIndex = hit
       ? Math.max(0, (item.chunks || []).findIndex(chunk=>String(chunk.index) === String(hit.chunk_index)))
       : -1;
@@ -1468,16 +1499,19 @@ async function loadDocumentDetail(documentId, chunkIndex){
       `Zeichen: ${item.text_chars || 0}`,
       `Chunks: ${item.chunk_count || 0}`
     ].join('\n').trim();
+    renderDocumentSources();
     renderDocumentChunks();
     renderDocumentScope();
     st(`Dokument geladen: ${item.filename}`,'ok');
   } catch(e){
     currentDocumentDetail = doc;
     currentDocumentChunkIndex = -1;
+    currentDocumentSources = [];
     documentsOutput.value = [
       `${doc.filename} · ${doc.status}${doc.error ? ` · ${doc.error}` : ''}`,
       doc.preview || 'Keine Vorschau gespeichert.'
     ].join('\n');
+    renderDocumentSources();
     renderDocumentChunks();
     st('Dokumentdetail nicht vollständig ladbar.','err');
     dbg(e.message);
@@ -1527,6 +1561,11 @@ function loadDocumentChunk(index){
   ].join('\n');
   renderDocumentChunks();
   st(`Chunk geladen: ${chunk.index || index + 1}`,'ok');
+}
+
+function loadDocumentSource(documentId, chunkIndex){
+  if (!documentId) return;
+  loadDocumentDetail(documentId, chunkIndex || '');
 }
 
 async function loadServerWebarchive(){
@@ -2999,6 +3038,12 @@ documentsChunks.addEventListener('click', e=>{
   if (!btn || !row) return;
   loadDocumentChunk(Number(row.dataset.documentChunkIndex));
 });
+documentsSources.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-document-source"]');
+  const row = e.target.closest('[data-source-document-id]');
+  if (!btn || !row) return;
+  loadDocumentSource(row.dataset.sourceDocumentId, row.dataset.sourceChunkIndex || '');
+});
 btnWebarchiveSave.addEventListener('click', saveWebarchiveEntry);
 webarchiveSearch.addEventListener('input', ()=>{
   clearTimeout(webarchiveSearchTimer);
@@ -3220,6 +3265,7 @@ renderVoiceProfiles();
 renderTranslationSentences();
 renderOcrJobs();
 renderDocumentScope();
+renderDocumentSources();
 renderDocumentChunks();
 renderDocuments();
 renderWebarchive();
