@@ -494,8 +494,12 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="row">
         <button class="small primary" id="btn-documents-add">Dokument merken</button>
         <button class="small" id="btn-documents-chat">Chat starten</button>
+        <button class="small" id="btn-documents-scope-clear">Scope leeren</button>
       </div>
+      <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
+      <div class="sentence-list" id="documents-scope"></div>
       <textarea id="documents-output" placeholder="Treffer, Chunks oder Chat-Antworten erscheinen hier"></textarea>
+      <div class="sentence-list" id="documents-chunks"></div>
       <div class="sentence-list" id="documents-list"></div>
     </section>
 
@@ -636,7 +640,11 @@ const documentsChat = document.getElementById('documents-chat');
 const documentsModel = document.getElementById('documents-model');
 const btnDocumentsAdd = document.getElementById('btn-documents-add');
 const btnDocumentsChat = document.getElementById('btn-documents-chat');
+const btnDocumentsScopeClear = document.getElementById('btn-documents-scope-clear');
+const documentsScopeInfo = document.getElementById('documents-scope-info');
+const documentsScope = document.getElementById('documents-scope');
 const documentsOutput = document.getElementById('documents-output');
+const documentsChunks = document.getElementById('documents-chunks');
 const documentsList = document.getElementById('documents-list');
 const webarchiveUrl = document.getElementById('webarchive-url');
 const webarchiveTitle = document.getElementById('webarchive-title');
@@ -749,6 +757,8 @@ let logsServerReady = false;
 let currentLogFilename = '';
 let currentLogEntry = null;
 let currentLogGroupIndex = -1;
+let currentDocumentDetail = null;
+let currentDocumentChunkIndex = -1;
 let autoTranslateTimer = null;
 
 function st(msg, cls) { stEl.textContent = msg; stEl.className = cls || ''; }
@@ -1058,6 +1068,8 @@ function renderOcrJobs(){
 
 function renderDocuments(){
   const query = documentsSearch.value.trim();
+  const activeSet = new Set(documentActiveIds || []);
+  const allActive = activeSet.size === 0;
   const list = query && documentHits.length ? documentHits : documentEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
   if (!list.length){
     documentsList.innerHTML = `<div class="empty">${esc(query ? 'Keine Treffer.' : 'Noch keine Dokumente gespeichert.')}</div>`;
@@ -1073,6 +1085,7 @@ function renderDocuments(){
     const note = isHit
       ? (item.preview || item.chunk_text || 'Treffer ohne Vorschau')
       : (item.error || item.preview || 'Noch keine Vorschau.');
+    const inScope = allActive || activeSet.has(id);
     return `
       <div class="sentence-row" data-document-id="${esc(id)}" ${isHit ? `data-document-chunk="${esc(item.chunk_index || '')}"` : ''}>
         <div>
@@ -1081,11 +1094,56 @@ function renderDocuments(){
           <div class="clip-extra">${esc(shortText(String(note || '').replace(/\s+/g,' '), 220))}</div>
         </div>
         <div class="sentence-actions">
+          <button class="small" type="button" data-act="toggle-document-scope">${esc(inScope ? 'Im Scope' : 'Scope +')}</button>
           <button class="small" type="button" data-act="load-document">${esc(isHit ? 'Treffer' : 'Laden')}</button>
         </div>
       </div>
     `;
   }).join('');
+}
+
+function renderDocumentScope(){
+  const items = documentEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
+  if (!items.length){
+    documentsScopeInfo.textContent = 'Scope: noch keine Dokumente';
+    documentsScope.innerHTML = '<div class="empty">Noch keine Dokumente im Scope verfügbar.</div>';
+    return;
+  }
+  const activeSet = new Set(documentActiveIds || []);
+  documentsScopeInfo.textContent = activeSet.size
+    ? `Scope: ${activeSet.size} von ${items.length} Dokumenten aktiv`
+    : `Scope: alle ${items.length} Dokumente`;
+  documentsScope.innerHTML = items.map(item=>`
+    <div class="sentence-row" data-scope-document-id="${esc(item.id)}">
+      <div>
+        <div class="sentence-text">${esc(item.filename || item.id)}</div>
+        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.chunk_count || 0)} Chunks</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="scope-doc">${esc(activeSet.size === 0 || activeSet.has(item.id) ? 'Aktiv' : 'Wählen')}</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderDocumentChunks(){
+  const doc = currentDocumentDetail;
+  const chunks = doc && Array.isArray(doc.chunks) ? doc.chunks : [];
+  if (!chunks.length){
+    documentsChunks.innerHTML = '<div class="empty">Noch keine Chunk-Navigation geladen.</div>';
+    return;
+  }
+  documentsChunks.innerHTML = chunks.map((chunk, index)=>`
+    <div class="sentence-row" data-document-chunk-index="${esc(index)}">
+      <div>
+        <div class="sentence-text">Chunk ${esc(chunk.index || index + 1)}</div>
+        <div class="clip-extra">${esc(shortText(String(chunk.text || '').replace(/\s+/g,' '), 260))}</div>
+      </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-document-chunk">${esc(currentDocumentChunkIndex === index ? 'Aktiv' : 'Laden')}</button>
+      </div>
+    </div>
+  `).join('');
 }
 
 function renderWebarchive(){
@@ -1264,6 +1322,8 @@ async function loadServerDocuments(){
   } catch(e){
     documentsServerReady = false;
   }
+  renderDocumentScope();
+  renderDocumentChunks();
   renderDocuments();
 }
 
@@ -1288,6 +1348,7 @@ async function saveDocumentEntry(){
     documentsOutput.value = (Array.isArray(created) ? created : []).map(item=>{
       return `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`;
     }).join('\n');
+    renderDocumentScope();
     renderDocuments();
     st(`${files.length} Dokument(e) importiert.`,'ok');
     if (documentsSearch.value.trim()) await runDocumentSearch();
@@ -1370,6 +1431,7 @@ async function chatDocuments(){
     ].join('\n');
     documentHits = sources;
     documentActiveIds = Array.from(new Set(sources.map(src=>src.document_id).filter(Boolean)));
+    renderDocumentScope();
     renderDocuments();
     st(payload.answer ? 'Dokumenten-Chat fertig.' : (payload.note || 'Keine Treffer.'),'ok');
   } catch(e){
@@ -1389,9 +1451,13 @@ async function loadDocumentDetail(documentId, chunkIndex){
     const res = await fetch(`${DOCUMENTS_API}/${encodeURIComponent(documentId)}`, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
+    currentDocumentDetail = item;
     const hit = chunkIndex
       ? documentHits.find(entry=>entry.document_id === documentId && String(entry.chunk_index) === String(chunkIndex))
       : null;
+    currentDocumentChunkIndex = hit
+      ? Math.max(0, (item.chunks || []).findIndex(chunk=>String(chunk.index) === String(hit.chunk_index)))
+      : -1;
     documentsOutput.value = [
       `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`,
       hit ? `Treffer Chunk ${hit.chunk_index}\n${hit.chunk_text}` : '',
@@ -1402,16 +1468,65 @@ async function loadDocumentDetail(documentId, chunkIndex){
       `Zeichen: ${item.text_chars || 0}`,
       `Chunks: ${item.chunk_count || 0}`
     ].join('\n').trim();
+    renderDocumentChunks();
+    renderDocumentScope();
     st(`Dokument geladen: ${item.filename}`,'ok');
   } catch(e){
+    currentDocumentDetail = doc;
+    currentDocumentChunkIndex = -1;
     documentsOutput.value = [
       `${doc.filename} · ${doc.status}${doc.error ? ` · ${doc.error}` : ''}`,
       doc.preview || 'Keine Vorschau gespeichert.'
     ].join('\n');
+    renderDocumentChunks();
     st('Dokumentdetail nicht vollständig ladbar.','err');
     dbg(e.message);
   }
   renderDocuments();
+}
+
+function toggleDocumentScope(documentId, replace = false){
+  const known = documentEntries.some(item=>item.id === documentId);
+  if (!known) return;
+  const activeSet = new Set(documentActiveIds || []);
+  if (replace){
+    documentActiveIds = [documentId];
+  } else if (activeSet.has(documentId)){
+    activeSet.delete(documentId);
+    documentActiveIds = Array.from(activeSet);
+  } else {
+    activeSet.add(documentId);
+    documentActiveIds = Array.from(activeSet);
+  }
+  renderDocumentScope();
+  if (documentsSearch.value.trim()) runDocumentSearch();
+  renderDocuments();
+}
+
+function clearDocumentScope(){
+  documentActiveIds = [];
+  renderDocumentScope();
+  if (documentsSearch.value.trim()) runDocumentSearch();
+  renderDocuments();
+  st('Dokumenten-Scope geleert.','ok');
+}
+
+function loadDocumentChunk(index){
+  const doc = currentDocumentDetail;
+  const chunks = doc && Array.isArray(doc.chunks) ? doc.chunks : [];
+  const chunk = chunks[index];
+  if (!chunk) return;
+  currentDocumentChunkIndex = index;
+  documentsOutput.value = [
+    `${doc.filename || 'Dokument'} · Chunk ${chunk.index || index + 1}`,
+    '',
+    chunk.text || '',
+    '',
+    `Extractor: ${doc.extractor || 'unbekannt'}`,
+    `Zeichen: ${String(chunk.text || '').length}`
+  ].join('\n');
+  renderDocumentChunks();
+  st(`Chunk geladen: ${chunk.index || index + 1}`,'ok');
 }
 
 async function loadServerWebarchive(){
@@ -2854,16 +2969,35 @@ ocrList.addEventListener('click', e=>{
   st(`OCR-Job geladen: ${job.filename || job.id}`,'ok');
 });
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
+btnDocumentsScopeClear.addEventListener('click', clearDocumentScope);
 documentsSearch.addEventListener('input', ()=>{
   clearTimeout(documentSearchTimer);
   documentSearchTimer = setTimeout(runDocumentSearch, 180);
 });
 btnDocumentsChat.addEventListener('click', chatDocuments);
 documentsList.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act="load-document"]');
+  const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-document-id]');
   if (!btn || !row) return;
-  loadDocumentDetail(row.dataset.documentId, row.dataset.documentChunk || '');
+  if (btn.dataset.act === 'toggle-document-scope'){
+    toggleDocumentScope(row.dataset.documentId);
+    return;
+  }
+  if (btn.dataset.act === 'load-document'){
+    loadDocumentDetail(row.dataset.documentId, row.dataset.documentChunk || '');
+  }
+});
+documentsScope.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="scope-doc"]');
+  const row = e.target.closest('[data-scope-document-id]');
+  if (!btn || !row) return;
+  toggleDocumentScope(row.dataset.scopeDocumentId, !documentActiveIds.length);
+});
+documentsChunks.addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-act="load-document-chunk"]');
+  const row = e.target.closest('[data-document-chunk-index]');
+  if (!btn || !row) return;
+  loadDocumentChunk(Number(row.dataset.documentChunkIndex));
 });
 btnWebarchiveSave.addEventListener('click', saveWebarchiveEntry);
 webarchiveSearch.addEventListener('input', ()=>{
@@ -3085,6 +3219,8 @@ renderLibrary();
 renderVoiceProfiles();
 renderTranslationSentences();
 renderOcrJobs();
+renderDocumentScope();
+renderDocumentChunks();
 renderDocuments();
 renderWebarchive();
 renderForms();
