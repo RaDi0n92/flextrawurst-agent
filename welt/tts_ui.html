@@ -731,6 +731,7 @@ const WEBARCHIVE_COMPARE_API = BASE + 'webarchive/compare';
 const FORMS_API = BASE + 'forms/profiles';
 const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
 const LOGS_API = BASE + 'logs/analyses';
+const LOGS_EXPORT_BASE = BASE + 'logs/analyses/';
 const LOGS_ANALYZE_API = BASE + 'logs/analyze';
 const LOGS_EXPLAIN_API = BASE + 'logs/explain';
 const OFFLINE_API = BASE + 'offline.html';
@@ -1366,47 +1367,20 @@ function exportLogEntry(item, fmt){
     return;
   }
   const base = String(item.filename || item.profile || item.id || 'loganalyse').replace(/[^\w.-]+/g, '_');
-  if (fmt === 'json'){
-    downloadBlob(
-      new Blob([JSON.stringify(item, null, 2)], {type:'application/json'}),
-      `${base}.json`
-    );
-    st('Loganalyse als JSON exportiert.','ok');
-    return;
-  }
-  const counts = item.counts || {};
-  const lines = [
-    `Loganalyse: ${item.filename || item.id || 'unbekannt'}`,
-    `Profil: ${item.profile || 'allgemein'}`,
-    `Status: ${item.status || 'done'}`,
-    `Erstellt: ${item.created_at || ''}`,
-    '',
-    `Zeilen: ${counts.lines ?? 0}`,
-    `Fehler: ${counts.errors ?? 0}`,
-    `Warnungen: ${counts.warnings ?? 0}`,
-    `Tracebacks: ${counts.tracebacks ?? 0}`,
-    `HTTP-5xx: ${counts.http_5xx ?? 0}`,
-    ''
-  ];
-  if (Array.isArray(item.summary) && item.summary.length){
-    lines.push('Zusammenfassung:', ...item.summary, '');
-  }
-  if (Array.isArray(item.groups) && item.groups.length){
-    lines.push('Gruppen:');
-    item.groups.forEach((group, index)=>{
-      lines.push(`[${index + 1}] ${group.level || 'hinweis'} · ${group.count || 0}x · ${group.signature || ''}`);
-      if (group.preview) lines.push(group.preview);
-      lines.push('');
+  const url = `${LOGS_EXPORT_BASE}${encodeURIComponent(item.id)}/export/${encodeURIComponent(fmt)}`;
+  fetch(url, {cache:'no-store'})
+    .then(res=>{
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.blob();
+    })
+    .then(blob=>{
+      downloadBlob(blob, `${base}.${fmt}`);
+      st(`Loganalyse als ${fmt.toUpperCase()} exportiert.`,'ok');
+    })
+    .catch(e=>{
+      st('Loganalyse-Export fehlgeschlagen.','err');
+      dbg(e.message);
     });
-  }
-  if (item.text_preview){
-    lines.push('Textauszug:', item.text_preview);
-  }
-  downloadBlob(
-    new Blob([lines.join('\n')], {type:'text/plain;charset=utf-8'}),
-    `${base}.txt`
-  );
-  st('Loganalyse als TXT exportiert.','ok');
 }
 
 function updateLogExportState(){

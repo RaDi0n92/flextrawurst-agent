@@ -1252,6 +1252,59 @@ async def export_form_profile(form_id: str, fmt: str):
 async def get_log_analyses():
     return _read_logs()
 
+@app.get("/logs/analyses/{log_id}/export/{fmt}")
+async def export_log_analysis(log_id: str, fmt: str):
+    item = next((entry for entry in _read_logs() if entry["id"] == log_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Loganalyse nicht gefunden.")
+    safe_name = _safe_name(item.get("filename") or item.get("profile") or item.get("id") or "loganalyse")
+    counts = item.get("counts") if isinstance(item.get("counts"), dict) else {}
+    if fmt == "json":
+        payload = json.dumps(item, ensure_ascii=False, indent=2)
+        return Response(
+            content=payload,
+            media_type="application/json; charset=utf-8",
+            headers={"Content-Disposition": f'attachment; filename="{safe_name}.json"'},
+        )
+    if fmt == "txt":
+        lines = [
+            f"Loganalyse: {item.get('filename') or item.get('id') or 'unbekannt'}",
+            f"Profil: {item.get('profile') or 'allgemein'}",
+            f"Status: {item.get('status') or 'done'}",
+            f"Erstellt: {item.get('created_at') or ''}",
+            "",
+            f"Zeilen: {counts.get('lines', 0)}",
+            f"Fehler: {counts.get('errors', 0)}",
+            f"Warnungen: {counts.get('warnings', 0)}",
+            f"Tracebacks: {counts.get('tracebacks', 0)}",
+            f"HTTP-5xx: {counts.get('http_5xx', 0)}",
+            "",
+        ]
+        summary = item.get("summary") if isinstance(item.get("summary"), list) else []
+        if summary:
+            lines.extend(["Zusammenfassung:", *[str(line) for line in summary], ""])
+        groups = item.get("groups") if isinstance(item.get("groups"), list) else []
+        if groups:
+            lines.append("Gruppen:")
+            for index, group in enumerate(groups, start=1):
+                if not isinstance(group, dict):
+                    continue
+                lines.append(f"[{index}] {group.get('level') or 'hinweis'} · {group.get('count') or 0}x · {group.get('signature') or ''}")
+                preview = str(group.get("preview") or "")
+                if preview:
+                    lines.append(preview)
+                lines.append("")
+        text_preview = str(item.get("text_preview") or "")
+        if text_preview:
+            lines.extend(["Textauszug:", text_preview])
+        payload = "\n".join(lines)
+        return Response(
+            content=payload,
+            media_type="text/plain; charset=utf-8",
+            headers={"Content-Disposition": f'attachment; filename="{safe_name}.txt"'},
+        )
+    raise HTTPException(status_code=400, detail="Nur txt oder json erlaubt.")
+
 @app.post("/logs/analyze")
 async def analyze_log(req: LogAnalyzeRequest):
     text = req.text[:LOG_TEXT_LIMIT].strip()
