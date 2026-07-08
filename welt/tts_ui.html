@@ -162,37 +162,51 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .file-btn { position: relative; overflow: hidden; }
 .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .empty { color: var(--quiet); font-size: .82rem; border: 1px dashed var(--border-soft); border-radius: 8px; padding: .8rem; }
-.translate-list { display: flex; flex-direction: column; gap: .5rem; max-height: 420px; overflow-y: auto; }
-.translation {
-  border: 1px solid var(--border-soft); border-radius: 8px; background: var(--bg-soft);
-  padding: .62rem; display: grid; grid-template-columns: 1fr; gap: .5rem;
+.translator { gap: .75rem; }
+.translator-head {
+  display: grid; grid-template-columns: 1fr; gap: .55rem;
 }
-@media (min-width: 720px) { .translation { grid-template-columns: minmax(0,1fr) auto; align-items: start; } }
-.translation-title { color: var(--pink-soft); font-size: .82rem; margin-bottom: .28rem; }
-.translation-text { color: var(--text); font-size: .86rem; line-height: 1.55; white-space: pre-wrap; }
-.translation-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
-.translation.err .translation-title { color: var(--danger); }
-.translation.err .translation-text { color: var(--muted); }
+@media (min-width: 720px) { .translator-head { grid-template-columns: minmax(0,1fr) auto; align-items: end; } }
+.translator-controls { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.translator-fields { display: grid; grid-template-columns: 1fr; gap: .65rem; }
+@media (min-width: 720px) { .translator-fields { grid-template-columns: 1fr 1fr; } }
+.lang-box { display: flex; flex-direction: column; gap: .38rem; min-width: 0; }
+.lang-label {
+  color: var(--pink-soft); font-size: .78rem; line-height: 1.35;
+  min-height: 2.1em;
+}
+#translate-output { background: var(--bg-soft); }
+#translate-output::placeholder { color: var(--quiet); }
 </style>
 </head>
 <body>
 <h1>TTS</h1>
 <div class="box">
 
-  <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
+  <div class="panel translator">
+    <div class="translator-head">
+      <div>
+        <div class="panel-title">Übersetzen</div>
+        <div class="inf">Text rein, eine textliche Übersetzung raus. Keine Mehrfachliste.</div>
+      </div>
+      <div class="translator-controls">
+        <select id="translate-target" aria-label="Ausgabesprache"></select>
+        <button class="small primary" id="btn-translate">Übersetzen</button>
+      </div>
+    </div>
+    <div class="translator-fields">
+      <label class="lang-box">
+        <span class="lang-label" id="source-language-label">Eingabe: Sprache wird beim Übersetzen erkannt</span>
+        <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
+      </label>
+      <label class="lang-box">
+        <span class="lang-label" id="target-language-label">Ausgabe: Sprache wählen</span>
+        <textarea id="translate-output" readonly placeholder="Hier erscheint die Übersetzung als Text."></textarea>
+      </label>
+    </div>
+  </div>
   <div id="reading-view"></div>
   <div class="counter" id="ctr">0 / 1.111.111</div>
-
-  <div class="panel">
-    <div class="panel-title">Übersetzen</div>
-    <div class="row">
-      <select id="translate-target" aria-label="Zielsprache"></select>
-      <button class="small primary" id="btn-translate">Übersetzen</button>
-      <button class="small" id="btn-translate-all">Alle vorhandenen Sprachen</button>
-    </div>
-    <div class="inf">Ohne LLM-Token. Zielsprachen kommen aus den vorhandenen TTS-Stimmen.</div>
-    <div class="translate-list" id="translate-results"></div>
-  </div>
 
   <div class="row">
     <button class="main" id="btn-speak">▶ Sprechen</button>
@@ -297,8 +311,9 @@ const importJson = document.getElementById('import-json');
 const btnOfflineHtml = document.getElementById('btn-offline-html');
 const translateTarget = document.getElementById('translate-target');
 const btnTranslate = document.getElementById('btn-translate');
-const btnTranslateAll = document.getElementById('btn-translate-all');
-const translateResults = document.getElementById('translate-results');
+const translateOutput = document.getElementById('translate-output');
+const sourceLanguageLabel = document.getElementById('source-language-label');
+const targetLanguageLabel = document.getElementById('target-language-label');
 const seekW   = document.getElementById('seek-wrap');
 const seekF   = document.getElementById('seek-fill');
 const seekK   = document.getElementById('seek-knob');
@@ -311,7 +326,6 @@ const BASE = location.pathname.replace(/[^/]*$/, '');
 const API  = BASE + 'speak';
 const VOICES_API = BASE + 'voices';
 const TRANSLATE_API = BASE + 'translate';
-const TRANSLATE_ALL_API = BASE + 'translate-all';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OFFLINE_API = BASE + 'offline.html';
@@ -348,6 +362,59 @@ function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
 function uid()         { return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
 function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
+
+const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
+  ? new Intl.DisplayNames(['de'], {type:'language'})
+  : null;
+const languageNameFallbacks = {
+  auto: 'Automatisch erkennen',
+  de: 'Deutsch',
+  en: 'Englisch',
+  fr: 'Franzoesisch',
+  es: 'Spanisch',
+  it: 'Italienisch',
+  pt: 'Portugiesisch',
+  nl: 'Niederlaendisch',
+  pl: 'Polnisch',
+  ru: 'Russisch',
+  uk: 'Ukrainisch',
+  tr: 'Tuerkisch',
+  ar: 'Arabisch',
+  zh: 'Chinesisch',
+  'zh-CN': 'Chinesisch, vereinfacht',
+  'zh-TW': 'Chinesisch, traditionell',
+  ja: 'Japanisch',
+  ko: 'Koreanisch',
+  no: 'Norwegisch',
+  sv: 'Schwedisch',
+  da: 'Daenisch',
+  fi: 'Finnisch',
+  tl: 'Tagalog'
+};
+
+function languageDisplay(lang){
+  const code = String(lang || 'auto').trim() || 'auto';
+  if (languageNameFallbacks[code]) return `${languageNameFallbacks[code]} (${code})`;
+  try {
+    const name = languageNames?.of(code);
+    if (name && name !== code) return `${name.charAt(0).toUpperCase()}${name.slice(1)} (${code})`;
+  } catch(e) {}
+  return `${code} (${code})`;
+}
+
+function langByTarget(target){
+  return translationLanguages.find(x=>x.target_lang === target);
+}
+
+function updateTargetLanguageLabel(){
+  const lang = langByTarget(translateTarget.value);
+  if (!lang){
+    targetLanguageLabel.textContent = 'Ausgabe: Sprache wählen';
+    return;
+  }
+  const locales = Array.isArray(lang.locales) && lang.locales.length ? ` · Stimmen: ${lang.locales.join(', ')}` : '';
+  targetLanguageLabel.textContent = `Ausgabe: ${languageDisplay(lang.target_lang)}${locales}`;
+}
 function fileSafe(s){
   return (s || 'tts')
     .toLowerCase()
@@ -573,6 +640,7 @@ ta.addEventListener('input', ()=>{
   const n = ta.value.length;
   ctrEl.textContent = n.toLocaleString('de') + ' / 1.111.111';
   ctrEl.className = 'counter'+(n>MAX*.99?' over':n>MAX*.85?' warn':'');
+  sourceLanguageLabel.textContent = 'Eingabe: Sprache wird beim Übersetzen erkannt';
 });
 
 document.querySelectorAll('.chip[data-r]').forEach(b=>{
@@ -632,26 +700,26 @@ function renderTranslationLanguages(){
   if (!translationLanguages.length){
     translateTarget.innerHTML = '<option value="">Keine Sprachen geladen</option>';
     btnTranslate.disabled = true;
-    btnTranslateAll.disabled = true;
+    updateTargetLanguageLabel();
     return;
   }
   btnTranslate.disabled = false;
-  btnTranslateAll.disabled = false;
   translateTarget.innerHTML = translationLanguages
     .map(lang=>{
-      const label = `${lang.label || lang.target_lang} · ${lang.target_lang}`;
+      const locales = Array.isArray(lang.locales) && lang.locales.length ? ` · ${lang.locales.join(', ')}` : '';
+      const label = `${languageDisplay(lang.target_lang)}${locales}`;
       return `<option value="${esc(lang.target_lang)}">${esc(label)}</option>`;
     })
     .join('');
   const german = translationLanguages.find(x=>x.target_lang === 'de');
   const english = translationLanguages.find(x=>x.target_lang === 'en');
   translateTarget.value = (english || german || translationLanguages[0]).target_lang;
+  updateTargetLanguageLabel();
 }
 
 async function loadTranslationLanguages(){
   translateTarget.innerHTML = '<option>Lädt Sprachen…</option>';
   btnTranslate.disabled = true;
-  btnTranslateAll.disabled = true;
   try {
     const res = await fetch(TRANSLATE_LANGS_API, {cache:'no-store'});
     if (!res.ok) throw new Error('HTTP '+res.status);
@@ -666,36 +734,13 @@ async function loadTranslationLanguages(){
   renderTranslationLanguages();
 }
 
-function renderTranslationResults(results){
-  if (!results.length){
-    translateResults.innerHTML = '';
-    return;
-  }
-  translateResults.innerHTML = results.map(r=>{
-    const ok = r.ok !== false && r.translated;
-    const label = r.label || r.target_lang;
-    return `
-      <div class="translation${ok ? '' : ' err'}" data-lang="${esc(r.target_lang)}">
-        <div>
-          <div class="translation-title">${esc(label)} · ${esc(r.target_lang)}</div>
-          <div class="translation-text">${esc(ok ? r.translated : (r.error || 'Keine Übersetzung'))}</div>
-        </div>
-        <div class="translation-actions">
-          <button class="small" data-act="use"${ok ? '' : ' disabled'}>Übernehmen</button>
-          <button class="small primary" data-act="speak"${ok ? '' : ' disabled'}>▶</button>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
 async function translateOne(){
   const text = ta.value.trim();
   const target = translateTarget.value;
   if (!text){ st('Kein Text zum Übersetzen.','err'); return; }
   if (!target){ st('Keine Zielsprache gewählt.','err'); return; }
   st('Übersetzt…','wait');
-  translateResults.innerHTML = '<div class="empty">Übersetzt…</div>';
+  translateOutput.value = 'Übersetzt...';
   try {
     const res = await fetch(TRANSLATE_API, {
       method:'POST',
@@ -704,34 +749,14 @@ async function translateOne(){
     });
     if (!res.ok) throw new Error('HTTP '+res.status);
     const data = await res.json();
-    const lang = translationLanguages.find(x=>x.target_lang === data.target_lang) || {target_lang:data.target_lang, label:data.target_lang};
-    renderTranslationResults([{...lang, translated:data.translated, ok:true}]);
+    translateOutput.value = data.translated || '';
+    sourceLanguageLabel.textContent = `Eingabe: ${languageDisplay(data.detected_source_lang || data.source_lang || 'auto')}`;
+    if (data.target_lang) translateTarget.value = data.target_lang;
+    updateTargetLanguageLabel();
     st('Übersetzt.','ok');
   } catch(e){
-    renderTranslationResults([{target_lang:target, label:target, ok:false, error:e.message}]);
+    translateOutput.value = '';
     st('Übersetzung fehlgeschlagen.','err');
-  }
-}
-
-async function translateAll(){
-  const text = ta.value.trim();
-  if (!text){ st('Kein Text zum Übersetzen.','err'); return; }
-  st('Übersetzt alle vorhandenen Sprachen…','wait');
-  translateResults.innerHTML = '<div class="empty">Alle Sprachen laufen mit kleiner Parallelität…</div>';
-  try {
-    const res = await fetch(TRANSLATE_ALL_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({text, source_lang:'auto'})
-    });
-    if (!res.ok) throw new Error('HTTP '+res.status);
-    const data = await res.json();
-    renderTranslationResults(data.results || []);
-    const okCount = (data.results || []).filter(x=>x.ok !== false && x.translated).length;
-    st(`Übersetzt: ${okCount} Sprachen.`, okCount ? 'ok' : 'err');
-  } catch(e){
-    renderTranslationResults([{target_lang:'all', label:'Alle', ok:false, error:e.message}]);
-    st('Alle-Sprachen-Übersetzung fehlgeschlagen.','err');
   }
 }
 
@@ -1211,26 +1236,8 @@ btnBatchMp3.addEventListener('click', exportSelectedMp3);
 btnExportJson.addEventListener('click', exportJson);
 importJson.addEventListener('change', ()=>importJsonFile(importJson.files[0]));
 btnOfflineHtml.addEventListener('click', downloadOfflineHtml);
+translateTarget.addEventListener('change', updateTargetLanguageLabel);
 btnTranslate.addEventListener('click', translateOne);
-btnTranslateAll.addEventListener('click', translateAll);
-
-translateResults.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act]');
-  const row = e.target.closest('.translation');
-  if (!btn || !row) return;
-  const text = row.querySelector('.translation-text')?.textContent || '';
-  const lang = row.dataset.lang;
-  if (!text) return;
-  ta.value = text;
-  ta.dispatchEvent(new Event('input'));
-  const voice = voiceForTarget(lang);
-  if (voice){
-    voiceSel.value = voice;
-    setActiveVoice(voice);
-  }
-  st('Übersetzung übernommen.','ok');
-  if (btn.dataset.act === 'speak') speakCurrent();
-});
 
 libraryList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');

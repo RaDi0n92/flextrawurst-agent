@@ -144,7 +144,7 @@ def _split_translation_chunks(text: str, limit: int = 1400) -> list[str]:
         rest = rest[cut + 1:].strip()
     return [c for c in chunks if c]
 
-def _google_translate_chunk(text: str, source_lang: str, target_lang: str) -> str:
+def _google_translate_chunk(text: str, source_lang: str, target_lang: str) -> dict:
     params = urllib.parse.urlencode({
         "client": "gtx",
         "sl": source_lang or "auto",
@@ -157,31 +157,45 @@ def _google_translate_chunk(text: str, source_lang: str, target_lang: str) -> st
     with urllib.request.urlopen(req, timeout=12) as resp:
         data = json.loads(resp.read().decode("utf-8"))
     parts = data[0] if isinstance(data, list) and data else []
-    return "".join(str(part[0]) for part in parts if isinstance(part, list) and part and part[0])
+    detected_source = data[2] if isinstance(data, list) and len(data) > 2 else ""
+    return {
+        "translated": "".join(str(part[0]) for part in parts if isinstance(part, list) and part and part[0]),
+        "detected_source_lang": str(detected_source or source_lang or "auto"),
+    }
 
-def _sync_translate(text: str, source_lang: str, target_lang: str) -> str:
+def _sync_translate_result(text: str, source_lang: str, target_lang: str) -> dict:
     text = text[:MAX_TRANSLATE_CHARS].strip()
     if not text:
-        return ""
+        return {"translated": "", "detected_source_lang": source_lang or "auto"}
     source_lang = source_lang or "auto"
     target_lang = _normalize_translate_target(target_lang)
     key = _translation_cache_key(text, source_lang, target_lang)
     cache = _read_translation_cache()
     cached = cache.get(key)
-    if cached and isinstance(cached.get("translated"), str):
+    if cached and isinstance(cached.get("translated"), str) and cached.get("detected_source_lang"):
         cached["ts"] = time.time()
         _write_translation_cache(cache)
-        return cached["translated"]
-    translated = "\n\n".join(_google_translate_chunk(chunk, source_lang, target_lang)
-                             for chunk in _split_translation_chunks(text))
+        return {
+            "translated": cached["translated"],
+            "detected_source_lang": cached["detected_source_lang"],
+        }
+    chunk_results = [_google_translate_chunk(chunk, source_lang, target_lang)
+                     for chunk in _split_translation_chunks(text)]
+    translated = "\n\n".join(item["translated"] for item in chunk_results)
+    detected_source = next((item["detected_source_lang"] for item in chunk_results
+                            if item.get("detected_source_lang")), source_lang)
     cache[key] = {
         "source_lang": source_lang,
+        "detected_source_lang": detected_source,
         "target_lang": target_lang,
         "translated": translated,
         "ts": time.time(),
     }
     _write_translation_cache(cache)
-    return translated
+    return {"translated": translated, "detected_source_lang": detected_source}
+
+def _sync_translate(text: str, source_lang: str, target_lang: str) -> str:
+    return _sync_translate_result(text, source_lang, target_lang)["translated"]
 
 async def _translation_languages() -> list[dict]:
     now = time.time()
@@ -256,13 +270,14 @@ async def translate(req: TranslateRequest):
     if not text:
         return {"translated": "", "target_lang": _normalize_translate_target(req.target_lang)}
     target = _normalize_translate_target(req.target_lang)
-    translated = await asyncio.get_event_loop().run_in_executor(
-        _pool, _sync_translate, text, req.source_lang, target
+    result = await asyncio.get_event_loop().run_in_executor(
+        _pool, _sync_translate_result, text, req.source_lang, target
     )
     return {
         "source_lang": req.source_lang or "auto",
+        "detected_source_lang": result["detected_source_lang"],
         "target_lang": target,
-        "translated": translated,
+        "translated": result["translated"],
     }
 
 @app.post("/translate-all")
