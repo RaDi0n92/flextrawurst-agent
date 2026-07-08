@@ -6,6 +6,11 @@ Extrahiert aus codewesen_forum_neugier.py (2026-07-06), damit auch
 codewesen_klon.py (Selbstgespraech-Klon) dieselben Container-Funktionen
 nutzt, ohne ein Daemon-Skript als Modul zu importieren. Funktional
 unveraendert gegenueber dem Original in forum_neugier.py.
+
+2026-07-09: verschiebe()/kopiere() ergaenzt (Baustein 2 des Flarum-Stopp-
+Vorhabens, docs/2026-07-09_flarum_stopp_bericht.md) — alle bisherigen
+Funktionen bleiben unveraendert, forum_neugier.py profitiert automatisch
+von den neuen Faehigkeiten, ohne selbst angepasst werden zu muessen.
 """
 
 import re
@@ -285,3 +290,65 @@ def widmungsritual(wesen: str) -> None:
 
     log.info(f"[{wesen}] Widmung an Container '{name}' abgeschlossen")
     teile_strategie_optional(wesen, name, kontext=f"Reflexion aus dem Pflegeritual:\n{reflexion}")
+
+
+def _stelle_ziel_sicher(wesen: str, name: str) -> Path:
+    """Legt den Zielordner an, falls er noch nicht existiert — ohne
+    Eroeffnungsritual (kein LLM-Call). erstelle() bleibt fuer den bewussten,
+    reflektierten Neuanfang reserviert; verschieben/kopieren ist ein reines
+    Ablage-Werkzeug."""
+    ordner = basis(wesen) / name
+    ordner.mkdir(parents=True, exist_ok=True)
+    if not (ordner / "container.md").exists():
+        ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+        (ordner / "container.md").write_text(
+            "\n".join(["---", f"name: {name}", f"erstellt_am: {ts}", "letzte_widmung: null", "---", "", "(automatisch angelegt beim Verschieben/Kopieren)", ""]),
+            encoding="utf-8",
+        )
+    return ordner
+
+
+def _mit_neuem_container_feld(text: str, neuer_container: str) -> str:
+    if re.search(r"^container:\s*\S*", text, re.MULTILINE):
+        return re.sub(r"^container:\s*\S*", f"container: {neuer_container}", text, count=1, flags=re.MULTILINE)
+    return text
+
+
+def verschiebe(wesen: str, von_container: str, dateiname: str, nach_container: str) -> bool:
+    """Verschiebt einen einzelnen Eintrag (Datei) von einem Container in
+    einen anderen. Zielordner wird bei Bedarf angelegt (ohne Ritual).
+    Aktualisiert das container-Feld im Frontmatter der Datei."""
+    von = name_sicher(von_container)
+    nach = name_sicher(nach_container)
+    quelle = basis(wesen) / von / dateiname
+    if not quelle.exists() or quelle.name == "container.md":
+        log.warning(f"[{wesen}] verschiebe(): Datei '{dateiname}' in Container '{von}' nicht gefunden")
+        return False
+    ziel_ordner = _stelle_ziel_sicher(wesen, nach)
+    text = _mit_neuem_container_feld(quelle.read_text(encoding="utf-8", errors="replace"), nach)
+    ziel_datei = ziel_ordner / dateiname
+    if ziel_datei.exists():
+        ziel_datei = ziel_ordner / f"{quelle.stem}_verschoben-{datetime.now(timezone.utc).strftime('%H-%M-%S')}{quelle.suffix}"
+    ziel_datei.write_text(text, encoding="utf-8")
+    quelle.unlink()
+    log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' verschoben")
+    return True
+
+
+def kopiere(wesen: str, von_container: str, dateiname: str, nach_container: str) -> bool:
+    """Kopiert einen Eintrag in einen anderen Container — Original bleibt
+    unangetastet liegen. Zielordner wird bei Bedarf angelegt (ohne Ritual)."""
+    von = name_sicher(von_container)
+    nach = name_sicher(nach_container)
+    quelle = basis(wesen) / von / dateiname
+    if not quelle.exists() or quelle.name == "container.md":
+        log.warning(f"[{wesen}] kopiere(): Datei '{dateiname}' in Container '{von}' nicht gefunden")
+        return False
+    ziel_ordner = _stelle_ziel_sicher(wesen, nach)
+    text = _mit_neuem_container_feld(quelle.read_text(encoding="utf-8", errors="replace"), nach)
+    ziel_datei = ziel_ordner / dateiname
+    if ziel_datei.exists():
+        ziel_datei = ziel_ordner / f"{quelle.stem}_kopie-{datetime.now(timezone.utc).strftime('%H-%M-%S')}{quelle.suffix}"
+    ziel_datei.write_text(text, encoding="utf-8")
+    log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' kopiert")
+    return True

@@ -47,11 +47,20 @@ Das Gesamtvorhaben hat 6 Bausteine. Baustein 1 ist fertig und aktiv.
   `erlaubt_trotz_sperre=True` kommt durch, Sperre danach korrekt zurückgesetzt
   und dann real aktiviert.
 
-### Baustein 2 — codewesen_container.py Upgrade (OFFEN)
+### Baustein 2 — codewesen_container.py Upgrade (FERTIG)
 
-Verschieben/Kopieren von Einträgen zwischen Containern. `forum_neugier.py`
-soll dabei funktional unverändert bleiben und automatisch von den neuen
-Funktionen profitieren.
+- **`verschiebe(wesen, von_container, dateiname, nach_container)`** — bewegt
+  einen einzelnen Eintrag (eine Datei) zwischen Containern, aktualisiert das
+  `container:`-Feld im Frontmatter, legt den Zielordner bei Bedarf an
+  (ohne LLM-Ritual — dafür bleibt `erstelle()` reserviert).
+- **`kopiere(...)`** — dasselbe, Original bleibt unangetastet liegen.
+- Namenskollisionen im Ziel werden mit Suffix (`_verschoben-HH-MM-SS` bzw.
+  `_kopie-HH-MM-SS`) aufgelöst statt überschrieben.
+- Alle bisherigen Funktionen (`erstelle`, `sichere`, `widmungsritual`, ...)
+  unverändert — `forum_neugier.py` und `codewesen_klon.py` profitieren
+  automatisch von den neuen Fähigkeiten, ohne selbst angepasst zu werden.
+- Funktional getestet (Testordner, danach aufgeräumt): Verschieben entfernt
+  die Quelle, Kopieren behält sie, `container:`-Feld wird korrekt gesetzt.
 
 ### Baustein 3 — Umgedrehter Neugier-Dienst (OFFEN)
 
@@ -98,7 +107,7 @@ Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
 ```
 ◑ GELB — Sperre aktiv und sicher, Rest des Vorhabens offen
   ● Baustein 1  Post-Sperre               FERTIG, AKTIV
-  ○ Baustein 2  Container-Upgrade         offen
+  ● Baustein 2  Container-Upgrade         FERTIG
   ○ Baustein 3  Umgedrehter Neugier-Dienst offen
   ○ Baustein 4  Deterministisches Protokoll offen
   ○ Baustein 5  Postgres-Spiegel          offen
