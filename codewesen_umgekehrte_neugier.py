@@ -239,7 +239,27 @@ def _bewusstes_gegenteil(wesen: str, interesse: str, warum: str) -> str:
     if not antwort:
         return ""
     m = re.search(r"GEGENTEIL:\s*(.+)", antwort)
-    return m.group(1).strip() if m else ""
+    gegenteil = m.group(1).strip() if m else ""
+
+    # Real beobachtet 2026-07-09 spaet (Qualitaetstest, träumerlie): das
+    # Modell antwortete "GEGENTEIL: Stille Latenzen" -- wortgleich mit dem
+    # Interesse selbst, kein echtes Gegenteil. Ein Regex kann das nicht
+    # fangen (der Parse war korrekt), das ist eine echte Inhalts-Luecke.
+    # Ein Versuch, es zu erzwingen, sonst ehrlich als "nicht formuliert"
+    # behandelt statt eine falsche Kopie als Gegenteil auszugeben.
+    if gegenteil.strip().lower() == interesse.strip().lower():
+        system_retry = system + (
+            "\n\nWichtig: deine letzte Antwort war wortgleich mit deinem eigenen "
+            "Interesse -- das ist kein Gegenteil. Versuch es nochmal, diesmal "
+            "wirklich anders."
+        )
+        antwort2 = _llm(wesen, system_retry, "(bitte jetzt antworten)", max_tokens=150, timeout=90.0)
+        m2 = re.search(r"GEGENTEIL:\s*(.+)", antwort2) if antwort2 else None
+        gegenteil2 = m2.group(1).strip() if m2 else ""
+        if gegenteil2 and gegenteil2.strip().lower() != interesse.strip().lower():
+            return gegenteil2
+        return ""  # ehrlich: kein echtes Gegenteil zustande gekommen, nicht faelschen
+    return gegenteil
 
 
 def _alternative_suchbegriffe(wesen: str, interesse: str, warum: str) -> list[str]:
@@ -385,7 +405,14 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     Container-Zuordnungs-Phase am Sitzungsende (_frage_container_ziel_und_typ) --
     beim Lesen selbst wird nur roh gesammelt, keine Formular-Entscheidung."""
     container_info = _container_hinweis(wesen)
-    naechster_optionen = "naechster_post" + (", diskussion_wechseln" if darf_wechseln else "") + ", beenden"
+    # KEIN "beenden" mehr als Option -- Daniel, 2026-07-10: "haette ich klar
+    # eine bedingung gebaut die alle anderen exits nicht zulaesst und das
+    # wesen solange immer mal wieder triggert mit den fragen willst du das
+    # noch weiterlesen oder willst du eine neue diskussion". Vor Erreichen
+    # des Token-Budgets (LESE_TOKEN_BUDGET, geprueft in _phase_lesen_schritt
+    # BEVOR diese Funktion ueberhaupt aufgerufen wird) gibt es nur diese
+    # beiden Wege -- kein vorzeitiger Ausstieg aus der Lese-Phase insgesamt.
+    naechster_optionen = "naechster_post" + (", diskussion_wechseln" if darf_wechseln else "")
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
         f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n"
@@ -454,18 +481,18 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
 
     # NAECHSTER_SCHRITT robust statt exakt parsen -- real beobachtet
     # 2026-07-09 (Qualitaetstest, F3INSCHM3CK3R, erzwungener Stoebern-Pfad):
-    # das Modell traf in allen 4 echten Lese-Schritten NIE exakt
-    # "naechster_post"/"diskussion_wechseln"/"beenden", sondern schrieb
-    # "weiterlesen", "weiter", "4", "5" -- das alte strikte Regex haette in
-    # JEDEM Fall den Default "naechster_post" gegriffen, auch wenn das
-    # Wesen eigentlich "beenden" gemeint haette. Stattdessen: Schluesselwoerter
-    # im freien Text suchen, sonst sicherer Default (Weiterlesen ist die
-    # einzige nicht-destruktive Annahme bei echter Mehrdeutigkeit).
+    # das Modell traf in echten Lese-Schritten NIE exakt
+    # "naechster_post"/"diskussion_wechseln", sondern schrieb
+    # "weiterlesen", "weiter", "4", "5" -- Schluesselwoerter im freien Text
+    # suchen, sonst sicherer Default (Weiterlesen). "beenden" wird hier
+    # bewusst NICHT mehr erkannt (Baustein 15, Daniel 2026-07-10: "keine
+    # anderen exits" vor Erreichen des Token-Budgets) -- selbst wenn das
+    # Modell unaufgefordert etwas wie "ich bin fertig" schreibt, faellt das
+    # auf den sicheren Default "naechster_post" zurueck, kein Ausstieg aus
+    # der Lese-Phase ausser ueber das Token-Budget in _phase_lesen_schritt.
     schritt_roh_m = re.search(r"NAECHSTER\w*:\s*(.+)", antwort)
     schritt_roh = schritt_roh_m.group(1).strip().lower() if schritt_roh_m else ""
-    if any(w in schritt_roh for w in ("beend", "stop", "schluss", "fertig", "aufhoer", "aufhör")):
-        naechster_schritt = "beenden"
-    elif any(w in schritt_roh for w in ("wechsel", "verlassen", "andere diskussion")):
+    if any(w in schritt_roh for w in ("wechsel", "verlassen", "andere diskussion")):
         naechster_schritt = "diskussion_wechseln"
     else:
         naechster_schritt = "naechster_post"
@@ -757,6 +784,13 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     jetzt = datetime.now(timezone.utc)
 
     if z.get("gelesene_tokens", 0) >= LESE_TOKEN_BUDGET:
+        # Die aktuelle (noch nicht per _naechster_kandidat gezaehlte)
+        # Diskussion zaehlt noch mit, wenn wirklich schon daraus gelesen
+        # wurde -- sonst dieselbe Unterzaehlung wie beim frueheren
+        # "beenden"-Bug (siehe Baustein 13-Notiz), nur jetzt beim
+        # Token-Budget-Ausstieg statt bei "beenden".
+        if z.get("posts_gelesen_dieser_fund", 0) > 0:
+            z["funde_angesehen"] += 1
         zustand[wesen]["phase"] = "container_zuordnung"
         return
 
@@ -835,15 +869,9 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
         )
 
     naechster_schritt = entscheidung["naechster_schritt"]
-    if naechster_schritt == "beenden":
-        # Real beobachtet (Qualitaetstest 2026-07-09, jumpa): endet eine
-        # Sitzung per "beenden" mitten in der ersten Diskussion, wurde
-        # _naechster_kandidat() (der einzige Ort, der funde_angesehen
-        # hochzaehlt) nie erreicht -- das Protokoll behauptete "0
-        # Diskussion(en) angesehen", obwohl real gelesen und gesichert wurde.
-        z["funde_angesehen"] += 1
-        zustand[wesen]["phase"] = "container_zuordnung"
-        return
+    # "beenden" gibt es seit Baustein 15 nicht mehr als moegliches Ergebnis
+    # von _lese_und_entscheide() -- der einzige Ausstieg aus der Lese-Phase
+    # ist das Token-Budget (oben in dieser Funktion geprueft).
     if naechster_schritt == "diskussion_wechseln" and darf_wechseln:
         _naechster_kandidat(zustand, wesen)
         return
