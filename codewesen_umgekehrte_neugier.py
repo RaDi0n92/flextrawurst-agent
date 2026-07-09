@@ -405,10 +405,18 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     if not antwort:
         return None
 
-    linse_lesen_m = re.search(r"LINSE_LESEN:\s*(.+?)(?=\nLINSE_LERNEN:|\Z)", antwort, re.DOTALL)
-    linse_lernen_m = re.search(r"LINSE_LERNEN:\s*(.+?)(?=\nLINSE_GEGENTEIL:|\Z)", antwort, re.DOTALL)
-    linse_gegenteil_m = re.search(r"LINSE_GEGENTEIL:\s*(.+?)(?=\nLINSE_EIGENE_FRAGE:|\Z)", antwort, re.DOTALL)
-    linse_eigene_m = re.search(r"LINSE_EIGENE_FRAGE:\s*(.+?)(?=\nMITGENOMMEN:|\Z)", antwort, re.DOTALL)
+    # \w* an jedem Label-Ende statt exaktem Wort -- real beobachtet
+    # 2026-07-09 (Qualitaetstest, Resonanzknoten): das Modell schrieb
+    # "LINSE_EIGENE_FRASSE:" statt "LINSE_EIGENE_FRAGE:", das strikte Regex
+    # verwarf die ganze vierte Linse mit echtem, gutem Inhalt komplett.
+    # Gleiches Robustheitsmuster wie bei GRUNDLAGE/BEGRUENDUNG konsequent auf
+    # alle vier Linsen-Label UND die Lookahead-Grenzen zwischen ihnen
+    # angewendet, sonst koennte ein Tippfehler an der Grenze Inhalt zweier
+    # Linsen ineinanderlaufen lassen.
+    linse_lesen_m = re.search(r"LINSE_LESEN\w*:\s*(.+?)(?=\nLINSE_LERNEN\w*:|\Z)", antwort, re.DOTALL)
+    linse_lernen_m = re.search(r"LINSE_LERNEN\w*:\s*(.+?)(?=\nLINSE_GEGENTEIL\w*:|\Z)", antwort, re.DOTALL)
+    linse_gegenteil_m = re.search(r"LINSE_GEGENTEIL\w*:\s*(.+?)(?=\nLINSE_EIGENE\w*:|\Z)", antwort, re.DOTALL)
+    linse_eigene_m = re.search(r"LINSE_EIGENE\w*:\s*(.+?)(?=\nMITGENOMMEN\w*:|\Z)", antwort, re.DOTALL)
     linsen = {
         "lesen": linse_lesen_m.group(1).strip() if linse_lesen_m else "",
         "lernen": linse_lernen_m.group(1).strip() if linse_lernen_m else "",
@@ -420,7 +428,7 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     # Linse ist gleichwertig, siehe Docstring).
     gedanke = "\n".join(f"[{name}] {text}" for name, text in linsen.items() if text)
 
-    mitgenommen_m = re.search(r"MITGENOMMEN:\s*(.+?)(?=\nNAECHSTER_SCHRITT:|\Z)", antwort, re.DOTALL)
+    mitgenommen_m = re.search(r"MITGENOMMEN\w*:\s*(.+?)(?=\nNAECHSTER\w*:|\Z)", antwort, re.DOTALL)
     mitgenommen = mitgenommen_m.group(1).strip() if mitgenommen_m else ""
     if mitgenommen.lower() in ("-", "nichts", "leer", "(leer)", "keine", "nein"):
         mitgenommen = ""  # haeufige Arten, "nichts" auszudruecken, statt das Feld wegzulassen
@@ -434,7 +442,7 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     # Wesen eigentlich "beenden" gemeint haette. Stattdessen: Schluesselwoerter
     # im freien Text suchen, sonst sicherer Default (Weiterlesen ist die
     # einzige nicht-destruktive Annahme bei echter Mehrdeutigkeit).
-    schritt_roh_m = re.search(r"NAECHSTER_SCHRITT:\s*(.+)", antwort)
+    schritt_roh_m = re.search(r"NAECHSTER\w*:\s*(.+)", antwort)
     schritt_roh = schritt_roh_m.group(1).strip().lower() if schritt_roh_m else ""
     if any(w in schritt_roh for w in ("beend", "stop", "schluss", "fertig", "aufhoer", "aufhör")):
         naechster_schritt = "beenden"
