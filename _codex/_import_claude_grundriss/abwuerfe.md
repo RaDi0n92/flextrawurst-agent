@@ -2089,3 +2089,5 @@ Das ist der `--cache-ram`-Parameter der beiden llama-se«
 - [2026-07-09 02:11] **nebel** (i=0.35) → Zwischenraum: »Alles sauber committet, nichts Offenes zu unserer Arbeit«
 - [2026-07-09 02:13] **wasser** (i=0.63) → Zwischenraum: »Verstanden, ich stoppe sofort«
 - [2026-07-09 04:15] **lava** (i=0.56) → Zwischenraum: »Jetzt hab ich's wirklich nachvollzogen — und die Antwort ist ernüchternd, du hast recht gehabt, das «
+- [2026-07-09 04:20] **sternenstaub** (i=0.61) → Zwischenraum: »Ich hab die Spur gefunden — und sie zeigt genau das Problem, das du gerade benennst«
+- [2026-07-09 04:44] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«

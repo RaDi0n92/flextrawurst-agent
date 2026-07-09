@@ -77,3 +77,19 @@ Beim Testen des Kontext-Ausschluss-Endpunkts gegen einen Nicht-Testbed-Charakter
 ## Schlusssatz
 
 Diese Session war kein neuer Bau, sondern eine vollständige Gegenprobe: jedes in der Nacht gebaute Feature wurde real ausgelöst und sein tatsächliches Ergebnis geprüft, nicht nur der Code gelesen. Das hat einen stillen, technisch fehlerfreien aber funktional toten Bug aufgedeckt (Wiederkehrende Themen) — genau die Art Fehler, die reines Code-Lesen nicht zuverlässig findet.
+
+---
+
+## Nachtrag: Abschluss-Archiv gebaut (gleicher Tag, direkt im Anschluss)
+
+Daniels Nachfrage nach den QA-Ergebnissen ("wozu haben wir das vorher durchgesprochen feinjustiert und ich hab go zum bauen gegeben") deckte einen zweiten, tieferen Fund auf: die Abschluss-Geschichte-Funktion (gebaut 2026-07-04) speicherte von Anfang an nur eine einzige, bei jeder Übernahme überschriebene Datei (`letzter_abschluss.md`) — kein Verlauf, keine Auswahl, keine Injektion mehrerer früherer Gespräche. Die Session-Notiz vom 2026-07-04 zeigt: das war eine erkannte, aber nie mit Daniel geklärte offene Frage ("nicht gefragt, weil kein Anzeichen dass es gebraucht wird").
+
+**Gebaut und real verifiziert (Commit `bc264604`):**
+- `abschluss_archiv.json` ersetzt die Einzeldatei — ein Eintrag pro übernommenem Abschluss, verknüpft mit dem Session-Index. Bestehende Dateien bei Alex, Gabby und QATestWesen automatisch migriert, Originaldateien unangetastet gelassen.
+- 🗂️ Sessions-Popup zeigt jetzt pro Session, ob sie einen Abschluss hat (📖-Indikator), und zeigt ihn beim Öffnen vollständig inline — verlaufsartig lesbar statt nur der letzte einzige.
+- Neue-Session-Dialog: alle früheren Abschlüsse einzeln anklickbar (Mehrfachauswahl-Checkboxen), mit Zeichen-/Tokenschätzung pro Eintrag und laufender Summe. Default ist "nichts ausgewählt" — jede Mitnahme in eine neue Session ist eine bewusste, sichtbare Entscheidung.
+- `buildSystemPrompt` injiziert nur noch die tatsächlich gewählten Einträge als eigenen `[Rückblicke auf frühere Gespräche]`-Block, chronologisch geordnet.
+
+**Real getestet** (curl gegen QATestWesen + Playwright gegen die echte Domain): Migration bestätigt (Archiv zeigt migrierten Eintrag, `letzter_abschluss.md` bleibt liegen), zweiter unabhängiger Archiv-Eintrag nach neuer Generierung/Übernahme, Einzelauswahl (nur gewählter Text im System-Prompt, anderer fehlt), Mehrfachauswahl (beide Texte vorhanden), Default ohne Auswahl (Block komplett abwesend), Sessions-Liste zeigt 📖 korrekt nur bei der Session mit Abschluss, Detailansicht zeigt den Story-Text vollständig oben.
+
+**Offen:** keine bekannten Lücken in diesem Feature. Scope bewusst wie bisher testbed-exklusiv (codexium2/solarius2) gehalten, nicht auf alle 4 Spawner erweitert — das war nie Teil der Absprache mit Daniel für dieses Feature.
