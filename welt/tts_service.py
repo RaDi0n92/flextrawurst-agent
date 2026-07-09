@@ -101,6 +101,10 @@ class FormProfilePayload(BaseModel):
     preview: str = ""
     extra_fields: dict[str, str] = {}
 
+class FormFillRequest(BaseModel):
+    template: str
+    fields: dict[str, str] = {}
+
 class LogAnalyzeRequest(BaseModel):
     text: str
     profile: str = ""
@@ -644,6 +648,35 @@ def _form_export_html(item: dict) -> str:
         f"{('<h2>Zusatzfelder</h2>' + extras_html) if extras_html else ''}"
         "</body></html>"
     )
+
+def _fill_form_template(template: str, fields: dict[str, str]) -> str:
+    output = str(template or "")
+    clean_fields = {str(key).strip(): str(value) for key, value in (fields or {}).items() if str(key).strip()}
+    for key, value in clean_fields.items():
+        output = output.replace(f"{{{{{key}}}}}", value)
+    for key, value in clean_fields.items():
+        escaped_value = html.escape(value, quote=True)
+        escaped_text = html.escape(value)
+        key_re = re.escape(key)
+        # Fill simple input elements by matching name/id. Existing values are replaced.
+        def input_repl(match: re.Match) -> str:
+            tag = match.group(0)
+            if re.search(r'\svalue\s*=', tag, re.I):
+                return re.sub(r'\svalue\s*=\s*(".*?"|\'.*?\'|[^\s>]+)', f' value="{escaped_value}"', tag, count=1, flags=re.I)
+            return tag[:-1] + f' value="{escaped_value}">'
+        output = re.sub(
+            rf'<input\b(?=[^>]*(?:name|id)\s*=\s*["\']{key_re}["\'])[^>]*>',
+            input_repl,
+            output,
+            flags=re.I,
+        )
+        output = re.sub(
+            rf'(<textarea\b(?=[^>]*(?:name|id)\s*=\s*["\']{key_re}["\'])[^>]*>)(.*?)(</textarea>)',
+            lambda match: f"{match.group(1)}{escaped_text}{match.group(3)}",
+            output,
+            flags=re.I | re.S,
+        )
+    return output
 
 def _normalize_log_entry(item: dict) -> dict:
     groups = item.get("groups") if isinstance(item.get("groups"), list) else []
@@ -1426,6 +1459,17 @@ async def get_document(document_id: str):
         text = Path(text_path).read_text(encoding="utf-8", errors="ignore")
     return {**item, "text": text[:DOCUMENT_TEXT_LIMIT]}
 
+@app.get("/documents/{document_id}/raw/text")
+async def get_document_raw_text(document_id: str):
+    item = next((entry for entry in _read_documents() if entry["id"] == document_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Dokument nicht gefunden.")
+    text_path = item.get("text_path") or ""
+    file_path = Path(text_path)
+    if not text_path or not file_path.exists():
+        raise HTTPException(status_code=404, detail="Rohtext nicht gefunden.")
+    return FileResponse(str(file_path), media_type="text/plain; charset=utf-8", filename=f"{_safe_name(item.get('filename') or document_id)}.txt")
+
 @app.put("/documents/{document_id}/chunks/{chunk_index}")
 async def update_document_chunk(document_id: str, chunk_index: int, payload: DocumentChunkPayload):
     documents = _read_documents()
@@ -1588,6 +1632,11 @@ async def delete_websnapshot(snapshot_id: str):
 @app.get("/forms/profiles")
 async def get_form_profiles():
     return _read_forms()
+
+@app.post("/forms/fill")
+async def fill_form(req: FormFillRequest):
+    preview = _fill_form_template(req.template, req.fields)
+    return {"preview": preview, "fields": sorted(str(key) for key in req.fields.keys())}
 
 @app.post("/forms/profiles")
 async def create_form_profile(payload: FormProfilePayload):
