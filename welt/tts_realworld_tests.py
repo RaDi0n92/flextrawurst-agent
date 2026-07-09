@@ -97,8 +97,8 @@ def main() -> int:
         ocr_text = str(ocr_job.get("text") or "")
         check(
             "image_ocr_truth",
-            ocr_job.get("status") == "done" and "Flextrawurst" in ocr_text and "4279" in ocr_text,
-            f"status={ocr_job.get('status')} text={ocr_text[:220]!r} truth={truth!r}",
+            ocr_job.get("status") == "done" and "Flextrawurst" in ocr_text and "4279" in ocr_text and int(ocr_job.get("quality", {}).get("chars") or 0) > 20,
+            f"status={ocr_job.get('status')} quality={ocr_job.get('quality')} text={ocr_text[:220]!r} truth={truth!r}",
             report,
         )
 
@@ -121,8 +121,8 @@ def main() -> int:
         raw_size = len(REAL_DOC.read_text(encoding="utf-8", errors="ignore"))
         check(
             "document_import_real_markdown",
-            doc.get("status") == "done" and int(doc.get("text_chars") or 0) > min(500, raw_size // 2),
-            f"status={doc.get('status')} text_chars={doc.get('text_chars')} raw_size={raw_size} chunks={doc.get('chunk_count')}",
+            doc.get("status") == "done" and doc.get("quality", {}).get("usable") is True and int(doc.get("text_chars") or 0) > min(500, raw_size // 2),
+            f"status={doc.get('status')} quality={doc.get('quality')} text_chars={doc.get('text_chars')} raw_size={raw_size} chunks={doc.get('chunk_count')}",
             report,
         )
         search = http_json("POST", "/documents/search", {"query": "GENI", "document_ids": [doc["id"]], "limit": 8})
@@ -156,8 +156,8 @@ def main() -> int:
         preview = str(form_fill.get("preview") or "")
         check(
             "form_fill_html_and_placeholders",
-            'value="Daniel Realtest"' in preview and 'value="daniel@example.test"' in preview and "Werkraum 1" in preview and "Flextrawurst" in preview,
-            preview,
+            'value="Daniel Realtest"' in preview and 'value="daniel@example.test"' in preview and "Werkraum 1" in preview and "Flextrawurst" in preview and not form_fill.get("quality", {}).get("unfilled_placeholders"),
+            f"quality={form_fill.get('quality')} preview={preview}",
             report,
         )
         form_saved = http_json("POST", "/forms/profiles", {
@@ -181,10 +181,11 @@ def main() -> int:
             created_snaps.append(snap["id"])
             check(
                 "webarchive_real_flextrawurst",
-                snap.get("status") == "done" and int(snap.get("page_count") or 0) >= 1 and len(str(snap.get("text_preview") or "")) > 200,
+                snap.get("status") == "done" and snap.get("quality", {}).get("usable") is True and int(snap.get("page_count") or 0) >= 1 and len(str(snap.get("text_preview") or "")) > 200,
                 json.dumps({
                     "status": snap.get("status"),
                     "page_count": snap.get("page_count"),
+                    "quality": snap.get("quality"),
                     "resolved_url": snap.get("resolved_url"),
                     "preview_chars": len(str(snap.get("text_preview") or "")),
                     "error": snap.get("error") or "",

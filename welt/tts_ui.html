@@ -875,6 +875,21 @@ function uid()         { return Date.now().toString(36)+'-'+Math.random().toStri
 function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
 
+function qualityLine(q, fallback){
+  if (!q || typeof q !== 'object') return fallback || 'Qualität: keine Metrik';
+  const parts = [];
+  if (q.chars != null) parts.push(`${q.chars} Zeichen`);
+  if (q.text_chars != null) parts.push(`${q.text_chars} Textzeichen`);
+  if (q.words != null) parts.push(`${q.words} Wörter`);
+  if (q.chunk_count != null) parts.push(`${q.chunk_count} Chunks`);
+  if (q.page_count != null) parts.push(`${q.page_count} Seiten`);
+  if (q.crawled_url_count != null) parts.push(`${q.crawled_url_count} URLs`);
+  if (q.required_coverage != null && q.required_coverage !== 1) parts.push(`${Math.round(q.required_coverage * 100)}% Pflichtbegriffe`);
+  if (Array.isArray(q.unfilled_placeholders) && q.unfilled_placeholders.length) parts.push(`offen: ${q.unfilled_placeholders.join(', ')}`);
+  if (q.usable === false || q.empty) parts.push('nicht nutzbar');
+  return parts.length ? `Qualität: ${parts.join(' · ')}` : (fallback || 'Qualität: ok');
+}
+
 function openFullView(title, text){
   fullTitle.textContent = title || 'Vollansicht';
   fullText.textContent = String(text || '');
@@ -1183,11 +1198,13 @@ function renderOcrJobs(){
     const note = job.error
       ? `Fehler: ${job.error}`
       : (job.text ? shortText(job.text.replace(/\s+/g,' '), 180) : 'Noch kein erkannter Text.');
+    const quality = qualityLine(job.quality, `${String(job.text || '').length} Zeichen`);
     return `
       <div class="sentence-row" data-ocr-id="${esc(job.id)}">
         <div>
           <div class="sentence-text">${esc(job.filename || job.title || 'OCR-Job')}</div>
           <div class="clip-meta">${esc(meta)}</div>
+          <div class="clip-meta">${esc(quality)}</div>
           <div class="clip-extra">${esc(note)}</div>
         </div>
       <div class="sentence-actions">
@@ -1225,6 +1242,7 @@ function renderDocuments(){
         <div>
           <div class="sentence-text">${esc(title || 'Dokument')}</div>
           <div class="clip-meta">${esc(meta)}</div>
+          ${!isHit ? `<div class="clip-meta">${esc(qualityLine(item.quality))}</div>` : ''}
           <div class="clip-extra">${esc(shortText(String(note || '').replace(/\s+/g,' '), 220))}</div>
         </div>
         <div class="sentence-actions">
@@ -1318,6 +1336,7 @@ function renderWebarchive(){
       <div>
         <div class="sentence-text">${esc(item.title || item.resolved_url || item.url || 'Snapshot')}</div>
         <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.page_count || 1)} Seite(n) · ${esc(item.resolved_url || item.url || '')}${item.score ? ` · Score ${esc(item.score)}` : ''}</div>
+        <div class="clip-meta">${esc(qualityLine(item.quality))}</div>
         <div class="clip-extra">${esc(shortText(item.error || item.text_preview || 'Noch keine Vorschau.', 220))}</div>
       </div>
       <div class="sentence-actions">
@@ -1364,6 +1383,7 @@ function renderForms(){
       <div>
         <div class="sentence-text">${esc(item.profile || 'Profil')}</div>
         <div class="clip-meta">${esc(item.name || 'ohne Name')} · ${esc(item.email || 'ohne Mail')} · ${esc(Object.keys(item.extra_fields || {}).length)} Zusatzfelder</div>
+        <div class="clip-meta">${esc(qualityLine(item.quality))}</div>
         <div class="clip-extra">${esc(shortText(item.preview || item.address || 'Noch keine Vorschau.', 220))}</div>
       </div>
       <div class="sentence-actions">
@@ -1701,7 +1721,7 @@ async function saveOcrJob(){
     saveJsonLocal(OCR_KEY, ocrJobs);
     ocrInput.value = job.text || '';
     renderOcrJobs();
-    st(job.status === 'done' ? 'OCR fertig.' : `OCR-Status: ${job.status}`,'ok');
+    st(job.status === 'done' ? `OCR fertig. ${qualityLine(job.quality)}` : `OCR-Status: ${job.status}`,'ok');
     if (job.error) dbg(job.error);
   } catch(e){
     const fallback = {
@@ -1824,7 +1844,7 @@ async function saveDocumentEntry(){
     saveJsonLocal(DOCUMENTS_KEY, documentEntries);
     currentDocumentSources = [];
     documentsOutput.value = (Array.isArray(created) ? created : []).map(item=>{
-      return `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`;
+      return `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}\n${qualityLine(item.quality)}`;
     }).join('\n');
     renderDocumentScope();
     renderDocumentSources();
@@ -2010,6 +2030,7 @@ async function loadDocumentDetail(documentId, chunkIndex){
       : -1;
     documentsOutput.value = [
       `${item.filename} · ${item.status}${item.error ? ` · ${item.error}` : ''}`,
+      qualityLine(item.quality),
       hit ? `Treffer Chunk ${hit.chunk_index}\n${hit.chunk_text}` : '',
       '',
       item.text || item.preview || 'Keine Vorschau gespeichert.',
@@ -2145,6 +2166,7 @@ async function saveWebarchiveEntry(){
       item.title || item.resolved_url || item.url,
       item.resolved_url || item.url,
       `Seiten: ${item.page_count || 1}`,
+      qualityLine(item.quality),
       '',
       item.error || item.text_preview || 'Kein Text gespeichert.'
     ].join('\n');
@@ -2167,6 +2189,7 @@ async function loadWebsnapshot(snapshotId){
       item.title || item.resolved_url || item.url,
       item.resolved_url || item.url,
       `Seiten: ${item.page_count || 1}`,
+      qualityLine(item.quality),
       '',
       item.text || item.error || 'Keine gespeicherten Inhalte.',
       '',
@@ -2290,7 +2313,7 @@ async function buildFormPreviewServer(){
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const payload = await res.json();
     formsPreview.value = payload.preview || '';
-    formsFieldsHint.textContent = `Platzhalter/Felder: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')}`;
+    formsFieldsHint.textContent = `Platzhalter/Felder: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')} · ${qualityLine(payload.quality)}`;
     return formsPreview.value;
   } catch(e){
     dbg(`Server-Formularfüllung fehlgeschlagen, lokaler Fallback: ${e.message}`);

@@ -101,6 +101,7 @@ def main() -> int:
             page.locator("#documents-upload").set_input_files(str(doc_path))
             page.locator("#btn-documents-add").click()
             page.wait_for_function("document.querySelector('#documents-output').value.includes('browser_doc.txt')", timeout=30000)
+            page.wait_for_function("document.querySelector('#documents-output').value.includes('Qualität:')", timeout=10000)
             page.locator("#documents-search").fill("GENI")
             page.wait_for_timeout(600)
             expect(page.locator("#documents-list")).to_contain_text("GENI", timeout=10000)
@@ -123,6 +124,7 @@ def main() -> int:
             page.locator("#forms-template").fill('<form><input name="name"><input id="email"><textarea name="address"></textarea><p>{{firma}}</p></form>')
             page.locator("#btn-forms-preview").click()
             page.wait_for_function("document.querySelector('#forms-preview').value.includes('Browser Daniel')", timeout=10000)
+            expect(page.locator("#forms-fields-hint")).to_contain_text("Qualität:", timeout=10000)
             preview = page.locator("#forms-preview").input_value()
             record("forms_ui_server_fill", "browser@example.test" in preview and "Flextrawurst" in preview, preview)
 
@@ -132,6 +134,7 @@ def main() -> int:
             page.locator("#webarchive-pages").fill("2")
             page.locator("#btn-webarchive-save").click()
             page.wait_for_function("document.querySelector('#webarchive-output').value.includes('Seiten:')", timeout=30000)
+            page.wait_for_function("document.querySelector('#webarchive-output').value.includes('Qualität:')", timeout=10000)
             expect(page.locator("#webarchive-list")).to_contain_text("browser-local-snapshot", timeout=10000)
             page.locator("#btn-webarchive-full").click()
             page.wait_for_function("document.querySelector('#full-modal').classList.contains('on')")

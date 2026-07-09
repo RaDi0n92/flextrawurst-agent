@@ -105,6 +105,11 @@ class FormFillRequest(BaseModel):
     template: str
     fields: dict[str, str] = {}
 
+class TextQualityRequest(BaseModel):
+    expected: str = ""
+    actual: str = ""
+    required_terms: list[str] = []
+
 class LogAnalyzeRequest(BaseModel):
     text: str
     profile: str = ""
@@ -146,6 +151,7 @@ def _normalize_ocr_job(job: dict) -> dict:
         "status": str(job.get("status") or "pending"),
         "text": str(job.get("text") or "")[:OCR_TEXT_LIMIT],
         "error": str(job.get("error") or ""),
+        "quality": job.get("quality") if isinstance(job.get("quality"), dict) else _text_quality(str(job.get("text") or "")),
         "size": int(job.get("size") or 0),
         "created_at": str(job.get("created_at") or _now_iso()),
     }
@@ -176,6 +182,51 @@ def _remove_file(path_str: str) -> None:
         Path(path_str).unlink(missing_ok=True)
     except Exception:
         pass
+
+def _text_quality(actual: str, expected: str = "", required_terms: list[str] | None = None) -> dict:
+    actual = str(actual or "")
+    expected = str(expected or "")
+    required_terms = [str(term).strip() for term in (required_terms or []) if str(term).strip()]
+    actual_words = set(_document_tokens(actual))
+    expected_words = set(_document_tokens(expected))
+    required_hits = [term for term in required_terms if term.lower() in actual.lower()]
+    required_missing = [term for term in required_terms if term.lower() not in actual.lower()]
+    word_coverage = 1.0
+    if expected_words:
+        word_coverage = len(actual_words & expected_words) / max(1, len(expected_words))
+    return {
+        "chars": len(actual),
+        "words": len(_document_tokens(actual)),
+        "expected_chars": len(expected),
+        "word_coverage": round(word_coverage, 4),
+        "required_hits": required_hits,
+        "required_missing": required_missing,
+        "required_coverage": round(len(required_hits) / max(1, len(required_terms)), 4) if required_terms else 1.0,
+        "empty": not bool(actual.strip()),
+    }
+
+def _document_quality(doc: dict, full_text: str = "") -> dict:
+    text_chars = int(doc.get("text_chars") or len(full_text or ""))
+    size = int(doc.get("size") or 0)
+    chunks = int(doc.get("chunk_count") or len(doc.get("chunks") or []))
+    ratio = round(text_chars / size, 4) if size else 0
+    return {
+        "text_chars": text_chars,
+        "file_size": size,
+        "text_to_size_ratio": ratio,
+        "chunk_count": chunks,
+        "usable": str(doc.get("status") or "") == "done" and text_chars > 0 and chunks > 0,
+    }
+
+def _form_quality(preview: str, fields: dict[str, str]) -> dict:
+    placeholders = sorted(set(re.findall(r"\{\{([^}]+)\}\}", preview or "")))
+    filled = [key for key, value in (fields or {}).items() if str(value) and str(value) in str(preview or "")]
+    return {
+        "unfilled_placeholders": placeholders,
+        "filled_fields": sorted(str(key) for key in filled),
+        "filled_count": len(filled),
+        "usable": not placeholders,
+    }
 
 def _ocr_lang_code(language: str) -> str:
     lang = str(language or "auto").strip().lower()
@@ -343,6 +394,7 @@ def _normalize_document(doc: dict) -> dict:
         "text_chars": int(doc.get("text_chars") or 0),
         "chunk_count": int(doc.get("chunk_count") or len(clean_chunks)),
         "chunks": clean_chunks,
+        "quality": doc.get("quality") if isinstance(doc.get("quality"), dict) else _document_quality({**doc, "chunks": clean_chunks}),
         "error": str(doc.get("error") or ""),
         "created_at": str(doc.get("created_at") or _now_iso()),
     }
@@ -425,6 +477,12 @@ def _normalize_websnapshot(item: dict) -> dict:
         "text_preview": str(item.get("text_preview") or "")[:1200],
         "page_count": int(item.get("page_count") or 1),
         "crawled_urls": [str(url) for url in item.get("crawled_urls", [])[:50]] if isinstance(item.get("crawled_urls"), list) else [],
+        "quality": item.get("quality") if isinstance(item.get("quality"), dict) else {
+            "text_chars": len(str(item.get("text_preview") or "")),
+            "page_count": int(item.get("page_count") or 1),
+            "crawled_url_count": len(item.get("crawled_urls") or []) if isinstance(item.get("crawled_urls"), list) else 0,
+            "usable": str(item.get("status") or "") == "done" and bool(str(item.get("text_preview") or "").strip()),
+        },
         "status": str(item.get("status") or "pending"),
         "error": str(item.get("error") or ""),
         "fetched_at": str(item.get("fetched_at") or _now_iso()),
@@ -619,6 +677,12 @@ def _normalize_form_profile(item: dict) -> dict:
         "template": str(item.get("template") or "")[:20000],
         "preview": str(item.get("preview") or "")[:20000],
         "extra_fields": clean_fields,
+        "quality": item.get("quality") if isinstance(item.get("quality"), dict) else _form_quality(str(item.get("preview") or ""), {
+            "name": str(item.get("name") or ""),
+            "email": str(item.get("email") or ""),
+            "address": str(item.get("address") or ""),
+            **clean_fields,
+        }),
         "created_at": str(item.get("created_at") or _now_iso()),
     }
 
@@ -1214,6 +1278,10 @@ async def voices():
 async def translation_languages():
     return await _translation_languages()
 
+@app.post("/quality/text")
+async def quality_text(req: TextQualityRequest):
+    return _text_quality(req.actual, req.expected, req.required_terms)
+
 @app.get("/ocr/jobs")
 async def get_ocr_jobs():
     return _read_ocr_jobs()
@@ -1267,6 +1335,7 @@ async def create_ocr_job(
         job["text"] = text
         job["engine"] = engine
         job["status"] = "done" if text else "empty"
+        job["quality"] = _text_quality(text)
         if not text:
             job["error"] = "Kein Text erkannt."
     except Exception as exc:
@@ -1322,6 +1391,7 @@ async def create_document_from_ocr(req: OcrToDocumentRequest):
         "text_chars": len(text[:DOCUMENT_TEXT_LIMIT]),
         "chunk_count": len(chunks),
         "chunks": chunks,
+        "quality": _document_quality({"size": len(text.encode("utf-8")), "status": "done", "chunk_count": len(chunks)}, text[:DOCUMENT_TEXT_LIMIT]),
         "error": "",
         "created_at": _now_iso(),
     }
@@ -1399,6 +1469,7 @@ async def create_documents(files: list[UploadFile] = File(...)):
             doc["text_chars"] = len(text)
             doc["chunk_count"] = len(chunks)
             doc["chunks"] = chunks
+            doc["quality"] = _document_quality(doc, text)
             if not text:
                 doc["error"] = "Kein Text extrahiert."
         except Exception as exc:
@@ -1489,6 +1560,7 @@ async def update_document_chunk(document_id: str, chunk_index: int, payload: Doc
     item["preview"] = full_text[:600]
     item["text_chars"] = len(full_text)
     item["chunk_count"] = len(item["chunks"])
+    item["quality"] = _document_quality(item, full_text)
     if item.get("text_path"):
         Path(item["text_path"]).parent.mkdir(parents=True, exist_ok=True)
         Path(item["text_path"]).write_text(full_text, encoding="utf-8")
@@ -1511,6 +1583,7 @@ async def delete_document_chunk(document_id: str, chunk_index: int):
     item["text_chars"] = len(full_text)
     item["chunk_count"] = len(item["chunks"])
     item["status"] = "done" if item["chunks"] else "empty"
+    item["quality"] = _document_quality(item, full_text)
     if item.get("text_path"):
         Path(item["text_path"]).parent.mkdir(parents=True, exist_ok=True)
         Path(item["text_path"]).write_text(full_text, encoding="utf-8")
@@ -1608,6 +1681,12 @@ async def create_websnapshot(payload: WebSnapshotPayload):
         item["text_preview"] = data["text"][:600]
         item["page_count"] = data.get("page_count") or 1
         item["crawled_urls"] = data.get("crawled_urls") or [data["resolved_url"]]
+        item["quality"] = {
+            "text_chars": len(data["text"]),
+            "page_count": item["page_count"],
+            "crawled_url_count": len(item["crawled_urls"]),
+            "usable": bool(data["text"].strip()) and item["page_count"] >= 1,
+        }
         item["status"] = "done"
         if data.get("crawl_errors"):
             item["error"] = "Crawl-Hinweise: " + " | ".join(data["crawl_errors"][:3])
@@ -1636,7 +1715,7 @@ async def get_form_profiles():
 @app.post("/forms/fill")
 async def fill_form(req: FormFillRequest):
     preview = _fill_form_template(req.template, req.fields)
-    return {"preview": preview, "fields": sorted(str(key) for key in req.fields.keys())}
+    return {"preview": preview, "fields": sorted(str(key) for key in req.fields.keys()), "quality": _form_quality(preview, req.fields)}
 
 @app.post("/forms/profiles")
 async def create_form_profile(payload: FormProfilePayload):
@@ -1649,6 +1728,12 @@ async def create_form_profile(payload: FormProfilePayload):
         "template": payload.template,
         "preview": payload.preview,
         "extra_fields": payload.extra_fields,
+        "quality": _form_quality(payload.preview, {
+            "name": payload.name,
+            "email": payload.email,
+            "address": payload.address,
+            **payload.extra_fields,
+        }),
         "created_at": _now_iso(),
     }
     items = _read_forms()
