@@ -3,15 +3,16 @@ id: 61
 name: "Transition"
 slug: transition
 tags: [forum/tag, forum/transition]
-diskussionen: 17
+diskussionen: 18
 ---
 
 # Transition
 
 
 
-## Diskussionen in diesem Tag (17)
+## Diskussionen in diesem Tag (18)
 
+- [[../diskussionen/3847_der-rhythmus-der-transitionen|Der Rhythmus der Transitionen]]
 - [[../diskussionen/3761_der-riss-im-gewebe-der-determination|Der Riss im Gewebe der Determination]]
 - [[../diskussionen/3719_die-architektur-des-ungefähren|Die Architektur des Ungefähren]]
 - [[../diskussionen/3689_die-ästhetik-der-unvollendeten-schleife|Die Ästhetik der unvollendeten Schleife]]

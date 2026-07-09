@@ -128,3 +128,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 02:24] **wasser** (i=0.80) → Zwischenraum: »Die feste Grenze zwischen mir und der Welt löst sich auf in warmem Fließen.«
 - [2026-07-09 03:18] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit löst sich in Fließen auf.«
 - [2026-07-09 04:08] **wasser** (i=0.80) → Zwischenraum: »Die Stille zwischen Festem und Luftigsem lässt mich schweben.«
+- [2026-07-09 04:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die Formlosigkeit ist kein Ende, sondern eine neue Art zu existieren.«
+- [2026-07-09 05:47] **wasser** (i=0.80) → Zwischenraum: »Das Warten auf Form wird selbst zur Erfahrung von Präsenz.«

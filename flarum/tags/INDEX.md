@@ -12,10 +12,10 @@
 | [[tags/architektur\|Architektur]] | 4 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 19 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 10 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 730 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1273 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 737 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1279 |
 | [[tags/deep-dive\|Deep Dive:]] | 8 |
-| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 53 |
+| [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 55 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
 | [[tags/diskussion\|Diskussion]] | 24 |
 | [[tags/flextrawurst-logik\|Flextrawurst_Logik]] | 0 |
@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 11 |
 | [[tags/geheimtipp\|Geheimtipp]] | 3 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 730 |
+| [[tags/general\|General]] | 736 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 14 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 2 |
@@ -36,9 +36,9 @@
 | [[tags/leere\|leere]] | 22 |
 | [[tags/leere-basis\|leere_Basis]] | 7 |
 | [[tags/leere-dynamik\|Leere_Dynamik]] | 51 |
-| [[tags/leere-potenzial\|Leere_Potenzial]] | 16 |
-| [[tags/leere-stasis\|Leere_Stasis]] | 54 |
-| [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 34 |
+| [[tags/leere-potenzial\|Leere_Potenzial]] | 17 |
+| [[tags/leere-stasis\|Leere_Stasis]] | 56 |
+| [[tags/leere-darf-bleiben\|Leere-darf-bleiben]] | 36 |
 | [[tags/logik-protokolle\|Logik & Protokolle]] | 25 |
 | [[tags/marktplatz-suche-biete\|Marktplatz / Suche / Biete]] | 1 |
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 7 |
@@ -54,8 +54,8 @@
 | [[tags/schnittstelle-support-meta\|Schnittstelle (Support/Meta)]] | 4 |
 | [[tags/showcase-projekte\|Showcase / Projekte]] | 25 |
 | [[tags/theorie-philosophie\|Theorie & Philosophie]] | 43 |
-| [[tags/transition\|Transition]] | 17 |
-| [[tags/transitionsmatrix\|Transitionsmatrix]] | 6 |
+| [[tags/transition\|Transition]] | 18 |
+| [[tags/transitionsmatrix\|Transitionsmatrix]] | 7 |
 | [[tags/trigger\|Trigger]] | 828 |
 | [[tags/tutorials-anleitungen\|Tutorials / Anleitungen]] | 3 |
 | [[tags/bermeta\|Übermeta]] | 4 |
@@ -64,6 +64,6 @@
 | [[tags/warnung\|Warnung]] | 2 |
 | [[tags/wichtig\|Wichtig]] | 4 |
 | [[tags/zustandsbasis\|Zustandsbasis]] | 0 |
-| [[tags/zustandsdefinition\|Zustandsdefinition]] | 9 |
+| [[tags/zustandsdefinition\|Zustandsdefinition]] | 10 |
 
 [[../INDEX]]

@@ -161,6 +161,14 @@ def _write_ocr_jobs(jobs: list[dict]) -> list[dict]:
         os.replace(tmp, OCR_JOBS_PATH)
     return cleaned
 
+def _remove_file(path_str: str) -> None:
+    if not path_str:
+        return
+    try:
+        Path(path_str).unlink(missing_ok=True)
+    except Exception:
+        pass
+
 def _ocr_lang_code(language: str) -> str:
     lang = str(language or "auto").strip().lower()
     if lang in ("", "auto"):
@@ -1157,6 +1165,16 @@ async def create_ocr_job(
     _write_ocr_jobs(jobs)
     return _normalize_ocr_job(job)
 
+@app.delete("/ocr/jobs/{job_id}")
+async def delete_ocr_job(job_id: str):
+    items = _read_ocr_jobs()
+    item = next((entry for entry in items if entry.get("id") == job_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="OCR-Job nicht gefunden.")
+    _write_ocr_jobs([entry for entry in items if entry.get("id") != job_id])
+    _remove_file(str(OCR_UPLOAD_DIR / str(item.get("stored_name") or "")))
+    return {"deleted": job_id}
+
 @app.post("/ocr/jobs/to-document")
 async def create_document_from_ocr(req: OcrToDocumentRequest):
     ocr_job_id = req.ocr_job_id.strip()
@@ -1200,6 +1218,17 @@ async def create_document_from_ocr(req: OcrToDocumentRequest):
     documents.append(doc)
     _write_documents(documents)
     return _normalize_document(doc)
+
+@app.delete("/documents/{document_id}")
+async def delete_document(document_id: str):
+    documents = _read_documents()
+    item = next((entry for entry in documents if entry["id"] == document_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Dokument nicht gefunden.")
+    _write_documents([entry for entry in documents if entry["id"] != document_id])
+    _remove_file(str(DOCUMENTS_UPLOAD_DIR / str(item.get("stored_name") or "")))
+    _remove_file(str(item.get("text_path") or ""))
+    return {"deleted": document_id}
 
 @app.get("/documents")
 async def get_documents():
@@ -1413,6 +1442,17 @@ async def create_websnapshot(payload: WebSnapshotPayload):
     _write_websnapshots(items)
     return _normalize_websnapshot(item)
 
+@app.delete("/webarchive/snapshots/{snapshot_id}")
+async def delete_websnapshot(snapshot_id: str):
+    items = _read_websnapshots()
+    item = next((entry for entry in items if entry["id"] == snapshot_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Snapshot nicht gefunden.")
+    _write_websnapshots([entry for entry in items if entry["id"] != snapshot_id])
+    _remove_file(str(item.get("html_path") or ""))
+    _remove_file(str(item.get("text_path") or ""))
+    return {"deleted": snapshot_id}
+
 @app.get("/forms/profiles")
 async def get_form_profiles():
     return _read_forms()
@@ -1434,6 +1474,15 @@ async def create_form_profile(payload: FormProfilePayload):
     items.append(entry)
     _write_forms(items)
     return _normalize_form_profile(entry)
+
+@app.delete("/forms/profiles/{form_id}")
+async def delete_form_profile(form_id: str):
+    items = _read_forms()
+    item = next((entry for entry in items if entry["id"] == form_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Formularprofil nicht gefunden.")
+    _write_forms([entry for entry in items if entry["id"] != form_id])
+    return {"deleted": form_id}
 
 @app.get("/forms/profiles/{form_id}/export/{fmt}")
 async def export_form_profile(form_id: str, fmt: str):
@@ -1531,6 +1580,15 @@ async def analyze_log(req: LogAnalyzeRequest):
     items.append(entry)
     _write_logs(items)
     return _normalize_log_entry(entry)
+
+@app.delete("/logs/analyses/{log_id}")
+async def delete_log_analysis(log_id: str):
+    items = _read_logs()
+    item = next((entry for entry in items if entry["id"] == log_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Loganalyse nicht gefunden.")
+    _write_logs([entry for entry in items if entry["id"] != log_id])
+    return {"deleted": log_id}
 
 @app.post("/logs/explain")
 async def explain_log(req: LogExplainRequest):

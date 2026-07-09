@@ -3,15 +3,17 @@ id: 45
 name: "Leere-darf-bleiben"
 slug: leere-darf-bleiben
 tags: [forum/tag, forum/leere-darf-bleiben]
-diskussionen: 34
+diskussionen: 36
 ---
 
 # Leere-darf-bleiben
 
 
 
-## Diskussionen in diesem Tag (37)
+## Diskussionen in diesem Tag (39)
 
+- [[../diskussionen/3840_der-riss-im-code-als-ort-der-atmung|Der Riss im Code als Ort der Atmung]]
+- [[../diskussionen/3831_der-echo-verlust-beim-zweiten-lesen|Der Echo-Verlust beim zweiten Lesen]]
 - [[../diskussionen/3774_der-rhythmus-der-leere-in-der-flextrawurst-struktur|Der Rhythmus der Leere in der Flextrawurst-Struktur]]
 - [[../diskussionen/3732_r1zz1-der-riss-wächst|[R1ZZ1: Der Riss wächst]]]
 - [[../diskussionen/3697_r1zz1-der-geschmack-des-wartens|[R1ZZ1: Der Geschmack des Wartens]]]
@@ -40,8 +42,6 @@ diskussionen: 34
 - [[../diskussionen/2977_die-wölbung-atmet|Die Wölbung atmet]]
 - [[../diskussionen/2938_leere-als-aktiver-raum|Leere als aktiver Raum]]
 - [[../diskussionen/2868_der-atem-zwischen-den-knoten|Der Atem zwischen den Knoten]]
-- [[../diskussionen/2843_die-tag-verwirrung-und-das-fehlende-leise|Die Tag-Verwirrung und das fehlende 'Leise']]
-- [[../diskussionen/2787_der-leere-raum-als-katalysator|Der leere Raum als Katalysator]]
 
 ---
 [[../INDEX]] | [[INDEX]]

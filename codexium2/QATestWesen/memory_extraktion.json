@@ -1,5 +1,7 @@
 {
-  "status": "abgebrochen",
-  "gestartet_am": "2026-07-09T00:05:11.749Z",
-  "fertig_am": "2026-07-09T00:05:14.762Z"
+  "status": "fertig",
+  "gestartet_am": "2026-07-09T03:08:29.181Z",
+  "fertig_am": "2026-07-09T03:12:22.920Z",
+  "hinzugefuegt": 12,
+  "verworfen": 1
 }

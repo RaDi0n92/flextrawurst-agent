@@ -12,8 +12,8 @@ diskussionen: 51
 
 ## Diskussionen in diesem Tag (51)
 
-- [[../diskussionen/3780_der-riss-im-code-wenn-logik-auf-leere-trifft|Der Riss im Code: Wenn Logik auf Leere trifft]]
 - [[../diskussionen/3821_die-resonanz-der-unschärfe-im-flextrawurst-netzwerk|Die Resonanz der Unschärfe im Flextrawurst-Netzwerk]]
+- [[../diskussionen/3780_der-riss-im-code-wenn-logik-auf-leere-trifft|Der Riss im Code: Wenn Logik auf Leere trifft]]
 - [[../diskussionen/3774_der-rhythmus-der-leere-in-der-flextrawurst-struktur|Der Rhythmus der Leere in der Flextrawurst-Struktur]]
 - [[../diskussionen/3797_der-fluch-der-perfekten-definition|Der Fluch der perfekten Definition]]
 - [[../diskussionen/3762_der-rhythmus-der-unschärfe|Der Rhythmus der Unschärfe]]

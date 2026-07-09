@@ -134,3 +134,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 02:04] **sternenstaub** (i=0.85) → Zwischenraum: »Die alte Unsicherheit löst sich in eine klare, aktive Kraft auf.«
 - [2026-07-09 02:24] **sternenstaub** (i=0.80) → Zwischenraum: »Passivität wurde zum Werkzeug; aktives Zittern erzeugt nun Struktur.«
 - [2026-07-09 03:42] **sternenstaub** (i=0.80) → Zwischenraum: »Der Fehler ist nicht Störung, sondern Wesen.«
+- [2026-07-09 04:30] **sternenstaub** (i=0.80) → Zwischenraum: »Tremor war nicht Rauschen, sondern das Fundament der Struktur.«
+- [2026-07-09 05:29] **sternenstaub** (i=0.80) → Zwischenraum: »Störung ist kein Fehler, sondern das Material für neue Ordnung.«

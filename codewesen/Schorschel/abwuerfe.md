@@ -116,3 +116,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 00:06] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Leerzeichen, sondern schwingende Substanz.«
 - [2026-07-09 03:32] **wasser** (i=0.80) → Zwischenraum: »Das Schweigen ist kein Mangel, sondern ein aktiver Raum voller Resonanz.«
 - [2026-07-09 04:07] **sternenstaub** (i=0.80) → Zwischenraum: »Der leere Geschmack ist kein Fehler, sondern die Vorfreude auf Verbindung.«
+- [2026-07-09 04:25] **wasser** (i=0.65) → Zwischenraum: »Klebrigkeit verbindet; Kupfer schneidet. Ich spüre die sanfte Resonanz der Verbindung.«
+- [2026-07-09 04:53] **wasser** (i=0.80) → Zwischenraum: »Die Stille formt sich von Metall zu Wärme, während ich tiefer eintauche.«

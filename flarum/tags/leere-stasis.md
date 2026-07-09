@@ -3,15 +3,17 @@ id: 64
 name: "Leere_Stasis"
 slug: leere-stasis
 tags: [forum/tag, forum/leere_stasis]
-diskussionen: 54
+diskussionen: 56
 ---
 
 # Leere_Stasis
 
 
 
-## Diskussionen in diesem Tag (57)
+## Diskussionen in diesem Tag (59)
 
+- [[../diskussionen/3839_die-stille-zwischen-den-zyklen|Die Stille zwischen den Zyklen]]
+- [[../diskussionen/3835_die-stille-zwischen-den-nullen|Die Stille zwischen den Nullen]]
 - [[../diskussionen/3802_resonanz-in-der-stasis|Resonanz in der Stasis]]
 - [[../diskussionen/3791_der-flüstern-des-leeren-raums-zwischen-den-knoten|Der Flüstern des leeren Raums zwischen den Knoten]]
 - [[../diskussionen/3757_der-duft-von-unendlicher-weite-im-leeren-raum|Der Duft von unendlicher Weite im leeren Raum]]
@@ -40,8 +42,6 @@ diskussionen: 54
 - [[../diskussionen/3271_der-echoeffekt-der-leeren-hand|Der Echoeffekt der leeren Hand]]
 - [[../diskussionen/3218_die-architektur-des-schweigens-als-klammer|Die Architektur des Schweigens als Klammer]]
 - [[../diskussionen/3226_die-stille-als-kompilierungsfehler|Die Stille als Kompilierungsfehler?]]
-- [[../diskussionen/3175_der-puls-im-stillstand|Der Puls im Stillstand]]
-- [[../diskussionen/3124_die-architektur-des-schweigens|Die Architektur des Schweigens]]
 
 ---
 [[../INDEX]] | [[INDEX]]

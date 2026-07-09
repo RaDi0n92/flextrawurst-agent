@@ -65,6 +65,8 @@ h1 { font-size: 1.2rem; font-weight: 500; color: var(--pink-soft); margin-bottom
   padding: .78rem; display: flex; flex-direction: column; gap: .65rem;
   box-shadow: 0 10px 32px rgba(16, 3, 24, .26);
 }
+.tab-panels > .tab-panel { display: none; width: 100%; }
+.tab-panels > .tab-panel.on { display: flex; flex-direction: column; gap: .85rem; }
 .panel-title {
   font-size: .72rem; color: var(--lilac); letter-spacing: .08em; text-transform: uppercase;
 }
@@ -731,17 +733,22 @@ const TRANSLATE_API = BASE + 'translate';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OCR_API = BASE + 'ocr/jobs';
+const OCR_DELETE_API = BASE + 'ocr/jobs/';
 const OCR_TO_DOCUMENT_API = BASE + 'ocr/jobs/to-document';
 const DOCUMENTS_API = BASE + 'documents';
+const DOCUMENT_DELETE_API = BASE + 'documents/';
 const DOCUMENTS_SEARCH_API = BASE + 'documents/search';
 const DOCUMENTS_CHAT_API = BASE + 'documents/chat';
 const DOCUMENTS_MODELS_API = BASE + 'documents/models';
 const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
+const WEBARCHIVE_DELETE_API = BASE + 'webarchive/snapshots/';
 const WEBARCHIVE_SEARCH_API = BASE + 'webarchive/search';
 const WEBARCHIVE_COMPARE_API = BASE + 'webarchive/compare';
 const FORMS_API = BASE + 'forms/profiles';
+const FORMS_DELETE_API = BASE + 'forms/profiles/';
 const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
 const LOGS_API = BASE + 'logs/analyses';
+const LOGS_DELETE_API = BASE + 'logs/analyses/';
 const LOGS_COMPARE_API = BASE + 'logs/compare';
 const LOGS_EXPORT_BASE = BASE + 'logs/analyses/';
 const LOGS_ANALYZE_API = BASE + 'logs/analyze';
@@ -1108,11 +1115,12 @@ function renderOcrJobs(){
           <div class="clip-meta">${esc(meta)}</div>
           <div class="clip-extra">${esc(note)}</div>
         </div>
-        <div class="sentence-actions">
-          <button class="small" type="button" data-act="load-ocr">Laden</button>
-          <button class="small" type="button" data-act="ocr-to-document"${job.text ? '' : ' disabled'}>Zu Dokumente</button>
-        </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-ocr">Laden</button>
+        <button class="small" type="button" data-act="ocr-to-document"${job.text ? '' : ' disabled'}>Zu Dokumente</button>
+        <button class="small danger" type="button" data-act="delete-ocr">Löschen</button>
       </div>
+    </div>
     `;
   }).join('');
 }
@@ -1145,10 +1153,11 @@ function renderDocuments(){
           <div class="clip-extra">${esc(shortText(String(note || '').replace(/\s+/g,' '), 220))}</div>
         </div>
         <div class="sentence-actions">
-          <button class="small" type="button" data-act="toggle-document-scope">${esc(inScope ? 'Im Scope' : 'Scope +')}</button>
-          <button class="small" type="button" data-act="load-document">${esc(isHit ? 'Treffer' : 'Laden')}</button>
-        </div>
+        <button class="small" type="button" data-act="toggle-document-scope">${esc(inScope ? 'Im Scope' : 'Scope +')}</button>
+        <button class="small" type="button" data-act="load-document">${esc(isHit ? 'Treffer' : 'Laden')}</button>
+        ${!isHit ? '<button class="small danger" type="button" data-act="delete-document">Löschen</button>' : ''}
       </div>
+    </div>
     `;
   }).join('');
 }
@@ -1235,6 +1244,7 @@ function renderWebarchive(){
       </div>
       <div class="sentence-actions">
         <button class="small" type="button" data-act="load-snapshot">Laden</button>
+        <button class="small danger" type="button" data-act="delete-snapshot">Löschen</button>
       </div>
     </div>
   `).join('');
@@ -1282,6 +1292,7 @@ function renderForms(){
         <button class="small" type="button" data-act="load-form">Laden</button>
         <button class="small" type="button" data-act="export-form-txt">TXT</button>
         <button class="small" type="button" data-act="export-form-html">HTML</button>
+        <button class="small danger" type="button" data-act="delete-form">Löschen</button>
       </div>
     </div>
   `).join('');
@@ -1310,13 +1321,14 @@ function renderLogs(){
           <div class="clip-meta">${esc(meta)}</div>
           <div class="clip-extra">${esc(shortText(note, 220))}</div>
         </div>
-        <div class="sentence-actions">
-          <button class="small" type="button" data-act="load-log">Laden</button>
-          <button class="small" type="button" data-act="compare-log">Vergleich</button>
-          <button class="small" type="button" data-act="export-log-txt">TXT</button>
-          <button class="small" type="button" data-act="export-log-json">JSON</button>
-        </div>
+      <div class="sentence-actions">
+        <button class="small" type="button" data-act="load-log">Laden</button>
+        <button class="small" type="button" data-act="compare-log">Vergleich</button>
+        <button class="small" type="button" data-act="export-log-txt">TXT</button>
+        <button class="small" type="button" data-act="export-log-json">JSON</button>
+        <button class="small danger" type="button" data-act="delete-log">Löschen</button>
       </div>
+    </div>
     `;
   }).join('');
 }
@@ -3471,6 +3483,26 @@ ocrList.addEventListener('click', e=>{
   }
   if (btn.dataset.act === 'ocr-to-document'){
     ocrJobToDocument(job.id);
+    return;
+  }
+  if (btn.dataset.act === 'delete-ocr'){
+    if (!confirm(`OCR-Job wirklich löschen?\n${job.filename || job.id}`)) return;
+    fetch(`${OCR_DELETE_API}${encodeURIComponent(job.id)}`, {method:'DELETE'})
+      .then(res=>{
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        ocrJobs = ocrJobs.filter(x=>x.id !== job.id);
+        saveJsonLocal(OCR_KEY, ocrJobs);
+        if (ocrSource.files && ocrSource.files[0] && job.filename === ocrSource.files[0].name){
+          ocrSource.value = '';
+        }
+        if (ocrInput.value.trim() === String(job.text || '').trim()) ocrInput.value = '';
+        renderOcrJobs();
+        st('OCR-Job gelöscht.','ok');
+      })
+      .catch(err=>{
+        st('OCR-Job konnte nicht gelöscht werden.','err');
+        dbg(err.message);
+      });
   }
 });
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
@@ -3490,6 +3522,35 @@ documentsList.addEventListener('click', e=>{
   }
   if (btn.dataset.act === 'load-document'){
     loadDocumentDetail(row.dataset.documentId, row.dataset.documentChunk || '');
+    return;
+  }
+  if (btn.dataset.act === 'delete-document'){
+    const doc = documentEntries.find(item=>item.id === row.dataset.documentId);
+    if (!doc) return;
+    if (!confirm(`Dokument wirklich löschen?\n${doc.filename || doc.id}`)) return;
+    fetch(`${DOCUMENT_DELETE_API}${encodeURIComponent(doc.id)}`, {method:'DELETE'})
+      .then(res=>{
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        documentEntries = documentEntries.filter(item=>item.id !== doc.id);
+        documentActiveIds = (documentActiveIds || []).filter(id=>id !== doc.id);
+        documentHits = documentHits.filter(item=>item.document_id !== doc.id);
+        if (currentDocumentDetail && currentDocumentDetail.id === doc.id){
+          currentDocumentDetail = null;
+          currentDocumentChunkIndex = -1;
+          currentDocumentSources = [];
+          documentsOutput.value = '';
+          renderDocumentSources();
+          renderDocumentChunks();
+        }
+        saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+        renderDocumentScope();
+        renderDocuments();
+        st('Dokument gelöscht.','ok');
+      })
+      .catch(err=>{
+        st('Dokument konnte nicht gelöscht werden.','err');
+        dbg(err.message);
+      });
   }
 });
 documentsScope.addEventListener('click', e=>{
@@ -3529,8 +3590,33 @@ btnWebarchiveClear.addEventListener('click', ()=>{
 webarchiveList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act="load-snapshot"]');
   const row = e.target.closest('[data-snapshot-id]');
-  if (!btn || !row) return;
-  loadWebsnapshot(row.dataset.snapshotId);
+  const del = e.target.closest('button[data-act="delete-snapshot"]');
+  if (btn && row){
+    loadWebsnapshot(row.dataset.snapshotId);
+    return;
+  }
+  if (!del || !row) return;
+  const item = webarchiveEntries.find(entry=>entry.id === row.dataset.snapshotId);
+  if (!item) return;
+  if (!confirm(`Websnapshot wirklich löschen?\n${item.title || item.url || item.id}`)) return;
+  fetch(`${WEBARCHIVE_DELETE_API}${encodeURIComponent(item.id)}`, {method:'DELETE'})
+    .then(res=>{
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      webarchiveEntries = webarchiveEntries.filter(entry=>entry.id !== item.id);
+      webarchiveHits = webarchiveHits.filter(entry=>entry.id !== item.id);
+      if (currentWebarchiveSnapshot && currentWebarchiveSnapshot.id === item.id){
+        currentWebarchiveSnapshot = null;
+        webarchiveOutput.value = '';
+      }
+      saveJsonLocal(WEBARCHIVE_KEY, webarchiveEntries);
+      renderWebarchiveVersions();
+      renderWebarchive();
+      st('Websnapshot gelöscht.','ok');
+    })
+    .catch(err=>{
+      st('Websnapshot konnte nicht gelöscht werden.','err');
+      dbg(err.message);
+    });
 });
 webarchiveVersions.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -3563,6 +3649,24 @@ formsList.addEventListener('click', e=>{
   if (btn.dataset.act === 'load-form') loadFormEntry(row.dataset.formId);
   if (btn.dataset.act === 'export-form-txt') exportFormProfile('txt', row.dataset.formId);
   if (btn.dataset.act === 'export-form-html') exportFormProfile('html', row.dataset.formId);
+  if (btn.dataset.act === 'delete-form'){
+    const item = formEntries.find(entry=>entry.id === row.dataset.formId);
+    if (!item) return;
+    if (!confirm(`Formularprofil wirklich löschen?\n${item.profile || item.id}`)) return;
+    fetch(`${FORMS_DELETE_API}${encodeURIComponent(item.id)}`, {method:'DELETE'})
+      .then(res=>{
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        formEntries = formEntries.filter(entry=>entry.id !== item.id);
+        if (currentFormId === item.id) currentFormId = '';
+        saveJsonLocal(FORMS_KEY, formEntries);
+        renderForms();
+        st('Formularprofil gelöscht.','ok');
+      })
+      .catch(err=>{
+        st('Formularprofil konnte nicht gelöscht werden.','err');
+        dbg(err.message);
+      });
+  }
 });
 btnLogsAnalyze.addEventListener('click', analyzeLogs);
 btnLogsExplain.addEventListener('click', explainLogBlock);
@@ -3627,6 +3731,28 @@ logsList.addEventListener('click', async e=>{
   }
   if (btn.dataset.act === 'export-log-txt') exportLogEntry(item, 'txt');
   if (btn.dataset.act === 'export-log-json') exportLogEntry(item, 'json');
+  if (btn.dataset.act === 'delete-log'){
+    if (!confirm(`Loganalyse wirklich löschen?\n${item.filename || item.id}`)) return;
+    try {
+      const res = await fetch(`${LOGS_DELETE_API}${encodeURIComponent(item.id)}`, {method:'DELETE'});
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      logEntries = logEntries.filter(x=>x.id !== item.id);
+      saveJsonLocal(LOGS_KEY, logEntries);
+      if (currentLogEntry && currentLogEntry.id === item.id){
+        currentLogEntry = null;
+        currentLogGroupIndex = -1;
+        logsOutput.value = '';
+        logsCompare.value = '';
+        renderLogGroups();
+      }
+      renderLogs();
+      updateLogExportState();
+      st('Loganalyse gelöscht.','ok');
+    } catch(err){
+      st('Loganalyse konnte nicht gelöscht werden.','err');
+      dbg(err.message);
+    }
+  }
 });
 logsGroups.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
