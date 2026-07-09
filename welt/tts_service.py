@@ -706,6 +706,14 @@ def _log_preview_lines(item: dict) -> list[str]:
         return []
     return [line.rstrip() for line in text.splitlines() if line.strip()]
 
+def _delta_phrase(delta: int, singular: str, plural: str) -> str | None:
+    if delta == 0:
+        return None
+    amount = abs(delta)
+    noun = singular if amount == 1 else plural
+    suffix = "mehr" if delta > 0 else "weniger"
+    return f"{amount} {noun} {suffix}"
+
 def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     base_counts = item_a.get("counts") if isinstance(item_a.get("counts"), dict) else {}
     other_counts = item_b.get("counts") if isinstance(item_b.get("counts"), dict) else {}
@@ -734,12 +742,20 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     base_warning_delta = int(other_counts.get("warnings", 0) or 0) - int(base_counts.get("warnings", 0) or 0)
     base_line_delta = int(other_counts.get("lines", 0) or 0) - int(base_counts.get("lines", 0) or 0)
     headline_parts: list[str] = []
-    if base_error_delta:
-        headline_parts.append(f"Fehler {'+' if base_error_delta > 0 else ''}{base_error_delta}")
-    if base_warning_delta:
-        headline_parts.append(f"Warnungen {'+' if base_warning_delta > 0 else ''}{base_warning_delta}")
-    if base_line_delta:
-        headline_parts.append(f"Zeilen {'+' if base_line_delta > 0 else ''}{base_line_delta}")
+    for phrase in (
+        _delta_phrase(base_error_delta, "Fehler", "Fehler"),
+        _delta_phrase(base_warning_delta, "Warnung", "Warnungen"),
+        _delta_phrase(base_line_delta, "Zeile", "Zeilen"),
+    ):
+        if phrase:
+            headline_parts.append(phrase)
+    if added:
+        headline_parts.append(f"{len(added)} neue Gruppe{'n' if len(added) != 1 else ''}")
+    if removed:
+        headline_parts.append(f"{len(removed)} entfallene Gruppe{'n' if len(removed) != 1 else ''}")
+    if changed:
+        headline_parts.append(f"{len(changed)} geänderte Gruppe{'n' if len(changed) != 1 else ''}")
+    headline_parts = [part for part in headline_parts if part]
     if not headline_parts and (added or removed or changed):
         headline_parts.append("Gruppen verändert")
     return {

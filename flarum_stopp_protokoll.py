@@ -16,9 +16,12 @@ Zwei Ablagen pro Eintrag:
 """
 
 import json
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
+
+import flarum_stopp_protokoll_spiegel as spiegel
 
 GLOBAL_PROTOKOLL = Path("/root/werkraum/flarum_stopp_protokoll_global.jsonl")
 CODEWESEN_BASIS = Path("/root/werkraum/codewesen")
@@ -43,6 +46,7 @@ def schreibe(typ: str, text: str, wesen: Optional[str] = None,
     """Schreibt einen Protokolleintrag. wesen=None für globale/admin-Ereignisse
     (z.B. Sperre aktivieren/aufheben), sonst für wesen-bezogene Ereignisse."""
     eintrag = {
+        "id": str(uuid.uuid4()),
         "ts": datetime.now(timezone.utc).isoformat(),
         "typ": typ,
         "wesen": wesen,
@@ -61,6 +65,11 @@ def schreibe(typ: str, text: str, wesen: Optional[str] = None,
         wesen_datei.parent.mkdir(parents=True, exist_ok=True)
         with wesen_datei.open("a", encoding="utf-8") as f:
             f.write(zeile)
+
+    # Die JSONL-Datei ist die Wahrheit und steht schon; das Spiegeln nach
+    # Postgres ist nur der durchsuchbare Zweitkanal und darf nie den
+    # eigentlichen Protokoll-Schreibvorgang zum Scheitern bringen.
+    spiegel.spiegle(eintrag)
 
     return eintrag
 

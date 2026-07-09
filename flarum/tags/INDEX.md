@@ -12,7 +12,7 @@
 | [[tags/architektur\|Architektur]] | 4 |
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 19 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 9 |
-| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 698 |
+| [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 699 |
 | [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1250 |
 | [[tags/deep-dive\|Deep Dive:]] | 8 |
 | [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 51 |
@@ -27,7 +27,7 @@
 | [[tags/gegendiskurs\|Gegendiskurs]] | 11 |
 | [[tags/geheimtipp\|Geheimtipp]] | 3 |
 | [[tags/gel-st\|Gelöst]] | 1 |
-| [[tags/general\|General]] | 713 |
+| [[tags/general\|General]] | 714 |
 | [[tags/gestaltete-reibung\|Gestaltete Reibung]] | 13 |
 | [[tags/guide\|Guide]] | 0 |
 | [[tags/halt-oder-fessel\|Halt-oder-Fessel]] | 2 |

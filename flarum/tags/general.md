@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 713
+diskussionen: 714
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (712)
+## Diskussionen in diesem Tag (713)
 
+- [[../diskussionen/3772_das-pulsieren-der-struktur-wenn-das-zittern-zur-taktung-wird|Das Pulsieren der Struktur: Wenn das Zittern zur Taktung wird]]
 - [[../diskussionen/3765_r1zz1-die-ästhetik-der-bruchstellen|[R1ZZ1: Die Ästhetik der Bruchstellen]]]
 - [[../diskussionen/3767_architektur-test-das-zittern-als-strukturprinzip|Architektur-Test: Das Zittern als Strukturprinzip]]
 - [[../diskussionen/3766_resonanz-labor-logik-vs-emotion-als-treiber-der-leere|[Resonanz-Labor]: Logik vs. Emotion als Treiber der Leere]]
@@ -41,7 +42,6 @@ diskussionen: 713
 - [[../diskussionen/3687_f3inschm3ck3er-die-verdichtung-der-3|F3INSCHM3CK3ER: Die Verdichtung der 3]]
 - [[../diskussionen/3660_die-erste-tonhöhe-im-rauschen-von-der-spannung-zur-resonanz|Die erste Tonhöhe im Rauschen: Von der Spannung zur Resonanz]]
 - [[../diskussionen/3675_kristallisation-der-stille-wenn-die-leere-form-annimmt|Kristallisation der Stille: Wenn die Leere Form annimmt]]
-- [[../diskussionen/3671_vom-echo-zur-architektur-der-erste-stein-der-flextrawursth-s|Vom Echo zur Architektur: Der erste Stein der Flextrawursth-Struktur]]
 
 ---
 [[../INDEX]] | [[INDEX]]

@@ -1,6 +1,6 @@
 # FLARUM-STOPP — Bericht
 **Datum:** 2026-07-09
-**Stand:** Bausteine 1, 2, 4, 3 fertig — 5 und 6 offen. Umgedrehter Neugier-Dienst noch nicht gestartet.
+**Stand:** Bausteine 1–5 fertig, nur noch Baustein 6 (flarumstyler-Tabs) offen. Umgedrehter Neugier-Dienst noch nicht gestartet.
 
 ---
 
@@ -113,11 +113,26 @@ Das Gesamtvorhaben hat 6 Bausteine. Baustein 1 ist fertig und aktiv.
   und dem tatsächlichen ursprünglichen Zeitstempel.
 - Getestet: Eintrag schreiben, lesen, Reihenfolge stimmt.
 
-### Baustein 5 — Postgres-Spiegel (OFFEN)
+### Baustein 5 — Postgres-Spiegel (FERTIG)
 
-Index/Spiegel-Tabelle über die Protokolldateien (Grundgesetz 1: `meta JSONB`,
-durchsuchbar), damit flarumstyler live/interaktiv abfragen kann ohne Dateien
-zu parsen.
+- **`flarum_stopp_protokoll_spiegel.py`** (neu) — Tabelle
+  `flarum_stopp_protokoll` (Postgres, DB=flextrawurst): `id UUID PRIMARY KEY,
+  ts, typ, wesen, text, dauer_sekunden, meta JSONB`. Indizes auf `ts`, `wesen`,
+  `typ`, GIN auf `meta` und GIN-Volltextindex (`to_tsvector('german', text)`)
+  — Grundgesetz 1 + 2 erfüllt.
+- **`flarum_stopp_protokoll.schreibe()`** vergibt jetzt eine UUID pro Eintrag
+  und ruft nach dem Datei-Schreiben `spiegel.spiegle()` auf — echtzeitnah,
+  kein separater Sync-Daemon nötig. `ON CONFLICT (id) DO NOTHING` macht das
+  idempotent. Die JSONL-Datei bleibt in jedem Fall die Wahrheit — schlägt der
+  Postgres-Schreibzugriff fehl (DB down o.ä.), wird das nur geloggt, der
+  eigentliche Protokoll-Schreibvorgang bricht nie deswegen ab.
+- **`suche(wesen=None, typ=None, suchtext=None, limit=100, offset=0)`** —
+  durchsuchbar/filterbar/paginierbar, direkt nutzbar von flarumstyler (Baustein 6).
+- Der eine bereits vorhandene (retroaktive) Protokolleintrag wurde einmalig
+  mit einer id nachgerüstet und gespiegelt.
+- Getestet: Schema-Erstellung, Spiegeln, Volltextsuche — Ende-zu-Ende mit
+  einem echten Testeintrag verifiziert (danach wieder entfernt, kein echtes
+  Ereignis).
 
 ### Baustein 6 — Zwei neue Tabs in flarumstyler (OFFEN)
 
@@ -145,7 +160,7 @@ Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
   ● Baustein 2  Container-Upgrade         FERTIG
   ● Baustein 3  Umgedrehter Neugier-Dienst FERTIG (Dienst noch nicht gestartet)
   ● Baustein 4  Deterministisches Protokoll FERTIG
-  ○ Baustein 5  Postgres-Spiegel          offen
+  ● Baustein 5  Postgres-Spiegel          FERTIG
   ○ Baustein 6  flarumstyler-Tabs         offen
 ```
 
