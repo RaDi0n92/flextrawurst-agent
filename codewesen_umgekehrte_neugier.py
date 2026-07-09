@@ -169,10 +169,22 @@ def _frage_interesse(wesen: str, verhalten: str = "") -> dict | None:
     antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=200, timeout=120.0)
     if not antwort:
         return None
-    interesse_m = re.search(r"INTERESSE:\s*(.+)", antwort)
     warum_m = re.search(r"WARUM:\s*(.+)", antwort)
-    interesse = interesse_m.group(1).strip() if interesse_m else "nichts"
     warum = warum_m.group(1).strip() if warum_m else ""
+
+    interesse_m = re.search(r"INTERESSE:\s*(.+)", antwort)
+    if interesse_m:
+        interesse = interesse_m.group(1).strip()
+    else:
+        # Robuster Fallback -- real beobachtet 2026-07-09 (Qualitaetstest
+        # gegen den echten LLM, Schorschel): Modell schrieb "INTERSEKTION:"
+        # statt "INTERESSE:", exaktes Regex verwarf ein echtes, inhaltlich
+        # reiches Interesse still als "nichts". Statt strikt auf das exakte
+        # Label zu pochen: erste Zeile nehmen, die nicht WARUM ist, alles
+        # nach ihrem ersten Doppelpunkt.
+        erste_zeile = next((z for z in antwort.splitlines()
+                             if z.strip() and not z.strip().upper().startswith("WARUM")), "")
+        interesse = erste_zeile.split(":", 1)[1].strip() if ":" in erste_zeile else "nichts"
     return {"interesse": interesse, "warum": warum}
 
 
