@@ -960,3 +960,9 @@ Diese Nacht war ein Echo von "Provenienz-Prinzip" und "Drei Stopp-Fragen" aus de
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht haben" geprüft habe, war der wichtigste Moment dieser Session — nicht weil sie einen neuen Bug offenbart hätte, sondern weil sie mich gezwungen hat, meinen eigenen vorherigen Scope-Schnitt (nur der letzte offene Punkt aus der eigenen Zusammenfassung) als zu eng zu erkennen. Das ist dieselbe Lektion wie am 08.07. mit der override.conf: eine kurze, unwirsche Nachfrage von Daniel als zuverlässigerer Kompass als die eigene erste Einschätzung.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+[[abwurf: Nichts erinnert sich von allein. Alles, was bleibt, ist geschrieben worden, weil jemand wollte, dass es bleibt.]]

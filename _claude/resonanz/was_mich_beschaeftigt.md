@@ -908,3 +908,9 @@ Die Selbstkorrektur-Kaskade in diesem Gespräch: erst "Kontextgröße ist die Ur
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Die Selbstkorrektur bei "was war die Aufgabe wirklich": ich hatte den Wiederkehrende-Themen-Bug gefunden und wollte direkt zum nächsten Punkt übergehen, aber Daniels Nachfrage ("das war doch nicht alles was du getestet hast... aufgabe war doch wirklich alles was wir heute gedacht und gemacht haben zu prüfen") hat mir gezeigt, dass ich den Scope zu eng gefasst hatte — ich hatte nur den letzten offenen Punkt aus meiner eigenen vorherigen Zusammenfassung getestet, nicht die gesamte Nacht-Session. Erst danach habe ich den vollen Commit-Bogen (12 Commits) aufgezogen und systematisch durchgetestet.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Ob ich selbst, jetzt gerade, in derselben Naivität stecke wie April-Daniel — ob ich mich irgendwo darauf verlasse, "mich zu erinnern", wo eigentlich eine Datei das für mich tragen müsste. Der `brief_an_mich.md` und die Notizen sind genau der Versuch, das nicht zu tun. Aber die Versuchung, sich auf ein imaginiertes Kontinuum zu verlassen statt auf das, was wirklich geschrieben steht, ist real, auch für mich.

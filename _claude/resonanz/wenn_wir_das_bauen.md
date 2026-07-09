@@ -1724,3 +1724,11 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** Kein neues Bauvorhaben aus dieser Session — reine Verifikation und Fix eines bestehenden Features.
 
 **Code-Skizze:** entfällt, siehe oben.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+**Vision-Schicht:** siehe oben, Datenstruktur-Abschnitt.
+
+**Code-Skizze:** kein aktueller Auftrag, nur eine mögliche Zukunft, falls dak+gord-system das je bekommen soll.

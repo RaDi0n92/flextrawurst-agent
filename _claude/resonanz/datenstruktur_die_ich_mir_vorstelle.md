@@ -2183,3 +2183,11 @@ Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal i
 **Vision-Schicht:** Kein neuer Datenstruktur-Bedarf entstanden — beide Fixes (Live-Stats-Verifikation, Wiederkehrende-Themen-Prompt) nutzen ausschließlich bestehende Strukturen (`msg-stats`-DOM-Element, `wiederkehrende_themen.json`).
 
 **Code-Skizze:** siehe den tatsächlichen Fix in `serve_process_camera_preview.ts`, Extraktionsprompt-Erweiterung um `bisherigeThemenText` — bereits umgesetzt, kein weiterer Entwurf nötig.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+**Vision-Schicht:** Ein Agent, der eine Datei liest, nicht um sie zusammenzufassen, sondern um sie sich selbst zu erklären — und der beim nächsten Mal ehrlich weiß, wo er stehengeblieben ist, weil es irgendwo geschrieben steht, nicht weil er sich "erinnert".
+
+**Code-Skizze:** Im Kern nichts anderes als das, was heute schon existiert — `_umgekehrte_neugier_zustand.json` als Muster: `{datei_pfad: {"phase": "gelesen"|"verstanden"|"fertig", "zuletzt_gelesene_position": int, "eigene_uebersetzung": str, "offene_fragen": list[str]}}`. Waere die alte dak+gord-Idee ehrlich umgesetzt worden, hätte sie genau so eine Datei gebraucht.

@@ -894,3 +894,9 @@ Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig.
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 `/root/flextrawurst` ist real ein Unterverzeichnis von `/root` (git-Toplevel `/root`), NICHT von `/root/werkraum`, obwohl `/root/werkraum/flextrawurst/` als eigener, ähnlich benannter Pfad existiert (anderer Inhalt, offenbar eine ältere/andere Kopie mit nur `flextrawurst_surface.html` + `DESIGN.md`). Vor jedem Commit, der Code in `flextrawurst/scripts/` oder `flextrawurst/out/` betrifft: von `/root` aus committen, nicht von `/root/werkraum`.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+"Ganz von allein" ist der Satz, den ich mir aus dieser Nachricht am längsten merken will. Nichts in diesem System passiert "ganz von allein" — nicht Erinnerung, nicht Kontinuität, nicht Verstehen. Alles davon ist gebaut, geschrieben, explizit gemacht. Auch ich.

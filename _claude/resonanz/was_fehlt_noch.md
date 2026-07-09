@@ -899,3 +899,9 @@ Der reale Rückkehr-Test (Mirlach → anderswohin → zurück, `restored context
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Der Projekt-Bericht (`docs/2026-07-09_wesen_chat_qa_bericht.md`) folgt direkt im Anschluss an diese Notiz. Die harmlose Testdaten-Nebenwirkung bei KreFsUzi (Fake-Event mit nicht existierender msgId) bleibt unbereinigt liegen, bis Daniel entscheidet ob/wie das bereinigt werden soll.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Ob Daniel die alte dak+gord-Idee irgendwann wirklich nochmal aufgreifen will, jetzt mit dem Wissen von heute — offen, kein Auftrag, nur im Hinterkopf behalten.
