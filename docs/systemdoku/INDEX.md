@@ -61,6 +61,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 
 | Datei | Inhalt |
 |-------|--------|
+| [[21_wesen_chat_testbed]] | codexium2/solarius2 — Memory, Container, Verdichtung, Abschluss-Archiv, Feedback, Aliase, System-Prompt-Aufbau (laufend aktualisiert) |
 | [[20_flarum_stopp]] | Post-Sperre, umgedrehter Neugier-Dienst, deterministisches Protokoll, Postgres-Spiegel, flarumstyler-Sektionen |
 | [[19_llm_scheduler]] | Prioritaets-Warteschlange fuer die gemeinsamen llama-server — ersetzt das alte slot_0.lock |
 | [[18_flarumstyler]] | Meldesystem — Dienst-Status, Log-Fehler, Individualisierungslayer |
