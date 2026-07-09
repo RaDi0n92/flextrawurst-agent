@@ -279,6 +279,18 @@ Nicht selbst entschieden, Daniel vorgelegt: ob PRIO_HOCH so bleibt (Trade-off ak
 
 **Entscheidung (Daniel, direkt danach):** PRIO_HOCH bleibt. Kein weiterer Code-Eingriff nötig — der Live-Stand seit 16:26 Uhr ist bereits die gewählte Konfiguration.
 
+### Baustein 10 — Szenario-Simulation der eigentlichen Ablauflogik (2026-07-09, spätnachmittags)
+
+Baustein 9 hatte Daniels Auftrag missverstanden: *"es ging niemals um die dumme reihenfolge der wesen...es ging um die abläufe der events/meinen wünschen wie etwas funktionieren soll/die schritte etc."* Gemeint war nicht der LLM-Scheduler, sondern der ursprüngliche Bauplan vom 2026-07-09, 00:20 Uhr — der Zyklus aus *Lesen → Entscheiden (vertiefen/verlassen+neu wählen) → bewusstem Kontext-Entfernen* — und die daraus später gebaute Runden-Maschine (Schritt 1 für alle, dann rundenweise Schritt 2..N, siehe Nachtrag oben).
+
+Gebaut: `simulation_umgekehrte_neugier.py`. Treibt die echten Funktionen aus `codewesen_umgekehrte_neugier.py` (`_phase_interesse`, `_phase_lesen_schritt`, `_naechster_kandidat`, `_beende_sitzung`) unverändert durch 200 zufällig erzeugte Event-Reihenfolgen — welches Wesen wann "nichts"/etwas will, Treffer/keine Treffer, welche Entscheidung, Gegenprüfung ja/teilweise/nein, LLM-Fehler an zufälligen Stellen (bis zu 15% Fehlerrate je Aufruf in einem Teil der Läufe). Gemockt werden nur die echten I/O-Ränder (`_llm`, `flarum_api.suche_diskussionen`/`get_discussion`, `container.sichere`/`liste`, `protokoll.schreibe`, `dienst_konfiguration.lade`) — die eigentliche Ablauflogik ist der reale, unveränderte Code.
+
+Sieben Eigenschaften aus dem Bauplan unabhängig geprüft (nicht nur behauptet — z.B. wird "Kontext-Entfernen" gegen eine zweite, unabhängig berechnete Chunk-Slicing-Logik verglichen, nicht gegen denselben Code, der geprüft wird): Rundenreihenfolge, bewusstes Kontext-Entfernen, Chunk-Deckel, Fund-Deckel, Nie-nach-Flarum-Posten, Suchbegriff-Übersetzung nur bei 0 Treffern, Entscheidungs-Gegenprüfung verändert den Wesen-Text nie, sauberer Fallback bei LLM-Fehlern an jeder Stelle. Ergebnis: alle 7 Eigenschaften halten über alle 200 Läufe.
+
+**Nebenbefund unterwegs, sofort korrigiert:** Der Modul-Import von `codewesen_umgekehrte_neugier.py` hängt per `logging.basicConfig()` einen `FileHandler` an den **ROOT**-Logger (nicht an `cun.log` selbst — der propagiert nur dorthin), ungefiltert bei jedem Import. Zwei Testläufe dieser Simulation haben dadurch versehentlich über 5000 simulierte Log-Zeilen in die echte Live-Logdatei des laufenden Dienstes (`umgekehrte_neugier.log`) geschrieben — beide Male bemerkt (Zeilenzahl-Kontrolle nach dem Lauf), auf die reale letzte Zeile vor der Kontamination zurückgeschnitten, keine echten Zeilen verloren. Fix im Simulationsskript: der `FileHandler` wird nach dem Import gezielt vom Root-Logger entfernt, bevor irgendein Szenario läuft.
+
+Getestet: `py_compile`, Skript zweimal komplett ausgeführt (zweiter Lauf verifiziert den Logging-Fix), Live-Logdatei nach beiden Läufen auf Unversehrtheit geprüft.
+
 ---
 
 ## Wiederaufnahme
