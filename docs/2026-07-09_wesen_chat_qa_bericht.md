@@ -93,3 +93,37 @@ Daniels Nachfrage nach den QA-Ergebnissen ("wozu haben wir das vorher durchgespr
 **Real getestet** (curl gegen QATestWesen + Playwright gegen die echte Domain): Migration bestätigt (Archiv zeigt migrierten Eintrag, `letzter_abschluss.md` bleibt liegen), zweiter unabhängiger Archiv-Eintrag nach neuer Generierung/Übernahme, Einzelauswahl (nur gewählter Text im System-Prompt, anderer fehlt), Mehrfachauswahl (beide Texte vorhanden), Default ohne Auswahl (Block komplett abwesend), Sessions-Liste zeigt 📖 korrekt nur bei der Session mit Abschluss, Detailansicht zeigt den Story-Text vollständig oben.
 
 **Offen:** keine bekannten Lücken in diesem Feature. Scope bewusst wie bisher testbed-exklusiv (codexium2/solarius2) gehalten, nicht auf alle 4 Spawner erweitert — das war nie Teil der Absprache mit Daniel für dieses Feature.
+
+---
+
+## Zweiter Nachtrag: Memory-Dedupe-Fix (drei Iterationen, ehrlich unvollständig gelöst)
+
+Bei der "such mal überall nach Spuren"-Recherche fiel ein am 2026-07-04 in `memory_container.md` dokumentierter, nie geklärter Verdacht auf: seit Container-Pins über Sessions hinweg bestehen bleiben (statt geleert zu werden), könnte derselbe Pin bei mehreren Memory-Extraktionsläufen wiederholt neu geschrieben werden. Auf Daniels Bitte real getestet — der Verdacht bestätigte sich, und wurde in drei Iterationen behoben, jede durch einen echten Fehlschlag der vorherigen motiviert.
+
+### Iteration 1 — Jaccard-Wortüberlapp (Commit `b3cdd3a0`)
+
+**Befund:** frischer Testcharakter, ein eindeutiger Container-Pin, zwei Memory-Extraktionsläufe ohne neue Nachrichten dazwischen → 4 von 6 neuen Einträgen im zweiten Lauf waren Umformulierungen des ersten Laufs (z.B. "Der Komet Xarnovin stand vor Ewigkeiten am Himmel und markiert den Beginn meiner Sammlung violetten Glas." → "Der Komet Xarnovin markiert den Beginn meiner Sammlung aus violettem Glas."). Der bisherige exakte String-Vergleich (`kat.eintraege.includes(text)`) erkennt sowas nicht.
+
+**Fix:** `istAehnlichZuBestehendem()` vergleicht jeden Kandidaten per Jaccard-Wortüberlapp (`tokenisiere()`, wiederverwendet vom automatischen Relevanzabruf) gegen bestehende Einträge, Schwelle 0.45. Treffer zählen als eigener `dedupliziert`-Counter.
+
+**Zweittest:** griff — ein echter Duplikat-Kandidat wurde korrekt abgefangen. Aber ein anderer Fall rutschte durch: "Fingerhüte" vs. "Fingerhüten" (Deklination) senkte den berechneten Überlapp unter die Schwelle.
+
+### Iteration 2 — Leichte Stamm-Normalisierung (versehentlich im Commit `3213a2f5` gelandet, nicht dokumentiert)
+
+**Fix:** `stammform()` schneidet vor dem Vergleich häufige deutsche Endungen ab (-ern/-em/-en/-er/-es/-e, Mindest-Stammlänge 4), damit Deklinationsformen wie "Fingerhüte"/"Fingerhüten" oder "kleinen"/"kleine" als dasselbe Wort zählen. Isoliert unit-getestet (Node-Skript) bevor der Server neu gestartet wurde: durchgerutschter Fall jetzt bei 0.5 statt 0.25, echte Gegenprobe (zwei verschiedene Sätze) bleibt bei 0, bereits funktionierender Fall bleibt bei 0.75.
+
+**Live-Retest (dritter Wegwerf-Testcharakter):** Ähnlichkeitswerte stimmten wie berechnet — aber ein neues Problem zeigte sich: zwei klare Duplikate rutschten trotzdem durch, weil das Modell dieselbe Aussage beim zweiten Lauf in eine ANDERE Memory-Kategorie einsortierte (`wesen_selbst` → `meinungen`). Der Dedupe-Check verglich bisher nur innerhalb derselben Kategorie (`kat.eintraege`).
+
+### Iteration 3 — Vergleich über alle Kategorien hinweg (Commit `f105f6dd`)
+
+**Fix:** `alleBisherigenTexte` sammelt alle Einträge über alle Kategorien hinweg, wächst live mit neu akzeptierten Kandidaten mit (fängt auch Duplikate innerhalb derselben Modellantwort).
+
+**Vierter, gründlichster Testlauf:** `dedupliziert: 4` im zweiten Extraktionslauf — aber beim vollständigen, manuellen Durchlesen der finalen `memory.json` (nicht nur auf den Zähler geschaut) fanden sich **mindestens 4 weitere, unentdeckte Duplikate**, z.B. "Das Herausholen des violetten Fingerhuts..." vs. "Das Heraufziehen eines violetten Fingerhutes...". Grund: echte Paraphrasen mit anderem Vokabular ("herausholen" vs. "heraufziehen", "ertragen" vs. "erträglich sein") — das ist keine Deklinations-Endung mehr, sondern echte Synonym-Wahl des Modells, die ein reiner Wortvergleich strukturell nicht erkennen kann.
+
+### Ehrliches Fazit
+
+Der Fix ist eine echte, mehrfach verifizierte Verbesserung — fängt exakte Wiederholungen, Wortstellungs-Varianten und Deklinationsformen zuverlässig ab, die vorher komplett unbemerkt durchgingen. Er ist **keine vollständige Lösung**: echte Paraphrasen mit unterschiedlichem Vokabular rutschen weiterhin durch, weil das eine strukturelle Grenze reinen Wortüberlapps ohne semantisches Verständnis (Embeddings) ist — und ein lokales Embedding-Modell ist auf dieser CPU-only-VPS bewusst nicht im Einsatz (mehrfach so entschieden, siehe `provenienz_logging.md`). Eine niedrigere Ähnlichkeits-Schwelle würde das nicht beheben, sondern nur das Risiko erhöhen, echte unterschiedliche Inhalte fälschlich als Duplikat zu verwerfen.
+
+**Offen, Daniel-Entscheidung:** ob der jetzige Teilerfolg reicht, oder ob nach einem für diese Hardware tragbaren, lokal lauffähigen Embedding-Modell gesucht werden soll.
+
+**Nebenbefund, dokumentiert aber nicht behoben:** ein einzelner Container-Pin ohne begleitende Chat-Erwähnung wurde bei einem ersten (kontaminierten) Testlauf gar nicht extrahiert — die Extraktion scheint primär aus dem Gesprächsverlauf zu schöpfen, nicht direkt aus gepinnten Fragmenten ohne Konversationsbezug. Separater Verdacht, nicht Teil dieses Fixes, nicht weiter verfolgt.
