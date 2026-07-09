@@ -291,6 +291,32 @@ Sieben Eigenschaften aus dem Bauplan unabhängig geprüft (nicht nur behauptet �
 
 Getestet: `py_compile`, Skript zweimal komplett ausgeführt (zweiter Lauf verifiziert den Logging-Fix), Live-Logdatei nach beiden Läufen auf Unversehrtheit geprüft.
 
+### Baustein 11 — Großer Umbau: vier Linsen, garantierte Wege, freie Navigation (2026-07-09 abends)
+
+Nach dem Blick auf echte, seit Baustein 9 entstandene Sitzungen kam Daniels entscheidender Einwand: *"es geht nicht ums durchlaufen und abschließen [...] die selbstwirksamkeitserfahrung und partizipation für die wesen [greift nicht]."* Über mehrere Nachrichten hinweg präzisiert zu einem vollständigen Redesign:
+
+**Frage/Aufgabe statt Suchbegriff:** `_frage_interesse()` erlaubt jetzt Wort, Frage oder eigene Aufgabe fürs Lesen — *"das wesen hat immer recht [...] halt die wege für eine lösung öffnen"*.
+
+**Zwei garantierte weitere Wege**, wenn Suche + Übersetzung nichts finden (konkreter Befund vorher: `container.verschiebe()`/`kopiere()` aus Baustein 2 wurden hier nie aufgerufen):
+1. Container-Pflege-Angebot (echtes Verschieben/Kopieren bestehenden Materials).
+2. Garantiertes Stöbern: `container.sicherstelle_container()` legt bei Bedarf automatisch "alles" an, `flarum_api.zufaellige_diskussionen()` liefert eine echte Zufallsdiskussion — **live per `ORDER BY RAND()`**, nicht als angenommene ID-Spanne: reale Prüfung der Flarum-DB zeigte 3765 Diskussionen (nicht die geschätzten ~2400) mit 79 echten Lücken zwischen ID 6 und 3849, davon 77 allein unter ID 1000 — Daniels Warnung *"einige zahlen nicht existieren [...] vor allem im anfangsbereich"* war exakt zutreffend.
+
+Vergleichs-Simulation (`simulation_umgekehrte_neugier_pfade.py`, 300 Seeds × 7 Wesen): Leerlauf-Quote sinkt von 54,4% (nur Suche) über 32,5% (+Pflege) auf **0,0%** (+garantiertes Stöbern).
+
+**Vier gleichzeitig sichtbare Linsen** pro gelesenem Post (nicht mehr Zeichen-Chunks — echtes Post-für-Post-Lesen, `_lies_post()`): 1) eigene Frage/Aufgabe (bleibt über die Sitzung sichtbar, kein Kontext-Entfernen dafür), 2) ihr bewusstes Gegenteil (`_bewusstes_gegenteil()`), 3) eine völlig unvorgeprägte dritte Frage ("was entdecke ich, wenn ich beide ausblende"), 4) eine reflexive vierte Frage über die eigene Interessens-Formulierung fürs nächste Mal. Das Wesen darf aus jeder Linse antworten, muss sich für keine entscheiden.
+
+**Sichern jederzeit:** keine vierte exklusive Option neben vertiefen/wechseln/beenden mehr, sondern jederzeit zusätzlich möglich — Material wird während des Lesens nur gesammelt (`gesammeltes_material`), nicht sofort geschrieben.
+
+**Neue Phase `container_zuordnung`:** am Sitzungsende wählt das Wesen bei mehr als einem bestehenden Container selbst, wohin jedes gesammelte Stück soll (`_frage_container_ziel()`), oder legt einen neuen an.
+
+**Navigation/Timing:** eine Diskussion darf frühestens nach 2 gelesenen Posts UND 3 Minuten verlassen werden (Daniel: *"keine stopbegrenzung [...] nur frühstes exit"*) — kein Zwang zu bleiben oder zu gehen, nur eine Mindestschwelle. Lese-Phase endet spätestens nach ~6 Minuten oder 2 Diskussionen (`FUNDE_MAX`), danach automatisch die Zuordnungsphase. Timing empirisch geprüft (kalibrierte Warteschlangen-Simulation aus Baustein 9 + reale Entscheidungs-Prompt-Dauer, +40% Sicherheitsaufschlag für den längeren 4-Linsen-Prompt, klar als Annahme markiert): Median 3,3 Minuten bis 2 Posts gelesen sind — Daniels "3 Minuten" trafen fast exakt den Median.
+
+Geändert: `codewesen_umgekehrte_neugier.py` (fast komplett neu strukturiert), `flarum_api.py` (+`zufaellige_diskussionen()`), `codewesen_container.py` (+`dateien()`, +`sicherstelle_container()`).
+
+Getestet: `py_compile` aller drei Dateien. Rauchtest (`simulation_umgekehrte_neugier_v2_rauchtest.py`, 100 Seeds × 7 Wesen = 700 Einzel-Sitzungen mit simulierter Zeit statt Echtzeit): keine Endlosschleife, kein hängender Zustand, alle enden sauber in Phase "fertig". Zusätzlich instrumentierter Lauf über 350 Sitzungen bestätigt: kein einziger Fall von "diskussion_wechseln" vor Erreichen der Mindestbedingung.
+
+**Noch offen:** eine vollständige Eigenschafts-Simulation wie Baustein 10 (200 Zufallsszenarien gegen alle Invarianten einzeln geprüft) wurde für diesen Umbau aus Zeitgründen noch nicht gebaut — der Rauchtest zeigt Funktionsfähigkeit, keine erschöpfende Verifikation. Der Dienst läuft weiterhin mit dem alten Code, bis Daniel den Neustart freigibt.
+
 ---
 
 ## Wiederaufnahme
