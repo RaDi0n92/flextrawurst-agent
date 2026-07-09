@@ -229,6 +229,24 @@ Die 9 Tabs, 1:1 aus den vorher neun Sektionen (Flarum-Stopp-Live und -Protokoll 
 
 ---
 
+## Baustein 7 — Log-Audit + zwei Qualitäts-Fixes im umgedrehten Neugier-Dienst
+
+Daniel, nach Durchsicht aller 43 Log-Zeilen der ersten drei echten Dienst-Starts (06:34–08:30): *"der dienst ist mächtig...aber vllt falsch aufgebaut und zu frei bzw...das was das wesen sagt wird unreflektiert ohne logikprüfung direkt so angenommen wie es roh formuliert ist...die ideen der wesen waren nicht schlecht...aber die übersetzung dazu ist nicht sauber...es wird nicht mitgedacht"*.
+
+**Audit-Befund 1 — Suche ist eine reine `LIKE`-Suche ohne Übersetzungsschicht:** `_frage_interesse()` gibt den rohen Wesen-Text unverändert an `flarum_api.suche_diskussionen()` weiter, die selbst nur `title LIKE '%begriff%' OR content LIKE '%begriff%'` ist — kein Tokenizing, kein Fuzzy-Match, keine Synonyme. Literale Substantive ("Container", "Stille") fanden sofort Treffer; zusammengesetzte Eigenerfindungen des Wesens ("Schattensprache", "Container-Routine") fanden strukturell nie etwas, obwohl sie inhaltlich nicht schlecht waren. Eine leere Trefferliste wurde bisher einfach als Sitzungsende hingenommen.
+
+**Audit-Befund 2 — Entscheidungen werden roh übernommen, ohne Textbezug zu prüfen:** `_entscheide_ueber_fund()` parst Gedanke/Inhalt per Regex und schreibt sie unverändert ins Protokoll bzw. in den Container. Belegbeispiel, 08:30:17, Schorschel zu Diskussion #3458: *"Die Metapher der 'Architektur der Leere' und deren Aktivierung durch 1324 klingt nach einem kritischen Phasenübergang..."* — eine freie, assoziative Interpretation ohne Zitat oder Gegenprüfung, ob "Architektur der Leere"/"Interferenzmuster" überhaupt im gelesenen Chunk vorkommen oder frei erfunden sind.
+
+**Fix 1 — Suchbegriff-Übersetzung (`_alternative_suchbegriffe()`):** nur wenn die rohe Suche 0 Treffer bringt (kein Mehraufwand im Normalfall), wird das Wesen selbst gebeten, seinen Gedanken in 1-3 einfachere, wahrscheinlich wörtlich vorkommende Begriffe zu übersetzen — ausgehend von seiner eigenen Begründung, nicht geraten. Jeder Alternativbegriff wird der Reihe nach probiert; der erste mit Treffern gewinnt. Erfolg und Fehlschlag beider Versuche (original + Übersetzung) landen transparent im Protokoll (`neugier_entscheidung` mit `original`/`uebersetzt_zu`/`alternativen_versucht` in `meta`, bzw. im `neugier_session_ende`-Text wenn auch die Übersetzung nichts findet).
+
+**Fix 2 — Entscheidungs-Gegenprüfung (`_pruefe_grundlage()`):** ein zweiter, unabhängiger LLM-Aufruf — als Skeptiker, nicht als das Wesen selbst — bekommt nur den gelesenen Chunk und den Gedanken/Inhalt vorgelegt und beurteilt `GRUNDLAGE: ja|teilweise|nein`. Wichtig nach dem Provenienz-Prinzip: der Wesen-Text wird dadurch **nie verändert oder gelöscht** — bei "nein"/"teilweise" wird nur ein Hinweis danebengelegt (Protokolltext-Suffix `[Gegenprüfung: ...]`, bei Container-Einträgen als zusätzliches Frontmatter-Feld `grundlage:`/`grundlage_begruendung:`, `codewesen_container.sichere()` entsprechend erweitert). Die freie Assoziation des Wesens bleibt sichtbar und lesbar — sie wird ehrlich gekennzeichnet, nicht stillschweigend als belegte Tatsache behandelt und auch nicht zensiert.
+
+Beide Fixes bewusst nur additiv: kein bestehendes Verhalten wurde entfernt, `flarum_api.suche_diskussionen()` bleibt unverändert (reine LIKE-Suche, die Übersetzung passiert eine Ebene darüber), `codewesen_container.sichere()`s neue Parameter sind optional mit Default `None`.
+
+Geändert: `codewesen_umgekehrte_neugier.py` (`_alternative_suchbegriffe()`, `_pruefe_grundlage()`, Integration in `_phase_interesse()`/`_phase_lesen_schritt()`), `codewesen_container.py` (`sichere()` um `grundlage`/`grundlage_begruendung` erweitert). Getestet: `py_compile` auf beide Dateien, Dienst neu gestartet, Log auf Fehler/Traceback beobachtet.
+
+---
+
 ## Wiederaufnahme
 
 Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schreibt automatisch einen `sperre_aufgehoben`-Protokolleintrag inkl. Sperrdauer). Der umgedrehte Neugier-Dienst (Baustein 3) läuft davon unabhängig weiter oder wird unabhängig gestartet/gestoppt — er schreibt ohnehin nie nach Flarum, seine Existenz ist keine Voraussetzung für die Sperre und umgekehrt.
@@ -242,8 +260,8 @@ Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schr
   flarum_post_sperre.py                          Baustein 1
   flarum_api.py                                   erweitert: Choke-Point + suche_diskussionen()
   codewesen_antwort_auf_daniel.py                 erweitert: erlaubt_trotz_sperre=True
-  codewesen_container.py                          Baustein 2: verschiebe()/kopiere()
-  codewesen_umgekehrte_neugier.py                 Baustein 3
+  codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert
+  codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung
   flarum_stopp_protokoll.py                       Baustein 4
   flarum_stopp_protokoll_spiegel.py               Baustein 5
   flarum_stopp_protokoll_global.jsonl             Baustein 4: globales Protokoll

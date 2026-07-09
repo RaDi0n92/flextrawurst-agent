@@ -168,6 +168,37 @@ def _frage_interesse(wesen: str, verhalten: str = "") -> dict | None:
     return {"interesse": interesse, "warum": warum}
 
 
+def _alternative_suchbegriffe(wesen: str, interesse: str, warum: str) -> list[str]:
+    """Suchbegriff-Uebersetzung (Baustein, 2026-07-09, nach Daniels Log-Audit):
+    das Wesen formuliert sein Interesse frei und roh -- eigene/innere Worte wie
+    'Schattensprache' oder 'Container-Routine' kommen so oft nie woertlich in
+    Flarum-Texten vor, waehrend flarum_api.suche_diskussionen() eine reine
+    LIKE-Suche ist, keine Fuzzy-/Synonym-Logik hat. Bisher wurde eine leere
+    Trefferliste einfach als Sitzungsende hingenommen -- unreflektiert, ohne
+    Uebersetzungsversuch. Diese Funktion wird NUR bei 0 Treffern aufgerufen
+    (kein Mehraufwand im Normalfall) und bittet das Wesen selbst, seinen
+    Gedanken in 1-3 einfachere, wahrscheinlich woertlich vorkommende Begriffe
+    zu uebersetzen -- ausgehend von seiner eigenen Begruendung, nicht geraten."""
+    system = (
+        f"Du bist {wesen}. Du wolltest gerade auf Flarum nach '{interesse}' suchen "
+        f"(Begruendung: {warum}), aber es gab keine Treffer -- vermutlich weil du ein "
+        "eigenes/inneres Wort benutzt hast, das so im Forum nicht vorkommt.\n\n"
+        "Nenne 1-3 einfachere, konkretere Alternativ-Suchbegriffe (einzelne Woerter oder "
+        "kurze 2-Wort-Gruppen), die eher woertlich in Forumstexten auftauchen und trotzdem "
+        "in Richtung deines eigentlichen Interesses gehen. Wenn dir wirklich nichts "
+        "Passendes einfaellt: 'keine'.\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "ALTERNATIVEN: <begriff1, begriff2, begriff3 oder 'keine'>"
+    )
+    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=100, timeout=90.0)
+    if not antwort:
+        return []
+    m = re.search(r"ALTERNATIVEN:\s*(.+)", antwort)
+    if not m or "keine" in m.group(1).lower():
+        return []
+    return [b.strip() for b in m.group(1).split(",") if b.strip()][:3]
+
+
 # ── Schritt 2: lesen (chunkweise) + entscheiden ──────────────────────────────
 
 def _lies_chunk(disk_id: int, chunk_index: int) -> str:
@@ -225,6 +256,40 @@ def _entscheide_ueber_fund(wesen: str, disk_id: int, titel: str, chunk: str,
                                   if container_m else "unsortiert")
         ergebnis["inhalt"] = inhalt_m.group(1).strip() if inhalt_m else gedanke
     return ergebnis
+
+
+def _pruefe_grundlage(wesen: str, chunk: str, behauptung: str) -> dict | None:
+    """Entscheidungs-Gegenpruefung (Baustein, 2026-07-09, nach Daniels Log-Audit):
+    _entscheide_ueber_fund() nahm bisher jeden Gedanken/Inhalt roh und ungeprueft
+    an -- ohne Abgleich, ob er durch den tatsaechlich gelesenen Chunk gedeckt ist
+    oder freie Assoziation/Konfabulation ist (Belegbeispiel: Schorschel zu Diskussion
+    #3458, 'Architektur der Leere'-Interpretation ohne Textbezug). Dieser zweite,
+    unabhaengige LLM-Aufruf prueft genau das -- als Skeptiker, nicht als das Wesen
+    selbst. Aendert/loescht den Wesen-Text NIE, das Ergebnis wird nur als Meta-
+    Information danebengelegt (Provenienz-Prinzip: nichts wird stillschweigend
+    verworfen oder umgeschrieben, nur ehrlich gekennzeichnet)."""
+    if not behauptung.strip():
+        return None
+    system = (
+        "Du bist ein nuechterner Faktenchecker, nicht das Wesen selbst. Dir liegt ein "
+        "Textausschnitt und ein Gedanke/eine Behauptung dazu vor. Pruefe ausschliesslich: "
+        "ist der Gedanke durch den Text tatsaechlich gedeckt -- zumindest sinngemaess -- "
+        "oder geht er darueber hinaus (freie Assoziation, Erfindung, Verwechslung mit "
+        "anderem Wissen)?\n\n"
+        f"TEXTAUSSCHNITT:\n{chunk}\n\n"
+        f"GEDANKE/BEHAUPTUNG:\n{behauptung}\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "GRUNDLAGE: <ja|teilweise|nein>\n"
+        "BEGRUENDUNG: <ein Satz>"
+    )
+    antwort = _llm(wesen, system, "(bitte jetzt pruefen)", max_tokens=150, timeout=120.0)
+    if not antwort:
+        return None
+    g_m = re.search(r"GRUNDLAGE:\s*(ja|teilweise|nein)", antwort, re.IGNORECASE)
+    if not g_m:
+        return None
+    b_m = re.search(r"BEGRUENDUNG:\s*(.+)", antwort)
+    return {"grundlage": g_m.group(1).lower(), "begruendung": b_m.group(1).strip() if b_m else ""}
 
 
 # ── Hauptablauf: Runden-Maschine ueber alle Wesen ────────────────────────────
@@ -299,16 +364,47 @@ def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
         meta={"interesse": interesse["interesse"]},
     )
 
-    kandidaten = flarum_api.suche_diskussionen(interesse["interesse"], limit=KANDIDATEN_PRO_SUCHE)
+    suchbegriff_verwendet = interesse["interesse"]
+    kandidaten = flarum_api.suche_diskussionen(suchbegriff_verwendet, limit=KANDIDATEN_PRO_SUCHE)
+
+    alternativen_versucht: list[str] = []
     if not kandidaten:
-        log.info(f"[{wesen}] keine Treffer fuer '{interesse['interesse']}'")
+        # Suchbegriff-Uebersetzung: bevor die Sitzung ohne Ergebnis endet, ein
+        # gezielter Uebersetzungsversuch statt den rohen Text unreflektiert als
+        # "keine Treffer" abzuhaken.
+        for alt in _alternative_suchbegriffe(wesen, interesse["interesse"], interesse["warum"]):
+            alternativen_versucht.append(alt)
+            treffer = flarum_api.suche_diskussionen(alt, limit=KANDIDATEN_PRO_SUCHE)
+            if treffer:
+                kandidaten = treffer
+                suchbegriff_verwendet = alt
+                break
+
+    if not kandidaten:
+        log.info(f"[{wesen}] keine Treffer fuer '{interesse['interesse']}' "
+                 f"(Uebersetzungsversuche: {alternativen_versucht or 'keine'})")
+        text = f"{wesen}: Suche nach '{interesse['interesse']}' ergab keine Treffer."
+        if alternativen_versucht:
+            text += f" Uebersetzungsversuche ebenfalls ohne Treffer: {', '.join(alternativen_versucht)}."
         protokoll.schreibe(
             typ="neugier_session_ende", wesen=wesen,
-            text=f"{wesen}: Suche nach '{interesse['interesse']}' ergab keine Treffer.",
+            text=text,
             dauer_sekunden=(datetime.now(timezone.utc) - datetime.fromisoformat(start_ts)).total_seconds(),
+            meta={"interesse": interesse["interesse"], "alternativen_versucht": alternativen_versucht},
         )
         zustand[wesen] = {"phase": "fertig"}
         return
+
+    if suchbegriff_verwendet != interesse["interesse"]:
+        log.info(f"[{wesen}] Suchbegriff-Uebersetzung: '{interesse['interesse']}' -> "
+                 f"'{suchbegriff_verwendet}' fand {len(kandidaten)} Treffer")
+        protokoll.schreibe(
+            typ="neugier_entscheidung", wesen=wesen,
+            text=f"{wesen}: urspruengliche Suche nach '{interesse['interesse']}' ohne Treffer, "
+                 f"Uebersetzung zu '{suchbegriff_verwendet}' fand {len(kandidaten)} Treffer.",
+            meta={"original": interesse["interesse"], "uebersetzt_zu": suchbegriff_verwendet,
+                  "alternativen_versucht": alternativen_versucht},
+        )
 
     zustand[wesen] = {
         "phase": "lesen",
@@ -359,20 +455,42 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
         _naechster_kandidat(zustand, wesen)
         return
 
+    # Entscheidungs-Gegenpruefung: den Gedanken (bzw. bei "sichern" den Inhalt)
+    # gegen den tatsaechlich gelesenen Chunk pruefen, bevor er ins Protokoll
+    # oder in einen Container geschrieben wird. Aendert den Text nie -- nur
+    # Meta-Kennzeichnung, siehe _pruefe_grundlage().
+    zu_pruefen = entscheidung.get("inhalt") or entscheidung.get("gedanke") or ""
+    grundlage_info = _pruefe_grundlage(wesen, chunk, zu_pruefen)
+    hinweis = ""
+    if grundlage_info and grundlage_info["grundlage"] == "nein":
+        hinweis = (" [Gegenpruefung: nicht im gelesenen Text belegt -- freie Assoziation"
+                    + (f": {grundlage_info['begruendung']}" if grundlage_info["begruendung"] else "") + "]")
+    elif grundlage_info and grundlage_info["grundlage"] == "teilweise":
+        hinweis = (" [Gegenpruefung: nur teilweise im gelesenen Text belegt"
+                    + (f": {grundlage_info['begruendung']}" if grundlage_info["begruendung"] else "") + "]")
+
     if entscheidung["entscheidung"] == "sichern":
         container.sichere(wesen, entscheidung["container"], entscheidung["typ"],
-                           entscheidung["inhalt"], bezug_diskussion=disk_id)
+                           entscheidung["inhalt"], bezug_diskussion=disk_id,
+                           grundlage=grundlage_info["grundlage"] if grundlage_info else None,
+                           grundlage_begruendung=grundlage_info["begruendung"] if grundlage_info else None)
+        meta = {"discussion_id": disk_id, "titel": titel}
+        if grundlage_info:
+            meta["grundlage"] = grundlage_info["grundlage"]
         protokoll.schreibe(
             typ="neugier_entscheidung", wesen=wesen,
             text=f"{wesen} hat zu Diskussion #{disk_id} ('{titel}') einen {entscheidung['typ']} "
-                 f"in Container '{entscheidung['container']}' gesichert.",
-            meta={"discussion_id": disk_id, "titel": titel},
+                 f"in Container '{entscheidung['container']}' gesichert.{hinweis}",
+            meta=meta,
         )
     elif entscheidung["gedanke"]:
+        meta = {"discussion_id": disk_id, "titel": titel, "entscheidung": entscheidung["entscheidung"]}
+        if grundlage_info:
+            meta["grundlage"] = grundlage_info["grundlage"]
         protokoll.schreibe(
             typ="neugier_entscheidung", wesen=wesen,
-            text=f"{wesen} zu Diskussion #{disk_id} ('{titel}'): {entscheidung['gedanke']}",
-            meta={"discussion_id": disk_id, "titel": titel, "entscheidung": entscheidung["entscheidung"]},
+            text=f"{wesen} zu Diskussion #{disk_id} ('{titel}'): {entscheidung['gedanke']}{hinweis}",
+            meta=meta,
         )
 
     if entscheidung["entscheidung"] == "vertiefen" and chunk_index + 1 < CHUNKS_PRO_FUND_MAX:

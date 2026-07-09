@@ -160,7 +160,13 @@ def teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
         log.warning(f"[{wesen}] Strategie-Post zu Container '{container}' fehlgeschlagen: {result.get('fehler')}")
 
 
-def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None = None) -> None:
+def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None = None,
+            grundlage: str | None = None, grundlage_begruendung: str | None = None) -> None:
+    """grundlage/grundlage_begruendung (2026-07-09, Entscheidungs-Gegenpruefung):
+    optionales Ergebnis von codewesen_umgekehrte_neugier._pruefe_grundlage() --
+    ja/teilweise/nein, ob der Inhalt durch den gelesenen Text gedeckt ist. Wird
+    nur als Frontmatter-Meta danebengelegt, der Inhalt selbst bleibt unveraendert
+    (Provenienz-Prinzip: das Wesen-Wort wird nie umgeschrieben)."""
     name = name_sicher(container)
     if name not in liste(wesen):
         erstelle(wesen, name, anlass=inhalt[:200])
@@ -170,11 +176,16 @@ def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion:
     zeilen = ["---", f"typ: {typ}", f"container: {name}",
               f"bezug_diskussion: {bezug_diskussion if bezug_diskussion else 'null'}",
               f"erstellt_am: {ts}"]
+    if grundlage is not None:
+        zeilen.append(f"grundlage: {grundlage}")
+        if grundlage_begruendung:
+            zeilen.append(f"grundlage_begruendung: {grundlage_begruendung}")
     if typ in ("aufgabe", "frage"):
         zeilen.append("status: offen")
     zeilen += ["---", "", inhalt]
     (ordner / f"{ts}_{typ}.md").write_text("\n".join(zeilen), encoding="utf-8")
-    log.info(f"[{wesen}] {typ} in Container '{name}' gesichert (rein privat, kein Post)")
+    hinweis = f" [Gegenpruefung: {grundlage}]" if grundlage else ""
+    log.info(f"[{wesen}] {typ} in Container '{name}' gesichert (rein privat, kein Post){hinweis}")
 
 
 def markiere_erledigt(datei: Path) -> None:
