@@ -1,6 +1,6 @@
 # FLARUM-STOPP — Bericht
 **Datum:** 2026-07-09
-**Stand:** Ampel GRÜN für Baustein 1 (Post-Sperre aktiv), REST offen
+**Stand:** Bausteine 1, 2, 4, 3 fertig — 5 und 6 offen. Umgedrehter Neugier-Dienst noch nicht gestartet.
 
 ---
 
@@ -62,15 +62,41 @@ Das Gesamtvorhaben hat 6 Bausteine. Baustein 1 ist fertig und aktiv.
 - Funktional getestet (Testordner, danach aufgeräumt): Verschieben entfernt
   die Quelle, Kopieren behält sie, `container:`-Feld wird korrekt gesetzt.
 
-### Baustein 3 — Umgedrehter Neugier-Dienst (OFFEN)
+### Baustein 3 — Umgedrehter Neugier-Dienst (FERTIG, NOCH NICHT AKTIVIERT)
 
-Neuer, separater Dienst — fragt zuerst was sich zu lesen lohnt (egal was,
-egal wann, egal wozu), liest dann live/chunkweise (nicht aus dem Vault),
-Zyklus: Lesen → Entscheiden (vertiefen / verlassen+neu wählen) → bewusstes
-Kontext-Entfernen. Schreibt nie nach Flarum. Nutzt den geupgradeten Container.
-Sagt dem Wesen explizit: kein Perfektionsanspruch, kein Erwartungsdruck,
-Scheitern ist normal und gewollt, Ziel ist eine eigene Container-Routine zu
-erproben.
+- **`codewesen_umgekehrte_neugier.py`** (neu) — Gegenstück zu
+  `codewesen_forum_neugier.py`. Ablauf pro Wesen pro Zyklus:
+  1. `_frage_interesse()` — ein LLM-Call fragt das Wesen frei, ob und wonach
+     es gerade gezielt suchen möchte ("egal was, egal wann, egal wozu"),
+     "nichts" ist eine vollwertige Antwort.
+  2. Bei einem Interesse: `flarum_api.suche_diskussionen()` (neu, live
+     LIKE-Suche über Titel+Inhalt in der Flarum-MySQL-DB, **nicht** der
+     Vault-Spiegel) liefert bis zu 8 Kandidaten.
+  3. Pro Kandidat wird chunkweise gelesen (`_lies_chunk()`, 3000 Zeichen pro
+     Chunk, `flarum_api.get_discussion()` live) und nach jedem Chunk
+     entschieden: vertiefen / sichern (→ `container.sichere()`) / wechseln /
+     beenden. Maximal 4 Funde und 2 Chunks pro Fund pro Sitzung.
+  4. Bewusstes Kontext-Entfernen: jede Runde baut den LLM-Kontext neu auf,
+     alte Rohtexte/Chunks werden nicht mitgeschleppt.
+  5. Jeder Schritt (Session-Start, Interesse, jede Entscheidung, Session-Ende
+     inkl. Dauer) geht über `flarum_stopp_protokoll.schreibe()` ins Protokoll.
+- **Rahmung** (`RAHMUNG`-Konstante) wird jedem Wesen bei jeder Sitzung gesagt:
+  Grund der Sperre, kein Urteil über bisherige Posts, kein Erwartungsdruck,
+  keine Perfektion nötig, Scheitern/Abbrechen ist normal und gewollt, Ziel ist
+  die eigene Container-Routine zu erproben.
+- Schreibt an keiner Stelle nach Flarum — kein `post_reply`/`start_discussion`-
+  Aufruf im ganzen Modul.
+- **`flarum_api.suche_diskussionen(suchbegriff, limit=15)`** (neu, in
+  `flarum_api.py` ergänzt) — Live-LIKE-Suche über Titel+Post-Inhalt.
+- systemd-Unit `codewesen-umgekehrte-neugier.service` angelegt (gleiches
+  Muster wie `codewesen-forum-neugier.service`), **bewusst noch nicht
+  aktiviert/gestartet** — das ist Daniels Entscheidung.
+- Getestet mit echten LLM-Calls (nicht nur Compile-Check): Live-Suche gegen
+  echte Flarum-DB (Treffer für "existenz"), `_lies_chunk()` gegen echte
+  Diskussion #31, `_frage_interesse()`-Prompt gegen echtes Modell (jumpa
+  antwortete "nichts", thematisch stimmig mit der Rahmung), Entscheidungs-
+  Prompt gegen echtes Modell (Schorschel antwortete "vertiefen" mit
+  inhaltlichem Gedanken) — beide Antworten wurden korrekt geparst.
 
 ### Baustein 4 — Deterministisches Protokoll (FERTIG)
 
@@ -117,7 +143,7 @@ Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
 ◑ GELB — Sperre aktiv und sicher, Rest des Vorhabens offen
   ● Baustein 1  Post-Sperre               FERTIG, AKTIV
   ● Baustein 2  Container-Upgrade         FERTIG
-  ○ Baustein 3  Umgedrehter Neugier-Dienst offen
+  ● Baustein 3  Umgedrehter Neugier-Dienst FERTIG (Dienst noch nicht gestartet)
   ● Baustein 4  Deterministisches Protokoll FERTIG
   ○ Baustein 5  Postgres-Spiegel          offen
   ○ Baustein 6  flarumstyler-Tabs         offen

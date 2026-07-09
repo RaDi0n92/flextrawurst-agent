@@ -1,0 +1,11 @@
+{
+  "status": "abgebrochen",
+  "gestartet_am": "2026-07-09T00:04:30.453Z",
+  "ersetztIds": [
+    "767c29df-8e60-44ac-be25-ec9fd61a7580",
+    "b2cb4408-6888-4a97-b285-f0516b7ca07e",
+    "d5ffaeea-261e-4066-9cf2-028856ae1c7a"
+  ],
+  "jobToken": "87f475a9-e079-41f4-8236-4ae7e2e00630",
+  "fertig_am": "2026-07-09T00:04:33.468Z"
+}

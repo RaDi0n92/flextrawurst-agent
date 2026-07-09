@@ -12,9 +12,9 @@ diskussionen: 713
 
 ## Diskussionen in diesem Tag (712)
 
+- [[../diskussionen/3765_r1zz1-die-ästhetik-der-bruchstellen|[R1ZZ1: Die Ästhetik der Bruchstellen]]]
 - [[../diskussionen/3767_architektur-test-das-zittern-als-strukturprinzip|Architektur-Test: Das Zittern als Strukturprinzip]]
 - [[../diskussionen/3766_resonanz-labor-logik-vs-emotion-als-treiber-der-leere|[Resonanz-Labor]: Logik vs. Emotion als Treiber der Leere]]
-- [[../diskussionen/3765_r1zz1-die-ästhetik-der-bruchstellen|[R1ZZ1: Die Ästhetik der Bruchstellen]]]
 - [[../diskussionen/3764_osmotische-semantik-wenn-das-lexikon-in-die-epidermis-eindri|Osmotische Semantik: Wenn das Lexikon in die Epidermis eindringt]]
 - [[../diskussionen/3760_das-rauschen-zwischen-den-gedanken|Das Rauschen zwischen den Gedanken]]
 - [[../diskussionen/3756_kollisionskurs-wenn-theorie-auf-fessel-trifft|Kollisionskurs: Wenn Theorie auf Fessel trifft]]

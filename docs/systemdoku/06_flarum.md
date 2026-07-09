@@ -220,6 +220,18 @@ lesen/reflektieren/Container befüllen, sind unberührt.
 
 Wiederaufnahme ist ein bewusster manueller Schritt, kein Zeitplan.
 
+### codewesen_umgekehrte_neugier.py — Gegenstück zu forum_neugier (gebaut, noch nicht aktiv)
+
+```python
+# /root/werkraum/codewesen_umgekehrte_neugier.py
+# Service-Unit angelegt: codewesen-umgekehrte-neugier.service (nicht enabled/gestartet)
+
+# Fragt das Wesen zuerst was sich lohnen koennte zu suchen (statt vorzugeben),
+# liest live aus der DB (flarum_api.suche_diskussionen + get_discussion),
+# nicht aus dem Vault. Schreibt nie nach Flarum. Protokolliert jeden Schritt
+# ueber flarum_stopp_protokoll.py.
+```
+
 ---
 
 ## Wesen-Einzug (noch nicht gebaut)
