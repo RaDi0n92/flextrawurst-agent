@@ -78,7 +78,9 @@ class Welt:
             if "diskussion_wechseln" in system:
                 optionen.append("diskussion_wechseln")
             schritt = self.rng.choice(optionen)
-            return f"GEDANKE: Gedanke-{self.seed}\n{teil}NAECHSTER_SCHRITT: {schritt}"
+            return (f"LINSE_LESEN: Lesen-{self.seed}\nLINSE_LERNEN: Lernen-{self.seed}\n"
+                    f"LINSE_GEGENTEIL: Gegenteil-{self.seed}\nLINSE_EIGENE_FRAGE: Frage-{self.seed}\n"
+                    f"{teil}NAECHSTER_SCHRITT: {schritt}")
         if "GRUNDLAGE:" in system:
             return f"GRUNDLAGE: {self.rng.choice(['ja', 'teilweise', 'nein'])}\nBEGRUENDUNG: b-{self.seed}"
         if "CONTAINER: <name>" in system:

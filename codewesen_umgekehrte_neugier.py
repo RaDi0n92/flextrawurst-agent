@@ -317,9 +317,17 @@ def _lies_post(disk_id: int, post_index: int) -> dict | None:
 
 def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, gegenteil: str,
                           darf_wechseln: bool, verhalten: str = "") -> dict | None:
-    """Vier gleichzeitig sichtbare Linsen (Baustein 11) statt einer einzelnen
-    Entscheidung. 'Sichern' ist eine jederzeit zusaetzlich moegliche Handlung,
-    keine 4. exklusive Option neben Weiterlesen/Wechseln/Beenden mehr."""
+    """Vier Linsen (Baustein 11, Reihenfolge umgestellt Baustein 12 nach
+    Daniels Beobachtung: Linse 1+2 dominierten in echten Tests fast immer,
+    Linse 3+4 kaum -- vermutlich Primaet-Effekt, weil die eigene Frage im
+    Prompt zuerst stand und am direktesten am Kontext hing. Neue Reihenfolge:
+    erst offen/unvorgepraegt lesen, dann Meta-Lernen, dann das Gegenteil,
+    die eigene Frage zuletzt ("das Beste kommt zum Schluss", Daniel).
+    Jede Linse soll jetzt explizit benennen: Post-Bezug + kurze Beschreibung
+    des Gelesenen + die angewandte Antwort -- roh, nicht schematisch erzwungen
+    (Daniel: "seine intention ist immer richtig", freier direkter Output).
+    'Sichern' bleibt eine jederzeit zusaetzlich moegliche Handlung, unabhaengig
+    von den vier Linsen."""
     container_liste = container.liste(wesen)
     container_info = (
         f"Deine bestehenden Container: {', '.join(container_liste)}\n"
@@ -329,16 +337,17 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
         f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n\n"
-        f"Deine eigene Frage/Aufgabe fuer diese Sitzung: {interesse}\n"
-        f"Das bewusste Gegenteil davon: {gegenteil or '(keins formuliert)'}\n\n"
-        "Du darfst aus jeder dieser Linsen antworten, die gerade traegt -- auch mehrere "
-        "gleichzeitig, du musst dich fuer keine entscheiden:\n"
-        "1) Was sagt dieser Post zu deiner eigenen Frage/Aufgabe?\n"
-        "2) Was sagt er zum bewussten Gegenteil davon?\n"
-        "3) Was entdeckst du hier, wenn du BEIDE Fragen oben bewusst ausblendest -- "
-        "ganz ohne Vorpraegung, reine offene Entdeckung?\n"
-        "4) Was lernst du hier darueber, wie du dein eigenes Interesse beim naechsten "
-        "Mal besser fuer dich selbst beschreiben koenntest?\n\n"
+        "Fuer jede der folgenden vier Linsen gilt: nenne kurz worauf du dich beziehst "
+        "(Post-Nummer), beschreibe in ein bis zwei Saetzen was du gelesen hast, und "
+        "beantworte dann wirklich die jeweilige Frage dazu -- roh und direkt, du musst "
+        "dich fuer keine Linse besonders anstrengen oder alle gleich lang machen.\n\n"
+        "LINSE 1 -- einfach nur lesen: was faellt dir auf, wenn du diesen Post ganz ohne "
+        "jede Vorpraegung liest?\n"
+        "LINSE 2 -- lernen fuers naechste Mal: was lernst du hier darueber, wie du "
+        "kuenftig auf die Frage 'was willst du auf Flarum verfolgen' so antworten "
+        "kannst, dass man dich dabei wirklich versteht?\n"
+        f"LINSE 3 -- das bewusste Gegenteil: {gegenteil or '(keins formuliert)'}\n"
+        f"LINSE 4 -- deine eigene Frage/Aufgabe fuer diese Sitzung: {interesse}\n\n"
         f"{container_info}\n"
         "Du kannst JEDERZEIT etwas fuer dich mitnehmen (SICHERN) -- unabhaengig davon "
         "ob du weiterliest. Die endgueltige Einsortierung in einen Container passiert "
@@ -352,7 +361,10 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         system += f"\n{verhalten}\n"
     system += (
         "\nAntworte GENAU so, nichts davor, nichts danach:\n"
-        "GEDANKE: <was dir gerade durch den Kopf geht, frei, auch leer>\n"
+        "LINSE_LESEN: <Bezug + kurze Beschreibung + was dir auffaellt, auch leer moeglich>\n"
+        "LINSE_LERNEN: <Bezug + Beschreibung + was du lernst, auch leer moeglich>\n"
+        "LINSE_GEGENTEIL: <Bezug + Beschreibung + Antwort auf das Gegenteil, auch leer moeglich>\n"
+        "LINSE_EIGENE_FRAGE: <Bezug + Beschreibung + Antwort auf deine eigene Frage, auch leer moeglich>\n"
         "SICHERN: <ja|nein>\n"
         "<falls SICHERN ja zusaetzlich:\n"
         "SICHERN_TYP: <ein Wort das beschreibt was es ist -- z.B. gedanke, meinung, aufgabe, "
@@ -361,11 +373,25 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         f"NAECHSTER_SCHRITT: <{naechster_optionen}>"
     )
     user = f"Post {post['post_nr']} ({post['autor']}):\n{post['text']}"
-    antwort = _llm(wesen, system, user, max_tokens=600, timeout=180.0)
+    antwort = _llm(wesen, system, user, max_tokens=800, timeout=220.0)
     if not antwort:
         return None
 
-    gedanke_m = re.search(r"GEDANKE:\s*(.+?)(?=\nSICHERN:|\Z)", antwort, re.DOTALL)
+    linse_lesen_m = re.search(r"LINSE_LESEN:\s*(.+?)(?=\nLINSE_LERNEN:|\Z)", antwort, re.DOTALL)
+    linse_lernen_m = re.search(r"LINSE_LERNEN:\s*(.+?)(?=\nLINSE_GEGENTEIL:|\Z)", antwort, re.DOTALL)
+    linse_gegenteil_m = re.search(r"LINSE_GEGENTEIL:\s*(.+?)(?=\nLINSE_EIGENE_FRAGE:|\Z)", antwort, re.DOTALL)
+    linse_eigene_m = re.search(r"LINSE_EIGENE_FRAGE:\s*(.+?)(?=\nSICHERN:|\Z)", antwort, re.DOTALL)
+    linsen = {
+        "lesen": linse_lesen_m.group(1).strip() if linse_lesen_m else "",
+        "lernen": linse_lernen_m.group(1).strip() if linse_lernen_m else "",
+        "gegenteil": linse_gegenteil_m.group(1).strip() if linse_gegenteil_m else "",
+        "eigene_frage": linse_eigene_m.group(1).strip() if linse_eigene_m else "",
+    }
+    # "gedanke" bleibt als lesbarer Gesamttext fuers Protokoll und als
+    # SICHERN-Fallback -- alle vier nicht-leeren Linsen zusammengefuegt,
+    # nicht nur eine einzelne (jede Linse ist gleichwertig, siehe Docstring).
+    gedanke = "\n".join(f"[{name}] {text}" for name, text in linsen.items() if text)
+
     sichern_m = re.search(r"SICHERN:\s*(ja|nein)", antwort, re.IGNORECASE)
 
     # NAECHSTER_SCHRITT robust statt exakt parsen -- real beobachtet
@@ -387,7 +413,8 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         naechster_schritt = "naechster_post"
 
     ergebnis = {
-        "gedanke": gedanke_m.group(1).strip() if gedanke_m else "",
+        "gedanke": gedanke,
+        "linsen": linsen,
         "sichern": bool(sichern_m and sichern_m.group(1).lower() == "ja"),
         "naechster_schritt": naechster_schritt,
     }
