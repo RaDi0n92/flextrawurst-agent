@@ -16,6 +16,7 @@ from PIL import Image, ImageDraw, ImageFont
 BASE = os.environ.get("TTS_BASE", "http://127.0.0.1:8035").rstrip("/")
 REPORT_PATH = Path(os.environ.get("TTS_REALWORLD_REPORT", "/tmp/tts_realworld_report.json"))
 REAL_DOC = Path(os.environ.get("TTS_REAL_DOC", "/root/werkraum/geni/README.md"))
+HARD_DOC = Path(os.environ.get("TTS_HARD_DOC", "/root/werkraum/welt/api.py"))
 VISION_IMAGE = Path(os.environ.get("TTS_VISION_IMAGE", "/root/visionen/ChatGPT Image 21. Mai 2026, 23_30_02.png"))
 
 
@@ -78,6 +79,30 @@ def make_ocr_truth_image(path: Path) -> str:
     return truth
 
 
+def make_hard_ocr_image(path: Path) -> str:
+    truth = "Schwieriger OCR Test 98431\nkleine Schrift, Rauschen, leichte Drehung\nFlextrawurst bleibt lesbar"
+    img = Image.new("RGB", (1500, 520), (247, 244, 235))
+    draw = ImageDraw.Draw(img)
+    font = None
+    font_small = None
+    candidate = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
+    if candidate.exists():
+        font = ImageFont.truetype(str(candidate), 38)
+        font_small = ImageFont.truetype(str(candidate), 28)
+    for x in range(0, 1500, 17):
+        draw.line((x, 0, x + 210, 520), fill=(226, 222, 212), width=1)
+    draw.text((80, 70), "Schwieriger OCR Test 98431", fill=(25, 25, 25), font=font)
+    draw.text((80, 160), "kleine Schrift, Rauschen, leichte Drehung", fill=(40, 40, 40), font=font_small)
+    draw.text((80, 235), "Flextrawurst bleibt lesbar", fill=(25, 25, 25), font=font)
+    for i in range(800):
+        x = (i * 37) % 1500
+        y = (i * 91) % 520
+        draw.point((x, y), fill=(90, 85, 80))
+    img = img.rotate(-2.0, expand=True, fillcolor=(247, 244, 235))
+    img.save(path)
+    return truth
+
+
 def main() -> int:
     report: list[dict] = []
     created_docs: list[str] = []
@@ -99,6 +124,25 @@ def main() -> int:
             "image_ocr_truth",
             ocr_job.get("status") == "done" and "Flextrawurst" in ocr_text and "4279" in ocr_text and int(ocr_job.get("quality", {}).get("chars") or 0) > 20,
             f"status={ocr_job.get('status')} quality={ocr_job.get('quality')} text={ocr_text[:220]!r} truth={truth!r}",
+            report,
+        )
+
+        hard_image = tmpdir / "ocr_hard.png"
+        hard_truth = make_hard_ocr_image(hard_image)
+        hard_job = http_multipart("/ocr/jobs", "file", [hard_image], {"language": "deu"}, timeout=180)
+        created_ocr.append(hard_job["id"])
+        hard_text = str(hard_job.get("text") or "")
+        hard_quality = http_json("POST", "/quality/text", {
+            "expected": hard_truth,
+            "actual": hard_text,
+            "required_terms": ["Schwieriger", "98431", "Flextrawurst"],
+        })
+        check(
+            "image_ocr_hard_noisy_rotated",
+            hard_job.get("status") == "done"
+            and hard_quality.get("required_coverage", 0) >= 0.66
+            and hard_quality.get("word_coverage", 0) >= 0.45,
+            f"status={hard_job.get('status')} quality={hard_job.get('quality')} text_quality={hard_quality} text={hard_text[:300]!r}",
             report,
         )
 
@@ -135,6 +179,28 @@ def main() -> int:
             json.dumps({"chunk_count": edited.get("chunk_count"), "preview": edited.get("preview")}, ensure_ascii=False),
             report,
         )
+
+        if HARD_DOC.exists():
+            hard_doc_created = http_multipart("/documents", "files", [HARD_DOC], timeout=180)
+            hard_doc = hard_doc_created[0]
+            created_docs.append(hard_doc["id"])
+            hard_raw_size = len(HARD_DOC.read_text(encoding="utf-8", errors="ignore"))
+            check(
+                "document_import_large_code_file",
+                hard_doc.get("status") == "done"
+                and hard_doc.get("quality", {}).get("usable") is True
+                and int(hard_doc.get("text_chars") or 0) > 100000
+                and int(hard_doc.get("chunk_count") or 0) > 100,
+                f"status={hard_doc.get('status')} quality={hard_doc.get('quality')} raw_size={hard_raw_size}",
+                report,
+            )
+            hard_search = http_json("POST", "/documents/search", {"query": "FastAPI events visibility", "document_ids": [hard_doc["id"]], "limit": 12})
+            check(
+                "document_search_large_code_file",
+                int(hard_search.get("count") or 0) > 0,
+                json.dumps(hard_search, ensure_ascii=False)[:600],
+                report,
+            )
 
         form_template = """
         <form>
@@ -175,13 +241,16 @@ def main() -> int:
         try:
             snap = http_json("POST", "/webarchive/snapshots", {
                 "url": "https://flextrawurst.de/",
-                "title": "realworld-flextrawurst",
-                "max_pages": 5,
-            }, timeout=180)
+                "title": "realworld-flextrawurst-deep",
+                "max_pages": 20,
+            }, timeout=300)
             created_snaps.append(snap["id"])
             check(
                 "webarchive_real_flextrawurst",
-                snap.get("status") == "done" and snap.get("quality", {}).get("usable") is True and int(snap.get("page_count") or 0) >= 1 and len(str(snap.get("text_preview") or "")) > 200,
+                snap.get("status") == "done"
+                and snap.get("quality", {}).get("usable") is True
+                and int(snap.get("page_count") or 0) >= 11
+                and int(snap.get("quality", {}).get("text_chars") or 0) > 100000,
                 json.dumps({
                     "status": snap.get("status"),
                     "page_count": snap.get("page_count"),

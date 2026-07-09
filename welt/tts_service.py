@@ -530,13 +530,34 @@ def _extract_links(base_url: str, html_text: str) -> list[str]:
             links.append(url)
     return links
 
+def _sitemap_urls(base_url: str) -> list[str]:
+    parsed = urllib.parse.urlparse(base_url)
+    root = f"{parsed.scheme}://{parsed.netloc}"
+    candidates = [f"{root}/sitemap.xml"]
+    urls: list[str] = []
+    for candidate in candidates:
+        try:
+            req = urllib.request.Request(candidate, headers={"User-Agent": "flextrawurst-webarchiv/1.0"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                raw = resp.read().decode("utf-8", errors="ignore")
+        except Exception:
+            continue
+        for loc in re.findall(r"(?is)<loc>\s*(.*?)\s*</loc>", raw):
+            url = _same_host_url(base_url, html.unescape(loc.strip()))
+            if url and url not in urls:
+                urls.append(url)
+    return urls
+
 def _sync_fetch_crawl(url: str, max_pages: int) -> dict:
     max_pages = max(1, min(int(max_pages or 1), 50))
     first = _sync_fetch_snapshot(url)
     html_parts = [f"<!-- {first['resolved_url']} -->\n{first['html']}"]
     text_parts = [f"# {first['title'] or first['resolved_url']}\n{first['resolved_url']}\n\n{first['text']}"]
     seen = {first["resolved_url"], url}
-    queue = _extract_links(first["resolved_url"], first["html"])
+    queue = []
+    for link in [*_sitemap_urls(first["resolved_url"]), *_extract_links(first["resolved_url"], first["html"])]:
+        if link not in seen and link not in queue:
+            queue.append(link)
     crawled = [first["resolved_url"]]
     errors = []
     while queue and len(crawled) < max_pages:
