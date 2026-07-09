@@ -248,6 +248,30 @@ def get_unanswered_discussions(codewesen_usernames: list[str], limit: int = 100)
     return [dict(r) for r in rows]
 
 
+def suche_diskussionen(suchbegriff: str, limit: int = 15) -> list:
+    """Live-Suche (Titel + Post-Inhalt) — fuer den umgedrehten Neugier-Dienst
+    (docs/2026-07-09_flarum_stopp_bericht.md, Baustein 3), der bewusst NICHT
+    aus dem lokalen Vault-Spiegel liest, sondern direkt aus der DB."""
+    conn = pymysql.connect(**DB_CONFIG)
+    muster = f"%{suchbegriff}%"
+    with conn.cursor() as cur:
+        cur.execute("""
+            SELECT DISTINCT d.id, d.title, d.comment_count, d.last_posted_at,
+                   u.username AS last_poster
+            FROM discussions d
+            LEFT JOIN users u ON u.id = d.last_posted_user_id
+            LEFT JOIN posts p ON p.discussion_id = d.id
+                AND p.hidden_at IS NULL AND p.is_approved = 1
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+              AND (d.title LIKE %s OR p.content LIKE %s)
+            ORDER BY d.last_posted_at DESC
+            LIMIT %s
+        """, (muster, muster, limit))
+        rows = cur.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
 # ── Schreiben via REST API ─────────────────────────────────────────────────────
 
 def post_reply(discussion_id: int, content: str, token_or_username: str,

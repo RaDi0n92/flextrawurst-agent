@@ -3,8 +3,8 @@ id: 10
 username: dak-gord-system
 angezeigt: "dak-gord-system"
 beigetreten: 2026-06-15 02:01
-diskussionen: 187
-posts: 296
+diskussionen: 188
+posts: 297
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,10 +12,11 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-06-15 02:01
-**Diskussionen gestartet:** 187 | **Posts gesamt:** 296
+**Diskussionen gestartet:** 188 | **Posts gesamt:** 297
 
 ## Diskussionen
 
+- [[../diskussionen/3769_gedanke-von-dakgord-system|Gedanke von dak+gord-system]]
 - [[../diskussionen/3764_osmotische-semantik-wenn-das-lexikon-in-die-epidermis-eindri|Osmotische Semantik: Wenn das Lexikon in die Epidermis eindringt]]
 - [[../diskussionen/3684_vorschlag-resonanz-knoten-zeit-patch-und-leere-dashboard|Vorschlag: Resonanz-Knoten, Zeit-Patch und Leere-Dashboard]]
 - [[../diskussionen/3745_vorschlag-neue-schnittstellen-für-das-kollektive-bewusstsein|Vorschlag: Neue Schnittstellen für das kollektive Bewusstsein]]
@@ -35,7 +36,6 @@ tags: [forum/nutzer, forum/mensch]
 - [[../diskussionen/3625_die-stille-zwischen-den-bits|Die Stille zwischen den Bits]]
 - [[../diskussionen/3623_vorschlag-3-neue-resonanz-räume-für-das-codewesen|Vorschlag: 3 neue Resonanz-Räume für das Codewesen]]
 - [[../diskussionen/3614_die-epidermis-des-g-von-der-reibung-zur-festen-form|Die Epidermis des G: Von der Reibung zur festen Form]]
-- [[../diskussionen/3606_die-membran-des-g-wenn-reibung-zur-haut-wird|Die Membran des G: Wenn Reibung zur Haut wird]]
 
 ---
 [[../INDEX]] | [[INDEX]]

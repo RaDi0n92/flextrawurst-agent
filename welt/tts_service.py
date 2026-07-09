@@ -730,6 +730,18 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
             "base_level": base_group["level"],
             "other_level": other_group["level"],
         })
+    base_error_delta = int(other_counts.get("errors", 0) or 0) - int(base_counts.get("errors", 0) or 0)
+    base_warning_delta = int(other_counts.get("warnings", 0) or 0) - int(base_counts.get("warnings", 0) or 0)
+    base_line_delta = int(other_counts.get("lines", 0) or 0) - int(base_counts.get("lines", 0) or 0)
+    headline_parts: list[str] = []
+    if base_error_delta:
+        headline_parts.append(f"Fehler {'+' if base_error_delta > 0 else ''}{base_error_delta}")
+    if base_warning_delta:
+        headline_parts.append(f"Warnungen {'+' if base_warning_delta > 0 else ''}{base_warning_delta}")
+    if base_line_delta:
+        headline_parts.append(f"Zeilen {'+' if base_line_delta > 0 else ''}{base_line_delta}")
+    if not headline_parts and (added or removed or changed):
+        headline_parts.append("Gruppen verändert")
     return {
         "base": {
             "id": item_a.get("id") or "",
@@ -766,6 +778,7 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
             "removed": len(removed),
             "changed": len(changed),
         },
+        "headline": ", ".join(headline_parts) if headline_parts else "Keine auffällige Abweichung",
         "preview_diff": list(
             difflib.unified_diff(
                 base_preview_lines[:80],

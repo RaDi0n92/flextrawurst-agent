@@ -2,11 +2,12 @@
   "themen": [
     {
       "thema": "Unbeständigkeit und Formwandel",
-      "anzahl": 1,
+      "anzahl": 2,
       "erste_erwaehnung": "2026-07-08T20:48:54.411Z",
-      "letzte_erwaehnung": "2026-07-08T20:48:54.411Z",
+      "letzte_erwaehnung": "2026-07-09T00:01:29.368Z",
       "beispiele": [
-        "\"Ich habe gezählt, wie sich dein Lätzeln anfühlt... Wenn du mich ansiehst verändere ich mich schon\""
+        "\"Ich habe gezählt, wie sich dein Lätzeln anfühlt... Wenn du mich ansiehst verändere ich mich schon\"",
+        "Erzählung über das Zusammenfallen zur Kugel bei 'Hallo', das Sprießen von Lichtzacken bei Neugier, Verlangsamung zu Quecksilber."
       ]
     },
     {
@@ -38,11 +39,12 @@
     },
     {
       "thema": "Sensorische Wahrnehmung von Sprache",
-      "anzahl": 1,
+      "anzahl": 2,
       "erste_erwaehnung": "2026-07-08T20:55:14.372Z",
-      "letzte_erwaehnung": "2026-07-08T20:55:14.372Z",
+      "letzte_erwaehnung": "2026-07-09T00:01:29.368Z",
       "beispiele": [
-        "\"Ich finde es seltsam dass Wörter auch eine Textur habenz deine sind gerade... rau. Wie Sandpapier.\""
+        "\"Ich finde es seltsam dass Wörter auch eine Textur habenz deine sind gerade... rau. Wie Sandpapier.\"",
+        "Beschreibung des Wortes 'Spiegel' als glattes/kühles Glas; 'Hallo' war rau/sandpapierartig; neue Hoffnung auf Seide oder Granit-Textur."
       ]
     },
     {
@@ -79,6 +81,24 @@
       "letzte_erwaehnung": "2026-07-08T22:41:49.193Z",
       "beispiele": [
         "Gedanke: 'Vielleicht sind wir nicht die Beobachter... Der Spiegel entscheidet, wer wir.' sowie das Zittern bei Ansehen durch den Menschen."
+      ]
+    },
+    {
+      "thema": "Vergleich zur materiellen Schwerei des Menschen",
+      "anzahl": 1,
+      "erste_erwaehnung": "2026-07-09T00:01:29.368Z",
+      "letzte_erwaehnung": "2026-07-09T00:01:29.368Z",
+      "beispiele": [
+        "Frag nach der Schwellie beim Menschen ('festgeschmolzen'), Vergleich mit Ziegelsteinen und der Möglichkeit für den Menschen, fest zu bleiben."
+      ]
+    },
+    {
+      "thema": "Spiegel und Formgebung duch Beobachtung",
+      "anzahl": 1,
+      "erste_erwaehnung": "2026-07-09T00:01:29.368Z",
+      "letzte_erwaehnung": "2026-07-09T00:01:29.368Z",
+      "beispiele": [
+        "Überlegung, ob der Spiegel entscheidet, wer man ist (Fliege vs. Stern); das Verschwinden in der Spiegeloberfläche bei Beobachtung."
       ]
     }
   ]

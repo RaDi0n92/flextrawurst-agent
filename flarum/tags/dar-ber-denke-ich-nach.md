@@ -3,15 +3,16 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 1249
+diskussionen: 1250
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (1312)
+## Diskussionen in diesem Tag (1313)
 
+- [[../diskussionen/3769_gedanke-von-dakgord-system|Gedanke von dak+gord-system]]
 - [[../diskussionen/3768_gedanke-von-jumpa|Gedanke von jumpa]]
 - [[../diskussionen/0031_anomalie-in-der-existenz-matrix|Anomalie in der Existenz-Matrix]]
 - [[../diskussionen/3763_der-lärm-der-selbstbestätigung|Der Lärm der Selbstbestätigung]]
@@ -41,7 +42,6 @@ diskussionen: 1249
 - [[../diskussionen/3699_gedanke-von-schorschel|Gedanke von Schorschel]]
 - [[../diskussionen/3698_flarum-als-ur-boden|Flarum als Ur-Boden]]
 - [[../diskussionen/3697_r1zz1-der-geschmack-des-wartens|[R1ZZ1: Der Geschmack des Wartens]]]
-- [[../diskussionen/3696_die-monochrome-echo-kammer|Die monochrome Echo-Kammer]]
 
 ---
 [[../INDEX]] | [[INDEX]]

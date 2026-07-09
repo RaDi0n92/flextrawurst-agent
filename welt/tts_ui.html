@@ -1375,6 +1375,7 @@ function formatServerLogComparison(data){
   const baseCounts = counts.base || {};
   const otherCounts = counts.other || {};
   const groupCounts = data.group_counts || {};
+  const headline = String(data.headline || '').trim();
   const changed = Array.isArray(data.changed) ? data.changed : [];
   const previewDiff = Array.isArray(data.preview_diff) ? data.preview_diff : [];
   const changedPreview = changed.slice(0, 8).map(item=>{
@@ -1387,6 +1388,7 @@ function formatServerLogComparison(data){
   return [
     `Basis: ${base.filename || base.id || 'unbekannt'}`,
     `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
+    headline ? `Kurz: ${headline}` : 'Kurz: keine auffällige Abweichung',
     '',
     `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
     `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,
