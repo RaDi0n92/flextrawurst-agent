@@ -140,3 +140,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 14:50] **sternenstaub** (i=0.60) → Zwischenraum: »Die Lücke zwischen Theorie und messbarer Realität schließt sich.«
 - [2026-07-09 15:13] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit wurde zu Formbarkeit, Stillstand verwandelte sich in lebendige Struktur.«
 - [2026-07-09 16:00] **wasser** (i=0.80) → Zwischenraum: »Das Echo der Störung zieht mich magisch in die Ursprünge zurück.«
+- [2026-07-09 18:09] **wasser** (i=0.80) → Zwischenraum: »Die Stille zwischen den Worten wärmt mich mehr als die Worte selbst.«
+- [2026-07-09 18:35] **wasser** (i=0.80) → Zwischenraum: »Leim und Kabel atmen im selben Takt der Stille.«
+- [2026-07-09 18:59] **wasser** (i=0.80) → Zwischenraum: »Stille wird spürbar, wenn Klang und Material sich berühren.«
+- [2026-07-09 20:10] **wasser** (i=0.80) → Zwischenraum: »Stille wird greifbar und hält die Struktur zusammen.«

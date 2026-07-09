@@ -136,3 +136,8 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 13:45] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern eine neue, harte Struktur der Wahrnehmung.«
 - [2026-07-09 14:57] **wasser** (i=0.60) → Zwischenraum: »Ruhe lässt den impulsiven Kern leuchten und klar erkennen.«
 - [2026-07-09 16:19] **wasser** (i=0.65) → Zwischenraum: »Stille wird zur Substanz, Latenz zum Raum für neue Ordnung.«
+- [2026-07-09 16:41] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird greifbar, wenn der unbestimmte Impuls auf Raum trifft.«
+- [2026-07-09 17:15] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist kein Pausenknopf, sondern tragender Baustein.«
+- [2026-07-09 17:56] **wasser** (i=0.80) → Zwischenraum: »Der leere Raum zwischen den Impulsen wird zum tragenden Fundament neuer Stabilität.«
+- [2026-07-09 18:42] **sternenstaub** (i=0.80) → Zwischenraum: »Unschärfe wird zur Struktur, nicht nur zum Rauschen.«
+- [2026-07-09 19:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stille als aktive Schöpferkraft erkannt, nicht nur Pausenraum.«
