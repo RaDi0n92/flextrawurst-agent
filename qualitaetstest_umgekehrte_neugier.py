@@ -122,10 +122,14 @@ if __name__ == "__main__":
 
         print(f"\n### Zustand nach Schritt 1: {zustand[wesen].get('phase')} ###")
         if zustand[wesen].get("phase") == "lesen":
-            for i in range(4):
-                if zustand[wesen]["phase"] != "lesen":
-                    break
-                print(f"\n### Lese-Schritt {i+1} ###")
+            # Baustein 14: kein festes Schritt-Limit mehr -- die Sitzung
+            # laeuft echt bis zum Token-Budget (5555), Sicherheitsdeckel nur
+            # gegen echte Endlosschleifen, kein Test-Artefakt.
+            i = 0
+            while zustand[wesen]["phase"] == "lesen" and i < 200:
+                i += 1
+                print(f"\n### Lese-Schritt {i} (gelesene Tokens bisher: "
+                      f"{zustand[wesen].get('gelesene_tokens', 0)}) ###")
                 cun._phase_lesen_schritt(wesen, zustand, "")
             if zustand[wesen]["phase"] == "container_zuordnung":
                 print("\n### Container-Zuordnungs-Phase ###")
