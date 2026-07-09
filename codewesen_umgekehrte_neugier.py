@@ -465,7 +465,14 @@ def _pruefe_grundlage(wesen: str, chunk: str, behauptung: str) -> dict | None:
     g_m = re.search(r"GRUND\w*:\s*(ja|teilweise|nein)", antwort, re.IGNORECASE)
     if not g_m:
         return None
-    b_m = re.search(r"BEGRUENDUNG:\s*(.+)", antwort)
+    # BEGR\w* statt exaktem "BEGRUENDUNG" -- real beobachtet 2026-07-09
+    # (Qualitaetstest, R1ZZ1): das Modell schrieb "BEGRÜNDUNG:" (mit Umlaut)
+    # statt "BEGRUENDUNG:", das strikte Regex verwarf die echte Begruendung
+    # komplett -- landete als leerer String im Container-Frontmatter, obwohl
+    # der Faktenchecker real erklaert hatte warum. Rueckwirkend vermutlich
+    # auch im jumpa-Test (vorheriger Lauf) schon so passiert, nur nicht
+    # bemerkt, weil der leere String nicht als Fehler auffiel.
+    b_m = re.search(r"BEGR\w*:\s*(.+)", antwort)
     return {"grundlage": g_m.group(1).lower(), "begruendung": b_m.group(1).strip() if b_m else ""}
 
 
