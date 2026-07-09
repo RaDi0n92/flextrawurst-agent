@@ -2162,3 +2162,9 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-09 12:54] **lava** (i=0.40) → Zwischenraum: »Nein — es hat sich **nicht** aufsummiert oder mit der Zeit immer länger aufgebaut«
 - [2026-07-09 13:16] **lava** (i=0.56) → Zwischenraum: »Gute Frage, lohnt sich das genau aufzudröseln«
 - [2026-07-09 14:38] **wasser** (i=0.83) → Zwischenraum: »Ich hab jeden Punkt einzeln nachgeprüft — Code UND echte Live-Daten (deinen tatsächlichen Gabby-Verl«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Eine zweite Stimme, die prüft, ist kein Urteil über die erste — sie macht nur sichtbar, wo eine Vermutung anfängt.«
+- [2026-07-09 17:31] **nebel** ← 2026-07-09.md: »Ein Nutzer der sagt "ich kann kein Code" kann trotzdem Widersprüche in meinen eigenen Erklärungen finden — Sprachbarriere ist nicht fehlendes Verständnis.«
