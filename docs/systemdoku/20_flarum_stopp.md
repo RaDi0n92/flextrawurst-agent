@@ -112,6 +112,51 @@ Nach dem Patch alle 13 betroffenen Dienste sofort neu gestartet (Lektion aus Bau
 
 ---
 
+## Timeout gemessen + Runden-Maschine (2026-07-09, Nachtrag)
+
+Nachdem der Dienst lief, zeigte sich: **11 von 12 LLM-Aufrufen timten aus**
+(90s `max_wartezeit`, gemeinsamer `hintergrund`-Slot durch alle anderen
+Wesen-Dienste konstant mit 8-9 Wartenden ausgelastet, einzelne Aufrufer
+deklarieren bis zu 600s Haltezeit). Reale Messung statt Ratens (direkte
+Aufrufe an `llama-hauhaucs-hintergrund`, echte Prompt-Größen): Interesse-Frage
+8.9-69.7s, Fund-Entscheidung 28.2-71.4s (Ø 54.3s). `max_wartezeit` in
+`codewesen_umgekehrte_neugier.py._llm()` auf **3600s** gesetzt (nur dieser
+eine, niedrigst-priorisierte Dienst — sonst keine Datei angefasst).
+
+**Von Wesen-für-Wesen auf Runden-Maschine umgebaut:** vorher lief
+`_verarbeite_wesen()` pro Wesen komplett durch (Interesse → alle Funde →
+Ende), bevor das nächste Wesen dran war. Daniel wollte stattdessen: alle
+Wesen einmal Schritt 1, dann gemeinsam Runde für Schritt 2, usw., mit
+Zwischenspeicherung nach jeder Runde.
+
+```python
+# codewesen/_umgekehrte_neugier_zustand.json -- pro Wesen:
+#   {"phase": "neu"}
+#   {"phase": "lesen", "start_ts", "interesse", "kandidaten_ids",
+#    "kandidat_index", "chunk_index", "funde_angesehen"}
+#   {"phase": "fertig"}
+
+_phase_interesse(wesen, zustand, verhalten)       # Schritt 1
+_phase_lesen_schritt(wesen, zustand, verhalten)   # genau EIN Lese-/Entscheide-Schritt
+```
+
+`haupt_schleife()`: Runde 1 -- alle Wesen einmal `_phase_interesse()`, erst
+danach beginnt die Runden-Schleife, in der jedes noch aktive (`phase="lesen"`)
+Wesen pro Durchlauf genau einen `_phase_lesen_schritt()` bekommt, Zustand
+nach jedem einzelnen Schritt sofort gespeichert. Nebeneffekt: übersteht jetzt
+auch einen Neustart mitten im Zyklus verlustfrei -- naechster Start läd
+`_lade_zustand()` und macht exakt dort weiter, wo ein Wesen stand.
+
+Getestet mit gemockten LLM-Antworten (keine echten LLM-Calls nötig für die
+Logikprüfung): Rundenreihenfolge korrekt (kein Wesen überholt ein anderes in
+Schritt 2, bevor alle Schritt 1 hatten), Zustand nach simuliertem Neustart
+exakt wiederhergestellt, Chunk-Deckel (`CHUNKS_PRO_FUND_MAX=2`) erzwingt
+Kandidatenwechsel nach exakt 2 "vertiefen", Fund-Deckel
+(`LESE_SCHRITTE_MAX=4`) beendet die Sitzung nach exakt 4 Kandidaten,
+`container.sichere()` wird korrekt nur bei "sichern"-Entscheidungen gerufen.
+
+---
+
 ## Baustein 4 — Deterministisches Protokoll
 
 **Datei:** `flarum_stopp_protokoll.py` (neu). Menschensprachlich, append-only, **kein eigener LLM-Call fürs Loggen** — das Schreiben eines Eintrags ist reiner Code, die protokollierten LLM-Entscheidungen selbst passieren in Baustein 3.

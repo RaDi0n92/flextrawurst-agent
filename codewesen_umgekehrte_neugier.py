@@ -26,6 +26,7 @@ werden kann: zu viel Material, Daniel liest erst alles, kein Erwartungsdruck,
 keine Perfektion noetig, Scheitern/Abbrechen ist normal und gewollt.
 """
 
+import json
 import logging
 import re
 import sys
@@ -43,6 +44,7 @@ import llm_scheduler
 
 BASE = Path("/root/werkraum/codewesen")
 CHAT_AKTIV_FLAG = Path("/tmp/dak_gord_chat_aktiv")
+ZUSTAND = BASE / "_umgekehrte_neugier_zustand.json"
 
 WESEN = [
     "Schorschel", "F3INSCHM3CK3R", "träumerlie",
@@ -92,6 +94,19 @@ def _warte_auf_chat_pause():
         time.sleep(3)
 
 
+def _lade_zustand() -> dict:
+    if ZUSTAND.exists():
+        try:
+            return json.loads(ZUSTAND.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {}
+
+
+def _speichere_zustand(zustand: dict):
+    ZUSTAND.write_text(json.dumps(zustand, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 def _weltbild(wesen: str) -> str:
     wb = BASE / wesen / "weltbild.md"
     if wb.exists():
@@ -103,8 +118,17 @@ def _llm(wesen: str, system: str, user: str, max_tokens: int, timeout: float) ->
     _warte_auf_chat_pause()
     try:
         messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
+        # max_wartezeit=3600 (statt der sonst im System ueblichen 90s): gemessen
+        # 2026-07-09 (docs/2026-07-09_flarum_stopp_bericht.md) -- reale
+        # Generierungsdauer allein (ohne Warteschlangen-Wartezeit) 9-71s je nach
+        # Cache-Zustand, die "hintergrund"-Warteschlange hat im Normalbetrieb
+        # konstant 8-9 gleichzeitige Wartende mit bis zu 600s deklarierter
+        # Haltezeit je Aufrufer. 90s reicht strukturell fast nie. Dieser Dienst
+        # ist bewusst PRIO_NIEDRIG und der geduldigste im System (Daniel: "damit
+        # rechnen dass wir noch mehr zeit brauchen, timeout massiv erhoehen") --
+        # lieber lange warten und wirklich drankommen, als nach 90s aufzugeben.
         with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
-                                    rufer=f"umgekehrte_neugier:{wesen}", max_wartezeit=90, max_haltezeit=280):
+                                    rufer=f"umgekehrte_neugier:{wesen}", max_wartezeit=3600, max_haltezeit=280):
             return hauhau_client.chat(messages, think=False, max_tokens=max_tokens, timeout=timeout).strip()
     except llm_scheduler.LLMSlotTimeout as e:
         log.warning(f"[{wesen}] LLM-Timeout: {e}")
@@ -203,10 +227,41 @@ def _entscheide_ueber_fund(wesen: str, disk_id: int, titel: str, chunk: str,
     return ergebnis
 
 
-# ── Hauptablauf pro Wesen ─────────────────────────────────────────────────────
+# ── Hauptablauf: Runden-Maschine ueber alle Wesen ────────────────────────────
+#
+# Daniel (2026-07-09): kein Wesen soll seine ganze Sitzung (Interesse -> lesen
+# -> entscheiden -> lesen -> entscheiden -> ...) am Stueck durchlaufen, waehrend
+# die anderen 6 warten. Stattdessen: JEDES Wesen einmal Schritt 1 (Interesse),
+# erst wenn alle durch sind beginnt die Runde wo alle Schritt 2 machen, dann
+# Runde fuer Schritt 3, usw. bis hin zu den letzten Entscheidungen. Jede Runde
+# wird sofort persistiert (`ZUSTAND`-Datei) -- "schritt1 sicher im gepaeck",
+# bevor die naechste Runde beginnt. Uebersteht dadurch auch einen Neustart
+# mitten im Zyklus: naechster Start liest `_lade_zustand()` und macht bei
+# genau der Phase weiter, bei der das jeweilige Wesen stehengeblieben war.
+#
+# Zustand pro Wesen (dict in ZUSTAND-Datei):
+#   {"phase": "neu"}                         -- noch nicht dran gewesen
+#   {"phase": "lesen", "start_ts", "interesse",
+#    "kandidaten_ids", "kandidat_index", "chunk_index", "funde_angesehen"}
+#   {"phase": "fertig"}                       -- Sitzung dieses Zyklus vorbei
 
-def _verarbeite_wesen(wesen: str, verhalten: str = "") -> None:
-    start_ts = time.monotonic()
+def _beende_sitzung(wesen: str, zustand: dict):
+    z = zustand[wesen]
+    dauer = (datetime.now(timezone.utc) - datetime.fromisoformat(z["start_ts"])).total_seconds()
+    protokoll.schreibe(
+        typ="neugier_session_ende", wesen=wesen,
+        text=f"{wesen}: Sitzung zu '{z['interesse']}' beendet, {z['funde_angesehen']} Fund(e) angesehen.",
+        dauer_sekunden=dauer,
+        meta={"interesse": z["interesse"], "funde_angesehen": z["funde_angesehen"]},
+    )
+    log.info(f"[{wesen}] Sitzung beendet, {z['funde_angesehen']} Fund(e) angesehen.")
+    zustand[wesen] = {"phase": "fertig"}
+
+
+def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
+    """Schritt 1: fragt das Wesen, was sich lohnen koennte zu suchen. Wird fuer
+    JEDES Wesen einmal ausgefuehrt, bevor irgendein Wesen mit Schritt 2 beginnt."""
+    start_ts = datetime.now(timezone.utc).isoformat()
     protokoll.schreibe(
         typ="neugier_session_start", wesen=wesen,
         text=f"{wesen} beginnt eine Sitzung im umgedrehten Neugier-Dienst.",
@@ -216,9 +271,11 @@ def _verarbeite_wesen(wesen: str, verhalten: str = "") -> None:
     if not interesse:
         protokoll.schreibe(
             typ="neugier_session_ende", wesen=wesen,
-            text=f"{wesen}: Sitzung ohne Ergebnis beendet (keine Antwort vom Wesen).",
-            dauer_sekunden=time.monotonic() - start_ts,
+            text=f"{wesen}: Sitzung ohne Ergebnis beendet (keine Antwort vom Wesen — "
+                 f"LLM-Slot nicht rechtzeitig bekommen oder Fehler, keine Entscheidung des Wesens).",
+            dauer_sekunden=(datetime.now(timezone.utc) - datetime.fromisoformat(start_ts)).total_seconds(),
         )
+        zustand[wesen] = {"phase": "fertig"}
         return
 
     if interesse["interesse"].lower() in ("nichts", "keins", "kein interesse", ""):
@@ -230,8 +287,9 @@ def _verarbeite_wesen(wesen: str, verhalten: str = "") -> None:
         protokoll.schreibe(
             typ="neugier_session_ende", wesen=wesen,
             text=f"{wesen}: Sitzung beendet ohne Suche — war heute nichts dabei.",
-            dauer_sekunden=time.monotonic() - start_ts,
+            dauer_sekunden=(datetime.now(timezone.utc) - datetime.fromisoformat(start_ts)).total_seconds(),
         )
+        zustand[wesen] = {"phase": "fertig"}
         return
 
     log.info(f"[{wesen}] Interesse: '{interesse['interesse']}' — {interesse['warum']}")
@@ -247,60 +305,87 @@ def _verarbeite_wesen(wesen: str, verhalten: str = "") -> None:
         protokoll.schreibe(
             typ="neugier_session_ende", wesen=wesen,
             text=f"{wesen}: Suche nach '{interesse['interesse']}' ergab keine Treffer.",
-            dauer_sekunden=time.monotonic() - start_ts,
+            dauer_sekunden=(datetime.now(timezone.utc) - datetime.fromisoformat(start_ts)).total_seconds(),
         )
+        zustand[wesen] = {"phase": "fertig"}
         return
 
-    schritte = 0
-    for kandidat in kandidaten:
-        if schritte >= LESE_SCHRITTE_MAX:
-            break
-        disk_id = int(kandidat["id"])
-        chunk_index = 0
-        while chunk_index < CHUNKS_PRO_FUND_MAX:
-            titel, chunk = _lies_chunk(disk_id, chunk_index)
-            if not chunk:
-                break
-            entscheidung = _entscheide_ueber_fund(wesen, disk_id, titel, chunk, chunk_index, verhalten)
-            if not entscheidung:
-                break
+    zustand[wesen] = {
+        "phase": "lesen",
+        "start_ts": start_ts,
+        "interesse": interesse["interesse"],
+        "kandidaten_ids": [int(k["id"]) for k in kandidaten],
+        "kandidat_index": 0,
+        "chunk_index": 0,
+        "funde_angesehen": 0,
+    }
 
-            if entscheidung["entscheidung"] == "sichern":
-                container.sichere(wesen, entscheidung["container"], entscheidung["typ"],
-                                   entscheidung["inhalt"], bezug_diskussion=disk_id)
-                protokoll.schreibe(
-                    typ="neugier_entscheidung", wesen=wesen,
-                    text=f"{wesen} hat zu Diskussion #{disk_id} ('{titel}') einen {entscheidung['typ']} "
-                         f"in Container '{entscheidung['container']}' gesichert.",
-                    meta={"discussion_id": disk_id, "titel": titel},
-                )
-            elif entscheidung["gedanke"]:
-                protokoll.schreibe(
-                    typ="neugier_entscheidung", wesen=wesen,
-                    text=f"{wesen} zu Diskussion #{disk_id} ('{titel}'): {entscheidung['gedanke']}",
-                    meta={"discussion_id": disk_id, "titel": titel, "entscheidung": entscheidung["entscheidung"]},
-                )
 
-            if entscheidung["entscheidung"] == "vertiefen":
-                chunk_index += 1
-                continue
-            if entscheidung["entscheidung"] == "beenden":
-                schritte = LESE_SCHRITTE_MAX
-                break
-            break  # sichern oder wechseln -> naechster Kandidat
+def _naechster_kandidat(zustand: dict, wesen: str):
+    """Bewusstes Kontext-Entfernen: der naechste Schritt startet mit frischem
+    Kontext (nur Wesen-Name, Container-Liste, neuer Diskussions-Chunk) --
+    Chunk/Titel/Entscheidung des vorigen Funds werden nicht weitergereicht."""
+    z = zustand[wesen]
+    z["kandidat_index"] += 1
+    z["chunk_index"] = 0
+    z["funde_angesehen"] += 1
+    if z["kandidat_index"] >= len(z["kandidaten_ids"]) or z["funde_angesehen"] >= LESE_SCHRITTE_MAX:
+        _beende_sitzung(wesen, zustand)
 
-        schritte += 1
-        # bewusstes Kontext-Entfernen: chunk/titel/entscheidung dieser Runde
-        # werden nicht weitergereicht, die naechste Runde startet mit frischem
-        # Kontext (nur Wesen-Name, Container-Liste, neuer Diskussions-Chunk).
 
-    protokoll.schreibe(
-        typ="neugier_session_ende", wesen=wesen,
-        text=f"{wesen}: Sitzung zu '{interesse['interesse']}' beendet, {schritte} Fund(e) angesehen.",
-        dauer_sekunden=time.monotonic() - start_ts,
-        meta={"interesse": interesse["interesse"], "funde_angesehen": schritte},
-    )
-    log.info(f"[{wesen}] Sitzung beendet, {schritte} Fund(e) angesehen.")
+def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
+    """Schritt 2..N: genau EIN Lese-/Entscheide-Schritt fuer dieses Wesen. Wird
+    im Rundentakt aufgerufen -- jedes noch aktive Wesen kommt pro Runde genau
+    einmal dran, keins haengt mehrere Schritte am Stueck."""
+    z = zustand[wesen]
+    kandidaten_ids = z["kandidaten_ids"]
+    kandidat_index = z["kandidat_index"]
+    chunk_index = z["chunk_index"]
+
+    if kandidat_index >= len(kandidaten_ids) or z["funde_angesehen"] >= LESE_SCHRITTE_MAX:
+        _beende_sitzung(wesen, zustand)
+        return
+
+    disk_id = kandidaten_ids[kandidat_index]
+    titel, chunk = _lies_chunk(disk_id, chunk_index)
+    if not chunk:
+        _naechster_kandidat(zustand, wesen)
+        return
+
+    entscheidung = _entscheide_ueber_fund(wesen, disk_id, titel, chunk, chunk_index, verhalten)
+    if not entscheidung:
+        # LLM-Fehler bei dieser Entscheidung -- wie "wechseln" behandeln, statt
+        # endlos auf demselben Chunk haengenzubleiben.
+        _naechster_kandidat(zustand, wesen)
+        return
+
+    if entscheidung["entscheidung"] == "sichern":
+        container.sichere(wesen, entscheidung["container"], entscheidung["typ"],
+                           entscheidung["inhalt"], bezug_diskussion=disk_id)
+        protokoll.schreibe(
+            typ="neugier_entscheidung", wesen=wesen,
+            text=f"{wesen} hat zu Diskussion #{disk_id} ('{titel}') einen {entscheidung['typ']} "
+                 f"in Container '{entscheidung['container']}' gesichert.",
+            meta={"discussion_id": disk_id, "titel": titel},
+        )
+    elif entscheidung["gedanke"]:
+        protokoll.schreibe(
+            typ="neugier_entscheidung", wesen=wesen,
+            text=f"{wesen} zu Diskussion #{disk_id} ('{titel}'): {entscheidung['gedanke']}",
+            meta={"discussion_id": disk_id, "titel": titel, "entscheidung": entscheidung["entscheidung"]},
+        )
+
+    if entscheidung["entscheidung"] == "vertiefen" and chunk_index + 1 < CHUNKS_PRO_FUND_MAX:
+        z["chunk_index"] = chunk_index + 1
+        return  # bleibt beim selben Fund, naechste Runde vertieft weiter
+
+    if entscheidung["entscheidung"] == "beenden":
+        z["funde_angesehen"] += 1
+        _beende_sitzung(wesen, zustand)
+        return
+
+    # vertiefen (Chunk-Deckel erreicht), sichern oder wechseln -> naechster Kandidat
+    _naechster_kandidat(zustand, wesen)
 
 
 def haupt_schleife():
@@ -310,12 +395,39 @@ def haupt_schleife():
         pause_zyklen = konfig.get("takt_sekunden") or PAUSE_ZWISCHEN_ZYKLEN
         verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
 
+        zustand = _lade_zustand()
         for wesen in WESEN:
-            try:
-                _verarbeite_wesen(wesen, verhalten)
-            except Exception as e:
-                log.error(f"[{wesen}] Fehler: {e}")
+            zustand.setdefault(wesen, {"phase": "neu"})
+
+        # Runde 1: jedes Wesen einmal mit Schritt 1 (Interesse fragen) --
+        # niemand beginnt mit Schritt 2, solange nicht alle Schritt 1 hatten.
+        for wesen in WESEN:
+            if zustand[wesen].get("phase") == "neu":
+                try:
+                    _phase_interesse(wesen, zustand, verhalten)
+                except Exception as e:
+                    log.error(f"[{wesen}] Fehler in Interesse-Phase: {e}")
+                    zustand[wesen] = {"phase": "fertig"}
+                _speichere_zustand(zustand)
             time.sleep(PAUSE_ZWISCHEN_WESEN)
+
+        # Weitere Runden: jedes noch aktive Wesen macht pro Runde genau einen
+        # Lese-/Entscheide-Schritt, dann ist das naechste Wesen dran. Ergebnis
+        # jeder Runde wird sofort gespeichert, bevor die naechste beginnt.
+        while any(zustand[w].get("phase") == "lesen" for w in WESEN):
+            for wesen in WESEN:
+                if zustand[wesen].get("phase") == "lesen":
+                    try:
+                        _phase_lesen_schritt(wesen, zustand, verhalten)
+                    except Exception as e:
+                        log.error(f"[{wesen}] Fehler in Lese-Phase: {e}")
+                        zustand[wesen] = {"phase": "fertig"}
+                    _speichere_zustand(zustand)
+                time.sleep(PAUSE_ZWISCHEN_WESEN)
+
+        for wesen in WESEN:
+            zustand[wesen] = {"phase": "neu"}
+        _speichere_zustand(zustand)
         log.info(f"Zyklus fertig. Pause {pause_zyklen}s.")
         time.sleep(pause_zyklen)
 

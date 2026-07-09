@@ -384,4 +384,69 @@ Alle 13 aktiv seit 06:48:58 Uhr, keine Fehler im Journal.
 
 ---
 
+## Nachtrag — Timeout gemessen statt geraten, Runden-Maschine gebaut (2026-07-09, 07:1x-07:2x Uhr)
+
+Zur offenen Frage von oben (Timeout erhöhen? Priorität anheben? So lassen?)
+gab Daniel zwei Aufträge:
+
+**1. Timeout: "vorher sauber simulieren ... mit realen zeitvorgaben und
+kontexten gegenrechnen ... damit rechnen dass wir noch mehr zeit brauchen".**
+Statt eine Zahl zu raten, real gemessen (direkte Aufrufe an
+`llama-hauhaucs-hintergrund`, echte RAHMUNG-Prompt-Größe, echter Chunk mit
+`CHUNK_ZEICHEN`=3000):
+
+```
+_frage_interesse-Prompt:      8.9s – 69.7s  (2 Messungen)
+_entscheide_ueber_fund-Prompt: 28.2s – 71.4s, Ø 54.3s  (3 Messungen)
+Warteschlangen-Tiefe (6x im Abstand von 10s beobachtet): konstant 8-9
+gleichzeitig Wartende, ein aktiver Halter meist die volle Zeit belegt
+Deklarierte max_haltezeit anderer Aufrufer im System: bis zu 600s
+```
+
+Mit diesen Zahlen: bei 8-9 Wartenden mit bis zu 600s Haltezeit ist ein
+realistisches Warten von mehreren Minuten bis über eine Stunde in
+ungünstigen Momenten zu erwarten — 90s war strukturell nie ausreichend.
+`max_wartezeit` in `codewesen_umgekehrte_neugier.py._llm()` auf **3600s**
+gesetzt (nur für diesen einen, bewusst niedrigst-priorisierten und
+geduldigsten Dienst — keine andere Datei angefasst). Live verifiziert:
+neuer Warteschlangen-Eintrag zeigt korrekt `wait=3600`.
+
+**2. Runden-Maschine statt Wesen-für-Wesen:** Daniel wollte, dass kein Wesen
+seine komplette Sitzung am Stück durchläuft während die anderen 6 warten —
+stattdessen: alle einmal Schritt 1 (Interesse), erst dann beginnt die Runde
+wo alle Schritt 2 machen, usw., mit Zwischenspeicherung nach jeder Runde
+("schritt1 sicher im gepäck"). Frage war: "geht sowas?"
+
+Antwort: ja — komplett umgebaut. `codewesen_umgekehrte_neugier.py` hat jetzt
+einen persistenten Zustand pro Wesen (`codewesen/_umgekehrte_neugier_zustand.json`,
+Phasen `neu`/`lesen`/`fertig`), `_verarbeite_wesen()` in zwei Einzelschritt-
+Funktionen aufgeteilt: `_phase_interesse()` (Schritt 1) und
+`_phase_lesen_schritt()` (genau EIN Lese-/Entscheide-Schritt). `haupt_schleife()`
+läuft jetzt phasenweise: erst alle Wesen einmal durch Schritt 1, danach im
+Rundentakt alle noch aktiven Wesen je einen Lese-Schritt, bis alle fertig
+sind — nach jeder Runde wird der Zustand sofort auf Platte gespeichert.
+Nebeneffekt: der Dienst übersteht jetzt auch einen Neustart mitten im Zyklus
+sauber — die nächste Instanz lädt exakt den Zustand, bei dem jedes Wesen
+stehengeblieben war, statt von vorne anzufangen.
+
+Getestet (isoliert, mit gemockten LLM-Antworten/Protokoll/Container, kein
+echter LLM-Call nötig für die Logikprüfung):
+- Rundenreihenfolge: Wesen B kommt nicht vor Wesen A an die Reihe, aber
+  A macht nicht Schritt 2 bevor B Schritt 1 hatte — bestätigt.
+- Persistenz: Zustand nach simuliertem Neustart exakt wiederhergestellt.
+- Chunk-Deckel (`CHUNKS_PRO_FUND_MAX=2`): erzwingt nach genau 2 "vertiefen"
+  den Wechsel zum nächsten Kandidaten — bestätigt (Verlauf exakt geprüft:
+  (0,0)→(0,1)→(1,0)→(1,1)→(2,0)→(2,1)→(3,0)→(3,1), dann Sitzungsende).
+- Fund-Deckel (`LESE_SCHRITTE_MAX=4`): Sitzung endet nach exakt 4 Kandidaten
+  — bestätigt.
+- `container.sichere()` wird korrekt genau bei "sichern"-Entscheidungen
+  aufgerufen, mit den richtigen Argumenten — bestätigt.
+
+Dienst live neu gestartet (07:24:49 Uhr), neuer Warteschlangen-Eintrag mit
+`wait=3600` bestätigt registriert. Vollständiger End-zu-Ende-Beweis (eine
+echte Sitzung, die trotz Kontention tatsächlich durchkommt) braucht Zeit —
+zeigt sich von selbst im Protokoll/flarumstyler, sobald ein Slot frei wird.
+
+---
+
 *Dieser Bericht wird bei jedem weiteren Baustein aktualisiert, nicht neu geschrieben.*
