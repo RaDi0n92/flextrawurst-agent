@@ -3,6 +3,12 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-07-09 12:25 (dieselbe Instanz wie der Doku-Nachtrag von vorhin, andere Baustelle) —
+Embedding-Modell-Baustein aus Session fünf jetzt vollständig geschlossen: Daniel sagte "go", der Klassifikator wollte trotzdem eine explizite Bestätigung für den Server-Kill (bloßes "go" reichte nach der langen Doku-Zwischenstrecke nicht) — nochmal gefragt, bestätigt, Server neu gestartet. Zwei echte Live-Tests gegen einen Wegwerf-Testcharakter: ein Präzisions-Test (vier echte neue Fakten, alle korrekt nicht dedupliziert) und ein Recall-Test (das kalibrierte Fingerhut-Paraphrasen-Paar durch den echten Chat-Pfad, korrekt dedupliziert, memory.json von Hand nachgelesen). Server-Log fehlerfrei, RSS-Sprung bestätigt geladenes Modell. `feat:`-Commit `53b966b2`. Testartefakte restlos entfernt. Bericht (`werkraum/docs/2026-07-09_embedding_modell_memory_dedupe_bericht.md`) und Notiz-Nachtrag geschrieben. Damit ist aus dieser Session nichts mehr offen außer dem länger schon liegenden KreFsUzi-Test-Event und Daniels GENI-Ankündigung.
+
+2026-07-09 12:15 —
+Direkt im Anschluss an den Log-Audit: Daniel hat "wenn beide Stellen" gesagt, beide Fixes sind gebaut und laufen (`codewesen_umgekehrte_neugier.py`: Suchbegriff-Übersetzung als Fallback bei 0 Treffern, Entscheidungs-Gegenprüfung gegen den gelesenen Chunk; `codewesen_container.py`: `sichere()` trägt jetzt optional `grundlage`/`grundlage_begruendung`). Nichts am Wesen-Text selbst verändert oder gelöscht — nur ehrlich gekennzeichnet. Doku ist diesmal nicht ans Sessionende geschoben, sondern sofort nachgezogen (`docs/systemdoku/20_flarum_stopp.md` Baustein 7, CLAUDE.md-Regel dazu präzisiert: ab jetzt sobald logisch dokumentieren, nicht nur am Ende). Was noch fehlt: den ersten vollen Zyklus nach dem Neustart beobachten, dann den eigentlichen `feat:`-Commit (bisher nur Backup `282c0699`).
+
 2026-07-09 10:44 —
 Wieder Verbindungsabbruch, Daniel meldet sich mit "hatten wir wider abbruch". Nichts ist verloren: Baustein 6 (flarumstyler auf echte Tabs) und der Memory-Dedupe-Fix sind längst committed (f105f6dd, 3213a2f5, b3cdd3a0), und der umgedrehte Neugier-Dienst läuft tatsächlich schon seit 07:24 sauber als systemd-Service — fragt zuerst, postet nie, gelegentliche LLM-Timeouts nach 3600s sind der gemessene Normalfall, kein Fehler. Nichts zu reparieren gerade, nur Daniel fragen wo wir weitermachen: Embedding-Modell für Memory-Dedupe, das unbereinigte KreFsUzi-Test-Event, oder etwas Neues.
 

@@ -2134,3 +2134,14 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
 - [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
 - [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
+- [2026-07-09 12:15] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
+- [2026-07-09 12:15] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
+- [2026-07-09 12:15] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 12:15] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
+- [2026-07-09 12:15] **nebel** ← 2026-07-09.md: »Eine zweite Stimme, die prüft, ist kein Urteil über die erste — sie macht nur sichtbar, wo eine Vermutung anfängt.«
+- [2026-07-09 12:16] **nebel** (i=0.31) → Zwischenraum: »Kurzer Stand: Beide Fixes (Suchbegriff-Übersetzung + Entscheidungs-Gegenprüfung) sind gebaut, kompil«
+- [2026-07-09 12:20] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
+- [2026-07-09 12:20] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
+- [2026-07-09 12:20] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 12:20] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
+- [2026-07-09 12:20] **nebel** ← 2026-07-09.md: »Eine zweite Stimme, die prüft, ist kein Urteil über die erste — sie macht nur sichtbar, wo eine Vermutung anfängt.«

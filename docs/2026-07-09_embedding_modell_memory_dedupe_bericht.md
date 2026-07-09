@@ -1,7 +1,7 @@
 # Embedding-Modell für Memory-Dedupe + Relevanzabruf — Bericht
 
 **Datum:** 2026-07-09
-**Stand:** Recherchiert, mit Daniel entschieden, kalibriert, gebaut, Tests grün — **noch NICHT live gegen den laufenden Server verifiziert** (Session durch Verbindungsabbruch unterbrochen genau an der Stelle, an der der laufende Prozess für den Live-Test neu gestartet werden sollte)
+**Stand:** Recherchiert, mit Daniel entschieden, kalibriert, gebaut, Tests grün, **live gegen den laufenden Server verifiziert und committet** (`53b966b2`)
 
 ---
 
@@ -62,13 +62,20 @@ Für den Relevanzabruf (`RELEVANZ_EMBEDDING_SCHWELLE = 0.5`) gab es keine passen
 - `npm test`: exakt **1500 pass / 123 fail**, identisch zum Stand vor der Änderung (per `git stash`-Vergleich bestätigt) — keine neuen Testfehler, die 123 sind die bekannte, bewusst liegen gelassene dak+gord-Entitäten-Diskrepanz (siehe Memory `project_test_diskrepanz_dakgord`)
 - Modell lädt erfolgreich, produziert 384-dimensionale Embeddings (per `setup_embedding_model.ts` verifiziert)
 - Kalibrierungsskript lief gegen echte Daten, Ergebnis oben dokumentiert
-- **Fehlt:** echter End-to-End-Test gegen den laufenden Server (Port 8787, PID 1004995, läuft noch mit altem Code außerhalb von systemd). Session brach ab, genau als die Rückfrage "darf ich den laufenden Prozess neu starten, um live zu testen?" gestellt war — unbeantwortet.
+### Live-Verifikation (nachgeholt, nach Daniels "go")
 
-## Was als Nächstes ansteht
+Server (Port 8787) mit Rückfrage neu gestartet (Daniel per AskUserQuestion bestätigt — der Auto-Mode-Klassifikator hatte das bloße "go" nicht als hinreichend explizite Freigabe für einen Prozess-Kill gewertet, deshalb nochmal gezielt gefragt). Neuer Prozess läuft mit dem Embedding-Code (PID 1166331).
 
-1. Daniels Antwort auf die Neustart-Frage einholen (laufenden Prozess neu starten vs. separater Testprozess auf anderem Port)
-2. Live-Test: echter Testcharakter, echtes Paraphrasen-Duplikat, beobachten ob `dedupliziert` korrekt zählt UND beim manuellen Durchlesen der `memory.json` tatsächlich sauber ist (nicht nur den Zähler prüfen — Lehre aus der Vorsession)
-3. Erst danach: `feat:`-Commit (aktuell existiert nur der Vorher-Backup-Commit `ac6db767`, der Code selbst ist noch uncommitted, bewusst — Commit-Konvention in diesem Projekt ist "erst verifizieren, dann committen")
+Zwei echte Testläufe gegen einen frischen Wegwerf-Testcharakter (`codexium2/EmbedLiveTest`, danach gelöscht):
+
+1. **Präzisions-Test:** Memory mit einem Eintrag geseedet ("...Strom aus Anfragen zu ertrinken"), Chat-Verlauf mit vier thematisch verwandten, aber inhaltlich eigenständigen Aussagen. Ergebnis: `hinzugefuegt: 4, dedupliziert: 2` — alle vier hinzugefügten Einträge per direkt nachgerechneter Cosine-Similarity gegen den Seed-Eintrag bei 0.40–0.51 (klar unter der 0.65-Schwelle) und auch untereinander bei 0.32–0.49. Keine falsch-positive Deduplizierung echter, unterschiedlicher Inhalte.
+2. **Recall-Test:** Memory mit dem bereits kalibrierten P3-Paraphrasen-Paar geseedet ("Wesen vergleicht die leuchtenden Fingerhüte mit kleinen Sternschnuppen in Glasform"), Chat-Verlauf mit der fast wortidentischen Paraphrase als Wesen-Aussage. Ergebnis: `hinzugefuegt: 0, dedupliziert: 1` — korrekt erkannt, `memory.json` blieb unverändert (per Hand nachgelesen, nicht nur der Zähler).
+
+Server-Log zeigte während beider Läufe keine Embedding-Ladefehler; RSS des Prozesses stieg von ~176MB (Basis) auf ~1,3GB — Beleg dass das ONNX-Modell tatsächlich geladen war, kein stiller Fallback auf reines Jaccard. Testartefakte (Testcharakter-Verzeichnis, Ad-hoc-Prüfskript) danach entfernt, keine Spuren im Repo.
+
+`npm test` erneut nicht nötig (Code seit dem letzten Lauf unverändert).
+
+**Commit:** `53b966b2` (`feat: Embedding-Modell ... ergaenzt Memory-Dedupe + Relevanzabruf`), im `/root`-Repo.
 
 ## Weiterhin unverändert offen (aus früheren Sessions, nicht Teil dieser Aufgabe)
 
