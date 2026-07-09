@@ -19,9 +19,20 @@ damit ein Qualitaetstest keine echten Container-Dateien oder Protokoll-
 Eintraege eines echten Wesens verschmutzt, aber echte Intelligenz zu sehen
 ist statt Platzhaltertext.
 
-Nutzung: python3 qualitaetstest_umgekehrte_neugier.py <wesen>
+Nutzung: python3 qualitaetstest_umgekehrte_neugier.py <wesen> [--zwinge-leere-suche]
 Gibt jeden echten Prompt UND die echte Antwort vollstaendig aus, damit
 tatsaechlich gelesen (nicht nur gezaehlt) werden kann, ob es gut ist.
+
+--zwinge-leere-suche: Daniel, 2026-07-09 abends: "ich brauch jetzt die
+sicherheit dass egal was ein wesen formuliert wir es schaffen flarum
+zuzulesen [...] dass es ihnen etwas passendes anbietet". In den ersten drei
+echten Laeufen fand die Suche (mit oder ohne Uebersetzung) jedes Mal zufaellig
+etwas -- der garantierte Pflege/Stoebern-Weg wurde real nie durchlaufen. Diese
+Option zwingt flarum_api.suche_diskussionen() hart auf 0 Treffer (echte
+DB-Verbindung bleibt bestehen, nur das Ergebnis wird auf [] gesetzt), damit
+der Fallback-Pfad mit Sicherheit statt Zufall real durchlaufen wird --
+container.liste()/dateien() und flarum_api.zufaellige_diskussionen() bleiben
+komplett echt.
 """
 
 import logging
@@ -82,16 +93,27 @@ def _container_kopiere(*a, **k):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or sys.argv[1] not in cun.WESEN:
-        print(f"Aufruf: python3 {sys.argv[0]} <wesen>  ({', '.join(cun.WESEN)})")
+    if len(sys.argv) < 2 or sys.argv[1] not in cun.WESEN:
+        print(f"Aufruf: python3 {sys.argv[0]} <wesen> [--zwinge-leere-suche]  ({', '.join(cun.WESEN)})")
         sys.exit(1)
     wesen = sys.argv[1]
+    zwinge_leere_suche = "--zwinge-leere-suche" in sys.argv[2:]
 
-    with mock.patch.object(cun, "_llm", side_effect=_log_llm_aufrufe()), \
-         mock.patch.object(cun.protokoll, "schreibe", side_effect=_protokoll_schreibe), \
-         mock.patch.object(cun.container, "sichere", side_effect=_container_sichere), \
-         mock.patch.object(cun.container, "verschiebe", side_effect=_container_verschiebe), \
-         mock.patch.object(cun.container, "kopiere", side_effect=_container_kopiere):
+    patches = [
+        mock.patch.object(cun, "_llm", side_effect=_log_llm_aufrufe()),
+        mock.patch.object(cun.protokoll, "schreibe", side_effect=_protokoll_schreibe),
+        mock.patch.object(cun.container, "sichere", side_effect=_container_sichere),
+        mock.patch.object(cun.container, "verschiebe", side_effect=_container_verschiebe),
+        mock.patch.object(cun.container, "kopiere", side_effect=_container_kopiere),
+    ]
+    if zwinge_leere_suche:
+        print("### --zwinge-leere-suche aktiv: flarum_api.suche_diskussionen() liefert hart [] ###\n")
+        patches.append(mock.patch.object(cun.flarum_api, "suche_diskussionen", side_effect=lambda *a, **k: []))
+
+    from contextlib import ExitStack
+    with ExitStack() as stack:
+        for p in patches:
+            stack.enter_context(p)
         # container.liste()/dateien() bewusst NICHT gemockt -- echte
         # Container-Info im Prompt sehen ist Teil dessen was geprueft wird.
         zustand = {wesen: {"phase": "neu"}}

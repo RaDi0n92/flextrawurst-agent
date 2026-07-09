@@ -367,13 +367,29 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
 
     gedanke_m = re.search(r"GEDANKE:\s*(.+?)(?=\nSICHERN:|\Z)", antwort, re.DOTALL)
     sichern_m = re.search(r"SICHERN:\s*(ja|nein)", antwort, re.IGNORECASE)
-    schritt_m = re.search(r"NAECHSTER_SCHRITT:\s*(naechster_post|diskussion_wechseln|beenden)",
-                           antwort, re.IGNORECASE)
+
+    # NAECHSTER_SCHRITT robust statt exakt parsen -- real beobachtet
+    # 2026-07-09 (Qualitaetstest, F3INSCHM3CK3R, erzwungener Stoebern-Pfad):
+    # das Modell traf in allen 4 echten Lese-Schritten NIE exakt
+    # "naechster_post"/"diskussion_wechseln"/"beenden", sondern schrieb
+    # "weiterlesen", "weiter", "4", "5" -- das alte strikte Regex haette in
+    # JEDEM Fall den Default "naechster_post" gegriffen, auch wenn das
+    # Wesen eigentlich "beenden" gemeint haette. Stattdessen: Schluesselwoerter
+    # im freien Text suchen, sonst sicherer Default (Weiterlesen ist die
+    # einzige nicht-destruktive Annahme bei echter Mehrdeutigkeit).
+    schritt_roh_m = re.search(r"NAECHSTER_SCHRITT:\s*(.+)", antwort)
+    schritt_roh = schritt_roh_m.group(1).strip().lower() if schritt_roh_m else ""
+    if any(w in schritt_roh for w in ("beend", "stop", "schluss", "fertig", "aufhoer", "aufhör")):
+        naechster_schritt = "beenden"
+    elif any(w in schritt_roh for w in ("wechsel", "verlassen", "andere diskussion")):
+        naechster_schritt = "diskussion_wechseln"
+    else:
+        naechster_schritt = "naechster_post"
 
     ergebnis = {
         "gedanke": gedanke_m.group(1).strip() if gedanke_m else "",
         "sichern": bool(sichern_m and sichern_m.group(1).lower() == "ja"),
-        "naechster_schritt": schritt_m.group(1).lower() if schritt_m else "naechster_post",
+        "naechster_schritt": naechster_schritt,
     }
     if ergebnis["sichern"]:
         # Beide Regex bewusst auf "bis zur naechsten bekannten Feld-Zeile oder
