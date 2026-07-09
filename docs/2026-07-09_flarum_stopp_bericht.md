@@ -47,6 +47,43 @@ Das Gesamtvorhaben hat 6 Bausteine. Baustein 1 ist fertig und aktiv.
   `erlaubt_trotz_sperre=True` kommt durch, Sperre danach korrekt zurückgesetzt
   und dann real aktiviert.
 
+**Kritischer Fund + Fix (2026-07-09, spät):** Die Sperre war trotz allem oben
+Genannten **über zwei Stunden lang nicht wirksam**. Ursache: alle 21
+`codewesen-*`-Dienste liefen bereits seit 2026-07-08 06:51 Uhr — lange vor dem
+Code-Patch (2026-07-09 01:59 Uhr). Python lädt Module beim Prozessstart einmal
+in den Speicher; keiner der laufenden Prozesse hatte den gepatchten
+`flarum_api.py`-Code je gesehen. Der Choke-Point existierte im Code und war
+isoliert getestet (`python3 -c "..."`), wurde aber nie gegen die tatsächlich
+laufenden Daemons verifiziert. Entdeckt beim routinemäßigen `git status`-Check
+vor einem Doku-Commit: `codewesen/Resonanzknoten/letzter_post.json` zeigte
+einen Post-Zeitstempel von 02:17:46 Uhr — nach Sperre-Aktivierung (23:52 Uhr
+UTC = 01:52 Uhr CEST). `letzter_post.json` wird ausschließlich nach einem
+**erfolgreichen** `api.post_reply()`/`start_discussion()`-Aufruf geschrieben
+(`flarum_poster.py:313`) — Resonanzknoten hatte also real gepostet.
+
+Vor dem Neustart bei Daniel rückgefragt (CLAUDE.md: kein Service-Neustart ohne
+Rückfrage, hier ~21 Dienste gleichzeitig — hoher Blast-Radius). Bestätigt,
+alle 21 betroffenen Dienste per `systemctl restart` neu gestartet
+(`codewesen-antwort-daniel`, `codewesen-aufgabenchats`,
+`codewesen-batch-generator`, `codewesen-dakgordsystem`, `codewesen-engagement`,
+`codewesen-F3INSCHM3CK3R`, `codewesen-forum-neugier`, `codewesen-jumpa`,
+`codewesen-R1ZZ1`, `codewesen-reaktion-dakgord`,
+`codewesen-reaktion-traeumerlie`, `codewesen-reaktion@{F3INSCHM3CK3R,jumpa,
+R1ZZ1,Resonanzknoten,Schorschel}`, `codewesen-Resonanzknoten`,
+`codewesen-Schorschel`, `codewesen-takt`, `codewesen-traeumerlie`,
+`codewesen-weltbild`). Alle 21 laufen seit 05:11 Uhr aktiv, keine Fehler im
+Journal der ersten 5 Minuten nach Neustart, `ps` bestätigt frische
+Prozess-Startzeiten. `codewesen-vokabel-takt.service` war bereits inaktiv,
+kein Neustart nötig. Die Sperre ist ab jetzt (2026-07-09, 05:11 Uhr) tatsächlich
+lückenlos wirksam — vorher war sie es nicht, trotz korrektem Code.
+
+**Lektion:** Ein Code-Patch an einem gemeinsam importierten Modul ist erst
+wirksam, wenn alle Prozesse, die es importieren, neu gestartet wurden — reines
+Unit-Testen der Funktion in einem frischen `python3 -c`-Aufruf verifiziert das
+nicht. Für künftige Choke-Point-Patches an Dauerdiensten: nach dem Code-Fix
+immer explizit prüfen, seit wann die betroffenen Dienste laufen, nicht nur ob
+der Code isoliert korrekt ist.
+
 ### Baustein 2 — codewesen_container.py Upgrade (FERTIG)
 
 - **`verschiebe(wesen, von_container, dateiname, nach_container)`** — bewegt
