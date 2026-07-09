@@ -82,9 +82,9 @@ class Welt:
             return f"GRUNDLAGE: {self.rng.choice(['ja', 'teilweise', 'nein'])}\nBEGRUENDUNG: b-{self.seed}"
         if "TYP: <ein Wort>" in system:
             typ = self.rng.choice(["gedanke", "idee", "meinung"])
-            if "CONTAINER: <name>" in system:
-                return f"CONTAINER: {self.rng.choice(['sortiert', 'unsortiert'])}\nTYP: {typ}"
-            return f"TYP: {typ}"
+            ziel = self.rng.choice(["sortiert", "unsortiert", ""])
+            return (f"BERUEHRT: b-{self.seed}\nTRAEGT: t-{self.seed}\n"
+                    f"CONTAINER: {ziel}\nBEGRUENDUNG: passt-{self.seed}\nTYP: {typ}")
         return None
 
     def suche_diskussionen(self, begriff, limit=8):
@@ -99,8 +99,13 @@ class Welt:
 
     def get_discussion(self, disk_id):
         n = self.diskussionen.get(disk_id, 3)
+        # Realistische Laenge statt Mini-Text -- sonst braucht das gemockte
+        # Token-Budget (5555, echte Tokens/4-Zeichen-Naeherung im Test)
+        # tausende Fake-Posts und die Rauchtest-Schrittgrenze faellt faelschlich
+        # als "Endlosschleife" auf, obwohl es nur an winziger Testlast liegt.
         return {"title": f"D{disk_id}",
-                "posts": [{"content": f"<p>Inhalt Post {i}</p>", "username": f"user{i}"} for i in range(n)]}
+                "posts": [{"content": f"<p>Inhalt Post {i} " + ("Textfuellung " * 30) + "</p>",
+                           "username": f"user{i}"} for i in range(n)]}
 
     def container_sichere(self, wesen, cont, typ, inhalt, bezug_diskussion=None,
                            grundlage=None, grundlage_begruendung=None):
@@ -143,6 +148,7 @@ def _lauf(seed: int) -> dict:
             return uhr.jetzt
 
     with mock.patch.object(cun, "_llm", side_effect=welt.llm), \
+         mock.patch.object(cun, "_zaehle_tokens", side_effect=lambda text: len(text) // 4), \
          mock.patch.object(cun.flarum_api, "suche_diskussionen", side_effect=welt.suche_diskussionen), \
          mock.patch.object(cun.flarum_api, "zufaellige_diskussionen", side_effect=welt.zufaellige_diskussionen), \
          mock.patch.object(cun.flarum_api, "get_discussion", side_effect=welt.get_discussion), \

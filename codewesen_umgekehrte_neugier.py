@@ -46,6 +46,8 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+import requests
+
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import flarum_api
@@ -65,10 +67,15 @@ WESEN = [
 ]
 
 KANDIDATEN_PRO_SUCHE = 8
-FUNDE_MAX = 2                     # hoechstens so viele Diskussionen pro Sitzung (Daniel: "nach 2 Diskussionen")
 LESE_MINDESTZEIT_SEK = 180        # 3 Min: fruehste Exit-Moeglichkeit aus einer Diskussion (kein Zwang zum Verlassen)
 POSTS_MINDEST_VOR_EXIT = 2        # mind. so viele Posts gelesen, bevor "Diskussion verlassen" ueberhaupt waehlbar ist
-LESE_GESAMT_BUDGET_SEK = 360      # 6 Min: danach sauberer Uebergang in die Container-Zuordnungs-Phase
+# Baustein 14 (Daniel, 2026-07-09 spaet): das feste Zeitbudget (6 Min /
+# max. 2 Diskussionen) ersetzt durch ein echtes Token-Budget -- "solange die
+# diskussion oder auch eine weitere andere diskussion gelesen wird bis 5555
+# tokenfenster gelesen wurden". FUNDE_MAX faellt komplett weg, kandidaten_ids
+# wird bei Bedarf um weitere zufaellige Diskussionen erweitert (siehe
+# _phase_lesen_schritt) statt die Sitzung vorzeitig zu beenden.
+LESE_TOKEN_BUDGET = 5555
 
 PAUSE_ZWISCHEN_WESEN = 8
 PAUSE_ZWISCHEN_ZYKLEN = 2700    # gleicher Rhythmus wie forum_neugier — bewusst kein eigener Sondertakt
@@ -100,6 +107,18 @@ log = logging.getLogger("umgekehrte-neugier")
 
 def _html_strip(text: str) -> str:
     return re.sub(r"<[^>]+>", "", text or "").strip()
+
+
+def _zaehle_tokens(text: str) -> int:
+    """Echte Tokenzahl des laufenden Modells fuer das Lese-Token-Budget
+    (Baustein 14) -- llama.cpp exponiert /tokenize direkt auf demselben
+    Port wie der Chat-Endpoint, keine grobe Zeichen-Schaetzung noetig."""
+    try:
+        r = requests.post("http://localhost:11436/tokenize", json={"content": text}, timeout=10)
+        return len(r.json().get("tokens", []))
+    except Exception as e:
+        log.warning(f"Tokenzaehlung fehlgeschlagen, grobe Schaetzung: {e}")
+        return len(text) // 4
 
 
 def _warte_auf_chat_pause():
@@ -501,38 +520,81 @@ def _pruefe_grundlage(wesen: str, chunk: str, behauptung: str) -> dict | None:
     return {"grundlage": g_m.group(1).lower(), "begruendung": b_m.group(1).strip() if b_m else ""}
 
 
+def _naechster_unbenannter_container_name(wesen: str) -> str:
+    """Automatischer Name, wenn das Wesen beim Anlegen eines neuen Containers
+    keinen eigenen waehlen will (Daniel, 2026-07-09 spaet). Erstes Mal immer
+    'unbestimmtes'; existiert das schon, numerisch weiter -- hoechste rein
+    numerische Container-Bezeichnung + 1, sonst bei 1 startend."""
+    bestehende = container.liste(wesen)
+    if "unbestimmtes" not in bestehende:
+        return "unbestimmtes"
+    zahlen = [int(n) for n in bestehende if n.isdigit()]
+    return str(max(zahlen) + 1) if zahlen else "1"
+
+
 def _frage_container_ziel_und_typ(wesen: str, stueck: dict, bestehende: list[str]) -> dict:
-    """Container-Zuordnungs-Phase (Baustein 11, TYP-Frage nach Baustein 13
-    hierher verschoben statt beim Lesen selbst): hat das Wesen mehr als einen
-    Container, waehlt es fuer jedes gesammelte Stueck selbst wohin -- oder legt
-    einen neuen an. TYP wird jetzt immer hier gefragt, ruhig und im Rueckblick,
-    statt mitten im instinktiven Lesen (Daniel: 'keine Probleme, kein Druck')."""
+    """Container-Zuordnungs-Phase (Baustein 11, TYP-Frage seit Baustein 13
+    hierher statt beim Lesen selbst; Baustein 14 erweitert um vollen Kontext
+    + zwei Reflexionsfragen + Begruendung + automatische Namensvergabe).
+
+    Daniel, 2026-07-09 spaet: das Wesen bekommt beim Zurueckschauen den
+    VOLLEN Post wieder vorgelegt (nicht nur die isolierte Mitnahme -- 'was
+    kurz davor und kurz danach auch gelesen hat'), dann zwei Fragen ('Was
+    beruehrst du mit dieser Mitnahme?' / 'Was traegt dich daran?'), dann
+    Container-Wahl (bestehend oder neu, Name optional -- sonst automatisch
+    per _naechster_unbenannter_container_name()) mit einer Begruendung fuer
+    genau diese Einsortierung."""
     zeilen = [f"- {name}" + (f": {b}" if (b := container.beschreibung(wesen, name)) else "") for name in bestehende]
-    frage_container = len(bestehende) >= 2
+    fallback_name = _naechster_unbenannter_container_name(wesen)
     system = (
-        f"Du bist {wesen}. Du hast dir waehrend des Lesens Folgendes gemerkt:\n"
-        f"\"{stueck['inhalt']}\"\n(zu Diskussion '{stueck.get('titel', '?')}')\n\n"
-        + ("Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n\n"
-           "In welchen Container soll das? Du kannst auch einen neuen benennen.\n\n"
-           if frage_container else "") +
-        "Wie wuerdest du das benennen -- ein gedanke, eine meinung, eine aufgabe, eine "
-        "frage, ein kommentar, ein ziel, eine idee, oder was auch immer besser passt?\n\n"
+        f"Du bist {wesen}. Du liest hier nochmal genau das, was du dir vorhin "
+        f"gemerkt hast, im vollen Zusammenhang.\n\n"
+        f"Ganzer Post, den du damals gelesen hast (Diskussion '{stueck.get('titel', '?')}', "
+        f"Post {stueck.get('post_nr', '?')}):\n{stueck.get('post_text', '(nicht mehr verfuegbar)')}\n\n"
+        f"Was du dir daraus mitgenommen hast:\n\"{stueck['inhalt']}\"\n\n"
+        "Zwei Fragen dazu:\n"
+        "1) Was beruehrst du mit dieser Mitnahme?\n"
+        "2) Was traegt dich daran?\n\n"
+        "Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n\n"
+        "Wohin soll das? Einer deiner bestehenden Container, oder ein neuer. Wenn du dir "
+        f"fuer einen neuen Container gerade keinen Namen aussuchen willst, ist das okay -- "
+        f"er heisst dann automatisch '{fallback_name}'. Sag auch kurz warum genau dieser "
+        "Container passt.\n\n"
+        "Wie wuerdest du die Mitnahme selbst benennen -- ein gedanke, eine meinung, eine "
+        "aufgabe, eine frage, ein kommentar, ein ziel, eine idee, oder was auch immer "
+        "besser passt?\n\n"
         "Antworte GENAU so, nichts davor, nichts danach:\n"
-        + ("CONTAINER: <name>\n" if frage_container else "") +
+        "BERUEHRT: <Antwort auf Frage 1>\n"
+        "TRAEGT: <Antwort auf Frage 2>\n"
+        "CONTAINER: <bestehender Name, neuer Name, oder leer lassen fuer automatisch>\n"
+        "BEGRUENDUNG: <warum genau dieser Container>\n"
         "TYP: <ein Wort>"
     )
-    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=80, timeout=60.0)
+    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=300, timeout=120.0)
     if not antwort:
-        return {"container": bestehende[0] if bestehende else None, "typ": "gedanke"}
-    typ_m = re.search(r"TYP:\s*(.+)", antwort)
+        return {"container": bestehende[0] if bestehende else fallback_name, "typ": "gedanke",
+                "beruehrt": "", "traegt": "", "begruendung": ""}
+
+    beruehrt_m = re.search(r"BER[UÜ]HRT\w*:\s*(.+?)(?=\nTR[AÄ]GT\w*:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+    traegt_m = re.search(r"TR[AÄ]GT\w*:\s*(.+?)(?=\nCONTAINER\w*:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+    container_m = re.search(r"CONTAINER\w*:\s*(.+?)(?=\nBEGR\w*:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+    begruendung_m = re.search(r"BEGR\w*:\s*(.+?)(?=\nTYP\w*:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+    typ_m = re.search(r"TYP\w*:\s*(.+)", antwort, re.IGNORECASE)
+
+    ziel = container_m.group(1).strip().split("\n")[0].strip() if container_m else ""
+    if not ziel or ziel.lower() in ("-", "leer", "automatisch", "(leer)", "keins", "keine"):
+        # Wesen wollte explizit keinen Namen waehlen (oder Feld fehlte) --
+        # automatischer Fallback, egal ob schon andere Container existieren.
+        ziel = fallback_name
     typ = container.name_sicher(typ_m.group(1).strip()) if typ_m else "gedanke"
-    if not frage_container:
-        return {"container": bestehende[0] if bestehende else None, "typ": typ}
-    container_ziel_m = re.search(r"CONTAINER:\s*(.+?)(?=\nTYP:|\Z)", antwort, re.DOTALL)
-    ziel = container_ziel_m.group(1).strip().split("\n")[0].strip() if container_ziel_m else bestehende[0]
-    return {"container": ziel, "typ": typ}
-    m = re.search(r"CONTAINER:\s*(.+)", antwort)
-    return m.group(1).strip().split("\n")[0].strip() if m else bestehende[0]
+
+    return {
+        "container": ziel,
+        "typ": typ,
+        "beruehrt": beruehrt_m.group(1).strip() if beruehrt_m else "",
+        "traegt": traegt_m.group(1).strip() if traegt_m else "",
+        "begruendung": begruendung_m.group(1).strip() if begruendung_m else "",
+    }
 
 
 # ── Hauptablauf: Runden-Maschine ueber alle Wesen ────────────────────────────
@@ -664,9 +726,9 @@ def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
         "post_index": 0,
         "posts_gelesen_dieser_fund": 0,
         "fund_start_ts": jetzt_iso,
-        "gesamt_lese_start_ts": jetzt_iso,
         "gesammeltes_material": [],
         "funde_angesehen": 0,
+        "gelesene_tokens": 0,
     }
 
 
@@ -675,15 +737,16 @@ def _naechster_kandidat(zustand: dict, wesen: str):
     Fund startet mit frischem Post-Zaehler -- Text/Titel des vorigen Funds wird
     nicht weitergereicht. Die eigene Frage/Gegenteil bleiben dagegen ueber die
     ganze Sitzung sichtbar (siehe _lese_und_entscheide) -- das ist kein
-    'mitgeschleppter Rohtext', sondern der rote Faden der Sitzung selbst."""
+    'mitgeschleppter Rohtext', sondern der rote Faden der Sitzung selbst.
+
+    Baustein 14: kein FUNDE_MAX-Deckel mehr -- das Token-Budget in
+    _phase_lesen_schritt entscheidet allein, wann die Lese-Phase endet."""
     z = zustand[wesen]
     z["kandidat_index"] += 1
     z["post_index"] = 0
     z["posts_gelesen_dieser_fund"] = 0
     z["fund_start_ts"] = datetime.now(timezone.utc).isoformat()
     z["funde_angesehen"] += 1
-    if z["kandidat_index"] >= len(z["kandidaten_ids"]) or z["funde_angesehen"] >= FUNDE_MAX:
-        zustand[wesen]["phase"] = "container_zuordnung"
 
 
 def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
@@ -693,21 +756,29 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     z = zustand[wesen]
     jetzt = datetime.now(timezone.utc)
 
-    gesamt_dauer = (jetzt - datetime.fromisoformat(z["gesamt_lese_start_ts"])).total_seconds()
-    if gesamt_dauer >= LESE_GESAMT_BUDGET_SEK or z["funde_angesehen"] >= FUNDE_MAX:
+    if z.get("gelesene_tokens", 0) >= LESE_TOKEN_BUDGET:
         zustand[wesen]["phase"] = "container_zuordnung"
         return
 
     kandidat_index = z["kandidat_index"]
     if kandidat_index >= len(z["kandidaten_ids"]):
-        zustand[wesen]["phase"] = "container_zuordnung"
-        return
+        # Token-Budget noch nicht erreicht, aber alle vorher gefundenen
+        # Kandidaten durchgelesen -- weitere echte Zufallsdiskussion
+        # nachladen statt die Sitzung vorzeitig zu beenden (Daniel: "auch
+        # eine weitere andere diskussion").
+        neue = flarum_api.zufaellige_diskussionen(limit=KANDIDATEN_PRO_SUCHE)
+        if not neue:
+            zustand[wesen]["phase"] = "container_zuordnung"
+            return
+        z["kandidaten_ids"].extend(int(k["id"]) for k in neue)
 
     disk_id = z["kandidaten_ids"][kandidat_index]
     post = _lies_post(disk_id, z["post_index"])
     if post is None:
         _naechster_kandidat(zustand, wesen)
         return
+
+    z["gelesene_tokens"] = z.get("gelesene_tokens", 0) + _zaehle_tokens(post["text"])
 
     fund_dauer = (jetzt - datetime.fromisoformat(z["fund_start_ts"])).total_seconds()
     darf_wechseln = (z["posts_gelesen_dieser_fund"] >= POSTS_MINDEST_VOR_EXIT
@@ -734,6 +805,13 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
             "inhalt": entscheidung["mitgenommen"],
             "disk_id": disk_id,
             "titel": post["titel"],
+            "post_nr": post["post_nr"],
+            # Voller Posttext, nicht nur die Mitnahme -- Daniel, 2026-07-09
+            # spaet: "muss beim lesen der genauen mitnahme dem wesen der
+            # kontext zurueckgegeben werden was kurz davor und kurz danach
+            # auch gelesen hat" -- der volle Post traegt diesen Kontext
+            # bereits in sich, keine separate Vor-/Nachschau noetig.
+            "post_text": post["text"],
             "grundlage": grundlage_info["grundlage"] if grundlage_info else None,
             "grundlage_begruendung": grundlage_info["begruendung"] if grundlage_info else None,
         })
@@ -783,18 +861,23 @@ def _phase_container_zuordnung(wesen: str, zustand: dict):
         return
 
     bestehende = container.liste(wesen)
-    if not bestehende:
-        container.sicherstelle_container(wesen)
-        bestehende = container.liste(wesen)
     for stueck in material:
+        # kein vorzeitiges sicherstelle_container() mehr -- die Fallback-
+        # Benennung passiert jetzt erst in _frage_container_ziel_und_typ(),
+        # nur wenn das Wesen wirklich keinen eigenen Namen waehlt.
         wahl = _frage_container_ziel_und_typ(wesen, stueck, bestehende)
-        ziel = wahl["container"] or bestehende[0]
         container.sichere(
-            wesen, ziel, wahl["typ"], stueck["inhalt"], bezug_diskussion=stueck.get("disk_id"),
+            wesen, wahl["container"], wahl["typ"], stueck["inhalt"], bezug_diskussion=stueck.get("disk_id"),
             grundlage=stueck.get("grundlage"), grundlage_begruendung=stueck.get("grundlage_begruendung"),
         )
-        if ziel not in bestehende:
-            bestehende.append(ziel)
+        protokoll.schreibe(
+            typ="neugier_material_reflektiert", wesen=wesen,
+            text=f"{wesen} zu '{stueck['inhalt'][:80]}...': beruehrt='{wahl['beruehrt']}', "
+                 f"traegt='{wahl['traegt']}', Container '{wahl['container']}' weil {wahl['begruendung']}",
+            meta={"container": wahl["container"], "typ": wahl["typ"]},
+        )
+        if wahl["container"] not in bestehende:
+            bestehende.append(wahl["container"])
 
     protokoll.schreibe(
         typ="neugier_material_einsortiert", wesen=wesen,
