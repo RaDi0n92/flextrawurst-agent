@@ -68,8 +68,6 @@ WESEN = [
 ]
 
 KANDIDATEN_PRO_SUCHE = 8
-LESE_MINDESTZEIT_SEK = 180        # 3 Min: fruehste Exit-Moeglichkeit aus einer Diskussion (kein Zwang zum Verlassen)
-POSTS_MINDEST_VOR_EXIT = 2        # mind. so viele Posts gelesen, bevor "Diskussion verlassen" ueberhaupt waehlbar ist
 # Baustein 14 (Daniel, 2026-07-09 spaet): das feste Zeitbudget (6 Min /
 # max. 2 Diskussionen) ersetzt durch ein echtes Token-Budget -- "solange die
 # diskussion oder auch eine weitere andere diskussion gelesen wird bis 5555
@@ -77,6 +75,13 @@ POSTS_MINDEST_VOR_EXIT = 2        # mind. so viele Posts gelesen, bevor "Diskuss
 # wird bei Bedarf um weitere zufaellige Diskussionen erweitert (siehe
 # _phase_lesen_schritt) statt die Sitzung vorzeitig zu beenden.
 LESE_TOKEN_BUDGET = 5555
+# Baustein 17 (Daniel, 2026-07-10): "alle 500 tokens spaetestens wieder
+# alles gefragt werden" -- lange Posts werden in 500-Token-Fenstern gelesen,
+# nicht in einem Stueck. "ob neue diskussion immer also 250" -- ersetzt die
+# alte Zeit-/Postzahl-Schwelle (LESE_MINDESTZEIT_SEK/POSTS_MINDEST_VOR_EXIT)
+# komplett durch ein Token-Mass INNERHALB der aktuellen Diskussion.
+POST_CHUNK_TOKEN_GROESSE = 500
+FUND_TOKEN_MINDEST_VOR_WECHSEL = 250
 
 PAUSE_ZWISCHEN_WESEN = 8
 PAUSE_ZWISCHEN_ZYKLEN = 2700    # gleicher Rhythmus wie forum_neugier — bewusst kein eigener Sondertakt
@@ -120,6 +125,29 @@ def _zaehle_tokens(text: str) -> int:
     except Exception as e:
         log.warning(f"Tokenzaehlung fehlgeschlagen, grobe Schaetzung: {e}")
         return len(text) // 4
+
+
+def _tokenisiere(text: str) -> list[int]:
+    """Fuer das exakte 500-Token-Chunking langer Posts (Baustein 17)."""
+    try:
+        r = requests.post("http://localhost:11436/tokenize", json={"content": text}, timeout=10)
+        return r.json().get("tokens", [])
+    except Exception as e:
+        log.warning(f"Tokenisierung fehlgeschlagen: {e}")
+        return []
+
+
+def _detokenisiere(tokens: list[int]) -> str:
+    """Gegenstueck zu _tokenisiere() -- llama.cpp exponiert auch /detokenize,
+    damit ein Token-Fenster wieder in echten Text zurueckverwandelt wird."""
+    if not tokens:
+        return ""
+    try:
+        r = requests.post("http://localhost:11436/detokenize", json={"tokens": tokens}, timeout=10)
+        return r.json().get("content", "")
+    except Exception as e:
+        log.warning(f"Detokenisierung fehlgeschlagen: {e}")
+        return ""
 
 
 def _warte_auf_chat_pause():
@@ -352,18 +380,43 @@ def _pflege_angebot(wesen: str) -> bool:
     return erfolg
 
 
-def _lies_post(disk_id: int, post_index: int) -> dict | None:
+def _lies_post_chunk(disk_id: int, post_index: int, chunk_index: int) -> dict | None:
+    """Liest einen Post in echten 500-Token-Fenstern statt in einem Stueck
+    (Baustein 17, Daniel: 'alle 500 tokens spaetestens wieder alles gefragt
+    werden'). chunk_index=0 fuer kurze Posts (<=500 Tokens) liefert den
+    kompletten Post in einem Rutsch -- das Fenster ist nur eine Obergrenze,
+    kein Zwang zum Zerstueckeln. 'ist_letzter_chunk' zeigt an, ob nach
+    diesem Fenster noch mehr vom selben Post uebrig ist."""
     daten = flarum_api.get_discussion(disk_id)
     posts = daten.get("posts", [])
     if post_index >= len(posts):
         return None
     p = posts[post_index]
+    text = _html_strip(p.get("content", ""))
+    tokens = _tokenisiere(text)
+    if not tokens:
+        # Tokenize-Endpoint nicht erreichbar -- kompletten Post als ein
+        # Fenster behandeln statt die Sitzung daran scheitern zu lassen.
+        if chunk_index > 0:
+            return None
+        chunk_text, gesamt_chunks, ist_letzter = text, 1, True
+    else:
+        start = chunk_index * POST_CHUNK_TOKEN_GROESSE
+        if start >= len(tokens):
+            return None
+        chunk_tokens = tokens[start:start + POST_CHUNK_TOKEN_GROESSE]
+        chunk_text = _detokenisiere(chunk_tokens) or text[:POST_CHUNK_TOKEN_GROESSE * 4]
+        gesamt_chunks = max(1, -(-len(tokens) // POST_CHUNK_TOKEN_GROESSE))
+        ist_letzter = (start + POST_CHUNK_TOKEN_GROESSE) >= len(tokens)
     return {
         "titel": daten.get("title", "?"),
-        "text": _html_strip(p.get("content", "")),
+        "text": chunk_text,
         "autor": p.get("username", "?"),
         "post_nr": post_index + 1,
         "gesamt_posts": len(posts),
+        "chunk_nr": chunk_index + 1,
+        "gesamt_chunks": gesamt_chunks,
+        "ist_letzter_chunk": ist_letzter,
     }
 
 
@@ -418,13 +471,18 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     # stur vorwaerts -- "nicht nur weiterlesen oder diskussion wechseln...
     # sondern diesen post noch weiter lesen... anderen zufaelligen post aus
     # dieser diskussion lesen... den post nach diesem post lesen... den post
-    # vor diesem post lesen".
-    navigations_optionen = ["diesen_post_nochmal", "zufaelliger_post_dieser_diskussion",
+    # vor diesem post lesen". "diesen post noch WEITER lesen" (nicht
+    # "nochmal") heisst: mehr vom selben Post, nicht denselben Anfang
+    # wiederholen -- greift bei Posts > 500 Token (Baustein 17), die in
+    # mehreren Fenstern gelesen werden.
+    navigations_optionen = ["diesen_post_weiterlesen", "zufaelliger_post_dieser_diskussion",
                              "naechster_post", "vorheriger_post"]
     naechster_optionen = ", ".join(navigations_optionen) + (", diskussion_wechseln" if darf_wechseln else "")
+    chunk_hinweis = (f" (Abschnitt {post['chunk_nr']} von {post['gesamt_chunks']}, ~500 Tokens pro Abschnitt)"
+                      if post.get("gesamt_chunks", 1) > 1 else "")
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
-        f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n"
+        f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}{chunk_hinweis}.\n"
         + (_einladung_lesen(wesen) if ist_erster_post else "") + "\n"
         "Fuer jede der folgenden vier Linsen gilt: nenne kurz worauf du dich beziehst "
         "(Post-Nummer), beschreibe in ein bis zwei Saetzen was du gelesen hast, und "
@@ -498,15 +556,20 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     # echte Navigations-Wege statt nur vorwaerts/wechseln.
     schritt_roh_m = re.search(r"NAECHSTER\w*:\s*(.+)", antwort)
     schritt_roh = schritt_roh_m.group(1).strip().lower() if schritt_roh_m else ""
+    # "diesen_post_weiterlesen" nur bei eindeutigem Bezug auf "diesen/diesem
+    # Post" + "weiter" -- ein generisches "weiterlesen" allein bleibt
+    # bewusst der Default naechster_post (naechster Post), sonst waere die
+    # Grenze zwischen "mehr von diesem Post" und "einfach weiter" zu unklar.
     if any(w in schritt_roh for w in ("wechsel", "verlassen", "andere diskussion")):
         naechster_schritt = "diskussion_wechseln"
     elif any(w in schritt_roh for w in ("zufaellig", "zufällig", "random", "anderen post")):
         naechster_schritt = "zufaelliger_post"
     elif any(w in schritt_roh for w in ("vorherig", "zurueck", "zurück", "davor", "vorig")):
         naechster_schritt = "vorheriger_post"
-    elif any(w in schritt_roh for w in ("nochmal", "noch mal", "hier bleib", "diesen post",
-                                         "gleichen post", "selben post")):
-        naechster_schritt = "diesen_post_nochmal"
+    elif any(p in schritt_roh for p in ("diesen post weiter", "diesem post weiter",
+                                         "post weiterlesen", "post weiter lesen",
+                                         "diesen_post_weiterlesen")):
+        naechster_schritt = "diesen_post_weiterlesen"
     else:
         naechster_schritt = "naechster_post"
 
@@ -784,7 +847,9 @@ def _naechster_kandidat(zustand: dict, wesen: str):
     z = zustand[wesen]
     z["kandidat_index"] += 1
     z["post_index"] = 0
+    z["chunk_index"] = 0
     z["posts_gelesen_dieser_fund"] = 0
+    z["fund_gelesene_tokens"] = 0
     z["fund_start_ts"] = datetime.now(timezone.utc).isoformat()
     z["funde_angesehen"] += 1
 
@@ -794,7 +859,6 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     Wird im Rundentakt aufgerufen -- jedes noch aktive Wesen kommt pro Runde
     genau einmal dran."""
     z = zustand[wesen]
-    jetzt = datetime.now(timezone.utc)
 
     if z.get("gelesene_tokens", 0) >= LESE_TOKEN_BUDGET:
         # Die aktuelle (noch nicht per _naechster_kandidat gezaehlte)
@@ -820,17 +884,20 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
         z["kandidaten_ids"].extend(int(k["id"]) for k in neue)
 
     disk_id = z["kandidaten_ids"][kandidat_index]
-    post = _lies_post(disk_id, z["post_index"])
+    post = _lies_post_chunk(disk_id, z["post_index"], z.get("chunk_index", 0))
     if post is None:
         _naechster_kandidat(zustand, wesen)
         return
 
-    z["gelesene_tokens"] = z.get("gelesene_tokens", 0) + _zaehle_tokens(post["text"])
+    post_tokens = _zaehle_tokens(post["text"])
+    z["gelesene_tokens"] = z.get("gelesene_tokens", 0) + post_tokens
+    z["fund_gelesene_tokens"] = z.get("fund_gelesene_tokens", 0) + post_tokens
 
-    fund_dauer = (jetzt - datetime.fromisoformat(z["fund_start_ts"])).total_seconds()
-    darf_wechseln = (z["posts_gelesen_dieser_fund"] >= POSTS_MINDEST_VOR_EXIT
-                      and fund_dauer >= LESE_MINDESTZEIT_SEK)
-    ist_erster_post = z["kandidat_index"] == 0 and z["post_index"] == 0
+    # Baustein 17: "ob neue diskussion immer also 250" -- ersetzt die alte
+    # Zeit-/Postzahl-Schwelle komplett durch ein Token-Mass innerhalb der
+    # aktuellen Diskussion, kein Wanduhr-Bezug mehr.
+    darf_wechseln = z["fund_gelesene_tokens"] >= FUND_TOKEN_MINDEST_VOR_WECHSEL
+    ist_erster_post = z["kandidat_index"] == 0 and z["post_index"] == 0 and z.get("chunk_index", 0) == 0
 
     entscheidung = _lese_und_entscheide(wesen, disk_id, post, z["interesse"], z["gegenteil"],
                                          darf_wechseln, ist_erster_post, verhalten)
@@ -888,18 +955,29 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     if naechster_schritt == "diskussion_wechseln" and darf_wechseln:
         _naechster_kandidat(zustand, wesen)
         return
-    # Baustein 16 (Daniel, 2026-07-10): echte freie Post-Navigation statt nur
-    # stur vorwaerts -- "diesen post noch weiter lesen... anderen
-    # zufaelligen post aus dieser diskussion lesen... den post nach diesem
-    # post lesen... den post vor diesem post lesen".
+    # Baustein 16+17 (Daniel, 2026-07-10): echte freie Post-Navigation statt
+    # nur stur vorwaerts -- "diesen post noch WEITER lesen" (mehr desselben
+    # Posts, chunk_index steigt -- greift bei Posts > 500 Token) vs.
+    # "anderen zufaelligen post... den post nach/vor diesem post lesen"
+    # (echte Post-Wechsel, chunk_index startet immer neu bei 0).
     if naechster_schritt == "vorheriger_post":
         z["post_index"] = max(0, z["post_index"] - 1)
+        z["chunk_index"] = 0
     elif naechster_schritt == "zufaelliger_post":
         z["post_index"] = random.randint(0, post["gesamt_posts"] - 1)
-    elif naechster_schritt == "diesen_post_nochmal":
-        pass  # post_index unveraendert -- naechste Runde liest denselben Post nochmal
+        z["chunk_index"] = 0
+    elif naechster_schritt == "diesen_post_weiterlesen":
+        if post.get("ist_letzter_chunk", True):
+            # Post ist komplett gelesen -- "weiterlesen" kann nicht mehr
+            # bedeuten, es gibt nichts mehr von diesem Post. Sicherer
+            # Fallback: wie naechster_post behandeln, kein Haengenbleiben.
+            z["post_index"] += 1
+            z["chunk_index"] = 0
+        else:
+            z["chunk_index"] = z.get("chunk_index", 0) + 1
     else:  # naechster_post (Default)
         z["post_index"] += 1
+        z["chunk_index"] = 0
 
 
 def _phase_container_zuordnung(wesen: str, zustand: dict):

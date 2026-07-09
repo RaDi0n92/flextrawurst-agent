@@ -71,7 +71,7 @@ class Welt:
             return "VON_CONTAINER: nix\nDATEINAME: nix\nNACH_CONTAINER: nix\nAKTION: verschieben"
         if "NAECHSTER_SCHRITT:" in system:
             mitgenommen = f"Mitgenommen-{self.seed}" if self.rng.random() < 0.4 else ""
-            optionen = ["naechster_post", "vorheriger_post", "zufaelliger_post", "diesen_post_nochmal"]
+            optionen = ["naechster_post", "vorheriger_post", "zufaelliger_post", "diesen post weiterlesen"]
             if "diskussion_wechseln" in system:
                 optionen.append("diskussion_wechseln")
             schritt = self.rng.choice(optionen)
@@ -149,6 +149,8 @@ def _lauf(seed: int) -> dict:
 
     with mock.patch.object(cun, "_llm", side_effect=welt.llm), \
          mock.patch.object(cun, "_zaehle_tokens", side_effect=lambda text: len(text) // 4), \
+         mock.patch.object(cun, "_tokenisiere", side_effect=lambda text: list(range(len(text) // 4))), \
+         mock.patch.object(cun, "_detokenisiere", side_effect=lambda tokens: "x" * (len(tokens) * 4)), \
          mock.patch.object(cun.flarum_api, "suche_diskussionen", side_effect=welt.suche_diskussionen), \
          mock.patch.object(cun.flarum_api, "zufaellige_diskussionen", side_effect=welt.zufaellige_diskussionen), \
          mock.patch.object(cun.flarum_api, "get_discussion", side_effect=welt.get_discussion), \
