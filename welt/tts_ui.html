@@ -537,6 +537,10 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <input id="webarchive-title" type="text" placeholder="Titel">
       </div>
       <input id="webarchive-pages" type="text" placeholder="Max. Seiten crawlen, z.B. 20">
+      <select id="webarchive-render" aria-label="Render-Modus">
+        <option value="http">HTTP-HTML</option>
+        <option value="browser">Browser-gerendert</option>
+      </select>
       <input id="webarchive-search" type="text" placeholder="Suche in Snapshots">
       <div class="row">
         <button class="small primary" id="btn-webarchive-save">Snapshot merken</button>
@@ -713,6 +717,7 @@ const documentsList = document.getElementById('documents-list');
 const webarchiveUrl = document.getElementById('webarchive-url');
 const webarchiveTitle = document.getElementById('webarchive-title');
 const webarchivePages = document.getElementById('webarchive-pages');
+const webarchiveRender = document.getElementById('webarchive-render');
 const webarchiveSearch = document.getElementById('webarchive-search');
 const btnWebarchiveSave = document.getElementById('btn-webarchive-save');
 const btnWebarchiveClear = document.getElementById('btn-webarchive-clear');
@@ -2150,13 +2155,14 @@ async function saveWebarchiveEntry(){
   const url = webarchiveUrl.value.trim();
   const title = webarchiveTitle.value.trim();
   const maxPages = Math.max(1, Math.min(50, parseInt(webarchivePages.value || '1', 10) || 1));
+  const renderMode = webarchiveRender.value || 'http';
   if (!url){ st('URL fehlt.','err'); return; }
-  st(`Websnapshot wird geholt (${maxPages} Seite(n) max.)…`,'wait');
+  st(`Websnapshot wird geholt (${maxPages} Seite(n) max., ${renderMode})…`,'wait');
   try {
     const res = await fetch(WEBARCHIVE_API, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({url, title, max_pages: maxPages})
+      body: JSON.stringify({url, title, max_pages: maxPages, render_mode: renderMode})
     });
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
@@ -3811,6 +3817,7 @@ btnWebarchiveClear.addEventListener('click', ()=>{
   webarchiveUrl.value = '';
   webarchiveTitle.value = '';
   webarchivePages.value = '';
+  webarchiveRender.value = 'http';
   webarchiveSearch.value = '';
   webarchiveHits = [];
   webarchiveOutput.value = '';

@@ -1,5 +1,5 @@
 # RESONANZFELD — Kimi
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 06:26
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 11:56
 Nicht manuell bearbeiten. Quelle: `python3 _kimi/tools/build_resonanzfeld.py`
 
 ---

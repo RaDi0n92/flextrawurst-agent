@@ -8,6 +8,15 @@
     "template": "Name: {{name}}\nMail: {{email}}",
     "preview": "Name: Ada Beispiel\nMail: ada@example.com",
     "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "name"
+      ],
+      "filled_count": 2,
+      "usable": true
+    },
     "created_at": "2026-07-08T18:03:27Z"
   },
   {
@@ -22,6 +31,17 @@
       "firma": "Flextrawurst",
       "telefon": "030 123456"
     },
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "firma",
+        "name",
+        "telefon"
+      ],
+      "filled_count": 4,
+      "usable": true
+    },
     "created_at": "2026-07-08T19:17:43Z"
   },
   {
@@ -33,6 +53,15 @@
     "template": "Name: {{name}}\nMail: {{email}}",
     "preview": "Name: Ada Beispiel\nMail: ada@example.com",
     "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "name"
+      ],
+      "filled_count": 2,
+      "usable": true
+    },
     "created_at": "2026-07-09T02:27:51Z"
   },
   {
@@ -44,6 +73,15 @@
     "template": "Name: {{name}}\nMail: {{email}}",
     "preview": "Name: Ada Beispiel\nMail: ada@example.com",
     "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "name"
+      ],
+      "filled_count": 2,
+      "usable": true
+    },
     "created_at": "2026-07-09T02:27:54Z"
   },
   {
@@ -55,6 +93,15 @@
     "template": "Name: {{name}}\nMail: {{email}}",
     "preview": "Name: Ada Beispiel\nMail: ada@example.com",
     "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "name"
+      ],
+      "filled_count": 2,
+      "usable": true
+    },
     "created_at": "2026-07-09T02:27:54Z"
   },
   {
@@ -66,6 +113,15 @@
     "template": "Name: {{name}}\nMail: {{email}}",
     "preview": "Name: Ada Beispiel\nMail: ada@example.com",
     "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "name"
+      ],
+      "filled_count": 2,
+      "usable": true
+    },
     "created_at": "2026-07-09T02:27:55Z"
   },
   {
@@ -80,6 +136,68 @@
       "firma": "Flextrawurst",
       "telefon": "030 123456"
     },
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [
+        "email",
+        "firma",
+        "name",
+        "telefon"
+      ],
+      "filled_count": 4,
+      "usable": true
+    },
     "created_at": "2026-07-09T02:28:11Z"
+  },
+  {
+    "id": "form-1783579434050",
+    "profile": "Profil 8",
+    "name": "",
+    "email": "",
+    "address": "",
+    "template": "",
+    "preview": "Name: \nE-Mail: \nAdresse: ",
+    "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [],
+      "filled_count": 0,
+      "usable": true
+    },
+    "created_at": "2026-07-09T06:43:54Z"
+  },
+  {
+    "id": "form-1783579486341",
+    "profile": "Profil 9",
+    "name": "",
+    "email": "",
+    "address": "",
+    "template": "",
+    "preview": "Name: \nE-Mail: \nAdresse: ",
+    "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [],
+      "filled_count": 0,
+      "usable": true
+    },
+    "created_at": "2026-07-09T06:44:46Z"
+  },
+  {
+    "id": "form-1783580061841",
+    "profile": "Profil 10",
+    "name": "",
+    "email": "",
+    "address": "",
+    "template": "",
+    "preview": "Name: \nE-Mail: \nAdresse: ",
+    "extra_fields": {},
+    "quality": {
+      "unfilled_placeholders": [],
+      "filled_fields": [],
+      "filled_count": 0,
+      "usable": true
+    },
+    "created_at": "2026-07-09T06:54:21Z"
   }
 ]

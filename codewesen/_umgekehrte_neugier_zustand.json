@@ -1,0 +1,66 @@
+{
+  "Schorschel": {
+    "phase": "lesen",
+    "start_ts": "2026-07-09T05:24:49.842623+00:00",
+    "interesse": "Schattenriss",
+    "kandidaten_ids": [
+      3458,
+      3389,
+      3391,
+      3050,
+      3025,
+      2955
+    ],
+    "kandidat_index": 0,
+    "chunk_index": 1,
+    "funde_angesehen": 0
+  },
+  "F3INSCHM3CK3R": {
+    "phase": "fertig"
+  },
+  "träumerlie": {
+    "phase": "lesen",
+    "start_ts": "2026-07-09T05:59:43.753901+00:00",
+    "interesse": "Stille",
+    "kandidaten_ids": [
+      3842,
+      3840,
+      3821,
+      3839,
+      3836,
+      3835,
+      3833,
+      3773
+    ],
+    "kandidat_index": 1,
+    "chunk_index": 0,
+    "funde_angesehen": 1
+  },
+  "R1ZZ1": {
+    "phase": "fertig"
+  },
+  "jumpa": {
+    "phase": "lesen",
+    "start_ts": "2026-07-09T06:18:57.976791+00:00",
+    "interesse": "Container",
+    "kandidaten_ids": [
+      3814,
+      9,
+      3739,
+      3779,
+      3706,
+      3644,
+      3556,
+      12
+    ],
+    "kandidat_index": 0,
+    "chunk_index": 0,
+    "funde_angesehen": 0
+  },
+  "Resonanzknoten": {
+    "phase": "fertig"
+  },
+  "dak+gord-system": {
+    "phase": "fertig"
+  }
+}

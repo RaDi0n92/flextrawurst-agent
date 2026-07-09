@@ -150,10 +150,17 @@ def main() -> int:
             vision_job = http_multipart("/ocr/jobs", "file", [VISION_IMAGE], {"language": "deu"}, timeout=180)
             created_ocr.append(vision_job["id"])
             vision_text = str(vision_job.get("text") or "")
+            vision_quality = http_json("POST", "/quality/text", {
+                "expected": "Flextrawurst Zwischenraum Gärküche Werkraum Archivluft Streitstrom GENI Splitter Obsidian Inspektor Resonanz",
+                "actual": vision_text,
+                "required_terms": ["Flextrawurst", "Zwischenraum", "Werkraum", "GENI", "Splitter", "Resonanz"],
+            })
             check(
-                "image_ocr_real_vision_nonempty",
-                vision_job.get("status") in {"done", "empty"} and len(vision_text.strip()) >= 0,
-                f"status={vision_job.get('status')} chars={len(vision_text)} error={vision_job.get('error') or ''}",
+                "image_ocr_real_vision_groundtruth_terms",
+                vision_job.get("status") == "done"
+                and int(vision_quality.get("chars") or 0) > 1000
+                and float(vision_quality.get("required_coverage") or 0) >= 0.5,
+                f"status={vision_job.get('status')} quality={vision_job.get('quality')} vision_quality={vision_quality} sample={vision_text[:500]!r}",
                 report,
             )
 
@@ -210,6 +217,14 @@ def main() -> int:
           <p>{{firma}}</p>
         </form>
         """
+        form_scan = http_json("POST", "/forms/scan", {"template": form_template})
+        expected_field_keys = {field["key"] for field in form_scan.get("fields", [])}
+        check(
+            "form_scan_derives_expectations",
+            expected_field_keys == {"name", "email", "address", "firma"},
+            json.dumps(form_scan, ensure_ascii=False),
+            report,
+        )
         form_fill = http_json("POST", "/forms/fill", {
             "template": form_template,
             "fields": {
@@ -243,6 +258,7 @@ def main() -> int:
                 "url": "https://flextrawurst.de/",
                 "title": "realworld-flextrawurst-deep",
                 "max_pages": 20,
+                "render_mode": "http",
             }, timeout=300)
             created_snaps.append(snap["id"])
             check(
@@ -250,7 +266,9 @@ def main() -> int:
                 snap.get("status") == "done"
                 and snap.get("quality", {}).get("usable") is True
                 and int(snap.get("page_count") or 0) >= 11
-                and int(snap.get("quality", {}).get("text_chars") or 0) > 100000,
+                and int(snap.get("quality", {}).get("text_chars") or 0) > 100000
+                and float(snap.get("quality", {}).get("replacement_ratio", 1)) < 0.01
+                and float(snap.get("quality", {}).get("symbolic_noise_ratio", 1)) < 0.08,
                 json.dumps({
                     "status": snap.get("status"),
                     "page_count": snap.get("page_count"),
@@ -263,6 +281,29 @@ def main() -> int:
             )
         except Exception as exc:
             check("webarchive_real_flextrawurst", False, f"{type(exc).__name__}: {exc}", report)
+
+        try:
+            rendered = http_json("POST", "/webarchive/snapshots", {
+                "url": "http://127.0.0.1:8035/",
+                "title": "realworld-browser-rendered-local",
+                "max_pages": 1,
+                "render_mode": "browser",
+            }, timeout=120)
+            created_snaps.append(rendered["id"])
+            check(
+                "webarchive_browser_rendered_snapshot",
+                rendered.get("status") == "done"
+                and rendered.get("quality", {}).get("usable") is True
+                and int(rendered.get("quality", {}).get("text_chars") or 0) > 1000,
+                json.dumps({
+                    "status": rendered.get("status"),
+                    "quality": rendered.get("quality"),
+                    "resolved_url": rendered.get("resolved_url"),
+                }, ensure_ascii=False),
+                report,
+            )
+        except Exception as exc:
+            check("webarchive_browser_rendered_snapshot", False, f"{type(exc).__name__}: {exc}", report)
 
     finally:
         for form_id in created_forms:

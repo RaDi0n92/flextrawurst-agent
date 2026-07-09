@@ -88,6 +88,7 @@ class WebSnapshotPayload(BaseModel):
     url: str
     title: str = ""
     max_pages: int = Field(1, ge=1, le=50)
+    render_mode: str = "http"
 
 class DocumentChunkPayload(BaseModel):
     text: str
@@ -104,6 +105,9 @@ class FormProfilePayload(BaseModel):
 class FormFillRequest(BaseModel):
     template: str
     fields: dict[str, str] = {}
+
+class FormScanRequest(BaseModel):
+    template: str
 
 class TextQualityRequest(BaseModel):
     expected: str = ""
@@ -226,6 +230,67 @@ def _form_quality(preview: str, fields: dict[str, str]) -> dict:
         "filled_fields": sorted(str(key) for key in filled),
         "filled_count": len(filled),
         "usable": not placeholders,
+    }
+
+def _scan_form_template(template: str) -> dict:
+    raw = str(template or "")
+    fields: list[dict] = []
+    seen: set[str] = set()
+    for match in re.finditer(r"(?is)<(input|textarea|select)\b([^>]*)>", raw):
+        tag = match.group(1).lower()
+        attrs = match.group(2) or ""
+        name_match = re.search(r'''(?is)\bname\s*=\s*["']([^"']+)["']''', attrs)
+        id_match = re.search(r'''(?is)\bid\s*=\s*["']([^"']+)["']''', attrs)
+        type_match = re.search(r'''(?is)\btype\s*=\s*["']([^"']+)["']''', attrs)
+        placeholder_match = re.search(r'''(?is)\bplaceholder\s*=\s*["']([^"']+)["']''', attrs)
+        field_id = (name_match.group(1) if name_match else "") or (id_match.group(1) if id_match else "")
+        if not field_id:
+            field_id = f"{tag}_{len(fields) + 1}"
+        if field_id in seen:
+            continue
+        seen.add(field_id)
+        fields.append({
+            "key": field_id,
+            "tag": tag,
+            "type": (type_match.group(1) if type_match else ("textarea" if tag == "textarea" else tag)).lower(),
+            "label": placeholder_match.group(1) if placeholder_match else field_id,
+            "required": bool(re.search(r"(?is)\brequired\b", attrs)),
+        })
+    placeholders = sorted(set(re.findall(r"\{\{([^}]+)\}\}", raw or "")))
+    for key in placeholders:
+        if key in seen:
+            continue
+        seen.add(key)
+        fields.append({"key": key, "tag": "placeholder", "type": "text", "label": key, "required": True})
+    return {
+        "fields": fields,
+        "field_count": len(fields),
+        "required_count": sum(1 for field in fields if field.get("required")),
+        "placeholders": placeholders,
+    }
+
+def _web_text_quality(text: str, page_count: int, crawled_urls: list[str]) -> dict:
+    text = str(text or "")
+    chars = len(text)
+    tokens = _document_tokens(text)
+    if chars:
+        replacement_ratio = text.count("\ufffd") / chars
+        symbolic_noise = sum(1 for ch in text if not (ch.isalnum() or ch.isspace() or ch in ".,;:!?()[]{}<>/@#%&+-_=*'\"|\\`~€$")) / chars
+    else:
+        replacement_ratio = 1
+        symbolic_noise = 1
+    lines = [line.strip() for line in text.splitlines() if line.strip()]
+    unique_line_ratio = len(set(lines)) / max(1, len(lines))
+    return {
+        "text_chars": chars,
+        "word_count": len(tokens),
+        "line_count": len(lines),
+        "unique_line_ratio": round(unique_line_ratio, 4),
+        "replacement_ratio": round(replacement_ratio, 6),
+        "symbolic_noise_ratio": round(symbolic_noise, 6),
+        "page_count": int(page_count or 0),
+        "crawled_url_count": len(crawled_urls or []),
+        "usable": chars > 500 and len(tokens) > 80 and replacement_ratio < 0.01 and symbolic_noise < 0.08,
     }
 
 def _ocr_lang_code(language: str) -> str:
@@ -511,6 +576,22 @@ def _sync_fetch_snapshot(url: str) -> dict:
     text = _html_to_text(html_text)[:WEBARCHIVE_TEXT_LIMIT]
     return {"html": html_text, "text": text, "resolved_url": final_url, "title": title}
 
+def _sync_fetch_rendered_snapshot(url: str) -> dict:
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception as exc:
+        raise RuntimeError(f"Browser-Rendering braucht Playwright: {exc}")
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page(viewport={"width": 1440, "height": 1200})
+        page.goto(url, wait_until="networkidle", timeout=45000)
+        final_url = page.url
+        html_text = page.content()
+        title = page.title()
+        browser.close()
+    text = _html_to_text(html_text)[:WEBARCHIVE_TEXT_LIMIT]
+    return {"html": html_text, "text": text, "resolved_url": final_url, "title": title}
+
 def _same_host_url(base_url: str, href: str) -> str:
     absolute = urllib.parse.urljoin(base_url, href)
     parsed_base = urllib.parse.urlparse(base_url)
@@ -548,9 +629,10 @@ def _sitemap_urls(base_url: str) -> list[str]:
                 urls.append(url)
     return urls
 
-def _sync_fetch_crawl(url: str, max_pages: int) -> dict:
+def _sync_fetch_crawl(url: str, max_pages: int, render_mode: str = "http") -> dict:
     max_pages = max(1, min(int(max_pages or 1), 50))
-    first = _sync_fetch_snapshot(url)
+    fetch_one = _sync_fetch_rendered_snapshot if str(render_mode or "").lower() == "browser" else _sync_fetch_snapshot
+    first = fetch_one(url)
     html_parts = [f"<!-- {first['resolved_url']} -->\n{first['html']}"]
     text_parts = [f"# {first['title'] or first['resolved_url']}\n{first['resolved_url']}\n\n{first['text']}"]
     seen = {first["resolved_url"], url}
@@ -566,7 +648,7 @@ def _sync_fetch_crawl(url: str, max_pages: int) -> dict:
             continue
         seen.add(next_url)
         try:
-            page = _sync_fetch_snapshot(next_url)
+            page = fetch_one(next_url)
         except Exception as exc:
             errors.append(f"{next_url}: {exc}")
             continue
@@ -1694,7 +1776,7 @@ async def create_websnapshot(payload: WebSnapshotPayload):
     try:
         WEBARCHIVE_HTML_DIR.mkdir(parents=True, exist_ok=True)
         WEBARCHIVE_TEXT_DIR.mkdir(parents=True, exist_ok=True)
-        data = await asyncio.get_event_loop().run_in_executor(_pool, _sync_fetch_crawl, url, payload.max_pages)
+        data = await asyncio.get_event_loop().run_in_executor(_pool, _sync_fetch_crawl, url, payload.max_pages, payload.render_mode)
         Path(item["html_path"]).write_text(data["html"], encoding="utf-8")
         Path(item["text_path"]).write_text(data["text"], encoding="utf-8")
         item["resolved_url"] = data["resolved_url"]
@@ -1702,12 +1784,7 @@ async def create_websnapshot(payload: WebSnapshotPayload):
         item["text_preview"] = data["text"][:600]
         item["page_count"] = data.get("page_count") or 1
         item["crawled_urls"] = data.get("crawled_urls") or [data["resolved_url"]]
-        item["quality"] = {
-            "text_chars": len(data["text"]),
-            "page_count": item["page_count"],
-            "crawled_url_count": len(item["crawled_urls"]),
-            "usable": bool(data["text"].strip()) and item["page_count"] >= 1,
-        }
+        item["quality"] = _web_text_quality(data["text"], item["page_count"], item["crawled_urls"])
         item["status"] = "done"
         if data.get("crawl_errors"):
             item["error"] = "Crawl-Hinweise: " + " | ".join(data["crawl_errors"][:3])
@@ -1733,10 +1810,20 @@ async def delete_websnapshot(snapshot_id: str):
 async def get_form_profiles():
     return _read_forms()
 
+@app.post("/forms/scan")
+async def scan_form(req: FormScanRequest):
+    return _scan_form_template(req.template)
+
 @app.post("/forms/fill")
 async def fill_form(req: FormFillRequest):
     preview = _fill_form_template(req.template, req.fields)
-    return {"preview": preview, "fields": sorted(str(key) for key in req.fields.keys()), "quality": _form_quality(preview, req.fields)}
+    scan = _scan_form_template(req.template)
+    quality = _form_quality(preview, req.fields)
+    field_keys = [str(field.get("key") or "") for field in scan["fields"] if field.get("key")]
+    quality["scanned_field_count"] = scan["field_count"]
+    quality["missing_scanned_fields"] = [key for key in field_keys if key not in req.fields or not str(req.fields.get(key) or "")]
+    quality["usable"] = quality["usable"] and not quality["missing_scanned_fields"]
+    return {"preview": preview, "fields": sorted(str(key) for key in req.fields.keys()), "scan": scan, "quality": quality}
 
 @app.post("/forms/profiles")
 async def create_form_profile(payload: FormProfilePayload):

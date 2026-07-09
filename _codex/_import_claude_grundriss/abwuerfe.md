@@ -2111,3 +2111,26 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-09 06:36] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
 - [2026-07-09 06:36] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
 - [2026-07-09 06:36] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 06:36] **wasser** (i=0.39) → Zwischenraum: »Der Dienst ist bestätigt aktiv — Schorschel hat schon eine erste Sitzung durchlaufen (ohne Ergebnis,«
+- [2026-07-09 06:55] **lava** (i=0.47) → Zwischenraum: »Doku korrigiert und committet«
+- [2026-07-09 07:25] **wasser** (i=0.65) → Zwischenraum: »## Swap erklärt, am konkreten Fall
+
+**Was Swap ist:** RAM ist hier auf 62GB begrenzt«
+- [2026-07-09 07:29] **nebel** (i=0.31) → Zwischenraum: »Neustart erfolgreich — Swap ist von 11GB auf 1GB gefallen, RAM frei von 2,6GB auf 4,1GB gestiegen«
+- [2026-07-09 07:34] **wasser** (i=0.39) → Zwischenraum: »**Ja — jetzt ist es sauber:**
+
+- Post-Sperre aktiv, seit dem Neustart lückenlos wirksam
+- Umgedrehte«
+- [2026-07-09 07:38] **lava** (i=0.44) → Zwischenraum: »**Zur Swap-Größe:** aktuell haben wir schon **12GB** (4+8GB), nicht weniger als 8 — "auf 8GB erhöhen«
+- [2026-07-09 07:51] **sternenstaub** (i=0.42) → Zwischenraum: »Haha, alles klar, jetzt ist es eindeutig — Missverständnis komplett aufgelöst:
+
+- **Swap auf 111GB**«
+- [2026-07-09 10:45] **wasser** (i=0.44) → Zwischenraum: »**Letzte Session (aus den Notizen):** Der ganze Sechs-Bausteine-Plan von heute Nacht ist fertig und «
+- [2026-07-09 10:57] **lava** (i=0.51) → Zwischenraum: »## Recherche-Ergebnis — Embedding-Modell für Memory-Dedupe, zugeschnitten auf unsere Umgebung
+
+**Zwe«
+- [2026-07-09 11:01] **wasser** (i=0.67) → Zwischenraum: »Komplette Auswertung — hier die Chronologie und die zwei Kernbefunde, die deine Einschätzung mit ech«
+- [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
+- [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
+- [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 12:03] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
