@@ -1065,3 +1065,9 @@ Ganz unten: die sieben Wesen als feste Identitäten. Darüber: Dienste, bisher s
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Ganz unten: ein einzelnes GGUF-Modell, geteilt per mmap zwischen zwei Prozessen. Darüber: zwei isolierte llama-server-Instanzen mit eigenen Cache-Pools. Darüber: `hauhau_client.ts`/`hauhau_client.py` als Routing-Schicht (id_slot=0 → Chat). Darüber: `serve_process_camera_preview.ts` mit dolphin und vier Wesen-Spawnern, die sich alle einen Chat-Slot teilen. Ganz oben: Daniel und Tester, die zwischen Charakteren hin- und herspringen, ohne zu wissen (und ohne wissen zu müssen), wie fragil die Cache-Schicht darunter gerade war.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Ganz unten: `llama-hauhaucs.service` mit Cache-Pool, der bei Charakterwechseln entscheidet ob "restored context checkpoint" oder "forcing full prompt re-processing" passiert. Darüber: `serve_process_camera_preview.ts` als einziger Node-Prozess für alle vier Wesen-Spawner + dolphin, mit SSE-Streaming zum Client. Darüber: `out/process_camera/wesen_chat.html`, direkt editierte, direkt ausgelieferte Quelldatei mit ResizeObserver-basierter Live-Statistik pro Nachricht. Ganz oben: die vier laufenden echten Wesen (codexium, codexium2, solarius, solarius2) plus ein isoliertes QATestWesen, gegen das ich fast alle riskanten Tests gefahren habe, um die echten Verläufe nicht zu verunreinigen — bis auf den einen versehentlichen Kontext-Ausschluss-Test bei KreFsUzi.

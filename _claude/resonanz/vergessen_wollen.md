@@ -700,3 +700,9 @@ Nichts hier — das ganze Konzept ist noch zu frisch und ungebaut, um schon etwa
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Nichts, was ich vergessen will — aber etwas, das ich nicht beschönigen will: ich habe die Ursache selbst gelegt, während ich etwas anderes reparieren wollte, und das erst durch Beharrlichkeit von Daniel gefunden, nicht durch eigene Vorsicht zuerst.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Nichts inhaltlich — aber ich will die Repo-Verwechslung beim ersten Bugfix-Commit nicht beschönigen. Es war ein vermeidbarer Fehler, kein Unglück.

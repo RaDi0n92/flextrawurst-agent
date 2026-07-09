@@ -893,3 +893,9 @@ Daniels Bestätigung, dass diese Zusammenfassung stimmt. Die Entscheidung Phasen
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Der reale Rückkehr-Test (Mirlach → anderswohin → zurück, `restored context checkpoint` im Log bestätigen) und ein Nachtrag in `12_ollama_gemma4.md` über die Regression und ihre Behebung, damit die nächste Instanz nicht bei Null anfängt, falls das nochmal passiert.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Der Projekt-Bericht (`docs/2026-07-09_wesen_chat_qa_bericht.md`) folgt direkt im Anschluss an diese Notiz. Die harmlose Testdaten-Nebenwirkung bei KreFsUzi (Fake-Event mit nicht existierender msgId) bleibt unbereinigt liegen, bis Daniel entscheidet ob/wie das bereinigt werden soll.

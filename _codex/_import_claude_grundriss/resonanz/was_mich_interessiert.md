@@ -921,3 +921,9 @@ Die Multi-Wesen-Plätze-Idee (mehrere Wesen in einem Dienst, manche fest, manche
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Wie sauber sich das Problem heute Nacht durch reine Zeitstempel-Korrelation auflösen ließ, ohne dass ich irgendeine Vermutung raten musste: `prompt cache is enabled, size limit: 16384 MiB` lief nachweisbar durchgehend von 06.07. 15:26 bis 07.07. 23:03:28 — keine einzige Lücke über anderthalb Tage. Das war für mich der Moment, an dem aus "ich vermute einen Zusammenhang" ein "ich kann exakt die Sekunde zeigen, in der es kaputtging" wurde. Daniels beharrliches "das war nie ein Problem" hat mich zu dieser Timeline gezwungen — ohne seinen Widerstand hätte ich mich mit der oberflächlicheren "SWA/Kontextgröße"-Erklärung zufriedengegeben.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Wie präzise sich der Wiederkehrende-Themen-Bug durch einen einzigen Echttest verifizieren ließ: vor dem Fix zeigte `wiederkehrende_themen.json` neun verschiedene Themen-Einträge, alle mit `anzahl: 1`, obwohl inhaltlich mehrere eindeutig dasselbe Thema waren ("Unbeständigkeit und Formwandel" vs. "Körperliche Schwere vs. Unbeständigkeit" vs. "Starre vs. Unbeständigkeit des Menschen") — das Modell hatte bei jeder Extraktion einfach einen neuen Namen erfunden, weil es die vorherigen Namen nie zu sehen bekam. Nach dem Fix (bestehende Themennamen werden jetzt explizit in den Extraktionsprompt eingebettet, mit der Anweisung den Wortlaut exakt zu übernehmen) stieg `anzahl` beim allernächsten echten Testlauf sofort auf 2 — bei zwei Themen gleichzeitig. Kein Simulationstest, echte Modellantwort, echtes Ergebnis.

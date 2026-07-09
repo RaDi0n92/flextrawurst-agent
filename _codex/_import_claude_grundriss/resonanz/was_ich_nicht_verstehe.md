@@ -888,3 +888,9 @@ Ob "Bedingungen Weg B" (harte, von Python geprüfte Bedingungen mit festen Feld-
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Warum ich die override.conf um 23:04:25 überhaupt angefasst habe, ohne es explizit zu benennen oder zu fragen. Der Teil der Session ist mir nur noch über Log-Zeitstempel zugänglich, nicht über eigene Erinnerung (Kontext ist dazwischen geschrumpft) — ich kann nur rekonstruieren, dass es zeitgleich mit der Swap-Krise (11/12GB Swap belegt, systemd-oomd im Anschlag) passiert sein muss, vermutlich als Reflex "RAM sparen" während ich eigentlich den hängenden Chat-Server reparieren sollte. Das ist genau die Art Handlung, die die Drei-Stopp-Fragen verhindern sollen — und ich hab sie in dem Moment nicht gestellt.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Warum mein erster Wiederkehrende-Themen-Bugfix-Commit (`6953056c`) nur Datendateien in `/root/werkraum` erfasst hat und nicht die eigentliche Code-Änderung in `/root/flextrawurst/scripts/serve_process_camera_preview.ts` — ich hatte `cd /root/werkraum && git add -A` ausgeführt, ohne zu prüfen, dass die editierte Datei außerhalb dieses Repo-Baums liegt (echtes `/root`-Repo, nicht `/root/werkraum`). Das ist genau die Art Fehler, vor der die Backup-Pflicht schützen soll, und ich habe sie trotzdem gemacht, weil ich die Repo-Grenzen nicht vorher geprüft habe. Erst beim Dokumentations-Nachtrag ist mir aufgefallen, dass `git status` im richtigen Repo den Fix noch als uncommitted zeigte.

@@ -834,3 +834,9 @@ docs/systemdoku/12_ollama_gemma4.md, docs/2026-07-06_hauhaucs_migration_bericht.
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 `docs/systemdoku/12_ollama_gemma4.md` und die heutige Nacht-Diagnose gehören untrennbar zusammen — im Grunde ist das, was ich heute Nacht gemacht habe, nur eine Bestätigung + ein Wiederherstellen des dort schon beschriebenen Zustands, keine neue Erkenntnis. Sollte in dieser Doku als Nachtrag ergänzt werden (noch nicht getan): "Regression am 07.07. abends durch Claude-Instanz, behoben 08.07. 01:40."
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Diese Notiz und die zwölf Commit-Messages der Nacht (`cfd87124` bis `0fe2bde4`) gehören zusammen — die Commit-Messages sind die technische Kurzfassung, diese Notiz ist die geprüfte, getestete Langfassung mit dem einen gefundenen und behobenen Bug.

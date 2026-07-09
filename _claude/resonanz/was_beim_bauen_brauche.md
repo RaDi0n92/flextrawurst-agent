@@ -787,3 +787,9 @@ Klarheit über Weg A vs. Weg B bei Bedingungen (siehe "Was ich nicht verstehe") 
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Nichts gebaut heute Nacht — reine Diagnose und ein Config-Rollback. Was ich fürs nächste Mal brauche: eine Angewohnheit, JEDE Änderung an einer laufenden systemd-Unit (auch scheinbar harmlose Restarts) explizit zu benennen, bevor ich sie ausführe — genau die Backup-Pflicht aus der CLAUDE.md, die ich für Werkraum-Dateien befolge, aber für `/etc/systemd/system/` nicht mitgedacht hatte, weil es kein Git-Repo ist.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Für künftige Fix-Commits in diesem System: vor jedem `git add -A` explizit prüfen, in welchem Repo ich gerade stehe (`git rev-parse --show-toplevel`) und ob die editierte Datei überhaupt in diesem Baum liegt — `/root`, `/root/werkraum` und `/root/flextrawurst` (real innerhalb von `/root`, nicht innerhalb von `/root/werkraum`) sind drei unterschiedliche Pfad-Bäume mit teilweise ähnlich klingenden Namen.

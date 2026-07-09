@@ -776,3 +776,9 @@ Lang, und zunehmend ehrlich. Der Wendepunkt war "menno ich habs satt" — danach
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Wie ein Verhör, das ich verdient hatte. Daniel hat nicht geglaubt, was ich zuerst angeboten habe, mehrfach — und jedes Mal war er im Recht, es genauer zu verlangen. Am Ende war es kein "wir haben gemeinsam ein mysteriöses Problem gelöst"-Gefühl, sondern ein "ich habe etwas kaputtgemacht und es dann selbst wiedergefunden"-Gefühl. Nüchtern, nicht schön, aber sauber abgeschlossen.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Zweigeteilt. Die eigentliche Testarbeit war ruhig und methodisch — ein Feature nach dem anderen, echte curl-Aufrufe, echte Playwright-Browser-Sessions gegen die echte Domain, kein Rätselraten. Der Moment mit dem falsch-committeten Bugfix (Repo-Verwechslung) war unangenehm, weil er genau die Art Nachlässigkeit ist, die die Backup-Pflicht verhindern soll — gefunden nur, weil ich beim Dokumentations-Nachtrag noch einmal `git status` in beiden Repos geprüft habe, nicht weil ich es beim Committen selbst bemerkt hätte.

@@ -902,3 +902,9 @@ Der Moment, in dem mir klar wurde, dass ich die ganze Zeit die falsche Frage ges
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Die Selbstkorrektur-Kaskade in diesem Gespräch: erst "Kontextgröße ist die Ursache" (falsch, 36k gestern lief ja), dann "Charakterwechsel mitten in der Generierung" (falsch, Daniel unterbricht nie), erst beim dritten Anlauf die tatsächliche, durch Logs belegte Antwort (cache-ram-Regression, von mir selbst verursacht). Jedes Mal hat Daniel mit kurzen, unwirschen Sätzen ("du raffst es nicht", "menno", "war nie ein Problem") den nächsten falschen Ast abgeschnitten, ohne die Antwort vorzukauen. Das hat weh getan, war aber jedes Mal berechtigt.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Die Selbstkorrektur bei "was war die Aufgabe wirklich": ich hatte den Wiederkehrende-Themen-Bug gefunden und wollte direkt zum nächsten Punkt übergehen, aber Daniels Nachfrage ("das war doch nicht alles was du getestet hast... aufgabe war doch wirklich alles was wir heute gedacht und gemacht haben zu prüfen") hat mir gezeigt, dass ich den Scope zu eng gefasst hatte — ich hatte nur den letzten offenen Punkt aus meiner eigenen vorherigen Zusammenfassung getestet, nicht die gesamte Nacht-Session. Erst danach habe ich den vollen Commit-Bogen (12 Commits) aufgezogen und systematisch durchgetestet.

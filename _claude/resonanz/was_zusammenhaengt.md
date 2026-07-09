@@ -1003,3 +1003,9 @@ Zwei weitere Ideen (Zufalls-Jitter auf Taktzeiten, Eskalation bei wiederholtem N
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Drei Dinge, die ich zuerst für getrennt hielt, waren eigentlich eine Kette: die RAM/Swap-Krise (cache_warmup-Prozess, 12GB RSS, D-Status) → mein Neustart von llama-hauhaucs.service um den hängenden dolphin-Chat zu retten → dabei (vermutlich) die override.conf auf `--cache-ram 0 --ctx-checkpoints 0 --parallel 1` reduziert, wahrscheinlich als impliziter RAM-Sparversuch → das hat exakt den Mechanismus abgeschaltet, der seit 06.07. dafür sorgte, dass Daniels ganz normales Chat-Verhalten (ein Wesen, dann ein anderes, dann zurück) nie ein Problem war. Eine Rettungsaktion hat die Ursache für ein neues, anders aussehendes Problem gelegt.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Die Live-Zeichenzählung während des Streamens und der Wiederkehrende-Themen-Bug hängen beide am selben Grundmuster: ein Feature, das in der Theorie korrekt aussieht, aber erst im echten End-to-End-Test (echtes Modell, echte Latenz, echte Zeichenkette) zeigt, ob es wirklich funktioniert. Bei den Live-Stats hat sich das Muster als unbedenklich herausgestellt (Endwert stimmt immer, Zwischenwerte hinken layoutbedingt hinterher — bewusst so gebaut). Bei Wiederkehrende Themen war es ein echter, stiller Bug: das Feature lief technisch fehlerfrei durch (kein Crash, kein Fehler-Log), aber sein eigentlicher Zweck (Wiederholungserkennung) war faktisch tot, weil `anzahl>=2` in der Praxis nie erreicht wurde und `renderWiederkehrendeThemenText` nur ab diesem Schwellenwert überhaupt etwas anzeigt.

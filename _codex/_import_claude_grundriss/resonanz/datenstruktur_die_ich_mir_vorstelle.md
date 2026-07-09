@@ -2175,3 +2175,11 @@ Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal i
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+**Vision-Schicht:** Kein neuer Datenstruktur-Bedarf entstanden — beide Fixes (Live-Stats-Verifikation, Wiederkehrende-Themen-Prompt) nutzen ausschließlich bestehende Strukturen (`msg-stats`-DOM-Element, `wiederkehrende_themen.json`).
+
+**Code-Skizze:** siehe den tatsächlichen Fix in `serve_process_camera_preview.ts`, Extraktionsprompt-Erweiterung um `bisherigeThemenText` — bereits umgesetzt, kein weiterer Entwurf nötig.

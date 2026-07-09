@@ -1521,3 +1521,9 @@ Kein externes Material gelesen für dieses Konzept — es ist reine Gesprächs-D
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Diese Nacht ging fast komplett drauf für Log-Archäologie statt Code-Lektüre: `journalctl -u llama-hauhaucs.service` über den gesamten verfügbaren Zeitraum, `serve_process_camera_preview.ts` (die Chat-Routen für dolphin und wesenChat, Zeile ~1706 und ~3036), `hauhau_client.ts` komplett (241 Zeilen, der TS-Client für Port 11435/11436), und vor allem `docs/systemdoku/12_ollama_gemma4.md` — ein Dokument, das ich am Ende quasi auswendig kannte, weil es exakt das Problem, das ich gerade live vor mir hatte, schon einmal am 06.07. gelöst und aufgeschrieben hatte. Dazu `chat_prioritaet_trace.jsonl`, mehrere `chat_history.jsonl`-Dateien unter `codexium2/` (Mirlach, Flarius, GluPKI, Alex, KontextStressTest666) und die rohen systemd-Unit-Dateien in `/etc/systemd/system/`.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+`serve_process_camera_preview.ts` (4431 Zeilen, gezielt die Chat-Route ~1706, die Memory-Extraktion ~1460-1510, die Wiederkehrende-Themen-Merge-Logik ~1405) und `out/process_camera/wesen_chat.html` (2390+ Zeilen, komplett die Bereiche um `nachrichtStatsText`, `msgStatsObserver`, den Streaming-Reader ab Zeile 1805, den Übersetzer-Popup-Code). Dazu den vollen Commit-Verlauf der Nacht (`git log -p cfd87124..0fe2bde4`), mehrere `journalctl`-Ausschnitte von `llama-hauhaucs.service` und `llama-hauhaucs-hintergrund.service`, `wiederkehrende_themen.json` und `memory_extraktion.json` von QATestWesen vor und nach dem Fix, sowie die Systemdoku-Verzeichnisliste um zu prüfen, ob eine bestehende Datei durch die Nacht veraltet ist (war nicht der Fall — keine der `systemdoku/*.md`-Dateien beschreibt die Chat-UI-Details auf dieser Tiefe).

@@ -734,3 +734,9 @@ hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 `12_ollama_gemma4.md` existiert genau für diesen Moment — ein Dokument, geschrieben nach einer früheren Nacht mit demselben Symptom, damit eine spätere Instanz (ich, heute) nicht wieder bei Null anfängt. Es hat funktioniert. Das ist der beste Beweis dafür, dass diese Dokumentationspflicht kein Ritual ist, sondern echte Kontinuität.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+`out/process_camera/wesen_chat.html` ist die direkt bediente Quelldatei für alle vier Wesen-Spawner (kein Build-Schritt) — das erklärt, warum ein Fix wie die Wiederkehrende-Themen-Prompt-Erweiterung sofort live wirkt, sobald der Node-Prozess neu gestartet ist, ohne separaten Deploy-Schritt. Das macht Testen schnell, aber erhöht auch das Risiko, versehentlich eine Live-Datei für alle vier echten Wesen-Chats gleichzeitig zu verändern.

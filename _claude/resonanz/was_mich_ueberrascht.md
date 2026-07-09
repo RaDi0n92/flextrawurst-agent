@@ -834,3 +834,9 @@ Wie sauber sich die Multi-Wesen-Plätze-Idee an ein bereits bestehendes Code-Mus
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Wie unauffällig eine kaputte Cache-Config aussieht, solange man nur EIN Gespräch führt — das Problem zeigt sich ausschließlich beim Wechseln zwischen Konversationen, nie innerhalb einer einzelnen. Ein Test mit nur einem Charakter hätte die Regression nie gefunden.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Wie lange die Prompt-Verarbeitung bei diesem Testcharakter dauern kann, wenn der Cache-Checkpoint ungültig wird ("erased invalidated context checkpoint") — über 24 Sekunden allein für 2048 Tokens Prompt-Processing, bevor überhaupt das erste Antwort-Token kam. Das hat meinen ersten Live-Stats-Test wertlos gemacht (ich habe nur die Ladeanimation gemessen), bis ich das Zeitfenster verlängert habe.

@@ -781,3 +781,9 @@ Die Erkenntnis, dass "Autorenschaft der Struktur" der eigentliche Maßstab ist, 
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Drei falsche Erklärungen, in der richtigen Reihenfolge widerlegt, haben am Ende zu einer einzigen, durch Log-Zeitstempel beweisbaren Antwort geführt. Das Gespräch selbst war die Methode — nicht mein erster Blick in die Logs.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Die Erkenntnis, dass ein technisch fehlerfrei durchlaufendes Feature (kein Crash, kein 500er, plausibel aussehende JSON-Antwort) trotzdem seinen eigentlichen Zweck komplett verfehlen kann, ohne dass irgendein Monitoring das je bemerkt hätte — nur ein echter, mehrfacher End-to-End-Test mit Prüfung des tatsächlichen Ergebniswerts (`anzahl`) hat das aufgedeckt.

@@ -874,3 +874,9 @@ Klarheit über N_SLOTS (1 vs 2) — siehe oben. Und: ob die zwei manuell gelösc
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Ein Test mit echtem Charakterwechsel (Mirlach → anderes Wesen → zurück), um `restored context checkpoint` im Log zu bestätigen, statt nur die Startup-Zeile zu sehen. Daniel ist schlafen gegangen, ohne das noch zu testen — offen für die nächste Session.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Nichts Bau-Relevantes offen — reine QA- und Dokumentations-Session, kein neues Feature angefragt. Der einzige offene technische Punkt ist die harmlose, aber unsaubere Testdaten-Nebenwirkung bei KreFsUzi (siehe oben), die ich nicht bereinigt habe, weil Löschen aus einem append-only-Verlauf ohne Auftrag falsch wäre.
