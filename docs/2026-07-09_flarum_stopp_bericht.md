@@ -216,6 +216,44 @@ genau diesem Muster, unter dem `/api/flarumstyler/...`-Namensraum:
   Rückfrage") — bestätigt, Prozess beendet, `process-camera-preview.service`
   sauber über systemctl gestartet.
 
+### Nachtrag, noch selber Tag — echte Tabs, Begriffs-Korrektur
+
+Daniel nach Sichtung: die Ereignis-Begriffe `container_verschoben`/
+`container_kopiert` klingen fälschlich nach einer Operation am ganzen
+Container, obwohl (schon immer, seit Baustein 2) nur ein einzelner Eintrag
+zwischen zwei Containern bewegt wird — die Verschiebe-/Kopierfunktion selbst
+war nie eingeschränkt (funktioniert zwischen jedem Container und jedem
+anderen, für jedes Wesen). Rückfrage ergab: **kein UI zum manuellen
+Verschieben/Kopieren gewünscht** — Zitat: *"wozu ui buttons? ich soll die doch
+nicht managen sondern die wesen selber"*. Also reine Begriffs-Korrektur, keine
+neue Bedienfunktion:
+- `typ`-Werte umbenannt: `container_verschoben` → `eintrag_verschoben`,
+  `container_kopiert` → `eintrag_kopiert` — in `flarum_stopp_protokoll.py`
+  (TYPEN-Tupel), `codewesen_container.py` (beide `schreibe()`-Aufrufe),
+  `serve_process_camera_preview.ts` + `_smoketest.ts` (Typenliste für die
+  API-Antwort), `flarumstyler.html` (Label-Mapping).
+- Keine bestehenden Protokoll-Einträge betroffen — zum Zeitpunkt der
+  Umbenennung existierte noch kein einziger `eintrag_*`-Eintrag in der echten
+  Datei (nur der eine `sperre_aktiviert`-Eintrag), keine Migration nötig.
+
+Zweiter Auftrag im selben Zug: *"ich will für .de/flarumstyler ab jetzt dass
+alles was existiert sauber in logische tabs gelegt wird"*. flarumstyler war
+bis dahin eine lange Seite aus einklappbaren Sektionen — umgebaut auf eine
+echte Tab-Leiste mit 9 Tabs (Live-Aktivität, Ressourcen, Dienste, Log-Fehler,
+Verlauf — Wesen-Dienste, Entwürfe, Neugier, Container, Flarum-Stopp — die
+beiden Flarum-Stopp-Sektionen zu einem gemeinsamen Tab zusammengefasst). Alte
+Einklapp-Logik (`toggle()`, `.eingeklappt`, Auto-Einklappen der Dienste-
+Sektion) vollständig entfernt, aktiver Tab im URL-Hash gespiegelt.
+
+Dabei außerdem geklärt: das von Daniel als Bug gemeldete leere Dropdown im
+Tab "Verlauf — Wesen-Dienste" ist korrektes Verhalten — dieser Tab zeigt nur
+selbst über den Wesen-Dienst-Wizard erzeugte Dienste (`wesen_eigene_dienste`-
+Tabelle, 0 Zeilen, noch nie einer erzeugt), nicht die 43 fest eingebauten
+`codewesen-*`-Dienste. Hinweistext im Tab ergänzt.
+
+Vollständige technische Details: `docs/systemdoku/20_flarum_stopp.md`
+(Baustein 2 + Baustein 6) und `docs/systemdoku/18_flarumstyler.md`.
+
 ---
 
 ## Was bewusst NICHT gebaut/geändert wurde

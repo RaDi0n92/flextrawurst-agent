@@ -334,7 +334,7 @@ def verschiebe(wesen: str, von_container: str, dateiname: str, nach_container: s
     quelle.unlink()
     log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' verschoben")
     flarum_stopp_protokoll.schreibe(
-        typ="container_verschoben", wesen=wesen,
+        typ="eintrag_verschoben", wesen=wesen,
         text=f"{wesen} hat '{dateiname}' von Container '{von}' nach '{nach}' verschoben.",
         meta={"von_container": von, "nach_container": nach, "dateiname": dateiname},
     )
@@ -358,7 +358,7 @@ def kopiere(wesen: str, von_container: str, dateiname: str, nach_container: str)
     ziel_datei.write_text(text, encoding="utf-8")
     log.info(f"[{wesen}] '{dateiname}' von Container '{von}' nach '{nach}' kopiert")
     flarum_stopp_protokoll.schreibe(
-        typ="container_kopiert", wesen=wesen,
+        typ="eintrag_kopiert", wesen=wesen,
         text=f"{wesen} hat '{dateiname}' von Container '{von}' nach '{nach}' kopiert.",
         meta={"von_container": von, "nach_container": nach, "dateiname": dateiname},
     )

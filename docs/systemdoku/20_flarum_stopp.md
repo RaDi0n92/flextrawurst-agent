@@ -52,10 +52,11 @@ codewesen_container.verschiebe(wesen, von_container, dateiname, nach_container) 
 codewesen_container.kopiere(wesen, von_container, dateiname, nach_container) -> bool
 ```
 
-- Bewegt/dupliziert einen einzelnen Eintrag zwischen privaten Containern eines Wesens, aktualisiert das `container:`-Frontmatter-Feld.
+- Bewegt/dupliziert einen einzelnen Eintrag zwischen **beliebigen** privaten Containern eines Wesens (keine feste Liste, jeder Containername zu jedem anderen), aktualisiert das `container:`-Frontmatter-Feld.
 - Zielordner wird bei Bedarf angelegt, aber **ohne** das LLM-gestützte Eröffnungsritual (das bleibt `erstelle()` vorbehalten) — reines Ablage-Werkzeug, kein neuer Denkprozess.
 - Namenskollisionen im Ziel bekommen einen Zeitstempel-Suffix statt zu überschreiben.
 - `forum_neugier.py` und `codewesen_klon.py` nutzen dieselbe Modul-Basis und profitieren automatisch, ohne selbst geändert zu sein.
+- **Bewusst kein manuelles UI** in flarumstyler zum Verschieben/Kopieren — die Container sind die private Selbstverwaltung der Wesen (Themen-Container-Ritual, Baustein 3), nicht Daniels Werkzeug. flarumstyler zeigt Container nur an (Tab "Container"), verschoben/kopiert wird ausschließlich durch die Wesen selbst, über `codewesen_umgekehrte_neugier.py`.
 - Jeder Aufruf schreibt einen Eintrag ins Protokoll (Baustein 4).
 
 ---
@@ -99,7 +100,7 @@ flarum_stopp_protokoll.schreibe(typ, text, wesen=None, dauer_sekunden=None, meta
 flarum_stopp_protokoll.lies(wesen=None, limit=200) -> list[dict]
 ```
 
-Bekannte `typ`-Werte: `sperre_aktiviert`, `sperre_aufgehoben`, `container_verschoben`, `container_kopiert`, `neugier_session_start`, `neugier_entscheidung`, `neugier_session_ende`.
+Bekannte `typ`-Werte: `sperre_aktiviert`, `sperre_aufgehoben`, `eintrag_verschoben`, `eintrag_kopiert`, `neugier_session_start`, `neugier_entscheidung`, `neugier_session_ende`. (Bewusst `eintrag_*`, nicht `container_*` — es wird immer nur ein einzelner Eintrag zwischen zwei Containern bewegt, nie der ganze Container. Ursprünglich hieß es `container_verschoben`/`container_kopiert`, was fälschlich nach einer Container-Operation klang; am 2026-07-09 auf Daniels Hinweis korrigiert.)
 
 **Zwei Ablagen pro Eintrag** (beide bekommen jeden Eintrag, wenn `wesen` gesetzt ist — nur `wesen=None`-Ereignisse wie Sperre an/aus landen ausschließlich global):
 - `flarum_stopp_protokoll_global.jsonl` — alle Ereignisse zusammen, für flarumstyler/Admin.
@@ -140,9 +141,9 @@ Erfüllt Grundgesetz 1 (meta JSONB) und Grundgesetz 2 (`suche()` ist durchsuchba
 
 ---
 
-## Baustein 6 — flarumstyler: Live + Protokoll
+## Baustein 6 — flarumstyler: Live + Protokoll + echte Tabs
 
-Zwei neue Sektionen in `out/process_camera/flarumstyler.html` (Port 8787, siehe [[18_flarumstyler]]) — flarumstyler ist eine Seite aus klappbaren Sektionen, kein echtes Tab-System; die neuen Sektionen folgen demselben Muster wie die bestehenden "Neugier"/"Container"/"Entwürfe"-Sektionen.
+Zwei neue Sektionen in `out/process_camera/flarumstyler.html` (Port 8787, siehe [[18_flarumstyler]]).
 
 **Backend:** `GET /api/flarumstyler/protokoll` in `scripts/serve_process_camera_preview.ts` (und identisch in der `_smoketest.ts`-Kopie). Liest `flarum_stopp_protokoll_global.jsonl` direkt — kein DB-Zugriff nötig, der Postgres-Spiegel aus Baustein 5 ist ein eigenständiger Kanal für andere Konsumenten. `?wesen=`/`?typ=`/`?search=`/`?sort=&order=`/`?limit=&offset=` wie überall (Grundgesetz 2). Liefert zusätzlich `wesen_namen` (7 Namen) und `typen` (7 bekannte Ereignistypen) fürs Dropdown.
 
@@ -151,6 +152,14 @@ Zwei neue Sektionen in `out/process_camera/flarumstyler.html` (Port 8787, siehe 
 **"Flarum-Stopp — Protokoll":** volle filterbare Liste aller Ereignisse (Wesen-Dropdown, Typ-Dropdown, Volltextsuche), neueste zuerst. Klick öffnet Detail-Modal mit vollem Text + `meta`-JSON.
 
 Playwright-getestet gegen den echten Server: keine Konsolenfehler, Wesen-Karten-Klick, Typ-Filter (inkl. Leer-Zustand), Volltextsuche (inkl. Leer-Zustand) funktional verifiziert. Ein CSS-Grid-Verschachtelungsbug (Banner + Kartengrid quetschten sich in eine Spalte, weil der äußere Container zusätzlich zum injizierten inneren Grid selbst `class="grid"` trug) wurde beim ersten Screenshot gefunden und sofort gefixt.
+
+**Nachtrag, noch selber Tag — echte Tab-Navigation statt klappbarer Sektionen:** Daniel: *"ich will für flarumstyler ab jetzt dass alles was existiert sauber in logische tabs gelegt wird"*. flarumstyler war bis dahin eine einzige lange Seite aus einklappbaren `<section>`-Blöcken (`toggle('id')`). Umgebaut auf echte Tab-Leiste (`<nav class="tabs">`, 9 Buttons) mit `.tab-panel`-Divs (nur ein Panel gleichzeitig sichtbar, `display:none`/`flex` über `.aktiv`-Klasse), aktiver Tab im URL-Hash gespiegelt (`#neugier` etc., direkt verlinkbar, übersteht Reload). Die alte Einklapp-Logik (`toggle()`-Funktion, `.eingeklappt`-CSS, das automatische Einklappen der "Dienste"-Sektion wenn alles grün war) komplett entfernt — in einer Tab-Welt ergibt "die gerade angeklickte Ansicht automatisch wieder verstecken" keinen Sinn mehr.
+
+Die 9 Tabs, 1:1 aus den vorher neun Sektionen (Flarum-Stopp-Live und -Protokoll wurden zu einem gemeinsamen Tab zusammengefasst, weil sie thematisch ohnehin nur eine Sache sind): Live-Aktivität, Ressourcen, Dienste, Log-Fehler, Verlauf — Wesen-Dienste, Entwürfe, Neugier, Container, Flarum-Stopp.
+
+**Dabei geklärt — zwei scheinbare Bugs, die keine waren:**
+- **"Verlauf — Wesen-Dienste"-Dropdown war leer:** kein Bug — dieser Tab zeigt ausschließlich selbst erzeugte Dienste aus dem Wesen-Dienst-Wizard (`wesen_eigene_dienste`-Tabelle), nicht die 43 fest eingebauten `codewesen-*`-Dienste (die stehen im Tab "Dienste"). Die Tabelle hatte schlicht 0 Zeilen — noch nie wurde ein Dienst über den Wizard erzeugt. Hinweistext im Tab ergänzt, damit das nicht mehr wie ein Bug aussieht.
+- **Container "verschieben"/"kopieren" klang nach ganzer-Container-Operation:** war schon immer entry-level (siehe Baustein 2), nur die Event-Typ-Namen (`container_verschoben`/`container_kopiert`) waren irreführend benannt — auf `eintrag_verschoben`/`eintrag_kopiert` korrigiert (Code + Protokoll-Typenliste + UI-Label). **Kein UI zum manuellen Verschieben/Kopieren gebaut** — auf Nachfrage bestätigt: die Container sind Selbstverwaltung der Wesen, nicht Daniels Werkzeug, das managen die Wesen selbst über den umgedrehten Neugier-Dienst.
 
 ---
 

@@ -158,9 +158,7 @@ tatsaechliche Tiefe aus den Skripten selbst.
 ## Flarum-Stopp — Live + Protokoll (2026-07-09)
 
 Zwei neue Sektionen, gebaut als Baustein 6 des Flarum-Stopp-Vorhabens
-(`docs/2026-07-09_flarum_stopp_bericht.md`) — folgen demselben Muster wie die
-bereits existierenden "Neugier"/"Container"/"Entwürfe"-Sektionen (klappbare
-`<section>`, kein echtes Tab-System).
+(`docs/2026-07-09_flarum_stopp_bericht.md`).
 
 - **`GET /api/flarumstyler/protokoll`** — liest `flarum_stopp_protokoll_global.jsonl`
   (`flarum_stopp_protokoll.py`) direkt, kein DB-Zugriff. `?wesen=`/`?typ=`/
@@ -170,6 +168,30 @@ bereits existierenden "Neugier"/"Container"/"Entwürfe"-Sektionen (klappbare
   keine Sitzung), Klick öffnet die volle Ereignisgeschichte des Wesens.
 - **"Flarum-Stopp — Protokoll"**: volle filterbare Liste aller Ereignisse,
   Klick öffnet Detail-Modal mit Text + `meta`-JSON.
+
+## Umbau auf echte Tabs (2026-07-09, noch selber Tag)
+
+Daniel: *"ich will für flarumstyler ab jetzt dass alles was existiert sauber
+in logische tabs gelegt wird"*. Vorher: eine lange Seite aus einklappbaren
+`<section>`-Blöcken (`toggle('id')`, `.eingeklappt`-CSS) — **das gilt ab jetzt
+nicht mehr**, auch die weiter oben beschriebene automatische Einklapp-Logik
+der "Dienste"-Sektion (Ausbau-Abschnitt 2026-07-07) wurde dabei entfernt, weil
+sie in einer Tab-Welt keinen Sinn mehr ergibt.
+
+Neu: echte Tab-Leiste (`<nav class="tabs">`) mit 9 Tabs — Live-Aktivität,
+Ressourcen, Dienste, Log-Fehler, Verlauf — Wesen-Dienste, Entwürfe, Neugier,
+Container, Flarum-Stopp (Live+Protokoll zusammen in einem Tab). Nur ein
+`.tab-panel` gleichzeitig sichtbar, aktiver Tab im URL-Hash gespiegelt und
+direkt verlinkbar (`.../flarumstyler#neugier`).
+
+Dabei zwei Klärungen, keine Bugs: das leere Dropdown im Tab "Verlauf —
+Wesen-Dienste" zeigt korrekt 0 Einträge (dieser Tab ist für selbst über den
+Wesen-Dienst-Wizard erzeugte Dienste, noch nie einer erzeugt — nicht zu
+verwechseln mit den 43 fest eingebauten `codewesen-*`-Diensten im Tab
+"Dienste"). Und die Protokoll-Ereignistypen `container_verschoben`/
+`container_kopiert` wurden zu `eintrag_verschoben`/`eintrag_kopiert`
+korrigiert (siehe [[20_flarum_stopp]], Baustein 2) — es wird immer nur ein
+einzelner Eintrag bewegt, nie der ganze Container.
 
 ## Nächste Schritte (noch offen)
 

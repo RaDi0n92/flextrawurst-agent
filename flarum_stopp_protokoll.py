@@ -29,8 +29,8 @@ CODEWESEN_BASIS = Path("/root/werkraum/codewesen")
 TYPEN = (
     "sperre_aktiviert",
     "sperre_aufgehoben",
-    "container_verschoben",
-    "container_kopiert",
+    "eintrag_verschoben",
+    "eintrag_kopiert",
     "neugier_session_start",
     "neugier_entscheidung",
     "neugier_session_ende",
