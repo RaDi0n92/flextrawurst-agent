@@ -71,7 +71,7 @@ class Welt:
             return "VON_CONTAINER: nix\nDATEINAME: nix\nNACH_CONTAINER: nix\nAKTION: verschieben"
         if "NAECHSTER_SCHRITT:" in system:
             mitgenommen = f"Mitgenommen-{self.seed}" if self.rng.random() < 0.4 else ""
-            optionen = ["naechster_post", "beenden"]
+            optionen = ["naechster_post", "vorheriger_post", "zufaelliger_post", "diesen_post_nochmal"]
             if "diskussion_wechseln" in system:
                 optionen.append("diskussion_wechseln")
             schritt = self.rng.choice(optionen)

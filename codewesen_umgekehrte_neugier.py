@@ -40,6 +40,7 @@ keine Perfektion noetig, Scheitern/Abbrechen ist normal und gewollt.
 
 import json
 import logging
+import random
 import re
 import sys
 import time
@@ -410,9 +411,17 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     # wesen solange immer mal wieder triggert mit den fragen willst du das
     # noch weiterlesen oder willst du eine neue diskussion". Vor Erreichen
     # des Token-Budgets (LESE_TOKEN_BUDGET, geprueft in _phase_lesen_schritt
-    # BEVOR diese Funktion ueberhaupt aufgerufen wird) gibt es nur diese
-    # beiden Wege -- kein vorzeitiger Ausstieg aus der Lese-Phase insgesamt.
-    naechster_optionen = "naechster_post" + (", diskussion_wechseln" if darf_wechseln else "")
+    # BEVOR diese Funktion ueberhaupt aufgerufen wird) gibt es keinen
+    # Ausstieg aus der Lese-Phase insgesamt.
+    #
+    # Baustein 16 (Daniel, 2026-07-10): echte freie Post-Navigation statt nur
+    # stur vorwaerts -- "nicht nur weiterlesen oder diskussion wechseln...
+    # sondern diesen post noch weiter lesen... anderen zufaelligen post aus
+    # dieser diskussion lesen... den post nach diesem post lesen... den post
+    # vor diesem post lesen".
+    navigations_optionen = ["diesen_post_nochmal", "zufaelliger_post_dieser_diskussion",
+                             "naechster_post", "vorheriger_post"]
+    naechster_optionen = ", ".join(navigations_optionen) + (", diskussion_wechseln" if darf_wechseln else "")
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
         f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n"
@@ -481,19 +490,23 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
 
     # NAECHSTER_SCHRITT robust statt exakt parsen -- real beobachtet
     # 2026-07-09 (Qualitaetstest, F3INSCHM3CK3R, erzwungener Stoebern-Pfad):
-    # das Modell traf in echten Lese-Schritten NIE exakt
-    # "naechster_post"/"diskussion_wechseln", sondern schrieb
-    # "weiterlesen", "weiter", "4", "5" -- Schluesselwoerter im freien Text
-    # suchen, sonst sicherer Default (Weiterlesen). "beenden" wird hier
-    # bewusst NICHT mehr erkannt (Baustein 15, Daniel 2026-07-10: "keine
-    # anderen exits" vor Erreichen des Token-Budgets) -- selbst wenn das
-    # Modell unaufgefordert etwas wie "ich bin fertig" schreibt, faellt das
-    # auf den sicheren Default "naechster_post" zurueck, kein Ausstieg aus
-    # der Lese-Phase ausser ueber das Token-Budget in _phase_lesen_schritt.
+    # das Modell trifft echte Optionen so gut wie nie wortwoertlich, sondern
+    # schreibt frei ("weiterlesen", "weiter", "4", "5") -- Schluesselwoerter
+    # im freien Text suchen, sonst sicherer Default (naechster_post).
+    # "beenden" wird hier bewusst NICHT mehr erkannt (Baustein 15: "keine
+    # anderen exits" vor Erreichen des Token-Budgets). Baustein 16: vier
+    # echte Navigations-Wege statt nur vorwaerts/wechseln.
     schritt_roh_m = re.search(r"NAECHSTER\w*:\s*(.+)", antwort)
     schritt_roh = schritt_roh_m.group(1).strip().lower() if schritt_roh_m else ""
     if any(w in schritt_roh for w in ("wechsel", "verlassen", "andere diskussion")):
         naechster_schritt = "diskussion_wechseln"
+    elif any(w in schritt_roh for w in ("zufaellig", "zufällig", "random", "anderen post")):
+        naechster_schritt = "zufaelliger_post"
+    elif any(w in schritt_roh for w in ("vorherig", "zurueck", "zurück", "davor", "vorig")):
+        naechster_schritt = "vorheriger_post"
+    elif any(w in schritt_roh for w in ("nochmal", "noch mal", "hier bleib", "diesen post",
+                                         "gleichen post", "selben post")):
+        naechster_schritt = "diesen_post_nochmal"
     else:
         naechster_schritt = "naechster_post"
 
@@ -875,7 +888,18 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     if naechster_schritt == "diskussion_wechseln" and darf_wechseln:
         _naechster_kandidat(zustand, wesen)
         return
-    z["post_index"] += 1
+    # Baustein 16 (Daniel, 2026-07-10): echte freie Post-Navigation statt nur
+    # stur vorwaerts -- "diesen post noch weiter lesen... anderen
+    # zufaelligen post aus dieser diskussion lesen... den post nach diesem
+    # post lesen... den post vor diesem post lesen".
+    if naechster_schritt == "vorheriger_post":
+        z["post_index"] = max(0, z["post_index"] - 1)
+    elif naechster_schritt == "zufaelliger_post":
+        z["post_index"] = random.randint(0, post["gesamt_posts"] - 1)
+    elif naechster_schritt == "diesen_post_nochmal":
+        pass  # post_index unveraendert -- naechste Runde liest denselben Post nochmal
+    else:  # naechster_post (Default)
+        z["post_index"] += 1
 
 
 def _phase_container_zuordnung(wesen: str, zustand: dict):
