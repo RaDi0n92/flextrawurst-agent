@@ -59,6 +59,30 @@ def liste(wesen: str) -> list[str]:
     return sorted(p.name for p in b.iterdir() if p.is_dir())
 
 
+def dateien(wesen: str, container: str) -> list[str]:
+    """Listet die echten Eintraege (Dateinamen) INNERHALB eines Containers --
+    liste() gibt nur Container-NAMEN zurueck, das reicht fuer verschiebe()/
+    kopiere() nicht, die einen konkreten dateiname brauchen. Ergaenzt fuer
+    den Container-Pflege-Weg des umgedrehten Neugier-Diensts (2026-07-09)."""
+    ordner = basis(wesen) / name_sicher(container)
+    if not ordner.exists():
+        return []
+    return sorted(p.name for p in ordner.glob("*.md") if p.name != "container.md")
+
+
+def sicherstelle_container(wesen: str, anlass: str = "automatisch angelegt, damit immer ein Ziel zum Sichern existiert") -> str:
+    """Daniel, 2026-07-09: 'falls das wesen keinen container hat wird ihm
+    vom system einer hinzugefuegt namens alles'. Rueckgabe: Name des
+    garantiert existierenden Containers -- entweder der neue 'alles' oder,
+    falls schon einer da ist, wird NICHTS angelegt (kein Zwang, bestehende
+    Container bleiben unangetastet)."""
+    bestehende = liste(wesen)
+    if bestehende:
+        return bestehende[0]
+    erstelle(wesen, "alles", anlass)
+    return "alles"
+
+
 def erstelle(wesen: str, name: str, anlass: str) -> None:
     """Eroeffnungsritual: ein neuer, noch leerer Container bekommt sofort
     eine kurze Selbstbeschreibung und 1-3 Zwischenziele vom Wesen selbst —

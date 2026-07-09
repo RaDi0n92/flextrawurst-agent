@@ -272,6 +272,34 @@ def suche_diskussionen(suchbegriff: str, limit: int = 15) -> list:
     return [dict(r) for r in rows]
 
 
+def zufaellige_diskussionen(limit: int = 8) -> list:
+    """Stoebern-Fallback fuer den umgedrehten Neugier-Dienst (Baustein 10,
+    2026-07-09): wenn die gezielte Suche (inkl. Uebersetzung) und das
+    Container-Pflege-Angebot nichts liefern, garantiert verfuegbarer letzter
+    Weg -- eine echte, live aus der DB gezogene Zufallsauswahl.
+
+    ORDER BY RAND() statt einer angenommenen ID-Spanne: reale Pruefung
+    2026-07-09 zeigte 79 Luecken zwischen kleinster (6) und groesster (3849)
+    Diskussions-ID, 77 davon allein unter ID 1000 (vermutlich geloeschte/nie
+    importierte Altdiskussionen) -- ein synthetisierter Bereich wie
+    range(zufallsstart, zufallsstart+limit) haette regelmaessig auf nicht
+    existierende IDs gezeigt."""
+    conn = pymysql.connect(**DB_CONFIG)
+    with conn.cursor() as cur:
+        cur.execute("""
+            SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                   u.username AS last_poster
+            FROM discussions d
+            LEFT JOIN users u ON u.id = d.last_posted_user_id
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+            ORDER BY RAND()
+            LIMIT %s
+        """, (limit,))
+        rows = cur.fetchall()
+    conn.close()
+    return [dict(r) for r in rows]
+
+
 # ── Schreiben via REST API ─────────────────────────────────────────────────────
 
 def post_reply(discussion_id: int, content: str, token_or_username: str,
