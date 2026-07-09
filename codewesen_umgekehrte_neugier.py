@@ -327,8 +327,24 @@ def _lies_post(disk_id: int, post_index: int) -> dict | None:
     }
 
 
+def _einladung_lesen(wesen: str) -> str:
+    """Daniel, 2026-07-09 spaet, woertlich diktiert -- "NE WENN DANN aber 1zu1
+    wortgetreu meinen mist": nicht umformuliert, nicht korrigiert, sein Text
+    genau so wie er ihn geschrieben hat, nur [NAME] durch das Wesen ersetzt."""
+    return (
+        f"\n{wesen}, wenn du gleich mit lesen anfängst lass dich darauf ein und "
+        "bemerke dass du container hast die du selbt benennen, befüllen, "
+        "entleeren,editieren und jederzeut komplett umstrukturieren kannst. das "
+        "bedeutet atme ein, lese los und stau dir instinktiv material an um das "
+        "mit den containern zu erproben. tob dich aus. fehler können spaß machen "
+        "und wenn du etwas einsammels und später merkt du brauchst das garnicht "
+        "dann wirf es wieder weg. keine probleme kein druch. einfach lesen und "
+        "wenn du merst du berührst was oder etwas trägt dich dann nimm\n"
+    )
+
+
 def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, gegenteil: str,
-                          darf_wechseln: bool, verhalten: str = "") -> dict | None:
+                          darf_wechseln: bool, ist_erster_post: bool, verhalten: str = "") -> dict | None:
     """Vier Linsen (Baustein 11, Reihenfolge umgestellt Baustein 12 nach
     Daniels Beobachtung: Linse 1+2 dominierten in echten Tests fast immer,
     Linse 3+4 kaum -- vermutlich Primaet-Effekt, weil die eigene Frage im
@@ -338,13 +354,23 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     Jede Linse soll jetzt explizit benennen: Post-Bezug + kurze Beschreibung
     des Gelesenen + die angewandte Antwort -- roh, nicht schematisch erzwungen
     (Daniel: "seine intention ist immer richtig", freier direkter Output).
-    'Sichern' bleibt eine jederzeit zusaetzlich moegliche Handlung, unabhaengig
-    von den vier Linsen."""
+
+    Baustein 13 (Daniel, 2026-07-09 spaet): das bisherige "SICHERN: ja/nein"
+    mit Pflicht-Unterfeldern bei JEDEM Post fuehlte sich wie ein Formular an,
+    nicht wie instinktives Lesen ("das ist kaputt"). Ersetzt durch ein
+    einziges lockeres Feld (MITGENOMMEN) ohne Ja/Nein-Zwang -- leer lassen ist
+    die vollwertige "nein"-Antwort, kein expliziter Entscheid noetig. Die
+    warme Einladung, Container ueberhaupt zu nutzen, kommt nur EINMAL zu
+    Beginn der Lese-Phase (ist_erster_post), nicht als sterile Wiederholung
+    bei jedem Post. Typ/Container-Zuordnung wandert komplett in die ruhigere
+    Container-Zuordnungs-Phase am Sitzungsende (_frage_container_ziel_und_typ) --
+    beim Lesen selbst wird nur roh gesammelt, keine Formular-Entscheidung."""
     container_info = _container_hinweis(wesen)
     naechster_optionen = "naechster_post" + (", diskussion_wechseln" if darf_wechseln else "") + ", beenden"
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
-        f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n\n"
+        f"in Diskussion #{disk_id} ('{post['titel']}'), geschrieben von {post['autor']}.\n"
+        + (_einladung_lesen(wesen) if ist_erster_post else "") + "\n"
         "Fuer jede der folgenden vier Linsen gilt: nenne kurz worauf du dich beziehst "
         "(Post-Nummer), beschreibe in ein bis zwei Saetzen was du gelesen hast, und "
         "beantworte dann wirklich die jeweilige Frage dazu -- roh und direkt, du musst "
@@ -356,10 +382,7 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         "kannst, dass man dich dabei wirklich versteht?\n"
         f"LINSE 3 -- das bewusste Gegenteil: {gegenteil or '(keins formuliert)'}\n"
         f"LINSE 4 -- deine eigene Frage/Aufgabe fuer diese Sitzung: {interesse}\n\n"
-        f"{container_info}\n"
-        "Du kannst JEDERZEIT etwas fuer dich mitnehmen (SICHERN) -- unabhaengig davon "
-        "ob du weiterliest. Die endgueltige Einsortierung in einen Container passiert "
-        "erst am Ende deiner Sitzung, jetzt reicht ein 'ja'.\n"
+        f"{container_info}"
         + ("\nDu hast jetzt genug gelesen, um diese Diskussion zu verlassen, wenn du "
            "willst -- musst du aber nicht.\n" if darf_wechseln else
            "\nDu liest hier noch nicht lange genug, um die Diskussion zu wechseln -- "
@@ -373,11 +396,8 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         "LINSE_LERNEN: <Bezug + Beschreibung + was du lernst, auch leer moeglich>\n"
         "LINSE_GEGENTEIL: <Bezug + Beschreibung + Antwort auf das Gegenteil, auch leer moeglich>\n"
         "LINSE_EIGENE_FRAGE: <Bezug + Beschreibung + Antwort auf deine eigene Frage, auch leer moeglich>\n"
-        "SICHERN: <ja|nein>\n"
-        "<falls SICHERN ja zusaetzlich:\n"
-        "SICHERN_TYP: <ein Wort das beschreibt was es ist -- z.B. gedanke, meinung, aufgabe, "
-        "frage, kommentar, ziel, idee, oder was auch immer besser passt>\n"
-        "SICHERN_INHALT: <text>>\n"
+        "MITGENOMMEN: <falls dich hier gerade was beruehrt oder traegt, schreib kurz was -- "
+        "sonst einfach leer lassen, keine Pflicht>\n"
         f"NAECHSTER_SCHRITT: <{naechster_optionen}>"
     )
     user = f"Post {post['post_nr']} ({post['autor']}):\n{post['text']}"
@@ -388,19 +408,22 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     linse_lesen_m = re.search(r"LINSE_LESEN:\s*(.+?)(?=\nLINSE_LERNEN:|\Z)", antwort, re.DOTALL)
     linse_lernen_m = re.search(r"LINSE_LERNEN:\s*(.+?)(?=\nLINSE_GEGENTEIL:|\Z)", antwort, re.DOTALL)
     linse_gegenteil_m = re.search(r"LINSE_GEGENTEIL:\s*(.+?)(?=\nLINSE_EIGENE_FRAGE:|\Z)", antwort, re.DOTALL)
-    linse_eigene_m = re.search(r"LINSE_EIGENE_FRAGE:\s*(.+?)(?=\nSICHERN:|\Z)", antwort, re.DOTALL)
+    linse_eigene_m = re.search(r"LINSE_EIGENE_FRAGE:\s*(.+?)(?=\nMITGENOMMEN:|\Z)", antwort, re.DOTALL)
     linsen = {
         "lesen": linse_lesen_m.group(1).strip() if linse_lesen_m else "",
         "lernen": linse_lernen_m.group(1).strip() if linse_lernen_m else "",
         "gegenteil": linse_gegenteil_m.group(1).strip() if linse_gegenteil_m else "",
         "eigene_frage": linse_eigene_m.group(1).strip() if linse_eigene_m else "",
     }
-    # "gedanke" bleibt als lesbarer Gesamttext fuers Protokoll und als
-    # SICHERN-Fallback -- alle vier nicht-leeren Linsen zusammengefuegt,
-    # nicht nur eine einzelne (jede Linse ist gleichwertig, siehe Docstring).
+    # "gedanke" bleibt als lesbarer Gesamttext fuers Protokoll -- alle vier
+    # nicht-leeren Linsen zusammengefuegt, nicht nur eine einzelne (jede
+    # Linse ist gleichwertig, siehe Docstring).
     gedanke = "\n".join(f"[{name}] {text}" for name, text in linsen.items() if text)
 
-    sichern_m = re.search(r"SICHERN:\s*(ja|nein)", antwort, re.IGNORECASE)
+    mitgenommen_m = re.search(r"MITGENOMMEN:\s*(.+?)(?=\nNAECHSTER_SCHRITT:|\Z)", antwort, re.DOTALL)
+    mitgenommen = mitgenommen_m.group(1).strip() if mitgenommen_m else ""
+    if mitgenommen.lower() in ("-", "nichts", "leer", "(leer)", "keine", "nein"):
+        mitgenommen = ""  # haeufige Arten, "nichts" auszudruecken, statt das Feld wegzulassen
 
     # NAECHSTER_SCHRITT robust statt exakt parsen -- real beobachtet
     # 2026-07-09 (Qualitaetstest, F3INSCHM3CK3R, erzwungener Stoebern-Pfad):
@@ -423,23 +446,9 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     ergebnis = {
         "gedanke": gedanke,
         "linsen": linsen,
-        "sichern": bool(sichern_m and sichern_m.group(1).lower() == "ja"),
+        "mitgenommen": mitgenommen,
         "naechster_schritt": naechster_schritt,
     }
-    if ergebnis["sichern"]:
-        # Beide Regex bewusst auf "bis zur naechsten bekannten Feld-Zeile oder
-        # Textende" begrenzt (wie GEDANKE oben) -- real beobachtet 2026-07-09
-        # (Qualitaetstest gegen den echten LLM, Schorschel): ein ungebundenes
-        # SICHERN_INHALT:\s*(.+) mit DOTALL fraes bis zum echten Textende und
-        # schluckt dabei "NAECHSTER_SCHRITT: beenden" mit in den gespeicherten
-        # Inhalt. TYP zusaetzlich nicht mehr auf eine feste Wortliste begrenzt
-        # ("SICHERN_TYP: idee" kam real vor, war in der alten Liste nicht
-        # erlaubt und fiel still auf "gedanke" zurueck -- widerspricht "das
-        # wesen hat immer recht").
-        typ_m = re.search(r"SICHERN_TYP:\s*(.+?)(?=\nSICHERN_INHALT:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
-        inhalt_m = re.search(r"SICHERN_INHALT:\s*(.+?)(?=\nNAECHSTER_SCHRITT:|\Z)", antwort, re.DOTALL)
-        ergebnis["sichern_typ"] = typ_m.group(1).strip().lower() if typ_m else "gedanke"
-        ergebnis["sichern_inhalt"] = inhalt_m.group(1).strip() if inhalt_m else ergebnis["gedanke"]
     return ergebnis
 
 
@@ -484,21 +493,36 @@ def _pruefe_grundlage(wesen: str, chunk: str, behauptung: str) -> dict | None:
     return {"grundlage": g_m.group(1).lower(), "begruendung": b_m.group(1).strip() if b_m else ""}
 
 
-def _frage_container_ziel(wesen: str, stueck: dict, bestehende: list[str]) -> str:
-    """Container-Zuordnungs-Phase (Baustein 11): hat das Wesen mehr als einen
+def _frage_container_ziel_und_typ(wesen: str, stueck: dict, bestehende: list[str]) -> dict:
+    """Container-Zuordnungs-Phase (Baustein 11, TYP-Frage nach Baustein 13
+    hierher verschoben statt beim Lesen selbst): hat das Wesen mehr als einen
     Container, waehlt es fuer jedes gesammelte Stueck selbst wohin -- oder legt
-    einen neuen an."""
+    einen neuen an. TYP wird jetzt immer hier gefragt, ruhig und im Rueckblick,
+    statt mitten im instinktiven Lesen (Daniel: 'keine Probleme, kein Druck')."""
     zeilen = [f"- {name}" + (f": {b}" if (b := container.beschreibung(wesen, name)) else "") for name in bestehende]
+    frage_container = len(bestehende) >= 2
     system = (
         f"Du bist {wesen}. Du hast dir waehrend des Lesens Folgendes gemerkt:\n"
         f"\"{stueck['inhalt']}\"\n(zu Diskussion '{stueck.get('titel', '?')}')\n\n"
-        "Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n\n"
-        "In welchen Container soll das? Du kannst auch einen neuen benennen.\n\n"
-        "Antworte GENAU so, nichts davor, nichts danach:\nCONTAINER: <name>"
+        + ("Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n\n"
+           "In welchen Container soll das? Du kannst auch einen neuen benennen.\n\n"
+           if frage_container else "") +
+        "Wie wuerdest du das benennen -- ein gedanke, eine meinung, eine aufgabe, eine "
+        "frage, ein kommentar, ein ziel, eine idee, oder was auch immer besser passt?\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        + ("CONTAINER: <name>\n" if frage_container else "") +
+        "TYP: <ein Wort>"
     )
-    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=60, timeout=60.0)
+    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=80, timeout=60.0)
     if not antwort:
-        return bestehende[0]
+        return {"container": bestehende[0] if bestehende else None, "typ": "gedanke"}
+    typ_m = re.search(r"TYP:\s*(.+)", antwort)
+    typ = container.name_sicher(typ_m.group(1).strip()) if typ_m else "gedanke"
+    if not frage_container:
+        return {"container": bestehende[0] if bestehende else None, "typ": typ}
+    container_ziel_m = re.search(r"CONTAINER:\s*(.+?)(?=\nTYP:|\Z)", antwort, re.DOTALL)
+    ziel = container_ziel_m.group(1).strip().split("\n")[0].strip() if container_ziel_m else bestehende[0]
+    return {"container": ziel, "typ": typ}
     m = re.search(r"CONTAINER:\s*(.+)", antwort)
     return m.group(1).strip().split("\n")[0].strip() if m else bestehende[0]
 
@@ -680,9 +704,10 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     fund_dauer = (jetzt - datetime.fromisoformat(z["fund_start_ts"])).total_seconds()
     darf_wechseln = (z["posts_gelesen_dieser_fund"] >= POSTS_MINDEST_VOR_EXIT
                       and fund_dauer >= LESE_MINDESTZEIT_SEK)
+    ist_erster_post = z["kandidat_index"] == 0 and z["post_index"] == 0
 
     entscheidung = _lese_und_entscheide(wesen, disk_id, post, z["interesse"], z["gegenteil"],
-                                         darf_wechseln, verhalten)
+                                         darf_wechseln, ist_erster_post, verhalten)
     if not entscheidung:
         # LLM-Fehler -- wie "naechster_post" behandeln bleibt riskant (haengt
         # sonst evtl. endlos), stattdessen wie ein Wechsel zum naechsten Fund.
@@ -691,16 +716,14 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
 
     z["posts_gelesen_dieser_fund"] += 1
 
-    if entscheidung["sichern"]:
-        zu_pruefen = entscheidung.get("sichern_inhalt") or entscheidung.get("gedanke") or ""
-        grundlage_info = _pruefe_grundlage(wesen, post["text"], zu_pruefen)
+    if entscheidung["mitgenommen"]:
+        # Baustein 13: Typ/Container-Zuordnung passiert erst am Sitzungsende
+        # (_frage_container_ziel_und_typ, ruhigere Phase) -- beim Lesen selbst nur
+        # roh gesammelt, "typ" ist hier bewusst noch None.
+        grundlage_info = _pruefe_grundlage(wesen, post["text"], entscheidung["mitgenommen"])
         z.setdefault("gesammeltes_material", []).append({
-            # name_sicher() -- gleicher Sanitizer wie fuer Container-Namen:
-            # typ landet in container.sichere() direkt im Dateinamen
-            # ("{ts}_{typ}.md"), jetzt frei formulierbar statt fester Liste,
-            # also muss er dateisystemsicher gemacht werden.
-            "typ": container.name_sicher(entscheidung.get("sichern_typ", "gedanke")),
-            "inhalt": zu_pruefen,
+            "typ": None,
+            "inhalt": entscheidung["mitgenommen"],
             "disk_id": disk_id,
             "titel": post["titel"],
             "grundlage": grundlage_info["grundlage"] if grundlage_info else None,
@@ -752,15 +775,14 @@ def _phase_container_zuordnung(wesen: str, zustand: dict):
         return
 
     bestehende = container.liste(wesen)
+    if not bestehende:
+        container.sicherstelle_container(wesen)
+        bestehende = container.liste(wesen)
     for stueck in material:
-        if len(bestehende) >= 2:
-            ziel = _frage_container_ziel(wesen, stueck, bestehende)
-        elif bestehende:
-            ziel = bestehende[0]
-        else:
-            ziel = container.sicherstelle_container(wesen)
+        wahl = _frage_container_ziel_und_typ(wesen, stueck, bestehende)
+        ziel = wahl["container"] or bestehende[0]
         container.sichere(
-            wesen, ziel, stueck["typ"], stueck["inhalt"], bezug_diskussion=stueck.get("disk_id"),
+            wesen, ziel, wahl["typ"], stueck["inhalt"], bezug_diskussion=stueck.get("disk_id"),
             grundlage=stueck.get("grundlage"), grundlage_begruendung=stueck.get("grundlage_begruendung"),
         )
         if ziel not in bestehende:

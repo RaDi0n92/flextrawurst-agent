@@ -70,21 +70,21 @@ class Welt:
                             f"NACH_CONTAINER: {c}_neu\nAKTION: {self.rng.choice(['verschieben', 'kopieren'])}")
             return "VON_CONTAINER: nix\nDATEINAME: nix\nNACH_CONTAINER: nix\nAKTION: verschieben"
         if "NAECHSTER_SCHRITT:" in system:
-            sichern = self.rng.random() < 0.4
-            teil = f"SICHERN: {'ja' if sichern else 'nein'}\n"
-            if sichern:
-                teil += f"SICHERN_TYP: gedanke\nSICHERN_INHALT: Inhalt-{self.seed}\n"
+            mitgenommen = f"Mitgenommen-{self.seed}" if self.rng.random() < 0.4 else ""
             optionen = ["naechster_post", "beenden"]
             if "diskussion_wechseln" in system:
                 optionen.append("diskussion_wechseln")
             schritt = self.rng.choice(optionen)
             return (f"LINSE_LESEN: Lesen-{self.seed}\nLINSE_LERNEN: Lernen-{self.seed}\n"
                     f"LINSE_GEGENTEIL: Gegenteil-{self.seed}\nLINSE_EIGENE_FRAGE: Frage-{self.seed}\n"
-                    f"{teil}NAECHSTER_SCHRITT: {schritt}")
+                    f"MITGENOMMEN: {mitgenommen}\nNAECHSTER_SCHRITT: {schritt}")
         if "GRUNDLAGE:" in system:
             return f"GRUNDLAGE: {self.rng.choice(['ja', 'teilweise', 'nein'])}\nBEGRUENDUNG: b-{self.seed}"
-        if "CONTAINER: <name>" in system:
-            return f"CONTAINER: {self.rng.choice(['sortiert', 'unsortiert'])}"
+        if "TYP: <ein Wort>" in system:
+            typ = self.rng.choice(["gedanke", "idee", "meinung"])
+            if "CONTAINER: <name>" in system:
+                return f"CONTAINER: {self.rng.choice(['sortiert', 'unsortiert'])}\nTYP: {typ}"
+            return f"TYP: {typ}"
         return None
 
     def suche_diskussionen(self, begriff, limit=8):
