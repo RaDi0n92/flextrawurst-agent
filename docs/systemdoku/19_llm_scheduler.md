@@ -149,6 +149,15 @@ Erfolgsquote etc.) beruhen also auf einer Annahme, die inzwischen nicht mehr
 gilt; eine neue Simulation mit N_SLOTS=1 waere noetig, um die reale
 Erfolgsquote/Wartezeit unter der jetzigen Deckelung einzuschaetzen.
 
+**Nachgeholt 2026-07-09** — `simulation_llm_scheduler.py`, im Zuge der
+PRIO_HOCH-Anhebung von `codewesen_umgekehrte_neugier.py` (siehe
+`docs/systemdoku/20_flarum_stopp.md`, Baustein 9). Kernergebnis unter
+N_SLOTS=1 mit der aktuellen realen Last (Post-Sperre aktiv, 4h simuliert,
+30 Seeds): `ready_check` (PRIO_HOCH, zeitkritischster Aufruf) faellt durch
+die zusaetzliche HOCH-Konkurrenz von umgekehrte_neugier von 100.0% auf
+99.3% Erfolgsquote — klein, aber real, solange die Post-Sperre nicht mehr
+aktiv ist. Details siehe Baustein 9.
+
 ## Bewusst nicht migriert
 
 - `reaktion_auf_dakgord.py` — Einmal-Migrationsskript, kein Dauerdienst, nutzt weiterhin das

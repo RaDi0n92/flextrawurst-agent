@@ -251,7 +251,31 @@ Fix 2 aus Baustein 7 wurde nach dem Neustart real bewiesen: jumpas Entscheidung 
 
 Das eigentliche Problem lag woanders: der Dienst läuft am gemeinsamen `hintergrund`-LLM-Slot (`llm_scheduler.py`, `N_SLOTS = {"hintergrund": 1}`), geteilt mit 13+ weiteren Diensten (7× `codewesen_agent`, 7× `codewesen_reaktion`, `engagement`, `aufgabenchats`, `batch_generator`, `lg_daemon`, `vokabel_takt`, `forum_neugier`, `weltbild_builder`). Ursprünglich bewusst `PRIO_NIEDRIG` (siehe Kommentar in `_llm()`: "der geduldigste im System", Timeout deshalb schon auf 3600s erhöht). Live-Beobachtung über 4h nach dem Baustein-7-Neustart: 6 von 7 Zyklen liefen trotzdem exakt in den 3600s-Timeout — Beweis per Postgres-Warteschlange `llm_warteschlange` (mehrere PRIO_NORMAL-Anfragen überholten die wartende PRIO_NIEDRIG-Anfrage laufend).
 
-Nach Rückfrage bei Daniel (Provenienz-Prinzip: Grund für PRIO_NIEDRIG erkannt und benannt, dann gemeinsam entschieden): Durchkommen ist ihm gerade wichtiger als die ursprüngliche Zurückhaltung. Priorität auf `PRIO_HOCH` angehoben (gleiche Stufe wie `flarum_poster`/`codewesen_antwort_auf_daniel`). Geändert: `codewesen_umgekehrte_neugier.py:130`, ein Wert (`llm_scheduler.PRIO_NIEDRIG` → `PRIO_HOCH`), Kommentar um die neue Begründung ergänzt statt die alte zu löschen. Getestet: `py_compile`, Dienst neu gestartet (`systemctl restart codewesen-umgekehrte-neugier`), Log fehlerfrei. Beobachtung ob es jetzt tatsächlich häufiger durchkommt: noch offen.
+Nach Rückfrage bei Daniel (Provenienz-Prinzip: Grund für PRIO_NIEDRIG erkannt und benannt, dann gemeinsam entschieden): Durchkommen ist ihm gerade wichtiger als die ursprüngliche Zurückhaltung. Priorität auf `PRIO_HOCH` angehoben (gleiche Stufe wie `flarum_poster`/`codewesen_antwort_auf_daniel`). Geändert: `codewesen_umgekehrte_neugier.py:130`, ein Wert (`llm_scheduler.PRIO_NIEDRIG` → `PRIO_HOCH`), Kommentar um die neue Begründung ergänzt statt die alte zu löschen. Getestet: `py_compile`, Dienst neu gestartet (`systemctl restart codewesen-umgekehrte-neugier`), Log fehlerfrei. Live-Beweis nach Neustart: jumpas Entscheidung zu Diskussion #3814 durchlief die Baustein-7-Gegenprüfung vollständig (`grundlage: ja`).
+
+### Baustein 9 — Simulation statt weiterer Live-Rateversuche (2026-07-09, nachmittags)
+
+Daniels Auftrag nach der PRIO_HOCH-Anhebung: *"entwickle du ein system das mein system wirklich ermöglich[t], simuliere alle deine ideen durch, ändere reihenfolgen meines systems dabei mehrfach"* — nicht jede weitere Konfiguration einzeln stundenlang live testen, sondern viele Konfigurationen in Sekunden gegen echte Zahlen durchspielen. Direkter Nachfolger einer am 2026-07-07 dokumentierten, aber nie gebauten Simulation (`docs/systemdoku/19_llm_scheduler.md`), dort explizit als offene Lücke vermerkt.
+
+Gebaut: `simulation_llm_scheduler.py` — diskrete Ereignis-Simulation, 1:1 der echten `llm_scheduler.LLMSlot`-Logik nachgebildet (nicht-präemptiv, Priorität+FIFO). Datengrundlage real gemessen, nicht geraten: Live-Sampling von `llm_warteschlange` (40× im 3s-Abstand, ~16:40 Uhr, 21 distinkte Einträge im 118.8s-Fenster → hochgerechnete Ankunftsraten je Dienst), echte Prioritäts-/Timeout-Konstanten aus dem Code (grep über alle `LLMSlot(...)`-Aufrufer), echte umgekehrte_neugier-Bedienzeiten aus dem Baustein-3-Bericht. Bedienzeiten der übrigen Dienste mangels Einzelmessung als Schätzung markiert (Gleichverteilung 10-90s, angelehnt an die real gemessene umgekehrte_neugier-Spanne).
+
+4h simulierte Zeit, 30 Zufalls-Seeds pro Konfiguration ("mehrfach" — kein einzelner Lauf, Mittelwert über viele):
+
+| Konfiguration | umgekehrte_neugier Erfolg | mittl. Wartezeit | ready_check Erfolg (PRIO_HOCH, zeitkritischster Aufruf im System) |
+|---|---|---|---|
+| A: PRIO_NIEDRIG (Zustand vor heute) | 25.2% | ~2002s (~33min) | 100.0% |
+| B: PRIO_NORMAL | 100.0% | ~115s | 100.0% |
+| C: PRIO_HOCH (aktuell live) | 100.0% | ~30s | 99.3% |
+
+Modell-Validierung gegen die Realität: Konfiguration A sagt 25.2% Erfolgsquote voraus — die tatsächliche Beobachtung von heute Nachmittag (1 von 7 Zyklen in 4h = 14.3%) liegt in derselben Größenordnung (bei nur einer realen Stichprobe erwartungsgemäß hohe Varianz), stützt das Modell grob.
+
+**Zwei konkrete Erkenntnisse:**
+1. Die "Reihenfolge" der 7 Wesen innerhalb einer Runde hat rechnerisch **keinen** Effekt auf die Gesamt-Erfolgsquote — reine FIFO-Symmetrie innerhalb derselben Prioritätsstufe, alle 7 sind austauschbare Ankünfte derselben Rolle.
+2. PRIO_HOCH (aktuell live) ist für umgekehrte_neugier klar am besten (100% statt 25%, 30s statt 33min), kostet aber `ready_check` — den Freigabe-Check vor **jedem einzelnen Flarum-Post**, laut `docs/systemdoku/19_llm_scheduler.md` "der zeitkritischste Aufruf im ganzen System" — real 0.7 Prozentpunkte Erfolgsquote. Aktuell folgenlos, weil die Post-Sperre (Baustein 1) ready_check ohnehin kaum benötigt; relevant erst wenn die Sperre aufgehoben wird (Konfiguration D, mit simulierter Entwurfslast: ready_check bleibt bei ~99.3%, keine weitere Verschlechterung).
+
+Getestet: `py_compile`, Skript lokal ausgeführt, ein realer Logikfehler dabei gefunden und behoben (negative Wartezeiten bei seltenen Ankünften auf einen zwischenzeitlich leeren Slot — fehlendes `max(aktueller_halter_ende, ankunftszeit)` bei der Startzeit-Berechnung).
+
+Nicht selbst entschieden, Daniel vorgelegt: ob PRIO_HOCH so bleibt (Trade-off akzeptiert) oder auf PRIO_NORMAL zurückgestuft wird (kein Risiko für `ready_check`, dafür 30s statt 115s Wartezeit für umgekehrte_neugier — beides bei diesem geringen Aufkommen im Alltag kaum spürbar).
 
 ---
 
