@@ -430,7 +430,12 @@ def _pruefe_grundlage(wesen: str, chunk: str, behauptung: str) -> dict | None:
     antwort = _llm(wesen, system, "(bitte jetzt pruefen)", max_tokens=150, timeout=120.0)
     if not antwort:
         return None
-    g_m = re.search(r"GRUNDLAGE:\s*(ja|teilweise|nein)", antwort, re.IGNORECASE)
+    # \w* statt exaktem "GRUNDLAGE" -- real beobachtet 2026-07-09
+    # (Qualitaetstest, F3INSCHM3CK3R): der Faktenchecker selbst tippte
+    # "GRUNDLAEGE:" statt "GRUNDLAGE:", das strikte Regex verwarf die echte
+    # Antwort ("nein") komplett und die Pruefung galt faelschlich als "nie
+    # durchgefuehrt" (grundlage=None) statt als das echte, kritische "nein".
+    g_m = re.search(r"GRUND\w*:\s*(ja|teilweise|nein)", antwort, re.IGNORECASE)
     if not g_m:
         return None
     b_m = re.search(r"BEGRUENDUNG:\s*(.+)", antwort)
