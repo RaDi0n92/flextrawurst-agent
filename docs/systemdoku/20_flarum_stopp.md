@@ -277,6 +277,8 @@ Getestet: `py_compile`, Skript lokal ausgeführt, ein realer Logikfehler dabei g
 
 Nicht selbst entschieden, Daniel vorgelegt: ob PRIO_HOCH so bleibt (Trade-off akzeptiert) oder auf PRIO_NORMAL zurückgestuft wird (kein Risiko für `ready_check`, dafür 30s statt 115s Wartezeit für umgekehrte_neugier — beides bei diesem geringen Aufkommen im Alltag kaum spürbar).
 
+**Entscheidung (Daniel, direkt danach):** PRIO_HOCH bleibt. Kein weiterer Code-Eingriff nötig — der Live-Stand seit 16:26 Uhr ist bereits die gewählte Konfiguration.
+
 ---
 
 ## Wiederaufnahme
