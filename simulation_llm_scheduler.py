@@ -162,7 +162,8 @@ def simuliere(rollen: list[Rolle], seed: int) -> dict:
         mittel = statistics.mean(wz) if wz else float("nan")
         p95 = wz[int(0.95 * (len(wz) - 1))] if wz else float("nan")
         zusammenfassung[name] = dict(gesamt=gesamt, erfolg=d["erfolg"], timeout=d["timeout"],
-                                      quote=quote, mittel_wartezeit=mittel, p95_wartezeit=p95)
+                                      quote=quote, mittel_wartezeit=mittel, p95_wartezeit=p95,
+                                      wartezeiten=wz)
     return zusammenfassung
 
 
