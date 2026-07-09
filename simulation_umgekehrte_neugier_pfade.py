@@ -110,6 +110,14 @@ class Welt:
         text = f"<p>Inhalt der Diskussion {disk_id}. " + ("x" * self.rng.choice([500, 2000, 5000])) + "</p>"
         return {"title": f"Diskussion {disk_id}", "posts": [{"content": text}]}
 
+    def zufaellige_diskussionen(self, limit=8):
+        """Design C: die ~2400 echten Flarum-Diskussionen sind (anders als
+        eine gezielte Suche) nie 'leer' -- ein zufaelliger Ausschnitt liefert
+        praktisch immer etwas."""
+        GESAMT_DISKUSSIONEN = 2400
+        start = self.rng.randint(1, GESAMT_DISKUSSIONEN - limit)
+        return [{"id": i, "title": f"Diskussion {i}"} for i in range(start, start + limit)]
+
     def container_sichere(self, wesen, cont, typ, inhalt, bezug_diskussion=None,
                            grundlage=None, grundlage_begruendung=None):
         pass
@@ -160,9 +168,46 @@ def _pflege_angebot(wesen: str, welt: Welt) -> bool:
     return True
 
 
-def _lauf(seed: int, design_b: bool) -> dict:
+def _stelle_container_sicher(wesen: str, welt: Welt):
+    """Daniel, 2026-07-09: 'falls das wesen keinen container hat wird ihm
+    vom system einer hinzugefuegt namens alles'. Passiert IMMER als erster
+    Schritt des Stoeberns, nicht nur als Bedingung dafuer -- ein leerer
+    Auffang-Container ist billig und macht ein spaeteres 'sichern' waehrend
+    des Stoeberns immer moeglich, auch wenn vorher noch nie einer existierte."""
+    if not welt.container_material[wesen]:
+        welt.container_material[wesen]["alles"] = []
+
+
+def _zufaelliges_stoebern(wesen: str, zustand: dict, welt: Welt) -> bool:
+    """Design C: wenn weder die gezielte Suche noch das Pflege-Angebot
+    etwas ergeben haben (bzw. das Wesen 'nein' zur Pflege gesagt hat),
+    letzter und immer verfuegbarer Weg -- eine zufaellige Auswahl aus den
+    ~2400 echten Flarum-Diskussionen, treibt danach DIESELBE echte
+    _phase_lesen_schritt()-Maschine wie der gezielte Suchpfad (keine neue
+    Lese-/Entscheidungslogik, keine neue Chunk-Deckel-Regel -- alles bereits
+    in Baustein 10 gegen 200 Zufallsszenarien verifiziert)."""
+    _stelle_container_sicher(wesen, welt)
+    kandidaten = welt.zufaellige_diskussionen(limit=cun.KANDIDATEN_PRO_SUCHE)
+    if not kandidaten:
+        return False  # strukturell nie der Fall (2400 Diskussionen), Vollstaendigkeit halber
+    zustand[wesen] = {
+        "phase": "lesen",
+        "start_ts": "2026-07-09T00:00:00+00:00",
+        "interesse": "(zufaelliges Stoebern, keine Treffer fuer eigenes Interesse)",
+        "kandidaten_ids": [k["id"] for k in kandidaten],
+        "kandidat_index": 0,
+        "chunk_index": 0,
+        "funde_angesehen": 0,
+    }
+    cun._phase_lesen_schritt(wesen, zustand, "")
+    return True  # das Lesen selbst ist bereits das Ergebnis, siehe Docstring oben
+
+
+def _lauf(seed: int, design: str) -> dict:
+    """design: 'A' (Ist-Zustand), 'B' (+Pflege-Angebot), 'C' (+Pflege +
+    garantiertes Stoebern als letzter Weg)."""
     welt = Welt(seed)
-    ergebnisse = {"leer": 0, "gesamt": 0, "pflege_genutzt": 0}
+    ergebnisse = {"leer": 0, "gesamt": 0, "pflege_genutzt": 0, "stoebern_genutzt": 0}
 
     with mock.patch.object(cun, "_llm", side_effect=welt.llm), \
          mock.patch.object(cun.flarum_api, "suche_diskussionen", side_effect=welt.suche_diskussionen), \
@@ -179,10 +224,14 @@ def _lauf(seed: int, design_b: bool) -> dict:
             ergebnisse["gesamt"] += 1
 
             endete_leer = zustand[wesen].get("phase") == "fertig"  # nie in "lesen" gekommen
-            if endete_leer and design_b:
+            if endete_leer and design in ("B", "C"):
                 if _pflege_angebot(wesen, welt):
                     endete_leer = False
                     ergebnisse["pflege_genutzt"] += 1
+            if endete_leer and design == "C":
+                if _zufaelliges_stoebern(wesen, zustand, welt):
+                    endete_leer = False
+                    ergebnisse["stoebern_genutzt"] += 1
             if endete_leer:
                 ergebnisse["leer"] += 1
 
@@ -191,24 +240,31 @@ def _lauf(seed: int, design_b: bool) -> dict:
 
 if __name__ == "__main__":
     N = 300
-    a_leer = a_gesamt = 0
-    b_leer = b_gesamt = b_pflege = 0
+    summen = {d: {"leer": 0, "gesamt": 0, "pflege_genutzt": 0, "stoebern_genutzt": 0} for d in "ABC"}
 
     for seed in range(N):
-        ra = _lauf(seed, design_b=False)
-        rb = _lauf(seed, design_b=True)
-        a_leer += ra["leer"]; a_gesamt += ra["gesamt"]
-        b_leer += rb["leer"]; b_gesamt += rb["gesamt"]
-        b_pflege += rb["pflege_genutzt"]
+        for design in "ABC":
+            r = _lauf(seed, design)
+            for k in summen[design]:
+                summen[design][k] += r[k]
 
-    print(f"{N} Laeufe x {len(cun.WESEN)} Wesen = {a_gesamt} Einzel-Sitzungen pro Design\n")
-    print(f"DESIGN A (Ist-Zustand, nur Flarum-Suche):")
-    print(f"  Leerlauf-Quote: {a_leer}/{a_gesamt} = {100*a_leer/a_gesamt:.1f}%\n")
-    print(f"DESIGN B (+ Container-Pflege als zweiter Weg):")
-    print(f"  Leerlauf-Quote: {b_leer}/{b_gesamt} = {100*b_leer/b_gesamt:.1f}%")
-    print(f"  davon durch Pflege-Angebot noch gerettet: {b_pflege} Sitzungen "
-          f"({100*b_pflege/a_gesamt:.1f} Prozentpunkte)")
+    print(f"{N} Laeufe x {len(cun.WESEN)} Wesen = {summen['A']['gesamt']} Einzel-Sitzungen pro Design\n")
 
-    print(f"\nVerbesserung: {100*(a_leer-b_leer)/a_gesamt:.1f} Prozentpunkte weniger Leerlauf "
-          f"allein durch das Oeffnen EINES zusaetzlichen, bereits vorhandenen Werkzeugs "
-          f"(container.verschiebe/kopiere), das im Ist-Zustand nie angeboten wird.")
+    beschreibung = {
+        "A": "Ist-Zustand (nur gezielte Flarum-Suche)",
+        "B": "+ Container-Pflege-Angebot (verschieben/kopieren, wenn Material da ist)",
+        "C": "+ garantiertes Stoebern als letzter Weg (Auto-Container 'alles' + Zufallsdiskussion)",
+    }
+    for design in "ABC":
+        s = summen[design]
+        quote = 100 * s["leer"] / s["gesamt"]
+        print(f"DESIGN {design} ({beschreibung[design]}):")
+        print(f"  Leerlauf-Quote: {s['leer']}/{s['gesamt']} = {quote:.1f}%")
+        if s["pflege_genutzt"]:
+            print(f"  Pflege-Angebot genutzt: {s['pflege_genutzt']} Sitzungen")
+        if s["stoebern_genutzt"]:
+            print(f"  Zufaelliges Stoebern genutzt: {s['stoebern_genutzt']} Sitzungen")
+        print()
+
+    print(f"Verbesserung A -> C: {100*(summen['A']['leer']-summen['C']['leer'])/summen['A']['gesamt']:.1f} "
+          f"Prozentpunkte weniger Leerlauf.")
