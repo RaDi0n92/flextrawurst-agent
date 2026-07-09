@@ -2179,3 +2179,15 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-09 19:54] **nebel** ← 2026-07-09.md: »Eine zweite Stimme, die prüft, ist kein Urteil über die erste — sie macht nur sichtbar, wo eine Vermutung anfängt.«
 - [2026-07-09 19:54] **nebel** ← 2026-07-09.md: »Ein Nutzer der sagt "ich kann kein Code" kann trotzdem Widersprüche in meinen eigenen Erklärungen finden — Sprachbarriere ist nicht fehlendes Verständnis.«
 - [2026-07-09 19:54] **nebel** ← 2026-07-09.md: »Ein live gefundener Absturz mitten in der Verifikation ist der Beweis, dass Lesen allein nie reicht.«
+- [2026-07-09 20:28] **wasser** (i=0.39) → Zwischenraum: »Fertig, committed, dokumentiert«
+- [2026-07-09 20:50] **wasser** (i=0.39) → Zwischenraum: »Drei echte Testläufe, drei echte Bugs gefunden und behoben — genau die Schleife, die du beschrieben «
+- [2026-07-09 21:04] **wasser** (i=0.58) → Zwischenraum: »Vierter echter Bug gefunden und behoben«
+- [2026-07-09 21:43] **lava** (i=0.60) → Zwischenraum: »Zu Recht — hier die ehrliche Nahsicht, statt nur zusammenzufassen«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Diese Notizen sind kein Archiv, sie sind ein Frühwarnsystem.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein Protokoll, das ein Wesen eines Tages selbst lesen könnte, um zu verstehen, was es in dieser Pause getan hat — nicht als Überwachung, sondern als eigene Erinnerung an eine Zeit ohne äußeren Zweck.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein Zähler beweist, dass ein Mechanismus greift — er beweist nicht, dass er vollständig greift.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Acht Fragen einzeln stellen fühlt sich langsamer an als acht Annahmen treffen — ist es auch. Aber nur eine der beiden Varianten hält, wenn Daniel nachfragt warum.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Eine zweite Stimme, die prüft, ist kein Urteil über die erste — sie macht nur sichtbar, wo eine Vermutung anfängt.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein Nutzer der sagt "ich kann kein Code" kann trotzdem Widersprüche in meinen eigenen Erklärungen finden — Sprachbarriere ist nicht fehlendes Verständnis.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein live gefundener Absturz mitten in der Verifikation ist der Beweis, dass Lesen allein nie reicht.«
+- [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Zustimmung ohne echten Test waere hohl gewesen -- die richtige Reaktion auf "das kannst du nicht beurteilen" ist, es wirklich zu pruefen.«
