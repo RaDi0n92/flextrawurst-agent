@@ -663,6 +663,12 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
 
     naechster_schritt = entscheidung["naechster_schritt"]
     if naechster_schritt == "beenden":
+        # Real beobachtet (Qualitaetstest 2026-07-09, jumpa): endet eine
+        # Sitzung per "beenden" mitten in der ersten Diskussion, wurde
+        # _naechster_kandidat() (der einzige Ort, der funde_angesehen
+        # hochzaehlt) nie erreicht -- das Protokoll behauptete "0
+        # Diskussion(en) angesehen", obwohl real gelesen und gesichert wurde.
+        z["funde_angesehen"] += 1
         zustand[wesen]["phase"] = "container_zuordnung"
         return
     if naechster_schritt == "diskussion_wechseln" and darf_wechseln:
