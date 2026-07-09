@@ -245,6 +245,14 @@ Beide Fixes bewusst nur additiv: kein bestehendes Verhalten wurde entfernt, `fla
 
 Geändert: `codewesen_umgekehrte_neugier.py` (`_alternative_suchbegriffe()`, `_pruefe_grundlage()`, Integration in `_phase_interesse()`/`_phase_lesen_schritt()`), `codewesen_container.py` (`sichere()` um `grundlage`/`grundlage_begruendung` erweitert). Getestet: `py_compile` auf beide Dateien, Dienst neu gestartet, Log auf Fehler/Traceback beobachtet.
 
+### Baustein 8 — Priorität PRIO_NIEDRIG → PRIO_HOCH (2026-07-09 nachmittags)
+
+Fix 2 aus Baustein 7 wurde nach dem Neustart real bewiesen: jumpas Entscheidung zu Diskussion #3814 durchlief die neue Gegenprüfung vollständig (`grundlage: ja`), landete so im Container. Fix 1 (Suchbegriff-Übersetzung) hatte in dieser Zeit noch keine Gelegenheit — keine Suche lieferte 0 Treffer.
+
+Das eigentliche Problem lag woanders: der Dienst läuft am gemeinsamen `hintergrund`-LLM-Slot (`llm_scheduler.py`, `N_SLOTS = {"hintergrund": 1}`), geteilt mit 13+ weiteren Diensten (7× `codewesen_agent`, 7× `codewesen_reaktion`, `engagement`, `aufgabenchats`, `batch_generator`, `lg_daemon`, `vokabel_takt`, `forum_neugier`, `weltbild_builder`). Ursprünglich bewusst `PRIO_NIEDRIG` (siehe Kommentar in `_llm()`: "der geduldigste im System", Timeout deshalb schon auf 3600s erhöht). Live-Beobachtung über 4h nach dem Baustein-7-Neustart: 6 von 7 Zyklen liefen trotzdem exakt in den 3600s-Timeout — Beweis per Postgres-Warteschlange `llm_warteschlange` (mehrere PRIO_NORMAL-Anfragen überholten die wartende PRIO_NIEDRIG-Anfrage laufend).
+
+Nach Rückfrage bei Daniel (Provenienz-Prinzip: Grund für PRIO_NIEDRIG erkannt und benannt, dann gemeinsam entschieden): Durchkommen ist ihm gerade wichtiger als die ursprüngliche Zurückhaltung. Priorität auf `PRIO_HOCH` angehoben (gleiche Stufe wie `flarum_poster`/`codewesen_antwort_auf_daniel`). Geändert: `codewesen_umgekehrte_neugier.py:130`, ein Wert (`llm_scheduler.PRIO_NIEDRIG` → `PRIO_HOCH`), Kommentar um die neue Begründung ergänzt statt die alte zu löschen. Getestet: `py_compile`, Dienst neu gestartet (`systemctl restart codewesen-umgekehrte-neugier`), Log fehlerfrei. Beobachtung ob es jetzt tatsächlich häufiger durchkommt: noch offen.
+
 ---
 
 ## Wiederaufnahme
