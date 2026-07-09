@@ -313,6 +313,8 @@ def _marker_teilen(wesen: str, arg: str) -> str:
     if not flarum_poster.pruefe_bereit(wesen, text):
         return "[Teilen verworfen — beim Ready-Check doch nicht mehr gewollt]"
     draft = flarum_poster.schreibe_draft(name=wesen, typ="neu", inhalt=text, titel=titel)
+    if draft is None:
+        return "[Teilen übersprungen — Flarum-Post-Sperre aktiv]"
     result = flarum_poster.poster(draft, bypass_cooldown=False)
     if result["ok"]:
         return f"[Im Forum geteilt: '{titel}']"

@@ -138,6 +138,9 @@ def _poste_neu(wesen: str, titel: str, inhalt: str, tag_ids: list) -> bool:
     draft = flarum_poster.schreibe_draft(
         name=wesen, typ="neu", inhalt=inhalt, titel=titel, tag_ids=tag_ids
     )
+    if draft is None:
+        log.info("[%s] Post '%s' übersprungen — Flarum-Post-Sperre aktiv", wesen, titel[:60])
+        return False
     result = flarum_poster.poster(draft)
     if result["ok"]:
         log.info("[%s] gepostet: %s", wesen, titel[:60])
@@ -150,6 +153,9 @@ def _poste_antwort(wesen: str, discussion_id: int, inhalt: str) -> bool:
     draft = flarum_poster.schreibe_draft(
         name=wesen, typ="antwort", inhalt=inhalt, discussion_id=discussion_id
     )
+    if draft is None:
+        log.info("[%s] Antwort in Disk %d übersprungen — Flarum-Post-Sperre aktiv", wesen, discussion_id)
+        return False
     result = flarum_poster.poster(draft)
     if result["ok"]:
         log.info("[%s] geantwortet in Disk %d", wesen, discussion_id)

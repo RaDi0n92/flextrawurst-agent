@@ -150,6 +150,9 @@ def teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
         return
 
     draft = flarum_poster.schreibe_draft(name=wesen, typ="neu", inhalt=text, titel=titel)
+    if draft is None:
+        log.info(f"[{wesen}] Strategie-Post zu Container '{container}' übersprungen — Flarum-Post-Sperre aktiv")
+        return
     result = flarum_poster.poster(draft, bypass_cooldown=False)
     if result["ok"]:
         log.info(f"[{wesen}] Strategie-Post zu Container '{container}' veroeffentlicht: '{titel}'")

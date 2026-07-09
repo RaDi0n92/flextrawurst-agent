@@ -87,7 +87,28 @@ codewesen_container.kopiere(wesen, von_container, dateiname, nach_container) -> 
 
 **Takt:** `PAUSE_ZWISCHEN_ZYKLEN=2700s` (45min), bewusst derselbe Rhythmus wie `forum_neugier` — kein Sondertakt. Über `dienst_konfiguration.py` individualisierbar (`takt_sekunden`, `verhalten_text`), wie die anderen Wesen-Dienste.
 
-**Service:** `codewesen-umgekehrte-neugier.service` (systemd-Unit angelegt, Muster wie `codewesen-forum-neugier.service`) — **bewusst noch nicht enabled/gestartet**. Das ist Daniels Entscheidung, kein technischer Blocker.
+**Service:** `codewesen-umgekehrte-neugier.service` (systemd-Unit angelegt, Muster wie `codewesen-forum-neugier.service`) — **aktiv seit 2026-07-09, 06:34 Uhr** (`systemctl enable --now`, Daniels Freigabe). Erste echte Sitzungen sofort verifiziert (Schorschel, F3INSCHM3CK3R) — im Protokoll und im Postgres-Spiegel sichtbar.
+
+---
+
+## Draft-Erzeugung ebenfalls pausiert (2026-07-09, Nachtrag)
+
+Baustein 1 sperrt nur das tatsächliche **Posten** — der alte Reaktion/Batch-Generator/Agent-Kreislauf lief unverändert weiter und erzeugte weiter Post-Entwürfe, die dann bei jedem `poster()`-Versuch nur an der Sperre abprallten (35 `fehler_draft_*.json` in ~2h — reine Verschwendung, keine echte Selbstarbeit). Daniel: *"das erzeugen von entwürfen für posts soll pausiert werden."*
+
+Gefixt am gemeinsamen Choke-Point `flarum_poster.schreibe_draft()` (Muster wie Baustein 1 — ein Punkt statt elf einzelne):
+
+```python
+def schreibe_draft(name, typ, inhalt, ...) -> Path | None:
+    if flarum_post_sperre.ist_gesperrt():
+        return None
+    ...
+```
+
+Alle Aufrufer müssen `None` vertragen (kein `poster()`-Aufruf, einfach überspringen) — angepasst: `codewesen_container.py`, `codewesen_engagement.py`, `codewesen_reflexion.py`, `codewesen_aufgabenchats.py`, `codewesen_forum_neugier.py`, `codewesen_takt.py`, `codewesen_agent.py`, `codewesen_chat.py`. Bewusst nicht angefasst: `namensfindung.py`, `einmal_d17_antwort.py` — beide markiert als Einmal-Skripte, keine laufenden Dienste.
+
+`codewesen_reaktion.py` postet direkt über `flarum_api.post_reply/start_discussion` (Baustein-1-Choke-Point), nutzt `schreibe_draft()` gar nicht — war bereits vor diesem Fix korrekt blockiert, erzeugt aber auch keine Entwurfsdatei, die aufräumbedürftig gewesen wäre.
+
+Nach dem Patch alle 13 betroffenen Dienste sofort neu gestartet (Lektion aus Baustein 1 direkt angewendet, diesmal vorab statt erst nach einem Leck): `codewesen-engagement`, `codewesen-aufgabenchats`, `codewesen-forum-neugier`, `codewesen-takt`, `codewesen-chat`, alle 7 `codewesen-<Wesen>`-Agenten, `codewesen-umgekehrte-neugier`.
 
 ---
 

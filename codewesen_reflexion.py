@@ -160,11 +160,17 @@ Antworte NUR mit JSON:
         if entscheidung.get("typ") == "antwort" and entscheidung.get("discussion_id"):
             disk_id = int(entscheidung["discussion_id"])
             draft = flarum_poster.schreibe_draft(name, "antwort", inhalt, discussion_id=disk_id)
+            if draft is None:
+                log.info(f"{name} Reflexion: Antwort auf #{disk_id} übersprungen — Flarum-Post-Sperre aktiv")
+                return
             result = flarum_poster.poster(draft)
             log.info(f"{name} Reflexion: Antwort auf #{disk_id} — ok={result.get('ok')} — {entscheidung.get('grund', '')}")
         else:
             titel = entscheidung.get("titel") or inhalt[:60].strip()
             draft = flarum_poster.schreibe_draft(name, "neu", inhalt, titel=titel)
+            if draft is None:
+                log.info(f"{name} Reflexion: neuer Post '{titel}' übersprungen — Flarum-Post-Sperre aktiv")
+                return
             result = flarum_poster.poster(draft)
             log.info(f"{name} Reflexion: neuer Post '{titel}' — ok={result.get('ok')} — {entscheidung.get('grund', '')}")
 

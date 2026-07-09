@@ -347,6 +347,9 @@ def fuehre_aktion_aus(
             return
         import flarum_poster as fp
         draft_path = fp.schreibe_draft(name, "antwort", inhalt, discussion_id=int(disk_id))
+        if draft_path is None:
+            log.info("Antwort in Diskussion %s übersprungen — Flarum-Post-Sperre aktiv", disk_id)
+            return
         ergebnis = fp.poster(draft_path, bypass_cooldown=bypass_cooldown)
         if ergebnis["ok"]:
             log.info("✓ Antwort in Diskussion %s gepostet", disk_id)
@@ -371,6 +374,9 @@ def fuehre_aktion_aus(
             tag_ids = [all_tags[0]["id"]] if all_tags else []
         import flarum_poster as fp
         draft_path = fp.schreibe_draft(name, "neu", inhalt, titel=titel, tag_ids=tag_ids)
+        if draft_path is None:
+            log.info("Neue Diskussion '%s' übersprungen — Flarum-Post-Sperre aktiv", titel)
+            return
         ergebnis = fp.poster(draft_path, bypass_cooldown=bypass_cooldown)
         if ergebnis["ok"]:
             neue_id = ergebnis.get("result", {}).get("data", {}).get("id")

@@ -527,6 +527,8 @@ def fuehre_post_aus(name: str, titel: str, inhalt: str, tag_ids: list | None = N
         tag_ids = [36, 2]
 
     draft_pfad = _fp.schreibe_draft(name, "neu", inhalt, titel=titel, tag_ids=tag_ids[:3])
+    if draft_pfad is None:
+        raise Exception("Flarum-Post-Sperre aktiv — kein Posten möglich")
     result = _fp.poster(draft_pfad)
     if not result.get("ok"):
         raise Exception(result.get("fehler", "Posting fehlgeschlagen"))

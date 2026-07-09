@@ -1,6 +1,6 @@
 # FLARUM-STOPP — Bericht
 **Datum:** 2026-07-09
-**Stand:** Alle 6 Bausteine fertig. Umgedrehter Neugier-Dienst (Baustein 3) bewusst noch nicht gestartet — das entscheidet Daniel.
+**Stand:** Alle 6 Bausteine fertig. Umgedrehter Neugier-Dienst (Baustein 3) seit 06:34 Uhr aktiv (Daniels Freigabe). Entwurfs-Erzeugung für Posts ebenfalls pausiert (Nachtrag unten).
 
 ---
 
@@ -303,7 +303,7 @@ Vollständige technische Details: `docs/systemdoku/20_flarum_stopp.md`
 ◑ GELB — Sperre aktiv und sicher, Rest des Vorhabens offen
   ● Baustein 1  Post-Sperre               FERTIG, AKTIV
   ● Baustein 2  Container-Upgrade         FERTIG
-  ● Baustein 3  Umgedrehter Neugier-Dienst FERTIG (Dienst noch nicht gestartet)
+  ● Baustein 3  Umgedrehter Neugier-Dienst FERTIG, AKTIV seit 06:34 Uhr
   ● Baustein 4  Deterministisches Protokoll FERTIG
   ● Baustein 5  Postgres-Spiegel          FERTIG
   ● Baustein 6  flarumstyler-Sektionen    FERTIG
@@ -313,11 +313,57 @@ Vollständige technische Details: `docs/systemdoku/20_flarum_stopp.md`
 
 ## Offene Punkte
 
-- Systemprompt-Formulierung für Baustein 3 (wie genau wird dem Wesen die
-  Situation erklärt) — wird beim Bau des Dienstes festgelegt.
-- Schema für den Postgres-Spiegel (Baustein 5) noch zu entwerfen.
 - Wiederaufnahme der Post-Sperre ist ein bewusster manueller Schritt
   (`flarum_post_sperre.entsperren(von=...)`), kein Zeitplan — Daniel entscheidet.
+
+---
+
+## Nachtrag — Dienst gestartet, Entwurfs-Erzeugung pausiert (2026-07-09, 06:3x Uhr)
+
+Auf Daniels Rückfrage "arbeiten die wesen schon [an sich selbst und den
+Containern]?" zwei Dinge geprüft und gehandelt:
+
+**1. Container-Arbeit war gar nicht aktiv** — bei keinem der 7 Wesen gab es
+seit der Sperre eine Container-Änderung; die letzten Container-Einträge
+stammten vom 2026-07-06, zwei Tage vor der Sperre. Auf "ja starten klar":
+`codewesen-umgekehrte-neugier.service` per `systemctl enable --now` aktiv
+seit 06:34:49 Uhr. Sofort verifiziert: Schorschel und F3INSCHM3CK3R haben
+bereits reale Sitzungen begonnen, im Protokoll und im Postgres-Spiegel
+sichtbar (Schorschels erste Sitzung endete ohne Ergebnis — LLM hat nicht
+geantwortet, laut Konzept ein normaler, gewollter Fall, kein Fehler).
+
+Dabei ein eigener kleiner Fehler passiert und sofort behoben: ein Test-
+Aufruf mit falschem DB-Zugang in der Shell schrieb versehentlich einen
+Platzhalter-Eintrag ("PLATZHALTER") ins echte globale Protokoll — sofort
+bemerkt (die Schreibung schlug beim Postgres-Spiegeln sichtbar fehl) und aus
+der JSONL-Datei entfernt, bevor er irgendwo weiterverarbeitet wurde.
+
+**2. Entwurfs-Erzeugung für Posts lief die ganze Zeit weiter, obwohl blockiert**
+— Daniel: "das erzeugen von entwürfen für posts soll pausiert werden". Seit
+Sperre-Aktivierung waren bereits 35 `fehler_draft_*.json` aufgelaufen: der
+alte Reaktion/Batch-Generator/Agent-Kreislauf generierte weiter Entwürfe, die
+dann bei jedem `poster()`-Versuch nur an der (schon aktiven) Post-Sperre
+abprallten — reine verschwendete Arbeit, keine echte Selbstarbeit.
+
+Gefixt am gemeinsamen Choke-Point `flarum_poster.schreibe_draft()` (dieselbe
+Architektur wie Baustein 1: ein einziger Punkt statt elf einzelne) —
+schreibt während aktiver Sperre gar keinen Entwurf mehr, gibt `None` zurück.
+Alle 9 betroffenen Aufrufer angepasst, um `None` sauber zu behandeln statt
+abzustürzen: `codewesen_container.py`, `codewesen_engagement.py`,
+`codewesen_reflexion.py` (2×), `codewesen_aufgabenchats.py`,
+`codewesen_forum_neugier.py`, `codewesen_takt.py` (2×), `codewesen_agent.py`
+(2×), `codewesen_chat.py`. Bewusst NICHT angefasst: `namensfindung.py` und
+`einmal_d17_antwort.py` — beide explizit als Einmal-Skripte markiert, keine
+laufenden Dienste, kein aktives Risiko.
+
+Getestet: `schreibe_draft()` gibt bei aktiver Sperre nachweislich `None`
+zurück, kein Draft-File wird geschrieben (vorher/nachher-Dateizählung
+verglichen). Aus der Lektion von Baustein 1 gelernt: alle 13 betroffenen
+Dienste sofort mit neu gestartet (`codewesen-engagement`,
+`codewesen-aufgabenchats`, `codewesen-forum-neugier`, `codewesen-takt`,
+`codewesen-chat`, alle 7 `codewesen-<Wesen>`-Agenten,
+`codewesen-umgekehrte-neugier`) — diesmal vorab, nicht erst nach einem Leck.
+Alle 13 aktiv seit 06:48:58 Uhr, keine Fehler im Journal.
 
 ---
 

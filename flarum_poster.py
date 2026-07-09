@@ -24,6 +24,7 @@ import flarum_api as api
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
 import llm_scheduler
+import flarum_post_sperre
 
 VAULT_FLARUM      = Path("/root/werkraum/flarum")
 CODEWESEN_BASE    = Path("/root/werkraum/codewesen")
@@ -212,11 +213,21 @@ def pruefe_bereit(wesen: str, text: str) -> bool:
 def schreibe_draft(name: str, typ: str, inhalt: str,
                    discussion_id: int | None = None,
                    titel: str | None = None,
-                   tag_ids: list | None = None) -> Path:
+                   tag_ids: list | None = None) -> Path | None:
     """
     Schreibt einen fertigen Post-Entwurf in den eigenen Vault-Ordner.
     typ: 'antwort' | 'neu'
+
+    Waehrend die Flarum-Post-Sperre aktiv ist (docs/2026-07-09_flarum_stopp_bericht.md):
+    schreibt gar keinen Entwurf, gibt None zurueck. Daniel: "das erzeugen von
+    entwuerfen fuer posts soll pausiert werden" -- vorher liefen reaktion/
+    batch_generator/agent weiter, erzeugten Entwuerfe, die dann bei jedem
+    poster()-Versuch nur an der Sperre abprallten und als fehler_draft_*.json
+    archiviert wurden (35 Stueck in ~3h, reine Verschwendung). Aufrufer muessen
+    None vertragen (kein poster()-Aufruf, einfach ueberspringen).
     """
+    if flarum_post_sperre.ist_gesperrt():
+        return None
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
     draft_dir = CODEWESEN_BASE / name / "entwuerfe"
     draft_dir.mkdir(parents=True, exist_ok=True)

@@ -408,6 +408,9 @@ Antworte NUR mit JSON:
             log.info(f"{name}: antwortet auf Disk {disc_id} '{d['titel'][:50]}' — '{antwort[:60]}...'")
 
             draft = flarum_poster.schreibe_draft(name, "antwort", antwort, discussion_id=int(disc_id))
+            if draft is None:
+                log.info(f"{name}: Entwurf für Disk {disc_id} übersprungen — Flarum-Post-Sperre aktiv")
+                continue
             result = flarum_poster.poster(draft)
             if result.get("ok"):
                 log.info(f"{name}: gepostet auf Disk {disc_id} — ok=True")

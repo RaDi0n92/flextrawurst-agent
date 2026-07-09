@@ -327,6 +327,9 @@ def _exportiere_ins_forum(wesen: str, entscheidung: dict):
             name=wesen, typ="antwort", inhalt=post["text"],
             discussion_id=post["discussion_id"],
         )
+        if draft is None:
+            log.info(f"[{wesen}] Neugier-Export übersprungen — Flarum-Post-Sperre aktiv")
+            continue
         result = flarum_poster.poster(draft, bypass_cooldown=False)
         if result["ok"]:
             log.info(f"[{wesen}] Neugier-Post exportiert -> Diskussion {post['discussion_id']}")
