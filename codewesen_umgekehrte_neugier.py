@@ -144,14 +144,26 @@ def _llm(wesen: str, system: str, user: str, max_tokens: int, timeout: float) ->
         return None
 
 
+def _container_hinweis(wesen: str) -> str:
+    """Container-Namen als Trigger, optionale Beschreibung als Hint direkt
+    dabei (Daniel, 2026-07-09: 'die trigger sind die benennungen aller
+    eigenen vorhandenen container und falls die container eine optionale
+    beschreibung haben gehoert die als hint dazu'). Gemeinsamer Helfer statt
+    drei separater Inline-Bauten -- an jeder Stelle dieselbe Information."""
+    namen = container.liste(wesen)
+    if not namen:
+        return "Du hast noch keine eigenen Container.\n"
+    zeilen = []
+    for name in namen:
+        b = container.beschreibung(wesen, name)
+        zeilen.append(f"- {name}" + (f": {b}" if b else ""))
+    return "Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n"
+
+
 # ── Schritt 1: das Wesen fragen, was sich zu suchen lohnen koennte ──────────
 
 def _frage_interesse(wesen: str, verhalten: str = "") -> dict | None:
-    container_liste = container.liste(wesen)
-    container_info = (
-        f"Deine bestehenden Container: {', '.join(container_liste)}\n"
-        if container_liste else "Du hast noch keine eigenen Container.\n"
-    )
+    container_info = _container_hinweis(wesen)
     system = (
         f"Du bist {wesen}.\n\n{RAHMUNG}\n\n{container_info}\n"
         "Frage: gibt es gerade etwas, das sich fuer dich lohnen koennte gezielt auf "
@@ -328,11 +340,7 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
     (Daniel: "seine intention ist immer richtig", freier direkter Output).
     'Sichern' bleibt eine jederzeit zusaetzlich moegliche Handlung, unabhaengig
     von den vier Linsen."""
-    container_liste = container.liste(wesen)
-    container_info = (
-        f"Deine bestehenden Container: {', '.join(container_liste)}\n"
-        if container_liste else "Du hast noch keine eigenen Container.\n"
-    )
+    container_info = _container_hinweis(wesen)
     naechster_optionen = "naechster_post" + (", diskussion_wechseln" if darf_wechseln else "") + ", beenden"
     system = (
         f"Du bist {wesen}. Du liest gerade Post {post['post_nr']} von {post['gesamt_posts']} "
@@ -480,10 +488,11 @@ def _frage_container_ziel(wesen: str, stueck: dict, bestehende: list[str]) -> st
     """Container-Zuordnungs-Phase (Baustein 11): hat das Wesen mehr als einen
     Container, waehlt es fuer jedes gesammelte Stueck selbst wohin -- oder legt
     einen neuen an."""
+    zeilen = [f"- {name}" + (f": {b}" if (b := container.beschreibung(wesen, name)) else "") for name in bestehende]
     system = (
         f"Du bist {wesen}. Du hast dir waehrend des Lesens Folgendes gemerkt:\n"
         f"\"{stueck['inhalt']}\"\n(zu Diskussion '{stueck.get('titel', '?')}')\n\n"
-        f"Deine bestehenden Container: {', '.join(bestehende)}\n\n"
+        "Deine bestehenden Container:\n" + "\n".join(zeilen) + "\n\n"
         "In welchen Container soll das? Du kannst auch einen neuen benennen.\n\n"
         "Antworte GENAU so, nichts davor, nichts danach:\nCONTAINER: <name>"
     )

@@ -59,6 +59,21 @@ def liste(wesen: str) -> list[str]:
     return sorted(p.name for p in b.iterdir() if p.is_dir())
 
 
+def beschreibung(wesen: str, container: str) -> str:
+    """Liest die freie Beschreibung eines Containers (der Text nach dem
+    Frontmatter in container.md, siehe erstelle()) -- als Hinweis fuer das
+    Wesen, worum es in einem bestehenden Container schon ging. Ergaenzt fuer
+    den umgedrehten Neugier-Dienst (Daniel, 2026-07-09: 'die trigger sind
+    die benennungen aller eigenen vorhandenen container und falls die
+    container eine optionale beschreibung haben gehoert die als hint dazu')."""
+    pfad = basis(wesen) / name_sicher(container) / "container.md"
+    if not pfad.exists():
+        return ""
+    text = pfad.read_text(encoding="utf-8", errors="replace")
+    teile = text.split("---", 2)
+    return teile[2].strip() if len(teile) >= 3 else ""
+
+
 def dateien(wesen: str, container: str) -> list[str]:
     """Listet die echten Eintraege (Dateinamen) INNERHALB eines Containers --
     liste() gibt nur Container-NAMEN zurueck, das reicht fuer verschiebe()/
