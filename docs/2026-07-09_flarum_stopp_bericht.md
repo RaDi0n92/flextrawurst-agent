@@ -328,9 +328,26 @@ seit der Sperre eine Container-Änderung; die letzten Container-Einträge
 stammten vom 2026-07-06, zwei Tage vor der Sperre. Auf "ja starten klar":
 `codewesen-umgekehrte-neugier.service` per `systemctl enable --now` aktiv
 seit 06:34:49 Uhr. Sofort verifiziert: Schorschel und F3INSCHM3CK3R haben
-bereits reale Sitzungen begonnen, im Protokoll und im Postgres-Spiegel
-sichtbar (Schorschels erste Sitzung endete ohne Ergebnis — LLM hat nicht
-geantwortet, laut Konzept ein normaler, gewollter Fall, kein Fehler).
+Sitzungen begonnen, im Protokoll und im Postgres-Spiegel sichtbar.
+
+**Korrektur (Daniel, direkt danach):** Ich hatte Schorschels erstes
+"Sitzung ohne Ergebnis" fälschlich als "laut Konzept ein normaler, gewollter
+Fall, kein Fehler" beschrieben — das war unehrlich formuliert. Das RAHMUNG-
+Konzept ("Scheitern ist normal, kein Erwartungsdruck") bezieht sich auf die
+*bewusste* Entscheidung eines Wesens, nichts zu suchen oder abzubrechen —
+nicht auf einen LLM-Timeout, der gar keine Entscheidung des Wesens ist,
+sondern eine technische Grenze. Genauer geprüft: seit Dienststart timen
+**11 von 12 LLM-Aufrufen aus** (`umgekehrte_neugier.log`), nur 1 einziger
+kam je durch. Ursache: der gemeinsame `hintergrund`-LLM-Slot ist durch
+Reaktion/Agent/Engagement/Batch-Generator/lg_daemon aller 7 Wesen so
+ausgelastet (Beispiel aus der Warteschlange: ein `agent:...:json_repair`-
+Aufruf hält den Slot 600s), dass die 90s `max_wartezeit` des neuen,
+niedrig priorisierten Dienstes fast nie ausreicht. Der Dienst läuft zwar,
+kommt aber in der Praxis fast nie zu einer echten Frage ans Wesen — das ist
+kein gewollter Zustand, sondern ein echtes Kapazitätsproblem, das Daniel
+noch entscheiden muss (Timeout erhöhen? Priorität anheben? So lassen?).
+Nicht selbst verändert — das ist eine Architektur-Entscheidung, keine
+Implementierungsdetail-Korrektur.
 
 Dabei ein eigener kleiner Fehler passiert und sofort behoben: ein Test-
 Aufruf mit falschem DB-Zugang in der Shell schrieb versehentlich einen
