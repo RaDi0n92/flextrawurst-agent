@@ -256,6 +256,23 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 }
 .sentence-text { color: var(--muted); font-size: .82rem; line-height: 1.45; }
 .sentence-actions { display: flex; gap: .38rem; flex-wrap: wrap; }
+.full-modal {
+  position: fixed; inset: 0; z-index: 20; display: none;
+  background: rgba(10, 2, 15, .82); padding: 1rem;
+}
+.full-modal.on { display: flex; align-items: stretch; justify-content: center; }
+.full-card {
+  width: min(1120px, 100%); max-height: 96vh; display: flex; flex-direction: column; gap: .65rem;
+  background: var(--panel); border: 1px solid var(--pink); border-radius: 10px; padding: .8rem;
+  box-shadow: 0 24px 80px rgba(0,0,0,.45);
+}
+.full-head { display: flex; gap: .5rem; align-items: center; justify-content: space-between; }
+.full-title { color: var(--pink-soft); font-size: .9rem; }
+.full-text {
+  flex: 1; min-height: 70vh; overflow: auto; white-space: pre-wrap;
+  background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: 8px;
+  padding: 1rem; color: var(--text); line-height: 1.55; font-size: .92rem;
+}
 @media (min-width: 720px) {
   .sentence-row { grid-template-columns: minmax(0,1fr) auto; align-items: center; }
 }
@@ -460,7 +477,8 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 
     <section class="panel tab-panel" data-tab-panel="ocr">
       <div class="panel-title">OCR</div>
-      <div class="inf">Vorbereitet für Bild- und PDF-Textauslese. Der Tab ist direkt verlinkbar und trennt sich vom Rest der Oberfläche.</div>
+      <div class="inf">OCR liest Text aus PDFs mit eingebettetem Text. Bild-OCR braucht tesseract auf dem Server; der Status steht direkt darunter.</div>
+      <div class="inf" id="ocr-status">OCR-Status wird geprüft.</div>
       <div class="grid2">
         <label class="lang-box">
           <span class="lang-label">Quelle</span>
@@ -479,13 +497,14 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="row">
         <button class="small primary" id="btn-ocr-save">OCR starten</button>
         <button class="small" id="btn-ocr-clear">Leeren</button>
+        <button class="small" id="btn-ocr-full">Groß öffnen</button>
       </div>
       <div class="sentence-list" id="ocr-list"></div>
     </section>
 
     <section class="panel tab-panel" data-tab-panel="documents">
       <div class="panel-title">Dokumente</div>
-      <div class="inf">Eigener Bereich für Dateien, Volltext und manuelles Chatten auf ausgewählte Treffer. Hintergrund-Index und LLaMA kommen separat, nicht beim Import.</div>
+      <div class="inf">Dokumente werden in Chunks zerlegt, damit Suche und Chat nicht blind den ganzen Text in ein Modell kippen. Scope bedeutet: nur diese Dokumente werden gesucht und befragt; leerer Scope bedeutet alle Dokumente.</div>
       <div class="grid2">
         <input id="documents-upload" type="file" multiple>
         <input id="documents-search" type="text" placeholder="Suche in Dokumenten">
@@ -500,6 +519,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small primary" id="btn-documents-add">Dokument merken</button>
         <button class="small" id="btn-documents-chat">Chat starten</button>
         <button class="small" id="btn-documents-scope-clear">Scope leeren</button>
+        <button class="small" id="btn-documents-full">Groß öffnen</button>
       </div>
       <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
       <div class="sentence-list" id="documents-scope"></div>
@@ -511,15 +531,17 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 
     <section class="panel tab-panel" data-tab-panel="webarchive">
       <div class="panel-title">Webarchiv</div>
-      <div class="inf">URLs speichern, Versionen halten, später wiederfinden. Crawlbar über stabile Einträge und den Tab selbst.</div>
+      <div class="inf">Snapshot speichert Roh-HTML und extrahierten Text. Seitenanzahl 1 = nur diese URL; mehr Seiten = gleiche Domain wird intern weiter gecrawlt.</div>
       <div class="grid2">
         <input id="webarchive-url" type="text" placeholder="URL">
         <input id="webarchive-title" type="text" placeholder="Titel">
       </div>
+      <input id="webarchive-pages" type="text" placeholder="Max. Seiten crawlen, z.B. 20">
       <input id="webarchive-search" type="text" placeholder="Suche in Snapshots">
       <div class="row">
         <button class="small primary" id="btn-webarchive-save">Snapshot merken</button>
         <button class="small" id="btn-webarchive-clear">Leeren</button>
+        <button class="small" id="btn-webarchive-full">Groß öffnen</button>
       </div>
       <textarea id="webarchive-output" placeholder="Gespeicherte Snapshots oder Notizen"></textarea>
       <div class="sentence-list" id="webarchive-versions"></div>
@@ -528,7 +550,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 
     <section class="panel tab-panel" data-tab-panel="forms">
       <div class="panel-title">Formulare</div>
-      <div class="inf">Profil- und Vorlagenbereich für Platzhalter ohne LLM im Hintergrund. Das ist die kleine Abo-Alternative, sauber getrennt.</div>
+      <div class="inf">Formulare füllen Platzhalter wie {{name}} und einfache HTML-Felder mit passendem name/id. Das ist kein Browser-Autofill, sondern ein gespeichertes Profil plus Vorlage.</div>
       <div class="grid2">
         <input id="forms-profile" type="text" placeholder="Profilname">
         <input id="forms-name" type="text" placeholder="Name">
@@ -543,6 +565,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-forms-save">Profil merken</button>
         <button class="small" id="btn-forms-export-txt">TXT</button>
         <button class="small" id="btn-forms-export-html">HTML</button>
+        <button class="small" id="btn-forms-full">Groß öffnen</button>
       </div>
       <textarea id="forms-preview" readonly placeholder="Vorschau"></textarea>
       <div class="sentence-list" id="forms-list"></div>
@@ -593,6 +616,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     </section>
   </div>
 
+</div>
+<div class="full-modal" id="full-modal" aria-hidden="true">
+  <div class="full-card">
+    <div class="full-head">
+      <div class="full-title" id="full-title">Vollansicht</div>
+      <div class="row">
+        <button class="small" id="btn-full-copy" type="button">Kopieren</button>
+        <button class="small danger" id="btn-full-close" type="button">Schließen</button>
+      </div>
+    </div>
+    <pre class="full-text" id="full-text"></pre>
+  </div>
 </div>
 <script>
 (function(){
@@ -658,6 +693,8 @@ const ocrLanguage = document.getElementById('ocr-language');
 const ocrInput = document.getElementById('ocr-input');
 const btnOcrSave = document.getElementById('btn-ocr-save');
 const btnOcrClear = document.getElementById('btn-ocr-clear');
+const btnOcrFull = document.getElementById('btn-ocr-full');
+const ocrStatus = document.getElementById('ocr-status');
 const ocrList = document.getElementById('ocr-list');
 const documentsUpload = document.getElementById('documents-upload');
 const documentsSearch = document.getElementById('documents-search');
@@ -666,6 +703,7 @@ const documentsModel = document.getElementById('documents-model');
 const btnDocumentsAdd = document.getElementById('btn-documents-add');
 const btnDocumentsChat = document.getElementById('btn-documents-chat');
 const btnDocumentsScopeClear = document.getElementById('btn-documents-scope-clear');
+const btnDocumentsFull = document.getElementById('btn-documents-full');
 const documentsScopeInfo = document.getElementById('documents-scope-info');
 const documentsScope = document.getElementById('documents-scope');
 const documentsOutput = document.getElementById('documents-output');
@@ -674,9 +712,11 @@ const documentsChunks = document.getElementById('documents-chunks');
 const documentsList = document.getElementById('documents-list');
 const webarchiveUrl = document.getElementById('webarchive-url');
 const webarchiveTitle = document.getElementById('webarchive-title');
+const webarchivePages = document.getElementById('webarchive-pages');
 const webarchiveSearch = document.getElementById('webarchive-search');
 const btnWebarchiveSave = document.getElementById('btn-webarchive-save');
 const btnWebarchiveClear = document.getElementById('btn-webarchive-clear');
+const btnWebarchiveFull = document.getElementById('btn-webarchive-full');
 const webarchiveOutput = document.getElementById('webarchive-output');
 const webarchiveVersions = document.getElementById('webarchive-versions');
 const webarchiveList = document.getElementById('webarchive-list');
@@ -691,8 +731,14 @@ const btnFormsPreview = document.getElementById('btn-forms-preview');
 const btnFormsSave = document.getElementById('btn-forms-save');
 const btnFormsExportTxt = document.getElementById('btn-forms-export-txt');
 const btnFormsExportHtml = document.getElementById('btn-forms-export-html');
+const btnFormsFull = document.getElementById('btn-forms-full');
 const formsPreview = document.getElementById('forms-preview');
 const formsList = document.getElementById('forms-list');
+const fullModal = document.getElementById('full-modal');
+const fullTitle = document.getElementById('full-title');
+const fullText = document.getElementById('full-text');
+const btnFullCopy = document.getElementById('btn-full-copy');
+const btnFullClose = document.getElementById('btn-full-close');
 const logsUpload = document.getElementById('logs-upload');
 const logsProfile = document.getElementById('logs-profile');
 const logsQuestion = document.getElementById('logs-question');
@@ -733,6 +779,7 @@ const TRANSLATE_API = BASE + 'translate';
 const TRANSLATE_LANGS_API = BASE + 'translation-languages';
 const LIBRARY_API = BASE + 'library';
 const OCR_API = BASE + 'ocr/jobs';
+const OCR_STATUS_API = BASE + 'ocr/status';
 const OCR_DELETE_API = BASE + 'ocr/jobs/';
 const OCR_TO_DOCUMENT_API = BASE + 'ocr/jobs/to-document';
 const DOCUMENTS_API = BASE + 'documents';
@@ -826,6 +873,33 @@ function setSeek(p)   { seekF.style.width=p; seekK.style.left=p; }
 function uid()         { return Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,8); }
 function esc(s)        { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function shortText(s,n){ return s.length > n ? s.slice(0,n-1).trim()+'…' : s; }
+
+function openFullView(title, text){
+  fullTitle.textContent = title || 'Vollansicht';
+  fullText.textContent = String(text || '');
+  fullModal.classList.add('on');
+  fullModal.setAttribute('aria-hidden', 'false');
+}
+
+function closeFullView(){
+  fullModal.classList.remove('on');
+  fullModal.setAttribute('aria-hidden', 'true');
+}
+
+async function loadOcrStatus(){
+  try {
+    const res = await fetch(OCR_STATUS_API, {cache:'no-store'});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    const parts = [
+      data.tesseract ? 'Bild-OCR: bereit' : 'Bild-OCR: tesseract fehlt',
+      data.pdftotext ? 'PDF-Text: bereit' : 'PDF-Text: pdftotext fehlt'
+    ];
+    ocrStatus.textContent = parts.join(' · ');
+  } catch(e){
+    ocrStatus.textContent = 'OCR-Status konnte nicht geprüft werden.';
+  }
+}
 
 function loadTranslateVoicePrefs(){
   try {
@@ -1140,7 +1214,7 @@ function renderDocuments(){
     const title = isHit ? item.filename : item.filename;
     const meta = isHit
       ? `Treffer · Chunk ${item.chunk_index || '?'} · Score ${item.score || 0}`
-      : `${item.mime_type || 'Datei'} · ${item.extractor || 'kein Extraktor'} · ${item.status || 'unbekannt'}`;
+      : `${item.mime_type || 'Datei'} · ${item.extractor || 'kein Extraktor'} · ${item.status || 'unbekannt'} · ${item.text_chars || 0} Zeichen · ${item.chunk_count || 0} Chunks`;
     const note = isHit
       ? (item.preview || item.chunk_text || 'Treffer ohne Vorschau')
       : (item.error || item.preview || 'Noch keine Vorschau.');
@@ -1171,8 +1245,8 @@ function renderDocumentScope(){
   }
   const activeSet = new Set(documentActiveIds || []);
   documentsScopeInfo.textContent = activeSet.size
-    ? `Scope: ${activeSet.size} von ${items.length} Dokumenten aktiv`
-    : `Scope: alle ${items.length} Dokumente`;
+    ? `Scope: ${activeSet.size} von ${items.length} Dokumenten aktiv: ${items.filter(item=>activeSet.has(item.id)).map(item=>item.filename || item.id).join(', ')}`
+    : `Scope: alle ${items.length} Dokumente. Suche und Chat nutzen alles.`;
   documentsScope.innerHTML = items.map(item=>`
     <div class="sentence-row" data-scope-document-id="${esc(item.id)}">
       <div>
@@ -1201,6 +1275,9 @@ function renderDocumentChunks(){
       </div>
       <div class="sentence-actions">
         <button class="small" type="button" data-act="load-document-chunk">${esc(currentDocumentChunkIndex === index ? 'Aktiv' : 'Laden')}</button>
+        <button class="small" type="button" data-act="full-document-chunk">Groß</button>
+        <button class="small" type="button" data-act="edit-document-chunk">Edit</button>
+        <button class="small danger" type="button" data-act="delete-document-chunk">Löschen</button>
       </div>
     </div>
   `).join('');
@@ -1239,7 +1316,7 @@ function renderWebarchive(){
     <div class="sentence-row" data-snapshot-id="${esc(item.id)}">
       <div>
         <div class="sentence-text">${esc(item.title || item.resolved_url || item.url || 'Snapshot')}</div>
-        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.resolved_url || item.url || '')}${item.score ? ` · Score ${esc(item.score)}` : ''}</div>
+        <div class="clip-meta">${esc(item.status || 'unbekannt')} · ${esc(item.page_count || 1)} Seite(n) · ${esc(item.resolved_url || item.url || '')}${item.score ? ` · Score ${esc(item.score)}` : ''}</div>
         <div class="clip-extra">${esc(shortText(item.error || item.text_preview || 'Noch keine Vorschau.', 220))}</div>
       </div>
       <div class="sentence-actions">
@@ -1766,9 +1843,40 @@ function buildFormPreview(){
   Object.entries(fields).forEach(([key, value])=>{
     preview = preview.replaceAll(`{{${key}}}`, value);
   });
+  if (/<(form|input|textarea|select)\b/i.test(preview)){
+    preview = fillHtmlFormTemplate(preview, fields);
+  }
   formsFieldsHint.textContent = `Platzhalter: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')}`;
   formsPreview.value = preview;
   return preview;
+}
+
+function fillHtmlFormTemplate(raw, fields){
+  try {
+    const doc = new DOMParser().parseFromString(raw, 'text/html');
+    Object.entries(fields).forEach(([key, value])=>{
+      const safeKey = String(key).toLowerCase();
+      const controls = Array.from(doc.querySelectorAll('input, textarea, select'))
+        .filter(el=>String(el.getAttribute('name') || el.id || '').toLowerCase() === safeKey);
+      controls.forEach(el=>{
+        if (el.tagName.toLowerCase() === 'textarea'){
+          el.textContent = value;
+        } else if (el.tagName.toLowerCase() === 'select'){
+          Array.from(el.options || []).forEach(option=>{
+            option.selected = option.value === value || option.textContent.trim() === value;
+          });
+        } else if ((el.getAttribute('type') || '').toLowerCase() === 'checkbox'){
+          if (['1','true','yes','ja','on'].includes(String(value).toLowerCase())) el.setAttribute('checked', 'checked');
+          else el.removeAttribute('checked');
+        } else {
+          el.setAttribute('value', value);
+        }
+      });
+    });
+    return doc.body.innerHTML || raw;
+  } catch(e){
+    return raw;
+  }
 }
 
 function parseFormExtraFields(){
@@ -1868,6 +1976,13 @@ async function chatDocuments(){
     renderDocuments();
     st(payload.answer ? 'Dokumenten-Chat fertig.' : (payload.note || 'Keine Treffer.'),'ok');
   } catch(e){
+    documentsOutput.value = [
+      'Dokumenten-Chat fehlgeschlagen.',
+      '',
+      e.message,
+      '',
+      'Prüfe: Gibt es importierte Dokumente mit Text? Ist ein Ollama-Modell verfügbar? Ist der Scope eventuell zu eng?'
+    ].join('\n');
     st('Dokumenten-Chat fehlgeschlagen.','err');
     dbg(e.message);
   }
@@ -1945,7 +2060,8 @@ function clearDocumentScope(){
   renderDocumentScope();
   if (documentsSearch.value.trim()) runDocumentSearch();
   renderDocuments();
-  st('Dokumenten-Scope geleert.','ok');
+  documentsOutput.value = 'Scope geleert. Suche und Chat verwenden jetzt wieder alle Dokumente.';
+  st('Dokumenten-Scope geleert: alle Dokumente sind wieder aktiv.','ok');
 }
 
 function loadDocumentChunk(index){
@@ -2011,13 +2127,14 @@ async function runWebarchiveSearch(){
 async function saveWebarchiveEntry(){
   const url = webarchiveUrl.value.trim();
   const title = webarchiveTitle.value.trim();
+  const maxPages = Math.max(1, Math.min(50, parseInt(webarchivePages.value || '1', 10) || 1));
   if (!url){ st('URL fehlt.','err'); return; }
-  st('Websnapshot wird geholt…','wait');
+  st(`Websnapshot wird geholt (${maxPages} Seite(n) max.)…`,'wait');
   try {
     const res = await fetch(WEBARCHIVE_API, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({url, title})
+      body: JSON.stringify({url, title, max_pages: maxPages})
     });
     if (!res.ok) throw new Error('HTTP '+res.status);
     const item = await res.json();
@@ -2026,6 +2143,7 @@ async function saveWebarchiveEntry(){
     webarchiveOutput.value = [
       item.title || item.resolved_url || item.url,
       item.resolved_url || item.url,
+      `Seiten: ${item.page_count || 1}`,
       '',
       item.error || item.text_preview || 'Kein Text gespeichert.'
     ].join('\n');
@@ -2047,8 +2165,12 @@ async function loadWebsnapshot(snapshotId){
     webarchiveOutput.value = [
       item.title || item.resolved_url || item.url,
       item.resolved_url || item.url,
+      `Seiten: ${item.page_count || 1}`,
       '',
       item.text || item.error || 'Keine gespeicherten Inhalte.',
+      '',
+      'Gecrawlte URLs:',
+      ...((item.crawled_urls || []).map(url=>`- ${url}`)),
       '',
       `Rohtext: ${location.origin}${item.text_url || ''}`,
       `Roh-HTML: ${location.origin}${item.html_url || ''}`,
@@ -3469,6 +3591,7 @@ btnOcrClear.addEventListener('click', ()=>{
   ocrSource.value = '';
   st('OCR-Text geleert.','ok');
 });
+btnOcrFull.addEventListener('click', ()=>openFullView('OCR-Text', ocrInput.value));
 ocrList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-ocr-id]');
@@ -3507,6 +3630,7 @@ ocrList.addEventListener('click', e=>{
 });
 btnDocumentsAdd.addEventListener('click', saveDocumentEntry);
 btnDocumentsScopeClear.addEventListener('click', clearDocumentScope);
+btnDocumentsFull.addEventListener('click', ()=>openFullView('Dokumente Ausgabe', documentsOutput.value));
 documentsSearch.addEventListener('input', ()=>{
   clearTimeout(documentSearchTimer);
   documentSearchTimer = setTimeout(runDocumentSearch, 180);
@@ -3560,10 +3684,71 @@ documentsScope.addEventListener('click', e=>{
   toggleDocumentScope(row.dataset.scopeDocumentId, !documentActiveIds.length);
 });
 documentsChunks.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act="load-document-chunk"]');
+  const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-document-chunk-index]');
   if (!btn || !row) return;
-  loadDocumentChunk(Number(row.dataset.documentChunkIndex));
+  const index = Number(row.dataset.documentChunkIndex);
+  const doc = currentDocumentDetail;
+  const chunk = doc && Array.isArray(doc.chunks) ? doc.chunks[index] : null;
+  if (!chunk) return;
+  if (btn.dataset.act === 'load-document-chunk'){
+    loadDocumentChunk(index);
+    return;
+  }
+  if (btn.dataset.act === 'full-document-chunk'){
+    openFullView(`${doc.filename || 'Dokument'} · Chunk ${chunk.index || index + 1}`, chunk.text || '');
+    return;
+  }
+  if (btn.dataset.act === 'edit-document-chunk'){
+    const next = prompt('Chunk-Text bearbeiten:', chunk.text || '');
+    if (next == null) return;
+    fetch(`${DOCUMENTS_API}/${encodeURIComponent(doc.id)}/chunks/${encodeURIComponent(chunk.index || index + 1)}`, {
+      method:'PUT',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({text: next})
+    })
+      .then(res=>{
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(item=>{
+        currentDocumentDetail = item;
+        documentEntries = [item, ...documentEntries.filter(entry=>entry.id !== item.id)];
+        saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+        currentDocumentChunkIndex = Math.min(index, (item.chunks || []).length - 1);
+        renderDocumentChunks();
+        renderDocuments();
+        loadDocumentChunk(currentDocumentChunkIndex);
+        st('Chunk geändert.','ok');
+      })
+      .catch(err=>{
+        st('Chunk konnte nicht geändert werden.','err');
+        dbg(err.message);
+      });
+    return;
+  }
+  if (btn.dataset.act === 'delete-document-chunk'){
+    if (!confirm(`Chunk ${chunk.index || index + 1} wirklich löschen?`)) return;
+    fetch(`${DOCUMENTS_API}/${encodeURIComponent(doc.id)}/chunks/${encodeURIComponent(chunk.index || index + 1)}`, {method:'DELETE'})
+      .then(res=>{
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(item=>{
+        currentDocumentDetail = item;
+        documentEntries = [item, ...documentEntries.filter(entry=>entry.id !== item.id)];
+        saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+        currentDocumentChunkIndex = -1;
+        documentsOutput.value = `Chunk gelöscht. ${item.chunk_count || 0} Chunks bleiben.`;
+        renderDocumentChunks();
+        renderDocuments();
+        st('Chunk gelöscht.','ok');
+      })
+      .catch(err=>{
+        st('Chunk konnte nicht gelöscht werden.','err');
+        dbg(err.message);
+      });
+  }
 });
 documentsSources.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act="load-document-source"]');
@@ -3579,6 +3764,7 @@ webarchiveSearch.addEventListener('input', ()=>{
 btnWebarchiveClear.addEventListener('click', ()=>{
   webarchiveUrl.value = '';
   webarchiveTitle.value = '';
+  webarchivePages.value = '';
   webarchiveSearch.value = '';
   webarchiveHits = [];
   webarchiveOutput.value = '';
@@ -3587,6 +3773,7 @@ btnWebarchiveClear.addEventListener('click', ()=>{
   renderWebarchive();
   st('Webarchiv-Felder geleert.','ok');
 });
+btnWebarchiveFull.addEventListener('click', ()=>openFullView('Webarchiv Ausgabe', webarchiveOutput.value));
 webarchiveList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act="load-snapshot"]');
   const row = e.target.closest('[data-snapshot-id]');
@@ -3642,6 +3829,7 @@ btnFormsPreview.addEventListener('click', ()=>{
 btnFormsSave.addEventListener('click', saveFormProfile);
 btnFormsExportTxt.addEventListener('click', ()=>exportFormProfile('txt'));
 btnFormsExportHtml.addEventListener('click', ()=>exportFormProfile('html'));
+btnFormsFull.addEventListener('click', ()=>openFullView('Formular-Vorschau', formsPreview.value));
 formsList.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
   const row = e.target.closest('[data-form-id]');
@@ -3789,6 +3977,15 @@ formsName.addEventListener('input', buildFormPreview);
 formsEmail.addEventListener('input', buildFormPreview);
 formsAddress.addEventListener('input', buildFormPreview);
 formsExtra.addEventListener('input', buildFormPreview);
+
+btnFullClose.addEventListener('click', closeFullView);
+btnFullCopy.addEventListener('click', ()=>copyText(fullText.textContent || '', 'Vollansicht kopiert.'));
+fullModal.addEventListener('click', e=>{
+  if (e.target === fullModal) closeFullView();
+});
+document.addEventListener('keydown', e=>{
+  if (e.key === 'Escape' && fullModal.classList.contains('on')) closeFullView();
+});
 
 translateSentences.addEventListener('click', e=>{
   const btn = e.target.closest('button[data-act]');
@@ -3939,6 +4136,7 @@ renderLogs();
 renderLogGroups();
 setTab(currentTab(), false);
 loadServerStore();
+loadOcrStatus();
 loadServerOcrJobs();
 loadServerDocuments();
 loadServerWebarchive();

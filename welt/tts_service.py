@@ -4,7 +4,7 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import edge_tts
 
 app = FastAPI()
@@ -38,11 +38,11 @@ MAX_TRANSLATE_CHARS = 8000
 MAX_TRANSLATE_ALL_CHARS = 1800
 TRANSLATE_CACHE_LIMIT = 3000
 TRANSLATE_ALL_CONCURRENCY = 3
-OCR_TEXT_LIMIT = 200000
-DOCUMENT_TEXT_LIMIT = 400000
-DOCUMENT_CHUNK_LIMIT = 120
-DOCUMENT_RESULT_LIMIT = 20
-WEBARCHIVE_TEXT_LIMIT = 250000
+OCR_TEXT_LIMIT = 2000000
+DOCUMENT_TEXT_LIMIT = 2000000
+DOCUMENT_CHUNK_LIMIT = 1000
+DOCUMENT_RESULT_LIMIT = 50
+WEBARCHIVE_TEXT_LIMIT = 2000000
 LOG_TEXT_LIMIT = 250000
 OLLAMA_BASE = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
 
@@ -87,6 +87,10 @@ class OcrToDocumentRequest(BaseModel):
 class WebSnapshotPayload(BaseModel):
     url: str
     title: str = ""
+    max_pages: int = Field(1, ge=1, le=50)
+
+class DocumentChunkPayload(BaseModel):
+    text: str
 
 class FormProfilePayload(BaseModel):
     profile: str
@@ -269,6 +273,15 @@ def _document_chunks(text: str, limit: int = 900, max_chunks: int = DOCUMENT_CHU
         parts = [short for short in (text.strip()[:limit],) if short]
     return [{"index": idx, "text": chunk} for idx, chunk in enumerate(parts[:max_chunks], 1)]
 
+def _renumber_chunks(chunks: list[dict]) -> list[dict]:
+    clean = []
+    for chunk in chunks:
+        text = str(chunk.get("text") or "").strip()
+        if not text:
+            continue
+        clean.append({"index": len(clean) + 1, "text": text[:2500]})
+    return clean[:DOCUMENT_CHUNK_LIMIT]
+
 def _extract_text_docx(path: Path) -> tuple[str, str]:
     with zipfile.ZipFile(path) as zf:
         xml = zf.read("word/document.xml").decode("utf-8", "ignore")
@@ -311,7 +324,7 @@ def _normalize_document(doc: dict) -> dict:
             continue
         clean_chunks.append({
             "index": int(chunk.get("index") or len(clean_chunks) + 1),
-            "text": str(chunk.get("text") or "")[:1200],
+            "text": str(chunk.get("text") or "")[:2500],
         })
     return {
         "id": str(doc.get("id") or ""),
@@ -406,6 +419,8 @@ def _normalize_websnapshot(item: dict) -> dict:
         "html_path": str(item.get("html_path") or ""),
         "text_path": str(item.get("text_path") or ""),
         "text_preview": str(item.get("text_preview") or "")[:1200],
+        "page_count": int(item.get("page_count") or 1),
+        "crawled_urls": [str(url) for url in item.get("crawled_urls", [])[:50]] if isinstance(item.get("crawled_urls"), list) else [],
         "status": str(item.get("status") or "pending"),
         "error": str(item.get("error") or ""),
         "fetched_at": str(item.get("fetched_at") or _now_iso()),
@@ -433,6 +448,60 @@ def _sync_fetch_snapshot(url: str) -> dict:
     title = html.unescape(title_match.group(1).strip()) if title_match else ""
     text = _html_to_text(html_text)[:WEBARCHIVE_TEXT_LIMIT]
     return {"html": html_text, "text": text, "resolved_url": final_url, "title": title}
+
+def _same_host_url(base_url: str, href: str) -> str:
+    absolute = urllib.parse.urljoin(base_url, href)
+    parsed_base = urllib.parse.urlparse(base_url)
+    parsed = urllib.parse.urlparse(absolute)
+    if parsed.scheme not in {"http", "https"}:
+        return ""
+    if parsed.netloc != parsed_base.netloc:
+        return ""
+    clean = parsed._replace(fragment="", query="").geturl()
+    return clean
+
+def _extract_links(base_url: str, html_text: str) -> list[str]:
+    links = []
+    for match in re.finditer(r'(?is)<a\s+[^>]*href=["\']([^"\']+)["\']', html_text or ""):
+        url = _same_host_url(base_url, html.unescape(match.group(1)))
+        if url and url not in links:
+            links.append(url)
+    return links
+
+def _sync_fetch_crawl(url: str, max_pages: int) -> dict:
+    max_pages = max(1, min(int(max_pages or 1), 50))
+    first = _sync_fetch_snapshot(url)
+    html_parts = [f"<!-- {first['resolved_url']} -->\n{first['html']}"]
+    text_parts = [f"# {first['title'] or first['resolved_url']}\n{first['resolved_url']}\n\n{first['text']}"]
+    seen = {first["resolved_url"], url}
+    queue = _extract_links(first["resolved_url"], first["html"])
+    crawled = [first["resolved_url"]]
+    errors = []
+    while queue and len(crawled) < max_pages:
+        next_url = queue.pop(0)
+        if next_url in seen:
+            continue
+        seen.add(next_url)
+        try:
+            page = _sync_fetch_snapshot(next_url)
+        except Exception as exc:
+            errors.append(f"{next_url}: {exc}")
+            continue
+        crawled.append(page["resolved_url"])
+        html_parts.append(f"<!-- {page['resolved_url']} -->\n{page['html']}")
+        text_parts.append(f"# {page['title'] or page['resolved_url']}\n{page['resolved_url']}\n\n{page['text']}")
+        for link in _extract_links(page["resolved_url"], page["html"]):
+            if link not in seen and link not in queue:
+                queue.append(link)
+    return {
+        "html": "\n\n".join(html_parts),
+        "text": "\n\n---\n\n".join(text_parts)[:WEBARCHIVE_TEXT_LIMIT],
+        "resolved_url": first["resolved_url"],
+        "title": first["title"],
+        "crawled_urls": crawled,
+        "page_count": len(crawled),
+        "crawl_errors": errors[:20],
+    }
 
 def _search_websnapshots(query: str, items: list[dict], limit: int = 12) -> list[dict]:
     query = str(query or "").strip().lower()
@@ -1116,6 +1185,15 @@ async def translation_languages():
 async def get_ocr_jobs():
     return _read_ocr_jobs()
 
+@app.get("/ocr/status")
+async def get_ocr_status():
+    return {
+        "tesseract": bool(shutil.which("tesseract")),
+        "pdftotext": bool(shutil.which("pdftotext")),
+        "image_ocr": "ready" if shutil.which("tesseract") else "missing_tesseract",
+        "pdf_text": "ready" if shutil.which("pdftotext") else "missing_pdftotext",
+    }
+
 @app.post("/ocr/jobs")
 async def create_ocr_job(
     file: UploadFile = File(...),
@@ -1348,6 +1426,54 @@ async def get_document(document_id: str):
         text = Path(text_path).read_text(encoding="utf-8", errors="ignore")
     return {**item, "text": text[:DOCUMENT_TEXT_LIMIT]}
 
+@app.put("/documents/{document_id}/chunks/{chunk_index}")
+async def update_document_chunk(document_id: str, chunk_index: int, payload: DocumentChunkPayload):
+    documents = _read_documents()
+    item = next((entry for entry in documents if entry["id"] == document_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Dokument nicht gefunden.")
+    chunks = item.get("chunks") if isinstance(item.get("chunks"), list) else []
+    pos = next((idx for idx, chunk in enumerate(chunks) if int(chunk.get("index") or 0) == chunk_index), None)
+    if pos is None:
+        raise HTTPException(status_code=404, detail="Chunk nicht gefunden.")
+    text = payload.text.strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Chunk-Text darf nicht leer sein.")
+    chunks[pos]["text"] = text[:2500]
+    item["chunks"] = _renumber_chunks(chunks)
+    full_text = "\n\n".join(chunk["text"] for chunk in item["chunks"])
+    item["preview"] = full_text[:600]
+    item["text_chars"] = len(full_text)
+    item["chunk_count"] = len(item["chunks"])
+    if item.get("text_path"):
+        Path(item["text_path"]).parent.mkdir(parents=True, exist_ok=True)
+        Path(item["text_path"]).write_text(full_text, encoding="utf-8")
+    documents = [item if entry["id"] == document_id else entry for entry in documents]
+    _write_documents(documents)
+    return _normalize_document(item)
+
+@app.delete("/documents/{document_id}/chunks/{chunk_index}")
+async def delete_document_chunk(document_id: str, chunk_index: int):
+    documents = _read_documents()
+    item = next((entry for entry in documents if entry["id"] == document_id), None)
+    if not item:
+        raise HTTPException(status_code=404, detail="Dokument nicht gefunden.")
+    chunks = item.get("chunks") if isinstance(item.get("chunks"), list) else []
+    if not any(int(chunk.get("index") or 0) == chunk_index for chunk in chunks):
+        raise HTTPException(status_code=404, detail="Chunk nicht gefunden.")
+    item["chunks"] = _renumber_chunks([chunk for chunk in chunks if int(chunk.get("index") or 0) != chunk_index])
+    full_text = "\n\n".join(chunk["text"] for chunk in item["chunks"])
+    item["preview"] = full_text[:600]
+    item["text_chars"] = len(full_text)
+    item["chunk_count"] = len(item["chunks"])
+    item["status"] = "done" if item["chunks"] else "empty"
+    if item.get("text_path"):
+        Path(item["text_path"]).parent.mkdir(parents=True, exist_ok=True)
+        Path(item["text_path"]).write_text(full_text, encoding="utf-8")
+    documents = [item if entry["id"] == document_id else entry for entry in documents]
+    _write_documents(documents)
+    return _normalize_document(item)
+
 @app.get("/webarchive/snapshots")
 async def get_websnapshots():
     return _read_websnapshots()
@@ -1418,6 +1544,8 @@ async def create_websnapshot(payload: WebSnapshotPayload):
         "html_path": str(WEBARCHIVE_HTML_DIR / f"{snapshot_id}.html"),
         "text_path": str(WEBARCHIVE_TEXT_DIR / f"{snapshot_id}.txt"),
         "text_preview": "",
+        "page_count": 0,
+        "crawled_urls": [],
         "status": "processing",
         "error": "",
         "fetched_at": _now_iso(),
@@ -1428,13 +1556,17 @@ async def create_websnapshot(payload: WebSnapshotPayload):
     try:
         WEBARCHIVE_HTML_DIR.mkdir(parents=True, exist_ok=True)
         WEBARCHIVE_TEXT_DIR.mkdir(parents=True, exist_ok=True)
-        data = await asyncio.get_event_loop().run_in_executor(_pool, _sync_fetch_snapshot, url)
+        data = await asyncio.get_event_loop().run_in_executor(_pool, _sync_fetch_crawl, url, payload.max_pages)
         Path(item["html_path"]).write_text(data["html"], encoding="utf-8")
         Path(item["text_path"]).write_text(data["text"], encoding="utf-8")
         item["resolved_url"] = data["resolved_url"]
         item["title"] = item["title"] or data["title"] or data["resolved_url"]
         item["text_preview"] = data["text"][:600]
+        item["page_count"] = data.get("page_count") or 1
+        item["crawled_urls"] = data.get("crawled_urls") or [data["resolved_url"]]
         item["status"] = "done"
+        if data.get("crawl_errors"):
+            item["error"] = "Crawl-Hinweise: " + " | ".join(data["crawl_errors"][:3])
     except Exception as exc:
         item["status"] = "error"
         item["error"] = str(exc)
