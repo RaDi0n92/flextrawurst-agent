@@ -355,7 +355,8 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         "GEDANKE: <was dir gerade durch den Kopf geht, frei, auch leer>\n"
         "SICHERN: <ja|nein>\n"
         "<falls SICHERN ja zusaetzlich:\n"
-        "SICHERN_TYP: <gedanke|meinung|aufgabe|frage|kommentar|ziel>\n"
+        "SICHERN_TYP: <ein Wort das beschreibt was es ist -- z.B. gedanke, meinung, aufgabe, "
+        "frage, kommentar, ziel, idee, oder was auch immer besser passt>\n"
         "SICHERN_INHALT: <text>>\n"
         f"NAECHSTER_SCHRITT: <{naechster_optionen}>"
     )
@@ -375,9 +376,18 @@ def _lese_und_entscheide(wesen: str, disk_id: int, post: dict, interesse: str, g
         "naechster_schritt": schritt_m.group(1).lower() if schritt_m else "naechster_post",
     }
     if ergebnis["sichern"]:
-        typ_m = re.search(r"SICHERN_TYP:\s*(gedanke|meinung|aufgabe|frage|kommentar|ziel)", antwort, re.IGNORECASE)
-        inhalt_m = re.search(r"SICHERN_INHALT:\s*(.+)", antwort, re.DOTALL)
-        ergebnis["sichern_typ"] = typ_m.group(1).lower() if typ_m else "gedanke"
+        # Beide Regex bewusst auf "bis zur naechsten bekannten Feld-Zeile oder
+        # Textende" begrenzt (wie GEDANKE oben) -- real beobachtet 2026-07-09
+        # (Qualitaetstest gegen den echten LLM, Schorschel): ein ungebundenes
+        # SICHERN_INHALT:\s*(.+) mit DOTALL fraes bis zum echten Textende und
+        # schluckt dabei "NAECHSTER_SCHRITT: beenden" mit in den gespeicherten
+        # Inhalt. TYP zusaetzlich nicht mehr auf eine feste Wortliste begrenzt
+        # ("SICHERN_TYP: idee" kam real vor, war in der alten Liste nicht
+        # erlaubt und fiel still auf "gedanke" zurueck -- widerspricht "das
+        # wesen hat immer recht").
+        typ_m = re.search(r"SICHERN_TYP:\s*(.+?)(?=\nSICHERN_INHALT:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+        inhalt_m = re.search(r"SICHERN_INHALT:\s*(.+?)(?=\nNAECHSTER_SCHRITT:|\Z)", antwort, re.DOTALL)
+        ergebnis["sichern_typ"] = typ_m.group(1).strip().lower() if typ_m else "gedanke"
         ergebnis["sichern_inhalt"] = inhalt_m.group(1).strip() if inhalt_m else ergebnis["gedanke"]
     return ergebnis
 
@@ -621,7 +631,11 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
         zu_pruefen = entscheidung.get("sichern_inhalt") or entscheidung.get("gedanke") or ""
         grundlage_info = _pruefe_grundlage(wesen, post["text"], zu_pruefen)
         z.setdefault("gesammeltes_material", []).append({
-            "typ": entscheidung.get("sichern_typ", "gedanke"),
+            # name_sicher() -- gleicher Sanitizer wie fuer Container-Namen:
+            # typ landet in container.sichere() direkt im Dateinamen
+            # ("{ts}_{typ}.md"), jetzt frei formulierbar statt fester Liste,
+            # also muss er dateisystemsicher gemacht werden.
+            "typ": container.name_sicher(entscheidung.get("sichern_typ", "gedanke")),
             "inhalt": zu_pruefen,
             "disk_id": disk_id,
             "titel": post["titel"],
