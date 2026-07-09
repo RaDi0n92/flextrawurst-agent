@@ -124,10 +124,15 @@ def _llm(wesen: str, system: str, user: str, max_tokens: int, timeout: float) ->
         # Cache-Zustand, die "hintergrund"-Warteschlange hat im Normalbetrieb
         # konstant 8-9 gleichzeitige Wartende mit bis zu 600s deklarierter
         # Haltezeit je Aufrufer. 90s reicht strukturell fast nie. Dieser Dienst
-        # ist bewusst PRIO_NIEDRIG und der geduldigste im System (Daniel: "damit
-        # rechnen dass wir noch mehr zeit brauchen, timeout massiv erhoehen") --
-        # lieber lange warten und wirklich drankommen, als nach 90s aufzugeben.
-        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+        # war urspruenglich bewusst PRIO_NIEDRIG und der geduldigste im System
+        # (Daniel: "damit rechnen dass wir noch mehr zeit brauchen, timeout
+        # massiv erhoehen") -- lieber lange warten und wirklich drankommen,
+        # als nach 90s aufzugeben. Live-Beobachtung 2026-07-09 nachmittags zeigte
+        # aber: selbst mit 3600s Geduld kam der Dienst als PRIO_NIEDRIG gegen die
+        # 13+ konkurrierenden Hintergrund-Dienste kaum durch (6 von 7 Zyklen liefen
+        # in den Timeout). Auf Daniels Entscheidung deshalb auf PRIO_HOCH angehoben
+        # -- Durchkommen ist ihm wichtiger als die urspruengliche Zurueckhaltung.
+        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_HOCH,
                                     rufer=f"umgekehrte_neugier:{wesen}", max_wartezeit=3600, max_haltezeit=280):
             return hauhau_client.chat(messages, think=False, max_tokens=max_tokens, timeout=timeout).strip()
     except llm_scheduler.LLMSlotTimeout as e:
