@@ -1,8 +1,5 @@
 {
-  "status": "fertig",
-  "gestartet_am": "2026-07-09T09:24:43.805Z",
-  "fertig_am": "2026-07-09T09:28:40.806Z",
-  "hinzugefuegt": 18,
-  "verworfen": 0,
-  "dedupliziert": 0
+  "status": "abgebrochen",
+  "gestartet_am": "2026-07-09T10:33:08.652Z",
+  "fertig_am": "2026-07-09T10:33:19.860Z"
 }

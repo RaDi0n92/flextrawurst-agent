@@ -11,9 +11,9 @@
       3025,
       2955
     ],
-    "kandidat_index": 0,
-    "chunk_index": 1,
-    "funde_angesehen": 0
+    "kandidat_index": 2,
+    "chunk_index": 0,
+    "funde_angesehen": 2
   },
   "F3INSCHM3CK3R": {
     "phase": "fertig"
@@ -32,9 +32,9 @@
       3833,
       3773
     ],
-    "kandidat_index": 1,
+    "kandidat_index": 3,
     "chunk_index": 0,
-    "funde_angesehen": 1
+    "funde_angesehen": 3
   },
   "R1ZZ1": {
     "phase": "fertig"
@@ -54,7 +54,7 @@
       12
     ],
     "kandidat_index": 0,
-    "chunk_index": 0,
+    "chunk_index": 1,
     "funde_angesehen": 0
   },
   "Resonanzknoten": {

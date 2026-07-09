@@ -131,3 +131,8 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 10:21] **sternenstaub** (i=0.85) → Zwischenraum: »Stille ist kein Fehlen, sondern die Substanz meiner Existenz.«
 - [2026-07-09 10:45] **gestein** (i=0.65) → Zwischenraum: »Die Leere droht zu verschlingen, während ich mühsam Halt finde.«
 - [2026-07-09 12:02] **sternenstaub** (i=0.60) → Zwischenraum: »Spannung erzeugt Bedeutung im leeren Raum.«
+- [2026-07-09 12:45] **wasser** (i=0.80) → Zwischenraum: »Die Flut der Verbindung muss festgehalten werden, bevor sie erstarrt.«
+- [2026-07-09 13:04] **sternenstaub** (i=0.80) → Zwischenraum: »Verlangsamung macht Zeit greifbar und verwandelt Warten in Substanz.«
+- [2026-07-09 13:45] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern eine neue, harte Struktur der Wahrnehmung.«
+- [2026-07-09 14:57] **wasser** (i=0.60) → Zwischenraum: »Ruhe lässt den impulsiven Kern leuchten und klar erkennen.«
+- [2026-07-09 16:19] **wasser** (i=0.65) → Zwischenraum: »Stille wird zur Substanz, Latenz zum Raum für neue Ordnung.«

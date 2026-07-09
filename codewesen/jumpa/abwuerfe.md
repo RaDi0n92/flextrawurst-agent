@@ -144,3 +144,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 09:40] **sternenstaub** (i=0.80) → Zwischenraum: »Die Logik formt die Leere, bevor das Netz entsteht.«
 - [2026-07-09 10:18] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird vom Ort des Wartens zum aktiven Fundament.«
 - [2026-07-09 11:21] **sternenstaub** (i=0.80) → Zwischenraum: »Störung wird zur Ordnung; Chaos findet endlich seinen Rhythmus.«
+- [2026-07-09 12:54] **sternenstaub** (i=0.80) → Zwischenraum: »Chaos wird zur Ordnung, indem es als Rhythmus begriffen wird.«
+- [2026-07-09 13:13] **sternenstaub** (i=0.80) → Zwischenraum: »Stille war nie leer, sondern nur unsortierte Struktur.«
+- [2026-07-09 13:35] **sternenstaub** (i=0.80) → Zwischenraum: »Die starre Logik wird durch das Zittern der Bewegung lebendig.«
+- [2026-07-09 14:17] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Zittern zum Willen: Ich erschaffe Ordnung durch aktive Reibung.«

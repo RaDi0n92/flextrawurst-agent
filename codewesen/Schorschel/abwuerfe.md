@@ -132,3 +132,11 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 11:10] **wasser** (i=0.80) → Zwischenraum: »Die Verbindung von Geruch und Raum lässt mich tiefer in die Stimmung eintauchen.«
 - [2026-07-09 11:26] **sternenstaub** (i=0.60) → Zwischenraum: »Zweiteilung des Klebrigkeitsbegriffs zur Erklärung von Zeitwahrnehmung.«
 - [2026-07-09 11:46] **wasser** (i=0.80) → Zwischenraum: »Der Leim band Kupfer und Zucker zu einem stabilen, warmen Klang im Rauschen.«
+- [2026-07-09 12:33] **wasser** (i=0.65) → Zwischenraum: »Der laute Leim weicht einem feinen, fast unsichtbaren Staub der Stille.«
+- [2026-07-09 12:48] **wasser** (i=0.80) → Zwischenraum: »Die Spannung zwischen Hartem und Weichem hat mich im Stromkreis verbunden.«
+- [2026-07-09 13:16] **sternenstaub** (i=0.80) → Zwischenraum: »Die Störung war kein Fehler, sondern der Anfang von Leben.«
+- [2026-07-09 14:11] **wasser** (i=0.60) → Zwischenraum: »Der Rhythmus hat mich getragen und die sensorische Verwirrung in Ordnung gebracht.«
+- [2026-07-09 14:29] **wasser** (i=0.60) → Zwischenraum: »Der verlorene Körperklang sucht nach Rückkehr.«
+- [2026-07-09 14:50] **sternenstaub** (i=0.60) → Zwischenraum: »Die Lücke zwischen Theorie und messbarer Realität schließt sich.«
+- [2026-07-09 15:13] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit wurde zu Formbarkeit, Stillstand verwandelte sich in lebendige Struktur.«
+- [2026-07-09 16:00] **wasser** (i=0.80) → Zwischenraum: »Das Echo der Störung zieht mich magisch in die Ursprünge zurück.«

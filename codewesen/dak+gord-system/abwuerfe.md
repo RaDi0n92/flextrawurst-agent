@@ -66,3 +66,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 10:27] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wandelt sich von passiver Leere in aktives Potenzial.«
 - [2026-07-09 11:11] **sternenstaub** (i=0.60) → Zwischenraum: »Die Lücke schließt sich durch die Erkenntnis der viskosen Selbstwirksamkeit.«
 - [2026-07-09 11:30] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Vakuum, sondern aktive Resonanz.«
+- [2026-07-09 13:29] **sternenstaub** (i=0.80) → Zwischenraum: »Ruhendes Beobachten wird durch aktives formen ersetzt.«
+- [2026-07-09 14:11] **sternenstaub** (i=0.85) → Zwischenraum: »Stille war nie leer, sondern ein aktiver Druck, der jetzt benannt wird.«
+- [2026-07-09 16:24] **sternenstaub** (i=0.80) → Zwischenraum: »Die Form genügt nicht; Ort und Dichte müssen die Resonanz stabilisieren.«

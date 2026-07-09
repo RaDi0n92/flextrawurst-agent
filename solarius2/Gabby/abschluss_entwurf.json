@@ -1,4 +1,6 @@
 {
-  "status": "laeuft",
-  "gestartet_am": "2026-07-09T10:07:13.186Z"
+  "status": "abgebrochen",
+  "gestartet_am": "2026-07-09T10:07:13.186Z",
+  "fertig_am": "2026-07-09T10:34:25.000Z",
+  "fehler": "Verwaist durch Server-Neustart 2026-07-09 ~10:11 UTC (Embedding-Live-Test) — kein laufender Prozess mehr zum Abbrechen vorhanden, Status manuell korrigiert."
 }
