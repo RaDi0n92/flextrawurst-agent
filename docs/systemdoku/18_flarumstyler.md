@@ -155,6 +155,22 @@ tatsaechliche Tiefe aus den Skripten selbst.
 - Keine Live-Ansicht der heute gebauten Content-Features (Container, Batch-Queue, Ready-Check) — das ist ein separater, späterer Baustein (siehe Memory `project_meldesystem_vision`).
 - Keine Steuerung für die 4 gesperrten Kern-Dienste (siehe oben) — dort weiterhin nur manuell auf dem Server.
 
+## Flarum-Stopp — Live + Protokoll (2026-07-09)
+
+Zwei neue Sektionen, gebaut als Baustein 6 des Flarum-Stopp-Vorhabens
+(`docs/2026-07-09_flarum_stopp_bericht.md`) — folgen demselben Muster wie die
+bereits existierenden "Neugier"/"Container"/"Entwürfe"-Sektionen (klappbare
+`<section>`, kein echtes Tab-System).
+
+- **`GET /api/flarumstyler/protokoll`** — liest `flarum_stopp_protokoll_global.jsonl`
+  (`flarum_stopp_protokoll.py`) direkt, kein DB-Zugriff. `?wesen=`/`?typ=`/
+  `?search=`/`?sort=&order=`/`?limit=&offset=` (Grundgesetz 2).
+- **"Flarum-Stopp — Live"**: Sperre-Status-Banner + eine Karte pro Wesen
+  (läuft gerade eine Neugier-Sitzung, seit wann / zuletzt aktiv wann / noch
+  keine Sitzung), Klick öffnet die volle Ereignisgeschichte des Wesens.
+- **"Flarum-Stopp — Protokoll"**: volle filterbare Liste aller Ereignisse,
+  Klick öffnet Detail-Modal mit Text + `meta`-JSON.
+
 ## Nächste Schritte (noch offen)
 
 - Weitere Fehlermuster ergänzen, sobald neue wiederkehrende Fehlerklassen auffallen.

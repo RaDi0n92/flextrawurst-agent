@@ -1,6 +1,6 @@
 # FLARUM-STOPP — Bericht
 **Datum:** 2026-07-09
-**Stand:** Bausteine 1–5 fertig, nur noch Baustein 6 (flarumstyler-Tabs) offen. Umgedrehter Neugier-Dienst noch nicht gestartet.
+**Stand:** Alle 6 Bausteine fertig. Umgedrehter Neugier-Dienst (Baustein 3) bewusst noch nicht gestartet — das entscheidet Daniel.
 
 ---
 
@@ -134,10 +134,50 @@ Das Gesamtvorhaben hat 6 Bausteine. Baustein 1 ist fertig und aktiv.
   einem echten Testeintrag verifiziert (danach wieder entfernt, kein echtes
   Ereignis).
 
-### Baustein 6 — Zwei neue Tabs in flarumstyler (OFFEN)
+### Baustein 6 — Zwei neue Sektionen in flarumstyler (FERTIG)
 
-Ein Live-Organ-Tab (wer tut gerade was, seit wann, Entscheidungen, lesbare
-Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
+flarumstyler ist kein echtes Tab-System, sondern eine Seite aus klappbaren
+Sektionen (`toggle('id')`) — die bestehenden "Neugier"/"Container"/"Entwürfe"-
+Sektionen aus einer früheren Nacht sind exakt dasselbe Muster und riefen schon
+`/api/wesen-dienst-wizard/...`-Routen auf. Die zwei neuen Sektionen folgen
+genau diesem Muster, unter dem `/api/flarumstyler/...`-Namensraum:
+
+- **Backend:** eine neue Route `GET /api/flarumstyler/protokoll` in
+  `scripts/serve_process_camera_preview.ts` (und identisch in der
+  `_smoketest.ts`-Kopie) — liest `flarum_stopp_protokoll_global.jsonl` direkt
+  (kein DB-Zugriff nötig, der Postgres-Spiegel aus Baustein 5 ist ein
+  eigenständiger, separat durchsuchbarer Kanal für andere Konsumenten).
+  `?wesen=`/`?typ=`/`?search=`/`?sort=&order=`/`?limit=&offset=` wie überall
+  (Grundgesetz 2), liefert zusätzlich `wesen_namen` (7 Namen) und `typen`
+  (7 bekannte Ereignistypen) fürs Dropdown.
+- **"Flarum-Stopp — Live, wer tut gerade was":** ein Banner mit dem aktuellen
+  Sperre-Status (aus den `sperre_aktiviert`/`sperre_aufgehoben`-Einträgen
+  abgeleitet) plus eine Karte pro Wesen (aus derselben Antwort abgeleitet,
+  gruppiert nach `neugier_session_start`/`neugier_entscheidung`/
+  `neugier_session_ende`): läuft gerade eine Sitzung (seit wann) oder nicht
+  (zuletzt aktiv wann / noch keine Sitzung). Klick auf eine Karte öffnet ein
+  Detail-Modal mit der vollen Ereignisgeschichte dieses Wesens.
+- **"Flarum-Stopp — Protokoll":** volle filterbare Liste aller Ereignisse
+  (Wesen-Dropdown, Typ-Dropdown, Volltextsuche), neueste zuerst. Klick auf
+  einen Eintrag öffnet ein Detail-Modal mit vollem Text + `meta`-JSON.
+- **Bug beim ersten Bau gefunden+gefixt:** die Live-Sektion hatte anfangs
+  selbst `class="grid"` UND injizierte zusätzlich ein verschachteltes
+  `<div class="grid">` — zwei verschachtelte CSS-Grids quetschten die
+  Sperre-Banner-Karte und die 7 Wesen-Karten in eine einzige schmale Spalte.
+  Gefixt: äußerer Container ohne `class="grid"` (Muster wie bei den
+  bestehenden "Neugier"/"Entwürfe"-Sektionen), das injizierte innere Grid
+  trägt die Kartenbreite allein.
+- **Getestet** (Playwright headless, `localhost:8787/flarumstyler`): keine
+  Konsolen-/Seitenfehler, Screenshot beider neuer Sektionen + Modal geprüft,
+  funktional: Wesen-Karten-Klick öffnet korrektes Detail-Modal, Typ-Filter
+  liefert korrekte Trefferzahl (inkl. korrektem Leer-Zustand bei 0 Treffern),
+  Volltextsuche liefert korrekte Trefferzahl (inkl. Leer-Zustand).
+- **Server-Neustart nötig gewesen:** ein verwaister, nicht über systemd
+  laufender node-Prozess belegte Port 8787 (vermutlich aus einer früheren,
+  durch Verbindungsabbruch unterbrochenen Session). Vor dem Beenden explizit
+  bei Daniel nachgefragt (CLAUDE.md: "nicht laufende Services neustarten ohne
+  Rückfrage") — bestätigt, Prozess beendet, `process-camera-preview.service`
+  sauber über systemctl gestartet.
 
 ---
 
@@ -161,7 +201,7 @@ Inhalte, interaktiv/filterbar) und ein eigener Tab zum Log-Lesen.
   ● Baustein 3  Umgedrehter Neugier-Dienst FERTIG (Dienst noch nicht gestartet)
   ● Baustein 4  Deterministisches Protokoll FERTIG
   ● Baustein 5  Postgres-Spiegel          FERTIG
-  ○ Baustein 6  flarumstyler-Tabs         offen
+  ● Baustein 6  flarumstyler-Sektionen    FERTIG
 ```
 
 ---
