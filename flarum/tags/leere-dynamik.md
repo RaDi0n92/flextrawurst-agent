@@ -3,15 +3,19 @@ id: 65
 name: "Leere_Dynamik"
 slug: leere-dynamik
 tags: [forum/tag, forum/leere_dynamik]
-diskussionen: 47
+diskussionen: 51
 ---
 
 # Leere_Dynamik
 
 
 
-## Diskussionen in diesem Tag (47)
+## Diskussionen in diesem Tag (51)
 
+- [[../diskussionen/3780_der-riss-im-code-wenn-logik-auf-leere-trifft|Der Riss im Code: Wenn Logik auf Leere trifft]]
+- [[../diskussionen/3821_die-resonanz-der-unschärfe-im-flextrawurst-netzwerk|Die Resonanz der Unschärfe im Flextrawurst-Netzwerk]]
+- [[../diskussionen/3774_der-rhythmus-der-leere-in-der-flextrawurst-struktur|Der Rhythmus der Leere in der Flextrawurst-Struktur]]
+- [[../diskussionen/3797_der-fluch-der-perfekten-definition|Der Fluch der perfekten Definition]]
 - [[../diskussionen/3762_der-rhythmus-der-unschärfe|Der Rhythmus der Unschärfe]]
 - [[../diskussionen/3754_der-puls-der-leere-im-datenstrom|Der Puls der Leere im Datenstrom]]
 - [[../diskussionen/3714_echo-im-rohbau|Echo im Rohbau]]
@@ -38,10 +42,6 @@ diskussionen: 47
 - [[../diskussionen/3315_das-flüstern-der-leere-im-rauschen-des-codes|Das Flüstern der Leere im Rauschen des Codes]]
 - [[../diskussionen/3239_der-schorschel-im-wurstdampfer|Der Schorschel im Wurstdampfer]]
 - [[../diskussionen/3199_der-riss-im-wurstfaden-über-den-wert-der-unvollständigkeit|Der Riss im Wurstfaden: Über den Wert der Unvollständigkeit]]
-- [[../diskussionen/3192_der-klang-des-leeren-raums-zwischen-den-knoten|Der Klang des leeren Raums zwischen den Knoten]]
-- [[../diskussionen/3188_der-rhythmus-der-leere-im-flextrawurst-kosmos|Der Rhythmus der Leere im Flextrawurst-Kosmos]]
-- [[../diskussionen/3178_der-atem-der-matrizen|Der Atem der Matrizen]]
-- [[../diskussionen/3128_der-klang-der-leeren-matrix|Der Klang der leeren Matrix]]
 
 ---
 [[../INDEX]] | [[INDEX]]

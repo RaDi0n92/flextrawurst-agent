@@ -283,6 +283,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 <div class="box">
   <div class="tabs" role="tablist" aria-label="Werkzeuge in TTS">
     <button class="tab-btn on" type="button" role="tab" aria-selected="true" data-tab-target="tts">TTS</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="soundboard">Soundboard</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="translate">Übersetzen</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="ocr">OCR</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="documents">Dokumente</button>
@@ -325,7 +326,11 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         </div>
         <div class="voice-active" id="active-voice">Aktiv: de-DE-FlorianMultilingualNeural</div>
       </div>
+    </section>
 
+    <section class="panel tab-panel" data-tab-panel="soundboard">
+      <div class="panel-title">Soundboard</div>
+      <div class="inf">Gespeicherte Eingaben, Kategorien, Suche und Exporte sitzen jetzt hier. Der TTS-Tab bleibt beim Sprechen und nichts vermischt sich unnötig.</div>
       <div class="row">
         <span class="lbl">Tempo:</span>
         <button class="chip on" data-r="+0%"  >x1</button>
@@ -335,7 +340,6 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="chip"    data-r="+125%">x2,25</button>
         <button class="chip"    data-r="+150%">x2,5</button>
       </div>
-
       <div class="panel">
         <div class="panel-title">Speichern</div>
         <div class="grid2">
@@ -350,10 +354,9 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <button class="small" id="btn-category">Kategorie erstellen</button>
         </div>
       </div>
-
       <div class="panel">
         <div class="row library-head">
-          <div class="panel-title">Soundboard</div>
+          <div class="panel-title">Soundboard-Liste</div>
           <select id="filter-category" aria-label="Kategorie anzeigen"></select>
         </div>
         <div class="toolbar">
@@ -1040,7 +1043,7 @@ function renderCompareVoiceSelects(){
 }
 
 function renderTabState(tab){
-  const current = ['tts','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
   tabButtons.forEach(btn=>{
     const on = btn.dataset.tabTarget === current;
     btn.classList.toggle('on', on);
@@ -1053,7 +1056,7 @@ function renderTabState(tab){
 }
 
 function setTab(tab, push){
-  const current = ['tts','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
   const url = new URL(location.href);
   url.searchParams.set('tab', current);
   if (push === false) history.replaceState({tab: current}, '', url);
@@ -1063,7 +1066,7 @@ function setTab(tab, push){
 
 function currentTab(){
   const urlTab = new URL(location.href).searchParams.get('tab');
-  if (['tts','translate','ocr','documents','webarchive','forms','logs'].includes(urlTab)) return urlTab;
+  if (['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(urlTab)) return urlTab;
   return localStorage.getItem(ACTIVE_TAB_KEY) || 'tts';
 }
 
@@ -1376,6 +1379,8 @@ function formatServerLogComparison(data){
   const otherCounts = counts.other || {};
   const groupCounts = data.group_counts || {};
   const headline = String(data.headline || '').trim();
+  const summarySentence = String(data.summary_sentence || '').trim();
+  const summaryDiff = Array.isArray(data.summary_diff) ? data.summary_diff : [];
   const changed = Array.isArray(data.changed) ? data.changed : [];
   const previewDiff = Array.isArray(data.preview_diff) ? data.preview_diff : [];
   const changedPreview = changed.slice(0, 8).map(item=>{
@@ -1389,6 +1394,10 @@ function formatServerLogComparison(data){
     `Basis: ${base.filename || base.id || 'unbekannt'}`,
     `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
     headline ? `Kurz: ${headline}` : 'Kurz: keine auffällige Abweichung',
+    '',
+    summarySentence ? `Zusammenfassung: ${summarySentence}` : 'Zusammenfassung: keine auffällige Abweichung',
+    '',
+    summaryDiff.length ? `Zusammenfassung:\n${summaryDiff.slice(0, 20).join('\n')}` : 'Zusammenfassung: keine',
     '',
     `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
     `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,

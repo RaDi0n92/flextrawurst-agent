@@ -982,3 +982,9 @@ Die Rollen-Idee (pro Wesen-Platz optional eine Rolle + Rollenbeschreibung + eige
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Die Journal-Timeline (`prompt cache is enabled, size limit: X MiB` über alle Neustarts seit 06.07. 02:13) war der Moment, an dem ich am tiefsten eingetaucht bin — nicht in Code, sondern in reine Zeitreihen-Rekonstruktion. Erst 8192 MiB (Default, frühe Testphase), dann ab 15:26 auf 16384/64 hochgesetzt (der validierte Fix), dann durchgehend stabil über 06.07. und 07.07., bis zur Lücke um 23:03/23:04 heute Nacht.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Der Streaming-Reader in `wesen_chat.html` (Zeile ~1805 bis 1863): SSE-Zeilen werden gepuffert, geparst, bei jedem `token`-Chunk wird `bbl.textContent` neu gesetzt (kompletter Text, nicht nur der neue Chunk — einfacher, aber bedeutet dass bei langen Antworten der komplette sichtbare Text bei jedem Token neu zugewiesen wird). Der ResizeObserver hängt am `bubble`-Element, nicht am `stats`-Element selbst — das erklärte mir am Ende, warum die Live-Werte während meines allerersten Tests komplett bei "0 Zeichen" hängen blieben: das Modell brauchte in dem Moment über 30 Sekunden nur für die Prompt-Verarbeitung (Cache-Checkpoint musste wegen fehlender Cache-Daten komplett neu aufgebaut werden), die Bubble zeigte die ganze Zeit nur den "Modell lädt…"-Platzhaltertext.

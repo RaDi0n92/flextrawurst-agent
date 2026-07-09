@@ -706,6 +706,10 @@ def _log_preview_lines(item: dict) -> list[str]:
         return []
     return [line.rstrip() for line in text.splitlines() if line.strip()]
 
+def _log_summary_lines(item: dict) -> list[str]:
+    summary = item.get("summary") if isinstance(item.get("summary"), list) else []
+    return [str(line).strip() for line in summary if str(line).strip()]
+
 def _delta_phrase(delta: int, singular: str, plural: str) -> str | None:
     if delta == 0:
         return None
@@ -714,6 +718,31 @@ def _delta_phrase(delta: int, singular: str, plural: str) -> str | None:
     suffix = "mehr" if delta > 0 else "weniger"
     return f"{amount} {noun} {suffix}"
 
+def _count_change_phrase(singular: str, plural: str, base_value: int, other_value: int) -> str | None:
+    if base_value == other_value:
+        return None
+    noun = singular if abs(base_value - other_value) == 1 else plural
+    if other_value > base_value:
+        delta = other_value - base_value
+        return f"{delta} {noun} mehr"
+    delta = base_value - other_value
+    return f"{delta} {noun} weniger"
+
+def _human_join(items: list[str]) -> str:
+    clean = [str(item).strip() for item in items if str(item).strip()]
+    if not clean:
+        return ""
+    if len(clean) == 1:
+        return clean[0]
+    if len(clean) == 2:
+        return f"{clean[0]} und {clean[1]}"
+    return f"{', '.join(clean[:-1])} und {clean[-1]}"
+
+def _count_phrase(singular: str, plural: str, value: int, article: str) -> str:
+    if value == 1:
+        return f"{article} {singular}"
+    return f"{value} {plural}"
+
 def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     base_counts = item_a.get("counts") if isinstance(item_a.get("counts"), dict) else {}
     other_counts = item_b.get("counts") if isinstance(item_b.get("counts"), dict) else {}
@@ -721,6 +750,8 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     other_groups = _log_group_signatures(item_b)
     base_preview_lines = _log_preview_lines(item_a)
     other_preview_lines = _log_preview_lines(item_b)
+    base_summary_lines = _log_summary_lines(item_a)
+    other_summary_lines = _log_summary_lines(item_b)
     added = [signature for signature in other_groups.keys() if signature not in base_groups]
     removed = [signature for signature in base_groups.keys() if signature not in other_groups]
     changed: list[dict] = []
@@ -741,11 +772,13 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     base_error_delta = int(other_counts.get("errors", 0) or 0) - int(base_counts.get("errors", 0) or 0)
     base_warning_delta = int(other_counts.get("warnings", 0) or 0) - int(base_counts.get("warnings", 0) or 0)
     base_line_delta = int(other_counts.get("lines", 0) or 0) - int(base_counts.get("lines", 0) or 0)
+    base_traceback_delta = int(other_counts.get("tracebacks", 0) or 0) - int(base_counts.get("tracebacks", 0) or 0)
     headline_parts: list[str] = []
     for phrase in (
         _delta_phrase(base_error_delta, "Fehler", "Fehler"),
         _delta_phrase(base_warning_delta, "Warnung", "Warnungen"),
         _delta_phrase(base_line_delta, "Zeile", "Zeilen"),
+        _delta_phrase(base_traceback_delta, "Traceback", "Tracebacks"),
     ):
         if phrase:
             headline_parts.append(phrase)
@@ -758,6 +791,40 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
     headline_parts = [part for part in headline_parts if part]
     if not headline_parts and (added or removed or changed):
         headline_parts.append("Gruppen verändert")
+    fewer_parts: list[str] = []
+    more_parts: list[str] = []
+    line_delta = int(base_counts.get("lines", 0) or 0) - int(other_counts.get("lines", 0) or 0)
+    error_delta = int(base_counts.get("errors", 0) or 0) - int(other_counts.get("errors", 0) or 0)
+    warning_delta = int(base_counts.get("warnings", 0) or 0) - int(other_counts.get("warnings", 0) or 0)
+    traceback_delta = int(base_counts.get("tracebacks", 0) or 0) - int(other_counts.get("tracebacks", 0) or 0)
+    if line_delta > 0:
+        fewer_parts.append(_count_phrase("Zeile", "Zeilen", line_delta, "eine"))
+    if error_delta > 0:
+        fewer_parts.append(_count_phrase("Fehler", "Fehler", error_delta, "ein"))
+    if warning_delta > 0:
+        fewer_parts.append(_count_phrase("Warnung", "Warnungen", warning_delta, "eine"))
+    if traceback_delta > 0:
+        fewer_parts.append(_count_phrase("Traceback", "Tracebacks", traceback_delta, "ein"))
+    if line_delta < 0:
+        more_parts.append(_count_phrase("Zeile", "Zeilen", abs(line_delta), "eine"))
+    if error_delta < 0:
+        more_parts.append(_count_phrase("Fehler", "Fehler", abs(error_delta), "ein"))
+    if warning_delta < 0:
+        more_parts.append(_count_phrase("Warnung", "Warnungen", abs(warning_delta), "eine"))
+    if traceback_delta < 0:
+        more_parts.append(_count_phrase("Traceback", "Tracebacks", abs(traceback_delta), "ein"))
+    summary_sentence_parts: list[str] = []
+    if fewer_parts:
+        summary_sentence_parts.append(f"Es fehlen {_human_join(fewer_parts)}.")
+    if more_parts:
+        summary_sentence_parts.append(f"Es gibt {_human_join(more_parts)} mehr.")
+    if added:
+        summary_sentence_parts.append(f"{'Eine' if len(added) == 1 else len(added)} Gruppe{'n' if len(added) != 1 else ''} {'ist' if len(added) == 1 else 'sind'} dazugekommen.")
+    if removed:
+        summary_sentence_parts.append(f"{'Eine' if len(removed) == 1 else len(removed)} Gruppe{'n' if len(removed) != 1 else ''} {'ist' if len(removed) == 1 else 'sind'} weggefallen.")
+    if changed:
+        summary_sentence_parts.append(f"{'Eine' if len(changed) == 1 else len(changed)} Gruppe{'n' if len(changed) != 1 else ''} {'hat' if len(changed) == 1 else 'haben'} sich verändert.")
+    summary_sentence = " ".join(summary_sentence_parts) if summary_sentence_parts else "Keine auffällige Abweichung."
     return {
         "base": {
             "id": item_a.get("id") or "",
@@ -795,6 +862,16 @@ def _compare_log_analyses(item_a: dict, item_b: dict) -> dict:
             "changed": len(changed),
         },
         "headline": ", ".join(headline_parts) if headline_parts else "Keine auffällige Abweichung",
+        "summary_sentence": summary_sentence,
+        "summary_diff": list(
+            difflib.unified_diff(
+                base_summary_lines[:20],
+                other_summary_lines[:20],
+                fromfile=f"{item_a.get('filename') or item_a.get('id') or 'base'}:summary",
+                tofile=f"{item_b.get('filename') or item_b.get('id') or 'other'}:summary",
+                lineterm="",
+            )
+        )[:40],
         "preview_diff": list(
             difflib.unified_diff(
                 base_preview_lines[:80],

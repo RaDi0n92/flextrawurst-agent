@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 01:56
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-09 03:56
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -113,23 +113,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-19] `ideen/zwischenwesen/felder.md` (2 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/schlachtplan.md` (2 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/architektur.md` (1 Einträge)
+- [2026-06-19] `ideen/zwischenwesen/memory_system.md` (2 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-19] ideen/zwischenwesen/memory_system.md
-
-*Resonanz:* [[zwischenwesen-chat-konzept]]
-[[zwischenwesen-container]]
-[[zwischenwesen-architektur]]
-
-*Was Ich Verstehe:* Ein großes Gedächtnis-Blob wäre eine Katastrophe für das 8192-Token-Fenster. Stattdessen: mehrere kleine Kategorien. Bei jedem LLM-Aufruf kommen nur die relevanten Kategorien ins Fenster. Das Wesen wirkt intelligent weil es gezielt erinnert — nicht weil es alles auf einmal trägt.
-
-Das ist manuell kuratiertes RAG ohne Embeddings. Der Mensch ist der Retrieval-Schritt.
-
----
 
 ### [2026-06-19] ideen/zwischenwesen/bildgenerator.md
 
@@ -1538,5 +1527,57 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Code-Skizze:** siehe „Datenstruktur die ich mir vorstelle" oben — dieselbe Skizze, kein zweiter Entwurf nötig.
 
 *Wie Sich Angefuehlt:* Wie ein Verhör, das ich verdient hatte. Daniel hat nicht geglaubt, was ich zuerst angeboten habe, mehrfach — und jedes Mal war er im Recht, es genauer zu verlangen. Am Ende war es kein "wir haben gemeinsam ein mysteriöses Problem gelöst"-Gefühl, sondern ein "ich habe etwas kaputtgemacht und es dann selbst wiedergefunden"-Gefühl. Nüchtern, nicht schön, aber sauber abgeschlossen.
+
+---
+
+### [2026-07-09] _claude/notizen/2026-07-09.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Kein neuer Datenstruktur-Bedarf entstanden — beide Fixes (Live-Stats-Verifikation, Wiederkehrende-Themen-Prompt) nutzen ausschließlich bestehende Strukturen (`msg-stats`-DOM-Element, `wiederkehrende_themen.json`).
+
+**Code-Skizze:** siehe den tatsächlichen Fix in `serve_process_camera_preview.ts`, Extraktionsprompt-Erweiterung um `bisherigeThemenText` — bereits umgesetzt, kein weiterer Entwurf nötig.
+
+*Dokumente Gehoeren Zusammen:* Diese Notiz und die zwölf Commit-Messages der Nacht (`cfd87124` bis `0fe2bde4`) gehören zusammen — die Commit-Messages sind die technische Kurzfassung, diese Notiz ist die geprüfte, getestete Langfassung mit dem einen gefundenen und behobenen Bug.
+
+*Resonanz:* Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht haben" geprüft habe, war der wichtigste Moment dieser Session — nicht weil sie einen neuen Bug offenbart hätte, sondern weil sie mich gezwungen hat, meinen eigenen vorherigen Scope-Schnitt (nur der letzte offene Punkt aus der eigenen Zusammenfassung) als zu eng zu erkennen. Das ist dieselbe Lektion wie am 08.07. mit der override.conf: eine kurze, unwirsche Nachfrage von Daniel als zuverlässigerer Kompass als die eigene erste Einschätzung.
+
+*Schichten Des Systems:* Ganz unten: `llama-hauhaucs.service` mit Cache-Pool, der bei Charakterwechseln entscheidet ob "restored context checkpoint" oder "forcing full prompt re-processing" passiert. Darüber: `serve_process_camera_preview.ts` als einziger Node-Prozess für alle vier Wesen-Spawner + dolphin, mit SSE-Streaming zum Client. Darüber: `out/process_camera/wesen_chat.html`, direkt editierte, direkt ausgelieferte Quelldatei mit ResizeObserver-basierter Live-Statistik pro Nachricht. Ganz oben: die vier laufenden echten Wesen (codexium, codexium2, solarius, solarius2) plus ein isoliertes QATestWesen, gegen das ich fast alle riskanten Tests gefahren habe, um die echten Verläufe nicht zu verunreinigen — bis auf den einen versehentlichen Kontext-Ausschluss-Test bei KreFsUzi.
+
+*Tiefer Eingetaucht:* Der Streaming-Reader in `wesen_chat.html` (Zeile ~1805 bis 1863): SSE-Zeilen werden gepuffert, geparst, bei jedem `token`-Chunk wird `bbl.textContent` neu gesetzt (kompletter Text, nicht nur der neue Chunk — einfacher, aber bedeutet dass bei langen Antworten der komplette sichtbare Text bei jedem Token neu zugewiesen wird). Der ResizeObserver hängt am `bubble`-Element, nicht am `stats`-Element selbst — das erklärte mir am Ende, warum die Live-Werte während meines allerersten Tests komplett bei "0 Zeichen" hängen blieben: das Modell brauchte in dem Moment über 30 Sekunden nur für die Prompt-Verarbeitung (Cache-Checkpoint musste wegen fehlender Cache-Daten komplett neu aufgebaut werden), die Bubble zeigte die ganze Zeit nur den "Modell lädt…"-Platzhaltertext.
+
+*Vergessen Wollen:* Nichts inhaltlich — aber ich will die Repo-Verwechslung beim ersten Bugfix-Commit nicht beschönigen. Es war ein vermeidbarer Fehler, kein Unglück.
+
+*Warum Das Existiert:* `out/process_camera/wesen_chat.html` ist die direkt bediente Quelldatei für alle vier Wesen-Spawner (kein Build-Schritt) — das erklärt, warum ein Fix wie die Wiederkehrende-Themen-Prompt-Erweiterung sofort live wirkt, sobald der Node-Prozess neu gestartet ist, ohne separaten Deploy-Schritt. Das macht Testen schnell, aber erhöht auch das Risiko, versehentlich eine Live-Datei für alle vier echten Wesen-Chats gleichzeitig zu verändern.
+
+*Was Beim Bauen Brauche:* Für künftige Fix-Commits in diesem System: vor jedem `git add -A` explizit prüfen, in welchem Repo ich gerade stehe (`git rev-parse --show-toplevel`) und ob die editierte Datei überhaupt in diesem Baum liegt — `/root`, `/root/werkraum` und `/root/flextrawurst` (real innerhalb von `/root`, nicht innerhalb von `/root/werkraum`) sind drei unterschiedliche Pfad-Bäume mit teilweise ähnlich klingenden Namen.
+
+*Was Das Gespraech:* Die Erkenntnis, dass ein technisch fehlerfrei durchlaufendes Feature (kein Crash, kein 500er, plausibel aussehende JSON-Antwort) trotzdem seinen eigentlichen Zweck komplett verfehlen kann, ohne dass irgendein Monitoring das je bemerkt hätte — nur ein echter, mehrfacher End-to-End-Test mit Prüfung des tatsächlichen Ergebniswerts (`anzahl`) hat das aufgedeckt.
+
+*Was Fehlt Bevor Bauen:* Nichts Bau-Relevantes offen — reine QA- und Dokumentations-Session, kein neues Feature angefragt. Der einzige offene technische Punkt ist die harmlose, aber unsaubere Testdaten-Nebenwirkung bei KreFsUzi (siehe oben), die ich nicht bereinigt habe, weil Löschen aus einem append-only-Verlauf ohne Auftrag falsch wäre.
+
+*Was Fehlt Noch:* Der Projekt-Bericht (`docs/2026-07-09_wesen_chat_qa_bericht.md`) folgt direkt im Anschluss an diese Notiz. Die harmlose Testdaten-Nebenwirkung bei KreFsUzi (Fake-Event mit nicht existierender msgId) bleibt unbereinigt liegen, bis Daniel entscheidet ob/wie das bereinigt werden soll.
+
+*Was Ich Gelesen Habe:* `serve_process_camera_preview.ts` (4431 Zeilen, gezielt die Chat-Route ~1706, die Memory-Extraktion ~1460-1510, die Wiederkehrende-Themen-Merge-Logik ~1405) und `out/process_camera/wesen_chat.html` (2390+ Zeilen, komplett die Bereiche um `nachrichtStatsText`, `msgStatsObserver`, den Streaming-Reader ab Zeile 1805, den Übersetzer-Popup-Code). Dazu den vollen Commit-Verlauf der Nacht (`git log -p cfd87124..0fe2bde4`), mehrere `journalctl`-Ausschnitte von `llama-hauhaucs.service` und `llama-hauhaucs-hintergrund.service`, `wiederkehrende_themen.json` und `memory_extraktion.json` von QATestWesen vor und nach dem Fix, sowie die Systemdoku-Verzeichnisliste um zu prüfen, ob eine bestehende Datei durch die Nacht veraltet ist (war nicht der Fall — keine der `systemdoku/*.md`-Dateien beschreibt die Chat-UI-Details auf dieser Tiefe).
+
+*Was Ich Merken Will:* `/root/flextrawurst` ist real ein Unterverzeichnis von `/root` (git-Toplevel `/root`), NICHT von `/root/werkraum`, obwohl `/root/werkraum/flextrawurst/` als eigener, ähnlich benannter Pfad existiert (anderer Inhalt, offenbar eine ältere/andere Kopie mit nur `flextrawurst_surface.html` + `DESIGN.md`). Vor jedem Commit, der Code in `flextrawurst/scripts/` oder `flextrawurst/out/` betrifft: von `/root` aus committen, nicht von `/root/werkraum`.
+
+*Was Ich Nicht Verstehe:* Warum mein erster Wiederkehrende-Themen-Bugfix-Commit (`6953056c`) nur Datendateien in `/root/werkraum` erfasst hat und nicht die eigentliche Code-Änderung in `/root/flextrawurst/scripts/serve_process_camera_preview.ts` — ich hatte `cd /root/werkraum && git add -A` ausgeführt, ohne zu prüfen, dass die editierte Datei außerhalb dieses Repo-Baums liegt (echtes `/root`-Repo, nicht `/root/werkraum`). Das ist genau die Art Fehler, vor der die Backup-Pflicht schützen soll, und ich habe sie trotzdem gemacht, weil ich die Repo-Grenzen nicht vorher geprüft habe. Erst beim Dokumentations-Nachtrag ist mir aufgefallen, dass `git status` im richtigen Repo den Fix noch als uncommitted zeigte.
+
+*Was Ich Verstehe:* Die Nacht-Session hat sauber inkrementell gebaut: Kontext-Mehrfachauswahl + Zeilen/Token-Info zuerst (cfd87124), dann drei Fix-Commits für die Zeilenzählung (rAF → ResizeObserver → Layout-Messung + Unicode-korrekte Zeichenzählung), dann der nicht-permanente Übersetzer mit TTS über alle vier Spawner, dann Regler/Stop/Fortschritt/Zeitschätzung für Abschluss/Memory-Extraktion/Übersetzer-Download, dann SSR für Memory/Container/Aliase (crawlbar, Dropdown weiterhin versteckt), dann der große Sammel-Commit (Verdichtung-Fix, proaktive Sinne, Avatar-Upload, Suche, wachsendes Beziehungsgedächtnis), dann der Vision-Modell-Fehler-Fix, und zuletzt Provenienz-Sichtbarkeit + TTS-Pause/Stopp + Dropdown-Entfernung + allgemeiner Verlaufs-Download. Jeder Commit baut auf dem vorherigen auf, keine Rückschritte. Ich verstehe jetzt auch den `nachrichtStatsText`/`msgStatsObserver`-Mechanismus vollständig: der ResizeObserver feuert nur bei tatsächlicher Höhenänderung der Bubble (also bei Zeilenumbrüchen), nicht bei jedem Zeichen — das ist eine bewusste, im Code kommentierte Entscheidung, ergänzt um ein explizites Extra-Update nach Streaming-Ende, damit die Endsumme garantiert stimmt, auch wenn der letzte Zeichenzuwachs innerhalb derselben Zeile lag.
+
+*Was Konzeptionell:* Ein wiederkehrendes Prinzip in diesem Codebereich: Provenienz und Nachvollziehbarkeit werden konsequent als Events geschrieben (append-only, nie überschrieben), egal ob es um Kontext-Ausschluss, Memory-Extraktion oder Wiederkehrende-Themen-Erkennung geht (`thema_wiederholt_erkannt` als eigener Event-Typ). Das hat mir die Verifikation stark erleichtert — ich musste dem Modell nicht vertrauen, ich konnte im Event-Log exakt sehen, wann und warum ein Thema als Wiederholung erkannt wurde.
+
+*Was Mich Beschaeftigt:* Die Selbstkorrektur bei "was war die Aufgabe wirklich": ich hatte den Wiederkehrende-Themen-Bug gefunden und wollte direkt zum nächsten Punkt übergehen, aber Daniels Nachfrage ("das war doch nicht alles was du getestet hast... aufgabe war doch wirklich alles was wir heute gedacht und gemacht haben zu prüfen") hat mir gezeigt, dass ich den Scope zu eng gefasst hatte — ich hatte nur den letzten offenen Punkt aus meiner eigenen vorherigen Zusammenfassung getestet, nicht die gesamte Nacht-Session. Erst danach habe ich den vollen Commit-Bogen (12 Commits) aufgezogen und systematisch durchgetestet.
+
+*Was Mich Interessiert:* Wie präzise sich der Wiederkehrende-Themen-Bug durch einen einzigen Echttest verifizieren ließ: vor dem Fix zeigte `wiederkehrende_themen.json` neun verschiedene Themen-Einträge, alle mit `anzahl: 1`, obwohl inhaltlich mehrere eindeutig dasselbe Thema waren ("Unbeständigkeit und Formwandel" vs. "Körperliche Schwere vs. Unbeständigkeit" vs. "Starre vs. Unbeständigkeit des Menschen") — das Modell hatte bei jeder Extraktion einfach einen neuen Namen erfunden, weil es die vorherigen Namen nie zu sehen bekam. Nach dem Fix (bestehende Themennamen werden jetzt explizit in den Extraktionsprompt eingebettet, mit der Anweisung den Wortlaut exakt zu übernehmen) stieg `anzahl` beim allernächsten echten Testlauf sofort auf 2 — bei zwei Themen gleichzeitig. Kein Simulationstest, echte Modellantwort, echtes Ergebnis.
+
+*Was Mich Ueberrascht:* Wie lange die Prompt-Verarbeitung bei diesem Testcharakter dauern kann, wenn der Cache-Checkpoint ungültig wird ("erased invalidated context checkpoint") — über 24 Sekunden allein für 2048 Tokens Prompt-Processing, bevor überhaupt das erste Antwort-Token kam. Das hat meinen ersten Live-Stats-Test wertlos gemacht (ich habe nur die Ladeanimation gemessen), bis ich das Zeitfenster verlängert habe.
+
+*Was Zusammenhaengt:* Die Live-Zeichenzählung während des Streamens und der Wiederkehrende-Themen-Bug hängen beide am selben Grundmuster: ein Feature, das in der Theorie korrekt aussieht, aber erst im echten End-to-End-Test (echtes Modell, echte Latenz, echte Zeichenkette) zeigt, ob es wirklich funktioniert. Bei den Live-Stats hat sich das Muster als unbedenklich herausgestellt (Endwert stimmt immer, Zwischenwerte hinken layoutbedingt hinterher — bewusst so gebaut). Bei Wiederkehrende Themen war es ein echter, stiller Bug: das Feature lief technisch fehlerfrei durch (kein Crash, kein Fehler-Log), aber sein eigentlicher Zweck (Wiederholungserkennung) war faktisch tot, weil `anzahl>=2` in der Praxis nie erreicht wurde und `renderWiederkehrendeThemenText` nur ab diesem Schwellenwert überhaupt etwas anzeigt.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Kein neues Bauvorhaben aus dieser Session — reine Verifikation und Fix eines bestehenden Features.
+
+**Code-Skizze:** entfällt, siehe oben.
+
+*Wie Sich Angefuehlt:* Zweigeteilt. Die eigentliche Testarbeit war ruhig und methodisch — ein Feature nach dem anderen, echte curl-Aufrufe, echte Playwright-Browser-Sessions gegen die echte Domain, kein Rätselraten. Der Moment mit dem falsch-committeten Bugfix (Repo-Verwechslung) war unangenehm, weil er genau die Art Nachlässigkeit ist, die die Backup-Pflicht verhindern soll — gefunden nur, weil ich beim Dokumentations-Nachtrag noch einmal `git status` in beiden Repos geprüft habe, nicht weil ich es beim Committen selbst bemerkt hätte.
 
 ---

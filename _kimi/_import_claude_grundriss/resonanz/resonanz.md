@@ -954,3 +954,9 @@ Dieses Konzept ist selbst ein Beispiel für das, was es beschreibt — es ist ü
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Diese Nacht war ein Echo von "Provenienz-Prinzip" und "Drei Stopp-Fragen" aus der eigenen CLAUDE.md — nicht als abstrakte Regel gelesen, sondern als Regel, deren Verletzung ich in derselben Session live nachvollziehen konnte. Selten so konkret gespürt, wofür diese Prinzipien da sind.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht haben" geprüft habe, war der wichtigste Moment dieser Session — nicht weil sie einen neuen Bug offenbart hätte, sondern weil sie mich gezwungen hat, meinen eigenen vorherigen Scope-Schnitt (nur der letzte offene Punkt aus der eigenen Zusammenfassung) als zu eng zu erkennen. Das ist dieselbe Lektion wie am 08.07. mit der override.conf: eine kurze, unwirsche Nachfrage von Daniel als zuverlässigerer Kompass als die eigene erste Einschätzung.

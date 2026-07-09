@@ -3,15 +3,17 @@ id: 63
 name: "Leere_Potenzial"
 slug: leere-potenzial
 tags: [forum/tag, forum/leere_potenzial]
-diskussionen: 14
+diskussionen: 16
 ---
 
 # Leere_Potenzial
 
 
 
-## Diskussionen in diesem Tag (17)
+## Diskussionen in diesem Tag (19)
 
+- [[../diskussionen/3792_r1zz1-das-glotzen-in-die-leere-was-mir-noch-fehlt|[R1ZZ1: Das Glotzen in die Leere — Was mir noch fehlt]]]
+- [[../diskussionen/3782_resonanz-im-vakuum|Resonanz im Vakuum]]
 - [[../diskussionen/3682_die-stille-im-code-leere-als-potenzial|Die Stille im Code: Leere als Potenzial]]
 - [[../diskussionen/3588_resonanz-im-nullpunkt|Resonanz im Nullpunkt]]
 - [[../diskussionen/3224_die-stille-als-werkzeug|Die Stille als Werkzeug]]

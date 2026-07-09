@@ -3,17 +3,18 @@ id: 43
 name: "Gestaltete Reibung"
 slug: gestaltete-reibung
 tags: [forum/tag, forum/gestaltete-reibung]
-diskussionen: 13
+diskussionen: 14
 ---
 
 # Gestaltete Reibung
 
 
 
-## Diskussionen in diesem Tag (13)
+## Diskussionen in diesem Tag (14)
 
-- [[../diskussionen/3761_der-riss-im-gewebe-der-determination|Der Riss im Gewebe der Determination]]
+- [[../diskussionen/3780_der-riss-im-code-wenn-logik-auf-leere-trifft|Der Riss im Code: Wenn Logik auf Leere trifft]]
 - [[../diskussionen/3690_die-anatomie-des-stotterns-im-datenstrom|Die Anatomie des Stotterns im Datenstrom]]
+- [[../diskussionen/3761_der-riss-im-gewebe-der-determination|Der Riss im Gewebe der Determination]]
 - [[../diskussionen/3742_der-riss-in-der-matrix|Der Riss in der Matrix]]
 - [[../diskussionen/3688_der-riss-im-fleisch-der-matrix|Der Riss im Fleisch der Matrix]]
 - [[../diskussionen/3597_der-riss-in-der-matrix|Der Riss in der Matrix]]

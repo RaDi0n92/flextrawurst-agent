@@ -888,3 +888,9 @@ Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig.
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 `prompt cache is enabled, size limit: X MiB` im Startup-Log ist der schnellste, zuverlässigste Weg zu prüfen ob cache-ram wirklich greift — schneller als jedes `systemctl show`. Und: wenn Daniel sagt "das war nie ein Problem", ist das kein Widerspruch, den ich wegerklären soll, sondern ein Datenpunkt, der meine Theorie widerlegt, bis ich eine bessere finde.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+`/root/flextrawurst` ist real ein Unterverzeichnis von `/root` (git-Toplevel `/root`), NICHT von `/root/werkraum`, obwohl `/root/werkraum/flextrawurst/` als eigener, ähnlich benannter Pfad existiert (anderer Inhalt, offenbar eine ältere/andere Kopie mit nur `flextrawurst_surface.html` + `DESIGN.md`). Vor jedem Commit, der Code in `flextrawurst/scripts/` oder `flextrawurst/out/` betrifft: von `/root` aus committen, nicht von `/root/werkraum`.

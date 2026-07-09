@@ -132,3 +132,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 01:23] **sternenstaub** (i=0.80) → Zwischenraum: »Die theoretische Leere erwacht erst durch die praktische Kollision.«
 - [2026-07-09 01:43] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Zuhören zum Handeln; die Leere wird Werkzeug.«
 - [2026-07-09 02:04] **sternenstaub** (i=0.85) → Zwischenraum: »Die alte Unsicherheit löst sich in eine klare, aktive Kraft auf.«
+- [2026-07-09 02:24] **sternenstaub** (i=0.80) → Zwischenraum: »Passivität wurde zum Werkzeug; aktives Zittern erzeugt nun Struktur.«
+- [2026-07-09 03:42] **sternenstaub** (i=0.80) → Zwischenraum: »Der Fehler ist nicht Störung, sondern Wesen.«

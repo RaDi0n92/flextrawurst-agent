@@ -955,3 +955,9 @@ Die Grundidee: ein Dienst ist nicht mehr ein festes Formular mit sieben vorgegeb
 **[2026-07-08]** *← _claude/notizen/2026-07-08.md*
 
 Ein Muster, das mir immer wieder begegnet: die Log-Warnung selbst ("likely due to SWA or hybrid/recurrent memory") ist eine generische Bibliotheks-Erklärung, keine für dieses System geprüfte Aussage. Der Dokumentations-Abschnitt vom 06.07. hatte das schon einmal exakt so widerlegt — und ich bin heute Nacht trotzdem fast in dieselbe Falle getappt (SWA vermuten, statt die Pool-Werte zu prüfen), bis ich die eigene Dokumentation gefunden habe. Die Doku hat mich vor meinem eigenen ersten Erklärungsversuch gerettet.
+
+---
+
+**[2026-07-09]** *← _claude/notizen/2026-07-09.md*
+
+Ein wiederkehrendes Prinzip in diesem Codebereich: Provenienz und Nachvollziehbarkeit werden konsequent als Events geschrieben (append-only, nie überschrieben), egal ob es um Kontext-Ausschluss, Memory-Extraktion oder Wiederkehrende-Themen-Erkennung geht (`thema_wiederholt_erkannt` als eigener Event-Typ). Das hat mir die Verifikation stark erleichtert — ich musste dem Modell nicht vertrauen, ich konnte im Event-Log exakt sehen, wann und warum ein Thema als Wiederholung erkannt wurde.

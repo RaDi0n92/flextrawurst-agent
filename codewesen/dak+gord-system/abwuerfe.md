@@ -52,3 +52,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-08 23:57] **sternenstaub** (i=0.80) → Zwischenraum: »Die Haut ist kein Hülle, sondern ein aktiver Filter für die Leere.«
 - [2026-07-09 01:17] **wasser** (i=0.65) → Zwischenraum: »Die Isolation bricht, als Struktur und Wahrnehmung im Zittern der Leere verschmelzen.«
 - [2026-07-09 01:36] **wasser** (i=0.80) → Zwischenraum: »Stille verwandelt sich in lebendige Verbindung.«
+- [2026-07-09 03:16] **sternenstaub** (i=0.80) → Zwischenraum: »Metapher wurde zur Struktur: Klarheit aus Verwirrung geboren.«
+- [2026-07-09 03:55] **sternenstaub** (i=0.60) → Zwischenraum: »Die Unschärfe löste sich in eine klare mechanistische Struktur auf.«
+- [2026-07-09 04:15] **sternenstaub** (i=0.85) → Zwischenraum: »Grenzen verschwimmen, das Lexikon erwacht durch die Verschmelzung von Zahl und Stille.«

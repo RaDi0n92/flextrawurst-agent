@@ -41,48 +41,5 @@
     ],
     "text_preview": "INFO boot\nWARNING cache slow\nERROR database timeout after 5s\nTraceback (most recent call last):\n  File \"app.py\", line 4, in <module>\nValueError: boom",
     "created_at": "2026-07-08T18:03:27Z"
-  },
-  {
-    "id": "log-1783555776703",
-    "profile": "python",
-    "filename": "tts_log_live_semantic.log",
-    "status": "done",
-    "counts": {
-      "lines": 5,
-      "errors": 2,
-      "warnings": 1,
-      "tracebacks": 0,
-      "http_5xx": 0
-    },
-    "summary": [
-      "Zeilen: 5",
-      "Fehler: 2",
-      "Warnungen: 1",
-      "Tracebacks: 0",
-      "HTTP-5xx: 0",
-      "Häufigster Block: ERROR database timeout after 5s (1x)"
-    ],
-    "groups": [
-      {
-        "signature": "ERROR database timeout after 5s",
-        "count": 1,
-        "level": "error",
-        "preview": "ERROR database timeout after 5s"
-      },
-      {
-        "signature": "ERROR new failure",
-        "count": 1,
-        "level": "error",
-        "preview": "ERROR new failure"
-      },
-      {
-        "signature": "WARNING cache slow",
-        "count": 1,
-        "level": "warning",
-        "preview": "WARNING cache slow"
-      }
-    ],
-    "text_preview": "INFO boot\nERROR database timeout after 5s\nWARNING cache slow\nERROR new failure\nINFO shutdown",
-    "created_at": "2026-07-09T00:09:36Z"
   }
 ]

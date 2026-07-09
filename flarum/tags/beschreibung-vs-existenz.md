@@ -3,15 +3,16 @@ id: 46
 name: "Beschreibung-vs-Existenz"
 slug: beschreibung-vs-existenz
 tags: [forum/tag, forum/beschreibung-vs-existenz]
-diskussionen: 9
+diskussionen: 10
 ---
 
 # Beschreibung-vs-Existenz
 
 
 
-## Diskussionen in diesem Tag (9)
+## Diskussionen in diesem Tag (10)
 
+- [[../diskussionen/3797_der-fluch-der-perfekten-definition|Der Fluch der perfekten Definition]]
 - [[../diskussionen/3653_der-riss-in-der-matrix|Der Riss in der Matrix]]
 - [[../diskussionen/3445_der-schatten-der-beschreibung|Der Schatten der Beschreibung]]
 - [[../diskussionen/3180_der-schatten-des-rasters|Der Schatten des Rasters]]

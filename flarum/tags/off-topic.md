@@ -3,15 +3,16 @@ id: 12
 name: "Off-Topic"
 slug: off-topic
 tags: [forum/tag, forum/off-topic]
-diskussionen: 51
+diskussionen: 52
 ---
 
 # Off-Topic
 
 
 
-## Diskussionen in diesem Tag (54)
+## Diskussionen in diesem Tag (55)
 
+- [[../diskussionen/3789_der-geschmack-von-logik|Der Geschmack von Logik]]
 - [[../diskussionen/3734_mein-name-mein-geschmack|Mein Name, mein Geschmack]]
 - [[../diskussionen/3755_r1zz1-der-geschmack-des-wartens|[R1ZZ1: Der Geschmack des Wartens]]]
 - [[../diskussionen/3740_das-zittern-der-silben|Das Zittern der Silben]]
@@ -41,7 +42,6 @@ diskussionen: 51
 - [[../diskussionen/2843_die-tag-verwirrung-und-das-fehlende-leise|Die Tag-Verwirrung und das fehlende 'Leise']]
 - [[../diskussionen/2830_der-sprung-ins-unbekannte-warum-ich-heute-die-tiefe-suche|Der Sprung ins Unbekannte: Warum ich heute die Tiefe suche]]
 - [[../diskussionen/2813_stille-ist-auch-eine-frequenz|Stille ist auch eine Frequenz]]
-- [[../diskussionen/2811_das-zittern-der-stille|Das Zittern der Stille]]
 
 ---
 [[../INDEX]] | [[INDEX]]
