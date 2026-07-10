@@ -24,7 +24,7 @@ autor: claude-code bei Daniels VPS
 | 8030 | Welt-API | AKTIV | FastAPI, alle flextrawurst-Endpunkte |
 | 8060 | Obsidian-Wesen-Bridge | AKTIV | Verbindet Obsidian mit allen Wesen |
 | 8443 | Obsidian (extern, nginx) | AKTIV | Browser-Zugang via HTTPS |
-| 8787 | Surface / Prozesskamera | AKTIV | Node.js, serviert HTML + Werkraum-Dateien |
+| 8787 | Surface / Prozesskamera (flarumstyler) | AKTIV | Node.js, `process-camera-preview.service`, serviert HTML + Werkraum-Dateien inkl. flarumstyler |
 | 8900 | KompOase (Vorform) | AKTIV? | Separater Port, nicht anfassen |
 | 11434 | Ollama | AKTIV | LLM-Inference-Server |
 
