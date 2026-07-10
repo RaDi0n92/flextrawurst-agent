@@ -252,7 +252,13 @@ def get_unanswered_discussions(codewesen_usernames: list[str], limit: int = 100)
 def suche_diskussionen(suchbegriff: str, limit: int = 15) -> list:
     """Live-Suche (Titel + Post-Inhalt) — fuer den umgedrehten Neugier-Dienst
     (docs/2026-07-09_flarum_stopp_bericht.md, Baustein 3), der bewusst NICHT
-    aus dem lokalen Vault-Spiegel liest, sondern direkt aus der DB."""
+    aus dem lokalen Vault-Spiegel liest, sondern direkt aus der DB.
+
+    first_post_id IS NOT NULL seit 2026-07-10: derselbe Fund wie bei
+    stoeber_pool() (Baustein 20-Nachtrag) -- ~14-16% der Diskussionen haben
+    trotz comment_count > 0 keinen echten Post. Titel-Treffer via LIKE
+    konnten das vorher nicht ausschliessen, weil der Post-JOIN nur den
+    zweiten Suchweg (p.content LIKE) betrifft."""
     conn = pymysql.connect(**DB_CONFIG)
     muster = f"%{suchbegriff}%"
     with conn.cursor() as cur:
@@ -263,7 +269,7 @@ def suche_diskussionen(suchbegriff: str, limit: int = 15) -> list:
             LEFT JOIN users u ON u.id = d.last_posted_user_id
             LEFT JOIN posts p ON p.discussion_id = d.id
                 AND p.hidden_at IS NULL AND p.is_approved = 1
-            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1 AND d.first_post_id IS NOT NULL
               AND (d.title LIKE %s OR p.content LIKE %s)
             ORDER BY d.last_posted_at DESC
             LIMIT %s
@@ -284,7 +290,12 @@ def zufaellige_diskussionen(limit: int = 8) -> list:
     Diskussions-ID, 77 davon allein unter ID 1000 (vermutlich geloeschte/nie
     importierte Altdiskussionen) -- ein synthetisierter Bereich wie
     range(zufallsstart, zufallsstart+limit) haette regelmaessig auf nicht
-    existierende IDs gezeigt."""
+    existierende IDs gezeigt.
+
+    first_post_id IS NOT NULL seit 2026-07-10 (gleicher Fund wie
+    stoeber_pool() / Baustein 20-Nachtrag): wird als Token-Modus-Nachlade
+    genutzt (codewesen_umgekehrte_neugier.py), war bis dahin der letzte
+    ungefilterte Pfad zu einer 0-Post-Diskussion."""
     conn = pymysql.connect(**DB_CONFIG)
     with conn.cursor() as cur:
         cur.execute("""
@@ -292,7 +303,7 @@ def zufaellige_diskussionen(limit: int = 8) -> list:
                    u.username AS last_poster
             FROM discussions d
             LEFT JOIN users u ON u.id = d.last_posted_user_id
-            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1 AND d.first_post_id IS NOT NULL
             ORDER BY RAND()
             LIMIT %s
         """, (limit,))
