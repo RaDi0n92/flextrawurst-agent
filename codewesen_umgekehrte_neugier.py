@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 codewesen_umgekehrte_neugier.py — das Gegenstück zu codewesen_forum_neugier.py,
-solange die Flarum-Post-Sperre aktiv ist (docs/2026-07-09_flarum_stopp_bericht.md,
-Baustein 3; grosser Umbau Baustein 11, 2026-07-09 abends).
+solange die Flarum-Post-Sperre aktiv ist (docs/systemdoku/20_flarum_stopp.md,
+Baustein 3; grosser Umbau Baustein 11, 2026-07-09; Baustein 12-18, 2026-07-09/10).
 
 codewesen_forum_neugier.py waehlt fuer das Wesen aus, was es sich ansieht, und
 liest aus dem lokalen Vault-Spiegel. Dieser Dienst dreht beides um:
@@ -15,18 +15,30 @@ liest aus dem lokalen Vault-Spiegel. Dieser Dienst dreht beides um:
   geantwortet, du musst einen weg eroeffnen") -- Container-Pflege-Angebot, sonst
   garantiertes Stoebern in einer echten Zufallsdiskussion (Container "alles" wird
   bei Bedarf automatisch angelegt).
-- Gelesen wird POST fuer POST (nicht mehr in willkuerlichen Zeichen-Chunks) direkt
-  aus der Flarum-DB. Bei jedem Post vier gleichzeitig sichtbare Linsen: die eigene
-  Frage/Aufgabe, ihr bewusstes Gegenteil, eine ganz unvorgepraegte dritte Frage,
-  und eine reflexive vierte Frage ueber die eigene Interessens-Formulierung.
-- "Sichern" ist jederzeit moeglich, unabhaengig vom Weiterlesen -- waehrend der
-  Lese-Phase wird nur gesammelt, nicht sofort in einen Container geschrieben. Erst
-  am Ende, in einer eigenen Container-Zuordnungs-Phase, entscheidet das Wesen (bei
-  mehr als einem Container) wohin jedes Stueck soll, oder legt einen neuen an.
-- Eine Diskussion darf fruehestens nach 2 gelesenen Posts UND 3 Minuten verlassen
-  werden (Daniel: "war keine Stopbegrenzung, nur fruehste Exit-Moeglichkeit").
-  Die gesamte Lese-Phase endet spaetestens nach ~6 Minuten oder 2 Diskussionen,
-  danach folgt automatisch die ~2-minuetige Container-Zuordnungs-Phase.
+- Gelesen wird POST fuer POST direkt aus der Flarum-DB, lange Posts in
+  ~500-Token-Fenstern (Baustein 17) -- nach jedem Fenster erneut die volle
+  4-Linsen-Befragung. Vier gleichzeitig sichtbare Linsen (Baustein 12-Reihenfolge):
+  1) einfach nur lesen, unvorgepraegt, 2) lernen fuers naechste Mal (wie das eigene
+  Interesse kuenftig verstaendlicher formulieren), 3) das bewusste Gegenteil des
+  eigenen Interesses, 4) die eigene Frage/Aufgabe selbst -- zuletzt, "das Beste
+  kommt zum Schluss".
+- Vier echte Navigationswege pro Post (Baustein 16): naechster Post, vorheriger
+  Post, ein zufaelliger Post derselben Diskussion, oder denselben Post weiterlesen
+  (naechstes Token-Fenster). Diskussion wechseln erst ab einer Mindestschwelle
+  moeglich (Baustein 17: FUND_TOKEN_MINDEST_VOR_WECHSEL=250 gelesene Tokens in
+  dieser Diskussion) -- kein anderer Ausstieg aus der Lese-Phase (Baustein 15,
+  Daniel: "keine anderen exits" vor Erreichen des Gesamt-Budgets).
+- "Mitgenommen" ist jederzeit formlos moeglich, unabhaengig vom Weiterlesen
+  (Baustein 13) -- waehrend der Lese-Phase wird nur gesammelt, nicht sofort in
+  einen Container geschrieben. Erst am Ende, in einer eigenen reichen
+  Container-Zuordnungs-Phase (Baustein 14: voller Post nochmal vorgelegt, zwei
+  Reflexionsfragen, Begruendung), entscheidet das Wesen (bei mehr als einem
+  Container) wohin jedes Stueck soll, oder legt einen neuen an.
+- Gesamt-Budget der Lese-Phase per budget_modus umschaltbar (Baustein 18,
+  editierbar ueber flarumstyler): "token" (Standard, Baustein 14/17) --
+  LESE_TOKEN_BUDGET=5555 Tokens ueber beliebig viele Diskussionen; oder "zeit"
+  (alter Modus von vor Baustein 14, komplett im Code erhalten) -- 6 Minuten oder
+  2 Diskussionen, Posts komplett am Stueck statt in Token-Fenstern.
 - Schreibt NIE nach Flarum — kein post_reply, kein start_discussion, an keiner
   Stelle. Nutzt fuer private Funde codewesen_container.sichere() (bzw.
   verschiebe/kopiere fuer die Pflege bestehenden Materials).

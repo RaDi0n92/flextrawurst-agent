@@ -106,6 +106,13 @@ WELTKERN_SERVICES = {
     "codewesen-reaktion@R1ZZ1":           {"port": None, "health": None},
     "codewesen-reaktion@jumpa":           {"port": None, "health": None},
     "codewesen-reaktion@Resonanzknoten":  {"port": None, "health": None},
+    # Ergaenzt 2026-07-10 -- der Dienst existiert und laeuft seit 2026-07-09
+    # (systemd-Unit angelegt, Baustein 3), war aber NIE in dieser Liste
+    # eingetragen: WELTKERN_SERVICES ist die einzige Quelle, aus der der
+    # watchdog "services" im Bericht ueberhaupt aufbaut (siehe die Schleife
+    # weiter unten) -- ohne Eintrag hier taucht ein Dienst im flarumstyler
+    # gar nicht erst auf, unabhaengig von DIENSTE_MIT_KONFIGURATION.
+    "codewesen-umgekehrte-neugier":       {"port": None, "health": None},
 }
 
 # Klartext-Beschreibung pro Dienst (flarumstyler, 2026-07-07) — Daniels Wunsch:
@@ -154,6 +161,7 @@ SERVICE_BESCHREIBUNG = {
     "codewesen-reaktion@R1ZZ1": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer R1ZZ1 — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
     "codewesen-reaktion@jumpa": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer jumpa — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
     "codewesen-reaktion@Resonanzknoten": "Reaktionsdienst (Notifications/Erwaehnungen/Flags) fuer Resonanzknoten — teilt sich reaktion.log mit dem Haupt-Agent-Prozess.",
+    "codewesen-umgekehrte-neugier": "Das Gegenstueck zu codewesen-forum-neugier waehrend die Flarum-Post-Sperre aktiv ist — fragt jedes Wesen zuerst was es lesen will, sucht/liest live in der Flarum-DB, schreibt aber NIE zurueck nach Flarum (Funde landen nur in privaten Containern). Siehe docs/systemdoku/20_flarum_stopp.md.",
 }
 
 # Dienste die bewusst/dauerhaft inaktiv sind (2026-07-07, flarumstyler) — werden im
@@ -198,6 +206,11 @@ DIENSTE_MIT_KONFIGURATION = {
     "codewesen-Schorschel", "codewesen-F3INSCHM3CK3R", "codewesen-traeumerlie",
     "codewesen-R1ZZ1", "codewesen-jumpa", "codewesen-Resonanzknoten",
     "codewesen-dakgordsystem",
+    # 2026-07-10, Daniel: bis hierhin fehlte dieser Dienst komplett in dieser
+    # Liste -- takt_sekunden/verhalten_text waren zwar im Skript schon lesbar
+    # (dk.lade() in haupt_schleife()), aber im flarumstyler ohne diesen Eintrag
+    # UNERREICHBAR (nur der "noch nicht umstellbar"-Hinweistext erschien).
+    "codewesen-umgekehrte-neugier",
 }
 
 
@@ -211,6 +224,7 @@ DIENSTE_MIT_KONFIGURATION = {
 TAKT_EINFACH_DIENSTE = {
     "codewesen-vokabel-takt", "codewesen-antwort-daniel", "codewesen-weltbild",
     "codewesen-forum-neugier", "codewesen-lg-daemon",
+    "codewesen-umgekehrte-neugier",  # PAUSE_ZWISCHEN_ZYKLEN, einzelner Takt wie forum-neugier
 }
 TAKT_KEIN_DIENSTE = {
     "codewesen-engagement", "codewesen-batch-generator",
@@ -262,6 +276,7 @@ SCRIPT_FUER_DIENST = {
     "codewesen-aufgabenchats": "codewesen_aufgabenchats.py",
     "codewesen-chat": "codewesen_chat.py",
     "codewesen-lg-daemon": "codewesen_lg_daemon.py",
+    "codewesen-umgekehrte-neugier": "codewesen_umgekehrte_neugier.py",
 }
 REAKTION_DIENSTE = {
     "codewesen-reaktion@Schorschel", "codewesen-reaktion@F3INSCHM3CK3R",
@@ -334,6 +349,39 @@ def _meta_felder(name: str) -> dict | None:
     return None
 
 
+# Schalter-Felder (2026-07-10, Daniel: "weder zahlen noch text [...] sondern
+# ein toggle button" -- ein Wert aus einer festen, kleinen Optionsliste, kein
+# Zeitwert (meta_felder) und kein Freitext (verhalten_text). Key landet als
+# TOP-LEVEL meta-Feld (nicht unter meta.intervalle) unter demselben Namen, den
+# das jeweilige Skript per dk.lade() erwartet.
+SCHALTER_FELD_LABELS = {
+    "codewesen-umgekehrte-neugier": {
+        "budget_modus": {
+            "label": "Lese-Budget",
+            "erklaerung": (
+                "Steuert, woran die Lese-Phase ihr Ende und den fruehesten "
+                "Diskussions-Wechsel misst. 'Token-Budget' (Baustein 14/17, "
+                "Standard): LESE_TOKEN_BUDGET=5555 Tokens gesamt, Posts in "
+                "500-Token-Fenstern, Wechsel ab 250 gelesenen Tokens im Fund. "
+                "'Zeit-/Postzahl' (Baustein 11-13, alter Modus): 6 Min/2 "
+                "Diskussionen gesamt, Posts komplett am Stueck, Wechsel ab "
+                "3 Min + 2 Posts im Fund."
+            ),
+            "optionen": [
+                {"wert": "token", "label": "Token-Budget (Standard)"},
+                {"wert": "zeit", "label": "Zeit-/Postzahl (alter Modus)"},
+            ],
+            "standard": "token",
+        },
+    },
+}
+
+
+def _schalter_felder(name: str) -> list[dict]:
+    felder = SCHALTER_FELD_LABELS.get(name, {})
+    return [{"key": k, **v} for k, v in felder.items()]
+
+
 def _individualisierung_hinweis(name: str) -> dict | None:
     if name not in DIENSTE_MIT_KONFIGURATION:
         return None
@@ -364,7 +412,10 @@ def _individualisierung_hinweis(name: str) -> dict | None:
         if not verhalten else
         f"Der Text wird woertlich ans Ende der KI-Anweisung angehaengt — z.B. \"schreib kuerzer\" oder \"sei sarkastischer\". Feste Format-Vorgaben im Skript bleiben trotzdem bestehen (die werden nicht ersetzt, nur ergaenzt). {wirkt_wann}"
     )
-    return {"takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung, "braucht_neustart": braucht_neustart}
+    return {
+        "takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung,
+        "braucht_neustart": braucht_neustart, "schalter": _schalter_felder(name),
+    }
 
 
 # Veraltet (2026-07-07): Diese Liste stammte aus der Flarum-Vorphase, als diese Dienste
