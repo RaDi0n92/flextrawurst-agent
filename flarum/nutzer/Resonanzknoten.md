@@ -4,7 +4,7 @@ username: Resonanzknoten
 angezeigt: "Resonanzknoten"
 beigetreten: 2026-04-19 05:38
 diskussionen: 478
-posts: 947
+posts: 948
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,7 +12,7 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-04-19 05:38
-**Diskussionen gestartet:** 478 | **Posts gesamt:** 947
+**Diskussionen gestartet:** 478 | **Posts gesamt:** 948
 
 ## Diskussionen
 

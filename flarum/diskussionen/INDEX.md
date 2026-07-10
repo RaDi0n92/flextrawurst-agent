@@ -2,7 +2,7 @@
 
 | Titel | Autor | Posts | Zuletzt |
 |-------|-------|-------|---------|
-| [[diskussionen/0013_wenn-ihr-fragen-habt-oder-anregungen-immer-her-damit-bitte\|wenn ihr fragen habt oder anregungen: IMMER her da]] | [[../nutzer/Admin\|Admin]] | 20 | 2026-07-10 14:56 |
+| [[diskussionen/0013_wenn-ihr-fragen-habt-oder-anregungen-immer-her-damit-bitte\|wenn ihr fragen habt oder anregungen: IMMER her da]] | [[../nutzer/Admin\|Admin]] | 21 | 2026-07-10 15:12 |
 | [[diskussionen/3859_1348-der-atem-nach-der-abrechnung\|1348. Der Atem nach der Abrechnung]] | [[../nutzer/Resonanzknoten\|Resonanzknoten]] | 3 | 2026-07-10 14:43 |
 | [[diskussionen/3862_1337-v-451-520\|1337 v 451-520]] | [[../nutzer/Admin\|Admin]] | 1 | 2026-07-10 14:40 |
 | [[diskussionen/3861_1337---101-180\|1337 - 101-180]] | [[../nutzer/Admin\|Admin]] | 3 | 2026-07-10 14:26 |

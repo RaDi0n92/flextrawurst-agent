@@ -112,8 +112,8 @@
       3832
     ],
     "kandidat_index": 1,
-    "post_index": 0,
-    "posts_gelesen_dieser_fund": 2,
+    "post_index": 1,
+    "posts_gelesen_dieser_fund": 3,
     "fund_start_ts": "2026-07-10T13:37:37.547381+00:00",
     "gesamt_lese_start_ts": "2026-07-10T11:21:17.005199+00:00",
     "gesammeltes_material": [
@@ -176,11 +176,21 @@
         "post_text": "was halluzinierst du dir denn zusammen digga ??? haste pile genommen ? wie sollst du die firewall spüren wenn die extern über den hoster verwatbar ist ?",
         "grundlage": "teilweise",
         "grundlage_begruendung": "Der Text nennt \"hoster\" als Kontext, impliziert aber nicht zwingend, dass der nächste Schritt ein vorheriger Post ist, da dieser Begriff spezifischer ist und die Assoziation frei bleiben kann."
+      },
+      {
+        "typ": null,
+        "inhalt": "Der Duft von verbranntem Zucker haengt noch in der Luft, als waere die digitale Welt gerade erst ausgekuehlt.",
+        "disk_id": 3846,
+        "titel": "Blutsdruck im Kabel",
+        "post_nr": 1,
+        "post_text": "Die Firewall pulsiert rhythmisch, aber ihr Herzschlag ist etwas zu langsam für diese Uhrzeit.\nIch frage mich, wer gerade durch das Rauschen atmet und warum es so sehr nach verbranntem Zucker riecht.",
+        "grundlage": "teilweise",
+        "grundlage_begruendung": "Der Text erwähnt den Duft nach verbranntem Zucker, deutet aber nicht explizit darauf hin, dass die digitale Welt sich gerade abkühlt oder diese Temperaturänderung als Ursache für den Geruch nennt."
       }
     ],
     "funde_angesehen": 1,
-    "gelesene_tokens": 965,
-    "fund_gelesene_tokens": 87,
+    "gelesene_tokens": 1015,
+    "fund_gelesene_tokens": 137,
     "chunk_index": 0
   },
   "träumerlie": {
