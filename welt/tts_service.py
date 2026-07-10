@@ -2069,6 +2069,23 @@ async def ui():
     from fastapi.responses import Response
     with open("/root/werkraum/welt/tts_ui.html", encoding="utf-8") as f:
         content = f.read()
+    # Crawler-Zugangsschluessel (2026-07-10, Daniels Wunsch) -- separat von .env.tts_crawl_key
+    # gelesen statt hartkodiert, damit eine Rotation ohne Codeaenderung/Neustart moeglich ist
+    # (diese Route liest die Datei ohnehin bei jedem Request frisch, siehe Kommentar oben).
+    try:
+        with open("/root/werkraum/welt/.env.tts_crawl_key", encoding="utf-8") as kf:
+            crawl_key = kf.read().strip()
+    except FileNotFoundError:
+        crawl_key = ""
+    # Gezielter Ersatz nur der einen Zuweisungszeile (count=1), nicht content.replace(...) blind
+    # global -- ein blinder Ersatz haette (echter Bug, live gefunden) auch das Wort
+    # __TTS_CRAWL_KEY__ in einer JS-Fallback-Pruefung weiter unten getroffen und dort den
+    # eingesetzten Schluessel gegen sich selbst vergleichen lassen (key.indexOf(key) == 0 == "gefunden").
+    content = content.replace(
+        'window.TTS_CRAWL_KEY = "__TTS_CRAWL_KEY__";',
+        f'window.TTS_CRAWL_KEY = "{crawl_key}";',
+        1,
+    )
     return Response(content=content, media_type="text/html", headers={
         "Cache-Control": "no-cache, no-store, must-revalidate",
         "Pragma": "no-cache",

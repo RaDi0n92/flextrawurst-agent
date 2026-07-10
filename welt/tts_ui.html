@@ -55,6 +55,8 @@ h1 { font-size: 1.2rem; font-weight: 500; color: var(--pink-soft); margin-bottom
 }
 .tab-btn:hover { border-color: var(--pink); color: var(--text); background: var(--field-hi); }
 .tab-btn.on { background: var(--pink-hot); border-color: var(--pink-soft); color: #28041b; }
+.crawl-key-btn { margin-left: auto; border-color: var(--warn); color: var(--warn); }
+.crawl-key-btn:hover { border-color: var(--warn); color: var(--warn); background: rgba(244, 193, 122, .14); }
 .tab-panels { width: 100%; display: flex; flex-direction: column; gap: .85rem; }
 .tab-panel { display: none; width: 100%; }
 .tab-panel.on { display: flex; flex-direction: column; gap: .85rem; }
@@ -308,9 +310,8 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="ocr">OCR</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="documents">Dokumente</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="webarchive">Webarchiv</button>
-    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="forms">Formulare</button>
-    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="logs">Logs</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="dateiwandler">Datei-Wandler</button>
+    <button class="tab-btn crawl-key-btn" type="button" id="btn-crawl-key" title="Zugangs-Link fuer LLM-Crawler anzeigen">🔑 Crawler-Zugang</button>
   </div>
 
   <div class="tab-panels">
@@ -554,73 +555,6 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="sentence-list" id="webarchive-list"></div>
     </section>
 
-    <section class="panel tab-panel" data-tab-panel="forms">
-      <div class="panel-title">Formulare</div>
-      <div class="inf">Formulare füllen Platzhalter wie {{name}} und einfache HTML-Felder mit passendem name/id. Das ist kein Browser-Autofill, sondern ein gespeichertes Profil plus Vorlage.</div>
-      <div class="grid2">
-        <input id="forms-profile" type="text" placeholder="Profilname">
-        <input id="forms-name" type="text" placeholder="Name">
-        <input id="forms-email" type="text" placeholder="E-Mail">
-        <input id="forms-address" type="text" placeholder="Adresse">
-      </div>
-      <textarea id="forms-extra" placeholder="Zusatzfelder als key: value&#10;firma: Flextrawurst&#10;telefon: 030 123456"></textarea>
-      <div class="inf" id="forms-fields-hint">Platzhalter: {{name}}, {{email}}, {{address}} und alle Zusatzfelder als {{key}}</div>
-      <textarea id="forms-template" placeholder="Vorlage mit Platzhaltern wie {{name}}, {{email}}, {{address}}"></textarea>
-      <div class="row">
-        <button class="small primary" id="btn-forms-preview">Vorschau bauen</button>
-        <button class="small" id="btn-forms-save">Profil merken</button>
-        <button class="small" id="btn-forms-export-txt">TXT</button>
-        <button class="small" id="btn-forms-export-html">HTML</button>
-        <button class="small" id="btn-forms-full">Groß öffnen</button>
-      </div>
-      <textarea id="forms-preview" readonly placeholder="Vorschau"></textarea>
-      <div class="sentence-list" id="forms-list"></div>
-    </section>
-
-    <section class="panel tab-panel" data-tab-panel="logs">
-      <div class="panel-title">Logs</div>
-      <div class="inf">Logdateien zum Sichten, Gruppieren und späteren manuellen Erklären. Kein Hintergrund-LLM, nur gezielte Analyse auf Knopfdruck.</div>
-      <div class="grid2">
-        <input id="logs-upload" type="file" accept=".log,.txt,text/plain">
-        <select id="logs-profile">
-          <option value="auto">Auto-Erkennung</option>
-          <option value="python">Python</option>
-          <option value="nginx">Nginx</option>
-          <option value="systemd">Systemd</option>
-          <option value="docker">Docker</option>
-        </select>
-      </div>
-      <div class="grid2">
-        <input id="logs-question" type="text" placeholder="Was soll erklärt werden?">
-        <select id="logs-model">
-          <option value="">Chat-Modell automatisch wählen</option>
-        </select>
-      </div>
-      <div class="grid2">
-        <input id="logs-rule-name" type="text" placeholder="Log-Regelname">
-        <select id="logs-rules">
-          <option value="">Keine gespeicherten Regeln</option>
-        </select>
-      </div>
-      <textarea id="logs-rules-io" placeholder="Log-Regeln als JSON exportieren oder hier einfügen"></textarea>
-      <textarea id="logs-input" placeholder="Logtext hier hinein oder Datei laden"></textarea>
-      <div class="row">
-        <button class="small primary" id="btn-logs-analyze">Fehler extrahieren</button>
-        <button class="small" id="btn-logs-explain">Block erklären</button>
-        <button class="small" id="btn-logs-clear">Leeren</button>
-        <button class="small" id="btn-logs-profile-save">Regel merken</button>
-        <button class="small" id="btn-logs-profile-load">Regel laden</button>
-        <button class="small" id="btn-logs-rules-export">Regeln exportieren</button>
-        <button class="small" id="btn-logs-rules-import">Regeln importieren</button>
-        <button class="small" id="btn-logs-export-txt">TXT</button>
-        <button class="small" id="btn-logs-export-json">JSON</button>
-      </div>
-      <textarea id="logs-output" readonly placeholder="Gefundene Fehler und Gruppen"></textarea>
-      <textarea id="logs-compare" readonly placeholder="Vergleich zweier Loganalysen"></textarea>
-      <div class="sentence-list" id="logs-groups"></div>
-      <div class="sentence-list" id="logs-list"></div>
-    </section>
-
     <section class="panel tab-panel" data-tab-panel="dateiwandler">
       <div class="panel-title">Datei-Wandler</div>
       <div class="inf">Dateien rein, HTML, Markdown oder beides raus. VPS-Pfade und Uploads können gemischt werden. Der Export ist offline nutzbar; Inhalte werden escaped und nicht ausgeführt.</div>
@@ -669,6 +603,25 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <pre class="full-text" id="full-text"></pre>
   </div>
 </div>
+<div class="full-modal" id="crawl-key-modal" aria-hidden="true">
+  <div class="full-card" style="max-height:none">
+    <div class="full-head">
+      <div class="full-title">🔑 Crawler-Zugang</div>
+      <div class="row">
+        <button class="small danger" id="btn-crawl-key-close" type="button">Schließen</button>
+      </div>
+    </div>
+    <div class="inf">Diese URL umgeht das Login — jeder mit diesem Link (Mensch oder LLM-Crawl-Tool) kommt ohne Passwort rein. Nur an vertrauenswürdige Stellen weitergeben, der Schlüssel lässt sich bei Bedarf rotieren.</div>
+    <input type="text" id="crawl-key-url" readonly style="font-family:'SFMono-Regular',Consolas,monospace;font-size:.82rem">
+    <div class="row">
+      <button class="small primary" id="btn-crawl-key-copy" type="button">Link kopieren</button>
+      <span class="lbl" id="crawl-key-note"></span>
+    </div>
+  </div>
+</div>
+<script>
+window.TTS_CRAWL_KEY = "__TTS_CRAWL_KEY__";
+</script>
 <script>
 (function(){
 'use strict';
@@ -761,46 +714,11 @@ const btnWebarchiveFull = document.getElementById('btn-webarchive-full');
 const webarchiveOutput = document.getElementById('webarchive-output');
 const webarchiveVersions = document.getElementById('webarchive-versions');
 const webarchiveList = document.getElementById('webarchive-list');
-const formsProfile = document.getElementById('forms-profile');
-const formsName = document.getElementById('forms-name');
-const formsEmail = document.getElementById('forms-email');
-const formsAddress = document.getElementById('forms-address');
-const formsExtra = document.getElementById('forms-extra');
-const formsFieldsHint = document.getElementById('forms-fields-hint');
-const formsTemplate = document.getElementById('forms-template');
-const btnFormsPreview = document.getElementById('btn-forms-preview');
-const btnFormsSave = document.getElementById('btn-forms-save');
-const btnFormsExportTxt = document.getElementById('btn-forms-export-txt');
-const btnFormsExportHtml = document.getElementById('btn-forms-export-html');
-const btnFormsFull = document.getElementById('btn-forms-full');
-const formsPreview = document.getElementById('forms-preview');
-const formsList = document.getElementById('forms-list');
 const fullModal = document.getElementById('full-modal');
 const fullTitle = document.getElementById('full-title');
 const fullText = document.getElementById('full-text');
 const btnFullCopy = document.getElementById('btn-full-copy');
 const btnFullClose = document.getElementById('btn-full-close');
-const logsUpload = document.getElementById('logs-upload');
-const logsProfile = document.getElementById('logs-profile');
-const logsQuestion = document.getElementById('logs-question');
-const logsModel = document.getElementById('logs-model');
-const logsRuleName = document.getElementById('logs-rule-name');
-const logsRules = document.getElementById('logs-rules');
-const logsRulesIo = document.getElementById('logs-rules-io');
-const logsInput = document.getElementById('logs-input');
-const btnLogsAnalyze = document.getElementById('btn-logs-analyze');
-const btnLogsExplain = document.getElementById('btn-logs-explain');
-const btnLogsClear = document.getElementById('btn-logs-clear');
-const btnLogsProfileSave = document.getElementById('btn-logs-profile-save');
-const btnLogsProfileLoad = document.getElementById('btn-logs-profile-load');
-const btnLogsRulesExport = document.getElementById('btn-logs-rules-export');
-const btnLogsRulesImport = document.getElementById('btn-logs-rules-import');
-const btnLogsExportTxt = document.getElementById('btn-logs-export-txt');
-const btnLogsExportJson = document.getElementById('btn-logs-export-json');
-const logsOutput = document.getElementById('logs-output');
-const logsCompare = document.getElementById('logs-compare');
-const logsGroups = document.getElementById('logs-groups');
-const logsList = document.getElementById('logs-list');
 const profileName = document.getElementById('profile-name');
 const voiceProfileSel = document.getElementById('voice-profile-select');
 const btnProfileSave = document.getElementById('btn-profile-save');
@@ -832,16 +750,6 @@ const WEBARCHIVE_API = BASE + 'webarchive/snapshots';
 const WEBARCHIVE_DELETE_API = BASE + 'webarchive/snapshots/';
 const WEBARCHIVE_SEARCH_API = BASE + 'webarchive/search';
 const WEBARCHIVE_COMPARE_API = BASE + 'webarchive/compare';
-const FORMS_API = BASE + 'forms/profiles';
-const FORMS_DELETE_API = BASE + 'forms/profiles/';
-const FORMS_EXPORT_BASE = BASE + 'forms/profiles/';
-const FORMS_FILL_API = BASE + 'forms/fill';
-const LOGS_API = BASE + 'logs/analyses';
-const LOGS_DELETE_API = BASE + 'logs/analyses/';
-const LOGS_COMPARE_API = BASE + 'logs/compare';
-const LOGS_EXPORT_BASE = BASE + 'logs/analyses/';
-const LOGS_ANALYZE_API = BASE + 'logs/analyze';
-const LOGS_EXPLAIN_API = BASE + 'logs/explain';
 const OFFLINE_API = BASE + 'offline.html';
 const AUDIO_ZIP_API = BASE + 'export-audio';
 
@@ -859,9 +767,6 @@ const ACTIVE_TAB_KEY = 'flextrawurst.tts.activeTab.v1';
 const OCR_KEY = 'flextrawurst.tts.ocrJobs.v1';
 const DOCUMENTS_KEY = 'flextrawurst.tts.documents.v1';
 const WEBARCHIVE_KEY = 'flextrawurst.tts.webarchive.v1';
-const FORMS_KEY = 'flextrawurst.tts.forms.v1';
-const LOGS_KEY = 'flextrawurst.tts.logs.v1';
-const LOG_RULES_KEY = 'flextrawurst.tts.logRules.v1';
 
 let rate    = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
@@ -883,9 +788,6 @@ let voiceProfiles = loadVoiceProfiles();
 let ocrJobs = loadJsonLocal(OCR_KEY, []);
 let documentEntries = loadJsonLocal(DOCUMENTS_KEY, []);
 let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
-let formEntries = loadJsonLocal(FORMS_KEY, []);
-let logEntries = loadJsonLocal(LOGS_KEY, []);
-let logRules = loadJsonLocal(LOG_RULES_KEY, []);
 let documentHits = [];
 let documentActiveIds = [];
 let documentSearchTimer = null;
@@ -894,16 +796,9 @@ let webarchiveSearchTimer = null;
 let ocrServerReady = false;
 let documentsServerReady = false;
 let webarchiveServerReady = false;
-let formsServerReady = false;
-let logsServerReady = false;
-let currentLogFilename = '';
-let currentLogEntry = null;
-let currentLogGroupIndex = -1;
-let currentLogRuleName = '';
 let currentDocumentDetail = null;
 let currentDocumentChunkIndex = -1;
 let currentDocumentSources = [];
-let currentFormId = '';
 let currentWebarchiveSnapshot = null;
 let autoTranslateTimer = null;
 
@@ -1181,7 +1076,7 @@ function renderCompareVoiceSelects(){
 }
 
 function renderTabState(tab){
-  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','dateiwandler'].includes(tab) ? tab : 'tts';
   tabButtons.forEach(btn=>{
     const on = btn.dataset.tabTarget === current;
     btn.classList.toggle('on', on);
@@ -1194,7 +1089,7 @@ function renderTabState(tab){
 }
 
 function setTab(tab, push){
-  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','dateiwandler'].includes(tab) ? tab : 'tts';
   const url = new URL(location.href);
   url.searchParams.set('tab', current);
   if (push === false) history.replaceState({tab: current}, '', url);
@@ -1204,7 +1099,7 @@ function setTab(tab, push){
 
 function currentTab(){
   const urlTab = new URL(location.href).searchParams.get('tab');
-  if (['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(urlTab)) return urlTab;
+  if (['tts','soundboard','translate','ocr','documents','webarchive','dateiwandler'].includes(urlTab)) return urlTab;
   return localStorage.getItem(ACTIVE_TAB_KEY) || 'tts';
 }
 
@@ -1413,317 +1308,6 @@ function renderWebarchiveVersions(){
   `).join('');
 }
 
-function renderForms(){
-  const items = formEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
-  if (!items.length){
-    formsList.innerHTML = '<div class="empty">Noch keine Formulare gespeichert.</div>';
-    return;
-  }
-  formsList.innerHTML = items.map(item=>`
-    <div class="sentence-row" data-form-id="${esc(item.id)}">
-      <div>
-        <div class="sentence-text">${esc(item.profile || 'Profil')}</div>
-        <div class="clip-meta">${esc(item.name || 'ohne Name')} · ${esc(item.email || 'ohne Mail')} · ${esc(Object.keys(item.extra_fields || {}).length)} Zusatzfelder</div>
-        <div class="clip-meta">${esc(qualityLine(item.quality))}</div>
-        <div class="clip-extra">${esc(shortText(item.preview || item.address || 'Noch keine Vorschau.', 220))}</div>
-      </div>
-      <div class="sentence-actions">
-        <button class="small" type="button" data-act="load-form">Laden</button>
-        <button class="small" type="button" data-act="export-form-txt">TXT</button>
-        <button class="small" type="button" data-act="export-form-html">HTML</button>
-        <button class="small danger" type="button" data-act="delete-form">Löschen</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function renderLogs(){
-  const items = logEntries.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
-  if (!items.length){
-    logsList.innerHTML = '<div class="empty">Noch keine Log-Auswertung gespeichert.</div>';
-    return;
-  }
-  logsList.innerHTML = items.map(item=>{
-    const counts = item.counts || {};
-    const meta = [
-      item.profile || 'allgemein',
-      counts.errors != null ? `${counts.errors} Fehler` : null,
-      counts.warnings != null ? `${counts.warnings} Warnungen` : null
-    ].filter(Boolean).join(' · ');
-    const note = Array.isArray(item.summary) && item.summary.length
-      ? item.summary.join(' | ')
-      : (item.text_preview || 'Keine Zusammenfassung.');
-    return `
-      <div class="sentence-row" data-log-id="${esc(item.id)}">
-        <div>
-          <div class="sentence-text">${esc(item.filename || 'Loganalyse')}</div>
-          <div class="clip-meta">${esc(meta)}</div>
-          <div class="clip-extra">${esc(shortText(note, 220))}</div>
-        </div>
-      <div class="sentence-actions">
-        <button class="small" type="button" data-act="load-log">Laden</button>
-        <button class="small" type="button" data-act="compare-log">Vergleich</button>
-        <button class="small" type="button" data-act="export-log-txt">TXT</button>
-        <button class="small" type="button" data-act="export-log-json">JSON</button>
-        <button class="small danger" type="button" data-act="delete-log">Löschen</button>
-      </div>
-    </div>
-    `;
-  }).join('');
-}
-
-function logGroupSignatures(item){
-  const groups = Array.isArray(item?.groups) ? item.groups : [];
-  const map = new Map();
-  groups.forEach(group=>{
-    const signature = String(group?.signature || '').trim();
-    if (!signature) return;
-    map.set(signature, {
-      count: Number(group?.count || 0),
-      level: String(group?.level || ''),
-    });
-  });
-  return map;
-}
-
-function compareLogEntries(base, other){
-  if (!base || !other) return '';
-  const baseCounts = base.counts || {};
-  const otherCounts = other.counts || {};
-  const baseGroups = logGroupSignatures(base);
-  const otherGroups = logGroupSignatures(other);
-  const added = [...otherGroups.keys()].filter(signature=>!baseGroups.has(signature));
-  const removed = [...baseGroups.keys()].filter(signature=>!otherGroups.has(signature));
-  const changed = [...otherGroups.keys()].filter(signature=>{
-    if (!baseGroups.has(signature)) return false;
-    const a = baseGroups.get(signature);
-    const b = otherGroups.get(signature);
-    return a.count !== b.count || a.level !== b.level;
-  });
-  return [
-    `Basis: ${base.filename || base.id || 'unbekannt'}`,
-    `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
-    '',
-    `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
-    `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,
-    `Warnungen: ${baseCounts.warnings ?? 0} -> ${otherCounts.warnings ?? 0}`,
-    `Tracebacks: ${baseCounts.tracebacks ?? 0} -> ${otherCounts.tracebacks ?? 0}`,
-    `HTTP-5xx: ${baseCounts.http_5xx ?? 0} -> ${otherCounts.http_5xx ?? 0}`,
-    '',
-    `Gruppen: ${baseGroups.size} -> ${otherGroups.size}`,
-    `Neu in Vergleich: ${added.length}`,
-    `Entfallen: ${removed.length}`,
-    `Geaendert: ${changed.length}`,
-    '',
-    added.length ? `Neu: ${added.slice(0, 8).join(' | ')}` : 'Neu: keine',
-    removed.length ? `Entfallen: ${removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
-    changed.length ? `Geaendert: ${changed.slice(0, 8).join(' | ')}` : 'Geaendert: keine',
-  ].join('\n');
-}
-
-function formatServerLogComparison(data){
-  if (!data || typeof data !== 'object') return '';
-  const base = data.base || {};
-  const other = data.other || {};
-  const counts = data.counts || {};
-  const baseCounts = counts.base || {};
-  const otherCounts = counts.other || {};
-  const groupCounts = data.group_counts || {};
-  const headline = String(data.headline || '').trim();
-  const summarySentence = String(data.summary_sentence || '').trim();
-  const summaryDiff = Array.isArray(data.summary_diff) ? data.summary_diff : [];
-  const changed = Array.isArray(data.changed) ? data.changed : [];
-  const previewDiff = Array.isArray(data.preview_diff) ? data.preview_diff : [];
-  const changedPreview = changed.slice(0, 8).map(item=>{
-    if (!item || typeof item !== 'object') return '';
-    const signature = String(item.signature || '').trim();
-    const baseLevel = String(item.base_level || '');
-    const otherLevel = String(item.other_level || '');
-    return `${signature} (${baseLevel || '-'} ${item.base_count ?? 0}x -> ${otherLevel || '-'} ${item.other_count ?? 0}x)`;
-  }).filter(Boolean);
-  return [
-    `Basis: ${base.filename || base.id || 'unbekannt'}`,
-    `Vergleich: ${other.filename || other.id || 'unbekannt'}`,
-    headline ? `Kurz: ${headline}` : 'Kurz: keine auffällige Abweichung',
-    '',
-    summarySentence ? `Zusammenfassung: ${summarySentence}` : 'Zusammenfassung: keine auffällige Abweichung',
-    '',
-    summaryDiff.length ? `Zusammenfassung:\n${summaryDiff.slice(0, 20).join('\n')}` : 'Zusammenfassung: keine',
-    '',
-    `Zeilen: ${baseCounts.lines ?? 0} -> ${otherCounts.lines ?? 0}`,
-    `Fehler: ${baseCounts.errors ?? 0} -> ${otherCounts.errors ?? 0}`,
-    `Warnungen: ${baseCounts.warnings ?? 0} -> ${otherCounts.warnings ?? 0}`,
-    `Tracebacks: ${baseCounts.tracebacks ?? 0} -> ${otherCounts.tracebacks ?? 0}`,
-    `HTTP-5xx: ${baseCounts.http_5xx ?? 0} -> ${otherCounts.http_5xx ?? 0}`,
-    '',
-    `Gruppen: ${groupCounts.base ?? 0} -> ${groupCounts.other ?? 0}`,
-    `Neu in Vergleich: ${groupCounts.added ?? 0}`,
-    `Entfallen: ${groupCounts.removed ?? 0}`,
-    `Geaendert: ${groupCounts.changed ?? 0}`,
-    '',
-    Array.isArray(data.added) && data.added.length ? `Neu: ${data.added.slice(0, 8).join(' | ')}` : 'Neu: keine',
-    Array.isArray(data.removed) && data.removed.length ? `Entfallen: ${data.removed.slice(0, 8).join(' | ')}` : 'Entfallen: keine',
-    changedPreview.length ? `Geaendert: ${changedPreview.join(' | ')}` : 'Geaendert: keine',
-    '',
-    previewDiff.length ? `Textdiff:\n${previewDiff.slice(0, 40).join('\n')}` : 'Textdiff: keine',
-  ].join('\n');
-}
-
-async function compareLogEntriesOnServer(base, other){
-  const res = await fetch(LOGS_COMPARE_API, {
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({
-      base_id: base.id,
-      other_id: other.id
-    })
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const data = await res.json();
-  return formatServerLogComparison(data);
-}
-
-function normalizeLogRule(item){
-  return {
-    name: String(item?.name || '').trim(),
-    profile: String(item?.profile || '').trim(),
-    question: String(item?.question || '').trim(),
-    model: String(item?.model || '').trim(),
-    created_at: String(item?.created_at || new Date().toISOString()),
-  };
-}
-
-function saveLogRules(){
-  saveJsonLocal(LOG_RULES_KEY, logRules);
-}
-
-function exportLogRules(){
-  const payload = JSON.stringify(logRules, null, 2);
-  logsRulesIo.value = payload;
-  downloadBlob(new Blob([payload], {type:'application/json;charset=utf-8'}), 'tts-log-regeln.json');
-  st('Log-Regeln exportiert.','ok');
-}
-
-function importLogRules(){
-  const raw = String(logsRulesIo.value || '').trim();
-  if (!raw){
-    st('Kein JSON für Log-Regeln vorhanden.','err');
-    return;
-  }
-  try {
-    const parsed = JSON.parse(raw);
-    const list = Array.isArray(parsed) ? parsed : (Array.isArray(parsed?.rules) ? parsed.rules : []);
-    if (!list.length){
-      st('Keine Log-Regeln im JSON gefunden.','err');
-      return;
-    }
-    const merged = list
-      .map(normalizeLogRule)
-      .filter(item=>item.name);
-    if (!merged.length){
-      st('Import enthält keine gültigen Log-Regeln.','err');
-      return;
-    }
-    const byName = new Map(logRules.map(item=>[item.name, item]));
-    merged.forEach(item=>byName.set(item.name, item));
-    logRules = Array.from(byName.values());
-    saveLogRules();
-    renderLogRules();
-    st(`Log-Regeln importiert: ${merged.length}`,'ok');
-  } catch(e){
-    st('Log-Regeln konnten nicht importiert werden.','err');
-    dbg(e.message);
-  }
-}
-
-function renderLogRules(){
-  const items = logRules.slice().sort((a,b)=>String(b.created_at || '').localeCompare(String(a.created_at || '')));
-  if (!items.length){
-    logsRules.innerHTML = '<option value="">Keine gespeicherten Regeln</option>';
-    btnLogsProfileLoad.disabled = true;
-    return;
-  }
-  logsRules.innerHTML = ['<option value="">Regel wählen</option>']
-    .concat(items.map(item=>`<option value="${esc(item.name)}">${esc(item.name)} · ${esc(item.profile || 'auto')} · ${esc(item.model || 'auto')}</option>`))
-    .join('');
-  btnLogsProfileLoad.disabled = false;
-}
-
-function applyLogRule(rule){
-  if (!rule) return;
-  logsProfile.value = rule.profile || '';
-  logsQuestion.value = rule.question || '';
-  logsModel.value = rule.model || '';
-  currentLogRuleName = rule.name || '';
-  logsRuleName.value = currentLogRuleName;
-  st(`Log-Regel geladen: ${currentLogRuleName || 'unbenannt'}`,'ok');
-}
-
-function saveCurrentLogRule(){
-  const name = logsRuleName.value.trim() || `Regel ${logRules.length + 1}`;
-  const rule = normalizeLogRule({
-    name,
-    profile: logsProfile.value.trim(),
-    question: logsQuestion.value.trim(),
-    model: logsModel.value
-  });
-  logRules = [rule, ...logRules.filter(item=>item.name !== name)];
-  saveLogRules();
-  renderLogRules();
-  logsRules.value = name;
-  currentLogRuleName = name;
-  st(`Log-Regel gespeichert: ${name}`,'ok');
-}
-
-function exportLogEntry(item, fmt){
-  if (!item){
-    st('Keine Loganalyse zum Exportieren gewählt.','err');
-    return;
-  }
-  const base = String(item.filename || item.profile || item.id || 'loganalyse').replace(/[^\w.-]+/g, '_');
-  const url = `${LOGS_EXPORT_BASE}${encodeURIComponent(item.id)}/export/${encodeURIComponent(fmt)}`;
-  fetch(url, {cache:'no-store'})
-    .then(res=>{
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.blob();
-    })
-    .then(blob=>{
-      downloadBlob(blob, `${base}.${fmt}`);
-      st(`Loganalyse als ${fmt.toUpperCase()} exportiert.`,'ok');
-    })
-    .catch(e=>{
-      st('Loganalyse-Export fehlgeschlagen.','err');
-      dbg(e.message);
-    });
-}
-
-function updateLogExportState(){
-  const on = !!currentLogEntry;
-  btnLogsExportTxt.disabled = !on;
-  btnLogsExportJson.disabled = !on;
-}
-
-function renderLogGroups(){
-  const groups = currentLogEntry && Array.isArray(currentLogEntry.groups) ? currentLogEntry.groups : [];
-  if (!groups.length){
-    logsGroups.innerHTML = '<div class="empty">Noch keine Fehlergruppen gewählt.</div>';
-    return;
-  }
-  logsGroups.innerHTML = groups.map((group, index)=>`
-    <div class="sentence-row" data-log-group-index="${esc(index)}">
-      <div>
-        <div class="sentence-text">${esc(group.signature || `Gruppe ${index + 1}`)}</div>
-        <div class="clip-meta">${esc(group.level || 'hinweis')} · ${esc(group.count || 0)}x</div>
-        <div class="clip-extra">${esc(shortText(group.preview || group.signature || '', 220))}</div>
-      </div>
-      <div class="sentence-actions">
-        <button class="small" type="button" data-act="load-log-group">${esc(currentLogGroupIndex === index ? 'Aktiv' : 'Laden')}</button>
-        <button class="small" type="button" data-act="explain-log-group">Erklären</button>
-      </div>
-    </div>
-  `).join('');
-}
-
 async function loadServerOcrJobs(){
   try {
     const res = await fetch(OCR_API, {cache:'no-store'});
@@ -1896,75 +1480,6 @@ async function saveDocumentEntry(){
     st('Dokumenten-Import fehlgeschlagen.','err');
     dbg(e.message);
   }
-}
-
-function buildFormPreview(){
-  const tpl = formsTemplate.value || 'Name: {{name}}\nE-Mail: {{email}}\nAdresse: {{address}}';
-  const fields = formFieldMap();
-  let preview = tpl;
-  Object.entries(fields).forEach(([key, value])=>{
-    preview = preview.replaceAll(`{{${key}}}`, value);
-  });
-  if (/<(form|input|textarea|select)\b/i.test(preview)){
-    preview = fillHtmlFormTemplate(preview, fields);
-  }
-  formsFieldsHint.textContent = `Platzhalter: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')}`;
-  formsPreview.value = preview;
-  return preview;
-}
-
-function fillHtmlFormTemplate(raw, fields){
-  try {
-    const doc = new DOMParser().parseFromString(raw, 'text/html');
-    Object.entries(fields).forEach(([key, value])=>{
-      const safeKey = String(key).toLowerCase();
-      const controls = Array.from(doc.querySelectorAll('input, textarea, select'))
-        .filter(el=>String(el.getAttribute('name') || el.id || '').toLowerCase() === safeKey);
-      controls.forEach(el=>{
-        if (el.tagName.toLowerCase() === 'textarea'){
-          el.textContent = value;
-        } else if (el.tagName.toLowerCase() === 'select'){
-          Array.from(el.options || []).forEach(option=>{
-            option.selected = option.value === value || option.textContent.trim() === value;
-          });
-        } else if ((el.getAttribute('type') || '').toLowerCase() === 'checkbox'){
-          if (['1','true','yes','ja','on'].includes(String(value).toLowerCase())) el.setAttribute('checked', 'checked');
-          else el.removeAttribute('checked');
-        } else {
-          el.setAttribute('value', value);
-        }
-      });
-    });
-    return doc.body.innerHTML || raw;
-  } catch(e){
-    return raw;
-  }
-}
-
-function parseFormExtraFields(){
-  const map = {};
-  String(formsExtra.value || '')
-    .split(/\r?\n/)
-    .map(line=>line.trim())
-    .filter(Boolean)
-    .forEach(line=>{
-      const idx = line.indexOf(':');
-      if (idx < 1) return;
-      const key = line.slice(0, idx).trim().replace(/\s+/g, '_').toLowerCase();
-      const value = line.slice(idx + 1).trim();
-      if (!key) return;
-      map[key] = value;
-    });
-  return map;
-}
-
-function formFieldMap(){
-  return {
-    name: formsName.value.trim(),
-    email: formsEmail.value.trim(),
-    address: formsAddress.value.trim(),
-    ...parseFormExtraFields(),
-  };
 }
 
 async function runDocumentSearch(){
@@ -2293,244 +1808,6 @@ async function compareWebarchiveSnapshots(snapshotA, snapshotB){
     st('Snapshot-Vergleich fertig.','ok');
   } catch(e){
     st('Snapshot-Vergleich fehlgeschlagen.','err');
-    dbg(e.message);
-  }
-}
-
-async function loadServerForms(){
-  try {
-    const res = await fetch(FORMS_API, {cache:'no-store'});
-    if (!res.ok) throw new Error('HTTP '+res.status);
-    const items = await res.json();
-    formEntries = Array.isArray(items) ? items : [];
-    formsServerReady = true;
-    saveJsonLocal(FORMS_KEY, formEntries);
-  } catch(e){
-    formsServerReady = false;
-  }
-  renderForms();
-}
-
-async function saveFormProfile(){
-  const preview = await buildFormPreviewServer();
-  const payload = {
-    profile: formsProfile.value.trim() || `Profil ${formEntries.length + 1}`,
-    name: formsName.value.trim(),
-    email: formsEmail.value.trim(),
-    address: formsAddress.value.trim(),
-    template: formsTemplate.value.trim(),
-    preview,
-    extra_fields: parseFormExtraFields()
-  };
-  try {
-    const res = await fetch(FORMS_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
-    });
-    if (!res.ok) throw new Error('HTTP '+res.status);
-    const item = await res.json();
-    formEntries = [item, ...formEntries.filter(x=>x.id !== item.id)];
-    currentFormId = item.id;
-    saveJsonLocal(FORMS_KEY, formEntries);
-    renderForms();
-    st('Formularprofil gespeichert.','ok');
-  } catch(e){
-    st('Formularprofil konnte nicht gespeichert werden.','err');
-    dbg(e.message);
-  }
-}
-
-async function buildFormPreviewServer(){
-  const fields = formFieldMap();
-  try {
-    const res = await fetch(FORMS_FILL_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        template: formsTemplate.value || 'Name: {{name}}\nE-Mail: {{email}}\nAdresse: {{address}}',
-        fields
-      })
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const payload = await res.json();
-    formsPreview.value = payload.preview || '';
-    formsFieldsHint.textContent = `Platzhalter/Felder: ${Object.keys(fields).map(key=>`{{${key}}}`).join(', ')} · ${qualityLine(payload.quality)}`;
-    return formsPreview.value;
-  } catch(e){
-    dbg(`Server-Formularfüllung fehlgeschlagen, lokaler Fallback: ${e.message}`);
-    return buildFormPreview();
-  }
-}
-
-function loadFormEntry(formId){
-  const item = formEntries.find(x=>x.id === formId);
-  if (!item) return;
-  currentFormId = item.id;
-  formsProfile.value = item.profile || '';
-  formsName.value = item.name || '';
-  formsEmail.value = item.email || '';
-  formsAddress.value = item.address || '';
-  formsExtra.value = Object.entries(item.extra_fields || {}).map(([key, value])=>`${key}: ${value}`).join('\n');
-  formsTemplate.value = item.template || '';
-  formsPreview.value = item.preview || '';
-  buildFormPreview();
-  st(`Formularprofil geladen: ${item.profile || formId}`,'ok');
-}
-
-function exportFormProfile(fmt, formId = currentFormId){
-  const id = formId || currentFormId;
-  if (!id){
-    st('Kein Formularprofil für Export gewählt.','err');
-    return;
-  }
-  const url = `${FORMS_EXPORT_BASE}${encodeURIComponent(id)}/export/${encodeURIComponent(fmt)}`;
-  window.open(url, '_blank', 'noopener');
-  st(`Formularprofil als ${fmt.toUpperCase()} angefordert.`,'ok');
-}
-
-async function loadServerLogs(){
-  try {
-    const res = await fetch(LOGS_API, {cache:'no-store'});
-    if (!res.ok) throw new Error('HTTP '+res.status);
-    const items = await res.json();
-    logEntries = Array.isArray(items) ? items : [];
-    logsServerReady = true;
-    saveJsonLocal(LOGS_KEY, logEntries);
-    try {
-      const modelsRes = await fetch(DOCUMENTS_MODELS_API, {cache:'no-store'});
-      if (modelsRes.ok){
-        const payload = await modelsRes.json();
-        const models = Array.isArray(payload.models) ? payload.models : [];
-        if (models.length){
-          logsModel.innerHTML = ['<option value="">Chat-Modell automatisch wählen</option>']
-            .concat(models.map(name=>`<option value="${esc(name)}">${esc(name)}</option>`))
-            .join('');
-        }
-      }
-    } catch(e) {}
-  } catch(e){
-    logsServerReady = false;
-  }
-  renderLogs();
-}
-
-async function analyzeLogs(){
-  const text = logsInput.value.trim();
-  if (!text){ st('Kein Logtext vorhanden.','err'); return; }
-  st('Loganalyse läuft…','wait');
-  try {
-    const res = await fetch(LOGS_ANALYZE_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        text,
-        profile: logsProfile.value.trim(),
-        filename: currentLogFilename
-      })
-    });
-    if (!res.ok) throw new Error('HTTP '+res.status);
-    const item = await res.json();
-  logEntries = [item, ...logEntries.filter(x=>x.id !== item.id)];
-  saveJsonLocal(LOGS_KEY, logEntries);
-  currentLogEntry = item;
-  currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
-  updateLogExportState();
-  logsCompare.value = '';
-  logsOutput.value = [
-    ...(Array.isArray(item.summary) ? item.summary : []),
-    '',
-    ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
-  ].join('\n');
-  renderLogGroups();
-  renderLogs();
-  st('Loganalyse fertig.','ok');
-  } catch(e){
-    st('Loganalyse fehlgeschlagen.','err');
-    dbg(e.message);
-  }
-}
-
-function loadLogEntry(logId){
-  const item = logEntries.find(x=>x.id === logId);
-  if (!item) return;
-  currentLogEntry = item;
-  currentLogGroupIndex = item.groups && item.groups.length ? 0 : -1;
-  updateLogExportState();
-  logsCompare.value = '';
-  logsOutput.value = [
-    ...(Array.isArray(item.summary) ? item.summary : []),
-    '',
-    ...((item.groups || []).map(group=>`${group.level || 'hinweis'} · ${group.count}x · ${group.signature}\n${group.preview}`))
-  ].join('\n');
-  renderLogGroups();
-  st(`Loganalyse geladen: ${item.filename || item.id}`,'ok');
-}
-
-function selectedLogExplainText(){
-  const start = logsOutput.selectionStart || 0;
-  const end = logsOutput.selectionEnd || 0;
-  const selected = logsOutput.value.slice(start, end).trim();
-  if (selected) return selected;
-  if (currentLogEntry && Array.isArray(currentLogEntry.groups) && currentLogEntry.groups.length){
-    const idx = currentLogGroupIndex >= 0 ? currentLogGroupIndex : 0;
-    const group = currentLogEntry.groups[idx] || currentLogEntry.groups[0];
-    if (group) return `${group.signature}\n${group.preview}`;
-  }
-  return logsOutput.value.trim() || logsInput.value.trim();
-}
-
-function loadLogGroup(index){
-  if (!currentLogEntry || !Array.isArray(currentLogEntry.groups)) return;
-  const group = currentLogEntry.groups[index];
-  if (!group) return;
-  currentLogGroupIndex = index;
-  logsOutput.value = [
-    ...(Array.isArray(currentLogEntry.summary) ? currentLogEntry.summary : []),
-    '',
-    `Gruppe ${index + 1} · ${group.level || 'hinweis'} · ${group.count || 0}x`,
-    group.signature || '',
-    group.preview || ''
-  ].filter(Boolean).join('\n');
-  renderLogGroups();
-  st(`Fehlergruppe geladen: ${group.signature || index + 1}`,'ok');
-}
-
-async function explainLogBlock(){
-  const text = selectedLogExplainText();
-  if (!text){
-    st('Kein Logblock zum Erklären vorhanden.','err');
-    return;
-  }
-  st('Logblock wird erklärt…','wait');
-  try {
-    const res = await fetch(LOGS_EXPLAIN_API, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        text,
-        question: logsQuestion.value.trim(),
-        model: logsModel.value
-      })
-    });
-    if (!res.ok){
-      let detail = 'Log-Erklärung fehlgeschlagen.';
-      try {
-        const err = await res.json();
-        detail = err.detail || detail;
-      } catch(_) {}
-      throw new Error(detail);
-    }
-    const payload = await res.json();
-    logsOutput.value = [
-      logsOutput.value.trim(),
-      '',
-      `Erklärung (${payload.model || logsModel.value || 'unbekannt'}):`,
-      payload.answer || 'Keine Antwort.'
-    ].filter(Boolean).join('\n');
-    st('Log-Erklärung fertig.','ok');
-  } catch(e){
-    st('Log-Erklärung fehlgeschlagen.','err');
     dbg(e.message);
   }
 }
@@ -3911,136 +3188,6 @@ webarchiveVersions.addEventListener('click', e=>{
     compareWebarchiveSnapshots(versionId, currentWebarchiveSnapshot.id);
   }
 });
-btnFormsPreview.addEventListener('click', ()=>{
-  buildFormPreviewServer().then(()=>st('Vorschau gebaut.','ok'));
-});
-btnFormsSave.addEventListener('click', saveFormProfile);
-btnFormsExportTxt.addEventListener('click', ()=>exportFormProfile('txt'));
-btnFormsExportHtml.addEventListener('click', ()=>exportFormProfile('html'));
-btnFormsFull.addEventListener('click', ()=>openFullView('Formular-Vorschau', formsPreview.value));
-formsList.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act]');
-  const row = e.target.closest('[data-form-id]');
-  if (!btn || !row) return;
-  if (btn.dataset.act === 'load-form') loadFormEntry(row.dataset.formId);
-  if (btn.dataset.act === 'export-form-txt') exportFormProfile('txt', row.dataset.formId);
-  if (btn.dataset.act === 'export-form-html') exportFormProfile('html', row.dataset.formId);
-  if (btn.dataset.act === 'delete-form'){
-    const item = formEntries.find(entry=>entry.id === row.dataset.formId);
-    if (!item) return;
-    if (!confirm(`Formularprofil wirklich löschen?\n${item.profile || item.id}`)) return;
-    fetch(`${FORMS_DELETE_API}${encodeURIComponent(item.id)}`, {method:'DELETE'})
-      .then(res=>{
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        formEntries = formEntries.filter(entry=>entry.id !== item.id);
-        if (currentFormId === item.id) currentFormId = '';
-        saveJsonLocal(FORMS_KEY, formEntries);
-        renderForms();
-        st('Formularprofil gelöscht.','ok');
-      })
-      .catch(err=>{
-        st('Formularprofil konnte nicht gelöscht werden.','err');
-        dbg(err.message);
-      });
-  }
-});
-btnLogsAnalyze.addEventListener('click', analyzeLogs);
-btnLogsExplain.addEventListener('click', explainLogBlock);
-btnLogsClear.addEventListener('click', ()=>{
-  logsInput.value = '';
-  logsQuestion.value = '';
-  logsOutput.value = '';
-  logsCompare.value = '';
-  currentLogFilename = '';
-  currentLogEntry = null;
-  currentLogGroupIndex = -1;
-  updateLogExportState();
-  renderLogGroups();
-  st('Logs geleert.','ok');
-});
-btnLogsProfileSave.addEventListener('click', saveCurrentLogRule);
-btnLogsProfileLoad.addEventListener('click', ()=>{
-  const rule = logRules.find(item=>item.name === logsRules.value);
-  if (!rule){
-    st('Keine Log-Regel gewählt.','err');
-    return;
-  }
-  applyLogRule(rule);
-});
-btnLogsRulesExport.addEventListener('click', exportLogRules);
-btnLogsRulesImport.addEventListener('click', importLogRules);
-logsRules.addEventListener('change', ()=>{
-  const rule = logRules.find(item=>item.name === logsRules.value);
-  if (rule) applyLogRule(rule);
-});
-btnLogsExportTxt.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'txt'));
-btnLogsExportJson.addEventListener('click', ()=>exportLogEntry(currentLogEntry, 'json'));
-logsList.addEventListener('click', async e=>{
-  const btn = e.target.closest('button[data-act]');
-  const row = e.target.closest('[data-log-id]');
-  if (!btn || !row) return;
-  const item = logEntries.find(x=>x.id === row.dataset.logId);
-  if (!item) return;
-  if (btn.dataset.act === 'load-log') loadLogEntry(row.dataset.logId);
-  if (btn.dataset.act === 'compare-log'){
-    if (!currentLogEntry){
-      loadLogEntry(row.dataset.logId);
-      st('Erst eine Loganalyse laden, dann vergleichen.','err');
-      return;
-    }
-    if (currentLogEntry.id === item.id){
-      logsCompare.value = 'Gleiche Loganalyse verglichen: kein Unterschied.';
-      st('Gleiche Analyse gewählt.','ok');
-      return;
-    }
-    try {
-      if (currentLogEntry.id && item.id){
-        logsCompare.value = await compareLogEntriesOnServer(currentLogEntry, item);
-      } else {
-        logsCompare.value = compareLogEntries(currentLogEntry, item);
-      }
-    } catch(e){
-      logsCompare.value = compareLogEntries(currentLogEntry, item);
-      dbg(`Server-Vergleich fehlgeschlagen, lokaler Fallback: ${e.message}`);
-    }
-    st(`Loganalyse verglichen: ${item.filename || item.id}`,'ok');
-  }
-  if (btn.dataset.act === 'export-log-txt') exportLogEntry(item, 'txt');
-  if (btn.dataset.act === 'export-log-json') exportLogEntry(item, 'json');
-  if (btn.dataset.act === 'delete-log'){
-    if (!confirm(`Loganalyse wirklich löschen?\n${item.filename || item.id}`)) return;
-    try {
-      const res = await fetch(`${LOGS_DELETE_API}${encodeURIComponent(item.id)}`, {method:'DELETE'});
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      logEntries = logEntries.filter(x=>x.id !== item.id);
-      saveJsonLocal(LOGS_KEY, logEntries);
-      if (currentLogEntry && currentLogEntry.id === item.id){
-        currentLogEntry = null;
-        currentLogGroupIndex = -1;
-        logsOutput.value = '';
-        logsCompare.value = '';
-        renderLogGroups();
-      }
-      renderLogs();
-      updateLogExportState();
-      st('Loganalyse gelöscht.','ok');
-    } catch(err){
-      st('Loganalyse konnte nicht gelöscht werden.','err');
-      dbg(err.message);
-    }
-  }
-});
-logsGroups.addEventListener('click', e=>{
-  const btn = e.target.closest('button[data-act]');
-  const row = e.target.closest('[data-log-group-index]');
-  if (!btn || !row) return;
-  const index = Number(row.dataset.logGroupIndex);
-  if (btn.dataset.act === 'load-log-group') loadLogGroup(index);
-  if (btn.dataset.act === 'explain-log-group'){
-    loadLogGroup(index);
-    explainLogBlock();
-  }
-});
 ocrSource.addEventListener('change', ()=>{
   if (ocrSource.files && ocrSource.files[0]) {
     st(`OCR-Quelle gewählt: ${ocrSource.files[0].name}`,'ok');
@@ -4053,19 +3200,6 @@ documentsUpload.addEventListener('change', ()=>{
     st(`${documentsUpload.files.length} Dokument(e) gewählt.`, 'ok');
   }
 });
-logsUpload.addEventListener('change', async ()=>{
-  const file = logsUpload.files && logsUpload.files[0];
-  if (!file) return;
-  currentLogFilename = file.name;
-  logsInput.value = await file.text();
-  st(`Log geladen: ${file.name}`,'ok');
-});
-formsTemplate.addEventListener('input', buildFormPreview);
-formsName.addEventListener('input', buildFormPreview);
-formsEmail.addEventListener('input', buildFormPreview);
-formsAddress.addEventListener('input', buildFormPreview);
-formsExtra.addEventListener('input', buildFormPreview);
-
 btnFullClose.addEventListener('click', closeFullView);
 btnFullCopy.addEventListener('click', ()=>copyText(fullText.textContent || '', 'Vollansicht kopiert.'));
 fullModal.addEventListener('click', e=>{
@@ -4215,21 +3349,14 @@ renderDocumentScope();
 renderDocumentSources();
 renderDocumentChunks();
 renderDocuments();
-renderLogRules();
-updateLogExportState();
 renderWebarchiveVersions();
 renderWebarchive();
-renderForms();
-renderLogs();
-renderLogGroups();
 setTab(currentTab(), false);
 loadServerStore();
 loadOcrStatus();
 loadServerOcrJobs();
 loadServerDocuments();
 loadServerWebarchive();
-loadServerForms();
-loadServerLogs();
 loadVoices();
 loadTranslationLanguages();
 ta.dispatchEvent(new Event('input'));
@@ -4427,6 +3554,46 @@ ta.dispatchEvent(new Event('input'));
   });
 
   render();
+})();
+
+// Crawler-Zugang-Popup (2026-07-10, Daniels Wunsch): tab-uebergreifender Button zeigt den
+// ?key=...-Link, mit dem externe LLM-Crawl-Tools die Basic-Auth umgehen koennen, ohne dass
+// Daniel sein eigenes Login-Passwort weitergeben muss. Der eigentliche Schluessel kommt vom
+// Server (siehe TTS_CRAWL_KEY oben, von tts_service.py aus .env.tts_crawl_key eingesetzt).
+(() => {
+  const btn = document.getElementById('btn-crawl-key');
+  const modal = document.getElementById('crawl-key-modal');
+  const closeBtn = document.getElementById('btn-crawl-key-close');
+  const copyBtn = document.getElementById('btn-crawl-key-copy');
+  const urlField = document.getElementById('crawl-key-url');
+  const note = document.getElementById('crawl-key-note');
+  if (!btn || !modal || !closeBtn || !copyBtn || !urlField) return;
+  const key = window.TTS_CRAWL_KEY || '';
+
+  btn.addEventListener('click', () => {
+    if (!key) {
+      urlField.value = 'Kein Schlüssel konfiguriert (.env.tts_crawl_key fehlt oder leer).';
+    } else {
+      urlField.value = `${location.origin}/tts/?key=${key}`;
+    }
+    modal.classList.add('on');
+    modal.setAttribute('aria-hidden', 'false');
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('on');
+    modal.setAttribute('aria-hidden', 'true');
+  });
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(urlField.value);
+      note.textContent = 'Kopiert.';
+    } catch {
+      urlField.select();
+      document.execCommand('copy');
+      note.textContent = 'Kopiert.';
+    }
+    setTimeout(() => { note.textContent = ''; }, 2500);
+  });
 })();
 
 })();
