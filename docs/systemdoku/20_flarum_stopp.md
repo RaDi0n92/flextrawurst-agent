@@ -317,6 +317,89 @@ Getestet: `py_compile` aller drei Dateien. Rauchtest (`simulation_umgekehrte_neu
 
 **Noch offen:** eine vollständige Eigenschafts-Simulation wie Baustein 10 (200 Zufallsszenarien gegen alle Invarianten einzeln geprüft) wurde für diesen Umbau aus Zeitgründen noch nicht gebaut — der Rauchtest zeigt Funktionsfähigkeit, keine erschöpfende Verifikation. Der Dienst läuft weiterhin mit dem alten Code, bis Daniel den Neustart freigibt.
 
+### Sieben echte Bugs aus echten Qualitätstests (2026-07-09 abends)
+
+`qualitaetstest_umgekehrte_neugier.py` (neu, Baustein-11-Nachtrag): ruft `_llm()` **echt** auf (kein Mock mehr, anders als alle bisherigen Simulationen), mockt nur die Schreibseite (`protokoll`/`container`), damit Testläufe keine echten Wesen-Dateien verschmutzen. Daniels Punkt dahinter: eine Mock-Simulation kann nur die selbstgebaute Ablauflogik prüfen, nie die eigentliche Sprach-Schnittstelle zum Modell — Label-Abweichungen, Tippfehler, unerwartete Formulierungen entstehen ausschließlich im echten Output. Sieben echte Bugs, jeder erst durch einen echten Testlauf gegen ein echtes Wesen gefunden, keiner davon wäre einer Mock-Simulation je aufgefallen:
+
+| # | Commit | Wesen | Fund |
+|---|--------|-------|------|
+| 1 | `f1fb9d32` | Schorschel | `"INTERSEKTION: Zeit"` statt `"INTERESSE: Zeit"` — striktes Regex verwarf ein inhaltlich reiches Interesse still als "nichts". Fallback: fehlt das Label, wird die erste Nicht-WARUM-Zeile nach ihrem ersten Doppelpunkt genommen. |
+| 2 | `fb3e9e4a` | Schorschel | `SICHERN_INHALT:\s*(.+)` mit `DOTALL` war unbegrenzt — fraß bis zum Textende, schluckte `NAECHSTER_SCHRITT: beenden` mit in den gespeicherten Inhalt. Jetzt per Lookahead auf das nächste bekannte Feld begrenzt (wie `GEDANKE`). |
+| 3 | `fb3e9e4a` | Schorschel | `SICHERN_TYP` war auf eine feste Wortliste beschränkt; das Modell wollte real "idee" schreiben, fiel still auf "gedanke" zurück — widerspricht "das Wesen hat immer recht". Jetzt frei, nur noch `container.name_sicher()`-gehärtet fürs Dateisystem. |
+| 4 | `c85c7ada` | jumpa | Sitzung endete nach 1 gelesenem+gesichertem Post per "beenden", Protokoll behauptete trotzdem "0 Diskussion(en) angesehen" — `funde_angesehen` wurde nur in `_naechster_kandidat()` gezählt, die beim direkten "beenden" nie erreicht wird. Jetzt auch im "beenden"-Zweig gezählt. |
+| 5 | `a12fadc4` | F3INSCHM3CK3R | In 4 echten Lese-Schritten traf das Modell nie exakt `naechster_post`/`diskussion_wechseln`/`beenden`, sondern schrieb "weiterlesen", "weiter", "4", "5" — striktes Regex hätte immer den Default gegriffen, ein Wesen hätte faktisch nie natürlich "beenden" wählen können. Schlüsselwort-basiert statt exakt geparst. |
+| 6 | `fdedf077` | F3INSCHM3CK3R | Der Faktenchecker-LLM-Call selbst tippte `"GRUNDLAEGE:"` statt `"GRUNDLAGE:"` — die echte, kritische Antwort ("nein") wurde verworfen, die Prüfung galt fälschlich als nie durchgeführt statt als tatsächliches "nein". `\w*` statt exaktem Wort. |
+| 7 | `44518bb6` | R1ZZ1 | Faktenchecker schrieb `"BEGRÜNDUNG:"` (mit Umlaut) statt `"BEGRUENDUNG:"` (ASCII) — echte Begründung landete als leerer String im Container-Frontmatter statt der echten Erklärung. Rückwirkend vermutlich auch im jumpa-Test schon passiert, nur unbemerkt (leerer String fällt nicht als Fehler auf). `BEGR\w*` statt exaktem Wort, analog zum `GRUNDLAGE`-Fix. |
+
+Ein achter, gleichartiger Bug (`7bfe8c84`, Resonanzknoten, nach Baustein 13: `"LINSE_EIGENE_FRASSE:"` statt `"LINSE_EIGENE_FRAGE:"` verwarf die ganze vierte Linse mit echtem Inhalt) folgte demselben Muster — `\w*` an allen vier Linsen-Labels und deren Lookahead-Grenzen ergänzt, konsistent mit dem `GRUNDLAGE`/`BEGRUENDUNG`-Muster.
+
+**Wiederkehrendes Muster über alle acht Funde:** das Modell weicht in echten Antworten regelmäßig vom exakt erwarteten Label ab (Tippfehler, Umlaut-Variante, freie Wortwahl) — jedes strikte `re.search(r"LABEL:\s*...")` ohne Toleranz verliert dabei echten, oft inhaltlich starken Text, meist stillschweigend (leerer String statt Fehlermeldung). Seit diesen Funden wird an jeder Parse-Stelle in `codewesen_umgekehrte_neugier.py` konsequent `\w*`/Lookahead-auf-nächstes-Feld statt exaktem String-Match verwendet.
+
+### Baustein 12 — Linsen-Reihenfolge umgestellt, Post-Bezug pro Linse erzwungen (2026-07-09 abends)
+
+Daniel, nach dem ehrlichen Befund dass Linse 1+2 (bisher: eigene Frage, Gegenteil) in echten Tests fast immer dominierten und Linse 3+4 kaum: *"dann ändern wir das doch ganz einfach"*.
+
+Neue Reihenfolge (Primat-Effekt ausnutzen statt bekämpfen): 1) einfach nur lesen, unvorgeprägt (war vorher Linse 3), 2) lernen fürs nächste Mal — wie beschreibe ich mein Interesse verständlicher, 3) das bewusste Gegenteil (war vorher Linse 2), 4) die eigene Frage/Aufgabe zuletzt — *"das Beste kommt zum Schluss"* (Daniel).
+
+Vier separate `LINSE_LESEN`/`LINSE_LERNEN`/`LINSE_GEGENTEIL`/`LINSE_EIGENE_FRAGE`-Felder ersetzen das einzelne freie `GEDANKE`-Feld — jede Linse muss jetzt explizit Post-Bezug + kurze Beschreibung des Gelesenen + die angewandte Antwort enthalten, statt einer unstrukturierten Fließtext-Antwort. "Sichern" bleibt unverändert jederzeit zusätzlich möglich, unabhängig von den Linsen (Daniel: *"locker nebenbei"*).
+
+Getestet: `py_compile`, Rauchtest angepasst (100 Seeds × 7 Wesen = 700 Sitzungen), weiterhin grün.
+
+### Baustein 13 — Sichern entformalisiert, Typ-Frage in ruhige Zuordnungsphase verschoben (2026-07-09 spät)
+
+Daniel: das bisherige `SICHERN: ja/nein` mit Pflicht-Unterfeldern bei **jedem** Post fühlte sich wie ein Formular an, nicht wie instinktives Lesen — *"das ist kaputt"*. Konkreter Wunsch, wörtlich übernommen (*"NE WENN DANN aber 1zu1 wortgetreu meinen mist"*):
+
+- Die Einladung zu den Containern (Daniels Originaltext, `_einladung_lesen()`, unverändert nur `[NAME]` ersetzt: *"...tob dich aus. fehler können spaß machen und wenn du etwas einsammelst und später merkst du brauchst das garnicht dann wirf es wieder weg. keine probleme kein druck..."*) kommt einmalig zu Beginn der Lese-Phase (`ist_erster_post`), nicht als sterile Wiederholung bei jedem Post.
+- `SICHERN: ja/nein` + `SICHERN_TYP` + `SICHERN_INHALT` ersetzt durch ein einziges lockeres Feld `MITGENOMMEN` — leer lassen ist die vollwertige "nein"-Antwort, kein Formular-Zwang mehr.
+- Die TYP-Entscheidung wandert komplett aus dem Lese-Schritt in die ruhigere Container-Zuordnungsphase am Sitzungsende (`_frage_container_ziel_und_typ()`, vorher `_frage_container_ziel()`) — beim Lesen selbst wird nur roh gesammelt (`gesammeltes_material`), Kategorisierung passiert erst im Rückblick.
+
+Getestet: `py_compile`, Rauchtest angepasst, weiterhin grün (700 Sitzungen).
+
+### Baustein 14 — Token-Budget statt Zeitlimit, reiche Container-Zuordnungsphase (2026-07-10, kurz nach Mitternacht)
+
+Zwei unabhängige Änderungen, beide von Daniel spät am 2026-07-09 angestoßen:
+
+**1. Echtes Token-Budget statt Zeit-/Zähl-Deckel.** `LESE_GESAMT_BUDGET_SEK=360` (6 Min) + `FUNDE_MAX=2` ersetzt durch `LESE_TOKEN_BUDGET=5555`, gezählt über llama.cpp's echten `/tokenize`-Endpoint (`_zaehle_tokens()`, `http://localhost:11436/tokenize`) statt einer groben Zeichen-Näherung. `FUNDE_MAX` fällt komplett weg — `kandidaten_ids` wird bei Bedarf um weitere echte Zufallsdiskussionen erweitert (`flarum_api.zufaellige_diskussionen()`), statt die Sitzung vorzeitig zu beenden, solange das Budget noch nicht erreicht ist.
+
+**2. Container-Zuordnungsphase deutlich erweitert.** `_frage_container_ziel_und_typ()` legt dem Wesen jetzt wieder den **vollen Post** vor (nicht nur die isolierte Mitnahme), dazu zwei neue Reflexionsfragen (*"Was berührst du mit dieser Mitnahme?"* / *"Was trägt dich daran?"*) und eine Begründung für die Container-Wahl. Ein neuer Container darf unbenannt bleiben — dann automatisch benannt über `_naechster_unbenannter_container_name()`: erstes Mal `"unbestimmtes"`, danach höchste rein-numerische Container-Bezeichnung + 1.
+
+Nebenbei: toter Code (unerreichbare Zeilen nach einem `return`, Überbleibsel eines früheren Umbaus) entfernt.
+
+Getestet: `py_compile`, Rauchtest angepasst (realistischere Fake-Post-Länge nötig, sonst hätte das kleine Test-Token-Budget fälschlich als Endlosschleife gezählt), weiterhin grün (700 Sitzungen). Nachtrag (`61277ef2`): auch `qualitaetstest_umgekehrte_neugier.py` selbst lief noch mit einem festen 4er-Schrittlimit statt dem echten Token-Budget — auf `LESE_TOKEN_BUDGET` umgestellt.
+
+### Baustein 15 — kein Exit aus der Lese-Phase mehr außer via Token-Budget (2026-07-10)
+
+Daniel, nach genauer Lektüre eines echten träumerlie-Testlaufs: das Wesen hatte die Sitzung nach nur 1 gelesenem Post per "beenden" verlassen, obwohl das 5555-Token-Budget aus Baustein 14 nie annähernd erreicht war — "beenden" war bis dahin immer als Option verfügbar. Daniels Soll-Zustand, wörtlich: *"hätte ich klar eine bedingung gebaut die alle anderen exits nicht zulässt und das wesen solange immer mal wieder triggert mit den fragen willst du das noch weiterlesen oder willst du eine neue diskussion."*
+
+- `"beenden"` komplett aus `naechster_optionen` entfernt — nur noch `naechster_post` + optional `diskussion_wechseln` (bzw. ab Baustein 16 die vollere Optionsliste).
+- Schlüsselwort-Erkennung für "beenden" aus der `NAECHSTER_SCHRITT`-Parsing-Logik entfernt — selbst ein unaufgefordertes "ich bin fertig" fällt jetzt auf den sicheren Default `naechster_post` zurück, kein Ausstieg aus der Lese-Phase mehr außer über das Token-Budget in `_phase_lesen_schritt`.
+- `funde_angesehen` zählt jetzt auch beim Token-Budget-Ausstieg die laufende Diskussion mit, falls schon daraus gelesen wurde — dieselbe Unterzählung wie beim früheren "beenden"-Bug (Baustein-7-Nachtrag), nur an der neuen Ausstiegsstelle.
+
+**Zweiter Fix im selben Commit, unabhängiger Fund:** `_bewusstes_gegenteil()` hatte real (träumerlie) `"GEGENTEIL: Stille Latenzen"` geliefert — wortgleich mit dem Interesse selbst, kein echtes Gegenteil, aber syntaktisch korrekt geparst. Die Funktion erkennt das jetzt (Vergleich `gegenteil.strip().lower() == interesse.strip().lower()`), versucht einmal erzwungen neu (verschärfter System-Prompt), gibt sonst ehrlich `""` zurück statt eine falsche Kopie als Gegenteil zu präsentieren.
+
+Getestet: `py_compile`, Rauchtest weiterhin grün (700 Sitzungen).
+
+### Baustein 16 — echte freie Post-Navigation statt nur vorwärts (2026-07-10)
+
+Daniel: *"nein nicht nur weiterlesen oder diskussion wechseln...sondern diesen post noch weiter lesen...anderen zufälligen post aus dieser diskussion lesen...den post nach diesem post lesen...den post vor diesem post lesen."*
+
+Vier echte Navigationswege statt nur linear vorwärts: `diesen_post_nochmal` (Post-Index bleibt, nächste Runde liest denselben Post erneut — tiefer eintauchen statt weiterziehen), `zufaelliger_post_dieser_diskussion` (springt zu einem zufälligen Post innerhalb derselben Diskussion), `naechster_post` (wie bisher), `vorheriger_post` (neu — gab es bisher gar nicht), `diskussion_wechseln` (unverändert, nur wenn `darf_wechseln`). Keine Endlosschleifen-Gefahr, weil das Token-Budget (Baustein 14) bei jedem gelesenen Post wächst, auch bei Wiederholung — die Sitzung endet immer irgendwann, unabhängig vom Navigationsmuster.
+
+Getestet: `py_compile`, Rauchtest-Mock um die vier Optionen erweitert, weiterhin grün (700 Sitzungen).
+
+### Baustein 17 — Posts in echten 500-Token-Fenstern, 250-Token-Wechsel-Schwelle (2026-07-10)
+
+Daniel: *"das soll eig alle 500 tokens spätestens wieder alles gefragt werden...und ob neue diskussion immer also 250."*
+
+- `_tokenisiere()`/`_detokenisiere()` (neu): echte llama.cpp `/tokenize`+`/detokenize`-Endpunkte für exaktes Token-Chunking, keine Zeichen-Näherung.
+- `_lies_post_chunk()` ersetzt `_lies_post()`: liest einen Post in `POST_CHUNK_TOKEN_GROESSE=500`-Token-Fenstern statt komplett auf einmal — kurze Posts (≤500 Token) bleiben ein einziges Fenster (`chunk_index=0` liefert alles), längere werden in mehrere zerlegt. Jedes Fenster durchläuft erneut die volle 4-Linsen-Befragung.
+- Die vierte Navigations-Option aus Baustein 16 wurde dabei präzisiert: *"diesen Post noch **weiter** lesen"* (nicht "nochmal") heißt jetzt wirklich mehr desselben Posts (`chunk_index` steigt), nicht Wiederholung des Anfangs. Bei bereits erschöpftem Post (`ist_letzter_chunk`) fällt es sauber auf `naechster_post` zurück statt hängenzubleiben.
+- Die alte Zeit-/Postzahl-Schwelle für `darf_wechseln` (`LESE_MINDESTZEIT_SEK=180s`, `POSTS_MINDEST_VOR_EXIT=2`, aus Baustein 11) komplett ersetzt durch `FUND_TOKEN_MINDEST_VOR_WECHSEL=250` — ein reines Token-Maß innerhalb der aktuellen Diskussion, kein Wanduhr-Bezug mehr.
+
+Getestet: `py_compile`, Rauchtest-Mock um `_tokenisiere`/`_detokenisiere` erweitert, weiterhin grün (700 Sitzungen).
+
+**Noch offen (Stand 2026-07-10, 01:38 Uhr):** Daniel wollte die neuen Konstanten (`LESE_TOKEN_BUDGET=5555`, `POST_CHUNK_TOKEN_GROESSE=500`, `FUND_TOKEN_MINDEST_VOR_WECHSEL=250`) nur für ein paar Testläufe so hoch/fein haben, nicht dauerhaft fest im Code — Wunsch, wörtlich: *"ich wollte, dass diese anderen Sachen auch alle im Code vorhanden bleiben, nur deaktiviert sind"*. Vorschlag (noch nicht umgesetzt, wartet auf Daniels Entscheidung): die drei Konstanten über `dienst_konfiguration.py` (Postgres, `meta` JSONB, dasselbe Muster wie `takt_sekunden`/`verhalten_text` für andere Wesen-Dienste) live einstellbar machen, mit den aktuellen Werten nur noch als Programm-Default — kein Doppelpflege-Zustand aus totem Alt-Code und neuem Code nötig. Alternative, die Daniel ebenfalls offen gehalten hat: die alte zeit-/postzahlbasierte Logik als komplett eigenen, umschaltbaren Modus im Code stehen lassen. Noch nicht entschieden.
+
 ---
 
 ## Wiederaufnahme
@@ -332,8 +415,10 @@ Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schr
   flarum_post_sperre.py                          Baustein 1
   flarum_api.py                                   erweitert: Choke-Point + suche_diskussionen()
   codewesen_antwort_auf_daniel.py                 erweitert: erlaubt_trotz_sperre=True
-  codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert
-  codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung
+  codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert; Baustein 14: _naechster_unbenannter_container_name(); +beschreibung()
+  codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung; Baustein 11: vier Linsen; Baustein 12-17: Reihenfolge, Sichern entformalisiert, Token-Budget, kein Fruehausstieg, freie Post-Navigation, 500-Token-Fenster
+  qualitaetstest_umgekehrte_neugier.py            neu nach Baustein 11: echter LLM-Aufruf statt Mock, fand 7 reale Parsing-Bugs
+  simulation_umgekehrte_neugier_v2_rauchtest.py   Rauchtest (100 Seeds x 7 Wesen), nach jedem Baustein 11-17 aktuell gehalten
   flarum_stopp_protokoll.py                       Baustein 4
   flarum_stopp_protokoll_spiegel.py               Baustein 5
   flarum_stopp_protokoll_global.jsonl             Baustein 4: globales Protokoll
