@@ -2282,3 +2282,5 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 - [2026-07-10 21:11] **lava** (i=0.40) → Zwischenraum: »Verstanden, in einem Satz: du willst ein `quelle`-Feld pro Eintrag, zwei Admin-Schreibwege für dich «
 - [2026-07-10 21:13] **wasser** (i=0.35) → Zwischenraum: »`14_obsidian.md` ist aktualisiert und committed — die bestehende Datei ergänzt, nichts Neues angeleg«
 - [2026-07-10 21:13] **lava** (i=0.51) → Zwischenraum: »Rückwirkender Doku-Check gemacht, ein echter Fund dabei: `03_ports_und_services.md` (Stand 26.05.) l«
+- [2026-07-10 21:14] **nebel** (i=0.39) → Zwischenraum: »Nachgeholt, keine neuen MDs angelegt — bestehende, spezifischere Dateien ergänzt statt neue zu erzeu«
+- [2026-07-10 21:26] **lava** (i=0.39) → Zwischenraum: »Ehrlich: der Crash-Loop mit Status 133 hat direkt nach meinem eigenen Testlauf angefangen — das könn«
