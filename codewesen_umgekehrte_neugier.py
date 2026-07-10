@@ -842,6 +842,7 @@ def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
     )
 
     gegenteil = _bewusstes_gegenteil(wesen, interesse["interesse"], interesse["warum"]) or ""
+    container.sichere_interesse_gegenteil(wesen, interesse["interesse"], interesse["warum"], gegenteil)
 
     suchbegriff_verwendet = interesse["interesse"]
     kandidaten = flarum_api.suche_diskussionen(suchbegriff_verwendet, limit=KANDIDATEN_PRO_SUCHE)

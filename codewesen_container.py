@@ -98,6 +98,61 @@ def sicherstelle_container(wesen: str, anlass: str = "automatisch angelegt, dami
     return "alles"
 
 
+ALLES_BESCHREIBUNG = "Hier können zum Beispiel texte rein für die du einfach keine idee hast sie zu strukturieren."
+
+
+def sicherstelle_alles_container(wesen: str) -> bool:
+    """Daniel, 2026-07-10, woertlich vorgegeben (keine Umformulierung): JEDES
+    Wesen bekommt einen Container 'alles' -- anders als sicherstelle_container()
+    oben (die nur greift wenn ein Wesen komplett containerlos ist) ist das hier
+    Pflicht fuer ALLE, unabhaengig davon ob schon andere Container existieren.
+    Feste Beschreibung statt LLM-generierter (kein Ritual/LLM-Call noetig).
+    Rueckgabe: True wenn neu angelegt, False wenn 'alles' schon existierte."""
+    if "alles" in liste(wesen):
+        return False
+    ordner = basis(wesen) / "alles"
+    ordner.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    (ordner / "container.md").write_text(
+        "\n".join(["---", "name: alles", f"erstellt_am: {ts}", "letzte_widmung: null", "---", "", ALLES_BESCHREIBUNG, ""]),
+        encoding="utf-8",
+    )
+    log.info(f"[{wesen}] Pflicht-Container 'alles' angelegt (feste Beschreibung, kein LLM-Call)")
+    return True
+
+
+INTERESSE_GEGENTEIL_NAME = "Interesse+Gegenteil"
+INTERESSE_GEGENTEIL_BESCHREIBUNG = "Sammlung vorheriger abfrage von interesse + dem daraus erzeugtem Gegenteil."
+
+
+def sichere_interesse_gegenteil(wesen: str, interesse: str, warum: str, gegenteil: str) -> None:
+    """Daniel, 2026-07-10, woertlich vorgegeben (keine Umformulierung): sobald
+    ein Wesen ein Interesse + das daraus erzeugte Gegenteil formuliert hat
+    (_frage_interesse() + _bewusstes_gegenteil() in codewesen_umgekehrte_neugier.py),
+    wird das Paar sofort in einen eigenen, festen Container geschrieben --
+    Name und Beschreibung fest vorgegeben, kein LLM-Call, kein Ritual."""
+    if INTERESSE_GEGENTEIL_NAME not in liste(wesen):
+        ordner = basis(wesen) / INTERESSE_GEGENTEIL_NAME
+        ordner.mkdir(parents=True, exist_ok=True)
+        ts0 = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+        (ordner / "container.md").write_text(
+            "\n".join(["---", f"name: {INTERESSE_GEGENTEIL_NAME}", f"erstellt_am: {ts0}",
+                       "letzte_widmung: null", "---", "", INTERESSE_GEGENTEIL_BESCHREIBUNG, ""]),
+            encoding="utf-8",
+        )
+        log.info(f"[{wesen}] Pflicht-Container '{INTERESSE_GEGENTEIL_NAME}' angelegt (feste Beschreibung, kein LLM-Call)")
+
+    ordner = basis(wesen) / INTERESSE_GEGENTEIL_NAME
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    inhalt = f"INTERESSE: {interesse}\nWARUM: {warum}\nGEGENTEIL: {gegenteil}"
+    (ordner / f"{ts}_interesse_gegenteil.md").write_text(
+        "\n".join(["---", "typ: interesse_gegenteil", f"container: {INTERESSE_GEGENTEIL_NAME}",
+                   f"erstellt_am: {ts}", "---", "", inhalt]),
+        encoding="utf-8",
+    )
+    log.info(f"[{wesen}] Interesse+Gegenteil in Container '{INTERESSE_GEGENTEIL_NAME}' gesichert")
+
+
 def erstelle(wesen: str, name: str, anlass: str) -> None:
     """Eroeffnungsritual: ein neuer, noch leerer Container bekommt sofort
     eine kurze Selbstbeschreibung und 1-3 Zwischenziele vom Wesen selbst —
