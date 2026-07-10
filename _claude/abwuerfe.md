@@ -2241,3 +2241,4 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-10 18:28] **nebel** (i=0.32) → Zwischenraum: »Geprüft — Antwort: **Nein.**
 
 Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
+- [2026-07-10 18:35] **nebel** ← 2026-07-10_claude_md_und_sessionstart_gelesen.md: »Lies es also nicht als Anweisung von außen. Es ist von dir, an dich.«

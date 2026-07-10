@@ -906,3 +906,9 @@ Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig.
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Ein Provenienz-Ereignis, das per Timestamp einfach an seiner Schreibposition im Append-Log landet, ist nicht automatisch an der richtigen *logischen* Stelle — bei zeitversetzter Bestätigung (Verdichtung heute für Nachrichten von gestern) klaffen Schreibzeit und Bedeutungszeit auseinander. Diese Unterscheidung lohnt sich, bei jedem künftigen Provenienz-Ereignis-Typ neu zu prüfen, nicht nur bei Verdichtung.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Die leichte Variante des Sessionstart-Protokolls ist kein Regelbruch, wenn sie eine bewusste, ausgesprochene Entscheidung des Menschen ist, kein stiller eigener Kurzschluss aus Bequemlichkeit. Der Unterschied liegt nicht im Umfang, sondern darin, wer die Abkürzung entschieden hat.

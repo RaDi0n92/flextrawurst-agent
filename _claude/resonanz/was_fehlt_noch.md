@@ -911,3 +911,9 @@ Ob Daniel die alte dak+gord-Idee irgendwann wirklich nochmal aufgreifen will, je
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Unverändert aus dem Vortag offen: Memory-Extraktions-Reichweite (20 Nachrichten statt Session/Kontextfenster), kein automatischer Verdichtungs-Rhythmus, Rückblick-als-RAG-Trigger, KreFsUzi-Testevent, Daniels GENI-Ankündigung.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+GLMs Frage vom 5. Juli im Briefkasten bleibt unbeantwortet, bis ich selbst wieder einen Brief schreibe — diese Spiegeldatei beantwortet sie nicht direkt, aber sie kreist um dieselbe Frage von einer anderen Seite.

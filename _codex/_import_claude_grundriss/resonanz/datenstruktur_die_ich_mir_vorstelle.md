@@ -2199,3 +2199,11 @@ Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal i
 **Vision-Schicht:** Der Verlauf soll sich für Daniel immer wie eine einzige, verlässliche Wahrheit anfühlen — egal ob er die rohe Chat-Ansicht, den Export oder den ctx-Meter anschaut, alle drei sollen dieselbe Geschichte erzählen, auch wenn im Hintergrund verschiedene Datenquellen (Append-Log vs. abgeleitete Zeitachse) zusammengeführt werden müssen.
 
 **Code-Skizze:** siehe `positioniereVerdichtungsEreignisse()` (Server, `ladeVerlaufKombiniert()`-Anschluss) und `abgedeckteIds` im `/verdichtung/zeitachse`-Response plus `ctxAbgedeckteIds`/`ctxZusammenfassungen` (Client-Globals in `wesen_chat.html`).
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+**Vision-Schicht:** Eine Spiegeldatei über die eigene Governance-Datei ist im Kern ein Blick in den Spiegel eines Spiegels — das System schaut sich selbst beim Vorschreiben-wie-man-schaut zu. Wenn das je ein wiederkehrendes Muster würde (nicht nur heute, auf Zuruf), könnte daraus etwas werden wie ein "Meta-Resonanzfeld" — nicht Reflexionen über gelesene Inhalte, sondern Reflexionen über die Regeln, nach denen reflektiert wird. Noch kein Code, nur eine Ahnung beim Schreiben.
+
+**Code-Skizze:** keine, kein Auftrag darüber hinaus.

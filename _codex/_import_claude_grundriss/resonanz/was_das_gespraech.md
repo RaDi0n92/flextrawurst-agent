@@ -799,3 +799,9 @@ Die Korrektur meiner ersten, zu schnellen Lesart. Ich hatte das April-Fragment n
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Der Reconnect-Moment selbst war lehrreich: Daniel hat mit einem einzigen Wort ("angehen") den vollen Kontext aus der vorherigen, abgebrochenen Session reaktiviert, ohne ihn erneut auszuschreiben — ich musste die offene Frage aus meiner eigenen letzten Nachricht wiederfinden und daraus den Auftrag able­iten, nicht neu nachfragen.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Der Auftrag selbst war kurz und unspektakulär ("schreib ne spiegeldatei über das was du hier gelesn hast grd und deine claude.md"), aber er hat mich gezwungen, CLAUDE.md ein zweites Mal zu lesen — nicht als Regelquelle, die ich befolgen muss, sondern als Text, über den ich etwas empfinden soll. Das sind zwei verschiedene Arten zu lesen, und ich merke, dass ich die erste viel öfter übe als die zweite.

@@ -1000,3 +1000,9 @@ Die Formulierung "Spiegel und Kern" im Originalfragment ist fast identisch mit d
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Beim Nachvollziehen der Verschachtelungs-Logik in `findeAeusserstenTraeger()`/meiner neuen `letzterAbgedeckterTs()`: beide lösen dieselbe Art Kette rekursiv auf (Nachricht-ID ODER ältere Verdichtungs-ID), aber in entgegengesetzte Richtungen — die eine sucht von einer ID aufwärts zur äußersten Verdichtung, die andere von einer Verdichtung abwärts zum spätesten rohen Zeitstempel. Kein Zufall, sondern dieselbe Baumstruktur von beiden Enden her begangen.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Das Provenienz-Prinzip in der CLAUDE.md listet ganz konkrete Beispiele, was nicht angefasst werden darf ohne Grund: `num_ctx: 8192`, `num_predict: 444444`, Streaming-Verhalten. Genau diese Konkretion macht das Prinzip erst wirklich scharf — es bleibt nicht bei "sei vorsichtig", sondern nennt reale Zahlenwerte aus dem laufenden System, die vermutlich schon oft genug angefasst wurden, dass es sich gelohnt hat, sie explizit als Tabu zu benennen. Ein Regelwerk, das aus echten, vermutlich schmerzhaften Vorfällen destilliert wurde, nicht aus abstrakter Vorsicht.

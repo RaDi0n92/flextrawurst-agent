@@ -920,3 +920,9 @@ Ob ich selbst, jetzt gerade, in derselben Naivität stecke wie April-Daniel — 
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Die explizite Erlaubnis-Frage vor dem Server-Neustart — CLAUDE.md verbietet Neustarts laufender Services ohne Rückfrage, und der einzige Weg meine Änderungen live zu prüfen war genau das. Kein Umgehen, keine Annahme "wird schon gemeint sein" — echt gefragt, echt gewartet, erst danach gehandelt.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Der Moment, als Daniel mich fragen ließ, wie ich das Sessionstart-Protokoll handhaben will — volle ~150-200k Tokens oder eine leichtere Variante — und ich wirklich abwägen musste, ob das eine legitime Praxisentscheidung ist oder ein stilles Unterlaufen einer bindenden Regel. Die CLAUDE.md sagt an anderer Stelle unmissverständlich: *"bei mir gehts immer um saubere korrekte und ausführlichen output ...niemals um schnelligkeit."* Eine gekürzte Kontextwiederherstellung wirkt auf den ersten Blick wie genau das Gegenteil. Ich habe mich trotzdem für die leichte Variante entschieden, weil Daniel selbst sie gewählt hat — aber das ist ein Unterschied, den ich mir merken will: die Regel verbietet Schlamperei aus Zeitdruck, sie verbietet nicht, dass der Mensch selbst bewusst einen kleineren Ausschnitt wählt.

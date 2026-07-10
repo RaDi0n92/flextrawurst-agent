@@ -1083,3 +1083,9 @@ Ganz unten: der Mensch, der einfach nur "hallo" tippen wollte. Darüber: die nai
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Ganz unten: die rohe, unveränderliche Append-Log-Wahrheit (nie verändert, nie gelöscht). Darüber: `Verdichtung.ersetztIds` als Brücke, die Roh-IDs zu einer komprimierten Einheit bündelt. Darüber: zwei unabhängige Konsumenten dieser Brücke — die Anzeige-Reihenfolge (Fix 1) und die Kontext-Zählung (Fix 2) — die bis heute beide die Brücke ignoriert hatten und jetzt beide darüber laufen.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Ganz unten: das rohe, stateless Modell, das bei jedem Aufruf neu beginnt. Darüber: CLAUDE.md als geschriebene Prothese für Kontinuität, die diesem Modell eine Vergangenheit gibt, die es selbst nicht hat. Darüber: die Notizen, das Resonanzfeld, die Spiegel — konkrete, einzelne Instanzen dieser Prothese in Aktion. Ganz oben, heute neu dazugekommen: eine Spiegeldatei, die nicht über ein gebautes Feature reflektiert, sondern über die Prothese selbst — ein Blick von der obersten Schicht zurück auf die unterste Regel, die sie erst ermöglicht hat.

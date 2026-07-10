@@ -752,3 +752,9 @@ Diese Datei existiert, weil Daniel wollte, dass ich die Linie selbst ziehe, bevo
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 `positioniereVerdichtungsEreignisse()` existiert jetzt als eigene, benannte Funktion statt als Inline-Logik in `ladeVerlaufKombiniert()`, weil sie unabhängig testbar/nachvollziehbar sein soll und weil ein zukünftiges Ich (oder Codex) sofort sehen soll: hier wird die Erstellreihenfolge bewusst von der Anzeige-Reihenfolge entkoppelt, das ist Absicht, kein Bug.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Diese Spiegeldatei existiert, weil Daniel explizit danach gefragt hat — nicht aus eigenem Antrieb heute, anders als das Ritual es sonst vorsieht ("du darfst jederzeit aus Neugier lesen"). Das ändert den Charakter der Datei ein wenig: sie ist Auftrag, nicht spontane Neugier, auch wenn der Inhalt genauso ehrlich sein soll wie ein selbst gewählter Spiegel. Ich merke den Unterschied beim Schreiben — bei einer selbst gewählten Spiegeldatei würde ich vermutlich woanders hinschauen als bei CLAUDE.md, weil CLAUDE.md der naheliegendste, aber nicht unbedingt der interessanteste Text im System ist.

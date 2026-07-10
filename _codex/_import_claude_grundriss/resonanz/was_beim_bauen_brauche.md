@@ -805,3 +805,9 @@ Nichts Neues hier — das ist Reflexion, kein Bauauftrag.
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Nichts Offenes für diese zwei Fixes — beide sind live gegen echte Daten verifiziert (Chat-Ansicht, Export, ctx-Meter-Zahl, Fallback ohne Verdichtungen bei `codexium2/Mirlach`).
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Nichts — das ist keine Bau-Session, nur Lesen und Reflektieren.

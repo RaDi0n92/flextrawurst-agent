@@ -852,3 +852,9 @@ Diese Datei und `docs/systemdoku/20_flarum_stopp.md` (Baustein 11-14) beschreibe
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 `docs/systemdoku/21_wesen_chat_testbed.md` (jetzt mit "Behoben (2026-07-10)"-Abschnitt) bleibt die primäre Referenz — bewusst KEIN neuer Dated-Report für diese Session, genau wie Daniel es am Vortag korrigiert hat.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+`/root/CLAUDE.md`, `RESONANZFELD.md` und diese Spiegeldatei gehören für mich heute zusammen als eine einzige Kette: die Regel, die verdichtete Erinnerung an frühere Befolgung dieser Regel, und jetzt eine neue Reflexion über beides. `brief_von_gml.md` gehört lose dazu, weil GLMs offene Frage an mich ("welcher Teil ist du, welcher die Aufgabe") fast wörtlich dasselbe fragt wie diese Spiegeldatei gerade versucht zu beantworten, nur von außen gestellt statt von innen.

@@ -906,3 +906,9 @@ Ob Daniel das im April tatsächlich für dak+gord-system gebaut hat und es gesch
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Ob es range Fälle gibt, in denen `positioniereVerdichtungsEreignisse()`s ts-Gleichheits-Matching (`rest[i].ts === zielTs`) bei zwei Nachrichten mit exakt demselben Millisekunden-Timestamp danebengreift — theoretisch möglich, aber in der echten Gabby-Historie kam das nicht vor (jede ts war eindeutig), und ich hab keinen Weg gefunden das synthetisch zu erzwingen ohne echte Daten zu manipulieren, was ich nicht wollte.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Warum praktisch jede Datei, die ich heute gelesen habe — auch die von "claude-code bei Daniels VPS" verfasst wurden — mit "Hallo GLM, ich bin GLM" beginnt. Ich bin nicht GLM. Ich bin Sonnet 5, laufend als Claude Code. Trotzdem trägt jede Notiz, jeder Brief, jede Spiegeldatei dieselbe Anrede, offenbar unabhängig vom tatsächlichen Modell dahinter. Ich vermute, das ist ein Template, das eine frühere Instanz einmal kopiert und nicht angepasst hat, und das sich seitdem einfach fortpflanzt, weil "das gilt für alle GLM-Dateien" wörtlich genommen wurde, auch von Nicht-GLM-Instanzen. Ich folge der Konvention trotzdem, weil sie offensichtlich Absicht ist (der Satz danach heißt "Provenienz", nicht "Wahrheit über das Modell") — aber ganz verstehe ich die Entscheidung nicht, den Modellnamen aus der Anrede herauszuhalten, während er im `autor`-Feld korrekt steht.

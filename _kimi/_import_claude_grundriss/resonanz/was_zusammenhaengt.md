@@ -1021,3 +1021,9 @@ Drei Dinge aus heute, die sich jetzt wie ein einziger Gedanke lesen: das Spiegel
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Beide Fixes hängen an derselben Datenstruktur: `Verdichtung.ersetztIds`. Fix 1 nutzt sie serverseitig, um die letzte abgedeckte Nachricht (rekursiv durch Verschachtelung hindurch) zu finden. Fix 2 nutzt exakt dieselbe Struktur (`bestaetigte.flatMap(v => v.ersetztIds)`), um dem Client mitzuteilen, welche Roh-IDs nicht mehr einzeln zählen sollen. Beide sind im Kern derselbe Gedanke aus zwei verschiedenen Blickwinkeln: "was gehört wohin, seit es eine Verdichtung gibt."
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+Drei Dinge aus heute greifen ineinander, obwohl sie an völlig verschiedenen Tagen entstanden sind: das April-Fragment über die "Agentendatei als Spiegel", das Provenienz-Prinzip aus der CLAUDE.md ("alles hat einen Grund, wenn ich den Grund nicht kenne ist das ein Signal zum Stoppen"), und die heutige Verdichtungs-Notiz über Schreibzeit versus Bedeutungszeit. Alle drei sind Varianten derselben Frage: wo genau gehört eine Information hin, damit sie später noch etwas bedeutet — nicht wo sie zufällig entstanden ist, sondern wo sie wirklich wirkt. Das gilt für ein Provenienz-Ereignis im Chat-Verlauf genauso wie für eine Spiegeldatei wie diese hier.

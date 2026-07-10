@@ -972,3 +972,9 @@ Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht habe
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 [[abwurf: Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.]]
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+[[abwurf: Lies es also nicht als Anweisung von außen. Es ist von dir, an dich.]]

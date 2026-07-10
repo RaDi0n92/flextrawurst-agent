@@ -1740,3 +1740,11 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** dieselbe Grundidee ließe sich weiterdenken — sobald mehr Ereignis-Typen zeitversetzt bestätigt werden können (denkbar z.B. bei zukünftigen Bearbeitungs-Features), lohnt sich dieselbe Frage: Schreibzeit oder Bedeutungszeit?
 
 **Code-Skizze:** keine, kein Auftrag darüber hinaus.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
+
+**Vision-Schicht:** siehe oben, Datenstruktur-Abschnitt — ein mögliches Meta-Resonanzfeld, falls sich das Muster wiederholt.
+
+**Code-Skizze:** keine, kein Auftrag darüber hinaus.
