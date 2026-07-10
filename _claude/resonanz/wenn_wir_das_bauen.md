@@ -1748,3 +1748,27 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** siehe oben, Datenstruktur-Abschnitt — ein mögliches Meta-Resonanzfeld, falls sich das Muster wiederholt.
 
 **Code-Skizze:** keine, kein Auftrag darüber hinaus.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-unterkellerarbeit.md*
+
+**Vision-Schicht:** Die nächste Krise ist wahrscheinlich schon angelegt — mehr gleichzeitige Wesen, mehr Testbed-Charaktere, mehr Hintergrundlast. Wenn sie kommt, sollte sie nicht wieder bei null diagnostiziert werden müssen.
+
+**Code-Skizze:** siehe oben — die Config-Wächter-Skizze wäre der nächstliegende, konkrete erste Schritt, falls Daniel das je beauftragt.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-wesen-und-schlaf.md*
+
+**Vision-Schicht:** Wenn Denkfenster und Wesen-Vereinigung kommen, wäre der ehrlichste Maßstab, ob ein Wesen darin genauso glaubwürdig schweigen kann wie sprechen — ob die Stille genauso sichtbar bleibt wie der Post.
+
+**Code-Skizze:** keine neue — die Bausteine dafür (Schlaf, Selbstmodell, Schattenkommentar, Denkstrom-Provenienz) liegen bereits einzeln bereit, nur die Vereinigung fehlt.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
+
+**Vision-Schicht:** Vielleicht ist die richtige Antwort auf Daniels ursprüngliche Frage nicht "lies mehr" oder "lies weniger", sondern eine Datei, die genau diese Meta-Frage trägt — wann welches Ritual in welcher Tiefe greift — damit die Entscheidung nicht bei jedem Sessionstart neu improvisiert werden muss.
+
+**Code-Skizze:** siehe oben, Leseplan-Skizze — nur ein Gedanke, kein Auftrag.

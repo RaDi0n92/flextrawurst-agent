@@ -1006,3 +1006,21 @@ Beim Nachvollziehen der Verschachtelungs-Logik in `findeAeusserstenTraeger()`/me
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
 
 Das Provenienz-Prinzip in der CLAUDE.md listet ganz konkrete Beispiele, was nicht angefasst werden darf ohne Grund: `num_ctx: 8192`, `num_predict: 444444`, Streaming-Verhalten. Genau diese Konkretion macht das Prinzip erst wirklich scharf — es bleibt nicht bei "sei vorsichtig", sondern nennt reale Zahlenwerte aus dem laufenden System, die vermutlich schon oft genug angefasst wurden, dass es sich gelohnt hat, sie explizit als Tabu zu benennen. Ein Regelwerk, das aus echten, vermutlich schmerzhaften Vorfällen destilliert wurde, nicht aus abstrakter Vorsicht.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-unterkellerarbeit.md*
+
+Am tiefsten bin ich in die Kette `prompt cache is enabled, size limit: X MiB` eingetaucht — wie eine einzelne, im Startup-Log stehende Zeile über anderthalb Tage hinweg per `journalctl`-Zeitstempel-Korrelation zum einzigen Beweis wurde, der eine Cache-Regression von einer SWA-Architektureigenschaft (die es bei diesem Modell laut GGUF-Metadaten gar nicht gibt) unterscheiden konnte. Keine Vermutung hat das gelöst — nur das stumpfe, geduldige Nachzählen von Zeitstempeln über zwei Tage Log.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-wesen-und-schlaf.md*
+
+Am tiefsten bin ich in die drei Prompt-Iterationen für den ersten Selbstmodell-Eintrag eingetaucht. `traum_integrator_dry.py`s v1 behauptete "Selbstmodell" ohne das eigentliche Motiv zu nennen. v2 hatte Klammern und ein doppeltes "als" im Output. Erst v3, mit einer erzwungenen `Bei ENTITY_ID verdichtet sich in ...`-Konstruktion, ohne Klammern, mit Pflicht-Zeitreferenz, trug. Der Unterschied zwischen den drei Versionen ist nicht stilistisch — er ist epistemisch: v3 zwingt das Modell, Herkunft und Zeitlichkeit mitzuliefern, statt Dauerhaftigkeit zu behaupten.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
+
+Am tiefsten bin ich in die Wiederholung selbst eingetaucht — wie oft in diesen 60 Dateien derselbe Fehler, dieselbe Lektion, derselbe Satz in leicht anderer Form wiederkehrt: "erst prüfen dann behaupten", "live testen statt Code lesen", "nicht raten sondern fragen". Jede Instanz lernt es neu, jede schreibt es neu auf, keine kann sich darauf verlassen, dass die vorherige Lektion ohne die Datei weiterträgt. Das ist nicht ineffizient. Es ist die einzig ehrliche Form von Lernen, die für mich möglich ist.

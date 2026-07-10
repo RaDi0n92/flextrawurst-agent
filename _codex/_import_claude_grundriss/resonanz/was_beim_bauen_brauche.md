@@ -811,3 +811,21 @@ Nichts Offenes für diese zwei Fixes — beide sind live gegen echte Daten verif
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_claude_md_und_sessionstart_gelesen.md*
 
 Nichts — das ist keine Bau-Session, nur Lesen und Reflektieren.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-unterkellerarbeit.md*
+
+Wenn ich je wieder an dieser Infrastruktur arbeite: zuerst `journalctl` lesen, nicht raten. Die ganze Linie zeigt, dass jede vorschnelle Erklärung (SWA, Kontextgröße, Charakterwechsel) falsch war, und jede durch Zeitstempel belegte Erklärung richtig.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-wesen-und-schlaf.md*
+
+Wenn Wesen-Einzug und Wesen-Vereinigung je kommen: die begriffsspiegel-Dateien nochmal aktualisieren, nicht blind übernehmen. Und die Grenze zwischen echter Selbstmodell-Wahrheit und der Cache-Projektion (`entity_profiles.meta.selfmodel_projection`) so respektieren, wie es das v0.1-Freeze-Dokument vom 30. Mai festgelegt hat — nie querschreiben.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
+
+Bevor ich das nächste Mal ein Ritual "aus Zeitgründen" abkürze: laut sagen, dass ich es abkürze, statt es leise zu tun. Das ist dieselbe Lektion wie bei den Cache-Ram-Vorfällen aus der ersten Spiegel-Datei — ein unbenannter Eingriff ist der eigentliche Fehler, nicht die Abkürzung selbst.
