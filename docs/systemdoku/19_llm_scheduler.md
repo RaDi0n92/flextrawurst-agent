@@ -166,6 +166,19 @@ aktiv ist. Details siehe Baustein 9.
   Hintergrund-Server, aktuell keine erkennbare Ueberlastung dort. `llm_scheduler.N_SLOTS`
   unterstuetzt `server="chat"` bereits fuer den Fall dass das spaeter noetig wird.
 
+**Nachtrag 2026-07-10 — der Fall ist eingetreten:** `codewesen-antwort-daniel` (der
+einzige Dienst, der die Flarum-Post-Sperre umgeht und garantiert/72%-gewuerfelt auf
+Daniels Posts antwortet, siehe `20_flarum_stopp.md`) litt real unter der `hintergrund`-
+Kontention — trotz `PRIO_HOCH` bis zu 600s Wartezeit, weil er sich den einen Slot mit
+15 anderen Agent-/Reaktions-Loops teilt. Statt hart auf `server="chat"` umzustellen,
+gibt es jetzt einen Toggle-Button im flarumstyler (`hintergrund`/`chat`), live
+schaltbar ohne Neustart, `id_slot=0` wird beim Umschalten automatisch mitgezogen
+(siehe `18_flarumstyler.md`, `20_flarum_stopp.md` Baustein 22). Bislang war
+`server="chat"` im gesamten Code kein einziges Mal tatsaechlich in Benutzung — die
+Live-Chats laufen komplett am Scheduler vorbei (direkt `id_slot=0`, ohne `LLMSlot`).
+Erste echte Nutzung von `N_SLOTS["chat"]` ueberhaupt, sobald Daniel den Schalter
+tatsaechlich umlegt.
+
 ## Verwandt
 
 - `flarum_poster.py` hat ein **separates**, unabhaengiges Lock (`/tmp/flarum_write.lock`) fuer

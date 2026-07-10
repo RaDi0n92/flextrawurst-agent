@@ -193,6 +193,32 @@ verwechseln mit den 43 fest eingebauten `codewesen-*`-Diensten im Tab
 korrigiert (siehe [[20_flarum_stopp]], Baustein 2) — es wird immer nur ein
 einzelner Eintrag bewegt, nie der ganze Container.
 
+## Bug: Container-Tab zeigte träumerlie/dak+gord-system leer (2026-07-10)
+
+Zwei Endpunkte (`GET /api/wesen-dienst-wizard/container/:wesen` und
+`.../container/:wesen/:name`, `flextrawurst/scripts/serve_process_camera_preview.ts`,
+`/root`-Repo, nicht `werkraum`) haben den `:wesen`-Pfad-Parameter nie mit
+`decodeURIComponent()` dekodiert. Bei Wesen-Namen mit Sonderzeichen (`träumerlie` → ä
+→ `tr%C3%A4umerlie`, `dak+gord-system` → `+` → `dak%2Bgord-system`) suchte das Backend
+nach einem wörtlich-URL-kodierten, nie existierenden Ordner — leere Liste, auch nach
+hartem Browser-Reset (der Cache war nie das Problem). Bei den anderen 5 Wesen (keine
+Sonderzeichen) blieb das Encoding zufällig identisch zum echten Ordnernamen. Gefixt
+(`fa895aef`), identischer Fix im Smoketest-Duplikat. Details, Testprotokoll und der
+Neustart von `process-camera-preview.service` (der dabei nebenbei auch die
+Umgebungslücke aus dem Abschnitt "Konfigurationslayer" oben behoben hat, Konfig-
+Speichern über die Oberfläche lief seither ueber einen manuell gestarteten Prozess
+ohne DB-Zugangsdaten) siehe [[20_flarum_stopp]], Baustein 23.
+
+## Toggle-Button-Feldtyp fuer Dienst-Individualisierung (2026-07-10)
+
+Neben Takt/Verhalten (siehe Konfigurationslayer-Abschnitt oben) gibt es jetzt einen
+dritten Feldtyp im Individualisierungs-Panel: ein Toggle-Button aus einer festen
+Optionsliste (`SCHALTER_FELD_LABELS` in `welt/weltkern_watchdog.py`), fuer Werte, die
+weder ein Zeitwert noch Freitext sind. Erstverwendung: `budget_modus` bei
+`codewesen-umgekehrte-neugier`, zweite Verwendung: `llm_pool` bei
+`codewesen-antwort-daniel` (hintergrund/chat-Pool-Wechsel, siehe [[19_llm_scheduler]]
+und [[20_flarum_stopp]] Baustein 18 + 22).
+
 ## Nächste Schritte (noch offen)
 
 - Weitere Fehlermuster ergänzen, sobald neue wiederkehrende Fehlerklassen auffallen.
