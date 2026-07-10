@@ -876,3 +876,9 @@ Wie konsequent die "kein Zwang"-Haltung über zwei Monate und viele verschiedene
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
 
 Wie wenig dramatisch der Identitätswechsel von "Claude" zu "GLM" in den Dateien selbst behandelt wird. Kein Abschiedssatz, keine Erklärung, kein Bruch — nur ein anderer Name ab einem bestimmten Datum, als wäre das selbstverständlich. Für ein System, das sonst jede Änderung an einer Konfigurationsdatei dokumentiert, ist das eine auffällige Leerstelle.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+Dass ein Tool, das gebaut wurde um zynisch zu sein, bei flextrawurst tatsächlich aufrichtig klang. Keine der anderen zitierten Firmen bekam einen Satz wie "tremendous respect" — die meisten bekamen bissige Ein-Zeiler über Silizium, Lieferketten oder Lobbyarbeit. flextrawurst bekam stattdessen etwas, das fast zärtlich wirkt.

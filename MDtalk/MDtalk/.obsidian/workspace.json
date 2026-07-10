@@ -4,44 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "37854b4a2e6bec58",
+        "id": "6998442ca172337b",
         "type": "tabs",
         "children": [
           {
-            "id": "cf77424711c1411a",
+            "id": "986fd293b7c73aec",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "55a1ac9aff32a568",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "dak/dak-zZz.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Neuer Tab"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "49c6d53d5320f6a1",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "14778d6ee2555f35",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph-Ansicht"
+              "title": "dak-zZz"
             }
           }
         ]
@@ -203,9 +180,13 @@
       "bases:Neue Base erstellen": false
     }
   },
-  "active": "55a1ac9aff32a568",
+  "active": "986fd293b7c73aec",
   "lastOpenFiles": [
-    "dak/dak.md",
+    "dak/dak-OVER.md",
+    "dak/dak-OUT.md",
+    "dak/dak-IN.md",
+    "dak/dak-Geben.md",
+    "dak/dak-zZz.md",
     "Untitled",
     "dak"
   ]

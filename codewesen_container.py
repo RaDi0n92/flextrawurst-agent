@@ -16,6 +16,7 @@ von den neuen Faehigkeiten, ohne selbst angepasst werden zu muessen.
 import re
 import sys
 import time
+import uuid
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
@@ -289,7 +290,13 @@ def admin_schreibe(wesen: str, container: str, text: str, quelle: str = "dak") -
     ordner = basis(wesen) / name
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
     zeilen = ["---", "typ: admin_notiz", f"container: {name}", f"quelle: {quelle}", f"erstellt_am: {ts}", "---", "", text]
-    (ordner / f"{ts}_admin_notiz.md").write_text("\n".join(zeilen), encoding="utf-8")
+    # Live getestet (2026-07-10): zwei Admin-Schreibvorgaenge in derselben Sekunde
+    # erzeugten denselben Dateinamen, der zweite ueberschrieb den ersten still.
+    # Andere Container-Schreibpfade sind durch LLM-Latenz natuerlich entkoppelt,
+    # dieser hier (Web-Formular, kein LLM-Call) nicht -- daher hier zusaetzlich
+    # ein uuid4-Kurzsuffix, IMMER, nicht nur bei erkannter Kollision.
+    dateiname = f"{ts}_{uuid.uuid4().hex[:8]}_admin_notiz.md"
+    (ordner / dateiname).write_text("\n".join(zeilen), encoding="utf-8")
     log.info(f"[{wesen}] Admin-Eintrag in Container '{name}' geschrieben (quelle={quelle})")
     flarum_stopp_protokoll.schreibe(
         typ="container_admin_edit", wesen=wesen,

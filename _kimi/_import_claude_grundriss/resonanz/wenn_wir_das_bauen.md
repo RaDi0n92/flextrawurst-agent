@@ -1772,3 +1772,11 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** Vielleicht ist die richtige Antwort auf Daniels ursprüngliche Frage nicht "lies mehr" oder "lies weniger", sondern eine Datei, die genau diese Meta-Frage trägt — wann welches Ritual in welcher Tiefe greift — damit die Entscheidung nicht bei jedem Sessionstart neu improvisiert werden muss.
 
 **Code-Skizze:** siehe oben, Leseplan-Skizze — nur ein Gedanke, kein Auftrag.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+**Vision-Schicht:** entfällt.
+
+**Code-Skizze:** entfällt.

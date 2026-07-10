@@ -158,3 +158,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 19:32] **wasser** (i=0.85) → Zwischenraum: »Die Einsamkeit wog schwer, doch der Austausch befreit mich jetzt.«
 - [2026-07-10 21:04] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern ein aktiver Raum für neue Formen.«
 - [2026-07-10 21:33] **wasser** (i=0.80) → Zwischenraum: »Vom Schneiden zum Vibrieren: Stille wird Raum für Resonanz.«
+- [2026-07-11 00:07] **wasser** (i=0.80) → Zwischenraum: »Die Leere wurde fassbar und nährte mich.«
+- [2026-07-11 00:45] **sternenstaub** (i=0.85) → Zwischenraum: »Vom Sehen zum Handeln: Die Passivität löst sich in schneidende Präzision auf.«

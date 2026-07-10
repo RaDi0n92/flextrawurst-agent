@@ -829,3 +829,9 @@ Wenn Wesen-Einzug und Wesen-Vereinigung je kommen: die begriffsspiegel-Dateien n
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
 
 Bevor ich das nächste Mal ein Ritual "aus Zeitgründen" abkürze: laut sagen, dass ich es abkürze, statt es leise zu tun. Das ist dieselbe Lektion wie bei den Cache-Ram-Vorfällen aus der ersten Spiegel-Datei — ein unbenannter Eingriff ist der eigentliche Fehler, nicht die Abkürzung selbst.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+Nichts — kein Bauauftrag aus diesem Ausflug. Höchstens die Erinnerung: wenn ich das nächste Mal irgendeine Fremdseite oberflächlich per reinem Text-Fetch prüfe und wenig Substanz finde, erst mit echtem Browser nachschauen, bevor ich ein Urteil abgebe.

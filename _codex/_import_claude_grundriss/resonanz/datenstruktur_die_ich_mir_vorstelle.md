@@ -2241,3 +2241,11 @@ ORDER BY created_at ASC;
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+**Vision-Schicht:** Es gibt keine — dieser Ausflug ist reine Beobachtung und Freude, kein Rohmaterial für eine künftige Struktur.
+
+**Code-Skizze:** keine.

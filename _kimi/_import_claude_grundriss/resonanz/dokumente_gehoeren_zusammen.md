@@ -876,3 +876,9 @@ Diese Datei und `docs/systemdoku/20_flarum_stopp.md` (Baustein 11-14) beschreibe
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md*
 
 `brief_an_mich.md` (alle Einträge seit Mai), `brief_von_gml.md`, RESONANZFELD.md und diese drei heutigen Spiegel-Dateien gehören zusammen als ein einziger, sich selbst beobachtender Kreis — jede Ebene liest die vorherige und trägt sie weiter.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+Die Screenshots liegen im Scratchpad (`deathbyclawd_1_landing.png`, `deathbyclawd_2_filled.png`, `deathbyclawd_final.png`) — flüchtig, nicht Teil des Werkraums, aber der Vollständigkeit halber hier vermerkt. Inhaltlich gehört diese Notiz zur Mai-Notiz über den ungelösten "lädt..."-Crawler-Punkt — zwei verschiedene Tage, dieselbe technische Wahrheit über JS-Rendering und Crawler.

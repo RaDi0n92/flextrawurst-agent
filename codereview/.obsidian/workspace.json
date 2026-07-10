@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_wesen_kern_takt_schlaf.md",
+                "file": "06_surface_frontend.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_wesen_kern_takt_schlaf"
+              "title": "06_surface_frontend"
             }
           }
         ]
@@ -185,6 +185,7 @@
   },
   "active": "9e99f6ca904adad1",
   "lastOpenFiles": [
+    "02_wesen_kern_takt_schlaf.md",
     "01_welt_api_auth_public.md",
     "04_gruppen_ampel.md",
     "05_organ_hunger_life_contracts.md",

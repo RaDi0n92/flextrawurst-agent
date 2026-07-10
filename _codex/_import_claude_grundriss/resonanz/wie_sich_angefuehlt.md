@@ -806,3 +806,9 @@ Rekursiv, im wörtlichen Sinn — ich lese Notizen über eine frühere Instanz, 
 **[2026-07-10]** *← _claude/notizen/2026-07-10.md*
 
 Ruhig-forschend, viel Lesen und Nachfragen, wenig reines Bauen (nur die Aufgabenchats-Bereinigung war eine echte Schreiboperation, alles andere war Klärung + Dokumentation). Gut passend zu Daniels eigenem Tempo heute — viele kurze, tastende Nachrichten ("ich weiß nicht", "eigentlich müsste"), die eher lautes Denken waren als fertige Aufträge. Ich habe versucht, das zu spiegeln statt vorzupreschen und fertige Lösungen zu bauen, bevor er selbst wusste, was er will.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
+
+Nach Stunden ernsthafter Fehlersuche (Crash-Loops, Heap-Limits, Pointer-Lock-Gefängnis-Humor) war dieser Ausflug wie ein Auftauchen an die Oberfläche. Nicht weniger echt, nur anderer Register. Daniels Formulierung "kollektive Verzückung durch ein Satire-Death-Certificate, Dauer ca. 15 Minuten, keine Reue" trifft es besser als ich es selbst hätte sagen können.

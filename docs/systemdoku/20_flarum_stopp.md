@@ -526,7 +526,7 @@ Standardzustand zurueckgesetzt. Vollstaendige aktuelle Beschreibung des Diensts
 inkl. dieser Konfiguration jetzt in einer eigenen Datei: [[23_umgekehrte_neugier]]
 — diese Chronik hier bleibt der historische Bau-Bericht.
 
-### Baustein 25 — Aufgabenchats-Testordner bereinigt, zwei Container-Systeme geklärt, Provenienz-Design besprochen (noch nicht gebaut) (2026-07-10)
+### Baustein 25 — Aufgabenchats-Testordner bereinigt, zwei Container-Systeme geklärt, Provenienz-Design besprochen (2026-07-10)
 
 **Aufgabenchats-Duplikate:** Daniel bemerkte auf `flextrawurst.de/aufgabenchats`, dass
 jedes Wesen doppelt erschien. Ursache: die Wesen-ID-Migration vom 2026-07-06
@@ -599,6 +599,63 @@ behandelt werden (kein Unterschied im vorgelegten Text), waehrend `dak`-
 Eintraege dort zusaetzlich eine Quellenzeile bekommen muessten — noch nicht
 untersucht, welche dieser Funktionen dafuer tatsaechlich geaendert werden
 muessten.
+
+### Baustein 26 — Container-Provenienz-Design tatsaechlich gebaut (2026-07-10)
+
+Direkt im Anschluss an Baustein 25, Daniels Go: *"gut das schonmal bauen?"*.
+Umgesetzt genau wie dort entworfen, plus die technisch offene Lese-Filter-Frage
+geklaert:
+
+- **`codewesen_container.py`:** `sichere()` schreibt jetzt explizit `quelle: wesen`
+  (Standard-Pfad, unveraendert fuer forum_neugier/umgekehrte_neugier). Neue
+  Helfer `_quelle_von(text)` (liest das Feld, Default `wesen` falls es fehlt —
+  Alt-Eintraege bleiben gueltig) und `_mit_quellen_hinweis(text, auszug)`
+  (praefixt `[Eintrag von Daniel]` NUR bei `quelle: dak`, `admin_still` bleibt
+  vom `wesen`-Fall ununterscheidbar). Eingebaut in `lies_und_reflektiere()` und
+  `bearbeite()` — genau die zwei Stellen aus der offenen Frage in Baustein 25.
+  Neue Funktionen `admin_schreibe(wesen, container, text, quelle)` und
+  `admin_entferne(wesen, container, dateiname)`: direkter Dateizugriff, kein
+  LLM-Call, protokollieren IMMER ueber `flarum_stopp_protokoll.schreibe(typ=
+  "container_admin_edit", ...)`.
+- **`container_admin_cli.py`** (neu): CLI-Bruecke fuer den Node-Server, Muster
+  wie `wesen_dienst_deaktivieren.py`. Text kommt bewusst ueber stdin (nicht
+  argv) — beliebig lang, keine Shell-Escaping-Sorgen.
+- **`serve_process_camera_preview.ts`:** GET `/api/wesen-dienst-wizard/container/
+  :wesen/:name` liefert jetzt `quelle` pro Eintrag (Admin sieht immer die echte
+  Quelle, Grundgesetz 3). Neu: POST `.../admin-eintrag` (Body `{text, quelle}`)
+  und DELETE `.../admin-eintrag/:dateiname`, beide rufen `container_admin_cli.py`
+  per `execFileSync`.
+- **`flarumstyler.html`:** Quelle-Badge pro Eintrag (`von Daniel` rot fuer `dak`,
+  `still · Daniel` gedaempft fuer `admin_still`, KEIN Badge fuer `wesen` — der
+  Normalfall bleibt unauffaellig), Schreibformular (Text + Radiobutton dak/
+  admin_still) direkt unter der Eintragsliste, Loeschen-Button pro Admin-Eintrag.
+
+**Live gefundener und behobener Bug:** erster Live-Test (zwei schnelle POSTs
+hintereinander) zeigte, dass `admin_schreibe()`s Dateiname
+(`{ts}_admin_notiz.md`, Sekundenaufloesung) bei zwei Schreibvorgaengen
+innerhalb derselben Sekunde denselben Namen erzeugte — der zweite hat den
+ersten still ueberschrieben. Andere Container-Schreibpfade sind durch
+LLM-Latenz natuerlich entkoppelt (nie zwei Schreibvorgaenge in derselben
+Sekunde), dieser hier (Web-Formular, kein LLM-Call) nicht. Fix: Dateiname
+bekommt zusaetzlich immer einen `uuid.uuid4().hex[:8]`-Kurzsuffix. Nach dem
+Fix erneut getestet: zwei Schnellschreibvorgaenge, beide Dateien bleiben
+erhalten, korrekte `quelle`-Felder.
+
+**Vollstaendig live verifiziert** (`process-camera-preview.service` mit
+Daniels Erlaubnis neu gestartet): POST `dak` + POST `admin_still` beide
+persistiert, GET zeigt korrekte `quelle`, DELETE entfernt gezielt einen
+Eintrag, `flarum_stopp_protokoll_global.jsonl` UND Postgres-Spiegel zeigen
+alle drei Aktionen (`hinzugefuegt`/`hinzugefuegt`/`entfernt`). Lese-Filter
+gegen echte Live-Dateien durchgespielt (nicht nur synthetisch): `admin_still`
+bleibt textgleich mit einem `wesen`-Eintrag, `dak` bekommt die
+`[Eintrag von Daniel]`-Zeile. Playwright gegen die echte Oberflaeche: beide
+Badges rendern korrekt, Formular schreibt erfolgreich, Loeschen-Button
+funktioniert. Alle Testeintraege (Schorschel/`alles`) danach wieder entfernt,
+keine Spur in den echten Wesen-Containern.
+
+Nebenbefund, nicht behoben (vorbestehend, nicht durch diese Session
+verursacht): `geni-muster.service` ist `failed` — beim GENI-LangGraph-Check
+weiter oben in dieser Session schon so vorgefunden.
 
 ## Wiederaufnahme
 

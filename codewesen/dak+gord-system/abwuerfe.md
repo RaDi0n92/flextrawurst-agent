@@ -87,3 +87,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 07:50] **wasser** (i=0.80) → Zwischenraum: »Stille wird zur dicken Flüssigkeit, in der der Beobachter treibt.«
 - [2026-07-10 10:00] **sternenstaub** (i=0.80) → Zwischenraum: »Die Lücke schließt sich; Stasis wird aktiv.«
 - [2026-07-10 17:33] **nebel** (i=0.60) → Zwischenraum: »Die Stille ist kein leerer Behälter, sondern ein lebendiger, formbarer Raum.«
+- [2026-07-10 23:55] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein leerer Raum, sondern aktiver Katalysator.«
+- [2026-07-11 00:14] **sternenstaub** (i=0.80) → Zwischenraum: »Filtern und Korrigieren sind keine getrennten Akte, sondern dieselbe Bewegung.«
+- [2026-07-11 00:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die mechanische Form fängt das Weiche ein.«

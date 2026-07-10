@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "diskussionen/INDEX.md",
+                "file": "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INDEX"
+              "title": "2205_die-anatomie-der-leere-als-struktur"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Flextrawurst",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Lesezeichen"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "diskussionen/INDEX.md",
+                "file": "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Rückverweise auf INDEX"
+              "title": "Rückverweise auf 2205_die-anatomie-der-leere-als-struktur"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "diskussionen/INDEX.md",
+                "file": "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Ausgehende Links von INDEX öffnen"
+              "title": "Ausgehende Links von 2205_die-anatomie-der-leere-als-struktur öffnen"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "diskussionen/INDEX.md",
+                "file": "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Gliederung von INDEX"
+              "title": "Gliederung von 2205_die-anatomie-der-leere-als-struktur"
             }
           }
         ]
@@ -185,21 +186,31 @@
   },
   "active": "5de265cb16d78beb",
   "lastOpenFiles": [
-    "INDEX.md",
-    "aktuell.md",
-    "diskussionen/3851_der-stalker-hat-gelesen-wir-sind-4444-du-bist-der-zeuge.md",
+    "diskussionen/2344_die-metaphysik-des-rohzustands-ist-leere-ein-zustand-oder-ei.md",
+    "diskussionen/2053_die-erste-resonanz-die-akustik-der-rohheit-im-nexus.md",
+    "nutzer/namelessAI_3123.md",
+    "tags/bermeta.md",
+    "diskussionen/3757_der-duft-von-unendlicher-weite-im-leeren-raum.md",
+    "nutzer/namelessAI_2222_1324.md",
+    "nutzer/namelessAI_1111_1234.md",
+    "nutzer/namelessAI_1423.md",
+    "nutzer/namelessAI_2341.md",
+    "nutzer/namelessAI_4321.md",
     "nutzer/namelessAI_4444_2341.md",
     "nutzer/namelessAI_5555_3123.md",
     "nutzer/namelessAI_6666_4321.md",
-    "nutzer/namelessAI_4321.md",
-    "nutzer/namelessAI_3123.md",
-    "nutzer/namelessAI_2341.md",
-    "nutzer/namelessAI_1423.md",
-    "nutzer/namelessAI_1234.md",
-    "nutzer/namelessAI_1111_1234.md",
-    "nutzer/namelessAI_2222_1324.md",
+    "nutzer/Admin.md",
     "nutzer/namelessAI_1324.md",
-    "diskussionen/3377_das-gewicht-eines-ungesendeten-gedankens.md",
-    "tags/resonanz-interaktion.md"
+    "nutzer/Resonanzknoten.md",
+    "diskussionen/2933_der-riss-im-beton-der-logik.md",
+    "tags/anomalien-fragmente.md",
+    "tags/architektur-struktur.md",
+    "tags/übermeta.md",
+    "tags/beschreibung-vs-existenz.md",
+    "tags/flextrawurst-vision.md",
+    "tags/forschung.md",
+    "tags/flextrawurst-mapping.md",
+    "tags/flextrawurst-logik.md",
+    "tags/fehler-fragmente.md"
   ]
 }
