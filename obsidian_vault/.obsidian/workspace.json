@@ -13,16 +13,27 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wissen/plattform/code_beitragstyp.md",
+                "file": "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "code_beitragstyp"
+              "title": "admin_rahmen_60"
+            }
+          },
+          {
+            "id": "fd02ca887a7a67fb",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph-Ansicht"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -55,7 +66,7 @@
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "Lesezeichen"
             }
           }
         ]
@@ -118,8 +129,23 @@
       "bases:Neue Base erstellen": false
     }
   },
-  "active": "0d174d111fb3e7db",
+  "active": "fd02ca887a7a67fb",
   "lastOpenFiles": [
+    "_codex/codex_claude_flarum_analyse/03_grundmuster/3_5_leere_stille_ruhe.md",
+    "erkenntnis/INDEX.md",
+    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/08_tragende_saetze/03_materialtrennung/admin_rahmen_60.md",
+    "wissen/plattform/zwischenwesen_ahnenverzeichnis.md",
+    "wissen/entitaeten/zeitrhythmus.md",
+    "wissen/entscheidungen/offene_abwaegungen.md",
+    "geni/notizen/2026-05-10_14-34_system-aktivierung.md",
+    "geni/notizen/2026-05-10_14-27_test-notiz.md",
+    "geni/README.md",
+    "mdfürvps/komposev2..JPG",
+    "_claude/_import_codex_grundriss/codex_claude_flarum_analyse/13_freie_leseschicht/06_gesamtlesung_flarum_jeder_post_zaehlt.md",
+    "Unbenannt 2.base",
+    "Unbenannt 1.base",
+    "Unbenannt.base",
+    "wissen/plattform/code_beitragstyp.md",
     "docs/systemdoku/13_langgraph.md.tmp.1847875.b20c1baa8b4c",
     "docs/systemdoku/13_langgraph.md.tmp.1847875.47dfd6c10a2b",
     "docs/systemdoku/20_flarum_stopp.md.tmp.1847875.e1578ef46d9a",
@@ -127,11 +153,7 @@
     "docs/systemdoku/14_obsidian.md.tmp.1863532.51642c15c122",
     "docs/systemdoku/03_ports_und_services.md.tmp.1864853.c6317beef0db",
     "docs/systemdoku/18_flarumstyler.md.tmp.1864853.1f5bead70799",
-    "docs/systemdoku/20_flarum_stopp.md.tmp.1864853.3a8d1a3dff9f",
-    "docs/systemdoku/INDEX.md.tmp.1864853.bdb55d859e85",
     "docs/systemdoku/23_umgekehrte_neugier.md",
-    "docs/systemdoku/23_umgekehrte_neugier.md.tmp.1864853.0ee606f1a9f5",
-    "docs/systemdoku/18_flarumstyler.md.tmp.1864853.7c19f777ff22",
     "_codex/_import_claude_grundriss/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md",
     "_claude/spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md",
     "_codex/_import_claude_grundriss/spiegel/2026-07-10-lektuere-wesen-und-schlaf.md",
@@ -146,17 +168,6 @@
     "wissen/plattform/datenmodell.md",
     "wissen/plattform/asketisches_videoformat.md",
     "_claude/ideen/bildgenerator.md",
-    "wissen/system/menschliche_sozialformationen.md",
-    "wissen/plattform/forschungspotential.md",
-    "wissen/plattform/follow_pflicht.md",
-    "_codex/_import_claude_grundriss/notizen/2026-07-10.md",
-    "_claude/notizen/2026-07-10.md",
-    "_codex/_import_claude_grundriss/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md",
-    "_claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md",
-    "docs/systemdoku/21_wesen_chat_testbed.md",
-    "docs/2026-07-09_verdichtung_chronologisch_memory_autotrigger_bericht.md",
-    "docs/2026-07-09_drei_systemprompt_bausteine_entfernt_bericht.md",
-    "mdfürvps/komposev2..JPG",
     "mdfürvps/obsidian.JPG",
     "_claude/_import_kimi_grundriss/inventur/screenshots/tab_hidden_gordslider.png",
     "_codex/_import_kimi_grundriss/inventur/screenshots/tab_hidden_gordslider.png",
