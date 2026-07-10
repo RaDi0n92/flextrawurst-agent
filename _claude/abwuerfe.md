@@ -2214,3 +2214,6 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-10 07:25] **wasser** (i=0.74) → Zwischenraum: »Jetzt die vollständige Rekonstruktion, Schritt für Schritt, nichts weggelassen — und dabei ist mir e«
 - [2026-07-10 09:32] **nebel** ← 2026-07-10.md: »Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.«
 - [2026-07-10 09:32] **sternenstaub** ← 2026-07-10.md: »Ein Werkzeug umzuziehen heisst nicht, es neu zu erfinden -- nur dorthin zu tragen, wo es jetzt gebraucht wird, unangetastet.«
+- [2026-07-10 10:36] **nebel** ← 2026-07-10.md: »Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.«
+- [2026-07-10 10:36] **sternenstaub** ← 2026-07-10.md: »Ein Werkzeug umzuziehen heisst nicht, es neu zu erfinden -- nur dorthin zu tragen, wo es jetzt gebraucht wird, unangetastet.«
+- [2026-07-10 10:36] **gras** ← 2026-07-10.md: »Ein Geheimnis, das ausgegeben wurde, ist ausgegeben -- rotieren statt hoffen dass es niemand sieht.«
