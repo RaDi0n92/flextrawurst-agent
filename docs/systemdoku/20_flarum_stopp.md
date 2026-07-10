@@ -587,6 +587,19 @@ Noch offen: ob Daniel das Protokoll komplett eigenstaendig statt huckepack auf
 Bauauftrag bisher — nur Design festgehalten, damit es bei Fortsetzung nicht
 neu durchdacht werden muss.
 
+**Technisch noch ungeklaert:** an welcher Stelle im Code der `quelle`-Filter
+fuer `admin_still` tatsaechlich greifen muesste. Container-Inhalte werden
+dem Wesen nicht pauschal als Textdump vorgelegt, sondern gezielt an wenigen
+Stellen eingewoben — `container.dateien()`/`container.beschreibung()` (nur
+Name+Kurzbeschreibung, keine Volltexte), `container.lies_und_reflektiere()`
+(voller Text beim Pflegeritual), und die `liste_text`-Bauten in
+`_pflege_angebot()` (`codewesen_umgekehrte_neugier.py`). Ein `admin_still`-
+Eintrag muesste an genau diesen Lesestellen wie ein normaler `wesen`-Eintrag
+behandelt werden (kein Unterschied im vorgelegten Text), waehrend `dak`-
+Eintraege dort zusaetzlich eine Quellenzeile bekommen muessten — noch nicht
+untersucht, welche dieser Funktionen dafuer tatsaechlich geaendert werden
+muessten.
+
 ## Wiederaufnahme
 
 Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schreibt automatisch einen `sperre_aufgehoben`-Protokolleintrag inkl. Sperrdauer). Der umgedrehte Neugier-Dienst (Baustein 3) läuft davon unabhängig weiter oder wird unabhängig gestartet/gestoppt — er schreibt ohnehin nie nach Flarum, seine Existenz ist keine Voraussetzung für die Sperre und umgekehrt.
