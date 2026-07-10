@@ -193,27 +193,33 @@ def extrahiere_entscheidung(text: str) -> dict:
     return {"aktion": "antworten", "inhalt": text}
 
 
-def frage_llm(system: str, user: str) -> str:
+def frage_llm(system: str, user: str, pool: str = "hintergrund") -> str:
     messages = [
         {"role": "system", "content": system},
         {"role": "user", "content": user},
     ]
+    # llm_pool-Schalter (flarumstyler, 2026-07-10): "chat" nutzt denselben
+    # exklusiven Pool wie die Live-Chats (server=chat im Postgres-Scheduler
+    # UND id_slot=0 am echten HTTP-Call -- beide muessen zusammen wechseln,
+    # sonst wartet der Scheduler-Slot fuer einen Pool, waehrend der Call an
+    # der anderen llama-Instanz landet). "hintergrund" bleibt der Standard.
+    chat_kwargs = {"id_slot": 0} if pool == "chat" else {}
     try:
-        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_HOCH,
+        with llm_scheduler.LLMSlot(server=pool, prioritaet=llm_scheduler.PRIO_HOCH,
                                     rufer="inbox_antwort:antwort_auf_daniel", max_wartezeit=600,
                                     max_haltezeit=600):
-            antwort = hauhau_client.chat(messages, think=False, timeout=600.0).strip()
+            antwort = hauhau_client.chat(messages, think=False, timeout=600.0, **chat_kwargs).strip()
             if antwort:
                 return antwort
             return hauhau_client.chat(
                 messages, think=False, max_tokens=500,
-                temperature=0.25, top_p=0.75, top_k=20, timeout=600.0,
+                temperature=0.25, top_p=0.75, top_k=20, timeout=600.0, **chat_kwargs,
             ).strip()
     except llm_scheduler.LLMSlotTimeout:
         return ""
 
 
-def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: str, content: str, verhalten: str = "") -> None:
+def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: str, content: str, verhalten: str = "", pool: str = "hintergrund") -> None:
     kontext = lade_diskussion_kontext(discussion_id, post_number)
     daniel_text = strip_xml(content)
     log.info(f"Post #{post_id} in #{discussion_id} '{title[:40]}' — {len(daniel_text)} Zeichen")
@@ -242,7 +248,7 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
             "Nur JSON, kein Markdown-Codeblock."
         )
         log.info(f"  {name} antwortet...")
-        raw = frage_llm(system_prompt, user_prompt)
+        raw = frage_llm(system_prompt, user_prompt, pool)
         if not raw:
             log.warning(f"  {name}: leere Antwort")
             continue
@@ -279,7 +285,7 @@ def bearbeite_post(post_id: int, discussion_id: int, post_number: int, title: st
         time.sleep(8)
 
 
-def tick(verhalten: str = "") -> None:
+def tick(verhalten: str = "", pool: str = "hintergrund") -> None:
     processed = lade_processed()
     daniel_posts = hole_daniel_posts_heute()
 
@@ -292,7 +298,7 @@ def tick(verhalten: str = "") -> None:
             processed.add(post_id)
             speichere_processed(processed)
             continue
-        bearbeite_post(post_id, p["discussion_id"], p["post_number"], p["title"], p["content"], verhalten)
+        bearbeite_post(post_id, p["discussion_id"], p["post_number"], p["title"], p["content"], verhalten, pool)
         processed.add(post_id)
         speichere_processed(processed)
 
@@ -303,8 +309,9 @@ def main() -> None:
         konfig = dk.lade(DIENST_NAME)
         poll_intervall = konfig.get("takt_sekunden") or POLL_INTERVAL
         verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+        pool = (konfig.get("meta") or {}).get("llm_pool") or "hintergrund"
         try:
-            tick(verhalten)
+            tick(verhalten, pool)
         except Exception as e:
             log.error(f"Tick-Fehler: {e}")
         time.sleep(poll_intervall)

@@ -447,6 +447,20 @@ Zweiter Fund im selben Test: die Mitnahme-Entscheidung (Container-Zuordnungsphas
 
 **Nachtrag (2026-07-10, auf Nachfrage "was ist bei stoeber_pool noch offen"):** der `first_post_id`-Filter aus `5c168c7d` galt nur für `stoeber_pool()` selbst. Zwei weitere Pfade in eine Lese-Phase hatten ihn noch nicht: `suche_diskussionen()` (Titel-Treffer via `LIKE` — der Post-`LEFT JOIN` schützt nur den Content-Suchweg, nicht den Titel-Suchweg) und `zufaellige_diskussionen()` (die oben korrigierte Token-Modus-Nachlade). Beide auf `d.first_post_id IS NOT NULL` erweitert. Verifiziert live gegen die DB: `suche_diskussionen("Reibung als Existenz")` liefert die drei bekannten 0-Post-IDs 2050/2051/2052 nicht mehr, obwohl der Titel exakt passt; beide Funktionen liefern weiterhin normale, nicht-leere Ergebnismengen. Geändert: nur `flarum_api.py` (Docstrings + je eine WHERE-Klausel), keine Verhaltensänderung an `codewesen_umgekehrte_neugier.py` nötig.
 
+### Baustein 22 — LLM-Pool-Umschaltbar für codewesen-antwort-daniel (2026-07-10)
+
+Vorgeschichte (nicht Teil dieses Bausteins, siehe `19_llm_scheduler.md`): `codewesen-antwort-daniel` ist der einzige Dienst, der die Flarum-Post-Sperre umgeht (`erlaubt_trotz_sperre=True`) und garantiert/mit 72%-Würfel auf Daniels Posts antwortet — lief aber bislang zwangsläufig im `hintergrund`-Pool (Port 11436, `server="hintergrund"` im Postgres-Scheduler) und musste sich dort trotz `PRIO_HOCH` den einen Slot mit 15 anderen Agent-/Reaktions-Loops teilen. Daniel wollte diesen Dienst "so eigenständig machen, dass er allein trägt", statt fest im Code auf einen Pool zu wechseln aber lieber selbst per Knopf entscheiden können.
+
+Umgesetzt nach demselben Muster wie `budget_modus` bei `codewesen-umgekehrte-neugier` (Baustein 18): ein neuer Toggle-Button "LLM-Pool" im flarumstyler-Konfigurationspanel dieses Dienstes, zwei Werte:
+- `hintergrund` (Standard) — bisheriges Verhalten, unverändert.
+- `chat` — nutzt denselben exklusiven Pool wie die Live-Chats (Port 11435, `server="chat"` im Scheduler, `id_slot=0` am `hauhau_client.chat()`-Aufruf). Beide Teile müssen zusammen wechseln, sonst würde der Scheduler-Slot für einen Pool warten, während der eigentliche HTTP-Call an der jeweils anderen llama-Instanz landet.
+
+Geändert: `welt/weltkern_watchdog.py` (`SCHALTER_FELD_LABELS["codewesen-antwort-daniel"]["llm_pool"]`), `codewesen_antwort_auf_daniel.py` (`frage_llm()`/`bearbeite_post()`/`tick()` bekommen einen `pool`-Parameter durchgereicht, `main()` liest `dienst_konfiguration.meta["llm_pool"]` frisch bei jedem Tick — kein Neustart nötig, `codewesen-antwort-daniel` steht nicht in `BRAUCHT_NEUSTART_DIENSTE`, `braucht_neustart` im Bericht bestätigt `false`). Kein Code-Bezug zu `codewesen_reaktion.py` — bewusst nur dieser eine Dienst, kein Auftrag für die reaktion-Dienste.
+
+Getestet: `py_compile` beider Dateien fehlerfrei. `weltkern_watchdog.py` real ausgeführt, `/api/flarumstyler` zeigt `individualisierung_hinweis.schalter` korrekt befüllt (Label, Erklärung, zwei Optionen, Standard `hintergrund`). Playwright gegen die echte `flarumstyler.html` (Tab "Dienste" muss zuerst aktiviert werden, sonst `display:none`): Karte öffnet das Detail-Modal, "LLM-Pool"-Label vorhanden, beide Toggle-Buttons rendern mit korrekten Texten, Klick auf "Eigener Chat-Pool" markiert ihn aktiv, keine Konsolenfehler. Speichern über die UI selbst schlägt aktuell mit HTTP 500 fehl — das ist dieselbe, bereits in Baustein 18 dokumentierte Umgebungslücke (der auf Port 8787 laufende Node-Prozess läuft ohne die `EnvironmentFile`-Postgres-Zugangsdaten, betrifft jedes Konfigurations-Speichern über die Oberfläche, nicht nur dieses Feld — noch nicht angefasst, Neustart eines gemeinsam genutzten Ports braucht erst Daniels Okay). Round-Trip stattdessen per `dienst_konfiguration_setzen.py --meta '{"llm_pool":"chat"}'` verifiziert: Postgres-Schreibvorgang erfolgreich, `dienst_konfiguration.lade()` (derselbe Weg, den `main()` im Dienst pro Tick nutzt) liest `meta.llm_pool == "chat"` korrekt zurück, danach wieder auf `meta: {}` zurückgesetzt (Standardzustand, keine Live-Verhaltensänderung durch diese Session).
+
+Nicht angefasst: der eigentliche Umschalt-Entscheid (ob `codewesen-antwort-daniel` tatsächlich dauerhaft im `chat`-Pool laufen soll) — der Button existiert jetzt, gedrückt wird er von Daniel.
+
 ---
 
 ## Wiederaufnahme
@@ -461,7 +475,8 @@ Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schr
 /root/werkraum/
   flarum_post_sperre.py                          Baustein 1
   flarum_api.py                                   erweitert: Choke-Point + suche_diskussionen()
-  codewesen_antwort_auf_daniel.py                 erweitert: erlaubt_trotz_sperre=True
+  codewesen_antwort_auf_daniel.py                 erweitert: erlaubt_trotz_sperre=True; Baustein 22 (2026-07-10): pool-Parameter (hintergrund/chat) durch frage_llm()/bearbeite_post()/tick()/main()
+  welt/weltkern_watchdog.py                       Baustein 18: SCHALTER_FELD_LABELS eingefuehrt (budget_modus); Baustein 22 (2026-07-10): llm_pool-Schalter fuer codewesen-antwort-daniel
   codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert; Baustein 14: _naechster_unbenannter_container_name(); +beschreibung(); Baustein 21 (2026-07-10): sicherstelle_alles_container(), sichere_interesse_gegenteil(), lies_und_reflektiere() (aus widmungsritual() extrahiert), bearbeite()
   codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung; Baustein 11: vier Linsen; Baustein 12-17: Reihenfolge, Sichern entformalisiert, Token-Budget, kein Fruehausstieg, freie Post-Navigation, 500-Token-Fenster; Baustein 21 (2026-07-10): Interesse+Gegenteil-Container-Hook, _pflege_angebot() voll ausgebaut (lesen/bearbeiten/verschieben/kopieren/neuer_container)
   qualitaetstest_umgekehrte_neugier.py            neu nach Baustein 11: echter LLM-Aufruf statt Mock, fand 7 reale Parsing-Bugs

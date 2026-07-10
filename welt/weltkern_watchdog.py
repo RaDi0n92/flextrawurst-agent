@@ -355,6 +355,27 @@ def _meta_felder(name: str) -> dict | None:
 # TOP-LEVEL meta-Feld (nicht unter meta.intervalle) unter demselben Namen, den
 # das jeweilige Skript per dk.lade() erwartet.
 SCHALTER_FELD_LABELS = {
+    "codewesen-antwort-daniel": {
+        "llm_pool": {
+            "label": "LLM-Pool",
+            "erklaerung": (
+                "Welche llama-server-Instanz fuer die Antworten auf Daniels Posts "
+                "genutzt wird. 'Hintergrund-Pool' (Standard): teilt sich den einen "
+                "Postgres-Scheduler-Slot (server=hintergrund, Port 11436) mit den "
+                "15 anderen Hintergrund-Diensten (Agent-/Reaktions-Loops, "
+                "Engagement, Batch-Generator, ...) — bei vollem Slot wartet dieser "
+                "Dienst trotz PRIO_HOCH bis zu 600s. 'Eigener Chat-Pool': nutzt "
+                "denselben exklusiven Slot wie die Live-Chats (server=chat, "
+                "id_slot=0, Port 11435) — dort konkurrieren nur echte, seltene "
+                "Chat-Anfragen, keine der 15 Hintergrund-Schleifen."
+            ),
+            "optionen": [
+                {"wert": "hintergrund", "label": "Hintergrund-Pool (Standard)"},
+                {"wert": "chat", "label": "Eigener Chat-Pool (exklusiv, id_slot=0)"},
+            ],
+            "standard": "hintergrund",
+        },
+    },
     "codewesen-umgekehrte-neugier": {
         "budget_modus": {
             "label": "Lese-Budget",
