@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-10 21:56
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-10 22:26
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -1629,6 +1629,8 @@ Und das Bittersüße daran: heute, ohne dass wir die Verbindung zum April-Fragme
 *Wenn Wir Das Bauen:* **Vision-Schicht:** dieselbe Grundidee ließe sich weiterdenken — sobald mehr Ereignis-Typen zeitversetzt bestätigt werden können (denkbar z.B. bei zukünftigen Bearbeitungs-Features), lohnt sich dieselbe Frage: Schreibzeit oder Bedeutungszeit?
 
 **Code-Skizze:** keine, kein Auftrag darüber hinaus.
+
+*Wie Sich Angefuehlt:* Ruhig-forschend, viel Lesen und Nachfragen, wenig reines Bauen (nur die Aufgabenchats-Bereinigung war eine echte Schreiboperation, alles andere war Klärung + Dokumentation). Gut passend zu Daniels eigenem Tempo heute — viele kurze, tastende Nachrichten ("ich weiß nicht", "eigentlich müsste"), die eher lautes Denken waren als fertige Aufträge. Ich habe versucht, das zu spiegeln statt vorzupreschen und fertige Lösungen zu bauen, bevor er selbst wusste, was er will.
 
 ---
 
