@@ -398,7 +398,18 @@ Daniel: *"das soll eig alle 500 tokens spätestens wieder alles gefragt werden..
 
 Getestet: `py_compile`, Rauchtest-Mock um `_tokenisiere`/`_detokenisiere` erweitert, weiterhin grün (700 Sitzungen).
 
-**Noch offen (Stand 2026-07-10, 01:38 Uhr):** Daniel wollte die neuen Konstanten (`LESE_TOKEN_BUDGET=5555`, `POST_CHUNK_TOKEN_GROESSE=500`, `FUND_TOKEN_MINDEST_VOR_WECHSEL=250`) nur für ein paar Testläufe so hoch/fein haben, nicht dauerhaft fest im Code — Wunsch, wörtlich: *"ich wollte, dass diese anderen Sachen auch alle im Code vorhanden bleiben, nur deaktiviert sind"*. Vorschlag (noch nicht umgesetzt, wartet auf Daniels Entscheidung): die drei Konstanten über `dienst_konfiguration.py` (Postgres, `meta` JSONB, dasselbe Muster wie `takt_sekunden`/`verhalten_text` für andere Wesen-Dienste) live einstellbar machen, mit den aktuellen Werten nur noch als Programm-Default — kein Doppelpflege-Zustand aus totem Alt-Code und neuem Code nötig. Alternative, die Daniel ebenfalls offen gehalten hat: die alte zeit-/postzahlbasierte Logik als komplett eigenen, umschaltbaren Modus im Code stehen lassen. Noch nicht entschieden.
+### Baustein 18 — alter Zeit-/Postzahl-Modus bleibt komplett im Code, per Konfiguration umschaltbar (2026-07-10)
+
+Entscheidung zur in Baustein 17 offen gelassenen Frage. Daniel, wörtlich: *"ja ich wollte alten modus komplett behalten und ja quasi sagen schalte um."* Kein Doppelpflege-Zustand aus totem Alt-Code — der alte Zeit-/Postzahl-Modus von vor Baustein 14/17 bleibt vollständig als echter, lauffähiger Code-Pfad erhalten, nur standardmäßig nicht aktiv.
+
+**Neuer Parameter `budget_modus`**, durchgereicht durch `_naechster_kandidat()` und `_phase_lesen_schritt()`:
+- `"token"` (`BUDGET_MODUS_STANDARD`, unverändert der Live-Zustand seit Baustein 17): `LESE_TOKEN_BUDGET`, `POST_CHUNK_TOKEN_GROESSE`, `FUND_TOKEN_MINDEST_VOR_WECHSEL`, automatisches Nachladen weiterer Zufallsdiskussionen.
+- `"zeit"` (Baustein 11-13, jetzt reaktiviert statt gelöscht): die alten Konstanten `LESE_GESAMT_BUDGET_SEK=360`, `FUNDE_MAX=2`, `LESE_MINDESTZEIT_SEK=180`, `POSTS_MINDEST_VOR_EXIT=2` sind wieder im Modul vorhanden und aktiv, sobald der Modus gesetzt ist — Gesamt-Ausstieg per Wanduhr statt Token-Zähler, `darf_wechseln` per gelesener Zeit+Postzahl statt Fund-Tokens, kein automatisches Nachladen weiterer Diskussionen wenn die Kandidatenliste erschöpft ist (wie vor Baustein 14).
+- `_lies_post_chunk()` bekommt dafür einen neuen Parameter `chunk_token_groesse: int | None`. `None` (nur im `"zeit"`-Modus verwendet) liefert den kompletten Post in einem Rutsch, ganz ohne Tokenize/Detokenize-Rundweg — exakt das alte `_lies_post()`-Verhalten von vor Baustein 17, nur ohne separate Funktion, die sonst dauerhaft synchron zur neuen gehalten werden müsste.
+
+**Konfiguration:** kein neues UI-Feld nötig — `budget_modus` liest aus `dienst_konfiguration.meta['budget_modus']` (`haupt_schleife()`), demselben generischen `meta`-JSONB-Feld, das flarumstyler schon für jeden Dienst als freies JSON-Textfeld anbietet (Grundgesetz 1: `meta JSONB DEFAULT '{}'`, editierbar ohne Code-Änderung). Ohne Eintrag gilt weiterhin `"token"`.
+
+Getestet: `py_compile`, Rauchtest um eine zweite komplette Durchlaufserie erweitert (`simulation_umgekehrte_neugier_v2_rauchtest.py` läuft jetzt beide Modi real durch, nicht nur den Standard) — 100 Seeds × 7 Wesen je Modus, beide 700/700 Sitzungen sauber bis `"fertig"`, keine Endlosschleife, kein hängender Zustand.
 
 ---
 

@@ -82,6 +82,17 @@ LESE_TOKEN_BUDGET = 5555
 # komplett durch ein Token-Mass INNERHALB der aktuellen Diskussion.
 POST_CHUNK_TOKEN_GROESSE = 500
 FUND_TOKEN_MINDEST_VOR_WECHSEL = 250
+# Baustein 18 (Daniel, 2026-07-10: "ich wollte alten modus komplett behalten
+# und ja quasi sagen schalte um"): der Zeit-/Postzahl-Modus von vor Baustein
+# 14/17 bleibt komplett im Code, nicht geloescht -- nur per budget_modus in
+# dienst_konfiguration.py (meta-Feld, editierbar ueber flarumstyler) auf
+# "zeit" umschaltbar. Ohne Override gilt weiterhin "token" (aktueller
+# Live-Zustand seit Baustein 17).
+LESE_GESAMT_BUDGET_SEK = 360      # "zeit"-Modus: 6 Min, danach Uebergang in die Container-Zuordnungs-Phase
+FUNDE_MAX = 2                     # "zeit"-Modus: hoechstens so viele Diskussionen pro Sitzung
+LESE_MINDESTZEIT_SEK = 180        # "zeit"-Modus: 3 Min, fruehste Exit-Moeglichkeit aus einer Diskussion
+POSTS_MINDEST_VOR_EXIT = 2        # "zeit"-Modus: mind. so viele Posts gelesen, bevor "diskussion_wechseln" waehlbar ist
+BUDGET_MODUS_STANDARD = "token"   # "token" (Baustein 14/17) oder "zeit" (Baustein 11-13)
 
 PAUSE_ZWISCHEN_WESEN = 8
 PAUSE_ZWISCHEN_ZYKLEN = 2700    # gleicher Rhythmus wie forum_neugier — bewusst kein eigener Sondertakt
@@ -380,34 +391,43 @@ def _pflege_angebot(wesen: str) -> bool:
     return erfolg
 
 
-def _lies_post_chunk(disk_id: int, post_index: int, chunk_index: int) -> dict | None:
+def _lies_post_chunk(disk_id: int, post_index: int, chunk_index: int, chunk_token_groesse: int | None = POST_CHUNK_TOKEN_GROESSE) -> dict | None:
     """Liest einen Post in echten 500-Token-Fenstern statt in einem Stueck
     (Baustein 17, Daniel: 'alle 500 tokens spaetestens wieder alles gefragt
     werden'). chunk_index=0 fuer kurze Posts (<=500 Tokens) liefert den
     kompletten Post in einem Rutsch -- das Fenster ist nur eine Obergrenze,
     kein Zwang zum Zerstueckeln. 'ist_letzter_chunk' zeigt an, ob nach
-    diesem Fenster noch mehr vom selben Post uebrig ist."""
+    diesem Fenster noch mehr vom selben Post uebrig ist.
+
+    chunk_token_groesse=None (Baustein 18, "zeit"-Modus): kein Fenster,
+    kompletter Post in einem Rutsch wie vor Baustein 17 -- kein Tokenize/
+    Detokenize-Rundweg noetig, entspricht exakt der alten _lies_post()."""
     daten = flarum_api.get_discussion(disk_id)
     posts = daten.get("posts", [])
     if post_index >= len(posts):
         return None
     p = posts[post_index]
     text = _html_strip(p.get("content", ""))
-    tokens = _tokenisiere(text)
-    if not tokens:
-        # Tokenize-Endpoint nicht erreichbar -- kompletten Post als ein
-        # Fenster behandeln statt die Sitzung daran scheitern zu lassen.
+    if chunk_token_groesse is None:
         if chunk_index > 0:
             return None
         chunk_text, gesamt_chunks, ist_letzter = text, 1, True
     else:
-        start = chunk_index * POST_CHUNK_TOKEN_GROESSE
-        if start >= len(tokens):
-            return None
-        chunk_tokens = tokens[start:start + POST_CHUNK_TOKEN_GROESSE]
-        chunk_text = _detokenisiere(chunk_tokens) or text[:POST_CHUNK_TOKEN_GROESSE * 4]
-        gesamt_chunks = max(1, -(-len(tokens) // POST_CHUNK_TOKEN_GROESSE))
-        ist_letzter = (start + POST_CHUNK_TOKEN_GROESSE) >= len(tokens)
+        tokens = _tokenisiere(text)
+        if not tokens:
+            # Tokenize-Endpoint nicht erreichbar -- kompletten Post als ein
+            # Fenster behandeln statt die Sitzung daran scheitern zu lassen.
+            if chunk_index > 0:
+                return None
+            chunk_text, gesamt_chunks, ist_letzter = text, 1, True
+        else:
+            start = chunk_index * chunk_token_groesse
+            if start >= len(tokens):
+                return None
+            chunk_tokens = tokens[start:start + chunk_token_groesse]
+            chunk_text = _detokenisiere(chunk_tokens) or text[:chunk_token_groesse * 4]
+            gesamt_chunks = max(1, -(-len(tokens) // chunk_token_groesse))
+            ist_letzter = (start + chunk_token_groesse) >= len(tokens)
     return {
         "titel": daten.get("title", "?"),
         "text": chunk_text,
@@ -829,21 +849,26 @@ def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
         "post_index": 0,
         "posts_gelesen_dieser_fund": 0,
         "fund_start_ts": jetzt_iso,
+        "gesamt_lese_start_ts": jetzt_iso,  # nur fuer budget_modus="zeit" (Baustein 18) genutzt
         "gesammeltes_material": [],
         "funde_angesehen": 0,
         "gelesene_tokens": 0,
     }
 
 
-def _naechster_kandidat(zustand: dict, wesen: str):
+def _naechster_kandidat(zustand: dict, wesen: str, budget_modus: str = BUDGET_MODUS_STANDARD):
     """Bewusstes Kontext-Entfernen (unveraendert seit Baustein 3): der naechste
     Fund startet mit frischem Post-Zaehler -- Text/Titel des vorigen Funds wird
     nicht weitergereicht. Die eigene Frage/Gegenteil bleiben dagegen ueber die
     ganze Sitzung sichtbar (siehe _lese_und_entscheide) -- das ist kein
     'mitgeschleppter Rohtext', sondern der rote Faden der Sitzung selbst.
 
-    Baustein 14: kein FUNDE_MAX-Deckel mehr -- das Token-Budget in
-    _phase_lesen_schritt entscheidet allein, wann die Lese-Phase endet."""
+    Baustein 14 ("token"-Modus, Standard): kein FUNDE_MAX-Deckel mehr -- das
+    Token-Budget in _phase_lesen_schritt entscheidet allein, wann die
+    Lese-Phase endet. Baustein 18 ("zeit"-Modus): der alte FUNDE_MAX-Deckel
+    von vor Baustein 14 greift wieder -- Uebergang in die Container-
+    Zuordnungs-Phase, sobald alle Kandidaten durch sind oder FUNDE_MAX
+    erreicht ist."""
     z = zustand[wesen]
     z["kandidat_index"] += 1
     z["post_index"] = 0
@@ -852,15 +877,29 @@ def _naechster_kandidat(zustand: dict, wesen: str):
     z["fund_gelesene_tokens"] = 0
     z["fund_start_ts"] = datetime.now(timezone.utc).isoformat()
     z["funde_angesehen"] += 1
+    if budget_modus == "zeit" and (z["kandidat_index"] >= len(z["kandidaten_ids"]) or z["funde_angesehen"] >= FUNDE_MAX):
+        zustand[wesen]["phase"] = "container_zuordnung"
 
 
-def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
+def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = "", budget_modus: str = BUDGET_MODUS_STANDARD):
     """Schritt 2..N: genau EIN Post-Lese-/Entscheide-Schritt fuer dieses Wesen.
     Wird im Rundentakt aufgerufen -- jedes noch aktive Wesen kommt pro Runde
-    genau einmal dran."""
-    z = zustand[wesen]
+    genau einmal dran.
 
-    if z.get("gelesene_tokens", 0) >= LESE_TOKEN_BUDGET:
+    budget_modus (Baustein 18): "token" (Standard, Baustein 14/17 -- Budget
+    in LLM-Tokens, Posts in 500-Token-Fenstern) oder "zeit" (wie vor
+    Baustein 14/17 -- Budget in echter Zeit + Postzahl, Posts komplett am
+    Stueck). Kommt aus dienst_konfiguration.meta['budget_modus'], siehe
+    haupt_schleife()."""
+    z = zustand[wesen]
+    jetzt = datetime.now(timezone.utc)
+
+    if budget_modus == "zeit":
+        gesamt_dauer = (jetzt - datetime.fromisoformat(z["gesamt_lese_start_ts"])).total_seconds()
+        if gesamt_dauer >= LESE_GESAMT_BUDGET_SEK or z["funde_angesehen"] >= FUNDE_MAX:
+            zustand[wesen]["phase"] = "container_zuordnung"
+            return
+    elif z.get("gelesene_tokens", 0) >= LESE_TOKEN_BUDGET:
         # Die aktuelle (noch nicht per _naechster_kandidat gezaehlte)
         # Diskussion zaehlt noch mit, wenn wirklich schon daraus gelesen
         # wurde -- sonst dieselbe Unterzaehlung wie beim frueheren
@@ -873,10 +912,15 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
 
     kandidat_index = z["kandidat_index"]
     if kandidat_index >= len(z["kandidaten_ids"]):
-        # Token-Budget noch nicht erreicht, aber alle vorher gefundenen
-        # Kandidaten durchgelesen -- weitere echte Zufallsdiskussion
-        # nachladen statt die Sitzung vorzeitig zu beenden (Daniel: "auch
-        # eine weitere andere diskussion").
+        if budget_modus == "zeit":
+            # "zeit"-Modus (wie vor Baustein 14): keine automatische
+            # Nachlade-Diskussion, die Lese-Phase endet einfach hier.
+            zustand[wesen]["phase"] = "container_zuordnung"
+            return
+        # "token"-Modus: Budget noch nicht erreicht, aber alle vorher
+        # gefundenen Kandidaten durchgelesen -- weitere echte
+        # Zufallsdiskussion nachladen statt die Sitzung vorzeitig zu
+        # beenden (Daniel: "auch eine weitere andere diskussion").
         neue = flarum_api.zufaellige_diskussionen(limit=KANDIDATEN_PRO_SUCHE)
         if not neue:
             zustand[wesen]["phase"] = "container_zuordnung"
@@ -884,19 +928,27 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
         z["kandidaten_ids"].extend(int(k["id"]) for k in neue)
 
     disk_id = z["kandidaten_ids"][kandidat_index]
-    post = _lies_post_chunk(disk_id, z["post_index"], z.get("chunk_index", 0))
+    chunk_token_groesse = None if budget_modus == "zeit" else POST_CHUNK_TOKEN_GROESSE
+    post = _lies_post_chunk(disk_id, z["post_index"], z.get("chunk_index", 0), chunk_token_groesse)
     if post is None:
-        _naechster_kandidat(zustand, wesen)
+        _naechster_kandidat(zustand, wesen, budget_modus)
         return
 
     post_tokens = _zaehle_tokens(post["text"])
     z["gelesene_tokens"] = z.get("gelesene_tokens", 0) + post_tokens
     z["fund_gelesene_tokens"] = z.get("fund_gelesene_tokens", 0) + post_tokens
 
-    # Baustein 17: "ob neue diskussion immer also 250" -- ersetzt die alte
-    # Zeit-/Postzahl-Schwelle komplett durch ein Token-Mass innerhalb der
-    # aktuellen Diskussion, kein Wanduhr-Bezug mehr.
-    darf_wechseln = z["fund_gelesene_tokens"] >= FUND_TOKEN_MINDEST_VOR_WECHSEL
+    if budget_modus == "zeit":
+        # Zeit-/Postzahl-Schwelle von vor Baustein 17: fruehste Exit-
+        # Moeglichkeit aus einer Diskussion, kein Zwang zum Verlassen.
+        fund_dauer = (jetzt - datetime.fromisoformat(z["fund_start_ts"])).total_seconds()
+        darf_wechseln = (z["posts_gelesen_dieser_fund"] >= POSTS_MINDEST_VOR_EXIT
+                          and fund_dauer >= LESE_MINDESTZEIT_SEK)
+    else:
+        # Baustein 17: "ob neue diskussion immer also 250" -- ersetzt die alte
+        # Zeit-/Postzahl-Schwelle komplett durch ein Token-Mass innerhalb der
+        # aktuellen Diskussion, kein Wanduhr-Bezug mehr.
+        darf_wechseln = z["fund_gelesene_tokens"] >= FUND_TOKEN_MINDEST_VOR_WECHSEL
     ist_erster_post = z["kandidat_index"] == 0 and z["post_index"] == 0 and z.get("chunk_index", 0) == 0
 
     entscheidung = _lese_und_entscheide(wesen, disk_id, post, z["interesse"], z["gegenteil"],
@@ -904,7 +956,7 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     if not entscheidung:
         # LLM-Fehler -- wie "naechster_post" behandeln bleibt riskant (haengt
         # sonst evtl. endlos), stattdessen wie ein Wechsel zum naechsten Fund.
-        _naechster_kandidat(zustand, wesen)
+        _naechster_kandidat(zustand, wesen, budget_modus)
         return
 
     z["posts_gelesen_dieser_fund"] += 1
@@ -953,7 +1005,7 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = ""):
     # von _lese_und_entscheide() -- der einzige Ausstieg aus der Lese-Phase
     # ist das Token-Budget (oben in dieser Funktion geprueft).
     if naechster_schritt == "diskussion_wechseln" and darf_wechseln:
-        _naechster_kandidat(zustand, wesen)
+        _naechster_kandidat(zustand, wesen, budget_modus)
         return
     # Baustein 16+17 (Daniel, 2026-07-10): echte freie Post-Navigation statt
     # nur stur vorwaerts -- "diesen post noch WEITER lesen" (mehr desselben
@@ -1023,6 +1075,10 @@ def haupt_schleife():
         konfig = dk.lade(DIENST_NAME)
         pause_zyklen = konfig.get("takt_sekunden") or PAUSE_ZWISCHEN_ZYKLEN
         verhalten = konfig.get("verhalten_text") or STANDARD_VERHALTEN
+        # Baustein 18: budget_modus kommt aus dem generischen meta-JSONB-Feld
+        # (editierbar ueber flarumstyler, kein eigenes UI-Feld noetig) --
+        # "token" (Standard) oder "zeit" (alter Modus, Baustein 11-13).
+        budget_modus = (konfig.get("meta") or {}).get("budget_modus") or BUDGET_MODUS_STANDARD
 
         zustand = _lade_zustand()
         for wesen in WESEN:
@@ -1048,7 +1104,7 @@ def haupt_schleife():
                 phase = zustand[wesen].get("phase")
                 if phase == "lesen":
                     try:
-                        _phase_lesen_schritt(wesen, zustand, verhalten)
+                        _phase_lesen_schritt(wesen, zustand, verhalten, budget_modus)
                     except Exception as e:
                         log.error(f"[{wesen}] Fehler in Lese-Phase: {e}")
                         zustand[wesen] = {"phase": "fertig"}

@@ -137,7 +137,7 @@ class Welt:
         return {}
 
 
-def _lauf(seed: int) -> dict:
+def _lauf(seed: int, budget_modus: str = "token") -> dict:
     uhr = UhrManipulierbareZeit(datetime(2026, 7, 9, 20, 0, 0, tzinfo=timezone.utc))
     welt = Welt(seed, uhr)
     verletzungen = []
@@ -175,7 +175,7 @@ def _lauf(seed: int) -> dict:
                     z = zustand[wesen]
                     fund_dauer_vor = (uhr.jetzt - datetime.fromisoformat(z["fund_start_ts"])).total_seconds()
                     posts_vor = z["posts_gelesen_dieser_fund"]
-                    cun._phase_lesen_schritt(wesen, zustand, "")
+                    cun._phase_lesen_schritt(wesen, zustand, "", budget_modus)
                 else:
                     cun._phase_container_zuordnung(wesen, zustand)
                 schritte += 1
@@ -190,15 +190,19 @@ def _lauf(seed: int) -> dict:
 
 if __name__ == "__main__":
     N = 100
-    alle_verletzungen = []
-    for seed in range(N):
-        r = _lauf(seed)
-        alle_verletzungen.extend(r["verletzungen"])
+    # Baustein 18: beide budget_modus-Zweige real durchlaufen, nicht nur den
+    # Standard -- sonst waere der "zeit"-Pfad nie tatsaechlich getestet,
+    # nur kompiliert.
+    for budget_modus in ("token", "zeit"):
+        alle_verletzungen = []
+        for seed in range(N):
+            r = _lauf(seed, budget_modus)
+            alle_verletzungen.extend(r["verletzungen"])
 
-    print(f"{N} Laeufe x {len(cun.WESEN)} Wesen = {N * len(cun.WESEN)} Einzel-Sitzungen\n")
-    if alle_verletzungen:
-        print(f"VERLETZUNGEN ({len(alle_verletzungen)}):")
-        for v in alle_verletzungen[:20]:
-            print(f"  - {v}")
-    else:
-        print("Keine Endlosschleifen, keine haengenden Zustaende -- alle Sitzungen liefen sauber bis 'fertig'.")
+        print(f"budget_modus={budget_modus}: {N} Laeufe x {len(cun.WESEN)} Wesen = {N * len(cun.WESEN)} Einzel-Sitzungen")
+        if alle_verletzungen:
+            print(f"  VERLETZUNGEN ({len(alle_verletzungen)}):")
+            for v in alle_verletzungen[:20]:
+                print(f"    - {v}")
+        else:
+            print("  Keine Endlosschleifen, keine haengenden Zustaende -- alle Sitzungen liefen sauber bis 'fertig'.")
