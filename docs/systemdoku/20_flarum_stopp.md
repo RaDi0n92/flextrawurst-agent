@@ -472,6 +472,8 @@ Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schr
   codewesen/<wesen>/flarum_stopp_protokoll.jsonl  Baustein 4: pro-Wesen-Protokoll
   codewesen/_flarum_post_sperre.json              Baustein 1: Sperr-Zustand
   docs/2026-07-09_flarum_stopp_bericht.md         voller Bau-Bericht mit Testprotokollen
+  docs/2026-07-10_lese_logik_kindgerecht_erklaert.md  kompletter Lese-Flow Schritt fuer Schritt (Interesse, Gegenteil, Chunks, 4 Linsen, Mitnahme, Container-Zuordnung)
+  docs/2026-07-10_such_logik_bis_ins_detail.md    Suche bis ins Detail: suche_diskussionen(), first_post_id-Fund/Fix, stoeber_pool(), --zwinge-leere-suche
 
 /etc/systemd/system/
   codewesen-umgekehrte-neugier.service            Baustein 3, angelegt, nicht enabled
