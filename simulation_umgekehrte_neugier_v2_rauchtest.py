@@ -85,6 +85,11 @@ class Welt:
             ziel = self.rng.choice(["sortiert", "unsortiert", ""])
             return (f"BERUEHRT: b-{self.seed}\nTRAEGT: t-{self.seed}\n"
                     f"CONTAINER: {ziel}\nBEGRUENDUNG: passt-{self.seed}\nTYP: {typ}")
+        if "PFAD:" in system:
+            # Baustein 19: _frage_stoeber_trio() -- absichtlich oft "ablehnen",
+            # damit der Rauchtest auch den 2x-Ablehnung-dann-random-Pfad durchlaeuft.
+            optionen = ["frueh", "mitte", "spaet", "ablehnen", "ablehnen"]
+            return f"PFAD: {self.rng.choice(optionen)}"
         return None
 
     def suche_diskussionen(self, begriff, limit=8):
@@ -96,6 +101,13 @@ class Welt:
     def zufaellige_diskussionen(self, limit=8):
         ids = self.rng.sample(list(self.diskussionen.keys()), min(limit, len(self.diskussionen)))
         return [{"id": i, "title": f"D{i}"} for i in ids]
+
+    def stoeber_pool(self, anzahl_random=8):
+        ids = self.rng.sample(list(self.diskussionen.keys()), min(anzahl_random + 3, len(self.diskussionen)))
+        pool = [{"id": i, "title": f"D{i}", "herkunft": "random"} for i in ids[:anzahl_random]]
+        for i, herkunft in zip(ids[anzahl_random:], ("frueh", "mitte", "spaet")):
+            pool.append({"id": i, "title": f"D{i}", "herkunft": herkunft})
+        return pool
 
     def get_discussion(self, disk_id):
         n = self.diskussionen.get(disk_id, 3)
@@ -153,6 +165,7 @@ def _lauf(seed: int, budget_modus: str = "token") -> dict:
          mock.patch.object(cun, "_detokenisiere", side_effect=lambda tokens: "x" * (len(tokens) * 4)), \
          mock.patch.object(cun.flarum_api, "suche_diskussionen", side_effect=welt.suche_diskussionen), \
          mock.patch.object(cun.flarum_api, "zufaellige_diskussionen", side_effect=welt.zufaellige_diskussionen), \
+         mock.patch.object(cun.flarum_api, "stoeber_pool", side_effect=welt.stoeber_pool), \
          mock.patch.object(cun.flarum_api, "get_discussion", side_effect=welt.get_discussion), \
          mock.patch.object(cun.container, "sichere", side_effect=welt.container_sichere), \
          mock.patch.object(cun.container, "liste", side_effect=welt.container_liste), \

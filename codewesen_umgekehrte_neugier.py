@@ -403,6 +403,47 @@ def _pflege_angebot(wesen: str) -> bool:
     return erfolg
 
 
+def _frage_stoeber_trio(wesen: str, pool: list[dict], versuch_nr: int) -> dict | None:
+    """Baustein 19 (Daniel, 2026-07-10, woertlich): "bevor es durch Ablehnen vor dem
+    ersten Lesen einfach irgendwann random in Flarum versenkt wird" sollen die drei
+    zeitlich gezielten Diskussionen aus flarum_api.stoeber_pool() (frueh/mitte/spaet)
+    als benannte Wahl angeboten werden -- statt den Pool still automatisch zu
+    uebernehmen wie zuvor (Baustein 10). Wird bis zu zweimal aufgerufen (versuch_nr
+    1 und 2, "das dann auch alles nochmal als letzter dreier Angebot geben") --
+    lehnt das Wesen auch beim zweiten Mal ab (oder antwortet nicht eindeutig),
+    zieht der Aufrufer automatisch aus dem "random"-Teil des Pools, ohne weitere
+    Frage ("option 4 der Ablehnung die natuerlich dann zu random fuehrt")."""
+    zeit_optionen = {p["herkunft"]: p for p in pool if p["herkunft"] in ("frueh", "mitte", "spaet")}
+    if not zeit_optionen:
+        return None  # z.B. Flarum-Historie noch zu kurz fuer eine sinnvolle zeitliche Streuung
+    beschriftung = {
+        "frueh": "aus den ersten Wochen von Flarum",
+        "mitte": "etwa aus der Mitte der bisherigen Flarum-Geschichte",
+        "spaet": "aus den letzten Wochen",
+    }
+    zeilen = "\n".join(f"{h.upper()}: '{d['title']}' ({beschriftung[h]})" for h, d in zeit_optionen.items())
+    optionen = list(zeit_optionen.keys()) + ["ablehnen"]
+    zweite_runde_hinweis = (
+        "\nDas ist die zweite und letzte Runde mit diesem Angebot -- lehnst du wieder ab, wird "
+        "automatisch eine zufaellige Diskussion gewaehlt, ohne weitere Frage.\n"
+        if versuch_nr == 2 else ""
+    )
+    system = (
+        f"Du bist {wesen}. Deine Suche eben hat nichts gefunden (auch nicht zum Pflegen). Drei "
+        f"Diskussionen aus verschiedenen Zeitabschnitten der ganzen Flarum-Geschichte stehen zur "
+        f"Wahl, falls dich eine davon reizt:\n\n{zeilen}\n\n"
+        "Du kannst dich fuer eine entscheiden, oder auch alle drei ablehnen -- beides ist in "
+        "Ordnung, kein Druck.\n" + zweite_runde_hinweis +
+        f"\nAntworte GENAU so, nichts davor, nichts danach:\nPFAD: <{'|'.join(optionen)}>"
+    )
+    antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=40, timeout=60.0)
+    if not antwort:
+        return None
+    m = re.search(r"PFAD:\s*(\w+)", antwort, re.IGNORECASE)
+    pfad = m.group(1).strip().lower() if m else "ablehnen"
+    return zeit_optionen.get(pfad)
+
+
 def _lies_post_chunk(disk_id: int, post_index: int, chunk_index: int, chunk_token_groesse: int | None = POST_CHUNK_TOKEN_GROESSE) -> dict | None:
     """Liest einen Post in echten 500-Token-Fenstern statt in einem Stueck
     (Baustein 17, Daniel: 'alle 500 tokens spaetestens wieder alles gefragt
@@ -826,18 +867,51 @@ def _phase_interesse(wesen: str, zustand: dict, verhalten: str = ""):
             )
             zustand[wesen] = {"phase": "fertig"}
             return
-        # Garantierter dritter Weg: Container sicherstellen, dann echtes Stoebern
-        # (flarum_api.zufaellige_diskussionen() -- live aus der DB, keine
-        # angenommene ID-Spanne, siehe Docstring dort).
+        # Garantierter dritter Weg (Baustein 19, 2026-07-10): Container sicherstellen,
+        # dann Stoebern-Pool bauen (8 random + frueh/mitte/spaet, flarum_api.
+        # stoeber_pool()) und frueh/mitte/spaet als benannte Wahl anbieten -- bis zu
+        # zwei Runden -- statt den Pool still automatisch zu uebernehmen wie zuvor
+        # (Baustein 10). Erst nach zweifacher Ablehnung automatischer Zufallsgriff.
         container.sicherstelle_container(wesen)
-        kandidaten = flarum_api.zufaellige_diskussionen(limit=KANDIDATEN_PRO_SUCHE)
+        pool = flarum_api.stoeber_pool(anzahl_random=KANDIDATEN_PRO_SUCHE)
+        gewaehlt = None
+        for versuch in (1, 2):
+            gewaehlt = _frage_stoeber_trio(wesen, pool, versuch)
+            if gewaehlt:
+                break
+        if gewaehlt:
+            protokoll.schreibe(
+                typ="neugier_entscheidung", wesen=wesen,
+                text=f"{wesen}: keine Treffer fuer '{interesse['interesse']}' (auch nicht uebersetzt), "
+                     f"hat sich bewusst fuer '{gewaehlt['title']}' ({gewaehlt['herkunft']}) aus dem "
+                     f"Stoebern-Angebot entschieden.",
+                meta={"interesse": interesse["interesse"], "alternativen_versucht": alternativen_versucht,
+                      "discussion_id": gewaehlt["id"], "herkunft": gewaehlt["herkunft"]},
+            )
+        else:
+            zufalls_topf = [p for p in pool if p["herkunft"] == "random"]
+            gewaehlt = random.choice(zufalls_topf or pool) if (zufalls_topf or pool) else None
+            protokoll.schreibe(
+                typ="neugier_entscheidung", wesen=wesen,
+                text=f"{wesen}: keine Treffer fuer '{interesse['interesse']}' (auch nicht uebersetzt), "
+                     f"auch das Stoebern-Angebot zweimal abgelehnt -- automatisch zufaellig "
+                     f"{('%r' % gewaehlt['title']) if gewaehlt else 'nichts (Pool leer)'} gewaehlt.",
+                meta={"interesse": interesse["interesse"], "alternativen_versucht": alternativen_versucht},
+            )
+        if not gewaehlt and not pool:
+            # Aeusserst unwahrscheinlicher Rand: Flarum-DB gerade leer/nicht erreichbar.
+            # Ehrlich beenden statt mit leerer kandidaten_ids in die Lese-Phase zu gehen.
+            protokoll.schreibe(
+                typ="neugier_session_ende", wesen=wesen,
+                text=f"{wesen}: kein Stoebern-Pool verfuegbar, Sitzung ohne Ergebnis beendet.",
+                dauer_sekunden=(datetime.now(timezone.utc) - datetime.fromisoformat(start_ts)).total_seconds(),
+            )
+            zustand[wesen] = {"phase": "fertig"}
+            return
+        # Gewaehlte Diskussion zuerst, Rest des schon geladenen Pools als natuerlicher
+        # Nachschub (nicht verloren, falls die gewaehlte schnell durchgelesen ist).
+        kandidaten = [gewaehlt] + [p for p in pool if p["id"] != gewaehlt["id"]]
         stoebern = True
-        protokoll.schreibe(
-            typ="neugier_entscheidung", wesen=wesen,
-            text=f"{wesen}: keine Treffer fuer '{interesse['interesse']}' (auch nicht uebersetzt), "
-                 f"geht stattdessen zufaellig stoebern.",
-            meta={"interesse": interesse["interesse"], "alternativen_versucht": alternativen_versucht},
-        )
 
     if not stoebern and suchbegriff_verwendet != interesse["interesse"]:
         log.info(f"[{wesen}] Suchbegriff-Uebersetzung: '{interesse['interesse']}' -> "

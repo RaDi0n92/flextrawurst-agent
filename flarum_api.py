@@ -12,6 +12,7 @@ import json
 import os
 import pymysql
 import requests
+from datetime import timedelta
 from pathlib import Path
 from typing import Optional
 
@@ -298,6 +299,64 @@ def zufaellige_diskussionen(limit: int = 8) -> list:
         rows = cur.fetchall()
     conn.close()
     return [dict(r) for r in rows]
+
+
+def stoeber_pool(anzahl_random: int = 8) -> list[dict]:
+    """Baustein 19 (Daniel, 2026-07-10, woertlich): "11 diskussionen vorher schon
+    ausgewaehlt werden davon 8 random und eine bewusst innerhalb der ersten 7
+    wochen von flarum und eine etwa genau zum mittleren zeitpunkt und eine
+    bewusst innerhalb der letzten 2 wochen." Statt reinem ORDER BY RAND()
+    (zufaellige_diskussionen() oben) ein Pool mit garantierter zeitlicher
+    Streuung ueber die GESAMTE bisherige Flarum-Geschichte, nicht nur ueber
+    das, was der Zufall zufaellig trifft.
+
+    Jeder Eintrag traegt zusaetzlich "herkunft" (random|frueh|mitte|spaet) --
+    codewesen_umgekehrte_neugier.py nutzt frueh/mitte/spaet als benannte
+    Wahlmoeglichkeiten (Baustein 19-Trioangebot) und random als den Topf, aus
+    dem bei zweifacher Ablehnung automatisch gezogen wird."""
+    conn = pymysql.connect(**DB_CONFIG)
+    with conn.cursor() as cur:
+        cur.execute("""
+            SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                   u.username AS last_poster
+            FROM discussions d
+            LEFT JOIN users u ON u.id = d.last_posted_user_id
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+            ORDER BY RAND()
+            LIMIT %s
+        """, (anzahl_random,))
+        pool = [dict(r, herkunft="random") for r in cur.fetchall()]
+        gesehene_ids = {p["id"] for p in pool}
+
+        cur.execute("SELECT MIN(created_at) AS von, MAX(created_at) AS bis FROM discussions "
+                     "WHERE hidden_at IS NULL AND is_approved = 1")
+        spanne = cur.fetchone()
+        von, bis = spanne["von"], spanne["bis"]
+
+        if von and bis and von < bis:
+            mitte = von + (bis - von) / 2
+            fenster = (
+                ("frueh", von, min(von + timedelta(weeks=7), bis)),
+                ("mitte", max(mitte - timedelta(days=3), von), min(mitte + timedelta(days=3), bis)),
+                ("spaet", max(bis - timedelta(weeks=2), von), bis),
+            )
+            for herkunft, fenster_von, fenster_bis in fenster:
+                cur.execute("""
+                    SELECT d.id, d.title, d.comment_count, d.last_posted_at,
+                           u.username AS last_poster
+                    FROM discussions d
+                    LEFT JOIN users u ON u.id = d.last_posted_user_id
+                    WHERE d.hidden_at IS NULL AND d.is_approved = 1
+                      AND d.created_at BETWEEN %s AND %s
+                    ORDER BY RAND()
+                    LIMIT 1
+                """, (fenster_von, fenster_bis))
+                row = cur.fetchone()
+                if row and row["id"] not in gesehene_ids:
+                    pool.append(dict(row, herkunft=herkunft))
+                    gesehene_ids.add(row["id"])
+    conn.close()
+    return pool
 
 
 # ── Schreiben via REST API ─────────────────────────────────────────────────────
