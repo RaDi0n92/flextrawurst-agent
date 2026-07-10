@@ -475,6 +475,40 @@ Nebenbefund beim Draufschauen auf `dak+gord-system`s Container-Liste, nicht Teil
 
 ---
 
+### Baustein 24 — Wesen-Auswahl-Dropdown fuer codewesen-umgekehrte-neugier (2026-07-10)
+
+Daniel wollte urspruenglich einen Dropdown fuer `codewesen-antwort-daniel` ("alle Wesen
+zeitversetzt losschicken" vs. "jedes Wesen einzeln picken") — nach Rueckfrage stellte
+sich heraus, das war eine Verwechslung zwischen drei parallelen Sessions, gemeint war
+`codewesen-umgekehrte-neugier`. Passt inhaltlich auch besser: `haupt_schleife()` laesst
+schon immer alle 7 Wesen zeitversetzt in derselben Runde laufen
+(`time.sleep(PAUSE_ZWISCHEN_WESEN)` zwischen jedem Wesen, sichtbar im Tab
+"Live-Aktivitaet") — genau das "so wie der Styler es eh weiss".
+
+Neu: drittes Schalter-Feld `wesen_filter` (nach demselben Toggle-Button-Muster wie
+`budget_modus`/`llm_pool`, siehe Baustein 18/22) mit 8 Optionen — `alle` (Standard,
+unveraendertes Verhalten) oder genau einer der 7 Wesen-Namen. In `haupt_schleife()`
+wird `aktive_wesen = [wesen_filter] if wesen_filter in WESEN else WESEN` einmal pro
+Zyklus berechnet und ersetzt `WESEN` in allen drei Verarbeitungsstellen (Interesse-
+Runde, Lese-/Container-Runde, End-Reset) — die `zustand.setdefault()`-Initialisierung
+bleibt bewusst ueber alle 7 Wesen, damit gefilterte Wesen ihren letzten Zustand nicht
+verlieren, wenn der Filter spaeter wieder auf "alle" oder ein anderes Wesen wechselt.
+
+Geaendert: `codewesen_umgekehrte_neugier.py` (`haupt_schleife()`), `welt/weltkern_watchdog.py`
+(`SCHALTER_FELD_LABELS["codewesen-umgekehrte-neugier"]["wesen_filter"]`).
+
+Getestet: `py_compile` beider Dateien fehlerfrei. `weltkern_watchdog.py` real ausgefuehrt,
+`/api/flarumstyler` zeigt beide Schalter-Felder (`budget_modus` + `wesen_filter`, 8
+Optionen) korrekt befuellt. Playwright gegen die echte Oberflaeche (jetzt ueber den
+korrekt per `systemd` laufenden Prozess aus Baustein 23, kein 500 mehr): Detail-Modal
+zeigt "Wesen-Auswahl", alle 8 Buttons rendern mit korrekten Labels, Klick auf "nur
+jumpa" markiert ihn aktiv, Speichern-Rundlauf per HTTP 200 bestaetigt
+(`meta.wesen_filter: "jumpa"` korrekt in Postgres gelandet). Danach ueber
+`dienst_konfiguration_setzen.py` explizit wieder auf den Standardzustand
+(`meta: {"budget_modus": "token"}`, kein `wesen_filter`-Key) zurueckgesetzt — keine
+Live-Verhaltensaenderung durch diese Session, der naechste Zyklus laeuft weiterhin mit
+allen 7 Wesen.
+
 ## Wiederaufnahme
 
 Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schreibt automatisch einen `sperre_aufgehoben`-Protokolleintrag inkl. Sperrdauer). Der umgedrehte Neugier-Dienst (Baustein 3) läuft davon unabhängig weiter oder wird unabhängig gestartet/gestoppt — er schreibt ohnehin nie nach Flarum, seine Existenz ist keine Voraussetzung für die Sperre und umgekehrt.

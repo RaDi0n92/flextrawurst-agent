@@ -1257,14 +1257,21 @@ def haupt_schleife():
         # (editierbar ueber flarumstyler, kein eigenes UI-Feld noetig) --
         # "token" (Standard) oder "zeit" (alter Modus, Baustein 11-13).
         budget_modus = (konfig.get("meta") or {}).get("budget_modus") or BUDGET_MODUS_STANDARD
+        # Baustein 24 (Daniel, 2026-07-10): wesen_filter -- "alle" (Standard,
+        # bisheriges Verhalten, alle 7 Wesen zeitversetzt in derselben Runde,
+        # sichtbar in der Live-Aktivitaet) oder ein einzelner Wesen-Name, um
+        # gezielt nur dieses eine Wesen laufen zu lassen (z.B. zum Beobachten/
+        # Testen, ohne dass die anderen 6 den LLM-Slot mitbeanspruchen).
+        wesen_filter = (konfig.get("meta") or {}).get("wesen_filter") or "alle"
+        aktive_wesen = [wesen_filter] if wesen_filter in WESEN else WESEN
 
         zustand = _lade_zustand()
         for wesen in WESEN:
             zustand.setdefault(wesen, {"phase": "neu"})
 
-        # Runde 1: jedes Wesen einmal mit Schritt 1 (Interesse fragen) --
+        # Runde 1: jedes aktive Wesen einmal mit Schritt 1 (Interesse fragen) --
         # niemand beginnt mit Lesen, solange nicht alle Schritt 1 hatten.
-        for wesen in WESEN:
+        for wesen in aktive_wesen:
             if zustand[wesen].get("phase") == "neu":
                 try:
                     _phase_interesse(wesen, zustand, verhalten)
@@ -1277,8 +1284,8 @@ def haupt_schleife():
         # Weitere Runden: jedes noch aktive Wesen macht pro Runde genau einen
         # Schritt (Lese-Post ODER Container-Zuordnung), dann ist das naechste
         # Wesen dran. Zustand jeder Runde sofort gespeichert.
-        while any(zustand[w].get("phase") in ("lesen", "container_zuordnung") for w in WESEN):
-            for wesen in WESEN:
+        while any(zustand[w].get("phase") in ("lesen", "container_zuordnung") for w in aktive_wesen):
+            for wesen in aktive_wesen:
                 phase = zustand[wesen].get("phase")
                 if phase == "lesen":
                     try:
@@ -1296,7 +1303,7 @@ def haupt_schleife():
                     _speichere_zustand(zustand)
                 time.sleep(PAUSE_ZWISCHEN_WESEN)
 
-        for wesen in WESEN:
+        for wesen in aktive_wesen:
             zustand[wesen] = {"phase": "neu"}
         _speichere_zustand(zustand)
         log.info(f"Zyklus fertig. Pause {pause_zyklen}s.")

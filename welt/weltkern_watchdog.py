@@ -394,6 +394,28 @@ SCHALTER_FELD_LABELS = {
             ],
             "standard": "token",
         },
+        "wesen_filter": {
+            "label": "Wesen-Auswahl",
+            "erklaerung": (
+                "Welche Wesen die Schleife pro Zyklus durchlaeuft. 'Alle Wesen' "
+                "(Standard): bisheriges Verhalten, alle 7 Wesen zeitversetzt in "
+                "derselben Runde (sichtbar im Tab 'Live-Aktivitaet'). Ein "
+                "einzelnes Wesen auswaehlen laesst nur dieses eine laufen -- "
+                "z.B. zum gezielten Beobachten/Testen, ohne dass die anderen 6 "
+                "denselben LLM-Slot mitbeanspruchen."
+            ),
+            "optionen": [
+                {"wert": "alle", "label": "Alle Wesen (Standard)"},
+                {"wert": "Schorschel", "label": "nur Schorschel"},
+                {"wert": "F3INSCHM3CK3R", "label": "nur F3INSCHM3CK3R"},
+                {"wert": "träumerlie", "label": "nur träumerlie"},
+                {"wert": "R1ZZ1", "label": "nur R1ZZ1"},
+                {"wert": "jumpa", "label": "nur jumpa"},
+                {"wert": "Resonanzknoten", "label": "nur Resonanzknoten"},
+                {"wert": "dak+gord-system", "label": "nur dak+gord-system"},
+            ],
+            "standard": "alle",
+        },
     },
 }
 

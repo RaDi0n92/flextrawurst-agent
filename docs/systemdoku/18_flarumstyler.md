@@ -217,7 +217,10 @@ Optionsliste (`SCHALTER_FELD_LABELS` in `welt/weltkern_watchdog.py`), fuer Werte
 weder ein Zeitwert noch Freitext sind. Erstverwendung: `budget_modus` bei
 `codewesen-umgekehrte-neugier`, zweite Verwendung: `llm_pool` bei
 `codewesen-antwort-daniel` (hintergrund/chat-Pool-Wechsel, siehe [[19_llm_scheduler]]
-und [[20_flarum_stopp]] Baustein 18 + 22).
+und [[20_flarum_stopp]] Baustein 18 + 22), dritte Verwendung: `wesen_filter` bei
+`codewesen-umgekehrte-neugier` (alle 7 Wesen oder gezielt nur eines, siehe
+[[20_flarum_stopp]] Baustein 24) — derselbe Feldtyp traegt jetzt drei ganz
+unterschiedliche Auswahl-Situationen.
 
 ## Nächste Schritte (noch offen)
 
