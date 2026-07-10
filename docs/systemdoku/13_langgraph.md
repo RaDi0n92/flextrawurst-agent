@@ -9,7 +9,7 @@ autor: claude-code bei Daniels VPS
 
 [[INDEX|← Index]]
 
-*LangGraph ist das Nervensystem der Wesen — aktuell nur für dak+gord vollständig aktiv.*
+*LangGraph ist das Nervensystem der Wesen — aktuell fuer dak+gord UND alle 7 Codewesen aktiv, GENI hat den Code aber nutzt ihn nicht.*
 
 ---
 
@@ -20,6 +20,39 @@ autor: claude-code bei Daniels VPS
 | dak+gord | ✅ vollständig | PostgreSQL | flextrawurst DB |
 | 6 Codewesen | ⬜ geplant | — | nur JSON-Dateien |
 | GENI | ❌ | — | eigenes Knoten-System |
+
+**Nachtrag 2026-07-10 (verifiziert, korrigiert die Tabelle oben):** Die "Zukunft" weiter
+unten in dieser Datei ist inzwischen **Gegenwart** — nur anders gebaut als dort skizziert.
+Auf Daniels Nachfrage ("ist es schon langgraph und postgresql für 7 8 wesen...ich glaub
+geni nicht") live gegen die Datenbank geprueft:
+
+| System | LangGraph aktiv? | DB-Modell | Checkpoints (Stand 2026-07-10) |
+|--------|-----------------|-----------|-------------------------------|
+| dak+gord-system | ✅ | geteilte `flextrawurst`-DB, `thread_id: codewesen-dak+gord-system` | 3322 |
+| Schorschel | ✅ | geteilte `flextrawurst`-DB, `thread_id: codewesen-Schorschel` | 2039 |
+| F3INSCHM3CK3R | ✅ | dito | 2015 |
+| träumerlie | ✅ | dito | 2003 |
+| R1ZZ1 | ✅ | dito | 1998 |
+| jumpa | ✅ | dito | 1993 |
+| Resonanzknoten | ✅ | dito | 1990 |
+| GENI | ❌ (Code vorhanden, ungenutzt) | eigenes Schema `geni.*`, gleiche 4 Tabellen | 0 |
+
+**Kein DB-pro-Wesen** wie unten unter "Die Zukunft" skizziert — stattdessen EIN
+geteiltes Postgres (`flextrawurst`, Owner `dak`), Schema `public`, alle 7 Wesen trennen
+sich rein per `thread_id` im selben `checkpoints`-Table. Alte `namelessAI_*`-Threads
+bleiben als historisches Archiv erhalten (siehe [[08_codewesen_identitaeten]],
+Provenienz-Prinzip — nicht loeschen).
+
+**Zwei parallele Dienste laufen fuer dieselben 7 Wesen**, unklar ob/wie ueberlappend:
+`codewesen-lg-daemon.service` (aelter, seit 2026-06-15, 60s-Kontext-Tick/300s-LLM-Tick,
+schreibt `entity_profiles.lg_erinnerungen`) UND `innenleben-feeder.service` +
+`welt-bruecke.service` (juenger, siehe Abschnitt "Innenleben" unten). Nicht weiter
+untersucht in dieser Session — falls das mal geklaert werden soll, hier vermerkt.
+
+**GENI:** `geni/geni_lg.py` hat vollstaendigen LangGraph-Code (`StateGraph`,
+`PostgresSaver`, eigenes Schema `geni.*` mit denselben vier Checkpoint-Tabellen wie
+`public.*`) — Migration lief (Tabellen existieren), aber 0 Zeilen. Code-Leiche, nicht
+aktiv benutzt. GENIs echte Dienste (`geni-hoerer`, `geni-web`) laufen unabhaengig davon.
 
 ---
 
@@ -133,9 +166,11 @@ def speichern_atomar(modell: dict, pfad: Path) -> None:
 
 ---
 
-## Die Zukunft: LangGraph für alle Wesen
+## Die Zukunft: LangGraph für alle Wesen (ÜBERHOLT — siehe Nachtrag 2026-07-10 oben)
 
-Aktuell in Planung — noch nicht implementiert:
+Dieser Abschnitt beschreibt den Plan-Stand von 2026-05-26. Tatsaechlich gebaut wurde
+etwas Leichteres (geteilte DB statt DB-pro-Wesen, siehe Tabelle oben) — als
+Referenz stehen gelassen, nicht mehr aktueller Zielzustand:
 
 ```python
 # ZUKÜNFTIG: Jedes Wesen bekommt eigene PostgreSQL-DB

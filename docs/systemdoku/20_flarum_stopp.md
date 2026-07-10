@@ -526,6 +526,67 @@ Standardzustand zurueckgesetzt. Vollstaendige aktuelle Beschreibung des Diensts
 inkl. dieser Konfiguration jetzt in einer eigenen Datei: [[23_umgekehrte_neugier]]
 — diese Chronik hier bleibt der historische Bau-Bericht.
 
+### Baustein 25 — Aufgabenchats-Testordner bereinigt, zwei Container-Systeme geklärt, Provenienz-Design besprochen (noch nicht gebaut) (2026-07-10)
+
+**Aufgabenchats-Duplikate:** Daniel bemerkte auf `flextrawurst.de/aufgabenchats`, dass
+jedes Wesen doppelt erschien. Ursache: die Wesen-ID-Migration vom 2026-07-06
+(siehe [[08_codewesen_identitaeten]]) hatte `/root/werkraum/aufgabenchats/`
+nicht mitgenommen. Die echten `namelessAI_*`-Ordner blieben mit Inhalt liegen,
+waehrend der Daemon (`codewesen_aufgabenchats.py`, `_wesen_ordner()`) bei jedem
+Start zusaetzlich leere Ordner mit den neuen echten Namen anlegte. Dazu eine
+kaputte URL-encoding-Dublette `dak%2Bgord-system`. Geklaert: der Inhalt in den
+alten Ordnern war Bau-Verifikation der damaligen Instanz ("Live getestet
+(2026-07-06): erste echte Session bei Schorschel", siehe oben in
+[[09_codewesen_daemons]]), kein echter, von Daniel angestossener Gebrauch —
+Daniel selbst hat nie ein `_starten`-Flag gesetzt. Alle sechs `namelessAI_*`-
+Ordner und die Dublette entfernt (Commits `eb9f3b94`/`e4e66a58`), Nachtrag
+dazu in [[09_codewesen_daemons]]. Uebrig: sieben echte, leere Wesen-Ordner.
+
+**Zwei unabhaengige "Container"-Systeme geklaert:** Im Chat-UI existiert seit
+laengerem ein zweites, komplett unabhaengiges "📌 Container"-Feature (Pin-
+Button in `wesen_chat.html` fuer codexium/codexium2/solarius/solarius2, UND
+in `aufgabenchats_chat.html`) — `container.json` direkt im Charakter-/
+Wesen-Ordner (`solarius2/Gabby/container.json`, `aufgabenchats/Schorschel/
+container.json`), budget-limitiert (11111 Zeichen), zum manuellen Pinnen von
+Satz-Ausschnitten. Das hat **keine Verbindung** zu den echten Containern aus
+Baustein 2/21 (`codewesen_container.py`, Markdown unter `codewesen/<Wesen>/
+container/<name>/container.md`), die flarumstyler zeigt. Daniel auf
+Nachfrage, ob das entfernt werden soll (weil Schorschel & Co. "echte Wesen,
+keine Rollenspielcharaktere" sind): *"ne die sind im kintext des chats eig
+auch sinnvoll...auch ls art sanboxlearning für ihre wirklichen container"* —
+bewusst beibehalten als Uebungsraum, keine Vereinheitlichung gewuenscht.
+Festgehalten in Memory `feedback_zwei_container_systeme_bewusst_getrennt`.
+
+**Provenienz-Design fuer echte Container besprochen (noch NICHT gebaut):**
+Daniels Leitsatz: *"oberste regel: provenienz herkunft ist king. immer. was
+ist wann von wem wodurch jetzt da."* Ist-Stand geprueft: `sichere()` schreibt
+bereits `typ`, `erstellt_am`, `mitgenommen_am` (Baustein 20), `bezug_diskussion`/
+`bezug_post`, `grundlage`/`grundlage_begruendung` (Entscheidungs-Gegenpruefung)
+— aber **kein `quelle`-Feld**. Aktuell kann nur das Wesen selbst in den echten
+Container schreiben (Marker im Selbstgespraech, forum_neugier/umgekehrte_neugier,
+heutiges Pflegeangebot Baustein 21) — kein Weg fuer Daniel, direkt etwas
+reinzuschreiben. Besprochener Entwurf (Daniel: *"ja ich will auch mit
+rumpfuschen können.. sowohl als dak aber auch so dass das wesen es nicht
+merkt bzw nix markiert wird"*, dazu: *"ich brauch nen protokollartigen logger
+auch bei flarumstyler irgendwo"*):
+
+- `quelle`-Feld pro Eintrag: `wesen` (Standard) | `dak` (Daniel, dem Wesen beim
+  Lesen explizit als Fremdeingriff mitgeteilt) | `admin_still` (Daniel, dem
+  Wesen NICHT als Fremdeingriff markiert — erscheint als normaler Inhalt)
+- zwei neue Admin-Schreibwege in `codewesen_container.py`, kein LLM-Call,
+  nur ueber eine neue flarumstyler-Route erreichbar, nicht vom Wesen selbst
+  auslösbar
+- Protokoll: kein neues System — `flarum_stopp_protokoll.py` (Baustein 4) um
+  einen neuen `typ` (`container_admin_edit`) erweitern; das Protokoll sieht
+  **immer alles**, unabhaengig davon was dem Wesen beim Lesen gezeigt wird
+- Anzeige in flarumstyler: neuer Abschnitt oder Filter im bestehenden
+  Protokoll-UI
+
+Noch offen: ob Daniel das Protokoll komplett eigenstaendig statt huckepack auf
+`flarum_stopp_protokoll.py` haben will, und ob/wann gebaut wird. Kein
+Bauauftrag bisher — nur Design festgehalten, damit es bei Fortsetzung nicht
+neu durchdacht werden muss.
+
 ## Wiederaufnahme
 
 Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schreibt automatisch einen `sperre_aufgehoben`-Protokolleintrag inkl. Sperrdauer). Der umgedrehte Neugier-Dienst (Baustein 3) läuft davon unabhängig weiter oder wird unabhängig gestartet/gestoppt — er schreibt ohnehin nie nach Flarum, seine Existenz ist keine Voraussetzung für die Sperre und umgekehrt.

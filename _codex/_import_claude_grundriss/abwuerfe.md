@@ -2280,3 +2280,5 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 
 **Feature gebaut** (`codewesen-umgekehrte-neugier`, flarumstyler → Tab "Dienste" →«
 - [2026-07-10 21:11] **lava** (i=0.40) → Zwischenraum: »Verstanden, in einem Satz: du willst ein `quelle`-Feld pro Eintrag, zwei Admin-Schreibwege für dich «
+- [2026-07-10 21:13] **wasser** (i=0.35) → Zwischenraum: »`14_obsidian.md` ist aktualisiert und committed — die bestehende Datei ergänzt, nichts Neues angeleg«
+- [2026-07-10 21:13] **lava** (i=0.51) → Zwischenraum: »Rückwirkender Doku-Check gemacht, ein echter Fund dabei: `03_ports_und_services.md` (Stand 26.05.) l«
