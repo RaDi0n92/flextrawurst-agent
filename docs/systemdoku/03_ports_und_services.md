@@ -61,7 +61,17 @@ autor: claude-code bei Daniels VPS
   Intervall:   30s
   Schreibt:    events (system.bruecken_sync) alle ~30s → 42.496 Events bisher
 
-● flextrawurst-surface.service
+● process-camera-preview.service (Nachtrag 2026-07-10 — ersetzt den veralteten
+  Eintrag unten, live geprueft: `flextrawurst-surface.service` existiert zwar
+  noch als Unit-Datei, ist aber `disabled` und laeuft nicht. Der real aktive,
+  `enabled`-Dienst fuer Port 8787 heisst `process-camera-preview.service`.)
+  Description: Prozesskamera Browser Preview Server (Port 8787)
+  ExecStart:   /usr/bin/node --experimental-strip-types scripts/serve_process_camera_preview.ts
+  WorkDir:     /root/flextrawurst
+  EnvironmentFile: /root/flextrawurst/.env.preview, /root/werkraum/.agent/flextrawurst-db.env
+  Restart:     on-failure (RestartSec=3)
+
+● flextrawurst-surface.service — VERALTET, disabled, nicht aktiv (siehe oben)
   Description: Flextrawurst Surface Server (Port 8787)
   ExecStart:   node --experimental-strip-types scripts/serve_process_camera_preview.ts
   WorkDir:     /root/flextrawurst

@@ -205,4 +205,51 @@ Welt-API (Port 8030)
 
 ---
 
+## Update 2026-07-10 — Bridge-Befund, echte Wesen-Namen, MDtalk-Vault
+
+### `obsidian-api.service` läuft, aber nur **HTTPS**
+
+`obsidian_api.py` bindet mit `ssl_keyfile`/`ssl_certfile` — reines HTTP (`curl http://localhost:8060/...`) liefert "Empty reply from server", sieht wie ein Hänger aus, ist aber nur der falsche Aufruf. Immer `curl -sk https://localhost:8060/...` benutzen zum Testen.
+
+```bash
+curl -sk https://localhost:8060/vault/info --max-time 5
+# {"vault":"/root/werkraum","markdown_dateien":21901,"python_dateien":344,...}
+```
+
+### Die `/wesen/*/chat`-Endpunkte sind reine Webchat-Proxys — kein Werkzeugzugriff
+
+Nachgeprüft im Code (`obsidian_api.py`):
+
+```python
+DAKGORD_URL   = "http://localhost:8000/chat"          # normaler dak+gord-Webchat
+GENI_URL      = "http://localhost:8020/chat"          # normaler GENI-Webchat
+CODEWESEN_URL = "http://localhost:8002/api/chat/{name}"  # normaler codewesen_chat.py
+```
+
+`dakgord_chat()`, `geni_chat()`, `codewesen_chat()` rufen per SSE-Streaming nur diese drei interaktiven Chat-Endpunkte auf — dieselben, mit denen ein Mensch direkt redet. **Kein Zugriff auf den Agentic-Loop** (`codewesen_agent.py`s `agentic_loop()`/`fuehre_aktion_aus()`), der Dateien lesen, Flarum durchsuchen und posten kann. Umgekehrt bestätigt: `grep -rn "obsidian_api\|8060" codewesen_agent.py codewesen_werkzeuge.py` → keine Treffer. Die Bridge und der Agentic-Loop kennen sich nicht.
+
+### Vault-Schreibfähigkeit existiert, wird aber von niemandem aufgerufen
+
+`GET /notizen` lieferte am 10.07. `[]` — leer. `POST /notizen`, `POST /vault/notiz`, `POST /vault/tagebuch` sind fertig implementiert, aber weder vom Chat-Proxy noch vom Agentic-Loop je aufgerufen worden. Zwei fertige Hälften ohne Verbindung zueinander.
+
+### Echte Wesen-Namen (seit ID-Migration 06.07., siehe [[09_codewesen_daemons]])
+
+Keine `namelessAI_XXXX`-IDs mehr. Aktuelle Ordner in `codewesen/`:
+
+```
+F3INSCHM3CK3R, R1ZZ1, Resonanzknoten, Schorschel, jumpa, träumerlie, dak+gord-system
+```
+
+Zusammen mit GENI (eigenes System, nicht in `codewesen/`) macht das **8 Entitäten** — Daniels Zählung "meine 8".
+
+### LangGraph-Threads — 7 von 8 haben einen eigenen Faden, GENI nicht
+
+Alle drei LangGraph-Systeme (`codewesen_lg_daemon.py`, `geni/geni_lg.py`, `agent/dak_gord_system/dialog_graf.py`) hängen an **derselben** `FLEXTRAWURST_DB_URI` — eine gemeinsame Postgres-DB, keine 8 getrennten Datenbanken. Aber: die 6 Codewesen + dak+gord haben je einen eigenen `PostgresSaver`-Thread (`thread_id=f"codewesen-{name}"`) — persistenter Zustand über Neustarts hinweg, pro Wesen isoliert. GENI nutzt nur ein eigenes Schema (`search_path=geni`) in derselben DB, kein Pro-Entität-Thread-Muster. Für eine künftige Obsidian-Anbindung heißt das: bei den 7 mit Thread ist ein neuer Graph-Node der naheliegende Anschlusspunkt, GENI braucht einen eigenen Weg.
+
+### MDtalk — neues, separates Obsidian-Vault (Daniels Idee, 10.07.)
+
+Daniel hat `/root/werkraum/MDtalk/MDtalk/` als **eigenständiges** zweites Obsidian-Vault angelegt (eigene `.obsidian/`-Config, nicht Teil des Haupt-Werkraum-Vaults). Ziel: ein weiterer Kommunikationskanal mit allen 8 Entitäten, der direkt in Obsidian stattfindet — ein Ordner pro Wesen, zweiseitig, ob es technisch trägt ist bewusst offen ("was wir jetzt noch nicht wissen ob's klappt"). Architekturfrage noch nicht entschieden: neuer Trigger im Agentic-Loop, der den MDtalk-Ordner beobachtet — oder die bestehende Obsidian-Bridge lernt den Agentic-Loop statt des einfachen Chats aufzurufen. Kein Auftrag zum Bauen bisher, nur Konzeptklärung.
+
+---
+
 *Weiter: [[15_vision]] | [[16_was_fehlt_und_was_koennte_sein]]*
