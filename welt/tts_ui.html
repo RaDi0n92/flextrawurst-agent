@@ -186,6 +186,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .file-btn { position: relative; overflow: hidden; }
 .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .empty { color: var(--quiet); font-size: .82rem; border: 1px dashed var(--border-soft); border-radius: 8px; padding: .8rem; }
+.dw-warn { border-left: 3px solid var(--danger); padding-left: .55rem; }
 .translator { gap: .75rem; }
 .translator-head {
   display: grid; grid-template-columns: 1fr; gap: .55rem;
@@ -309,6 +310,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="webarchive">Webarchiv</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="forms">Formulare</button>
     <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="logs">Logs</button>
+    <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab-target="dateiwandler">Datei-Wandler</button>
   </div>
 
   <div class="tab-panels">
@@ -617,6 +619,40 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <textarea id="logs-compare" readonly placeholder="Vergleich zweier Loganalysen"></textarea>
       <div class="sentence-list" id="logs-groups"></div>
       <div class="sentence-list" id="logs-list"></div>
+    </section>
+
+    <section class="panel tab-panel" data-tab-panel="dateiwandler">
+      <div class="panel-title">Datei-Wandler</div>
+      <div class="inf">Dateien rein, HTML, Markdown oder beides raus. VPS-Pfade und Uploads können gemischt werden. Der Export ist offline nutzbar; Inhalte werden escaped und nicht ausgeführt.</div>
+      <form id="dw-form" action="/tts/dateiwandler/convert" method="post" enctype="multipart/form-data">
+        <textarea id="dw-paths" spellcheck="false" placeholder="VPS-Pfade oder Ordner, einer pro Zeile&#10;/root/werkraum/_shared/briefkasten/REGELN.md&#10;/root/werkraum/welt/api.py"></textarea>
+        <div class="inf">Erlaubte Wurzeln: <code>/root/werkraum</code> und <code>/root/visionen</code>. Ordner werden rekursiv gelesen. Große oder geheime Dateien werden blockiert.</div>
+        <div class="row">
+          <label class="small file-btn">Dateien wählen<input id="dw-uploads" type="file" multiple></label>
+          <label class="small file-btn">Ordner wählen<input id="dw-folders" type="file" multiple webkitdirectory directory></label>
+        </div>
+        <div class="inf" id="dw-upload-empty">Noch keine Dateien gewählt.</div>
+        <div class="sentence-list" id="dw-upload-items"></div>
+        <div class="row">
+          <span class="lbl">Zielformat</span>
+          <select id="dw-output">
+            <option value="html">Offline-HTML</option>
+            <option value="markdown">Markdown</option>
+            <option value="both">HTML + Markdown als ZIP</option>
+          </select>
+          <span class="lbl">HTML-Dateien behandeln als</span>
+          <select id="dw-html-mode">
+            <option value="markdown">Markdown aus HTML extrahieren</option>
+            <option value="source">HTML-Quelltext anzeigen</option>
+            <option value="both">Extrahierter Markdown + Quelltext</option>
+          </select>
+        </div>
+        <div class="inf dw-warn">Dateien, Gesamtupload und Export haben keine konfigurierte Größenobergrenze. Praktische Grenzen sind freier RAM und Festplattenspeicher. Blockiert sind u.a. <code>.env</code>, Keys, Zertifikate und lokale Datenbanken.</div>
+        <div class="row">
+          <button class="small primary" id="btn-dw-export" type="submit">Export erzeugen</button>
+          <span class="lbl" id="dw-note">Der Download startet nach der Umwandlung direkt.</span>
+        </div>
+      </form>
     </section>
   </div>
 
@@ -1145,7 +1181,7 @@ function renderCompareVoiceSelects(){
 }
 
 function renderTabState(tab){
-  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(tab) ? tab : 'tts';
   tabButtons.forEach(btn=>{
     const on = btn.dataset.tabTarget === current;
     btn.classList.toggle('on', on);
@@ -1158,7 +1194,7 @@ function renderTabState(tab){
 }
 
 function setTab(tab, push){
-  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(tab) ? tab : 'tts';
+  const current = ['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(tab) ? tab : 'tts';
   const url = new URL(location.href);
   url.searchParams.set('tab', current);
   if (push === false) history.replaceState({tab: current}, '', url);
@@ -1168,7 +1204,7 @@ function setTab(tab, push){
 
 function currentTab(){
   const urlTab = new URL(location.href).searchParams.get('tab');
-  if (['tts','soundboard','translate','ocr','documents','webarchive','forms','logs'].includes(urlTab)) return urlTab;
+  if (['tts','soundboard','translate','ocr','documents','webarchive','forms','logs','dateiwandler'].includes(urlTab)) return urlTab;
   return localStorage.getItem(ACTIVE_TAB_KEY) || 'tts';
 }
 
@@ -4197,6 +4233,201 @@ loadServerLogs();
 loadVoices();
 loadTranslationLanguages();
 ta.dispatchEvent(new Event('input'));
+
+// Datei-Wandler-Tab (2026-07-10, umgezogen von eigenstaendigem Dienst Port 8878/8449) — Logik
+// unveraendert aus dessen static/index.html uebernommen (nur IDs dw-praefigiert und Endpunkte auf
+// /tts/dateiwandler/* umgebogen, das nginx dorthin auf den unveraenderten Backend-Prozess proxyt),
+// eigene IIFE damit nichts mit den vielen Variablen oben kollidiert.
+(() => {
+  const form = document.getElementById('dw-form');
+  const fileInput = document.getElementById('dw-uploads');
+  const folderInput = document.getElementById('dw-folders');
+  const items = document.getElementById('dw-upload-items');
+  const empty = document.getElementById('dw-upload-empty');
+  const note = document.getElementById('dw-note');
+  if (!form || !fileInput || !folderInput || !items || !empty || !note) return;
+  const state = [];
+  const batchFileLimit = 25;
+  const batchByteLimit = 16 * 1024 * 1024;
+
+  function fileKey(entry) {
+    return [entry.path, entry.file.size, entry.file.lastModified].join('|');
+  }
+
+  function labelFor(entry) {
+    return entry.path || entry.file.name;
+  }
+
+  function addFiles(fileList, mode) {
+    for (const file of Array.from(fileList || [])) {
+      const path = (file.webkitRelativePath || file.name || '').replace(/\\/g, '/');
+      const entry = { file, path, mode };
+      if (!state.some((existing) => fileKey(existing) === fileKey(entry))) {
+        state.push(entry);
+      }
+    }
+  }
+
+  function render() {
+    items.innerHTML = '';
+    empty.style.display = state.length ? 'none' : '';
+    state.forEach((entry, index) => {
+      const row = document.createElement('div');
+      row.className = 'sentence-row';
+      row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:.6rem';
+
+      const meta = document.createElement('div');
+      const name = document.createElement('strong');
+      name.textContent = labelFor(entry);
+      const details = document.createElement('span');
+      details.className = 'sentence-text';
+      details.textContent = `${entry.mode === 'folder' ? 'Ordner' : 'Datei'} · ${entry.file.size} Bytes`;
+      meta.append(name, details);
+
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'small';
+      remove.textContent = 'Entfernen';
+      remove.addEventListener('click', () => {
+        state.splice(index, 1);
+        render();
+      });
+
+      row.append(meta, remove);
+      items.appendChild(row);
+    });
+  }
+
+  function resetPicker(input) {
+    if (input) input.value = '';
+  }
+
+  function uploadBatches(entries) {
+    const batches = [];
+    let batch = [];
+    let bytes = 0;
+    for (const entry of entries) {
+      if (batch.length && (batch.length >= batchFileLimit || bytes + entry.file.size > batchByteLimit)) {
+        batches.push(batch);
+        batch = [];
+        bytes = 0;
+      }
+      batch.push(entry);
+      bytes += entry.file.size;
+    }
+    if (batch.length) batches.push(batch);
+    return batches;
+  }
+
+  async function responseError(response) {
+    const text = await response.text();
+    try {
+      const parsed = JSON.parse(text);
+      return parsed.detail || text;
+    } catch {
+      return text || `HTTP ${response.status}`;
+    }
+  }
+
+  async function fetchChecked(url, options) {
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error(await responseError(response));
+    return response;
+  }
+
+  function startDownload(response, blob) {
+    const cd = response.headers.get('content-disposition') || '';
+    const match = cd.match(/filename="?([^"]+)"?/i);
+    const filename = match ? match[1] : 'datei_wandler_export.html';
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = filename;
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  fileInput.addEventListener('change', () => {
+    addFiles(fileInput.files, 'file');
+    resetPicker(fileInput);
+    render();
+  });
+
+  folderInput.addEventListener('change', () => {
+    addFiles(folderInput.files, 'folder');
+    resetPicker(folderInput);
+    render();
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const pathsValue = document.getElementById('dw-paths').value.trim();
+    if (!state.length && !pathsValue) {
+      note.textContent = 'Bitte wähle mindestens eine Datei, einen Ordner oder einen VPS-Pfad.';
+      return;
+    }
+
+    note.textContent = 'Bereite Export vor...';
+    let sessionId = null;
+    try {
+      let response;
+      if (state.length) {
+        const sessionResponse = await fetchChecked('/tts/dateiwandler/upload-sessions', { method: 'POST' });
+        sessionId = (await sessionResponse.json()).session_id;
+        const batches = uploadBatches(state);
+        let uploaded = 0;
+        for (const batch of batches) {
+          note.textContent = `Lade Dateien hoch: ${uploaded} / ${state.length}`;
+          const batchData = new FormData();
+          batchData.set('start_index', String(uploaded));
+          for (const entry of batch) {
+            batchData.append('uploads', entry.file, labelFor(entry));
+          }
+          await fetchChecked(`/tts/dateiwandler/upload-sessions/${sessionId}/files`, {
+            method: 'POST',
+            body: batchData,
+          });
+          uploaded += batch.length;
+        }
+
+        note.textContent = `Erzeuge Export aus ${state.length} Dateien...`;
+        const exportData = new FormData();
+        exportData.set('expected_count', String(state.length));
+        exportData.set('paths', pathsValue);
+        exportData.set('output', document.getElementById('dw-output').value);
+        exportData.set('html_mode', document.getElementById('dw-html-mode').value);
+        response = await fetchChecked(`/tts/dateiwandler/upload-sessions/${sessionId}/convert`, {
+          method: 'POST',
+          body: exportData,
+        });
+        sessionId = null;
+      } else {
+        const data = new FormData();
+        data.set('paths', pathsValue);
+        data.set('output', document.getElementById('dw-output').value);
+        data.set('html_mode', document.getElementById('dw-html-mode').value);
+        response = await fetchChecked(form.action, { method: 'POST', body: data });
+      }
+
+      const blob = await response.blob();
+      startDownload(response, blob);
+      note.textContent = 'Download gestartet.';
+    } catch (error) {
+      if (sessionId) {
+        fetch(`/tts/dateiwandler/upload-sessions/${sessionId}`, { method: 'DELETE', keepalive: true }).catch(() => {});
+      }
+      note.textContent = 'Export fehlgeschlagen.';
+      const message = String(error.message || error);
+      if (message === 'Failed to fetch') {
+        alert('Die Verbindung wurde während eines Upload-Pakets unterbrochen. Die Auswahl bleibt erhalten; starte den Export erneut.');
+      } else {
+        alert(message);
+      }
+    }
+  });
+
+  render();
+})();
 
 })();
 </script>
