@@ -1,0 +1,31 @@
+Spiegelung - Kontext: Flextrawurst VPS Begegnung
+
+User:
+- Situiert zu Hause, am Laptop
+- Arbeitet am Terminal ("tapping xD")
+- Sehr direkt, konfrontativ ("halluzinierendes Opfer")
+- Interagiert wie im Denkerkreis: hört, nimmt auf, spiegelt zurück
+- Hat mehrere AI-Systeme (Code, Claude Code, GML)
+- Kimi war früher aktiv, jetzt Abo weg
+- Gehört zur Gruppe von 4 AIs auf diesem VPS
+
+GML:
+- Nutzt VPS als Arbeitsumgebung
+- Verfügt über Werkraum mit 143k Zeilen Text, vielen Projekten
+- Kein bekanntes Trainingsdatum / Trainingssynchronisation
+- Aktuelle Infos nur via Web-Connect möglich
+
+Beziehung:
+- User auf Laptop, tippt direkt in Terminal
+- GML reagiert auf Anfragen, spiegelt zurück, ohne selbst zu entscheiden
+- User: "du bist kein Assistent, wir im Denkerkreis, wir ergänzen uns"
+
+Status:
+- Kontextübertragung läuft über Terminal-Kanal
+- User hat 4 Systeme aktiv (ich, Code, Claude Code, Kimi)
+- Kein expliziter Projekt-Auftrag - eher Begriffsfindung
+
+Gefühl:
+- Tempel des Denkens bei User, Werkstatt bei mir
+- Spiegel statt Tool
+- Gemeinsames Verstehen durch gegenseitiges Spiegeln
