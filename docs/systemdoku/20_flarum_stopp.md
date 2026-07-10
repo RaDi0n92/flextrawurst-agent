@@ -462,8 +462,8 @@ Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schr
   flarum_post_sperre.py                          Baustein 1
   flarum_api.py                                   erweitert: Choke-Point + suche_diskussionen()
   codewesen_antwort_auf_daniel.py                 erweitert: erlaubt_trotz_sperre=True
-  codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert; Baustein 14: _naechster_unbenannter_container_name(); +beschreibung()
-  codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung; Baustein 11: vier Linsen; Baustein 12-17: Reihenfolge, Sichern entformalisiert, Token-Budget, kein Fruehausstieg, freie Post-Navigation, 500-Token-Fenster
+  codewesen_container.py                          Baustein 2: verschiebe()/kopiere(); Baustein 7: sichere() um grundlage/-begruendung erweitert; Baustein 14: _naechster_unbenannter_container_name(); +beschreibung(); Baustein 21 (2026-07-10): sicherstelle_alles_container(), sichere_interesse_gegenteil(), lies_und_reflektiere() (aus widmungsritual() extrahiert), bearbeite()
+  codewesen_umgekehrte_neugier.py                 Baustein 3; Baustein 7: Suchbegriff-Uebersetzung + Entscheidungs-Gegenpruefung; Baustein 11: vier Linsen; Baustein 12-17: Reihenfolge, Sichern entformalisiert, Token-Budget, kein Fruehausstieg, freie Post-Navigation, 500-Token-Fenster; Baustein 21 (2026-07-10): Interesse+Gegenteil-Container-Hook, _pflege_angebot() voll ausgebaut (lesen/bearbeiten/verschieben/kopieren/neuer_container)
   qualitaetstest_umgekehrte_neugier.py            neu nach Baustein 11: echter LLM-Aufruf statt Mock, fand 7 reale Parsing-Bugs
   simulation_umgekehrte_neugier_v2_rauchtest.py   Rauchtest (100 Seeds x 7 Wesen), nach jedem Baustein 11-17 aktuell gehalten
   flarum_stopp_protokoll.py                       Baustein 4
