@@ -855,6 +855,25 @@ Marker-Namen stärker differenzieren (z.B. `[[LESEN: pins]]` vs.
 `[[LESEN: <themencontainer>]]`), oder die Beschreibung im Prompt
 eindeutiger machen.
 
+**Nachtrag 2026-07-10 — Testordner unter `aufgabenchats/` bereinigt:** Die
+Wesen-ID-Migration vom 2026-07-06 (siehe `docs/2026-07-06_wesen_umbenennungen.md`)
+hat `/root/werkraum/aufgabenchats/` nicht mitgenommen. Der obige Testlauf
+("Live getestet (2026-07-06): erste echte Session bei Schorschel" usw.) lief
+noch unter den alten `namelessAI_XXXX`-IDs und blieb dort unangetastet liegen,
+während der Daemon beim nächsten Start für jedes Wesen aus seiner (längst
+umbenannten) `WESEN`-Liste per `mkdir(exist_ok=True)` zusätzlich einen leeren
+Ordner mit dem echten Namen anlegte (`_wesen_ordner()`). Ergebnis: jedes Wesen
+erschien auf `/aufgabenchats` doppelt — einmal als leerer, echt benannter
+Ordner, einmal als alter, gefüllter `namelessAI_*`-Testordner. Dazu kam eine
+kaputte URL-encoding-Dublette `dak%2Bgord-system` (`%2B` nie zu `+` decodiert).
+Daniel hat bestätigt, dass er selbst nie ein `_starten`-Flag gesetzt hat — die
+Inhalte in den `namelessAI_*`-Ordnern waren ausschließlich Bau-Verifikation der
+damaligen Instanz, kein echter Gebrauch. Alle sechs `namelessAI_*`-Ordner und
+`dak%2Bgord-system` gelöscht (Commits `eb9f3b94`/`e4e66a58`). Übrig: exakt
+sieben echte, leere Wesen-Ordner (`Schorschel`, `F3INSCHM3CK3R`, `träumerlie`,
+`R1ZZ1`, `jumpa`, `Resonanzknoten`, `dak+gord-system`) — bereit für den ersten
+tatsächlich von Daniel gestarteten Aufgabenchat.
+
 ---
 
 ## 7. codewesen_engagement.py — Autonomes Engagement (INAKTIV)
