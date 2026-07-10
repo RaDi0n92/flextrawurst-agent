@@ -394,30 +394,46 @@ SCHALTER_FELD_LABELS = {
             ],
             "standard": "token",
         },
-        "wesen_filter": {
-            "label": "Wesen-Auswahl",
+    },
+}
+
+# Mehrfach-Toggle-Felder (2026-07-10, Daniel: "sowohl als auch" -- ersetzt den
+# ersten Entwurf von wesen_filter, der nur "alle" ODER "genau eines" erlaubte,
+# per Rueckfrage. Jede Option ist unabhaengig an/aus schaltbar, kein exklusives
+# Radio-Verhalten wie bei SCHALTER_FELD_LABELS. Key landet als TOP-LEVEL
+# meta-Feld (Liste der aktiven wert-Strings), Standard = alle Optionen aktiv.
+MEHRFACH_FELD_LABELS = {
+    "codewesen-umgekehrte-neugier": {
+        "wesen_aktiv": {
+            "label": "Aktive Wesen",
             "erklaerung": (
-                "Welche Wesen die Schleife pro Zyklus durchlaeuft. 'Alle Wesen' "
-                "(Standard): bisheriges Verhalten, alle 7 Wesen zeitversetzt in "
-                "derselben Runde (sichtbar im Tab 'Live-Aktivitaet'). Ein "
-                "einzelnes Wesen auswaehlen laesst nur dieses eine laufen -- "
-                "z.B. zum gezielten Beobachten/Testen, ohne dass die anderen 6 "
-                "denselben LLM-Slot mitbeanspruchen."
+                "Welche Wesen die Schleife pro Zyklus mitlaufen laesst. Standard: "
+                "alle 7 aktiv (bisheriges Verhalten, zeitversetzt in derselben "
+                "Runde, sichtbar im Tab 'Live-Aktivitaet'). Einzelne Wesen "
+                "abwaehlen laesst sie diesen und alle folgenden Zyklen aus, bis "
+                "sie hier wieder angehakt werden -- z.B. um nur ein paar gezielt "
+                "laufen zu lassen, ohne dass die restlichen denselben LLM-Slot "
+                "mitbeanspruchen. Mindestens ein Wesen muss aktiv bleiben; eine "
+                "leere Auswahl wird beim Speichern wie 'alle' behandelt."
             ),
             "optionen": [
-                {"wert": "alle", "label": "Alle Wesen (Standard)"},
-                {"wert": "Schorschel", "label": "nur Schorschel"},
-                {"wert": "F3INSCHM3CK3R", "label": "nur F3INSCHM3CK3R"},
-                {"wert": "träumerlie", "label": "nur träumerlie"},
-                {"wert": "R1ZZ1", "label": "nur R1ZZ1"},
-                {"wert": "jumpa", "label": "nur jumpa"},
-                {"wert": "Resonanzknoten", "label": "nur Resonanzknoten"},
-                {"wert": "dak+gord-system", "label": "nur dak+gord-system"},
+                {"wert": "Schorschel", "label": "Schorschel"},
+                {"wert": "F3INSCHM3CK3R", "label": "F3INSCHM3CK3R"},
+                {"wert": "träumerlie", "label": "träumerlie"},
+                {"wert": "R1ZZ1", "label": "R1ZZ1"},
+                {"wert": "jumpa", "label": "jumpa"},
+                {"wert": "Resonanzknoten", "label": "Resonanzknoten"},
+                {"wert": "dak+gord-system", "label": "dak+gord-system"},
             ],
-            "standard": "alle",
+            "standard": ["Schorschel", "F3INSCHM3CK3R", "träumerlie", "R1ZZ1", "jumpa", "Resonanzknoten", "dak+gord-system"],
         },
     },
 }
+
+
+def _mehrfach_felder(name: str) -> list[dict]:
+    felder = MEHRFACH_FELD_LABELS.get(name, {})
+    return [{"key": k, **v} for k, v in felder.items()]
 
 
 def _schalter_felder(name: str) -> list[dict]:
@@ -458,6 +474,7 @@ def _individualisierung_hinweis(name: str) -> dict | None:
     return {
         "takt": takt, "verhalten_moeglich": verhalten, "verhalten_erklaerung": verhalten_erklaerung,
         "braucht_neustart": braucht_neustart, "schalter": _schalter_felder(name),
+        "mehrfach": _mehrfach_felder(name),
     }
 
 

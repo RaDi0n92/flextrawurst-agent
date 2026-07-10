@@ -1257,13 +1257,16 @@ def haupt_schleife():
         # (editierbar ueber flarumstyler, kein eigenes UI-Feld noetig) --
         # "token" (Standard) oder "zeit" (alter Modus, Baustein 11-13).
         budget_modus = (konfig.get("meta") or {}).get("budget_modus") or BUDGET_MODUS_STANDARD
-        # Baustein 24 (Daniel, 2026-07-10): wesen_filter -- "alle" (Standard,
-        # bisheriges Verhalten, alle 7 Wesen zeitversetzt in derselben Runde,
-        # sichtbar in der Live-Aktivitaet) oder ein einzelner Wesen-Name, um
-        # gezielt nur dieses eine Wesen laufen zu lassen (z.B. zum Beobachten/
-        # Testen, ohne dass die anderen 6 den LLM-Slot mitbeanspruchen).
-        wesen_filter = (konfig.get("meta") or {}).get("wesen_filter") or "alle"
-        aktive_wesen = [wesen_filter] if wesen_filter in WESEN else WESEN
+        # Baustein 24 (Daniel, 2026-07-10, "sowohl als auch"): wesen_aktiv --
+        # Liste der Wesen, die dieser Zyklus mitlaufen laesst. Fehlt der Key
+        # oder ist die Liste leer (Sicherheitsnetz: keine leere Runde), laufen
+        # alle 7 wie bisher. Deckt sowohl "alle" (Liste = WESEN) als auch
+        # "genau eines" (Liste mit 1 Eintrag) als auch jede Mischung ab --
+        # ersetzt den ersten Entwurf (wesen_filter, nur "alle" ODER "eines").
+        wesen_aktiv = (konfig.get("meta") or {}).get("wesen_aktiv")
+        aktive_wesen = [w for w in WESEN if w in wesen_aktiv] if isinstance(wesen_aktiv, list) else WESEN
+        if not aktive_wesen:
+            aktive_wesen = WESEN
 
         zustand = _lade_zustand()
         for wesen in WESEN:
