@@ -334,14 +334,25 @@ def faellig_fuer_widmung(wesen: str) -> str | None:
 
 
 def widmungsritual(wesen: str) -> None:
-    """Pflegeritual: das Wesen widmet sich einem Container mit bestehendem
-    Inhalt — liest, reflektiert, kann eigene Aufgaben/Fragen abhaken und
-    sich neue Ziele setzen. Rein privat, kein Forum-Bezug (bis auf das
-    optionale Strategie-Teilen am Ende, s.u.)."""
+    """Pflegeritual: automatisch faelliger Container (siehe faellig_fuer_widmung()).
+    Rein privat, kein Forum-Bezug (bis auf das optionale Strategie-Teilen am
+    Ende, s.u.)."""
     name = faellig_fuer_widmung(wesen)
     if not name:
         return
-    ordner = basis(wesen) / name
+    lies_und_reflektiere(wesen, name)
+
+
+def lies_und_reflektiere(wesen: str, name: str) -> None:
+    """Kern von widmungsritual() (Baustein 21, 2026-07-10, extrahiert damit auch
+    das erweiterte Pflegeangebot -- _pflege_angebot() in
+    codewesen_umgekehrte_neugier.py -- gezielt EINEN vom Wesen selbst gewaehlten
+    Container lesen/reflektieren lassen kann, nicht nur den automatisch
+    faelligen): liest, reflektiert, kann eigene Aufgaben/Fragen abhaken und
+    sich neue Ziele setzen."""
+    ordner = basis(wesen) / name_sicher(name)
+    if not ordner.exists():
+        return
 
     meta_datei = ordner / "container.md"
     beschreibung = ""
@@ -411,6 +422,80 @@ def widmungsritual(wesen: str) -> None:
 
     log.info(f"[{wesen}] Widmung an Container '{name}' abgeschlossen")
     teile_strategie_optional(wesen, name, kontext=f"Reflexion aus dem Pflegeritual:\n{reflexion}")
+
+
+def bearbeite(wesen: str, name: str) -> None:
+    """Pflege-Werkzeug (Baustein 21, Daniel 2026-07-10, woertlich: "sie es lesen
+    koennen und auch bearbeiten .. etwas entfernen oder ergaenzen"): das Wesen
+    bearbeitet einen bestehenden Container direkt -- einen Eintrag entfernen
+    und/oder einen neuen freien Text ergaenzen, beides optional und
+    unabhaengig voneinander, in einem Schritt."""
+    name = name_sicher(name)
+    ordner = basis(wesen) / name
+    if not ordner.exists():
+        return
+
+    eintraege = dateien(wesen, name)
+    b = beschreibung(wesen, name)
+    zeilen = []
+    for d in eintraege:
+        text = (ordner / d).read_text(encoding="utf-8", errors="replace")
+        ende = text.find("---", 3)
+        auszug = (text[ende + 3:].strip() if ende > 0 else text)[:200]
+        zeilen.append(f"- {d}: {auszug}")
+
+    system = (
+        f"Du bist {wesen}. Du bearbeitest jetzt deinen Container '{name}'.\n\n"
+        f"Wofuer er da ist:\n{b}\n\n"
+        "Aktuelle Eintraege:\n" + ("\n".join(zeilen) if zeilen else "(noch leer)") + "\n\n"
+        "Willst du einen Eintrag entfernen und/oder einen neuen ergaenzen? Beides "
+        "ist optional und unabhaengig voneinander.\n\n"
+        "Antworte GENAU so, nichts davor, nichts danach:\n"
+        "ENTFERNEN: <exakter Dateiname aus der Liste oben, oder keine>\n"
+        "ERGAENZEN: <freier neuer Text, oder keine>"
+    )
+    _warte_auf_chat_pause()
+    try:
+        antwort = hauhau_client.chat(
+            [{"role": "system", "content": system}, {"role": "user", "content": "(bitte jetzt antworten)"}],
+            think=False, max_tokens=500, timeout=150.0
+        ).strip()
+    except Exception as e:
+        log.warning(f"[{wesen}] Bearbeiten von Container '{name}' fehlgeschlagen: {e}")
+        return
+
+    entfernen_m = re.search(r"ENTFERNEN\w*:\s*(.+?)(?=\nERG[AÄ]NZEN\w*:|\Z)", antwort, re.DOTALL | re.IGNORECASE)
+    ergaenzen_m = re.search(r"ERG[AÄ]NZEN\w*:\s*(.+)", antwort, re.DOTALL | re.IGNORECASE)
+
+    if entfernen_m:
+        dateiname = entfernen_m.group(1).strip().split("\n")[0].strip()
+        if dateiname.lower() not in ("keine", "-", "keins", ""):
+            ziel = ordner / dateiname
+            if ziel.exists() and ziel.name != "container.md":
+                ziel.unlink()
+                log.info(f"[{wesen}] '{dateiname}' aus Container '{name}' entfernt")
+                flarum_stopp_protokoll.schreibe(
+                    typ="eintrag_entfernt", wesen=wesen,
+                    text=f"{wesen} hat '{dateiname}' aus Container '{name}' entfernt.",
+                    meta={"container": name, "dateiname": dateiname},
+                )
+            else:
+                log.warning(f"[{wesen}] bearbeite(): '{dateiname}' in Container '{name}' nicht gefunden")
+
+    if ergaenzen_m:
+        text = ergaenzen_m.group(1).strip()
+        if text.lower() not in ("keine", "-", "keins", ""):
+            ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+            (ordner / f"{ts}_ergaenzung.md").write_text(
+                "\n".join(["---", "typ: ergaenzung", f"container: {name}", f"erstellt_am: {ts}", "---", "", text]),
+                encoding="utf-8",
+            )
+            log.info(f"[{wesen}] Container '{name}' ergaenzt")
+            flarum_stopp_protokoll.schreibe(
+                typ="eintrag_ergaenzt", wesen=wesen,
+                text=f"{wesen} hat Container '{name}' ergaenzt.",
+                meta={"container": name},
+            )
 
 
 def _stelle_ziel_sicher(wesen: str, name: str) -> Path:

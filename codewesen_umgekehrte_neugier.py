@@ -346,21 +346,33 @@ def _alternative_suchbegriffe(wesen: str, interesse: str, warum: str) -> list[st
 def _pflege_angebot(wesen: str) -> bool:
     """Erster garantierter Weg (Baustein 11, Daniel: 'das wesen hat nicht falsch
     geantwortet, du musst einen weg eroeffnen'): existiert eigenes Container-
-    Material, darf das Wesen es stattdessen pflegen (verschieben/kopieren) --
-    echte codewesen_container.verschiebe()/kopiere(), vorher nie aus diesem
-    Dienst heraus aufgerufen. Gibt True zurueck, wenn wirklich etwas passiert ist."""
+    Material, darf das Wesen es stattdessen pflegen. Baustein 21 (Daniel,
+    2026-07-10, woertlich): 'es muss ihnen gesagt werden was sie mit dem material
+    darin machen koennen -- lesen, bearbeiten (entfernen/ergaenzen), sich fragen
+    stellen oder ziele/zwischenziele setzen, neue container erfinden/benennen/
+    beschreiben, material hin- und herschieben' -- volle Palette statt nur
+    verschieben/kopieren. Gibt True zurueck, wenn wirklich etwas passiert ist."""
     eigene_container = container.liste(wesen)
     material = {c: container.dateien(wesen, c) for c in eigene_container}
     material = {c: d for c, d in material.items() if d}
     if not material:
         return False
 
-    liste_text = ", ".join(f"{c} ({len(d)} Eintraege)" for c, d in material.items())
+    zeilen = []
+    for c, d in material.items():
+        b = container.beschreibung(wesen, c)
+        zeilen.append(f"- {c} ({len(d)} Eintraege)" + (f": {b}" if b else ""))
+    liste_text = "\n".join(zeilen)
+
     system = (
         f"Du bist {wesen}. Deine Suche eben hat nichts gefunden. Du hast aber eigene "
-        f"Container mit Material: {liste_text}.\n"
-        "Moechtest du stattdessen kurz etwas darin verschieben oder kopieren -- oder "
-        "ist dir auch das gerade nicht danach?\n\n"
+        f"Container mit Material:\n{liste_text}\n\n"
+        "Damit kannst du gerade Folgendes tun: es lesen und reflektieren, es "
+        "bearbeiten (etwas entfernen oder ergaenzen), dir dabei selbst Fragen "
+        "stellen oder dir Ziele/Zwischenziele setzen, einen ganz neuen Container "
+        "erfinden (selbst benennen und beschreiben), oder Material zwischen "
+        "Containern verschieben/kopieren.\n"
+        "Moechtest du gerade etwas davon tun -- oder ist dir auch das gerade nicht danach?\n\n"
         "Antworte GENAU so, nichts davor, nichts danach:\nANTWORT: <ja|nein>"
     )
     antwort = _llm(wesen, system, "(bitte jetzt antworten)", max_tokens=50, timeout=60.0)
@@ -368,25 +380,76 @@ def _pflege_angebot(wesen: str) -> bool:
         return False
 
     system2 = (
-        f"Du bist {wesen}. Waehle einen konkreten Eintrag zum Verschieben oder Kopieren.\n"
-        f"Deine Container mit Material: {liste_text}\n\n"
+        f"Du bist {wesen}. Was genau moechtest du tun?\n"
+        f"Deine Container mit Material:\n{liste_text}\n\n"
+        "Waehle eine Aktion:\n"
+        "lesen -- du bekommst den Inhalt eines deiner Container nochmal vorgelegt, "
+        "kannst reflektieren, erledigte Aufgaben/Fragen abhaken und dir neue Ziele setzen\n"
+        "bearbeiten -- einen Eintrag aus einem Container entfernen und/oder einen neuen ergaenzen\n"
+        "verschieben -- einen Eintrag in einen anderen (auch neuen) Container verschieben\n"
+        "kopieren -- einen Eintrag in einen anderen (auch neuen) Container kopieren\n"
+        "neuer_container -- einen ganz neuen Container erfinden, benennen und beschreiben\n\n"
         "Antworte GENAU so, nichts davor, nichts danach:\n"
-        "VON_CONTAINER: <name>\nDATEINAME: <exakter Dateiname>\n"
-        "NACH_CONTAINER: <name, kann auch neu sein>\nAKTION: <verschieben|kopieren>"
+        "AKTION: <lesen|bearbeiten|verschieben|kopieren|neuer_container>\n"
+        "CONTAINER: <bei lesen/bearbeiten: welcher deiner Container; bei neuer_container: der neue Name>\n"
+        "VON_CONTAINER: <nur bei verschieben/kopieren>\n"
+        "DATEINAME: <nur bei verschieben/kopieren: exakter Dateiname>\n"
+        "NACH_CONTAINER: <nur bei verschieben/kopieren>"
     )
-    antwort2 = _llm(wesen, system2, "(bitte jetzt antworten)", max_tokens=100, timeout=60.0)
+    antwort2 = _llm(wesen, system2, "(bitte jetzt antworten)", max_tokens=150, timeout=90.0)
     if not antwort2:
         return False
-    von_m = re.search(r"VON_CONTAINER:\s*(.+)", antwort2)
-    datei_m = re.search(r"DATEINAME:\s*(.+)", antwort2)
-    nach_m = re.search(r"NACH_CONTAINER:\s*(.+)", antwort2)
-    aktion_m = re.search(r"AKTION:\s*(verschieben|kopieren)", antwort2, re.IGNORECASE)
-    if not (von_m and datei_m and nach_m and aktion_m):
+
+    aktion_m = re.search(r"AKTION\w*:\s*(lesen|bearbeiten|verschieben|kopieren|neuer_container)", antwort2, re.IGNORECASE)
+    if not aktion_m:
         return False
-    von_c = von_m.group(1).strip()
+    aktion = aktion_m.group(1).lower()
+    container_m = re.search(r"\nCONTAINER\w*:\s*(.+)", antwort2)
+    gewaehlter_container = container_m.group(1).strip().split("\n")[0].strip() if container_m else ""
+
+    if aktion == "lesen":
+        if gewaehlter_container not in material:
+            log.warning(f"[{wesen}] Pflege-Angebot 'lesen': Container '{gewaehlter_container}' nicht real vorhanden")
+            return False
+        container.lies_und_reflektiere(wesen, gewaehlter_container)
+        protokoll.schreibe(
+            typ="neugier_pflege", wesen=wesen,
+            text=f"{wesen} hat Container '{gewaehlter_container}' gelesen und reflektiert (statt einer erfolglosen Suche).",
+            meta={"container": gewaehlter_container, "aktion": "lesen"},
+        )
+        return True
+
+    if aktion == "bearbeiten":
+        if gewaehlter_container not in material:
+            log.warning(f"[{wesen}] Pflege-Angebot 'bearbeiten': Container '{gewaehlter_container}' nicht real vorhanden")
+            return False
+        container.bearbeite(wesen, gewaehlter_container)
+        protokoll.schreibe(
+            typ="neugier_pflege", wesen=wesen,
+            text=f"{wesen} hat Container '{gewaehlter_container}' bearbeitet (statt einer erfolglosen Suche).",
+            meta={"container": gewaehlter_container, "aktion": "bearbeiten"},
+        )
+        return True
+
+    if aktion == "neuer_container":
+        name = container.name_sicher(gewaehlter_container) if gewaehlter_container else _naechster_unbenannter_container_name(wesen)
+        container.erstelle(wesen, name, anlass="im Pflegeangebot selbst gewaehlt, statt einer erfolglosen Suche")
+        protokoll.schreibe(
+            typ="neugier_pflege", wesen=wesen,
+            text=f"{wesen} hat einen neuen Container '{name}' angelegt (statt einer erfolglosen Suche).",
+            meta={"container": name, "aktion": "neuer_container"},
+        )
+        return True
+
+    # verschieben / kopieren -- wie zuvor
+    von_m = re.search(r"VON_CONTAINER\w*:\s*(.+)", antwort2)
+    datei_m = re.search(r"DATEINAME\w*:\s*(.+)", antwort2)
+    nach_m = re.search(r"NACH_CONTAINER\w*:\s*(.+)", antwort2)
+    if not (von_m and datei_m and nach_m):
+        return False
+    von_c = von_m.group(1).strip().split("\n")[0].strip()
     datei = datei_m.group(1).strip().split("\n")[0].strip()
     nach_c = nach_m.group(1).strip().split("\n")[0].strip()
-    aktion = aktion_m.group(1).lower()
 
     if von_c not in material or datei not in material[von_c]:
         log.warning(f"[{wesen}] Pflege-Angebot: '{datei}' in '{von_c}' nicht real vorhanden -- ehrlich abgebrochen")
