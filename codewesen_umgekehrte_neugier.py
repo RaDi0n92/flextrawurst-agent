@@ -486,6 +486,7 @@ def _lies_post_chunk(disk_id: int, post_index: int, chunk_index: int, chunk_toke
         "text": chunk_text,
         "autor": p.get("username", "?"),
         "post_nr": post_index + 1,
+        "post_id": p.get("id"),  # echte Flarum-posts.id, nicht nur die Position im Thread
         "gesamt_posts": len(posts),
         "chunk_nr": chunk_index + 1,
         "gesamt_chunks": gesamt_chunks,
@@ -1055,9 +1056,19 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = "", budget_
         z.setdefault("gesammeltes_material", []).append({
             "typ": None,
             "inhalt": entscheidung["mitgenommen"],
+            # Baustein 20 (Daniel, 2026-07-10): "die Entscheidung etwas zu
+            # halten soll direkt etwas ausloesen, naemlich Datum und Uhrzeit
+            # dem Material hinzufuegen plus die ID und den Namen der
+            # Diskussion und die ID des Posts" -- Zeitpunkt der tatsaechlichen
+            # Mitnahme-Entscheidung waehrend des Lesens, nicht erst der
+            # spaetere Schreibzeitpunkt in der Container-Zuordnungsphase
+            # (container.sichere()s "erstellt_am" ist das Datei-Schreibdatum,
+            # oft Minuten/Stunden spaeter am Sitzungsende).
+            "mitgenommen_ts": datetime.now(timezone.utc).isoformat(),
             "disk_id": disk_id,
             "titel": post["titel"],
             "post_nr": post["post_nr"],
+            "post_id": post.get("post_id"),
             # Voller Posttext, nicht nur die Mitnahme -- Daniel, 2026-07-09
             # spaet: "muss beim lesen der genauen mitnahme dem wesen der
             # kontext zurueckgegeben werden was kurz davor und kurz danach
@@ -1137,6 +1148,7 @@ def _phase_container_zuordnung(wesen: str, zustand: dict):
         container.sichere(
             wesen, wahl["container"], wahl["typ"], stueck["inhalt"], bezug_diskussion=stueck.get("disk_id"),
             grundlage=stueck.get("grundlage"), grundlage_begruendung=stueck.get("grundlage_begruendung"),
+            bezug_post=stueck.get("post_id"), mitgenommen_ts=stueck.get("mitgenommen_ts"),
         )
         protokoll.schreibe(
             typ="neugier_material_reflektiert", wesen=wesen,

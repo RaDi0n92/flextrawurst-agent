@@ -200,12 +200,22 @@ def teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
 
 
 def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None = None,
-            grundlage: str | None = None, grundlage_begruendung: str | None = None) -> None:
+            grundlage: str | None = None, grundlage_begruendung: str | None = None,
+            bezug_post: int | None = None, mitgenommen_ts: str | None = None) -> None:
     """grundlage/grundlage_begruendung (2026-07-09, Entscheidungs-Gegenpruefung):
     optionales Ergebnis von codewesen_umgekehrte_neugier._pruefe_grundlage() --
     ja/teilweise/nein, ob der Inhalt durch den gelesenen Text gedeckt ist. Wird
     nur als Frontmatter-Meta danebengelegt, der Inhalt selbst bleibt unveraendert
-    (Provenienz-Prinzip: das Wesen-Wort wird nie umgeschrieben)."""
+    (Provenienz-Prinzip: das Wesen-Wort wird nie umgeschrieben).
+
+    bezug_post/mitgenommen_ts (Baustein 20, 2026-07-10, Daniel woertlich: "die
+    Entscheidung etwas zu halten soll direkt etwas ausloesen, naemlich Datum
+    und Uhrzeit dem Material hinzufuegen plus die ID und den Namen der
+    Diskussion und die ID des Posts"): mitgenommen_ts ist der Zeitpunkt der
+    tatsaechlichen Mitnahme-Entscheidung waehrend des Lesens -- NICHT dasselbe
+    wie erstellt_am weiter unten, das ist der spaetere Datei-Schreibzeitpunkt
+    in der ruhigeren Container-Zuordnungsphase am Sitzungsende, oft Minuten
+    bis Stunden danach."""
     name = name_sicher(container)
     if name not in liste(wesen):
         erstelle(wesen, name, anlass=inhalt[:200])
@@ -214,6 +224,8 @@ def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
     zeilen = ["---", f"typ: {typ}", f"container: {name}",
               f"bezug_diskussion: {bezug_diskussion if bezug_diskussion else 'null'}",
+              f"bezug_post: {bezug_post if bezug_post else 'null'}",
+              f"mitgenommen_am: {mitgenommen_ts if mitgenommen_ts else 'null'}",
               f"erstellt_am: {ts}"]
     if grundlage is not None:
         zeilen.append(f"grundlage: {grundlage}")

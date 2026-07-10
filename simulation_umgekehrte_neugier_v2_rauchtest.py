@@ -120,7 +120,8 @@ class Welt:
                            "username": f"user{i}"} for i in range(n)]}
 
     def container_sichere(self, wesen, cont, typ, inhalt, bezug_diskussion=None,
-                           grundlage=None, grundlage_begruendung=None):
+                           grundlage=None, grundlage_begruendung=None,
+                           bezug_post=None, mitgenommen_ts=None):
         self.container_material.setdefault(wesen, {}).setdefault(cont, []).append(f"neu_{self.seed}.md")
 
     def container_liste(self, wesen):
