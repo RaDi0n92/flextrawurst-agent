@@ -509,6 +509,23 @@ jumpa" markiert ihn aktiv, Speichern-Rundlauf per HTTP 200 bestaetigt
 Live-Verhaltensaenderung durch diese Session, der naechste Zyklus laeuft weiterhin mit
 allen 7 Wesen.
 
+**Nachtrag, noch selbe Session — `wesen_filter` durch `wesen_aktiv` ersetzt:**
+Auf Rueckfrage bestaetigt Daniel: nicht "alle ODER genau eines" (exklusiver
+Radio-Schalter), sondern "sowohl als auch" — jedes der 7 Wesen soll unabhaengig
+an-/abschaltbar sein, jede Mischung moeglich. Der Radio-Schalter `wesen_filter`
+wurde komplett entfernt (nie live benutzt, kein Migrations-Bedarf) und durch
+einen neuen Feldtyp ersetzt: **Mehrfach-Toggle** (`MEHRFACH_FELD_LABELS` in
+`weltkern_watchdog.py`, `waehleMehrfachSchalter()` im flarumstyler statt
+`waehleSchalter()` — jeder Button schaltet nur sich selbst, kein Deselektieren
+der anderen). `haupt_schleife()` liest jetzt `meta.wesen_aktiv` (Liste von
+Wesen-Namen statt einzelnem String); leer oder Key fehlt → alle 7, wie zuvor.
+Live per Playwright verifiziert: Default alle 7 aktiv, zwei einzeln abgewaehlt
+(Schorschel, jumpa) ohne die anderen zu beeinflussen, Speichern-Rundlauf HTTP
+200 mit korrekter 5-elementiger Liste in Postgres, danach wieder auf
+Standardzustand zurueckgesetzt. Vollstaendige aktuelle Beschreibung des Diensts
+inkl. dieser Konfiguration jetzt in einer eigenen Datei: [[23_umgekehrte_neugier]]
+— diese Chronik hier bleibt der historische Bau-Bericht.
+
 ## Wiederaufnahme
 
 Rein manuell, kein Zeitplan: `flarum_post_sperre.entsperren(von="Daniel")` (schreibt automatisch einen `sperre_aufgehoben`-Protokolleintrag inkl. Sperrdauer). Der umgedrehte Neugier-Dienst (Baustein 3) läuft davon unabhängig weiter oder wird unabhängig gestartet/gestoppt — er schreibt ohnehin nie nach Flarum, seine Existenz ist keine Voraussetzung für die Sperre und umgekehrt.

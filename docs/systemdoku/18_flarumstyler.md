@@ -217,10 +217,19 @@ Optionsliste (`SCHALTER_FELD_LABELS` in `welt/weltkern_watchdog.py`), fuer Werte
 weder ein Zeitwert noch Freitext sind. Erstverwendung: `budget_modus` bei
 `codewesen-umgekehrte-neugier`, zweite Verwendung: `llm_pool` bei
 `codewesen-antwort-daniel` (hintergrund/chat-Pool-Wechsel, siehe [[19_llm_scheduler]]
-und [[20_flarum_stopp]] Baustein 18 + 22), dritte Verwendung: `wesen_filter` bei
-`codewesen-umgekehrte-neugier` (alle 7 Wesen oder gezielt nur eines, siehe
-[[20_flarum_stopp]] Baustein 24) — derselbe Feldtyp traegt jetzt drei ganz
-unterschiedliche Auswahl-Situationen.
+und [[20_flarum_stopp]] Baustein 18 + 22) — zwei Einsatzstellen mit exklusivem
+Radio-Verhalten (immer genau ein aktiver Button pro Gruppe).
+
+**Zweiter Feldtyp, noch selber Tag: Mehrfach-Toggle.** Erster Entwurf fuer
+"welche Wesen laufen mit" war ein dritter Schalter-Wert (`wesen_filter`, alle
+ODER genau eines) — auf Rueckfrage stellte sich heraus, Daniel wollte "sowohl
+als auch": jedes Wesen unabhaengig an/aus, jede Mischung moeglich. Dafuer reicht
+der exklusive Schalter nicht — neuer Feldtyp `MEHRFACH_FELD_LABELS` in
+`welt/weltkern_watchdog.py`, im flarumstyler `waehleMehrfachSchalter()` statt
+`waehleSchalter()` (Button schaltet nur sich selbst, kein Deselektieren der
+Gruppe). Aktueller Wert ist eine Liste statt einem einzelnen String. Erste
+(bislang einzige) Verwendung: `wesen_aktiv` bei `codewesen-umgekehrte-neugier`,
+siehe [[23_umgekehrte_neugier]] und [[20_flarum_stopp]] Baustein 24.
 
 ## Nächste Schritte (noch offen)
 

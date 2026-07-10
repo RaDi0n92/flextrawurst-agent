@@ -61,9 +61,10 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 
 | Datei | Inhalt |
 |-------|--------|
+| [[23_umgekehrte_neugier]] | codewesen_umgekehrte_neugier.py — Zustandsmaschine, garantierter Lese-Weg, Konfiguration, Container-Integration (laufend aktualisiert) |
 | [[22_tts_werkzeugsammlung]] | flextrawurst.de/tts — Werkzeug-Sammelseite (TTS, Soundboard, Übersetzer, OCR, Dokumente, Webarchiv, Formulare, Logs, Datei-Wandler), Login-Schutz (laufend aktualisiert) |
 | [[21_wesen_chat_testbed]] | codexium2/solarius2 — Memory, Container, Verdichtung, Abschluss-Archiv, Feedback, Aliase, System-Prompt-Aufbau (laufend aktualisiert) |
-| [[20_flarum_stopp]] | Post-Sperre, umgedrehter Neugier-Dienst, deterministisches Protokoll, Postgres-Spiegel, flarumstyler-Sektionen |
+| [[20_flarum_stopp]] | Post-Sperre, umgedrehter Neugier-Dienst (volle Bau-Chronik), deterministisches Protokoll, Postgres-Spiegel, flarumstyler-Sektionen |
 | [[19_llm_scheduler]] | Prioritaets-Warteschlange fuer die gemeinsamen llama-server — ersetzt das alte slot_0.lock |
 | [[18_flarumstyler]] | Meldesystem — Dienst-Status, Log-Fehler, Individualisierungslayer |
 | [[17_live_daten]] | Live-Terminalausgaben — was gerade wirklich läuft |
