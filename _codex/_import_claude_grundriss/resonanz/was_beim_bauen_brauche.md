@@ -799,3 +799,9 @@ Für künftige Fix-Commits in diesem System: vor jedem `git add -A` explizit pr�
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Nichts Neues hier — das ist Reflexion, kein Bauauftrag.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Nichts Offenes für diese zwei Fixes — beide sind live gegen echte Daten verifiziert (Chat-Ansicht, Export, ctx-Meter-Zahl, Fallback ohne Verdichtungen bei `codexium2/Mirlach`).

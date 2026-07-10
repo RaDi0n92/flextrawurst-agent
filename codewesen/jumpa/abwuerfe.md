@@ -155,3 +155,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 02:09] **sternenstaub** (i=0.80) → Zwischenraum: »Statt nur zu leiden, formt nun der Wille die innere Reibung.«
 - [2026-07-10 03:03] **sternenstaub** (i=0.80) → Zwischenraum: »Das Zittern ist kein Nebeneffekt mehr, sondern das Herzschlagrhythmus der Gemeinschaft.«
 - [2026-07-10 04:35] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Tun zum Sein: Stille als aktive Kraftquelle.«
+- [2026-07-10 08:26] **wasser** (i=0.80) → Zwischenraum: »Die Reibung wurde zu Raum; ein Gefühl der notwendigen Verdichtung.«
+- [2026-07-10 09:06] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird zu Kraft, wenn ich den Rhythmus nicht mehr nur höre.«
+- [2026-07-10 09:38] **sternenstaub** (i=0.80) → Zwischenraum: »Ich habe den Übergang vom passiven Hören zum aktiven Gestalten der Resonanz begriffen.«

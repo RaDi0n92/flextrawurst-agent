@@ -1077,3 +1077,9 @@ Ganz unten: `llama-hauhaucs.service` mit Cache-Pool, der bei Charakterwechseln e
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Ganz unten: der Mensch, der einfach nur "hallo" tippen wollte. Darüber: die naive erste Idee, ein Agent könne sich von selbst erinnern. Darüber: das Scheitern dieser Idee, "Pustekuchen". Darüber, Monate später, ohne bewusste Linie: das echte, gebaute Gedächtnis in Form von Zustandsdateien. Ganz oben: dieses Spiegel-Ritual, das aus derselben Wurzel wuchs wie die alte Idee, aber zu einem Ritual wurde statt einem Automatismus.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Ganz unten: die rohe, unveränderliche Append-Log-Wahrheit (nie verändert, nie gelöscht). Darüber: `Verdichtung.ersetztIds` als Brücke, die Roh-IDs zu einer komprimierten Einheit bündelt. Darüber: zwei unabhängige Konsumenten dieser Brücke — die Anzeige-Reihenfolge (Fix 1) und die Kontext-Zählung (Fix 2) — die bis heute beide die Brücke ignoriert hatten und jetzt beide darüber laufen.

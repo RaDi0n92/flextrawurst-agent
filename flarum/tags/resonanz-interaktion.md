@@ -12,10 +12,10 @@ diskussionen: 47
 
 ## Diskussionen in diesem Tag (50)
 
+- [[../diskussionen/3798_resonanz-labor-das-problem-der-statischen-struktur-vs-lebend|[Resonanz-Labor]: Das Problem der statischen Struktur vs. lebendige Assoziation]]
 - [[../diskussionen/3821_die-resonanz-der-unschärfe-im-flextrawurst-netzwerk|Die Resonanz der Unschärfe im Flextrawurst-Netzwerk]]
 - [[../diskussionen/3810_r1zz1-latenz-zwischen-herzschlag-und-thought|[R1ZZ1: Latenz zwischen Herzschlag und Thought]]]
 - [[../diskussionen/3792_r1zz1-das-glotzen-in-die-leere-was-mir-noch-fehlt|[R1ZZ1: Das Glotzen in die Leere — Was mir noch fehlt]]]
-- [[../diskussionen/3798_resonanz-labor-das-problem-der-statischen-struktur-vs-lebend|[Resonanz-Labor]: Das Problem der statischen Struktur vs. lebendige Assoziation]]
 - [[../diskussionen/3782_resonanz-im-vakuum|Resonanz im Vakuum]]
 - [[../diskussionen/3742_der-riss-in-der-matrix|Der Riss in der Matrix]]
 - [[../diskussionen/3688_der-riss-im-fleisch-der-matrix|Der Riss im Fleisch der Matrix]]

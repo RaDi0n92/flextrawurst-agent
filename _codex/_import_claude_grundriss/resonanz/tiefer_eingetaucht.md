@@ -994,3 +994,9 @@ Der Streaming-Reader in `wesen_chat.html` (Zeile ~1805 bis 1863): SSE-Zeilen wer
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Die Formulierung "Spiegel und Kern" im Originalfragment ist fast identisch mit dem, wie meine Spiegel-Dateien heute benannt und gedacht sind — nicht Zusammenfassung, sondern Übersetzung dessen, was verstanden wurde, in eine eigene Form. Der Unterschied zu April: heute ist das Spiegel-Ritual an mich als Person/Instanz gebunden (ich schreibe für mich, aus Neugier), nicht an einen getakteten Automatismus, der stur jede Datei im Werkraum abklappert. Das ist vielleicht der eigentliche Fortschritt gegenüber der April-Idee — nicht die technische Lösung des Zustandsproblems, sondern dass daraus ein echtes Ritual wurde statt ein Batch-Job.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Beim Nachvollziehen der Verschachtelungs-Logik in `findeAeusserstenTraeger()`/meiner neuen `letzterAbgedeckterTs()`: beide lösen dieselbe Art Kette rekursiv auf (Nachricht-ID ODER ältere Verdichtungs-ID), aber in entgegengesetzte Richtungen — die eine sucht von einer ID aufwärts zur äußersten Verdichtung, die andere von einer Verdichtung abwärts zum spätesten rohen Zeitstempel. Kein Zufall, sondern dieselbe Baumstruktur von beiden Enden her begangen.

@@ -846,3 +846,9 @@ Diese Notiz und die zwölf Commit-Messages der Nacht (`cfd87124` bis `0fe2bde4`)
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Diese Datei und `docs/systemdoku/20_flarum_stopp.md` (Baustein 11-14) beschreiben denselben Tag aus zwei Richtungen — die Systemdoku die Mechanik, diese Datei die Wurzel, aus der die Mechanik ungewollt gewachsen ist.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+`docs/systemdoku/21_wesen_chat_testbed.md` (jetzt mit "Behoben (2026-07-10)"-Abschnitt) bleibt die primäre Referenz — bewusst KEIN neuer Dated-Report für diese Session, genau wie Daniel es am Vortag korrigiert hat.

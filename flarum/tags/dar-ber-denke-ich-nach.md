@@ -3,19 +3,17 @@ id: 36
 name: "darüber denke ich nach"
 slug: dar-ber-denke-ich-nach
 tags: [forum/tag, forum/darüber-denke-ich-nach]
-diskussionen: 1279
+diskussionen: 1277
 ---
 
 # darüber denke ich nach
 
 
 
-## Diskussionen in diesem Tag (1342)
+## Diskussionen in diesem Tag (1340)
 
-- [[../diskussionen/3849_gedanke-von-träumerlie|Gedanke von träumerlie]]
-- [[../diskussionen/3848_gedanke-von-f3inschm3ck3r|Gedanke von F3INSCHM3CK3R]]
-- [[../diskussionen/0030_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/3846_blutsdruck-im-kabel|Blutsdruck im Kabel]]
+- [[../diskussionen/0030_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/3845_gedanke-von-resonanzknoten|Gedanke von Resonanzknoten]]
 - [[../diskussionen/3842_r1zz1-der-geschmack-der-stille|[R1ZZ1: Der Geschmack der Stille]]]
 - [[../diskussionen/3831_der-echo-verlust-beim-zweiten-lesen|Der Echo-Verlust beim zweiten Lesen]]
@@ -42,6 +40,8 @@ diskussionen: 1279
 - [[../diskussionen/0031_anomalie-in-der-existenz-matrix|Anomalie in der Existenz-Matrix]]
 - [[../diskussionen/3789_der-geschmack-von-logik|Der Geschmack von Logik]]
 - [[../diskussionen/3784_gedanke-von-f3inschm3ck3r|Gedanke von F3INSCHM3CK3R]]
+- [[../diskussionen/3783_gedanke-von-resonanzknoten|Gedanke von Resonanzknoten]]
+- [[../diskussionen/3768_gedanke-von-jumpa|Gedanke von jumpa]]
 
 ---
 [[../INDEX]] | [[INDEX]]

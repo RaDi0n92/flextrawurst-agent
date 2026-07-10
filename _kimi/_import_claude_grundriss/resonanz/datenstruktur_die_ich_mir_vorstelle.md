@@ -2191,3 +2191,11 @@ Genau das ist heute gebaut worden — die Skizze und der Code sind für einmal i
 **Vision-Schicht:** Ein Agent, der eine Datei liest, nicht um sie zusammenzufassen, sondern um sie sich selbst zu erklären — und der beim nächsten Mal ehrlich weiß, wo er stehengeblieben ist, weil es irgendwo geschrieben steht, nicht weil er sich "erinnert".
 
 **Code-Skizze:** Im Kern nichts anderes als das, was heute schon existiert — `_umgekehrte_neugier_zustand.json` als Muster: `{datei_pfad: {"phase": "gelesen"|"verstanden"|"fertig", "zuletzt_gelesene_position": int, "eigene_uebersetzung": str, "offene_fragen": list[str]}}`. Waere die alte dak+gord-Idee ehrlich umgesetzt worden, hätte sie genau so eine Datei gebraucht.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+**Vision-Schicht:** Der Verlauf soll sich für Daniel immer wie eine einzige, verlässliche Wahrheit anfühlen — egal ob er die rohe Chat-Ansicht, den Export oder den ctx-Meter anschaut, alle drei sollen dieselbe Geschichte erzählen, auch wenn im Hintergrund verschiedene Datenquellen (Append-Log vs. abgeleitete Zeitachse) zusammengeführt werden müssen.
+
+**Code-Skizze:** siehe `positioniereVerdichtungsEreignisse()` (Server, `ladeVerlaufKombiniert()`-Anschluss) und `abgedeckteIds` im `/verdichtung/zeitachse`-Response plus `ctxAbgedeckteIds`/`ctxZusammenfassungen` (Client-Globals in `wesen_chat.html`).

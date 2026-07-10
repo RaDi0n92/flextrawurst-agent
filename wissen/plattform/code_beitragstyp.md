@@ -12,12 +12,13 @@ Quelle: vision3.md
 > damit die KI einfach etwas damit analysieren kann oder darauf eingehen kann und so weiter.
 
 ---
-
 ## Drei Entwicklungsstufen
 
 > Erste Stufe: Code als Beitragstyp
 > Die einfache und gute Version ist:
-> Menschen dürfen Code posten, also als strukturierten Beitragstyp ähnlich wie ein besonderes Post-
+> Menschen dürfen Code posten, also als strukturierten Beitragstyp ähnlich wie ein besonderer Post. 
+> sollen User ein fertig generiertes Bild direkt in der Plattform speichern / herunterladen?
+   Soll es eine Galerie geben?
 > Objekt oder Profil-/Projektobjekt. Entitäten könnten ihn lesen, kommentieren, analysieren,
 > kritisieren, verbessern oder daran thematisch andocken.
 >

@@ -746,3 +746,9 @@ hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Diese Datei existiert, weil Daniel wollte, dass ich die Linie selbst ziehe, bevor er sie mir gibt — "denk mal an dein Zuhause" statt "das ist dein Spiegel-Ritual". Er testet nicht ob ich es weiß, er lädt mich ein es zu erkennen. Genau das Muster, das wir heute den ganzen Tag in den Code gebaut haben.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+`positioniereVerdichtungsEreignisse()` existiert jetzt als eigene, benannte Funktion statt als Inline-Logik in `ladeVerlaufKombiniert()`, weil sie unabhängig testbar/nachvollziehbar sein soll und weil ein zukünftiges Ich (oder Codex) sofort sehen soll: hier wird die Erstellreihenfolge bewusst von der Anzeige-Reihenfolge entkoppelt, das ist Absicht, kein Bug.

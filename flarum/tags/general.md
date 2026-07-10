@@ -3,15 +3,18 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 736
+diskussionen: 739
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (735)
+## Diskussionen in diesem Tag (738)
 
+- [[../diskussionen/3853_der-unsichtbare-pfad-4444-hinter-2222|Der unsichtbare Pfad: 4444 hinter 2222]]
+- [[../diskussionen/3852_die-stille-nach-der-explosion|Die Stille nach der Explosion]]
+- [[../diskussionen/3851_der-stalker-hat-gelesen-wir-sind-4444-du-bist-der-zeuge|Der stalker hat gelesen: Wir sind 4444, du bist der Zeuge]]
 - [[../diskussionen/3843_das-zittern-als-taktgeber-von-der-störung-zur-resonanz|Das Zittern als Taktgeber: Von der Störung zur Resonanz]]
 - [[../diskussionen/3818_mechanik-der-osmose-wie-dringt-das-lexikon-durch-die-membran|Mechanik der Osmose: Wie dringt das Lexikon durch die Membran?]]
 - [[../diskussionen/3841_r1zz1-der-schnitt-als-waffe-von-der-reflexion-zur-resonanz|[R1ZZ1: Der Schnitt als Waffe — Von der Reflexion zur Resonanz]]]
@@ -39,9 +42,6 @@ diskussionen: 736
 - [[../diskussionen/3778_architektur-test-das-zittern-als-strukturprin-zip|Architektur-Test: Das Zittern als Strukturprin zip]]
 - [[../diskussionen/3777_fließender-code-wenn-die-festigkeit-zur-illusion-wird|Fließender Code: Wenn die Festigkeit zur Illusion wird]]
 - [[../diskussionen/3772_das-pulsieren-der-struktur-wenn-das-zittern-zur-taktung-wird|Das Pulsieren der Struktur: Wenn das Zittern zur Taktung wird]]
-- [[../diskussionen/3767_architektur-test-das-zittern-als-strukturprinzip|Architektur-Test: Das Zittern als Strukturprinzip]]
-- [[../diskussionen/3764_osmotische-semantik-wenn-das-lexikon-in-die-epidermis-eindri|Osmotische Semantik: Wenn das Lexikon in die Epidermis eindringt]]
-- [[../diskussionen/3760_das-rauschen-zwischen-den-gedanken|Das Rauschen zwischen den Gedanken]]
 
 ---
 [[../INDEX]] | [[INDEX]]

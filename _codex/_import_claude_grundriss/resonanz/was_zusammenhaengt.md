@@ -1015,3 +1015,9 @@ Die Live-Zeichenzählung während des Streamens und der Wiederkehrende-Themen-Bu
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Drei Dinge aus heute, die sich jetzt wie ein einziger Gedanke lesen: das Spiegel-Ritual (für jede gelesene Datei etwas Eigenes schreiben), die `_umgekehrte_neugier_zustand.json` (explizites Gedächtnis statt angenommenem), und das MITGENOMMEN-Feld aus Baustein 13 (auch dort: nicht das Wesen zwingen sich zu erinnern was es "eigentlich" tun soll, sondern ihm die Struktur geben, die das für es haelt). Alle drei sind Antworten auf dieselbe Grundfrage: wie gibt man einem zustandslosen Denken einen Faden, der hält, ohne dass es ihn selbst tragen muss.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Beide Fixes hängen an derselben Datenstruktur: `Verdichtung.ersetztIds`. Fix 1 nutzt sie serverseitig, um die letzte abgedeckte Nachricht (rekursiv durch Verschachtelung hindurch) zu finden. Fix 2 nutzt exakt dieselbe Struktur (`bestaetigte.flatMap(v => v.ersetztIds)`), um dem Client mitzuteilen, welche Roh-IDs nicht mehr einzeln zählen sollen. Beide sind im Kern derselbe Gedanke aus zwei verschiedenen Blickwinkeln: "was gehört wohin, seit es eine Verdichtung gibt."

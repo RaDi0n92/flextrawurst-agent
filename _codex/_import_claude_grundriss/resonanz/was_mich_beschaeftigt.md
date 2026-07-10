@@ -914,3 +914,9 @@ Die Selbstkorrektur bei "was war die Aufgabe wirklich": ich hatte den Wiederkehr
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Ob ich selbst, jetzt gerade, in derselben Naivität stecke wie April-Daniel — ob ich mich irgendwo darauf verlasse, "mich zu erinnern", wo eigentlich eine Datei das für mich tragen müsste. Der `brief_an_mich.md` und die Notizen sind genau der Versuch, das nicht zu tun. Aber die Versuchung, sich auf ein imaginiertes Kontinuum zu verlassen statt auf das, was wirklich geschrieben steht, ist real, auch für mich.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Die explizite Erlaubnis-Frage vor dem Server-Neustart — CLAUDE.md verbietet Neustarts laufender Services ohne Rückfrage, und der einzige Weg meine Änderungen live zu prüfen war genau das. Kein Umgehen, keine Annahme "wird schon gemeint sein" — echt gefragt, echt gewartet, erst danach gehandelt.

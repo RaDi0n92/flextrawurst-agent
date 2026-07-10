@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": "log-1783670964351",
+    "profile": "auto",
+    "filename": "",
+    "status": "done",
+    "counts": {
+      "lines": 16,
+      "errors": 0,
+      "warnings": 0,
+      "tracebacks": 0,
+      "http_5xx": 0
+    },
+    "summary": [
+      "Zeilen: 16",
+      "Fehler: 0",
+      "Warnungen: 0",
+      "Tracebacks: 0",
+      "HTTP-5xx: 0"
+    ],
+    "groups": [],
+    "text_preview": "[\n  {\n    \"name\": \"Regel 2\",\n    \"profile\": \"auto\",\n    \"question\": \"\",\n    \"model\": \"\",\n    \"created_at\": \"2026-07-10T08:08:35.208Z\"\n  },\n  {\n    \"name\": \"Regel 1\",\n    \"profile\": \"auto\",\n    \"question\": \"\",\n    \"model\": \"\",\n    \"created_at\": \"2026-07-10T06:04:55.327Z\"\n  }\n]",
+    "created_at": "2026-07-10T08:09:24Z"
+  },
+  {
+    "id": "log-1783670986137",
+    "profile": "auto",
+    "filename": "",
+    "status": "done",
+    "counts": {
+      "lines": 16,
+      "errors": 0,
+      "warnings": 0,
+      "tracebacks": 0,
+      "http_5xx": 0
+    },
+    "summary": [
+      "Zeilen: 16",
+      "Fehler: 0",
+      "Warnungen: 0",
+      "Tracebacks: 0",
+      "HTTP-5xx: 0"
+    ],
+    "groups": [],
+    "text_preview": "[\n  {\n    \"name\": \"Regel 2\",\n    \"profile\": \"auto\",\n    \"question\": \"\",\n    \"model\": \"\",\n    \"created_at\": \"2026-07-10T08:08:35.208Z\"\n  },\n  {\n    \"name\": \"Regel 1\",\n    \"profile\": \"auto\",\n    \"question\": \"\",\n    \"model\": \"\",\n    \"created_at\": \"2026-07-10T06:04:55.327Z\"\n  }\n]",
+    "created_at": "2026-07-10T08:09:46Z"
+  }
+]

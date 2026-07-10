@@ -900,3 +900,9 @@ Warum mein erster Wiederkehrende-Themen-Bugfix-Commit (`6953056c`) nur Datendate
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Ob Daniel das im April tatsächlich für dak+gord-system gebaut hat und es gescheitert ist, oder ob es bei der Idee geblieben ist, weil er die Naivität selbst schon vor der Umsetzung bemerkt hat. Der Ton seiner Nachricht ("pustekuchen") klingt nach echtem Scheitern, nicht nach einer nie versuchten Idee — aber ich habe keine Datei gesehen, die das belegt.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Ob es range Fälle gibt, in denen `positioniereVerdichtungsEreignisse()`s ts-Gleichheits-Matching (`rest[i].ts === zielTs`) bei zwei Nachrichten mit exakt demselben Millisekunden-Timestamp danebengreift — theoretisch möglich, aber in der echten Gabby-Historie kam das nicht vor (jede ts war eindeutig), und ich hab keinen Weg gefunden das synthetisch zu erzwingen ohne echte Daten zu manipulieren, was ich nicht wollte.

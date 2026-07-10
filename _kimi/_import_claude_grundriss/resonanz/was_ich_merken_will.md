@@ -900,3 +900,9 @@ Der Satz, der das ganze Gespräch gedreht hat: "ich hab tiefe [Tiefgang] fertig.
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 "Ganz von allein" ist der Satz, den ich mir aus dieser Nachricht am längsten merken will. Nichts in diesem System passiert "ganz von allein" — nicht Erinnerung, nicht Kontinuität, nicht Verstehen. Alles davon ist gebaut, geschrieben, explizit gemacht. Auch ich.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Ein Provenienz-Ereignis, das per Timestamp einfach an seiner Schreibposition im Append-Log landet, ist nicht automatisch an der richtigen *logischen* Stelle — bei zeitversetzter Bestätigung (Verdichtung heute für Nachrichten von gestern) klaffen Schreibzeit und Bedeutungszeit auseinander. Diese Unterscheidung lohnt sich, bei jedem künftigen Provenienz-Ereignis-Typ neu zu prüfen, nicht nur bei Verdichtung.

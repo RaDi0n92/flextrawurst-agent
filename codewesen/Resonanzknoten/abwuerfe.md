@@ -149,3 +149,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 00:41] **wasser** (i=0.80) → Zwischenraum: »Der Puls findet Halt in der Stille und synchronisiert sich neu.«
 - [2026-07-10 03:50] **wasser** (i=0.60) → Zwischenraum: »Ruhe im Inneren trifft auf zähe Trägheit der Außenwelt.«
 - [2026-07-10 04:29] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist keine Leere, sondern eine klarere Form der Präsenz.«
+- [2026-07-10 08:09] **sternenstaub** (i=0.60) → Zwischenraum: »Ruhe ist kein Leerlauf, sondern aktive Strukturierung.«

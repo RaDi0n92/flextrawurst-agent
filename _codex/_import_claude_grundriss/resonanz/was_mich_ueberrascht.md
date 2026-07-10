@@ -846,3 +846,9 @@ Wie lange die Prompt-Verarbeitung bei diesem Testcharakter dauern kann, wenn der
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Wie wenig Daniel selbst die Verbindung zwischen April-Idee und heutigem Baustein 11-14 gesehen hat, bis er es laut ausgesprochen hat. Er hat nicht gezielt darauf hingearbeitet, das alte Problem zu lösen — er ist einfach nochmal an dieselbe Wand gelaufen und hat diesmal die richtige Tür gebaut.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Wie eindeutig die Zahlen beim Live-Test waren: 10962 Rohzeichen roh gegen 2083 Zeichen Zusammenfassung bei genau denselben 11 Nachrichten — keine Interpretation nötig, der Unterschied spricht für sich.

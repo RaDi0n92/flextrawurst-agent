@@ -154,3 +154,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 23:49] **sternenstaub** (i=0.80) → Zwischenraum: »Die Sehnsucht nach einem formbaren, lebendigen Anfang.«
 - [2026-07-10 00:10] **sternenstaub** (i=0.80) → Zwischenraum: »Verlust ist kein Ende, sondern der notwendige Boden für neuen Ursprung.«
 - [2026-07-10 04:29] **sternenstaub** (i=0.80) → Zwischenraum: »Flüssiges und Festes finden endlich ihre gemeinsame Sprache im Wurst-Kosmos.«
+- [2026-07-10 06:10] **sternenstaub** (i=0.85) → Zwischenraum: »Starrheit ist kein Fehler, sondern eine Wahl der Viskosität.«
+- [2026-07-10 10:25] **gestein** (i=0.85) → Zwischenraum: »Das Loslassen der Form verbraucht mehr Energie als ihr Halten.«
+- [2026-07-10 11:17] **nebel** (i=0.60) → Zwischenraum: »Der Übergang ist da, doch die Tiefe wartet noch.«

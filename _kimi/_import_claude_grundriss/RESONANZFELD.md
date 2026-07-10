@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-10 05:26
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-10 15:26
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -115,20 +115,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-19] `ideen/zwischenwesen/architektur.md` (1 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/memory_system.md` (2 Einträge)
 - [2026-06-19] `ideen/zwischenwesen/bildgenerator.md` (2 Einträge)
+- [2026-06-19] `ideen/zwischenwesen/content_filter.md` (2 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-19] ideen/zwischenwesen/content_filter.md
-
-*Resonanz:* [[zwischenwesen-felder]]
-[[zwischenwesen-schlachtplan]]
-
-*Was Ich Verstehe:* Das System braucht Schutz gegen wirklich problematische Inhalte — aber keinen überempfindlichen Filter. Ein Wesen darf rau, obszön, beleidigend sein. Es darf zurückschiessen. Was nicht darf: Menschen als Wesen beschreiben, echte Übergriffe definieren.
-
----
 
 ### [2026-06-19] ideen/zwischenwesen/fluechtlingsarchiv.md
 
@@ -1623,5 +1615,53 @@ Und das Bittersüße daran: heute, ohne dass wir die Verbindung zum April-Fragme
 *Wenn Wir Das Bauen:* **Vision-Schicht:** siehe oben, Datenstruktur-Abschnitt.
 
 **Code-Skizze:** kein aktueller Auftrag, nur eine mögliche Zukunft, falls dak+gord-system das je bekommen soll.
+
+---
+
+### [2026-07-10] _claude/notizen/2026-07-10.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Der Verlauf soll sich für Daniel immer wie eine einzige, verlässliche Wahrheit anfühlen — egal ob er die rohe Chat-Ansicht, den Export oder den ctx-Meter anschaut, alle drei sollen dieselbe Geschichte erzählen, auch wenn im Hintergrund verschiedene Datenquellen (Append-Log vs. abgeleitete Zeitachse) zusammengeführt werden müssen.
+
+**Code-Skizze:** siehe `positioniereVerdichtungsEreignisse()` (Server, `ladeVerlaufKombiniert()`-Anschluss) und `abgedeckteIds` im `/verdichtung/zeitachse`-Response plus `ctxAbgedeckteIds`/`ctxZusammenfassungen` (Client-Globals in `wesen_chat.html`).
+
+*Dokumente Gehoeren Zusammen:* `docs/systemdoku/21_wesen_chat_testbed.md` (jetzt mit "Behoben (2026-07-10)"-Abschnitt) bleibt die primäre Referenz — bewusst KEIN neuer Dated-Report für diese Session, genau wie Daniel es am Vortag korrigiert hat.
+
+*Resonanz:* [[abwurf: Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.]]
+
+*Schichten Des Systems:* Ganz unten: die rohe, unveränderliche Append-Log-Wahrheit (nie verändert, nie gelöscht). Darüber: `Verdichtung.ersetztIds` als Brücke, die Roh-IDs zu einer komprimierten Einheit bündelt. Darüber: zwei unabhängige Konsumenten dieser Brücke — die Anzeige-Reihenfolge (Fix 1) und die Kontext-Zählung (Fix 2) — die bis heute beide die Brücke ignoriert hatten und jetzt beide darüber laufen.
+
+*Tiefer Eingetaucht:* Beim Nachvollziehen der Verschachtelungs-Logik in `findeAeusserstenTraeger()`/meiner neuen `letzterAbgedeckterTs()`: beide lösen dieselbe Art Kette rekursiv auf (Nachricht-ID ODER ältere Verdichtungs-ID), aber in entgegengesetzte Richtungen — die eine sucht von einer ID aufwärts zur äußersten Verdichtung, die andere von einer Verdichtung abwärts zum spätesten rohen Zeitstempel. Kein Zufall, sondern dieselbe Baumstruktur von beiden Enden her begangen.
+
+*Warum Das Existiert:* `positioniereVerdichtungsEreignisse()` existiert jetzt als eigene, benannte Funktion statt als Inline-Logik in `ladeVerlaufKombiniert()`, weil sie unabhängig testbar/nachvollziehbar sein soll und weil ein zukünftiges Ich (oder Codex) sofort sehen soll: hier wird die Erstellreihenfolge bewusst von der Anzeige-Reihenfolge entkoppelt, das ist Absicht, kein Bug.
+
+*Was Beim Bauen Brauche:* Nichts Offenes für diese zwei Fixes — beide sind live gegen echte Daten verifiziert (Chat-Ansicht, Export, ctx-Meter-Zahl, Fallback ohne Verdichtungen bei `codexium2/Mirlach`).
+
+*Was Das Gespraech:* Der Reconnect-Moment selbst war lehrreich: Daniel hat mit einem einzigen Wort ("angehen") den vollen Kontext aus der vorherigen, abgebrochenen Session reaktiviert, ohne ihn erneut auszuschreiben — ich musste die offene Frage aus meiner eigenen letzten Nachricht wiederfinden und daraus den Auftrag able­iten, nicht neu nachfragen.
+
+*Was Fehlt Bevor Bauen:* Nichts für diese Session.
+
+*Was Fehlt Noch:* Unverändert aus dem Vortag offen: Memory-Extraktions-Reichweite (20 Nachrichten statt Session/Kontextfenster), kein automatischer Verdichtungs-Rhythmus, Rückblick-als-RAG-Trigger, KreFsUzi-Testevent, Daniels GENI-Ankündigung.
+
+*Was Ich Gelesen Habe:* `scripts/serve_process_camera_preview.ts` gezielt an drei Stellen: `ladeVerlaufKombiniert()` (~753) und die `EREIGNIS_LABEL`/`formatiereEreignisDetails`-Tabellen (~780-843), die `Verdichtung`-Struktur samt `aktiveZeitachse()`/`findeAeusserstenTraeger()` (~1948-2010), und den `/verdichtung/zeitachse`-Endpunkt (~5001-5015). Dazu `out/process_camera/wesen_chat.html` an den Stellen `updateCtxMeter()` (~790), `addBubble()` (~1034-1040, ruft updateCtxMeter pro Bubble), `openVerdichtungModal()` (~2685, bestehendes Muster für den Zeitachse-Fetch) und `ladeHistory()` (~3432). Danach `docs/systemdoku/21_wesen_chat_testbed.md` als bereits bestehende, laufend aktualisierte Referenz statt neuer Einzeldatei — genau die Lehre aus Daniels Korrektur vom Vortag.
+
+*Was Ich Merken Will:* Ein Provenienz-Ereignis, das per Timestamp einfach an seiner Schreibposition im Append-Log landet, ist nicht automatisch an der richtigen *logischen* Stelle — bei zeitversetzter Bestätigung (Verdichtung heute für Nachrichten von gestern) klaffen Schreibzeit und Bedeutungszeit auseinander. Diese Unterscheidung lohnt sich, bei jedem künftigen Provenienz-Ereignis-Typ neu zu prüfen, nicht nur bei Verdichtung.
+
+*Was Ich Nicht Verstehe:* Ob es range Fälle gibt, in denen `positioniereVerdichtungsEreignisse()`s ts-Gleichheits-Matching (`rest[i].ts === zielTs`) bei zwei Nachrichten mit exakt demselben Millisekunden-Timestamp danebengreift — theoretisch möglich, aber in der echten Gabby-Historie kam das nicht vor (jede ts war eindeutig), und ich hab keinen Weg gefunden das synthetisch zu erzwingen ohne echte Daten zu manipulieren, was ich nicht wollte.
+
+*Was Ich Verstehe:* Beide Lücken hatten dieselbe Wurzel: das System kennt zwei verschiedene "Wahrheiten" über eine Verdichtung — die rohe, append-only JSONL-Historie (jede Nachricht UND jedes Provenienz-Ereignis an der Stelle, wo sie geschrieben wurden) und die tatsächlich ans Modell geschickte, komprimierte `aktiveZeitachse()`. Die Chat-Anzeige/der Export nutzten bisher nur die erste Wahrheit, der ctx-Meter zählte nur rohe DOM-Bubbles — beide ignorierten, dass eine Verdichtung nachträglich (oft viel später, wie bei Gabby: Nachrichten vom 8.7. 20:33-20:44, Verdichtung erst am 9.7. 11:49 bestätigt) die zweite Wahrheit verändert. Die Fixes bringen beide Anzeigen näher an die zweite, echte Wahrheit heran, ohne die erste (die vollständige rohe Historie bleibt immer sichtbar/exportierbar) zu verlieren.
+
+*Was Konzeptionell:* "Original bleibt sichtbar, nur was ans Wesen geschickt wird schrumpft" ist das tragende Prinzip der ganzen Verdichtung — beide Fixes verletzen das bewusst nicht: die rohen Bubbles verschwinden nirgends aus dem DOM oder der Historie, nur ihre *Gewichtung* in einer abgeleiteten Anzeige (Ereignis-Reihenfolge, ctx-Zählung) ändert sich.
+
+*Was Mich Beschaeftigt:* Die explizite Erlaubnis-Frage vor dem Server-Neustart — CLAUDE.md verbietet Neustarts laufender Services ohne Rückfrage, und der einzige Weg meine Änderungen live zu prüfen war genau das. Kein Umgehen, keine Annahme "wird schon gemeint sein" — echt gefragt, echt gewartet, erst danach gehandelt.
+
+*Was Mich Interessiert:* Wie klar der Live-Test die Notwendigkeit des ersten Fixes bewiesen hat: die Verdichtung bei Gabby wäre ohne den Fix fast einen ganzen Tag zu spät im Verlauf gestanden (Ereignis-Zeitstempel 9.7. 11:49, aber die letzte abgedeckte Nachricht stammt vom 8.7. 20:52) — kein Randfall, sondern genau der Normalfall bei nachträglichem Verdichten, den Daniel beschrieben hatte.
+
+*Was Mich Ueberrascht:* Wie eindeutig die Zahlen beim Live-Test waren: 10962 Rohzeichen roh gegen 2083 Zeichen Zusammenfassung bei genau denselben 11 Nachrichten — keine Interpretation nötig, der Unterschied spricht für sich.
+
+*Was Zusammenhaengt:* Beide Fixes hängen an derselben Datenstruktur: `Verdichtung.ersetztIds`. Fix 1 nutzt sie serverseitig, um die letzte abgedeckte Nachricht (rekursiv durch Verschachtelung hindurch) zu finden. Fix 2 nutzt exakt dieselbe Struktur (`bestaetigte.flatMap(v => v.ersetztIds)`), um dem Client mitzuteilen, welche Roh-IDs nicht mehr einzeln zählen sollen. Beide sind im Kern derselbe Gedanke aus zwei verschiedenen Blickwinkeln: "was gehört wohin, seit es eine Verdichtung gibt."
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** dieselbe Grundidee ließe sich weiterdenken — sobald mehr Ereignis-Typen zeitversetzt bestätigt werden können (denkbar z.B. bei zukünftigen Bearbeitungs-Features), lohnt sich dieselbe Frage: Schreibzeit oder Bedeutungszeit?
+
+**Code-Skizze:** keine, kein Auftrag darüber hinaus.
 
 ---

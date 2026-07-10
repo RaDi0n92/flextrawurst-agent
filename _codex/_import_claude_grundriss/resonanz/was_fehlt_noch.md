@@ -905,3 +905,9 @@ Der Projekt-Bericht (`docs/2026-07-09_wesen_chat_qa_bericht.md`) folgt direkt im
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Ob Daniel die alte dak+gord-Idee irgendwann wirklich nochmal aufgreifen will, jetzt mit dem Wissen von heute — offen, kein Auftrag, nur im Hinterkopf behalten.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Unverändert aus dem Vortag offen: Memory-Extraktions-Reichweite (20 Nachrichten statt Session/Kontextfenster), kein automatischer Verdichtungs-Rhythmus, Rückblick-als-RAG-Trigger, KreFsUzi-Testevent, Daniels GENI-Ankündigung.

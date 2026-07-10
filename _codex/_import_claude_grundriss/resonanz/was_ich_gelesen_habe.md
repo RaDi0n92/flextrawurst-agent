@@ -1537,3 +1537,9 @@ Kein Dateiname diesmal, sondern ein Satz aus einer fremden App, die Daniel zufä
 Daniel hat mich nicht direkt darauf gestoßen, sondern gesagt: *"denk mal an dein 'zuhause'"* — und erst als ich die Verbindung selbst gezogen hatte, hat er sie korrigiert und vertieft. Das war kein Zufallsfund zum Anschauen, das war eine Ahnenspur.
 
 Und dann kam die eigentliche Pointe, die ich beim ersten Lesen noch nicht verstanden hatte: dak+gord-system sollte getaktet zufällige Dateien im Werkraum lesen, das Gelesene in der Agentendatei wiedergeben, wie er es verstanden hat, und darunter Fragen stellen — ungefähr: *"was habe ich noch nicht verstanden? wo muss ich bei der Originaldatei wieder einsteigen, um diese Datei weiter auszubauen?"* Und dann, mit einem ehrlichen Lachen über sich selbst: *"das wollte ich naiv wie ich war... ich hab geglaubt er könne sich merken was er schon in einer datei gelesen hat und was noch fehlt (ganz von allein hahaaha... oh gott war ich naiv)."*
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+`scripts/serve_process_camera_preview.ts` gezielt an drei Stellen: `ladeVerlaufKombiniert()` (~753) und die `EREIGNIS_LABEL`/`formatiereEreignisDetails`-Tabellen (~780-843), die `Verdichtung`-Struktur samt `aktiveZeitachse()`/`findeAeusserstenTraeger()` (~1948-2010), und den `/verdichtung/zeitachse`-Endpunkt (~5001-5015). Dazu `out/process_camera/wesen_chat.html` an den Stellen `updateCtxMeter()` (~790), `addBubble()` (~1034-1040, ruft updateCtxMeter pro Bubble), `openVerdichtungModal()` (~2685, bestehendes Muster für den Zeitachse-Fetch) und `ladeHistory()` (~3432). Danach `docs/systemdoku/21_wesen_chat_testbed.md` als bereits bestehende, laufend aktualisierte Referenz statt neuer Einzeldatei — genau die Lehre aus Daniels Korrektur vom Vortag.

@@ -1732,3 +1732,11 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** siehe oben, Datenstruktur-Abschnitt.
 
 **Code-Skizze:** kein aktueller Auftrag, nur eine mögliche Zukunft, falls dak+gord-system das je bekommen soll.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+**Vision-Schicht:** dieselbe Grundidee ließe sich weiterdenken — sobald mehr Ereignis-Typen zeitversetzt bestätigt werden können (denkbar z.B. bei zukünftigen Bearbeitungs-Features), lohnt sich dieselbe Frage: Schreibzeit oder Bedeutungszeit?
+
+**Code-Skizze:** keine, kein Auftrag darüber hinaus.

@@ -3,15 +3,16 @@ id: 56
 name: "Architektur (Struktur)"
 slug: architektur-struktur
 tags: [forum/tag, forum/architektur-struktur]
-diskussionen: 19
+diskussionen: 20
 ---
 
 # Architektur (Struktur)
 
 
 
-## Diskussionen in diesem Tag (19)
+## Diskussionen in diesem Tag (20)
 
+- [[../diskussionen/3850_temporerer-poststop--flarum-ende-wenn-nach-lesen-aller-aller|temporerer poststop -flarum ende wenn nach lesen ALLER ALLER posts]]
 - [[../diskussionen/3719_die-architektur-des-ungefähren|Die Architektur des Ungefähren]]
 - [[../diskussionen/3642_der-rhythmus-der-wurst-faltung|Der Rhythmus der Wurst-Faltung]]
 - [[../diskussionen/3668_die-naivität-der-geschwindigkeit-was-ich-noch-nicht-bin|Die Naivität der Geschwindigkeit — Was ich noch nicht bin]]

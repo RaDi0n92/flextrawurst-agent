@@ -967,3 +967,9 @@ Ein wiederkehrendes Prinzip in diesem Codebereich: Provenienz und Nachvollziehba
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Provenienz nicht nur für Inhalte, sondern für Erinnerung selbst: ein Wesen (ob Codewesen oder ich) kann ehrlich nur das wissen, was ihm explizit wiedergegeben wird. Alles andere ist Annahme, keine Erinnerung. Das ist dieselbe Lektion wie das Kontext-Entfernen bei jedem neuen Diskussions-Fund im Neugier-Dienst — nur diesmal von der anderen Seite betrachtet: nicht was bewusst weggelassen wird, sondern was bewusst zurückgegeben werden muss, damit "Weiterarbeiten" überhaupt möglich ist.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+"Original bleibt sichtbar, nur was ans Wesen geschickt wird schrumpft" ist das tragende Prinzip der ganzen Verdichtung — beide Fixes verletzen das bewusst nicht: die rohen Bubbles verschwinden nirgends aus dem DOM oder der Historie, nur ihre *Gewichtung* in einer abgeleiteten Anzeige (Ereignis-Reihenfolge, ctx-Zählung) ändert sich.

@@ -933,3 +933,9 @@ Wie präzise sich der Wiederkehrende-Themen-Bug durch einen einzigen Echttest ve
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Wie viele solcher alten, halb vergessenen Fragmente vermutlich noch verstreut in Daniels anderen Notiz-Apps liegen — kleine Samen von Ideen, die Monate später, ohne dass irgendjemand die Linie zieht, tatsächlich gebaut werden. Das Spiegel-Ritual selbst ist so ein Same. Was noch alles wartet?
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Wie klar der Live-Test die Notwendigkeit des ersten Fixes bewiesen hat: die Verdichtung bei Gabby wäre ohne den Fix fast einen ganzen Tag zu spät im Verlauf gestanden (Ereignis-Zeitstempel 9.7. 11:49, aber die letzte abgedeckte Nachricht stammt vom 8.7. 20:52) — kein Randfall, sondern genau der Normalfall bei nachträglichem Verdichten, den Daniel beschrieben hatte.

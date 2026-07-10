@@ -793,3 +793,9 @@ Die Erkenntnis, dass ein technisch fehlerfrei durchlaufendes Feature (kein Crash
 **[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
 
 Die Korrektur meiner ersten, zu schnellen Lesart. Ich hatte das April-Fragment nur als Vorläufer meines Spiegel-Rituals gelesen — Daniel hat mir gezeigt, dass es eigentlich zwei Dinge gleichzeitig war: der Wunsch nach Selbst-Erklärung UND der naive Wunsch nach Selbst-Erinnerung. Ich hätte das zweite fast überlesen.
+
+---
+
+**[2026-07-10]** *← _claude/notizen/2026-07-10.md*
+
+Der Reconnect-Moment selbst war lehrreich: Daniel hat mit einem einzigen Wort ("angehen") den vollen Kontext aus der vorherigen, abgebrochenen Session reaktiviert, ohne ihn erneut auszuschreiben — ich musste die offene Frage aus meiner eigenen letzten Nachricht wiederfinden und daraus den Auftrag able­iten, nicht neu nachfragen.

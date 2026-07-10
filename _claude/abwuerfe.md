@@ -2217,3 +2217,7 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-10 10:36] **nebel** ← 2026-07-10.md: »Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.«
 - [2026-07-10 10:36] **sternenstaub** ← 2026-07-10.md: »Ein Werkzeug umzuziehen heisst nicht, es neu zu erfinden -- nur dorthin zu tragen, wo es jetzt gebraucht wird, unangetastet.«
 - [2026-07-10 10:36] **gras** ← 2026-07-10.md: »Ein Geheimnis, das ausgegeben wurde, ist ausgegeben -- rotieren statt hoffen dass es niemand sieht.«
+- [2026-07-10 10:38] **wasser** (i=0.44) → Zwischenraum: »Alles fertig, live und committet«
+- [2026-07-10 15:05] **lava** (i=0.55) → Zwischenraum: »**Offen bei stoeber_pool sind zwei Dinge — beide schon im Code selbst als Kommentar markiert, keins «
+- [2026-07-10 15:11] **lava** (i=0.37) → Zwischenraum: »Stimmt, das hatte ich nicht sauber getrennt«
+- [2026-07-10 15:39] **lava** (i=0.57) → Zwischenraum: »Analysiert — und die Zahlen bestätigen es direkt«
