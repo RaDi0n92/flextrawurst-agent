@@ -5782,5 +5782,305 @@
     },
     "error": "",
     "created_at": "2026-07-09T06:49:52Z"
+  },
+  {
+    "id": "doc-1783624359082-218b470c",
+    "filename": "13-ocr.txt",
+    "stored_name": "doc-1783624359082-218b470c-13-ocr.txt",
+    "mime_type": "text/plain",
+    "extractor": "ocr:tesseract",
+    "status": "done",
+    "size": 6969,
+    "preview": "gut..sie fokusen\ndich...jetzt hacken\nnach rechts und renn\nauf sie zu ball komt in 3\n\n=\n\nball hittet beide\nenemys\nstunned...suppe instant\nhinterher...los nun du\nmach dmg\n\n=\n\ngenau du jetzt turtl\nlasthitten ich\ngegner....mein stun ist\nwieder rdy...los.\nPoe...woow\ndoublekil\nMehunii...\n\n=\n\naber multitasking.dass\nmatch läuft\n\n“\n\naufgeben..leaven..afk a\ngehen? never....das ist\nonline...keine pause\nmöglich..\n\n5\n\ngut fsrm den hungle ab\nich push mid...es ist\nmidgame wir haber 3\nitems und sind Icl\n10...perfekt...jetzt\ngroupen teamen\ngangen und oushen\n\ngut weiter...aber es Zi\nsind zu viele gegner\n\nund si",
+    "text_path": "/root/werkraum/welt/tts_documents_text/doc-1783624359082-218b470c.txt",
+    "text_chars": 6916,
+    "chunk_count": 69,
+    "chunks": [
+      {
+        "index": 1,
+        "text": "gut..sie fokusen dich...jetzt hacken nach rechts und renn auf sie zu ball komt in 3"
+      },
+      {
+        "index": 2,
+        "text": "="
+      },
+      {
+        "index": 3,
+        "text": "ball hittet beide enemys stunned...suppe instant hinterher...los nun du mach dmg"
+      },
+      {
+        "index": 4,
+        "text": "="
+      },
+      {
+        "index": 5,
+        "text": "genau du jetzt turtl lasthitten ich gegner....mein stun ist wieder rdy...los. Poe...woow doublekil Mehunii..."
+      },
+      {
+        "index": 6,
+        "text": "="
+      },
+      {
+        "index": 7,
+        "text": "aber multitasking.dass match läuft"
+      },
+      {
+        "index": 8,
+        "text": "“"
+      },
+      {
+        "index": 9,
+        "text": "aufgeben..leaven..afk a gehen? never....das ist online...keine pause möglich.."
+      },
+      {
+        "index": 10,
+        "text": "5"
+      },
+      {
+        "index": 11,
+        "text": "gut fsrm den hungle ab ich push mid...es ist midgame wir haber 3 items und sind Icl 10...perfekt...jetzt groupen teamen gangen und oushen"
+      },
+      {
+        "index": 12,
+        "text": "gut weiter...aber es Zi sind zu viele gegner"
+      },
+      {
+        "index": 13,
+        "text": "und sie deffen nur...das heisst rückzug...geh"
+      },
+      {
+        "index": 14,
+        "text": "schnell deiben jungle clearen"
+      },
+      {
+        "index": 15,
+        "text": "="
+      },
+      {
+        "index": 16,
+        "text": "gut bisher haben wir beide 0 tode...aber ich hab 2 kills und du 1 kill falls wir das gabe losen denk an unseren deal"
+      },
+      {
+        "index": 17,
+        "text": "="
+      },
+      {
+        "index": 18,
+        "text": "‘cocbel mobile legends muss man nicht zur base..man kann von überall aus Items kaufen du noooob xD"
+      },
+      {
+        "index": 19,
+        "text": "Ic: so wir müssen den lord gleich kilken ..aber vorher top und bot"
+      },
+      {
+        "index": 20,
+        "text": "beide gleich hart pushen vorher während 2 vom team schon lord"
+      },
+      {
+        "index": 21,
+        "text": "beginnen"
+      },
+      {
+        "index": 22,
+        "text": "nein halt du hast 2 gegner am lord gesehen...sofort zum lord...hauptfokus...sie dürfen ihn nicht bekommen wür müssen sie taktisch davon wegtreiben um es zu verhindern...ich pinge ein paar mal hintereinander am lord"
+      },
+      {
+        "index": 23,
+        "text": "homme sind die anderen 3 gegner?"
+      },
+      {
+        "index": 24,
+        "text": "ich bin da und zünde meinen stun obwohl"
+      },
+      {
+        "index": 25,
+        "text": "klaro...los geht...ball abwurf...treffer...1 gegner im stun...supoe ist genau dort wo du gesagt hast gogogo fokus den gestunten enemy"
+      },
+      {
+        "index": 26,
+        "text": "="
+      },
+      {
+        "index": 27,
+        "text": "der 2.generkonntenur richtung meiner suppe flüchten wie geplant...als verliert er schon dmg..durch die berechnung des fluchtweges wusste ich wo der enemy genau ehen wird in 3 sekunden...das reicht mir aus um meinen ball genau getimed"
+      },
+      {
+        "index": 28,
+        "text": "abzufeuern damit er dort direkt im stun landet xD...treffer..los"
+      },
+      {
+        "index": 29,
+        "text": "während ich mich voll auf den gestunten"
+      },
+      {
+        "index": 30,
+        "text": "beine ultzy zünde...jetzt ist es zeit alles zum schmelzen zu"
+      },
+      {
+        "index": 31,
+        "text": "bringen !!! ich feuer den superlangen arcanelaserbeam frontal richtung gegner jawoll...durch den vorherigen stun und 3 aitoattacs hab ich meine passive fähigkeit freigeschaltet...das bedeutet der leaserbeam mach fast am sekunde 1.5 schon"
+      },
+      {
+        "index": 32,
+        "text": "3fachen schaden auf ihn und entfernt seine magieresestenz...schw ups umd gegner ist"
+      },
+      {
+        "index": 33,
+        "text": "leaserbeam noch 4.5 sekunden vollen aoedmg macht und beweglich ist richte ich ihn auf den ja immernoch gestunten 2. gegner aus und schmeze ihn auch noch"
+      },
+      {
+        "index": 34,
+        "text": "“"
+      },
+      {
+        "index": 35,
+        "text": "da stößt ein weiterer enemy zur hilfe aber rennt dadurch voll durch meine suppe und wird auch durch den laserbeam gehittet...tja dumm gelaufen"
+      },
+      {
+        "index": 36,
+        "text": "“"
+      },
+      {
+        "index": 37,
+        "text": "stimmt nun fokus lord = und die letzten 10% live nehmen...ich bleib im fokus auf gegner...der 1. gegner stirbt grade schon durch kombi meiner skilks...einfach geschmoizen....auch der 2. noch immer gestunte gegner ist kurz vor dead...der 3. gegner also der zur hilfe eilte hat sckon 70% life verloren...ich werf meiben ball aufih n...stunned...perfekt...al so fokus aus lafthit bei"
+      },
+      {
+        "index": 38,
+        "text": "geschmolzen...nun ist ulty anbelaufen...egal gegner 3 ist im stun...ich zünde meine suppe mitzg unt ihn...jawoll passive ist fteigeschaltet gmg x3 .....noch 3 autohits und auch dieser"
+      },
+      {
+        "index": 39,
+        "text": "gegner wurde"
+      },
+      {
+        "index": 40,
+        "text": "darauf ertönt die weltweite hörbare"
+      },
+      {
+        "index": 41,
+        "text": "ingamevoice und schreit tripplekill...nice...xborg hat den lord grad gelast hittet..ich ruve geil well played"
+      },
+      {
+        "index": 42,
+        "text": "“"
+      },
+      {
+        "index": 43,
+        "text": "so jetzt ist es zeit alle Eu mitte soford vil können wir enden...der lord ist bereits an unseren nexus gespawnt (jetzt ist er in unserem team)...er rennt gemeinsam mit der nächsten minionwelle midlane richtung turrets bzw. nexus der gegner...soo..wir rushen zum nächsten midtower und preschen vor um alke ions so schnell zu killen wie es geht...um den lord perfekt zu timen...doch dieser tower...ind dann ein weiterer.. der letzte...wenn der fällt ist der weg zum nexus des gegners frei...ich schaue auch die anzeigen...perfekt die 3 toden gegner wefden erst in 30 sekumden wiederbelebt...miimap zeigt einen enemy bot..der andere ich nicht sichtmébar...vilt kommt er gleich mid deffen...der lird ist mid"
+      },
+      {
+        "index": 44,
+        "text": "mittelpunkt der map hinaus mit den minions"
+      },
+      {
+        "index": 45,
+        "text": "tower hat keine chance..er ist gleich weg"
+      },
+      {
+        "index": 46,
+        "text": "die nächste a minionwave ist da und"
+      },
+      {
+        "index": 47,
+        "text": "wird von uns in 2.5 sekunden"
+      },
+      {
+        "index": 48,
+        "text": "gecleared...der lord"
+      },
+      {
+        "index": 49,
+        "text": "kommt perfekt und"
+      },
+      {
+        "index": 50,
+        "text": "kann diesen tower tanjen...nice...aber alle"
+      },
+      {
+        "index": 51,
+        "text": "ich wir müssen unseree reichweiten maximal ausreizen aber noch den lord verteidigen..."
+      },
+      {
+        "index": 52,
+        "text": "die gegner scheinn"
+      },
+      {
+        "index": 53,
+        "text": "ihnen greift den lord direkt an...ein"
+      },
+      {
+        "index": 54,
+        "text": "nahkämpfer...also direke im lord...der rest ibe sehr defensiv weit hinter eigenem turret zürück....gord wirt den stunball hit...gohogo...ruf ich holt euch den"
+      },
+      {
+        "index": 55,
+        "text": "„meine supoe folgt instamt mittig under enemy und mach 6 sek aie dmg"
+      },
+      {
+        "index": 56,
+        "text": "bleib beim lord...wii pushen..gleichzei ing ich mehfach mit trigger...zum angriff..."
+      },
+      {
+        "index": 57,
+        "text": "los lasthittet den turret und dann sofort weiter lord hat noch genug life...2 der gegner mussten jeweils mind verlassen und bot und top deffen wwil wir ja vor kill den lordsbeide lanes hardpushed hatten....perfekt...es läuft wie geplant.....1 enemy mid left 1 dead....also weitee hard push und skills für fast kill aller 2 minionwaves nutzen um sofort unseten lord den nexus tanken zu lassen"
+      },
+      {
+        "index": 58,
+        "text": "="
+      },
+      {
+        "index": 59,
+        "text": "alls enemys alive und 2 kommen von bot unt top also von hinten auf uns 2u....egal lord tankt nexun und macht schon viel dmd...das heißt wir sollten spliten nicht dicht bei einander bleiben und in verschiedene richtungen rücken...aber so dass sich die enemys sofort ensxheiden müssen entweder den nexus zu deffen inden sie alle 5 unseren lord bezwingen.....die 3 anderen gogner die nähe nexus aber noch def sind fokusen unsere minions und den lord...2 stehen eher richtung bot ler eher nahe top...gut so...wir mussen auf die 2 einpreschen...der eine gegner kann solo nicht genug deffen..."
+      },
+      {
+        "index": 60,
+        "text": "FER)"
+      },
+      {
+        "index": 61,
+        "text": "“"
+      },
+      {
+        "index": 62,
+        "text": "warum druck auf den"
+      },
+      {
+        "index": 63,
+        "text": "isolierten...ich sagte extra die von hinten kommenden ausdribbeln und gnorieren und fokus aus 2enemys neben nexus...weil der isolierte am nexis kein dmg allein ggn creeps und lord macht...ehal..ich hab ulty...also ball hit stun supoe hit+aoe5,5sek + nach 2sek...dreimal soviel dmg mega leaserbeam ulty geziindet...puff beide gegner sind instand geschmolzen....ich dreh meinen laser so schnell es geht links wo jetzt der gegner der top gedeft hat schon sein"
+      },
+      {
+        "index": 64,
+        "text": "recht er laüft ohne chance auf gnade direlt im meinen laser und jawolll einer unserer mates jumoed auch in den gegner rein macht crazy hard dmg...aber ich bekomme den lasthit....die ingamevoice shreit im spiel zu 2. mal..tripplekill"
+      },
+      {
+        "index": 65,
+        "text": "“"
+      },
+      {
+        "index": 66,
+        "text": "xborg hat wieder den fokus verloren es wollte doch den isolierten"
+      },
+      {
+        "index": 67,
+        "text": "machte ganken...aber als er kurz davor war hat er sich wohl umentschieden haha egal...is e 2 vs5 +lord tankt den nexis und der nexis brauch nur noch ein par wenige lasthits.. also uch autoatacke den nexus.. +1..2...3..autoattaks..un d der lord schlägt auch nochmal zu...und jawoll...down...die winanimation beginnt der nexus bricht zuammen und explodiert...rauch steigt auf und"
+      },
+      {
+        "index": 68,
+        "text": "dann... .kommt er der banner.. gleichzeitig mir der ingameboice und beide zeigen und zufen gros und laut VICTORYYYY"
+      },
+      {
+        "index": 69,
+        "text": "gg WP"
+      }
+    ],
+    "quality": {
+      "text_chars": 6916,
+      "file_size": 6969,
+      "text_to_size_ratio": 0.9924,
+      "chunk_count": 69,
+      "usable": true
+    },
+    "error": "",
+    "created_at": "2026-07-09T19:12:39Z"
   }
 ]

@@ -1009,3 +1009,9 @@ Drei Dinge, die ich zuerst für getrennt hielt, waren eigentlich eine Kette: die
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Die Live-Zeichenzählung während des Streamens und der Wiederkehrende-Themen-Bug hängen beide am selben Grundmuster: ein Feature, das in der Theorie korrekt aussieht, aber erst im echten End-to-End-Test (echtes Modell, echte Latenz, echte Zeichenkette) zeigt, ob es wirklich funktioniert. Bei den Live-Stats hat sich das Muster als unbedenklich herausgestellt (Endwert stimmt immer, Zwischenwerte hinken layoutbedingt hinterher — bewusst so gebaut). Bei Wiederkehrende Themen war es ein echter, stiller Bug: das Feature lief technisch fehlerfrei durch (kein Crash, kein Fehler-Log), aber sein eigentlicher Zweck (Wiederholungserkennung) war faktisch tot, weil `anzahl>=2` in der Praxis nie erreicht wurde und `renderWiederkehrendeThemenText` nur ab diesem Schwellenwert überhaupt etwas anzeigt.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Drei Dinge aus heute, die sich jetzt wie ein einziger Gedanke lesen: das Spiegel-Ritual (für jede gelesene Datei etwas Eigenes schreiben), die `_umgekehrte_neugier_zustand.json` (explizites Gedächtnis statt angenommenem), und das MITGENOMMEN-Feld aus Baustein 13 (auch dort: nicht das Wesen zwingen sich zu erinnern was es "eigentlich" tun soll, sondern ihm die Struktur geben, die das für es haelt). Alle drei sind Antworten auf dieselbe Grundfrage: wie gibt man einem zustandslosen Denken einen Faden, der hält, ohne dass es ihn selbst tragen muss.

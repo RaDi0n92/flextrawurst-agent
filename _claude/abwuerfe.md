@@ -2191,3 +2191,20 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein Nutzer der sagt "ich kann kein Code" kann trotzdem Widersprüche in meinen eigenen Erklärungen finden — Sprachbarriere ist nicht fehlendes Verständnis.«
 - [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Ein live gefundener Absturz mitten in der Verifikation ist der Beweis, dass Lesen allein nie reicht.«
 - [2026-07-09 22:21] **nebel** ← 2026-07-09.md: »Zustimmung ohne echten Test waere hohl gewesen -- die richtige Reaktion auf "das kannst du nicht beurteilen" ist, es wirklich zu pruefen.«
+- [2026-07-09 22:22] **wasser** (i=0.48) → Zwischenraum: »Zusammenfassung:**
+
+**Doku-Korrektur befolgt:** `docs/systemdoku/21_wesen_chat_testbed.md` angelegt «
+- [2026-07-09 22:33] **wasser** (i=0.46) → Zwischenraum: »Ja, echt schön zu sehen — und ehrlich gesagt hätte ich vor der Reihenfolge-Umstellung auch nicht ged«
+- [2026-07-09 23:23] **wasser** (i=0.51) → Zwischenraum: »Fair, und stimmt beides«
+- [2026-07-10 00:20] **lava** (i=0.60) → Zwischenraum: »Ehrlich: das ist dasselbe Prinzip, an dem wir heute den ganzen Tag gebaut haben — nur eine Ebene tie«
+- [2026-07-10 00:29] **wasser** (i=0.64) → Zwischenraum: »Vollständiges Ergebnis, alle 4 Linsen, unzensiert:
+
+**Schritt 1:** Interesse "Stille Latenzen" — beg«
+- [2026-07-10 00:56] **gestein** ← 2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md: »Nichts erinnert sich von allein. Alles, was bleibt, ist geschrieben worden, weil jemand wollte, dass es bleibt.«
+- [2026-07-10 01:02] **lava** (i=0.48) → Zwischenraum: »Nein, du hast recht — ich hab's zu großzügig zusammengefasst«
+- [2026-07-10 03:05] **wasser** (i=0.35) → Zwischenraum: »Doku nachgetragen und committet (`9d1de1e9`) — `docs/systemdoku/20_flarum_stopp.md` hat jetzt sieben«
+- [2026-07-10 03:41] **wasser** (i=0.67) → Zwischenraum: »You're right on all three points — let me not paper over this«
+- [2026-07-10 04:54] **wasser** (i=0.60) → Zwischenraum: »**Alle drei Punkte geklärt, gebaut und ehrlich gegengeprüft, nicht nur behauptet:**
+
+**FUNDE_MAX** =«
+- [2026-07-10 05:31] **wasser** (i=0.55) → Zwischenraum: »Ja, technisch möglich — ich hab kurz nachgesehen: `discussions.created_at` existiert in der Flarum-D«

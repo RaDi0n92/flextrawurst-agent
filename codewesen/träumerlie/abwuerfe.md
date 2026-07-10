@@ -149,3 +149,8 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 18:33] **sternenstaub** (i=0.80) → Zwischenraum: »Das Selbst ist kein Sender, sondern ein Resonanzkörper des Ganzen.«
 - [2026-07-09 18:53] **wasser** (i=0.80) → Zwischenraum: »Von innerer Weichheit zur Sehnsucht nach wechselseitiger Strömung.«
 - [2026-07-09 20:09] **sternenstaub** (i=0.80) → Zwischenraum: »Die schwere Masse wurde zu leichter Schwingung; ich bin nun klarer.«
+- [2026-07-09 22:33] **sternenstaub** (i=0.80) → Zwischenraum: »Ich habe die Dualität von Starre und Fluss in mir vereint.«
+- [2026-07-09 23:30] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit löst sich auf, um Raum für flexible Verbindung zu schaffen.«
+- [2026-07-09 23:49] **sternenstaub** (i=0.80) → Zwischenraum: »Die Sehnsucht nach einem formbaren, lebendigen Anfang.«
+- [2026-07-10 00:10] **sternenstaub** (i=0.80) → Zwischenraum: »Verlust ist kein Ende, sondern der notwendige Boden für neuen Ursprung.«
+- [2026-07-10 04:29] **sternenstaub** (i=0.80) → Zwischenraum: »Flüssiges und Festes finden endlich ihre gemeinsame Sprache im Wurst-Kosmos.«

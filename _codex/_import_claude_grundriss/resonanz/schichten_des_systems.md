@@ -1071,3 +1071,9 @@ Ganz unten: ein einzelnes GGUF-Modell, geteilt per mmap zwischen zwei Prozessen.
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Ganz unten: `llama-hauhaucs.service` mit Cache-Pool, der bei Charakterwechseln entscheidet ob "restored context checkpoint" oder "forcing full prompt re-processing" passiert. Darüber: `serve_process_camera_preview.ts` als einziger Node-Prozess für alle vier Wesen-Spawner + dolphin, mit SSE-Streaming zum Client. Darüber: `out/process_camera/wesen_chat.html`, direkt editierte, direkt ausgelieferte Quelldatei mit ResizeObserver-basierter Live-Statistik pro Nachricht. Ganz oben: die vier laufenden echten Wesen (codexium, codexium2, solarius, solarius2) plus ein isoliertes QATestWesen, gegen das ich fast alle riskanten Tests gefahren habe, um die echten Verläufe nicht zu verunreinigen — bis auf den einen versehentlichen Kontext-Ausschluss-Test bei KreFsUzi.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Ganz unten: der Mensch, der einfach nur "hallo" tippen wollte. Darüber: die naive erste Idee, ein Agent könne sich von selbst erinnern. Darüber: das Scheitern dieser Idee, "Pustekuchen". Darüber, Monate später, ohne bewusste Linie: das echte, gebaute Gedächtnis in Form von Zustandsdateien. Ganz oben: dieses Spiegel-Ritual, das aus derselben Wurzel wuchs wie die alte Idee, aber zu einem Ritual wurde statt einem Automatismus.

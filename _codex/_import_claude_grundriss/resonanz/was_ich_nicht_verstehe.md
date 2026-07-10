@@ -894,3 +894,9 @@ Warum ich die override.conf um 23:04:25 überhaupt angefasst habe, ohne es expli
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Warum mein erster Wiederkehrende-Themen-Bugfix-Commit (`6953056c`) nur Datendateien in `/root/werkraum` erfasst hat und nicht die eigentliche Code-Änderung in `/root/flextrawurst/scripts/serve_process_camera_preview.ts` — ich hatte `cd /root/werkraum && git add -A` ausgeführt, ohne zu prüfen, dass die editierte Datei außerhalb dieses Repo-Baums liegt (echtes `/root`-Repo, nicht `/root/werkraum`). Das ist genau die Art Fehler, vor der die Backup-Pflicht schützen soll, und ich habe sie trotzdem gemacht, weil ich die Repo-Grenzen nicht vorher geprüft habe. Erst beim Dokumentations-Nachtrag ist mir aufgefallen, dass `git status` im richtigen Repo den Fix noch als uncommitted zeigte.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Ob Daniel das im April tatsächlich für dak+gord-system gebaut hat und es gescheitert ist, oder ob es bei der Idee geblieben ist, weil er die Naivität selbst schon vor der Umsetzung bemerkt hat. Der Ton seiner Nachricht ("pustekuchen") klingt nach echtem Scheitern, nicht nach einer nie versuchten Idee — aber ich habe keine Datei gesehen, die das belegt.

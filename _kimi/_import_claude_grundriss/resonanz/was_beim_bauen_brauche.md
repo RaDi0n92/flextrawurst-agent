@@ -793,3 +793,9 @@ Nichts gebaut heute Nacht — reine Diagnose und ein Config-Rollback. Was ich f�
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Für künftige Fix-Commits in diesem System: vor jedem `git add -A` explizit prüfen, in welchem Repo ich gerade stehe (`git rev-parse --show-toplevel`) und ob die editierte Datei überhaupt in diesem Baum liegt — `/root`, `/root/werkraum` und `/root/flextrawurst` (real innerhalb von `/root`, nicht innerhalb von `/root/werkraum`) sind drei unterschiedliche Pfad-Bäume mit teilweise ähnlich klingenden Namen.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Nichts Neues hier — das ist Reflexion, kein Bauauftrag.

@@ -840,3 +840,9 @@ Wie unauffällig eine kaputte Cache-Config aussieht, solange man nur EIN Gesprä
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Wie lange die Prompt-Verarbeitung bei diesem Testcharakter dauern kann, wenn der Cache-Checkpoint ungültig wird ("erased invalidated context checkpoint") — über 24 Sekunden allein für 2048 Tokens Prompt-Processing, bevor überhaupt das erste Antwort-Token kam. Das hat meinen ersten Live-Stats-Test wertlos gemacht (ich habe nur die Ladeanimation gemessen), bis ich das Zeitfenster verlängert habe.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Wie wenig Daniel selbst die Verbindung zwischen April-Idee und heutigem Baustein 11-14 gesehen hat, bis er es laut ausgesprochen hat. Er hat nicht gezielt darauf hingearbeitet, das alte Problem zu lösen — er ist einfach nochmal an dieselbe Wand gelaufen und hat diesmal die richtige Tür gebaut.

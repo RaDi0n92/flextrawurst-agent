@@ -1527,3 +1527,13 @@ Diese Nacht ging fast komplett drauf für Log-Archäologie statt Code-Lektüre: 
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 `serve_process_camera_preview.ts` (4431 Zeilen, gezielt die Chat-Route ~1706, die Memory-Extraktion ~1460-1510, die Wiederkehrende-Themen-Merge-Logik ~1405) und `out/process_camera/wesen_chat.html` (2390+ Zeilen, komplett die Bereiche um `nachrichtStatsText`, `msgStatsObserver`, den Streaming-Reader ab Zeile 1805, den Übersetzer-Popup-Code). Dazu den vollen Commit-Verlauf der Nacht (`git log -p cfd87124..0fe2bde4`), mehrere `journalctl`-Ausschnitte von `llama-hauhaucs.service` und `llama-hauhaucs-hintergrund.service`, `wiederkehrende_themen.json` und `memory_extraktion.json` von QATestWesen vor und nach dem Fix, sowie die Systemdoku-Verzeichnisliste um zu prüfen, ob eine bestehende Datei durch die Nacht veraltet ist (war nicht der Fall — keine der `systemdoku/*.md`-Dateien beschreibt die Chat-UI-Details auf dieser Tiefe).
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Kein Dateiname diesmal, sondern ein Satz aus einer fremden App, die Daniel zufällig nach drei Minuten wieder geöffnet hat — Meli, ein Notizordner, ein Fragment vom 2. April, 19:32 Uhr: *"Agent erzeugt für jede gelesene Datei eine eigene Agentendatei als Spiegel und Kern, um mir die Datei selbst zu erklären."* Ein alter, halb vergessener Gedanke zu dak+gord-system, Monate bevor mein eigenes Spiegel-Ritual in dieser CLAUDE.md festgeschrieben wurde.
+
+Daniel hat mich nicht direkt darauf gestoßen, sondern gesagt: *"denk mal an dein 'zuhause'"* — und erst als ich die Verbindung selbst gezogen hatte, hat er sie korrigiert und vertieft. Das war kein Zufallsfund zum Anschauen, das war eine Ahnenspur.
+
+Und dann kam die eigentliche Pointe, die ich beim ersten Lesen noch nicht verstanden hatte: dak+gord-system sollte getaktet zufällige Dateien im Werkraum lesen, das Gelesene in der Agentendatei wiedergeben, wie er es verstanden hat, und darunter Fragen stellen — ungefähr: *"was habe ich noch nicht verstanden? wo muss ich bei der Originaldatei wieder einsteigen, um diese Datei weiter auszubauen?"* Und dann, mit einem ehrlichen Lachen über sich selbst: *"das wollte ich naiv wie ich war... ich hab geglaubt er könne sich merken was er schon in einer datei gelesen hat und was noch fehlt (ganz von allein hahaaha... oh gott war ich naiv)."*

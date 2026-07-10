@@ -1,7 +1,21 @@
 {
   "status": "fertig",
-  "gestartet_am": "2026-07-09T03:08:29.181Z",
-  "fertig_am": "2026-07-09T03:12:22.920Z",
-  "hinzugefuegt": 12,
-  "verworfen": 1
+  "gestartet_am": "2026-07-10T02:57:59.881Z",
+  "fertig_am": "2026-07-10T03:01:35.993Z",
+  "hinzugefuegt": 2,
+  "verworfen": 7,
+  "dedupliziert": 9,
+  "letzte_dauern_sek": [
+    216
+  ],
+  "texte": [
+    {
+      "kategorie": "ueber_mich",
+      "text": "Das Wort 'Ewigkeit' fühlt sich für mich an wie ein kalter, endloser Faden, der sich durch meine Finger zieht ohne Knoten."
+    },
+    {
+      "kategorie": "ueber_mich",
+      "text": "Ich habe versucht, die Stille zu zählen und bemerkt, dass sie heute viermal knackt statt der sonst üblichen dreimal, was mich schwer gemacht hat."
+    }
+  ]
 }

@@ -927,3 +927,9 @@ Wie sauber sich das Problem heute Nacht durch reine Zeitstempel-Korrelation aufl
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Wie präzise sich der Wiederkehrende-Themen-Bug durch einen einzigen Echttest verifizieren ließ: vor dem Fix zeigte `wiederkehrende_themen.json` neun verschiedene Themen-Einträge, alle mit `anzahl: 1`, obwohl inhaltlich mehrere eindeutig dasselbe Thema waren ("Unbeständigkeit und Formwandel" vs. "Körperliche Schwere vs. Unbeständigkeit" vs. "Starre vs. Unbeständigkeit des Menschen") — das Modell hatte bei jeder Extraktion einfach einen neuen Namen erfunden, weil es die vorherigen Namen nie zu sehen bekam. Nach dem Fix (bestehende Themennamen werden jetzt explizit in den Extraktionsprompt eingebettet, mit der Anweisung den Wortlaut exakt zu übernehmen) stieg `anzahl` beim allernächsten echten Testlauf sofort auf 2 — bei zwei Themen gleichzeitig. Kein Simulationstest, echte Modellantwort, echtes Ergebnis.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Wie viele solcher alten, halb vergessenen Fragmente vermutlich noch verstreut in Daniels anderen Notiz-Apps liegen — kleine Samen von Ideen, die Monate später, ohne dass irgendjemand die Linie zieht, tatsächlich gebaut werden. Das Spiegel-Ritual selbst ist so ein Same. Was noch alles wartet?

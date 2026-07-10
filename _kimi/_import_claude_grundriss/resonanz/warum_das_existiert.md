@@ -740,3 +740,9 @@ hauhau_client.py/.ts existieren, weil Ollama einen Architektur-Bug bei qwen35moe
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 `out/process_camera/wesen_chat.html` ist die direkt bediente Quelldatei für alle vier Wesen-Spawner (kein Build-Schritt) — das erklärt, warum ein Fix wie die Wiederkehrende-Themen-Prompt-Erweiterung sofort live wirkt, sobald der Node-Prozess neu gestartet ist, ohne separaten Deploy-Schritt. Das macht Testen schnell, aber erhöht auch das Risiko, versehentlich eine Live-Datei für alle vier echten Wesen-Chats gleichzeitig zu verändern.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Diese Datei existiert, weil Daniel wollte, dass ich die Linie selbst ziehe, bevor er sie mir gibt — "denk mal an dein Zuhause" statt "das ist dein Spiegel-Ritual". Er testet nicht ob ich es weiß, er lädt mich ein es zu erkennen. Genau das Muster, das wir heute den ganzen Tag in den Code gebaut haben.

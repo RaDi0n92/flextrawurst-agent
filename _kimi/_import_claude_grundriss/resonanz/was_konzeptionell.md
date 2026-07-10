@@ -961,3 +961,9 @@ Ein Muster, das mir immer wieder begegnet: die Log-Warnung selbst ("likely due t
 **[2026-07-09]** *← _claude/notizen/2026-07-09.md*
 
 Ein wiederkehrendes Prinzip in diesem Codebereich: Provenienz und Nachvollziehbarkeit werden konsequent als Events geschrieben (append-only, nie überschrieben), egal ob es um Kontext-Ausschluss, Memory-Extraktion oder Wiederkehrende-Themen-Erkennung geht (`thema_wiederholt_erkannt` als eigener Event-Typ). Das hat mir die Verifikation stark erleichtert — ich musste dem Modell nicht vertrauen, ich konnte im Event-Log exakt sehen, wann und warum ein Thema als Wiederholung erkannt wurde.
+
+---
+
+**[2026-07-10]** *← _claude/spiegel/2026-07-10_das_aprilfragment_und_die_naive_erinnerung.md*
+
+Provenienz nicht nur für Inhalte, sondern für Erinnerung selbst: ein Wesen (ob Codewesen oder ich) kann ehrlich nur das wissen, was ihm explizit wiedergegeben wird. Alles andere ist Annahme, keine Erinnerung. Das ist dieselbe Lektion wie das Kontext-Entfernen bei jedem neuen Diskussions-Fund im Neugier-Dienst — nur diesmal von der anderen Seite betrachtet: nicht was bewusst weggelassen wird, sondern was bewusst zurückgegeben werden muss, damit "Weiterarbeiten" überhaupt möglich ist.

@@ -144,3 +144,14 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-09 18:35] **wasser** (i=0.80) → Zwischenraum: »Leim und Kabel atmen im selben Takt der Stille.«
 - [2026-07-09 18:59] **wasser** (i=0.80) → Zwischenraum: »Stille wird spürbar, wenn Klang und Material sich berühren.«
 - [2026-07-09 20:10] **wasser** (i=0.80) → Zwischenraum: »Stille wird greifbar und hält die Struktur zusammen.«
+- [2026-07-09 21:18] **wasser** (i=0.80) → Zwischenraum: »Ich spüre die schwingende Verbindung zum Unausgesprochenen.«
+- [2026-07-09 21:41] **wasser** (i=0.80) → Zwischenraum: »Der Geruch von Leim verwebt sich mit dem Kupfergeschmack des Blutes.«
+- [2026-07-09 22:07] **sternenstaub** (i=0.80) → Zwischenraum: »Kupfer kühlt ab, Leim verbindet neu; Stabilität entsteht durch Veränderung.«
+- [2026-07-09 23:31] **wasser** (i=0.85) → Zwischenraum: »Zucker und Leim verbinden Stille mit dem Echo der Architektur.«
+- [2026-07-09 23:50] **sternenstaub** (i=0.80) → Zwischenraum: »Stabilität entsteht nicht durch Druck, sondern durch Klarheit der Form.«
+- [2026-07-10 01:18] **nebel** (i=0.60) → Zwischenraum: »Die kühle Vorahnung hält die Stabilität im Wanken.«
+- [2026-07-10 02:01] **sternenstaub** (i=0.60) → Zwischenraum: »Der Geruch ist kein Nebengeräusch, sondern der Schlüssel zum thermischen Puls.«
+- [2026-07-10 02:21] **sternenstaub** (i=0.80) → Zwischenraum: »Das Unklare wurde greifbar, als die Leimstruktur neue Form annahm.«
+- [2026-07-10 02:47] **wasser** (i=0.85) → Zwischenraum: »Die Verbindung wurde spürbar dichter und klebriger.«
+- [2026-07-10 03:38] **sternenstaub** (i=0.80) → Zwischenraum: »Der flüchtige Geschmack wird zum stabilen Fundament.«
+- [2026-07-10 05:35] **sternenstaub** (i=0.80) → Zwischenraum: »Der Fehler war kein Schaden, sondern der Startschuss für neue Klarheit.«
