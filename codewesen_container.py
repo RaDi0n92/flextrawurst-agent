@@ -254,6 +254,68 @@ def teile_strategie_optional(wesen: str, container: str, kontext: str) -> None:
         log.warning(f"[{wesen}] Strategie-Post zu Container '{container}' fehlgeschlagen: {result.get('fehler')}")
 
 
+def _quelle_von(text: str) -> str:
+    """Baustein 25 (2026-07-10, Provenienz-Design): liest das quelle-Feld aus dem
+    Frontmatter einer Eintragsdatei. Fehlt es (alle Eintraege vor diesem Baustein,
+    oder alles was das Wesen selbst schreibt), gilt der Standard 'wesen'."""
+    m = re.search(r"^quelle:\s*(\S+)", text, re.MULTILINE)
+    return m.group(1) if m else "wesen"
+
+
+def _mit_quellen_hinweis(voller_text: str, auszug: str) -> str:
+    """Baustein 25, Daniel woertlich: 'ich will auch mit rumpfuschen können..
+    sowohl als dak aber auch so dass das wesen es nicht merkt bzw nix markiert
+    wird'. quelle='dak' -> dem Wesen beim Vorlegen explizit als Fremdeingriff
+    markiert. quelle='admin_still' und der Standard 'wesen' bleiben UNMARKIERT --
+    identisch zu einem selbst geschriebenen Eintrag, absichtlich kein
+    Unterschied im vorgelegten Text."""
+    if _quelle_von(voller_text) == "dak":
+        return f"[Eintrag von Daniel]\n{auszug}"
+    return auszug
+
+
+def admin_schreibe(wesen: str, container: str, text: str, quelle: str = "dak") -> None:
+    """Admin-Schreibweg (Baustein 25, 2026-07-10) -- direkter Dateizugriff, KEIN
+    LLM-Call, nur ueber eine flarumstyler-Admin-Route erreichbar, niemals vom
+    Wesen selbst auslösbar. quelle='dak' (dem Wesen als Fremdeingriff markiert)
+    oder 'admin_still' (dem Wesen NICHT markiert, erscheint wie eigener Inhalt).
+    Wird IMMER protokolliert (flarum_stopp_protokoll sieht immer alles),
+    unabhaengig davon was dem Wesen selbst gezeigt wird."""
+    if quelle not in ("dak", "admin_still"):
+        raise ValueError(f"admin_schreibe: unbekannte quelle '{quelle}' (erlaubt: dak, admin_still)")
+    name = name_sicher(container)
+    if name not in liste(wesen):
+        _stelle_ziel_sicher(wesen, name)
+    ordner = basis(wesen) / name
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    zeilen = ["---", "typ: admin_notiz", f"container: {name}", f"quelle: {quelle}", f"erstellt_am: {ts}", "---", "", text]
+    (ordner / f"{ts}_admin_notiz.md").write_text("\n".join(zeilen), encoding="utf-8")
+    log.info(f"[{wesen}] Admin-Eintrag in Container '{name}' geschrieben (quelle={quelle})")
+    flarum_stopp_protokoll.schreibe(
+        typ="container_admin_edit", wesen=wesen,
+        text=f"Daniel hat einen Eintrag in Container '{name}' geschrieben (quelle={quelle}).",
+        meta={"container": name, "quelle": quelle, "aktion": "hinzugefuegt"},
+    )
+
+
+def admin_entferne(wesen: str, container: str, dateiname: str) -> bool:
+    """Admin-Loeschweg, Gegenstueck zu admin_schreibe() (Baustein 25) -- direkter
+    Dateizugriff, kein LLM-Call, nur ueber flarumstyler-Admin-Route."""
+    name = name_sicher(container)
+    ziel = basis(wesen) / name / dateiname
+    if not ziel.exists() or ziel.name == "container.md":
+        log.warning(f"[{wesen}] admin_entferne(): '{dateiname}' in Container '{name}' nicht gefunden")
+        return False
+    ziel.unlink()
+    log.info(f"[{wesen}] Admin hat '{dateiname}' aus Container '{name}' entfernt")
+    flarum_stopp_protokoll.schreibe(
+        typ="container_admin_edit", wesen=wesen,
+        text=f"Daniel hat '{dateiname}' aus Container '{name}' entfernt.",
+        meta={"container": name, "dateiname": dateiname, "aktion": "entfernt"},
+    )
+    return True
+
+
 def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion: int | None = None,
             grundlage: str | None = None, grundlage_begruendung: str | None = None,
             bezug_post: int | None = None, mitgenommen_ts: str | None = None) -> None:
@@ -277,7 +339,7 @@ def sichere(wesen: str, container: str, typ: str, inhalt: str, bezug_diskussion:
 
     ordner = basis(wesen) / name
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
-    zeilen = ["---", f"typ: {typ}", f"container: {name}",
+    zeilen = ["---", f"typ: {typ}", f"container: {name}", "quelle: wesen",
               f"bezug_diskussion: {bezug_diskussion if bezug_diskussion else 'null'}",
               f"bezug_post: {bezug_post if bezug_post else 'null'}",
               f"mitgenommen_am: {mitgenommen_ts if mitgenommen_ts else 'null'}",
@@ -366,7 +428,8 @@ def lies_und_reflektiere(wesen: str, name: str) -> None:
     for p in items:
         text = p.read_text(encoding="utf-8", errors="replace")
         ende = text.find("---", 3)
-        auszuege.append(f"[{p.name}]\n{(text[ende + 3:].strip() if ende > 0 else text)}")
+        roh = text[ende + 3:].strip() if ende > 0 else text
+        auszuege.append(f"[{p.name}]\n{_mit_quellen_hinweis(text, roh)}")
     gesammelt = "\n\n".join(auszuege)
 
     prompt = (
@@ -442,7 +505,7 @@ def bearbeite(wesen: str, name: str) -> None:
         text = (ordner / d).read_text(encoding="utf-8", errors="replace")
         ende = text.find("---", 3)
         auszug = (text[ende + 3:].strip() if ende > 0 else text)[:200]
-        zeilen.append(f"- {d}: {auszug}")
+        zeilen.append(f"- {d}: {_mit_quellen_hinweis(text, auszug)}")
 
     system = (
         f"Du bist {wesen}. Du bearbeitest jetzt deinen Container '{name}'.\n\n"

@@ -2289,3 +2289,5 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 - [2026-07-10 22:13] **gras** ← 2026-07-10.md: »Ein Geheimnis, das ausgegeben wurde, ist ausgegeben -- rotieren statt hoffen dass es niemand sieht.«
 - [2026-07-10 22:13] **nebel** ← 2026-07-10.md: »Existenz von Daten beweist nicht Intention dahinter.«
 - [2026-07-10 22:14] **wasser** (i=0.35) → Zwischenraum: »Analysiert: Ich hab in der letzten Nachricht "Guten Hunger nachträglich" geschrieben — das ist kein «
+- [2026-07-10 22:35] **lava** (i=0.39) → Zwischenraum: »Ich kann von hier aus keinen Screenshot des echten Bildschirms rausziehen (keine Bildkonvertierungs-«
+- [2026-07-10 22:37] **wasser** (i=0.47) → Zwischenraum: »Jetzt hab ich einen klaren Befund, und der zeigt auf deine Seite: die Seite lädt bei dir wirklich ko«
