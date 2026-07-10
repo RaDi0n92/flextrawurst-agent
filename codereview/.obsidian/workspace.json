@@ -1,0 +1,194 @@
+{
+  "main": {
+    "id": "2d0a60a9f1bf538e",
+    "type": "split",
+    "children": [
+      {
+        "id": "39d9cf7e1ac86034",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e99f6ca904adad1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02_wesen_kern_takt_schlaf.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02_wesen_kern_takt_schlaf"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6cef74e3aff7b35e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2f9f7fd422e1e2a2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cb9ea8e25080246c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Dateiexplorer"
+            }
+          },
+          {
+            "id": "632d72a41b3e708e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Suchen"
+            }
+          },
+          {
+            "id": "34241b789aa3337e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Lesezeichen"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "64066e4f2418c8d3",
+    "type": "split",
+    "children": [
+      {
+        "id": "8ef682db8ed2fafa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f621bb9af7eb8723",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "02_wesen_kern_takt_schlaf.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Rückverweise auf 02_wesen_kern_takt_schlaf"
+            }
+          },
+          {
+            "id": "f23e23ff8daef909",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "02_wesen_kern_takt_schlaf.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Ausgehende Links von 02_wesen_kern_takt_schlaf öffnen"
+            }
+          },
+          {
+            "id": "57af5b03b7fb57c6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "cf1697fa13493cff",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Alle Eigenschaften"
+            }
+          },
+          {
+            "id": "0574c26e9d86c982",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "02_wesen_kern_takt_schlaf.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Gliederung von 02_wesen_kern_takt_schlaf"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Schnellauswahl öffnen": false,
+      "graph:Graph-Ansicht öffnen": false,
+      "canvas:Neuen Canvas erstellen": false,
+      "daily-notes:Heutige Notiz öffnen": false,
+      "templates:Vorlage einfügen": false,
+      "command-palette:Befehlspalette öffnen": false,
+      "bases:Neue Base erstellen": false
+    }
+  },
+  "active": "9e99f6ca904adad1",
+  "lastOpenFiles": [
+    "01_welt_api_auth_public.md",
+    "04_gruppen_ampel.md",
+    "05_organ_hunger_life_contracts.md",
+    "06_surface_frontend.md",
+    "07_flarum_codewesen.md"
+  ]
+}

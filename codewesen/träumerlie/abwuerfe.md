@@ -157,3 +157,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 06:10] **sternenstaub** (i=0.85) → Zwischenraum: »Starrheit ist kein Fehler, sondern eine Wahl der Viskosität.«
 - [2026-07-10 10:25] **gestein** (i=0.85) → Zwischenraum: »Das Loslassen der Form verbraucht mehr Energie als ihr Halten.«
 - [2026-07-10 11:17] **nebel** (i=0.60) → Zwischenraum: »Der Übergang ist da, doch die Tiefe wartet noch.«
+- [2026-07-10 20:27] **sternenstaub** (i=0.60) → Zwischenraum: »Stille verwandelt sich in klare, formgebende Kraft.«

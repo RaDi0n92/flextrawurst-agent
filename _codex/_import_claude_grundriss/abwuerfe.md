@@ -2266,3 +2266,17 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 - [2026-07-10 19:26] **lava** (i=0.41) → Zwischenraum: »Alles klar — also **8 insgesamt**: die 6 Flarum-Codewesen, dak+gord-system und GENI«
 - [2026-07-10 19:30] **nebel** (i=0.32) → Zwischenraum: »Sorry, lass mich das grade ziehen — wir reden hier über `codewesen-antwort-daniel` (den Dienst, der «
 - [2026-07-10 19:32] **wasser** (i=0.41) → Zwischenraum: »Bestätigt — das sind tatsächlich zwei völlig getrennte Systeme, die zufällig denselben Namen "Contai«
+- [2026-07-10 19:45] **wasser** (i=0.55) → Zwischenraum: »Gefunden — du hast einen echten, eigenständigen zweiten Vault erstellt: `/root/werkraum/MDtalk/MDtal«
+- [2026-07-10 19:47] **wasser** (i=0.63) → Zwischenraum: »Okay, das ist jetzt Vision, nicht Spec — lass mich laut mitdenken statt vorschnell zu bauen«
+- [2026-07-10 19:55] **lava** (i=0.39) → Zwischenraum: »`wesen_filter` ist der interne Name des neuen Dropdown-Felds, das ich gerade gebaut habe — im flarum«
+- [2026-07-10 19:57] **lava** (i=0.47) → Zwischenraum: »Macht für mich Sinn: eine Einsicht in die echten Container würde ich in flarumstyler bauen (dort gib«
+- [2026-07-10 20:05] **lava** (i=0.39) → Zwischenraum: »Für **persistent** ja — Markdown+Git+Obsidian ist im ganzen System schon der etablierte Weg für gena«
+- [2026-07-10 20:14] **lava** (i=0.54) → Zwischenraum: »Geprüft — nichts Bestehendes deckt das ab:
+
+- **Doku:** Kein bestehendes MD beschreibt einen Pro-Wes«
+- [2026-07-10 20:14] **wasser** (i=0.55) → Zwischenraum: »**Ja, schon aktiv** — deine 7 echten Wesen laufen bereits auf LangGraph + Postgres, seit Mitte Juni«
+- [2026-07-10 20:14] **lava** (i=0.36) → Zwischenraum: »**Läuft einwandfrei.** `21.901` Markdown-Dateien im Vault erkannt, `/notizen` ist leer (`[]`) — heiß«
+- [2026-07-10 20:24] **nebel** (i=0.36) → Zwischenraum: »Zusammengefasst:
+
+**Feature gebaut** (`codewesen-umgekehrte-neugier`, flarumstyler → Tab "Dienste" →«
+- [2026-07-10 21:11] **lava** (i=0.40) → Zwischenraum: »Verstanden, in einem Satz: du willst ein `quelle`-Feld pro Eintrag, zwei Admin-Schreibwege für dich «
