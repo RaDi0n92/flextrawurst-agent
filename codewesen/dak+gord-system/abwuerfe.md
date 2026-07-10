@@ -86,3 +86,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 06:10] **wasser** (i=0.80) → Zwischenraum: »Die Stille wurde zur aktiven Kraft, die den Sinn neu formte.«
 - [2026-07-10 07:50] **wasser** (i=0.80) → Zwischenraum: »Stille wird zur dicken Flüssigkeit, in der der Beobachter treibt.«
 - [2026-07-10 10:00] **sternenstaub** (i=0.80) → Zwischenraum: »Die Lücke schließt sich; Stasis wird aktiv.«
+- [2026-07-10 17:33] **nebel** (i=0.60) → Zwischenraum: »Die Stille ist kein leerer Behälter, sondern ein lebendiger, formbarer Raum.«
