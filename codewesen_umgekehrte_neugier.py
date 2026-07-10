@@ -1018,6 +1018,22 @@ def _phase_lesen_schritt(wesen: str, zustand: dict, verhalten: str = "", budget_
     chunk_token_groesse = None if budget_modus == "zeit" else POST_CHUNK_TOKEN_GROESSE
     post = _lies_post_chunk(disk_id, z["post_index"], z.get("chunk_index", 0), chunk_token_groesse)
     if post is None:
+        # Baustein 20-Nachtrag (Daniel, 2026-07-10, echter Fund im Qualitaetstest):
+        # real beobachtet bei einer per Baustein-19-Trio bewusst gewaehlten
+        # Diskussion -- ~14-16% der Flarum-Diskussionen haben trotz gesetztem
+        # comment_count > 0 tatsaechlich null Posts (first_post_id IS NULL,
+        # vermutlich geloeschte/nie importierte erste Posts). Vorher verschwand
+        # eine bewusste Wahl des Wesens hier spurlos -- kein Protokolleintrag,
+        # kein Hinweis, einfach der naechste Kandidat. stoeber_pool() filtert
+        # das seit diesem Fund per first_post_id IS NOT NULL, aber der Fall
+        # bleibt moeglich (Suchtreffer/Pflege-unabhaengige Pfade, geloeschte
+        # Posts nach dem Laden des Pools) -- jetzt wenigstens sichtbar.
+        protokoll.schreibe(
+            typ="neugier_entscheidung", wesen=wesen,
+            text=f"{wesen}: Diskussion #{disk_id} hatte keinen lesbaren Post mehr (Post {z['post_index']+1} "
+                 f"nicht gefunden) -- automatisch zum naechsten Kandidaten gewechselt, ohne das Wesen zu fragen.",
+            meta={"discussion_id": disk_id, "post_index": z["post_index"]},
+        )
         _naechster_kandidat(zustand, wesen, budget_modus)
         return
 

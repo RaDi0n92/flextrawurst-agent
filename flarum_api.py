@@ -321,7 +321,7 @@ def stoeber_pool(anzahl_random: int = 8) -> list[dict]:
                    u.username AS last_poster
             FROM discussions d
             LEFT JOIN users u ON u.id = d.last_posted_user_id
-            WHERE d.hidden_at IS NULL AND d.is_approved = 1
+            WHERE d.hidden_at IS NULL AND d.is_approved = 1 AND d.first_post_id IS NOT NULL
             ORDER BY RAND()
             LIMIT %s
         """, (anzahl_random,))
@@ -346,7 +346,7 @@ def stoeber_pool(anzahl_random: int = 8) -> list[dict]:
                            u.username AS last_poster
                     FROM discussions d
                     LEFT JOIN users u ON u.id = d.last_posted_user_id
-                    WHERE d.hidden_at IS NULL AND d.is_approved = 1
+                    WHERE d.hidden_at IS NULL AND d.is_approved = 1 AND d.first_post_id IS NOT NULL
                       AND d.created_at BETWEEN %s AND %s
                     ORDER BY RAND()
                     LIMIT 1
