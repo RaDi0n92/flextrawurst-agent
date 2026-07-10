@@ -2208,3 +2208,4 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 
 **FUNDE_MAX** =«
 - [2026-07-10 05:31] **wasser** (i=0.55) → Zwischenraum: »Ja, technisch möglich — ich hab kurz nachgesehen: `discussions.created_at` existiert in der Flarum-D«
+- [2026-07-10 05:46] **nebel** ← 2026-07-10.md: »Schreibzeit und Bedeutungszeit sind nicht dasselbe -- ein Ereignis gehört dorthin, wo es etwas bedeutet, nicht nur dorthin, wo es geschrieben wurde.«
