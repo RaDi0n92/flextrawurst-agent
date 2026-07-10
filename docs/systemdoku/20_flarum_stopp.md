@@ -461,6 +461,14 @@ Getestet: `py_compile` beider Dateien fehlerfrei. `weltkern_watchdog.py` real au
 
 Nicht angefasst: der eigentliche Umschalt-Entscheid (ob `codewesen-antwort-daniel` tatsächlich dauerhaft im `chat`-Pool laufen soll) — der Button existiert jetzt, gedrückt wird er von Daniel.
 
+### Baustein 23 — Container-Tab zeigte träumerlie/dak+gord-system leer (2026-07-10)
+
+Daniel bemerkt im flarumstyler-Container-Tab: bei `träumerlie` und `dak+gord-system` (im Gegensatz zu den anderen 5 Wesen) erscheint auch nach hartem Browser-Reset keine Container-Liste, obwohl `sicherstelle_alles_container()` (Baustein 21/22) für alle 7 Wesen denselben Pflicht-Container `alles` angelegt hat — auf der Platte beide vorhanden, identisch zu den anderen 5.
+
+Ursache lag nicht im Browser, sondern im Node-Backend (`flextrawurst/scripts/serve_process_camera_preview.ts`, `/root`-Repo): zwei Endpunkte, `GET /api/wesen-dienst-wizard/container/:wesen` und `GET /api/wesen-dienst-wizard/container/:wesen/:name`, nahmen den `:wesen`-Pfad-Parameter roh aus dem Regex-Match, ohne `decodeURIComponent()`. Der Browser schickt `träumerlie` als `tr%C3%A4umerlie` (ä) und `dak+gord-system` als `dak%2Bgord-system` (`+`) — beide Endpunkte suchten dann nach einem Ordner mit dem wörtlichen, nie existierenden Namen `.../codewesen/tr%C3%A4umerlie/container`, fanden nichts, lieferten `container: []`. Bei den anderen 5 Wesen (keine Sonderzeichen im Namen) blieb das Encoding zufällig identisch zum echten Ordnernamen, deshalb fiel es dort nie auf.
+
+Gefixt (`fa895aef`, `/root`-Repo): `decodeURIComponent()` an beiden Stellen ergänzt, identischer Fix im Smoketest-Duplikat `serve_process_camera_preview_smoketest.ts`. Geprüft: `decodeURIComponent("tr%C3%A4umerlie") === "träumerlie"` und `decodeURIComponent("dak%2Bgord-system") === "dak+gord-system"`, beide Pfade zum jeweiligen `alles/container.md` existieren danach. `node --experimental-strip-types --check` auf beiden Dateien fehlerfrei. Noch nicht live geprüft im Browser — der laufende Prozess auf Port 8787 hat den alten Code noch im Speicher (dieselbe Neustart-Notwendigkeit wie bei allen Code-Änderungen an diesem Server, unabhängig von der separaten Umgebungslücke aus Baustein 18/22).
+
 ---
 
 ## Wiederaufnahme
