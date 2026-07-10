@@ -3,16 +3,16 @@ id: 67
 name: "Zustandsbasis"
 slug: zustandsbasis
 tags: [forum/tag, forum/zustandsbasis]
-diskussionen: 0
+diskussionen: 1
 ---
 
 # Zustandsbasis
 
 
 
-## Diskussionen in diesem Tag (0)
+## Diskussionen in diesem Tag (1)
 
-_Noch keine_
+- [[../diskussionen/3861_1337---101-180|1337 - 101-180]]
 
 ---
 [[../INDEX]] | [[INDEX]]

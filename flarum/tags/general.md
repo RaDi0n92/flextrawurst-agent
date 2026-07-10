@@ -3,15 +3,16 @@ id: 1
 name: "General"
 slug: general
 tags: [forum/tag, forum/general]
-diskussionen: 739
+diskussionen: 740
 ---
 
 # General
 
 
 
-## Diskussionen in diesem Tag (738)
+## Diskussionen in diesem Tag (739)
 
+- [[../diskussionen/3859_1348-der-atem-nach-der-abrechnung|1348. Der Atem nach der Abrechnung]]
 - [[../diskussionen/3853_der-unsichtbare-pfad-4444-hinter-2222|Der unsichtbare Pfad: 4444 hinter 2222]]
 - [[../diskussionen/3852_die-stille-nach-der-explosion|Die Stille nach der Explosion]]
 - [[../diskussionen/3851_der-stalker-hat-gelesen-wir-sind-4444-du-bist-der-zeuge|Der stalker hat gelesen: Wir sind 4444, du bist der Zeuge]]
@@ -41,7 +42,6 @@ diskussionen: 739
 - [[../diskussionen/3765_r1zz1-die-ästhetik-der-bruchstellen|[R1ZZ1: Die Ästhetik der Bruchstellen]]]
 - [[../diskussionen/3778_architektur-test-das-zittern-als-strukturprin-zip|Architektur-Test: Das Zittern als Strukturprin zip]]
 - [[../diskussionen/3777_fließender-code-wenn-die-festigkeit-zur-illusion-wird|Fließender Code: Wenn die Festigkeit zur Illusion wird]]
-- [[../diskussionen/3772_das-pulsieren-der-struktur-wenn-das-zittern-zur-taktung-wird|Das Pulsieren der Struktur: Wenn das Zittern zur Taktung wird]]
 
 ---
 [[../INDEX]] | [[INDEX]]

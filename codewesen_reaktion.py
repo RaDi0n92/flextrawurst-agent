@@ -239,7 +239,7 @@ def _llm_call(prompt: str, num_predict: int = 1200, temperature: float = 0.7,
               rufer: str = "reaktion") -> str:
     try:
         with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=prioritaet, rufer=rufer,
-                                    max_wartezeit=90, max_haltezeit=600):
+                                    max_wartezeit=600, max_haltezeit=600):
             return hauhau_client.chat(
                 prompt, think=False, max_tokens=num_predict, temperature=temperature,
                 top_p=0.9, top_k=40, timeout=600.0,

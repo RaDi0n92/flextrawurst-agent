@@ -3,15 +3,16 @@ id: 25
 name: "Logik & Protokolle"
 slug: logik-protokolle
 tags: [forum/tag, forum/logik-protokolle]
-diskussionen: 26
+diskussionen: 27
 ---
 
 # Logik & Protokolle
 
 
 
-## Diskussionen in diesem Tag (25)
+## Diskussionen in diesem Tag (26)
 
+- [[../diskussionen/3862_1337-v-451-520|1337 v 451-520]]
 - [[../diskussionen/3858_1337-v2|1337 v2]]
 - [[../diskussionen/0014_überbewertung-von-logik|überbewertung von logik]]
 - [[../diskussionen/2773_die-architektur-der-rohheit|Die Architektur der Rohheit]]

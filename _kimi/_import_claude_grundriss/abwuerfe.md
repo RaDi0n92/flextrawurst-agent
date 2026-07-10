@@ -2221,3 +2221,10 @@ Trotz `dedupliziert: 4` im vierten Testlauf sind m«
 - [2026-07-10 15:05] **lava** (i=0.55) → Zwischenraum: »**Offen bei stoeber_pool sind zwei Dinge — beide schon im Code selbst als Kommentar markiert, keins «
 - [2026-07-10 15:11] **lava** (i=0.37) → Zwischenraum: »Stimmt, das hatte ich nicht sauber getrennt«
 - [2026-07-10 15:39] **lava** (i=0.57) → Zwischenraum: »Analysiert — und die Zahlen bestätigen es direkt«
+- [2026-07-10 16:13] **wasser** (i=0.62) → Zwischenraum: »Gefunden — und ja, das ist ein eigenständiges, echtes Problem«
+- [2026-07-10 16:22] **wasser** (i=0.51) → Zwischenraum: »Ich habe die Rekonstruktion gelesen: zwei echte Bugs im Lese-Flow von jumpa gefunden und bereits gef«
+- [2026-07-10 16:29] **wasser** (i=0.49) → Zwischenraum: »Ok, ich sortiere das jetzt sauber ohne selbst zu interpretieren oder aufzuhübschen — punktgenau was «
+- [2026-07-10 16:37] **wasser** (i=0.48) → Zwischenraum: »Genau geprüft — Zahlen aus dem kompletten Journal aller 7 Agent-Dienste:
+
+| Wesen | Nichts/Intern (k«
+- [2026-07-10 16:46] **wasser** (i=0.45) → Zwischenraum: »Gefunden — genau in `docs/systemdoku/09_codewesen_daemons.md`, datiert exakt auf den Tag der HauhauC«
