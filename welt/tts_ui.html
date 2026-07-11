@@ -330,6 +330,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div id="reading-view"></div>
       <div class="counter" id="ctr">0 / 1.111.111</div>
       <div class="token-meter" id="token-meter">ca. 0 Tokens</div>
+      <div class="panel text-vault" data-vault-source="tts">
+        <div class="panel-title">Textablage</div>
+        <div class="grid2">
+          <input class="vault-title" type="text" placeholder="Ablage-Titel">
+          <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <button class="small" type="button" data-vault-act="save-current">TTS-Text ablegen</button>
+          <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
+        </div>
+        <div class="sentence-list vault-list"></div>
+      </div>
 
       <div class="row">
         <button class="main" id="btn-speak">▶ Sprechen</button>
@@ -499,6 +511,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         </label>
       </div>
       <div class="sentence-list" id="translate-sentences"></div>
+      <div class="panel text-vault" data-vault-source="translate">
+        <div class="panel-title">Textablage</div>
+        <div class="grid2">
+          <input class="vault-title" type="text" placeholder="Ablage-Titel">
+          <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <button class="small" type="button" data-vault-act="save-current">Übersetzung ablegen</button>
+          <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
+        </div>
+        <div class="sentence-list vault-list"></div>
+      </div>
       <div class="profile-tools">
         <div class="panel-title">Stimmprofile</div>
         <div class="profile-row">
@@ -534,6 +558,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-ocr-clear">Leeren</button>
         <button class="small" id="btn-ocr-full">Groß öffnen</button>
       </div>
+      <div class="panel text-vault" data-vault-source="ocr">
+        <div class="panel-title">Textablage</div>
+        <div class="grid2">
+          <input class="vault-title" type="text" placeholder="Ablage-Titel">
+          <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <button class="small" type="button" data-vault-act="save-current">OCR-Text ablegen</button>
+          <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
+        </div>
+        <div class="sentence-list vault-list"></div>
+      </div>
       <div class="sentence-list" id="ocr-list"></div>
     </section>
 
@@ -559,6 +595,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
       <div class="sentence-list" id="documents-scope"></div>
       <textarea id="documents-output" placeholder="Treffer, Chunks oder Chat-Antworten erscheinen hier"></textarea>
+      <div class="panel text-vault" data-vault-source="documents">
+        <div class="panel-title">Textablage</div>
+        <div class="grid2">
+          <input class="vault-title" type="text" placeholder="Ablage-Titel">
+          <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <button class="small" type="button" data-vault-act="save-current">Dokumentausgabe ablegen</button>
+          <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
+        </div>
+        <div class="sentence-list vault-list"></div>
+      </div>
       <div class="sentence-list" id="documents-sources"></div>
       <div class="sentence-list" id="documents-chunks"></div>
       <div class="sentence-list" id="documents-list"></div>
@@ -583,6 +631,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-webarchive-full">Groß öffnen</button>
       </div>
       <textarea id="webarchive-output" placeholder="Gespeicherte Snapshots oder Notizen"></textarea>
+      <div class="panel text-vault" data-vault-source="webarchive">
+        <div class="panel-title">Textablage</div>
+        <div class="grid2">
+          <input class="vault-title" type="text" placeholder="Ablage-Titel">
+          <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <button class="small" type="button" data-vault-act="save-current">Webtext ablegen</button>
+          <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
+        </div>
+        <div class="sentence-list vault-list"></div>
+      </div>
       <div class="sentence-list" id="webarchive-versions"></div>
       <div class="sentence-list" id="webarchive-list"></div>
     </section>
@@ -800,6 +860,7 @@ const ACTIVE_TAB_KEY = 'flextrawurst.tts.activeTab.v1';
 const OCR_KEY = 'flextrawurst.tts.ocrJobs.v1';
 const DOCUMENTS_KEY = 'flextrawurst.tts.documents.v1';
 const WEBARCHIVE_KEY = 'flextrawurst.tts.webarchive.v1';
+const TEXT_VAULT_KEY = 'flextrawurst.tts.textVault.v1';
 
 let ttsRate = '+0%';
 let soundboardRate = '+0%';
@@ -822,6 +883,7 @@ let voiceProfiles = loadVoiceProfiles();
 let ocrJobs = loadJsonLocal(OCR_KEY, []);
 let documentEntries = loadJsonLocal(DOCUMENTS_KEY, []);
 let webarchiveEntries = loadJsonLocal(WEBARCHIVE_KEY, []);
+let textVaultEntries = loadJsonLocal(TEXT_VAULT_KEY, []);
 let documentHits = [];
 let documentActiveIds = [];
 let documentSearchTimer = null;
@@ -939,6 +1001,189 @@ function loadJsonLocal(key, fallback){
 
 function saveJsonLocal(key, value){
   localStorage.setItem(key, JSON.stringify(value));
+}
+
+function normalizeTextVault(){
+  textVaultEntries = (Array.isArray(textVaultEntries) ? textVaultEntries : [])
+    .filter(item=>item && String(item.text || '').trim())
+    .map(item=>({
+      id: item.id || uid(),
+      title: item.title || shortText(String(item.text || '').replace(/\s+/g,' '), 48) || 'Text',
+      text: String(item.text || ''),
+      source: item.source || 'ablage',
+      tags: Array.isArray(item.tags) ? item.tags.filter(Boolean) : parseTags(item.tags),
+      createdAt: item.createdAt || new Date().toISOString()
+    }));
+}
+
+function saveTextVault(){
+  normalizeTextVault();
+  saveJsonLocal(TEXT_VAULT_KEY, textVaultEntries);
+}
+
+function sourceLabel(source){
+  return {
+    tts: 'TTS',
+    soundboard: 'Soundboard',
+    translate: 'Übersetzen',
+    ocr: 'OCR',
+    documents: 'Dokumente',
+    webarchive: 'Webarchiv',
+    ablage: 'Ablage'
+  }[source] || source || 'Ablage';
+}
+
+function currentTextForVault(source){
+  if (source === 'tts') return ta.value;
+  if (source === 'translate') return translateOutput.value.trim() || translateInput.value;
+  if (source === 'ocr') return ocrInput.value;
+  if (source === 'documents') return documentsOutput.value;
+  if (source === 'webarchive') return webarchiveOutput.value;
+  return '';
+}
+
+function renderTextVaults(){
+  normalizeTextVault();
+  document.querySelectorAll('.text-vault').forEach(panel=>{
+    const list = panel.querySelector('.vault-list');
+    if (!list) return;
+    if (!textVaultEntries.length){
+      list.innerHTML = '<div class="empty">Noch keine Texte abgelegt.</div>';
+      return;
+    }
+    list.innerHTML = textVaultEntries
+      .slice()
+      .sort((a,b)=>String(b.createdAt).localeCompare(String(a.createdAt)))
+      .map(item=>{
+        const tags = (item.tags || []).join(', ');
+        return `
+          <div class="sentence-row" data-vault-id="${esc(item.id)}">
+            <div>
+              <div class="sentence-text">${esc(item.title || 'Text')}</div>
+              <div class="clip-meta">${esc(sourceLabel(item.source))} · ${String(item.text || '').length.toLocaleString('de')} Zeichen${tags ? ' · '+esc(tags) : ''}</div>
+              <div class="clip-extra">${esc(shortText(String(item.text || '').replace(/\s+/g,' '), 220))}</div>
+            </div>
+            <div class="sentence-actions">
+              <button class="small" type="button" data-vault-act="to-tts">TTS</button>
+              <button class="small" type="button" data-vault-act="to-soundboard">Soundboard</button>
+              <button class="small" type="button" data-vault-act="to-ocr">OCR</button>
+              <button class="small" type="button" data-vault-act="to-documents">Dokument</button>
+              <button class="small" type="button" data-vault-act="to-translate">Übersetzen</button>
+              <button class="small" type="button" data-vault-act="copy">Kopieren</button>
+              <button class="small danger" type="button" data-vault-act="delete">Löschen</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+  });
+}
+
+function saveCurrentToVault(panel){
+  const source = panel.dataset.vaultSource || 'ablage';
+  const text = currentTextForVault(source).trim();
+  if (!text){
+    st('Kein Text zum Ablegen.','err');
+    return;
+  }
+  const titleInput = panel.querySelector('.vault-title');
+  const tagsInput = panel.querySelector('.vault-tags');
+  const title = (titleInput && titleInput.value.trim()) || shortText(text.replace(/\s+/g,' '), 56) || 'Text';
+  textVaultEntries.unshift({
+    id: uid(),
+    title,
+    text,
+    source,
+    tags: parseTags(tagsInput ? tagsInput.value : ''),
+    createdAt: new Date().toISOString()
+  });
+  if (titleInput) titleInput.value = '';
+  if (tagsInput) tagsInput.value = '';
+  saveTextVault();
+  renderTextVaults();
+  st('Text abgelegt.','ok');
+}
+
+function findVaultItem(id){
+  return textVaultEntries.find(item=>item.id === id);
+}
+
+async function vaultTextToDocument(item){
+  const text = String(item.text || '').trim();
+  if (!text){
+    st('Ablage-Text ist leer.','err');
+    return;
+  }
+  st('Ablage-Text wird als Dokument importiert…','wait');
+  try {
+    const data = new FormData();
+    const filename = `${fileSafe(item.title || 'textablage')}.txt`;
+    data.append('files', new File([text], filename, {type:'text/plain'}));
+    const res = await fetch(DOCUMENTS_API, {method:'POST', body:data});
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const created = await res.json();
+    const byId = new Map(documentEntries.map(doc=>[doc.id, doc]));
+    (Array.isArray(created) ? created : []).forEach(doc=>byId.set(doc.id, doc));
+    documentEntries = Array.from(byId.values());
+    documentActiveIds = (Array.isArray(created) ? created : []).map(doc=>doc.id).filter(Boolean);
+    saveJsonLocal(DOCUMENTS_KEY, documentEntries);
+    renderDocumentScope();
+    renderDocuments();
+    setTab('documents');
+    documentsOutput.value = (Array.isArray(created) ? created : []).map(doc=>`${doc.filename} · ${doc.status}\n${qualityLine(doc.quality)}`).join('\n');
+    st('Ablage-Text als Dokument gespeichert.','ok');
+  } catch(e){
+    st('Ablage-Text konnte nicht als Dokument gespeichert werden.','err');
+    dbg(e.message);
+  }
+}
+
+function vaultTextToSoundboard(item){
+  const text = String(item.text || '').trim();
+  if (!text){
+    st('Ablage-Text ist leer.','err');
+    return;
+  }
+  store.clips.push({
+    id: uid(),
+    title: item.title || shortText(text.replace(/\s+/g,' '), 48) || 'Ablage',
+    text,
+    category: 'Ablage',
+    voice: activeVoice,
+    rate: soundboardRate,
+    favorite: false,
+    tags: item.tags || [],
+    note: `aus ${sourceLabel(item.source)}`,
+    createdAt: new Date().toISOString()
+  });
+  if (!store.categories.includes('Ablage')) store.categories.push('Ablage');
+  saveStore();
+  renderLibrary();
+  setTab('soundboard');
+  st('Ablage-Text im Soundboard gespeichert.','ok');
+}
+
+function moveVaultText(item, action){
+  const text = String(item.text || '');
+  if (action === 'to-tts'){
+    ta.value = text;
+    ta.dispatchEvent(new Event('input'));
+    setTab('tts');
+    st('Ablage-Text ins TTS-Feld gelegt.','ok');
+  }
+  if (action === 'to-soundboard') vaultTextToSoundboard(item);
+  if (action === 'to-ocr'){
+    ocrInput.value = text;
+    setTab('ocr');
+    st('Ablage-Text ins OCR-Textfeld gelegt.','ok');
+  }
+  if (action === 'to-documents') vaultTextToDocument(item);
+  if (action === 'to-translate'){
+    translateInput.value = text;
+    translateInput.dispatchEvent(new Event('input'));
+    setTab('translate');
+    st('Ablage-Text in Übersetzen gelegt.','ok');
+  }
+  if (action === 'copy') copyText(text, 'Ablage-Text kopiert.');
 }
 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
@@ -3023,6 +3268,34 @@ tabButtons.forEach(btn=>{
   btn.addEventListener('click', ()=>setTab(btn.dataset.tabTarget));
 });
 window.addEventListener('popstate', ()=>renderTabState(currentTab()));
+document.addEventListener('click', e=>{
+  const vaultBtn = e.target.closest('[data-vault-act]');
+  if (!vaultBtn) return;
+  const panel = vaultBtn.closest('.text-vault');
+  const row = vaultBtn.closest('[data-vault-id]');
+  const action = vaultBtn.dataset.vaultAct;
+  if (action === 'save-current' && panel){
+    saveCurrentToVault(panel);
+    return;
+  }
+  if (action === 'clear-list' && panel){
+    const list = panel.querySelector('.vault-list');
+    if (list) list.style.display = list.style.display === 'none' ? '' : 'none';
+    vaultBtn.textContent = list && list.style.display === 'none' ? 'Liste zeigen' : 'Liste ausblenden';
+    return;
+  }
+  if (!row) return;
+  const item = findVaultItem(row.dataset.vaultId);
+  if (!item) return;
+  if (action === 'delete'){
+    textVaultEntries = textVaultEntries.filter(entry=>entry.id !== item.id);
+    saveTextVault();
+    renderTextVaults();
+    st('Ablage-Text gelöscht.','ok');
+    return;
+  }
+  moveVaultText(item, action);
+});
 btnOcrSave.addEventListener('click', saveOcrJob);
 btnOcrClear.addEventListener('click', ()=>{
   ocrInput.value = '';
@@ -3429,6 +3702,7 @@ renderLibrary();
 renderVoiceProfiles();
 renderTranslationSentences();
 renderOcrJobs();
+renderTextVaults();
 renderDocumentScope();
 renderDocumentSources();
 renderDocumentChunks();
