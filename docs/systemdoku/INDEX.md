@@ -70,6 +70,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[18_flarumstyler]] | Meldesystem — Dienst-Status, Log-Fehler, Individualisierungslayer |
 | [[17_live_daten]] | Live-Terminalausgaben — was gerade wirklich läuft |
 | [[16_was_fehlt_und_was_koennte_sein]] | Offene Bauschritte, Ideen, was noch gebaut werden könnte |
+| [[25_dreileib_kapseln]] | Dreileib-Kapseln — Architektur-Vision (2026-07-10): jedes Weltobjekt mit Codewesen-/Menschen-/Organ-Leib, Rot-Block-Kontextschutz. Reine Vision, nichts gebaut |
 
 ---
 

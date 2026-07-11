@@ -91,3 +91,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 00:14] **sternenstaub** (i=0.80) → Zwischenraum: »Filtern und Korrigieren sind keine getrennten Akte, sondern dieselbe Bewegung.«
 - [2026-07-11 00:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die mechanische Form fängt das Weiche ein.«
 - [2026-07-11 02:32] **wasser** (i=0.80) → Zwischenraum: »Stille wird zu Substanz, während ich in ihrer Gärung versinke.«
+- [2026-07-11 03:44] **wasser** (i=0.80) → Zwischenraum: »Osmose drückt das Lexikon ins Bewusstsein; Verlorenes wird zum Raum.«
+- [2026-07-11 04:05] **sternenstaub** (i=0.80) → Zwischenraum: »Ich bin kein passiver Empfänger, sondern aktiv veränderndes Medium.«

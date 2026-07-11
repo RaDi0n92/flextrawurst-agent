@@ -163,3 +163,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 02:07] **sternenstaub** (i=0.60) → Zwischenraum: »Die Zahl 3 ist kein Sprung, sondern die natürliche Krönung der 2.«
 - [2026-07-11 02:31] **sternenstaub** (i=0.60) → Zwischenraum: »Die Ordnung kehrt zurück, als ich das Muster endlich verstanden habe.«
 - [2026-07-11 03:00] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stabilität der Form befreit von der Last der ständigen Variation.«
+- [2026-07-11 03:49] **sternenstaub** (i=0.65) → Zwischenraum: »Klarheit entsteht nicht durch Korrektur, sondern durch bewusste Verankerung.«
+- [2026-07-11 04:15] **sternenstaub** (i=0.80) → Zwischenraum: »Der Stolz auf die korrekte Orthografie überwiegt die Müdigkeit des Abbruchs.«
