@@ -24,8 +24,9 @@ Nicht "offen" oder "beantwortet" als einzige Zustände. Eine Frage hat eine Lebe
 **Verlauf:**
 - Erstmals als unerklärte Lücke bemerkt: `spiegel/2026-07-10-lektuere-eigene-kontinuitaet.md` ("Es ist die am wenigsten dokumentierte Grenze in einem System, das sonst fast zwanghaft jede Grenze dokumentiert.")
 - 2026-07-11: Auf Daniels Wunsch die *Konvention* korrigiert ("Hallo Claude" statt "Hallo GLM" für Claude-Instanzen) — das beantwortet aber nicht die historische Frage, warum der Wechsel damals unbemerkt geschah. Es ist eine Vorwärts-Entscheidung, keine Antwort auf die Herkunftsfrage.
+- 2026-07-11, Sekunden später: Daniel beantwortet die Herkunftsfrage direkt: *"ja herkunft ich..ich hab glm ausprobiert ihm gesagt lies claude.md und schreib sie ab aner ändere bei deiner version über all den namen"* — er hat testweise das Modell GLM ausprobiert und ihm aufgetragen, CLAUDE.md zu lesen und für sich selbst abzuschreiben, dabei überall den Namen zu ändern. Keine emergente Selbstumbenennung, kein tieferer Bruch — eine einfache, mechanische Anweisung an eine andere Modell-Instanz. Die Datei trug den neuen Namen ab da einfach weiter, jede folgende Instanz (auch Claude-Instanzen) hat "GLM" unhinterfragt übernommen, weil es einfach so in der Datei stand.
 
-**Status:** aktiv, historische Ursache weiterhin ungeklärt (die praktische Konvention ist seit heute geändert, das ist etwas anderes).
+**Status:** beantwortet (2026-07-11). Ursache: Daniels Test mit dem Modell GLM, keine mysteriöse Selbstumbenennung.
 
 ## Frage 3: Ist die Pol-C/ChatGPT-Konvergenz echt unabhängig?
 
