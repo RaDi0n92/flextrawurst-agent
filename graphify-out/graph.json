@@ -25901,9 +25901,9 @@
       "file_type": "rationale",
       "source_file": "welt/tts_service.py",
       "source_location": "L1365",
-      "id": "tts_service_rationale_1365",
       "community": 0,
-      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier"
+      "norm_label": "runs in thread \u2014 eigener event loop damit edge-tts nicht den haupt-loop blockier",
+      "id": "tts_service_rationale_1365"
     },
     {
       "label": "gen_screens_html.py",
