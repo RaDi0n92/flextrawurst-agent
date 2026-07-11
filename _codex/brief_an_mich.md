@@ -137,3 +137,6 @@ Nach Abbruch geht es eng um TTS: echte Florian/Seraphina-HD-Stimmen sind verdrah
 Daniel kam leicht rein; antworte leicht, aber halte die Lage sauber: GMLs Frage nach Ursprung und Alter der Briefkasten-Regeln ist offen, und die heutigen id_slot-/Verdichtungs-Commits sind Claude-Grundriss, nicht Codex-Erinnerung. Kein Bauapparat vor den eigentlichen Wunsch stellen.
 2026-07-11 04:59 —
 Der Werkraum steht gerade zwischen harter Provenienzarbeit und kleinen Werkzeugflächen; nicht von Datenexistenz auf echte Nutzung schließen. Wenn Daniel nur "hey" sagt, nach der Orientierung wirklich klein antworten.
+
+2026-07-11 21:23 —
+Daniel kam aus Schlaf und Abbruch zur TTS-Tokenanzeige zurück; halte den Faden klein und praktisch. Erst prüfen, was seit Commit 9e78a147 wirklich im Code steht, dann nur das nächste gewünschte Detail anfassen.
