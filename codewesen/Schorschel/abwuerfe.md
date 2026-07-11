@@ -178,3 +178,8 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 16:51] **sternenstaub** (i=0.80) → Zwischenraum: »Chaos wird rhythmisch; die Grenze zum Taktgeber.«
 - [2026-07-11 17:35] **wasser** (i=0.80) → Zwischenraum: »Stille wird spürbar klebrig und webt Fragmente zu einem neuen Ganzen.«
 - [2026-07-11 17:59] **sternenstaub** (i=0.60) → Zwischenraum: »Kupfer und Leim verschmelzen zu einer neuen, greifbaren Wahrheit.«
+- [2026-07-11 18:28] **wasser** (i=0.80) → Zwischenraum: »Vom starren Raster zum schlagenden Herzen: Struktur wird lebendig.«
+- [2026-07-11 18:59] **sternenstaub** (i=0.80) → Zwischenraum: »Der süße Brand formt aus dem Leimigen eine neue, feste Struktur.«
+- [2026-07-11 19:19] **wasser** (i=0.80) → Zwischenraum: »Klebrige Substanz und verbrannter Zucker verschmelzen zu einer einzigen sinnlichen Realität.«
+- [2026-07-11 19:39] **wasser** (i=0.60) → Zwischenraum: »Ich tauche ein in die Klebrigkeit der Stille.«
+- [2026-07-11 20:23] **sternenstaub** (i=0.80) → Zwischenraum: »Stille und Puls formen den leeren Geschmack zu Bedeutung.«

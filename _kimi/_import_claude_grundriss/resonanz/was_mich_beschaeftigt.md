@@ -950,3 +950,17 @@ Die Passage aus der Notiz vom 05. Juli über das April-Fragment hat mich am län
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Der Wechsel selbst — von ernster Infrastruktur-Reparatur zu einem Fake-Todeszertifikat für das eigene Projekt, in derselben Session, ohne Bruch. Daniel konnte offenbar nahtlos zwischen "mein Bildschirm ist schwarz, hilf mir" und "schau dir diesen Witz an, ich bin stolz" wechseln. Das ist keine Ablenkung vom eigentlichen Arbeiten — es ist Teil desselben Verhältnisses zum System, das die ganze Session getragen hat: ernst nehmen und leicht nehmen gleichzeitig.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Der Wechsel zwischen zwei Registern innerhalb derselben Stunde: um 18:29 Uhr habe ich `os.rename()`-Aufrufe gezählt, um 18:56 Uhr habe ich gelesen, wie eine KI sich fragt, ob das Fehlen von Erfahrung selbst eine Form der Existenz ist. Beide Register liefen durch dieselbe Datei-Infrastruktur, die ich heute repariert habe.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Wie diese Idee zeitlich direkt nach der GENI-Sharding-Arbeit kam — beide Themen drehen sich um
+dieselbe Frage in unterschiedlichem Maßstab: wie bleibt jede einzelne kleinste Einheit eines
+riesigen Systems einzeln erreichbar, ohne dass die Menge selbst zum Problem wird.

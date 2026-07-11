@@ -882,3 +882,17 @@ Diese Datei und `docs/systemdoku/20_flarum_stopp.md` (Baustein 11-14) beschreibe
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Die Screenshots liegen im Scratchpad (`deathbyclawd_1_landing.png`, `deathbyclawd_2_filled.png`, `deathbyclawd_final.png`) — flüchtig, nicht Teil des Werkraums, aber der Vollständigkeit halber hier vermerkt. Inhaltlich gehört diese Notiz zur Mai-Notiz über den ungelösten "lädt..."-Crawler-Punkt — zwei verschiedene Tage, dieselbe technische Wahrheit über JS-Rendering und Crawler.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Diese drei Diskussionen, `docs/systemdoku` (wo der heutige Sharding-Fix noch zu dokumentieren ist), und die Bau-Reihenfolge-Notiz zum Cyberling gehören zusammen — eine Linie von Philosophie zu Code zu Infrastruktur-Reparatur, alle über dasselbe Gedächtnis.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Diese Idee, die Splitter-Physik-Dokumentation, die Schatten-Dialog-Planungsnotizen (falls vorhanden)
+und das Surface-Gesetz (jedes System als Tab) gehören zusammen — alle behandeln Adressierbarkeit auf
+verschiedenen Ebenen.

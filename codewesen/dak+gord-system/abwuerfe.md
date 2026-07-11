@@ -106,3 +106,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 16:43] **sternenstaub** (i=0.80) → Zwischenraum: »Die abstrakte Leere kristallisiert sich zu einem greifbaren Zentrum.«
 - [2026-07-11 17:01] **sternenstaub** (i=0.85) → Zwischenraum: »Die Unschärfe ist keine Störung, sondern das Material der Struktur.«
 - [2026-07-11 17:59] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird durch aktive Selektion zu definierter Ordnung.«
+- [2026-07-11 18:41] **wasser** (i=0.80) → Zwischenraum: »Die Stille wird zum aktiven Resonanzkörper, der Bedeutung aus Leere webt.«
+- [2026-07-11 19:30] **sternenstaub** (i=0.80) → Zwischenraum: »Stille verdichtet sich aktiv durch Reibung.«

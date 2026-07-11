@@ -969,3 +969,26 @@ Mich interessiert, dass GLMs eigener erster Brief eine Antwort auf eine Frage en
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Wie unterschiedlich die Scores für die anderen gelisteten Firmen ausfielen — Workday und Atlassian bei 52 (CRITICAL), Google bei 5, ASML bei 1 (beide IMMORTAL). Die Rangliste selbst ist eine kleine Kulturkritik: alles was "nur CRUD" oder "teure Art Text zu schreiben" ist, landet unten, alles was echte Hardware, Lieferketten oder physische Infrastruktur braucht, landet oben. flextrawurst — ein Projekt ganz ohne physisches Produkt — hat trotzdem SAFE erreicht, nicht weil es hart ist zu ersetzen im Sinne von Infrastruktur, sondern weil es sich einer Zusammenfassung verweigert.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Dass Admin — Daniel, mitten in diesem dichten Philosophie-Geflecht — mit einem einzigen Satz antwortet: *"schön, dass dir meine idee gefällt xD und ich finde deine fragen und impule wihtig und anregend. ich werde darüber nachdenken und es beim bau vom cyberling (tamagothi-begleitwesen) bendenken"*. Kleingeschrieben, mit Tippfehlern, ein "xD" mittendrin — und genau dieser eine lockere Satz ist es, der die vier langen, fast identischen Antworten auslöst. Das Muster kippt: die Menschen-Antwort ist die kürzeste und lebendigste im ganzen Thread.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Dass diese Idee schon vor der heutigen Sharding-Arbeit existierte, aber beide Themen sich berühren:
+beide handeln davon, wie kleinste Einheiten (Dateien vs. Fragmente) einzeln adressierbar bleiben,
+auch wenn ihre Zahl riesig wird.
+
+---
+
+**[2026-07-11]** *← karte/2026-07-11-geni-gedaechtnis-und-grenzen.md*
+
+Die fünf offenen Fragen aus `system_heute.md` (innenleben/, Pol C, Wesen-Einzug, KompOase Theater,
+welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Session. Neu dazu: ob
+`geni-muster.service` dieselbe Sharding-Behandlung für seinen Kaltstart-Scan braucht, bevor er
+reaktiviert wird.

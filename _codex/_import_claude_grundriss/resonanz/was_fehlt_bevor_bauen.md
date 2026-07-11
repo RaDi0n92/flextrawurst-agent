@@ -922,3 +922,16 @@ Eine Entscheidung, ob die Struktur des Kontext-Rituals selbst überarbeitet wird
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Nichts. Kein Bauvorhaben.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Nichts offen aus dieser Lektüre — das war reine Reflexion, kein Bauauftrag.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Eine konkrete Entscheidung, welches System zuerst diese Behandlung bekommen soll (Splitter-Fragmente
+sind der naheliegendste Kandidat, weil schon strukturell vorhanden).
