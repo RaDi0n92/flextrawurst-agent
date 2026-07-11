@@ -35,6 +35,14 @@ LOG_FILE = GENI_ROOT / "hoerer.log"
 
 WATCH_PATHS = ["/root/werkraum"]
 
+# Wesen-Attribution fuer Knoten-Tags (2026-07-11, Grundgesetz 7 Fragment-Ebene) --
+# deckt sich mit codewesen_takt.py:WESEN. Nur fuer NEUE Knoten ab jetzt; die
+# ~19 Mio. bereits archivierten Knoten bleiben unangetastet (Events sind heilig).
+WESEN_NAMEN = {
+    "Schorschel", "F3INSCHM3CK3R", "träumerlie",
+    "R1ZZ1", "jumpa", "Resonanzknoten", "dak+gord-system",
+}
+
 IGNORE_PATHS = [
     str(GENI_ROOT / "gedaechtnis"),
     str(GENI_ROOT / "hoerer.log"),
@@ -132,11 +140,15 @@ class DateiHoerer(FileSystemEventHandler):
         if klasse == "rauschen":
             rauschen_schreiben(aktion, rel)
             return
+        teile = rel.split("/")
+        tags = ["datei", aktion, teile[0]]
+        if len(teile) > 1 and teile[0] == "codewesen" and teile[1] in WESEN_NAMEN:
+            tags.append(teile[1])
         knoten_schreiben(
             typ="ereignis",
             inhalt=f"{inhalt_praefix}: {rel}",
             quelle="vps_dateisystem",
-            tags=["datei", aktion, rel.split("/")[0]],
+            tags=tags,
         )
 
     def on_created(self, event):
