@@ -71,6 +71,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[17_live_daten]] | Live-Terminalausgaben — was gerade wirklich läuft |
 | [[16_was_fehlt_und_was_koennte_sein]] | Offene Bauschritte, Ideen, was noch gebaut werden könnte |
 | [[25_dreileib_kapseln]] | Dreileib-Kapseln — Architektur-Vision (2026-07-10): jedes Weltobjekt mit Codewesen-/Menschen-/Organ-Leib, Rot-Block-Kontextschutz. Reine Vision, nichts gebaut |
+| [[26_dom_agenten_brainstorm]] | DOM-Agenten-Brainstorm (2026-07-10): X-Ray-Overlay, Geist-Modus, Substanz-Infekt u.a. — reine Inspiration, gegen echte DB-Zahlen geprüft, kein Bauauftrag |
 
 ---
 
