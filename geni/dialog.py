@@ -35,7 +35,7 @@ import hauhau_client
 from gedaechtnis_ops import (
     GENI_ROOT, KNOTEN_DIR, KANTEN_DIR,
     knoten_schreiben, kante_schreiben, tiefe_erhoehen, naechste_id,
-    knoten_max_id,
+    knoten_max_id, sharded_pfad,
 )
 import aktion
 import geni_lg
@@ -209,7 +209,7 @@ def letzte_knoten_laden(n: int = 6) -> str:
     zeilen = []
     i = max_id
     while i >= 1 and len(zeilen) < n:
-        f = KNOTEN_DIR / f"{i}.json"
+        f = sharded_pfad(KNOTEN_DIR, i)
         if f.exists():
             try:
                 k = json.loads(f.read_text())
@@ -226,7 +226,7 @@ def relevante_knoten_laden(eingabe: str, n: int = 5) -> str:
     treffer = []
     max_id = knoten_max_id()
     for i in range(max_id, max(1, max_id - 2000), -1):
-        f = KNOTEN_DIR / f"{i}.json"
+        f = sharded_pfad(KNOTEN_DIR, i)
         if not f.exists():
             continue
         try:
@@ -317,9 +317,9 @@ def gedaechtnis_absicht_laden(eingabe: str) -> str:
     max_id = knoten_max_id()
     suchfenster = 5000
     dateien = [
-        KNOTEN_DIR / f"{i}.json"
+        sharded_pfad(KNOTEN_DIR, i)
         for i in range(max_id, max(1, max_id - suchfenster), -1)
-        if (KNOTEN_DIR / f"{i}.json").exists()
+        if (sharded_pfad(KNOTEN_DIR, i)).exists()
     ]
 
     knoten = []
@@ -473,7 +473,7 @@ def resonanz_suchen(eingabe: str) -> list:
     treffer = []
     max_id = knoten_max_id()
     for i in range(max_id, max(1, max_id - 2000), -1):
-        f = KNOTEN_DIR / f"{i}.json"
+        f = sharded_pfad(KNOTEN_DIR, i)
         if not f.exists():
             continue
         try:
@@ -980,7 +980,7 @@ def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "", zei
     for i in range(max_id, scan_limit, -1):
         if len(knoten) >= n:
             break
-        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
+        pfad = sharded_pfad(KNOTEN_DIR, i)
         try:
             k = json.loads(pfad.read_text())
         except Exception:
@@ -1016,7 +1016,7 @@ def muster_endpoint(n: int = 10):
     for i in range(max_id, scan_limit, -1):
         if len(kandidaten) >= n:
             break
-        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
+        pfad = sharded_pfad(KNOTEN_DIR, i)
         try:
             k = json.loads(pfad.read_text())
             if k.get("typ") == "muster":
@@ -1073,7 +1073,7 @@ def splitter_endpoint(n: int = 60):
         return re.sub(r"<[^>]+>", " ", text).strip()
 
     def lade_knoten_id(i):
-        pfad = KNOTEN_DIR / f"{str(i).zfill(4)}.json"
+        pfad = sharded_pfad(KNOTEN_DIR, i)
         try:
             return json.loads(pfad.read_text())
         except Exception:

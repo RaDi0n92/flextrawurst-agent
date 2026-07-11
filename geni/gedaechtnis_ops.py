@@ -7,6 +7,22 @@ from pathlib import Path
 GENI_ROOT = Path("/root/werkraum/geni")
 KNOTEN_DIR = GENI_ROOT / "gedaechtnis" / "knoten"
 KANTEN_DIR = GENI_ROOT / "gedaechtnis" / "kanten"
+RAUSCHEN_DIR = GENI_ROOT / "gedaechtnis" / "rauschen"
+
+# Sharding (2026-07-11): KNOTEN_DIR hatte 18,96 Mio. Dateien flach in einem
+# Verzeichnis -- ueber ext4s htree-Kapazitaetsgrenze (ohne large_dir-Feature)
+# hinaus, Ursache fuer den 5h-Haenger vom 2026-07-07 und zwei ENOSPC-Abstuerze
+# am 2026-07-11. Aufteilung nach den letzten 3 Ziffern der ID (id % 1000) in
+# 1000 gleichmaessig befuellte Unterordner -- gilt fuer KNOTEN_DIR und
+# RAUSCHEN_DIR (KANTEN_DIR hat nur ~1300 Dateien, unkritisch, bleibt flach).
+_SHARDED_VERZEICHNISSE = (KNOTEN_DIR, RAUSCHEN_DIR)
+
+
+def sharded_pfad(verzeichnis: Path, kid) -> Path:
+    if verzeichnis in _SHARDED_VERZEICHNISSE:
+        shard = f"{int(kid) % 1000:03d}"
+        return verzeichnis / shard / f"{kid}.json"
+    return verzeichnis / f"{kid}.json"
 
 _id_lock = threading.Lock()
 _tiefe_lock = threading.Lock()
@@ -30,12 +46,16 @@ def _counter_schreiben(daten: dict) -> None:
 
 def _lade_max_id(verzeichnis: Path) -> int:
     zahlen = []
-    for f in verzeichnis.iterdir():
-        if f.suffix == ".json" and f.stem != "schema":
-            try:
-                zahlen.append(int(f.stem))
-            except ValueError:
-                pass
+    orte = verzeichnis.glob("*/") if verzeichnis in _SHARDED_VERZEICHNISSE else [verzeichnis]
+    for ort in orte:
+        if not ort.is_dir():
+            continue
+        for f in ort.iterdir():
+            if f.suffix == ".json" and f.stem != "schema":
+                try:
+                    zahlen.append(int(f.stem))
+                except ValueError:
+                    pass
     return max(zahlen) if zahlen else 0
 
 
@@ -103,7 +123,9 @@ def knoten_schreiben(typ: str, inhalt: str, quelle: str, tags: list = None, zugr
             "verblasst": False,
             "tags": tags or [],
         }
-        (KNOTEN_DIR / f"{kid}.json").write_text(json.dumps(k, ensure_ascii=False, indent=2), encoding="utf-8")
+        pfad = sharded_pfad(KNOTEN_DIR, kid)
+        pfad.parent.mkdir(parents=True, exist_ok=True)
+        pfad.write_text(json.dumps(k, ensure_ascii=False, indent=2), encoding="utf-8")
         return kid
 
 
@@ -123,7 +145,7 @@ def kante_schreiben(von: str, nach: str, typ: str, staerke: float = 1.0):
 
 
 def tiefe_erhoehen(knoten_id: str):
-    pfad = KNOTEN_DIR / f"{knoten_id}.json"
+    pfad = sharded_pfad(KNOTEN_DIR, knoten_id)
     if not pfad.exists():
         return
     with _tiefe_lock:

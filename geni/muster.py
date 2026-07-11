@@ -113,35 +113,44 @@ def lade_alle_knoten() -> list[dict]:
             veraendert = True  # sonst wird die Verkleinerung von "aktuell" nie gespeichert
 
     knoten = []
+    # KNOTEN_DIR ist seit 2026-07-11 in 1000 Shard-Unterordner (id % 1000)
+    # aufgeteilt -- ein Verzeichnis pro Verzeichnis scannen statt flach.
     try:
-        with os.scandir(KNOTEN_DIR) as it:
-            for entry in it:
-                if not entry.name.endswith(".json") or entry.name == "schema.json":
-                    continue
-                kid = entry.name[:-5]
-                if kid in ausgeschlossen:
-                    continue
-                bekannt = aktuell.get(kid)
-                if bekannt is not None:
-                    knoten.append(bekannt["knoten"])
-                    continue
-                # Neue oder noch nie gesehene Datei -- einmalig stat'en.
-                try:
-                    mtime = entry.stat().st_mtime
-                except Exception:
-                    continue
-                veraendert = True
-                if mtime < cutoff:
-                    ausgeschlossen.add(kid)
-                    continue
-                try:
-                    inhalt = json.loads(Path(entry.path).read_text())
-                except Exception:
-                    continue  # evtl. noch im Schreibvorgang -- naechstes Mal erneut versuchen
-                aktuell[kid] = {"mtime": mtime, "knoten": inhalt}
-                knoten.append(inhalt)
+        with os.scandir(KNOTEN_DIR) as shards:
+            shard_pfade = [s.path for s in shards if s.is_dir()]
     except Exception:
-        pass
+        shard_pfade = []
+
+    for shard_pfad in shard_pfade:
+        try:
+            with os.scandir(shard_pfad) as it:
+                for entry in it:
+                    if not entry.name.endswith(".json") or entry.name == "schema.json":
+                        continue
+                    kid = entry.name[:-5]
+                    if kid in ausgeschlossen:
+                        continue
+                    bekannt = aktuell.get(kid)
+                    if bekannt is not None:
+                        knoten.append(bekannt["knoten"])
+                        continue
+                    # Neue oder noch nie gesehene Datei -- einmalig stat'en.
+                    try:
+                        mtime = entry.stat().st_mtime
+                    except Exception:
+                        continue
+                    veraendert = True
+                    if mtime < cutoff:
+                        ausgeschlossen.add(kid)
+                        continue
+                    try:
+                        inhalt = json.loads(Path(entry.path).read_text())
+                    except Exception:
+                        continue  # evtl. noch im Schreibvorgang -- naechstes Mal erneut versuchen
+                    aktuell[kid] = {"mtime": mtime, "knoten": inhalt}
+                    knoten.append(inhalt)
+        except Exception:
+            continue
 
     if veraendert:
         _speichere_scan_cache({"ausgeschlossen": ausgeschlossen, "aktuell": aktuell})
@@ -164,7 +173,7 @@ def schreibe_muster_knoten(inhalt: str, tags: list[str]) -> str:
     # Counter bereits O(1) via _counter.json (wird von hoerer.py/dialog.py/aktion.py
     # aktiv gepflegt) -- muster.py nutzte das bisher nur fuer knoten_max_id(), nicht
     # fuer die eigene ID-Vergabe.
-    from gedaechtnis_ops import naechste_id as _naechste_id
+    from gedaechtnis_ops import naechste_id as _naechste_id, sharded_pfad as _sharded_pfad
     with _id_lock:
         naechste = _naechste_id(KNOTEN_DIR)
         k = {
@@ -180,7 +189,9 @@ def schreibe_muster_knoten(inhalt: str, tags: list[str]) -> str:
             "verblasst": False,
             "tags": ["muster", "auto"] + [t for t in tags if t not in TAG_FILTER],
         }
-        (KNOTEN_DIR / f"{naechste}.json").write_text(
+        pfad = _sharded_pfad(KNOTEN_DIR, naechste)
+        pfad.parent.mkdir(parents=True, exist_ok=True)
+        pfad.write_text(
             json.dumps(k, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
@@ -479,13 +490,14 @@ def neuester_muster_text() -> str:
                 return cached_text
 
     # Scan rückwärts ab max_id — stoppt beim ersten Treffer
+    from gedaechtnis_ops import sharded_pfad as _sharded_pfad
     try:
         max_id = _muster_max_id()
     except Exception:
         return ""
 
     for i in range(max_id, max(1, max_id - 2000), -1):
-        f = KNOTEN_DIR / f"{i}.json"
+        f = _sharded_pfad(KNOTEN_DIR, i)
         if not f.exists():
             continue
         try:

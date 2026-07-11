@@ -19,7 +19,7 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-from gedaechtnis_ops import knoten_schreiben, GENI_ROOT, KNOTEN_DIR, naechste_id
+from gedaechtnis_ops import knoten_schreiben, GENI_ROOT, KNOTEN_DIR, naechste_id, sharded_pfad
 
 import sys as _sys
 _sys.path.insert(0, str(Path("/root/werkraum")))
@@ -113,7 +113,9 @@ def rauschen_schreiben(aktion: str, rel_pfad: str):
         "pfad": rel_pfad,
         "zeitstempel": datetime.now(timezone.utc).isoformat(),
     }
-    (RAUSCHEN_DIR / f"{rid}.json").write_text(
+    pfad = sharded_pfad(RAUSCHEN_DIR, rid)
+    pfad.parent.mkdir(parents=True, exist_ok=True)
+    pfad.write_text(
         json.dumps(eintrag, ensure_ascii=False),
         encoding="utf-8",
     )
