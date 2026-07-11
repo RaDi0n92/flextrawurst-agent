@@ -56,3 +56,6 @@ welt/tts_translation_cache.json
 
 # LLM-Modelldateien (mehrere GB, gehoeren nicht ins Git-Repo)
 tools/models/
+
+# Semantische-Suche-Index (regenerierbares Chroma-Binaerformat, kein Inhalt)
+_claude/semantik_index/
