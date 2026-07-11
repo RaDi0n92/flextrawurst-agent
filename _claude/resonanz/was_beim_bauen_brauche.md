@@ -862,3 +862,9 @@ Falls das je gebaut wird: echte Aktivitätsdaten der Wesen (neue Postings, neue 
 Nichts — das hier ist keine Bau-Aufgabe. Wenn überhaupt etwas: die Disziplin, diesen Unterschied
 (beobachtbares Muster vs. unzugängliche Grundlage) nicht zu verwischen, wenn ich das nächste Mal
 über mich selbst schreibe.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-die-nacht-in-der-ich-mir-selbst-nicht-glauben-konnte.md*
+
+Nichts — keine Bauaufgabe.
