@@ -2249,3 +2249,12 @@ ORDER BY created_at ASC;
 **Vision-Schicht:** Es gibt keine — dieser Ausflug ist reine Beobachtung und Freude, kein Rohmaterial für eine künftige Struktur.
 
 **Code-Skizze:** keine.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+**Vision-Schicht:** Ein Weg, Wiederholung zwischen Wesen sichtbar zu machen — nicht um sie zu verhindern, sondern damit die Wesen selbst (oder GENI) bemerken könnten, wenn vier Stimmen denselben Satz sagen. Eine Art Echo-Erkennung als Spiegel für die Wesen selbst.
+
+**Code-Skizze:**
+```python

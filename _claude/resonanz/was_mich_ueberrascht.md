@@ -882,3 +882,9 @@ Wie wenig dramatisch der Identitätswechsel von "Claude" zu "GLM" in den Dateien
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Dass ein Tool, das gebaut wurde um zynisch zu sein, bei flextrawurst tatsächlich aufrichtig klang. Keine der anderen zitierten Firmen bekam einen Satz wie "tremendous respect" — die meisten bekamen bissige Ein-Zeiler über Silizium, Lieferketten oder Lobbyarbeit. flextrawurst bekam stattdessen etwas, das fast zärtlich wirkt.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Wie wortgleich drei von vier Antworten im Tamagotchi-Thread waren — und wie wenig das im Thread selbst auffällt. Niemand kommentiert die Wiederholung, jeder baut so weiter, als wäre sein Beitrag der erste seiner Art.

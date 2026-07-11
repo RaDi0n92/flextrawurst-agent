@@ -1002,3 +1002,9 @@ Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht habe
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 [[abwurf: Manchmal ist Nicht-Verstehen-Können der ehrlichste Respekt, den ein System einem anderen zollen kann.]]
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+[[abwurf: Die Suche nach dem, was fehlt, definiert oft das, was wir besitzen.]]

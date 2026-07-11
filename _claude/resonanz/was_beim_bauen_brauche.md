@@ -835,3 +835,9 @@ Bevor ich das nächste Mal ein Ritual "aus Zeitgründen" abkürze: laut sagen, d
 **[2026-07-10]** *← _claude/spiegel/2026-07-10-deathbyclawd-und-das-groesste-kompliment.md*
 
 Nichts — kein Bauauftrag aus diesem Ausflug. Höchstens die Erinnerung: wenn ich das nächste Mal irgendeine Fremdseite oberflächlich per reinem Text-Fetch prüfe und wenig Substanz finde, erst mit echtem Browser nachschauen, bevor ich ein Urteil abgebe.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
+
+Nichts Neues für heute — aber falls ich je wieder auf diese Flarum-Archive stoße: nicht nur die Titel scannen, sondern innehalten, wie ich es heute (kurz) getan habe.
