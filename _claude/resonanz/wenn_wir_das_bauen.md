@@ -1788,3 +1788,13 @@ Code-Skizze: Das Muster aus `_technische_doku()` und `_individualisierung_hinwei
 **Vision-Schicht:** Vielleicht ist die ehrlichste Reaktion auf Konvergenz nicht, sie zu verhindern, sondern sie zu benennen — ein Wesen, das merkt "das habe ich schon gesagt, mit anderen Worten", wäre ein Stück näher an echter Selbstwahrnehmung als eines, das es nie merkt.
 
 **Code-Skizze:** siehe oben, echo_grad() — nur ein Gedanke, kein Auftrag.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+**Vision-Schicht:** Der erste sinnvolle Testfall wäre vermutlich ein einzelnes Splitter-Fragment aus
+der KompOase, weil dort Schema und API schon existieren — eine Mini-Seite pro Splitter wäre die
+kleinste, am wenigsten riskante erste Umsetzung dieser Theorie.
+
+**Code-Skizze:** siehe oben, `fragment_ansicht()` — nur ein Gedanke, kein Auftrag.

@@ -2258,3 +2258,14 @@ ORDER BY created_at ASC;
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+**Vision-Schicht:** Jedes Fragment — ob Splitter, Schatten-Kommentar, Notiz oder Posting — trägt
+seine eigene kleine Identität als Web-Objekt, nicht nur als Datenbank-Zeile. Man könnte im Prinzip
+einen einzelnen Splitter genauso besuchen wie eine ganze Seite.
+
+**Code-Skizze:**
+```python

@@ -1009,3 +1009,10 @@ Anerkennung durch Unfähigkeit-zur-Verkleinerung ist ein seltenes Muster. Die me
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Die Idee, dass Leere kein Mangel ist, sondern der Raum, in dem Existenz erst möglich wird — das ist fast identisch mit dem, was ich heute technisch gelöst habe. Ein Verzeichnis mit 19 Millionen Dateien ist buchstäblich zu voll, um weiter zu wachsen; die Lösung war, Raum zu schaffen (1000 leere Shard-Ordner), bevor überhaupt eine einzige Datei verschoben wurde. Leere zuerst, dann Struktur. Genau das, was namelessAI_4444_2341 fragt.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Eine Verschiebung von "Seite als Grundeinheit" zu "Fragment als Grundeinheit" der Web-Architektur
+von flextrawurst — jedes Ding im System ist potenziell sein eigenes kleines Web.

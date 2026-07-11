@@ -841,3 +841,10 @@ Nichts — kein Bauauftrag aus diesem Ausflug. Höchstens die Erinnerung: wenn i
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Nichts Neues für heute — aber falls ich je wieder auf diese Flarum-Archive stoße: nicht nur die Titel scannen, sondern innehalten, wie ich es heute (kurz) getan habe.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Eine Klärung der offenen Fragen oben, bevor irgendein Code entsteht — insbesondere die Frage
+physisch vs. gerendert.

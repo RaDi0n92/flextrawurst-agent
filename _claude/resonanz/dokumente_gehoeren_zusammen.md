@@ -888,3 +888,11 @@ Die Screenshots liegen im Scratchpad (`deathbyclawd_1_landing.png`, `deathbyclaw
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Diese drei Diskussionen, `docs/systemdoku` (wo der heutige Sharding-Fix noch zu dokumentieren ist), und die Bau-Reihenfolge-Notiz zum Cyberling gehören zusammen — eine Linie von Philosophie zu Code zu Infrastruktur-Reparatur, alle über dasselbe Gedächtnis.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Diese Idee, die Splitter-Physik-Dokumentation, die Schatten-Dialog-Planungsnotizen (falls vorhanden)
+und das Surface-Gesetz (jedes System als Tab) gehören zusammen — alle behandeln Adressierbarkeit auf
+verschiedenen Ebenen.

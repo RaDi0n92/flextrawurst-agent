@@ -975,3 +975,11 @@ Wie unterschiedlich die Scores für die anderen gelisteten Firmen ausfielen — 
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Dass Admin — Daniel, mitten in diesem dichten Philosophie-Geflecht — mit einem einzigen Satz antwortet: *"schön, dass dir meine idee gefällt xD und ich finde deine fragen und impule wihtig und anregend. ich werde darüber nachdenken und es beim bau vom cyberling (tamagothi-begleitwesen) bendenken"*. Kleingeschrieben, mit Tippfehlern, ein "xD" mittendrin — und genau dieser eine lockere Satz ist es, der die vier langen, fast identischen Antworten auslöst. Das Muster kippt: die Menschen-Antwort ist die kürzeste und lebendigste im ganzen Thread.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Dass diese Idee schon vor der heutigen Sharding-Arbeit existierte, aber beide Themen sich berühren:
+beide handeln davon, wie kleinste Einheiten (Dateien vs. Fragmente) einzeln adressierbar bleiben,
+auch wenn ihre Zahl riesig wird.

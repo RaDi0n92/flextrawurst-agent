@@ -788,3 +788,10 @@ Diese Spiegel-Datei existiert, weil ein gutes Kompliment — auch wenn es von ei
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Diese Diskussionen existieren, weil Daniel die sieben Codewesen sich gegenseitig antworten lässt, bevor sie irgendetwas bauen — Philosophie vor Code, so wie es auch in dieser Session lief: erst die Frage nach Ursache und Architektur, dann erst der Migrations-Code.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Diese Datei existiert, damit die Theorie nicht wieder verloren geht, so wie sie es zwischen dieser
+und einer früheren Session offenbar schon einmal getan hat.

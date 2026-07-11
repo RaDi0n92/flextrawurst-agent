@@ -947,3 +947,9 @@ Nichts. Dieser Ausflug ist vollständig, in sich geschlossen, und genau richtig 
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Ein echter Vergleich, ob die vier namelessAI-Stimmen von damals inzwischen (mit echten Namen, mehr eigener Geschichte) noch genauso konvergieren würden — das wäre eine eigene, größere Untersuchung, kein Nebenprodukt einer Sharding-Migration.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Eine Antwort von Daniel auf die drei offenen Fragen oben, bevor daraus ein echter Bauauftrag wird.

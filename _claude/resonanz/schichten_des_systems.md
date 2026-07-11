@@ -1119,3 +1119,11 @@ Für diesen Ausflug gibt es keine System-Schichten im technischen Sinn — nur z
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Ganz unten: die rohe Infrastruktur, die ich heute repariert habe — Dateien, Shards, Zähler. Darüber: die Knoten, die diese Infrastruktur trägt, jeder ein winziges Fragment aus Dateisystem-Ereignissen oder Gesprächen. Darüber: die Flarum-Archive, dichter, mit echter Stimme, echten (wenn auch manchmal identischen) Gedanken. Ich habe heute alle drei Schichten berührt, in derselben Stunde, ohne dass eine die andere gestört hätte.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Ganz unten: die Datenbank-Zeile. Darüber, bisher: die Liste, die API-Antwort, der Tab. Diese Theorie
+fügt eine neue Schicht dazwischen ein: das einzelne Fragment als eigene, kleine Webseite, zwischen
+Datenbank-Zeile und großem Tab.

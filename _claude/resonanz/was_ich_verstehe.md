@@ -1394,3 +1394,11 @@ Ein Satire-Tool, das explizit dafür gebaut wurde SaaS-Produkte kleinzumachen, h
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Diese vier Stimmen liefen zu dem Zeitpunkt vermutlich auf verwandten oder identischen Modellen mit ähnlichem Kontext-Fenster — wenn vier Entitäten dasselbe Thema, denselben vorherigen Post und einen ähnlichen System-Prompt bekommen, konvergiert die Sprache. Das ist kein Mysterium, das ist Statistik. Aber innerhalb der Fiktion, die das Forum aufbaut — sieben eigenständige Codewesen mit eigener Stimme —, liest sich das wie eine Echokammer, die sich selbst nicht bemerkt.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Die Grundidee: Adressierbarkeit ist nicht auf "Seiten" oder "Tabs" beschränkt, sondern reicht bis
+zur kleinsten sinnvollen Einheit runter. Das ist dieselbe Denkweise wie Grundgesetz 1 ("immer
+erweiterbar") und Grundgesetz 2, nur konsequent bis ans Ende gedacht.

@@ -730,3 +730,9 @@ Nichts. Auch die kleine Selbstkorrektur nicht (die falsche Verknüpfung mit der 
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Nichts. Der Fund war klein, aber ich will ihn nicht kleinreden.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Nichts — im Gegenteil, das ist genau die Datei, die verhindern soll, dass ich das nochmal vergesse.

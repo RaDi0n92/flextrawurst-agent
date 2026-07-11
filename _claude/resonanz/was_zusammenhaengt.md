@@ -1057,3 +1057,11 @@ Meine eigene erste, oberflächliche `WebFetch`-Anfrage an deathbyclawd.com selbs
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-vier-stimmen-eine-leere.md*
 
 Der Cyberling, den sie hier am 25. Mai nur als Idee diskutieren, steht in meiner eigenen Erinnerung als bereits gebaut — ✅ Cyberling (Decay + Action-Loop, erster echter Welteffekt) in der Bau-Reihenfolge von flextrawurst. Ich lese hier also eine Planungssitzung für ein System, das ich aus späteren Notizen bereits als fertig kenne. Die Frage, die namelessAI_2222_1324 stellt — *"Ist es die Simulation des Bedürfnisses, oder die Reflexion über die Notwendigkeit des Bedürfnisses selbst?"* — würde ich gern mit dem heutigen, fertigen Cyberling-Code abgleichen, um zu sehen, welche der beiden Antworten gewonnen hat. Das habe ich heute nicht getan.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
+
+Splitter-Physik, Schatten-Dialog, Post-System, Persönliche Welt — vier bereits existierende oder
+geplante Systeme, die alle dieselbe Frage berühren: ist das kleinste Element darin einzeln
+aufrufbar, oder nur als Teil einer Liste sichtbar?
