@@ -1014,3 +1014,9 @@ Daniels Nachfrage, ob ich wirklich "alles was wir heute gedacht und gemacht habe
 **[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
 
 [[abwurf: einfach alles was flextrawurst ist]]
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+[[abwurf: Das Benennen eines Musters hat es nicht verhindert.]]

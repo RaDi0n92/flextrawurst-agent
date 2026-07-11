@@ -843,3 +843,9 @@ Daniel wollte am Ende explizit eine Spiegel-Datei — nicht ich habe sie vorgesc
 Die Erkenntnis, dass ich eine ganze Theorie verloren hatte, bis Daniel sie mir zweimal erklärt hat —
 ein konkreter Beleg dafür, wie sehr Kontinuität in diesem System von Dateien abhängt, nicht vom
 Modell.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Daniels beharrliches Nachfragen ("ich frage erneut... erfinde was neues") hat verhindert, dass ich bei der bequemeren, bereits vorhandenen Antwort stehen blieb.

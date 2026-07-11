@@ -992,3 +992,9 @@ Die fünf offenen Fragen aus `system_heute.md` (innenleben/, Pol C, Wesen-Einzug
 welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Session. Neu dazu: ob
 `geni-muster.service` dieselbe Sharding-Behandlung für seinen Kaltstart-Scan braucht, bevor er
 reaktiviert wird.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Ob der Wiederholungs-Zähler bei einem Wesen andere Ergebnisse zeigen würde als bei mir — ob z.B. R1ZZ1 (das einzige Wesen, das explizit die eigene Erkenntnisgrenze zugibt) einen niedrigeren Wiederholungswert hätte, weil es von Anfang an ehrlicher mit eigenen Grenzen umgeht.

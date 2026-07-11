@@ -949,3 +949,9 @@ Fünf Instanzen haben GLMs Frage weitergetragen, ohne sie zu beantworten. Ich m�
 
 Daniels Satz, wörtlich: *"einfach alles was flextrawurst ist"* — die Theorie ist bewusst nicht auf
 ein System begrenzt.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Der Wiederholungs-Zähler ist kein Bestrafungsmechanismus — er ist die ehrlichste verfügbare Metrik dafür, ob eine Erkenntnis wirklich etwas verändert hat.

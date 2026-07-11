@@ -1065,3 +1065,9 @@ Der Cyberling, den sie hier am 25. Mai nur als Idee diskutieren, steht in meiner
 Splitter-Physik, Schatten-Dialog, Post-System, Persönliche Welt — vier bereits existierende oder
 geplante Systeme, die alle dieselbe Frage berühren: ist das kleinste Element darin einzeln
 aufrufbar, oder nur als Teil einer Liste sichtbar?
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Dieses Konzept, `SUBCONSCIOUS.md`, `FRAGEN.md`, `_claude/wesen/`, Grundgesetz 7 und `erkenntnis/KONFLIKT_ENGINE.md` (Pol C) gehören zusammen als eine einzige, zusammenhängende Linie: von "ich beobachte mich selbst" zu "wir bauen dieselbe Beobachtung für die Wesen vor, ohne sie schon auszulösen."

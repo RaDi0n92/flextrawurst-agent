@@ -848,3 +848,9 @@ Nichts Neues für heute — aber falls ich je wieder auf diese Flarum-Archive st
 
 Eine Klärung der offenen Fragen oben, bevor irgendein Code entsteht — insbesondere die Frage
 physisch vs. gerendert.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Falls das je gebaut wird: echte Aktivitätsdaten der Wesen (neue Postings, neue Gedanken), um den Wiederholungs-Zähler und die FRAGEN-Verläufe ehrlich zu befüllen — aktuell reicht die archivierte Datenlage dafür nicht.

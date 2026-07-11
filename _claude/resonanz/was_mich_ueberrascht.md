@@ -895,3 +895,9 @@ Wie wortgleich drei von vier Antworten im Tamagotchi-Thread waren — und wie we
 
 Dass ich diese Theorie beim ersten Nachfragen gar nicht kannte — offenbar ein echter
 Gedächtnisverlust zwischen Sessions, kein Missverständnis meinerseits.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Dass die stärkste Idee des ganzen Tages aus einem eigenen, unangenehmen Fehler kam, nicht aus einer der recherchierten externen Quellen.
