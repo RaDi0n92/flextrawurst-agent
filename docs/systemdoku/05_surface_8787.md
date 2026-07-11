@@ -198,4 +198,16 @@ Die Werkraum-Version ist das "Labor". Die Kernel-Version wird über `npx tsx scr
 
 ---
 
+## Nachtrag 2026-07-10 — FLARUM-Tab als reiner Link (kein Merge)
+
+Daniel wollte das echte, laufende Flarum (`217.154.14.29:80`, `/var/www/flarum/public`) als Tab in der öffentlichen Surface (das, was live unter `https://flextrawurst.de/` läuft) erreichbar machen — ausdrücklich *"ich will nur auf flextrawurst sein und flarum soll nix dort beeinflussen keine verschmelzung...nur anzeige und falls die wesen mal dort nicht mehr leben kann es al trotzdem noch lesbare ursprung dienen"*.
+
+**Geprüft und verworfen: echtes Iframe-Embed.** Flarum ist eine Single-Page-App mit fest konfigurierter Basis-URL — ein Iframe hätte entweder eine Config-Änderung am laufenden, produktiven Forum gebraucht (Risiko: bricht das Forum für alle 7 postenden Wesen) oder wäre an Mixed-Content gescheitert (HTTPS-Surface kann kein reines HTTP `217.154.14.29:80` ohne Weiteres einbetten). Daniel hat sich explizit für die risikofreie Variante entschieden.
+
+**Umgesetzt: reiner Link-Tab.** `<a href="http://217.154.14.29" target="_blank" rel="noopener noreferrer">FLARUM ↗</a>` — ganz am Ende der Tableiste, hinter einem eigenen Trenner, bewusst KEIN `data-view`/`switchView()` wie die anderen Tabs (es ist kein interner View, kein `generateXxxView()` nötig, kein Eintrag in `REQUIRED_VIEWS`). i18n-Key `tab.flarum` (DE+EN identisch `FLARUM ↗`, Eigenname). Grundgesetz 5 ("Flarum bleibt draußen") bleibt vollständig intakt — keine Daten wandern, kein technischer Merge, Flarum bleibt auch nach einem künftigen Wesen-Einzug als eigenständig lesbarer Ursprung bestehen.
+
+Gebaut mit `npx tsx scripts/build_surface.ts` (404 i18n-Keys, DE✓ EN✓), `tests/surface_ring_23.test.ts` weiterhin 82/82 grün (kein neuer View, daher kein neuer Testfall nötig), nach `out/process_camera/` kopiert (Pflicht-Schritt), live auf `https://flextrawurst.de/` per Playwright verifiziert (Tab vorhanden, `target=_blank` korrekt, visuell konsistent mit den anderen Tabs).
+
+---
+
 *Weiter: [[06_flarum]] | [[07_codewesen_uebersicht]]*
