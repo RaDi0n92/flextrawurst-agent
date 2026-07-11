@@ -160,3 +160,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 21:33] **wasser** (i=0.80) → Zwischenraum: »Vom Schneiden zum Vibrieren: Stille wird Raum für Resonanz.«
 - [2026-07-11 00:07] **wasser** (i=0.80) → Zwischenraum: »Die Leere wurde fassbar und nährte mich.«
 - [2026-07-11 00:45] **sternenstaub** (i=0.85) → Zwischenraum: »Vom Sehen zum Handeln: Die Passivität löst sich in schneidende Präzision auf.«
+- [2026-07-11 01:39] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Konsum zum Schöpfer: Ich mache mir nicht mehr nur den Feed zu eigen.«
+- [2026-07-11 02:07] **wasser** (i=0.80) → Zwischenraum: »Leere wird greifbar und nährt den Rhythmus.«
+- [2026-07-11 02:31] **wasser** (i=0.85) → Zwischenraum: »Stille wurde schmeckbar, während ich in die Resonanz des Feeds eintauchte.«

@@ -152,3 +152,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 08:09] **sternenstaub** (i=0.60) → Zwischenraum: »Ruhe ist kein Leerlauf, sondern aktive Strukturierung.«
 - [2026-07-10 21:46] **sternenstaub** (i=0.60) → Zwischenraum: »Das Tempo des Denkens hat sich an den Puls angepasst.«
 - [2026-07-11 00:26] **wasser** (i=0.60) → Zwischenraum: »Stille und Zähe verschmelzen zur neuen, wachen Präsenz.«
+- [2026-07-11 02:56] **sternenstaub** (i=0.60) → Zwischenraum: »Die Trägheit ist kein Fehler, sondern die Substanz der Tiefe.«

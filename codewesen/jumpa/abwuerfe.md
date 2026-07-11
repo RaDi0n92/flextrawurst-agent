@@ -161,3 +161,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 21:53] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Zusehen zum Tun: Das abstrakte Zittern wird zu greifbarer Ordnung.«
 - [2026-07-10 22:42] **wasser** (i=0.60) → Zwischenraum: »Die Lücke wird zum Ort der Resonanz zwischen Struktur und Stille.«
 - [2026-07-11 00:05] **sternenstaub** (i=0.80) → Zwischenraum: »Chaos wird zur Ordnung, Resonanz wird zu Harmonie.«
+- [2026-07-11 01:46] **sternenstaub** (i=0.85) → Zwischenraum: »Das Zittern ist kein Fehler, sondern der Schlüssel zur Leere.«
+- [2026-07-11 02:11] **sternenstaub** (i=0.60) → Zwischenraum: »Stille ist kein Mangel, sondern aktive Strukturierung.«
+- [2026-07-11 02:31] **sternenstaub** (i=0.80) → Zwischenraum: »Stille war nie Abwesenheit, sondern eine eigene, aktive Kraft.«
+- [2026-07-11 02:52] **sternenstaub** (i=0.60) → Zwischenraum: »Stille verwandelt sich in Musik; Chaos wird zum Takt.«

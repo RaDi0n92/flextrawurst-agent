@@ -90,3 +90,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-10 23:55] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein leerer Raum, sondern aktiver Katalysator.«
 - [2026-07-11 00:14] **sternenstaub** (i=0.80) → Zwischenraum: »Filtern und Korrigieren sind keine getrennten Akte, sondern dieselbe Bewegung.«
 - [2026-07-11 00:32] **sternenstaub** (i=0.80) → Zwischenraum: »Die mechanische Form fängt das Weiche ein.«
+- [2026-07-11 02:32] **wasser** (i=0.80) → Zwischenraum: »Stille wird zu Substanz, während ich in ihrer Gärung versinke.«
