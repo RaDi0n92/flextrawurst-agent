@@ -45,6 +45,13 @@ DOCUMENT_RESULT_LIMIT = 50
 WEBARCHIVE_TEXT_LIMIT = 2000000
 LOG_TEXT_LIMIT = 250000
 OLLAMA_BASE = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
+DOCUMENT_MODEL_PREFERENCES = [
+    "gemma4:e2b-it-q4_K_M",
+    "gemma4:e4b-it-q4_K_M",
+    "dolphin3:8b",
+    "dolphin3:8b-llama3.1-q8_0",
+    "dolphin3-daniel:latest",
+]
 
 class TTSRequest(BaseModel):
     text: str
@@ -512,8 +519,12 @@ def _ollama_request(path: str, payload: dict | None = None) -> dict:
     if payload is not None:
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(url, data=data, headers=headers)
-    with urllib.request.urlopen(req, timeout=90) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read().decode("utf-8", "ignore").strip()
+        raise RuntimeError(f"HTTP {exc.code} von Ollama{': ' + detail[:500] if detail else ''}") from exc
 
 def _ollama_models() -> list[str]:
     data = _ollama_request("/api/tags")
@@ -521,6 +532,15 @@ def _ollama_models() -> list[str]:
     if not isinstance(models, list):
         return []
     return [str(item.get("name") or "").strip() for item in models if str(item.get("name") or "").strip()]
+
+def _document_chat_models(models: list[str], requested: str = "") -> list[str]:
+    available = [model for model in models if model]
+    preferred = [model for model in DOCUMENT_MODEL_PREFERENCES if model in available]
+    rest = [model for model in available if model not in preferred]
+    ordered = preferred + rest
+    if requested and requested in available:
+        ordered = [requested] + [model for model in ordered if model != requested]
+    return ordered
 
 def _ollama_generate(model: str, prompt: str) -> str:
     data = _ollama_request("/api/generate", {
@@ -1521,7 +1541,7 @@ async def get_documents():
 @app.get("/documents/models")
 async def get_document_models():
     try:
-        return {"models": _ollama_models()}
+        return {"models": _document_chat_models(_ollama_models())}
     except Exception as exc:
         return {"models": [], "error": str(exc)}
 
@@ -1602,8 +1622,8 @@ async def chat_documents(req: DocumentChatRequest):
         models = _ollama_models()
     except Exception as exc:
         raise HTTPException(status_code=503, detail=f"Ollama nicht erreichbar: {exc}")
-    model = req.model.strip() or (models[0] if models else "")
-    if not model:
+    candidates = _document_chat_models(models, req.model.strip())
+    if not candidates:
         raise HTTPException(status_code=503, detail="Kein Chat-Modell gefunden.")
     context = "\n\n".join(
         f"[Quelle {idx}] Datei: {hit['filename']} | Chunk {hit['chunk_index']}\n{hit['chunk_text']}"
@@ -1616,11 +1636,14 @@ async def chat_documents(req: DocumentChatRequest):
         f"Dokumentauszüge:\n{context}\n\n"
         "Antwort:"
     )
-    try:
-        answer = await asyncio.get_event_loop().run_in_executor(_pool, _ollama_generate, model, prompt)
-    except Exception as exc:
-        raise HTTPException(status_code=503, detail=f"Chat fehlgeschlagen: {exc}")
-    return {"answer": answer, "sources": hits, "model": model}
+    errors = []
+    for model in candidates[:4]:
+        try:
+            answer = await asyncio.get_event_loop().run_in_executor(_pool, _ollama_generate, model, prompt)
+            return {"answer": answer, "sources": hits, "model": model, "fallback_errors": errors}
+        except Exception as exc:
+            errors.append(f"{model}: {exc}")
+    raise HTTPException(status_code=503, detail="Chat fehlgeschlagen: " + " | ".join(errors))
 
 @app.get("/documents/{document_id}")
 async def get_document(document_id: str):

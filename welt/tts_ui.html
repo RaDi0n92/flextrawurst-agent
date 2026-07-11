@@ -1469,7 +1469,8 @@ async function loadServerDocuments(){
       const payload = await modelsRes.json();
       const models = Array.isArray(payload.models) ? payload.models : [];
       if (models.length){
-        documentsModel.innerHTML = models.map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('');
+        documentsModel.innerHTML = '<option value="">Chat-Modell automatisch wählen</option>' +
+          models.map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join('');
       }
       if (payload.error) dbg(payload.error);
     }
