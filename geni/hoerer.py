@@ -19,7 +19,7 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-from gedaechtnis_ops import knoten_schreiben, GENI_ROOT, KNOTEN_DIR
+from gedaechtnis_ops import knoten_schreiben, GENI_ROOT, KNOTEN_DIR, naechste_id
 
 import sys as _sys
 _sys.path.insert(0, str(Path("/root/werkraum")))
@@ -106,9 +106,7 @@ _rauschen_id_lock = threading.Lock()
 def rauschen_schreiben(aktion: str, rel_pfad: str):
     RAUSCHEN_DIR.mkdir(parents=True, exist_ok=True)
     with _rauschen_id_lock:
-        vorhandene = [int(f.stem) for f in RAUSCHEN_DIR.glob("*.json")
-                      if f.stem.isdigit()]
-        rid = str((max(vorhandene) + 1) if vorhandene else 1).zfill(6)
+        rid = naechste_id(RAUSCHEN_DIR).zfill(6)
     eintrag = {
         "id": rid,
         "aktion": aktion,
