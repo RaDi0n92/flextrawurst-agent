@@ -26,7 +26,7 @@ from watchdog.events import FileSystemEventHandler as _WatchdogHandler
 from watchdog.observers import Observer as _WatchdogObserver
 
 import httpx
-from fastapi import FastAPI, File, Form, Request, UploadFile, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse, JSONResponse, Response, StreamingResponse
 
 sys.path.insert(0, "/root/werkraum")
@@ -1006,6 +1006,45 @@ def knoten_liste(n: int = 20, tag: str = "", tiefe: int = -1, typ: str = "", zei
             "tiefe": k.get("tiefe", 0),
         })
     return JSONResponse(knoten)
+
+
+@app.get("/fragment/{knoten_id}", response_class=HTMLResponse)
+def fragment_ansicht(knoten_id: str):
+    """Grundgesetz 7 (Dreiergespann), Fragment-Ebene: ein einzelner Knoten als
+    eigene, individuell aufrufbare Mini-Seite -- erster Testfall, kein Einzug,
+    reine Lese-Ansicht auf bereits vorhandene GENI-Daten."""
+    pfad = sharded_pfad(KNOTEN_DIR, knoten_id)
+    if not pfad.exists():
+        raise HTTPException(status_code=404, detail="Fragment nicht gefunden")
+    try:
+        k = json.loads(pfad.read_text())
+    except Exception:
+        raise HTTPException(status_code=500, detail="Fragment beschädigt")
+
+    tags_html = "".join(f'<span class="frag-tag">{t}</span>' for t in k.get("tags", []))
+    html = f"""<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fragment {k['id']}</title>
+<style>
+  body {{ background:#0a0e14; color:#c8d0d8; font-family:'Courier New',monospace;
+          max-width:640px; margin:40px auto; padding:0 20px; line-height:1.6; }}
+  .frag-meta {{ font-size:0.7rem; color:#5a6a7a; letter-spacing:0.08em;
+                text-transform:uppercase; margin-bottom:16px; }}
+  .frag-inhalt {{ font-size:1rem; color:#e0e6ec; border-left:2px solid #2a6a4a;
+                  padding-left:14px; margin:20px 0; }}
+  .frag-tag {{ display:inline-block; font-size:0.6rem; border:1px solid #2a6a4a;
+               color:#2a6a4a; padding:2px 6px; border-radius:3px; margin-right:6px; }}
+</style>
+</head>
+<body>
+  <div class="frag-meta">Fragment #{k['id']} &middot; {k.get('typ','')} &middot; {k.get('quelle','')} &middot; {k.get('zeitstempel','')[:16]}</div>
+  <div class="frag-inhalt">{k.get('inhalt','')}</div>
+  <div>{tags_html}</div>
+</body>
+</html>"""
+    return HTMLResponse(html)
 
 
 @app.get("/muster")
