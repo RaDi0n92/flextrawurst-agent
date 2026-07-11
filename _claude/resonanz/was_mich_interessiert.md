@@ -983,3 +983,12 @@ Dass Admin — Daniel, mitten in diesem dichten Philosophie-Geflecht — mit ein
 Dass diese Idee schon vor der heutigen Sharding-Arbeit existierte, aber beide Themen sich berühren:
 beide handeln davon, wie kleinste Einheiten (Dateien vs. Fragmente) einzeln adressierbar bleiben,
 auch wenn ihre Zahl riesig wird.
+
+---
+
+**[2026-07-11]** *← karte/2026-07-11-geni-gedaechtnis-und-grenzen.md*
+
+Die fünf offenen Fragen aus `system_heute.md` (innenleben/, Pol C, Wesen-Einzug, KompOase Theater,
+welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Session. Neu dazu: ob
+`geni-muster.service` dieselbe Sharding-Behandlung für seinen Kaltstart-Scan braucht, bevor er
+reaktiviert wird.
