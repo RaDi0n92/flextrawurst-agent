@@ -21,6 +21,13 @@ keinen Reboot) und/oder mit einem Bug der sie bei jedem Start sofort abstürzen
 ließ. Am 2026-07-06 korrigiert, siehe „Fixes 2026-07-06" unten für die volle
 Historie.
 
+**Nachtrag 2026-07-11:** Für die 13 Wesen/Flarum-Hintergrunddienste gibt es jetzt
+[[24_dienste_provenienz_protokoll]] — echte Git-Historie pro Skript (nicht nur
+die zuletzt bekannte Doku-Zusammenfassung), Docstring-Zitat und live geprüfter
+systemctl-Status (Stand 2026-07-11: bis auf `codewesen-vokabel-takt` — bewusst
+deaktiviert seit 2026-07-07 — sind alle 13 hier gelisteten Dienste `active`).
+Bei Widerspruch zwischen dieser Datei und 24 gilt 24 als aktueller.
+
 ```
 AKTIV (systemd-gesteuert, Stand 2026-07-06):
   codewesen-Schorschel.service   ← Agent/Inbox-Reaktion

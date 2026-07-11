@@ -42,6 +42,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[07_codewesen_uebersicht]] | Die 6 namelessAI-Codewesen — Überblick, Struktur |
 | [[08_codewesen_identitaeten]] | Tiefes Profil jedes Wesens — Gedanken, Weltbild, Charakter |
 | [[09_codewesen_daemons]] | Alle Hintergrundprozesse und Takt-Systeme der Wesen |
+| [[24_dienste_provenienz_protokoll]] | Provenienz-Protokoll: echte Git-Historie + Docstring + Live-Status für 13 Wesen/Flarum-Dienste — korrigiert veraltete INAKTIV-Labels in 09 |
 | [[10_dakgord]] | dak+gord-system — vollständige Dokumentation |
 | [[11_geni]] | GENI — Gedächtnis-Wesen, vollständige Dokumentation |
 
