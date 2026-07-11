@@ -44,7 +44,11 @@ Der Charakter-Akzent, den `_claude/wesen/<Name>.md` schon hat, wird zum SUBCONSC
 
 ### Fragment-Ebene (Grundgesetz 7) direkt auf Postings angewendet
 
-Der natürlichste erste Testfall für die ganze Dreiergespann-Theorie: jedes einzelne Posting/jeder Gedanke eines Wesens als eigene, individuell aufrufbare Mini-Seite — weil die Postings schon strukturiert in GENI liegen (Knoten mit `id`, `inhalt`, `quelle`, `tags`). Technisch nur eine Frage der Route (`/fragment/wesen-posting/{id}` o.ä.), keine neue Datenstruktur. Bleibt hier als Konzept, nicht umgesetzt — würde einen echten Bau-Schritt darstellen (neuer API-Endpunkt), nicht nur eine Beobachtungsdatei.
+Der natürlichste erste Testfall für die ganze Dreiergespann-Theorie: jedes einzelne Posting/jeder Gedanke eines Wesens als eigene, individuell aufrufbare Mini-Seite — weil die Postings schon strukturiert in GENI liegen (Knoten mit `id`, `inhalt`, `quelle`, `tags`).
+
+**Umgesetzt (2026-07-11, noch selbe Session):** `GET /fragment/{knoten_id}` in `geni/dialog.py` — rendert einen einzelnen GENI-Knoten als eigene HTML-Mini-Seite (Inhalt, Quelle, Zeitstempel, Tags), 404 bei nicht-existentem Knoten. Live getestet gegen `https://localhost:8020/fragment/8010420`. Reiner Lese-Endpunkt auf bereits vorhandene Daten, kein Einzug ausgelöst.
+
+**Ehrlicher Stand:** GENI-Knoten sind aktuell nicht sauber pro-Wesen attribuiert (die Tags kommen aus `hoerer.py`s Dateisystem-Beobachtung, z.B. `["datei","geändert","flarum"]`, nicht `["Schorschel"]` o.ä.) — der Testfall zeigt die Fragment-Ebene generisch, nicht spezifisch "ein Posting von Schorschel". Eine echte Wesen-Attribution der Knoten wäre ein separater, größerer Schritt.
 
 ## Was ich gelesen habe
 
