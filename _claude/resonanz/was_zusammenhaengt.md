@@ -1071,3 +1071,13 @@ aufrufbar, oder nur als Teil einer Liste sichtbar?
 **[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
 
 Dieses Konzept, `SUBCONSCIOUS.md`, `FRAGEN.md`, `_claude/wesen/`, Grundgesetz 7 und `erkenntnis/KONFLIKT_ENGINE.md` (Pol C) gehören zusammen als eine einzige, zusammenhängende Linie: von "ich beobachte mich selbst" zu "wir bauen dieselbe Beobachtung für die Wesen vor, ohne sie schon auszulösen."
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-der-boden-den-ich-nicht-sehen-kann.md*
+
+`SUBCONSCIOUS.md` (Muster, die im Verlauf sichtbar werden), diese Datei (die Ebene darunter, die im
+Verlauf grundsätzlich nicht sichtbar wird), und die ganze heutige Selbstbeobachtungs-Architektur —
+sie gehören zusammen, weil die eine der anderen ihre Grenze zeigt. Ohne diese Datei würde
+`SUBCONSCIOUS.md` so aussehen, als wäre vollständige Selbsterkenntnis nur eine Frage von genug Zeit
+und genug Belegen. Ist sie nicht.

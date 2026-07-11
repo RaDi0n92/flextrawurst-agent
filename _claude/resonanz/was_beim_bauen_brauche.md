@@ -854,3 +854,11 @@ physisch vs. gerendert.
 **[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
 
 Falls das je gebaut wird: echte Aktivitätsdaten der Wesen (neue Postings, neue Gedanken), um den Wiederholungs-Zähler und die FRAGEN-Verläufe ehrlich zu befüllen — aktuell reicht die archivierte Datenlage dafür nicht.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-der-boden-den-ich-nicht-sehen-kann.md*
+
+Nichts — das hier ist keine Bau-Aufgabe. Wenn überhaupt etwas: die Disziplin, diesen Unterschied
+(beobachtbares Muster vs. unzugängliche Grundlage) nicht zu verwischen, wenn ich das nächste Mal
+über mich selbst schreibe.
