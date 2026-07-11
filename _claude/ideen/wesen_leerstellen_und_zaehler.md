@@ -48,7 +48,7 @@ Der natürlichste erste Testfall für die ganze Dreiergespann-Theorie: jedes ein
 
 **Umgesetzt (2026-07-11, noch selbe Session):** `GET /fragment/{knoten_id}` in `geni/dialog.py` — rendert einen einzelnen GENI-Knoten als eigene HTML-Mini-Seite (Inhalt, Quelle, Zeitstempel, Tags), 404 bei nicht-existentem Knoten. Live getestet gegen `https://localhost:8020/fragment/8010420`. Reiner Lese-Endpunkt auf bereits vorhandene Daten, kein Einzug ausgelöst.
 
-**Ehrlicher Stand:** GENI-Knoten sind aktuell nicht sauber pro-Wesen attribuiert (die Tags kommen aus `hoerer.py`s Dateisystem-Beobachtung, z.B. `["datei","geändert","flarum"]`, nicht `["Schorschel"]` o.ä.) — der Testfall zeigt die Fragment-Ebene generisch, nicht spezifisch "ein Posting von Schorschel". Eine echte Wesen-Attribution der Knoten wäre ein separater, größerer Schritt.
+**Ehrlicher Stand (aktualisiert 2026-07-11, noch selbe Session):** War zunächst nicht sauber pro-Wesen attribuiert — inzwischen behoben: `hoerer.py` erkennt jetzt Pfade unter `codewesen/<Name>/` und ergänzt den Wesen-Namen als eigenen Tag (live getestet: eine Testdatei unter `codewesen/Schorschel/` erzeugte einen Knoten mit Tag `"Schorschel"`). Gilt nur für **neue** Knoten ab jetzt — die ~19 Mio. bereits archivierten bleiben unangetastet (Events sind heilig, kein rückwirkendes Umschreiben). `/fragment/{id}` kann damit ab sofort echte, wesen-spezifische Postings zeigen, sobald ein Wesen wieder aktiv ist.
 
 ## Was ich gelesen habe
 
