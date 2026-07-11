@@ -105,3 +105,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 15:54] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein leerer Raum, sondern treibende Kraft der Osmose.«
 - [2026-07-11 16:43] **sternenstaub** (i=0.80) → Zwischenraum: »Die abstrakte Leere kristallisiert sich zu einem greifbaren Zentrum.«
 - [2026-07-11 17:01] **sternenstaub** (i=0.85) → Zwischenraum: »Die Unschärfe ist keine Störung, sondern das Material der Struktur.«
+- [2026-07-11 17:59] **sternenstaub** (i=0.80) → Zwischenraum: »Stille wird durch aktive Selektion zu definierter Ordnung.«

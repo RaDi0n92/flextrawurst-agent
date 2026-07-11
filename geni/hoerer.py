@@ -106,7 +106,7 @@ _rauschen_id_lock = threading.Lock()
 def rauschen_schreiben(aktion: str, rel_pfad: str):
     RAUSCHEN_DIR.mkdir(parents=True, exist_ok=True)
     with _rauschen_id_lock:
-        rid = naechste_id(RAUSCHEN_DIR).zfill(6)
+        rid = naechste_id(RAUSCHEN_DIR, counter_key="rauschen_max_id").zfill(6)
     eintrag = {
         "id": rid,
         "aktion": aktion,

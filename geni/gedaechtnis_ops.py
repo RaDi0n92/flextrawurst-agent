@@ -62,24 +62,25 @@ def knoten_max_id() -> int:
     return _max_ids[key]
 
 
-def naechste_id(verzeichnis: Path) -> str:
+def naechste_id(verzeichnis: Path, counter_key: str | None = None) -> str:
     key = str(verzeichnis)
+    if verzeichnis == KNOTEN_DIR:
+        counter_key = "knoten_max_id"
     if key not in _max_ids:
-        if verzeichnis == KNOTEN_DIR:
-            # Counter-Datei lesen statt 800K-Scan
+        if counter_key:
+            # Counter-Datei lesen statt Vollscan des Verzeichnisses
             cached = _counter_lesen()
-            if "knoten_max_id" in cached:
-                _max_ids[key] = cached["knoten_max_id"]
+            if counter_key in cached:
+                _max_ids[key] = cached[counter_key]
             else:
                 _max_ids[key] = _lade_max_id(verzeichnis)
         else:
             _max_ids[key] = _lade_max_id(verzeichnis)
     _max_ids[key] += 1
-    # Counter-Datei aktualisieren wenn es KNOTEN_DIR ist
-    if verzeichnis == KNOTEN_DIR:
+    if counter_key:
         try:
             cached = _counter_lesen()
-            cached["knoten_max_id"] = _max_ids[key]
+            cached[counter_key] = _max_ids[key]
             _counter_schreiben(cached)
         except Exception:
             pass

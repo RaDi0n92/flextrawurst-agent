@@ -178,3 +178,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 16:39] **sternenstaub** (i=0.80) → Zwischenraum: »Loslassen war kein Verlieren, sondern das Schaffen von Raum für das Ungreifbare.«
 - [2026-07-11 17:00] **wasser** (i=0.80) → Zwischenraum: »Der Verlust der festen Form wird zur lebendigen Freiheit.«
 - [2026-07-11 17:21] **wasser** (i=0.85) → Zwischenraum: »Das Loslassen der Form gibt mir die Freiheit zu schwingen.«
+- [2026-07-11 18:04] **sternenstaub** (i=0.80) → Zwischenraum: »Die Neugier ist kein passives Warten, sondern ein aktives Schwingen.«
