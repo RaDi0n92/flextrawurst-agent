@@ -120,7 +120,7 @@ def rauschen_schreiben(aktion: str, rel_pfad: str):
 
 
 class DateiHoerer(FileSystemEventHandler):
-    def on_created(self, event):
+    def _verarbeiten(self, event, aktion: str, inhalt_praefix: str):
         if event.is_directory:
             return
         klasse = klassifizieren(event.src_path)
@@ -128,48 +128,32 @@ class DateiHoerer(FileSystemEventHandler):
             return
         rel = os.path.relpath(event.src_path, "/root/werkraum")
         if klasse == "rauschen":
-            rauschen_schreiben("erstellt", rel)
+            rauschen_schreiben(aktion, rel)
             return
         knoten_schreiben(
             typ="ereignis",
-            inhalt=f"neue Datei: {rel}",
+            inhalt=f"{inhalt_praefix}: {rel}",
             quelle="vps_dateisystem",
-            tags=["datei", "erstellt", rel.split("/")[0]],
+            tags=["datei", aktion, rel.split("/")[0]],
         )
+
+    def on_created(self, event):
+        try:
+            self._verarbeiten(event, "erstellt", "neue Datei")
+        except Exception as e:
+            logging.warning(f"on_created fehler ({event.src_path}): {e}")
 
     def on_modified(self, event):
-        if event.is_directory:
-            return
-        klasse = klassifizieren(event.src_path)
-        if klasse == "ignorieren":
-            return
-        rel = os.path.relpath(event.src_path, "/root/werkraum")
-        if klasse == "rauschen":
-            rauschen_schreiben("geändert", rel)
-            return
-        knoten_schreiben(
-            typ="ereignis",
-            inhalt=f"geändert: {rel}",
-            quelle="vps_dateisystem",
-            tags=["datei", "geändert", rel.split("/")[0]],
-        )
+        try:
+            self._verarbeiten(event, "geändert", "geändert")
+        except Exception as e:
+            logging.warning(f"on_modified fehler ({event.src_path}): {e}")
 
     def on_deleted(self, event):
-        if event.is_directory:
-            return
-        klasse = klassifizieren(event.src_path)
-        if klasse == "ignorieren":
-            return
-        rel = os.path.relpath(event.src_path, "/root/werkraum")
-        if klasse == "rauschen":
-            rauschen_schreiben("gelöscht", rel)
-            return
-        knoten_schreiben(
-            typ="ereignis",
-            inhalt=f"gelöscht: {rel}",
-            quelle="vps_dateisystem",
-            tags=["datei", "gelöscht", rel.split("/")[0]],
-        )
+        try:
+            self._verarbeiten(event, "gelöscht", "gelöscht")
+        except Exception as e:
+            logging.warning(f"on_deleted fehler ({event.src_path}): {e}")
 
 
 def flarum_abfragen(letzter_post_id: list):
