@@ -252,4 +252,23 @@ Daniel hat `/root/werkraum/MDtalk/MDtalk/` als **eigenständiges** zweites Obsid
 
 ---
 
+---
+
+## Update 2026-07-11 — Schwarzer Bildschirm: echte Root-Cause gefunden und verifiziert
+
+Nach dem Container-Neuaufsetzen (siehe Update 2026-07-10) trat wiederholt ein schwarzer Bildschirm auf, obwohl Selkies-Logs durchgehend "SUCCESS: Capture started" meldeten. Direkte Prüfung per `xwd -root` + roher Pixel-Analyse (nicht nur Logs vertrauen!) zeigte: das X11-Root-Display war zu 100% schwarz (0 einzigartige Farbwerte im Sample) — die Streaming-Pipeline funktionierte korrekt, aber der eigentliche Fensterinhalt wurde nie gezeichnet.
+
+**Ursache:** `--use-gl=swiftshader` + `--in-process-gpu` in `/usr/bin/obsidian` (Teil des alten Mai-GPU-Fixes) rendern mit der aktuellen Obsidian/Electron-Version (1.12.7) offenbar nichts mehr sichtbar in den Fenster-Buffer, obwohl der Prozess stabil läuft und ein Fenstertitel gesetzt wird.
+
+**Fix:** Diese beiden Flags entfernt, `--disable-gpu` + `--disable-gpu-compositing` + `--disable-dev-shm-usage` + `--js-flags=--max-old-space-size=1024` reichen. Nach dem Fix: Pixel-Sample zeigt 0% Schwarz, 168/256 einzigartige Farbwerte — echter Inhalt.
+
+**Zusätzlich behoben in derselben Runde:**
+- Bridge-Hook für `/config/custom-cont-init.d/obsidian-gpu-fix.sh` ging beim `docker run`-Neuaufsetzen verloren → Fix jetzt direkt live im Container UND in der persistenten Skriptdatei gepatcht (nicht nur einer von beiden)
+- Skript hatte noch den alten, falschen Heap-Wert `8192` gespeichert (nie auf `1024` zurückgeschrieben nach dem Mai-Fix) → korrigiert
+- `obsidian.json` hatte mehrere Vaults gleichzeitig `"open":true`, darunter das komplette `/werkraum`-Root-Vault (21.901 Dateien) — führte zu Endlos-Neustart-Loop beim gleichzeitigen Wiederherstellen mehrerer schwerer Fenster. Auto-Open-Flag für die großen Vaults entfernt, nur das kleine aktuell genutzte Vault bleibt automatisch offen.
+
+**Wichtigste Lehre fürs nächste Mal:** Bei Streaming-/Rendering-Problemen nie nur Pipeline-Logs vertrauen — `docker exec obsidian sh -lc 'DISPLAY=:1 xwd -root -out /tmp/check.xwd'` und die rohen Bytes auf Varianz prüfen ist die einzige echte Verifikation ob wirklich etwas gezeichnet wird.
+
+---
+
 *Weiter: [[15_vision]] | [[16_was_fehlt_und_was_koennte_sein]]*
