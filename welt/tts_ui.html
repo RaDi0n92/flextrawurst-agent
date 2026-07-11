@@ -336,6 +336,18 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="main" id="btn-pause" disabled>⏸ Pause</button>
         <button class="main" id="btn-stop"  disabled>■ Stop</button>
       </div>
+      <div class="row">
+        <span class="lbl">TTS-Tempo:</span>
+        <button class="chip on" data-rate-scope="tts" data-r="+0%"  >x1</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+50%" >x1.5</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+75%" >x1.75</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+100%">x2</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+125%">x2.25</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+150%">x2.5</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+200%">x3</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+250%">x3.5</button>
+        <button class="chip"    data-rate-scope="tts" data-r="+300%">x4</button>
+      </div>
 
       <div class="seek-wrap" id="seek-wrap">
         <div id="seek-fill"></div>
@@ -365,13 +377,16 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="panel-title">Soundboard</div>
       <div class="inf">Gespeicherte Eingaben, Kategorien, Suche und Exporte sitzen jetzt hier. Der TTS-Tab bleibt beim Sprechen und nichts vermischt sich unnötig.</div>
       <div class="row">
-        <span class="lbl">Tempo:</span>
-        <button class="chip on" data-r="+0%"  >x1</button>
-        <button class="chip"    data-r="+50%" >x1,5</button>
-        <button class="chip"    data-r="+75%" >x1,75</button>
-        <button class="chip"    data-r="+100%">x2</button>
-        <button class="chip"    data-r="+125%">x2,25</button>
-        <button class="chip"    data-r="+150%">x2,5</button>
+        <span class="lbl">Soundboard-Tempo:</span>
+        <button class="chip on" data-rate-scope="soundboard" data-r="+0%"  >x1</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+50%" >x1.5</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+75%" >x1.75</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+100%">x2</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+125%">x2.25</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+150%">x2.5</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+200%">x3</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+250%">x3.5</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="+300%">x4</button>
       </div>
       <div class="panel">
         <div class="panel-title">Speichern</div>
@@ -780,7 +795,8 @@ const OCR_KEY = 'flextrawurst.tts.ocrJobs.v1';
 const DOCUMENTS_KEY = 'flextrawurst.tts.documents.v1';
 const WEBARCHIVE_KEY = 'flextrawurst.tts.webarchive.v1';
 
-let rate    = '+0%';
+let ttsRate = '+0%';
+let soundboardRate = '+0%';
 let activeVoice = localStorage.getItem('tts.activeVoice') || DEFAULT_VOICE;
 let store = loadStore();
 let chunks  = [];
@@ -2027,6 +2043,34 @@ function renderCategories(){
   filterCat.value = filterCurrent === 'Alle' || store.categories.includes(filterCurrent) ? filterCurrent : 'Alle';
 }
 
+const RATE_OPTIONS = [
+  ['+0%', 'x1'],
+  ['+50%', 'x1.5'],
+  ['+75%', 'x1.75'],
+  ['+100%', 'x2'],
+  ['+125%', 'x2.25'],
+  ['+150%', 'x2.5'],
+  ['+200%', 'x3'],
+  ['+250%', 'x3.5'],
+  ['+300%', 'x4']
+];
+
+function rateOptions(current){
+  const picked = current || '+0%';
+  return RATE_OPTIONS
+    .map(([value, label])=>`<option value="${esc(value)}"${value === picked ? ' selected' : ''}>${esc(label)}</option>`)
+    .join('');
+}
+
+function voiceOptions(current){
+  const picked = current || DEFAULT_VOICE;
+  const names = availableVoices.map(v=>v.name || v.ShortName).filter(Boolean);
+  const all = Array.from(new Set([picked, DEFAULT_VOICE, activeVoice, ...(store.voiceFavorites || []), ...names].filter(Boolean)));
+  return all
+    .map(v=>`<option value="${esc(v)}"${v === picked ? ' selected' : ''}>${esc(voiceDisplay(v))}</option>`)
+    .join('');
+}
+
 function renderLibrary(){
   renderCategories();
   renderVoiceFavorites();
@@ -2064,6 +2108,11 @@ function renderLibrary(){
           <label class="lbl"><input type="checkbox" data-act="pick"${picked ? ' checked' : ''}> Auswahl</label>
           <span class="lbl">Kategorie:</span>
           <select class="clip-category" data-act="move">${categoryOptions(c.category || DEFAULT_CAT)}</select>
+          <span class="lbl">Stimme:</span>
+          <select class="clip-voice" data-act="voice">${voiceOptions(c.voice || DEFAULT_VOICE)}</select>
+          <span class="lbl">Tempo:</span>
+          <select class="clip-rate" data-act="rate">${rateOptions(c.rate || '+0%')}</select>
+          <input class="clip-tags" data-act="tags" type="text" value="${esc(tags)}" placeholder="Tags">
           <input class="clip-note" data-act="note" type="text" value="${esc(c.note || '')}" placeholder="Notiz">
         </div>
       </div>
@@ -2093,20 +2142,20 @@ translateInput.addEventListener('input', ()=>{
   scheduleAutoTranslate();
 });
 
-document.querySelectorAll('.chip[data-r]').forEach(b=>{
+document.querySelectorAll('.chip[data-rate-scope][data-r]').forEach(b=>{
   b.addEventListener('click', ()=>{
-    rate = b.dataset.r;
-    document.querySelectorAll('.chip[data-r]').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');
+    setRate(b.dataset.rateScope, b.dataset.r);
   });
 });
 
-function setRate(nextRate){
-  const btn = Array.from(document.querySelectorAll('.chip[data-r]'))
+function setRate(scope, nextRate){
+  const cleanScope = scope === 'soundboard' ? 'soundboard' : 'tts';
+  const btn = Array.from(document.querySelectorAll(`.chip[data-rate-scope="${cleanScope}"][data-r]`))
     .find(x=>x.dataset.r === (nextRate || '+0%'));
   if (!btn) return;
-  rate = btn.dataset.r;
-  document.querySelectorAll('.chip[data-r]').forEach(x=>x.classList.remove('on'));
+  if (cleanScope === 'soundboard') soundboardRate = btn.dataset.r;
+  else ttsRate = btn.dataset.r;
+  document.querySelectorAll(`.chip[data-rate-scope="${cleanScope}"][data-r]`).forEach(x=>x.classList.remove('on'));
   btn.classList.add('on');
 }
 
@@ -2144,6 +2193,7 @@ async function loadVoices(){
     dbg('Stimmenliste nicht geladen: '+e.message);
   }
   setActiveVoice(activeVoice);
+  renderLibrary();
   renderTranslationVoices();
 }
 
@@ -2218,7 +2268,7 @@ async function translateOne(){
   }
 }
 
-async function playTextAsAudio(raw, voice, label){
+async function playTextAsAudio(raw, voice, label, rateValue){
   const clean = strip(raw);
   if (!clean){ st(`Kein lesbarer Text für ${label || 'Audio'}.`,'err'); return; }
   const parts = splitChunks(clean);
@@ -2239,7 +2289,7 @@ async function playTextAsAudio(raw, voice, label){
     for (let i=0; i<parts.length; i++){
       if (sid !== sess) return;
       st(`${label || 'Audio'} lädt ${i+1}/${parts.length}…`,'wait');
-      const ab = await fetchAudioPart(parts[i], usedVoice, rate);
+      const ab = await fetchAudioPart(parts[i], usedVoice, rateValue || ttsRate);
       if (sid !== sess) return;
       const buf = await actx.decodeAudioData(ab.slice(0));
       setSeek((i / parts.length * 100).toFixed(1)+'%');
@@ -2385,7 +2435,7 @@ function saveVoiceProfile(){
   const profile = {
     name,
     mainVoice: activeVoice,
-    rate,
+    rate: ttsRate,
     targetLang: translateTarget.value,
     translateVoice: translationVoice()
   };
@@ -2405,7 +2455,7 @@ function loadVoiceProfile(){
     voiceSel.value = profile.mainVoice;
     setActiveVoice(profile.mainVoice);
   }
-  setRate(profile.rate || '+0%');
+  setRate('tts', profile.rate || '+0%');
   if (profile.targetLang){
     translateTarget.value = profile.targetLang;
     renderTranslationVoices();
@@ -2486,7 +2536,7 @@ function saveClip(){
     text,
     category,
     voice: activeVoice,
-    rate,
+    rate: soundboardRate,
     favorite: false,
     tags: parseTags(clipTags.value),
     note: clipNote.value.trim(),
@@ -2524,7 +2574,7 @@ function loadClip(id, play){
     voiceSel.value = clip.voice;
     setActiveVoice(clip.voice);
   }
-  setRate(clip.rate || '+0%');
+  setRate('tts', clip.rate || '+0%');
   st('Geladen: '+clip.title,'');
   if (play) speakCurrent();
 }
@@ -2658,14 +2708,8 @@ async function playSelected(){
   for (const id of ids){
     const clip = store.clips.find(c=>c.id === id);
     if (!clip) continue;
-    ta.value = clip.text;
-    ta.dispatchEvent(new Event('input'));
-    if (clip.voice) setActiveVoice(clip.voice);
-    setRate(clip.rate || '+0%');
-    chunks = splitChunks(strip(clip.text));
-    buildRV();
     st('Sequenz: '+clip.title,'wait');
-    await startFrom(0);
+    await playTextAsAudio(clip.text, clip.voice || DEFAULT_VOICE, clip.title, clip.rate || '+0%');
   }
 }
 
@@ -2775,7 +2819,7 @@ function hlRV(i){
 }
 
 async function fetchBuf(text, sid){
-  const key = audioCacheKey(text, activeVoice, rate);
+  const key = audioCacheKey(text, activeVoice, ttsRate);
   const cached = audioCache.get(key);
   if (cached){
     dbg('cache');
@@ -2789,7 +2833,7 @@ async function fetchBuf(text, sid){
       const r = await fetch(API, {
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({text, rate, voice: activeVoice})
+        body: JSON.stringify({text, rate: ttsRate, voice: activeVoice})
       });
       if (!r.ok) throw new Error('HTTP '+r.status);
       const ab = await r.arrayBuffer();
@@ -3248,7 +3292,7 @@ libraryList.addEventListener('click', e=>{
   const id = clipEl.dataset.id;
   const clip = store.clips.find(c=>c.id === id);
   if (btn.dataset.act === 'load') loadClip(id, false);
-  if (btn.dataset.act === 'play') loadClip(id, true);
+  if (btn.dataset.act === 'play' && clip) playTextAsAudio(clip.text, clip.voice || DEFAULT_VOICE, clip.title, clip.rate || '+0%');
   if (btn.dataset.act === 'mp3') downloadClip(id, 'mp3');
   if (btn.dataset.act === 'wav') downloadClip(id, 'wav');
   if (btn.dataset.act === 'favorite' && clip){
@@ -3273,7 +3317,7 @@ libraryList.addEventListener('click', e=>{
 
 libraryList.addEventListener('change', e=>{
   const pick = e.target.closest('input[data-act="pick"]');
-  const sel = e.target.closest('select[data-act="move"]');
+  const sel = e.target.closest('select[data-act]');
   const clipEl = e.target.closest('.clip');
   if (!clipEl) return;
   if (pick){
@@ -3285,19 +3329,30 @@ libraryList.addEventListener('change', e=>{
   if (!sel) return;
   const clip = store.clips.find(c=>c.id === clipEl.dataset.id);
   if (!clip) return;
-  clip.category = sel.value || DEFAULT_CAT;
+  if (sel.dataset.act === 'move'){
+    clip.category = sel.value || DEFAULT_CAT;
+    st('Verschoben nach: '+clip.category,'ok');
+  }
+  if (sel.dataset.act === 'voice'){
+    clip.voice = sel.value || DEFAULT_VOICE;
+    st('Stimme gespeichert: '+voiceDisplay(clip.voice),'ok');
+  }
+  if (sel.dataset.act === 'rate'){
+    clip.rate = sel.value || '+0%';
+    st('Tempo gespeichert.','ok');
+  }
   saveStore();
   renderLibrary();
-  st('Verschoben nach: '+clip.category,'ok');
 });
 
 libraryList.addEventListener('input', e=>{
-  const note = e.target.closest('input[data-act="note"]');
+  const field = e.target.closest('input[data-act="note"], input[data-act="tags"]');
   const clipEl = e.target.closest('.clip');
-  if (!note || !clipEl) return;
+  if (!field || !clipEl) return;
   const clip = store.clips.find(c=>c.id === clipEl.dataset.id);
   if (!clip) return;
-  clip.note = note.value;
+  if (field.dataset.act === 'note') clip.note = field.value;
+  if (field.dataset.act === 'tags') clip.tags = parseTags(field.value);
   saveStore();
 });
 
