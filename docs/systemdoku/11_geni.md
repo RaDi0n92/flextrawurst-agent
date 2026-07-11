@@ -284,4 +284,24 @@ Aus dem Log (typischer Eintrag):
 
 ---
 
+## Nachtrag 2026-07-11: Swap-Leck, ENOSPC und Sharding von `gedaechtnis/knoten`
+
+Auf Daniels Wunsch ein RAM/Swap-Check ("über 50gb check das ma vorher psl") deckte auf: 72,5GB von 122GB Swap belegt, davon 56,6GB allein von `geni/hoerer.py`.
+
+**Fund 1 — fehlender O(1)-Zähler:** `rauschen_schreiben()` in `hoerer.py` vergab IDs ohne den O(1)-Counter-Mechanismus, den `gedaechtnis_ops.py` für `KNOTEN_DIR` bereits hatte (`_counter.json`). Fix: `naechste_id()` um optionalen `counter_key`-Parameter erweitert, `rauschen_schreiben()` nutzt ihn jetzt. Neustart gab die 56,6GB sofort frei.
+
+**Fund 2 — die eigentliche Ursache, falsche erste Diagnose:** Zwei Minuten nach dem Neustart derselbe Fehler: `OSError: [Errno 28] No space left on device`. Weder Festplatte (313G frei) noch Inodes (17% belegt) waren das Problem. `tune2fs -l /dev/vda1` zeigte: das `large_dir`-Feature fehlt. `gedaechtnis/knoten/` hatte 18,96 Mio. flache Dateien — über ext4s praktische htree-Verzeichnisgrenze hinaus (ca. 10-13 Mio. Einträge ohne `large_dir`). Ein bereits vorhandener Code-Kommentar in `muster.py` zeigt: das hatte schon am 2026-07-07 einen 5-Stunden-Hänger verursacht, nur damals nicht als solche erkannt.
+
+**Sofort-Fix:** Der Beobachter-Thread von `hoerer.py` starb bei diesem Fehler bisher lautlos (Haupt-Loop lief weiter, GENI hörte ~12h nichts mehr, unbemerkt bis zu diesem Check). Fix: try/except um alle drei `on_*`-Handler, analog `flarum_abfragen()`/`prozess_snapshot()`.
+
+**Architektur-Entscheidung — Sharding statt weiterer Symptom-Fixes:** Nach Vorlage von drei Optionen (nichts tun / `large_dir` per `tune2fs` aktivieren / Verzeichnis sharden) entschied Daniel sich für Sharding. Design: Unterordner nach den letzten 3 Ziffern der ID (`id % 1000`, 3-stellig) → 1000 gleichmäßig befüllte Shard-Ordner, für `knoten/` UND `rauschen/` (`kanten/` bleibt flach, nur 1303 Dateien). Neue zentrale Funktion `sharded_pfad()` in `gedaechtnis_ops.py`, alle Lese-/Schreibstellen in `gedaechtnis_ops.py`, `hoerer.py`, `muster.py`, `dialog.py` umgestellt (u.a. `muster.py`s `os.scandir`-Vollscan zu einer Schleife über die 1000 Shard-Ordner gemacht).
+
+**Migration:** Dienste gestoppt, Testlauf zuerst nur auf `rauschen/` (930.886 Dateien, 48,5s), dann `knoten/` (18.971.545 Dateien, ~20,8 Min., reines `os.rename` — kein Lese-/Schreib-Risiko für die Daten selbst). Verifiziert: Dateizahlen exakt, Stichproben korrekt, End-to-End-Test über `dialog.py`s `/knoten`-API erfolgreich (neue Knoten werden korrekt in Shards geschrieben und gelesen).
+
+**Offener Nebenfund:** `muster.py`s `lade_alle_knoten()` braucht bei einem Kaltstart (leerer Ausschluss-Cache) auch nach dem Sharding noch über 10 Minuten und 15GB+ RAM, weil jede der jetzt ~19 Mio. Dateien mindestens ge-stat't werden muss. Erklärt vermutlich mit, warum `geni-muster.service` bereits am 2026-07-07 (unabhängig, während der VPS-Migration) ausgefallen ist. Bewusst nicht behoben — eigene, separate Entscheidung nötig, bevor der Dienst reaktiviert wird.
+
+*Volle Analyse inkl. Zeitleiste: `_claude/interessantes/2026-07-11-analyse-geni-sharding.md`.*
+
+---
+
 *Weiter: [[12_ollama_gemma4]] | [[13_langgraph]]*

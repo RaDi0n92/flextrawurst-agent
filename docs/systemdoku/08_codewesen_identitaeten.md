@@ -437,4 +437,10 @@ GENI hört alles was im Werkraum passiert — also auch alle Aktivitäten der Co
 
 ---
 
+## Nachtrag 2026-07-11: Distillate in `_claude/wesen/`
+
+Auf Basis der Zitate/Profile oben (plus `10_dakgord.md`) entstand pro Wesen eine kompakte Datei unter `/root/werkraum/_claude/wesen/<Name>.md`: je ein Charakter-Akzent (aus den Zitaten hier destilliert) und eine echte, wörtlich belegte offene Frage. Reine Beobachtungsschicht, **kein Einzug** — die ID-Mapping-Tabelle (alte `namelessAI_XXXX` → aktuelle Namen) steht dort in `_INDEX.md`, identisch mit `docs/2026-07-06_wesen_umbenennungen.md`.
+
+---
+
 *Weiter: [[09_codewesen_daemons]] | [[10_dakgord]]*
