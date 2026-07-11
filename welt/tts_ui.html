@@ -337,6 +337,15 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <input class="vault-tags" type="text" placeholder="Tags">
         </div>
         <div class="row">
+          <span class="lbl">Aktuellen Text nach:</span>
+          <button class="small" type="button" data-current-act="to-soundboard">Soundboard</button>
+          <button class="small" type="button" data-current-act="to-ocr">OCR</button>
+          <button class="small" type="button" data-current-act="to-documents">Dokument</button>
+          <button class="small" type="button" data-current-act="to-translate">Übersetzen</button>
+          <button class="small" type="button" data-current-act="to-webarchive">Webarchiv</button>
+          <button class="small" type="button" data-current-act="to-vault">Ablage</button>
+        </div>
+        <div class="row">
           <button class="small" type="button" data-vault-act="save-current">TTS-Text ablegen</button>
           <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
         </div>
@@ -518,6 +527,15 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <input class="vault-tags" type="text" placeholder="Tags">
         </div>
         <div class="row">
+          <span class="lbl">Aktuellen Text nach:</span>
+          <button class="small" type="button" data-current-act="to-tts">TTS</button>
+          <button class="small" type="button" data-current-act="to-soundboard">Soundboard</button>
+          <button class="small" type="button" data-current-act="to-ocr">OCR</button>
+          <button class="small" type="button" data-current-act="to-documents">Dokument</button>
+          <button class="small" type="button" data-current-act="to-webarchive">Webarchiv</button>
+          <button class="small" type="button" data-current-act="to-vault">Ablage</button>
+        </div>
+        <div class="row">
           <button class="small" type="button" data-vault-act="save-current">Übersetzung ablegen</button>
           <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
         </div>
@@ -565,6 +583,15 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <input class="vault-tags" type="text" placeholder="Tags">
         </div>
         <div class="row">
+          <span class="lbl">Aktuellen Text nach:</span>
+          <button class="small" type="button" data-current-act="to-tts">TTS</button>
+          <button class="small" type="button" data-current-act="to-soundboard">Soundboard</button>
+          <button class="small" type="button" data-current-act="to-documents">Dokument</button>
+          <button class="small" type="button" data-current-act="to-translate">Übersetzen</button>
+          <button class="small" type="button" data-current-act="to-webarchive">Webarchiv</button>
+          <button class="small" type="button" data-current-act="to-vault">Ablage</button>
+        </div>
+        <div class="row">
           <button class="small" type="button" data-vault-act="save-current">OCR-Text ablegen</button>
           <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
         </div>
@@ -602,6 +629,15 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
           <input class="vault-tags" type="text" placeholder="Tags">
         </div>
         <div class="row">
+          <span class="lbl">Aktuellen Text nach:</span>
+          <button class="small" type="button" data-current-act="to-tts">TTS</button>
+          <button class="small" type="button" data-current-act="to-soundboard">Soundboard</button>
+          <button class="small" type="button" data-current-act="to-ocr">OCR</button>
+          <button class="small" type="button" data-current-act="to-translate">Übersetzen</button>
+          <button class="small" type="button" data-current-act="to-webarchive">Webarchiv</button>
+          <button class="small" type="button" data-current-act="to-vault">Ablage</button>
+        </div>
+        <div class="row">
           <button class="small" type="button" data-vault-act="save-current">Dokumentausgabe ablegen</button>
           <button class="small" type="button" data-vault-act="clear-list">Liste ausblenden</button>
         </div>
@@ -636,6 +672,15 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <div class="grid2">
           <input class="vault-title" type="text" placeholder="Ablage-Titel">
           <input class="vault-tags" type="text" placeholder="Tags">
+        </div>
+        <div class="row">
+          <span class="lbl">Aktuellen Text nach:</span>
+          <button class="small" type="button" data-current-act="to-tts">TTS</button>
+          <button class="small" type="button" data-current-act="to-soundboard">Soundboard</button>
+          <button class="small" type="button" data-current-act="to-ocr">OCR</button>
+          <button class="small" type="button" data-current-act="to-documents">Dokument</button>
+          <button class="small" type="button" data-current-act="to-translate">Übersetzen</button>
+          <button class="small" type="button" data-current-act="to-vault">Ablage</button>
         </div>
         <div class="row">
           <button class="small" type="button" data-vault-act="save-current">Webtext ablegen</button>
@@ -1184,6 +1229,36 @@ function moveVaultText(item, action){
     st('Ablage-Text in Übersetzen gelegt.','ok');
   }
   if (action === 'copy') copyText(text, 'Ablage-Text kopiert.');
+}
+
+function moveCurrentTextFromPanel(panel, action){
+  const source = panel.dataset.vaultSource || 'ablage';
+  const text = currentTextForVault(source).trim();
+  if (!text){
+    st('Kein aktueller Text zum Verschieben.','err');
+    return;
+  }
+  if (action === 'to-vault'){
+    saveCurrentToVault(panel);
+    return;
+  }
+  const titleInput = panel.querySelector('.vault-title');
+  const tagsInput = panel.querySelector('.vault-tags');
+  const item = {
+    id: uid(),
+    title: (titleInput && titleInput.value.trim()) || shortText(text.replace(/\s+/g,' '), 56) || 'Text',
+    text,
+    source,
+    tags: parseTags(tagsInput ? tagsInput.value : ''),
+    createdAt: new Date().toISOString()
+  };
+  if (action === 'to-webarchive'){
+    webarchiveOutput.value = text;
+    setTab('webarchive');
+    st('Aktueller Text ins Webarchiv-Ausgabefeld gelegt.','ok');
+    return;
+  }
+  moveVaultText(item, action);
 }
 
 const languageNames = typeof Intl !== 'undefined' && Intl.DisplayNames
@@ -3269,6 +3344,12 @@ tabButtons.forEach(btn=>{
 });
 window.addEventListener('popstate', ()=>renderTabState(currentTab()));
 document.addEventListener('click', e=>{
+  const currentBtn = e.target.closest('[data-current-act]');
+  if (currentBtn){
+    const panel = currentBtn.closest('.text-vault');
+    if (panel) moveCurrentTextFromPanel(panel, currentBtn.dataset.currentAct);
+    return;
+  }
   const vaultBtn = e.target.closest('[data-vault-act]');
   if (!vaultBtn) return;
   const panel = vaultBtn.closest('.text-vault');
