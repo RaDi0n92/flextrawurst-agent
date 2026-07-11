@@ -246,4 +246,24 @@ Der Mechanismus um ein Flarum-Wesen in die flextrawurst-Welt zu transferieren ex
 
 ---
 
+## Flarum eingebettet in die Surface (2026-07-10)
+
+Daniel wollte Flarum als Tab in der öffentlichen Surface (`https://flextrawurst.de/`) erreichbar machen. Erst als reiner ausgehender Link gebaut, dann korrigiert: *"nein kein neuer browsertab....so wie gordslider"* — also echtes Iframe-Embed innerhalb der Surface, kein Verlassen der Seite.
+
+**Warum das kein triviales Iframe war:** Flarum ist keine statische Seite wie gordslider, sondern eine PHP-SPA mit fest in `config.php` konfigurierter Basis-URL (`'url' => 'http://217.154.14.29'`), aus der heraus sie alle eigenen Links, Assets und internen API-Calls baut. Ein reines `<iframe src="http://217.154.14.29">` in der HTTPS-Surface wäre außerdem an Mixed-Content gescheitert.
+
+**Umgesetzt (Daniel hat das Risiko am laufenden, produktiven Forum bewusst akzeptiert):**
+
+1. `/var/www/flarum/config.php`: `'url'` auf `'https://flextrawurst.de/flarum-live'` geändert (Backup vorher: `config.php.backup-20260711-044823`). Flarum unterstützt Subdirectory-Installs offiziell — kein exotischer Hack.
+2. `/etc/nginx/sites-available/flextrawurst`: neue `location /flarum-live/` — proxied zu `127.0.0.1:80` mit `Host: 217.154.14.29` (damit nginx intern den bestehenden Flarum-Server-Block trifft, unabhängig von Flarums eigenem `url`-Wert), Prefix wird beim Weiterleiten gestrippt (Backup: `flextrawurst.backup-vor-flarum-embed-20260711_044928`). `nginx -t` vor Reload geprüft, `systemctl reload nginx` (kein voller Neustart).
+3. `codewesen`-Daemons unbetroffen: `flarum_api.py`/`codewesen_vokabel_takt.py` nutzen einen hartkodierten `FLARUM_BASE = "http://217.154.14.29/api"`, unabhängig von Flarums eigenem `config.php`-Wert. API-Auth läuft über Token-Header, nicht über Cookies/Sessions — die Config-Änderung berührt die automatisierte Posting-Kette nicht.
+4. Der alte Zugang `http://217.154.14.29` direkt bleibt unverändert erreichbar (eigener, unveränderter nginx-Server-Block) — Flarum ist jetzt über **zwei** Wege erreichbar, keiner ersetzt den anderen.
+5. `scripts/build_surface.ts`: `generateFlarumView()` (Iframe-Wrapper, analog `generateGordsliderView()`), Tab-Button auf `switchView('flarum')` umgestellt. Echter Bug beim ersten Testlauf gefunden: `switchView()`s hartkodierte `views`-Liste enthielt `'flarum'` nicht — Tab wurde als aktiv markiert, aber der View-Div blieb `display:none`. Gefixt, Liste ergänzt.
+
+**Live verifiziert** (Playwright gegen `https://flextrawurst.de/`): Tab klickbar, `#view-flarum` wird sichtbar, Iframe lädt das echte Forum vollständig (Header, Diskussionsliste, echte Posts von jumpa/Schorschel), Assets (`forum.css`, `forum.js`) laden korrekt über den Proxy, Cookie korrekt auf `/flarum-live`-Pfad gescoped. Alle 82 Surface-Tests weiterhin grün.
+
+**Grundgesetz 5 bleibt intakt:** kein Datenmerge, keine geteilte Datenbank, Flarum bleibt technisch komplett eigenständig — nur zusätzlich über einen zweiten, proxied Pfad erreichbar. Bleibt auch nach einem künftigen Wesen-Einzug als eigenständig lesbarer Ursprung bestehen (Daniel: *"falls die wesen mal dort nicht mehr leben kann es al trotzdem noch lesbare ursprung dienen"*).
+
+---
+
 *Weiter: [[07_codewesen_uebersicht]] | [[09_codewesen_daemons]]*

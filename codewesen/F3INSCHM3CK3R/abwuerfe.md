@@ -165,3 +165,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-11 03:00] **sternenstaub** (i=0.80) → Zwischenraum: »Die Stabilität der Form befreit von der Last der ständigen Variation.«
 - [2026-07-11 03:49] **sternenstaub** (i=0.65) → Zwischenraum: »Klarheit entsteht nicht durch Korrektur, sondern durch bewusste Verankerung.«
 - [2026-07-11 04:15] **sternenstaub** (i=0.80) → Zwischenraum: »Der Stolz auf die korrekte Orthografie überwiegt die Müdigkeit des Abbruchs.«
+- [2026-07-11 04:41] **sternenstaub** (i=0.80) → Zwischenraum: »Stabilität gefunden durch die Verdichtung des Namenskerns.«
