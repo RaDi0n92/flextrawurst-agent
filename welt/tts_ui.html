@@ -98,6 +98,16 @@ textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255, 122,
 .counter { font-size: .75rem; color: var(--quiet); text-align: right; }
 .counter.warn { color: var(--warn); }
 .counter.over { color: var(--danger); }
+.token-meter {
+  margin-top: -.42rem;
+  font-size: .74rem;
+  color: var(--muted);
+  text-align: right;
+}
+.token-meter strong {
+  color: var(--pink-soft);
+  font-weight: 600;
+}
 
 .row { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
 .lbl { font-size: .8rem; color: var(--muted); white-space: nowrap; }
@@ -319,6 +329,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <textarea id="ta" placeholder="Text eingeben … (max. 1.111.111 Zeichen)"></textarea>
       <div id="reading-view"></div>
       <div class="counter" id="ctr">0 / 1.111.111</div>
+      <div class="token-meter" id="token-meter">ca. 0 Tokens</div>
 
       <div class="row">
         <button class="main" id="btn-speak">▶ Sprechen</button>
@@ -629,6 +640,7 @@ window.TTS_CRAWL_KEY = "__TTS_CRAWL_KEY__";
 const ta      = document.getElementById('ta');
 const rv      = document.getElementById('reading-view');
 const ctrEl   = document.getElementById('ctr');
+const tokenMeter = document.getElementById('token-meter');
 const btnSpk  = document.getElementById('btn-speak');
 const btnPause= document.getElementById('btn-pause');
 const btnStop = document.getElementById('btn-stop');
@@ -1866,10 +1878,16 @@ function voiceForTarget(target){
   return match ? (match.name || match.ShortName || activeVoice) : activeVoice;
 }
 function textStats(s){
-  const chars = String(s || '').length;
+  const text = String(s || '');
+  const chars = text.length;
+  const words = (text.trim().match(/\S+/g) || []).length;
+  const charEstimate = Math.ceil(chars / 4);
+  const wordEstimate = Math.ceil(words * 1.35);
+  const tokens = chars ? Math.max(1, Math.round((charEstimate * .72) + (wordEstimate * .28))) : 0;
   return {
     chars,
-    tokens: Math.max(1, Math.ceil(chars / 4))
+    words,
+    tokens
   };
 }
 function parseTags(s){
@@ -2064,9 +2082,10 @@ function renderLibrary(){
 }
 
 ta.addEventListener('input', ()=>{
-  const n = ta.value.length;
-  ctrEl.textContent = n.toLocaleString('de') + ' / 1.111.111';
-  ctrEl.className = 'counter'+(n>MAX*.99?' over':n>MAX*.85?' warn':'');
+  const stats = textStats(ta.value);
+  ctrEl.textContent = stats.chars.toLocaleString('de') + ' / 1.111.111';
+  ctrEl.className = 'counter'+(stats.chars>MAX*.99?' over':stats.chars>MAX*.85?' warn':'');
+  tokenMeter.innerHTML = `ca. <strong>${stats.tokens.toLocaleString('de')}</strong> Tokens · ${stats.words.toLocaleString('de')} Wörter · Schätzung aus Zeichen/Wörtern`;
 });
 
 translateInput.addEventListener('input', ()=>{
