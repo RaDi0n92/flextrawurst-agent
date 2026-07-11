@@ -28,6 +28,15 @@ systemctl-Status (Stand 2026-07-11: bis auf `codewesen-vokabel-takt` — bewusst
 deaktiviert seit 2026-07-07 — sind alle 13 hier gelisteten Dienste `active`).
 Bei Widerspruch zwischen dieser Datei und 24 gilt 24 als aktueller.
 
+**Nachtrag 2026-07-11 (Stufe 2):** [[27_dienste_provenienz_protokoll_stufe2]]
+deckt die restlichen ~31 Systemdienste ab, darunter `codewesen_agent.py` (die
+sieben `codewesen-<Name>.service`-Units unten, "Agent/Inbox-Reaktion" genannt)
+— bisher nur hier generisch gelistet, jetzt mit echter Git-Historie (31 Commits)
+und vollständigem Docstring-Zitat samt totem Code. Wichtigster Live-Befund aus
+Stufe 2: `geni-muster.timer` ist seit 2026-07-07 22:04 tot (mehrfach mit
+`SIGTERM` abgestürzt, `enabled` aber `inactive` — kein bewusstes Abschalten wie
+bei `codewesen-vokabel-takt` oben, sondern ein unbemerkter Ausfall).
+
 ```
 AKTIV (systemd-gesteuert, Stand 2026-07-06):
   codewesen-Schorschel.service   ← Agent/Inbox-Reaktion
