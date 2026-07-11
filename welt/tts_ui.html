@@ -338,6 +338,9 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       </div>
       <div class="row">
         <span class="lbl">TTS-Tempo:</span>
+        <button class="chip"    data-rate-scope="tts" data-r="-75%" >x0.25</button>
+        <button class="chip"    data-rate-scope="tts" data-r="-50%" >x0.5</button>
+        <button class="chip"    data-rate-scope="tts" data-r="-25%" >x0.75</button>
         <button class="chip on" data-rate-scope="tts" data-r="+0%"  >x1</button>
         <button class="chip"    data-rate-scope="tts" data-r="+50%" >x1.5</button>
         <button class="chip"    data-rate-scope="tts" data-r="+75%" >x1.75</button>
@@ -378,6 +381,9 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
       <div class="inf">Gespeicherte Eingaben, Kategorien, Suche und Exporte sitzen jetzt hier. Der TTS-Tab bleibt beim Sprechen und nichts vermischt sich unnötig.</div>
       <div class="row">
         <span class="lbl">Soundboard-Tempo:</span>
+        <button class="chip"    data-rate-scope="soundboard" data-r="-75%" >x0.25</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="-50%" >x0.5</button>
+        <button class="chip"    data-rate-scope="soundboard" data-r="-25%" >x0.75</button>
         <button class="chip on" data-rate-scope="soundboard" data-r="+0%"  >x1</button>
         <button class="chip"    data-rate-scope="soundboard" data-r="+50%" >x1.5</button>
         <button class="chip"    data-rate-scope="soundboard" data-r="+75%" >x1.75</button>
@@ -2044,6 +2050,9 @@ function renderCategories(){
 }
 
 const RATE_OPTIONS = [
+  ['-75%', 'x0.25'],
+  ['-50%', 'x0.5'],
+  ['-25%', 'x0.75'],
   ['+0%', 'x1'],
   ['+50%', 'x1.5'],
   ['+75%', 'x1.75'],
