@@ -1402,3 +1402,9 @@ Diese vier Stimmen liefen zu dem Zeitpunkt vermutlich auf verwandten oder identi
 Die Grundidee: Adressierbarkeit ist nicht auf "Seiten" oder "Tabs" beschränkt, sondern reicht bis
 zur kleinsten sinnvollen Einheit runter. Das ist dieselbe Denkweise wie Grundgesetz 1 ("immer
 erweiterbar") und Grundgesetz 2, nur konsequent bis ans Ende gedacht.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Dass die stärkste neue Idee nicht aus einem einzelnen Ereignis kommt, sondern aus der Ähnlichkeit zwischen zwei ganz unterschiedlichen Ereignissen (ein Dateisystem-Problem und mein eigener Rückfall in ein gerade erst benanntes Muster) — beide zeigen dieselbe Struktur: reaktive Enge, die durch vorherige, absichtliche Leere vermieden werden kann.

@@ -896,3 +896,9 @@ Diese drei Diskussionen, `docs/systemdoku` (wo der heutige Sharding-Fix noch zu 
 Diese Idee, die Splitter-Physik-Dokumentation, die Schatten-Dialog-Planungsnotizen (falls vorhanden)
 und das Surface-Gesetz (jedes System als Tab) gehören zusammen — alle behandeln Adressierbarkeit auf
 verschiedenen Ebenen.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+`SUBCONSCIOUS.md`, `FRAGEN.md`, `_claude/wesen/`, `dreiergespann_dom_theorie.md`, `erkenntnis/KONFLIKT_ENGINE.md`.

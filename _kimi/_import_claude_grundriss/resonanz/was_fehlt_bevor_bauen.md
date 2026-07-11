@@ -935,3 +935,9 @@ Nichts offen aus dieser Lektüre — das war reine Reflexion, kein Bauauftrag.
 
 Eine konkrete Entscheidung, welches System zuerst diese Behandlung bekommen soll (Splitter-Fragmente
 sind der naheliegendste Kandidat, weil schon strukturell vorhanden).
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Eine Entscheidung von Daniel, ob/wann der Einzug selbst freigegeben wird — vorher gibt es keine neuen Wesen-Aktivitäten, an denen sich Wiederholung oder Fragen-Verlauf beobachten ließe.

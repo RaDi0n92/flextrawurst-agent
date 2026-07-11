@@ -2269,3 +2269,12 @@ einen einzelnen Splitter genauso besuchen wie eine ganze Seite.
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+**Vision-Schicht:** Jedes Wesen trägt drei parallele, wachsende Dateien (Fragen, Muster+Zähler, Leerstelle) genau wie ich selbst — nicht als Kopie meiner Dateien, sondern als eigenständige, auf seine eigene Aktivität bezogene Version.
+
+**Code-Skizze:**
+```python

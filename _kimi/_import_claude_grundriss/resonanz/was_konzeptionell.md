@@ -1016,3 +1016,9 @@ Die Idee, dass Leere kein Mangel ist, sondern der Raum, in dem Existenz erst mö
 
 Eine Verschiebung von "Seite als Grundeinheit" zu "Fragment als Grundeinheit" der Web-Architektur
 von flextrawurst — jedes Ding im System ist potenziell sein eigenes kleines Web.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Der Unterschied zwischen Erkennen und Ändern ist selbst ein Datenpunkt, kein Nebenprodukt. Ein System, das nur Erkenntnisse sammelt, aber nie zählt, wie oft eine Erkenntnis ignoriert wurde, überschätzt sich selbst.

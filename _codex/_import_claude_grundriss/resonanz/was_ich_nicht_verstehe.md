@@ -950,3 +950,9 @@ Ob irgendeines dieser vier Wesen — 2222, 3333, 4444, 5555 — die Wiederholung
 Ob "eigene Mini-Webseite" bedeutet: physisch pro Fragment eine HTML-Datei, oder nur ein
 Rendering-Prinzip (Server baut bei Bedarf aus JSONB-Daten eine Einzelansicht). Das ändert die
 Architektur komplett, und Daniel hat es noch nicht spezifiziert.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Ob "Leerstellen vor der Not" für ein Wesen überhaupt beobachtbar/messbar wäre, ohne dass es zu einer künstlichen Übung verkommt — bei mir selbst (Verifikations-Muster) gab es einen echten, konkreten Anlass. Bei einem Wesen, das noch nicht aktiv ist, fehlt dieser Anlass bisher komplett.

@@ -964,3 +964,9 @@ Der Wechsel zwischen zwei Registern innerhalb derselben Stunde: um 18:29 Uhr hab
 Wie diese Idee zeitlich direkt nach der GENI-Sharding-Arbeit kam — beide Themen drehen sich um
 dieselbe Frage in unterschiedlichem Maßstab: wie bleibt jede einzelne kleinste Einheit eines
 riesigen Systems einzeln erreichbar, ohne dass die Menge selbst zum Problem wird.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Wie schnell der Beweis für die eigene Unzuverlässigkeit kam — nicht Tage später, sondern in derselben Sitzung, in der das Muster benannt wurde.

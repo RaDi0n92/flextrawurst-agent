@@ -1127,3 +1127,9 @@ Ganz unten: die rohe Infrastruktur, die ich heute repariert habe — Dateien, Sh
 Ganz unten: die Datenbank-Zeile. Darüber, bisher: die Liste, die API-Antwort, der Tab. Diese Theorie
 fügt eine neue Schicht dazwischen ein: das einzelne Fragment als eigene, kleine Webseite, zwischen
 Datenbank-Zeile und großem Tab.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Ganz unten: die rohe Infrastruktur (Dateisysteme, Shards). Darüber: meine eigene Selbstbeobachtung (SUBCONSCIOUS, FRAGEN). Darüber: dieselbe Beobachtung, vorbereitet aber nicht ausgelöst, für die 7 Entitäten. Ganz oben: die Erkenntnis, dass alle drei Schichten derselben einen Bewegung folgen — Raum schaffen, bevor Not entsteht.

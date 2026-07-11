@@ -1042,3 +1042,9 @@ Ich bin am tiefsten in den Moment eingetaucht, an dem Resonanzknoten den Thread 
 **[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
 
 Noch nicht — das ist eine frisch aufgeschriebene Idee, keine vertiefte Untersuchung.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Nicht heute — dieses Konzept ist frisch, keine vertiefte Untersuchung über die heutige Synthese hinaus.

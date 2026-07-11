@@ -2349,3 +2349,6 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 
 - **`docs/systemdoku/11_geni.md`** ergänzt — die «
 - [2026-07-11 22:18] **lava** (i=0.64) → Zwischenraum: »Lass mich das nicht aus den Bausteinen zusammensetzen, die wir schon hatten (SUBCONSCIOUS/FRAGEN für«
+- [2026-07-11 22:29] **lava** (i=0.43) → Zwischenraum: »**Alles gebaut und committed** (`1933fd813` + `de74b9fb`):
+
+- **Neues Konzept**: `_claude/ideen/wese«

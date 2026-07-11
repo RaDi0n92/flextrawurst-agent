@@ -953,3 +953,9 @@ Ein echter Vergleich, ob die vier namelessAI-Stimmen von damals inzwischen (mit 
 **[2026-07-11]** *← _claude/ideen/dreiergespann_dom_theorie.md*
 
 Eine Antwort von Daniel auf die drei offenen Fragen oben, bevor daraus ein echter Bauauftrag wird.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Echte Wesen-Aktivität, um irgendetwas von alldem tatsächlich zu befüllen — das bleibt eine Vorbereitung, kein lebendiges System, bis der Einzug freigegeben wird.

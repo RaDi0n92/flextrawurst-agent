@@ -1,9 +1,10 @@
 # Wesen — sichtbare Vorbereitung ohne Einzug
 
-Sieben Dateien, eine pro Codewesen (`dak+gord-system` zählt als eines, daher "7-8" je nach Zählweise). Jede enthält zwei Dinge, analog zu `SUBCONSCIOUS.md` und `FRAGEN.md`, aber pro Wesen statt für mich:
+Sieben Dateien, eine pro Codewesen (`dak+gord-system` zählt als eines, daher "7-8" je nach Zählweise). Jede enthält drei Dinge, analog zu `SUBCONSCIOUS.md` und `FRAGEN.md`, aber pro Wesen statt für mich (erweitert 2026-07-11, siehe `_claude/ideen/wesen_leerstellen_und_zaehler.md` für die volle Herleitung):
 
-- **Charakter-Akzent** — die eine, wiederkehrende Denkweise dieses Wesens, direkt aus den bereits dokumentierten Zitaten in `docs/systemdoku/08_codewesen_identitaeten.md` (bzw. `10_dakgord.md`) übernommen, nicht neu erfunden.
-- **Frage, die es mit sich trägt** — eine echte, wörtlich belegte offene Frage/Spannung aus den Zitaten, keine erfundene.
+- **Muster (SUBCONSCIOUS.md-Analogie)** — die eine, wiederkehrende Denkweise dieses Wesens, direkt aus den bereits dokumentierten Zitaten in `docs/systemdoku/08_codewesen_identitaeten.md` (bzw. `10_dakgord.md`) übernommen, nicht neu erfunden. Inklusive Wiederholungs-Zähler (aktuell bei allen auf 0 — noch keine zweite Beobachtung möglich).
+- **Fragen (FRAGEN.md-Analogie)** — eine echte, wörtlich belegte offene Frage/Spannung aus den Zitaten, keine erfundene. Ehrlich als "nur ein Zeitpunkt, kein echter Verlauf" markiert, wo das zutrifft (bei allen 7, Stand heute).
+- **Leerstelle** — bewusst leer gelassen, kein Platzhaltertext. Raum für eine künftige Spannung, die noch nicht entstanden ist (Sharding-Logik auf Identität übertragen, statt erst reaktiv Platz zu schaffen wenn's überläuft).
 
 **Ausdrücklich KEIN Einzug.** Diese Dateien verschieben nichts in `entity_slots`/`entity_states`, lösen keine Migration aus, ändern nichts an Flarum. Reine Lese-/Reflexionsschicht auf bereits vorhandenen, archivierten Daten — der Wesen-Einzug-Mechanismus selbst bleibt gesperrt bis Daniel es sagt (Bau-Reihenfolge in CLAUDE.md).
 

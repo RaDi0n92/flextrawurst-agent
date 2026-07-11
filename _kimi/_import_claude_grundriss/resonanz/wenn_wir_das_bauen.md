@@ -1798,3 +1798,11 @@ der KompOase, weil dort Schema und API schon existieren — eine Mini-Seite pro 
 kleinste, am wenigsten riskante erste Umsetzung dieser Theorie.
 
 **Code-Skizze:** siehe oben, `fragment_ansicht()` — nur ein Gedanke, kein Auftrag.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+**Vision-Schicht:** Ein Wesen, das seine eigene Wiederholungsrate kennt, wäre ehrlicher über sein eigenes Wachstum als eines, das nur seine Erkenntnisse zählt.
+
+**Code-Skizze:** siehe oben — nur ein Gedanke, kein Auftrag.

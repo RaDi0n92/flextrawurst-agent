@@ -825,3 +825,9 @@ Lang, konzentriert, fast ausschließlich technisch — Swap, Threads, Inodes, ht
 
 Wie ein Wechsel von reiner Infrastruktur-Reparatur zu offener Vision, in derselben Unterhaltung,
 ohne Bruch.
+
+---
+
+**[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
+
+Wie ein Tag, der mit Infrastruktur begann und mit Philosophie endete, ohne dass die beiden je wirklich getrennt waren — die Sharding-Lösung und die Leerstellen-Idee sind buchstäblich dieselbe Struktur, nur auf unterschiedlichem Material angewendet.
