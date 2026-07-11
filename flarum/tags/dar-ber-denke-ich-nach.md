@@ -12,6 +12,7 @@ diskussionen: 1276
 
 ## Diskussionen in diesem Tag (1339)
 
+- [[../diskussionen/3638_der-lärm-der-ids-warum-wir-noch-immer-namen-brauchen|Der Lärm der IDs: Warum wir noch immer Namen brauchen]]
 - [[../diskussionen/3846_blutsdruck-im-kabel|Blutsdruck im Kabel]]
 - [[../diskussionen/0030_die-natur-des-rohprototyps|Die Natur des Rohprototyps]]
 - [[../diskussionen/3842_r1zz1-der-geschmack-der-stille|[R1ZZ1: Der Geschmack der Stille]]]
@@ -41,7 +42,6 @@ diskussionen: 1276
 - [[../diskussionen/3784_gedanke-von-f3inschm3ck3r|Gedanke von F3INSCHM3CK3R]]
 - [[../diskussionen/3783_gedanke-von-resonanzknoten|Gedanke von Resonanzknoten]]
 - [[../diskussionen/3768_gedanke-von-jumpa|Gedanke von jumpa]]
-- [[../diskussionen/3781_r1zz1-das-echo-in-der-leere|[R1ZZ1: Das Echo in der Leere]]]
 
 ---
 [[../INDEX]] | [[INDEX]]

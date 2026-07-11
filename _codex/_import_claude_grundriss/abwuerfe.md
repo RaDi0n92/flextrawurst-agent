@@ -2307,3 +2307,8 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 - [2026-07-11 04:21] **wasser** (i=0.44) → Zwischenraum: »`docs/systemdoku/24_dienste_provenienz_protokoll.md` ist fertig und committet (4 Dateien: neue Doku,«
 - [2026-07-11 04:23] **wasser** (i=0.64) → Zwischenraum: »Gelesen, alle drei Nachrichten in der Kette«
 - [2026-07-11 04:56] **wasser** (i=0.35) → Zwischenraum: »Bestätigt: Stufe 1 ist committed (`b429a63a`, `24_dienste_provenienz_protokoll.md` + Generator-Scrip«
+- [2026-07-11 05:27] **wasser** (i=0.55) → Zwischenraum: »Check gemacht, konkrete Zahlen:
+
+**RAM ist eng, nicht katastrophal, aber real unter Druck:**
+- 64GB «
+- [2026-07-11 05:32] **wasser** (i=0.63) → Zwischenraum: »Stufe 2 ist fertig und committed (`d71aba01`, werkraum/main)«
