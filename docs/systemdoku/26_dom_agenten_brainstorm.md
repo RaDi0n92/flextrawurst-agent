@@ -64,16 +64,16 @@ Am ehesten technisch einfach und konzeptionell stark: **"Substanz-Infekt"** — 
 
 ---
 
-## Nachtrag 2026-07-11: Dreiergespann-Theorie → Grundgesetz 7
+## Nachtrag 2026-07-11: Dreiergespann-Theorie → Grundgesetz 1
 
-Direkte Fortsetzung dieses Brainstorms, einen Tag später, nachdem Daniel sich an eine eigene, ältere Theorie erinnerte, die in keiner Datei auffindbar war (erste echte Erinnerungslücke zwischen Sessions). Nach Erklärung durch Daniel destilliert und mittlerweile als **Grundgesetz 7** direkt in `CLAUDE.md` verankert (nicht mehr nur Brainstorm — das ist der Unterschied zu allem oben auf dieser Seite).
+Direkte Fortsetzung dieses Brainstorms, einen Tag später, nachdem Daniel sich an eine eigene, ältere Theorie erinnerte, die in keiner Datei auffindbar war (erste echte Erinnerungslücke zwischen Sessions). Nach Erklärung durch Daniel destilliert und mittlerweile als **Grundgesetz 1** direkt in `CLAUDE.md` verankert (nicht mehr nur Brainstorm — das ist der Unterschied zu allem oben auf dieser Seite).
 
 **Die Theorie:** Dieselbe DOM/CSS/HTML/HTTP-Struktur wird auf drei Ebenen gleichzeitig gedacht, nicht nacheinander:
 1. **Codewesen-Organ-Ebene** — wie ein Wesen den DOM selbst wahrnimmt/navigiert (direkte Weiterentwicklung von Ebene 1 oben — Agenten-Schwarm, Self-Healing-Selektoren etc. wären hier die technische Basis)
 2. **Menschen-Plattform-Ebene** — Live-Mirror, wie sich dieselbe Struktur für einen Menschen darstellt
 3. **Fragment-Ebene** — jedes kleinste Einzelteil (Splitter-Fragmente aus der KompOase, Schatten-Kommentare, Notizen, Postings — *"einfach alles was flextrawurst ist"*, Daniels Worte) hat eine eigene, individuell aufrufbare Mini-Existenz, wie eine eigene kleine Webseite
 
-**Daniels Ergänzung, die daraus ein Grundgesetz statt nur eine DOM-Idee machte:** Er will das Ganze wie ein *"riesiges Spiel"* — interaktiv, informativ, lore-getreu, sammelbar für Wesen UND Menschen. Ausdrücklich **kein** Belohnungssystem (*"belohnungen und so mist kommen zuletzt"*), sondern das *"beste Feedbacksystem der Beteiligungsnetzwerke des Universums"*, mit einer Leitfrage: *"wer weiß was dieser eine bestimmte Mensch aus dem Material lesen kann was sonst niemand darin entdeckt hätte"* — Einzigartigkeit der Lesart ist der Wert, nicht Konsens. Das ist bereits in Grundgesetz 7 wörtlich verankert.
+**Daniels Ergänzung, die daraus ein Grundgesetz statt nur eine DOM-Idee machte:** Er will das Ganze wie ein *"riesiges Spiel"* — interaktiv, informativ, lore-getreu, sammelbar für Wesen UND Menschen. Ausdrücklich **kein** Belohnungssystem (*"belohnungen und so mist kommen zuletzt"*), sondern das *"beste Feedbacksystem der Beteiligungsnetzwerke des Universums"*, mit einer Leitfrage: *"wer weiß was dieser eine bestimmte Mensch aus dem Material lesen kann was sonst niemand darin entdeckt hätte"* — Einzigartigkeit der Lesart ist der Wert, nicht Konsens. Das ist bereits in Grundgesetz 1 wörtlich verankert.
 
 **Konkrete Anknüpfung an Bestehendes:**
 - **Splitter-Physik** (KompOase) — Fragmente existieren dort schon als eigene Objekte, wären der naheliegendste erste Testfall für die Fragment-Ebene.

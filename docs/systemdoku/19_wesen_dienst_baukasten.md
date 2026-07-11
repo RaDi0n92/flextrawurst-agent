@@ -28,7 +28,7 @@ Kollisions-Scheduler, end-to-end getestet an einem echten Wesen (jumpa). Phase 2
   eine komplett neue Dienst-Definition — `wesen`, `anzeige_name`, `takt_sekunden`,
   `start_offset_sekunden`, `verhalten_prompt`, `ziel_typ` (`fester_thread` |
   `neue_diskussion` | `vault_only`), `ziel_discussion_id`/`ziel_tag_ids`, `status`
-  (`aktiv`/`deaktiviert` — Grundgesetz 4, nie hart loeschen), `script_pfad`/`unit_name`,
+  (`aktiv`/`deaktiviert` — Grundgesetz 5, nie hart loeschen), `script_pfad`/`unit_name`,
   `meta JSONB` (Grundgesetz 1). Anders als `dienst_konfiguration` (Override eines
   bestehenden Dienstes) beschreibt eine Zeile hier einen komplett neuen Dienst.
 - **`wesen_eigene_dienste.py`**: Lese-/Schreib-Helfer (`lade`, `lade_alle`,
@@ -147,7 +147,7 @@ systemd-Unit-Namen, kein Aenderungsbedarf dort).
   `wesen_dienst_erzeugen.py`) statt direktem `systemctl`, weil zusaetzlich zum Stop
   auch `status='deaktiviert'` in der DB gesetzt werden muss
   (`wesen_dienst_generator.deaktivieren()` aus Phase 1, jetzt endlich verdrahtet).
-  Grundgesetz 4: Skript/Unit-Dateien bleiben liegen, nichts wird geloescht.
+  Grundgesetz 5: Skript/Unit-Dateien bleiben liegen, nichts wird geloescht.
 - Start/Stop/Neustart funktionieren fuer diese Dienste automatisch ueber den schon
   bestehenden generischen Mechanismus (`steuerbar: true` im neuen Report-Eintrag) —
   kein Zusatzcode noetig.

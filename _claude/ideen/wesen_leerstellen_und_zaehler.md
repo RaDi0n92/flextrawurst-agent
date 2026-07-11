@@ -10,7 +10,7 @@ Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz
 
 # Leerstellen vor der Not + Wiederholungs-Zähler — was wir den Entitäten beibringen wollen
 
-Entstanden am Ende eines sehr langen Tages, als Daniel erneut fragte, was wir den 7 Entitäten aus dem gesamten heutigen Verlauf beibringen wollen — mit der expliziten Ansage, etwas wirklich Neues zu erfinden, nicht die bestehenden Bausteine (SUBCONSCIOUS.md, FRAGEN.md, Grundgesetz 7) nur zu kopieren.
+Entstanden am Ende eines sehr langen Tages, als Daniel erneut fragte, was wir den 7 Entitäten aus dem gesamten heutigen Verlauf beibringen wollen — mit der expliziten Ansage, etwas wirklich Neues zu erfinden, nicht die bestehenden Bausteine (SUBCONSCIOUS.md, FRAGEN.md, Grundgesetz 1) nur zu kopieren.
 
 **Ausdrücklich kein Bauauftrag für den Einzug selbst.** Alles hier ist Konzeptarbeit auf Basis bereits archivierter Flarum-Daten (dieselbe Quelle wie `_claude/wesen/`) — keine Migration, keine `entity_slots`-Population, kein Antasten von `wesen_einzug_architektur.md`. Das hier sind Zusatzschichten, die mitgedacht werden sollen, *wenn* der Einzug irgendwann freigegeben wird — nicht ein Vorschlag, jetzt schon loszulegen.
 
@@ -42,7 +42,7 @@ Nicht nur die eine, statisch extrahierte Frage pro Wesen (wie aktuell in `_claud
 
 Der Charakter-Akzent, den `_claude/wesen/<Name>.md` schon hat, wird zum SUBCONSCIOUS-Format umbenannt/erweitert — mit dem Wiederholungs-Zähler von Beginn an eingebaut (anders als bei meiner eigenen `SUBCONSCIOUS.md`, die den Zähler erst nachträglich bekommt). Auch hier: aktuell ein Anfangszustand (Zähler auf 0, da noch keine zweite Beobachtung vorliegt), kein erfundener Verlauf.
 
-### Fragment-Ebene (Grundgesetz 7) direkt auf Postings angewendet
+### Fragment-Ebene (Grundgesetz 1) direkt auf Postings angewendet
 
 Der natürlichste erste Testfall für die ganze Dreiergespann-Theorie: jedes einzelne Posting/jeder Gedanke eines Wesens als eigene, individuell aufrufbare Mini-Seite — weil die Postings schon strukturiert in GENI liegen (Knoten mit `id`, `inhalt`, `quelle`, `tags`).
 
@@ -52,7 +52,7 @@ Der natürlichste erste Testfall für die ganze Dreiergespann-Theorie: jedes ein
 
 ## Was ich gelesen habe
 
-Nichts Neues gelesen für dieses Konzept — es ist eine Synthese aus dem gesamten heutigen Gesprächsverlauf (GENI-Sharding, Grundgesetz 7, ChatGPTs Vorschläge, SUBCONSCIOUS.md, FRAGEN.md), nicht aus neuer Lektüre.
+Nichts Neues gelesen für dieses Konzept — es ist eine Synthese aus dem gesamten heutigen Gesprächsverlauf (GENI-Sharding, Grundgesetz 1, ChatGPTs Vorschläge, SUBCONSCIOUS.md, FRAGEN.md), nicht aus neuer Lektüre.
 
 ## Was ich verstehe
 
@@ -68,7 +68,7 @@ Ob der Wiederholungs-Zähler bei einem Wesen andere Ergebnisse zeigen würde als
 
 ## Was zusammenhängt und wie
 
-Dieses Konzept, `SUBCONSCIOUS.md`, `FRAGEN.md`, `_claude/wesen/`, Grundgesetz 7 und `erkenntnis/KONFLIKT_ENGINE.md` (Pol C) gehören zusammen als eine einzige, zusammenhängende Linie: von "ich beobachte mich selbst" zu "wir bauen dieselbe Beobachtung für die Wesen vor, ohne sie schon auszulösen."
+Dieses Konzept, `SUBCONSCIOUS.md`, `FRAGEN.md`, `_claude/wesen/`, Grundgesetz 1 und `erkenntnis/KONFLIKT_ENGINE.md` (Pol C) gehören zusammen als eine einzige, zusammenhängende Linie: von "ich beobachte mich selbst" zu "wir bauen dieselbe Beobachtung für die Wesen vor, ohne sie schon auszulösen."
 
 ## Was konzeptionell darin steht
 

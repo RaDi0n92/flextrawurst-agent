@@ -94,7 +94,7 @@ wird nicht umgeschrieben):
 - Innerhalb der eigenen Wesen-Ordner selbst: `gedanken`/`entwuerfe`/`spiegel`-
   Unterordner (historische Eigentexte) — nur der Ordner-*Name* wurde umbenannt,
   der Inhalt blieb unangetastet.
-- `events`-Tabelle (`actor_id`, 28.662 Treffer) — Grundgesetz 4: append-only,
+- `events`-Tabelle (`actor_id`, 28.662 Treffer) — Grundgesetz 5: append-only,
   nie UPDATE/DELETE.
 - `checkpoints`/`checkpoint_blobs`/`checkpoint_writes` (LangGraph-Persistenz,
   ~26.000 Zeilen) — internes Graph-Kontinuitätsformat, zu riskant für Text-
