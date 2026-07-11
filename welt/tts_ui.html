@@ -198,6 +198,14 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
 .file-btn { position: relative; overflow: hidden; }
 .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .empty { color: var(--quiet); font-size: .82rem; border: 1px dashed var(--border-soft); border-radius: 8px; padding: .8rem; }
+.fold-section { border: 1px solid var(--border-soft); border-radius: 8px; background: rgba(36, 16, 45, .36); overflow: hidden; }
+.fold-head { width: 100%; min-height: 38px; padding: .45rem .65rem; display: flex; align-items: center; justify-content: space-between; gap: .6rem; border: 0; border-bottom: 1px solid var(--border-soft); background: var(--panel-2); color: var(--muted); cursor: pointer; font-size: .78rem; text-align: left; }
+.fold-head:hover { color: var(--text); border-color: var(--pink); }
+.fold-title { color: var(--pink-soft); text-transform: uppercase; letter-spacing: .06em; font-size: .72rem; }
+.fold-state { color: var(--quiet); font-size: .72rem; }
+.fold-body { padding: .55rem; display: flex; flex-direction: column; gap: .5rem; }
+.fold-section.closed .fold-body { display: none; }
+.fold-section.closed .fold-head { border-bottom: 0; }
 .dw-warn { border-left: 3px solid var(--danger); padding-left: .55rem; }
 .translator { gap: .75rem; }
 .translator-head {
@@ -619,8 +627,16 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         <button class="small" id="btn-documents-scope-clear">Scope leeren</button>
         <button class="small" id="btn-documents-full">Groß öffnen</button>
       </div>
-      <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
-      <div class="sentence-list" id="documents-scope"></div>
+      <div class="fold-section" data-fold="documents-scope">
+        <button class="fold-head" type="button" data-fold-toggle="documents-scope">
+          <span class="fold-title">Scope / Auswahl</span>
+          <span class="fold-state">auf</span>
+        </button>
+        <div class="fold-body">
+          <div class="inf" id="documents-scope-info">Scope: alle Dokumente</div>
+          <div class="sentence-list" id="documents-scope"></div>
+        </div>
+      </div>
       <textarea id="documents-output" placeholder="Treffer, Chunks oder Chat-Antworten erscheinen hier"></textarea>
       <div class="panel text-vault" data-vault-source="documents">
         <div class="panel-title">Textablage</div>
@@ -643,9 +659,33 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
         </div>
         <div class="sentence-list vault-list"></div>
       </div>
-      <div class="sentence-list" id="documents-sources"></div>
-      <div class="sentence-list" id="documents-chunks"></div>
-      <div class="sentence-list" id="documents-list"></div>
+      <div class="fold-section closed" data-fold="documents-sources">
+        <button class="fold-head" type="button" data-fold-toggle="documents-sources">
+          <span class="fold-title">Chat-Quellen</span>
+          <span class="fold-state">zu</span>
+        </button>
+        <div class="fold-body">
+          <div class="sentence-list" id="documents-sources"></div>
+        </div>
+      </div>
+      <div class="fold-section closed" data-fold="documents-chunks">
+        <button class="fold-head" type="button" data-fold-toggle="documents-chunks">
+          <span class="fold-title">Chunks</span>
+          <span class="fold-state">zu</span>
+        </button>
+        <div class="fold-body">
+          <div class="sentence-list" id="documents-chunks"></div>
+        </div>
+      </div>
+      <div class="fold-section" data-fold="documents-list">
+        <button class="fold-head" type="button" data-fold-toggle="documents-list">
+          <span class="fold-title">Dokumente / Treffer</span>
+          <span class="fold-state">auf</span>
+        </button>
+        <div class="fold-body">
+          <div class="sentence-list" id="documents-list"></div>
+        </div>
+      </div>
     </section>
 
     <section class="panel tab-panel" data-tab-panel="webarchive">
@@ -3344,6 +3384,16 @@ tabButtons.forEach(btn=>{
 });
 window.addEventListener('popstate', ()=>renderTabState(currentTab()));
 document.addEventListener('click', e=>{
+  const foldBtn = e.target.closest('[data-fold-toggle]');
+  if (foldBtn){
+    const section = document.querySelector(`[data-fold="${foldBtn.dataset.foldToggle}"]`);
+    if (section){
+      section.classList.toggle('closed');
+      const state = foldBtn.querySelector('.fold-state');
+      if (state) state.textContent = section.classList.contains('closed') ? 'zu' : 'auf';
+    }
+    return;
+  }
   const currentBtn = e.target.closest('[data-current-act]');
   if (currentBtn){
     const panel = currentBtn.closest('.text-vault');
