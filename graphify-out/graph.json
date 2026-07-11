@@ -10025,9 +10025,9 @@
       "file_type": "rationale",
       "source_file": "geni/hoerer.py",
       "source_location": "L247",
-      "id": "hoerer_rationale_247",
       "community": 6,
-      "norm_label": "ram, disk, load, service-gesundheit \u2192 knoten."
+      "norm_label": "ram, disk, load, service-gesundheit \u2192 knoten.",
+      "id": "hoerer_rationale_247"
     },
     {
       "label": "sprechen.py",
@@ -10745,54 +10745,54 @@
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L204",
-      "id": "muster_rationale_204",
       "community": 1,
-      "norm_label": "analysiert knoten der letzten 48h auf dominante themen."
+      "norm_label": "analysiert knoten der letzten 48h auf dominante themen.",
+      "id": "muster_rationale_204"
     },
     {
       "label": "Findet tiefe\u22652 Knoten die seit >7 Tagen keine Resonanz hatten.",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L249",
-      "id": "muster_rationale_249",
       "community": 1,
-      "norm_label": "findet tiefe\u22652 knoten die seit >7 tagen keine resonanz hatten."
+      "norm_label": "findet tiefe\u22652 knoten die seit >7 tagen keine resonanz hatten.",
+      "id": "muster_rationale_249"
     },
     {
       "label": "Schaut auf alle Muster-Knoten der letzten 4 Wochen.     W\u00f6rter die in \u22653 Muster-",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L287",
-      "id": "muster_rationale_287",
       "community": 1,
-      "norm_label": "schaut auf alle muster-knoten der letzten 4 wochen.     worter die in \u22653 muster-"
+      "norm_label": "schaut auf alle muster-knoten der letzten 4 wochen.     worter die in \u22653 muster-",
+      "id": "muster_rationale_287"
     },
     {
       "label": "Erkennt temporale Muster: zu welchen Tageszeiten ist Daniel aktiv?",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L312",
-      "id": "muster_rationale_312",
       "community": 1,
-      "norm_label": "erkennt temporale muster: zu welchen tageszeiten ist daniel aktiv?"
+      "norm_label": "erkennt temporale muster: zu welchen tageszeiten ist daniel aktiv?",
+      "id": "muster_rationale_312"
     },
     {
       "label": "Liest die h\u00f6chste Knoten-ID \u2014 ohne alle Dateien zu laden.",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L475",
-      "id": "muster_rationale_475",
       "community": 1,
-      "norm_label": "liest die hochste knoten-id \u2014 ohne alle dateien zu laden."
+      "norm_label": "liest die hochste knoten-id \u2014 ohne alle dateien zu laden.",
+      "id": "muster_rationale_475"
     },
     {
       "label": "Gibt den Text des neuesten Muster-Knotens zur\u00fcck (Cache, 30min TTL).",
       "file_type": "rationale",
       "source_file": "geni/muster.py",
       "source_location": "L481",
-      "id": "muster_rationale_481",
       "community": 1,
-      "norm_label": "gibt den text des neuesten muster-knotens zuruck (cache, 30min ttl)."
+      "norm_label": "gibt den text des neuesten muster-knotens zuruck (cache, 30min ttl).",
+      "id": "muster_rationale_481"
     },
     {
       "label": "web.py",
@@ -15506,9 +15506,9 @@
       "file_type": "rationale",
       "source_file": "_kimi/_import_claude_grundriss/tools/semantische_suche.py",
       "source_location": "L41",
-      "id": "semantische_suche_rationale_41",
       "community": 50,
-      "norm_label": "teilt eine datei an '## '-ueberschriften -- ein chunk pro abschnitt."
+      "norm_label": "teilt eine datei an '## '-ueberschriften -- ein chunk pro abschnitt.",
+      "id": "semantische_suche_rationale_41"
     },
     {
       "label": "claude_zwischenraum.py",
@@ -129075,8 +129075,8 @@
       "source_file": "docs/systemdoku/build_27_dienste_protokoll_stufe2.py",
       "source_location": "L651",
       "weight": 1.0,
-      "_src": "build_27_dienste_protokoll_stufe2_main",
-      "_tgt": "agent_now",
+      "_src": "agent_now",
+      "_tgt": "build_27_dienste_protokoll_stufe2_main",
       "source": "agent_now",
       "target": "build_27_dienste_protokoll_stufe2_main"
     },
@@ -139395,8 +139395,8 @@
       "source_file": "docs/systemdoku/build_27_dienste_protokoll_stufe2.py",
       "source_location": "L641",
       "weight": 1.0,
-      "_src": "build_27_dienste_protokoll_stufe2_main",
-      "_tgt": "registry_toolregistry_get",
+      "_src": "registry_toolregistry_get",
+      "_tgt": "build_27_dienste_protokoll_stufe2_main",
       "source": "registry_toolregistry_get",
       "target": "build_27_dienste_protokoll_stufe2_main"
     },
