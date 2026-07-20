@@ -271,4 +271,31 @@ Nach dem Container-Neuaufsetzen (siehe Update 2026-07-10) trat wiederholt ein sc
 
 ---
 
+## Update 2026-07-20 — Schwarzer Bildschirm #2: OOM-Crash-Loop durch Modell-Dateien im Vault, Excluded-Files reicht nicht
+
+Erneuter schwarzer Bildschirm (Daniel: "obsidian ist down...blackscreen"), diesmal andere Ursache als 2026-07-11. Reihenfolge der Befunde:
+
+**1. nginx/Container liefen normal** (401 Basic-Auth-Antwort auf 8443 und direkt auf 3080 — kein Fehler). Playwright-Login mit Container-Creds (`daniel` / Passwort aus `docker inspect obsidian` Env `PASSWORD`) bestätigte HTTP 200, aber Screenshot zu 100% schwarz.
+
+**2. Erst Container-Neustart, dann GPU-Cache-Löschung — beides ohne Wirkung.** Direkter `xwd -root`-Screenshot (nicht nur Stream!) blieb schwarz, auch frisch nach Neustart.
+
+**3. Echte Root Cause 1 — V8-Heap-Crash-Loop:** `obsidian-launcher.log` zeigte wiederholt `Mark-Compact ... allocation failure; GC in old space requested` gefolgt von `Render frame was disposed`. Ursache: `/root/werkraum/tools/models/` (78 GB, u.a. `hauhaucs_q6`-Gewichte) lag **innerhalb** des `/werkraum`-Vaults und wurde beim Vault-Scan angefasst — vermutlich Leseversuche an Multi-GB-Binärdateien, die den V8-Heap sprengten. `--js-flags=--max-old-space-size` von 1024 über 4096 auf 8192 erhöht — Crash blieb bei ~3.6 GB bestehen, weil V8 mit Pointer-Compression pro Prozess architektonisch bei ~4 GB deckelt, unabhängig vom Flag-Wert.
+
+**4. `userIgnoreFilters` in `app.json` reicht NICHT aus.** `"tools"` und `"homepage-von-kimiweb-desing"` (41k Dateien) wurden in die Excluded-Files-Liste eingetragen — Crash-Loop hörte auf, aber der Vault rendert trotzdem nie (kein Crash mehr, aber dauerhaft schwarz, auch nach 2+ Minuten Leerlauf). **Beweis per Isolationstest:** kleines `MDtalk`-Vault (48 KB) rendert sofort und bleibt stabil → Infrastruktur (Xvfb/Software-Rendering/Selkies) war die ganze Zeit in Ordnung, das Problem hing am Vault-Inhalt selbst.
+
+**5. Physischer Beweis:** `tools/` und `homepage-von-kimiweb-desing` testweise per `mv` (gleiches Dateisystem, `/dev/vda1`, daher instant) aus `/root/werkraum/` herausverschoben (nicht nur app-seitig ausgeschlossen) → Vault rendert sofort sauber ("Cache wird geladen…", dann Inhalt). **Damit belegt: Obsidians "Excluded files" verhindert nur UI/Suche, nicht dass der interne Metadata-/Dateisystem-Scan die Ordner trotzdem anfasst.**
+
+**6. Kollateralschaden erkannt und sofort behoben:** `/root/werkraum/tools/models/hauhaucs_q6/*.gguf` ist der Modellpfad der laufenden `llama-hauhaucs*`-Systemd-Dienste (Port 11435/11436, seit 08.07. durchgehend aktiv) sowie eines `bildgenerierung_test.py`-Hintergrundprozesses. Laufende Prozesse selbst überleben ein `mv` unbeschadet (Linux hält offene Dateien über Inode), **aber ein künftiger Dienst-Neustart hätte den Pfad nicht mehr gefunden.** Sofort Symlinks an den alten Stellen angelegt:
+```bash
+ln -s /root/tools_TEMP_ausserhalb_vault /root/werkraum/tools
+ln -s /root/homepage_TEMP_ausserhalb_vault /root/werkraum/homepage-von-kimiweb-desing
+```
+Getestet: Obsidian folgt den Symlinks nicht in die Tiefe (kein Crash, Vault rendert weiter sauber) — Dienste finden ihre Modelldateien weiter am gewohnten Pfad.
+
+**Aktueller Zustand:** `tools_TEMP_ausserhalb_vault` und `homepage_TEMP_ausserhalb_vault` liegen jetzt dauerhaft direkt unter `/root/`, mit Symlinks unter `/root/werkraum/` für Pfad-Kompatibilität. Das ist ein Provisorium (Ordnernamen tragen noch `_TEMP` im Namen) — sollte bei Gelegenheit sauber benannt/dokumentiert werden, aber funktional stabil.
+
+**Wichtigste Lehre:** Obsidians `userIgnoreFilters` (Settings → Files & Links → Excluded files) ist kein Ersatz für tatsächliche Dateisystem-Trennung, wenn Ordner groß/binär genug sind um den Vault-Scan selbst zu sprengen. Bei sehr großen Nicht-Notiz-Ordnern im Vault-Baum: physisch auslagern + Symlink für Pfad-Kompatibilität, nicht nur app-seitig ausschließen. Und: **vor jedem `mv`/`rm` an Pfaden unter `/root/werkraum/` erst prüfen ob ein laufender Dienst (`ps aux | grep <pfad>`, `grep -rl <pfad> /etc/systemd/system/`) den exakten Pfad referenziert** — hier hätte ein Dienst-Neustart sonst das produktive LLM offline genommen.
+
+---
+
 *Weiter: [[15_vision]] | [[16_was_fehlt_und_was_koennte_sein]]*
