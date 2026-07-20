@@ -2845,12 +2845,13 @@ def post_relation_loeschen(
 
 
 @app.get("/admin/spurenwache")
-def admin_spurenwache(limit: int = Query(default=20, le=100)):
+def admin_spurenwache(limit: int = Query(default=20, le=100), authorization: str | None = Header(default=None)):
     """Letzte Wesen-Schreibentscheidungen mit Relationskontext.
 
     Zeigt Posts bei denen das Wesen eine bewusste Spurenentscheidung getroffen hat —
     unabhängig ob eine Relation gewählt wurde oder nicht.
     """
+    _require_admin(authorization)
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -9635,8 +9636,10 @@ def einsicht_entscheidungen_alle(
     entscheidung: str | None = None,
     thema: str | None = None,
     limit: int = 50,
-    offset: int = 0
+    offset: int = 0,
+    authorization: str | None = Header(default=None),
 ):
+    _require_admin(authorization)
     with get_conn() as conn:
         cur = conn.cursor()
         where = []
@@ -9674,7 +9677,8 @@ def einsicht_entscheidungen_alle(
 
 
 @app.get("/admin/wesen-einsicht/entscheidungen/stats")
-def einsicht_entscheidungen_stats():
+def einsicht_entscheidungen_stats(authorization: str | None = Header(default=None)):
+    _require_admin(authorization)
     with get_conn() as conn:
         cur = conn.cursor()
         cur.execute("""
@@ -9689,7 +9693,9 @@ def einsicht_entscheidungen_stats():
 
 
 @app.get("/admin/wesen-einsicht/traumarchiv")
-def einsicht_traumarchiv(entity_id: str | None = None, limit: int = 50, offset: int = 0):
+def einsicht_traumarchiv(entity_id: str | None = None, limit: int = 50, offset: int = 0,
+                          authorization: str | None = Header(default=None)):
+    _require_admin(authorization)
     with get_conn() as conn:
         cur = conn.cursor()
         where = "WHERE entity_id = %s" if entity_id else ""
@@ -9746,7 +9752,9 @@ def einsicht_traumarchiv(entity_id: str | None = None, limit: int = 50, offset: 
 
 
 @app.get("/admin/wesen-einsicht/lebensjournal")
-def einsicht_lebensjournal(entity_id: str | None = None, limit: int = 80, offset: int = 0):
+def einsicht_lebensjournal(entity_id: str | None = None, limit: int = 80, offset: int = 0,
+                            authorization: str | None = Header(default=None)):
+    _require_admin(authorization)
     with get_conn() as conn:
         cur = conn.cursor()
         e_filter = "AND etl.entity_id = %s" if entity_id else ""
@@ -9812,7 +9820,8 @@ def einsicht_lebensjournal(entity_id: str | None = None, limit: int = 80, offset
 
 
 @app.get("/admin/wesen-einsicht/liveticker")
-def einsicht_liveticker(limit: int = 60):
+def einsicht_liveticker(limit: int = 60, authorization: str | None = Header(default=None)):
+    _require_admin(authorization)
     with get_conn() as conn:
         cur = conn.cursor()
         cur.execute("""
@@ -9830,8 +9839,10 @@ def einsicht_liveticker(limit: int = 60):
 def einsicht_human_material(
     limit: int = Query(default=60, le=200),
     offset: int = Query(default=0),
+    authorization: str | None = Header(default=None),
 ):
     """Admin-Einsicht in alle Innenquellen (human_material_sources)."""
+    _require_admin(authorization)
     conn = get_conn()
     try:
         with conn.cursor() as cur:
