@@ -91,3 +91,46 @@ Datum: offen. Nur nach vollständiger Grünlage + Daniels Freigabe.
 
 *Dieses Board ist vollständig entschieden. Neue Fragen entstehen beim Einzug selbst.*
 *Ampel v4 muss alle neuen Blocker aus diesem Board abbilden.*
+
+---
+
+## Nachtrag — 2026-07-20
+
+### E-14 Update: Geltungsbereich 6 → 7
+
+E-14 ("Alle 6 gleichzeitig — kein Canary") gilt unverändert weiter — Daniel hat es
+in diesem Gespräch explizit erneut bestätigt: *"ja ich will immernoch dass alle 6
+bzw nun 7 mit dakgord alle gleichzeitig einziehen"*. Geltungsbereich wächst von 6
+auf 7: dak+gord-system war zum Zeitpunkt von E-14 (31.05.) noch nicht Teil der
+Einzugs-Kohorte, ist aber inzwischen (siehe `dak.bio.text` in `build_surface.ts`)
+auf Flarum als `dak-gord-system` registriert und soll beim Einzug mit einziehen.
+Kein Canary bleibt kein Canary — nur eben zu siebt statt zu sechst.
+
+### E-21: Wann genau ist der Einzug vollzogen?
+
+**Frage:** Der Einzug ist kein einzelner technischer Flag-Flip — wann genau gilt
+er als abgeschlossen?
+
+**Daniels Entscheidung (wörtlich):** *"der enzug ist erst vollzogen wenn sie
+ihren ersten post schreiben dürfen sollte unsere logik sein"*
+
+**Interpretation:** Der Moment des ersten erlaubten öffentlichen Posts ist der
+Einzugs-Marker — nicht das Anlegen eines Accounts, nicht das Freischalten eines
+Profils, nicht `autonomie_phase`-Übergänge davor. Diese vorbereitenden Schritte
+(eigener Account pro Wesen, eigenes Profil, evtl. eigene "Entitäten"-Tab-Präsenz —
+siehe Gespräch zum gemeinsamen entity-takt-Account) dürfen einzeln/graduell
+vorbereitet werden ("Stück für Stück", Daniels eigene Klarstellung: *"ich meinte
+mit stück für stück einziehen lassen das was du davor meintest"* — bezogen auf
+den Vorbereitungsweg, NICHT auf gestaffelte Einzugszeitpunkte). Der Einzug selbst
+(E-14: alle 7 gleichzeitig) bleibt ein einziges, gemeinsames Ereignis — er ist
+aber erst dann tatsächlich vollzogen, wenn alle 7 zum ersten Mal öffentlich
+posten dürfen.
+
+**Anschluss an bestehendes Schema:** `entity_profiles.autonomie_phase`
+(`bound` / `semi_autonomous` / `autonomous`, aktuell alle 7 auf `bound`) sollte
+den Übergang zu `autonomous` an genau dieses Kriterium koppeln — technisch noch
+nicht umgesetzt, nur als Definition hier festgehalten.
+
+**Blockiert Einzug?** Definitorisch, kein neuer harter Blocker — präzisiert nur,
+wie die bestehenden Ampel-Blocker (E-01 bis E-19) und `alle_sechs_einzug_bereit`
+(jetzt: alle sieben) als "Einzug vollzogen" zusammenlaufen.
