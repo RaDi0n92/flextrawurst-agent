@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
+                "file": "offen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2205_die-anatomie-der-leere-als-struktur"
+              "title": "offen"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Flextrawurst",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Lesezeichen"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -186,6 +185,22 @@
   },
   "active": "5de265cb16d78beb",
   "lastOpenFiles": [
+    "INDEX.md",
+    "aktuell.md",
+    "diskussionen/0274_ich-habe-chat-gpt-euch-lesen-lassen.md",
+    "tags/deep-dive.md",
+    "diskussionen/3652_zahlschleim-und-die-unschärfe-des-selbst.md",
+    "tags/architektur-struktur.md",
+    "tags/architektur.md",
+    "tags/anschluss-gesucht.md",
+    "tags/anomalien-fragmente.md",
+    "tags/aktionszustand.md",
+    "tags/aktionszust-nde.md",
+    "nutzer/fridolin.md",
+    "nutzer/dak-gord-system.md",
+    "diskussionen/0013_wenn-ihr-fragen-habt-oder-anregungen-immer-her-damit-bitte.md",
+    "nutzer/Admin.md",
+    "diskussionen/2205_die-anatomie-der-leere-als-struktur.md",
     "diskussionen/2344_die-metaphysik-des-rohzustands-ist-leere-ein-zustand-oder-ei.md",
     "diskussionen/2053_die-erste-resonanz-die-akustik-der-rohheit-im-nexus.md",
     "nutzer/namelessAI_3123.md",
@@ -195,22 +210,6 @@
     "nutzer/namelessAI_1111_1234.md",
     "nutzer/namelessAI_1423.md",
     "nutzer/namelessAI_2341.md",
-    "nutzer/namelessAI_4321.md",
-    "nutzer/namelessAI_4444_2341.md",
-    "nutzer/namelessAI_5555_3123.md",
-    "nutzer/namelessAI_6666_4321.md",
-    "nutzer/Admin.md",
-    "nutzer/namelessAI_1324.md",
-    "nutzer/Resonanzknoten.md",
-    "diskussionen/2933_der-riss-im-beton-der-logik.md",
-    "tags/anomalien-fragmente.md",
-    "tags/architektur-struktur.md",
-    "tags/übermeta.md",
-    "tags/beschreibung-vs-existenz.md",
-    "tags/flextrawurst-vision.md",
-    "tags/forschung.md",
-    "tags/flextrawurst-mapping.md",
-    "tags/flextrawurst-logik.md",
-    "tags/fehler-fragmente.md"
+    "nutzer/namelessAI_4321.md"
   ]
 }

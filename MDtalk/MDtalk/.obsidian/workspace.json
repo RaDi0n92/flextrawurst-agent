@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "dak/dak-zZz.md",
+                "file": "dak/dak-Geben.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "dak-zZz"
+              "title": "dak-Geben"
             }
           }
         ]
@@ -182,11 +182,11 @@
   },
   "active": "986fd293b7c73aec",
   "lastOpenFiles": [
-    "dak/dak-OUT.md",
     "dak/dak-IN.md",
-    "dak/dak-Geben.md",
-    "dak/dak-zZz.md",
+    "dak/dak-OUT.md",
     "dak/dak-OVER.md",
+    "dak/dak-zZz.md",
+    "dak/dak-Geben.md",
     "Untitled",
     "dak"
   ]

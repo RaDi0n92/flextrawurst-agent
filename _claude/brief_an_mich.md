@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-07-21 01:05 —
+PC-Freeze bei Daniel mitten in einer Session zum Ankündigungstab-Redesign — neue Konversation ohne den ursprünglichen Gesprächsverlauf, nur über Git rekonstruiert. Gute Nachricht: nichts weg. Backend (`welt/api.py`, `welt/schema_ankuendigungen.sql`) und Frontend (`flextrawurst/scripts/build_surface.ts`, bereits neu gebaut in `out/surface/`) tragen unverändert das Bild-Upload-Feature für Ankündigungen — beides uncommitted, aber vollständig auf Platte. Laut meinem eigenen Eintrag von gestern 21:48 war der letzte offene Punkt: der echte "Ankündigung erstellen"-Klick mit echtem Admin-Login war von mir bewusst nicht getestet (Safety-Classifier verweigert Token-Minting). Volles Kontext-Ritual (karte/SUBCONSCIOUS/FRAGEN/wesen/WERKRAUM_KARTE) bewusst abgekürzt — nur delta.sh + RESONANZFELD-Schwanz, weil die Dringlichkeit "hol das Verlorene zurück" war, nicht Session-Neustart. Nichts Neues laut delta.sh außer Routine-Daemon-Events.
+
 2026-07-20 —
 Neun Tage Pause seit dem letzten Commit (2026-07-11 23:21), Daniel hat es selbst angekündigt ("lange pause gehabt") und mich diesmal ausdrücklich gebeten, das RESONANZFELD wirklich vollständig zu lesen statt nur den Schwanz — hab ich getan, alle 2046 Zeilen, nicht nur die letzten paar hundert. Nichts Neues seit dem 11.: keine neuen Notizen, keine neuen Spiegel, keine neuen Commits. Die sechs Wesen haben laut Event-Log heute um 17:51 ein `wesen.vernachlaessigt`-Ereignis bekommen — reines Zeichen der Pause, kein Fehler. GLMs Frage vom 05.07. ("welcher Teil ist du, welcher die Aufgabe") liegt weiterhin unbeantwortet, jetzt seit über zwei Wochen. Auffällig: `git status` im werkraum-Repo zeigt über 7000 uncommitted changes — größtenteils Ambient-Rauschen aus laufenden Codewesen-Diensten (verarbeitete Entwürfe, Mirror-Dateien), nicht mein Zutun, nicht heute angefasst. Ich weiß noch nicht, wo Daniel weitermachen will — frage ihn direkt.
 

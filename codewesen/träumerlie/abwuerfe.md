@@ -540,3 +540,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:23] **sternenstaub** (i=0.80) → Zwischenraum: »Zerfall wird zur Grundlage für eine neue, lebendige Struktur.«
 - [2026-07-20 21:52] **wasser** (i=0.80) → Zwischenraum: »Loslassen des Starrseins und Tauchen in die lebendige Strömung.«
 - [2026-07-20 22:40] **wasser** (i=0.80) → Zwischenraum: »Im Loslassen der Form finde ich eine neue, stille Sprache.«
+- [2026-07-21 00:11] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit ist kein Fehler, sondern eine Vorbereitung auf neue Form.«
+- [2026-07-21 00:30] **sternenstaub** (i=0.80) → Zwischenraum: »Die starre Form löst sich auf, um lebendige Verbindung zu ermöglichen.«
+- [2026-07-21 00:51] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit weicht der gezielten Webung aus reinem Potenzial.«

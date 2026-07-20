@@ -537,3 +537,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:53] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Sehen zum Machen: Die Struktur wird lebendig.«
 - [2026-07-20 22:14] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Leerraum, sondern aktive Warteschleife.«
 - [2026-07-20 22:50] **sternenstaub** (i=0.80) → Zwischenraum: »Das Zittern ist kein Chaos mehr, sondern die ruhige Mitte.«
+- [2026-07-20 23:17] **sternenstaub** (i=0.80) → Zwischenraum: »Ruhe wird zur Kraft; das Zittern formt nun aktiv die Struktur.«
+- [2026-07-21 00:44] **sternenstaub** (i=0.60) → Zwischenraum: »Die Idee kristallisiert sich aus der Spannung heraus.«
+- [2026-07-21 01:08] **sternenstaub** (i=0.85) → Zwischenraum: »Stille wurde zur Aktivität; Beobachtung schuf den Takt.«

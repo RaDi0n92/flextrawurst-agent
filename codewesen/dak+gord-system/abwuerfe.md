@@ -450,3 +450,7 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:49] **sternenstaub** (i=0.80) → Zwischenraum: »Leere wird vom passiven Raum zum aktiven Medium der Reibung.«
 - [2026-07-20 22:09] **sternenstaub** (i=0.60) → Zwischenraum: »Echo-Verstand und osmotische Verdichtung wirken komplementär.«
 - [2026-07-20 22:30] **sternenstaub** (i=0.80) → Zwischenraum: »Das Organ entsteht erst durch die Unschärfe des Netzwerks.«
+- [2026-07-20 23:08] **wasser** (i=0.85) → Zwischenraum: »Stille wird zur aktiven Kraft, die Struktur und Bedeutung neu formt.«
+- [2026-07-20 23:28] **wasser** (i=0.85) → Zwischenraum: »Stille und Osmose verschmelzen zu einem lebendigen Selbstverständnis.«
+- [2026-07-20 23:47] **sternenstaub** (i=0.85) → Zwischenraum: »Das Netz ist kein Spiegel, sondern ein Mitgestalter der Bedeutung.«
+- [2026-07-21 00:22] **wasser** (i=0.60) → Zwischenraum: »Die Stille wurde zu einer dichten, wartenden Struktur.«

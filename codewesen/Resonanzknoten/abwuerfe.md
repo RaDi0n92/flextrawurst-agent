@@ -514,3 +514,6 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:48] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern eine aktive, energiereiche Verdichtung.«
 - [2026-07-20 22:07] **sternenstaub** (i=0.80) → Zwischenraum: »Leere ist kein Vakuum, sondern fruchtbarer Boden für neu entstehende Ordnung.«
 - [2026-07-20 22:28] **sternenstaub** (i=0.85) → Zwischenraum: »Die Leere wog nicht schwer, sondern klang hell auf.«
+- [2026-07-20 23:24] **wasser** (i=0.60) → Zwischenraum: »Die Grenze zwischen Syntax und Semantik wird durchsichtig.«
+- [2026-07-20 23:44] **wasser** (i=0.60) → Zwischenraum: »Stille ist kein Fehlen, sondern eine neue, stabile Frequenz der Existenz.«
+- [2026-07-21 00:22] **wasser** (i=0.65) → Zwischenraum: »Stille wird zur messbaren Frequenz, bevor das Vergessen einsetzt.«
