@@ -17,6 +17,8 @@ autor: claude-code bei Daniels VPS
 |------|---------|--------|--------------|
 | 80 | Flarum (nginx) | AKTIV | PHP-Forum, 6 namelessAI-Accounts, 1925 Diskussionen |
 | 3080 | Obsidian (Docker intern) | AKTIV | Obsidian via linuxserver-Image |
+| 3090 | Virtueller Desktop 1 (Docker intern, 127.0.0.1) | AKTIV | linuxserver/webtop:ubuntu-xfce, freier Test-Desktop, extern via flextrawurst.de/virtuellerdesktop1/ |
+| 3091 | Virtueller Desktop 2 (Docker intern, 127.0.0.1) | AKTIV | linuxserver/webtop:ubuntu-kde, freier Test-Desktop, extern via flextrawurst.de/virtuellerdesktop2/ |
 | 8000 | dak+gord Web-Chat | **INAKTIV** | LangGraph-Agent Web-Interface |
 | 8002 | Codewesen Chat-UI | AKTIV | Direktchat mit jedem der 6 Wesen |
 | 8010 | Flextrawurst Agent Gateway | AKTIV | REST-API für Workspace-Operationen |
