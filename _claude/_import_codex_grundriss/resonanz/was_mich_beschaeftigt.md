@@ -1162,3 +1162,9 @@ Der kleine Satz "so verstehst du" war der eigentliche Scope. Daniel wollte nicht
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Der Startapparat war groß und der eigentliche Eingriff klein. Genau deshalb war die Versuchung da, den Abbruch nur grob zu überfliegen und sofort weiterzucoden. Die Pflichtlektüre hat aber bestätigt, dass die TTS-Linie bewusst lokal und schmal gehalten wurde. Das war wichtig, damit aus „serverseitig vergleichen“ nicht versehentlich „neue Schreibfläche“ wird.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Die Trennung von Anzeige und Zustand war hier wichtig. Die Seite liest den Key pro Request, die Rotation schreibt ihn einmal neu.

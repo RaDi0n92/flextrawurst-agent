@@ -792,6 +792,7 @@ button.small:disabled { opacity: .42; cursor: not-allowed; }
     <input type="text" id="crawl-key-url" readonly style="font-family:'SFMono-Regular',Consolas,monospace;font-size:.82rem">
     <div class="row">
       <button class="small primary" id="btn-crawl-key-copy" type="button">Link kopieren</button>
+      <button class="small" id="btn-crawl-key-rotate" type="button" title="Schluessel serverseitig neu erzeugen">Schlüssel rotieren</button>
       <span class="lbl" id="crawl-key-note"></span>
     </div>
   </div>
@@ -4054,17 +4055,22 @@ ta.dispatchEvent(new Event('input'));
   const modal = document.getElementById('crawl-key-modal');
   const closeBtn = document.getElementById('btn-crawl-key-close');
   const copyBtn = document.getElementById('btn-crawl-key-copy');
+  const rotateBtn = document.getElementById('btn-crawl-key-rotate');
   const urlField = document.getElementById('crawl-key-url');
   const note = document.getElementById('crawl-key-note');
-  if (!btn || !modal || !closeBtn || !copyBtn || !urlField) return;
-  const key = window.TTS_CRAWL_KEY || '';
+  if (!btn || !modal || !closeBtn || !copyBtn || !rotateBtn || !urlField || !note) return;
+  let key = window.TTS_CRAWL_KEY || '';
 
-  btn.addEventListener('click', () => {
+  function renderUrl() {
     if (!key) {
       urlField.value = 'Kein Schlüssel konfiguriert (.env.tts_crawl_key fehlt oder leer).';
-    } else {
-      urlField.value = `${location.origin}/tts/?key=${key}`;
+      return;
     }
+    urlField.value = `${location.origin}/tts/?key=${key}`;
+  }
+
+  btn.addEventListener('click', () => {
+    renderUrl();
     modal.classList.add('on');
     modal.setAttribute('aria-hidden', 'false');
   });
@@ -4082,6 +4088,32 @@ ta.dispatchEvent(new Event('input'));
       note.textContent = 'Kopiert.';
     }
     setTimeout(() => { note.textContent = ''; }, 2500);
+  });
+  rotateBtn.addEventListener('click', async () => {
+    const password = window.prompt('Passwort fuer die Schluesselrotation');
+    if (password === null) return;
+    note.textContent = 'Rotiere...';
+    try {
+      const response = await fetchChecked('/tts/crawl-key/rotate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ password })
+      });
+      const data = await response.json();
+      key = String(data.crawl_key || '');
+      window.TTS_CRAWL_KEY = key;
+      renderUrl();
+      note.textContent = 'Schlüssel rotiert.';
+    } catch (error) {
+      note.textContent = 'Rotation fehlgeschlagen.';
+      alert(String(error.message || error));
+    } finally {
+      setTimeout(() => {
+        if (note.textContent === 'Schlüssel rotiert.' || note.textContent === 'Rotation fehlgeschlagen.' || note.textContent === 'Rotiere...') {
+          note.textContent = '';
+        }
+      }, 2500);
+    }
   });
 })();
 

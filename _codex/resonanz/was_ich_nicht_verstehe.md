@@ -1193,3 +1193,9 @@ Noch nicht entschieden ist, ob die Soundboard-Einträge dauerhaft serverseitig i
 Ich weiß noch nicht, ob Daniel als nächsten Schritt einen echten diff-artigen Vollvergleich der Textvorschauen will oder ob die jetzige strukturierte Zusammenfassung reicht. Der aktuelle Server-Compare vergleicht bewusst nur Counts und Gruppen-Signaturen, also dieselbe Semantik wie vorher der Browser-Diff.
 
 Ich weiß außerdem nicht, wann der laufende TTS-Service neu gestartet werden darf. Ich habe ihn absichtlich nicht angerührt.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Wie weit Daniel das Passwort noch aus dem Code rausziehen will. Im Moment ist es als Fallback und als ENV-Override gedacht.

@@ -1147,3 +1147,9 @@ Wie ein gutes kleines Werkzeug: nicht groß, aber sofort nützlich. Ein diff, de
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Sauberer als der Abbruch. Wenig Glanz, viel Anschlussarbeit, aber genau die richtige Größe: zwei Dateien, ein neuer Endpunkt, ein Fallback, keine Seiteneffekte.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Klein, technisch, geradeaus. Ein fehlender Button war am Ende ein fehlender Zustand, nicht ein fehlendes UI-Detail.

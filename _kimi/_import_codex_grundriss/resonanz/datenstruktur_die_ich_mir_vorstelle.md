@@ -3421,3 +3421,19 @@ async function compareLogEntriesOnServer(base, other) {
   return fetch(LOGS_COMPARE_API, { method: 'POST', ... });
 }
 ```
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Vision-Schicht: ein kleiner, klarer Schlüssel-Zyklus mit nachvollziehbarer Rotation und sichtbarem Link.
+
+Code-Skizze:
+```python
+class CrawlKeyRotateRequest(BaseModel):
+    password: str = ""
+
+@app.post("/crawl-key/rotate")
+async def rotate_crawl_key(req: CrawlKeyRotateRequest):
+    ...
+```

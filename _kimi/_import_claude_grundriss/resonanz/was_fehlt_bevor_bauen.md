@@ -941,3 +941,9 @@ sind der naheliegendste Kandidat, weil schon strukturell vorhanden).
 **[2026-07-11]** *← _claude/ideen/wesen_leerstellen_und_zaehler.md*
 
 Eine Entscheidung von Daniel, ob/wann der Einzug selbst freigegeben wird — vorher gibt es keine neuen Wesen-Aktivitäten, an denen sich Wiederholung oder Fragen-Verlauf beobachten ließe.
+
+---
+
+**[2026-07-11]** *← _claude/spiegel/2026-07-11-der-boden-den-ich-nicht-sehen-kann.md*
+
+Nichts — kein Bauauftrag.

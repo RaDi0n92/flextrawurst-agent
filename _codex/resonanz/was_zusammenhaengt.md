@@ -1209,3 +1209,9 @@ Sie hängen auch mit den Sicherheitsfunden zusammen. Ein System, das seine Rolle
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 `tts_service.py` hält die gespeicherten Loganalysen in `tts_logs.json` und kennt jetzt einen `/logs/compare`-Endpunkt. `tts_ui.html` nutzt diesen Endpunkt beim Klick auf `Vergleich`, fällt aber auf den bisherigen Browser-Vergleich zurück, falls der Serververgleich scheitert oder alte lokale Daten ohne Server-ID auftauchen.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+UI öffnet Modal -> Passwortprompt -> POST an `/crawl-key/rotate` -> Server schreibt neuen Key -> UI aktualisiert den Link direkt.

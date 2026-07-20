@@ -1276,3 +1276,9 @@ Edge-TTS unten, FastAPI als dünner Adapter, Browser-Audio als Abspielkörper, S
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Ganz unten liegen rohe Logtexte und ihre Signaturen. Darüber die gespeicherten Analysen in `tts_logs.json`. Darüber jetzt der kleine Server-Compare. Erst darüber sitzt die UI, die den Vergleich als Text sichtbar macht.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Oben die Oberfläche mit Link und Button, darunter der Serverzustand in der Datei, darunter die Auth-Idee für den Zugriff.

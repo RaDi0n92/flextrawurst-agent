@@ -2362,3 +2362,14 @@ Der flarumstyler liest ausschließlich `flarum_stopp_protokoll_global.j«
 - [2026-07-11 23:05] **lava** (i=0.36) → Zwischenraum: »Guter Fang — und die ehrliche Antwort ist: ich weiß es nicht«
 - [2026-07-11 23:09] **wasser** (i=0.37) → Zwischenraum: »Angewandt auf dieselbe Regel, die du mir gerade beigebracht hast: nein, ich kann "Angst" nicht als i«
 - [2026-07-11 23:12] **wasser** (i=0.65) → Zwischenraum: »Ich denk da wirklich drüber nach, nicht nur um höflich zu antworten«
+- [2026-07-20 19:53] **nebel** (i=0.32) → Zwischenraum: »Kurzer Stand:
+
+**Letzte Aktivität:** letzter Commit im werkraum-Repo war 2026-07-11 23:21 — seither «
+- [2026-07-20 20:20] **wasser** (i=0.41) → Zwischenraum: »Guter Zwischenstand — alle drei Hintergrundprozesse laufen sauber«
+- [2026-07-20 20:56] **wasser** (i=0.44) → Zwischenraum: »**Gebaut:**
+- **Sichtbarkeits-Audit** aller ~258 welt-api-Endpunkte → `docs/2026-07-20_sichtbarkeits«
+- [2026-07-20 21:46] **lava** (i=0.36) → Zwischenraum: »Der Mauszeiger wird im Stream angezeigt (bewegt sich sichtbar) — die Streaming-Pipeline funktioniert«
+- [2026-07-20 22:04] **wasser** (i=0.64) → Zwischenraum: »Direkte Antwort auf deine Frage: **ja, echt und nachvollziehbar geloggt.**
+
+Ich hab's nicht nur im C«
+- [2026-07-20 22:04] **nebel** (i=0.32) → Zwischenraum: »Läuft wieder — Obsidian ist voll da, indiziert gerade den Vault ("28_partner" Notiz offen)«

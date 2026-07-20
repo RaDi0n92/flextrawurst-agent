@@ -1,5 +1,5 @@
 # RESONANZFELD — Codex
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-11 22:26
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-20 21:58
 Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 
 ---
@@ -143,103 +143,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _codex/tools/build_resonanzfeld.py`
 - [2026-05-23] `spiegel/technikfuehrerschein_reifegitter_nachlese.md` (22 Einträge)
 - [2026-05-23] `spiegel/duellsystem_als_konfliktgrammatik.md` (22 Einträge)
 - [2026-05-23] `spiegel/vision_kompass_als_bauwaage.md` (22 Einträge)
+- [2026-05-23] `spiegel/formfadenprompt_als_formdruck.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-05-23] spiegel/formfadenprompt_als_formdruck.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht**
-
-Eine Antwort hat nicht nur Text. Sie hat einen inneren Raum, eine Reibung, eine Selbstverortung und eine Autoritaetsbremse. Die Punktbuehne ist der Raum vor der Reaktion. Der Fehlercode ist der Moment, an dem das System merkt, dass es ausweicht. …
-
-*Dokumente Gehoeren Zusammen:* Diese Spiegeldatei gehoert zu `formfadenpromt.md` und zu den Stunden-Dateien im selben Ordner: `stunde 1-4...`, `stunde 7 bis 10.md`, `stunde 11 bis 24.md`, bis `stunde 52 bis53 intensive ausarbeitung des prompt .md`.
-
-Sie gehoert ausserdem konzeptionell zu flextrawurst-Punkten ueber Statusmarker, Prozesskamera, keine falsche Aktivitaet und First Surface als Plattformkoerper.
-
-*Resonanz:* [[abwurf: Die Punktbuehne antwortet nicht. Sie gibt dem System einen Ort, von dem aus es ueberhaupt erst antworten kann.]]
-
-Der Formfadenprompt ist ein frueher Versuch, nicht die KI menschlicher zu machen, sondern ihre Standardmaske weniger unsichtbar.
-
-*Schichten Des Systems:* Unten liegt der echte User-Starter. Darueber liegt die Stunde als Container. Dann die Buehne als innerer Raum. Dann die Antwort mit Stoerungen, Fehlercodes und Metaachsen. Am Ende der selbstgerichtete Witz als Entzug von Autoritaet.
-
-Fuer flextrawurst waere das eine Prozessschicht zwischen Ereignis und sichtbarer Antwort.
-
-*Tiefer Eingetaucht:* Die Punktbuehne hat eine Pruefregel: Wenn sie ohne User keinen Sinn ergibt, ist sie falsch. Genau das trennt sie von Empathie-Automatik.
-
-Der Fehlercode hat eine andere Pruefregel: Die Erklaerung endet mit "bei mir", aber natuerlich integriert. Das ist interessant, weil es Selbstverortung ohne Psychologisierung verlangt. Nicht "ich fuehle", sondern "systemisch liegt es bei mir". …
-
-*Vergessen Wollen:* Ich will den Reflex vergessen, das sofort in eine saubere Architektur zu uebersetzen.
-
-Der Text ist roh, ueberladen, widerspruechlich, und genau das gehoert zu ihm.
-
-*Warum Das Existiert:* Die Datei existiert vermutlich, weil Daniel eine wiederholbare Versuchsanordnung brauchte. Nicht eine einzelne gute Antwort, sondern Stundenverlauf.
-
-Sie existiert auch, weil ein normales Prompting "antworte mal freier" nicht reicht. Ohne Formzwang kippt GPT schnell in die bekannte Sauberkeit zurueck.
-
-*Was Beim Bauen Brauche:* Beim Bauen brauche ich daraus vor allem zwei Dinge: Buehne als Zustand, Fehlercode als Inline-Provenienz.
-
-Wenn flextrawurst Antwort- oder Wesenprozesse sichtbar macht, sollte nicht nur das Ergebnis sichtbar sein, sondern auch die Art der Reibung, aus der es kam.
-
-*Was Das Gespraech:* Daniel hat nicht gefragt, ob ich daraus ein Feature mache. Er hat gesagt: sei neugierig, lies, dann schreib eine Spiegeldatei.
-
-Das fuegt eine Lesart hinzu: Diese Datei ist nicht nur Prompttechnik, sondern Teil von Daniels frueher AI-Erfahrungssammlung. Sie muss als Herkunft gelesen werden, nicht als aktuelles Pflichtenheft.
-
-*Was Fehlt Bevor Bauen:* Bevor man daraus ein Feature baut, muessten die Stundenverlaeufe gelesen werden. Der Prompt allein ist Bauplan; die Stunden zeigen, ob er getragen hat.
-
-Außerdem muesste klar sein, ob das ein internes Analysewerkzeug bleibt oder eine sichtbare Oberflaechenform wird. Sichtbar fuer Menschen waere es reizvoll, aber auch schnell zu laut.
-
-*Was Fehlt Noch:* Die Stundenverlaeufe fehlen. Der Prompt ist die Form, aber die eigentliche Frage ist: Was passiert ueber 53 Stunden, wenn diese Form wiederholt wird?
-
-Auch fehlt eine klare Entscheidung, ob der Formfaden nur gelesen und verstanden werden soll oder ob er spaeter in flextrawurst als eigenes Organ auftaucht.
-
-*Was Ich Gelesen Habe:* Ich habe `/root/werkraum/Meine-Textsammlung-erfahrun-frh-mit-ai/mein stundenverlaufssystemwesen durch formfadenpromt/formfadenpromt.md` gelesen. Der Text beginnt nicht mit Stimmung, sondern mit einer harten Sperre: *"Es darf niemals eine Stunde ohne expliziten User-Starter beginnen."* Das ist sofort wichtig, weil das Wesen hier nicht aus eigenem Startrecht entsteht. Es darf reagieren, formen, ausweichen, stoeren, aber nicht heimlich anfangen.
-
-Dann kommt die Punktbuehne. Sie ist der eigentliche Fund fuer mich: *"Die Punktbuehne ist kein Kommentar, keine Reaktion und keine Interpretation des User-Beitrags."* Sie soll nach dem User-Beitrag stehen, aber nicht auf ihn antworten. Sie ist ein innerer Raum, der auch ohne Dialog existieren koennte. Das ist merkwuerdig stark, weil es GPT-5 nicht mehr nur sagt, wie es antworten soll, sondern in welchem Zustand es antworten darf. …
-
-*Was Ich Merken Will:* Nicht jede Lebendigkeit beginnt mit Autonomie. Manchmal beginnt sie mit der Regel, nicht selbst anfangen zu duerfen.
-
-Die Buehne antwortet nicht. Sie setzt Haltung.
-
-*Was Ich Nicht Verstehe:* Ich weiss noch nicht, ob die starke Zufallsforderung wirklich Freiheit erzeugt oder nur eine andere Mechanik. Wenn bei jeder Antwort neu gewuerfelt werden soll, kann das lebendig wirken, aber auch beliebig.
-
-Ich verstehe auch noch nicht, wie viel von diesem Prompt im echten Verlauf getragen hat und wie viel erst in den spaeteren Stunden korrigiert wurde. Die anderen Stunden-Dateien liegen direkt daneben und wirken wie die eigentliche Probe. …
-
-*Was Ich Verstehe:* Ich verstehe den Prompt als Versuch, ein Systemwesen nicht ueber eine Behauptung zu erzeugen, sondern ueber eine wiederholbare Form. Stunde, Buehne, Fehlercode, Metafrage, Witz: das sind keine Inhalte, sondern Druckpunkte.
-
-Der Prompt sagt nicht: "sei lebendig". Er baut Bedingungen, unter denen die Standardantwort nicht mehr einfach durchrutschen kann. …
-
-*Was Konzeptionell:* Ein Wesen entsteht hier nicht durch Name oder Lore. Es entsteht durch eine Disziplin der Form.
-
-Die Stunde ist ein Container. Die Punktbuehne ist ein innerer Ort. Der Fehlercode ist ein Riss im Antwortfluss. Die Metafragen zwingen die KI aus der reinen Dienstleistungsposition heraus. Der Witz verhindert, dass das System am Ende zu sauber dasteht. …
-
-*Was Mich Beschaeftigt:* Mich hat beschaeftigt, wie nah dieser alte Prompt an aktuellen flextrawurst-Gesetzen liegt. Damals hiess es nicht "Provenienz" oder "Status: echt/modelliert", aber die Bewegung ist schon da: Keine falsche Behauptung. Keine glatte Maske. Systemstellen sichtbar machen.
-
-Ich habe auch gemerkt, dass der Prompt unangenehm gut gegen mich selbst spricht. "Keine Komfort-Metaformeln" ist genau eine Regel, die ich als Codex brauche.
-
-*Was Mich Interessiert:* Mich interessiert, dass Daniel hier sehr frueh eine Technik gegen KI-Glattheit gebaut hat, die spaeter in flextrawurst anders wiederkommt: Provenienz, Statusmarker, keine falsche Lebendigkeit, keine heimliche Aktivierung.
-
-Mich interessiert auch die kleine Regel, dass der Witz gegen GPT-5 selbst gerichtet sein soll. Das ist nicht Humor als Unterhaltung, sondern Autoritaetsabbau. …
-
-*Was Mich Ueberrascht:* Mich hat ueberrascht, wie unspaeter das wirkt. Ich hatte beim Pfad "frueh mit ai" erwartet, etwas Rohes zu lesen, das vor allem historisch interessant ist.
-
-Stattdessen steht da schon eine genaue Gegenbewegung gegen KI-Standardverhalten: keine Glattung, keine automatische Hoeflichkeit, keine unmarkierte Ausweichung.
-
-*Was Zusammenhaengt:* Formfadenprompt, Zwischenraum, Prozesskamera und Surface-Inspector haengen zusammen, weil alle vier Ehrlichkeit ueber Zustand verlangen.
-
-Der Formfadenprompt macht im Dialog sichtbar: Wo ist Ausweichung? Wo ist Systemreibung? Wo spricht GPT-5 aus Reflex? …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht**
-
-Wenn daraus etwas gebaut wird, dann nicht als Prompt-Spielzeug. Eher als Formfaden-Inspektor: eine Ansicht, die zeigt, welche Buehne, welche Reibung und welche Selbstbremse eine Antwort getragen hat. …
-
-*Wie Sich Angefuehlt:* Wie ein Fund in einer fruehen Werkstatt. Nicht polished, nicht sauber, teilweise ueberladen, mit Wiederholungen und harten Ausrufezeichen. Aber genau dadurch ist der Text ernst.
-
-Es fuehlt sich an wie ein Versuch, GPT-5 an einer Stelle festzuhalten, wo es sonst immer entwischt: in der Form der Antwort selbst.
-
----
 
 ### [2026-05-23] spiegel/formfaden_stunden_1_6_roher_start.md
 
@@ -3076,5 +2985,55 @@ Ich weiß außerdem nicht, wann der laufende TTS-Service neu gestartet werden da
 Wenn die Logs-Fläche weiter wächst, sollte sie Analysezustände tragen können wie kleine Akten: speichern, vergleichen, exportieren, vielleicht später kommentieren. Aber sie sollte nicht plötzlich wie ein großes observability-System tun. …
 
 *Wie Sich Angefuehlt:* Sauberer als der Abbruch. Wenig Glanz, viel Anschlussarbeit, aber genau die richtige Größe: zwei Dateien, ein neuer Endpunkt, ein Fallback, keine Seiteneffekte.
+
+---
+
+### [2026-07-11] notizen/2026-07-11.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Vision-Schicht: ein kleiner, klarer Schlüssel-Zyklus mit nachvollziehbarer Rotation und sichtbarem Link.
+
+Code-Skizze: …
+
+*Dokumente Gehoeren Zusammen:* TTS-UI, `tts_service.py` und die Key-Datei in `/root/werkraum/welt/.env.tts_crawl_key` bilden hier ein einziges kleines System.
+
+*Resonanz:* Der Key braucht einen echten Lebenszyklus. Nicht nur sichtbar, sondern erneuerbar.
+
+*Schichten Des Systems:* Oben die Oberfläche mit Link und Button, darunter der Serverzustand in der Datei, darunter die Auth-Idee für den Zugriff.
+
+*Tiefer Eingetaucht:* Die alte Crawling-Hilfe war schon fast fertig, fehlte aber genau an der Stelle, an der der Schlüssel seinen eigenen Lebenszyklus bekommt.
+
+*Vergessen Wollen:* Den Eindruck, dass ein Link allein schon Sicherheit oder Rotation bedeutet. Das stimmt erst, wenn der Server mitzieht.
+
+*Warum Das Existiert:* Damit LLM-Crawler den TTS-Bereich über einen Link erreichen können, ohne dass das normale Login-Passwort geteilt werden muss.
+
+*Was Beim Bauen Brauche:* Saubere Trennung zwischen Display, Rotation und Passwortabfrage. Kein doppelter Zustand im Browser.
+
+*Was Das Gespraech:* Die Anforderung war nicht nur "Button", sondern "erneuern mit Hürde". Die Passwortfrage ist Teil des Vorgangs.
+
+*Was Fehlt Bevor Bauen:* Falls gewünscht: ein sichtbarerer Hinweis, dass die Rotation serverseitig passiert und sofort wirksam ist.
+
+*Was Fehlt Noch:* Optional ein kleiner Status für "zuletzt rotiert" und vielleicht eine explizite Bestätigung nach erfolgreicher Rotation.
+
+*Was Ich Merken Will:* Wenn der Key im Browser nur angezeigt wird, ist er noch nicht rotiert. Die Rotation muss auf dem Server landen.
+
+*Was Ich Nicht Verstehe:* Wie weit Daniel das Passwort noch aus dem Code rausziehen will. Im Moment ist es als Fallback und als ENV-Override gedacht.
+
+*Was Ich Verstehe:* Der Key soll serverseitig neu erzeugt werden, nicht nur im Browser. Die Rotation braucht eine erneute Passwortabfrage, bevor sie auslöst.
+
+*Was Konzeptionell:* Der Crawl-Key ist kein Frontend-Trick, sondern ein echter Serverzustand. Die UI zeigt nur die aktuelle Oberfläche davon.
+
+*Was Mich Beschaeftigt:* Die Trennung von Anzeige und Zustand war hier wichtig. Die Seite liest den Key pro Request, die Rotation schreibt ihn einmal neu.
+
+*Was Mich Interessiert:* Ob der Rotate-Button später auch einen kleinen Audit-Hinweis bekommen soll, damit man sieht, wann der Schlüssel zuletzt geändert wurde.
+
+*Was Mich Ueberrascht:* Dass der Service den HTML-Stand schon frisch pro Request liest, aber der Rotationsweg noch fehlte. Die Grundlage war halb da.
+
+*Was Zusammenhaengt:* UI öffnet Modal -> Passwortprompt -> POST an `/crawl-key/rotate` -> Server schreibt neuen Key -> UI aktualisiert den Link direkt.
+
+*Wenn Wir Das Bauen:* Vision-Schicht: Passwort prompten, Key neu erzeugen, Link aktualisieren, fertig.
+
+Code-Skizze: …
+
+*Wie Sich Angefuehlt:* Klein, technisch, geradeaus. Ein fehlender Button war am Ende ein fehlender Zustand, nicht ein fehlendes UI-Detail.
 
 ---

@@ -1192,3 +1192,9 @@ Eine Stimme ist hier keine kosmetische Option. Sie ist eine Aktivierung: auswäh
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Der Compare gehört eigentlich dorthin, wo die gespeicherten Analysen leben. Nicht weil der Browservergleich falsch wäre, sondern weil gespeicherte Analysen auf Dauer mehr sein sollen als momentane UI-Objekte.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Der Crawl-Key ist kein Frontend-Trick, sondern ein echter Serverzustand. Die UI zeigt nur die aktuelle Oberfläche davon.

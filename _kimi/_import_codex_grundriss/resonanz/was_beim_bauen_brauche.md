@@ -1252,3 +1252,9 @@ Beim nächsten TTS-Schritt brauche ich zuerst die Entscheidung: Browser-lokal la
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Vor weiteren TTS-Log-Schritten brauche ich weiterhin die bestehende Herkunft: lokal gespeicherte Regeln, gespeicherte Analysen, Export-Endpunkte, keine heimliche Server-Schreibfläche jenseits dessen, was bereits bewusst da ist.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Saubere Trennung zwischen Display, Rotation und Passwortabfrage. Kein doppelter Zustand im Browser.

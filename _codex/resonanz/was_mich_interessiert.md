@@ -1188,3 +1188,9 @@ Mich interessiert, ob dieses Soundboard später nicht nur Daniels private Wieder
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Mich interessiert an dieser kleinen Änderung, dass sie den Charakter der Logs-Fläche nicht verändert. Es bleibt ein gezieltes Werkzeug: speichern, laden, vergleichen, exportieren. Kein neuer Analysemodus, keine stille Hintergrundlogik.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Ob der Rotate-Button später auch einen kleinen Audit-Hinweis bekommen soll, damit man sieht, wann der Schlüssel zuletzt geändert wurde.

@@ -1142,3 +1142,9 @@ Dass der Service nach zwei Wochen Laufzeit sofort sauber neu startete und die ne
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Dass der Browser-Fallback fast kostenlos mitzunehmen war. So bleibt der neue Serververtrag nützlich, ohne die bisherige lokale Robustheit wegzuwerfen.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Dass der Service den HTML-Stand schon frisch pro Request liest, aber der Rotationsweg noch fehlte. Die Grundlage war halb da.

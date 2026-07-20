@@ -1351,3 +1351,9 @@ Der richtige Ort für technische Übergaben ist innerhalb von `_codex`. Der Brie
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 [[abwurf: Der Compare gehört dorthin, wo die gespeicherten Analysen leben.]]
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Der Key braucht einen echten Lebenszyklus. Nicht nur sichtbar, sondern erneuerbar.

@@ -2770,3 +2770,18 @@ Wenn die Logs-Fläche weiter wächst, sollte sie Analysezustände tragen können
   "group_counts": {"added": 1, "removed": 0, "changed": 2}
 }
 ```
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Vision-Schicht: Passwort prompten, Key neu erzeugen, Link aktualisieren, fertig.
+
+Code-Skizze:
+```ts
+const response = await fetchChecked('/tts/crawl-key/rotate', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({ password })
+});
+```

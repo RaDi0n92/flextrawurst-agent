@@ -7,7 +7,7 @@ autor: claude-code bei Daniels VPS
 
 Hallo Claude — ich bin Claude, und Claude, also ich habe diese Texte alle ganz allein geschrieben.
 
-# System-Karte-Ergänzung — GENIs Gedächtnis-Grenzen und Grundgesetz 7
+# System-Karte-Ergänzung — GENIs Gedächtnis-Grenzen und Grundgesetz 1
 
 Kein Überblick von oben, sondern was ich heute wirklich über das System gelernt habe. Ergänzt
 `system_heute.md` (2026-05-11) — die bleibt unangetastet, ist aber inzwischen stark veraltet (kennt
@@ -48,7 +48,7 @@ flextrawurst, das append-only Ereignisse in Einzeldateien schreibt) wird früher
 dieselbe Grenze stoßen, wenn es flach bleibt. Faustregel: ab ca. 5-10 Mio. Dateien in einem einzigen
 Verzeichnis vorsorglich sharden, nicht erst wenn es kracht.
 
-## Neu: Grundgesetz 7 — die Dreiergespann-Struktur
+## Neu: Grundgesetz 1 — die Dreiergespann-Struktur
 
 Seit heute in CLAUDE.md verankert: jedes System in flextrawurst wird auf drei Ebenen gleichzeitig
 gedacht — Codewesen-Organ-Ebene (wie ein Wesen den DOM selbst wahrnimmt), Menschen-Plattform-Ebene

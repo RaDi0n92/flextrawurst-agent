@@ -1123,3 +1123,9 @@ Nicht wieder aus einem Soundboard sofort eine große Datenbank machen. Der erste
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Nicht wieder in den Reflex fallen, bei einer kleinen, klaren Fortsetzung noch ein neues Verwaltungssystem zu erfinden.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Den Eindruck, dass ein Link allein schon Sicherheit oder Rotation bedeutet. Das stimmt erst, wenn der Server mitzieht.

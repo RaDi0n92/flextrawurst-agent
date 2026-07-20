@@ -1133,3 +1133,9 @@ Daniel hat aus der Vorlesefunktion ein wiederholbares Werkzeug gemacht. Nicht "l
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Der letzte Abbruchtext hat den nächsten Schritt schon fast sauber benannt. Meine eigentliche Arbeit war, ihn nicht größer zu machen als er ist.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Die Anforderung war nicht nur "Button", sondern "erneuern mit Hürde". Die Passwortfrage ist Teil des Vorgangs.

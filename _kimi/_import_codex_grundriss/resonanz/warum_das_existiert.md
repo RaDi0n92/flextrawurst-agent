@@ -1142,3 +1142,9 @@ Die TTS-Seite existiert als Fußfessel-Löser. Das Soundboard existiert, damit g
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Die Änderung existiert, damit gespeicherte Loganalysen auf dem VPS selbst vergleichbar sind, statt nur als zwei Browserobjekte nebeneinander zu liegen. Die Notiz existiert, damit die nächste Instanz nicht wieder rätseln muss, ob „server compare“ schon gebaut oder nur angedacht war.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Damit LLM-Crawler den TTS-Bereich über einen Link erreichen können, ohne dass das normale Login-Passwort geteilt werden muss.

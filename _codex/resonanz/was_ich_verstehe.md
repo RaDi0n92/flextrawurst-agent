@@ -1218,3 +1218,9 @@ Neu ist eine Soundboard-Schicht darüber: aktive Stimme, gespeicherte Eingaben, 
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Die Fortsetzung war Ergänzung, nicht Umbau. Die bestehende Logs-Oberfläche, die gespeicherten Analysen in `tts_logs.json` und der lokale Compare-Text bleiben sichtbar und wiedererkennbar. Neu dazugekommen ist nur ein serverseitiger Vergleich gespeicherter Analysen per ID, damit der Vergleich nicht nur an der aktuell geladenen Browser-Kopie hängt.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Der Key soll serverseitig neu erzeugt werden, nicht nur im Browser. Die Rotation braucht eine erneute Passwortabfrage, bevor sie auslöst.

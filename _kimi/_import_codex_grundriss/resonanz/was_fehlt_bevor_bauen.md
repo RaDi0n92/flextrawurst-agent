@@ -1155,3 +1155,9 @@ Für diese Ausbaustufe fehlt nichts Akutes. Für serverseitige Kategorien fehlt 
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Für den nächsten konkreten Schritt fehlt nur Daniels Entscheidung, ob der laufende TTS-Service dafür neu gestartet werden darf. Code-seitig ist der Server-Compare vorbereitet.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Falls gewünscht: ein sichtbarerer Hinweis, dass die Rotation serverseitig passiert und sofort wirksam ist.

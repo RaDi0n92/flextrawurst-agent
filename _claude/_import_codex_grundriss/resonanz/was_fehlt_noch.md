@@ -1134,3 +1134,9 @@ Browser-Test mit echter visueller Automation fehlt, weil lokal weder Playwright 
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Live-Service-Neustart und echter HTTP-Endpunkt-Test sind offen. Die Code-Verifikation war: `python3 -m py_compile`, `node --check` auf dem extrahierten Script, `graphify update .` und ein direkter Modul-Test von `_compare_log_analyses()`.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Optional ein kleiner Status für "zuletzt rotiert" und vielleicht eine explizite Bestätigung nach erfolgreicher Rotation.

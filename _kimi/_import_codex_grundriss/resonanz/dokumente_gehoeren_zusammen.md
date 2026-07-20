@@ -1199,3 +1199,9 @@ Diese Note ersetzt ihn als technische Ablage.
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 `/root/werkraum/welt/tts_ui.html`, `/root/werkraum/welt/tts_service.py`, `/root/werkraum/welt/tts_logs.json`, `_codex/notizen/2026-07-05.md`, `_codex/_import_claude_grundriss/notizen/2026-06-18.md`, `_codex/_import_claude_grundriss/notizen/2026-07-06.md`.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+TTS-UI, `tts_service.py` und die Key-Datei in `/root/werkraum/welt/.env.tts_crawl_key` bilden hier ein einziges kleines System.

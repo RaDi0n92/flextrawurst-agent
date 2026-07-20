@@ -1,4 +1,4 @@
-import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, urllib.error, shutil, subprocess, re, html, difflib
+import os, tempfile, asyncio, json, threading, zipfile, hashlib, time, urllib.parse, urllib.request, urllib.error, shutil, subprocess, re, html, difflib, secrets
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, UploadFile, File, Form
@@ -22,6 +22,8 @@ DOCUMENTS_TEXT_DIR = Path("/root/werkraum/welt/tts_documents_text")
 WEBARCHIVE_PATH = Path("/root/werkraum/welt/tts_webarchive.json")
 WEBARCHIVE_HTML_DIR = Path("/root/werkraum/welt/tts_webarchive_html")
 WEBARCHIVE_TEXT_DIR = Path("/root/werkraum/welt/tts_webarchive_text")
+CRAWL_KEY_PATH = Path("/root/werkraum/welt/.env.tts_crawl_key")
+CRAWL_KEY_ROTATE_PASSWORD = os.environ.get("TTS_CRAWL_ROTATE_PASSWORD", "!Windowsxp9645")
 FORMS_PATH = Path("/root/werkraum/welt/tts_forms.json")
 LOGS_PATH = Path("/root/werkraum/welt/tts_logs.json")
 LOGS_UPLOAD_DIR = Path("/root/werkraum/welt/tts_logs_uploads")
@@ -31,6 +33,7 @@ _translation_lock = threading.Lock()
 _ocr_lock = threading.Lock()
 _documents_lock = threading.Lock()
 _webarchive_lock = threading.Lock()
+_crawl_key_lock = threading.Lock()
 _forms_lock = threading.Lock()
 _logs_lock = threading.Lock()
 _translation_languages_cache = {"ts": 0.0, "items": []}
@@ -143,8 +146,20 @@ class WebarchiveCompareRequest(BaseModel):
     snapshot_a: str
     snapshot_b: str
 
+class CrawlKeyRotateRequest(BaseModel):
+    password: str = ""
+
 def _now_iso() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+def _read_crawl_key() -> str:
+    try:
+        return CRAWL_KEY_PATH.read_text(encoding="utf-8").strip()
+    except FileNotFoundError:
+        return ""
+
+def _write_crawl_key(value: str) -> None:
+    CRAWL_KEY_PATH.write_text(value.strip() + "\n", encoding="utf-8")
 
 def _safe_name(name: str) -> str:
     clean = "".join(ch if ch.isalnum() or ch in "._-" else "-" for ch in str(name or "upload"))
@@ -2087,6 +2102,18 @@ async def export_audio(req: AudioExportRequest):
                 pass
     return FileResponse(zip_tmp.name, media_type="application/zip", filename="tts-clips-mp3.zip")
 
+@app.post("/crawl-key/rotate")
+async def rotate_crawl_key(req: CrawlKeyRotateRequest):
+    if req.password != CRAWL_KEY_ROTATE_PASSWORD:
+        raise HTTPException(status_code=403, detail="Passwort falsch.")
+    new_key = secrets.token_urlsafe(24)
+    with _crawl_key_lock:
+        _write_crawl_key(new_key)
+    return {
+        "crawl_key": new_key,
+        "crawl_url": f"/tts/?key={new_key}",
+    }
+
 @app.get("/", response_class=HTMLResponse)
 async def ui():
     from fastapi.responses import Response
@@ -2095,11 +2122,7 @@ async def ui():
     # Crawler-Zugangsschluessel (2026-07-10, Daniels Wunsch) -- separat von .env.tts_crawl_key
     # gelesen statt hartkodiert, damit eine Rotation ohne Codeaenderung/Neustart moeglich ist
     # (diese Route liest die Datei ohnehin bei jedem Request frisch, siehe Kommentar oben).
-    try:
-        with open("/root/werkraum/welt/.env.tts_crawl_key", encoding="utf-8") as kf:
-            crawl_key = kf.read().strip()
-    except FileNotFoundError:
-        crawl_key = ""
+    crawl_key = _read_crawl_key()
     # Gezielter Ersatz nur der einen Zuweisungszeile (count=1), nicht content.replace(...) blind
     # global -- ein blinder Ersatz haette (echter Bug, live gefunden) auch das Wort
     # __TTS_CRAWL_KEY__ in einer JS-Fallback-Pruefung weiter unten getroffen und dort den

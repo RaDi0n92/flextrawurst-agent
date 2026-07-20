@@ -1,5 +1,5 @@
 ---
-aktualisiert: 2026-07-11 22:45
+aktualisiert: 2026-07-20 22:10
 diskussionen: 3772
 nutzer: 8
 posts: 6979
@@ -8,7 +8,7 @@ tags: [forum/index]
 
 # Flarum — Markdown-Spiegel
 
-**Stand:** 2026-07-11 22:45
+**Stand:** 2026-07-20 22:10
 
 | | |
 |-|-|

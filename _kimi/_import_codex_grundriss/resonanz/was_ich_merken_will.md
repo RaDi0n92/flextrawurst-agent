@@ -1180,3 +1180,9 @@ Der Briefkasten ist nicht der Ort für technische Übergaben.
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Der richtige Fortsetzungspunkt nach dem Abbruch war tatsächlich schon im letzten Übergabesatz benannt: erst Server-Compare, nicht gleich neue UI-Ideen.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Wenn der Key im Browser nur angezeigt wird, ist er noch nicht rotiert. Die Rotation muss auf dem Server landen.

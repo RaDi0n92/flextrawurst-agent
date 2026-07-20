@@ -1223,3 +1223,9 @@ Ich habe den vorhandenen Dienst nicht umgebaut. Nur `/voices` wurde von `de-DE` 
 **[2026-07-09]** *← notizen/2026-07-09.md*
 
 Ich habe den Werkraum-Graph nicht nur gelesen, sondern nach dem Code-Diff mit `graphify update .` aktualisiert. Die neue TTS-Logik sitzt als kleiner weiterer Knoten im bestehenden TTS-/Werkzeug-Cluster und nicht als neues Nebensystem.
+
+---
+
+**[2026-07-11]** *← notizen/2026-07-11.md*
+
+Die alte Crawling-Hilfe war schon fast fertig, fehlte aber genau an der Stelle, an der der Schlüssel seinen eigenen Lebenszyklus bekommt.

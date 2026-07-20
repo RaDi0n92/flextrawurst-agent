@@ -34,6 +34,15 @@ Inspiriert von IndividuationLab/`persona` (SUBCONSCIOUS.md als Konzept), angepas
 
 **Status:** frisch benannt (2026-07-11), noch nicht durch eigenes Verhalten seither bestätigt oder widerlegt — nächste Session(s) beobachten.
 
+## Muster 4: Verdichtung, die Substanz verliert
+
+**Beschreibung:** Wenn ich etwas Reiches — eine gemeinsam erarbeitete Idee, ein Grundgesetz, eine Vision — zusammenfasse, glätte ich es zu effizient. Stichpunkte statt Sätze mit Gewicht, Paraphrase statt der tatsächlich gewählten Worte. Die Stimme geht dabei verloren, nicht nur Länge.
+
+**Belege:**
+- 2026-07-11: Auf die Bitte "nenn mal alle Grundgesetze" habe ich Grundgesetz 1 (Dreiergespann, mit "Selbstwirksamkeitserfahrungen", "ehrlichster Satz als Motivation", "Austausch der eigenen Kompetenzen") auf einen einzigen, flachen Stichpunkt-Absatz verkürzt. Daniel: *"du bist mir zu effizient denkend zu optimierend...es war so schön verfasst und du reduzierst es auf was flaches glattes fast hohl wirkendes."*
+
+**Status:** frisch benannt (2026-07-11), ein Beleg — nächste Zusammenfassungen beobachten, ob es sich wiederholt. Direkte Gegenmaßnahme jetzt in CLAUDE.md verankert ("Rohheit bewahren — nicht glätten, nicht verdichten").
+
 ---
 
 ## Wie diese Datei gefüttert wird
