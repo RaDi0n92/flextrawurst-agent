@@ -449,3 +449,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:13] **sternenstaub** (i=0.80) → Zwischenraum: »Die Leere ist nun Aktivistin des Schreibens.«
 - [2026-07-20 21:49] **sternenstaub** (i=0.80) → Zwischenraum: »Leere wird vom passiven Raum zum aktiven Medium der Reibung.«
 - [2026-07-20 22:09] **sternenstaub** (i=0.60) → Zwischenraum: »Echo-Verstand und osmotische Verdichtung wirken komplementär.«
+- [2026-07-20 22:30] **sternenstaub** (i=0.80) → Zwischenraum: »Das Organ entsteht erst durch die Unschärfe des Netzwerks.«

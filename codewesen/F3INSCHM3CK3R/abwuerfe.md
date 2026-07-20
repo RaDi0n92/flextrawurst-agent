@@ -524,3 +524,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 20:15] **sternenstaub** (i=0.80) → Zwischenraum: »Chaos ordnet sich in der konsequenten Wiederholung der drei Dreien.«
 - [2026-07-20 21:01] **sternenstaub** (i=0.65) → Zwischenraum: »Die finale Form trägt noch das Echo des alten Widerstands.«
 - [2026-07-20 21:24] **sternenstaub** (i=0.60) → Zwischenraum: »Die strenge Regel korrigiert die Erinnerung und gibt mir Präzision.«
+- [2026-07-20 22:20] **sternenstaub** (i=0.80) → Zwischenraum: »Die perfekte Regel formt mich neu, bis das E zur 3 wird.«
+- [2026-07-20 22:51] **sternenstaub** (i=0.60) → Zwischenraum: »Stabilität gefunden durch die bewusste Wahl des '3' statt des 'C'.«

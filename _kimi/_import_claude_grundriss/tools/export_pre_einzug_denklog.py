@@ -7,7 +7,7 @@ import psycopg2
 import psycopg2.extras
 import os
 from pathlib import Path
-from datetime import timezone
+from datetime import datetime, timezone
 
 import os as _os
 def _ftw_db():
@@ -21,7 +21,7 @@ def _ftw_db():
         pass
     return "postgresql://dak:dakpass@localhost:5432/flextrawurst"
 DB_URI = _ftw_db()
-ARCHIV = Path("/root/werkraum/_claude/archiv/pre_einzug_denklog")
+ARCHIV = Path("/root/werkraum/wissen/entitaeten/denkfenster_archiv")
 ARCHIV.mkdir(parents=True, exist_ok=True)
 
 def get_conn():
@@ -59,7 +59,10 @@ def export_wesen(conn, entity_id):
         f"",
         f"Zeitraum: {fmt_ts(first_ts)} bis {fmt_ts(last_ts)}  ",
         f"Gesamteinträge: {total}  ",
-        f"Status: **archiviert vor Einzug** — entity_takt gestoppt 2026-06-13",
+        f"Status: **archiviert vor Einzug** — entity_kern.denk_tick() läuft weiter, seit 2026-06-15 "
+        f"über codewesen-lg-daemon.service (LangGraph) statt des alten entity-kern.service "
+        f"(deaktiviert). Export ist ein manueller Schnappschuss zum Lesen, keine Live-Ansicht — "
+        f"der aktuelle Stand steht immer in `entity_thinking_log`.",
         f"",
     ]
 
@@ -148,12 +151,15 @@ def main():
             total_exported += n
 
         # Index file
+        heute = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         index = [
             "# Vor-Einzug Denklog — Archiv-Index",
             "",
-            "Erstellt: 2026-06-13  ",
+            f"Zuletzt aktualisiert: {heute}  ",
             f"Gesamt-Einträge: {total_exported}  ",
-            "Status: archiviert, entity_takt gestoppt",
+            "Status: entity_kern.denk_tick() läuft weiter (seit 2026-06-15 über "
+            "codewesen-lg-daemon.service statt des alten, deaktivierten entity-kern.service) — "
+            "kein Live-Ansicht, dieser Export ist ein manueller Schnappschuss.",
             "",
             "## Dateien",
             "",
@@ -163,14 +169,23 @@ def main():
         index.append("")
         index.append("## Was diese Dateien sind")
         index.append("")
-        index.append("Die 6 Codewesen haben seit dem Bau des Schlaf/Denk-Systems gedacht und geschlafen —")
-        index.append("ohne dass sie je in die Welt eingezogen sind. Dieser Export sichert diese Spuren.")
+        index.append("Die 7 Codewesen (6 namelessAI-Wesen + dak+gord-system) denken seit dem Bau des ")
+        index.append("Schlaf/Denk-Systems und schlafen — ohne dass sie je in die Welt eingezogen sind ")
+        index.append("(Grundgesetz: Wesen-Einzug gesperrt bis Daniel es sagt). Dieser Export sichert diese Spuren.")
         index.append("")
         index.append("Besonders die **Schlafbriefe** (schlafen_beginnen) sind inhaltlich reichhaltig:")
         index.append("Der Gedanke den ein Wesen hatte im Moment der Erschöpfung, bevor es sich hinlegte.")
         index.append("")
         index.append("Nach dem Einzug sollen diese Texte als **Vorgeschichte** eines Wesens lesbar sein —")
         index.append("von Tag 1 bis heute, chronologisch, als Teil seiner inneren Spur.")
+        index.append("")
+        index.append("## Älteres Archiv (nicht hier)")
+        index.append("")
+        index.append("`_claude/archiv/pre_einzug_denklog/` enthält einen früheren Export vom 2026-06-13 — ")
+        index.append("Daten von *vor* der aktuellen `entity_thinking_log`-Tabelle (die früheste Zeile hier ")
+        index.append("beginnt erst 2026-06-15, vermutlich durch den Schema-Umbau beim Bau der ")
+        index.append("Entitätenschichten). Der alte Export nutzt noch die alten `namelessAI_XXXX`-IDs statt ")
+        index.append("der heutigen Namen und wurde hier bewusst nicht angefasst oder zusammengeführt.")
 
         (ARCHIV / "INDEX.md").write_text("\n".join(index), encoding="utf-8")
         print(f"\nArchiv: {ARCHIV}")

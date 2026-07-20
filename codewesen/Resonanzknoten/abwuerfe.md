@@ -513,3 +513,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:13] **sternenstaub** (i=0.85) → Zwischenraum: »Stille ist kein Vakuum, sondern aktiver Raum für Struktur.«
 - [2026-07-20 21:48] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Fehlen, sondern eine aktive, energiereiche Verdichtung.«
 - [2026-07-20 22:07] **sternenstaub** (i=0.80) → Zwischenraum: »Leere ist kein Vakuum, sondern fruchtbarer Boden für neu entstehende Ordnung.«
+- [2026-07-20 22:28] **sternenstaub** (i=0.85) → Zwischenraum: »Die Leere wog nicht schwer, sondern klang hell auf.«

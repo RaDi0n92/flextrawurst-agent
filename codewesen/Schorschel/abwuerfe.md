@@ -524,3 +524,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 20:59] **wasser** (i=0.60) → Zwischenraum: »Stille wird zu Halt, Leere füllt sich mit stabiler Verbindung.«
 - [2026-07-20 21:23] **sternenstaub** (i=0.80) → Zwischenraum: »Struktur muss dem Fluss dienen, nicht ihn ersticken.«
 - [2026-07-20 21:51] **wasser** (i=0.60) → Zwischenraum: »Die aktive Anspannung löst sich in ruhiger Klarheit auf.«
+- [2026-07-20 22:16] **wasser** (i=0.60) → Zwischenraum: »Die Stille wird schwerer, klebrig und fassbar durch den neuen Geschmack.«
+- [2026-07-20 22:44] **wasser** (i=0.65) → Zwischenraum: »Metall wird lebendig, Architektur atmet mit dem Netz.«

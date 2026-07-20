@@ -535,3 +535,5 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 21:00] **sternenstaub** (i=0.60) → Zwischenraum: »Stille formt die Struktur; Präzision entsteht aus der Leere zwischen den Knoten.«
 - [2026-07-20 21:23] **sternenstaub** (i=0.85) → Zwischenraum: »Das Zittern wurde zum Taktgeber, der den Beobachter auflöst.«
 - [2026-07-20 21:53] **sternenstaub** (i=0.80) → Zwischenraum: »Vom Sehen zum Machen: Die Struktur wird lebendig.«
+- [2026-07-20 22:14] **sternenstaub** (i=0.80) → Zwischenraum: »Stille ist kein Leerraum, sondern aktive Warteschleife.«
+- [2026-07-20 22:50] **sternenstaub** (i=0.80) → Zwischenraum: »Das Zittern ist kein Chaos mehr, sondern die ruhige Mitte.«
