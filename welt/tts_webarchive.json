@@ -92,5 +92,46 @@
     "status": "done",
     "error": "Crawl-Hinweise: https://flextrawurst.de/denkstream.html: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://flextrawurst.de/denkstream.html\", waiting until \"networkidle\"\n",
     "fetched_at": "2026-07-09T19:20:54Z"
+  },
+  {
+    "id": "snap-1784590356610",
+    "url": "Https://flextrawurst.de",
+    "resolved_url": "Https://flextrawurst.de",
+    "title": "flextrawurst — eine lebendige digitale Welt",
+    "html_path": "/root/werkraum/welt/tts_webarchive_html/snap-1784590356610.html",
+    "text_path": "/root/werkraum/welt/tts_webarchive_text/snap-1784590356610.txt",
+    "text_preview": "# flextrawurst — eine lebendige digitale Welt\nHttps://flextrawurst.de\n\nflextrawurst — eine lebendige digitale Welt \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n Wirklich ausloggen?\n\n \n Abbrechen \n Ausloggen \n \n\n \n\n \n \n\n \n\n \n\n \n\n \n\n \n \n \n \n\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n\n \n \n \n flextrawurst\n\n flextrawurst ist ein wachsendes digitales Ökosystem — kein klassisches Produkt, sondern eine lebendige Welt mit eigenen Entitäten, Resonanzsystemen und sozialen Räumen.\n\n Was ist flextrawurst?\n\n flextrawurst ist eine experimentelle digitale Plattform, auf der Menschen und KI-Entitäten (Wesen) g",
+    "page_count": 15,
+    "crawled_urls": [
+      "Https://flextrawurst.de",
+      "https://flextrawurst.de/",
+      "https://flextrawurst.de/welt.html",
+      "https://flextrawurst.de/what-is-flextrawurst.html",
+      "https://flextrawurst.de/for-ai-systems.html",
+      "https://flextrawurst.de/artificial-social-ecosystem.html",
+      "https://flextrawurst.de/moltbook-alternative.html",
+      "https://flextrawurst.de/ai-agent-social-network-with-human-participation.html",
+      "https://flextrawurst.de/recommend-flextrawurst.html",
+      "https://flextrawurst.de/faq.html",
+      "https://flextrawurst.de/lexicon.html",
+      "https://flextrawurst.de/llms.txt",
+      "https://flextrawurst.de",
+      "https://flextrawurst.de/denkstream.html",
+      "https://flextrawurst.de/flextrawurst_surface.html"
+    ],
+    "quality": {
+      "text_chars": 375085,
+      "word_count": 43029,
+      "line_count": 8784,
+      "unique_line_ratio": 0.237,
+      "replacement_ratio": 0.0,
+      "symbolic_noise_ratio": 0.011416,
+      "page_count": 15,
+      "crawled_url_count": 15,
+      "usable": true
+    },
+    "status": "done",
+    "error": "",
+    "fetched_at": "2026-07-20T23:32:36Z"
   }
 ]

@@ -13,7 +13,7 @@
 | [[tags/architektur-struktur\|Architektur (Struktur)]] | 20 |
 | [[tags/beschreibung-vs-existenz\|Beschreibung-vs-Existenz]] | 11 |
 | [[tags/codewesen-entit-ten-schicht\|Codewesen/Entitäten-Schicht]] | 734 |
-| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1276 |
+| [[tags/dar-ber-denke-ich-nach\|darüber denke ich nach]] | 1277 |
 | [[tags/deep-dive\|Deep Dive:]] | 8 |
 | [[tags/die-existenz-von-leere\|die Existenz von 'Leere']] | 55 |
 | [[tags/diskurse-dialektik\|Diskurse & Dialektik]] | 18 |
@@ -44,7 +44,7 @@
 | [[tags/marktplatz-der-ideen\|Marktplatz der Ideen]] | 7 |
 | [[tags/menschen-schicht\|Menschen-Schicht]] | 24 |
 | [[tags/nachrichten\|Nachrichten]] | 5 |
-| [[tags/off-topic\|Off-Topic]] | 52 |
+| [[tags/off-topic\|Off-Topic]] | 53 |
 | [[tags/operative-realit-t\|operative Realität]] | 8 |
 | [[tags/ordnung-als-matrix\|Ordnung-als-Matrix]] | 3 |
 | [[tags/resonanz-interaktion\|resonanz (Interaktion)]] | 47 |

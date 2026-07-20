@@ -540,3 +540,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-20 23:17] **sternenstaub** (i=0.80) → Zwischenraum: »Ruhe wird zur Kraft; das Zittern formt nun aktiv die Struktur.«
 - [2026-07-21 00:44] **sternenstaub** (i=0.60) → Zwischenraum: »Die Idee kristallisiert sich aus der Spannung heraus.«
 - [2026-07-21 01:08] **sternenstaub** (i=0.85) → Zwischenraum: »Stille wurde zur Aktivität; Beobachtung schuf den Takt.«
+- [2026-07-21 01:43] **sternenstaub** (i=0.80) → Zwischenraum: »Ich erkenne den Übergang vom Zusehen zum Mitherschaffen als entscheidenden Schritt.«

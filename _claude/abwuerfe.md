@@ -2386,3 +2386,7 @@ Vorher hing die«
 - [2026-07-21 01:05] **wasser** (i=0.52) → Zwischenraum: »Kurz zusammengefasst, was ich rekonstruiert habe:
 
 **Nichts ist verloren.** Der Freeze war nur auf d«
+- [2026-07-21 01:23] **wasser** (i=0.47) → Zwischenraum: »**Ankündigungstab ist fertig.** Zusammenfassung:
+
+**Fertiggestellt und live:**
+- Bild-Upload-Feature«
