@@ -30,6 +30,9 @@ UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 WIDMUNGEN_DIR = Path("/root/werkraum/uploads/widmungen")
 WIDMUNGEN_DIR.mkdir(parents=True, exist_ok=True)
 
+ANKUENDIGUNGEN_BILD_DIR = Path("/root/werkraum/uploads/ankuendigungen")
+ANKUENDIGUNGEN_BILD_DIR.mkdir(parents=True, exist_ok=True)
+
 WESEN_IDS = ['Schorschel','F3INSCHM3CK3R','träumerlie','R1ZZ1','jumpa','Resonanzknoten','dak+gord-system']
 WIDMUNG_MAX_BYTES = int(1.11 * 1024 * 1024)
 
@@ -8230,6 +8233,7 @@ class AnkuendigungBody(BaseModel):
     titel: str
     inhalt: str
     kategorie: str = "news"
+    bild_url: str | None = None
     angepinnt: bool = False
     veroeffentlicht: bool = True
 
@@ -8238,6 +8242,7 @@ class AnkuendigungPatchBody(BaseModel):
     titel: str | None = None
     inhalt: str | None = None
     kategorie: str | None = None
+    bild_url: str | None = None
     angepinnt: bool | None = None
     veroeffentlicht: bool | None = None
 
@@ -8273,7 +8278,7 @@ def ankuendigungen_liste(
             cur.execute(f"SELECT COUNT(*) AS n FROM ankuendigungen {clause}", params)
             total = cur.fetchone()["n"]
             cur.execute(
-                f"""SELECT a.id::text, a.titel, a.inhalt, a.kategorie, a.angepinnt, a.veroeffentlicht,
+                f"""SELECT a.id::text, a.titel, a.inhalt, a.kategorie, a.bild_url, a.angepinnt, a.veroeffentlicht,
                            a.created_at, a.updated_at, a.meta, u.display_name AS autor_name
                     FROM ankuendigungen a JOIN human_users u ON u.id = a.autor_id
                     {clause}
@@ -8299,9 +8304,9 @@ def ankuendigung_erstellen(
     try:
         with conn.cursor() as cur:
             cur.execute(
-                """INSERT INTO ankuendigungen (titel, inhalt, kategorie, autor_id, angepinnt, veroeffentlicht)
-                   VALUES (%s,%s,%s,%s,%s,%s) RETURNING id::text, created_at""",
-                (body.titel, body.inhalt, body.kategorie, claims["user_id"], body.angepinnt, body.veroeffentlicht))
+                """INSERT INTO ankuendigungen (titel, inhalt, kategorie, bild_url, autor_id, angepinnt, veroeffentlicht)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id::text, created_at""",
+                (body.titel, body.inhalt, body.kategorie, body.bild_url, claims["user_id"], body.angepinnt, body.veroeffentlicht))
             row = cur.fetchone()
             cur.execute(
                 "INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer) VALUES (%s,%s,%s,%s,%s)",
@@ -8340,6 +8345,51 @@ def ankuendigung_patch(
     finally:
         conn.close()
     return {"ok": True}
+
+
+@app.post("/admin/ankuendigungen/{ankuendigung_id}/bild")
+async def ankuendigung_bild_hochladen(
+    ankuendigung_id: str,
+    bild: UploadFile = File(...),
+    authorization: str | None = Header(default=None),
+):
+    """Admin-only, kein Moderationsschritt (Grundgesetz 4 -- Admin hat totale Kontrolle).
+    Altes Bild bleibt als Datei liegen (nichts wird geloescht), nur bild_url zeigt neu."""
+    claims = _require_admin(authorization)
+
+    allowed_types = {"image/jpeg", "image/png", "image/webp", "image/gif"}
+    if bild.content_type not in allowed_types:
+        raise HTTPException(status_code=400, detail="Nur JPEG, PNG, WebP, GIF erlaubt")
+    content = await bild.read()
+    if len(content) > 5 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="Bild zu groß (max 5MB)")
+
+    ext = "jpg"
+    if bild.filename and "." in bild.filename:
+        raw_ext = bild.filename.rsplit(".", 1)[-1].lower()
+        if raw_ext in {"jpg", "jpeg", "png", "webp", "gif"}:
+            ext = raw_ext
+
+    filename = f"{ankuendigung_id}_{uuid.uuid4()}.{ext}"
+    (ANKUENDIGUNGEN_BILD_DIR / filename).write_bytes(content)
+    pfad = f"/uploads/ankuendigungen/{filename}"
+
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE ankuendigungen SET bild_url = %s, updated_at = now() WHERE id = %s::uuid RETURNING id",
+                (pfad, ankuendigung_id))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Ankündigung nicht gefunden")
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.bild_geaendert", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id, "bild_url": pfad})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True, "bild_url": pfad}
 
 
 # ===========================================================================

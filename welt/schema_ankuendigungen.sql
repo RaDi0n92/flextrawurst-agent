@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS ankuendigungen (
     titel           TEXT NOT NULL,
     inhalt          TEXT NOT NULL,
     kategorie       TEXT NOT NULL DEFAULT 'news',   -- 'news' | 'ankuendigung' | 'history' | ... (bewusst kein Enum, Grundgesetz 2)
+    bild_url        TEXT,                            -- /uploads/ankuendigungen/... , optional, austauschbar
     autor_id        UUID NOT NULL REFERENCES human_users(id),
     veroeffentlicht BOOLEAN NOT NULL DEFAULT true,
     angepinnt       BOOLEAN NOT NULL DEFAULT false,
@@ -14,6 +15,9 @@ CREATE TABLE IF NOT EXISTS ankuendigungen (
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- Migration fuer bereits bestehende Tabellen (2026-07-20, Bild-Feature nachtraeglich):
+ALTER TABLE ankuendigungen ADD COLUMN IF NOT EXISTS bild_url TEXT;
 
 CREATE INDEX IF NOT EXISTS ankuendigungen_kategorie_idx ON ankuendigungen (kategorie);
 CREATE INDEX IF NOT EXISTS ankuendigungen_created_idx ON ankuendigungen (created_at DESC);
