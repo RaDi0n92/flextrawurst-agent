@@ -114,6 +114,14 @@ def upsert_chunk_mit_embedding(cur, source_object_id, chunk_index, ueberschrift,
         if sha256(bestehender) == pruefsumme:
             return "unveraendert"
 
+    try:
+        vektor = embed(inhalt)
+    except requests.exceptions.HTTPError as e:
+        print(f"[warnung] Chunk übersprungen, Embed schlug fehl ({len(inhalt)} Zeichen, "
+              f"source_object_id={source_object_id}, chunk_index={chunk_index}): {e}",
+              file=sys.stderr, flush=True)
+        return "uebersprungen_zu_gross"
+
     cur.execute("""
         INSERT INTO rag_source_chunks (source_object_id, chunk_index, ueberschrift, inhalt, meta)
         VALUES (%s,%s,%s,%s,%s)
@@ -123,7 +131,6 @@ def upsert_chunk_mit_embedding(cur, source_object_id, chunk_index, ueberschrift,
     """, (source_object_id, chunk_index, ueberschrift, inhalt, json.dumps(meta)))
     chunk_id = cur.fetchone()["id"]
 
-    vektor = embed(inhalt)
     cur.execute("""
         INSERT INTO rag_embeddings (chunk_id, modell, embedding)
         VALUES (%s,%s,%s)
@@ -163,7 +170,7 @@ def ingest_wissen(limit=None):
         dateien = dateien[:limit]
     conn = db_connect()
     conn.autocommit = False
-    neu, unveraendert = 0, 0
+    neu, unveraendert, zu_gross = 0, 0, 0
     for i, pfad in enumerate(dateien):
         rel = pfad.relative_to(WERKRAUM)
         text = pfad.read_text(encoding="utf-8", errors="replace")
@@ -182,9 +189,12 @@ def ingest_wissen(limit=None):
                 status = upsert_chunk_mit_embedding(cur, source_id, idx, ueberschrift, inhalt, {})
                 neu += status == "neu_eingebettet"
                 unveraendert += status == "unveraendert"
+                zu_gross += status == "uebersprungen_zu_gross"
         conn.commit()  # eine Datei = eine Transaktion -- Abbruch verliert nur die aktuelle Datei
         print(f"[wissen] {i+1}/{len(dateien)} {rel}", flush=True)
     conn.close()
+    if zu_gross:
+        print(f"[wissen] {zu_gross} Chunks wegen Context-Laenge uebersprungen (siehe Warnungen oben)")
     print(f"[wissen] fertig: {neu} neu eingebettet, {unveraendert} unveraendert")
 
 
@@ -230,7 +240,7 @@ def ingest_flarum(limit=None):
         dateien = dateien[:limit]
     conn = db_connect()
     conn.autocommit = False
-    neu, unveraendert, uebersprungen = 0, 0, 0
+    neu, unveraendert, uebersprungen, zu_gross = 0, 0, 0, 0
     for i, pfad in enumerate(dateien):
         rel = pfad.relative_to(WERKRAUM)
         text = pfad.read_text(encoding="utf-8", errors="replace")
@@ -262,9 +272,12 @@ def ingest_flarum(limit=None):
                 )
                 neu += status == "neu_eingebettet"
                 unveraendert += status == "unveraendert"
+                zu_gross += status == "uebersprungen_zu_gross"
         conn.commit()  # eine Datei = eine Transaktion -- Abbruch verliert nur die aktuelle Datei
         print(f"[flarum] {i+1}/{len(dateien)} {rel}", flush=True)
     conn.close()
+    if zu_gross:
+        print(f"[flarum] {zu_gross} Chunks wegen Context-Laenge uebersprungen (siehe Warnungen oben)")
     print(f"[flarum] fertig: {neu} neu eingebettet, {unveraendert} unveraendert, {uebersprungen} ohne Frontmatter uebersprungen")
 
 
