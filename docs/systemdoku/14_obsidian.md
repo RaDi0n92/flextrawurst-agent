@@ -292,9 +292,15 @@ ln -s /root/homepage_TEMP_ausserhalb_vault /root/werkraum/homepage-von-kimiweb-d
 ```
 Getestet: Obsidian folgt den Symlinks nicht in die Tiefe (kein Crash, Vault rendert weiter sauber) — Dienste finden ihre Modelldateien weiter am gewohnten Pfad.
 
-**Aktueller Zustand:** `tools_TEMP_ausserhalb_vault` und `homepage_TEMP_ausserhalb_vault` liegen jetzt dauerhaft direkt unter `/root/`, mit Symlinks unter `/root/werkraum/` für Pfad-Kompatibilität. Das ist ein Provisorium (Ordnernamen tragen noch `_TEMP` im Namen) — sollte bei Gelegenheit sauber benannt/dokumentiert werden, aber funktional stabil.
+**Aktueller Zustand (final, nach Aufräumen):** `homepage-von-kimiweb-desing/` liegt wieder ganz normal an seinem echten Platz im Vault (war git-getrackter Projektcode, kein Auslagerungsgrund — nur `tools/models/` war das eigentliche Problem, weil dort Multi-GB-Binärdateien lagen statt vieler kleiner Dateien). `tools/` ist wieder ein echter Ordner mit den Skripten drin; nur `tools/models` ist ein Symlink auf `/root/werkraum_tools_models` (saubere Namenskonvention analog zu Daniels bestehenden `/root/werkraum_venv`, `/root/werkraum_venv_agent`). Beide Restrukturierungen sind committed.
 
 **Wichtigste Lehre:** Obsidians `userIgnoreFilters` (Settings → Files & Links → Excluded files) ist kein Ersatz für tatsächliche Dateisystem-Trennung, wenn Ordner groß/binär genug sind um den Vault-Scan selbst zu sprengen. Bei sehr großen Nicht-Notiz-Ordnern im Vault-Baum: physisch auslagern + Symlink für Pfad-Kompatibilität, nicht nur app-seitig ausschließen. Und: **vor jedem `mv`/`rm` an Pfaden unter `/root/werkraum/` erst prüfen ob ein laufender Dienst (`ps aux | grep <pfad>`, `grep -rl <pfad> /etc/systemd/system/`) den exakten Pfad referenziert** — hier hätte ein Dienst-Neustart sonst das produktive LLM offline genommen.
+
+### Nachtrag, gleicher Abend — Restliches Problem: nichtdeterministisches Rendering, nicht mehr Crash
+
+Nach dem Fix (kein OOM-Crash mehr, Speicher stabil ~770MB, `crash_total` bleibt konstant) bleibt der werkraum-Vault trotzdem **unzuverlässig beim Rendern**: teils zeigt er den Lade-Fortschrittsbalken und rendert danach sauber (mehrfach per `xwd -root` verifiziert), teils bleibt der Bildschirm von Anfang an schwarz, teils rendert er kurz und friert danach ohne erkennbaren Grund wieder ein — bei identischer Konfiguration, identischem Vault-Zustand, keine neuen Fehler im Log. CPU ist in den schwarzen Phasen durchgehend idle (kein Hänger, kein Rechnen — der Compositor committet einfach kein Frame mehr).
+
+Das ist vermutlich eine echte Race Condition zwischen der massiven parallelen Datei-I/O beim Laden eines ~30.000-Datei-Vaults und dem Software-Compositor-Frame-Scheduling unter Xvfb — kein sauber behebbarer Single-Cause-Bug mehr, eher ein Ressourcen-Rennen. **Nicht weiter verfolgt** (Daniels Entscheidung 20.07.: selbst mehrfach neu laden/neustarten bis es klappt, statt weiterer Debugging-Zeit). Für die Zukunft, falls es nervt: Vault in kleinere Teil-Vaults aufteilen (z.B. eigenes Vault nur für `_claude/`) würde die Ladelast senken und das Problem wahrscheinlich strukturell lösen — bisher kein Auftrag dazu.
 
 ---
 
