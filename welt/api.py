@@ -8223,6 +8223,126 @@ def zitat_loeschen(
 
 
 # ===========================================================================
+# ANKÜNDIGUNGEN — News/Ankündigungen/History, nur Admins duerfen posten
+# ===========================================================================
+
+class AnkuendigungBody(BaseModel):
+    titel: str
+    inhalt: str
+    kategorie: str = "news"
+    angepinnt: bool = False
+    veroeffentlicht: bool = True
+
+
+class AnkuendigungPatchBody(BaseModel):
+    titel: str | None = None
+    inhalt: str | None = None
+    kategorie: str | None = None
+    angepinnt: bool | None = None
+    veroeffentlicht: bool | None = None
+
+
+@app.get("/ankuendigungen")
+def ankuendigungen_liste(
+    kategorie: str | None = Query(default=None),
+    search: str | None = Query(default=None),
+    limit: int = Query(default=30, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    sort: str = Query(default="created_at"),
+    order: str = Query(default="desc"),
+    authorization: str | None = Header(default=None),
+):
+    """Öffentlich lesbar. Admins sehen zusätzlich unveröffentlichte Entwürfe."""
+    admin = _is_admin(authorization)
+    if sort not in ("created_at", "titel"):
+        sort = "created_at"
+    if order not in ("asc", "desc"):
+        order = "desc"
+    where = [] if admin else ["veroeffentlicht = true"]
+    params = []
+    if kategorie:
+        where.append("kategorie = %s")
+        params.append(kategorie)
+    if search:
+        where.append("to_tsvector('german', titel || ' ' || inhalt) @@ plainto_tsquery('german', %s)")
+        params.append(search)
+    clause = "WHERE " + " AND ".join(where) if where else ""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT COUNT(*) AS n FROM ankuendigungen {clause}", params)
+            total = cur.fetchone()["n"]
+            cur.execute(
+                f"""SELECT a.id::text, a.titel, a.inhalt, a.kategorie, a.angepinnt, a.veroeffentlicht,
+                           a.created_at, a.updated_at, a.meta, u.display_name AS autor_name
+                    FROM ankuendigungen a JOIN human_users u ON u.id = a.autor_id
+                    {clause}
+                    ORDER BY a.angepinnt DESC, a.{sort} {order}
+                    LIMIT %s OFFSET %s""",
+                params + [limit, offset])
+            items = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    for it in items:
+        it["created_at"] = it["created_at"].isoformat() if it["created_at"] else None
+        it["updated_at"] = it["updated_at"].isoformat() if it["updated_at"] else None
+    return {"total": total, "offset": offset, "limit": limit, "ankuendigungen": items}
+
+
+@app.post("/admin/ankuendigungen", status_code=201)
+def ankuendigung_erstellen(
+    body: AnkuendigungBody,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """INSERT INTO ankuendigungen (titel, inhalt, kategorie, autor_id, angepinnt, veroeffentlicht)
+                   VALUES (%s,%s,%s,%s,%s,%s) RETURNING id::text, created_at""",
+                (body.titel, body.inhalt, body.kategorie, claims["user_id"], body.angepinnt, body.veroeffentlicht))
+            row = cur.fetchone()
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer) VALUES (%s,%s,%s,%s,%s)",
+                ("ankuendigung.veroeffentlicht", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": row["id"], "titel": body.titel, "kategorie": body.kategorie}),
+                 "public" if body.veroeffentlicht else "internal"))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": row["id"], "created_at": row["created_at"].isoformat()}
+
+
+@app.patch("/admin/ankuendigungen/{ankuendigung_id}")
+def ankuendigung_patch(
+    ankuendigung_id: str,
+    body: AnkuendigungPatchBody,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_admin(authorization)
+    felder = {k: v for k, v in body.model_dump(exclude_unset=True).items()}
+    if not felder:
+        raise HTTPException(status_code=400, detail="Keine Felder zum Ändern")
+    sets = ", ".join(f"{k} = %s" for k in felder) + ", updated_at = now()"
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(f"UPDATE ankuendigungen SET {sets} WHERE id = %s::uuid RETURNING id",
+                        list(felder.values()) + [ankuendigung_id])
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Ankündigung nicht gefunden")
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.bearbeitet", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id, "felder": list(felder.keys())})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+
+# ===========================================================================
 # ADMIN — Cluster-Vorschläge + Verschieben
 # ===========================================================================
 
