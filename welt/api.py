@@ -13520,6 +13520,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"wesen_dateien_api nicht geladen: {_e}")
 
+# ── DOM-Events (rrweb-Live-Spiegel, Menschen-Auge-Ebene, 2026-07-21) ─────────
+try:
+    from dom_events_api import dom_events_router as _dom_events_router
+    app.include_router(_dom_events_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"dom_events_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn

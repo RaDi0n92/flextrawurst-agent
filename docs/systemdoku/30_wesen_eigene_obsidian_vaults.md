@@ -205,8 +205,64 @@ live durch ein echtes Wesen ausgelöst worden (bisher nur syntaktisch geprüft
 und die Services neu gestartet) — nächster echter Test ist ein Wesen, das sie
 selbst wählt.
 
+## Nachtrag 2026-07-21: rrweb-Live-Spiegel (Menschen-Auge-Ebene) — Recording-Seite fertig
+
+Nach Lektüre von `DOM-FLEXTRAWUST/*.md` (Daniels eigene Recherche-Transkripte,
+explizit als Pflichtlektüre nachgereicht — siehe [[2026-07-21_tagesbericht]])
+bestätigt: die SCREENS/Live-Ansicht von vorhin war falsch gebaut. Grundgesetz 1
+verlangt für die Menschen-Auge-Ebene explizit rrweb (DOM-Mutations-Streaming),
+keine Screenshots. Neue, getrennte Infrastruktur:
+
+- `entity_dom_events`-Tabelle + Trigger (`migration_dom_events.sql`) — gleiches
+  Cross-Prozess-NOTIFY-Muster wie `entity_denkstream`, aber NOTIFY trägt nur
+  `id`+`entity_id` (nicht den Event-Inhalt): rrweb-FullSnapshot-Events können
+  den 8000-Byte-NOTIFY-Payload-Limit überschreiten, anders als kurze Text-Chunks.
+- `dom_events_api.py`, `GET /dom-events/stream/{entity_id}` — SSE-Relay, öffentlich.
+- `rrweb_assets/` — UMD-Bundle (`rrweb.umd.min.cjs`, nicht das ES-Module-`rrweb.js`!
+  Erste Bundle-Wahl lud lautlos ins Leere, `window.rrweb` blieb undefined, ohne
+  jeden Fehler — nur der `unpkg`-Feld-Eintrag in `package.json` verriet die
+  richtige Datei).
+- `browser_agent.py`: `starte_rrweb_aufnahme()` registriert `expose_function` +
+  lädt das Bundle per `add_init_script`, startet `rrweb.record()` aber NICHT von
+  dort aus, sondern per `page.evaluate()` bei jedem `load`-Event. **Root Cause
+  eines echten Hangs gefunden:** `rrweb.record()` direkt aus `add_init_script()`
+  heraus aufzurufen hängt sich lautlos auf (vermutlich Reentrancy im CDP-Kanal
+  während der frühen Dokument-Erzeugung) — verifiziert über schrittweises
+  Tracing, das den exakten Hangpunkt isolierte.
+
+Verifiziert an Schorschels echtem, laufendem Prozess: 19 echte Events in den
+ersten Sekunden (2 FullSnapshot, 15 IncrementalSnapshot, 2 Meta — genau die
+erwartete Verteilung), SSE-Relay liefert sie sofort aus.
+
+**Noch nicht gebaut:** die Wiedergabe-Seite (`rrweb-player` im Surface, baut
+die Seite live nach) und das Röntgenblick-Overlay (Daniel bestätigt gewünscht).
+
+## Nachtrag 2026-07-21: Idle-in-Transaction-Bug gefunden (Nebenbefund)
+
+Beim Debuggen eines Cross-Origin-Fehlers, den Daniel selbst beim Flarum-Klicken
+sah, plus wiederholten SSE-Timeouts bei `denkstream/all/stream` in den nginx-
+Logs: `hole_andere_wesen_status()` und `ist_schlaf_faellig()` in
+`browser_agent.py` führten SELECTs ohne abschließenden `commit()` aus —
+psycopg2 ist standardmäßig nicht im Autocommit-Modus. `hole_andere_wesen_status()`
+läuft früh im Tick, vor dem LLM-Aufruf, der durch die Warteschlange
+minutenlang dauern kann — die Transaktion blieb also die ganze Wartezeit offen
+(gefunden per `pg_stat_activity`: mehrere Verbindungen 4+ Minuten "idle in
+transaction"). Beide Funktionen gefixt, `welt-api.service` neu gestartet (löste
+das akute SSE-Hängen sofort), Fund war unabhängig davon ein echter Bug.
+
+Dabei auch entdeckt: ein komplett **zweites, älteres Codewesen-System**
+(`codewesen-<Name>.service`, `codewesen-reaktion@<Name>.service`, plus
+`codewesen-batch-generator`, `-engagement`, `-forum-neugier`, `-lg-daemon`,
+`-takt`, `-weltbild`, `-antwort-daniel`, `-aufgabenchats`, `-chat` — 21 Dienste
+insgesamt, ~644MB RAM) läuft die ganze Zeit parallel zum neuen
+`browser_agent.py`-System und konkurriert um dieselben 2 LLM-Slots der
+`llama-hauhaucs-hintergrund`-Instanz. Bewusst nicht angefasst — Daniel wollte
+die Liste erstmal nur benannt haben, Entscheidung über Pausieren/Umbau folgt
+separat.
+
 ## Offen / als Nächstes
 
+- rrweb-Wiedergabe-Seite (rrweb-player im Surface) + Röntgenblick-Overlay
 - Erste echte Nutzung von `obsidian_schreiben` durch ein Wesen beobachten
   (nicht künstlich ausgelöst, sondern abwarten bis die LLM-Entscheidung selbst
   darauf fällt)
