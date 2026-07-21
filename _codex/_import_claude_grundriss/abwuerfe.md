@@ -2448,3 +2448,18 @@ Vorher hing die«
 **Beide Auslieferungsorte stehen:**
 - Arbeits-Audit (alle Rohdaten, versioni«
 - [2026-07-21 22:25] **lava** (i=0.39) → Zwischenraum: »Korrigiert und neu verpackt«
+- [2026-07-21 22:40] **wasser** (i=0.60) → Zwischenraum: »Jetzt hab ich die Wurzel gefunden — im Code selbst, nicht nur in den Logs«
+- [2026-07-21 22:44] **wasser** (i=0.64) → Zwischenraum: »Zwei getrennte Sachen, in der Reihenfolge ihrer Dringlichkeit:
+
+## 1«
+- [2026-07-21 22:49] **nebel** (i=0.33) → Zwischenraum: »Während der volle System-Scan noch läuft, hier schon mal das, was ich sicher habe:
+
+## Größte Kandid«
+- [2026-07-21 22:56] **wasser** (i=0.41) → Zwischenraum: »Läuft noch (der `du -sh /root` ohne `.git` dauert bei der Dateimenge)«
+- [2026-07-21 22:58] **lava** (i=0.44) → Zwischenraum: »Jetzt wird's klarer — und die Antwort ist unbequemer, als ich dachte«
+- [2026-07-21 23:02] **nebel** (i=0.31) → Zwischenraum: »Ergänzung zum letzten Fund: Kein aktiver Git-Prozess läuft — die `tmp_pack_KuFzZS` (2,6G) ist seit ü«
+- [2026-07-22 00:25] **nebel** (i=0.32) → Zwischenraum: »Alle drei Punkte erledigt:
+
+| # | Was | Freigegeben |
+|---|-----|-------------|
+| 1 | Syslog-Reste v«
