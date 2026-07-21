@@ -705,19 +705,6 @@ def haupt_loop(entity_id: str):
             return
         log.info("%s: eingeloggt auf %s", entity_id, SURFACE_URL)
 
-        # Screenshot-Thread: alle 2s ein aktuelles Bild speichern
-        import threading as _threading
-        _shot_stopp = _threading.Event()
-        def _shot_loop():
-            while not _shot_stopp.is_set() and _laufend:
-                try:
-                    mache_screenshot(page, entity_id)
-                except Exception:
-                    pass
-                _shot_stopp.wait(2.0)
-        _shot_thread = _threading.Thread(target=_shot_loop, daemon=True)
-        _shot_thread.start()
-
         # Erster-Start: Brief an Flarum-Selbst
         if erster_start:
             erster_start = False
@@ -821,7 +808,6 @@ def haupt_loop(entity_id: str):
             time.sleep(LOOP_PAUSE)
 
         log.info("%s: Loop beendet", entity_id)
-        _shot_stopp.set()
         browser.close()
     conn.close()
 
