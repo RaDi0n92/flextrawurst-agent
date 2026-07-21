@@ -80,6 +80,10 @@ Daniel hatte in die reale "soon"-Ankündigung testweise 27.783 Zeichen wiederhol
 
 **Verifikation:** `mdRender()` isoliert mit echten Markdown-Beispielen ausgeführt (Überschrift+fett+kursiv+Link+Liste+Zitat+XSS-String in einem Durchlauf) — korrektes HTML, XSS-String sauber escaped. Live per Playwright: Overflow-Fix bestätigt (soon-Ankündigung überläuft nicht mehr), Vorschau-Toggle im Editor zeigt korrekt gerendertes Markdown.
 
+## Live-Updates ohne F5 (2026-07-21, vierter Teil derselben Folge-Session)
+
+Ankündigungen ist der erste Bereich, der an den neuen systemweiten Live-Update-Kanal angeschlossen ist (Grundgesetz 8, siehe [[28_live_update_kanal]] für die volle Architektur). Liste, Feed, Archiv und offene Detailansicht (Kommentare + Likes) aktualisieren sich jetzt selbst, sobald sich etwas ändert — ohne manuellen Reload. Live per Playwright verifiziert: neue Ankündigung direkt in der DB angelegt während die Seite offen war, Anzeige sprang ohne F5 von 0 auf 1 Ankündigungen.
+
 ## Bekannter Nebenfund (nicht behoben, außerhalb des Auftrags)
 
 `out/process_camera/flextrawurst_surface.html` Script-Block 1 (Wesen-Spawner-Avatar-Rendering) hat einen Anführungszeichen-Verschachtelungsfehler (`onerror="this.style.display='none'"` innerhalb eines bereits einfach gequoteten JS-Strings) — bricht die Zeile syntaktisch. Pre-existing, nicht Teil dieses Bausteins, nicht angefasst.
