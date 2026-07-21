@@ -206,4 +206,16 @@ Daniel wollte das echte, laufende Flarum als Tab in der öffentlichen Surface er
 
 ---
 
+## Nachtrag 2026-07-21 — WESEN-Tab: Solarius/Codexium (v1) entfernt, dabei toten Spawner-Script-Block gefixt
+
+Daniel wollte die alten "+ Solarius ↗"/"+ Codexium ↗"-Buttons und die zugehörigen Karten aus dem WESEN-Tab raus — `codexium2`/`solarius2` sind die aktiven Nachfolger (siehe [[21_wesen_chat_testbed]]), `codexium`/`solarius` (v1) sollen laut [[project_codexium2_testbed]]-Konvention unangetastet, aber eben nicht mehr sichtbar sein.
+
+Zwei Stellen in `generateWesenView()` (`build_surface.ts`): die zwei statischen Buttons entfernt, und im `ladeSpawnedWesen()`-Script (das `/wesen/list` abfragt und Karten pro gespawntem Wesen baut) einen Filter ergänzt (`w.spawner!=='solarius'&&w.spawner!=='codexium'`).
+
+**Dabei aufgefallen:** Dieses Script war der bereits früher dokumentierte "bekannte Nebenfund" aus der Ankündigungen-Session desselben Tages ([[24_ankuendigungen]]) — derselbe Backtick-Template-Escape-Bug (`\'` wird beim Bauen aufgelöst, bevor der Code in die Ausgabedatei geschrieben wird, bricht die String-Syntax). Ergebnis: Der komplette Script-Block war seit Ewigkeiten kaputt, `ladeSpawnedWesen()` lief nie — die Karten-Liste zeigte permanent nur "Lade…", nur die beiden jetzt entfernten statischen Buttons waren der tatsächlich funktionierende Weg zu Solarius/Codexium. Gefixt mit derselben Technik wie beim Ankündigungen-Fix (Fragmente wie `"'none'"`/`"'"` statt Backslash-Escapes). Alle 22 Script-Blöcke der ausgelieferten Surface sind jetzt syntaktisch sauber (vorher 1 kaputt).
+
+Live per Playwright verifiziert: Karten-Liste lädt jetzt tatsächlich (vorher dauerhaft "Lade…"), zeigt `solarius2`/`codexium2`-Einträge, keine `solarius`/`codexium`-Einträge mehr, keine JS-Fehler.
+
+---
+
 *Weiter: [[06_flarum]] | [[07_codewesen_uebersicht]]*
