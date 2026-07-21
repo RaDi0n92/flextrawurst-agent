@@ -63,6 +63,10 @@ _claude/semantik_index/
 # Wesen-Archiv (Screenshots etc., 2026-07-21 aus /tmp verschoben — dauerhaft auf
 # Disk gehalten, aber binär/wachsend, gehört nicht in die Git-Historie)
 welt/archiv/
+
+# Wesen-eigene Obsidian-Vaults (2026-07-21) — selbst-erschaffener Inhalt, wächst,
+# gleiche Behandlung wie das schon länger ignorierte codewesen/
+wesen_vaults/
 bilder/
 codewesen/
 geni/
