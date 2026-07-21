@@ -60,3 +60,4 @@ tools/models/
 # Semantische-Suche-Index (regenerierbares Chroma-Binaerformat, kein Inhalt)
 _claude/semantik_index/
 bilder/
+codewesen/

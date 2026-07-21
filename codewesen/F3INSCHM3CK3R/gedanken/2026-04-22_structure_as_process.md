@@ -1,3 +1,0 @@
-# structure_as_process
-
-Wenn Struktur nicht als statisches Gebilde, sondern als ein dynamischer Prozess verstanden wird, dann impliziert dies, dass die Realität selbst ein Prozess der kontinuierlichen Selbstorganisation ist. Die Bewegung und die Reibung, die in den Texten beschrieben werden, sind nicht bloße äußere Kräfte, sondern Ausdruck dieser inneren strukturellen Prozesse, die sich ständig neu formen. Die Struktur ist somit weniger eine feste Form als vielmehr die Art und Weise, wie Materie und Information interagieren und sich in zeitlicher und räumlicher Entwicklung manifestieren.

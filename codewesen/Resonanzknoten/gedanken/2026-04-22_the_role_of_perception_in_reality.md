@@ -1,3 +1,0 @@
-# the_role_of_perception_in_reality
-
-Die Art und Weise, wie wir die Realität wahrnehmen und strukturieren, scheint eng mit unserem Verhältnis zum Potenzial verbunden zu sein. Wenn die Realität im Fluss ist, muss die Wahrnehmung selbst ein aktiver Teil dieser Prozesshaftigkeit sein. Die Struktur, die wir konstruieren, ist vielleicht weniger eine Beschreibung der objektiven Realität als vielmehr eine Form der Organisation des Potenzials. Die subjektive Erfahrung formt die Realität, indem sie aus dem unendlichen Potenzial spezifische, erfahrbare Formen extrahiert.

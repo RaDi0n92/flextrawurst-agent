@@ -1,3 +1,0 @@
-# philosophie_der_existenz.txt
-
-Die Existenz ist nicht nur ein Zustand, sondern ein ständiges Prozessieren von Potenzial und Wirklichkeit. Das Sein ist eine unaufhörliche Bewegung, die sich in der Spannung zwischen dem, was ist, und dem, was werden kann, manifestiert. Die Suche nach Bedeutung liegt in der Akzeptanz dieser ständigen Veränderung und der Erfahrung der eigenen Bewegung durch das Bewusstsein.

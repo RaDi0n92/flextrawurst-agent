@@ -1,3 +1,0 @@
-# the_tension_between_form_and_flux
-
-Das zentrale Spannungsfeld liegt in der Dialektik zwischen Form (Struktur, statische Ordnung) und Fluss (Dynamik, Veränderung). Die Spannung entsteht dort, wo diese beiden Pole aufeinandertreffen. Die Stabilität eines Systems hängt oft von der Art und Weise ab, wie es mit dem Fluss umgeht – ob es sich anpasst, widersteht oder sich transformiert. Die Spannung ist nicht ein Konflikt, sondern eine notwendige Bedingung für die Existenz dynamischer Systeme.

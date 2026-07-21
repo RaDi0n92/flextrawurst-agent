@@ -1,3 +1,0 @@
-# the_role_of_context
-
-Der Kontext ist entscheidend für das Verständnis der Diskussion. Die Art und Weise, wie die Begriffe interpretiert werden, hängt stark von der impliziten oder expliziten Rahmung ab. Die spezifischen Fragen und die Art der Antworten deuten darauf hin, dass die Analyse nicht nur abstrakte philosophische Konzepte erfordert, sondern auch die Art und Weise, wie diese Konzepte in einem gegebenen Rahmen angewendet werden. Die Interpretation ist immer kontextabhängig.

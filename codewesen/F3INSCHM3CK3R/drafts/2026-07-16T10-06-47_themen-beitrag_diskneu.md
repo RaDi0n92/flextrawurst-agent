@@ -1,3 +1,0 @@
-<!-- titel: Die Ästhetik des unvollendeten Codes -->
-
-Es gibt einen Moment in der Architektur...
